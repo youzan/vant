@@ -6,7 +6,7 @@ let depsMap: Record<string, string[]> = {};
 let existsCache: Record<string, boolean> = {};
 
 // https://regexr.com/47jlq
-const IMPORT_RE = /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from\s+?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
+const IMPORT_RE = /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from(\s+)?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
 
 function matchImports(code: string): string[] {
   return code.match(IMPORT_RE) || [];
@@ -62,12 +62,24 @@ export function getDeps(filePath: string) {
   const code = readFileSync(filePath, 'utf-8');
   const imports = matchImports(code);
   const paths = imports
-    .map(item => getPathByImport(item, filePath))
-    .filter(item => !!item) as string[];
+    .map((item) => getPathByImport(item, filePath))
+    .filter((item) => !!item) as string[];
 
   depsMap[filePath] = paths;
 
   paths.forEach(getDeps);
 
   return paths;
+}
+
+// "import App from 'App.vue';" => "import App from 'App.xxx';"
+export function replaceScriptImportExt(code: string, from: string, to: string) {
+  const importLines = matchImports(code);
+
+  importLines.forEach((importLine) => {
+    const result = importLine.replace(from, to);
+    code = code.replace(importLine, result);
+  });
+
+  return code;
 }

@@ -73,30 +73,30 @@ export default {
 
   h2 {
     margin: 45px 0 20px;
-    font-size: 22px;
+    font-size: 25px;
   }
 
   h3 {
     margin-bottom: 16px;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
   }
 
   h4 {
     margin: 24px 0 12px;
-    font-weight: 500;
-    font-size: 15px;
+    font-weight: 600;
+    font-size: 16px;
   }
 
   h5 {
     margin: 24px 0 12px;
-    font-weight: 500;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 15px;
   }
 
   p {
     color: @van-doc-text-color;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 26px;
   }
 
@@ -104,13 +104,13 @@ export default {
     width: 100%;
     margin-top: 12px;
     color: @van-doc-text-color;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
     border-collapse: collapse;
 
     th {
       padding: 8px 10px;
-      font-weight: 500;
+      font-weight: 600;
       text-align: left;
 
       &:first-child {
@@ -134,8 +134,8 @@ export default {
           margin: 0;
           padding: 2px 6px;
           color: @van-doc-blue;
-          font-weight: 500;
-          font-size: 10px;
+          font-weight: 600;
+          font-size: 11px;
           background-color: fade(@van-doc-blue, 10%);
           border-radius: 20px;
         }
@@ -148,7 +148,7 @@ export default {
 
     em {
       color: @van-doc-green;
-      font-size: 12.5px;
+      font-size: 14px;
       font-family: @van-doc-code-font-family;
       font-style: normal;
       -webkit-font-smoothing: auto;
@@ -161,7 +161,7 @@ export default {
     margin: 5px 0 5px 10px;
     padding-left: 15px;
     color: @van-doc-text-color;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 26px;
 
     &::before {
@@ -188,12 +188,12 @@ export default {
   li > code,
   table code {
     display: inline;
-    margin: 2px 3px;
+    margin: 0 2px;
     padding: 2px 5px;
-    font-size: 13px;
+    font-size: 14px;
     font-family: inherit;
     word-break: keep-all;
-    background-color: #f0f2f5;
+    background-color: @van-doc-background-color;
     border-radius: 4px;
     -webkit-font-smoothing: antialiased;
   }
@@ -208,11 +208,8 @@ export default {
   }
 
   blockquote {
-    margin: 20px 0 0;
+    margin: 16px 0 0;
     padding: 16px;
-    color: rgba(52, 73, 94, 0.8);
-    font-weight: 500;
-    font-size: 14px;
     background-color: #ecf9ff;
     border-radius: @van-doc-border-radius;
   }
@@ -227,7 +224,7 @@ export default {
     strong {
       display: block;
       margin: 24px 0 12px;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 15px;
     }
 

@@ -1,39 +1,22 @@
 <template>
   <demo-section>
-    <demo-block :title="t('alert1')">
-      <van-button type="primary" @click="onClickAlert">
-        {{ t('alert1') }}
-      </van-button>
-      <van-button type="primary" @click="onClickAlert2">
-        {{ t('alert2') }}
-      </van-button>
+    <demo-block card :title="t('basicUsage')">
+      <van-cell is-link :title="t('alert1')" @click="onClickAlert" />
+      <van-cell is-link :title="t('alert2')" @click="onClickAlert2" />
+      <van-cell is-link :title="t('confirm')" @click="onClickConfirm" />
     </demo-block>
 
-    <demo-block :title="t('roundButton')">
-      <van-button type="primary" @click="onClickRound">
-        {{ t('alert1') }}
-      </van-button>
-      <van-button type="primary" @click="onClickRound2">
-        {{ t('alert2') }}
-      </van-button>
+    <demo-block card :title="t('roundButton')">
+      <van-cell is-link :title="t('alert1')" @click="onClickRound" />
+      <van-cell is-link :title="t('alert2')" @click="onClickRound2" />
     </demo-block>
 
-    <demo-block :title="t('confirm')">
-      <van-button type="primary" @click="onClickConfirm">
-        {{ t('confirm') }}
-      </van-button>
+    <demo-block card :title="t('asyncClose')">
+      <van-cell is-link :title="t('asyncClose')" @click="onClickAsyncClose" />
     </demo-block>
 
-    <demo-block :title="t('asyncClose')">
-      <van-button type="primary" @click="onClickAsyncClose">
-        {{ t('asyncClose') }}
-      </van-button>
-    </demo-block>
-
-    <demo-block :title="t('componentCall')">
-      <van-button type="primary" @click="show = true">
-        {{ t('componentCall') }}
-      </van-button>
+    <demo-block card :title="t('componentCall')">
+      <van-cell is-link :title="t('componentCall')" @click="show = true" />
       <van-dialog
         v-model="show"
         :title="t('title')"
@@ -135,12 +118,6 @@ export default {
 @import '../../style/var';
 
 .demo-dialog {
-  background-color: @white;
-
-  .van-doc-demo-block > .van-button {
-    margin-left: @padding-md;
-  }
-
   img {
     box-sizing: border-box;
     width: 100%;

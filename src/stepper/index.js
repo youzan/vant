@@ -72,7 +72,7 @@ export default createComponent({
   },
 
   data() {
-    const defaultValue = isDef(this.value) ? this.value : this.defaultValue;
+    const defaultValue = this.value ?? this.defaultValue;
     const value = this.format(defaultValue);
 
     if (!equal(value, this.value)) {
@@ -268,6 +268,14 @@ export default createComponent({
         preventDefault(event);
       }
     },
+
+    onMousedown(event) {
+      // fix mobile safari page scroll down issue
+      // see: https://github.com/youzan/vant/issues/7690
+      if (this.disableInput) {
+        event.preventDefault();
+      }
+    },
   },
 
   render() {
@@ -315,6 +323,7 @@ export default createComponent({
           onInput={this.onInput}
           onFocus={this.onFocus}
           onBlur={this.onBlur}
+          onMousedown={this.onMousedown}
         />
         <button
           vShow={this.showPlus}

@@ -1,5 +1,4 @@
 // Utils
-import { inBrowser } from '../utils';
 import { bem, createComponent } from './shared';
 
 // Mixins
@@ -82,13 +81,13 @@ export default createComponent({
   data() {
     return {
       active: 0,
-      windowWidth: 0,
-      windowHeight: 0,
+      rootWidth: 0,
+      rootHeight: 0,
       doubleClickTimer: null,
     };
   },
 
-  created() {
+  mounted() {
     this.resize();
   },
 
@@ -99,6 +98,7 @@ export default createComponent({
       if (val) {
         this.setActive(+this.startPosition);
         this.$nextTick(() => {
+          this.resize();
           this.$refs.swipe.swipeTo(+this.startPosition, { immediate: true });
         });
       } else {
@@ -112,9 +112,10 @@ export default createComponent({
 
   methods: {
     resize() {
-      if (inBrowser) {
-        this.windowWidth = window.innerWidth;
-        this.windowHeight = window.innerHeight;
+      if (this.$el && this.$el.getBoundingClientRect) {
+        const rect = this.$el.getBoundingClientRect();
+        this.rootWidth = rect.width;
+        this.rootHeight = rect.height;
       }
     },
 
@@ -139,7 +140,7 @@ export default createComponent({
       if (this.showIndex) {
         return (
           <div class={bem('index')}>
-            {this.slots('index') ||
+            {this.slots('index', { index: this.active }) ||
               `${this.active + 1} / ${this.images.length}`}
           </div>
         );
@@ -174,8 +175,8 @@ export default createComponent({
               active={this.active}
               maxZoom={this.maxZoom}
               minZoom={this.minZoom}
-              windowWidth={this.windowWidth}
-              windowHeight={this.windowHeight}
+              rootWidth={this.rootWidth}
+              rootHeight={this.rootHeight}
               onScale={this.emitScale}
               onClose={this.emitClose}
             />

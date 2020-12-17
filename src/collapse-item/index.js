@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 import { raf, doubleRaf } from '../utils/dom/raf';
 
 // Mixins
@@ -35,7 +35,7 @@ export default createComponent({
 
   computed: {
     currentName() {
-      return isDef(this.name) ? this.name : this.index;
+      return this.name ?? this.index;
     },
 
     expanded() {
@@ -46,7 +46,7 @@ export default createComponent({
       const { value, accordion } = this.parent;
 
       if (
-        process.env.NODE_ENV !== 'production' &&
+        process.env.NODE_ENV === 'development' &&
         !accordion &&
         !Array.isArray(value)
       ) {
@@ -105,15 +105,17 @@ export default createComponent({
 
   methods: {
     onClick() {
-      if (this.disabled) {
-        return;
+      if (!this.disabled) {
+        this.toggle();
       }
+    },
 
+    // @exposed-api
+    toggle(expanded = !this.expanded) {
       const { parent, currentName } = this;
       const close = parent.accordion && currentName === parent.value;
       const name = close ? '' : currentName;
-
-      parent.switch(name, !this.expanded);
+      this.parent.switch(name, expanded);
     },
 
     onTransitionEnd() {

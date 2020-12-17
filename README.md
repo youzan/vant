@@ -16,10 +16,7 @@
 </p>
 
 <p align="center">
-  🔥 <a href="https://youzan.github.io/vant">文档网站</a>
-  &nbsp;
-  &nbsp;
-  💡 <a href="https://vant-contrib.gitee.io/vant">国内镜像文档</a>
+  🔥 <a href="https://vant-contrib.gitee.io/vant">文档网站</a>
   &nbsp;
   &nbsp;
   🇨🇳 <a href="./README.zh-CN.md">中文版介绍</a>
@@ -32,10 +29,12 @@
 
 ## Features
 
-- 60+ Reusable components
-- 90% Unit test coverage
+- 65+ Reusable components
+- 1kb Component average size (min+gzip)
+- 90%+ Unit test coverage
 - Extensive documentation and demos
-- Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+- Support Vue 2 & Vue 3
+- Support Tree Shaking
 - Support Custom Theme
 - Support i18n
 - Support TS
@@ -44,11 +43,11 @@
 ## Install
 
 ```bash
-# Using npm
+# Install vant 2.x for Vue 2 project
 npm i vant -S
 
-# Using yarn
-yarn add vant
+# Install vant 3.x for Vue 3 project
+npm i vant@next -S
 ```
 
 ## Quickstart
@@ -93,12 +92,6 @@ Modern browsers and Android 4.0+, iOS 8.0+.
 You can scan the following QR code to access the demo：
 
 <img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="220" height="220" >
-
-## Wechat Group
-
-Scan the qrcode to join our wechat discussion group, please note that you want to join Vant discussion group.
-
-<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
 
 ## LICENSE
 

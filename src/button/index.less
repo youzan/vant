@@ -151,17 +151,24 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+
+    // fix icon vertical align
+    // see: https://github.com/youzan/vant/issues/7617
+    &::before {
+      content: ' ';
+    }
   }
 
   &__icon {
-    min-width: 1em;
     font-size: 1.2em;
     line-height: inherit;
   }
 
   &__icon + &__text,
-  &__loading + &__text {
-    margin-left: 5px;
+  &__loading + &__text,
+  &__text + &__icon,
+  &__text + &__loading {
+    margin-left: @padding-base;
   }
 
   &--hairline {

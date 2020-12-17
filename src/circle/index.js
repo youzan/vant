@@ -1,6 +1,5 @@
 import { createNamespace, isObject, addUnit } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
-import { BLUE, WHITE } from '../utils/constant';
 
 const [createComponent, bem] = createNamespace('circle');
 
@@ -22,6 +21,9 @@ function getPath(clockwise, viewBoxSize) {
 export default createComponent({
   props: {
     text: String,
+    size: [Number, String],
+    color: [String, Object],
+    layerColor: String,
     strokeLinecap: String,
     value: {
       type: Number,
@@ -31,10 +33,6 @@ export default createComponent({
       type: [Number, String],
       default: 0,
     },
-    size: {
-      type: [Number, String],
-      default: 100,
-    },
     fill: {
       type: String,
       default: 'none',
@@ -42,14 +40,6 @@ export default createComponent({
     rate: {
       type: [Number, String],
       default: 100,
-    },
-    layerColor: {
-      type: String,
-      default: WHITE,
-    },
-    color: {
-      type: [String, Object],
-      default: BLUE,
     },
     strokeWidth: {
       type: [Number, String],
@@ -83,6 +73,14 @@ export default createComponent({
     },
 
     layerStyle() {
+      return {
+        fill: `${this.fill}`,
+        stroke: `${this.layerColor}`,
+        strokeWidth: `${this.strokeWidth}px`,
+      };
+    },
+
+    hoverStyle() {
       const offset = (PERIMETER * this.value) / 100;
 
       return {
@@ -90,14 +88,6 @@ export default createComponent({
         strokeWidth: `${+this.strokeWidth + 1}px`,
         strokeLinecap: this.strokeLinecap,
         strokeDasharray: `${offset}px ${PERIMETER}px`,
-      };
-    },
-
-    hoverStyle() {
-      return {
-        fill: `${this.fill}`,
-        stroke: `${this.layerColor}`,
-        strokeWidth: `${this.strokeWidth}px`,
       };
     },
 
@@ -167,11 +157,11 @@ export default createComponent({
       <div class={bem()} style={this.style}>
         <svg viewBox={`0 0 ${this.viewBoxSize} ${this.viewBoxSize}`}>
           {this.LinearGradient}
-          <path class={bem('hover')} style={this.hoverStyle} d={this.path} />
+          <path class={bem('layer')} style={this.layerStyle} d={this.path} />
           <path
             d={this.path}
-            class={bem('layer')}
-            style={this.layerStyle}
+            class={bem('hover')}
+            style={this.hoverStyle}
             stroke={this.gradient ? `url(#${this.uid})` : this.color}
           />
         </svg>

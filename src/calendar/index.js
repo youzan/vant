@@ -1,4 +1,5 @@
 // Utils
+import { raf } from '../utils/dom/raf';
 import { isDate } from '../utils/validate/date';
 import { getScrollTop } from '../utils/dom/scroll';
 import {
@@ -8,7 +9,6 @@ import {
   copyDates,
   getNextDay,
   compareDay,
-  ROW_HEIGHT,
   calcDateNum,
   compareMonth,
   createComponent,
@@ -27,7 +27,9 @@ export default createComponent({
     title: String,
     color: String,
     value: Boolean,
+    readonly: Boolean,
     formatter: Function,
+    rowHeight: [Number, String],
     confirmText: String,
     rangePrompt: String,
     defaultDate: [Date, Array],
@@ -49,10 +51,6 @@ export default createComponent({
     poppable: {
       type: Boolean,
       default: true,
-    },
-    rowHeight: {
-      type: [Number, String],
-      default: ROW_HEIGHT,
     },
     maxRange: {
       type: [Number, String],
@@ -135,12 +133,13 @@ export default createComponent({
     buttonDisabled() {
       const { type, currentDate } = this;
 
-      if (type === 'range') {
-        return !currentDate[0] || !currentDate[1];
-      }
-
-      if (type === 'multiple') {
-        return !currentDate.length;
+      if (currentDate) {
+        if (type === 'range') {
+          return !currentDate[0] || !currentDate[1];
+        }
+        if (type === 'multiple') {
+          return !currentDate.length;
+        }
       }
 
       return !currentDate;
@@ -189,14 +188,19 @@ export default createComponent({
           this.$refs.body.getBoundingClientRect().height
         );
         this.onScroll();
+        this.scrollIntoView();
       });
-      this.scrollIntoView();
     },
 
     // scroll to current month
     scrollIntoView() {
-      this.$nextTick(() => {
+      raf(() => {
         const { currentDate } = this;
+
+        if (!currentDate) {
+          return;
+        }
+
         const targetDate =
           this.type === 'single' ? currentDate : currentDate[0];
         const displayed = this.value || !this.poppable;
@@ -220,6 +224,10 @@ export default createComponent({
 
     getInitialDate() {
       const { type, minDate, maxDate, defaultDate } = this;
+
+      if (defaultDate === null) {
+        return defaultDate;
+      }
 
       let defaultVal = new Date();
 
@@ -246,35 +254,46 @@ export default createComponent({
     onScroll() {
       const { body, months } = this.$refs;
       const top = getScrollTop(body);
+      const bottom = top + this.bodyHeight;
       const heights = months.map((item) => item.getHeight());
       const heightSum = heights.reduce((a, b) => a + b, 0);
 
       // iOS scroll bounce may exceed the range
-      let bottom = top + this.bodyHeight;
       if (bottom > heightSum && top > 0) {
-        bottom = heightSum;
+        return;
       }
 
       let height = 0;
       let currentMonth;
+      const visibleRange = [-1, -1];
 
       for (let i = 0; i < months.length; i++) {
         const visible = height <= bottom && height + heights[i] >= top;
 
-        if (visible && !currentMonth) {
-          currentMonth = months[i];
+        if (visible) {
+          visibleRange[1] = i;
+
+          if (!currentMonth) {
+            currentMonth = months[i];
+            visibleRange[0] = i;
+          }
+
+          if (!months[i].showed) {
+            months[i].showed = true;
+            this.$emit('month-show', {
+              date: months[i].date,
+              title: months[i].title,
+            });
+          }
         }
 
-        if (!months[i].visible && visible) {
-          this.$emit('month-show', {
-            date: months[i].date,
-            title: months[i].title,
-          });
-        }
-
-        months[i].visible = visible;
         height += heights[i];
       }
+
+      months.forEach((month, index) => {
+        month.visible =
+          index >= visibleRange[0] - 1 && index <= visibleRange[1] + 1;
+      });
 
       /* istanbul ignore else */
       if (currentMonth) {
@@ -283,10 +302,19 @@ export default createComponent({
     },
 
     onClickDay(item) {
+      if (this.readonly) {
+        return;
+      }
+
       const { date } = item;
       const { type, currentDate } = this;
 
       if (type === 'range') {
+        if (!currentDate) {
+          this.select([date, null]);
+          return;
+        }
+
         const [startDay, endDay] = currentDate;
 
         if (startDay && !endDay) {
@@ -303,8 +331,12 @@ export default createComponent({
           this.select([date, null]);
         }
       } else if (type === 'multiple') {
-        let selectedIndex;
+        if (!currentDate) {
+          this.select([date]);
+          return;
+        }
 
+        let selectedIndex;
         const selected = this.currentDate.some((dateItem, index) => {
           const equal = compareDay(dateItem, date) === 0;
           if (equal) {

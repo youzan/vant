@@ -100,6 +100,8 @@ export default {
 };
 ```
 
+> Tips: 默认情况下，日期区间的起止时间不能为同一天，可以通过设置 allow-same-day 属性来允许选择同一天。
+
 ### 快捷选择
 
 将 `show-confirm` 设置为 `false` 可以隐藏确认按钮，这种情况下选择完成后会立即触发 `confirm` 事件。
@@ -113,7 +115,7 @@ export default {
 通过 `color` 属性可以自定义日历的颜色，对选中日期和底部按钮生效。
 
 ```html
-<van-calendar v-model="show" color="#07c160" />
+<van-calendar v-model="show" color="#1989fa" />
 ```
 
 ### 自定义日期范围
@@ -234,7 +236,7 @@ export default {
 | color | 主题色，对底部按钮和选中日期生效 | _string_ | `#ee0a24` |
 | min-date | 可选择的最小日期 | _Date_ | 当前日期 |
 | max-date | 可选择的最大日期 | _Date_ | 当前日期的六个月后 |
-| default-date | 默认选中的日期，`type`为`multiple`或`range`时为数组 | _Date \| Date[]_ | 今天 |
+| default-date | 默认选中的日期，`type` 为 `multiple` 或 `range` 时为数组，传入 `null` 表示默认不选择 | _Date \| Date[] \| null_ | 今天 |
 | row-height | 日期行高 | _number \| string_ | `64` |
 | formatter | 日期格式化函数 | _(day: Day) => Day_ | - |
 | poppable | 是否以弹层的形式展示日历 | _boolean_ | `true` |
@@ -243,6 +245,7 @@ export default {
 | show-title `v2.5.5` | 是否展示日历标题 | _boolean_ | `true` |
 | show-subtitle `v2.5.5` | 是否展示日历副标题（年月） | _boolean_ | `true` |
 | show-confirm | 是否展示确认按钮 | _boolean_ | `true` |
+| readonly `v2.10.5` | 是否为只读状态，只读状态下不能选择日期 | _boolean_ | `false` |
 | confirm-text | 确认按钮的文字 | _string_ | `确定` |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | _string_ | `确定` |
 | first-day-of-week `v2.9.2` | 设置周起始日 | _0-6_ | `0` |
@@ -258,7 +261,7 @@ export default {
 | round | 是否显示圆角弹窗 | _boolean_ | `true` |
 | close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 | get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### Range Props
@@ -269,7 +272,7 @@ export default {
 | --- | --- | --- | --- |
 | max-range `v2.4.3` | 日期区间最多可选天数 | _number \| string_ | 无限制 |
 | range-prompt `v2.4.3` | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
-| allow-same-day `v2.5.6` | 是否允许日期范围的起止时间为同一天 | _boolean_ | `fasle` |
+| allow-same-day `v2.5.6` | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 
 ### Multiple Props
 
@@ -315,11 +318,43 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 Calendar 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 Calendar 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明                   | 参数 | 返回值 |
 | ------ | ---------------------- | ---- | ------ |
 | reset  | 重置选中的日期到默认值 | -    | -      |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| @calendar-background-color | `@white` | - |
+| @calendar-popup-height | `80%` | - |
+| @calendar-header-box-shadow | `0 2px 10px rgba(125, 126, 128, 0.16)` | - |
+| @calendar-header-title-height | `44px` | - |
+| @calendar-header-title-font-size | `@font-size-lg` | - |
+| @calendar-header-subtitle-font-size | `@font-size-md` | - |
+| @calendar-weekdays-height | `30px` | - |
+| @calendar-weekdays-font-size | `@font-size-sm` | - |
+| @calendar-month-title-font-size | `@font-size-md` | - |
+| @calendar-month-mark-color | `fade(@gray-2, 80%)` | - |
+| @calendar-month-mark-font-size | `160px` | - |
+| @calendar-day-height | `64px` | - |
+| @calendar-day-font-size | `@font-size-lg` | - |
+| @calendar-range-edge-color | `@white` | - |
+| @calendar-range-edge-background-color | `@red` | - |
+| @calendar-range-middle-color | `@red` | - |
+| @calendar-range-middle-background-opacity | `0.1` | - |
+| @calendar-selected-day-size | `54px` | - |
+| @calendar-selected-day-color | `@white` | - |
+| @calendar-info-font-size | `@font-size-xs` | - |
+| @calendar-info-line-height | `@line-height-xs` | - |
+| @calendar-selected-day-background-color | `@red` | - |
+| @calendar-day-disabled-color | `@gray-5` | - |
+| @calendar-confirm-button-height | `36px` | - |
+| @calendar-confirm-button-margin | `7px 0` | - |
 
 ## 常见问题
 

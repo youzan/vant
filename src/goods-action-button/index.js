@@ -47,7 +47,6 @@ export default createComponent({
           },
           this.type,
         ])}
-        square
         size="large"
         type={this.type}
         icon={this.icon}

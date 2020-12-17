@@ -8,19 +8,20 @@
     :placeholder="t('placeholder')"
     @click="showArea = true"
   >
-    <van-popup
-      v-model="showArea"
-      round
-      slot="extra"
-      position="bottom"
-      get-container="body"
-    >
-      <van-area
-        :area-list="t('areaList')"
-        @confirm="onConfirm"
-        @cancel="onCancel"
-      />
-    </van-popup>
+    <template #extra>
+      <van-popup
+        v-model="showArea"
+        round
+        position="bottom"
+        get-container="body"
+      >
+        <van-area
+          :area-list="t('areaList')"
+          @confirm="onConfirm"
+          @cancel="onCancel"
+        />
+      </van-popup>
+    </template>
   </van-field>
 </template>
 
@@ -51,7 +52,10 @@ export default {
 
   methods: {
     onConfirm(values) {
-      this.value = values.map((item) => item.name).join('/');
+      this.value = values
+        .filter((item) => !!item)
+        .map((item) => item.name)
+        .join('/');
       this.showArea = false;
     },
 

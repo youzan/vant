@@ -14,14 +14,12 @@
 
     <demo-block :title="t('customStyle')">
       <van-count-down :time="time">
-        <template v-slot="currentTime">
-          <div>
-            <span class="block">{{ currentTime.hours }}</span>
-            <span class="colon">:</span>
-            <span class="block">{{ currentTime.minutes }}</span>
-            <span class="colon">:</span>
-            <span class="block">{{ currentTime.seconds }}</span>
-          </div>
+        <template #default="currentTime">
+          <span class="block">{{ currentTime.hours }}</span>
+          <span class="colon">:</span>
+          <span class="block">{{ currentTime.minutes }}</span>
+          <span class="colon">:</span>
+          <span class="block">{{ currentTime.seconds }}</span>
         </template>
       </van-count-down>
     </demo-block>

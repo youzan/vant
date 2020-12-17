@@ -19,8 +19,8 @@
     <demo-block :title="t('customColor')">
       <van-switch
         v-model="checked3"
-        active-color="#07c160"
-        inactive-color="#ee0a24"
+        active-color="#ee0a24"
+        inactive-color="#dcdee0"
       />
     </demo-block>
 
@@ -30,7 +30,9 @@
 
     <demo-block :title="t('withCell')">
       <van-cell center :title="t('title')">
-        <van-switch v-model="checked5" slot="right-icon" size="24" />
+        <template #right-icon>
+          <van-switch v-model="checked5" size="24" />
+        </template>
       </van-cell>
     </demo-block>
   </demo-section>

@@ -18,6 +18,8 @@ import { PortalMixin } from '../portal';
 import { CloseOnPopstateMixin } from '../close-on-popstate';
 
 export const popupMixinProps = {
+  // Initial rendering animation
+  transitionAppear: Boolean,
   // whether to show popup
   value: Boolean,
   // whether to show overlay
@@ -26,7 +28,7 @@ export const popupMixinProps = {
   overlayStyle: Object,
   // overlay custom class name
   overlayClass: String,
-  // whether to close popup when click overlay
+  // whether to close popup when overlay is clicked
   closeOnClickOverlay: Boolean,
   // z-index
   zIndex: [Number, String],

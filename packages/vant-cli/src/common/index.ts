@@ -6,12 +6,9 @@ import {
   readFileSync,
   outputFileSync,
 } from 'fs-extra';
-import {
-  SRC_DIR,
-  getVantConfig,
-  ROOT_WEBPACK_CONFIG_FILE,
-  ROOT_POSTCSS_CONFIG_FILE,
-} from './constant';
+import merge from 'webpack-merge';
+import { SRC_DIR, getVantConfig, ROOT_WEBPACK_CONFIG_FILE } from './constant';
+import { WebpackConfig } from './types';
 
 export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;
@@ -37,9 +34,9 @@ export function getComponents() {
   const EXCLUDES = ['.DS_Store'];
   const dirs = readdirSync(SRC_DIR);
   return dirs
-    .filter(dir => !EXCLUDES.includes(dir))
-    .filter(dir =>
-      ENTRY_EXTS.some(ext => {
+    .filter((dir) => !EXCLUDES.includes(dir))
+    .filter((dir) =>
+      ENTRY_EXTS.some((ext) => {
         const path = join(SRC_DIR, dir, `index.${ext}`);
         if (existsSync(path)) {
           return hasDefaultExport(readFileSync(path, 'utf-8'));
@@ -99,26 +96,20 @@ export function normalizePath(path: string): string {
   return path.replace(/\\/g, '/');
 }
 
-export function getWebpackConfig(): object {
+export function getWebpackConfig(defaultConfig: WebpackConfig): object {
   if (existsSync(ROOT_WEBPACK_CONFIG_FILE)) {
     const config = require(ROOT_WEBPACK_CONFIG_FILE);
 
+    // 如果是函数形式，可能并不仅仅是添加额外的处理流程，而是在原有流程上进行修改
+    // 比如修改markdown-loader,添加options.enableMetaData
     if (typeof config === 'function') {
-      return config();
+      return merge(defaultConfig, config(defaultConfig));
     }
 
-    return config;
+    return merge(defaultConfig, config);
   }
 
-  return {};
-}
-
-export function getPostcssConfig(): object {
-  if (existsSync(ROOT_POSTCSS_CONFIG_FILE)) {
-    return require(ROOT_POSTCSS_CONFIG_FILE);
-  }
-
-  return {};
+  return defaultConfig;
 }
 
 export type ModuleEnv = 'esmodule' | 'commonjs';

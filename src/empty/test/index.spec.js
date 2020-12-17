@@ -40,3 +40,20 @@ test('render svg when image is network', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('image-size prop', () => {
+  const wrapper = mount(Empty, {
+    propsData: {
+      imageSize: 50,
+    },
+  });
+
+  const image = wrapper.find('.van-empty__image').element;
+
+  expect(image.style.width).toEqual('50px');
+  expect(image.style.height).toEqual('50px');
+
+  wrapper.setProps({ imageSize: '1vw' });
+  expect(image.style.width).toEqual('1vw');
+  expect(image.style.height).toEqual('1vw');
+});

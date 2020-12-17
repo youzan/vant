@@ -9,7 +9,7 @@ export const isServer: boolean = Vue.prototype.$isServer;
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 export function noop() {}
 
-export function isDef(val: unknown): boolean {
+export function isDef<T>(val: T): val is NonNullable<T> {
   return val !== undefined && val !== null;
 }
 
@@ -30,7 +30,7 @@ export function get(object: any, path: string): any {
   let result = object;
 
   keys.forEach((key) => {
-    result = isDef(result[key]) ? result[key] : '';
+    result = result[key] ?? '';
   });
 
   return result;

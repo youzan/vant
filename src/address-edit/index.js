@@ -4,13 +4,14 @@ import { isMobile } from '../utils/validate/mobile';
 
 // Components
 import Area from '../area';
+import Cell from '../cell';
 import Field from '../field';
 import Popup from '../popup';
 import Toast from '../toast';
 import Button from '../button';
 import Dialog from '../dialog';
 import Detail from './Detail';
-import SwitchCell from '../switch-cell';
+import Switch from '../switch';
 
 const [createComponent, bem, t] = createNamespace('address-edit');
 
@@ -111,6 +112,12 @@ export default createComponent({
         return arr.filter((text) => text).join('/');
       }
       return '';
+    },
+
+    // hide bottom field when use search && detail get focused
+    hideBottomFields() {
+      const { searchResult } = this;
+      return searchResult && searchResult.length && this.detailFocused;
     },
   },
 
@@ -258,15 +265,39 @@ export default createComponent({
         this.detailFocused = false;
       });
     },
+
+    genSetDefaultCell(h) {
+      if (this.showSetDefault) {
+        const slots = {
+          'right-icon': () => (
+            <Switch
+              vModel={this.data.isDefault}
+              size="24"
+              onChange={(event) => {
+                this.$emit('change-default', event);
+              }}
+            />
+          ),
+        };
+
+        return (
+          <Cell
+            vShow={!this.hideBottomFields}
+            center
+            title={t('defaultAddress')}
+            class={bem('default')}
+            scopedSlots={slots}
+          />
+        );
+      }
+
+      return h();
+    },
   },
 
-  render() {
-    const { data, errorInfo, searchResult, disableArea } = this;
+  render(h) {
+    const { data, errorInfo, disableArea, hideBottomFields } = this;
     const onFocus = (name) => () => this.onFocus(name);
-
-    // hide bottom field when use search && detail get focused
-    const hideBottomFields =
-      searchResult && searchResult.length && this.detailFocused;
 
     return (
       <div class={bem()}>
@@ -334,17 +365,7 @@ export default createComponent({
           )}
           {this.slots()}
         </div>
-        {this.showSetDefault && (
-          <SwitchCell
-            class={bem('default')}
-            vModel={data.isDefault}
-            vShow={!hideBottomFields}
-            title={t('defaultAddress')}
-            onChange={(event) => {
-              this.$emit('change-default', event);
-            }}
-          />
-        )}
+        {this.genSetDefaultCell(h)}
         <div vShow={!hideBottomFields} class={bem('buttons')}>
           <Button
             block

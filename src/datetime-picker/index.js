@@ -24,6 +24,7 @@ export default createComponent({
       <Component
         ref="root"
         class={bem()}
+        scopedSlots={this.$scopedSlots}
         {...{
           props: this.$props,
           on: this.$listeners,

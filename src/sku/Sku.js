@@ -10,7 +10,7 @@ import SkuRowPropItem from './components/SkuRowPropItem';
 import SkuStepper from './components/SkuStepper';
 import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 import {
   isAllSelected,
   isSkuChoosable,
@@ -204,7 +204,7 @@ export default createComponent({
       let skuComb = null;
       if (this.isSkuCombSelected) {
         if (this.hasSku) {
-          skuComb = getSkuComb(this.sku.list, this.selectedSku);
+          skuComb = getSkuComb(this.skuList, this.selectedSku);
         } else {
           skuComb = {
             id: this.sku.collection_id,
@@ -259,6 +259,10 @@ export default createComponent({
 
     skuTree() {
       return this.sku.tree || [];
+    },
+
+    skuList() {
+      return this.sku.list || [];
     },
 
     propList() {
@@ -361,7 +365,7 @@ export default createComponent({
     resetStepper() {
       const { skuStepper } = this.$refs;
       const { selectedNum } = this.initialSku;
-      const num = isDef(selectedNum) ? selectedNum : this.startSaleNum;
+      const num = selectedNum ?? this.startSaleNum;
       // 用来缓存不合法的情况
       this.stepperError = null;
 
@@ -388,7 +392,7 @@ export default createComponent({
           item.v.length === 1 ? item.v[0].id : this.initialSku[key];
         if (
           valueId &&
-          isSkuChoosable(this.sku.list, this.selectedSku, { key, valueId })
+          isSkuChoosable(this.skuList, this.selectedSku, { key, valueId })
         ) {
           this.selectedSku[key] = valueId;
         }
@@ -643,6 +647,7 @@ export default createComponent({
 
     const {
       sku,
+      skuList,
       goods,
       price,
       lazyLoad,
@@ -714,7 +719,7 @@ export default createComponent({
             <SkuRow skuRow={skuTreeItem} ref="skuRows" refInFor>
               {skuTreeItem.v.map((skuValue) => (
                 <SkuRowItem
-                  skuList={sku.list}
+                  skuList={skuList}
                   lazyLoad={lazyLoad}
                   skuValue={skuValue}
                   skuKeyStr={skuTreeItem.k_s}

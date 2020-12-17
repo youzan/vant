@@ -2,7 +2,7 @@
 
 ### 废弃提示
 
-<b>由于使用场景有限，Panel 组件将在 3.0 版本中废弃</b>，请直接使用 Cell 和 Button 组件代替
+<b>由于使用场景有限，Panel 组件将在 3.0 版本中废弃</b>，请直接使用 Cell 和 Button 组件代替。
 
 ### 引入
 
@@ -17,7 +17,7 @@ Vue.use(Panel);
 
 ### 基础用法
 
-面板只是一个容器，里面可以放入自定义的内容
+面板只是一个容器，里面可以放入自定义的内容。
 
 ```html
 <van-panel title="标题" desc="描述信息" status="状态">
@@ -27,7 +27,7 @@ Vue.use(Panel);
 
 ### 高级用法
 
-使用`slot`自定义内容
+使用插槽自定义内容。
 
 ```html
 <van-panel title="标题" desc="描述信息" status="状态">
@@ -57,3 +57,13 @@ Vue.use(Panel);
 | default | 自定义内容    |
 | header  | 自定义 header |
 | footer  | 自定义 footer |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                      | 默认值                    | 描述 |
+| ------------------------- | ------------------------- | ---- |
+| @panel-background-color   | `@white`                  | -    |
+| @panel-header-value-color | `@red`                    | -    |
+| @panel-footer-padding     | `@padding-xs @padding-md` | -    |

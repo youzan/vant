@@ -3,7 +3,7 @@
 .van-contact-list {
   box-sizing: border-box;
   height: 100%;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 
   &__item {
     padding: @contact-list-item-padding;
@@ -41,12 +41,14 @@
     bottom: 0;
     left: 0;
     z-index: @contact-list-add-button-z-index;
-    padding: 5px 16px;
+    padding: 0 @padding-md;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
     background-color: @white;
   }
 
   &__add {
     height: 40px;
-    line-height: 38px;
+    margin: 5px 0;
   }
 }

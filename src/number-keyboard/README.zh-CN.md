@@ -2,7 +2,7 @@
 
 ### 介绍
 
-数字虚拟键盘，可以配合[密码输入框组件](#/zh-CN/password-input)或自定义的输入框组件使用
+虚拟数字键盘，可以配合[密码输入框组件](#/zh-CN/password-input)或自定义的输入框组件使用。
 
 ### 引入
 
@@ -17,12 +17,10 @@ Vue.use(NumberKeyboard);
 
 ### 默认样式
 
-数字键盘提供了 `input`、`delete`、`blur` 事件，分别对应输入内容、删除内容和失去焦点的动作
+数字键盘提供了 `input`、`delete`、`blur` 事件，分别对应输入内容、删除内容和失去焦点的动作。
 
 ```html
-<van-cell @touchstart.native.stop="show = true">
-  弹出默认键盘
-</van-cell>
+<van-cell @touchstart.native.stop="show = true">弹出默认键盘</van-cell>
 <van-number-keyboard
   :show="show"
   @blur="show = false"
@@ -55,7 +53,7 @@ export default {
 
 ### 带右侧栏的键盘
 
-将 theme 属性设置为 `custom` 来展示键盘的右侧栏，常用于输入金额的场景
+将 theme 属性设置为 `custom` 来展示键盘的右侧栏，常用于输入金额的场景。
 
 ```html
 <van-number-keyboard
@@ -71,7 +69,7 @@ export default {
 
 ### 身份证号键盘
 
-通过 `extra-key` 属性可以设置左下角按键内容，比如需要输入身份证号时，可以将 `extra-key` 设置为 `X`
+通过 `extra-key` 属性可以设置左下角按键内容，比如需要输入身份证号时，可以将 `extra-key` 设置为 `X`。
 
 ```html
 <van-cell plain type="primary" @touchstart.native.stop="show = true">
@@ -89,7 +87,7 @@ export default {
 
 ### 键盘标题
 
-通过 `title` 属性可以设置键盘标题
+通过 `title` 属性可以设置键盘标题。
 
 ```html
 <van-cell plain type="info" @touchstart.native.stop="show = true">
@@ -108,7 +106,7 @@ export default {
 
 ### 配置多个按键
 
-当 theme 为 `custom` 时，支持以数组的形式配置两个 `extra-key`
+当 theme 为 `custom` 时，支持以数组的形式配置两个 `extra-key`。
 
 ```html
 <van-cell plain type="primary" @touchstart.native.stop="show = true">
@@ -126,7 +124,7 @@ export default {
 
 ### 双向绑定
 
-可以通过 `v-model` 绑定键盘当前输入值
+可以通过 `v-model` 绑定键盘当前输入值。
 
 ```html
 <van-field
@@ -160,11 +158,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model (value) `v2.0.2` | 当前输入值 | _string_ | - |
+| v-model (value) | 当前输入值 | _string_ | - |
 | show | 是否显示键盘 | _boolean_ | - |
 | title | 键盘标题 | _string_ | - |
 | theme | 样式风格，可选值为 `custom` | _string_ | `default` |
-| maxlength `v2.0.2` | 输入值最大长度 | _number \| string_ | - |
+| maxlength | 输入值最大长度 | _number \| string_ | - |
 | transition | 是否开启过场动画 | _boolean_ | `true` |
 | z-index | 键盘 z-index 层级 | _number \| string_ | `100` |
 | extra-key `v2.8.2` | 底部额外按键的内容 | _string \| string[]_ | `''` |
@@ -174,7 +172,7 @@ export default {
 | show-delete-key `v2.5.9` | 是否展示删除图标 | _boolean_ | `true` |
 | hide-on-click-outside | 点击外部时是否收起键盘 | _boolean_ | `true` |
 | get-container `v2.10.0` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 
 ### Events
 
@@ -195,8 +193,33 @@ export default {
 | extra-key  | 自定义左下角按键内容 |
 | title-left | 自定义标题栏左侧内容 |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                       | 默认值             | 描述 |
+| ------------------------------------------ | ------------------ | ---- |
+| @number-keyboard-background-color          | `@gray-2`          | -    |
+| @number-keyboard-key-height                | `48px`             | -    |
+| @number-keyboard-key-font-size             | `28px`             | -    |
+| @number-keyboard-key-active-color          | `@gray-3`          | -    |
+| @number-keyboard-delete-font-size          | `@font-size-lg`    | -    |
+| @number-keyboard-title-color               | `@gray-7`          | -    |
+| @number-keyboard-title-height              | `34px`             | -    |
+| @number-keyboard-title-font-size           | `@font-size-lg`    | -    |
+| @number-keyboard-close-padding             | `0 @padding-md`    | -    |
+| @number-keyboard-close-color               | `@text-link-color` | -    |
+| @number-keyboard-close-font-size           | `@font-size-md`    | -    |
+| @number-keyboard-button-text-color         | `@white`           | -    |
+| @number-keyboard-button-background-color   | `@blue`            | -    |
+| @number-keyboard-cursor-color              | `@text-color`      | -    |
+| @number-keyboard-cursor-width              | `1px`              | -    |
+| @number-keyboard-cursor-height             | `40%`              | -    |
+| @number-keyboard-cursor-animation-duration | `1s`               | -    |
+| @number-keyboard-z-index                   | `100`              | -    |
+
 ## 常见问题
 
 ### 在桌面端无法操作组件？
 
-参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。

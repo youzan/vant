@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 
 // Mixins
 import { popupMixinProps } from '../mixins/popup';
@@ -7,7 +7,15 @@ import { popupMixinProps } from '../mixins/popup';
 // Components
 import Popup from '../popup';
 
-const PRESET_ICONS = ['qq', 'weibo', 'wechat', 'link', 'qrcode', 'poster'];
+const PRESET_ICONS = [
+  'qq',
+  'link',
+  'weibo',
+  'wechat',
+  'poster',
+  'qrcode',
+  'weapp-qrcode',
+];
 
 const [createComponent, bem, t] = createNamespace('share-sheet');
 
@@ -112,7 +120,7 @@ export default createComponent({
     },
 
     genCancelText() {
-      const cancelText = isDef(this.cancelText) ? this.cancelText : t('cancel');
+      const cancelText = this.cancelText ?? t('cancel');
 
       if (cancelText) {
         return (

@@ -39,7 +39,7 @@ export default {
 
     langConfigs() {
       const { locales = {} } = config.site;
-      return Object.keys(locales).map(key => ({
+      return Object.keys(locales).map((key) => ({
         lang: key,
         label: locales[key].langLabel || '',
       }));
@@ -95,7 +95,6 @@ export default {
 
 .van-doc-intro {
   padding-top: 20px;
-  font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   text-align: center;
 
   p {

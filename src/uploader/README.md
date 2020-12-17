@@ -136,8 +136,8 @@ export default {
 <style>
   .preview-cover {
     position: absolute;
-    box-sizing: border-box;
     bottom: 0;
+    box-sizing: border-box;
     width: 100%;
     padding: 4px;
     color: #fff;
@@ -199,14 +199,14 @@ Use `disabled` prop to disable uploader.
 | --- | --- | --- | --- |
 | v-model (fileList) | List of uploaded files | _FileListItem[]_ | - |
 | accept | Accepted [file type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Unique_file_type_specifiers) | _string_ | `image/*` |
-| name `v2.0.3` | Input name | _number \| string_ | - |
+| name | Input name | _number \| string_ | - |
 | preview-size | Size of preview image | _number \| string_ | `80px` |
-| preview-image `v2.1.5` | Whether to show image preview | _boolean_ | `true` |
-| preview-full-image | Whethe to show full screen image preview when click image | _boolean_ | `true` |
+| preview-image | Whether to show image preview | _boolean_ | `true` |
+| preview-full-image | Whethe to show full screen image preview when image is clicked | _boolean_ | `true` |
 | preview-options `v2.9.3` | Options of full screen image preview，see [ImagePreview](#/en-US/image-preview) | _object_ | - |
 | multiple | Whether to enable multiple selection pictures | _boolean_ | `false` |
 | disabled | Whether to disabled the upload | _boolean_ | `false` |
-| deletable `v2.2.12` | Whether to show delete icon | _boolean_ | `true` |
+| deletable | Whether to show delete icon | _boolean_ | `true` |
 | show-upload `v2.5.6` | Whether to show upload area | _boolean_ | `true` |
 | lazy-load `v2.6.2` | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 | capture | Capture，can be set to `camera` | _string_ | - |
@@ -215,19 +215,19 @@ Use `disabled` prop to disable uploader.
 | before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | _Function_ | - |
 | max-size | Max size of file | _number \| string_ | - |
 | max-count | Max count of image | _number \| string_ | - |
-| result-type `v2.2.7` | Type of file read result, can be set to `file` `text` | _string_ | `dataUrl` |
+| result-type | Type of file read result, can be set to `file` `text` | _string_ | `dataUrl` |
 | upload-text | Upload text | _string_ | - |
-| image-fit `v2.1.5` | Preview image fit mode | _string_ | `cover` |
+| image-fit | Preview image fit mode | _string_ | `cover` |
 | upload-icon `v2.5.4` | Upload icon | _string_ | `photograph` |
 
 ### Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| oversize | Triggered when file size over limit | Same as after-read |
-| click-preview | Triggered when click preview image | Same as after-read |
-| close-preview | Triggered when close full screen image preview | - |
-| delete | Triggered when delete preview file | Same as after-read |
+| oversize | Emitted when file size over limit | Same as after-read |
+| click-preview | Emitted when preview image is clicked | Same as after-read |
+| close-preview | Emitted when the full screen image preview is closed | - |
+| delete | Emitted when preview file is deleted | Same as after-read |
 
 ### Slots
 
@@ -253,9 +253,40 @@ Use `disabled` prop to disable uploader.
 
 ### Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Uploader instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Uploader instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | closeImagePreview | Close full screen image preview | - | - |
 | chooseFile `v2.5.6` | Trigger choosing files, works with the user action context only because of browser security | - | - |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                               | Default Value        | Description |
+| ---------------------------------- | -------------------- | ----------- |
+| @uploader-size                     | `80px`               | -           |
+| @uploader-icon-size                | `24px`               | -           |
+| @uploader-icon-color               | `@gray-4`            | -           |
+| @uploader-text-color               | `@gray-6`            | -           |
+| @uploader-text-font-size           | `@font-size-sm`      | -           |
+| @uploader-upload-background-color  | `@gray-1`            | -           |
+| @uploader-upload-active-color      | `@active-color`      | -           |
+| @uploader-delete-color             | `@white`             | -           |
+| @uploader-delete-icon-size         | `14px`               | -           |
+| @uploader-delete-background-color  | `rgba(0, 0, 0, 0.7)` | -           |
+| @uploader-file-background-color    | `@background-color`  | -           |
+| @uploader-file-icon-size           | `20px`               | -           |
+| @uploader-file-icon-color          | `@gray-7`            | -           |
+| @uploader-file-name-padding        | `0 @padding-base`    | -           |
+| @uploader-file-name-margin-top     | `@padding-xs`        | -           |
+| @uploader-file-name-font-size      | `@font-size-sm`      | -           |
+| @uploader-file-name-text-color     | `@gray-7`            | -           |
+| @uploader-mask-background-color    | `fade(@gray-8, 88%)` | -           |
+| @uploader-mask-icon-size           | `22px`               | -           |
+| @uploader-mask-message-font-size   | `@font-size-sm`      | -           |
+| @uploader-mask-message-line-height | `@line-height-xs`    | -           |
+| @uploader-loading-icon-size        | `22px`               | -           |
+| @uploader-loading-icon-color       | `@white`             | -           |
+| @uploader-disabled-opacity         | `@disabled-opacity`  | -           |

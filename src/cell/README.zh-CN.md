@@ -1,5 +1,9 @@
 # Cell 单元格
 
+### 介绍
+
+单元格为列表中的单个展示项。
+
 ### 引入
 
 ```js
@@ -96,7 +100,7 @@ Vue.use(CellGroup);
 <van-cell title="单元格" icon="shop-o">
   <!-- 使用 right-icon 插槽来自定义右侧图标 -->
   <template #right-icon>
-    <van-icon name="search" class="search=icon" />
+    <van-icon name="search" class="search-icon" />
   </template>
 </van-cell>
 
@@ -177,3 +181,34 @@ Vue.use(CellGroup);
 | icon       | 自定义左侧图标                |
 | right-icon | 自定义右侧按钮，默认为`arrow` |
 | extra      | 自定义单元格最右侧的额外内容  |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                          | 默认值                                | 描述 |
+| ----------------------------- | ------------------------------------- | ---- |
+| @cell-font-size               | `@font-size-md`                       | -    |
+| @cell-line-height             | `24px`                                | -    |
+| @cell-vertical-padding        | `10px`                                | -    |
+| @cell-horizontal-padding      | `@padding-md`                         | -    |
+| @cell-text-color              | `@text-color`                         | -    |
+| @cell-background-color        | `@white`                              | -    |
+| @cell-border-color            | `@border-color`                       | -    |
+| @cell-active-color            | `@active-color`                       | -    |
+| @cell-required-color          | `@red`                                | -    |
+| @cell-label-color             | `@gray-6`                             | -    |
+| @cell-label-font-size         | `@font-size-sm`                       | -    |
+| @cell-label-line-height       | `@line-height-sm`                     | -    |
+| @cell-label-margin-top        | `@padding-base`                       | -    |
+| @cell-value-color             | `@gray-6`                             | -    |
+| @cell-icon-size               | `16px`                                | -    |
+| @cell-right-icon-color        | `@gray-6`                             | -    |
+| @cell-large-vertical-padding  | `@padding-sm`                         | -    |
+| @cell-large-title-font-size   | `@font-size-lg`                       | -    |
+| @cell-large-label-font-size   | `@font-size-md`                       | -    |
+| @cell-group-background-color  | `@white`                              | -    |
+| @cell-group-title-color       | `@gray-6`                             | -    |
+| @cell-group-title-padding     | `@padding-md @padding-md @padding-xs` | -    |
+| @cell-group-title-font-size   | `@font-size-md`                       | -    |
+| @cell-group-title-line-height | `16px`                                | -    |

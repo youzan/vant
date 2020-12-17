@@ -1,5 +1,9 @@
 # PullRefresh 下拉刷新
 
+### 介绍
+
+用于提供下拉刷新的交互操作。
+
 ### 引入
 
 ```js
@@ -45,7 +49,7 @@ export default {
 
 ### 成功提示
 
-通过`success-text`可以设置刷新成功后的顶部提示文案
+通过 `success-text` 可以设置刷新成功后的顶部提示文案。
 
 ```html
 <van-pull-refresh
@@ -59,7 +63,7 @@ export default {
 
 ### 自定义提示
 
-通过插槽可以自定义下拉刷新过程中的提示内容
+通过插槽可以自定义下拉刷新过程中的提示内容。
 
 ```html
 <van-pull-refresh v-model="isLoading" :head-height="80" @refresh="onRefresh">
@@ -118,7 +122,7 @@ export default {
 
 ### Slots
 
-| 名称    | 说明                 | SlotProps                  |
+| 名称    | 说明                 | 参数                       |
 | ------- | -------------------- | -------------------------- |
 | default | 自定义内容           | -                          |
 | normal  | 非下拉状态时顶部内容 | -                          |
@@ -127,8 +131,26 @@ export default {
 | loading | 加载过程中顶部内容   | { distance: 当前下拉距离 } |
 | success | 刷新成功提示内容     | -                          |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                          | 默认值          | 描述 |
+| ----------------------------- | --------------- | ---- |
+| @pull-refresh-head-height     | `50px`          | -    |
+| @pull-refresh-head-font-size  | `@font-size-md` | -    |
+| @pull-refresh-head-text-color | `@gray-6`       | -    |
+
 ## 常见问题
+
+### PullReresh 的内容未填满屏幕时，只有一部分区域可以下拉？
+
+默认情况下，下拉区域的高度是和内容高度保持一致的，如果需要让下拉区域始终为全屏，可以给 PullRefresh 设置一个与屏幕大小相等的最小高度：
+
+```html
+<van-pull-refresh style="min-height: 100vh;" />
+```
 
 ### 在桌面端无法操作组件？
 
-参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。

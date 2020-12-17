@@ -133,7 +133,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type `v2.1.6` | 类型，可选值为 `primary` `success` `warning` | _string_ | `danger` |
+| type | 类型，可选值为 `primary` `success` `warning` | _string_ | `danger` |
 | message | 展示文案，支持通过`\n`换行 | _string_ | - |
 | duration | 展示时长(ms)，值为 0 时，notify 不会消失 | _number \| string_ | `3000` |
 | color | 字体颜色 | _string_ | `white` |
@@ -142,3 +142,18 @@ export default {
 | onClick | 点击时的回调函数 | _Function_ | - |
 | onOpened | 完全展示后的回调函数 | _Function_ | - |
 | onClose | 关闭时的回调函数 | _Function_ | - |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值                    | 描述 |
+| -------------------------------- | ------------------------- | ---- |
+| @notify-text-color               | `@white`                  | -    |
+| @notify-padding                  | `@padding-xs @padding-md` | -    |
+| @notify-font-size                | `@font-size-md`           | -    |
+| @notify-line-height              | `@line-height-md`         | -    |
+| @notify-primary-background-color | `@blue`                   | -    |
+| @notify-success-background-color | `@green`                  | -    |
+| @notify-danger-background-color  | `@red`                    | -    |
+| @notify-warning-background-color | `@orange`                 | -    |

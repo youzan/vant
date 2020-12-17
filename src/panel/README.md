@@ -53,3 +53,13 @@ Vue.use(Panel);
 | default | Default slot  |
 | header  | Custom header |
 | footer  | Custom footer |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                      | Default Value             | Description |
+| ------------------------- | ------------------------- | ----------- |
+| @panel-background-color   | `@white`                  | -           |
+| @panel-header-value-color | `@red`                    | -           |
+| @panel-footer-padding     | `@padding-xs @padding-md` | -           |

@@ -64,13 +64,13 @@ exports[`renders demo correctly 1`] = `
         <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
       </div>
       <div class="van-calendar__body">
-        <div class="van-calendar__month" style="padding-bottom: 320px;">
+        <div class="van-calendar__month">
           <div role="grid" class="van-calendar__days">
-            <div class="van-calendar__month-mark">1</div>
+            <div class="van-calendar__month-mark" style="">1</div>
             <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="margin-left: 0%;">1</div>
-            <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">2</div>
-            <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">3</div>
-            <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">4</div>
+            <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">2</div>
+            <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">3</div>
+            <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">4</div>
             <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">5</div>
             <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">6</div>
             <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">7</div>
@@ -102,14 +102,14 @@ exports[`renders demo correctly 1`] = `
             <div role="gridcell" tabindex="-1" class="van-calendar__day">31</div>
           </div>
         </div>
-        <div class="van-calendar__month" style="padding-bottom: 320px;">
+        <div class="van-calendar__month">
           <div class="van-calendar__month-title">2012年2月</div>
           <div role="grid" class="van-calendar__days">
-            <div class="van-calendar__month-mark">2</div>
+            <div class="van-calendar__month-mark" style="">2</div>
             <div role="gridcell" tabindex="-1" class="van-calendar__day" style="margin-left: 42.857142857142854%;">1</div>
-            <div role="gridcell" tabindex="-1" class="van-calendar__day">2</div>
-            <div role="gridcell" tabindex="-1" class="van-calendar__day">3</div>
-            <div role="gridcell" tabindex="-1" class="van-calendar__day">4</div>
+            <div role="gridcell" tabindex="-1" class="van-calendar__day" style="">2</div>
+            <div role="gridcell" tabindex="-1" class="van-calendar__day" style="">3</div>
+            <div role="gridcell" tabindex="-1" class="van-calendar__day" style="">4</div>
             <div role="gridcell" tabindex="-1" class="van-calendar__day">5</div>
             <div role="gridcell" tabindex="-1" class="van-calendar__day">6</div>
             <div role="gridcell" tabindex="-1" class="van-calendar__day">7</div>
@@ -137,14 +137,14 @@ exports[`renders demo correctly 1`] = `
             <div role="gridcell" tabindex="-1" class="van-calendar__day">29</div>
           </div>
         </div>
-        <div class="van-calendar__month" style="padding-bottom: 320px;">
+        <div class="van-calendar__month">
           <div class="van-calendar__month-title">2012年3月</div>
           <div role="grid" class="van-calendar__days">
-            <div class="van-calendar__month-mark">3</div>
+            <div class="van-calendar__month-mark" style="">3</div>
             <div role="gridcell" tabindex="-1" class="van-calendar__day" style="margin-left: 57.142857142857146%;">1</div>
-            <div role="gridcell" tabindex="-1" class="van-calendar__day">2</div>
-            <div role="gridcell" tabindex="-1" class="van-calendar__day">3</div>
-            <div role="gridcell" tabindex="-1" class="van-calendar__day">4</div>
+            <div role="gridcell" tabindex="-1" class="van-calendar__day" style="">2</div>
+            <div role="gridcell" tabindex="-1" class="van-calendar__day" style="">3</div>
+            <div role="gridcell" tabindex="-1" class="van-calendar__day" style="">4</div>
             <div role="gridcell" tabindex="-1" class="van-calendar__day">5</div>
             <div role="gridcell" tabindex="-1" class="van-calendar__day">6</div>
             <div role="gridcell" tabindex="-1" class="van-calendar__day">7</div>

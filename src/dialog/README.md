@@ -30,6 +30,23 @@ Dialog.alert({
 });
 ```
 
+### Confirm dialog
+
+Used to confirm some messages, including a confirm button and a cancel button.
+
+```js
+Dialog.confirm({
+  title: 'Title',
+  message: 'Content',
+})
+  .then(() => {
+    // on confirm
+  })
+  .catch(() => {
+    // on cancel
+  });
+```
+
 ### Round Button Style
 
 Use round button style.
@@ -49,23 +66,6 @@ Dialog.alert({
 }).then(() => {
   // on close
 });
-```
-
-### Confirm dialog
-
-Used to confirm some messages, including a confirm button and a cancel button.
-
-```js
-Dialog.confirm({
-  title: 'Title',
-  message: 'Content',
-})
-  .then(() => {
-    // on confirm
-  })
-  .catch(() => {
-    // on cancel
-  });
 ```
 
 ### Asnyc Close
@@ -138,7 +138,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | title | Title | _string_ | - |
-| width `v2.2.7` | Width | _number \| string_ | `320px` |
+| width | Dialog width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |
 | messageAlign | Message text align，can be set to `left` `right` | _string_ | `center` |
 | theme `v2.10.0` | theme style，can be set to `round` | _string_ | `default` |
@@ -150,14 +150,14 @@ export default {
 | confirmButtonText | Confirm button text | _string_ | `Confirm` |
 | confirmButtonColor | Confirm button color | _string_ | `#ee0a24` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
-| overlayClass `v2.2.7` | Custom overlay class | _string_ | - |
-| overlayStyle `v2.2.7` | Custom overlay style | _object_ | - |
-| closeOnPopstate `v2.0.5` | Whether to close when popstate | _boolean_ | `true` |
-| closeOnClickOverlay | Whether to close when click overlay | _boolean_ | `false` |
+| overlayClass | Custom overlay class | _string_ | - |
+| overlayStyle | Custom overlay style | _object_ | - |
+| closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
+| closeOnClickOverlay | Whether to close when overlay is clicked | _boolean_ | `false` |
 | lockScroll | Whether to lock body scroll | _boolean_ | `true` |
 | allowHtml `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `true` |
 | beforeClose | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
-| transition `v2.2.6` | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
+| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
 | getContainer | Return the mount node for Dialog | _string \| () => Element_ | `body` |
 
 ### Props
@@ -166,10 +166,10 @@ export default {
 | --- | --- | --- | --- |
 | v-model | Whether to show dialog | _boolean_ | - |
 | title | Title | _string_ | - |
-| width `v2.2.7` | Width | _number \| string_ | `320px` |
+| width | Width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |
 | message-align | Message align，can be set to `left` `right` | _string_ | `center` |
-| theme `v2.10.0` | theme style，can be set to `round` | _string_ | `default` |
+| theme `v2.10.0` | theme style，can be set to `round-button` | _string_ | `default` |
 | show-confirm-button | Whether to show confirm button | _boolean_ | `true` |
 | show-cancel-button | Whether to show cancel button | _boolean_ | `false` |
 | cancel-button-text | Cancel button text | _string_ | `Cancel` |
@@ -177,27 +177,27 @@ export default {
 | confirm-button-text | Confirm button text | _string_ | `Confirm` |
 | confirm-button-color | Confirm button color | _string_ | `#ee0a24` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
-| overlay-class `v2.2.7` | Custom overlay class | _string_ | - |
-| overlay-style `v2.2.7` | Custom overlay style | _object_ | - |
-| close-on-popstate `v2.0.5` | Whether to close when popstate | _boolean_ | `true` |
-| close-on-click-overlay | Whether to close when click overlay | _boolean_ | `false` |
+| overlay-class | Custom overlay class | _string_ | - |
+| overlay-style | Custom overlay style | _object_ | - |
+| close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
+| close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `false` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | allow-html `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `true` |
 | before-close | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
-| transition `v2.2.6` | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
+| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
 | get-container | Return the mount node for Dialog | _string \| () => Element_ | - |
 
 ### Events
 
-| Event   | Description                         | Parameters |
-| ------- | ----------------------------------- | ---------- |
-| confirm | Triggered when click confirm button | -          |
-| cancel  | Triggered when click cancel button  | -          |
-| open    | Triggered when open Dialog          | -          |
-| close   | Triggered when close Dialog         | -          |
-| opened  | Triggered when opened Dialog        | -          |
-| closed  | Triggered when closed Dialog        | -          |
+| Event   | Description                                | Parameters |
+| ------- | ------------------------------------------ | ---------- |
+| confirm | Emitted when the confirm button is clicked | -          |
+| cancel  | Emitted when the cancel button is clicked  | -          |
+| open    | Emitted when opening Dialog                | -          |
+| close   | Emitted when closing Dialog                | -          |
+| opened  | Emitted when Dialog is opened              | -          |
+| closed  | Emitted when Dialog is closed              | -          |
 
 ### Slots
 
@@ -205,3 +205,29 @@ export default {
 | ------- | -------------- |
 | default | Custom message |
 | title   | Custom title   |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @dialog-width | `320px` | - |
+| @dialog-small-screen-width | `90%` | - |
+| @dialog-font-size | `@font-size-lg` | - |
+| @dialog-transition | `@animation-duration-base` | - |
+| @dialog-border-radius | `16px` | - |
+| @dialog-background-color | `@white` | - |
+| @dialog-header-font-weight | `@font-weight-bold` | - |
+| @dialog-header-line-height | `24px` | - |
+| @dialog-header-padding-top | `26px` | - |
+| @dialog-header-isolated-padding | `@padding-lg 0` | - |
+| @dialog-message-padding | `@padding-lg` | - |
+| @dialog-message-font-size | `@font-size-md` | - |
+| @dialog-message-line-height | `@line-height-md` | - |
+| @dialog-message-max-height | `60vh` | - |
+| @dialog-has-title-message-text-color | `@gray-7` | - |
+| @dialog-has-title-message-padding-top | `@padding-xs` | - |
+| @dialog-button-height | `48px` | - |
+| @dialog-round-button-height | `36px` | - |
+| @dialog-confirm-button-text-color | `@red` | - |

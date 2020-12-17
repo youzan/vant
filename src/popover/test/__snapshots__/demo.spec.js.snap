@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div><span class="van-popover__wrapper" style="margin-left: 16px;"><button class="van-button van-button--primary van-button--normal"><div class="van-button__content"><span class="van-button__text">
+          浅色风格
+        </span></div></button></span> <span class="van-popover__wrapper" style="margin-left: 16px;"><button class="van-button van-button--primary van-button--normal"><div class="van-button__content"><span class="van-button__text">
+          深色风格
+        </span>
+</div></button></span></div>
+<div>
+  <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+    <div class="van-cell__title van-field__label"><span>选择弹出位置</span></div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body"><input type="text" name="picker" readonly="readonly" class="van-field__control"></div>
+    </div><i class="van-icon van-icon-arrow van-cell__right-icon">
+      <!----></i>
+  </div>
+</div>
+<div><span class="van-popover__wrapper" style="margin-left: 16px;"><button class="van-button van-button--primary van-button--normal"><div class="van-button__content"><span class="van-button__text">
+          展示图标
+        </span></div></button></span> <span class="van-popover__wrapper" style="margin-left: 16px;"><button class="van-button van-button--primary van-button--normal"><div class="van-button__content"><span class="van-button__text">
+          禁用选项
+        </span></div></button></span></div>
+<div><span class="van-popover__wrapper" style="margin-left: 16px;"><button class="van-button van-button--primary van-button--normal"><div class="van-button__content"><span class="van-button__text">
+          自定义内容
+        </span></div></button></span></div>
+</div>
+`;

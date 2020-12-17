@@ -1,26 +1,36 @@
-import { getPostcssConfig } from '../common';
+import { existsSync } from 'fs-extra';
+import { ROOT_POSTCSS_CONFIG_FILE } from '../common/constant';
 
-type PostcssConfig = object & {
-  plugins?: object;
+type PostcssConfig = {
+  plugins?: Record<string, unknown> | unknown[];
 };
 
-function mergePostcssConfig(config1: PostcssConfig, config2: PostcssConfig) {
-  const plugins = {
-    ...config1.plugins,
-    ...config2.plugins,
-  };
+export function getRootPostcssConfig(): PostcssConfig {
+  if (existsSync(ROOT_POSTCSS_CONFIG_FILE)) {
+    return require(ROOT_POSTCSS_CONFIG_FILE);
+  }
+  return { plugins: [] };
+}
+
+function getPostcssPlugins(rootConfig: PostcssConfig) {
+  const plugins = rootConfig.plugins || [];
+
+  if (Array.isArray(plugins)) {
+    return [require('autoprefixer'), ...plugins];
+  }
 
   return {
-    ...config1,
-    ...config2,
-    plugins,
+    autoprefixer: {},
+    ...plugins,
   };
 }
 
-const DEFAULT_CONFIG = {
-  plugins: {
-    autoprefixer: {},
-  },
-};
+function resolvePostcssConfig() {
+  const rootConfig = getRootPostcssConfig();
+  return {
+    ...rootConfig,
+    plugins: getPostcssPlugins(rootConfig),
+  };
+}
 
-module.exports = mergePostcssConfig(DEFAULT_CONFIG, getPostcssConfig());
+module.exports = resolvePostcssConfig();

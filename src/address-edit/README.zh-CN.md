@@ -1,5 +1,9 @@
 # AddressEdit 地址编辑
 
+### 介绍
+
+收货地址编辑组件，用于新建、更新、删除收货地址。
+
 ### 引入
 
 ```js
@@ -68,7 +72,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | area-list | 地区列表 | _object_ | - |
-| area-columns-placeholder `v2.2.5` | 地区选择列占位提示文字 | _string[]_ | `[]` |
+| area-columns-placeholder | 地区选择列占位提示文字 | _string[]_ | `[]` |
 | area-placeholder `v2.6.1` | 地区输入框占位提示文字 | _string_ | `选择省 / 市 / 区` |
 | address-info | 收货人信息初始值 | _AddressInfo_ | `{}` |
 | search-result | 详细地址搜索结果 | _SearchResult[]_ | `[]` |
@@ -82,12 +86,12 @@ export default {
 | save-button-text | 保存按钮文字 | _string_ | `保存` |
 | delete-button-text | 删除按钮文字 | _string_ | `删除` |
 | detail-rows | 详细地址输入框行数 | _number \| string_ | `1` |
-| detail-maxlength `v2.0.4` | 详细地址最大长度 | _number \| string_ | `200` |
+| detail-maxlength | 详细地址最大长度 | _number \| string_ | `200` |
 | is-saving | 是否显示保存按钮加载动画 | _boolean_ | `false` |
 | is-deleting | 是否显示删除按钮加载动画 | _boolean_ | `false` |
 | tel-validator | 手机号格式校验函数 | _string => boolean_ | - |
 | tel-maxlength `v2.10.0` | 手机号最大长度 | _number \| string_ | - |
-| postal-validator `v2.1.2` | 邮政编码格式校验函数 | _string => boolean_ | - |
+| postal-validator | 邮政编码格式校验函数 | _string => boolean_ | - |
 | validator | 自定义校验函数 | _(key, val) => string_ | - |
 
 ### Events
@@ -112,7 +116,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 AddressEdit 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 AddressEdit 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名           | 说明         | 参数                  | 返回值 |
 | ---------------- | ------------ | --------------------- | ------ |
@@ -145,3 +149,15 @@ export default {
 ### 省市县列表数据格式
 
 请参考 [Area](#/zh-CN/area) 组件。
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                  | 默认值                      | 描述 |
+| ------------------------------------- | --------------------------- | ---- |
+| @address-edit-padding                 | `@padding-sm`               | -    |
+| @address-edit-buttons-padding         | `@padding-xl @padding-base` | -    |
+| @address-edit-button-margin-bottom    | `@padding-sm`               | -    |
+| @address-edit-detail-finish-color     | `@blue`                     | -    |
+| @address-edit-detail-finish-font-size | `@font-size-sm`             | -    |

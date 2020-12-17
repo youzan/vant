@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, addUnit, isDef } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Components
@@ -34,6 +34,7 @@ function isImage(name?: string): boolean {
 const LEGACY_MAP: Record<string, string> = {
   medel: 'medal',
   'medel-o': 'medal-o',
+  'calender-o': 'calendar-o',
 };
 
 function correctName(name?: string) {
@@ -49,6 +50,12 @@ function Icon(
   const name = correctName(props.name);
   const imageIcon = isImage(name);
 
+  if (process.env.NODE_ENV === 'development' && props.info) {
+    console.warn(
+      '[Vant] Icon: "info" prop is deprecated, use "badge" prop instead.'
+    );
+  }
+
   return (
     <props.tag
       class={[
@@ -63,10 +70,7 @@ function Icon(
     >
       {slots.default && slots.default()}
       {imageIcon && <img class={bem('image')} src={name} />}
-      <Info
-        dot={props.dot}
-        info={isDef(props.badge) ? props.badge : props.info}
-      />
+      <Info dot={props.dot} info={props.badge ?? props.info} />
     </props.tag>
   );
 }

@@ -1,5 +1,9 @@
 # Skeleton 骨架屏
 
+### 介绍
+
+用于在内容加载过程中展示一组占位图形。
+
 ### 引入
 
 ```js
@@ -13,7 +17,7 @@ Vue.use(Skeleton);
 
 ### 基础用法
 
-通过`title`属性显示标题占位图，通过`row`属性配置占位段落行数
+通过 `title` 属性显示标题占位图，通过 `row` 属性配置占位段落行数。
 
 ```html
 <van-skeleton title :row="3" />
@@ -21,7 +25,7 @@ Vue.use(Skeleton);
 
 ### 显示头像
 
-通过`avatar`属性显示头像占位图
+通过 `avatar` 属性显示头像占位图。
 
 ```html
 <van-skeleton title avatar :row="3" />
@@ -29,7 +33,7 @@ Vue.use(Skeleton);
 
 ### 展示子组件
 
-将`loading`属性设置成`false`表示内容加载完成，此时会隐藏占位图，并显示`Skeleton`的子组件
+将 `loading` 属性设置成 `false` 表示内容加载完成，此时会隐藏占位图，并显示 `Skeleton` 的子组件。
 
 ```html
 <van-skeleton title avatar :row="3" :loading="loading">
@@ -66,3 +70,17 @@ export default {
 | title-width | 标题占位图宽度 | _number \| string_ | `40%` |
 | avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
 | avatar-shape | 头像占位图形状，可选值为`square` | _string_ | `round` |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                              | 默认值          | 描述 |
+| --------------------------------- | --------------- | ---- |
+| @skeleton-row-height              | `16px`          | -    |
+| @skeleton-row-background-color    | `@active-color` | -    |
+| @skeleton-row-margin-top          | `@padding-sm`   | -    |
+| @skeleton-title-width             | `40%`           | -    |
+| @skeleton-avatar-size             | `32px`          | -    |
+| @skeleton-avatar-background-color | `@active-color` | -    |
+| @skeleton-animation-duration      | `1.2s`          | -    |

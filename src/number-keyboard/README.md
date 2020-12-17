@@ -14,9 +14,7 @@ Vue.use(NumberKeyboard);
 ### Default Keyboard
 
 ```html
-<van-cell @touchstart.native.stop="show = true">
-  Show Keyboard
-</van-cell>
+<van-cell @touchstart.native.stop="show = true">Show Keyboard</van-cell>
 <van-number-keyboard
   :show="show"
   @blur="show = false"
@@ -61,7 +59,7 @@ export default {
 
 ### IdNumber Keyboard
 
-Use `extra-key` prop to set the content of bottom left button
+Use `extra-key` prop to set the content of bottom left button.
 
 ```html
 <van-cell plain type="primary" @touchstart.native.stop="show = true">
@@ -80,7 +78,7 @@ Use `extra-key` prop to set the content of bottom left button
 
 ### Keyboard With Title
 
-Use `title` prop to set keyboard title
+Use `title` prop to set keyboard title.
 
 ```html
 <van-cell plain type="info" @touchstart.native.stop="show = true">
@@ -147,11 +145,11 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model (value) `v2.0.2` | Current value | _string_ | - |
+| v-model (value) | Current value | _string_ | - |
 | show | Whether to show keyboard | _boolean_ | - |
 | title | Keyboard title | _string_ | - |
 | theme | Keyboard theme，can be set to `custom` | _string_ | `default` |
-| maxlength `v2.0.2` | Value maxlength | _number \| string_ | - |
+| maxlength | Value maxlength | _number \| string_ | - |
 | transition | Whether to show transition animation | _boolean_ | `true` |
 | z-index | Keyboard z-index | _number \| string_ | `100` |
 | extra-key `v2.8.2` | Content of bottom left key | _string \| string[]_ | `''` |
@@ -159,7 +157,7 @@ export default {
 | delete-button-text | Delete button text | _string_ | Delete Icon |
 | close-button-loading `v2.7.0` | Whether to show loading close button in custom theme | _boolean_ | `false` |
 | show-delete-key `v2.5.9` | Whether to show delete button | _boolean_ | `true` |
-| hide-on-click-outside | Whether to hide keyboard when click outside | _boolean_ | `true` |
+| hide-on-click-outside | Whether to hide keyboard when outside is clicked | _boolean_ | `true` |
 | get-container `v2.10.0` | Return the mount node for NumberKeyboard | _string \| () => Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 
@@ -167,12 +165,12 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| input | Triggered when keydown | key: Content of the key |
-| delete | Triggered when press delete key | - |
-| close | Triggered when click close button | - |
-| blur | Triggered when click close button or blur keyboard | - |
-| show | Triggered when keyboard is fully displayed | - |
-| hide | Triggered when keyboard is fully hidden | - |
+| input | Emitted when keydown | key: Content of the key |
+| delete | Emitted when the delete key is pressed | - |
+| close | Emitted when the close button is clicked | - |
+| blur | Emitted when the close button is clicked or the keyboard is blured | - |
+| show | Emitted when keyboard is fully displayed | - |
+| hide | Emitted when keyboard is fully hidden | - |
 
 ### Slots
 
@@ -181,3 +179,28 @@ export default {
 | delete     | Custom delete key content |
 | extra-key  | Custom extra key content  |
 | title-left | Custom title left content |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @number-keyboard-background-color | `@gray-2` | - |
+| @number-keyboard-key-height | `48px` | - |
+| @number-keyboard-key-font-size | `28px` | - |
+| @number-keyboard-key-active-color | `@gray-3` | - |
+| @number-keyboard-delete-font-size | `@font-size-lg` | - |
+| @number-keyboard-title-color | `@gray-7` | - |
+| @number-keyboard-title-height | `34px` | - |
+| @number-keyboard-title-font-size | `@font-size-lg` | - |
+| @number-keyboard-close-padding | `0 @padding-md` | - |
+| @number-keyboard-close-color | `@text-link-color` | - |
+| @number-keyboard-close-font-size | `@font-size-md` | - |
+| @number-keyboard-button-text-color | `@white` | - |
+| @number-keyboard-button-background-color | `@blue` | - |
+| @number-keyboard-cursor-color | `@text-color` | - |
+| @number-keyboard-cursor-width | `1px` | - |
+| @number-keyboard-cursor-height | `40%` | - |
+| @number-keyboard-cursor-animation-duration | `1s` | - |
+| @number-keyboard-z-index | `100` | - |

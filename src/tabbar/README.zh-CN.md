@@ -14,7 +14,7 @@ Vue.use(TabbarItem);
 
 ### 基础用法
 
-`v-model`默认绑定选中标签的索引值，通过修改`v-model`即可切换选中的标签
+`v-model` 默认绑定选中标签的索引值，通过修改 `v-model` 即可切换选中的标签。
 
 ```html
 <van-tabbar v-model="active">
@@ -37,7 +37,7 @@ export default {
 
 ### 通过名称匹配
 
-在标签指定`name`属性的情况下，`v-model`的值为当前标签的`name`
+在标签指定 `name` 属性的情况下，`v-model` 的值为当前标签的 `name`。
 
 ```html
 <van-tabbar v-model="active">
@@ -60,7 +60,7 @@ export default {
 
 ### 徽标提示
 
-设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标
+设置 `dot` 属性后，会在图标右上角展示一个小红点；设置 `badge` 属性后，会在图标右上角展示相应的徽标。
 
 ```html
 <van-tabbar v-model="active">
@@ -73,7 +73,7 @@ export default {
 
 ### 自定义图标
 
-通过 icon 插槽自定义图标，可以通过 `slot-scope` 判断标签是否选中
+通过 `icon` 插槽自定义图标，可以通过 `slot-scope` 判断标签是否选中。
 
 ```html
 <van-tabbar v-model="active">
@@ -105,7 +105,7 @@ export default {
 ### 自定义颜色
 
 ```html
-<van-tabbar v-model="active" active-color="#07c160" inactive-color="#000">
+<van-tabbar v-model="active" active-color="#ee0a24" inactive-color="#000">
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
   <van-tabbar-item icon="search">标签</van-tabbar-item>
   <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
@@ -138,18 +138,14 @@ export default {
 
 ### 路由模式
 
-标签栏支持路由模式，用于搭配`vue-router`使用。路由模式下会匹配页面路径和标签的`to`属性，并自动选中对应的标签
+标签栏支持路由模式，用于搭配 `vue-router` 使用。路由模式下会匹配页面路径和标签的 `to` 属性，并自动选中对应的标签。
 
 ```html
 <router-view />
 
 <van-tabbar route>
-  <van-tabbar-item replace to="/home" icon="home-o">
-    标签
-  </van-tabbar-item>
-  <van-tabbar-item replace to="/search" icon="search">
-    标签
-  </van-tabbar-item>
+  <van-tabbar-item replace to="/home" icon="home-o">标签</van-tabbar-item>
+  <van-tabbar-item replace to="/search" icon="search">标签</van-tabbar-item>
 </van-tabbar>
 ```
 
@@ -167,7 +163,8 @@ export default {
 | inactive-color | 未选中标签的颜色 | _string_ | `#7d7e80` |
 | route | 是否开启路由模式 | _boolean_ | `false` |
 | placeholder `v2.6.0` | 固定在底部时，是否在标签位置生成一个等高的占位元素 | _boolean_ | `false` |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei)，设置 fixed 时默认开启 | _boolean_ | `false` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei)，设置 fixed 时默认开启 | _boolean_ | `false` |
+| before-change `v2.10.4` | 切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise | _(name) => boolean \| Promise_ | - |
 
 ### Tabbar Events
 
@@ -191,6 +188,23 @@ export default {
 
 ### TabbarItem Slots
 
-| 名称 | 说明       | SlotProps              |
+| 名称 | 说明       | 参数                   |
 | ---- | ---------- | ---------------------- |
 | icon | 自定义图标 | active: 是否为选中标签 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                 | 默认值                     | 描述 |
+| ------------------------------------ | -------------------------- | ---- |
+| @tabbar-height                       | `50px`                     | -    |
+| @tabbar-z-index                      | `1`                        | -    |
+| @tabbar-background-color             | `@white`                   | -    |
+| @tabbar-item-font-size               | `@font-size-sm`            | -    |
+| @tabbar-item-text-color              | `@gray-7`                  | -    |
+| @tabbar-item-active-color            | `@blue`                    | -    |
+| @tabbar-item-active-background-color | `@tabbar-background-color` | -    |
+| @tabbar-item-line-height             | `1`                        | -    |
+| @tabbar-item-icon-size               | `22px`                     | -    |
+| @tabbar-item-margin-bottom           | `4px`                      | -    |

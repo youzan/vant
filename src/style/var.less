@@ -48,7 +48,7 @@
 @line-height-md: 20px;
 @line-height-lg: 22px;
 @base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB',
   'Microsoft Yahei', sans-serif;
 @price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
   sans-serif;
@@ -99,7 +99,7 @@
 @address-edit-detail-finish-font-size: @font-size-sm;
 
 // AddressList
-@address-list-padding: 12px 12px 100px;
+@address-list-padding: @padding-sm @padding-sm 80px;
 @address-list-disabled-text-color: @gray-6;
 @address-list-disabled-text-padding: @padding-base * 5 0 @padding-md;
 @address-list-disabled-text-font-size: @font-size-md;
@@ -112,6 +112,18 @@
 @address-list-item-line-height: @line-height-sm;
 @address-list-item-radio-icon-color: @red;
 @address-list-edit-icon-size: 20px;
+
+// Badge
+@badge-size: 16px;
+@badge-color: @white;
+@badge-padding: 0 3px;
+@badge-font-size: @font-size-sm;
+@badge-font-weight: @font-weight-bold;
+@badge-border-width: @border-width-base;
+@badge-background-color: @red;
+@badge-dot-color: @red;
+@badge-dot-size: 8px;
+@badge-font-family: -apple-system-font, Helvetica Neue, Arial, sans-serif;
 
 // Button
 @button-mini-height: 24px;
@@ -229,6 +241,9 @@
 @checkbox-disabled-background-color: @border-color;
 
 // Circle
+@circle-size: 100px;
+@circle-color: @blue;
+@circle-layer-color: @white;
 @circle-text-color: @text-color;
 @circle-text-font-weight: @font-weight-bold;
 @circle-text-font-size: @font-size-md;
@@ -255,7 +270,7 @@
 @contact-edit-buttons-padding: @padding-xl 0;
 @contact-edit-button-margin-bottom: @padding-sm;
 @contact-edit-button-font-size: 16px;
-@contact-edit-field-label-width: 4em;
+@contact-edit-field-label-width: 4.1em;
 
 // ContactList
 @contact-list-edit-icon-size: 16px;
@@ -306,14 +321,16 @@
 @dialog-background-color: @white;
 @dialog-header-font-weight: @font-weight-bold;
 @dialog-header-line-height: 24px;
-@dialog-header-padding-top: @padding-lg;
+@dialog-header-padding-top: 26px;
 @dialog-header-isolated-padding: @padding-lg 0;
 @dialog-message-padding: @padding-lg;
 @dialog-message-font-size: @font-size-md;
 @dialog-message-line-height: @line-height-md;
 @dialog-message-max-height: 60vh;
 @dialog-has-title-message-text-color: @gray-7;
-@dialog-has-title-message-padding-top: @padding-sm;
+@dialog-has-title-message-padding-top: @padding-xs;
+@dialog-button-height: 48px;
+@dialog-round-button-height: 36px;
 @dialog-confirm-button-text-color: @red;
 
 // Divider
@@ -400,14 +417,14 @@
 @index-anchor-font-size: @font-size-md;
 @index-anchor-line-height: 32px;
 @index-anchor-background-color: transparent;
-@index-anchor-sticky-text-color: @green;
+@index-anchor-sticky-text-color: @red;
 @index-anchor-sticky-background-color: @white;
 
 // IndexBar
 @index-bar-sidebar-z-index: 2;
 @index-bar-index-font-size: @font-size-xs;
 @index-bar-index-line-height: @line-height-xs;
-@index-bar-index-active-color: @green;
+@index-bar-index-active-color: @red;
 
 // Info
 @info-size: 16px;
@@ -419,7 +436,7 @@
 @info-background-color: @red;
 @info-dot-color: @red;
 @info-dot-size: 8px;
-@info-font-family: @price-integer-font-family;
+@info-font-family: -apple-system-font, Helvetica Neue, Arial, sans-serif;
 
 // Image
 @image-placeholder-text-color: @gray-6;
@@ -553,10 +570,25 @@
 @picker-loading-icon-color: @blue;
 @picker-loading-mask-color: rgba(255, 255, 255, 0.9);
 
+// Popover
+@popover-arrow-size: 6px;
+@popover-border-radius: @border-radius-lg;
+@popover-action-width: 128px;
+@popover-action-height: 44px;
+@popover-action-font-size: @font-size-md;
+@popover-action-line-height: @line-height-md;
+@popover-action-icon-size: 20px;
+@popover-light-text-color: @text-color;
+@popover-light-background-color: @white;
+@popover-light-action-disabled-text-color: @gray-5;
+@popover-dark-text-color: @white;
+@popover-dark-background-color: #4a4a4a;
+@popover-dark-action-disabled-text-color: @gray-6;
+
 // Popup
 @popup-background-color: @white;
 @popup-transition: transform @animation-duration-base;
-@popup-round-border-radius: 20px;
+@popup-round-border-radius: 16px;
 @popup-close-icon-size: 22px;
 @popup-close-icon-color: @gray-5;
 @popup-close-icon-active-color: @gray-6;
@@ -646,6 +678,8 @@
 @skeleton-row-height: 16px;
 @skeleton-row-background-color: @active-color;
 @skeleton-row-margin-top: @padding-sm;
+@skeleton-title-width: 40%;
+@skeleton-avatar-size: 32px;
 @skeleton-avatar-background-color: @active-color;
 @skeleton-animation-duration: 1.2s;
 
@@ -729,7 +763,6 @@
 @switch-width: 2em;
 @switch-height: 1em;
 @switch-node-size: 1em;
-@switch-node-z-index: 1;
 @switch-node-background-color: @white;
 @switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
   0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
@@ -754,21 +787,24 @@
 @tabbar-item-font-size: @font-size-sm;
 @tabbar-item-text-color: @gray-7;
 @tabbar-item-active-color: @blue;
+@tabbar-item-active-background-color: @tabbar-background-color;
 @tabbar-item-line-height: 1;
-@tabbar-item-icon-size: 18px;
-@tabbar-item-margin-bottom: 5px;
+@tabbar-item-icon-size: 22px;
+@tabbar-item-margin-bottom: 4px;
 
 // Tab
 @tab-text-color: @gray-7;
 @tab-active-text-color: @text-color;
 @tab-disabled-text-color: @gray-5;
 @tab-font-size: @font-size-md;
+@tab-line-height: @line-height-md;
 
 // Tabs
 @tabs-default-color: @red;
 @tabs-line-height: 44px;
 @tabs-card-height: 30px;
 @tabs-nav-background-color: @white;
+@tabs-bottom-bar-width: 40px;
 @tabs-bottom-bar-height: 3px;
 @tabs-bottom-bar-color: @tabs-default-color;
 
@@ -804,8 +840,8 @@
 @toast-default-padding: @padding-md;
 @toast-default-width: 88px;
 @toast-default-min-height: 88px;
-@toast-position-top-distance: 50px;
-@toast-position-bottom-distance: 50px;
+@toast-position-top-distance: 20%;
+@toast-position-bottom-distance: 20%;
 
 // TreeSelect
 @tree-select-font-size: @font-size-md;

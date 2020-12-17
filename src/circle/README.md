@@ -110,13 +110,13 @@ export default {
 | v-model | Current rate | _number_ | - |
 | rate | Target rate | _number \| string_ | `100` |
 | size | Circle size | _number \| string_ | `100px` |
-| color `v2.1.4` | Progress color, passing object to render gradient | _string \| object_ | `#1989fa` |
+| color | Progress color, passing object to render gradient | _string \| object_ | `#1989fa` |
 | layer-color | Layer color | _string_ | `white` |
 | fill | Fill color | _string_ | `none` |
 | speed | Animate speed（rate/s） | _number \| string_ | `0` |
 | text | Text | _string_ | - |
 | stroke-width | Stroke width | _number \| string_ | `40` |
-| stroke-linecap `v2.2.15` | Stroke linecap，can be set to `sqaure` `butt` | _string_ | `round` |
+| stroke-linecap | Stroke linecap，can be set to `sqaure` `butt` | _string_ | `round` |
 | clockwise | Whether to be clockwise | _boolean_ | `true` |
 
 ### Slots
@@ -124,3 +124,17 @@ export default {
 | Name    | Description         |
 | ------- | ------------------- |
 | default | custom text content |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                     | Default Value       | Description |
+| ------------------------ | ------------------- | ----------- |
+| @circle-size             | `100px`             | -           |
+| @circle-color            | `@blue`             | -           |
+| @circle-layer-color      | `@white`            | -           |
+| @circle-text-color       | `@text-color`       | -           |
+| @circle-text-font-weight | `@font-weight-bold` | -           |
+| @circle-text-font-size   | `@font-size-md`     | -           |
+| @circle-text-line-height | `@line-height-md`   | -           |

@@ -27,7 +27,6 @@ const mockItems = [
 ];
 
 test('click-nav event', () => {
-  const onNavClick = jest.fn();
   const onClickNav = jest.fn();
 
   const wrapper = mount(TreeSelect, {
@@ -36,7 +35,6 @@ test('click-nav event', () => {
     },
     context: {
       on: {
-        navclick: onNavClick,
         'click-nav': onClickNav,
       },
     },
@@ -45,12 +43,10 @@ test('click-nav event', () => {
   const navItems = wrapper.findAll('.van-tree-select__nav-item');
   navItems.at(1).trigger('click');
 
-  expect(onNavClick).toHaveBeenCalledWith(1);
   expect(onClickNav).toHaveBeenCalledWith(1);
 });
 
 test('click-item event', () => {
-  const onItemClick = jest.fn();
   const onClickItem = jest.fn();
 
   const wrapper = mount(TreeSelect, {
@@ -59,7 +55,6 @@ test('click-item event', () => {
     },
     context: {
       on: {
-        itemclick: onItemClick,
         'click-item': onClickItem,
       },
     },
@@ -67,7 +62,6 @@ test('click-item event', () => {
 
   const items = wrapper.findAll('.van-tree-select__item');
   items.at(0).trigger('click');
-  expect(onItemClick).toHaveBeenCalledWith(mockItem);
   expect(onClickItem).toHaveBeenCalledWith(mockItem);
 });
 
@@ -151,13 +145,13 @@ test('height prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('nav info', () => {
+test('nav render badge', () => {
   const wrapper = mount(TreeSelect, {
     propsData: {
       items: [
         {
           text: 'group1',
-          info: 3,
+          badge: 3,
         },
       ],
     },

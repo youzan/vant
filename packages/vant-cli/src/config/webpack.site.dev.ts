@@ -39,6 +39,7 @@ export function getSiteDevBaseConfig(): WebpackConfig {
 
   const siteConfig = getSiteConfig();
   const title = getTitle(siteConfig);
+  const { htmlPluginOptions } = vantConfig.site;
 
   return merge(baseConfig as any, {
     entry: {
@@ -88,6 +89,7 @@ export function getSiteDevBaseConfig(): WebpackConfig {
         template: join(__dirname, '../../site/desktop/index.html'),
         filename: 'index.html',
         baiduAnalytics,
+        ...htmlPluginOptions,
       }),
       new HtmlWebpackPlugin({
         title,
@@ -97,11 +99,12 @@ export function getSiteDevBaseConfig(): WebpackConfig {
         template: join(__dirname, '../../site/mobile/index.html'),
         filename: 'mobile.html',
         baiduAnalytics,
+        ...htmlPluginOptions,
       }),
     ],
   });
 }
 
 export function getSiteDevConfig(): WebpackConfig {
-  return merge(getSiteDevBaseConfig(), getWebpackConfig());
+  return getWebpackConfig(getSiteDevBaseConfig());
 }

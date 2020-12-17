@@ -1,10 +1,9 @@
-import { createNamespace } from '../../utils';
+import { createNamespace, addUnit } from '../../utils';
 import { setScrollTop } from '../../utils/dom/scroll';
 import {
   t,
   bem,
   compareDay,
-  ROW_HEIGHT,
   getPrevDay,
   getNextDay,
   formatMonthTitle,
@@ -42,6 +41,10 @@ export default createComponent({
       return formatMonthTitle(this.date);
     },
 
+    rowHeightWithUnit() {
+      return addUnit(this.rowHeight);
+    },
+
     offset() {
       const { firstDayOfWeek } = this;
 
@@ -62,15 +65,13 @@ export default createComponent({
       return this.visible || !this.lazyRender;
     },
 
-    monthStyle() {
-      if (!this.shouldRender) {
-        const padding =
-          Math.ceil((this.totalDay + this.offset) / 7) * this.rowHeight;
-
-        return {
-          paddingBottom: `${padding}px`,
-        };
+    placeholders() {
+      const rows = [];
+      const count = Math.ceil((this.totalDay + this.offset) / 7);
+      for (let day = 1; day <= count; day++) {
+        rows.push({ type: 'placeholder' });
       }
+      return rows;
     },
 
     days() {
@@ -183,6 +184,10 @@ export default createComponent({
         return 'disabled';
       }
 
+      if (currentDate === null) {
+        return;
+      }
+
       if (type === 'single') {
         return compareDay(day, currentDate) === 0 ? 'selected' : '';
       }
@@ -209,14 +214,17 @@ export default createComponent({
     },
 
     getDayStyle(type, index) {
-      const style = {};
+      const style = {
+        height: this.rowHeightWithUnit,
+      };
+
+      if (type === 'placeholder') {
+        style.width = '100%';
+        return style;
+      }
 
       if (index === 0) {
         style.marginLeft = `${(100 * this.offset) / 7}%`;
-      }
-
-      if (this.rowHeight !== ROW_HEIGHT) {
-        style.height = `${this.rowHeight}px`;
       }
 
       if (this.color) {
@@ -243,22 +251,19 @@ export default createComponent({
     },
 
     genMark() {
-      if (this.showMark) {
+      if (this.showMark && this.shouldRender) {
         return <div class={bem('month-mark')}>{this.date.getMonth() + 1}</div>;
       }
     },
 
     genDays() {
-      if (this.shouldRender) {
-        return (
-          <div ref="days" role="grid" class={bem('days')}>
-            {this.genMark()}
-            {this.days.map(this.genDay)}
-          </div>
-        );
-      }
-
-      return <div ref="days" />;
+      const days = this.shouldRender ? this.days : this.placeholders;
+      return (
+        <div ref="days" role="grid" class={bem('days')}>
+          {this.genMark()}
+          {days.map(this.genDay)}
+        </div>
+      );
     },
 
     genDay(item, index) {
@@ -287,7 +292,14 @@ export default createComponent({
             tabindex={-1}
             onClick={onClick}
           >
-            <div class={bem('selected-day')} style={{ background: this.color }}>
+            <div
+              class={bem('selected-day')}
+              style={{
+                width: this.rowHeightWithUnit,
+                height: this.rowHeightWithUnit,
+                background: this.color,
+              }}
+            >
               {TopInfo}
               {item.text}
               {BottomInfo}
@@ -314,7 +326,7 @@ export default createComponent({
 
   render() {
     return (
-      <div class={bem('month')} ref="month" style={this.monthStyle}>
+      <div class={bem('month')} ref="month">
         {this.genTitle()}
         {this.genDays()}
       </div>

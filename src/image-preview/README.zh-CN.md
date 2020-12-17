@@ -46,9 +46,9 @@ ImagePreview([
 ]);
 ```
 
-### 传入配置项
+### 指定初始位置
 
-通过传入配置对象，可以指定初始图片的位置、监听关闭事件。
+ImagePreview 支持传入配置对象，并通过 `startPosition` 选项指定图片的初始位置（索引值）。
 
 ```js
 ImagePreview({
@@ -57,15 +57,12 @@ ImagePreview({
     'https://img.yzcdn.cn/vant/apple-2.jpg',
   ],
   startPosition: 1,
-  onClose() {
-    // do something
-  },
 });
 ```
 
 ### 展示关闭按钮
 
-设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标，使用`close-icon-position`属性可以自定义图标位置。
+设置 `closeable` 属性后，会在弹出层的右上角显示关闭图标，并且可以通过 `close-icon` 属性自定义图标，使用`close-icon-position` 属性可以自定义图标位置。
 
 ```js
 ImagePreview({
@@ -77,9 +74,27 @@ ImagePreview({
 });
 ```
 
+### 监听关闭事件
+
+通过 `onClose` 选项监听图片预览的关闭事件。
+
+```js
+import { Toast } from 'vant';
+
+ImagePreview({
+  images: [
+    'https://img.yzcdn.cn/vant/apple-1.jpg',
+    'https://img.yzcdn.cn/vant/apple-2.jpg',
+  ],
+  onClose() {
+    Toast('关闭');
+  },
+});
+```
+
 ### 异步关闭
 
-通过`asyncClose`属性可以开启异步关闭，开启后异步关闭后，只能通过实例上的 close 方法关闭图片预览。
+通过 `asyncClose` 属性可以开启异步关闭，开启后异步关闭后，只能通过实例上的 close 方法关闭图片预览。
 
 ```js
 const instance = ImagePreview({
@@ -92,7 +107,7 @@ const instance = ImagePreview({
 
 setTimeout(() => {
   instance.close();
-}, 1000);
+}, 2000);
 ```
 
 ### 组件调用
@@ -117,7 +132,6 @@ export default {
       ],
     };
   },
-
   methods: {
     onChange(index) {
       this.index = index;
@@ -141,7 +155,7 @@ export default {
 | showIndicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
 | onClose | 关闭时的回调函数 | _Function_ | - |
-| onChange `v2.0.3` | 切换图片时的回调函数，回调参数为当前索引 | _Function_ | - |
+| onChange | 切换图片时的回调函数，回调参数为当前索引 | _Function_ | - |
 | onScale | 缩放图片时的回调函数，回调参数为当前索引和当前缩放值组成的对象 | _Function_ | - |
 | asyncClose | 是否开启异步关闭 | _boolean_ | `false` |
 | closeOnPopstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
@@ -185,16 +199,23 @@ export default {
 | closed `v2.5.6` | 关闭且且动画结束后触发 | - |
 | change | 切换当前图片时触发 | index: 当前图片的索引 |
 | scale `v2.5.0` | 缩放当前图片时触发 | { index: 当前图片的索引, scale: 当前缩放的值 } |
-| swipeTo `2.9.0` | 切换到指定位置 | index: number, options: Options | void |
+
+### 方法
+
+通过组件调用 `ImagePreview` 时，通过 ref 可以获取到 ImagePreview 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名          | 说明           | 参数                            | 返回值 |
+| --------------- | -------------- | ------------------------------- | ------ |
+| swipeTo `2.9.0` | 切换到指定位置 | index: number, options: Options | -      |
 
 ### Slots
 
 通过组件调用 `ImagePreview` 时，支持以下插槽：
 
-| 名称  | 说明                           |
-| ----- | ------------------------------ |
-| index | 自定义页码内容                 |
-| cover | 自定义覆盖在图片预览上方的内容 |
+| 名称  | 说明                           | 参数                      |
+| ----- | ------------------------------ | ------------------------- |
+| index | 自定义页码内容                 | { index: 当前图片的索引 } |
+| cover | 自定义覆盖在图片预览上方的内容 | -                         |
 
 ### onClose 回调参数
 
@@ -210,8 +231,25 @@ export default {
 | index  | 当前图片的索引值 | _number_ |
 | scale  | 当前图片的缩放值 | _number_ |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                    | 默认值               | 描述 |
+| --------------------------------------- | -------------------- | ---- |
+| @image-preview-index-text-color         | `@white`             | -    |
+| @image-preview-index-font-size          | `@font-size-md`      | -    |
+| @image-preview-index-line-height        | `@line-height-md`    | -    |
+| @image-preview-index-text-shadow        | `0 1px 1px @gray-8`  | -    |
+| @image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | -    |
+| @image-preview-close-icon-size          | `22px`               | -    |
+| @image-preview-close-icon-color         | `@gray-5`            | -    |
+| @image-preview-close-icon-active-color  | `@gray-6`            | -    |
+| @image-preview-close-icon-margin        | `@padding-md`        | -    |
+| @image-preview-close-icon-z-index       | `1`                  | -    |
+
 ## 常见问题
 
 ### 在桌面端无法操作组件？
 
-参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。

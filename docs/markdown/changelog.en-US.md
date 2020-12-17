@@ -1,5 +1,9 @@
 # Changelog
 
+### Tips
+
+The current document is the changelog of Vant 2.x. If you want to view the changelog of Vant 3.x, please visit [Vant 3.x Changelog](https://youzan.github.io/vant/next/#/en-US/changelog).
+
 ### Intro
 
 Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
@@ -10,76 +14,381 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Minor version：released every one to two months, including backwards compatible features.
 - Major version：including breaking changes and new features.
 
-### [v2.10.0-beta.2](https://github.com/youzan/vant/compare/v2.10.0-beta.1...v2.10.0-beta.2)
+## Details
 
-`2020-08-03`
+### [v2.11.2](https://github.com/youzan/vant/compare/v2.11.1...v2.11.2)
 
-**Feature**
-
-- Dialog: add new prop theme [#6921](https://github.com/youzan/vant/issues/6921)
-- Icon: add back-top icon [#6931](https://github.com/youzan/vant/issues/6931)
+`2020-12-10`
 
 **style**
 
-- Image: adjust icon color to @gray-4 [729cca](https://github.com/youzan/vant/commit/729cca61a978ba243cf442143ae85d2abb464de0)
-- Tab: disable ellipsis when scrollable [bc0e45](https://github.com/youzan/vant/commit/bc0e45687a76f49355efa7fb2403184746575012)
+- Circle: add @circle-color less var [1a6cf6](https://github.com/youzan/vant/commit/1a6cf64f548bb19c6bd478db67f2e0a1d7c9a145)
+- Circle: add @circle-layer-color less var [65a5ed](https://github.com/youzan/vant/commit/65a5ed85537b7a406655bd39f7e4f5332d780a82)
+- Circle: add @circle-size less var [b57f7e](https://github.com/youzan/vant/commit/b57f7e9d9810ce95047334f0897899ebddaac6f3)
+- IndexBar: adjust default highlight color to red [65b680](https://github.com/youzan/vant/commit/65b6807a7e6b8a415b5f228c5d55426cd81a1dfa)
+- IndexBar: adjust sticky anchor color to red [87b0a0](https://github.com/youzan/vant/commit/87b0a034958296a720409ded893e708081c35bc5)
+- IndexBar: increase right padding to 8px [aad055](https://github.com/youzan/vant/commit/aad055906484d8b6c38a9f84a768f09522b13a41)
 
 **Bug Fixes**
 
-- Calendar: should only scroll calendar body when inited [#6926](https://github.com/youzan/vant/issues/6926)
+- Popover: incorrect border position in wework [#7702](https://github.com/youzan/vant/issues/7702)
+- Stepper: fix mobile safari page scroll down issue [#7701](https://github.com/youzan/vant/issues/7701)
 
-### [v2.10.0-beta.1](https://github.com/youzan/vant/compare/v2.9.4...v2.10.0-beta.1)
+### [v2.11.1](https://github.com/youzan/vant/compare/v2.11.0...v2.11.1)
 
-`2020-07-31`
+`2020-11-26`
 
 **Feature**
 
-- Icon: add photo-fail icon [#6883](https://github.com/youzan/vant/issues/6883)
-- DropdownMenu: add @dropdown-menu-box-shadow var [6d0c54](https://github.com/youzan/vant/commit/6d0c54e8f4e9c1c9982778df8a36c7ac3fc2f905)
+- CheckboxGroup: toggleAll support skipDisabled option [#7644](https://github.com/youzan/vant/issues/7644)
+- DatetimePicker: support picker slots [#7645](https://github.com/youzan/vant/issues/7645)
+- Popover: add trigger prop [#7646](https://github.com/youzan/vant/issues/7646)
+- Popover: improve a11y [#7624](https://github.com/youzan/vant/issues/7624)
+- ShareSheet: support weapp-qrcode icon [#7635](https://github.com/youzan/vant/issues/7635)
 
 **style**
 
-- CouponCell: insert a space after currency [#6888](https://github.com/youzan/vant/issues/6888)
-- Image: update loading icon and error icon [#6890](https://github.com/youzan/vant/issues/6890)
-- NumberKeyboard: adjust key height to 28px [#6899](https://github.com/youzan/vant/issues/6899)
-- Sku: improve price align [#6911](https://github.com/youzan/vant/issues/6911)
-- Tab: remove default border [69ac60](https://github.com/youzan/vant/commit/69ac602bc21b445fb88783303d00bd65e4dc5ae2)
-- Tab: adjust padding in complete mode [90e678](https://github.com/youzan/vant/commit/90e678756aecddee2beb522e38017c68f616b387)
-- Tab: update nav padding [8027f4](https://github.com/youzan/vant/commit/8027f46f3ff33b200cf022e5f9a2693293a1bb16)
+- NavBar: z-index not work when border is hidden [#7612](https://github.com/youzan/vant/issues/7612)
+- Popover: improve cursor [#7623](https://github.com/youzan/vant/issues/7623)
 
-### [v2.10.0-beta.0](https://github.com/youzan/vant/compare/v2.9.4-beta.0...v2.10.0-beta.0)
+**Bug Fixes**
 
-`2020-07-25`
+- Button: icon button vertical align [#7636](https://github.com/youzan/vant/issues/7636)
+- Popover: failed to compile in legacy nuxt.js [f3ad7e](https://github.com/youzan/vant/commit/f3ad7ed1a77cd2f19001489ea64df0d61429ce33)
+
+### [v2.11.0](https://github.com/youzan/vant/compare/v2.10.14...v2.11.0)
+
+`2020-11-22`
+
+**New Component**
+
+- add [Badge](#/en-US/badge) component [#7602](https://github.com/youzan/vant/issues/7602)
+- add [Popover](#/en-US/popover) component [#7579](https://github.com/youzan/vant/issues/7579)
+
+**Feature**
+
+- Popup: add click-close-icon event [#7599](https://github.com/youzan/vant/issues/7599)
+
+**Bug Fixes**
+
+- ActionSheet: The height of the flex container is lost under iOS 10 [#7578](https://github.com/youzan/vant/issues/7578)
+
+### [v2.10.14](https://github.com/youzan/vant/compare/v2.10.13...v2.10.14)
+
+`2020-11-15`
+
+**Feature**
+
+- ImagePreview: passing current index to index slot [#7552](https://github.com/youzan/vant/issues/7552)
+- Popup: add transition-appear prop [#7525](https://github.com/youzan/vant/issues/7525)
+- Skeleton: add @skeleton-avatar-size less var [#7556](https://github.com/youzan/vant/issues/7556)
+- Skeleton: add @skeleton-title-width less var [#7557](https://github.com/youzan/vant/issues/7557)
+
+**Bug Fixes**
+
+- Calendar: month-show event triggered multiple times [#7565](https://github.com/youzan/vant/issues/7565)
+- Calendar: should not render all months on mounted [#7564](https://github.com/youzan/vant/issues/7564)
+- IndexBar: incorrect behavior inside popup [#7559](https://github.com/youzan/vant/issues/7559)
+- NavBar: safe-area-inset-top css incorrect [#7534](https://github.com/youzan/vant/issues/7534)
+- Skeleton: avatar-size can be number type [#7555](https://github.com/youzan/vant/issues/7555)
+- Sticky: not work in some cases [#7561](https://github.com/youzan/vant/issues/7561)
+- Swipe: leak when width has decimal [#7562](https://github.com/youzan/vant/issues/7562)
+
+### [v2.10.13](https://github.com/youzan/vant/compare/v2.10.12...v2.10.13)
+
+`2020-11-08`
+
+**Feature**
+
+- Icon: using encoded woff2 iconfont by default [e0ad65](https://github.com/youzan/vant/commit/e0ad65e69fbcfb9ef69b25d2c1bce322577aad11)
+- NavBar: add safe-area-inset-top prop [be25a4](https://github.com/youzan/vant/commit/be25a478dfbc599cdb27ba09d2d72858037c1700)
+- Sticky: offset-top support vh unit [#7498](https://github.com/youzan/vant/issues/7498)
+
+**Bug Fixes**
+
+- NavBar: text vertical align [#7515](https://github.com/youzan/vant/issues/7515)
+- NoticeBar: can't replay in iOS14 [#7516](https://github.com/youzan/vant/issues/7516)
+- Picker: move to next option when default option is disabled [#7499](https://github.com/youzan/vant/issues/7499)
+- Picker: should move to first option when all options are disabled [#7504](https://github.com/youzan/vant/issues/7504)
+- Swipe: incorrect lazy render when loop is false [#7465](https://github.com/youzan/vant/issues/7465)
+- Swipe: item should only rendered once [#7466](https://github.com/youzan/vant/issues/7466)
+- Switch: remove unnecessary z-index [#7497](https://github.com/youzan/vant/issues/7497)
+- Toast: onClose option should only be called once [#7496](https://github.com/youzan/vant/issues/7496)
+
+### [v2.10.12](https://github.com/youzan/vant/compare/v2.10.11...v2.10.12)
+
+`2020-10-31`
+
+**Feature**
+
+- Image: add icon-prefix prop [#7457](https://github.com/youzan/vant/issues/7457)
+- Progress: add resize method [#5161](https://github.com/youzan/vant/issues/5161)
+- SubmitBar: add button slot [#7458](https://github.com/youzan/vant/issues/7458)
+
+**style**
+
+- ActionSheet: keep the cancel button at the bottom [#7401](https://github.com/youzan/vant/issues/7401)
+- Popup: adjust round border radius to 16px [#7421](https://github.com/youzan/vant/issues/7421)
+- Sidebar: fix long number wrap [#7456](https://github.com/youzan/vant/issues/7456)
+
+**Bug Fixes**
+
+- GridItem: should not emit deprecation warning [#7433](https://github.com/youzan/vant/issues/7433)
+- Picker: fix rendering failure during animation on safari [#7460](https://github.com/youzan/vant/issues/7460)
+- Tabs: incorrect change event in some cases [#7461](https://github.com/youzan/vant/issues/7461)
+- Tabs: should keep active value after insert item [#7445](https://github.com/youzan/vant/issues/7445)
+
+### [v2.10.11](https://github.com/youzan/vant/compare/v2.10.11...v2.10.11)
+
+`2020-10-24`
+
+**Feature**
+
+- Empty: add image-size prop [#7389](https://github.com/youzan/vant/issues/7389)
+- Picker: add option slot [#7380](https://github.com/youzan/vant/issues/7380)
+- Picker: add cancel slot [#7377](https://github.com/youzan/vant/issues/7377)
+- Picker: add confirm slot [#7377](https://github.com/youzan/vant/issues/7377)
+
+**Bug Fixes**
+
+- Dialog: failed to disable closeOnPopstate [#7357](https://github.com/youzan/vant/issues/7357)
+- NavBar: should not render blank left、right element [#7376](https://github.com/youzan/vant/issues/7376)
+- Image: skip render loading placeholder during ssr [#7383](https://github.com/youzan/vant/issues/7383)
+- Revert "style(Field): adjust placeholder color to gray-6 (#7192)" (#7375) [#7192](https://github.com/youzan/vant/issues/7192) [#7375](https://github.com/youzan/vant/issues/7375)
+
+### [v2.10.10](https://github.com/youzan/vant/compare/v2.10.9...v2.10.10)
+
+`2020-10-18`
+
+**Feature**
+
+- Icons: add minus icon [40e26f](https://github.com/youzan/vant/commit/40e26f97d1144d0dd0810075af8616676459ced3)
+- IndexBar: add change event [#7296](https://github.com/youzan/vant/issues/7296)
+
+**Improvement**
+
+- add info prop deprecation warning [#7352](https://github.com/youzan/vant/issues/7352) [#7347](https://github.com/youzan/vant/issues/7347)
+- SwitchCell: add deprecation warning [#7350](https://github.com/youzan/vant/issues/7350)
+- Toast: add mask option deprecation warning [#7342](https://github.com/youzan/vant/issues/7342)
+- TreeSelect: add deprecation warning of navclick/itemclick [#7351](https://github.com/youzan/vant/issues/7351)
+
+**Bug Fixes**
+
+- Calendar: does not show current month with larger screen sizes [#7355](https://github.com/youzan/vant/issues/7355)
+- Tabs: incorrect animation when content is empty [#7354](https://github.com/youzan/vant/issues/7354)
+- Field: incorrect label length when label-align is right [#7349](https://github.com/youzan/vant/issues/7349)
+- GridItem: failed to break word [#7292](https://github.com/youzan/vant/issues/7292)
+- Icon: incomplete after-sale/cash-back-record [#7328](https://github.com/youzan/vant/issues/7328)
+- Picker: incorrect loading z-index [14cd28](https://github.com/youzan/vant/commit/14cd2863cc75d4f7328ddcf19808b9f6eec38fa4)
+- Row: should enable flex wrap [#7332](https://github.com/youzan/vant/issues/7332)
+
+### [v2.10.9](https://github.com/youzan/vant/compare/v2.10.8...v2.10.9)
+
+`2020-10-01`
+
+**Feature**
+
+- Locale: Add German translations [#7245](https://github.com/youzan/vant/issues/7245)
+- CollapseItem: add toggle method [#7281](https://github.com/youzan/vant/issues/7281)
+- Pagination: add page、prev-text、next-text slot [#7222](https://github.com/youzan/vant/issues/7222)
+- Tab: skip rendering empty pane [#7238](https://github.com/youzan/vant/issues/7238)
+
+**Bug Fixes**
+
+- Swipe: fix prev、next method types [#7270](https://github.com/youzan/vant/issues/7270)
+- Button: incorrect ref in for [#7237](https://github.com/youzan/vant/issues/7237)
+- Field: incorrect maxlength slicing [#7284](https://github.com/youzan/vant/issues/7284)
+- @vant/markdown-vetur: fix Windows system build vetur problem [#7277](https://github.com/youzan/vant/issues/7277) [#7287](https://github.com/youzan/vant/issues/7287)
+
+### [v2.10.8](https://github.com/youzan/vant/compare/v2.10.7...v2.10.8)
+
+`2020-09-21`
+
+**Feature**
+
+- SidebarItem: add title slot [#7220](https://github.com/youzan/vant/issues/7220)
+
+**Bug Fixes**
+
+- Calendar: incorrect month title [#7205](https://github.com/youzan/vant/issues/7205)
+- CouponCell: discounted value [#7196](https://github.com/youzan/vant/issues/7196)
+- Field: incorrect disabled color in iOS 14 [#7206](https://github.com/youzan/vant/issues/7206)
+- List: scoped style not applied to first child [#7202](https://github.com/youzan/vant/issues/7202)
+- Swipe: can't disable loop in some cases [#7208](https://github.com/youzan/vant/issues/7208)
+- Swipe: incorrect indicator color trantision [#7207](https://github.com/youzan/vant/issues/7207)
+
+### [v2.10.7](https://github.com/youzan/vant/compare/v2.10.6...v2.10.7)
+
+`2020-09-17`
+
+**Feature**
+
+- Slider: add dual thumb mode for slider [#7176](https://github.com/youzan/vant/issues/7176)
+- Button: add icon-position prop [#7174](https://github.com/youzan/vant/issues/7174)
+- TabbarItem: add @tabbar-item-active-background-color less var [#7162](https://github.com/youzan/vant/issues/7162)
+
+**Style**
+
+- Dialog: add message min-height [#7191](https://github.com/youzan/vant/issues/7191)
+- Field: adjust placeholder color to gray-6 [#7192](https://github.com/youzan/vant/issues/7192)
+
+**Bug Fixes**
+
+- Calendar: incorrect height when using rem [#7190](https://github.com/youzan/vant/issues/7190)
+- ImagePreview: incorrect move range in some cases [#7142](https://github.com/youzan/vant/issues/7142)
+- NoticeBar: fix cache issues with forwards and back history in safari [#7167](https://github.com/youzan/vant/issues/7167)
+- NumberKeyboard: incorrect extra key [#7150](https://github.com/youzan/vant/issues/7150)
+- NumberKeyboard: slot content click event not work [#7193](https://github.com/youzan/vant/issues/7193)
+- Tabs: incorrect scroll position when offset-top has unit [#7143](https://github.com/youzan/vant/issues/7143)
+- Tag: text vertical align in miui [#7151](https://github.com/youzan/vant/issues/7151)
+
+### [v2.10.6](https://github.com/youzan/vant/compare/v2.10.5...v2.10.6)
+
+`2020-09-08`
+
+**Bug Fixes**
+
+- Calendar: readonly not work in multiple mode [#7127](https://github.com/youzan/vant/issues/7127)
+- CouponCell: fix discounted price [#7123](https://github.com/youzan/vant/issues/7123)
+- List: scoped style not applied to first child [#7128](https://github.com/youzan/vant/issues/7128)
+
+### [v2.10.5](https://github.com/youzan/vant/compare/v2.10.4...v2.10.5)
+
+`2020-09-06`
+
+**Feature**
+
+- ActionSheet: add closeable prop [#7099](https://github.com/youzan/vant/issues/7099)
+- Area: add readonly prop [#7106](https://github.com/youzan/vant/issues/7106)
+- Calendar: add readonly prop [#7115](https://github.com/youzan/vant/issues/7115)
+- Calendar: allow default-date to be null [#7116](https://github.com/youzan/vant/issues/7116)
+- DatetimePicker: add readonly prop [#7107](https://github.com/youzan/vant/issues/7107)
+- Picker: add readonly prop [#7105](https://github.com/youzan/vant/issues/7105)
+
+**Bug Fixes**
+
+- Field: disallow minus when using digit type [#7114](https://github.com/youzan/vant/issues/7114)
+- Form: scroll to first matched field [#7102](https://github.com/youzan/vant/issues/7102)
+- Form: should reset validation before submit [#7103](https://github.com/youzan/vant/issues/7103)
+- Toast: failed to clear in some cases [#7100](https://github.com/youzan/vant/issues/7100)
+
+### [v2.10.4](https://github.com/youzan/vant/compare/v2.10.3...v2.10.4)
+
+`2020-09-03`
+
+**Feature**
+
+- ActionSheet: add description slot [#7068](https://github.com/youzan/vant/issues/7068)
+- Icon: add share-o icon [ea6324](https://github.com/youzan/vant/commit/ea6324234beae3bc4a700c59523a7091add49480)
+- Tabbar: add before-change prop [#7081](https://github.com/youzan/vant/issues/7081)
+
+**Bug Fixes**
+
+- Calendar: row-height should work on selected month [#7046](https://github.com/youzan/vant/issues/7046)
+- Field: fix the issue of checking empty value [#7050](https://github.com/youzan/vant/issues/7050)
+- Icon: fix calendar-o typo [#7080](https://github.com/youzan/vant/issues/7080)
+
+### [v2.10.3](https://github.com/youzan/vant/compare/v2.10.2...v2.10.3)
+
+`2020-08-25`
+
+**Feature**
+
+- Uploader: preview-cover slot add index param [#7036](https://github.com/youzan/vant/issues/7036)
+
+**Style**
+
+- Search: increase left padding to 12px [#7014](https://github.com/youzan/vant/issues/7014)
+- Tabs: adjust default line-width to 40px [#7002](https://github.com/youzan/vant/issues/7002)
+- Toast: adjust top position [#7044](https://github.com/youzan/vant/issues/7044)
+
+**Bug Fixes**
+
+- Calendar: render error when using rem unit [#7037](https://github.com/youzan/vant/issues/7037)
+- Toast: failed to reopen when using get-container [#7032](https://github.com/youzan/vant/issues/7032)
+
+### [v2.10.2](https://github.com/youzan/vant/compare/v2.10.1...v2.10.2)
+
+`2020-08-12`
+
+**Feature**
+
+- Tab: add @tab-line-height less var [#6985](https://github.com/youzan/vant/issues/6985)
+
+**Bug Fixes**
+
+- Sku: compatible sku.list don't exist [#6991](https://github.com/youzan/vant/issues/6991)
+
+### [v2.10.1](https://github.com/youzan/vant/compare/v2.10.0...v2.10.1)
+
+`2020-08-10`
+
+**Feature**
+
+- Button: add loading slot [#6966](https://github.com/youzan/vant/issues/6966)
+- Locale: adding Norwegian Language support [#6962](https://github.com/youzan/vant/issues/6962)
+
+**Style**
+
+- ContactList: add safe area inset bottom [#6970](https://github.com/youzan/vant/issues/6970)
+- TabbarItem: increase icon size to 22px [#6972](https://github.com/youzan/vant/issues/6972)
+
+**Bug Fixes**
+
+- AddressEdit: incorrect label wrap on safari [#6969](https://github.com/youzan/vant/issues/6969)
+- Icon: fix badge number align [#6975](https://github.com/youzan/vant/issues/6975) [#6952](https://github.com/youzan/vant/issues/6952)
+
+### [v2.10.0](https://github.com/youzan/vant/compare/v2.9.4...v2.10.0)
+
+`2020-08-07`
 
 **Feature**
 
 - AddressEdit: add tel-maxlength prop [#6869](https://github.com/youzan/vant/issues/6869)
 - Calendar: enable close-on-popstate by default [#6874](https://github.com/youzan/vant/issues/6874)
+- Dialog: add new prop theme [#6921](https://github.com/youzan/vant/issues/6921)
 - Dialog: enable close-on-popsate by default [#6873](https://github.com/youzan/vant/issues/6873)
+- DropdownMenu: add @dropdown-menu-box-shadow var [6d0c54](https://github.com/youzan/vant/commit/6d0c54e8f4e9c1c9982778df8a36c7ac3fc2f905)
+- Icon: add back-top icon [#6931](https://github.com/youzan/vant/issues/6931)
+- Icon: add photo-fail icon [#6883](https://github.com/youzan/vant/issues/6883)
 - ImagePreview: enable close-on-popstate by default [#6875](https://github.com/youzan/vant/issues/6875)
 - NumberKeyboard: add get-container prop [#6870](https://github.com/youzan/vant/issues/6870)
 
-**style**
+**Style**
 
 - uniform line-height [#6862](https://github.com/youzan/vant/issues/6862)
-- DropdownMenu: adjust default active color to @red [#6863](https://github.com/youzan/vant/issues/6863)
 - ActionSheet: add @action-sheet-loading-icon-size var [#6847](https://github.com/youzan/vant/issues/6847)
 - ActionSheet: adjust cancel text color to @gray-7 [#6846](https://github.com/youzan/vant/issues/6846)
 - ActionSheet: increase header height to 48px [#6856](https://github.com/youzan/vant/issues/6856)
 - Cell: adjust icon margin to 4px [#6844](https://github.com/youzan/vant/issues/6844)
+- CouponCell: insert a space after currency [#6888](https://github.com/youzan/vant/issues/6888)
+- DropdownMenu: adjust default active color to @red [#6863](https://github.com/youzan/vant/issues/6863)
+- Image: update loading icon and error icon [#6890](https://github.com/youzan/vant/issues/6890)
 - Field: adjust icon margin to 4px [#6849](https://github.com/youzan/vant/issues/6849)
 - NumberKeyboard: increase title size [#6845](https://github.com/youzan/vant/issues/6845)
+- NumberKeyboard: adjust padding bottom [#6938](https://github.com/youzan/vant/issues/6938)
+- NumberKeyboard: adjust key height to 28px [#6899](https://github.com/youzan/vant/issues/6899)
 - Picker: adjust default value of visible-item-count to 6 [#6827](https://github.com/youzan/vant/issues/6827)
 - Sidebar: adjust width to 80px [#6861](https://github.com/youzan/vant/issues/6861)
+- Sku: improve price align [#6911](https://github.com/youzan/vant/issues/6911)
 - Tag: adjust size and padding [#6828](https://github.com/youzan/vant/issues/6828)
+- Tab: remove default border [69ac60](https://github.com/youzan/vant/commit/69ac602bc21b445fb88783303d00bd65e4dc5ae2)
+- Tab: adjust padding in complete mode [90e678](https://github.com/youzan/vant/commit/90e678756aecddee2beb522e38017c68f616b387)
+- Tab: update nav padding [8027f4](https://github.com/youzan/vant/commit/8027f46f3ff33b200cf022e5f9a2693293a1bb16)
+- Tab: disable ellipsis when scrollable [bc0e45](https://github.com/youzan/vant/commit/bc0e45687a76f49355efa7fb2403184746575012)
 - Toast: adjust background color [#6848](https://github.com/youzan/vant/issues/6848)
 - Toast: adjust icon size to 36px [#6857](https://github.com/youzan/vant/issues/6857)
 
 **Bug Fixes**
 
+- AddressEdit: render error in some cases [#6942](https://github.com/youzan/vant/issues/6942)
+- Calendar: should only scroll calendar body when inited [#6926](https://github.com/youzan/vant/issues/6926)
 - Field: failed to reset validation when message is empty [#6867](https://github.com/youzan/vant/issues/6867)
-- Icon: incorrect image icon height when loading [#6858](https://github.com/youzan/vant/issues/6858)
+- Info: number vertical align center [#6952](https://github.com/youzan/vant/issues/6952)
 - ImagePreview: fit orientationchange [#6825](https://github.com/youzan/vant/issues/6825)
+- NumberKeyboard: incorrect key height on legacy safari [#6937](https://github.com/youzan/vant/issues/6937)
+- Picker: when item.defaultIndex is 0, this.defaultIndex will be used [#6948](https://github.com/youzan/vant/issues/6948)
+- Sku: fix header image shrink [#6949](https://github.com/youzan/vant/issues/6949)
 
 ### [v2.9.4](https://github.com/youzan/vant/compare/v2.9.3...v2.9.4)
 
@@ -146,7 +455,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - SubmitBar: add button-color prop [#6757](https://github.com/youzan/vant/issues/6757)
 - Sku: improve message datetime picker [8d29e5](https://github.com/youzan/vant/commit/8d29e5c8c6df278800865596f285c17029150963) [7343e5](https://github.com/youzan/vant/commit/7343e55409900635a0e39063edb9f67493048a54)
 
-**style**
+**Style**
 
 - ActionSheet: subname vertical align [#6756](https://github.com/youzan/vant/issues/6756)
 - Uploader: remove round border radius [#6748](https://github.com/youzan/vant/issues/6748)
@@ -180,7 +489,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Sku: enable close-on-click-overlay prop by default [#6631](https://github.com/youzan/vant/issues/6631)
 - TreeSelect: add selected-icon prop [#6615](https://github.com/youzan/vant/issues/6615)
 
-**style**
+**Style**
 
 - ActionSheet: update description style [#6586](https://github.com/youzan/vant/issues/6586)
 - AddressEdit: adjust label width [#6591](https://github.com/youzan/vant/issues/6591)
@@ -216,7 +525,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Form: rule message can be empty [#6536](https://github.com/youzan/vant/issues/6536)
 - Sticky: offset-top support rem unit [#6556](https://github.com/youzan/vant/issues/6556)
 
-**style**
+**Style**
 
 - Field: remove word num full color [#6545](https://github.com/youzan/vant/issues/6545)
 - Picker: add @picker-option-height less var [#6571](https://github.com/youzan/vant/issues/6571)
@@ -237,7 +546,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Picker: item-height support rem unit [#6462](https://github.com/youzan/vant/issues/6462)
 - Stepper: add placeholder prop [#6519](https://github.com/youzan/vant/issues/6519)
 
-**style**
+**Style**
 
 - Field: update disabled color [#6534](https://github.com/youzan/vant/issues/6534)
 
@@ -278,7 +587,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - DatetimePicker: add month-day type [#6395](https://github.com/youzan/vant/issues/6395)
 - Popup: create overlay for every popup [#6357](https://github.com/youzan/vant/issues/6357)
 
-**style**
+**Style**
 
 - ActionSheet: adjust subname color to gray-6 [e54c11](https://github.com/youzan/vant/commit/e54c11d55244e65246df7eddd7751983dbc4d331)
 - ActionSheet: remove option border [8db218](https://github.com/youzan/vant/commit/8db218e9c0ca6905491a019cf983a0269f3aea8c)
@@ -322,7 +631,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - NumberKeyboard: support multiple extra key [#6276](https://github.com/youzan/vant/issues/6276)
 - Stepper: add theme prop [#6282](https://github.com/youzan/vant/issues/6282)
 
-**style**
+**Style**
 
 - Rate: update rate disabled color [#6253](https://github.com/youzan/vant/issues/6253)
 - Sku: adjust border alignment [#6272](https://github.com/youzan/vant/issues/6272)
@@ -358,7 +667,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 `2020-05-05`
 
-**style**
+**Style**
 
 - Button: use flex layout [#6180](https://github.com/youzan/vant/issues/6180)
 - ActionSheet: improve text size adjust [#6175](https://github.com/youzan/vant/issues/6175)
@@ -401,7 +710,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 `2020-04-28`
 
-**style**
+**Style**
 
 - NumberKeyboard: new style [3188b4](https://github.com/youzan/vant/commit/3188b4d25bb6e60ed5de930ec8947929a7577dd3) [#6149](https://github.com/youzan/vant/issues/6149) [#6151](https://github.com/youzan/vant/issues/6151)
 

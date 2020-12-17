@@ -231,8 +231,8 @@ export default {
 | color | 标签主题色 | _string_ | `#ee0a24` |
 | background | 标签栏背景色 | _string_ | `white` |
 | duration | 动画时间，单位秒 | _number \| string_ | `0.3` |
-| line-width | 底部条宽度，默认单位`px` | _number \| string_ | `auto` |
-| line-height | 底部条高度，默认单位`px` | _number \| string_ | `3px` |
+| line-width | 底部条宽度，默认单位 `px` | _number \| string_ | `40px` |
+| line-height | 底部条高度，默认单位 `px` | _number \| string_ | `3px` |
 | animated | 是否开启切换标签内容时的转场动画 | _boolean_ | `false` |
 | border | 是否显示标签栏外边框，仅在 `type="line"` 时有效 | _boolean_ | `false` |
 | ellipsis | 是否省略过长的标题文字 | _boolean_ | `true` |
@@ -240,8 +240,8 @@ export default {
 | swipeable | 是否开启手势滑动切换 | _boolean_ | `false` |
 | lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | _boolean_ | `true` |
 | scrollspy `v2.3.0` | 是否开启滚动导航 | _boolean_ | `false` |
-| offset-top `v2.8.7` | 粘性定位布局下与顶部的最小距离，支持 `px` `vw` `rem` 单位，默认 `px` | _number \| string_ | `0` |
-| swipe-threshold | 滚动阈值，标签数量超过阈值时开始横向滚动 | _number \| string_ | `5` |
+| offset-top `v2.8.7` | 粘性定位布局下与顶部的最小距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
+| swipe-threshold | 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动 | _number \| string_ | `5` |
 | title-active-color | 标题选中态颜色 | _string_ | - |
 | title-inactive-color | 标题默认态颜色 | _string_ | - |
 | before-change `v2.9.3` | 切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise | _(name) => boolean \| Promise_ | - |
@@ -255,11 +255,11 @@ export default {
 | dot `v2.3.0` | 是否在标题右上角显示小红点 | _boolean_ | `false` |
 | badge `v2.5.6` | 图标右上角徽标的内容 | _number \| string_ | - |
 | info `v2.3.0` | 图标右上角徽标的内容（已废弃，请使用 badge 属性） | _number \| string_ | - |
-| name `v2.0.6` | 标签名称，作为匹配的标识符 | _number \| string_ | 标签的索引值 |
-| url `v2.2.1` | 点击后跳转的链接地址 | _string_ | - |
-| to `v2.2.1` | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
-| replace `v2.2.1` | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
-| title-style `v2.2.14` | 自定义标题样式 | _any_ | - |
+| name | 标签名称，作为匹配的标识符 | _number \| string_ | 标签的索引值 |
+| url | 点击后跳转的链接地址 | _string_ | - |
+| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
+| replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
+| title-style | 自定义标题样式 | _any_ | - |
 
 ### Tabs Events
 
@@ -273,12 +273,12 @@ export default {
 
 ### Tabs 方法
 
-通过 ref 可以获取到 Tabs 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 Tabs 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void |
-| scrollTo `v2.9.3` | 滚动到指定的标签页，在滚动导航模式下可用 | name: 标识符 | void |
+| resize | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 | - | - |
+| scrollTo `v2.9.3` | 滚动到指定的标签页，在滚动导航模式下可用 | name: 标识符 | - |
 
 ### Tabs Slots
 
@@ -289,7 +289,53 @@ export default {
 
 ### Tab Slots
 
-| 名称    | 说明                       |
-| ------- | -------------------------- |
-| default | 标签页内容                 |
-| title   | 自定义标题，不支持动态渲染 |
+| 名称    | 说明       |
+| ------- | ---------- |
+| default | 标签页内容 |
+| title   | 自定义标题 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                       | 默认值                | 描述 |
+| -------------------------- | --------------------- | ---- |
+| @tab-text-color            | `@gray-7`             | -    |
+| @tab-active-text-color     | `@text-color`         | -    |
+| @tab-disabled-text-color   | `@gray-5`             | -    |
+| @tab-font-size             | `@font-size-md`       | -    |
+| @tab-line-height           | `@line-height-md`     | -    |
+| @tabs-default-color        | `@red`                | -    |
+| @tabs-line-height          | `44px`                | -    |
+| @tabs-card-height          | `30px`                | -    |
+| @tabs-nav-background-color | `@white`              | -    |
+| @tabs-bottom-bar-width     | `40px`                | -    |
+| @tabs-bottom-bar-height    | `3px`                 | -    |
+| @tabs-bottom-bar-color     | `@tabs-default-color` | -    |
+
+## 常见问题
+
+### 组件从隐藏状态切换到显示状态时，底部条位置错误？
+
+Tabs 组件在挂载时，会获取自身的宽度，并计算出底部条的位置。如果组件一开始处于隐藏状态，则获取到的宽度永远为 0，因此无法展示底部条位置。
+
+#### 解决方法
+
+方法一，如果是使用 `v-show` 来控制组件展示的，则替换为 `v-if` 即可解决此问题：
+
+```html
+<!-- Before -->
+<van-tabs v-show="show" />
+<!-- After -->
+<van-tabs v-if="show" />
+```
+
+方法二，调用组件的 resize 方法来主动触发重绘：
+
+```html
+<van-tabs v-show="show" ref="tabs" />
+```
+
+```js
+this.$refs.tabs.resize();
+```

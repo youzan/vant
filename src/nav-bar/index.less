@@ -3,29 +3,37 @@
 .van-nav-bar {
   position: relative;
   z-index: @nav-bar-z-index;
-  display: flex;
-  align-items: center;
-  height: @nav-bar-height;
-  line-height: 1.5;
+  line-height: @line-height-lg;
   text-align: center;
   background-color: @nav-bar-background-color;
   user-select: none;
-
-  .van-icon {
-    color: @nav-bar-icon-color;
-  }
-
-  &__arrow {
-    min-width: 1em;
-    margin-right: @padding-base;
-    font-size: @nav-bar-arrow-size;
-  }
 
   &--fixed {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+  }
+
+  &--safe-area-inset-top {
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .van-icon {
+    color: @nav-bar-icon-color;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: @nav-bar-height;
+  }
+
+  &__arrow {
+    margin-right: @padding-base;
+    font-size: @nav-bar-arrow-size;
   }
 
   &__title {

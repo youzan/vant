@@ -1,4 +1,4 @@
-import { isDef, createNamespace } from '../utils';
+import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 import { routeProps } from '../utils/router';
 
@@ -11,6 +11,7 @@ export default createComponent({
     ...routeProps,
     dot: Boolean,
     name: [Number, String],
+    // @deprecated
     info: [Number, String],
     badge: [Number, String],
     title: String,
@@ -26,7 +27,7 @@ export default createComponent({
 
   computed: {
     computedName() {
-      return isDef(this.name) ? this.name : this.index;
+      return this.name ?? this.index;
     },
 
     isActive() {
@@ -55,9 +56,21 @@ export default createComponent({
 
   render(h) {
     const { slots, parent, isActive } = this;
-    const shouldRender = this.inited || parent.scrollspy || !parent.lazyRender;
+    const slotContent = slots();
+
+    if (process.env.NODE_ENV === 'development' && this.info) {
+      console.warn(
+        '[Vant] Tab: "info" prop is deprecated, use "badge" prop instead.'
+      );
+    }
+
+    if (!slotContent && !parent.animated) {
+      return;
+    }
+
     const show = parent.scrollspy || isActive;
-    const Content = shouldRender ? slots() : h();
+    const shouldRender = this.inited || parent.scrollspy || !parent.lazyRender;
+    const Content = shouldRender ? slotContent : h();
 
     if (parent.animated) {
       return (

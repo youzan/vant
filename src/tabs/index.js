@@ -1,10 +1,12 @@
 // Utils
-import { createNamespace, isDef, addUnit, isPromise } from '../utils';
+import { createNamespace, isDef, addUnit } from '../utils';
 import { scrollLeftTo, scrollTopTo } from './utils';
 import { route } from '../utils/router';
 import { isHidden } from '../utils/dom/style';
 import { on, off } from '../utils/dom/event';
+import { unitToPx } from '../utils/format/unit';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
+import { callInterceptor } from '../utils/interceptor';
 import {
   getScroller,
   getVisibleTop,
@@ -118,9 +120,13 @@ export default createComponent({
       }
     },
 
+    offsetTopPx() {
+      return unitToPx(this.offsetTop);
+    },
+
     scrollOffset() {
       if (this.sticky) {
-        return +this.offsetTop + this.tabHeight;
+        return this.offsetTopPx + this.tabHeight;
       }
       return 0;
     },
@@ -136,7 +142,7 @@ export default createComponent({
     },
 
     children() {
-      this.setCurrentIndexByName(this.currentName || this.active);
+      this.setCurrentIndexByName(this.active || this.currentName);
       this.setLine();
 
       this.$nextTick(() => {
@@ -150,7 +156,7 @@ export default createComponent({
 
       // scroll to correct position
       if (this.stickyFixed && !this.scrollspy) {
-        setRootScrollTop(Math.ceil(getElementTop(this.$el) - this.offsetTop));
+        setRootScrollTop(Math.ceil(getElementTop(this.$el) - this.offsetTopPx));
       }
     },
 
@@ -204,11 +210,10 @@ export default createComponent({
 
         const title = titles[this.currentIndex].$el;
         const { lineWidth, lineHeight } = this;
-        const width = isDef(lineWidth) ? lineWidth : title.offsetWidth / 2;
         const left = title.offsetLeft + title.offsetWidth / 2;
 
         const lineStyle = {
-          width: addUnit(width),
+          width: addUnit(lineWidth),
           backgroundColor: this.color,
           transform: `translateX(${left}px) translateX(-50%)`,
         };
@@ -235,19 +240,23 @@ export default createComponent({
     },
 
     setCurrentIndex(currentIndex) {
-      currentIndex = this.findAvailableTab(currentIndex);
+      const newIndex = this.findAvailableTab(currentIndex);
 
-      if (isDef(currentIndex) && currentIndex !== this.currentIndex) {
-        const shouldEmitChange = this.currentIndex !== null;
-        this.currentIndex = currentIndex;
-        this.$emit('input', this.currentName);
+      if (!isDef(newIndex)) {
+        return;
+      }
+
+      const newTab = this.children[newIndex];
+      const newName = newTab.computedName;
+      const shouldEmitChange = this.currentIndex !== null;
+
+      this.currentIndex = newIndex;
+
+      if (newName !== this.active) {
+        this.$emit('input', newName);
 
         if (shouldEmitChange) {
-          this.$emit(
-            'change',
-            this.currentName,
-            this.children[currentIndex].title
-          );
+          this.$emit('change', newName, newTab.title);
         }
       }
     },
@@ -264,34 +273,21 @@ export default createComponent({
       }
     },
 
-    callBeforeChange(name, done) {
-      if (this.beforeChange) {
-        const returnVal = this.beforeChange(name);
-
-        if (isPromise(returnVal)) {
-          returnVal.then((value) => {
-            if (value) {
-              done();
-            }
-          });
-        } else if (returnVal) {
-          done();
-        }
-      } else {
-        done();
-      }
-    },
-
     // emit event when clicked
     onClick(item, index) {
       const { title, disabled, computedName } = this.children[index];
       if (disabled) {
         this.$emit('disabled', computedName, title);
       } else {
-        this.callBeforeChange(computedName, () => {
-          this.setCurrentIndex(index);
-          this.scrollToCurrentContent();
+        callInterceptor({
+          interceptor: this.beforeChange,
+          args: [computedName],
+          done: () => {
+            this.setCurrentIndex(index);
+            this.scrollToCurrentContent();
+          },
         });
+
         this.$emit('click', computedName, title);
         route(item.$router, item);
       }
@@ -372,7 +368,7 @@ export default createComponent({
         refInFor
         type={type}
         dot={item.dot}
-        info={isDef(item.badge) ? item.badge : item.info}
+        info={item.badge ?? item.info}
         title={item.title}
         color={this.color}
         style={item.titleStyle}
@@ -381,7 +377,6 @@ export default createComponent({
         scrollable={scrollable}
         activeColor={this.titleActiveColor}
         inactiveColor={this.titleInactiveColor}
-        swipeThreshold={this.swipeThreshold}
         scopedSlots={{
           default: () => item.slots('title'),
         }}

@@ -130,13 +130,13 @@ export default {
 | reset-stepper-on-hide | Whether to reset stepper when hide | _boolean_ | `false` |
 | reset-selected-sku-on-hide | Whether to reset selected sku when hide | _boolean_ | `false` |
 | disable-stepper-input | Whether to disable stepper input | _boolean_ | `false` |
-| close-on-click-overlay | Whether to close sku popup when click overlay | _boolean_ | `true` |
+| close-on-click-overlay | Whether to close sku popup when overlay is clicked | _boolean_ | `true` |
 | stepper-title | Quantity title | _string_ | `Quantity` |
 | custom-stepper-config | Custom stepper related config | _object_ | `{}` |
 | message-config | Message related config | _object_ | `{}` |
 | disable-soldout-sku | Whether to disable soldout sku | _boolean_ | `true` |
 | get-container | Return the mount node for sku | _string \| () => Element_ | - |
-| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | start-sale-num `v2.3.0` | Minimum quantity | _number_ | `1` |
 | properties `v2.4.2` | Goods properties | _array_ | - |
 | preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | _boolean_ | `true` |
@@ -147,18 +147,18 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| add-cart | Triggered when click cart button | data: object |
-| buy-clicked | Triggered when click buy button | data: object |
-| stepper-change | Triggered when stepper value changed | value: number |
-| sku-selected | Triggered when select sku | { skuValue, selectedSku, selectedSkuComb } |
-| sku-prop-selected | Triggered when select property | { propValue, selectedProp, selectedSkuComb } |
-| open-preview | Triggered when open image preview | data: object |
-| close-preview | Triggered when close image preview | data: object |
-| sku-reset `v2.8.1` | Triggered when reset sku and property | { selectedSku, selectedProp, selectedSkuComb } |
+| add-cart | Emitted when click cart button | data: object |
+| buy-clicked | Emitted when click buy button | data: object |
+| stepper-change | Emitted when stepper value changed | value: number |
+| sku-selected | Emitted when select sku | { skuValue, selectedSku, selectedSkuComb } |
+| sku-prop-selected | Emitted when select property | { propValue, selectedProp, selectedSkuComb } |
+| open-preview | Emitted when open image preview | data: object |
+| close-preview | Emitted when close image preview | data: object |
+| sku-reset `v2.8.1` | Emitted when reset sku and property | { selectedSku, selectedProp, selectedSkuComb } |
 
 ### Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
@@ -396,3 +396,13 @@ skuData: {
   }
 }
 ```
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                       | Default Value           | Description |
+| -------------------------- | ----------------------- | ----------- |
+| @sku-item-background-color | `@background-color`     | -           |
+| @sku-icon-gray-color       | `@gray-4`               | -           |
+| @sku-upload-mask-color     | `rgba(50, 50, 51, 0.8)` | -           |

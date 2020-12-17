@@ -1,7 +1,7 @@
 // Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import { BORDER_SURROUND, WHITE } from '../utils/constant';
+import { BORDER_SURROUND } from '../utils/constant';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
 
 // Components
@@ -10,7 +10,7 @@ import Loading, { LoadingType } from '../loading';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/types';
+import { ScopedSlot, DefaultSlots } from '../utils/types';
 
 export type ButtonType = 'default' | 'primary' | 'info' | 'warning' | 'danger';
 
@@ -35,10 +35,15 @@ export type ButtonProps = RouteProps & {
   loadingSize: string;
   loadingType?: LoadingType;
   loadingText?: string;
+  iconPosition: 'left' | 'right';
 };
 
 export type ButtonEvents = {
   onClick?(event: Event): void;
+};
+
+export type ButttonSlots = DefaultSlots & {
+  loading?: ScopedSlot;
 };
 
 const [createComponent, bem] = createNamespace('button');
@@ -46,7 +51,7 @@ const [createComponent, bem] = createNamespace('button');
 function Button(
   h: CreateElement,
   props: ButtonProps,
-  slots: DefaultSlots,
+  slots: ButttonSlots,
   ctx: RenderContext<ButtonProps>
 ) {
   const {
@@ -59,12 +64,13 @@ function Button(
     loading,
     hairline,
     loadingText,
+    iconPosition,
   } = props;
 
   const style: Record<string, string | number> = {};
 
   if (color) {
-    style.color = plain ? color : WHITE;
+    style.color = plain ? color : 'white';
 
     if (!plain) {
       // Use background instead of backgroundColor to make linear-gradient work
@@ -107,11 +113,11 @@ function Button(
     { [BORDER_SURROUND]: hairline },
   ];
 
-  function Content() {
-    const content = [];
-
+  function renderIcon() {
     if (loading) {
-      content.push(
+      return slots.loading ? (
+        slots.loading()
+      ) : (
         <Loading
           class={bem('loading')}
           size={props.loadingSize}
@@ -119,10 +125,20 @@ function Button(
           color="currentColor"
         />
       );
-    } else if (icon) {
-      content.push(
+    }
+
+    if (icon) {
+      return (
         <Icon name={icon} class={bem('icon')} classPrefix={props.iconPrefix} />
       );
+    }
+  }
+
+  function renderContent() {
+    const content = [];
+
+    if (iconPosition === 'left') {
+      content.push(renderIcon());
     }
 
     let text;
@@ -134,6 +150,10 @@ function Button(
 
     if (text) {
       content.push(<span class={bem('text')}>{text}</span>);
+    }
+
+    if (iconPosition === 'right') {
+      content.push(renderIcon());
     }
 
     return content;
@@ -149,7 +169,7 @@ function Button(
       onTouchstart={onTouchstart}
       {...inherit(ctx)}
     >
-      <div class={bem('content')}>{Content()}</div>
+      <div class={bem('content')}>{renderContent()}</div>
     </tag>
   );
 }
@@ -186,6 +206,10 @@ Button.props = {
     type: String,
     default: '20px',
   },
+  iconPosition: {
+    type: String,
+    default: 'left',
+  },
 };
 
-export default createComponent<ButtonProps, ButtonEvents>(Button);
+export default createComponent<ButtonProps, ButtonEvents, ButttonSlots>(Button);

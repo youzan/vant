@@ -36,7 +36,7 @@ export default {
 
 ### Position
 
-Use `position` prop to set popup display position
+Use `position` prop to set popup display position.
 
 ```html
 <van-popup v-model="show" position="top" :style="{ height: '30%' }" />
@@ -77,7 +77,7 @@ Use `position` prop to set popup display position
 
 ### Get Container
 
-Use `get-container` prop to specify mount location
+Use `get-container` prop to specify mount location.
 
 ```html
 <!-- mount to body -->
@@ -114,25 +114,42 @@ export default {
 | overlay-class | Custom overlay class | _string_ | - |
 | overlay-style | Custom overlay style | _object_ | - |
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
-| round `v2.0.7` | Whether to show round corner | _boolean_ | `false` |
+| round | Whether to show round corner | _boolean_ | `false` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
-| close-on-popstate `v2.2.10` | Whether to close when popstate | _boolean_ | `false` |
-| close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
-| closeable `v2.2.0` | Whether to show close icon | _boolean_ | `false` |
-| close-icon `v2.2.0` | Close icon name | _string_ | `cross` |
-| close-icon-position `v2.2.2` | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
+| close-on-popstate | Whether to close when popstate | _boolean_ | `false` |
+| close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
+| closeable | Whether to show close icon | _boolean_ | `false` |
+| close-icon | Close icon name | _string_ | `cross` |
+| close-icon-position | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
+| transition-appear `v2.10.14` | Whether to apply transition on initial render | _boolean_ | `false` |
 | get-container | Return the mount node for Popup | _string \| () => Element_ | - |
-| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
 
 ### Events
 
-| Event         | Description                  | Arguments      |
-| ------------- | ---------------------------- | -------------- |
-| click         | Triggered when click Popup   | _event: Event_ |
-| open          | Triggered when open Popup    | -              |
-| close         | Triggered when close Popup   | -              |
-| opened        | Triggered when opened Popup  | -              |
-| closed        | Triggered when closed Popup  | -              |
-| click-overlay | Triggered when click overlay | -              |
+| Event | Description | Arguments |
+| --- | --- | --- |
+| click | Emitted when Popup is clicked | _event: Event_ |
+| click-overlay | Emitted when overlay is clicked | - |
+| click-close-icon `v2.11.0` | Emitted when close icon is clicked | _event: Event_ |
+| open | Emitted when opening Popup | - |
+| close | Emitted when closing Popup | - |
+| opened | Emitted when Popup is opened | - |
+| closed | Emitted when Popup is closed | - |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @popup-background-color | `@white` | - |
+| @popup-transition | `transform @animation-duration-base` | - |
+| @popup-round-border-radius | `16px` | - |
+| @popup-close-icon-size | `22px` | - |
+| @popup-close-icon-color | `@gray-5` | - |
+| @popup-close-icon-active-color | `@gray-6` | - |
+| @popup-close-icon-margin | `16px` | - |
+| @popup-close-icon-z-index | `1` | - |

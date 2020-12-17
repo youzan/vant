@@ -90,7 +90,7 @@ export default {
     },
 
     anotherLang() {
-      const items = this.langConfigs.filter(item => item.lang !== this.lang);
+      const items = this.langConfigs.filter((item) => item.lang !== this.lang);
       if (items.length) {
         return items[0];
       }
@@ -178,7 +178,6 @@ export default {
     padding: 0 12px;
     color: #fff;
     font-size: 14px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 24px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.7);

@@ -154,16 +154,17 @@ export default {
 | actions | Options | _Action[]_ | `[]` |
 | title | Title | _string_ | - |
 | cancel-text | Text of cancel button | _string_ | - |
-| description `v2.2.8` | Description above the options | _string_ | - |
-| close-icon `v2.2.13` | Close icon name | _string_ | `cross` |
-| duration `v2.0.3` | Transition duration, unit second | _number \| string_ | `0.3` |
-| round `v2.0.9` | Whether to show round corner | _boolean_ | `true` |
+| description | Description above the options | _string_ | - |
+| closeable `v2.10.5` | Whether to show close icon | _boolean_ | `true` |
+| close-icon | Close icon name | _string_ | `cross` |
+| duration | Transition duration, unit second | _number \| string_ | `0.3` |
+| round | Whether to show round corner | _boolean_ | `true` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | close-on-popstate `v2.5.3` | Whether to close when popstate | _boolean_ | `false` |
-| close-on-click-action | Whether to close when click action | _boolean_ | `false` |
-| close-on-click-overlay | Whether to close when click overlay | _boolean_ | `true` |
+| close-on-click-action | Whether to close when an action is clicked | _boolean_ | `false` |
+| close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | get-container | Return the mount node for ActionSheet | _string \| () => Element_ | - |
 
@@ -182,10 +183,46 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| select | Triggered when click option | _action: Action, index: number_ |
-| cancel | Triggered when click cancel button | - |
-| open | Triggered when open ActionSheet | - |
-| close | Triggered when close ActionSheet | - |
-| opened | Triggered when opened ActionSheet | - |
-| closed | Triggered when closed ActionSheet | - |
-| click-overlay | Triggered when click overlay | - |
+| select | Emitted when an option is clicked | _action: Action, index: number_ |
+| cancel | Emitted when the cancel button is clicked | - |
+| open | Emitted when opening ActionSheet | - |
+| close | Emitted when closing ActionSheet | - |
+| opened | Emitted when ActionSheet is opened | - |
+| closed | Emitted when ActionSheet is closed | - |
+| click-overlay | Emitted when overlay is clicked | - |
+
+### Slots
+
+| Name                  | Description        |
+| --------------------- | ------------------ |
+| default               | Custom content     |
+| description `v2.10.4` | Custom description |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                   | Default Value       | Description |
+| -------------------------------------- | ------------------- | ----------- |
+| @action-sheet-max-height               | `80%`               | -           |
+| @action-sheet-header-height            | `48px`              | -           |
+| @action-sheet-header-font-size         | `@font-size-lg`     | -           |
+| @action-sheet-description-color        | `@gray-6`           | -           |
+| @action-sheet-description-font-size    | `@font-size-md`     | -           |
+| @action-sheet-description-line-height  | `@line-height-md`   | -           |
+| @action-sheet-item-background          | `@white`            | -           |
+| @action-sheet-item-font-size           | `@font-size-lg`     | -           |
+| @action-sheet-item-line-height         | `@line-height-lg`   | -           |
+| @action-sheet-item-text-color          | `@text-color`       | -           |
+| @action-sheet-item-disabled-text-color | `@gray-5`           | -           |
+| @action-sheet-subname-color            | `@gray-6`           | -           |
+| @action-sheet-subname-font-size        | `@font-size-sm`     | -           |
+| @action-sheet-subname-line-height      | `@line-height-sm`   | -           |
+| @action-sheet-close-icon-size          | `22px`              | -           |
+| @action-sheet-close-icon-color         | `@gray-5`           | -           |
+| @action-sheet-close-icon-active-color  | `@gray-6`           | -           |
+| @action-sheet-close-icon-padding       | `0 @padding-md`     | -           |
+| @action-sheet-cancel-text-color        | `@gray-7`           | -           |
+| @action-sheet-cancel-padding-top       | `@padding-xs`       | -           |
+| @action-sheet-cancel-padding-color     | `@background-color` | -           |
+| @action-sheet-loading-icon-size        | `22px`              | -           |

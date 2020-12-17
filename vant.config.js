@@ -3,7 +3,7 @@ module.exports = {
   build: {
     skipInstall: ['lazyload'],
     site: {
-      publicPath: 'https://b.yzcdn.cn/vant/',
+      publicPath: process.env.PUBLIC_PATH || 'https://b.yzcdn.cn/vant/',
     },
     vetur: {
       tagPrefix: 'van-',
@@ -11,9 +11,17 @@ module.exports = {
   },
   site: {
     defaultLang: 'en-US',
-    versions: [{ label: '1.x', link: 'https://youzan.github.io/vant/1.x/' }],
+    versions: [
+      { label: '1.x', link: '/vant/1.x/' },
+      { label: '3.x', link: '/vant/next/' },
+    ],
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
+    },
+    htmlPluginOptions: {
+      meta: {
+        'docsearch:version': '2.x',
+      },
     },
     locales: {
       'zh-CN': {
@@ -35,6 +43,18 @@ module.exports = {
           apiKey: '90067aecdaa2c85220e2783cd305caac',
           indexName: 'vant',
           placeholder: '搜索文档...',
+          transformData(hits) {
+            if (location.hostname === 'vant-contrib.gitee.io') {
+              hits.forEach((hit) => {
+                if (hit.url) {
+                  hit.url = hit.url.replace(
+                    'youzan.github.io',
+                    'vant-contrib.gitee.io'
+                  );
+                }
+              });
+            }
+          },
         },
         nav: [
           {
@@ -47,6 +67,10 @@ module.exports = {
               {
                 path: 'quickstart',
                 title: '快速上手',
+              },
+              {
+                path: 'advanced-usage',
+                title: '进阶用法',
               },
               {
                 path: 'changelog',
@@ -221,6 +245,10 @@ module.exports = {
             title: '展示组件',
             items: [
               {
+                path: 'badge',
+                title: 'Badge 徽标',
+              },
+              {
                 path: 'circle',
                 title: 'Circle 环形进度条',
               },
@@ -257,6 +285,10 @@ module.exports = {
                 title: 'NoticeBar 通知栏',
               },
               {
+                path: 'popover',
+                title: 'Popover 气泡弹出框',
+              },
+              {
                 path: 'progress',
                 title: 'Progress 进度条',
               },
@@ -278,7 +310,7 @@ module.exports = {
               },
               {
                 path: 'tag',
-                title: 'Tag 标记',
+                title: 'Tag 标签',
               },
             ],
           },
@@ -340,7 +372,15 @@ module.exports = {
               },
               {
                 path: 'contact-card',
-                title: 'Contact 联系人',
+                title: 'ContactCard 联系人卡片',
+              },
+              {
+                path: 'contact-edit',
+                title: 'ContactEdit 联系人编辑',
+              },
+              {
+                path: 'contact-list',
+                title: 'ContactList 联系人列表',
               },
               {
                 path: 'coupon-list',
@@ -406,6 +446,10 @@ module.exports = {
               {
                 path: 'quickstart',
                 title: 'Quickstart',
+              },
+              {
+                path: 'advanced-usage',
+                title: 'Advanced Usage',
               },
               {
                 path: 'changelog',
@@ -572,6 +616,10 @@ module.exports = {
             title: 'Display Components',
             items: [
               {
+                path: 'badge',
+                title: 'Badge',
+              },
+              {
                 path: 'circle',
                 title: 'Circle',
               },
@@ -606,6 +654,10 @@ module.exports = {
               {
                 path: 'notice-bar',
                 title: 'NoticeBar',
+              },
+              {
+                path: 'popover',
+                title: 'Popover',
               },
               {
                 path: 'progress',
@@ -691,7 +743,15 @@ module.exports = {
               },
               {
                 path: 'contact-card',
-                title: 'Contact',
+                title: 'ContactCard',
+              },
+              {
+                path: 'contact-edit',
+                title: 'ContactEdit',
+              },
+              {
+                path: 'contact-list',
+                title: 'ContactList',
               },
               {
                 path: 'coupon-list',

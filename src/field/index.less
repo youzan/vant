@@ -15,7 +15,6 @@
     }
 
     &--right {
-      padding-right: @padding-md;
       text-align: right;
     }
   }
@@ -55,10 +54,10 @@
 
     &:disabled {
       color: @field-input-disabled-text-color;
-      background-color: transparent;
       cursor: not-allowed;
       opacity: 1;
-      -webkit-text-fill-color: currentColor; // fix disabled color in iOS
+      // fix disabled color in mobile safari
+      -webkit-text-fill-color: @field-input-disabled-text-color;
     }
 
     &:read-only {
@@ -117,7 +116,6 @@
   &__left-icon .van-icon,
   &__right-icon .van-icon {
     display: block;
-    min-width: 1em;
     font-size: @field-icon-size;
     line-height: inherit;
   }

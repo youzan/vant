@@ -117,15 +117,15 @@ export default {
 | height | Height | _number \| string_ | `300` |
 | main-active-index | The index of selected parent node | _number \| string_ | `0` |
 | active-id | Id of selected item | _number \| string \|<br>(number \| string)[]_ | `0` |
-| max `v2.2.0` | Maximum number of selected items | _number \| string_ | `Infinity` |
+| max | Maximum number of selected items | _number \| string_ | `Infinity` |
 | selected-icon `v2.9.0` | Selected icon | _string_ | `success` |
 
 ### Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click-nav | triggered when parent node is selected | index: index of selected parent |
-| click-item | triggered when item is selected | data: selected item |
+| click-nav | Emitted when parent node is selected | index: index of selected parent |
+| click-item | Emitted when item is selected | data: selected item |
 
 ### Slots
 
@@ -168,3 +168,18 @@ In every tree object, `text` property defines `id` stands for the unique key whi
   },
 ];
 ```
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                  | Default Value       | Description |
+| ------------------------------------- | ------------------- | ----------- |
+| @tree-select-font-size                | `@font-size-md`     | -           |
+| @tree-select-nav-background-color     | `@background-color` | -           |
+| @tree-select-content-background-color | `@white`            | -           |
+| @tree-select-nav-item-padding         | `14px @padding-sm`  | -           |
+| @tree-select-item-height              | `48px`              | -           |
+| @tree-select-item-active-color        | `@red`              | -           |
+| @tree-select-item-disabled-color      | `@gray-5`           | -           |
+| @tree-select-item-selected-size       | `16px`              | -           |

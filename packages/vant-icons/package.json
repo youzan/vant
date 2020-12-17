@@ -1,13 +1,14 @@
 {
   "name": "@vant/icons",
-  "version": "1.2.5",
+  "version": "1.4.0",
   "description": "vant icons",
   "main": "./src/config.js",
   "files": [
     "src"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "export": "node ./build/export.js",

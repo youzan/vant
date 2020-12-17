@@ -12,7 +12,7 @@ import Loading from '../loading';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/types';
+import { ScopedSlot, DefaultSlots } from '../utils/types';
 import { PopupMixinProps } from '../mixins/popup/type';
 
 export type ActionSheetItem = {
@@ -30,6 +30,7 @@ export type ActionSheetProps = PopupMixinProps & {
   title?: string;
   actions?: ActionSheetItem[];
   duration: number | string;
+  closeable?: boolean;
   closeIcon: string;
   cancelText?: string;
   description?: string;
@@ -38,15 +39,19 @@ export type ActionSheetProps = PopupMixinProps & {
   safeAreaInsetBottom?: boolean;
 };
 
+export type ActionSheetSlots = DefaultSlots & {
+  description?: ScopedSlot;
+};
+
 const [createComponent, bem] = createNamespace('action-sheet');
 
 function ActionSheet(
   h: CreateElement,
   props: ActionSheetProps,
-  slots: DefaultSlots,
+  slots: ActionSheetSlots,
   ctx: RenderContext<ActionSheetProps>
 ) {
-  const { title, cancelText } = props;
+  const { title, cancelText, closeable } = props;
 
   function onCancel() {
     emit(ctx, 'input', false);
@@ -58,19 +63,15 @@ function ActionSheet(
       return (
         <div class={bem('header')}>
           {title}
-          <Icon
-            name={props.closeIcon}
-            class={bem('close')}
-            onClick={onCancel}
-          />
+          {closeable && (
+            <Icon
+              name={props.closeIcon}
+              class={bem('close')}
+              onClick={onCancel}
+            />
+          )}
         </div>
       );
-    }
-  }
-
-  function Content() {
-    if (slots.default) {
-      return <div class={bem('content')}>{slots.default()}</div>;
     }
   }
 
@@ -129,9 +130,12 @@ function ActionSheet(
     }
   }
 
-  const Description = props.description && (
-    <div class={bem('description')}>{props.description}</div>
-  );
+  function Description() {
+    const description = slots.description?.() || props.description;
+    if (description) {
+      return <div class={bem('description')}>{description}</div>;
+    }
+  }
 
   return (
     <Popup
@@ -150,9 +154,11 @@ function ActionSheet(
       {...inherit(ctx, true)}
     >
       {Header()}
-      {Description}
-      {props.actions && props.actions.map(Option)}
-      {Content()}
+      {Description()}
+      <div class={bem('content')}>
+        {props.actions && props.actions.map(Option)}
+        {slots.default?.()}
+      </div>
       {CancelText()}
     </Popup>
   );
@@ -169,6 +175,10 @@ ActionSheet.props = {
   closeOnPopstate: Boolean,
   closeOnClickAction: Boolean,
   round: {
+    type: Boolean,
+    default: true,
+  },
+  closeable: {
     type: Boolean,
     default: true,
   },

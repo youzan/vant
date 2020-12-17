@@ -13,7 +13,7 @@ Vue.use(PullRefresh);
 
 ### Basic Usage
 
-The `refresh` event will be triggered when pull refresh, you should set `v-model` to `false` to reset loading status after process refresh event.
+The `refresh` event will be Emitted when pull refresh, you should set `v-model` to `false` to reset loading status after process refresh event.
 
 ```html
 <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
@@ -59,7 +59,7 @@ Use `success-text` to set the success prompt after the refresh is successful
 
 ### Custom Tips
 
-Use slots to custom tips
+Use slots to custom tips.
 
 ```html
 <van-pull-refresh v-model="isLoading" :head-height="80" @refresh="onRefresh">
@@ -109,9 +109,9 @@ Use slots to custom tips
 
 ### Events
 
-| Event   | Description                 | Parameters |
-| ------- | --------------------------- | ---------- |
-| refresh | Triggered when pull refresh | -          |
+| Event   | Description                   | Parameters |
+| ------- | ----------------------------- | ---------- |
+| refresh | Emitted after pulling refresh | -          |
 
 ### Slots
 
@@ -123,3 +123,13 @@ Use slots to custom tips
 | loosing | Content of head when at loosing       | { distance } |
 | loading | Content of head when at loading       | { distance } |
 | success | Content of head when succeed          | -            |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                          | Default Value   | Description |
+| ----------------------------- | --------------- | ----------- |
+| @pull-refresh-head-height     | `50px`          | -           |
+| @pull-refresh-head-font-size  | `@font-size-md` | -           |
+| @pull-refresh-head-text-color | `@gray-6`       | -           |

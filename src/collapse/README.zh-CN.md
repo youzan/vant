@@ -1,5 +1,9 @@
 # Collapse 折叠面板
 
+### 介绍
+
+将一组内容放置在多个折叠面板中，点击面板的标题可以展开或收缩其内容。
+
 ### 引入
 
 ```js
@@ -14,13 +18,13 @@ Vue.use(CollapseItem);
 
 ### 基础用法
 
-通过`v-model`控制展开的面板列表，`activeNames`为数组格式
+通过 `v-model` 控制展开的面板列表，`activeNames` 为数组格式。
 
 ```html
 <van-collapse v-model="activeNames">
   <van-collapse-item title="标题1" name="1">内容</van-collapse-item>
   <van-collapse-item title="标题2" name="2">内容</van-collapse-item>
-  <van-collapse-item title="标题3" name="3" disabled>内容</van-collapse-item>
+  <van-collapse-item title="标题3" name="3">内容</van-collapse-item>
 </van-collapse>
 ```
 
@@ -36,7 +40,7 @@ export default {
 
 ### 手风琴
 
-通过`accordion`可以设置为手风琴模式，最多展开一个面板，此时`activeName`为字符串格式
+通过 `accordion` 可以设置为手风琴模式，最多展开一个面板，此时 `activeName` 为字符串格式。
 
 ```html
 <van-collapse v-model="activeName" accordion>
@@ -56,7 +60,21 @@ export default {
 };
 ```
 
+### 禁用状态
+
+通过 `disabled` 属性来禁用单个面板。
+
+```html
+<van-collapse v-model="activeNames">
+  <van-collapse-item title="标题1" name="1">内容</van-collapse-item>
+  <van-collapse-item title="标题2" name="2" disabled>内容</van-collapse-item>
+  <van-collapse-item title="标题3" name="3" disabled>内容</van-collapse-item>
+</van-collapse>
+```
+
 ### 自定义标题内容
+
+通过 `title` 插槽可以自定义标题栏的内容。
 
 ```html
 <van-collapse v-model="activeNames">
@@ -117,10 +135,32 @@ export default {
 
 ### CollapseItem Slots
 
-| 名称       | 说明                          |
-| ---------- | ----------------------------- |
-| default    | 面板内容                      |
-| value      | 自定义显示内容                |
-| icon       | 自定义`icon`                  |
-| title      | 自定义`title`                 |
-| right-icon | 自定义右侧按钮，默认是`arrow` |
+| 名称       | 说明                           |
+| ---------- | ------------------------------ |
+| default    | 面板内容                       |
+| value      | 自定义显示内容                 |
+| icon       | 自定义 `icon`                  |
+| title      | 自定义 `title`                 |
+| right-icon | 自定义右侧按钮，默认是 `arrow` |
+
+### CollapseItem 方法
+
+通过 ref 可以获取到 CollapseItem 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名 | 说明 | 参数 | 返回值 |
+| --- | --- | --- | --- |
+| toggle `v2.10.9` | 切换面试展开状态，传 `true` 为展开，`false` 为收起，不传参为切换 | _expand?: boolean_ | - |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                    | 默认值                     | 描述 |
+| --------------------------------------- | -------------------------- | ---- |
+| @collapse-item-transition-duration      | `@animation-duration-base` | -    |
+| @collapse-item-content-padding          | `@padding-sm @padding-md`  | -    |
+| @collapse-item-content-font-size        | `@font-size-md`            | -    |
+| @collapse-item-content-line-height      | `1.5`                      | -    |
+| @collapse-item-content-text-color       | `@gray-6`                  | -    |
+| @collapse-item-content-background-color | `@white`                   | -    |
+| @collapse-item-title-disabled-color     | `@gray-5`                  | -    |

@@ -28,7 +28,7 @@
 
     <demo-block :title="t('customStyle')">
       <van-divider
-        :style="{ borderColor: BLUE, color: BLUE, padding: '0 16px' }"
+        :style="{ borderColor: '#1989fa', color: '#1989fa', padding: '0 16px' }"
       >
         {{ t('text') }}
       </van-divider>
@@ -37,8 +37,6 @@
 </template>
 
 <script>
-import { BLUE } from '../../utils/constant';
-
 export default {
   i18n: {
     'zh-CN': {
@@ -55,12 +53,6 @@ export default {
       contentPosition: 'Content Position',
       customStyle: 'Custom Style',
     },
-  },
-
-  data() {
-    return {
-      BLUE,
-    };
   },
 };
 </script>

@@ -1,5 +1,9 @@
 # SwipeCell 滑动单元格
 
+### 介绍
+
+可以左右滑动来展示操作按钮的单元格组件。
+
 ### 引入
 
 ```js
@@ -13,7 +17,7 @@ Vue.use(SwipeCell);
 
 ### 基础用法
 
-`SwipeCell`组件提供了`left`和`right`两个插槽，用于定义两侧滑动区域的内容
+`SwipeCell` 组件提供了 `left` 和 `right` 两个插槽，用于定义两侧滑动区域的内容。
 
 ```html
 <van-swipe-cell>
@@ -30,7 +34,7 @@ Vue.use(SwipeCell);
 
 ### 自定义内容
 
-`SwipeCell`内容可以嵌套任意内容，比如嵌套一个商品卡片
+`SwipeCell` 可以嵌套任意内容，比如嵌套一个商品卡片。
 
 ```html
 <van-swipe-cell>
@@ -61,7 +65,7 @@ Vue.use(SwipeCell);
 
 ### 异步关闭
 
-通过传入`before-close`回调函数，可以自定义两侧滑动内容关闭时的行为
+通过传入 `before-close` 回调函数，可以自定义两侧滑动内容关闭时的行为。
 
 ```html
 <van-swipe-cell :before-close="beforeClose">
@@ -106,12 +110,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| name `v2.0.4` | 标识符，可以在事件参数中获取到 | _number \| string_ | - |
+| name | 标识符，可以在事件参数中获取到 | _number \| string_ | - |
 | left-width | 指定左侧滑动区域宽度，单位为`px` | _number \| string_ | `auto` |
 | right-width | 指定右侧滑动区域宽度，单位为`px` | _number \| string_ | `auto` |
 | before-close `v2.3.0` | 关闭前的回调函数 | _Function_ | - |
 | disabled | 是否禁用滑动 | _boolean_ | `false` |
-| stop-propagation `v2.1.0` | 是否阻止滑动事件冒泡 | _boolean_ | `false` |
+| stop-propagation | 是否阻止滑动事件冒泡 | _boolean_ | `false` |
 
 ### Slots
 
@@ -141,15 +145,26 @@ beforeClose 的第一个参数为对象，对象中包含以下属性：
 
 ### 方法
 
-通过 ref 可以获取到 SwipeCell 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)
+通过 ref 可以获取到 SwipeCell 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
-| 方法名 | 说明             | 参数                     | 返回值 |
-| ------ | ---------------- | ------------------------ | ------ |
-| open   | 打开单元格侧边栏 | position: `left | right` | -      |
-| close  | 收起单元格侧边栏 | -                        | -      |
+| 方法名 | 说明             | 参数                      | 返回值 |
+| ------ | ---------------- | ------------------------- | ------ |
+| open   | 打开单元格侧边栏 | position: `left \| right` | -      |
+| close  | 收起单元格侧边栏 | -                         | -      |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| @switch-cell-padding-top | `@cell-vertical-padding - 1px` | - |
+| @switch-cell-padding-bottom | `@cell-vertical-padding - 1px` | - |
+| @switch-cell-large-padding-top | `@cell-large-vertical-padding - 1px` | - |
+| @switch-cell-large-padding-bottom | `@cell-large-vertical-padding - 1px` | - |
 
 ## 常见问题
 
 ### 在桌面端无法操作组件？
 
-参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。

@@ -43,7 +43,7 @@ export default {
 ### Custom Color
 
 ```html
-<van-checkbox v-model="checked" checked-color="#07c160">Checkbox</van-checkbox>
+<van-checkbox v-model="checked" checked-color="#ee0a24">Checkbox</van-checkbox>
 ```
 
 ### Custom Icon Size
@@ -54,7 +54,7 @@ export default {
 
 ### Custom Icon
 
-Use icon slot to custom icon
+Use icon slot to custom icon.
 
 ```html
 <van-checkbox v-model="checked">
@@ -220,7 +220,7 @@ export default {
 | label-position | Can be set to `left` | _string_ | `right` |
 | icon-size | Icon size | _number \| string_ | `20px` |
 | checked-color | Checked color | _string_ | `#1989fa` | - |
-| bind-group `v2.2.4` | Whether to bind with CheckboxGroup | _boolean_ | `true` |
+| bind-group | Whether to bind with CheckboxGroup | _boolean_ | `true` |
 
 ### CheckboxGroup Props
 
@@ -230,21 +230,21 @@ export default {
 | disabled | Whether to disable all checkboxes | _boolean_ | `false` |
 | max | Maximum amount of checked options | _number \| string_ | `0`(Unlimited) |
 | direction `v2.5.0` | Direction, can be set to `horizontal` | _string_ | `vertical` |
-| icon-size `v2.2.3` | Icon size of all checkboxes | _number \| string_ | `20px` |
-| checked-color `v2.2.3` | Checked color of all checkboxes | _string_ | `#1989fa` | - |
+| icon-size | Icon size of all checkboxes | _number \| string_ | `20px` |
+| checked-color | Checked color of all checkboxes | _string_ | `#1989fa` | - |
 
 ### Checkbox Events
 
-| Event  | Description                   | Parameters         |
-| ------ | ----------------------------- | ------------------ |
-| change | Triggered when value changed  | _checked: boolean_ |
-| click  | Triggered when click checkbox | _event: Event_     |
+| Event  | Description                          | Parameters         |
+| ------ | ------------------------------------ | ------------------ |
+| change | Emitted when value changed           | _checked: boolean_ |
+| click  | Emitted when the checkbox is clicked | _event: Event_     |
 
 ### CheckboxGroup Events
 
-| Event  | Description                  | Parameters     |
-| ------ | ---------------------------- | -------------- |
-| change | Triggered when value changed | _names: any[]_ |
+| Event  | Description                | Parameters     |
+| ------ | -------------------------- | -------------- |
+| change | Emitted when value changed | _names: any[]_ |
 
 ### Checkbox Slots
 
@@ -255,16 +255,55 @@ export default {
 
 ### CheckboxGroup Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get CheckboxGroup instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get CheckboxGroup instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| toggleAll | Toggle check status of all checkboxes | _checked?: boolean_ | - |
+| toggleAll | Toggle check status of all checkboxes | _options?: boolean \| object_ | - |
+
+### toggleAll Usage
+
+```js
+const { checkboxGroup } = this.$refs;
+
+// Toggle all
+checkboxGroup.toggleAll();
+// Select all
+checkboxGroup.toggleAll(true);
+// Unselect all
+checkboxGroup.toggleAll(false);
+
+// Toggle all, skip disabled
+checkboxGroup.toggleAll({
+  skipDisabled: true,
+});
+// Select all, skip disabled
+checkboxGroup.toggleAll({
+  checked: true,
+  skipDisabled: true,
+});
+```
 
 ### Checkbox Methods
 
-Use [ref](https://vuejs.org/v2/api/#ref) to get Checkbox instance and call instance methods
+Use [ref](https://vuejs.org/v2/api/#ref) to get Checkbox instance and call instance methods.
 
 | Name   | Description         | Attribute           | Return value |
 | ------ | ------------------- | ------------------- | ------------ |
 | toggle | Toggle check status | _checked?: boolean_ | -            |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @checkbox-size | `20px` | - |
+| @checkbox-border-color | `@gray-5` | - |
+| @checkbox-transition-duration | `@animation-duration-fast` | - |
+| @checkbox-label-margin | `@padding-xs` | - |
+| @checkbox-label-color | `@text-color` | - |
+| @checkbox-checked-icon-color | `@blue` | - |
+| @checkbox-disabled-icon-color | `@gray-5` | - |
+| @checkbox-disabled-label-color | `@gray-5` | - |
+| @checkbox-disabled-background-color | `@border-color` | - |

@@ -1,4 +1,4 @@
-import { createNamespace, isDef, addUnit } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 
 const [createComponent, bem] = createNamespace('progress');
 
@@ -30,16 +30,17 @@ export default createComponent({
   },
 
   mounted() {
-    this.setWidth();
+    this.resize();
   },
 
   watch: {
-    showPivot: 'setWidth',
-    pivotText: 'setWidth',
+    showPivot: 'resize',
+    pivotText: 'resize',
   },
 
   methods: {
-    setWidth() {
+    // @exposed-api
+    resize() {
       this.$nextTick(() => {
         this.progressWidth = this.$el.offsetWidth;
         this.pivotWidth = this.$refs.pivot ? this.$refs.pivot.offsetWidth : 0;
@@ -49,7 +50,7 @@ export default createComponent({
 
   render() {
     const { pivotText, percentage } = this;
-    const text = isDef(pivotText) ? pivotText : percentage + '%';
+    const text = pivotText ?? percentage + '%';
     const showPivot = this.showPivot && text;
     const background = this.inactive ? '#cacaca' : this.color;
 

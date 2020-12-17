@@ -2,7 +2,9 @@
 
 ### Intro
 
-The default language of Vant is Chinese. If you want to use other languages, you can follow the instructions below.
+Vant uses Chinese as the default language. If you want to use other languages, please follow the instructions below.
+
+## Usage
 
 ### Switch languages
 
@@ -10,12 +12,12 @@ Vant supports multiple languages with the Locale component, and the `Locale.use`
 
 ```js
 import { Locale } from 'vant';
-import enUS from 'vant/lib/locale/lang/en-US';
+import enUS from 'vant/es/locale/lang/en-US';
 
 Locale.use('en-US', enUS);
 ```
 
-### Modify default configs
+### Override default configs
 
 Use `Locale.add` method to modify the default configs.
 
@@ -37,15 +39,22 @@ Locale.add(messages);
 
 Current supported languages:
 
-| Language                 | Filename |
-| ------------------------ | -------- |
-| Chinese                  | zh-CN    |
-| Traditional Chinese (HK) | zh-HK    |
-| Traditional Chinese (TW) | zh-TW    |
-| English                  | en-US    |
-| Turkish                  | tr-TR    |
-| Spanish (Spain)          | es-ES    |
-| Japanese                 | ja-JP    |
-| Romanian                 | ro-RO    |
+| Language                 | Filename     |
+| ------------------------ | ------------ |
+| Chinese                  | zh-CN        |
+| Traditional Chinese (HK) | zh-HK        |
+| Traditional Chinese (TW) | zh-TW        |
+| English                  | en-US        |
+| German                   | de-DE        |
+| German (formal)          | de-DE-formal |
+| Norwegian                | nb-NO        |
+| Japanese                 | ja-JP        |
+| Romanian                 | ro-RO        |
+| Spanish (Spain)          | es-ES        |
+| Turkish                  | tr-TR        |
 
 > View all language configs [Here](https://github.com/youzan/vant/tree/dev/src/locale/lang).
+
+### Add new language
+
+If you can’t find the language you need, please send us a Pull Request to add the new language pack, you can refer to [Add German language pack](https://github.com/youzan/vant/pull/7245) PR.

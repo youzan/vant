@@ -34,10 +34,10 @@
 
     <demo-block :title="t('customColor')">
       <van-radio-group v-model="radio3" class="demo-radio-group">
-        <van-radio name="1" checked-color="#07c160">
+        <van-radio name="1" checked-color="#ee0a24">
           {{ t('radio') }} 1
         </van-radio>
-        <van-radio name="2" checked-color="#07c160">
+        <van-radio name="2" checked-color="#ee0a24">
           {{ t('radio') }} 2
         </van-radio>
       </van-radio-group>
@@ -45,12 +45,8 @@
 
     <demo-block :title="t('customIconSize')">
       <van-radio-group v-model="radioIconSize" class="demo-radio-group">
-        <van-radio name="1" checked-color="#07c160" icon-size="24px">
-          {{ t('radio') }} 1
-        </van-radio>
-        <van-radio name="2" checked-color="#07c160" icon-size="24px">
-          {{ t('radio') }} 2
-        </van-radio>
+        <van-radio name="1" icon-size="24px"> {{ t('radio') }} 1 </van-radio>
+        <van-radio name="2" icon-size="24px"> {{ t('radio') }} 2 </van-radio>
       </van-radio-group>
     </demo-block>
 
@@ -82,10 +78,14 @@
       <van-radio-group v-model="radio5">
         <van-cell-group>
           <van-cell clickable :title="t('radio') + 1" @click="radio5 = '1'">
-            <van-radio name="1" slot="right-icon" />
+            <template #right-icon>
+              <van-radio name="1" />
+            </template>
           </van-cell>
           <van-cell clickable :title="t('radio') + 2" @click="radio5 = '2'">
-            <van-radio name="2" slot="right-icon" />
+            <template #right-icon>
+              <van-radio name="2" />
+            </template>
           </van-cell>
         </van-cell-group>
       </van-radio-group>

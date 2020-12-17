@@ -1,5 +1,9 @@
 # Steps 步骤条
 
+### 介绍
+
+用于展示操作流程的各个环节，让用户了解当前的操作在整体流程中的位置。
+
 ### 引入
 
 ```js
@@ -14,7 +18,7 @@ Vue.use(Steps);
 
 ### 基础用法
 
-`active`属性表示当前步骤的索引，从 0 起计
+`active` 属性表示当前步骤的索引，从 0 起计。
 
 ```html
 <van-steps :active="active">
@@ -37,7 +41,7 @@ export default {
 
 ### 自定义样式
 
-可以通过`active-icon`和`active-color`属性设置激活状态下的图标和颜色
+可以通过 `active-icon` 和 `active-color` 属性设置激活状态下的图标和颜色。
 
 ```html
 <van-steps :active="active" active-icon="success" active-color="#38f">
@@ -50,7 +54,7 @@ export default {
 
 ### 竖向步骤条
 
-可以通过设置`direction`属性来改变步骤条的显示方向
+可以通过设置 `direction` 属性来改变步骤条的显示方向。
 
 ```html
 <van-steps direction="vertical" :active="0">
@@ -94,3 +98,22 @@ export default {
 | 事件名              | 说明                       | 回调参数        |
 | ------------------- | -------------------------- | --------------- |
 | click-step `v2.5.9` | 点击步骤的标题或图标时触发 | _index: number_ |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值          | 描述 |
+| -------------------------------- | --------------- | ---- |
+| @step-text-color                 | `@gray-6`       | -    |
+| @step-active-color               | `@green`        | -    |
+| @step-process-text-color         | `@text-color`   | -    |
+| @step-font-size                  | `@font-size-md` | -    |
+| @step-line-color                 | `@border-color` | -    |
+| @step-finish-line-color          | `@green`        | -    |
+| @step-finish-text-color          | `@text-color`   | -    |
+| @step-icon-size                  | `12px`          | -    |
+| @step-circle-size                | `5px`           | -    |
+| @step-circle-color               | `@gray-6`       | -    |
+| @step-horizontal-title-font-size | `@font-size-sm` | -    |
+| @steps-background-color          | `@white`        | -    |
