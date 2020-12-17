@@ -233,6 +233,11 @@ const map = {
   F0E6: 'back-top',
   F0E7: 'share-o',
   F0E8: 'minus',
+  F0E9: 'delete-o',
+  F0EA: 'sort',
+  F0EB: 'font',
+  F0EC: 'font-o',
+  F0ED: 'revoke',
 };
 
 const reversedMap = {};
