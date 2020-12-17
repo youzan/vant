@@ -33,13 +33,14 @@ The easiest way to use Vant is to include a CDN link in the html file, after whi
     template: `<van-button>Button</van-button>`,
   });
   app.use(vant);
-  app.mount('#app');
+
+  // Register Lazyload directive
+  app.use(vant.Lazyload);
 
   // Call function component
   vant.Toast('Message');
 
-  // Register Lazyload directive
-  app.use(vant.Lazyload);
+  app.mount('#app');
 </script>
 ```
 

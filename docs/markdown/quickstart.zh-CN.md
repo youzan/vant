@@ -39,14 +39,15 @@ npm i vant@next -S
     template: `<van-button>按钮</van-button>`,
   });
   app.use(vant);
-  app.mount('#app');
-
-  // 调用函数组件，弹出一个 Toast
-  vant.Toast('提示');
 
   // 通过 CDN 引入时不会自动注册 Lazyload 组件
   // 可以通过下面的方式手动注册
   app.use(vant.Lazyload);
+
+  // 调用函数组件，弹出一个 Toast
+  vant.Toast('提示');
+
+  app.mount('#app');
 </script>
 ```
 
@@ -152,6 +153,12 @@ app.use(Vant);
 > Tips: 配置按需引入后，将不允许直接导入所有组件。
 
 ## 常见问题
+
+### 在 Vite 中如何按需引入组件？
+
+在 Vite 中无须考虑按需引入的问题。Vite 在构建代码时，会自动通过 Tree Shaking 移除未使用的 ESM 模块。而 Vant 3.0 内部所有模块都是基于 ESM 编写的，天然具备按需引入的能力。
+
+现阶段遗留的问题是，未使用的组件样式无法被 Tree Shaking 识别并移除，后续我们会考虑通过 Vite 插件的方式进行支持。
 
 ### 在 HTML 中无法正确渲染组件？
 
