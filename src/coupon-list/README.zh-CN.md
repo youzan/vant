@@ -91,7 +91,7 @@ export default {
 | coupons       | 可用优惠券列表       | _Coupon[]_         | `[]`     |
 | editable      | 能否切换优惠券       | _boolean_          | `true`   |
 | border        | 是否显示内边框       | _boolean_          | `true`   |
-| currency      | 货币符号             | _string_           | `¥`      | - |
+| currency      | 货币符号             | _string_           | `¥`      |
 
 ### CouponList Props
 

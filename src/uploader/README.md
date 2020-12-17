@@ -223,6 +223,41 @@ Use `disabled` prop to disable uploader.
 <van-uploader disabled />
 ```
 
+### Customize Single Preview Image Style
+
+```html
+<van-uploader v-model="fileList" :deletable="false" />
+```
+
+```js
+import { ref } from 'vue';
+import { Toast } from 'vant';
+
+export default {
+  setup() {
+    const fileList = ref([
+      { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+      {
+        url: 'https://img.yzcdn.cn/vant/sand.jpg',
+        deletable: true,
+        beforeDelete: () => {
+          Toast('Customize the events and styles of a single preview image');
+        },
+      },
+      {
+        url: 'https://img.yzcdn.cn/vant/tree.jpg',
+        deletable: true,
+        imageFit: 'contain',
+        previewSize: 120,
+      },
+    ]);
+    return {
+      fileList:
+    };
+  }
+};
+```
+
 ## API
 
 ### Props

@@ -47,6 +47,10 @@
   <demo-block :title="t('disabled')">
     <van-uploader :after-read="afterRead" disabled />
   </demo-block>
+
+  <demo-block :title="t('customPreviewImage')">
+    <van-uploader v-model="fileList5" multiple accept="*" :deletable="false" />
+  </demo-block>
 </template>
 
 <script>
@@ -70,6 +74,8 @@ const i18n = {
     invalidType: '请上传 jpg 格式图片',
     customUpload: '自定义上传样式',
     previewCover: '自定义预览样式',
+    customPreviewImage: '自定义单个图片预览',
+    deleteMessage: '删除前置处理',
   },
   'en-US': {
     status: 'Upload Status',
@@ -86,6 +92,8 @@ const i18n = {
     invalidType: 'Please upload an image in jpg format',
     customUpload: 'Custom Upload Area',
     previewCover: 'Preview Cover',
+    customPreviewImage: 'Custom single prevew image',
+    deleteMessage: 'Before Delete',
   },
 };
 
@@ -100,6 +108,22 @@ export default {
       fileList2: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
       fileList3: [],
       fileList4: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
+      fileList5: [
+        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+        {
+          url: 'https://img.yzcdn.cn/vant/sand.jpg',
+          deletable: true,
+          beforeDelete: () => {
+            Toast(t('deleteMessage'));
+          },
+        },
+        {
+          url: 'https://img.yzcdn.cn/vant/tree.jpg',
+          deletable: true,
+          imageFit: 'contain',
+          previewSize: 120,
+        },
+      ],
       statusFileList: [
         {
           url: 'https://img.yzcdn.cn/vant/leaf.jpg',

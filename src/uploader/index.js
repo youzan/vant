@@ -235,30 +235,42 @@ export default createComponent({
       emit('delete', item, getDetail(index));
     };
 
-    const renderPreviewItem = (item, index) => (
-      <PreviewItem
-        v-slots={{ 'preview-cover': slots['preview-cover'] }}
-        item={item}
-        index={index}
-        onClick={() => {
-          emit('click-preview', item, getDetail(index));
-        }}
-        onDelete={() => {
-          deleteFile(item, index);
-        }}
-        onPreview={() => {
-          previewImage(item);
-        }}
-        {...pick(props, [
-          'name',
-          'lazyLoad',
-          'imageFit',
-          'deletable',
-          'previewSize',
-          'beforeDelete',
-        ])}
-      />
-    );
+    const renderPreviewItem = (item, index) => {
+      const needPickData = [
+        'imageFit',
+        'deletable',
+        'previewSize',
+        'beforeDelete',
+      ];
+
+      const previewData = pick(props, needPickData);
+      const previewProp = pick(item, needPickData);
+
+      Object.keys(previewProp).forEach((item) => {
+        if (previewProp[item] !== undefined) {
+          previewData[item] = previewProp[item];
+        }
+      });
+
+      return (
+        <PreviewItem
+          v-slots={{ 'preview-cover': slots['preview-cover'] }}
+          item={item}
+          index={index}
+          onClick={() => {
+            emit('click-preview', item, getDetail(index));
+          }}
+          onDelete={() => {
+            deleteFile(item, index);
+          }}
+          onPreview={() => {
+            previewImage(item);
+          }}
+          {...pick(props, ['name', 'lazyLoad'])}
+          {...previewData}
+        />
+      );
+    };
 
     const renderPreviewList = () => {
       if (props.previewImage) {

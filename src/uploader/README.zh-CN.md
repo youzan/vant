@@ -246,6 +246,43 @@ export default {
 <van-uploader disabled />
 ```
 
+### 自定义单个图片预览
+
+在 `v-model` 数组中设置单个预览图片属性，支持 `imageFit`,`deletable`,`previewSize`,`beforeDelete`
+
+```html
+<van-uploader v-model="fileList" :deletable="false" />
+```
+
+```js
+import { ref } from 'vue';
+import { Toast } from 'vant';
+
+export default {
+  setup() {
+    const fileList = ref([
+      { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+      {
+        url: 'https://img.yzcdn.cn/vant/sand.jpg',
+        deletable: true,
+        beforeDelete: () => {
+          Toast('自定义单个预览图片的事件和样式');
+        },
+      },
+      {
+        url: 'https://img.yzcdn.cn/vant/tree.jpg',
+        deletable: true,
+        imageFit: 'contain',
+        previewSize: 120,
+      },
+    ]);
+    return {
+      fileList:
+    };
+  }
+};
+```
+
 ## API
 
 ### Props
