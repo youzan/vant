@@ -59,7 +59,7 @@ Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源�
 | --- | --- |
 | [vant-weapp](https://github.com/youzan/vant-weapp) | Vant 微信小程序版 |
 | [vant-react](https://github.com/mxdi9i7/vant-react) | Vant React 版（由社区维护） |
-| [vant-use](https://github.com/youzan/vant/tree/dev/packages/vant-use) | Vant Composition API 合集 |
+| [vant-use](https://youzan.github.io/vant/vant-use/) | Vant Composition API 合集 |
 | [vant-demo](https://github.com/youzan/vant-demo) | Vant 官方示例合集 |
 | [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | 开箱即用的组件库搭建工具 |
 | [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant 图标库 |
