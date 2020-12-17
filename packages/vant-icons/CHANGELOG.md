@@ -1,5 +1,13 @@
 ## Changelog
 
+## 1.5.0
+
+- add sort icon
+- add font icon
+- add font-o icon
+- add revoke icon
+- add delete-o icon
+
 ## 1.4.0
 
 - add encode-woff2.less
