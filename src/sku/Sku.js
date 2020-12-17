@@ -73,6 +73,10 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    disableSoldoutSku: {
+      type: Boolean,
+      default: true,
+    },
     customStepperConfig: {
       type: Object,
       default: () => ({}),
@@ -650,6 +654,7 @@ export default createComponent({
       stepperTitle,
       selectedSkuComb,
       showHeaderImage,
+      disableSoldoutSku,
     } = this;
 
     const slotsProps = {
@@ -715,6 +720,7 @@ export default createComponent({
                   skuKeyStr={skuTreeItem.k_s}
                   selectedSku={selectedSku}
                   skuEventBus={skuEventBus}
+                  disableSoldoutSku={disableSoldoutSku}
                   largeImageMode={skuTreeItem.largeImageMode}
                 />
               ))}
