@@ -75,9 +75,10 @@ Modern browsers and Android 4.0+, iOS 8.0+.
 
 | Project | Description |
 | --- | --- |
-| [vant-demo](https://github.com/youzan/vant-demo) | Official vant demo collection |
 | [vant-weapp](https://github.com/youzan/vant-weapp) | WeChat MiniProgram UI |
 | [vant-react](https://github.com/mxdi9i7/vant-react) | Vant React (maintained by the community) |
+| [vant-use](https://github.com/youzan/vant/tree/dev/packages/vant-use) | Collection of Vant Composition APIs |
+| [vant-demo](https://github.com/youzan/vant-demo) | Collection of Vant demos |
 | [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | Scaffold for UI library |
 | [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant icons |
 | [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | Using vant in desktop browsers |
