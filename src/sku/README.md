@@ -134,7 +134,7 @@ export default {
 | stepper-title | Quantity title | _string_ | `Quantity` |
 | custom-stepper-config | Custom stepper related config | _object_ | `{}` |
 | message-config | Message related config | _object_ | `{}` |
-| disable-soldout-sku | Whether to disable soldout sku | _boolean_ | `true` |
+| disable-soldout-sku `v2.11.3` | Whether to disable soldout sku | _boolean_ | `true` |
 | get-container | Return the mount node for sku | _string \| () => Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | start-sale-num `v2.3.0` | Minimum quantity | _number_ | `1` |

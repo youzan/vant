@@ -16,6 +16,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.11.3](https://github.com/youzan/vant/compare/v2.11.2...v2.11.3)
+
+`2020-12-18`
+
+**Feature**
+
+- Sku: 新增 disable-soldout-sku 属性 [#7759](https://github.com/youzan/vant/issues/7759)
+- Icon: 新增 delete-o、sort、font、font-o、revoke 图标 [#7760](https://github.com/youzan/vant/issues/7760)
+
 ### [v2.11.2](https://github.com/youzan/vant/compare/v2.11.1...v2.11.2)
 
 `2020-12-10`
