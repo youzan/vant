@@ -36,6 +36,7 @@ Modern browsers and Android 4.0+, iOS 8.0+.
 | Project | Description |
 | --- | --- |
 | [vant-weapp](https://github.com/youzan/vant-weapp) | WeChat MiniProgram UI |
+| [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Alipay MiniProgram UI (maintained by the community) |
 | [vant-react](https://github.com/mxdi9i7/vant-react) | Vant React (maintained by the community) |
 | [vant-use](https://youzan.github.io/vant/vant-use/) | Collection of Vant Composition APIs |
 | [vant-demo](https://github.com/youzan/vant-demo) | Collection of Vant demos |
