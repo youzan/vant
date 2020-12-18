@@ -11,7 +11,7 @@
 ```
 
 ```js
-import { root } from 'vue';
+import { ref } from 'vue';
 import { useRect } from '@vant/use';
 
 export default {

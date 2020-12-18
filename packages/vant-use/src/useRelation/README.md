@@ -8,6 +8,7 @@
 
 ```js
 // Parent.vue
+import { ref } from 'vue';
 import { useChildren } from '@vant/use';
 
 const RELATION_KEY = 'my-relation';
@@ -28,6 +29,8 @@ export default {
 
 // Child.vue
 import { useParent } from '@vant/use';
+
+const RELATION_KEY = 'my-relation';
 
 export default {
   setup() {
