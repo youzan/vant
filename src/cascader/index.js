@@ -1,55 +1,92 @@
 import { createNamespace } from '../utils';
-import Popup from '../popup';
+import Tab from '../tab';
+import Tabs from '../tabs';
 
 const [createComponent, bem] = createNamespace('cascader');
 
 export default createComponent({
   props: {
-    show: Boolean,
     value: Array,
     title: String,
     options: Array,
     placeholder: String,
-    confirmText: String,
     activeColor: String,
+    closeable: {
+      type: Boolean,
+      default: true,
+    },
+  },
+
+  data() {
+    return {
+      tabs: [],
+      activeTab: 0,
+    };
+  },
+
+  watch: {
+    options() {
+      // reset options and tab
+    },
+
+    value() {
+      // reset options and tab
+    },
+  },
+
+  created() {
+    this.init();
   },
 
   methods: {
-    toggle(val) {
-      this.$emit('update:show', val);
-    },
-
-    confirm() {
-      this.toggle(false);
+    init() {
+      if (this.value) {
+        //
+      } else {
+        this.tabs = [
+          {
+            title: this.placeholder || this.t('placeholder'),
+            options: this.options,
+          },
+        ];
+      }
     },
 
     genHeader() {
-      const confirmText = this.confirmText || this.t('confirm');
       return (
         <div class={bem('header')}>
           <h2 class={bem('title')}>{this.slots('title') || this.title}</h2>
-          <button type="button" class={bem('confirm')} onClick={this.confirm}>
-            {this.slots('confirm-text') || confirmText}
-          </button>
         </div>
       );
     },
 
-    genTab() {},
+    genTabs() {
+      return (
+        <Tabs class={bem('tabs')}>
+          {this.tabs.map((item) => (
+            <Tab title={item.title}>{this.genOptions(item.options)}</Tab>
+          ))}
+        </Tabs>
+      );
+    },
+
+    genOptions(options) {
+      return (
+        <ul class={bem('options')}>
+          {options.map((option) => (
+            <li class={bem('option')}>{option.text}</li>
+          ))}
+        </ul>
+      );
+    },
   },
 
   render() {
     return (
-      <Popup
-        round
-        value={this.show}
-        class={bem()}
-        position="bottom"
-        onInput={this.toggle}
-      >
+      <div class={bem()}>
         {this.genHeader()}
-        {this.genTab()}
-      </Popup>
+        {this.genTabs()}
+      </div>
     );
   },
 });
