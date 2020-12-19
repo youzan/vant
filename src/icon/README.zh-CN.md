@@ -39,8 +39,8 @@ Vue.use(Icon);
 `Icon` 的 `color` 属性用来设置图标的颜色。
 
 ```html
-<van-icon name="chat-o" color="#1989fa" />
-<van-icon name="chat-o" color="#07c160" />
+<van-icon name="cart-o" color="#1989fa" />
+<van-icon name="fire-o" color="#ee0a24" />
 ```
 
 ### 图标大小
@@ -58,6 +58,8 @@ Icon 组件默认引用有赞 CDN 提供的字体文件，并通过网络下载�
 ```js
 import 'vant/lib/icon/local.css';
 ```
+
+> Tips: 从 2.10.13 版本开始，Vant 会默认使用 woff2 格式的本地字体文件，只有在不支持 woff2 字体的低端浏览器上才会加载有赞 CDN 的网络图标。
 
 ### 自定义图标
 

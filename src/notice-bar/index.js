@@ -1,5 +1,5 @@
 import { createNamespace, isDef } from '../utils';
-import { doubleRaf } from '../utils/dom/raf';
+import { doubleRaf, raf } from '../utils/dom/raf';
 import { BindEventMixin } from '../mixins/bind-event';
 import Icon from '../icon';
 
@@ -70,7 +70,8 @@ export default createComponent({
       this.duration = 0;
 
       // wait for Vue to render offset
-      this.$nextTick(() => {
+      // using nextTick won't work in iOS14
+      raf(() => {
         // use double raf to ensure animation can start
         doubleRaf(() => {
           this.offset = -this.contentWidth;

@@ -21,6 +21,7 @@ export default createComponent({
     text: String,
     icon: String,
     iconPrefix: String,
+    // @deprecated
     info: [Number, String],
     badge: [Number, String],
   },
@@ -73,6 +74,12 @@ export default createComponent({
       const iconSlot = this.slots('icon');
       const info = this.badge ?? this.info;
 
+      if (process.env.NODE_ENV === 'development' && this.info) {
+        console.warn(
+          '[Vant] GridItem: "info" prop is deprecated, use "badge" prop instead.'
+        );
+      }
+
       if (iconSlot) {
         return (
           <div class={bem('icon-wrapper')}>
@@ -87,7 +94,7 @@ export default createComponent({
           <Icon
             name={this.icon}
             dot={this.dot}
-            info={info}
+            badge={info}
             size={this.parent.iconSize}
             class={bem('icon')}
             classPrefix={this.iconPrefix}

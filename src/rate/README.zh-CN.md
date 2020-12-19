@@ -1,5 +1,9 @@
 # Rate 评分
 
+### 介绍
+
+用于对事物进行评级操作。
+
 ### 引入
 
 ```js
@@ -121,3 +125,15 @@ export default {
 | 事件名 | 说明                     | 回调参数 |
 | ------ | ------------------------ | -------- |
 | change | 当前分值变化时触发的事件 | 当前分值 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                      | 默认值          | 描述 |
+| ------------------------- | --------------- | ---- |
+| @rate-icon-size           | `20px`          | -    |
+| @rate-icon-gutter         | `@padding-base` | -    |
+| @rate-icon-void-color     | `@gray-5`       | -    |
+| @rate-icon-full-color     | `@red`          | -    |
+| @rate-icon-disabled-color | `@gray-5`       | -    |

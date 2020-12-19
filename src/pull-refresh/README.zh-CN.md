@@ -1,5 +1,9 @@
 # PullRefresh 下拉刷新
 
+### 介绍
+
+用于提供下拉刷新的交互操作。
+
 ### 引入
 
 ```js
@@ -118,7 +122,7 @@ export default {
 
 ### Slots
 
-| 名称    | 说明                 | SlotProps                  |
+| 名称    | 说明                 | 参数                       |
 | ------- | -------------------- | -------------------------- |
 | default | 自定义内容           | -                          |
 | normal  | 非下拉状态时顶部内容 | -                          |
@@ -126,6 +130,16 @@ export default {
 | loosing | 释放过程中顶部内容   | { distance: 当前下拉距离 } |
 | loading | 加载过程中顶部内容   | { distance: 当前下拉距离 } |
 | success | 刷新成功提示内容     | -                          |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                          | 默认值          | 描述 |
+| ----------------------------- | --------------- | ---- |
+| @pull-refresh-head-height     | `50px`          | -    |
+| @pull-refresh-head-font-size  | `@font-size-md` | -    |
+| @pull-refresh-head-text-color | `@gray-6`       | -    |
 
 ## 常见问题
 
@@ -139,4 +153,4 @@ export default {
 
 ### 在桌面端无法操作组件？
 
-参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。

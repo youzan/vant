@@ -1,5 +1,9 @@
 # Loading 加载
 
+### 介绍
+
+加载图标，用于表示加载中的过渡状态。
+
 ### 引入
 
 ```js
@@ -74,3 +78,15 @@ Vue.use(Loading);
 | 名称    | 说明     |
 | ------- | -------- |
 | default | 加载文案 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                | 默认值          | 描述 |
+| ----------------------------------- | --------------- | ---- |
+| @loading-text-color                 | `@gray-6`       | -    |
+| @loading-text-font-size             | `@font-size-md` | -    |
+| @loading-spinner-color              | `@gray-5`       | -    |
+| @loading-spinner-size               | `30px`          | -    |
+| @loading-spinner-animation-duration | `0.8s`          | -    |

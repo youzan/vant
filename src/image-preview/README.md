@@ -118,9 +118,9 @@ export default {
 | showIndicators | Whether to show indicators | _boolean_ | `false` |
 | loop | Whether to enable loop | _boolean_ | `true` |
 | swipeDuration | Animation duration (ms) | _number \| string_ | `500` |
-| onClose | Triggered when close | _Function_ | - |
-| onChange | Triggered when current image change | _Function_ | - |
-| onScale | Triggered when current image scale | _Function_ | - |
+| onClose | Emitted when ImagePreview is closed | _Function_ | - |
+| onChange | Emitted when current image changed | _Function_ | - |
+| onScale | Emitted when scaling current image | _Function_ | - |
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
 | asyncClose | Whether to enable async close | _boolean_ | `false` |
 | className | Custom className | _any_ | - |
@@ -155,18 +155,25 @@ export default {
 
 | Event | Description | Parameters |
 | --- | --- | --- |
-| close | Triggered when close | { index, url } |
-| closed `v2.5.6` | Triggered after closed | - |
-| change | Triggered when current image change | index: index of current image |
-| scale `v2.5.0` | Triggered when current image scale | { index: index of current image, scale: scale of current image} |
-| swipeTo `2.9.0` | Swipe to target index | index: target index, options: Options | void |
+| close | Emitted when closing ImagePreview | { index, url } |
+| closed `v2.5.6` | Emitted when ImagePreview is closed | - |
+| change | Emitted when current image changed | index: index of current image |
+| scale `v2.5.0` | Emitted when scaling current image | { index: index of current image, scale: scale of current image} |
+
+### Methods
+
+Use [ref](https://vuejs.org/v2/api/#ref) to get ImagePreview instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| swipeTo `2.9.0` | Swipe to target index | index: target index, options: Options | - |
 
 ### Slots
 
-| Name  | Description                                  |
-| ----- | -------------------------------------------- |
-| index | Custom index                                 |
-| cover | Custom content that covers the image preview |
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| index | Custom index | { index: index of current image } |
+| cover | Custom content that covers the image preview | - |
 
 ### onClose Parematers
 
@@ -181,3 +188,20 @@ export default {
 | --------- | ---------------------- | -------- |
 | index     | Index of current image | _number_ |
 | scale     | scale of current image | _number_ |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                    | Default Value        | Description |
+| --------------------------------------- | -------------------- | ----------- |
+| @image-preview-index-text-color         | `@white`             | -           |
+| @image-preview-index-font-size          | `@font-size-md`      | -           |
+| @image-preview-index-line-height        | `@line-height-md`    | -           |
+| @image-preview-index-text-shadow        | `0 1px 1px @gray-8`  | -           |
+| @image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | -           |
+| @image-preview-close-icon-size          | `22px`               | -           |
+| @image-preview-close-icon-color         | `@gray-5`            | -           |
+| @image-preview-close-icon-active-color  | `@gray-6`            | -           |
+| @image-preview-close-icon-margin        | `@padding-md`        | -           |
+| @image-preview-close-icon-z-index       | `1`                  | -           |

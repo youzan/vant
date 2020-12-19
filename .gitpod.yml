@@ -1,6 +1,0 @@
-tasks:
-  - init: npm run bootstrap
-    command: npm run dev
-ports:
-  - port: 8080
-    onOpen: open-preview

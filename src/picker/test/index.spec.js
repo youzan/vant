@@ -138,12 +138,54 @@ test('column watch default index', async () => {
 test('render title slot', () => {
   const wrapper = mount({
     template: `
-      <picker show-toolbar>
+      <van-picker show-toolbar>
         <template v-slot:title>Custom title</template>
-      </picker>
+      </van-picker>
     `,
-    components: {
-      Picker,
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render confirm/cancel slot', () => {
+  const wrapper = mount({
+    template: `
+      <van-picker show-toolbar>
+        <template v-slot:confirm>Custom Confirm</template>
+        <template v-slot:cancel>Custom Cancel</template>
+      </van-picker>
+    `,
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render option slot with simple columns', () => {
+  const wrapper = mount({
+    template: `
+      <van-picker :columns="columns" show-toolbar>
+        <template #option="item">{{ item }}</template>
+      </van-picker>
+    `,
+    data() {
+      return { columns: ['foo', 'bar'] };
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render option slot with object columns', () => {
+  const wrapper = mount({
+    template: `
+      <van-picker :columns="columns" show-toolbar>
+        <template #option="item">{{ item.text }}</template>
+      </van-picker>
+    `,
+    data() {
+      return {
+        columns: [{ text: 'foo' }, { text: 'bar' }],
+      };
     },
   });
 

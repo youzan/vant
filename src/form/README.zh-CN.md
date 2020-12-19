@@ -37,9 +37,7 @@ Vue.use(Form);
     :rules="[{ required: true, message: '请填写密码' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="info" native-type="submit">
-      提交
-    </van-button>
+    <van-button round block type="info" native-type="submit">提交</van-button>
   </div>
 </van-form>
 ```
@@ -88,9 +86,7 @@ export default {
     :rules="[{ validator: asyncValidator, message: '请输入正确内容' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="info" native-type="submit">
-      提交
-    </van-button>
+    <van-button round block type="info" native-type="submit">提交</van-button>
   </div>
 </van-form>
 ```
@@ -508,7 +504,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 Form 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
+通过 ref 可以获取到 Form 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
@@ -530,9 +526,7 @@ export default {
 在表单中，除了提交按钮外，可能还有一些其他的功能性按钮，如发送验证码按钮。在使用这些按钮时，要注意将`native-type`设置为`button`，否则会触发表单提交。
 
 ```html
-<van-button native-type="button">
-  发送验证码
-</van-button>
+<van-button native-type="button">发送验证码</van-button>
 ```
 
 这个问题的原因是浏览器中 button 标签 type 属性的默认值为`submit`，导致触发表单提交。我们会在下个大版本中将 type 的默认值调整为`button`来避免这个问题。

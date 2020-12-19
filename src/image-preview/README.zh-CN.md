@@ -199,16 +199,23 @@ export default {
 | closed `v2.5.6` | 关闭且且动画结束后触发 | - |
 | change | 切换当前图片时触发 | index: 当前图片的索引 |
 | scale `v2.5.0` | 缩放当前图片时触发 | { index: 当前图片的索引, scale: 当前缩放的值 } |
-| swipeTo `2.9.0` | 切换到指定位置 | index: number, options: Options | void |
+
+### 方法
+
+通过组件调用 `ImagePreview` 时，通过 ref 可以获取到 ImagePreview 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名          | 说明           | 参数                            | 返回值 |
+| --------------- | -------------- | ------------------------------- | ------ |
+| swipeTo `2.9.0` | 切换到指定位置 | index: number, options: Options | -      |
 
 ### Slots
 
 通过组件调用 `ImagePreview` 时，支持以下插槽：
 
-| 名称  | 说明                           |
-| ----- | ------------------------------ |
-| index | 自定义页码内容                 |
-| cover | 自定义覆盖在图片预览上方的内容 |
+| 名称  | 说明                           | 参数                      |
+| ----- | ------------------------------ | ------------------------- |
+| index | 自定义页码内容                 | { index: 当前图片的索引 } |
+| cover | 自定义覆盖在图片预览上方的内容 | -                         |
 
 ### onClose 回调参数
 
@@ -224,8 +231,25 @@ export default {
 | index  | 当前图片的索引值 | _number_ |
 | scale  | 当前图片的缩放值 | _number_ |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                    | 默认值               | 描述 |
+| --------------------------------------- | -------------------- | ---- |
+| @image-preview-index-text-color         | `@white`             | -    |
+| @image-preview-index-font-size          | `@font-size-md`      | -    |
+| @image-preview-index-line-height        | `@line-height-md`    | -    |
+| @image-preview-index-text-shadow        | `0 1px 1px @gray-8`  | -    |
+| @image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | -    |
+| @image-preview-close-icon-size          | `22px`               | -    |
+| @image-preview-close-icon-color         | `@gray-5`            | -    |
+| @image-preview-close-icon-active-color  | `@gray-6`            | -    |
+| @image-preview-close-icon-margin        | `@padding-md`        | -    |
+| @image-preview-close-icon-z-index       | `1`                  | -    |
+
 ## 常见问题
 
 ### 在桌面端无法操作组件？
 
-参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。

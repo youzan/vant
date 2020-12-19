@@ -90,8 +90,24 @@ export default {
 
 ### Slots
 
-| 名称 | 描述 | SlotProps |
+| 名称 | 描述 | 参数 |
 | --- | --- | --- |
 | page `v2.10.9` | 自定义页码 | _{ number: number, text: string, active: boolean }_ |
 | prev-text `v2.10.9` | 自定义上一页按钮文字 | `-` |
 | next-text `v2.10.9` | 自定义下一页按钮文字 | `-` |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                       | 默认值              | 描述 |
+| ------------------------------------------ | ------------------- | ---- |
+| @pagination-height                         | `40px`              | -    |
+| @pagination-font-size                      | `@font-size-md`     | -    |
+| @pagination-item-width                     | `36px`              | -    |
+| @pagination-item-default-color             | `@blue`             | -    |
+| @pagination-item-disabled-color            | `@gray-7`           | -    |
+| @pagination-item-disabled-background-color | `@background-color` | -    |
+| @pagination-background-color               | `@white`            | -    |
+| @pagination-desc-color                     | `@gray-7`           | -    |
+| @pagination-disabled-opacity               | `@disabled-opacity` | -    |

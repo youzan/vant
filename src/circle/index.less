@@ -3,6 +3,8 @@
 .van-circle {
   position: relative;
   display: inline-block;
+  width: @circle-size;
+  height: @circle-size;
   text-align: center;
 
   svg {
@@ -14,7 +16,12 @@
   }
 
   &__layer {
+    stroke: @circle-layer-color;
+  }
+
+  &__hover {
     fill: none;
+    stroke: @circle-color;
     stroke-linecap: round;
   }
 

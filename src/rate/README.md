@@ -118,6 +118,18 @@ export default {
 
 ### Events
 
-| Event  | Description                 | Parameters   |
-| ------ | --------------------------- | ------------ |
-| change | Triggered when rate changed | current rate |
+| Event  | Description               | Parameters   |
+| ------ | ------------------------- | ------------ |
+| change | Emitted when rate changed | current rate |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                      | Default Value   | Description |
+| ------------------------- | --------------- | ----------- |
+| @rate-icon-size           | `20px`          | -           |
+| @rate-icon-gutter         | `@padding-base` | -           |
+| @rate-icon-void-color     | `@gray-5`       | -           |
+| @rate-icon-full-color     | `@red`          | -           |
+| @rate-icon-disabled-color | `@gray-5`       | -           |

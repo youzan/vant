@@ -18,6 +18,11 @@ module.exports = {
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
     },
+    htmlPluginOptions: {
+      meta: {
+        'docsearch:version': '2.x',
+      },
+    },
     locales: {
       'zh-CN': {
         title: 'Vant',
@@ -62,6 +67,10 @@ module.exports = {
               {
                 path: 'quickstart',
                 title: '快速上手',
+              },
+              {
+                path: 'advanced-usage',
+                title: '进阶用法',
               },
               {
                 path: 'changelog',
@@ -240,6 +249,10 @@ module.exports = {
             title: '展示组件',
             items: [
               {
+                path: 'badge',
+                title: 'Badge 徽标',
+              },
+              {
                 path: 'circle',
                 title: 'Circle 环形进度条',
               },
@@ -274,6 +287,10 @@ module.exports = {
               {
                 path: 'notice-bar',
                 title: 'NoticeBar 通知栏',
+              },
+              {
+                path: 'popover',
+                title: 'Popover 气泡弹出框',
               },
               {
                 path: 'progress',
@@ -359,7 +376,15 @@ module.exports = {
               },
               {
                 path: 'contact-card',
-                title: 'Contact 联系人',
+                title: 'ContactCard 联系人卡片',
+              },
+              {
+                path: 'contact-edit',
+                title: 'ContactEdit 联系人编辑',
+              },
+              {
+                path: 'contact-list',
+                title: 'ContactList 联系人列表',
               },
               {
                 path: 'coupon-list',
@@ -425,6 +450,10 @@ module.exports = {
               {
                 path: 'quickstart',
                 title: 'Quickstart',
+              },
+              {
+                path: 'advanced-usage',
+                title: 'Advanced Usage',
               },
               {
                 path: 'changelog',
@@ -595,6 +624,10 @@ module.exports = {
             title: 'Display Components',
             items: [
               {
+                path: 'badge',
+                title: 'Badge',
+              },
+              {
                 path: 'circle',
                 title: 'Circle',
               },
@@ -629,6 +662,10 @@ module.exports = {
               {
                 path: 'notice-bar',
                 title: 'NoticeBar',
+              },
+              {
+                path: 'popover',
+                title: 'Popover',
               },
               {
                 path: 'progress',
@@ -714,7 +751,15 @@ module.exports = {
               },
               {
                 path: 'contact-card',
-                title: 'Contact',
+                title: 'ContactCard',
+              },
+              {
+                path: 'contact-edit',
+                title: 'ContactEdit',
+              },
+              {
+                path: 'contact-list',
+                title: 'ContactList',
               },
               {
                 path: 'coupon-list',

@@ -117,9 +117,9 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Triggered when clicked | Click positon (`left` `right` `cell` `outside`) |
-| open | Triggered when opened | { position: 'left' \| 'right' , name: string } |
-| close | Triggered when closed | { position: string , name: string } |
+| click | Emitted when SwipeCell is clicked | Click positon (`left` `right` `cell` `outside`) |
+| open | Emitted when SwipeCell is opened | { position: 'left' \| 'right' , name: string } |
+| close | Emitted when SwipeCell is closed | { position: string , name: string } |
 
 ### beforeClose Params
 
@@ -133,7 +133,18 @@ export default {
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get SwipeCell instance and call instance methods.
 
-| Name  | Description     | Attribute                | Return value |
-| ----- | --------------- | ------------------------ | ------------ |
-| open  | open SwipeCell  | position: `left | right` | -            |
-| close | close SwipeCell | -                        | -            |
+| Name  | Description     | Attribute                 | Return value |
+| ----- | --------------- | ------------------------- | ------------ |
+| open  | open SwipeCell  | position: `left \| right` | -            |
+| close | close SwipeCell | -                         | -            |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @switch-cell-padding-top | `@cell-vertical-padding - 1px` | - |
+| @switch-cell-padding-bottom | `@cell-vertical-padding - 1px` | - |
+| @switch-cell-large-padding-top | `@cell-large-vertical-padding - 1px` | - |
+| @switch-cell-large-padding-bottom | `@cell-large-vertical-padding - 1px` | - |

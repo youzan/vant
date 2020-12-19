@@ -1,5 +1,22 @@
 # 更新日志
 
+## v2.7.0
+
+- 支持通过 `site.htmlPluginOptions` 来配置 html-webpack-plugin
+- 修复组件内部引用 `.vue` 文件时 build 结果不正确的问题
+
+## v2.6.2
+
+`2020-11-15`
+
+- 支持自定义 postcss 配置时传入数组格式的 plugins
+
+### v2.6.1
+
+`2020-10-09`
+
+- 升级 @vant/markdown-vetur@2.0.2
+
 ### v2.6.0
 
 `2020-09-27`

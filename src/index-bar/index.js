@@ -5,7 +5,6 @@ import { preventDefault } from '../utils/dom/event';
 import {
   getScroller,
   getScrollTop,
-  getElementTop,
   getRootScrollTop,
   setRootScrollTop,
 } from '../utils/dom/scroll';
@@ -87,6 +86,12 @@ export default createComponent({
     indexList() {
       this.$nextTick(this.onScroll);
     },
+
+    activeAnchorIndex(value) {
+      if (value) {
+        this.$emit('change', value);
+      }
+    },
   },
 
   methods: {
@@ -97,10 +102,9 @@ export default createComponent({
 
       const scrollTop = getScrollTop(this.scroller);
       const scrollerRect = this.getScrollerRect();
-      const rects = this.children.map((item) => ({
-        height: item.height,
-        top: this.getElementTop(item.$el, scrollerRect),
-      }));
+      const rects = this.children.map((item) =>
+        item.getRect(this.scroller, scrollerRect)
+      );
 
       const active = this.getActiveAnchorIndex(scrollTop, rects);
 
@@ -125,7 +129,7 @@ export default createComponent({
           } else if (index === active - 1) {
             const activeItemTop = rects[active].top - scrollTop;
             item.active = activeItemTop > 0;
-            item.top = activeItemTop + scrollerRect.top - item.height;
+            item.top = activeItemTop + scrollerRect.top - rects[index].height;
           } else {
             item.active = false;
           }
@@ -142,18 +146,6 @@ export default createComponent({
         top: 0,
         left: 0,
       };
-    },
-
-    getElementTop(ele, scrollerRect) {
-      const { scroller } = this;
-
-      if (scroller === window || scroller === document.body) {
-        return getElementTop(ele);
-      }
-
-      const eleRect = ele.getBoundingClientRect();
-
-      return eleRect.top - scrollerRect.top + getScrollTop(scroller);
     },
 
     getActiveAnchorIndex(scrollTop, rects) {
@@ -201,6 +193,7 @@ export default createComponent({
       const match = this.children.filter(
         (item) => String(item.index) === index
       );
+
       if (match[0]) {
         match[0].scrollIntoView();
 

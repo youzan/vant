@@ -252,6 +252,18 @@ test('closeable prop', () => {
   expect(wrapper.emitted('input')[0][0]).toEqual(false);
 });
 
+test('should emit click-close-icon event when close icon is clicked', () => {
+  const wrapper = mount(Popup, {
+    propsData: {
+      value: true,
+      closeable: true,
+    },
+  });
+
+  wrapper.find('.van-popup__close-icon').trigger('click');
+  expect(wrapper.emitted('click-close-icon').length).toEqual(1);
+});
+
 test('close-icon prop', () => {
   const wrapper = mount(Popup, {
     propsData: {

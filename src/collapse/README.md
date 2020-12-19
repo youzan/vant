@@ -20,9 +20,7 @@ Use `v-model` to control the name of active panels.
 <van-collapse v-model="activeNames">
   <van-collapse-item title="Title1" name="1">Content</van-collapse-item>
   <van-collapse-item title="Title2" name="2">Content</van-collapse-item>
-  <van-collapse-item title="Title3" name="3" disabled
-    >Content</van-collapse-item
-  >
+  <van-collapse-item title="Title3" name="3">Content</van-collapse-item>
 </van-collapse>
 ```
 
@@ -56,6 +54,22 @@ export default {
     };
   },
 };
+```
+
+### Disabled
+
+Use the `disabled` prop to disable CollaseItem.
+
+```html
+<van-collapse v-model="activeNames">
+  <van-collapse-item title="Title1" name="1">Content</van-collapse-item>
+  <van-collapse-item title="Title2" name="2" disabled>
+    Content
+  </van-collapse-item>
+  <van-collapse-item title="Title3" name="3" disabled>
+    Content
+  </van-collapse-item>
+</van-collapse>
 ```
 
 ### Custom title
@@ -96,9 +110,9 @@ export default {
 
 ### Collapse Events
 
-| Event  | Description                 | Arguments   |
-| ------ | --------------------------- | ----------- |
-| change | Triggered when switch panel | activeNames |
+| Event  | Description                  | Arguments   |
+| ------ | ---------------------------- | ----------- |
+| change | Emitted when switching panel | activeNames |
 
 ### CollapseItem Props
 
@@ -134,3 +148,17 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get CollapseItem instance and call i
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | toggle `v2.10.9` | Toggle expanded status | _expanded: boolean_ | - |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @collapse-item-transition-duration | `@animation-duration-base` | - |
+| @collapse-item-content-padding | `@padding-sm @padding-md` | - |
+| @collapse-item-content-font-size | `@font-size-md` | - |
+| @collapse-item-content-line-height | `1.5` | - |
+| @collapse-item-content-text-color | `@gray-6` | - |
+| @collapse-item-content-background-color | `@white` | - |
+| @collapse-item-title-disabled-color | `@gray-5` | - |

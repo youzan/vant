@@ -1344,11 +1344,6 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@ls-lint/ls-lint@^1.8.0":
-  version "1.8.0"
-  resolved "https://registry.npm.taobao.org/@ls-lint/ls-lint/download/@ls-lint/ls-lint-1.8.0.tgz#508fe32d4dbdd90d61c8ea156c20af33c294a22e"
-  integrity sha1-UI/jLU292Q1hyOoVbCCvM8KUoi4=
-
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -1528,6 +1523,11 @@
   integrity sha512-GorvORVwp244fGKEt3cgt/P+M0MGy4xEDbckw+K5ojEezxyMDgCaYPKVct+/eWQfZXOT7uq0xRpmrl/+hliabA==
   dependencies:
     "@types/node" ">= 8"
+
+"@popperjs/core@^2.5.4":
+  version "2.5.4"
+  resolved "https://registry.npm.taobao.org/@popperjs/core/download/@popperjs/core-2.5.4.tgz#de25b5da9f727985a3757fd59b5d028aba75841a"
+  integrity sha1-3iW12p9yeYWjdX/Vm10Cirp1hBo=
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -2000,10 +2000,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-2.6.0.tgz?cache=0&sync_timestamp=1601208618517&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-2.6.0.tgz#e40c195ee303747154d5d2cfca66560dba08d6a8"
-  integrity sha1-5AwZXuMDdHFU1dLPymZWDboI1qg=
+"@vant/cli@^2.7.0":
+  version "2.7.0"
+  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-2.7.0.tgz#e3475f4a0efaeba85571fac64f40cd92361db209"
+  integrity sha1-40dfSg7666hVcfrGT0DNkjYdsgk=
   dependencies:
     "@babel/core" "^7.10.1"
     "@babel/plugin-syntax-jsx" "^7.10.1"
@@ -2017,7 +2017,7 @@
     "@types/webpack-dev-server" "^3.11.0"
     "@vant/eslint-config" "^2.2.2"
     "@vant/markdown-loader" "^2.3.0"
-    "@vant/markdown-vetur" "^2.0.1"
+    "@vant/markdown-vetur" "^2.0.2"
     "@vant/stylelint-config" "^1.3.0"
     "@vant/touch-emulator" "^1.2.0"
     "@vue/babel-preset-jsx" "^1.1.2"
@@ -2082,10 +2082,10 @@
     eslint-plugin-import "^2.20.2"
     eslint-plugin-vue "^6.2.2"
 
-"@vant/icons@1.3.1":
-  version "1.3.1"
-  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.3.1.tgz#07207fc1c8b5adfd40c22c3647fb535943b33c53"
-  integrity sha512-zzFlR5RoPw2P/wFweyFVYUmKfH6o8ZLd2m+s/tdOm6OBJajAbDQyFK6RIjtFMMu+A27rhXbfUuWRhp7tW76yYw==
+"@vant/icons@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.5.0.tgz#ce78a2f055a1a4099129bb6c44d54584f3740e27"
+  integrity sha512-qHQU3GiQ6AkpjhYni46xG+YOy36LNmbHFanyjvzi+fODu+pEKYwqfLWluv42Q9CM4hshNET8A+Vsr0pr2UVTnA==
 
 "@vant/markdown-loader@^2.3.0":
   version "2.3.0"
@@ -2099,13 +2099,20 @@
     markdown-it-anchor "^5.2.5"
     transliteration "^2.1.7"
 
-"@vant/markdown-vetur@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@vant/markdown-vetur/-/markdown-vetur-2.0.1.tgz#cb0c2d33b5e5606e1dc7f3e6531c18b39d6e57a3"
-  integrity sha512-OhNFTQhCBlK+qIxfyw9unqU77Kf7gd5EsTUXPqg23lALWwpJiVb0IKGwxnYTZ9i7JAzTAho7oIGt7GQ0hhyvow==
+"@vant/markdown-vetur@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.npm.taobao.org/@vant/markdown-vetur/download/@vant/markdown-vetur-2.0.2.tgz#8e6be188952a2c4b0e1d626bf93f47f84ab0f22d"
+  integrity sha1-jmvhiJUqLEsOHWJr+T9H+Eqw8i0=
   dependencies:
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"
+
+"@vant/popperjs@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@vant/popperjs/-/popperjs-1.0.0.tgz#2d66ab4b8e275c98fb82f5efd43fdd47964d11f2"
+  integrity sha512-2OAl3URmH37OOATcKuT8iuZozoZVNMc8iLLZvurWZqHlWlAojsDHm7lQ2OKlAV4jlxbiFJt0en6DY+WlxHvN9w==
+  dependencies:
+    "@popperjs/core" "^2.5.4"
 
 "@vant/stylelint-config@^1.3.0":
   version "1.3.0"
@@ -9482,15 +9489,20 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
+prettier@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/prettier/download/prettier-2.1.0.tgz?cache=0&sync_timestamp=1606521234483&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fprettier%2Fdownload%2Fprettier-2.1.0.tgz#5a9789f767a243118c60f3e56d95cb6544914fbb"
+  integrity sha1-WpeJ92eiQxGMYPPlbZXLZUSRT7s=
+
 prettier@^1.18.2:
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
   integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
 
-prettier@^2.0.4, prettier@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
-  integrity sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
+prettier@^2.0.5:
+  version "2.2.1"
+  resolved "https://registry.npm.taobao.org/prettier/download/prettier-2.2.1.tgz?cache=0&sync_timestamp=1606521150228&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fprettier%2Fdownload%2Fprettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
+  integrity sha1-eVoaeN1S8HPaDNQrIfnJE4GSP/U=
 
 pretty-error@^2.1.1:
   version "2.1.1"
@@ -12255,10 +12267,10 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@^2.6.11:
-  version "2.6.11"
-  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.11.tgz#c04704ef8f498b153130018993e56309d4698080"
-  integrity sha512-KIq15bvQDrcCjpGjrAhx4mUlyyHfdmTaoNfeoATHLAiWB+MU3cx4lOzMwrnUh9cCxy0Lt1T11hAFY6TQgroUAA==
+vue-template-compiler@^2.6.12:
+  version "2.6.12"
+  resolved "https://registry.npm.taobao.org/vue-template-compiler/download/vue-template-compiler-2.6.12.tgz?cache=0&sync_timestamp=1597929252539&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-template-compiler%2Fdownload%2Fvue-template-compiler-2.6.12.tgz#947ed7196744c8a5285ebe1233fe960437fcc57e"
+  integrity sha1-lH7XGWdEyKUoXr4SM/6WBDf8xX4=
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -12268,10 +12280,10 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^2.6.11:
-  version "2.6.11"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
-  integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
+vue@^2.6.12:
+  version "2.6.12"
+  resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.12.tgz?cache=0&sync_timestamp=1603223843200&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
+  integrity sha1-9evU+mvShpQD4pqJau1JBEVskSM=
 
 w3c-hr-time@^1.0.1:
   version "1.0.2"

@@ -48,7 +48,7 @@ export default {
 ### Custom Color
 
 ```html
-<van-switch v-model="checked" active-color="#07c160" inactive-color="#ee0a24" />
+<van-switch v-model="checked" active-color="#ee0a24" inactive-color="#dcdee0" />
 ```
 
 ### Async Control
@@ -104,7 +104,25 @@ export default {
 
 ### Events
 
-| Event  | Description                         | Parameters     |
-| ------ | ----------------------------------- | -------------- |
-| change | Triggered when check status changed | _value: any_   |
-| click  | Triggered when clicked              | _event: Event_ |
+| Event  | Description                       | Parameters     |
+| ------ | --------------------------------- | -------------- |
+| change | Emitted when check status changed | _value: any_   |
+| click  | Emitted when component is clicked | _event: Event_ |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @switch-size | `30px` | - |
+| @switch-width | `2em` | - |
+| @switch-height | `1em` | - |
+| @switch-node-size | `1em` | - |
+| @switch-node-background-color | `@white` | - |
+| @switch-node-box-shadow | `0 3px 1px 0 rgba(0, 0, 0, 0.05)` | - |
+| @switch-background-color | `@white` | - |
+| @switch-on-background-color | `@blue` | - |
+| @switch-transition-duration | `@animation-duration-base` | - |
+| @switch-disabled-opacity | `@disabled-opacity` | - |
+| @switch-border | `@border-width-base solid rgba(0, 0, 0, 0.1)` | - |

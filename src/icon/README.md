@@ -37,8 +37,8 @@ Use `badge` prop, the badge will be displayed in the upper right corner of the i
 Use `color` prop to set icon color.
 
 ```html
-<van-icon name="chat-o" color="#1989fa" />
-<van-icon name="chat-o" color="#07c160" />
+<van-icon name="cart-o" color="#1989fa" />
+<van-icon name="fire-o" color="#ee0a24" />
 ```
 
 ### Icon Size
@@ -56,6 +56,8 @@ Icon uses font file in `yzcdn.cn` by default，if you want to use the local font
 ```js
 import 'vant/lib/icon/local.css';
 ```
+
+> Tips: Starting from version 2.10.13, Vant will use local font files in woff2 format by default
 
 ### Add custom iconfont
 
@@ -94,6 +96,6 @@ import 'vant/lib/icon/local.css';
 
 ### Events
 
-| Event | Description               | Arguments      |
-| ----- | ------------------------- | -------------- |
-| click | Triggered when click icon | _event: Event_ |
+| Event | Description                  | Arguments      |
+| ----- | ---------------------------- | -------------- |
+| click | Emitted when icon is clicked | _event: Event_ |

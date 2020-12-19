@@ -159,15 +159,31 @@ export default {
 
 ### Events
 
-| Event      | Description                          | Arguments           |
-| ---------- | ------------------------------------ | ------------------- |
-| input      | Instant triggered when value changed | value: current rate |
-| change     | Triggered after value changed        | value: current rate |
-| drag-start | Triggered when start drag            | -                   |
-| drag-end   | Triggered when end drag              | -                   |
+| Event      | Description                    | Arguments           |
+| ---------- | ------------------------------ | ------------------- |
+| input      | Emitted when value is changing | value: current rate |
+| change     | Emitted after value changed    | value: current rate |
+| drag-start | Emitted when start draging     | -                   |
+| drag-end   | Emitted when end draging       | -                   |
 
 ### Slots
 
 | Name   | Description   |
 | ------ | ------------- |
 | button | Custom button |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @slider-active-background-color | `@blue` | - |
+| @slider-inactive-background-color | `@gray-3` | - |
+| @slider-disabled-opacity | `@disabled-opacity` | - |
+| @slider-bar-height | `2px` | - |
+| @slider-button-width | `24px` | - |
+| @slider-button-height | `24px` | - |
+| @slider-button-border-radius | `50%` | - |
+| @slider-button-background-color | `@white` | - |
+| @slider-button-box-shadow | `0 1px 2px rgba(0, 0, 0, 0.5)` | - |

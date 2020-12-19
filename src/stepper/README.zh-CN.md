@@ -110,9 +110,9 @@ export default {
     onChange(value) {
       Toast.loading({ forbidClick: true });
 
-      setTimeout(() => {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
         Toast.clear();
-
         // 注意此时修改 value 后会再次触发 change 事件
         this.value = value;
       }, 500);
@@ -167,6 +167,27 @@ export default {
 | minus | 点击减少按钮时触发 | - |
 | focus | 输入框聚焦时触发 | _event: Event_ |
 | blur | 输入框失焦时触发 | _event: Event_ |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                     | 默认值              | 描述 |
+| ---------------------------------------- | ------------------- | ---- |
+| @stepper-active-color                    | `#e8e8e8`           | -    |
+| @stepper-background-color                | `@active-color`     | -    |
+| @stepper-button-icon-color               | `@text-color`       | -    |
+| @stepper-button-disabled-color           | `@background-color` | -    |
+| @stepper-button-disabled-icon-color      | `@gray-5`           | -    |
+| @stepper-button-round-theme-color        | `@red`              | -    |
+| @stepper-input-width                     | `32px`              | -    |
+| @stepper-input-height                    | `28px`              | -    |
+| @stepper-input-font-size                 | `@font-size-md`     | -    |
+| @stepper-input-line-height               | `normal`            | -    |
+| @stepper-input-text-color                | `@text-color`       | -    |
+| @stepper-input-disabled-text-color       | `@gray-5`           | -    |
+| @stepper-input-disabled-background-color | `@active-color`     | -    |
+| @stepper-border-radius                   | `@border-radius-md` | -    |
 
 ## 常见问题
 

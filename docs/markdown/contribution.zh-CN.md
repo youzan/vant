@@ -19,6 +19,8 @@
 
 ```bash
 # 克隆仓库
+# 默认为 dev 分支，包含 Vant 3.x 的代码
+# 如果需要在 Vant 2.x 上进行更改，请基于 2.x 分支进行开发
 git clone git@github.com:youzan/vant.git
 
 # 安装依赖

@@ -160,7 +160,7 @@ Toast.resetDefaultOptions('loading');
 | overlay | Whether to show overlay | _boolean_ | `false` |
 | forbidClick | Whether to forbid click background | _boolean_ | `false` |
 | closeOnClick | Whether to close after clicked | _boolean_ | `false` |
-| closeOnClickOverlay | Whether to close when click overlay | _boolean_ | `false` |
+| closeOnClickOverlay | Whether to close when overlay is clicked | _boolean_ | `false` |
 | loadingType | Loading icon type, can be set to `spinner` | _string_ | `circular` |
 | duration | Toast duration(ms), won't disappear if value is 0 | _number_ | `2000` |
 | className | Custom className | _any_ | - |
@@ -168,3 +168,25 @@ Toast.resetDefaultOptions('loading');
 | onClose | Callback function after close | _Function_ | - |
 | transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | `van-fade` |
 | getContainer | Return the mount node for Toast | _string \| () => Element_ | `body` |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                            | Default Value             | Description |
+| ------------------------------- | ------------------------- | ----------- |
+| @toast-max-width                | `70%`                     | -           |
+| @toast-font-size                | `@font-size-md`           | -           |
+| @toast-text-color               | `@white`                  | -           |
+| @toast-loading-icon-color       | `@white`                  | -           |
+| @toast-line-height              | `@line-height-md`         | -           |
+| @toast-border-radius            | `@border-radius-lg`       | -           |
+| @toast-background-color         | `fade(@black, 70%)`       | -           |
+| @toast-icon-size                | `36px`                    | -           |
+| @toast-text-min-width           | `96px`                    | -           |
+| @toast-text-padding             | `@padding-xs @padding-sm` | -           |
+| @toast-default-padding          | `@padding-md`             | -           |
+| @toast-default-width            | `88px`                    | -           |
+| @toast-default-min-height       | `88px`                    | -           |
+| @toast-position-top-distance    | `20%`                     | -           |
+| @toast-position-bottom-distance | `20%`                     | -           |

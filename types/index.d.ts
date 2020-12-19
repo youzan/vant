@@ -19,6 +19,7 @@ import { List } from './list';
 import { Locale } from './locale';
 import { Notify } from './notify';
 import { Picker } from './picker';
+import { Progress } from './progress';
 import { Sku } from './sku';
 import { Swipe } from './swipe';
 import { SwipeCell } from './swipe-cell';
@@ -31,6 +32,7 @@ export function install(vue: typeof Vue): void;
 
 export class ActionSheet extends VanComponent {}
 export class AddressList extends VanComponent {}
+export class Badge extends VanComponent {}
 export class Button extends VanComponent {}
 export class Card extends VanComponent {}
 export class Cell extends VanComponent {}
@@ -64,8 +66,8 @@ export class Overlay extends VanComponent {}
 export class Pagination extends VanComponent {}
 export class Panel extends VanComponent {}
 export class PasswordInput extends VanComponent {}
+export class Popover extends VanComponent {}
 export class Popup extends VanComponent {}
-export class Progress extends VanComponent {}
 export class PullRefresh extends VanComponent {}
 export class Radio extends VanComponent {}
 export class RadioGroup extends VanComponent {}
@@ -110,6 +112,7 @@ export {
   Locale,
   Notify,
   Picker,
+  Progress,
   Sku,
   Swipe,
   SwipeCell,

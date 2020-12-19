@@ -19,6 +19,7 @@ export default createComponent({
     dot: Boolean,
     icon: String,
     name: [Number, String],
+    // @deprecated
     info: [Number, String],
     badge: [Number, String],
     iconPrefix: String,
@@ -66,6 +67,12 @@ export default createComponent({
   render() {
     const active = this.parent.route ? this.routeActive : this.active;
     const color = this.parent[active ? 'activeColor' : 'inactiveColor'];
+
+    if (process.env.NODE_ENV === 'development' && this.info) {
+      console.warn(
+        '[Vant] TabbarItem: "info" prop is deprecated, use "badge" prop instead.'
+      );
+    }
 
     return (
       <div class={bem({ active })} style={{ color }} onClick={this.onClick}>

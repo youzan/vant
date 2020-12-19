@@ -2,7 +2,7 @@
 
 ### Intro
 
-The default language of Vant is Chinese. If you want to use other languages, you can follow the instructions below.
+Vant uses Chinese as the default language. If you want to use other languages, please follow the instructions below.
 
 ## Usage
 

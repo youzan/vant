@@ -233,7 +233,7 @@ export default {
 | swipeable | Whether to switch tabs with swipe gestrue in the content | _boolean_ | `false` |
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
 | scrollspy `v2.3.0` | Whether to use scrollspy mode | _boolean_ | `false` |
-| offset-top `v2.8.7` | Sticky offset top , supports `px` `vw` `rem` unit, default `px` | _number \| string_ | `0` |
+| offset-top `v2.8.7` | Sticky offset top , supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `0` |
 | swipe-threshold | Set swipe tabs threshold | _number \| string_ | `5` | - |
 | title-active-color | Title active color | _string_ | - |
 | title-inactive-color | Title inactive color | _string_ | - |
@@ -257,11 +257,11 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Triggered when click tab | name，title |
-| change | Triggered when active tab changed | name，title |
-| disabled | Triggered when click disabled tab | name，title |
-| rendered `v2.3.0` | Triggered when content first rendered in lazy-render mode | name，title |
-| scroll | Triggered when tab scroll in sticky mode | object: { scrollTop, isFixed } |
+| click | Emitted when a tab is clicked | name，title |
+| change | Emitted when active tab changed | name，title |
+| disabled | Emitted when a disabled tab is clicked | name，title |
+| rendered `v2.3.0` | Emitted when content first rendered in lazy-render mode | name，title |
+| scroll | Emitted when tab scrolling in sticky mode | object: { scrollTop, isFixed } |
 
 ### Tabs Methods
 
@@ -269,8 +269,8 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Tabs instance and call instance 
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| resize | Resize Tabs when container element resized | - | void |
-| scrollTo `v2.9.3` | Go to specified tab in scrollspy mode | name | void |
+| resize | Resize Tabs when container element resized or visibility changed | - | - |
+| scrollTo `v2.9.3` | Go to specified tab in scrollspy mode | name | - |
 
 ### Tabs Slots
 
@@ -285,3 +285,22 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Tabs instance and call instance 
 | ------- | ---------------- |
 | default | Content of tab   |
 | title   | Custom tab title |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                       | Default Value         | Description |
+| -------------------------- | --------------------- | ----------- |
+| @tab-text-color            | `@gray-7`             | -           |
+| @tab-active-text-color     | `@text-color`         | -           |
+| @tab-disabled-text-color   | `@gray-5`             | -           |
+| @tab-font-size             | `@font-size-md`       | -           |
+| @tab-line-height           | `@line-height-md`     | -           |
+| @tabs-default-color        | `@red`                | -           |
+| @tabs-line-height          | `44px`                | -           |
+| @tabs-card-height          | `30px`                | -           |
+| @tabs-nav-background-color | `@white`              | -           |
+| @tabs-bottom-bar-width     | `40px`                | -           |
+| @tabs-bottom-bar-height    | `3px`                 | -           |
+| @tabs-bottom-bar-color     | `@tabs-default-color` | -           |

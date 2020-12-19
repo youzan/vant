@@ -140,7 +140,8 @@ export default {
 | get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 | initial-sku | 默认选中的 sku，具体参考高级用法 | _object_ | `{}` |
 | show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | _boolean_ | `true` |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
+| disable-soldout-sku `v2.11.3` | 是否禁用售罄的 sku | _boolean_ | `true` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 | start-sale-num `v2.3.0` | 起售数量 | _number_ | `1` |
 | properties `v2.4.2` | 商品属性 | _array_ | - |
 | preview-on-click-image `v2.5.2` | 是否在点击商品图片时自动预览 | _boolean_ | `true` |
@@ -162,7 +163,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 Sku 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
+通过 ref 可以获取到 Sku 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名                    | 说明                   | 参数 | 返回值  |
 | ------------------------- | ---------------------- | ---- | ------- |
@@ -399,3 +400,13 @@ skuData: {
   },
 }
 ```
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                       | 默认值                  | 描述 |
+| -------------------------- | ----------------------- | ---- |
+| @sku-item-background-color | `@background-color`     | -    |
+| @sku-icon-gray-color       | `@gray-4`               | -    |
+| @sku-upload-mask-color     | `rgba(50, 50, 51, 0.8)` | -    |

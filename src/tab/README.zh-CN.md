@@ -240,8 +240,8 @@ export default {
 | swipeable | 是否开启手势滑动切换 | _boolean_ | `false` |
 | lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | _boolean_ | `true` |
 | scrollspy `v2.3.0` | 是否开启滚动导航 | _boolean_ | `false` |
-| offset-top `v2.8.7` | 粘性定位布局下与顶部的最小距离，支持 `px` `vw` `rem` 单位，默认 `px` | _number \| string_ | `0` |
-| swipe-threshold | 滚动阈值，标签数量超过阈值时开始横向滚动 | _number \| string_ | `5` |
+| offset-top `v2.8.7` | 粘性定位布局下与顶部的最小距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
+| swipe-threshold | 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动 | _number \| string_ | `5` |
 | title-active-color | 标题选中态颜色 | _string_ | - |
 | title-inactive-color | 标题默认态颜色 | _string_ | - |
 | before-change `v2.9.3` | 切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise | _(name) => boolean \| Promise_ | - |
@@ -273,12 +273,12 @@ export default {
 
 ### Tabs 方法
 
-通过 ref 可以获取到 Tabs 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
+通过 ref 可以获取到 Tabs 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void |
-| scrollTo `v2.9.3` | 滚动到指定的标签页，在滚动导航模式下可用 | name: 标识符 | void |
+| resize | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 | - | - |
+| scrollTo `v2.9.3` | 滚动到指定的标签页，在滚动导航模式下可用 | name: 标识符 | - |
 
 ### Tabs Slots
 
@@ -293,3 +293,49 @@ export default {
 | ------- | ---------- |
 | default | 标签页内容 |
 | title   | 自定义标题 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                       | 默认值                | 描述 |
+| -------------------------- | --------------------- | ---- |
+| @tab-text-color            | `@gray-7`             | -    |
+| @tab-active-text-color     | `@text-color`         | -    |
+| @tab-disabled-text-color   | `@gray-5`             | -    |
+| @tab-font-size             | `@font-size-md`       | -    |
+| @tab-line-height           | `@line-height-md`     | -    |
+| @tabs-default-color        | `@red`                | -    |
+| @tabs-line-height          | `44px`                | -    |
+| @tabs-card-height          | `30px`                | -    |
+| @tabs-nav-background-color | `@white`              | -    |
+| @tabs-bottom-bar-width     | `40px`                | -    |
+| @tabs-bottom-bar-height    | `3px`                 | -    |
+| @tabs-bottom-bar-color     | `@tabs-default-color` | -    |
+
+## 常见问题
+
+### 组件从隐藏状态切换到显示状态时，底部条位置错误？
+
+Tabs 组件在挂载时，会获取自身的宽度，并计算出底部条的位置。如果组件一开始处于隐藏状态，则获取到的宽度永远为 0，因此无法展示底部条位置。
+
+#### 解决方法
+
+方法一，如果是使用 `v-show` 来控制组件展示的，则替换为 `v-if` 即可解决此问题：
+
+```html
+<!-- Before -->
+<van-tabs v-show="show" />
+<!-- After -->
+<van-tabs v-if="show" />
+```
+
+方法二，调用组件的 resize 方法来主动触发重绘：
+
+```html
+<van-tabs v-show="show" ref="tabs" />
+```
+
+```js
+this.$refs.tabs.resize();
+```

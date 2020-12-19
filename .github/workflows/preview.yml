@@ -1,6 +1,6 @@
 name: 🔂 Surge PR Preview
 
-on: [push, pull_request]
+on: [push, pull_request_target]
 
 jobs:
   preview:
@@ -14,6 +14,6 @@ jobs:
           surge_token: ${{ secrets.SURGE_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           build: |
-            npm install
+            yarn
             ./node_modules/.bin/vant-cli build-site
           dist: site

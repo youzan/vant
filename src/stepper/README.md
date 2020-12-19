@@ -88,7 +88,8 @@ export default {
     onChange(value) {
       Toast.loading({ forbidClick: true });
 
-      setTimeout(() => {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
         Toast.clear();
         this.value = value;
       }, 500);
@@ -135,9 +136,30 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| change | Triggered when value change | _value: string, detail: { name: string }_ |
-| overlimit | Triggered when click disabled button | - |
-| plus | Triggered when click plus button | - |
-| minus | Triggered when click minus button | - |
-| focus | Triggered when input focused | _event: Event_ |
-| blur | Triggered when input blured | _event: Event_ |
+| change | Emitted when value changed | _value: string, detail: { name: string }_ |
+| overlimit | Emitted when a disabled button is clicked | - |
+| plus | Emitted when the plus button is clicked | - |
+| minus | Emitted when the minus button is clicked | - |
+| focus | Emitted when the input is focused | _event: Event_ |
+| blur | Emitted when the input is blured | _event: Event_ |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                     | Default Value       | Description |
+| ---------------------------------------- | ------------------- | ----------- |
+| @stepper-active-color                    | `#e8e8e8`           | -           |
+| @stepper-background-color                | `@active-color`     | -           |
+| @stepper-button-icon-color               | `@text-color`       | -           |
+| @stepper-button-disabled-color           | `@background-color` | -           |
+| @stepper-button-disabled-icon-color      | `@gray-5`           | -           |
+| @stepper-button-round-theme-color        | `@red`              | -           |
+| @stepper-input-width                     | `32px`              | -           |
+| @stepper-input-height                    | `28px`              | -           |
+| @stepper-input-font-size                 | `@font-size-md`     | -           |
+| @stepper-input-line-height               | `normal`            | -           |
+| @stepper-input-text-color                | `@text-color`       | -           |
+| @stepper-input-disabled-text-color       | `@gray-5`           | -           |
+| @stepper-input-disabled-background-color | `@active-color`     | -           |
+| @stepper-border-radius                   | `@border-radius-md` | -           |

@@ -26,32 +26,32 @@
 
 ### 介绍
 
-Vant 是**有赞前端团队**开源的移动端组件库，于 2016 年开源，已持续维护 4 年时间。Vant 对内承载了有赞所有核心业务，对外服务十多万开发者，是业界主流的移动端组件库之一。
+Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源，已持续维护 4 年时间。Vant 对内承载了有赞所有核心业务，对外服务十多万开发者，是业界主流的移动端组件库之一。
 
-目前 Vant 官方提供了 [Vue 版本](https://vant-contrib.gitee.io/vant)和[微信小程序版本](http://vant-contrib.gitee.io/vant-weapp)，并由社区团队维护 [React 版本](https://github.com/mxdi9i7/vant-react)。
+目前 Vant 官方提供了 [Vue 2 版本](https://vant-contrib.gitee.io/vant)、[Vue 3 版本](https://vant-contrib.gitee.io/vant/next)和[微信小程序版本](http://vant-contrib.gitee.io/vant-weapp)，并由社区团队维护 [React 版本](https://github.com/mxdi9i7/vant-react)。
 
 ## 特性
 
-- 60+ 高质量组件，覆盖移动端各类场景
-- 90%+ 单元测试覆盖率，提供稳定性保障
+- 提供 60 多个高质量组件，覆盖移动端各类场景
+- 性能极佳，组件平均体积不到 1kb（min+gzip）
+- 单元测试覆盖率 90%+，提供稳定性保障
 - 完善的中英文文档和示例
+- 支持 Vue 2 & Vue 3
 - 支持按需引入
 - 支持主题定制
 - 支持国际化
-- 支持 TS
+- 支持 TypeScript
 - 支持 SSR
 
 ## 安装
 
 ```bash
-# 通过 npm 安装
+# Vue 2 项目，安装 Vant 2.x 版本：
 npm i vant -S
 
-# 通过 yarn 安装
-yarn add vant
+# Vue 3 项目，安装 Vant 3.x 版本：
+npm i vant@next -S
 ```
-
-> Tips: Vue 3 项目请安装 Vant 3.0，参见 [issue#7035](https://github.com/youzan/vant/issues/7035)。
 
 ## 快速上手
 

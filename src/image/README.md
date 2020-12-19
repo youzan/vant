@@ -77,6 +77,7 @@ Vue.use(Lazyload);
 | show-loading | Whether to show loading placeholder | _boolean_ | `true` |
 | error-icon `v2.4.2` | Error icon | _string_ | `photo-fail` |
 | loading-icon `v2.4.2` | Loading icon | _string_ | `photo` |
+| icon-prefix `v2.10.12` | Icon className prefix | _string_ | `van-icon` |
 
 ### fit optional value
 
@@ -90,11 +91,11 @@ Vue.use(Lazyload);
 
 ### Events
 
-| Event | Description                      | Arguments      |
-| ----- | -------------------------------- | -------------- |
-| click | Triggered when click image       | _event: Event_ |
-| load  | Triggered when image loaded      | -              |
-| error | Triggered when image load failed | -              |
+| Event | Description                    | Arguments      |
+| ----- | ------------------------------ | -------------- |
+| click | Emitted when image is clicked  | _event: Event_ |
+| load  | Emitted when image loaded      | -              |
+| error | Emitted when image load failed | -              |
 
 ### Slots
 
@@ -103,3 +104,17 @@ Vue.use(Lazyload);
 | default `v2.9.0` | Custom the content below the image |
 | loading          | Custom loading placeholder         |
 | error            | Custom error placeholder           |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                | Default Value       | Description |
+| ----------------------------------- | ------------------- | ----------- |
+| @image-placeholder-text-color       | `@gray-6`           | -           |
+| @image-placeholder-font-size        | `@font-size-md`     | -           |
+| @image-placeholder-background-color | `@background-color` | -           |
+| @image-loading-icon-size            | `32px`              | -           |
+| @image-loading-icon-color           | `@gray-4`           | -           |
+| @image-error-icon-size              | `32px`              | -           |
+| @image-error-icon-color             | `@gray-4`           | -           |
