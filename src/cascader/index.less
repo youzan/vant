@@ -10,24 +10,40 @@
   }
 
   &__title {
-    font-size: @cascader-title-font-size;
     font-weight: @font-weight-bold;
+    font-size: @cascader-title-font-size;
     line-height: @cascader-title-line-height;
   }
 
-  &__confirm {
-    height: 100%;
-    // expand click area
-    padding: 0 @padding-md;
-    margin-right: -@padding-md;
-    color: @cascader-confirm-color;
-    font-size: @cascader-confirm-font-size;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  &__tabs {
+    .van-tab {
+      flex: none;
+      padding: 0 10px;
+
+      &--active {
+        color: #969799;
+      }
+    }
+
+    &.van-tabs--line .van-tabs__wrap {
+      height: 48px;
+      padding: 0 6px;
+    }
+  }
+
+  &__option {
+    padding: 10px 16px;
+    font-size: 14px;
+    line-height: 20px;
 
     &:active {
-      opacity: @active-opacity;
+      background-color: @active-color;
     }
+  }
+
+  &__options {
+    box-sizing: border-box;
+    height: 384px;
+    padding-top: 6px;
   }
 }
