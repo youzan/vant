@@ -197,7 +197,7 @@ export default createComponent({
       const { options, selectedOption } = item;
       const title = selectedOption
         ? selectedOption.text
-        : this.placeholder || this.t('placeholder');
+        : this.placeholder || this.t('select');
 
       return (
         <Tab
