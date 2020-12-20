@@ -19,10 +19,6 @@
     .van-tab {
       flex: none;
       padding: 0 10px;
-
-      &--active {
-        color: #969799;
-      }
     }
 
     &.van-tabs--line .van-tabs__wrap {
@@ -31,19 +27,42 @@
     }
   }
 
+  &__tab-title {
+    color: @gray-8;
+    font-weight: @font-weight-bold;
+
+    &--unselected {
+      color: @gray-6;
+    }
+  }
+
   &__option {
-    padding: 10px 16px;
-    font-size: 14px;
-    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px @padding-md;
+    font-size: @font-size-md;
+    line-height: @line-height-md;
 
     &:active {
       background-color: @active-color;
     }
+
+    &--selected {
+      color: @red;
+    }
+  }
+
+  &__selected-icon {
+    color: @red;
+    font-size: 18px;
   }
 
   &__options {
     box-sizing: border-box;
     height: 384px;
     padding-top: 6px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }

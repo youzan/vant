@@ -16,6 +16,7 @@ export default createComponent({
     badge: [Number, String],
     title: String,
     titleStyle: null,
+    titleClass: null,
     disabled: Boolean,
   },
 
