@@ -21,6 +21,9 @@ export default {
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `Maks. ${maxRange} dager`,
   },
+  vanCascader: {
+    select: 'Plukke ut',
+  },
   vanContactCard: {
     addText: 'Legg til kontakt info',
   },
