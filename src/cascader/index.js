@@ -7,8 +7,8 @@ const [createComponent, bem] = createNamespace('cascader');
 
 export default createComponent({
   props: {
-    value: Array,
     title: String,
+    value: [Number, String],
     options: Array,
     placeholder: String,
     activeColor: String,
@@ -30,27 +30,80 @@ export default createComponent({
       // reset options and tab
     },
 
-    value() {
-      // reset options and tab
+    value(value) {
+      if (value) {
+        const values = this.tabs.map((tab) => tab.selectedOption?.value);
+        if (values.indexOf(value) !== -1) {
+          return;
+        }
+      }
+      this.updateTabs();
     },
   },
 
   created() {
-    this.init();
+    this.updateTabs();
   },
 
   methods: {
-    init() {
-      if (this.value) {
-        //
-      } else {
-        this.tabs = [
-          {
-            options: this.options,
-            selectedOption: null,
-          },
-        ];
+    getSelectedOptionsByValue(options, value) {
+      for (let i = 0; i < options.length; i++) {
+        const option = options[i];
+
+        if (option.value === value) {
+          return [option];
+        }
+
+        if (option.children) {
+          const selectedOptions = this.getSelectedOptionsByValue(
+            option.children,
+            value
+          );
+          if (selectedOptions) {
+            return [option, ...selectedOptions];
+          }
+        }
       }
+    },
+
+    updateTabs() {
+      if (this.value) {
+        const selectedOptions = this.getSelectedOptionsByValue(
+          this.options,
+          this.value
+        );
+
+        if (selectedOptions) {
+          let optionsCursor = this.options;
+
+          this.tabs = selectedOptions.map((option) => {
+            const tab = {
+              options: optionsCursor,
+              selectedOption: option,
+            };
+
+            const next = optionsCursor.filter(
+              (item) => item.value === option.value
+            );
+            if (next.length) {
+              optionsCursor = next[0].children;
+            }
+
+            return tab;
+          });
+
+          this.activeTab = selectedOptions.length - 1;
+
+          return;
+        }
+      }
+
+      this.tabs = [
+        {
+          options: this.options,
+          selectedOption: null,
+        },
+      ];
     },
 
     onSelect(option, tabIndex) {
@@ -82,6 +135,7 @@ export default createComponent({
         tabIndex,
         selectedOptions: this.tabs.map((tab) => tab.selectedOption),
       };
+      this.$emit('input', option.value);
       this.$emit('change', eventParams);
 
       if (!option.children) {

@@ -37,14 +37,14 @@ export default {
 
 ### Props
 
-| 参数         | 说明               | 类型                   | 默认值    |
-| ------------ | ------------------ | ---------------------- | --------- |
-| title        | 顶部标题           | _string_               | -         |
-| value        | 选中项的值         | _string[] \| number[]_ | -         |
-| options      | 可选项数据源       | _Option[]_             | `[]`      |
-| placeholder  | 未选中时的提示文案 | _string_               | `请选择`  |
-| active-color | 选中状态的高亮颜色 | _string_               | `#ee0a24` |
-| closeable    | 是否显示关闭图标   | _boolean_              | `true`    |
+| 参数         | 说明               | 类型               | 默认值    |
+| ------------ | ------------------ | ------------------ | --------- |
+| title        | 顶部标题           | _string_           | -         |
+| value        | 选中项的值         | _string \| number_ | -         |
+| options      | 可选项数据源       | _Option[]_         | `[]`      |
+| placeholder  | 未选中时的提示文案 | _string_           | `请选择`  |
+| active-color | 选中状态的高亮颜色 | _string_           | `#ee0a24` |
+| closeable    | 是否显示关闭图标   | _boolean_          | `true`    |
 
 ### Events
 
