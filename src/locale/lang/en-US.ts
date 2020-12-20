@@ -21,6 +21,9 @@ export default {
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `Choose no more than ${maxRange} days`,
   },
+  vanCascader: {
+    select: 'Select',
+  },
   vanContactCard: {
     addText: 'Add contact info',
   },
