@@ -44,6 +44,7 @@ export default createComponent({
   watch: {
     title() {
       this.parent.setLine();
+      this.parent.scrollIntoView();
     },
 
     inited(val) {
