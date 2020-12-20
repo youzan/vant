@@ -100,3 +100,22 @@ export default {
 | Name  | Description  |
 | ----- | ------------ |
 | title | Custom title |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                 | Default Value   | Description |
+| ------------------------------------ | --------------- | ----------- |
+| @cascader-header-height              | `48px`          | -           |
+| @cascader-title-font-size            | `@font-size-lg` | -           |
+| @cascader-title-line-height          | `20px`          | -           |
+| @cascader-close-icon-size            | `22px`          | -           |
+| @cascader-close-icon-color           | `@gray-5`       | -           |
+| @cascader-close-icon-active-color    | `@gray-6`       | -           |
+| @cascader-selected-icon-size         | `18px`          | -           |
+| @cascader-tabs-height                | `48px`          | -           |
+| @cascader-active-color               | `@red`          | -           |
+| @cascader-options-height             | `384px`         | -           |
+| @cascader-tab-title-color            | `@text-color`   | -           |
+| @cascader-unselected-tab-title-color | `@gray-6`       | -           |

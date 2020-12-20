@@ -16,11 +16,11 @@
   }
 
   &__close-icon {
-    color: @gray-5;
-    font-size: 22px;
+    color: @cascader-close-icon-color;
+    font-size: @cascader-close-icon-color;
 
     &:active {
-      color: @gray-6;
+      color: @cascader-close-icon-active-color;
     }
   }
 
@@ -31,17 +31,17 @@
     }
 
     &.van-tabs--line .van-tabs__wrap {
-      height: 48px;
+      height: @cascader-tabs-height;
       padding: 0 6px;
     }
   }
 
   &__tab-title {
-    color: @gray-8;
+    color: @cascader-tab-title-color;
     font-weight: @font-weight-bold;
 
     &--unselected {
-      color: @gray-6;
+      color: @cascader-unselected-tab-title-color;
     }
   }
 
@@ -58,17 +58,17 @@
     }
 
     &--selected {
-      color: @red;
+      color: @cascader-active-color;
     }
   }
 
   &__selected-icon {
-    font-size: 18px;
+    font-size: @cascader-selected-icon-size;
   }
 
   &__options {
     box-sizing: border-box;
-    height: 384px;
+    height: @cascader-options-height;
     padding-top: 6px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
