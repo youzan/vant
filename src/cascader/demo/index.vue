@@ -5,14 +5,16 @@
         is-link
         readonly
         :label="t('area')"
+        :value="base.value"
         :placeholder="t('selectArea')"
-        @click="showBase = true"
+        @click="base.show = true"
       />
-      <van-popup v-model="showBase" round position="bottom">
+      <van-popup v-model="base.show" round position="bottom">
         <van-cascader
           :title="t('selectArea')"
           :options="t('options')"
-          @close="showBase = false"
+          @close="base.show = false"
+          @finish="onFinish"
         />
       </van-popup>
     </demo-block>
@@ -37,8 +39,18 @@ export default {
 
   data() {
     return {
-      showBase: false,
+      base: {
+        show: false,
+        value: '',
+      },
     };
+  },
+
+  methods: {
+    onFinish({ selectedOptions }) {
+      this.base.show = false;
+      this.base.value = selectedOptions.map((option) => option.text).join('/');
+    },
   },
 };
 </script>

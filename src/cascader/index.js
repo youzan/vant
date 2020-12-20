@@ -46,17 +46,15 @@ export default createComponent({
       } else {
         this.tabs = [
           {
-            title: this.placeholder || this.t('placeholder'),
             options: this.options,
-            selected: null,
+            selectedOption: null,
           },
         ];
       }
     },
 
     onSelect(option, tabIndex) {
-      this.tabs[tabIndex].title = option.text;
-      this.tabs[tabIndex].selected = option.value;
+      this.tabs[tabIndex].selectedOption = option;
 
       if (this.tabs.length > tabIndex + 1) {
         this.tabs = this.tabs.slice(0, tabIndex + 1);
@@ -64,9 +62,8 @@ export default createComponent({
 
       if (option.children) {
         const nextTab = {
-          title: this.placeholder || this.t('placeholder'),
           options: option.children,
-          selected: null,
+          selectedOption: null,
         };
 
         if (this.tabs[tabIndex + 1]) {
@@ -78,6 +75,17 @@ export default createComponent({
         this.$nextTick(() => {
           this.activeTab++;
         });
+      }
+
+      const eventParams = {
+        value: option.value,
+        tabIndex,
+        selectedOptions: this.tabs.map((tab) => tab.selectedOption),
+      };
+      this.$emit('change', eventParams);
+
+      if (!option.children) {
+        this.$emit('finish', eventParams);
       }
     },
 
@@ -100,27 +108,45 @@ export default createComponent({
       );
     },
 
-    renderOptions(options, selected, tabIndex) {
+    renderOptions(options, selectedOption, tabIndex) {
+      const renderOption = (option) => {
+        const isSelected =
+          selectedOption && option.value === selectedOption.value;
+
+        return (
+          <li
+            class={bem('option', { selected: isSelected })}
+            style={{ color: isSelected ? this.activeColor : null }}
+            onClick={() => {
+              this.onSelect(option, tabIndex);
+            }}
+          >
+            <span>{option.text}</span>
+            {isSelected ? (
+              <Icon name="success" class={bem('selected-icon')} />
+            ) : null}
+          </li>
+        );
+      };
+
+      return <ul class={bem('options')}>{options.map(renderOption)}</ul>;
+    },
+
+    renderTab(item, tabIndex) {
+      const { options, selectedOption } = item;
+      const title = selectedOption
+        ? selectedOption.text
+        : this.placeholder || this.t('placeholder');
+
       return (
-        <ul class={bem('options')}>
-          {options.map((option) => {
-            const isSelected = option.value === selected;
-            return (
-              <li
-                class={bem('option', { selected: isSelected })}
-                style={{ color: isSelected ? this.activeColor : null }}
-                onClick={() => {
-                  this.onSelect(option, tabIndex);
-                }}
-              >
-                <span>{option.text}</span>
-                {isSelected ? (
-                  <Icon name="success" class={bem('selected-icon')} />
-                ) : null}
-              </li>
-            );
+        <Tab
+          title={title}
+          titleClass={bem('tab-title', {
+            unselected: !selectedOption,
           })}
-        </ul>
+        >
+          {this.renderOptions(options, selectedOption, tabIndex)}
+        </Tab>
       );
     },
 
@@ -133,14 +159,7 @@ export default createComponent({
           class={bem('tabs')}
           color={this.activeColor}
         >
-          {this.tabs.map((item, tabIndex) => (
-            <Tab
-              title={item.title}
-              titleClass={bem('tab-title', { unselected: !item.selected })}
-            >
-              {this.renderOptions(item.options, item.selected, tabIndex)}
-            </Tab>
-          ))}
+          {this.tabs.map(this.renderTab)}
         </Tabs>
       );
     },
