@@ -108,6 +108,7 @@ export default createComponent({
             return (
               <li
                 class={bem('option', { selected: isSelected })}
+                style={{ color: isSelected ? this.activeColor : null }}
                 onClick={() => {
                   this.onSelect(option, tabIndex);
                 }}
@@ -125,7 +126,13 @@ export default createComponent({
 
     renderTabs() {
       return (
-        <Tabs vModel={this.activeTab} animated swipeable class={bem('tabs')}>
+        <Tabs
+          vModel={this.activeTab}
+          animated
+          swipeable
+          class={bem('tabs')}
+          color={this.activeColor}
+        >
           {this.tabs.map((item, tabIndex) => (
             <Tab
               title={item.title}
