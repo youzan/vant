@@ -3,15 +3,18 @@ import Tab from '../tab';
 import Tabs from '../tabs';
 import Icon from '../icon';
 
-const [createComponent, bem] = createNamespace('cascader');
+const [createComponent, bem, t] = createNamespace('cascader');
 
 export default createComponent({
   props: {
     title: String,
     value: [Number, String],
-    options: Array,
     placeholder: String,
     activeColor: String,
+    options: {
+      type: Array,
+      default: () => [],
+    },
     closeable: {
       type: Boolean,
       default: true,
@@ -99,7 +102,9 @@ export default createComponent({
             });
           }
 
-          this.activeTab = this.tabs.length - 1;
+          this.$nextTick(() => {
+            this.activeTab = this.tabs.length - 1;
+          });
 
           return;
         }
@@ -137,10 +142,14 @@ export default createComponent({
         });
       }
 
+      const selectedOptions = this.tabs
+        .map((tab) => tab.selectedOption)
+        .filter((item) => !!item);
+
       const eventParams = {
         value: option.value,
         tabIndex,
-        selectedOptions: this.tabs.map((tab) => tab.selectedOption),
+        selectedOptions,
       };
       this.$emit('input', option.value);
       this.$emit('change', eventParams);
@@ -197,7 +206,7 @@ export default createComponent({
       const { options, selectedOption } = item;
       const title = selectedOption
         ? selectedOption.text
-        : this.placeholder || this.t('select');
+        : this.placeholder || t('select');
 
       return (
         <Tab
