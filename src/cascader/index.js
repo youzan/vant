@@ -217,6 +217,7 @@ export default createComponent({
           vModel={this.activeTab}
           animated
           swipeable
+          swipeThreshold={0}
           class={bem('tabs')}
           color={this.activeColor}
         >
