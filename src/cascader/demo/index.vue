@@ -5,12 +5,13 @@
         is-link
         readonly
         :label="t('area')"
-        :value="base.value"
+        :value="base.result"
         :placeholder="t('selectArea')"
         @click="base.show = true"
       />
       <van-popup v-model="base.show" round position="bottom">
         <van-cascader
+          v-model="base.value"
           :title="t('selectArea')"
           :options="t('options')"
           @close="base.show = false"
@@ -24,12 +25,13 @@
         is-link
         readonly
         :label="t('area')"
-        :value="customColor.value"
+        :value="customColor.result"
         :placeholder="t('selectArea')"
         @click="customColor.show = true"
       />
       <van-popup v-model="customColor.show" round position="bottom">
         <van-cascader
+          v-model="customColor.value"
           :title="t('selectArea')"
           :options="t('options')"
           active-color="#1989fa"
@@ -64,20 +66,23 @@ export default {
       base: {
         show: false,
         value: '',
+        result: '',
       },
       customColor: {
         show: false,
-        value: '',
+        value: null,
+        result: '',
       },
     };
   },
 
   methods: {
-    onFinish(type, { selectedOptions }) {
-      const fieldValue = selectedOptions.map((option) => option.text).join('/');
+    onFinish(type, { value, selectedOptions }) {
+      const result = selectedOptions.map((option) => option.text).join('/');
       this[type] = {
         show: false,
-        value: fieldValue,
+        value,
+        result,
       };
     },
   },
