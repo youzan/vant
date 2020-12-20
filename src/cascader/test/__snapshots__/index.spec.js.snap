@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render title slot correctly 1`] = `<h2 class="van-cascader__title">Custom Title</h2>`;
+
+exports[`should select correct option when value changed 1`] = `
+<li class="van-cascader__option van-cascader__option--selected"><span>Ouhai</span><i class="van-icon van-icon-success van-cascader__selected-icon">
+    <!----></i></li>
+`;

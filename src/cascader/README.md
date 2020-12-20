@@ -81,7 +81,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | title | Title | _string_ | - |
-| value | Values of selected options | _string \| number_ | - |
+| value | Value of selected option | _string \| number_ | - |
 | options | Options | _Option[]_ | `[]` |
 | placeholder | Placeholder of unselected tab | _string_ | `Select` |
 | active-color | Active color | _string_ | `#ee0a24` |
