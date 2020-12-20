@@ -44,7 +44,8 @@
 </template>
 
 <script>
-import zhCNOptions from './area';
+import zhCNOptions from './area-zh-CN';
+import enUSOptions from './area-en-US';
 
 export default {
   i18n: {
@@ -56,6 +57,7 @@ export default {
     },
     'en-US': {
       area: 'Area',
+      options: enUSOptions,
       selectArea: 'Select Area',
       customColor: 'Custom Color',
     },

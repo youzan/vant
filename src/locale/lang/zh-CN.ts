@@ -23,7 +23,7 @@ export default {
     rangePrompt: (maxRange: number) => `选择天数不能超过 ${maxRange} 天`,
   },
   vanCascader: {
-    placeholder: '请选择',
+    select: '请选择',
   },
   vanContactCard: {
     addText: '添加联系人',
