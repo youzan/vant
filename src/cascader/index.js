@@ -27,7 +27,7 @@ export default createComponent({
 
   watch: {
     options() {
-      // reset options and tab
+      this.updateTabs();
     },
 
     value(value) {
@@ -92,7 +92,14 @@ export default createComponent({
             return tab;
           });
 
-          this.activeTab = selectedOptions.length - 1;
+          if (optionsCursor) {
+            this.tabs.push({
+              options: optionsCursor,
+              selectedOption: null,
+            });
+          }
+
+          this.activeTab = this.tabs.length - 1;
 
           return;
         }
