@@ -48,10 +48,11 @@ export default {
 
 ### Events
 
-| 事件    | 说明             | 回调参数 |
-| ------- | ---------------- | -------- |
-| change  | 选中项变化时触发 | -        |
-| confirm | 确认选择时触发   | -        |
+| 事件   | 说明                   | 回调参数                               |
+| ------ | ---------------------- | -------------------------------------- |
+| change | 选中项变化时触发       | `{ value, selectedOptions, tabIndex }` |
+| finish | 全部选项选择完成后触发 | `{ value, selectedOptions, tabIndex }` |
+| close  | 点击关闭图标时触发     | -                                      |
 
 ### Slots
 
