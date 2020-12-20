@@ -9,7 +9,11 @@
         @click="showBase = true"
       />
       <van-popup v-model="showBase" round position="bottom">
-        <van-cascader :title="t('selectArea')" :options="t('options')" />
+        <van-cascader
+          :title="t('selectArea')"
+          :options="t('options')"
+          @close="showBase = false"
+        />
       </van-popup>
     </demo-block>
   </demo-section>

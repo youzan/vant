@@ -81,10 +81,21 @@ export default createComponent({
       }
     },
 
+    onClose() {
+      this.$emit('close');
+    },
+
     renderHeader() {
       return (
         <div class={bem('header')}>
           <h2 class={bem('title')}>{this.slots('title') || this.title}</h2>
+          {this.closeable ? (
+            <Icon
+              name="cross"
+              class={bem('close-icon')}
+              onClick={this.onClose}
+            />
+          ) : null}
         </div>
       );
     },
