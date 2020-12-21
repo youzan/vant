@@ -15,10 +15,10 @@ Vue.use(Cascader);
 
 ```html
 <van-field
+  v-model="fieldValue"
   is-link
   readonly
   label="Area"
-  :value="fieldValue"
   placeholder="Select Area"
   @click="show = true"
 />
@@ -78,10 +78,10 @@ export default {
 
 ```html
 <van-field
+  v-model="fieldValue"
   is-link
   readonly
   label="Area"
-  :value="fieldValue"
   placeholder="Select Area"
   @click="show = true"
 />

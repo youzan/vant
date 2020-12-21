@@ -21,17 +21,17 @@ Vue.use(Cascader);
 
 ```html
 <van-field
+  v-model="fieldValue"
   is-link
   readonly
   label="地区"
-  :value="fieldValue"
-  placeholder="请选择地区"
+  placeholder="请选择所在地区"
   @click="show = true"
 />
 <van-popup v-model:show="show" round position="bottom">
   <van-cascader
     v-model="cascaderValue"
-    title="请选择地区"
+    title="请选择所在地区"
     @close="show = false"
     @finish="onFinish"
   />
@@ -77,7 +77,7 @@ export default {
 ```html
 <van-cascader
   v-model="cascaderValue"
-  title="请选择地区"
+  title="请选择所在地区"
   active-color="#1989fa"
   @close="show = false"
   @finish="onFinish"
@@ -90,17 +90,17 @@ export default {
 
 ```html
 <van-field
+  v-model="fieldValue"
   is-link
   readonly
   label="地区"
-  :value="fieldValue"
-  placeholder="请选择地区"
+  placeholder="请选择所在地区"
   @click="show = true"
 />
 <van-popup v-model:show="show" round position="bottom">
   <van-cascader
     v-model="cascaderValue"
-    title="请选择地区"
+    title="请选择所在地区"
     @close="show = false"
     @change="onChange"
     @finish="onFinish"
