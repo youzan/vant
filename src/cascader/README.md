@@ -54,8 +54,8 @@ export default {
     };
   },
   methods: {
-    onFinish(params) {
-      const { selectedOptions } = params;
+    onFinish({ selectedOptions }) {
+      this.show = false;
       this.fieldValue = selectedOptions.map((option) => option.text).join('/');
     },
   },
@@ -72,6 +72,63 @@ export default {
   @close="show = false"
   @finish="onFinish"
 />
+```
+
+### Async Options
+
+```html
+<van-field
+  is-link
+  readonly
+  label="Area"
+  :value="fieldValue"
+  placeholder="Select Area"
+  @click="show = true"
+/>
+<van-popup v-model="show" round position="bottom">
+  <van-cascader
+    v-model="cascaderValue"
+    title="Select Area"
+    @close="show = false"
+    @change="onChange"
+    @finish="onFinish"
+  />
+</van-popup>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false,
+      fieldValue: '',
+      cascaderValue: '',
+      options: [
+        {
+          text: 'Zhejiang',
+          value: '330000',
+          children: [],
+        },
+      ],
+    };
+  },
+  methods: {
+    onChange({ value }) {
+      if (value === this.options[0].value) {
+        setTimeout(() => {
+          this.options[0].children = [
+            { text: 'Hangzhou', value: '330100' },
+            { text: 'Ningbo', value: '330200' },
+          ];
+        }, 500);
+      }
+    },
+    onFinish({ selectedOptions }) {
+      this.show = false;
+      this.fieldValue = selectedOptions.map((option) => option.text).join('/');
+    },
+  },
+};
 ```
 
 ## API
