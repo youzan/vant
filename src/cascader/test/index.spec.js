@@ -94,3 +94,31 @@ test('should select correct option when value changed', async () => {
   const lastSelectedOption = selectedOptions.at(selectedOptions.length - 1);
   expect(lastSelectedOption).toMatchSnapshot();
 });
+
+test('should reset selected options when value is set to emtpy', async () => {
+  const wrapper = mount(Cascader, {
+    propsData: {
+      value: '330304',
+      options,
+    },
+  });
+
+  await later();
+  wrapper.setProps({ value: '' });
+  await later();
+  expect(wrapper.contains('.van-cascader__option--selected')).toBeFalsy();
+});
+
+test('should update tabs when previous tab is clicked', async () => {
+  const wrapper = mount(Cascader, {
+    propsData: {
+      value: '330304',
+      options,
+    },
+  });
+
+  await later();
+  wrapper.findAll('.van-cascader__option').at(1).trigger('click');
+  await later();
+  expect(wrapper.html()).toMatchSnapshot();
+});

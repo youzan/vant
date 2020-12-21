@@ -35,7 +35,7 @@ export default createComponent({
     },
 
     value(value) {
-      if (value) {
+      if (value || value === 0) {
         const values = this.tabs.map((tab) => tab.selectedOption?.value);
         if (values.indexOf(value) !== -1) {
           return;
@@ -71,7 +71,7 @@ export default createComponent({
     },
 
     updateTabs() {
-      if (this.value) {
+      if (this.value || this.value === 0) {
         const selectedOptions = this.getSelectedOptionsByValue(
           this.options,
           this.value
@@ -212,7 +212,7 @@ export default createComponent({
       return (
         <Tab
           title={title}
-          titleClass={bem('tab-title', {
+          titleClass={bem('tab', {
             unselected: !selectedOption,
           })}
         >
