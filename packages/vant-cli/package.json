@@ -51,7 +51,7 @@
     "@vant/eslint-config": "^3.0.3",
     "@vant/markdown-loader": "^3.0.2",
     "@vant/markdown-vetur": "^2.0.2",
-    "@vant/stylelint-config": "^1.4.0",
+    "@vant/stylelint-config": "^1.4.2",
     "@vant/touch-emulator": "^1.2.0",
     "@vue/babel-plugin-jsx": "^1.0.0-rc.5",
     "@vue/test-utils": "2.0.0-beta.10",
