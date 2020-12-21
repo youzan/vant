@@ -16,6 +16,7 @@ export default createComponent({
     badge: [Number, String],
     title: String,
     titleStyle: null,
+    titleClass: null,
     disabled: Boolean,
   },
 
@@ -43,6 +44,7 @@ export default createComponent({
   watch: {
     title() {
       this.parent.setLine();
+      this.parent.scrollIntoView();
     },
 
     inited(val) {

@@ -16,6 +16,7 @@ export default createComponent({
     skuEventBus: Object,
     selectedSku: Object,
     largeImageMode: Boolean,
+    disableSoldoutSku: Boolean,
     skuList: {
       type: Array,
       default: () => [],
@@ -32,6 +33,10 @@ export default createComponent({
     },
 
     choosable() {
+      if (!this.disableSoldoutSku) {
+        return true;
+      }
+
       return isSkuChoosable(this.skuList, this.selectedSku, {
         key: this.skuKeyStr,
         valueId: this.skuValue.id,

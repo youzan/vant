@@ -62,8 +62,8 @@ export function getDeps(filePath: string) {
   const code = readFileSync(filePath, 'utf-8');
   const imports = matchImports(code);
   const paths = imports
-    .map(item => getPathByImport(item, filePath))
-    .filter(item => !!item) as string[];
+    .map((item) => getPathByImport(item, filePath))
+    .filter((item) => !!item) as string[];
 
   depsMap[filePath] = paths;
 
@@ -76,7 +76,7 @@ export function getDeps(filePath: string) {
 export function replaceScriptImportExt(code: string, from: string, to: string) {
   const importLines = matchImports(code);
 
-  importLines.forEach(importLine => {
+  importLines.forEach((importLine) => {
     const result = importLine.replace(from, to);
     code = code.replace(importLine, result);
   });

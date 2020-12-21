@@ -35,6 +35,7 @@ export class AddressList extends VanComponent {}
 export class Badge extends VanComponent {}
 export class Button extends VanComponent {}
 export class Card extends VanComponent {}
+export class Cascader extends VanComponent {}
 export class Cell extends VanComponent {}
 export class CellGroup extends VanComponent {}
 export class Circle extends VanComponent {}

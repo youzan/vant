@@ -27,9 +27,7 @@ Vue.use(Popover);
   @select="onSelect"
 >
   <template #reference>
-    <van-button type="primary">
-      浅色风格
-    </van-button>
+    <van-button type="primary">浅色风格</van-button>
   </template>
 </van-popover>
 ```
@@ -65,9 +63,7 @@ Popover 支持浅色和深色两种风格，默认为浅色风格，将 `theme` 
   :actions="actions"
 >
   <template #reference>
-    <van-button type="primary">
-      深色风格
-    </van-button>
+    <van-button type="primary">深色风格</van-button>
   </template>
 </van-popover>
 ```
@@ -115,9 +111,7 @@ bottom-end    # 底部右侧位置
 ```html
 <van-popover v-model="showPopover" trigger="click" :actions="actions">
   <template #reference>
-    <van-button type="primary">
-      展示图标
-    </van-button>
+    <van-button type="primary">展示图标</van-button>
   </template>
 </van-popover>
 ```
@@ -144,9 +138,7 @@ export default {
 ```html
 <van-popover v-model="showPopover" trigger="click" :actions="actions">
   <template #reference>
-    <van-button type="primary">
-      禁用选项
-    </van-button>
+    <van-button type="primary">禁用选项</van-button>
   </template>
 </van-popover>
 ```
@@ -188,9 +180,7 @@ export default {
     />
   </van-grid>
   <template #reference>
-    <van-button type="primary">
-      自定义内容
-    </van-button>
+    <van-button type="primary">自定义内容</van-button>
   </template>
 </van-popover>
 ```

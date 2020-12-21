@@ -372,6 +372,7 @@ export default createComponent({
         title={item.title}
         color={this.color}
         style={item.titleStyle}
+        class={item.titleClass}
         isActive={index === this.currentIndex}
         disabled={item.disabled}
         scrollable={scrollable}

@@ -39,7 +39,7 @@ export default {
 
     langConfigs() {
       const { locales = {} } = config.site;
-      return Object.keys(locales).map(key => ({
+      return Object.keys(locales).map((key) => ({
         lang: key,
         label: locales[key].langLabel || '',
       }));

@@ -21,9 +21,7 @@ Vue.use(Popover);
   @select="onSelect"
 >
   <template #reference>
-    <van-button type="primary">
-      Light Theme
-    </van-button>
+    <van-button type="primary">Light Theme</van-button>
   </template>
 </van-popover>
 ```
@@ -62,9 +60,7 @@ Using the `theme` prop to change the style of Popover.
   :actions="actions"
 >
   <template #reference>
-    <van-button type="primary">
-      Dark Theme
-    </van-button>
+    <van-button type="primary">Dark Theme</van-button>
   </template>
 </van-popover>
 ```
@@ -112,9 +108,7 @@ bottom-end    # Bottom right
 ```html
 <van-popover v-model="showPopover" trigger="click" :actions="actions">
   <template #reference>
-    <van-button type="primary">
-      Show Icon
-    </van-button>
+    <van-button type="primary">Show Icon</van-button>
   </template>
 </van-popover>
 ```
@@ -141,9 +135,7 @@ Using the `disabled` option to disable an action.
 ```html
 <van-popover v-model="showPopover" trigger="click" :actions="actions">
   <template #reference>
-    <van-button type="primary">
-      Disable Action
-    </van-button>
+    <van-button type="primary">Disable Action</van-button>
   </template>
 </van-popover>
 ```

@@ -21,6 +21,9 @@ export default {
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `Alege maxim ${maxRange} zile`,
   },
+  vanCascader: {
+    select: 'Selectați',
+  },
   vanContactCard: {
     addText: 'Adaugă informațiile de contact',
   },

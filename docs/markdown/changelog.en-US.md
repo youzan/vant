@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.11.3](https://github.com/youzan/vant/compare/v2.11.2...v2.11.3)
+
+`2020-12-18`
+
+**Feature**
+
+- Sku: add disable-soldout-sku prop [#7759](https://github.com/youzan/vant/issues/7759)
+- Icon: add delete-o、sort、font、font-o、revoke icon [#7760](https://github.com/youzan/vant/issues/7760)
+
 ### [v2.11.2](https://github.com/youzan/vant/compare/v2.11.1...v2.11.2)
 
 `2020-12-10`
