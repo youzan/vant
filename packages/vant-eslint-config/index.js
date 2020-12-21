@@ -53,7 +53,10 @@ module.exports = {
     'vue/require-v-for-key': 'off',
     'vue/require-default-prop': 'off',
     'vue/no-unused-components': 'off',
-    'vue/name-property-casing': ['error', 'kebab-case'],
+    'vue/component-definition-name-casing': [
+      'error',
+      'PascalCase' | 'kebab-case',
+    ],
     'vue/component-name-in-template-casing': ['error', 'kebab-case'],
     // typescript-eslint
     '@typescript-eslint/camelcase': 'off',
