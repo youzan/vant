@@ -22,6 +22,9 @@ export default {
     monthTitle: (year: number, month: number) => `${year}年${month}月`,
     rangePrompt: (maxRange: number) => `選擇天數不能超過 ${maxRange} 天`,
   },
+  vanCascader: {
+    select: '請選擇',
+  },
   vanContactCard: {
     addText: '新增聯絡人',
   },

@@ -317,6 +317,7 @@ export default createComponent({
           title={item.title}
           color={props.color}
           style={item.titleStyle}
+          class={item.titleClass}
           isActive={index === state.currentIndex}
           disabled={item.disabled}
           scrollable={scrollable.value}
@@ -418,6 +419,7 @@ export default createComponent({
       props,
       setLine,
       currentName,
+      scrollIntoView,
     });
 
     return () => (

@@ -19,6 +19,7 @@ export default createComponent({
     badge: [Number, String],
     title: String,
     titleStyle: null,
+    titleClass: null,
     disabled: Boolean,
   },
 
@@ -56,6 +57,7 @@ export default createComponent({
       () => props.title,
       () => {
         parent.setLine();
+        parent.scrollIntoView();
       }
     );
 
