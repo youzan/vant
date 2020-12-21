@@ -62,8 +62,8 @@ export default {
   },
   methods: {
     // 全部选项选择完毕后，会触发 finish 事件
-    onFinish(params) {
-      const { selectedOptions } = params;
+    onFinish({ selectedOptions }) {
+      this.show = false;
       this.fieldValue = selectedOptions.map((option) => option.text).join('/');
     },
   },
@@ -82,6 +82,65 @@ export default {
   @close="show = false"
   @finish="onFinish"
 />
+```
+
+### 异步加载选项
+
+可以监听 `change` 事件并动态设置 `options`，实现异步加载选项。
+
+```html
+<van-field
+  is-link
+  readonly
+  label="地区"
+  :value="fieldValue"
+  placeholder="请选择地区"
+  @click="show = true"
+/>
+<van-popup v-model="show" round position="bottom">
+  <van-cascader
+    v-model="cascaderValue"
+    title="请选择地区"
+    @close="show = false"
+    @change="onChange"
+    @finish="onFinish"
+  />
+</van-popup>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false,
+      fieldValue: '',
+      cascaderValue: '',
+      options: [
+        {
+          text: '浙江省',
+          value: '330000',
+          children: [],
+        },
+      ],
+    };
+  },
+  methods: {
+    onChange({ value }) {
+      if (value === this.options[0].value) {
+        setTimeout(() => {
+          this.options[0].children = [
+            { text: '杭州市', value: '330100' },
+            { text: '宁波市', value: '330200' },
+          ];
+        }, 500);
+      }
+    },
+    onFinish({ selectedOptions }) {
+      this.show = false;
+      this.fieldValue = selectedOptions.map((option) => option.text).join('/');
+    },
+  },
+};
 ```
 
 ## API
@@ -129,3 +188,7 @@ export default {
 | @cascader-options-height             | `384px`         | -    |
 | @cascader-tab-title-color            | `@text-color`   | -    |
 | @cascader-unselected-tab-title-color | `@gray-6`       | -    |
+
+```
+
+```

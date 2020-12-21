@@ -29,8 +29,9 @@ export default createComponent({
   },
 
   watch: {
-    options() {
-      this.updateTabs();
+    options: {
+      deep: true,
+      handler: 'updateTabs',
     },
 
     value(value) {
