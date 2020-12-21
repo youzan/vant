@@ -3,10 +3,11 @@
 ### Install
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Cascader } from 'vant';
 
-Vue.use(Cascader);
+const app = createApp();
+app.use(Cascader);
 ```
 
 ## Usage
