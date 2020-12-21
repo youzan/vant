@@ -16,6 +16,26 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.0-rc.4](https://github.com/youzan/vant/compare/v2.12.0-beta.0...v3.0.0-rc.4)
+
+`2020-12-21`
+
+**New Component**
+
+- 新增 Cascader 级联选择组件 [#7771](https://github.com/youzan/vant/pull/7771)
+
+<img src="https://b.yzcdn.cn/vant/cascader_1221.png">
+
+**Feature**
+
+- Stepper: 新增 show-input 属性 [#7785](https://github.com/youzan/vant/issues/7785)
+- uploader: 支持在 fileList 的选项中单独配置 `imageFit` `deletable` `previewSize` `beforeDelete` 字段 [#7731](https://github.com/youzan/vant/issues/7731)
+
+**Types**
+
+- Lazyload: 修复类型定义错误 [#7757](https://github.com/youzan/vant/issues/7757)
+- 包含 `v2.12.0-beta.0` 版本的所有改动和修复
+
 ### [v3.0.0-rc.3](https://github.com/youzan/vant/compare/v2.11.2...v3.0.0-rc.3)
 
 `2020-12-10`
@@ -32,6 +52,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 - Stepper: 修复禁用按钮仍然能点击的问题 [c27760](https://github.com/youzan/vant/commit/c277603160a7a17685dc532304b9a0c2444db959)
 - Tabs: 修复动态设置 active 值无效的问题 [#7717](https://github.com/youzan/vant/issues/7717)
+- 包含 `v2.11.3` 版本的所有改动和修复
 
 ### [v3.0.0-rc.2](https://github.com/youzan/vant/compare/v3.0.0-rc.1...v3.0.0-rc.2)
 
@@ -47,6 +68,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - NumberKeyboard: 修复 hide-on-click-outside 属性不生效的问题 [#7668](https://github.com/youzan/vant/issues/7668) [#7667](https://github.com/youzan/vant/issues/7667)
 - Uploader: 修复动态修改 status 不生效的问题 [#7681](https://github.com/youzan/vant/issues/7681)
 - Types: 修复 teleport 类型定义错误的问题 [#7687](https://github.com/youzan/vant/issues/7687)
+- 包含 `v2.11.2` 版本的所有改动和修复
 
 ### [v3.0.0-rc.1](https://github.com/youzan/vant/compare/v2.11.1...v3.0.0-rc.1)
 
