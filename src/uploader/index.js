@@ -212,8 +212,9 @@ export default createComponent({
     },
 
     onDelete(file, index) {
-      if (this.beforeDelete) {
-        const response = this.beforeDelete(file, this.getDetail(index));
+      const beforeDelete = file.beforeDelete ?? this.beforeDelete;
+      if (beforeDelete) {
+        const response = beforeDelete(file, this.getDetail(index));
 
         if (!response) {
           return;
@@ -306,7 +307,8 @@ export default createComponent({
     },
 
     genPreviewItem(item, index) {
-      const showDelete = item.status !== 'uploading' && this.deletable;
+      const deleteAble = item.deletable ?? this.deletable;
+      const showDelete = item.status !== 'uploading' && deleteAble;
 
       const DeleteIcon = showDelete && (
         <div
@@ -329,13 +331,16 @@ export default createComponent({
         <div class={bem('preview-cover')}>{PreviewCoverContent}</div>
       );
 
+      const previewSize = item.previewSize ?? this.previewSize;
+      const imageFit = item.imageFit ?? this.imageFit;
+
       const Preview = isImageFile(item) ? (
         <Image
-          fit={this.imageFit}
+          fit={imageFit}
           src={item.content || item.url}
           class={bem('preview-image')}
-          width={this.previewSize}
-          height={this.previewSize}
+          width={previewSize}
+          height={previewSize}
           lazyLoad={this.lazyLoad}
           onClick={() => {
             this.onPreviewImage(item);
