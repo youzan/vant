@@ -2,14 +2,20 @@
   <demo-section>
     <demo-block card :title="t('basicUsage')">
       <van-field
+        v-model="base.result"
         is-link
         readonly
         :label="t('area')"
-        :value="base.result"
         :placeholder="t('selectArea')"
         @click="base.show = true"
       />
-      <van-popup v-model="base.show" round position="bottom">
+      <van-popup
+        v-model="base.show"
+        round
+        position="bottom"
+        get-container="body"
+        safe-area-inset-bottom
+      >
         <van-cascader
           v-model="base.value"
           :title="t('selectArea')"
@@ -22,14 +28,20 @@
 
     <demo-block card :title="t('customColor')">
       <van-field
+        v-model="customColor.result"
         is-link
         readonly
         :label="t('area')"
-        :value="customColor.result"
         :placeholder="t('selectArea')"
         @click="customColor.show = true"
       />
-      <van-popup v-model="customColor.show" round position="bottom">
+      <van-popup
+        v-model="customColor.show"
+        round
+        position="bottom"
+        get-container="body"
+        safe-area-inset-bottom
+      >
         <van-cascader
           v-model="customColor.value"
           :title="t('selectArea')"
@@ -43,14 +55,20 @@
 
     <demo-block card :title="t('asyncOptions')">
       <van-field
+        v-model="async.result"
         is-link
         readonly
         :label="t('area')"
-        :value="async.result"
         :placeholder="t('selectArea')"
         @click="async.show = true"
       />
-      <van-popup v-model="async.show" round position="bottom">
+      <van-popup
+        v-model="async.show"
+        round
+        position="bottom"
+        get-container="body"
+        safe-area-inset-bottom
+      >
         <van-cascader
           v-model="async.value"
           :title="t('selectArea')"
@@ -73,7 +91,7 @@ export default {
     'zh-CN': {
       area: '地区',
       options: zhCNOptions,
-      selectArea: '请选择地区',
+      selectArea: '请选择所在地区',
       customColor: '自定义颜色',
       asyncOptions: '异步加载选项',
       asyncOptions1: [
@@ -145,6 +163,7 @@ export default {
     onFinish(type, { value, selectedOptions }) {
       const result = selectedOptions.map((option) => option.text).join('/');
       this[type] = {
+        ...this[type],
         show: false,
         value,
         result,
