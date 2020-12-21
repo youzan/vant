@@ -7,7 +7,7 @@ export async function compilePackage(isMinify: boolean) {
 
     webpack(config, (err, stats) => {
       if (err || stats.hasErrors()) {
-        reject(err);
+        reject(err || stats.toString());
       } else {
         resolve();
       }
