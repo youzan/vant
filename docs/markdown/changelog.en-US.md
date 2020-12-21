@@ -16,6 +16,24 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.0-beta.0](https://github.com/youzan/vant/compare/v2.11.3...v2.12.0-beta.0)
+
+`2020-12-21`
+
+**New Component**
+
+- add Cascader component [#7771](https://github.com/youzan/vant/pull/7771)
+
+<img src="https://b.yzcdn.cn/vant/cascader_1221.png">
+
+**Feature**
+
+- uploader: add single uploader preview image style [#7776](https://github.com/youzan/vant/issues/7776)
+
+**Bug Fixes**
+
+- Tab: should scroll into view when title changed [c919e9](https://github.com/youzan/vant/commit/c919e9dedaae8ecde8be944032e26474829c1253)
+
 ### [v2.11.3](https://github.com/youzan/vant/compare/v2.11.2...v2.11.3)
 
 `2020-12-18`

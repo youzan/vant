@@ -16,6 +16,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.0-beta.0](https://github.com/youzan/vant/compare/v2.11.3...v2.12.0-beta.0)
+
+`2020-12-21`
+
+**New Component**
+
+- 新增 Cascader 级联选择组件 [#7771](https://github.com/youzan/vant/pull/7771)
+
+<img src="https://b.yzcdn.cn/vant/cascader_1221.png">
+
+**Feature**
+
+- uploader: 支持在 fileList 的选项中单独配置 `imageFit` `deletable` `previewSize` `beforeDelete` 字段 [#7776](https://github.com/youzan/vant/issues/7776)
+
+**Bug Fixes**
+
+- Tab: 修复动态修改标题后标签栏的滚动位置不正确的问题 [c919e9](https://github.com/youzan/vant/commit/c919e9dedaae8ecde8be944032e26474829c1253)
+
 ### [v2.11.3](https://github.com/youzan/vant/compare/v2.11.2...v2.11.3)
 
 `2020-12-18`
