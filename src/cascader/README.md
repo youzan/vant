@@ -26,6 +26,7 @@ Vue.use(Cascader);
   <van-cascader
     v-model="cascaderValue"
     title="Select Area"
+    :options="options"
     @close="show = false"
     @finish="onFinish"
   />
@@ -68,6 +69,7 @@ export default {
 <van-cascader
   v-model="cascaderValue"
   title="Select Area"
+  :options="options"
   active-color="#1989fa"
   @close="show = false"
   @finish="onFinish"
@@ -89,6 +91,7 @@ export default {
   <van-cascader
     v-model="cascaderValue"
     title="Select Area"
+    :options="options"
     @close="show = false"
     @change="onChange"
     @finish="onFinish"
