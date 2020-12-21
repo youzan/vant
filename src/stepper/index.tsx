@@ -74,6 +74,10 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    showInput: {
+      type: Boolean,
+      default: true,
+    },
     longPress: {
       type: Boolean,
       default: true,
@@ -308,6 +312,7 @@ export default createComponent({
           {...createListeners('minus')}
         />
         <input
+          v-show={props.showInput}
           ref={inputRef}
           type={props.integer ? 'tel' : 'text'}
           role="spinbutton"
