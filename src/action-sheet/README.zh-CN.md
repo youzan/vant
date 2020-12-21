@@ -259,9 +259,3 @@ export default {
 | @action-sheet-cancel-padding-top       | `@padding-xs`       | -    |
 | @action-sheet-cancel-padding-color     | `@background-color` | -    |
 | @action-sheet-loading-icon-size        | `22px`              | -    |
-
-## 常见问题
-
-### 引入时提示 dependencies not found？
-
-在 1.x 版本中，动作面板的组件名为`Actionsheet`，从 2.0 版本开始更名为`ActionSheet`，请注意区分。
