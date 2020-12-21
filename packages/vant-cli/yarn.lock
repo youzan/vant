@@ -1860,10 +1860,10 @@
     "@typescript-eslint/types" "4.6.1"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/eslint-config@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npm.taobao.org/@vant/eslint-config/download/@vant/eslint-config-3.0.0.tgz#b494e8c0ebfdb2e57022c93d3eed891ead0edb51"
-  integrity sha1-tJTowOv9suVwIsk9Pu2JHq0O21E=
+"@vant/eslint-config@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.npmjs.org/@vant/eslint-config/-/eslint-config-3.0.1.tgz#0bd43195c16817f64a3402d82a12563a4144707f"
+  integrity sha512-uzzF8wuZVUFkKs5a/+nIeDeYoX7M1kjd4lxSb2hq8//M0s1Ddw1xGuNuSq7QPzQpwXB7SdGfFK8rHxQdVThyUw==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.6.0"
     "@typescript-eslint/parser" "^4.6.0"
@@ -10317,10 +10317,10 @@ vue-jest@^5.0.0-alpha.7:
     extract-from-css "^0.4.4"
     ts-jest "^24.0.0"
 
-vue-loader@^16.0.0:
-  version "16.0.0"
-  resolved "https://registry.npm.taobao.org/vue-loader/download/vue-loader-16.0.0.tgz?cache=0&sync_timestamp=1606320767235&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-loader%2Fdownload%2Fvue-loader-16.0.0.tgz#7ec137c7f9029f2a5990f39dc5abbca06d60ba30"
-  integrity sha1-fsE3x/kCnypZkPOdxau8oG1gujA=
+vue-loader@^16.1.2:
+  version "16.1.2"
+  resolved "https://registry.npmjs.org/vue-loader/-/vue-loader-16.1.2.tgz#5c03b6c50d2a5f983c7ceba15c50d78ca2b298f4"
+  integrity sha512-8QTxh+Fd+HB6fiL52iEVLKqE9N1JSlMXLR92Ijm6g8PZrwIxckgpqjPDWRP5TWxdiPaHR+alUWsnu1ShQOwt+Q==
   dependencies:
     chalk "^4.1.0"
     hash-sum "^2.0.0"
