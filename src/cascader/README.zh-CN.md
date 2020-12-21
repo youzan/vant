@@ -188,7 +188,3 @@ export default {
 | @cascader-options-height             | `384px`         | -    |
 | @cascader-tab-title-color            | `@text-color`   | -    |
 | @cascader-unselected-tab-title-color | `@gray-6`       | -    |
-
-```
-
-```
