@@ -17,7 +17,7 @@
 
   &__close-icon {
     color: @cascader-close-icon-color;
-    font-size: @cascader-close-icon-color;
+    font-size: @cascader-close-icon-size;
 
     &:active {
       color: @cascader-close-icon-active-color;
@@ -32,7 +32,11 @@
 
     &.van-tabs--line .van-tabs__wrap {
       height: @cascader-tabs-height;
-      padding: 0 6px;
+    }
+
+    .van-tabs__nav--complete {
+      padding-right: 6px;
+      padding-left: 6px;
     }
   }
 
@@ -42,6 +46,7 @@
 
     &--unselected {
       color: @cascader-unselected-tab-color;
+      font-weight: normal;
     }
   }
 
@@ -59,6 +64,7 @@
 
     &--selected {
       color: @cascader-active-color;
+      font-weight: @font-weight-bold;
     }
   }
 
