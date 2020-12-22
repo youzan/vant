@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.0](https://github.com/youzan/vant/compare/v2.12.0...v3.0.0)
+
+`2020-12-23`
+
+**Content**
+
+Reference: [Vant 3.0 正式发布：全面拥抱 Vue 3](https://github.com/youzan/vant/issues/7797)。
+
 ### [v3.0.0-rc.4](https://github.com/youzan/vant/compare/v2.12.0-beta.0...v3.0.0-rc.4)
 
 `2020-12-21`
