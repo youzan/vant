@@ -22,6 +22,10 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
+    columnsChildrenKey: {
+      type: String,
+      default: () => 'children',
+    },
     defaultIndex: {
       type: [Number, String],
       default: 0,
@@ -48,10 +52,11 @@ export default createComponent({
     const itemHeight = computed(() => unitToPx(props.itemHeight));
 
     const dataType = computed(() => {
-      const { columns } = props;
+      const { columns, columnsChildrenKey } = props;
       const firstColumn = columns[0] || {};
+      const customKey = columnsChildrenKey;
 
-      if (firstColumn.children) {
+      if (firstColumn[customKey]) {
         return 'cascade';
       }
       if (firstColumn.values) {
@@ -61,12 +66,13 @@ export default createComponent({
     });
 
     const formatCascade = () => {
+      const customKey = props.columnsChildrenKey;
       const formatted = [];
 
-      let cursor = { children: props.columns };
+      let cursor = { [customKey]: props.columns };
 
-      while (cursor && cursor.children) {
-        const { children } = cursor;
+      while (cursor && cursor[customKey]) {
+        const children = cursor[customKey];
         let defaultIndex = cursor.defaultIndex ?? +props.defaultIndex;
 
         while (children[defaultIndex] && children[defaultIndex].disabled) {
@@ -79,7 +85,7 @@ export default createComponent({
         }
 
         formatted.push({
-          values: cursor.children,
+          values: cursor[customKey],
           className: cursor.className,
           defaultIndex,
         });
@@ -114,17 +120,18 @@ export default createComponent({
     };
 
     const onCascadeChange = (columnIndex) => {
-      let cursor = { children: props.columns };
+      const customKey = props.columnsChildrenKey;
+      let cursor = { [customKey]: props.columns };
       const indexes = getIndexes();
 
       for (let i = 0; i <= columnIndex; i++) {
-        cursor = cursor.children[indexes[i]];
+        cursor = cursor[customKey][indexes[i]];
       }
 
-      while (cursor && cursor.children) {
+      while (cursor && cursor[customKey]) {
         columnIndex++;
-        setColumnValues(columnIndex, cursor.children);
-        cursor = cursor.children[cursor.defaultIndex || 0];
+        setColumnValues(columnIndex, cursor[customKey]);
+        cursor = cursor[customKey][cursor.defaultIndex || 0];
       }
     };
 

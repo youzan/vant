@@ -258,6 +258,53 @@ export default {
 };
 ```
 
+### Custom Columns Children Key
+
+```html
+<van-picker :title="Title" :columns="columns" columns-children-key="cities" />
+```
+
+```js
+import { reactive } from 'vue';
+
+export default {
+  setup() {
+    const columns = [
+      {
+        text: 'Zhejiang',
+        cities: [
+          {
+            text: 'Hangzhou',
+            cities: [{ text: 'Xihu' }, { text: 'Yuhang' }],
+          },
+          {
+            text: 'Wenzhou',
+            cities: [{ text: 'Lucheng' }, { text: 'Ouhai' }],
+          },
+        ],
+      },
+      {
+        text: 'Fujian',
+        cities: [
+          {
+            text: 'Fuzhou',
+            cities: [{ text: 'Gulou' }, { text: 'Taijiang' }],
+          },
+          {
+            text: 'Xiamen',
+            cities: [{ text: 'Siming' }, { text: 'Haicang' }],
+          },
+        ],
+      },
+    ];
+
+    return {
+      columns,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -265,6 +312,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | columns | Columns data | _Column[]_ | `[]` |
+| columns-children-key | custom columns children key | _string_ | `children` |
 | title | Toolbar title | _string_ | - |
 | confirm-button-text | Text of confirm button | _string_ | `Confirm` |
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |
