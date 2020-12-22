@@ -3,6 +3,7 @@ import { ref, computed, watch, nextTick } from 'vue';
 // Utils
 import {
   isDef,
+  isObject,
   isHidden,
   getScrollTop,
   preventDefault,
@@ -19,6 +20,7 @@ import {
   useEventListener,
 } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
+import { useExpose } from '../composables/use-expose';
 
 export const INDEX_BAR_KEY = 'vanIndexBar';
 
@@ -180,7 +182,13 @@ export default createComponent({
       });
 
     const scrollToElement = (element) => {
-      const { index } = element.dataset;
+      let index = element;
+
+      if (isObject(element)) {
+        const { index: dataIndex } = element.dataset;
+        index = dataIndex;
+      }
+
       if (!index) {
         return;
       }
@@ -200,6 +208,10 @@ export default createComponent({
 
     const onClick = (event) => {
       scrollToElement(event.target);
+    };
+
+    const scrollTo = (index) => {
+      scrollToElement(index);
     };
 
     let touchActiveIndex;
@@ -222,6 +234,8 @@ export default createComponent({
         }
       }
     };
+
+    useExpose({ scrollTo });
 
     return () => (
       <div ref={root} class={bem()}>

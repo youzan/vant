@@ -90,6 +90,14 @@ export default {
 | ------- | ------------------------------------- |
 | default | Anchor content, show index by default |
 
+### Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get IndexBar instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| scrollTo | scroll to target element | _index: number \| string_ | - |
+
 ### Less Variables
 
 How to use: [Custom Theme](#/en-US/theme).
