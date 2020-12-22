@@ -76,7 +76,7 @@ Dialog.confirm({
 
 ### 圆角按钮风格
 
-将 theme 选项设置为 `round-button` 可以展示圆角按钮风格的弹窗，该选项从 2.10.0 版本开始支持。
+将 theme 选项设置为 `round-button` 可以展示圆角按钮风格的弹窗。
 
 ```js
 Dialog.alert({

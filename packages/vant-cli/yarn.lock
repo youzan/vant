@@ -1860,10 +1860,10 @@
     "@typescript-eslint/types" "4.6.1"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/eslint-config@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npm.taobao.org/@vant/eslint-config/download/@vant/eslint-config-3.0.0.tgz#b494e8c0ebfdb2e57022c93d3eed891ead0edb51"
-  integrity sha1-tJTowOv9suVwIsk9Pu2JHq0O21E=
+"@vant/eslint-config@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.npmjs.org/@vant/eslint-config/-/eslint-config-3.0.3.tgz#c3b5a4f87a03757b42eedff147132ed2231b7d69"
+  integrity sha512-pqIlDC715QeWZxmYOR/GaeZdRdaVbuHI7gETtyPBzZ5hOpQ6JxQrvazvUgTU0LgFvLC60eBJoeJ3+hmd/wnicg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.6.0"
     "@typescript-eslint/parser" "^4.6.0"
@@ -1892,10 +1892,10 @@
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"
 
-"@vant/stylelint-config@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.npm.taobao.org/@vant/stylelint-config/download/@vant/stylelint-config-1.4.0.tgz?cache=0&sync_timestamp=1605967341453&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fstylelint-config%2Fdownload%2F%40vant%2Fstylelint-config-1.4.0.tgz#a446a56819b56d862d994c270a0ca7d326fab924"
-  integrity sha1-pEalaBm1bYYtmUwnCgyn0yb6uSQ=
+"@vant/stylelint-config@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.npmjs.org/@vant/stylelint-config/-/stylelint-config-1.4.2.tgz#defca4ded4b5c8a9eaf168ee1ba40819bcc646c1"
+  integrity sha512-W5n5OH4IxHMbvkdJuBdT+1CzPrSU4Vpn8UhiCea5QAIjSK8YUqO6XnrTu4GaAgBkohBLgpl2FLXuwoV2IVJKug==
   dependencies:
     stylelint-config-prettier "^8.0.1"
     stylelint-config-standard "^20.0.0"
@@ -10317,10 +10317,10 @@ vue-jest@^5.0.0-alpha.7:
     extract-from-css "^0.4.4"
     ts-jest "^24.0.0"
 
-vue-loader@^16.0.0:
-  version "16.0.0"
-  resolved "https://registry.npm.taobao.org/vue-loader/download/vue-loader-16.0.0.tgz?cache=0&sync_timestamp=1606320767235&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-loader%2Fdownload%2Fvue-loader-16.0.0.tgz#7ec137c7f9029f2a5990f39dc5abbca06d60ba30"
-  integrity sha1-fsE3x/kCnypZkPOdxau8oG1gujA=
+vue-loader@^16.1.2:
+  version "16.1.2"
+  resolved "https://registry.npmjs.org/vue-loader/-/vue-loader-16.1.2.tgz#5c03b6c50d2a5f983c7ceba15c50d78ca2b298f4"
+  integrity sha512-8QTxh+Fd+HB6fiL52iEVLKqE9N1JSlMXLR92Ijm6g8PZrwIxckgpqjPDWRP5TWxdiPaHR+alUWsnu1ShQOwt+Q==
   dependencies:
     chalk "^4.1.0"
     hash-sum "^2.0.0"

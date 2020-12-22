@@ -16,6 +16,26 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.0-rc.4](https://github.com/youzan/vant/compare/v2.12.0-beta.0...v3.0.0-rc.4)
+
+`2020-12-21`
+
+**New Component**
+
+- add Cascader component [#7771](https://github.com/youzan/vant/pull/7771)
+
+<img src="https://b.yzcdn.cn/vant/cascader_1221.png">
+
+**Feature**
+
+- Stepper: add show-input prop [#7785](https://github.com/youzan/vant/issues/7785)
+- uploader: add single uploader preview image style [#7731](https://github.com/youzan/vant/issues/7731)
+
+**Types**
+
+- Lazyload: fix typing [#7757](https://github.com/youzan/vant/issues/7757)
+- Contains all features and bug fixes of `v2.12.0-beta.0` version
+
 ### [v3.0.0-rc.3](https://github.com/youzan/vant/compare/v2.11.2...v3.0.0-rc.3)
 
 `2020-12-10`
@@ -32,6 +52,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 - Stepper: disabled not work [c27760](https://github.com/youzan/vant/commit/c277603160a7a17685dc532304b9a0c2444db959)
 - Tabs: failed to set active tab [#7717](https://github.com/youzan/vant/issues/7717)
+- Contains all features and bug fixes of `v2.11.3` version
 
 ### [v3.0.0-rc.2](https://github.com/youzan/vant/compare/v3.0.0-rc.1...v3.0.0-rc.2)
 
@@ -47,6 +68,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - NumberKeyboard: fix hide-on-click-outside prop not working [#7668](https://github.com/youzan/vant/issues/7668) [#7667](https://github.com/youzan/vant/issues/7667)
 - Uploader: fix change status is not valid [#7681](https://github.com/youzan/vant/issues/7681)
 - Types: fix teleport typing [#7687](https://github.com/youzan/vant/issues/7687)
+- Contains all features and bug fixes of `v2.11.2` version
 
 ### [v3.0.0-rc.1](https://github.com/youzan/vant/compare/v2.11.1...v3.0.0-rc.1)
 

@@ -2,15 +2,16 @@
 
 ### 介绍
 
-级联选择框，用于多层级数据的选择，典型场景为省市区选择，2.12 版本开始支持此组件。
+级联选择框，用于多层级数据的选择，典型场景为省市区选择。
 
 ### 引入
 
 ```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import { Cascader } from 'vant';
 
-Vue.use(Cascader);
+const app = createApp();
+app.use(Cascader);
 ```
 
 ## 代码演示
@@ -21,51 +22,58 @@ Vue.use(Cascader);
 
 ```html
 <van-field
+  v-model="state.fieldValue"
   is-link
   readonly
   label="地区"
-  :value="fieldValue"
-  placeholder="请选择地区"
-  @click="show = true"
+  placeholder="请选择所在地区"
+  @click="state.show = true"
 />
-<van-popup v-model:show="show" round position="bottom">
+<van-popup v-model:show="state.show" round position="bottom">
   <van-cascader
-    v-model="cascaderValue"
-    title="请选择地区"
-    @close="show = false"
+    v-model="state.cascaderValue"
+    title="请选择所在地区"
+    :options="options"
+    @close="state.show = false"
     @finish="onFinish"
   />
 </van-popup>
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       show: false,
       fieldValue: '',
       cascaderValue: '',
-      // 选项列表，children 代表子选项，支持多级嵌套
-      options: [
-        {
-          text: '浙江省',
-          value: '330000',
-          children: [{ text: '杭州市', value: '330100' }],
-        },
-        {
-          text: '江苏省',
-          value: '320000',
-          children: [{ text: '南京市', value: '320100' }],
-        },
-      ],
-    };
-  },
-  methods: {
+    });
+    // 选项列表，children 代表子选项，支持多级嵌套
+    const options = [
+      {
+        text: '浙江省',
+        value: '330000',
+        children: [{ text: '杭州市', value: '330100' }],
+      },
+      {
+        text: '江苏省',
+        value: '320000',
+        children: [{ text: '南京市', value: '320100' }],
+      },
+    ];
     // 全部选项选择完毕后，会触发 finish 事件
-    onFinish({ selectedOptions }) {
-      this.show = false;
-      this.fieldValue = selectedOptions.map((option) => option.text).join('/');
-    },
+    const onFinish = ({ selectedOptions }) => {
+      state.show = false;
+      state.fieldValue = selectedOptions.map((option) => option.text).join('/');
+    };
+
+    return {
+      state,
+      options,
+      onFinish,
+    };
   },
 };
 ```
@@ -76,10 +84,11 @@ export default {
 
 ```html
 <van-cascader
-  v-model="cascaderValue"
-  title="请选择地区"
+  v-model="state.cascaderValue"
+  title="请选择所在地区"
+  :options="options"
   active-color="#1989fa"
-  @close="show = false"
+  @close="state.show = false"
   @finish="onFinish"
 />
 ```
@@ -90,18 +99,19 @@ export default {
 
 ```html
 <van-field
+  v-model="state.fieldValue"
   is-link
   readonly
   label="地区"
-  :value="fieldValue"
-  placeholder="请选择地区"
-  @click="show = true"
+  placeholder="请选择所在地区"
+  @click="state.show = true"
 />
-<van-popup v-model:show="show" round position="bottom">
+<van-popup v-model:show="state.show" round position="bottom">
   <van-cascader
-    v-model="cascaderValue"
-    title="请选择地区"
-    @close="show = false"
+    v-model="state.cascaderValue"
+    title="请选择所在地区"
+    :options="state.options"
+    @close="state.show = false"
     @change="onChange"
     @finish="onFinish"
   />
@@ -109,9 +119,11 @@ export default {
 ```
 
 ```js
+import { reactive } from 'vue';
+
 export default {
-  data() {
-    return {
+  setup() {
+    const state = reactive({
       show: false,
       fieldValue: '',
       cascaderValue: '',
@@ -122,23 +134,27 @@ export default {
           children: [],
         },
       ],
-    };
-  },
-  methods: {
-    onChange({ value }) {
-      if (value === this.options[0].value) {
+    });
+    const onChange = ({ value }) => {
+      if (value === state.options[0].value) {
         setTimeout(() => {
-          this.options[0].children = [
+          state.options[0].children = [
             { text: '杭州市', value: '330100' },
             { text: '宁波市', value: '330200' },
           ];
         }, 500);
       }
-    },
-    onFinish({ selectedOptions }) {
-      this.show = false;
-      this.fieldValue = selectedOptions.map((option) => option.text).join('/');
-    },
+    };
+    const onFinish = ({ selectedOptions }) => {
+      state.show = false;
+      state.fieldValue = selectedOptions.map((option) => option.text).join('/');
+    };
+
+    return {
+      state,
+      onChange,
+      onFinish,
+    };
   },
 };
 ```

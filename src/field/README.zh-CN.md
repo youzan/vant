@@ -73,8 +73,6 @@ export default {
 };
 ```
 
-> Tips: digit 类型从 2.4.2 版本开始支持
-
 ### 禁用输入框
 
 通过 `readonly` 将输入框设置为只读状态，通过 `disabled` 将输入框设置为禁用状态。

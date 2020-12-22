@@ -1,4 +1,7 @@
+import { nextTick, reactive, watch } from 'vue';
 import { createNamespace } from '../utils';
+
+// Components
 import Tab from '../tab';
 import Tabs from '../tabs';
 import Icon from '../icon';
@@ -23,36 +26,13 @@ export default createComponent({
 
   emits: ['close', 'change', 'finish', 'update:modelValue'],
 
-  data() {
-    return {
+  setup(props, { slots, emit }) {
+    const state = reactive({
       tabs: [],
       activeTab: 0,
-    };
-  },
+    });
 
-  watch: {
-    options: {
-      deep: true,
-      handler: 'updateTabs',
-    },
-
-    modelValue(value) {
-      if (value || value === 0) {
-        const values = this.tabs.map((tab) => tab.selectedOption?.value);
-        if (values.indexOf(value) !== -1) {
-          return;
-        }
-      }
-      this.updateTabs();
-    },
-  },
-
-  created() {
-    this.updateTabs();
-  },
-
-  methods: {
-    getSelectedOptionsByValue(options, value) {
+    const getSelectedOptionsByValue = (options, value) => {
       for (let i = 0; i < options.length; i++) {
         const option = options[i];
 
@@ -61,7 +41,7 @@ export default createComponent({
         }
 
         if (option.children) {
-          const selectedOptions = this.getSelectedOptionsByValue(
+          const selectedOptions = getSelectedOptionsByValue(
             option.children,
             value
           );
@@ -70,19 +50,19 @@ export default createComponent({
           }
         }
       }
-    },
+    };
 
-    updateTabs() {
-      if (this.modelValue || this.modelValue === 0) {
-        const selectedOptions = this.getSelectedOptionsByValue(
-          this.options,
-          this.modelValue
+    const updateTabs = () => {
+      if (props.modelValue || props.modelValue === 0) {
+        const selectedOptions = getSelectedOptionsByValue(
+          props.options,
+          props.modelValue
         );
 
         if (selectedOptions) {
-          let optionsCursor = this.options;
+          let optionsCursor = props.options;
 
-          this.tabs = selectedOptions.map((option) => {
+          state.tabs = selectedOptions.map((option) => {
             const tab = {
               options: optionsCursor,
               selectedOption: option,
@@ -99,33 +79,33 @@ export default createComponent({
           });
 
           if (optionsCursor) {
-            this.tabs.push({
+            state.tabs.push({
               options: optionsCursor,
               selectedOption: null,
             });
           }
 
-          this.$nextTick(() => {
-            this.activeTab = this.tabs.length - 1;
+          nextTick(() => {
+            state.activeTab = state.tabs.length - 1;
           });
 
           return;
         }
       }
 
-      this.tabs = [
+      state.tabs = [
         {
-          options: this.options,
+          options: props.options,
           selectedOption: null,
         },
       ];
-    },
+    };
 
-    onSelect(option, tabIndex) {
-      this.tabs[tabIndex].selectedOption = option;
+    const onSelect = (option, tabIndex) => {
+      state.tabs[tabIndex].selectedOption = option;
 
-      if (this.tabs.length > tabIndex + 1) {
-        this.tabs = this.tabs.slice(0, tabIndex + 1);
+      if (state.tabs.length > tabIndex + 1) {
+        state.tabs = state.tabs.slice(0, tabIndex + 1);
       }
 
       if (option.children) {
@@ -134,18 +114,18 @@ export default createComponent({
           selectedOption: null,
         };
 
-        if (this.tabs[tabIndex + 1]) {
-          this.$set(this.tabs, tabIndex + 1, nextTab);
+        if (state.tabs[tabIndex + 1]) {
+          state.tabs[tabIndex + 1] = nextTab;
         } else {
-          this.tabs.push(nextTab);
+          state.tabs.push(nextTab);
         }
 
-        this.$nextTick(() => {
-          this.activeTab++;
+        nextTick(() => {
+          state.activeTab++;
         });
       }
 
-      const selectedOptions = this.tabs
+      const selectedOptions = state.tabs
         .map((tab) => tab.selectedOption)
         .filter((item) => !!item);
 
@@ -154,36 +134,30 @@ export default createComponent({
         tabIndex,
         selectedOptions,
       };
-      this.$emit('update:modelValue', option.value);
-      this.$emit('change', eventParams);
+      emit('update:modelValue', option.value);
+      emit('change', eventParams);
 
       if (!option.children) {
-        this.$emit('finish', eventParams);
+        emit('finish', eventParams);
       }
-    },
+    };
 
-    onClose() {
-      this.$emit('close');
-    },
+    const onClose = () => {
+      emit('close');
+    };
 
-    renderHeader() {
-      return (
-        <div class={bem('header')}>
-          <h2 class={bem('title')}>
-            {this.$slots.title ? this.$slots.title() : this.title}
-          </h2>
-          {this.closeable ? (
-            <Icon
-              name="cross"
-              class={bem('close-icon')}
-              onClick={this.onClose}
-            />
-          ) : null}
-        </div>
-      );
-    },
+    const renderHeader = () => (
+      <div class={bem('header')}>
+        <h2 class={bem('title')}>
+          {slots.title ? slots.title() : props.title}
+        </h2>
+        {props.closeable ? (
+          <Icon name="cross" class={bem('close-icon')} onClick={onClose} />
+        ) : null}
+      </div>
+    );
 
-    renderOptions(options, selectedOption, tabIndex) {
+    const renderOptions = (options, selectedOption, tabIndex) => {
       const renderOption = (option) => {
         const isSelected =
           selectedOption && option.value === selectedOption.value;
@@ -191,9 +165,9 @@ export default createComponent({
         return (
           <li
             class={bem('option', { selected: isSelected })}
-            style={{ color: isSelected ? this.activeColor : null }}
+            style={{ color: isSelected ? props.activeColor : null }}
             onClick={() => {
-              this.onSelect(option, tabIndex);
+              onSelect(option, tabIndex);
             }}
           >
             <span>{option.text}</span>
@@ -205,13 +179,13 @@ export default createComponent({
       };
 
       return <ul class={bem('options')}>{options.map(renderOption)}</ul>;
-    },
+    };
 
-    renderTab(item, tabIndex) {
+    const renderTab = (item, tabIndex) => {
       const { options, selectedOption } = item;
       const title = selectedOption
         ? selectedOption.text
-        : this.placeholder || t('select');
+        : props.placeholder || t('select');
 
       return (
         <Tab
@@ -220,32 +194,44 @@ export default createComponent({
             unselected: !selectedOption,
           })}
         >
-          {this.renderOptions(options, selectedOption, tabIndex)}
+          {renderOptions(options, selectedOption, tabIndex)}
         </Tab>
       );
-    },
+    };
 
-    renderTabs() {
-      return (
-        <Tabs
-          v-model={[this.activeTab, 'active']}
-          animated
-          swipeable
-          swipeThreshold={0}
-          class={bem('tabs')}
-          color={this.activeColor}
-        >
-          {this.tabs.map(this.renderTab)}
-        </Tabs>
-      );
-    },
-  },
+    const renderTabs = () => (
+      <Tabs
+        v-model={[state.activeTab, 'active']}
+        animated
+        swipeable
+        swipeThreshold={0}
+        class={bem('tabs')}
+        color={props.activeColor}
+      >
+        {state.tabs.map(renderTab)}
+      </Tabs>
+    );
 
-  render() {
-    return (
+    updateTabs();
+
+    watch(() => props.options, updateTabs, { deep: true });
+    watch(
+      () => props.modelValue,
+      (value) => {
+        if (value || value === 0) {
+          const values = state.tabs.map((tab) => tab.selectedOption?.value);
+          if (values.indexOf(value) !== -1) {
+            return;
+          }
+        }
+        updateTabs();
+      }
+    );
+
+    return () => (
       <div class={bem()}>
-        {this.renderHeader()}
-        {this.renderTabs()}
+        {renderHeader()}
+        {renderTabs()}
       </div>
     );
   },
