@@ -182,7 +182,7 @@ test('scroll to target element', () => {
       onSelect,
     },
     mounted() {
-      this.refs.anchorRef.scrollTo('C');
+      this.$refs.anchorRef.scrollTo('C');
     },
   });
 
