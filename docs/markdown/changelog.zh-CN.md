@@ -16,9 +16,9 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
-### [v2.12.0-beta.0](https://github.com/youzan/vant/compare/v2.11.3...v2.12.0-beta.0)
+### [v2.12.0](https://github.com/youzan/vant/compare/v2.11.3...v2.12.0)
 
-`2020-12-21`
+`2020-12-23`
 
 **New Component**
 

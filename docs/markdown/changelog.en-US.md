@@ -16,9 +16,9 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
-### [v2.12.0-beta.0](https://github.com/youzan/vant/compare/v2.11.3...v2.12.0-beta.0)
+### [v2.12.0](https://github.com/youzan/vant/compare/v2.11.3...v2.12.0)
 
-`2020-12-21`
+`2020-12-23`
 
 **New Component**
 
