@@ -8,7 +8,7 @@ module.exports = {
     nav: [
       {
         text: 'GitHub',
-        link: 'https://github.com/youzan/vant/tree/next/packages/vant-use',
+        link: 'https://github.com/youzan/vant/tree/dev/packages/vant-use',
       },
     ],
     sidebarDepth: 0,
