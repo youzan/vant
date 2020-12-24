@@ -281,10 +281,14 @@ export default {
 };
 ```
 
-### 自定义列的子数组 key 值
+### 自定义 Cascade 中 Columns 结构
 
 ```html
-<van-picker :title="标题" :columns="columns" columns-children-key="cities" />
+<van-picker
+  :title="标题"
+  :columns="columns"
+  :cascade-field-names="customFieldName"
+/>
 ```
 
 ```js
@@ -294,35 +298,41 @@ export default {
   setup() {
     const columns = [
       {
-        text: '浙江',
+        cityName: '浙江',
         cities: [
           {
-            text: '杭州',
-            cities: [{ text: '西湖区' }, { text: '余杭区' }],
+            cityName: '杭州',
+            cities: [{ cityName: '西湖区' }, { cityName: '余杭区' }],
           },
           {
-            text: '温州',
-            cities: [{ text: '鹿城区' }, { text: '瓯海区' }],
+            cityName: '温州',
+            cities: [{ cityName: '鹿城区' }, { cityName: '瓯海区' }],
           },
         ],
       },
       {
-        text: '福建',
+        cityName: '福建',
         cities: [
           {
-            text: '福州',
-            cities: [{ text: '鼓楼区' }, { text: '台江区' }],
+            cityName: '福州',
+            cities: [{ cityName: '鼓楼区' }, { cityName: '台江区' }],
           },
           {
-            text: '厦门',
-            cities: [{ text: '思明区' }, { text: '海沧区' }],
+            cityName: '厦门',
+            cities: [{ cityName: '思明区' }, { cityName: '海沧区' }],
           },
         ],
       },
     ];
 
+    const customFieldName = {
+      valueKey: 'cityName',
+      children: 'cities',
+    };
+
     return {
       columns,
+      customFieldName,
     };
   },
 };
@@ -335,7 +345,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | columns | 对象数组，配置每一列显示的数据 | _Column[]_ | `[]` |
-| columns-children-key | 自定义列的子数组 key 值 | _string_ | `children` |
+| cascade-field-names | 自定义`cascade`结构中的字段 | _object_ | `{valueKey: 'text', children: 'children'}` |
 | title | 顶部栏标题 | _string_ | - |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |

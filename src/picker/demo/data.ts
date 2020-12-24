@@ -83,56 +83,56 @@ export const cascadeColumns = {
 export const cascadeColumnsCustomKey = {
   'zh-CN': [
     {
-      text: '浙江',
+      cityName: '浙江',
       cities: [
         {
-          text: '杭州',
-          cities: [{ text: '西湖区' }, { text: '余杭区' }],
+          cityName: '杭州',
+          cities: [{ cityName: '西湖区' }, { cityName: '余杭区' }],
         },
         {
-          text: '温州',
-          cities: [{ text: '鹿城区' }, { text: '瓯海区' }],
+          cityName: '温州',
+          cities: [{ cityName: '鹿城区' }, { cityName: '瓯海区' }],
         },
       ],
     },
     {
-      text: '福建',
+      cityName: '福建',
       cities: [
         {
-          text: '福州',
-          cities: [{ text: '鼓楼区' }, { text: '台江区' }],
+          cityName: '福州',
+          cities: [{ cityName: '鼓楼区' }, { cityName: '台江区' }],
         },
         {
-          text: '厦门',
-          cities: [{ text: '思明区' }, { text: '海沧区' }],
+          cityName: '厦门',
+          cities: [{ cityName: '思明区' }, { cityName: '海沧区' }],
         },
       ],
     },
   ],
   'en-US': [
     {
-      text: 'Zhejiang',
+      cityName: 'Zhejiang',
       cities: [
         {
-          text: 'Hangzhou',
-          cities: [{ text: 'Xihu' }, { text: 'Yuhang' }],
+          cityName: 'Hangzhou',
+          cities: [{ cityName: 'Xihu' }, { cityName: 'Yuhang' }],
         },
         {
-          text: 'Wenzhou',
-          cities: [{ text: 'Lucheng' }, { text: 'Ouhai' }],
+          cityName: 'Wenzhou',
+          cities: [{ cityName: 'Lucheng' }, { cityName: 'Ouhai' }],
         },
       ],
     },
     {
-      text: 'Fujian',
+      cityName: 'Fujian',
       cities: [
         {
-          text: 'Fuzhou',
-          cities: [{ text: 'Gulou' }, { text: 'Taijiang' }],
+          cityName: 'Fuzhou',
+          cities: [{ cityName: 'Gulou' }, { cityName: 'Taijiang' }],
         },
         {
-          text: 'Xiamen',
-          cities: [{ text: 'Siming' }, { text: 'Haicang' }],
+          cityName: 'Xiamen',
+          cities: [{ cityName: 'Siming' }, { cityName: 'Haicang' }],
         },
       ],
     },

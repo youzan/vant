@@ -258,10 +258,14 @@ export default {
 };
 ```
 
-### Custom Columns Children Key
+### Custom Columns Field in Cascade
 
 ```html
-<van-picker :title="Title" :columns="columns" columns-children-key="cities" />
+<van-picker
+  :title="Title"
+  :columns="columns"
+  :cascade-field-names="customFieldName"
+/>
 ```
 
 ```js
@@ -271,35 +275,41 @@ export default {
   setup() {
     const columns = [
       {
-        text: 'Zhejiang',
+        cityName: 'Zhejiang',
         cities: [
           {
-            text: 'Hangzhou',
-            cities: [{ text: 'Xihu' }, { text: 'Yuhang' }],
+            cityName: 'Hangzhou',
+            cities: [{ cityName: 'Xihu' }, { cityName: 'Yuhang' }],
           },
           {
-            text: 'Wenzhou',
-            cities: [{ text: 'Lucheng' }, { text: 'Ouhai' }],
+            cityName: 'Wenzhou',
+            cities: [{ cityName: 'Lucheng' }, { cityName: 'Ouhai' }],
           },
         ],
       },
       {
-        text: 'Fujian',
+        cityName: 'Fujian',
         cities: [
           {
-            text: 'Fuzhou',
-            cities: [{ text: 'Gulou' }, { text: 'Taijiang' }],
+            cityName: 'Fuzhou',
+            cities: [{ cityName: 'Gulou' }, { cityName: 'Taijiang' }],
           },
           {
-            text: 'Xiamen',
-            cities: [{ text: 'Siming' }, { text: 'Haicang' }],
+            cityName: 'Xiamen',
+            cities: [{ cityName: 'Siming' }, { cityName: 'Haicang' }],
           },
         ],
       },
     ];
 
+    const customFieldName = {
+      valueKey: 'cityName',
+      children: 'cities',
+    };
+
     return {
       columns,
+      customFieldName,
     };
   },
 };
@@ -312,7 +322,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | columns | Columns data | _Column[]_ | `[]` |
-| columns-children-key | custom columns children key | _string_ | `children` |
+| cascade-field-names | custom columns field in `cascade` | _object_ | `{ valueKey: 'text', children: 'children' }` |
 | title | Toolbar title | _string_ | - |
 | confirm-button-text | Text of confirm button | _string_ | `Confirm` |
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |

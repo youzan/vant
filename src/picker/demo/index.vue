@@ -68,7 +68,7 @@
     <van-picker
       :title="t('title')"
       :columns="t('customChildrenColumns')"
-      columns-children-key="cities"
+      :cascade-field-names="customFieldName"
     />
   </demo-block>
 </template>
@@ -150,6 +150,10 @@ export default {
     const state = reactive({
       showPicker: false,
       fieldValue: '',
+      customFieldName: {
+        valueKey: 'cityName',
+        children: 'cities',
+      },
     });
 
     const columns = computed(() => {
