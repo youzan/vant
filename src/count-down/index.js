@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, inBrowser } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
 import { isSameSecond, parseTimeData, parseFormat } from './utils';
 
@@ -66,7 +66,9 @@ export default createComponent({
   methods: {
     // @exposed-api
     start() {
-      if (this.counting) {
+      // should not start counting in server
+      // see: https://github.com/youzan/vant/issues/7807
+      if (this.counting || !inBrowser) {
         return;
       }
 
