@@ -5,7 +5,7 @@ export class Form extends VanComponent {
 
   validate(name?: string | string[]): Promise<void>;
 
-  resetValidation(name?: string): void;
+  resetValidation(name?: string | string[]): void;
 
   scrollToField(name: string, options?: boolean | ScrollIntoViewOptions): void;
 }
