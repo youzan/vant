@@ -163,3 +163,31 @@ test('should emit change event when active index changed', () => {
 
   Element.prototype.getBoundingClientRect = nativeRect;
 });
+
+test('scroll to target element', () => {
+  const onSelect = jest.fn();
+  mount({
+    template: `
+      <van-index-bar ref="anchorRef" @select="onSelect">
+        <van-index-anchor index="A" />
+        <van-index-anchor index="B" />
+        <van-index-anchor index="C" />
+        <van-index-anchor index="D" />
+        <van-index-anchor index="E" />
+        <van-index-anchor index="F" />
+        <van-index-anchor index="XXX" />
+      </van-index-bar>
+    `,
+    methods: {
+      onSelect,
+    },
+    mounted() {
+      this.$refs.anchorRef.scrollTo('C');
+    },
+  });
+
+  const fn = mockScrollIntoView();
+
+  expect(fn).toHaveBeenCalledTimes(1);
+  expect(onSelect).toHaveBeenCalledWith('C');
+});
