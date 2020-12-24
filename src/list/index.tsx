@@ -1,4 +1,4 @@
-import { ref, watch, nextTick, onUpdated, onMounted, PropType } from 'vue';
+import { ref, watch, nextTick, computed, onMounted, PropType } from 'vue';
 
 // Utils
 import { isHidden, createNamespace } from '../utils';
@@ -37,8 +37,12 @@ export default createComponent({
   emits: ['load', 'update:error', 'update:loading'],
 
   setup(props, { emit, slots }) {
-    // use sync innerLoading state to avoid repeated loading in some edge cases
-    const loading = ref(false);
+    const loading = computed<boolean>({
+      get: () => props.loading,
+      set(val: boolean) {
+        emit('update:loading', val);
+      },
+    });
     const root = ref<HTMLElement>();
     const placeholder = ref<HTMLElement>();
     const scrollParent = useScrollParent(root);
@@ -68,7 +72,6 @@ export default createComponent({
 
         if (isReachEdge) {
           loading.value = true;
-          emit('update:loading', true);
           emit('load');
         }
       });
@@ -116,10 +119,6 @@ export default createComponent({
     };
 
     watch([() => props.loading, () => props.finished], check);
-
-    onUpdated(() => {
-      loading.value = props.loading!;
-    });
 
     onMounted(() => {
       if (props.immediateCheck) {
