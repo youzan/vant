@@ -129,6 +129,7 @@ export default {
 | async-change | Whether to enable async change | _boolean_ | `false` | - |
 | show-plus | Whether to show plus button | _boolean_ | `true` |
 | show-minus | Whether to show minus button | _boolean_ | `true` |
+| show-input `v2.12.1` | Whether to show input | _boolean_ | `true` |
 | long-press `v2.4.3` | Whether to allow long press | _boolean_ | `true` |
 | allow-empty `v2.9.1` | Whether to allow the input to be empty | _boolean_ | `false` |
 

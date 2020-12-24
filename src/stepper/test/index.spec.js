@@ -277,6 +277,16 @@ test('show-plus & show-minus props', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('should hide input when show-input prop is false', () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      showInput: false,
+    },
+  });
+
+  expect(wrapper.find('input').element.style.display).toEqual('none');
+});
+
 test('decimal-length prop', () => {
   const wrapper = mount(Stepper, {
     propsData: {
