@@ -16,6 +16,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.0](https://github.com/youzan/vant/compare/v2.12.0...v3.0.0)
+
+`2020-12-23`
+
+**更新内容**
+
+请参考 [Vant 3.0 正式发布：全面拥抱 Vue 3](https://github.com/youzan/vant/issues/7797)。
+
 ### [v3.0.0-rc.4](https://github.com/youzan/vant/compare/v2.12.0-beta.0...v3.0.0-rc.4)
 
 `2020-12-21`
@@ -34,7 +42,6 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 **Types**
 
 - Lazyload: 修复类型定义错误 [#7757](https://github.com/youzan/vant/issues/7757)
-- 包含 `v2.12.0-beta.0` 版本的所有改动和修复
 
 ### [v3.0.0-rc.3](https://github.com/youzan/vant/compare/v2.11.2...v3.0.0-rc.3)
 
