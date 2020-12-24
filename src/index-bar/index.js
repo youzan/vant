@@ -19,6 +19,7 @@ import {
   useEventListener,
 } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
+import { useExpose } from '../composables/use-expose';
 
 export const INDEX_BAR_KEY = 'vanIndexBar';
 
@@ -179,8 +180,7 @@ export default createComponent({
         );
       });
 
-    const scrollToElement = (element) => {
-      const { index } = element.dataset;
+    const scrollTo = (index) => {
       if (!index) {
         return;
       }
@@ -196,6 +196,11 @@ export default createComponent({
 
         emit('select', match[0].index);
       }
+    };
+
+    const scrollToElement = (element) => {
+      const { index } = element.dataset;
+      scrollTo(index);
     };
 
     const onClick = (event) => {
@@ -222,6 +227,8 @@ export default createComponent({
         }
       }
     };
+
+    useExpose({ scrollTo });
 
     return () => (
       <div ref={root} class={bem()}>
