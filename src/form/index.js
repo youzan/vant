@@ -124,10 +124,13 @@ export default createComponent({
 
     // @exposed-api
     resetValidation(name) {
-      this.fields.forEach((item) => {
-        if (!name || item.name === name) {
-          item.resetValidation();
-        }
+      if (name && !Array.isArray(name)) {
+        name = [name];
+      }
+
+      const fields = this.getFieldsByNames(name);
+      fields.forEach((item) => {
+        item.resetValidation();
       });
     },
 

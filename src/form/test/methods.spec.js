@@ -104,6 +104,19 @@ test('resetValidation method - reset all fields', (done) => {
   });
 });
 
+test('resetValidation method - reset two fields', (done) => {
+  const wrapper = mountSimpleRulesForm({
+    mounted() {
+      this.$refs.form.validate().catch(() => {
+        this.$refs.form.resetValidation(['A', 'B']);
+        const errors = wrapper.findAll('.van-field__error-message');
+        expect(errors.length).toEqual(0);
+        done();
+      });
+    },
+  });
+});
+
 test('resetValidation method - reset one field', (done) => {
   const wrapper = mountSimpleRulesForm({
     mounted() {
