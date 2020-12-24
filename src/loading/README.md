@@ -48,6 +48,18 @@ app.use(Loading);
 <van-loading size="24px" vertical>Loading...</van-loading>
 ```
 
+### TextColor
+
+use `color` or `text-color` to change text color
+
+```html
+<!-- the color of text and icon will be changed -->
+<van-loading color="#1989fa" />
+
+<!-- only change text color -->
+<van-loading text-color="#1989fa" />
+```
+
 ## API
 
 ### Props
@@ -58,6 +70,7 @@ app.use(Loading);
 | type | Can be set to `spinner` | _string_ | `circular` |
 | size | Icon size | _number \| string_ | `30px` |
 | text-size | Text font size | _number \| string_ | `14px` |
+| text-color | Text color | _string_ | `#c9c9c9` |
 | vertical | Whether to arrange icons and text content vertically | _boolean_ | `false` |
 
 ### Slots

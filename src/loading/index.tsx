@@ -22,6 +22,7 @@ export default createComponent({
     color: String,
     vertical: Boolean,
     textSize: [Number, String],
+    textColor: String,
     type: {
       type: String as PropType<LoadingType>,
       default: 'circular',
@@ -41,6 +42,7 @@ export default createComponent({
             class={bem('text')}
             style={{
               fontSize: addUnit(props.textSize),
+              color: props.textColor ?? props.color,
             }}
           >
             {slots.default()}
