@@ -31,37 +31,6 @@ test('should change text font-size when using text-size prop', () => {
 test('should change text color when using text-color prop', () => {
   const wrapper = mount(Loading, {
     props: {
-      textColor: '#0094ff',
-    },
-    slots: {
-      default: () => 'Loading Text',
-    },
-  });
-
-  expect(wrapper.find('.van-loading__text').element.style.color).toEqual(
-    '#0094ff'
-  );
-});
-
-test('should change text color when using color prop', () => {
-  const wrapper = mount(Loading, {
-    props: {
-      color: '#0094ff',
-    },
-    slots: {
-      default: () => 'Loading Text',
-    },
-  });
-
-  expect(wrapper.find('.van-loading__text').element.style.color).toEqual(
-    '#0094ff'
-  );
-});
-
-test('should change text color to textColor when using color & textColor prop', () => {
-  const wrapper = mount(Loading, {
-    props: {
-      color: '#0094ff',
       textColor: 'red',
     },
     slots: {
@@ -69,7 +38,34 @@ test('should change text color to textColor when using color & textColor prop', 
     },
   });
 
-  expect(wrapper.find('.van-loading__text').element.style.color).toEqual(
-    '#0094ff'
+  expect(wrapper.find('.van-loading__text').element.style.color).toEqual('red');
+});
+
+test('should change text color when using color prop', () => {
+  const wrapper = mount(Loading, {
+    props: {
+      color: 'green',
+    },
+    slots: {
+      default: () => 'Loading Text',
+    },
+  });
+
+  expect(wrapper.find('.van-loading__text').element.getAttribute).toEqual(
+    'green'
   );
+});
+
+test('should change text color to textColor when using color & textColor prop', () => {
+  const wrapper = mount(Loading, {
+    props: {
+      color: 'green',
+      textColor: 'red',
+    },
+    slots: {
+      default: () => 'Loading Text',
+    },
+  });
+
+  expect(wrapper.find('.van-loading__text').element.style.color).toEqual('red');
 });
