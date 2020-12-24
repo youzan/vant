@@ -66,9 +66,7 @@ export default createComponent({
   methods: {
     // @exposed-api
     start() {
-      // should not start counting in server
-      // see: https://github.com/youzan/vant/issues/7807
-      if (this.counting || !inBrowser) {
+      if (this.counting) {
         return;
       }
 
@@ -94,6 +92,12 @@ export default createComponent({
     },
 
     tick() {
+      // should not start counting in server
+      // see: https://github.com/youzan/vant/issues/7807
+      if (!inBrowser) {
+        return;
+      }
+
       if (this.millisecond) {
         this.microTick();
       } else {
