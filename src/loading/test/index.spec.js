@@ -38,7 +38,7 @@ test('should change text color when using text-color prop', () => {
     },
   });
 
-  expect(wrapper.find('.van-loading__text').element.style.color).toEqual('red');
+  expect(wrapper.find('.van-loading__text').element.style.color).toBe('red');
 });
 
 test('should change text color when using color prop', () => {
@@ -51,9 +51,7 @@ test('should change text color when using color prop', () => {
     },
   });
 
-  expect(wrapper.find('.van-loading__text').element.getAttribute).toEqual(
-    'green'
-  );
+  expect(wrapper.find('.van-loading__text').element.style.color).toBe('green');
 });
 
 test('should change text color to textColor when using color & textColor prop', () => {
@@ -67,5 +65,5 @@ test('should change text color to textColor when using color & textColor prop', 
     },
   });
 
-  expect(wrapper.find('.van-loading__text').element.style.color).toEqual('red');
+  expect(wrapper.find('.van-loading__text').element.style.color).toBe('red');
 });
