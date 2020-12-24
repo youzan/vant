@@ -3,7 +3,6 @@ import { ref, computed, watch, nextTick } from 'vue';
 // Utils
 import {
   isDef,
-  isObject,
   isHidden,
   getScrollTop,
   preventDefault,
@@ -181,14 +180,7 @@ export default createComponent({
         );
       });
 
-    const scrollToElement = (element) => {
-      let index = element;
-
-      if (isObject(element)) {
-        const { index: dataIndex } = element.dataset;
-        index = dataIndex;
-      }
-
+    const scrollTo = (index) => {
       if (!index) {
         return;
       }
@@ -206,12 +198,13 @@ export default createComponent({
       }
     };
 
-    const onClick = (event) => {
-      scrollToElement(event.target);
+    const scrollToElement = (element) => {
+      const { index } = element.dataset;
+      scrollTo(index);
     };
 
-    const scrollTo = (index) => {
-      scrollToElement(index);
+    const onClick = (event) => {
+      scrollToElement(event.target);
     };
 
     let touchActiveIndex;
