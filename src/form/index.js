@@ -43,11 +43,19 @@ export default createComponent({
   },
 
   methods: {
-    validateSeq() {
+    getFieldsByNames(names) {
+      if (names) {
+        return this.fields.filter((field) => names.indexOf(field.name) !== -1);
+      }
+      return this.fields;
+    },
+
+    validateSeq(names) {
       return new Promise((resolve, reject) => {
         const errors = [];
+        const fields = this.getFieldsByNames(names);
 
-        this.fields
+        fields
           .reduce(
             (promise, field) =>
               promise.then(() => {
@@ -71,28 +79,29 @@ export default createComponent({
       });
     },
 
-    validateAll() {
+    validateFields(names) {
       return new Promise((resolve, reject) => {
-        Promise.all(this.fields.map((item) => item.validate())).then(
-          (errors) => {
-            errors = errors.filter((item) => item);
+        const fields = this.getFieldsByNames(names);
+        Promise.all(fields.map((item) => item.validate())).then((errors) => {
+          errors = errors.filter((item) => item);
 
-            if (errors.length) {
-              reject(errors);
-            } else {
-              resolve();
-            }
+          if (errors.length) {
+            reject(errors);
+          } else {
+            resolve();
           }
-        );
+        });
       });
     },
 
     // @exposed-api
     validate(name) {
-      if (name) {
+      if (name && !Array.isArray(name)) {
         return this.validateField(name);
       }
-      return this.validateFirst ? this.validateSeq() : this.validateAll();
+      return this.validateFirst
+        ? this.validateSeq(name)
+        : this.validateFields(name);
     },
 
     validateField(name) {

@@ -482,7 +482,7 @@ export default {
 | message `v2.5.3` | 错误提示文案 | _string \| (value, rule) => string_ |
 | validator `v2.5.3` | 通过函数进行校验 | _(value, rule) => boolean \| Promise_ |
 | pattern `v2.5.3` | 通过正则表达式进行校验 | _RegExp_ |
-| trigger `v2.5.2` | 本项规则的触发时机，可选值为`onChange`、`onBlur` | _string_ |
+| trigger `v2.5.2` | 本项规则的触发时机，可选值为 `onChange`、`onBlur` | _string_ |
 | formatter `v2.5.3` | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |
 
 ### validate-trigger  可选值
@@ -509,8 +509,8 @@ export default {
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | submit | 提交表单，与点击提交按钮的效果等价 | - | - |
-| validate | 验证表单，支持传入`name`来验证单个表单项 | _name?: string_ | _Promise_ |
-| resetValidation | 重置表单项的验证提示，支持传入`name`来重置单个表单项 | _name?: string_ | - |
+| validate | 验证表单，支持传入 `name` 来验证单个或多个表单项 | _name?: string \| string[]_ | _Promise_ |
+| resetValidation | 重置表单项的验证提示，支持传入 `name` 来重置单个表单项 | _name?: string_ | - |
 | scrollToField `v2.8.3` | 滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部 | _name: string, alignToTop: boolean_ | - |
 
 ### Slots

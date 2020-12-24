@@ -472,7 +472,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Form instance and call instance 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | submit | Submit form | - | - |
-| validate | Validate form | _name?: string_ | _Promise_ |
+| validate | Validate form | _name?: string \| string[]_ | _Promise_ |
 | resetValidation | Reset validation | _name?: string_ | - |
 | scrollToField `v2.8.3` | Scroll to field | _name: string, alignToTop: boolean_ | - |
 
