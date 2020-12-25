@@ -48,9 +48,9 @@ app.use(Loading);
 <van-loading size="24px" vertical>Loading...</van-loading>
 ```
 
-### TextColor
+### Text Color
 
-use `color` or `text-color` to change text color
+use `color` or `text-color` to change text color.
 
 ```html
 <!-- the color of text and icon will be changed -->
