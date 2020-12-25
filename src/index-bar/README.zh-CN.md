@@ -88,6 +88,14 @@ export default {
 | select            | 点击索引栏的字符时触发       | _index: number \| string_ |
 | change `v2.10.10` | 当前高亮的索引字符变化时触发 | _index: number \| string_ |
 
+### 方法
+
+通过 ref 可以获取到 IndexBar 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名   | 说明           | 参数                      | 返回值 |
+| -------- | -------------- | ------------------------- | ------ |
+| scrollTo | 滚动到指定锚点 | _index: number \| string_ | -      |
+
 ### IndexAnchor Slots
 
 | 名称    | 说明                             |
