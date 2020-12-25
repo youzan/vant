@@ -68,7 +68,7 @@
     <van-picker
       :title="t('title')"
       :columns="t('customChildrenColumns')"
-      :cascade-field-names="customFieldName"
+      :columns-field-names="customFieldName"
     />
   </demo-block>
 </template>
@@ -92,7 +92,7 @@ const i18n = {
     cascadeColumns: cascadeColumns['zh-CN'],
     multipleColumns: '多列选择',
     setColumnValues: '动态设置选项',
-    customChildrenKey: '自定义子数组key值',
+    customChildrenKey: '自定义Columns字段',
     customChildrenColumns: cascadeColumnsCustomKey['zh-CN'],
     textColumns: [
       '杭州',
@@ -127,7 +127,7 @@ const i18n = {
     cascadeColumns: cascadeColumns['en-US'],
     multipleColumns: 'Multiple Columns',
     setColumnValues: 'Set Column Values',
-    customChildrenKey: 'Set Children Key As Custom',
+    customChildrenKey: 'Custom Columns Fields',
     customChildrenColumns: cascadeColumnsCustomKey['en-US'],
     textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
     disabledColumns: [

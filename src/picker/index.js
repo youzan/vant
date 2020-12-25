@@ -22,7 +22,7 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
-    cascadeFieldNames: {
+    columnsFieldNames: {
       type: Object,
       default: () => {},
     },
@@ -44,10 +44,19 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const formattedColumns = ref([]);
-    const { valueKey, children: childKey } = {
+    const {
+      valueKey,
+      values: valuesKey,
+      defaultIndex: indexKey,
+      className: classKey,
+      children: childKey,
+    } = {
       valueKey: props.valueKey, // 向下兼容
-        children: 'children',
-      ...props.cascadeFieldNames || {}
+      values: 'values',
+      defaultIndex: 'defaultIndex',
+      className: 'className',
+      children: 'children',
+      ...(props.columnsFieldNames || {}),
     };
 
     const { children, linkChildren } = useChildren(PICKER_KEY);
@@ -63,7 +72,7 @@ export default createComponent({
       if (firstColumn[childKey]) {
         return 'cascade';
       }
-      if (firstColumn.values) {
+      if (firstColumn[valuesKey]) {
         return 'object';
       }
       return 'text';
@@ -76,7 +85,7 @@ export default createComponent({
 
       while (cursor && cursor[childKey]) {
         const children = cursor[childKey];
-        let defaultIndex = cursor.defaultIndex ?? +props.defaultIndex;
+        let defaultIndex = cursor[indexKey] ?? +props.defaultIndex;
 
         while (children[defaultIndex] && children[defaultIndex].disabled) {
           if (defaultIndex < children.length - 1) {
@@ -88,9 +97,9 @@ export default createComponent({
         }
 
         formatted.push({
-          values: cursor[childKey],
-          className: cursor.className,
-          defaultIndex,
+          [valuesKey]: cursor[childKey],
+          [classKey]: cursor[classKey],
+          [indexKey]: defaultIndex,
         });
 
         cursor = children[defaultIndex];
@@ -103,7 +112,7 @@ export default createComponent({
       const { columns } = props;
 
       if (dataType.value === 'text') {
-        formattedColumns.value = [{ values: columns }];
+        formattedColumns.value = [{ [valuesKey]: columns }];
       } else if (dataType.value === 'cascade') {
         formatCascade();
       } else {
@@ -133,7 +142,7 @@ export default createComponent({
       while (cursor && cursor[childKey]) {
         columnIndex++;
         setColumnValues(columnIndex, cursor[childKey]);
-        cursor = cursor[childKey][cursor.defaultIndex || 0];
+        cursor = cursor[childKey][cursor[indexKey] || 0];
       }
     };
 
@@ -269,12 +278,12 @@ export default createComponent({
           readonly={props.readonly}
           valueKey={valueKey}
           allowHtml={props.allowHtml}
-          className={item.className}
+          className={item[classKey]}
           itemHeight={itemHeight.value}
-          defaultIndex={item.defaultIndex ?? +props.defaultIndex}
+          defaultIndex={item[indexKey] ?? +props.defaultIndex}
           swipeDuration={props.swipeDuration}
           visibleItemCount={props.visibleItemCount}
-          initialOptions={item.values}
+          initialOptions={item[valuesKey]}
           onChange={() => {
             onChange(columnIndex);
           }}

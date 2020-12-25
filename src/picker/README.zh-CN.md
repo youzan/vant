@@ -281,13 +281,13 @@ export default {
 };
 ```
 
-### 自定义 Cascade 中 Columns 结构
+### 自定义 Columns 的结构
 
 ```html
 <van-picker
   :title="标题"
   :columns="columns"
-  :cascade-field-names="customFieldName"
+  :columns-field-names="customFieldName"
 />
 ```
 
@@ -345,7 +345,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | columns | 对象数组，配置每一列显示的数据 | _Column[]_ | `[]` |
-| cascade-field-names | 自定义`cascade`结构中的字段 | _object_ | `{valueKey: 'text', children: 'children'}` |
+| columns-field-names | 自定义`columns`结构中的字段 | _object_ | `{ valueKey: 'text', values: 'values', defaultIndex: 'defaultIndex', className: 'className', children: 'children' }` |
 | title | 顶部栏标题 | _string_ | - |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |

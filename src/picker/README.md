@@ -258,13 +258,13 @@ export default {
 };
 ```
 
-### Custom Columns Field in Cascade
+### Custom Columns Field
 
 ```html
 <van-picker
   :title="Title"
   :columns="columns"
-  :cascade-field-names="customFieldName"
+  :columns-field-names="customFieldName"
 />
 ```
 
@@ -322,7 +322,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | columns | Columns data | _Column[]_ | `[]` |
-| cascade-field-names | custom columns field in `cascade` | _object_ | `{ valueKey: 'text', children: 'children' }` |
+| columns-field-names | custom columns field | _object_ | `{ valueKey: 'text', values: 'values', defaultIndex: 'defaultIndex', className: 'className', children: 'children' }` |
 | title | Toolbar title | _string_ | - |
 | confirm-button-text | Text of confirm button | _string_ | `Confirm` |
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |
