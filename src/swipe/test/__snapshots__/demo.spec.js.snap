@@ -3,7 +3,7 @@
 exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-swipe">
-    <div style="width: 400px; transition-duration: 0ms; transform: translateX(0px);"
+    <div style="transition-duration: 0ms; transform: translateX(0px); width: 400px;"
          class="van-swipe__track"
     >
       <div class="van-swipe-item"
@@ -43,7 +43,7 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-swipe">
-    <div style="width: 400px; transition-duration: 0ms; transform: translateX(0px);"
+    <div style="transition-duration: 0ms; transform: translateX(0px); width: 400px;"
          class="van-swipe__track"
     >
       <div class="van-swipe-item"
@@ -80,7 +80,7 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-swipe">
-    <div style="width: 400px; transition-duration: 0ms; transform: translateX(0px);"
+    <div style="transition-duration: 0ms; transform: translateX(0px); width: 400px;"
          class="van-swipe__track"
     >
       <div class="van-swipe-item"
@@ -122,7 +122,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-swipe demo-swipe--vertical"
        style="height: 200px;"
   >
-    <div style="height: 400px; transition-duration: 0ms; transform: translateY(0px);"
+    <div style="transition-duration: 0ms; transform: translateY(0px); height: 400px;"
          class="van-swipe__track van-swipe__track--vertical"
     >
       <div class="van-swipe-item"
@@ -162,7 +162,7 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-swipe">
-    <div style="width: 1200px; transition-duration: 0ms; transform: translateX(0px);"
+    <div style="transition-duration: 0ms; transform: translateX(0px); width: 1200px;"
          class="van-swipe__track"
     >
       <div class="van-swipe-item"
@@ -202,7 +202,7 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-swipe">
-    <div style="width: 400px; transition-duration: 0ms; transform: translateX(0px);"
+    <div style="transition-duration: 0ms; transform: translateX(0px); width: 400px;"
          class="van-swipe__track"
     >
       <div class="van-swipe-item"

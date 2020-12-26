@@ -564,11 +564,10 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-tabs__content van-tabs__content--animated">
       <div class="van-swipe van-tabs__track">
-        <div style="width: 0px; transition-duration: 0ms; transform: translateX(0px);"
+        <div style="transition-duration: 0ms; transform: translateX(0px);"
              class="van-swipe__track"
         >
           <div class="van-swipe-item van-tab__pane-wrapper"
-               style="width: 0px;"
                role="tabpanel"
                aria-hidden="false"
           >
@@ -577,7 +576,6 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
-               style="width: 0px;"
                role="tabpanel"
                aria-hidden="true"
           >
@@ -586,13 +584,11 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
-               style="width: 0px;"
                role="tabpanel"
                aria-hidden="true"
           >
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
-               style="width: 0px;"
                role="tabpanel"
                aria-hidden="true"
           >
@@ -648,11 +644,10 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-tabs__content van-tabs__content--animated">
       <div class="van-swipe van-tabs__track">
-        <div style="width: 0px; transition-duration: 0ms; transform: translateX(0px);"
+        <div style="transition-duration: 0ms; transform: translateX(0px);"
              class="van-swipe__track"
         >
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
-               style="width: 0px;"
                role="tabpanel"
                aria-hidden="true"
           >
@@ -661,7 +656,6 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
-               style="width: 0px;"
                role="tabpanel"
                aria-hidden="true"
           >
@@ -670,13 +664,11 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper"
-               style="width: 0px;"
                role="tabpanel"
                aria-hidden="false"
           >
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
-               style="width: 0px;"
                role="tabpanel"
                aria-hidden="true"
           >
