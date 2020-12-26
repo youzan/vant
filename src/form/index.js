@@ -37,11 +37,19 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const { children, linkChildren } = useChildren(FORM_KEY);
 
-    const validateSeq = () =>
+    const getFieldsByNames = (names) => {
+      if (names) {
+        return children.filter((field) => names.indexOf(field.name) !== -1);
+      }
+      return children;
+    };
+
+    const validateSeq = (names) =>
       new Promise((resolve, reject) => {
         const errors = [];
+        const fields = getFieldsByNames(names);
 
-        children
+        fields
           .reduce(
             (promise, field) =>
               promise.then(() => {
@@ -64,9 +72,10 @@ export default createComponent({
           });
       });
 
-    const validateAll = () =>
+    const validateAll = (names) =>
       new Promise((resolve, reject) => {
-        Promise.all(children.map((item) => item.validate())).then((errors) => {
+        const fields = getFieldsByNames(names);
+        Promise.all(fields.map((item) => item.validate())).then((errors) => {
           errors = errors.filter((item) => item);
 
           if (errors.length) {
@@ -96,17 +105,20 @@ export default createComponent({
     };
 
     const validate = (name) => {
-      if (name) {
+      if (name && !Array.isArray(name)) {
         return validateField(name);
       }
-      return props.validateFirst ? validateSeq() : validateAll();
+      return props.validateFirst ? validateSeq(name) : validateAll(name);
     };
 
     const resetValidation = (name) => {
-      children.forEach((item) => {
-        if (!name || item.name === name) {
-          item.resetValidation();
-        }
+      if (name && !Array.isArray(name)) {
+        name = [name];
+      }
+
+      const fields = getFieldsByNames(name);
+      fields.forEach((item) => {
+        item.resetValidation();
       });
     };
 

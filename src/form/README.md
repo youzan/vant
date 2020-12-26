@@ -516,8 +516,8 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Form i
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | submit | Submit form | - | - |
-| validate | Validate form | _name?: string_ | _Promise_ |
-| resetValidation | Reset validation | _name?: string_ | - |
+| validate | Validate form | _name?: string \| string[]_ | _Promise_ |
+| resetValidation | Reset validation | _name?: string \| string[]_ | - |
 | scrollToField `v2.8.3` | Scroll to field | _name: string, alignToTop: boolean_ | - |
 
 ### Slots

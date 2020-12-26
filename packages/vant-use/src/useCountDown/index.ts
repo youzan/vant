@@ -5,7 +5,7 @@ import {
   onDeactivated,
   onBeforeUnmount,
 } from 'vue';
-import { raf, cancelRaf } from '../utils';
+import { raf, cancelRaf, inBrowser } from '../utils';
 
 export type CurrentTime = {
   days: number;
@@ -106,6 +106,12 @@ export function useCountDown(options: UseCountDownOptions) {
   };
 
   const tick = () => {
+    // should not start counting in server
+    // see: https://github.com/youzan/vant/issues/7807
+    if (!inBrowser) {
+      return;
+    }
+
     if (options.millisecond) {
       microTick();
     } else {
