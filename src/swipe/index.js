@@ -124,15 +124,19 @@ export default createComponent({
     },
 
     trackStyle() {
-      const mainAxis = this.vertical ? 'height' : 'width';
-      const crossAxis = this.vertical ? 'width' : 'height';
-
-      return {
-        [mainAxis]: `${this.trackSize}px`,
-        [crossAxis]: this[crossAxis] ? `${this[crossAxis]}px` : '',
+      const style = {
         transitionDuration: `${this.swiping ? 0 : this.duration}ms`,
         transform: `translate${this.vertical ? 'Y' : 'X'}(${this.offset}px)`,
       };
+
+      if (this.size) {
+        const mainAxis = this.vertical ? 'height' : 'width';
+        const crossAxis = this.vertical ? 'width' : 'height';
+        style[mainAxis] = `${this.trackSize}px`;
+        style[crossAxis] = this[crossAxis] ? `${this[crossAxis]}px` : '';
+      }
+
+      return style;
     },
 
     indicatorStyle() {
