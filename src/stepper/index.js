@@ -193,6 +193,11 @@ export default createComponent({
         event.target.value = formatted;
       }
 
+      // perfer number type
+      if (formatted === String(+formatted)) {
+        formatted = +formatted;
+      }
+
       this.emitChange(formatted);
     },
 
