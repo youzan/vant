@@ -57,10 +57,10 @@ exports[`renders demo correctly 1`] = `
       <div role="marquee" class="van-notice-bar__wrap">
         <div class="van-notice-bar__content van-ellipsis" style="transition-duration: 0s;">
           <div class="notice-swipe van-swipe">
-            <div class="van-swipe__track van-swipe__track--vertical" style="height: 0px; transition-duration: 0ms; transform: translateY(0px);">
-              <div class="van-swipe-item" style="height: 0px;">内容 1</div>
-              <div class="van-swipe-item" style="height: 0px;">内容 2</div>
-              <div class="van-swipe-item" style="height: 0px;">内容 3</div>
+            <div class="van-swipe__track van-swipe__track--vertical" style="transition-duration: 0ms; transform: translateY(0px);">
+              <div class="van-swipe-item">内容 1</div>
+              <div class="van-swipe-item">内容 2</div>
+              <div class="van-swipe-item">内容 3</div>
             </div>
           </div>
         </div>

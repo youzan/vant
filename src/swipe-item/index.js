@@ -25,7 +25,9 @@ export default createComponent({
       const style = {};
       const { size, vertical } = this.parent;
 
-      style[vertical ? 'height' : 'width'] = `${size}px`;
+      if (size) {
+        style[vertical ? 'height' : 'width'] = `${size}px`;
+      }
 
       if (this.offset) {
         style.transform = `translate${vertical ? 'Y' : 'X'}(${this.offset}px)`;
