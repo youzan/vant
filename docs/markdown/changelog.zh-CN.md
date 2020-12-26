@@ -16,6 +16,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.1](https://github.com/youzan/vant/compare/v2.12.0...v2.12.1)
+
+`2020-12-26`
+
+**Feature**
+
+- Form: valdiate 方法支持校验多个表单项 [#7810](https://github.com/youzan/vant/issues/7810)
+- Form: resetValidation 方法支持重置多个表单项 [#7811](https://github.com/youzan/vant/issues/7811)
+- Stepper: 新增 show-input 属性，用于控制是否显示输入框 [#7812](https://github.com/youzan/vant/issues/7812)
+
+**Bug Fixes**
+
+- CountDown: 修复 SSR 过程中内存泄露的问题 [#7808](https://github.com/youzan/vant/issues/7808)
+- Image: 修复 SSR 时提示 DOM 不匹配的问题 [#7822](https://github.com/youzan/vant/issues/7822)
+- Stepper: 修复 change 事件重复触发的问题 [#7820](https://github.com/youzan/vant/issues/7820)
+- Swipe: 修复 SSR 样式不正确的问题 [#7821](https://github.com/youzan/vant/issues/7821)
+
 ### [v2.12.0](https://github.com/youzan/vant/compare/v2.11.3...v2.12.0)
 
 `2020-12-23`

@@ -16,6 +16,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.1](https://github.com/youzan/vant/compare/v2.12.0...v2.12.1)
+
+`2020-12-26`
+
+**Feature**
+
+- Form: support valdiate multiple names [#7810](https://github.com/youzan/vant/issues/7810)
+- Form: resetValidation support multiple names [#7811](https://github.com/youzan/vant/issues/7811)
+- Stepper: add show-input prop [#7812](https://github.com/youzan/vant/issues/7812)
+
+**Bug Fixes**
+
+- CountDown: fix ssr memory leak [#7808](https://github.com/youzan/vant/issues/7808)
+- Image: mismatching warning during ssr [#7822](https://github.com/youzan/vant/issues/7822)
+- Stepper: change event emitted twice [#7820](https://github.com/youzan/vant/issues/7820)
+- Swipe: incorrect size during ssr [#7821](https://github.com/youzan/vant/issues/7821)
+
 ### [v2.12.0](https://github.com/youzan/vant/compare/v2.11.3...v2.12.0)
 
 `2020-12-23`
