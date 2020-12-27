@@ -296,10 +296,10 @@ export default {
 
 ```html
 <van-field
+  v-model="state.value"
   readonly
   clickable
   name="picker"
-  :value="state.value"
   label="Picker"
   placeholder="Select city"
   @click="state.showPicker = true"
@@ -342,10 +342,10 @@ export default {
 
 ```html
 <van-field
+  v-model="state.value"
   readonly
   clickable
   name="datetimePicker"
-  :value="state.value"
   label="Datetime Picker"
   placeholder="Select time"
   @click="state.showPicker = true"
@@ -385,10 +385,10 @@ export default {
 
 ```html
 <van-field
+  v-model="state.value"
   readonly
   clickable
   name="area"
-  :value="state.value"
   label="Area Picker"
   placeholder="Select area"
   @click="state.showArea = true"
@@ -432,10 +432,10 @@ export default {
 
 ```html
 <van-field
+  v-model="state.value"
   readonly
   clickable
   name="calendar"
-  :value="state.value"
   label="Calendar"
   placeholder="Select date"
   @click="state.showCalendar = true"

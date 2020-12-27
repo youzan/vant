@@ -323,10 +323,10 @@ export default {
 
 ```html
 <van-field
+  v-model="state.value"
   readonly
   clickable
   name="picker"
-  :value="state.value"
   label="选择器"
   placeholder="点击选择城市"
   @click="state.showPicker = true"
@@ -371,10 +371,10 @@ export default {
 
 ```html
 <van-field
+  v-model="state.value"
   readonly
   clickable
   name="datetimePicker"
-  :value="state.value"
   label="时间选择"
   placeholder="点击选择时间"
   @click="state.showPicker = true"
@@ -416,10 +416,10 @@ export default {
 
 ```html
 <van-field
+  v-model="state.value"
   readonly
   clickable
   name="area"
-  :value="state.value"
   label="地区选择"
   placeholder="点击选择省市区"
   @click="state.showArea = true"
@@ -465,10 +465,10 @@ export default {
 
 ```html
 <van-field
+  v-model="state.value"
   readonly
   clickable
   name="calendar"
-  :value="state.value"
   label="日历"
   placeholder="点击选择日期"
   @click="state.showCalendar = true"
