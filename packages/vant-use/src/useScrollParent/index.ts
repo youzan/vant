@@ -28,12 +28,15 @@ export function getScrollParent(el: Element, root: ScrollElement = window) {
   return root;
 }
 
-export function useScrollParent(el: Ref<Element | undefined>) {
+export function useScrollParent(
+  el: Ref<Element | undefined>,
+  root: ScrollElement = window
+) {
   const scrollParent = ref<Element | Window>();
 
   onMounted(() => {
     if (el.value) {
-      scrollParent.value = getScrollParent(el.value);
+      scrollParent.value = getScrollParent(el.value, root);
     }
   });
 
