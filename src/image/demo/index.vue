@@ -1,21 +1,9 @@
 <template>
-  <img
-    v-if="lazyLoad"
-    v-lazy="src"
-    ref="imageRef"
-    :alt="alt"
-    :class="bem('image')"
-    :style="{ objectFit: fit }"
-  />;
-  <img
-    v-else
-    :src="src"
-    :alt="alt"
-    :class="bem('image')"
-    :style="{ objectFit: fit }"
-    @load="onLoad"
-    @error="onError"
-  />
+  <demo-block :title="t('basicUsage')">
+    <van-row>
+      <van-image width="100" height="100" :src="image" />
+    </van-row>
+  </demo-block>
 
   <demo-block :title="t('fitMode')">
     <van-row gutter="20">
