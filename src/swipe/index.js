@@ -258,7 +258,7 @@ export default createComponent({
     };
 
     const resize = () => {
-      initialize(activeIndicator.value);
+      initialize(state.active);
     };
 
     let touchStartTime;
@@ -377,9 +377,14 @@ export default createComponent({
 
     linkChildren({ size, props, count, activeIndicator });
 
-    watch([() => children.length, () => props.initialSwipe], () => {
-      initialize();
-    });
+    watch(() => props.initialSwipe, initialize);
+    watch(
+      () => children.length,
+      () => {
+        const active = Math.min(children.length - 1, state.active);
+        initialize(active);
+      }
+    );
 
     watch(
       () => props.autoplay,
