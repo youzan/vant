@@ -1,10 +1,10 @@
 <template>
   <van-field
+    v-model="value"
     readonly
     clickable
     name="calendar"
     :label="t('calendar')"
-    :model-value="value"
     :placeholder="t('placeholder')"
     @click="showCalendar = true"
   />

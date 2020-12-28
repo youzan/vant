@@ -110,13 +110,17 @@ export default createComponent({
     const trackStyle = computed(() => {
       const mainAxis = props.vertical ? 'height' : 'width';
       const crossAxis = props.vertical ? 'width' : 'height';
-
-      return {
-        [mainAxis]: `${trackSize.value}px`,
-        [crossAxis]: props[crossAxis] ? `${props[crossAxis]}px` : '',
+      const style = {
         transitionDuration: `${state.swiping ? 0 : props.duration}ms`,
         transform: `translate${props.vertical ? 'Y' : 'X'}(${state.offset}px)`,
       };
+
+      if (size.value) {
+        style[mainAxis] = `${trackSize.value}px`;
+        style[crossAxis] = props[crossAxis] ? `${props[crossAxis]}px` : '';
+      }
+
+      return style;
     });
 
     const getTargetActive = (pace) => {
@@ -254,7 +258,7 @@ export default createComponent({
     };
 
     const resize = () => {
-      initialize(activeIndicator.value);
+      initialize(state.active);
     };
 
     let touchStartTime;
@@ -373,9 +377,14 @@ export default createComponent({
 
     linkChildren({ size, props, count, activeIndicator });
 
-    watch([() => children.length, () => props.initialSwipe], () => {
-      initialize();
-    });
+    watch(() => props.initialSwipe, initialize);
+    watch(
+      () => children.length,
+      () => {
+        const active = Math.min(children.length - 1, state.active);
+        initialize(active);
+      }
+    );
 
     watch(
       () => props.autoplay,

@@ -34,9 +34,9 @@ export default {
     const show = ref(false);
 
     const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
-    const onConfirm = (date) => {
+    const onConfirm = (value) => {
       show.value = false;
-      date.value = formatDate(date);
+      date.value = formatDate(value);
     };
 
     return {
@@ -97,8 +97,8 @@ export default {
     const show = ref(false);
 
     const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
-    const onConfirm = (date) => {
-      const [start, end] = date;
+    const onConfirm = (values) => {
+      const [start, end] = values;
       show.value = false;
       date.value = `${formatDate(start)} - ${formatDate(end)}`;
     };
@@ -310,7 +310,7 @@ export default {
 | 键名 | 说明 | 类型 |
 | --- | --- | --- |
 | date | 日期对应的 Date 对象 | _Date_ |
-| type | 日期类型，可选值为`selected`、`start`、`middle`、`end`、`disabled` | _string_ |
+| type | 日期类型，可选值为 `selected`、`start`、`middle`、`end`、`disabled` | _string_ |
 | text | 中间显示的文字 | _string_ |
 | topInfo | 上方的提示信息 | _string_ |
 | bottomInfo | 下方的提示信息 | _string_ |
@@ -321,7 +321,7 @@ export default {
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
 | select | 点击并选中任意日期时触发 | _value: Date \| Date[]_ |
-| confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | _value: Date \| Date[]_ |
+| confirm | 日期选择完成后触发，若 `show-confirm` 为 `true`，则点击确认按钮后触发 | _value: Date \| Date[]_ |
 | open `v2.5.2` | 打开弹出层时触发 | - |
 | close `v2.5.2` | 关闭弹出层时触发 | - |
 | opened `v2.5.2` | 打开弹出层且动画结束后触发 | - |

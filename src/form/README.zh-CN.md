@@ -323,10 +323,10 @@ export default {
 
 ```html
 <van-field
+  v-model="state.value"
   readonly
   clickable
   name="picker"
-  :value="state.value"
   label="选择器"
   placeholder="点击选择城市"
   @click="state.showPicker = true"
@@ -371,10 +371,10 @@ export default {
 
 ```html
 <van-field
+  v-model="state.value"
   readonly
   clickable
   name="datetimePicker"
-  :value="state.value"
   label="时间选择"
   placeholder="点击选择时间"
   @click="state.showPicker = true"
@@ -416,10 +416,10 @@ export default {
 
 ```html
 <van-field
+  v-model="state.value"
   readonly
   clickable
   name="area"
-  :value="state.value"
   label="地区选择"
   placeholder="点击选择省市区"
   @click="state.showArea = true"
@@ -465,10 +465,10 @@ export default {
 
 ```html
 <van-field
+  v-model="state.value"
   readonly
   clickable
   name="calendar"
-  :value="state.value"
   label="日历"
   placeholder="点击选择日期"
   @click="state.showCalendar = true"
@@ -555,8 +555,8 @@ export default {
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | submit | 提交表单，与点击提交按钮的效果等价 | - | - |
-| validate | 验证表单，支持传入`name`来验证单个表单项 | _name?: string_ | _Promise_ |
-| resetValidation | 重置表单项的验证提示，支持传入`name`来重置单个表单项 | _name?: string_ | - |
+| validate | 验证表单，支持传入 `name` 来验证单个或部分表单项 | _name?: string \| string[]_ | _Promise_ |
+| resetValidation | 重置表单项的验证提示，支持传入 `name` 来重置单个或部分表单项 | _name?: string \| string[]_ | - |
 | scrollToField `v2.8.3` | 滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部 | _name: string, alignToTop: boolean_ | - |
 
 ### Slots

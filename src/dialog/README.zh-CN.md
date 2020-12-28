@@ -273,3 +273,19 @@ export default {
 | @dialog-button-height                 | `48px`                     | -    |
 | @dialog-round-button-height           | `36px`                     | -    |
 | @dialog-confirm-button-text-color     | `@red`                     | -    |
+
+## 常见问题
+
+### 在 beforeRouteLeave 里调用 Dialog 无法展示？
+
+将 `closeOnPopstate` 属性设置为 false 即可。
+
+```js
+Dialog.alert({
+  title: '标题',
+  message: '弹窗内容',
+  closeOnPopstate: false,
+}).then(() => {
+  // on close
+});
+```

@@ -118,7 +118,7 @@ Use `title` prop to set keyboard title.
 ### Bind Value
 
 ```html
-<van-field readonly clickable :value="value" @touchstart.stop="show = true" />
+<van-field v-model="value" readonly clickable @touchstart.stop="show = true" />
 <van-number-keyboard
   v-model="value"
   :show="show"
