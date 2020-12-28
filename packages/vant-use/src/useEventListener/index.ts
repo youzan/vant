@@ -2,7 +2,9 @@ import { Ref, unref, onUnmounted, onDeactivated } from 'vue';
 import { onMountedOrActivated } from '../onMountedOrActivated';
 import { inBrowser } from '../utils';
 
-let supportsPassive = false;
+// eslint-disable-next-line
+export let supportsPassive = false;
+
 if (inBrowser) {
   try {
     const opts = {};

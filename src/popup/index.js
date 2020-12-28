@@ -112,7 +112,10 @@ export default createComponent({
     const zIndex = ref();
     const popupRef = ref();
 
-    const [lockScroll, unlockScroll] = useLockScroll(() => props.lockScroll);
+    const [lockScroll, unlockScroll] = useLockScroll(
+      popupRef,
+      () => props.lockScroll
+    );
 
     const lazyRender = useLazyRender(() => props.show || !props.lazyRender);
 

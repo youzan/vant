@@ -14,7 +14,7 @@ function isElement(node: Element) {
 }
 
 // https://github.com/youzan/vant/issues/3823
-function getScrollParent(el: Element, root: ScrollElement = window) {
+export function getScrollParent(el: Element, root: ScrollElement = window) {
   let node = el;
 
   while (node && node !== root && isElement(node)) {
@@ -28,12 +28,15 @@ function getScrollParent(el: Element, root: ScrollElement = window) {
   return root;
 }
 
-export function useScrollParent(el: Ref<Element | undefined>) {
+export function useScrollParent(
+  el: Ref<Element | undefined>,
+  root: ScrollElement = window
+) {
   const scrollParent = ref<Element | Window>();
 
   onMounted(() => {
     if (el.value) {
-      scrollParent.value = getScrollParent(el.value);
+      scrollParent.value = getScrollParent(el.value, root);
     }
   });
 

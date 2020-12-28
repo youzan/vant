@@ -15,10 +15,10 @@
     {{ t('button5') }}
   </van-cell>
   <van-field
+    v-model="value"
     readonly
     clickable
     :label="t('bindValue')"
-    :model-value="value"
     :placeholder="t('clickToInput')"
     @touchstart.stop="keyboard = 'bindValue'"
   />

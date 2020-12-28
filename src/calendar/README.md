@@ -34,9 +34,9 @@ export default {
     const show = ref(false);
 
     const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
-    const onConfirm = (date) => {
+    const onConfirm = (value) => {
       show.value = false;
-      date.value = formatDate(date);
+      date.value = formatDate(value);
     };
 
     return {
@@ -95,8 +95,8 @@ export default {
     const show = ref(false);
 
     const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
-    const onConfirm = (date) => {
-      const [start, end] = date;
+    const onConfirm = (values) => {
+      const [start, end] = values;
       show.value = false;
       date.value = `${formatDate(start)} - ${formatDate(end)}`;
     };

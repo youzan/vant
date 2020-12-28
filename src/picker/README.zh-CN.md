@@ -240,10 +240,10 @@ export default {
 
 ```html
 <van-field
+  v-model="value"
   readonly
   clickable
   label="城市"
-  :value="value"
   placeholder="选择城市"
   @click="showPicker = true"
 />

@@ -120,7 +120,7 @@ export default createComponent({
     };
 
     const renderPlaceholder = () => {
-      if (loading.value && props.showLoading && inBrowser) {
+      if (loading.value && props.showLoading) {
         return <div class={bem('loading')}>{renderLoadingIcon()}</div>;
       }
       if (error.value && props.showError) {

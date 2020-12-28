@@ -131,7 +131,7 @@ export default {
 可以通过 `v-model` 绑定键盘当前输入值。
 
 ```html
-<van-field readonly clickable :value="value" @touchstart.stop="show = true" />
+<van-field v-model="value" readonly clickable @touchstart.stop="show = true" />
 <van-number-keyboard
   v-model="value"
   :show="show"

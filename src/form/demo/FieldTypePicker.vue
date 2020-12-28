@@ -1,10 +1,10 @@
 <template>
   <van-field
+    v-model="value"
     readonly
     clickable
     name="picker"
     :label="t('picker')"
-    :model-value="value"
     :placeholder="t('placeholder')"
     @click="showPicker = true"
   />
