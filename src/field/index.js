@@ -103,8 +103,17 @@ export default createComponent({
     const inputRef = ref();
     const childFieldValue = ref();
 
+    const { parent: form } = useParent(FORM_KEY);
+
+    const readonly = computed(() => {
+      return props.readonly || form.props.readonly;
+    });
+    const disabled = computed(() => {
+      return props.disabled || form.props.disabled;
+    });
+
     const showClear = computed(() => {
-      if (props.clearable && !props.readonly) {
+      if (props.clearable && !readonly.value) {
         const hasValue = isDef(props.modelValue) && props.modelValue !== '';
         const trigger =
           props.clearTrigger === 'always' ||
@@ -199,8 +208,6 @@ export default createComponent({
         });
       });
 
-    const { parent: form } = useParent(FORM_KEY);
-
     const validateWithTrigger = (trigger) => {
       if (form && props.rules) {
         const defaultTrigger = form.props.validateTrigger === trigger;
@@ -272,7 +279,7 @@ export default createComponent({
       emit('focus', event);
 
       // readonly not work in lagacy mobile safari
-      if (props.readonly) {
+      if (readonly.value) {
         blur();
       }
     };
@@ -403,8 +410,8 @@ export default createComponent({
         rows: props.rows,
         class: bem('control', inputAlign),
         value: props.modelValue,
-        disabled: props.disabled,
-        readonly: props.readonly,
+        disabled: disabled.value,
+        readonly: readonly.value,
         placeholder: props.placeholder,
         onBlur,
         onFocus,
@@ -554,7 +561,7 @@ export default createComponent({
           icon={props.leftIcon}
           class={bem({
             error: showError.value,
-            disabled: props.disabled,
+            disabled: disabled.value,
             [`label-${labelAlign}`]: labelAlign,
             'min-height': props.type === 'textarea' && !props.autosize,
           })}
