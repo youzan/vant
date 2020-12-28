@@ -22,10 +22,7 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
-    columnsFieldNames: {
-      type: Object,
-      default: () => {},
-    },
+    columnsFieldNames: Object,
     defaultIndex: {
       type: [Number, String],
       default: 0,
