@@ -112,8 +112,16 @@ export default createComponent({
   },
 
   computed: {
+    computedDisabled() {
+      return this.disabled || this.vanForm.disabled;
+    },
+
+    computedReadonly() {
+      return this.readonly || this.vanForm.readonly;
+    },
+
     showClear() {
-      if (this.clearable && !this.readonly) {
+      if (this.clearable && !this.computedReadonly) {
         const hasValue = isDef(this.value) && this.value !== '';
         const trigger =
           this.clearTrigger === 'always' ||
@@ -339,7 +347,7 @@ export default createComponent({
 
       // readonly not work in lagacy mobile safari
       /* istanbul ignore if */
-      if (this.readonly) {
+      if (this.computedReadonly) {
         this.blur();
       }
     },
@@ -441,8 +449,8 @@ export default createComponent({
         attrs: {
           ...this.$attrs,
           name: this.name,
-          disabled: this.disabled,
-          readonly: this.readonly,
+          disabled: this.computedDisabled,
+          readonly: this.computedReadonly,
           placeholder: this.placeholder,
         },
         on: this.listeners,
@@ -591,7 +599,7 @@ export default createComponent({
         arrowDirection={this.arrowDirection}
         class={bem({
           error: this.showError,
-          disabled: this.disabled,
+          disabled: this.computedDisabled,
           [`label-${labelAlign}`]: labelAlign,
           'min-height': this.type === 'textarea' && !this.autosize,
         })}

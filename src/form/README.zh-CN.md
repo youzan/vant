@@ -458,6 +458,8 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| disabled | 是否禁用输入框 | _boolean_ | `false` |
+| readonly | 是否只读 | _boolean_ | `false` |
 | label-width | 表单项 label 宽度，默认单位为`px` | _number \| string_ | `6.2em` |
 | label-align |  表单项 label 对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |
