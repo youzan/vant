@@ -44,17 +44,9 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const formattedColumns = ref([]);
-    const {
-      valueKey,
-      values: valuesKey,
-      defaultIndex: indexKey,
-      className: classKey,
-      children: childKey,
-    } = {
-      valueKey: props.valueKey, // 向下兼容
+    const { text, values: valuesKey, children: childKey } = {
+      text: props.valueKey, // 向下兼容
       values: 'values',
-      defaultIndex: 'defaultIndex',
-      className: 'className',
       children: 'children',
       ...(props.columnsFieldNames || {}),
     };
@@ -85,7 +77,7 @@ export default createComponent({
 
       while (cursor && cursor[childKey]) {
         const children = cursor[childKey];
-        let defaultIndex = cursor[indexKey] ?? +props.defaultIndex;
+        let defaultIndex = cursor.defaultIndex ?? +props.defaultIndex;
 
         while (children[defaultIndex] && children[defaultIndex].disabled) {
           if (defaultIndex < children.length - 1) {
@@ -98,8 +90,8 @@ export default createComponent({
 
         formatted.push({
           [valuesKey]: cursor[childKey],
-          [classKey]: cursor[classKey],
-          [indexKey]: defaultIndex,
+          className: cursor.className,
+          defaultIndex,
         });
 
         cursor = children[defaultIndex];
@@ -142,7 +134,7 @@ export default createComponent({
       while (cursor && cursor[childKey]) {
         columnIndex++;
         setColumnValues(columnIndex, cursor[childKey]);
-        cursor = cursor[childKey][cursor[indexKey] || 0];
+        cursor = cursor[childKey][cursor.defaultIndex || 0];
       }
     };
 
@@ -276,11 +268,11 @@ export default createComponent({
         <PickerColumn
           v-slots={{ option: slots.option }}
           readonly={props.readonly}
-          valueKey={valueKey}
+          valueKey={text}
           allowHtml={props.allowHtml}
-          className={item[classKey]}
+          className={item.className}
           itemHeight={itemHeight.value}
-          defaultIndex={item[indexKey] ?? +props.defaultIndex}
+          defaultIndex={item.defaultIndex ?? +props.defaultIndex}
           swipeDuration={props.swipeDuration}
           visibleItemCount={props.visibleItemCount}
           initialOptions={item[valuesKey]}

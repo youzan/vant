@@ -326,7 +326,7 @@ export default {
     ];
 
     const customFieldName = {
-      valueKey: 'cityName',
+      text: 'cityName',
       children: 'cities',
     };
 
@@ -345,7 +345,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | columns | 对象数组，配置每一列显示的数据 | _Column[]_ | `[]` |
-| columns-field-names | 自定义`columns`结构中的字段 | _object_ | `{ valueKey: 'text', values: 'values', defaultIndex: 'defaultIndex', className: 'className', children: 'children' }` |
+| columns-field-names | 自定义`columns`结构中的字段 | _object_ | `{ text: 'text', values: 'values', children: 'children' }` |
 | title | 顶部栏标题 | _string_ | - |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |
