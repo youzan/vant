@@ -201,7 +201,9 @@ export default createComponent({
         input.value = formatted;
       }
 
-      setValue(formatted);
+      // perfer number type
+      const isNumeric = formatted === String(+formatted);
+      setValue(isNumeric ? +formatted : formatted);
     };
 
     const onFocus = (event: Event) => {
@@ -290,7 +292,7 @@ export default createComponent({
       () => props.modelValue,
       (value) => {
         if (!equal(value, current.value)) {
-          current.value = value!;
+          current.value = format(value!);
         }
       }
     );
