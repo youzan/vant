@@ -151,7 +151,7 @@ export default {
       showPicker: false,
       fieldValue: '',
       customFieldName: {
-        valueKey: 'cityName',
+        text: 'cityName',
         children: 'cities',
       },
     });
