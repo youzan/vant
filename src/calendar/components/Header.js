@@ -16,7 +16,7 @@ export default createComponent({
     const renderTitle = () => {
       if (props.showTitle) {
         const text = props.title || t('title');
-        const title = slots.title ? slots.title : text;
+        const title = slots.title ? slots.title() : text;
         return <div class={bem('header-title')}>{title}</div>;
       }
     };

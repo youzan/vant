@@ -503,14 +503,13 @@ export default createComponent({
     );
 
     watch(() => props.show, init);
+    watch([() => props.type, () => props.minDate, () => props.maxDate], reset);
     watch(
-      [
-        () => props.type,
-        () => props.minDate,
-        () => props.maxDate,
-        () => props.defaultDate,
-      ],
-      reset
+      () => props.defaultDate,
+      (value) => {
+        state.currentDate = value;
+        scrollIntoView();
+      }
     );
 
     useExpose({ reset });
