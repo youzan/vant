@@ -27,6 +27,9 @@
   </demo-block>
 
   <demo-block :title="t('textColor')">
+    <van-loading size="24px" vertical color="#0094ff">
+      {{ t('loading') }}
+    </van-loading>
     <van-loading size="24px" vertical text-color="#0094ff">
       {{ t('loading') }}
     </van-loading>

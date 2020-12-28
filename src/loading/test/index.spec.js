@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils';
 import Loading from '..';
+import { later } from '../../../test';
 
 test('should change loading size when using size prop', () => {
   const wrapper = mount(Loading, {
@@ -28,7 +29,7 @@ test('should change text font-size when using text-size prop', () => {
   );
 });
 
-test('should change text color when using text-color prop', () => {
+test('should change text color when using text-color prop', async () => {
   const wrapper = mount(Loading, {
     props: {
       textColor: 'red',
@@ -39,9 +40,11 @@ test('should change text color when using text-color prop', () => {
   });
 
   expect(wrapper.find('.van-loading__text').element.style.color).toBe('red');
+  await later();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should change text color when using color prop', () => {
+test('should change text color when using color prop', async () => {
   const wrapper = mount(Loading, {
     props: {
       color: 'green',
@@ -52,9 +55,11 @@ test('should change text color when using color prop', () => {
   });
 
   expect(wrapper.find('.van-loading__text').element.style.color).toBe('green');
+  await later();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should change text color to textColor when using color & textColor prop', () => {
+test('should change text color to textColor when using color & textColor prop', async () => {
   const wrapper = mount(Loading, {
     props: {
       color: 'green',
@@ -66,4 +71,6 @@ test('should change text color to textColor when using color & textColor prop', 
   });
 
   expect(wrapper.find('.van-loading__text').element.style.color).toBe('red');
+  await later();
+  expect(wrapper.html()).toMatchSnapshot();
 });
