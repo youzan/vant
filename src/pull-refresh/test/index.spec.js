@@ -1,49 +1,41 @@
 import PullRefresh from '..';
 import { mount, later, trigger, triggerDrag } from '../../../test';
 
-test('change head content when pulling down', async () => {
-  const wrapper = mount(PullRefresh, {
-    props: {
-      value: false,
-    },
-    listeners: {
-      input(value) {
-        wrapper.setProps({ value });
-      },
-    },
-  });
-
+test('should render different head content in different pulling status', async () => {
+  const wrapper = mount(PullRefresh);
   const track = wrapper.find('.van-pull-refresh__track');
 
   // pulling
   trigger(track, 'touchstart', 0, 0);
   trigger(track, 'touchmove', 0, 20);
+  await later();
   expect(wrapper.html()).toMatchSnapshot();
 
   // loosing
   trigger(track, 'touchmove', 0, 100);
+  await later();
   expect(wrapper.html()).toMatchSnapshot();
 
   // loading
   trigger(track, 'touchend', 0, 100);
+  await later();
   expect(wrapper.html()).toMatchSnapshot();
 
   // still loading
   triggerDrag(track, 0, 100);
+  await later();
   expect(wrapper.html()).toMatchSnapshot();
 
-  expect(wrapper.emitted('input')).toBeTruthy();
-  expect(wrapper.emitted('refresh')).toBeFalsy();
-
-  await later();
+  expect(wrapper.emitted('update:modelValue')).toBeTruthy();
   expect(wrapper.emitted('refresh')).toBeTruthy();
 
-  // end loading
-  wrapper.vm.value = false;
+  // // end loading
+  await wrapper.setProps({ modelValue: true });
+  await wrapper.setProps({ modelValue: false });
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('custom content by slots', async () => {
+test('should render status slots correctly', async () => {
   const wrapper = mount(PullRefresh, {
     slots: {
       pulling({ distance }) {
@@ -63,58 +55,47 @@ test('custom content by slots', async () => {
   // pulling
   trigger(track, 'touchstart', 0, 0);
   trigger(track, 'touchmove', 0, 20);
+  await later();
   expect(wrapper.html()).toMatchSnapshot();
 
   // loosing
   trigger(track, 'touchmove', 0, 75);
   trigger(track, 'touchmove', 0, 100);
+  await later();
   expect(wrapper.html()).toMatchSnapshot();
 
   // loading
   trigger(track, 'touchend', 0, 100);
+  await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('pull a short distance', () => {
-  const wrapper = mount(PullRefresh, {
-    props: {
-      value: false,
-    },
-  });
-
+test('shoud not emit update:modelValue event after pulling a short distance', () => {
+  const wrapper = mount(PullRefresh);
   const track = wrapper.find('.van-pull-refresh__track');
   triggerDrag(track, 0, 10);
-  expect(wrapper.emitted('input')).toBeFalsy();
+  expect(wrapper.emitted('update:modelValue')).toBeFalsy();
 });
 
-test('not in page top', () => {
-  const wrapper = mount(PullRefresh, {
-    props: {
-      value: false,
-    },
-  });
-
-  window.scrollTop = 100;
-
+test('should not trigger pull refresh when not in page top', async () => {
+  const wrapper = mount(PullRefresh);
   const track = wrapper.find('.van-pull-refresh__track');
-  // ignore touch event when not at page top
-  triggerDrag(track, 0, 100);
-  window.scrollTop = 0;
-  trigger(track, 'touchmove', 0, 100);
 
-  expect(wrapper.html()).toMatchSnapshot();
+  // ignore touch event when not at page top
+  window.scrollTop = 1;
+  triggerDrag(track, 0, 100);
+  expect(wrapper.emitted('update:modelValue')).toBeFalsy();
+
+  window.scrollTop = 0;
+  triggerDrag(track, 0, 100);
+  expect(wrapper.emitted('update:modelValue')).toBeTruthy();
 });
 
-test('render success text', async () => {
+test('should render success text correctly', async () => {
   const wrapper = mount(PullRefresh, {
     props: {
       successText: 'success',
       successDuration: 0,
-    },
-    listeners: {
-      input(value) {
-        wrapper.setProps({ value });
-      },
     },
   });
 
@@ -124,10 +105,11 @@ test('render success text', async () => {
   await later();
 
   // loading
-  expect(wrapper.vm.value).toBeTruthy();
-  wrapper.setProps({ value: false });
+  expect(wrapper.emitted('update:modelValue')[0][0]).toBeTruthy();
+  await wrapper.setProps({ modelValue: true });
 
   // success
+  await wrapper.setProps({ modelValue: false });
   expect(wrapper.html()).toMatchSnapshot();
 
   // normal
@@ -135,25 +117,21 @@ test('render success text', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('render success slot', async () => {
+test('should render success slot correctly', async () => {
   const wrapper = mount(PullRefresh, {
     slots: {
       success: () => 'Custom Success',
     },
-    listeners: {
-      input(value) {
-        wrapper.setProps({ value });
-      },
-    },
   });
 
+  // loading
   const track = wrapper.find('.van-pull-refresh__track');
   triggerDrag(track, 0, 100);
+  expect(wrapper.emitted('update:modelValue')[0][0]).toBeTruthy();
+  await wrapper.setProps({ modelValue: true });
 
-  await later();
-
-  expect(wrapper.vm.value).toBeTruthy();
-  wrapper.setProps({ value: false });
+  // success
+  await wrapper.setProps({ modelValue: false });
   expect(wrapper.html()).toMatchSnapshot();
 });
 
@@ -163,6 +141,6 @@ test('should set height when using head-height', async () => {
       headHeight: 100,
     },
   });
-
-  expect(wrapper.html()).toMatchSnapshot();
+  const head = wrapper.find('.van-pull-refresh__head');
+  expect(head.element.style.height).toEqual('100px');
 });
