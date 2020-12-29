@@ -253,6 +253,28 @@ export default {
 };
 ```
 
+### 设置默认时间
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  :defaultValue="defaultValue"
+  type="date"
+  title="默认时间"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      currentDate: new Date(),
+      defaultValue: new Date(2023, 10, 10, 0, 0),
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -272,6 +294,7 @@ export default {
 | item-height `v2.8.6` | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | visible-item-count | 可见的选项个数 | _number \| string_ | `6` |
 | swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | _number \| string_ | `1000` |
+| default-value | 默认时间，精确到分钟 | _Date_ | - |
 
 ### DatePicker Props
 

@@ -82,6 +82,16 @@
         :formatter="formatter"
       />
     </demo-block>
+
+    <demo-block card :title="t('defaultValue')">
+      <van-datetime-picker
+          v-model="value.date"
+          type="date"
+          :title="t('defaultValue')"
+          :default-value="defaultValue"
+      />
+    </demo-block>
+
   </demo-section>
 </template>
 
@@ -100,6 +110,7 @@ export default {
       yearMonthType: '选择年月',
       optionFilter: '选项过滤器',
       sortColumns: '自定义列排序',
+      defaultValue: '设置默认时间',
     },
     'en-US': {
       day: ' Day',
@@ -113,6 +124,7 @@ export default {
       yearMonthType: 'Choose Year-Month',
       optionFilter: 'Option Filter',
       sortColumns: 'Columns Order',
+      defaultValue: 'Default Value',
     },
   },
 
@@ -120,6 +132,7 @@ export default {
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
+      defaultValue: new Date(2023, 11, 12, 0, 0),
       value: {
         date: null,
         time: '12:00',

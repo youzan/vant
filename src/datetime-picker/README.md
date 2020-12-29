@@ -244,6 +244,28 @@ export default {
 };
 ```
 
+### Default Value
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  :defaultValue="defaultValue"
+  type="date"
+  title="Default Value"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      currentDate: new Date(),
+      defaultValue: new Date(2023, 10, 10, 0, 0),
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -263,6 +285,7 @@ export default {
 | item-height `v2.8.6` | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-item-count | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
+| default-date  | Default date    | _Date_ | -     |
 
 ### DatePicker Props
 
