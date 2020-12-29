@@ -64,11 +64,18 @@
       />
     </van-popup>
   </demo-block>
+  <demo-block card :title="t('customChildrenKey')">
+    <van-picker
+      :title="t('title')"
+      :columns="t('customChildrenColumns')"
+      :columns-field-names="customFieldName"
+    />
+  </demo-block>
 </template>
 
 <script>
 import { ref, computed, reactive, toRefs } from 'vue';
-import { dateColumns, cascadeColumns } from './data';
+import { dateColumns, cascadeColumns, cascadeColumnsCustomKey } from './data';
 import { useTranslate } from '@demo/use-translate';
 import Toast from '../../toast';
 
@@ -85,6 +92,8 @@ const i18n = {
     cascadeColumns: cascadeColumns['zh-CN'],
     multipleColumns: '多列选择',
     setColumnValues: '动态设置选项',
+    customChildrenKey: '自定义Columns字段',
+    customChildrenColumns: cascadeColumnsCustomKey['zh-CN'],
     textColumns: [
       '杭州',
       '宁波',
@@ -118,6 +127,8 @@ const i18n = {
     cascadeColumns: cascadeColumns['en-US'],
     multipleColumns: 'Multiple Columns',
     setColumnValues: 'Set Column Values',
+    customChildrenKey: 'Custom Columns Fields',
+    customChildrenColumns: cascadeColumnsCustomKey['en-US'],
     textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
     disabledColumns: [
       { text: 'Delaware', disabled: true },
@@ -139,6 +150,10 @@ export default {
     const state = reactive({
       showPicker: false,
       fieldValue: '',
+      customFieldName: {
+        text: 'cityName',
+        children: 'cities',
+      },
     });
 
     const columns = computed(() => {

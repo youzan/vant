@@ -79,3 +79,62 @@ export const cascadeColumns = {
     },
   ],
 };
+
+export const cascadeColumnsCustomKey = {
+  'zh-CN': [
+    {
+      cityName: '浙江',
+      cities: [
+        {
+          cityName: '杭州',
+          cities: [{ cityName: '西湖区' }, { cityName: '余杭区' }],
+        },
+        {
+          cityName: '温州',
+          cities: [{ cityName: '鹿城区' }, { cityName: '瓯海区' }],
+        },
+      ],
+    },
+    {
+      cityName: '福建',
+      cities: [
+        {
+          cityName: '福州',
+          cities: [{ cityName: '鼓楼区' }, { cityName: '台江区' }],
+        },
+        {
+          cityName: '厦门',
+          cities: [{ cityName: '思明区' }, { cityName: '海沧区' }],
+        },
+      ],
+    },
+  ],
+  'en-US': [
+    {
+      cityName: 'Zhejiang',
+      cities: [
+        {
+          cityName: 'Hangzhou',
+          cities: [{ cityName: 'Xihu' }, { cityName: 'Yuhang' }],
+        },
+        {
+          cityName: 'Wenzhou',
+          cities: [{ cityName: 'Lucheng' }, { cityName: 'Ouhai' }],
+        },
+      ],
+    },
+    {
+      cityName: 'Fujian',
+      cities: [
+        {
+          cityName: 'Fuzhou',
+          cities: [{ cityName: 'Gulou' }, { cityName: 'Taijiang' }],
+        },
+        {
+          cityName: 'Xiamen',
+          cities: [{ cityName: 'Siming' }, { cityName: 'Haicang' }],
+        },
+      ],
+    },
+  ],
+};

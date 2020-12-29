@@ -258,6 +258,63 @@ export default {
 };
 ```
 
+### Custom Columns Field
+
+```html
+<van-picker
+  :title="Title"
+  :columns="columns"
+  :columns-field-names="customFieldName"
+/>
+```
+
+```js
+import { reactive } from 'vue';
+
+export default {
+  setup() {
+    const columns = [
+      {
+        cityName: 'Zhejiang',
+        cities: [
+          {
+            cityName: 'Hangzhou',
+            cities: [{ cityName: 'Xihu' }, { cityName: 'Yuhang' }],
+          },
+          {
+            cityName: 'Wenzhou',
+            cities: [{ cityName: 'Lucheng' }, { cityName: 'Ouhai' }],
+          },
+        ],
+      },
+      {
+        cityName: 'Fujian',
+        cities: [
+          {
+            cityName: 'Fuzhou',
+            cities: [{ cityName: 'Gulou' }, { cityName: 'Taijiang' }],
+          },
+          {
+            cityName: 'Xiamen',
+            cities: [{ cityName: 'Siming' }, { cityName: 'Haicang' }],
+          },
+        ],
+      },
+    ];
+
+    const customFieldName = {
+      text: 'cityName',
+      children: 'cities',
+    };
+
+    return {
+      columns,
+      customFieldName,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -265,6 +322,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | columns | Columns data | _Column[]_ | `[]` |
+| columns-field-names | custom columns field | _object_ | `{ text: 'text', values: 'values', children: 'children' }` |
 | title | Toolbar title | _string_ | - |
 | confirm-button-text | Text of confirm button | _string_ | `Confirm` |
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |

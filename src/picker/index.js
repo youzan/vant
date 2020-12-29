@@ -22,6 +22,7 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
+    columnsFieldNames: Object,
     defaultIndex: {
       type: [Number, String],
       default: 0,
@@ -40,6 +41,12 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const formattedColumns = ref([]);
+    const { text, values: valuesKey, children: childKey } = {
+      text: props.valueKey, // 向下兼容
+      values: 'values',
+      children: 'children',
+      ...(props.columnsFieldNames || {}),
+    };
 
     const { children, linkChildren } = useChildren(PICKER_KEY);
 
@@ -51,10 +58,10 @@ export default createComponent({
       const { columns } = props;
       const firstColumn = columns[0] || {};
 
-      if (firstColumn.children) {
+      if (firstColumn[childKey]) {
         return 'cascade';
       }
-      if (firstColumn.values) {
+      if (firstColumn[valuesKey]) {
         return 'object';
       }
       return 'text';
@@ -63,10 +70,10 @@ export default createComponent({
     const formatCascade = () => {
       const formatted = [];
 
-      let cursor = { children: props.columns };
+      let cursor = { [childKey]: props.columns };
 
-      while (cursor && cursor.children) {
-        const { children } = cursor;
+      while (cursor && cursor[childKey]) {
+        const children = cursor[childKey];
         let defaultIndex = cursor.defaultIndex ?? +props.defaultIndex;
 
         while (children[defaultIndex] && children[defaultIndex].disabled) {
@@ -79,7 +86,7 @@ export default createComponent({
         }
 
         formatted.push({
-          values: cursor.children,
+          [valuesKey]: cursor[childKey],
           className: cursor.className,
           defaultIndex,
         });
@@ -94,7 +101,7 @@ export default createComponent({
       const { columns } = props;
 
       if (dataType.value === 'text') {
-        formattedColumns.value = [{ values: columns }];
+        formattedColumns.value = [{ [valuesKey]: columns }];
       } else if (dataType.value === 'cascade') {
         formatCascade();
       } else {
@@ -114,17 +121,17 @@ export default createComponent({
     };
 
     const onCascadeChange = (columnIndex) => {
-      let cursor = { children: props.columns };
+      let cursor = { [childKey]: props.columns };
       const indexes = getIndexes();
 
       for (let i = 0; i <= columnIndex; i++) {
-        cursor = cursor.children[indexes[i]];
+        cursor = cursor[childKey][indexes[i]];
       }
 
-      while (cursor && cursor.children) {
+      while (cursor && cursor[childKey]) {
         columnIndex++;
-        setColumnValues(columnIndex, cursor.children);
-        cursor = cursor.children[cursor.defaultIndex || 0];
+        setColumnValues(columnIndex, cursor[childKey]);
+        cursor = cursor[childKey][cursor.defaultIndex || 0];
       }
     };
 
@@ -258,14 +265,14 @@ export default createComponent({
         <PickerColumn
           v-slots={{ option: slots.option }}
           readonly={props.readonly}
-          valueKey={props.valueKey}
+          valueKey={text}
           allowHtml={props.allowHtml}
           className={item.className}
           itemHeight={itemHeight.value}
           defaultIndex={item.defaultIndex ?? +props.defaultIndex}
           swipeDuration={props.swipeDuration}
           visibleItemCount={props.visibleItemCount}
-          initialOptions={item.values}
+          initialOptions={item[valuesKey]}
           onChange={() => {
             onChange(columnIndex);
           }}

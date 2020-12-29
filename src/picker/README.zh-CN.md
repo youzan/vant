@@ -281,6 +281,63 @@ export default {
 };
 ```
 
+### 自定义 Columns 的结构
+
+```html
+<van-picker
+  :title="标题"
+  :columns="columns"
+  :columns-field-names="customFieldName"
+/>
+```
+
+```js
+import { reactive } from 'vue';
+
+export default {
+  setup() {
+    const columns = [
+      {
+        cityName: '浙江',
+        cities: [
+          {
+            cityName: '杭州',
+            cities: [{ cityName: '西湖区' }, { cityName: '余杭区' }],
+          },
+          {
+            cityName: '温州',
+            cities: [{ cityName: '鹿城区' }, { cityName: '瓯海区' }],
+          },
+        ],
+      },
+      {
+        cityName: '福建',
+        cities: [
+          {
+            cityName: '福州',
+            cities: [{ cityName: '鼓楼区' }, { cityName: '台江区' }],
+          },
+          {
+            cityName: '厦门',
+            cities: [{ cityName: '思明区' }, { cityName: '海沧区' }],
+          },
+        ],
+      },
+    ];
+
+    const customFieldName = {
+      text: 'cityName',
+      children: 'cities',
+    };
+
+    return {
+      columns,
+      customFieldName,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -288,6 +345,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | columns | 对象数组，配置每一列显示的数据 | _Column[]_ | `[]` |
+| columns-field-names | 自定义`columns`结构中的字段 | _object_ | `{ text: 'text', values: 'values', children: 'children' }` |
 | title | 顶部栏标题 | _string_ | - |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |
