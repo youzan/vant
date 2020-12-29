@@ -18,11 +18,11 @@ const [createComponent, bem, t] = createNamespace('picker');
 export default createComponent({
   props: {
     ...pickerProps,
+    columnsFieldNames: Object,
     columns: {
       type: Array,
       default: () => [],
     },
-    columnsFieldNames: Object,
     defaultIndex: {
       type: [Number, String],
       default: 0,
@@ -41,7 +41,8 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const formattedColumns = ref([]);
-    const { text, values: valuesKey, children: childKey } = {
+
+    const { text: textKey, values: valuesKey, children: childrenKey } = {
       text: props.valueKey, // 向下兼容
       values: 'values',
       children: 'children',
@@ -58,7 +59,7 @@ export default createComponent({
       const { columns } = props;
       const firstColumn = columns[0] || {};
 
-      if (firstColumn[childKey]) {
+      if (firstColumn[childrenKey]) {
         return 'cascade';
       }
       if (firstColumn[valuesKey]) {
@@ -70,10 +71,10 @@ export default createComponent({
     const formatCascade = () => {
       const formatted = [];
 
-      let cursor = { [childKey]: props.columns };
+      let cursor = { [childrenKey]: props.columns };
 
-      while (cursor && cursor[childKey]) {
-        const children = cursor[childKey];
+      while (cursor && cursor[childrenKey]) {
+        const children = cursor[childrenKey];
         let defaultIndex = cursor.defaultIndex ?? +props.defaultIndex;
 
         while (children[defaultIndex] && children[defaultIndex].disabled) {
@@ -86,7 +87,7 @@ export default createComponent({
         }
 
         formatted.push({
-          [valuesKey]: cursor[childKey],
+          [valuesKey]: cursor[childrenKey],
           className: cursor.className,
           defaultIndex,
         });
@@ -121,17 +122,17 @@ export default createComponent({
     };
 
     const onCascadeChange = (columnIndex) => {
-      let cursor = { [childKey]: props.columns };
+      let cursor = { [childrenKey]: props.columns };
       const indexes = getIndexes();
 
       for (let i = 0; i <= columnIndex; i++) {
-        cursor = cursor[childKey][indexes[i]];
+        cursor = cursor[childrenKey][indexes[i]];
       }
 
-      while (cursor && cursor[childKey]) {
+      while (cursor && cursor[childrenKey]) {
         columnIndex++;
-        setColumnValues(columnIndex, cursor[childKey]);
-        cursor = cursor[childKey][cursor.defaultIndex || 0];
+        setColumnValues(columnIndex, cursor[childrenKey]);
+        cursor = cursor[childrenKey][cursor.defaultIndex || 0];
       }
     };
 
@@ -264,8 +265,8 @@ export default createComponent({
       formattedColumns.value.map((item, columnIndex) => (
         <PickerColumn
           v-slots={{ option: slots.option }}
+          textKey={textKey}
           readonly={props.readonly}
-          valueKey={text}
           allowHtml={props.allowHtml}
           className={item.className}
           itemHeight={itemHeight.value}

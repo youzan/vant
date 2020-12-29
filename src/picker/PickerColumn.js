@@ -34,7 +34,7 @@ function isOptionDisabled(option) {
 
 export default createComponent({
   props: {
-    valueKey: String,
+    textKey: String,
     readonly: Boolean,
     allowHtml: Boolean,
     className: String,
@@ -126,8 +126,8 @@ export default createComponent({
     };
 
     const getOptionText = (option) => {
-      if (isObject(option) && props.valueKey in option) {
-        return option[props.valueKey];
+      if (isObject(option) && props.textKey in option) {
+        return option[props.textKey];
       }
       return option;
     };
