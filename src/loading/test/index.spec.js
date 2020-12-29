@@ -27,3 +27,43 @@ test('should change text font-size when using text-size prop', () => {
     '20px'
   );
 });
+
+test('should change text color when using text-color prop', async () => {
+  const wrapper = mount(Loading, {
+    props: {
+      textColor: 'red',
+    },
+    slots: {
+      default: () => 'Loading Text',
+    },
+  });
+
+  expect(wrapper.find('.van-loading__text').element.style.color).toBe('red');
+});
+
+test('should change text color when using color prop', async () => {
+  const wrapper = mount(Loading, {
+    props: {
+      color: 'green',
+    },
+    slots: {
+      default: () => 'Loading Text',
+    },
+  });
+
+  expect(wrapper.find('.van-loading__text').element.style.color).toBe('green');
+});
+
+test('should change text color to textColor when using color & textColor prop', async () => {
+  const wrapper = mount(Loading, {
+    props: {
+      color: 'green',
+      textColor: 'red',
+    },
+    slots: {
+      default: () => 'Loading Text',
+    },
+  });
+
+  expect(wrapper.find('.van-loading__text').element.style.color).toBe('red');
+});
