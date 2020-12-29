@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should disable buttons and input when using disabled prop 1`] = `
+<div class="van-stepper">
+  <button type="button"
+          class="van-stepper__minus van-stepper__minus--disabled"
+  >
+  </button>
+  <input type="text"
+         role="spinbutton"
+         class="van-stepper__input"
+         disabled
+         inputmode="decimal"
+         aria-valuemax="Infinity"
+         aria-valuemin="1"
+         aria-valuenow="1"
+  >
+  <button type="button"
+          class="van-stepper__plus van-stepper__plus--disabled"
+  >
+  </button>
+</div>
+`;
+
+exports[`should update input height and button size when using button-size prop 1`] = `
+<div class="van-stepper">
+  <button type="button"
+          style="width: 2rem; height: 2rem;"
+          class="van-stepper__minus van-stepper__minus--disabled"
+  >
+  </button>
+  <input type="text"
+         role="spinbutton"
+         class="van-stepper__input"
+         style="height: 2rem;"
+         inputmode="decimal"
+         aria-valuemax="Infinity"
+         aria-valuemin="1"
+         aria-valuenow="1"
+  >
+  <button type="button"
+          style="width: 2rem; height: 2rem;"
+          class="van-stepper__plus"
+  >
+  </button>
+</div>
+`;
