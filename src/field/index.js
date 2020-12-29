@@ -37,8 +37,14 @@ export default createComponent({
     ...cellProps,
     name: String,
     rules: Array,
-    disabled: Boolean,
-    readonly: Boolean,
+    disabled: {
+      type: Boolean,
+      default: null,
+    },
+    readonly: {
+      type: Boolean,
+      default: null,
+    },
     autosize: [Boolean, Object],
     leftIcon: String,
     rightIcon: String,
@@ -113,11 +119,11 @@ export default createComponent({
 
   computed: {
     computedDisabled() {
-      return this.disabled || this.vanForm.disabled;
+      return this.getProp('disabled');
     },
 
     computedReadonly() {
-      return this.readonly || this.vanForm.readonly;
+      return this.getProp('readonly');
     },
 
     showClear() {
