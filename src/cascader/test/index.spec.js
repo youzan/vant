@@ -117,7 +117,7 @@ test('should update tabs when previous tab is clicked', async () => {
   });
 
   await later();
-  wrapper.findAll('.van-cascader__option')[1].trigger('click');
+  await wrapper.findAll('.van-cascader__option')[1].trigger('click');
   await later();
   expect(wrapper.html()).toMatchSnapshot();
 });

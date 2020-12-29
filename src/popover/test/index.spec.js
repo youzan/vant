@@ -18,11 +18,11 @@ test('should toggle popover when trigger is "click" and the reference element is
     },
   });
 
-  wrapper.find('.reference').trigger('click');
+  await wrapper.find('.reference').trigger('click');
   expect(wrapper.emitted('update:show')).toBeFalsy();
 
   await wrapper.setProps({ trigger: 'click' });
-  wrapper.find('.reference').trigger('click');
+  await wrapper.find('.reference').trigger('click');
   expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
 });
 
@@ -36,7 +36,7 @@ test('should emit select event when clicking the action', async () => {
   });
 
   await later();
-  wrapper.find('.van-popover__action').trigger('click');
+  await wrapper.find('.van-popover__action').trigger('click');
   expect(wrapper.emitted('select')[0]).toEqual([baseActions[0], 0]);
 });
 
@@ -62,11 +62,11 @@ test('should close popover when clicking the action', async () => {
     },
   });
 
-  wrapper.find('.van-popover__action').trigger('click');
+  await wrapper.find('.van-popover__action').trigger('click');
   expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
 
   await wrapper.setProps({ closeOnClickAction: false });
-  wrapper.find('.van-popover__action').trigger('click');
+  await wrapper.find('.van-popover__action').trigger('click');
   expect(wrapper.emitted('update:show').length).toEqual(1);
 });
 

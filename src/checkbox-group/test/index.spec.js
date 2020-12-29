@@ -22,15 +22,13 @@ test('should emit "update:modelValue" event when checkbox is clicked', async () 
 
   const items = wrapper.findAll('.van-checkbox');
 
-  items[0].trigger('click');
+  await items[0].trigger('click');
   expect(wrapper.vm.value).toEqual(['a']);
 
-  await nextTick();
-  items[1].trigger('click');
+  await items[1].trigger('click');
   expect(wrapper.vm.value).toEqual(['a', 'b']);
 
-  await nextTick();
-  items[0].trigger('click');
+  await items[0].trigger('click');
   expect(wrapper.vm.value).toEqual(['b']);
 });
 
