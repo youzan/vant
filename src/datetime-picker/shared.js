@@ -58,11 +58,7 @@ export const TimePickerMixin = {
 
     innerValue(val, oldVal) {
       if (!oldVal) {
-        if (this.defaultValue) {
-          this.$emit('input', this.defaultValue);
-        } else {
-          this.$emit("input", null);
-        }
+        this.$emit('input', null);
       } else {
         this.$emit('input', val)
       }
