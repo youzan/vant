@@ -214,7 +214,7 @@ export default {
 <van-datetime-picker
   v-model="currentDate"
   type="date"
-  title="自定义列排序"
+  title="Columns Order"
   :columns-order="['month', 'day', 'year']"
   :formatter="formatter"
 />
