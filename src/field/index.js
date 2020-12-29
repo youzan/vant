@@ -40,8 +40,14 @@ export default createComponent({
     rows: [Number, String],
     name: String,
     rules: Array,
-    disabled: Boolean,
-    readonly: Boolean,
+    disabled: {
+      type: Boolean,
+      default: null,
+    },
+    readonly: {
+      type: Boolean,
+      default: null,
+    },
     autosize: [Boolean, Object],
     leftIcon: String,
     rightIcon: String,
@@ -105,11 +111,21 @@ export default createComponent({
 
     const { parent: form } = useParent(FORM_KEY);
 
+    const getProp = (key) => {
+      if (isDef(props[key])) {
+        return props[key];
+      }
+      if (form && isDef(form.props[key])) {
+        return form.props[key];
+      }
+    };
+
     const readonly = computed(() => {
-      return props.readonly || form.props.readonly;
+      return getProp('readonly');
     });
+
     const disabled = computed(() => {
-      return props.disabled || form.props.disabled;
+      return getProp('disabled');
     });
 
     const showClear = computed(() => {
@@ -318,15 +334,6 @@ export default createComponent({
         return true;
       }
     });
-
-    const getProp = (key) => {
-      if (isDef(props[key])) {
-        return props[key];
-      }
-      if (form && isDef(form.props[key])) {
-        return form.props[key];
-      }
-    };
 
     const labelStyle = computed(() => {
       const labelWidth = getProp('labelWidth');
