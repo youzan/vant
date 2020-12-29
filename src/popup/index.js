@@ -7,8 +7,8 @@ import {
   onMounted,
   Transition,
   onActivated,
-  onBeforeMount,
   onDeactivated,
+  onBeforeUnmount,
 } from 'vue';
 import { createNamespace, isDef } from '../utils';
 
@@ -280,7 +280,7 @@ export default createComponent({
       }
     });
 
-    onBeforeMount(() => {
+    onBeforeUnmount(() => {
       if (opened) {
         unlockScroll();
       }
