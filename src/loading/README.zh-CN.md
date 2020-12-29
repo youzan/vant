@@ -68,10 +68,10 @@ app.use(Loading);
 
 ```html
 <!-- 可修改文案和加载图标的颜色 -->
-<van-loading color="#1989fa" />
+<van-loading color="#0094ff" />
 
 <!-- 只修改文案颜色 -->
-<van-loading text-color="#1989fa" />
+<van-loading text-color="#0094ff" />
 ```
 
 ## API

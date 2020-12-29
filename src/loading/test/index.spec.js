@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils';
 import Loading from '..';
-import { later } from '../../../test';
 
 test('should change loading size when using size prop', () => {
   const wrapper = mount(Loading, {
@@ -40,8 +39,6 @@ test('should change text color when using text-color prop', async () => {
   });
 
   expect(wrapper.find('.van-loading__text').element.style.color).toBe('red');
-  await later();
-  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should change text color when using color prop', async () => {
@@ -55,8 +52,6 @@ test('should change text color when using color prop', async () => {
   });
 
   expect(wrapper.find('.van-loading__text').element.style.color).toBe('green');
-  await later();
-  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should change text color to textColor when using color & textColor prop', async () => {
@@ -71,6 +66,4 @@ test('should change text color to textColor when using color & textColor prop', 
   });
 
   expect(wrapper.find('.van-loading__text').element.style.color).toBe('red');
-  await later();
-  expect(wrapper.html()).toMatchSnapshot();
 });

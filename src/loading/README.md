@@ -54,10 +54,10 @@ use `color` or `text-color` to change text color.
 
 ```html
 <!-- the color of text and icon will be changed -->
-<van-loading color="#1989fa" />
+<van-loading color="#0094ff" />
 
 <!-- only change text color -->
-<van-loading text-color="#1989fa" />
+<van-loading text-color="#0094ff" />
 ```
 
 ## API
