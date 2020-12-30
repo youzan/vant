@@ -111,34 +111,6 @@ Use `title` prop to set keyboard title.
 />
 ```
 
-### Bind Value
-
-```html
-<van-field
-  readonly
-  clickable
-  :value="value"
-  @touchstart.native.stop="show = true"
-/>
-<van-number-keyboard
-  v-model="value"
-  :show="show"
-  :maxlength="6"
-  @blur="show = false"
-/>
-```
-
-```js
-export default {
-  data() {
-    return {
-      show: false,
-      value: '',
-    };
-  },
-};
-```
-
 ### Number Random
 
 Use `number-random` prop to random sort number keypads.
@@ -174,6 +146,34 @@ export default {
 };
 ```
 
+
+### Bind Value
+
+```html
+<van-field
+  readonly
+  clickable
+  :value="value"
+  @touchstart.native.stop="show = true"
+/>
+<van-number-keyboard
+  v-model="value"
+  :show="show"
+  :maxlength="6"
+  @blur="show = false"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false,
+      value: '',
+    };
+  },
+};
+```
 
 ## API
 
