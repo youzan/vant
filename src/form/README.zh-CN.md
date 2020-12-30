@@ -504,14 +504,14 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| disabled | 是否禁用输入框 | _boolean_ | `false` |
-| readonly | 是否只读 | _boolean_ | `false` |
 | label-width | 表单项 label 宽度，默认单位为`px` | _number \| string_ | `6.2em` |
 | label-align |  表单项 label 对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | validate-trigger `v2.5.2` | 表单校验触发时机，可选值为 `onChange`、`onSubmit`，详见下表 | _string_ | `onBlur` |
 | colon | 是否在 label 后面添加冒号 | _boolean_ | `false` |
+| disabled `v2.12.2` | 是否禁用表单中的所有输入框 | _boolean_ | `false` |
+| readonly `v2.12.2` | 是否将表单中的所有输入框设置为只读 | _boolean_ | `false` |
 | validate-first | 是否在某一项校验不通过时停止校验 | _boolean_ | `false` |
 | scroll-to-error `v2.5.2` | 是否在提交表单且校验不通过时滚动至错误的表单项 | _boolean_ | `false` |
 | show-error `v2.6.0` | 是否在校验不通过时标红输入框 | _boolean_ | `true` |

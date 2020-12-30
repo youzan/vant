@@ -471,14 +471,14 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| disabled | Whether to disable field | _boolean_ | `false` |
-| readonly | Whether to be readonly | _boolean_ | `false` |
 | label-width | Field label width | _number \| string_ | `6.2em` |
 | label-align | Field label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Field input align, can be set to `center` `right` | _string_ | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
 | validate-trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onSubmit` | _string_ | `onBlur` |
 | colon | Whether to display colon after label | _boolean_ | `false` |
+| disabled `v2.12.2` | Whether to disable form | _boolean_ | `false` |
+| readonly `v2.12.2` | Whether to be readonly | _boolean_ | `false` |
 | validate-first | Whether to stop the validation when a rule fails | _boolean_ | `false` |
 | scroll-to-error `v2.5.2` | Whether to scroll to the error field when validation failed | _boolean_ | `false` |
 | show-error `v2.6.0` | Whether to highlight input when validation failed | _boolean_ | `true` |

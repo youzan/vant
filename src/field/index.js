@@ -40,14 +40,6 @@ export default createComponent({
     rows: [Number, String],
     name: String,
     rules: Array,
-    disabled: {
-      type: Boolean,
-      default: null,
-    },
-    readonly: {
-      type: Boolean,
-      default: null,
-    },
     autosize: [Boolean, Object],
     leftIcon: String,
     rightIcon: String,
@@ -71,6 +63,14 @@ export default createComponent({
       default: null,
     },
     colon: {
+      type: Boolean,
+      default: null,
+    },
+    disabled: {
+      type: Boolean,
+      default: null,
+    },
+    readonly: {
       type: Boolean,
       default: null,
     },
