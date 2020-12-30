@@ -40,8 +40,14 @@ export default createComponent({
     rows: [Number, String],
     name: String,
     rules: Array,
-    disabled: Boolean,
-    readonly: Boolean,
+    disabled: {
+      type: Boolean,
+      default: null,
+    },
+    readonly: {
+      type: Boolean,
+      default: null,
+    },
     autosize: [Boolean, Object],
     leftIcon: String,
     rightIcon: String,
@@ -103,8 +109,21 @@ export default createComponent({
     const inputRef = ref();
     const childFieldValue = ref();
 
+    const { parent: form } = useParent(FORM_KEY);
+
+    const getProp = (key) => {
+      if (isDef(props[key])) {
+        return props[key];
+      }
+      if (form && isDef(form.props[key])) {
+        return form.props[key];
+      }
+    };
+
     const showClear = computed(() => {
-      if (props.clearable && !props.readonly) {
+      const readonly = getProp('readonly');
+
+      if (props.clearable && !readonly) {
         const hasValue = isDef(props.modelValue) && props.modelValue !== '';
         const trigger =
           props.clearTrigger === 'always' ||
@@ -199,8 +218,6 @@ export default createComponent({
         });
       });
 
-    const { parent: form } = useParent(FORM_KEY);
-
     const validateWithTrigger = (trigger) => {
       if (form && props.rules) {
         const defaultTrigger = form.props.validateTrigger === trigger;
@@ -272,7 +289,8 @@ export default createComponent({
       emit('focus', event);
 
       // readonly not work in lagacy mobile safari
-      if (props.readonly) {
+      const readonly = getProp('readonly');
+      if (readonly) {
         blur();
       }
     };
@@ -311,15 +329,6 @@ export default createComponent({
         return true;
       }
     });
-
-    const getProp = (key) => {
-      if (isDef(props[key])) {
-        return props[key];
-      }
-      if (form && isDef(form.props[key])) {
-        return form.props[key];
-      }
-    };
 
     const labelStyle = computed(() => {
       const labelWidth = getProp('labelWidth');
@@ -384,6 +393,8 @@ export default createComponent({
     };
 
     const renderInput = () => {
+      const disabled = getProp('disabled');
+      const readonly = getProp('readonly');
       const inputAlign = getProp('inputAlign');
 
       if (slots.input) {
@@ -403,8 +414,8 @@ export default createComponent({
         rows: props.rows,
         class: bem('control', inputAlign),
         value: props.modelValue,
-        disabled: props.disabled,
-        readonly: props.readonly,
+        disabled,
+        readonly,
         placeholder: props.placeholder,
         onBlur,
         onFocus,
@@ -539,6 +550,7 @@ export default createComponent({
     });
 
     return () => {
+      const disabled = getProp('disabled');
       const labelAlign = getProp('labelAlign');
       const Label = renderLabel();
       const LeftIcon = renderLeftIcon();
@@ -554,7 +566,7 @@ export default createComponent({
           icon={props.leftIcon}
           class={bem({
             error: showError.value,
-            disabled: props.disabled,
+            disabled,
             [`label-${labelAlign}`]: labelAlign,
             'min-height': props.type === 'textarea' && !props.autosize,
           })}
