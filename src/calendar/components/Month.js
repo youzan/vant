@@ -65,7 +65,7 @@ export default createComponent({
 
     const shouldRender = computed(() => visible.value || !props.lazyRender);
 
-    const getDate = () => props.data;
+    const getDate = () => props.date;
     const getTitle = () => title.value;
 
     const scrollIntoView = (body) => {
