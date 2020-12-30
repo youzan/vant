@@ -427,6 +427,8 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
+| disabled | Whether to disable field | _boolean_ | `false` |
+| readonly | Whether to be readonly | _boolean_ | `false` |
 | label-width | Field label width | _number \| string_ | `6.2em` |
 | label-align | Field label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Field input align, can be set to `center` `right` | _string_ | `left` |
