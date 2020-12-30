@@ -238,3 +238,22 @@ test('close-button-loading prop', () => {
 
   expect(wrapper.contains('.van-key__loading-icon')).toBeTruthy();
 });
+test('number-random prop', () => {
+  const wrapper = mount(NumberKeyboard, {
+    propsData: {
+      show: true,
+      numberRandom: true,
+    },
+  });
+
+  const keys = [];
+  const clickKeys = [];
+  for (let i = 0; i < 9; i++) {
+    keys.push(i+1);
+
+    clickKey(wrapper.findAll('.van-key').at(i));
+    clickKeys.push(wrapper.emitted('input')[i][0])
+  }
+
+  expect(keys.every((v, k) => keys[k] === clickKeys[k])).toEqual(false);
+});
