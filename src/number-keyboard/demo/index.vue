@@ -15,9 +15,6 @@
     <van-cell is-link @touchstart.native.stop="keyboard = 'multiExtraKey'">
       {{ t('button5') }}
     </van-cell>
-    <van-cell is-link @touchstart.native.stop="keyboard = 'numberRandom'">
-      {{ t('button6') }}
-    </van-cell>
 
     <van-field
       readonly
@@ -81,13 +78,6 @@
       @blur="keyboard = ''"
     />
 
-    <van-number-keyboard
-      :show="keyboard === 'numberRandom'"
-      :number-random="true"
-      @blur="keyboard = ''"
-      @input="onInput"
-      @delete="onDelete"
-    />
   </demo-section>
 </template>
 
@@ -103,7 +93,6 @@ export default {
       button3: '弹出身份证号键盘',
       button4: '弹出带标题的键盘',
       button5: '弹出配置多个按键的键盘',
-      button6: '弹出配置随机数字的键盘',
       bindValue: '双向绑定',
       clickToInput: '点此输入',
       extraKey: '左下角按键内容',
@@ -118,7 +107,6 @@ export default {
       button3: 'Show IdNumber Keyboard',
       button4: 'Show Keyboard With Title',
       button5: 'Show Keyboard With Multiple ExtraKey',
-      button6: 'Show Keyboard With Number Random',
       bindValue: 'Bind Value',
       clickToInput: 'Click To Input',
       extraKey: 'IdNumber Keyboard',
