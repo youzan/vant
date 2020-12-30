@@ -65,7 +65,6 @@ export default createComponent({
 
     const shouldRender = computed(() => visible.value || !props.lazyRender);
 
-    const getDate = () => props.date;
     const getTitle = () => title.value;
 
     const scrollIntoView = (body) => {
@@ -237,7 +236,6 @@ export default createComponent({
     };
 
     useExpose({
-      getDate,
       getTitle,
       getHeight: () => height.value,
       setVisible,
