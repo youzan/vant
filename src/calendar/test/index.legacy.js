@@ -119,7 +119,7 @@ test('should not trigger select event when click disabled day', async () => {
 
   await later();
 
-  wrapper.findAll('.van-calendar__day').at(1).trigger('click');
+  wrapper.findAll('.van-calendar__day')[1].trigger('click');
 
   expect(formatDate(wrapper.emitted('select'))).toBeFalsy();
 });

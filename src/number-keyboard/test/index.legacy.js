@@ -14,7 +14,7 @@ test('click number key', () => {
     },
   });
 
-  clickKey(wrapper.findAll('.van-key').at(0));
+  clickKey(wrapper.findAll('.van-key')[0]);
   expect(wrapper.emitted('input')[0][0]).toEqual(1);
 
   wrapper.destroy();
@@ -173,8 +173,8 @@ test('bind value', () => {
   });
 
   const keys = wrapper.findAll('.van-key');
-  clickKey(keys.at(0));
-  clickKey(keys.at(1));
+  clickKey(keys[0]);
+  clickKey(keys[1]);
 
   expect(wrapper.vm.value).toEqual('12');
 
@@ -198,8 +198,8 @@ test('maxlength', () => {
   });
 
   const keys = wrapper.findAll('.van-key');
-  clickKey(keys.at(0));
-  clickKey(keys.at(1));
+  clickKey(keys[0]);
+  clickKey(keys[1]);
 
   expect(wrapper.vm.value).toEqual('1');
   expect(onInput).toHaveBeenCalledTimes(1);

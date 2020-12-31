@@ -41,7 +41,7 @@ test('click-nav event', () => {
   });
 
   const navItems = wrapper.findAll('.van-tree-select__nav-item');
-  navItems.at(1).trigger('click');
+  navItems[1].trigger('click');
 
   expect(onClickNav).toHaveBeenCalledWith(1);
 });
@@ -61,7 +61,7 @@ test('click-item event', () => {
   });
 
   const items = wrapper.findAll('.van-tree-select__item');
-  items.at(0).trigger('click');
+  items[0].trigger('click');
   expect(onClickItem).toHaveBeenCalledWith(mockItem);
 });
 
@@ -86,7 +86,7 @@ test('click disabled nav', () => {
   });
 
   const items = wrapper.findAll('.van-tree-select__nav-item');
-  items.at(0).trigger('click');
+  items[0].trigger('click');
   expect(onClickNav).toHaveBeenCalledTimes(0);
 });
 
@@ -114,7 +114,7 @@ test('click disabled item', () => {
   });
 
   const items = wrapper.findAll('.van-tree-select__item');
-  items.at(0).trigger('click');
+  items[0].trigger('click');
   expect(onClickItem).toHaveBeenCalledTimes(0);
 });
 
@@ -177,7 +177,7 @@ test('use sync modifier in main-active-index', () => {
   });
 
   const navItems = wrapper.findAll('.van-tree-select__nav-item');
-  navItems.at(0).trigger('click');
+  navItems[0].trigger('click');
 
   expect(wrapper.vm.mainActiveIndex).toEqual(0);
 });
@@ -206,7 +206,7 @@ test('use sync modifier in active-id', () => {
   });
 
   const items = wrapper.findAll('.van-tree-select__item');
-  items.at(1).trigger('click');
+  items[1].trigger('click');
 
   expect(wrapper.vm.activeId).toEqual(mockItem2.id);
 });
@@ -235,12 +235,12 @@ test('multiple select', () => {
   });
 
   const items = wrapper.findAll('.van-tree-select__item');
-  items.at(0).trigger('click');
-  items.at(1).trigger('click');
+  items[0].trigger('click');
+  items[1].trigger('click');
   expect(wrapper.vm.activeId).toEqual([mockItem.id, mockItem2.id]);
 
-  items.at(0).trigger('click');
-  items.at(1).trigger('click');
+  items[0].trigger('click');
+  items[1].trigger('click');
   expect(wrapper.vm.activeId).toEqual([]);
 });
 
@@ -268,8 +268,8 @@ test('max prop', () => {
   });
 
   const items = wrapper.findAll('.van-tree-select__item');
-  items.at(0).trigger('click');
-  items.at(1).trigger('click');
+  items[0].trigger('click');
+  items[1].trigger('click');
   expect(wrapper.vm.activeId).toEqual([mockItem.id]);
 });
 
@@ -288,7 +288,7 @@ test('className of nav', () => {
   });
 
   const items = wrapper.findAll('.van-tree-select__nav-item');
-  expect(items.at(0).element.classList.contains('my-class')).toBeTruthy();
+  expect(items[0].element.classList.contains('my-class')).toBeTruthy();
 });
 
 test('should sync value before trigger click-item event', (done) => {
@@ -322,7 +322,7 @@ test('should sync value before trigger click-item event', (done) => {
   });
 
   const items = wrapper.findAll('.van-tree-select__item');
-  items.at(1).trigger('click');
+  items[1].trigger('click');
 });
 
 test('selected-icon prop', () => {

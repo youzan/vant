@@ -50,8 +50,8 @@ test('click to switch tab', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 
   const tabs = wrapper.findAll('.van-tab');
-  tabs.at(1).trigger('click');
-  tabs.at(2).trigger('click');
+  tabs[1].trigger('click');
+  tabs[2].trigger('click');
   await later();
   expect(wrapper.html()).toMatchSnapshot();
   expect(onChange).toHaveBeenCalledTimes(1);
@@ -165,10 +165,10 @@ test('click event', async () => {
 
   const tabs = wrapper.findAll('.van-tab');
 
-  tabs.at(0).trigger('click');
+  tabs[0].trigger('click');
   expect(onClick).toHaveBeenCalledWith(0, 'title1');
 
-  tabs.at(1).trigger('click');
+  tabs[1].trigger('click');
   expect(onDisabled).toHaveBeenCalledWith(1, 'title2');
 });
 
@@ -201,13 +201,13 @@ test('name prop', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 
   const tabs = wrapper.findAll('.van-tab');
-  tabs.at(1).trigger('click');
+  tabs[1].trigger('click');
 
   expect(onClick).toHaveBeenCalledWith('b', 'title2');
   expect(onChange).toHaveBeenCalledWith('b', 'title2');
   expect(onChange).toHaveBeenCalledTimes(1);
 
-  tabs.at(2).trigger('click');
+  tabs[2].trigger('click');
   expect(onDisabled).toHaveBeenCalledWith('c', 'title3');
   expect(onChange).toHaveBeenCalledTimes(1);
 });
@@ -228,7 +228,7 @@ test('set name to zero', async () => {
   });
 
   const tabs = wrapper.findAll('.van-tab');
-  tabs.at(1).trigger('click');
+  tabs[1].trigger('click');
   expect(onClick).toHaveBeenCalledWith(0, 'title2');
 });
 
@@ -289,7 +289,7 @@ test('scrollspy prop', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 
   const tabs = wrapper.findAll('.van-tab');
-  tabs.at(2).trigger('click');
+  tabs[2].trigger('click');
   expect(onChange).toHaveBeenCalledWith('c', 'title3');
 
   await later();
@@ -347,8 +347,8 @@ test('rendered event', async () => {
   expect(wrapper.find('.van-tab__pane')).toMatchSnapshot();
 
   const tabs = wrapper.findAll('.van-tab');
-  tabs.at(1).trigger('click');
-  tabs.at(0).trigger('click');
+  tabs[1].trigger('click');
+  tabs[0].trigger('click');
 
   await later();
   expect(onRendered).toHaveBeenCalledTimes(2);
@@ -405,17 +405,17 @@ test('before-change prop', async () => {
   await later();
 
   const tabs = wrapper.findAll('.van-tab');
-  tabs.at(1).trigger('click');
+  tabs[1].trigger('click');
   expect(onChange).toHaveBeenCalledTimes(0);
 
-  tabs.at(2).trigger('click');
+  tabs[2].trigger('click');
   expect(onChange).toHaveBeenCalledTimes(1);
   expect(onChange).toHaveBeenLastCalledWith(2, 'title3');
 
-  tabs.at(3).trigger('click');
+  tabs[3].trigger('click');
   expect(onChange).toHaveBeenCalledTimes(1);
 
-  tabs.at(4).trigger('click');
+  tabs[4].trigger('click');
   await later();
   expect(onChange).toHaveBeenCalledTimes(2);
   expect(onChange).toHaveBeenLastCalledWith(4, 'title5');

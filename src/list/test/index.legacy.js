@@ -145,8 +145,8 @@ test('check the direction props', () => {
   });
 
   let children = wrapper.findAll('.van-list > div');
-  expect(children.at(0).is('.van-list__placeholder')).toBeTruthy();
-  expect(children.at(1).is('.list-item')).toBeTruthy();
+  expect(children[0].is('.van-list__placeholder')).toBeTruthy();
+  expect(children[1].is('.list-item')).toBeTruthy();
 
   // change the direction's value
   wrapper.setProps({
@@ -154,6 +154,6 @@ test('check the direction props', () => {
   });
 
   children = wrapper.findAll('.van-list > div');
-  expect(children.at(0).is('.list-item')).toBeTruthy();
-  expect(children.at(1).is('.van-list__placeholder')).toBeTruthy();
+  expect(children[0].is('.list-item')).toBeTruthy();
+  expect(children[1].is('.van-list__placeholder')).toBeTruthy();
 });

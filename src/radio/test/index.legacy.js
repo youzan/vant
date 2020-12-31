@@ -25,16 +25,16 @@ test('radio-group change', () => {
   const icons = wrapper.findAll('.van-radio__icon');
   const labels = wrapper.findAll('.van-radio__label');
 
-  icons.at(2).trigger('click');
+  icons[2].trigger('click');
   expect(wrapper.vm.result).toEqual('c');
   expect(wrapper.emitted('change')[0][0]).toEqual('c');
 
-  labels.at(1).trigger('click');
+  labels[1].trigger('click');
   expect(wrapper.vm.result).toEqual('b');
   expect(wrapper.emitted('change')[1][0]).toEqual('b');
 
-  icons.at(3).trigger('click');
-  labels.at(3).trigger('click');
+  icons[3].trigger('click');
+  labels[3].trigger('click');
   expect(wrapper.vm.result).toEqual('b');
 });
 
@@ -60,7 +60,7 @@ test('radio group disabled', () => {
   });
 
   const icons = wrapper.findAll('.van-radio__icon');
-  icons.at(2).trigger('click');
+  icons[2].trigger('click');
 
   expect(wrapper.emitted('change')).toBeFalsy();
 });

@@ -28,15 +28,15 @@ test('basic mode', async () => {
   const wrapper = mount(component);
 
   const titles = wrapper.findAll('.van-collapse-item__title');
-  titles.at(0).trigger('click');
+  titles[0].trigger('click');
   expect(wrapper.vm.active).toEqual(['first']);
 
   await later();
-  titles.at(1).trigger('click');
+  titles[1].trigger('click');
   expect(wrapper.vm.active).toEqual(['first', 1]);
 
   await later();
-  titles.at(0).trigger('click');
+  titles[0].trigger('click');
   expect(wrapper.vm.active).toEqual([1]);
 
   wrapper.destroy();
@@ -50,17 +50,17 @@ test('accordion', async () => {
   });
 
   const titles = wrapper.findAll('.van-collapse-item__title');
-  titles.at(0).trigger('click');
+  titles[0].trigger('click');
   expect(wrapper.vm.active).toEqual('first');
 
-  titles.at(1).trigger('click');
+  titles[1].trigger('click');
   expect(wrapper.vm.active).toEqual(1);
 
   await later();
-  titles.at(0).trigger('click');
+  titles[0].trigger('click');
   expect(wrapper.vm.active).toEqual('first');
 
-  titles.at(0).trigger('click');
+  titles[0].trigger('click');
   expect(wrapper.vm.active).toEqual('');
 });
 
@@ -118,7 +118,7 @@ test('lazy render collapse content', async () => {
 
   const titles = wrapper.findAll('.van-collapse-item__title');
 
-  titles.at(1).trigger('click');
+  titles[1].trigger('click');
   wrapper.vm.content = 'content';
   expect(wrapper.html()).toMatchSnapshot();
 });

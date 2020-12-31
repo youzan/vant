@@ -75,7 +75,7 @@ test('valid area placeholder confirm', async () => {
 test('show area component', async () => {
   const { wrapper } = createComponent();
 
-  const field = wrapper.findAll('.van-field').at(2);
+  const field = wrapper.findAll('.van-field')[2];
   field.trigger('click');
 
   await later(50);
@@ -119,7 +119,7 @@ test('valid name', () => {
   data.name = '';
   button.trigger('click');
   expect(errorInfo.name).toBeTruthy();
-  field.at(0).trigger('focus');
+  field[0].trigger('focus');
   expect(errorInfo.name).toBeFalsy();
 });
 
@@ -128,7 +128,7 @@ test('valid tel', () => {
   data.tel = '';
   button.trigger('click');
   expect(errorInfo.tel).toBeTruthy();
-  field.at(1).trigger('focus');
+  field[1].trigger('focus');
   expect(errorInfo.tel).toBeFalsy();
 });
 
@@ -150,7 +150,7 @@ test('valid addressDetail', () => {
   data.addressDetail = '';
   button.trigger('click');
   expect(errorInfo.addressDetail).toBeTruthy();
-  field.at(3).trigger('focus');
+  field[3].trigger('focus');
   expect(errorInfo.addressDetail).toBeFalsy();
 });
 
@@ -161,7 +161,7 @@ test('valid postal code', () => {
   data.postalCode = '123';
   button.trigger('click');
   expect(errorInfo.postalCode).toBeTruthy();
-  field.at(4).trigger('focus');
+  field[4].trigger('focus');
   expect(errorInfo.postalCode).toBeFalsy();
 
   // valid result
@@ -177,7 +177,7 @@ test('valid postal code', () => {
 
 test('on change detail', () => {
   const wrapper = mount(AddressEdit);
-  const field = wrapper.findAll('.van-field__control').at(3);
+  const field = wrapper.findAll('.van-field__control')[3];
 
   field.element.value = '123';
   field.trigger('input');
@@ -245,16 +245,16 @@ test('show search result', async () => {
     },
   });
 
-  const field = wrapper.findAll('.van-field__control').at(3);
+  const field = wrapper.findAll('.van-field__control')[3];
   const input = field.element;
   field.trigger('focus');
 
   const items = wrapper.findAll('.van-icon-location-o');
-  items.at(0).element.parentNode.click();
+  items[0].element.parentNode.click();
   expect(input.value).toEqual('address1 name1');
-  items.at(1).element.parentNode.click();
+  items[1].element.parentNode.click();
   expect(input.value).toEqual('name2');
-  items.at(2).element.parentNode.click();
+  items[2].element.parentNode.click();
   expect(input.value).toEqual('address2');
 
   field.trigger('blur');
@@ -270,7 +270,7 @@ test('delete address', async () => {
     },
   });
 
-  const deleteButton = wrapper.findAll('.van-button').at(1);
+  const deleteButton = wrapper.findAll('.van-button')[1];
   deleteButton.trigger('click');
 
   await later();
@@ -302,7 +302,7 @@ test('click-area event', () => {
     },
   });
 
-  const field = wrapper.findAll('.van-field').at(2);
+  const field = wrapper.findAll('.van-field')[2];
   field.trigger('click');
   expect(wrapper.emitted('click-area')[0]).toBeTruthy();
 });

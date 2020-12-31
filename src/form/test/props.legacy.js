@@ -348,14 +348,14 @@ test('validate-trigger - custom trigger in rules', async () => {
 
   const inputs = wrapper.findAll('input');
 
-  inputs.at(0).trigger('blur');
+  inputs[0].trigger('blur');
   wrapper.setData({ valueB: '1' });
   await later();
   wrapper.setData({ valueB: '' });
   await later();
   expect(wrapper.contains('.van-field__error-message')).toBeFalsy();
 
-  inputs.at(1).trigger('blur');
+  inputs[1].trigger('blur');
   wrapper.setData({ valueA: '1' });
   await later();
   wrapper.setData({ valueA: '' });

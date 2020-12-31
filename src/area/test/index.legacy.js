@@ -69,12 +69,12 @@ test('change option', () => {
   const columns = wrapper.findAll('.van-picker-column');
   expect(wrapper.html()).toMatchSnapshot();
 
-  triggerDrag(columns.at(0), 0, -100);
-  columns.at(0).find('ul').trigger('transitionend');
+  triggerDrag(columns[0], 0, -100);
+  columns[0].find('ul').trigger('transitionend');
   expect(wrapper.html()).toMatchSnapshot();
 
-  triggerDrag(columns.at(2), 0, -100);
-  columns.at(2).find('ul').trigger('transitionend');
+  triggerDrag(columns[2], 0, -100);
+  columns[2].find('ul').trigger('transitionend');
   expect(wrapper.html()).toMatchSnapshot();
 
   expect(onChange.mock.calls[0][1]).toEqual(secondOption);

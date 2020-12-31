@@ -230,7 +230,7 @@ test('click column item', () => {
     },
   });
 
-  wrapper.findAll('.van-picker-column__item').at(3).trigger('click');
+  wrapper.findAll('.van-picker-column__item')[3].trigger('click');
   expect(wrapper.emitted('change')[0][1]).toEqual(columns[1]);
 });
 
@@ -332,7 +332,7 @@ test('readonly prop', () => {
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker-column ul').trigger('transitionend');
-  wrapper.findAll('.van-picker-column__item').at(3).trigger('click');
+  wrapper.findAll('.van-picker-column__item')[3].trigger('click');
 
   expect(wrapper.emitted('change')).toBeFalsy();
 });

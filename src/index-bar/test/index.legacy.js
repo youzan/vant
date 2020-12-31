@@ -29,7 +29,7 @@ test('should scroll to anchor and emit select event after clicking the index-bar
 
   const fn = mockScrollIntoView();
   const indexes = wrapper.findAll('.van-index-bar__index');
-  indexes.at(0).trigger('click');
+  indexes[0].trigger('click');
 
   expect(fn).toHaveBeenCalledTimes(1);
   expect(onSelect).toHaveBeenCalledWith('A');

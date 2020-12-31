@@ -111,7 +111,7 @@ test('render empty coupon list', () => {
       disabledCoupons: [],
     },
   });
-  wrapper.findAll('.van-tab').at(1).trigger('click');
+  wrapper.findAll('.van-tab')[1].trigger('click');
   expect(wrapper.html()).toMatchSnapshot();
 });
 
