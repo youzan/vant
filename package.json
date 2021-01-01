@@ -60,7 +60,7 @@
     "@vant/icons": "^1.5.0",
     "@vant/lazyload": "^1.0.2",
     "@vant/popperjs": "^1.0.2",
-    "@vant/use": "^1.0.1"
+    "@vant/use": "^1.0.2"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
