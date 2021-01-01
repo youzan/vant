@@ -59,10 +59,10 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    numberRandom: {
+    randomKeyOrder: {
       type: Boolean,
       default: false,
-    }
+    },
   },
 
   watch: {
@@ -89,8 +89,8 @@ export default createComponent({
         keys.push({ text: i });
       }
 
-      if (this.numberRandom) {
-        keys.sort(() => Math.random() > 0.5 ? 1 : -1)
+      if (this.randomKeyOrder) {
+        keys.sort(() => (Math.random() > 0.5 ? 1 : -1));
       }
 
       return keys;
