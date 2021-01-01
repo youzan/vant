@@ -6,5 +6,5 @@ export function useToggle(defaultValue = false) {
     state.value = value;
   };
 
-  return [state, toggle];
+  return [state, toggle] as const;
 }
