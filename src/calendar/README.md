@@ -314,9 +314,10 @@ Following props are supported when the type is multiple
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get Calendar instance and call instance methods.
 
-| Name  | Description                         | Attribute | Return value |
-| ----- | ----------------------------------- | --------- | ------------ |
-| reset | Reset selected date to default date | -         | -            |
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| reset | Reset selected date to default date | - | - |
+| scrollToDate `v2.12.2` | Scroll to date | _date: Date_ | - |
 
 ### Less Variables
 
