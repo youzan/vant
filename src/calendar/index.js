@@ -267,27 +267,8 @@ export default createComponent({
       }
     };
 
-    // scroll to current month
-    const scrollIntoView = () => {
+    const scrollToDate = (targetDate) => {
       raf(() => {
-        const displayed = props.show || !props.poppable;
-        if (!displayed) {
-          return;
-        }
-
-        onScroll();
-
-        const { currentDate } = state;
-        if (!currentDate) {
-          return;
-        }
-
-        const targetDate =
-          props.type === 'single' ? currentDate : currentDate[0];
-        if (!targetDate) {
-          return;
-        }
-
         months.value.some((month, index) => {
           if (compareMonth(month, targetDate) === 0) {
             monthRefs.value[index].scrollIntoView(bodyRef.value);
@@ -299,6 +280,22 @@ export default createComponent({
 
         onScroll();
       });
+    };
+
+    // scroll to current month
+    const scrollIntoView = () => {
+      if (props.poppable && !props.show) {
+        return;
+      }
+
+      const { currentDate } = state;
+      if (currentDate) {
+        const targetDate =
+          props.type === 'single' ? currentDate : currentDate[0];
+        scrollToDate(targetDate);
+      } else {
+        raf(onScroll);
+      }
     };
 
     const init = () => {
