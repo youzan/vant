@@ -184,12 +184,7 @@ export default createComponent({
       }
     },
 
-    scrollToElement(element) {
-      const { index } = element.dataset;
-      if (!index) {
-        return;
-      }
-
+    scrollTo(index) {
       const match = this.children.filter(
         (item) => String(item.index) === index
       );
@@ -203,6 +198,11 @@ export default createComponent({
 
         this.$emit('select', match[0].index);
       }
+    },
+
+    scrollToElement(element) {
+      const { index } = element.dataset;
+      this.scrollTo(index);
     },
 
     onTouchEnd() {
