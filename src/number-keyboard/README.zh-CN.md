@@ -126,6 +126,23 @@ export default {
 />
 ```
 
+### 随机数字键盘
+
+通过 `random-key-order` 属性可以随机排序数字键盘，常用于安全等级较高的场景。
+
+```html
+<van-cell @touchstart.stop="show = true">
+  弹出配置随机数字的键盘
+</van-cell>
+<van-number-keyboard
+  :show="show"
+  random-key-order
+  @blur="show = false"
+  @input="onInput"
+  @delete="onDelete"
+/>
+```
+
 ### 双向绑定
 
 可以通过 `v-model` 绑定键盘当前输入值。
@@ -176,6 +193,7 @@ export default {
 | hide-on-click-outside | 点击外部时是否收起键盘 | _boolean_ | `true` |
 | teleport `v2.10.0` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
+| random-key-order `v2.12.2` | 是否将通过随机顺序展示按键 | _boolean_ | `false` |
 
 ### Events
 

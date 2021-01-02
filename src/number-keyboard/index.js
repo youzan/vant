@@ -11,6 +11,7 @@ export default createComponent({
     title: String,
     zIndex: [Number, String],
     teleport: [String, Object],
+    randomKeyOrder: Boolean,
     closeButtonText: String,
     deleteButtonText: String,
     closeButtonLoading: Boolean,
@@ -66,6 +67,11 @@ export default createComponent({
       for (let i = 1; i <= 9; i++) {
         keys.push({ text: i });
       }
+
+      if (props.randomKeyOrder) {
+        keys.sort(() => (Math.random() > 0.5 ? 1 : -1));
+      }
+
       return keys;
     };
 
