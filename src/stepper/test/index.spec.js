@@ -299,8 +299,8 @@ test('should hide plus button when show-plus prop is false', () => {
       showPlus: false,
     },
   });
-  const plus = wrapper.find('.van-stepper__plus').element;
-  expect(plus.style.display).toEqual('none');
+  const plus = wrapper.find('.van-stepper__plus');
+  expect(plus.isVisible()).toBeFalsy();
 });
 
 test('should hide minus button when show-minus prop is false', () => {
@@ -309,8 +309,8 @@ test('should hide minus button when show-minus prop is false', () => {
       showMinus: false,
     },
   });
-  const minus = wrapper.find('.van-stepper__minus').element;
-  expect(minus.style.display).toEqual('none');
+  const minus = wrapper.find('.van-stepper__minus');
+  expect(minus.isVisible()).toBeFalsy();
 });
 
 test('should hide input when show-input prop is false', () => {
@@ -319,7 +319,7 @@ test('should hide input when show-input prop is false', () => {
       showInput: false,
     },
   });
-  expect(wrapper.find('input').element.style.display).toEqual('none');
+  expect(wrapper.find('input').isVisible()).toBeFalsy();
 });
 
 test('should limit dicimal length when using decimal-length prop', async () => {
