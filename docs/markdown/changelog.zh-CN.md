@@ -16,6 +16,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.2](https://github.com/youzan/vant/compare/v2.12.1...v2.12.2)
+
+`2021-01-02`
+
+**Feature**
+
+- Calendar: 新增 scrollToDate 方法 [#7847](https://github.com/youzan/vant/issues/7847)
+- Form: 新增 disabled 属性 [#7829](https://github.com/youzan/vant/issues/7829)
+- Form: 新增 readonly 属性 [#7829](https://github.com/youzan/vant/issues/7829)
+- Loading: 新增 text-color 属性 [#7846](https://github.com/youzan/vant/issues/7846)
+- IndexBar: 新增 scrollTo 方法 [#7845](https://github.com/youzan/vant/issues/7845)
+- NumberKeyboard: 新增 random-key-order 属性 [#7841](https://github.com/youzan/vant/issues/7841)
+
 ### [v2.12.1](https://github.com/youzan/vant/compare/v2.12.0...v2.12.1)
 
 `2020-12-26`
