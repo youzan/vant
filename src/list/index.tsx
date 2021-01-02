@@ -115,7 +115,10 @@ export default createComponent({
       }
     };
 
-    watch([() => props.loading, () => props.finished], check);
+    watch(
+      [() => props.loading, () => props.finished, () => props.error],
+      check
+    );
 
     onUpdated(() => {
       loading.value = props.loading!;
