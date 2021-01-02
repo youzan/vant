@@ -111,6 +111,43 @@ Use `title` prop to set keyboard title.
 />
 ```
 
+### Number Random
+
+Use `random-key-order` prop to random sort number keypads.
+
+```html
+<van-cell @touchstart.native.stop="show = true"
+  >弹出配置随机数字的键盘</van-cell
+>
+<van-number-keyboard
+  :show="show"
+  :random-key-order="true"
+  @blur="show = false"
+  @input="onInput"
+  @delete="onDelete"
+/>
+```
+
+```js
+import { Toast } from 'vant';
+
+export default {
+  data() {
+    return {
+      show: true,
+    };
+  },
+  methods: {
+    onInput(value) {
+      Toast(value);
+    },
+    onDelete() {
+      Toast('删除');
+    },
+  },
+};
+```
+
 ### Bind Value
 
 ```html
@@ -160,6 +197,7 @@ export default {
 | hide-on-click-outside | Whether to hide keyboard when outside is clicked | _boolean_ | `true` |
 | get-container `v2.10.0` | Return the mount node for NumberKeyboard | _string \| () => Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
+| random-key-order | whether to enable random sort number keypads | _boolean_ | `false` |
 
 ### Events
 

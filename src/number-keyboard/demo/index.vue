@@ -15,6 +15,7 @@
     <van-cell is-link @touchstart.native.stop="keyboard = 'multiExtraKey'">
       {{ t('button5') }}
     </van-cell>
+
     <van-field
       readonly
       clickable
@@ -76,6 +77,7 @@
       maxlength="6"
       @blur="keyboard = ''"
     />
+
   </demo-section>
 </template>
 
