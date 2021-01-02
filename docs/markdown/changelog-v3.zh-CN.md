@@ -16,6 +16,26 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.2](https://github.com/youzan/vant/compare/v3.0.1...v3.0.2)
+
+`2021-01-02`
+
+**Feature**
+
+- Calendar: 新增 scrollToDate 方法 [#7847](https://github.com/youzan/vant/issues/7847)
+- Form: 新增 disabled 属性 [#7830](https://github.com/youzan/vant/issues/7830)
+- Form: 新增 readonly 属性 [#7830](https://github.com/youzan/vant/issues/7830)
+- Loading: 新增 text-color 属性 [#7806](https://github.com/youzan/vant/issues/7806)
+- Picker: 新增 columns-field-names 属性 [#7791](https://github.com/youzan/vant/issues/7791)
+- NumberKeyboard: 新增 random-key-order 属性 [#7841](https://github.com/youzan/vant/issues/7841)
+
+**Bug Fixes**
+
+- Calendar: 修复 title 插槽不生效的问题 [#7826](https://github.com/youzan/vant/issues/7826)
+- Calendar: 修复动态设置 defaultDate 不生效的问题 [#7815](https://github.com/youzan/vant/issues/7815)
+- Popup: 修复组件销毁时未解除滚动锁定的问题 [#7835](https://github.com/youzan/vant/issues/7835)
+- Stepper: 修复动态设置 modelValue 时未格式化的问题 [81494d](https://github.com/youzan/vant/commit/81494dfa13e6ab9a3f12995f481290d27d14ab7a)
+
 ### [v3.0.1](https://github.com/youzan/vant/compare/v3.0.0...v3.0.1)
 
 `2020-12-27`

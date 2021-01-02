@@ -16,6 +16,26 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.2](https://github.com/youzan/vant/compare/v3.0.1...v3.0.2)
+
+`2021-01-02`
+
+**Feature**
+
+- Calendar: add scrollToDate method [#7847](https://github.com/youzan/vant/issues/7847)
+- Form: add disabled prop [#7830](https://github.com/youzan/vant/issues/7830)
+- Form: add readonly prop [#7830](https://github.com/youzan/vant/issues/7830)
+- Loading: add text-color prop [#7806](https://github.com/youzan/vant/issues/7806)
+- Picker: add columns-field-names prop [#7791](https://github.com/youzan/vant/issues/7791)
+- NumberKeyboard: add random-key-order prop [#7841](https://github.com/youzan/vant/issues/7841)
+
+**Bug Fixes**
+
+- Calendar: title slot not work [#7826](https://github.com/youzan/vant/issues/7826)
+- Calendar: failed to watch defaultDate [#7815](https://github.com/youzan/vant/issues/7815)
+- Popup: should remove lock scroll before destroyed [#7835](https://github.com/youzan/vant/issues/7835)
+- Stepper: should format model-value [81494d](https://github.com/youzan/vant/commit/81494dfa13e6ab9a3f12995f481290d27d14ab7a)
+
 ### [v3.0.1](https://github.com/youzan/vant/compare/v3.0.0...v3.0.1)
 
 `2020-12-27`
