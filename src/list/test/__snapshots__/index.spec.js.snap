@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render error slot correctly 1`] = `
+<div role="feed"
+     class="van-list"
+     aria-busy="false"
+>
+  <div class="van-list__error-text">
+    Custom Error
+  </div>
+  <div class="van-list__placeholder">
+  </div>
+</div>
+`;
+
+exports[`should render finished slot correctly 1`] = `
+<div role="feed"
+     class="van-list"
+     aria-busy="false"
+>
+  <div class="van-list__finished-text">
+    Custom Finished
+  </div>
+  <div class="van-list__placeholder">
+  </div>
+</div>
+`;
