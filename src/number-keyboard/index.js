@@ -24,6 +24,7 @@ export default createComponent({
     show: Boolean,
     title: String,
     zIndex: [Number, String],
+    randomKeyOrder: Boolean,
     closeButtonText: String,
     deleteButtonText: String,
     closeButtonLoading: Boolean,
@@ -58,10 +59,6 @@ export default createComponent({
     safeAreaInsetBottom: {
       type: Boolean,
       default: true,
-    },
-    randomKeyOrder: {
-      type: Boolean,
-      default: false,
     },
   },
 
