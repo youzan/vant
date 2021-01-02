@@ -17,7 +17,7 @@ test('click number key', () => {
   clickKey(wrapper.findAll('.van-key')[0]);
   expect(wrapper.emitted('input')[0][0]).toEqual(1);
 
-  wrapper.destroy();
+  wrapper.unmount();
 });
 
 test('click delete key', () => {

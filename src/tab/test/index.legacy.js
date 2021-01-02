@@ -91,7 +91,7 @@ test('swipe to switch tab', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 
   await later();
-  wrapper.destroy();
+  wrapper.unmount();
 });
 
 test('change tabs data', async () => {

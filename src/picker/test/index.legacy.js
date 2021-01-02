@@ -26,7 +26,7 @@ test('simple columns confirm & cancel event', () => {
   wrapper.find('.van-picker__cancel').trigger('click');
   expect(wrapper.emitted('confirm')[0]).toEqual(['1990', 0]);
   expect(wrapper.emitted('cancel')[0]).toEqual(['1990', 0]);
-  wrapper.destroy();
+  wrapper.unmount();
 });
 
 test('multiple columns confirm & cancel event', () => {

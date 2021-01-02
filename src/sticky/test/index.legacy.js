@@ -164,7 +164,7 @@ test('trigger scroll when visibility changed', () => {
   observerCallback([{ intersectionRatio: 0 }]);
   expect(scroll).toHaveBeenCalledTimes(2);
 
-  wrapper.destroy();
+  wrapper.unmount();
   expect(unobserve).toHaveBeenCalledTimes(1);
 
   window.IntersectionObserver = originIntersectionObserver;

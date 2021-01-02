@@ -118,7 +118,7 @@ test('should update active anchor after page scroll', () => {
   wrapper.setData({ sticky: true });
   trigger(window, 'scroll');
   expect(wrapper.html()).toMatchSnapshot();
-  wrapper.vm.$destroy();
+  wrapper.vm.$unmount();
 
   Element.prototype.getBoundingClientRect = nativeRect;
 });

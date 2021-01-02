@@ -393,7 +393,7 @@ test('call focus method before mounted', (done) => {
 });
 
 test('destroy field', () => {
-  mount(Field).destroy();
+  mount(Field).unmount();
 });
 
 test('colon prop', () => {

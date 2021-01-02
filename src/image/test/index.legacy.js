@@ -6,7 +6,7 @@ test('click event', () => {
 
   wrapper.trigger('click');
   expect(wrapper.emitted('click')[0][0]).toBeTruthy();
-  wrapper.destroy();
+  wrapper.unmount();
 });
 
 test('load event', () => {
@@ -63,7 +63,7 @@ test('lazy-load load event', (done) => {
               hanlder({ el: wrapper.find('img').element });
               expect(wrapper.emitted('load').length).toEqual(1);
               expect(wrapper.html()).toMatchSnapshot();
-              wrapper.destroy();
+              wrapper.unmount();
             });
           }
         },
@@ -89,7 +89,7 @@ test('lazy-load error event', (done) => {
               hanlder({ el: wrapper.find('img').element });
               expect(wrapper.emitted('error').length).toEqual(1);
               expect(wrapper.html()).toMatchSnapshot();
-              wrapper.destroy();
+              wrapper.unmount();
             });
           }
         },

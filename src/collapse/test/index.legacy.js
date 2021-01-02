@@ -39,7 +39,7 @@ test('basic mode', async () => {
   titles[0].trigger('click');
   expect(wrapper.vm.active).toEqual([1]);
 
-  wrapper.destroy();
+  wrapper.unmount();
 });
 
 test('accordion', async () => {

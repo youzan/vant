@@ -3,7 +3,7 @@ import { mount, triggerDrag, later } from '../../../test';
 
 let wrapper;
 afterEach(() => {
-  wrapper.destroy();
+  wrapper.unmount();
 });
 
 test('lazy render', () => {
@@ -40,10 +40,10 @@ test('popup lock scroll', () => {
       value: true,
     },
   });
-  wrapper1.vm.$destroy();
+  wrapper1.vm.$unmount();
   expect(document.body.classList.contains('van-overflow-hidden')).toBeTruthy();
 
-  wrapper2.vm.$destroy();
+  wrapper2.vm.$unmount();
   expect(document.body.classList.contains('van-overflow-hidden')).toBeFalsy();
 });
 
