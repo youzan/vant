@@ -1,5 +1,6 @@
 import { nextTick, reactive, ref } from 'vue';
 import { mount, later, mockGetBoundingClientRect } from '../../../test';
+import { BORDER_TOP_BOTTOM } from '../../utils/constant';
 import Tabbar from '..';
 import TabbarItem from '../../tabbar-item';
 
@@ -56,16 +57,16 @@ test('should match active tab by route path in route mode', async () => {
 
   const items = wrapper.findAll('.van-tabbar-item');
 
-  expect(items[0].element.classList.contains(activeClass)).toBeTruthy();
+  expect(items[0].classes()).toContain(activeClass);
 
   await items[1].trigger('click');
-  expect(items[1].element.classList.contains(activeClass)).toBeTruthy();
+  expect(items[1].classes()).toContain(activeClass);
 
   await items[2].trigger('click');
-  expect(items[2].element.classList.contains(activeClass)).toBeTruthy();
+  expect(items[2].classes()).toContain(activeClass);
 
   await items[3].trigger('click');
-  expect(items[2].element.classList.contains(activeClass)).toBeTruthy();
+  expect(items[3].classes()).not.toContain(activeClass);
 });
 
 test('should match active tab by route name in route mode', async () => {
@@ -88,10 +89,10 @@ test('should match active tab by route name in route mode', async () => {
   const items = wrapper.findAll('.van-tabbar-item');
 
   await items[0].trigger('click');
-  expect(items[0].element.classList.contains(activeClass)).toBeTruthy();
+  expect(items[0].classes()).toContain(activeClass);
 
   await items[1].trigger('click');
-  expect(items[1].element.classList.contains(activeClass)).toBeTruthy();
+  expect(items[1].classes()).toContain(activeClass);
 });
 
 test('should watch model-value and update active tab', async () => {
@@ -119,7 +120,7 @@ test('should watch model-value and update active tab', async () => {
   wrapper.vm.updateActive();
   await nextTick();
   const items = wrapper.findAll('.van-tabbar-item');
-  expect(items[1].element.classList.contains(activeClass)).toBeTruthy();
+  expect(items[1].classes()).toContain(activeClass);
 });
 
 test('should match active tab by name when using name prop', () => {
@@ -152,9 +153,7 @@ test('should not render border when border prop is false', () => {
     },
   });
 
-  expect(
-    wrapper.element.classList.contains('van-hairline--top-bottom')
-  ).toBeFalsy();
+  expect(wrapper.classes()).not.toContain(BORDER_TOP_BOTTOM);
 });
 
 test('should render placeholder element when using placeholder prop', async () => {

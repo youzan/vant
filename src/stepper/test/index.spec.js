@@ -68,10 +68,12 @@ test('should emit overlimit event when clicking disabled buttons', async () => {
 
 test('should disable plus button when disable-plus prop is true', async () => {
   const wrapper = mount(Stepper);
-  const plus = wrapper.find('.van-stepper__plus').element;
-  expect(plus.classList.contains('van-stepper__plus--disabled')).toBeFalsy();
+  const plus = wrapper.find('.van-stepper__plus');
+
+  expect(plus.classes()).not.toContain('van-stepper__plus--disabled');
+
   await wrapper.setProps({ disablePlus: true });
-  expect(plus.classList.contains('van-stepper__plus--disabled')).toBeTruthy();
+  expect(plus.classes()).toContain('van-stepper__plus--disabled');
 });
 
 test('should disable minus button when disable-minus prop is true', async () => {
@@ -80,10 +82,12 @@ test('should disable minus button when disable-minus prop is true', async () => 
       modelValue: 2,
     },
   });
-  const minus = wrapper.find('.van-stepper__minus').element;
-  expect(minus.classList.contains('van-stepper__minus--disabled')).toBeFalsy();
+
+  const minus = wrapper.find('.van-stepper__minus');
+  expect(minus.classes()).not.toContain('van-stepper__minus--disabled');
+
   await wrapper.setProps({ disableMinus: true });
-  expect(minus.classList.contains('van-stepper__minus--disabled')).toBeTruthy();
+  expect(minus.classes()).toContain('van-stepper__minus--disabled');
 });
 
 test('should limit max value when using max prop', async () => {

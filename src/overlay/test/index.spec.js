@@ -21,8 +21,8 @@ test('should allow to custom class name with class-name prop', () => {
     },
   });
 
-  const overlay = wrapper.find('.van-overlay').element;
-  expect(overlay.classList.contains('foo')).toBeTruthy();
+  const overlay = wrapper.find('.van-overlay');
+  expect(overlay.classes()).toContain('foo');
 });
 
 test('should allow to custom style with custom-style prop', () => {

@@ -47,9 +47,7 @@ test('should render "van-checkbox--label-disabled" class when using label-disabl
     },
   });
 
-  expect(
-    wrapper.element.classList.contains('van-checkbox--label-disabled')
-  ).toBeTruthy();
+  expect(wrapper.classes()).toContain('van-checkbox--label-disabled');
 });
 
 test('should emit "update:modelValue" event when label is clicked', () => {
