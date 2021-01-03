@@ -1,5 +1,11 @@
 import { nextTick, onMounted, ref } from 'vue';
-import { mount, trigger, triggerDrag, mockScrollIntoView } from '../../../test';
+import {
+  mount,
+  trigger,
+  triggerDrag,
+  mockScrollTop,
+  mockScrollIntoView,
+} from '../../../test';
 import IndexBar from '..';
 import IndexAnchor from '../../index-anchor';
 
@@ -108,8 +114,7 @@ test('should update active anchor after page scroll', async () => {
     },
   });
 
-  window.scrollTop = 0;
-  await trigger(window, 'scroll');
+  await mockScrollTop(0);
   expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.vm.sticky = true;
@@ -146,13 +151,11 @@ test('should emit change event when active index changed', async () => {
     },
   });
 
-  window.scrollTop = 0;
-  await trigger(window, 'scroll');
+  await mockScrollTop(0);
   expect(onChange).toHaveBeenCalledTimes(1);
   expect(onChange).toHaveBeenLastCalledWith('B');
 
-  window.scrollTop = 100;
-  await trigger(window, 'scroll');
+  await mockScrollTop(100);
   expect(onChange).toHaveBeenCalledTimes(2);
   expect(onChange).toHaveBeenLastCalledWith('D');
 

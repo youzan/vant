@@ -1,5 +1,11 @@
 import PullRefresh from '..';
-import { mount, later, trigger, triggerDrag } from '../../../test';
+import {
+  mount,
+  later,
+  trigger,
+  triggerDrag,
+  mockScrollTop,
+} from '../../../test';
 
 test('should render different head content in different pulling status', async () => {
   const wrapper = mount(PullRefresh);
@@ -82,11 +88,11 @@ test('should not trigger pull refresh when not in page top', async () => {
   const track = wrapper.find('.van-pull-refresh__track');
 
   // ignore touch event when not at page top
-  window.scrollTop = 1;
+  await mockScrollTop(1);
   triggerDrag(track, 0, 100);
   expect(wrapper.emitted('update:modelValue')).toBeFalsy();
 
-  window.scrollTop = 0;
+  await mockScrollTop(0);
   triggerDrag(track, 0, 100);
   expect(wrapper.emitted('update:modelValue')).toBeTruthy();
 });
