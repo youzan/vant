@@ -1,4 +1,4 @@
-import { ComponentPublicInstance } from 'vue';
+import { ComponentPublicInstance, nextTick } from 'vue';
 import { VueWrapper } from '@vue/test-utils';
 
 function getTouch(el: Element | Window, x: number, y: number) {
@@ -43,6 +43,8 @@ export function trigger(
   });
 
   el.dispatchEvent(event);
+
+  return nextTick();
 }
 
 // simulate drag gesture

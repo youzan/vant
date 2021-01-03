@@ -1,30 +1,29 @@
+import { nextTick, onMounted, ref } from 'vue';
 import { mount, trigger, triggerDrag, mockScrollIntoView } from '../../../test';
+import IndexBar from '..';
+import IndexAnchor from '../../index-anchor';
 
-test('should allow to custom anchor text', () => {
+test('should allow to custom anchor content', () => {
   const wrapper = mount({
-    template: `
-      <van-index-bar>
-        <van-index-anchor index="A">Title A</van-index-anchor>
-        <van-index-anchor index="B">Title B</van-index-anchor>
-      </van-index-bar>
-    `,
+    render: () => (
+      <IndexBar>
+        <IndexAnchor index="A">Title A</IndexAnchor>
+      </IndexBar>
+    ),
   });
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper.find('.van-index-anchor').html()).toMatchSnapshot();
 });
 
 test('should scroll to anchor and emit select event after clicking the index-bar', () => {
   const onSelect = jest.fn();
   const wrapper = mount({
-    template: `
-      <van-index-bar @select="onSelect">
-        <van-index-anchor index="A" />
-        <van-index-anchor index="B" />
-      </van-index-bar>
-    `,
-    methods: {
-      onSelect,
-    },
+    render: () => (
+      <IndexBar onSelect={onSelect}>
+        <IndexAnchor index="A" />
+        <IndexAnchor index="B" />
+      </IndexBar>
+    ),
   });
 
   const fn = mockScrollIntoView();
@@ -38,16 +37,13 @@ test('should scroll to anchor and emit select event after clicking the index-bar
 test('should scroll to anchor after touching the index-bar', () => {
   const onSelect = jest.fn();
   const wrapper = mount({
-    template: `
-      <van-index-bar @select="onSelect">
-        <van-index-anchor index="A" />
-        <van-index-anchor index="B" />
-        <van-index-anchor index="XXX" />
-      </van-index-bar>
-    `,
-    methods: {
-      onSelect,
-    },
+    render: () => (
+      <IndexBar onSelect={onSelect}>
+        <IndexAnchor index="A" />
+        <IndexAnchor index="B" />
+        <IndexAnchor index="XXX" />
+      </IndexBar>
+    ),
   });
 
   const fn = mockScrollIntoView();
@@ -58,7 +54,7 @@ test('should scroll to anchor after touching the index-bar', () => {
     const index = y / 100;
 
     if (index === 1 || index === 2) {
-      return indexes.at(index).element;
+      return indexes[index].element;
     }
 
     if (index === 3) {
@@ -83,7 +79,7 @@ test('should scroll to anchor after touching the index-bar', () => {
   expect(onSelect).toHaveBeenCalledWith('B');
 });
 
-test('should update active anchor after page scroll', () => {
+test('should update active anchor after page scroll', async () => {
   const nativeRect = Element.prototype.getBoundingClientRect;
   Element.prototype.getBoundingClientRect = function () {
     const { index } = this.dataset;
@@ -94,36 +90,38 @@ test('should update active anchor after page scroll', () => {
   };
 
   const wrapper = mount({
-    template: `
-      <van-index-bar :sticky="sticky">
-        <van-index-anchor
-          v-for="index in 4"
-          :key="index"
-          :index="index"
-          :data-index="index - 1"
-        />
-      </van-index-bar>
-    `,
-    data() {
+    setup() {
+      const sticky = ref(false);
       return {
-        sticky: false,
+        sticky,
       };
+    },
+    render() {
+      return (
+        <IndexBar sticky={this.sticky}>
+          <IndexAnchor index={1} data-index="0" />
+          <IndexAnchor index={2} data-index="1" />
+          <IndexAnchor index={3} data-index="2" />
+          <IndexAnchor index={4} data-index="3" />
+        </IndexBar>
+      );
     },
   });
 
   window.scrollTop = 0;
-  trigger(window, 'scroll');
+  await trigger(window, 'scroll');
   expect(wrapper.html()).toMatchSnapshot();
 
-  wrapper.setData({ sticky: true });
-  trigger(window, 'scroll');
+  wrapper.vm.sticky = true;
+  await nextTick();
+  await trigger(window, 'scroll');
   expect(wrapper.html()).toMatchSnapshot();
-  wrapper.vm.$unmount();
+  wrapper.unmount();
 
   Element.prototype.getBoundingClientRect = nativeRect;
 });
 
-test('should emit change event when active index changed', () => {
+test('should emit change event when active index changed', async () => {
   const nativeRect = Element.prototype.getBoundingClientRect;
   Element.prototype.getBoundingClientRect = function () {
     const { index } = this.dataset;
@@ -136,58 +134,59 @@ test('should emit change event when active index changed', () => {
   const onChange = jest.fn();
 
   mount({
-    template: `
-      <van-index-bar @change="onChange">
-        <van-index-anchor
-          v-for="index in 4"
-          :key="index"
-          :index="index"
-          :data-index="index - 1"
-        />
-      </van-index-bar>
-    `,
-    methods: {
-      onChange,
+    render() {
+      return (
+        <IndexBar onChange={onChange}>
+          <IndexAnchor index={1} data-index="0" />
+          <IndexAnchor index={2} data-index="1" />
+          <IndexAnchor index={3} data-index="2" />
+          <IndexAnchor index={4} data-index="3" />
+        </IndexBar>
+      );
     },
   });
 
   window.scrollTop = 0;
-  trigger(window, 'scroll');
+  await trigger(window, 'scroll');
   expect(onChange).toHaveBeenCalledTimes(1);
   expect(onChange).toHaveBeenLastCalledWith('B');
 
   window.scrollTop = 100;
-  trigger(window, 'scroll');
+  await trigger(window, 'scroll');
   expect(onChange).toHaveBeenCalledTimes(2);
   expect(onChange).toHaveBeenLastCalledWith('D');
 
   Element.prototype.getBoundingClientRect = nativeRect;
 });
 
-test('scroll to target element', () => {
+test('should scroll to target element after calling scrollTo method', () => {
   const onSelect = jest.fn();
+  const scrollIntoView = mockScrollIntoView();
+
   mount({
-    template: `
-      <van-index-bar ref="anchorRef" @select="onSelect">
-        <van-index-anchor index="A" />
-        <van-index-anchor index="B" />
-        <van-index-anchor index="C" />
-        <van-index-anchor index="D" />
-        <van-index-anchor index="E" />
-        <van-index-anchor index="F" />
-        <van-index-anchor index="XXX" />
-      </van-index-bar>
-    `,
-    methods: {
-      onSelect,
+    setup() {
+      const anchorRef = ref();
+
+      onMounted(() => {
+        anchorRef.value.scrollTo('C');
+      });
+
+      return {
+        anchorRef,
+      };
     },
-    mounted() {
-      this.$refs.anchorRef.scrollTo('C');
+    render() {
+      return (
+        <IndexBar ref="anchorRef" onSelect={onSelect}>
+          <IndexAnchor index="A" />
+          <IndexAnchor index="B" />
+          <IndexAnchor index="C" />
+          <IndexAnchor index="D" />
+        </IndexBar>
+      );
     },
   });
 
-  const fn = mockScrollIntoView();
-
-  expect(fn).toHaveBeenCalledTimes(1);
+  expect(scrollIntoView).toHaveBeenCalledTimes(1);
   expect(onSelect).toHaveBeenCalledWith('C');
 });
