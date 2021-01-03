@@ -217,7 +217,7 @@ test('default-value prop', () => {
   const defaultValue = new Date(2020, 0, 0, 0, 0);
   const wrapper = mount(DatePicker, {
     propsData: {
-      defaultValue,
+      value: defaultValue,
     },
   });
 

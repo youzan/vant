@@ -85,13 +85,11 @@
 
     <demo-block card :title="t('defaultValue')">
       <van-datetime-picker
-          v-model="value.defaultDate"
-          type="date"
-          :title="t('defaultValue')"
-          :default-value="defaultValue"
+        v-model="value.defaultDate"
+        :title="t('defaultValue')"
+        :default-value="defaultValue"
       />
     </demo-block>
-
   </demo-section>
 </template>
 
@@ -142,7 +140,7 @@ export default {
         yearMonth: new Date(2020, 0, 1),
         optionFilter: '12:00',
         sortColumnsDate: new Date(2020, 0, 1),
-        defaultDate: null,
+        defaultDate: new Date(2022, 0, 12, 10, 10),
       },
     };
   },

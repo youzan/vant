@@ -26,10 +26,6 @@ export default createComponent({
       default: () => new Date(currentYear + 10, 11, 31),
       validator: isDate,
     },
-    defaultValue: {
-      type: Date,
-      validator: isDate,
-    }
   },
 
   watch: {
@@ -54,7 +50,10 @@ export default createComponent({
         maxMonth,
         maxHour,
         maxMinute,
-      } = this.getBoundary('max', this.innerValue ? this.innerValue : this.minDate);
+      } = this.getBoundary(
+        'max',
+        this.innerValue ? this.innerValue : this.minDate
+      );
 
       const {
         minYear,
@@ -62,8 +61,10 @@ export default createComponent({
         minMonth,
         minHour,
         minMinute,
-      } = this.getBoundary('min', this.innerValue ? this.innerValue : this.minDate);
-
+      } = this.getBoundary(
+        'min',
+        this.innerValue ? this.innerValue : this.minDate
+      );
 
       let result = [
         {
@@ -118,8 +119,9 @@ export default createComponent({
 
   methods: {
     formatValue(value) {
-      if (!isDate(value) && this.defaultValue) {
-        value = this.defaultValue;
+      if (!isDate(value) && this.value) {
+        const defaultValue = this.value;
+        value = defaultValue;
       } else if (!isDate(value)) {
         return null;
       }
