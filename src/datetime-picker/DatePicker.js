@@ -119,10 +119,7 @@ export default createComponent({
 
   methods: {
     formatValue(value) {
-      if (!isDate(value) && this.value) {
-        const defaultValue = this.value;
-        value = defaultValue;
-      } else if (!isDate(value)) {
+      if (!isDate(value)) {
         return null;
       }
 

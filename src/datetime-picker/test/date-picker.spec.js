@@ -213,7 +213,14 @@ test('use min-date with filter', async () => {
   expect(wrapper.emitted('confirm')[0][0]).toEqual(new Date(2030, 0, 0, 0, 30));
 });
 
-test('default-value prop', () => {
+test('value is null', () => {
+  const wrapper = mount(DatePicker);
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual(null);
+});
+
+test('value has an inital value', () => {
   const defaultValue = new Date(2020, 0, 0, 0, 0);
   const wrapper = mount(DatePicker, {
     propsData: {
