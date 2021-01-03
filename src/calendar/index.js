@@ -192,17 +192,9 @@ export default createComponent({
       });
     },
 
-    // scroll to current month
-    scrollIntoView() {
+    // @exposed-api
+    scrollToDate(targetDate) {
       raf(() => {
-        const { currentDate } = this;
-
-        if (!currentDate) {
-          return;
-        }
-
-        const targetDate =
-          this.type === 'single' ? currentDate : currentDate[0];
         const displayed = this.value || !this.poppable;
 
         /* istanbul ignore if */
@@ -220,6 +212,17 @@ export default createComponent({
           return false;
         });
       });
+    },
+
+    // scroll to current month
+    scrollIntoView() {
+      const { currentDate } = this;
+
+      if (currentDate) {
+        const targetDate =
+          this.type === 'single' ? currentDate : currentDate[0];
+        this.scrollToDate(targetDate);
+      }
     },
 
     getInitialDate() {

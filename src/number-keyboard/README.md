@@ -111,6 +111,23 @@ Use `title` prop to set keyboard title.
 />
 ```
 
+### Random Key Order
+
+Use `random-key-order` prop to shuffle the order of keys.
+
+```html
+<van-cell @touchstart.native.stop="show = true">
+  Show Keyboard With Random Key Order
+</van-cell>
+<van-number-keyboard
+  :show="show"
+  random-key-order
+  @blur="show = false"
+  @input="onInput"
+  @delete="onDelete"
+/>
+```
+
 ### Bind Value
 
 ```html
@@ -160,6 +177,7 @@ export default {
 | hide-on-click-outside | Whether to hide keyboard when outside is clicked | _boolean_ | `true` |
 | get-container `v2.10.0` | Return the mount node for NumberKeyboard | _string \| () => Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
+| random-key-order `v2.12.2` | Whether to shuffle the order of keys | _boolean_ | `false` |
 
 ### Events
 

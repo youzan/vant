@@ -16,6 +16,19 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.2](https://github.com/youzan/vant/compare/v2.12.1...v2.12.2)
+
+`2021-01-02`
+
+**Feature**
+
+- Calendar: add scrollToDate method [#7847](https://github.com/youzan/vant/issues/7847)
+- Form: add disabled prop [#7829](https://github.com/youzan/vant/issues/7829)
+- Form: add readonly prop [#7829](https://github.com/youzan/vant/issues/7829)
+- Loading: add text-color prop [#7846](https://github.com/youzan/vant/issues/7846)
+- IndexBar: add scrollTo method [#7845](https://github.com/youzan/vant/issues/7845)
+- NumberKeyboard: add random-key-order prop [#7841](https://github.com/youzan/vant/issues/7841)
+
 ### [v2.12.1](https://github.com/youzan/vant/compare/v2.12.0...v2.12.1)
 
 `2020-12-26`
