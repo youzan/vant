@@ -6,6 +6,8 @@ const [createComponent, bem] = createNamespace('form');
 export default createComponent({
   props: {
     colon: Boolean,
+    disabled: Boolean,
+    readonly: Boolean,
     labelWidth: [Number, String],
     labelAlign: String,
     inputAlign: String,

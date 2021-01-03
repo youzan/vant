@@ -37,8 +37,14 @@ export default createComponent({
     ...cellProps,
     name: String,
     rules: Array,
-    disabled: Boolean,
-    readonly: Boolean,
+    disabled: {
+      type: Boolean,
+      default: null,
+    },
+    readonly: {
+      type: Boolean,
+      default: null,
+    },
     autosize: [Boolean, Object],
     leftIcon: String,
     rightIcon: String,
@@ -113,7 +119,9 @@ export default createComponent({
 
   computed: {
     showClear() {
-      if (this.clearable && !this.readonly) {
+      const readonly = this.getProp('readonly');
+
+      if (this.clearable && !readonly) {
         const hasValue = isDef(this.value) && this.value !== '';
         const trigger =
           this.clearTrigger === 'always' ||
@@ -339,7 +347,8 @@ export default createComponent({
 
       // readonly not work in lagacy mobile safari
       /* istanbul ignore if */
-      if (this.readonly) {
+      const readonly = this.getProp('readonly');
+      if (readonly) {
         this.blur();
       }
     },
@@ -418,6 +427,8 @@ export default createComponent({
 
     genInput() {
       const { type } = this;
+      const disabled = this.getProp('disabled');
+      const readonly = this.getProp('readonly');
       const inputSlot = this.slots('input');
       const inputAlign = this.getProp('inputAlign');
 
@@ -441,8 +452,8 @@ export default createComponent({
         attrs: {
           ...this.$attrs,
           name: this.name,
-          disabled: this.disabled,
-          readonly: this.readonly,
+          disabled,
+          readonly,
           placeholder: this.placeholder,
         },
         on: this.listeners,
@@ -559,6 +570,7 @@ export default createComponent({
 
   render() {
     const { slots } = this;
+    const disabled = this.getProp('disabled');
     const labelAlign = this.getProp('labelAlign');
 
     const scopedSlots = {
@@ -591,7 +603,7 @@ export default createComponent({
         arrowDirection={this.arrowDirection}
         class={bem({
           error: this.showError,
-          disabled: this.disabled,
+          disabled,
           [`label-${labelAlign}`]: labelAlign,
           'min-height': this.type === 'textarea' && !this.autosize,
         })}
