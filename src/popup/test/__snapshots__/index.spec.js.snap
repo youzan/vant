@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correct close icon when using close-icon prop 1`] = `
+<i class="van-badge__wrapper van-icon van-icon-success van-popup__close-icon van-popup__close-icon--top-right"
+   role="button"
+   tabindex="0"
+>
+</i>
+`;
