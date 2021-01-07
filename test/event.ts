@@ -52,11 +52,13 @@ export function triggerDrag(
   el: VueWrapper<ComponentPublicInstance> | HTMLElement,
   x = 0,
   y = 0
-): void {
+) {
   trigger(el, 'touchstart', 0, 0);
   trigger(el, 'touchmove', x / 4, y / 4);
   trigger(el, 'touchmove', x / 3, y / 3);
   trigger(el, 'touchmove', x / 2, y / 2);
   trigger(el, 'touchmove', x, y);
   trigger(el, 'touchend', x, y);
+
+  return nextTick();
 }
