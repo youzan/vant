@@ -36,7 +36,7 @@ export default createComponent({
     },
   },
 
-  emits: ['search', 'cancel'],
+  emits: ['update:modelValue', 'search', 'cancel'],
 
   setup(props, { emit, slots, attrs }) {
     const filedRef = ref();
