@@ -13,7 +13,7 @@ import { genPackageEntry } from '../compiler/gen-package-entry';
 import { genStyleDepsMap } from '../compiler/gen-style-deps-map';
 import { genComponentStyle } from '../compiler/gen-component-style';
 import { SRC_DIR, LIB_DIR, ES_DIR } from '../common/constant';
-import { genPacakgeStyle } from '../compiler/gen-package-style';
+import { genPackageStyle } from '../compiler/gen-package-style';
 import { genVeturConfig } from '../compiler/gen-vetur-config';
 import {
   isDir,
@@ -82,7 +82,7 @@ async function buildStyleEntry() {
   genComponentStyle();
 }
 
-async function buildPacakgeEntry() {
+async function buildPackageEntry() {
   const esEntryFile = join(ES_DIR, 'index.js');
   const libEntryFile = join(LIB_DIR, 'index.js');
   const styleEntryFile = join(LIB_DIR, `index.${CSS_LANG}`);
@@ -95,7 +95,7 @@ async function buildPacakgeEntry() {
   setModuleEnv('esmodule');
   await compileJs(esEntryFile);
 
-  genPacakgeStyle({
+  genPackageStyle({
     outputPath: styleEntryFile,
     pathResolver: (path: string) => path.replace(SRC_DIR, '.'),
   });
@@ -128,7 +128,7 @@ const tasks = [
   },
   {
     text: 'Build Package Entry',
-    task: buildPacakgeEntry,
+    task: buildPackageEntry,
   },
   {
     text: 'Build Packed Outputs',

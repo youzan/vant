@@ -16,7 +16,7 @@ project
 │
 ├─ babel.config.js    # Babel 配置文件
 ├─ vant.config.js     # Vant Cli 配置文件
-├─ pacakge.json
+├─ package.json
 └─ README.md
 ```
 

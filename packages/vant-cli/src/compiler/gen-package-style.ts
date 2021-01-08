@@ -9,7 +9,7 @@ type Options = {
   pathResolver?: (path: string) => string;
 };
 
-export function genPacakgeStyle(options: Options) {
+export function genPackageStyle(options: Options) {
   const styleDepsJson = require(STYPE_DEPS_JSON_FILE);
   const ext = '.' + CSS_LANG;
 
