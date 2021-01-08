@@ -273,7 +273,7 @@ export default createComponent({
       }
     );
 
-    useExpose({ reset, getArea });
+    useExpose({ reset, getArea, getValues });
 
     return () => {
       const columns = state.columns.slice(0, +props.columnsNum);
