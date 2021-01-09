@@ -88,7 +88,7 @@ exports[`should render correctly after inserting a tab 1`] = `
         </span>
       </div>
       <div class="van-tabs__line"
-           style="transform: translateX(0px) translateX(-50%);"
+           style="transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"
       >
       </div>
     </div>
@@ -123,23 +123,23 @@ exports[`should render correctly after inserting a tab with name 1`] = `
          class="van-tabs__nav van-tabs__nav--line"
     >
       <div role="tab"
-           class="van-tab van-tab--active"
-           aria-selected="true"
+           class="van-tab"
+           aria-selected="false"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           bar
         </span>
       </div>
       <div role="tab"
-           class="van-tab"
-           aria-selected="false"
+           class="van-tab van-tab--active"
+           aria-selected="true"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           foo
         </span>
       </div>
       <div class="van-tabs__line"
-           style="transform: translateX(0px) translateX(-50%);"
+           style="transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"
       >
       </div>
     </div>

@@ -27,6 +27,7 @@ test('should render correctly after inserting a tab', async () => {
 
   await later();
   await wrapper.setData({ insert: true });
+  await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
 
@@ -57,6 +58,7 @@ test('should render correctly after inserting a tab with name', async () => {
 
   await later();
   await wrapper.setData({ insert: true });
+  await later();
   expect(wrapper.html()).toMatchSnapshot();
   expect(onChange).toHaveBeenCalledTimes(0);
 });
