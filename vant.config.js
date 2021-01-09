@@ -20,7 +20,7 @@ module.exports = {
     },
     htmlPluginOptions: {
       meta: {
-        'docsearch:version': '2.x',
+        'docsearch:version': 'v2',
       },
     },
     locales: {
