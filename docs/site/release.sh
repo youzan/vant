@@ -5,4 +5,4 @@ superman-cdn /vant ./site/*.js
 
 rm -rf site/*.js
 
-gh-pages -d site --add --dest next
+gh-pages -d site --add --dest v3

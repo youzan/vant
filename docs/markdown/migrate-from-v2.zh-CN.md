@@ -129,7 +129,7 @@ GoodsAction 商品导航组件重命名为 **ActionBar 行动栏**。
 
 ### 重命名 get-container 属性
 
-Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位置的能力，Vant 2.x 也通过 `get-container` 属性提供了类似的能力。为了与官方的 API 保持一致，Vant 中的 `get-container` 属性将重命名为 `teleport`。
+Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位置的能力，Vant 2 也通过 `get-container` 属性提供了类似的能力。为了与官方的 API 保持一致，Vant 中的 `get-container` 属性将重命名为 `teleport`。
 
 ```html
 <!-- Vant 2 -->
@@ -222,7 +222,7 @@ Vue 3.0 中增加了 `Teleport` 组件，提供将组件渲染到任意 DOM 位�
 
 ### 注册全局方法
 
-Vant 2.x 中默认提供了 `$toast`、`$dialog` 等全局方法，但 Vue 3.0 不再支持直接在 Vue 的原型链上挂载方法，因此从 Vant 3.0 开始，使用全局方法前必须先通过 `app.use` 将组件注册到对应的 app 上。
+Vant 2 中默认提供了 `$toast`、`$dialog` 等全局方法，但 Vue 3.0 不再支持直接在 Vue 的原型链上挂载方法，因此从 Vant 3.0 开始，使用全局方法前必须先通过 `app.use` 将组件注册到对应的 app 上。
 
 ```js
 import { Toast, Dialog, Notify } from 'vant';
