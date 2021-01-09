@@ -189,8 +189,8 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Swipe instance and call instance
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| prev `v2.4.2` | Swipe to prev item | - | - |
-| next `v2.4.2` | Swipe to next item | - | - |
+| prev | Swipe to prev item | - | - |
+| next | Swipe to next item | - | - |
 | swipeTo | Swipe to target index | index: target index, options: Options | - |
 | resize | Resize Swipe when container element resized or visibility changed | - | - |
 

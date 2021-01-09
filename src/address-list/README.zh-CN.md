@@ -76,15 +76,15 @@ export default {
 
 ### Props
 
-| 参数                      | 说明              | 类型        | 默认值     |
-| ------------------------- | ----------------- | ----------- | ---------- |
-| v-model                   | 当前选中地址的 id | _string_    | -          |
-| list                      | 地址列表          | _Address[]_ | `[]`       |
-| disabled-list             | 不可配送地址列表  | _Address[]_ | `[]`       |
-| disabled-text             | 不可配送提示文案  | _string_    | -          |
-| switchable                | 是否允许切换地址  | _boolean_   | `true`     |
-| add-button-text           | 底部按钮文字      | _string_    | `新增地址` |
-| default-tag-text `v2.3.0` | 默认地址标签文字  | _string_    | -          |
+| 参数             | 说明              | 类型        | 默认值     |
+| ---------------- | ----------------- | ----------- | ---------- |
+| v-model          | 当前选中地址的 id | _string_    | -          |
+| list             | 地址列表          | _Address[]_ | `[]`       |
+| disabled-list    | 不可配送地址列表  | _Address[]_ | `[]`       |
+| disabled-text    | 不可配送提示文案  | _string_    | -          |
+| switchable       | 是否允许切换地址  | _boolean_   | `true`     |
+| add-button-text  | 底部按钮文字      | _string_    | `新增地址` |
+| default-tag-text | 默认地址标签文字  | _string_    | -          |
 
 ### Events
 

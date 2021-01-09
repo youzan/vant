@@ -68,7 +68,7 @@ Vue.use(SubmitBar);
 | decimal-length | 价格小数点位数 | _number \| string_ | `2` |
 | label | 价格左侧文案 | _string_ | `合计：` |
 | suffix-label | 价格右侧文案 | _string_ | - |
-| text-align `v2.3.0` | 价格文案对齐方向，可选值为 `left` | _string_ | `right` |
+| text-align | 价格文案对齐方向，可选值为 `left` | _string_ | `right` |
 | button-text | 按钮文字 | _string_ | - |
 | button-type | 按钮类型 | _string_ | `danger` |
 | button-color `v2.9.1` | 自定义按钮颜色 | _string_ | - |

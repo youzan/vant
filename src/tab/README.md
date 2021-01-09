@@ -232,7 +232,7 @@ export default {
 | sticky | Whether to use sticky mode | _boolean_ | `false` |
 | swipeable | Whether to switch tabs with swipe gestrue in the content | _boolean_ | `false` |
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
-| scrollspy `v2.3.0` | Whether to use scrollspy mode | _boolean_ | `false` |
+| scrollspy | Whether to use scrollspy mode | _boolean_ | `false` |
 | offset-top `v2.8.7` | Sticky offset top , supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `0` |
 | swipe-threshold | Set swipe tabs threshold | _number \| string_ | `5` | - |
 | title-active-color | Title active color | _string_ | - |
@@ -245,7 +245,7 @@ export default {
 | --- | --- | --- | --- |
 | title | Title | _string_ | - |
 | disabled | Whether to disable tab | _boolean_ | `false` |
-| dot `v2.3.0` | Whether to show red dot on the title | _boolean_ | `false` |
+| dot | Whether to show red dot on the title | _boolean_ | `false` |
 | badge `v2.5.6` | Content of the badge on the title | _number \| string_ | - |
 | name | Identifier | _number \| string_ | Index of tab |
 | url | Link | _string_ | - |
@@ -261,7 +261,7 @@ export default {
 | click | Emitted when a tab is clicked | name，title |
 | change | Emitted when active tab changed | name，title |
 | disabled | Emitted when a disabled tab is clicked | name，title |
-| rendered `v2.3.0` | Emitted when content first rendered in lazy-render mode | name，title |
+| rendered | Emitted when content first rendered in lazy-render mode | name，title |
 | scroll | Emitted when tab scrolling in sticky mode | object: { scrollTop, isFixed } |
 
 ### Tabs Methods

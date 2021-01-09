@@ -156,7 +156,7 @@ export default {
 | min | 最小值 | _number \| string_ | `0` |
 | step | 步长 | _number \| string_ | `1` |
 | bar-height | 进度条高度，默认单位为`px` | _number \| string_ | `2px` |
-| button-size `v2.4.5` | 滑块按钮大小，默认单位为`px` | _number \| string_ | `24px` |
+| button-size | 滑块按钮大小，默认单位为`px` | _number \| string_ | `24px` |
 | active-color | 进度条激活态颜色 | _string_ | `#1989fa` |
 | inactive-color | 进度条非激活态颜色 | _string_ | `#e5e5e5` |
 | range `v2.10.7` | 是否开启双滑块模式 | _boolean_ | `false` |

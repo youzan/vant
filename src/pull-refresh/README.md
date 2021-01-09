@@ -104,7 +104,7 @@ Use slots to custom tips.
 | success-text | Text to show when loading success | _string_ | - |
 | success-duration | Success text display duration(ms) | _number \| string_ | `500` |
 | animation-duration | Animation duration | _number \| string_ | `300` |
-| head-height `v2.4.2` | Height of head | _number \| string_ | `50` |
+| head-height | Height of head | _number \| string_ | `50` |
 | disabled | Whether to disable pull refresh | _boolean_ | `false` |
 
 ### Events
