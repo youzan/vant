@@ -5,10 +5,10 @@
 ### npm
 
 ```bash
-# Install vant v2 for Vue 2 project
+# Install Vant 2 for Vue 2 project
 npm i vant -S
 
-# Install vant v3 for Vue 3 project
+# Install Vant 3 for Vue 3 project
 npm i vant@next -S
 ```
 

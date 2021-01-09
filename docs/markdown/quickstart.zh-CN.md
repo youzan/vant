@@ -11,10 +11,10 @@
 在现有项目中使用 Vant 时，可以通过 `npm` 或 `yarn` 进行安装：
 
 ```bash
-# Vue 2 项目，安装 Vant v2 版本：
+# Vue 2 项目，安装 Vant 2：
 npm i vant -S
 
-# Vue 3 项目，安装 Vant v3 版本：
+# Vue 3 项目，安装 Vant 3：
 npm i vant@next -S
 ```
 
