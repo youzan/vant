@@ -19,7 +19,7 @@
   },
   "scripts": {
     "dev": "tsc --watch",
-    "release": "tsc & release-it"
+    "release": "tsc & release-it --tag latest-v2"
   },
   "files": [
     "lib",
