@@ -10,6 +10,9 @@
   "engines": {
     "node": ">=10"
   },
+  "npm": {
+    "tag": "latest-v2"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
