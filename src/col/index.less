@@ -9,12 +9,12 @@
 .generate-col(24);
 .generate-col(@n, @i: 1) when (@i =< @n) {
   .van-col--@{i} {
-    flex: 0 0 @i * 100% / 24;
-    max-width: @i * 100% / 24;
+    flex: 0 0 @i * (100% / 24);
+    max-width: @i * (100% / 24);
   }
 
   .van-col--offset-@{i} {
-    margin-left: @i * 100% / 24;
+    margin-left: @i * (100% / 24);
   }
 
   .generate-col(@n, (@i + 1));
