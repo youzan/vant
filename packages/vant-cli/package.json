@@ -19,7 +19,7 @@
   },
   "scripts": {
     "dev": "tsc --watch",
-    "release": "tsc & release-it --tag latest-v2"
+    "release": "tsc & release-it"
   },
   "files": [
     "lib",
@@ -112,6 +112,9 @@
     "git": {
       "tag": false,
       "commitMessage": "chore: release @vant/cli@${version}"
+    },
+    "npm": {
+      "tag": "latest-v2"
     }
   },
   "eslintConfig": {
