@@ -7,7 +7,7 @@ import '@docsearch/css';
 import docsearch from '@docsearch/js';
 
 export default {
-  name: 'van-doc-search',
+  name: 'VanDocSearch',
 
   props: {
     lang: String,

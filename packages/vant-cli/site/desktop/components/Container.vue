@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'van-doc-container',
+  name: 'VanDocContainer',
 
   props: {
     hasSimulator: Boolean,

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'van-doc-simulator',
+  name: 'VanDocSimulator',
 
   props: {
     src: String,

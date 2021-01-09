@@ -8,7 +8,7 @@
 import { decamelize } from '../../common';
 
 export default {
-  name: 'demo-section',
+  name: 'DemoSection',
 
   computed: {
     demoName() {

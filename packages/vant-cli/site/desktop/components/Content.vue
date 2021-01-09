@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'van-doc-content',
+  name: 'VanDocContent',
 
   computed: {
     currentPage() {

@@ -25,7 +25,7 @@
 import NavLink from './NavLink';
 
 export default {
-  name: 'van-doc-nav',
+  name: 'VanDocNav',
 
   components: {
     [NavLink.name]: NavLink,

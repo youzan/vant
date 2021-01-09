@@ -68,7 +68,7 @@ import SearchInput from './SearchInput';
 import { packageVersion } from 'site-desktop-shared';
 
 export default {
-  name: 'van-doc-header',
+  name: 'VanDocHeader',
 
   components: {
     SearchInput,

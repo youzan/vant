@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'demo-block',
+  name: 'DemoBlock',
 
   props: {
     card: Boolean,
