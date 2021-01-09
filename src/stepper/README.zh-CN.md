@@ -155,7 +155,7 @@ export default {
 | show-plus | 是否显示增加按钮 | _boolean_ | `true` |
 | show-minus | 是否显示减少按钮 | _boolean_ | `true` |
 | show-input `v2.12.1` | 是否显示输入框 | _boolean_ | `true` |
-| long-press `v2.4.3` | 是否开启长按手势 | _boolean_ | `true` |
+| long-press | 是否开启长按手势 | _boolean_ | `true` |
 | allow-empty `v2.9.1` | 是否允许输入的值为空 | _boolean_ | `false` |
 
 ### Events

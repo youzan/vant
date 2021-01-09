@@ -63,7 +63,7 @@ Use slot to add custom contents.
 | decimal-length | Price dicemal length | _number \| string_ | `2` |
 | label | Price left label | _string_ | `Total：` |
 | suffix-label | Price right label | _string_ | - |
-| text-align `v2.3.0` | Price label text align can be set to `left` | _string_ | `right` |
+| text-align | Price label text align can be set to `left` | _string_ | `right` |
 | button-text | Button text | _string_ | - |
 | button-type | Button type | _string_ | `danger` |
 | button-color `v2.9.1` | Button color | _string_ | - |

@@ -59,8 +59,8 @@ export default {
 | is-saving | 是否显示保存按钮加载动画 | _boolean_ | `false` |
 | is-deleting | 是否显示删除按钮加载动画 | _boolean_ | `false` |
 | tel-validator | 手机号格式校验函数 | _(tel: string) => boolean_ | - |
-| show-set-default `v2.3.0` | 是否显示默认联系人栏 | _boolean_ | `false` |
-| set-default-label `v2.3.0` | 默认联系人栏文案 | _string_ | - |
+| show-set-default | 是否显示默认联系人栏 | _boolean_ | `false` |
+| set-default-label | 默认联系人栏文案 | _string_ | - |
 
 ### Events
 

@@ -90,7 +90,7 @@ Use `badge` prop to show badge in icon.
 | --- | --- | --- | --- |
 | text | Button text | _string_ | - |
 | icon | Icon | _string_ | - |
-| color `v2.4.2` | Icon color | _string_ | `#323233` |
+| color | Icon color | _string_ | `#323233` |
 | icon-class | Icon class name | _any_ | `''` |
 | dot `2.5.5` | Whether to show red dot | _boolean_ | - |
 | badge `2.5.6` | Content of the badge | _number \| string_ | - |
@@ -105,7 +105,7 @@ Use `badge` prop to show badge in icon.
 | text | Button text | _string_ | - |
 | type | Button type, Can be set to `primary` `info` `warning` `danger` | _string_ | `default` |
 | color | Button color, support linear-gradient | _string_ | - |
-| icon `v2.4.4` | Left Icon | _string_ | - |
+| icon | Left Icon | _string_ | - |
 | primary | Is primary button (red color) | _boolean_ | `false` |
 | disabled | Whether to disable button | _boolean_ | `false` |
 | loading | Whether show loading status | _boolean_ | `false` |

@@ -137,8 +137,8 @@ export default {
 | disable-soldout-sku `v2.11.3` | Whether to disable soldout sku | _boolean_ | `true` |
 | get-container | Return the mount node for sku | _string \| () => Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
-| start-sale-num `v2.3.0` | Minimum quantity | _number_ | `1` |
-| properties `v2.4.2` | Goods properties | _array_ | - |
+| start-sale-num | Minimum quantity | _number_ | `1` |
+| properties | Goods properties | _array_ | - |
 | preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | _boolean_ | `true` |
 | show-header-image `v2.9.0` | Whether to display header image | _boolean_ | `true` |
 | lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
@@ -163,7 +163,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | getSkuData | Get current skuData | - | skuData |
-| resetSelectedSku `v2.3.0` | Reset selected sku to initial sku | - | - |
+| resetSelectedSku | Reset selected sku to initial sku | - | - |
 
 ### Slots
 
@@ -179,7 +179,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | extra-sku-group                 | Extra custom content              |
 | sku-stepper                     | Custom stepper                    |
 | sku-messages                    | Custom messages                   |
-| sku-actions-top `v2.4.7`        | Custom content before sku-actions |
+| sku-actions-top                 | Custom content before sku-actions |
 | sku-actions                     | Custom button actions             |
 
 ### Sku Data Structure

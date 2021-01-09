@@ -306,12 +306,12 @@ export default {
 
 当传入多列数据时，`columns` 为一个对象数组，数组中的每一个对象配置每一列，每一列有以下 `key`:
 
-| 键名              | 说明                       | 类型       |
-| ----------------- | -------------------------- | ---------- |
-| values            | 列中对应的备选值           | _string[]_ |
-| defaultIndex      | 初始选中项的索引，默认为 0 | _number_   |
-| className         | 为对应列添加额外的类名     | _any_      |
-| children `v2.4.5` | 级联选项                   | _Column_   |
+| 键名         | 说明                       | 类型       |
+| ------------ | -------------------------- | ---------- |
+| values       | 列中对应的备选值           | _string[]_ |
+| defaultIndex | 初始选中项的索引，默认为 0 | _number_   |
+| className    | 为对应列添加额外的类名     | _any_      |
+| children     | 级联选项                   | _Column_   |
 
 ### 方法
 
@@ -329,7 +329,7 @@ export default {
 | setColumnIndex | 设置对应列选中项的索引 | columnIndex, optionIndex | - |
 | getColumnValues | 获取对应列中所有选项 | columnIndex | values |
 | setColumnValues | 设置对应列中所有选项 | columnIndex, values | - |
-| confirm `v2.4.0` | 停止惯性滚动并触发 confirm 事件 | - | - |
+| confirm | 停止惯性滚动并触发 confirm 事件 | - | - |
 
 ### 样式变量
 
