@@ -467,4 +467,4 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 - Lazyload、Panel 和 Sku 组件暂未完成 Vue 3 适配
 
-> 详细改动请参考 [从 v2 升级](https://youzan.github.io/vant/next/#/zh-CN/migrate-from-v2)。
+> 详细改动请参考 [从 v2 升级](https://youzan.github.io/vant/v3/#/zh-CN/migrate-from-v2)。
