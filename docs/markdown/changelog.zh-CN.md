@@ -2389,6 +2389,6 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 同时，Vant 3.0 版本也在酝酿当中，不出意外的话，<b>3.0 版本会基于 Vue 3.0 实现，并争取和 Vue 3.0 同期发布</b>。
 
-对于 Vant 1.x 版本，后续会进入维护期，跟进问题修复，但不再引入功能性改动。
+对于 Vant v1 版本，后续会进入维护期，跟进问题修复，但不再引入功能性改动。
 
 ![](https://img.yzcdn.cn/public_files/2019/06/11/4e7202acbfc399622e428eb1485e1591.png)

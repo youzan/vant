@@ -239,4 +239,4 @@ export default {
 
 ### 引入时提示 dependencies not found？
 
-在 1.x 版本中，动作面板的组件名为`Actionsheet`，从 2.0 版本开始更名为`ActionSheet`，请注意区分。
+在 v1 版本中，动作面板的组件名为`Actionsheet`，从 2.0 版本开始更名为`ActionSheet`，请注意区分。
