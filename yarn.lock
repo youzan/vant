@@ -1867,10 +1867,10 @@
     "@typescript-eslint/types" "4.6.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/cli@^3.2.1":
-  version "3.2.1"
-  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.2.1.tgz#8aceac9f8c8f1afea195309583f7d61c542314c9"
-  integrity sha1-is6sn4yPGv6hlTCVg/fWHFQjFMk=
+"@vant/cli@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.npmjs.org/@vant/cli/-/cli-3.3.0.tgz#ab5ee914179f05f2293cb11587af25d7ba48bc55"
+  integrity sha512-giRnPhODB759eyXJ5jUCkd6gn/6w3QCC1SmkLFSv9Tbwwd1faLZvILuTKH50Md5YqY2FD19kxkKd1tlOtfssZw==
   dependencies:
     "@babel/core" "^7.12.7"
     "@babel/plugin-transform-object-assign" "^7.12.1"
@@ -1887,7 +1887,7 @@
     "@vant/markdown-vetur" "^2.0.2"
     "@vant/stylelint-config" "^1.4.2"
     "@vant/touch-emulator" "^1.2.0"
-    "@vue/babel-plugin-jsx" "^1.0.0"
+    "@vue/babel-plugin-jsx" "^1.0.1"
     "@vue/test-utils" "2.0.0-beta.10"
     address "^1.1.2"
     autoprefixer "^9.0.0"
@@ -2003,22 +2003,22 @@
   dependencies:
     "@babel/runtime" "7.x"
 
-"@vue/babel-helper-vue-transform-on@^1.0.0-rc.2":
+"@vue/babel-helper-vue-transform-on@^1.0.0":
   version "1.0.0"
-  resolved "https://registry.npm.taobao.org/@vue/babel-helper-vue-transform-on/download/@vue/babel-helper-vue-transform-on-1.0.0.tgz?cache=0&sync_timestamp=1608916513161&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fbabel-helper-vue-transform-on%2Fdownload%2F%40vue%2Fbabel-helper-vue-transform-on-1.0.0.tgz#8cbec6bbcae53626ad70139061be5e73403c9a62"
-  integrity sha1-jL7Gu8rlNiatcBOQYb5ec0A8mmI=
+  resolved "https://registry.npmjs.org/@vue/babel-helper-vue-transform-on/-/babel-helper-vue-transform-on-1.0.0.tgz#8cbec6bbcae53626ad70139061be5e73403c9a62"
+  integrity sha512-svFuKPoXP92TJ76ztENOglOsLjcMGUXkdeQhYDxl6KBnZCpqFjqx6RodUPWFg1bj4zsUVsfoIh1RibLO86fUUQ==
 
-"@vue/babel-plugin-jsx@1.0.0-rc.4", "@vue/babel-plugin-jsx@^1.0.0":
-  version "1.0.0-rc.4"
-  resolved "https://registry.npm.taobao.org/@vue/babel-plugin-jsx/download/@vue/babel-plugin-jsx-1.0.0-rc.4.tgz?cache=0&sync_timestamp=1610197702683&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fbabel-plugin-jsx%2Fdownload%2F%40vue%2Fbabel-plugin-jsx-1.0.0-rc.4.tgz#02c9ba2e01dc5251fd69a89afd49e9a1963331ba"
-  integrity sha1-Asm6LgHcUlH9aaia/UnpoZYzMbo=
+"@vue/babel-plugin-jsx@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@vue/babel-plugin-jsx/-/babel-plugin-jsx-1.0.1.tgz#8ece4e521888fabe2c96adca428606e5cea55f54"
+  integrity sha512-pE1YlINZBzqaLeSNfrvo0nNvYjtWTBU+sXUrx65sLW7DL+nDCZcAVeVkMFDcpT1jIahx4hI3EzOcGZE6oLPLoA==
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.0.0"
     "@babel/template" "^7.0.0"
     "@babel/traverse" "^7.0.0"
     "@babel/types" "^7.0.0"
-    "@vue/babel-helper-vue-transform-on" "^1.0.0-rc.2"
+    "@vue/babel-helper-vue-transform-on" "^1.0.0"
     camelcase "^6.0.0"
     html-tags "^3.1.0"
     svg-tags "^1.0.0"

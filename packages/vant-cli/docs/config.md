@@ -269,22 +269,12 @@ module.exports = {
 
 ### 依赖
 
-由于使用了`@babel/plugin-transform-runtime`来优化 Babel 的 helper 函数，你需要将`@babel/runtime`添加到`package.json`的依赖项：
+由于使用了 `@babel/plugin-transform-runtime` 来优化 Babel 的 helper 函数，你需要将 `@babel/runtime` 添加到 `package.json` 的依赖项：
 
 ```json
 {
   "dependencies": {
     "@babel/runtime": "7.x"
-  }
-}
-```
-
-如果使用了 JSX 的语法，还需要将`@vue/babel-helper-vue-jsx-merge-props`添加到依赖中：
-
-```json
-{
-  "dependencies": {
-    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0"
   }
 }
 ```
