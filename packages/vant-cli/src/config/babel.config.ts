@@ -2,6 +2,7 @@ import { ConfigAPI } from '@babel/core';
 
 type PresetOption = {
   loose?: boolean;
+  enableObjectSlots?: boolean;
 };
 
 module.exports = function (api?: ConfigAPI, options: PresetOption = {}) {
@@ -42,7 +43,12 @@ module.exports = function (api?: ConfigAPI, options: PresetOption = {}) {
         },
         'vant',
       ],
-      '@vue/babel-plugin-jsx',
+      [
+        '@vue/babel-plugin-jsx',
+        {
+          enableObjectSlots: options.enableObjectSlots,
+        },
+      ],
       '@babel/plugin-transform-object-assign',
     ],
   };

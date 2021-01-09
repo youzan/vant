@@ -2003,22 +2003,22 @@
   dependencies:
     "@babel/runtime" "7.x"
 
-"@vue/babel-helper-vue-transform-on@^1.0.0":
+"@vue/babel-helper-vue-transform-on@^1.0.0-rc.2":
   version "1.0.0"
-  resolved "https://registry.npm.taobao.org/@vue/babel-helper-vue-transform-on/download/@vue/babel-helper-vue-transform-on-1.0.0.tgz?cache=0&sync_timestamp=1608914007884&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fbabel-helper-vue-transform-on%2Fdownload%2F%40vue%2Fbabel-helper-vue-transform-on-1.0.0.tgz#8cbec6bbcae53626ad70139061be5e73403c9a62"
+  resolved "https://registry.npm.taobao.org/@vue/babel-helper-vue-transform-on/download/@vue/babel-helper-vue-transform-on-1.0.0.tgz?cache=0&sync_timestamp=1608916513161&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fbabel-helper-vue-transform-on%2Fdownload%2F%40vue%2Fbabel-helper-vue-transform-on-1.0.0.tgz#8cbec6bbcae53626ad70139061be5e73403c9a62"
   integrity sha1-jL7Gu8rlNiatcBOQYb5ec0A8mmI=
 
-"@vue/babel-plugin-jsx@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npm.taobao.org/@vue/babel-plugin-jsx/download/@vue/babel-plugin-jsx-1.0.0.tgz?cache=0&sync_timestamp=1608914005291&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fbabel-plugin-jsx%2Fdownload%2F%40vue%2Fbabel-plugin-jsx-1.0.0.tgz#1dabe1cf8588d088226fd5666ff1987f2f11982d"
-  integrity sha1-Havhz4WI0Igib9Vmb/GYfy8RmC0=
+"@vue/babel-plugin-jsx@1.0.0-rc.4", "@vue/babel-plugin-jsx@^1.0.0":
+  version "1.0.0-rc.4"
+  resolved "https://registry.npm.taobao.org/@vue/babel-plugin-jsx/download/@vue/babel-plugin-jsx-1.0.0-rc.4.tgz?cache=0&sync_timestamp=1610197702683&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fbabel-plugin-jsx%2Fdownload%2F%40vue%2Fbabel-plugin-jsx-1.0.0-rc.4.tgz#02c9ba2e01dc5251fd69a89afd49e9a1963331ba"
+  integrity sha1-Asm6LgHcUlH9aaia/UnpoZYzMbo=
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.0.0"
     "@babel/template" "^7.0.0"
     "@babel/traverse" "^7.0.0"
     "@babel/types" "^7.0.0"
-    "@vue/babel-helper-vue-transform-on" "^1.0.0"
+    "@vue/babel-helper-vue-transform-on" "^1.0.0-rc.2"
     camelcase "^6.0.0"
     html-tags "^3.1.0"
     svg-tags "^1.0.0"
