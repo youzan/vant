@@ -16,6 +16,20 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.3](https://github.com/youzan/vant/compare/v3.0.2...v3.0.3)
+
+`2021-01-10`
+
+**Feature**
+
+- Field: add autocomplate prop [#7877](https://github.com/youzan/vant/issues/7877)
+
+**Bug Fixes**
+
+- Area: should expose getValues method [03c7b4](https://github.com/youzan/vant/commit/03c7b46b04d8c543f952cbf8399ec21ca39f979f)
+- ImagePreview: close-on-popstate not work [#7880](https://github.com/youzan/vant/issues/7880)
+- List: should watch error prop and check position [b79c32](https://github.com/youzan/vant/commit/b79c32183f6159a663dad42f6189a939061f9f32)
+
 ### [v3.0.2](https://github.com/youzan/vant/compare/v3.0.1...v3.0.2)
 
 `2021-01-02`
