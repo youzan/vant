@@ -419,3 +419,14 @@ test('should format value after mounted if initial modelValue is null', () => {
   expect(wrapper.find('input').element.value).toEqual('');
   expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('');
 });
+
+test('should allow to set autocomplete attribute', () => {
+  const wrapper = mount(Field, {
+    props: {
+      autocomplete: 'on',
+    },
+  });
+  expect(wrapper.find('input').element.getAttribute('autocomplete')).toEqual(
+    'on'
+  );
+});
