@@ -475,26 +475,26 @@ export default {
 | label-align | Field label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Field input align, can be set to `center` `right` | _string_ | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
-| validate-trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onSubmit` | _string_ | `onBlur` |
+| validate-trigger | When to validate the form，can be set to `onChange`、`onSubmit` | _string_ | `onBlur` |
 | colon | Whether to display colon after label | _boolean_ | `false` |
-| disabled `v2.12.2` | Whether to disable form | _boolean_ | `false` |
-| readonly `v2.12.2` | Whether to be readonly | _boolean_ | `false` |
+| disabled | Whether to disable form | _boolean_ | `false` |
+| readonly | Whether to be readonly | _boolean_ | `false` |
 | validate-first | Whether to stop the validation when a rule fails | _boolean_ | `false` |
-| scroll-to-error `v2.5.2` | Whether to scroll to the error field when validation failed | _boolean_ | `false` |
-| show-error `v2.6.0` | Whether to highlight input when validation failed | _boolean_ | `true` |
-| show-error-message `v2.5.8` | Whether to show error message when validation failed | _boolean_ | `true` |
-| submit-on-enter `v2.8.3` | Whether to submit form on enter | _boolean_ | `true` |
+| scroll-to-error | Whether to scroll to the error field when validation failed | _boolean_ | `false` |
+| show-error | Whether to highlight input when validation failed | _boolean_ | `true` |
+| show-error-message | Whether to show error message when validation failed | _boolean_ | `true` |
+| submit-on-enter | Whether to submit form on enter | _boolean_ | `true` |
 
 ### Data Structure of Rule
 
 | Key | Description | Type |
 | --- | --- | --- |
 | required | Whether to be a required field | _boolean_ |
-| message `v2.5.3` | Error message | _string \| (value, rule) => string_ |
-| validator `v2.5.3` | Custom validator | _(value, rule) => boolean \| Promise_ |
-| pattern `v2.5.3` | Regex pattern | _RegExp_ |
-| trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onBlur` | _string_ |
-| formatter `v2.5.3` | Format value before validate | _(value, rule) => any_ |
+| message | Error message | _string \| (value, rule) => string_ |
+| validator | Custom validator | _(value, rule) => boolean \| Promise_ |
+| pattern | Regex pattern | _RegExp_ |
+| trigger | When to validate the form，can be set to `onChange`、`onBlur` | _string_ |
+| formatter | Format value before validate | _(value, rule) => any_ |
 
 ### validate-trigger
 
@@ -520,7 +520,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Form i
 | submit | Submit form | - | - |
 | validate | Validate form | _name?: string \| string[]_ | _Promise_ |
 | resetValidation | Reset validation | _name?: string \| string[]_ | - |
-| scrollToField `v2.8.3` | Scroll to field | _name: string, alignToTop: boolean_ | - |
+| scrollToField | Scroll to field | _name: string, alignToTop: boolean_ | - |
 
 ### Slots
 

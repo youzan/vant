@@ -150,8 +150,8 @@ export default {
 | input-width | 输入框宽度，默认单位为 `px` | _number \| string_ | `32px` |
 | button-size | 按钮大小以及输入框高度，默认单位为 `px` | _number \| string_ | `28px` |
 | decimal-length | 固定显示的小数位数 | _number \| string_ | - |
-| theme `v2.8.2` | 样式风格，可选值为 `round` | _string_ | - |
-| placeholder `v2.8.6` | 输入框占位提示文字 | _string_ | - |
+| theme | 样式风格，可选值为 `round` | _string_ | - |
+| placeholder | 输入框占位提示文字 | _string_ | - |
 | integer | 是否只允许输入整数 | _boolean_ | `false` |
 | disabled | 是否禁用步进器 | _boolean_ | `false` |
 | disable-plus | 是否禁用增加按钮 | _boolean_ | `false` |
@@ -161,8 +161,8 @@ export default {
 | show-plus | 是否显示增加按钮 | _boolean_ | `true` |
 | show-minus | 是否显示减少按钮 | _boolean_ | `true` |
 | show-input | 是否显示输入框 | _boolean_ | `true` |
-| long-press `v2.4.3` | 是否开启长按手势 | _boolean_ | `true` |
-| allow-empty `v2.9.1` | 是否允许输入的值为空 | _boolean_ | `false` |
+| long-press | 是否开启长按手势 | _boolean_ | `true` |
+| allow-empty | 是否允许输入的值为空 | _boolean_ | `false` |
 
 ### Events
 

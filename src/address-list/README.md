@@ -87,7 +87,7 @@ export default {
 | disabled-text | Disabled text | _string_ | - |
 | switchable | Whether to allow switch address | _boolean_ | `true` |
 | add-button-text | Add button text | _string_ | `Add new address` |
-| default-tag-text `v2.3.0` | Default tag text | _string_ | - |
+| default-tag-text | Default tag text | _string_ | - |
 
 ### Events
 
@@ -112,11 +112,11 @@ export default {
 
 ### Slots
 
-| Name                 | Description                    | SlotProps |
-| -------------------- | ------------------------------ | --------- |
-| default              | Custom content after list      | -         |
-| top                  | Custom content before list     | -         |
-| item-bottom `v2.5.0` | Custom content after list item | item      |
+| Name        | Description                    | SlotProps |
+| ----------- | ------------------------------ | --------- |
+| default     | Custom content after list      | -         |
+| top         | Custom content before list     | -         |
+| item-bottom | Custom content after list item | item      |
 
 ### Less Variables
 

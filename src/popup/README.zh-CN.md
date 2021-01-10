@@ -141,21 +141,21 @@ export default {
 | close-icon | 关闭图标名称或图片链接 | _string_ | `cross` |
 | close-icon-position | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition | 动画类名，等价于 [transtion](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的`name`属性 | _string_ | - |
-| transition-appear `v2.10.14` | 是否在初始渲染时启用过渡动画 | _boolean_ | `false` |
+| transition-appear | 是否在初始渲染时启用过渡动画 | _boolean_ | `false` |
 | teleport | 指定挂载的节点 | _string \| Element_ | - |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `false` |
 
 ### Events
 
-| 事件名                     | 说明                       | 回调参数       |
-| -------------------------- | -------------------------- | -------------- |
-| click                      | 点击弹出层时触发           | _event: Event_ |
-| click-overlay              | 点击遮罩层时触发           | -              |
-| click-close-icon `v2.11.0` | 点击关闭图标时触发         | _event: Event_ |
-| open                       | 打开弹出层时触发           | -              |
-| close                      | 关闭弹出层时触发           | -              |
-| opened                     | 打开弹出层且动画结束后触发 | -              |
-| closed                     | 关闭弹出层且动画结束后触发 | -              |
+| 事件名           | 说明                       | 回调参数       |
+| ---------------- | -------------------------- | -------------- |
+| click            | 点击弹出层时触发           | _event: Event_ |
+| click-overlay    | 点击遮罩层时触发           | -              |
+| click-close-icon | 点击关闭图标时触发         | _event: Event_ |
+| open             | 打开弹出层时触发           | -              |
+| close            | 关闭弹出层时触发           | -              |
+| opened           | 打开弹出层且动画结束后触发 | -              |
+| closed           | 关闭弹出层且动画结束后触发 | -              |
 
 ### 样式变量
 

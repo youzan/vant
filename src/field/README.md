@@ -233,7 +233,7 @@ Use `input-align` prop to align the input value.
 | --- | --- | --- | --- |
 | v-model | Field value | _number \| string_ | - |
 | label | Field label | _string_ | - |
-| name `v2.5.0` | Name | _string_ | - |
+| name | Name | _string_ | - |
 | type | Input type, can be set to `tel` `digit`<br>`number` `textarea` `password` | _string_ | `text` |
 | size | Size，can be set to `large` | _string_ | - |
 | maxlength | Max length of value | _number \| string_ | - |
@@ -241,19 +241,19 @@ Use `input-align` prop to align the input value.
 | border | Whether to show inner border | _boolean_ | `true` |
 | disabled | Whether to disable field | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
-| colon `v2.7.2` | Whether to display colon after label | _boolean_ | `false` |
+| colon | Whether to display colon after label | _boolean_ | `false` |
 | required | Whether to show required mark | _boolean_ | `false` |
 | center | Whether to center content vertically | _boolean_ | `true` |
 | clearable | Whether to be clearable | _boolean_ | `false` |
-| clear-trigger `v2.9.1` | When to display the clear icon, `always` means to display the icon when value is not empty, `focus` means to display the icon when input is focused | _string_ | `focus` |
+| clear-trigger | When to display the clear icon, `always` means to display the icon when value is not empty, `focus` means to display the icon when input is focused | _string_ | `focus` |
 | clickable | Whether to show click feedback when clicked | _boolean_ | `false` |
 | is-link | Whether to show link icon | _boolean_ | `false` |
 | autofocus | Whether to auto focus, unsupported in iOS | _boolean_ | `false` |
 | show-word-limit | Whether to show word limit, need to set the `maxlength` prop | _boolean_ | `false` |
 | error | Whether to show error info | _boolean_ | `false` |
 | error-message | Error message | _string_ | - |
-| formatter `v2.4.2` | Input value formatter | _Function_ | - |
-| format-trigger `v2.8.7` | When to format value，can be set to `onBlur` | _string_ | `onChange` |
+| formatter | Input value formatter | _Function_ | - |
+| format-trigger | When to format value，can be set to `onBlur` | _string_ | `onChange` |
 | arrow-direction | Can be set to `left` `up` `down` | _string_ | `right` |
 | label-class | Label className | _any_ | - |
 | label-width | Label width | _number \| string_ | `6.2em` |
@@ -263,8 +263,8 @@ Use `input-align` prop to align the input value.
 | autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| object_ | `false` |
 | left-icon | Left side icon name | _string_ | - |
 | right-icon | Right side icon name | _string_ | - |
-| icon-prefix `v2.5.3` | Icon className prefix | _string_ | `van-icon` |
-| rules `v2.5.0` | Form validation rules | _Rule[]_ | - |
+| icon-prefix | Icon className prefix | _string_ | `van-icon` |
+| rules | Form validation rules | _Rule[]_ | - |
 | autocomplete `v3.0.3` | [autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) attribute of native input element | _string_ | - |
 
 ### Events
@@ -278,7 +278,7 @@ Field support all native events of input tag
 | blur | Emitted when input is blured | _event: Event_ |
 | clear | Emitted when the clear icon is clicked | _event: Event_ |
 | click | Emitted when component is clicked | _event: Event_ |
-| click-input `v2.8.1` | Emitted when the input is clicked | _event: Event_ |
+| click-input | Emitted when the input is clicked | _event: Event_ |
 | click-left-icon | Emitted when the left icon is clicked | _event: Event_ |
 | click-right-icon | Emitted when the right icon is clicked | _event: Event_ |
 
@@ -293,14 +293,14 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Field 
 
 ### Slots
 
-| Name           | Description                 |
-| -------------- | --------------------------- |
-| label          | Custom label                |
-| input          | Custom input                |
-| left-icon      | Custom left icon            |
-| right-icon     | Custom right icon           |
-| button         | Insert button               |
-| extra `v2.8.2` | Custom content on the right |
+| Name       | Description                 |
+| ---------- | --------------------------- |
+| label      | Custom label                |
+| input      | Custom input                |
+| left-icon  | Custom left icon            |
+| right-icon | Custom right icon           |
+| button     | Insert button               |
+| extra      | Custom content on the right |
 
 ### Less Variables
 

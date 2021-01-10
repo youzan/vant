@@ -74,7 +74,7 @@ export default {
 | active | Active step | _number \| string_ | `0` |
 | direction | Can be set to `vertical` | _string_ | `horizontal` |
 | active-color | Active step color | _string_ | `#07c160` |
-| inactive-color `v2.9.1` | Inactive step color | _string_ | `#969799` |
+| inactive-color | Inactive step color | _string_ | `#969799` |
 | active-icon | Active icon name | _string_ | `checked` |
 | inactive-icon | Inactive icon name | _string_ | - |
 
@@ -89,7 +89,7 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click-step `v2.5.9` | Emitted when a step's title or icon is clicked | _index: number_ |
+| click-step | Emitted when a step's title or icon is clicked | _index: number_ |
 
 ### Less Variables
 

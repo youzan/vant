@@ -173,9 +173,9 @@ export default {
 | className | 自定义类名 | _any_ | - |
 | maxZoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
 | minZoom | 手势缩放时，最小缩放比例 | _number \| string_ | `1/3` |
-| closeable `v2.5.0` | 是否显示关闭图标 | _boolean_ | `false` |
-| closeIcon `v2.5.0` | 关闭图标名称或图片链接 | _string_ | `clear` |
-| closeIconPosition `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
+| closeable | 是否显示关闭图标 | _boolean_ | `false` |
+| closeIcon | 关闭图标名称或图片链接 | _string_ | `clear` |
+| closeIconPosition | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
 | teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 
 ### Props
@@ -195,9 +195,9 @@ export default {
 | class-name | 自定义类名 | _any_ | - |
 | max-zoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
 | min-zoom | 手势缩放时，最小缩放比例 | _number \| string_ | `1/3` |
-| closeable `v2.5.0` | 是否显示关闭图标 | _boolean_ | `false` |
-| close-icon `v2.5.0` | 关闭图标名称或图片链接 | _string_ | `clear` |
-| close-icon-position `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
+| closeable | 是否显示关闭图标 | _boolean_ | `false` |
+| close-icon | 关闭图标名称或图片链接 | _string_ | `clear` |
+| close-icon-position | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
 | teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 
 ### Events
@@ -207,9 +207,9 @@ export default {
 | 事件 | 说明 | 回调参数 |
 | --- | --- | --- |
 | close | 关闭时触发 | { index: 索引, url: 图片链接 } |
-| closed `v2.5.6` | 关闭且且动画结束后触发 | - |
+| closed | 关闭且且动画结束后触发 | - |
 | change | 切换当前图片时触发 | index: 当前图片的索引 |
-| scale `v2.5.0` | 缩放当前图片时触发 | { index: 当前图片的索引, scale: 当前缩放的值 } |
+| scale | 缩放当前图片时触发 | { index: 当前图片的索引, scale: 当前缩放的值 } |
 
 ### 方法
 

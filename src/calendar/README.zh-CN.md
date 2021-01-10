@@ -251,7 +251,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type `v2.5.4` | 选择类型:<br>`single`表示选择单个日期，<br>`multiple`表示选择多个日期，<br>`range`表示选择日期区间 | _string_ | `single` |
+| type | 选择类型:<br>`single`表示选择单个日期，<br>`multiple`表示选择多个日期，<br>`range`表示选择日期区间 | _string_ | `single` |
 | title | 日历标题 | _string_ | `日期选择` |
 | color | 主题色，对底部按钮和选中日期生效 | _string_ | `#ee0a24` |
 | min-date | 可选择的最小日期 | _Date_ | 当前日期 |
@@ -260,15 +260,15 @@ export default {
 | row-height | 日期行高 | _number \| string_ | `64` |
 | formatter | 日期格式化函数 | _(day: Day) => Day_ | - |
 | poppable | 是否以弹层的形式展示日历 | _boolean_ | `true` |
-| lazy-render `v2.8.1` | 是否只渲染可视区域的内容 | _boolean_ | `true` |
+| lazy-render | 是否只渲染可视区域的内容 | _boolean_ | `true` |
 | show-mark | 是否显示月份背景水印 | _boolean_ | `true` |
-| show-title `v2.5.5` | 是否展示日历标题 | _boolean_ | `true` |
-| show-subtitle `v2.5.5` | 是否展示日历副标题（年月） | _boolean_ | `true` |
+| show-title | 是否展示日历标题 | _boolean_ | `true` |
+| show-subtitle | 是否展示日历副标题（年月） | _boolean_ | `true` |
 | show-confirm | 是否展示确认按钮 | _boolean_ | `true` |
-| readonly `v2.10.5` | 是否为只读状态，只读状态下不能选择日期 | _boolean_ | `false` |
+| readonly | 是否为只读状态，只读状态下不能选择日期 | _boolean_ | `false` |
 | confirm-text | 确认按钮的文字 | _string_ | `确定` |
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | _string_ | `确定` |
-| first-day-of-week `v2.9.2` | 设置周起始日 | _0-6_ | `0` |
+| first-day-of-week | 设置周起始日 | _0-6_ | `0` |
 
 ### Poppable Props
 
@@ -279,10 +279,10 @@ export default {
 | v-model:show | 是否显示日历弹窗 | _boolean_ | `false` |
 | position | 弹出位置，可选值为 `top` `right` `left` | _string_ | `bottom` |
 | round | 是否显示圆角弹窗 | _boolean_ | `true` |
-| close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | _boolean_ | `true` |
+| close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
-| teleport `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
+| teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 
 ### Range Props
 
@@ -290,9 +290,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| max-range `v2.4.3` | 日期区间最多可选天数 | _number \| string_ | 无限制 |
-| range-prompt `v2.4.3` | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
-| allow-same-day `v2.5.6` | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
+| max-range | 日期区间最多可选天数 | _number \| string_ | 无限制 |
+| range-prompt | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
+| allow-same-day | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 
 ### Multiple Props
 
@@ -300,8 +300,8 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| max-range `v2.7.2` | 日期最多可选天数 | _number \| string_ | 无限制 |
-| range-prompt `v2.4.3` | 选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
+| max-range | 日期最多可选天数 | _number \| string_ | 无限制 |
+| range-prompt | 选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
 
 ### Day 数据结构
 
@@ -322,12 +322,12 @@ export default {
 | --- | --- | --- |
 | select | 点击并选中任意日期时触发 | _value: Date \| Date[]_ |
 | confirm | 日期选择完成后触发，若 `show-confirm` 为 `true`，则点击确认按钮后触发 | _value: Date \| Date[]_ |
-| open `v2.5.2` | 打开弹出层时触发 | - |
-| close `v2.5.2` | 关闭弹出层时触发 | - |
-| opened `v2.5.2` | 打开弹出层且动画结束后触发 | - |
-| closed `v2.5.2` | 关闭弹出层且动画结束后触发 | - |
-| unselect `v2.7.2` | 当日历组件的 `type` 为 `multiple` 时，取消选中日期时触发 | _value: Date_ |
-| month-show `v2.8.2` | 当某个月份进入可视区域时触发 | _{ date: Date, title: string }_ |
+| open | 打开弹出层时触发 | - |
+| close | 关闭弹出层时触发 | - |
+| opened | 打开弹出层且动画结束后触发 | - |
+| closed | 关闭弹出层且动画结束后触发 | - |
+| unselect | 当日历组件的 `type` 为 `multiple` 时，取消选中日期时触发 | _value: Date_ |
+| month-show | 当某个月份进入可视区域时触发 | _{ date: Date, title: string }_ |
 
 ### Slots
 
@@ -340,10 +340,10 @@ export default {
 
 通过 ref 可以获取到 Calendar 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
-| 方法名                 | 说明                   | 参数         | 返回值 |
-| ---------------------- | ---------------------- | ------------ | ------ |
-| reset                  | 重置选中的日期到默认值 | -            | -      |
-| scrollToDate `v2.12.2` | 滚动到某个日期         | _date: Date_ | -      |
+| 方法名       | 说明                   | 参数         | 返回值 |
+| ------------ | ---------------------- | ------------ | ------ |
+| reset        | 重置选中的日期到默认值 | -            | -      |
+| scrollToDate | 滚动到某个日期         | _date: Date_ | -      |
 
 ### 样式变量
 

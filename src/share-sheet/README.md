@@ -180,7 +180,7 @@ export default {
 | Key | Description | Type |
 | --- | --- | --- |
 | name | Option name | _string_ |
-| description `v2.8.5` | Option description | _string_ |
+| description | Option description | _string_ |
 | icon | Option icon，can be set to `wechat` `weibo` `qq` `link` `qrcode` `poster` `weapp-qrcode` or image URL | _string_ |
 | className | Option className is used to set the class props to the share item | _string_ |
 
@@ -190,7 +190,7 @@ export default {
 | --- | --- | --- |
 | select | Emitted when an option is clicked | _option: Option, index: number_ |
 | cancel | Emitted when the cancel button is clicked | - |
-| click-overlay `v2.9.1` | Emitted when overlay is clicked | - |
+| click-overlay | Emitted when overlay is clicked | - |
 
 ### Slots
 

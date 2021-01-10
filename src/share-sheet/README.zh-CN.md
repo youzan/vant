@@ -198,17 +198,17 @@ export default {
 | 键名 | 说明 | 类型 |
 | --- | --- | --- |
 | name | 分享渠道名称 | _string_ |
-| description `v2.8.5` | 分享选项描述 | _string_ |
+| description | 分享选项描述 | _string_ |
 | icon | 图标，可选值为 `wechat` `weibo` `qq` `link` `qrcode` `poster` `weapp-qrcode`，支持传入图片 URL | _string_ |
 | className | 分享选项类名 | _string_ |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-| --- | --- | --- |
-| select | 点击分享选项时触发 | _option: Option, index: number_ |
-| cancel | 点击取消按钮时触发 | - |
-| click-overlay `v2.9.1` | 点击遮罩层时触发 | - |
+| 事件名        | 说明               | 回调参数                        |
+| ------------- | ------------------ | ------------------------------- |
+| select        | 点击分享选项时触发 | _option: Option, index: number_ |
+| cancel        | 点击取消按钮时触发 | -                               |
+| click-overlay | 点击遮罩层时触发   | -                               |
 
 ### Slots
 

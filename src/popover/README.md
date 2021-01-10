@@ -211,7 +211,7 @@ export default {
 | actions | Actions | _Action[]_ | `[]` |
 | placement | Placement | _string_ | `bottom` |
 | theme | Theme，can be set to `dark` | _string_ | `light` |
-| trigger `v2.11.1` | Trigger mode，can be set to `manual` | `click` |
+| trigger | Trigger mode，can be set to `manual` | `click` |
 | offset | Distance to reference | _[number, number]_ | `[0, 8]` |
 | overlay | Whether to show overlay | _boolean_ | `false` |
 | close-on-click-action | Whether to close when clicking action | _boolean_ | `true` |

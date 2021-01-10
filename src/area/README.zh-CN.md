@@ -65,8 +65,8 @@ app.use(Area);
 | area-list | 省市区数据，格式见下方 | _object_ | - |
 | columns-placeholder | 列占位提示文字 | _string[]_ | `[]` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
-| readonly `v2.10.5` | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
-| item-height `v2.8.6` | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
+| readonly | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
+| item-height | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | columns-num | 显示列数，3-省市区，2-省市，1-省 | _number \| string_ | `3` |
 | visible-item-count | 可见的选项个数 | _number \| string_ | `6` |
 | swipe-duration | 快速滑动时惯性滚动的时长，单位`ms` | _number \| string_ | `1000` |
@@ -82,11 +82,11 @@ app.use(Area);
 
 ### Slots
 
-| 名称                    | 说明               |
-| ----------------------- | ------------------ |
-| title `v2.5.3`          | 自定义标题内容     |
-| columns-top `v2.5.3`    | 自定义选项上方内容 |
-| columns-bottom `v2.5.3` | 自定义选项下方内容 |
+| 名称           | 说明               |
+| -------------- | ------------------ |
+| title          | 自定义标题内容     |
+| columns-top    | 自定义选项上方内容 |
+| columns-bottom | 自定义选项下方内容 |
 
 ### 方法
 

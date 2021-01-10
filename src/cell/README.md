@@ -137,7 +137,7 @@ app.use(CellGroup);
 | label | Description below the title | _string_ | - |
 | size | Size，can be set to `large` | _string_ | - |
 | icon | Left Icon | _string_ | - |
-| icon-prefix `v2.5.3` | Icon className prefix | _string_ | `van-icon` |
+| icon-prefix | Icon className prefix | _string_ | `van-icon` |
 | border | Whether to show inner border | _boolean_ | `true` |
 | center | Whether to center content vertically | _boolean_ | `true` |
 | url | Link URL | _string_ | - |

@@ -270,12 +270,12 @@ export default {
 | preview-size | Size of preview image | _number \| string_ | `80px` |
 | preview-image | Whether to show image preview | _boolean_ | `true` |
 | preview-full-image | Whethe to show full screen image preview when image is clicked | _boolean_ | `true` |
-| preview-options `v2.9.3` | Options of full screen image preview，see [ImagePreview](#/en-US/image-preview) | _object_ | - |
+| preview-options | Options of full screen image preview，see [ImagePreview](#/en-US/image-preview) | _object_ | - |
 | multiple | Whether to enable multiple selection pictures | _boolean_ | `false` |
 | disabled | Whether to disabled the upload | _boolean_ | `false` |
 | deletable | Whether to show delete icon | _boolean_ | `true` |
-| show-upload `v2.5.6` | Whether to show upload area | _boolean_ | `true` |
-| lazy-load `v2.6.2` | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
+| show-upload | Whether to show upload area | _boolean_ | `true` |
+| lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 | capture | Capture，can be set to `camera` | _string_ | - |
 | after-read | Hook after reading the file | _Function_ | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | _Function_ | - |
@@ -285,7 +285,7 @@ export default {
 | result-type | Type of file read result, can be set to `file` `text` | _string_ | `dataUrl` |
 | upload-text | Upload text | _string_ | - |
 | image-fit | Preview image fit mode | _string_ | `cover` |
-| upload-icon `v2.5.4` | Upload icon | _string_ | `photograph` |
+| upload-icon | Upload icon | _string_ | `photograph` |
 
 ### Events
 
@@ -301,7 +301,7 @@ export default {
 | Name | Description | SlotProps |
 | --- | --- | --- |
 | default | Custom icon | - |
-| preview-cover `v2.9.1` | Custom content that covers the image preview | `item: FileListItem` |
+| preview-cover | Custom content that covers the image preview | `item: FileListItem` |
 
 ### Parematers of before-read、after-read、before-delete
 
@@ -325,7 +325,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Upload
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | closeImagePreview | Close full screen image preview | - | - |
-| chooseFile `v2.5.6` | Trigger choosing files, works with the user action context only because of browser security | - | - |
+| chooseFile | Trigger choosing files, works with the user action context only because of browser security | - | - |
 
 ### Less Variables
 

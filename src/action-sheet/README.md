@@ -172,14 +172,14 @@ export default {
 | title | Title | _string_ | - |
 | cancel-text | Text of cancel button | _string_ | - |
 | description | Description above the options | _string_ | - |
-| closeable `v2.10.5` | Whether to show close icon | _boolean_ | `true` |
+| closeable | Whether to show close icon | _boolean_ | `true` |
 | close-icon | Close icon name | _string_ | `cross` |
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
 | round | Whether to show round corner | _boolean_ | `true` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
-| close-on-popstate `v2.5.3` | Whether to close when popstate | _boolean_ | `false` |
+| close-on-popstate | Whether to close when popstate | _boolean_ | `false` |
 | close-on-click-action | Whether to close when an action is clicked | _boolean_ | `false` |
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
@@ -210,10 +210,10 @@ export default {
 
 ### Slots
 
-| Name                  | Description        |
-| --------------------- | ------------------ |
-| default               | Custom content     |
-| description `v2.10.4` | Custom description |
+| Name        | Description        |
+| ----------- | ------------------ |
+| default     | Custom content     |
+| description | Custom description |
 
 ### Less Variables
 

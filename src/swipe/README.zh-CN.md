@@ -164,20 +164,20 @@ export default {
 
 ### Swipe Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| autoplay | 自动轮播间隔，单位为 ms | _number \| string_ | - |
-| duration | 动画时长，单位为 ms | _number \| string_ | `500` |
-| initial-swipe | 初始位置索引值 | _number \| string_ | `0` |
-| width | 滑块宽度，单位为`px` | _number \| string_ | `auto` |
-| height | 滑块高度，单位为`px` | _number \| string_ | `auto` |
-| loop | 是否开启循环播放 | _boolean_ | `true` |
-| show-indicators | 是否显示指示器 | _boolean_ | `true` |
-| vertical | 是否为纵向滚动 | _boolean_ | `false` |
-| touchable | 是否可以通过手势滑动 | _boolean_ | `true` |
-| stop-propagation | 是否阻止滑动事件冒泡 | _boolean_ | `true` |
-| lazy-render `v2.5.8` | 是否延迟渲染未展示的轮播 | _boolean_ | `false` |
-| indicator-color | 指示器颜色 | _string_ | `#1989fa` |
+| 参数             | 说明                     | 类型               | 默认值    |
+| ---------------- | ------------------------ | ------------------ | --------- |
+| autoplay         | 自动轮播间隔，单位为 ms  | _number \| string_ | -         |
+| duration         | 动画时长，单位为 ms      | _number \| string_ | `500`     |
+| initial-swipe    | 初始位置索引值           | _number \| string_ | `0`       |
+| width            | 滑块宽度，单位为`px`     | _number \| string_ | `auto`    |
+| height           | 滑块高度，单位为`px`     | _number \| string_ | `auto`    |
+| loop             | 是否开启循环播放         | _boolean_          | `true`    |
+| show-indicators  | 是否显示指示器           | _boolean_          | `true`    |
+| vertical         | 是否为纵向滚动           | _boolean_          | `false`   |
+| touchable        | 是否可以通过手势滑动     | _boolean_          | `true`    |
+| stop-propagation | 是否阻止滑动事件冒泡     | _boolean_          | `true`    |
+| lazy-render      | 是否延迟渲染未展示的轮播 | _boolean_          | `false`   |
+| indicator-color  | 指示器颜色               | _string_           | `#1989fa` |
 
 ### Swipe Events
 
@@ -197,8 +197,8 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| prev `v2.4.2` | 切换到上一轮播 | - | - |
-| next `v2.4.2` | 切换到下一轮播 | - | - |
+| prev | 切换到上一轮播 | - | - |
+| next | 切换到下一轮播 | - | - |
 | swipeTo | 切换到指定位置 | index: number, options: Options | - |
 | resize | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 | - | - |
 

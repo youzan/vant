@@ -155,7 +155,7 @@ export default {
 | min | Min value | _number \| string_ | `0` |
 | step | Step size | _number \| string_ | `1` |
 | bar-height | Height of bar | _number \| string_ | `2px` |
-| button-size `v2.4.5` | Button size | _number \| string_ | `24px` |
+| button-size | Button size | _number \| string_ | `24px` |
 | active-color | Active color of bar | _string_ | `#1989fa` |
 | inactive-color | Inactive color of bar | _string_ | `#e5e5e5` |
 | range | Whether to enable dual thumb mode | _boolean_ | `false` |

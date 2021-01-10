@@ -109,9 +109,9 @@ app.use(Lazyload);
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
 | show-error | 是否展示图片加载失败提示 | _boolean_ | `true` |
 | show-loading | 是否展示图片加载中提示 | _boolean_ | `true` |
-| error-icon `v2.4.2` | 失败时提示的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photo-fail` |
-| loading-icon `v2.4.2` | 加载时提示的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photo` |
-| icon-prefix `v2.10.12` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
+| error-icon | 失败时提示的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photo-fail` |
+| loading-icon | 加载时提示的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photo` |
+| icon-prefix | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 
 ### 图片填充模式 
 
@@ -133,11 +133,11 @@ app.use(Lazyload);
 
 ### Slots
 
-| 名称             | 说明                       |
-| ---------------- | -------------------------- |
-| default `v2.9.0` | 自定义图片下方的内容       |
-| loading          | 自定义加载中的提示内容     |
-| error            | 自定义加载失败时的提示内容 |
+| 名称    | 说明                       |
+| ------- | -------------------------- |
+| default | 自定义图片下方的内容       |
+| loading | 自定义加载中的提示内容     |
+| error   | 自定义加载失败时的提示内容 |
 
 ### 样式变量
 

@@ -172,15 +172,15 @@ export default {
 | maxlength | Value maxlength | _number \| string_ | - |
 | transition | Whether to show transition animation | _boolean_ | `true` |
 | z-index | Keyboard z-index | _number \| string_ | `100` |
-| extra-key `v2.8.2` | Content of bottom left key | _string \| string[]_ | `''` |
+| extra-key | Content of bottom left key | _string \| string[]_ | `''` |
 | close-button-text | Close button text | _string_ | - |
 | delete-button-text | Delete button text | _string_ | Delete Icon |
-| close-button-loading `v2.7.0` | Whether to show loading close button in custom theme | _boolean_ | `false` |
-| show-delete-key `v2.5.9` | Whether to show delete button | _boolean_ | `true` |
+| close-button-loading | Whether to show loading close button in custom theme | _boolean_ | `false` |
+| show-delete-key | Whether to show delete button | _boolean_ | `true` |
 | hide-on-click-outside | Whether to hide keyboard when outside is clicked | _boolean_ | `true` |
-| teleport `v2.10.0` | Return the mount node for NumberKeyboard | _string \| Element_ | - |
+| teleport | Return the mount node for NumberKeyboard | _string \| Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
-| random-key-order `v2.12.2` | Whether to shuffle the order of keys | _boolean_ | `false` |
+| random-key-order | Whether to shuffle the order of keys | _boolean_ | `false` |
 
 ### Events
 

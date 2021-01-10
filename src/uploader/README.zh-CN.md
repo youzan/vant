@@ -295,12 +295,12 @@ export default {
 | preview-size | 预览图和上传区域的尺寸，默认单位为 `px` | _number \| string_ | `80px` |
 | preview-image | 是否在上传完成后展示预览图 | _boolean_ | `true` |
 | preview-full-image | 是否在点击预览图后展示全屏图片预览 | _boolean_ | `true` |
-| preview-options `v2.9.3` | 全屏图片预览的配置项，可选值见 [ImagePreview](#/zh-CN/image-preview) | _object_ | - |
+| preview-options | 全屏图片预览的配置项，可选值见 [ImagePreview](#/zh-CN/image-preview) | _object_ | - |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | _boolean_ | `false` |
 | disabled | 是否禁用文件上传 | _boolean_ | `false` |
 | deletable | 是否展示删除按钮 | _boolean_ | `true` |
-| show-upload `v2.5.6` | 是否展示上传区域 | _boolean_ | `true` |
-| lazy-load `v2.6.2` | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
+| show-upload | 是否展示上传区域 | _boolean_ | `true` |
+| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
 | capture | 图片选取模式，可选值为 `camera` (直接调起摄像头) | _string_ | - |
 | after-read | 文件读取完成后的回调函数 | _Function_ | - |
 | before-read | 文件读取前的回调函数，返回 `false` 可终止文件读取，<br>支持返回 `Promise` | _Function_ | - |
@@ -310,7 +310,7 @@ export default {
 | result-type | 文件读取结果类型，可选值为 `file` `text` | _string_ | `dataUrl` |
 | upload-text | 上传区域文字提示 | _string_ | - |
 | image-fit | 预览图裁剪模式，可选值见 [Image](#/zh-CN/image) 组件 | _string_ | `cover` |
-| upload-icon `v2.5.4` | 上传区域[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photograph` |
+| upload-icon | 上传区域[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photograph` |
 
 ### Events
 
@@ -323,10 +323,10 @@ export default {
 
 ### Slots
 
-| 名称 | 说明 | 参数 |
-| --- | --- | --- |
-| default | 自定义上传区域 | - |
-| preview-cover `v2.9.1` | 自定义覆盖在预览区域上方的内容 | _item: FileListItem_ |
+| 名称          | 说明                           | 参数                 |
+| ------------- | ------------------------------ | -------------------- |
+| default       | 自定义上传区域                 | -                    |
+| preview-cover | 自定义覆盖在预览区域上方的内容 | _item: FileListItem_ |
 
 ### 回调参数
 
@@ -354,7 +354,7 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | closeImagePreview | 关闭全屏的图片预览 | - | - |
-| chooseFile `v2.5.6` | 主动调起文件选择，由于浏览器安全限制，只有在用户触发操作的上下文中调用才有效 | - | - |
+| chooseFile | 主动调起文件选择，由于浏览器安全限制，只有在用户触发操作的上下文中调用才有效 | - | - |
 
 ### 样式变量
 

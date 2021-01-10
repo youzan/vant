@@ -85,15 +85,15 @@ import 'vant/lib/icon/local.css';
 
 ### Props
 
-| Attribute      | Description             | Type               | Default    |
-| -------------- | ----------------------- | ------------------ | ---------- |
-| name           | Icon name or URL        | _string_           | `''`       |
-| dot            | Whether to show red dot | _boolean_          | `false`    |
-| badge `v2.5.6` | Content of the badge    | _number \| string_ | `''`       |
-| color          | Icon color              | _string_           | `inherit`  |
-| size           | Icon size               | _number \| string_ | `inherit`  |
-| class-prefix   | ClassName prefix        | _string_           | `van-icon` |
-| tag            | HTML Tag                | _string_           | `i`        |
+| Attribute    | Description             | Type               | Default    |
+| ------------ | ----------------------- | ------------------ | ---------- |
+| name         | Icon name or URL        | _string_           | `''`       |
+| dot          | Whether to show red dot | _boolean_          | `false`    |
+| badge        | Content of the badge    | _number \| string_ | `''`       |
+| color        | Icon color              | _string_           | `inherit`  |
+| size         | Icon size               | _number \| string_ | `inherit`  |
+| class-prefix | ClassName prefix        | _string_           | `van-icon` |
+| tag          | HTML Tag                | _string_           | `i`        |
 
 ### Events
 

@@ -247,12 +247,12 @@ export default {
 | sticky | Whether to use sticky mode | _boolean_ | `false` |
 | swipeable | Whether to switch tabs with swipe gestrue in the content | _boolean_ | `false` |
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
-| scrollspy `v2.3.0` | Whether to use scrollspy mode | _boolean_ | `false` |
-| offset-top `v2.8.7` | Sticky offset top , supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `0` |
+| scrollspy | Whether to use scrollspy mode | _boolean_ | `false` |
+| offset-top | Sticky offset top , supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `0` |
 | swipe-threshold | Set swipe tabs threshold | _number \| string_ | `5` | - |
 | title-active-color | Title active color | _string_ | - |
 | title-inactive-color | Title inactive color | _string_ | - |
-| before-change `v2.9.3` | Callback function before changing tabs，return `false` to prevent change，support return Promise | _(name) => boolean \| Promise_ | - |
+| before-change | Callback function before changing tabs，return `false` to prevent change，support return Promise | _(name) => boolean \| Promise_ | - |
 
 ### Tab Props
 
@@ -260,8 +260,8 @@ export default {
 | --- | --- | --- | --- |
 | title | Title | _string_ | - |
 | disabled | Whether to disable tab | _boolean_ | `false` |
-| dot `v2.3.0` | Whether to show red dot on the title | _boolean_ | `false` |
-| badge `v2.5.6` | Content of the badge on the title | _number \| string_ | - |
+| dot | Whether to show red dot on the title | _boolean_ | `false` |
+| badge | Content of the badge on the title | _number \| string_ | - |
 | name | Identifier | _number \| string_ | Index of tab |
 | url | Link | _string_ | - |
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |
@@ -276,7 +276,7 @@ export default {
 | click | Emitted when a tab is clicked | name，title |
 | change | Emitted when active tab changed | name，title |
 | disabled | Emitted when a disabled tab is clicked | name，title |
-| rendered `v2.3.0` | Emitted when content first rendered in lazy-render mode | name，title |
+| rendered | Emitted when content first rendered in lazy-render mode | name，title |
 | scroll | Emitted when tab scrolling in sticky mode | object: { scrollTop, isFixed } |
 
 ### Tabs Methods
@@ -286,7 +286,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Tabs i
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | resize | Resize Tabs when container element resized or visibility changed | - | - |
-| scrollTo `v2.9.3` | Go to specified tab in scrollspy mode | name | - |
+| scrollTo | Go to specified tab in scrollspy mode | name | - |
 
 ### Tabs Slots
 

@@ -332,7 +332,7 @@ export default {
 | show-toolbar | Whether to show toolbar | _boolean_ | `true` |
 | allow-html | Whether to allow HTML in option text | _boolean_ | `false` |
 | default-index | Default value index of single column picker | _number \| string_ | `0` |
-| item-height `v2.8.6` | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
+| item-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-item-count | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
 
@@ -348,24 +348,24 @@ Picker events will pass different parameters according to the columns are single
 
 ### Slots
 
-| Name | Description | SlotProps |
-| --- | --- | --- |
-| default | Custom toolbar content | - |
-| title | Custom title | - |
-| confirm `v2.10.11` | Custom confirm button text | - |
-| cancel `v2.10.11` | Custom cancel button text | - |
-| option `v2.10.11` | Custom option content | _option: string \| object_ |
-| columns-top | Custom content above columns | - |
-| columns-bottom | Custom content below columns | - |
+| Name           | Description                  | SlotProps                  |
+| -------------- | ---------------------------- | -------------------------- |
+| default        | Custom toolbar content       | -                          |
+| title          | Custom title                 | -                          |
+| confirm        | Custom confirm button text   | -                          |
+| cancel         | Custom cancel button text    | -                          |
+| option         | Custom option content        | _option: string \| object_ |
+| columns-top    | Custom content above columns | -                          |
+| columns-bottom | Custom content below columns | -                          |
 
 ### Data Structure of Column
 
-| Key               | Description               | Type       |
-| ----------------- | ------------------------- | ---------- |
-| values            | Value of column           | _string[]_ |
-| defaultIndex      | Default value index       | _number_   |
-| className         | ClassName for this column | _any_      |
-| children `v2.4.5` | Cascade children          | _Column_   |
+| Key          | Description               | Type       |
+| ------------ | ------------------------- | ---------- |
+| values       | Value of column           | _string[]_ |
+| defaultIndex | Default value index       | _number_   |
+| className    | ClassName for this column | _any_      |
+| children     | Cascade children          | _Column_   |
 
 ### Methods
 
@@ -383,7 +383,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Picker
 | setColumnIndex | Set current index of the column | columnIndex, optionIndex | - |
 | getColumnValues | Get columns data of the column | columnIndex | values |
 | setColumnValues | Set columns data of the column | columnIndex, values | - |
-| confirm `v2.4.0` | Stop scrolling and emit confirm event | - | - |
+| confirm | Stop scrolling and emit confirm event | - | - |
 
 ### Less Variables
 

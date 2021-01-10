@@ -76,12 +76,12 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| v-model | 当前选中联系人的 id | _number \| string_ | - |
-| list | 联系人列表 | _Contact[]_ | `[]` |
-| add-text | 新建按钮文案 | _string_ | `新建联系人` |
-| default-tag-text `v2.3.0` | 默认联系人标签文案 | _string_ | - |
+| 参数             | 说明                | 类型               | 默认值       |
+| ---------------- | ------------------- | ------------------ | ------------ |
+| v-model          | 当前选中联系人的 id | _number \| string_ | -            |
+| list             | 联系人列表          | _Contact[]_        | `[]`         |
+| add-text         | 新建按钮文案        | _string_           | `新建联系人` |
+| default-tag-text | 默认联系人标签文案  | _string_           | -            |
 
 ### Events
 

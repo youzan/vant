@@ -142,7 +142,7 @@ export default {
 | width | Dialog width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |
 | messageAlign | Message text align，can be set to `left` `right` | _string_ | `center` |
-| theme `v2.10.0` | theme style，can be set to `round` | _string_ | `default` |
+| theme | theme style，can be set to `round` | _string_ | `default` |
 | className | Custom className | _any_ | - |
 | showConfirmButton | Whether to show confirm button | _boolean_ | `true` |
 | showCancelButton | Whether to show cancel button | _boolean_ | `false` |
@@ -156,7 +156,7 @@ export default {
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
 | closeOnClickOverlay | Whether to close when overlay is clicked | _boolean_ | `false` |
 | lockScroll | Whether to lock body scroll | _boolean_ | `true` |
-| allowHtml `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `false` |
+| allowHtml | Whether to allow HTML rendering in message | _boolean_ | `false` |
 | beforeClose | Callback function before close | _(action) => boolean \| Promise_ | - |
 | transition | Transition, equivalent to `name` prop of [transtion](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Return the mount node for Dialog | _string \| Element_ | `body` |
@@ -170,7 +170,7 @@ export default {
 | width | Width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |
 | message-align | Message align，can be set to `left` `right` | _string_ | `center` |
-| theme `v2.10.0` | theme style，can be set to `round-button` | _string_ | `default` |
+| theme | theme style，can be set to `round-button` | _string_ | `default` |
 | show-confirm-button | Whether to show confirm button | _boolean_ | `true` |
 | show-cancel-button | Whether to show cancel button | _boolean_ | `false` |
 | cancel-button-text | Cancel button text | _string_ | `Cancel` |
@@ -184,7 +184,7 @@ export default {
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `false` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
-| allow-html `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `false` |
+| allow-html | Whether to allow HTML rendering in message | _boolean_ | `false` |
 | before-close | Callback function before close | _(action) => boolean \| Promise_ | - |
 | transition | Transition, equivalent to `name` prop of [transtion](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Return the mount node for Dialog | _string \| Element_ | - |

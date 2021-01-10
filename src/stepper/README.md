@@ -126,8 +126,8 @@ export default {
 | input-width | Input width | _number \| string_ | `32px` |
 | button-size | Button size | _number \| string_ | `28px` |
 | decimal-length | Decimal length | _number \| string_ | - |
-| theme `v2.8.2` | Theme, can be set to `round` | _string_ | - |
-| placeholder `v2.8.6` | Input placeholder | _string_ | - |
+| theme | Theme, can be set to `round` | _string_ | - |
+| placeholder | Input placeholder | _string_ | - |
 | integer | Whether to allow only integers | _boolean_ | `false` |
 | disabled | Whether to disable value change | _boolean_ | `false` |
 | disable-plus | Whether to disable plus button | _boolean_ | `false` |
@@ -137,8 +137,8 @@ export default {
 | show-plus | Whether to show plus button | _boolean_ | `true` |
 | show-minus | Whether to show minus button | _boolean_ | `true` |
 | show-input | Whether to show input | _boolean_ | `true` |
-| long-press `v2.4.3` | Whether to allow long press | _boolean_ | `true` |
-| allow-empty `v2.9.1` | Whether to allow the input to be empty | _boolean_ | `false` |
+| long-press | Whether to allow long press | _boolean_ | `true` |
+| allow-empty | Whether to allow the input to be empty | _boolean_ | `false` |
 
 ### Events
 

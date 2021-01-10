@@ -86,9 +86,9 @@ export default {
 
 | Name | Description | SlotProps |
 | --- | --- | --- |
-| page `v2.10.9` | Custom pagination item | _{ number: number, text: string, active: boolean }_ |
-| prev-text `v2.10.9` | Custom prev text | `-` |
-| next-text `v2.10.9` | Custom next text | `-` |
+| page | Custom pagination item | _{ number: number, text: string, active: boolean }_ |
+| prev-text | Custom prev text | `-` |
+| next-text | Custom next text | `-` |
 
 ### Less Variables
 

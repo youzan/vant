@@ -256,7 +256,7 @@ export default {
 | --- | --- | --- | --- |
 | v-model | 当前输入的值 | _number \| string_ | - |
 | label | 输入框左侧文本 | _string_ | - |
-| name `v2.5.0` | 名称，提交表单的标识符 | _string_ | - |
+| name | 名称，提交表单的标识符 | _string_ | - |
 | type | 输入框类型, 可选值为 `tel` `digit`<br>`number` `textarea` `password` 等 | _string_ | `text` |
 | size | 大小，可选值为 `large` | _string_ | - |
 | maxlength | 输入的最大字符数 | _number \| string_ | - |
@@ -264,19 +264,19 @@ export default {
 | border | 是否显示内边框 | _boolean_ | `true` |
 | disabled | 是否禁用输入框 | _boolean_ | `false` |
 | readonly | 是否只读 | _boolean_ | `false` |
-| colon `v2.7.2` | 是否在 label 后面添加冒号 | _boolean_ | `false` |
+| colon | 是否在 label 后面添加冒号 | _boolean_ | `false` |
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
 | center | 是否使内容垂直居中 | _boolean_ | `false` |
 | clearable | 是否启用清除图标，点击清除图标后会清空输入框 | _boolean_ | `false` |
-| clear-trigger `v2.9.1` | 显示清除图标的时机，`always` 表示输入框不为空时展示，<br>`focus` 表示输入框聚焦且不为空时展示 | _string_ | `focus` |
+| clear-trigger | 显示清除图标的时机，`always` 表示输入框不为空时展示，<br>`focus` 表示输入框聚焦且不为空时展示 | _string_ | `focus` |
 | clickable | 是否开启点击反馈 | _boolean_ | `false` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` |
 | autofocus | 是否自动聚焦，iOS 系统不支持该属性 | _boolean_ | `false` |
 | show-word-limit | 是否显示字数统计，需要设置`maxlength`属性 | _boolean_ | `false` |
 | error | 是否将输入内容标红 | _boolean_ | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | _string_ | - |
-| formatter `v2.4.2` | 输入内容格式化函数 | _Function_ | - |
-| format-trigger `v2.8.7` | 格式化函数触发的时机，可选值为 `onBlur` | _string_ | `onChange` |
+| formatter | 输入内容格式化函数 | _Function_ | - |
+| format-trigger | 格式化函数触发的时机，可选值为 `onBlur` | _string_ | `onChange` |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
 | label-class | 左侧文本额外类名 | _any_ | - |
 | label-width | 左侧文本宽度，默认单位为`px` | _number \| string_ | `6.2em` |
@@ -286,22 +286,22 @@ export default {
 | autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | _boolean \| object_ | `false` |
 | left-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | right-icon | 右侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
-| icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
-| rules `v2.5.0` | 表单校验规则，详见 [Form 组件](#/zh-CN/form#rule-shu-ju-jie-gou) | _Rule[]_ | - |
+| icon-prefix | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
+| rules | 表单校验规则，详见 [Form 组件](#/zh-CN/form#rule-shu-ju-jie-gou) | _Rule[]_ | - |
 | autocomplete `v3.0.3` | input 标签原生的[自动完成属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) | _string_ | - |
 
 ### Events
 
-| 事件                 | 说明                 | 回调参数                       |
-| -------------------- | -------------------- | ------------------------------ |
-| update:model-value   | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
-| focus                | 输入框获得焦点时触发 | _event: Event_                 |
-| blur                 | 输入框失去焦点时触发 | _event: Event_                 |
-| clear                | 点击清除按钮时触发   | _event: Event_                 |
-| click                | 点击 Field 时触发    | _event: Event_                 |
-| click-input `v2.8.1` | 点击输入区域时触发   | _event: Event_                 |
-| click-left-icon      | 点击左侧图标时触发   | _event: Event_                 |
-| click-right-icon     | 点击右侧图标时触发   | _event: Event_                 |
+| 事件               | 说明                 | 回调参数                       |
+| ------------------ | -------------------- | ------------------------------ |
+| update:model-value | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
+| focus              | 输入框获得焦点时触发 | _event: Event_                 |
+| blur               | 输入框失去焦点时触发 | _event: Event_                 |
+| clear              | 点击清除按钮时触发   | _event: Event_                 |
+| click              | 点击 Field 时触发    | _event: Event_                 |
+| click-input        | 点击输入区域时触发   | _event: Event_                 |
+| click-left-icon    | 点击左侧图标时触发   | _event: Event_                 |
+| click-right-icon   | 点击右侧图标时触发   | _event: Event_                 |
 
 ### 方法
 
@@ -314,14 +314,14 @@ export default {
 
 ### Slots
 
-| 名称           | 说明                                                       |
-| -------------- | ---------------------------------------------------------- |
-| label          | 自定义输入框 label 标签                                    |
-| input          | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效 |
-| left-icon      | 自定义输入框头部图标                                       |
-| right-icon     | 自定义输入框尾部图标                                       |
-| button         | 自定义输入框尾部按钮                                       |
-| extra `v2.8.2` | 自定义输入框最右侧的额外内容                               |
+| 名称       | 说明                                                       |
+| ---------- | ---------------------------------------------------------- |
+| label      | 自定义输入框 label 标签                                    |
+| input      | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效 |
+| left-icon  | 自定义输入框头部图标                                       |
+| right-icon | 自定义输入框尾部图标                                       |
+| button     | 自定义输入框尾部按钮                                       |
+| extra      | 自定义输入框最右侧的额外内容                               |
 
 ### 样式变量
 

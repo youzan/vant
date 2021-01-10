@@ -111,7 +111,7 @@ export default {
 | --- | --- | --- | --- |
 | title | 内容 | _string_ | `''` |
 | dot | 是否显示右上角小红点 | _boolean_ | `false` |
-| badge `v2.5.6` | 图标右上角徽标的内容 | _number \| string_ | - |
+| badge | 图标右上角徽标的内容 | _number \| string_ | - |
 | disabled | 是否禁用该项 | _boolean_ | `false` |
 | url | 点击后跳转的链接地址 | _string_ | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
@@ -125,9 +125,9 @@ export default {
 
 ### SidebarItem Slots
 
-| Name            | Description |
-| --------------- | ----------- |
-| title `v2.10.8` | 自定义标题  |
+| Name  | Description |
+| ----- | ----------- |
+| title | 自定义标题  |
 
 ### 样式变量
 

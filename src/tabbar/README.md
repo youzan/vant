@@ -168,9 +168,9 @@ export default {
 | active-color | Color of active tab item | _string_ | `#1989fa` |
 | inactive-color | Color of inactive tab item | _string_ | `#7d7e80` |
 | route | Whether to enable route mode | _boolean_ | `false` |
-| placeholder `v2.6.0` | Whether to generage a placeholder element when fixed | _boolean_ | `false` |
+| placeholder | Whether to generage a placeholder element when fixed | _boolean_ | `false` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
-| before-change `v2.10.4` | Callback function before changing tabs，return `false` to prevent change，support return Promise | _(name) => boolean \| Promise_ | - |
+| before-change | Callback function before changing tabs，return `false` to prevent change，support return Promise | _(name) => boolean \| Promise_ | - |
 
 ### Tabbar Events
 
@@ -184,9 +184,9 @@ export default {
 | --- | --- | --- | --- |
 | name | Identifier | _number \| string_ | Item index |
 | icon | Icon name | _string_ | - |
-| icon-prefix `v2.5.3` | Icon className prefix | _string_ | `van-icon` |
+| icon-prefix | Icon className prefix | _string_ | `van-icon` |
 | dot | Whether to show red dot | _boolean_ | - |
-| badge `v2.5.6` | Content of the badge | _number \| string_ | `''` |
+| badge | Content of the badge | _number \| string_ | `''` |
 | url | Link | _string_ | - |
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |

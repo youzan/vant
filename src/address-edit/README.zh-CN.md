@@ -79,7 +79,7 @@ export default {
 | --- | --- | --- | --- |
 | area-list | 地区列表 | _object_ | - |
 | area-columns-placeholder | 地区选择列占位提示文字 | _string[]_ | `[]` |
-| area-placeholder `v2.6.1` | 地区输入框占位提示文字 | _string_ | `选择省 / 市 / 区` |
+| area-placeholder | 地区输入框占位提示文字 | _string_ | `选择省 / 市 / 区` |
 | address-info | 收货人信息初始值 | _AddressInfo_ | `{}` |
 | search-result | 详细地址搜索结果 | _SearchResult[]_ | `[]` |
 | show-postal | 是否显示邮政编码 | _boolean_ | `false` |
@@ -88,7 +88,7 @@ export default {
 | show-search-result | 是否显示搜索结果 | _boolean_ | `false` |
 | show-area | 是否显示地区 | _boolean_ | `true` |
 | show-detail | 是否显示详细地址 | _boolean_ | `true` |
-| disable-area `v2.5.0` | 是否禁用地区选择 | _boolean_ | `false` |
+| disable-area | 是否禁用地区选择 | _boolean_ | `false` |
 | save-button-text | 保存按钮文字 | _string_ | `保存` |
 | delete-button-text | 删除按钮文字 | _string_ | `删除` |
 | detail-rows | 详细地址输入框行数 | _number \| string_ | `1` |
@@ -96,23 +96,23 @@ export default {
 | is-saving | 是否显示保存按钮加载动画 | _boolean_ | `false` |
 | is-deleting | 是否显示删除按钮加载动画 | _boolean_ | `false` |
 | tel-validator | 手机号格式校验函数 | _string => boolean_ | - |
-| tel-maxlength `v2.10.0` | 手机号最大长度 | _number \| string_ | - |
+| tel-maxlength | 手机号最大长度 | _number \| string_ | - |
 | postal-validator | 邮政编码格式校验函数 | _string => boolean_ | - |
 | validator | 自定义校验函数 | _(key, val) => string_ | - |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-| --- | --- | --- |
-| save | 点击保存按钮时触发 | content：表单内容 |
-| focus | 输入框聚焦时触发 | key: 聚焦的输入框对应的 key |
-| delete | 确认删除地址时触发 | content：表单内容 |
-| cancel-delete | 取消删除地址时触发 | content：表单内容 |
-| select-search | 选中搜索结果时触发 | value: 搜索结果 |
-| click-area `v2.5.9` | 点击收件地区时触发 | - |
-| change-area | 修改收件地区时触发 | values: 地区信息 |
-| change-detail | 修改详细地址时触发 | value: 详细地址内容 |
-| change-default | 切换是否使用默认地址时触发 | value: 是否选中 |
+| 事件名         | 说明                       | 回调参数                    |
+| -------------- | -------------------------- | --------------------------- |
+| save           | 点击保存按钮时触发         | content：表单内容           |
+| focus          | 输入框聚焦时触发           | key: 聚焦的输入框对应的 key |
+| delete         | 确认删除地址时触发         | content：表单内容           |
+| cancel-delete  | 取消删除地址时触发         | content：表单内容           |
+| select-search  | 选中搜索结果时触发         | value: 搜索结果             |
+| click-area     | 点击收件地区时触发         | -                           |
+| change-area    | 修改收件地区时触发         | values: 地区信息            |
+| change-detail  | 修改详细地址时触发         | value: 详细地址内容         |
+| change-default | 切换是否使用默认地址时触发 | value: 是否选中             |
 
 ### Slots
 

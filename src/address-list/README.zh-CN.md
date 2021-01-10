@@ -83,15 +83,15 @@ export default {
 
 ### Props
 
-| 参数                      | 说明              | 类型        | 默认值     |
-| ------------------------- | ----------------- | ----------- | ---------- |
-| v-model                   | 当前选中地址的 id | _string_    | -          |
-| list                      | 地址列表          | _Address[]_ | `[]`       |
-| disabled-list             | 不可配送地址列表  | _Address[]_ | `[]`       |
-| disabled-text             | 不可配送提示文案  | _string_    | -          |
-| switchable                | 是否允许切换地址  | _boolean_   | `true`     |
-| add-button-text           | 底部按钮文字      | _string_    | `新增地址` |
-| default-tag-text `v2.3.0` | 默认地址标签文字  | _string_    | -          |
+| 参数             | 说明              | 类型        | 默认值     |
+| ---------------- | ----------------- | ----------- | ---------- |
+| v-model          | 当前选中地址的 id | _string_    | -          |
+| list             | 地址列表          | _Address[]_ | `[]`       |
+| disabled-list    | 不可配送地址列表  | _Address[]_ | `[]`       |
+| disabled-text    | 不可配送提示文案  | _string_    | -          |
+| switchable       | 是否允许切换地址  | _boolean_   | `true`     |
+| add-button-text  | 底部按钮文字      | _string_    | `新增地址` |
+| default-tag-text | 默认地址标签文字  | _string_    | -          |
 
 ### Events
 
@@ -116,11 +116,11 @@ export default {
 
 ### Slots
 
-| 名称                 | 说明                 | 参数       |
-| -------------------- | -------------------- | ---------- |
-| default              | 在列表下方插入内容   | -          |
-| top                  | 在顶部插入内容       | -          |
-| item-bottom `v2.5.0` | 在列表项底部插入内容 | 列表项的值 |
+| 名称        | 说明                 | 参数       |
+| ----------- | -------------------- | ---------- |
+| default     | 在列表下方插入内容   | -          |
+| top         | 在顶部插入内容       | -          |
+| item-bottom | 在列表项底部插入内容 | 列表项的值 |
 
 ### 样式变量
 

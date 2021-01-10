@@ -98,10 +98,10 @@ export default {
 | decimal-length | Price dicemal length | _number \| string_ | `2` |
 | label | Price left label | _string_ | `Total：` |
 | suffix-label | Price right label | _string_ | - |
-| text-align `v2.3.0` | Price label text align can be set to `left` | _string_ | `right` |
+| text-align | Price label text align can be set to `left` | _string_ | `right` |
 | button-text | Button text | _string_ | - |
 | button-type | Button type | _string_ | `danger` |
-| button-color `v2.9.1` | Button color | _string_ | - |
+| button-color | Button color | _string_ | - |
 | tip | Tip | _string_ | - |
 | tip-icon | Icon | _string_ | - |
 | currency | Currency symbol | _string_ | `¥` |
@@ -117,12 +117,12 @@ export default {
 
 ### Slots
 
-| Name              | Description         |
-| ----------------- | ------------------- |
-| default           | Custom left content |
-| button `v2.10.12` | Custom button       |
-| top               | Custom top content  |
-| tip               | Custom tips         |
+| Name    | Description         |
+| ------- | ------------------- |
+| default | Custom left content |
+| button  | Custom button       |
+| top     | Custom top content  |
+| tip     | Custom tips         |
 
 ### Less Variables
 

@@ -131,9 +131,7 @@ export default {
 通过 `random-key-order` 属性可以随机排序数字键盘，常用于安全等级较高的场景。
 
 ```html
-<van-cell @touchstart.stop="show = true">
-  弹出配置随机数字的键盘
-</van-cell>
+<van-cell @touchstart.stop="show = true"> 弹出配置随机数字的键盘 </van-cell>
 <van-number-keyboard
   :show="show"
   random-key-order
@@ -185,15 +183,15 @@ export default {
 | maxlength | 输入值最大长度 | _number \| string_ | - |
 | transition | 是否开启过场动画 | _boolean_ | `true` |
 | z-index | 键盘 z-index 层级 | _number \| string_ | `100` |
-| extra-key `v2.8.2` | 底部额外按键的内容 | _string \| string[]_ | `''` |
+| extra-key | 底部额外按键的内容 | _string \| string[]_ | `''` |
 | close-button-text | 关闭按钮文字，空则不展示 | _string_ | - |
 | delete-button-text | 删除按钮文字，空则展示删除图标 | _string_ | - |
-| close-button-loading `v2.7.0` | 是否将关闭按钮设置为加载中状态，仅在 `theme="custom"` 时有效 | _boolean_ | `false` |
-| show-delete-key `v2.5.9` | 是否展示删除图标 | _boolean_ | `true` |
+| close-button-loading | 是否将关闭按钮设置为加载中状态，仅在 `theme="custom"` 时有效 | _boolean_ | `false` |
+| show-delete-key | 是否展示删除图标 | _boolean_ | `true` |
 | hide-on-click-outside | 点击外部时是否收起键盘 | _boolean_ | `true` |
-| teleport `v2.10.0` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
+| teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
-| random-key-order `v2.12.2` | 是否将通过随机顺序展示按键 | _boolean_ | `false` |
+| random-key-order | 是否将通过随机顺序展示按键 | _boolean_ | `false` |
 
 ### Events
 

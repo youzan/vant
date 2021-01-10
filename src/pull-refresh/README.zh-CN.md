@@ -116,7 +116,7 @@ export default {
 | success-text | 刷新成功提示文案 | _string_ | - |
 | success-duration | 刷新成功提示展示时长(ms) | _number \| string_ | `500` |
 | animation-duration | 动画时长 | _number \| string_ | `300` |
-| head-height `v2.4.2` | 顶部内容高度 | _number \| string_ | `50` |
+| head-height | 顶部内容高度 | _number \| string_ | `50` |
 | disabled | 是否禁用下拉刷新 | _boolean_ | `false` |
 
 ### Events

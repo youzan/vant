@@ -131,21 +131,21 @@ export default {
 | close-icon | Close icon name | _string_ | `cross` |
 | close-icon-position | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition | Transition, equivalent to `name` prop of [transtion](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
-| transition-appear `v2.10.14` | Whether to apply transition on initial render | _boolean_ | `false` |
+| transition-appear | Whether to apply transition on initial render | _boolean_ | `false` |
 | teleport | Return the mount node for Popup | _string \| Element_ | - |
-| safe-area-inset-bottom `v2.2.1` | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
 
 ### Events
 
-| Event | Description | Arguments |
-| --- | --- | --- |
-| click | Emitted when Popup is clicked | _event: Event_ |
-| click-overlay | Emitted when overlay is clicked | - |
-| click-close-icon `v2.11.0` | Emitted when close icon is clicked | _event: Event_ |
-| open | Emitted when opening Popup | - |
-| close | Emitted when closing Popup | - |
-| opened | Emitted when Popup is opened | - |
-| closed | Emitted when Popup is closed | - |
+| Event            | Description                        | Arguments      |
+| ---------------- | ---------------------------------- | -------------- |
+| click            | Emitted when Popup is clicked      | _event: Event_ |
+| click-overlay    | Emitted when overlay is clicked    | -              |
+| click-close-icon | Emitted when close icon is clicked | _event: Event_ |
+| open             | Emitted when opening Popup         | -              |
+| close            | Emitted when closing Popup         | -              |
+| opened           | Emitted when Popup is opened       | -              |
+| closed           | Emitted when Popup is closed       | -              |
 
 ### Less Variables
 

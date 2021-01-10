@@ -79,10 +79,10 @@ export default {
 
 ### IndexBar Events
 
-| Event | Description | Arguments |
-| --- | --- | --- |
+| Event  | Description                       | Arguments                 |
+| ------ | --------------------------------- | ------------------------- |
 | select | Emitted when an index is selected | _index: number \| string_ |
-| change `v2.10.10` | Emitted when active index changed | _index: number \| string_ |
+| change | Emitted when active index changed | _index: number \| string_ |
 
 ### IndexAnchor Slots
 

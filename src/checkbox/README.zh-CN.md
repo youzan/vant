@@ -280,7 +280,7 @@ export default {
 | v-model | 所有选中项的标识符 | _any[]_ | - |
 | disabled | 是否禁用所有复选框 | _boolean_ | `false` |
 | max | 最大可选数，`0`为无限制 | _number \| string_ | `0` |
-| direction `v2.5.0` | 排列方向，可选值为 `horizontal` | _string_ | `vertical` |
+| direction | 排列方向，可选值为 `horizontal` | _string_ | `vertical` |
 | icon-size | 所有复选框的图标大小，默认单位为 `px` | _number \| string_ | `20px` |
 | checked-color | 所有复选框的选中状态颜色 | _string_ | `#1989fa` |
 

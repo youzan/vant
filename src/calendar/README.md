@@ -247,7 +247,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| type `v2.5.4` | Type，can be set to `range` `multiple` | _string_ | `single` |
+| type | Type，can be set to `range` `multiple` | _string_ | `single` |
 | title | Title of calendar | _string_ | `Calendar` |
 | color | Color for the bottom button and selected date | _string_ | `#ee0a24` |
 | min-date | Min date | _Date_ | Today |
@@ -256,15 +256,15 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | row-height | Row height | _number \| string_ | `64` |
 | formatter | Day formatter | _(day: Day) => Day_ | - |
 | poppable | Whether to show the calendar inside a popup | _boolean_ | `true` |
-| lazy-render `v2.8.1` | Whether to enable lazy render | _boolean_ | `true` |
+| lazy-render | Whether to enable lazy render | _boolean_ | `true` |
 | show-mark | Whether to show background month mark | _boolean_ | `true` |
-| show-title `v2.5.5` | Whether to show title | _boolean_ | `true` |
-| show-subtitle `v2.5.5` | Whether to show subtitle | _boolean_ | `true` |
+| show-title | Whether to show title | _boolean_ | `true` |
+| show-subtitle | Whether to show subtitle | _boolean_ | `true` |
 | show-confirm | Whether to show confirm button | _boolean_ | `true` |
-| readonly `v2.10.5` | Whether to be readonly | _boolean_ | `false` |
+| readonly | Whether to be readonly | _boolean_ | `false` |
 | confirm-text | Confirm button text | _string_ | `Confirm` |
 | confirm-disabled-text | Confirm button text when disabled | _string_ | `Confirm` |
-| first-day-of-week `v2.9.2` | Set the start day of week | _0-6_ | `0` |
+| first-day-of-week | Set the start day of week | _0-6_ | `0` |
 
 ### Poppable Props
 
@@ -275,10 +275,10 @@ Following props are supported when the poppable is true
 | v-model:show | Whether to show calendar | _boolean_ | `false` |
 | position | Popup position, can be set to `top` `right` `left` | _string_ | `bottom` |
 | round | Whether to show round corner | _boolean_ | `true` |
-| close-on-popstate `v2.4.4` | Whether to close when popstate | _boolean_ | `true` |
+| close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
-| teleport `v2.4.4` | Return the mount node for Calendar | _string \| Element_ | - |
+| teleport | Return the mount node for Calendar | _string \| Element_ | - |
 
 ### Range Props
 
@@ -286,9 +286,9 @@ Following props are supported when the type is range
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| max-range `v2.4.3` | Number of selectable days | _number \| string_ | Unlimitied |
-| range-prompt `v2.4.3` | Error message when exceeded max range | _string_ | `Choose no more than xx days` |
-| allow-same-day `v2.5.6` | Whether the start and end time of the range is allowed on the same day | _boolean_ | `false` |
+| max-range | Number of selectable days | _number \| string_ | Unlimitied |
+| range-prompt | Error message when exceeded max range | _string_ | `Choose no more than xx days` |
+| allow-same-day | Whether the start and end time of the range is allowed on the same day | _boolean_ | `false` |
 
 ### Multiple Props
 
@@ -296,8 +296,8 @@ Following props are supported when the type is multiple
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| max-range `v2.7.2` | Max count of selectable days | _number \| string_ | Unlimitied |
-| range-prompt `v2.4.3` | Error message when exceeded max count | _string_ | `Choose no more than xx days` |
+| max-range | Max count of selectable days | _number \| string_ | Unlimitied |
+| range-prompt | Error message when exceeded max count | _string_ | `Choose no more than xx days` |
 
 ### Data Structure of Day
 
@@ -316,12 +316,12 @@ Following props are supported when the type is multiple
 | --- | --- | --- |
 | select | Emitted when date is selected | _value: Date \| Date[]_ |
 | confirm | Emitted after date selection is complete，if `show-confirm` is `true`, it is Emitted after clicking the confirm button | _value: Date \| Date[]_ |
-| open `v2.5.2` | Emitted when opening Popup | - |
-| close `v2.5.2` | Emitted when closing Popup | - |
-| opened `v2.5.2` | Emitted when Popup is opened | - |
-| closed `v2.5.2` | Emitted when Popup is closed | - |
-| unselect `v2.7.2` | Emitted when unselect date when type is multiple | _value: Date_ |
-| month-show `v2.8.2` | Emitted when a month enters the visible area | _{ date: Date, title: string }_ |
+| open | Emitted when opening Popup | - |
+| close | Emitted when closing Popup | - |
+| opened | Emitted when Popup is opened | - |
+| closed | Emitted when Popup is closed | - |
+| unselect | Emitted when unselect date when type is multiple | _value: Date_ |
+| month-show | Emitted when a month enters the visible area | _{ date: Date, title: string }_ |
 
 ### Slots
 
@@ -337,7 +337,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Calend
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | reset | Reset selected date to default date | - | - |
-| scrollToDate `v2.12.2` | Scroll to date | _date: Date_ | - |
+| scrollToDate | Scroll to date | _date: Date_ | - |
 
 ### Less Variables
 

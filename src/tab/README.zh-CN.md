@@ -254,12 +254,12 @@ export default {
 | sticky | 是否使用粘性定位布局 | _boolean_ | `false` |
 | swipeable | 是否开启手势滑动切换 | _boolean_ | `false` |
 | lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | _boolean_ | `true` |
-| scrollspy `v2.3.0` | 是否开启滚动导航 | _boolean_ | `false` |
-| offset-top `v2.8.7` | 粘性定位布局下与顶部的最小距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
+| scrollspy | 是否开启滚动导航 | _boolean_ | `false` |
+| offset-top | 粘性定位布局下与顶部的最小距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
 | swipe-threshold | 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动 | _number \| string_ | `5` |
 | title-active-color | 标题选中态颜色 | _string_ | - |
 | title-inactive-color | 标题默认态颜色 | _string_ | - |
-| before-change `v2.9.3` | 切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise | _(name) => boolean \| Promise_ | - |
+| before-change | 切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise | _(name) => boolean \| Promise_ | - |
 
 ### Tab Props
 
@@ -267,8 +267,8 @@ export default {
 | --- | --- | --- | --- |
 | title | 标题 | _string_ | - |
 | disabled | 是否禁用标签 | _boolean_ | `false` |
-| dot `v2.3.0` | 是否在标题右上角显示小红点 | _boolean_ | `false` |
-| badge `v2.5.6` | 图标右上角徽标的内容 | _number \| string_ | - |
+| dot | 是否在标题右上角显示小红点 | _boolean_ | `false` |
+| badge | 图标右上角徽标的内容 | _number \| string_ | - |
 | name | 标签名称，作为匹配的标识符 | _number \| string_ | 标签的索引值 |
 | url | 点击后跳转的链接地址 | _string_ | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
@@ -283,7 +283,7 @@ export default {
 | click | 点击标签时触发 | name：标识符，title：标题 |
 | change | 当前激活的标签改变时触发 | name：标识符，title：标题 |
 | disabled | 点击被禁用的标签时触发 | name：标识符，title：标题 |
-| rendered `v2.3.0` | 标签内容首次渲染时触发（仅在开启延迟渲染后触发） | name：标识符，title：标题 |
+| rendered | 标签内容首次渲染时触发（仅在开启延迟渲染后触发） | name：标识符，title：标题 |
 | scroll | 滚动时触发，仅在 sticky 模式下生效 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
 
 ### Tabs 方法
@@ -293,7 +293,7 @@ export default {
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | resize | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 | - | - |
-| scrollTo `v2.9.3` | 滚动到指定的标签页，在滚动导航模式下可用 | name: 标识符 | - |
+| scrollTo | 滚动到指定的标签页，在滚动导航模式下可用 | name: 标识符 | - |
 
 ### Tabs Slots
 

@@ -149,9 +149,9 @@ export default {
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get CollapseItem instance and call instance methods.
 
-| Name | Description | Attribute | Return value |
-| --- | --- | --- | --- |
-| toggle `v2.10.9` | Toggle expanded status | _expanded: boolean_ | - |
+| Name   | Description            | Attribute           | Return value |
+| ------ | ---------------------- | ------------------- | ------------ |
+| toggle | Toggle expanded status | _expanded: boolean_ | -            |
 
 ### Less Variables
 

@@ -105,7 +105,7 @@ app.use(GridItem);
 | center | Whether to center content | _boolean_ | `true` |
 | square | Whether to be square shape | _boolean_ | `false` |
 | clickable | Whether to show click feedback when clicked | _boolean_ | `false` |
-| direction `v2.8.2` | Content arrangement direction, can be set to `horizontal` | _string_ | `vertical` |
+| direction | Content arrangement direction, can be set to `horizontal` | _string_ | `vertical` |
 
 ### GridItem Props
 
@@ -113,9 +113,9 @@ app.use(GridItem);
 | --- | --- | --- | --- |
 | text | Text | _string_ | - |
 | icon | Icon name or URL | _string_ | - |
-| icon-prefix `v2.5.3` | Icon className prefix | _string_ | `van-icon` |
+| icon-prefix | Icon className prefix | _string_ | `van-icon` |
 | dot | Whether to show red dot | _boolean_ | `false` |
-| badge `v2.5.6` | Content of the badge | _number \| string_ | - |
+| badge | Content of the badge | _number \| string_ | - |
 | url | Link URL | _string_ | - |
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |

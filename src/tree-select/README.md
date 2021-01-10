@@ -173,7 +173,7 @@ export default {
 | main-active-index | The index of selected parent node | _number \| string_ | `0` |
 | active-id | Id of selected item | _number \| string \|<br>(number \| string)[]_ | `0` |
 | max | Maximum number of selected items | _number \| string_ | `Infinity` |
-| selected-icon `v2.9.0` | Selected icon | _string_ | `success` |
+| selected-icon | Selected icon | _string_ | `success` |
 
 ### Events
 

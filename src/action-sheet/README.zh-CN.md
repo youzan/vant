@@ -186,14 +186,14 @@ export default {
 | title | 顶部标题 | _string_ | - |
 | cancel-text | 取消按钮文字 | _string_ | - |
 | description | 选项上方的描述信息 | _string_ | - |
-| closeable `v2.10.5` | 是否显示关闭图标 | _boolean_ | `true` |
+| closeable | 是否显示关闭图标 | _boolean_ | `true` |
 | close-icon | 关闭[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `cross` |
 | duration | 动画时长，单位秒 | _number \| string_ | `0.3` |
 | round | 是否显示圆角 | _boolean_ | `true` |
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
 | lock-scroll | 是否锁定背景滚动 | _boolean_ | `true` |
 | lazy-render | 是否在显示弹层时才渲染节点 | _boolean_ | `true` |
-| close-on-popstate `v2.5.3` | 是否在页面回退时自动关闭 | _boolean_ | `false` |
+| close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `false` |
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
@@ -226,10 +226,10 @@ export default {
 
 ### Slots
 
-| 名称                  | 说明                 |
-| --------------------- | -------------------- |
-| default               | 自定义面板的展示内容 |
-| description `v2.10.4` | 自定义描述文案       |
+| 名称        | 说明                 |
+| ----------- | -------------------- |
+| default     | 自定义面板的展示内容 |
+| description | 自定义描述文案       |
 
 ### 样式变量
 

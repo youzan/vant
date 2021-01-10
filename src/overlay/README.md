@@ -66,7 +66,7 @@ export default {
 | duration | Animation duration | _number \| string_ | `0.3` |
 | class-name | ClassName | _string_ | - |
 | custom-class | Custom style | _object_ | - |
-| lock-scroll `v2.6.2` | Whether to lock background scroll | _boolean_ | `true` |
+| lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 
 ### Events
 

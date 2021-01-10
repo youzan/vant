@@ -114,7 +114,7 @@ export default {
 | show-exchange-bar | 是否展示兑换栏 | _boolean_ | `true` |
 | currency | 货币符号 | _string_ | `¥` |
 | empty-image | 列表为空时的占位图 | _string_ | `https://img.yzcdn.cn/vant/coupon-empty.png` |
-| show-count `v2.3.0` | 是否展示可用 / 不可用数量 | _boolean_ | `true` |
+| show-count | 是否展示可用 / 不可用数量 | _boolean_ | `true` |
 
 ### CouponList Events
 

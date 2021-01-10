@@ -103,7 +103,7 @@ export default {
 | --- | --- | --- | --- |
 | title | Content | _string_ | `''` |
 | dot | Whether to show red dot | _boolean_ | `false` |
-| badge `v2.5.6` | Content of the badge | _number \| string_ | `''` |
+| badge | Content of the badge | _number \| string_ | `''` |
 | disabled | Whether to be disabled | _boolean_ | `false` |
 | url | Link | _string_ | - |
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |
@@ -117,9 +117,9 @@ export default {
 
 ### SidebarItem Slots
 
-| Name            | Description       |
-| --------------- | ----------------- |
-| title `v2.10.8` | Custom item title |
+| Name  | Description       |
+| ----- | ----------------- |
+| title | Custom item title |
 
 ### Less Variables
 

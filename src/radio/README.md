@@ -170,7 +170,7 @@ export default {
 | --- | --- | --- | --- |
 | v-model | Name of checked radio | _any_ | - |
 | disabled | Disable all radios | _boolean_ | `false` |
-| direction `v2.5.0` | Direction, can be set to `horizontal` | _string_ | `vertical` |
+| direction | Direction, can be set to `horizontal` | _string_ | `vertical` |
 | icon-size | Icon size of all radios | _number \| string_ | `20px` |
 | checked-color | Checked color of all radios | _string_ | `#1989fa` | - |
 

@@ -94,9 +94,9 @@ export default {
 
 | 名称 | 描述 | 参数 |
 | --- | --- | --- |
-| page `v2.10.9` | 自定义页码 | _{ number: number, text: string, active: boolean }_ |
-| prev-text `v2.10.9` | 自定义上一页按钮文字 | `-` |
-| next-text `v2.10.9` | 自定义下一页按钮文字 | `-` |
+| page | 自定义页码 | _{ number: number, text: string, active: boolean }_ |
+| prev-text | 自定义上一页按钮文字 | `-` |
+| next-text | 自定义下一页按钮文字 | `-` |
 
 ### 样式变量
 

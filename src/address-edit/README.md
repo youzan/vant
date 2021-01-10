@@ -75,7 +75,7 @@ export default {
 | --- | --- | --- | --- |
 | area-list | Area List | _object_ | - |
 | area-columns-placeholder | placeholder of area columns | _string[]_ | `[]` |
-| area-placeholder `v2.6.1` | placeholder of area input field | _string_ | `Area` |
+| area-placeholder | placeholder of area input field | _string_ | `Area` |
 | address-info | Address Info | _AddressInfo_ | `{}` |
 | search-result | Address search result | _SearchResult[]_ | `[]` |
 | show-postal | Whether to show postal field | _boolean_ | `false` |
@@ -84,7 +84,7 @@ export default {
 | show-search-result | Whether to show address search result | _boolean_ | `false` |
 | show-area | Whether to show area cell | _boolean_ | `true` |
 | show-detail | Whether to show detail field | _boolean_ | `true` |
-| disable-area `v2.5.0` | Whether to disable area select | _boolean_ | `false` |
+| disable-area | Whether to disable area select | _boolean_ | `false` |
 | save-button-text | Save button text | _string_ | `Save` |
 | delete-button-text | Delete button text | _string_ | `Delete` |
 | detail-rows | Detail input rows | _number \| string_ | `1` |
@@ -92,7 +92,7 @@ export default {
 | is-saving | Whether to show save button loading status | _boolean_ | `false` |
 | is-deleting | Whether to show delete button loading status | _boolean_ | `false` |
 | tel-validator | The method to validate tel | _(tel: string) => boolean_ | - |
-| tel-maxlength `v2.10.0` | Tel maxlength | _number \| string_ | - |
+| tel-maxlength | Tel maxlength | _number \| string_ | - |
 | postal-validator | The method to validate postal | _(tel: string) => boolean_ | - |
 | validator | Custom validator | _(key, val) => string_ | - |
 
@@ -105,7 +105,7 @@ export default {
 | delete | Emitted when confirming delete | content：form content |
 | cancel-delete | Emitted when canceling delete | content：form content |
 | select-search | Emitted when a search result is selected | value: search content |
-| click-area `v2.5.9` | Emitted when the area field is clicked | - |
+| click-area | Emitted when the area field is clicked | - |
 | change-area | Emitted when area changed | values: area values |
 | change-detail | Emitted when address detail changed | value: address detail |
 | change-default | Emitted when switching default address | value: checked |

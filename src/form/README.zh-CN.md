@@ -508,15 +508,15 @@ export default {
 | label-align |  表单项 label 对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `left` |
-| validate-trigger `v2.5.2` | 表单校验触发时机，可选值为 `onChange`、`onSubmit`，详见下表 | _string_ | `onBlur` |
+| validate-trigger | 表单校验触发时机，可选值为 `onChange`、`onSubmit`，详见下表 | _string_ | `onBlur` |
 | colon | 是否在 label 后面添加冒号 | _boolean_ | `false` |
-| disabled `v2.12.2` | 是否禁用表单中的所有输入框 | _boolean_ | `false` |
-| readonly `v2.12.2` | 是否将表单中的所有输入框设置为只读 | _boolean_ | `false` |
+| disabled | 是否禁用表单中的所有输入框 | _boolean_ | `false` |
+| readonly | 是否将表单中的所有输入框设置为只读 | _boolean_ | `false` |
 | validate-first | 是否在某一项校验不通过时停止校验 | _boolean_ | `false` |
-| scroll-to-error `v2.5.2` | 是否在提交表单且校验不通过时滚动至错误的表单项 | _boolean_ | `false` |
-| show-error `v2.6.0` | 是否在校验不通过时标红输入框 | _boolean_ | `true` |
-| show-error-message `v2.5.8` | 是否在校验不通过时在输入框下方展示错误提示 | _boolean_ | `true` |
-| submit-on-enter `v2.8.3` | 是否在按下回车键时提交表单 | _boolean_ | `true` |
+| scroll-to-error | 是否在提交表单且校验不通过时滚动至错误的表单项 | _boolean_ | `false` |
+| show-error | 是否在校验不通过时标红输入框 | _boolean_ | `true` |
+| show-error-message | 是否在校验不通过时在输入框下方展示错误提示 | _boolean_ | `true` |
+| submit-on-enter | 是否在按下回车键时提交表单 | _boolean_ | `true` |
 
 > 表单项的 API 参见：[Field 组件](#/zh-CN/field#api)
 
@@ -527,11 +527,11 @@ export default {
 | 键名 | 说明 | 类型 |
 | --- | --- | --- |
 | required | 是否为必选字段 | _boolean_ |
-| message `v2.5.3` | 错误提示文案 | _string \| (value, rule) => string_ |
-| validator `v2.5.3` | 通过函数进行校验 | _(value, rule) => boolean \| Promise_ |
-| pattern `v2.5.3` | 通过正则表达式进行校验 | _RegExp_ |
-| trigger `v2.5.2` | 本项规则的触发时机，可选值为 `onChange`、`onBlur` | _string_ |
-| formatter `v2.5.3` | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |
+| message | 错误提示文案 | _string \| (value, rule) => string_ |
+| validator | 通过函数进行校验 | _(value, rule) => boolean \| Promise_ |
+| pattern | 通过正则表达式进行校验 | _RegExp_ |
+| trigger | 本项规则的触发时机，可选值为 `onChange`、`onBlur` | _string_ |
+| formatter | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |
 
 ### validate-trigger  可选值
 
@@ -559,7 +559,7 @@ export default {
 | submit | 提交表单，与点击提交按钮的效果等价 | - | - |
 | validate | 验证表单，支持传入 `name` 来验证单个或部分表单项 | _name?: string \| string[]_ | _Promise_ |
 | resetValidation | 重置表单项的验证提示，支持传入 `name` 来重置单个或部分表单项 | _name?: string \| string[]_ | - |
-| scrollToField `v2.8.3` | 滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部 | _name: string, alignToTop: boolean_ | - |
+| scrollToField | 滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部 | _name: string, alignToTop: boolean_ | - |
 
 ### Slots
 
