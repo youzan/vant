@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils';
 import ImagePreviewComponent from '../ImagePreview';
 import { later } from '../../../test';
+import { trigger } from '../../utils';
 
 const images = [
   'https://img.yzcdn.cn/1.png',
@@ -111,4 +112,29 @@ test('should hide index when show-index prop is false', async () => {
 
   await wrapper.setProps({ showIndex: false });
   expect(wrapper.find('.van-image-preview__index').exists()).toBeFalsy();
+});
+
+test('should hide ImagePreview after popstate', async () => {
+  const wrapper = mount(ImagePreviewComponent, {
+    props: {
+      images,
+      show: true,
+    },
+  });
+
+  trigger(window, 'popstate');
+  expect(wrapper.emitted('update:show')[0][0]).toBeFalsy();
+});
+
+test('should not hide ImagePreview after popstate when close-on-popstate is false', async () => {
+  const wrapper = mount(ImagePreviewComponent, {
+    props: {
+      images,
+      show: true,
+      closeOnPopstate: false,
+    },
+  });
+
+  trigger(window, 'popstate');
+  expect(wrapper.emitted('update:show')).toBeFalsy();
 });

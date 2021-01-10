@@ -91,12 +91,16 @@ export default createComponent({
       emit('scale', args);
     };
 
+    const toggle = (show) => {
+      emit('update:show', show);
+    };
+
     const emitClose = () => {
       callInterceptor({
         interceptor: props.beforeClose,
         args: [state.active],
         done: () => {
-          emit('update:show', false);
+          toggle(false);
         },
       });
     };
@@ -211,6 +215,7 @@ export default createComponent({
         overlayClass={bem('overlay')}
         closeOnPopstate={props.closeOnPopstate}
         onClosed={onClosed}
+        {...{ 'onUpdate:show': toggle }}
       >
         {renderClose()}
         {renderImages()}

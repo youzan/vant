@@ -223,27 +223,6 @@ test('zoom out', async () => {
   restore();
 });
 
-test('closeOnPopstate', () => {
-  const wrapper = mount(ImagePreviewVue, {
-    props: {
-      images,
-      value: true,
-      closeOnPopstate: true,
-    },
-  });
-
-  trigger(window, 'popstate');
-  expect(wrapper.emitted('input')[0][0]).toBeFalsy();
-
-  wrapper.setProps({
-    value: true,
-    closeOnPopstate: false,
-  });
-
-  trigger(window, 'popstate');
-  expect(wrapper.emitted('input')[1]).toBeFalsy();
-});
-
 test('get container with function call ', async (done) => {
   const element = document.createElement('div');
   document.body.appendChild(element);
