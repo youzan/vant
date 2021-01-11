@@ -294,6 +294,7 @@ export default createComponent({
 
     useExpose({
       getArea,
+      setAreaCode,
       setAddressDetail,
     });
 
