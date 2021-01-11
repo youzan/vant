@@ -2,7 +2,7 @@
 
 ### Tips
 
-The current document is the changelog of Vant 2.x. If you want to view the changelog of Vant 3.x, please visit [Vant 3.x Changelog](https://youzan.github.io/vant/next/#/en-US/changelog).
+The current document is the changelog of Vant 2. If you want to view the changelog of Vant 3, please visit [Vant 3 Changelog](https://youzan.github.io/vant/next/#/en-US/changelog).
 
 ### Intro
 
@@ -15,6 +15,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Major version：including breaking changes and new features.
 
 ## Details
+
+### [v2.12.3](https://github.com/youzan/vant/compare/v2.12.2...v2.12.3)
+
+`2021-01-09`
+
+**Bug Fixes**
+
+- Col: compatible with less 4.0 [d8a81b](https://github.com/youzan/vant/commit/d8a81b26d8d867e810e54a40ea0d647bb6af3bee)
 
 ### [v2.12.2](https://github.com/youzan/vant/compare/v2.12.1...v2.12.2)
 

@@ -133,10 +133,10 @@ export default {
 
 ### Events
 
-| Event           | Description                      | Arguments            |
-| --------------- | -------------------------------- | -------------------- |
-| finish          | Emitted when count down finished | -                    |
-| change `v2.4.4` | Emitted when count down changed  | _timeData: TimeData_ |
+| Event  | Description                      | Arguments            |
+| ------ | -------------------------------- | -------------------- |
+| finish | Emitted when count down finished | -                    |
+| change | Emitted when count down changed  | _timeData: TimeData_ |
 
 ### Slots
 

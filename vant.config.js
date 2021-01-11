@@ -12,15 +12,15 @@ module.exports = {
   site: {
     defaultLang: 'en-US',
     versions: [
-      { label: '1.x', link: '/vant/1.x/' },
-      { label: '3.x', link: '/vant/next/' },
+      { label: 'v1', link: '/vant/v1/' },
+      { label: 'v3', link: '/vant/v3/' },
     ],
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
     },
     htmlPluginOptions: {
       meta: {
-        'docsearch:version': '2.x',
+        'docsearch:version': 'v2',
       },
     },
     locales: {
@@ -144,7 +144,7 @@ module.exports = {
               },
               {
                 path: 'cascader',
-                title: 'Cascader 级联选择'
+                title: 'Cascader 级联选择',
               },
               {
                 path: 'checkbox',
@@ -515,7 +515,7 @@ module.exports = {
               },
               {
                 path: 'cascader',
-                title: 'Cascader'
+                title: 'Cascader',
               },
               {
                 path: 'checkbox',

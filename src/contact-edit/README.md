@@ -55,8 +55,8 @@ export default {
 | is-saving | Whether to show save button loading status | _boolean_ | `false` |
 | is-deleting | Whether to show delete button loading status | _boolean_ | `false` |
 | tel-validator | The method to validate tel | _(tel: string) => boolean_ | - |
-| show-set-default `v2.3.0` | Whether to show default contact switch | _boolean_ | `false` |
-| set-default-label `v2.3.0` | default contact switch label | _string_ | - |
+| show-set-default | Whether to show default contact switch | _boolean_ | `false` |
+| set-default-label | default contact switch label | _string_ | - |
 
 ### Events
 

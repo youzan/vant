@@ -281,12 +281,12 @@ Picker events will pass different parameters according to the columns are single
 
 ### Data Structure of Column
 
-| Key               | Description               | Type       |
-| ----------------- | ------------------------- | ---------- |
-| values            | Value of column           | _string[]_ |
-| defaultIndex      | Default value index       | _number_   |
-| className         | ClassName for this column | _any_      |
-| children `v2.4.5` | Cascade children          | _Column_   |
+| Key          | Description               | Type       |
+| ------------ | ------------------------- | ---------- |
+| values       | Value of column           | _string[]_ |
+| defaultIndex | Default value index       | _number_   |
+| className    | ClassName for this column | _any_      |
+| children     | Cascade children          | _Column_   |
 
 ### Methods
 
@@ -304,7 +304,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Picker instance and call instanc
 | setColumnIndex | Set current index of the column | columnIndex, optionIndex | - |
 | getColumnValues | Get columns data of the column | columnIndex | values |
 | setColumnValues | Set columns data of the column | columnIndex, values | - |
-| confirm `v2.4.0` | Stop scrolling and emit confirm event | - | - |
+| confirm | Stop scrolling and emit confirm event | - | - |
 
 ### Less Variables
 

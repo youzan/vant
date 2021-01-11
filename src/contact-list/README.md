@@ -69,7 +69,7 @@ export default {
 | v-model | Id of chosen contact | _number \| string_ | - |
 | list | Contact list | _Contact[]_ | `[]` |
 | add-text | Add button text | _string_ | `Add new contact` |
-| default-tag-text `v2.3.0` | Default tag text | _string_ | - |
+| default-tag-text | Default tag text | _string_ | - |
 
 ### Events
 

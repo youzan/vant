@@ -185,8 +185,8 @@ module.exports = {
   site: {
     versions: [
       {
-        label: '1.x',
-        link: 'https://youzan.github.io/vant/1.x/',
+        label: 'v1',
+        link: 'https://youzan.github.io/vant/v1/',
       },
     ],
   },

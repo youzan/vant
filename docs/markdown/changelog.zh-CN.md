@@ -2,7 +2,7 @@
 
 ### 提示
 
-当前文档为 Vant 2.x 版本的更新日志，如需查询 Vant 3.x 的更新内容，请访问 [Vant 3.x 更新日志](https://youzan.github.io/vant/next/#/zh-CN/changelog)。
+当前文档为 Vant 2 的更新日志，如需查询 Vant 3 的更新内容，请访问 [Vant 3 更新日志](https://youzan.github.io/vant/next/#/zh-CN/changelog)。
 
 ### 介绍
 
@@ -15,6 +15,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
 
 ## 更新内容
+
+### [v2.12.3](https://github.com/youzan/vant/compare/v2.12.2...v2.12.3)
+
+`2021-01-09`
+
+**Bug Fixes**
+
+- Col: 适配 less 4.0 [d8a81b](https://github.com/youzan/vant/commit/d8a81b26d8d867e810e54a40ea0d647bb6af3bee)
 
 ### [v2.12.2](https://github.com/youzan/vant/compare/v2.12.1...v2.12.2)
 
@@ -2381,6 +2389,6 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 同时，Vant 3.0 版本也在酝酿当中，不出意外的话，<b>3.0 版本会基于 Vue 3.0 实现，并争取和 Vue 3.0 同期发布</b>。
 
-对于 Vant 1.x 版本，后续会进入维护期，跟进问题修复，但不再引入功能性改动。
+对于 Vant v1 版本，后续会进入维护期，跟进问题修复，但不再引入功能性改动。
 
 ![](https://img.yzcdn.cn/public_files/2019/06/11/4e7202acbfc399622e428eb1485e1591.png)

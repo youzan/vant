@@ -259,10 +259,10 @@ export default {
 | v-model | 是否显示日历弹窗 | _boolean_ | `false` |
 | position | 弹出位置，可选值为 `top` `right` `left` | _string_ | `bottom` |
 | round | 是否显示圆角弹窗 | _boolean_ | `true` |
-| close-on-popstate `v2.4.4` | 是否在页面回退时自动关闭 | _boolean_ | `true` |
+| close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
-| get-container `v2.4.4` | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
+| get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### Range Props
 
@@ -270,8 +270,8 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| max-range `v2.4.3` | 日期区间最多可选天数 | _number \| string_ | 无限制 |
-| range-prompt `v2.4.3` | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
+| max-range | 日期区间最多可选天数 | _number \| string_ | 无限制 |
+| range-prompt | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
 | allow-same-day `v2.5.6` | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 
 ### Multiple Props
@@ -281,7 +281,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | max-range `v2.7.2` | 日期最多可选天数 | _number \| string_ | 无限制 |
-| range-prompt `v2.4.3` | 选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
+| range-prompt | 选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
 
 ### Day 数据结构
 

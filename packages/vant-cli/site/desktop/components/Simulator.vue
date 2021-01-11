@@ -66,7 +66,7 @@ export default {
 
   @media (min-width: @van-doc-row-max-width) {
     right: 50%;
-    margin-right: -@van-doc-row-max-width / 2 + 40px;
+    margin-right: -(@van-doc-row-max-width / 2) + 40px;
   }
 
   &-fixed {

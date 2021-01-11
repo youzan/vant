@@ -1,5 +1,14 @@
 # 更新日志
 
+## v2.8.1
+
+- 修复大屏幕下预览区域位置错位的问题
+
+## v2.8.0
+
+- 升级 less 4.0
+- 升级 less-loader 7.0
+
 ## v2.7.0
 
 - 支持通过 `site.htmlPluginOptions` 来配置 html-webpack-plugin
