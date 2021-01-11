@@ -109,6 +109,10 @@ export default createComponent({
         style: null,
         class: null,
       };
+      
+      const onInput = (value) => {
+        emit('update:modelValue', value);
+      };
 
       return (
         <Field
@@ -118,6 +122,7 @@ export default createComponent({
           border={false}
           onKeypress={onKeypress}
           {...fieldAttrs}
+          {...{ 'onUpdate:modelValue': onInput }}
         />
       );
     };
