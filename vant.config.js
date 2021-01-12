@@ -43,6 +43,9 @@ module.exports = {
           apiKey: '90067aecdaa2c85220e2783cd305caac',
           indexName: 'vant',
           placeholder: '搜索文档...',
+          algoliaOptions: {
+            facetFilters: ['version:v2'],
+          },
           transformData(hits) {
             if (location.hostname === 'vant-contrib.gitee.io') {
               hits.forEach((hit) => {
@@ -438,6 +441,9 @@ module.exports = {
           apiKey: '90067aecdaa2c85220e2783cd305caac',
           indexName: 'vant',
           placeholder: 'Search...',
+          algoliaOptions: {
+            facetFilters: ['version:v2'],
+          },
         },
         nav: [
           {
