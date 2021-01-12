@@ -400,7 +400,7 @@ export default createComponent({
     watch([windowSize.width, windowSize.height], resize);
 
     watch(usePageVisibility(), (visible) => {
-      if (visible) {
+      if (visible === 'visible') {
         autoplay();
       } else {
         stopAutoplay();
