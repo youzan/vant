@@ -171,18 +171,18 @@ export default createComponent({
 
     const renderKeys = () => {
       return keys.value.map((key) => {
-        const slots = {};
+        const keySlots = {};
 
         if (key.type === 'delete') {
-          slots.default = slots.delete;
+          keySlots.default = slots.delete;
         }
         if (key.type === 'extra') {
-          slots.default = slots['extra-key'];
+          keySlots.default = slots['extra-key'];
         }
 
         return (
           <Key
-            v-slots={slots}
+            v-slots={keySlots}
             key={key.text}
             text={key.text}
             type={key.type}
