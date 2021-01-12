@@ -122,6 +122,7 @@ export default createComponent({
     };
 
     const onAnimationEnd = () => {
+      console.log('onAnimationEnd');
       emit(props.show ? 'show' : 'hide');
     };
 

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render extra key correctly when using extra-key prop 1`] = `
+<div role="button"
+     tabindex="0"
+     class="van-key"
+>
+  foo
+</div>
+`;
+
+exports[`should render extra-key slot correctly 1`] = `
+<div role="button"
+     tabindex="0"
+     class="van-key"
+>
+  Custom Extra Key
+</div>
+`;
+
+exports[`should render title and close button correctly 1`] = `
+<div class="van-number-keyboard__header">
+  <h2 class="van-number-keyboard__title">
+    Title
+  </h2>
+  <button type="button"
+          class="van-number-keyboard__close"
+  >
+    Close
+  </button>
+</div>
+`;
+
+exports[`should render title-left slot correctly 1`] = `
+<div class="van-number-keyboard__header">
+  <span class="van-number-keyboard__title-left">
+    Custom Title Left
+  </span>
+</div>
+`;
