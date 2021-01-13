@@ -150,7 +150,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| value | Current value | _number \| array_ | `0` |
+| v-model | Current value | _number \| number[]_ | `0` |
 | max | Max value | _number \| string_ | `100` |
 | min | Min value | _number \| string_ | `0` |
 | step | Step size | _number \| string_ | `1` |
