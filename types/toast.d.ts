@@ -22,6 +22,7 @@ export type ToastOptions = {
   loadingType?: ToastLoadingType;
   forbidClick?: boolean;
   closeOnClick?: boolean;
+  overlayStyle?: Record<string, any>;
   closeOnClickOverlay?: boolean;
 };
 

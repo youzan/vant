@@ -168,9 +168,9 @@ export default createComponent({
           <Overlay
             show={props.show}
             class={props.overlayClass}
-            style={props.overlayStyle}
             zIndex={zIndex.value}
             duration={props.duration}
+            customStyle={props.overlayStyle}
             onClick={onClickOverlay}
           />
         );
