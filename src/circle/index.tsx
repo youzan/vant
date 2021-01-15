@@ -96,8 +96,10 @@ export default createComponent({
 
     const renderHover = () => {
       const PERIMETER = 3140;
-      const { color, strokeWidth, currentRate, strokeLinecap } = props;
+      const { strokeWidth, currentRate, strokeLinecap } = props;
+      let { color } = props;
       const offset = (PERIMETER * currentRate) / 100;
+      color = isObject(color) ? `url(#${id})` : color;
       const style = {
         stroke: `${color}`,
         strokeWidth: `${+strokeWidth + 1}px`,
@@ -110,7 +112,7 @@ export default createComponent({
           d={path.value}
           style={style}
           class={bem('hover')}
-          stroke={isObject(color) ? `url(#${id})` : color}
+          stroke={color}
         />
       );
     };
