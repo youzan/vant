@@ -143,7 +143,7 @@ app.use(CellGroup);
 | url | Link URL | _string_ | - |
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
-| clickable | Whether to show click feedback when clicked | _boolean_ | `false` |
+| clickable | Whether to show click feedback when clicked | _boolean_ | `null` |
 | is-link | Whether to show link icon | _boolean_ | `false` |
 | required | Whether to show required mark | _boolean_ | `false` |
 | arrow-direction | Can be set to `left` `up` `down` | _string_ | `right` |
