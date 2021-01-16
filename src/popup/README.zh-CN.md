@@ -129,7 +129,7 @@ export default {
 | v-model:show | 是否显示弹出层 | _boolean_ | `false` |
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
 | position | 弹出位置，可选值为 `top` `bottom` `right` `left` | _string_ | `center` |
-| overlay-class | 自定义遮罩层类名 | _string_ | - |
+| overlay-class | 自定义遮罩层类名 | _string \| string[] \| object_ | - |
 | overlay-style | 自定义遮罩层样式 | _object_ | - |
 | duration | 动画时长，单位秒 | _number \| string_ | `0.3` |
 | round | 是否显示圆角 | _boolean_ | `false` |
