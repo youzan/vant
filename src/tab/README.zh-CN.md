@@ -273,7 +273,7 @@ export default {
 | url | 点击后跳转的链接地址 | _string_ | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
-| title-style | 自定义标题样式 | _any_ | - |
+| title-style | 自定义标题样式 | _string \| Array \| object_ | - |
 | title-class | 自定义标题类名 | _string \| Array \| object_ | - |
 
 ### Tabs Events
