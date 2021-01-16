@@ -8,7 +8,30 @@ function initInstance() {
   const Wrapper = {
     setup() {
       const { state, toggle } = usePopupState();
-      return () => <VanDialog {...{ ...state, 'onUpdate:show': toggle }} />;
+
+      return () => {
+        const DynamicComponent = state.component;
+        if (DynamicComponent) {
+          return (
+            <VanDialog
+              {...{
+                ...state,
+                'onUpdate:show': toggle,
+                component: undefined,
+                componentProps: undefined,
+              }}
+            >
+              <DynamicComponent
+                {...{ ...(state.componentProps || {}), is: state.component }}
+              />
+            </VanDialog>
+          );
+        }
+
+        return (
+          <VanDialog {...{ ...state, 'onUpdate:show': toggle }}></VanDialog>
+        );
+      };
     },
   };
 
@@ -60,6 +83,8 @@ Dialog.defaultOptions = {
   showCancelButton: false,
   closeOnPopstate: true,
   closeOnClickOverlay: false,
+  component: null, // child dynamic component defineComponent({...})
+  componentProps: null, // child dynamic component props and events {someProp:1, 'onUpdate:modelValue':func}
 };
 
 Dialog.alert = Dialog;
