@@ -18,6 +18,7 @@ const defaultOptions = {
   transition: 'van-fade',
   forbidClick: false,
   loadingType: undefined,
+  overlayClass: '',
   overlayStyle: null,
   closeOnClick: false,
   closeOnClickOverlay: false,

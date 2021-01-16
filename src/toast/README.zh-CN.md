@@ -174,6 +174,7 @@ Toast.resetDefaultOptions('loading');
 | loadingType | [加载图标类型](#/zh-CN/loading), 可选值为 `spinner` | _string_ | `circular` |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | _number_ | `2000` |
 | className | 自定义类名 | _any_ | - |
+| overlayClass `v3.0.4` | 自定义遮罩层类名 | _string \| string[] \| object_ | - |
 | overlayStyle `v3.0.4` | 自定义遮罩层样式 | _object_ | - |
 | onOpened | 完全展示后的回调函数 | _Function_ | - |
 | onClose | 关闭时的回调函数 | _Function_ | - |
