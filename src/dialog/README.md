@@ -86,6 +86,24 @@ Dialog.confirm({
 });
 ```
 
+### Dynamic component
+
+```js
+
+Dialog.confirm({
+  title: 'Title',
+  component: defineComponent({...}),
+  componentProps: {
+    modelValue: this.value,
+    'onUpdate:modelValue': (val) => {
+      this.value = val;
+      Dialog.close();
+    }
+  }
+  beforeClose,
+});
+```
+
 ### Global Method
 
 After registering the Dialog component through `app.use`, the `$dialog` method will be automatically mounted on all subcomponents of the app.
@@ -160,6 +178,8 @@ export default {
 | beforeClose | Callback function before close | _(action) => boolean \| Promise_ | - |
 | transition | Transition, equivalent to `name` prop of [transtion](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Return the mount node for Dialog | _string \| Element_ | `body` |
+| component | child dynamic component | _Component_ | - |
+| componentProps | child dynamic component props | _object_ | - |
 
 ### Props
 
