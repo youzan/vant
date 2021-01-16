@@ -116,6 +116,10 @@ test('formatNumber', () => {
   expect(formatNumber('-1.2', true)).toEqual('-1.2');
   expect(formatNumber('-1.2-', true)).toEqual('-1.2');
   expect(formatNumber('123-')).toEqual('123');
+
+  // special cases
+  expect(formatNumber('.1', true)).toEqual('0.1');
+  expect(formatNumber('-.1')).toEqual('-0.1');
 });
 
 test('addUnit', () => {
