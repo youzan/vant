@@ -45,7 +45,7 @@ export const popupSharedProps = {
   // overlay custom style
   overlayStyle: Object,
   // overlay custom class name
-  overlayClass: String,
+  overlayClass: null,
   // Initial rendering animation
   transitionAppear: Boolean,
   // whether to show overlay

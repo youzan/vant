@@ -119,7 +119,7 @@ export default {
 | v-model:show | Whether to show popup | _boolean_ | `false` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | position | Can be set to `top` `bottom` `right` `left` | _string_ | `center` |
-| overlay-class | Custom overlay class | _string_ | - |
+| overlay-class | Custom overlay class | _string \| string[] \| object_ | - |
 | overlay-style | Custom overlay style | _object_ | - |
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
 | round | Whether to show round corner | _boolean_ | `false` |
