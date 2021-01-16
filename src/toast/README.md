@@ -161,6 +161,7 @@ Toast.resetDefaultOptions('loading');
 | loadingType | Loading icon type, can be set to `spinner` | _string_ | `circular` |
 | duration | Toast duration(ms), won't disappear if value is 0 | _number_ | `2000` |
 | className | Custom className | _any_ | - |
+| overlayClass `v3.0.4` | Custom overlay class | _string \| string[] \| object_ | - |
 | overlayStyle `v3.0.4` | Custom overlay style | _object_ | - |
 | onOpened | Callback function after opened | _Function_ | - |
 | onClose | Callback function after close | _Function_ | - |

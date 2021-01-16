@@ -22,6 +22,7 @@ export default createComponent({
     lockScroll: Boolean,
     loadingType: String,
     forbidClick: Boolean,
+    overlayClass: null,
     overlayStyle: Object,
     closeOnClick: Boolean,
     type: {
@@ -116,6 +117,7 @@ export default createComponent({
         ]}
         lockScroll={false}
         transition={props.transition}
+        overlayClass={props.overlayClass}
         overlayStyle={props.overlayStyle}
         onClick={onClick}
         onClosed={clearTimer}
