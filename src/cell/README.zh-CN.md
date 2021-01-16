@@ -155,9 +155,9 @@ app.use(CellGroup);
 | center | 是否使内容垂直居中 | _boolean_ | `false` |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
 | title-style | 左侧标题额外样式 | _any_ | - |
-| title-class | 左侧标题额外类名 | _any_ | - |
-| value-class | 右侧内容额外类名 | _any_ | - |
-| label-class | 描述信息额外类名 | _any_ | - |
+| title-class | 左侧标题额外类名 | _string \| Array \| object_ | - |
+| value-class | 右侧内容额外类名 | _string \| Array \| object_ | - |
+| label-class | 描述信息额外类名 | _string \| Array \| object_ | - |
 
 ### Cell Events
 

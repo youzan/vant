@@ -255,7 +255,7 @@ Use `input-align` prop to align the input value.
 | formatter | Input value formatter | _Function_ | - |
 | format-trigger | When to format value，can be set to `onBlur` | _string_ | `onChange` |
 | arrow-direction | Can be set to `left` `up` `down` | _string_ | `right` |
-| label-class | Label className | _any_ | - |
+| label-class | Label className | _string \| Array \| object_ | - |
 | label-width | Label width | _number \| string_ | `6.2em` |
 | label-align | Label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Input align, can be set to `center` `right` | _string_ | `left` |

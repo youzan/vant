@@ -148,9 +148,9 @@ app.use(CellGroup);
 | required | Whether to show required mark | _boolean_ | `false` |
 | arrow-direction | Can be set to `left` `up` `down` | _string_ | `right` |
 | title-style | Title style | _any_ | - |
-| title-class | Title className | _any_ | - |
-| value-class | Value className | _any_ | - |
-| label-class | Label className | _any_ | - |
+| title-class | Title className | _string \| Array \| object_ | - |
+| value-class | Value className | _string \| Array \| object_ | - |
+| label-class | Label className | _string \| Array \| object_ | - |
 
 ### Cell Events
 

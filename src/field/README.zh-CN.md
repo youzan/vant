@@ -278,7 +278,7 @@ export default {
 | formatter | 输入内容格式化函数 | _Function_ | - |
 | format-trigger | 格式化函数触发的时机，可选值为 `onBlur` | _string_ | `onChange` |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
-| label-class | 左侧文本额外类名 | _any_ | - |
+| label-class | 左侧文本额外类名 | _string \| Array \| object_ | - |
 | label-width | 左侧文本宽度，默认单位为`px` | _number \| string_ | `6.2em` |
 | label-align | 左侧文本对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |

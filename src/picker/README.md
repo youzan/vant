@@ -360,12 +360,12 @@ Picker events will pass different parameters according to the columns are single
 
 ### Data Structure of Column
 
-| Key          | Description               | Type       |
-| ------------ | ------------------------- | ---------- |
-| values       | Value of column           | _string[]_ |
-| defaultIndex | Default value index       | _number_   |
-| className    | ClassName for this column | _any_      |
-| children     | Cascade children          | _Column_   |
+| Key          | Description               | Type                        |
+| ------------ | ------------------------- | --------------------------- |
+| values       | Value of column           | _string[]_                  |
+| defaultIndex | Default value index       | _number_                    |
+| className    | ClassName for this column | _string \| Array \| object_ |
+| children     | Cascade children          | _Column_                    |
 
 ### Methods
 

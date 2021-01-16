@@ -170,7 +170,7 @@ export default {
 | onScale | 缩放图片时的回调函数，回调参数为当前索引和当前缩放值组成的对象 | _Function_ | - |
 | beforeClose | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active) => boolean \| Promise_ | - |
 | closeOnPopstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
-| className | 自定义类名 | _any_ | - |
+| className | 自定义类名 | _string \| Array \| object_ | - |
 | maxZoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
 | minZoom | 手势缩放时，最小缩放比例 | _number \| string_ | `1/3` |
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |
@@ -192,7 +192,7 @@ export default {
 | loop | 是否开启循环播放 | _boolean_ | `true` |
 | before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active) => boolean \| Promise_ | - |
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
-| class-name | 自定义类名 | _any_ | - |
+| class-name | 自定义类名 | _string \| Array \| object_ | - |
 | max-zoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
 | min-zoom | 手势缩放时，最小缩放比例 | _number \| string_ | `1/3` |
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |

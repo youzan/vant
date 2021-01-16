@@ -187,14 +187,14 @@ export default {
 
 ### Data Structure of Action
 
-| Key       | Description                  | Type      |
-| --------- | ---------------------------- | --------- |
-| name      | Title                        | _string_  |
-| subname   | Subtitle                     | _string_  |
-| color     | Text color                   | _string_  |
-| className | className for the option     | _any_     |
-| loading   | Whether to be loading status | _boolean_ |
-| disabled  | Whether to be disabled       | _boolean_ |
+| Key       | Description                  | Type                        |
+| --------- | ---------------------------- | --------------------------- |
+| name      | Title                        | _string_                    |
+| subname   | Subtitle                     | _string_                    |
+| color     | Text color                   | _string_                    |
+| className | className for the option     | _string \| Array \| object_ |
+| loading   | Whether to be loading status | _boolean_                   |
+| disabled  | Whether to be disabled       | _boolean_                   |
 
 ### Events
 
