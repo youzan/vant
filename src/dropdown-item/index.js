@@ -21,7 +21,7 @@ export default createComponent({
     disabled: Boolean,
     teleport: [String, Object],
     modelValue: null,
-    titleClass: String,
+    titleClass: null,
     options: {
       type: Array,
       default: () => [],

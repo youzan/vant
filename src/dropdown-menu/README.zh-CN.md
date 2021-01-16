@@ -166,7 +166,7 @@ export default {
 | options | 选项数组 | _Option[]_ | `[]` |
 | disabled | 是否禁用菜单 | _boolean_ | `false` |
 | lazy-render | 是否在首次展开时才渲染菜单内容 | _boolean_ | `true` |
-| title-class | 标题额外类名 | _string_ | - |
+| title-class | 标题额外类名 | _string \| string[] \| object_ | - |
 | teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 
 ### DropdownItem Events
