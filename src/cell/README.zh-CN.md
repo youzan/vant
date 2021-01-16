@@ -148,7 +148,7 @@ Vue.use(CellGroup);
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
 | border | 是否显示内边框 | _boolean_ | `true` |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
-| clickable | 是否开启点击反馈 | _boolean_ | `false` |
+| clickable | 是否开启点击反馈 | _boolean_ | `null` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` |
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
 | center | 是否使内容垂直居中 | _boolean_ | `false` |
