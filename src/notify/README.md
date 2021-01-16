@@ -106,7 +106,7 @@ export default {
 | duration | Duration(ms), won't disappear if value is 0 | _number \| string_ | `3000` |
 | color | Message color | _string_ | `white` |  |
 | background | Background color | _string_ | - |
-| className | Custom className | _any_ | - |
+| className | Custom className | _string \| Array \| object_ | - |
 | onClick | Callback function after click | _Function_ | - |
 | onOpened | Callback function after opened | _Function_ | - |
 | onClose | Callback function after close | _Function_ | - |

@@ -133,7 +133,7 @@ export default {
 | onScale | Emitted when scaling current image | _Function_ | - |
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
 | beforeClose | Callback function before close | _(action) => boolean \| Promise_ | - |
-| className | Custom className | _any_ | - |
+| className | Custom className | _string \| Array \| object_ | - |
 | maxZoom | Max zoom | _number \| string_ | `3` |
 | minZoom | Min zoom | _number \| string_ | `1/3` |
 | closeable | Whether to show close icon | _boolean_ | `false` |
@@ -153,7 +153,7 @@ export default {
 | loop | Whether to enable loop | _boolean_ | `true` |
 | before-close | Callback function before close | _(action) => boolean \| Promise_ | - |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
-| class-name | Custom className | _any_ | - |
+| class-name | Custom className | _string \| Array \| object_ | - |
 | max-zoom | Max zoom | _number \| string_ | `3` |
 | min-zoom | Min zoom | _number \| string_ | `1/3` |
 | closeable | Whether to show close icon | _boolean_ | `false` |

@@ -178,7 +178,7 @@ export default {
 | message | 文本内容，支持通过`\n`换行 | _string_ | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
 | theme | 样式风格，可选值为`round` | _string_ | `default` |
-| className | 自定义类名 | _any_ | - |
+| className | 自定义类名 | _string \| Array \| object_ | - |
 | showConfirmButton | 是否展示确认按钮 | _boolean_ | `true` |
 | showCancelButton | 是否展示取消按钮 | _boolean_ | `false` |
 | confirmButtonText | 确认按钮文案 | _string_ | `确认` |
@@ -186,7 +186,7 @@ export default {
 | cancelButtonText | 取消按钮文案 | _string_ | `取消` |
 | cancelButtonColor | 取消按钮颜色 | _string_ | `black` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
-| overlayClass | 自定义遮罩层类名 | _string_ | - |
+| overlayClass | 自定义遮罩层类名 | _string \| Array \| object_ | - |
 | overlayStyle | 自定义遮罩层样式 | _object_ | - |
 | closeOnPopstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | closeOnClickOverlay | 是否在点击遮罩层后关闭弹窗 | _boolean_ | `false` |

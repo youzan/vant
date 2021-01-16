@@ -241,7 +241,7 @@ export default {
 | text | 选项文字 | _string_ |
 | icon | 文字左侧的图标，支持传入[图标名称](#/zh-CN/icon)或图片链接 | _string_ |
 | disabled | 是否为禁用状态 | _boolean_ |
-| className | 为对应选项添加额外的类名 | _any_ |
+| className | 为对应选项添加额外的类名 | _string \| Array \| object_ |
 
 ### Events
 

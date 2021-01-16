@@ -143,7 +143,7 @@ export default {
 | message | Message | _string_ | - |
 | messageAlign | Message text align，can be set to `left` `right` | _string_ | `center` |
 | theme | theme style，can be set to `round` | _string_ | `default` |
-| className | Custom className | _any_ | - |
+| className | Custom className | _string \| Array \| object_ | - |
 | showConfirmButton | Whether to show confirm button | _boolean_ | `true` |
 | showCancelButton | Whether to show cancel button | _boolean_ | `false` |
 | cancelButtonText | Cancel button text | _string_ | `Cancel` |
@@ -151,7 +151,7 @@ export default {
 | confirmButtonText | Confirm button text | _string_ | `Confirm` |
 | confirmButtonColor | Confirm button color | _string_ | `#ee0a24` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
-| overlayClass | Custom overlay class | _string_ | - |
+| overlayClass | Custom overlay class | _string \| Array \| object_ | - |
 | overlayStyle | Custom overlay style | _object_ | - |
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
 | closeOnClickOverlay | Whether to close when overlay is clicked | _boolean_ | `false` |

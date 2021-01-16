@@ -203,14 +203,14 @@ export default {
 
 `actions` 属性是一个由对象构成的数组，数组中的每个对象配置一列，对象可以包含以下值：
 
-| 键名      | 说明                     | 类型      |
-| --------- | ------------------------ | --------- |
-| name      | 标题                     | _string_  |
-| subname   | 二级标题                 | _string_  |
-| color     | 选项文字颜色             | _string_  |
-| className | 为对应列添加额外的 class | _any_     |
-| loading   | 是否为加载状态           | _boolean_ |
-| disabled  | 是否为禁用状态           | _boolean_ |
+| 键名      | 说明                     | 类型                        |
+| --------- | ------------------------ | --------------------------- |
+| name      | 标题                     | _string_                    |
+| subname   | 二级标题                 | _string_                    |
+| color     | 选项文字颜色             | _string_                    |
+| className | 为对应列添加额外的 class | _string \| Array \| object_ |
+| loading   | 是否为加载状态           | _boolean_                   |
+| disabled  | 是否为禁用状态           | _boolean_                   |
 
 ### Events
 

@@ -220,12 +220,12 @@ export default {
 
 ### Data Structure of Action
 
-| Key       | Description             | Type      |
-| --------- | ----------------------- | --------- |
-| text      | Action Text             | _string_  |
-| icon      | Icon                    | _string_  |
-| disabled  | Whether to be disabled  | _boolean_ |
-| className | className of the option | _any_     |
+| Key       | Description             | Type                        |
+| --------- | ----------------------- | --------------------------- |
+| text      | Action Text             | _string_                    |
+| icon      | Icon                    | _string_                    |
+| disabled  | Whether to be disabled  | _boolean_                   |
+| className | className of the option | _string \| Array \| object_ |
 
 ### Events
 

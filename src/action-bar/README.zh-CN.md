@@ -100,7 +100,7 @@ export default {
 | text | 按钮文字 | _string_ | - |
 | icon | 图标 | _string_ | - |
 | color | 图标颜色 | _string_ | `#323233` |
-| icon-class | 图标额外类名 | _any_ | - |
+| icon-class | 图标额外类名 | _string \| Array \| object_ | - |
 | dot `2.5.5` | 是否显示图标右上角小红点 | _boolean_ | `false` |
 | badge | 图标右上角徽标的内容 | _number \| string_ | - |
 | url | 点击后跳转的链接地址 | _string_ | - |

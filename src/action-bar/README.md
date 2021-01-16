@@ -96,7 +96,7 @@ Use `badge` prop to show badge in icon.
 | text | Button text | _string_ | - |
 | icon | Icon | _string_ | - |
 | color | Icon color | _string_ | `#323233` |
-| icon-class | Icon class name | _any_ | `''` |
+| icon-class | Icon class name | _string \| Array \| object_ | `''` |
 | dot `2.5.5` | Whether to show red dot | _boolean_ | - |
 | badge `2.5.6` | Content of the badge | _number \| string_ | - |
 | url | Link | _string_ | - |
