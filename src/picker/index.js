@@ -45,10 +45,11 @@ export default createComponent({
     const formattedColumns = ref([]);
 
     const { text: textKey, values: valuesKey, children: childrenKey } = {
-      text: props.valueKey, // 向下兼容
+      // compatible with valueKey prop
+      text: props.valueKey,
       values: 'values',
       children: 'children',
-      ...(props.columnsFieldNames || {}),
+      ...props.columnsFieldNames,
     };
 
     const { children, linkChildren } = useChildren(PICKER_KEY);
