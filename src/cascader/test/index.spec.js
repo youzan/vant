@@ -121,3 +121,50 @@ test('should update tabs when previous tab is clicked', async () => {
   await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should allow to custom field names', async () => {
+  const fieldNames = {
+    text: 'name',
+    value: 'code',
+    children: 'items',
+  };
+  const options = [
+    {
+      name: 'Zhejiang',
+      code: '330000',
+      items: [{ name: 'Hangzhou', code: '330100' }],
+    },
+  ];
+  const wrapper = mount(Cascader, {
+    props: {
+      options,
+      fieldNames,
+    },
+  });
+
+  await later();
+  wrapper.find('.van-cascader__option').trigger('click');
+
+  const firstOption = options[0];
+  expect(wrapper.emitted('change')[0]).toEqual([
+    {
+      value: firstOption.code,
+      tabIndex: 0,
+      selectedOptions: [firstOption],
+    },
+  ]);
+
+  await later();
+  wrapper
+    .findAll('.van-cascader__options')[1]
+    .find('.van-cascader__option')
+    .trigger('click');
+  const secondOption = options[0].items[0];
+  expect(wrapper.emitted('change')[1]).toEqual([
+    {
+      value: secondOption.code,
+      tabIndex: 1,
+      selectedOptions: [firstOption, secondOption],
+    },
+  ]);
+});
