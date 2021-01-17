@@ -16,6 +16,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.4](https://github.com/youzan/vant/compare/v3.0.3...v3.0.4)
+
+`2021-01-17`
+
+**Feature**
+
+- Cascader: 新增 field-names 属性，用于自定义字段名 [#7933](https://github.com/youzan/vant/issues/7933)
+- Cell: 支持在设置 is-link 时将 clickable 设置为 false 来禁用点击状态 [#7923](https://github.com/youzan/vant/issues/7923)
+- DropdownItem: 支持传入数组或对象格式的 title-class [#7926](https://github.com/youzan/vant/issues/7926)
+- Popup: 支持传入数组或对象格式的 overlay-class [#7924](https://github.com/youzan/vant/issues/7924)
+- Toast: 新增 overlayClass 选项 [#7925](https://github.com/youzan/vant/issues/7925)
+- Toast: 新增 overlayStyle 选项 [#7898](https://github.com/youzan/vant/issues/7898)
+
+**Bug Fixes**
+
+- AddressEdit: 修复无法调用 setAreaCode 方法的问题 [6a184f](https://github.com/youzan/vant/commit/6a184f8e930fea31035680dd44f40bc007aba4cd)
+- Circle: 修复渐变色不生效的问题 [#7909](https://github.com/youzan/vant/issues/7909)
+- NumberKeyboard: 修复 delete、extra-key 插槽不生效的问题 [52a0e5](https://github.com/youzan/vant/commit/52a0e5a8c70dcc07b87140e33318acefcbdd3ef9)
+- Search: 修复控制台存在 update:modelValue warning 的问题 [#7872](https://github.com/youzan/vant/issues/7872)
+- Swipe: 修复页面隐藏时未暂停自动轮播的问题 [1c428f](https://github.com/youzan/vant/commit/1c428f240cd44d3389510263dd7f03973cfbfa2b)
+
 ### [v3.0.3](https://github.com/youzan/vant/compare/v3.0.2...v3.0.3)
 
 `2021-01-10`

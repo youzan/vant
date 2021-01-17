@@ -16,6 +16,27 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.4](https://github.com/youzan/vant/compare/v3.0.3...v3.0.4)
+
+`2021-01-17`
+
+**Feature**
+
+- Cascader: add field-names prop [#7933](https://github.com/youzan/vant/issues/7933)
+- Cell: allow to disable clickable when using is-link [#7923](https://github.com/youzan/vant/issues/7923)
+- DropdownItem: title-class can be array or object type [#7926](https://github.com/youzan/vant/issues/7926)
+- Popup: overlay-class can be array or object [#7924](https://github.com/youzan/vant/issues/7924)
+- Toast: add overlayClass option [#7925](https://github.com/youzan/vant/issues/7925)
+- Toast: add overlayStyle option [#7898](https://github.com/youzan/vant/issues/7898)
+
+**Bug Fixes**
+
+- AddressEdit: should expose setAreaCode method [6a184f](https://github.com/youzan/vant/commit/6a184f8e930fea31035680dd44f40bc007aba4cd)
+- Circle: the gradient color is incorrect [#7909](https://github.com/youzan/vant/issues/7909)
+- NumberKeyboard: fix delete、extra-key slot not work [52a0e5](https://github.com/youzan/vant/commit/52a0e5a8c70dcc07b87140e33318acefcbdd3ef9)
+- Search: fix update:modelValue emits warning [#7872](https://github.com/youzan/vant/issues/7872)
+- Swipe: should stop autoplay when page is hidden [1c428f](https://github.com/youzan/vant/commit/1c428f240cd44d3389510263dd7f03973cfbfa2b)
+
 ### [v3.0.3](https://github.com/youzan/vant/compare/v3.0.2...v3.0.3)
 
 `2021-01-10`
