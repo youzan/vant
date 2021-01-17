@@ -12,6 +12,7 @@ export default createComponent({
   props: {
     title: String,
     modelValue: [Number, String],
+    fieldNames: Object,
     placeholder: String,
     activeColor: String,
     options: {
@@ -32,17 +33,24 @@ export default createComponent({
       activeTab: 0,
     });
 
+    const { text: textKey, value: valueKey, children: childrenKey } = {
+      text: 'text',
+      value: 'value',
+      children: 'children',
+      ...props.fieldNames,
+    };
+
     const getSelectedOptionsByValue = (options, value) => {
       for (let i = 0; i < options.length; i++) {
         const option = options[i];
 
-        if (option.value === value) {
+        if (option[valueKey] === value) {
           return [option];
         }
 
-        if (option.children) {
+        if (option[childrenKey]) {
           const selectedOptions = getSelectedOptionsByValue(
-            option.children,
+            option[childrenKey],
             value
           );
           if (selectedOptions) {
@@ -69,10 +77,10 @@ export default createComponent({
             };
 
             const next = optionsCursor.filter(
-              (item) => item.value === option.value
+              (item) => item[valueKey] === option[valueKey]
             );
             if (next.length) {
-              optionsCursor = next[0].children;
+              optionsCursor = next[0][childrenKey];
             }
 
             return tab;
@@ -108,9 +116,9 @@ export default createComponent({
         state.tabs = state.tabs.slice(0, tabIndex + 1);
       }
 
-      if (option.children) {
+      if (option[childrenKey]) {
         const nextTab = {
-          options: option.children,
+          options: option[childrenKey],
           selectedOption: null,
         };
 
@@ -130,14 +138,14 @@ export default createComponent({
         .filter((item) => !!item);
 
       const eventParams = {
-        value: option.value,
+        value: option[valueKey],
         tabIndex,
         selectedOptions,
       };
-      emit('update:modelValue', option.value);
+      emit('update:modelValue', option[valueKey]);
       emit('change', eventParams);
 
-      if (!option.children) {
+      if (!option[childrenKey]) {
         emit('finish', eventParams);
       }
     };
@@ -160,7 +168,7 @@ export default createComponent({
     const renderOptions = (options, selectedOption, tabIndex) => {
       const renderOption = (option) => {
         const isSelected =
-          selectedOption && option.value === selectedOption.value;
+          selectedOption && option[valueKey] === selectedOption[valueKey];
 
         return (
           <li
@@ -170,7 +178,7 @@ export default createComponent({
               onSelect(option, tabIndex);
             }}
           >
-            <span>{option.text}</span>
+            <span>{option[textKey]}</span>
             {isSelected ? (
               <Icon name="success" class={bem('selected-icon')} />
             ) : null}
@@ -184,7 +192,7 @@ export default createComponent({
     const renderTab = (item, tabIndex) => {
       const { options, selectedOption } = item;
       const title = selectedOption
-        ? selectedOption.text
+        ? selectedOption[textKey]
         : props.placeholder || t('select');
 
       return (
@@ -219,7 +227,9 @@ export default createComponent({
       () => props.modelValue,
       (value) => {
         if (value || value === 0) {
-          const values = state.tabs.map((tab) => tab.selectedOption?.value);
+          const values = state.tabs.map(
+            (tab) => tab.selectedOption?.[valueKey]
+          );
           if (values.indexOf(value) !== -1) {
             return;
           }

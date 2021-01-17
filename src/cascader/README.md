@@ -147,6 +147,50 @@ export default {
 };
 ```
 
+### Custom Field Names
+
+```html
+<van-cascader
+  v-model="code"
+  title="Select Area"
+  :options="options"
+  :field-names="fieldNames"
+/>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const code = ref('');
+    const fieldNames = {
+      text: 'name',
+      value: 'code',
+      children: 'items',
+    };
+    const options = [
+      {
+        name: 'Zhejiang',
+        code: '330000',
+        items: [{ name: 'Hangzhou', code: '330100' }],
+      },
+      {
+        name: 'Jiangsu',
+        code: '320000',
+        items: [{ name: 'Nanjing', code: '320100' }],
+      },
+    ];
+
+    return {
+      code,
+      options,
+      fieldNames,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -159,6 +203,7 @@ export default {
 | placeholder | Placeholder of unselected tab | _string_ | `Select` |
 | active-color | Active color | _string_ | `#ee0a24` |
 | closeable | Whether to show close icon | _boolean_ | `true` |
+| field-names `v3.0.4` | Custom the fields of options | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
 ### Events
 
