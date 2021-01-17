@@ -146,18 +146,59 @@ export default {
 };
 ```
 
+### 自定义字段名
+
+通过 `field-names` 属性可以自定义 `options` 里的字段名称。
+
+```html
+<van-cascader
+  v-model="cascaderValue"
+  title="请选择所在地区"
+  :options="options"
+  :field-names="fieldNames"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      cascaderValue: '',
+      fieldNames: {
+        text: 'name',
+        value: 'code',
+        children: 'items',
+      },
+      options: [
+        {
+          name: '浙江省',
+          code: '330000',
+          items: [{ name: '杭州市', code: '330100' }],
+        },
+        {
+          name: '江苏省',
+          code: '320000',
+          items: [{ name: '南京市', code: '320100' }],
+        },
+      ],
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
 
-| 参数         | 说明               | 类型               | 默认值    |
-| ------------ | ------------------ | ------------------ | --------- |
-| title        | 顶部标题           | _string_           | -         |
-| value        | 选中项的值         | _string \| number_ | -         |
-| options      | 可选项数据源       | _Option[]_         | `[]`      |
-| placeholder  | 未选中时的提示文案 | _string_           | `请选择`  |
-| active-color | 选中状态的高亮颜色 | _string_           | `#ee0a24` |
-| closeable    | 是否显示关闭图标   | _boolean_          | `true`    |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| title | 顶部标题 | _string_ | - |
+| value | 选中项的值 | _string \| number_ | - |
+| options | 可选项数据源 | _Option[]_ | `[]` |
+| placeholder | 未选中时的提示文案 | _string_ | `请选择` |
+| active-color | 选中状态的高亮颜色 | _string_ | `#ee0a24` |
+| closeable | 是否显示关闭图标 | _boolean_ | `true` |
+| field-names `v2.12.4` | 自定义 `options` 结构中的字段 | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
 ### Events
 

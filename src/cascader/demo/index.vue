@@ -79,12 +79,40 @@
         />
       </van-popup>
     </demo-block>
+
+    <demo-block card :title="t('customFieldNames')">
+      <van-field
+        v-model="customFieldNames.result"
+        is-link
+        readonly
+        :label="t('area')"
+        :placeholder="t('selectArea')"
+        @click="customFieldNames.show = true"
+      />
+      <van-popup
+        v-model="customFieldNames.show"
+        round
+        position="bottom"
+        get-container="body"
+        safe-area-inset-bottom
+      >
+        <van-cascader
+          v-model="customFieldNames.value"
+          :title="t('selectArea')"
+          :options="customFieldOptions"
+          :field-names="fieldNames"
+          @close="customFieldNames.show = false"
+          @finish="onFinish('customFieldNames', $event)"
+        />
+      </van-popup>
+    </demo-block>
   </demo-section>
 </template>
 
 <script>
 import zhCNOptions from './area-zh-CN';
 import enUSOptions from './area-en-US';
+import { deepClone } from '../../utils/deep-clone';
 
 export default {
   i18n: {
@@ -105,6 +133,7 @@ export default {
         { text: '杭州市', value: '330100' },
         { text: '宁波市', value: '330200' },
       ],
+      customFieldNames: '自定义字段名',
     },
     'en-US': {
       area: 'Area',
@@ -123,6 +152,7 @@ export default {
         { text: 'Hangzhou', value: '330100' },
         { text: 'Ningbo', value: '330200' },
       ],
+      customFieldNames: 'Custom Field Names',
     },
   },
 
@@ -144,7 +174,41 @@ export default {
         result: '',
         options: [],
       },
+      customFieldNames: {
+        show: false,
+        value: null,
+        result: '',
+      },
+      fieldNames: {
+        text: 'name',
+        value: 'code',
+        children: 'items',
+      },
     };
+  },
+
+  computed: {
+    customFieldOptions() {
+      const options = deepClone(this.t('options'));
+      const adjustFieldName = (item) => {
+        if ('text' in item) {
+          item.name = item.text;
+          delete item.text;
+        }
+        if ('value' in item) {
+          item.code = item.value;
+          delete item.value;
+        }
+        if ('children' in item) {
+          item.items = item.children;
+          delete item.children;
+          item.items.forEach(adjustFieldName);
+        }
+      };
+
+      options.forEach(adjustFieldName);
+      return options;
+    },
   },
 
   created() {
@@ -161,7 +225,10 @@ export default {
     },
 
     onFinish(type, { value, selectedOptions }) {
-      const result = selectedOptions.map((option) => option.text).join('/');
+      const result = selectedOptions
+        .map((option) => option.text || option.name)
+        .join('/');
+
       this[type] = {
         ...this[type],
         show: false,
