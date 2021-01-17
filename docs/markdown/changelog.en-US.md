@@ -16,6 +16,20 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.4](https://github.com/youzan/vant/compare/v2.12.3...v2.12.4)
+
+`2021-01-17`
+
+**Feature**
+
+- Cascader: add field-names prop [#7932](https://github.com/youzan/vant/issues/7932)
+- Cell: allow to disable clickable when using is-link [#7922](https://github.com/youzan/vant/issues/7922)
+
+**Bug Fixes**
+
+- Circle: the gradient color is incorrect [#7910](https://github.com/youzan/vant/issues/7910) [#7897](https://github.com/youzan/vant/issues/7897)
+- Field: should not allow dot when type is number [#7921](https://github.com/youzan/vant/issues/7921)
+
 ### [v2.12.3](https://github.com/youzan/vant/compare/v2.12.2...v2.12.3)
 
 `2021-01-09`

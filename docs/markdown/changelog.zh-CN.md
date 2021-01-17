@@ -16,6 +16,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.4](https://github.com/youzan/vant/compare/v2.12.3...v2.12.4)
+
+`2021-01-17`
+
+**Feature**
+
+- Cascader: 新增 field-names 属性，用于自定义字段名 [#7932](https://github.com/youzan/vant/issues/7932)
+- Cell: 支持在设置 is-link 时将 clickable 设置为 false 来禁用点击状态 [#7922](https://github.com/youzan/vant/issues/7922)
+
+**Bug Fixes**
+
+- Circle: 修复渐变色不生效的问题 [#7910](https://github.com/youzan/vant/issues/7910) [#7897](https://github.com/youzan/vant/issues/7897)
+- Field: 修复类型为 number 时可以输入点号开头的问题 [#7921](https://github.com/youzan/vant/issues/7921)
+
 ### [v2.12.3](https://github.com/youzan/vant/compare/v2.12.2...v2.12.3)
 
 `2021-01-09`
