@@ -9,6 +9,7 @@ export default createComponent({
   props: {
     title: String,
     value: [Number, String],
+    fieldNames: Object,
     placeholder: String,
     activeColor: String,
     options: {
@@ -28,6 +29,18 @@ export default createComponent({
     };
   },
 
+  computed: {
+    textKey() {
+      return this.fieldNames?.text || 'text';
+    },
+    valueKey() {
+      return this.fieldNames?.value || 'value';
+    },
+    childrenKey() {
+      return this.fieldNames?.children || 'children';
+    },
+  },
+
   watch: {
     options: {
       deep: true,
@@ -36,7 +49,9 @@ export default createComponent({
 
     value(value) {
       if (value || value === 0) {
-        const values = this.tabs.map((tab) => tab.selectedOption?.value);
+        const values = this.tabs.map(
+          (tab) => tab.selectedOption?.[this.valueKey]
+        );
         if (values.indexOf(value) !== -1) {
           return;
         }
@@ -54,13 +69,13 @@ export default createComponent({
       for (let i = 0; i < options.length; i++) {
         const option = options[i];
 
-        if (option.value === value) {
+        if (option[this.valueKey] === value) {
           return [option];
         }
 
-        if (option.children) {
+        if (option[this.childrenKey]) {
           const selectedOptions = this.getSelectedOptionsByValue(
-            option.children,
+            option[this.childrenKey],
             value
           );
           if (selectedOptions) {
@@ -87,10 +102,10 @@ export default createComponent({
             };
 
             const next = optionsCursor.filter(
-              (item) => item.value === option.value
+              (item) => item[this.valueKey] === option[this.valueKey]
             );
             if (next.length) {
-              optionsCursor = next[0].children;
+              optionsCursor = next[0][this.childrenKey];
             }
 
             return tab;
@@ -126,9 +141,9 @@ export default createComponent({
         this.tabs = this.tabs.slice(0, tabIndex + 1);
       }
 
-      if (option.children) {
+      if (option[this.childrenKey]) {
         const nextTab = {
-          options: option.children,
+          options: option[this.childrenKey],
           selectedOption: null,
         };
 
@@ -148,14 +163,14 @@ export default createComponent({
         .filter((item) => !!item);
 
       const eventParams = {
-        value: option.value,
+        value: option[this.valueKey],
         tabIndex,
         selectedOptions,
       };
-      this.$emit('input', option.value);
+      this.$emit('input', option[this.valueKey]);
       this.$emit('change', eventParams);
 
-      if (!option.children) {
+      if (!option[this.childrenKey]) {
         this.$emit('finish', eventParams);
       }
     },
@@ -182,7 +197,8 @@ export default createComponent({
     renderOptions(options, selectedOption, tabIndex) {
       const renderOption = (option) => {
         const isSelected =
-          selectedOption && option.value === selectedOption.value;
+          selectedOption &&
+          option[this.valueKey] === selectedOption[this.valueKey];
 
         return (
           <li
@@ -192,7 +208,7 @@ export default createComponent({
               this.onSelect(option, tabIndex);
             }}
           >
-            <span>{option.text}</span>
+            <span>{option[this.textKey]}</span>
             {isSelected ? (
               <Icon name="success" class={bem('selected-icon')} />
             ) : null}
@@ -206,7 +222,7 @@ export default createComponent({
     renderTab(item, tabIndex) {
       const { options, selectedOption } = item;
       const title = selectedOption
-        ? selectedOption.text
+        ? selectedOption[this.textKey]
         : this.placeholder || t('select');
 
       return (

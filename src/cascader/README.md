@@ -134,6 +134,44 @@ export default {
 };
 ```
 
+### Custom Field Names
+
+```html
+<van-cascader
+  v-model="cascaderValue"
+  title="Select Area"
+  :options="options"
+  :field-names="fieldNames"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      cascaderValue: '',
+      fieldNames: {
+        text: 'name',
+        value: 'code',
+        children: 'items',
+      },
+      options: [
+        {
+          name: 'Zhejiang',
+          code: '330000',
+          items: [{ name: 'Hangzhou', code: '330100' }],
+        },
+        {
+          name: 'Jiangsu',
+          code: '320000',
+          items: [{ name: 'Nanjing', code: '320100' }],
+        },
+      ],
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -146,6 +184,7 @@ export default {
 | placeholder | Placeholder of unselected tab | _string_ | `Select` |
 | active-color | Active color | _string_ | `#ee0a24` |
 | closeable | Whether to show close icon | _boolean_ | `true` |
+| field-names `v2.12.4` | Custom the fields of options | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
 ### Events
 
