@@ -31,6 +31,8 @@ export default createComponent({
       type: String,
       default: 'top',
     },
+    // @deprecated
+    // should be removed in next major version
     valueKey: {
       type: String,
       default: 'text',
