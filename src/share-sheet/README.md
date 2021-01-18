@@ -68,6 +68,7 @@ export default {
     const options = [
       [
         { name: 'Wechat', icon: 'wechat' },
+        { name: 'Wechat Moments', icon: 'wechat-moments' },
         { name: 'Weibo', icon: 'weibo' },
         { name: 'QQ', icon: 'qq' },
       ],
@@ -181,7 +182,7 @@ export default {
 | --- | --- | --- |
 | name | Option name | _string_ |
 | description | Option description | _string_ |
-| icon | Option icon，can be set to `wechat` `weibo` `qq` `link` `qrcode` `poster` `weapp-qrcode` or image URL | _string_ |
+| icon | Option icon，can be set to `wechat` `weibo` `qq` `link` `qrcode` `poster` `weapp-qrcode` `wechat-moments` or image URL | _string_ |
 | className | Option className is used to set the class props to the share item | _string_ |
 
 ### Events

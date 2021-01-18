@@ -61,6 +61,7 @@ const i18n = {
     customIcon: '自定义图标',
     description: '描述信息',
     weappQrcode: '小程序码',
+    wechatMoments: '朋友圈',
   },
   'en-US': {
     qq: 'QQ',
@@ -77,6 +78,7 @@ const i18n = {
     customIcon: 'Custom Icon',
     description: 'Description',
     weappQrcode: 'Weapp Qrcode',
+    wechatMoments: 'Wechat Moments',
   },
 };
 
@@ -101,6 +103,7 @@ export default {
     const multiLineOptions = computed(() => [
       [
         { name: t('wechat'), icon: 'wechat' },
+        { name: t('wechatMoments'), icon: 'wechat-moments' },
         { name: t('weibo'), icon: 'weibo' },
         { name: t('qq'), icon: 'qq' },
       ],

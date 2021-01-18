@@ -12,6 +12,7 @@ const PRESET_ICONS = [
   'poster',
   'qrcode',
   'weapp-qrcode',
+  'wechat-moments',
 ];
 
 function getIconURL(icon) {
