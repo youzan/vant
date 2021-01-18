@@ -74,6 +74,7 @@ export default {
       options: [
         [
           { name: '微信', icon: 'wechat' },
+          { name: '朋友圈', icon: 'wechat-moments' },
           { name: '微博', icon: 'weibo' },
           { name: 'QQ', icon: 'qq' },
         ],
@@ -178,7 +179,7 @@ export default {
 | --- | --- | --- |
 | name | 分享渠道名称 | _string_ |
 | description `v2.8.5` | 分享选项描述 | _string_ |
-| icon | 图标，可选值为 `wechat` `weibo` `qq` `link` `qrcode` `poster` `weapp-qrcode`，支持传入图片 URL | _string_ |
+| icon | 图标，可选值为 `wechat` `weibo` `qq` `link` `qrcode` `poster` `weapp-qrcode` `wechat-moments`，支持传入图片 URL | _string_ |
 | className | 分享选项类名 | _string_ |
 
 ### Events

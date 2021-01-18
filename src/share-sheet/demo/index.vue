@@ -68,6 +68,7 @@ export default {
       customIcon: '自定义图标',
       description: '描述信息',
       weappQrcode: '小程序码',
+      wechatMoments: '朋友圈',
     },
     'en-US': {
       qq: 'QQ',
@@ -84,6 +85,7 @@ export default {
       customIcon: 'Custom Icon',
       description: 'Description',
       weappQrcode: 'Weapp Qrcode',
+      wechatMoments: 'Wechat Moments',
     },
   },
 
@@ -113,6 +115,7 @@ export default {
       return [
         [
           { name: this.t('wechat'), icon: 'wechat' },
+          { name: this.t('wechatMoments'), icon: 'wechat-moments' },
           { name: this.t('weibo'), icon: 'weibo' },
           { name: this.t('qq'), icon: 'qq' },
         ],
