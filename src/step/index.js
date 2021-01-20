@@ -10,9 +10,10 @@ const [createComponent, bem] = createNamespace('step');
 export default createComponent({
   setup(props, { slots }) {
     const { parent, index } = useParent(STEPS_KEY);
+    const parentProps = parent.props;
 
     const getStatus = () => {
-      const active = +parent.props.active;
+      const active = +parentProps.active;
       if (index.value < active) {
         return 'finish';
       }
@@ -23,25 +24,19 @@ export default createComponent({
 
     const isActive = () => getStatus() === 'process';
 
-    const lineStyle = computed(() => {
-      const { activeColor, inactiveColor } = parent.props;
-
-      if (getStatus() === 'finish') {
-        return { background: activeColor };
-      }
-
-      return { background: inactiveColor };
-    });
+    const lineStyle = computed(() => ({
+      background:
+        getStatus() === 'finish'
+          ? parentProps.activeColor
+          : parentProps.inactiveColor,
+    }));
 
     const titleStyle = computed(() => {
-      const { activeColor, inactiveColor } = parent.props;
-
       if (isActive()) {
-        return { color: activeColor };
+        return { color: parentProps.activeColor };
       }
-
       if (!getStatus()) {
-        return { color: inactiveColor };
+        return { color: parentProps.inactiveColor };
       }
     });
 
@@ -50,7 +45,7 @@ export default createComponent({
     };
 
     const renderCircle = () => {
-      const { activeIcon, activeColor, inactiveIcon } = parent.props;
+      const { activeIcon, activeColor, inactiveIcon } = parentProps;
 
       if (isActive()) {
         if (slots['active-icon']) {
@@ -78,11 +73,12 @@ export default createComponent({
     };
 
     return () => {
-      const { direction } = parent.props;
       const status = getStatus();
 
       return (
-        <div class={[BORDER, bem([direction, { [status]: status }])]}>
+        <div
+          class={[BORDER, bem([parentProps.direction, { [status]: status }])]}
+        >
           <div
             class={bem('title', { active: isActive() })}
             style={titleStyle.value}
