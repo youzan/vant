@@ -97,14 +97,19 @@ export default createComponent({
       );
     };
 
+    const onSidebarChange = (index) => {
+      emit('update:mainActiveIndex', index);
+      emit('click-nav', index);
+    };
+
     const renderSidebar = () => {
       const Items = props.items.map((item) => (
         <SidebarItem
           dot={item.dot}
           title={item.text}
           badge={item.badge}
-          disabled={item.disabled}
           class={[bem('nav-item'), item.className]}
+          disabled={item.disabled}
         />
       ));
 
@@ -112,10 +117,7 @@ export default createComponent({
         <Sidebar
           class={bem('nav')}
           modelValue={props.mainActiveIndex}
-          onChange={(index) => {
-            emit('update:mainActiveIndex', index);
-            emit('click-nav', index);
-          }}
+          onChange={onSidebarChange}
         >
           {Items}
         </Sidebar>
