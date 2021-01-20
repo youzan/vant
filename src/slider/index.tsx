@@ -22,6 +22,7 @@ export default createComponent({
   props: {
     range: Boolean,
     disabled: Boolean,
+    readonly: Boolean,
     vertical: Boolean,
     barHeight: [Number, String],
     buttonSize: [Number, String],
@@ -134,7 +135,7 @@ export default createComponent({
     const onClick = (event: MouseEvent) => {
       event.stopPropagation();
 
-      if (props.disabled) {
+      if (props.disabled || props.readonly) {
         return;
       }
 
@@ -161,7 +162,7 @@ export default createComponent({
     };
 
     const onTouchStart = (event: TouchEvent) => {
-      if (props.disabled) {
+      if (props.disabled || props.readonly) {
         return;
       }
 
@@ -178,7 +179,7 @@ export default createComponent({
     };
 
     const onTouchMove = (event: TouchEvent) => {
-      if (props.disabled) {
+      if (props.disabled || props.readonly) {
         return;
       }
 
@@ -205,7 +206,7 @@ export default createComponent({
     };
 
     const onTouchEnd = () => {
-      if (props.disabled) {
+      if (props.disabled || props.readonly) {
         return;
       }
 
@@ -235,7 +236,7 @@ export default createComponent({
         <div
           role="slider"
           class={bem(getClassName())}
-          tabindex={props.disabled ? -1 : 0}
+          tabindex={props.disabled || props.readonly ? -1 : 0}
           aria-valuemin={+props.min}
           aria-valuenow={currentValue}
           aria-valuemax={+props.max}

@@ -160,6 +160,7 @@ export default {
 | inactive-color | Inactive color of bar | _string_ | `#e5e5e5` |
 | range | Whether to enable dual thumb mode | _boolean_ | `false` |
 | disabled | Whether to disable slider | _boolean_ | `false` |
+| readonly `v3.0.5` | Whether to be readonly | _boolean_ | `false` |
 | vertical | Whether to display slider vertically | _boolean_ | `false` |
 
 ### Events

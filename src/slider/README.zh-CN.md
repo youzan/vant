@@ -166,6 +166,7 @@ export default {
 | inactive-color | 进度条非激活态颜色 | _string_ | `#e5e5e5` |
 | range | 是否开启双滑块模式 | _boolean_ | `false` |
 | disabled | 是否禁用滑块 | _boolean_ | `false` |
+| readonly `v3.0.5` | 是否为只读状态 | _boolean_ | `false` |
 | vertical | 是否垂直展示 | _boolean_ | `false` |
 
 ### Events

@@ -91,6 +91,31 @@ test('should not allow to click slider when disabled', async () => {
   expect(wrapper.emitted('update:modelValue')).toBeFalsy();
 });
 
+test('should not allow to drag slider when readonly', async () => {
+  const wrapper = mount(Slider, {
+    props: {
+      modelValue: 50,
+      readonly: true,
+    },
+  });
+
+  const button = wrapper.find('.van-slider__button');
+  triggerDrag(button, 50, 0);
+  expect(wrapper.emitted('update:modelValue')).toBeFalsy();
+});
+
+test('should not allow to click slider when readonly', async () => {
+  const wrapper = mount(Slider, {
+    props: {
+      modelValue: 50,
+      readonly: true,
+    },
+  });
+
+  trigger(wrapper, 'click', 100, 0);
+  expect(wrapper.emitted('update:modelValue')).toBeFalsy();
+});
+
 test('should allow to drag vertical slider', () => {
   const restoreMock = mockRect(true);
 
