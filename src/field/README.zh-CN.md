@@ -263,7 +263,7 @@ export default {
 | placeholder | 输入框占位提示文字 | _string_ | - |
 | border | 是否显示内边框 | _boolean_ | `true` |
 | disabled | 是否禁用输入框 | _boolean_ | `false` |
-| readonly | 是否只读 | _boolean_ | `false` |
+| readonly | 是否为只读状态，只读状态下无法输入内容 | _boolean_ | `false` |
 | colon | 是否在 label 后面添加冒号 | _boolean_ | `false` |
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
 | center | 是否使内容垂直居中 | _boolean_ | `false` |

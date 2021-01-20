@@ -143,7 +143,7 @@ export default {
 | show-action | 是否在搜索框右侧显示取消按钮 | _boolean_ | `false` |
 | action-text | 取消按钮文字 | _boolean_ | `取消` |
 | disabled | 是否禁用输入框 | _boolean_ | `false` |
-| readonly | 是否将输入框设为只读 | _boolean_ | `false` |
+| readonly | 是否将输入框设为只读状态，只读状态下无法输入内容 | _boolean_ | `false` |
 | error | 是否将输入内容标红 | _boolean_ | `false` |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | left-icon | 输入框左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `search` |
