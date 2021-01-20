@@ -35,9 +35,17 @@
       color: @tree-select-item-active-color;
     }
 
+    &:active {
+      background-color: @active-color;
+    }
+
     &--disabled {
       color: @tree-select-item-disabled-color;
       cursor: not-allowed;
+
+      &:active {
+        background-color: transparent;
+      }
     }
   }
 
