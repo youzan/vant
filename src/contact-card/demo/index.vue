@@ -53,13 +53,8 @@ export default {
       tel: '13000000000',
     }));
 
-    const onAdd = () => {
-      Toast(t('add'));
-    };
-
-    const onEdit = () => {
-      Toast(t('edit'));
-    };
+    const onAdd = () => Toast(t('add'));
+    const onEdit = () => Toast(t('edit'));
 
     return {
       t,

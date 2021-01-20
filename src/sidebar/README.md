@@ -71,10 +71,7 @@ import { Toast } from 'vant';
 export default {
   setup() {
     const active = ref(0);
-    const onChange = (index) => {
-      Toast(`Title ${index + 1}`);
-    };
-
+    const onChange = (index) => Toast(`Title ${index + 1}`);
     return {
       active,
       onChange,

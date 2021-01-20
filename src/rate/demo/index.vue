@@ -85,9 +85,7 @@ export default {
       value7: 2,
     });
 
-    const onChange = (value) => {
-      Toast(t('toastContent', value));
-    };
+    const onChange = (value) => Toast(t('toastContent', value));
 
     return {
       ...toRefs(state),

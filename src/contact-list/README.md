@@ -48,15 +48,9 @@ export default {
       ],
     });
 
-    const onAdd = () => {
-      Toast('Add');
-    };
-    const onEdit = (contact) => {
-      Toast('Edit' + contact.id);
-    };
-    const onSelect = (contact) => {
-      Toast('Select' + contact.id);
-    };
+    const onAdd = () => Toast('Add');
+    const onEdit = (contact) => Toast('Edit' + contact.id);
+    const onSelect = (contact) => Toast('Select' + contact.id);
 
     return {
       state,

@@ -79,9 +79,7 @@ export default {
       { name: '选项二' },
       { name: '选项三' },
     ];
-    const onCancel = () => {
-      Toast('取消');
-    };
+    const onCancel = () => Toast('取消');
 
     return {
       show,

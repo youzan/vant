@@ -23,10 +23,7 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onSubmit = () => {
-      Toast('Submit');
-    };
-
+    const onSubmit = () => Toast('Submit');
     return {
       onSubmit,
     };
@@ -73,13 +70,8 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onSubmit = () => {
-      Toast('Submit');
-    };
-    const onClickLink = () => {
-      Toast('Click Link');
-    };
-
+    const onSubmit = () => Toast('Submit');
+    const onClickLink = () => Toast('Click Link');
     return {
       onSubmit,
       onClickLink,

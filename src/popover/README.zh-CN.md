@@ -42,10 +42,7 @@ export default {
       { text: '选项二' },
       { text: '选项三' },
     ];
-
-    const onSelect = (action) => {
-      Toast(action.text);
-    };
+    const onSelect = (action) => Toast(action.text);
 
     return {
       actions,

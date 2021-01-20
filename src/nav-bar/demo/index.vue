@@ -35,14 +35,8 @@ const i18n = {
 export default {
   setup() {
     const t = useTranslate(i18n);
-
-    const onClickLeft = () => {
-      Toast(t('back'));
-    };
-
-    const onClickRight = () => {
-      Toast(t('button'));
-    };
+    const onClickLeft = () => Toast(t('back'));
+    const onClickRight = () => Toast(t('button'));
 
     return {
       t,

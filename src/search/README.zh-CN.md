@@ -58,12 +58,8 @@ import { Toast } from 'vant';
 export default {
   setup() {
     const value = ref('');
-    const onSearch = (val) => {
-      Toast(val);
-    };
-    const onCancel = () => {
-      Toast('取消');
-    };
+    const onSearch = (val) => Toast(val);
+    const onCancel = () => Toast('取消');
     return {
       value,
       onSearch,

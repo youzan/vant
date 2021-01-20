@@ -89,13 +89,8 @@ export default {
       value6: '',
     });
 
-    const onSearch = (val) => {
-      Toast(val);
-    };
-
-    const onCancel = () => {
-      Toast(t('cancel'));
-    };
+    const onSearch = (val) => Toast(val);
+    const onCancel = () => Toast(t('cancel'));
 
     return {
       ...toRefs(state),

@@ -23,9 +23,7 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onAdd = () => {
-      Toast('add');
-    };
+    const onAdd = () => Toast('add');
     return {
       onAdd,
     };
@@ -54,10 +52,7 @@ export default {
       name: 'John Snow',
       tel: '13000000000',
     });
-
-    const onEdit = () => {
-      Toast('edit');
-    };
+    const onEdit = () => Toast('edit');
 
     return {
       onEdit,

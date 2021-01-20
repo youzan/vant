@@ -122,10 +122,7 @@ export default {
       state.show.basic = false;
       Toast(item.name);
     };
-
-    const onCancel = () => {
-      Toast(t('cancel'));
-    };
+    const onCancel = () => Toast(t('cancel'));
 
     return {
       ...toRefs(state),

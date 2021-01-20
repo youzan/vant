@@ -34,10 +34,7 @@ export default {
       { text: 'Option 2' },
       { text: 'Option 3' },
     ];
-
-    const onSelect = (action) => {
-      Toast(action.text);
-    };
+    const onSelect = (action) => Toast(action.text);
 
     return {
       actions,

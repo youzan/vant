@@ -30,12 +30,8 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onClickLeft = () => {
-      Toast('Back');
-    };
-    const onClickRight = () => {
-      Toast('Button');
-    };
+    const onClickLeft = () => Toast('Back');
+    const onClickRight = () => Toast('Button');
     return {
       onClickLeft,
       onClickRight,

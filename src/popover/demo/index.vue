@@ -212,9 +212,7 @@ export default {
       });
     };
 
-    const onSelect = (action: { text: string }) => {
-      Toast(action.text);
-    };
+    const onSelect = (action: { text: string }) => Toast(action.text);
 
     return {
       ...toRefs(state),

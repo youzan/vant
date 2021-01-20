@@ -71,12 +71,8 @@ export default {
     const t = useTranslate(i18n);
     const checked = ref(true);
 
-    const onSubmit = () => {
-      Toast(t('clickButton'));
-    };
-    const onClickLink = () => {
-      Toast(t('clickLink'));
-    };
+    const onSubmit = () => Toast(t('clickButton'));
+    const onClickLink = () => Toast(t('clickLink'));
 
     return {
       t,

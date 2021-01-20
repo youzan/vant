@@ -49,9 +49,7 @@ export default {
     const onChange = (value, index) => {
       Toast(`当前值: ${value}, 当前索引: ${index}`);
     };
-    const onCancel = () => {
-      Toast('取消');
-    };
+    const onCancel = () => Toast('取消');
 
     return {
       columns,

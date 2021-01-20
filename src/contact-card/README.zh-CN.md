@@ -27,9 +27,7 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onAdd = () => {
-      Toast('新增');
-    };
+    const onAdd = () => Toast('新增');
     return {
       onAdd,
     };
@@ -58,10 +56,7 @@ export default {
       name: '张三',
       tel: '13000000000',
     });
-
-    const onEdit = () => {
-      Toast('edit');
-    };
+    const onEdit = () => Toast('edit');
 
     return {
       onEdit,

@@ -132,10 +132,7 @@ import { Toast } from 'vant';
 export default {
   setup() {
     const active = ref(0);
-    const onChange = (index) => {
-      Toast(`Tab ${index}`);
-    };
-
+    const onChange = (index) => Toast(`Tab ${index}`);
     return {
       icon,
       onChange,

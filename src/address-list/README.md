@@ -57,12 +57,8 @@ export default {
       },
     ];
 
-    const onAdd = () => {
-      Toast('Add');
-    };
-    const onEdit = (item, index) => {
-      Toast('Edit:' + index);
-    };
+    const onAdd = () => Toast('Add');
+    const onEdit = (item, index) => Toast('Edit:' + index);
 
     return {
       list,

@@ -183,9 +183,7 @@ export default {
       Toast(t('toastContent', value, index));
     };
 
-    const onCancel = () => {
-      Toast(t('cancel'));
-    };
+    const onCancel = () => Toast(t('cancel'));
 
     const onCancel2 = () => {
       state.showPicker = false;

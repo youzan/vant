@@ -95,9 +95,7 @@ import { Toast } from 'vant';
 export default {
   setup() {
     const value = ref(3);
-    const onChange = (value) => {
-      Toast('current value:' + value);
-    };
+    const onChange = (value) => Toast('current value:' + value);
     return {
       value,
       onChange,

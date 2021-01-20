@@ -79,9 +79,7 @@ export default {
       index: 0,
     });
 
-    const onClose = () => {
-      Toast(t('closed'));
-    };
+    const onClose = () => Toast(t('closed'));
 
     const beforeClose = () =>
       new Promise((resolve) => {

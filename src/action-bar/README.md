@@ -30,12 +30,8 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onClickIcon = () => {
-      Toast('Click Icon');
-    };
-    const onClickButton = () => {
-      Toast('Click Button');
-    };
+    const onClickIcon = () => Toast('Click Icon');
+    const onClickButton = () => Toast('Click Button');
     return {
       onClickIcon,
       onClickButton,

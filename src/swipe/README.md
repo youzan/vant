@@ -76,9 +76,7 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onChange = (index) => {
-      Toast('Current Swipe index:' + index);
-    };
+    const onChange = (index) => Toast('Current Swipe index:' + index);
     return { onChange };
   },
 };

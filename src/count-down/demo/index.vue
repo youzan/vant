@@ -85,9 +85,7 @@ export default {
     const reset = () => {
       countDown.value.reset();
     };
-    const onFinish = () => {
-      Toast(t('finished'));
-    };
+    const onFinish = () => Toast(t('finished'));
 
     return {
       t,

@@ -71,9 +71,7 @@ export default {
       { name: 'Option 2' },
       { name: 'Option 3' },
     ];
-    const onCancel = () => {
-      Toast('cancel');
-    };
+    const onCancel = () => Toast('cancel');
 
     return {
       show,

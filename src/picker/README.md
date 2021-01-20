@@ -41,9 +41,7 @@ export default {
     const onChange = (value, index) => {
       Toast(`Value: ${value}, Index: ${index}`);
     };
-    const onCancel = () => {
-      Toast('Cancel');
-    };
+    const onCancel = () => Toast('Cancel');
 
     return {
       columns,

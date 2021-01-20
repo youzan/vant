@@ -23,10 +23,7 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onSubmit = () => {
-      Toast('点击按钮');
-    };
-
+    const onSubmit = () => Toast('点击按钮');
     return {
       onSubmit,
     };
@@ -80,13 +77,8 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onSubmit = () => {
-      Toast('点击按钮');
-    };
-    const onClickLink = () => {
-      Toast('修改地址');
-    };
-
+    const onSubmit = () => Toast('点击按钮');
+    const onClickLink = () => Toast('修改地址');
     return {
       onSubmit,
       onClickLink,

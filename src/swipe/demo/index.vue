@@ -98,10 +98,7 @@ export default {
       'https://img.yzcdn.cn/vant/apple-4.jpg',
     ];
 
-    const onChange1 = (index) => {
-      Toast(t('message') + index);
-    };
-
+    const onChange1 = (index) => Toast(t('message') + index);
     const onChange2 = (index) => {
       current.value = index;
     };

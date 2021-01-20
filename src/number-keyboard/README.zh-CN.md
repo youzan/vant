@@ -37,12 +37,8 @@ import { Toast } from 'vant';
 export default {
   setup() {
     const show = ref(true);
-    const onInput = (value) => {
-      Toast(value);
-    };
-    const onDelete = () => {
-      Toast('删除');
-    };
+    const onInput = (value) => Toast(value);
+    const onDelete = () => Toast('删除');
 
     return {
       show,

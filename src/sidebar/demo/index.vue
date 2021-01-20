@@ -67,9 +67,7 @@ export default {
       active4: 0,
     });
 
-    const onChange = (index: number) => {
-      Toast(`${t('title')} ${index + 1}`);
-    };
+    const onChange = (index: number) => Toast(`${t('title')} ${index + 1}`);
 
     return {
       ...toRefs(state),

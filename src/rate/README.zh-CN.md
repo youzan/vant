@@ -99,9 +99,7 @@ import { Toast } from 'vant';
 export default {
   setup() {
     const value = ref(3);
-    const onChange = (value) => {
-      Toast('当前值：' + value);
-    };
+    const onChange = (value) => Toast('当前值：' + value);
     return {
       value,
       onChange,

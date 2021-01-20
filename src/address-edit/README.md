@@ -37,12 +37,8 @@ export default {
   setup() {
     const searchResult = ref([]);
 
-    const onSave = () => {
-      Toast('save');
-    };
-    const onDelete = () => {
-      Toast('delete');
-    };
+    const onSave = () => Toast('save');
+    const onDelete = () => Toast('delete');
     const onChangeDetail = (val) => {
       if (val) {
         searchResult.value = [

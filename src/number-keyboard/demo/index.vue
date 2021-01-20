@@ -137,13 +137,8 @@ export default {
       keyboard: 'default',
     });
 
-    const onInput = (value: string) => {
-      Toast(`${t('input')}: ${value}`);
-    };
-
-    const onDelete = () => {
-      Toast(t('delete'));
-    };
+    const onInput = (value: string) => Toast(`${t('input')}: ${value}`);
+    const onDelete = () => Toast(t('delete'));
 
     return {
       ...toRefs(state),

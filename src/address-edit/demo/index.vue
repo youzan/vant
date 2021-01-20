@@ -61,14 +61,8 @@ export default {
     const t = useTranslate(i18n);
     const searchResult = ref([]);
 
-    const onSave = () => {
-      Toast(t('save'));
-    };
-
-    const onDelete = () => {
-      Toast(t('delete'));
-    };
-
+    const onSave = () => Toast(t('save'));
+    const onDelete = () => Toast(t('delete'));
     const onChangeDetail = (val: string) => {
       searchResult.value = val ? t('searchResult') : [];
     };

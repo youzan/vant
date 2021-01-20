@@ -98,15 +98,8 @@ const i18n = {
 export default {
   setup() {
     const t = useTranslate(i18n);
-
-    const onClickIcon = () => {
-      Toast(t('clickIcon'));
-    };
-
-    const onClickButton = () => {
-      Toast(t('clickButton'));
-    };
-
+    const onClickIcon = () => Toast(t('clickIcon'));
+    const onClickButton = () => Toast(t('clickButton'));
     return {
       t,
       onClickIcon,

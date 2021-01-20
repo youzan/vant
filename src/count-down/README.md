@@ -105,9 +105,7 @@ export default {
     const reset = () => {
       countDown.value.reset();
     };
-    const onFinish = () => {
-      Toast('Finished');
-    };
+    const onFinish = () => Toast('Finished');
 
     return {
       start,

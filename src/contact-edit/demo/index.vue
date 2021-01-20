@@ -30,12 +30,8 @@ export default {
     const t = useTranslate(i18n);
     const editingContact = ref({});
 
-    const onSave = () => {
-      Toast(t('save'));
-    };
-    const onDelete = () => {
-      Toast(t('delete'));
-    };
+    const onSave = () => Toast(t('save'));
+    const onDelete = () => Toast(t('delete'));
 
     return {
       t,

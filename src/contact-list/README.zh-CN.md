@@ -52,15 +52,9 @@ export default {
       ],
     });
 
-    const onAdd = () => {
-      Toast('新增');
-    };
-    const onEdit = (contact) => {
-      Toast('编辑' + contact.id);
-    };
-    const onSelect = (contact) => {
-      Toast('选择' + contact.id);
-    };
+    const onAdd = () => Toast('新增');
+    const onEdit = (contact) => Toast('编辑' + contact.id);
+    const onSelect = (contact) => Toast('选择' + contact.id);
 
     return {
       state,

@@ -86,10 +86,7 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onClickDisabled = (name, title) => {
-      Toast(name + ' is disabled');
-    };
-
+    const onClickDisabled = (name, title) => Toast(`${name} is disabled`);
     return {
       onClickDisabled,
     };
@@ -124,10 +121,7 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onClick = (name, title) => {
-      Toast(title);
-    };
-
+    const onClick = (name, title) => Toast(title);
     return {
       onClick,
     };
