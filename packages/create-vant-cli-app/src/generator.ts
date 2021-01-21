@@ -62,9 +62,11 @@ export class VanGenerator extends Generator {
 
   writing() {
     consola.info(`Creating project in ${join(CWD, this.inputs.name)}\n`);
-
-    const templatePath = join(GENERATOR_DIR, this.inputs.vueVersion);
-    const templateFiles = glob.sync(join(templatePath, '**', '*'), {
+    /**
+    @see {@link https://github.com/mrmlnc/fast-glob#how-to-write-patterns-on-windows}
+    */
+    const templatePath = join(GENERATOR_DIR, this.inputs.vueVersion).replace(/\\/g, '/');
+    const templateFiles = glob.sync(join(templatePath, '**', '*').replace(/\\/g, '/'), {
       dot: true,
     });
     const destinationRoot = this.destinationRoot();
