@@ -1,8 +1,14 @@
 # 更新日志
 
+## v3.4.1
+
+`2021-01-22`
+
+- 降级 `webpack-dev-server`，修复 windows 无法开发问题
+
 ## v3.4.0
 
-`2020-01-12`
+`2021-01-12`
 
 - 升级 `webpack-dev-server` 4.0.0-beta.0，修复 Hot Reload 不生效的问题
 
