@@ -219,8 +219,9 @@ module.exports = {
     'delete',
     'font',
     // without corresponding outline icon
-    'alipay',
     'wechat',
+    'wechat-pay',
+    'alipay',
     'photograph',
     'youzan-shield',
     'umbrella-circle',

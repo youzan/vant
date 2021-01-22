@@ -226,7 +226,7 @@ const map = {
   F0DF: 'warning-o',
   F0E0: 'warning',
   F0E1: 'weapp-nav',
-  F0E2: 'wechat',
+  F0E2: 'wechat-pay',
   F0E3: 'youzan-shield',
   F0E4: 'enlarge',
   F0E5: 'photo-fail',
@@ -238,6 +238,7 @@ const map = {
   F0EB: 'font',
   F0EC: 'font-o',
   F0ED: 'revoke',
+  F0EE: 'wechat',
 };
 
 const reversedMap = {};
