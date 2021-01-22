@@ -96,7 +96,7 @@
     "vue-loader": "^16.1.2",
     "vue-router": "^4.0.0",
     "webpack": "^5.13.0",
-    "webpack-dev-server": "^4.0.0-beta.0",
+    "webpack-dev-server": "^3.4.0",
     "webpack-merge": "^5.7.3",
     "webpackbar": "^5.0.0-3"
   },
