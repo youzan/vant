@@ -1923,10 +1923,10 @@
     eslint-plugin-import "^2.22.1"
     eslint-plugin-vue "^7.1.0"
 
-"@vant/icons@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.5.0.tgz#ce78a2f055a1a4099129bb6c44d54584f3740e27"
-  integrity sha1-znii8FWhpAmRKbtsRNVFhPN0Dic=
+"@vant/icons@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.5.1.tgz#48e73a0af10de064300e27ae417b2875d3f04e6d"
+  integrity sha512-8wI7z4s6cXP5dlvNcaieOfSJ/0Ny7y7tBZVRTyo+X1KiVparmDRlkTbP1bEeAwItCyiLbqWgCUFo58uY+qUk8g==
 
 "@vant/lazyload@^1.0.2":
   version "1.0.2"

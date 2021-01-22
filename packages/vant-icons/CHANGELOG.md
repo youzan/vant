@@ -1,5 +1,9 @@
 ## Changelog
 
+## 1.5.1
+
+- add new wechat icon, rename old wechat icon to wechat-pay
+
 ## 1.5.0
 
 - add sort icon
