@@ -48,13 +48,11 @@ export function getSiteDevBaseConfig(): WebpackConfig {
     },
     devServer: {
       port: 8080,
+      quiet: true,
       host: '0.0.0.0',
-      dev: {
-        publicPath: '/',
-      },
-    },
-    infrastructureLogging: {
-      level: 'warn',
+      stats: 'errors-only',
+      publicPath: '/',
+      disableHostCheck: true,
     },
     resolve: {
       alias: {
