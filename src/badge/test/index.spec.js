@@ -40,3 +40,32 @@ test('should render content slot correctly', () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should change dot position when using offset prop', () => {
+  const wrapper = mount(Badge, {
+    props: {
+      dot: true,
+      offset: [2, 4],
+    },
+    slots: {
+      default: () => 'Child',
+    },
+  });
+
+  const badge = wrapper.find('.van-badge').element;
+  expect(badge.style.top).toEqual('4px');
+  expect(badge.style.right).toEqual('-2px');
+});
+
+test('should change dot position when using offset prop without children', () => {
+  const wrapper = mount(Badge, {
+    props: {
+      dot: true,
+      offset: [2, 4],
+    },
+  });
+
+  const badge = wrapper.find('.van-badge').element;
+  expect(badge.style.marginTop).toEqual('4px');
+  expect(badge.style.marginLeft).toEqual('2px');
+});
