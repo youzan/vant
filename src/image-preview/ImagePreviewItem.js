@@ -97,9 +97,9 @@ export default {
       scale = range(scale, +props.minZoom, +props.maxZoom);
 
       if (scale !== state.scale) {
-        state.scale = range(scale, +props.minZoom, +props.maxZoom);
+        state.scale = scale;
         emit('scale', {
-          scale: state.scale,
+          scale,
           index: props.active,
         });
       }
