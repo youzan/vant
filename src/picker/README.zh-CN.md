@@ -100,7 +100,7 @@ export default {
 
 ### 级联选择
 
-使用 `columns` 的 `children` 字段可以实现选项级联的效果。
+使用 `columns` 的 `children` 字段可以实现选项级联的效果。如果级联层级较多，推荐使用 [Cascader 级联选项组件](#/zh-CN/cascader)。
 
 ```html
 <van-picker title="标题" :columns="columns" />
@@ -143,7 +143,7 @@ export default {
 };
 ```
 
-> 级联选择的数据嵌套深度需要保持一致，如果部分选项没有子选项，可以使用空字符串进行占位
+> 级联选择的数据嵌套深度需要保持一致，如果部分选项没有子选项，可以使用空字符串进行占位。
 
 ### 禁用选项
 
