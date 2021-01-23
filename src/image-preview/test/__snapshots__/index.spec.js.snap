@@ -42,7 +42,7 @@ exports[`index slot 1`] = `
 exports[`render image 1`] = `
 <div class="van-image-preview" name="van-fade">
   <div class="van-swipe van-image-preview__swipe">
-    <div class="van-swipe__track" style="transition-duration: 500ms; transform: translateX(0px);">
+    <div class="van-swipe__track" style="transition-duration: 300ms; transform: translateX(0px);">
       <div class="van-swipe-item van-image-preview__swipe-item"></div>
       <div class="van-swipe-item van-image-preview__swipe-item"></div>
       <div class="van-swipe-item van-image-preview__swipe-item"></div>

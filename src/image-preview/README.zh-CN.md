@@ -150,7 +150,7 @@ export default {
 | --- | --- | --- | --- |
 | images | 需要预览的图片 URL 数组 | _string[]_ | `[]` |
 | startPosition | 图片预览起始位置索引 | _number \| string_ | `0` |
-| swipeDuration | 动画时长，单位为`ms` | _number \| string_ | `500` |
+| swipeDuration | 动画时长，单位为`ms` | _number \| string_ | `300` |
 | showIndex | 是否显示页码 | _boolean_ | `true` |
 | showIndicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
@@ -175,7 +175,7 @@ export default {
 | --- | --- | --- | --- |
 | images | 需要预览的图片 URL 数组 | _string[]_ | `[]` |
 | start-position | 图片预览起始位置索引 | _number \| string_ | `0` |
-| swipe-duration | 动画时长，单位为 ms | _number \| string_ | `500` |
+| swipe-duration | 动画时长，单位为 ms | _number \| string_ | `300` |
 | show-index | 是否显示页码 | _boolean_ | `true` |
 | show-indicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
