@@ -311,8 +311,8 @@ export default createComponent({
       });
     };
 
-    const reset = () => {
-      state.currentDate = getInitialDate(state.currentDate);
+    const reset = (date = getInitialDate(state.currentDate)) => {
+      state.currentDate = date;
       scrollIntoView();
     };
 

@@ -336,7 +336,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Calend
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| reset | Reset selected date to default date | - | - |
+| reset | Reset selected date, will reset to default date when no params passed | _date?: Date \| Date[]_ | - |
 | scrollToDate | Scroll to date | _date: Date_ | - |
 
 ### Less Variables
