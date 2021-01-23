@@ -92,6 +92,8 @@ export default {
   },
 
   watch: {
+    active: 'resetScale',
+
     show(val) {
       if (!val) {
         this.resetScale();
