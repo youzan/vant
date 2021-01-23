@@ -147,7 +147,7 @@ export default {
 | --- | --- | --- | --- |
 | images | Images URL list | _string[]_ | `[]` |
 | start-position | Start position | _number \| string_ | `0` |
-| swipe-duration | Animation duration (ms) | _number \| string_ | `500` |
+| swipe-duration | Animation duration (ms) | _number \| string_ | `300` |
 | show-index | Whether to show index | _boolean_ | `true` |
 | show-indicators | Whether to show indicators | _boolean_ | `false` |
 | loop | Whether to enable loop | _boolean_ | `true` |
