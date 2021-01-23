@@ -311,7 +311,7 @@ export default createComponent({
       });
     };
 
-    const reset = (date = getInitialDate(state.currentDate)) => {
+    const reset = (date = getInitialDate()) => {
       state.currentDate = date;
       scrollIntoView();
     };
@@ -500,7 +500,9 @@ export default createComponent({
     );
 
     watch(() => props.show, init);
-    watch([() => props.type, () => props.minDate, () => props.maxDate], reset);
+    watch([() => props.type, () => props.minDate, () => props.maxDate], () => {
+      reset(getInitialDate(state.currentDate));
+    });
     watch(
       () => props.defaultDate,
       (value) => {
