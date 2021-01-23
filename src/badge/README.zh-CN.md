@@ -129,6 +129,7 @@ app.use(Badge);
 | color | 徽标背景颜色 | _string_ | `#ee0a24` |
 | dot | 是否展示为小红点 | _boolean_ | `false` |
 | max | 最大值，超过最大值会显示 `{max}+`，仅当 content 为数字时有效 | _number \| string_ | - |
+| offset `v3.0.5` | 设置徽标的偏移量， 数组的两项分别对应水平和垂直方向的偏移量 | _[number, number]_ | - |
 
 ### Slots
 

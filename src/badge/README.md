@@ -117,6 +117,7 @@ Use `content` slot to custom :content of badge.
 | color | Background color | _string_ | `#ee0a24` |
 | dot | Whether to show dot | _boolean_ | `false` |
 | max | Max value，show `{max}+` when exceed，only works when content is number | _number \| string_ | - |
+| offset `v3.0.5` | Offset of badge dot | _[number, number]_ | - |
 
 ### Slots
 
