@@ -92,6 +92,8 @@ export default {
   },
 
   watch: {
+    active: 'resetScale',
+
     show(val) {
       if (!val) {
         this.resetScale();
@@ -111,11 +113,15 @@ export default {
     },
 
     setScale(scale) {
-      this.scale = range(scale, +this.minZoom, +this.maxZoom);
-      this.$emit('scale', {
-        scale: this.scale,
-        index: this.active,
-      });
+      scale = range(scale, +this.minZoom, +this.maxZoom);
+
+      if (scale !== this.scale) {
+        this.scale = scale;
+        this.$emit('scale', {
+          scale: this.scale,
+          index: this.active,
+        });
+      }
     },
 
     toggleScale() {
