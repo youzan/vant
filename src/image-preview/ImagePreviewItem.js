@@ -94,11 +94,15 @@ export default {
     });
 
     const setScale = (scale) => {
-      state.scale = range(scale, +props.minZoom, +props.maxZoom);
-      emit('scale', {
-        scale: state.scale,
-        index: props.active,
-      });
+      scale = range(scale, +props.minZoom, +props.maxZoom);
+
+      if (scale !== state.scale) {
+        state.scale = range(scale, +props.minZoom, +props.maxZoom);
+        emit('scale', {
+          scale: state.scale,
+          index: props.active,
+        });
+      }
     };
 
     const resetScale = () => {

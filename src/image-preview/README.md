@@ -127,7 +127,7 @@ export default {
 | showIndex | Whether to show index | _boolean_ | `true` |
 | showIndicators | Whether to show indicators | _boolean_ | `false` |
 | loop | Whether to enable loop | _boolean_ | `true` |
-| swipeDuration | Animation duration (ms) | _number \| string_ | `500` |
+| swipeDuration | Animation duration (ms) | _number \| string_ | `300` |
 | onClose | Emitted when ImagePreview is closed | _Function_ | - |
 | onChange | Emitted when current image changed | _Function_ | - |
 | onScale | Emitted when scaling current image | _Function_ | - |
