@@ -235,6 +235,7 @@ export default {
       state.imageRatio = naturalHeight / naturalWidth;
     };
 
+    watch(() => props.active, resetScale);
     watch(
       () => props.show,
       (value) => {
