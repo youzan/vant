@@ -151,8 +151,11 @@ export default createComponent({
   },
 
   watch: {
-    type: 'reset',
     value: 'init',
+
+    type() {
+      this.reset();
+    },
 
     defaultDate(val) {
       this.currentDate = val;
