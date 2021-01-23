@@ -2,4 +2,4 @@
 
 ## Reporting a Vulnerability
 
-xxxxxxxxxxx@xxxxxxxxxxxxx.com
+chenjiahan@buaa.edu.cn
