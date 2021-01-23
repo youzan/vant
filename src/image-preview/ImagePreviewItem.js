@@ -97,7 +97,7 @@ export default {
       state.scale = range(scale, +props.minZoom, +props.maxZoom);
       emit('scale', {
         scale: state.scale,
-        index: state.active,
+        index: props.active,
       });
     };
 
