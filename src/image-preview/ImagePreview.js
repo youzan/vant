@@ -47,7 +47,7 @@ export default createComponent({
     },
     swipeDuration: {
       type: [Number, String],
-      default: 500,
+      default: 300,
     },
     startPosition: {
       type: [Number, String],

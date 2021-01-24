@@ -120,7 +120,12 @@ export default createComponent({
       if (message) {
         const hasTitle = title || slots.title;
         return (
-          <div class={bem('content', { isolated: !hasTitle })}>
+          <div
+            // add key to force re-render
+            // see: https://github.com/youzan/vant/issues/7963
+            key={allowHtml ? 1 : 0}
+            class={bem('content', { isolated: !hasTitle })}
+          >
             <div
               class={bem('message', {
                 'has-title': hasTitle,

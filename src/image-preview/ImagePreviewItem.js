@@ -94,11 +94,15 @@ export default {
     });
 
     const setScale = (scale) => {
-      state.scale = range(scale, +props.minZoom, +props.maxZoom);
-      emit('scale', {
-        scale: state.scale,
-        index: state.active,
-      });
+      scale = range(scale, +props.minZoom, +props.maxZoom);
+
+      if (scale !== state.scale) {
+        state.scale = scale;
+        emit('scale', {
+          scale,
+          index: props.active,
+        });
+      }
     };
 
     const resetScale = () => {
@@ -235,6 +239,7 @@ export default {
       state.imageRatio = naturalHeight / naturalWidth;
     };
 
+    watch(() => props.active, resetScale);
     watch(
       () => props.show,
       (value) => {

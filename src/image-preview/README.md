@@ -127,7 +127,7 @@ export default {
 | showIndex | Whether to show index | _boolean_ | `true` |
 | showIndicators | Whether to show indicators | _boolean_ | `false` |
 | loop | Whether to enable loop | _boolean_ | `true` |
-| swipeDuration | Animation duration (ms) | _number \| string_ | `500` |
+| swipeDuration | Animation duration (ms) | _number \| string_ | `300` |
 | onClose | Emitted when ImagePreview is closed | _Function_ | - |
 | onChange | Emitted when current image changed | _Function_ | - |
 | onScale | Emitted when scaling current image | _Function_ | - |
@@ -147,7 +147,7 @@ export default {
 | --- | --- | --- | --- |
 | images | Images URL list | _string[]_ | `[]` |
 | start-position | Start position | _number \| string_ | `0` |
-| swipe-duration | Animation duration (ms) | _number \| string_ | `500` |
+| swipe-duration | Animation duration (ms) | _number \| string_ | `300` |
 | show-index | Whether to show index | _boolean_ | `true` |
 | show-indicators | Whether to show indicators | _boolean_ | `false` |
 | loop | Whether to enable loop | _boolean_ | `true` |

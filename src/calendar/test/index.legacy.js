@@ -196,31 +196,6 @@ test('default range date', async () => {
   );
 });
 
-test('reset method', async () => {
-  const wrapper = mount(Calendar, {
-    props: {
-      minDate,
-      maxDate,
-      type: 'range',
-      poppable: false,
-      defaultDate: [minDate, getNextDay(minDate)],
-    },
-  });
-
-  await later();
-
-  const days = wrapper.findAll('.van-calendar__day');
-  days.at(15).trigger('click');
-  days.at(18).trigger('click');
-
-  wrapper.vm.reset();
-
-  wrapper.find('.van-calendar__confirm').trigger('click');
-  expect(formatRange(wrapper.emitted('confirm')[0][0])).toEqual(
-    '2010/1/10-2010/1/11'
-  );
-});
-
 test('set show-confirm to false', async () => {
   const wrapper = mount(Calendar, {
     props: {
