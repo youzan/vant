@@ -48,6 +48,16 @@ app.use(Sticky);
 </div>
 ```
 
+### 吸底距离
+
+通过 `offset-bottom` 属性可以设置组件在吸底时与底部的距离。通过 `position` 属性控制吸附位置，默认值为 `top`。
+
+```html
+<van-sticky :offset-bottom="50" position="bottom">
+  <van-button type="primary">吸底距离</van-button>
+</van-sticky>
+```
+
 ```js
 export default {
   setup() {
@@ -64,6 +74,8 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | offset-top | 吸顶时与顶部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
+| offset-bottom | 吸底时与底部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
+| position | 吸附位置，支持 `top` `bottom` | _string_ | `top` |
 | z-index | 吸顶时的 z-index | _number \| string_ | `99` |
 | container | 容器对应的 HTML 节点 | _Element_ | - |
 
