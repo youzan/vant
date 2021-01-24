@@ -16,6 +16,31 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.5](https://github.com/youzan/vant/compare/v3.0.4...v3.0.5)
+
+`2021-01-24`
+
+**Feature**
+
+- Badge: add offset prop [e0b463](https://github.com/youzan/vant/commit/e0b463630108b5031a02a8afcd0c141a7fdbac9e)
+- Calendar: reset method support specified date [#7966](https://github.com/youzan/vant/issues/7966)
+- Icons: add wechat icon, rename wechat-pay icon [b3cd8c](https://github.com/youzan/vant/commit/b3cd8c14aea9e542a9de4ba9999e50c3ecbf3b3c)
+- ImagePreview: reset scale after swiping [#7972](https://github.com/youzan/vant/issues/7972)
+- ImagePreview: adjust default swipeDuration to 300ms [#7970](https://github.com/youzan/vant/issues/7970)
+- ShareSheet: add wechat-moments icon [ca66fb](https://github.com/youzan/vant/commit/ca66fbca36c5c839e3a294d465b0fc2bd7bf5039)
+- Slider: add readonly prop [4cd991](https://github.com/youzan/vant/commit/4cd991dfec01bd5342cb59b750d0dfa5901b8dc8)
+
+**style**
+
+- ShareSheet: update qrcode icon [32a08b](https://github.com/youzan/vant/commit/32a08bb6807d9d38027e03eef376d82b6eab282e)
+- TreeSelect: add active feedback [bada31](https://github.com/youzan/vant/commit/bada315fb3b0fbdf30c663170c867bbbc274687c)
+
+**Bug Fixes**
+
+- Calendar: should reset to default date when calling reset method [#7967](https://github.com/youzan/vant/issues/7967)
+- Dialog: failed to render when toggling allowHtml [#7968](https://github.com/youzan/vant/issues/7968)
+- ImagePreview: scale event index is undefined [#7971](https://github.com/youzan/vant/issues/7971)
+
 ### [v3.0.4](https://github.com/youzan/vant/compare/v3.0.3...v3.0.4)
 
 `2021-01-17`
