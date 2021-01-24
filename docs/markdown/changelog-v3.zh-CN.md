@@ -37,7 +37,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Bug Fixes**
 
-- Calendar: should reset to default date when calling reset method [#7967](https://github.com/youzan/vant/issues/7967)
+- Calendar: 修复调用 reset 方法时未重置到默认日期的问题 [#7967](https://github.com/youzan/vant/issues/7967)
 - Dialog: 修复切换 allowHtml 时 message 渲染不正确的问题 [#7968](https://github.com/youzan/vant/issues/7968)
 - ImagePreview: 修复 scale 事件的 index 参数为 undefined 的问题 [#7971](https://github.com/youzan/vant/issues/7971)
 
