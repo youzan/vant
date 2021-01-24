@@ -16,6 +16,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.5](https://github.com/youzan/vant/compare/v2.12.4...v2.12.5)
+
+`2021-01-24`
+
+**Feature**
+
+- Calendar: reset 方法支持重置到指定日期 [#7943](https://github.com/youzan/vant/issues/7943)
+- ImagePreview: 在调用 swipeTo 方法后自动重置缩放状态 [#7974](https://github.com/youzan/vant/issues/7974)
+- ImagePreview: swipe-duration 属性的默认值调整为 300ms [#7973](https://github.com/youzan/vant/issues/7973)
+- ShareSheet: 新增 wechat-moments 朋友圈图标 [4f94dd](https://github.com/youzan/vant/commit/4f94dd3260fedd0c67b8b542c106119dd1ca7b37)
+
+**style**
+
+- ShareSheet: 更新 qrcode 图标 [335510](https://github.com/youzan/vant/commit/33551062e3e946107b05841ddd3914ab996600ce)
+
 ### [v2.12.4](https://github.com/youzan/vant/compare/v2.12.3...v2.12.4)
 
 `2021-01-17`

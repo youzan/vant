@@ -16,6 +16,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.5](https://github.com/youzan/vant/compare/v2.12.4...v2.12.5)
+
+`2021-01-24`
+
+**Feature**
+
+- Calendar: reset method support specified date [#7943](https://github.com/youzan/vant/issues/7943)
+- ImagePreview: reset scale after swiping [#7974](https://github.com/youzan/vant/issues/7974)
+- ImagePreview: adjust default swipe duration to 300ms [#7973](https://github.com/youzan/vant/issues/7973)
+- ShareSheet: add wechat-moments icon [4f94dd](https://github.com/youzan/vant/commit/4f94dd3260fedd0c67b8b542c106119dd1ca7b37)
+
+**style**
+
+- ShareSheet: update qrcode icon [335510](https://github.com/youzan/vant/commit/33551062e3e946107b05841ddd3914ab996600ce)
+
 ### [v2.12.4](https://github.com/youzan/vant/compare/v2.12.3...v2.12.4)
 
 `2021-01-17`
