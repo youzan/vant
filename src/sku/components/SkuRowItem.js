@@ -104,8 +104,8 @@ export default createComponent({
         </div>
         {this.largeImageMode && (
           <Icon
-            class={`${classPrefix}-img-icon`}
             name="enlarge"
+            class={`${classPrefix}-img-icon`}
             onClick={this.onPreviewImg}
           />
         )}
