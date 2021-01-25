@@ -220,6 +220,65 @@ test('should sticky inside container when using container prop', async () => {
   mockStickyRect.mockRestore();
 });
 
+test('should sticky inside container bottom when using container prop', async () => {
+  const wrapper = mount({
+    setup() {
+      const container = ref();
+      return {
+        container,
+      };
+    },
+    render() {
+      return (
+        <div ref="container" style="margin-top: 640px">
+          <div style="height: 150px" />
+          <Sticky
+            ref="sticky"
+            style="height: 44px;"
+            container={this.container}
+            position="bottom"
+          >
+            Content
+          </Sticky>
+        </div>
+      );
+    },
+  });
+
+  const mockStickyRect = jest
+    .spyOn(wrapper.element.children[1], 'getBoundingClientRect')
+    .mockReturnValue({
+      height: 44,
+      width: 88,
+      top: 690,
+      bottom: 734,
+    });
+  const mockContainerRect = jest
+    .spyOn(wrapper.element, 'getBoundingClientRect')
+    .mockReturnValue({
+      top: 540,
+      bottom: 734,
+    });
+
+  await mockScrollTop(100);
+  expect(wrapper.html()).toMatchSnapshot();
+
+  mockStickyRect.mockReturnValue({
+    height: 44,
+    width: 88,
+    top: 770,
+    bottom: 814,
+  });
+  mockContainerRect.mockReturnValue({
+    top: 620,
+    bottom: 814,
+  });
+  await mockScrollTop(20);
+  expect(wrapper.html()).toMatchSnapshot();
+  mockContainerRect.mockRestore();
+  mockStickyRect.mockRestore();
+});
+
 test('should emit scroll event when visibility changed', async () => {
   const originIntersectionObserver = window.IntersectionObserver;
 
