@@ -473,7 +473,7 @@ export default {
   placeholder="点击选择日期"
   @click="state.showCalendar = true"
 />
-<van-calendar v-model="state.showCalendar" @confirm="onConfirm" />
+<van-calendar v-model:show="state.showCalendar" @confirm="onConfirm" />
 ```
 
 ```js
