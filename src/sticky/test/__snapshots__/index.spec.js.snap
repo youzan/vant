@@ -50,6 +50,10 @@ exports[`should sticky inside container when using container prop 2`] = `
 </div>
 `;
 
+exports[`should sticky to bottom after scrolling 1`] = `"<div style=\\"height: 10px;\\"><div class=\\"van-sticky\\">Content</div></div>"`;
+
+exports[`should sticky to bottom after scrolling 2`] = `"<div style=\\"height: 10px; width: 0px;\\"><div class=\\"van-sticky van-sticky--fixed\\" style=\\"height: 0px; width: 0px; bottom: 10px;\\">Content</div></div>"`;
+
 exports[`should sticky to top after scrolling 1`] = `
 <div style="height: 10px;">
   <div class="van-sticky">
@@ -61,6 +65,24 @@ exports[`should sticky to top after scrolling 1`] = `
 exports[`should sticky to top after scrolling 2`] = `
 <div style="height: 10px;">
   <div class="van-sticky">
+    Content
+  </div>
+</div>
+`;
+
+exports[`should sticky to bottom after scrolling 1`] = `
+<div style="height: 10px;">
+  <div class="van-sticky">
+    Content
+  </div>
+</div>
+`;
+
+exports[`should sticky to bottom after scrolling 2`] = `
+<div style="height: 10px; width: 0px;">
+  <div class="van-sticky van-sticky--fixed"
+       style="height: 0px; width: 0px; bottom: 10px;"
+  >
     Content
   </div>
 </div>

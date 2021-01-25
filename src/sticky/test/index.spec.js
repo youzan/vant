@@ -16,6 +16,24 @@ test('should sticky to top after scrolling', async () => {
   await mockScrollTop(0);
 });
 
+test('should sticky to bottom after scrolling', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Sticky style="height: 10px;" offsetBottom={10} position="bottom">
+          Content
+        </Sticky>
+      );
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+
+  await mockScrollTop(100);
+  expect(wrapper.html()).toMatchSnapshot();
+  await mockScrollTop(0);
+});
+
 test('should update z-index when using z-index prop', async () => {
   const wrapper = mount({
     render() {
@@ -36,7 +54,7 @@ test('should add offset top when using offset-top prop', async () => {
   const wrapper = mount({
     render() {
       return (
-        <Sticky style="height: 10px;" offsetTop={10}>
+        <Sticky style="height: 10px;" offsetTop={10} position="top">
           Content
         </Sticky>
       );
