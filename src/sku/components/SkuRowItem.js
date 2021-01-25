@@ -2,6 +2,7 @@ import { bem } from './SkuRow';
 import { createNamespace } from '../../utils';
 import { isSkuChoosable } from '../utils/sku-helper';
 import { ChildrenMixin } from '../../mixins/relation';
+import Icon from '../../icon';
 import Image from '../../image';
 
 const [createComponent] = createNamespace('sku-row-item');
@@ -102,9 +103,9 @@ export default createComponent({
           )}
         </div>
         {this.largeImageMode && (
-          <img
+          <Icon
+            name="enlarge"
             class={`${classPrefix}-img-icon`}
-            src="https://img.yzcdn.cn/upload_files/2020/07/02/Fu4_ya0l0aAt4Mv4PL9jzPzfZnDX.png"
             onClick={this.onPreviewImg}
           />
         )}
