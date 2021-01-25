@@ -1,6 +1,10 @@
 import { nextTick, ref } from 'vue';
-import { mount, mockScrollTop } from '../../../test';
+import { mockScrollTop, mount } from '../../../test';
 import Sticky from '..';
+
+Object.defineProperty(window.HTMLElement.prototype, 'clientHeight', {
+  value: 640,
+});
 
 test('should sticky to top after scrolling', async () => {
   const wrapper = mount({
@@ -8,12 +12,17 @@ test('should sticky to top after scrolling', async () => {
       return <Sticky style="height: 10px;">Content</Sticky>;
     },
   });
-
-  expect(wrapper.html()).toMatchSnapshot();
+  const mockStickyRect = jest
+    .spyOn(wrapper.element, 'getBoundingClientRect')
+    .mockReturnValue({
+      top: -100,
+      bottom: -90,
+    });
 
   await mockScrollTop(100);
   expect(wrapper.html()).toMatchSnapshot();
-  await mockScrollTop(0);
+
+  mockStickyRect.mockRestore();
 });
 
 test('should sticky to bottom after scrolling', async () => {
@@ -26,12 +35,17 @@ test('should sticky to bottom after scrolling', async () => {
       );
     },
   });
+  const mockStickyRect = jest
+    .spyOn(wrapper.element, 'getBoundingClientRect')
+    .mockReturnValue({
+      top: 640,
+      bottom: 650,
+    });
 
-  expect(wrapper.html()).toMatchSnapshot();
-
-  await mockScrollTop(100);
-  expect(wrapper.html()).toMatchSnapshot();
   await mockScrollTop(0);
+  expect(wrapper.html()).toMatchSnapshot();
+
+  mockStickyRect.mockRestore();
 });
 
 test('should update z-index when using z-index prop', async () => {
@@ -45,9 +59,17 @@ test('should update z-index when using z-index prop', async () => {
     },
   });
 
+  const mockStickyRect = jest
+    .spyOn(wrapper.element, 'getBoundingClientRect')
+    .mockReturnValue({
+      top: -100,
+      bottom: -90,
+    });
+
   await mockScrollTop(100);
   expect(wrapper.html()).toMatchSnapshot();
-  await mockScrollTop(0);
+
+  mockStickyRect.mockRestore();
 });
 
 test('should add offset top when using offset-top prop', async () => {
@@ -61,9 +83,17 @@ test('should add offset top when using offset-top prop', async () => {
     },
   });
 
+  const mockStickyRect = jest
+    .spyOn(wrapper.element, 'getBoundingClientRect')
+    .mockReturnValue({
+      top: -100,
+      bottom: -90,
+    });
+
   await mockScrollTop(100);
   expect(wrapper.html()).toMatchSnapshot();
-  await mockScrollTop(0);
+
+  mockStickyRect.mockRestore();
 });
 
 test('should allow to using offset-top prop with rem unit', async () => {
@@ -81,10 +111,17 @@ test('should allow to using offset-top prop with rem unit', async () => {
     },
   });
 
+  const mockStickyRect = jest
+    .spyOn(wrapper.element, 'getBoundingClientRect')
+    .mockReturnValue({
+      top: -100,
+      bottom: -90,
+    });
+
   await mockScrollTop(100);
   expect(wrapper.html()).toMatchSnapshot();
 
-  await mockScrollTop(0);
+  mockStickyRect.mockRestore();
   window.getComputedStyle = originGetComputedStyle;
 });
 
@@ -101,9 +138,17 @@ test('should allow to using offset-top prop with vw unit', async () => {
     },
   });
 
+  const mockStickyRect = jest
+    .spyOn(wrapper.element, 'getBoundingClientRect')
+    .mockReturnValue({
+      top: -100,
+      bottom: -90,
+    });
+
   await mockScrollTop(100);
   expect(wrapper.html()).toMatchSnapshot();
-  await mockScrollTop(0);
+
+  mockStickyRect.mockRestore();
 });
 
 test('should not trigger scroll event when hidden', () => {
@@ -132,8 +177,8 @@ test('should sticky inside container when using container prop', async () => {
     },
     render() {
       return (
-        <div ref="container" style="height: 20px;">
-          <Sticky ref="sticky" style="height: 10px;" container={this.container}>
+        <div ref="container" style="height: 150px;">
+          <Sticky ref="sticky" style="height: 44px;" container={this.container}>
             Content
           </Sticky>
         </div>
@@ -141,12 +186,38 @@ test('should sticky inside container when using container prop', async () => {
     },
   });
 
-  await nextTick();
-  await mockScrollTop(15);
+  const mockStickyRect = jest
+    .spyOn(wrapper.element.firstElementChild, 'getBoundingClientRect')
+    .mockReturnValue({
+      height: 44,
+      width: 88,
+      top: -100,
+      bottom: -56,
+    });
+  const mockContainerRect = jest
+    .spyOn(wrapper.element, 'getBoundingClientRect')
+    .mockReturnValue({
+      top: -100,
+      bottom: 50,
+    });
+
+  await mockScrollTop(100);
   expect(wrapper.html()).toMatchSnapshot();
-  await mockScrollTop(25);
+
+  mockStickyRect.mockReturnValue({
+    height: 44,
+    width: 88,
+    top: -120,
+    bottom: -76,
+  });
+  mockContainerRect.mockReturnValue({
+    top: -120,
+    bottom: 30,
+  });
+  await mockScrollTop(120);
   expect(wrapper.html()).toMatchSnapshot();
-  await mockScrollTop(0);
+  mockContainerRect.mockRestore();
+  mockStickyRect.mockRestore();
 });
 
 test('should emit scroll event when visibility changed', async () => {
