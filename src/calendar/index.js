@@ -511,7 +511,11 @@ export default createComponent({
       }
     );
 
-    useExpose({ reset });
+    useExpose({
+      reset,
+      scrollToDate,
+    });
+
     onMountedOrActivated(init);
 
     return () => {
