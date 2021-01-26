@@ -1,7 +1,7 @@
+import { ref } from 'vue';
 import Collapse from '..';
 import CollapseItem from '../../collapse-item';
 import { later, mount } from '../../../test';
-import { ref } from 'vue';
 
 const Component = {
   props: {
