@@ -106,10 +106,7 @@ export default createComponent({
     watch(
       () => props.contactInfo,
       (value) => {
-        Object.assign(contact, {
-          ...DEFAULT_CONTACT,
-          ...value,
-        });
+        Object.assign(contact, DEFAULT_CONTACT, value);
       }
     );
 
