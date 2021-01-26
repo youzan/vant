@@ -6,6 +6,12 @@ const contactInfo = {
   tel: '13000000000',
 };
 
+async function submitForm(wrapper) {
+  const form = wrapper.find('form');
+  await form.trigger('submit');
+  return later();
+}
+
 test('should validate contact name before submitting form', async () => {
   const wrapper = mount(ContactEdit, {
     props: {
@@ -16,16 +22,8 @@ test('should validate contact name before submitting form', async () => {
     },
   });
 
-  const button = wrapper.find('.van-button');
-  button.trigger('click');
-  await later();
+  await submitForm(wrapper);
   expect(wrapper.find('.van-field__error-message').html()).toMatchSnapshot();
-
-  const fields = wrapper.findAll('.van-field__control');
-
-  fields[0].trigger('focus');
-  await later();
-  expect(wrapper.find('.van-field__error-message').exists()).toBeFalsy();
 });
 
 test('should validate contact tel before submitting form', async () => {
@@ -38,16 +36,8 @@ test('should validate contact tel before submitting form', async () => {
     },
   });
 
-  const button = wrapper.find('.van-button');
-  button.trigger('click');
-  await later();
+  await submitForm(wrapper);
   expect(wrapper.find('.van-field__error-message').html()).toMatchSnapshot();
-
-  const fields = wrapper.findAll('.van-field__control');
-
-  fields[1].trigger('focus');
-  await later();
-  expect(wrapper.find('.van-field__error-message').exists()).toBeFalsy();
 });
 
 test('should emit save event after submitting form', async () => {
@@ -57,19 +47,14 @@ test('should emit save event after submitting form', async () => {
     },
   });
 
-  const button = wrapper.find('.van-button');
-  button.trigger('click');
-  await later();
+  await submitForm(wrapper);
   expect(wrapper.emitted('save')[0][0]).toEqual(contactInfo);
 });
 
 test('should watch contact info', async () => {
   const wrapper = mount(ContactEdit);
-  const button = wrapper.find('.van-button');
-
-  wrapper.setProps({ contactInfo });
-  await later();
-  button.trigger('click');
+  await wrapper.setProps({ contactInfo });
+  await submitForm(wrapper);
   expect(wrapper.emitted('save')[0][0]).toEqual(contactInfo);
 });
 
