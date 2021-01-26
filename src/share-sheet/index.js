@@ -65,7 +65,7 @@ export default createComponent({
 
     getIconURL(icon) {
       if (PRESET_ICONS.indexOf(icon) !== -1) {
-        return `https://img.yzcdn.cn/vant/share-sheet-${icon}.png`;
+        return `https://img01.yzcdn.cn/vant/share-sheet-${icon}.png`;
       }
 
       return icon;
