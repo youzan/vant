@@ -16,6 +16,22 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.6](https://github.com/youzan/vant/compare/v2.12.5...v2.12.6)
+
+`2021-01-26`
+
+**Feature**
+
+- Icons: add wechat icon, rename wechat-pay icon [b3cd8c](https://github.com/youzan/vant/commit/b3cd8c14aea9e542a9de4ba9999e50c3ecbf3b3c)
+
+**Bug Fixes**
+
+- fix CDN image url [#8000](https://github.com/youzan/vant/issues/8000)
+
+**perf**
+
+- Sku: using icon instead of cdn image [#7992](https://github.com/youzan/vant/issues/7992)
+
 ### [v2.12.5](https://github.com/youzan/vant/compare/v2.12.4...v2.12.5)
 
 `2021-01-24`

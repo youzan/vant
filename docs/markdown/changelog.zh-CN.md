@@ -16,6 +16,22 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.6](https://github.com/youzan/vant/compare/v2.12.5...v2.12.6)
+
+`2021-01-26`
+
+**Feature**
+
+- Icons: 新增 wechat 图标, 重命名原 wechat 图标为 wechat-pay [b3cd8c](https://github.com/youzan/vant/commit/b3cd8c14aea9e542a9de4ba9999e50c3ecbf3b3c)
+
+**Bug Fixes**
+
+- 修复部分地区无法访问 CDN 静态资源的问题 [#8000](https://github.com/youzan/vant/issues/8000)
+
+**perf**
+
+- Sku: 优化图标加载性能 [#7992](https://github.com/youzan/vant/issues/7992)
+
 ### [v2.12.5](https://github.com/youzan/vant/compare/v2.12.4...v2.12.5)
 
 `2021-01-24`
