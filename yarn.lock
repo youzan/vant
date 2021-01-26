@@ -1931,10 +1931,10 @@
     eslint-plugin-import "^2.22.1"
     eslint-plugin-vue "^7.1.0"
 
-"@vant/icons@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.5.1.tgz#48e73a0af10de064300e27ae417b2875d3f04e6d"
-  integrity sha512-8wI7z4s6cXP5dlvNcaieOfSJ/0Ny7y7tBZVRTyo+X1KiVparmDRlkTbP1bEeAwItCyiLbqWgCUFo58uY+qUk8g==
+"@vant/icons@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.5.2.tgz#3f3ea353a0eacd38c113757bd31836489facb10b"
+  integrity sha1-Pz6jU6DqzTjBE3V70xg2SJ+ssQs=
 
 "@vant/lazyload@^1.0.2":
   version "1.0.2"
