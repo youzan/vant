@@ -137,7 +137,10 @@ export default createComponent({
 
       code = code.slice(0, compareNum);
 
-      const list = getList(type, code.slice(0, compareNum - 2));
+      const list = getList(
+        type,
+        compareNum > 2 ? code.slice(0, compareNum - 2) : ''
+      );
 
       for (let i = 0; i < list.length; i++) {
         if (list[i].code.slice(0, compareNum) === code) {
