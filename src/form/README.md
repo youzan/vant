@@ -481,7 +481,7 @@ export default {
 | readonly | Whether to be readonly | _boolean_ | `false` |
 | validate-first | Whether to stop the validation when a rule fails | _boolean_ | `false` |
 | scroll-to-error | Whether to scroll to the error field when validation failed | _boolean_ | `false` |
-| show-error | Whether to highlight input when validation failed | _boolean_ | `true` |
+| show-error | Whether to highlight input when validation failed | _boolean_ | `false` |
 | show-error-message | Whether to show error message when validation failed | _boolean_ | `true` |
 | submit-on-enter | Whether to submit form on enter | _boolean_ | `true` |
 

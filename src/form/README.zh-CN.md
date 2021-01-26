@@ -514,7 +514,7 @@ export default {
 | readonly | 是否将表单中的所有输入框设置为只读状态 | _boolean_ | `false` |
 | validate-first | 是否在某一项校验不通过时停止校验 | _boolean_ | `false` |
 | scroll-to-error | 是否在提交表单且校验不通过时滚动至错误的表单项 | _boolean_ | `false` |
-| show-error | 是否在校验不通过时标红输入框 | _boolean_ | `true` |
+| show-error | 是否在校验不通过时标红输入框 | _boolean_ | `false` |
 | show-error-message | 是否在校验不通过时在输入框下方展示错误提示 | _boolean_ | `true` |
 | submit-on-enter | 是否在按下回车键时提交表单 | _boolean_ | `true` |
 

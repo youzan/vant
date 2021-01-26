@@ -10,6 +10,7 @@ export default createComponent({
     colon: Boolean,
     disabled: Boolean,
     readonly: Boolean,
+    showError: Boolean,
     labelWidth: [Number, String],
     labelAlign: String,
     inputAlign: String,
@@ -23,10 +24,6 @@ export default createComponent({
     validateTrigger: {
       type: String,
       default: 'onBlur',
-    },
-    showError: {
-      type: Boolean,
-      default: true,
     },
     showErrorMessage: {
       type: Boolean,
