@@ -28,7 +28,7 @@ export default createComponent({
       }
 
       if (PRESET_IMAGES.indexOf(image) !== -1) {
-        image = `https://img.yzcdn.cn/vant/empty-image-${image}.png`;
+        image = `https://img01.yzcdn.cn/vant/empty-image-${image}.png`;
       }
 
       return <img src={image} />;

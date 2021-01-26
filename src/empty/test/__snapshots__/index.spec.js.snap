@@ -3,7 +3,7 @@
 exports[`should render bottom slot correctly 1`] = `
 <div class="van-empty">
   <div class="van-empty__image">
-    <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
+    <img src="https://img01.yzcdn.cn/vant/empty-image-default.png">
   </div>
   <div class="van-empty__bottom">
     Custom bottom
@@ -14,7 +14,7 @@ exports[`should render bottom slot correctly 1`] = `
 exports[`should render description slot correctly 1`] = `
 <div class="van-empty">
   <div class="van-empty__image">
-    <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
+    <img src="https://img01.yzcdn.cn/vant/empty-image-default.png">
   </div>
   <p class="van-empty__description">
     Custom description
