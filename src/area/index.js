@@ -127,19 +127,20 @@ export default createComponent({
 
     // get index by code
     const getIndex = (type, code) => {
-      let compareNum = type === 'province' ? 2 : type === 'city' ? 4 : 6;
-      const list = getList(type, code.slice(0, compareNum - 2));
-
-      // oversea code
-      if (props.isOverseaCode(code) && type === 'province') {
-        compareNum = 1;
+      let compareNum = code.length;
+      if (type === 'province') {
+        compareNum = props.isOverseaCode(code) ? 1 : 2;
+      }
+      if (type === 'city') {
+        compareNum = 4;
       }
 
       code = code.slice(0, compareNum);
 
-      if(type === 'county') {
-        compareNum = code.length
-      }
+      const list = getList(
+        type,
+        compareNum > 2 ? code.slice(0, compareNum - 2) : ''
+      );
 
       for (let i = 0; i < list.length; i++) {
         if (list[i].code.slice(0, compareNum) === code) {
