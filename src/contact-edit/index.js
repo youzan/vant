@@ -6,6 +6,7 @@ import { isMobile } from '../utils/validate/mobile';
 
 // Components
 import Cell from '../cell';
+import Form from '../form';
 import Field from '../field';
 import Button from '../button';
 import Dialog from '../dialog';
@@ -38,42 +39,14 @@ export default createComponent({
   emits: ['save', 'delete', 'change-default'],
 
   setup(props, { emit }) {
-    const state = reactive({
-      contact: {
-        ...DEFAULT_CONTACT,
-        ...props.contactInfo,
-      },
-      errorInfo: {
-        name: '',
-        tel: '',
-      },
+    const contact = reactive({
+      ...DEFAULT_CONTACT,
+      ...props.contactInfo,
     });
 
-    const onFocus = (key) => {
-      state.errorInfo[key] = '';
-    };
-
-    const getErrorMessageByKey = (key) => {
-      const value = state.contact[key].trim();
-      switch (key) {
-        case 'name':
-          return value ? '' : t('nameInvalid');
-        case 'tel':
-          return props.telValidator(value) ? '' : t('telInvalid');
-      }
-    };
-
     const onSave = () => {
-      const isValid = ['name', 'tel'].every((item) => {
-        const msg = getErrorMessageByKey(item);
-        if (msg) {
-          state.errorInfo[item] = msg;
-        }
-        return !msg;
-      });
-
-      if (isValid && !props.isSaving) {
-        emit('save', state.contact);
+      if (!props.isSaving) {
+        emit('save', contact);
       }
     };
 
@@ -81,7 +54,7 @@ export default createComponent({
       Dialog.confirm({
         title: t('confirmDelete'),
       }).then(() => {
-        emit('delete', state.contact);
+        emit('delete', contact);
       });
     };
 
@@ -93,7 +66,7 @@ export default createComponent({
           type="danger"
           text={t('save')}
           loading={props.isSaving}
-          onClick={onSave}
+          nativeType="submit"
         />
         {props.isEdit && (
           <Button
@@ -109,7 +82,7 @@ export default createComponent({
 
     const renderSwitch = () => (
       <Switch
-        vModel={state.contact.isDefault}
+        v-model={contact.isDefault}
         size={24}
         onChange={(event) => {
           emit('change-default', event);
@@ -133,41 +106,38 @@ export default createComponent({
     watch(
       () => props.contactInfo,
       (value) => {
-        state.contact = {
+        Object.assign(contact, {
           ...DEFAULT_CONTACT,
           ...value,
-        };
+        });
       }
     );
 
-    return () => {
-      const { contact, errorInfo } = state;
-      return (
-        <div class={bem()}>
-          <div class={bem('fields')}>
-            <Field
-              vModel={contact.name}
-              clearable
-              maxlength="30"
-              label={t('name')}
-              placeholder={t('nameEmpty')}
-              errorMessage={errorInfo.name}
-              onFocus={() => onFocus('name')}
-            />
-            <Field
-              vModel={contact.tel}
-              clearable
-              type="tel"
-              label={t('tel')}
-              placeholder={t('telEmpty')}
-              errorMessage={errorInfo.tel}
-              onFocus={() => onFocus('tel')}
-            />
-          </div>
-          {renderSetDefault()}
-          {renderButtons()}
+    return () => (
+      <Form class={bem()} onSubmit={onSave}>
+        <div class={bem('fields')}>
+          <Field
+            v-model={contact.name}
+            clearable
+            label={t('name')}
+            rules={[{ required: true, message: t('nameInvalid') }]}
+            maxlength="30"
+            placeholder={t('nameEmpty')}
+          />
+          <Field
+            v-model={contact.tel}
+            clearable
+            type="tel"
+            label={t('tel')}
+            rules={[
+              { validator: props.telValidator, message: t('telInvalid') },
+            ]}
+            placeholder={t('telEmpty')}
+          />
         </div>
-      );
-    };
+        {renderSetDefault()}
+        {renderButtons()}
+      </Form>
+    );
   },
 });
