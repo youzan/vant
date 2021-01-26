@@ -137,6 +137,10 @@ export default createComponent({
 
       code = code.slice(0, compareNum);
 
+      if(type === 'county') {
+        compareNum = code.length
+      }
+
       for (let i = 0; i < list.length; i++) {
         if (list[i].code.slice(0, compareNum) === code) {
           return i;
