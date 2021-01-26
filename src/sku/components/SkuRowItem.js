@@ -29,7 +29,7 @@ export default createComponent({
       const url = this.skuValue.imgUrl || this.skuValue.img_url;
       return this.largeImageMode
         ? url ||
-            'https://img.yzcdn.cn/upload_files/2020/06/24/FmKWDg0bN9rMcTp9ne8MXiQWGtLn.png'
+            'https://img01.yzcdn.cn/upload_files/2020/06/24/FmKWDg0bN9rMcTp9ne8MXiQWGtLn.png'
         : url;
     },
 
