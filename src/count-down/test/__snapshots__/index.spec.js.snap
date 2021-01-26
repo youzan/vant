@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should format S milliseconds correctly 1`] = `
+<div class="van-count-down">
+  01-5
+</div>
+`;
+
+exports[`should format SS milliseconds correctly 1`] = `
+<div class="van-count-down">
+  01-50
+</div>
+`;
+
+exports[`should format complete time correctly 1`] = `
+<div class="van-count-down">
+  01-05-59-59-999
+</div>
+`;
+
+exports[`should format incomplete time correctly 1`] = `
+<div class="van-count-down">
+  29-59-59-999
+</div>
+`;
+
+exports[`should not start counting when auto-start prop is false 1`] = `
+<div class="van-count-down">
+  100
+</div>
+`;
