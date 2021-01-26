@@ -1,7 +1,8 @@
+import { nextTick } from 'vue';
 import CountDown from '..';
 import { mount, later } from '../../../test';
 
-test('macro task finish event', async () => {
+test('should emit finish event when finished', async () => {
   const wrapper = mount(CountDown, {
     props: {
       time: 1,
@@ -13,7 +14,7 @@ test('macro task finish event', async () => {
   expect(wrapper.emitted('finish')).toBeTruthy();
 });
 
-test('micro task finish event', async () => {
+test('should emit finish event when finished and millisecond is true', async () => {
   const wrapper = mount(CountDown, {
     props: {
       time: 1,
@@ -26,7 +27,7 @@ test('micro task finish event', async () => {
   expect(wrapper.emitted('finish')).toBeTruthy();
 });
 
-test('macro task re-render', async () => {
+test('should re-render after some time', async () => {
   const wrapper = mount(CountDown, {
     props: {
       time: 1000,
@@ -38,10 +39,10 @@ test('macro task re-render', async () => {
   await later(50);
   const laterSnapShot = wrapper.html();
 
-  expect(prevSnapShot !== laterSnapShot).toBeTruthy();
+  expect(prevSnapShot).not.toEqual(laterSnapShot);
 });
 
-test('micro task re-render', async () => {
+test('should re-render after some time when millisecond is false', async () => {
   const wrapper = mount(CountDown, {
     props: {
       time: 100,
@@ -54,10 +55,10 @@ test('micro task re-render', async () => {
   await later(50);
   const laterSnapShot = wrapper.html();
 
-  expect(prevSnapShot !== laterSnapShot).toBeTruthy();
+  expect(prevSnapShot).not.toEqual(laterSnapShot);
 });
 
-test('disable auto-start prop', async () => {
+test('should not start counting when auto-start prop is false', async () => {
   const wrapper = mount(CountDown, {
     props: {
       time: 100,
@@ -70,7 +71,7 @@ test('disable auto-start prop', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('start method', async () => {
+test('should start counting after calling the start method', async () => {
   const wrapper = mount(CountDown, {
     props: {
       time: 100,
@@ -83,16 +84,13 @@ test('start method', async () => {
   const prevSnapShot = wrapper.html();
 
   wrapper.vm.start();
-  wrapper.vm.start();
-
   await later(50);
 
   const laterShapShot = wrapper.html();
-
-  expect(prevSnapShot !== laterShapShot).toBeTruthy();
+  expect(prevSnapShot).not.toEqual(laterShapShot);
 });
 
-test('pause method', async () => {
+test('should pause counting after calling the pause method', async () => {
   const wrapper = mount(CountDown, {
     props: {
       time: 100,
@@ -106,27 +104,31 @@ test('pause method', async () => {
   await later(50);
   const laterShapShot = wrapper.html();
 
-  expect(prevSnapShot === laterShapShot).toBeTruthy();
+  expect(prevSnapShot).toEqual(laterShapShot);
 });
 
-test('reset method', async () => {
+test('should reset time after calling the reset method', async () => {
   const wrapper = mount(CountDown, {
     props: {
       time: 100,
       format: 'SSS',
+      autoStart: false,
       millisecond: true,
     },
   });
 
   const prevSnapShot = wrapper.html();
+
+  wrapper.vm.start();
   await later(50);
   wrapper.vm.reset();
+  await nextTick();
   const laterShapShot = wrapper.html();
 
-  expect(prevSnapShot === laterShapShot).toBeTruthy();
+  expect(prevSnapShot).toEqual(laterShapShot);
 });
 
-test('complete format prop', () => {
+test('should format complete time correctly', () => {
   const wrapper = mount(CountDown, {
     props: {
       time: 30 * 60 * 60 * 1000 - 1,
@@ -138,31 +140,7 @@ test('complete format prop', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('milliseconds format SS', () => {
-  const wrapper = mount(CountDown, {
-    props: {
-      time: 1500,
-      autoStart: false,
-      format: 'ss-SS',
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('milliseconds format S', () => {
-  const wrapper = mount(CountDown, {
-    props: {
-      time: 1500,
-      autoStart: false,
-      format: 'ss-S',
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('incomplate format prop', () => {
+test('should format incomplete time correctly', () => {
   const wrapper = mount(CountDown, {
     props: {
       time: 30 * 60 * 60 * 1000 - 1,
@@ -174,14 +152,31 @@ test('incomplate format prop', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('pause when unmounted', () => {
-  const wrapper = mount(CountDown);
-  expect(wrapper.vm.counting).toBeTruthy();
-  wrapper.unmount();
-  expect(wrapper.vm.counting).toBeFalsy();
+test('should format SS milliseconds correctly', () => {
+  const wrapper = mount(CountDown, {
+    props: {
+      time: 1500,
+      autoStart: false,
+      format: 'ss-SS',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('pause when deactivated', async () => {
+test('should format S milliseconds correctly', () => {
+  const wrapper = mount(CountDown, {
+    props: {
+      time: 1500,
+      autoStart: false,
+      format: 'ss-S',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should pause counting when deactivated', async () => {
   const wrapper = mount({
     template: `
       <keep-alive>
@@ -193,28 +188,18 @@ test('pause when deactivated', async () => {
         render: true,
       };
     },
-    methods: {
-      getCountDown() {
-        return this.$refs.countDown;
-      },
-    },
   });
 
-  const countDown = wrapper.vm.getCountDown();
-  expect(countDown.counting).toBeTruthy();
+  const prevSnapShot = wrapper.html();
+  await wrapper.setData({ render: false });
+  await later(50);
 
-  wrapper.setData({ render: false });
-  expect(countDown.counting).toBeFalsy();
-  wrapper.setData({ render: true });
-  expect(countDown.counting).toBeTruthy();
-
-  countDown.pause();
-  wrapper.setData({ render: false });
-  wrapper.setData({ render: true });
-  expect(countDown.counting).toBeFalsy();
+  await wrapper.setData({ render: true });
+  const laterShapShot = wrapper.html();
+  expect(prevSnapShot).toEqual(laterShapShot);
 });
 
-test('change event', async () => {
+test('should emit change event when counting', async () => {
   const wrapper = mount(CountDown, {
     props: {
       time: 1,
@@ -229,5 +214,6 @@ test('change event', async () => {
     milliseconds: 0,
     minutes: 0,
     seconds: 0,
+    total: 0,
   });
 });
