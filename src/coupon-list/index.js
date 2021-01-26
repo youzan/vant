@@ -15,7 +15,7 @@ import Button from '../button';
 import Coupon from '../coupon';
 
 const [createComponent, bem, t] = createNamespace('coupon-list');
-const EMPTY_IMAGE = 'https://img.yzcdn.cn/vant/coupon-empty.png';
+const EMPTY_IMAGE = 'https://img01.yzcdn.cn/vant/coupon-empty.png';
 
 export default createComponent({
   props: {
