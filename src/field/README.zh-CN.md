@@ -79,8 +79,8 @@ export default {
 
 ```html
 <van-cell-group>
-  <van-field label="文本" value="输入框只读" readonly />
-  <van-field label="文本" value="输入框已禁用" disabled />
+  <van-field label="文本" model-value="输入框只读" readonly />
+  <van-field label="文本" model-value="输入框已禁用" disabled />
 </van-cell-group>
 ```
 

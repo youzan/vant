@@ -67,8 +67,8 @@ export default {
 
 ```html
 <van-cell-group>
-  <van-field label="Text" value="Input Readonly" readonly />
-  <van-field label="Text" value="Input Disabled" disabled />
+  <van-field label="Text" model-value="Input Readonly" readonly />
+  <van-field label="Text" model-value="Input Disabled" disabled />
 </van-cell-group>
 ```
 
