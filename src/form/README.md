@@ -263,7 +263,7 @@ export default {
 export default {
   data() {
     return {
-      uploader: [{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }],
+      uploader: [{ url: 'https://img01.yzcdn.cn/vant/leaf.jpg' }],
     };
   },
 };

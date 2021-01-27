@@ -71,19 +71,19 @@ export default {
   <template #pulling="props">
     <img
       class="doge"
-      src="https://img.yzcdn.cn/vant/doge.png"
+      src="https://img01.yzcdn.cn/vant/doge.png"
       :style="{ transform: `scale(${props.distance / 80})` }"
     />
   </template>
 
   <!-- 释放提示 -->
   <template #loosing>
-    <img class="doge" src="https://img.yzcdn.cn/vant/doge.png" />
+    <img class="doge" src="https://img01.yzcdn.cn/vant/doge.png" />
   </template>
 
   <!-- 加载提示 -->
   <template #loading>
-    <img class="doge" src="https://img.yzcdn.cn/vant/doge-fire.jpg" />
+    <img class="doge" src="https://img01.yzcdn.cn/vant/doge-fire.jpg" />
   </template>
   <p>刷新次数: {{ count }}</p>
 </van-pull-refresh>

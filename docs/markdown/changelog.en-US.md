@@ -1310,7 +1310,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 - add Calendar component
 
-![](https://img.yzcdn.cn/vant/calendar-12282.png)
+![](https://img01.yzcdn.cn/vant/calendar-12282.png)
 
 **Feature**
 
@@ -2140,7 +2140,7 @@ Upgrading the style of business components:
 - `IndexBar`、`IndexAnchor` Component
 - `DropdownMenu`、`DropdownItem` Component
 
-![](https://img.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png)
+![](https://img01.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png)
 
 #### Breaking Changes
 

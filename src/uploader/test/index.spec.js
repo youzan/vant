@@ -9,8 +9,8 @@ const mockFileDataUrl = 'data:image/test';
 const mockFile = new File([], 'test.jpg');
 const file = { target: { files: [mockFile] } };
 const multiFile = { target: { files: [mockFile, mockFile] } };
-const IMAGE = 'https://img.yzcdn.cn/vant/cat.jpeg';
-const PDF = 'https://img.yzcdn.cn/vant/test.pdf';
+const IMAGE = 'https://img01.yzcdn.cn/vant/cat.jpeg';
+const PDF = 'https://img01.yzcdn.cn/vant/test.pdf';
 
 window.FileReader = function () {
   this.readAsText = function () {
@@ -203,8 +203,8 @@ test('render preview image', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [
-        { url: 'https://img.yzcdn.cn/vant/cat.jpeg' },
-        { url: 'https://img.yzcdn.cn/vant/test.pdf' },
+        { url: 'https://img01.yzcdn.cn/vant/cat.jpeg' },
+        { url: 'https://img01.yzcdn.cn/vant/test.pdf' },
         { file: { name: 'test.pdf' } },
       ],
     },
@@ -225,7 +225,7 @@ test('image-fit prop', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       imageFit: 'contain',
-      fileList: [{ url: 'https://img.yzcdn.cn/vant/cat.jpeg' }],
+      fileList: [{ url: 'https://img01.yzcdn.cn/vant/cat.jpeg' }],
     },
   });
 

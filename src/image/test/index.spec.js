@@ -12,7 +12,7 @@ test('click event', () => {
 test('load event', () => {
   const wrapper = mount(VanImage, {
     propsData: {
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+      src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
     },
   });
 
@@ -28,7 +28,7 @@ test('load event', () => {
 test('error event', () => {
   const wrapper = mount(VanImage, {
     propsData: {
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+      src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
     },
   });
 
@@ -40,7 +40,7 @@ test('error event', () => {
 test('lazy load', () => {
   const wrapper = mount(VanImage, {
     propsData: {
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+      src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
       lazyLoad: true,
     },
   });
@@ -52,7 +52,7 @@ test('lazy-load load event', (done) => {
   const wrapper = mount(VanImage, {
     propsData: {
       lazyLoad: true,
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+      src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
     },
     mocks: {
       $Lazyload: {
@@ -115,7 +115,7 @@ test('show-error prop', () => {
   const wrapper = mount(VanImage, {
     propsData: {
       showError: false,
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+      src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
     },
   });
 
@@ -128,7 +128,7 @@ test('error-icon prop', () => {
   const wrapper = mount(VanImage, {
     propsData: {
       errorIcon: 'error',
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+      src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
     },
   });
 
@@ -152,7 +152,7 @@ test('apply icon-prefix prop to error-icon', () => {
     propsData: {
       errorIcon: 'error',
       iconPrefix: 'my-icon',
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+      src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
     },
   });
 
@@ -176,7 +176,7 @@ test('radius prop', () => {
   const wrapper = mount(VanImage, {
     propsData: {
       radius: 3,
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+      src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
     },
   });
 
@@ -186,7 +186,7 @@ test('radius prop', () => {
 test('default slot', () => {
   const wrapper = mount(VanImage, {
     propsData: {
-      src: 'https://img.yzcdn.cn/vant/cat.jpeg',
+      src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
     },
     scopedSlots: {
       default: () => 'Custom Default',

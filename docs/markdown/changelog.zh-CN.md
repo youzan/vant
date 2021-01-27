@@ -174,7 +174,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 新增 [Badge 徽标](#/zh-CN/badge)组件 [#7602](https://github.com/youzan/vant/issues/7602)
 - 新增 [Popover 气泡弹出框](#/zh-CN/popover)组件 [#7579](https://github.com/youzan/vant/issues/7579)
 
-![](https://img.yzcdn.cn/vant/component-preview-1122.png)
+![](https://img01.yzcdn.cn/vant/component-preview-1122.png)
 
 **Feature**
 
@@ -907,7 +907,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 新增 ShareSheet 分享面板组件，用于进行分享操作 [#6019](https://github.com/youzan/vant/issues/6019)
 - 新增 Empty 空状态组件，作为空状态时的占位提示 [#6010](https://github.com/youzan/vant/issues/6010)
 
-<img src="https://img.yzcdn.cn/vant/component-preview-2.6.png" style="width: 540px;">
+<img src="https://img01.yzcdn.cn/vant/component-preview-2.6.png" style="width: 540px;">
 
 **Feature**
 
@@ -1320,7 +1320,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 - 新增 Calendar 日历组件
 
-![](https://img.yzcdn.cn/vant/calendar-12282.png)
+![](https://img01.yzcdn.cn/vant/calendar-12282.png)
 
 **Feature**
 
@@ -2161,7 +2161,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - <b>Skeleton 骨架屏</b>，在待加载区域展示的占位区块，提供界面加载过程中的过渡效果
 - <b>DropdownMenu 下拉菜单</b>，用于列表的分类选择、筛选及排序
 
-![](https://img.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png)
+![](https://img01.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png)
 
 #### 新文档
 
@@ -2169,13 +2169,13 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 此外，文档站点也支持了<b>搜索</b>和<b>版本切换</b>。
 
-![](https://img.yzcdn.cn/public_files/2019/06/10/63b666fa52493402c87db6146a715341.png)
+![](https://img01.yzcdn.cn/public_files/2019/06/10/63b666fa52493402c87db6146a715341.png)
 
 #### 样式定制
 
 移动端 UI 风格多变，对组件的可定制性要求较高。从 2.0 版本开始，Vant 中的所有组件都支持通过 <b>Less 变量</b>进行样式定制。同时我们新增了较多样式相关的 Props，便于快速定制组件风格。
 
-![](https://img.yzcdn.cn/public_files/2019/06/11/9a066c1a212264c7ae56065e1f13d317.png)
+![](https://img01.yzcdn.cn/public_files/2019/06/11/9a066c1a212264c7ae56065e1f13d317.png)
 
 #### 更轻量
 
@@ -2436,4 +2436,4 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 对于 Vant v1 版本，后续会进入维护期，跟进问题修复，但不再引入功能性改动。
 
-![](https://img.yzcdn.cn/public_files/2019/06/11/4e7202acbfc399622e428eb1485e1591.png)
+![](https://img01.yzcdn.cn/public_files/2019/06/11/4e7202acbfc399622e428eb1485e1591.png)

@@ -32,9 +32,9 @@ function triggerZoom(el, x, y, direction = 'in') {
 }
 
 const images = [
-  'https://img.yzcdn.cn/1.png',
-  'https://img.yzcdn.cn/2.png',
-  'https://img.yzcdn.cn/3.png',
+  'https://img01.yzcdn.cn/1.png',
+  'https://img01.yzcdn.cn/2.png',
+  'https://img01.yzcdn.cn/3.png',
 ];
 
 test('render image', async () => {
@@ -177,7 +177,7 @@ test('onClose option', () => {
   expect(onClose).toHaveBeenCalledTimes(1);
   expect(onClose).toHaveBeenCalledWith({
     index: 0,
-    url: 'https://img.yzcdn.cn/1.png',
+    url: 'https://img01.yzcdn.cn/1.png',
   });
 });
 
