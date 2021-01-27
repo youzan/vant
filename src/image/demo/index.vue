@@ -85,7 +85,7 @@ export default {
 
   data() {
     return {
-      image: 'https://img.yzcdn.cn/vant/cat.jpeg',
+      image: 'https://img01.yzcdn.cn/vant/cat.jpeg',
       fits: ['contain', 'cover', 'fill', 'none', 'scale-down'],
     };
   },

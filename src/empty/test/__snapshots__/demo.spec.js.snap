@@ -36,7 +36,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="custom-image van-empty">
-      <div class="van-empty__image"><img src="https://img.yzcdn.cn/vant/custom-empty-image.png"></div>
+      <div class="van-empty__image"><img src="https://img01.yzcdn.cn/vant/custom-empty-image.png"></div>
       <p class="van-empty__description">描述文字</p>
     </div>
   </div>

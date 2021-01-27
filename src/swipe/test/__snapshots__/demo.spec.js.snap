@@ -16,10 +16,10 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-swipe">
       <div class="van-swipe__track" style="transition-duration: 0ms; transform: translateX(0px); width: 400px;">
-        <div class="van-swipe-item" style="width: 100px;"><img data-src="https://img.yzcdn.cn/vant/apple-1.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
-        <div class="van-swipe-item" style="width: 100px;"><img data-src="https://img.yzcdn.cn/vant/apple-2.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
-        <div class="van-swipe-item" style="width: 100px;"><img data-src="https://img.yzcdn.cn/vant/apple-3.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
-        <div class="van-swipe-item" style="width: 100px;"><img data-src="https://img.yzcdn.cn/vant/apple-4.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
+        <div class="van-swipe-item" style="width: 100px;"><img data-src="https://img01.yzcdn.cn/vant/apple-1.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
+        <div class="van-swipe-item" style="width: 100px;"><img data-src="https://img01.yzcdn.cn/vant/apple-2.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
+        <div class="van-swipe-item" style="width: 100px;"><img data-src="https://img01.yzcdn.cn/vant/apple-3.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
+        <div class="van-swipe-item" style="width: 100px;"><img data-src="https://img01.yzcdn.cn/vant/apple-4.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading"></div>
       </div>
       <div class="van-swipe__indicators"><i class="van-swipe__indicator van-swipe__indicator--active"></i><i class="van-swipe__indicator"></i><i class="van-swipe__indicator"></i><i class="van-swipe__indicator"></i></div>
     </div>

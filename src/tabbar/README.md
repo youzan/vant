@@ -88,8 +88,8 @@ export default {
     return {
       active: 0,
       icon: {
-        active: 'https://img.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+        active: 'https://img01.yzcdn.cn/vant/user-active.png',
+        inactive: 'https://img01.yzcdn.cn/vant/user-inactive.png',
       },
     };
   },

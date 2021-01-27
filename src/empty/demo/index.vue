@@ -21,7 +21,7 @@
     <demo-block :title="t('customImage')">
       <van-empty
         class="custom-image"
-        image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+        image="https://img01.yzcdn.cn/vant/custom-empty-image.png"
         :description="t('description')"
       />
     </demo-block>
