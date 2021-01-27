@@ -35,7 +35,7 @@
             <van-tag plain type="danger" style="margin-right: 5px">
               标签
             </van-tag>
-            <van-tag plain type="danger"> 标签 </van-tag>
+            <van-tag plain type="danger">标签</van-tag>
           </div>
         </template>
 
