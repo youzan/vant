@@ -44,7 +44,7 @@ Toast({
 
 Toast({
   message: 'Custom Image',
-  icon: 'https://img.yzcdn.cn/vant/logo.png',
+  icon: 'https://img01.yzcdn.cn/vant/logo.png',
 });
 
 Toast.loading({

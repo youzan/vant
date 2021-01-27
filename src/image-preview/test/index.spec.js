@@ -4,9 +4,9 @@ import { later } from '../../../test';
 import { trigger } from '../../utils';
 
 const images = [
-  'https://img.yzcdn.cn/1.png',
-  'https://img.yzcdn.cn/2.png',
-  'https://img.yzcdn.cn/3.png',
+  'https://img01.yzcdn.cn/1.png',
+  'https://img01.yzcdn.cn/2.png',
+  'https://img01.yzcdn.cn/3.png',
 ];
 
 test('should swipe to currect index after calling the swipeTo method', async () => {

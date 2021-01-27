@@ -106,7 +106,7 @@ If you need to render vue components within a dialog, you can use dialog compone
 
 ```html
 <van-dialog v-model:show="show" title="Title" show-cancel-button>
-  <img src="https://img.yzcdn.cn/vant/apple-3.jpg" />
+  <img src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
 </van-dialog>
 ```
 
