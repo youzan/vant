@@ -92,10 +92,10 @@ export default {
     const t = useTranslate(i18n);
     const current = ref(0);
     const images = [
-      'https://img.yzcdn.cn/vant/apple-1.jpg',
-      'https://img.yzcdn.cn/vant/apple-2.jpg',
-      'https://img.yzcdn.cn/vant/apple-3.jpg',
-      'https://img.yzcdn.cn/vant/apple-4.jpg',
+      'https://img01.yzcdn.cn/vant/apple-1.jpg',
+      'https://img01.yzcdn.cn/vant/apple-2.jpg',
+      'https://img01.yzcdn.cn/vant/apple-3.jpg',
+      'https://img01.yzcdn.cn/vant/apple-4.jpg',
     ];
 
     const onChange1 = (index) => Toast(t('message') + index);

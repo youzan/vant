@@ -44,7 +44,7 @@ import { ref } from 'vue';
 export default {
   setup() {
     const fileList = ref([
-      { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+      { url: 'https://img01.yzcdn.cn/vant/leaf.jpg' },
       { url: 'https://cloud-image', isImage: true },
     ]);
 
@@ -68,12 +68,12 @@ export default {
   setup() {
     const fileList = ref([
       {
-        url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        url: 'https://img01.yzcdn.cn/vant/leaf.jpg',
         status: 'uploading',
         message: 'Uploading...',
       },
       {
-        url: 'https://img.yzcdn.cn/vant/tree.jpg',
+        url: 'https://img01.yzcdn.cn/vant/tree.jpg',
         status: 'failed',
         message: 'Failed',
       },
@@ -236,16 +236,16 @@ import { Toast } from 'vant';
 export default {
   setup() {
     const fileList = ref([
-      { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+      { url: 'https://img01.yzcdn.cn/vant/leaf.jpg' },
       {
-        url: 'https://img.yzcdn.cn/vant/sand.jpg',
+        url: 'https://img01.yzcdn.cn/vant/sand.jpg',
         deletable: true,
         beforeDelete: () => {
           Toast('Customize the events and styles of a single preview image');
         },
       },
       {
-        url: 'https://img.yzcdn.cn/vant/tree.jpg',
+        url: 'https://img01.yzcdn.cn/vant/tree.jpg',
         deletable: true,
         imageFit: 'contain',
         previewSize: 120,

@@ -15,7 +15,11 @@ app.use(VanImage);
 ### Basic Usage
 
 ```html
-<van-image width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+<van-image
+  width="100"
+  height="100"
+  src="https://img01.yzcdn.cn/vant/cat.jpeg"
+/>
 ```
 
 ### Fit Mode
@@ -25,7 +29,7 @@ app.use(VanImage);
   width="10rem"
   height="10rem"
   fit="contain"
-  src="https://img.yzcdn.cn/vant/cat.jpeg"
+  src="https://img01.yzcdn.cn/vant/cat.jpeg"
 />
 ```
 
@@ -38,7 +42,7 @@ Show round image, it may not works at `fit=contain` and `fit=scale-down`.
   round
   width="10rem"
   height="10rem"
-  src="https://img.yzcdn.cn/vant/cat.jpeg"
+  src="https://img01.yzcdn.cn/vant/cat.jpeg"
 />
 ```
 
@@ -49,7 +53,7 @@ Show round image, it may not works at `fit=contain` and `fit=scale-down`.
   width="100"
   height="100"
   lazy-load
-  src="https://img.yzcdn.cn/vant/cat.jpeg"
+  src="https://img01.yzcdn.cn/vant/cat.jpeg"
 />
 ```
 

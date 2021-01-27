@@ -41,7 +41,7 @@
     <van-button
       plain
       type="primary"
-      icon="https://img.yzcdn.cn/vant/user-active.png"
+      icon="https://img01.yzcdn.cn/vant/user-active.png"
       :text="t('button')"
     />
   </demo-block>

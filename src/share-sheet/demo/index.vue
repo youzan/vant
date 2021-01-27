@@ -118,15 +118,15 @@ export default {
     const customIconOptions = computed(() => [
       {
         name: t('name'),
-        icon: 'https://img.yzcdn.cn/vant/custom-icon-fire.png',
+        icon: 'https://img01.yzcdn.cn/vant/custom-icon-fire.png',
       },
       {
         name: t('name'),
-        icon: 'https://img.yzcdn.cn/vant/custom-icon-light.png',
+        icon: 'https://img01.yzcdn.cn/vant/custom-icon-light.png',
       },
       {
         name: t('name'),
-        icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png',
+        icon: 'https://img01.yzcdn.cn/vant/custom-icon-water.png',
       },
     ]);
 

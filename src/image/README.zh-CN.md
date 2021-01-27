@@ -21,7 +21,11 @@ app.use(VanImage);
 基础用法与原生 `img` 标签一致，可以设置 `src`、`width`、`height`、`alt` 等原生属性。
 
 ```html
-<van-image width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+<van-image
+  width="100"
+  height="100"
+  src="https://img01.yzcdn.cn/vant/cat.jpeg"
+/>
 ```
 
 ### 填充模式
@@ -33,7 +37,7 @@ app.use(VanImage);
   width="10rem"
   height="10rem"
   fit="contain"
-  src="https://img.yzcdn.cn/vant/cat.jpeg"
+  src="https://img01.yzcdn.cn/vant/cat.jpeg"
 />
 ```
 
@@ -46,7 +50,7 @@ app.use(VanImage);
   round
   width="10rem"
   height="10rem"
-  src="https://img.yzcdn.cn/vant/cat.jpeg"
+  src="https://img01.yzcdn.cn/vant/cat.jpeg"
 />
 ```
 
@@ -59,7 +63,7 @@ app.use(VanImage);
   width="100"
   height="100"
   lazy-load
-  src="https://img.yzcdn.cn/vant/cat.jpeg"
+  src="https://img01.yzcdn.cn/vant/cat.jpeg"
 />
 ```
 
@@ -76,7 +80,7 @@ app.use(Lazyload);
 `Image` 组件提供了默认的加载中提示，支持通过 `loading` 插槽自定义内容。
 
 ```html
-<van-image src="https://img.yzcdn.cn/vant/cat.jpeg">
+<van-image src="https://img01.yzcdn.cn/vant/cat.jpeg">
   <template v-slot:loading>
     <van-loading type="spinner" size="20" />
   </template>
@@ -88,7 +92,7 @@ app.use(Lazyload);
 `Image` 组件提供了默认的加载失败提示，支持通过 `error` 插槽自定义内容。
 
 ```html
-<van-image src="https://img.yzcdn.cn/vant/cat.jpeg">
+<van-image src="https://img01.yzcdn.cn/vant/cat.jpeg">
   <template v-slot:error>加载失败</template>
 </van-image>
 ```

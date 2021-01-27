@@ -11,7 +11,7 @@ ImagePreview 是一个函数，调用函数后会直接在页面中展示图片�
 ```js
 import { ImagePreview } from 'vant';
 
-ImagePreview(['https://img.yzcdn.cn/vant/apple-1.jpg']);
+ImagePreview(['https://img01.yzcdn.cn/vant/apple-1.jpg']);
 ```
 
 ### 组件调用
@@ -42,8 +42,8 @@ export default {
 
 ```js
 ImagePreview([
-  'https://img.yzcdn.cn/vant/apple-1.jpg',
-  'https://img.yzcdn.cn/vant/apple-2.jpg',
+  'https://img01.yzcdn.cn/vant/apple-1.jpg',
+  'https://img01.yzcdn.cn/vant/apple-2.jpg',
 ]);
 ```
 
@@ -54,8 +54,8 @@ ImagePreview 支持传入配置对象，并通过 `startPosition` 选项指定�
 ```js
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   startPosition: 1,
 });
@@ -68,8 +68,8 @@ ImagePreview({
 ```js
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   closeable: true,
 });
@@ -84,8 +84,8 @@ import { Toast } from 'vant';
 
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   onClose() {
     Toast('关闭');
@@ -100,8 +100,8 @@ ImagePreview({
 ```js
 const instance = ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   beforeClose: () => false,
 });
@@ -142,8 +142,8 @@ export default {
     return {
       state,
       images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
+        'https://img01.yzcdn.cn/vant/apple-1.jpg',
+        'https://img01.yzcdn.cn/vant/apple-2.jpg',
       ],
       onChange,
     };

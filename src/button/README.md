@@ -63,7 +63,7 @@ app.use(Button);
 ```html
 <van-button icon="plus" type="primary" />
 <van-button icon="plus" type="primary">Button</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="primary">
+<van-button icon="https://img01.yzcdn.cn/vant/user-active.png" type="primary">
   Button
 </van-button>
 ```

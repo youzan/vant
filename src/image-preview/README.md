@@ -16,8 +16,8 @@ app.use(ImagePreview);
 
 ```js
 ImagePreview([
-  'https://img.yzcdn.cn/vant/apple-1.jpg',
-  'https://img.yzcdn.cn/vant/apple-2.jpg',
+  'https://img01.yzcdn.cn/vant/apple-1.jpg',
+  'https://img01.yzcdn.cn/vant/apple-2.jpg',
 ]);
 ```
 
@@ -26,8 +26,8 @@ ImagePreview([
 ```js
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   startPosition: 1,
 });
@@ -40,8 +40,8 @@ After setting the `closeable` attribute, the close icon will be displayed in the
 ```js
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   closeable: true,
 });
@@ -54,8 +54,8 @@ import { Toast } from 'vant';
 
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   onClose() {
     Toast('closed');
@@ -68,8 +68,8 @@ ImagePreview({
 ```js
 const instance = ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   beforeClose: () => false,
 });
@@ -107,8 +107,8 @@ export default {
     return {
       state,
       images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
+        'https://img01.yzcdn.cn/vant/apple-1.jpg',
+        'https://img01.yzcdn.cn/vant/apple-2.jpg',
       ],
       onChange,
     };
