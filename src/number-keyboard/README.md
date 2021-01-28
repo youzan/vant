@@ -173,6 +173,7 @@ export default {
 | delete-button-text | Delete button text | _string_ | Delete Icon |
 | close-button-loading | Whether to show loading close button in custom theme | _boolean_ | `false` |
 | show-delete-key | Whether to show delete button | _boolean_ | `true` |
+| blur-on-close `v3.0.6` | Whether to emit blur event when clicking close button | _boolean_ | `true` |
 | hide-on-click-outside | Whether to hide keyboard when outside is clicked | _boolean_ | `true` |
 | teleport | Return the mount node for NumberKeyboard | _string \| Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
