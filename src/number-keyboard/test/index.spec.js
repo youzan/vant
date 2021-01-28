@@ -39,10 +39,13 @@ test('should should emit blur event when hidden', () => {
 test('should emit close event after clicking close button', () => {
   const wrapper = mount(NumberKeyboard, {
     props: {
+      show: true,
       theme: 'custom',
     },
   });
+
   clickKey(wrapper.findAll('.van-key')[12]);
+  expect(wrapper.emitted('blur')).toBeTruthy();
   expect(wrapper.emitted('close')).toBeTruthy();
 });
 
@@ -229,4 +232,17 @@ test('should shuffle key order when using random-key-order prop', () => {
   }
 
   expect(keys.every((v, k) => keys[k] === clickKeys[k])).toEqual(false);
+});
+
+test('should not emit close event after clicking close button when blur-on-close is false', () => {
+  const wrapper = mount(NumberKeyboard, {
+    props: {
+      show: true,
+      theme: 'custom',
+      blurOnClose: false,
+    },
+  });
+
+  clickKey(wrapper.findAll('.van-key')[12]);
+  expect(wrapper.emitted('blur')).toBeFalsy();
 });

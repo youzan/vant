@@ -35,6 +35,10 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    blurOnClose: {
+      type: Boolean,
+      default: true,
+    },
     showDeleteKey: {
       type: Boolean,
       default: true,
@@ -118,7 +122,10 @@ export default createComponent({
 
     const onClose = () => {
       emit('close');
-      onBlur();
+
+      if (props.blurOnClose) {
+        onBlur();
+      }
     };
 
     const onAnimationEnd = () => {
