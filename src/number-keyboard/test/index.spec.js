@@ -39,10 +39,13 @@ test('should should emit blur event when hidden', () => {
 test('should emit close event after clicking close button', () => {
   const wrapper = mount(NumberKeyboard, {
     props: {
+      show: true,
       theme: 'custom',
     },
   });
+
   clickKey(wrapper.findAll('.van-key')[12]);
+  expect(wrapper.emitted('blur')).toBeTruthy();
   expect(wrapper.emitted('close')).toBeTruthy();
 });
 
