@@ -63,11 +63,11 @@ export default {
 ### Validate Rules
 
 ```html
-<van-form validate-first @failed="onFailed">
+<van-form @failed="onFailed">
   <van-field
     v-model="state.value1"
     name="pattern"
-    placeholder="USe pattern"
+    placeholder="Use pattern"
     :rules="[{ pattern, message: 'Error message' }]"
   />
   <van-field
@@ -78,6 +78,12 @@ export default {
   />
   <van-field
     v-model="state.value3"
+    name="validatorMessage"
+    placeholder="Use validator to return message"
+    :rules="[{ validator: validatorMessage }]"
+  />
+  <van-field
+    v-model="state.value4"
     name="asyncValidator"
     placeholder="Use async validator"
     :rules="[{ validator: asyncValidator, message: 'Error message' }]"
@@ -105,6 +111,8 @@ export default {
 
     const validator = (val) => /1\d{10}/.test(val);
 
+    const validatorMessage = (val) => `${val} is invalid`;
+
     const asyncValidator = (val) =>
       new Promise((resolve) => {
         Toast.loading('Validating...');
@@ -125,6 +133,7 @@ export default {
       onFailed,
       validator,
       asyncValidator,
+      validatorMessage,
     };
   },
 };
@@ -491,7 +500,7 @@ export default {
 | --- | --- | --- |
 | required | Whether to be a required field | _boolean_ |
 | message | Error message | _string \| (value, rule) => string_ |
-| validator | Custom validator | _(value, rule) => boolean \| Promise_ |
+| validator | Custom validator | _(value, rule) => boolean \| string \| Promise_ |
 | pattern | Regex pattern | _RegExp_ |
 | trigger | When to validate the form，can be set to `onChange`、`onBlur` | _string_ |
 | formatter | Format value before validate | _(value, rule) => any_ |
