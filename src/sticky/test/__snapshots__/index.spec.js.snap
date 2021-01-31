@@ -36,7 +36,7 @@ exports[`should sticky inside container bottom when using container prop 1`] = `
   </div>
   <div style="height: 44px; width: 88px;">
     <div class="van-sticky van-sticky--fixed"
-         style="height: 44px; width: 88px; bottom: 0px;"
+         style="width: 88px; height: 44px; bottom: 0px;"
     >
       Content
     </div>
@@ -50,7 +50,7 @@ exports[`should sticky inside container bottom when using container prop 2`] = `
   </div>
   <div style="height: 44px; width: 88px;">
     <div class="van-sticky van-sticky--fixed"
-         style="height: 44px; width: 88px; bottom: 0px; transform: translate3d(0, 24px, 0);"
+         style="width: 88px; height: 44px; bottom: 0px; transform: translate3d(0, 24px, 0);"
     >
       Content
     </div>
@@ -62,7 +62,7 @@ exports[`should sticky inside container when using container prop 1`] = `
 <div style="height: 150px;">
   <div style="height: 44px; width: 88px;">
     <div class="van-sticky van-sticky--fixed"
-         style="height: 44px; width: 88px; top: 0px;"
+         style="width: 88px; height: 44px; top: 0px;"
     >
       Content
     </div>
@@ -74,7 +74,7 @@ exports[`should sticky inside container when using container prop 2`] = `
 <div style="height: 150px;">
   <div style="height: 44px; width: 88px;">
     <div class="van-sticky van-sticky--fixed"
-         style="height: 44px; width: 88px; top: 0px; transform: translate3d(0, -14px, 0);"
+         style="width: 88px; height: 44px; top: 0px; transform: translate3d(0, -14px, 0);"
     >
       Content
     </div>
@@ -105,7 +105,7 @@ exports[`should sticky to top after scrolling 1`] = `
 exports[`should update z-index when using z-index prop 1`] = `
 <div style="height: 10px;">
   <div class="van-sticky van-sticky--fixed"
-       style="top: 0px; z-index: 0;"
+       style="z-index: 0; top: 0px;"
   >
     Content
   </div>
