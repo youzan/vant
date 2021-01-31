@@ -16,6 +16,27 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.6](https://github.com/youzan/vant/compare/v3.0.5...v3.0.6)
+
+`2021-01-31`
+
+**Feature**
+
+- Area: support more than 6-digit area code [#8001](https://github.com/youzan/vant/issues/8001)
+- Form: adjust show-error default value to false [#8016](https://github.com/youzan/vant/issues/8016)
+- Form: allow validator to return message [#8052](https://github.com/youzan/vant/issues/8052)
+- NumberKeyboard: add blur-on-close prop [#8033](https://github.com/youzan/vant/issues/8033)
+- Popover: add click-overlay event [#8050](https://github.com/youzan/vant/issues/8050)
+- Popover: support config action color [#8049](https://github.com/youzan/vant/issues/8049)
+- Sticky: add position、offset-bottom prop [#7979](https://github.com/youzan/vant/issues/7979)
+
+**Bug Fixes**
+
+- Button: should not submit form when loading [#8018](https://github.com/youzan/vant/issues/8018)
+- Calendar: should expose scrollToDate method [#7983](https://github.com/youzan/vant/issues/7983)
+- Empty: linearGradient id conflict [#8013](https://github.com/youzan/vant/issues/8013)
+- Toast: closeOnClickOverlay not work [#8044](https://github.com/youzan/vant/issues/8044)
+
 ### [v3.0.5](https://github.com/youzan/vant/compare/v3.0.4...v3.0.5)
 
 `2021-01-24`

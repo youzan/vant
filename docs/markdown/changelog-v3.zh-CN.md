@@ -16,6 +16,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.6](https://github.com/youzan/vant/compare/v3.0.5...v3.0.6)
+
+`2021-01-31`
+
+**Feature**
+
+- Area: 支持超过 6 位的地区码 [#8001](https://github.com/youzan/vant/issues/8001)
+- Form: show-error 属性的默认值调整为 false [#8016](https://github.com/youzan/vant/issues/8016)
+- Form: 支持在 validator 中返回错误提示 [#8052](https://github.com/youzan/vant/issues/8052)
+- NumberKeyboard: 新增 blur-on-close 属性 [#8033](https://github.com/youzan/vant/issues/8033)
+- Popover: 新增 click-overlay 事件 [#8050](https://github.com/youzan/vant/issues/8050)
+- Popover: 支持在 action 选项对象中配置 color 字段 [#8049](https://github.com/youzan/vant/issues/8049)
+- Sticky: 新增 position、offset-bottom 属性 [#7979](https://github.com/youzan/vant/issues/7979)
+
+**Bug Fixes**
+
+- Button: 修复加载状态下会触发表单提交的问题 [#8018](https://github.com/youzan/vant/issues/8018)
+- Calendar: 修复无法使用 scrollToDate 方法的问题 [#7983](https://github.com/youzan/vant/issues/7983)
+- Empty: 修复 linearGradient id 可能导致冲突的问题 [#8013](https://github.com/youzan/vant/issues/8013)
+- Toast: 修复 closeOnClickOverlay 设置为 true 不生效的问题 [#8044](https://github.com/youzan/vant/issues/8044)
+
 ### [v3.0.5](https://github.com/youzan/vant/compare/v3.0.4...v3.0.5)
 
 `2021-01-24`
