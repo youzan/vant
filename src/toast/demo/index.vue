@@ -79,7 +79,7 @@ export default {
 
     const showLoadingToast = (loadingType) => {
       Toast.loading({
-        forbidClick: true,
+        overlay: true,
         message: t('loading'),
         loadingType,
       });
