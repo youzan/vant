@@ -4,7 +4,6 @@
       v-model:show="show.lightTheme"
       :actions="t('actions')"
       placement="bottom-start"
-      class="foo"
       @select="onSelect"
     >
       <template #reference>

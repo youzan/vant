@@ -148,3 +148,18 @@ test('should close popover when touch outside content', async () => {
   trigger(document.body, 'touchstart');
   expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
 });
+
+test('should emit click-overlay event when overlay is clicked', () => {
+  const onClickOverlay = jest.fn();
+  const wrapper = mount(Popover, {
+    props: {
+      show: true,
+      overlay: true,
+      teleport: null,
+      onClickOverlay,
+    },
+  });
+
+  wrapper.find('.van-overlay').trigger('click');
+  expect(onClickOverlay).toHaveBeenCalledTimes(1);
+});
