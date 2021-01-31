@@ -2,7 +2,7 @@
 
 ### 介绍
 
-Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组件在屏幕范围内时，会按照正常的布局排列，当组件滚出屏幕范围时，始终会固定在屏幕顶部。
+Sticky 组件与 CSS 中 `position: sticky` 属性实现的效果一致，当组件在屏幕范围内时，会按照正常的布局排列，当组件滚出屏幕范围时，始终会固定在屏幕顶部。
 
 ### 引入
 
@@ -50,7 +50,7 @@ app.use(Sticky);
 
 ### 吸底距离
 
-通过 `offset-bottom` 属性可以设置组件在吸底时与底部的距离。通过 `position` 属性控制吸附位置，默认值为 `top`。
+将 `position` 设置为 `bottom` 可以让组件吸附在底部。通过 `offset-bottom` 属性可以设置组件在吸底时与底部的距离。
 
 ```html
 <van-sticky :offset-bottom="50" position="bottom">
@@ -73,9 +73,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| position `v3.0.6` | 吸附位置，可选值为 `bottom` | _string_ | `top` |
 | offset-top | 吸顶时与顶部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
-| offset-bottom | 吸底时与底部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
-| position | 吸附位置，支持 `top` `bottom` | _string_ | `top` |
+| offset-bottom `v3.0.6` | 吸底时与底部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
 | z-index | 吸顶时的 z-index | _number \| string_ | `99` |
 | container | 容器对应的 HTML 节点 | _Element_ | - |
 
