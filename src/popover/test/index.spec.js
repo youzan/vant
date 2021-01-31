@@ -82,6 +82,20 @@ test('should allow to custom the className of action', () => {
   expect(wrapper.find('.van-popover__action').html()).toMatchSnapshot();
 });
 
+test('should allow to custom the color of action test', () => {
+  const wrapper = mount(Popover, {
+    props: {
+      show: true,
+      teleport: null,
+      actions: [{ text: 'Option', color: 'red' }],
+    },
+  });
+
+  expect(wrapper.find('.van-popover__action').element.style.color).toEqual(
+    'red'
+  );
+});
+
 test('should locate to reference element when showed', async () => {
   const root = document.createElement('div');
   const wrapper = mount(Popover, {

@@ -17,7 +17,7 @@ exports[`should locate to reference element when showed 1`] = `
 
 exports[`should locate to reference element when showed 2`] = `
 <transition-stub>
-  <div style="z-index: 2006; position: absolute; left: 0px; top: 8px; margin: 0px;"
+  <div style="z-index: 2007; position: absolute; left: 0px; top: 8px; margin: 0px;"
        class="van-popup van-popover van-popover--light"
        data-popper-placement="bottom"
   >
@@ -33,7 +33,7 @@ exports[`should locate to reference element when showed 2`] = `
 
 exports[`should locate to reference element when showed 3`] = `
 <transition-stub>
-  <div style="z-index: 2006; display: none;"
+  <div style="z-index: 2007; display: none;"
        class="van-popup van-popover van-popover--light"
   >
     <div class="van-popover__arrow">
@@ -48,7 +48,7 @@ exports[`should locate to reference element when showed 3`] = `
 
 exports[`should watch placement prop and update location 1`] = `
 <transition-stub>
-  <div style="z-index: 2007; position: absolute; left: 0px; top: -8px; margin: 0px;"
+  <div style="z-index: 2008; position: absolute; left: 0px; top: -8px; margin: 0px;"
        class="van-popup van-popover van-popover--light"
        data-popper-placement="top"
   >
