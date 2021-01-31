@@ -227,13 +227,14 @@ export default {
 
 ### Events
 
-| Event  | Description                       | Arguments                       |
-| ------ | --------------------------------- | ------------------------------- |
+| Event | Description | Arguments |
+| --- | --- | --- |
 | select | Emitted when an action is clicked | _action: Action, index: number_ |
-| open   | Emitted when opening Popover      | -                               |
-| close  | Emitted when closing Popover      | -                               |
-| opened | Emitted when Popover is opened    | -                               |
-| closed | Emitted when Popover is closed    | -                               |
+| open | Emitted when opening Popover | - |
+| close | Emitted when closing Popover | - |
+| opened | Emitted when Popover is opened | - |
+| closed | Emitted when Popover is closed | - |
+| click-overlay | Emitted when overlay is clicked | - |
 
 ### Slots
 
