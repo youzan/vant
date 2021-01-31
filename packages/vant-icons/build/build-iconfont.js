@@ -50,7 +50,7 @@ function font() {
 }
 
 function encodeWoff2(done) {
-  const cdnPath = `https://img01.yzcdn.cn/vant/${fontName}.woff2`;
+  const cdnPath = `https://b.yzcdn.cn/vant/${fontName}.woff2`;
   const srcFile = join(srcDir, 'index.less');
   const woff2Base64 = fs.readFileSync(`../src/${fontName}.woff2`, 'base64');
   const woff2DataUrl = `data:font/ttf;base64,${woff2Base64}`;
