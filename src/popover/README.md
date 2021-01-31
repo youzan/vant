@@ -221,6 +221,7 @@ export default {
 | --------- | ----------------------- | --------------------------- |
 | text      | Action Text             | _string_                    |
 | icon      | Icon                    | _string_                    |
+| color     | Action Color            | _string_                    |
 | disabled  | Whether to be disabled  | _boolean_                   |
 | className | className of the option | _string \| Array \| object_ |
 

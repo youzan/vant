@@ -124,11 +124,12 @@ export default createComponent({
     };
 
     const renderAction = (action, index) => {
-      const { icon, text, disabled, className } = action;
+      const { icon, text, color, disabled, className } = action;
       return (
         <div
           role="menuitem"
           class={[bem('action', { disabled, 'with-icon': icon }), className]}
+          style={{ color }}
           onClick={() => onClickAction(action, index)}
         >
           {icon && <Icon name={icon} class={bem('action-icon')} />}
