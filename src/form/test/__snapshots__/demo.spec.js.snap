@@ -91,6 +91,22 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
           <input type="text"
+                 name="validatorMessage"
+                 class="van-field__control"
+                 placeholder="Use validator to return message"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Label
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
                  name="asyncValidator"
                  class="van-field__control"
                  placeholder="Use async validator"
