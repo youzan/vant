@@ -4,7 +4,7 @@ import { computed, CSSProperties, PropType, reactive, ref } from 'vue';
 import { createNamespace, getScrollTop, isHidden, unitToPx } from '../utils';
 
 // Composition
-import { useEventListener, useScrollParent } from '@vant/use';
+import { useRect, useEventListener, useScrollParent } from '@vant/use';
 import { useVisibilityChange } from '../composables/use-visibility-change';
 
 const [createComponent, bem] = createNamespace('sticky');
@@ -37,9 +37,8 @@ export default createComponent({
 
     const state = reactive({
       fixed: false,
-      height: 0, // root 高度
-      width: 0, // root 宽度
-      clientHeight: 0, // documentElement clientHeight
+      width: 0, // root width
+      height: 0, // root height
       transform: 0,
     });
 
@@ -51,20 +50,26 @@ export default createComponent({
         return;
       }
 
-      const top = offsetTop.value ? `${offsetTop.value}px` : 0;
-      const bottom = offsetBottom.value ? `${offsetBottom.value}px` : 0;
-      const transform = state.transform
-        ? `translate3d(0, ${state.transform}px, 0)`
-        : undefined;
-
-      return {
-        height: `${state.height}px`,
+      const style: CSSProperties = {
         width: `${state.width}px`,
-        top: props.position === 'top' ? top : undefined,
-        bottom: props.position === 'bottom' ? bottom : undefined,
-        zIndex: props.zIndex !== undefined ? +props.zIndex : undefined,
-        transform,
+        height: `${state.height}px`,
       };
+
+      if (state.transform) {
+        style.transform = `translate3d(0, ${state.transform}px, 0)`;
+      }
+
+      if (props.zIndex !== undefined) {
+        style.zIndex = +props.zIndex;
+      }
+
+      if (props.position === 'top') {
+        style.top = offsetTop.value ? `${offsetTop.value}px` : 0;
+      } else {
+        style.bottom = offsetBottom.value ? `${offsetBottom.value}px` : 0;
+      }
+
+      return style;
     });
 
     const emitScrollEvent = (scrollTop: number) => {
@@ -80,17 +85,16 @@ export default createComponent({
       }
 
       const { container } = props;
-      const rootRect = root.value.getBoundingClientRect();
+      const rootRect = useRect(root);
       const containerRect = container?.getBoundingClientRect();
-      state.height = rootRect.height;
+
       state.width = rootRect.width;
-      state.clientHeight = document.documentElement.clientHeight;
+      state.height = rootRect.height;
 
       const scrollTop = getScrollTop(window);
 
-      // The sticky component should be kept inside the container element
-
       if (props.position === 'top') {
+        // The sticky component should be kept inside the container element
         if (container) {
           const difference =
             containerRect.bottom - offsetTop.value - state.height;
@@ -101,19 +105,19 @@ export default createComponent({
           state.fixed = offsetTop.value > rootRect.top;
         }
       } else if (props.position === 'bottom') {
+        const { clientHeight } = document.documentElement;
         if (container) {
           const difference =
-            state.clientHeight -
+            clientHeight -
             containerRect.top -
             offsetBottom.value -
             state.height;
           state.fixed =
-            state.clientHeight - offsetBottom.value < rootRect.bottom &&
-            state.clientHeight > containerRect.top;
+            clientHeight - offsetBottom.value < rootRect.bottom &&
+            clientHeight > containerRect.top;
           state.transform = difference < 0 ? -difference : 0;
         } else {
-          state.fixed =
-            state.clientHeight - offsetBottom.value < rootRect.bottom;
+          state.fixed = clientHeight - offsetBottom.value < rootRect.bottom;
         }
       }
       emitScrollEvent(scrollTop);
@@ -125,8 +129,8 @@ export default createComponent({
     return () => {
       const { fixed, height, width } = state;
       const rootStyle: CSSProperties = {
-        height: fixed ? `${height}px` : undefined,
         width: fixed ? `${width}px` : undefined,
+        height: fixed ? `${height}px` : undefined,
       };
 
       return (
