@@ -25,6 +25,7 @@ export default createComponent({
     overlayClass: null,
     overlayStyle: Object,
     closeOnClick: Boolean,
+    closeOnClickOverlay: Boolean,
     type: {
       type: String,
       default: 'text',
@@ -61,6 +62,10 @@ export default createComponent({
 
     const clearTimer = () => {
       clearTimeout(timer);
+    };
+
+    const toggle = (show) => {
+      emit('update:show', show);
     };
 
     const renderIcon = () => {
@@ -119,8 +124,10 @@ export default createComponent({
         transition={props.transition}
         overlayClass={props.overlayClass}
         overlayStyle={props.overlayStyle}
+        closeOnClickOverlay={props.closeOnClickOverlay}
         onClick={onClick}
         onClosed={clearTimer}
+        {...{ 'onUpdate:show': toggle }}
       >
         {renderIcon()}
         {renderMessage()}

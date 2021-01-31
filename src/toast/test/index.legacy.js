@@ -166,23 +166,6 @@ test('should trigger onClose callback after closed', () => {
   Toast.allowMultiple(false);
 });
 
-test('closeOnClick option', async () => {
-  Toast.allowMultiple();
-  const toast = Toast({
-    message: 'toast',
-  });
-
-  await later();
-  toast.$el.click();
-  expect(toast.value).toBeTruthy();
-
-  toast.closeOnClick = true;
-  toast.$el.click();
-  expect(toast.value).toBeFalsy();
-
-  Toast.allowMultiple(false);
-});
-
 test('register component', () => {
   Vue.use(Toast);
   expect(Vue.component(ToastVue.name)).toBeTruthy();
