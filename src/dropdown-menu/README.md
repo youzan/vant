@@ -153,7 +153,7 @@ Use `active-color` prop to custom active color of the title and options.
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| value | Value of current option，can use `v-model` | _number \| string_ | - |
+| v-model | Value of current option | _number \| string_ | - |
 | title | Item title | _string_ | Text of selected option |
 | options | Options | _Option[]_ | `[]` |
 | disabled | Whether to disable dropdown item | _boolean_ | `false` |

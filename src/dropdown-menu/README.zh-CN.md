@@ -161,7 +161,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| value | 当前选中项对应的 value，可以通过`v-model`双向绑定 | _number \| string_ | - |
+| v-model | 当前选中项对应的 value | _number \| string_ | - |
 | title | 菜单项标题 | _string_ | 当前选中项文字 |
 | options | 选项数组 | _Option[]_ | `[]` |
 | disabled | 是否禁用菜单 | _boolean_ | `false` |
