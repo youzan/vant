@@ -6,11 +6,11 @@ test('submit method', async () => {
 
   mountForm({
     template: `
-        <van-form ref="form" @submit="onSubmit">
-          <van-field name="A" value="bar" />
-          <van-button native-type="submit" />
-        </van-form>
-      `,
+      <van-form ref="form" @submit="onSubmit">
+        <van-field name="A" value="bar" />
+        <van-button native-type="submit" />
+      </van-form>
+    `,
     mounted() {
       this.$refs.form.submit();
     },

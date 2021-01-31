@@ -66,10 +66,10 @@ export default {
 
 ### 校验规则
 
-通过 `rules` 定义表单校验规则，可用字段见[下方表格](#/zh-CN/form#rule-shu-ju-jie-gou)。
+通过 `rules` 定义表单校验规则，所有可用字段见[下方表格](#/zh-CN/form#rule-shu-ju-jie-gou)。
 
 ```html
-<van-form validate-first @failed="onFailed">
+<van-form @failed="onFailed">
   <!-- 通过 pattern 进行正则校验 -->
   <van-field
     v-model="state.value1"
@@ -84,17 +84,24 @@ export default {
     placeholder="函数校验"
     :rules="[{ validator, message: '请输入正确内容' }]"
   />
-  <!-- 通过 validator 进行异步函数校验 -->
+  <!-- 通过 validator 返回错误提示 -->
   <van-field
     v-model="state.value3"
+    name="validatorMessage"
+    placeholder="校验函数返回错误提示"
+    :rules="[{ validator: validatorMessage }]"
+  />
+  <!-- 通过 validator 进行异步函数校验 -->
+  <van-field
+    v-model="state.value4"
     name="asyncValidator"
     placeholder="异步函数校验"
     :rules="[{ validator: asyncValidator, message: '请输入正确内容' }]"
   />
   <div style="margin: 16px;">
-    <van-button round block type="primary" native-type="submit"
-      >提交</van-button
-    >
+    <van-button round block type="primary" native-type="submit">
+      提交
+    </van-button>
   </div>
 </van-form>
 ```
@@ -109,13 +116,17 @@ export default {
       value1: '',
       value2: '',
       value3: '',
+      value4: '',
     });
     const pattern = /\d{6}/;
 
     // 校验函数返回 true 表示校验通过，false 表示不通过
     const validator = (val) => /1\d{10}/.test(val);
 
-    // 异步校验函数返回 Promise
+    // 校验函数可以直接返回一段错误提示
+    const validatorMessage = (val) => `${val} 不合法，请重新输入`;
+
+    // 校验函数可以返回 Promise，实现异步校验
     const asyncValidator = (val) =>
       new Promise((resolve) => {
         Toast.loading('验证中...');
@@ -528,7 +539,7 @@ export default {
 | --- | --- | --- |
 | required | 是否为必选字段 | _boolean_ |
 | message | 错误提示文案 | _string \| (value, rule) => string_ |
-| validator | 通过函数进行校验 | _(value, rule) => boolean \| Promise_ |
+| validator | 通过函数进行校验 | _(value, rule) => boolean \| string \| Promise_ |
 | pattern | 通过正则表达式进行校验 | _RegExp_ |
 | trigger | 本项规则的触发时机，可选值为 `onChange`、`onBlur` | _string_ |
 | formatter | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |

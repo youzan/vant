@@ -183,7 +183,10 @@ export default createComponent({
 
             if (rule.validator) {
               return runValidator(value, rule).then((result) => {
-                if (result === false) {
+                if (result && typeof result === 'string') {
+                  state.validateFailed = true;
+                  state.validateMessage = result;
+                } else if (result === false) {
                   state.validateFailed = true;
                   state.validateMessage = getRuleMessage(value, rule);
                 }
