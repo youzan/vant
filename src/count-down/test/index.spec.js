@@ -1,4 +1,4 @@
-import { nextTick } from 'vue';
+import { KeepAlive, nextTick } from 'vue';
 import CountDown from '..';
 import { mount, later } from '../../../test';
 
@@ -178,11 +178,13 @@ test('should format S milliseconds correctly', () => {
 
 test('should pause counting when deactivated', async () => {
   const wrapper = mount({
-    template: `
-      <keep-alive>
-        <van-count-down v-if="render" ref="countDown" time="100" />
-      </keep-alive>
-    `,
+    render() {
+      return (
+        <KeepAlive>
+          {this.render ? <CountDown ref="countDown" time="10000" /> : null}
+        </KeepAlive>
+      );
+    },
     data() {
       return {
         render: true,
