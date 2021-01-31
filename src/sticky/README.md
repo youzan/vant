@@ -38,6 +38,14 @@ app.use(Sticky);
 </div>
 ```
 
+### Offset Bottom
+
+```html
+<van-sticky :offset-bottom="50" position="bottom">
+  <van-button type="primary">Offset Bottom</van-button>
+</van-sticky>
+```
+
 ```js
 export default {
   setup() {
@@ -54,6 +62,8 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | offset-top | Offset top, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `0` |
+| offset-bottom | Offset bottom, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `0` |
+| position | Offset position, supports `top` `bottom` | _string_ | `top` |
 | z-index | z-index when sticky | _number \| string_ | `99` |
 | container | Container DOM | _Element_ | - |
 

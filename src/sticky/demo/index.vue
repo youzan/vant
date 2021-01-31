@@ -24,6 +24,15 @@
       </van-sticky>
     </div>
   </demo-block>
+
+  <demo-block :title="t('offsetBottom')">
+    <div style="height: 200px"></div>
+    <van-sticky :offset-bottom="50" position="bottom">
+      <van-button type="primary" style="margin-left: 15px">
+        {{ t('offsetBottom') }}
+      </van-button>
+    </van-sticky>
+  </demo-block>
 </template>
 
 <script lang="ts">
@@ -33,10 +42,12 @@ import { useTranslate } from '@demo/use-translate';
 const i18n = {
   'zh-CN': {
     offsetTop: '吸顶距离',
+    offsetBottom: '吸底距离',
     setContainer: '指定容器',
   },
   'en-US': {
     offsetTop: 'Offset Top',
+    offsetBottom: 'Offset Bottom',
     setContainer: 'Set Container',
   },
 };
