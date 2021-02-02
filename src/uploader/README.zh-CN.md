@@ -337,7 +337,7 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 | file   | file 对象                         | _object_ |
 | detail | 额外信息，包含 name 和 index 字段 | _object_ |
 
-### ResultType  可选值
+### ResultType 可选值
 
 `result-type` 字段表示文件读取结果的类型，上传大文件时，建议使用 file 类型，避免卡顿。
 
@@ -379,6 +379,7 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 | @uploader-file-name-margin-top     | `@padding-xs`        | -    |
 | @uploader-file-name-font-size      | `@font-size-sm`      | -    |
 | @uploader-file-name-text-color     | `@gray-7`            | -    |
+| @uploader-mask-text-color          | `@white`             | -    |
 | @uploader-mask-background-color    | `fade(@gray-8, 88%)` | -    |
 | @uploader-mask-icon-size           | `22px`               | -    |
 | @uploader-mask-message-font-size   | `@font-size-sm`      | -    |
