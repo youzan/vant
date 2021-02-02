@@ -337,7 +337,7 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 | file   | file 对象                         | _object_ |
 | detail | 额外信息，包含 name 和 index 字段 | _object_ |
 
-### ResultType  可选值
+### ResultType 可选值
 
 `result-type` 字段表示文件读取结果的类型，上传大文件时，建议使用 file 类型，避免卡顿。
 
