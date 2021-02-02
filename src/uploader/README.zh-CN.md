@@ -379,6 +379,7 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 | @uploader-file-name-margin-top     | `@padding-xs`        | -    |
 | @uploader-file-name-font-size      | `@font-size-sm`      | -    |
 | @uploader-file-name-text-color     | `@gray-7`            | -    |
+| @uploader-mask-text-color          | `@white`             | -    |
 | @uploader-mask-background-color    | `fade(@gray-8, 88%)` | -    |
 | @uploader-mask-icon-size           | `22px`               | -    |
 | @uploader-mask-message-font-size   | `@font-size-sm`      | -    |
