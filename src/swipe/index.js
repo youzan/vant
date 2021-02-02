@@ -244,6 +244,8 @@ export default createComponent({
 
       const rect = useRect(root);
 
+      active = Math.min(children.length - 1, active);
+
       state.rect = rect;
       state.swiping = true;
       state.active = active;
@@ -381,8 +383,7 @@ export default createComponent({
     watch(
       () => children.length,
       () => {
-        const active = Math.min(children.length - 1, state.active);
-        initialize(active);
+        initialize(state.active);
       }
     );
 
