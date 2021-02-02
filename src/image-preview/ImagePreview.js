@@ -81,6 +81,9 @@ export default createComponent({
 
     const resize = () => {
       if (swipeRef.value) {
+        const { startPosition } = props;
+        swipeRef.value.state.active = +startPosition;
+        swipeRef.value.resize();
         const rect = swipeRef.value.$el.getBoundingClientRect();
         state.rootWidth = rect.width;
         state.rootHeight = rect.height;
