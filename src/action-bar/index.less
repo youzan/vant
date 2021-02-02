@@ -1,4 +1,5 @@
 @import '../style/var';
+@import '../style/mixins/safe-area.less';
 
 .van-action-bar {
   position: fixed;
@@ -9,9 +10,8 @@
   align-items: center;
   box-sizing: content-box;
   height: @action-bar-height;
-  padding-bottom: constant(safe-area-inset-bottom);
-  padding-bottom: env(safe-area-inset-bottom);
   background-color: @action-bar-background-color;
+  .safe-area-inset-bottom();
 
   &--unfit {
     padding-bottom: 0;

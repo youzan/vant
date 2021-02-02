@@ -1,4 +1,5 @@
 @import '../style/var';
+@import '../style/mixins/safe-area.less';
 
 .van-calendar {
   display: flex;
@@ -173,8 +174,7 @@
   &__footer {
     flex-shrink: 0;
     padding: 0 @padding-md;
-    padding-bottom: constant(safe-area-inset-bottom);
-    padding-bottom: env(safe-area-inset-bottom);
+    .safe-area-inset-bottom();
 
     &--unfit {
       padding-bottom: 0;
