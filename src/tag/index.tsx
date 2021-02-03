@@ -1,8 +1,10 @@
-import { Transition } from 'vue';
+import { CSSProperties, PropType, Transition } from 'vue';
 import { createNamespace } from '../utils';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('tag');
+
+export type TagType = 'default' | 'primary' | 'success' | 'warning' | 'danger';
 
 export default createComponent({
   props: {
@@ -14,7 +16,7 @@ export default createComponent({
     textColor: String,
     closeable: Boolean,
     type: {
-      type: String,
+      type: String as PropType<TagType>,
       default: 'default',
     },
     show: {
@@ -26,12 +28,12 @@ export default createComponent({
   emits: ['close'],
 
   setup(props, { slots, emit }) {
-    const onClose = (event) => {
+    const onClose = (event: MouseEvent) => {
       event.stopPropagation();
       emit('close');
     };
 
-    const getStyle = () => {
+    const getStyle = (): CSSProperties => {
       if (props.plain) {
         return {
           color: props.textColor || props.color,
@@ -43,12 +45,12 @@ export default createComponent({
       };
     };
 
-    return () => {
-      const { show, type, mark, plain, round, size, closeable } = props;
+    const renderTag = () => {
+      const { type, mark, plain, round, size, closeable } = props;
 
-      const classes = { mark, plain, round };
+      const classes: Record<string, boolean> = { mark, plain, round };
       if (size) {
-        classes[size] = size;
+        classes[size] = !!size;
       }
 
       const CloseIcon = closeable && (
@@ -56,15 +58,17 @@ export default createComponent({
       );
 
       return (
-        <Transition name={closeable ? 'van-fade' : undefined}>
-          {show ? (
-            <span style={getStyle()} class={bem([classes, type])}>
-              {slots.default?.()}
-              {CloseIcon}
-            </span>
-          ) : null}
-        </Transition>
+        <span style={getStyle()} class={bem([classes, type])}>
+          {slots.default?.()}
+          {CloseIcon}
+        </span>
       );
     };
+
+    return () => (
+      <Transition name={props.closeable ? 'van-fade' : undefined}>
+        {props.show ? renderTag() : null}
+      </Transition>
+    );
   },
 });
