@@ -28,7 +28,7 @@ export default createComponent({
   emits: ['close'],
 
   setup(props, { slots, emit }) {
-    const onClose = (event: Event) => {
+    const onClose = (event: MouseEvent) => {
       event.stopPropagation();
       emit('close');
     };
