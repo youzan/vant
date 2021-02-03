@@ -1,8 +1,19 @@
+import { PropType } from 'vue';
+
 // Utils
 import { createNamespace, pick } from '../utils';
 
 // Components
 import Popup, { popupSharedProps } from '../popup';
+
+export type ShareSheetOption = {
+  name: string;
+  icon: string;
+  className?: string;
+  description?: string;
+};
+
+export type ShareSheetOptions = ShareSheetOption[] | ShareSheetOption[][];
 
 const PRESET_ICONS = [
   'qq',
@@ -15,7 +26,7 @@ const PRESET_ICONS = [
   'wechat-moments',
 ];
 
-function getIconURL(icon) {
+function getIconURL(icon: string) {
   if (PRESET_ICONS.indexOf(icon) !== -1) {
     return `https://img01.yzcdn.cn/vant/share-sheet-${icon}.png`;
   }
@@ -31,7 +42,7 @@ export default createComponent({
     cancelText: String,
     description: String,
     options: {
-      type: Array,
+      type: Array as PropType<ShareSheetOptions>,
       default: () => [],
     },
     closeOnPopstate: {
@@ -47,7 +58,7 @@ export default createComponent({
   emits: ['cancel', 'select', 'update:show'],
 
   setup(props, { emit, slots }) {
-    const toggle = (value) => {
+    const toggle = (value: boolean) => {
       emit('update:show', value);
     };
 
@@ -56,7 +67,7 @@ export default createComponent({
       emit('cancel');
     };
 
-    const onSelect = (option, index) => {
+    const onSelect = (option: ShareSheetOption, index: number) => {
       emit('select', option, index);
     };
 
@@ -78,12 +89,12 @@ export default createComponent({
       }
     };
 
-    const renderOption = (option, index) => {
+    const renderOption = (option: ShareSheetOption, index: number) => {
       const { name, icon, className, description } = option;
       return (
         <div
           role="button"
-          tabindex="0"
+          tabindex={0}
           class={[bem('option'), className]}
           onClick={() => {
             onSelect(option, index);
@@ -98,16 +109,18 @@ export default createComponent({
       );
     };
 
-    const renderOptions = (options, border) => (
+    const renderOptions = (options: ShareSheetOption[], border?: boolean) => (
       <div class={bem('options', { border })}>{options.map(renderOption)}</div>
     );
 
     const renderRows = () => {
       const { options } = props;
       if (Array.isArray(options[0])) {
-        return options.map((item, index) => renderOptions(item, index !== 0));
+        return (options as ShareSheetOption[][]).map((item, index) =>
+          renderOptions(item, index !== 0)
+        );
       }
-      return renderOptions(options);
+      return renderOptions(options as ShareSheetOption[]);
     };
 
     const renderCancelText = () => {

@@ -43,6 +43,7 @@
 <script lang="ts">
 import { computed, reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
+import { ShareSheetOption, ShareSheetOptions } from '..';
 import Toast from '../../toast';
 
 const i18n = {
@@ -130,7 +131,7 @@ export default {
       },
     ]);
 
-    const optionsWithDesc = computed(() => [
+    const optionsWithDesc = computed<ShareSheetOptions>(() => [
       { name: t('wechat'), icon: 'wechat' },
       { name: t('weibo'), icon: 'weibo' },
       {
@@ -142,7 +143,7 @@ export default {
       { name: t('qrcode'), icon: 'qrcode' },
     ]);
 
-    const onSelect = (option: { name: string }) => {
+    const onSelect = (option: ShareSheetOption) => {
       Toast(option.name);
       show.basic = false;
       show.withDesc = false;
