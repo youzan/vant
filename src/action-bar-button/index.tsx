@@ -1,4 +1,4 @@
-import { computed } from 'vue';
+import { computed, PropType } from 'vue';
 import { createNamespace } from '../utils';
 import { ACTION_BAR_KEY } from '../action-bar';
 
@@ -8,14 +8,14 @@ import { useExpose } from '../composables/use-expose';
 import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
-import Button from '../button';
+import Button, { ButtonType } from '../button';
 
 const [createComponent, bem] = createNamespace('action-bar-button');
 
 export default createComponent({
   props: {
     ...routeProps,
-    type: String,
+    type: String as PropType<ButtonType>,
     text: String,
     icon: String,
     color: String,
@@ -29,14 +29,14 @@ export default createComponent({
 
     const isFirst = computed(() => {
       if (parent) {
-        const prev = parent.children[index.value - 1];
+        const prev = parent.children[index!.value - 1];
         return !(prev && 'isButton' in prev);
       }
     });
 
     const isLast = computed(() => {
       if (parent) {
-        const next = parent.children[index.value + 1];
+        const next = parent.children[index!.value + 1];
         return !(next && 'isButton' in next);
       }
     });
