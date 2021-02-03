@@ -72,7 +72,6 @@ function getBestSelectionFromSrcset(el, scale) {
   if (el.tagName !== 'IMG' || !el.getAttribute('data-srcset')) return;
 
   let options = el.getAttribute('data-srcset');
-  [];
   const container = el.parentNode;
   const containerWidth = container.offsetWidth * scale;
 
