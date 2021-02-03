@@ -1,3 +1,5 @@
+import { PropType } from 'vue';
+
 // Utils
 import { createNamespace, pick } from '../utils';
 
@@ -8,11 +10,21 @@ import Loading from '../loading';
 
 const [createComponent, bem] = createNamespace('action-sheet');
 
+export type ActionSheetAction = {
+  name: string;
+  color?: string;
+  subname?: string;
+  loading?: boolean;
+  disabled?: boolean;
+  callback?: (action: ActionSheetAction) => void;
+  className?: any;
+};
+
 export default createComponent({
   props: {
     ...popupSharedProps,
     title: String,
-    actions: Array,
+    actions: Array as PropType<ActionSheetAction[]>,
     cancelText: String,
     description: String,
     closeOnPopstate: Boolean,
@@ -40,7 +52,7 @@ export default createComponent({
   setup(props, { slots, emit }) {
     const popupPropKeys = Object.keys(popupSharedProps);
 
-    const onUpdateShow = (show) => {
+    const onUpdateShow = (show: boolean) => {
       emit('update:show', show);
     };
 
@@ -77,7 +89,7 @@ export default createComponent({
       }
     };
 
-    const renderOption = (item, index) => {
+    const renderOption = (item: ActionSheetAction, index: number) => {
       const {
         name,
         color,

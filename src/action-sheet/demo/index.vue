@@ -51,9 +51,10 @@
   </van-action-sheet>
 </template>
 
-<script>
+<script lang="ts">
 import { computed, reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
+import { ActionSheetAction } from '..';
 import Toast from '../../toast';
 
 const i18n = {
@@ -100,28 +101,29 @@ export default {
       },
     });
 
-    const simpleActions = computed(() => [
+    const simpleActions = computed<ActionSheetAction[]>(() => [
       { name: t('option1') },
       { name: t('option2') },
       { name: t('option3') },
     ]);
 
-    const statusActions = computed(() => [
+    const statusActions = computed<ActionSheetAction[]>(() => [
       { name: t('coloredOption'), color: '#ee0a24' },
       { name: t('disabledOption'), disabled: true },
       { loading: true },
     ]);
 
-    const actionsWithDescription = computed(() => [
+    const actionsWithDescription = computed<ActionSheetAction[]>(() => [
       { name: t('option1') },
       { name: t('option2') },
       { name: t('option3'), subname: t('subname') },
     ]);
 
-    const onSelect = (item) => {
+    const onSelect = (item: ActionSheetAction) => {
       state.show.basic = false;
       Toast(item.name);
     };
+
     const onCancel = () => Toast(t('cancel'));
 
     return {
