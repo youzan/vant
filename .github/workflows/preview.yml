@@ -1,6 +1,6 @@
 name: 🔂 Surge PR Preview
 
-on: pull_request_target
+on: pull_request
 
 jobs:
   preview:
@@ -9,8 +9,6 @@ jobs:
       PUBLIC_PATH: '/'
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: refs/pull/${{ github.event.pull_request.number }}/merge
       - uses: afc163/surge-preview@v1
         with:
           surge_token: ${{ secrets.SURGE_TOKEN }}
