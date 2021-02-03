@@ -11,7 +11,7 @@ ImagePreview 是一个函数，调用函数后会直接在页面中展示图片�
 ```js
 import { ImagePreview } from 'vant';
 
-ImagePreview(['https://img.yzcdn.cn/vant/apple-1.jpg']);
+ImagePreview(['https://img01.yzcdn.cn/vant/apple-1.jpg']);
 ```
 
 ### 组件调用
@@ -41,8 +41,8 @@ export default {
 
 ```js
 ImagePreview([
-  'https://img.yzcdn.cn/vant/apple-1.jpg',
-  'https://img.yzcdn.cn/vant/apple-2.jpg',
+  'https://img01.yzcdn.cn/vant/apple-1.jpg',
+  'https://img01.yzcdn.cn/vant/apple-2.jpg',
 ]);
 ```
 
@@ -53,8 +53,8 @@ ImagePreview 支持传入配置对象，并通过 `startPosition` 选项指定�
 ```js
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   startPosition: 1,
 });
@@ -67,8 +67,8 @@ ImagePreview({
 ```js
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   closeable: true,
 });
@@ -83,8 +83,8 @@ import { Toast } from 'vant';
 
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   onClose() {
     Toast('关闭');
@@ -99,8 +99,8 @@ ImagePreview({
 ```js
 const instance = ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   asyncClose: true,
 });
@@ -127,8 +127,8 @@ export default {
       show: false,
       index: 0,
       images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
+        'https://img01.yzcdn.cn/vant/apple-1.jpg',
+        'https://img01.yzcdn.cn/vant/apple-2.jpg',
       ],
     };
   },
@@ -150,7 +150,7 @@ export default {
 | --- | --- | --- | --- |
 | images | 需要预览的图片 URL 数组 | _string[]_ | `[]` |
 | startPosition | 图片预览起始位置索引 | _number \| string_ | `0` |
-| swipeDuration | 动画时长，单位为`ms` | _number \| string_ | `500` |
+| swipeDuration | 动画时长，单位为`ms` | _number \| string_ | `300` |
 | showIndex | 是否显示页码 | _boolean_ | `true` |
 | showIndicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
@@ -175,7 +175,7 @@ export default {
 | --- | --- | --- | --- |
 | images | 需要预览的图片 URL 数组 | _string[]_ | `[]` |
 | start-position | 图片预览起始位置索引 | _number \| string_ | `0` |
-| swipe-duration | 动画时长，单位为 ms | _number \| string_ | `500` |
+| swipe-duration | 动画时长，单位为 ms | _number \| string_ | `300` |
 | show-index | 是否显示页码 | _boolean_ | `true` |
 | show-indicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |

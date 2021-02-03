@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       fileList: [
-        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+        { url: 'https://img01.yzcdn.cn/vant/leaf.jpg' },
         // Uploader 根据文件后缀来判断是否为图片文件
         // 如果图片 URL 中不包含类型信息，可以添加 isImage 标记来声明
         { url: 'https://cloud-image', isImage: true },
@@ -71,12 +71,12 @@ export default {
     return {
       fileList: [
         {
-          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+          url: 'https://img01.yzcdn.cn/vant/leaf.jpg',
           status: 'uploading',
           message: '上传中...',
         },
         {
-          url: 'https://img.yzcdn.cn/vant/tree.jpg',
+          url: 'https://img01.yzcdn.cn/vant/tree.jpg',
           status: 'failed',
           message: '上传失败',
         },
@@ -234,16 +234,16 @@ export default {
   data() {
     return {
       fileList = [
-        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+        { url: 'https://img01.yzcdn.cn/vant/leaf.jpg' },
         {
-          url: 'https://img.yzcdn.cn/vant/sand.jpg',
+          url: 'https://img01.yzcdn.cn/vant/sand.jpg',
           deletable: true,
           beforeDelete: () => {
             Toast('自定义单个预览图片的事件和样式');
           },
         },
         {
-          url: 'https://img.yzcdn.cn/vant/tree.jpg',
+          url: 'https://img01.yzcdn.cn/vant/tree.jpg',
           deletable: true,
           imageFit: 'contain',
           previewSize: 120,

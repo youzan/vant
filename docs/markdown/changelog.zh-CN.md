@@ -16,6 +16,51 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.6](https://github.com/youzan/vant/compare/v2.12.5...v2.12.6)
+
+`2021-01-26`
+
+**Feature**
+
+- Icons: 新增 wechat 图标, 重命名原 wechat 图标为 wechat-pay [b3cd8c](https://github.com/youzan/vant/commit/b3cd8c14aea9e542a9de4ba9999e50c3ecbf3b3c)
+
+**Bug Fixes**
+
+- 修复部分地区无法访问 CDN 静态资源的问题 [#8000](https://github.com/youzan/vant/issues/8000)
+
+**perf**
+
+- Sku: 优化图标加载性能 [#7992](https://github.com/youzan/vant/issues/7992)
+
+### [v2.12.5](https://github.com/youzan/vant/compare/v2.12.4...v2.12.5)
+
+`2021-01-24`
+
+**Feature**
+
+- Calendar: reset 方法支持重置到指定日期 [#7943](https://github.com/youzan/vant/issues/7943)
+- ImagePreview: 在调用 swipeTo 方法后自动重置缩放状态 [#7974](https://github.com/youzan/vant/issues/7974)
+- ImagePreview: swipe-duration 属性的默认值调整为 300ms [#7973](https://github.com/youzan/vant/issues/7973)
+- ShareSheet: 新增 wechat-moments 朋友圈图标 [4f94dd](https://github.com/youzan/vant/commit/4f94dd3260fedd0c67b8b542c106119dd1ca7b37)
+
+**style**
+
+- ShareSheet: 更新 qrcode 图标 [335510](https://github.com/youzan/vant/commit/33551062e3e946107b05841ddd3914ab996600ce)
+
+### [v2.12.4](https://github.com/youzan/vant/compare/v2.12.3...v2.12.4)
+
+`2021-01-17`
+
+**Feature**
+
+- Cascader: 新增 field-names 属性，用于自定义字段名 [#7932](https://github.com/youzan/vant/issues/7932)
+- Cell: 支持在设置 is-link 时将 clickable 设置为 false 来禁用点击状态 [#7922](https://github.com/youzan/vant/issues/7922)
+
+**Bug Fixes**
+
+- Circle: 修复渐变色不生效的问题 [#7910](https://github.com/youzan/vant/issues/7910) [#7897](https://github.com/youzan/vant/issues/7897)
+- Field: 修复类型为 number 时可以输入点号开头的问题 [#7921](https://github.com/youzan/vant/issues/7921)
+
 ### [v2.12.3](https://github.com/youzan/vant/compare/v2.12.2...v2.12.3)
 
 `2021-01-09`
@@ -129,7 +174,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 新增 [Badge 徽标](#/zh-CN/badge)组件 [#7602](https://github.com/youzan/vant/issues/7602)
 - 新增 [Popover 气泡弹出框](#/zh-CN/popover)组件 [#7579](https://github.com/youzan/vant/issues/7579)
 
-![](https://img.yzcdn.cn/vant/component-preview-1122.png)
+![](https://img01.yzcdn.cn/vant/component-preview-1122.png)
 
 **Feature**
 
@@ -862,7 +907,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 新增 ShareSheet 分享面板组件，用于进行分享操作 [#6019](https://github.com/youzan/vant/issues/6019)
 - 新增 Empty 空状态组件，作为空状态时的占位提示 [#6010](https://github.com/youzan/vant/issues/6010)
 
-<img src="https://img.yzcdn.cn/vant/component-preview-2.6.png" style="width: 540px;">
+<img src="https://img01.yzcdn.cn/vant/component-preview-2.6.png" style="width: 540px;">
 
 **Feature**
 
@@ -1275,7 +1320,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 - 新增 Calendar 日历组件
 
-![](https://img.yzcdn.cn/vant/calendar-12282.png)
+![](https://img01.yzcdn.cn/vant/calendar-12282.png)
 
 **Feature**
 
@@ -2116,7 +2161,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - <b>Skeleton 骨架屏</b>，在待加载区域展示的占位区块，提供界面加载过程中的过渡效果
 - <b>DropdownMenu 下拉菜单</b>，用于列表的分类选择、筛选及排序
 
-![](https://img.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png)
+![](https://img01.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png)
 
 #### 新文档
 
@@ -2124,13 +2169,13 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 此外，文档站点也支持了<b>搜索</b>和<b>版本切换</b>。
 
-![](https://img.yzcdn.cn/public_files/2019/06/10/63b666fa52493402c87db6146a715341.png)
+![](https://img01.yzcdn.cn/public_files/2019/06/10/63b666fa52493402c87db6146a715341.png)
 
 #### 样式定制
 
 移动端 UI 风格多变，对组件的可定制性要求较高。从 2.0 版本开始，Vant 中的所有组件都支持通过 <b>Less 变量</b>进行样式定制。同时我们新增了较多样式相关的 Props，便于快速定制组件风格。
 
-![](https://img.yzcdn.cn/public_files/2019/06/11/9a066c1a212264c7ae56065e1f13d317.png)
+![](https://img01.yzcdn.cn/public_files/2019/06/11/9a066c1a212264c7ae56065e1f13d317.png)
 
 #### 更轻量
 
@@ -2391,4 +2436,4 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 对于 Vant v1 版本，后续会进入维护期，跟进问题修复，但不再引入功能性改动。
 
-![](https://img.yzcdn.cn/public_files/2019/06/11/4e7202acbfc399622e428eb1485e1591.png)
+![](https://img01.yzcdn.cn/public_files/2019/06/11/4e7202acbfc399622e428eb1485e1591.png)

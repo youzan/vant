@@ -316,7 +316,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Calendar instance and call insta
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| reset | Reset selected date to default date | - | - |
+| reset | Reset selected date, will reset to default date when no params passed | _date?: Date \| Date[]_ | - |
 | scrollToDate `v2.12.2` | Scroll to date | _date: Date_ | - |
 
 ### Less Variables

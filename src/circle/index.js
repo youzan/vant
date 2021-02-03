@@ -84,7 +84,7 @@ export default createComponent({
       const offset = (PERIMETER * this.value) / 100;
 
       return {
-        stroke: `${this.color}`,
+        stroke: `${this.gradient ? `url(#${this.uid})` : this.color}`,
         strokeWidth: `${+this.strokeWidth + 1}px`,
         strokeLinecap: this.strokeLinecap,
         strokeDasharray: `${offset}px ${PERIMETER}px`,
@@ -158,12 +158,7 @@ export default createComponent({
         <svg viewBox={`0 0 ${this.viewBoxSize} ${this.viewBoxSize}`}>
           {this.LinearGradient}
           <path class={bem('layer')} style={this.layerStyle} d={this.path} />
-          <path
-            d={this.path}
-            class={bem('hover')}
-            style={this.hoverStyle}
-            stroke={this.gradient ? `url(#${this.uid})` : this.color}
-          />
+          <path d={this.path} class={bem('hover')} style={this.hoverStyle} />
         </svg>
         {this.slots() ||
           (this.text && <div class={bem('text')}>{this.text}</div>)}

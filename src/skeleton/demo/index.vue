@@ -12,7 +12,7 @@
       <van-switch v-model="show" size="24px" />
       <van-skeleton title avatar :row="3" :loading="!show">
         <div class="demo-preview">
-          <img src="https://img.yzcdn.cn/vant/logo.png" />
+          <img src="https://img01.yzcdn.cn/vant/logo.png" />
           <div class="demo-content">
             <h3>{{ t('title') }}</h3>
             <p>{{ t('desc') }}</p>

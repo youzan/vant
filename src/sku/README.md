@@ -194,14 +194,14 @@ sku: {
         {
           id: '1',
           name: 'Red',
-          imgUrl: 'https://img.yzcdn.cn/1.jpg',
-          previewImgUrl: 'https://img.yzcdn.cn/1p.jpg',
+          imgUrl: 'https://img01.yzcdn.cn/1.jpg',
+          previewImgUrl: 'https://img01.yzcdn.cn/1p.jpg',
         },
         {
           id: '1',
           name: 'Blue',
-          imgUrl: 'https://img.yzcdn.cn/2.jpg',
-          previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
+          imgUrl: 'https://img01.yzcdn.cn/2.jpg',
+          previewImgUrl: 'https://img01.yzcdn.cn/2p.jpg',
         }
       ],
       largeImageMode: true, //  whether to enable large image mode
@@ -296,7 +296,7 @@ sku: {
 
 ```js
 goods: {
-  picture: 'https://img.yzcdn.cn/1.jpg';
+  picture: 'https://img01.yzcdn.cn/1.jpg';
 }
 ```
 
@@ -339,7 +339,7 @@ messageConfig: {
   // the upload image callback
   uploadImg: () => {
     return new Promise((resolve) => {
-      setTimeout(() => resolve('https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
+      setTimeout(() => resolve('https://img01.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
     });
   },
   // max file size (MB)

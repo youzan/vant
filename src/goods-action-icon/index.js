@@ -51,8 +51,8 @@ export default createComponent({
           class={[bem('icon'), this.iconClass]}
           tag="div"
           dot={this.dot}
-          info={info}
           name={this.icon}
+          badge={info}
           color={this.color}
         />
       );

@@ -151,8 +151,11 @@ export default createComponent({
   },
 
   watch: {
-    type: 'reset',
     value: 'init',
+
+    type() {
+      this.reset();
+    },
 
     defaultDate(val) {
       this.currentDate = val;
@@ -171,8 +174,8 @@ export default createComponent({
 
   methods: {
     // @exposed-api
-    reset() {
-      this.currentDate = this.getInitialDate();
+    reset(date = this.getInitialDate()) {
+      this.currentDate = date;
       this.scrollIntoView();
     },
 

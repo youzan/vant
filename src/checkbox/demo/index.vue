@@ -154,8 +154,8 @@ export default {
       result3: [],
       checkAllResult: [],
       horizontalResult: [],
-      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
+      activeIcon: 'https://img01.yzcdn.cn/vant/user-active.png',
+      inactiveIcon: 'https://img01.yzcdn.cn/vant/user-inactive.png',
     };
   },
 

@@ -19,7 +19,7 @@ const defaultConfig = {
   asyncClose: false,
   getContainer: 'body',
   startPosition: 0,
-  swipeDuration: 500,
+  swipeDuration: 300,
   showIndicators: false,
   closeOnPopstate: true,
   closeIconPosition: 'top-right',

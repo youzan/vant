@@ -27,7 +27,7 @@ module.exports = {
       'zh-CN': {
         title: 'Vant',
         description: '轻量、可靠的移动端 Vue 组件库',
-        logo: 'https://img.yzcdn.cn/vant/logo.png',
+        logo: 'https://img01.yzcdn.cn/vant/logo.png',
         langLabel: '中文',
         links: [
           {
@@ -43,6 +43,9 @@ module.exports = {
           apiKey: '90067aecdaa2c85220e2783cd305caac',
           indexName: 'vant',
           placeholder: '搜索文档...',
+          algoliaOptions: {
+            facetFilters: ['version:v2'],
+          },
           transformData(hits) {
             if (location.hostname === 'vant-contrib.gitee.io') {
               hits.forEach((hit) => {
@@ -422,7 +425,7 @@ module.exports = {
       'en-US': {
         title: 'Vant',
         description: 'Mobile UI Components built on Vue',
-        logo: 'https://img.yzcdn.cn/vant/logo.png',
+        logo: 'https://img01.yzcdn.cn/vant/logo.png',
         langLabel: 'En',
         links: [
           {
@@ -438,6 +441,9 @@ module.exports = {
           apiKey: '90067aecdaa2c85220e2783cd305caac',
           indexName: 'vant',
           placeholder: 'Search...',
+          algoliaOptions: {
+            facetFilters: ['version:v2'],
+          },
         },
         nav: [
           {

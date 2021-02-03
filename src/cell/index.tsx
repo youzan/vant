@@ -112,7 +112,7 @@ function Cell(
     functionalRoute(ctx);
   }
 
-  const clickable = isLink || props.clickable;
+  const clickable = props.clickable ?? isLink;
 
   const classes: Mods = {
     clickable,

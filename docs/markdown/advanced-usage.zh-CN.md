@@ -25,8 +25,8 @@ export default {
   data() {
     return {
       checked: true,
-      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
+      activeIcon: 'https://img01.yzcdn.cn/vant/user-active.png',
+      inactiveIcon: 'https://img01.yzcdn.cn/vant/user-inactive.png',
     };
   },
 };
@@ -38,9 +38,7 @@ Vant 中的许多组件提供了实例方法，调用实例方法时，我们需
 
 ```html
 <!-- 通过 ref 属性将组件绑定到 this.$refs.checkbox 上 -->
-<van-checkbox v-model="checked" ref="checkbox">
-  复选框
-</van-checkbox>
+<van-checkbox v-model="checked" ref="checkbox"> 复选框 </van-checkbox>
 ```
 
 ```js
@@ -120,4 +118,4 @@ iPhone X 等机型底部存在底部指示条，指示条的操作区域与页�
 <van-number-keyboard safe-area-inset-bottom />
 ```
 
-<img src="https://img.yzcdn.cn/vant/safearea.png">
+<img src="https://img01.yzcdn.cn/vant/safearea.png">

@@ -16,6 +16,51 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.6](https://github.com/youzan/vant/compare/v2.12.5...v2.12.6)
+
+`2021-01-26`
+
+**Feature**
+
+- Icons: add wechat icon, rename wechat-pay icon [b3cd8c](https://github.com/youzan/vant/commit/b3cd8c14aea9e542a9de4ba9999e50c3ecbf3b3c)
+
+**Bug Fixes**
+
+- fix CDN image url [#8000](https://github.com/youzan/vant/issues/8000)
+
+**perf**
+
+- Sku: using icon instead of cdn image [#7992](https://github.com/youzan/vant/issues/7992)
+
+### [v2.12.5](https://github.com/youzan/vant/compare/v2.12.4...v2.12.5)
+
+`2021-01-24`
+
+**Feature**
+
+- Calendar: reset method support specified date [#7943](https://github.com/youzan/vant/issues/7943)
+- ImagePreview: reset scale after swiping [#7974](https://github.com/youzan/vant/issues/7974)
+- ImagePreview: adjust default swipe duration to 300ms [#7973](https://github.com/youzan/vant/issues/7973)
+- ShareSheet: add wechat-moments icon [4f94dd](https://github.com/youzan/vant/commit/4f94dd3260fedd0c67b8b542c106119dd1ca7b37)
+
+**style**
+
+- ShareSheet: update qrcode icon [335510](https://github.com/youzan/vant/commit/33551062e3e946107b05841ddd3914ab996600ce)
+
+### [v2.12.4](https://github.com/youzan/vant/compare/v2.12.3...v2.12.4)
+
+`2021-01-17`
+
+**Feature**
+
+- Cascader: add field-names prop [#7932](https://github.com/youzan/vant/issues/7932)
+- Cell: allow to disable clickable when using is-link [#7922](https://github.com/youzan/vant/issues/7922)
+
+**Bug Fixes**
+
+- Circle: the gradient color is incorrect [#7910](https://github.com/youzan/vant/issues/7910) [#7897](https://github.com/youzan/vant/issues/7897)
+- Field: should not allow dot when type is number [#7921](https://github.com/youzan/vant/issues/7921)
+
 ### [v2.12.3](https://github.com/youzan/vant/compare/v2.12.2...v2.12.3)
 
 `2021-01-09`
@@ -1265,7 +1310,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 - add Calendar component
 
-![](https://img.yzcdn.cn/vant/calendar-12282.png)
+![](https://img01.yzcdn.cn/vant/calendar-12282.png)
 
 **Feature**
 
@@ -2095,7 +2140,7 @@ Upgrading the style of business components:
 - `IndexBar`、`IndexAnchor` Component
 - `DropdownMenu`、`DropdownItem` Component
 
-![](https://img.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png)
+![](https://img01.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png)
 
 #### Breaking Changes
 
