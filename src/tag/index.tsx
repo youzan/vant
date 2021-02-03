@@ -1,4 +1,4 @@
-import { PropType, Transition } from 'vue';
+import { CSSProperties, PropType, Transition } from 'vue';
 import { createNamespace } from '../utils';
 import Icon from '../icon';
 
@@ -33,7 +33,7 @@ export default createComponent({
       emit('close');
     };
 
-    const getStyle = () => {
+    const getStyle = (): CSSProperties => {
       if (props.plain) {
         return {
           color: props.textColor || props.color,
