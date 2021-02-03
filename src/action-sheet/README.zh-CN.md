@@ -209,6 +209,7 @@ export default {
 | className | 为对应列添加额外的 class | _string \| Array \| object_ |
 | loading   | 是否为加载状态           | _boolean_                   |
 | disabled  | 是否为禁用状态           | _boolean_                   |
+| callback  | 点击时触发的回调函数     | _action: Action_            |
 
 ### Events
 
