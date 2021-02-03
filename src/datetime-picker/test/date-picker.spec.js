@@ -215,6 +215,7 @@ test('use min-date with filter', async () => {
 
 test('v-model', async () => {
   const minDate = new Date(2030, 0, 0, 0, 3);
+  
   const wrapper = mount({
     template: `
       <van-datetime-picker
