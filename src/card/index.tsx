@@ -66,9 +66,9 @@ export default createComponent({
       return (
         <Image
           src={props.thumb}
+          fit="cover"
           width="100%"
           height="100%"
-          fit="cover"
           lazyLoad={props.lazyLoad}
         />
       );
@@ -95,14 +95,13 @@ export default createComponent({
       if (slots.desc) {
         return slots.desc();
       }
-
       if (props.desc) {
         return <div class={[bem('desc'), 'van-ellipsis']}>{props.desc}</div>;
       }
     };
 
     const renderPriceText = () => {
-      const priceArr = props.price.toString().split('.');
+      const priceArr = props.price!.toString().split('.');
       return (
         <div>
           <span class={bem('price-currency')}>{props.currency}</span>
