@@ -11,7 +11,7 @@ import Loading from '../loading';
 const [createComponent, bem] = createNamespace('action-sheet');
 
 export type ActionSheetAction = {
-  name: string;
+  name?: string;
   color?: string;
   subname?: string;
   loading?: boolean;
