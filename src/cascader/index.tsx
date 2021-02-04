@@ -1,4 +1,4 @@
-import { nextTick, reactive, watch } from 'vue';
+import { nextTick, PropType, reactive, watch } from 'vue';
 import { createNamespace } from '../utils';
 
 // Components
@@ -8,15 +8,34 @@ import Icon from '../icon';
 
 const [createComponent, bem, t] = createNamespace('cascader');
 
+export type CascaderOption = {
+  text?: string;
+  value?: string | number;
+  children?: CascaderOption[];
+  // for custom filed names
+  [key: string]: any;
+};
+
+type CascaderTab = {
+  options: CascaderOption[];
+  selectedOption: CascaderOption | null;
+};
+
+type CascaderFieldNames = {
+  text: string;
+  value: string;
+  children: string;
+};
+
 export default createComponent({
   props: {
     title: String,
     modelValue: [Number, String],
-    fieldNames: Object,
+    fieldNames: Object as PropType<CascaderFieldNames>,
     placeholder: String,
     activeColor: String,
     options: {
-      type: Array,
+      type: Array as PropType<CascaderOption[]>,
       default: () => [],
     },
     closeable: {
@@ -29,7 +48,7 @@ export default createComponent({
 
   setup(props, { slots, emit }) {
     const state = reactive({
-      tabs: [],
+      tabs: [] as CascaderTab[],
       activeTab: 0,
     });
 
@@ -40,7 +59,10 @@ export default createComponent({
       ...props.fieldNames,
     };
 
-    const getSelectedOptionsByValue = (options, value) => {
+    const getSelectedOptionsByValue = (
+      options: CascaderOption[],
+      value: string | number
+    ): CascaderOption[] | undefined => {
       for (let i = 0; i < options.length; i++) {
         const option = options[i];
 
@@ -109,7 +131,7 @@ export default createComponent({
       ];
     };
 
-    const onSelect = (option, tabIndex) => {
+    const onSelect = (option: CascaderOption, tabIndex: number) => {
       state.tabs[tabIndex].selectedOption = option;
 
       if (state.tabs.length > tabIndex + 1) {
@@ -165,15 +187,19 @@ export default createComponent({
       </div>
     );
 
-    const renderOptions = (options, selectedOption, tabIndex) => {
-      const renderOption = (option) => {
+    const renderOptions = (
+      options: CascaderOption[],
+      selectedOption: CascaderOption | null,
+      tabIndex: number
+    ) => {
+      const renderOption = (option: CascaderOption) => {
         const isSelected =
           selectedOption && option[valueKey] === selectedOption[valueKey];
 
         return (
           <li
             class={bem('option', { selected: isSelected })}
-            style={{ color: isSelected ? props.activeColor : null }}
+            style={{ color: isSelected ? props.activeColor : undefined }}
             onClick={() => {
               onSelect(option, tabIndex);
             }}
@@ -189,8 +215,8 @@ export default createComponent({
       return <ul class={bem('options')}>{options.map(renderOption)}</ul>;
     };
 
-    const renderTab = (item, tabIndex) => {
-      const { options, selectedOption } = item;
+    const renderTab = (tab: CascaderTab, tabIndex: number) => {
+      const { options, selectedOption } = tab;
       const title = selectedOption
         ? selectedOption[textKey]
         : props.placeholder || t('select');
