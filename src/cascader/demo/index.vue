@@ -99,12 +99,13 @@
   </demo-block>
 </template>
 
-<script>
-import zhCNOptions from './area-zh-CN';
-import enUSOptions from './area-en-US';
+<script lang="ts">
 import { computed, reactive, toRefs } from 'vue';
+import { CascaderOption } from '..';
 import { useTranslate } from '@demo/use-translate';
 import { deepClone } from '../../utils/deep-clone';
+import zhCNOptions from './area-zh-CN';
+import enUSOptions from './area-en-US';
 
 const i18n = {
   'zh-CN': {
@@ -147,10 +148,17 @@ const i18n = {
   },
 };
 
+type StateItem = {
+  show: boolean;
+  value: string | null;
+  result: string;
+  options?: CascaderOption[];
+};
+
 export default {
   setup() {
     const t = useTranslate(i18n);
-    const state = reactive({
+    const state = reactive<Record<string, StateItem>>({
       base: {
         show: false,
         value: '',
@@ -182,7 +190,7 @@ export default {
 
     const customFieldOptions = computed(() => {
       const options = deepClone(t('options'));
-      const adjustFieldName = (item) => {
+      const adjustFieldName = (item: CascaderOption) => {
         if ('text' in item) {
           item.name = item.text;
           delete item.text;
@@ -201,7 +209,7 @@ export default {
       return options;
     });
 
-    const loadDynamicOptions = ({ value }) => {
+    const loadDynamicOptions = ({ value }: CascaderOption) => {
       if (value === '330000') {
         setTimeout(() => {
           state.async.options[0].children = t('asyncOptions2');
@@ -209,7 +217,13 @@ export default {
       }
     };
 
-    const onFinish = (type, { value, selectedOptions }) => {
+    const onFinish = (
+      type: string,
+      {
+        value,
+        selectedOptions,
+      }: { value: number | string; selectedOptions: CascaderOption[] }
+    ) => {
       const result = selectedOptions
         .map((option) => option.text || option.name)
         .join('/');
