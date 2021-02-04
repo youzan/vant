@@ -1,6 +1,9 @@
+import { PropType, CSSProperties } from 'vue';
 import { createNamespace } from '../utils';
+
+// Components
 import Icon from '../icon';
-import Button from '../button';
+import Button, { ButtonType } from '../button';
 
 const [createComponent, bem, t] = createNamespace('submit-bar');
 
@@ -12,7 +15,7 @@ export default createComponent({
     tipIcon: String,
     loading: Boolean,
     disabled: Boolean,
-    textAlign: String,
+    textAlign: String as PropType<CSSProperties['textAlign']>,
     buttonText: String,
     buttonColor: String,
     suffixLabel: String,
@@ -29,7 +32,7 @@ export default createComponent({
       default: '¥',
     },
     buttonType: {
-      type: String,
+      type: String as PropType<ButtonType>,
       default: 'danger',
     },
   },
@@ -48,7 +51,7 @@ export default createComponent({
       } = props;
 
       if (typeof price === 'number') {
-        const pricePair = (price / 100).toFixed(decimalLength).split('.');
+        const pricePair = (price / 100).toFixed(+decimalLength).split('.');
         const decimal = decimalLength ? `.${pricePair[1]}` : '';
 
         return (
