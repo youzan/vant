@@ -150,7 +150,7 @@ const i18n = {
 
 type StateItem = {
   show: boolean;
-  value: string | null;
+  value: string | number | null;
   result: string;
   options?: CascaderOption[];
 };
@@ -212,7 +212,7 @@ export default {
     const loadDynamicOptions = ({ value }: CascaderOption) => {
       if (value === '330000') {
         setTimeout(() => {
-          state.async.options[0].children = t('asyncOptions2');
+          state.async.options![0].children = t('asyncOptions2');
         }, 500);
       }
     };
