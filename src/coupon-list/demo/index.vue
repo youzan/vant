@@ -26,7 +26,7 @@
 <script lang="ts">
 import { computed, reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import { Coupon } from '../../coupon/shared';
+import { CouponInfo } from '../../coupon';
 import Toast from '../../toast';
 
 const i18n = {
@@ -57,7 +57,7 @@ export default {
     const state = reactive({
       showList: false,
       chosenCoupon: -1,
-      exchangedCoupons: [] as Coupon[],
+      exchangedCoupons: [] as CouponInfo[],
     });
 
     const coupon = computed(() => ({
