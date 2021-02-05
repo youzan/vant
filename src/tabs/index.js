@@ -372,7 +372,7 @@ export default createComponent({
       () => children.length,
       () => {
         if (state.inited) {
-          setCurrentIndexByName((props.active || props.active === 0) ? props.active : currentName.value);
+          setCurrentIndexByName(props.active);
           setLine();
           nextTick(() => {
             scrollIntoView(true);
@@ -397,7 +397,7 @@ export default createComponent({
     );
 
     const init = () => {
-      setCurrentIndexByName((props.active || props.active === 0) ? props.active : currentName.value);
+      setCurrentIndexByName(props.active);
       nextTick(() => {
         state.inited = true;
         tabHeight = getVisibleHeight(wrapRef.value);
