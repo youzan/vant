@@ -1,4 +1,4 @@
-import { watch, onMounted, onUnmounted } from 'vue';
+import { watch, onMounted, onUnmounted, PropType } from 'vue';
 
 // Utils
 import { createNamespace, isDef } from '../utils';
@@ -7,31 +7,37 @@ import { lockClick } from './lock-click';
 // Components
 import Icon from '../icon';
 import Popup from '../popup';
-import Loading from '../loading';
+import Loading, { LoadingType } from '../loading';
 
 const [createComponent, bem] = createNamespace('toast');
+
+export type ToastType = 'text' | 'loading' | 'success' | 'fail' | 'html';
+export type ToastPosition = 'top' | 'middle' | 'bottom';
 
 export default createComponent({
   props: {
     icon: String,
     show: Boolean,
     message: [Number, String],
-    duration: Number,
     className: null,
     iconPrefix: String,
     lockScroll: Boolean,
-    loadingType: String,
+    loadingType: String as PropType<LoadingType>,
     forbidClick: Boolean,
     overlayClass: null,
     overlayStyle: Object,
     closeOnClick: Boolean,
     closeOnClickOverlay: Boolean,
     type: {
-      type: String,
+      type: String as PropType<ToastType>,
       default: 'text',
     },
+    duration: {
+      type: Number,
+      default: 2000,
+    },
     position: {
-      type: String,
+      type: String as PropType<ToastPosition>,
       default: 'middle',
     },
     transition: {
@@ -43,7 +49,7 @@ export default createComponent({
   emits: ['update:show'],
 
   setup(props, { emit }) {
-    let timer;
+    let timer: NodeJS.Timeout;
     let clickable = false;
 
     const toggleClickable = () => {
@@ -64,7 +70,7 @@ export default createComponent({
       clearTimeout(timer);
     };
 
-    const toggle = (show) => {
+    const toggle = (show: boolean) => {
       emit('update:show', show);
     };
 
@@ -92,7 +98,7 @@ export default createComponent({
 
       if (isDef(message) && message !== '') {
         return type === 'html' ? (
-          <div class={bem('text')} innerHTML={message} />
+          <div class={bem('text')} innerHTML={String(message)} />
         ) : (
           <div class={bem('text')}>{message}</div>
         );
