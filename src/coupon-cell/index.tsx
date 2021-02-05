@@ -1,10 +1,17 @@
+import { PropType } from 'vue';
 import { isDef, createNamespace } from '../utils';
+import type { CouponInfo } from '../coupon';
+
+// Components
 import Cell from '../cell';
 
 const [createComponent, bem, t] = createNamespace('coupon-cell');
 
-function formatValue(props) {
-  const { coupons, chosenCoupon, currency } = props;
+function formatValue(
+  coupons: CouponInfo[],
+  chosenCoupon: number | string,
+  currency: string
+) {
   const coupon = coupons[+chosenCoupon];
 
   if (coupon) {
@@ -26,7 +33,7 @@ export default createComponent({
   props: {
     title: String,
     coupons: {
-      type: Array,
+      type: Array as PropType<CouponInfo[]>,
       default: () => [],
     },
     currency: {
@@ -50,7 +57,11 @@ export default createComponent({
   setup(props) {
     return () => {
       const selected = props.coupons[+props.chosenCoupon];
-      const value = formatValue(props);
+      const value = formatValue(
+        props.coupons,
+        props.chosenCoupon,
+        props.currency
+      );
 
       return (
         <Cell
