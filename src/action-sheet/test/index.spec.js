@@ -217,3 +217,22 @@ test('should emit click-overlay event and closed after clicking the overlay', ()
   expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
   expect(onClickOverlay).toHaveBeenCalledTimes(1);
 });
+
+test('should allow to control safe-area with safe-area-inset-bottom prop', async () => {
+  const wrapper = mount(ActionSheet, {
+    props: {
+      show: true,
+    },
+  });
+
+  expect(wrapper.find('.van-action-sheet').classes()).toContain(
+    'van-popup--safe-area-inset-bottom'
+  );
+
+  await wrapper.setProps({
+    safeAreaInsetBottom: false,
+  });
+  expect(wrapper.find('.van-action-sheet').classes()).not.toContain(
+    'van-popup--safe-area-inset-bottom'
+  );
+});

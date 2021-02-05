@@ -157,6 +157,7 @@ export default createComponent({
         class={bem()}
         round={props.round}
         position="bottom"
+        safeAreaInsetBottom={props.safeAreaInsetBottom}
         {...{
           ...pick(props, popupPropKeys),
           'onUpdate:show': onUpdateShow,
