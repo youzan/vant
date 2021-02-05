@@ -34,7 +34,7 @@ export default createComponent({
     },
     duration: {
       type: Number,
-      default: 3000,
+      default: 2000,
     },
     position: {
       type: String as PropType<ToastPosition>,
