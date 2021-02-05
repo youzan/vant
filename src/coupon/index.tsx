@@ -1,22 +1,38 @@
-import { computed } from 'vue';
+import { computed, PropType } from 'vue';
 import { padZero, createNamespace } from '../utils';
 import { RED } from '../utils/constant';
 import Checkbox from '../checkbox';
 
+export type CouponInfo = {
+  id: string;
+  name: string;
+  endAt: number;
+  value: number;
+  startAt: number;
+  reason?: string;
+  discount?: number;
+  unitDesc?: string;
+  condition?: string;
+  valueDesc?: string;
+  description: string;
+  denominations?: number;
+  originCondition?: number;
+};
+
 const [createComponent, bem, t] = createNamespace('coupon');
 
-function getDate(timeStamp) {
+function getDate(timeStamp: number) {
   const date = new Date(timeStamp * 1000);
   return `${date.getFullYear()}.${padZero(date.getMonth() + 1)}.${padZero(
     date.getDate()
   )}`;
 }
 
-function formatDiscount(discount) {
+function formatDiscount(discount: number) {
   return (discount / 10).toFixed(discount % 10 === 0 ? 0 : 1);
 }
 
-function formatAmount(amount) {
+function formatAmount(amount: number) {
   return (amount / 100).toFixed(
     amount % 100 === 0 ? 0 : amount % 10 === 0 ? 1 : 2
   );
@@ -24,9 +40,12 @@ function formatAmount(amount) {
 
 export default createComponent({
   props: {
-    coupon: Object,
     chosen: Boolean,
     disabled: Boolean,
+    coupon: {
+      type: Object as PropType<CouponInfo>,
+      required: true,
+    },
     currency: {
       type: String,
       default: '¥',
@@ -59,7 +78,7 @@ export default createComponent({
     });
 
     const conditionMessage = computed(() => {
-      const condition = formatAmount(props.coupon.originCondition);
+      const condition = formatAmount(props.coupon.originCondition || 0);
       return condition === '0' ? t('unlimited') : t('condition', condition);
     });
 
