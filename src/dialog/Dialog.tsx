@@ -1,7 +1,7 @@
-import { reactive } from 'vue';
+import { PropType, reactive } from 'vue';
 
 // Utils
-import { callInterceptor } from '../utils/interceptor';
+import { callInterceptor, Interceptor } from '../utils/interceptor';
 import { createNamespace, addUnit, pick } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 
@@ -12,6 +12,9 @@ import ActionBar from '../action-bar';
 import ActionBarButton from '../action-bar-button';
 
 const [createComponent, bem, t] = createNamespace('dialog');
+
+export type DialogAction = 'confirm' | 'cancel';
+export type DialogMessageAlign = 'left' | 'center' | 'right';
 
 const popupKeys = [
   ...Object.keys(popupSharedProps),
@@ -26,11 +29,11 @@ export default createComponent({
     theme: String,
     width: [Number, String],
     message: String,
-    callback: Function,
+    callback: Function as PropType<(action?: DialogAction) => void>,
     allowHtml: Boolean,
     className: null,
-    beforeClose: Function,
-    messageAlign: String,
+    beforeClose: Function as PropType<Interceptor>,
+    messageAlign: String as PropType<DialogMessageAlign>,
     showCancelButton: Boolean,
     cancelButtonText: String,
     cancelButtonColor: String,
@@ -59,18 +62,18 @@ export default createComponent({
       cancel: false,
     });
 
-    const onUpdateShow = (value) => {
+    const onUpdateShow = (value: boolean) => {
       emit('update:show', value);
     };
 
-    const close = (action) => {
+    const close = (action: DialogAction) => {
       onUpdateShow(false);
       if (props.callback) {
         props.callback(action);
       }
     };
 
-    const handleAction = (action) => {
+    const handleAction = (action: DialogAction) => {
       // should not trigger close event when hidden
       if (!props.show) {
         return;
@@ -119,6 +122,7 @@ export default createComponent({
       const { title, message, allowHtml, messageAlign } = props;
       if (message) {
         const hasTitle = title || slots.title;
+
         return (
           <div
             // add key to force re-render
@@ -129,7 +133,7 @@ export default createComponent({
             <div
               class={bem('message', {
                 'has-title': hasTitle,
-                [messageAlign]: messageAlign,
+                [messageAlign as string]: messageAlign,
               })}
               {...{
                 [allowHtml ? 'innerHTML' : 'textContent']: message,
@@ -173,7 +177,6 @@ export default createComponent({
       <ActionBar class={bem('footer')}>
         {props.showCancelButton && (
           <ActionBarButton
-            size="large"
             type="warning"
             text={props.cancelButtonText || t('cancel')}
             class={bem('cancel')}
@@ -186,7 +189,6 @@ export default createComponent({
         )}
         {props.showConfirmButton && (
           <ActionBarButton
-            size="large"
             type="danger"
             text={props.confirmButtonText || t('confirm')}
             class={bem('confirm')}
