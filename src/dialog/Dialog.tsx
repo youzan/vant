@@ -29,7 +29,7 @@ export default createComponent({
     theme: String,
     width: [Number, String],
     message: String,
-    callback: Function as PropType<(action: DialogAction) => void>,
+    callback: Function as PropType<(action?: DialogAction) => void>,
     allowHtml: Boolean,
     className: null,
     beforeClose: Function as PropType<Interceptor>,
