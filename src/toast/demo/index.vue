@@ -30,8 +30,9 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { useTranslate } from '@demo/use-translate';
+import type { LoadingType } from '../../loading';
 import Toast from '..';
 
 const i18n = {
@@ -40,7 +41,7 @@ const i18n = {
     text: '提示内容',
     text2: '成功文案',
     text3: '失败文案',
-    text4: (second) => `倒计时 ${second} 秒`,
+    text4: (second: number) => `倒计时 ${second} 秒`,
     title1: '文字提示',
     title2: '加载提示',
     title3: '成功/失败提示',
@@ -58,7 +59,7 @@ const i18n = {
     text: 'Some messages',
     text2: 'Success',
     text3: 'Fail',
-    text4: (second) => `${second} seconds`,
+    text4: (second: number) => `${second} seconds`,
     title1: 'Text',
     title2: 'Loading',
     title3: 'Success/Fail',
@@ -77,7 +78,7 @@ export default {
   setup() {
     const t = useTranslate(i18n);
 
-    const showLoadingToast = (loadingType) => {
+    const showLoadingToast = (loadingType: LoadingType) => {
       Toast.loading({
         forbidClick: true,
         message: t('loading'),
