@@ -6,7 +6,7 @@ module.exports = {
     site: {
       publicPath:
         (typeof window === 'undefined' && process.env.PUBLIC_PATH) ||
-        'https://b.yzcdn.cn/vant/',
+        '/vant/v3/',
     },
     vetur: {
       tagPrefix: 'van-',
