@@ -101,7 +101,7 @@ Dialog.alert({
 
 ```js
 const beforeClose = (action) =>
-  new Promsie((resolve) => {
+  new Promise((resolve) => {
     setTimeout(() => {
       if (action === 'confirm') {
         resolve(true);
