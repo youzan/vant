@@ -73,7 +73,7 @@ Dialog.alert({
 
 ```js
 const beforeClose = (action) =>
-  new Promsie((resolve) => {
+  new Promise((resolve) => {
     setTimeout(() => {
       resolve(action === 'confirm');
     }, 1000);
