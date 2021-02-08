@@ -68,5 +68,25 @@ test('should change inactive icon when using inactive-icon prop', () => {
       );
     },
   });
-  expect(wrapper.html()).toMatchSnapshot();
+
+  const steps = wrapper.findAll('.van-step');
+  expect(steps[1].find('.van-icon-foo').exists()).toBeTruthy();
+  expect(steps[1].html()).toMatchSnapshot();
+});
+
+test('should change finish icon when using finish-icon prop', () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Steps active={1} finishIcon="foo">
+          <Step>A</Step>
+          <Step>B</Step>
+        </Steps>
+      );
+    },
+  });
+
+  const firstStep = wrapper.find('.van-step');
+  expect(firstStep.find('.van-icon-foo').exists()).toBeTruthy();
+  expect(firstStep.html()).toMatchSnapshot();
 });

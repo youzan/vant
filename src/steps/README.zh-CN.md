@@ -87,6 +87,7 @@ export default {
 | inactive-color | 未激活状态颜色 | _string_ | `#969799` |
 | active-icon | 激活状态底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | `checked` |
 | inactive-icon | 未激活状态底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | - |
+| finish-icon `v3.0.7` | 完成状态底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | - |
 
 ### Step Slots
 

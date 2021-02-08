@@ -45,7 +45,7 @@ export default createComponent({
     };
 
     const renderCircle = () => {
-      const { activeIcon, activeColor, inactiveIcon } = parentProps;
+      const { finishIcon, activeIcon, activeColor, inactiveIcon } = parentProps;
 
       if (isActive()) {
         if (slots['active-icon']) {
@@ -56,6 +56,16 @@ export default createComponent({
           <Icon
             class={bem('icon', 'active')}
             name={activeIcon}
+            color={activeColor}
+          />
+        );
+      }
+
+      if (getStatus() === 'finish' && finishIcon) {
+        return (
+          <Icon
+            class={bem('icon', 'finish')}
+            name={finishIcon}
             color={activeColor}
           />
         );
