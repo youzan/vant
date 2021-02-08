@@ -81,12 +81,13 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| active | 当前步骤 | _number \| string_ | `0` |
-| direction | 显示方向，可选值为 `vertical` | _string_ | `horizontal` |
-| active-color | 激活状态颜色 | _string_ | `#07c160` |
-| inactive-color | 未激活状态颜色 | _string_ | `#969799` |
-| active-icon | 激活状态底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | `checked` |
-| inactive-icon | 未激活状态底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | - |
+| active | 当前步骤对应的索引值 | _number \| string_ | `0` |
+| direction | 步骤条方向，可选值为 `vertical` | _string_ | `horizontal` |
+| active-icon | 当前步骤对应的底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | `checked` |
+| inactive-icon | 非当前步骤对应的底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | - |
+| finish-icon `v3.0.7` | 已完成步骤对应的底部图标，优先级高于 `inactive-icon`，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | - |
+| active-color | 当前步骤和已完成步骤的颜色 | _string_ | `#07c160` |
+| inactive-color | 未激活步骤的颜色 | _string_ | `#969799` |
 
 ### Step Slots
 

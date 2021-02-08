@@ -7,6 +7,7 @@ export const STEPS_KEY = 'vanSteps';
 
 export default createComponent({
   props: {
+    finishIcon: String,
     activeColor: String,
     inactiveIcon: String,
     inactiveColor: String,
