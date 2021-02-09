@@ -47,6 +47,7 @@ const defaultOptions: ToastOptions = {
   closeOnClickOverlay: false,
 };
 
+// TODO remove any
 let queue: any[] = [];
 let allowMultiple = false;
 let currentOptions = { ...defaultOptions };
