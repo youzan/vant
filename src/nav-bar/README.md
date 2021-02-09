@@ -76,10 +76,10 @@ export default {
 
 ### Events
 
-| Event       | Description                              | Arguments |
-| ----------- | ---------------------------------------- | --------- |
-| click-left  | Emitted when the left button is clicked  | -         |
-| click-right | Emitted when the right button is clicked | -         |
+| Event       | Description                              | Arguments           |
+| ----------- | ---------------------------------------- | ------------------- |
+| click-left  | Emitted when the left button is clicked  | _event: MouseEvent_ |
+| click-right | Emitted when the right button is clicked | _event: MouseEvent_ |
 
 ### Less Variables
 

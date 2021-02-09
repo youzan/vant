@@ -286,10 +286,10 @@ export default {
 
 ### Checkbox Events
 
-| 事件名 | 说明                     | 回调参数           |
-| ------ | ------------------------ | ------------------ |
-| change | 当绑定值变化时触发的事件 | _checked: boolean_ |
-| click  | 点击复选框时触发         | _event: Event_     |
+| 事件名 | 说明                     | 回调参数            |
+| ------ | ------------------------ | ------------------- |
+| change | 当绑定值变化时触发的事件 | _checked: boolean_  |
+| click  | 点击复选框时触发         | _event: MouseEvent_ |
 
 ### CheckboxGroup Events
 

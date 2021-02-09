@@ -185,9 +185,9 @@ export default {
 
 ### SwipeItem Events
 
-| 事件名 | 说明       | 回调参数       |
-| ------ | ---------- | -------------- |
-| click  | 点击时触发 | _event: Event_ |
+| 事件名 | 说明       | 回调参数            |
+| ------ | ---------- | ------------------- |
+| click  | 点击时触发 | _event: MouseEvent_ |
 
 ### Swipe 方法
 

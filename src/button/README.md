@@ -132,7 +132,7 @@ app.use(Button);
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Emitted when button is clicked and not disabled or loading | _event: Event_ |
+| click | Emitted when button is clicked and not disabled or loading | _event: MouseEvent_ |
 | touchstart | Emitted when button is touched | _event: TouchEvent_ |
 
 ### Slots

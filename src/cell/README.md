@@ -154,9 +154,9 @@ app.use(CellGroup);
 
 ### Cell Events
 
-| Event | Description                  | Arguments      |
-| ----- | ---------------------------- | -------------- |
-| click | Emitted when cell is clicked | _event: Event_ |
+| Event | Description                  | Arguments           |
+| ----- | ---------------------------- | ------------------- |
+| click | Emitted when cell is clicked | _event: MouseEvent_ |
 
 ### CellGroup Slots
 

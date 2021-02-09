@@ -264,10 +264,10 @@ export default {
 
 ### Checkbox Events
 
-| Event  | Description                          | Parameters         |
-| ------ | ------------------------------------ | ------------------ |
-| change | Emitted when value changed           | _checked: boolean_ |
-| click  | Emitted when the checkbox is clicked | _event: Event_     |
+| Event  | Description                          | Parameters          |
+| ------ | ------------------------------------ | ------------------- |
+| change | Emitted when value changed           | _checked: boolean_  |
+| click  | Emitted when the checkbox is clicked | _event: MouseEvent_ |
 
 ### CheckboxGroup Events
 

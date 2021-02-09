@@ -137,15 +137,15 @@ export default {
 
 ### Events
 
-| Event            | Description                        | Arguments      |
-| ---------------- | ---------------------------------- | -------------- |
-| click            | Emitted when Popup is clicked      | _event: Event_ |
-| click-overlay    | Emitted when overlay is clicked    | -              |
-| click-close-icon | Emitted when close icon is clicked | _event: Event_ |
-| open             | Emitted when opening Popup         | -              |
-| close            | Emitted when closing Popup         | -              |
-| opened           | Emitted when Popup is opened       | -              |
-| closed           | Emitted when Popup is closed       | -              |
+| Event            | Description                        | Arguments           |
+| ---------------- | ---------------------------------- | ------------------- |
+| click            | Emitted when Popup is clicked      | _event: MouseEvent_ |
+| click-overlay    | Emitted when overlay is clicked    | -                   |
+| click-close-icon | Emitted when close icon is clicked | _event: MouseEvent_ |
+| open             | Emitted when opening Popup         | -                   |
+| close            | Emitted when closing Popup         | -                   |
+| opened           | Emitted when Popup is opened       | -                   |
+| closed           | Emitted when Popup is closed       | -                   |
 
 ### Less Variables
 

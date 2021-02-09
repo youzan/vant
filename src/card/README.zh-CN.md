@@ -87,10 +87,10 @@ app.use(Card);
 
 ### Events
 
-| 事件名      | 说明                 | 回调参数       |
-| ----------- | -------------------- | -------------- |
-| click       | 点击时触发           | _event: Event_ |
-| click-thumb | 点击自定义图片时触发 | _event: Event_ |
+| 事件名      | 说明                 | 回调参数            |
+| ----------- | -------------------- | ------------------- |
+| click       | 点击时触发           | _event: MouseEvent_ |
+| click-thumb | 点击自定义图片时触发 | _event: MouseEvent_ |
 
 ### Slots
 
