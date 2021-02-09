@@ -5,6 +5,7 @@
     "module": "ES2015",
     "strict": true,
     "declaration": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
     "lib": ["esnext", "dom"]
