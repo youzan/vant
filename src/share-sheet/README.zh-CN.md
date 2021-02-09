@@ -209,7 +209,7 @@ export default {
 | ------------- | ------------------ | ------------------------------- |
 | select        | 点击分享选项时触发 | _option: Option, index: number_ |
 | cancel        | 点击取消按钮时触发 | -                               |
-| click-overlay | 点击遮罩层时触发   | -                               |
+| click-overlay | 点击遮罩层时触发   | _event: MouseEvent_             |
 
 ### Slots
 

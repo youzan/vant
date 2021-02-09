@@ -140,7 +140,7 @@ export default {
 | Event            | Description                        | Arguments           |
 | ---------------- | ---------------------------------- | ------------------- |
 | click            | Emitted when Popup is clicked      | _event: MouseEvent_ |
-| click-overlay    | Emitted when overlay is clicked    | -                   |
+| click-overlay    | Emitted when overlay is clicked    | _event: MouseEvent_ |
 | click-close-icon | Emitted when close icon is clicked | _event: MouseEvent_ |
 | open             | Emitted when opening Popup         | -                   |
 | close            | Emitted when closing Popup         | -                   |

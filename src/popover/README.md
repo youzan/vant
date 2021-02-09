@@ -234,7 +234,7 @@ export default {
 | close | Emitted when closing Popover | - |
 | opened | Emitted when Popover is opened | - |
 | closed | Emitted when Popover is closed | - |
-| click-overlay | Emitted when overlay is clicked | - |
+| click-overlay | Emitted when overlay is clicked | _event: MouseEvent_ |
 
 ### Slots
 
