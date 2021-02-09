@@ -127,14 +127,14 @@ export default {
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| Dialog | Show dialog | `options` | `Promise` |
-| Dialog.alert | Show alert dialog | `options` | `Promise` |
-| Dialog.confirm | Show confim dialog | `options` | `Promise` |
-| Dialog.setDefaultOptions | Set default options of all dialogs | `options` | `void` |
+| Dialog | Show dialog | _options: DialogOptions_ | `Promise<void>` |
+| Dialog.alert | Show alert dialog | _options: DialogOptions_ | `Promise<void>` |
+| Dialog.confirm | Show confim dialog | _options: DialogOptions_ | `Promise<void>` |
+| Dialog.setDefaultOptions | Set default options of all dialogs | _options: DialogOptions_ | `void` |
 | Dialog.resetDefaultOptions | Reset default options of all dialogs | - | `void` |
 | Dialog.close | Close dialog | - | `void` |
 
-### Options
+### DialogOptions
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -142,7 +142,7 @@ export default {
 | width | Dialog width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |
 | messageAlign | Message text align，can be set to `left` `right` | _string_ | `center` |
-| theme | theme style，can be set to `round-button` | _string_ | `default` |
+| theme | Theme style，can be set to `round-button` | _string_ | `default` |
 | className | Custom className | _string \| Array \| object_ | - |
 | showConfirmButton | Whether to show confirm button | _boolean_ | `true` |
 | showCancelButton | Whether to show cancel button | _boolean_ | `false` |
@@ -170,7 +170,7 @@ export default {
 | width | Width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |
 | message-align | Message align，can be set to `left` `right` | _string_ | `center` |
-| theme | theme style，can be set to `round-button` | _string_ | `default` |
+| theme | Theme style，can be set to `round-button` | _string_ | `default` |
 | show-confirm-button | Whether to show confirm button | _boolean_ | `true` |
 | show-cancel-button | Whether to show cancel button | _boolean_ | `false` |
 | cancel-button-text | Cancel button text | _string_ | `Cancel` |
