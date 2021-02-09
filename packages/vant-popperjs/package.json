@@ -4,7 +4,7 @@
   "description": "Precompiled popperjs core",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "types": "lib/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
