@@ -1,7 +1,7 @@
-import { ref, reactive, computed, PropType, Ref } from 'vue';
+import { ref, Ref, reactive, computed, PropType } from 'vue';
 
 // Utils
-import { range, createNamespace, preventDefault, isDef } from '../utils';
+import { range, isDef, createNamespace, preventDefault } from '../utils';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
 // Composition
