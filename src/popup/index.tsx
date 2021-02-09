@@ -25,11 +25,15 @@ import { useLazyRender } from '../composables/use-lazy-render';
 import Icon from '../icon';
 import Overlay from '../overlay';
 
+export type PopupCloseIconPosition =
+  | 'top-left'
+  | 'top-right'
+  | 'botttom-left'
+  | 'bottom-right';
+
 const [createComponent, bem] = createNamespace('popup');
 
-const context = {
-  zIndex: 2000,
-};
+let globalZIndex = 2000;
 
 export const popupSharedProps = {
   // whether to show popup
@@ -87,7 +91,7 @@ export default createComponent({
       default: 'cross',
     },
     closeIconPosition: {
-      type: String,
+      type: String as PropType<PopupCloseIconPosition>,
       default: 'top-right',
     },
   },
@@ -136,12 +140,12 @@ export default createComponent({
     const open = () => {
       if (!opened) {
         if (props.zIndex !== undefined) {
-          context.zIndex = +props.zIndex;
+          globalZIndex = +props.zIndex;
         }
 
         opened = true;
         lockScroll();
-        zIndex.value = ++context.zIndex;
+        zIndex.value = ++globalZIndex;
       }
     };
 

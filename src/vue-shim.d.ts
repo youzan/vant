@@ -9,6 +9,6 @@ declare module 'vue' {
     role?: string;
     tabindex?: number;
     onClick?: (event: MouseEvent) => void;
-    onClosed: () => void;
+    onClosed?: () => void;
   }
 }
