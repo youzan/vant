@@ -1,7 +1,10 @@
+import { PropType } from 'vue';
 import { createNamespace } from '../utils';
 import Cell from '../cell';
 
 const [createComponent, bem, t] = createNamespace('contact-card');
+
+export type ContactCardType = 'add' | 'edit';
 
 export default createComponent({
   props: {
@@ -13,7 +16,7 @@ export default createComponent({
       default: true,
     },
     type: {
-      type: String,
+      type: String as PropType<ContactCardType>,
       default: 'add',
     },
   },
@@ -21,7 +24,7 @@ export default createComponent({
   emits: ['click'],
 
   setup(props, { emit }) {
-    const onClick = (event) => {
+    const onClick = (event: MouseEvent) => {
       if (props.editable) {
         emit('click', event);
       }
