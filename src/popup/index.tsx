@@ -4,9 +4,12 @@ import {
   watch,
   Teleport,
   computed,
+  PropType,
   onMounted,
   Transition,
   onActivated,
+  CSSProperties,
+  TeleportProps,
   onDeactivated,
   onBeforeUnmount,
 } from 'vue';
@@ -22,16 +25,15 @@ import { useLazyRender } from '../composables/use-lazy-render';
 import Icon from '../icon';
 import Overlay from '../overlay';
 
+export type PopupCloseIconPosition =
+  | 'top-left'
+  | 'top-right'
+  | 'botttom-left'
+  | 'bottom-right';
+
 const [createComponent, bem] = createNamespace('popup');
 
-const context = {
-  zIndex: 2000,
-  lockCount: 0,
-  stack: [],
-  find(vm) {
-    return this.stack.filter((item) => item.vm === vm)[0];
-  },
-};
+let globalZIndex = 2000;
 
 export const popupSharedProps = {
   // whether to show popup
@@ -41,7 +43,7 @@ export const popupSharedProps = {
   // transition duration
   duration: [Number, String],
   // teleport
-  teleport: [String, Object],
+  teleport: [String, Object] as PropType<TeleportProps['to']>,
   // overlay custom style
   overlayStyle: Object,
   // overlay custom class name
@@ -89,7 +91,7 @@ export default createComponent({
       default: 'cross',
     },
     closeIconPosition: {
-      type: String,
+      type: String as PropType<PopupCloseIconPosition>,
       default: 'top-right',
     },
   },
@@ -106,10 +108,10 @@ export default createComponent({
   ],
 
   setup(props, { emit, attrs, slots }) {
-    let opened;
-    let shouldReopen;
+    let opened: boolean;
+    let shouldReopen: boolean;
 
-    const zIndex = ref();
+    const zIndex = ref<number>();
     const popupRef = ref();
 
     const [lockScroll, unlockScroll] = useLockScroll(
@@ -120,7 +122,7 @@ export default createComponent({
     const lazyRender = useLazyRender(() => props.show || !props.lazyRender);
 
     const style = computed(() => {
-      const style = {
+      const style: CSSProperties = {
         zIndex: zIndex.value,
       };
 
@@ -138,12 +140,12 @@ export default createComponent({
     const open = () => {
       if (!opened) {
         if (props.zIndex !== undefined) {
-          context.zIndex = props.zIndex;
+          globalZIndex = +props.zIndex;
         }
 
         opened = true;
         lockScroll();
-        zIndex.value = ++context.zIndex;
+        zIndex.value = ++globalZIndex;
       }
     };
 
@@ -155,7 +157,7 @@ export default createComponent({
       }
     };
 
-    const onClickOverlay = (event) => {
+    const onClickOverlay = (event: MouseEvent) => {
       emit('click-overlay', event);
 
       if (props.closeOnClickOverlay) {
@@ -178,7 +180,7 @@ export default createComponent({
       }
     };
 
-    const onClickCloseIcon = (event) => {
+    const onClickCloseIcon = (event: MouseEvent) => {
       emit('click-close-icon', event);
       close();
     };
@@ -188,7 +190,7 @@ export default createComponent({
         return (
           <Icon
             role="button"
-            tabindex="0"
+            tabindex={0}
             name={props.closeIcon}
             class={bem('close-icon', props.closeIconPosition)}
             onClick={onClickCloseIcon}
@@ -197,7 +199,7 @@ export default createComponent({
       }
     };
 
-    const onClick = (event) => emit('click', event);
+    const onClick = (event: MouseEvent) => emit('click', event);
     const onOpened = () => emit('opened');
     const onClosed = () => emit('closed');
 
