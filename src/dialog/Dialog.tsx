@@ -13,6 +13,7 @@ import ActionBarButton from '../action-bar-button';
 
 const [createComponent, bem, t] = createNamespace('dialog');
 
+export type DialogTheme = 'default' | 'round-button';
 export type DialogAction = 'confirm' | 'cancel';
 export type DialogMessageAlign = 'left' | 'center' | 'right';
 
@@ -26,7 +27,7 @@ export default createComponent({
   props: {
     ...popupSharedProps,
     title: String,
-    theme: String,
+    theme: String as PropType<DialogTheme>,
     width: [Number, String],
     message: String,
     callback: Function as PropType<(action?: DialogAction) => void>,

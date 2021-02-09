@@ -1,8 +1,40 @@
+import { App, TeleportProps } from 'vue';
 import { inBrowser } from '../utils';
+import { Interceptor } from '../utils/interceptor';
 import { mountComponent, usePopupState } from '../utils/mount-component';
-import VanDialog from './Dialog';
+import VanDialog, {
+  DialogTheme,
+  DialogAction,
+  DialogMessageAlign,
+} from './Dialog';
 
-let instance;
+export type DialogOptions = {
+  title?: string;
+  width?: string | number;
+  theme?: DialogTheme;
+  message?: string;
+  overlay?: boolean;
+  teleport?: TeleportProps['to'];
+  className?: any;
+  allowHtml?: boolean;
+  lockScroll?: boolean;
+  transition?: string;
+  beforeClose?: Interceptor;
+  messageAlign?: DialogMessageAlign;
+  overlayClass?: string;
+  overlayStyle?: Record<string, any>;
+  closeOnPopstate?: boolean;
+  cancelButtonText?: string;
+  showCancelButton?: boolean;
+  showConfirmButton?: boolean;
+  cancelButtonColor?: string;
+  confirmButtonText?: string;
+  confirmButtonColor?: string;
+  closeOnClickOverlay?: boolean;
+};
+
+// TODO remove any
+let instance: any;
 
 function initInstance() {
   const Wrapper = {
@@ -15,7 +47,7 @@ function initInstance() {
   ({ instance } = mountComponent(Wrapper));
 }
 
-function Dialog(options) {
+function Dialog(options: DialogOptions) {
   /* istanbul ignore if */
   if (!inBrowser) {
     return Promise.resolve();
@@ -29,7 +61,7 @@ function Dialog(options) {
     instance.open({
       ...Dialog.currentOptions,
       ...options,
-      callback: (action) => {
+      callback: (action: DialogAction) => {
         (action === 'confirm' ? resolve : reject)(action);
       },
     });
@@ -62,9 +94,13 @@ Dialog.defaultOptions = {
   closeOnClickOverlay: false,
 };
 
+Dialog.currentOptions = {
+  ...Dialog.defaultOptions,
+};
+
 Dialog.alert = Dialog;
 
-Dialog.confirm = (options) =>
+Dialog.confirm = (options: DialogOptions) =>
   Dialog({
     showCancelButton: true,
     ...options,
@@ -76,7 +112,7 @@ Dialog.close = () => {
   }
 };
 
-Dialog.setDefaultOptions = (options) => {
+Dialog.setDefaultOptions = (options: DialogOptions) => {
   Object.assign(Dialog.currentOptions, options);
 };
 
@@ -84,10 +120,8 @@ Dialog.resetDefaultOptions = () => {
   Dialog.currentOptions = { ...Dialog.defaultOptions };
 };
 
-Dialog.resetDefaultOptions();
-
-Dialog.install = (app) => {
-  app.use(VanDialog);
+Dialog.install = (app: App) => {
+  app.use(VanDialog as any);
   app.config.globalProperties.$dialog = Dialog;
 };
 
