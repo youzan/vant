@@ -95,11 +95,11 @@ app.use(NoticeBar);
 
 ### Events
 
-| Event  | Description                        | Arguments      |
-| ------ | ---------------------------------- | -------------- |
-| click  | Emitted when NoticeBar is clicked  | _event: Event_ |
-| close  | Emitted when NoticeBar is closed   | _event: Event_ |
-| replay | Emitted when NoticeBar is replayed | -              |
+| Event  | Description                        | Arguments           |
+| ------ | ---------------------------------- | ------------------- |
+| click  | Emitted when NoticeBar is clicked  | _event: MouseEvent_ |
+| close  | Emitted when NoticeBar is closed   | _event: MouseEvent_ |
+| replay | Emitted when NoticeBar is replayed | -                   |
 
 ### Slots
 

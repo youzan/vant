@@ -194,9 +194,9 @@ export default {
 
 ### Radio Events
 
-| 事件名 | 说明             | 回调参数       |
-| ------ | ---------------- | -------------- |
-| click  | 点击单选框时触发 | _event: Event_ |
+| 事件名 | 说明             | 回调参数            |
+| ------ | ---------------- | ------------------- |
+| click  | 点击单选框时触发 | _event: MouseEvent_ |
 
 ### RadioGroup Events
 

@@ -176,9 +176,9 @@ export default {
 
 ### Radio Events
 
-| Event | Description                   | Parameters     |
-| ----- | ----------------------------- | -------------- |
-| click | Emitted when radio is clicked | _event: Event_ |
+| Event | Description                   | Parameters          |
+| ----- | ----------------------------- | ------------------- |
+| click | Emitted when radio is clicked | _event: MouseEvent_ |
 
 ### RadioGroup Events
 

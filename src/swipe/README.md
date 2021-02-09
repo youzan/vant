@@ -175,9 +175,9 @@ export default {
 
 ### SwipeItem Events
 
-| Event | Description                       | Arguments      |
-| ----- | --------------------------------- | -------------- |
-| click | Emitted when component is clicked | _event: Event_ |
+| Event | Description                       | Arguments           |
+| ----- | --------------------------------- | ------------------- |
+| click | Emitted when component is clicked | _event: MouseEvent_ |
 
 ### Swipe Methods
 

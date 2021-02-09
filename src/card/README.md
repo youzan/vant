@@ -81,10 +81,10 @@ Use slot to custom content.
 
 ### Events
 
-| Event       | Description                       | Arguments      |
-| ----------- | --------------------------------- | -------------- |
-| click       | Emitted when component is clicked | _event: Event_ |
-| click-thumb | Emitted when thumb is clicked     | _event: Event_ |
+| Event       | Description                       | Arguments           |
+| ----------- | --------------------------------- | ------------------- |
+| click       | Emitted when component is clicked | _event: MouseEvent_ |
+| click-thumb | Emitted when thumb is clicked     | _event: MouseEvent_ |
 
 ### Slots
 

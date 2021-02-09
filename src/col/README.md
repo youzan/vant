@@ -100,12 +100,12 @@ Set grid spacing using `gutter` attribute. The default value is 0.
 
 ### Row Events
 
-| Event | Description                     | Arguments      |
-| ----- | ------------------------------- | -------------- |
-| click | Emitted when the row is clicked | _event: Event_ |
+| Event | Description                     | Arguments           |
+| ----- | ------------------------------- | ------------------- |
+| click | Emitted when the row is clicked | _event: MouseEvent_ |
 
 ### Col Events
 
-| Event | Description                     | Arguments      |
-| ----- | ------------------------------- | -------------- |
-| click | Emitted when the col is clicked | _event: Event_ |
+| Event | Description                     | Arguments           |
+| ----- | ------------------------------- | ------------------- |
+| click | Emitted when the col is clicked | _event: MouseEvent_ |

@@ -142,9 +142,9 @@ app.use(GridItem);
 
 ### GridItem Events
 
-| 事件名 | 说明           | 回调参数       |
-| ------ | -------------- | -------------- |
-| click  | 点击格子时触发 | _event: Event_ |
+| 事件名 | 说明           | 回调参数            |
+| ------ | -------------- | ------------------- |
+| click  | 点击格子时触发 | _event: MouseEvent_ |
 
 ### GridItem Slots
 

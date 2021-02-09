@@ -110,10 +110,10 @@ export default {
 
 ### Events
 
-| Event  | Description                       | Parameters     |
-| ------ | --------------------------------- | -------------- |
-| change | Emitted when check status changed | _value: any_   |
-| click  | Emitted when component is clicked | _event: Event_ |
+| Event  | Description                       | Parameters          |
+| ------ | --------------------------------- | ------------------- |
+| change | Emitted when check status changed | _value: any_        |
+| click  | Emitted when component is clicked | _event: MouseEvent_ |
 
 ### Less Variables
 
