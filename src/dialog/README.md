@@ -142,7 +142,7 @@ export default {
 | width | Dialog width | _number \| string_ | `320px` |
 | message | Message | _string_ | - |
 | messageAlign | Message text align，can be set to `left` `right` | _string_ | `center` |
-| theme | theme style，can be set to `round` | _string_ | `default` |
+| theme | theme style，can be set to `round-button` | _string_ | `default` |
 | className | Custom className | _string \| Array \| object_ | - |
 | showConfirmButton | Whether to show confirm button | _boolean_ | `true` |
 | showCancelButton | Whether to show cancel button | _boolean_ | `false` |
