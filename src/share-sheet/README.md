@@ -191,7 +191,7 @@ export default {
 | --- | --- | --- |
 | select | Emitted when an option is clicked | _option: Option, index: number_ |
 | cancel | Emitted when the cancel button is clicked | - |
-| click-overlay | Emitted when overlay is clicked | - |
+| click-overlay | Emitted when overlay is clicked | _event: MouseEvent_ |
 
 ### Slots
 

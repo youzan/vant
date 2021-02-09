@@ -155,8 +155,9 @@ export default createComponent({
       }
     };
 
-    const onClickOverlay = () => {
-      emit('click-overlay');
+    const onClickOverlay = (event) => {
+      emit('click-overlay', event);
+
       if (props.closeOnClickOverlay) {
         close();
       }

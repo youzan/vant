@@ -150,7 +150,7 @@ export default {
 | 事件名           | 说明                       | 回调参数            |
 | ---------------- | -------------------------- | ------------------- |
 | click            | 点击弹出层时触发           | _event: MouseEvent_ |
-| click-overlay    | 点击遮罩层时触发           | -                   |
+| click-overlay    | 点击遮罩层时触发           | _event: MouseEvent_ |
 | click-close-icon | 点击关闭图标时触发         | _event: MouseEvent_ |
 | open             | 打开弹出层时触发           | -                   |
 | close            | 关闭弹出层时触发           | -                   |

@@ -205,7 +205,7 @@ export default {
 | close | Emitted when closing ActionSheet | - |
 | opened | Emitted when ActionSheet is opened | - |
 | closed | Emitted when ActionSheet is closed | - |
-| click-overlay | Emitted when overlay is clicked | - |
+| click-overlay | Emitted when overlay is clicked | _event: MouseEvent_ |
 
 ### Slots
 

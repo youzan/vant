@@ -250,7 +250,7 @@ export default {
 | close         | 关闭菜单时触发           | -                               |
 | opened        | 打开菜单且动画结束后触发 | -                               |
 | closed        | 关闭菜单且动画结束后触发 | -                               |
-| click-overlay | 点击遮罩层时触发         | -                               |
+| click-overlay | 点击遮罩层时触发         | _event: MouseEvent_             |
 
 ### Slots
 
