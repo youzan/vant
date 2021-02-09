@@ -1,4 +1,4 @@
-import { ref, watch, reactive } from 'vue';
+import { ref, watch, reactive, PropType } from 'vue';
 import { isDef, createNamespace } from '../utils';
 
 // Composition
@@ -13,12 +13,14 @@ import {
 // Components
 import Icon from '../icon';
 
+export type NoticeBarMode = 'closeable' | 'link';
+
 const [createComponent, bem] = createNamespace('notice-bar');
 
 export default createComponent({
   props: {
     text: String,
-    mode: String,
+    mode: String as PropType<NoticeBarMode>,
     color: String,
     leftIcon: String,
     wrapable: Boolean,
@@ -42,7 +44,7 @@ export default createComponent({
   setup(props, { emit, slots }) {
     let wrapWidth = 0;
     let contentWidth = 0;
-    let startTimer;
+    let startTimer: NodeJS.Timeout;
 
     const wrapRef = ref();
     const contentRef = ref();
@@ -71,7 +73,7 @@ export default createComponent({
       }
     };
 
-    const onClickRightIcon = (event) => {
+    const onClickRightIcon = (event: MouseEvent) => {
       if (props.mode === 'closeable') {
         state.show = false;
         emit('close', event);
@@ -105,7 +107,7 @@ export default createComponent({
         // use double raf to ensure animation can start
         doubleRaf(() => {
           state.offset = -contentWidth;
-          state.duration = (contentWidth + wrapWidth) / props.speed;
+          state.duration = (contentWidth + wrapWidth) / +props.speed;
           emit('replay');
         });
       });
@@ -141,7 +143,7 @@ export default createComponent({
 
     const start = () => {
       const { delay, speed, scrollable } = props;
-      const ms = isDef(delay) ? delay * 1000 : 0;
+      const ms = isDef(delay) ? +delay * 1000 : 0;
 
       reset();
 
@@ -159,7 +161,7 @@ export default createComponent({
             wrapWidth = wrapRefWidth;
             contentWidth = contentRefWidth;
             state.offset = -contentWidth;
-            state.duration = contentWidth / speed;
+            state.duration = contentWidth / +speed;
           });
         }
       }, ms);
