@@ -1,8 +1,8 @@
-import { ref, reactive, computed } from 'vue';
+import { ref, Ref, reactive, computed, PropType } from 'vue';
 
 // Utils
-import { range, createNamespace, preventDefault } from '../utils';
-import { callInterceptor } from '../utils/interceptor';
+import { range, isDef, createNamespace, preventDefault } from '../utils';
+import { callInterceptor, Interceptor } from '../utils/interceptor';
 
 // Composition
 import { useRect, useClickAway } from '@vant/use';
@@ -11,12 +11,15 @@ import { useExpose } from '../composables/use-expose';
 
 const [createComponent, bem] = createNamespace('swipe-cell');
 
+export type SwipeCellSide = 'left' | 'right';
+export type SwipeCellPosition = SwipeCellSide | 'cell' | 'outside';
+
 export default createComponent({
   props: {
     disabled: Boolean,
     leftWidth: [Number, String],
     rightWidth: [Number, String],
-    beforeClose: Function,
+    beforeClose: Function as PropType<Interceptor>,
     stopPropagation: Boolean,
     name: {
       type: [Number, String],
@@ -27,13 +30,13 @@ export default createComponent({
   emits: ['open', 'close', 'click'],
 
   setup(props, { emit, slots }) {
-    let opened;
-    let lockClick;
-    let startOffset;
+    let opened: boolean;
+    let lockClick: boolean;
+    let startOffset: number;
 
-    const root = ref();
-    const leftRef = ref();
-    const rightRef = ref();
+    const root = ref<HTMLElement>();
+    const leftRef = ref<HTMLElement>();
+    const rightRef = ref<HTMLElement>();
 
     const state = reactive({
       offset: 0,
@@ -42,27 +45,28 @@ export default createComponent({
 
     const touch = useTouch();
 
-    const getWidthByRef = (ref) => (ref.value ? useRect(ref).width : 0);
+    const getWidthByRef = (ref: Ref<HTMLElement | undefined>) =>
+      ref.value ? useRect(ref).width : 0;
 
-    const leftWidth = computed(
-      () => +props.leftWidth || getWidthByRef(leftRef)
+    const leftWidth = computed(() =>
+      isDef(props.leftWidth) ? +props.leftWidth : getWidthByRef(leftRef)
     );
 
-    const rightWidth = computed(
-      () => +props.rightWidth || getWidthByRef(rightRef)
+    const rightWidth = computed(() =>
+      isDef(props.rightWidth) ? +props.rightWidth : getWidthByRef(rightRef)
     );
 
-    const open = (position) => {
+    const open = (side: SwipeCellSide) => {
       opened = true;
-      state.offset = position === 'left' ? leftWidth.value : -rightWidth.value;
+      state.offset = side === 'left' ? leftWidth.value : -rightWidth.value;
 
       emit('open', {
         name: props.name,
-        position,
+        position: side,
       });
     };
 
-    const close = (position) => {
+    const close = (position: SwipeCellPosition) => {
       state.offset = 0;
 
       if (opened) {
@@ -74,31 +78,27 @@ export default createComponent({
       }
     };
 
-    const toggle = (position) => {
+    const toggle = (side: SwipeCellSide) => {
       const offset = Math.abs(state.offset);
       const THRESHOLD = 0.15;
       const threshold = opened ? 1 - THRESHOLD : THRESHOLD;
+      const width = side === 'left' ? leftWidth.value : rightWidth.value;
 
-      if (position === 'left' || position === 'right') {
-        const width = position === 'left' ? leftWidth.value : rightWidth.value;
-
-        if (width && offset > width * threshold) {
-          open(position);
-          return;
-        }
+      if (width && offset > width * threshold) {
+        open(side);
+      } else {
+        close(side);
       }
-
-      close();
     };
 
-    const onTouchStart = (event) => {
+    const onTouchStart = (event: TouchEvent) => {
       if (!props.disabled) {
         startOffset = state.offset;
         touch.start(event);
       }
     };
 
-    const onTouchMove = (event) => {
+    const onTouchMove = (event: TouchEvent) => {
       if (props.disabled) {
         return;
       }
@@ -135,7 +135,7 @@ export default createComponent({
       }
     };
 
-    const onClick = (position = 'outside') => {
+    const onClick = (position: SwipeCellPosition = 'outside') => {
       emit('click', position);
 
       if (opened && !lockClick) {
@@ -154,22 +154,28 @@ export default createComponent({
       }
     };
 
-    const getClickHandler = (position, stop) => (event) => {
+    const getClickHandler = (position: SwipeCellPosition, stop?: boolean) => (
+      event: MouseEvent
+    ) => {
       if (stop) {
         event.stopPropagation();
       }
       onClick(position);
     };
 
-    const renderSideContent = (position, ref) => {
-      if (slots[position]) {
+    const renderSideContent = (
+      side: SwipeCellSide,
+      ref: Ref<HTMLElement | undefined>
+    ) => {
+      const contentSlot = slots[side];
+      if (contentSlot) {
         return (
           <div
             ref={ref}
-            class={bem(position)}
-            onClick={getClickHandler(position, true)}
+            class={bem(side)}
+            onClick={getClickHandler(side, true)}
           >
-            {slots[position]()}
+            {contentSlot()}
           </div>
         );
       }
@@ -180,7 +186,13 @@ export default createComponent({
       close,
     });
 
-    useClickAway(root, onClick, { eventName: 'touchstart' });
+    useClickAway(
+      root,
+      () => {
+        onClick('outside');
+      },
+      { eventName: 'touchstart' }
+    );
 
     return () => {
       const wrapperStyle = {
