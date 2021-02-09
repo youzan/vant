@@ -160,23 +160,23 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| Dialog | 展示弹窗 | `options` | `Promise` |
-| Dialog.alert | 展示消息提示弹窗 | `options` | `Promise` |
-| Dialog.confirm | 展示消息确认弹窗 | `options` | `Promise` |
-| Dialog.setDefaultOptions | 修改默认配置，对所有 Dialog 生效 | `options` | `void` |
+| Dialog | 展示弹窗 | _options: DialogOptions_ | `Promise<void>` |
+| Dialog.alert | 展示消息提示弹窗 | _options: DialogOptions_ | `Promise<void>` |
+| Dialog.confirm | 展示消息确认弹窗 | _options: DialogOptions_ | `Promise<void>` |
+| Dialog.setDefaultOptions | 修改默认配置，对所有 Dialog 生效 | _options: DialogOptions_ | `void` |
 | Dialog.resetDefaultOptions | 重置默认配置，对所有 Dialog 生效 | - | `void` |
 | Dialog.close | 关闭弹窗 | - | `void` |
 
-### Options
+### DialogOptions
 
 通过函数调用 `Dialog` 时，支持传入以下选项：
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | title | 标题 | _string_ | - |
-| width | 弹窗宽度，默认单位为`px` | _number \| string_ | `320px` |
-| message | 文本内容，支持通过`\n`换行 | _string_ | - |
-| messageAlign | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
+| width | 弹窗宽度，默认单位为 `px` | _number \| string_ | `320px` |
+| message | 文本内容，支持通过 `\n` 换行 | _string_ | - |
+| messageAlign | 内容对齐方式，可选值为 `left` `right` | _string_ | `center` |
 | theme | 样式风格，可选值为 `round-button` | _string_ | `default` |
 | className | 自定义类名 | _string \| Array \| object_ | - |
 | showConfirmButton | 是否展示确认按钮 | _boolean_ | `true` |
@@ -193,7 +193,7 @@ export default {
 | lockScroll | 是否锁定背景滚动 | _boolean_ | `true` |
 | allowHtml | 是否允许 message 内容中渲染 HTML | _boolean_ | `false` |
 | beforeClose | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(action) => boolean \| Promise_ | - |
-| transition | 动画类名，等价于 [transtion](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的`name`属性 | _string_ | - |
+| transition | 动画类名，等价于 [transtion](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性 | _string_ | - |
 | teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | `body` |
 
 ### Props
@@ -202,7 +202,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model | 是否显示弹窗 | _boolean_ | - |
+| v-model:show | 是否显示弹窗 | _boolean_ | - |
 | title | 标题 | _string_ | - |
 | width | 弹窗宽度，默认单位为 `px` | _number \| string_ | `320px` |
 | message | 文本内容，支持通过 `\n` 换行 | _string_ | - |
