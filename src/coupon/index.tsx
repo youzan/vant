@@ -100,7 +100,6 @@ export default createComponent({
               <p class={bem('valid')}>{validPeriod.value}</p>
               {!disabled && (
                 <Checkbox
-                  size={18}
                   class={bem('corner')}
                   modelValue={chosen}
                   checkedColor={RED}

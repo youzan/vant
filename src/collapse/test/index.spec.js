@@ -176,7 +176,7 @@ test('should toggle collapse after calling the toggle method in accordion mode',
     setup() {
       const itemA = ref();
       const itemB = ref();
-      const active = ref([]);
+      const active = ref('');
       return {
         itemA,
         itemB,
@@ -194,6 +194,7 @@ test('should toggle collapse after calling the toggle method in accordion mode',
   });
 
   wrapper.vm.itemA.toggle();
+  await later();
   expect(wrapper.vm.active).toEqual('a');
 
   wrapper.vm.itemB.toggle();
