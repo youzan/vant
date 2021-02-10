@@ -1,9 +1,25 @@
+import { PropType } from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [createComponent, bem] = createNamespace('steps');
 
 export const STEPS_KEY = 'vanSteps';
+
+export type StepsDirection = 'horizontal' | 'vertical';
+
+export type StepsProvide = {
+  props: {
+    active: number | string;
+    direction: StepsDirection;
+    activeIcon: string;
+    finishIcon?: string;
+    activeColor?: string;
+    inactiveIcon?: string;
+    inactiveColor?: string;
+  };
+  onClickStep: (index: number) => void;
+};
 
 export default createComponent({
   props: {
@@ -16,7 +32,7 @@ export default createComponent({
       default: 0,
     },
     direction: {
-      type: String,
+      type: String as PropType<StepsDirection>,
       default: 'horizontal',
     },
     activeIcon: {
@@ -30,7 +46,14 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const { linkChildren } = useChildren(STEPS_KEY);
 
-    linkChildren({ emit, props });
+    const onClickStep = (index: number) => {
+      emit('click-step', index);
+    };
+
+    linkChildren({
+      props,
+      onClickStep,
+    });
 
     return () => (
       <div class={bem([props.direction])}>
