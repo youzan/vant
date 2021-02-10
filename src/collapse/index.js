@@ -41,15 +41,19 @@ export default createComponent({
     const isExpanded = (name) => {
       const { accordion, modelValue } = props;
 
-      if (
-        !accordion &&
-        !Array.isArray(modelValue) &&
-        process.env.NODE_ENV !== 'production'
-      ) {
-        console.error(
-          '[Vant] Collapse: type of prop "modelValue" should be Array'
-        );
-        return;
+      if (process.env.NODE_ENV !== 'production') {
+        if (accordion && Array.isArray(modelValue)) {
+          console.error(
+            '[Vant] Collapse: "v-model" should not be Array in accordion mode'
+          );
+          return false;
+        }
+        if (!accordion && !Array.isArray(modelValue)) {
+          console.error(
+            '[Vant] Collapse: "v-model" should be Array in non-accordion mode'
+          );
+          return false;
+        }
       }
 
       return accordion ? modelValue === name : modelValue.indexOf(name) !== -1;
