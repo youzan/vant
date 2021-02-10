@@ -46,8 +46,8 @@ export default createComponent({
     let contentWidth = 0;
     let startTimer: NodeJS.Timeout;
 
-    const wrapRef = ref();
-    const contentRef = ref();
+    const wrapRef = ref<HTMLElement>();
+    const contentRef = ref<HTMLElement>();
 
     const state = reactive({
       show: true,

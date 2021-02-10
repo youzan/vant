@@ -31,7 +31,7 @@ export default createComponent({
   emits: ['click-left', 'click-right'],
 
   setup(props, { emit, slots }) {
-    const navBarRef = ref();
+    const navBarRef = ref<HTMLElement>();
     const renderPlaceholder = usePlaceholder(navBarRef, bem);
 
     const onClickLeft = (event: MouseEvent) => {
