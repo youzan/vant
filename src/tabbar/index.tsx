@@ -1,9 +1,9 @@
-import { ref } from 'vue';
+import { ref, PropType } from 'vue';
 
 // Utils
-import { createNamespace, isDef } from '../utils';
+import { createNamespace } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
-import { callInterceptor } from '../utils/interceptor';
+import { callInterceptor, Interceptor } from '../utils/interceptor';
 
 // Composition
 import { useChildren } from '@vant/use';
@@ -13,13 +13,23 @@ const [createComponent, bem] = createNamespace('tabbar');
 
 export const TABBAR_KEY = 'vanTabbar';
 
+export type TabbarProvide = {
+  props: {
+    route?: boolean;
+    modelValue: number | string;
+    activeColor?: string;
+    inactiveColor?: string;
+  };
+  setActive: (active: number | string) => void;
+};
+
 export default createComponent({
   props: {
     route: Boolean,
     zIndex: [Number, String],
     placeholder: Boolean,
     activeColor: String,
-    beforeChange: Function,
+    beforeChange: Function as PropType<Interceptor>,
     inactiveColor: String,
     modelValue: {
       type: [Number, String],
@@ -34,7 +44,7 @@ export default createComponent({
       default: true,
     },
     safeAreaInsetBottom: {
-      type: Boolean,
+      type: Boolean as PropType<boolean | null>,
       default: null,
     },
   },
@@ -42,12 +52,12 @@ export default createComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const root = ref();
+    const root = ref<HTMLElement>();
     const { linkChildren } = useChildren(TABBAR_KEY);
     const renderPlaceholder = usePlaceholder(root, bem);
 
     const isUnfit = () => {
-      if (isDef(props.safeAreaInsetBottom)) {
+      if (props.safeAreaInsetBottom !== null) {
         return !props.safeAreaInsetBottom;
       }
       // enable safe-area-inset-bottom by default when fixed
@@ -56,19 +66,21 @@ export default createComponent({
 
     const renderTabbar = () => {
       const { fixed, zIndex, border } = props;
-      const unfit = isUnfit();
       return (
         <div
           ref={root}
-          style={{ zIndex }}
-          class={[bem({ unfit, fixed }), { [BORDER_TOP_BOTTOM]: border }]}
+          style={{ zIndex: zIndex !== undefined ? +zIndex : undefined }}
+          class={[
+            bem({ unfit: isUnfit(), fixed }),
+            { [BORDER_TOP_BOTTOM]: border },
+          ]}
         >
           {slots.default?.()}
         </div>
       );
     };
 
-    const setActive = (active) => {
+    const setActive = (active: number | string) => {
       if (active !== props.modelValue) {
         callInterceptor({
           interceptor: props.beforeChange,
