@@ -127,7 +127,7 @@ export default createComponent({
     };
 
     let actionType: 'plus' | 'minus';
-    const inputRef = ref();
+    const inputRef = ref<HTMLInputElement>();
     const current = ref(getInitialValue());
 
     const minusDisabled = computed(

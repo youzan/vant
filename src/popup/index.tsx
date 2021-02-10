@@ -112,7 +112,7 @@ export default createComponent({
     let shouldReopen: boolean;
 
     const zIndex = ref<number>();
-    const popupRef = ref();
+    const popupRef = ref<HTMLElement>();
 
     const [lockScroll, unlockScroll] = useLockScroll(
       popupRef,

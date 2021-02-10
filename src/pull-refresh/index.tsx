@@ -52,7 +52,7 @@ export default createComponent({
   setup(props, { emit, slots }) {
     let reachTop: boolean;
 
-    const root = ref();
+    const root = ref<HTMLElement>();
     const scrollParent = useScrollParent(root);
 
     const state = reactive({
