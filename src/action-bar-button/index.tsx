@@ -29,14 +29,14 @@ export default createComponent({
 
     const isFirst = computed(() => {
       if (parent) {
-        const prev = parent.children[index!.value - 1];
+        const prev = parent.children[index.value - 1];
         return !(prev && 'isButton' in prev);
       }
     });
 
     const isLast = computed(() => {
       if (parent) {
-        const next = parent.children[index!.value + 1];
+        const next = parent.children[index.value + 1];
         return !(next && 'isButton' in next);
       }
     });

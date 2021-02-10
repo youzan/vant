@@ -1,10 +1,14 @@
-import { watch } from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [createComponent, bem] = createNamespace('sidebar');
 
 export const SIDEBAR_KEY = 'vanSidebar';
+
+export type SidebarProvide = {
+  getActive: () => number;
+  setActive: (value: number) => void;
+};
 
 export default createComponent({
   props: {
@@ -19,19 +23,17 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const { linkChildren } = useChildren(SIDEBAR_KEY);
 
-    const active = () => +props.modelValue;
+    const getActive = () => +props.modelValue;
 
-    const setActive = (value) => {
-      if (value !== active()) {
+    const setActive = (value: number) => {
+      if (value !== getActive()) {
+        emit('update:modelValue', value);
         emit('change', value);
       }
     };
 
-    watch(active, setActive);
-
     linkChildren({
-      emit,
-      active,
+      getActive,
       setActive,
     });
 
