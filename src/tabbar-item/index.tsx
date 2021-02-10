@@ -1,8 +1,8 @@
 import { computed, getCurrentInstance } from 'vue';
-import { TABBAR_KEY } from '../tabbar';
+import { TABBAR_KEY, TabbarProvide } from '../tabbar';
 
 // Utils
-import { createNamespace, isObject, isDef } from '../utils';
+import { createNamespace, isObject } from '../utils';
 
 // Composition
 import { useParent } from '@vant/use';
@@ -28,8 +28,15 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const route = useRoute();
-    const vm = getCurrentInstance().proxy;
-    const { parent, index } = useParent(TABBAR_KEY);
+    const vm = getCurrentInstance()!.proxy!;
+    const { parent, index } = useParent<TabbarProvide>(TABBAR_KEY);
+
+    if (!parent) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('[Vant] TabbarItem must be a child component of Tabbar.');
+      }
+      return;
+    }
 
     const active = computed(() => {
       const { route, modelValue } = parent.props;
@@ -39,7 +46,7 @@ export default createComponent({
         const { to } = props;
         const config = isObject(to) ? to : { path: to };
         const pathMatched = config.path === $route.path;
-        const nameMatched = isDef(config.name) && config.name === $route.name;
+        const nameMatched = 'name' in config && config.name === $route.name;
 
         return pathMatched || nameMatched;
       }
@@ -47,8 +54,8 @@ export default createComponent({
       return (props.name || index.value) === modelValue;
     });
 
-    const onClick = (event) => {
-      parent.setActive(props.name || index.value);
+    const onClick = (event: MouseEvent) => {
+      parent.setActive(props.name ?? index.value);
       emit('click', event);
       route();
     };

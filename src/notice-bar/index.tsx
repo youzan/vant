@@ -26,7 +26,7 @@ export default createComponent({
     wrapable: Boolean,
     background: String,
     scrollable: {
-      type: Boolean,
+      type: Boolean as PropType<boolean | null>,
       default: null,
     },
     delay: {
