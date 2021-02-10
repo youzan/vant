@@ -1,15 +1,29 @@
 import { computed } from 'vue';
+
+// Utils
 import { createNamespace } from '../utils';
 import { BORDER } from '../utils/constant';
-import { STEPS_KEY } from '../steps';
+import { STEPS_KEY, StepsProvide } from '../steps';
+
+// Composition
 import { useParent } from '@vant/use';
+
+// Components
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('step');
 
 export default createComponent({
   setup(props, { slots }) {
-    const { parent, index } = useParent(STEPS_KEY);
+    const { parent, index } = useParent<StepsProvide>(STEPS_KEY);
+
+    if (!parent) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('[Vant] Step must be a child component of Steps.');
+      }
+      return;
+    }
+
     const parentProps = parent.props;
 
     const getStatus = () => {
@@ -17,9 +31,7 @@ export default createComponent({
       if (index.value < active) {
         return 'finish';
       }
-      if (index.value === active) {
-        return 'process';
-      }
+      return index.value === active ? 'process' : 'waiting';
     };
 
     const isActive = () => getStatus() === 'process';
@@ -41,7 +53,7 @@ export default createComponent({
     });
 
     const onClickStep = () => {
-      parent.emit('click-step', index.value);
+      parent.onClickStep(index.value);
     };
 
     const renderCircle = () => {
