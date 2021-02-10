@@ -1,15 +1,15 @@
-import { ref, onBeforeUpdate } from 'vue';
+import { ref, Ref, onBeforeUpdate } from 'vue';
 
-export function useRefs() {
-  const refs = ref([] as Element[]);
+export function useRefs<T = Element>() {
+  const refs = ref([]) as Ref<T[]>;
 
   onBeforeUpdate(() => {
     refs.value = [];
   });
 
-  const setRefs = (index: number) => (el: Element) => {
-    refs.value[index] = el;
+  const setRefs = (index: number) => (el: unknown) => {
+    refs.value[index] = el as T;
   };
 
-  return [refs, setRefs];
+  return [refs, setRefs] as const;
 }
