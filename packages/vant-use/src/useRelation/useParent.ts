@@ -1,4 +1,5 @@
 import {
+  ref,
   inject,
   computed,
   onUnmounted,
@@ -18,25 +19,25 @@ export function useParent<T>(key: string | symbol) {
   const parent = inject<ParentProvide<T> | null>(key, null);
 
   if (parent) {
-    const instance = getCurrentInstance();
+    const instance = getCurrentInstance()!;
+    const { link, unlink, internalChildren, ...rest } = parent;
 
-    if (instance) {
-      const { link, unlink, internalChildren, ...rest } = parent;
+    link(instance);
 
-      link(instance);
+    onUnmounted(() => {
+      unlink(instance);
+    });
 
-      onUnmounted(() => {
-        unlink(instance);
-      });
+    const index = computed(() => internalChildren.indexOf(instance));
 
-      const index = computed(() => internalChildren.indexOf(instance));
-
-      return {
-        parent: rest,
-        index,
-      };
-    }
+    return {
+      parent: rest,
+      index,
+    };
   }
 
-  return {};
+  return {
+    parent: null,
+    index: ref(-1),
+  };
 }
