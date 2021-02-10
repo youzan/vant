@@ -1,21 +1,37 @@
-import { watch } from 'vue';
+import { PropType, watch } from 'vue';
 import { createNamespace } from '../utils';
-import { CHECKBOX_KEY } from '../checkbox';
 import { useChildren } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { useLinkField } from '../composables/use-link-field';
 
 const [createComponent, bem] = createNamespace('checkbox-group');
 
+export const CHECKBOX_GROUP_KEY = 'vanCheckboxGroup';
+
+export type CheckboxGroupDirection = 'horizontal' | 'vertical';
+
+export type CheckboxGroupToggleAllOptions = {
+  checked?: boolean;
+  skipDisabled?: boolean;
+};
+
+export type CheckboxGroupProvide = {
+  props: {
+    max: number | string;
+    modelValue: any[];
+  };
+  updateModelValue: (value: unknown[]) => void;
+};
+
 export default createComponent({
   props: {
     max: [Number, String],
     disabled: Boolean,
-    direction: String,
+    direction: String as PropType<CheckboxGroupDirection>,
     iconSize: [Number, String],
     checkedColor: String,
     modelValue: {
-      type: Array,
+      type: Array as PropType<any[]>,
       default: () => [],
     },
   },
@@ -23,16 +39,20 @@ export default createComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const { children, linkChildren } = useChildren(CHECKBOX_KEY);
+    const { children, linkChildren } = useChildren(CHECKBOX_GROUP_KEY);
 
-    const toggleAll = (options = {}) => {
+    const updateModelValue = (value: unknown[]) => {
+      emit('update:modelValue', value);
+    };
+
+    const toggleAll = (options: CheckboxGroupToggleAllOptions = {}) => {
       if (typeof options === 'boolean') {
         options = { checked: options };
       }
 
       const { checked, skipDisabled } = options;
 
-      const checkedChildren = children.filter((item) => {
+      const checkedChildren = children.filter((item: any) => {
         if (!item.props.bindGroup) {
           return false;
         }
@@ -42,8 +62,8 @@ export default createComponent({
         return checked ?? !item.checked.value;
       });
 
-      const names = checkedChildren.map((item) => item.name);
-      emit('update:modelValue', names);
+      const names = checkedChildren.map((item: any) => item.name);
+      updateModelValue(names);
     };
 
     watch(
@@ -55,7 +75,10 @@ export default createComponent({
 
     useExpose({ toggleAll });
     useLinkField(() => props.modelValue);
-    linkChildren({ emit, props });
+    linkChildren({
+      props,
+      updateModelValue,
+    });
 
     return () => <div class={bem([props.direction])}>{slots.default?.()}</div>;
   },

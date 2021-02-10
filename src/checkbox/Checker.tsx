@@ -1,17 +1,20 @@
-import { ref, computed, defineComponent } from 'vue';
+import { ref, computed, defineComponent, PropType } from 'vue';
 import { addUnit } from '../utils';
 import Icon from '../icon';
 
+export type CheckerShape = 'square' | 'round';
+export type CheckerLabelPosition = 'left' | 'right';
+
 export const checkerProps = {
-  name: null,
+  name: null as any,
   disabled: Boolean,
   iconSize: [Number, String],
-  modelValue: null,
+  modelValue: null as any,
   checkedColor: String,
-  labelPosition: String,
+  labelPosition: String as PropType<CheckerLabelPosition>,
   labelDisabled: Boolean,
   shape: {
-    type: String,
+    type: String as PropType<CheckerShape>,
     default: 'round',
   },
 };
@@ -20,7 +23,7 @@ export default defineComponent({
   props: {
     ...checkerProps,
     role: String,
-    parent: Object,
+    parent: Object as PropType<Record<string, any> | null>,
     checked: Boolean,
     bindGroup: {
       type: Boolean,
@@ -41,14 +44,13 @@ export default defineComponent({
       if (props.parent && props.bindGroup) {
         return props.parent.props[name];
       }
-      return null;
     };
 
-    const disabled = computed(
+    const disabled = computed<boolean>(
       () => getParentProp('disabled') || props.disabled
     );
 
-    const direction = computed(() => getParentProp('direction') || null);
+    const direction = computed(() => getParentProp('direction'));
 
     const iconStyle = computed(() => {
       const checkedColor = props.checkedColor || getParentProp('checkedColor');

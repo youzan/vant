@@ -4,10 +4,9 @@ import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { useLinkField } from '../composables/use-link-field';
 import Checker, { checkerProps } from './Checker';
+import { CHECKBOX_GROUP_KEY, CheckboxGroupProvide } from '../checkbox-group';
 
 const [createComponent, bem] = createNamespace('checkbox');
-
-export const CHECKBOX_KEY = 'vanCheckbox';
 
 export default createComponent({
   props: {
@@ -21,11 +20,11 @@ export default createComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const { parent } = useParent(CHECKBOX_KEY);
+    const { parent } = useParent<CheckboxGroupProvide>(CHECKBOX_GROUP_KEY);
 
-    const setParentValue = (checked) => {
+    const setParentValue = (checked: boolean) => {
       const { name } = props;
-      const { max, modelValue } = parent.props;
+      const { max, modelValue } = parent!.props;
       const value = modelValue.slice();
 
       if (checked) {
@@ -35,7 +34,7 @@ export default createComponent({
           value.push(name);
 
           if (props.bindGroup) {
-            parent.emit('update:modelValue', value);
+            parent!.updateModelValue(value);
           }
         }
       } else {
@@ -45,7 +44,7 @@ export default createComponent({
           value.splice(index, 1);
 
           if (props.bindGroup) {
-            parent.emit('update:modelValue', value);
+            parent!.updateModelValue(value);
           }
         }
       }
@@ -83,7 +82,6 @@ export default createComponent({
         role="checkbox"
         parent={parent}
         checked={checked.value}
-        bindGroup={props.bindGroup}
         onToggle={toggle}
         {...props}
       />
