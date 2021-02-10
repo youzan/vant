@@ -1,5 +1,7 @@
 import 'vue';
 
+type EventHandler = (...args: any[]) => void;
+
 // TODO
 // should be removed after Vue supported component events typing
 // see: https://github.com/vuejs/vue-next/issues/1553
@@ -8,7 +10,8 @@ declare module 'vue' {
   interface ComponentCustomProps {
     role?: string;
     tabindex?: number;
-    onClick?: (event: MouseEvent) => void;
-    onClosed?: () => void;
+    onClick?: EventHandler;
+    onClosed?: EventHandler;
+    onChange?: EventHandler;
   }
 }

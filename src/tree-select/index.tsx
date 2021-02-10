@@ -1,3 +1,5 @@
+import { PropType } from 'vue';
+
 // Utils
 import { createNamespace, addUnit } from '../utils';
 
@@ -8,6 +10,21 @@ import SidebarItem from '../sidebar-item';
 
 const [createComponent, bem] = createNamespace('tree-select');
 
+export type TreeSelectChild = {
+  id: number | string;
+  text: string;
+  disabled?: boolean;
+};
+
+export type TreeSelectItem = {
+  dot?: boolean;
+  text: string;
+  badge?: number | string;
+  children?: TreeSelectChild[];
+  disabled?: boolean;
+  className?: any;
+};
+
 export default createComponent({
   props: {
     max: {
@@ -15,7 +32,7 @@ export default createComponent({
       default: Infinity,
     },
     items: {
-      type: Array,
+      type: Array as PropType<TreeSelectItem[]>,
       default: () => [],
     },
     height: {
@@ -23,7 +40,9 @@ export default createComponent({
       default: 300,
     },
     activeId: {
-      type: [Number, String, Array],
+      type: [Number, String, Array] as PropType<
+        number | string | Array<number | string>
+      >,
       default: 0,
     },
     selectedIcon: {
@@ -44,22 +63,20 @@ export default createComponent({
   ],
 
   setup(props, { emit, slots }) {
-    const isMultiple = () => Array.isArray(props.activeId);
-
-    const isActiveItem = (id) => {
-      return isMultiple()
+    const isActiveItem = (id: number | string) => {
+      return Array.isArray(props.activeId)
         ? props.activeId.indexOf(id) !== -1
         : props.activeId === id;
     };
 
-    const renderSubItem = (item) => {
+    const renderSubItem = (item: TreeSelectChild) => {
       const onClick = () => {
         if (item.disabled) {
           return;
         }
 
         let activeId;
-        if (isMultiple()) {
+        if (Array.isArray(props.activeId)) {
           activeId = props.activeId.slice();
 
           const index = activeId.indexOf(item.id);
@@ -97,7 +114,7 @@ export default createComponent({
       );
     };
 
-    const onSidebarChange = (index) => {
+    const onSidebarChange = (index: number) => {
       emit('update:mainActiveIndex', index);
       emit('click-nav', index);
     };
