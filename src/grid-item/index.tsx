@@ -1,9 +1,9 @@
-import { computed } from 'vue';
+import { computed, CSSProperties } from 'vue';
 
 // Utils
 import { createNamespace, addUnit } from '../utils';
 import { BORDER } from '../utils/constant';
-import { GRID_KEY } from '../grid';
+import { GRID_KEY, GridProvide } from '../grid';
 
 // Composition
 import { useParent } from '@vant/use';
@@ -26,13 +26,20 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const { parent, index } = useParent(GRID_KEY);
+    const { parent, index } = useParent<GridProvide>(GRID_KEY);
     const route = useRoute();
+
+    if (!parent) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('[Vant] GridItem must be a child component of Grid.');
+      }
+      return;
+    }
 
     const rootStyle = computed(() => {
       const { square, gutter, columnNum } = parent.props;
-      const percent = `${100 / columnNum}%`;
-      const style = {
+      const percent = `${100 / +columnNum}%`;
+      const style: CSSProperties = {
         flexBasis: percent,
       };
 
@@ -128,10 +135,10 @@ export default createComponent({
       return (
         <div class={[bem({ square })]} style={rootStyle.value}>
           <div
-            role={clickable ? 'button' : null}
+            role={clickable ? 'button' : undefined}
             class={classes}
             style={contentStyle.value}
-            tabindex={clickable ? 0 : null}
+            tabindex={clickable ? 0 : undefined}
             onClick={route}
           >
             {renderContent()}
