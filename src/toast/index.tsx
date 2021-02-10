@@ -65,7 +65,7 @@ function parseOptions(message: string | ToastOptions): ToastOptions {
 function createInstance() {
   const { instance, unmount } = mountComponent({
     setup() {
-      const message = ref<string>();
+      const message = ref('');
       const { open, state, close, toggle } = usePopupState();
 
       const onClosed = () => {
