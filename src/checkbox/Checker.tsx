@@ -5,6 +5,15 @@ import Icon from '../icon';
 export type CheckerShape = 'square' | 'round';
 export type CheckerLabelPosition = 'left' | 'right';
 
+type CheckerParent = {
+  props: {
+    disabled?: boolean;
+    iconSize?: number | string;
+    direction?: 'horizontal' | 'vertical';
+    checkedColor?: string;
+  };
+};
+
 export const checkerProps = {
   name: null as any,
   disabled: Boolean,
@@ -23,7 +32,7 @@ export default defineComponent({
   props: {
     ...checkerProps,
     role: String,
-    parent: Object as PropType<Record<string, any> | null>,
+    parent: Object as PropType<CheckerParent | null>,
     checked: Boolean,
     bindGroup: {
       type: Boolean,
@@ -40,13 +49,13 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const iconRef = ref<HTMLElement>();
 
-    const getParentProp = (name: string) => {
+    const getParentProp = <T extends keyof CheckerParent['props']>(name: T) => {
       if (props.parent && props.bindGroup) {
         return props.parent.props[name];
       }
     };
 
-    const disabled = computed<boolean>(
+    const disabled = computed(
       () => getParentProp('disabled') || props.disabled
     );
 
