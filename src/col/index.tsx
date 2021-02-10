@@ -28,8 +28,8 @@ export default createComponent({
 
       const { spaces } = parent;
 
-      if (spaces && spaces.value && spaces.value[index!.value]) {
-        const { left, right } = spaces.value[index!.value];
+      if (spaces && spaces.value && spaces.value[index.value]) {
+        const { left, right } = spaces.value[index.value];
         return {
           paddingLeft: left ? `${left}px` : null,
           paddingRight: right ? `${right}px` : null,
