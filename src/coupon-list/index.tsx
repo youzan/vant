@@ -1,4 +1,4 @@
-import { watch, computed, nextTick, onMounted, reactive } from 'vue';
+import { watch, computed, nextTick, reactive, PropType, onMounted } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -12,14 +12,13 @@ import Tab from '../tab';
 import Tabs from '../tabs';
 import Field from '../field';
 import Button from '../button';
-import Coupon from '../coupon';
+import Coupon, { CouponInfo } from '../coupon';
 
 const [createComponent, bem, t] = createNamespace('coupon-list');
 const EMPTY_IMAGE = 'https://img01.yzcdn.cn/vant/coupon-empty.png';
 
 export default createComponent({
   props: {
-    code: String,
     enabledTitle: String,
     disabledTitle: String,
     closeButtonText: String,
@@ -27,6 +26,10 @@ export default createComponent({
     exchangeButtonText: String,
     exchangeButtonLoading: Boolean,
     exchangeButtonDisabled: Boolean,
+    code: {
+      type: String,
+      default: '',
+    },
     exchangeMinLength: {
       type: Number,
       default: 1,
@@ -36,11 +39,11 @@ export default createComponent({
       default: -1,
     },
     coupons: {
-      type: Array,
+      type: Array as PropType<CouponInfo[]>,
       default: () => [],
     },
     disabledCoupons: {
-      type: Array,
+      type: Array as PropType<CouponInfo[]>,
       default: () => [],
     },
     displayedCouponIndex: {
@@ -76,7 +79,7 @@ export default createComponent({
 
     const state = reactive({
       tab: 0,
-      code: props.code || '',
+      code: props.code,
     });
 
     const { height: windowHeight } = useWindowSize();
@@ -102,7 +105,7 @@ export default createComponent({
       }
     };
 
-    const scrollToCoupon = (index) => {
+    const scrollToCoupon = (index: number) => {
       nextTick(() => {
         if (couponRefs.value[index]) {
           couponRefs.value[index].scrollIntoView();
