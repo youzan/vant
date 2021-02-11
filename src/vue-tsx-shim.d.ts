@@ -14,5 +14,6 @@ declare module 'vue' {
     onClosed?: EventHandler;
     onChange?: EventHandler;
     onToggle?: EventHandler;
+    onClickStep?: EventHandler;
   }
 }
