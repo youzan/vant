@@ -19,7 +19,7 @@ export default createComponent({
       type: [String, Number, Array] as PropType<
         string | number | Array<string | number>
       >,
-      required: true,
+      default: '',
     },
     border: {
       type: Boolean,

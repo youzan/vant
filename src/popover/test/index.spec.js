@@ -91,9 +91,7 @@ test('should allow to custom the color of action test', () => {
     },
   });
 
-  expect(wrapper.find('.van-popover__action').element.style.color).toEqual(
-    'red'
-  );
+  expect(wrapper.find('.van-popover__action').style.color).toEqual('red');
 });
 
 test('should locate to reference element when showed', async () => {

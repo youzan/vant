@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test';
 
 test('radio-group change', () => {
   const wrapper = mount({

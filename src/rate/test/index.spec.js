@@ -112,9 +112,7 @@ test('should change icon size when using size prop', () => {
     },
   });
 
-  expect(wrapper.find('.van-rate__icon').element.style.fontSize).toEqual(
-    '2rem'
-  );
+  expect(wrapper.find('.van-rate__icon').style.fontSize).toEqual('2rem');
 });
 
 test('should not emit change event when untouchable rate is touchmoved', () => {

@@ -321,7 +321,7 @@ test('should emit scroll event when visibility changed', async () => {
   observerCallback([{ intersectionRatio: 1 }]);
   expect(onScroll).toHaveBeenCalledTimes(2);
 
-  wrapper.element.style.display = 'none';
+  wrapper.style.display = 'none';
   observerCallback([{ intersectionRatio: 0 }]);
   expect(onScroll).toHaveBeenCalledTimes(2);
 

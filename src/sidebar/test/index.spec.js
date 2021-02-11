@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test';
 import Sidebar from '..';
 import SidebarItem from '../../sidebar-item';
 

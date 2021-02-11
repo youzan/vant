@@ -45,7 +45,7 @@ export default createComponent({
         const { $route } = vm;
         const { to } = props;
         const config = isObject(to) ? to : { path: to };
-        const pathMatched = config.path === $route.path;
+        const pathMatched = 'path' in config && config.path === $route.path;
         const nameMatched = 'name' in config && config.name === $route.name;
 
         return pathMatched || nameMatched;

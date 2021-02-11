@@ -241,7 +241,7 @@ test('title-style prop', () => {
     `,
   });
 
-  expect(wrapper.find('.van-tab').element.style.color).toEqual('red');
+  expect(wrapper.find('.van-tab').style.color).toEqual('red');
 });
 
 test('dot prop', () => {

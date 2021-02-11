@@ -1,5 +1,5 @@
 import Search from '..';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test';
 
 test('should emit update:modelValue event when input value changed', () => {
   const onUpdateModelValue = jest.fn();

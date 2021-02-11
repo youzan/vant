@@ -252,7 +252,7 @@ test('should update input width when using input-width prop', () => {
       inputWidth: '10rem',
     },
   });
-  expect(wrapper.find('input').element.style.width).toEqual('10rem');
+  expect(wrapper.find('input').style.width).toEqual('10rem');
 });
 
 test('should update input height and button size when using button-size prop', () => {
