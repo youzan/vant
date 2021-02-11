@@ -1,3 +1,5 @@
+import './plugin';
+
 // promisify setTimeout
 export function later(delay = 0): Promise<void> {
   return new Promise((resolve) => {
