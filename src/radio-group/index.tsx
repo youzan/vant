@@ -2,19 +2,15 @@ import { watch } from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 import { useLinkField } from '../composables/use-link-field';
-import { CheckerDirection } from '../checkbox/Checker';
+import { CheckerParent } from '../checkbox/Checker';
 
 const [createComponent, bem] = createNamespace('radio-group');
 
 export const RADIO_KEY = 'vanRadio';
 
-export type RadioGroupProvide = {
+export type RadioGroupProvide = CheckerParent & {
   props: {
-    disabled?: boolean;
-    iconSize?: number | string;
-    direction?: CheckerDirection;
     modelValue: any;
-    checkedColor?: string;
   };
   updateModelValue: (value: unknown) => void;
 };

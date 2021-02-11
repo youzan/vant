@@ -3,7 +3,7 @@ import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { useLinkField } from '../composables/use-link-field';
-import { CheckerDirection } from '../checkbox/Checker';
+import { CheckerParent, CheckerDirection } from '../checkbox/Checker';
 
 const [createComponent, bem] = createNamespace('checkbox-group');
 
@@ -14,14 +14,10 @@ export type CheckboxGroupToggleAllOptions = {
   skipDisabled?: boolean;
 };
 
-export type CheckboxGroupProvide = {
+export type CheckboxGroupProvide = CheckerParent & {
   props: {
     max: number | string;
-    disabled?: boolean;
-    iconSize?: number | string;
-    direction?: CheckerDirection;
     modelValue: any[];
-    checkedColor?: string;
   };
   updateModelValue: (value: unknown[]) => void;
 };
