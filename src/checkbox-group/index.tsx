@@ -9,10 +9,12 @@ const [createComponent, bem] = createNamespace('checkbox-group');
 
 export const CHECKBOX_GROUP_KEY = 'vanCheckboxGroup';
 
-export type CheckboxGroupToggleAllOptions = {
-  checked?: boolean;
-  skipDisabled?: boolean;
-};
+export type CheckboxGroupToggleAllOptions =
+  | boolean
+  | {
+      checked?: boolean;
+      skipDisabled?: boolean;
+    };
 
 export type CheckboxGroupProvide = CheckerParent & {
   props: {
