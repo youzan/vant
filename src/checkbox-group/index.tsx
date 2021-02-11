@@ -3,19 +3,18 @@ import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { useLinkField } from '../composables/use-link-field';
+import { CheckerParent, CheckerDirection } from '../checkbox/Checker';
 
 const [createComponent, bem] = createNamespace('checkbox-group');
 
 export const CHECKBOX_GROUP_KEY = 'vanCheckboxGroup';
-
-export type CheckboxGroupDirection = 'horizontal' | 'vertical';
 
 export type CheckboxGroupToggleAllOptions = {
   checked?: boolean;
   skipDisabled?: boolean;
 };
 
-export type CheckboxGroupProvide = {
+export type CheckboxGroupProvide = CheckerParent & {
   props: {
     max: number | string;
     modelValue: any[];
@@ -27,7 +26,7 @@ export default createComponent({
   props: {
     max: [Number, String],
     disabled: Boolean,
-    direction: String as PropType<CheckboxGroupDirection>,
+    direction: String as PropType<CheckerDirection>,
     iconSize: [Number, String],
     checkedColor: String,
     modelValue: {

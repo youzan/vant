@@ -3,13 +3,13 @@ import { addUnit } from '../utils';
 import Icon from '../icon';
 
 export type CheckerShape = 'square' | 'round';
+export type CheckerDirection = 'horizontal' | 'vertical';
 export type CheckerLabelPosition = 'left' | 'right';
-
-type CheckerParent = {
+export type CheckerParent = {
   props: {
     disabled?: boolean;
     iconSize?: number | string;
-    direction?: 'horizontal' | 'vertical';
+    direction?: CheckerDirection;
     checkedColor?: string;
   };
 };
