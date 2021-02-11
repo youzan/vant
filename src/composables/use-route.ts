@@ -7,10 +7,10 @@ import {
   getCurrentInstance,
   ComponentPublicInstance,
 } from 'vue';
-import type { RouteLocation } from 'vue-router';
+import type { RouteLocationRaw } from 'vue-router';
 
 export const routeProps = {
-  to: [String, Object] as PropType<RouteLocation>,
+  to: [String, Object] as PropType<RouteLocationRaw>,
   url: String,
   replace: Boolean,
 };
