@@ -10,7 +10,7 @@ import { useLazyRender } from '../composables/use-lazy-render';
 
 // Components
 import Cell, { cellProps } from '../cell';
-import { COLLAPSE_KEY } from '../collapse';
+import { COLLAPSE_KEY, CollapseProvide } from '../collapse';
 
 const [createComponent, bem] = createNamespace('collapse-item');
 
@@ -26,18 +26,21 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const wrapperRef = ref();
-    const contentRef = ref();
-    const { parent, index } = useParent(COLLAPSE_KEY);
+    const wrapperRef = ref<HTMLElement>();
+    const contentRef = ref<HTMLElement>();
+    const { parent, index } = useParent<CollapseProvide>(COLLAPSE_KEY);
+
+    if (!parent) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.error(
+          '[Vant] CollapseItem must be a child component of Collapse.'
+        );
+      }
+      return;
+    }
 
     const currentName = computed(() => props.name ?? index.value);
-
-    const expanded = computed(() => {
-      if (parent) {
-        return parent.isExpanded(currentName.value);
-      }
-      return null;
-    });
+    const expanded = computed(() => parent.isExpanded(currentName.value));
 
     const show = ref(expanded.value);
     const lazyRender = useLazyRender(show);
@@ -46,7 +49,7 @@ export default createComponent({
       if (!expanded.value) {
         show.value = false;
       } else {
-        wrapperRef.value.style.height = '';
+        wrapperRef.value!.style.height = '';
       }
     };
 
@@ -71,11 +74,11 @@ export default createComponent({
         const { offsetHeight } = contentRef.value;
         if (offsetHeight) {
           const contentHeight = `${offsetHeight}px`;
-          wrapperRef.value.style.height = value ? 0 : contentHeight;
+          wrapperRef.value.style.height = value ? '0' : contentHeight;
 
           // use double raf to ensure animation can start
           doubleRaf(() => {
-            wrapperRef.value.style.height = value ? contentHeight : 0;
+            wrapperRef.value!.style.height = value ? contentHeight : '0';
           });
         } else {
           onTransitionEnd();
