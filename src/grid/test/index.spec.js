@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test';
 import Grid from '..';
 import GridItem from '../../grid-item';
 
@@ -29,9 +29,7 @@ test('should change icon size when using icon-size prop', () => {
     },
   });
 
-  expect(wrapper.find('.van-grid-item__icon').element.style.fontSize).toEqual(
-    '10px'
-  );
+  expect(wrapper.find('.van-grid-item__icon').style.fontSize).toEqual('10px');
 });
 
 test('should render icon-slot correctly', () => {

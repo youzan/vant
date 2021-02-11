@@ -1,5 +1,5 @@
 import Icon from '..';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test';
 
 test('should render icon with builtin icon name correctly', () => {
   const wrapper = mount(Icon, {
@@ -73,5 +73,5 @@ test('should change icon size when using size prop', () => {
       size: 20,
     },
   });
-  expect(wrapper.element.style.fontSize).toEqual('20px');
+  expect(wrapper.style.fontSize).toEqual('20px');
 });

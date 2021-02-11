@@ -381,7 +381,7 @@ test('popup wrapper', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 
   wrapper.find('.van-popup__close-icon').trigger('click');
-  expect(wrapper.element.style.display).toEqual('none');
+  expect(wrapper.style.display).toEqual('none');
 });
 
 test('set show-mark prop to false', async () => {

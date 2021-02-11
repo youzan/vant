@@ -1,6 +1,6 @@
-import { mount } from '@vue/test-utils';
+import { mount , later } from '../../../test';
 import ImagePreviewComponent from '../ImagePreview';
-import { later } from '../../../test';
+
 import { trigger } from '../../utils';
 
 const images = [

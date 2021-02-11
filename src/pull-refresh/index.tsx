@@ -31,7 +31,7 @@ export default createComponent({
     loadingText: String,
     modelValue: {
       type: Boolean,
-      required: true,
+      default: false,
     },
     successDuration: {
       type: [Number, String],

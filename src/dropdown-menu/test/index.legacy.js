@@ -226,12 +226,12 @@ test('toggle method', async (done) => {
       await later();
 
       const content = wrapper.find('.van-dropdown-item__content');
-      expect(content.element.style.display).toEqual('');
+      expect(content.style.display).toEqual('');
 
       // hide
       this.$refs.item.toggle(false, { immediate: true });
       await later();
-      expect(content.element.style.display).toEqual('none');
+      expect(content.style.display).toEqual('none');
 
       done();
     },

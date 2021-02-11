@@ -27,7 +27,7 @@ test('should change confirm button color when using confirm-button-color prop', 
     },
   });
   const confirmButton = wrapper.find('.van-dialog__confirm');
-  expect(confirmButton.element.style.color).toEqual('red');
+  expect(confirmButton.style.color).toEqual('red');
 });
 
 test('should change cancel button color when using cancel-button-color prop', () => {
@@ -39,7 +39,7 @@ test('should change cancel button color when using cancel-button-color prop', ()
     },
   });
   const cancelButton = wrapper.find('.van-dialog__cancel');
-  expect(cancelButton.element.style.color).toEqual('red');
+  expect(cancelButton.style.color).toEqual('red');
 });
 
 test('should render button text correctly', () => {

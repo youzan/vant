@@ -137,7 +137,7 @@ test('should format input value when type is digit', () => {
 //   const textarea = wrapper.find('.van-field__control');
 
 //   await later();
-//   expect(textarea.element.style.height).toEqual('50px');
+//   expect(textarea.style.height).toEqual('50px');
 // });
 
 test('should call input.focus when vm.focus is called', () => {

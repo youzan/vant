@@ -29,8 +29,8 @@ test('should change z-index when using z-index prop', async () => {
   });
 
   await nextTick();
-  expect(wrapper.find('.van-popup').element.style.zIndex).toEqual('11');
-  expect(wrapper.find('.van-overlay').element.style.zIndex).toEqual('11');
+  expect(wrapper.find('.van-popup').style.zIndex).toEqual('11');
+  expect(wrapper.find('.van-overlay').style.zIndex).toEqual('11');
 });
 
 test('should lock scroll when showed', async () => {
