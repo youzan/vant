@@ -1,10 +1,7 @@
 import { h } from 'vue';
 import Locale from '../src/locale';
-import enUS from '../src/locale/lang/en-US';
 import { mount, later } from '.';
 import { DemoLocaleMixin } from '../docs/site/demo-locale';
-
-Locale.use('en-US', enUS);
 
 const EmptyComponent = {
   render() {

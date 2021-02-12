@@ -3,7 +3,7 @@
 exports[`should render page slot correctly 1`] = `
 <ul class="van-pagination">
   <li class="van-pagination__item van-pagination__prev van-hairline">
-    上一页
+    Previous
   </li>
   <li class="van-pagination__item van-pagination__page van-hairline">
     foo 1
@@ -21,7 +21,7 @@ exports[`should render page slot correctly 1`] = `
     foo 5
   </li>
   <li class="van-pagination__item van-pagination__next van-hairline">
-    下一页
+    Next
   </li>
 </ul>
 `;

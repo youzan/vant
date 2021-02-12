@@ -7,7 +7,7 @@ exports[`should render different head content in different pulling status 1`] = 
   >
     <div class="van-pull-refresh__head">
       <div class="van-pull-refresh__text">
-        下拉即可刷新...
+        Pull to refresh...
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@ exports[`should render different head content in different pulling status 2`] = 
   >
     <div class="van-pull-refresh__head">
       <div class="van-pull-refresh__text">
-        释放即可刷新...
+        Loose to refresh...
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@ exports[`should render different head content in different pulling status 3`] = 
           </svg>
         </span>
         <span class="van-loading__text">
-          加载中...
+          Loading...
         </span>
       </div>
     </div>
@@ -80,7 +80,7 @@ exports[`should render different head content in different pulling status 4`] = 
           </svg>
         </span>
         <span class="van-loading__text">
-          加载中...
+          Loading...
         </span>
       </div>
     </div>
