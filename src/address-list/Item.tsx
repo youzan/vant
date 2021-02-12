@@ -1,3 +1,5 @@
+import { PropType } from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
 
@@ -6,7 +8,6 @@ import Tag from '../tag';
 import Icon from '../icon';
 import Cell from '../cell';
 import Radio from '../radio';
-import { PropType } from 'vue';
 
 const [createComponent, bem] = createNamespace('address-item');
 
