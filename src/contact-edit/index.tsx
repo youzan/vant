@@ -1,4 +1,4 @@
-import { watch, reactive } from 'vue';
+import { watch, reactive, PropType } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -19,6 +19,12 @@ const DEFAULT_CONTACT = {
   name: '',
 };
 
+export type ContactInfo = {
+  tel: string;
+  name: string;
+  isDefault?: boolean;
+};
+
 export default createComponent({
   props: {
     isEdit: Boolean,
@@ -27,11 +33,11 @@ export default createComponent({
     showSetDefault: Boolean,
     setDefaultLabel: String,
     contactInfo: {
-      type: Object,
+      type: Object as PropType<ContactInfo>,
       default: () => ({ ...DEFAULT_CONTACT }),
     },
     telValidator: {
-      type: Function,
+      type: Function as PropType<(val: string) => boolean>,
       default: isMobile,
     },
   },
@@ -84,8 +90,8 @@ export default createComponent({
       <Switch
         v-model={contact.isDefault}
         size={24}
-        onChange={(event) => {
-          emit('change-default', event);
+        onChange={(checked: boolean) => {
+          emit('change-default', checked);
         }}
       />
     );
