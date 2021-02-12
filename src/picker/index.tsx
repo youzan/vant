@@ -1,5 +1,4 @@
 import { ref, watch, computed, PropType, ComponentPublicInstance } from 'vue';
-import { pickerProps, PICKER_KEY } from './shared';
 
 // Utils
 import { unitToPx, preventDefault, createNamespace } from '../utils';
@@ -12,6 +11,7 @@ import { useExpose } from '../composables/use-expose';
 // Components
 import Loading from '../loading';
 import Column, {
+  PICKER_KEY,
   PickerColumn,
   PickerOption,
   PickerObjectColumn,
@@ -33,6 +33,31 @@ export type {
   PickerOption,
   PickerObjectColumn,
   PickerObjectOption,
+};
+
+export const pickerProps = {
+  title: String,
+  loading: Boolean,
+  readonly: Boolean,
+  allowHtml: Boolean,
+  cancelButtonText: String,
+  confirmButtonText: String,
+  itemHeight: {
+    type: [Number, String],
+    default: 44,
+  },
+  showToolbar: {
+    type: Boolean,
+    default: true,
+  },
+  visibleItemCount: {
+    type: [Number, String],
+    default: 6,
+  },
+  swipeDuration: {
+    type: [Number, String],
+    default: 1000,
+  },
 };
 
 export default createComponent({
