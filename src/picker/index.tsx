@@ -75,13 +75,15 @@ export default createComponent({
 
     const dataType = computed(() => {
       const firstColumn = props.columns[0];
-      if (typeof firstColumn === 'string') {
-        return 'text';
+      if (firstColumn && typeof firstColumn !== 'string') {
+        if (childrenKey in firstColumn) {
+          return 'cascade';
+        }
+        if (valuesKey in firstColumn) {
+          return 'object';
+        }
       }
-      if (childrenKey in firstColumn) {
-        return 'cascade';
-      }
-      return 'object';
+      return 'text';
     });
 
     const formatCascade = () => {
