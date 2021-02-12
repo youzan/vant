@@ -38,7 +38,7 @@ export type PickerOption =
       [key: string]: any;
     };
 
-export type PickerStringColumn = string[];
+export type PickerPlainColumn = PickerOption[];
 
 export type PickerObjectColumn = {
   values?: PickerOption[];
@@ -49,7 +49,7 @@ export type PickerObjectColumn = {
   [key: string]: any;
 };
 
-export type PickerColumn = PickerStringColumn | PickerObjectColumn;
+export type PickerColumn = PickerPlainColumn | PickerObjectColumn;
 
 function isOptionDisabled(option: PickerOption) {
   return isObject(option) && option.disabled;
