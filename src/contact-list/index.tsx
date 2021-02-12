@@ -1,3 +1,5 @@
+import { PropType } from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
 import { RED } from '../utils/constant';
@@ -12,18 +14,25 @@ import RadioGroup from '../radio-group';
 
 const [createComponent, bem, t] = createNamespace('contact-list');
 
+export type ContactListItem = {
+  id?: number | string;
+  tel: number | string;
+  name: string;
+  isDefault?: boolean;
+};
+
 export default createComponent({
   props: {
-    list: Array,
+    list: Array as PropType<ContactListItem[]>,
     addText: String,
-    modelValue: null,
+    modelValue: null as any,
     defaultTagText: String,
   },
 
   emits: ['add', 'edit', 'select', 'update:modelValue'],
 
   setup(props, { emit }) {
-    const renderItem = (item, index) => {
+    const renderItem = (item: ContactListItem, index: number) => {
       const onClick = () => {
         emit('update:modelValue', item.id);
         emit('select', item, index);
@@ -45,7 +54,7 @@ export default createComponent({
       );
 
       const renderContent = () => {
-        const nodes = [`${item.name}，${item.tel}`];
+        const nodes: JSX.Element[] = [`${item.name}，${item.tel}`];
 
         if (item.isDefault && props.defaultTagText) {
           nodes.push(
