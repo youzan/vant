@@ -1,4 +1,4 @@
-import { ref, watch, computed } from 'vue';
+import { ref, watch, computed, PropType, ComponentPublicInstance } from 'vue';
 import { pickerProps, PICKER_KEY } from './shared';
 
 // Utils
@@ -11,16 +11,28 @@ import { useExpose } from '../composables/use-expose';
 
 // Components
 import Loading from '../loading';
-import PickerColumn from './PickerColumn';
+import Column, {
+  PickerOption,
+  PickerColumn,
+  PickerObjectColumn,
+} from './PickerColumn';
 
 const [createComponent, bem, t] = createNamespace('picker');
+
+export type PickerToolbarPosition = 'top' | 'bottom';
+
+export type PickerFieldNames = {
+  text?: string;
+  values?: string;
+  children?: string;
+};
 
 export default createComponent({
   props: {
     ...pickerProps,
-    columnsFieldNames: Object,
+    columnsFieldNames: Object as PropType<PickerFieldNames>,
     columns: {
-      type: Array,
+      type: Array as PropType<PickerColumn[]>,
       default: () => [],
     },
     defaultIndex: {
@@ -28,7 +40,7 @@ export default createComponent({
       default: 0,
     },
     toolbarPosition: {
-      type: String,
+      type: String as PropType<PickerToolbarPosition>,
       default: 'top',
     },
     // @deprecated
@@ -42,7 +54,7 @@ export default createComponent({
   emits: ['confirm', 'cancel', 'change'],
 
   setup(props, { emit, slots }) {
-    const formattedColumns = ref([]);
+    const formattedColumns = ref<PickerObjectColumn[]>([]);
 
     const { text: textKey, values: valuesKey, children: childrenKey } = {
       // compatible with valueKey prop
@@ -52,29 +64,34 @@ export default createComponent({
       ...props.columnsFieldNames,
     };
 
-    const { children, linkChildren } = useChildren(PICKER_KEY);
+    const { children, linkChildren } = useChildren<
+      // eslint-disable-next-line
+      ComponentPublicInstance<{}, any>
+    >(PICKER_KEY);
 
     linkChildren();
 
     const itemHeight = computed(() => unitToPx(props.itemHeight));
 
     const dataType = computed(() => {
-      const { columns } = props;
-      const firstColumn = columns[0] || {};
-
-      if (firstColumn[childrenKey]) {
-        return 'cascade';
-      }
-      if (firstColumn[valuesKey]) {
-        return 'object';
+      const firstColumn = props.columns[0];
+      if (firstColumn) {
+        if (childrenKey in firstColumn) {
+          return 'cascade';
+        }
+        if (valuesKey in firstColumn) {
+          return 'object';
+        }
       }
       return 'text';
     });
 
     const formatCascade = () => {
-      const formatted = [];
+      const formatted: PickerObjectColumn[] = [];
 
-      let cursor = { [childrenKey]: props.columns };
+      let cursor: PickerObjectColumn = {
+        [childrenKey]: props.columns,
+      };
 
       while (cursor && cursor[childrenKey]) {
         const children = cursor[childrenKey];
@@ -109,7 +126,7 @@ export default createComponent({
       } else if (dataType.value === 'cascade') {
         formatCascade();
       } else {
-        formattedColumns.value = columns;
+        formattedColumns.value = columns as PickerObjectColumn[];
       }
     };
 
@@ -117,15 +134,17 @@ export default createComponent({
     const getIndexes = () => children.map((child) => child.state.index);
 
     // set options of column by index
-    const setColumnValues = (index, options) => {
+    const setColumnValues = (index: number, options: PickerOption[]) => {
       const column = children[index];
       if (column) {
         column.setOptions(options);
       }
     };
 
-    const onCascadeChange = (columnIndex) => {
-      let cursor = { [childrenKey]: props.columns };
+    const onCascadeChange = (columnIndex: number) => {
+      let cursor: PickerObjectColumn = {
+        [childrenKey]: props.columns,
+      };
       const indexes = getIndexes();
 
       for (let i = 0; i <= columnIndex; i++) {
@@ -140,21 +159,21 @@ export default createComponent({
     };
 
     // get column instance by index
-    const getColumn = (index) => children[index];
+    const getChild = (index: number) => children[index];
 
     // get column value by index
-    const getColumnValue = (index) => {
-      const column = getColumn(index);
-      return column && column.getValue();
+    const getColumnValue = (index: number) => {
+      const column = getChild(index);
+      if (column) {
+        return column.getValue();
+      }
     };
 
     // set column value by index
-    const setColumnValue = (index, value) => {
-      const column = getColumn(index);
-
+    const setColumnValue = (index: number, value: string) => {
+      const column = getChild(index);
       if (column) {
         column.setValue(value);
-
         if (dataType.value === 'cascade') {
           onCascadeChange(index);
         }
@@ -162,41 +181,50 @@ export default createComponent({
     };
 
     // get column option index by column index
-    const getColumnIndex = (index) => (getColumn(index) || {}).state.index;
+    const getColumnIndex = (index: number) => {
+      const column = getChild(index);
+      if (column) {
+        return column.state.index;
+      }
+    };
 
     // set column option index by column index
-    const setColumnIndex = (columnIndex, optionIndex) => {
-      const column = getColumn(columnIndex);
-
+    const setColumnIndex = (columnIndex: number, optionIndex: number) => {
+      const column = getChild(columnIndex);
       if (column) {
         column.setIndex(optionIndex);
-        if (props.dataType === 'cascade') {
+        if (dataType.value === 'cascade') {
           onCascadeChange(columnIndex);
         }
       }
     };
 
     // get options of column by index
-    const getColumnValues = (index) => (children[index] || {}).state.options;
+    const getColumnValues = (index: number) => {
+      const column = getChild(index);
+      if (column) {
+        return column.state.options;
+      }
+    };
 
     // get values of all columns
     const getValues = () => children.map((child) => child.getValue());
 
     // set values of all columns
-    const setValues = (values) => {
+    const setValues = (values: string[]) => {
       values.forEach((value, index) => {
         setColumnValue(index, value);
       });
     };
 
     // set indexes of all columns
-    const setIndexes = (indexes) => {
+    const setIndexes = (indexes: number[]) => {
       indexes.forEach((optionIndex, columnIndex) => {
         setColumnIndex(columnIndex, optionIndex);
       });
     };
 
-    const emitAction = (event) => {
+    const emitAction = (event: 'confirm' | 'cancel') => {
       if (dataType.value === 'text') {
         emit(event, getColumnValue(0), getColumnIndex(0));
       } else {
@@ -204,7 +232,7 @@ export default createComponent({
       }
     };
 
-    const onChange = (columnIndex) => {
+    const onChange = (columnIndex: number) => {
       if (dataType.value === 'cascade') {
         onCascadeChange(columnIndex);
       }
@@ -266,7 +294,7 @@ export default createComponent({
 
     const renderColumnItems = () =>
       formattedColumns.value.map((item, columnIndex) => (
-        <PickerColumn
+        <Column
           v-slots={{ option: slots.option }}
           textKey={textKey}
           readonly={props.readonly}
@@ -275,8 +303,8 @@ export default createComponent({
           itemHeight={itemHeight.value}
           defaultIndex={item.defaultIndex ?? +props.defaultIndex}
           swipeDuration={props.swipeDuration}
-          visibleItemCount={props.visibleItemCount}
           initialOptions={item[valuesKey]}
+          visibleItemCount={props.visibleItemCount}
           onChange={() => {
             onChange(columnIndex);
           }}
@@ -284,7 +312,7 @@ export default createComponent({
       ));
 
     const renderColumns = () => {
-      const wrapHeight = itemHeight.value * props.visibleItemCount;
+      const wrapHeight = itemHeight.value * +props.visibleItemCount;
       const frameStyle = { height: `${itemHeight.value}px` };
       const columnsStyle = { height: `${wrapHeight}px` };
       const maskStyle = {

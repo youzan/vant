@@ -1,4 +1,5 @@
-import { reactive, ref, watch } from 'vue';
+/* eslint-disable no-use-before-define */
+import { ref, watch, reactive, PropType } from 'vue';
 import { PICKER_KEY } from './shared';
 
 // Utils
@@ -20,7 +21,7 @@ const MOMENTUM_LIMIT_DISTANCE = 15;
 
 const [createComponent, bem] = createNamespace('picker-column');
 
-function getElementTranslateY(element) {
+function getElementTranslateY(element: Element) {
   const style = window.getComputedStyle(element);
   const transform = style.transform || style.webkitTransform;
   const translateY = transform.slice(7, transform.length - 1).split(', ')[5];
@@ -28,22 +29,59 @@ function getElementTranslateY(element) {
   return Number(translateY);
 }
 
-function isOptionDisabled(option) {
+export type PickerOption =
+  | string
+  | {
+      text: string;
+      disabled?: boolean;
+      // for custom filed names
+      [key: string]: any;
+    };
+
+export type PickerStringColumn = string[];
+
+export type PickerObjectColumn = {
+  values?: PickerOption[];
+  children?: PickerColumn;
+  className?: any;
+  defaultIndex?: number;
+  // for custom filed names
+  [key: string]: any;
+};
+
+export type PickerColumn = PickerStringColumn | PickerObjectColumn;
+
+function isOptionDisabled(option: PickerOption) {
   return isObject(option) && option.disabled;
 }
 
 export default createComponent({
   props: {
-    textKey: String,
     readonly: Boolean,
     allowHtml: Boolean,
     className: String,
-    itemHeight: Number,
-    defaultIndex: Number,
-    swipeDuration: [Number, String],
-    visibleItemCount: [Number, String],
+    textKey: {
+      type: String,
+      required: true,
+    },
+    itemHeight: {
+      type: Number,
+      required: true,
+    },
+    swipeDuration: {
+      type: [Number, String],
+      required: true,
+    },
+    visibleItemCount: {
+      type: [Number, String],
+      required: true,
+    },
+    defaultIndex: {
+      type: Number,
+      default: 0,
+    },
     initialOptions: {
-      type: Array,
+      type: Array as PropType<PickerOption[]>,
       default: () => [],
     },
   },
@@ -51,13 +89,13 @@ export default createComponent({
   emits: ['change'],
 
   setup(props, { emit, slots }) {
-    let moving;
-    let startOffset;
-    let touchStartTime;
-    let momentumOffset;
-    let transitionEndTrigger;
+    let moving: boolean;
+    let startOffset: number;
+    let touchStartTime: number;
+    let momentumOffset: number;
+    let transitionEndTrigger: null | (() => void);
 
-    const wrapper = ref();
+    const wrapper = ref<HTMLElement>();
 
     const state = reactive({
       index: props.defaultIndex,
@@ -71,9 +109,9 @@ export default createComponent({
     const count = () => state.options.length;
 
     const baseOffset = () =>
-      (props.itemHeight * (props.visibleItemCount - 1)) / 2;
+      (props.itemHeight * (+props.visibleItemCount - 1)) / 2;
 
-    const adjustIndex = (index) => {
+    const adjustIndex = (index: number) => {
       index = range(index, 0, count());
 
       for (let i = index; i < count(); i++) {
@@ -84,7 +122,7 @@ export default createComponent({
       }
     };
 
-    const setIndex = (index, emitChange) => {
+    const setIndex = (index: number, emitChange?: boolean) => {
       index = adjustIndex(index) || 0;
 
       const offset = -index * props.itemHeight;
@@ -108,14 +146,14 @@ export default createComponent({
       state.offset = offset;
     };
 
-    const setOptions = (options) => {
+    const setOptions = (options: PickerOption[]) => {
       if (JSON.stringify(options) !== JSON.stringify(state.options)) {
         state.options = deepClone(options);
         setIndex(props.defaultIndex);
       }
     };
 
-    const onClickItem = (index) => {
+    const onClickItem = (index: number) => {
       if (moving || props.readonly) {
         return;
       }
@@ -125,17 +163,17 @@ export default createComponent({
       setIndex(index, true);
     };
 
-    const getOptionText = (option) => {
+    const getOptionText = (option: PickerOption) => {
       if (isObject(option) && props.textKey in option) {
         return option[props.textKey];
       }
       return option;
     };
 
-    const getIndexByOffset = (offset) =>
+    const getIndexByOffset = (offset: number) =>
       range(Math.round(-offset / props.itemHeight), 0, count() - 1);
 
-    const momentum = (distance, duration) => {
+    const momentum = (distance: number, duration: number) => {
       const speed = Math.abs(distance / duration);
 
       distance = state.offset + (speed / 0.003) * (distance < 0 ? -1 : 1);
@@ -156,7 +194,7 @@ export default createComponent({
       }
     };
 
-    const onTouchStart = (event) => {
+    const onTouchStart = (event: TouchEvent) => {
       if (props.readonly) {
         return;
       }
@@ -164,7 +202,7 @@ export default createComponent({
       touch.start(event);
 
       if (moving) {
-        const translateY = getElementTranslateY(wrapper.value);
+        const translateY = getElementTranslateY(wrapper.value!);
         state.offset = Math.min(0, translateY - baseOffset());
         startOffset = state.offset;
       } else {
@@ -177,7 +215,7 @@ export default createComponent({
       transitionEndTrigger = null;
     };
 
-    const onTouchMove = (event) => {
+    const onTouchMove = (event: TouchEvent) => {
       if (props.readonly) {
         return;
       }
@@ -234,7 +272,7 @@ export default createComponent({
         height: `${props.itemHeight}px`,
       };
 
-      return state.options.map((option, index) => {
+      return state.options.map((option, index: number) => {
         const text = getOptionText(option);
         const disabled = isOptionDisabled(option);
 
@@ -264,7 +302,7 @@ export default createComponent({
       });
     };
 
-    const setValue = (value) => {
+    const setValue = (value: string) => {
       const { options } = state;
       for (let i = 0; i < options.length; i++) {
         if (getOptionText(options[i]) === value) {
