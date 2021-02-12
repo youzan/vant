@@ -56,8 +56,10 @@ export function sortChildren(
   });
 }
 
-export function useChildren(key: string | symbol) {
-  const publicChildren: ComponentPublicInstance[] = reactive([]);
+export function useChildren<
+  Child extends ComponentPublicInstance = ComponentPublicInstance
+>(key: string | symbol) {
+  const publicChildren: Child[] = reactive([]);
   const internalChildren: ComponentInternalInstance[] = reactive([]);
   const parent = getCurrentInstance()!;
 
@@ -65,7 +67,7 @@ export function useChildren(key: string | symbol) {
     const link = (child: ComponentInternalInstance) => {
       if (child.proxy) {
         internalChildren.push(child);
-        publicChildren.push(child.proxy);
+        publicChildren.push(child.proxy as Child);
         sortChildren(parent, publicChildren, internalChildren);
       }
     };
