@@ -22,9 +22,9 @@ type CascaderTab = {
 };
 
 type CascaderFieldNames = {
-  text: string;
-  value: string;
-  children: string;
+  text?: string;
+  value?: string;
+  children?: string;
 };
 
 export default createComponent({

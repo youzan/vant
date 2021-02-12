@@ -83,7 +83,7 @@ export default createComponent({
           return 'object';
         }
       }
-      return 'text';
+      return 'plain';
     });
 
     const formatCascade = () => {
@@ -121,7 +121,7 @@ export default createComponent({
     const format = () => {
       const { columns } = props;
 
-      if (dataType.value === 'text') {
+      if (dataType.value === 'plain') {
         formattedColumns.value = [{ [valuesKey]: columns }];
       } else if (dataType.value === 'cascade') {
         formatCascade();
@@ -225,7 +225,7 @@ export default createComponent({
     };
 
     const emitAction = (event: 'confirm' | 'cancel') => {
-      if (dataType.value === 'text') {
+      if (dataType.value === 'plain') {
         emit(event, getColumnValue(0), getColumnIndex(0));
       } else {
         emit(event, getValues(), getIndexes());
@@ -237,7 +237,7 @@ export default createComponent({
         onCascadeChange(columnIndex);
       }
 
-      if (dataType.value === 'text') {
+      if (dataType.value === 'plain') {
         emit('change', getColumnValue(0), getColumnIndex(0));
       } else {
         emit('change', getValues(), columnIndex);
