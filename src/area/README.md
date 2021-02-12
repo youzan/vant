@@ -92,9 +92,9 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Area instance and call instance methods.
 
-| Name  | Description               | Attribute     | Return value |
-| ----- | ------------------------- | ------------- | ------------ |
-| reset | Reset all options by code | code?: string | -            |
+| Name  | Description               | Attribute       | Return value |
+| ----- | ------------------------- | --------------- | ------------ |
+| reset | Reset all options by code | _code?: string_ | -            |
 
 ### areaList Data Structure
 
