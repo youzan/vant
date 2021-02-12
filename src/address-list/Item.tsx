@@ -6,15 +6,27 @@ import Tag from '../tag';
 import Icon from '../icon';
 import Cell from '../cell';
 import Radio from '../radio';
+import { PropType } from 'vue';
 
 const [createComponent, bem] = createNamespace('address-item');
 
+export type AddressListItem = {
+  id: number | string;
+  tel: number | string;
+  name: string;
+  address: string;
+  isDefault?: boolean;
+};
+
 export default createComponent({
   props: {
-    data: Object,
     disabled: Boolean,
     switchable: Boolean,
     defaultTagText: String,
+    address: {
+      type: Object as PropType<AddressListItem>,
+      required: true,
+    },
   },
 
   emits: ['edit', 'click', 'select'],
@@ -40,7 +52,7 @@ export default createComponent({
     );
 
     const renderTag = () => {
-      if (props.data.isDefault && props.defaultTagText) {
+      if (props.address.isDefault && props.defaultTagText) {
         return (
           <Tag type="danger" round class={bem('tag')}>
             {props.defaultTagText}
@@ -50,19 +62,19 @@ export default createComponent({
     };
 
     const renderContent = () => {
-      const { data, disabled, switchable } = props;
+      const { address, disabled, switchable } = props;
 
       const Info = [
         <div class={bem('name')}>
-          {`${data.name} ${data.tel}`}
+          {`${address.name} ${address.tel}`}
           {renderTag()}
         </div>,
-        <div class={bem('address')}>{data.address}</div>,
+        <div class={bem('address')}>{address.address}</div>,
       ];
 
       if (switchable && !disabled) {
         return (
-          <Radio name={data.id} iconSize={18}>
+          <Radio name={address.id} iconSize={18}>
             {Info}
           </Radio>
         );
@@ -84,7 +96,7 @@ export default createComponent({
             border={false}
             valueClass={bem('value')}
           />
-          {slots.bottom?.({ ...props.data, disabled })}
+          {slots.bottom?.({ ...props.address, disabled })}
         </div>
       );
     };

@@ -90,11 +90,11 @@ export default {
 | Event | Description | Arguments |
 | --- | --- | --- |
 | add | Emitted when the add button is clicked | - |
-| edit | Emitted when the edit icon of address is clicked | item: address object，index |
-| select | Emitted when an address is selected | item: address object，index |
-| edit-disabled | Emitted when the edit icon of disabled address is clicked | item: address object，index |
-| select-disabled | Emitted when a disabled address is selected | item: address object，index |
-| click-item | Emitted when an address item is clicked | item: address object，index |
+| edit | Emitted when the edit icon of address is clicked | _item: Address, index: number_ |
+| select | Emitted when an address is selected | _item: Address, index: number_ |
+| edit-disabled | Emitted when the edit icon of disabled address is clicked | _item: Address, index: number_ |
+| select-disabled | Emitted when a disabled address is selected | _item: Address, index: number_ |
+| click-item | Emitted when an address item is clicked | _item: Address, index: number_ |
 
 ### Data Structure of Address
 
@@ -108,11 +108,11 @@ export default {
 
 ### Slots
 
-| Name        | Description                    | SlotProps |
-| ----------- | ------------------------------ | --------- |
-| default     | Custom content after list      | -         |
-| top         | Custom content before list     | -         |
-| item-bottom | Custom content after list item | item      |
+| Name        | Description                    | SlotProps       |
+| ----------- | ------------------------------ | --------------- |
+| default     | Custom content after list      | -               |
+| top         | Custom content before list     | -               |
+| item-bottom | Custom content after list item | _item: Address_ |
 
 ### Less Variables
 

@@ -1,21 +1,29 @@
+import { PropType } from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
 
 // Components
 import Button from '../button';
 import RadioGroup from '../radio-group';
-import AddressItem from './Item';
+import AddressItem, { AddressListItem } from './Item';
 
 const [createComponent, bem, t] = createNamespace('address-list');
 
 export default createComponent({
   props: {
-    list: Array,
     modelValue: [Number, String],
-    disabledList: Array,
     disabledText: String,
     addButtonText: String,
     defaultTagText: String,
+    list: {
+      type: Array as PropType<AddressListItem[]>,
+      default: () => [],
+    },
+    disabledList: {
+      type: Array as PropType<AddressListItem[]>,
+      default: () => [],
+    },
     switchable: {
       type: Boolean,
       default: true,
@@ -33,7 +41,11 @@ export default createComponent({
   ],
 
   setup(props, { slots, emit }) {
-    const renderItem = (item, index, disabled) => {
+    const renderItem = (
+      item: AddressListItem,
+      index: number,
+      disabled?: boolean
+    ) => {
       const onEdit = () => {
         const name = disabled ? 'edit-disabled' : 'edit';
         emit(name, item, index);
@@ -58,7 +70,7 @@ export default createComponent({
             bottom: slots['item-bottom'],
           }}
           key={item.id}
-          data={item}
+          address={item}
           disabled={disabled}
           switchable={props.switchable}
           defaultTagText={props.defaultTagText}
@@ -69,7 +81,7 @@ export default createComponent({
       );
     };
 
-    const renderList = (list, disabled) => {
+    const renderList = (list: AddressListItem[], disabled?: boolean) => {
       if (list) {
         return list.map((item, index) => renderItem(item, index, disabled));
       }

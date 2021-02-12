@@ -91,14 +91,14 @@ export default {
 
 ### Events
 
-| 事件名          | 说明                     | 回调参数                    |
-| --------------- | ------------------------ | --------------------------- |
-| add             | 点击新增按钮时触发       | -                           |
-| edit            | 点击编辑按钮时触发       | item: 地址对象，index: 索引 |
-| select          | 切换选中的地址时触发     | item: 地址对象，index: 索引 |
-| edit-disabled   | 编辑不可配送的地址时触发 | item: 地址对象，index: 索引 |
-| select-disabled | 选中不可配送的地址时触发 | item: 地址对象，index: 索引 |
-| click-item      | 点击任意地址时触发       | item: 地址对象，index: 索引 |
+| 事件名          | 说明                     | 回调参数                       |
+| --------------- | ------------------------ | ------------------------------ |
+| add             | 点击新增按钮时触发       | -                              |
+| edit            | 点击编辑按钮时触发       | _item: Address, index: number_ |
+| select          | 切换选中的地址时触发     | _item: Address, index: number_ |
+| edit-disabled   | 编辑不可配送的地址时触发 | _item: Address, index: number_ |
+| select-disabled | 选中不可配送的地址时触发 | _item: Address, index: number_ |
+| click-item      | 点击任意地址时触发       | _item: Address, index: number_ |
 
 ### Address 数据结构
 
@@ -112,11 +112,11 @@ export default {
 
 ### Slots
 
-| 名称        | 说明                 | 参数       |
-| ----------- | -------------------- | ---------- |
-| default     | 在列表下方插入内容   | -          |
-| top         | 在顶部插入内容       | -          |
-| item-bottom | 在列表项底部插入内容 | 列表项的值 |
+| 名称        | 说明                 | 参数            |
+| ----------- | -------------------- | --------------- |
+| default     | 在列表下方插入内容   | -               |
+| top         | 在顶部插入内容       | -               |
+| item-bottom | 在列表项底部插入内容 | _item: Address_ |
 
 ### 样式变量
 
