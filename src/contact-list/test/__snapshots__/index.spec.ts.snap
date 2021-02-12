@@ -36,7 +36,7 @@ exports[`should render ContactList correctly 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          新建联系人
+          Add new contact
         </span>
       </div>
     </button>

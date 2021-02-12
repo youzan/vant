@@ -34,7 +34,7 @@ exports[`should render title and description slot correctly 1`] = `
     <button type="button"
             class="van-share-sheet__cancel"
     >
-      取消
+      Cancel
     </button>
   </div>
 </transition-stub>

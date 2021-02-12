@@ -1,4 +1,8 @@
 import './plugin';
+import Locale from '../src/locale';
+import enUS from '../src/locale/lang/en-US';
+
+Locale.use('en-US', enUS);
 
 // promisify setTimeout
 export function later(delay = 0): Promise<void> {

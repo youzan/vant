@@ -6,12 +6,12 @@ exports[`should render columns-top、columns-bottom slot correctly 1`] = `
     <button type="button"
             class="van-picker__cancel"
     >
-      取消
+      Cancel
     </button>
     <button type="button"
             class="van-picker__confirm"
     >
-      确认
+      Confirm
     </button>
   </div>
   Top
@@ -54,13 +54,13 @@ exports[`should render title slot correctly 1`] = `
   <button type="button"
           class="van-picker__cancel"
   >
-    取消
+    Cancel
   </button>
   Custom Title
   <button type="button"
           class="van-picker__confirm"
   >
-    确认
+    Confirm
   </button>
 </div>
 `;
@@ -71,12 +71,12 @@ exports[`should render two columns when columns-num prop is two 1`] = `
     <button type="button"
             class="van-picker__cancel"
     >
-      取消
+      Cancel
     </button>
     <button type="button"
             class="van-picker__confirm"
     >
-      确认
+      Confirm
     </button>
   </div>
   <div class="van-picker__columns"

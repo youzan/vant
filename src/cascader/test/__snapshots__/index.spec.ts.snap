@@ -32,7 +32,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
              aria-selected="true"
         >
           <span class="van-tab__text">
-            请选择
+            Select
           </span>
         </div>
         <div class="van-tabs__line"

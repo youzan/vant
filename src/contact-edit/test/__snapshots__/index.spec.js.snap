@@ -2,12 +2,12 @@
 
 exports[`should validate contact name before submitting form 1`] = `
 <div class="van-field__error-message">
-  请输入正确的姓名
+  Malformed name
 </div>
 `;
 
 exports[`should validate contact tel before submitting form 1`] = `
 <div class="van-field__error-message">
-  请输入正确的手机号
+  Malformed phone number
 </div>
 `;
