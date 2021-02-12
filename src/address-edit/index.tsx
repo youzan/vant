@@ -1,4 +1,4 @@
-import { ref, watch, computed, nextTick, reactive } from 'vue';
+import { ref, watch, computed, nextTick, reactive, PropType } from 'vue';
 
 // Utils
 import { createNamespace, isObject } from '../utils';
@@ -8,45 +8,58 @@ import { isMobile } from '../utils/validate/mobile';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Area from '../area';
+import Area, { AreaList, AreaColumnOption } from '../area';
 import Cell from '../cell';
 import Field from '../field';
 import Popup from '../popup';
 import Toast from '../toast';
 import Button from '../button';
 import Dialog from '../dialog';
-import Detail from './Detail';
 import Switch from '../switch';
+import Detail, { AddressEditSearchItem } from './Detail';
 
 const [createComponent, bem, t] = createNamespace('address-edit');
 
-const defaultData = {
-  name: '',
-  tel: '',
-  country: '',
-  province: '',
-  city: '',
-  county: '',
-  areaCode: '',
-  postalCode: '',
-  addressDetail: '',
-  isDefault: false,
+export type AddressInfo = {
+  tel: string;
+  name: string;
+  city: string;
+  county: string;
+  country: string;
+  province: string;
+  areaCode: string;
+  isDefault?: boolean;
+  postalCode?: string;
+  addressDetail: string;
 };
 
-function isPostal(value) {
+const defaultData: AddressInfo = {
+  name: '',
+  tel: '',
+  city: '',
+  county: '',
+  country: '',
+  province: '',
+  areaCode: '',
+  isDefault: false,
+  postalCode: '',
+  addressDetail: '',
+};
+
+function isPostal(value: string) {
   return /^\d{6}$/.test(value);
 }
 
 export default createComponent({
   props: {
-    areaList: Object,
+    areaList: Object as PropType<AreaList>,
     isSaving: Boolean,
     isDeleting: Boolean,
     validator: Function,
     showDelete: Boolean,
     showPostal: Boolean,
     disableArea: Boolean,
-    searchResult: Array,
+    searchResult: Array as PropType<AddressEditSearchItem[]>,
     telMaxlength: [Number, String],
     showSetDefault: Boolean,
     saveButtonText: String,
@@ -70,19 +83,19 @@ export default createComponent({
       default: 200,
     },
     addressInfo: {
-      type: Object,
+      type: Object as PropType<Partial<AddressInfo>>,
       default: () => ({ ...defaultData }),
     },
     telValidator: {
-      type: Function,
+      type: Function as PropType<(val: string) => boolean>,
       default: isMobile,
     },
     postalValidator: {
-      type: Function,
+      type: Function as PropType<(val: string) => boolean>,
       default: isPostal,
     },
     areaColumnsPlaceholder: {
-      type: Array,
+      type: Array as PropType<string[]>,
       default: () => [],
     },
   },
@@ -103,7 +116,7 @@ export default createComponent({
     const areaRef = ref();
 
     const state = reactive({
-      data: {},
+      data: {} as AddressInfo,
       showAreaPopup: false,
       detailFocused: false,
       errorInfo: {
@@ -112,7 +125,7 @@ export default createComponent({
         areaCode: '',
         postalCode: '',
         addressDetail: '',
-      },
+      } as Record<string, string>,
     });
 
     const areaListLoaded = computed(
@@ -146,14 +159,14 @@ export default createComponent({
       }
     };
 
-    const onFocus = (key) => {
+    const onFocus = (key: string) => {
       state.errorInfo[key] = '';
       state.detailFocused = key === 'addressDetail';
       emit('focus', key);
     };
 
-    const getErrorMessage = (key) => {
-      const value = String(state.data[key] || '').trim();
+    const getErrorMessage = (key: string) => {
+      const value = String((state.data as any)[key] || '').trim();
 
       if (props.validator) {
         const message = props.validator(key, value);
@@ -204,12 +217,12 @@ export default createComponent({
       }
     };
 
-    const onChangeDetail = (val) => {
+    const onChangeDetail = (val: string) => {
       state.data.addressDetail = val;
       emit('change-detail', val);
     };
 
-    const onAreaConfirm = (values) => {
+    const onAreaConfirm = (values: AreaColumnOption[]) => {
       values = values.filter((value) => !!value);
 
       if (values.some((value) => !value.code)) {
@@ -238,7 +251,7 @@ export default createComponent({
     const getArea = () => (areaRef.value ? areaRef.value.getValues() : []);
 
     // set area code to area component
-    const setAreaCode = (code) => {
+    const setAreaCode = (code?: string) => {
       state.data.areaCode = code || '';
 
       if (code) {
@@ -253,7 +266,7 @@ export default createComponent({
       });
     };
 
-    const setAddressDetail = (value) => {
+    const setAddressDetail = (value: string) => {
       state.data.addressDetail = value;
     };
 
@@ -262,7 +275,7 @@ export default createComponent({
         const slots = {
           'right-icon': () => (
             <Switch
-              vModel={state.data.isDefault}
+              v-model={state.data.isDefault}
               size="24"
               onChange={(event) => {
                 emit('change-default', event);
@@ -365,7 +378,7 @@ export default createComponent({
               onBlur={onDetailBlur}
               onFocus={() => onFocus('addressDetail')}
               onInput={onChangeDetail}
-              onSelect-search={(event) => {
+              onSelect-search={(event: Event) => {
                 emit('select-search', event);
               }}
             />
@@ -404,7 +417,7 @@ export default createComponent({
             )}
           </div>
           <Popup
-            vModel={[state.showAreaPopup, 'show']}
+            v-model={[state.showAreaPopup, 'show']}
             round
             teleport="body"
             position="bottom"

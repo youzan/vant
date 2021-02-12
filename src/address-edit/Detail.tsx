@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { PropType, ref } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -11,14 +11,19 @@ import Field from '../field';
 const [createComponent, bem, t] = createNamespace('address-edit-detail');
 const android = isAndroid();
 
+export type AddressEditSearchItem = {
+  name: string;
+  address: string;
+};
+
 export default createComponent({
   props: {
     show: Boolean,
     value: String,
-    errorMessage: String,
     focused: Boolean,
     detailRows: [Number, String],
-    searchResult: Array,
+    searchResult: Array as PropType<AddressEditSearchItem[]>,
+    errorMessage: String,
     detailMaxlength: [Number, String],
     showSearchResult: Boolean,
   },
@@ -31,7 +36,7 @@ export default createComponent({
     const showSearchResult = () =>
       props.focused && props.searchResult && props.showSearchResult;
 
-    const onSelect = (express) => {
+    const onSelect = (express: AddressEditSearchItem) => {
       emit('select-search', express);
       emit('input', `${express.address || ''} ${express.name || ''}`.trim());
     };
@@ -50,10 +55,10 @@ export default createComponent({
       }
     };
 
-    const renderSearchTitle = (express) => {
+    const renderSearchTitle = (express: AddressEditSearchItem) => {
       if (express.name) {
         const text = express.name.replace(
-          props.value,
+          props.value!,
           `<span class=${bem('keyword')}>${props.value}</span>`
         );
 
@@ -67,7 +72,7 @@ export default createComponent({
       }
 
       const { searchResult } = props;
-      return searchResult.map((express) => (
+      return searchResult!.map((express) => (
         <Cell
           v-slots={{
             title: () => renderSearchTitle(express),
@@ -85,15 +90,15 @@ export default createComponent({
       ));
     };
 
-    const onFocus = (event) => {
+    const onFocus = (event: Event) => {
       emit('focus', event);
     };
 
-    const onBlur = (event) => {
+    const onBlur = (event: Event) => {
       emit('blur', event);
     };
 
-    const onInput = (value) => {
+    const onInput = (value: string) => {
       emit('input', value);
     };
 

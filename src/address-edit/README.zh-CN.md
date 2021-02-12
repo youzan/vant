@@ -126,20 +126,19 @@ export default {
 
 ### AddressInfo 数据格式
 
-注意：AddressInfo 仅作为初始值传入，表单最终内容可以在 save 事件中获取
+注意：`AddressInfo` 仅作为初始值传入，表单最终内容可以在 save 事件中获取。
 
-| key           | 说明                                   | 类型               |
-| ------------- | -------------------------------------- | ------------------ |
-| id            | 每条地址的唯一标识                     | _number \| string_ |
-| name          | 收货人姓名                             | _string_           |
-| tel           | 收货人手机号                           | _string_           |
-| province      | 省份                                   | _string_           |
-| city          | 城市                                   | _string_           |
-| county        | 区县                                   | _string_           |
-| addressDetail | 详细地址                               | _string_           |
-| areaCode      | 地区编码，通过`省市区选择`获取（必填） | _string_           |
-| postalCode    | 邮政编码                               | _string_           |
-| isDefault     | 是否为默认地址                         | _boolean_          |
+| key | 说明 | 类型 |
+| --- | --- | --- |
+| name | 收货人姓名 | _string_ |
+| tel | 收货人手机号 | _string_ |
+| province | 省份 | _string_ |
+| city | 城市 | _string_ |
+| county | 区县 | _string_ |
+| addressDetail | 详细地址 | _string_ |
+| areaCode | 地区编码，通过 [省市区选择](#/zh-CN/area) 获取（必填） | _string_ |
+| postalCode | 邮政编码 | _string_ |
+| isDefault | 是否为默认地址 | _boolean_ |
 
 ### SearchResult 数据格式
 
