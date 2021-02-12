@@ -343,12 +343,12 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | columns | 对象数组，配置每一列显示的数据 | _Column[]_ | `[]` |
-| columns-field-names | 自定义`columns`结构中的字段 | _object_ | `{ text: 'text', values: 'values', children: 'children' }` |
+| columns-field-names | 自定义 `columns` 结构中的字段 | _object_ | `{ text: 'text', values: 'values', children: 'children' }` |
 | title | 顶部栏标题 | _string_ | - |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |
 | value-key | 选项对象中，选项文字对应的键名 | _string_ | `text` |
-| toolbar-position | 顶部栏位置，可选值为`bottom` | _string_ | `top` |
+| toolbar-position | 顶部栏位置，可选值为 `bottom` | _string_ | `top` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
 | show-toolbar | 是否显示顶部栏 | _boolean_ | `true` |
 | allow-html | 是否允许选项内容中渲染 HTML | _boolean_ | `false` |

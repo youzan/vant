@@ -1,13 +1,3 @@
-export type SharedPickerProps = {
-  title?: string;
-  loading?: boolean;
-  itemHeight?: number;
-  showToolbar?: boolean;
-  visibleItemCount: number | string;
-  cancelButtonText?: string;
-  confirmButtonText?: string;
-};
-
 export const PICKER_KEY = 'vanPicker';
 
 export const pickerProps = {
