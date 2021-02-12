@@ -18,7 +18,7 @@ import { createNamespace, pick } from '../utils';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Picker, { PickerObjectOption } from '../picker';
+import Picker from '../picker';
 import { pickerProps } from '../picker/shared';
 
 const [createComponent, bem] = createNamespace('area');
@@ -33,6 +33,11 @@ export type AreaList = {
   city_list: Record<string, string>;
   county_list: Record<string, string>;
   province_list: Record<string, string>;
+};
+
+export type AreaColumnOption = {
+  name: string;
+  code: string;
 };
 
 type ColumnType = 'province' | 'county' | 'city';
@@ -109,7 +114,7 @@ export default createComponent({
     };
 
     const getColumnValues = (type: ColumnType, code?: string) => {
-      let column: PickerObjectOption[] = [];
+      let column: AreaColumnOption[] = [];
       if (type !== 'province' && !code) {
         return column;
       }
@@ -202,7 +207,7 @@ export default createComponent({
     };
 
     // parse output columns data
-    const parseValues = (values: PickerObjectOption[]) => {
+    const parseValues = (values: AreaColumnOption[]) => {
       return values.map((value, index) => {
         if (value) {
           value = deepClone(value);
@@ -221,7 +226,7 @@ export default createComponent({
       if (pickerRef.value) {
         const values = pickerRef.value
           .getValues()
-          .filter((value: PickerObjectOption) => !!value);
+          .filter((value: AreaColumnOption) => !!value);
         return parseValues(values);
       }
       return [];
@@ -265,7 +270,7 @@ export default createComponent({
       setValues();
     };
 
-    const onChange = (values: PickerObjectOption[], index: number) => {
+    const onChange = (values: AreaColumnOption[], index: number) => {
       state.code = values[index].code;
       setValues();
 
@@ -273,7 +278,7 @@ export default createComponent({
       emit('change', parsedValues, index);
     };
 
-    const onConfirm = (values: PickerObjectOption[], index: number) => {
+    const onConfirm = (values: AreaColumnOption[], index: number) => {
       setValues();
       emit('confirm', parseValues(values), index);
     };

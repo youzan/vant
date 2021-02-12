@@ -122,18 +122,17 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Addres
 
 ### AddressInfo Data Structure
 
-| key           | Description        | Type               |
-| ------------- | ------------------ | ------------------ |
-| id            | Address Id         | _number \| string_ |
-| name          | Name               | _string_           |
-| tel           | Phone              | _string_           |
-| province      | Province           | _string_           |
-| city          | City               | _string_           |
-| county        | County             | _string_           |
-| addressDetail | Detailed Address   | _string_           |
-| areaCode      | Area code          | _string_           |
-| postalCode    | Postal code        | _string_           |
-| isDefault     | Is default address | _boolean_          |
+| key           | Description        | Type      |
+| ------------- | ------------------ | --------- |
+| name          | Name               | _string_  |
+| tel           | Phone              | _string_  |
+| province      | Province           | _string_  |
+| city          | City               | _string_  |
+| county        | County             | _string_  |
+| addressDetail | Detailed Address   | _string_  |
+| areaCode      | Area code          | _string_  |
+| postalCode    | Postal code        | _string_  |
+| isDefault     | Is default address | _boolean_ |
 
 ### SearchResult Data Structure
 
