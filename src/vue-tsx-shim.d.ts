@@ -10,12 +10,14 @@ declare module 'vue' {
     // see: https://github.com/vuejs/vue-next/issues/1553
     //      https://github.com/vuejs/vue-next/issues/3029
     onBlur?: EventHandler;
+    onEdit?: EventHandler;
     onFocus?: EventHandler;
     onInput?: EventHandler;
     onClick?: EventHandler;
     onCancel?: EventHandler;
     onClosed?: EventHandler;
     onChange?: EventHandler;
+    onSelect?: EventHandler;
     onToggle?: EventHandler;
     onConfirm?: EventHandler;
     onClickStep?: EventHandler;
