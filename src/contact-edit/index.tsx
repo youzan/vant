@@ -14,15 +14,15 @@ import Switch from '../switch';
 
 const [createComponent, bem, t] = createNamespace('contact-edit');
 
-const DEFAULT_CONTACT = {
-  tel: '',
-  name: '',
-};
-
 export type ContactInfo = {
   tel: string;
   name: string;
   isDefault?: boolean;
+};
+
+const DEFAULT_CONTACT: ContactInfo = {
+  tel: '',
+  name: '',
 };
 
 export default createComponent({
