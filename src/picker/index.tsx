@@ -12,9 +12,10 @@ import { useExpose } from '../composables/use-expose';
 // Components
 import Loading from '../loading';
 import Column, {
-  PickerOption,
   PickerColumn,
+  PickerOption,
   PickerObjectColumn,
+  PickerObjectOption,
 } from './PickerColumn';
 
 const [createComponent, bem, t] = createNamespace('picker');
@@ -25,6 +26,13 @@ export type PickerFieldNames = {
   text?: string;
   values?: string;
   children?: string;
+};
+
+export type {
+  PickerColumn,
+  PickerOption,
+  PickerObjectColumn,
+  PickerObjectOption,
 };
 
 export default createComponent({

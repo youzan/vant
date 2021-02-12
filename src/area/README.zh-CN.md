@@ -94,7 +94,7 @@ app.use(Area);
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| reset | 根据 code 重置所有选项，若不传 code，则重置到第一项 | code?: string | - |
+| reset | 根据 code 重置所有选项，若不传 code，则重置到第一项 | _code?: string_ | - |
 
 ### 省市区列表数据格式
 

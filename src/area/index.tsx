@@ -1,27 +1,45 @@
-import { ref, watch, computed, reactive, nextTick, onMounted } from 'vue';
+/* eslint-disable camelcase */
+import {
+  ref,
+  watch,
+  computed,
+  reactive,
+  nextTick,
+  PropType,
+  onMounted,
+  ComponentPublicInstance,
+} from 'vue';
 import { createNamespace, pick } from '../utils';
 import { useExpose } from '../composables/use-expose';
+import Picker, { PickerObjectOption } from '../picker';
 import { pickerProps } from '../picker/shared';
-import Picker from '../picker';
 
 const [createComponent, bem] = createNamespace('area');
 
 const EMPTY_CODE = '000000';
 
-function isOverseaCode(code) {
+function isOverseaCode(code: string) {
   return code[0] === '9';
 }
 
-function clone(obj) {
+function clone<T extends Record<string, unknown>>(obj: T): T {
   return JSON.parse(JSON.stringify(obj));
 }
+
+export type AreaList = {
+  city_list: Record<string, string>;
+  county_list: Record<string, string>;
+  province_list: Record<string, string>;
+};
+
+type ColumnType = 'province' | 'county' | 'city';
 
 export default createComponent({
   props: {
     ...pickerProps,
     value: String,
     areaList: {
-      type: Object,
+      type: Object as PropType<AreaList>,
       default: () => ({}),
     },
     columnsNum: {
@@ -29,11 +47,11 @@ export default createComponent({
       default: 3,
     },
     isOverseaCode: {
-      type: Function,
+      type: Function as PropType<(code: string) => boolean>,
       default: isOverseaCode,
     },
     columnsPlaceholder: {
-      type: Array,
+      type: Array as PropType<string[]>,
       default: () => [],
     },
   },
@@ -41,7 +59,8 @@ export default createComponent({
   emits: ['change', 'confirm'],
 
   setup(props, { emit, slots }) {
-    const pickerRef = ref();
+    // eslint-disable-next-line
+    const pickerRef = ref<ComponentPublicInstance<{}, any>>();
 
     const state = reactive({
       code: props.value,
@@ -86,15 +105,14 @@ export default createComponent({
       return '';
     };
 
-    // get list by code
-    const getList = (type, code) => {
-      let result = [];
+    const getColumnValues = (type: ColumnType, code?: string) => {
+      let column: PickerObjectOption[] = [];
       if (type !== 'province' && !code) {
-        return result;
+        return column;
       }
 
       const list = areaList.value[type];
-      result = Object.keys(list).map((listCode) => ({
+      column = Object.keys(list).map((listCode) => ({
         code: listCode,
         name: list[listCode],
       }));
@@ -104,10 +122,10 @@ export default createComponent({
         if (type === 'city' && props.isOverseaCode(code)) {
           code = '9';
         }
-        result = result.filter((item) => item.code.indexOf(code) === 0);
+        column = column.filter((item) => item.code.indexOf(code!) === 0);
       }
 
-      if (placeholderMap.value[type] && result.length) {
+      if (placeholderMap.value[type] && column.length) {
         // set columns placeholder
         let codeFill = '';
         if (type === 'city') {
@@ -116,17 +134,17 @@ export default createComponent({
           codeFill = EMPTY_CODE.slice(4, 6);
         }
 
-        result.unshift({
+        column.unshift({
           code: code + codeFill,
           name: placeholderMap.value[type],
         });
       }
 
-      return result;
+      return column;
     };
 
     // get index by code
-    const getIndex = (type, code) => {
+    const getIndex = (type: ColumnType, code: string) => {
       let compareNum = code.length;
       if (type === 'province') {
         compareNum = props.isOverseaCode(code) ? 1 : 2;
@@ -137,7 +155,7 @@ export default createComponent({
 
       code = code.slice(0, compareNum);
 
-      const list = getList(
+      const list = getColumnValues(
         type,
         compareNum > 2 ? code.slice(0, compareNum - 2) : ''
       );
@@ -152,14 +170,10 @@ export default createComponent({
     };
 
     const setValues = () => {
-      let { code } = state;
-      if (!code) {
-        code = getDefaultCode();
-      }
-
+      let code = state.code || getDefaultCode();
       const picker = pickerRef.value;
-      const province = getList('province');
-      const city = getList('city', code.slice(0, 2));
+      const province = getColumnValues('province');
+      const city = getColumnValues('city', code.slice(0, 2));
 
       if (!picker) {
         return;
@@ -176,7 +190,7 @@ export default createComponent({
         [{ code }] = city;
       }
 
-      picker.setColumnValues(2, getList('county', code.slice(0, 4)));
+      picker.setColumnValues(2, getColumnValues('county', code.slice(0, 4)));
       picker.setIndexes([
         getIndex('province', code),
         getIndex('city', code),
@@ -185,7 +199,7 @@ export default createComponent({
     };
 
     // parse output columns data
-    const parseValues = (values) => {
+    const parseValues = (values: PickerObjectOption[]) => {
       return values.map((value, index) => {
         if (value) {
           value = clone(value);
@@ -202,7 +216,9 @@ export default createComponent({
 
     const getValues = () => {
       if (pickerRef.value) {
-        const values = pickerRef.value.getValues().filter((value) => !!value);
+        const values = pickerRef.value
+          .getValues()
+          .filter((value: PickerObjectOption) => !!value);
         return parseValues(values);
       }
       return [];
@@ -246,15 +262,15 @@ export default createComponent({
       setValues();
     };
 
-    const onChange = (values, index) => {
+    const onChange = (values: PickerObjectOption[], index: number) => {
       state.code = values[index].code;
       setValues();
 
-      const parsedValues = parseValues(pickerRef.value.getValues());
+      const parsedValues = parseValues(pickerRef.value!.getValues());
       emit('change', parsedValues, index);
     };
 
-    const onConfirm = (values, index) => {
+    const onConfirm = (values: PickerObjectOption[], index: number) => {
       setValues();
       emit('confirm', parseValues(values), index);
     };

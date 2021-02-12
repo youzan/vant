@@ -29,14 +29,14 @@ function getElementTranslateY(element: Element) {
   return Number(translateY);
 }
 
-export type PickerOption =
-  | string
-  | {
-      text: string;
-      disabled?: boolean;
-      // for custom filed names
-      [key: string]: any;
-    };
+export type PickerObjectOption = {
+  text?: string;
+  disabled?: boolean;
+  // for custom filed names
+  [key: string]: any;
+};
+
+export type PickerOption = string | PickerObjectOption;
 
 export type PickerObjectColumn = {
   values?: PickerOption[];
