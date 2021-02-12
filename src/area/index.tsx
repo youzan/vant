@@ -9,8 +9,15 @@ import {
   onMounted,
   ComponentPublicInstance,
 } from 'vue';
+
+// Utils
+import { deepClone } from '../utils/deep-clone';
 import { createNamespace, pick } from '../utils';
+
+// Composition
 import { useExpose } from '../composables/use-expose';
+
+// Components
 import Picker, { PickerObjectOption } from '../picker';
 import { pickerProps } from '../picker/shared';
 
@@ -20,10 +27,6 @@ const EMPTY_CODE = '000000';
 
 function isOverseaCode(code: string) {
   return code[0] === '9';
-}
-
-function clone<T extends Record<string, unknown>>(obj: T): T {
-  return JSON.parse(JSON.stringify(obj));
 }
 
 export type AreaList = {
@@ -202,7 +205,7 @@ export default createComponent({
     const parseValues = (values: PickerObjectOption[]) => {
       return values.map((value, index) => {
         if (value) {
-          value = clone(value);
+          value = deepClone(value);
 
           if (!value.code || value.name === props.columnsPlaceholder[index]) {
             value.code = '';
