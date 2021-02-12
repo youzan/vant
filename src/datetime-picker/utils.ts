@@ -1,5 +1,5 @@
 import { isNaN } from '../utils/validate/number';
-import { pickerProps } from '../picker/shared';
+import { pickerProps } from '../picker';
 
 export const sharedProps = {
   ...pickerProps,

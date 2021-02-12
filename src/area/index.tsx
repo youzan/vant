@@ -18,8 +18,7 @@ import { createNamespace, pick } from '../utils';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Picker from '../picker';
-import { pickerProps } from '../picker/shared';
+import Picker, { pickerProps } from '../picker';
 
 const [createComponent, bem] = createNamespace('area');
 

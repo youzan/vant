@@ -1,6 +1,5 @@
 /* eslint-disable no-use-before-define */
 import { ref, watch, reactive, PropType } from 'vue';
-import { PICKER_KEY } from './shared';
 
 // Utils
 import { deepClone } from '../utils/deep-clone';
@@ -28,6 +27,8 @@ function getElementTranslateY(element: Element) {
 
   return Number(translateY);
 }
+
+export const PICKER_KEY = 'vanPicker';
 
 export type PickerObjectOption = {
   text?: string;

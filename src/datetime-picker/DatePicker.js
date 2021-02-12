@@ -9,8 +9,7 @@ import { times, sharedProps, getTrueValue, getMonthEndDay } from './utils';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Picker from '../picker';
-import { pickerProps } from '../picker/shared';
+import Picker, { pickerProps } from '../picker';
 
 const currentYear = new Date().getFullYear();
 const [createComponent] = createNamespace('date-picker');
