@@ -1,5 +1,6 @@
 import {
   ref,
+  Ref,
   watch,
   reactive,
   computed,
@@ -7,6 +8,8 @@ import {
   onActivated,
   onDeactivated,
   onBeforeUnmount,
+  CSSProperties,
+  ComponentPublicInstance,
 } from 'vue';
 
 // Utils
@@ -27,17 +30,35 @@ const [createComponent, bem] = createNamespace('swipe');
 
 export const SWIPE_KEY = 'vanSwipe';
 
+export type SwipeToOptions = {
+  immediate?: boolean;
+};
+
+export type SwipeProvide = {
+  props: {
+    loop: boolean;
+    vertical?: boolean;
+    lazyRender?: boolean;
+  };
+  size: Ref<number>;
+  count: Ref<number>;
+  activeIndicator: Ref<number>;
+};
+
 export default createComponent({
   props: {
     width: [Number, String],
     height: [Number, String],
-    autoplay: [Number, String],
     vertical: Boolean,
     lazyRender: Boolean,
     indicatorColor: String,
     loop: {
       type: Boolean,
       default: true,
+    },
+    autoplay: {
+      type: [Number, String],
+      default: 0,
     },
     duration: {
       type: [Number, String],
@@ -64,9 +85,9 @@ export default createComponent({
   emits: ['change'],
 
   setup(props, { emit, slots }) {
-    const root = ref();
+    const root = ref<HTMLElement>();
     const state = reactive({
-      rect: null,
+      rect: null as DOMRect | null,
       width: 0,
       height: 0,
       offset: 0,
@@ -76,7 +97,10 @@ export default createComponent({
 
     const touch = useTouch();
     const windowSize = useWindowSize();
-    const { children, linkChildren } = useChildren(SWIPE_KEY);
+    const { children, linkChildren } = useChildren<
+      // eslint-disable-next-line
+      ComponentPublicInstance<{}, any>
+    >(SWIPE_KEY);
 
     const count = computed(() => children.length);
 
@@ -86,11 +110,13 @@ export default createComponent({
       props.vertical ? touch.deltaY.value : touch.deltaX.value
     );
 
-    const minOffset = computed(
-      () =>
-        (props.vertical ? state.rect.height : state.rect.width) -
-        size.value * count.value
-    );
+    const minOffset = computed(() => {
+      if (state.rect) {
+        const base = props.vertical ? state.rect.height : state.rect.width;
+        return base - size.value * count.value;
+      }
+      return 0;
+    });
 
     const maxCount = computed(() =>
       Math.ceil(Math.abs(minOffset.value) / size.value)
@@ -110,7 +136,7 @@ export default createComponent({
     const trackStyle = computed(() => {
       const mainAxis = props.vertical ? 'height' : 'width';
       const crossAxis = props.vertical ? 'width' : 'height';
-      const style = {
+      const style: CSSProperties = {
         transitionDuration: `${state.swiping ? 0 : props.duration}ms`,
         transform: `translate${props.vertical ? 'Y' : 'X'}(${state.offset}px)`,
       };
@@ -123,7 +149,7 @@ export default createComponent({
       return style;
     });
 
-    const getTargetActive = (pace) => {
+    const getTargetActive = (pace: number) => {
       const { active } = state;
 
       if (pace) {
@@ -135,7 +161,7 @@ export default createComponent({
       return active;
     };
 
-    const getTargetOffset = (targetActive, offset = 0) => {
+    const getTargetOffset = (targetActive: number, offset = 0) => {
       let currentPosition = targetActive * size.value;
       if (!props.loop) {
         currentPosition = Math.min(currentPosition, -minOffset.value);
@@ -149,7 +175,15 @@ export default createComponent({
       return targetOffset;
     };
 
-    const move = ({ pace = 0, offset = 0, emitChange }) => {
+    const move = ({
+      pace = 0,
+      offset = 0,
+      emitChange,
+    }: {
+      pace?: number;
+      offset?: number;
+      emitChange?: boolean;
+    }) => {
       if (count.value <= 1) {
         return;
       }
@@ -218,7 +252,7 @@ export default createComponent({
       });
     };
 
-    let autoplayTimer;
+    let autoplayTimer: NodeJS.Timeout;
 
     const stopAutoplay = () => {
       clearTimeout(autoplayTimer);
@@ -230,7 +264,7 @@ export default createComponent({
         autoplayTimer = setTimeout(() => {
           next();
           autoplay();
-        }, props.autoplay);
+        }, +props.autoplay);
       }
     };
 
@@ -249,8 +283,8 @@ export default createComponent({
       state.rect = rect;
       state.swiping = true;
       state.active = active;
-      state.width = +props.width || rect.width;
-      state.height = +props.height || rect.height;
+      state.width = +(props.width ?? rect.width);
+      state.height = +(props.height ?? rect.height);
       state.offset = getTargetOffset(active);
       children.forEach((swipe) => {
         swipe.setOffset(0);
@@ -263,9 +297,9 @@ export default createComponent({
       initialize(state.active);
     };
 
-    let touchStartTime;
+    let touchStartTime: number;
 
-    const onTouchStart = (event) => {
+    const onTouchStart = (event: TouchEvent) => {
       if (!props.touchable) return;
 
       touch.start(event);
@@ -275,7 +309,7 @@ export default createComponent({
       correctPosition();
     };
 
-    const onTouchMove = (event) => {
+    const onTouchMove = (event: TouchEvent) => {
       if (props.touchable && state.swiping) {
         touch.move(event);
 
@@ -323,7 +357,7 @@ export default createComponent({
       autoplay();
     };
 
-    const swipeTo = (index, options = {}) => {
+    const swipeTo = (index: number, options: SwipeToOptions = {}) => {
       correctPosition();
       touch.reset();
 
@@ -350,9 +384,11 @@ export default createComponent({
       });
     };
 
-    const renderDot = (_, index) => {
+    const renderDot = (_: number, index: number) => {
       const active = index === activeIndicator.value;
-      const style = active ? { backgroundColor: props.indicatorColor } : null;
+      const style: CSSProperties = {
+        backgroundColor: active ? props.indicatorColor : undefined,
+      };
       return <i style={style} class={bem('indicator', { active })} />;
     };
 
@@ -379,7 +415,12 @@ export default createComponent({
 
     linkChildren({ size, props, count, activeIndicator });
 
-    watch(() => props.initialSwipe, initialize);
+    watch(
+      () => props.initialSwipe,
+      (value) => {
+        initialize(+value);
+      }
+    );
     watch(
       () => children.length,
       () => {
