@@ -1,5 +1,5 @@
-import { computed, nextTick, onMounted, reactive } from 'vue';
-import { SWIPE_KEY } from '../swipe';
+import { computed, CSSProperties, nextTick, onMounted, reactive } from 'vue';
+import { SWIPE_KEY, SwipeProvide } from '../swipe';
 import { createNamespace } from '../utils';
 import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
@@ -8,17 +8,24 @@ const [createComponent, bem] = createNamespace('swipe-item');
 
 export default createComponent({
   setup(props, { slots }) {
-    let rendered;
+    let rendered: boolean;
     const state = reactive({
       offset: 0,
       inited: false,
       mounted: false,
     });
 
-    const { parent, index } = useParent(SWIPE_KEY);
+    const { parent, index } = useParent<SwipeProvide>(SWIPE_KEY);
+
+    if (!parent) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('[Vant] SwipeItem must be a child component of Swipe.');
+      }
+      return;
+    }
 
     const style = computed(() => {
-      const style = {};
+      const style: CSSProperties = {};
       const { vertical } = parent.props;
 
       if (parent.size.value) {
@@ -56,7 +63,7 @@ export default createComponent({
       return rendered;
     });
 
-    const setOffset = (offset) => {
+    const setOffset = (offset: number) => {
       state.offset = offset;
     };
 

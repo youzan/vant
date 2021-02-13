@@ -1981,10 +1981,10 @@
   resolved "https://registry.yarnpkg.com/@vant/touch-emulator/-/touch-emulator-1.2.0.tgz#486300b23e57db9ce9231a04e0a0c621c68692d8"
   integrity sha512-sJ97zU85zOq51qoi7+CpBEcOyH3CitjP1KC7/GQwqaurUJni+EP7/F9n0HMnAh8GXMjgtgDBNJ5z48x+coNKYQ==
 
-"@vant/use@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.npm.taobao.org/@vant/use/download/@vant/use-1.0.4.tgz#67f827a40e74f3c318d5f05c31751610d8056184"
-  integrity sha1-Z/gnpA5088MY1fBcMXUWENgFYYQ=
+"@vant/use@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/@vant/use/download/@vant/use-1.0.5.tgz#44bee952ebccf9396414a51c4d4b458434a9de23"
+  integrity sha1-RL7pUuvM+TlkFKUcTUtFhDSp3iM=
   dependencies:
     "@babel/runtime" "7.x"
 
