@@ -20,7 +20,7 @@ export const useRect = (
       bottom: height,
       width,
       height,
-    };
+    } as DOMRect;
   }
 
   if (element && element.getBoundingClientRect) {
@@ -34,5 +34,5 @@ export const useRect = (
     bottom: 0,
     width: 0,
     height: 0,
-  };
+  } as DOMRect;
 };
