@@ -1,4 +1,4 @@
-import type { FieldRule } from '.';
+import type { FieldRule } from './types';
 
 function isEmptyValue(value: unknown) {
   if (Array.isArray(value)) {

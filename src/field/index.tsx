@@ -34,41 +34,18 @@ import { FORM_KEY, FIELD_KEY } from '../composables/use-link-field';
 import Icon from '../icon';
 import Cell, { cellProps } from '../cell';
 
+// Types
+import type {
+  FieldRule,
+  FieldType,
+  FieldTextAlign,
+  FieldClearTrigger,
+  FieldFormatTrigger,
+  FieldAutosizeConfig,
+  FieldValidateTrigger,
+} from './types';
+
 const [createComponent, bem] = createNamespace('field');
-
-export type FieldType =
-  | 'tel'
-  | 'text'
-  | 'digit'
-  | 'number'
-  | 'search'
-  | 'password'
-  | 'textarea';
-export type FieldTextAlign = 'left' | 'center' | 'right';
-export type FieldClearTrigger = 'always' | 'focus';
-export type FieldFormatTrigger = 'onBlur' | 'onChange';
-export type FieldValidateTrigger = 'onBlur' | 'onChange' | 'onSubmit';
-export type FieldAutosizeConfig = {
-  maxHeight?: number;
-  minHeight?: number;
-};
-export type FieldRule = {
-  pattern?: RegExp;
-  trigger?: FieldValidateTrigger;
-  message?: string | ((value: unknown, rule: FieldRule) => string);
-  required?: boolean;
-  validator?: (
-    value: unknown,
-    rule: FieldRule
-  ) => boolean | string | Promise<boolean | string>;
-  formatter?: (value: unknown, rule: FieldRule) => string;
-};
-
-declare global {
-  interface EventTarget {
-    composing?: boolean;
-  }
-}
 
 export default createComponent({
   props: {
