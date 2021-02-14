@@ -13,7 +13,7 @@ import {
   onDeactivated,
   onBeforeUnmount,
 } from 'vue';
-import { createNamespace, isDef } from '../utils';
+import { createNamespace, isDef, UnknownProp } from '../utils';
 
 // Composition
 import { useEventListener } from '@vant/use';
@@ -47,7 +47,7 @@ export const popupSharedProps = {
   // overlay custom style
   overlayStyle: Object as PropType<CSSProperties>,
   // overlay custom class name
-  overlayClass: null,
+  overlayClass: UnknownProp,
   // Initial rendering animation
   transitionAppear: Boolean,
   // whether to show overlay

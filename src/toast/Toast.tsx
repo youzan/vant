@@ -1,7 +1,7 @@
 import { watch, PropType, onMounted, onUnmounted, CSSProperties } from 'vue';
 
 // Utils
-import { createNamespace, isDef } from '../utils';
+import { createNamespace, isDef, UnknownProp } from '../utils';
 import { lockClick } from './lock-click';
 
 // Components
@@ -19,12 +19,12 @@ export default createComponent({
     icon: String,
     show: Boolean,
     message: [Number, String],
-    className: null,
+    className: UnknownProp,
     iconPrefix: String,
     lockScroll: Boolean,
     loadingType: String as PropType<LoadingType>,
     forbidClick: Boolean,
-    overlayClass: null,
+    overlayClass: UnknownProp,
     overlayStyle: Object as PropType<CSSProperties>,
     closeOnClick: Boolean,
     closeOnClickOverlay: Boolean,

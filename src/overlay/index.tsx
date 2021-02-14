@@ -1,5 +1,11 @@
 import { PropType, Transition, CSSProperties } from 'vue';
-import { noop, isDef, preventDefault, createNamespace } from '../utils';
+import {
+  noop,
+  isDef,
+  UnknownProp,
+  preventDefault,
+  createNamespace,
+} from '../utils';
 import { useLazyRender } from '../composables/use-lazy-render';
 
 const [createComponent, bem] = createNamespace('overlay');
@@ -9,7 +15,7 @@ export default createComponent({
     show: Boolean,
     zIndex: [Number, String],
     duration: [Number, String],
-    className: null,
+    className: UnknownProp,
     customStyle: Object as PropType<CSSProperties>,
     lockScroll: {
       type: Boolean,

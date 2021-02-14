@@ -1,6 +1,7 @@
 import { nextTick, onMounted, reactive, ref, watch } from 'vue';
 
 // Utils
+import { UnknownProp } from '../utils';
 import { bem, createComponent } from './shared';
 import { callInterceptor } from '../utils/interceptor';
 
@@ -17,8 +18,8 @@ import ImagePreviewItem from './ImagePreviewItem';
 export default createComponent({
   props: {
     show: Boolean,
-    className: null,
     closeable: Boolean,
+    className: UnknownProp,
     beforeClose: Function,
     showIndicators: Boolean,
     images: {

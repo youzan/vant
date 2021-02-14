@@ -1,7 +1,7 @@
 import { reactive, Teleport } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, UnknownProp } from '../utils';
 import { DROPDOWN_KEY } from '../dropdown-menu';
 
 // Composition
@@ -20,8 +20,8 @@ export default createComponent({
     title: String,
     disabled: Boolean,
     teleport: [String, Object],
-    modelValue: null,
-    titleClass: null,
+    modelValue: UnknownProp,
+    titleClass: UnknownProp,
     options: {
       type: Array,
       default: () => [],
