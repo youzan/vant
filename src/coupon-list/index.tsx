@@ -99,7 +99,7 @@ export default createComponent({
     const onExchange = () => {
       emit('exchange', state.code);
 
-      // auto clear currentCode when not use vModel
+      // auto clear currentCode when not use v-model
       if (!props.code) {
         state.code = '';
       }
@@ -125,7 +125,7 @@ export default createComponent({
         return (
           <div class={bem('exchange-bar')}>
             <Field
-              vModel={state.code}
+              v-model={state.code}
               clearable
               border={false}
               class={bem('field')}
@@ -221,7 +221,7 @@ export default createComponent({
     return () => (
       <div class={bem()}>
         {renderExchangeBar()}
-        <Tabs vModel={state.tab} class={bem('tab')} border={false}>
+        <Tabs v-model={state.tab} class={bem('tab')} border={false}>
           {renderCouponTab()}
           {renderDisabledTab()}
         </Tabs>

@@ -1,10 +1,10 @@
 import {
   ref,
-  Ref,
   watch,
   reactive,
   computed,
   onMounted,
+  ComputedRef,
   onActivated,
   onDeactivated,
   onBeforeUnmount,
@@ -40,9 +40,9 @@ export type SwipeProvide = {
     vertical?: boolean;
     lazyRender?: boolean;
   };
-  size: Ref<number>;
-  count: Ref<number>;
-  activeIndicator: Ref<number>;
+  size: ComputedRef<number>;
+  count: ComputedRef<number>;
+  activeIndicator: ComputedRef<number>;
 };
 
 export default createComponent({
