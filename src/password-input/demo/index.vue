@@ -53,7 +53,8 @@
 </template>
 
 <script lang="ts">
-import { ComponentPublicInstance, reactive, ref, toRefs, watch } from 'vue';
+import { reactive, ref, toRefs, watch } from 'vue';
+import { ComponentInstance } from '../../utils';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -87,11 +88,11 @@ export default {
     };
 
     const refMap = {
-      showInfo: ref<ComponentPublicInstance>(),
-      addGutter: ref<ComponentPublicInstance>(),
-      basicUsage: ref<ComponentPublicInstance>(),
-      removeMask: ref<ComponentPublicInstance>(),
-      customLength: ref<ComponentPublicInstance>(),
+      showInfo: ref<ComponentInstance>(),
+      addGutter: ref<ComponentInstance>(),
+      basicUsage: ref<ComponentInstance>(),
+      removeMask: ref<ComponentInstance>(),
+      customLength: ref<ComponentInstance>(),
     };
 
     type ValueKeys = keyof typeof initialValue;

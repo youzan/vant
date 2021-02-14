@@ -1,7 +1,12 @@
-import { ref, watch, computed, PropType, ComponentPublicInstance } from 'vue';
+import { ref, watch, computed, PropType } from 'vue';
 
 // Utils
-import { unitToPx, preventDefault, createNamespace } from '../utils';
+import {
+  unitToPx,
+  preventDefault,
+  createNamespace,
+  ComponentInstance,
+} from '../utils';
 import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 
 // Composition
@@ -97,10 +102,9 @@ export default createComponent({
       ...props.columnsFieldNames,
     };
 
-    const { children, linkChildren } = useChildren<
-      // eslint-disable-next-line
-      ComponentPublicInstance<{}, any>
-    >(PICKER_KEY);
+    const { children, linkChildren } = useChildren<ComponentInstance>(
+      PICKER_KEY
+    );
 
     linkChildren();
 
