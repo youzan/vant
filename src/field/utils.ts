@@ -1,13 +1,4 @@
-export type FieldValidateTrigger = 'onSubmit' | 'onChange' | 'onBlur';
-
-export type FieldRule = {
-  pattern?: RegExp;
-  trigger?: FieldValidateTrigger;
-  message?: string | ((value: unknown, rule: FieldRule) => string);
-  required?: boolean;
-  validator?: (value: unknown, rule: FieldRule) => boolean | Promise<boolean>;
-  formatter?: (value: unknown, rule: FieldRule) => unknown;
-};
+import type { FieldRule } from '.';
 
 function isEmptyValue(value: unknown) {
   if (Array.isArray(value)) {

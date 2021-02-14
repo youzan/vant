@@ -5,7 +5,9 @@ import {
   computed,
   nextTick,
   reactive,
+  PropType,
   onMounted,
+  HTMLAttributes,
 } from 'vue';
 
 // Utils
@@ -34,29 +36,63 @@ import Cell, { cellProps } from '../cell';
 
 const [createComponent, bem] = createNamespace('field');
 
+export type FieldType =
+  | 'tel'
+  | 'text'
+  | 'digit'
+  | 'number'
+  | 'search'
+  | 'password'
+  | 'textarea';
+export type FieldTextAlign = 'left' | 'center' | 'right';
+export type FieldClearTrigger = 'always' | 'focus';
+export type FieldFormatTrigger = 'onBlur' | 'onChange';
+export type FieldValidateTrigger = 'onBlur' | 'onChange' | 'onSubmit';
+export type FieldAutosizeConfig = {
+  maxHeight?: number;
+  minHeight?: number;
+};
+export type FieldRule = {
+  pattern?: RegExp;
+  trigger?: FieldValidateTrigger;
+  message?: string | ((value: unknown, rule: FieldRule) => string);
+  required?: boolean;
+  validator?: (
+    value: unknown,
+    rule: FieldRule
+  ) => boolean | string | Promise<boolean | string>;
+  formatter?: (value: unknown, rule: FieldRule) => string;
+};
+
+declare global {
+  interface EventTarget {
+    composing?: boolean;
+  }
+}
+
 export default createComponent({
   props: {
     ...cellProps,
     rows: [Number, String],
     name: String,
-    rules: Array,
-    autosize: [Boolean, Object],
+    rules: Array as PropType<FieldRule[]>,
+    autosize: [Boolean, Object] as PropType<boolean | FieldAutosizeConfig>,
     leftIcon: String,
     rightIcon: String,
     clearable: Boolean,
-    formatter: Function,
+    formatter: Function as PropType<(value: unknown) => unknown>,
     maxlength: [Number, String],
     labelWidth: [Number, String],
-    labelClass: null,
-    labelAlign: String,
-    inputAlign: String,
+    labelClass: null as any,
+    labelAlign: String as PropType<FieldTextAlign>,
+    inputAlign: String as PropType<FieldTextAlign>,
     placeholder: String,
     autocomplete: String,
     errorMessage: String,
-    errorMessageAlign: String,
+    errorMessageAlign: String as PropType<FieldTextAlign>,
     showWordLimit: Boolean,
     type: {
-      type: String,
+      type: String as PropType<FieldType>,
       default: 'text',
     },
     error: {
@@ -80,11 +116,11 @@ export default createComponent({
       default: '',
     },
     clearTrigger: {
-      type: String,
+      type: String as PropType<FieldClearTrigger>,
       default: 'focus',
     },
     formatTrigger: {
-      type: String,
+      type: String as PropType<FieldFormatTrigger>,
       default: 'onChange',
     },
   },
@@ -107,13 +143,15 @@ export default createComponent({
       validateMessage: '',
     });
 
-    const inputRef = ref();
-    const childFieldValue = ref();
+    const inputRef = ref<HTMLInputElement>();
+    const childFieldValue = ref<() => unknown>();
 
-    const { parent: form } = useParent(FORM_KEY);
+    const { parent: form } = useParent<any>(FORM_KEY);
 
-    const getProp = (key) => {
-      if (isDef(props[key])) {
+    const getModelValue = () => String(props.modelValue ?? '');
+
+    const getProp = (key: keyof typeof props) => {
+      if (key in props) {
         return props[key];
       }
       if (form && isDef(form.props[key])) {
@@ -125,7 +163,7 @@ export default createComponent({
       const readonly = getProp('readonly');
 
       if (props.clearable && !readonly) {
-        const hasValue = isDef(props.modelValue) && props.modelValue !== '';
+        const hasValue = getModelValue() !== '';
         const trigger =
           props.clearTrigger === 'always' ||
           (props.clearTrigger === 'focus' && state.focused);
@@ -141,9 +179,9 @@ export default createComponent({
       return props.modelValue;
     });
 
-    const runValidator = (value, rule) =>
+    const runValidator = (value: unknown, rule: FieldRule) =>
       new Promise((resolve) => {
-        const returnVal = rule.validator(value, rule);
+        const returnVal = rule.validator!(value, rule);
 
         if (isPromise(returnVal)) {
           return returnVal.then(resolve);
@@ -152,16 +190,16 @@ export default createComponent({
         resolve(returnVal);
       });
 
-    const getRuleMessage = (value, rule) => {
+    const getRuleMessage = (value: unknown, rule: FieldRule) => {
       const { message } = rule;
 
       if (isFunction(message)) {
         return message(value, rule);
       }
-      return message;
+      return message || '';
     };
 
-    const runRules = (rules) =>
+    const runRules = (rules: FieldRule[]) =>
       rules.reduce(
         (promise, rule) =>
           promise.then(() => {
@@ -204,25 +242,25 @@ export default createComponent({
     };
 
     const validate = (rules = props.rules) =>
-      new Promise((resolve) => {
-        if (!rules) {
+      new Promise<{ name?: string; message: string } | void>((resolve) => {
+        resetValidation();
+        if (rules) {
+          runRules(rules).then(() => {
+            if (state.validateFailed) {
+              resolve({
+                name: props.name,
+                message: state.validateMessage,
+              });
+            } else {
+              resolve();
+            }
+          });
+        } else {
           resolve();
         }
-
-        resetValidation();
-        runRules(rules).then(() => {
-          if (state.validateFailed) {
-            resolve({
-              name: props.name,
-              message: state.validateMessage,
-            });
-          } else {
-            resolve();
-          }
-        });
       });
 
-    const validateWithTrigger = (trigger) => {
+    const validateWithTrigger = (trigger: FieldValidateTrigger) => {
       if (form && props.rules) {
         const defaultTrigger = form.props.validateTrigger === trigger;
         const rules = props.rules.filter((rule) => {
@@ -237,19 +275,25 @@ export default createComponent({
       }
     };
 
-    const updateValue = (value, trigger = 'onChange') => {
-      value = isDef(value) ? String(value) : '';
-
-      // native maxlength have incorrect line-break counting
-      // see: https://github.com/youzan/vant/issues/5033
-      const { maxlength, modelValue } = props;
+    // native maxlength have incorrect line-break counting
+    // see: https://github.com/youzan/vant/issues/5033
+    const limitValueLength = (value: string) => {
+      const { maxlength } = props;
       if (isDef(maxlength) && value.length > maxlength) {
+        const modelValue = getModelValue();
         if (modelValue && modelValue.length === +maxlength) {
-          value = modelValue;
-        } else {
-          value = value.slice(0, maxlength);
+          return modelValue;
         }
+        return value.slice(0, +maxlength);
       }
+      return value;
+    };
+
+    const updateValue = (
+      value: string,
+      trigger: FieldFormatTrigger = 'onChange'
+    ) => {
+      value = limitValueLength(value);
 
       if (props.type === 'number' || props.type === 'digit') {
         const isNumber = props.type === 'number';
@@ -257,7 +301,7 @@ export default createComponent({
       }
 
       if (props.formatter && trigger === props.formatTrigger) {
-        value = props.formatter(value);
+        value = props.formatter(value) as string;
       }
 
       if (inputRef.value && value !== inputRef.value.value) {
@@ -269,10 +313,10 @@ export default createComponent({
       }
     };
 
-    const onInput = (event) => {
+    const onInput = (event: Event) => {
       // skip update value when composing
-      if (!event.target.composing) {
-        updateValue(event.target.value);
+      if (!event.target!.composing) {
+        updateValue((event.target as HTMLInputElement).value);
       }
     };
 
@@ -288,7 +332,7 @@ export default createComponent({
       }
     };
 
-    const onFocus = (event) => {
+    const onFocus = (event: Event) => {
       state.focused = true;
       emit('focus', event);
 
@@ -299,27 +343,27 @@ export default createComponent({
       }
     };
 
-    const onBlur = (event) => {
+    const onBlur = (event: Event) => {
       state.focused = false;
-      updateValue(props.modelValue, 'onBlur');
+      updateValue(getModelValue(), 'onBlur');
       emit('blur', event);
       validateWithTrigger('onBlur');
       resetScroll();
     };
 
-    const onClickInput = (event) => {
+    const onClickInput = (event: MouseEvent) => {
       emit('click-input', event);
     };
 
-    const onClickLeftIcon = (event) => {
+    const onClickLeftIcon = (event: MouseEvent) => {
       emit('click-left-icon', event);
     };
 
-    const onClickRightIcon = (event) => {
+    const onClickRightIcon = (event: MouseEvent) => {
       emit('click-right-icon', event);
     };
 
-    const onClear = (event) => {
+    const onClear = (event: MouseEvent) => {
       preventDefault(event);
       emit('update:modelValue', '');
       emit('clear', event);
@@ -341,11 +385,11 @@ export default createComponent({
       }
     });
 
-    const onKeypress = (event) => {
+    const onKeypress = (event: KeyboardEvent) => {
       const ENTER_CODE = 13;
 
       if (event.keyCode === ENTER_CODE) {
-        const submitOnEnter = getProp('submitOnEnter');
+        const submitOnEnter = form && form.props.submitOnEnter;
         if (!submitOnEnter && props.type !== 'textarea') {
           preventDefault(event);
         }
@@ -359,15 +403,15 @@ export default createComponent({
       emit('keypress', event);
     };
 
-    const onCompositionStart = (event) => {
-      event.target.composing = true;
+    const onCompositionStart = (event: Event) => {
+      event.target!.composing = true;
     };
 
-    const onCompositionEnd = (event) => {
+    const onCompositionEnd = (event: Event) => {
       const { target } = event;
-      if (target.composing) {
-        target.composing = false;
-        trigger(target, 'input');
+      if (target!.composing) {
+        target!.composing = false;
+        trigger(target as Element, 'input');
       }
     };
 
@@ -383,16 +427,16 @@ export default createComponent({
       let height = input.scrollHeight;
       if (isObject(props.autosize)) {
         const { maxHeight, minHeight } = props.autosize;
-        if (maxHeight) {
+        if (maxHeight !== undefined) {
           height = Math.min(height, maxHeight);
         }
-        if (minHeight) {
+        if (minHeight !== undefined) {
           height = Math.max(height, minHeight);
         }
       }
 
       if (height) {
-        input.style.height = height + 'px';
+        input.style.height = `${height}px`;
       }
     };
 
@@ -415,7 +459,7 @@ export default createComponent({
       const inputProps = {
         ref: inputRef,
         name: props.name,
-        rows: props.rows,
+        rows: props.rows !== undefined ? +props.rows : undefined,
         class: bem('control', inputAlign),
         value: props.modelValue,
         disabled,
@@ -439,7 +483,7 @@ export default createComponent({
       }
 
       let inputType = type;
-      let inputMode;
+      let inputMode: HTMLAttributes['inputmode'];
 
       // type="number" is weired in iOS, and can't prevent dot in Android
       // so use inputmode to set keyboard in mordern browers
@@ -490,7 +534,7 @@ export default createComponent({
 
     const renderWordLimit = () => {
       if (props.showWordLimit && props.maxlength) {
-        const count = (props.modelValue || '').length;
+        const count = getModelValue().length;
         return (
           <div class={bem('word-limit')}>
             <span class={bem('word-num')}>{count}</span>/{props.maxlength}
@@ -541,8 +585,8 @@ export default createComponent({
 
     watch(
       () => props.modelValue,
-      (value) => {
-        updateValue(value);
+      () => {
+        updateValue(getModelValue());
         resetValidation();
         validateWithTrigger('onChange');
         nextTick(adjustSize);
@@ -550,7 +594,7 @@ export default createComponent({
     );
 
     onMounted(() => {
-      updateValue(props.modelValue, props.formatTrigger);
+      updateValue(getModelValue(), props.formatTrigger);
       nextTick(adjustSize);
     });
 
