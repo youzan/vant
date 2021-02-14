@@ -1,7 +1,7 @@
-import { ComponentPublicInstance, PropType } from 'vue';
+import { PropType } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, ComponentInstance } from '../utils';
 
 // Composition
 import { useChildren } from '@vant/use';
@@ -46,10 +46,7 @@ export default createComponent({
   emits: ['submit', 'failed'],
 
   setup(props, { emit, slots }) {
-    const { children, linkChildren } = useChildren<
-      // eslint-disable-next-line
-      ComponentPublicInstance<{}, any>
-    >(FORM_KEY);
+    const { children, linkChildren } = useChildren<ComponentInstance>(FORM_KEY);
 
     const getFieldsByNames = (names?: string[]) => {
       if (names) {

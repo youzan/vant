@@ -1,10 +1,5 @@
-import {
-  App,
-  CSSProperties,
-  TeleportProps,
-  ComponentPublicInstance,
-} from 'vue';
-import { inBrowser } from '../utils';
+import { App, CSSProperties, TeleportProps } from 'vue';
+import { inBrowser, ComponentInstance } from '../utils';
 import { Interceptor } from '../utils/interceptor';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanDialog, {
@@ -38,8 +33,7 @@ export type DialogOptions = {
   closeOnClickOverlay?: boolean;
 };
 
-// eslint-disable-next-line
-let instance: ComponentPublicInstance<{}, any>;
+let instance: ComponentInstance;
 
 function initInstance() {
   const Wrapper = {

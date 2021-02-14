@@ -6,14 +6,19 @@ import {
   onMounted,
   ComputedRef,
   onActivated,
+  CSSProperties,
   onDeactivated,
   onBeforeUnmount,
-  CSSProperties,
-  ComponentPublicInstance,
 } from 'vue';
 
 // Utils
-import { range, isHidden, preventDefault, createNamespace } from '../utils';
+import {
+  range,
+  isHidden,
+  preventDefault,
+  createNamespace,
+  ComponentInstance,
+} from '../utils';
 
 // Composition
 import {
@@ -97,10 +102,9 @@ export default createComponent({
 
     const touch = useTouch();
     const windowSize = useWindowSize();
-    const { children, linkChildren } = useChildren<
-      // eslint-disable-next-line
-      ComponentPublicInstance<{}, any>
-    >(SWIPE_KEY);
+    const { children, linkChildren } = useChildren<ComponentInstance>(
+      SWIPE_KEY
+    );
 
     const count = computed(() => children.length);
 

@@ -1,12 +1,13 @@
-import { PropType } from 'vue';
+import { PropType, ComponentPublicInstance } from 'vue';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 export function noop() {}
 
 export const inBrowser = typeof window !== 'undefined';
 
 // unknown type for Vue prop
 export const UnknownProp = (null as unknown) as PropType<unknown>;
+
+export type ComponentInstance = ComponentPublicInstance<any>;
 
 export function isDef<T>(val: T): val is NonNullable<T> {
   return val !== undefined && val !== null;

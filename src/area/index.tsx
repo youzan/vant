@@ -7,12 +7,11 @@ import {
   nextTick,
   PropType,
   onMounted,
-  ComponentPublicInstance,
 } from 'vue';
 
 // Utils
 import { deepClone } from '../utils/deep-clone';
-import { createNamespace, pick } from '../utils';
+import { pick, createNamespace, ComponentInstance } from '../utils';
 
 // Composition
 import { useExpose } from '../composables/use-expose';
@@ -66,8 +65,7 @@ export default createComponent({
   emits: ['change', 'confirm'],
 
   setup(props, { emit, slots }) {
-    // eslint-disable-next-line
-    const pickerRef = ref<ComponentPublicInstance<{}, any>>();
+    const pickerRef = ref<ComponentInstance>();
 
     const state = reactive({
       code: props.value,
