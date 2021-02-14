@@ -151,7 +151,7 @@ export default createComponent({
     const getModelValue = () => String(props.modelValue ?? '');
 
     const getProp = (key: keyof typeof props) => {
-      if (key in props) {
+      if (isDef(props[key])) {
         return props[key];
       }
       if (form && isDef(form.props[key])) {
