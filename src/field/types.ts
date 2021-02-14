@@ -20,6 +20,11 @@ export type FieldAutosizeConfig = {
   minHeight?: number;
 };
 
+export type FieldValidateError = {
+  name?: string;
+  message: string;
+};
+
 export type FieldRule = {
   pattern?: RegExp;
   trigger?: FieldValidateTrigger;

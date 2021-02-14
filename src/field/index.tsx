@@ -42,6 +42,7 @@ import type {
   FieldTextAlign,
   FieldClearTrigger,
   FieldFormatTrigger,
+  FieldValidateError,
   FieldAutosizeConfig,
   FieldValidateTrigger,
 } from './types';
@@ -220,7 +221,7 @@ export default createComponent({
     };
 
     const validate = (rules = props.rules) =>
-      new Promise<{ name?: string; message: string } | void>((resolve) => {
+      new Promise<FieldValidateError | void>((resolve) => {
         resetValidation();
         if (rules) {
           runRules(rules).then(() => {
