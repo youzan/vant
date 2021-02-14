@@ -1,4 +1,4 @@
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, UnknownProp } from '../utils';
 import { useLinkField } from '../composables/use-link-field';
 import Loading from '../loading';
 
@@ -9,15 +9,15 @@ export default createComponent({
     size: [Number, String],
     loading: Boolean,
     disabled: Boolean,
-    modelValue: null as any,
+    modelValue: UnknownProp,
     activeColor: String,
     inactiveColor: String,
     activeValue: {
-      type: null as any,
+      type: UnknownProp,
       default: true,
     },
     inactiveValue: {
-      type: null as any,
+      type: UnknownProp,
       default: false,
     },
   },

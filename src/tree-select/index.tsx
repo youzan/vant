@@ -22,7 +22,7 @@ export type TreeSelectItem = {
   badge?: number | string;
   children?: TreeSelectChild[];
   disabled?: boolean;
-  className?: any;
+  className?: unknown;
 };
 
 export default createComponent({

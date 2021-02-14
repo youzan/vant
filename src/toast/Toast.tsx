@@ -1,4 +1,4 @@
-import { watch, onMounted, onUnmounted, PropType } from 'vue';
+import { watch, PropType, onMounted, onUnmounted, CSSProperties } from 'vue';
 
 // Utils
 import { createNamespace, isDef } from '../utils';
@@ -25,7 +25,7 @@ export default createComponent({
     loadingType: String as PropType<LoadingType>,
     forbidClick: Boolean,
     overlayClass: null,
-    overlayStyle: Object,
+    overlayStyle: Object as PropType<CSSProperties>,
     closeOnClick: Boolean,
     closeOnClickOverlay: Boolean,
     type: {

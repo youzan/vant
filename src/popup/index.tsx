@@ -45,7 +45,7 @@ export const popupSharedProps = {
   // teleport
   teleport: [String, Object] as PropType<TeleportProps['to']>,
   // overlay custom style
-  overlayStyle: Object,
+  overlayStyle: Object as PropType<CSSProperties>,
   // overlay custom class name
   overlayClass: null,
   // Initial rendering animation

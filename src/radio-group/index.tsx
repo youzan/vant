@@ -1,5 +1,5 @@
 import { watch } from 'vue';
-import { createNamespace } from '../utils';
+import { UnknownProp, createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 import { useLinkField } from '../composables/use-link-field';
 import { CheckerParent } from '../checkbox/Checker';
@@ -10,7 +10,7 @@ export const RADIO_KEY = 'vanRadio';
 
 export type RadioGroupProvide = CheckerParent & {
   props: {
-    modelValue: any;
+    modelValue: unknown;
   };
   updateModelValue: (value: unknown) => void;
 };
@@ -20,7 +20,7 @@ export default createComponent({
     disabled: Boolean,
     iconSize: [Number, String],
     direction: String,
-    modelValue: null as any,
+    modelValue: UnknownProp,
     checkedColor: String,
   },
 

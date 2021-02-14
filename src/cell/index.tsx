@@ -1,7 +1,7 @@
-import { PropType } from 'vue';
+import { PropType, CSSProperties } from 'vue';
 
 // Utils
-import { createNamespace, isDef } from '../utils';
+import { createNamespace, isDef, UnknownProp } from '../utils';
 
 // Composition
 import { useRoute, routeProps } from '../composables/use-route';
@@ -23,10 +23,10 @@ export const cellProps = {
   isLink: Boolean,
   required: Boolean,
   iconPrefix: String,
-  titleStyle: null as any,
-  titleClass: null as any,
-  valueClass: null as any,
-  labelClass: null as any,
+  valueClass: UnknownProp,
+  labelClass: UnknownProp,
+  titleClass: UnknownProp,
+  titleStyle: (null as unknown) as PropType<string | CSSProperties>,
   arrowDirection: String as PropType<CellArrowDirection>,
   border: {
     type: Boolean,
