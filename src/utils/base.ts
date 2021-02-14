@@ -7,7 +7,8 @@ export const inBrowser = typeof window !== 'undefined';
 // unknown type for Vue prop
 export const UnknownProp = (null as unknown) as PropType<unknown>;
 
-export type ComponentInstance = ComponentPublicInstance<any>;
+// eslint-disable-next-line
+export type ComponentInstance = ComponentPublicInstance<{}, any>;
 
 export function isDef<T>(val: T): val is NonNullable<T> {
   return val !== undefined && val !== null;

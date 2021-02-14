@@ -159,10 +159,10 @@ export default createComponent({
         .then(() => {
           emit('submit', values);
         })
-        .catch((errors) => {
+        .catch((errors: FieldValidateError[]) => {
           emit('failed', { values, errors });
 
-          if (props.scrollToError) {
+          if (props.scrollToError && errors[0].name) {
             scrollToField(errors[0].name);
           }
         });
