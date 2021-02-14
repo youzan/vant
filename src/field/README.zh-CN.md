@@ -279,7 +279,7 @@ export default {
 | format-trigger | 格式化函数触发的时机，可选值为 `onBlur` | _string_ | `onChange` |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
 | label-class | 左侧文本额外类名 | _string \| Array \| object_ | - |
-| label-width | 左侧文本宽度，默认单位为`px` | _number \| string_ | `6.2em` |
+| label-width | 左侧文本宽度，默认单位为 `px` | _number \| string_ | `6.2em` |
 | label-align | 左侧文本对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `left` |
@@ -298,7 +298,7 @@ export default {
 | focus              | 输入框获得焦点时触发 | _event: Event_                 |
 | blur               | 输入框失去焦点时触发 | _event: Event_                 |
 | clear              | 点击清除按钮时触发   | _event: MouseEvent_            |
-| click              | 点击 Field 时触发    | _event: MouseEvent_            |
+| click              | 点击组件时触发       | _event: MouseEvent_            |
 | click-input        | 点击输入区域时触发   | _event: MouseEvent_            |
 | click-left-icon    | 点击左侧图标时触发   | _event: MouseEvent_            |
 | click-right-icon   | 点击右侧图标时触发   | _event: MouseEvent_            |
@@ -316,7 +316,7 @@ export default {
 
 | 名称       | 说明                                                       |
 | ---------- | ---------------------------------------------------------- |
-| label      | 自定义输入框 label 标签                                    |
+| label      | 自定义输入框左侧文本                                       |
 | input      | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效 |
 | left-icon  | 自定义输入框头部图标                                       |
 | right-icon | 自定义输入框尾部图标                                       |
