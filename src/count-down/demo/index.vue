@@ -78,13 +78,13 @@ export default {
     const countDown = ref<ComponentInstance>();
 
     const start = () => {
-      countDown.value.start();
+      countDown.value?.start();
     };
     const pause = () => {
-      countDown.value.pause();
+      countDown.value?.pause();
     };
     const reset = () => {
-      countDown.value.reset();
+      countDown.value?.reset();
     };
     const onFinish = () => Toast(t('finished'));
 

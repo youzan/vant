@@ -168,11 +168,11 @@ export default {
     };
 
     const checkAll = () => {
-      group.value.toggleAll(true);
+      group.value?.toggleAll(true);
     };
 
     const toggleAll = () => {
-      group.value.toggleAll();
+      group.value?.toggleAll();
     };
 
     return {
