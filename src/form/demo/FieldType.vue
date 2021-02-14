@@ -73,13 +73,13 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import FieldTypeArea from './FieldTypeArea';
-import FieldTypePicker from './FieldTypePicker';
-import FieldTypeCalendar from './FieldTypeCalendar';
-import FieldTypeDatetimePicker from './FieldTypeDatetimePicker';
+import FieldTypeArea from './FieldTypeArea.vue';
+import FieldTypePicker from './FieldTypePicker.vue';
+import FieldTypeCalendar from './FieldTypeCalendar.vue';
+import FieldTypeDatetimePicker from './FieldTypeDatetimePicker.vue';
 
 const i18n = {
   'zh-CN': {
@@ -133,7 +133,7 @@ export default {
       switchChecked: false,
     });
 
-    const onSubmit = (values) => {
+    const onSubmit = (values: Record<string, string>) => {
       console.log(values);
     };
 

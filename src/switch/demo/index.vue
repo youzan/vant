@@ -36,7 +36,7 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import Dialog from '../../dialog';
@@ -74,7 +74,7 @@ export default {
       checked6: false,
     });
 
-    const onUpdateValue = (checked) => {
+    const onUpdateValue = (checked: boolean) => {
       Dialog.confirm({
         title: t('title'),
         message: t('message'),

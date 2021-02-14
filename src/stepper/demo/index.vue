@@ -45,7 +45,7 @@
   </van-cell>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import Toast from '../../toast';

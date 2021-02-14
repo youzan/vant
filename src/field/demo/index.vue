@@ -11,17 +11,17 @@
   <input-align />
 </template>
 
-<script>
-import BasicUsage from './BasicUsage';
-import CustomType from './CustomType';
-import Disabled from './Disabled';
-import ShowIcon from './ShowIcon';
-import ErrorInfo from './ErrorInfo';
-import InsertButton from './InsertButton';
-import FormatValue from './FormatValue';
-import Autosize from './Autosize';
-import ShowWordLimit from './ShowWordLimit';
-import InputAlign from './InputAlign';
+<script lang="ts">
+import BasicUsage from './BasicUsage.vue';
+import CustomType from './CustomType.vue';
+import Disabled from './Disabled.vue';
+import ShowIcon from './ShowIcon.vue';
+import ErrorInfo from './ErrorInfo.vue';
+import InsertButton from './InsertButton.vue';
+import FormatValue from './FormatValue.vue';
+import Autosize from './Autosize.vue';
+import ShowWordLimit from './ShowWordLimit.vue';
+import InputAlign from './InputAlign.vue';
 
 export default {
   components: {

@@ -73,7 +73,7 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { ref, computed, reactive, toRefs } from 'vue';
 import { dateColumns, cascadeColumns, cascadeColumnsCustomKey } from './data';
 import { useTranslate } from '@demo/use-translate';
@@ -92,7 +92,7 @@ const i18n = {
     cascadeColumns: cascadeColumns['zh-CN'],
     multipleColumns: '多列选择',
     setColumnValues: '动态设置选项',
-    customChildrenKey: '自定义Columns字段',
+    customChildrenKey: '自定义 Columns 结构',
     customChildrenColumns: cascadeColumnsCustomKey['zh-CN'],
     textColumns: [
       '杭州',
@@ -113,7 +113,8 @@ const i18n = {
       浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
       福建: ['福州', '厦门', '莆田', '三明', '泉州'],
     },
-    toastContent: (value, index) => `当前值：${value}, 当前索引：${index}`,
+    toastContent: (value: string, index: number) =>
+      `当前值：${value}, 当前索引：${index}`,
   },
   'en-US': {
     city: 'City',
@@ -139,7 +140,8 @@ const i18n = {
       Group1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
       Group2: ['Alabama', 'Kansas', 'Louisiana', 'Texas'],
     },
-    toastContent: (value, index) => `Value: ${value}, Index：${index}`,
+    toastContent: (value: string, index: number) =>
+      `Value: ${value}, Index：${index}`,
   },
 };
 
@@ -171,15 +173,15 @@ export default {
       ];
     });
 
-    const onChange1 = (value, index) => {
+    const onChange1 = (value: string, index: number) => {
       Toast(t('toastContent', value, index));
     };
 
-    const onChange2 = (values) => {
+    const onChange2 = (values: string[]) => {
       picker.value.setColumnValues(1, t('column3')[values[0]]);
     };
 
-    const onConfirm = (value, index) => {
+    const onConfirm = (value: string, index: number) => {
       Toast(t('toastContent', value, index));
     };
 
@@ -193,7 +195,7 @@ export default {
       state.showPicker = true;
     };
 
-    const onConfirm2 = (value) => {
+    const onConfirm2 = (value: string) => {
       state.showPicker = false;
       state.fieldValue = value;
     };
