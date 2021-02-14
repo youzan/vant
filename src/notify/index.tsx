@@ -9,16 +9,16 @@ let instance: ComponentInstance;
 export type NotifyMessage = string | number;
 
 export type NotifyOptions = {
+  show?: boolean;
   type?: NotifyType;
-  value?: boolean;
   color?: string;
   message?: NotifyMessage;
   duration?: number;
   className?: unknown;
   background?: string;
+  onClick?: (event: MouseEvent) => void;
   onClose?: () => void;
   onOpened?: () => void;
-  onClick?: (event: MouseEvent) => void;
 };
 
 function parseOptions(message: NotifyMessage | NotifyOptions) {
