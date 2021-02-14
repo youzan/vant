@@ -334,7 +334,7 @@ export default createComponent({
         <div class={bem()}>
           <div class={bem('fields')}>
             <Field
-              vModel={data.name}
+              v-model={data.name}
               clearable
               label={t('name')}
               placeholder={t('namePlaceholder')}
@@ -342,7 +342,7 @@ export default createComponent({
               onFocus={() => onFocus('name')}
             />
             <Field
-              vModel={data.tel}
+              v-model={data.tel}
               clearable
               type="tel"
               label={t('tel')}
@@ -356,7 +356,7 @@ export default createComponent({
               readonly
               label={t('area')}
               clickable={!disableArea}
-              rightIcon={!disableArea ? 'arrow' : null}
+              rightIcon={!disableArea ? 'arrow' : undefined}
               modelValue={areaText.value}
               placeholder={props.areaPlaceholder || t('areaPlaceholder')}
               errorMessage={errorInfo.areaCode}
@@ -385,7 +385,7 @@ export default createComponent({
             {props.showPostal && (
               <Field
                 v-show={!hideBottomFields.value}
-                vModel={data.postalCode}
+                v-model={data.postalCode}
                 type="tel"
                 maxlength="6"
                 label={t('postal')}
