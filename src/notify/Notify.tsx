@@ -1,6 +1,6 @@
+import { PropType } from 'vue';
 import { createNamespace, UnknownProp } from '../utils';
 import Popup, { popupSharedProps } from '../popup';
-import { PropType } from 'vue';
 
 const [createComponent, bem] = createNamespace('notify');
 
