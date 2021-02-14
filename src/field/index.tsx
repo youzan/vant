@@ -57,7 +57,7 @@ export default createComponent({
     leftIcon: String,
     rightIcon: String,
     clearable: Boolean,
-    formatter: Function as PropType<(value: unknown) => unknown>,
+    formatter: Function as PropType<(value: string) => string>,
     maxlength: [Number, String],
     labelWidth: [Number, String],
     labelClass: null as any,
@@ -278,7 +278,7 @@ export default createComponent({
       }
 
       if (props.formatter && trigger === props.formatTrigger) {
-        value = props.formatter(value) as string;
+        value = props.formatter(value);
       }
 
       if (inputRef.value && value !== inputRef.value.value) {

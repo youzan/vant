@@ -23,13 +23,13 @@ export type FieldAutosizeConfig = {
 export type FieldRule = {
   pattern?: RegExp;
   trigger?: FieldValidateTrigger;
-  message?: string | ((value: unknown, rule: FieldRule) => string);
+  message?: string | ((value: any, rule: FieldRule) => string);
   required?: boolean;
   validator?: (
-    value: unknown,
+    value: any,
     rule: FieldRule
   ) => boolean | string | Promise<boolean | string>;
-  formatter?: (value: unknown, rule: FieldRule) => string;
+  formatter?: (value: any, rule: FieldRule) => string;
 };
 
 declare global {
