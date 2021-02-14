@@ -23,9 +23,11 @@ const DeleteIcon = (
   </svg>
 );
 
+export type KeyType = '' | 'delete' | 'extra' | 'close';
+
 export default createComponent({
   props: {
-    type: String as PropType<'delete' | 'extra' | 'close'>,
+    type: String as PropType<KeyType>,
     text: [Number, String],
     color: String,
     wider: Boolean,

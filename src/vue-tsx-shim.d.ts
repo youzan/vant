@@ -14,6 +14,7 @@ declare module 'vue' {
     onFocus?: EventHandler;
     onInput?: EventHandler;
     onClick?: EventHandler;
+    onPress?: EventHandler;
     onCancel?: EventHandler;
     onClosed?: EventHandler;
     onChange?: EventHandler;
