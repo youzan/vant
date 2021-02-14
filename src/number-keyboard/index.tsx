@@ -1,22 +1,40 @@
-import { ref, watch, computed, Teleport, Transition } from 'vue';
+import {
+  ref,
+  Slot,
+  watch,
+  computed,
+  Teleport,
+  PropType,
+  Transition,
+  TeleportProps,
+} from 'vue';
 import { createNamespace, stopPropagation } from '../utils';
 import { useClickAway } from '@vant/use';
-import Key from './Key';
+import Key, { KeyType } from './Key';
 
 const [createComponent, bem] = createNamespace('number-keyboard');
+
+export type NumberKeyboardTheme = 'default' | 'custom';
+
+type KeyConfig = {
+  text?: number | string;
+  type?: KeyType;
+  color?: string;
+  wider?: boolean;
+};
 
 export default createComponent({
   props: {
     show: Boolean,
     title: String,
     zIndex: [Number, String],
-    teleport: [String, Object],
+    teleport: [String, Object] as PropType<TeleportProps['to']>,
     randomKeyOrder: Boolean,
     closeButtonText: String,
     deleteButtonText: String,
     closeButtonLoading: Boolean,
     theme: {
-      type: String,
+      type: String as PropType<NumberKeyboardTheme>,
       default: 'default',
     },
     modelValue: {
@@ -24,7 +42,7 @@ export default createComponent({
       default: '',
     },
     extraKey: {
-      type: [String, Array],
+      type: [String, Array] as PropType<string | string[]>,
       default: '',
     },
     maxlength: {
@@ -64,10 +82,10 @@ export default createComponent({
   ],
 
   setup(props, { emit, slots }) {
-    const root = ref();
+    const root = ref<HTMLElement>();
 
     const genBasicKeys = () => {
-      const keys = [];
+      const keys: KeyConfig[] = [];
       for (let i = 1; i <= 9; i++) {
         keys.push({ text: i });
       }
@@ -79,9 +97,9 @@ export default createComponent({
       return keys;
     };
 
-    const genDefaultKeys = () => [
+    const genDefaultKeys = (): KeyConfig[] => [
       ...genBasicKeys(),
-      { text: props.extraKey, type: 'extra' },
+      { text: props.extraKey as string, type: 'extra' },
       { text: 0 },
       {
         text: props.showDeleteKey ? props.deleteButtonText : '',
@@ -129,11 +147,10 @@ export default createComponent({
     };
 
     const onAnimationEnd = () => {
-      console.log('onAnimationEnd');
       emit(props.show ? 'show' : 'hide');
     };
 
-    const onPress = (text, type) => {
+    const onPress = (text: string, type: KeyType) => {
       if (text === '') {
         if (type === 'extra') {
           onBlur();
@@ -179,7 +196,7 @@ export default createComponent({
 
     const renderKeys = () => {
       return keys.value.map((key) => {
-        const keySlots = {};
+        const keySlots: Record<string, Slot | undefined> = {};
 
         if (key.type === 'delete') {
           keySlots.default = slots.delete;
@@ -248,13 +265,16 @@ export default createComponent({
           <div
             v-show={props.show}
             ref={root}
-            style={{ zIndex: props.zIndex }}
+            style={{
+              zIndex: props.zIndex !== undefined ? +props.zIndex : undefined,
+            }}
             class={bem({
               unfit: !props.safeAreaInsetBottom,
               'with-title': !!Title,
             })}
             onTouchstart={stopPropagation}
             onAnimationend={onAnimationEnd}
+            // @ts-ignore
             onWebkitAnimationEnd={onAnimationEnd}
           >
             {Title}
