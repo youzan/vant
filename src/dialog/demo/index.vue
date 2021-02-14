@@ -27,10 +27,11 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import Dialog from '..';
+import { DialogAction } from 'types/dialog';
 
 const i18n = {
   'zh-CN': {
@@ -93,8 +94,8 @@ export default {
     };
 
     const onClickBeforeClose = () => {
-      const beforeClose = (action) =>
-        new Promise((resolve) => {
+      const beforeClose = (action: DialogAction) =>
+        new Promise<boolean>((resolve) => {
           setTimeout(() => resolve(action === 'confirm'), 1000);
         });
 

@@ -40,9 +40,10 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
+import { ComponentInstance } from '../../utils';
 import Toast from '../../toast';
 
 const i18n = {
@@ -74,7 +75,7 @@ export default {
   setup() {
     const t = useTranslate(i18n);
     const time = ref(30 * 60 * 60 * 1000);
-    const countDown = ref(null);
+    const countDown = ref<ComponentInstance>();
 
     const start = () => {
       countDown.value.start();

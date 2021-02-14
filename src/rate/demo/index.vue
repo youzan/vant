@@ -44,7 +44,7 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { toRefs, reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import Toast from '../../toast';
@@ -58,7 +58,7 @@ const i18n = {
     customCount: '自定义数量',
     readonly: '只读状态',
     changeEvent: '监听 change 事件',
-    toastContent: (value) => `当前值：${value}`,
+    toastContent: (value: number) => `当前值：${value}`,
   },
   'en-US': {
     halfStar: 'Half Star',
@@ -68,7 +68,7 @@ const i18n = {
     customCount: 'Custom Count',
     readonly: 'Readonly',
     changeEvent: 'Change Event',
-    toastContent: (value) => `current value：${value}`,
+    toastContent: (value: number) => `current value：${value}`,
   },
 };
 
@@ -85,7 +85,7 @@ export default {
       value7: 2,
     });
 
-    const onChange = (value) => Toast(t('toastContent', value));
+    const onChange = (value: number) => Toast(t('toastContent', value));
 
     return {
       ...toRefs(state),

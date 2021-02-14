@@ -63,7 +63,7 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import Toast from '../../toast';
@@ -98,8 +98,8 @@ export default {
       'https://img01.yzcdn.cn/vant/apple-4.jpg',
     ];
 
-    const onChange1 = (index) => Toast(t('message') + index);
-    const onChange2 = (index) => {
+    const onChange1 = (index: number) => Toast(t('message') + index);
+    const onChange2 = (index: number) => {
       current.value = index;
     };
 

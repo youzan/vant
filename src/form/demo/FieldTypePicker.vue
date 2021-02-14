@@ -17,7 +17,7 @@
   </van-popup>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
@@ -42,7 +42,7 @@ export default {
       showPicker: false,
     });
 
-    const onConfirm = (value) => {
+    const onConfirm = (value: string) => {
       state.value = value;
       state.showPicker = false;
     };

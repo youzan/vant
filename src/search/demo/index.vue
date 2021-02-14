@@ -51,7 +51,7 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import Toast from '../../toast';
@@ -89,7 +89,7 @@ export default {
       value6: '',
     });
 
-    const onSearch = (val) => Toast(val);
+    const onSearch = (val: string) => Toast(val);
     const onCancel = () => Toast(t('cancel'));
 
     return {

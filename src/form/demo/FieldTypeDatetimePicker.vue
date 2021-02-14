@@ -13,7 +13,7 @@
   </van-popup>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
@@ -36,10 +36,11 @@ export default {
       showPicker: false,
     });
 
-    const onConfirm = (time) => {
+    const onConfirm = (time: string) => {
       state.value = time;
       state.showPicker = false;
     };
+
     const onCancel = () => {
       state.showPicker = false;
     };

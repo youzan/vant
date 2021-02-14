@@ -38,9 +38,10 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
+import { FieldValidateError } from '../../field/types';
 import Toast from '../../toast';
 
 const i18n = {
@@ -49,7 +50,7 @@ const i18n = {
     title: '校验规则',
     submit: '提交',
     message: '请输入正确内容',
-    invalid: (val) => `${val} 不合法，请重新输入`,
+    invalid: (val: string) => `${val} 不合法，请重新输入`,
     pattern: '正则校验',
     validator: '函数校验',
     validating: '验证中...',
@@ -61,7 +62,7 @@ const i18n = {
     title: 'Validate Rules',
     submit: 'Submit',
     message: 'Error message',
-    invalid: (val) => `${val} is invalid`,
+    invalid: (val: string) => `${val} is invalid`,
     pattern: 'Use pattern',
     validator: 'Use validator',
     validating: 'Validating...',
@@ -80,11 +81,11 @@ export default {
       value4: '',
     });
 
-    const validator = (val) => /1\d{10}/.test(val);
+    const validator = (val: string) => /1\d{10}/.test(val);
 
-    const validatorMessage = (val) => t('invalid', val);
+    const validatorMessage = (val: string) => t('invalid', val);
 
-    const asyncValidator = (val) =>
+    const asyncValidator = (val: string) =>
       new Promise((resolve) => {
         Toast.loading(t('validating'));
 
@@ -94,11 +95,14 @@ export default {
         }, 1000);
       });
 
-    const onSubmit = (values) => {
+    const onSubmit = (values: Record<string, string>) => {
       console.log('submit', values);
     };
 
-    const onFailed = (errorInfo) => {
+    const onFailed = (errorInfo: {
+      values: Record<string, string>;
+      errors: FieldValidateError[];
+    }) => {
       console.log('failed', errorInfo);
     };
 

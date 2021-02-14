@@ -17,9 +17,10 @@
   </van-popup>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
+import { AreaColumnOption } from '../../area';
 import AreaList from '../../area/demo/area';
 import AreaListEn from '../../area/demo/area-en';
 
@@ -44,7 +45,7 @@ export default {
       showArea: false,
     });
 
-    const onConfirm = (values) => {
+    const onConfirm = (values: AreaColumnOption[]) => {
       state.value = values
         .filter((item) => !!item)
         .map((item) => item.name)

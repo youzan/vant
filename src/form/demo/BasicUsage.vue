@@ -25,9 +25,10 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
+import { FieldValidateError } from '../../field/types';
 
 const i18n = {
   'zh-CN': {
@@ -54,10 +55,14 @@ export default {
       password: '',
     });
 
-    const onSubmit = (values) => {
+    const onSubmit = (values: Record<string, string>) => {
       console.log('submit', values);
     };
-    const onFailed = (errorInfo) => {
+
+    const onFailed = (errorInfo: {
+      values: Record<string, string>;
+      errors: FieldValidateError[];
+    }) => {
       console.log('failed', errorInfo);
     };
 

@@ -16,7 +16,7 @@
   />
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
@@ -39,9 +39,10 @@ export default {
       showCalendar: false,
     });
 
-    const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
+    const formatDate = (date: Date) =>
+      `${date.getMonth() + 1}/${date.getDate()}`;
 
-    const onConfirm = (date) => {
+    const onConfirm = (date: Date) => {
       state.value = formatDate(date);
       state.showCalendar = false;
     };

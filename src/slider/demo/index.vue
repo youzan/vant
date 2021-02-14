@@ -50,7 +50,7 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import Toast from '../../toast';
@@ -95,7 +95,7 @@ export default {
       value9: [20, 60],
     });
 
-    const onChange = (value) => Toast(t('text') + value);
+    const onChange = (value: string) => Toast(t('text') + value);
 
     return {
       ...toRefs(state),

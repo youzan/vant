@@ -41,7 +41,7 @@
   </van-tabs>
 </template>
 
-<script>
+<script lang="ts">
 import { computed, onMounted, reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import Toast from '../../toast';
@@ -78,7 +78,7 @@ export default {
       return t('try');
     });
 
-    const onRefresh = (showToast) => {
+    const onRefresh = (showToast: boolean) => {
       setTimeout(() => {
         if (showToast) {
           Toast(t('success'));

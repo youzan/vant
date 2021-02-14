@@ -103,10 +103,11 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { ref, reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { useRefs } from '../../composables/use-refs';
+import { ComponentInstance } from 'src/utils';
 
 const i18n = {
   'zh-CN': {
@@ -159,10 +160,10 @@ export default {
       horizontalResult: [],
     });
 
-    const group = ref();
-    const [refs, setRefs] = useRefs();
+    const group = ref<ComponentInstance>();
+    const [refs, setRefs] = useRefs<ComponentInstance>();
 
-    const toggle = (index) => {
+    const toggle = (index: number) => {
       refs.value[index].toggle();
     };
 
