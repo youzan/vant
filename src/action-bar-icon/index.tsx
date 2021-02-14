@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, UnknownProp } from '../utils';
 import { ACTION_BAR_KEY } from '../action-bar';
 
 // Composition
@@ -19,7 +19,7 @@ export default createComponent({
     icon: String,
     color: String,
     badge: [Number, String],
-    iconClass: null,
+    iconClass: UnknownProp,
   },
 
   setup(props, { slots }) {

@@ -54,7 +54,7 @@ export default createComponent({
       if (parent && props.bindGroup) {
         return parent.props.modelValue.indexOf(props.name) !== -1;
       }
-      return props.modelValue;
+      return !!props.modelValue;
     });
 
     const toggle = (newValue = !checked.value) => {

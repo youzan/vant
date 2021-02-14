@@ -3,7 +3,13 @@ import { ref, watch, reactive, PropType } from 'vue';
 
 // Utils
 import { deepClone } from '../utils/deep-clone';
-import { range, isObject, createNamespace, preventDefault } from '../utils';
+import {
+  range,
+  isObject,
+  UnknownProp,
+  preventDefault,
+  createNamespace,
+} from '../utils';
 
 // Composition
 import { useParent } from '@vant/use';
@@ -42,7 +48,7 @@ export type PickerOption = string | PickerObjectOption;
 export type PickerObjectColumn = {
   values?: PickerOption[];
   children?: PickerColumn;
-  className?: any;
+  className?: unknown;
   defaultIndex?: number;
   // for custom filed names
   [key: string]: any;
@@ -58,7 +64,7 @@ export default createComponent({
   props: {
     readonly: Boolean,
     allowHtml: Boolean,
-    className: String,
+    className: UnknownProp,
     textKey: {
       type: String,
       required: true,

@@ -15,13 +15,13 @@ export type ToastOptions = {
   duration?: number;
   teleport?: TeleportProps['to'];
   position?: ToastPosition;
-  className?: any;
+  className?: unknown;
   transition?: string;
   iconPrefix?: string;
   loadingType?: LoadingType;
   forbidClick?: boolean;
   closeOnClick?: boolean;
-  overlayClass?: any;
+  overlayClass?: unknown;
   overlayStyle?: Record<string, any>;
   closeOnClickOverlay?: boolean;
 };

@@ -19,7 +19,7 @@ export type CheckboxGroupToggleAllOptions =
 export type CheckboxGroupProvide = CheckerParent & {
   props: {
     max: number | string;
-    modelValue: any[];
+    modelValue: unknown[];
   };
   updateModelValue: (value: unknown[]) => void;
 };
@@ -32,7 +32,7 @@ export default createComponent({
     iconSize: [Number, String],
     checkedColor: String,
     modelValue: {
-      type: Array as PropType<any[]>,
+      type: Array as PropType<unknown[]>,
       default: () => [],
     },
   },

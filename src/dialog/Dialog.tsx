@@ -2,7 +2,7 @@ import { PropType, reactive } from 'vue';
 
 // Utils
 import { callInterceptor, Interceptor } from '../utils/interceptor';
-import { createNamespace, addUnit, pick } from '../utils';
+import { createNamespace, addUnit, pick, UnknownProp } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 
 // Components
@@ -32,7 +32,7 @@ export default createComponent({
     message: String,
     callback: Function as PropType<(action?: DialogAction) => void>,
     allowHtml: Boolean,
-    className: null,
+    className: UnknownProp,
     beforeClose: Function as PropType<Interceptor>,
     messageAlign: String as PropType<DialogMessageAlign>,
     showCancelButton: Boolean,

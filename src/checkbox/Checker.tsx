@@ -1,5 +1,5 @@
 import { ref, computed, defineComponent, PropType } from 'vue';
-import { addUnit } from '../utils';
+import { addUnit, UnknownProp } from '../utils';
 import Icon from '../icon';
 
 export type CheckerShape = 'square' | 'round';
@@ -15,10 +15,10 @@ export type CheckerParent = {
 };
 
 export const checkerProps = {
-  name: null as any,
+  name: UnknownProp,
   disabled: Boolean,
   iconSize: [Number, String],
-  modelValue: null as any,
+  modelValue: UnknownProp,
   checkedColor: String,
   labelPosition: String as PropType<CheckerLabelPosition>,
   labelDisabled: Boolean,

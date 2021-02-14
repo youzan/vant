@@ -1,4 +1,9 @@
-import { App, TeleportProps } from 'vue';
+import {
+  App,
+  CSSProperties,
+  TeleportProps,
+  ComponentPublicInstance,
+} from 'vue';
 import { inBrowser } from '../utils';
 import { Interceptor } from '../utils/interceptor';
 import { mountComponent, usePopupState } from '../utils/mount-component';
@@ -15,14 +20,14 @@ export type DialogOptions = {
   message?: string;
   overlay?: boolean;
   teleport?: TeleportProps['to'];
-  className?: any;
+  className?: unknown;
   allowHtml?: boolean;
   lockScroll?: boolean;
   transition?: string;
   beforeClose?: Interceptor;
   messageAlign?: DialogMessageAlign;
   overlayClass?: string;
-  overlayStyle?: Record<string, any>;
+  overlayStyle?: CSSProperties;
   closeOnPopstate?: boolean;
   cancelButtonText?: string;
   showCancelButton?: boolean;
@@ -33,8 +38,8 @@ export type DialogOptions = {
   closeOnClickOverlay?: boolean;
 };
 
-// TODO remove any
-let instance: any;
+// eslint-disable-next-line
+let instance: ComponentPublicInstance<{}, any>;
 
 function initInstance() {
   const Wrapper = {
@@ -82,7 +87,7 @@ Dialog.defaultOptions = {
   transition: 'van-dialog-bounce',
   beforeClose: null,
   overlayClass: '',
-  overlayStyle: null,
+  overlayStyle: undefined,
   messageAlign: '',
   cancelButtonText: '',
   cancelButtonColor: null,

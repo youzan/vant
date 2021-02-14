@@ -1,5 +1,5 @@
 import { ref, watch, nextTick } from 'vue';
-import { createNamespace } from '../utils';
+import { createNamespace, UnknownProp } from '../utils';
 import { TABS_KEY } from '../tabs';
 
 // Composition
@@ -18,9 +18,9 @@ export default createComponent({
     name: [Number, String],
     badge: [Number, String],
     title: String,
-    titleStyle: null,
-    titleClass: null,
     disabled: Boolean,
+    titleClass: UnknownProp,
+    titleStyle: null,
   },
 
   setup(props, { slots }) {

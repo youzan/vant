@@ -17,7 +17,7 @@ export type ActionSheetAction = {
   loading?: boolean;
   disabled?: boolean;
   callback?: (action: ActionSheetAction) => void;
-  className?: any;
+  className?: unknown;
 };
 
 export default createComponent({
