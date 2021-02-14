@@ -9,7 +9,6 @@ let instance: ComponentInstance;
 export type NotifyMessage = string | number;
 
 export type NotifyOptions = {
-  show?: boolean;
   type?: NotifyType;
   color?: string;
   message?: NotifyMessage;
