@@ -17,6 +17,7 @@ declare module 'vue' {
     onCancel?: EventHandler;
     onClosed?: EventHandler;
     onChange?: EventHandler;
+    onSubmit?: EventHandler;
     onSelect?: EventHandler;
     onToggle?: EventHandler;
     onConfirm?: EventHandler;

@@ -1,7 +1,19 @@
+import { ComponentPublicInstance, PropType } from 'vue';
+
+// Utils
 import { createNamespace } from '../utils';
+
+// Composition
 import { useChildren } from '@vant/use';
 import { FORM_KEY } from '../composables/use-link-field';
 import { useExpose } from '../composables/use-expose';
+
+// Types
+import type {
+  FieldTextAlign,
+  FieldValidateError,
+  FieldValidateTrigger,
+} from '../field/types';
 
 const [createComponent, bem] = createNamespace('form');
 
@@ -12,17 +24,17 @@ export default createComponent({
     readonly: Boolean,
     showError: Boolean,
     labelWidth: [Number, String],
-    labelAlign: String,
-    inputAlign: String,
+    labelAlign: String as PropType<FieldTextAlign>,
+    inputAlign: String as PropType<FieldTextAlign>,
     scrollToError: Boolean,
     validateFirst: Boolean,
-    errorMessageAlign: String,
+    errorMessageAlign: String as PropType<FieldTextAlign>,
     submitOnEnter: {
       type: Boolean,
       default: true,
     },
     validateTrigger: {
-      type: String,
+      type: String as PropType<FieldValidateTrigger>,
       default: 'onBlur',
     },
     showErrorMessage: {
@@ -34,18 +46,21 @@ export default createComponent({
   emits: ['submit', 'failed'],
 
   setup(props, { emit, slots }) {
-    const { children, linkChildren } = useChildren(FORM_KEY);
+    const { children, linkChildren } = useChildren<
+      // eslint-disable-next-line
+      ComponentPublicInstance<{}, any>
+    >(FORM_KEY);
 
-    const getFieldsByNames = (names) => {
+    const getFieldsByNames = (names?: string[]) => {
       if (names) {
         return children.filter((field) => names.indexOf(field.name) !== -1);
       }
       return children;
     };
 
-    const validateSeq = (names) =>
-      new Promise((resolve, reject) => {
-        const errors = [];
+    const validateSeq = (names?: string[]) =>
+      new Promise<void>((resolve, reject) => {
+        const errors: FieldValidateError[] = [];
         const fields = getFieldsByNames(names);
 
         fields
@@ -53,7 +68,7 @@ export default createComponent({
             (promise, field) =>
               promise.then(() => {
                 if (!errors.length) {
-                  return field.validate().then((error) => {
+                  return field.validate().then((error?: FieldValidateError) => {
                     if (error) {
                       errors.push(error);
                     }
@@ -71,8 +86,8 @@ export default createComponent({
           });
       });
 
-    const validateAll = (names) =>
-      new Promise((resolve, reject) => {
+    const validateAll = (names?: string[]) =>
+      new Promise<void>((resolve, reject) => {
         const fields = getFieldsByNames(names);
         Promise.all(fields.map((item) => item.validate())).then((errors) => {
           errors = errors.filter((item) => item);
@@ -85,12 +100,12 @@ export default createComponent({
         });
       });
 
-    const validateField = (name) => {
+    const validateField = (name: string) => {
       const matched = children.filter((item) => item.name === name);
 
       if (matched.length) {
-        return new Promise((resolve, reject) => {
-          matched[0].validate().then((error) => {
+        return new Promise<void>((resolve, reject) => {
+          matched[0].validate().then((error?: FieldValidateError) => {
             if (error) {
               reject(error);
             } else {
@@ -103,15 +118,15 @@ export default createComponent({
       return Promise.reject();
     };
 
-    const validate = (name) => {
-      if (name && !Array.isArray(name)) {
+    const validate = (name?: string | string[]) => {
+      if (typeof name === 'string') {
         return validateField(name);
       }
       return props.validateFirst ? validateSeq(name) : validateAll(name);
     };
 
-    const resetValidation = (name) => {
-      if (name && !Array.isArray(name)) {
+    const resetValidation = (name?: string | string[]) => {
+      if (typeof name === 'string') {
         name = [name];
       }
 
@@ -121,7 +136,10 @@ export default createComponent({
       });
     };
 
-    const scrollToField = (name, options) => {
+    const scrollToField = (
+      name: string,
+      options?: boolean | ScrollIntoViewOptions
+    ) => {
       children.some((item) => {
         if (item.name === name) {
           item.$el.scrollIntoView(options);
@@ -135,7 +153,7 @@ export default createComponent({
       children.reduce((form, field) => {
         form[field.name] = field.formValue.value;
         return form;
-      }, {});
+      }, {} as Record<string, unknown>);
 
     const submit = () => {
       const values = getValues();
@@ -153,7 +171,7 @@ export default createComponent({
         });
     };
 
-    const onSubmit = (event) => {
+    const onSubmit = (event: Event) => {
       event.preventDefault();
       submit();
     };
