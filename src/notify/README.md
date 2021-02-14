@@ -107,9 +107,9 @@ export default {
 | color | Message color | _string_ | `white` |  |
 | background | Background color | _string_ | - |
 | className | Custom className | _string \| Array \| object_ | - |
-| onClick | Callback function after click | _Function_ | - |
-| onOpened | Callback function after opened | _Function_ | - |
-| onClose | Callback function after close | _Function_ | - |
+| onClick | Callback function after click | _(event: MouseEvent) => void_ | - |
+| onOpened | Callback function after opened | _() => void_ | - |
+| onClose | Callback function after close | _() => void_ | - |
 
 ### Less Variables
 
