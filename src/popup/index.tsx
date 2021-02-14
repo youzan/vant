@@ -25,6 +25,8 @@ import { useLazyRender } from '../composables/use-lazy-render';
 import Icon from '../icon';
 import Overlay from '../overlay';
 
+export type PopupPosition = 'top' | 'left' | 'bottom' | 'right' | 'center';
+
 export type PopupCloseIconPosition =
   | 'top-left'
   | 'top-right'
@@ -83,7 +85,7 @@ export default createComponent({
     closeOnPopstate: Boolean,
     safeAreaInsetBottom: Boolean,
     position: {
-      type: String,
+      type: String as PropType<PopupPosition>,
       default: 'center',
     },
     closeIcon: {
