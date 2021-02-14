@@ -1,11 +1,26 @@
-import { isObject, inBrowser } from '../utils';
+import { App } from 'vue';
+import { isObject, inBrowser, ComponentInstance } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
-import VanNotify from './Notify';
+import VanNotify, { NotifyType } from './Notify';
 
-let timer;
-let instance;
+let timer: number;
+let instance: ComponentInstance;
 
-function parseOptions(message) {
+export type NotifyMessage = string | number;
+
+export type NotifyOptions = {
+  type?: NotifyType;
+  color?: string;
+  message?: NotifyMessage;
+  duration?: number;
+  className?: unknown;
+  background?: string;
+  onClick?: (event: MouseEvent) => void;
+  onClose?: () => void;
+  onOpened?: () => void;
+};
+
+function parseOptions(message: NotifyMessage | NotifyOptions) {
   return isObject(message) ? message : { message };
 }
 
@@ -25,7 +40,7 @@ function initInstance() {
   }));
 }
 
-function Notify(options) {
+function Notify(options: NotifyMessage | NotifyOptions) {
   if (!inBrowser) {
     return;
   }
@@ -42,7 +57,7 @@ function Notify(options) {
   instance.open(options);
   clearTimeout(timer);
 
-  if (options.duration > 0) {
+  if (options.duration! > 0) {
     timer = setTimeout(Notify.clear, options.duration);
   }
 
@@ -54,13 +69,13 @@ function defaultOptions() {
     type: 'danger',
     color: undefined,
     message: '',
-    onClose: null,
-    onClick: null,
-    onOpened: null,
+    onClose: undefined,
+    onClick: undefined,
+    onOpened: undefined,
     duration: 3000,
     className: '',
     background: undefined,
-  };
+  } as NotifyOptions;
 }
 
 Notify.clear = () => {
@@ -71,7 +86,7 @@ Notify.clear = () => {
 
 Notify.currentOptions = defaultOptions();
 
-Notify.setDefaultOptions = (options) => {
+Notify.setDefaultOptions = (options: NotifyOptions) => {
   Object.assign(Notify.currentOptions, options);
 };
 
@@ -79,8 +94,8 @@ Notify.resetDefaultOptions = () => {
   Notify.currentOptions = defaultOptions();
 };
 
-Notify.install = (app) => {
-  app.use(VanNotify);
+Notify.install = (app: App) => {
+  app.use(VanNotify as any);
   app.config.globalProperties.$notify = Notify;
 };
 

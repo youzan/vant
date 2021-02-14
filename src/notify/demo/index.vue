@@ -33,6 +33,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import Notify from '..';
+import { NotifyType } from '../Notify';
 
 const i18n = {
   'zh-CN': {
@@ -85,7 +86,7 @@ export default {
       });
     };
 
-    const showType = (type: string) => {
+    const showType = (type: NotifyType) => {
       Notify({
         message: t('content'),
         type,
