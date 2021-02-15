@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { ref, PropType, CSSProperties } from 'vue';
 
 // Utils
 import { pick, createNamespace, preventDefault } from '../utils';
@@ -9,7 +9,12 @@ import { useExpose } from '../composables/use-expose';
 // Components
 import Field from '../field';
 
+// Types
+import type { FieldClearTrigger } from '../field/types';
+
 const [createComponent, bem, t] = createNamespace('search');
+
+export type SearchShape = 'square' | 'round';
 
 export default createComponent({
   inheritAttrs: false,
@@ -21,9 +26,9 @@ export default createComponent({
     actionText: String,
     background: String,
     showAction: Boolean,
-    clearTrigger: String,
+    clearTrigger: String as PropType<FieldClearTrigger>,
     shape: {
-      type: String,
+      type: String as PropType<SearchShape>,
       default: 'square',
     },
     clearable: {
@@ -48,7 +53,7 @@ export default createComponent({
       }
     };
 
-    const onKeypress = (event) => {
+    const onKeypress = (event: KeyboardEvent) => {
       const ENTER_CODE = 13;
       if (event.keyCode === ENTER_CODE) {
         preventDefault(event);
@@ -73,7 +78,7 @@ export default createComponent({
           <div
             class={bem('action')}
             role="button"
-            tabindex="0"
+            tabindex={0}
             onClick={onCancel}
           >
             {slots.action ? slots.action() : text}
@@ -109,8 +114,8 @@ export default createComponent({
         style: null,
         class: null,
       };
-      
-      const onInput = (value) => {
+
+      const onInput = (value: string) => {
         emit('update:modelValue', value);
       };
 
@@ -132,7 +137,10 @@ export default createComponent({
     return () => (
       <div
         class={[bem({ 'show-action': props.showAction }), attrs.class]}
-        style={{ background: props.background, ...attrs.style }}
+        style={{
+          background: props.background,
+          ...(attrs.style as CSSProperties),
+        }}
       >
         {slots.left?.()}
         <div class={bem('content', props.shape)}>

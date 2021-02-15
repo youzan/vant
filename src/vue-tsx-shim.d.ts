@@ -22,6 +22,7 @@ declare module 'vue' {
     onSelect?: EventHandler;
     onToggle?: EventHandler;
     onConfirm?: EventHandler;
+    onKeypress?: EventHandler;
     onClickStep?: EventHandler;
     onTouchstart?: EventHandler;
   }
