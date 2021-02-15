@@ -13,7 +13,13 @@ import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('rate');
 
-function getRateStatus(value, index, allowHalf) {
+type RateStatus = 'full' | 'half' | 'void';
+
+function getRateStatus(
+  value: number,
+  index: number,
+  allowHalf: boolean
+): RateStatus {
   if (value >= index) {
     return 'full';
   }
@@ -59,7 +65,7 @@ export default createComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit }) {
-    let ranges;
+    let ranges: Array<{ left: number; score: number }>;
 
     const touch = useTouch();
     const [itemRefs, setItemRefs] = useRefs();
@@ -68,21 +74,21 @@ export default createComponent({
       props.readonly || props.disabled || !props.touchable;
 
     const list = computed(() => {
-      const list = [];
+      const list: RateStatus[] = [];
       for (let i = 1; i <= props.count; i++) {
         list.push(getRateStatus(props.modelValue, i, props.allowHalf));
       }
       return list;
     });
 
-    const select = (index) => {
+    const select = (index: number) => {
       if (!props.disabled && !props.readonly && index !== props.modelValue) {
         emit('update:modelValue', index);
         emit('change', index);
       }
     };
 
-    const getScoreByPosition = (x) => {
+    const getScoreByPosition = (x: number) => {
       for (let i = ranges.length - 1; i > 0; i--) {
         if (x > ranges[i].left) {
           return ranges[i].score;
@@ -91,7 +97,7 @@ export default createComponent({
       return props.allowHalf ? 0.5 : 1;
     };
 
-    const onTouchStart = (event) => {
+    const onTouchStart = (event: TouchEvent) => {
       if (untouchable()) {
         return;
       }
@@ -113,7 +119,7 @@ export default createComponent({
       });
     };
 
-    const onTouchMove = (event) => {
+    const onTouchMove = (event: TouchEvent) => {
       if (untouchable()) {
         return;
       }
@@ -127,7 +133,7 @@ export default createComponent({
       }
     };
 
-    const renderStar = (status, index) => {
+    const renderStar = (status: RateStatus, index: number) => {
       const {
         icon,
         size,
@@ -159,10 +165,10 @@ export default createComponent({
           role="radio"
           style={style}
           class={bem('item')}
-          tabindex="0"
-          aria-setsize={count}
+          tabindex={0}
+          aria-setsize={+count}
           aria-posinset={score}
-          aria-checked={String(!isVoid)}
+          aria-checked={!isVoid}
         >
           <Icon
             size={size}
@@ -201,7 +207,7 @@ export default createComponent({
           readonly: props.readonly,
           disabled: props.disabled,
         })}
-        tabindex="0"
+        tabindex={0}
         onTouchstart={onTouchStart}
         onTouchmove={onTouchMove}
       >
