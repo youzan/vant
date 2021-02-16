@@ -1,4 +1,12 @@
-import { ref, watch, computed, nextTick, PropType, CSSProperties } from 'vue';
+import {
+  ref,
+  watch,
+  computed,
+  nextTick,
+  PropType,
+  onMounted,
+  CSSProperties,
+} from 'vue';
 
 // Utils
 import {
@@ -165,14 +173,15 @@ export default createComponent({
       }
     };
 
+    const init = () => {
+      nextTick(onScroll);
+    };
+
     useEventListener('scroll', onScroll, { target: scrollParent });
 
-    watch(
-      () => props.indexList,
-      () => {
-        nextTick(onScroll);
-      }
-    );
+    onMounted(init);
+
+    watch(() => props.indexList, init);
 
     watch(activeAnchor, (value) => {
       if (value) {
