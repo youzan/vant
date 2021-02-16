@@ -1,5 +1,9 @@
-import { Ref, watch, onMounted, onBeforeUnmount } from 'vue';
-import { getScrollParent, supportsPassive } from '@vant/use';
+import { Ref, watch, onBeforeUnmount, onDeactivated } from 'vue';
+import {
+  getScrollParent,
+  supportsPassive,
+  onMountedOrActivated,
+} from '@vant/use';
 import { useTouch } from './use-touch';
 import { preventDefault } from '../utils';
 
@@ -67,9 +71,15 @@ export function useLockScroll(
     }
   };
 
-  onMounted(() => {
+  onMountedOrActivated(() => {
     if (shouldLock()) {
       lock();
+    }
+  });
+
+  onDeactivated(() => {
+    if (shouldLock()) {
+      unlock();
     }
   });
 
