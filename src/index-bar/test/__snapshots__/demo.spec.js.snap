@@ -162,7 +162,7 @@ exports[`should render demo and match snapshot 1`] = `
           >
             Y
           </span>
-          <span class="van-index-bar__index"
+          <span class="van-index-bar__index van-index-bar__index--active"
                 data-index="Z"
           >
             Z
@@ -869,8 +869,10 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
         </div>
         <div>
-          <div>
-            <div class="van-index-anchor">
+          <div style="height: 0px;">
+            <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom"
+                 style="z-index: undefined;"
+            >
               Z
             </div>
           </div>
