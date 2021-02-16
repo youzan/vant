@@ -1,4 +1,4 @@
-import { onBeforeUnmount, onMounted, Ref, watch } from 'vue';
+import { Ref, watch, onMounted, onBeforeUnmount } from 'vue';
 import { getScrollParent, supportsPassive } from '@vant/use';
 import { useTouch } from './use-touch';
 import { preventDefault } from '../utils';
