@@ -144,6 +144,7 @@ export default {
 | color | 字体颜色 | _string_ | `white` |
 | background | 背景颜色 | _string_ | - |
 | className | 自定义类名 | _string \| Array \| object_ | - |
+| lockScroll `v3.0.7` | 是否锁定背景滚动 | _boolean_ | `false` |
 | onClick | 点击时的回调函数 | _(event: MouseEvent): void_ | - |
 | onOpened | 完全展示后的回调函数 | _() => void_ | - |
 | onClose | 关闭时的回调函数 | _() => void_ | - |

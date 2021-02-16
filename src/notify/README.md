@@ -107,6 +107,7 @@ export default {
 | color | Message color | _string_ | `white` |  |
 | background | Background color | _string_ | - |
 | className | Custom className | _string \| Array \| object_ | - |
+| lockScroll `v3.0.7` | Whether to lock background scroll | _boolean_ | `false` |
 | onClick | Callback function after click | _(event: MouseEvent) => void_ | - |
 | onOpened | Callback function after opened | _() => void_ | - |
 | onClose | Callback function after close | _() => void_ | - |

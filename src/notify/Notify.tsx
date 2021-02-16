@@ -13,6 +13,7 @@ export default createComponent({
     message: [Number, String],
     className: UnknownProp,
     background: String,
+    lockScroll: Boolean,
     type: {
       type: String as PropType<NotifyType>,
       default: 'danger',
@@ -34,7 +35,7 @@ export default createComponent({
           overlay={false}
           position="top"
           duration={0.2}
-          lockScroll={false}
+          lockScroll={props.lockScroll}
         >
           {slots.default ? slots.default() : props.message}
         </Popup>

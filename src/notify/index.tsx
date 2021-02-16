@@ -15,6 +15,7 @@ export type NotifyOptions = {
   duration?: number;
   className?: unknown;
   background?: string;
+  lockScroll?: boolean;
   onClick?: (event: MouseEvent) => void;
   onClose?: () => void;
   onOpened?: () => void;
@@ -74,6 +75,7 @@ function defaultOptions() {
     onOpened: undefined,
     duration: 3000,
     className: '',
+    lockScroll: false,
     background: undefined,
   } as NotifyOptions;
 }
