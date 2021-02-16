@@ -11,7 +11,6 @@ import {
   CSSProperties,
   TeleportProps,
   onDeactivated,
-  onBeforeUnmount,
 } from 'vue';
 import { createNamespace, isDef, UnknownProp } from '../utils';
 
@@ -116,11 +115,6 @@ export default createComponent({
     const zIndex = ref<number>();
     const popupRef = ref<HTMLElement>();
 
-    const [lockScroll, unlockScroll] = useLockScroll(
-      popupRef,
-      () => props.lockScroll
-    );
-
     const lazyRender = useLazyRender(() => props.show || !props.lazyRender);
 
     const style = computed(() => {
@@ -146,7 +140,6 @@ export default createComponent({
         }
 
         opened = true;
-        lockScroll();
         zIndex.value = ++globalZIndex;
       }
     };
@@ -154,7 +147,6 @@ export default createComponent({
     const close = () => {
       if (opened) {
         opened = false;
-        unlockScroll();
         emit('update:show', false);
       }
     };
@@ -258,6 +250,8 @@ export default createComponent({
 
     useExpose({ popupRef });
 
+    useLockScroll(popupRef, () => props.show && props.lockScroll);
+
     useEventListener('popstate', () => {
       if (props.closeOnPopstate) {
         close();
@@ -282,12 +276,6 @@ export default createComponent({
       if (props.show) {
         close();
         shouldReopen = true;
-      }
-    });
-
-    onBeforeUnmount(() => {
-      if (opened) {
-        unlockScroll();
       }
     });
 

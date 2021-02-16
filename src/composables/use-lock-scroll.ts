@@ -1,5 +1,9 @@
-import { Ref } from 'vue';
-import { getScrollParent, supportsPassive } from '@vant/use';
+import { Ref, watch, onBeforeUnmount, onDeactivated } from 'vue';
+import {
+  getScrollParent,
+  supportsPassive,
+  onMountedOrActivated,
+} from '@vant/use';
 import { useTouch } from './use-touch';
 import { preventDefault } from '../utils';
 
@@ -40,24 +44,22 @@ export function useLockScroll(
   };
 
   const lock = () => {
-    if (shouldLock()) {
-      document.addEventListener('touchstart', touch.start);
-      document.addEventListener(
-        'touchmove',
-        onTouchMove,
-        supportsPassive ? { passive: false } : false
-      );
+    document.addEventListener('touchstart', touch.start);
+    document.addEventListener(
+      'touchmove',
+      onTouchMove,
+      supportsPassive ? { passive: false } : false
+    );
 
-      if (!totalLockCount) {
-        document.body.classList.add(BODY_LOCK_CLASS);
-      }
-
-      totalLockCount++;
+    if (!totalLockCount) {
+      document.body.classList.add(BODY_LOCK_CLASS);
     }
+
+    totalLockCount++;
   };
 
   const unlock = () => {
-    if (shouldLock() && totalLockCount) {
+    if (totalLockCount) {
       document.removeEventListener('touchstart', touch.start);
       document.removeEventListener('touchmove', onTouchMove);
 
@@ -69,5 +71,23 @@ export function useLockScroll(
     }
   };
 
-  return [lock, unlock];
+  const init = () => {
+    if (shouldLock()) {
+      lock();
+    }
+  };
+
+  const destroy = () => {
+    if (shouldLock()) {
+      unlock();
+    }
+  };
+
+  onMountedOrActivated(init);
+  onDeactivated(destroy);
+  onBeforeUnmount(destroy);
+
+  watch(shouldLock, (value) => {
+    value ? lock() : unlock();
+  });
 }
