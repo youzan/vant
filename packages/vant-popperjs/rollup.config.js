@@ -14,5 +14,8 @@ export default {
       format: 'esm',
     },
   ],
-  plugins: [nodeResolve(), babel({ babelHelpers: 'runtime' })],
+  plugins: [
+    babel({ babelHelpers: 'runtime', extensions: ['.js', '.ts'] }),
+    nodeResolve(),
+  ],
 };
