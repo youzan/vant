@@ -56,8 +56,12 @@ export const TimePickerMixin = {
   watch: {
     columns: 'updateColumnValue',
 
-    innerValue(val) {
-      this.$emit('input', val);
+    innerValue(val, oldVal) {
+      if (!oldVal) {
+        this.$emit('input', null);
+      } else {
+        this.$emit('input', val)
+      }
     },
   },
 
@@ -76,6 +80,7 @@ export const TimePickerMixin = {
     },
 
     onConfirm() {
+      this.$emit('input', this.innerValue)
       this.$emit('confirm', this.innerValue);
     },
 
