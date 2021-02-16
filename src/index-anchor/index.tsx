@@ -1,14 +1,13 @@
-import { ref, reactive, computed, onMounted } from 'vue';
+import { ref, reactive, computed, CSSProperties } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
-import { INDEX_BAR_KEY } from '../index-bar';
+import { INDEX_BAR_KEY, IndexBarProvide } from '../index-bar';
 import { getScrollTop, getRootScrollTop } from '../utils/dom/scroll';
 
 // Composition
 import { useRect, useParent } from '@vant/use';
-import { useHeight } from '../composables/use-height';
 import { useExpose } from '../composables/use-expose';
 
 const [createComponent, bem] = createNamespace('index-anchor');
@@ -28,7 +27,16 @@ export default createComponent({
     });
 
     const root = ref();
-    const { parent } = useParent(INDEX_BAR_KEY);
+    const { parent } = useParent<IndexBarProvide>(INDEX_BAR_KEY);
+
+    if (!parent) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.error(
+          '[Vant] IndexAnchor must be a child component of IndexBar.'
+        );
+      }
+      return;
+    }
 
     const isSticky = () => state.active && parent.props.sticky;
 
@@ -42,11 +50,14 @@ export default createComponent({
           width: state.width ? `${state.width}px` : null,
           transform: state.top ? `translate3d(0, ${state.top}px, 0)` : null,
           color: highlightColor,
-        };
+        } as CSSProperties;
       }
     });
 
-    const getRect = (scrollParent, scrollParentRect) => {
+    const getRect = (
+      scrollParent: Window | Element,
+      scrollParentRect: { top: number }
+    ) => {
       const rootRect = useRect(root);
       state.rect.height = rootRect.height;
 
@@ -60,10 +71,6 @@ export default createComponent({
       return state.rect;
     };
 
-    onMounted(() => {
-      state.rect.height = useHeight(root);
-    });
-
     useExpose({
       state,
       getRect,
@@ -75,7 +82,7 @@ export default createComponent({
       return (
         <div
           ref={root}
-          style={{ height: sticky ? `${state.rect.height}px` : null }}
+          style={{ height: sticky ? `${state.rect.height}px` : undefined }}
         >
           <div
             style={anchorStyle.value}

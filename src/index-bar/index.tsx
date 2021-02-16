@@ -1,4 +1,4 @@
-import { ref, computed, watch, nextTick } from 'vue';
+import { ref, watch, computed, nextTick, PropType, CSSProperties } from 'vue';
 
 // Utils
 import {
@@ -9,6 +9,7 @@ import {
   createNamespace,
   getRootScrollTop,
   setRootScrollTop,
+  ComponentInstance,
 } from '../utils';
 
 // Composition
@@ -22,6 +23,14 @@ import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
 export const INDEX_BAR_KEY = 'vanIndexBar';
+
+export type IndexBarProvide = {
+  props: {
+    sticky: boolean;
+    zIndex?: number | string;
+    highlightColor?: string;
+  };
+};
 
 function genAlphabet() {
   const indexList = [];
@@ -49,7 +58,7 @@ export default createComponent({
       default: 0,
     },
     indexList: {
-      type: Array,
+      type: Array as PropType<string[]>,
       default: genAlphabet,
     },
   },
@@ -57,20 +66,22 @@ export default createComponent({
   emits: ['select', 'change'],
 
   setup(props, { emit, slots }) {
-    const root = ref();
+    const root = ref<HTMLElement>();
     const activeAnchor = ref();
 
     const touch = useTouch();
     const scrollParent = useScrollParent(root);
-    const { children, linkChildren } = useChildren(INDEX_BAR_KEY);
+    const { children, linkChildren } = useChildren<ComponentInstance>(
+      INDEX_BAR_KEY
+    );
 
     linkChildren({ props });
 
     const sidebarStyle = computed(() => {
       if (isDef(props.zIndex)) {
         return {
-          zIndex: 1 + props.zIndex,
-        };
+          zIndex: +props.zIndex + 1,
+        } as CSSProperties;
       }
     });
 
@@ -78,12 +89,12 @@ export default createComponent({
       if (props.highlightColor) {
         return {
           color: props.highlightColor,
-        };
+        } as CSSProperties;
       }
     });
 
     const getScrollerRect = () => {
-      if (scrollParent.value.getBoundingClientRect) {
+      if ('getBoundingClientRect' in scrollParent.value!) {
         return useRect(scrollParent);
       }
       return {
@@ -92,7 +103,10 @@ export default createComponent({
       };
     };
 
-    const getActiveAnchor = (scrollTop, rects) => {
+    const getActiveAnchor = (
+      scrollTop: number,
+      rects: Array<{ top: number; height: number }>
+    ) => {
       for (let i = children.length - 1; i >= 0; i--) {
         const prevHeight = i > 0 ? rects[i - 1].height : 0;
         const reachTop = props.sticky ? prevHeight + props.stickyOffsetTop : 0;
@@ -111,7 +125,7 @@ export default createComponent({
       }
 
       const { sticky, indexList } = props;
-      const scrollTop = getScrollTop(scrollParent.value);
+      const scrollTop = getScrollTop(scrollParent.value!);
       const scrollParentRect = getScrollerRect();
 
       const rects = children.map((item) =>
@@ -172,7 +186,7 @@ export default createComponent({
         return (
           <span
             class={bem('index', { active })}
-            style={active ? highlightStyle.value : null}
+            style={active ? highlightStyle.value : undefined}
             data-index={index}
           >
             {index}
@@ -180,7 +194,7 @@ export default createComponent({
         );
       });
 
-    const scrollTo = (index) => {
+    const scrollTo = (index: string) => {
       if (!index) {
         return;
       }
@@ -198,29 +212,34 @@ export default createComponent({
       }
     };
 
-    const scrollToElement = (element) => {
+    const scrollToElement = (element: HTMLElement) => {
       const { index } = element.dataset;
-      scrollTo(index);
+      if (index) {
+        scrollTo(index);
+      }
     };
 
-    const onClick = (event) => {
-      scrollToElement(event.target);
+    const onClickSidebar = (event: MouseEvent) => {
+      scrollToElement(event.target as HTMLElement);
     };
 
-    let touchActiveIndex;
-    const onTouchMove = (event) => {
+    let touchActiveIndex: string;
+
+    const onTouchMove = (event: TouchEvent) => {
       touch.move(event);
 
       if (touch.isVertical()) {
         preventDefault(event);
 
         const { clientX, clientY } = event.touches[0];
-        const target = document.elementFromPoint(clientX, clientY);
+        const target = document.elementFromPoint(
+          clientX,
+          clientY
+        ) as HTMLElement;
         if (target) {
           const { index } = target.dataset;
 
-          /* istanbul ignore else */
-          if (touchActiveIndex !== index) {
+          if (index && touchActiveIndex !== index) {
             touchActiveIndex = index;
             scrollToElement(target);
           }
@@ -235,7 +254,7 @@ export default createComponent({
         <div
           class={bem('sidebar')}
           style={sidebarStyle.value}
-          onClick={onClick}
+          onClick={onClickSidebar}
           onTouchstart={touch.start}
           onTouchmove={onTouchMove}
         >
