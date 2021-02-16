@@ -1,7 +1,7 @@
-import { ref, computed } from 'vue';
+import { ref, computed, PropType, CSSProperties, Ref } from 'vue';
 
 // Utils
-import { createNamespace, isDef } from '../utils';
+import { isDef, ComponentInstance, createNamespace } from '../utils';
 
 // Composition
 import {
@@ -16,6 +16,20 @@ const [createComponent, bem] = createNamespace('dropdown-menu');
 
 export const DROPDOWN_KEY = 'vanDropdownMenu';
 
+export type DropdownMenuDirection = 'up' | 'down';
+
+export type DropdownMenuProvide = {
+  props: {
+    zIndex?: number | string;
+    overlay: boolean;
+    duration: number | string;
+    direction: DropdownMenuDirection;
+    activeColor?: string;
+    closeOnClickOverlay: boolean;
+  };
+  offset: Ref<number>;
+};
+
 export default createComponent({
   props: {
     zIndex: [Number, String],
@@ -29,7 +43,7 @@ export default createComponent({
       default: 0.2,
     },
     direction: {
-      type: String,
+      type: String as PropType<DropdownMenuDirection>,
       default: 'down',
     },
     closeOnClickOutside: {
@@ -43,11 +57,13 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const root = ref();
+    const root = ref<HTMLElement>();
+    const barRef = ref<HTMLElement>();
     const offset = ref(0);
-    const barRef = ref();
 
-    const { children, linkChildren } = useChildren(DROPDOWN_KEY);
+    const { children, linkChildren } = useChildren<ComponentInstance>(
+      DROPDOWN_KEY
+    );
     const scrollParent = useScrollParent(root);
 
     const opened = computed(() =>
@@ -57,8 +73,8 @@ export default createComponent({
     const barStyle = computed(() => {
       if (opened.value && isDef(props.zIndex)) {
         return {
-          zIndex: 1 + props.zIndex,
-        };
+          zIndex: +props.zIndex + 1,
+        } as CSSProperties;
       }
     });
 
@@ -87,7 +103,7 @@ export default createComponent({
       }
     };
 
-    const toggleItem = (active) => {
+    const toggleItem = (active: number) => {
       children.forEach((item, index) => {
         if (index === active) {
           updateOffset();
@@ -98,7 +114,7 @@ export default createComponent({
       });
     };
 
-    const renderTitle = (item, index) => {
+    const renderTitle = (item: ComponentInstance, index: number) => {
       const { showPopup } = item.state;
       const { disabled, titleClass } = item;
 

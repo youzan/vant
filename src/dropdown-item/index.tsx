@@ -1,8 +1,14 @@
-import { reactive, Teleport } from 'vue';
+import {
+  reactive,
+  Teleport,
+  PropType,
+  TeleportProps,
+  CSSProperties,
+} from 'vue';
 
 // Utils
 import { createNamespace, UnknownProp } from '../utils';
-import { DROPDOWN_KEY } from '../dropdown-menu';
+import { DROPDOWN_KEY, DropdownMenuProvide } from '../dropdown-menu';
 
 // Composition
 import { useParent } from '@vant/use';
@@ -15,15 +21,21 @@ import Popup from '../popup';
 
 const [createComponent, bem] = createNamespace('dropdown-item');
 
+export type DropdownItemOption = {
+  text: string;
+  icon?: string;
+  value: number | string;
+};
+
 export default createComponent({
   props: {
     title: String,
     disabled: Boolean,
-    teleport: [String, Object],
+    teleport: [String, Object] as PropType<TeleportProps['to']>,
     modelValue: UnknownProp,
     titleClass: UnknownProp,
     options: {
-      type: Array,
+      type: Array as PropType<DropdownItemOption[]>,
       default: () => [],
     },
     lazyRender: {
@@ -41,9 +53,19 @@ export default createComponent({
       showWrapper: false,
     });
 
-    const { parent } = useParent(DROPDOWN_KEY);
+    const { parent } = useParent<DropdownMenuProvide>(DROPDOWN_KEY);
 
-    const createEmitter = (eventName) => () => emit(eventName);
+    if (!parent) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.error(
+          '[Vant] DropdownItem must be a child component of DropdownMenu.'
+        );
+      }
+      return;
+    }
+
+    const createEmitter = (eventName: 'open' | 'close' | 'opened') => () =>
+      emit(eventName);
     const onOpen = createEmitter('open');
     const onClose = createEmitter('close');
     const onOpened = createEmitter('opened');
@@ -53,14 +75,17 @@ export default createComponent({
       emit('closed');
     };
 
-    const onClickWrapper = (event) => {
+    const onClickWrapper = (event: MouseEvent) => {
       // prevent being identified as clicking outside and closed when using teleport
       if (props.teleport) {
         event.stopPropagation();
       }
     };
 
-    const toggle = (show = !state.showPopup, options = {}) => {
+    const toggle = (
+      show = !state.showPopup,
+      options: { immediate?: boolean } = {}
+    ) => {
       if (show === state.showPopup) {
         return;
       }
@@ -89,7 +114,7 @@ export default createComponent({
       return match.length ? match[0].text : '';
     };
 
-    const renderOption = (option) => {
+    const renderOption = (option: DropdownItemOption) => {
       const { activeColor } = parent.props;
       const active = option.value === props.modelValue;
 
@@ -129,7 +154,10 @@ export default createComponent({
         closeOnClickOverlay,
       } = parent.props;
 
-      const style = { zIndex };
+      const style: CSSProperties = {
+        zIndex: zIndex !== undefined ? +zIndex : undefined,
+      };
+
       if (direction === 'down') {
         style.top = `${offset.value}px`;
       } else {
