@@ -1961,10 +1961,10 @@
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"
 
-"@vant/popperjs@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/@vant/popperjs/download/@vant/popperjs-1.0.2.tgz#522d71656235125a3ae08e9c701a3bae6fd88d7b"
-  integrity sha1-Ui1xZWI1Elo64I6ccBo7rm/YjXs=
+"@vant/popperjs@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.npm.taobao.org/@vant/popperjs/download/@vant/popperjs-1.0.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fpopperjs%2Fdownload%2F%40vant%2Fpopperjs-1.0.4.tgz#49c20809a3828e7b036e23d50fb56121e997618f"
+  integrity sha1-ScIICaOCjnsDbiPVD7VhIemXYY8=
   dependencies:
     "@popperjs/core" "^2.5.4"
 

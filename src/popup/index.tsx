@@ -25,7 +25,7 @@ import { useLazyRender } from '../composables/use-lazy-render';
 import Icon from '../icon';
 import Overlay from '../overlay';
 
-export type PopupPosition = 'top' | 'left' | 'bottom' | 'right' | 'center';
+export type PopupPosition = 'top' | 'left' | 'bottom' | 'right' | 'center' | '';
 
 export type PopupCloseIconPosition =
   | 'top-left'

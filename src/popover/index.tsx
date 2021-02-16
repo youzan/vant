@@ -1,8 +1,16 @@
-import { ref, watch, nextTick, onMounted, onBeforeUnmount } from 'vue';
-import { createPopper, offsetModifier } from '@vant/popperjs';
+import {
+  ref,
+  watch,
+  nextTick,
+  PropType,
+  onMounted,
+  TeleportProps,
+  onBeforeUnmount,
+} from 'vue';
+import { Instance, createPopper, offsetModifier } from '@vant/popperjs';
 
 // Utils
-import { createNamespace } from '../utils';
+import { ComponentInstance, createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
 // Composition
@@ -14,32 +22,56 @@ import Popup from '../popup';
 
 const [createComponent, bem] = createNamespace('popover');
 
+export type PopoverTheme = 'light' | 'dark';
+export type PopoverTrigger = 'manual' | 'click';
+export type PopoverPlacement =
+  | 'top'
+  | 'top-start'
+  | 'top-end'
+  | 'left'
+  | 'left-start'
+  | 'left-end'
+  | 'right'
+  | 'right-start'
+  | 'right-end'
+  | 'bottom'
+  | 'bottom-start'
+  | 'bottom-end';
+
+export type PopoverAction = {
+  icon?: string;
+  text: string;
+  color?: string;
+  disabled?: boolean;
+  className?: string;
+};
+
 export default createComponent({
   props: {
     show: Boolean,
     overlay: Boolean,
     offset: {
-      type: Array,
+      type: (Array as unknown) as PropType<[number, number]>,
       default: () => [0, 8],
     },
     theme: {
-      type: String,
+      type: String as PropType<PopoverTheme>,
       default: 'light',
     },
     trigger: {
-      type: String,
+      type: String as PropType<PopoverTrigger>,
       default: 'click',
     },
     actions: {
-      type: Array,
+      type: Array as PropType<PopoverAction[]>,
       default: () => [],
     },
     placement: {
-      type: String,
+      type: String as PropType<PopoverPlacement>,
       default: 'bottom',
     },
     teleport: {
-      type: [String, Object],
+      type: [String, Object] as PropType<TeleportProps['to']>,
       default: 'body',
     },
     closeOnClickAction: {
@@ -51,12 +83,13 @@ export default createComponent({
   emits: ['select', 'touchstart', 'update:show'],
 
   setup(props, { emit, slots, attrs }) {
-    let popper;
-    const wrapperRef = ref();
-    const popoverRef = ref();
+    let popper: Instance | null;
+
+    const wrapperRef = ref<HTMLElement>();
+    const popoverRef = ref<ComponentInstance>();
 
     const createPopperInstance = () => {
-      return createPopper(wrapperRef.value, popoverRef.value.popupRef.value, {
+      return createPopper(wrapperRef.value!, popoverRef.value!.popupRef.value, {
         placement: props.placement,
         modifiers: [
           {
@@ -92,7 +125,7 @@ export default createComponent({
       });
     };
 
-    const toggle = (value) => {
+    const toggle = (value: boolean) => {
       emit('update:show', value);
     };
 
@@ -102,12 +135,12 @@ export default createComponent({
       }
     };
 
-    const onTouchstart = (event) => {
+    const onTouchstart = (event: TouchEvent) => {
       event.stopPropagation();
       emit('touchstart', event);
     };
 
-    const onClickAction = (action, index) => {
+    const onClickAction = (action: PopoverAction, index: number) => {
       if (action.disabled) {
         return;
       }
@@ -123,7 +156,7 @@ export default createComponent({
       toggle(false);
     };
 
-    const renderAction = (action, index) => {
+    const renderAction = (action: PopoverAction, index: number) => {
       const { icon, text, color, disabled, className } = action;
       return (
         <div
@@ -160,7 +193,7 @@ export default createComponent({
           show={props.show}
           class={bem([props.theme])}
           overlay={props.overlay}
-          position={null}
+          position={''}
           teleport={props.teleport}
           transition="van-popover-zoom"
           lockScroll={false}
