@@ -39,8 +39,8 @@ export type PopoverPlacement =
   | 'bottom-end';
 
 export type PopoverAction = {
-  icon?: string;
   text: string;
+  icon?: string;
   color?: string;
   disabled?: boolean;
   className?: string;
