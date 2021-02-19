@@ -1,16 +1,43 @@
+import { computed, CSSProperties, PropType } from 'vue';
 import { createNamespace } from '../../utils';
 import { bem } from '../utils';
-import { computed } from 'vue';
 
 const [createComponent] = createNamespace('calendar-day');
 
+export type DayType =
+  | ''
+  | 'start'
+  | 'start-end'
+  | 'middle'
+  | 'end'
+  | 'selected'
+  | 'multiple-middle'
+  | 'multiple-selected'
+  | 'disabled'
+  | 'placeholder';
+
+export type DayItem = {
+  date?: Date;
+  text?: string | number;
+  type?: DayType;
+  topInfo?: string;
+  className?: unknown;
+  bottomInfo?: string;
+};
+
 export default createComponent({
   props: {
-    item: Object,
     color: String,
     index: Number,
-    offset: Number,
     rowHeight: String,
+    offset: {
+      type: Number,
+      default: 0,
+    },
+    item: {
+      type: Object as PropType<DayItem>,
+      required: true,
+    },
   },
 
   emits: ['click'],
@@ -18,7 +45,7 @@ export default createComponent({
   setup(props, { emit }) {
     const style = computed(() => {
       const { item, index, color, offset, rowHeight } = props;
-      const style = {
+      const style: CSSProperties = {
         height: rowHeight,
       };
 
@@ -92,7 +119,7 @@ export default createComponent({
           role="gridcell"
           style={style.value}
           class={[bem('day', type), className]}
-          tabindex={type === 'disabled' ? null : -1}
+          tabindex={type === 'disabled' ? undefined : -1}
           onClick={onClick}
         >
           {renderContent()}

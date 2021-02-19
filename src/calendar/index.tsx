@@ -1,7 +1,7 @@
-import { ref, watch, reactive, computed } from 'vue';
+import { ref, watch, reactive, computed, PropType, TeleportProps } from 'vue';
 
 // Utils
-import { pick, getScrollTop } from '../utils';
+import { pick, getScrollTop, ComponentInstance } from '../utils';
 import { isDate } from '../utils/validate/date';
 import {
   t,
@@ -23,11 +23,14 @@ import { useRefs } from '../composables/use-refs';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Popup from '../popup';
+import Popup, { PopupPosition } from '../popup';
 import Button from '../button';
 import Toast from '../toast';
-import Month from './components/Month';
+import Month, { CalendarType } from './components/Month';
 import Header from './components/Header';
+
+// Types
+import type { DayItem } from './components/Day';
 
 export default createComponent({
   props: {
@@ -35,16 +38,18 @@ export default createComponent({
     title: String,
     color: String,
     readonly: Boolean,
-    teleport: [String, Object],
-    formatter: Function,
+    teleport: [String, Object] as PropType<TeleportProps['to']>,
+    formatter: Function as PropType<(item: DayItem) => DayItem>,
     rowHeight: [Number, String],
     confirmText: String,
     rangePrompt: String,
-    defaultDate: [Date, Array],
+    // TODO: remove any
+    // see: https://github.com/vuejs/vue-next/issues/2668
+    defaultDate: [Date, Array] as any,
     allowSameDay: Boolean,
     confirmDisabledText: String,
     type: {
-      type: String,
+      type: String as PropType<CalendarType>,
       default: 'single',
     },
     round: {
@@ -52,7 +57,7 @@ export default createComponent({
       default: true,
     },
     position: {
-      type: String,
+      type: String as PropType<PopupPosition>,
       default: 'bottom',
     },
     poppable: {
@@ -96,14 +101,14 @@ export default createComponent({
       default: true,
     },
     minDate: {
-      type: Date,
+      type: Date as PropType<Date>,
       validator: isDate,
       default: () => new Date(),
     },
     maxDate: {
-      type: Date,
+      type: Date as PropType<Date>,
       validator: isDate,
-      default() {
+      default: () => {
         const now = new Date();
         return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
       },
@@ -111,7 +116,7 @@ export default createComponent({
     firstDayOfWeek: {
       type: [Number, String],
       default: 0,
-      validator: (val) => val >= 0 && val <= 6,
+      validator: (val: number) => val >= 0 && val <= 6,
     },
   },
 
@@ -119,7 +124,7 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const limitDateRange = (
-      date,
+      date: Date,
       minDate = props.minDate,
       maxDate = props.maxDate
     ) => {
@@ -167,7 +172,7 @@ export default createComponent({
       return limitDateRange(defaultDate);
     };
 
-    let bodyHeight;
+    let bodyHeight: number;
 
     const bodyRef = ref();
 
@@ -176,10 +181,10 @@ export default createComponent({
       currentDate: getInitialDate(),
     });
 
-    const [monthRefs, setMonthRefs] = useRefs();
+    const [monthRefs, setMonthRefs] = useRefs<ComponentInstance>();
 
     const dayOffset = computed(() =>
-      props.firstDayOfWeek ? props.firstDayOfWeek % 7 : 0
+      props.firstDayOfWeek ? +props.firstDayOfWeek % 7 : 0
     );
 
     const months = computed(() => {
@@ -201,10 +206,10 @@ export default createComponent({
 
       if (currentDate) {
         if (props.type === 'range') {
-          return !currentDate[0] || !currentDate[1];
+          return !(currentDate as Date[])[0] || !(currentDate as Date[])[1];
         }
         if (props.type === 'multiple') {
-          return !currentDate.length;
+          return !(currentDate as Date[]).length;
         }
       }
 
@@ -267,7 +272,7 @@ export default createComponent({
       }
     };
 
-    const scrollToDate = (targetDate) => {
+    const scrollToDate = (targetDate: Date) => {
       raf(() => {
         months.value.some((month, index) => {
           if (compareMonth(month, targetDate) === 0) {
@@ -291,7 +296,7 @@ export default createComponent({
       const { currentDate } = state;
       if (currentDate) {
         const targetDate =
-          props.type === 'single' ? currentDate : currentDate[0];
+          props.type === 'single' ? currentDate : (currentDate as Date[])[0];
         scrollToDate(targetDate);
       } else {
         raf(onScroll);
@@ -316,7 +321,7 @@ export default createComponent({
       scrollIntoView();
     };
 
-    const checkRange = (date) => {
+    const checkRange = (date: [Date, Date]) => {
       const { maxRange, rangePrompt } = props;
 
       if (maxRange && calcDateNum(date) > maxRange) {
@@ -331,21 +336,21 @@ export default createComponent({
       emit('confirm', copyDates(state.currentDate));
     };
 
-    const select = (date, complete) => {
-      const setCurrentDate = (date) => {
+    const select = (date: Date | Date[], complete?: boolean) => {
+      const setCurrentDate = (date: Date | Date[]) => {
         state.currentDate = date;
         emit('select', copyDates(state.currentDate));
       };
 
       if (complete && props.type === 'range') {
-        const valid = checkRange(date);
+        const valid = checkRange(date as [Date, Date]);
 
         if (!valid) {
           // auto selected to max range if showConfirm
           if (props.showConfirm) {
             setCurrentDate([
-              date[0],
-              getDayByOffset(date[0], props.maxRange - 1),
+              (date as Date[])[0],
+              getDayByOffset((date as Date[])[0], +props.maxRange - 1),
             ]);
           } else {
             setCurrentDate(date);
@@ -361,8 +366,8 @@ export default createComponent({
       }
     };
 
-    const onClickDay = (item) => {
-      if (props.readonly) {
+    const onClickDay = (item: DayItem) => {
+      if (props.readonly || !item.date) {
         return;
       }
 
@@ -372,7 +377,7 @@ export default createComponent({
 
       if (type === 'range') {
         if (!currentDate) {
-          select([date, null]);
+          select([date]);
           return;
         }
 
@@ -384,12 +389,12 @@ export default createComponent({
           if (compareToStart === 1) {
             select([startDay, date], true);
           } else if (compareToStart === -1) {
-            select([date, null]);
+            select([date]);
           } else if (props.allowSameDay) {
             select([date, date], true);
           }
         } else {
-          select([date, null]);
+          select([date]);
         }
       } else if (type === 'multiple') {
         if (!currentDate) {
@@ -398,13 +403,15 @@ export default createComponent({
         }
 
         let selectedIndex;
-        const selected = state.currentDate.some((dateItem, index) => {
-          const equal = compareDay(dateItem, date) === 0;
-          if (equal) {
-            selectedIndex = index;
+        const selected = state.currentDate.some(
+          (dateItem: Date, index: number) => {
+            const equal = compareDay(dateItem, date) === 0;
+            if (equal) {
+              selectedIndex = index;
+            }
+            return equal;
           }
-          return equal;
-        });
+        );
 
         if (selected) {
           const [unselectedDate] = currentDate.splice(selectedIndex, 1);
@@ -419,11 +426,11 @@ export default createComponent({
       }
     };
 
-    const togglePopup = (val) => {
-      emit('update:show', val);
+    const togglePopup = (value: boolean) => {
+      emit('update:show', value);
     };
 
-    const renderMonth = (date, index) => {
+    const renderMonth = (date: Date, index: number) => {
       const showMonthTitle = index !== 0 || !props.showSubtitle;
       return (
         <Month
