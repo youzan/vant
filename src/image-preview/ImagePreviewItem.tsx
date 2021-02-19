@@ -1,8 +1,7 @@
-import { watch, computed, reactive } from 'vue';
+import { watch, computed, reactive, CSSProperties, defineComponent } from 'vue';
 
 // Utils
-import { bem } from './shared';
-import { range, preventDefault } from '../utils';
+import { range, preventDefault, createNamespace } from '../utils';
 
 // Composition
 import { useTouch } from '../composables/use-touch';
@@ -12,22 +11,36 @@ import Image from '../image';
 import Loading from '../loading';
 import SwipeItem from '../swipe-item';
 
-function getDistance(touches) {
+function getDistance(touches: TouchList) {
   return Math.sqrt(
     (touches[0].clientX - touches[1].clientX) ** 2 +
       (touches[0].clientY - touches[1].clientY) ** 2
   );
 }
 
-export default {
+const bem = createNamespace('image-preview')[1];
+
+export default defineComponent({
   props: {
     src: String,
     show: Boolean,
     active: Number,
-    minZoom: [Number, String],
-    maxZoom: [Number, String],
-    rootWidth: Number,
-    rootHeight: Number,
+    minZoom: {
+      type: [Number, String],
+      required: true,
+    },
+    maxZoom: {
+      type: [Number, String],
+      required: true,
+    },
+    rootWidth: {
+      type: Number,
+      required: true,
+    },
+    rootHeight: {
+      type: Number,
+      required: true,
+    },
   },
 
   emits: ['scale', 'close'],
@@ -54,7 +67,7 @@ export default {
 
     const imageStyle = computed(() => {
       const { scale, moveX, moveY, moving, zooming } = state;
-      const style = {
+      const style: CSSProperties = {
         transitionDuration: zooming || moving ? '0s' : '.3s',
       };
 
@@ -93,7 +106,7 @@ export default {
       return 0;
     });
 
-    const setScale = (scale) => {
+    const setScale = (scale: number) => {
       scale = range(scale, +props.minZoom, +props.maxZoom);
 
       if (scale !== state.scale) {
@@ -119,14 +132,14 @@ export default {
       state.moveY = 0;
     };
 
-    let startMoveX;
-    let startMoveY;
-    let startScale;
-    let startDistance;
-    let doubleTapTimer;
-    let touchStartTime;
+    let startMoveX: number;
+    let startMoveY: number;
+    let startScale: number;
+    let startDistance: number;
+    let doubleTapTimer: NodeJS.Timeout | null;
+    let touchStartTime: number;
 
-    const onTouchStart = (event) => {
+    const onTouchStart = (event: TouchEvent) => {
       const { touches } = event;
       const { offsetX } = touch;
 
@@ -134,7 +147,7 @@ export default {
 
       startMoveX = state.moveX;
       startMoveY = state.moveY;
-      touchStartTime = new Date();
+      touchStartTime = Date.now();
 
       state.moving = touches.length === 1 && state.scale !== 1;
       state.zooming = touches.length === 2 && !offsetX.value;
@@ -145,7 +158,7 @@ export default {
       }
     };
 
-    const onTouchMove = (event) => {
+    const onTouchMove = (event: TouchEvent) => {
       const { touches } = event;
 
       touch.move(event);
@@ -172,7 +185,7 @@ export default {
 
     const checkTap = () => {
       const { offsetX, offsetY } = touch;
-      const deltaTime = new Date() - touchStartTime;
+      const deltaTime = Date.now() - touchStartTime;
       const TAP_TIME = 250;
       const TAP_OFFSET = 10;
 
@@ -194,7 +207,7 @@ export default {
       }
     };
 
-    const onTouchEnd = (event) => {
+    const onTouchEnd = (event: TouchEvent) => {
       let stopPropagation = false;
 
       /* istanbul ignore else */
@@ -234,8 +247,8 @@ export default {
       touch.reset();
     };
 
-    const onLoad = (event) => {
-      const { naturalWidth, naturalHeight } = event.target;
+    const onLoad = (event: Event) => {
+      const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
       state.imageRatio = naturalHeight / naturalWidth;
     };
 
@@ -274,4 +287,4 @@ export default {
       );
     };
   },
-};
+});
