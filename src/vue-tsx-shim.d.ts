@@ -12,11 +12,13 @@ declare module 'vue' {
     onBlur?: EventHandler;
     onOpen?: EventHandler;
     onEdit?: EventHandler;
+    onLoad?: EventHandler;
     onClose?: EventHandler;
     onFocus?: EventHandler;
     onInput?: EventHandler;
     onClick?: EventHandler;
     onPress?: EventHandler;
+    onScale?: EventHandler;
     onCancel?: EventHandler;
     onOpened?: EventHandler;
     onClosed?: EventHandler;
@@ -26,7 +28,10 @@ declare module 'vue' {
     onToggle?: EventHandler;
     onConfirm?: EventHandler;
     onKeypress?: EventHandler;
+    onTouchend?: EventHandler;
     onClickStep?: EventHandler;
+    onTouchmove?: EventHandler;
     onTouchstart?: EventHandler;
+    onTouchcancel?: EventHandler;
   }
 }

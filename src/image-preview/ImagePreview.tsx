@@ -1,9 +1,8 @@
-import { nextTick, onMounted, reactive, ref, watch } from 'vue';
+import { nextTick, onMounted, PropType, reactive, ref, watch } from 'vue';
 
 // Utils
-import { UnknownProp } from '../utils';
-import { bem, createComponent } from './shared';
-import { callInterceptor } from '../utils/interceptor';
+import { ComponentInstance, UnknownProp, createNamespace } from '../utils';
+import { callInterceptor, Interceptor } from '../utils/interceptor';
 
 // Composition
 import { useWindowSize } from '@vant/use';
@@ -11,19 +10,21 @@ import { useExpose } from '../composables/use-expose';
 
 // Components
 import Icon from '../icon';
-import Swipe from '../swipe';
-import Popup from '../popup';
+import Swipe, { SwipeToOptions } from '../swipe';
+import Popup, { PopupCloseIconPosition } from '../popup';
 import ImagePreviewItem from './ImagePreviewItem';
+
+const [createComponent, bem] = createNamespace('image-preview');
 
 export default createComponent({
   props: {
     show: Boolean,
     closeable: Boolean,
     className: UnknownProp,
-    beforeClose: Function,
+    beforeClose: Function as PropType<Interceptor>,
     showIndicators: Boolean,
     images: {
-      type: Array,
+      type: Array as PropType<string[]>,
       default: () => [],
     },
     loop: {
@@ -63,7 +64,7 @@ export default createComponent({
       default: true,
     },
     closeIconPosition: {
-      type: String,
+      type: String as PropType<PopupCloseIconPosition>,
       default: 'top-right',
     },
   },
@@ -71,7 +72,7 @@ export default createComponent({
   emits: ['scale', 'close', 'closed', 'change', 'update:show'],
 
   setup(props, { emit, slots }) {
-    const swipeRef = ref();
+    const swipeRef = ref<ComponentInstance>();
     const windowSize = useWindowSize();
 
     const state = reactive({
@@ -89,11 +90,11 @@ export default createComponent({
       }
     };
 
-    const emitScale = (args) => {
+    const emitScale = (args: { scale: number; index: number }) => {
       emit('scale', args);
     };
 
-    const toggle = (show) => {
+    const toggle = (show: boolean) => {
       emit('update:show', show);
     };
 
@@ -107,7 +108,7 @@ export default createComponent({
       });
     };
 
-    const setActive = (active) => {
+    const setActive = (active: number) => {
       if (active !== state.active) {
         state.active = active;
         emit('change', active);
@@ -177,7 +178,7 @@ export default createComponent({
       emit('closed');
     };
 
-    const swipeTo = (index, options) => {
+    const swipeTo = (index: number, options?: SwipeToOptions) => {
       if (swipeRef.value) {
         swipeRef.value.swipeTo(index, options);
       }
@@ -189,7 +190,12 @@ export default createComponent({
 
     watch([windowSize.width, windowSize.height], resize);
 
-    watch(() => props.startPosition, setActive);
+    watch(
+      () => props.startPosition,
+      (value) => {
+        setActive(+value);
+      }
+    );
 
     watch(
       () => props.show,

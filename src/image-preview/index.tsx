@@ -1,23 +1,47 @@
-import { inBrowser } from '../utils';
+import { App, TeleportProps } from 'vue';
+import { ComponentInstance, inBrowser } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
+import { Interceptor } from '../utils/interceptor';
+import { PopupCloseIconPosition } from '../popup';
 import VanImagePreview from './ImagePreview';
 
-let instance;
+let instance: ComponentInstance;
 
-const defaultConfig = {
+export type ImagePreviewOptions = {
+  loop?: boolean;
+  images: string[];
+  maxZoom?: number;
+  minZoom?: number;
+  teleport?: TeleportProps['to'];
+  className?: unknown;
+  showIndex?: boolean;
+  closeable?: boolean;
+  closeIcon?: string;
+  beforeClose?: Interceptor;
+  swipeDuration?: number;
+  startPosition?: number;
+  showIndicators?: boolean;
+  closeOnPopstate?: boolean;
+  closeIconPosition?: PopupCloseIconPosition;
+  onClose?(): void;
+  onScale?(args: { scale: number; index: number }): void;
+  onChange?(index: number): void;
+};
+
+const defaultConfig: ImagePreviewOptions = {
   loop: true,
   images: [],
   maxZoom: 3,
   minZoom: 1 / 3,
-  onScale: null,
-  onClose: null,
-  onChange: null,
+  onScale: undefined,
+  onClose: undefined,
+  onChange: undefined,
   teleport: 'body',
   className: '',
   showIndex: true,
   closeable: false,
   closeIcon: 'clear',
-  beforeClose: null,
+  beforeClose: undefined,
   startPosition: 0,
   swipeDuration: 300,
   showIndicators: false,
@@ -29,9 +53,8 @@ function initInstance() {
   ({ instance } = mountComponent({
     setup() {
       const { state, toggle } = usePopupState();
-
       const onClosed = () => {
-        state.images = [];
+        (state as any).images = [];
       };
 
       return () => (
@@ -47,7 +70,10 @@ function initInstance() {
   }));
 }
 
-const ImagePreview = (images, startPosition = 0) => {
+const ImagePreview = (
+  images: string[] | ImagePreviewOptions,
+  startPosition = 0
+) => {
   /* istanbul ignore if */
   if (!inBrowser) {
     return;
@@ -69,8 +95,8 @@ const ImagePreview = (images, startPosition = 0) => {
 
 ImagePreview.Component = VanImagePreview;
 
-ImagePreview.install = (app) => {
-  app.use(VanImagePreview);
+ImagePreview.install = (app: App) => {
+  app.use(VanImagePreview as any);
 };
 
 export default ImagePreview;
