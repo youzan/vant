@@ -50,7 +50,9 @@ export default createComponent({
   emits: ['select', 'cancel', 'update:show'],
 
   setup(props, { slots, emit }) {
-    const popupPropKeys = Object.keys(popupSharedProps);
+    const popupPropKeys = Object.keys(popupSharedProps) as Array<
+      keyof typeof popupSharedProps
+    >;
 
     const onUpdateShow = (show: boolean) => {
       emit('update:show', show);

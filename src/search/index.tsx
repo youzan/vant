@@ -105,7 +105,7 @@ export default createComponent({
       'clearable',
       'modelValue',
       'clearTrigger',
-    ];
+    ] as const;
 
     const renderField = () => {
       const fieldAttrs = {
