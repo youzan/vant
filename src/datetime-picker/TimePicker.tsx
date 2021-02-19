@@ -43,7 +43,7 @@ export default createComponent({
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const formatValue = (value: string | undefined) => {
+    const formatValue = (value?: string) => {
       const { minHour, maxHour, maxMinute, minMinute } = props;
 
       if (!value) {
