@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue';
+import { ref, computed, PropType } from 'vue';
 
 // Utils
 import { addUnit, setScrollTop, createNamespace } from '../../utils';
@@ -18,26 +18,37 @@ import { useExpose } from '../../composables/use-expose';
 import { useHeight } from '../../composables/use-height';
 
 // Components
-import Day from './Day';
+import Day, { DayItem, DayType } from './Day';
 
 const [createComponent] = createNamespace('calendar-month');
 
+export type CalendarType = 'single' | 'range' | 'multiple';
+
 export default createComponent({
   props: {
-    date: Date,
-    type: String,
+    type: String as PropType<CalendarType>,
     color: String,
-    minDate: Date,
-    maxDate: Date,
     showMark: Boolean,
     rowHeight: [Number, String],
-    formatter: Function,
+    formatter: Function as PropType<(item: DayItem) => DayItem>,
     lazyRender: Boolean,
-    currentDate: [Date, Array],
+    currentDate: [Date, Array] as PropType<Date | Date[]>,
     allowSameDay: Boolean,
     showSubtitle: Boolean,
     showMonthTitle: Boolean,
     firstDayOfWeek: Number,
+    date: {
+      type: Date as PropType<Date>,
+      required: true,
+    },
+    minDate: {
+      type: Date as PropType<Date>,
+      required: true,
+    },
+    maxDate: {
+      type: Date as PropType<Date>,
+      required: true,
+    },
   },
 
   emits: ['click', 'update-height'],
@@ -67,7 +78,7 @@ export default createComponent({
 
     const getTitle = () => title.value;
 
-    const scrollIntoView = (body) => {
+    const scrollIntoView = (body: Element) => {
       const el = props.showSubtitle ? daysRef.value : monthRef.value;
 
       const scrollTop =
@@ -78,9 +89,11 @@ export default createComponent({
       setScrollTop(body, scrollTop);
     };
 
-    const getMultipleDayType = (day) => {
-      const isSelected = (date) =>
-        props.currentDate.some((item) => compareDay(item, date) === 0);
+    const getMultipleDayType = (day: Date) => {
+      const isSelected = (date: Date) =>
+        (props.currentDate as Date[]).some(
+          (item) => compareDay(item, date) === 0
+        );
 
       if (isSelected(day)) {
         const prevDay = getPrevDay(day);
@@ -103,8 +116,8 @@ export default createComponent({
       return '';
     };
 
-    const getRangeDayType = (day) => {
-      const [startDay, endDay] = props.currentDate;
+    const getRangeDayType = (day: Date) => {
+      const [startDay, endDay] = props.currentDate as Date[];
 
       if (!startDay) {
         return '';
@@ -130,9 +143,11 @@ export default createComponent({
       if (compareToStart > 0 && compareToEnd < 0) {
         return 'middle';
       }
+
+      return '';
     };
 
-    const getDayType = (day) => {
+    const getDayType = (day: Date): DayType => {
       const { type, minDate, maxDate, currentDate } = props;
 
       if (compareDay(day, minDate) < 0 || compareDay(day, maxDate) > 0) {
@@ -140,7 +155,7 @@ export default createComponent({
       }
 
       if (currentDate === null) {
-        return;
+        return '';
       }
 
       if (Array.isArray(currentDate)) {
@@ -151,11 +166,13 @@ export default createComponent({
           return getRangeDayType(day);
         }
       } else if (type === 'single') {
-        return compareDay(day, currentDate) === 0 ? 'selected' : '';
+        return compareDay(day, currentDate as Date) === 0 ? 'selected' : '';
       }
+
+      return '';
     };
 
-    const getBottomInfo = (dayType) => {
+    const getBottomInfo = (dayType: DayType) => {
       if (props.type === 'range') {
         if (dayType === 'start' || dayType === 'end') {
           return t(dayType);
@@ -179,7 +196,7 @@ export default createComponent({
     };
 
     const placeholders = computed(() => {
-      const rows = [];
+      const rows: DayItem[] = [];
       const count = Math.ceil((totalDay.value + offset.value) / 7);
       for (let day = 1; day <= count; day++) {
         rows.push({ type: 'placeholder' });
@@ -188,7 +205,7 @@ export default createComponent({
     });
 
     const days = computed(() => {
-      const days = [];
+      const days: DayItem[] = [];
       const year = props.date.getFullYear();
       const month = props.date.getMonth();
 
@@ -196,7 +213,7 @@ export default createComponent({
         const date = new Date(year, month, day);
         const type = getDayType(date);
 
-        let config = {
+        let config: DayItem = {
           date,
           type,
           text: day,
@@ -213,7 +230,7 @@ export default createComponent({
       return days;
     });
 
-    const renderDay = (item, index) => (
+    const renderDay = (item: DayItem, index: number) => (
       <Day
         item={item}
         index={index}

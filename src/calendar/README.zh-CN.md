@@ -251,7 +251,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type | 选择类型:<br>`single`表示选择单个日期，<br>`multiple`表示选择多个日期，<br>`range`表示选择日期区间 | _string_ | `single` |
+| type | 选择类型:<br>`single` 表示选择单个日期，<br>`multiple` 表示选择多个日期，<br>`range` 表示选择日期区间 | _string_ | `single` |
 | title | 日历标题 | _string_ | `日期选择` |
 | color | 主题色，对底部按钮和选中日期生效 | _string_ | `#ee0a24` |
 | min-date | 可选择的最小日期 | _Date_ | 当前日期 |
