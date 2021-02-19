@@ -1,7 +1,7 @@
 import { App, TeleportProps } from 'vue';
 import { ComponentInstance, inBrowser } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
-import { SwipeToOptions } from '../swipe';
+import { Interceptor } from '../utils/interceptor';
 import { PopupCloseIconPosition } from '../popup';
 import VanImagePreview from './ImagePreview';
 
@@ -13,11 +13,11 @@ export type ImagePreviewOptions = {
   maxZoom?: number;
   minZoom?: number;
   teleport?: TeleportProps['to'];
-  className?: any;
+  className?: unknown;
   showIndex?: boolean;
   closeable?: boolean;
   closeIcon?: string;
-  beforeClose?: (active: number) => boolean | Promise<boolean>;
+  beforeClose?: Interceptor;
   swipeDuration?: number;
   startPosition?: number;
   showIndicators?: boolean;
@@ -26,7 +26,6 @@ export type ImagePreviewOptions = {
   onClose?(): void;
   onScale?(args: { scale: number; index: number }): void;
   onChange?(index: number): void;
-  swipeTo?(index: number, options?: SwipeToOptions): void;
 };
 
 const defaultConfig: ImagePreviewOptions = {
