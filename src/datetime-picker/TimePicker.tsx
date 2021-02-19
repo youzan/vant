@@ -1,20 +1,27 @@
 import { ref, watch, computed, nextTick, onMounted } from 'vue';
 
 // Utils
-import { pick, range, padZero, createNamespace } from '../utils';
-import { times, sharedProps } from './utils';
+import {
+  pick,
+  range,
+  padZero,
+  createNamespace,
+  ComponentInstance,
+} from '../utils';
+import { times, sharedProps, pickerKeys } from './utils';
 
 // Composition
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Picker, { pickerProps } from '../picker';
+import Picker from '../picker';
 
 const [createComponent] = createNamespace('time-picker');
 
 export default createComponent({
   props: {
     ...sharedProps,
+    modelValue: String,
     minHour: {
       type: [Number, String],
       default: 0,
@@ -36,7 +43,7 @@ export default createComponent({
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const formatValue = (value) => {
+    const formatValue = (value: string | undefined) => {
       const { minHour, maxHour, maxMinute, minMinute } = props;
 
       if (!value) {
@@ -44,13 +51,13 @@ export default createComponent({
       }
 
       let [hour, minute] = value.split(':');
-      hour = padZero(range(hour, minHour, maxHour));
-      minute = padZero(range(minute, minMinute, maxMinute));
+      hour = padZero(range(+hour, +minHour, +maxHour));
+      minute = padZero(range(+minute, +minMinute, +maxMinute));
 
       return `${hour}:${minute}`;
     };
 
-    const picker = ref();
+    const picker = ref<ComponentInstance>();
     const currentDate = ref(formatValue(props.modelValue));
 
     const ranges = computed(() => [
@@ -97,12 +104,12 @@ export default createComponent({
       ];
 
       nextTick(() => {
-        picker.value.setValues(values);
+        picker.value!.setValues(values);
       });
     };
 
     const updateInnerValue = () => {
-      const [hourIndex, minuteIndex] = picker.value.getIndexes();
+      const [hourIndex, minuteIndex] = picker.value!.getIndexes();
       const [hourColumn, minuteColumn] = originColumns.value;
 
       const hour = hourColumn.values[hourIndex] || hourColumn.values[0];
@@ -173,11 +180,10 @@ export default createComponent({
         v-slots={slots}
         ref={picker}
         columns={columns.value}
-        readonly={props.readonly}
         onChange={onChange}
         onCancel={onCancel}
         onConfirm={onConfirm}
-        {...pick(props, Object.keys(pickerProps))}
+        {...pick(props, pickerKeys)}
       />
     );
   },

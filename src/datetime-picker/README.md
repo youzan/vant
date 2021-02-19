@@ -284,8 +284,8 @@ export default {
 | show-toolbar | Whether to show toolbar | _boolean_ | `true` |
 | loading | Whether to show loading prompt | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
-| filter | Option filter | _(type, vals) => vals_ | - |
-| formatter | Option text formatter | _(type, val) => val_ | - |
+| filter | Option filter | _(type: string, values: string[]) => string[]_ | - |
+| formatter | Option text formatter | _(type: string, value: string) => string_ | - |
 | columns-order | Array for ordering columns, where item can be set to<br> `year`, `month`, `day`, `hour` and `minute` | _string[]_ | - |
 | item-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-item-count | Count of visible columns | _number \| string_ | `6` |

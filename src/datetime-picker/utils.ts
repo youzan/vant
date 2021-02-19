@@ -1,20 +1,34 @@
+import { PropType } from 'vue';
 import { isNaN } from '../utils/validate/number';
 import { pickerProps } from '../picker';
 
+export type ColumnType = 'year' | 'month' | 'day' | 'hour' | 'minute';
+
+export type DatetimePickerType =
+  | 'date'
+  | 'time'
+  | 'datetime'
+  | 'datehour'
+  | 'month-day'
+  | 'year-month';
+
 export const sharedProps = {
   ...pickerProps,
-  filter: Function,
-  modelValue: null,
-  columnsOrder: Array,
+  filter: Function as PropType<(type: string, values: string[]) => string[]>,
+  columnsOrder: Array as PropType<ColumnType[]>,
   formatter: {
-    type: Function,
-    default: (type: string, value: unknown) => value,
+    type: Function as PropType<(type: string, value: string) => string>,
+    default: (type: string, value: string) => value,
   },
 };
 
-export function times(n: number, iteratee: (index: number) => any[]) {
+export const pickerKeys = Object.keys(pickerProps) as Array<
+  keyof typeof pickerProps
+>;
+
+export function times<T>(n: number, iteratee: (index: number) => T) {
   let index = -1;
-  const result = Array(n);
+  const result: T[] = Array(n);
 
   while (++index < n) {
     result[index] = iteratee(index);

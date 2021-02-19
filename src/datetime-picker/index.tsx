@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import { pick, createNamespace } from '../utils';
+import { pick, createNamespace, ComponentInstance } from '../utils';
 import { useExpose } from '../composables/use-expose';
 import TimePicker from './TimePicker';
 import DatePicker from './DatePicker';
@@ -13,10 +13,11 @@ export default createComponent({
   props: {
     ...TimePicker.props,
     ...DatePicker.props,
+    modelValue: [String, Date],
   },
 
   setup(props, { attrs, slots }) {
-    const root = ref();
+    const root = ref<ComponentInstance>();
 
     useExpose({
       getPicker: () => root.value?.getPicker(),

@@ -1,15 +1,23 @@
-import { ref, watch, computed, nextTick, onMounted } from 'vue';
+import { ref, watch, computed, nextTick, onMounted, PropType } from 'vue';
 
 // Utils
 import { isDate } from '../utils/validate/date';
-import { pick, padZero, createNamespace } from '../utils';
-import { times, sharedProps, getTrueValue, getMonthEndDay } from './utils';
+import { pick, range, padZero, createNamespace } from '../utils';
+import {
+  times,
+  ColumnType,
+  pickerKeys,
+  sharedProps,
+  getTrueValue,
+  getMonthEndDay,
+  DatetimePickerType,
+} from './utils';
 
 // Composition
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Picker, { pickerProps } from '../picker';
+import Picker from '../picker';
 
 const currentYear = new Date().getFullYear();
 const [createComponent] = createNamespace('date-picker');
@@ -17,17 +25,18 @@ const [createComponent] = createNamespace('date-picker');
 export default createComponent({
   props: {
     ...sharedProps,
+    modelValue: Date as PropType<Date>,
     type: {
-      type: String,
+      type: String as PropType<DatetimePickerType>,
       default: 'datetime',
     },
     minDate: {
-      type: Date,
+      type: Date as PropType<Date>,
       default: () => new Date(currentYear - 10, 0, 1),
       validator: isDate,
     },
     maxDate: {
-      type: Date,
+      type: Date as PropType<Date>,
       default: () => new Date(currentYear + 10, 11, 31),
       validator: isDate,
     },
@@ -36,22 +45,23 @@ export default createComponent({
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const formatValue = (value) => {
-      if (!isDate(value)) {
-        value = props.minDate;
+    const formatValue = (value?: Date) => {
+      if (isDate(value)) {
+        const timestamp = range(
+          value.getTime(),
+          props.minDate.getTime(),
+          props.maxDate.getTime()
+        );
+        return new Date(timestamp);
       }
-
-      value = Math.max(value, props.minDate.getTime());
-      value = Math.min(value, props.maxDate.getTime());
-
-      return new Date(value);
+      return props.minDate;
     };
 
     const picker = ref();
     const currentDate = ref(formatValue(props.modelValue));
 
-    const getBoundary = (type, value) => {
-      const boundary = props[`${type}Date`];
+    const getBoundary = (type: 'max' | 'min', value: Date) => {
+      const boundary = props[`${type}Date` as const];
       const year = boundary.getFullYear();
       let month = 1;
       let date = 1;
@@ -98,7 +108,7 @@ export default createComponent({
         currentDate.value
       );
 
-      let result = [
+      let result: Array<{ type: ColumnType; range: number[] }> = [
         {
           type: 'year',
           range: [minYear, maxYear],
@@ -205,7 +215,7 @@ export default createComponent({
       const { type } = props;
       const indexes = picker.value.getIndexes();
 
-      const getValue = (type) => {
+      const getValue = (type: ColumnType) => {
         let index = 0;
         originColumns.value.forEach((column, columnIndex) => {
           if (type === column.type) {
@@ -301,11 +311,10 @@ export default createComponent({
         v-slots={slots}
         ref={picker}
         columns={columns.value}
-        readonly={props.readonly}
         onChange={onChange}
         onCancel={onCancel}
         onConfirm={onConfirm}
-        {...pick(props, Object.keys(pickerProps))}
+        {...pick(props, pickerKeys)}
       />
     );
   },
