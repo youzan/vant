@@ -75,7 +75,7 @@ export default createComponent({
 
   setup(props, { emit, slots }) {
     const root = ref<HTMLElement>();
-    const activeAnchor = ref();
+    const activeAnchor = ref('');
 
     const touch = useTouch();
     const scrollParent = useScrollParent(root);

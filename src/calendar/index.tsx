@@ -174,7 +174,7 @@ export default createComponent({
 
     let bodyHeight: number;
 
-    const bodyRef = ref();
+    const bodyRef = ref<HTMLElement>();
 
     const state = reactive({
       subtitle: '',
@@ -219,7 +219,7 @@ export default createComponent({
     // calculate the position of the elements
     // and find the elements that needs to be rendered
     const onScroll = () => {
-      const top = getScrollTop(bodyRef.value);
+      const top = getScrollTop(bodyRef.value!);
       const bottom = top + bodyHeight;
 
       const heights = months.value.map((item, index) =>

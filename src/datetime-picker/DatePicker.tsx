@@ -2,7 +2,13 @@ import { ref, watch, computed, nextTick, onMounted, PropType } from 'vue';
 
 // Utils
 import { isDate } from '../utils/validate/date';
-import { pick, range, padZero, createNamespace } from '../utils';
+import {
+  pick,
+  range,
+  padZero,
+  createNamespace,
+  ComponentInstance,
+} from '../utils';
 import {
   times,
   ColumnType,
@@ -57,7 +63,7 @@ export default createComponent({
       return props.minDate;
     };
 
-    const picker = ref();
+    const picker = ref<ComponentInstance>();
     const currentDate = ref(formatValue(props.modelValue));
 
     const getBoundary = (type: 'max' | 'min', value: Date) => {
@@ -207,13 +213,13 @@ export default createComponent({
       });
 
       nextTick(() => {
-        picker.value.setValues(values);
+        picker.value!.setValues(values);
       });
     };
 
     const updateInnerValue = () => {
       const { type } = props;
-      const indexes = picker.value.getIndexes();
+      const indexes = picker.value!.getIndexes();
 
       const getValue = (type: ColumnType) => {
         let index = 0;
