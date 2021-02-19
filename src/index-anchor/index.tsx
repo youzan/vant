@@ -26,7 +26,7 @@ export default createComponent({
       active: false,
     });
 
-    const root = ref();
+    const root = ref<HTMLElement>();
     const { parent } = useParent<IndexBarProvide>(INDEX_BAR_KEY);
 
     if (!parent) {

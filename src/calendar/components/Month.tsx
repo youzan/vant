@@ -55,8 +55,8 @@ export default createComponent({
 
   setup(props, { emit }) {
     const [visible, setVisible] = useToggle();
-    const daysRef = ref();
-    const monthRef = ref();
+    const daysRef = ref<HTMLElement>();
+    const monthRef = ref<HTMLElement>();
     const height = useHeight(monthRef);
 
     const title = computed(() => formatMonthTitle(props.date));
@@ -82,7 +82,7 @@ export default createComponent({
       const el = props.showSubtitle ? daysRef.value : monthRef.value;
 
       const scrollTop =
-        el.getBoundingClientRect().top -
+        el!.getBoundingClientRect().top -
         body.getBoundingClientRect().top +
         body.scrollTop;
 

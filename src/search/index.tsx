@@ -1,7 +1,12 @@
 import { ref, PropType, CSSProperties } from 'vue';
 
 // Utils
-import { pick, createNamespace, preventDefault } from '../utils';
+import {
+  pick,
+  createNamespace,
+  preventDefault,
+  ComponentInstance,
+} from '../utils';
 
 // Composition
 import { useExpose } from '../composables/use-expose';
@@ -44,7 +49,7 @@ export default createComponent({
   emits: ['update:modelValue', 'search', 'cancel'],
 
   setup(props, { emit, slots, attrs }) {
-    const filedRef = ref();
+    const filedRef = ref<ComponentInstance>();
 
     const onCancel = () => {
       if (!slots.action) {

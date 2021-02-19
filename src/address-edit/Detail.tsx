@@ -1,7 +1,7 @@
 import { PropType, ref } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { ComponentInstance, createNamespace } from '../utils';
 import { isAndroid } from '../utils/validate/system';
 
 // Components
@@ -31,7 +31,7 @@ export default createComponent({
   emits: ['blur', 'focus', 'input', 'select-search'],
 
   setup(props, { emit }) {
-    const field = ref();
+    const field = ref<ComponentInstance>();
 
     const showSearchResult = () =>
       props.focused && props.searchResult && props.showSearchResult;
@@ -42,7 +42,7 @@ export default createComponent({
     };
 
     const onFinish = () => {
-      field.value.blur();
+      field.value!.blur();
     };
 
     const renderFinish = () => {

@@ -1,7 +1,7 @@
 import { ref, watch, computed, nextTick, reactive, PropType } from 'vue';
 
 // Utils
-import { createNamespace, isObject } from '../utils';
+import { ComponentInstance, createNamespace, isObject } from '../utils';
 import { isMobile } from '../utils/validate/mobile';
 
 // Composition
@@ -113,7 +113,7 @@ export default createComponent({
   ],
 
   setup(props, { emit, slots }) {
-    const areaRef = ref();
+    const areaRef = ref<ComponentInstance>();
 
     const state = reactive({
       data: {} as AddressInfo,
