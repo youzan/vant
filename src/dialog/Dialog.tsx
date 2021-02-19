@@ -18,10 +18,10 @@ export type DialogAction = 'confirm' | 'cancel';
 export type DialogMessageAlign = 'left' | 'center' | 'right';
 
 const popupKeys = [
-  ...Object.keys(popupSharedProps),
+  ...(Object.keys(popupSharedProps) as Array<keyof typeof popupSharedProps>),
   'transition',
   'closeOnPopstate',
-];
+] as const;
 
 export default createComponent({
   props: {
