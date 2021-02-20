@@ -33,7 +33,9 @@ export default createComponent({
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
-        console.error('[Vant] TabbarItem must be a child component of Tabbar.');
+        console.error(
+          '[Vant] <TabbarItem> must be a child component of <Tabbar>.'
+        );
       }
       return;
     }

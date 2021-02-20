@@ -1,5 +1,5 @@
 import { raf, cancelRaf } from '@vant/use';
-import { getScrollTop, setScrollTop } from '../utils';
+import { ScrollElement, getScrollTop, setScrollTop } from '../utils';
 
 let rafId: number;
 
@@ -26,7 +26,7 @@ export function scrollLeftTo(
 }
 
 export function scrollTopTo(
-  scroller: HTMLElement,
+  scroller: ScrollElement,
   to: number,
   duration: number,
   callback: () => void

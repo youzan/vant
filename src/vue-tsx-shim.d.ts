@@ -20,9 +20,10 @@ declare module 'vue' {
     onPress?: EventHandler;
     onScale?: EventHandler;
     onCancel?: EventHandler;
-    onOpened?: EventHandler;
     onClosed?: EventHandler;
     onChange?: EventHandler;
+    onOpened?: EventHandler;
+    onScroll?: EventHandler;
     onSubmit?: EventHandler;
     onSelect?: EventHandler;
     onToggle?: EventHandler;
