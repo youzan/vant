@@ -267,11 +267,11 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Emitted when a tab is clicked | name，title |
-| change | Emitted when active tab changed | name，title |
-| disabled | Emitted when a disabled tab is clicked | name，title |
-| rendered | Emitted when content first rendered in lazy-render mode | name，title |
-| scroll | Emitted when tab scrolling in sticky mode | object: { scrollTop, isFixed } |
+| click | Emitted when a tab is clicked | _name: string \| number, title: string_ |
+| change | Emitted when active tab changed | _name: string \| number, title: string_ |
+| disabled | Emitted when a disabled tab is clicked | _name: string \| number, title: string_ |
+| rendered | Emitted when content first rendered in lazy-render mode | _name: string \| number, title: string_ |
+| scroll | Emitted when tab scrolling in sticky mode | _{ scrollTop: number, isFixed: boolean }_ |
 
 ### Tabs Methods
 
@@ -280,7 +280,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Tabs i
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | resize | Resize Tabs when container element resized or visibility changed | - | - |
-| scrollTo | Go to specified tab in scrollspy mode | name | - |
+| scrollTo | Go to specified tab in scrollspy mode | _name: string \| number_ | - |
 
 ### Tabs Slots
 

@@ -1,6 +1,6 @@
 import { isIOS as checkIsIOS } from '../validate/system';
 
-type ScrollElement = Element | Window;
+export type ScrollElement = Element | Window;
 
 function isWindow(val: unknown): val is Window {
   return val === window;
@@ -36,7 +36,7 @@ export function setRootScrollTop(value: number) {
 }
 
 // get distance from element top to page top or scroller top
-export function getElementTop(el: ScrollElement, scroller?: HTMLElement) {
+export function getElementTop(el: ScrollElement, scroller?: ScrollElement) {
   if (isWindow(el)) {
     return 0;
   }

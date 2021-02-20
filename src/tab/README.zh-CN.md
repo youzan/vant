@@ -278,11 +278,11 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
-| click | 点击标签时触发 | name：标识符，title：标题 |
-| change | 当前激活的标签改变时触发 | name：标识符，title：标题 |
-| disabled | 点击被禁用的标签时触发 | name：标识符，title：标题 |
-| rendered | 标签内容首次渲染时触发（仅在开启延迟渲染后触发） | name：标识符，title：标题 |
-| scroll | 滚动时触发，仅在 sticky 模式下生效 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
+| click | 点击标签时触发 | _name: string \| number, title: string_ |
+| change | 当前激活的标签改变时触发 | _name: string \| number, title: string_ |
+| disabled | 点击被禁用的标签时触发 | _name: string \| number, title: string_ |
+| rendered | 标签内容首次渲染时触发（仅在开启延迟渲染后触发） | _name: string \| number, title: string_ |
+| scroll | 滚动时触发，仅在 sticky 模式下生效 | _{ scrollTop: number, isFixed: boolean }_ |
 
 ### Tabs 方法
 
@@ -291,7 +291,7 @@ export default {
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | resize | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 | - | - |
-| scrollTo | 滚动到指定的标签页，在滚动导航模式下可用 | name: 标识符 | - |
+| scrollTo | 滚动到指定的标签页，在滚动导航模式下可用 | _name: string \| number_ | - |
 
 ### Tabs Slots
 

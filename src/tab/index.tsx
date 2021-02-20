@@ -1,6 +1,6 @@
-import { ref, watch, nextTick } from 'vue';
+import { ref, watch, nextTick, PropType, CSSProperties } from 'vue';
 import { createNamespace, UnknownProp } from '../utils';
-import { TABS_KEY } from '../tabs';
+import { TABS_KEY, TabsProvide } from '../tabs';
 
 // Composition
 import { useParent } from '@vant/use';
@@ -20,15 +20,18 @@ export default createComponent({
     title: String,
     disabled: Boolean,
     titleClass: UnknownProp,
-    titleStyle: null,
+    titleStyle: [String, Object] as PropType<string | CSSProperties>,
   },
 
   setup(props, { slots }) {
     const inited = ref(false);
-    const { parent, index } = useParent(TABS_KEY);
+    const { parent, index } = useParent<TabsProvide>(TABS_KEY);
 
     if (!parent) {
-      throw new Error('[Vant] Tabs: <van-tab> must be used inside <van-tabs>');
+      if (process.env.NODE_ENV !== 'production') {
+        console.error('[Vant] Tab must be a child component of Tabs.');
+      }
+      return;
     }
 
     const getName = () => props.name ?? index.value;
@@ -38,7 +41,7 @@ export default createComponent({
 
       if (parent.props.lazyRender) {
         nextTick(() => {
-          parent.emit('rendered', getName(), props.title);
+          parent.onRendered(getName(), props.title);
         });
       }
     };

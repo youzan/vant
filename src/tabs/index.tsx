@@ -1,4 +1,15 @@
-import { ref, watch, computed, reactive, nextTick, onActivated } from 'vue';
+import {
+  ref,
+  watch,
+  computed,
+  reactive,
+  nextTick,
+  PropType,
+  onActivated,
+  CSSProperties,
+  ComponentPublicInstance,
+  ComputedRef,
+} from 'vue';
 
 // Utils
 import {
@@ -11,10 +22,11 @@ import {
   createNamespace,
   getVisibleHeight,
   setRootScrollTop,
+  ComponentInstance,
 } from '../utils';
 import { scrollLeftTo, scrollTopTo } from './utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
-import { callInterceptor } from '../utils/interceptor';
+import { callInterceptor, Interceptor } from '../utils/interceptor';
 
 // Composition
 import {
@@ -24,7 +36,7 @@ import {
   useEventListener,
   onMountedOrActivated,
 } from '@vant/use';
-import { route } from '../composables/use-route';
+import { route, RouteProps } from '../composables/use-route';
 import { useRefs } from '../composables/use-refs';
 import { useExpose } from '../composables/use-expose';
 
@@ -37,6 +49,21 @@ const [createComponent, bem] = createNamespace('tabs');
 
 export const TABS_KEY = 'vanTabs';
 
+export type TabType = 'line' | 'card';
+
+export type TabsProvide = {
+  props: {
+    animated?: boolean;
+    swipeable?: boolean;
+    scrollspy?: boolean;
+    lazyRender: boolean;
+  };
+  setLine: () => void;
+  onRendered: (name: string | number, title?: string) => void;
+  scrollIntoView: (immediate?: boolean) => void;
+  currentName: ComputedRef<number | string | undefined>;
+};
+
 export default createComponent({
   props: {
     color: String,
@@ -48,11 +75,11 @@ export default createComponent({
     background: String,
     lineWidth: [Number, String],
     lineHeight: [Number, String],
-    beforeChange: Function,
+    beforeChange: Function as PropType<Interceptor>,
     titleActiveColor: String,
     titleInactiveColor: String,
     type: {
-      type: String,
+      type: String as PropType<TabType>,
       default: 'line',
     },
     active: {
@@ -84,18 +111,18 @@ export default createComponent({
   emits: ['click', 'change', 'scroll', 'disabled', 'rendered', 'update:active'],
 
   setup(props, { emit, slots }) {
-    let tabHeight;
-    let lockScroll;
-    let stickyFixed;
+    let tabHeight: number;
+    let lockScroll: boolean;
+    let stickyFixed: boolean;
 
-    const root = ref();
-    const navRef = ref();
-    const wrapRef = ref();
+    const root = ref<HTMLElement>();
+    const navRef = ref<HTMLElement>();
+    const wrapRef = ref<HTMLElement>();
 
     const windowSize = useWindowSize();
     const scroller = useScrollParent(root);
-    const [titleRefs, setTitleRefs] = useRefs();
-    const { children, linkChildren } = useChildren(TABS_KEY);
+    const [titleRefs, setTitleRefs] = useRefs<ComponentInstance>();
+    const { children, linkChildren } = useChildren<ComponentInstance>(TABS_KEY);
 
     const state = reactive({
       inited: false,
@@ -103,7 +130,7 @@ export default createComponent({
       currentIndex: -1,
       lineStyle: {
         backgroundColor: props.color,
-      },
+      } as CSSProperties,
     });
 
     // whether the nav is scrollable
@@ -116,7 +143,10 @@ export default createComponent({
       background: props.background,
     }));
 
-    const getTabName = (tab, index) => tab.name ?? index;
+    const getTabName = (
+      tab: ComponentInstance,
+      index: number
+    ): number | string => tab.name ?? index;
 
     const currentName = computed(() => {
       const activeTab = children[state.currentIndex];
@@ -136,11 +166,11 @@ export default createComponent({
     });
 
     // scroll active tab into view
-    const scrollIntoView = (immediate) => {
+    const scrollIntoView = (immediate?: boolean) => {
       const nav = navRef.value;
       const titles = titleRefs.value;
 
-      if (!scrollable.value || !titles || !titles[state.currentIndex]) {
+      if (!scrollable.value || !nav || !titles || !titles[state.currentIndex]) {
         return;
       }
 
@@ -161,7 +191,7 @@ export default createComponent({
           !titles ||
           !titles[state.currentIndex] ||
           props.type !== 'line' ||
-          isHidden(root.value)
+          isHidden(root.value!)
         ) {
           return;
         }
@@ -170,7 +200,7 @@ export default createComponent({
         const { lineWidth, lineHeight } = props;
         const left = title.offsetLeft + title.offsetWidth / 2;
 
-        const lineStyle = {
+        const lineStyle: CSSProperties = {
           width: addUnit(lineWidth),
           backgroundColor: props.color,
           transform: `translateX(${left}px) translateX(-50%)`,
@@ -190,7 +220,7 @@ export default createComponent({
       });
     };
 
-    const findAvailableTab = (index) => {
+    const findAvailableTab = (index: number) => {
       const diff = index < state.currentIndex ? -1 : 1;
 
       while (index >= 0 && index < children.length) {
@@ -202,7 +232,7 @@ export default createComponent({
       }
     };
 
-    const setCurrentIndex = (currentIndex) => {
+    const setCurrentIndex = (currentIndex: number) => {
       const newIndex = findAvailableTab(currentIndex);
 
       if (!isDef(newIndex)) {
@@ -225,7 +255,7 @@ export default createComponent({
     };
 
     // correct the index of active tab
-    const setCurrentIndexByName = (name) => {
+    const setCurrentIndexByName = (name: number | string) => {
       const matched = children.filter(
         (tab, index) => getTabName(tab, index) === name
       );
@@ -238,7 +268,7 @@ export default createComponent({
       if (props.scrollspy) {
         const target = children[state.currentIndex].$el;
 
-        if (target) {
+        if (target && scroller.value) {
           const to = getElementTop(target, scroller.value) - scrollOffset.value;
 
           lockScroll = true;
@@ -255,7 +285,7 @@ export default createComponent({
     };
 
     // emit event when clicked
-    const onClick = (item, index) => {
+    const onClick = (item: ComponentInstance, index: number) => {
       const { title, disabled } = children[index];
       const name = getTabName(children[index], index);
 
@@ -272,16 +302,19 @@ export default createComponent({
         });
 
         emit('click', name, title);
-        route(item);
+        route(item as ComponentPublicInstance<RouteProps>);
       }
     };
 
-    const onStickyScroll = (params) => {
+    const onStickyScroll = (params: {
+      isFixed: boolean;
+      scrollTop: number;
+    }) => {
       stickyFixed = params.isFixed;
       emit('scroll', params);
     };
 
-    const scrollTo = (name) => {
+    const scrollTo = (name: number | string) => {
       nextTick(() => {
         setCurrentIndexByName(name);
         scrollToCurrentContent(true);
@@ -390,7 +423,7 @@ export default createComponent({
         // scroll to correct position
         if (stickyFixed && !props.scrollspy) {
           setRootScrollTop(
-            Math.ceil(getElementTop(root.value) - offsetTopPx.value)
+            Math.ceil(getElementTop(root.value!) - offsetTopPx.value)
           );
         }
       }
@@ -400,9 +433,13 @@ export default createComponent({
       setCurrentIndexByName(props.active);
       nextTick(() => {
         state.inited = true;
-        tabHeight = getVisibleHeight(wrapRef.value);
+        tabHeight = getVisibleHeight(wrapRef.value!);
         scrollIntoView(true);
       });
+    };
+
+    const onRendered = (name: string | number, title?: string) => {
+      emit('rendered', name, title);
     };
 
     useExpose({
@@ -415,9 +452,9 @@ export default createComponent({
     useEventListener('scroll', onScroll, { target: scroller.value });
 
     linkChildren({
-      emit,
       props,
       setLine,
+      onRendered,
       currentName,
       scrollIntoView,
     });
