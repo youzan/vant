@@ -32,7 +32,7 @@ export default createComponent({
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
         console.error(
-          '[Vant] IndexAnchor must be a child component of IndexBar.'
+          '[Vant] <IndexAnchor> must be a child component of <IndexBar>.'
         );
       }
       return;

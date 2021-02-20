@@ -5,10 +5,10 @@ import {
   reactive,
   nextTick,
   PropType,
+  ComputedRef,
   onActivated,
   CSSProperties,
   ComponentPublicInstance,
-  ComputedRef,
 } from 'vue';
 
 // Utils

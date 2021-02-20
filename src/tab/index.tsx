@@ -29,7 +29,7 @@ export default createComponent({
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
-        console.error('[Vant] Tab must be a child component of Tabs.');
+        console.error('[Vant] <Tab> must be a child component of <Tabs>.');
       }
       return;
     }
