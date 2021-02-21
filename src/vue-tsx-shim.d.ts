@@ -22,12 +22,14 @@ declare module 'vue' {
     onCancel?: EventHandler;
     onClosed?: EventHandler;
     onChange?: EventHandler;
+    onDelete?: EventHandler;
     onOpened?: EventHandler;
     onScroll?: EventHandler;
     onSubmit?: EventHandler;
     onSelect?: EventHandler;
     onToggle?: EventHandler;
     onConfirm?: EventHandler;
+    onPreview?: EventHandler;
     onKeypress?: EventHandler;
     onTouchend?: EventHandler;
     onClickStep?: EventHandler;

@@ -1,4 +1,25 @@
-export type ResultType = 'dataUrl' | 'text' | 'file';
+import { createNamespace } from '../utils';
+import type { ImageFit } from '../image';
+import type { Interceptor } from '../utils/interceptor';
+
+const [createComponent, bem] = createNamespace('uploader');
+
+export { bem, createComponent };
+
+export type UploaderResultType = 'dataUrl' | 'text' | 'file';
+
+export type FileListItem = {
+  url?: string;
+  file?: File;
+  content?: string;
+  isImage?: boolean;
+  status?: '' | 'uploading' | 'done' | 'failed';
+  message?: string;
+  imageFit?: ImageFit;
+  deletable?: boolean;
+  previewSize?: number | string;
+  beforeDelete?: Interceptor;
+};
 
 export function toArray<T>(item: T | T[]): T[] {
   if (Array.isArray(item)) {
@@ -8,8 +29,8 @@ export function toArray<T>(item: T | T[]): T[] {
   return [item];
 }
 
-export function readFileContent(file: File, resultType: ResultType) {
-  return new Promise<string | ArrayBuffer | null | void>((resolve) => {
+export function readFileContent(file: File, resultType: UploaderResultType) {
+  return new Promise<string | void>((resolve) => {
     if (resultType === 'file') {
       resolve();
       return;
@@ -18,7 +39,7 @@ export function readFileContent(file: File, resultType: ResultType) {
     const reader = new FileReader();
 
     reader.onload = (event) => {
-      resolve((event.target as FileReader).result);
+      resolve((event.target as FileReader).result as string);
     };
 
     if (resultType === 'dataUrl') {
@@ -28,15 +49,6 @@ export function readFileContent(file: File, resultType: ResultType) {
     }
   });
 }
-
-export type FileListItem = {
-  url?: string;
-  file?: File;
-  content?: string; // dataUrl
-  isImage?: boolean;
-  status?: '' | 'uploading' | 'done' | 'failed';
-  message?: string;
-};
 
 export function isOversize(
   items: FileListItem | FileListItem[],
@@ -81,7 +93,7 @@ export function isImageFile(item: FileListItem): boolean {
     return isImageUrl(item.url);
   }
 
-  if (item.content) {
+  if (typeof item.content === 'string') {
     return item.content.indexOf('data:image') === 0;
   }
 

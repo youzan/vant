@@ -38,9 +38,15 @@ export function get(object: any, path: string): any {
   return result;
 }
 
-export function pick<T, U extends keyof T>(obj: T, keys: ReadonlyArray<U>) {
+export function pick<T, U extends keyof T>(
+  obj: T,
+  keys: ReadonlyArray<U>,
+  ignoreUndefined?: boolean
+) {
   return keys.reduce((ret, key) => {
-    ret[key] = obj[key];
+    if (!ignoreUndefined || obj[key] !== undefined) {
+      ret[key] = obj[key];
+    }
     return ret;
   }, {} as Pick<T, U>);
 }
