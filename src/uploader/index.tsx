@@ -1,14 +1,17 @@
-import { ref, reactive } from 'vue';
+import { ref, reactive, PropType } from 'vue';
 
 // Utils
-import { bem, createComponent } from './shared';
-import { isPromise, getSizeStyle, pick } from '../utils';
+import { pick, isPromise, getSizeStyle, ComponentInstance } from '../utils';
 import {
+  bem,
   toArray,
   isOversize,
   filterFiles,
   isImageFile,
+  FileListItem,
   readFileContent,
+  createComponent,
+  UploaderResultType,
 } from './utils';
 
 // Composition
@@ -18,7 +21,29 @@ import { useLinkField } from '../composables/use-link-field';
 // Components
 import Icon from '../icon';
 import PreviewItem from './PreviewItem';
-import ImagePreview from '../image-preview';
+import ImagePreview, { ImagePreviewOptions } from '../image-preview';
+
+// Types
+import type { ImageFit } from '../image';
+import type { Interceptor } from '../utils/interceptor';
+
+type PromiseOrNot<T> = T | Promise<T>;
+
+export type UploaderBeforeRead = (
+  file: File | File[],
+  detail: {
+    name: string | number;
+    index: number;
+  }
+) => PromiseOrNot<File | File[] | undefined>;
+
+export type UploaderAfterRead = (
+  items: FileListItem | FileListItem[],
+  detail: {
+    name: string | number;
+    index: number;
+  }
+) => void;
 
 export default createComponent({
   props: {
@@ -27,11 +52,11 @@ export default createComponent({
     disabled: Boolean,
     lazyLoad: Boolean,
     uploadText: String,
-    afterRead: Function,
-    beforeRead: Function,
-    beforeDelete: Function,
+    afterRead: Function as PropType<UploaderAfterRead>,
+    beforeRead: Function as PropType<UploaderBeforeRead>,
+    beforeDelete: Function as PropType<Interceptor>,
     previewSize: [Number, String],
-    previewOptions: Object,
+    previewOptions: Object as PropType<ImagePreviewOptions>,
     name: {
       type: [Number, String],
       default: '',
@@ -41,7 +66,7 @@ export default createComponent({
       default: 'image/*',
     },
     modelValue: {
-      type: Array,
+      type: Array as PropType<FileListItem[]>,
       default: () => [],
     },
     maxSize: {
@@ -69,11 +94,11 @@ export default createComponent({
       default: true,
     },
     imageFit: {
-      type: String,
+      type: String as PropType<ImageFit>,
       default: 'cover',
     },
     resultType: {
-      type: String,
+      type: String as PropType<UploaderResultType>,
       default: 'dataUrl',
     },
     uploadIcon: {
@@ -104,7 +129,7 @@ export default createComponent({
       }
     };
 
-    const onAfterRead = (items) => {
+    const onAfterRead = (items: FileListItem | FileListItem[]) => {
       resetInput();
 
       if (isOversize(items, props.maxSize)) {
@@ -129,11 +154,11 @@ export default createComponent({
       }
     };
 
-    const readFile = (files) => {
+    const readFile = (files: File | File[]) => {
       const { maxCount, modelValue, resultType } = props;
 
       if (Array.isArray(files)) {
-        const remainCount = maxCount - modelValue.length;
+        const remainCount = +maxCount - modelValue.length;
 
         if (files.length > remainCount) {
           files = files.slice(0, remainCount);
@@ -142,11 +167,11 @@ export default createComponent({
         Promise.all(
           files.map((file) => readFileContent(file, resultType))
         ).then((contents) => {
-          const fileList = files.map((file, index) => {
-            const result = { file, status: '', message: '' };
+          const fileList = (files as File[]).map((file, index) => {
+            const result: FileListItem = { file, status: '', message: '' };
 
             if (contents[index]) {
-              result.content = contents[index];
+              result.content = contents[index] as string;
             }
 
             return result;
@@ -156,7 +181,11 @@ export default createComponent({
         });
       } else {
         readFileContent(files, resultType).then((content) => {
-          const result = { file: files, status: '', message: '' };
+          const result: FileListItem = {
+            file: files as File,
+            status: '',
+            message: '',
+          };
 
           if (content) {
             result.content = content;
@@ -167,17 +196,18 @@ export default createComponent({
       }
     };
 
-    const onChange = (event) => {
-      let { files } = event.target;
+    const onChange = (event: Event) => {
+      const { files } = event.target as HTMLInputElement;
 
-      if (props.disabled || !files.length) {
+      if (props.disabled || !files || !files.length) {
         return;
       }
 
-      files = files.length === 1 ? files[0] : [].slice.call(files);
+      const file =
+        files.length === 1 ? files[0] : ([].slice.call(files) as File[]);
 
       if (props.beforeRead) {
-        const response = props.beforeRead(files, getDetail());
+        const response = props.beforeRead(file, getDetail());
 
         if (!response) {
           resetInput();
@@ -190,7 +220,7 @@ export default createComponent({
               if (data) {
                 readFile(data);
               } else {
-                readFile(files);
+                readFile(file);
               }
             })
             .catch(resetInput);
@@ -198,19 +228,21 @@ export default createComponent({
         }
       }
 
-      readFile(files);
+      readFile(file);
     };
 
-    let imagePreview;
+    let imagePreview: ComponentInstance | undefined;
 
     const onClosePreview = () => {
       emit('close-preview');
     };
 
-    const previewImage = (item) => {
+    const previewImage = (item: FileListItem) => {
       if (props.previewFullImage) {
         const imageFiles = props.modelValue.filter(isImageFile);
-        const images = imageFiles.map((item) => item.content || item.url);
+        const images = imageFiles
+          .map((item) => item.content || item.url)
+          .filter((item) => !!item) as string[];
 
         imagePreview = ImagePreview({
           images,
@@ -227,7 +259,7 @@ export default createComponent({
       }
     };
 
-    const deleteFile = (item, index) => {
+    const deleteFile = (item: FileListItem, index: number) => {
       const fileList = props.modelValue.slice(0);
       fileList.splice(index, 1);
 
@@ -235,22 +267,18 @@ export default createComponent({
       emit('delete', item, getDetail(index));
     };
 
-    const renderPreviewItem = (item, index) => {
+    const renderPreviewItem = (item: FileListItem, index: number) => {
       const needPickData = [
         'imageFit',
         'deletable',
         'previewSize',
         'beforeDelete',
-      ];
+      ] as const;
 
-      const previewData = pick(props, needPickData);
-      const previewProp = pick(item, needPickData);
-
-      Object.keys(previewProp).forEach((item) => {
-        if (previewProp[item] !== undefined) {
-          previewData[item] = previewProp[item];
-        }
-      });
+      const previewData = {
+        ...pick(props, needPickData),
+        ...pick(item, needPickData, true),
+      };
 
       return (
         <PreviewItem
@@ -289,7 +317,7 @@ export default createComponent({
           type="file"
           class={bem('input')}
           accept={props.accept}
-          capture={props.capture}
+          capture={props.capture as any}
           multiple={props.multiple}
           disabled={props.disabled}
           onChange={onChange}

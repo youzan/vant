@@ -1,23 +1,28 @@
-import { bem } from './shared';
-import { isImageFile } from './utils';
+import { defineComponent, PropType } from 'vue';
+
+// Utils
+import { bem, isImageFile, FileListItem } from './utils';
 import { isDef, getSizeStyle } from '../utils';
-import { callInterceptor } from '../utils/interceptor';
+import { callInterceptor, Interceptor } from '../utils/interceptor';
 
 // Components
 import Icon from '../icon';
-import Image from '../image';
+import Image, { ImageFit } from '../image';
 import Loading from '../loading';
 
-export default {
+export default defineComponent({
   props: {
-    name: String,
-    item: Object,
+    name: [String, Number],
     index: Number,
-    imageFit: String,
+    imageFit: String as PropType<ImageFit>,
     lazyLoad: Boolean,
     deletable: Boolean,
     previewSize: [Number, String],
-    beforeDelete: Function,
+    beforeDelete: Function as PropType<Interceptor>,
+    item: {
+      type: Object as PropType<FileListItem>,
+      required: true,
+    },
   },
 
   emits: ['delete', 'preview'],
@@ -45,7 +50,7 @@ export default {
       }
     };
 
-    const onDelete = (event) => {
+    const onDelete = (event: MouseEvent) => {
       const { name, item, index, beforeDelete } = props;
       event.stopPropagation();
       callInterceptor({
@@ -120,4 +125,4 @@ export default {
       </div>
     );
   },
-};
+});
