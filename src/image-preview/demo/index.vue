@@ -33,10 +33,10 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import ImagePreview from '..';
+import ImagePreview, { ImagePreviewOptions } from '..';
 import Toast from '../../toast';
 
 const i18n = {
@@ -49,7 +49,7 @@ const i18n = {
     customConfig: '传入配置项',
     startPosition: '指定初始位置',
     componentCall: '组件调用',
-    index: (index) => `第${index + 1}页`,
+    index: (index: number) => `第${index + 1}页`,
   },
   'en-US': {
     closed: 'closed',
@@ -60,7 +60,7 @@ const i18n = {
     customConfig: 'Custom Config',
     startPosition: 'Set Start Position',
     componentCall: 'Component Call',
-    index: (index) => `Page: ${index}`,
+    index: (index: number) => `Page: ${index}`,
   },
 };
 
@@ -92,11 +92,11 @@ export default {
       state.show = true;
     };
 
-    const onChange = (index) => {
+    const onChange = (index: number) => {
       state.index = index;
     };
 
-    const showImagePreview = (options = {}) => {
+    const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
       const instance = ImagePreview({
         images,
         ...options,
@@ -104,7 +104,7 @@ export default {
 
       if (options.beforeClose) {
         setTimeout(() => {
-          instance.close();
+          instance?.close();
         }, 2000);
       }
     };

@@ -53,9 +53,10 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
+import { FileListItem } from '../utils';
 import Toast from '../../toast';
 
 const i18n = {
@@ -146,7 +147,7 @@ export default {
       ],
     });
 
-    const beforeRead = (file) => {
+    const beforeRead = (file: File) => {
       if (file.type !== 'image/jpeg') {
         Toast(t('invalidType'));
         return false;
@@ -154,11 +155,11 @@ export default {
       return true;
     };
 
-    const afterRead = (file, detail) => {
+    const afterRead = (file: FileListItem, detail: unknown) => {
       console.log(file, detail);
     };
 
-    const afterReadFailed = (item) => {
+    const afterReadFailed = (item: FileListItem) => {
       item.status = 'uploading';
       item.message = t('uploading');
 
@@ -168,7 +169,7 @@ export default {
       }, 1000);
     };
 
-    const onOversize = (file, detail) => {
+    const onOversize = (file: FileListItem, detail: unknown) => {
       console.log(file, detail);
       Toast(t('overSizeTip'));
     };
