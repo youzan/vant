@@ -10611,9 +10611,9 @@ vue-loader@^16.1.2:
     loader-utils "^2.0.0"
 
 vue-router@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-4.0.1.tgz?cache=0&sync_timestamp=1607347284428&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-4.0.1.tgz#309240e50524b1e7d4e82e27f0a0fa25fe3d1d71"
-  integrity sha1-MJJA5QUksefU6C4n8KD6Jf49HXE=
+  version "4.0.4"
+  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-4.0.4.tgz?cache=0&sync_timestamp=1613740744184&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-4.0.4.tgz#ad9b4b7bbdad622407b4ff189b1646f48c1e9053"
+  integrity sha1-rZtLe72tYiQHtP8YmxZG9IwekFM=
 
 vue@3.0.5:
   version "3.0.5"
