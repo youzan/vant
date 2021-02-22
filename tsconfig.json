@@ -14,5 +14,5 @@
     }
   },
   "include": ["types/**/*", "docs/**/*", "src/**/*"],
-  "exclude": ["**/*.spec.ts", "**/*.spec.js", "node_modules"]
+  "exclude": ["**/index.spec.ts", "**/*.spec.js", "node_modules"]
 }
