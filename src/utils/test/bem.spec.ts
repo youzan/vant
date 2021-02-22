@@ -21,8 +21,6 @@ test('bem', () => {
 
   expect(bem([])).toEqual('button');
 
-  expect(bem(null)).toEqual('button');
-
   expect(bem([null])).toEqual('button');
 
   expect(bem(['disabled', ''])).toEqual('button button--disabled');
