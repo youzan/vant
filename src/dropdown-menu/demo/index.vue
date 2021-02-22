@@ -57,9 +57,10 @@
   </demo-block>
 </template>
 
-<script>
+<script lang="ts">
 import { computed, reactive, ref, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
+import { ComponentInstance } from '../../utils';
 import { RED } from '../../utils/constant';
 
 const i18n = {
@@ -105,7 +106,7 @@ const i18n = {
 
 export default {
   setup() {
-    const item = ref(null);
+    const item = ref<ComponentInstance>();
     const t = useTranslate(i18n);
 
     const state = reactive({
