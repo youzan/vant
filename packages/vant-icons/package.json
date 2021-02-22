@@ -3,6 +3,7 @@
   "version": "1.5.2",
   "description": "vant icons",
   "main": "./src/config.js",
+  "types": "./src/config.d.ts",
   "files": [
     "src"
   ],
