@@ -169,18 +169,6 @@ test('should emit "update:modelValue" event after clicking vertical slider', () 
   expect(wrapper.emitted('update:modelValue').pop()).toEqual([100]);
 });
 
-test('should format initial value', (done) => {
-  mount(Slider, {
-    props: {
-      modelValue: undefined,
-      'onUpdate:modelValue': (value: number) => {
-        expect(value).toEqual(0);
-        done();
-      },
-    },
-  });
-});
-
 test('should not emit change event when value not changed', async () => {
   const wrapper = mount(Slider, {
     props: {
