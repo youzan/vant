@@ -6,12 +6,12 @@ test('should emit update:modelValue event when click the switch button', async (
 
   wrapper.trigger('click');
   expect(wrapper.emitted('update:modelValue').length).toEqual(1);
-  expect(wrapper.emitted<[boolean]>('update:modelValue')[0][0]).toEqual(true);
+  expect(wrapper.emitted('update:modelValue')[0]).toEqual([true]);
 
   await wrapper.setProps({ modelValue: true });
   wrapper.trigger('click');
   expect(wrapper.emitted('update:modelValue').length).toEqual(2);
-  expect(wrapper.emitted<[boolean]>('update:modelValue')[1][0]).toEqual(false);
+  expect(wrapper.emitted('update:modelValue')[1]).toEqual([false]);
 });
 
 test('should emit change event when click the switch button', async () => {
@@ -19,12 +19,12 @@ test('should emit change event when click the switch button', async () => {
 
   wrapper.trigger('click');
   expect(wrapper.emitted('change').length).toEqual(1);
-  expect(wrapper.emitted<[boolean]>('change')[0][0]).toEqual(true);
+  expect(wrapper.emitted('change')[0]).toEqual([true]);
 
   await wrapper.setProps({ modelValue: true });
   wrapper.trigger('click');
   expect(wrapper.emitted('change').length).toEqual(2);
-  expect(wrapper.emitted<[boolean]>('change')[1][0]).toEqual(false);
+  expect(wrapper.emitted('change')[1]).toEqual([false]);
 });
 
 test('should not emit change event or update:modelValue event if disabled', async () => {
@@ -107,5 +107,5 @@ test('should allow to custom active-value and inactive-value', () => {
   expect(wrapper.find('.van-switch--on').exists()).toBeTruthy();
 
   wrapper.trigger('click');
-  expect(wrapper.emitted<[boolean]>('update:modelValue')[0][0]).toEqual('off');
+  expect(wrapper.emitted('update:modelValue')[0]).toEqual(['off']);
 });

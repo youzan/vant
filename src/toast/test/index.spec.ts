@@ -25,7 +25,7 @@ test('should close Toast when using closeOnClick prop and clicked', () => {
   });
 
   wrapper.find('.van-toast').trigger('click');
-  expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
+  expect(wrapper.emitted('update:show')[0]).toEqual([false]);
 });
 
 test('should close Toast when using closeOnClickOverlay prop and overlay is clicked', () => {
@@ -37,5 +37,5 @@ test('should close Toast when using closeOnClickOverlay prop and overlay is clic
   });
 
   wrapper.find('.van-overlay').trigger('click');
-  expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
+  expect(wrapper.emitted('update:show')[0]).toEqual([false]);
 });
