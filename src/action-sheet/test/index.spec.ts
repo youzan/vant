@@ -1,5 +1,5 @@
 import { mount } from '../../../test';
-import ActionSheet from '..';
+import ActionSheet, { ActionSheetAction } from '..';
 
 test('should emit select event after clicking option', () => {
   const wrapper = mount(ActionSheet, {
@@ -11,7 +11,9 @@ test('should emit select event after clicking option', () => {
 
   wrapper.find('.van-action-sheet__item').trigger('click');
   expect(wrapper.emitted('select').length).toEqual(1);
-  expect(wrapper.emitted('select')[0][0]).toEqual({ name: 'Option' });
+  expect(wrapper.emitted<[ActionSheetAction]>('select')[0][0]).toEqual({
+    name: 'Option',
+  });
 });
 
 test('should call callback function after clicking option', () => {
@@ -200,7 +202,7 @@ test('should close after clicking option if close-on-click-action prop is true',
   option.trigger('click');
 
   expect(wrapper.emitted('update:show').length).toEqual(1);
-  expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
+  expect(wrapper.emitted<[boolean]>('update:show')[0][0]).toEqual(false);
 });
 
 test('should emit click-overlay event and closed after clicking the overlay', () => {
@@ -213,7 +215,7 @@ test('should emit click-overlay event and closed after clicking the overlay', ()
   });
 
   wrapper.find('.van-overlay').trigger('click');
-  expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
+  expect(wrapper.emitted<[boolean]>('update:show')[0][0]).toEqual(false);
   expect(onClickOverlay).toHaveBeenCalledTimes(1);
 });
 

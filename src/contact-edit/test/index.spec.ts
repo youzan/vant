@@ -1,4 +1,5 @@
-import ContactEdit from '..';
+import { VueWrapper } from '@vue/test-utils';
+import ContactEdit, { ContactInfo } from '..';
 import { mount, later } from '../../../test';
 
 const contactInfo = {
@@ -6,7 +7,7 @@ const contactInfo = {
   tel: '13000000000',
 };
 
-async function submitForm(wrapper) {
+async function submitForm(wrapper: VueWrapper<any>) {
   const form = wrapper.find('form');
   await form.trigger('submit');
   return later();
@@ -48,14 +49,14 @@ test('should emit save event after submitting form', async () => {
   });
 
   await submitForm(wrapper);
-  expect(wrapper.emitted('save')[0][0]).toEqual(contactInfo);
+  expect(wrapper.emitted<[ContactInfo]>('save')[0][0]).toEqual(contactInfo);
 });
 
 test('should watch contact info', async () => {
   const wrapper = mount(ContactEdit);
   await wrapper.setProps({ contactInfo });
   await submitForm(wrapper);
-  expect(wrapper.emitted('save')[0][0]).toEqual(contactInfo);
+  expect(wrapper.emitted<[ContactInfo]>('save')[0][0]).toEqual(contactInfo);
 });
 
 test('should allow deleting contact', async () => {
@@ -69,7 +70,7 @@ test('should allow deleting contact', async () => {
   deleteButton.trigger('click');
 
   await later();
-  document.querySelector('.van-dialog__confirm').click();
+  document.querySelector<HTMLElement>('.van-dialog__confirm')?.click();
 
   await later();
   expect(wrapper.emitted('delete')).toBeTruthy();
