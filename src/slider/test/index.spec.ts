@@ -6,7 +6,7 @@ import {
   mockGetBoundingClientRect,
 } from '../../../test';
 
-function mockRect(vertical) {
+function mockRect(vertical?: boolean) {
   return mockGetBoundingClientRect({
     width: vertical ? 0 : 100,
     height: vertical ? 100 : 0,
@@ -172,8 +172,8 @@ test('should emit "update:modelValue" event after clicking vertical slider', () 
 test('should format initial value', (done) => {
   mount(Slider, {
     props: {
-      modelValue: null,
-      'onUpdate:modelValue': (value) => {
+      modelValue: undefined,
+      'onUpdate:modelValue': (value: number) => {
         expect(value).toEqual(0);
         done();
       },

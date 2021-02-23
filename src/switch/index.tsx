@@ -14,11 +14,11 @@ export default createComponent({
     inactiveColor: String,
     activeValue: {
       type: UnknownProp,
-      default: true,
+      default: true as unknown,
     },
     inactiveValue: {
       type: UnknownProp,
-      default: false,
+      default: false as unknown,
     },
   },
 

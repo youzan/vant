@@ -13,6 +13,5 @@
       "@demo/*": ["docs/site/*"]
     }
   },
-  "include": ["types/**/*", "docs/**/*", "src/**/*"],
-  "exclude": ["**/index.spec.ts", "**/*.spec.js", "node_modules"]
+  "include": ["types/**/*", "docs/**/*", "src/**/*"]
 }
