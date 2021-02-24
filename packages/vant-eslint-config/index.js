@@ -6,6 +6,7 @@ module.exports = {
     'prettier',
     'prettier/vue',
     'prettier/@typescript-eslint',
+    'plugin:markdown/recommended',
   ],
 
   parserOptions: {
@@ -64,4 +65,13 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
+
+  overrides: [
+    {
+      files: ['**/*.md/*.js', '**/*.md/*.ts'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off',
+      },
+    },
+  ],
 };
