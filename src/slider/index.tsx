@@ -85,7 +85,7 @@ export default createComponent({
       if (isRange(modelValue)) {
         return `${((modelValue[0] - Number(min)) * 100) / scope.value}%`;
       }
-      return `0%`;
+      return '0%';
     };
 
     const barStyle = computed<CSSProperties>(() => {

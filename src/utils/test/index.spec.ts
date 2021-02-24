@@ -17,7 +17,6 @@ test('deepClone', () => {
   expect(deepClone(b)).toEqual(b);
   expect(deepClone(noop)).toEqual(noop);
   expect(deepClone(arr)).toEqual(arr);
-  expect(deepClone(undefined)).toEqual(undefined);
 });
 
 test('deepAssign', () => {

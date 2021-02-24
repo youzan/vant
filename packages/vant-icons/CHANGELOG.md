@@ -1,5 +1,13 @@
 ## Changelog
 
+## 1.5.3
+
+- add config type definition
+
+## 1.5.2
+
+- update CDN URL
+
 ## 1.5.1
 
 - add new wechat icon, rename old wechat icon to wechat-pay

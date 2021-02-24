@@ -93,7 +93,7 @@
   </van-tabs>
 </template>
 
-<script>
+<script lang="ts">
 import icons from '@vant/icons';
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
@@ -101,7 +101,7 @@ import { RED } from '../../utils/constant';
 import Notify from '../../notify';
 
 // from https://30secondsofcode.org
-function copyToClipboard(str) {
+function copyToClipboard(str: string) {
   const el = document.createElement('textarea');
   el.value = str;
   el.setAttribute('readonly', '');
@@ -109,18 +109,21 @@ function copyToClipboard(str) {
   el.style.left = '-9999px';
   document.body.appendChild(el);
 
-  const selected =
-    document.getSelection().rangeCount > 0
-      ? document.getSelection().getRangeAt(0)
-      : false;
+  const selection = document.getSelection();
+
+  if (!selection) {
+    return;
+  }
+
+  const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
 
   el.select();
   document.execCommand('copy');
   document.body.removeChild(el);
 
   if (selected) {
-    document.getSelection().removeAllRanges();
-    document.getSelection().addRange(selected);
+    selection.removeAllRanges();
+    selection.addRange(selected);
   }
 }
 
@@ -154,7 +157,7 @@ export default {
     const t = useTranslate(i18n);
     const tab = ref(0);
 
-    const copy = (icon, option = {}) => {
+    const copy = (icon: string, option: Record<string, unknown> = {}) => {
       let tag = `<van-icon name="${icon}"`;
       if ('dot' in option) {
         tag = `${tag} ${option.dot ? 'dot' : ''}`;

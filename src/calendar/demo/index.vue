@@ -118,9 +118,10 @@
   />
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
+import { DayItem } from '../components/Day';
 
 const i18n = {
   'zh-CN': {
@@ -131,7 +132,7 @@ const i18n = {
     youthDay: '青年节',
     calendar: '日历',
     maxRange: '日期区间最大范围',
-    selectCount: (count) => `选择了 ${count} 个日期`,
+    selectCount: (count: number) => `选择了 ${count} 个日期`,
     selectSingle: '选择单个日期',
     selectMultiple: '选择多个日期',
     selectRange: '选择日期区间',
@@ -155,7 +156,7 @@ const i18n = {
     youthDay: 'Youth Day',
     calendar: 'Calendar',
     maxRange: 'Max Range',
-    selectCount: (count) => `${count} dates selected`,
+    selectCount: (count: number) => `${count} dates selected`,
     selectSingle: 'Select Single Date',
     selectMultiple: 'Select Multiple Date',
     selectRange: 'Select Date Range',
@@ -176,7 +177,7 @@ const i18n = {
 export default {
   setup() {
     const t = useTranslate(i18n);
-    const state = reactive({
+    const state = reactive<Record<string, any>>({
       date: {
         maxRange: [],
         selectSingle: null,
@@ -221,7 +222,11 @@ export default {
       state.firstDayOfWeek = 0;
     };
 
-    const dayFormatter = (day) => {
+    const dayFormatter = (day: DayItem) => {
+      if (!day.date) {
+        return day;
+      }
+
       const month = day.date.getMonth() + 1;
       const date = day.date.getDate();
 
@@ -244,7 +249,7 @@ export default {
       return day;
     };
 
-    const show = (type, id) => {
+    const show = (type: string, id: string) => {
       resetSettings();
       state.id = id;
       state.type = type;
@@ -284,32 +289,32 @@ export default {
       }
     };
 
-    const formatDate = (date) => {
+    const formatDate = (date: Date) => {
       if (date) {
         return `${date.getMonth() + 1}/${date.getDate()}`;
       }
     };
 
-    const formatFullDate = (date) => {
+    const formatFullDate = (date: Date) => {
       if (date) {
         return `${date.getFullYear()}/${formatDate(date)}`;
       }
     };
 
-    const formatMultiple = (dates) => {
+    const formatMultiple = (dates: Date[]) => {
       if (dates.length) {
         return t('selectCount', dates.length);
       }
     };
 
-    const formatRange = (dateRange) => {
+    const formatRange = (dateRange: Date[]) => {
       if (dateRange.length) {
         const [start, end] = dateRange;
         return `${formatDate(start)} - ${formatDate(end)}`;
       }
     };
 
-    const onConfirm = (date) => {
+    const onConfirm = (date: Date | Date[]) => {
       state.showCalendar = false;
       state.date[state.id] = date;
     };

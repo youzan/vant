@@ -6,7 +6,6 @@
     "module": "esnext",
     "strict": true,
     "allowJs": true,
-    "noEmit": true,
     "noImplicitThis": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
@@ -14,6 +13,5 @@
       "@demo/*": ["docs/site/*"]
     }
   },
-  "include": ["types/**/*", "docs/**/*", "src/**/*"],
-  "exclude": ["**/*.spec.ts", "**/*.spec.js", "node_modules"]
+  "include": ["types/**/*", "docs/**/*", "src/**/*"]
 }
