@@ -1,4 +1,4 @@
 {
   "root": true,
-  "extends": ["@vant"]
+  "extends": ["@vant", "plugin:markdown/recommended"]
 }
