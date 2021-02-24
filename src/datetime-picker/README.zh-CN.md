@@ -70,7 +70,8 @@ export default {
     const formatter = (type, val) => {
       if (type === 'year') {
         return `${val}年`;
-      } else if (type === 'month') {
+      }
+      if (type === 'month') {
         return `${val}月`;
       }
       return val;
@@ -111,7 +112,8 @@ export default {
     const formatter = (type, val) => {
       if (type === 'month') {
         return `${val}月`;
-      } else if (type === 'day') {
+      }
+      if (type === 'day') {
         return `${val}日`;
       }
       return val;

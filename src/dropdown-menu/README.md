@@ -99,7 +99,7 @@ export default {
     return {
       item,
       state,
-      option,
+      options,
       onConfirm,
     };
   },
