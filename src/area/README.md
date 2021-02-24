@@ -103,10 +103,10 @@ An object contains three properties: `province_list`, `city_list` and `county_li
 Example of `AreaList`
 
 ```js
-{
+export default {
   province_list: {
     110000: 'Beijing',
-    330000: 'Zhejiang Province'
+    330000: 'Zhejiang Province',
   },
   city_list: {
     110100: 'Beijing City',
@@ -116,12 +116,12 @@ Example of `AreaList`
     110101: 'Dongcheng District',
     110102: 'Xicheng District',
     110105: 'Chaoyang District',
-    110106: 'Fengtai District'
+    110106: 'Fengtai District',
     330105: 'Gongshu District',
     330106: 'Xihu District',
     // ....
-  }
-}
+  },
+};
 ```
 
 All code of China: [Area.json](https://github.com/youzan/vant/blob/dev/src/area/demo/area-en.js)

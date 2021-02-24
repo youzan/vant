@@ -222,7 +222,7 @@ export default {
           Toast('请上传 jpg 格式图片');
           reject();
         } else {
-          let img = new File(['foo'], 'bar.jpg', {
+          const img = new File(['foo'], 'bar.jpg', {
             type: 'image/jpeg',
           });
           resolve(img);
@@ -276,10 +276,9 @@ export default {
         previewSize: 120,
       },
     ]);
-    return {
-      fileList:
-    };
-  }
+
+    return { fileList };
+  },
 };
 ```
 

@@ -66,7 +66,8 @@ export default {
     const formatter = (type, val) => {
       if (type === 'year') {
         return `${val} Year`;
-      } else if (type === 'month') {
+      }
+      if (type === 'month') {
         return `${val} Month`;
       }
       return val;
@@ -105,7 +106,8 @@ export default {
     const formatter = (type, val) => {
       if (type === 'month') {
         return `${val} Month`;
-      } else if (type === 'day') {
+      }
+      if (type === 'day') {
         return `${val} Day`;
       }
       return val;

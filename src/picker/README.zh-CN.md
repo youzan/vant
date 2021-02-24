@@ -290,8 +290,6 @@ export default {
 ```
 
 ```js
-import { reactive } from 'vue';
-
 export default {
   setup() {
     const columns = [
