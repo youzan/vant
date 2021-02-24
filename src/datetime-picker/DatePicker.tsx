@@ -107,12 +107,12 @@ export default createComponent({
     const ranges = computed(() => {
       const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = getBoundary(
         'max',
-        currentDate.value ? currentDate.value : props.minDate
+        currentDate.value || props.minDate
       );
 
       const { minYear, minDate, minMonth, minHour, minMinute } = getBoundary(
         'min',
-        currentDate.value ? currentDate.value : props.minDate
+        currentDate.value || props.minDate
       );
 
       let result: Array<{ type: ColumnType; range: number[] }> = [
@@ -192,7 +192,7 @@ export default createComponent({
     );
 
     const updateColumnValue = () => {
-      const value = currentDate.value ? currentDate.value : props.minDate;
+      const value = currentDate.value || props.minDate;
       const { formatter } = props;
 
       const values = originColumns.value.map((column) => {
@@ -237,7 +237,7 @@ export default createComponent({
       let month;
       let day;
       if (type === 'month-day') {
-        year = (currentDate.value ? currentDate.value : props.minDate).getFullYear();
+        year = (currentDate.value || props.minDate).getFullYear();
         month = getValue('month');
         day = getValue('day');
       } else {
@@ -291,11 +291,7 @@ export default createComponent({
     watch(columns, updateColumnValue);
 
     watch(currentDate, (value, oldValue) => {
-      if (!oldValue) {
-        emit('update:modelValue', null);
-      } else {
-        emit('update:modelValue', value);
-      }
+      emit('update:modelValue', oldValue ? value : null);
     });
 
     watch(
