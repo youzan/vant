@@ -16,7 +16,7 @@ yarn add @vant/eslint-config --dev
 
 ## Usage
 
-```js
+```json
 {
   "extends": ["@vant"]
 }
