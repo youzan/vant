@@ -60,7 +60,8 @@ export default createComponent({
         );
         return new Date(timestamp);
       }
-      return props.minDate;
+      
+      return undefined;
     };
 
     const picker = ref<ComponentInstance>();
@@ -106,12 +107,12 @@ export default createComponent({
     const ranges = computed(() => {
       const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = getBoundary(
         'max',
-        currentDate.value
+        currentDate.value || props.minDate
       );
 
       const { minYear, minDate, minMonth, minHour, minMinute } = getBoundary(
         'min',
-        currentDate.value
+        currentDate.value || props.minDate
       );
 
       let result: Array<{ type: ColumnType; range: number[] }> = [
@@ -191,7 +192,7 @@ export default createComponent({
     );
 
     const updateColumnValue = () => {
-      const { value } = currentDate;
+      const value = currentDate.value || props.minDate;
       const { formatter } = props;
 
       const values = originColumns.value.map((column) => {
@@ -236,7 +237,7 @@ export default createComponent({
       let month;
       let day;
       if (type === 'month-day') {
-        year = currentDate.value.getFullYear();
+        year = (currentDate.value || props.minDate).getFullYear();
         month = getValue('month');
         day = getValue('day');
       } else {
@@ -265,6 +266,7 @@ export default createComponent({
     };
 
     const onConfirm = () => {
+      emit('update:modelValue', currentDate.value);
       emit('confirm', currentDate.value);
     };
 
@@ -288,8 +290,8 @@ export default createComponent({
 
     watch(columns, updateColumnValue);
 
-    watch(currentDate, (value) => {
-      emit('update:modelValue', value);
+    watch(currentDate, (value, oldValue) => {
+      emit('update:modelValue', oldValue ? value : null);
     });
 
     watch(
@@ -302,7 +304,7 @@ export default createComponent({
       (value) => {
         value = formatValue(value);
 
-        if (value.valueOf() !== currentDate.value.valueOf()) {
+        if (value && value.valueOf() !== currentDate.value?.valueOf()) {
           currentDate.value = value;
         }
       }

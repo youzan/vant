@@ -208,7 +208,7 @@ test('use min-date with filter', async () => {
   });
 
   await later();
-
+  
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[0][0]).toEqual(new Date(2030, 0, 0, 0, 30));
 });
