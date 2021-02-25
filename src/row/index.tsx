@@ -1,5 +1,5 @@
 import { computed, PropType, ComputedRef } from 'vue';
-import { createNamespace } from '../utils';
+import { createNamespace, ComponentInstance } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [createComponent, bem] = createNamespace('row');
@@ -36,15 +36,13 @@ export default createComponent({
   },
 
   setup(props, { slots }) {
-    const { children, linkChildren } = useChildren(ROW_KEY);
+    const { children, linkChildren } = useChildren<ComponentInstance>(ROW_KEY);
 
     const groups = computed(() => {
       const groups: number[][] = [[]];
 
       let totalSpan = 0;
       children.forEach((child, index) => {
-        // TODO
-        // @ts-ignore
         totalSpan += Number(child.span);
 
         if (totalSpan > 24) {
