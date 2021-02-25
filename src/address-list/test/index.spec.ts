@@ -36,7 +36,7 @@ test('should emit select event after clicking radio icon', () => {
 
   wrapper.find('.van-radio__icon').trigger('click');
 
-  expect(wrapper.emitted('select')[0]).toEqual([list[0], 0]);
+  expect(wrapper.emitted('select')![0]).toEqual([list[0], 0]);
 });
 
 test('should emit click-item event when item is clicked', () => {
@@ -48,5 +48,5 @@ test('should emit click-item event when item is clicked', () => {
 
   wrapper.find('.van-address-item').trigger('click');
 
-  expect(wrapper.emitted('click-item')[0]).toEqual([list[0], 0]);
+  expect(wrapper.emitted('click-item')![0]).toEqual([list[0], 0]);
 });

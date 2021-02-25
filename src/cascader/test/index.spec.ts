@@ -14,7 +14,7 @@ test('should emit change event when active option changed', async () => {
   wrapper.find('.van-cascader__option').trigger('click');
 
   const firstOption = options[0];
-  expect(wrapper.emitted('change')[0]).toEqual([
+  expect(wrapper.emitted('change')![0]).toEqual([
     {
       value: firstOption.value,
       tabIndex: 0,
@@ -28,7 +28,7 @@ test('should emit change event when active option changed', async () => {
     .find('.van-cascader__option')
     .trigger('click');
   const secondOption = options[0].children[0];
-  expect(wrapper.emitted('change')[1]).toEqual([
+  expect(wrapper.emitted('change')![1]).toEqual([
     {
       value: secondOption.value,
       tabIndex: 1,
@@ -47,7 +47,7 @@ test('should emit finish event when all options is selected', async () => {
 
   await later();
   wrapper.find('.van-cascader__option').trigger('click');
-  expect(wrapper.emitted('finish')[0]).toEqual([
+  expect(wrapper.emitted('finish')![0]).toEqual([
     {
       value: option.value,
       tabIndex: 0,
@@ -59,7 +59,7 @@ test('should emit finish event when all options is selected', async () => {
 test('should emit close event when close icon is clicked', () => {
   const wrapper = mount(Cascader);
   wrapper.find('.van-cascader__close-icon').trigger('click');
-  expect(wrapper.emitted('close')[0]).toBeTruthy();
+  expect(wrapper.emitted('close')![0]).toBeTruthy();
 });
 
 test('should not render close icon when closeable is false', () => {
@@ -146,7 +146,7 @@ test('should allow to custom field names', async () => {
   wrapper.find('.van-cascader__option').trigger('click');
 
   const firstOption = options[0];
-  expect(wrapper.emitted('change')[0]).toEqual([
+  expect(wrapper.emitted('change')![0]).toEqual([
     {
       value: firstOption.code,
       tabIndex: 0,
@@ -160,7 +160,7 @@ test('should allow to custom field names', async () => {
     .find('.van-cascader__option')
     .trigger('click');
   const secondOption = options[0].items[0];
-  expect(wrapper.emitted('change')[1]).toEqual([
+  expect(wrapper.emitted('change')![1]).toEqual([
     {
       value: secondOption.code,
       tabIndex: 1,

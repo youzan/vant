@@ -53,7 +53,7 @@ test('should emit select event when an option is clicked', () => {
   });
 
   wrapper.find('.van-share-sheet__option').trigger('click');
-  expect(wrapper.emitted('select')[0]).toEqual([
+  expect(wrapper.emitted('select')![0]).toEqual([
     { icon: 'wechat', name: 'wechat' },
     0,
   ]);
@@ -68,8 +68,8 @@ test('should emit cancel event when the cancel button is clicked', () => {
 
   wrapper.find('.van-share-sheet__cancel').trigger('click');
 
-  expect(wrapper.emitted('update:show')[0]).toEqual([false]);
-  expect(wrapper.emitted('cancel')[0]).toBeTruthy();
+  expect(wrapper.emitted('update:show')![0]).toEqual([false]);
+  expect(wrapper.emitted('cancel')![0]).toBeTruthy();
 });
 
 test('should render title and description slot correctly', () => {
@@ -102,5 +102,5 @@ test('should emit click-overlay event when overlay is clicked', async () => {
   const overlay = root.querySelector('.van-overlay')!;
   trigger(overlay, 'click');
   expect(onClickOverlay).toHaveBeenCalledTimes(1);
-  expect(wrapper.emitted('update:show')[0]).toEqual([false]);
+  expect(wrapper.emitted('update:show')![0]).toEqual([false]);
 });

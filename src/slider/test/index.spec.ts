@@ -24,7 +24,7 @@ test('should emit "update:modelValue" event after dragging button', () => {
 
   const button = wrapper.find('.van-slider__button');
   triggerDrag(button, 50, 0);
-  expect(wrapper.emitted('update:modelValue').pop()).toEqual([100]);
+  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
 });
 
 test('should emit "update:modelValue" event after clicking slider', () => {
@@ -35,7 +35,7 @@ test('should emit "update:modelValue" event after clicking slider', () => {
   });
 
   trigger(wrapper, 'click', 100, 0);
-  expect(wrapper.emitted('update:modelValue').pop()).toEqual([100]);
+  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
 });
 
 test('should emit drag-start event when start dragging', () => {
@@ -128,7 +128,7 @@ test('should allow to drag vertical slider', () => {
 
   const button = wrapper.find('.van-slider__button');
   triggerDrag(button, 0, 50);
-  expect(wrapper.emitted('update:modelValue').pop()).toEqual([100]);
+  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
 
   restoreMock();
 });
@@ -166,7 +166,7 @@ test('should emit "update:modelValue" event after clicking vertical slider', () 
   });
 
   trigger(wrapper, 'click', 0, 100);
-  expect(wrapper.emitted('update:modelValue').pop()).toEqual([100]);
+  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
 });
 
 test('should not emit change event when value not changed', async () => {
@@ -179,11 +179,11 @@ test('should not emit change event when value not changed', async () => {
   const button = wrapper.find('.van-slider__button');
   trigger(button, 'touchstart');
   trigger(wrapper, 'click', 100, 0);
-  expect(wrapper.emitted('change').length).toEqual(1);
+  expect(wrapper.emitted('change')!.length).toEqual(1);
 
   await wrapper.setProps({ modelValue: 100 });
   trigger(button, 'touchstart');
   trigger(wrapper, 'click', 100, 0);
 
-  expect(wrapper.emitted('change').length).toEqual(1);
+  expect(wrapper.emitted('change')!.length).toEqual(1);
 });
