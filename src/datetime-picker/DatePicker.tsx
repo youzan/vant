@@ -31,18 +31,18 @@ const [createComponent] = createNamespace('date-picker');
 export default createComponent({
   props: {
     ...sharedProps,
-    modelValue: Date as PropType<Date>,
+    modelValue: Date,
     type: {
       type: String as PropType<DatetimePickerType>,
       default: 'datetime',
     },
     minDate: {
-      type: Date as PropType<Date>,
+      type: Date,
       default: () => new Date(currentYear - 10, 0, 1),
       validator: isDate,
     },
     maxDate: {
-      type: Date as PropType<Date>,
+      type: Date,
       default: () => new Date(currentYear + 10, 11, 31),
       validator: isDate,
     },
