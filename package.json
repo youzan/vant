@@ -67,9 +67,9 @@
   },
   "devDependencies": {
     "@vant/cli": "^3.4.1",
-    "@vue/compiler-sfc": "3.0.5",
+    "@vue/compiler-sfc": "^3.0.6",
     "prettier": "2.1.0",
-    "vue": "3.0.5"
+    "vue": "^3.0.6"
   },
   "sideEffects": [
     "es/**/style/*",

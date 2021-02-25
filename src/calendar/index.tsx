@@ -101,12 +101,12 @@ export default createComponent({
       default: true,
     },
     minDate: {
-      type: Date as PropType<Date>,
+      type: Date,
       validator: isDate,
       default: () => new Date(),
     },
     maxDate: {
-      type: Date as PropType<Date>,
+      type: Date,
       validator: isDate,
       default: () => {
         const now = new Date();
