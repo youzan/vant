@@ -38,15 +38,15 @@ export default createComponent({
     showMonthTitle: Boolean,
     firstDayOfWeek: Number,
     date: {
-      type: Date as PropType<Date>,
+      type: Date,
       required: true,
     },
     minDate: {
-      type: Date as PropType<Date>,
+      type: Date,
       required: true,
     },
     maxDate: {
-      type: Date as PropType<Date>,
+      type: Date,
       required: true,
     },
   },
