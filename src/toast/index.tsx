@@ -1,5 +1,5 @@
 import { ref, App, TeleportProps, getCurrentInstance } from 'vue';
-import { isObject, inBrowser } from '../utils';
+import { isObject, inBrowser, ComponentInstance } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanToast, { ToastType, ToastPosition } from './Toast';
 import type { LoadingType } from '../loading';
@@ -47,8 +47,7 @@ const defaultOptions: ToastOptions = {
   closeOnClickOverlay: false,
 };
 
-// TODO remove any
-let queue: any[] = [];
+let queue: ComponentInstance[] = [];
 let allowMultiple = false;
 let currentOptions = { ...defaultOptions };
 
@@ -104,11 +103,6 @@ function createInstance() {
 }
 
 function getInstance() {
-  /* istanbul ignore if */
-  if (!inBrowser) {
-    return {};
-  }
-
   if (!queue.length || allowMultiple) {
     const instance = createInstance();
     queue.push(instance);
@@ -118,6 +112,10 @@ function getInstance() {
 }
 
 function Toast(options: string | ToastOptions = {}) {
+  if (!inBrowser) {
+    return;
+  }
+
   const toast = getInstance();
   const parsedOptions = parseOptions(options);
 
@@ -150,7 +148,7 @@ Toast.clear = (all?: boolean) => {
     } else if (!allowMultiple) {
       queue[0].clear();
     } else {
-      queue.shift().clear();
+      queue.shift()!.clear();
     }
   }
 };
