@@ -1020,27 +1020,27 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@docsearch/css@3.0.0-alpha.33":
-  version "3.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docsearch/css/download/@docsearch/css-3.0.0-alpha.33.tgz#36c8d61ec001d678b501adf49117413dd9c41fa3"
-  integrity sha1-NsjWHsAB1ni1Aa30kRdBPdnEH6M=
+"@docsearch/css@3.0.0-alpha.31":
+  version "3.0.0-alpha.31"
+  resolved "https://registry.npm.taobao.org/@docsearch/css/download/@docsearch/css-3.0.0-alpha.31.tgz#5fb8595201b3f120e5bc4ae4d536068b1a5ca695"
+  integrity sha1-X7hZUgGz8SDlvErk1TYGixpcppU=
 
-"@docsearch/js@3.0.0-alpha.33":
-  version "3.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docsearch/js/download/@docsearch/js-3.0.0-alpha.33.tgz#a836ea49d5120fd1858cf529f48fddfb0f3b0d31"
-  integrity sha1-qDbqSdUSD9GFjPUp9I/d+w87DTE=
+"@docsearch/js@3.0.0-alpha.31":
+  version "3.0.0-alpha.31"
+  resolved "https://registry.npm.taobao.org/@docsearch/js/download/@docsearch/js-3.0.0-alpha.31.tgz#a180cb0b790682f41ac2a8e352e84bdd5a6a2807"
+  integrity sha1-oYDLC3kGgvQawqjjUuhL3VpqKAc=
   dependencies:
-    "@docsearch/react" "3.0.0-alpha.33"
+    "@docsearch/react" "3.0.0-alpha.31"
     preact "^10.0.0"
 
-"@docsearch/react@3.0.0-alpha.33":
-  version "3.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docsearch/react/download/@docsearch/react-3.0.0-alpha.33.tgz#2f8b5d90990b54b59db1a90e405d8008178e972a"
-  integrity sha1-L4tdkJkLVLWdsakOQF2ACBeOlyo=
+"@docsearch/react@3.0.0-alpha.31":
+  version "3.0.0-alpha.31"
+  resolved "https://registry.npm.taobao.org/@docsearch/react/download/@docsearch/react-3.0.0-alpha.31.tgz#3389cf4c7695e3a87a14b86e462ae08a8e08b84e"
+  integrity sha1-M4nPTHaV46h6FLhuRirgio4IuE4=
   dependencies:
     "@algolia/autocomplete-core" "^1.0.0-alpha.35"
     "@algolia/autocomplete-preset-algolia" "^1.0.0-alpha.35"
-    "@docsearch/css" "3.0.0-alpha.33"
+    "@docsearch/css" "3.0.0-alpha.31"
     algoliasearch "^4.0.0"
 
 "@eslint/eslintrc@^0.2.2":
@@ -1867,28 +1867,28 @@
     "@typescript-eslint/types" "4.6.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/cli@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.5.0.tgz#89f133f7357e99c57f130259493cd860490ad976"
-  integrity sha1-ifEz9zV+mcV/EwJZSTzYYEkK2XY=
+"@vant/cli@3.4.1":
+  version "3.4.1"
+  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.4.1.tgz#5d13f121bc3d6dd451c1bbf576fbf8556c67f243"
+  integrity sha1-XRPxIbw9bdRRwbv1dvv4VWxn8kM=
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-transform-object-assign" "^7.12.1"
     "@babel/plugin-transform-runtime" "^7.12.10"
     "@babel/preset-env" "^7.12.11"
     "@babel/preset-typescript" "^7.12.7"
-    "@docsearch/css" "3.0.0-alpha.33"
-    "@docsearch/js" "3.0.0-alpha.33"
+    "@docsearch/css" "3.0.0-alpha.31"
+    "@docsearch/js" "3.0.0-alpha.31"
     "@nuxt/friendly-errors-webpack-plugin" "^2.5.0"
     "@types/jest" "^26.0.20"
     "@types/webpack-dev-server" "^3.11.1"
-    "@vant/eslint-config" "^3.1.0"
+    "@vant/eslint-config" "^3.0.3"
     "@vant/markdown-loader" "^3.0.2"
     "@vant/markdown-vetur" "^2.0.2"
     "@vant/stylelint-config" "^1.4.2"
     "@vant/touch-emulator" "^1.2.0"
     "@vue/babel-plugin-jsx" "^1.0.1"
-    "@vue/test-utils" "2.0.0-rc.1"
+    "@vue/test-utils" "2.0.0-beta.13"
     address "^1.1.2"
     autoprefixer "^9.0.0"
     babel-jest "^26.6.3"
@@ -1905,7 +1905,7 @@
     fork-ts-checker-webpack-plugin "^6.1.0"
     gh-pages "^3.1.0"
     hash-sum "^2.0.0"
-    html-webpack-plugin "^5.2.0"
+    html-webpack-plugin "^5.0.0-alpha.14"
     husky "^4.3.7"
     jest "^26.6.3"
     jest-canvas-mock "^2.3.0"
@@ -1926,15 +1926,15 @@
     style-loader "^2.0.0"
     stylelint "^13.8.0"
     typescript "^4.1.3"
-    vue-jest "^5.0.0-alpha.8"
+    vue-jest "^5.0.0-alpha.7"
     vue-loader "^16.1.2"
     vue-router "^4.0.0"
-    webpack "^5.24.1"
-    webpack-dev-server "^3.11.0"
+    webpack "^5.13.0"
+    webpack-dev-server "^3.4.0"
     webpack-merge "^5.7.3"
     webpackbar "^5.0.0-3"
 
-"@vant/eslint-config@^3.1.0":
+"@vant/eslint-config@^3.0.3":
   version "3.1.0"
   resolved "https://registry.npm.taobao.org/@vant/eslint-config/download/@vant/eslint-config-3.1.0.tgz#f5cc4104cd72e2e643975bc229b4222c983ec304"
   integrity sha1-9cxBBM1y4uZDl1vCKbQiLJg+wwQ=
@@ -2102,10 +2102,10 @@
   resolved "https://registry.npm.taobao.org/@vue/shared/download/@vue/shared-3.0.6.tgz?cache=0&sync_timestamp=1614200563623&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fshared%2Fdownload%2F%40vue%2Fshared-3.0.6.tgz#d65576430fc4ad383dc7c829118798e5169178d4"
   integrity sha1-1lV2Qw/ErTg9x8gpEYeY5RaReNQ=
 
-"@vue/test-utils@2.0.0-rc.1":
-  version "2.0.0-rc.1"
-  resolved "https://registry.npm.taobao.org/@vue/test-utils/download/@vue/test-utils-2.0.0-rc.1.tgz?cache=0&sync_timestamp=1613347838079&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Ftest-utils%2Fdownload%2F%40vue%2Ftest-utils-2.0.0-rc.1.tgz#cc462997b50dc07d73dee151da0cbb1c39a40a5a"
-  integrity sha1-zEYpl7UNwH1z3uFR2gy7HDmkClo=
+"@vue/test-utils@2.0.0-beta.13":
+  version "2.0.0-beta.13"
+  resolved "https://registry.npm.taobao.org/@vue/test-utils/download/@vue/test-utils-2.0.0-beta.13.tgz?cache=0&sync_timestamp=1613347838079&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Ftest-utils%2Fdownload%2F%40vue%2Ftest-utils-2.0.0-beta.13.tgz#482aa29f4e80a713e03e22b736d7465d56909e66"
+  integrity sha1-SCqin06ApxPgPiK3NtdGXVaQnmY=
 
 "@webassemblyjs/ast@1.11.0":
   version "1.11.0"
@@ -5420,7 +5420,7 @@ html-tags@^3.1.0:
   resolved "https://registry.yarnpkg.com/html-tags/-/html-tags-3.1.0.tgz#7b5e6f7e665e9fb41f30007ed9e0d41e97fb2140"
   integrity sha512-1qYz89hW3lFDEazhjW0yVAV87lw8lVkrJocr72XmBkMKsoSVJCQx3W8BXsC7hO2qAt8BoVjYjtAcZ9perqGnNg==
 
-html-webpack-plugin@^5.2.0:
+html-webpack-plugin@^5.0.0-alpha.14:
   version "5.2.0"
   resolved "https://registry.npm.taobao.org/html-webpack-plugin/download/html-webpack-plugin-5.2.0.tgz?cache=0&sync_timestamp=1613744691795&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fhtml-webpack-plugin%2Fdownload%2Fhtml-webpack-plugin-5.2.0.tgz#d675ad0027a89de6b3d9950e0b57656dcfd97fbf"
   integrity sha1-1nWtACeoneaz2ZUOC1dlbc/Zf78=
@@ -10778,7 +10778,7 @@ vue-eslint-parser@^7.1.1:
     esquery "^1.0.1"
     lodash "^4.17.15"
 
-vue-jest@^5.0.0-alpha.8:
+vue-jest@^5.0.0-alpha.7:
   version "5.0.0-alpha.8"
   resolved "https://registry.npm.taobao.org/vue-jest/download/vue-jest-5.0.0-alpha.8.tgz?cache=0&sync_timestamp=1610927852246&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-jest%2Fdownload%2Fvue-jest-5.0.0-alpha.8.tgz#45b12335dbb73c9ab8309f1e24b2fc8781d519f9"
   integrity sha1-RbEjNdu3PJq4MJ8eJLL8h4HVGfk=
@@ -10876,7 +10876,7 @@ webpack-dev-middleware@^3.7.2:
     range-parser "^1.2.1"
     webpack-log "^2.0.0"
 
-webpack-dev-server@^3.11.0:
+webpack-dev-server@^3.4.0:
   version "3.11.2"
   resolved "https://registry.npm.taobao.org/webpack-dev-server/download/webpack-dev-server-3.11.2.tgz?cache=0&sync_timestamp=1610550019218&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwebpack-dev-server%2Fdownload%2Fwebpack-dev-server-3.11.2.tgz#695ebced76a4929f0d5de7fd73fafe185fe33708"
   integrity sha1-aV687Xakkp8NXef9c/r+GF/jNwg=
@@ -10939,7 +10939,7 @@ webpack-sources@^2.1.1:
     source-list-map "^2.0.1"
     source-map "^0.6.1"
 
-webpack@^5.24.1:
+webpack@^5.13.0:
   version "5.24.2"
   resolved "https://registry.npm.taobao.org/webpack/download/webpack-5.24.2.tgz?cache=0&sync_timestamp=1614198238337&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwebpack%2Fdownload%2Fwebpack-5.24.2.tgz#33790dad631e8b639f4246d762e257720875fe54"
   integrity sha1-M3kNrWMei2OfQkbXYuJXcgh1/lQ=

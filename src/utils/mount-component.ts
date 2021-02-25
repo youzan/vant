@@ -41,7 +41,7 @@ export function mountComponent(RootComponent: Component) {
   return {
     instance: app.mount(root),
     unmount() {
-      app.unmount(root);
+      app.unmount();
       document.body.removeChild(root);
     },
   };
