@@ -113,7 +113,7 @@ function getInstance() {
 
 function Toast(options: string | ToastOptions = {}) {
   if (!inBrowser) {
-    return;
+    return {} as ComponentInstance;
   }
 
   const toast = getInstance();
