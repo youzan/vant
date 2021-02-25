@@ -1,7 +1,7 @@
-import {ref} from "vue";
-import {mount} from "../../../test";
-import RadioGroup from "../index";
-import Radio from "../../radio";
+import { ref } from 'vue';
+import { mount } from '../../../test';
+import RadioGroup from '../index';
+import Radio from '../../radio';
 
 test('should emit "update:modelValue" and "change" event when radio is clicked', async () => {
   const wrapper = mount({
@@ -12,18 +12,25 @@ test('should emit "update:modelValue" and "change" event when radio is clicked',
         list: ['a', 'b', 'c', 'd'],
         emit,
         change(value: string) {
-          emit('change', value)
-        }
+          emit('change', value);
+        },
       };
     },
     render() {
       return (
-        <RadioGroup onChange={value => this.emit('change', value)} v-model={this.result}>
-          { this.list.map(item => <Radio key={item} name={item} disabled={item === 'd'}>{item}</Radio>) }
+        <RadioGroup
+          onChange={(value) => this.emit('change', value)}
+          v-model={this.result}
+        >
+          {this.list.map((item) => (
+            <Radio key={item} name={item} disabled={item === 'd'}>
+              {item}
+            </Radio>
+          ))}
         </RadioGroup>
       );
     },
-  })
+  });
 
   const icons = wrapper.findAll('.van-radio__icon');
   const labels = wrapper.findAll('.van-radio__label');
@@ -45,22 +52,29 @@ test('should not emit "change" event when radio group is disabled and radio is c
   const wrapper = mount({
     emits: ['change'],
     setup(props, { emit }) {
-      
       return {
         result: ref('a'),
         list: ['a', 'b', 'c', 'd'],
         emit,
-      }
+      };
     },
     render() {
       return (
-        <RadioGroup v-model={this.result} disabled onChange={value => this.emit('change', value)}>
-          {this.list.map(item => <Radio key={item} name={item}>label</Radio>)}
+        <RadioGroup
+          v-model={this.result}
+          disabled
+          onChange={(value) => this.emit('change', value)}
+        >
+          {this.list.map((item) => (
+            <Radio key={item} name={item}>
+              label
+            </Radio>
+          ))}
         </RadioGroup>
-      )
-    }
-  })
-  
+      );
+    },
+  });
+
   const icons = wrapper.findAll('.van-radio__icon');
   await icons[2].trigger('click');
   expect(wrapper.emitted('change')).toBeFalsy();
@@ -74,9 +88,9 @@ test('should change icon size when using icon-size prop', () => {
           <Radio />
           <Radio iconSize="5rem" />
         </RadioGroup>
-      )
-    }
-  })
+      );
+    },
+  });
 
   const icons = wrapper.findAll('.van-radio__icon');
   expect(icons[0].style.fontSize).toEqual('10rem');

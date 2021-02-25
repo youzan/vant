@@ -2,7 +2,7 @@ import Radio from '..';
 import { mount } from '../../../test';
 
 test('should emit "update:modelValue" event when radio icon or label is clicked', async () => {
-  const props = {name: 'a'};
+  const props = { name: 'a' };
   const wrapper = mount(Radio, {
     props,
     slots: {
@@ -14,7 +14,7 @@ test('should emit "update:modelValue" event when radio icon or label is clicked'
   const label = wrapper.find('.van-radio__label');
   icon.trigger('click');
   expect(wrapper.emitted('update:modelValue')[0]).toEqual([props.name]);
-  
+
   label.trigger('click');
   expect(wrapper.emitted('update:modelValue')[0]).toEqual([props.name]);
 });
