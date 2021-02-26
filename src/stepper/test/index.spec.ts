@@ -332,8 +332,9 @@ test('should limit dicimal length when using decimal-length prop', async () => {
     },
   });
   const plus = wrapper.find('.van-stepper__plus');
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual(['1.00']);
   await plus.trigger('click');
-  expect(wrapper.emitted('update:modelValue')![0]).toEqual(['1.20']);
+  expect(wrapper.emitted('update:modelValue')![1]).toEqual(['1.20']);
 });
 
 test('should limit decimal-length when inputing', async () => {
