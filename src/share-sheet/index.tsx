@@ -4,7 +4,8 @@ import { PropType } from 'vue';
 import { createNamespace, pick } from '../utils';
 
 // Components
-import Popup, { popupSharedProps } from '../popup';
+import Popup from '../popup';
+import { popupSharedProps } from '../popup/shared';
 
 export type ShareSheetOption = {
   name: string;
