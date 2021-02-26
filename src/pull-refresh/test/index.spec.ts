@@ -111,7 +111,7 @@ test('should render success text correctly', async () => {
   await later();
 
   // loading
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([true]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([true]);
   await wrapper.setProps({ modelValue: true });
 
   // success
@@ -133,7 +133,7 @@ test('should render success slot correctly', async () => {
   // loading
   const track = wrapper.find('.van-pull-refresh__track');
   triggerDrag(track, 0, 100);
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([true]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([true]);
   await wrapper.setProps({ modelValue: true });
 
   // success

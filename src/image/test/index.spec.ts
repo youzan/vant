@@ -13,7 +13,7 @@ test('should emit load event after image loaded', async () => {
 
   await wrapper.find('img').trigger('load');
 
-  expect(wrapper.emitted<[Event]>('load')[0][0]).toBeTruthy();
+  expect(wrapper.emitted<[Event]>('load')![0][0]).toBeTruthy();
   expect(wrapper.html()).toMatchSnapshot();
 });
 
@@ -37,7 +37,7 @@ test('should emit error event when load image failed', () => {
   });
 
   wrapper.find('img').trigger('error');
-  expect(wrapper.emitted<[Event]>('error')[0][0]).toBeTruthy();
+  expect(wrapper.emitted<[Event]>('error')![0][0]).toBeTruthy();
 });
 
 test('should render loading placeholder when using lazy-load prop', () => {

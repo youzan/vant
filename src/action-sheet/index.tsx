@@ -5,8 +5,9 @@ import { createNamespace, pick } from '../utils';
 
 // Components
 import Icon from '../icon';
-import Popup, { popupSharedProps } from '../popup';
+import Popup from '../popup';
 import Loading from '../loading';
+import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
 const [createComponent, bem] = createNamespace('action-sheet');
 
@@ -50,10 +51,6 @@ export default createComponent({
   emits: ['select', 'cancel', 'update:show'],
 
   setup(props, { slots, emit }) {
-    const popupPropKeys = Object.keys(popupSharedProps) as Array<
-      keyof typeof popupSharedProps
-    >;
-
     const onUpdateShow = (show: boolean) => {
       emit('update:show', show);
     };
@@ -161,7 +158,7 @@ export default createComponent({
         position="bottom"
         safeAreaInsetBottom={props.safeAreaInsetBottom}
         {...{
-          ...pick(props, popupPropKeys),
+          ...pick(props, popupSharedPropKeys),
           'onUpdate:show': onUpdateShow,
         }}
       >

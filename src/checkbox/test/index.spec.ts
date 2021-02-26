@@ -6,11 +6,11 @@ test('should emit "update:modelValue" event when checkbox icon is clicked', asyn
 
   const icon = wrapper.find('.van-checkbox__icon');
   icon.trigger('click');
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([true]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([true]);
 
   await wrapper.setProps({ modelValue: true });
   icon.trigger('click');
-  expect(wrapper.emitted('update:modelValue')[1]).toEqual([false]);
+  expect(wrapper.emitted('update:modelValue')![1]).toEqual([false]);
 });
 
 test('should emit change event when modelValue is changed', async () => {
@@ -19,11 +19,11 @@ test('should emit change event when modelValue is changed', async () => {
   const icon = wrapper.find('.van-checkbox__icon');
   icon.trigger('click');
   await wrapper.setProps({ modelValue: true });
-  expect(wrapper.emitted('change')[0]).toEqual([true]);
+  expect(wrapper.emitted('change')![0]).toEqual([true]);
 
   icon.trigger('click');
   await wrapper.setProps({ modelValue: false });
-  expect(wrapper.emitted('change')[1]).toEqual([false]);
+  expect(wrapper.emitted('change')![1]).toEqual([false]);
 });
 
 test('should not emit "update:modelValue" event when checkbox icon is disabled and clicked', () => {
@@ -59,7 +59,7 @@ test('should emit "update:modelValue" event when label is clicked', () => {
 
   const icon = wrapper.find('.van-checkbox__label');
   icon.trigger('click');
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([true]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([true]);
 });
 
 test('should not emit "update:modelValue" event when label is disabled and clicked', () => {

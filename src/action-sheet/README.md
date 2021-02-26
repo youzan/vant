@@ -175,6 +175,8 @@ export default {
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
 | round | Whether to show round corner | _boolean_ | `true` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
+| overlay-class | Custom overlay class | _string \| Array \| object_ | - |
+| overlay-style | Custom overlay style | _object_ | - |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `false` |

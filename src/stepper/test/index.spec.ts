@@ -30,8 +30,8 @@ test('should emit minus event when clicking the minus button', async () => {
 
   expect(wrapper.emitted('overlimit')).toBeFalsy();
   expect(wrapper.emitted('minus')).toBeTruthy();
-  expect(wrapper.emitted('change')[0]).toEqual([1, { name: '' }]);
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([1]);
+  expect(wrapper.emitted('change')![0]).toEqual([1, { name: '' }]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([1]);
 });
 
 test('should emit plus event when clicking the plus button', async () => {
@@ -45,8 +45,8 @@ test('should emit plus event when clicking the plus button', async () => {
 
   expect(wrapper.emitted('overlimit')).toBeFalsy();
   expect(wrapper.emitted('plus')).toBeTruthy();
-  expect(wrapper.emitted('change')[0]).toEqual([3, { name: '' }]);
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([3]);
+  expect(wrapper.emitted('change')![0]).toEqual([3, { name: '' }]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([3]);
 });
 
 test('should emit overlimit event when clicking disabled buttons', async () => {
@@ -59,11 +59,11 @@ test('should emit overlimit event when clicking disabled buttons', async () => {
 
   const minus = wrapper.find('.van-stepper__minus');
   await minus.trigger('click');
-  expect(wrapper.emitted('overlimit')[0]).toEqual(['minus']);
+  expect(wrapper.emitted('overlimit')![0]).toEqual(['minus']);
 
   const plus = wrapper.find('.van-stepper__plus');
   await plus.trigger('click');
-  expect(wrapper.emitted('overlimit')[1]).toEqual(['plus']);
+  expect(wrapper.emitted('overlimit')![1]).toEqual(['plus']);
 });
 
 test('should disable plus button when disable-plus prop is true', async () => {
@@ -122,7 +122,7 @@ test('should update value after long pressing', async () => {
   await plus.trigger('touchstart');
   await plus.trigger('touchend');
   await plus.trigger('click');
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([2]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([2]);
 
   await plus.trigger('touchstart');
   await later(1000);
@@ -157,17 +157,17 @@ test('should filter invalid value during user input', async () => {
   const inputEl = input.element as HTMLInputElement;
   inputEl.value = '';
   await input.trigger('input');
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual(['']);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual(['']);
 
   inputEl.value = 'a';
   await input.trigger('input');
   expect(inputEl.value).toEqual('');
-  expect(wrapper.emitted('update:modelValue')[1]).toBeFalsy();
+  expect(wrapper.emitted('update:modelValue')![1]).toBeFalsy();
 
   inputEl.value = '2';
   await input.trigger('input');
   expect(inputEl.value).toEqual('2');
-  expect(wrapper.emitted('update:modelValue')[1]).toEqual([2]);
+  expect(wrapper.emitted('update:modelValue')![1]).toEqual([2]);
 });
 
 test('shoud watch modelValue and format it', async () => {
@@ -179,7 +179,7 @@ test('shoud watch modelValue and format it', async () => {
   });
 
   await wrapper.setProps({ modelValue: 10 });
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([5]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([5]);
 });
 
 test('should format value to integer when using integer prop', async () => {
@@ -195,7 +195,7 @@ test('should format value to integer when using integer prop', async () => {
   await input.trigger('input');
   await input.trigger('blur');
 
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([2]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([2]);
 });
 
 test('should format value to default value when input is invalid', async () => {
@@ -210,7 +210,7 @@ test('should format value to default value when input is invalid', async () => {
   await input.trigger('input');
   await input.trigger('blur');
 
-  expect(wrapper.emitted('update:modelValue').pop()).toEqual([1]);
+  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([1]);
 });
 
 test('should emit focus event when input is focused', async () => {
@@ -240,10 +240,10 @@ test('should format input value when stepper blured', async () => {
   const input = wrapper.find('input');
   input.element.value = '';
   await input.trigger('input');
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual(['']);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual(['']);
 
   await input.trigger('blur');
-  expect(wrapper.emitted('update:modelValue')[1]).toEqual([3]);
+  expect(wrapper.emitted('update:modelValue')![1]).toEqual([3]);
   expect(wrapper.emitted('blur')).toBeTruthy();
 });
 
@@ -332,8 +332,9 @@ test('should limit dicimal length when using decimal-length prop', async () => {
     },
   });
   const plus = wrapper.find('.van-stepper__plus');
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual(['1.00']);
   await plus.trigger('click');
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual(['1.20']);
+  expect(wrapper.emitted('update:modelValue')![1]).toEqual(['1.20']);
 });
 
 test('should limit decimal-length when inputing', async () => {
@@ -357,11 +358,11 @@ test('should emit change event with name when using name prop', async () => {
   const plus = wrapper.find('.van-stepper__plus');
 
   await plus.trigger('click');
-  expect(wrapper.emitted('change')[0]).toEqual([2, { name: '' }]);
+  expect(wrapper.emitted('change')![0]).toEqual([2, { name: '' }]);
 
   await wrapper.setProps({ name: 'name' });
   await plus.trigger('click');
-  expect(wrapper.emitted('change')[1]).toEqual([3, { name: 'name' }]);
+  expect(wrapper.emitted('change')![1]).toEqual([3, { name: 'name' }]);
 });
 
 test('should watch min and max props and format modelValue', async () => {
@@ -372,13 +373,13 @@ test('should watch min and max props and format modelValue', async () => {
   });
 
   await wrapper.setProps({ min: 10 });
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([10]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([10]);
 
   await wrapper.setProps({
     min: 3,
     max: 8,
   });
-  expect(wrapper.emitted('update:modelValue')[1]).toEqual([8]);
+  expect(wrapper.emitted('update:modelValue')![1]).toEqual([8]);
 });
 
 test('should watch decimal-length prop and format modelValue', async () => {
@@ -388,7 +389,7 @@ test('should watch decimal-length prop and format modelValue', async () => {
     },
   });
   await wrapper.setProps({ decimalLength: 1 });
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual(['1.3']);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual(['1.3']);
 });
 
 test('should watch integer prop and format modelValue', async () => {
@@ -398,7 +399,7 @@ test('should watch integer prop and format modelValue', async () => {
     },
   });
   await wrapper.setProps({ integer: true });
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([1]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([1]);
 });
 
 test('should render placeholder correctly', () => {
@@ -425,5 +426,5 @@ test('should allow input be to empty when using allow-empty prop', async () => {
 
   await wrapper.setProps({ allowEmpty: false });
   await input.trigger('blur');
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([1]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([1]);
 });

@@ -66,7 +66,7 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vant/cli": "^3.4.1",
+    "@vant/cli": "^3.5.1",
     "@vue/compiler-sfc": "^3.0.6",
     "prettier": "2.1.0",
     "vue": "^3.0.6"
@@ -83,7 +83,7 @@
   },
   "web-types": "vetur/web-types.json",
   "browserslist": [
-    "Android >= 4.0",
-    "iOS >= 8"
+    "Chrome >= 51",
+    "iOS >= 10"
   ]
 }
