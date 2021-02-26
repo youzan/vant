@@ -5,7 +5,7 @@ import { createNamespace, pick } from '../utils';
 
 // Components
 import Popup from '../popup';
-import { popupSharedProps } from '../popup/shared';
+import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
 export type ShareSheetOption = {
   name: string;
@@ -26,6 +26,12 @@ const PRESET_ICONS = [
   'weapp-qrcode',
   'wechat-moments',
 ];
+
+const popupKeys = [
+  ...popupSharedPropKeys,
+  'closeOnPopstate',
+  'safeAreaInsetBottom',
+] as const;
 
 function getIconURL(icon: string) {
   if (PRESET_ICONS.indexOf(icon) !== -1) {
@@ -141,17 +147,7 @@ export default createComponent({
         class={bem()}
         position="bottom"
         {...{
-          ...pick(props, [
-            'show',
-            'overlay',
-            'duration',
-            'teleport',
-            'lazyRender',
-            'lockScroll',
-            'closeOnPopstate',
-            'closeOnClickOverlay',
-            'safeAreaInsetBottom',
-          ]),
+          ...pick(props, popupKeys),
           'onUpdate:show': toggle,
         }}
       >
