@@ -1,7 +1,6 @@
 import { deepClone } from '../deep-clone';
 import { deepAssign } from '../deep-assign';
 import { isDef, get, noop } from '..';
-import { isEmail } from '../validate/email';
 import { isMobile } from '../validate/mobile';
 import { isNumeric } from '../validate/number';
 import { isAndroid } from '../validate/system';
@@ -60,13 +59,6 @@ test('get', () => {
 
 test('isAndroid', () => {
   expect(isAndroid()).toBeFalsy();
-});
-
-test('isEmail', () => {
-  expect(isEmail('abc@gmail.com')).toBeTruthy();
-  expect(isEmail('abc@@gmail.com')).toBeFalsy();
-  expect(isEmail('@gmail.com')).toBeFalsy();
-  expect(isEmail('abc@')).toBeFalsy();
 });
 
 test('isMobile', () => {
