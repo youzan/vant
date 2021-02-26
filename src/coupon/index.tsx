@@ -4,7 +4,7 @@ import { RED } from '../utils/constant';
 import Checkbox from '../checkbox';
 
 export type CouponInfo = {
-  id: string;
+  id: string | number;
   name: string;
   endAt: number;
   value: number;
