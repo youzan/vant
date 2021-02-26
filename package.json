@@ -83,7 +83,7 @@
   },
   "web-types": "vetur/web-types.json",
   "browserslist": [
-    "Chrome >= 49",
+    "Chrome >= 51",
     "iOS >= 10"
   ]
 }
