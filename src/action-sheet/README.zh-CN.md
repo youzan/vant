@@ -189,6 +189,8 @@ export default {
 | duration | 动画时长，单位秒 | _number \| string_ | `0.3` |
 | round | 是否显示圆角 | _boolean_ | `true` |
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
+| overlay-class | 自定义遮罩层类名 | _string \| Array \| object_ | - |
+| overlay-style | 自定义遮罩层样式 | _object_ | - |
 | lock-scroll | 是否锁定背景滚动 | _boolean_ | `true` |
 | lazy-render | 是否在显示弹层时才渲染节点 | _boolean_ | `true` |
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `false` |
