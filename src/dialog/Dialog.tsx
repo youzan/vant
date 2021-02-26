@@ -6,10 +6,11 @@ import { createNamespace, addUnit, pick, UnknownProp } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 
 // Components
-import Popup, { popupSharedProps } from '../popup';
+import Popup from '../popup';
 import Button from '../button';
 import ActionBar from '../action-bar';
 import ActionBarButton from '../action-bar-button';
+import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
 const [createComponent, bem, t] = createNamespace('dialog');
 
@@ -18,7 +19,7 @@ export type DialogAction = 'confirm' | 'cancel';
 export type DialogMessageAlign = 'left' | 'center' | 'right';
 
 const popupKeys = [
-  ...(Object.keys(popupSharedProps) as Array<keyof typeof popupSharedProps>),
+  ...popupSharedPropKeys,
   'transition',
   'closeOnPopstate',
 ] as const;
