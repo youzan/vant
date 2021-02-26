@@ -13,10 +13,10 @@ test('should emit "update:modelValue" event when radio icon or label is clicked'
   const icon = wrapper.find('.van-radio__icon');
   const label = wrapper.find('.van-radio__label');
   icon.trigger('click');
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([props.name]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([props.name]);
 
   label.trigger('click');
-  expect(wrapper.emitted('update:modelValue')[0]).toEqual([props.name]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([props.name]);
 });
 
 test('should not emit "update:modelValue" event when radio icon is disabled and clicked', () => {

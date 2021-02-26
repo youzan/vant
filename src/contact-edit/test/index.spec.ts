@@ -49,14 +49,14 @@ test('should emit save event after submitting form', async () => {
   });
 
   await submitForm(wrapper);
-  expect(wrapper.emitted<[ContactInfo]>('save')[0][0]).toEqual(contactInfo);
+  expect(wrapper.emitted<[ContactInfo]>('save')![0][0]).toEqual(contactInfo);
 });
 
 test('should watch contact info', async () => {
   const wrapper = mount(ContactEdit);
   await wrapper.setProps({ contactInfo });
   await submitForm(wrapper);
-  expect(wrapper.emitted<[ContactInfo]>('save')[0][0]).toEqual(contactInfo);
+  expect(wrapper.emitted<[ContactInfo]>('save')![0][0]).toEqual(contactInfo);
 });
 
 test('should allow deleting contact', async () => {

@@ -10,8 +10,8 @@ test('should emit select event after clicking option', () => {
   });
 
   wrapper.find('.van-action-sheet__item').trigger('click');
-  expect(wrapper.emitted('select').length).toEqual(1);
-  expect(wrapper.emitted('select')[0]).toEqual([
+  expect(wrapper.emitted('select')!.length).toEqual(1);
+  expect(wrapper.emitted('select')![0]).toEqual([
     {
       name: 'Option',
     },
@@ -66,7 +66,7 @@ test('should emit cancel event after clicking cancel button', () => {
   });
 
   wrapper.find('.van-action-sheet__cancel').trigger('click');
-  expect(wrapper.emitted('cancel').length).toEqual(1);
+  expect(wrapper.emitted('cancel')!.length).toEqual(1);
 });
 
 test('should render subname correctly', () => {
@@ -204,8 +204,8 @@ test('should close after clicking option if close-on-click-action prop is true',
   const option = wrapper.find('.van-action-sheet__item');
   option.trigger('click');
 
-  expect(wrapper.emitted('update:show').length).toEqual(1);
-  expect(wrapper.emitted('update:show')[0]).toEqual([false]);
+  expect(wrapper.emitted('update:show')!.length).toEqual(1);
+  expect(wrapper.emitted('update:show')![0]).toEqual([false]);
 });
 
 test('should emit click-overlay event and closed after clicking the overlay', () => {
@@ -218,7 +218,7 @@ test('should emit click-overlay event and closed after clicking the overlay', ()
   });
 
   wrapper.find('.van-overlay').trigger('click');
-  expect(wrapper.emitted('update:show')[0]).toEqual([false]);
+  expect(wrapper.emitted('update:show')![0]).toEqual([false]);
   expect(onClickOverlay).toHaveBeenCalledTimes(1);
 });
 

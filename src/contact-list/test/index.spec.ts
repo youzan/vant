@@ -18,7 +18,7 @@ test('should render ContactList correctly', () => {
 test('should emit add event when add button is clicked', () => {
   const wrapper = mount(ContactList);
   wrapper.find('.van-contact-list__add').trigger('click');
-  expect(wrapper.emitted('add').length).toEqual(1);
+  expect(wrapper.emitted('add')!.length).toEqual(1);
 });
 
 test('should emit select event when radio is clicked', () => {
@@ -30,8 +30,8 @@ test('should emit select event when radio is clicked', () => {
 
   wrapper.find('.van-radio__icon').trigger('click');
 
-  expect(wrapper.emitted('select').length).toEqual(1);
-  expect(wrapper.emitted('select')[0]).toEqual([contactInfo, 0]);
+  expect(wrapper.emitted('select')!.length).toEqual(1);
+  expect(wrapper.emitted('select')![0]).toEqual([contactInfo, 0]);
 });
 
 test('should emit edit event when edit icon is clicked', () => {
@@ -43,6 +43,6 @@ test('should emit edit event when edit icon is clicked', () => {
 
   wrapper.find('.van-contact-list__edit').trigger('click');
 
-  expect(wrapper.emitted('edit').length).toEqual(1);
-  expect(wrapper.emitted('edit')[0]).toEqual([contactInfo, 0]);
+  expect(wrapper.emitted('edit')!.length).toEqual(1);
+  expect(wrapper.emitted('edit')![0]).toEqual([contactInfo, 0]);
 });
