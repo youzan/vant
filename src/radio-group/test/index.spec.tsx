@@ -37,11 +37,11 @@ test('should emit "update:modelValue" and "change" event when radio is clicked',
 
   await icons[2].trigger('click');
   expect(wrapper.vm.result).toEqual('c');
-  expect(wrapper.emitted('change')[0]).toEqual(['c']);
+  expect(wrapper.emitted('change')![0]).toEqual(['c']);
 
   await labels[1].trigger('click');
   expect(wrapper.vm.result).toEqual('b');
-  expect(wrapper.emitted('change')[1]).toEqual(['b']);
+  expect(wrapper.emitted('change')![1]).toEqual(['b']);
 
   await icons[3].trigger('click');
   await labels[3].trigger('click');
