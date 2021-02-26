@@ -124,11 +124,11 @@ test('should emit "exchange" event when exchange button is clicked', async () =>
 
   await field.setValue('1');
   await exchange.trigger('click');
-  expect(wrapper.emitted('exchange')[0]).toEqual(['1']);
+  expect(wrapper.emitted('exchange')![0]).toEqual(['1']);
 
   await wrapper.setProps({ code: '2' });
   await exchange.trigger('click');
-  expect(wrapper.emitted('exchange')[1]).toEqual(['2']);
+  expect(wrapper.emitted('exchange')![1]).toEqual(['2']);
 });
 
 test('should emit "update:code" event when input a code', async () => {
@@ -138,9 +138,9 @@ test('should emit "update:code" event when input a code', async () => {
   const field = wrapper.find('.van-field__control');
   await field.setValue('1');
   await exchange.trigger('click');
-  expect(wrapper.emitted('update:code')[0]).toEqual(['1']);
-  expect(wrapper.emitted('update:code')[1]).toEqual(['']);
+  expect(wrapper.emitted('update:code')![0]).toEqual(['1']);
+  expect(wrapper.emitted('update:code')![1]).toEqual(['']);
 
   await wrapper.setProps({ code: '2' });
-  expect(wrapper.emitted('update:code')[2]).toEqual(['2']);
+  expect(wrapper.emitted('update:code')![2]).toEqual(['2']);
 });
