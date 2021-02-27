@@ -14,12 +14,12 @@ const coupon = {
   endAt: 1514592000,
 };
 
-test('should be the sames as the last snapshot when render coupon cell', () => {
+test('should render CouponCell correctly', () => {
   const wrapper = mount(CouponCell);
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should be the sames as the last snapshot when render coupon cell with coupon', () => {
+test('should render CouponCell with chosenCoupon correctly', () => {
   const wrapper = mount(CouponCell, {
     props: {
       coupons: [coupon],
@@ -29,7 +29,7 @@ test('should be the sames as the last snapshot when render coupon cell with coup
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should be the sames as the last snapshot when render coupon cell with zero discount', () => {
+test('should render CouponCell correctly with zero discount', () => {
   const wrapper = mount(CouponCell, {
     props: {
       coupons: [{ ...coupon, value: 0, denominations: 150 }],
@@ -40,7 +40,7 @@ test('should be the sames as the last snapshot when render coupon cell with zero
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should click one times when coupon cell is clicked', () => {
+test('should click one time when coupon cell is clicked', () => {
   const onClick = jest.fn();
   const wrapper = mount(CouponCell, {
     props: {
