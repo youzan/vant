@@ -209,7 +209,7 @@ export default {
 若选择器数据是异步获取的，可以通过 `loading` 属性显示加载提示。
 
 ```html
-<van-picker :columns="columns" :loading="loading" />
+<van-picker :columns="state.columns" :loading="state.loading" />
 ```
 
 ```js
@@ -238,17 +238,17 @@ export default {
 
 ```html
 <van-field
-  v-model="value"
+  v-model="state.value"
   readonly
   clickable
   label="城市"
   placeholder="选择城市"
-  @click="showPicker = true"
+  @click="state.showPicker = true"
 />
-<van-popup v-model:show="showPicker" round position="bottom">
+<van-popup v-model:show="state.showPicker" round position="bottom">
   <van-picker
     :columns="columns"
-    @cancel="showPicker = false"
+    @cancel="state.showPicker = false"
     @confirm="onConfirm"
   />
 </van-popup>

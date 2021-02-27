@@ -187,7 +187,7 @@ export default {
 When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt.
 
 ```html
-<van-picker title="Title" :columns="columns" :loading="loading" />
+<van-picker title="Title" :columns="state.columns" :loading="state.loading" />
 ```
 
 ```js
@@ -214,18 +214,18 @@ export default {
 
 ```html
 <van-field
-  v-model="value"
+  v-model="state.value"
   readonly
   clickable
   label="City"
   placeholder="Choose City"
-  @click="showPicker = true"
+  @click="state.showPicker = true"
 />
 <van-popup v-model:show="showPicker" round position="bottom">
   <van-picker
     title="Title"
-    :columns="columns"
-    @cancel="showPicker = false"
+    :columns="state.columns"
+    @cancel="state.showPicker = false"
     @confirm="onConfirm"
   />
 </van-popup>
