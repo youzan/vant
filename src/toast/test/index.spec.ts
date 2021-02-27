@@ -1,11 +1,11 @@
 import Toast from '../Toast';
-import { mount , later } from '../../../test';
-
+import { mount, later } from '../../../test';
 
 test('should change overlay style after using overlay-style prop', async () => {
   const wrapper = mount(Toast, {
     props: {
       show: true,
+      overlay: true,
       overlayStyle: {
         background: 'red',
       },
@@ -32,6 +32,7 @@ test('should close Toast when using closeOnClickOverlay prop and overlay is clic
   const wrapper = mount(Toast, {
     props: {
       show: true,
+      overlay: true,
       closeOnClickOverlay: true,
     },
   });

@@ -18,10 +18,10 @@ export default createComponent({
   props: {
     icon: String,
     show: Boolean,
+    overlay: Boolean,
     message: [Number, String],
     className: UnknownProp,
     iconPrefix: String,
-    lockScroll: Boolean,
     loadingType: String as PropType<LoadingType>,
     forbidClick: Boolean,
     overlayClass: UnknownProp,
@@ -126,6 +126,7 @@ export default createComponent({
           bem([props.position, { [props.type]: !props.icon }]),
           props.className,
         ]}
+        overlay={props.overlay}
         lockScroll={false}
         transition={props.transition}
         overlayClass={props.overlayClass}
