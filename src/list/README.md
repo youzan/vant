@@ -166,8 +166,8 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | v-model:loading | Whether to show loading info，the `load` event will not be Emitted when loading | _boolean_ | `false` |
+| v-model:error | Whether loading is error，the `load` event will be Emitted only when error text clicked | _boolean_ | `false` |
 | finished | Whether loading is finished，the `load` event will not be Emitted when finished | _boolean_ | `false` |
-| error | Whether loading is error，the `load` event will be Emitted only when error text clicked, the `sync` modifier is needed | _boolean_ | `false` |
 | offset | The load event will be Emitted when the distance between the scrollbar and the bottom is less than offset | _number \| string_ | `300` |
 | loading-text | Loading text | _string_ | `Loading...` |
 | finished-text | Finished text | _string_ | - |

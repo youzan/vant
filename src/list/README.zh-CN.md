@@ -180,15 +180,15 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model:loading | 是否处于加载状态，加载过程中不触发`load`事件 | _boolean_ | `false` |
-| finished | 是否已加载完成，加载完成后不再触发`load`事件 | _boolean_ | `false` |
-| error | 是否加载失败，加载失败后点击错误提示可以重新<br>触发`load`事件，必须使用`sync`修饰符 | _boolean_ | `false` |
-| offset | 滚动条与底部距离小于 offset 时触发`load`事件 | _number \| string_ | `300` |
+| v-model:loading | 是否处于加载状态，加载过程中不触发 `load` 事件 | _boolean_ | `false` |
+| v-model:error | 是否加载失败，加载失败后点击错误提示可以重新触发 `load` 事件 | _boolean_ | `false` |
+| finished | 是否已加载完成，加载完成后不再触发 `load` 事件 | _boolean_ | `false` |
+| offset | 滚动条与底部距离小于 offset 时触发 `load` 事件 | _number \| string_ | `300` |
 | loading-text | 加载过程中的提示文案 | _string_ | `加载中...` |
 | finished-text | 加载完成后的提示文案 | _string_ | - |
 | error-text | 加载失败后的提示文案 | _string_ | - |
 | immediate-check | 是否在初始化时立即执行滚动位置检查 | _boolean_ | `true` |
-| direction | 滚动触发加载的方向，可选值为`up` | _string_ | `down` |
+| direction | 滚动触发加载的方向，可选值为 `up` | _string_ | `down` |
 
 ### Events
 
@@ -228,11 +228,11 @@ export default {
 
 ### List 的运行机制是什么？
 
-List 会监听浏览器的滚动事件并计算列表的位置，当列表底部与可视区域的距离小于`offset`时，List 会触发一次 load 事件。
+List 会监听浏览器的滚动事件并计算列表的位置，当列表底部与可视区域的距离小于 `offset` 时，List 会触发一次 load 事件。
 
 ### 为什么 List 初始化后会立即触发 load 事件？
 
-List 初始化后会触发一次 load 事件，用于加载第一屏的数据，这个特性可以通过`immediate-check`属性关闭。
+List 初始化后会触发一次 load 事件，用于加载第一屏的数据，这个特性可以通过 `immediate-check` 属性关闭。
 
 ### 为什么会连续触发 load 事件？
 
@@ -240,17 +240,17 @@ List 初始化后会触发一次 load 事件，用于加载第一屏的数据，
 
 ### loading 和 finished 分别是什么含义？
 
-`List`有以下三种状态，理解这些状态有助于你正确地使用`List`组件：
+`List` 有以下三种状态，理解这些状态有助于你正确地使用 `List` 组件：
 
-- 非加载中，`loading`为`false`，此时会根据列表滚动位置判断是否触发`load`事件（列表内容不足一屏幕时，会直接触发）
-- 加载中，`loading`为`true`，表示正在发送异步请求，此时不会触发`load`事件
-- 加载完成，`finished`为`true`，此时不会触发`load`事件
+- 非加载中，`loading` 为 `false`，此时会根据列表滚动位置判断是否触发 `load` 事件（列表内容不足一屏幕时，会直接触发）
+- 加载中，`loading` 为 `true`，表示正在发送异步请求，此时不会触发 `load` 事件
+- 加载完成，`finished` 为 `true`，此时不会触发 `load` 事件
 
-在每次请求完毕后，需要手动将`loading`设置为`false`，表示加载结束
+在每次请求完毕后，需要手动将 `loading` 设置为 `false`，表示加载结束
 
 ### 使用 float 布局后一直触发加载？
 
-若 List 的内容使用了 float 布局，可以在容器上添加`van-clearfix`类名来清除浮动，使得 List 能正确判断元素位置
+若 List 的内容使用了 float 布局，可以在容器上添加 `van-clearfix` 类名来清除浮动，使得 List 能正确判断元素位置
 
 ```html
 <van-list>
@@ -264,7 +264,7 @@ List 初始化后会触发一次 load 事件，用于加载第一屏的数据，
 
 ### 在 html、body 上设置 overflow 后一直触发加载？
 
-如果在 html 和 body 标签上设置了`overflow-x: hidden`样式，会导致 List 一直触发加载。
+如果在 html 和 body 标签上设置了 `overflow-x: hidden` 样式，会导致 List 一直触发加载。
 
 ```css
 html,
@@ -273,4 +273,4 @@ body {
 }
 ```
 
-这个问题的原因是当元素设置了`overflow-x: hidden`样式时，该元素的`overflow-y`会被浏览器设置为`auto`，而不是默认值`visible`，导致 List 无法正确地判断滚动容器。解决方法是去除该样式，或者在 html 和 body 标签上添加`height: 100%`样式。
+这个问题的原因是当元素设置了 `overflow-x: hidden` 样式时，该元素的 `overflow-y` 会被浏览器设置为 `auto`，而不是默认值 `visible`，导致 List 无法正确地判断滚动容器。解决方法是去除该样式，或者在 html 和 body 标签上添加 `height: 100%` 样式。
