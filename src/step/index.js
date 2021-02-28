@@ -55,13 +55,16 @@ export default createComponent({
         );
       }
 
-      if (this.status === 'finish' && finishIcon) {
+      const finishIconSlot = this.slots('finish-icon');
+      if (this.status === 'finish' && (finishIcon || finishIconSlot)) {
         return (
-          <Icon
-            class={bem('icon', 'finish')}
-            name={finishIcon}
-            color={activeColor}
-          />
+          finishIconSlot || (
+            <Icon
+              class={bem('icon', 'finish')}
+              name={finishIcon}
+              color={activeColor}
+            />
+          )
         );
       }
 
