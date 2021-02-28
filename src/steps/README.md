@@ -79,10 +79,11 @@ export default {
 
 ### Step Slots
 
-| Name          | Description          |
-| ------------- | -------------------- |
-| active-icon   | Custom active icon   |
-| inactive-icon | Custom inactive icon |
+| Name                  | Description          |
+| --------------------- | -------------------- |
+| active-icon           | Custom active icon   |
+| inactive-icon         | Custom inactive icon |
+| finish-icon `v2.12.7` | Custom finish icon   |
 
 ### Steps Events
 
