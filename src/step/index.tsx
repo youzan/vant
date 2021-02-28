@@ -73,7 +73,11 @@ export default createComponent({
         );
       }
 
-      if (getStatus() === 'finish' && finishIcon) {
+      if (getStatus() === 'finish' && (finishIcon || slots['finish-icon'])) {
+        if (slots['finish-icon']) {
+          return slots['finish-icon']();
+        }
+
         return (
           <Icon
             class={bem('icon', 'finish')}

@@ -90,3 +90,19 @@ test('should change finish icon when using finish-icon prop', () => {
   expect(firstStep.find('.van-icon-foo').exists()).toBeTruthy();
   expect(firstStep.html()).toMatchSnapshot();
 });
+
+test('should render finish icon slot correctly', () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Steps active={1}>
+          <Step v-slots={{ 'finish-icon': () => `Custim Fiinsh Icon` }}>A</Step>
+          <Step>B</Step>
+        </Steps>
+      );
+    },
+  });
+
+  const firstStep = wrapper.find('.van-step');
+  expect(firstStep.html()).toMatchSnapshot();
+});
