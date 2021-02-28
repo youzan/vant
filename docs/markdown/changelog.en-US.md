@@ -16,6 +16,22 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.7](https://github.com/youzan/vant/compare/v2.12.6...v2.12.7)
+
+`2021-02-28`
+
+**Feature**
+
+- Step: add finish-icon slot [#8240](https://github.com/youzan/vant/issues/8240)
+- Steps: add finish-icon prop [#8237](https://github.com/youzan/vant/issues/8237)
+
+**Bug Fixes**
+
+- DatetimePicker: fix incorrecrt inital value when v-model is null [#7832](https://github.com/youzan/vant/issues/7832)
+- Empty: linearGradient id conflict [#8011](https://github.com/youzan/vant/issues/8011)
+- GoodsActionIcon: info warning [#8040](https://github.com/youzan/vant/issues/8040)
+- Tabs: incorrect active tab when active prop is zero [#8087](https://github.com/youzan/vant/issues/8087)
+
 ### [v2.12.6](https://github.com/youzan/vant/compare/v2.12.5...v2.12.6)
 
 `2021-01-26`

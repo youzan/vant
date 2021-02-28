@@ -16,6 +16,22 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.7](https://github.com/youzan/vant/compare/v2.12.6...v2.12.7)
+
+`2021-02-28`
+
+**Feature**
+
+- Step: 新增 finish-icon 插槽 [#8240](https://github.com/youzan/vant/issues/8240)
+- Steps: 新增 finish-icon 属性 [#8237](https://github.com/youzan/vant/issues/8237)
+
+**Bug Fixes**
+
+- DatetimePicker: 修复 v-model 为 null 时初始值不正确的问题 [#7832](https://github.com/youzan/vant/issues/7832)
+- Empty: 修复 linearGradient id 可能导致冲突的问题 [#8011](https://github.com/youzan/vant/issues/8011)
+- GoodsActionIcon: 修复控制台存在 info 属性 warning 的问题 [#8040](https://github.com/youzan/vant/issues/8040)
+- Tabs: 修复 v-model 值为 0 时激活标签可能不正确的问题 [#8087](https://github.com/youzan/vant/issues/8087)
+
 ### [v2.12.6](https://github.com/youzan/vant/compare/v2.12.5...v2.12.6)
 
 `2021-01-26`
