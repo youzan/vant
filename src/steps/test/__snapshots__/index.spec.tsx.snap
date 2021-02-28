@@ -63,6 +63,19 @@ exports[`should change inactive icon when using inactive-icon prop 1`] = `
 </div>
 `;
 
+exports[`should render finish icon slot correctly 1`] = `
+<div class="van-hairline van-step van-step--horizontal van-step--finish">
+  <div class="van-step__title">
+    A
+  </div>
+  <div class="van-step__circle-container">
+    Custim Fiinsh Icon
+  </div>
+  <div class="van-step__line">
+  </div>
+</div>
+`;
+
 exports[`should render icon slot correctly 1`] = `
 <div class="van-steps van-steps--horizontal">
   <div class="van-steps__items">
