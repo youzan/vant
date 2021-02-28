@@ -16,6 +16,39 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.7](https://github.com/youzan/vant/compare/v3.0.6...v3.0.7)
+
+`2021-02-28`
+
+**Feature**
+
+- Notify: add lockScroll option [#8168](https://github.com/youzan/vant/issues/8168)
+- Popup: click-overlay event add `Event` param [#8107](https://github.com/youzan/vant/issues/8107)
+- ShareSheet: add overlay-style prop [#8225](https://github.com/youzan/vant/issues/8225)
+- ShareSheet: add overlay-class prop [#8225](https://github.com/youzan/vant/issues/8225)
+- Step: add finish-icon slot [#8241](https://github.com/youzan/vant/issues/8241)
+- Steps: add finish-icon prop [#8103](https://github.com/youzan/vant/issues/8103)
+- Uploader: add @uploader-mask-text-color var [#8064](https://github.com/youzan/vant/issues/8064)
+
+**perf**
+
+- adjust browserslist to fit Vue 3 [#8227](https://github.com/youzan/vant/issues/8227)
+- disable enableObjectSlots to reduce bundle size [#8226](https://github.com/youzan/vant/issues/8226)
+
+**Bug Fixes**
+
+- ActionSheet: fix safe-area-inset-bottom prop not work [#8085](https://github.com/youzan/vant/issues/8085)
+- DateTimePicker: fix incorrecrt inital value [#8193](https://github.com/youzan/vant/issues/8193)
+- Form: may scroll to incorrect field after submitted [#8159](https://github.com/youzan/vant/issues/8159)
+- ImagePreview: fix incorrect image display during the second call [#8060](https://github.com/youzan/vant/issues/8060)
+- IndexBar: failed to render active anchor when inited [#8164](https://github.com/youzan/vant/issues/8164)
+- Popup: should watch lockScroll [#8169](https://github.com/youzan/vant/issues/8169)
+- Swipe: active may outrange when initialize [#8061](https://github.com/youzan/vant/issues/8061)
+- SwipeCell: incorrect position param when clicking outside [#8108](https://github.com/youzan/vant/issues/8108)
+- Tabbar: incorrect active tab when name is zero [#8125](https://github.com/youzan/vant/issues/8125)
+- Tabs: incorrect active tab when active prop is zero [#8074](https://github.com/youzan/vant/issues/8074)
+- Toast: ssr error [#8214](https://github.com/youzan/vant/issues/8214)
+
 ### [v3.0.6](https://github.com/youzan/vant/compare/v3.0.5...v3.0.6)
 
 `2021-01-31`
