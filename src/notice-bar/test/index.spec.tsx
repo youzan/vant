@@ -10,7 +10,7 @@ test('should emit close event when close icon is clicked', () => {
   const close = wrapper.find('.van-notice-bar__right-icon');
 
   close.trigger('click');
-  expect(wrapper.emitted('close')[0][0]).toBeTruthy();
+  expect(wrapper.emitted<[Event]>('close')![0][0]).toBeTruthy();
 });
 
 test('should render icon slot correct', () => {
@@ -53,12 +53,14 @@ test('should start scrolling when content width > wrap width ', async () => {
   const wrap = wrapper.find('.van-notice-bar__wrap');
   const content = wrapper.find('.van-notice-bar__content');
 
-  wrap.element.getBoundingClientRect = () => ({
-    width: 50,
-  });
-  content.element.getBoundingClientRect = () => ({
-    width: 100,
-  });
+  wrap.element.getBoundingClientRect = () =>
+    ({
+      width: 50,
+    } as DOMRect);
+  content.element.getBoundingClientRect = () =>
+    ({
+      width: 100,
+    } as DOMRect);
 
   await later(50);
 
@@ -76,12 +78,14 @@ test('should not start scrolling when content width > wrap width ', async () => 
   const wrap = wrapper.find('.van-notice-bar__wrap');
   const content = wrapper.find('.van-notice-bar__content');
 
-  wrap.element.getBoundingClientRect = () => ({
-    width: 200,
-  });
-  content.element.getBoundingClientRect = () => ({
-    width: 100,
-  });
+  wrap.element.getBoundingClientRect = () =>
+    ({
+      width: 200,
+    } as DOMRect);
+  content.element.getBoundingClientRect = () =>
+    ({
+      width: 100,
+    } as DOMRect);
 
   await later(50);
 
