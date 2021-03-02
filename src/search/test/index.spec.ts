@@ -1,5 +1,6 @@
 import Search from '..';
 import { mount } from '../../../test';
+import type { ComponentInstance } from '../../utils';
 
 test('should emit update:modelValue event when input value changed', () => {
   const onUpdateModelValue = jest.fn();
@@ -125,7 +126,7 @@ test('should call input.focus when vm.focus is called', () => {
   const onFocus = jest.fn();
   wrapper.find('input').element.focus = onFocus;
 
-  wrapper.vm.focus();
+  (wrapper.vm as ComponentInstance).focus();
   expect(onFocus).toHaveBeenCalledTimes(1);
 });
 
@@ -134,6 +135,6 @@ test('should call input.blur when vm.blur is called', () => {
   const onBlur = jest.fn();
   wrapper.find('input').element.blur = onBlur;
 
-  wrapper.vm.blur();
+  (wrapper.vm as ComponentInstance).blur();
   expect(onBlur).toHaveBeenCalledTimes(1);
 });
