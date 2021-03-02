@@ -28,7 +28,7 @@ import { scrollLeftTo, scrollTopTo } from './utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
-// Composition
+// Composables
 import {
   useChildren,
   useWindowSize,

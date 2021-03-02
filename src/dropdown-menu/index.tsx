@@ -3,7 +3,7 @@ import { ref, computed, PropType, CSSProperties, Ref } from 'vue';
 // Utils
 import { isDef, ComponentInstance, createNamespace } from '../utils';
 
-// Composition
+// Composables
 import {
   useRect,
   useChildren,

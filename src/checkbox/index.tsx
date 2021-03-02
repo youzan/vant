@@ -1,10 +1,16 @@
 import { computed, watch } from 'vue';
+
+// Utils
 import { createNamespace, pick } from '../utils';
+import { CHECKBOX_GROUP_KEY, CheckboxGroupProvide } from '../checkbox-group';
+
+// Composables
 import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { useLinkField } from '../composables/use-link-field';
+
+// Components
 import Checker, { checkerProps } from './Checker';
-import { CHECKBOX_GROUP_KEY, CheckboxGroupProvide } from '../checkbox-group';
 
 const [createComponent, bem] = createNamespace('checkbox');
 
@@ -34,7 +40,7 @@ export default createComponent({
           value.push(name);
 
           if (props.bindGroup) {
-            parent!.updateModelValue(value);
+            parent!.updateValue(value);
           }
         }
       } else {
@@ -44,7 +50,7 @@ export default createComponent({
           value.splice(index, 1);
 
           if (props.bindGroup) {
-            parent!.updateModelValue(value);
+            parent!.updateValue(value);
           }
         }
       }

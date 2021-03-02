@@ -2,7 +2,7 @@ import { computed, PropType } from 'vue';
 import { createNamespace } from '../utils';
 import { ACTION_BAR_KEY } from '../action-bar';
 
-// Composition
+// Composables
 import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { useRoute, routeProps } from '../composables/use-route';

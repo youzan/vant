@@ -11,7 +11,7 @@ import {
   createNamespace,
 } from '../utils';
 
-// Composition
+// Composables
 import { useParent } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';

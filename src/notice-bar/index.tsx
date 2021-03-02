@@ -1,7 +1,7 @@
 import { ref, watch, reactive, PropType } from 'vue';
 import { isDef, createNamespace } from '../utils';
 
-// Composition
+// Composables
 import {
   raf,
   useRect,

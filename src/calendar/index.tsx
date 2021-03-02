@@ -17,7 +17,7 @@ import {
   getDayByOffset,
 } from './utils';
 
-// Composition
+// Composables
 import { raf, useRect, onMountedOrActivated } from '@vant/use';
 import { useRefs } from '../composables/use-refs';
 import { useExpose } from '../composables/use-expose';
@@ -424,7 +424,7 @@ export default createComponent({
       }
     };
 
-    const togglePopup = (value: boolean) => emit('update:show', value);
+    const updateShow = (value: boolean) => emit('update:show', value);
 
     const renderMonth = (date: Date, index: number) => {
       const showMonthTitle = index !== 0 || !props.showSubtitle;
@@ -533,7 +533,7 @@ export default createComponent({
             teleport={props.teleport}
             closeOnPopstate={props.closeOnPopstate}
             closeOnClickOverlay={props.closeOnClickOverlay}
-            {...{ 'onUpdate:show': togglePopup }}
+            {...{ 'onUpdate:show': updateShow }}
           >
             {renderCalendar()}
           </Popup>

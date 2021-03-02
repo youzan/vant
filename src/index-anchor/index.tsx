@@ -6,7 +6,7 @@ import { BORDER_BOTTOM } from '../utils/constant';
 import { INDEX_BAR_KEY, IndexBarProvide } from '../index-bar';
 import { getScrollTop, getRootScrollTop } from '../utils/dom/scroll';
 
-// Composition
+// Composables
 import { useRect, useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 

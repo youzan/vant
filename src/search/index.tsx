@@ -8,7 +8,7 @@ import {
   ComponentInstance,
 } from '../utils';
 
-// Composition
+// Composables
 import { useExpose } from '../composables/use-expose';
 
 // Components

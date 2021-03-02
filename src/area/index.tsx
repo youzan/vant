@@ -13,7 +13,7 @@ import {
 import { deepClone } from '../utils/deep-clone';
 import { pick, createNamespace, ComponentInstance } from '../utils';
 
-// Composition
+// Composables
 import { useExpose } from '../composables/use-expose';
 
 // Components

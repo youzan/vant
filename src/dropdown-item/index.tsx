@@ -10,7 +10,7 @@ import {
 import { createNamespace, UnknownProp } from '../utils';
 import { DROPDOWN_KEY, DropdownMenuProvide } from '../dropdown-menu';
 
-// Composition
+// Composables
 import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 

@@ -4,7 +4,7 @@ import { ref, watch, computed, nextTick, reactive, PropType } from 'vue';
 import { ComponentInstance, createNamespace, isObject } from '../utils';
 import { isMobile } from '../utils/validate/mobile';
 
-// Composition
+// Composables
 import { useExpose } from '../composables/use-expose';
 
 // Components

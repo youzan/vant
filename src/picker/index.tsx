@@ -9,7 +9,7 @@ import {
 } from '../utils';
 import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 
-// Composition
+// Composables
 import { useChildren } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 

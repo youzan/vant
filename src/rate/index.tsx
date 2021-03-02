@@ -3,7 +3,7 @@ import { computed } from 'vue';
 // Utils
 import { addUnit, createNamespace, preventDefault } from '../utils';
 
-// Composition
+// Composables
 import { useRefs } from '../composables/use-refs';
 import { useTouch } from '../composables/use-touch';
 import { useLinkField } from '../composables/use-link-field';

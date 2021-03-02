@@ -5,7 +5,7 @@ import { createNamespace } from '../utils';
 import { BORDER } from '../utils/constant';
 import { STEPS_KEY, StepsProvide } from '../steps';
 
-// Composition
+// Composables
 import { useParent } from '@vant/use';
 
 // Components

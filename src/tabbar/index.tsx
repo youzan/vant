@@ -5,7 +5,7 @@ import { createNamespace } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
-// Composition
+// Composables
 import { useChildren } from '@vant/use';
 import { usePlaceholder } from '../composables/use-placeholder';
 

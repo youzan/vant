@@ -26,7 +26,7 @@ import {
 } from '../utils';
 import { runSyncRule } from './utils';
 
-// Composition
+// Composables
 import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { FORM_KEY, FIELD_KEY } from '../composables/use-link-field';

@@ -3,7 +3,7 @@ import { ref, watch, reactive, nextTick } from 'vue';
 // Utils
 import { preventDefault, getScrollTop, createNamespace } from '../utils';
 
-// Composition
+// Composables
 import { useScrollParent } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 

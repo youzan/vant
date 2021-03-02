@@ -20,7 +20,7 @@ import {
   ComponentInstance,
 } from '../utils';
 
-// Composition
+// Composables
 import {
   useRect,
   useChildren,

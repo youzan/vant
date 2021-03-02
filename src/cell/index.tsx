@@ -3,7 +3,7 @@ import { PropType, CSSProperties } from 'vue';
 // Utils
 import { createNamespace, isDef, UnknownProp } from '../utils';
 
-// Composition
+// Composables
 import { useRoute, routeProps } from '../composables/use-route';
 
 // Components

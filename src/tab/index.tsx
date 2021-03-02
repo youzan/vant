@@ -2,7 +2,7 @@ import { ref, watch, nextTick, PropType, CSSProperties } from 'vue';
 import { createNamespace, UnknownProp } from '../utils';
 import { TABS_KEY, TabsProvide } from '../tabs';
 
-// Composition
+// Composables
 import { useParent } from '@vant/use';
 import { routeProps } from '../composables/use-route';
 

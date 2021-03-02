@@ -60,17 +60,17 @@ export default createComponent({
       }
     };
 
+    const updateShow = (show: boolean) => emit('update:show', show);
+
     const onClick = () => {
       if (props.closeOnClick) {
-        emit('update:show', false);
+        updateShow(false);
       }
     };
 
     const clearTimer = () => {
       clearTimeout(timer);
     };
-
-    const toggle = (show: boolean) => emit('update:show', show);
 
     const renderIcon = () => {
       const { icon, type, iconPrefix, loadingType } = props;
@@ -109,7 +109,7 @@ export default createComponent({
       clearTimer();
       if (props.show && props.duration > 0) {
         timer = setTimeout(() => {
-          emit('update:show', false);
+          updateShow(false);
         }, props.duration);
       }
     });
@@ -132,7 +132,7 @@ export default createComponent({
         closeOnClickOverlay={props.closeOnClickOverlay}
         onClick={onClick}
         onClosed={clearTimer}
-        {...{ 'onUpdate:show': toggle }}
+        {...{ 'onUpdate:show': updateShow }}
       >
         {renderIcon()}
         {renderMessage()}

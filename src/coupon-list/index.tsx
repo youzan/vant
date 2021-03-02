@@ -3,7 +3,7 @@ import { watch, computed, nextTick, reactive, PropType, onMounted } from 'vue';
 // Utils
 import { createNamespace } from '../utils';
 
-// Composition
+// Composables
 import { useWindowSize } from '@vant/use';
 import { useRefs } from '../composables/use-refs';
 

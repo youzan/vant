@@ -1,10 +1,10 @@
-import { nextTick, onMounted, PropType, reactive, ref, watch } from 'vue';
+import { ref, watch, nextTick, onMounted, PropType, reactive } from 'vue';
 
 // Utils
 import { ComponentInstance, UnknownProp, createNamespace } from '../utils';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
-// Composition
+// Composables
 import { useWindowSize } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
@@ -98,13 +98,13 @@ export default createComponent({
     const emitScale = (args: ImagePreviewScaleEventParams) =>
       emit('scale', args);
 
-    const toggle = (show: boolean) => emit('update:show', show);
+    const updateShow = (show: boolean) => emit('update:show', show);
 
     const emitClose = () => {
       callInterceptor({
         interceptor: props.beforeClose,
         args: [state.active],
-        done: () => toggle(false),
+        done: () => updateShow(false),
       });
     };
 
@@ -221,7 +221,7 @@ export default createComponent({
         overlayClass={bem('overlay')}
         closeOnPopstate={props.closeOnPopstate}
         onClosed={onClosed}
-        {...{ 'onUpdate:show': toggle }}
+        {...{ 'onUpdate:show': updateShow }}
       >
         {renderClose()}
         {renderImages()}

@@ -4,7 +4,7 @@ import { ref, CSSProperties } from 'vue';
 import { createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
-// Composition
+// Composables
 import { usePlaceholder } from '../composables/use-placeholder';
 
 // Components

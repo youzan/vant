@@ -14,7 +14,7 @@ import {
   UploaderResultType,
 } from './utils';
 
-// Composition
+// Composables
 import { useExpose } from '../composables/use-expose';
 import { useLinkField } from '../composables/use-link-field';
 

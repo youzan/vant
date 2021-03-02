@@ -12,7 +12,7 @@ export type RadioGroupProvide = CheckerParent & {
   props: {
     modelValue: unknown;
   };
-  updateModelValue: (value: unknown) => void;
+  updateValue: (value: unknown) => void;
 };
 
 export default createComponent({
@@ -29,8 +29,7 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const { linkChildren } = useChildren(RADIO_KEY);
 
-    const updateModelValue = (value: unknown) =>
-      emit('update:modelValue', value);
+    const updateValue = (value: unknown) => emit('update:modelValue', value);
 
     watch(
       () => props.modelValue,
@@ -39,7 +38,7 @@ export default createComponent({
 
     linkChildren({
       props,
-      updateModelValue,
+      updateValue,
     });
 
     useLinkField(() => props.modelValue);

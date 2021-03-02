@@ -20,7 +20,7 @@ export default createComponent({
 
     const toggle = () => {
       if (parent) {
-        parent.updateModelValue(props.name);
+        parent.updateValue(props.name);
       } else {
         emit('update:modelValue', props.name);
       }

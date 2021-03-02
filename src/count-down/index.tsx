@@ -4,7 +4,7 @@ import { watch, computed } from 'vue';
 import { createNamespace } from '../utils';
 import { parseFormat } from './utils';
 
-// Composition
+// Composables
 import { useCountDown } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 

@@ -3,7 +3,7 @@ import { computed, CSSProperties, PropType, reactive, ref } from 'vue';
 // Utils
 import { createNamespace, getScrollTop, isHidden, unitToPx } from '../utils';
 
-// Composition
+// Composables
 import { useRect, useEventListener, useScrollParent } from '@vant/use';
 import { useVisibilityChange } from '../composables/use-visibility-change';
 

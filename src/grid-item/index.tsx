@@ -5,7 +5,7 @@ import { createNamespace, addUnit } from '../utils';
 import { BORDER } from '../utils/constant';
 import { GRID_KEY, GridProvide } from '../grid';
 
-// Composition
+// Composables
 import { useParent } from '@vant/use';
 import { useRoute, routeProps } from '../composables/use-route';
 

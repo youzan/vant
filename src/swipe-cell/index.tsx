@@ -4,7 +4,7 @@ import { ref, Ref, reactive, computed, PropType } from 'vue';
 import { range, isDef, createNamespace, preventDefault } from '../utils';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
-// Composition
+// Composables
 import { useRect, useClickAway } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';

@@ -3,7 +3,7 @@ import { ref, watch, nextTick, onUpdated, onMounted, PropType } from 'vue';
 // Utils
 import { isHidden, createNamespace } from '../utils';
 
-// Composition
+// Composables
 import { useRect, useScrollParent, useEventListener } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 

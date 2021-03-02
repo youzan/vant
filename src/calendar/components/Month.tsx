@@ -12,7 +12,7 @@ import {
   formatMonthTitle,
 } from '../utils';
 
-// Composition
+// Composables
 import { useToggle } from '@vant/use';
 import { useExpose } from '../../composables/use-expose';
 import { useHeight } from '../../composables/use-height';

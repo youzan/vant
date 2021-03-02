@@ -65,10 +65,10 @@ export default createComponent({
   emits: ['cancel', 'select', 'update:show'],
 
   setup(props, { emit, slots }) {
-    const toggle = (value: boolean) => emit('update:show', value);
+    const updateShow = (value: boolean) => emit('update:show', value);
 
     const onCancel = () => {
-      toggle(false);
+      updateShow(false);
       emit('cancel');
     };
 
@@ -143,7 +143,7 @@ export default createComponent({
         position="bottom"
         {...{
           ...pick(props, popupKeys),
-          'onUpdate:show': toggle,
+          'onUpdate:show': updateShow,
         }}
       >
         {renderHeader()}

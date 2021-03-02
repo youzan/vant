@@ -3,7 +3,7 @@ import { ref, watch, computed, nextTick } from 'vue';
 // Utils
 import { createNamespace } from '../utils';
 
-// Composition
+// Composables
 import { raf, doubleRaf, useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { useLazyRender } from '../composables/use-lazy-render';

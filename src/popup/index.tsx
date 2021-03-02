@@ -15,7 +15,7 @@ import {
 import { popupSharedProps } from './shared';
 import { createNamespace, isDef } from '../utils';
 
-// Composition
+// Composables
 import { useEventListener } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { useLockScroll } from '../composables/use-lock-scroll';

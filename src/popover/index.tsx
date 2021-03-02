@@ -13,7 +13,7 @@ import { Instance, createPopper, offsetModifier } from '@vant/popperjs';
 import { ComponentInstance, createNamespace } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
-// Composition
+// Composables
 import { useClickAway } from '@vant/use';
 
 // Components
@@ -125,11 +125,11 @@ export default createComponent({
       });
     };
 
-    const toggle = (value: boolean) => emit('update:show', value);
+    const updateShow = (value: boolean) => emit('update:show', value);
 
     const onClickWrapper = () => {
       if (props.trigger === 'click') {
-        toggle(!props.show);
+        updateShow(!props.show);
       }
     };
 
@@ -146,11 +146,11 @@ export default createComponent({
       emit('select', action, index);
 
       if (props.closeOnClickAction) {
-        toggle(false);
+        updateShow(false);
       }
     };
 
-    const onClickAway = () => toggle(false);
+    const onClickAway = () => updateShow(false);
 
     const renderAction = (action: PopoverAction, index: number) => {
       const { icon, text, color, disabled, className } = action;
@@ -194,7 +194,7 @@ export default createComponent({
           transition="van-popover-zoom"
           lockScroll={false}
           onTouchstart={onTouchstart}
-          {...{ ...attrs, 'onUpdate:show': toggle }}
+          {...{ ...attrs, 'onUpdate:show': updateShow }}
         >
           <div class={bem('arrow')} />
           <div role="menu" class={bem('content')}>
