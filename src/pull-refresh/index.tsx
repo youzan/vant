@@ -109,7 +109,7 @@ export default createComponent({
       if (status === 'normal') {
         return '';
       }
-      return (props as any)[`${status}Text`] || t(status);
+      return props[`${status}Text` as const] || t(status);
     };
 
     const renderStatus = () => {

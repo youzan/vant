@@ -7,7 +7,13 @@ import {
   onBeforeUnmount,
   getCurrentInstance,
 } from 'vue';
-import { isDef, addUnit, inBrowser, createNamespace } from '../utils';
+import {
+  isDef,
+  addUnit,
+  inBrowser,
+  createNamespace,
+  ComponentInstance,
+} from '../utils';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('image');
@@ -51,7 +57,7 @@ export default createComponent({
     const imageRef = ref<HTMLElement>();
 
     // TODO: types
-    const { $Lazyload } = getCurrentInstance()!.proxy as any;
+    const { $Lazyload } = getCurrentInstance()!.proxy as ComponentInstance;
 
     const style = computed(() => {
       const style: CSSProperties = {};
