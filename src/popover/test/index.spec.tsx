@@ -23,7 +23,7 @@ test('should toggle popover when trigger is "click" and the reference element is
 
   await wrapper.setProps({ trigger: 'click' });
   await wrapper.find('.reference').trigger('click');
-  expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
+  expect(wrapper.emitted('update:show')![0]).toEqual([false]);
 });
 
 test('should emit select event when clicking the action', async () => {
@@ -37,7 +37,7 @@ test('should emit select event when clicking the action', async () => {
 
   await later();
   await wrapper.find('.van-popover__action').trigger('click');
-  expect(wrapper.emitted('select')[0]).toEqual([baseActions[0], 0]);
+  expect(wrapper.emitted('select')![0]).toEqual([baseActions[0], 0]);
 });
 
 test('should not emit select event when the action is disabled', () => {
@@ -63,11 +63,11 @@ test('should close popover when clicking the action', async () => {
   });
 
   await wrapper.find('.van-popover__action').trigger('click');
-  expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
+  expect(wrapper.emitted('update:show')![0]).toEqual([false]);
 
   await wrapper.setProps({ closeOnClickAction: false });
   await wrapper.find('.van-popover__action').trigger('click');
-  expect(wrapper.emitted('update:show').length).toEqual(1);
+  expect(wrapper.emitted('update:show')!.length).toEqual(1);
 });
 
 test('should allow to custom the className of action', () => {
@@ -139,12 +139,12 @@ test('should close popover when touch outside content', async () => {
   });
 
   const popover = root.querySelector('.van-popover');
-  trigger(popover, 'touchstart');
+  trigger(popover!, 'touchstart');
   expect(wrapper.emitted('update:show')).toBeFalsy();
 
   document.body.appendChild(root);
   trigger(document.body, 'touchstart');
-  expect(wrapper.emitted('update:show')[0][0]).toEqual(false);
+  expect(wrapper.emitted('update:show')![0]).toEqual([false]);
 });
 
 test('should emit click-overlay event when overlay is clicked', () => {
