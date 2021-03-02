@@ -74,37 +74,54 @@ Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) to 
 npm i babel-plugin-import -D
 ```
 
-```js
-// set babel config in .babelrc or babel-loader
+Set babel config in .babelrc or babel-loader:
+
+```json
 // Note: Don't set libraryDirectory if you are using webpack 1.
 {
   "plugins": [
-    ["import", {
-      "libraryName": "vant",
-      "libraryDirectory": "es",
-      "style": true
-    }]
+    [
+      "import",
+      {
+        "libraryName": "vant",
+        "libraryDirectory": "es",
+        "style": true
+      }
+    ]
   ]
 }
-
-// For users who use babel7, that can be configured in babel.config.js
-module.exports = {
-  plugins: [
-    ['import', {
-      libraryName: 'vant',
-      libraryDirectory: 'es',
-      style: true
-    }, 'vant']
-  ]
-};
 ```
 
 ```js
-// Then you can import components from vant
+// For users who use babel7, that can be configured in babel.config.js
+module.exports = {
+  plugins: [
+    [
+      'import',
+      {
+        libraryName: 'vant',
+        libraryDirectory: 'es',
+        style: true,
+      },
+      'vant',
+    ],
+  ],
+};
+```
+
+Then you can import components from vant:
+
+```js
 import { Button } from 'vant';
 ```
 
-> If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead.
+#### Vite Plugin
+
+If you are using Vite, please use [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) or [vite-plugin-imp](https://github.com/onebay/vite-plugin-imp) instead.
+
+#### TypeScript Plugin
+
+If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead.
 
 ### 2. Manually import
 
