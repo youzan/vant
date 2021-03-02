@@ -16,6 +16,11 @@ import ImagePreviewItem from './ImagePreviewItem';
 
 const [createComponent, bem] = createNamespace('image-preview');
 
+export type ImagePreviewScaleEventParams = {
+  scale: number;
+  index: number;
+};
+
 export default createComponent({
   props: {
     show: Boolean,
@@ -90,21 +95,16 @@ export default createComponent({
       }
     };
 
-    const emitScale = (args: { scale: number; index: number }) => {
+    const emitScale = (args: ImagePreviewScaleEventParams) =>
       emit('scale', args);
-    };
 
-    const toggle = (show: boolean) => {
-      emit('update:show', show);
-    };
+    const toggle = (show: boolean) => emit('update:show', show);
 
     const emitClose = () => {
       callInterceptor({
         interceptor: props.beforeClose,
         args: [state.active],
-        done: () => {
-          toggle(false);
-        },
+        done: () => toggle(false),
       });
     };
 
@@ -174,9 +174,7 @@ export default createComponent({
       }
     };
 
-    const onClosed = () => {
-      emit('closed');
-    };
+    const onClosed = () => emit('closed');
 
     const swipeTo = (index: number, options?: SwipeToOptions) => {
       if (swipeRef.value) {

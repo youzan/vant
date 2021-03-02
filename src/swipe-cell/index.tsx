@@ -147,9 +147,7 @@ export default createComponent({
               position,
             },
           ],
-          done: () => {
-            close(position);
-          },
+          done: () => close(position),
         });
       }
     };
@@ -186,13 +184,7 @@ export default createComponent({
       close,
     });
 
-    useClickAway(
-      root,
-      () => {
-        onClick('outside');
-      },
-      { eventName: 'touchstart' }
-    );
+    useClickAway(root, () => onClick('outside'), { eventName: 'touchstart' });
 
     return () => {
       const wrapperStyle = {

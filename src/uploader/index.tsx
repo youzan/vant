@@ -233,9 +233,7 @@ export default createComponent({
 
     let imagePreview: ComponentInstance | undefined;
 
-    const onClosePreview = () => {
-      emit('close-preview');
-    };
+    const onClosePreview = () => emit('close-preview');
 
     const previewImage = (item: FileListItem) => {
       if (props.previewFullImage) {
@@ -285,15 +283,9 @@ export default createComponent({
           v-slots={{ 'preview-cover': slots['preview-cover'] }}
           item={item}
           index={index}
-          onClick={() => {
-            emit('click-preview', item, getDetail(index));
-          }}
-          onDelete={() => {
-            deleteFile(item, index);
-          }}
-          onPreview={() => {
-            previewImage(item);
-          }}
+          onClick={() => emit('click-preview', item, getDetail(index))}
+          onDelete={() => deleteFile(item, index)}
+          onPreview={() => previewImage(item)}
           {...pick(props, ['name', 'lazyLoad'])}
           {...previewData}
         />

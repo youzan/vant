@@ -60,7 +60,7 @@ export default createComponent({
         );
         return new Date(timestamp);
       }
-      
+
       return undefined;
     };
 
@@ -270,16 +270,12 @@ export default createComponent({
       emit('confirm', currentDate.value);
     };
 
-    const onCancel = () => {
-      emit('cancel');
-    };
+    const onCancel = () => emit('cancel');
 
     const onChange = () => {
       updateInnerValue();
       nextTick(() => {
-        nextTick(() => {
-          emit('change', currentDate.value);
-        });
+        nextTick(() => emit('change', currentDate.value));
       });
     };
 
@@ -290,9 +286,9 @@ export default createComponent({
 
     watch(columns, updateColumnValue);
 
-    watch(currentDate, (value, oldValue) => {
-      emit('update:modelValue', oldValue ? value : null);
-    });
+    watch(currentDate, (value, oldValue) =>
+      emit('update:modelValue', oldValue ? value : null)
+    );
 
     watch(
       [() => props.filter, () => props.minDate, () => props.maxDate],

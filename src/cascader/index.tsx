@@ -172,9 +172,7 @@ export default createComponent({
       }
     };
 
-    const onClose = () => {
-      emit('close');
-    };
+    const onClose = () => emit('close');
 
     const renderHeader = () => (
       <div class={bem('header')}>
@@ -200,9 +198,7 @@ export default createComponent({
           <li
             class={bem('option', { selected: isSelected })}
             style={{ color: isSelected ? props.activeColor : undefined }}
-            onClick={() => {
-              onSelect(option, tabIndex);
-            }}
+            onClick={() => onSelect(option, tabIndex)}
           >
             <span>{option[textKey]}</span>
             {isSelected ? (

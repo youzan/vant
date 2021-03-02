@@ -70,9 +70,7 @@ export default createComponent({
       clearTimeout(timer);
     };
 
-    const toggle = (show: boolean) => {
-      emit('update:show', show);
-    };
+    const toggle = (show: boolean) => emit('update:show', show);
 
     const renderIcon = () => {
       const { icon, type, iconPrefix, loadingType } = props;

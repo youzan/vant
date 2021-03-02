@@ -51,9 +51,7 @@ export default createComponent({
         emit(name, item, index);
       };
 
-      const onClick = () => {
-        emit('click-item', item, index);
-      };
+      const onClick = () => emit('click-item', item, index);
 
       const onSelect = () => {
         const name = disabled ? 'select-disabled' : 'select';
@@ -87,24 +85,18 @@ export default createComponent({
       }
     };
 
-    const renderBottom = () => {
-      const onClick = () => {
-        emit('add');
-      };
-
-      return (
-        <div class={bem('bottom')}>
-          <Button
-            round
-            block
-            type="danger"
-            text={props.addButtonText || t('add')}
-            class={bem('add')}
-            onClick={onClick}
-          />
-        </div>
-      );
-    };
+    const renderBottom = () => (
+      <div class={bem('bottom')}>
+        <Button
+          round
+          block
+          type="danger"
+          text={props.addButtonText || t('add')}
+          class={bem('add')}
+          onClick={() => emit('add')}
+        />
+      </div>
+    );
 
     return () => {
       const List = renderList(props.list);

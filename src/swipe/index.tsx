@@ -297,9 +297,7 @@ export default createComponent({
       autoplay();
     };
 
-    const resize = () => {
-      initialize(state.active);
-    };
+    const resize = () => initialize(state.active);
 
     let touchStartTime: number;
 
@@ -454,9 +452,7 @@ export default createComponent({
     });
 
     onMounted(initialize);
-    onActivated(() => {
-      initialize(state.active);
-    });
+    onActivated(() => initialize(state.active));
     onDeactivated(stopAutoplay);
     onBeforeUnmount(stopAutoplay);
 

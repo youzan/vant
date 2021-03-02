@@ -237,9 +237,7 @@ export default createComponent({
         color={props.color}
         offset={offset.value}
         rowHeight={rowHeight.value}
-        onClick={(item) => {
-          emit('click', item);
-        }}
+        onClick={(item) => emit('click', item)}
       />
     );
 

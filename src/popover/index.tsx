@@ -125,9 +125,7 @@ export default createComponent({
       });
     };
 
-    const toggle = (value: boolean) => {
-      emit('update:show', value);
-    };
+    const toggle = (value: boolean) => emit('update:show', value);
 
     const onClickWrapper = () => {
       if (props.trigger === 'click') {
@@ -152,9 +150,7 @@ export default createComponent({
       }
     };
 
-    const onClickAway = () => {
-      toggle(false);
-    };
+    const onClickAway = () => toggle(false);
 
     const renderAction = (action: PopoverAction, index: number) => {
       const { icon, text, color, disabled, className } = action;

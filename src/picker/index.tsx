@@ -286,9 +286,7 @@ export default createComponent({
       emitAction('confirm');
     };
 
-    const cancel = () => {
-      emitAction('cancel');
-    };
+    const cancel = () => emitAction('cancel');
 
     const renderTitle = () => {
       if (slots.title) {
@@ -342,9 +340,7 @@ export default createComponent({
           swipeDuration={props.swipeDuration}
           initialOptions={item[valuesKey]}
           visibleItemCount={props.visibleItemCount}
-          onChange={() => {
-            onChange(columnIndex);
-          }}
+          onChange={() => onChange(columnIndex)}
         />
       ));
 

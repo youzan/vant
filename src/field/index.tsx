@@ -330,17 +330,13 @@ export default createComponent({
       resetScroll();
     };
 
-    const onClickInput = (event: MouseEvent) => {
-      emit('click-input', event);
-    };
+    const onClickInput = (event: MouseEvent) => emit('click-input', event);
 
-    const onClickLeftIcon = (event: MouseEvent) => {
+    const onClickLeftIcon = (event: MouseEvent) =>
       emit('click-left-icon', event);
-    };
 
-    const onClickRightIcon = (event: MouseEvent) => {
+    const onClickRightIcon = (event: MouseEvent) =>
       emit('click-right-icon', event);
-    };
 
     const onClear = (event: MouseEvent) => {
       preventDefault(event);

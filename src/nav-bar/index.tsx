@@ -34,13 +34,8 @@ export default createComponent({
     const navBarRef = ref<HTMLElement>();
     const renderPlaceholder = usePlaceholder(navBarRef, bem);
 
-    const onClickLeft = (event: MouseEvent) => {
-      emit('click-left', event);
-    };
-
-    const onClickRight = (event: MouseEvent) => {
-      emit('click-right', event);
-    };
+    const onClickLeft = (event: MouseEvent) => emit('click-left', event);
+    const onClickRight = (event: MouseEvent) => emit('click-right', event);
 
     const renderLeft = () => {
       if (slots.left) {

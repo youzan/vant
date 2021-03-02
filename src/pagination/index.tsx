@@ -144,9 +144,7 @@ export default createComponent({
       const value = props.modelValue;
       const simple = props.mode !== 'multi';
 
-      const onSelect = (value: number) => () => {
-        select(value, true);
-      };
+      const onSelect = (value: number) => () => select(value, true);
 
       return (
         <ul class={bem({ simple })}>

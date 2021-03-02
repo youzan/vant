@@ -179,9 +179,7 @@ export default createComponent({
           emit('update:modelValue', true);
 
           // ensure value change can be watched
-          nextTick(() => {
-            emit('refresh');
-          });
+          nextTick(() => emit('refresh'));
         } else {
           setStatus(0);
         }

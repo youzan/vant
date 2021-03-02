@@ -332,9 +332,7 @@ export default createComponent({
       return true;
     };
 
-    const onConfirm = () => {
-      emit('confirm', copyDates(state.currentDate));
-    };
+    const onConfirm = () => emit('confirm', copyDates(state.currentDate));
 
     const select = (date: Date | Date[], complete?: boolean) => {
       const setCurrentDate = (date: Date | Date[]) => {
@@ -426,9 +424,7 @@ export default createComponent({
       }
     };
 
-    const togglePopup = (value: boolean) => {
-      emit('update:show', value);
-    };
+    const togglePopup = (value: boolean) => emit('update:show', value);
 
     const renderMonth = (date: Date, index: number) => {
       const showMonthTitle = index !== 0 || !props.showSubtitle;

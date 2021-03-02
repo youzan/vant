@@ -119,21 +119,13 @@ export default createComponent({
       updateColumnValue();
     };
 
-    const onConfirm = () => {
-      emit('confirm', currentDate.value);
-    };
-
-    const onCancel = () => {
-      emit('cancel');
-    };
+    const onConfirm = () => emit('confirm', currentDate.value);
+    const onCancel = () => emit('cancel');
 
     const onChange = () => {
       updateInnerValue();
-
       nextTick(() => {
-        nextTick(() => {
-          emit('change', currentDate.value);
-        });
+        nextTick(() => emit('change', currentDate.value));
       });
     };
 
@@ -155,9 +147,7 @@ export default createComponent({
       updateInnerValue
     );
 
-    watch(currentDate, (value) => {
-      emit('update:modelValue', value);
-    });
+    watch(currentDate, (value) => emit('update:modelValue', value));
 
     watch(
       () => props.modelValue,

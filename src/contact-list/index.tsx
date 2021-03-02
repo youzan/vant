@@ -96,9 +96,7 @@ export default createComponent({
             type="danger"
             class={bem('add')}
             text={props.addText || t('addText')}
-            onClick={() => {
-              emit('add');
-            }}
+            onClick={() => emit('add')}
           />
         </div>
       </div>

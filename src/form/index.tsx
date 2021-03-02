@@ -156,9 +156,7 @@ export default createComponent({
       const values = getValues();
 
       validate()
-        .then(() => {
-          emit('submit', values);
-        })
+        .then(() => emit('submit', values))
         .catch((errors: FieldValidateError[]) => {
           emit('failed', { values, errors });
 

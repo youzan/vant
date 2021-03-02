@@ -64,11 +64,10 @@ export default createComponent({
       return;
     }
 
-    const createEmitter = (eventName: 'open' | 'close' | 'opened') => () =>
-      emit(eventName);
-    const onOpen = createEmitter('open');
-    const onClose = createEmitter('close');
-    const onOpened = createEmitter('opened');
+    const getEmitter = (name: 'open' | 'close' | 'opened') => () => emit(name);
+    const onOpen = getEmitter('open');
+    const onClose = getEmitter('close');
+    const onOpened = getEmitter('opened');
 
     const onClosed = () => {
       state.showWrapper = false;

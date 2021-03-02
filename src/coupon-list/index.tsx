@@ -207,9 +207,7 @@ export default createComponent({
 
     watch(
       () => state.code,
-      (value) => {
-        emit('update:code', value);
-      }
+      (value) => emit('update:code', value)
     );
 
     watch(() => props.displayedCouponIndex, scrollToCoupon);
@@ -233,9 +231,7 @@ export default createComponent({
             type="danger"
             class={bem('close')}
             text={props.closeButtonText || t('close')}
-            onClick={() => {
-              emit('change', -1);
-            }}
+            onClick={() => emit('change', -1)}
           />
         </div>
       </div>

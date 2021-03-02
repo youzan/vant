@@ -52,9 +52,7 @@ export default createComponent({
       }
     });
 
-    const onClickStep = () => {
-      parent.onClickStep(index.value);
-    };
+    const onClickStep = () => parent.onClickStep(index.value);
 
     const renderCircle = () => {
       const { finishIcon, activeIcon, activeColor, inactiveIcon } = parentProps;

@@ -438,9 +438,8 @@ export default createComponent({
       });
     };
 
-    const onRendered = (name: string | number, title?: string) => {
+    const onRendered = (name: string | number, title?: string) =>
       emit('rendered', name, title);
-    };
 
     useExpose({
       resize: setLine,

@@ -80,9 +80,7 @@ export default createComponent({
           <a
             href={props.thumbLink}
             class={bem('thumb')}
-            onClick={(event) => {
-              emit('click-thumb', event);
-            }}
+            onClick={(event: MouseEvent) => emit('click-thumb', event)}
           >
             {renderThumbImage()}
             {renderThumbTag()}

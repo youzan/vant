@@ -146,9 +146,7 @@ export default createComponent({
       }
     };
 
-    const onAnimationEnd = () => {
-      emit(props.show ? 'show' : 'hide');
-    };
+    const onAnimationEnd = () => emit(props.show ? 'show' : 'hide');
 
     const onPress = (text: string, type: KeyType) => {
       if (text === '') {

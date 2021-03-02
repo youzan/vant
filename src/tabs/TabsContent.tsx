@@ -29,9 +29,7 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const swipeRef = ref<ComponentInstance>();
 
-    const onChange = (index: number) => {
-      emit('change', index);
-    };
+    const onChange = (index: number) => emit('change', index);
 
     const renderChildren = () => {
       const Content = slots.default?.();

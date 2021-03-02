@@ -59,9 +59,7 @@ export default createComponent({
     const onDelete = () => {
       Dialog.confirm({
         title: t('confirmDelete'),
-      }).then(() => {
-        emit('delete', contact);
-      });
+      }).then(() => emit('delete', contact));
     };
 
     const renderButtons = () => (
@@ -90,9 +88,7 @@ export default createComponent({
       <Switch
         v-model={contact.isDefault}
         size={24}
-        onChange={(checked: boolean) => {
-          emit('change-default', checked);
-        }}
+        onChange={(checked: boolean) => emit('change-default', checked)}
       />
     );
 

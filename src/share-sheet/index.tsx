@@ -65,18 +65,15 @@ export default createComponent({
   emits: ['cancel', 'select', 'update:show'],
 
   setup(props, { emit, slots }) {
-    const toggle = (value: boolean) => {
-      emit('update:show', value);
-    };
+    const toggle = (value: boolean) => emit('update:show', value);
 
     const onCancel = () => {
       toggle(false);
       emit('cancel');
     };
 
-    const onSelect = (option: ShareSheetOption, index: number) => {
+    const onSelect = (option: ShareSheetOption, index: number) =>
       emit('select', option, index);
-    };
 
     const renderHeader = () => {
       const title = slots.title ? slots.title() : props.title;
@@ -103,9 +100,7 @@ export default createComponent({
           role="button"
           tabindex={0}
           class={[bem('option'), className]}
-          onClick={() => {
-            onSelect(option, index);
-          }}
+          onClick={() => onSelect(option, index)}
         >
           <img src={getIconURL(icon)} class={bem('icon')} />
           {name && <span class={bem('name')}>{name}</span>}

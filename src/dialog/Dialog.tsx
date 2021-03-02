@@ -64,9 +64,7 @@ export default createComponent({
       cancel: false,
     });
 
-    const onUpdateShow = (value: boolean) => {
-      emit('update:show', value);
-    };
+    const onUpdateShow = (value: boolean) => emit('update:show', value);
 
     const close = (action: DialogAction) => {
       onUpdateShow(false);

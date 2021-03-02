@@ -289,9 +289,7 @@ export default createComponent({
             disabled,
             selected: index === state.index,
           }),
-          onClick: () => {
-            onClickItem(index);
-          },
+          onClick: () => onClickItem(index),
         };
 
         const childData = {

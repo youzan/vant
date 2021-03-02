@@ -51,9 +51,7 @@ export default createComponent({
   emits: ['select', 'cancel', 'update:show'],
 
   setup(props, { slots, emit }) {
-    const onUpdateShow = (show: boolean) => {
-      emit('update:show', show);
-    };
+    const onUpdateShow = (show: boolean) => emit('update:show', show);
 
     const onCancel = () => {
       onUpdateShow(false);

@@ -294,9 +294,7 @@ export default createComponent({
 
     watch(
       () => props.columnsNum,
-      () => {
-        nextTick(setValues);
-      }
+      () => nextTick(setValues)
     );
 
     useExpose({ reset, getArea, getValues });

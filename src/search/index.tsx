@@ -120,9 +120,7 @@ export default createComponent({
         class: null,
       };
 
-      const onInput = (value: string) => {
-        emit('update:modelValue', value);
-      };
+      const onInput = (value: string) => emit('update:modelValue', value);
 
       return (
         <Field

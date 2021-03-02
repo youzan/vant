@@ -56,15 +56,11 @@ export default defineComponent({
       callInterceptor({
         interceptor: beforeDelete,
         args: [item, { name, index }],
-        done() {
-          emit('delete');
-        },
+        done: () => emit('delete'),
       });
     };
 
-    const onPreview = () => {
-      emit('preview');
-    };
+    const onPreview = () => emit('preview');
 
     const renderDeleteIcon = () => {
       if (props.deletable && props.item.status !== 'uploading') {

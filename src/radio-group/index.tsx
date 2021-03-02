@@ -29,15 +29,12 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const { linkChildren } = useChildren(RADIO_KEY);
 
-    const updateModelValue = (value: unknown) => {
+    const updateModelValue = (value: unknown) =>
       emit('update:modelValue', value);
-    };
 
     watch(
       () => props.modelValue,
-      (value) => {
-        emit('change', value);
-      }
+      (value) => emit('change', value)
     );
 
     linkChildren({
