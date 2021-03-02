@@ -95,38 +95,55 @@ vue ui
 npm i babel-plugin-import -D
 ```
 
-```js
-// 在.babelrc 中添加配置
+在.babelrc 中添加配置：
+
+```json
 // 注意：webpack 1 无需设置 libraryDirectory
 {
   "plugins": [
-    ["import", {
-      "libraryName": "vant",
-      "libraryDirectory": "es",
-      "style": true
-    }]
+    [
+      "import",
+      {
+        "libraryName": "vant",
+        "libraryDirectory": "es",
+        "style": true
+      }
+    ]
   ]
 }
-
-// 对于使用 babel7 的用户，可以在 babel.config.js 中配置
-module.exports = {
-  plugins: [
-    ['import', {
-      libraryName: 'vant',
-      libraryDirectory: 'es',
-      style: true
-    }, 'vant']
-  ]
-};
 ```
 
 ```js
-// 接着你可以在代码中直接引入 Vant 组件
+// 对于使用 babel7 的用户，可以在 babel.config.js 中配置
+module.exports = {
+  plugins: [
+    [
+      'import',
+      {
+        libraryName: 'vant',
+        libraryDirectory: 'es',
+        style: true,
+      },
+      'vant',
+    ],
+  ],
+};
+```
+
+接着你可以在代码中直接引入 Vant 组件：
+
+```js
 // 插件会自动将代码转化为方式二中的按需引入形式
 import { Button } from 'vant';
 ```
 
-> Tips: 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入。
+#### Vite 插件
+
+对于 vite 项目，可以使用 [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) 或 [vite-plugin-imp](https://github.com/onebay/vite-plugin-imp) 实现按需引入。
+
+#### TypeScript 插件
+
+如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入。
 
 ### 方式二. 手动按需引入组件
 
