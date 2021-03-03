@@ -1,11 +1,11 @@
 import { ref, PropType } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, getZIndexStyle } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
-// Composition
+// Composables
 import { useChildren } from '@vant/use';
 import { usePlaceholder } from '../composables/use-placeholder';
 
@@ -69,7 +69,7 @@ export default createComponent({
       return (
         <div
           ref={root}
-          style={{ zIndex: zIndex !== undefined ? +zIndex : undefined }}
+          style={getZIndexStyle(zIndex)}
           class={[
             bem({ unfit: isUnfit(), fixed }),
             { [BORDER_TOP_BOTTOM]: border },

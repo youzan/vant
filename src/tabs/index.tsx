@@ -28,7 +28,7 @@ import { scrollLeftTo, scrollTopTo } from './utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
-// Composition
+// Composables
 import {
   useChildren,
   useWindowSize,
@@ -438,9 +438,8 @@ export default createComponent({
       });
     };
 
-    const onRendered = (name: string | number, title?: string) => {
+    const onRendered = (name: string | number, title?: string) =>
       emit('rendered', name, title);
-    };
 
     useExpose({
       resize: setLine,

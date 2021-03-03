@@ -1,10 +1,10 @@
 import { ref, CSSProperties } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, getZIndexStyle } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
-// Composition
+// Composables
 import { usePlaceholder } from '../composables/use-placeholder';
 
 // Components
@@ -34,13 +34,8 @@ export default createComponent({
     const navBarRef = ref<HTMLElement>();
     const renderPlaceholder = usePlaceholder(navBarRef, bem);
 
-    const onClickLeft = (event: MouseEvent) => {
-      emit('click-left', event);
-    };
-
-    const onClickRight = (event: MouseEvent) => {
-      emit('click-right', event);
-    };
+    const onClickLeft = (event: MouseEvent) => emit('click-left', event);
+    const onClickRight = (event: MouseEvent) => emit('click-right', event);
 
     const renderLeft = () => {
       if (slots.left) {
@@ -63,9 +58,7 @@ export default createComponent({
 
     const renderNavBar = () => {
       const { title, fixed, border, zIndex } = props;
-      const style: CSSProperties = {
-        zIndex: zIndex !== undefined ? +zIndex : undefined,
-      };
+      const style: CSSProperties = getZIndexStyle(zIndex);
 
       const hasLeft = props.leftArrow || props.leftText || slots.left;
       const hasRight = props.rightText || slots.right;

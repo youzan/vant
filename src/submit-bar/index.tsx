@@ -83,9 +83,7 @@ export default createComponent({
       }
     };
 
-    const onClickButton = () => {
-      emit('submit');
-    };
+    const onClickButton = () => emit('submit');
 
     const renderButton = () => {
       if (slots.button) {

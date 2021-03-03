@@ -3,7 +3,7 @@ import { watch, computed, reactive, CSSProperties, defineComponent } from 'vue';
 // Utils
 import { range, preventDefault, createNamespace } from '../utils';
 
-// Composition
+// Composables
 import { useTouch } from '../composables/use-touch';
 
 // Component

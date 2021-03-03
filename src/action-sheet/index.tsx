@@ -51,12 +51,10 @@ export default createComponent({
   emits: ['select', 'cancel', 'update:show'],
 
   setup(props, { slots, emit }) {
-    const onUpdateShow = (show: boolean) => {
-      emit('update:show', show);
-    };
+    const updateShow = (show: boolean) => emit('update:show', show);
 
     const onCancel = () => {
-      onUpdateShow(false);
+      updateShow(false);
       emit('cancel');
     };
 
@@ -120,7 +118,7 @@ export default createComponent({
         emit('select', item, index);
 
         if (props.closeOnClickAction) {
-          onUpdateShow(false);
+          updateShow(false);
         }
       };
 
@@ -159,7 +157,7 @@ export default createComponent({
         safeAreaInsetBottom={props.safeAreaInsetBottom}
         {...{
           ...pick(props, popupSharedPropKeys),
-          'onUpdate:show': onUpdateShow,
+          'onUpdate:show': updateShow,
         }}
       >
         {renderHeader()}

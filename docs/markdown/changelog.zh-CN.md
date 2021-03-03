@@ -16,6 +16,38 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.7](https://github.com/youzan/vant/compare/v3.0.6...v3.0.7)
+
+`2021-02-28`
+
+**Feature**
+
+- Notify: 新增 lockScroll 选项 [#8168](https://github.com/youzan/vant/issues/8168)
+- Popup: click-overlay 事件新增 `Event` 参数 [#8107](https://github.com/youzan/vant/issues/8107)
+- ShareSheet: 新增 overlay-style 属性 [#8225](https://github.com/youzan/vant/issues/8225)
+- ShareSheet: 新增 overlay-class 属性 [#8225](https://github.com/youzan/vant/issues/8225)
+- Step: 新增 finish-icon 插槽 [#8241](https://github.com/youzan/vant/issues/8241)
+- Steps: 新增 finish-icon 属性 [#8103](https://github.com/youzan/vant/issues/8103)
+- Uploader: 新增 @uploader-mask-text-color 样式变量 [#8064](https://github.com/youzan/vant/issues/8064)
+
+**perf**
+
+- 包体积优化：调整适配的浏览器版本，与 Vue 3 保持一致 [#8227](https://github.com/youzan/vant/issues/8227)
+
+**Bug Fixes**
+
+- ActionSheet: 修复 safe-area-inset-bottom 属性不生效的问题 [#8085](https://github.com/youzan/vant/issues/8085)
+- DateTimePicker: 修复 v-model 为 null 时初始值不正确的问题 [#8193](https://github.com/youzan/vant/issues/8193)
+- Form: 修复提交表单时可能滚动到错误的表单项的问题 [#8159](https://github.com/youzan/vant/issues/8159)
+- ImagePreview: 修复第二次调用时可能出现渲染不正确的问题 [#8060](https://github.com/youzan/vant/issues/8060)
+- IndexBar: 修复初始化时激活的锚点未正确渲染的问题 [#8164](https://github.com/youzan/vant/issues/8164)
+- Popup: 修复动态设置 lock-scroll 属性不生效的问题 [#8169](https://github.com/youzan/vant/issues/8169)
+- Swipe: 修复初始化时 active 值可能错误的问题 [#8061](https://github.com/youzan/vant/issues/8061)
+- SwipeCell: 修复点击外部时 click 事件参数不正确的问题 [#8108](https://github.com/youzan/vant/issues/8108)
+- Tabbar: 修复 name 为 0 时激活的选项可能不正确的问题 [#8125](https://github.com/youzan/vant/issues/8125)
+- Tabs: 修复 v-model 为 0 时激活的标签页可能不正确的问题 [#8074](https://github.com/youzan/vant/issues/8074)
+- Toast: 修复 SSR 时可能报错的问题 [#8214](https://github.com/youzan/vant/issues/8214)
+
 ### [v3.0.6](https://github.com/youzan/vant/compare/v3.0.5...v3.0.6)
 
 `2021-01-31`

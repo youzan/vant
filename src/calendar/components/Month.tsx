@@ -12,7 +12,7 @@ import {
   formatMonthTitle,
 } from '../utils';
 
-// Composition
+// Composables
 import { useToggle } from '@vant/use';
 import { useExpose } from '../../composables/use-expose';
 import { useHeight } from '../../composables/use-height';
@@ -237,9 +237,7 @@ export default createComponent({
         color={props.color}
         offset={offset.value}
         rowHeight={rowHeight.value}
-        onClick={(item) => {
-          emit('click', item);
-        }}
+        onClick={(item) => emit('click', item)}
       />
     );
 

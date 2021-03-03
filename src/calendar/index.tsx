@@ -17,7 +17,7 @@ import {
   getDayByOffset,
 } from './utils';
 
-// Composition
+// Composables
 import { raf, useRect, onMountedOrActivated } from '@vant/use';
 import { useRefs } from '../composables/use-refs';
 import { useExpose } from '../composables/use-expose';
@@ -332,9 +332,7 @@ export default createComponent({
       return true;
     };
 
-    const onConfirm = () => {
-      emit('confirm', copyDates(state.currentDate));
-    };
+    const onConfirm = () => emit('confirm', copyDates(state.currentDate));
 
     const select = (date: Date | Date[], complete?: boolean) => {
       const setCurrentDate = (date: Date | Date[]) => {
@@ -426,9 +424,7 @@ export default createComponent({
       }
     };
 
-    const togglePopup = (value: boolean) => {
-      emit('update:show', value);
-    };
+    const updateShow = (value: boolean) => emit('update:show', value);
 
     const renderMonth = (date: Date, index: number) => {
       const showMonthTitle = index !== 0 || !props.showSubtitle;
@@ -507,9 +503,12 @@ export default createComponent({
     );
 
     watch(() => props.show, init);
-    watch([() => props.type, () => props.minDate, () => props.maxDate], () => {
-      reset(getInitialDate(state.currentDate));
-    });
+    watch(
+      () => [props.type, props.minDate, props.maxDate],
+      () => {
+        reset(getInitialDate(state.currentDate));
+      }
+    );
     watch(
       () => props.defaultDate,
       (value) => {
@@ -537,7 +536,7 @@ export default createComponent({
             teleport={props.teleport}
             closeOnPopstate={props.closeOnPopstate}
             closeOnClickOverlay={props.closeOnClickOverlay}
-            {...{ 'onUpdate:show': togglePopup }}
+            {...{ 'onUpdate:show': updateShow }}
           >
             {renderCalendar()}
           </Popup>

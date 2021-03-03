@@ -4,7 +4,7 @@ import { ref, watch, computed, nextTick, reactive, PropType } from 'vue';
 import { ComponentInstance, createNamespace, isObject } from '../utils';
 import { isMobile } from '../utils/validate/mobile';
 
-// Composition
+// Composables
 import { useExpose } from '../composables/use-expose';
 
 // Components
@@ -239,12 +239,8 @@ export default createComponent({
       Dialog.confirm({
         title: t('confirmDelete'),
       })
-        .then(() => {
-          emit('delete', state.data);
-        })
-        .catch(() => {
-          emit('cancel-delete', state.data);
-        });
+        .then(() => emit('delete', state.data))
+        .catch(() => emit('cancel-delete', state.data));
     };
 
     // get values of area component
@@ -277,9 +273,7 @@ export default createComponent({
             <Switch
               v-model={state.data.isDefault}
               size="24"
-              onChange={(event) => {
-                emit('change-default', event);
-              }}
+              onChange={(event) => emit('change-default', event)}
             />
           ),
         };
@@ -306,9 +300,7 @@ export default createComponent({
 
     watch(
       () => props.areaList,
-      () => {
-        setAreaCode(state.data.areaCode);
-      }
+      () => setAreaCode(state.data.areaCode)
     );
 
     watch(
@@ -378,9 +370,7 @@ export default createComponent({
               onBlur={onDetailBlur}
               onFocus={() => onFocus('addressDetail')}
               onInput={onChangeDetail}
-              onSelect-search={(event: Event) => {
-                emit('select-search', event);
-              }}
+              onSelect-search={(event: Event) => emit('select-search', event)}
             />
             {props.showPostal && (
               <Field

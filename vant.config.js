@@ -75,7 +75,7 @@ module.exports = {
                 title: '进阶用法',
               },
               {
-                path: 'changelog-v3',
+                path: 'changelog',
                 title: '更新日志',
               },
               {
@@ -443,7 +443,7 @@ module.exports = {
                 title: 'Advanced Usage',
               },
               {
-                path: 'changelog-v3',
+                path: 'changelog',
                 title: 'Changelog',
               },
               {

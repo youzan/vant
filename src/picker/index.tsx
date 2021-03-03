@@ -9,7 +9,7 @@ import {
 } from '../utils';
 import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 
-// Composition
+// Composables
 import { useChildren } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
@@ -286,9 +286,7 @@ export default createComponent({
       emitAction('confirm');
     };
 
-    const cancel = () => {
-      emitAction('cancel');
-    };
+    const cancel = () => emitAction('cancel');
 
     const renderTitle = () => {
       if (slots.title) {
@@ -342,9 +340,7 @@ export default createComponent({
           swipeDuration={props.swipeDuration}
           initialOptions={item[valuesKey]}
           visibleItemCount={props.visibleItemCount}
-          onChange={() => {
-            onChange(columnIndex);
-          }}
+          onChange={() => onChange(columnIndex)}
         />
       ));
 

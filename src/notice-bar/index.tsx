@@ -1,7 +1,7 @@
 import { ref, watch, reactive, PropType } from 'vue';
 import { isDef, createNamespace } from '../utils';
 
-// Composition
+// Composables
 import {
   raf,
   useRect,
@@ -173,7 +173,7 @@ export default createComponent({
     // see: https://guwii.com/cache-issues-with-forwards-and-back-history-in-safari/
     useEventListener('pageshow', start);
 
-    watch([() => props.text, () => props.scrollable], start);
+    watch(() => [props.text, props.scrollable], start);
 
     return () => {
       const { color, wrapable, background } = props;

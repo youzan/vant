@@ -3,7 +3,7 @@ import { PropType, CSSProperties } from 'vue';
 // Utils
 import { createNamespace, isDef, UnknownProp } from '../utils';
 
-// Composition
+// Composables
 import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
@@ -74,10 +74,10 @@ export default createComponent({
     };
 
     const renderValue = () => {
-      const hasTitle = slots.title || isDef(props.title);
       const hasValue = slots.default || isDef(props.value);
 
       if (hasValue) {
+        const hasTitle = slots.title || isDef(props.title);
         return (
           <div class={[bem('value', { alone: !hasTitle }), props.valueClass]}>
             {slots.default ? slots.default() : <span>{props.value}</span>}

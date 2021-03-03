@@ -870,9 +870,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div>
           <div style="height: 0px;">
-            <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom"
-                 style="z-index: undefined;"
-            >
+            <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom">
               Z
             </div>
           </div>

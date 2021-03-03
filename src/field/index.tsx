@@ -26,7 +26,7 @@ import {
 } from '../utils';
 import { runSyncRule } from './utils';
 
-// Composition
+// Composables
 import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { FORM_KEY, FIELD_KEY } from '../composables/use-link-field';
@@ -330,17 +330,13 @@ export default createComponent({
       resetScroll();
     };
 
-    const onClickInput = (event: MouseEvent) => {
-      emit('click-input', event);
-    };
+    const onClickInput = (event: MouseEvent) => emit('click-input', event);
 
-    const onClickLeftIcon = (event: MouseEvent) => {
+    const onClickLeftIcon = (event: MouseEvent) =>
       emit('click-left-icon', event);
-    };
 
-    const onClickRightIcon = (event: MouseEvent) => {
+    const onClickRightIcon = (event: MouseEvent) =>
       emit('click-right-icon', event);
-    };
 
     const onClear = (event: MouseEvent) => {
       preventDefault(event);

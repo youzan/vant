@@ -66,7 +66,7 @@ export default createComponent({
       }
     };
 
-    watch([() => props.showPivot, () => props.pivotText], resize);
+    watch(() => [props.showPivot, props.pivotText], resize);
     onMounted(resize);
     useExpose({ resize });
 

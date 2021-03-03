@@ -4,7 +4,7 @@ import { watch, computed } from 'vue';
 import { createNamespace } from '../utils';
 import { parseFormat } from './utils';
 
-// Composition
+// Composables
 import { useCountDown } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
@@ -33,12 +33,8 @@ export default createComponent({
     const { start, pause, reset, current } = useCountDown({
       time: +props.time,
       millisecond: props.millisecond,
-      onChange(current) {
-        emit('change', current);
-      },
-      onFinish() {
-        emit('finish');
-      },
+      onChange: (current) => emit('change', current),
+      onFinish: () => emit('finish'),
     });
 
     const timeText = computed(() => parseFormat(props.format, current.value));

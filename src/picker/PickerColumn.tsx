@@ -11,7 +11,7 @@ import {
   createNamespace,
 } from '../utils';
 
-// Composition
+// Composables
 import { useParent } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
@@ -289,9 +289,7 @@ export default createComponent({
             disabled,
             selected: index === state.index,
           }),
-          onClick: () => {
-            onClickItem(index);
-          },
+          onClick: () => onClickItem(index),
         };
 
         const childData = {

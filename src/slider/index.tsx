@@ -9,7 +9,7 @@ import {
   createNamespace,
 } from '../utils';
 
-// Composition
+// Composables
 import { useRect } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useLinkField } from '../composables/use-link-field';

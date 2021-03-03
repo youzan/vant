@@ -60,18 +60,16 @@ export default createComponent({
       }
     };
 
+    const updateShow = (show: boolean) => emit('update:show', show);
+
     const onClick = () => {
       if (props.closeOnClick) {
-        emit('update:show', false);
+        updateShow(false);
       }
     };
 
     const clearTimer = () => {
       clearTimeout(timer);
-    };
-
-    const toggle = (show: boolean) => {
-      emit('update:show', show);
     };
 
     const renderIcon = () => {
@@ -105,16 +103,19 @@ export default createComponent({
       }
     };
 
-    watch([() => props.show, () => props.forbidClick], toggleClickable);
+    watch(() => [props.show, props.forbidClick], toggleClickable);
 
-    watch([() => props.show, () => props.duration], () => {
-      clearTimer();
-      if (props.show && props.duration > 0) {
-        timer = setTimeout(() => {
-          emit('update:show', false);
-        }, props.duration);
+    watch(
+      () => [props.show, props.duration],
+      () => {
+        clearTimer();
+        if (props.show && props.duration > 0) {
+          timer = setTimeout(() => {
+            updateShow(false);
+          }, props.duration);
+        }
       }
-    });
+    );
 
     onMounted(toggleClickable);
     onUnmounted(toggleClickable);
@@ -134,7 +135,7 @@ export default createComponent({
         closeOnClickOverlay={props.closeOnClickOverlay}
         onClick={onClick}
         onClosed={clearTimer}
-        {...{ 'onUpdate:show': toggle }}
+        {...{ 'onUpdate:show': updateShow }}
       >
         {renderIcon()}
         {renderMessage()}

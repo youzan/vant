@@ -3,7 +3,7 @@ import { PropType } from 'vue';
 // Utils
 import { createNamespace, ComponentInstance } from '../utils';
 
-// Composition
+// Composables
 import { useChildren } from '@vant/use';
 import { FORM_KEY } from '../composables/use-link-field';
 import { useExpose } from '../composables/use-expose';
@@ -156,9 +156,7 @@ export default createComponent({
       const values = getValues();
 
       validate()
-        .then(() => {
-          emit('submit', values);
-        })
+        .then(() => emit('submit', values))
         .catch((errors: FieldValidateError[]) => {
           emit('failed', { values, errors });
 

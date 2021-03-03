@@ -5,7 +5,7 @@ import { createNamespace } from '../utils';
 import { BORDER } from '../utils/constant';
 import { STEPS_KEY, StepsProvide } from '../steps';
 
-// Composition
+// Composables
 import { useParent } from '@vant/use';
 
 // Components
@@ -52,9 +52,7 @@ export default createComponent({
       }
     });
 
-    const onClickStep = () => {
-      parent.onClickStep(index.value);
-    };
+    const onClickStep = () => parent.onClickStep(index.value);
 
     const renderCircle = () => {
       const { finishIcon, activeIcon, activeColor, inactiveIcon } = parentProps;
@@ -73,7 +71,11 @@ export default createComponent({
         );
       }
 
-      if (getStatus() === 'finish' && finishIcon) {
+      if (getStatus() === 'finish' && (finishIcon || slots['finish-icon'])) {
+        if (slots['finish-icon']) {
+          return slots['finish-icon']();
+        }
+
         return (
           <Icon
             class={bem('icon', 'finish')}

@@ -14,7 +14,7 @@ import {
   UploaderResultType,
 } from './utils';
 
-// Composition
+// Composables
 import { useExpose } from '../composables/use-expose';
 import { useLinkField } from '../composables/use-link-field';
 
@@ -233,9 +233,7 @@ export default createComponent({
 
     let imagePreview: ComponentInstance | undefined;
 
-    const onClosePreview = () => {
-      emit('close-preview');
-    };
+    const onClosePreview = () => emit('close-preview');
 
     const previewImage = (item: FileListItem) => {
       if (props.previewFullImage) {
@@ -285,15 +283,9 @@ export default createComponent({
           v-slots={{ 'preview-cover': slots['preview-cover'] }}
           item={item}
           index={index}
-          onClick={() => {
-            emit('click-preview', item, getDetail(index));
-          }}
-          onDelete={() => {
-            deleteFile(item, index);
-          }}
-          onPreview={() => {
-            previewImage(item);
-          }}
+          onClick={() => emit('click-preview', item, getDetail(index))}
+          onDelete={() => deleteFile(item, index)}
+          onPreview={() => previewImage(item)}
           {...pick(props, ['name', 'lazyLoad'])}
           {...previewData}
         />
@@ -317,7 +309,7 @@ export default createComponent({
           type="file"
           class={bem('input')}
           accept={props.accept}
-          capture={props.capture as any}
+          capture={(props.capture as unknown) as boolean}
           multiple={props.multiple}
           disabled={props.disabled}
           onChange={onChange}

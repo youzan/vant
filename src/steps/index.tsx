@@ -46,9 +46,7 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const { linkChildren } = useChildren(STEPS_KEY);
 
-    const onClickStep = (index: number) => {
-      emit('click-step', index);
-    };
+    const onClickStep = (index: number) => emit('click-step', index);
 
     linkChildren({
       props,

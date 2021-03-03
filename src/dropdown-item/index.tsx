@@ -7,10 +7,10 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace, UnknownProp } from '../utils';
+import { createNamespace, getZIndexStyle, UnknownProp } from '../utils';
 import { DROPDOWN_KEY, DropdownMenuProvide } from '../dropdown-menu';
 
-// Composition
+// Composables
 import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
@@ -64,11 +64,10 @@ export default createComponent({
       return;
     }
 
-    const createEmitter = (eventName: 'open' | 'close' | 'opened') => () =>
-      emit(eventName);
-    const onOpen = createEmitter('open');
-    const onClose = createEmitter('close');
-    const onOpened = createEmitter('opened');
+    const getEmitter = (name: 'open' | 'close' | 'opened') => () => emit(name);
+    const onOpen = getEmitter('open');
+    const onClose = getEmitter('close');
+    const onOpened = getEmitter('opened');
 
     const onClosed = () => {
       state.showWrapper = false;
@@ -154,9 +153,7 @@ export default createComponent({
         closeOnClickOverlay,
       } = parent.props;
 
-      const style: CSSProperties = {
-        zIndex: zIndex !== undefined ? +zIndex : undefined,
-      };
+      const style: CSSProperties = getZIndexStyle(zIndex);
 
       if (direction === 'down') {
         style.top = `${offset.value}px`;

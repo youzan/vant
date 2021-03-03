@@ -83,24 +83,14 @@ export default createComponent({
           label={express.address}
           class={bem('search-item')}
           border={false}
-          onClick={() => {
-            onSelect(express);
-          }}
+          onClick={() => onSelect(express)}
         />
       ));
     };
 
-    const onFocus = (event: Event) => {
-      emit('focus', event);
-    };
-
-    const onBlur = (event: Event) => {
-      emit('blur', event);
-    };
-
-    const onInput = (value: string) => {
-      emit('input', value);
-    };
+    const onBlur = (event: Event) => emit('blur', event);
+    const onFocus = (event: Event) => emit('focus', event);
+    const onInput = (value: string) => emit('input', value);
 
     return () => {
       if (props.show) {

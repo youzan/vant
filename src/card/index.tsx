@@ -10,14 +10,14 @@ const [createComponent, bem] = createNamespace('card');
 export default createComponent({
   props: {
     tag: String,
+    num: [Number, String],
     desc: String,
     thumb: String,
     title: String,
+    price: [Number, String],
     centered: Boolean,
     lazyLoad: Boolean,
     thumbLink: String,
-    num: [Number, String],
-    price: [Number, String],
     originPrice: [Number, String],
     currency: {
       type: String,
@@ -80,9 +80,7 @@ export default createComponent({
           <a
             href={props.thumbLink}
             class={bem('thumb')}
-            onClick={(event) => {
-              emit('click-thumb', event);
-            }}
+            onClick={(event: MouseEvent) => emit('click-thumb', event)}
           >
             {renderThumbImage()}
             {renderThumbTag()}

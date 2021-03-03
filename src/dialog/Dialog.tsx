@@ -64,12 +64,10 @@ export default createComponent({
       cancel: false,
     });
 
-    const onUpdateShow = (value: boolean) => {
-      emit('update:show', value);
-    };
+    const updateShow = (value: boolean) => emit('update:show', value);
 
     const close = (action: DialogAction) => {
-      onUpdateShow(false);
+      updateShow(false);
       if (props.callback) {
         props.callback(action);
       }
@@ -214,7 +212,7 @@ export default createComponent({
           aria-labelledby={title || message}
           {...{
             ...pick(props, popupKeys),
-            'onUpdate:show': onUpdateShow,
+            'onUpdate:show': updateShow,
           }}
         >
           {renderTitle()}

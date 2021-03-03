@@ -1,7 +1,7 @@
 import NumberKeyboard from '..';
 import { mount, trigger, later } from '../../../test';
 
-function clickKey(key) {
+function clickKey(key: Parameters<typeof trigger>[0]) {
   trigger(key, 'touchstart');
   trigger(key, 'touchend');
 }
@@ -9,7 +9,7 @@ function clickKey(key) {
 test('should emit input event after clicking number key', () => {
   const wrapper = mount(NumberKeyboard);
   clickKey(wrapper.findAll('.van-key')[0]);
-  expect(wrapper.emitted('input')[0][0]).toEqual(1);
+  expect(wrapper.emitted('input')![0]).toEqual([1]);
   wrapper.unmount();
 });
 
@@ -163,10 +163,10 @@ test('should emit "update:modelValue" event after clicking key', () => {
   const keys = wrapper.findAll('.van-key');
 
   clickKey(keys[0]);
-  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('1');
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual(['1']);
 
   clickKey(keys[1]);
-  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('2');
+  expect(wrapper.emitted('update:modelValue')![1]).toEqual(['2']);
 });
 
 test('should limit max length of modelValue when using maxlength prop', async () => {
@@ -182,12 +182,12 @@ test('should limit max length of modelValue when using maxlength prop', async ()
 
   clickKey(keys[0]);
   expect(onInput).toHaveBeenCalledTimes(1);
-  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('1');
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual(['1']);
   await wrapper.setProps({ modelValue: '1' });
 
   clickKey(keys[1]);
   expect(onInput).toHaveBeenCalledTimes(1);
-  expect(wrapper.emitted('update:modelValue').length).toEqual(1);
+  expect(wrapper.emitted('update:modelValue')!.length).toEqual(1);
 });
 
 test('should not render delete key when show-delete-key prop is false', async () => {
@@ -222,13 +222,13 @@ test('should shuffle key order when using random-key-order prop', () => {
     },
   });
 
-  const keys = [];
-  const clickKeys = [];
+  const keys: number[] = [];
+  const clickKeys: number[] = [];
 
   for (let i = 0; i < 9; i++) {
     keys.push(i + 1);
     clickKey(wrapper.findAll('.van-key')[i]);
-    clickKeys.push(wrapper.emitted('input')[i][0]);
+    clickKeys.push(wrapper.emitted<number[]>('input')![i][0]);
   }
 
   expect(keys.every((v, k) => keys[k] === clickKeys[k])).toEqual(false);

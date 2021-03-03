@@ -20,7 +20,7 @@ import {
   ComponentInstance,
 } from '../utils';
 
-// Composition
+// Composables
 import {
   useRect,
   useChildren,
@@ -85,19 +85,19 @@ export default createComponent({
 
     linkChildren({ props });
 
-    const sidebarStyle = computed(() => {
+    const sidebarStyle = computed<CSSProperties | undefined>(() => {
       if (isDef(props.zIndex)) {
         return {
           zIndex: +props.zIndex + 1,
-        } as CSSProperties;
+        };
       }
     });
 
-    const highlightStyle = computed(() => {
+    const highlightStyle = computed<CSSProperties | undefined>(() => {
       if (props.highlightColor) {
         return {
           color: props.highlightColor,
-        } as CSSProperties;
+        };
       }
     });
 
@@ -173,9 +173,7 @@ export default createComponent({
       }
     };
 
-    const init = () => {
-      nextTick(onScroll);
-    };
+    const init = () => nextTick(onScroll);
 
     useEventListener('scroll', onScroll, { target: scrollParent });
 

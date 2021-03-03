@@ -21,7 +21,7 @@ export type CheckboxGroupProvide = CheckerParent & {
     max: number | string;
     modelValue: unknown[];
   };
-  updateModelValue: (value: unknown[]) => void;
+  updateValue: (value: unknown[]) => void;
 };
 
 export default createComponent({
@@ -42,9 +42,7 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const { children, linkChildren } = useChildren(CHECKBOX_GROUP_KEY);
 
-    const updateModelValue = (value: unknown[]) => {
-      emit('update:modelValue', value);
-    };
+    const updateValue = (value: unknown[]) => emit('update:modelValue', value);
 
     const toggleAll = (options: CheckboxGroupToggleAllOptions = {}) => {
       if (typeof options === 'boolean') {
@@ -64,21 +62,19 @@ export default createComponent({
       });
 
       const names = checkedChildren.map((item: any) => item.name);
-      updateModelValue(names);
+      updateValue(names);
     };
 
     watch(
       () => props.modelValue,
-      (value) => {
-        emit('change', value);
-      }
+      (value) => emit('change', value)
     );
 
     useExpose({ toggleAll });
     useLinkField(() => props.modelValue);
     linkChildren({
       props,
-      updateModelValue,
+      updateValue,
     });
 
     return () => <div class={bem([props.direction])}>{slots.default?.()}</div>;

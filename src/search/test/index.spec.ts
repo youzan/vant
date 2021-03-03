@@ -1,5 +1,6 @@
 import Search from '..';
 import { mount } from '../../../test';
+import type { ComponentInstance } from '../../utils';
 
 test('should emit update:modelValue event when input value changed', () => {
   const onUpdateModelValue = jest.fn();
@@ -28,8 +29,8 @@ test('should emit cancel event when cancel button click is clicked', () => {
   const cancel = wrapper.find('.van-search__action');
   cancel.trigger('click');
 
-  expect(wrapper.emitted('cancel').length).toEqual(1);
-  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('');
+  expect(wrapper.emitted('cancel')!.length).toEqual(1);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual(['']);
 });
 
 test('should not emit cancel event when using action slot', () => {
@@ -56,7 +57,7 @@ test('should emit search event when enter key is pressed', () => {
   input.trigger('keypress.enter');
   input.trigger('keypress.a');
 
-  expect(wrapper.emitted('search').length).toEqual(1);
+  expect(wrapper.emitted('search')!.length).toEqual(1);
 });
 
 test('should render label slot correctly', () => {
@@ -125,7 +126,7 @@ test('should call input.focus when vm.focus is called', () => {
   const onFocus = jest.fn();
   wrapper.find('input').element.focus = onFocus;
 
-  wrapper.vm.focus();
+  (wrapper.vm as ComponentInstance).focus();
   expect(onFocus).toHaveBeenCalledTimes(1);
 });
 
@@ -134,6 +135,6 @@ test('should call input.blur when vm.blur is called', () => {
   const onBlur = jest.fn();
   wrapper.find('input').element.blur = onBlur;
 
-  wrapper.vm.blur();
+  (wrapper.vm as ComponentInstance).blur();
   expect(onBlur).toHaveBeenCalledTimes(1);
 });

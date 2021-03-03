@@ -12,7 +12,7 @@ import {
   createNamespace,
 } from '../utils';
 
-// Composition
+// Composables
 import { useLinkField } from '../composables/use-link-field';
 import { Interceptor, callInterceptor } from '../utils/interceptor';
 

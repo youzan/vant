@@ -3,7 +3,7 @@ import { ref, watch, reactive, nextTick } from 'vue';
 // Utils
 import { preventDefault, getScrollTop, createNamespace } from '../utils';
 
-// Composition
+// Composables
 import { useScrollParent } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 
@@ -109,7 +109,7 @@ export default createComponent({
       if (status === 'normal') {
         return '';
       }
-      return (props as any)[`${status}Text`] || t(status);
+      return props[`${status}Text` as const] || t(status);
     };
 
     const renderStatus = () => {
@@ -179,9 +179,7 @@ export default createComponent({
           emit('update:modelValue', true);
 
           // ensure value change can be watched
-          nextTick(() => {
-            emit('refresh');
-          });
+          nextTick(() => emit('refresh'));
         } else {
           setStatus(0);
         }

@@ -4,7 +4,7 @@ import { TABBAR_KEY, TabbarProvide } from '../tabbar';
 // Utils
 import { createNamespace, isObject } from '../utils';
 
-// Composition
+// Composables
 import { useParent } from '@vant/use';
 import { routeProps, useRoute } from '../composables/use-route';
 
