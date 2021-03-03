@@ -1,4 +1,4 @@
-import { watch, computed, PropType } from 'vue';
+import { watch, computed, PropType, CSSProperties } from 'vue';
 import { raf, cancelRaf } from '@vant/use';
 import { isObject, getSizeStyle, createNamespace } from '../utils';
 
@@ -62,7 +62,8 @@ export default createComponent({
     watch(
       () => props.rate,
       (rate) => {
-        let rafId;
+        let rafId: number | undefined;
+
         const startTime = Date.now();
         const startRate = props.currentRate;
         const endRate = format(rate);
@@ -97,11 +98,11 @@ export default createComponent({
     const renderHover = () => {
       const PERIMETER = 3140;
       const { strokeWidth, currentRate, strokeLinecap } = props;
-      let { color } = props;
       const offset = (PERIMETER * currentRate) / 100;
-      color = isObject(color) ? `url(#${id})` : color;
-      const style = {
-        stroke: `${color}`,
+      const color = isObject(props.color) ? `url(#${id})` : props.color;
+
+      const style: CSSProperties = {
+        stroke: color,
         strokeWidth: `${+strokeWidth + 1}px`,
         strokeLinecap,
         strokeDasharray: `${offset}px ${PERIMETER}px`,
