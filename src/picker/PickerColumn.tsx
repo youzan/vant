@@ -54,7 +54,7 @@ export type PickerObjectColumn = {
   [key: string]: any;
 };
 
-export type PickerColumn = PickerOption | PickerObjectColumn;
+export type PickerColumn = PickerOption[] | PickerObjectColumn;
 
 function isOptionDisabled(option: PickerOption) {
   return isObject(option) && option.disabled;
