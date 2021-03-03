@@ -10,14 +10,14 @@ const [createComponent, bem] = createNamespace('card');
 export default createComponent({
   props: {
     tag: String,
+    num: [Number, String],
     desc: String,
     thumb: String,
     title: String,
+    price: [Number, String],
     centered: Boolean,
     lazyLoad: Boolean,
     thumbLink: String,
-    num: [Number, String],
-    price: [Number, String],
     originPrice: [Number, String],
     currency: {
       type: String,

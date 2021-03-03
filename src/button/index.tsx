@@ -1,4 +1,4 @@
-import { PropType, CSSProperties } from 'vue';
+import { PropType, CSSProperties, ButtonHTMLAttributes } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -49,7 +49,7 @@ export default createComponent({
       default: 'normal',
     },
     nativeType: {
-      type: String,
+      type: String as PropType<ButtonHTMLAttributes['type']>,
       default: 'button',
     },
     loadingSize: {
