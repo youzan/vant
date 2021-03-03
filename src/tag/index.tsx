@@ -48,9 +48,13 @@ export default createComponent({
     const renderTag = () => {
       const { type, mark, plain, round, size, closeable } = props;
 
-      const classes: Record<string, boolean> = { mark, plain, round };
+      const classes: Record<string, unknown> = {
+        mark,
+        plain,
+        round,
+      };
       if (size) {
-        classes[size] = !!size;
+        classes[size] = size;
       }
 
       const CloseIcon = closeable && (
