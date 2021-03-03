@@ -503,9 +503,12 @@ export default createComponent({
     );
 
     watch(() => props.show, init);
-    watch([() => props.type, () => props.minDate, () => props.maxDate], () => {
-      reset(getInitialDate(state.currentDate));
-    });
+    watch(
+      () => [props.type, props.minDate, props.maxDate],
+      () => {
+        reset(getInitialDate(state.currentDate));
+      }
+    );
     watch(
       () => props.defaultDate,
       (value) => {

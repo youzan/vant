@@ -33,12 +33,8 @@ export default createComponent({
     const { start, pause, reset, current } = useCountDown({
       time: +props.time,
       millisecond: props.millisecond,
-      onChange(current) {
-        emit('change', current);
-      },
-      onFinish() {
-        emit('finish');
-      },
+      onChange: (current) => emit('change', current),
+      onFinish: () => emit('finish'),
     });
 
     const timeText = computed(() => parseFormat(props.format, current.value));
