@@ -309,7 +309,7 @@ export default createComponent({
           type="file"
           class={bem('input')}
           accept={props.accept}
-          capture={props.capture as any}
+          capture={(props.capture as unknown) as boolean}
           multiple={props.multiple}
           disabled={props.disabled}
           onChange={onChange}

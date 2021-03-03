@@ -1,4 +1,4 @@
-import { App, TeleportProps } from 'vue';
+import { App, Plugin, TeleportProps } from 'vue';
 import { ComponentInstance, inBrowser } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import { Interceptor } from '../utils/interceptor';
@@ -96,7 +96,7 @@ const ImagePreview = (
 ImagePreview.Component = VanImagePreview;
 
 ImagePreview.install = (app: App) => {
-  app.use(VanImagePreview as any);
+  app.use((VanImagePreview as unknown) as Plugin);
 };
 
 export default ImagePreview;
