@@ -175,7 +175,7 @@ export default createComponent({
       }
     });
 
-    watch([() => props.show, () => props.placement], updateLocation);
+    watch(() => [props.show, props.placement], updateLocation);
 
     useClickAway(wrapperRef, onClickAway, { eventName: 'touchstart' });
 

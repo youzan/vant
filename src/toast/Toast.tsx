@@ -103,16 +103,19 @@ export default createComponent({
       }
     };
 
-    watch([() => props.show, () => props.forbidClick], toggleClickable);
+    watch(() => [props.show, props.forbidClick], toggleClickable);
 
-    watch([() => props.show, () => props.duration], () => {
-      clearTimer();
-      if (props.show && props.duration > 0) {
-        timer = setTimeout(() => {
-          updateShow(false);
-        }, props.duration);
+    watch(
+      () => [props.show, props.duration],
+      () => {
+        clearTimer();
+        if (props.show && props.duration > 0) {
+          timer = setTimeout(() => {
+            updateShow(false);
+          }, props.duration);
+        }
       }
-    });
+    );
 
     onMounted(toggleClickable);
     onUnmounted(toggleClickable);
