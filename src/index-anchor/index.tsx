@@ -1,7 +1,7 @@
 import { ref, reactive, computed, CSSProperties } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, getZIndexStyle } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 import { INDEX_BAR_KEY, IndexBarProvide } from '../index-bar';
 import { getScrollTop, getRootScrollTop } from '../utils/dom/scroll';
@@ -40,17 +40,19 @@ export default createComponent({
 
     const isSticky = () => state.active && parent.props.sticky;
 
-    const anchorStyle = computed(() => {
+    const anchorStyle = computed<CSSProperties | undefined>(() => {
       const { zIndex, highlightColor } = parent.props;
 
       if (isSticky()) {
         return {
-          zIndex: `${zIndex}`,
-          left: state.left ? `${state.left}px` : null,
-          width: state.width ? `${state.width}px` : null,
-          transform: state.top ? `translate3d(0, ${state.top}px, 0)` : null,
+          ...getZIndexStyle(zIndex),
+          left: state.left ? `${state.left}px` : undefined,
+          width: state.width ? `${state.width}px` : undefined,
+          transform: state.top
+            ? `translate3d(0, ${state.top}px, 0)`
+            : undefined,
           color: highlightColor,
-        } as CSSProperties;
+        };
       }
     });
 

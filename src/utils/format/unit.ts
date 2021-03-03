@@ -1,3 +1,4 @@
+import { CSSProperties } from 'vue';
 import { isDef, inBrowser } from '../base';
 import { isNumeric } from '../validate/number';
 
@@ -9,7 +10,9 @@ export function addUnit(value?: string | number): string | undefined {
   return isNumeric(value) ? `${value}px` : String(value);
 }
 
-export function getSizeStyle(originSize?: string | number) {
+export function getSizeStyle(
+  originSize?: string | number
+): CSSProperties | undefined {
   if (isDef(originSize)) {
     const size = addUnit(originSize);
     return {
@@ -17,6 +20,14 @@ export function getSizeStyle(originSize?: string | number) {
       height: size,
     };
   }
+}
+
+export function getZIndexStyle(zIndex?: string | number) {
+  const style: CSSProperties = {};
+  if (zIndex !== undefined) {
+    style.zIndex = +zIndex;
+  }
+  return style;
 }
 
 // cache

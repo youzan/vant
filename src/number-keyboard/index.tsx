@@ -8,7 +8,7 @@ import {
   Transition,
   TeleportProps,
 } from 'vue';
-import { createNamespace, stopPropagation } from '../utils';
+import { createNamespace, getZIndexStyle, stopPropagation } from '../utils';
 import { useClickAway } from '@vant/use';
 import Key, { KeyType } from './Key';
 
@@ -263,9 +263,7 @@ export default createComponent({
           <div
             v-show={props.show}
             ref={root}
-            style={{
-              zIndex: props.zIndex !== undefined ? +props.zIndex : undefined,
-            }}
+            style={getZIndexStyle(props.zIndex)}
             class={bem({
               unfit: !props.safeAreaInsetBottom,
               'with-title': !!Title,

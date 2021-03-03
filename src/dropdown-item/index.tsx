@@ -7,7 +7,7 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace, UnknownProp } from '../utils';
+import { createNamespace, getZIndexStyle, UnknownProp } from '../utils';
 import { DROPDOWN_KEY, DropdownMenuProvide } from '../dropdown-menu';
 
 // Composables
@@ -153,9 +153,7 @@ export default createComponent({
         closeOnClickOverlay,
       } = parent.props;
 
-      const style: CSSProperties = {
-        zIndex: zIndex !== undefined ? +zIndex : undefined,
-      };
+      const style: CSSProperties = getZIndexStyle(zIndex);
 
       if (direction === 'down') {
         style.top = `${offset.value}px`;

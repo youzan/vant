@@ -300,9 +300,7 @@ exports[`should update active anchor after page scroll 2`] = `
   <div data-index="0"
        style="height: 10px;"
   >
-    <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom"
-         style="z-index: undefined;"
-    >
+    <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom">
       1
     </div>
   </div>
@@ -310,7 +308,7 @@ exports[`should update active anchor after page scroll 2`] = `
        style="height: 10px;"
   >
     <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom"
-         style="z-index: undefined; transform: translate3d(0, 10px, 0);"
+         style="transform: translate3d(0, 10px, 0);"
     >
       2
     </div>

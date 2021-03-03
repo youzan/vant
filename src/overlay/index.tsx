@@ -5,6 +5,7 @@ import {
   UnknownProp,
   preventDefault,
   createNamespace,
+  getZIndexStyle,
 } from '../utils';
 import { useLazyRender } from '../composables/use-lazy-render';
 
@@ -32,7 +33,7 @@ export default createComponent({
 
     const renderOverlay = lazyRender(() => {
       const style: CSSProperties = {
-        zIndex: props.zIndex !== undefined ? +props.zIndex : undefined,
+        ...getZIndexStyle(props.zIndex),
         ...props.customStyle,
       };
 
