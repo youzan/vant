@@ -1,7 +1,7 @@
 import { ref, CSSProperties } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, getZIndexStyle } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
 // Composables
@@ -58,9 +58,7 @@ export default createComponent({
 
     const renderNavBar = () => {
       const { title, fixed, border, zIndex } = props;
-      const style: CSSProperties = {
-        zIndex: zIndex !== undefined ? +zIndex : undefined,
-      };
+      const style: CSSProperties = getZIndexStyle(zIndex);
 
       const hasLeft = props.leftArrow || props.leftText || slots.left;
       const hasRight = props.rightText || slots.right;

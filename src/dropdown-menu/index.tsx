@@ -70,11 +70,11 @@ export default createComponent({
       children.some((item) => item.state.showWrapper)
     );
 
-    const barStyle = computed(() => {
+    const barStyle = computed<CSSProperties | undefined>(() => {
       if (opened.value && isDef(props.zIndex)) {
         return {
           zIndex: +props.zIndex + 1,
-        } as CSSProperties;
+        };
       }
     });
 
