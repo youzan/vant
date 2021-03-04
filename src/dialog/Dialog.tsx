@@ -73,7 +73,7 @@ export default createComponent({
       }
     };
 
-    const handleAction = (action: DialogAction) => {
+    const getActionHandler = (action: DialogAction) => () => {
       // should not trigger close event when hidden
       if (!props.show) {
         return;
@@ -98,6 +98,9 @@ export default createComponent({
         close(action);
       }
     };
+
+    const onCancel = getActionHandler('cancel');
+    const onConfirm = getActionHandler('confirm');
 
     const renderTitle = () => {
       const title = slots.title ? slots.title() : props.title;
@@ -153,9 +156,7 @@ export default createComponent({
             class={bem('cancel')}
             style={{ color: props.cancelButtonColor }}
             loading={loading.cancel}
-            onClick={() => {
-              handleAction('cancel');
-            }}
+            onClick={onCancel}
           />
         )}
         {props.showConfirmButton && (
@@ -165,9 +166,7 @@ export default createComponent({
             class={[bem('confirm'), { [BORDER_LEFT]: props.showCancelButton }]}
             style={{ color: props.confirmButtonColor }}
             loading={loading.confirm}
-            onClick={() => {
-              handleAction('confirm');
-            }}
+            onClick={onConfirm}
           />
         )}
       </div>
@@ -182,9 +181,7 @@ export default createComponent({
             class={bem('cancel')}
             color={props.cancelButtonColor}
             loading={loading.cancel}
-            onClick={() => {
-              handleAction('cancel');
-            }}
+            onClick={onCancel}
           />
         )}
         {props.showConfirmButton && (
@@ -194,9 +191,7 @@ export default createComponent({
             class={bem('confirm')}
             color={props.confirmButtonColor}
             loading={loading.confirm}
-            onClick={() => {
-              handleAction('confirm');
-            }}
+            onClick={onConfirm}
           />
         )}
       </ActionBar>
