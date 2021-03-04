@@ -70,7 +70,7 @@ export default createComponent({
     ...pickerProps,
     columnsFieldNames: Object as PropType<PickerFieldNames>,
     columns: {
-      type: Array as PropType<PickerColumn[]>,
+      type: Array as PropType<PickerOption[] | PickerColumn[]>,
       default: () => [],
     },
     defaultIndex: {
