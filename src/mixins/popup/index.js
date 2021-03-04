@@ -114,12 +114,10 @@ export function PopupMixin(options = {}) {
 
     /* istanbul ignore next */
     deactivated() {
-      this.$nextTick(() => {
-        if (this.value) {
-          this.close();
-          this.shouldReopen = true;
-        }
-      });
+      if (this.value) {
+        this.close();
+        this.shouldReopen = true;
+      }
     },
 
     methods: {
