@@ -1,7 +1,13 @@
-import { computed, CSSProperties, PropType, reactive, ref } from 'vue';
+import { ref, computed, CSSProperties, PropType, reactive } from 'vue';
 
 // Utils
-import { createNamespace, getScrollTop, isHidden, unitToPx } from '../utils';
+import {
+  isHidden,
+  unitToPx,
+  getScrollTop,
+  getZIndexStyle,
+  createNamespace,
+} from '../utils';
 
 // Composables
 import { useRect, useEventListener, useScrollParent } from '@vant/use';
@@ -9,12 +15,12 @@ import { useVisibilityChange } from '../composables/use-visibility-change';
 
 const [createComponent, bem] = createNamespace('sticky');
 
-export type Position = 'top' | 'bottom';
+export type StickyPosition = 'top' | 'bottom';
 
 export default createComponent({
   props: {
     zIndex: [Number, String],
-    container: null,
+    container: Element,
     offsetTop: {
       type: [Number, String],
       default: 0,
@@ -24,7 +30,7 @@ export default createComponent({
       default: 0,
     },
     position: {
-      type: String as PropType<Position>,
+      type: String as PropType<StickyPosition>,
       default: 'top',
     },
   },
@@ -34,7 +40,6 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const root = ref<HTMLElement>();
     const scrollParent = useScrollParent(root);
-
     const state = reactive({
       fixed: false,
       width: 0, // root width
@@ -42,104 +47,94 @@ export default createComponent({
       transform: 0,
     });
 
-    const offsetTop = computed(() => unitToPx(props.offsetTop));
-    const offsetBottom = computed(() => unitToPx(props.offsetBottom));
+    const offset = computed(() =>
+      unitToPx(props.position === 'top' ? props.offsetTop : props.offsetBottom)
+    );
 
-    const style = computed<CSSProperties | undefined>(() => {
+    const rootStyle = computed<CSSProperties | undefined>(() => {
+      const { fixed, height, width } = state;
+      if (fixed) {
+        return {
+          width: `${width}px`,
+          height: `${height}px`,
+        };
+      }
+    });
+
+    const stickyStyle = computed<CSSProperties | undefined>(() => {
       if (!state.fixed) {
         return;
       }
 
       const style: CSSProperties = {
+        ...getZIndexStyle(props.zIndex),
         width: `${state.width}px`,
         height: `${state.height}px`,
+        [props.position]: `${offset.value}px`,
       };
 
       if (state.transform) {
         style.transform = `translate3d(0, ${state.transform}px, 0)`;
       }
 
-      if (props.zIndex !== undefined) {
-        style.zIndex = +props.zIndex;
-      }
-
-      if (props.position === 'top') {
-        style.top = offsetTop.value ? `${offsetTop.value}px` : 0;
-      } else {
-        style.bottom = offsetBottom.value ? `${offsetBottom.value}px` : 0;
-      }
-
       return style;
     });
 
-    const emitScrollEvent = (scrollTop: number) => {
+    const emitScroll = (scrollTop: number) =>
       emit('scroll', {
         scrollTop,
         isFixed: state.fixed,
       });
-    };
 
     const onScroll = () => {
       if (!root.value || isHidden(root)) {
         return;
       }
 
-      const { container } = props;
+      const { container, position } = props;
       const rootRect = useRect(root);
-      const containerRect = container?.getBoundingClientRect();
+      const scrollTop = getScrollTop(window);
 
       state.width = rootRect.width;
       state.height = rootRect.height;
 
-      const scrollTop = getScrollTop(window);
-
-      if (props.position === 'top') {
+      if (position === 'top') {
         // The sticky component should be kept inside the container element
         if (container) {
-          const difference =
-            containerRect.bottom - offsetTop.value - state.height;
-          state.fixed =
-            offsetTop.value > rootRect.top && containerRect.bottom > 0;
+          const containerRect = useRect(container);
+          const difference = containerRect.bottom - offset.value - state.height;
+          state.fixed = offset.value > rootRect.top && containerRect.bottom > 0;
           state.transform = difference < 0 ? difference : 0;
         } else {
-          state.fixed = offsetTop.value > rootRect.top;
+          state.fixed = offset.value > rootRect.top;
         }
-      } else if (props.position === 'bottom') {
+      } else {
         const { clientHeight } = document.documentElement;
         if (container) {
+          const containerRect = useRect(container);
           const difference =
-            clientHeight -
-            containerRect.top -
-            offsetBottom.value -
-            state.height;
+            clientHeight - containerRect.top - offset.value - state.height;
           state.fixed =
-            clientHeight - offsetBottom.value < rootRect.bottom &&
+            clientHeight - offset.value < rootRect.bottom &&
             clientHeight > containerRect.top;
           state.transform = difference < 0 ? -difference : 0;
         } else {
-          state.fixed = clientHeight - offsetBottom.value < rootRect.bottom;
+          state.fixed = clientHeight - offset.value < rootRect.bottom;
         }
       }
-      emitScrollEvent(scrollTop);
+
+      emitScroll(scrollTop);
     };
 
     useEventListener('scroll', onScroll, { target: scrollParent });
     useVisibilityChange(root, onScroll);
 
-    return () => {
-      const { fixed, height, width } = state;
-      const rootStyle: CSSProperties = {
-        width: fixed ? `${width}px` : undefined,
-        height: fixed ? `${height}px` : undefined,
-      };
-
-      return (
-        <div ref={root} style={rootStyle}>
-          <div class={bem({ fixed })} style={style.value}>
-            {slots.default?.()}
-          </div>
+    return () => (
+      <div ref={root} style={rootStyle.value}>
+        <div class={bem({ fixed: state.fixed })} style={stickyStyle.value}>
+          {slots.default?.()}
         </div>
-      );
-    };
+      </div>
+    );
   },
 });
