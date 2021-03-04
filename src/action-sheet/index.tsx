@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
@@ -89,11 +91,13 @@ function ActionSheet(
         callback(item);
       }
 
-      emit(ctx, 'select', item, index);
-
       if (props.closeOnClickAction) {
         emit(ctx, 'input', false);
       }
+
+      Vue.nextTick(() => {
+        emit(ctx, 'select', item, index);
+      });
     }
 
     function OptionContent() {
