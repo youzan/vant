@@ -215,18 +215,16 @@ export default createComponent({
   },
 
   render() {
-    if (!this.shouldRender) {
-      return;
-    }
-
     return (
       <transition name={this.transition} onAfterLeave={this.onClosed}>
-        <div vShow={this.value} class={[bem(), this.className]}>
-          {this.genClose()}
-          {this.genImages()}
-          {this.genIndex()}
-          {this.genCover()}
-        </div>
+        {this.shouldRender ? (
+          <div vShow={this.value} class={[bem(), this.className]}>
+            {this.genClose()}
+            {this.genImages()}
+            {this.genIndex()}
+            {this.genCover()}
+          </div>
+        ) : null}
       </transition>
     );
   },
