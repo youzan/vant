@@ -112,6 +112,7 @@ export default {
 | success-duration | 刷新成功提示展示时长(ms) | _number \| string_ | `500` |
 | animation-duration | 动画时长 | _number \| string_ | `300` |
 | head-height | 顶部内容高度 | _number \| string_ | `50` |
+| pull-distance `v2.12.8` | 触发下拉刷新的距离 | _number \| string_ | 与 `head-height` 一致 |
 | disabled | 是否禁用下拉刷新 | _boolean_ | `false` |
 
 ### Events
