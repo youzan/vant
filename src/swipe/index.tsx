@@ -391,6 +391,7 @@ export default createComponent({
       const style: CSSProperties = {
         backgroundColor: active ? props.indicatorColor : undefined,
       };
+
       return <i style={style} class={bem('indicator', { active })} />;
     };
 
@@ -401,7 +402,7 @@ export default createComponent({
       if (props.showIndicators && count.value > 1) {
         return (
           <div class={bem('indicators', { vertical: props.vertical })}>
-            {Array(...Array(count.value)).map(renderDot)}
+            {Array(count.value).fill('').map(renderDot)}
           </div>
         );
       }
@@ -415,19 +416,21 @@ export default createComponent({
       swipeTo,
     });
 
-    linkChildren({ size, props, count, activeIndicator });
+    linkChildren({
+      size,
+      props,
+      count,
+      activeIndicator,
+    });
 
     watch(
       () => props.initialSwipe,
-      (value) => {
-        initialize(+value);
-      }
+      (value) => initialize(+value)
     );
+
     watch(
       () => children.length,
-      () => {
-        initialize(state.active);
-      }
+      () => initialize(state.active)
     );
 
     watch(
