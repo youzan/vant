@@ -25,6 +25,7 @@ export default createComponent({
   props: {
     show: Boolean,
     closeable: Boolean,
+    transition: String,
     className: UnknownProp,
     beforeClose: Function as PropType<Interceptor>,
     showIndicators: Boolean,
@@ -218,6 +219,7 @@ export default createComponent({
       <Popup
         show={props.show}
         class={[bem(), props.className]}
+        transition={props.transition}
         overlayClass={bem('overlay')}
         closeOnPopstate={props.closeOnPopstate}
         onClosed={onClosed}

@@ -139,6 +139,7 @@ export default {
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | closeIcon | Close icon name | _string_ | `clear` |
 | closeIconPosition | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
+| transition `v3.0.8` | Transition, equivalent to `name` prop of [transtion](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | teleport | Return the mount node for ImagePreview | _string \| Element_ | - |
 
 ### Props
@@ -159,6 +160,7 @@ export default {
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | close-icon | Close icon name | _string_ | `clear` |
 | close-icon-position | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
+| transition `v3.0.8` | Transition, equivalent to `name` prop of [transtion](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | teleport | Return the mount node for ImagePreview | _string \| Element_ | - |
 
 ### Events
