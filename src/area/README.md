@@ -124,7 +124,7 @@ export default {
 };
 ```
 
-All code of China: [Area.json](https://github.com/youzan/vant/blob/dev/src/area/demo/area-en.js)
+All code of China: [Area.json](https://github.com/youzan/vant/blob/dev/src/area/demo/area-en.ts)
 
 ### argument of callback function confirm
 
