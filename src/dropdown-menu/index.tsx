@@ -14,7 +14,7 @@ import {
 
 const [createComponent, bem] = createNamespace('dropdown-menu');
 
-export const DROPDOWN_KEY = 'vanDropdownMenu';
+export const DROPDOWN_KEY = Symbol('DropdownMenu');
 
 export type DropdownMenuDirection = 'up' | 'down';
 

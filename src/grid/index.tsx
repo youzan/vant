@@ -5,7 +5,7 @@ import { useChildren } from '@vant/use';
 
 const [createComponent, bem] = createNamespace('grid');
 
-export const GRID_KEY = 'vanGrid';
+export const GRID_KEY = Symbol('Grid');
 
 export type GridDirection = 'horizontal' | 'vertical';
 

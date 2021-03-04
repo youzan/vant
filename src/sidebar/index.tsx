@@ -3,7 +3,7 @@ import { useChildren } from '@vant/use';
 
 const [createComponent, bem] = createNamespace('sidebar');
 
-export const SIDEBAR_KEY = 'vanSidebar';
+export const SIDEBAR_KEY = Symbol('Sidebar');
 
 export type SidebarProvide = {
   getActive: () => number;
