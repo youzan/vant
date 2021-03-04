@@ -30,7 +30,7 @@ import {
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
-export const INDEX_BAR_KEY = 'vanIndexBar';
+export const INDEX_BAR_KEY = Symbol('IndexBar');
 
 export type IndexBarProvide = {
   props: {

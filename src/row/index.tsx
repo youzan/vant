@@ -4,7 +4,7 @@ import { useChildren } from '@vant/use';
 
 const [createComponent, bem] = createNamespace('row');
 
-export const ROW_KEY = 'vanRow';
+export const ROW_KEY = Symbol('Row');
 
 export type RowSpaces = { left?: number; right: number }[];
 

@@ -3,7 +3,7 @@ import { useChildren } from '@vant/use';
 
 const [createComponent, bem] = createNamespace('action-bar');
 
-export const ACTION_BAR_KEY = 'vanActionBar';
+export const ACTION_BAR_KEY = Symbol('ActionBar');
 
 export default createComponent({
   props: {

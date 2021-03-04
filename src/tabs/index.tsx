@@ -47,7 +47,7 @@ import TabsContent from './TabsContent';
 
 const [createComponent, bem] = createNamespace('tabs');
 
-export const TABS_KEY = 'vanTabs';
+export const TABS_KEY = Symbol('Tabs');
 
 export type TabType = 'line' | 'card';
 

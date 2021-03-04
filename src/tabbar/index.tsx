@@ -11,7 +11,7 @@ import { usePlaceholder } from '../composables/use-placeholder';
 
 const [createComponent, bem] = createNamespace('tabbar');
 
-export const TABBAR_KEY = 'vanTabbar';
+export const TABBAR_KEY = Symbol('Tabbar');
 
 export type TabbarProvide = {
   props: {
