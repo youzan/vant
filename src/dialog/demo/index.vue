@@ -31,7 +31,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import Dialog from '..';
-import { DialogAction } from 'types/dialog';
+import type { DialogAction } from '../Dialog';
 
 const i18n = {
   'zh-CN': {
