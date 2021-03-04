@@ -85,10 +85,9 @@ export default createComponent({
     const root = ref<HTMLElement>();
 
     const genBasicKeys = () => {
-      const keys: KeyConfig[] = [];
-      for (let i = 1; i <= 9; i++) {
-        keys.push({ text: i });
-      }
+      const keys: KeyConfig[] = Array(9)
+        .fill('')
+        .map((_, i) => ({ text: i + 1 }));
 
       if (props.randomKeyOrder) {
         keys.sort(() => (Math.random() > 0.5 ? 1 : -1));

@@ -73,13 +73,11 @@ export default createComponent({
     const untouchable = () =>
       props.readonly || props.disabled || !props.touchable;
 
-    const list = computed(() => {
-      const list: RateStatus[] = [];
-      for (let i = 1; i <= props.count; i++) {
-        list.push(getRateStatus(props.modelValue, i, props.allowHalf));
-      }
-      return list;
-    });
+    const list = computed<RateStatus[]>(() =>
+      Array(props.count)
+        .fill('')
+        .map((_, i) => getRateStatus(props.modelValue, i + 1, props.allowHalf))
+    );
 
     const select = (index: number) => {
       if (!props.disabled && !props.readonly && index !== props.modelValue) {
