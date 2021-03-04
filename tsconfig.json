@@ -6,6 +6,7 @@
     "module": "esnext",
     "strict": true,
     "allowJs": true,
+    "skipLibCheck": true,
     "noImplicitThis": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
@@ -13,5 +14,5 @@
       "@demo/*": ["docs/site/*"]
     }
   },
-  "include": ["types/**/*", "docs/**/*", "src/**/*"]
+  "include": ["src/**/*", "types/**/*", "docs/**/*", "test/**/*"]
 }

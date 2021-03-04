@@ -2,9 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "skipLibCheck": true,
-    "declarationDir": "./types"
+    "declarationDir": ".",
+    "emitDeclarationOnly": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["**/demo/**", "**/test/**", "**/node_modules"]
+  "include": ["es/**/*", "lib/**/*"],
+  "exclude": ["node_modules", "**/test/**/*", "**/demo/**/*"]
 }
