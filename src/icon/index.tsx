@@ -5,7 +5,7 @@ import Badge from '../badge';
 const [createComponent, bem] = createNamespace('icon');
 
 function isImage(name?: string) {
-  return name ? name.indexOf('/') !== -1 : false;
+  return name ? name.includes('/') : false;
 }
 
 export default createComponent({

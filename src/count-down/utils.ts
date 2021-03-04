@@ -5,36 +5,36 @@ export function parseFormat(format: string, currentTime: CurrentTime): string {
   const { days } = currentTime;
   let { hours, minutes, seconds, milliseconds } = currentTime;
 
-  if (format.indexOf('DD') === -1) {
-    hours += days * 24;
-  } else {
+  if (format.includes('DD')) {
     format = format.replace('DD', padZero(days));
+  } else {
+    hours += days * 24;
   }
 
-  if (format.indexOf('HH') === -1) {
-    minutes += hours * 60;
-  } else {
+  if (format.includes('HH')) {
     format = format.replace('HH', padZero(hours));
+  } else {
+    minutes += hours * 60;
   }
 
-  if (format.indexOf('mm') === -1) {
-    seconds += minutes * 60;
-  } else {
+  if (format.includes('mm')) {
     format = format.replace('mm', padZero(minutes));
-  }
-
-  if (format.indexOf('ss') === -1) {
-    milliseconds += seconds * 1000;
   } else {
-    format = format.replace('ss', padZero(seconds));
+    seconds += minutes * 60;
   }
 
-  if (format.indexOf('S') !== -1) {
+  if (format.includes('ss')) {
+    format = format.replace('ss', padZero(seconds));
+  } else {
+    milliseconds += seconds * 1000;
+  }
+
+  if (format.includes('S')) {
     const ms = padZero(milliseconds, 3);
 
-    if (format.indexOf('SSS') !== -1) {
+    if (format.includes('SSS')) {
       format = format.replace('SSS', ms);
-    } else if (format.indexOf('SS') !== -1) {
+    } else if (format.includes('SS')) {
       format = format.replace('SS', ms.slice(0, 2));
     } else {
       format = format.replace('S', ms.charAt(0));

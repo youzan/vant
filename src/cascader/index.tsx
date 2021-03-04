@@ -252,7 +252,7 @@ export default createComponent({
           const values = state.tabs.map(
             (tab) => tab.selectedOption?.[valueKey]
           );
-          if (values.indexOf(value) !== -1) {
+          if (values.includes(value)) {
             return;
           }
         }

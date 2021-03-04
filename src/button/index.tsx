@@ -124,7 +124,7 @@ export default createComponent({
         }
 
         // hide border when color is linear-gradient
-        if (color.indexOf('gradient') !== -1) {
+        if (color.includes('gradient')) {
           style.border = 0;
         } else {
           style.borderColor = color;
