@@ -137,12 +137,12 @@ export default createComponent({
     watch(columns, updateColumnValue);
 
     watch(
-      [
-        () => props.filter,
-        () => props.minHour,
-        () => props.maxHour,
-        () => props.minMinute,
-        () => props.maxMinute,
+      () => [
+        props.filter,
+        props.minHour,
+        props.maxHour,
+        props.minMinute,
+        props.maxMinute,
       ],
       updateInnerValue
     );

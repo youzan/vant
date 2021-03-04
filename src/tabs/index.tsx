@@ -256,11 +256,11 @@ export default createComponent({
 
     // correct the index of active tab
     const setCurrentIndexByName = (name: number | string) => {
-      const matched = children.filter(
+      const matched = children.find(
         (tab, index) => getTabName(tab, index) === name
       );
 
-      const index = matched[0] ? children.indexOf(matched[0]) : 0;
+      const index = matched ? children.indexOf(matched) : 0;
       setCurrentIndex(index);
     };
 

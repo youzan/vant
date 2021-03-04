@@ -87,7 +87,7 @@ export default createComponent({
       new Promise<void>((resolve, reject) => {
         const fields = getFieldsByNames(names);
         Promise.all(fields.map((item) => item.validate())).then((errors) => {
-          errors = errors.filter((item) => item);
+          errors = errors.filter(Boolean);
 
           if (errors.length) {
             reject(errors);
@@ -98,11 +98,11 @@ export default createComponent({
       });
 
     const validateField = (name: string) => {
-      const matched = children.filter((item) => item.name === name);
+      const matched = children.find((item) => item.name === name);
 
-      if (matched.length) {
+      if (matched) {
         return new Promise<void>((resolve, reject) => {
-          matched[0].validate().then((error?: FieldValidateError) => {
+          matched.validate().then((error?: FieldValidateError) => {
             if (error) {
               reject(error);
             } else {

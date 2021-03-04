@@ -167,10 +167,9 @@ export default createComponent({
 
     const originColumns = computed(() =>
       ranges.value.map(({ type, range: rangeArr }) => {
-        let values = times(rangeArr[1] - rangeArr[0] + 1, (index) => {
-          const value = padZero(rangeArr[0] + index);
-          return value;
-        });
+        let values = times(rangeArr[1] - rangeArr[0] + 1, (index) =>
+          padZero(rangeArr[0] + index)
+        );
 
         if (props.filter) {
           values = props.filter(type, values);
@@ -290,10 +289,7 @@ export default createComponent({
       emit('update:modelValue', oldValue ? value : null)
     );
 
-    watch(
-      [() => props.filter, () => props.minDate, () => props.maxDate],
-      updateInnerValue
-    );
+    watch(() => [props.filter, props.minDate, props.maxDate], updateInnerValue);
 
     watch(
       () => props.modelValue,

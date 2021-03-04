@@ -106,11 +106,11 @@ export default createComponent({
         return props.title;
       }
 
-      const match = props.options.filter(
+      const match = props.options.find(
         (option) => option.value === props.modelValue
       );
 
-      return match.length ? match[0].text : '';
+      return match ? match.text : '';
     };
 
     const renderOption = (option: DropdownItemOption) => {
