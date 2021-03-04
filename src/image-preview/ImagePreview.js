@@ -48,6 +48,10 @@ export default createComponent({
       type: [Number, String],
       default: 3,
     },
+    transition: {
+      type: String,
+      default: 'van-fade',
+    },
     showIndex: {
       type: Boolean,
       default: true,
@@ -216,7 +220,7 @@ export default createComponent({
     }
 
     return (
-      <transition name="van-fade" onAfterLeave={this.onClosed}>
+      <transition name={this.transition} onAfterLeave={this.onClosed}>
         <div vShow={this.value} class={[bem(), this.className]}>
           {this.genClose()}
           {this.genImages()}
