@@ -29,6 +29,7 @@ export default createComponent({
     pullingText: String,
     loosingText: String,
     loadingText: String,
+    pullDistance: [Number, String],
     modelValue: {
       type: Boolean,
       default: false,
@@ -77,13 +78,13 @@ export default createComponent({
       !props.disabled;
 
     const ease = (distance: number) => {
-      const headHeight = +props.headHeight;
+      const pullDistance = +(props.pullDistance || props.headHeight);
 
-      if (distance > headHeight) {
-        if (distance < headHeight * 2) {
-          distance = headHeight + (distance - headHeight) / 2;
+      if (distance > pullDistance) {
+        if (distance < pullDistance * 2) {
+          distance = pullDistance + (distance - pullDistance) / 2;
         } else {
-          distance = headHeight * 1.5 + (distance - headHeight * 2) / 4;
+          distance = pullDistance * 1.5 + (distance - pullDistance * 2) / 4;
         }
       }
 
@@ -91,13 +92,14 @@ export default createComponent({
     };
 
     const setStatus = (distance: number, isLoading?: boolean) => {
+      const pullDistance = +(props.pullDistance || props.headHeight);
       state.distance = distance;
 
       if (isLoading) {
         state.status = 'loading';
       } else if (distance === 0) {
         state.status = 'normal';
-      } else if (distance < props.headHeight) {
+      } else if (distance < pullDistance) {
         state.status = 'pulling';
       } else {
         state.status = 'loosing';

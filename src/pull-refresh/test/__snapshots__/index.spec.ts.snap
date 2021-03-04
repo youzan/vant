@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should allow to custom pull distance 1`] = `
+<div class="van-pull-refresh">
+  <div class="van-pull-refresh__track"
+       style="transition-duration: 0ms; transform: translate3d(0,100px, 0);"
+  >
+    <div class="van-pull-refresh__head">
+      <div class="van-pull-refresh__text">
+        Pull to refresh...
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`should render different head content in different pulling status 1`] = `
 <div class="van-pull-refresh">
   <div class="van-pull-refresh__track"
