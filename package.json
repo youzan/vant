@@ -5,11 +5,10 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "style": "lib/index.css",
-  "typings": "types/index.d.ts",
+  "typings": "lib/index.d.ts",
   "files": [
     "es",
     "lib",
-    "types",
     "vetur"
   ],
   "publishConfig": {
