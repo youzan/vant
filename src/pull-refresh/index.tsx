@@ -121,7 +121,7 @@ export default createComponent({
 
       const nodes = [];
 
-      if (TEXT_STATUS.indexOf(status) !== -1) {
+      if (TEXT_STATUS.includes(status)) {
         nodes.push(<div class={bem('text')}>{getStatusText()}</div>);
       }
       if (status === 'loading') {

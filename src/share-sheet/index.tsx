@@ -34,7 +34,7 @@ const popupKeys = [
 ] as const;
 
 function getIconURL(icon: string) {
-  if (PRESET_ICONS.indexOf(icon) !== -1) {
+  if (PRESET_ICONS.includes(icon)) {
     return `https://img01.yzcdn.cn/vant/share-sheet-${icon}.png`;
   }
   return icon;

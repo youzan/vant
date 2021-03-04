@@ -27,7 +27,7 @@ export default createComponent({
         return Network;
       }
 
-      if (PRESET_IMAGES.indexOf(image) !== -1) {
+      if (PRESET_IMAGES.includes(image)) {
         image = `https://img01.yzcdn.cn/vant/empty-image-${image}.png`;
       }
 

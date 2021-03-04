@@ -65,7 +65,7 @@ export default createComponent({
   setup(props, { emit, slots }) {
     const isActiveItem = (id: number | string) => {
       return Array.isArray(props.activeId)
-        ? props.activeId.indexOf(id) !== -1
+        ? props.activeId.includes(id)
         : props.activeId === id;
     };
 

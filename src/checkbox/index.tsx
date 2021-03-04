@@ -36,7 +36,7 @@ export default createComponent({
       if (checked) {
         const overlimit = max && value.length >= max;
 
-        if (!overlimit && value.indexOf(name) === -1) {
+        if (!overlimit && !value.includes(name)) {
           value.push(name);
 
           if (props.bindGroup) {

@@ -73,7 +73,7 @@ export default createComponent({
 
       return accordion
         ? modelValue === name
-        : (modelValue as Array<number | string>).indexOf(name) !== -1;
+        : (modelValue as Array<number | string>).includes(name);
     };
 
     linkChildren({ toggle, isExpanded });

@@ -66,13 +66,13 @@ export function unitToPx(value: string | number): number {
   }
 
   if (inBrowser) {
-    if (value.indexOf('rem') !== -1) {
+    if (value.includes('rem')) {
       return convertRem(value);
     }
-    if (value.indexOf('vw') !== -1) {
+    if (value.includes('vw')) {
       return convertVw(value);
     }
-    if (value.indexOf('vh') !== -1) {
+    if (value.includes('vh')) {
       return convertVh(value);
     }
   }

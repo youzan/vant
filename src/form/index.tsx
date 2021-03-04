@@ -50,7 +50,7 @@ export default createComponent({
 
     const getFieldsByNames = (names?: string[]) => {
       if (names) {
-        return children.filter((field) => names.indexOf(field.name) !== -1);
+        return children.filter((field) => names.includes(field.name));
       }
       return children;
     };

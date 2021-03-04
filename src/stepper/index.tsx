@@ -190,7 +190,7 @@ export default createComponent({
       let formatted = formatNumber(String(value), !props.integer);
 
       // limit max decimal length
-      if (isDef(decimalLength) && formatted.indexOf('.') !== -1) {
+      if (isDef(decimalLength) && formatted.includes('.')) {
         const pair = formatted.split('.');
         formatted = `${pair[0]}.${pair[1].slice(0, +decimalLength)}`;
       }
