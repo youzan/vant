@@ -150,3 +150,17 @@ test('should set height when using head-height', async () => {
   const head = wrapper.find('.van-pull-refresh__head');
   expect(head.style.height).toEqual('100px');
 });
+
+test('should allow to custom pull distance', async () => {
+  const wrapper = mount(PullRefresh, {
+    props: {
+      pullDistance: 300,
+    },
+  });
+  const track = wrapper.find('.van-pull-refresh__track');
+
+  trigger(track, 'touchstart', 0, 0);
+  trigger(track, 'touchmove', 0, 100);
+  await later();
+  expect(wrapper.html()).toMatchSnapshot();
+});

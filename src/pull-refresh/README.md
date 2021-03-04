@@ -110,6 +110,7 @@ Use slots to custom tips.
 | success-duration | Success text display duration(ms) | _number \| string_ | `500` |
 | animation-duration | Animation duration | _number \| string_ | `300` |
 | head-height | Height of head | _number \| string_ | `50` |
+| pull-distance `v3.0.8` | The distance to trigger the pull refresh | _number \| string_ | same as `head-height` |
 | disabled | Whether to disable pull refresh | _boolean_ | `false` |
 
 ### Events
