@@ -240,7 +240,7 @@ export default createComponent({
         const imageFiles = props.modelValue.filter(isImageFile);
         const images = imageFiles
           .map((item) => item.content || item.url)
-          .filter((item) => !!item) as string[];
+          .filter(Boolean) as string[];
 
         imagePreview = ImagePreview({
           images,

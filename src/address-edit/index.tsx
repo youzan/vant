@@ -139,7 +139,7 @@ export default createComponent({
         if (province && province === city) {
           arr.splice(1, 1);
         }
-        return arr.filter((text) => text).join('/');
+        return arr.filter(Boolean).join('/');
       }
       return '';
     });
@@ -223,7 +223,7 @@ export default createComponent({
     };
 
     const onAreaConfirm = (values: AreaColumnOption[]) => {
-      values = values.filter((value) => !!value);
+      values = values.filter(Boolean);
 
       if (values.some((value) => !value.code)) {
         Toast(t('areaEmpty'));

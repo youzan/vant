@@ -98,11 +98,11 @@ export default createComponent({
               selectedOption: option,
             };
 
-            const next = optionsCursor.filter(
+            const next = optionsCursor.find(
               (item) => item[valueKey] === option[valueKey]
             );
-            if (next.length) {
-              optionsCursor = next[0][childrenKey];
+            if (next) {
+              optionsCursor = next[childrenKey];
             }
 
             return tab;
@@ -157,7 +157,7 @@ export default createComponent({
 
       const selectedOptions = state.tabs
         .map((tab) => tab.selectedOption)
-        .filter((item) => !!item);
+        .filter(Boolean);
 
       const eventParams = {
         value: option[valueKey],

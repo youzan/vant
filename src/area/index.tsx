@@ -221,9 +221,7 @@ export default createComponent({
 
     const getValues = () => {
       if (pickerRef.value) {
-        const values = pickerRef.value
-          .getValues()
-          .filter((value: AreaColumnOption) => !!value);
+        const values = pickerRef.value.getValues().filter(Boolean);
         return parseValues(values);
       }
       return [];
@@ -244,7 +242,7 @@ export default createComponent({
       }
 
       const names = values.map((item) => item.name);
-      const validValues = values.filter((value) => !!value.code);
+      const validValues = values.filter((value) => value.code);
 
       area.code = validValues.length
         ? validValues[validValues.length - 1].code

@@ -206,16 +206,16 @@ export default createComponent({
         return;
       }
 
-      const match = children.filter((item) => String(item.index) === index);
+      const match = children.find((item) => String(item.index) === index);
 
-      if (match[0]) {
-        match[0].$el.scrollIntoView();
+      if (match) {
+        match.$el.scrollIntoView();
 
         if (props.sticky && props.stickyOffsetTop) {
           setRootScrollTop(getRootScrollTop() - props.stickyOffsetTop);
         }
 
-        emit('select', match[0].index);
+        emit('select', match.index);
       }
     };
 
