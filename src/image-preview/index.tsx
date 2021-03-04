@@ -17,6 +17,7 @@ export type ImagePreviewOptions = {
   showIndex?: boolean;
   closeable?: boolean;
   closeIcon?: string;
+  transition?: string;
   beforeClose?: Interceptor;
   swipeDuration?: number;
   startPosition?: number;
@@ -41,6 +42,7 @@ const defaultConfig: ImagePreviewOptions = {
   showIndex: true,
   closeable: false,
   closeIcon: 'clear',
+  transition: undefined,
   beforeClose: undefined,
   startPosition: 0,
   swipeDuration: 300,
