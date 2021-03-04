@@ -1,7 +1,8 @@
+import { nextTick } from 'vue';
 import { mount } from '../../../test';
 import ActionSheet from '..';
 
-test('should emit select event after clicking option', () => {
+test('should emit select event after clicking option', async () => {
   const wrapper = mount(ActionSheet, {
     props: {
       show: true,
@@ -10,6 +11,8 @@ test('should emit select event after clicking option', () => {
   });
 
   wrapper.find('.van-action-sheet__item').trigger('click');
+
+  await nextTick();
   expect(wrapper.emitted('select')!.length).toEqual(1);
   expect(wrapper.emitted('select')![0]).toEqual([
     {
@@ -32,7 +35,7 @@ test('should call callback function after clicking option', () => {
   expect(callback).toHaveBeenCalledTimes(1);
 });
 
-test('should not emit select event after clicking loading option', () => {
+test('should not emit select event after clicking loading option', async () => {
   const wrapper = mount(ActionSheet, {
     props: {
       show: true,
@@ -41,10 +44,11 @@ test('should not emit select event after clicking loading option', () => {
   });
 
   wrapper.find('.van-action-sheet__item').trigger('click');
+  await nextTick();
   expect(wrapper.emitted('select')).toBeFalsy();
 });
 
-test('should not emit select event after clicking disabled option', () => {
+test('should not emit select event after clicking disabled option', async () => {
   const wrapper = mount(ActionSheet, {
     props: {
       show: true,
@@ -53,6 +57,7 @@ test('should not emit select event after clicking disabled option', () => {
   });
 
   wrapper.find('.van-action-sheet__item').trigger('click');
+  await nextTick();
   expect(wrapper.emitted('select')).toBeFalsy();
 });
 

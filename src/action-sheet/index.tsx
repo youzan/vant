@@ -1,4 +1,4 @@
-import { PropType } from 'vue';
+import { nextTick, PropType } from 'vue';
 
 // Utils
 import { createNamespace, pick } from '../utils';
@@ -115,11 +115,11 @@ export default createComponent({
           callback(item);
         }
 
-        emit('select', item, index);
-
         if (props.closeOnClickAction) {
           updateShow(false);
         }
+
+        nextTick(() => emit('select', item, index));
       };
 
       return (
