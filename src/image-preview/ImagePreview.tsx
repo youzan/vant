@@ -1,7 +1,20 @@
-import { ref, watch, nextTick, onMounted, PropType, reactive } from 'vue';
+import {
+  ref,
+  watch,
+  nextTick,
+  PropType,
+  reactive,
+  onMounted,
+  CSSProperties,
+} from 'vue';
 
 // Utils
-import { ComponentInstance, UnknownProp, createNamespace } from '../utils';
+import {
+  pick,
+  UnknownProp,
+  createNamespace,
+  ComponentInstance,
+} from '../utils';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
 // Composables
@@ -28,6 +41,7 @@ export default createComponent({
     transition: String,
     className: UnknownProp,
     beforeClose: Function as PropType<Interceptor>,
+    overlayStyle: Object as PropType<CSSProperties>,
     showIndicators: Boolean,
     images: {
       type: Array as PropType<string[]>,
@@ -217,13 +231,18 @@ export default createComponent({
 
     return () => (
       <Popup
-        show={props.show}
         class={[bem(), props.className]}
-        transition={props.transition}
         overlayClass={bem('overlay')}
-        closeOnPopstate={props.closeOnPopstate}
         onClosed={onClosed}
-        {...{ 'onUpdate:show': updateShow }}
+        {...{
+          ...pick(props, [
+            'show',
+            'transition',
+            'overlayStyle',
+            'closeOnPopstate',
+          ]),
+          'onUpdate:show': updateShow,
+        }}
       >
         {renderClose()}
         {renderImages()}

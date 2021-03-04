@@ -1,4 +1,4 @@
-import { App, Plugin, TeleportProps } from 'vue';
+import { App, CSSProperties, Plugin, TeleportProps } from 'vue';
 import { ComponentInstance, inBrowser } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import { Interceptor } from '../utils/interceptor';
@@ -19,6 +19,7 @@ export type ImagePreviewOptions = {
   closeIcon?: string;
   transition?: string;
   beforeClose?: Interceptor;
+  overlayStyle?: CSSProperties;
   swipeDuration?: number;
   startPosition?: number;
   showIndicators?: boolean;
@@ -44,6 +45,7 @@ const defaultConfig: ImagePreviewOptions = {
   closeIcon: 'clear',
   transition: undefined,
   beforeClose: undefined,
+  overlayStyle: undefined,
   startPosition: 0,
   swipeDuration: 300,
   showIndicators: false,
