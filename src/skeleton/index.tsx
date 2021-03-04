@@ -73,17 +73,12 @@ export default createComponent({
       return rowWidth;
     };
 
-    const renderRows = () => {
-      const Rows: JSX.Element[] = [];
-
-      for (let i = 0; i < props.row; i++) {
-        Rows.push(
+    const renderRows = () =>
+      Array(props.row)
+        .fill('')
+        .map((_, i) => (
           <div class={bem('row')} style={{ width: addUnit(getRowWidth(i)) }} />
-        );
-      }
-
-      return Rows;
-    };
+        ));
 
     return () => {
       if (!props.loading) {

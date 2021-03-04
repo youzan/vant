@@ -195,13 +195,9 @@ export default createComponent({
       }
     };
 
-    const placeholders = computed(() => {
-      const rows: DayItem[] = [];
+    const placeholders = computed<DayItem[]>(() => {
       const count = Math.ceil((totalDay.value + offset.value) / 7);
-      for (let day = 1; day <= count; day++) {
-        rows.push({ type: 'placeholder' });
-      }
-      return rows;
+      return Array(count).fill({ type: 'placeholder' });
     });
 
     const days = computed(() => {

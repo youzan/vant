@@ -41,12 +41,10 @@ export type IndexBarProvide = {
 };
 
 function genAlphabet() {
-  const indexList = [];
   const charCodeOfA = 'A'.charCodeAt(0);
-
-  for (let i = 0; i < 26; i++) {
-    indexList.push(String.fromCharCode(charCodeOfA + i));
-  }
+  const indexList = Array(26)
+    .fill('')
+    .map((_, i) => String.fromCharCode(charCodeOfA + i));
 
   return indexList;
 }
