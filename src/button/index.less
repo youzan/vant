@@ -97,13 +97,13 @@
   }
 
   &--normal {
-    padding: 0 15px;
+    padding: @button-normal-padding;
     font-size: @button-normal-font-size;
   }
 
   &--small {
     height: @button-small-height;
-    padding: 0 @padding-xs;
+    padding: @button-small-padding;
     font-size: @button-small-font-size;
   }
 
@@ -114,7 +114,7 @@
 
   &--mini {
     height: @button-mini-height;
-    padding: 0 @padding-base;
+    padding: @button-mini-padding;
     font-size: @button-mini-font-size;
 
     & + .van-button--mini {
@@ -160,7 +160,7 @@
   }
 
   &__icon {
-    font-size: 1.2em;
+    font-size: @button-icon-size;
     line-height: inherit;
   }
 
