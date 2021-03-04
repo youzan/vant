@@ -176,10 +176,13 @@ app.use(Button);
 | 名称                             | 默认值               | 描述 |
 | -------------------------------- | -------------------- | ---- |
 | @button-mini-height              | `24px`               | -    |
+| @button-mini-padding             | `0 @padding-base`    | -    |
 | @button-mini-font-size           | `@font-size-xs`      | -    |
 | @button-small-height             | `32px`               | -    |
+| @button-small-padding            | `0 @padding-xs`      | -    |
 | @button-small-font-size          | `@font-size-sm`      | -    |
 | @button-normal-font-size         | `@font-size-md`      | -    |
+| @button-normal-padding           | `0 15px`             | -    |
 | @button-large-height             | `50px`               | -    |
 | @button-default-height           | `44px`               | -    |
 | @button-default-line-height      | `1.2`                | -    |
@@ -204,3 +207,4 @@ app.use(Button);
 | @button-round-border-radius      | `@border-radius-max` | -    |
 | @button-plain-background-color   | `@white`             | -    |
 | @button-disabled-opacity         | `@disabled-opacity`  | -    |
+| @button-icon-size                | `1.2em`              | -    |
