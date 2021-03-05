@@ -7,7 +7,7 @@ test('should expose ImagePreviewComponent in ImagePreview.Component', () => {
 });
 
 test('should register component to app', () => {
-  const app = createApp();
+  const app = createApp(document.body);
   app.use(ImagePreview);
   expect(app.component(ImagePreviewComponent.name)).toBeTruthy();
 });
