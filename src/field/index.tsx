@@ -283,7 +283,7 @@ export default createComponent({
         value = props.formatter(value);
       }
 
-      if (inputRef.value && value !== inputRef.value.value) {
+      if (inputRef.value && inputRef.value.value !== value) {
         inputRef.value.value = value;
       }
 
@@ -299,17 +299,8 @@ export default createComponent({
       }
     };
 
-    const focus = () => {
-      if (inputRef.value) {
-        inputRef.value.focus();
-      }
-    };
-
-    const blur = () => {
-      if (inputRef.value) {
-        inputRef.value.blur();
-      }
-    };
+    const blur = () => inputRef.value?.blur();
+    const focus = () => inputRef.value?.focus();
 
     const onFocus = (event: Event) => {
       state.focused = true;

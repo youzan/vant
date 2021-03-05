@@ -92,17 +92,8 @@ export default createComponent({
       }
     };
 
-    const focus = () => {
-      if (filedRef.value) {
-        filedRef.value.focus();
-      }
-    };
-
-    const blur = () => {
-      if (filedRef.value) {
-        filedRef.value.blur();
-      }
-    };
+    const blur = () => filedRef.value?.blur();
+    const focus = () => filedRef.value?.focus();
 
     const fieldPropNames = [
       'leftIcon',

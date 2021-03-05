@@ -208,8 +208,8 @@ export default createComponent({
 
     const onFocus = (event: Event) => {
       // readonly not work in lagacy mobile safari
-      if (props.disableInput && inputRef.value) {
-        inputRef.value.blur();
+      if (props.disableInput) {
+        inputRef.value?.blur();
       } else {
         emit('focus', event);
       }
