@@ -149,6 +149,7 @@ export default createComponent({
 
         return hasValue && trigger;
       }
+      return false;
     });
 
     const formValue = computed(() => {
