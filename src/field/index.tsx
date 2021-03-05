@@ -7,24 +7,27 @@ import {
   reactive,
   PropType,
   onMounted,
-  HTMLAttributes,
 } from 'vue';
 
 // Utils
 import {
   isDef,
-  trigger,
   addUnit,
-  isObject,
-  isPromise,
-  isFunction,
   UnknownProp,
   resetScroll,
   formatNumber,
   preventDefault,
   createNamespace,
 } from '../utils';
-import { runSyncRule } from './utils';
+import {
+  runSyncRule,
+  endComposing,
+  mapInputType,
+  startComposing,
+  getRuleMessage,
+  resizeTextarea,
+  runRuleValidator,
+} from './utils';
 
 // Composables
 import { useParent } from '@vant/use';
@@ -159,26 +162,6 @@ export default createComponent({
       return props.modelValue;
     });
 
-    const runValidator = (value: unknown, rule: FieldRule) =>
-      new Promise((resolve) => {
-        const returnVal = rule.validator!(value, rule);
-
-        if (isPromise(returnVal)) {
-          return returnVal.then(resolve);
-        }
-
-        resolve(returnVal);
-      });
-
-    const getRuleMessage = (value: unknown, rule: FieldRule) => {
-      const { message } = rule;
-
-      if (isFunction(message)) {
-        return message(value, rule);
-      }
-      return message || '';
-    };
-
     const runRules = (rules: FieldRule[]) =>
       rules.reduce(
         (promise, rule) =>
@@ -200,7 +183,7 @@ export default createComponent({
             }
 
             if (rule.validator) {
-              return runValidator(value, rule).then((result) => {
+              return runRuleValidator(value, rule).then((result) => {
                 if (result && typeof result === 'string') {
                   state.validateFailed = true;
                   state.validateMessage = result;
@@ -370,46 +353,14 @@ export default createComponent({
       emit('keypress', event);
     };
 
-    const onCompositionStart = (event: Event) => {
-      event.target!.composing = true;
-    };
-
-    const onCompositionEnd = (event: Event) => {
-      const { target } = event;
-      if (target!.composing) {
-        target!.composing = false;
-        trigger(target as Element, 'input');
-      }
-    };
-
-    const adjustSize = () => {
+    const adjustTextareaSize = () => {
       const input = inputRef.value;
-
-      if (!(props.type === 'textarea' && props.autosize) || !input) {
-        return;
-      }
-
-      input.style.height = 'auto';
-
-      let height = input.scrollHeight;
-      if (isObject(props.autosize)) {
-        const { maxHeight, minHeight } = props.autosize;
-        if (maxHeight !== undefined) {
-          height = Math.min(height, maxHeight);
-        }
-        if (minHeight !== undefined) {
-          height = Math.max(height, minHeight);
-        }
-      }
-
-      if (height) {
-        input.style.height = `${height}px`;
+      if (props.type === 'textarea' && props.autosize && input) {
+        resizeTextarea(input, props.autosize);
       }
     };
 
     const renderInput = () => {
-      const disabled = getProp('disabled');
-      const readonly = getProp('readonly');
       const inputAlign = getProp('inputAlign');
 
       if (slots.input) {
@@ -423,48 +374,38 @@ export default createComponent({
         );
       }
 
-      const inputProps = {
+      const inputAttrs = {
         ref: inputRef,
         name: props.name,
         rows: props.rows !== undefined ? +props.rows : undefined,
         class: bem('control', inputAlign),
         value: props.modelValue,
-        disabled,
-        readonly,
+        disabled: getProp('disabled'),
+        readonly: getProp('readonly'),
         placeholder: props.placeholder,
         autocomplete: props.autocomplete,
         onBlur,
         onFocus,
         onInput,
         onClick: onClickInput,
-        onChange: onCompositionEnd,
+        onChange: endComposing,
         onKeypress,
-        onCompositionend: onCompositionEnd,
-        onCompositionstart: onCompositionStart,
+        onCompositionend: endComposing,
+        onCompositionstart: startComposing,
       };
 
-      const { type } = props;
-
-      if (type === 'textarea') {
-        return <textarea {...inputProps} />;
+      if (props.type === 'textarea') {
+        return <textarea {...inputAttrs} />;
       }
 
-      let inputType = type;
-      let inputMode: HTMLAttributes['inputmode'];
-
-      // type="number" is weired in iOS, and can't prevent dot in Android
-      // so use inputmode to set keyboard in mordern browers
-      if (type === 'number') {
-        inputType = 'text';
-        inputMode = 'decimal';
-      }
-
-      if (type === 'digit') {
-        inputType = 'tel';
-        inputMode = 'numeric';
-      }
-
-      return <input type={inputType} inputmode={inputMode} {...inputProps} />;
+      return (
+        <input
+          {...{
+            ...mapInputType(props.type),
+            ...inputAttrs,
+          }}
+        />
+      );
     };
 
     const renderLeftIcon = () => {
@@ -556,13 +497,13 @@ export default createComponent({
         updateValue(getModelValue());
         resetValidation();
         validateWithTrigger('onChange');
-        nextTick(adjustSize);
+        nextTick(adjustTextareaSize);
       }
     );
 
     onMounted(() => {
       updateValue(getModelValue(), props.formatTrigger);
-      nextTick(adjustSize);
+      nextTick(adjustTextareaSize);
     });
 
     return () => {

@@ -1,4 +1,6 @@
-import type { FieldRule } from './types';
+import { HTMLAttributes, InputHTMLAttributes } from 'vue';
+import { trigger, isObject, isPromise, isFunction } from '../utils';
+import type { FieldRule, FieldType, FieldAutosizeConfig } from './types';
 
 function isEmptyValue(value: unknown) {
   if (Array.isArray(value)) {
@@ -18,4 +20,84 @@ export function runSyncRule(value: unknown, rule: FieldRule) {
     return false;
   }
   return true;
+}
+
+export function runRuleValidator(value: unknown, rule: FieldRule) {
+  return new Promise((resolve) => {
+    const returnVal = rule.validator!(value, rule);
+
+    if (isPromise(returnVal)) {
+      return returnVal.then(resolve);
+    }
+
+    resolve(returnVal);
+  });
+}
+
+export function getRuleMessage(value: unknown, rule: FieldRule) {
+  const { message } = rule;
+
+  if (isFunction(message)) {
+    return message(value, rule);
+  }
+  return message || '';
+}
+
+export function startComposing(event: Event) {
+  event.target!.composing = true;
+}
+
+export function endComposing(event: Event) {
+  const { target } = event;
+  if (target!.composing) {
+    target!.composing = false;
+    trigger(target as Element, 'input');
+  }
+}
+
+export function resizeTextarea(
+  input: HTMLInputElement,
+  autosize: true | FieldAutosizeConfig
+) {
+  input.style.height = 'auto';
+
+  let height = input.scrollHeight;
+  if (isObject(autosize)) {
+    const { maxHeight, minHeight } = autosize;
+    if (maxHeight !== undefined) {
+      height = Math.min(height, maxHeight);
+    }
+    if (minHeight !== undefined) {
+      height = Math.max(height, minHeight);
+    }
+  }
+
+  if (height) {
+    input.style.height = `${height}px`;
+  }
+}
+
+export function mapInputType(
+  type: FieldType
+): {
+  type: InputHTMLAttributes['type'];
+  inputmode?: HTMLAttributes['inputmode'];
+} {
+  // type="number" is weired in iOS, and can't prevent dot in Android
+  // so use inputmode to set keyboard in mordern browers
+  if (type === 'number') {
+    return {
+      type: 'text',
+      inputmode: 'decimal',
+    };
+  }
+
+  if (type === 'digit') {
+    return {
+      type: 'tel',
+      inputmode: 'numeric',
+    };
+  }
+
+  return { type };
 }
