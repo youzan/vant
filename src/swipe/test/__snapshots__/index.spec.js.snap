@@ -32,6 +32,44 @@ exports[`should not allow to drag swipe when touchable is false 1`] = `
 </div>
 `;
 
+exports[`should render dynamic SwipeItem correctly 1`] = `
+<div class="van-swipe">
+  <div style="transition-duration: 500ms; transform: translateX(0px);"
+       class="van-swipe__track"
+  >
+  </div>
+</div>
+`;
+
+exports[`should render dynamic SwipeItem correctly 2`] = `
+<div class="van-swipe">
+  <div style="transition-duration: 0ms; transform: translateX(0px); width: 200px;"
+       class="van-swipe__track"
+  >
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      <span>
+        1
+      </span>
+    </div>
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      <span>
+        2
+      </span>
+    </div>
+  </div>
+  <div class="van-swipe__indicators">
+    <i class="van-swipe__indicator van-swipe__indicator--active">
+    </i>
+    <i class="van-swipe__indicator">
+    </i>
+  </div>
+</div>
+`;
+
 exports[`should render initial swipe correctly 1`] = `
 <div class="van-swipe">
   <div style="transition-duration: 0ms; transform: translateX(0px); width: 300px;"

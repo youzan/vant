@@ -1,3 +1,4 @@
+import { ref, onMounted } from 'vue';
 import {
   mount,
   later,
@@ -295,4 +296,34 @@ test('should render swipe item correctly when using lazy-render prop and loop is
 
   await wrapper.setData({ active: 2 });
   expectRender([true, true, true, true]);
+});
+
+test('should render dynamic SwipeItem correctly', async () => {
+  const wrapper = mount({
+    setup() {
+      const render = ref(false);
+      onMounted(() => {
+        render.value = true;
+      });
+      return { render };
+    },
+    render() {
+      return (
+        <Swipe>
+          {this.render && [
+            <SwipeItem>
+              <span>1</span>
+            </SwipeItem>,
+            <SwipeItem>
+              <span>2</span>
+            </SwipeItem>,
+          ]}
+        </Swipe>
+      );
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+  await later();
+  expect(wrapper.html()).toMatchSnapshot();
 });

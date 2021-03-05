@@ -282,7 +282,9 @@ export default createComponent({
 
       const rect = useRect(root);
 
-      active = Math.min(children.length - 1, active);
+      if (count.value) {
+        active = Math.min(count.value - 1, active);
+      }
 
       state.rect = rect;
       state.swiping = true;
@@ -430,10 +432,7 @@ export default createComponent({
       (value) => initialize(+value)
     );
 
-    watch(
-      () => children.length,
-      () => initialize(state.active)
-    );
+    watch(count, () => initialize(state.active));
 
     watch(
       () => props.autoplay,
