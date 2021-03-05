@@ -22,11 +22,11 @@ import {
 import {
   runSyncRule,
   endComposing,
+  mapInputType,
   startComposing,
   getRuleMessage,
   resizeTextarea,
   runRuleValidator,
-  mapInputType,
 } from './utils';
 
 // Composables
