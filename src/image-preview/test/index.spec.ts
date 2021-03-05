@@ -359,7 +359,7 @@ test('zoom out', async () => {
   restore();
 });
 
-test('get container with function call ', async () => {
+test('should allow to use the teleport option', async () => {
   const element = document.createElement('div');
   element.id = 'parent-node';
   document.body.appendChild(element);
