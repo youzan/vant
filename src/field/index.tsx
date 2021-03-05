@@ -360,8 +360,6 @@ export default createComponent({
     };
 
     const renderInput = () => {
-      const disabled = getProp('disabled');
-      const readonly = getProp('readonly');
       const inputAlign = getProp('inputAlign');
 
       if (slots.input) {
@@ -381,8 +379,8 @@ export default createComponent({
         rows: props.rows !== undefined ? +props.rows : undefined,
         class: bem('control', inputAlign),
         value: props.modelValue,
-        disabled,
-        readonly,
+        disabled: getProp('disabled'),
+        readonly: getProp('readonly'),
         placeholder: props.placeholder,
         autocomplete: props.autocomplete,
         onBlur,
