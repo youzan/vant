@@ -66,6 +66,7 @@ export default createComponent({
         <AddressItem
           v-slots={{
             bottom: slots['item-bottom'],
+            tag: slots['tag'],
           }}
           key={item.id}
           address={item}
