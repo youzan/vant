@@ -7,7 +7,6 @@ import {
   reactive,
   PropType,
   onMounted,
-  HTMLAttributes,
 } from 'vue';
 
 // Utils
@@ -27,6 +26,7 @@ import {
   getRuleMessage,
   resizeTextarea,
   runRuleValidator,
+  mapInputType,
 } from './utils';
 
 // Composables
@@ -375,7 +375,7 @@ export default createComponent({
         );
       }
 
-      const inputProps = {
+      const inputAttrs = {
         ref: inputRef,
         name: props.name,
         rows: props.rows !== undefined ? +props.rows : undefined,
@@ -395,28 +395,18 @@ export default createComponent({
         onCompositionstart: startComposing,
       };
 
-      const { type } = props;
-
-      if (type === 'textarea') {
-        return <textarea {...inputProps} />;
+      if (props.type === 'textarea') {
+        return <textarea {...inputAttrs} />;
       }
 
-      let inputType = type;
-      let inputMode: HTMLAttributes['inputmode'];
-
-      // type="number" is weired in iOS, and can't prevent dot in Android
-      // so use inputmode to set keyboard in mordern browers
-      if (type === 'number') {
-        inputType = 'text';
-        inputMode = 'decimal';
-      }
-
-      if (type === 'digit') {
-        inputType = 'tel';
-        inputMode = 'numeric';
-      }
-
-      return <input type={inputType} inputmode={inputMode} {...inputProps} />;
+      return (
+        <input
+          {...{
+            ...mapInputType(props.type),
+            ...inputAttrs,
+          }}
+        />
+      );
     };
 
     const renderLeftIcon = () => {

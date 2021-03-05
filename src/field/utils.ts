@@ -1,5 +1,6 @@
+import { HTMLAttributes, InputHTMLAttributes } from 'vue';
 import { trigger, isObject, isPromise, isFunction } from '../utils';
-import type { FieldRule, FieldAutosizeConfig } from './types';
+import type { FieldRule, FieldType, FieldAutosizeConfig } from './types';
 
 function isEmptyValue(value: unknown) {
   if (Array.isArray(value)) {
@@ -74,4 +75,29 @@ export function resizeTextarea(
   if (height) {
     input.style.height = `${height}px`;
   }
+}
+
+export function mapInputType(
+  type: FieldType
+): {
+  type: InputHTMLAttributes['type'];
+  inputmode?: HTMLAttributes['inputmode'];
+} {
+  // type="number" is weired in iOS, and can't prevent dot in Android
+  // so use inputmode to set keyboard in mordern browers
+  if (type === 'number') {
+    return {
+      type: 'text',
+      inputmode: 'decimal',
+    };
+  }
+
+  if (type === 'digit') {
+    return {
+      type: 'tel',
+      inputmode: 'numeric',
+    };
+  }
+
+  return { type };
 }
