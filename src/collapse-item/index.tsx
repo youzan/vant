@@ -39,8 +39,8 @@ export default createComponent({
       return;
     }
 
-    const currentName = computed(() => props.name ?? index.value);
-    const expanded = computed(() => parent.isExpanded(currentName.value));
+    const name = computed(() => props.name ?? index.value);
+    const expanded = computed(() => parent.isExpanded(name.value));
 
     const show = ref(expanded.value);
     const lazyRender = useLazyRender(show);
@@ -86,8 +86,8 @@ export default createComponent({
       });
     });
 
-    const toggle = (value = !expanded.value) => {
-      parent.toggle(currentName.value, value);
+    const toggle = (newValue = !expanded.value) => {
+      parent.toggle(name.value, newValue);
     };
 
     const onClickTitle = () => {

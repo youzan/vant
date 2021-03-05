@@ -388,9 +388,11 @@ export default createComponent({
 
     const renderDot = (_: number, index: number) => {
       const active = index === activeIndicator.value;
-      const style: CSSProperties = {
-        backgroundColor: active ? props.indicatorColor : undefined,
-      };
+      const style = active
+        ? {
+            backgroundColor: props.indicatorColor,
+          }
+        : undefined;
 
       return <i style={style} class={bem('indicator', { active })} />;
     };

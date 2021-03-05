@@ -145,10 +145,9 @@ export default createComponent({
     });
 
     // hide bottom field when use search && detail get focused
-    const hideBottomFields = computed(() => {
-      const { searchResult } = props;
-      return searchResult && searchResult.length && state.detailFocused;
-    });
+    const hideBottomFields = computed(
+      () => props.searchResult?.length && state.detailFocused
+    );
 
     const assignAreaValues = () => {
       if (areaRef.value) {

@@ -29,7 +29,7 @@ import ImagePreviewItem from './ImagePreviewItem';
 
 const [createComponent, bem] = createNamespace('image-preview');
 
-export type ImagePreviewScaleEventParams = {
+export type ScaleEventParams = {
   scale: number;
   index: number;
 };
@@ -110,8 +110,7 @@ export default createComponent({
       }
     };
 
-    const emitScale = (args: ImagePreviewScaleEventParams) =>
-      emit('scale', args);
+    const emitScale = (args: ScaleEventParams) => emit('scale', args);
 
     const updateShow = (show: boolean) => emit('update:show', show);
 
@@ -191,11 +190,8 @@ export default createComponent({
 
     const onClosed = () => emit('closed');
 
-    const swipeTo = (index: number, options?: SwipeToOptions) => {
-      if (swipeRef.value) {
-        swipeRef.value.swipeTo(index, options);
-      }
-    };
+    const swipeTo = (index: number, options?: SwipeToOptions) =>
+      swipeRef.value?.swipeTo(index, options);
 
     useExpose({ swipeTo });
 
@@ -205,9 +201,7 @@ export default createComponent({
 
     watch(
       () => props.startPosition,
-      (value) => {
-        setActive(+value);
-      }
+      (value) => setActive(+value)
     );
 
     watch(
