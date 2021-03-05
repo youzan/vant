@@ -55,7 +55,9 @@ export default createComponent({
     areaList: Object as PropType<AreaList>,
     isSaving: Boolean,
     isDeleting: Boolean,
-    validator: Function,
+    validator: Function as PropType<
+      (key: string, value: string) => string | undefined
+    >,
     showDelete: Boolean,
     showPostal: Boolean,
     disableArea: Boolean,
