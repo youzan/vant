@@ -10,7 +10,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "scripts": {
     "dev": "babel src --out-dir dist/esm --watch",
