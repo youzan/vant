@@ -16,9 +16,7 @@ import {
 } from 'vue';
 import { camelize } from '../format/string';
 
-type ComponentWithInstall = {
-  install(app: App): void;
-};
+type Install = (app: App) => void;
 
 export function createComponent(name: string) {
   // extend defineComponent and attach install method
@@ -55,8 +53,9 @@ export function createComponent(name: string) {
     Extends,
     E,
     EE
-  > &
-    ComponentWithInstall;
+  > & {
+    install: Install;
+  };
 
   function defineComponentWithInstall<
     Props = {},
@@ -80,8 +79,9 @@ export function createComponent(name: string) {
       E,
       EE
     >
-  ): DefineComponent<Props, RawBindings, D, C, M, Mixin, Extends, E, EE> &
-    ComponentWithInstall;
+  ): DefineComponent<Props, RawBindings, D, C, M, Mixin, Extends, E, EE> & {
+    install: Install;
+  };
 
   function defineComponentWithInstall(sfc: any) {
     sfc.name = name;
