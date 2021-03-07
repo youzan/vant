@@ -21,6 +21,8 @@ type ComponentWithInstall = {
 };
 
 export function createComponent(name: string) {
+  // extend defineComponent and attach install method
+  // mostly copied from @vue/runtime-core
   function defineComponentWithInstall<
     PropsOptions extends Readonly<ComponentPropsOptions>,
     RawBindings,
