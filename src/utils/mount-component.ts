@@ -12,15 +12,10 @@ export function usePopupState() {
 
   const open = (props: Record<string, any>) => {
     Object.assign(state, props);
-
-    nextTick(() => {
-      toggle(true);
-    });
+    nextTick(() => toggle(true));
   };
 
-  const close = () => {
-    toggle(false);
-  };
+  const close = () => toggle(false);
 
   useExpose({ open, close, toggle });
 
