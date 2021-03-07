@@ -83,14 +83,14 @@ export function createComponent(name: string) {
     install: Install;
   };
 
-  function defineComponentWithInstall(sfc: any) {
+  function defineComponentWithInstall(sfc: Record<string, unknown>) {
     sfc.name = name;
     sfc.install = (app: App) => {
       app.component(name as string, sfc);
       app.component(camelize(`-${name}`), sfc);
     };
 
-    return defineComponent(sfc) as any;
+    return defineComponent(sfc) as unknown;
   }
 
   return defineComponentWithInstall;
