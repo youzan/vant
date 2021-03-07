@@ -16,6 +16,22 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.8](https://github.com/youzan/vant/compare/v2.12.7...v2.12.8)
+
+`2021-03-07`
+
+**Feature**
+
+- ImagePreview: add transition prop [#8273](https://github.com/youzan/vant/issues/8273)
+- PullRefresh: add pull-distance prop [#8279](https://github.com/youzan/vant/issues/8279)
+- Locale: add th-TH lang [#8247](https://github.com/youzan/vant/issues/8247)
+
+**Bug Fixes**
+
+- ActionSheet: should not reopen when closed [#8271](https://github.com/youzan/vant/issues/8271)
+- ImagePreview: missing initial animation [#8274](https://github.com/youzan/vant/issues/8274)
+- Stepper: incorrect text color in iOS14 when disabled [#8278](https://github.com/youzan/vant/issues/8278)
+
 ### [v2.12.7](https://github.com/youzan/vant/compare/v2.12.6...v2.12.7)
 
 `2021-02-28`

@@ -16,6 +16,22 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.8](https://github.com/youzan/vant/compare/v2.12.7...v2.12.8)
+
+`2021-03-07`
+
+**Feature**
+
+- ImagePreview: 新增 transition 属性 [#8273](https://github.com/youzan/vant/issues/8273)
+- PullRefresh: 新增 pull-distance 属性 [#8279](https://github.com/youzan/vant/issues/8279)
+- Locale: 新增 th-TH 泰语 [#8247](https://github.com/youzan/vant/issues/8247)
+
+**Bug Fixes**
+
+- ActionSheet: 修复返回页面时可能错误地重新打开的问题 [#8271](https://github.com/youzan/vant/issues/8271)
+- ImagePreview: 修复第一次打开时动画缺失的问题 [#8274](https://github.com/youzan/vant/issues/8274)
+- Stepper: 修复在 iOS14 下禁用时输入框文字不可见的问题 [#8278](https://github.com/youzan/vant/issues/8278)
+
 ### [v2.12.7](https://github.com/youzan/vant/compare/v2.12.6...v2.12.7)
 
 `2021-02-28`
