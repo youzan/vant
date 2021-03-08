@@ -1867,10 +1867,10 @@
     "@typescript-eslint/types" "4.6.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/cli@^3.6.0":
-  version "3.6.0"
-  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.6.0.tgz#9438bafdfe000663b915cadc3d3368564a26b862"
-  integrity sha1-lDi6/f4ABmO5FcrcPTNoVkomuGI=
+"@vant/cli@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.6.1.tgz?cache=0&sync_timestamp=1615195273741&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-3.6.1.tgz#24db1afa7f7de302976ebdb3098d73d9a20d5d72"
+  integrity sha1-JNsa+n994wKXbr2zCY1z2aINXXI=
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-transform-object-assign" "^7.12.1"
