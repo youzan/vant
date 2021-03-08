@@ -51,7 +51,7 @@ test('should emit click-item event when item is clicked', () => {
   expect(wrapper.emitted('click-item')![0]).toEqual([list[0], 0]);
 });
 
-test('should render tag  slot correctly', () => {
+test('should render tag slot correctly', () => {
   const wrapper = mount(AddressList, {
     slots: {
       tag: () => 'Custom Tag',

@@ -16,6 +16,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.9](https://github.com/youzan/vant/compare/v3.0.8...v3.0.9)
+
+`2021-03-08`
+
+**Feature**
+
+- AddressList: 新增 tag 插槽 [#8292](https://github.com/youzan/vant/issues/8292)
+
+**Bug Fixes**
+
+- 修复主题定制不生效的问题 [#8301](https://github.com/youzan/vant/issues/8301)
+- 修复在 TS 下使用 app.use 注册组件报错的问题 [#8308](https://github.com/youzan/vant/issues/8308)
+
 ### [v3.0.8](https://github.com/youzan/vant/compare/v3.0.7...v3.0.8)
 
 `2021-03-07`

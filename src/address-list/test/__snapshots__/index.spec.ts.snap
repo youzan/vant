@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render tag  slot correctly 1`] = `
+exports[`should render tag slot correctly 1`] = `
 <div class="van-address-list">
   <div class="van-radio-group"
        role="radiogroup"

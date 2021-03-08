@@ -16,6 +16,19 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.9](https://github.com/youzan/vant/compare/v3.0.8...v3.0.9)
+
+`2021-03-08`
+
+**Feature**
+
+- AddressList: add tag slots [#8292](https://github.com/youzan/vant/issues/8292)
+
+**Bug Fixes**
+
+- fix custom theme not work [#8301](https://github.com/youzan/vant/issues/8301)
+- fix failed to install component in TypeScript [#8308](https://github.com/youzan/vant/issues/8308)
+
 ### [v3.0.8](https://github.com/youzan/vant/compare/v3.0.7...v3.0.8)
 
 `2021-03-07`
