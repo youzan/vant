@@ -108,11 +108,12 @@ export default {
 
 ### Slots
 
-| Name        | Description                    | SlotProps       |
-| ----------- | ------------------------------ | --------------- |
-| default     | Custom content after list      | -               |
-| top         | Custom content before list     | -               |
-| item-bottom | Custom content after list item | _item: Address_ |
+| Name        | Description                       | SlotProps       |
+| ----------- | --------------------------------- | --------------- |
+| default     | Custom content after list         | -               |
+| top         | Custom content before list        | -               |
+| item-bottom | Custom content after list item    | _item: Address_ |
+| tag         | Custom tag conetent for list item | _item: Address_ |
 
 ### Less Variables
 

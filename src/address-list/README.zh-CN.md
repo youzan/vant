@@ -117,6 +117,7 @@ export default {
 | default     | 在列表下方插入内容   | -               |
 | top         | 在顶部插入内容       | -               |
 | item-bottom | 在列表项底部插入内容 | _item: Address_ |
+| tag         | 列表项标签内容自定义 | _item: Address_ |
 
 ### 样式变量
 

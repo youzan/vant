@@ -54,7 +54,7 @@ export default createComponent({
 
     const renderTag = () => {
       if (slots.tag) {
-        return slots.tag({ ...props.address, defaultTagText: props.defaultTagText});
+        return slots.tag({ ...props.address });
       }
       if (props.address.isDefault && props.defaultTagText) {
         return (

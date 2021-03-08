@@ -10,6 +10,25 @@
       @edit="onEdit"
     />
   </demo-block>
+  <demo-block :title="t('customContent')">
+    <van-address-list
+      v-model="chosenAddressId"
+      :list="t('list')"
+      :disabled-list="t('disabledList')"
+      :disabled-text="t('disabledText')"
+      :default-tag-text="t('defaultTagText')"
+      @add="onAdd"
+      @edit="onEdit"
+    >
+      <template #tag>
+        <div style="margin-left: 8px; flex: none">
+          <van-tag plain type="danger" round style="margin-right: 5px">{{
+            t('defaultTagText')
+          }}</van-tag>
+        </div>
+      </template>
+    </van-address-list>
+  </demo-block>
 </template>
 
 <script lang="ts">
@@ -46,6 +65,7 @@ const i18n = {
     edit: '编辑地址',
     disabledText: '以下地址超出配送范围',
     defaultTagText: '默认',
+    customContent: '自定义标签内容',
   },
   'en-US': {
     list: [
@@ -75,6 +95,7 @@ const i18n = {
     edit: 'Edit',
     disabledText: 'The following address is out of range',
     defaultTagText: 'Default',
+    customContent: 'Custom Tag Content',
   },
 };
 
