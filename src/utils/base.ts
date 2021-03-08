@@ -50,3 +50,7 @@ export function pick<T, U extends keyof T>(
     return ret;
   }, {} as Pick<T, U>);
 }
+
+export function installable<T>(options: T) {
+  return options;
+}
