@@ -29,6 +29,7 @@ import {
   resizeTextarea,
   runRuleValidator,
 } from './utils';
+import { cellProps } from '../cell/Cell';
 
 // Composables
 import { useParent } from '@vant/use';
@@ -37,7 +38,7 @@ import { FORM_KEY, FIELD_KEY } from '../composables/use-link-field';
 
 // Components
 import Icon from '../icon';
-import Cell, { cellProps } from '../cell';
+import Cell from '../cell';
 
 // Types
 import type {

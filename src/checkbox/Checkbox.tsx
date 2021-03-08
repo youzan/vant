@@ -2,7 +2,10 @@ import { computed, watch, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, pick } from '../utils';
-import { CHECKBOX_GROUP_KEY, CheckboxGroupProvide } from '../checkbox-group';
+import {
+  CHECKBOX_GROUP_KEY,
+  CheckboxGroupProvide,
+} from '../checkbox-group/CheckboxGroup';
 
 // Composables
 import { useParent } from '@vant/use';

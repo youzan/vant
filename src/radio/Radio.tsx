@@ -1,8 +1,14 @@
 import { defineComponent } from 'vue';
+
+// Utils
 import { pick, createNamespace } from '../utils';
+import { RADIO_KEY, RadioGroupProvide } from '../radio-group/RadioGroup';
+
+// Composables
 import { useParent } from '@vant/use';
+
+// Components
 import Checker, { checkerProps } from '../checkbox/Checker';
-import { RADIO_KEY, RadioGroupProvide } from '../radio-group';
 
 const [name, bem] = createNamespace('radio');
 

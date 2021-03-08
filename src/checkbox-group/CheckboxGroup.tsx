@@ -7,7 +7,7 @@ import { CheckerParent, CheckerDirection } from '../checkbox/Checker';
 
 const [name, bem] = createNamespace('checkbox-group');
 
-export const CHECKBOX_GROUP_KEY = Symbol('CheckboxGroup');
+export const CHECKBOX_GROUP_KEY = Symbol(name);
 
 export type CheckboxGroupToggleAllOptions =
   | boolean

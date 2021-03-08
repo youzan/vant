@@ -5,7 +5,7 @@ import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('grid');
 
-export const GRID_KEY = Symbol('Grid');
+export const GRID_KEY = Symbol(name);
 
 export type GridDirection = 'horizontal' | 'vertical';
 

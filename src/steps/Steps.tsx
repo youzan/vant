@@ -4,7 +4,7 @@ import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('steps');
 
-export const STEPS_KEY = Symbol('Steps');
+export const STEPS_KEY = Symbol(name);
 
 export type StepsDirection = 'horizontal' | 'vertical';
 

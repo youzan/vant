@@ -1,5 +1,6 @@
 export * from './base';
 export * from './create';
+export * from './installable';
 export * from './format/unit';
 export * from './format/number';
 export * from './format/string';

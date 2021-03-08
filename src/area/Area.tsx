@@ -13,12 +13,13 @@ import {
 // Utils
 import { deepClone } from '../utils/deep-clone';
 import { pick, createNamespace, ComponentInstance } from '../utils';
+import { pickerProps } from '../picker/Picker';
 
 // Composables
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Picker, { pickerProps } from '../picker';
+import Picker from '../picker';
 
 const [name, bem] = createNamespace('area');
 

@@ -3,7 +3,7 @@ import { computed, CSSProperties, defineComponent } from 'vue';
 // Utils
 import { createNamespace, addUnit } from '../utils';
 import { BORDER } from '../utils/constant';
-import { GRID_KEY, GridProvide } from '../grid';
+import { GRID_KEY, GridProvide } from '../grid/Grid';
 
 // Composables
 import { useParent } from '@vant/use';

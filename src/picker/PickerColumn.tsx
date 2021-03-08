@@ -34,7 +34,7 @@ function getElementTranslateY(element: Element) {
   return Number(translateY);
 }
 
-export const PICKER_KEY = Symbol('Picker');
+export const PICKER_KEY = Symbol(name);
 
 export type PickerObjectOption = {
   text?: string;

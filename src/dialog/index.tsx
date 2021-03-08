@@ -1,5 +1,5 @@
-import { App, Plugin, CSSProperties, TeleportProps } from 'vue';
-import { inBrowser, ComponentInstance } from '../utils';
+import { App, CSSProperties, TeleportProps } from 'vue';
+import { inBrowser, ComponentInstance, installable } from '../utils';
 import { Interceptor } from '../utils/interceptor';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanDialog, {
@@ -120,10 +120,10 @@ Dialog.resetDefaultOptions = () => {
 };
 
 Dialog.install = (app: App) => {
-  app.use((VanDialog as unknown) as Plugin);
+  app.use(installable(VanDialog));
   app.config.globalProperties.$dialog = Dialog;
 };
 
-Dialog.Component = VanDialog;
+Dialog.Component = installable(VanDialog);
 
 export default Dialog;

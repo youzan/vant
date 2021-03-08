@@ -9,7 +9,10 @@ import {
 
 // Utils
 import { createNamespace, getZIndexStyle, UnknownProp } from '../utils';
-import { DROPDOWN_KEY, DropdownMenuProvide } from '../dropdown-menu';
+import {
+  DROPDOWN_KEY,
+  DropdownMenuProvide,
+} from '../dropdown-menu/DropdownMenu';
 
 // Composables
 import { useParent } from '@vant/use';

@@ -14,13 +14,13 @@ import Switch from '../switch';
 
 const [name, bem, t] = createNamespace('contact-edit');
 
-export type ContactInfo = {
+export type ContactEditInfo = {
   tel: string;
   name: string;
   isDefault?: boolean;
 };
 
-const DEFAULT_CONTACT: ContactInfo = {
+const DEFAULT_CONTACT: ContactEditInfo = {
   tel: '',
   name: '',
 };
@@ -35,7 +35,7 @@ export default defineComponent({
     showSetDefault: Boolean,
     setDefaultLabel: String,
     contactInfo: {
-      type: Object as PropType<ContactInfo>,
+      type: Object as PropType<ContactEditInfo>,
       default: () => ({ ...DEFAULT_CONTACT }),
     },
     telValidator: {

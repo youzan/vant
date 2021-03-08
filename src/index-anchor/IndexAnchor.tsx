@@ -3,7 +3,7 @@ import { ref, reactive, computed, CSSProperties, defineComponent } from 'vue';
 // Utils
 import { createNamespace, getZIndexStyle } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
-import { INDEX_BAR_KEY, IndexBarProvide } from '../index-bar';
+import { INDEX_BAR_KEY, IndexBarProvide } from '../index-bar/IndexBar';
 import { getScrollTop, getRootScrollTop } from '../utils/dom/scroll';
 
 // Composables

@@ -1,7 +1,7 @@
 import { computed, PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { useParent } from '@vant/use';
-import { ROW_KEY, RowProvide } from '../row';
+import { ROW_KEY, RowProvide } from '../row/Row';
 
 const [name, bem] = createNamespace('col');
 

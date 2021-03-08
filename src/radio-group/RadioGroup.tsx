@@ -6,7 +6,7 @@ import { CheckerParent } from '../checkbox/Checker';
 
 const [name, bem] = createNamespace('radio-group');
 
-export const RADIO_KEY = Symbol('RadioGroup');
+export const RADIO_KEY = Symbol(name);
 
 export type RadioGroupProvide = CheckerParent & {
   props: {

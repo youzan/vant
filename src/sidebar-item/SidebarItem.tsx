@@ -1,8 +1,14 @@
 import { defineComponent } from 'vue';
+
+// Utils
 import { createNamespace } from '../utils';
+import { SIDEBAR_KEY, SidebarProvide } from '../sidebar/Sidebar';
+
+// Composables
 import { useParent } from '@vant/use';
 import { useRoute, routeProps } from '../composables/use-route';
-import { SIDEBAR_KEY, SidebarProvide } from '../sidebar';
+
+// Components
 import Badge from '../badge';
 
 const [name, bem] = createNamespace('sidebar-item');

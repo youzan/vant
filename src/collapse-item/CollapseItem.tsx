@@ -1,7 +1,9 @@
 import { ref, watch, computed, nextTick, defineComponent } from 'vue';
 
 // Utils
+import { cellProps } from '../cell/Cell';
 import { createNamespace } from '../utils';
+import { COLLAPSE_KEY, CollapseProvide } from '../collapse/Collapse';
 
 // Composables
 import { raf, doubleRaf, useParent } from '@vant/use';
@@ -9,8 +11,7 @@ import { useExpose } from '../composables/use-expose';
 import { useLazyRender } from '../composables/use-lazy-render';
 
 // Components
-import Cell, { cellProps } from '../cell';
-import { COLLAPSE_KEY, CollapseProvide } from '../collapse';
+import Cell from '../cell';
 
 const [name, bem] = createNamespace('collapse-item');
 

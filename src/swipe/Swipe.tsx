@@ -34,7 +34,7 @@ import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('swipe');
 
-export const SWIPE_KEY = Symbol('Swipe');
+export const SWIPE_KEY = Symbol(name);
 
 export type SwipeToOptions = {
   immediate?: boolean;

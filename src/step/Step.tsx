@@ -3,7 +3,7 @@ import { computed, defineComponent } from 'vue';
 // Utils
 import { createNamespace } from '../utils';
 import { BORDER } from '../utils/constant';
-import { STEPS_KEY, StepsProvide } from '../steps';
+import { STEPS_KEY, StepsProvide } from '../steps/Steps';
 
 // Composables
 import { useParent } from '@vant/use';

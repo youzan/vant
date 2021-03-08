@@ -4,7 +4,7 @@ import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('action-bar');
 
-export const ACTION_BAR_KEY = Symbol('ActionBar');
+export const ACTION_BAR_KEY = Symbol(name);
 
 export default defineComponent({
   name,

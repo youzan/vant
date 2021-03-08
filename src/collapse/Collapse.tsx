@@ -5,7 +5,7 @@ import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('collapse');
 
-export const COLLAPSE_KEY = Symbol('Collapse');
+export const COLLAPSE_KEY = Symbol(name);
 
 export type CollapseProvide = {
   toggle: (name: number | string, expanded: boolean) => void;

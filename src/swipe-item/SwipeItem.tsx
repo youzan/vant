@@ -6,8 +6,12 @@ import {
   CSSProperties,
   defineComponent,
 } from 'vue';
-import { SWIPE_KEY, SwipeProvide } from '../swipe';
+
+// Utils
 import { createNamespace } from '../utils';
+import { SWIPE_KEY, SwipeProvide } from '../swipe/Swipe';
+
+// Composables
 import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 

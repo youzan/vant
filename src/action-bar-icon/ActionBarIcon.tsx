@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue';
 import { createNamespace, UnknownProp } from '../utils';
-import { ACTION_BAR_KEY } from '../action-bar';
+import { ACTION_BAR_KEY } from '../action-bar/ActionBar';
 
 // Composables
 import { useParent } from '@vant/use';

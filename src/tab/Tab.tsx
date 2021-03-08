@@ -6,8 +6,10 @@ import {
   CSSProperties,
   defineComponent,
 } from 'vue';
+
+// Utils
 import { createNamespace, UnknownProp } from '../utils';
-import { TABS_KEY, TabsProvide } from '../tabs';
+import { TABS_KEY, TabsProvide } from '../tabs/Tabs';
 
 // Composables
 import { useParent } from '@vant/use';

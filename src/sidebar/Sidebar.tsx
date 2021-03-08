@@ -4,7 +4,7 @@ import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('sidebar');
 
-export const SIDEBAR_KEY = Symbol('Sidebar');
+export const SIDEBAR_KEY = Symbol(name);
 
 export type SidebarProvide = {
   getActive: () => number;

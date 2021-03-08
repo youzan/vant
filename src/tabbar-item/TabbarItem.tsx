@@ -1,8 +1,8 @@
 import { computed, getCurrentInstance, defineComponent } from 'vue';
-import { TABBAR_KEY, TabbarProvide } from '../tabbar';
 
 // Utils
 import { createNamespace, isObject } from '../utils';
+import { TABBAR_KEY, TabbarProvide } from '../tabbar/Tabbar';
 
 // Composables
 import { useParent } from '@vant/use';
