@@ -45,14 +45,15 @@ Locale.add(messages);
 | 简体中文       | zh-CN        |
 | 繁體中文（港） | zh-HK        |
 | 繁體中文（台） | zh-TW        |
-| 英语           | en-US        |
 | 德语           | de-DE        |
 | 德语 (正式)    | de-DE-formal |
-| 土耳其语       | tr-TR        |
+| 英语           | en-US        |
 | 西班牙语       | es-ES        |
 | 日语           | ja-JP        |
-| 罗马尼亚语     | ro-RO        |
 | 挪威语         | nb-NO        |
+| 罗马尼亚语     | ro-RO        |
+| 土耳其语       | tr-TR        |
+| 泰语           | th-TH        |
 
 > 在 [这里](https://github.com/youzan/vant/tree/dev/src/locale/lang) 查看所有的语言包源文件。
 

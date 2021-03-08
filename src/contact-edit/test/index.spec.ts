@@ -1,5 +1,5 @@
 import { VueWrapper } from '@vue/test-utils';
-import ContactEdit, { ContactInfo } from '..';
+import ContactEdit, { ContactEditInfo } from '..';
 import { mount, later } from '../../../test';
 
 const contactInfo = {
@@ -49,14 +49,18 @@ test('should emit save event after submitting form', async () => {
   });
 
   await submitForm(wrapper);
-  expect(wrapper.emitted<[ContactInfo]>('save')![0][0]).toEqual(contactInfo);
+  expect(wrapper.emitted<[ContactEditInfo]>('save')![0][0]).toEqual(
+    contactInfo
+  );
 });
 
 test('should watch contact info', async () => {
   const wrapper = mount(ContactEdit);
   await wrapper.setProps({ contactInfo });
   await submitForm(wrapper);
-  expect(wrapper.emitted<[ContactInfo]>('save')![0][0]).toEqual(contactInfo);
+  expect(wrapper.emitted<[ContactEditInfo]>('save')![0][0]).toEqual(
+    contactInfo
+  );
 });
 
 test('should allow deleting contact', async () => {

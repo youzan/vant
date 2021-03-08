@@ -1,16 +1,17 @@
 {
   "name": "@vant/lazyload",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This is a fork of vue-lazyload",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
+  "types": "types/index.d.ts",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "scripts": {
     "dev": "babel src --out-dir dist/esm --watch",

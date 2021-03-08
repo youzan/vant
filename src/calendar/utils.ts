@@ -1,8 +1,8 @@
 import { createNamespace } from '../utils';
 
-const [createComponent, bem, t] = createNamespace('calendar');
+const [name, bem, t] = createNamespace('calendar');
 
-export { createComponent, bem, t };
+export { name, bem, t };
 
 export function formatMonthTitle(date: Date) {
   return t('monthTitle', date.getFullYear(), date.getMonth() + 1);

@@ -1,10 +1,12 @@
-import { computed, CSSProperties } from 'vue';
+import { computed, CSSProperties, defineComponent } from 'vue';
 import { createNamespace, isDef } from '../utils';
 import Badge from '../badge';
 
-const [createComponent, bem] = createNamespace('tab');
+const [name, bem] = createNamespace('tab');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     dot: Boolean,
     type: String,
