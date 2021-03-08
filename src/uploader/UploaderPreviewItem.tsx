@@ -1,7 +1,7 @@
 import { PropType, defineComponent } from 'vue';
 
 // Utils
-import { bem, isImageFile, FileListItem } from './utils';
+import { bem, isImageFile, UploaderFileListItem } from './utils';
 import { isDef, getSizeStyle } from '../utils';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
@@ -20,7 +20,7 @@ export default defineComponent({
     previewSize: [Number, String],
     beforeDelete: Function as PropType<Interceptor>,
     item: {
-      type: Object as PropType<FileListItem>,
+      type: Object as PropType<UploaderFileListItem>,
       required: true,
     },
   },

@@ -50,7 +50,7 @@ const [name, bem] = createNamespace('tabs');
 
 export const TABS_KEY = Symbol(name);
 
-export type TabType = 'line' | 'card';
+export type TabsType = 'line' | 'card';
 
 export type TabsProvide = {
   props: {
@@ -82,7 +82,7 @@ export default defineComponent({
     titleActiveColor: String,
     titleInactiveColor: String,
     type: {
-      type: String as PropType<TabType>,
+      type: String as PropType<TabsType>,
       default: 'line',
     },
     active: {

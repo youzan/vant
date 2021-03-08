@@ -5,3 +5,4 @@ const DatetimePicker = withInstall<typeof _DatetimePicker>(_DatetimePicker);
 
 export default DatetimePicker;
 export { DatetimePicker };
+export type { DatetimePickerType } from './utils';

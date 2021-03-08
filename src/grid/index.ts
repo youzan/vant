@@ -5,3 +5,4 @@ const Grid = withInstall<typeof _Grid>(_Grid);
 
 export default Grid;
 export { Grid };
+export type { GridDirection } from './Grid';

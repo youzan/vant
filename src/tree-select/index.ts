@@ -5,3 +5,4 @@ const TreeSelect = withInstall<typeof _TreeSelect>(_TreeSelect);
 
 export default TreeSelect;
 export { TreeSelect };
+export type { TreeSelectItem, TreeSelectChild } from './TreeSelect';

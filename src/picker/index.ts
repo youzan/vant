@@ -5,3 +5,10 @@ const Picker = withInstall<typeof _Picker>(_Picker);
 
 export default Picker;
 export { Picker };
+export type {
+  PickerColumn,
+  PickerOption,
+  PickerObjectColumn,
+  PickerObjectOption,
+  PickerToolbarPosition,
+} from './Picker';

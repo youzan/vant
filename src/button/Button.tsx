@@ -1,8 +1,8 @@
 import {
   PropType,
   CSSProperties,
-  ButtonHTMLAttributes,
   defineComponent,
+  ButtonHTMLAttributes,
 } from 'vue';
 
 // Utils
