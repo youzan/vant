@@ -5,3 +5,4 @@ const NoticeBar = withInstall<typeof _NoticeBar>(_NoticeBar);
 
 export default NoticeBar;
 export { NoticeBar };
+export type { NoticeBarMode } from './NoticeBar';

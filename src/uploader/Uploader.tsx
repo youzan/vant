@@ -9,9 +9,9 @@ import {
   isOversize,
   filterFiles,
   isImageFile,
-  FileListItem,
   readFileContent,
   UploaderResultType,
+  UploaderFileListItem,
 } from './utils';
 
 // Composables
@@ -38,7 +38,7 @@ export type UploaderBeforeRead = (
 ) => PromiseOrNot<File | File[] | undefined>;
 
 export type UploaderAfterRead = (
-  items: FileListItem | FileListItem[],
+  items: UploaderFileListItem | UploaderFileListItem[],
   detail: {
     name: string | number;
     index: number;
@@ -68,7 +68,7 @@ export default defineComponent({
       default: 'image/*',
     },
     modelValue: {
-      type: Array as PropType<FileListItem[]>,
+      type: Array as PropType<UploaderFileListItem[]>,
       default: () => [],
     },
     maxSize: {
@@ -131,7 +131,9 @@ export default defineComponent({
       }
     };
 
-    const onAfterRead = (items: FileListItem | FileListItem[]) => {
+    const onAfterRead = (
+      items: UploaderFileListItem | UploaderFileListItem[]
+    ) => {
       resetInput();
 
       if (isOversize(items, props.maxSize)) {
@@ -170,7 +172,11 @@ export default defineComponent({
           files.map((file) => readFileContent(file, resultType))
         ).then((contents) => {
           const fileList = (files as File[]).map((file, index) => {
-            const result: FileListItem = { file, status: '', message: '' };
+            const result: UploaderFileListItem = {
+              file,
+              status: '',
+              message: '',
+            };
 
             if (contents[index]) {
               result.content = contents[index] as string;
@@ -183,7 +189,7 @@ export default defineComponent({
         });
       } else {
         readFileContent(files, resultType).then((content) => {
-          const result: FileListItem = {
+          const result: UploaderFileListItem = {
             file: files as File,
             status: '',
             message: '',
@@ -237,7 +243,7 @@ export default defineComponent({
 
     const onClosePreview = () => emit('close-preview');
 
-    const previewImage = (item: FileListItem) => {
+    const previewImage = (item: UploaderFileListItem) => {
       if (props.previewFullImage) {
         const imageFiles = props.modelValue.filter(isImageFile);
         const images = imageFiles
@@ -259,7 +265,7 @@ export default defineComponent({
       }
     };
 
-    const deleteFile = (item: FileListItem, index: number) => {
+    const deleteFile = (item: UploaderFileListItem, index: number) => {
       const fileList = props.modelValue.slice(0);
       fileList.splice(index, 1);
 
@@ -267,7 +273,7 @@ export default defineComponent({
       emit('delete', item, getDetail(index));
     };
 
-    const renderPreviewItem = (item: FileListItem, index: number) => {
+    const renderPreviewItem = (item: UploaderFileListItem, index: number) => {
       const needPickData = [
         'imageFit',
         'deletable',

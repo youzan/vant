@@ -5,3 +5,4 @@ const Search = withInstall<typeof _Search>(_Search);
 
 export default Search;
 export { Search };
+export type { SearchShape } from './Search';

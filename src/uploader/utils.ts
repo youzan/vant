@@ -8,7 +8,7 @@ export { name, bem };
 
 export type UploaderResultType = 'dataUrl' | 'text' | 'file';
 
-export type FileListItem = {
+export type UploaderFileListItem = {
   url?: string;
   file?: File;
   content?: string;
@@ -51,15 +51,18 @@ export function readFileContent(file: File, resultType: UploaderResultType) {
 }
 
 export function isOversize(
-  items: FileListItem | FileListItem[],
+  items: UploaderFileListItem | UploaderFileListItem[],
   maxSize: number | string
 ): boolean {
   return toArray(items).some((item) => item.file && item.file.size > maxSize);
 }
 
-export function filterFiles(items: FileListItem[], maxSize: number | string) {
-  const valid: FileListItem[] = [];
-  const invalid: FileListItem[] = [];
+export function filterFiles(
+  items: UploaderFileListItem[],
+  maxSize: number | string
+) {
+  const valid: UploaderFileListItem[] = [];
+  const invalid: UploaderFileListItem[] = [];
 
   items.forEach((item) => {
     if (item.file && item.file.size > maxSize) {
@@ -78,7 +81,7 @@ export function isImageUrl(url: string): boolean {
   return IMAGE_REGEXP.test(url);
 }
 
-export function isImageFile(item: FileListItem): boolean {
+export function isImageFile(item: UploaderFileListItem): boolean {
   // some special urls cannot be recognized
   // user can add `isImage` flag to mark it as an image url
   if (item.isImage) {
