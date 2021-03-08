@@ -6,7 +6,7 @@ import { createNamespace } from '../utils';
 // Components
 import Button from '../button';
 import RadioGroup from '../radio-group';
-import AddressItem, { AddressListItem } from './Item';
+import AddressListItem, { AddressListAddress } from './AddressListItem';
 
 const [name, bem, t] = createNamespace('address-list');
 
@@ -19,11 +19,11 @@ export default defineComponent({
     addButtonText: String,
     defaultTagText: String,
     list: {
-      type: Array as PropType<AddressListItem[]>,
+      type: Array as PropType<AddressListAddress[]>,
       default: () => [],
     },
     disabledList: {
-      type: Array as PropType<AddressListItem[]>,
+      type: Array as PropType<AddressListAddress[]>,
       default: () => [],
     },
     switchable: {
@@ -44,7 +44,7 @@ export default defineComponent({
 
   setup(props, { slots, emit }) {
     const renderItem = (
-      item: AddressListItem,
+      item: AddressListAddress,
       index: number,
       disabled?: boolean
     ) => {
@@ -65,7 +65,7 @@ export default defineComponent({
       };
 
       return (
-        <AddressItem
+        <AddressListItem
           v-slots={{
             bottom: slots['item-bottom'],
           }}
@@ -81,7 +81,7 @@ export default defineComponent({
       );
     };
 
-    const renderList = (list: AddressListItem[], disabled?: boolean) => {
+    const renderList = (list: AddressListAddress[], disabled?: boolean) => {
       if (list) {
         return list.map((item, index) => renderItem(item, index, disabled));
       }

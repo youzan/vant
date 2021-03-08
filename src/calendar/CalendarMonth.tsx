@@ -1,8 +1,8 @@
 import { ref, computed, PropType, defineComponent } from 'vue';
 
 // Utils
-import { addUnit, setScrollTop, createNamespace } from '../../utils';
-import { getMonthEndDay } from '../../datetime-picker/utils';
+import { addUnit, setScrollTop, createNamespace } from '../utils';
+import { getMonthEndDay } from '../datetime-picker/utils';
 import {
   t,
   bem,
@@ -10,15 +10,15 @@ import {
   getPrevDay,
   getNextDay,
   formatMonthTitle,
-} from '../utils';
+} from './utils';
 
 // Composables
 import { useToggle } from '@vant/use';
-import { useExpose } from '../../composables/use-expose';
-import { useHeight } from '../../composables/use-height';
+import { useExpose } from '../composables/use-expose';
+import { useHeight } from '../composables/use-height';
 
 // Components
-import Day, { DayItem, DayType } from './Day';
+import CalendarDay, { DayItem, DayType } from './CalendarDay';
 
 const [name] = createNamespace('calendar-month');
 
@@ -229,7 +229,7 @@ export default defineComponent({
     });
 
     const renderDay = (item: DayItem, index: number) => (
-      <Day
+      <CalendarDay
         item={item}
         index={index}
         color={props.color}

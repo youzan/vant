@@ -5,3 +5,4 @@ const Divider = installable(_Divider);
 
 export default Divider;
 export { Divider };
+export type { DividerContentPosition } from './Divider';

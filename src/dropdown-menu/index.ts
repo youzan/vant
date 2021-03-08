@@ -5,3 +5,4 @@ const DropdownMenu = installable(_DropdownMenu);
 
 export default DropdownMenu;
 export { DropdownMenu };
+export type { DropdownMenuDirection } from './DropdownMenu';

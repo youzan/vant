@@ -20,7 +20,7 @@ import { useLinkField } from '../composables/use-link-field';
 
 // Components
 import Icon from '../icon';
-import PreviewItem from './PreviewItem';
+import UploaderPreviewItem from './UploaderPreviewItem';
 import ImagePreview, { ImagePreviewOptions } from '../image-preview';
 
 // Types
@@ -281,7 +281,7 @@ export default defineComponent({
       };
 
       return (
-        <PreviewItem
+        <UploaderPreviewItem
           v-slots={{ 'preview-cover': slots['preview-cover'] }}
           item={item}
           index={index}

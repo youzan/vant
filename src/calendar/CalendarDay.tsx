@@ -1,6 +1,6 @@
 import { computed, CSSProperties, PropType, defineComponent } from 'vue';
-import { createNamespace } from '../../utils';
-import { bem } from '../utils';
+import { createNamespace } from '../utils';
+import { bem } from './utils';
 
 const [name] = createNamespace('calendar-day');
 

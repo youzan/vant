@@ -11,7 +11,7 @@ import {
 } from 'vue';
 import { createNamespace, getZIndexStyle, stopPropagation } from '../utils';
 import { useClickAway } from '@vant/use';
-import Key, { KeyType } from './Key';
+import NumberKeyboardKey, { KeyType } from './NumberKeyboardKey';
 
 const [name, bem] = createNamespace('number-keyboard');
 
@@ -206,7 +206,7 @@ export default defineComponent({
         }
 
         return (
-          <Key
+          <NumberKeyboardKey
             v-slots={keySlots}
             key={key.text}
             text={key.text}
@@ -224,7 +224,7 @@ export default defineComponent({
         return (
           <div class={bem('sidebar')}>
             {props.showDeleteKey && (
-              <Key
+              <NumberKeyboardKey
                 v-slots={{ delete: slots.delete }}
                 large
                 text={props.deleteButtonText}
@@ -232,7 +232,7 @@ export default defineComponent({
                 onPress={onPress}
               />
             )}
-            <Key
+            <NumberKeyboardKey
               large
               text={props.closeButtonText}
               type="close"

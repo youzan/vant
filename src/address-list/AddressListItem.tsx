@@ -11,7 +11,7 @@ import Radio from '../radio';
 
 const [name, bem] = createNamespace('address-item');
 
-export type AddressListItem = {
+export type AddressListAddress = {
   id: number | string;
   tel: number | string;
   name: string;
@@ -27,7 +27,7 @@ export default defineComponent({
     switchable: Boolean,
     defaultTagText: String,
     address: {
-      type: Object as PropType<AddressListItem>,
+      type: Object as PropType<AddressListAddress>,
       required: true,
     },
   },

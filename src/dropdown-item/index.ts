@@ -5,3 +5,4 @@ const DropdownItem = installable(_DropdownItem);
 
 export default DropdownItem;
 export { DropdownItem };
+export type { DropdownItemOption } from './DropdownItem';

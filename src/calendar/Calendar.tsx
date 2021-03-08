@@ -34,11 +34,11 @@ import { useExpose } from '../composables/use-expose';
 import Popup, { PopupPosition } from '../popup';
 import Button from '../button';
 import Toast from '../toast';
-import Month, { CalendarType } from './components/Month';
-import Header from './components/Header';
+import CalendarMonth, { CalendarType } from './CalendarMonth';
+import CalendarHeader from './CalendarHeader';
 
 // Types
-import type { DayItem } from './components/Day';
+import type { DayItem } from './CalendarDay';
 
 export default defineComponent({
   name,
@@ -439,7 +439,7 @@ export default defineComponent({
     const renderMonth = (date: Date, index: number) => {
       const showMonthTitle = index !== 0 || !props.showSubtitle;
       return (
-        <Month
+        <CalendarMonth
           ref={setMonthRefs(index)}
           date={date}
           currentDate={state.currentDate}
@@ -497,7 +497,7 @@ export default defineComponent({
 
     const renderCalendar = () => (
       <div class={bem()}>
-        <Header
+        <CalendarHeader
           v-slots={{ title: slots.title }}
           title={props.title}
           showTitle={props.showTitle}

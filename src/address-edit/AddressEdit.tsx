@@ -24,11 +24,11 @@ import Toast from '../toast';
 import Button from '../button';
 import Dialog from '../dialog';
 import Switch from '../switch';
-import Detail, { AddressEditSearchItem } from './Detail';
+import AddressEditDetail, { AddressEditSearchItem } from './AddressEditDetail';
 
 const [name, bem, t] = createNamespace('address-edit');
 
-export type AddressInfo = {
+export type AddressEditInfo = {
   tel: string;
   name: string;
   city: string;
@@ -41,7 +41,7 @@ export type AddressInfo = {
   addressDetail: string;
 };
 
-const defaultData: AddressInfo = {
+const defaultData: AddressEditInfo = {
   name: '',
   tel: '',
   city: '',
@@ -95,7 +95,7 @@ export default defineComponent({
       default: 200,
     },
     addressInfo: {
-      type: Object as PropType<Partial<AddressInfo>>,
+      type: Object as PropType<Partial<AddressEditInfo>>,
       default: () => ({ ...defaultData }),
     },
     telValidator: {
@@ -128,7 +128,7 @@ export default defineComponent({
     const areaRef = ref<ComponentInstance>();
 
     const state = reactive({
-      data: {} as AddressInfo,
+      data: {} as AddressEditInfo,
       showAreaPopup: false,
       detailFocused: false,
       errorInfo: {
@@ -369,7 +369,7 @@ export default defineComponent({
                 state.showAreaPopup = !disableArea;
               }}
             />
-            <Detail
+            <AddressEditDetail
               show={props.showDetail}
               value={data.addressDetail}
               focused={state.detailFocused}
