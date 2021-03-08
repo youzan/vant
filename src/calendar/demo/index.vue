@@ -122,7 +122,7 @@
 <script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import { DayItem } from '../components/Day';
+import { CalendarDayItem } from '../CalendarDay';
 
 const i18n = {
   'zh-CN': {
@@ -223,7 +223,7 @@ export default {
       state.firstDayOfWeek = 0;
     };
 
-    const dayFormatter = (day: DayItem) => {
+    const dayFormatter = (day: CalendarDayItem) => {
       if (!day.date) {
         return day;
       }

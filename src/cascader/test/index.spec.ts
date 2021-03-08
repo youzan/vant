@@ -1,5 +1,5 @@
 import Cascader from '..';
-import { mount , later } from '../../../test';
+import { mount, later } from '../../../test';
 
 import options from '../demo/area-en-US';
 

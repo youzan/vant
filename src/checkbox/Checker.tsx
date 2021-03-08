@@ -1,4 +1,4 @@
-import { ref, computed, defineComponent, PropType } from 'vue';
+import { ref, computed, PropType, defineComponent } from 'vue';
 import { addUnit, UnknownProp } from '../utils';
 import Icon from '../icon';
 

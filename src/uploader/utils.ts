@@ -2,9 +2,9 @@ import { createNamespace } from '../utils';
 import type { ImageFit } from '../image';
 import type { Interceptor } from '../utils/interceptor';
 
-const [createComponent, bem] = createNamespace('uploader');
+const [name, bem] = createNamespace('uploader');
 
-export { bem, createComponent };
+export { name, bem };
 
 export type UploaderResultType = 'dataUrl' | 'text' | 'file';
 

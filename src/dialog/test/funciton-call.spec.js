@@ -11,7 +11,7 @@ test('should update default options when calling setDefaultOptions method', () =
 });
 
 test('should expose Dialog component', () => {
-  expect(Dialog.Component).toEqual(DialogComponent);
+  expect(Dialog.Component.name).toEqual('van-dialog');
 });
 
 test('should register component to app', () => {

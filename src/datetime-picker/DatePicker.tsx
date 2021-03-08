@@ -1,4 +1,12 @@
-import { ref, watch, computed, nextTick, onMounted, PropType } from 'vue';
+import {
+  ref,
+  watch,
+  computed,
+  nextTick,
+  onMounted,
+  PropType,
+  defineComponent,
+} from 'vue';
 
 // Utils
 import { isDate } from '../utils/validate/date';
@@ -26,9 +34,11 @@ import { useExpose } from '../composables/use-expose';
 import Picker from '../picker';
 
 const currentYear = new Date().getFullYear();
-const [createComponent] = createNamespace('date-picker');
+const [name] = createNamespace('date-picker');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...sharedProps,
     modelValue: Date,

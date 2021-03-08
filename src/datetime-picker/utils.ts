@@ -1,6 +1,6 @@
 import { PropType } from 'vue';
 import { isNaN } from '../utils/validate/number';
-import { pickerProps } from '../picker';
+import { pickerProps } from '../picker/Picker';
 
 export type ColumnType = 'year' | 'month' | 'day' | 'hour' | 'minute';
 
