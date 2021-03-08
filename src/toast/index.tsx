@@ -179,7 +179,7 @@ Toast.allowMultiple = (value = true) => {
 };
 
 Toast.install = (app: App) => {
-  app.use(withInstall(VanToast));
+  app.use(withInstall<typeof VanToast>(VanToast));
   app.config.globalProperties.$toast = Toast;
 };
 
