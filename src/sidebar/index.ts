@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Sidebar from './Sidebar';
 
-const Sidebar = installable(_Sidebar);
+const Sidebar = withInstall<typeof _Sidebar>(_Sidebar);
 
 export default Sidebar;
 export { Sidebar };

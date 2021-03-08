@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Progress from './Progress';
 
-const Progress = installable(_Progress);
+const Progress = withInstall<typeof _Progress>(_Progress);
 
 export default Progress;
 export { Progress };

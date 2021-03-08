@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _DatetimePicker from './DatetimePicker';
 
-const DatetimePicker = installable(_DatetimePicker);
+const DatetimePicker = withInstall<typeof _DatetimePicker>(_DatetimePicker);
 
 export default DatetimePicker;
 export { DatetimePicker };

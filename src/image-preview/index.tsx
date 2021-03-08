@@ -1,5 +1,5 @@
 import { App, CSSProperties, TeleportProps } from 'vue';
-import { ComponentInstance, inBrowser, installable } from '../utils';
+import { ComponentInstance, inBrowser, withInstall } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import { Interceptor } from '../utils/interceptor';
 import { PopupCloseIconPosition } from '../popup';
@@ -97,10 +97,10 @@ const ImagePreview = (
   return instance;
 };
 
-ImagePreview.Component = installable(VanImagePreview);
+ImagePreview.Component = withInstall<typeof VanImagePreview>(VanImagePreview);
 
 ImagePreview.install = (app: App) => {
-  app.use(installable(VanImagePreview));
+  app.use(withInstall<typeof VanImagePreview>(VanImagePreview));
 };
 
 export default ImagePreview;

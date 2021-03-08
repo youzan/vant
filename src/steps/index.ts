@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Steps from './Steps';
 
-const Steps = installable(_Steps);
+const Steps = withInstall<typeof _Steps>(_Steps);
 
 export default Steps;
 export { Steps };

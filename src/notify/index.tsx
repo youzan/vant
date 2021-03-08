@@ -1,5 +1,5 @@
 import { App } from 'vue';
-import { isObject, inBrowser, ComponentInstance, installable } from '../utils';
+import { isObject, inBrowser, ComponentInstance, withInstall } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanNotify, { NotifyType } from './Notify';
 
@@ -97,10 +97,10 @@ Notify.resetDefaultOptions = () => {
 };
 
 Notify.install = (app: App) => {
-  app.use(installable(VanNotify));
+  app.use(withInstall<typeof VanNotify>(VanNotify));
   app.config.globalProperties.$notify = Notify;
 };
 
-Notify.Component = installable(VanNotify);
+Notify.Component = withInstall<typeof VanNotify>(VanNotify);
 
 export default Notify;

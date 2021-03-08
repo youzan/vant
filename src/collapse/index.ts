@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Collapse from './Collapse';
 
-const Collapse = installable(_Collapse);
+const Collapse = withInstall<typeof _Collapse>(_Collapse);
 
 export default Collapse;
 export { Collapse };

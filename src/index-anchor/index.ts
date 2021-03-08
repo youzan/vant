@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _IndexAnchor from './IndexAnchor';
 
-const IndexAnchor = installable(_IndexAnchor);
+const IndexAnchor = withInstall<typeof _IndexAnchor>(_IndexAnchor);
 
 export default IndexAnchor;
 export { IndexAnchor };

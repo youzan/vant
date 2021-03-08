@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Overlay from './Overlay';
 
-const Overlay = installable(_Overlay);
+const Overlay = withInstall<typeof _Overlay>(_Overlay);
 
 export default Overlay;
 export { Overlay };

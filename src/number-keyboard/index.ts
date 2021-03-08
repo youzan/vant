@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _NumberKeyboard from './NumberKeyboard';
 
-const NumberKeyboard = installable(_NumberKeyboard);
+const NumberKeyboard = withInstall<typeof _NumberKeyboard>(_NumberKeyboard);
 
 export default NumberKeyboard;
 export { NumberKeyboard };

@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Loading from './Loading';
 
-const Loading = installable(_Loading);
+const Loading = withInstall<typeof _Loading>(_Loading);
 
 export default Loading;
 export { Loading };

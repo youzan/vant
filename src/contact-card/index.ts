@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _ContactCard from './ContactCard';
 
-const ContactCard = installable(_ContactCard);
+const ContactCard = withInstall<typeof _ContactCard>(_ContactCard);
 
 export default ContactCard;
 export { ContactCard };

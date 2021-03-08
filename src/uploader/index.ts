@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Uploader from './Uploader';
 
-const Uploader = installable(_Uploader);
+const Uploader = withInstall<typeof _Uploader>(_Uploader);
 
 export default Uploader;
 export { Uploader };

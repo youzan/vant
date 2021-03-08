@@ -1,5 +1,5 @@
 import { ref, App, TeleportProps, getCurrentInstance } from 'vue';
-import { isObject, inBrowser, installable, ComponentInstance } from '../utils';
+import { isObject, inBrowser, withInstall, ComponentInstance } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanToast, { ToastType, ToastPosition } from './Toast';
 import type { LoadingType } from '../loading';
@@ -179,7 +179,7 @@ Toast.allowMultiple = (value = true) => {
 };
 
 Toast.install = (app: App) => {
-  app.use(installable(VanToast));
+  app.use(withInstall<typeof VanToast>(VanToast));
   app.config.globalProperties.$toast = Toast;
 };
 

@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _List from './List';
 
-const List = installable(_List);
+const List = withInstall<typeof _List>(_List);
 
 export default List;
 export { List };

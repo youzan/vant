@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Field from './Field';
 
-const Field = installable(_Field);
+const Field = withInstall<typeof _Field>(_Field);
 
 export default Field;
 export { Field };

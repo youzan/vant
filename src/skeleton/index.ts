@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Skeleton from './Skeleton';
 
-const Skeleton = installable(_Skeleton);
+const Skeleton = withInstall<typeof _Skeleton>(_Skeleton);
 
 export default Skeleton;
 export { Skeleton };

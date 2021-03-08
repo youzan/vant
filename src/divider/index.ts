@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Divider from './Divider';
 
-const Divider = installable(_Divider);
+const Divider = withInstall<typeof _Divider>(_Divider);
 
 export default Divider;
 export { Divider };

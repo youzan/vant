@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Radio from './Radio';
 
-const Radio = installable(_Radio);
+const Radio = withInstall<typeof _Radio>(_Radio);
 
 export default Radio;
 export { Radio };

@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _DropdownMenu from './DropdownMenu';
 
-const DropdownMenu = installable(_DropdownMenu);
+const DropdownMenu = withInstall<typeof _DropdownMenu>(_DropdownMenu);
 
 export default DropdownMenu;
 export { DropdownMenu };

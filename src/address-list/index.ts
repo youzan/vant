@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _AddressList from './AddressList';
 
-const AddressList = installable(_AddressList);
+const AddressList = withInstall<typeof _AddressList>(_AddressList);
 
 export default AddressList;
 export { AddressList };
