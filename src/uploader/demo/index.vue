@@ -56,7 +56,7 @@
 <script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import { FileListItem } from '../utils';
+import { UploaderFileListItem } from '../utils';
 import Toast from '../../toast';
 
 const i18n = {
@@ -155,11 +155,11 @@ export default {
       return true;
     };
 
-    const afterRead = (file: FileListItem, detail: unknown) => {
+    const afterRead = (file: UploaderFileListItem, detail: unknown) => {
       console.log(file, detail);
     };
 
-    const afterReadFailed = (item: FileListItem) => {
+    const afterReadFailed = (item: UploaderFileListItem) => {
       item.status = 'uploading';
       item.message = t('uploading');
 
@@ -169,7 +169,7 @@ export default {
       }, 1000);
     };
 
-    const onOversize = (file: FileListItem, detail: unknown) => {
+    const onOversize = (file: UploaderFileListItem, detail: unknown) => {
       console.log(file, detail);
       Toast(t('overSizeTip'));
     };
