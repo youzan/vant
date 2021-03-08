@@ -111,11 +111,11 @@ export default {
   <template #content>
     <van-image
       v-if="activeIndex === 0"
-      src="https://img01.yzcdn.cn/vant/apple-1.jpg"
+      src="https://img.yzcdn.cn/vant/apple-1.jpg"
     />
     <van-image
       v-if="activeIndex === 1"
-      src="https://img01.yzcdn.cn/vant/apple-2.jpg"
+      src="https://img.yzcdn.cn/vant/apple-2.jpg"
     />
   </template>
 </van-tree-select>

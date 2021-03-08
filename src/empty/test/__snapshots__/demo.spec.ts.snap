@@ -4,7 +4,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-empty">
     <div class="van-empty__image">
-      <img src="https://img01.yzcdn.cn/vant/empty-image-default.png">
+      <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
     </div>
     <p class="van-empty__description">
       Description
@@ -56,7 +56,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-empty">
           <div class="van-empty__image">
-            <img src="https://img01.yzcdn.cn/vant/empty-image-error.png">
+            <img src="https://img.yzcdn.cn/vant/empty-image-error.png">
           </div>
           <p class="van-empty__description">
             Description
@@ -79,7 +79,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-empty custom-image">
     <div class="van-empty__image">
-      <img src="https://img01.yzcdn.cn/vant/custom-empty-image.png">
+      <img src="https://img.yzcdn.cn/vant/custom-empty-image.png">
     </div>
     <p class="van-empty__description">
       Description
@@ -89,7 +89,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-empty">
     <div class="van-empty__image">
-      <img src="https://img01.yzcdn.cn/vant/empty-image-default.png">
+      <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
     </div>
     <p class="van-empty__description">
       Description

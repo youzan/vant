@@ -409,7 +409,7 @@ exports[`should render demo and match snapshot 1`] = `
               <div class="van-uploader__wrapper">
                 <div class="van-uploader__preview">
                   <div class="van-image van-uploader__preview-image">
-                    <img src="https://img01.yzcdn.cn/vant/leaf.jpg"
+                    <img src="https://img.yzcdn.cn/vant/leaf.jpg"
                          class="van-image__img"
                          style="object-fit: cover;"
                     >

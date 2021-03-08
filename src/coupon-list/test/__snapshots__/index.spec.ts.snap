@@ -344,7 +344,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
              style="height: 628px;"
         >
           <div class="van-coupon-list__empty">
-            <img src="https://img01.yzcdn.cn/vant/coupon-empty.png">
+            <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
             <p>
               No coupons
             </p>
@@ -359,7 +359,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
              style="height: 628px;"
         >
           <div class="van-coupon-list__empty">
-            <img src="https://img01.yzcdn.cn/vant/coupon-empty.png">
+            <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
             <p>
               No coupons
             </p>

@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="logo" src="https://img01.yzcdn.cn/vant/logo.png" width="120" style="margin-bottom: 10px;">
+    <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" style="margin-bottom: 10px;">
 </p>
 
 <h1 align="center">Vant</h1>
@@ -98,13 +98,13 @@ vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手
 
 可以手机扫码以下二维码访问手机端 demo：
 
-<img src="https://img01.yzcdn.cn/vant/preview_qrcode_20180528.png" width="220" height="220" >
+<img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="220" height="220" >
 
 ## 微信讨论群
 
 欢迎大家加入 Vant 交流群一起讨论，添加下方微信并注明『加入 Vant 交流群』即可
 
-<img src="https://img01.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
+<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
 
 ## 开源协议
 
