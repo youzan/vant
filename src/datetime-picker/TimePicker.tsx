@@ -1,4 +1,11 @@
-import { ref, watch, computed, nextTick, onMounted } from 'vue';
+import {
+  ref,
+  watch,
+  computed,
+  nextTick,
+  onMounted,
+  defineComponent,
+} from 'vue';
 
 // Utils
 import {
@@ -16,9 +23,11 @@ import { useExpose } from '../composables/use-expose';
 // Components
 import Picker from '../picker';
 
-const [createComponent] = createNamespace('time-picker');
+const [name] = createNamespace('time-picker');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...sharedProps,
     modelValue: String,

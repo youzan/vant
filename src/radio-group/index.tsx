@@ -1,10 +1,10 @@
-import { watch } from 'vue';
+import { watch, defineComponent } from 'vue';
 import { UnknownProp, createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 import { useLinkField } from '../composables/use-link-field';
 import { CheckerParent } from '../checkbox/Checker';
 
-const [createComponent, bem] = createNamespace('radio-group');
+const [name, bem] = createNamespace('radio-group');
 
 export const RADIO_KEY = Symbol('RadioGroup');
 
@@ -15,7 +15,9 @@ export type RadioGroupProvide = CheckerParent & {
   updateValue: (value: unknown) => void;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     disabled: Boolean,
     iconSize: [Number, String],

@@ -1,4 +1,4 @@
-import { ref, CSSProperties } from 'vue';
+import { ref, CSSProperties, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, getZIndexStyle } from '../utils';
@@ -10,9 +10,11 @@ import { usePlaceholder } from '../composables/use-placeholder';
 // Components
 import Icon from '../icon';
 
-const [createComponent, bem] = createNamespace('nav-bar');
+const [name, bem] = createNamespace('nav-bar');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     title: String,
     fixed: Boolean,

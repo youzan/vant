@@ -1,4 +1,4 @@
-import { watch, reactive, PropType } from 'vue';
+import { watch, reactive, PropType, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -12,7 +12,7 @@ import Button from '../button';
 import Dialog from '../dialog';
 import Switch from '../switch';
 
-const [createComponent, bem, t] = createNamespace('contact-edit');
+const [name, bem, t] = createNamespace('contact-edit');
 
 export type ContactInfo = {
   tel: string;
@@ -25,7 +25,9 @@ const DEFAULT_CONTACT: ContactInfo = {
   name: '',
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     isEdit: Boolean,
     isSaving: Boolean,

@@ -1,15 +1,17 @@
-import { ref } from 'vue';
+import { ref, defineComponent } from 'vue';
 import { pick, createNamespace, ComponentInstance } from '../utils';
 import { useExpose } from '../composables/use-expose';
 import TimePicker from './TimePicker';
 import DatePicker from './DatePicker';
 
-const [createComponent, bem] = createNamespace('datetime-picker');
+const [name, bem] = createNamespace('datetime-picker');
 
 const timePickerProps = Object.keys(TimePicker.props);
 const datePickerProps = Object.keys(DatePicker.props);
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...TimePicker.props,
     ...DatePicker.props,

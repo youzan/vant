@@ -1,12 +1,14 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import Cell from '../cell';
 
-const [createComponent, bem, t] = createNamespace('contact-card');
+const [name, bem, t] = createNamespace('contact-card');
 
 export type ContactCardType = 'add' | 'edit';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     tel: String,
     name: String,

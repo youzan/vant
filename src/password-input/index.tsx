@@ -1,9 +1,12 @@
+import { defineComponent } from 'vue';
 import { createNamespace, addUnit } from '../utils';
 import { BORDER_LEFT, BORDER_SURROUND } from '../utils/constant';
 
-const [createComponent, bem] = createNamespace('password-input');
+const [name, bem] = createNamespace('password-input');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     info: String,
     gutter: [Number, String],

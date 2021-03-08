@@ -1,10 +1,12 @@
-import type { PropType, CSSProperties } from 'vue';
+import { PropType, CSSProperties, defineComponent } from 'vue';
 import { isDef, createNamespace } from '../utils';
 import { isNumeric } from '../utils/validate/number';
 
-const [createComponent, bem] = createNamespace('badge');
+const [name, bem] = createNamespace('badge');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     dot: Boolean,
     max: [Number, String],

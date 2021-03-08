@@ -1,4 +1,12 @@
-import { ref, watch, reactive, computed, PropType, TeleportProps } from 'vue';
+import {
+  ref,
+  watch,
+  reactive,
+  computed,
+  PropType,
+  TeleportProps,
+  defineComponent,
+} from 'vue';
 
 // Utils
 import { pick, getScrollTop, ComponentInstance } from '../utils';
@@ -6,6 +14,7 @@ import { isDate } from '../utils/validate/date';
 import {
   t,
   bem,
+  name,
   copyDate,
   copyDates,
   getPrevDay,
@@ -13,7 +22,6 @@ import {
   compareDay,
   calcDateNum,
   compareMonth,
-  createComponent,
   getDayByOffset,
 } from './utils';
 
@@ -32,7 +40,9 @@ import Header from './components/Header';
 // Types
 import type { DayItem } from './components/Day';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     show: Boolean,
     title: String,

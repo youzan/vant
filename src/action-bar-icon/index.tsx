@@ -1,3 +1,4 @@
+import { defineComponent } from 'vue';
 import { createNamespace, UnknownProp } from '../utils';
 import { ACTION_BAR_KEY } from '../action-bar';
 
@@ -9,9 +10,11 @@ import { useRoute, routeProps } from '../composables/use-route';
 import Icon from '../icon';
 import Badge from '../badge';
 
-const [createComponent, bem] = createNamespace('action-bar-icon');
+const [name, bem] = createNamespace('action-bar-icon');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...routeProps,
     dot: Boolean,

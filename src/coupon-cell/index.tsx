@@ -1,11 +1,11 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 import { isDef, createNamespace } from '../utils';
 import type { CouponInfo } from '../coupon';
 
 // Components
 import Cell from '../cell';
 
-const [createComponent, bem, t] = createNamespace('coupon-cell');
+const [name, bem, t] = createNamespace('coupon-cell');
 
 function formatValue(
   coupons: CouponInfo[],
@@ -29,7 +29,9 @@ function formatValue(
   return coupons.length === 0 ? t('tips') : t('count', coupons.length);
 }
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     title: String,
     coupons: {

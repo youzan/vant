@@ -1,4 +1,4 @@
-import { ref, watch, computed, nextTick } from 'vue';
+import { ref, watch, computed, nextTick, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -12,9 +12,11 @@ import { useLazyRender } from '../composables/use-lazy-render';
 import Cell, { cellProps } from '../cell';
 import { COLLAPSE_KEY, CollapseProvide } from '../collapse';
 
-const [createComponent, bem] = createNamespace('collapse-item');
+const [name, bem] = createNamespace('collapse-item');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...cellProps,
     name: [Number, String],

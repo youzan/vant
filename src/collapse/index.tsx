@@ -1,9 +1,9 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { useChildren } from '@vant/use';
 
-const [createComponent, bem] = createNamespace('collapse');
+const [name, bem] = createNamespace('collapse');
 
 export const COLLAPSE_KEY = Symbol('Collapse');
 
@@ -12,7 +12,9 @@ export type CollapseProvide = {
   isExpanded: (name: number | string) => boolean;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     accordion: Boolean,
     modelValue: {

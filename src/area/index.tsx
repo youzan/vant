@@ -7,6 +7,7 @@ import {
   nextTick,
   PropType,
   onMounted,
+  defineComponent,
 } from 'vue';
 
 // Utils
@@ -19,7 +20,7 @@ import { useExpose } from '../composables/use-expose';
 // Components
 import Picker, { pickerProps } from '../picker';
 
-const [createComponent, bem] = createNamespace('area');
+const [name, bem] = createNamespace('area');
 
 const EMPTY_CODE = '000000';
 
@@ -40,7 +41,9 @@ export type AreaColumnOption = {
 
 type ColumnType = 'province' | 'county' | 'city';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...pickerProps,
     value: String,

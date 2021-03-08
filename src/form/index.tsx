@@ -1,4 +1,4 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, ComponentInstance } from '../utils';
@@ -15,9 +15,11 @@ import type {
   FieldValidateTrigger,
 } from '../field/types';
 
-const [createComponent, bem] = createNamespace('form');
+const [name, bem] = createNamespace('form');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     colon: Boolean,
     disabled: Boolean,

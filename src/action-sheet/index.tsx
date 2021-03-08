@@ -1,4 +1,4 @@
-import { nextTick, PropType } from 'vue';
+import { nextTick, PropType, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, pick } from '../utils';
@@ -9,7 +9,7 @@ import Popup from '../popup';
 import Loading from '../loading';
 import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
-const [createComponent, bem] = createNamespace('action-sheet');
+const [name, bem] = createNamespace('action-sheet');
 
 export type ActionSheetAction = {
   name?: string;
@@ -21,7 +21,9 @@ export type ActionSheetAction = {
   className?: unknown;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...popupSharedProps,
     title: String,

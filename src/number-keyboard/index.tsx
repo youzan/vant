@@ -7,12 +7,13 @@ import {
   PropType,
   Transition,
   TeleportProps,
+  defineComponent,
 } from 'vue';
 import { createNamespace, getZIndexStyle, stopPropagation } from '../utils';
 import { useClickAway } from '@vant/use';
 import Key, { KeyType } from './Key';
 
-const [createComponent, bem] = createNamespace('number-keyboard');
+const [name, bem] = createNamespace('number-keyboard');
 
 export type NumberKeyboardTheme = 'default' | 'custom';
 
@@ -23,7 +24,9 @@ type KeyConfig = {
   wider?: boolean;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     show: Boolean,
     title: String,

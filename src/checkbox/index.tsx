@@ -1,4 +1,4 @@
-import { computed, watch } from 'vue';
+import { computed, watch, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, pick } from '../utils';
@@ -12,9 +12,11 @@ import { useLinkField } from '../composables/use-link-field';
 // Components
 import Checker, { checkerProps } from './Checker';
 
-const [createComponent, bem] = createNamespace('checkbox');
+const [name, bem] = createNamespace('checkbox');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...checkerProps,
     bindGroup: {

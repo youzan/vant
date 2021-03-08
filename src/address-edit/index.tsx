@@ -1,4 +1,12 @@
-import { ref, watch, computed, nextTick, reactive, PropType } from 'vue';
+import {
+  ref,
+  watch,
+  computed,
+  nextTick,
+  reactive,
+  PropType,
+  defineComponent,
+} from 'vue';
 
 // Utils
 import { ComponentInstance, createNamespace, isObject } from '../utils';
@@ -18,7 +26,7 @@ import Dialog from '../dialog';
 import Switch from '../switch';
 import Detail, { AddressEditSearchItem } from './Detail';
 
-const [createComponent, bem, t] = createNamespace('address-edit');
+const [name, bem, t] = createNamespace('address-edit');
 
 export type AddressInfo = {
   tel: string;
@@ -50,7 +58,9 @@ function isPostal(value: string) {
   return /^\d{6}$/.test(value);
 }
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     areaList: Object as PropType<AreaList>,
     isSaving: Boolean,

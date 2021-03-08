@@ -1,4 +1,4 @@
-import { PropType, ref } from 'vue';
+import { PropType, ref, defineComponent } from 'vue';
 
 // Utils
 import { ComponentInstance, createNamespace } from '../utils';
@@ -8,7 +8,7 @@ import { isAndroid } from '../utils/validate/system';
 import Cell from '../cell';
 import Field from '../field';
 
-const [createComponent, bem, t] = createNamespace('address-edit-detail');
+const [name, bem, t] = createNamespace('address-edit-detail');
 const android = isAndroid();
 
 export type AddressEditSearchItem = {
@@ -16,7 +16,9 @@ export type AddressEditSearchItem = {
   address: string;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     show: Boolean,
     value: String,

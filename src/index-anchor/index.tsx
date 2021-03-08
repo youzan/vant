@@ -1,4 +1,4 @@
-import { ref, reactive, computed, CSSProperties } from 'vue';
+import { ref, reactive, computed, CSSProperties, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, getZIndexStyle } from '../utils';
@@ -10,9 +10,11 @@ import { getScrollTop, getRootScrollTop } from '../utils/dom/scroll';
 import { useRect, useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
-const [createComponent, bem] = createNamespace('index-anchor');
+const [name, bem] = createNamespace('index-anchor');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     index: [Number, String],
   },

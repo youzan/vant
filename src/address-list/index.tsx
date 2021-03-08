@@ -1,4 +1,4 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -8,9 +8,11 @@ import Button from '../button';
 import RadioGroup from '../radio-group';
 import AddressItem, { AddressListItem } from './Item';
 
-const [createComponent, bem, t] = createNamespace('address-list');
+const [name, bem, t] = createNamespace('address-list');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     modelValue: [Number, String],
     disabledText: String,

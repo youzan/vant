@@ -1,14 +1,16 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 import { addUnit, createNamespace } from '../utils';
 import Badge from '../badge';
 
-const [createComponent, bem] = createNamespace('icon');
+const [name, bem] = createNamespace('icon');
 
 function isImage(name?: string) {
   return name ? name.includes('/') : false;
 }
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     dot: Boolean,
     name: String,

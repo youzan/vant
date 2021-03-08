@@ -6,6 +6,7 @@ import {
   onMounted,
   TeleportProps,
   onBeforeUnmount,
+  defineComponent,
 } from 'vue';
 import { Instance, createPopper, offsetModifier } from '@vant/popperjs';
 
@@ -20,7 +21,7 @@ import { useClickAway } from '@vant/use';
 import Icon from '../icon';
 import Popup from '../popup';
 
-const [createComponent, bem] = createNamespace('popover');
+const [name, bem] = createNamespace('popover');
 
 export type PopoverTheme = 'light' | 'dark';
 export type PopoverTrigger = 'manual' | 'click';
@@ -46,7 +47,9 @@ export type PopoverAction = {
   className?: string;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     show: Boolean,
     overlay: Boolean,

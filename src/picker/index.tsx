@@ -1,4 +1,4 @@
-import { ref, watch, computed, PropType } from 'vue';
+import { ref, watch, computed, PropType, defineComponent } from 'vue';
 
 // Utils
 import {
@@ -23,7 +23,7 @@ import Column, {
   PickerObjectOption,
 } from './PickerColumn';
 
-const [createComponent, bem, t] = createNamespace('picker');
+const [name, bem, t] = createNamespace('picker');
 
 export type PickerToolbarPosition = 'top' | 'bottom';
 
@@ -65,7 +65,9 @@ export const pickerProps = {
   },
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...pickerProps,
     columnsFieldNames: Object as PropType<PickerFieldNames>,

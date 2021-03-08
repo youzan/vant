@@ -1,7 +1,7 @@
-import { computed, PropType } from 'vue';
+import { computed, PropType, defineComponent } from 'vue';
 import { createNamespace, addUnit, getSizeStyle } from '../utils';
 
-const [createComponent, bem] = createNamespace('loading');
+const [name, bem] = createNamespace('loading');
 
 const SpinIcon: JSX.Element[] = Array(12).fill(<i />);
 
@@ -13,7 +13,9 @@ const CircularIcon = (
 
 export type LoadingType = 'circular' | 'spinner';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     size: [Number, String],
     color: String,

@@ -1,10 +1,20 @@
-import { ref, watch, computed, nextTick, reactive, onMounted } from 'vue';
+import {
+  ref,
+  watch,
+  computed,
+  nextTick,
+  reactive,
+  onMounted,
+  defineComponent,
+} from 'vue';
 import { createNamespace, addUnit } from '../utils';
 import { useExpose } from '../composables/use-expose';
 
-const [createComponent, bem] = createNamespace('progress');
+const [name, bem] = createNamespace('progress');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     color: String,
     inactive: Boolean,

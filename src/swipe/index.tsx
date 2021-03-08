@@ -9,6 +9,7 @@ import {
   CSSProperties,
   onDeactivated,
   onBeforeUnmount,
+  defineComponent,
 } from 'vue';
 
 // Utils
@@ -31,7 +32,7 @@ import {
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
-const [createComponent, bem] = createNamespace('swipe');
+const [name, bem] = createNamespace('swipe');
 
 export const SWIPE_KEY = Symbol('Swipe');
 
@@ -50,7 +51,9 @@ export type SwipeProvide = {
   activeIndicator: ComputedRef<number>;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     width: [Number, String],
     height: [Number, String],

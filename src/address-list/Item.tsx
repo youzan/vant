@@ -1,4 +1,4 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -9,7 +9,7 @@ import Icon from '../icon';
 import Cell from '../cell';
 import Radio from '../radio';
 
-const [createComponent, bem] = createNamespace('address-item');
+const [name, bem] = createNamespace('address-item');
 
 export type AddressListItem = {
   id: number | string;
@@ -19,7 +19,9 @@ export type AddressListItem = {
   isDefault?: boolean;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     disabled: Boolean,
     switchable: Boolean,

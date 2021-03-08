@@ -1,4 +1,11 @@
-import { ref, watch, nextTick, PropType, CSSProperties } from 'vue';
+import {
+  ref,
+  watch,
+  nextTick,
+  PropType,
+  CSSProperties,
+  defineComponent,
+} from 'vue';
 import { createNamespace, UnknownProp } from '../utils';
 import { TABS_KEY, TabsProvide } from '../tabs';
 
@@ -9,9 +16,11 @@ import { routeProps } from '../composables/use-route';
 // Components
 import SwipeItem from '../swipe-item';
 
-const [createComponent, bem] = createNamespace('tab');
+const [name, bem] = createNamespace('tab');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...routeProps,
     dot: Boolean,

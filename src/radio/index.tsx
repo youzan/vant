@@ -1,11 +1,14 @@
+import { defineComponent } from 'vue';
 import { pick, createNamespace } from '../utils';
 import { useParent } from '@vant/use';
 import Checker, { checkerProps } from '../checkbox/Checker';
 import { RADIO_KEY, RadioGroupProvide } from '../radio-group';
 
-const [createComponent, bem] = createNamespace('radio');
+const [name, bem] = createNamespace('radio');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: checkerProps,
 
   emits: ['update:modelValue'],

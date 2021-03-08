@@ -8,6 +8,7 @@ import {
   ComputedRef,
   onActivated,
   CSSProperties,
+  defineComponent,
   ComponentPublicInstance,
 } from 'vue';
 
@@ -45,7 +46,7 @@ import Sticky from '../sticky';
 import TabsTitle from './TabsTitle';
 import TabsContent from './TabsContent';
 
-const [createComponent, bem] = createNamespace('tabs');
+const [name, bem] = createNamespace('tabs');
 
 export const TABS_KEY = Symbol('Tabs');
 
@@ -64,7 +65,9 @@ export type TabsProvide = {
   currentName: ComputedRef<number | string | undefined>;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     color: String,
     border: Boolean,

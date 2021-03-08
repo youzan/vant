@@ -1,11 +1,13 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 
-const [createComponent, bem] = createNamespace('divider');
+const [name, bem] = createNamespace('divider');
 
 export type DividerContentPosition = 'left' | 'center' | 'right';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     dashed: Boolean,
     hairline: {

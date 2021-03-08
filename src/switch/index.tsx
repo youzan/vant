@@ -1,10 +1,13 @@
+import { defineComponent } from 'vue';
 import { createNamespace, addUnit, UnknownProp } from '../utils';
 import { useLinkField } from '../composables/use-link-field';
 import Loading from '../loading';
 
-const [createComponent, bem] = createNamespace('switch');
+const [name, bem] = createNamespace('switch');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     size: [Number, String],
     loading: Boolean,

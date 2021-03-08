@@ -1,12 +1,15 @@
+import { defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { useParent } from '@vant/use';
 import { useRoute, routeProps } from '../composables/use-route';
 import { SIDEBAR_KEY, SidebarProvide } from '../sidebar';
 import Badge from '../badge';
 
-const [createComponent, bem] = createNamespace('sidebar-item');
+const [name, bem] = createNamespace('sidebar-item');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...routeProps,
     dot: Boolean,

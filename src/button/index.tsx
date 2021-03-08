@@ -1,4 +1,9 @@
-import { PropType, CSSProperties, ButtonHTMLAttributes } from 'vue';
+import {
+  PropType,
+  CSSProperties,
+  ButtonHTMLAttributes,
+  defineComponent,
+} from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -9,7 +14,7 @@ import { useRoute, routeProps } from '../composables/use-route';
 import Icon from '../icon';
 import Loading, { LoadingType } from '../loading';
 
-const [createComponent, bem] = createNamespace('button');
+const [name, bem] = createNamespace('button');
 
 export type ButtonType =
   | 'default'
@@ -20,7 +25,9 @@ export type ButtonType =
 
 export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...routeProps,
     text: String,

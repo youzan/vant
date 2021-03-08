@@ -1,4 +1,4 @@
-import { computed } from 'vue';
+import { computed, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -11,9 +11,11 @@ import { useParent } from '@vant/use';
 // Components
 import Icon from '../icon';
 
-const [createComponent, bem] = createNamespace('step');
+const [name, bem] = createNamespace('step');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   setup(props, { slots }) {
     const { parent, index } = useParent<StepsProvide>(STEPS_KEY);
 

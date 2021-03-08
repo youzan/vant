@@ -1,9 +1,9 @@
-import { ref, PropType } from 'vue';
+import { ref, PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { useTouch } from '../composables/use-touch';
 import Loading from '../loading';
 
-const [createComponent, bem] = createNamespace('key');
+const [name, bem] = createNamespace('key');
 
 const CollapseIcon = (
   <svg class={bem('collapse-icon')} viewBox="0 0 30 24">
@@ -25,7 +25,9 @@ const DeleteIcon = (
 
 export type KeyType = '' | 'delete' | 'extra' | 'close';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     type: String as PropType<KeyType>,
     text: [Number, String],

@@ -1,11 +1,14 @@
+import { defineComponent } from 'vue';
 import { createNamespace, getSizeStyle } from '../utils';
 import { Network } from './Network';
 
-const [createComponent, bem] = createNamespace('empty');
+const [name, bem] = createNamespace('empty');
 
 const PRESET_IMAGES = ['error', 'search', 'default'];
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     imageSize: [Number, String],
     description: String,

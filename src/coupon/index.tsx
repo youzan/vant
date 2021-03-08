@@ -1,4 +1,4 @@
-import { computed, PropType } from 'vue';
+import { computed, PropType, defineComponent } from 'vue';
 import { padZero, createNamespace } from '../utils';
 import { RED } from '../utils/constant';
 import Checkbox from '../checkbox';
@@ -19,7 +19,7 @@ export type CouponInfo = {
   originCondition?: number;
 };
 
-const [createComponent, bem, t] = createNamespace('coupon');
+const [name, bem, t] = createNamespace('coupon');
 
 function getDate(timeStamp: number) {
   const date = new Date(timeStamp * 1000);
@@ -38,7 +38,9 @@ function formatAmount(amount: number) {
   );
 }
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     chosen: Boolean,
     disabled: Boolean,

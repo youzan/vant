@@ -1,4 +1,12 @@
-import { watch, computed, nextTick, reactive, PropType, onMounted } from 'vue';
+import {
+  watch,
+  computed,
+  nextTick,
+  reactive,
+  PropType,
+  onMounted,
+  defineComponent,
+} from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -14,10 +22,12 @@ import Field from '../field';
 import Button from '../button';
 import Coupon, { CouponInfo } from '../coupon';
 
-const [createComponent, bem, t] = createNamespace('coupon-list');
+const [name, bem, t] = createNamespace('coupon-list');
 const EMPTY_IMAGE = 'https://img01.yzcdn.cn/vant/coupon-empty.png';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     enabledTitle: String,
     disabledTitle: String,

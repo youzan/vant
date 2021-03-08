@@ -1,11 +1,13 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 import { createNamespace, addUnit, getSizeStyle } from '../utils';
 
-const [createComponent, bem] = createNamespace('skeleton');
+const [name, bem] = createNamespace('skeleton');
 const DEFAULT_ROW_WIDTH = '100%';
 const DEFAULT_LAST_ROW_WIDTH = '60%';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     title: Boolean,
     round: Boolean,

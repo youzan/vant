@@ -1,4 +1,4 @@
-import { ref, computed, PropType } from 'vue';
+import { ref, computed, PropType, defineComponent } from 'vue';
 
 // Utils
 import { addUnit, setScrollTop, createNamespace } from '../../utils';
@@ -20,11 +20,13 @@ import { useHeight } from '../../composables/use-height';
 // Components
 import Day, { DayItem, DayType } from './Day';
 
-const [createComponent] = createNamespace('calendar-month');
+const [name] = createNamespace('calendar-month');
 
 export type CalendarType = 'single' | 'range' | 'multiple';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     type: String as PropType<CalendarType>,
     color: String,

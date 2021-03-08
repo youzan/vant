@@ -1,11 +1,11 @@
-import { PropType, watch } from 'vue';
+import { PropType, watch, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { useLinkField } from '../composables/use-link-field';
 import { CheckerParent, CheckerDirection } from '../checkbox/Checker';
 
-const [createComponent, bem] = createNamespace('checkbox-group');
+const [name, bem] = createNamespace('checkbox-group');
 
 export const CHECKBOX_GROUP_KEY = Symbol('CheckboxGroup');
 
@@ -24,7 +24,9 @@ export type CheckboxGroupProvide = CheckerParent & {
   updateValue: (value: unknown[]) => void;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     max: [Number, String],
     disabled: Boolean,

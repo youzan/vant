@@ -1,11 +1,14 @@
+import { defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
-const [createComponent, bem] = createNamespace('action-bar');
+const [name, bem] = createNamespace('action-bar');
 
 export const ACTION_BAR_KEY = Symbol('ActionBar');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     safeAreaInsetBottom: {
       type: Boolean,

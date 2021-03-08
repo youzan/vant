@@ -1,4 +1,4 @@
-import { computed, CSSProperties } from 'vue';
+import { computed, CSSProperties, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, addUnit } from '../utils';
@@ -13,9 +13,11 @@ import { useRoute, routeProps } from '../composables/use-route';
 import Icon from '../icon';
 import Badge from '../badge';
 
-const [createComponent, bem] = createNamespace('grid-item');
+const [name, bem] = createNamespace('grid-item');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...routeProps,
     dot: Boolean,

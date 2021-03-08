@@ -4,6 +4,7 @@ import {
   PropType,
   TeleportProps,
   CSSProperties,
+  defineComponent,
 } from 'vue';
 
 // Utils
@@ -19,7 +20,7 @@ import Cell from '../cell';
 import Icon from '../icon';
 import Popup from '../popup';
 
-const [createComponent, bem] = createNamespace('dropdown-item');
+const [name, bem] = createNamespace('dropdown-item');
 
 export type DropdownItemOption = {
   text: string;
@@ -27,7 +28,9 @@ export type DropdownItemOption = {
   value: number | string;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     title: String,
     disabled: Boolean,

@@ -1,4 +1,4 @@
-import { ref, watch, computed, PropType } from 'vue';
+import { ref, watch, computed, PropType, defineComponent } from 'vue';
 
 // Utils
 import { isNaN } from '../utils/validate/number';
@@ -16,7 +16,7 @@ import {
 import { useLinkField } from '../composables/use-link-field';
 import { Interceptor, callInterceptor } from '../utils/interceptor';
 
-const [createComponent, bem] = createNamespace('stepper');
+const [name, bem] = createNamespace('stepper');
 
 const LONG_PRESS_INTERVAL = 200;
 const LONG_PRESS_START_TIME = 600;
@@ -31,7 +31,9 @@ function add(num1: number, num2: number) {
   return Math.round((num1 + num2) * cardinal) / cardinal;
 }
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     theme: String,
     integer: Boolean,

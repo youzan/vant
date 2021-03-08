@@ -1,4 +1,4 @@
-import { computed, PropType } from 'vue';
+import { computed, PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { ACTION_BAR_KEY } from '../action-bar';
 
@@ -10,9 +10,11 @@ import { useRoute, routeProps } from '../composables/use-route';
 // Components
 import Button, { ButtonType } from '../button';
 
-const [createComponent, bem] = createNamespace('action-bar-button');
+const [name, bem] = createNamespace('action-bar-button');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...routeProps,
     type: String as PropType<ButtonType>,

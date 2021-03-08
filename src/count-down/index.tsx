@@ -1,4 +1,4 @@
-import { watch, computed } from 'vue';
+import { watch, computed, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace } from '../utils';
@@ -8,9 +8,11 @@ import { parseFormat } from './utils';
 import { useCountDown } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
-const [createComponent, bem] = createNamespace('count-down');
+const [name, bem] = createNamespace('count-down');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     millisecond: Boolean,
     time: {

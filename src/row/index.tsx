@@ -1,8 +1,8 @@
-import { computed, PropType, ComputedRef } from 'vue';
+import { computed, PropType, ComputedRef, defineComponent } from 'vue';
 import { createNamespace, ComponentInstance } from '../utils';
 import { useChildren } from '@vant/use';
 
-const [createComponent, bem] = createNamespace('row');
+const [name, bem] = createNamespace('row');
 
 export const ROW_KEY = Symbol('Row');
 
@@ -21,7 +21,9 @@ export type RowJustify =
   | 'space-around'
   | 'space-between';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     align: String as PropType<RowAlign>,
     justify: String as PropType<RowJustify>,

@@ -1,8 +1,8 @@
-import { computed, CSSProperties, PropType } from 'vue';
+import { computed, CSSProperties, PropType, defineComponent } from 'vue';
 import { createNamespace } from '../../utils';
 import { bem } from '../utils';
 
-const [createComponent] = createNamespace('calendar-day');
+const [name] = createNamespace('calendar-day');
 
 export type DayType =
   | ''
@@ -25,7 +25,9 @@ export type DayItem = {
   bottomInfo?: string;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     color: String,
     index: Number,

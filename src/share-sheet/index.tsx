@@ -1,4 +1,4 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, pick } from '../utils';
@@ -40,9 +40,11 @@ function getIconURL(icon: string) {
   return icon;
 }
 
-const [createComponent, bem, t] = createNamespace('share-sheet');
+const [name, bem, t] = createNamespace('share-sheet');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...popupSharedProps,
     title: String,

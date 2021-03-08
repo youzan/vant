@@ -1,3 +1,5 @@
+import { defineComponent } from 'vue';
+
 // Utils
 import { createNamespace, isDef } from '../utils';
 
@@ -5,9 +7,11 @@ import { createNamespace, isDef } from '../utils';
 import Tag from '../tag';
 import Image from '../image';
 
-const [createComponent, bem] = createNamespace('card');
+const [name, bem] = createNamespace('card');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     tag: String,
     num: [Number, String],

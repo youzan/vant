@@ -1,7 +1,8 @@
+import { defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
-const [createComponent, bem] = createNamespace('sidebar');
+const [name, bem] = createNamespace('sidebar');
 
 export const SIDEBAR_KEY = Symbol('Sidebar');
 
@@ -10,7 +11,9 @@ export type SidebarProvide = {
   setActive: (value: number) => void;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     modelValue: {
       type: [Number, String],

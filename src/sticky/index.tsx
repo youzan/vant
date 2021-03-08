@@ -1,4 +1,11 @@
-import { ref, computed, CSSProperties, PropType, reactive } from 'vue';
+import {
+  ref,
+  computed,
+  PropType,
+  reactive,
+  CSSProperties,
+  defineComponent,
+} from 'vue';
 
 // Utils
 import {
@@ -13,11 +20,13 @@ import {
 import { useRect, useEventListener, useScrollParent } from '@vant/use';
 import { useVisibilityChange } from '../composables/use-visibility-change';
 
-const [createComponent, bem] = createNamespace('sticky');
+const [name, bem] = createNamespace('sticky');
 
 export type StickyPosition = 'top' | 'bottom';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     zIndex: [Number, String],
     container: Element,

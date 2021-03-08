@@ -1,9 +1,12 @@
+import { defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 
-const [createComponent, bem] = createNamespace('cell-group');
+const [name, bem] = createNamespace('cell-group');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   inheritAttrs: false,
 
   props: {

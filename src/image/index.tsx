@@ -5,6 +5,7 @@ import {
   PropType,
   CSSProperties,
   onBeforeUnmount,
+  defineComponent,
   getCurrentInstance,
 } from 'vue';
 import {
@@ -16,11 +17,13 @@ import {
 } from '../utils';
 import Icon from '../icon';
 
-const [createComponent, bem] = createNamespace('image');
+const [name, bem] = createNamespace('image');
 
 export type ImageFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     src: String,
     alt: String,

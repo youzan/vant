@@ -1,4 +1,4 @@
-import { ref, PropType, CSSProperties } from 'vue';
+import { ref, PropType, CSSProperties, defineComponent } from 'vue';
 
 // Utils
 import {
@@ -17,11 +17,13 @@ import Field from '../field';
 // Types
 import type { FieldClearTrigger } from '../field/types';
 
-const [createComponent, bem, t] = createNamespace('search');
+const [name, bem, t] = createNamespace('search');
 
 export type SearchShape = 'square' | 'round';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   inheritAttrs: false,
 
   props: {

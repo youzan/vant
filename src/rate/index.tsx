@@ -1,4 +1,4 @@
-import { computed } from 'vue';
+import { computed, defineComponent } from 'vue';
 
 // Utils
 import { addUnit, createNamespace, preventDefault } from '../utils';
@@ -11,7 +11,7 @@ import { useLinkField } from '../composables/use-link-field';
 // Components
 import Icon from '../icon';
 
-const [createComponent, bem] = createNamespace('rate');
+const [name, bem] = createNamespace('rate');
 
 type RateStatus = 'full' | 'half' | 'void';
 
@@ -29,7 +29,9 @@ function getRateStatus(
   return 'void';
 }
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     size: [Number, String],
     color: String,

@@ -1,13 +1,15 @@
-import { PropType, CSSProperties } from 'vue';
+import { PropType, CSSProperties, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 
 // Components
 import Icon from '../icon';
 import Button, { ButtonType } from '../button';
 
-const [createComponent, bem, t] = createNamespace('submit-bar');
+const [name, bem, t] = createNamespace('submit-bar');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     tip: String,
     label: String,

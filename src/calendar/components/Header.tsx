@@ -1,9 +1,12 @@
+import { defineComponent } from 'vue';
 import { createNamespace } from '../../utils';
 import { t, bem } from '../utils';
 
-const [createComponent] = createNamespace('calendar-header');
+const [name] = createNamespace('calendar-header');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     title: String,
     subtitle: String,

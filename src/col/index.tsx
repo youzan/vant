@@ -1,11 +1,13 @@
-import { computed, PropType } from 'vue';
+import { computed, PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { useParent } from '@vant/use';
 import { ROW_KEY, RowProvide } from '../row';
 
-const [createComponent, bem] = createNamespace('col');
+const [name, bem] = createNamespace('col');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     offset: [Number, String],
     tag: {

@@ -1,4 +1,4 @@
-import { ref, watch, reactive, nextTick } from 'vue';
+import { ref, watch, reactive, nextTick, defineComponent } from 'vue';
 
 // Utils
 import { preventDefault, getScrollTop, createNamespace } from '../utils';
@@ -10,7 +10,7 @@ import { useTouch } from '../composables/use-touch';
 // Components
 import Loading from '../loading';
 
-const [createComponent, bem, t] = createNamespace('pull-refresh');
+const [name, bem, t] = createNamespace('pull-refresh');
 
 const DEFAULT_HEAD_HEIGHT = 50;
 const TEXT_STATUS = ['pulling', 'loosing', 'success'];
@@ -22,7 +22,9 @@ type PullRefreshStatus =
   | 'pulling'
   | 'success';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     disabled: Boolean,
     successText: String,

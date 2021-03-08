@@ -1,4 +1,4 @@
-import { PropType, CSSProperties } from 'vue';
+import { PropType, CSSProperties, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, isDef, UnknownProp } from '../utils';
@@ -9,7 +9,7 @@ import { useRoute, routeProps } from '../composables/use-route';
 // Components
 import Icon from '../icon';
 
-const [createComponent, bem] = createNamespace('cell');
+const [name, bem] = createNamespace('cell');
 
 export type CellArrowDirection = 'up' | 'down' | 'left' | 'right';
 
@@ -38,7 +38,9 @@ export const cellProps = {
   },
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...cellProps,
     ...routeProps,

@@ -1,4 +1,4 @@
-import { ref, computed, PropType, CSSProperties } from 'vue';
+import { ref, computed, PropType, CSSProperties, defineComponent } from 'vue';
 
 // Utils
 import {
@@ -14,11 +14,13 @@ import { useRect } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useLinkField } from '../composables/use-link-field';
 
-const [createComponent, bem] = createNamespace('slider');
+const [name, bem] = createNamespace('slider');
 
 type SliderValue = number | number[];
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     range: Boolean,
     disabled: Boolean,

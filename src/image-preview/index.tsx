@@ -1,4 +1,4 @@
-import { App, CSSProperties, Plugin, TeleportProps } from 'vue';
+import { App, Plugin, CSSProperties, TeleportProps } from 'vue';
 import { ComponentInstance, inBrowser } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import { Interceptor } from '../utils/interceptor';

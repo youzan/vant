@@ -7,6 +7,7 @@ import {
   reactive,
   PropType,
   onMounted,
+  defineComponent,
 } from 'vue';
 
 // Utils
@@ -50,9 +51,11 @@ import type {
   FieldValidateTrigger,
 } from './types';
 
-const [createComponent, bem] = createNamespace('field');
+const [name, bem] = createNamespace('field');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...cellProps,
     rows: [Number, String],

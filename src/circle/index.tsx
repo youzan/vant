@@ -1,8 +1,8 @@
-import { watch, computed, PropType, CSSProperties } from 'vue';
+import { watch, computed, PropType, CSSProperties, defineComponent } from 'vue';
 import { raf, cancelRaf } from '@vant/use';
 import { isObject, getSizeStyle, createNamespace } from '../utils';
 
-const [createComponent, bem] = createNamespace('circle');
+const [name, bem] = createNamespace('circle');
 
 let uid = 0;
 
@@ -17,7 +17,9 @@ function getPath(clockwise: boolean, viewBoxSize: number) {
   } m 0, -500 a 500, 500 0 1, ${sweepFlag} 0, 1000 a 500, 500 0 1, ${sweepFlag} 0, -1000`;
 }
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     text: String,
     size: [Number, String],

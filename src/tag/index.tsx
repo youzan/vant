@@ -1,12 +1,14 @@
-import { CSSProperties, PropType, Transition } from 'vue';
+import { CSSProperties, PropType, Transition, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import Icon from '../icon';
 
-const [createComponent, bem] = createNamespace('tag');
+const [name, bem] = createNamespace('tag');
 
 export type TagType = 'default' | 'primary' | 'success' | 'warning' | 'danger';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     size: String,
     mark: Boolean,

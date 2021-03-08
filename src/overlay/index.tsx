@@ -1,4 +1,4 @@
-import { PropType, Transition, CSSProperties } from 'vue';
+import { PropType, Transition, CSSProperties, defineComponent } from 'vue';
 import {
   noop,
   isDef,
@@ -9,9 +9,11 @@ import {
 } from '../utils';
 import { useLazyRender } from '../composables/use-lazy-render';
 
-const [createComponent, bem] = createNamespace('overlay');
+const [name, bem] = createNamespace('overlay');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     show: Boolean,
     zIndex: [Number, String],

@@ -1,4 +1,4 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, addUnit } from '../utils';
@@ -8,7 +8,7 @@ import Icon from '../icon';
 import Sidebar from '../sidebar';
 import SidebarItem from '../sidebar-item';
 
-const [createComponent, bem] = createNamespace('tree-select');
+const [name, bem] = createNamespace('tree-select');
 
 export type TreeSelectChild = {
   id: number | string;
@@ -25,7 +25,9 @@ export type TreeSelectItem = {
   className?: unknown;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     max: {
       type: [Number, String],

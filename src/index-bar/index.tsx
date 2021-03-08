@@ -6,6 +6,7 @@ import {
   PropType,
   onMounted,
   CSSProperties,
+  defineComponent,
 } from 'vue';
 
 // Utils
@@ -49,9 +50,11 @@ function genAlphabet() {
   return indexList;
 }
 
-const [createComponent, bem] = createNamespace('index-bar');
+const [name, bem] = createNamespace('index-bar');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     zIndex: [Number, String],
     highlightColor: String,

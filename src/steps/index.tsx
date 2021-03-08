@@ -1,8 +1,8 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
-const [createComponent, bem] = createNamespace('steps');
+const [name, bem] = createNamespace('steps');
 
 export const STEPS_KEY = Symbol('Steps');
 
@@ -21,7 +21,9 @@ export type StepsProvide = {
   onClickStep: (index: number) => void;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     finishIcon: String,
     activeColor: String,

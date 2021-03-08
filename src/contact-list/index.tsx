@@ -1,4 +1,4 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, UnknownProp } from '../utils';
@@ -12,7 +12,7 @@ import Radio from '../radio';
 import Button from '../button';
 import RadioGroup from '../radio-group';
 
-const [createComponent, bem, t] = createNamespace('contact-list');
+const [name, bem, t] = createNamespace('contact-list');
 
 export type ContactListItem = {
   id?: number | string;
@@ -21,7 +21,9 @@ export type ContactListItem = {
   isDefault?: boolean;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     list: Array as PropType<ContactListItem[]>,
     addText: String,

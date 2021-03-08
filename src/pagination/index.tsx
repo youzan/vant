@@ -1,8 +1,8 @@
 import { createNamespace } from '../utils';
 import { BORDER } from '../utils/constant';
-import { computed, watch } from 'vue';
+import { computed, watch, defineComponent } from 'vue';
 
-const [createComponent, bem, t] = createNamespace('pagination');
+const [name, bem, t] = createNamespace('pagination');
 
 type PageItem = {
   text: string | number;
@@ -18,7 +18,9 @@ function makePage(
   return { number, text, active };
 }
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     prevText: String,
     nextText: String,

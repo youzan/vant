@@ -1,4 +1,11 @@
-import { ref, computed, PropType, CSSProperties, Ref } from 'vue';
+import {
+  ref,
+  Ref,
+  computed,
+  PropType,
+  CSSProperties,
+  defineComponent,
+} from 'vue';
 
 // Utils
 import { isDef, ComponentInstance, createNamespace } from '../utils';
@@ -12,7 +19,7 @@ import {
   useEventListener,
 } from '@vant/use';
 
-const [createComponent, bem] = createNamespace('dropdown-menu');
+const [name, bem] = createNamespace('dropdown-menu');
 
 export const DROPDOWN_KEY = Symbol('DropdownMenu');
 
@@ -30,7 +37,9 @@ export type DropdownMenuProvide = {
   offset: Ref<number>;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     zIndex: [Number, String],
     activeColor: String,

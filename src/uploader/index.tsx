@@ -1,16 +1,16 @@
-import { ref, reactive, PropType } from 'vue';
+import { ref, reactive, PropType, defineComponent } from 'vue';
 
 // Utils
 import { pick, isPromise, getSizeStyle, ComponentInstance } from '../utils';
 import {
   bem,
+  name,
   toArray,
   isOversize,
   filterFiles,
   isImageFile,
   FileListItem,
   readFileContent,
-  createComponent,
   UploaderResultType,
 } from './utils';
 
@@ -45,7 +45,9 @@ export type UploaderAfterRead = (
   }
 ) => void;
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     capture: String,
     multiple: Boolean,

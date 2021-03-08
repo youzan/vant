@@ -1,4 +1,12 @@
-import { ref, watch, nextTick, onUpdated, onMounted, PropType } from 'vue';
+import {
+  ref,
+  watch,
+  nextTick,
+  PropType,
+  onUpdated,
+  onMounted,
+  defineComponent,
+} from 'vue';
 
 // Utils
 import { isHidden, createNamespace } from '../utils';
@@ -10,9 +18,11 @@ import { useExpose } from '../composables/use-expose';
 // Components
 import Loading from '../loading';
 
-const [createComponent, bem, t] = createNamespace('list');
+const [name, bem, t] = createNamespace('list');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     error: Boolean,
     loading: Boolean,

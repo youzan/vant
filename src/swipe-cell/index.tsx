@@ -1,4 +1,4 @@
-import { ref, Ref, reactive, computed, PropType } from 'vue';
+import { ref, Ref, reactive, computed, PropType, defineComponent } from 'vue';
 
 // Utils
 import { range, isDef, createNamespace, preventDefault } from '../utils';
@@ -9,12 +9,14 @@ import { useRect, useClickAway } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
-const [createComponent, bem] = createNamespace('swipe-cell');
+const [name, bem] = createNamespace('swipe-cell');
 
 export type SwipeCellSide = 'left' | 'right';
 export type SwipeCellPosition = SwipeCellSide | 'cell' | 'outside';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     disabled: Boolean,
     leftWidth: [Number, String],

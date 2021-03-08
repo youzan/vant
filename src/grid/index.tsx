@@ -1,9 +1,9 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 import { createNamespace, addUnit } from '../utils';
 import { BORDER_TOP } from '../utils/constant';
 import { useChildren } from '@vant/use';
 
-const [createComponent, bem] = createNamespace('grid');
+const [name, bem] = createNamespace('grid');
 
 export const GRID_KEY = Symbol('Grid');
 
@@ -22,7 +22,9 @@ export type GridProvide = {
   };
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     square: Boolean,
     gutter: [Number, String],

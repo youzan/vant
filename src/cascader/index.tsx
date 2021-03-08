@@ -1,4 +1,4 @@
-import { nextTick, PropType, reactive, watch } from 'vue';
+import { nextTick, PropType, reactive, watch, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 
 // Components
@@ -6,7 +6,7 @@ import Tab from '../tab';
 import Tabs from '../tabs';
 import Icon from '../icon';
 
-const [createComponent, bem, t] = createNamespace('cascader');
+const [name, bem, t] = createNamespace('cascader');
 
 export type CascaderOption = {
   text?: string;
@@ -27,7 +27,9 @@ type CascaderFieldNames = {
   children?: string;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     title: String,
     modelValue: [Number, String],

@@ -1,4 +1,4 @@
-import { computed, getCurrentInstance } from 'vue';
+import { computed, getCurrentInstance, defineComponent } from 'vue';
 import { TABBAR_KEY, TabbarProvide } from '../tabbar';
 
 // Utils
@@ -12,9 +12,11 @@ import { routeProps, useRoute } from '../composables/use-route';
 import Icon from '../icon';
 import Badge from '../badge';
 
-const [createComponent, bem] = createNamespace('tabbar-item');
+const [name, bem] = createNamespace('tabbar-item');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...routeProps,
     dot: Boolean,

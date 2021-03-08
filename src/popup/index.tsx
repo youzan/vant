@@ -9,6 +9,7 @@ import {
   onActivated,
   CSSProperties,
   onDeactivated,
+  defineComponent,
 } from 'vue';
 
 // Utils
@@ -33,11 +34,13 @@ export type PopupCloseIconPosition =
   | 'botttom-left'
   | 'bottom-right';
 
-const [createComponent, bem] = createNamespace('popup');
+const [name, bem] = createNamespace('popup');
 
 let globalZIndex = 2000;
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   inheritAttrs: false,
 
   props: {

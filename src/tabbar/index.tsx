@@ -1,4 +1,4 @@
-import { ref, PropType } from 'vue';
+import { ref, PropType, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, getZIndexStyle } from '../utils';
@@ -9,7 +9,7 @@ import { callInterceptor, Interceptor } from '../utils/interceptor';
 import { useChildren } from '@vant/use';
 import { usePlaceholder } from '../composables/use-placeholder';
 
-const [createComponent, bem] = createNamespace('tabbar');
+const [name, bem] = createNamespace('tabbar');
 
 export const TABBAR_KEY = Symbol('Tabbar');
 
@@ -23,7 +23,9 @@ export type TabbarProvide = {
   setActive: (active: number | string) => void;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     route: Boolean,
     zIndex: [Number, String],

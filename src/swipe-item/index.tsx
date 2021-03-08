@@ -1,12 +1,21 @@
-import { computed, CSSProperties, nextTick, onMounted, reactive } from 'vue';
+import {
+  computed,
+  nextTick,
+  reactive,
+  onMounted,
+  CSSProperties,
+  defineComponent,
+} from 'vue';
 import { SWIPE_KEY, SwipeProvide } from '../swipe';
 import { createNamespace } from '../utils';
 import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
-const [createComponent, bem] = createNamespace('swipe-item');
+const [name, bem] = createNamespace('swipe-item');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   setup(props, { slots }) {
     let rendered: boolean;
     const state = reactive({

@@ -1,4 +1,4 @@
-import { ref, watch, reactive, PropType } from 'vue';
+import { ref, watch, reactive, PropType, defineComponent } from 'vue';
 import { isDef, createNamespace } from '../utils';
 
 // Composables
@@ -15,9 +15,11 @@ import Icon from '../icon';
 
 export type NoticeBarMode = 'closeable' | 'link';
 
-const [createComponent, bem] = createNamespace('notice-bar');
+const [name, bem] = createNamespace('notice-bar');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     text: String,
     mode: String as PropType<NoticeBarMode>,
