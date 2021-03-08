@@ -20,7 +20,7 @@ app.use(Card);
   price="2.00"
   title="Title"
   desc="Description"
-  thumb="https://img01.yzcdn.cn/vant/ipad.jpeg"
+  thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 />
 ```
 
@@ -34,7 +34,7 @@ app.use(Card);
   title="Title"
   desc="Description"
   origin-price="10.00"
-  thumb="https://img01.yzcdn.cn/vant/ipad.jpeg"
+  thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 />
 ```
 
@@ -48,7 +48,7 @@ Use slot to custom content.
   title="Title"
   desc="Description"
   price="2.00"
-  thumb="https://img01.yzcdn.cn/vant/ipad.jpeg"
+  thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 >
   <template #tags>
     <van-tag plain type="danger">Tag</van-tag>

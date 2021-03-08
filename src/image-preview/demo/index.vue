@@ -65,10 +65,10 @@ const i18n = {
 };
 
 const images = [
-  'https://img01.yzcdn.cn/vant/apple-1.jpg',
-  'https://img01.yzcdn.cn/vant/apple-2.jpg',
-  'https://img01.yzcdn.cn/vant/apple-3.jpg',
-  'https://img01.yzcdn.cn/vant/apple-4.jpg',
+  'https://img.yzcdn.cn/vant/apple-1.jpg',
+  'https://img.yzcdn.cn/vant/apple-2.jpg',
+  'https://img.yzcdn.cn/vant/apple-3.jpg',
+  'https://img.yzcdn.cn/vant/apple-4.jpg',
 ];
 
 export default {

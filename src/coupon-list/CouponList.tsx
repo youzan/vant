@@ -23,7 +23,7 @@ import Button from '../button';
 import Coupon, { CouponInfo } from '../coupon';
 
 const [name, bem, t] = createNamespace('coupon-list');
-const EMPTY_IMAGE = 'https://img01.yzcdn.cn/vant/coupon-empty.png';
+const EMPTY_IMAGE = 'https://img.yzcdn.cn/vant/coupon-empty.png';
 
 export default defineComponent({
   name,

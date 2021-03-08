@@ -73,7 +73,7 @@ export default {
 
     return {
       t,
-      imageURL: 'https://img01.yzcdn.cn/vant/ipad.jpeg',
+      imageURL: 'https://img.yzcdn.cn/vant/ipad.jpeg',
     };
   },
 };

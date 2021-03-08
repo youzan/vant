@@ -104,7 +104,7 @@ exports[`should render demo and match snapshot 1`] = `
         Title
       </div>
       <div class="van-dialog__content">
-        <img src="https://img01.yzcdn.cn/vant/apple-3.jpg">
+        <img src="https://img.yzcdn.cn/vant/apple-3.jpg">
       </div>
       <div class="van-hairline--top van-dialog__footer">
         <button type="button"

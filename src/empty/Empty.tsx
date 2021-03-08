@@ -31,7 +31,7 @@ export default defineComponent({
       }
 
       if (PRESET_IMAGES.includes(image)) {
-        image = `https://img01.yzcdn.cn/vant/empty-image-${image}.png`;
+        image = `https://img.yzcdn.cn/vant/empty-image-${image}.png`;
       }
 
       return <img src={image} />;

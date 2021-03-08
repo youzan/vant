@@ -11,9 +11,9 @@ import { nextTick } from 'vue';
 import { DOMWrapper } from '@vue/test-utils/dist/domWrapper';
 
 const images = [
-  'https://img01.yzcdn.cn/1.png',
-  'https://img01.yzcdn.cn/2.png',
-  'https://img01.yzcdn.cn/3.png',
+  'https://img.yzcdn.cn/1.png',
+  'https://img.yzcdn.cn/2.png',
+  'https://img.yzcdn.cn/3.png',
 ];
 
 function triggerTwoFingerTouchmove(

@@ -24,7 +24,7 @@ app.use(Card);
   price="2.00"
   desc="描述信息"
   title="商品标题"
-  thumb="https://img01.yzcdn.cn/vant/ipad.jpeg"
+  thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 />
 ```
 
@@ -39,7 +39,7 @@ app.use(Card);
   price="2.00"
   desc="描述信息"
   title="商品标题"
-  thumb="https://img01.yzcdn.cn/vant/ipad.jpeg"
+  thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
   origin-price="10.00"
 />
 ```
@@ -54,7 +54,7 @@ app.use(Card);
   price="2.00"
   desc="描述信息"
   title="商品标题"
-  thumb="https://img01.yzcdn.cn/vant/ipad.jpeg"
+  thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 >
   <template #tags>
     <van-tag plain type="danger">标签</van-tag>

@@ -109,7 +109,7 @@ export default {
     return {
       t,
       show,
-      image: 'https://img01.yzcdn.cn/vant/apple-3.jpg',
+      image: 'https://img.yzcdn.cn/vant/apple-3.jpg',
       onClickAlert,
       onClickAlert2,
       onClickRound,
