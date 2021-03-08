@@ -38,7 +38,7 @@ import CalendarMonth, { CalendarType } from './CalendarMonth';
 import CalendarHeader from './CalendarHeader';
 
 // Types
-import type { DayItem } from './CalendarDay';
+import type { CalendarDayItem } from './CalendarDay';
 
 export default defineComponent({
   name,
@@ -49,7 +49,7 @@ export default defineComponent({
     color: String,
     readonly: Boolean,
     teleport: [String, Object] as PropType<TeleportProps['to']>,
-    formatter: Function as PropType<(item: DayItem) => DayItem>,
+    formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
     rowHeight: [Number, String],
     confirmText: String,
     rangePrompt: String,
@@ -374,7 +374,7 @@ export default defineComponent({
       }
     };
 
-    const onClickDay = (item: DayItem) => {
+    const onClickDay = (item: CalendarDayItem) => {
       if (props.readonly || !item.date) {
         return;
       }

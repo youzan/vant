@@ -4,7 +4,7 @@ import { bem } from './utils';
 
 const [name] = createNamespace('calendar-day');
 
-export type DayType =
+export type CalendarDayType =
   | ''
   | 'start'
   | 'start-end'
@@ -16,10 +16,10 @@ export type DayType =
   | 'disabled'
   | 'placeholder';
 
-export type DayItem = {
+export type CalendarDayItem = {
   date?: Date;
   text?: string | number;
-  type?: DayType;
+  type?: CalendarDayType;
   topInfo?: string;
   className?: unknown;
   bottomInfo?: string;
@@ -37,7 +37,7 @@ export default defineComponent({
       default: 0,
     },
     item: {
-      type: Object as PropType<DayItem>,
+      type: Object as PropType<CalendarDayItem>,
       required: true,
     },
   },

@@ -18,7 +18,7 @@ import { useExpose } from '../composables/use-expose';
 import { useHeight } from '../composables/use-height';
 
 // Components
-import CalendarDay, { DayItem, DayType } from './CalendarDay';
+import CalendarDay, { CalendarDayItem, CalendarDayType } from './CalendarDay';
 
 const [name] = createNamespace('calendar-month');
 
@@ -32,7 +32,7 @@ export default defineComponent({
     color: String,
     showMark: Boolean,
     rowHeight: [Number, String],
-    formatter: Function as PropType<(item: DayItem) => DayItem>,
+    formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
     lazyRender: Boolean,
     currentDate: [Date, Array] as PropType<Date | Date[]>,
     allowSameDay: Boolean,
@@ -149,7 +149,7 @@ export default defineComponent({
       return '';
     };
 
-    const getDayType = (day: Date): DayType => {
+    const getDayType = (day: Date): CalendarDayType => {
       const { type, minDate, maxDate, currentDate } = props;
 
       if (compareDay(day, minDate) < 0 || compareDay(day, maxDate) > 0) {
@@ -174,7 +174,7 @@ export default defineComponent({
       return '';
     };
 
-    const getBottomInfo = (dayType: DayType) => {
+    const getBottomInfo = (dayType: CalendarDayType) => {
       if (props.type === 'range') {
         if (dayType === 'start' || dayType === 'end') {
           return t(dayType);
@@ -197,13 +197,13 @@ export default defineComponent({
       }
     };
 
-    const placeholders = computed<DayItem[]>(() => {
+    const placeholders = computed<CalendarDayItem[]>(() => {
       const count = Math.ceil((totalDay.value + offset.value) / 7);
       return Array(count).fill({ type: 'placeholder' });
     });
 
     const days = computed(() => {
-      const days: DayItem[] = [];
+      const days: CalendarDayItem[] = [];
       const year = props.date.getFullYear();
       const month = props.date.getMonth();
 
@@ -211,7 +211,7 @@ export default defineComponent({
         const date = new Date(year, month, day);
         const type = getDayType(date);
 
-        let config: DayItem = {
+        let config: CalendarDayItem = {
           date,
           type,
           text: day,
@@ -228,7 +228,7 @@ export default defineComponent({
       return days;
     });
 
-    const renderDay = (item: DayItem, index: number) => (
+    const renderDay = (item: CalendarDayItem, index: number) => (
       <CalendarDay
         item={item}
         index={index}
