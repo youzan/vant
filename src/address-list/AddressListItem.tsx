@@ -55,6 +55,9 @@ export default defineComponent({
     );
 
     const renderTag = () => {
+      if (slots.tag) {
+        return slots.tag({ ...props.address });
+      }
       if (props.address.isDefault && props.defaultTagText) {
         return (
           <Tag type="danger" round class={bem('tag')}>
