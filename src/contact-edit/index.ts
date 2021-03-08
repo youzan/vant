@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _ContactEdit from './ContactEdit';
 
-const ContactEdit = installable(_ContactEdit);
+const ContactEdit = withInstall<typeof _ContactEdit>(_ContactEdit);
 
 export default ContactEdit;
 export { ContactEdit };

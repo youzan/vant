@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Area from './Area';
 
-const Area = installable(_Area);
+const Area = withInstall<typeof _Area>(_Area);
 
 export default Area;
 export { Area };

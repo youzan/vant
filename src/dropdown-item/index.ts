@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _DropdownItem from './DropdownItem';
 
-const DropdownItem = installable(_DropdownItem);
+const DropdownItem = withInstall<typeof _DropdownItem>(_DropdownItem);
 
 export default DropdownItem;
 export { DropdownItem };

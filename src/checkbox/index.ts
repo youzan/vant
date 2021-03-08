@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Checkbox from './Checkbox';
 
-const Checkbox = installable(_Checkbox);
+const Checkbox = withInstall<typeof _Checkbox>(_Checkbox);
 
 export default Checkbox;
 export { Checkbox };

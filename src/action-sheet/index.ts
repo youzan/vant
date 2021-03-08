@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _ActionSheet from './ActionSheet';
 
-const ActionSheet = installable(_ActionSheet);
+const ActionSheet = withInstall<typeof _ActionSheet>(_ActionSheet);
 
 export default ActionSheet;
 export { ActionSheet };

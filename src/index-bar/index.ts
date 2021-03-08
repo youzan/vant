@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _IndexBar from './IndexBar';
 
-const IndexBar = installable(_IndexBar);
+const IndexBar = withInstall<typeof _IndexBar>(_IndexBar);
 
 export default IndexBar;
 export { IndexBar };

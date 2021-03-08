@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Popover from './Popover';
 
-const Popover = installable(_Popover);
+const Popover = withInstall<typeof _Popover>(_Popover);
 
 export default Popover;
 export { Popover };

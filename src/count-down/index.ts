@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _CountDown from './CountDown';
 
-const CountDown = installable(_CountDown);
+const CountDown = withInstall<typeof _CountDown>(_CountDown);
 
 export default CountDown;
 export { CountDown };

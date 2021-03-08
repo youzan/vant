@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Search from './Search';
 
-const Search = installable(_Search);
+const Search = withInstall<typeof _Search>(_Search);
 
 export default Search;
 export { Search };

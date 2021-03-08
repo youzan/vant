@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _TreeSelect from './TreeSelect';
 
-const TreeSelect = installable(_TreeSelect);
+const TreeSelect = withInstall<typeof _TreeSelect>(_TreeSelect);
 
 export default TreeSelect;
 export { TreeSelect };

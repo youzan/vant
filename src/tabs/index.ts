@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Tabs from './Tabs';
 
-const Tabs = installable(_Tabs);
+const Tabs = withInstall<typeof _Tabs>(_Tabs);
 
 export default Tabs;
 export { Tabs };

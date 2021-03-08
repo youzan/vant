@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Coupon from './Coupon';
 
-const Coupon = installable(_Coupon);
+const Coupon = withInstall<typeof _Coupon>(_Coupon);
 
 export default Coupon;
 export { Coupon };

@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Tag from './Tag';
 
-const Tag = installable(_Tag);
+const Tag = withInstall<typeof _Tag>(_Tag);
 
 export default Tag;
 export { Tag };

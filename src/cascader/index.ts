@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Cascader from './Cascader';
 
-const Cascader = installable(_Cascader);
+const Cascader = withInstall<typeof _Cascader>(_Cascader);
 
 export default Cascader;
 export { Cascader };

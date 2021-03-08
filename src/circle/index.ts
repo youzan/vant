@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Circle from './Circle';
 
-const Circle = installable(_Circle);
+const Circle = withInstall<typeof _Circle>(_Circle);
 
 export default Circle;
 export { Circle };

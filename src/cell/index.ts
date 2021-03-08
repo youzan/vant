@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Cell from './Cell';
 
-const Cell = installable(_Cell);
+const Cell = withInstall<typeof _Cell>(_Cell);
 
 export default Cell;
 export { Cell };

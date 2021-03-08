@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Tabbar from './Tabbar';
 
-const Tabbar = installable(_Tabbar);
+const Tabbar = withInstall<typeof _Tabbar>(_Tabbar);
 
 export default Tabbar;
 export { Tabbar };

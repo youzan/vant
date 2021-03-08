@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Switch from './Switch';
 
-const Switch = installable(_Switch);
+const Switch = withInstall<typeof _Switch>(_Switch);
 
 export default Switch;
 export { Switch };

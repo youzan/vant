@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _Sticky from './Sticky';
 
-const Sticky = installable(_Sticky);
+const Sticky = withInstall<typeof _Sticky>(_Sticky);
 
 export default Sticky;
 export { Sticky };

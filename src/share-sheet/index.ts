@@ -1,7 +1,7 @@
-import { installable } from '../utils';
+import { withInstall } from '../utils';
 import _ShareSheet from './ShareSheet';
 
-const ShareSheet = installable(_ShareSheet);
+const ShareSheet = withInstall<typeof _ShareSheet>(_ShareSheet);
 
 export default ShareSheet;
 export { ShareSheet };
