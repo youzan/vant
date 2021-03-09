@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.9](https://github.com/youzan/vant/compare/v2.12.8...v2.12.9)
+
+`2021-03-09`
+
+**Feature**
+
+- AddressList: add tag slot [#8311](https://github.com/youzan/vant/issues/8311)
+
 ### [v2.12.8](https://github.com/youzan/vant/compare/v2.12.7...v2.12.8)
 
 `2021-03-07`

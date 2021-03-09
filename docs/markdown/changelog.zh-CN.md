@@ -16,6 +16,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.9](https://github.com/youzan/vant/compare/v2.12.8...v2.12.9)
+
+`2021-03-09`
+
+**Feature**
+
+- AddressList: 新增 tag 插槽 [#8311](https://github.com/youzan/vant/issues/8311)
+
 ### [v2.12.8](https://github.com/youzan/vant/compare/v2.12.7...v2.12.8)
 
 `2021-03-07`
