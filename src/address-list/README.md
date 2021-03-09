@@ -110,7 +110,7 @@ export default {
 | default              | Custom content after list         | -         |
 | top                  | Custom content before list        | -         |
 | item-bottom `v2.5.0` | Custom content after list item    | item      |
-| tag                  | Custom tag conetent for list item | item      |
+| tag `v2.12.9`        | Custom tag conetent for list item | item      |
 
 ### Less Variables
 
