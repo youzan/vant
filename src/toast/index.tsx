@@ -184,3 +184,5 @@ Toast.install = (app: App) => {
 };
 
 export default Toast;
+export { Toast };
+export type { ToastType, ToastPosition };
