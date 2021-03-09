@@ -1,6 +1,6 @@
 import { mount } from '../../../test';
-import Step from '../../step';
-import Steps from '..';
+import { Step } from '../../step';
+import { Steps } from '..';
 
 test('should render icon slot correctly', () => {
   const wrapper = mount({

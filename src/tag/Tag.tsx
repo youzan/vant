@@ -1,6 +1,6 @@
 import { CSSProperties, PropType, Transition, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
-import Icon from '../icon';
+import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('tag');
 

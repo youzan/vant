@@ -11,7 +11,7 @@ import { useExpose } from '../composables/use-expose';
 import { useLazyRender } from '../composables/use-lazy-render';
 
 // Components
-import Cell from '../cell';
+import { Cell } from '../cell';
 
 const [name, bem] = createNamespace('collapse-item');
 

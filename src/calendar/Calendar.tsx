@@ -31,9 +31,9 @@ import { useRefs } from '../composables/use-refs';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Popup, { PopupPosition } from '../popup';
-import Button from '../button';
-import Toast from '../toast';
+import { Popup, PopupPosition } from '../popup';
+import { Button } from '../button';
+import { Toast } from '../toast';
 import CalendarMonth, { CalendarType } from './CalendarMonth';
 import CalendarHeader from './CalendarHeader';
 

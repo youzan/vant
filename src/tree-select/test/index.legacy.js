@@ -1,4 +1,4 @@
-import TreeSelect from '..';
+import { TreeSelect } from '..';
 import { mount } from '../../../test';
 
 test('empty list', () => {

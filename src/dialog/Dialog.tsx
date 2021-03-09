@@ -4,13 +4,13 @@ import { PropType, reactive, defineComponent } from 'vue';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 import { createNamespace, addUnit, pick, UnknownProp } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
+import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
 // Components
-import Popup from '../popup';
-import Button from '../button';
-import ActionBar from '../action-bar';
-import ActionBarButton from '../action-bar-button';
-import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
+import { Popup } from '../popup';
+import { Button } from '../button';
+import { ActionBar } from '../action-bar';
+import { ActionBarButton } from '../action-bar-button';
 
 const [name, bem, t] = createNamespace('dialog');
 

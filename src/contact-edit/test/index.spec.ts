@@ -1,5 +1,5 @@
 import { VueWrapper } from '@vue/test-utils';
-import ContactEdit, { ContactEditInfo } from '..';
+import { ContactEdit, ContactEditInfo } from '..';
 import { mount, later } from '../../../test';
 
 const contactInfo = {

@@ -1,4 +1,4 @@
-import ContactCard from '..';
+import { ContactCard } from '..';
 import { mount } from '../../../test';
 
 test('should emit click event when clicked', () => {

@@ -16,14 +16,14 @@ import { isMobile } from '../utils/validate/mobile';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Area, { AreaList, AreaColumnOption } from '../area';
-import Cell from '../cell';
-import Field from '../field';
-import Popup from '../popup';
-import Toast from '../toast';
-import Button from '../button';
-import Dialog from '../dialog';
-import Switch from '../switch';
+import { Area, AreaList, AreaColumnOption } from '../area';
+import { Cell } from '../cell';
+import { Field } from '../field';
+import { Popup } from '../popup';
+import { Toast } from '../toast';
+import { Button } from '../button';
+import { Dialog } from '../dialog';
+import { Switch } from '../switch';
 import AddressEditDetail, { AddressEditSearchItem } from './AddressEditDetail';
 
 const [name, bem, t] = createNamespace('address-edit');

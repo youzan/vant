@@ -21,7 +21,7 @@ import { times, sharedProps, pickerKeys } from './utils';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Picker from '../picker';
+import { Picker } from '../picker';
 
 const [name] = createNamespace('time-picker');
 

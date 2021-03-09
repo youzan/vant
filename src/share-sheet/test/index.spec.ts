@@ -1,4 +1,4 @@
-import ShareSheet from '..';
+import { ShareSheet } from '..';
 import { mount, trigger, later } from '../../../test';
 
 test('should render cancel text when using cancel-text prop', async () => {

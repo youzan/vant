@@ -1,4 +1,4 @@
-import Popover from '..';
+import { Popover } from '..';
 import { later, mount, trigger } from '../../../test';
 
 const baseActions = [

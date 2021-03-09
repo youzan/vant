@@ -30,7 +30,7 @@
 <script lang="ts">
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import Dialog from '..';
+import { Dialog } from '..';
 import type { DialogAction } from '../Dialog';
 
 const i18n = {

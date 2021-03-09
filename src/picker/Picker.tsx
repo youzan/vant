@@ -14,7 +14,7 @@ import { useChildren } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Loading from '../loading';
+import { Loading } from '../loading';
 import Column, {
   PICKER_KEY,
   PickerColumn,

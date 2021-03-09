@@ -7,7 +7,7 @@ import { createNamespace, isDef, UnknownProp } from '../utils';
 import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
-import Icon from '../icon';
+import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('cell');
 

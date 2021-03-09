@@ -1,4 +1,4 @@
-import Picker from '..';
+import { Picker } from '..';
 import { mount, triggerDrag } from '../../../test';
 
 const COLUMNS = [

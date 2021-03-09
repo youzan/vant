@@ -4,9 +4,9 @@ import { PropType, defineComponent } from 'vue';
 import { createNamespace, addUnit } from '../utils';
 
 // Components
-import Icon from '../icon';
-import Sidebar from '../sidebar';
-import SidebarItem from '../sidebar-item';
+import { Icon } from '../icon';
+import { Sidebar } from '../sidebar';
+import { SidebarItem } from '../sidebar-item';
 
 const [name, bem] = createNamespace('tree-select');
 

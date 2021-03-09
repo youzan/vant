@@ -8,7 +8,7 @@ import { BORDER_BOTTOM } from '../utils/constant';
 import { usePlaceholder } from '../composables/use-placeholder';
 
 // Components
-import Icon from '../icon';
+import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('nav-bar');
 

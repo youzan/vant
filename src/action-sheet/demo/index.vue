@@ -55,7 +55,7 @@
 import { computed, reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { ActionSheetAction } from '..';
-import Toast from '../../toast';
+import { Toast } from '../../toast';
 
 const i18n = {
   'zh-CN': {

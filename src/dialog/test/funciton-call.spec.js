@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import { later } from '../../../test';
-import Dialog from '..';
+import { Dialog } from '..';
 import DialogComponent from '../Dialog';
 
 test('should update default options when calling setDefaultOptions method', () => {

@@ -8,7 +8,7 @@ import { useExpose } from '../composables/use-expose';
 import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
-import Button, { ButtonType } from '../button';
+import { Button, ButtonType } from '../button';
 
 const [name, bem] = createNamespace('action-bar-button');
 

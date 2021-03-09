@@ -4,9 +4,9 @@ import { nextTick, PropType, defineComponent } from 'vue';
 import { createNamespace, pick } from '../utils';
 
 // Components
-import Icon from '../icon';
-import Popup from '../popup';
-import Loading from '../loading';
+import { Icon } from '../icon';
+import { Popup } from '../popup';
+import { Loading } from '../loading';
 import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
 const [name, bem] = createNamespace('action-sheet');

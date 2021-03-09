@@ -18,8 +18,8 @@
 <script lang="ts">
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import Toast from '../../toast';
-import areaList from '../../area/demo/area';
+import { Toast } from '../../toast';
+import { areaList } from '../../area/demo/area';
 
 const i18n = {
   'zh-CN': {

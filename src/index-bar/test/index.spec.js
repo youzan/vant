@@ -1,4 +1,4 @@
-import { nextTick, onMounted, ref } from 'vue';
+import { ref, nextTick, onMounted } from 'vue';
 import {
   mount,
   trigger,
@@ -6,8 +6,8 @@ import {
   mockScrollTop,
   mockScrollIntoView,
 } from '../../../test';
-import IndexBar from '..';
-import IndexAnchor from '../../index-anchor';
+import { IndexBar } from '..';
+import { IndexAnchor } from '../../index-anchor';
 
 test('should allow to custom anchor content', () => {
   const wrapper = mount({

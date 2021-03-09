@@ -22,8 +22,8 @@
 
 <script lang="ts">
 import { ref } from 'vue';
-import AreaList from './area';
-import AreaListEn from './area-en';
+import { areaList } from './area';
+import { areaListEn } from './area-en';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -32,14 +32,14 @@ const i18n = {
     title3: '配置显示列',
     title4: '配置列占位提示文字',
     columnsPlaceholder: ['请选择', '请选择', '请选择'],
-    areaList: AreaList,
+    areaList,
   },
   'en-US': {
     title2: 'Initial Value',
     title3: 'Columns Number',
     title4: 'Columns Placeholder',
     columnsPlaceholder: ['Choose', 'Choose', 'Choose'],
-    areaList: AreaListEn,
+    areaList: areaListEn,
   },
 };
 

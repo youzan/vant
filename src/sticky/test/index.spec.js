@@ -1,6 +1,6 @@
 import { nextTick, ref } from 'vue';
 import { mockScrollTop, mount } from '../../../test';
-import Sticky from '..';
+import { Sticky } from '..';
 
 Object.defineProperty(window.HTMLElement.prototype, 'clientHeight', {
   value: 640,

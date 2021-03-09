@@ -1,7 +1,7 @@
 import { ref, nextTick } from 'vue';
 import { mount } from '../../../test';
-import Checkbox from '../../checkbox';
-import CheckboxGroup, { CheckboxGroupToggleAllOptions } from '..';
+import { Checkbox } from '../../checkbox';
+import { CheckboxGroup, CheckboxGroupToggleAllOptions } from '..';
 
 test('should emit "update:modelValue" event when checkbox is clicked', async () => {
   const wrapper = mount({

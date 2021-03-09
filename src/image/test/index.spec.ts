@@ -1,6 +1,6 @@
 import { mount } from '../../../test';
+import { Lazyload } from '../../lazyload';
 import VanImage from '..';
-import Lazyload from '../../lazyload';
 
 const IMAGE_URL = 'https://img.com';
 

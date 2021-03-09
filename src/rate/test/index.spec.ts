@@ -1,4 +1,4 @@
-import Rate from '..';
+import { Rate } from '..';
 import { mount, triggerDrag } from '../../../test';
 import type { DOMWrapper } from '@vue/test-utils';
 

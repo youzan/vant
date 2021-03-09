@@ -5,8 +5,8 @@ import { ComponentInstance, createNamespace } from '../utils';
 import { isAndroid } from '../utils/validate/system';
 
 // Components
-import Cell from '../cell';
-import Field from '../field';
+import { Cell } from '../cell';
+import { Field } from '../field';
 
 const [name, bem, t] = createNamespace('address-edit-detail');
 const android = isAndroid();

@@ -19,9 +19,9 @@ import { useExpose } from '../composables/use-expose';
 import { useLinkField } from '../composables/use-link-field';
 
 // Components
-import Icon from '../icon';
+import { Icon } from '../icon';
+import { ImagePreview, ImagePreviewOptions } from '../image-preview';
 import UploaderPreviewItem from './UploaderPreviewItem';
-import ImagePreview, { ImagePreviewOptions } from '../image-preview';
 
 // Types
 import type { ImageFit } from '../image';

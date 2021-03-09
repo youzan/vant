@@ -1,8 +1,8 @@
 import { nextTick, reactive, ref } from 'vue';
 import { mount, later, mockGetBoundingClientRect } from '../../../test';
 import { BORDER_TOP_BOTTOM } from '../../utils/constant';
-import Tabbar from '..';
-import TabbarItem from '../../tabbar-item';
+import { Tabbar } from '..';
+import { TabbarItem } from '../../tabbar-item';
 
 const activeClass = 'van-tabbar-item--active';
 

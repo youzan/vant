@@ -1,6 +1,6 @@
-import Picker from '..';
-import PickerColumn from '../PickerColumn';
 import { later, mount, triggerDrag } from '../../../test';
+import { Picker } from '..';
+import PickerColumn from '../PickerColumn';
 
 const simpleColumn = ['1990', '1991', '1992', '1993', '1994', '1995'];
 const columns = [

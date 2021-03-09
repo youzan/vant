@@ -1,6 +1,6 @@
 import { computed, CSSProperties, defineComponent } from 'vue';
 import { createNamespace, isDef } from '../utils';
-import Badge from '../badge';
+import { Badge } from '../badge';
 
 const [name, bem] = createNamespace('tab');
 

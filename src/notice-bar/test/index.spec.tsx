@@ -1,4 +1,4 @@
-import NoticeBar from '..';
+import { NoticeBar } from '..';
 import { mount, later } from '../../../test';
 
 test('should emit close event when close icon is clicked', () => {

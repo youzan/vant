@@ -9,7 +9,7 @@ import { useParent } from '@vant/use';
 import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
-import Badge from '../badge';
+import { Badge } from '../badge';
 
 const [name, bem] = createNamespace('sidebar-item');
 

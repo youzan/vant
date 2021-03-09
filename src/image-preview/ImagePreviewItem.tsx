@@ -6,10 +6,10 @@ import { range, preventDefault, createNamespace } from '../utils';
 // Composables
 import { useTouch } from '../composables/use-touch';
 
-// Component
-import Image from '../image';
-import Loading from '../loading';
-import SwipeItem from '../swipe-item';
+// Components
+import { Image } from '../image';
+import { Loading } from '../loading';
+import { SwipeItem } from '../swipe-item';
 
 function getDistance(touches: TouchList) {
   return Math.sqrt(

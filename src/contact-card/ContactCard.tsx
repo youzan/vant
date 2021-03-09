@@ -1,6 +1,6 @@
 import { PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
-import Cell from '../cell';
+import { Cell } from '../cell';
 
 const [name, bem, t] = createNamespace('contact-card');
 

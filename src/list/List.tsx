@@ -16,7 +16,7 @@ import { useRect, useScrollParent, useEventListener } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Loading from '../loading';
+import { Loading } from '../loading';
 
 const [name, bem, t] = createNamespace('list');
 

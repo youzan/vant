@@ -1,6 +1,6 @@
 import { ref, watch, onMounted, defineComponent } from 'vue';
 import { ComponentInstance, createNamespace } from '../utils';
-import Swipe from '../swipe';
+import { Swipe } from '../swipe';
 
 const [name, bem] = createNamespace('tabs');
 

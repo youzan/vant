@@ -4,8 +4,8 @@ import { defineComponent } from 'vue';
 import { createNamespace, isDef } from '../utils';
 
 // Components
-import Tag from '../tag';
-import Image from '../image';
+import { Tag } from '../tag';
+import { Image } from '../image';
 
 const [name, bem] = createNamespace('card');
 

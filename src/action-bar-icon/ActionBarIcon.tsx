@@ -7,8 +7,8 @@ import { useParent } from '@vant/use';
 import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
-import Icon from '../icon';
-import Badge from '../badge';
+import { Icon } from '../icon';
+import { Badge } from '../badge';
 
 const [name, bem] = createNamespace('action-bar-icon');
 

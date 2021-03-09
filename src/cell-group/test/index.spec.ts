@@ -1,4 +1,4 @@
-import CellGroup from '..';
+import { CellGroup } from '..';
 import { mount } from '../../../test';
 
 test('should render title slot correctly', () => {

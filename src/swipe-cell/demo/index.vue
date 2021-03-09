@@ -47,7 +47,7 @@
 
 <script lang="ts">
 import { useTranslate } from '@demo/use-translate';
-import Dialog from '../../dialog';
+import { Dialog } from '../../dialog';
 
 const i18n = {
   'zh-CN': {

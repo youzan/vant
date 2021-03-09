@@ -19,7 +19,7 @@ import { pickerProps } from '../picker/Picker';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Picker from '../picker';
+import { Picker } from '../picker';
 
 const [name, bem] = createNamespace('area');
 

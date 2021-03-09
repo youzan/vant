@@ -1,5 +1,5 @@
-import PasswordInput from '..';
 import { mount } from '../../../test';
+import { PasswordInput } from '..';
 
 test('should emit focus event when security is touched', () => {
   const wrapper = mount(PasswordInput);

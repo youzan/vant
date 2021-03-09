@@ -1,4 +1,4 @@
-import AddressEdit from '..';
+import { AddressEdit } from '..';
 import areaList from '../../area/demo/area-simple';
 import { mount, later, trigger } from '../../../test';
 

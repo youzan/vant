@@ -1,6 +1,6 @@
 import { ref, computed, PropType, defineComponent } from 'vue';
 import { addUnit, UnknownProp } from '../utils';
-import Icon from '../icon';
+import { Icon } from '../icon';
 
 export type CheckerShape = 'square' | 'round';
 export type CheckerDirection = 'horizontal' | 'vertical';

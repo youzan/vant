@@ -1,4 +1,6 @@
 import { ref, watch, reactive, PropType, defineComponent } from 'vue';
+
+// Utils
 import { isDef, createNamespace } from '../utils';
 
 // Composables
@@ -11,7 +13,7 @@ import {
 } from '@vant/use';
 
 // Components
-import Icon from '../icon';
+import { Icon } from '../icon';
 
 export type NoticeBarMode = 'closeable' | 'link';
 

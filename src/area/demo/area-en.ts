@@ -1,4 +1,4 @@
-export default {
+export const areaListEn = {
   province_list: {
     110000: 'Beijing',
     330000: 'Zhejiang',

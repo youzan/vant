@@ -1,7 +1,7 @@
 import { computed, PropType, defineComponent } from 'vue';
 import { padZero, createNamespace } from '../utils';
 import { RED } from '../utils/constant';
-import Checkbox from '../checkbox';
+import { Checkbox } from '../checkbox';
 
 export type CouponInfo = {
   id: string | number;

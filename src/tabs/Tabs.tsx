@@ -42,7 +42,7 @@ import { useRefs } from '../composables/use-refs';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Sticky from '../sticky';
+import { Sticky } from '../sticky';
 import TabsTitle from './TabsTitle';
 import TabsContent from './TabsContent';
 
