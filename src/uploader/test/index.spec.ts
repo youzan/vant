@@ -439,6 +439,7 @@ test('preview-options prop', async () => {
     props: {
       modelValue: [{ url: IMAGE }],
       previewOptions: {
+        images: [],
         closeable: true,
       },
     },

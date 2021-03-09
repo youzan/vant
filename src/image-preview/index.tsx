@@ -9,7 +9,7 @@ let instance: ComponentInstance;
 
 export type ImagePreviewOptions = {
   loop?: boolean;
-  images?: string[];
+  images: string[];
   maxZoom?: number;
   minZoom?: number;
   teleport?: TeleportProps['to'];
