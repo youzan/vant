@@ -127,3 +127,5 @@ Dialog.install = (app: App) => {
 Dialog.Component = withInstall<typeof VanDialog>(VanDialog);
 
 export default Dialog;
+export { Dialog };
+export type { DialogTheme, DialogMessageAlign };

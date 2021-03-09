@@ -104,3 +104,4 @@ ImagePreview.install = (app: App) => {
 };
 
 export default ImagePreview;
+export { ImagePreview };
