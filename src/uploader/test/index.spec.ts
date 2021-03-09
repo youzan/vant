@@ -1,7 +1,6 @@
-import Uploader from '..';
+import Uploader, { UploaderFileListItem } from '..';
 import { mount, later, triggerDrag } from '../../../test';
-import {nextTick} from 'vue';
-import {FileListItem} from "../utils";
+import { nextTick } from 'vue';
 
 const mockFileDataUrl = 'data:image/test';
 const mockFile = new File([new ArrayBuffer(10000)], 'test.jpg');
@@ -11,11 +10,11 @@ const PDF = 'https://img01.yzcdn.cn/vant/test.pdf';
 (window.FileReader as any) = function (this: any) {
   (this as any).readAsText = function () {
     this.onload &&
-    this.onload({
-      target: {
-        result: mockFileDataUrl,
-      },
-    });
+      this.onload({
+        target: {
+          result: mockFileDataUrl,
+        },
+      });
   };
   this.readAsDataURL = this.readAsText;
 };
@@ -32,8 +31,8 @@ test('disabled', async () => {
   await later();
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: jest.fn().mockReturnValue([mockFile])
-  })
+    get: jest.fn().mockReturnValue([mockFile]),
+  });
 
   input.trigger('change');
   await later();
@@ -44,8 +43,10 @@ test('result-type as text', async (done) => {
   const wrapper = mount(Uploader, {
     props: {
       resultType: 'text',
-      afterRead(readFile: FileListItem | FileListItem[]) {
-        expect((readFile as FileListItem).content).toEqual(mockFileDataUrl);
+      afterRead(readFile: UploaderFileListItem | UploaderFileListItem[]) {
+        expect((readFile as UploaderFileListItem).content).toEqual(
+          mockFileDataUrl
+        );
         done();
       },
     },
@@ -53,8 +54,8 @@ test('result-type as text', async (done) => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: jest.fn().mockReturnValue([mockFile])
-  })
+    get: jest.fn().mockReturnValue([mockFile]),
+  });
   input.trigger('change');
 });
 
@@ -62,9 +63,9 @@ test('result-type as file', (done) => {
   const wrapper = mount(Uploader, {
     props: {
       resultType: 'file',
-      afterRead: (readFile: FileListItem | FileListItem[]) => {
-        expect((readFile as FileListItem).file).toBeTruthy();
-        expect((readFile as FileListItem).content).toBeFalsy();
+      afterRead: (readFile: UploaderFileListItem | UploaderFileListItem[]) => {
+        expect((readFile as UploaderFileListItem).file).toBeTruthy();
+        expect((readFile as UploaderFileListItem).content).toBeFalsy();
         done();
       },
     },
@@ -72,8 +73,8 @@ test('result-type as file', (done) => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: jest.fn().mockReturnValue([mockFile])
-  })
+    get: jest.fn().mockReturnValue([mockFile]),
+  });
   input.trigger('change');
 });
 
@@ -81,11 +82,17 @@ test('set input name', (done) => {
   const wrapper = mount(Uploader, {
     props: {
       name: 'uploader',
-      beforeRead: (file: File | File[], detail: {name: string | number, index: number}) => {
+      beforeRead: (
+        file: File | File[],
+        detail: { name: string | number; index: number }
+      ) => {
         expect(detail.name).toEqual('uploader');
         return file;
       },
-      afterRead: (readFile: FileListItem | FileListItem[], detail: {name: string | number, index: number}) => {
+      afterRead: (
+        readFile: UploaderFileListItem | UploaderFileListItem[],
+        detail: { name: string | number; index: number }
+      ) => {
         expect(detail.name).toEqual('uploader');
         done();
       },
@@ -94,8 +101,8 @@ test('set input name', (done) => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: jest.fn().mockReturnValue([mockFile])
-  })
+    get: jest.fn().mockReturnValue([mockFile]),
+  });
   input.trigger('change');
 });
 
@@ -106,12 +113,12 @@ test('unknown resultType', async () => {
       afterRead,
     },
   });
-  await wrapper.setProps({resultType: 'xxxx'});
-  
+  await wrapper.setProps({ resultType: 'xxxx' });
+
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: jest.fn().mockReturnValue([mockFile])
-  })
+    get: jest.fn().mockReturnValue([mockFile]),
+  });
   input.trigger('change');
   await later();
   expect(afterRead).toHaveBeenCalledTimes(0);
@@ -128,8 +135,8 @@ test('before read return false', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: jest.fn().mockReturnValue([mockFile])
-  })
+    get: jest.fn().mockReturnValue([mockFile]),
+  });
   input.trigger('change');
   await later();
   expect(afterRead).toHaveBeenCalledTimes(0);
@@ -150,8 +157,8 @@ test('before read return promise and resolve', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: jest.fn().mockReturnValue([mockFile])
-  })
+    get: jest.fn().mockReturnValue([mockFile]),
+  });
   input.trigger('change');
   await later();
   expect(afterRead).toHaveBeenCalledTimes(1);
@@ -171,8 +178,8 @@ test('before read return promise and resolve no value', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: jest.fn().mockReturnValue([mockFile])
-  })
+    get: jest.fn().mockReturnValue([mockFile]),
+  });
   input.trigger('change');
   await later();
   expect(afterRead).toHaveBeenCalledTimes(1);
@@ -193,8 +200,8 @@ test('before read return promise and reject', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: jest.fn().mockReturnValue([mockFile])
-  })
+    get: jest.fn().mockReturnValue([mockFile]),
+  });
   input.trigger('change');
   await later();
   expect(afterRead).toHaveBeenCalledTimes(0);
@@ -209,15 +216,15 @@ test('file size overlimit', async () => {
   });
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
-  
+
   let fileList = [mockFile];
   Object.defineProperty(input.element, 'files', {
-    get: () => jest.fn().mockReturnValue(fileList)() 
-  })
-  
+    get: () => jest.fn().mockReturnValue(fileList)(),
+  });
+
   await input.trigger('change');
 
-  fileList = [mockFile, mockFile]
+  fileList = [mockFile, mockFile];
   await input.trigger('change');
 
   await later();
@@ -225,8 +232,8 @@ test('file size overlimit', async () => {
   expect(wrapper.emitted<[File]>('oversize')![1]).toBeTruthy();
 
   await wrapper.setProps({ maxSize: 100000 });
-  
-  fileList = [mockFile]
+
+  fileList = [mockFile];
   await input.trigger('change');
 
   await later();
@@ -253,7 +260,7 @@ test('render preview image', async () => {
         { url: 'https://img01.yzcdn.cn/vant/test.pdf' },
         { file: mockFile },
       ],
-    }
+    },
   });
 
   expect(wrapper.html()).toMatchSnapshot();
@@ -288,10 +295,10 @@ test('disable preview image', async () => {
     },
   });
 
-  await wrapper.setProps({modelValue: [{file: mockFile}]});
+  await wrapper.setProps({ modelValue: [{ file: mockFile }] });
   expect(wrapper.html()).toMatchSnapshot();
-  
-  await wrapper.setProps({previewImage: true});
+
+  await wrapper.setProps({ previewImage: true });
   expect(wrapper.html()).toMatchSnapshot();
 });
 
@@ -305,11 +312,13 @@ test('max-count prop', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: jest.fn().mockReturnValue([mockFile, mockFile])
-  })
+    get: jest.fn().mockReturnValue([mockFile, mockFile]),
+  });
   input.trigger('change');
   await later();
-  expect(wrapper.emitted<[File | File[]]>('update:modelValue')![0][0]).toHaveLength(1);
+  expect(
+    wrapper.emitted<[File | File[]]>('update:modelValue')![0][0]
+  ).toHaveLength(1);
 });
 
 test('preview-size prop', async () => {
@@ -320,7 +329,7 @@ test('preview-size prop', async () => {
     },
   });
 
-  await wrapper.setProps({modelValue: [{file: mockFile}]});
+  await wrapper.setProps({ modelValue: [{ file: mockFile }] });
   expect(wrapper.html()).toMatchSnapshot();
 });
 
@@ -419,7 +428,9 @@ test('click to preview image', async () => {
   await later();
   expect(document.querySelector('.van-image-preview')).toBeTruthy();
 
-  const images = document.querySelectorAll<HTMLImageElement>('.van-image-preview .van-image-preview__image');
+  const images = document.querySelectorAll<HTMLImageElement>(
+    '.van-image-preview .van-image-preview__image'
+  );
   expect(images).toHaveLength(1);
 });
 
@@ -444,13 +455,13 @@ test('closeImagePreview method', async () => {
   const wrapper = mount(Uploader, {
     props: {
       modelValue: [{ url: IMAGE }],
-    }
+    },
   });
 
   await nextTick();
   await (wrapper.vm as Record<string, any>).closeImagePreview();
   expect(wrapper.emitted('close-preview')).toBeFalsy();
-  
+
   wrapper.find('.van-image').trigger('click');
   await (wrapper.vm as Record<string, any>).closeImagePreview();
   expect(wrapper.emitted('close-preview')).toBeTruthy();
@@ -465,8 +476,14 @@ test('click-preview event', () => {
   });
 
   wrapper.find('.van-image').trigger('click');
-  expect(wrapper.emitted<[File]>('click-preview')![0][0]).toEqual({ url: IMAGE });
-  expect(wrapper.emitted<[File, {name: string, index: number}]>('click-preview')![0][1]).toEqual({
+  expect(wrapper.emitted<[File]>('click-preview')![0][0]).toEqual({
+    url: IMAGE,
+  });
+  expect(
+    wrapper.emitted<[File, { name: string; index: number }]>(
+      'click-preview'
+    )![0][1]
+  ).toEqual({
     name: '',
     index: 0,
   });
@@ -483,7 +500,9 @@ test('close-preview event', async () => {
   wrapper.find('.van-image').trigger('click');
 
   const preview = document.querySelector<HTMLDivElement>('.van-image-preview');
-  const swipe = preview?.querySelector<HTMLDivElement>('.van-swipe-item') as HTMLDivElement;
+  const swipe = preview?.querySelector<HTMLDivElement>(
+    '.van-swipe-item'
+  ) as HTMLDivElement;
   triggerDrag(swipe, 0, 0);
 
   await later(300);
@@ -492,7 +511,7 @@ test('close-preview event', async () => {
 
 test('show-upload prop', async () => {
   const wrapper = mount(Uploader);
-  
+
   expect(wrapper.find('.van-uploader__upload').exists()).toBeTruthy();
   await wrapper.setProps({ showUpload: false });
   expect(wrapper.find('.van-uploader__upload').exists()).toBeFalsy();
@@ -502,7 +521,7 @@ test('file message should be reactive', async (done) => {
   const wrapper = mount(Uploader, {
     props: {
       modelValue: [],
-      afterRead(file: FileListItem | FileListItem[]) {
+      afterRead(file: UploaderFileListItem | UploaderFileListItem[]) {
         if (Array.isArray(file)) return;
         file.status = 'uploading';
         file.message = '1';
@@ -514,11 +533,11 @@ test('file message should be reactive', async (done) => {
       },
     },
   });
-  
+
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: jest.fn().mockReturnValue([mockFile])
-  })
+    get: jest.fn().mockReturnValue([mockFile]),
+  });
   input.trigger('change');
 });
 
@@ -528,12 +547,12 @@ test('multiFile upload filter max-size file', async () => {
       maxSize: 1000,
     },
   });
-  
+
   const smallFile = new File([new ArrayBuffer(100)], 'small.jpg');
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: jest.fn().mockReturnValue([mockFile, smallFile])
-  })
+    get: jest.fn().mockReturnValue([mockFile, smallFile]),
+  });
   input.trigger('change');
   await later();
 
@@ -546,7 +565,7 @@ test('preview-cover slot', async () => {
       modelValue: [{ url: IMAGE }, { url: IMAGE }],
     },
     slots: {
-      'preview-cover': 'Custom Preview Cover' 
+      'preview-cover': 'Custom Preview Cover',
     },
   });
 
