@@ -80,6 +80,8 @@ module.exports = {
 };
 ```
 
+> Tips: 在配置 postcss-loader 时，应避免 ignore node_modules 目录，否则将导致 Vant 样式无法被编译。
+
 ### Rem 布局适配
 
 如果需要使用 `rem` 单位进行适配，推荐使用以下两个工具：
@@ -104,8 +106,6 @@ module.exports = {
   },
 };
 ```
-
-> Tips: 在配置 postcss-loader 时，应避免 ignore node_modules 目录，否则将导致 Vant 样式无法被编译。
 
 ### 桌面端适配
 
