@@ -57,16 +57,41 @@ export default {
 
 ## 浏览器适配
 
+### Viewport 布局
+
+Vant 默认使用 `px` 作为样式单位，如果需要使用 `viewport` 单位 (vw, vh, vmin, vmax)，推荐使用 [postcss-px-to-viewport](https://github.com/evrone/postcss-px-to-viewport) 进行转换。
+
+[postcss-px-to-viewport](https://github.com/evrone/postcss-px-to-viewport) 是一款 PostCSS 插件，用于将 px 单位转化为 vw/vh 单位。
+
+#### PostCSS PostCSS 示例配置
+
+下面提供了一份基本的 PostCSS 示例配置，可以在此配置的基础上根据项目需求进行修改。
+
+```js
+module.exports = {
+  plugins: {
+    autoprefixer: {
+      browsers: ['Android >= 4.4', 'iOS >= 8'],
+    },
+    'postcss-px-to-viewport': {
+      viewportWidth: 375,
+    },
+  },
+};
+```
+
+> Tips: 在配置 postcss-loader 时，应避免 ignore node_modules 目录，否则将导致 Vant 样式无法被编译。
+
 ### Rem 布局适配
 
-Vant 中的样式默认使用 `px` 作为单位，如果需要使用 `rem` 单位，推荐使用以下两个工具：
+如果需要使用 `rem` 单位进行适配，推荐使用以下两个工具：
 
-- [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem) 是一款 postcss 插件，用于将单位转化为 rem
+- [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem) 是一款 PostCSS 插件，用于将 px 单位转化为 rem 单位
 - [lib-flexible](https://github.com/amfe/lib-flexible) 用于设置 rem 基准值
 
-#### PostCSS 配置
+#### PostCSS 示例配置
 
-下面提供了一份基本的 postcss 配置，可以在此配置的基础上根据项目需求进行修改。
+下面提供了一份基本的 PostCSS 示例配置，可以在此配置的基础上根据项目需求进行修改。
 
 ```js
 module.exports = {
@@ -81,8 +106,6 @@ module.exports = {
   },
 };
 ```
-
-> Tips: 在配置 postcss-loader 时，应避免 ignore node_modules 目录，否则将导致 Vant 样式无法被编译。
 
 ### 桌面端适配
 

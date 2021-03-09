@@ -2,16 +2,37 @@
 
 ## Browser adaptation
 
-### Rem Units
+### Viewport Units
 
-Vant uses `px` unit by default，you can use tools such as `postcss-pxtorem` to transform units to `rem`.
+Vant uses `px` unit by default，you can use tools such as [postcss--px-to-viewport](https://github.com/evrone/postcss-px-to-viewport) to transform `px` unit to viewport units (vw, vh, vmin, vmax).
+
+#### PostCSS Config
+
+PostCSS config example:
+
+```js
+module.exports = {
+  plugins: {
+    autoprefixer: {
+      browsers: ['Android >= 4.4', 'iOS >= 8'],
+    },
+    'postcss-px-to-viewport': {
+      viewportWidth: 375,
+    },
+  },
+};
+```
+
+### Rem Unit
+
+You can use tools such as `postcss-pxtorem` to transform `px` unit to `rem` unit.
 
 - [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem)
 - [lib-flexible](https://github.com/amfe/lib-flexible)
 
 #### PostCSS Config
 
-Postcss config example:
+PostCSS config example:
 
 ```js
 module.exports = {
