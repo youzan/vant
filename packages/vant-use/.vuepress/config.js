@@ -2,9 +2,7 @@ module.exports = {
   base: '/vant/vant-use/',
   title: 'Vant Use',
   dest: 'dist/site',
-  head: [
-    ['link', { rel: 'icon', href: 'https://img01.yzcdn.cn/vant/logo.png' }],
-  ],
+  head: [['link', { rel: 'icon', href: 'https://img.yzcdn.cn/vant/logo.png' }]],
   patterns: ['**/*.md', '!**/node_modules'],
   themeConfig: {
     nav: [

@@ -1,20 +1,29 @@
-import { watch, PropType, onMounted, onUnmounted, CSSProperties } from 'vue';
+import {
+  watch,
+  PropType,
+  onMounted,
+  onUnmounted,
+  CSSProperties,
+  defineComponent,
+} from 'vue';
 
 // Utils
 import { createNamespace, isDef, UnknownProp } from '../utils';
 import { lockClick } from './lock-click';
 
 // Components
-import Icon from '../icon';
-import Popup from '../popup';
-import Loading, { LoadingType } from '../loading';
+import { Icon } from '../icon';
+import { Popup } from '../popup';
+import { Loading, LoadingType } from '../loading';
 
-const [createComponent, bem] = createNamespace('toast');
+const [name, bem] = createNamespace('toast');
 
 export type ToastType = 'text' | 'loading' | 'success' | 'fail' | 'html';
 export type ToastPosition = 'top' | 'middle' | 'bottom';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     icon: String,
     show: Boolean,

@@ -1,4 +1,4 @@
-import Calendar from '..';
+import { Calendar } from '..';
 import { mount, later } from '../../../test';
 import { minDate, maxDate, formatRange, formatDate } from './utils';
 

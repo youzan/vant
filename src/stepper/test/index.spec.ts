@@ -1,4 +1,4 @@
-import Stepper from '..';
+import { Stepper } from '..';
 import { mount, later } from '../../../test';
 
 test('should disable buttons and input when using disabled prop', () => {

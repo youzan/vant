@@ -6,8 +6,8 @@ import {
   triggerDrag,
   mockGetBoundingClientRect,
 } from '../../../test';
-import Swipe from '..';
-import SwipeItem from '../../swipe-item';
+import { Swipe } from '..';
+import { SwipeItem } from '../../swipe-item';
 
 let restore;
 

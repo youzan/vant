@@ -16,6 +16,42 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.9](https://github.com/youzan/vant/compare/v3.0.8...v3.0.9)
+
+`2021-03-08`
+
+**Feature**
+
+- AddressList: add tag slots [#8292](https://github.com/youzan/vant/issues/8292)
+
+**Bug Fixes**
+
+- fix custom theme not work [#8301](https://github.com/youzan/vant/issues/8301)
+- fix failed to install component in TypeScript [#8308](https://github.com/youzan/vant/issues/8308)
+
+### [v3.0.8](https://github.com/youzan/vant/compare/v3.0.7...v3.0.8)
+
+`2021-03-07`
+
+**Types**
+
+- Build types from source code [#8264](https://github.com/youzan/vant/issues/8264)
+
+**Feature**
+
+- ImagePreview: add overlay-style prop [#8276](https://github.com/youzan/vant/issues/8276)
+- ImagePreview: add transition prop [#8275](https://github.com/youzan/vant/issues/8275)
+- Locale: add th-TH lang [#8297](https://github.com/youzan/vant/issues/8297)
+- PullRefresh: add pull-distance prop [#8280](https://github.com/youzan/vant/issues/8280)
+- Button: add some less vars [#8281](https://github.com/youzan/vant/issues/8281)
+
+**Bug Fixes**
+
+- ImagePreview: add test cases [#8282](https://github.com/youzan/vant/issues/8282)
+- ActionSheet: should not reopen when closed [#8272](https://github.com/youzan/vant/issues/8272)
+- Stepper: incorrect text color in iOS14 when disabled [#8277](https://github.com/youzan/vant/issues/8277)
+- Swipe: should render dynamic swipe item correctly [#8288](https://github.com/youzan/vant/issues/8288)
+
 ### [v3.0.7](https://github.com/youzan/vant/compare/v3.0.6...v3.0.7)
 
 `2021-02-28`

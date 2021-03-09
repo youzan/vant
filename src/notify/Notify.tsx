@@ -1,13 +1,15 @@
-import { PropType } from 'vue';
+import { PropType, defineComponent } from 'vue';
 import { createNamespace, UnknownProp } from '../utils';
-import Popup from '../popup';
+import { Popup } from '../popup';
 import { popupSharedProps } from '../popup/shared';
 
-const [createComponent, bem] = createNamespace('notify');
+const [name, bem] = createNamespace('notify');
 
 export type NotifyType = 'primary' | 'success' | 'danger' | 'warning';
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...popupSharedProps,
     color: String,

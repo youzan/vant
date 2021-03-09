@@ -36,8 +36,8 @@
 <script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import ImagePreview, { ImagePreviewOptions } from '..';
-import Toast from '../../toast';
+import { ImagePreview, ImagePreviewOptions } from '..';
+import { Toast } from '../../toast';
 
 const i18n = {
   'zh-CN': {
@@ -65,10 +65,10 @@ const i18n = {
 };
 
 const images = [
-  'https://img01.yzcdn.cn/vant/apple-1.jpg',
-  'https://img01.yzcdn.cn/vant/apple-2.jpg',
-  'https://img01.yzcdn.cn/vant/apple-3.jpg',
-  'https://img01.yzcdn.cn/vant/apple-4.jpg',
+  'https://img.yzcdn.cn/vant/apple-1.jpg',
+  'https://img.yzcdn.cn/vant/apple-2.jpg',
+  'https://img.yzcdn.cn/vant/apple-3.jpg',
+  'https://img.yzcdn.cn/vant/apple-4.jpg',
 ];
 
 export default {

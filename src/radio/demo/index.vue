@@ -140,8 +140,8 @@ export default {
     return {
       ...toRefs(state),
       t,
-      activeIcon: 'https://img01.yzcdn.cn/vant/user-active.png',
-      inactiveIcon: 'https://img01.yzcdn.cn/vant/user-inactive.png',
+      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
     };
   },
 };

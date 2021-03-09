@@ -39,7 +39,7 @@
 <script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import Dialog from '../../dialog';
+import { Dialog } from '../../dialog';
 
 const i18n = {
   'zh-CN': {

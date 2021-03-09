@@ -83,7 +83,7 @@ DOMWrapper {
   >
     <img
       class="van-image__img"
-      src="https://img01.yzcdn.cn/1.png"
+      src="https://img.yzcdn.cn/1.png"
       style="object-fit: contain;"
     />
     <div
@@ -139,7 +139,7 @@ DOMWrapper {
   >
     <img
       class="van-image__img"
-      src="https://img01.yzcdn.cn/1.png"
+      src="https://img.yzcdn.cn/1.png"
       style="object-fit: contain;"
     />
     <div

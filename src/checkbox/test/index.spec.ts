@@ -1,4 +1,4 @@
-import Checkbox from '..';
+import { Checkbox } from '..';
 import { mount } from '../../../test';
 
 test('should emit "update:modelValue" event when checkbox icon is clicked', async () => {

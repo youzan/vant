@@ -1,4 +1,4 @@
-import NavBar from '..';
+import { NavBar } from '..';
 import { mount, mockGetBoundingClientRect, later } from '../../../test';
 
 test('should render left slot correctly', () => {

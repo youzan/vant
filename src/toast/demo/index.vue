@@ -32,8 +32,8 @@
 
 <script lang="ts">
 import { useTranslate } from '@demo/use-translate';
+import { Toast } from '..';
 import type { LoadingType } from '../../loading';
-import Toast from '..';
 
 const i18n = {
   'zh-CN': {
@@ -118,7 +118,7 @@ export default {
     const showImageToast = () => {
       Toast({
         message: t('customImage'),
-        icon: 'https://img01.yzcdn.cn/vant/logo.png',
+        icon: 'https://img.yzcdn.cn/vant/logo.png',
       });
     };
 

@@ -66,7 +66,7 @@
 <script lang="ts">
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import Toast from '../../toast';
+import { Toast } from '../../toast';
 
 const i18n = {
   'zh-CN': {
@@ -92,10 +92,10 @@ export default {
     const t = useTranslate(i18n);
     const current = ref(0);
     const images = [
-      'https://img01.yzcdn.cn/vant/apple-1.jpg',
-      'https://img01.yzcdn.cn/vant/apple-2.jpg',
-      'https://img01.yzcdn.cn/vant/apple-3.jpg',
-      'https://img01.yzcdn.cn/vant/apple-4.jpg',
+      'https://img.yzcdn.cn/vant/apple-1.jpg',
+      'https://img.yzcdn.cn/vant/apple-2.jpg',
+      'https://img.yzcdn.cn/vant/apple-3.jpg',
+      'https://img.yzcdn.cn/vant/apple-4.jpg',
     ];
 
     const onChange1 = (index: number) => Toast(t('message') + index);

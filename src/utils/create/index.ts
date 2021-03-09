@@ -1,12 +1,11 @@
 import { createBEM } from './bem';
-import { createComponent } from './component';
 import { createTranslate } from './translate';
 
 export function createNamespace(name: string) {
-  name = 'van-' + name;
+  const prefixedName = `van-${name}`;
   return [
-    createComponent(name),
-    createBEM(name),
-    createTranslate(name),
+    prefixedName,
+    createBEM(prefixedName),
+    createTranslate(prefixedName),
   ] as const;
 }

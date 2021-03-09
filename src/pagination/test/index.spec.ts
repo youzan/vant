@@ -1,8 +1,8 @@
 import { mount } from '../../../test';
-import Paginaion from '..';
+import { Pagination } from '..';
 
 test('should render prev-text、next-text slot correctly', () => {
-  const wrapper = mount(Paginaion, {
+  const wrapper = mount(Pagination, {
     props: {
       totalItems: 50,
       showPageSize: 5,
@@ -17,7 +17,7 @@ test('should render prev-text、next-text slot correctly', () => {
 });
 
 test('should render page slot correctly', () => {
-  const wrapper = mount(Paginaion, {
+  const wrapper = mount(Pagination, {
     props: {
       totalItems: 50,
       showPageSize: 5,

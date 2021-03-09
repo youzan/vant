@@ -1,4 +1,4 @@
-import ContactList from '..';
+import { ContactList } from '..';
 import { mount } from '../../../test';
 
 const contactInfo = {

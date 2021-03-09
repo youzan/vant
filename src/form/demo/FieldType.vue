@@ -127,7 +127,7 @@ export default {
       radio: '1',
       slider: 50,
       stepper: 1,
-      uploader: [{ url: 'https://img01.yzcdn.cn/vant/leaf.jpg' }],
+      uploader: [{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }],
       checkbox: false,
       checkboxGroup: [],
       switchChecked: false,

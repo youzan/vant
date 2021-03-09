@@ -1,9 +1,9 @@
 import { createApp } from 'vue';
-import ImagePreview from '..';
+import { ImagePreview } from '..';
 import ImagePreviewComponent from '../ImagePreview';
 
 test('should expose ImagePreviewComponent in ImagePreview.Component', () => {
-  expect(ImagePreview.Component).toEqual(ImagePreviewComponent);
+  expect(ImagePreview.Component.name).toEqual('van-image-preview');
 });
 
 test('should register component to app', () => {

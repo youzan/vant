@@ -1,4 +1,4 @@
-import Field from '..';
+import { Field } from '..';
 import { mount } from '../../../test';
 
 test('should emit "update:modelValue" event when after inputing', () => {

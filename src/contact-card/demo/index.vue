@@ -25,7 +25,7 @@
 <script lang="ts">
 import { computed } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import Toast from '../../toast';
+import { Toast } from '../../toast';
 
 const i18n = {
   'zh-CN': {

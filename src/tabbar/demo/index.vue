@@ -73,7 +73,7 @@
 <script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import Toast from '../../toast';
+import { Toast } from '../../toast';
 
 const i18n = {
   'zh-CN': {
@@ -112,8 +112,8 @@ export default {
       ...toRefs(state),
       t,
       icon: {
-        active: 'https://img01.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img01.yzcdn.cn/vant/user-inactive.png',
+        active: 'https://img.yzcdn.cn/vant/user-active.png',
+        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
       },
       onChange,
     };

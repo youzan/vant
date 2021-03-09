@@ -1,4 +1,4 @@
-import Badge from '..';
+import { Badge } from '..';
 import { mount } from '../../../test';
 
 test('should render nothing when content is empty string', () => {

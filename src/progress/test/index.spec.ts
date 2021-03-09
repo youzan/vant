@@ -1,4 +1,4 @@
-import Progress from '..';
+import { Progress } from '..';
 import { mount } from '../../../test';
 
 test('should re-calc width if showing pivot dynamically', async () => {

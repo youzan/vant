@@ -1,4 +1,4 @@
-import PullRefresh from '..';
+import { PullRefresh } from '..';
 import {
   mount,
   later,

@@ -56,8 +56,8 @@
 <script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import { FileListItem } from '../utils';
-import Toast from '../../toast';
+import { UploaderFileListItem } from '../utils';
+import { Toast } from '../../toast';
 
 const i18n = {
   'zh-CN': {
@@ -103,23 +103,23 @@ export default {
     const t = useTranslate(i18n);
     const state = reactive({
       fileList: [
-        { url: 'https://img01.yzcdn.cn/vant/leaf.jpg' },
-        { url: 'https://img01.yzcdn.cn/vant/tree.jpg' },
+        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+        { url: 'https://img.yzcdn.cn/vant/tree.jpg' },
       ],
-      fileList2: [{ url: 'https://img01.yzcdn.cn/vant/sand.jpg' }],
+      fileList2: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
       fileList3: [],
-      fileList4: [{ url: 'https://img01.yzcdn.cn/vant/sand.jpg' }],
+      fileList4: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
       fileList5: [
-        { url: 'https://img01.yzcdn.cn/vant/leaf.jpg' },
+        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
         {
-          url: 'https://img01.yzcdn.cn/vant/sand.jpg',
+          url: 'https://img.yzcdn.cn/vant/sand.jpg',
           deletable: true,
           beforeDelete: () => {
             Toast(t('deleteMessage'));
           },
         },
         {
-          url: 'https://img01.yzcdn.cn/vant/tree.jpg',
+          url: 'https://img.yzcdn.cn/vant/tree.jpg',
           deletable: true,
           imageFit: 'contain',
           previewSize: 120,
@@ -127,19 +127,19 @@ export default {
       ],
       statusFileList: [
         {
-          url: 'https://img01.yzcdn.cn/vant/leaf.jpg',
+          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
           status: 'uploading',
           message: t('uploading'),
         },
         {
-          url: 'https://img01.yzcdn.cn/vant/tree.jpg',
+          url: 'https://img.yzcdn.cn/vant/tree.jpg',
           status: 'failed',
           message: t('failed'),
         },
       ],
       previewCoverFiles: [
         {
-          url: 'https://img01.yzcdn.cn/vant/leaf.jpg',
+          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
           file: {
             name: t('imageName'),
           },
@@ -155,11 +155,11 @@ export default {
       return true;
     };
 
-    const afterRead = (file: FileListItem, detail: unknown) => {
+    const afterRead = (file: UploaderFileListItem, detail: unknown) => {
       console.log(file, detail);
     };
 
-    const afterReadFailed = (item: FileListItem) => {
+    const afterReadFailed = (item: UploaderFileListItem) => {
       item.status = 'uploading';
       item.message = t('uploading');
 
@@ -169,7 +169,7 @@ export default {
       }, 1000);
     };
 
-    const onOversize = (file: FileListItem, detail: unknown) => {
+    const onOversize = (file: UploaderFileListItem, detail: unknown) => {
       console.log(file, detail);
       Toast(t('overSizeTip'));
     };

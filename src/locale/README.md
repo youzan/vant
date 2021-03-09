@@ -44,14 +44,15 @@ Current supported languages:
 | Chinese                  | zh-CN        |
 | Traditional Chinese (HK) | zh-HK        |
 | Traditional Chinese (TW) | zh-TW        |
-| English                  | en-US        |
 | German                   | de-DE        |
 | German (formal)          | de-DE-formal |
-| Norwegian                | nb-NO        |
-| Japanese                 | ja-JP        |
-| Romanian                 | ro-RO        |
+| English                  | en-US        |
 | Spanish (Spain)          | es-ES        |
+| Japanese                 | ja-JP        |
+| Norwegian                | nb-NO        |
+| Romanian                 | ro-RO        |
 | Turkish                  | tr-TR        |
+| Thai                     | th-TH        |
 
 > View all language configs [Here](https://github.com/youzan/vant/tree/dev/src/locale/lang).
 

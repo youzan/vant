@@ -1,4 +1,4 @@
-import Search from '..';
+import { Search } from '..';
 import { mount } from '../../../test';
 import type { ComponentInstance } from '../../utils';
 

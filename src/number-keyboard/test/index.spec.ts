@@ -1,4 +1,4 @@
-import NumberKeyboard from '..';
+import { NumberKeyboard } from '..';
 import { mount, trigger, later } from '../../../test';
 
 function clickKey(key: Parameters<typeof trigger>[0]) {

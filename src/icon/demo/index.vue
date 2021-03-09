@@ -98,7 +98,7 @@ import icons from '@vant/icons';
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { RED } from '../../utils/constant';
-import Notify from '../../notify';
+import { Notify } from '../../notify';
 
 // from https://30secondsofcode.org
 function copyToClipboard(str: string) {

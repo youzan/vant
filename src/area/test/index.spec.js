@@ -1,5 +1,5 @@
-import Area from '..';
-import areaList from '../demo/area-simple';
+import { Area } from '..';
+import { areaList } from '../demo/area-simple';
 import { mount, later, triggerDrag } from '../../../test';
 
 const firstOption = [

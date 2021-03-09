@@ -1,6 +1,5 @@
-import Cascader from '..';
-import { mount , later } from '../../../test';
-
+import { Cascader } from '..';
+import { mount, later } from '../../../test';
 import options from '../demo/area-en-US';
 
 test('should emit change event when active option changed', async () => {

@@ -1,10 +1,12 @@
-import { ref, watch, onMounted } from 'vue';
+import { ref, watch, onMounted, defineComponent } from 'vue';
 import { ComponentInstance, createNamespace } from '../utils';
-import Swipe from '../swipe';
+import { Swipe } from '../swipe';
 
-const [createComponent, bem] = createNamespace('tabs');
+const [name, bem] = createNamespace('tabs');
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     inited: Boolean,
     animated: Boolean,

@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-import { ref, watch, reactive, PropType } from 'vue';
+import { ref, watch, reactive, PropType, defineComponent } from 'vue';
 
 // Utils
 import { deepClone } from '../utils/deep-clone';
@@ -24,7 +24,7 @@ const DEFAULT_DURATION = 200;
 const MOMENTUM_LIMIT_TIME = 300;
 const MOMENTUM_LIMIT_DISTANCE = 15;
 
-const [createComponent, bem] = createNamespace('picker-column');
+const [name, bem] = createNamespace('picker-column');
 
 function getElementTranslateY(element: Element) {
   const style = window.getComputedStyle(element);
@@ -34,7 +34,7 @@ function getElementTranslateY(element: Element) {
   return Number(translateY);
 }
 
-export const PICKER_KEY = Symbol('Picker');
+export const PICKER_KEY = Symbol(name);
 
 export type PickerObjectOption = {
   text?: string;
@@ -60,7 +60,9 @@ function isOptionDisabled(option: PickerOption) {
   return isObject(option) && option.disabled;
 }
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     readonly: Boolean,
     allowHtml: Boolean,

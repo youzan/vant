@@ -1,6 +1,6 @@
 import { defineComponent, ref } from 'vue';
-import Collapse from '..';
-import CollapseItem from '../../collapse-item';
+import { Collapse } from '..';
+import { CollapseItem } from '../../collapse-item';
 import { later, mount } from '../../../test';
 
 const Component = defineComponent({

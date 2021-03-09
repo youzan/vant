@@ -39,7 +39,7 @@ module.exports = {
     // 标题
     title: 'Demo UI',
     // 图标
-    logo: 'https://img01.yzcdn.cn/vant/logo.png',
+    logo: 'https://img.yzcdn.cn/vant/logo.png',
     // 描述
     description: '示例组件库',
     // 左侧导航

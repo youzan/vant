@@ -1,18 +1,18 @@
-import { PropType, reactive } from 'vue';
+import { PropType, reactive, defineComponent } from 'vue';
 
 // Utils
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 import { createNamespace, addUnit, pick, UnknownProp } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
-
-// Components
-import Popup from '../popup';
-import Button from '../button';
-import ActionBar from '../action-bar';
-import ActionBarButton from '../action-bar-button';
 import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
-const [createComponent, bem, t] = createNamespace('dialog');
+// Components
+import { Popup } from '../popup';
+import { Button } from '../button';
+import { ActionBar } from '../action-bar';
+import { ActionBarButton } from '../action-bar-button';
+
+const [name, bem, t] = createNamespace('dialog');
 
 export type DialogTheme = 'default' | 'round-button';
 export type DialogAction = 'confirm' | 'cancel';
@@ -24,7 +24,9 @@ const popupKeys = [
   'closeOnPopstate',
 ] as const;
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     ...popupSharedProps,
     title: String,

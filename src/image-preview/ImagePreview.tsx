@@ -6,6 +6,7 @@ import {
   reactive,
   onMounted,
   CSSProperties,
+  defineComponent,
 } from 'vue';
 
 // Utils
@@ -22,19 +23,21 @@ import { useWindowSize } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Icon from '../icon';
-import Swipe, { SwipeToOptions } from '../swipe';
-import Popup, { PopupCloseIconPosition } from '../popup';
+import { Icon } from '../icon';
+import { Swipe, SwipeToOptions } from '../swipe';
+import { Popup, PopupCloseIconPosition } from '../popup';
 import ImagePreviewItem from './ImagePreviewItem';
 
-const [createComponent, bem] = createNamespace('image-preview');
+const [name, bem] = createNamespace('image-preview');
 
 export type ScaleEventParams = {
   scale: number;
   index: number;
 };
 
-export default createComponent({
+export default defineComponent({
+  name,
+
   props: {
     show: Boolean,
     closeable: Boolean,

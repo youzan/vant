@@ -1,5 +1,5 @@
 import { KeepAlive, nextTick } from 'vue';
-import CountDown from '..';
+import { CountDown } from '..';
 import { mount, later } from '../../../test';
 
 test('should emit finish event when finished', async () => {

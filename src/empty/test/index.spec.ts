@@ -1,4 +1,4 @@
-import Empty from '..';
+import { Empty } from '..';
 import { mount } from '../../../test';
 
 test('should render image slot correctly', () => {

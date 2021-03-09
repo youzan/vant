@@ -1,4 +1,4 @@
-import DatetimePicker from '..';
+import { DatetimePicker } from '..';
 import { mount } from '../../../test';
 
 test('confirm & cancel event', () => {

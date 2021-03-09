@@ -133,7 +133,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom">
     <div class="van-tabbar-item van-tabbar-item--active">
       <div class="van-badge__wrapper van-tabbar-item__icon">
-        <img src="https://img01.yzcdn.cn/vant/user-active.png">
+        <img src="https://img.yzcdn.cn/vant/user-active.png">
         <div class="van-badge van-badge--fixed">
           3
         </div>

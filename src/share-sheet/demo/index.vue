@@ -44,7 +44,7 @@
 import { computed, reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { ShareSheetOption, ShareSheetOptions } from '..';
-import Toast from '../../toast';
+import { Toast } from '../../toast';
 
 const i18n = {
   'zh-CN': {
@@ -119,15 +119,15 @@ export default {
     const customIconOptions = computed(() => [
       {
         name: t('name'),
-        icon: 'https://img01.yzcdn.cn/vant/custom-icon-fire.png',
+        icon: 'https://img.yzcdn.cn/vant/custom-icon-fire.png',
       },
       {
         name: t('name'),
-        icon: 'https://img01.yzcdn.cn/vant/custom-icon-light.png',
+        icon: 'https://img.yzcdn.cn/vant/custom-icon-light.png',
       },
       {
         name: t('name'),
-        icon: 'https://img01.yzcdn.cn/vant/custom-icon-water.png',
+        icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png',
       },
     ]);
 

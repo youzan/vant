@@ -1,6 +1,6 @@
 import { nextTick } from 'vue';
 import { mount } from '../../../test';
-import ActionSheet from '..';
+import { ActionSheet } from '..';
 
 test('should emit select event after clicking option', async () => {
   const wrapper = mount(ActionSheet, {
