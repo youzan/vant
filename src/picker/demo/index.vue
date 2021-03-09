@@ -77,7 +77,7 @@
 import { ref, computed, reactive, toRefs } from 'vue';
 import { dateColumns, cascadeColumns, cascadeColumnsCustomKey } from './data';
 import { useTranslate } from '@demo/use-translate';
-import Toast from '../../toast';
+import { Toast } from '../../toast';
 
 const i18n = {
   'zh-CN': {

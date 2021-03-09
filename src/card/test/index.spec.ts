@@ -1,4 +1,4 @@
-import Card from '..';
+import { Card } from '..';
 import { mount } from '../../../test';
 
 test('should emit click event after clicked', () => {

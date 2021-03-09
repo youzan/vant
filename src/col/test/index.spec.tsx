@@ -1,5 +1,5 @@
-import Col from '..';
-import Row from '../../row';
+import { Col } from '..';
+import { Row } from '../../row';
 import { mount } from '../../../test';
 
 test('should render Col correcly', () => {

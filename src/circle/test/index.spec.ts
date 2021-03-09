@@ -1,4 +1,4 @@
-import Circle from '..';
+import { Circle } from '..';
 import { mount, later } from '../../../test';
 
 // TODO

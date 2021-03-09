@@ -12,9 +12,9 @@ import { createNamespace, isDef, UnknownProp } from '../utils';
 import { lockClick } from './lock-click';
 
 // Components
-import Icon from '../icon';
-import Popup from '../popup';
-import Loading, { LoadingType } from '../loading';
+import { Icon } from '../icon';
+import { Popup } from '../popup';
+import { Loading, LoadingType } from '../loading';
 
 const [name, bem] = createNamespace('toast');
 

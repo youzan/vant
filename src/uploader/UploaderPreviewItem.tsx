@@ -6,9 +6,9 @@ import { isDef, getSizeStyle } from '../utils';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
 // Components
-import Icon from '../icon';
-import Image, { ImageFit } from '../image';
-import Loading from '../loading';
+import { Icon } from '../icon';
+import { Image, ImageFit } from '../image';
+import { Loading } from '../loading';
 
 export default defineComponent({
   props: {

@@ -5,12 +5,12 @@ import { createNamespace, UnknownProp } from '../utils';
 import { RED } from '../utils/constant';
 
 // Components
-import Tag from '../tag';
-import Icon from '../icon';
-import Cell from '../cell';
-import Radio from '../radio';
-import Button from '../button';
-import RadioGroup from '../radio-group';
+import { Tag } from '../tag';
+import { Icon } from '../icon';
+import { Cell } from '../cell';
+import { Radio } from '../radio';
+import { Button } from '../button';
+import { RadioGroup } from '../radio-group';
 
 const [name, bem, t] = createNamespace('contact-list');
 

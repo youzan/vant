@@ -1,4 +1,4 @@
-import Cell from '..';
+import { Cell } from '..';
 import { mount } from '../../../test';
 
 test('should render default slot correctly', () => {

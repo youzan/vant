@@ -1,5 +1,5 @@
 import { mount } from '../../../test';
-import Button from '..';
+import { Button } from '..';
 
 test('should emit click event', () => {
   const wrapper = mount(Button);

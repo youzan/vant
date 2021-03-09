@@ -4,10 +4,10 @@ import { PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 
 // Components
-import Tag from '../tag';
-import Icon from '../icon';
-import Cell from '../cell';
-import Radio from '../radio';
+import { Tag } from '../tag';
+import { Icon } from '../icon';
+import { Cell } from '../cell';
+import { Radio } from '../radio';
 
 const [name, bem] = createNamespace('address-item');
 

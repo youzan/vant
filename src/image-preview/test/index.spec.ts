@@ -1,14 +1,14 @@
+import { nextTick } from 'vue';
+import { DOMWrapper } from '@vue/test-utils/dist/domWrapper';
 import {
   mount,
   later,
+  trigger,
   triggerDrag,
   mockGetBoundingClientRect,
-  trigger,
 } from '../../../test';
+import { ImagePreview } from '..';
 import ImagePreviewComponent from '../ImagePreview';
-import ImagePreview from '..';
-import { nextTick } from 'vue';
-import { DOMWrapper } from '@vue/test-utils/dist/domWrapper';
 
 const images = [
   'https://img.yzcdn.cn/1.png',

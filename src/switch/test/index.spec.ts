@@ -1,4 +1,4 @@
-import Switch from '..';
+import { Switch } from '..';
 import { mount } from '../../../test';
 
 test('should emit update:modelValue event when click the switch button', async () => {

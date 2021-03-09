@@ -1,4 +1,4 @@
-import Calendar from '..';
+import { Calendar } from '..';
 import { mount, later } from '../../../test';
 import { getNextDay } from '../utils';
 import {

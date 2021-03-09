@@ -32,8 +32,8 @@
 
 <script lang="ts">
 import { useTranslate } from '@demo/use-translate';
+import { Toast } from '..';
 import type { LoadingType } from '../../loading';
-import Toast from '..';
 
 const i18n = {
   'zh-CN': {

@@ -1,6 +1,6 @@
 import { mount } from '../../../test';
-import Grid from '..';
-import GridItem from '../../grid-item';
+import { Grid } from '..';
+import { GridItem } from '../../grid-item';
 
 test('should render square grid with gutter correctly', () => {
   const wrapper = mount({

@@ -1,5 +1,5 @@
 import { mount } from '../../../test';
-import Overlay from '..';
+import { Overlay } from '..';
 
 test('should change z-index when using z-index prop', () => {
   const wrapper = mount(Overlay, {

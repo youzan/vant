@@ -19,9 +19,9 @@ import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Cell from '../cell';
-import Icon from '../icon';
-import Popup from '../popup';
+import { Cell } from '../cell';
+import { Icon } from '../icon';
+import { Popup } from '../popup';
 
 const [name, bem] = createNamespace('dropdown-item');
 

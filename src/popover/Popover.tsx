@@ -18,8 +18,8 @@ import { BORDER_BOTTOM } from '../utils/constant';
 import { useClickAway } from '@vant/use';
 
 // Components
-import Icon from '../icon';
-import Popup from '../popup';
+import { Icon } from '../icon';
+import { Popup } from '../popup';
 
 const [name, bem] = createNamespace('popover');
 

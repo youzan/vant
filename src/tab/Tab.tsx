@@ -16,7 +16,7 @@ import { useParent } from '@vant/use';
 import { routeProps } from '../composables/use-route';
 
 // Components
-import SwipeItem from '../swipe-item';
+import { SwipeItem } from '../swipe-item';
 
 const [name, bem] = createNamespace('tab');
 

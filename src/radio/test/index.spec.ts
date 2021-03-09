@@ -1,4 +1,4 @@
-import Radio from '..';
+import { Radio } from '..';
 import { mount } from '../../../test';
 
 test('should emit "update:modelValue" event when radio icon or label is clicked', async () => {

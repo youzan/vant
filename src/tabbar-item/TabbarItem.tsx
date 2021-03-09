@@ -9,8 +9,8 @@ import { useParent } from '@vant/use';
 import { routeProps, useRoute } from '../composables/use-route';
 
 // Components
-import Icon from '../icon';
-import Badge from '../badge';
+import { Icon } from '../icon';
+import { Badge } from '../badge';
 
 const [name, bem] = createNamespace('tabbar-item');
 

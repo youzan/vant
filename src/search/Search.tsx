@@ -12,7 +12,7 @@ import {
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Field from '../field';
+import { Field } from '../field';
 
 // Types
 import type { FieldClearTrigger } from '../field/types';

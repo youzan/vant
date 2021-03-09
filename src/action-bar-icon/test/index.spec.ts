@@ -1,5 +1,5 @@
 import { mount } from '../../../test';
-import ActionBarIcon from '..';
+import { ActionBarIcon } from '..';
 
 test('should render default slot correctly', () => {
   const wrapper = mount(ActionBarIcon, {

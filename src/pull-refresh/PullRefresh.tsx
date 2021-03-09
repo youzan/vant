@@ -8,7 +8,7 @@ import { useScrollParent } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 
 // Components
-import Loading from '../loading';
+import { Loading } from '../loading';
 
 const [name, bem, t] = createNamespace('pull-refresh');
 

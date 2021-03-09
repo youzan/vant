@@ -4,8 +4,8 @@ import { PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 
 // Components
-import Button from '../button';
-import RadioGroup from '../radio-group';
+import { Button } from '../button';
+import { RadioGroup } from '../radio-group';
 import AddressListItem, { AddressListAddress } from './AddressListItem';
 
 const [name, bem, t] = createNamespace('address-list');
@@ -68,7 +68,7 @@ export default defineComponent({
         <AddressListItem
           v-slots={{
             bottom: slots['item-bottom'],
-            tag: slots['tag'],
+            tag: slots.tag,
           }}
           key={item.id}
           address={item}

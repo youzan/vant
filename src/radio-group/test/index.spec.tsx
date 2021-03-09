@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import { mount } from '../../../test';
-import RadioGroup from '../index';
-import Radio from '../../radio';
+import { Radio } from '../../radio';
+import { RadioGroup } from '../index';
 
 test('should emit "update:modelValue" and "change" event when radio is clicked', async () => {
   const wrapper = mount({

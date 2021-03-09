@@ -2,10 +2,10 @@ import { PropType, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, pick } from '../utils';
+import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
 // Components
-import Popup from '../popup';
-import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
+import { Popup } from '../popup';
 
 export type ShareSheetOption = {
   name: string;

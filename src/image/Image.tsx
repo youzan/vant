@@ -1,3 +1,4 @@
+// Utils
 import {
   ref,
   watch,
@@ -15,7 +16,9 @@ import {
   createNamespace,
   ComponentInstance,
 } from '../utils';
-import Icon from '../icon';
+
+// Components
+import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('image');
 

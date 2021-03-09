@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
 import { createNamespace, addUnit, UnknownProp } from '../utils';
 import { useLinkField } from '../composables/use-link-field';
-import Loading from '../loading';
+import { Loading } from '../loading';
 
 const [name, bem] = createNamespace('switch');
 

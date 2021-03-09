@@ -1,8 +1,8 @@
-import SwipeCell from '..';
+import { SwipeCell } from '..';
 import {
   mount,
-  triggerDrag,
   later,
+  triggerDrag,
   mockGetBoundingClientRect,
 } from '../../../test';
 

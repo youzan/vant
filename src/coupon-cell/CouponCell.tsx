@@ -1,9 +1,13 @@
 import { PropType, defineComponent } from 'vue';
+
+// Utils
 import { isDef, createNamespace } from '../utils';
-import type { CouponInfo } from '../coupon';
 
 // Components
-import Cell from '../cell';
+import { Cell } from '../cell';
+
+// Types
+import type { CouponInfo } from '../coupon';
 
 const [name, bem, t] = createNamespace('coupon-cell');
 

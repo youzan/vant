@@ -11,8 +11,8 @@ import { BORDER_SURROUND } from '../utils/constant';
 import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
-import Icon from '../icon';
-import Loading, { LoadingType } from '../loading';
+import { Icon } from '../icon';
+import { Loading, LoadingType } from '../loading';
 
 const [name, bem] = createNamespace('button');
 

@@ -23,9 +23,9 @@ import { useWindowSize } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import Icon from '../icon';
-import Swipe, { SwipeToOptions } from '../swipe';
-import Popup, { PopupCloseIconPosition } from '../popup';
+import { Icon } from '../icon';
+import { Swipe, SwipeToOptions } from '../swipe';
+import { Popup, PopupCloseIconPosition } from '../popup';
 import ImagePreviewItem from './ImagePreviewItem';
 
 const [name, bem] = createNamespace('image-preview');

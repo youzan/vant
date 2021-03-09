@@ -37,8 +37,8 @@ import { useExpose } from '../composables/use-expose';
 import { FORM_KEY, FIELD_KEY } from '../composables/use-link-field';
 
 // Components
-import Icon from '../icon';
-import Cell from '../cell';
+import { Icon } from '../icon';
+import { Cell } from '../cell';
 
 // Types
 import type {

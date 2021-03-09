@@ -36,8 +36,8 @@
 <script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import ImagePreview, { ImagePreviewOptions } from '..';
-import Toast from '../../toast';
+import { ImagePreview, ImagePreviewOptions } from '..';
+import { Toast } from '../../toast';
 
 const i18n = {
   'zh-CN': {

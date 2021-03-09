@@ -2,8 +2,8 @@ import { PropType, CSSProperties, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 
 // Components
-import Icon from '../icon';
-import Button, { ButtonType } from '../button';
+import { Icon } from '../icon';
+import { Button, ButtonType } from '../button';
 
 const [name, bem, t] = createNamespace('submit-bar');
 

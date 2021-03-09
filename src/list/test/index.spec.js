@@ -1,4 +1,4 @@
-import List from '..';
+import { List } from '..';
 import { mount, later, mockGetBoundingClientRect } from '../../../test';
 
 test('should emit load event when reaching bottom', async () => {

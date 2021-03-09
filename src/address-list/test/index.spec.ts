@@ -1,5 +1,5 @@
 import { mount } from '../../../test';
-import AddressList from '..';
+import { AddressList } from '..';
 
 const list = [
   {

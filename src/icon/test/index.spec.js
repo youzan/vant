@@ -1,4 +1,4 @@
-import Icon from '..';
+import { Icon } from '..';
 import { mount } from '../../../test';
 
 test('should render icon with builtin icon name correctly', () => {

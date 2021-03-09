@@ -1,4 +1,4 @@
-import Tag from '..';
+import { Tag } from '..';
 import { mount } from '../../../test';
 
 test('should emit close event when clicking the close icon', () => {

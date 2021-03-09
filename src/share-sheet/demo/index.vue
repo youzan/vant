@@ -44,7 +44,7 @@
 import { computed, reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { ShareSheetOption, ShareSheetOptions } from '..';
-import Toast from '../../toast';
+import { Toast } from '../../toast';
 
 const i18n = {
   'zh-CN': {

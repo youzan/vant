@@ -16,11 +16,11 @@ import { useWindowSize } from '@vant/use';
 import { useRefs } from '../composables/use-refs';
 
 // Components
-import Tab from '../tab';
-import Tabs from '../tabs';
-import Field from '../field';
-import Button from '../button';
-import Coupon, { CouponInfo } from '../coupon';
+import { Tab } from '../tab';
+import { Tabs } from '../tabs';
+import { Field } from '../field';
+import { Button } from '../button';
+import { Coupon, CouponInfo } from '../coupon';
 
 const [name, bem, t] = createNamespace('coupon-list');
 const EMPTY_IMAGE = 'https://img.yzcdn.cn/vant/coupon-empty.png';

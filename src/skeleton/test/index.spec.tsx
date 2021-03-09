@@ -1,5 +1,5 @@
 import { mount } from '../../../test';
-import Skeleton from '..';
+import { Skeleton } from '..';
 
 test('should render with row width array correctly', () => {
   const wrapper = mount(Skeleton, {

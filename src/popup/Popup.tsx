@@ -23,8 +23,8 @@ import { useLockScroll } from '../composables/use-lock-scroll';
 import { useLazyRender } from '../composables/use-lazy-render';
 
 // Components
-import Icon from '../icon';
-import Overlay from '../overlay';
+import { Icon } from '../icon';
+import { Overlay } from '../overlay';
 
 export type PopupPosition = 'top' | 'left' | 'bottom' | 'right' | 'center' | '';
 

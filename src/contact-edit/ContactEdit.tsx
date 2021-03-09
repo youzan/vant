@@ -5,12 +5,12 @@ import { createNamespace } from '../utils';
 import { isMobile } from '../utils/validate/mobile';
 
 // Components
-import Cell from '../cell';
-import Form from '../form';
-import Field from '../field';
-import Button from '../button';
-import Dialog from '../dialog';
-import Switch from '../switch';
+import { Cell } from '../cell';
+import { Form } from '../form';
+import { Field } from '../field';
+import { Button } from '../button';
+import { Dialog } from '../dialog';
+import { Switch } from '../switch';
 
 const [name, bem, t] = createNamespace('contact-edit');
 

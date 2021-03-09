@@ -9,7 +9,7 @@ import { STEPS_KEY, StepsProvide } from '../steps/Steps';
 import { useParent } from '@vant/use';
 
 // Components
-import Icon from '../icon';
+import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('step');
 

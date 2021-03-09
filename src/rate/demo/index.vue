@@ -47,7 +47,7 @@
 <script lang="ts">
 import { toRefs, reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import Toast from '../../toast';
+import { Toast } from '../../toast';
 
 const i18n = {
   'zh-CN': {

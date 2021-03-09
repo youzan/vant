@@ -32,7 +32,7 @@
 <script lang="ts">
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import Notify from '..';
+import { Notify } from '..';
 import { NotifyType } from '../Notify';
 
 const i18n = {

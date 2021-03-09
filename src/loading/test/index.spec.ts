@@ -1,5 +1,5 @@
 import { mount } from '../../../test';
-import Loading from '..';
+import { Loading } from '..';
 
 test('should change loading size when using size prop', () => {
   const wrapper = mount(Loading, {

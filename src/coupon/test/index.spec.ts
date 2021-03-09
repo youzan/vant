@@ -1,5 +1,5 @@
 import { mount } from '../../../test';
-import Coupon from '..';
+import { Coupon } from '..';
 
 const coupon = {
   id: 1,

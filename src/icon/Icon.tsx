@@ -1,6 +1,6 @@
 import { PropType, defineComponent } from 'vue';
 import { addUnit, createNamespace } from '../utils';
-import Badge from '../badge';
+import { Badge } from '../badge';
 
 const [name, bem] = createNamespace('icon');
 

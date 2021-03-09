@@ -1,4 +1,4 @@
-import Uploader from '..';
+import { Uploader } from '..';
 import { mount, later, triggerDrag } from '../../../test';
 
 window.File = function () {

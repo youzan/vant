@@ -1,6 +1,6 @@
 import { nextTick } from 'vue';
 import { mount, triggerDrag } from '../../../test';
-import Popup from '..';
+import { Popup } from '..';
 
 let wrapper;
 afterEach(() => {

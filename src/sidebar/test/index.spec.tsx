@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import { mount } from '../../../test';
-import Sidebar from '..';
-import SidebarItem from '../../sidebar-item';
+import { Sidebar } from '..';
+import { SidebarItem } from '../../sidebar-item';
 
 test('should emit change event when active item changed', () => {
   const onChange = jest.fn();

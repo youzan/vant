@@ -9,7 +9,7 @@ import { useTouch } from '../composables/use-touch';
 import { useLinkField } from '../composables/use-link-field';
 
 // Components
-import Icon from '../icon';
+import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('rate');
 

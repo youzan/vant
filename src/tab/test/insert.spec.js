@@ -1,6 +1,6 @@
 import { mount, later } from '../../../test';
-import Tab from '..';
-import Tabs from '../../tabs';
+import { Tab } from '..';
+import { Tabs } from '../../tabs';
 
 test('should render correctly after inserting a tab', async () => {
   const wrapper = mount({

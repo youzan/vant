@@ -2,9 +2,9 @@ import { nextTick, PropType, reactive, watch, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 
 // Components
-import Tab from '../tab';
-import Tabs from '../tabs';
-import Icon from '../icon';
+import { Tab } from '../tab';
+import { Tabs } from '../tabs';
+import { Icon } from '../icon';
 
 const [name, bem, t] = createNamespace('cascader');
 
