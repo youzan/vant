@@ -10,8 +10,12 @@ test('isImageFile', () => {
   expect(isImageFile({ url: 'https://a.jfif' })).toBeTruthy();
   expect(isImageFile({ url: 'https://a.bmp' })).toBeTruthy();
   expect(isImageFile({ url: 'https://a.dpg' })).toBeTruthy();
-  expect(isImageFile({ file: { type: 'image/jpg' } })).toBeTruthy();
-  expect(isImageFile({ file: { type: 'application/pdf' } })).toBeFalsy();
+  expect(
+    isImageFile({ file: new File([], 'foo.jpg', { type: 'image/jpg' }) })
+  ).toBeTruthy();
+  expect(
+    isImageFile({ file: new File([], 'bar.pdf', { type: 'application/pdf' }) })
+  ).toBeFalsy();
   expect(isImageFile({ content: 'data:image/xxx' })).toBeTruthy();
   expect(isImageFile({ content: 'data:application/xxx' })).toBeFalsy();
   expect(isImageFile({ isImage: true })).toBeTruthy();
