@@ -12,12 +12,12 @@
       <van-dropdown-item :title="t('itemTitle')" ref="item">
         <van-cell center :title="t('switchTitle1')">
           <template #right-icon>
-            <van-switch v-model="switch1" size="24" :active-color="RED" />
+            <van-switch v-model="switch1" size="24" active-color="#ee0a24" />
           </template>
         </van-cell>
         <van-cell center :title="t('switchTitle2')">
           <template #right-icon>
-            <van-switch v-model="switch2" size="24" :active-color="RED" />
+            <van-switch v-model="switch2" size="24" active-color="#ee0a24" />
           </template>
         </van-cell>
         <div style="padding: 5px 16px">
@@ -61,7 +61,6 @@
 import { computed, reactive, ref, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { ComponentInstance } from '../../utils';
-import { RED } from '../../utils/constant';
 
 const i18n = {
   'zh-CN': {
@@ -126,7 +125,6 @@ export default {
     return {
       ...toRefs(state),
       t,
-      RED,
       item,
       option1,
       option2,

@@ -115,9 +115,7 @@ exports[`should be the sames as the last snapshot when render coupon list 1`] = 
                      aria-checked="true"
                 >
                   <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
-                    <i class="van-badge__wrapper van-icon van-icon-success"
-                       style="border-color: #ee0a24; background-color: rgb(238, 10, 36);"
-                    >
+                    <i class="van-badge__wrapper van-icon van-icon-success">
                     </i>
                   </div>
                 </div>
