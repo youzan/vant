@@ -1,6 +1,5 @@
 import Toast from '../Toast';
 import { mount, later } from '../../../test';
-import { createApp } from 'vue';
 
 test('should change overlay style after using overlay-style prop', async () => {
   const wrapper = mount(Toast, {
