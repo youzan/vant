@@ -2,7 +2,6 @@ import { PropType, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, UnknownProp } from '../utils';
-import { RED } from '../utils/constant';
 
 // Components
 import { Tag } from '../tag';
@@ -41,7 +40,7 @@ export default defineComponent({
       };
 
       const renderRightIcon = () => (
-        <Radio name={item.id} iconSize={16} checkedColor={RED} />
+        <Radio class={bem('radio')} name={item.id} iconSize={16} />
       );
 
       const renderEditIcon = () => (

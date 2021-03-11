@@ -15,16 +15,14 @@ exports[`should render ContactList correctly 1`] = `
         jack，12345678
       </div>
       <div role="radio"
-           class="van-radio"
+           class="van-radio van-contact-list__radio"
            tabindex="0"
            aria-checked="true"
       >
         <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
              style="font-size: 16px;"
         >
-          <i class="van-badge__wrapper van-icon van-icon-success"
-             style="border-color: #ee0a24; background-color: rgb(238, 10, 36);"
-          >
+          <i class="van-badge__wrapper van-icon van-icon-success">
           </i>
         </div>
       </div>

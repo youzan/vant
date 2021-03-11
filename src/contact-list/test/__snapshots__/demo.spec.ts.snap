@@ -21,16 +21,14 @@ exports[`should render demo and match snapshot 1`] = `
           </transition-stub>
         </div>
         <div role="radio"
-             class="van-radio"
+             class="van-radio van-contact-list__radio"
              tabindex="0"
              aria-checked="true"
         >
           <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
                style="font-size: 16px;"
           >
-            <i class="van-badge__wrapper van-icon van-icon-success"
-               style="border-color: #ee0a24; background-color: rgb(238, 10, 36);"
-            >
+            <i class="van-badge__wrapper van-icon van-icon-success">
             </i>
           </div>
         </div>
@@ -45,7 +43,7 @@ exports[`should render demo and match snapshot 1`] = `
           Ned Stark，1310000000
         </div>
         <div role="radio"
-             class="van-radio"
+             class="van-radio van-contact-list__radio"
              tabindex="0"
              aria-checked="false"
         >
