@@ -1,22 +1,33 @@
 const path = require('path');
+const fs = require('fs');
+const parser = require('./md-parser');
+
+function hyphenate(str) {
+  return str.replace(/\B([A-Z])/g, '-$1').toLowerCase();
+}
 
 module.exports = function extraDemo(content) {
+  const markdownDir = path.dirname(this.resourcePath);
   const demoLinks = [];
 
-  /*
-   * 提取 README 中的 demo 文件路径，例如下面的内容，就会提取为 ['./demo-link/index.vue']
-   * ```demo
-   * ./demo-link/index.vue
-   * ```
-   */
   content = content.replace(
-    /<pre><code class="language-demo">([\s\S]*?)<\/code><\/pre>/g,
-    function (_, link) {
+    /<demo-code([\s\S]*?)>([\s\S]*?)<\/demo-code>/g,
+    function (_, attrs, link) {
       link = link.trim(); // 去换行符
-      demoLinks.push(link);
-      const demoFileName = path.basename(link, '.vue'); // 获取文件名
-      const tag = demoFileName.replace(/\B([A-Z])/g, '-$1').toLowerCase(); // 驼峰转连字符
-      return `<${tag} />`;
+      const tag = hyphenate(path.basename(link, '.vue'));
+      const fullLink = path.join(markdownDir, link);
+      demoLinks.indexOf(fullLink) === -1 && demoLinks.push(fullLink);
+      const demoContent = fs.readFileSync(fullLink, { encoding: 'utf8' });
+      const demoParseredContent = parser.render(
+        '```html\n' + demoContent + '\n```'
+      );
+      return `
+        <demo-playground${attrs}
+        origin-code="${escape(demoContent)}"
+        code-snippet="${escape(demoParseredContent)}">
+          <${tag} />
+        </demo-playground>
+      `;
     }
   );
 
