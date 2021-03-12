@@ -1,3 +1,4 @@
+const path = require('path');
 const loaderUtils = require('loader-utils');
 const MarkdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
@@ -5,18 +6,42 @@ const frontMatter = require('front-matter');
 const highlight = require('./highlight');
 const linkOpen = require('./link-open');
 const cardWrapper = require('./card-wrapper');
+const extractDemo = require('./extract-demo');
+const sideEffectTags = require('./side-effect-tags');
 const { slugify } = require('transliteration');
 
+function camelize(str) {
+  return str.replace(/-(\w)/g, (_, c) => (c ? c.toUpperCase() : ''));
+}
+
 function wrapper(content) {
+  const markdownDir = path.dirname(this.resourcePath);
+  let demoLinks;
+  let styles;
+  [content, demoLinks] = extractDemo(content);
+  [content, styles] = sideEffectTags(content);
   content = cardWrapper(content);
-  content = escape(content);
-
   return `
-import { h } from 'vue';
+<template>
+  <section>
+    ${content}
+  </section>
+</template>
 
-const content = unescape(\`${content}\`);
+<script>
+${demoLinks
+  .map((link) => {
+    const absPath = path.join(markdownDir, link); // 获取 demo 文件的完整路径
+    const demoFileName = path.basename(link, '.vue');
+    return `import ${camelize(demoFileName)} from '${absPath}';`;
+  })
+  .join('\n')}
 
 export default {
+  components: {
+    ${demoLinks.map((link) => camelize(path.basename(link, '.vue'))).join(',')}
+  },
+
   mounted() {
     const anchors = [].slice.call(this.$el.querySelectorAll('h2, h3, h4, h5'));
 
@@ -35,11 +60,10 @@ export default {
       }
     }
   },
-
-  render() {
-    return h('section', { innerHTML: content });
-  }
 };
+</script>
+
+${styles.join('\n')}
 `;
 }
 
@@ -72,5 +96,5 @@ module.exports = function (source) {
     linkOpen(parser);
   }
 
-  return options.wrapper(parser.render(source), fm);
+  return options.wrapper.call(this, parser.render(source), fm);
 };
