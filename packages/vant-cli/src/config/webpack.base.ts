@@ -24,6 +24,15 @@ const CSS_LOADERS = [
   },
 ];
 
+const VUE_LOADER = {
+  loader: 'vue-loader',
+  options: {
+    compilerOptions: {
+      preserveWhitespace: false,
+    },
+  },
+};
+
 const plugins = [
   new webpack.DefinePlugin({
     __VUE_OPTIONS_API__: 'true',
@@ -74,16 +83,7 @@ export const baseConfig: WebpackConfig = {
     rules: [
       {
         test: /\.vue$/,
-        use: [
-          {
-            loader: 'vue-loader',
-            options: {
-              compilerOptions: {
-                preserveWhitespace: false,
-              },
-            },
-          },
-        ],
+        use: [VUE_LOADER],
       },
       {
         test: /\.(js|ts|jsx|tsx)$/,
@@ -115,7 +115,7 @@ export const baseConfig: WebpackConfig = {
       },
       {
         test: /\.md$/,
-        use: ['@vant/markdown-loader'],
+        use: [VUE_LOADER, '@vant/markdown-loader'],
       },
     ],
   },
