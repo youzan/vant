@@ -1,6 +1,5 @@
 import { computed, PropType, defineComponent } from 'vue';
 import { padZero, createNamespace } from '../utils';
-import { RED } from '../utils/constant';
 import { Checkbox } from '../checkbox';
 
 export type CouponInfo = {
@@ -101,11 +100,7 @@ export default defineComponent({
               <p class={bem('name')}>{coupon.name}</p>
               <p class={bem('valid')}>{validPeriod.value}</p>
               {!disabled && (
-                <Checkbox
-                  class={bem('corner')}
-                  modelValue={chosen}
-                  checkedColor={RED}
-                />
+                <Checkbox class={bem('corner')} modelValue={chosen} />
               )}
             </div>
           </div>

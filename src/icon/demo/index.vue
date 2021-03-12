@@ -31,8 +31,8 @@
           <van-col span="6" @click="copy(demoIcon, { color: '#1989fa' })">
             <van-icon name="cart-o" color="#1989fa" />
           </van-col>
-          <van-col span="6" @click="copy(demoIcon, { color: RED })">
-            <van-icon name="fire-o" :color="RED" />
+          <van-col span="6" @click="copy(demoIcon, { color: '#ee0a24' })">
+            <van-icon name="fire-o" color="#ee0a24" />
           </van-col>
         </van-row>
       </demo-block>
@@ -97,7 +97,6 @@
 import icons from '@vant/icons';
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import { RED } from '../../utils/constant';
 import { Notify } from '../../notify';
 
 // from https://30secondsofcode.org
@@ -185,7 +184,6 @@ export default {
     return {
       t,
       tab,
-      RED,
       copy,
       icons,
       demoIcon: 'chat-o',

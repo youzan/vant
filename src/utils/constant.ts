@@ -1,6 +1,3 @@
-// color
-export const RED = '#ee0a24';
-
 // border
 export const BORDER = 'van-hairline';
 export const BORDER_TOP = `${BORDER}--top`;

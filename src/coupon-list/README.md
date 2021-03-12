@@ -157,6 +157,7 @@ How to use: [Custom Theme](#/en-US/theme).
 | @coupon-disabled-text-color | `@gray-6` | - |
 | @coupon-description-padding | `@padding-xs @padding-md` | - |
 | @coupon-description-border-color | `@border-color` | - |
+| @coupon-corner-checkbox-icon-color | `@red` | - |
 | @coupon-list-background-color | `@background-color` | - |
 | @coupon-list-field-padding | `5px 0 5px @padding-md` | - |
 | @coupon-list-exchange-button-height | `32px` | - |
