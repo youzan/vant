@@ -1,26 +1,7 @@
 import { ref, onMounted } from 'vue';
-import {
-  mount,
-  later,
-  trigger,
-  triggerDrag,
-  mockGetBoundingClientRect,
-} from '../../../test';
+import { mount, later, trigger, triggerDrag } from '../../../test';
 import { Swipe } from '..';
 import { SwipeItem } from '../../swipe-item';
-
-let restore;
-
-beforeEach(() => {
-  restore = mockGetBoundingClientRect({
-    width: 100,
-    height: 100,
-  });
-});
-
-afterEach(() => {
-  restore();
-});
 
 function mockPageHidden() {
   let hidden = true;
@@ -32,6 +13,11 @@ function mockPageHidden() {
   trigger(window, 'visibilitychange');
   hidden = false;
 }
+
+const swipeStyle = {
+  width: '100px',
+  height: '100px',
+};
 
 const Component = {
   props: {
@@ -54,15 +40,11 @@ const Component = {
     },
   },
   render() {
-    const style = {
-      width: '100px',
-      height: '100px',
-    };
     return (
-      <Swipe ref="swipe" {...this.$props}>
-        <SwipeItem style={style}>1</SwipeItem>
-        <SwipeItem style={style}>2</SwipeItem>
-        <SwipeItem style={style}>3</SwipeItem>
+      <Swipe ref="swipe" style={swipeStyle} {...this.$props}>
+        <SwipeItem>1</SwipeItem>
+        <SwipeItem>2</SwipeItem>
+        <SwipeItem>3</SwipeItem>
       </Swipe>
     );
   },
@@ -309,7 +291,7 @@ test('should render dynamic SwipeItem correctly', async () => {
     },
     render() {
       return (
-        <Swipe>
+        <Swipe style={swipeStyle}>
           {this.render && [
             <SwipeItem>
               <span>1</span>

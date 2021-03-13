@@ -23,7 +23,6 @@ import {
 
 // Composables
 import {
-  useRect,
   doubleRaf,
   useChildren,
   useWindowSize,
@@ -95,7 +94,7 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const root = ref<HTMLElement>();
     const state = reactive({
-      rect: null as DOMRect | null,
+      rect: null as { width: number; height: number } | null,
       width: 0,
       height: 0,
       offset: 0,
@@ -283,7 +282,10 @@ export default defineComponent({
 
       stopAutoplay();
 
-      const rect = useRect(root);
+      const rect = {
+        width: root.value.offsetWidth,
+        height: root.value.offsetHeight,
+      };
 
       if (count.value) {
         active = Math.min(count.value - 1, active);
