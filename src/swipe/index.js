@@ -166,7 +166,10 @@ export default createComponent({
 
       clearTimeout(this.timer);
 
-      const rect = this.$el.getBoundingClientRect();
+      const rect = {
+        width: this.$el.offsetWidth,
+        height: this.$el.offsetHeight,
+      };
 
       this.rect = rect;
       this.swiping = true;
