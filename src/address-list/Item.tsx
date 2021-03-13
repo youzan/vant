@@ -29,6 +29,7 @@ export type AddressItemProps = {
 
 export type AddressItemSlots = DefaultSlots & {
   bottom?: ScopedSlot;
+  tag?: ScopedSlot;
 };
 
 export type AddressItemEvents = {
@@ -68,6 +69,9 @@ function AddressItem(
   );
 
   function genTag() {
+    if (slots.tag) {
+      return slots.tag({ ...props.data });
+    }
     if (props.data.isDefault && props.defaultTagText) {
       return (
         <Tag type="danger" round class={bem('tag')}>

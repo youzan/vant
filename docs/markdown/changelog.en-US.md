@@ -16,6 +16,46 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.9](https://github.com/youzan/vant/compare/v2.12.8...v2.12.9)
+
+`2021-03-09`
+
+**Feature**
+
+- AddressList: add tag slot [#8311](https://github.com/youzan/vant/issues/8311)
+
+### [v2.12.8](https://github.com/youzan/vant/compare/v2.12.7...v2.12.8)
+
+`2021-03-07`
+
+**Feature**
+
+- ImagePreview: add transition prop [#8273](https://github.com/youzan/vant/issues/8273)
+- PullRefresh: add pull-distance prop [#8279](https://github.com/youzan/vant/issues/8279)
+- Locale: add th-TH lang [#8247](https://github.com/youzan/vant/issues/8247)
+
+**Bug Fixes**
+
+- ActionSheet: should not reopen when closed [#8271](https://github.com/youzan/vant/issues/8271)
+- ImagePreview: missing initial animation [#8274](https://github.com/youzan/vant/issues/8274)
+- Stepper: incorrect text color in iOS14 when disabled [#8278](https://github.com/youzan/vant/issues/8278)
+
+### [v2.12.7](https://github.com/youzan/vant/compare/v2.12.6...v2.12.7)
+
+`2021-02-28`
+
+**Feature**
+
+- Step: add finish-icon slot [#8240](https://github.com/youzan/vant/issues/8240)
+- Steps: add finish-icon prop [#8237](https://github.com/youzan/vant/issues/8237)
+
+**Bug Fixes**
+
+- DatetimePicker: fix incorrecrt inital value when v-model is null [#7832](https://github.com/youzan/vant/issues/7832)
+- Empty: linearGradient id conflict [#8011](https://github.com/youzan/vant/issues/8011)
+- GoodsActionIcon: info warning [#8040](https://github.com/youzan/vant/issues/8040)
+- Tabs: incorrect active tab when active prop is zero [#8087](https://github.com/youzan/vant/issues/8087)
+
 ### [v2.12.6](https://github.com/youzan/vant/compare/v2.12.5...v2.12.6)
 
 `2021-01-26`

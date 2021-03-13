@@ -83,6 +83,7 @@
       />
 
       <van-cell
+        v-if="!isWeapp"
         is-link
         :title="t('firstDayOfWeek')"
         @click="show('single', 'firstDayOfWeek')"

@@ -1,7 +1,7 @@
 import { mount, later } from '../../../test';
 import ActionSheet from '..';
 
-test('callback events', () => {
+test('callback events', async () => {
   const callback = jest.fn();
   const onInput = jest.fn();
   const onCancel = jest.fn();
@@ -33,6 +33,8 @@ test('callback events', () => {
   options.at(0).trigger('click');
   options.at(1).trigger('click');
   wrapper.find('.van-action-sheet__cancel').trigger('click');
+
+  await later();
 
   expect(callback).toHaveBeenCalled();
   expect(onCancel).toHaveBeenCalled();

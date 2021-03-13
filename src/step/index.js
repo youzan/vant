@@ -41,7 +41,7 @@ export default createComponent({
 
   methods: {
     genCircle() {
-      const { activeIcon, activeColor, inactiveIcon } = this.parent;
+      const { activeIcon, activeColor, finishIcon, inactiveIcon } = this.parent;
 
       if (this.active) {
         return (
@@ -49,6 +49,19 @@ export default createComponent({
             <Icon
               class={bem('icon', 'active')}
               name={activeIcon}
+              color={activeColor}
+            />
+          )
+        );
+      }
+
+      const finishIconSlot = this.slots('finish-icon');
+      if (this.status === 'finish' && (finishIcon || finishIconSlot)) {
+        return (
+          finishIconSlot || (
+            <Icon
+              class={bem('icon', 'finish')}
+              name={finishIcon}
               color={activeColor}
             />
           )
