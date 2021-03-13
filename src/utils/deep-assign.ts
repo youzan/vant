@@ -1,6 +1,5 @@
 import { isDef, isObject } from '.';
 import { ObjectIndex } from './types';
-import { deepClone } from './deep-clone';
 
 const { hasOwnProperty } = Object.prototype;
 
@@ -8,11 +7,6 @@ function assignKey(to: ObjectIndex, from: ObjectIndex, key: string) {
   const val = from[key];
 
   if (!isDef(val)) {
-    return;
-  }
-
-  if (Array.isArray(val)) {
-    to[key] = deepClone(val);
     return;
   }
 
