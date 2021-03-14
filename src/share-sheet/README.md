@@ -193,6 +193,10 @@ export default {
 | --- | --- | --- |
 | select | Emitted when an option is clicked | _option: Option, index: number_ |
 | cancel | Emitted when the cancel button is clicked | - |
+| open | Emitted when opening ShareSheet | - |
+| close | Emitted when closing ShareSheet | - |
+| opened | Emitted when ShareSheet is opened | - |
+| closed | Emitted when ShareSheet is closed | - |
 | click-overlay | Emitted when overlay is clicked | _event: MouseEvent_ |
 
 ### Slots
