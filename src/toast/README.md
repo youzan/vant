@@ -153,6 +153,7 @@ Toast.resetDefaultOptions('loading');
 | position | Can be set to `top` `middle` `bottom` | _string_ | `middle` |
 | message | Message | _string_ | `''` |
 | icon | Custom icon | _string_ | - |
+| iconSize | Custom icon size | _number \| string_ | `36px` |
 | iconPrefix | Icon className prefix | _string_ | `van-icon` |
 | overlay | Whether to show overlay | _boolean_ | `false` |
 | forbidClick | Whether to forbid click background | _boolean_ | `false` |

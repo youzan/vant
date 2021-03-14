@@ -14,6 +14,7 @@ export type ToastOptions = {
   overlay?: boolean;
   duration?: number;
   teleport?: TeleportProps['to'];
+  iconSize?: number | string;
   position?: ToastPosition;
   className?: unknown;
   transition?: string;
@@ -36,6 +37,7 @@ const defaultOptions: ToastOptions = {
   onOpened: undefined,
   duration: 2000,
   teleport: 'body',
+  iconSize: undefined,
   iconPrefix: undefined,
   position: 'middle',
   transition: 'van-fade',
