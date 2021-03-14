@@ -127,12 +127,12 @@ export default defineComponent({
       return renderOptions(options as ShareSheetOption[]);
     };
 
-    const renderCancelText = () => {
-      const text = props.cancelText ?? t('cancel');
-      if (text) {
+    const renderCancelButton = () => {
+      const cancelText = props.cancelText ?? t('cancel');
+      if (slots.cancel || cancelText) {
         return (
           <button type="button" class={bem('cancel')} onClick={onCancel}>
-            {text}
+            {slots.cancel ? slots.cancel() : cancelText}
           </button>
         );
       }
@@ -150,7 +150,7 @@ export default defineComponent({
       >
         {renderHeader()}
         {renderRows()}
-        {renderCancelText()}
+        {renderCancelButton()}
       </Popup>
     );
   },
