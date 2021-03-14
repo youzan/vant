@@ -70,6 +70,15 @@ test('should not render close icon when closeable is false', () => {
   expect(wrapper.find('.van-cascader__close-icon').exists()).toBeFalsy();
 });
 
+test('should change close icon when using close-icon prop', () => {
+  const wrapper = mount(Cascader, {
+    props: {
+      closeIcon: 'success',
+    },
+  });
+  expect(wrapper.find('.van-cascader__close-icon').html()).toMatchSnapshot();
+});
+
 test('should render title slot correctly', () => {
   const wrapper = mount(Cascader, {
     slots: {

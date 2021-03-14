@@ -44,6 +44,10 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    closeIcon: {
+      type: String,
+      default: 'cross',
+    },
   },
 
   emits: ['close', 'change', 'finish', 'update:modelValue'],
@@ -182,7 +186,11 @@ export default defineComponent({
           {slots.title ? slots.title() : props.title}
         </h2>
         {props.closeable ? (
-          <Icon name="cross" class={bem('close-icon')} onClick={onClose} />
+          <Icon
+            name={props.closeIcon}
+            class={bem('close-icon')}
+            onClick={onClose}
+          />
         ) : null}
       </div>
     );
