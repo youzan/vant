@@ -1,5 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should change close icon when using close-icon prop 1`] = `
+<i class="van-badge__wrapper van-icon van-icon-success van-cascader__close-icon">
+</i>
+`;
+
 exports[`should render title slot correctly 1`] = `
 <h2 class="van-cascader__title">
   Custom Title
