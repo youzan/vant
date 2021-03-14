@@ -104,3 +104,16 @@ test('should emit click-overlay event when overlay is clicked', async () => {
   expect(onClickOverlay).toHaveBeenCalledTimes(1);
   expect(wrapper.emitted('update:show')![0]).toEqual([false]);
 });
+
+test('should render cancel slot correctly', async () => {
+  const wrapper = mount(ShareSheet, {
+    props: {
+      show: true,
+    },
+    slots: {
+      cancel: () => 'Custom Cancel',
+    },
+  });
+
+  expect(wrapper.find('.van-share-sheet__cancel').html()).toMatchSnapshot();
+});

@@ -197,10 +197,11 @@ export default {
 
 ### Slots
 
-| Name        | Description        |
-| ----------- | ------------------ |
-| title       | Custom title       |
-| description | Custom description |
+| Name             | Description                         |
+| ---------------- | ----------------------------------- |
+| title            | Custom title                        |
+| description      | Custom description                  |
+| cancel `v3.0.10` | Custom the content of cancel button |
 
 ### Less Variables
 
