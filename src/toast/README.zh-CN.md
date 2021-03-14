@@ -166,7 +166,7 @@ Toast.resetDefaultOptions('loading');
 | position | 位置，可选值为 `top` `bottom` | _string_ | `middle` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | `''` | - |
 | icon | 自定义图标，支持传入[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
-| iconSize | 自定义图标大小，如 `20px` `2em`，默认单位为 `px` | _number \| string_ | `36px` |
+| iconSize | 图标大小，如 `20px` `2em`，默认单位为 `px` | _number \| string_ | `36px` |
 | iconPrefix | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | overlay | 是否显示背景遮罩层 | _boolean_ | `false` |
 | forbidClick | 是否禁止背景点击 | _boolean_ | `false` |
