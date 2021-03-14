@@ -104,7 +104,7 @@ export default {
 
       document.title = title;
 
-      this.hasSimulator = !(current && current.hideSimulator);
+      this.hasSimulator = !(config.site.hideSimulator || this.config.hideSimulator || (current && current.hideSimulator));
     },
   },
 };
