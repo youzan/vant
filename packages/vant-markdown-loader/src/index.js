@@ -19,7 +19,7 @@ function wrapper(content) {
   content = cardWrapper(content);
   return `
 <template>
-  <section>
+  <section v-once>
     ${content}
   </section>
 </template>
