@@ -1,30 +1,32 @@
 <template>
-  <van-cell is-link @touchstart.stop="keyboard = 'default'">
-    {{ t('button1') }}
-  </van-cell>
-  <van-cell is-link @touchstart.stop="keyboard = 'custom'">
-    {{ t('button2') }}
-  </van-cell>
-  <van-cell is-link @touchstart.stop="keyboard = 'extraKey'">
-    {{ t('button3') }}
-  </van-cell>
-  <van-cell is-link @touchstart.stop="keyboard = 'title'">
-    {{ t('button4') }}
-  </van-cell>
-  <van-cell is-link @touchstart.stop="keyboard = 'multiExtraKey'">
-    {{ t('button5') }}
-  </van-cell>
-  <van-cell is-link @touchstart.stop="keyboard = 'randomKeyOrder'">
-    {{ t('button6') }}
-  </van-cell>
-  <van-field
-    v-model="value"
-    readonly
-    clickable
-    :label="t('bindValue')"
-    :placeholder="t('clickToInput')"
-    @touchstart.stop="keyboard = 'bindValue'"
-  />
+  <demo-block card>
+    <van-cell is-link @touchstart.stop="keyboard = 'default'">
+      {{ t('button1') }}
+    </van-cell>
+    <van-cell is-link @touchstart.stop="keyboard = 'custom'">
+      {{ t('button2') }}
+    </van-cell>
+    <van-cell is-link @touchstart.stop="keyboard = 'extraKey'">
+      {{ t('button3') }}
+    </van-cell>
+    <van-cell is-link @touchstart.stop="keyboard = 'title'">
+      {{ t('button4') }}
+    </van-cell>
+    <van-cell is-link @touchstart.stop="keyboard = 'multiExtraKey'">
+      {{ t('button5') }}
+    </van-cell>
+    <van-cell is-link @touchstart.stop="keyboard = 'randomKeyOrder'">
+      {{ t('button6') }}
+    </van-cell>
+    <van-field
+      v-model="value"
+      readonly
+      clickable
+      :label="t('bindValue')"
+      :placeholder="t('clickToInput')"
+      @touchstart.stop="keyboard = 'bindValue'"
+    />
+  </demo-block>
 
   <van-number-keyboard
     :show="keyboard === 'default'"

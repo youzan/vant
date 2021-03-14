@@ -182,6 +182,19 @@ test('should render description correctly', () => {
   ).toMatchSnapshot();
 });
 
+test('should render cancel slot correctly', () => {
+  const wrapper = mount(ActionSheet, {
+    props: {
+      show: true,
+    },
+    slots: {
+      cancel: () => 'Custom Cancel',
+    },
+  });
+
+  expect(wrapper.find('.van-action-sheet__cancel').html()).toMatchSnapshot();
+});
+
 test('should render description slot when match snapshot', () => {
   const wrapper = mount(ActionSheet, {
     props: {

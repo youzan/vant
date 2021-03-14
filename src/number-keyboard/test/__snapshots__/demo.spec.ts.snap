@@ -1,82 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render demo and match snapshot 1`] = `
-<div class="van-cell van-cell--clickable"
-     role="button"
-     tabindex="0"
->
-  <div class="van-cell__value van-cell__value--alone">
-    Show Default Keyboard
+<div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__value van-cell__value--alone">
+      Show Default Keyboard
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
-  <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-  </i>
-</div>
-<div class="van-cell van-cell--clickable"
-     role="button"
-     tabindex="0"
->
-  <div class="van-cell__value van-cell__value--alone">
-    Show Keyboard With Sidebar
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__value van-cell__value--alone">
+      Show Keyboard With Sidebar
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
-  <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-  </i>
-</div>
-<div class="van-cell van-cell--clickable"
-     role="button"
-     tabindex="0"
->
-  <div class="van-cell__value van-cell__value--alone">
-    Show IdNumber Keyboard
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__value van-cell__value--alone">
+      Show IdNumber Keyboard
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
-  <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-  </i>
-</div>
-<div class="van-cell van-cell--clickable"
-     role="button"
-     tabindex="0"
->
-  <div class="van-cell__value van-cell__value--alone">
-    Show Keyboard With Title
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__value van-cell__value--alone">
+      Show Keyboard With Title
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
-  <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-  </i>
-</div>
-<div class="van-cell van-cell--clickable"
-     role="button"
-     tabindex="0"
->
-  <div class="van-cell__value van-cell__value--alone">
-    Show Keyboard With Multiple ExtraKey
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__value van-cell__value--alone">
+      Show Keyboard With Multiple ExtraKey
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
-  <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-  </i>
-</div>
-<div class="van-cell van-cell--clickable"
-     role="button"
-     tabindex="0"
->
-  <div class="van-cell__value van-cell__value--alone">
-    Show Keyboard With Random Key Order
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__value van-cell__value--alone">
+      Show Keyboard With Random Key Order
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
-  <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-  </i>
-</div>
-<div class="van-cell van-cell--clickable van-field"
-     role="button"
-     tabindex="0"
->
-  <div class="van-cell__title van-field__label">
-    <span>
-      Bind Value
-    </span>
-  </div>
-  <div class="van-cell__value van-field__value">
-    <div class="van-field__body">
-      <input type="text"
-             class="van-field__control"
-             readonly
-             placeholder="Click To Input"
-      >
+  <div class="van-cell van-cell--clickable van-field"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title van-field__label">
+      <span>
+        Bind Value
+      </span>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control"
+               readonly
+               placeholder="Click To Input"
+        >
+      </div>
     </div>
   </div>
 </div>
