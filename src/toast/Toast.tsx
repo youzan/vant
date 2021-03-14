@@ -83,14 +83,14 @@ export default defineComponent({
     };
 
     const renderIcon = () => {
-      const { icon, type, iconPrefix, loadingType } = props;
+      const { icon, type, iconSize, iconPrefix, loadingType } = props;
       const hasIcon = icon || type === 'success' || type === 'fail';
 
       if (hasIcon) {
         return (
           <Icon
             name={icon || type}
-            size={props.iconSize}
+            size={iconSize}
             class={bem('icon')}
             classPrefix={iconPrefix}
           />
@@ -98,7 +98,9 @@ export default defineComponent({
       }
 
       if (type === 'loading') {
-        return <Loading class={bem('loading')} type={loadingType} />;
+        return (
+          <Loading class={bem('loading')} size={iconSize} type={loadingType} />
+        );
       }
     };
 
