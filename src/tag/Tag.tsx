@@ -32,7 +32,7 @@ export default defineComponent({
   setup(props, { slots, emit }) {
     const onClose = (event: MouseEvent) => {
       event.stopPropagation();
-      emit('close');
+      emit('close', event);
     };
 
     const getStyle = (): CSSProperties => {

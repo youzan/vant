@@ -122,7 +122,7 @@ export default {
 | 事件名 | 说明           | 回调参数            |
 | ------ | -------------- | ------------------- |
 | click  | 点击时触发     | _event: MouseEvent_ |
-| close  | 关闭标签时触发 | -                   |
+| close  | 关闭标签时触发 | _event: MouseEvent_ |
 
 ### 样式变量
 

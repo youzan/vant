@@ -108,7 +108,7 @@ export default {
 | Event | Description                        | Arguments           |
 | ----- | ---------------------------------- | ------------------- |
 | click | Emitted when component is clicked  | _event: MouseEvent_ |
-| close | Emitted when close icon is clicked | -                   |
+| close | Emitted when close icon is clicked | _event: MouseEvent_ |
 
 ### Less Variables
 
