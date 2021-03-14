@@ -1,4 +1,4 @@
-import { PropType, defineComponent } from 'vue';
+import { PropType, defineComponent, ExtractPropTypes } from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
@@ -8,40 +8,34 @@ export const STEPS_KEY = Symbol(name);
 
 export type StepsDirection = 'horizontal' | 'vertical';
 
+const props = {
+  finishIcon: String,
+  activeColor: String,
+  inactiveIcon: String,
+  inactiveColor: String,
+  active: {
+    type: [Number, String],
+    default: 0,
+  },
+  direction: {
+    type: String as PropType<StepsDirection>,
+    default: 'horizontal',
+  },
+  activeIcon: {
+    type: String,
+    default: 'checked',
+  },
+};
+
 export type StepsProvide = {
-  props: {
-    active: number | string;
-    direction: StepsDirection;
-    activeIcon: string;
-    finishIcon?: string;
-    activeColor?: string;
-    inactiveIcon?: string;
-    inactiveColor?: string;
-  };
+  props: ExtractPropTypes<typeof props>;
   onClickStep: (index: number) => void;
 };
 
 export default defineComponent({
   name,
 
-  props: {
-    finishIcon: String,
-    activeColor: String,
-    inactiveIcon: String,
-    inactiveColor: String,
-    active: {
-      type: [Number, String],
-      default: 0,
-    },
-    direction: {
-      type: String as PropType<StepsDirection>,
-      default: 'horizontal',
-    },
-    activeIcon: {
-      type: String,
-      default: 'checked',
-    },
-  },
+  props,
 
   emits: ['click-step'],
 

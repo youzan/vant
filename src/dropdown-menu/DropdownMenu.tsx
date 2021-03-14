@@ -5,6 +5,7 @@ import {
   PropType,
   CSSProperties,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -25,45 +26,40 @@ export const DROPDOWN_KEY = Symbol(name);
 
 export type DropdownMenuDirection = 'up' | 'down';
 
+const props = {
+  zIndex: [Number, String],
+  activeColor: String,
+  overlay: {
+    type: Boolean,
+    default: true,
+  },
+  duration: {
+    type: [Number, String],
+    default: 0.2,
+  },
+  direction: {
+    type: String as PropType<DropdownMenuDirection>,
+    default: 'down',
+  },
+  closeOnClickOutside: {
+    type: Boolean,
+    default: true,
+  },
+  closeOnClickOverlay: {
+    type: Boolean,
+    default: true,
+  },
+};
+
 export type DropdownMenuProvide = {
-  props: {
-    zIndex?: number | string;
-    overlay: boolean;
-    duration: number | string;
-    direction: DropdownMenuDirection;
-    activeColor?: string;
-    closeOnClickOverlay: boolean;
-  };
+  props: ExtractPropTypes<typeof props>;
   offset: Ref<number>;
 };
 
 export default defineComponent({
   name,
 
-  props: {
-    zIndex: [Number, String],
-    activeColor: String,
-    overlay: {
-      type: Boolean,
-      default: true,
-    },
-    duration: {
-      type: [Number, String],
-      default: 0.2,
-    },
-    direction: {
-      type: String as PropType<DropdownMenuDirection>,
-      default: 'down',
-    },
-    closeOnClickOutside: {
-      type: Boolean,
-      default: true,
-    },
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: true,
-    },
-  },
+  props,
 
   setup(props, { slots }) {
     const root = ref<HTMLElement>();

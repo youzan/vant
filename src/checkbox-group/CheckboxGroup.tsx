@@ -1,4 +1,4 @@
-import { PropType, watch, defineComponent } from 'vue';
+import { PropType, watch, defineComponent, ExtractPropTypes } from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
@@ -9,6 +9,18 @@ const [name, bem] = createNamespace('checkbox-group');
 
 export const CHECKBOX_GROUP_KEY = Symbol(name);
 
+const props = {
+  max: [Number, String],
+  disabled: Boolean,
+  direction: String as PropType<CheckerDirection>,
+  iconSize: [Number, String],
+  checkedColor: String,
+  modelValue: {
+    type: Array as PropType<unknown[]>,
+    default: () => [],
+  },
+};
+
 export type CheckboxGroupToggleAllOptions =
   | boolean
   | {
@@ -17,27 +29,14 @@ export type CheckboxGroupToggleAllOptions =
     };
 
 export type CheckboxGroupProvide = CheckerParent & {
-  props: {
-    max: number | string;
-    modelValue: unknown[];
-  };
+  props: ExtractPropTypes<typeof props>;
   updateValue: (value: unknown[]) => void;
 };
 
 export default defineComponent({
   name,
 
-  props: {
-    max: [Number, String],
-    disabled: Boolean,
-    direction: String as PropType<CheckerDirection>,
-    iconSize: [Number, String],
-    checkedColor: String,
-    modelValue: {
-      type: Array as PropType<unknown[]>,
-      default: () => [],
-    },
-  },
+  props,
 
   emits: ['change', 'update:modelValue'],
 
