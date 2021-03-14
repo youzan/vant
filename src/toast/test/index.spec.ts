@@ -61,3 +61,16 @@ test('create a forbidClick toast', async () => {
     document.body.classList.contains('van-toast--unclickable')
   ).toBeFalsy();
 });
+
+test('should change icon size when using icon-size prop', async () => {
+  const wrapper = mount(Toast, {
+    props: {
+      show: true,
+      icon: 'success',
+      iconSize: '10',
+    },
+  });
+
+  await later();
+  expect(wrapper.find('.van-icon').style.fontSize).toEqual('10px');
+});

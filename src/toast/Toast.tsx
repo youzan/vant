@@ -29,6 +29,7 @@ export default defineComponent({
     show: Boolean,
     overlay: Boolean,
     message: [Number, String],
+    iconSize: [Number, String],
     className: UnknownProp,
     iconPrefix: String,
     loadingType: String as PropType<LoadingType>,
@@ -89,6 +90,7 @@ export default defineComponent({
         return (
           <Icon
             name={icon || type}
+            size={props.iconSize}
             class={bem('icon')}
             classPrefix={iconPrefix}
           />
