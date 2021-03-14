@@ -10,6 +10,7 @@ import {
   CSSProperties,
   defineComponent,
   ComponentPublicInstance,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -52,13 +53,51 @@ export const TABS_KEY = Symbol(name);
 
 export type TabsType = 'line' | 'card';
 
+const props = {
+  color: String,
+  border: Boolean,
+  sticky: Boolean,
+  animated: Boolean,
+  swipeable: Boolean,
+  scrollspy: Boolean,
+  background: String,
+  lineWidth: [Number, String],
+  lineHeight: [Number, String],
+  beforeChange: Function as PropType<Interceptor>,
+  titleActiveColor: String,
+  titleInactiveColor: String,
+  type: {
+    type: String as PropType<TabsType>,
+    default: 'line',
+  },
+  active: {
+    type: [Number, String],
+    default: 0,
+  },
+  ellipsis: {
+    type: Boolean,
+    default: true,
+  },
+  duration: {
+    type: [Number, String],
+    default: 0.3,
+  },
+  offsetTop: {
+    type: [Number, String],
+    default: 0,
+  },
+  lazyRender: {
+    type: Boolean,
+    default: true,
+  },
+  swipeThreshold: {
+    type: [Number, String],
+    default: 5,
+  },
+};
+
 export type TabsProvide = {
-  props: {
-    animated?: boolean;
-    swipeable?: boolean;
-    scrollspy?: boolean;
-    lazyRender: boolean;
-  };
+  props: ExtractPropTypes<typeof props>;
   setLine: () => void;
   onRendered: (name: string | number, title?: string) => void;
   scrollIntoView: (immediate?: boolean) => void;
@@ -68,48 +107,7 @@ export type TabsProvide = {
 export default defineComponent({
   name,
 
-  props: {
-    color: String,
-    border: Boolean,
-    sticky: Boolean,
-    animated: Boolean,
-    swipeable: Boolean,
-    scrollspy: Boolean,
-    background: String,
-    lineWidth: [Number, String],
-    lineHeight: [Number, String],
-    beforeChange: Function as PropType<Interceptor>,
-    titleActiveColor: String,
-    titleInactiveColor: String,
-    type: {
-      type: String as PropType<TabsType>,
-      default: 'line',
-    },
-    active: {
-      type: [Number, String],
-      default: 0,
-    },
-    ellipsis: {
-      type: Boolean,
-      default: true,
-    },
-    duration: {
-      type: [Number, String],
-      default: 0.3,
-    },
-    offsetTop: {
-      type: [Number, String],
-      default: 0,
-    },
-    lazyRender: {
-      type: Boolean,
-      default: true,
-    },
-    swipeThreshold: {
-      type: [Number, String],
-      default: 5,
-    },
-  },
+  props,
 
   emits: ['click', 'change', 'scroll', 'disabled', 'rendered', 'update:active'],
 

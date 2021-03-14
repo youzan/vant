@@ -7,6 +7,7 @@ import {
   onMounted,
   CSSProperties,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -31,14 +32,6 @@ import {
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
-export type IndexBarProvide = {
-  props: {
-    sticky: boolean;
-    zIndex?: number | string;
-    highlightColor?: string;
-  };
-};
-
 function genAlphabet() {
   const charCodeOfA = 'A'.charCodeAt(0);
   const indexList = Array(26)
@@ -52,25 +45,31 @@ const [name, bem] = createNamespace('index-bar');
 
 export const INDEX_BAR_KEY = Symbol(name);
 
+const props = {
+  zIndex: [Number, String],
+  highlightColor: String,
+  sticky: {
+    type: Boolean,
+    default: true,
+  },
+  stickyOffsetTop: {
+    type: Number,
+    default: 0,
+  },
+  indexList: {
+    type: Array as PropType<string[]>,
+    default: genAlphabet,
+  },
+};
+
+export type IndexBarProvide = {
+  props: ExtractPropTypes<typeof props>;
+};
+
 export default defineComponent({
   name,
 
-  props: {
-    zIndex: [Number, String],
-    highlightColor: String,
-    sticky: {
-      type: Boolean,
-      default: true,
-    },
-    stickyOffsetTop: {
-      type: Number,
-      default: 0,
-    },
-    indexList: {
-      type: Array as PropType<string[]>,
-      default: genAlphabet,
-    },
-  },
+  props,
 
   emits: ['select', 'change'],
 

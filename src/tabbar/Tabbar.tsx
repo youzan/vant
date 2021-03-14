@@ -1,4 +1,4 @@
-import { ref, PropType, defineComponent } from 'vue';
+import { ref, PropType, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import { createNamespace, getZIndexStyle } from '../utils';
@@ -13,43 +13,40 @@ const [name, bem] = createNamespace('tabbar');
 
 export const TABBAR_KEY = Symbol(name);
 
+const props = {
+  route: Boolean,
+  zIndex: [Number, String],
+  placeholder: Boolean,
+  activeColor: String,
+  beforeChange: Function as PropType<Interceptor>,
+  inactiveColor: String,
+  modelValue: {
+    type: [Number, String],
+    default: 0,
+  },
+  border: {
+    type: Boolean,
+    default: true,
+  },
+  fixed: {
+    type: Boolean,
+    default: true,
+  },
+  safeAreaInsetBottom: {
+    type: Boolean as PropType<boolean | null>,
+    default: null,
+  },
+};
+
 export type TabbarProvide = {
-  props: {
-    route?: boolean;
-    modelValue: number | string;
-    activeColor?: string;
-    inactiveColor?: string;
-  };
+  props: ExtractPropTypes<typeof props>;
   setActive: (active: number | string) => void;
 };
 
 export default defineComponent({
   name,
 
-  props: {
-    route: Boolean,
-    zIndex: [Number, String],
-    placeholder: Boolean,
-    activeColor: String,
-    beforeChange: Function as PropType<Interceptor>,
-    inactiveColor: String,
-    modelValue: {
-      type: [Number, String],
-      default: 0,
-    },
-    border: {
-      type: Boolean,
-      default: true,
-    },
-    fixed: {
-      type: Boolean,
-      default: true,
-    },
-    safeAreaInsetBottom: {
-      type: Boolean as PropType<boolean | null>,
-      default: null,
-    },
-  },
+  props,
 
   emits: ['change', 'update:modelValue'],
 

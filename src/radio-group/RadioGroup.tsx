@@ -1,4 +1,4 @@
-import { watch, defineComponent } from 'vue';
+import { watch, defineComponent, ExtractPropTypes } from 'vue';
 import { UnknownProp, createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 import { useLinkField } from '../composables/use-link-field';
@@ -8,23 +8,23 @@ const [name, bem] = createNamespace('radio-group');
 
 export const RADIO_KEY = Symbol(name);
 
+const props = {
+  disabled: Boolean,
+  iconSize: [Number, String],
+  direction: String,
+  modelValue: UnknownProp,
+  checkedColor: String,
+};
+
 export type RadioGroupProvide = CheckerParent & {
-  props: {
-    modelValue: unknown;
-  };
+  props: ExtractPropTypes<typeof props>;
   updateValue: (value: unknown) => void;
 };
 
 export default defineComponent({
   name,
 
-  props: {
-    disabled: Boolean,
-    iconSize: [Number, String],
-    direction: String,
-    modelValue: UnknownProp,
-    checkedColor: String,
-  },
+  props,
 
   emits: ['change', 'update:modelValue'],
 

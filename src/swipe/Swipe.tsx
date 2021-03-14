@@ -10,6 +10,7 @@ import {
   onDeactivated,
   onBeforeUnmount,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -35,16 +36,48 @@ const [name, bem] = createNamespace('swipe');
 
 export const SWIPE_KEY = Symbol(name);
 
+const props = {
+  width: [Number, String],
+  height: [Number, String],
+  vertical: Boolean,
+  lazyRender: Boolean,
+  indicatorColor: String,
+  loop: {
+    type: Boolean,
+    default: true,
+  },
+  autoplay: {
+    type: [Number, String],
+    default: 0,
+  },
+  duration: {
+    type: [Number, String],
+    default: 500,
+  },
+  touchable: {
+    type: Boolean,
+    default: true,
+  },
+  initialSwipe: {
+    type: [Number, String],
+    default: 0,
+  },
+  showIndicators: {
+    type: Boolean,
+    default: true,
+  },
+  stopPropagation: {
+    type: Boolean,
+    default: true,
+  },
+};
+
 export type SwipeToOptions = {
   immediate?: boolean;
 };
 
 export type SwipeProvide = {
-  props: {
-    loop: boolean;
-    vertical?: boolean;
-    lazyRender?: boolean;
-  };
+  props: ExtractPropTypes<typeof props>;
   size: ComputedRef<number>;
   count: ComputedRef<number>;
   activeIndicator: ComputedRef<number>;
@@ -53,41 +86,7 @@ export type SwipeProvide = {
 export default defineComponent({
   name,
 
-  props: {
-    width: [Number, String],
-    height: [Number, String],
-    vertical: Boolean,
-    lazyRender: Boolean,
-    indicatorColor: String,
-    loop: {
-      type: Boolean,
-      default: true,
-    },
-    autoplay: {
-      type: [Number, String],
-      default: 0,
-    },
-    duration: {
-      type: [Number, String],
-      default: 500,
-    },
-    touchable: {
-      type: Boolean,
-      default: true,
-    },
-    initialSwipe: {
-      type: [Number, String],
-      default: 0,
-    },
-    showIndicators: {
-      type: Boolean,
-      default: true,
-    },
-    stopPropagation: {
-      type: Boolean,
-      default: true,
-    },
-  },
+  props,
 
   emits: ['change'],
 
