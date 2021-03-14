@@ -78,11 +78,11 @@ export default defineComponent({
     };
 
     const renderCancel = () => {
-      if (props.cancelText) {
+      if (slots.cancel || props.cancelText) {
         return [
           <div class={bem('gap')} />,
           <button type="button" class={bem('cancel')} onClick={onCancel}>
-            {props.cancelText}
+            {slots.cancel ? slots.cancel() : props.cancelText}
           </button>,
         ];
       }

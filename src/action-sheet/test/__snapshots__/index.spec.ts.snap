@@ -5,6 +5,14 @@ exports[`should allow to custom close icon with closeIcon prop 1`] = `
 </i>
 `;
 
+exports[`should render cancel slot correctly 1`] = `
+<button type="button"
+        class="van-action-sheet__cancel"
+>
+  Custom Cancel
+</button>
+`;
+
 exports[`should render default slot correctly 1`] = `
 <transition-stub>
   <div class="van-overlay">
