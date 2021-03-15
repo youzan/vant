@@ -8,23 +8,19 @@ module.exports = {
     'prettier/@typescript-eslint',
     'plugin:markdown/recommended',
   ],
-
   parserOptions: {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 2019,
     sourceType: 'module',
     extraFileExtensions: ['.vue'],
   },
-
   plugins: ['@typescript-eslint'],
-
   env: {
     es6: true,
     node: true,
     jest: true,
     browser: true,
   },
-
   rules: {
     'no-new': 'off',
     'no-shadow': 'off',
