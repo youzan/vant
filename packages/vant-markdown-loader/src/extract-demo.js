@@ -14,7 +14,7 @@ module.exports = function extraDemo(content) {
     /<demo-code([\s\S]*?)>([\s\S]*?)<\/demo-code>/g,
     function (_, attrs, link) {
       link = link.trim(); // 去换行符
-      const tag = hyphenate(path.basename(link, '.vue'));
+      const tag = 'demo-code-' + hyphenate(path.basename(link, '.vue'));
       const fullLink = path.join(markdownDir, link);
       demoLinks.indexOf(fullLink) === -1 && demoLinks.push(fullLink);
       const demoContent = fs.readFileSync(fullLink, { encoding: 'utf8' });
