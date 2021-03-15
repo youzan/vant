@@ -115,6 +115,8 @@ export default {
 
 ### 自定义颜色
 
+通过 `active-color` 属性设置选中标签的颜色，通过 `inactive-color` 属性设置未选中标签的颜色。
+
 ```html
 <van-tabbar v-model="active" active-color="#ee0a24" inactive-color="#000">
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
@@ -125,6 +127,8 @@ export default {
 ```
 
 ### 监听切换事件
+
+通过 `change` 事件来监听选中标签的变化。
 
 ```html
 <van-tabbar v-model="active" @change="onChange">
@@ -185,7 +189,7 @@ export default {
 
 | 事件名 | 说明           | 回调参数                           |
 | ------ | -------------- | ---------------------------------- |
-| change | 切换标签时触发 | active: 当前选中标签的名称或索引值 |
+| change | 切换标签时触发 | _active: number \| string_ |
 
 ### TabbarItem Props
 
@@ -204,7 +208,7 @@ export default {
 
 | 名称 | 说明       | 参数                   |
 | ---- | ---------- | ---------------------- |
-| icon | 自定义图标 | active: 是否为选中标签 |
+| icon | 自定义图标 | _active: boolean_ |
 
 ### 样式变量
 
