@@ -8,12 +8,12 @@
       @switch-version="$emit('switch-version', $event)"
     />
     <doc-nav :lang="lang" :nav-config="config.nav" />
-    <doc-container :has-simulator="!!simulator">
+    <doc-container :has-simulator="hasSimulator">
       <doc-content>
         <slot />
       </doc-content>
     </doc-container>
-    <doc-simulator v-if="simulator" :src="simulator" />
+    <doc-simulator v-if="hasSimulator" :src="simulator" />
   </div>
 </template>
 
@@ -39,6 +39,7 @@ export default {
     lang: String,
     versions: Array,
     simulator: String,
+    hasSimulator: Boolean,
     langConfigs: Array,
     config: {
       type: Object,
