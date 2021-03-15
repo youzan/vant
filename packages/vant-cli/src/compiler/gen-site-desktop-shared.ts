@@ -47,9 +47,9 @@ function resolveDocuments(components: string[]): DocumentItem[] {
 
   if (locales) {
     const langs = Object.keys(locales);
-    langs.forEach(lang => {
+    langs.forEach((lang) => {
       const fileName = lang === defaultLang ? 'README.md' : `README.${lang}.md`;
-      components.forEach(component => {
+      components.forEach((component) => {
         docs.push({
           name: formatName(component, lang),
           path: join(SRC_DIR, component, fileName),
@@ -57,7 +57,7 @@ function resolveDocuments(components: string[]): DocumentItem[] {
       });
     });
   } else {
-    components.forEach(component => {
+    components.forEach((component) => {
       docs.push({
         name: formatName(component),
         path: join(SRC_DIR, component, 'README.md'),
@@ -65,26 +65,28 @@ function resolveDocuments(components: string[]): DocumentItem[] {
     });
   }
 
-  const staticDocs = glob.sync(normalizePath(join(DOCS_DIR, '**/*.md'))).map(path => {
-    const pairs = parse(path).name.split('.');
-    return {
-      name: formatName(pairs[0], pairs[1] || defaultLang),
-      path,
-    };
-  });
+  const staticDocs = glob
+    .sync(normalizePath(join(DOCS_DIR, '**/*.md')))
+    .map((path) => {
+      const pairs = parse(path).name.split('.');
+      return {
+        name: formatName(pairs[0], pairs[1] || defaultLang),
+        path,
+      };
+    });
 
-  return [...staticDocs, ...docs.filter(item => existsSync(item.path))];
+  return [...staticDocs, ...docs.filter((item) => existsSync(item.path))];
 }
 
 function genImportDocuments(items: DocumentItem[]) {
   return items
-    .map(item => `import ${item.name} from '${normalizePath(item.path)}';`)
+    .map((item) => `import ${item.name} from '${normalizePath(item.path)}';`)
     .join('\n');
 }
 
 function genExportDocuments(items: DocumentItem[]) {
   return `export const documents = {
-  ${items.map(item => item.name).join(',\n  ')}
+  ${items.map((item) => item.name).join(',\n  ')}
 };`;
 }
 
@@ -100,13 +102,23 @@ function genExportVersion() {
   return `export const packageVersion = '${getPackageJson().version}';`;
 }
 
+function genInstall() {
+  return `import './package-style';`;
+}
+
+function genExportPackageEntry() {
+  return `export { default as packageEntry } from './package-entry';`;
+}
+
 export function genSiteDesktopShared() {
   const dirs = readdirSync(SRC_DIR);
   const documents = resolveDocuments(dirs);
 
   const code = `${genImportConfig()}
+${genInstall()}
 ${genImportDocuments(documents)}
 
+${genExportPackageEntry()}
 ${genExportConfig()}
 ${genExportDocuments(documents)}
 ${genExportVersion()}

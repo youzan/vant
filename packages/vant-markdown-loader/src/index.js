@@ -1,22 +1,41 @@
+const path = require('path');
 const loaderUtils = require('loader-utils');
-const MarkdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
 const frontMatter = require('front-matter');
-const highlight = require('./highlight');
+const parser = require('./md-parser');
 const linkOpen = require('./link-open');
 const cardWrapper = require('./card-wrapper');
-const { slugify } = require('transliteration');
+const extractDemo = require('./extract-demo');
+const sideEffectTags = require('./side-effect-tags');
+
+function camelize(str) {
+  return str.replace(/-(\w)/g, (_, c) => (c ? c.toUpperCase() : ''));
+}
 
 function wrapper(content) {
+  let demoLinks;
+  let styles;
+  [content, demoLinks] = extractDemo.call(this, content);
+  [content, styles] = sideEffectTags(content);
   content = cardWrapper(content);
-  content = escape(content);
-
   return `
-import { h } from 'vue';
+<template>
+  <section v-once>
+    ${content}
+  </section>
+</template>
 
-const content = unescape(\`${content}\`);
+<script>
+${demoLinks
+  .map((link) => {
+    return `import DemoCode${camelize(path.basename(link, '.vue'))} from '${link}';`;
+  })
+  .join('\n')}
 
 export default {
+  components: {
+    ${demoLinks.map((link) => `DemoCode${camelize(path.basename(link, '.vue'))}`).join(',')}
+  },
+
   mounted() {
     const anchors = [].slice.call(this.$el.querySelectorAll('h2, h3, h4, h5'));
 
@@ -35,21 +54,12 @@ export default {
       }
     }
   },
-
-  render() {
-    return h('section', { innerHTML: content });
-  }
 };
+</script>
+
+${styles.join('\n')}
 `;
 }
-
-const parser = new MarkdownIt({
-  html: true,
-  highlight,
-}).use(markdownItAnchor, {
-  level: 2,
-  slugify,
-});
 
 module.exports = function (source) {
   let options = loaderUtils.getOptions(this) || {};
@@ -72,5 +82,5 @@ module.exports = function (source) {
     linkOpen(parser);
   }
 
-  return options.wrapper(parser.render(source), fm);
+  return options.wrapper.call(this, parser.render(source), fm);
 };

@@ -12,6 +12,7 @@
     - [site.versions](#siteversions)
     - [site.baiduAnalytics](#sitebaiduanalytics)
     - [site.searchConfig](#sitesearchconfig)
+    - [site.hideSimulator](#sitehidesimulator)
   - [Webpack](#webpack)
   - [Babel](#babel)
     - [默认配置](#-1)
@@ -165,6 +166,8 @@ module.exports = {
             path: 'home',
             // 导航项文案
             title: '介绍',
+            // 是否隐藏当前页右侧的手机模拟器（默认不隐藏）
+            hideSimulator: true,
           },
         ],
       },
@@ -221,6 +224,13 @@ module.exports = {
 文档网站的搜索配置，基于 algolia 提供的 docsearch 服务实现。
 
 配置内容参见 [docsearch](https://docsearch.algolia.com/docs/behavior)。
+
+### site.hideSimulator
+
+- Type: `boolean`
+- Default: `false`
+
+是否隐藏所有页面右侧的手机模拟器，默认不隐藏
 
 ### site.htmlPluginOptions
 
