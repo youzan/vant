@@ -1,8 +1,8 @@
 module.exports = {
   extends: [
+    'plugin:vue/vue3-recommended',
     'airbnb-base',
     'plugin:@typescript-eslint/recommended',
-    'plugin:vue/vue3-recommended',
     'prettier',
     'prettier/vue',
     'prettier/@typescript-eslint',
@@ -67,6 +67,10 @@ module.exports = {
   },
 
   overrides: [
+    {
+      files: ['*.vue'],
+      parser: require.resolve('vue-eslint-parser')
+    },
     {
       files: ['**/*.md/*.js', '**/*.md/*.ts'],
       rules: {
