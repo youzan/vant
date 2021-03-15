@@ -225,15 +225,12 @@ module.exports = {
 
 配置内容参见 [docsearch](https://docsearch.algolia.com/docs/behavior)。
 
-- [site.hideSimulator](#sitehidesimulator)
-
 ### site.hideSimulator
 
 - Type: `boolean`
 - Default: `false`
 
 是否隐藏所有页面右侧的手机模拟器，默认不隐藏
-
 
 ### site.htmlPluginOptions
 
