@@ -32,6 +32,7 @@ const [name, bem] = createNamespace('popover');
 const popupProps = [
   'show',
   'overlay',
+  'duration',
   'teleport',
   'overlayStyle',
   'overlayClass',
@@ -68,6 +69,7 @@ export default defineComponent({
   props: {
     show: Boolean,
     overlay: Boolean,
+    duration: [Number, String],
     overlayClass: UnknownProp,
     overlayStyle: Object as PropType<CSSProperties>,
     offset: {
