@@ -162,7 +162,7 @@ test('should emit click-overlay event when overlay is clicked', () => {
   expect(onClickOverlay).toHaveBeenCalledTimes(1);
 });
 
-test('should not close Popover when close-on-click-overlay is false', () => {
+test('should not close Popover when overlay is clicked and close-on-click-overlay is false', () => {
   const wrapper = mount(Popover, {
     props: {
       show: true,
