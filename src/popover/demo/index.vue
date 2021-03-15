@@ -4,6 +4,8 @@
       v-model:show="show.lightTheme"
       :actions="t('actions')"
       placement="bottom-start"
+      overlay
+      overlay-class="foo"
       @select="onSelect"
     >
       <template #reference>

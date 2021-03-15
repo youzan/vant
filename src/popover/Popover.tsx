@@ -11,7 +11,12 @@ import {
 import { Instance, createPopper, offsetModifier } from '@vant/popperjs';
 
 // Utils
-import { ComponentInstance, createNamespace } from '../utils';
+import {
+  pick,
+  UnknownProp,
+  createNamespace,
+  ComponentInstance,
+} from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
 // Composables
@@ -22,6 +27,14 @@ import { Icon } from '../icon';
 import { Popup } from '../popup';
 
 const [name, bem] = createNamespace('popover');
+
+const popupProps = [
+  'show',
+  'overlay',
+  'teleport',
+  'overlayClass',
+  'closeOnClickOverlay',
+] as const;
 
 export type PopoverTheme = 'light' | 'dark';
 export type PopoverTrigger = 'manual' | 'click';
@@ -53,6 +66,7 @@ export default defineComponent({
   props: {
     show: Boolean,
     overlay: Boolean,
+    overlayClass: UnknownProp,
     offset: {
       type: (Array as unknown) as PropType<[number, number]>,
       default: () => [0, 8],
@@ -204,16 +218,16 @@ export default defineComponent({
         </span>
         <Popup
           ref={popoverRef}
-          show={props.show}
           class={bem([props.theme])}
-          overlay={props.overlay}
           position={''}
-          teleport={props.teleport}
           transition="van-popover-zoom"
           lockScroll={false}
           onTouchstart={onTouchstart}
-          closeOnClickOverlay={props.closeOnClickOverlay}
-          {...{ ...attrs, 'onUpdate:show': updateShow }}
+          {...{
+            ...attrs,
+            ...pick(props, popupProps),
+            'onUpdate:show': updateShow,
+          }}
         >
           <div class={bem('arrow')} />
           <div role="menu" class={bem('content')}>
