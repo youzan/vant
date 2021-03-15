@@ -213,6 +213,7 @@ export default {
 | overlay | Whether to show overlay | _boolean_ | `false` |
 | close-on-click-action | Whether to close when clicking action | _boolean_ | `true` |
 | close-on-click-outside | Whether to close when clicking outside | _boolean_ | `true` |
+| close-on-click-overlay `v3.0.10` | Whether to close when clicking overlay | _boolean_ | `true` |
 | teleport | Return the mount node for Popover | _string \| Element_ | `body` |
 
 ### Data Structure of Action
