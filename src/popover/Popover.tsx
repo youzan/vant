@@ -81,6 +81,10 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   emits: ['select', 'touchstart', 'update:show'],
@@ -153,7 +157,11 @@ export default defineComponent({
       }
     };
 
-    const onClickAway = () => updateShow(false);
+    const onClickAway = () => {
+      if (!props.overlay || props.closeOnClickOverlay) {
+        updateShow(false);
+      }
+    };
 
     const renderAction = (action: PopoverAction, index: number) => {
       const { icon, text, color, disabled, className } = action;
@@ -197,6 +205,7 @@ export default defineComponent({
           transition="van-popover-zoom"
           lockScroll={false}
           onTouchstart={onTouchstart}
+          closeOnClickOverlay={props.closeOnClickOverlay}
           {...{ ...attrs, 'onUpdate:show': updateShow }}
         >
           <div class={bem('arrow')} />
