@@ -27,13 +27,13 @@ function wrapper(content) {
 <script>
 ${demoLinks
   .map((link) => {
-    return `import ${camelize(path.basename(link, '.vue'))} from '${link}';`;
+    return `import DemoCode${camelize(path.basename(link, '.vue'))} from '${link}';`;
   })
   .join('\n')}
 
 export default {
   components: {
-    ${demoLinks.map((link) => camelize(path.basename(link, '.vue'))).join(',')}
+    ${demoLinks.map((link) => `DemoCode${camelize(path.basename(link, '.vue'))}`).join(',')}
   },
 
   mounted() {
