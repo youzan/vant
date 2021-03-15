@@ -55,13 +55,8 @@ export default defineComponent({
     const { linkChildren } = useChildren(TABBAR_KEY);
     const renderPlaceholder = usePlaceholder(root, bem);
 
-    const isUnfit = () => {
-      if (props.safeAreaInsetBottom !== null) {
-        return !props.safeAreaInsetBottom;
-      }
-      // enable safe-area-inset-bottom by default when fixed
-      return !props.fixed;
-    };
+    // enable safe-area-inset-bottom by default when fixed
+    const isUnfit = () => !(props.safeAreaInsetBottom ?? props.fixed);
 
     const renderTabbar = () => {
       const { fixed, zIndex, border } = props;

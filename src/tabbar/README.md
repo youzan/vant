@@ -171,9 +171,9 @@ export default {
 
 ### Tabbar Events
 
-| Event  | Description                      | Arguments                    |
-| ------ | -------------------------------- | ---------------------------- |
-| change | Emitted when changing active tab | active: index of current tab |
+| Event  | Description                      | Arguments                  |
+| ------ | -------------------------------- | -------------------------- |
+| change | Emitted when changing active tab | _active: number \| string_ |
 
 ### TabbarItem Props
 
@@ -190,9 +190,9 @@ export default {
 
 ### TabbarItem Slots
 
-| Name | Description | SlotProps |
-| ---- | ----------- | --------- |
-| icon | Custom icon | active    |
+| Name | Description | SlotProps                  |
+| ---- | ----------- | -------------------------- |
+| icon | Custom icon |  _active: boolean_ |
 
 ### Less Variables
 
