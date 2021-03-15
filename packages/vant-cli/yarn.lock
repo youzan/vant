@@ -1880,10 +1880,10 @@
     eslint-plugin-markdown "^2.0.0"
     eslint-plugin-vue "^7.1.0"
 
-"@vant/markdown-loader@^3.1.0-beta.0":
-  version "3.1.0-beta.0"
-  resolved "https://registry.npmjs.org/@vant/markdown-loader/-/markdown-loader-3.1.0-beta.0.tgz#30efa5126fd0fbd668c3813161c2f3702b72b870"
-  integrity sha512-xkJcy1941fzDF5Es3SV5l/CWlPAllP1201TucMPumVR6rW/Z4A1bpt/PHpFNpDQv5RmQJKWN45sfLL8kLyWSgg==
+"@vant/markdown-loader@^3.1.0-beta.1":
+  version "3.1.0-beta.1"
+  resolved "https://registry.npmjs.org/@vant/markdown-loader/-/markdown-loader-3.1.0-beta.1.tgz#a1542d2e19666f320c5656f18a22df3ad3da572c"
+  integrity sha512-H/sETFBBh6xZ061T+RApHeHxggDaCCrL/e+YELr5WRi3elVXIFrUrsBOMJ1ZXEM5LGz0y+27AWgRIAWnVL+vYw==
   dependencies:
     front-matter "^4.0.2"
     highlight.js "^10.3.1"
