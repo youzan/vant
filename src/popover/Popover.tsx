@@ -85,6 +85,10 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    closeOnClickOutside: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   emits: ['select', 'touchstart', 'update:show'],
@@ -158,7 +162,10 @@ export default defineComponent({
     };
 
     const onClickAway = () => {
-      if (!props.overlay || props.closeOnClickOverlay) {
+      if (
+        props.closeOnClickOutside &&
+        (!props.overlay || props.closeOnClickOverlay)
+      ) {
         updateShow(false);
       }
     };
