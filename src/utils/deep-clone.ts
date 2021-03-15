@@ -1,10 +1,4 @@
-import { isDef } from './base';
-
 export function deepClone<T extends Record<string, any>>(obj: T): T {
-  if (!isDef(obj)) {
-    return obj;
-  }
-
   if (Array.isArray(obj)) {
     return (obj.map((item) => deepClone(item)) as unknown) as T;
   }
