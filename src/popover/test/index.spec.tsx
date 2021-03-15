@@ -175,3 +175,15 @@ test('should not close Popover when overlay is clicked and close-on-click-overla
   trigger(overlay, 'touchstart');
   expect(wrapper.emitted('update:show')).toBeFalsy();
 });
+
+test('should not close Popover when outside is clicked and close-on-click-outside is false', () => {
+  const wrapper = mount(Popover, {
+    props: {
+      show: true,
+      closeOnClickOutside: false,
+    },
+  });
+
+  trigger(document.body, 'touchstart');
+  expect(wrapper.emitted('update:show')).toBeFalsy();
+});

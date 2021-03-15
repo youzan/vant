@@ -1,6 +1,8 @@
-import {isDef} from "./base";
+import { isDef } from './base';
 
-export function deepClone<T extends Record<string, any> | null | undefined>(obj: T): T {
+export function deepClone<T extends Record<string, any> | null | undefined>(
+  obj: T
+): T {
   if (!isDef(obj)) {
     return obj;
   }
