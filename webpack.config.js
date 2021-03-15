@@ -8,7 +8,8 @@ module.exports = function () {
   return {
     devtool: false,
     entry: {
-      'site-mobile': ['./docs/site/mobile'],
+      'site-mobile': ['./docs/site/entry'],
+      'site-desktop': ['./docs/site/entry'],
     },
     resolve: {
       alias: {

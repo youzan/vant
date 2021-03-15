@@ -7,5 +7,8 @@ import { router } from './router';
 window.app = createApp(App)
   .use(router)
   .use(packageEntry)
-  .component(DemoPlayground.name, DemoPlayground)
-  .mount('#app');
+  .component(DemoPlayground.name, DemoPlayground);
+
+setTimeout(() => {
+  window.app.mount('#app');
+}, 0);
