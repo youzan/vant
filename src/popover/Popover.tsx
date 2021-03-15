@@ -4,6 +4,7 @@ import {
   nextTick,
   PropType,
   onMounted,
+  CSSProperties,
   TeleportProps,
   onBeforeUnmount,
   defineComponent,
@@ -32,6 +33,7 @@ const popupProps = [
   'show',
   'overlay',
   'teleport',
+  'overlayStyle',
   'overlayClass',
   'closeOnClickOverlay',
 ] as const;
@@ -67,6 +69,7 @@ export default defineComponent({
     show: Boolean,
     overlay: Boolean,
     overlayClass: UnknownProp,
+    overlayStyle: Object as PropType<CSSProperties>,
     offset: {
       type: (Array as unknown) as PropType<[number, number]>,
       default: () => [0, 8],
