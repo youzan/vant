@@ -226,6 +226,7 @@ export default {
 | offset | 出现位置的偏移量 | _[number, number]_ | `[0, 8]` |
 | overlay | 是否显示遮罩层 | _boolean_ | `false` |
 | overlay-class `v3.0.10` | 自定义遮罩层类名 | _string \| Array \| object_ | - |
+| overlay-style `v3.0.10` | 自定义遮罩层样式 | _object_ | - |
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `true` |
 | close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
 | close-on-click-overlay `v3.0.10` | 是否在点击遮罩层后关闭菜单 | _boolean_ | `true` |
