@@ -6,6 +6,7 @@
       :config="config"
       :versions="versions"
       :simulator="simulator"
+      :has-simulator="hasSimulator"
       :lang-configs="langConfigs"
     >
       <router-view />
@@ -28,6 +29,7 @@ export default {
 
     return {
       simulator: `${path}mobile.html${location.hash}`,
+      hasSimulator: true,
     };
   },
 
@@ -63,18 +65,18 @@ export default {
   watch: {
     // eslint-disable-next-line
     '$route.path'() {
-      this.setTitle();
+      this.setTitleAndToogleSimulator();
     },
 
     lang(val) {
       setLang(val);
-      this.setTitle();
+      this.setTitleAndToogleSimulator();
     },
 
     config: {
       handler(val) {
         if (val) {
-          this.setTitle();
+          this.setTitleAndToogleSimulator();
         }
       },
       immediate: true,
@@ -82,7 +84,7 @@ export default {
   },
 
   methods: {
-    setTitle() {
+    setTitleAndToogleSimulator() {
       let { title } = this.config;
 
       const navItems = this.config.nav.reduce(
@@ -101,6 +103,8 @@ export default {
       }
 
       document.title = title;
+
+      this.hasSimulator = !(config.site.hideSimulator || this.config.hideSimulator || (current && current.hideSimulator));
     },
   },
 };
