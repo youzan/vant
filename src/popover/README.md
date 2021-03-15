@@ -209,6 +209,7 @@ export default {
 | placement | Placement | _string_ | `bottom` |
 | theme | Theme，can be set to `dark` | _string_ | `light` |
 | trigger | Trigger mode，can be set to `manual` | `click` |
+| duration | Transition duration, unit second | _number \| string_ | `0.3` |
 | offset | Distance to reference | _[number, number]_ | `[0, 8]` |
 | overlay | Whether to show overlay | _boolean_ | `false` |
 | overlay-class `v3.0.10` | Custom overlay class | _string \| Array \| object_ | - |
