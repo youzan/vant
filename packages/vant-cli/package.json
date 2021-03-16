@@ -48,7 +48,7 @@
     "@nuxt/friendly-errors-webpack-plugin": "^2.5.0",
     "@types/jest": "^26.0.20",
     "@types/webpack-dev-server": "^3.11.1",
-    "@vant/eslint-config": "^3.1.0",
+    "@vant/eslint-config": "^3.2.0",
     "@vant/markdown-loader": "^3.1.0-beta.1",
     "@vant/markdown-vetur": "^2.0.2",
     "@vant/stylelint-config": "^1.4.2",

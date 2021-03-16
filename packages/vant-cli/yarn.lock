@@ -1867,10 +1867,10 @@
     "@typescript-eslint/types" "4.6.1"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/eslint-config@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/@vant/eslint-config/-/eslint-config-3.1.0.tgz#f5cc4104cd72e2e643975bc229b4222c983ec304"
-  integrity sha512-7NgXS3R6nKS00Q2qFA+TPPcw2vjm4NiW/voesYBZus58nhy2LrXG8eqd/5oV0JSEG0b0fWAGYC43KOX4MRn2eQ==
+"@vant/eslint-config@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.npmjs.org/@vant/eslint-config/-/eslint-config-3.2.0.tgz#8e57941778225e2c6afde92ef573066fa921962e"
+  integrity sha512-nlUk6lg/HVQmiXhdEoOAqE+oDaSlKo3aS+qTaGAUiTp3fzN2ockVg727haSoERtitQpPzOcsiOOHZtY7K1WqVQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.6.0"
     "@typescript-eslint/parser" "^4.6.0"
