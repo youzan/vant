@@ -8,7 +8,7 @@ const extractDemo = require('./extract-demo');
 const sideEffectTags = require('./side-effect-tags');
 
 function camelize(str) {
-  return str.replace(/-(\w)/g, (_, c) => (c ? c.toUpperCase() : ''));
+  return `-${str}`.replace(/-(\w)/g, (_, c) => (c ? c.toUpperCase() : ''));
 }
 
 const sharedVueOptions = `mounted() {
