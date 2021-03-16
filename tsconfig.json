@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "preserve",
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ES2019",
+    "module": "ESNext",
     "strict": true,
     "allowJs": true,
     "skipLibCheck": true,
