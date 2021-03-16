@@ -11,32 +11,7 @@ function camelize(str) {
   return str.replace(/-(\w)/g, (_, c) => (c ? c.toUpperCase() : ''));
 }
 
-function wrapper(content) {
-  let demoLinks;
-  let styles;
-  [content, demoLinks] = extractDemo.call(this, content);
-  [content, styles] = sideEffectTags(content);
-  content = cardWrapper(content);
-  return `
-<template>
-  <section v-once>
-    ${content}
-  </section>
-</template>
-
-<script>
-${demoLinks
-  .map((link) => {
-    return `import DemoCode${camelize(path.basename(link, '.vue'))} from '${link}';`;
-  })
-  .join('\n')}
-
-export default {
-  components: {
-    ${demoLinks.map((link) => `DemoCode${camelize(path.basename(link, '.vue'))}`).join(',')}
-  },
-
-  mounted() {
+const sharedVueOptions = `mounted() {
     const anchors = [].slice.call(this.$el.querySelectorAll('h2, h3, h4, h5'));
 
     anchors.forEach(anchor => {
@@ -54,6 +29,62 @@ export default {
       }
     }
   },
+`;
+
+function wrapper(content) {
+  let demoLinks;
+  [content, demoLinks] = extractDemo.call(this, content);
+  content = cardWrapper(content);
+
+  // 不包含 demo-code 的 md 文件，直接使绑定 HTML
+  if (demoLinks.length === 0) {
+    content = escape(content);
+
+    return `
+<script>
+import { h } from 'vue';
+
+const content = unescape(\`${content}\`);
+
+export default {
+${sharedVueOptions}
+
+  render() {
+    return h('section', { innerHTML: content });
+  }
+};
+</script>
+`;
+  }
+
+  // 包含 demo-code 的 md 文件，需要走模版渲染
+  let styles;
+  [content, styles] = sideEffectTags(content);
+
+  return `
+<template>
+  <section v-once>
+    ${content}
+  </section>
+</template>
+
+<script>
+${demoLinks
+  .map((link) => {
+    return `import DemoCode${camelize(
+      path.basename(link, '.vue')
+    )} from '${link}';`;
+  })
+  .join('\n')}
+
+export default {
+  components: {
+    ${demoLinks
+      .map((link) => `DemoCode${camelize(path.basename(link, '.vue'))}`)
+      .join(',')}
+  },
+
+${sharedVueOptions}
 };
 </script>
 
