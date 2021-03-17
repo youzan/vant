@@ -118,7 +118,9 @@ export default defineComponent({
             {slots.loading ? (
               slots.loading()
             ) : (
-              <Loading size={16}>{props.loadingText || t('loading')}</Loading>
+              <Loading class={bem('loading-icon')}>
+                {props.loadingText || t('loading')}
+              </Loading>
             )}
           </div>
         );
