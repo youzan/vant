@@ -208,3 +208,4 @@ app.use(Button);
 | @button-plain-background-color   | `@white`             | -    |
 | @button-disabled-opacity         | `@disabled-opacity`  | -    |
 | @button-icon-size                | `1.2em`              | -    |
+| @button-loading-icon-size        | `20px`               | -    |

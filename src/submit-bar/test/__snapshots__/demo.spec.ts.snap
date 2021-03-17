@@ -83,9 +83,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <div class="van-loading van-loading--circular van-button__loading">
-            <span class="van-loading__spinner van-loading__spinner--circular"
-                  style="color: currentColor; width: 20px; height: 20px;"
-            >
+            <span class="van-loading__spinner van-loading__spinner--circular">
               <svg class="van-loading__circular"
                    viewbox="25 25 50 50"
               >
