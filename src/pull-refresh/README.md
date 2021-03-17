@@ -134,8 +134,9 @@ Use slots to custom tips.
 
 How to use: [Custom Theme](#/en-US/theme).
 
-| Name                          | Default Value   | Description |
-| ----------------------------- | --------------- | ----------- |
-| @pull-refresh-head-height     | `50px`          | -           |
-| @pull-refresh-head-font-size  | `@font-size-md` | -           |
-| @pull-refresh-head-text-color | `@gray-6`       | -           |
+| Name                            | Default Value   | Description |
+| ------------------------------- | --------------- | ----------- |
+| @pull-refresh-head-height       | `50px`          | -           |
+| @pull-refresh-head-font-size    | `@font-size-md` | -           |
+| @pull-refresh-head-text-color   | `@gray-6`       | -           |
+| @pull-refresh-loading-icon-size | `16px`          | -           |

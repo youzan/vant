@@ -141,11 +141,12 @@ export default {
 
 组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
 
-| 名称                          | 默认值          | 描述 |
-| ----------------------------- | --------------- | ---- |
-| @pull-refresh-head-height     | `50px`          | -    |
-| @pull-refresh-head-font-size  | `@font-size-md` | -    |
-| @pull-refresh-head-text-color | `@gray-6`       | -    |
+| 名称                            | 默认值          | 描述 |
+| ------------------------------- | --------------- | ---- |
+| @pull-refresh-head-height       | `50px`          | -    |
+| @pull-refresh-head-font-size    | `@font-size-md` | -    |
+| @pull-refresh-head-text-color   | `@gray-6`       | -    |
+| @pull-refresh-loading-icon-size | `16px`          | -    |
 
 ## 常见问题
 

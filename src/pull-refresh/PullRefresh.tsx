@@ -129,7 +129,7 @@ export default defineComponent({
         nodes.push(<div class={bem('text')}>{getStatusText()}</div>);
       }
       if (status === 'loading') {
-        nodes.push(<Loading size="16">{getStatusText()}</Loading>);
+        nodes.push(<Loading class={bem('loading')}>{getStatusText()}</Loading>);
       }
 
       return nodes;
