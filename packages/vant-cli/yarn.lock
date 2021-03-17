@@ -1991,13 +1991,13 @@
     eslint-plugin-import "^2.20.2"
     eslint-plugin-vue "^6.2.2"
 
-"@vant/markdown-loader@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.npm.taobao.org/@vant/markdown-loader/download/@vant/markdown-loader-2.3.0.tgz#ea8ab4d8d41609839b40b817bc3a598cf13f9920"
-  integrity sha1-6oq02NQWCYObQLgXvDpZjPE/mSA=
+"@vant/markdown-loader@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.npmjs.org/@vant/markdown-loader/-/markdown-loader-2.4.0.tgz#abc5471645eef7a91331e79b27179b8c8584982b"
+  integrity sha512-3TRzCctl4eCcm3o1cXaQpcvWZrf1lB2al/gU7yYiy/PTgCqIPzHgDMJT6b3TJ1cE0tszNgUDc056LMVIhMcNqg==
   dependencies:
     front-matter "^3.0.2"
-    highlight.js "^9.16.2"
+    highlight.js "^9.17.1"
     loader-utils "^1.2.3"
     markdown-it "^10.0.0"
     markdown-it-anchor "^5.2.5"
@@ -5922,10 +5922,10 @@ he@^1.2.0:
   resolved "https://registry.npm.taobao.org/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
 
-highlight.js@^9.16.2:
-  version "9.18.3"
-  resolved "https://registry.npm.taobao.org/highlight.js/download/highlight.js-9.18.3.tgz#a1a0a2028d5e3149e2380f8a865ee8516703d634"
-  integrity sha1-oaCiAo1eMUniOA+Khl7oUWcD1jQ=
+highlight.js@^9.17.1:
+  version "9.18.5"
+  resolved "https://registry.npmjs.org/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
+  integrity sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
