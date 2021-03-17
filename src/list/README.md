@@ -204,7 +204,8 @@ How to use: [Custom Theme](#/en-US/theme).
 
 | Name                    | Default Value   | Description |
 | ----------------------- | --------------- | ----------- |
-| @list-icon-margin-right | `5px`           | -           |
+| @list-icon-margin-right | `@padding-base` | -           |
 | @list-text-color        | `@gray-6`       | -           |
 | @list-text-font-size    | `@font-size-md` | -           |
 | @list-text-line-height  | `50px`          | -           |
+| @list-loading-icon-size | `16px`          | -           |
