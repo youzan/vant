@@ -1,4 +1,4 @@
-@import '../style/var.less';
+@import './var.less';
 @import '../style/mixins/hairline';
 
 .van-share-sheet {
@@ -32,7 +32,7 @@
     -webkit-overflow-scrolling: touch;
 
     &--border::before {
-      .hairline-top(@cell-border-color, @padding-md);
+      .hairline-top(@border-color, @padding-md);
     }
 
     &::-webkit-scrollbar {

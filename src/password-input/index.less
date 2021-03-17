@@ -1,4 +1,4 @@
-@import '../style/var.less';
+@import './var.less';
 
 .van-password-input {
   position: relative;
@@ -59,11 +59,11 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: @number-keyboard-cursor-width;
-    height: @number-keyboard-cursor-height;
-    background-color: @number-keyboard-cursor-color;
+    width: @password-input-cursor-width;
+    height: @password-input-cursor-height;
+    background-color: @password-input-cursor-color;
     transform: translate(-50%, -50%);
-    animation: @number-keyboard-cursor-animation-duration van-cursor-flicker
+    animation: @password-input-cursor-animation-duration van-cursor-flicker
       infinite;
   }
 }

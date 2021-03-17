@@ -202,23 +202,19 @@ export default {
 
 How to use: [Custom Theme](#/en-US/theme).
 
-| Name | Default Value | Description |
-| --- | --- | --- |
-| @number-keyboard-background-color | `@gray-2` | - |
-| @number-keyboard-key-height | `48px` | - |
-| @number-keyboard-key-font-size | `28px` | - |
-| @number-keyboard-key-active-color | `@gray-3` | - |
-| @number-keyboard-delete-font-size | `@font-size-lg` | - |
-| @number-keyboard-title-color | `@gray-7` | - |
-| @number-keyboard-title-height | `34px` | - |
-| @number-keyboard-title-font-size | `@font-size-lg` | - |
-| @number-keyboard-close-padding | `0 @padding-md` | - |
-| @number-keyboard-close-color | `@text-link-color` | - |
-| @number-keyboard-close-font-size | `@font-size-md` | - |
-| @number-keyboard-button-text-color | `@white` | - |
-| @number-keyboard-button-background-color | `@blue` | - |
-| @number-keyboard-cursor-color | `@text-color` | - |
-| @number-keyboard-cursor-width | `1px` | - |
-| @number-keyboard-cursor-height | `40%` | - |
-| @number-keyboard-cursor-animation-duration | `1s` | - |
-| @number-keyboard-z-index | `100` | - |
+| Name                                     | Default Value      | Description |
+| ---------------------------------------- | ------------------ | ----------- |
+| @number-keyboard-background-color        | `@gray-2`          | -           |
+| @number-keyboard-key-height              | `48px`             | -           |
+| @number-keyboard-key-font-size           | `28px`             | -           |
+| @number-keyboard-key-active-color        | `@gray-3`          | -           |
+| @number-keyboard-delete-font-size        | `@font-size-lg`    | -           |
+| @number-keyboard-title-color             | `@gray-7`          | -           |
+| @number-keyboard-title-height            | `34px`             | -           |
+| @number-keyboard-title-font-size         | `@font-size-lg`    | -           |
+| @number-keyboard-close-padding           | `0 @padding-md`    | -           |
+| @number-keyboard-close-color             | `@text-link-color` | -           |
+| @number-keyboard-close-font-size         | `@font-size-md`    | -           |
+| @number-keyboard-button-text-color       | `@white`           | -           |
+| @number-keyboard-button-background-color | `@blue`            | -           |
+| @number-keyboard-z-index                 | `100`              | -           |
