@@ -41,6 +41,7 @@ export default defineComponent({
     hairline: Boolean,
     disabled: Boolean,
     iconPrefix: String,
+    loadingSize: String,
     loadingText: String,
     loadingType: String as PropType<LoadingType>,
     tag: {
@@ -58,10 +59,6 @@ export default defineComponent({
     nativeType: {
       type: String as PropType<ButtonHTMLAttributes['type']>,
       default: 'button',
-    },
-    loadingSize: {
-      type: String,
-      default: '20px',
     },
     iconPosition: {
       type: String as PropType<'left' | 'right'>,
@@ -84,7 +81,6 @@ export default defineComponent({
           class={bem('loading')}
           size={props.loadingSize}
           type={props.loadingType}
-          color="currentColor"
         />
       );
     };
