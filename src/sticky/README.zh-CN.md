@@ -48,6 +48,15 @@ app.use(Sticky);
 </div>
 ```
 
+```js
+export default {
+  setup() {
+    const container = ref(null);
+    return { container };
+  },
+};
+```
+
 ### 吸底距离
 
 将 `position` 设置为 `bottom` 可以让组件吸附在底部。通过 `offset-bottom` 属性可以设置组件在吸底时与底部的距离。
@@ -56,15 +65,6 @@ app.use(Sticky);
 <van-sticky :offset-bottom="50" position="bottom">
   <van-button type="primary">吸底距离</van-button>
 </van-sticky>
-```
-
-```js
-export default {
-  setup() {
-    const container = ref(null);
-    return { container };
-  },
-};
 ```
 
 ## API

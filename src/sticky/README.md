@@ -38,14 +38,6 @@ app.use(Sticky);
 </div>
 ```
 
-### Offset Bottom
-
-```html
-<van-sticky :offset-bottom="50" position="bottom">
-  <van-button type="primary">Offset Bottom</van-button>
-</van-sticky>
-```
-
 ```js
 export default {
   setup() {
@@ -53,6 +45,14 @@ export default {
     return { container };
   },
 };
+```
+
+### Offset Bottom
+
+```html
+<van-sticky :offset-bottom="50" position="bottom">
+  <van-button type="primary">Offset Bottom</van-button>
+</van-sticky>
 ```
 
 ## API
