@@ -213,26 +213,22 @@ export default {
 
 组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
 
-| 名称                                       | 默认值             | 描述 |
-| ------------------------------------------ | ------------------ | ---- |
-| @number-keyboard-background-color          | `@gray-2`          | -    |
-| @number-keyboard-key-height                | `48px`             | -    |
-| @number-keyboard-key-font-size             | `28px`             | -    |
-| @number-keyboard-key-active-color          | `@gray-3`          | -    |
-| @number-keyboard-delete-font-size          | `@font-size-lg`    | -    |
-| @number-keyboard-title-color               | `@gray-7`          | -    |
-| @number-keyboard-title-height              | `34px`             | -    |
-| @number-keyboard-title-font-size           | `@font-size-lg`    | -    |
-| @number-keyboard-close-padding             | `0 @padding-md`    | -    |
-| @number-keyboard-close-color               | `@text-link-color` | -    |
-| @number-keyboard-close-font-size           | `@font-size-md`    | -    |
-| @number-keyboard-button-text-color         | `@white`           | -    |
-| @number-keyboard-button-background-color   | `@blue`            | -    |
-| @number-keyboard-cursor-color              | `@text-color`      | -    |
-| @number-keyboard-cursor-width              | `1px`              | -    |
-| @number-keyboard-cursor-height             | `40%`              | -    |
-| @number-keyboard-cursor-animation-duration | `1s`               | -    |
-| @number-keyboard-z-index                   | `100`              | -    |
+| 名称                                     | 默认值             | 描述 |
+| ---------------------------------------- | ------------------ | ---- |
+| @number-keyboard-background-color        | `@gray-2`          | -    |
+| @number-keyboard-key-height              | `48px`             | -    |
+| @number-keyboard-key-font-size           | `28px`             | -    |
+| @number-keyboard-key-active-color        | `@gray-3`          | -    |
+| @number-keyboard-delete-font-size        | `@font-size-lg`    | -    |
+| @number-keyboard-title-color             | `@gray-7`          | -    |
+| @number-keyboard-title-height            | `34px`             | -    |
+| @number-keyboard-title-font-size         | `@font-size-lg`    | -    |
+| @number-keyboard-close-padding           | `0 @padding-md`    | -    |
+| @number-keyboard-close-color             | `@text-link-color` | -    |
+| @number-keyboard-close-font-size         | `@font-size-md`    | -    |
+| @number-keyboard-button-text-color       | `@white`           | -    |
+| @number-keyboard-button-background-color | `@blue`            | -    |
+| @number-keyboard-z-index                 | `100`              | -    |
 
 ## 常见问题
 

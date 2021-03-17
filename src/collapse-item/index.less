@@ -1,4 +1,4 @@
-@import '../style/var.less';
+@import './var.less';
 @import '../style/mixins/hairline';
 
 .van-collapse-item {
@@ -6,7 +6,7 @@
 
   &--border {
     &::after {
-      .hairline-top(@cell-border-color, @padding-md, @padding-md);
+      .hairline-top(@border-color, @padding-md, @padding-md);
     }
   }
 
