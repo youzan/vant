@@ -81,9 +81,10 @@ export default {
 
 ### Events
 
-| 事件名 | 说明       | 回调参数                                       |
-| ------ | ---------- | ---------------------------------------------- |
-| scroll | 滚动时触发 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| change `v3.0.10` | 当吸顶状态改变时触发 | _isFixed: boolean_ |
+| scroll | 滚动时触发 | _{ scrollTop: number, isFixed: boolean }_ |
 
 ### 样式变量
 
