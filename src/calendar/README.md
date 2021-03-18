@@ -6,6 +6,8 @@ Calendar component for selecting dates or date ranges.
 
 ### Install
 
+Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。
+
 ```js
 import { createApp } from 'vue';
 import { Calendar } from 'vant';

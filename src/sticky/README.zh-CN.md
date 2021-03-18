@@ -6,6 +6,8 @@ Sticky 组件与 CSS 中 `position: sticky` 属性实现的效果一致，当组
 
 ### 引入
 
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
+
 ```js
 import { createApp } from 'vue';
 import { Sticky } from 'vant';
