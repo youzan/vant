@@ -6,6 +6,45 @@
 
 ## 组件用法
 
+### 组件注册
+
+Vant 支持多种组件注册方式，请根据实际业务需要进行选择。
+
+#### 全局注册
+
+全局注册后，你可以在 app 下的任意子组件中使用注册的 Vant 组件。
+
+```js
+import { Button } from 'vant';
+import { createApp } from 'vue';
+
+const app = createApp();
+
+// 方式一. 通过 app.use 注册
+// 注册完成后，在模板中通过 VanButton 或 van-button 标签均可使用按钮组件
+app.use(Button);
+
+// 方式二. 通过 app.component 注册
+// 注册完成后，在模板中通过 van-button 标签即可使用按钮组件
+app.component(Button.name, Button);
+```
+
+#### 局部注册
+
+局部注册后，你可以在当前组件中使用注册的 Vant 组件。
+
+```js
+import { Button } from 'vant';
+
+export default {
+  components: {
+    [Button.name]: Button,
+  },
+};
+```
+
+> 对于组件注册更详细的介绍，请参考 [Vue 官方文档 - 组件注册](https://v3.cn.vuejs.org/guide/component-registration.html#%E7%BB%84%E4%BB%B6%E6%B3%A8%E5%86%8C)。
+
 ### 组件插槽
 
 Vant 提供了丰富的组件插槽，通过插槽可以对组件的某一部分进行个性化定制。如果你对 Vue 的插槽不太熟悉，可以阅读 Vue 官方文档中的[插槽章节](https://v3.cn.vuejs.org/guide/component-slots.html)。下面是通过插槽来定制 Checkbox 图标的示例：
