@@ -6,6 +6,8 @@ A list component to show items and control loading status.
 
 ### Install
 
+Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。
+
 ```js
 import { createApp } from 'vue';
 import { List } from 'vant';

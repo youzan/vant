@@ -2,6 +2,8 @@
 
 ### 引入
 
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
+
 `Lazyload` 是 `Vue` 指令，使用前需要对指令进行注册。
 
 ```js

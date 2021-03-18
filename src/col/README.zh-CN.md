@@ -6,6 +6,8 @@ Layout 提供了 `van-row` 和 `van-col` 两个组件来进行行列布局。
 
 ### 引入
 
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
+
 ```js
 import { createApp } from 'vue';
 import { Col, Row } from 'vant';
