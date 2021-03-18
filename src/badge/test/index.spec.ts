@@ -69,3 +69,16 @@ test('should change dot position when using offset prop without children', () =>
   expect(badge.style.marginTop).toEqual('4px');
   expect(badge.style.marginLeft).toEqual('2px');
 });
+
+test('should not render zero when show-zero is false', async () => {
+  const wrapper = mount(Badge, {
+    props: {
+      content: 0,
+    },
+  });
+
+  expect(wrapper.find('.van-badge').exists()).toBeTruthy();
+
+  await wrapper.setProps({ showZero: false });
+  expect(wrapper.find('.van-badge').exists()).toBeFalsy();
+});

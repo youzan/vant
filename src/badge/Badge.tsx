@@ -17,11 +17,20 @@ export default defineComponent({
       type: String as PropType<keyof HTMLElementTagNameMap>,
       default: 'div',
     },
+    showZero: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   setup(props, { slots }) {
-    const hasContent = () =>
-      !!(slots.content || (isDef(props.content) && props.content !== ''));
+    const hasContent = () => {
+      if (slots.content) {
+        return true;
+      }
+      const { content, showZero } = props;
+      return isDef(content) && content !== '' && (showZero || content !== 0);
+    };
 
     const renderContent = () => {
       const { dot, max, content } = props;
