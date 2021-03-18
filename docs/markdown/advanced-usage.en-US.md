@@ -1,5 +1,42 @@
 # Advanced Usage
 
+### Intro
+
+Through this chapter, you can learn about some advanced usages of Vant.
+
+## Component Usage
+
+### Component Registration
+
+Vant supports multiple ways to register components:
+
+#### Global Registration
+
+```js
+import Vue from 'vue';
+import { Button } from 'vant';
+
+// Method 1. via Vue.use
+Vue.use(Button);
+
+// Method 2. Register via Vue.component
+Vue.component(Button.name, Button);
+```
+
+#### Local Registration
+
+```js
+import { Button } from 'vant';
+
+export default {
+  components: {
+    [Button.name]: Button,
+  },
+};
+```
+
+> For more information, please refer to [Vue.js - Component Registration](https://vuejs.org/v2/guide/components-registration.html)。
+
 ## Browser adaptation
 
 ### Viewport Units
