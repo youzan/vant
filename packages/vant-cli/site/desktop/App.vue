@@ -83,6 +83,17 @@ export default {
     },
   },
 
+  mounted() {
+    if (this.$route.hash) {
+      this.$nextTick(() => {
+        const el = document.querySelector(this.$route.hash);
+        if (el) {
+          el.scrollIntoView();
+        }
+      });
+    }
+  },
+
   methods: {
     setTitleAndToogleSimulator() {
       let { title } = this.config;
@@ -104,7 +115,11 @@ export default {
 
       document.title = title;
 
-      this.hasSimulator = !(config.site.hideSimulator || this.config.hideSimulator || (current && current.hideSimulator));
+      this.hasSimulator = !(
+        config.site.hideSimulator ||
+        this.config.hideSimulator ||
+        (current && current.hideSimulator)
+      );
     },
   },
 };
