@@ -1,5 +1,6 @@
 import {
   ref,
+  watch,
   computed,
   PropType,
   reactive,
@@ -44,7 +45,7 @@ export default defineComponent({
     },
   },
 
-  emits: ['scroll'],
+  emits: ['scroll', 'change'],
 
   setup(props, { emit, slots }) {
     const root = ref<HTMLElement>();
@@ -134,6 +135,11 @@ export default defineComponent({
 
       emitScroll(scrollTop);
     };
+
+    watch(
+      () => state.fixed,
+      (value) => emit('change', value)
+    );
 
     useEventListener('scroll', onScroll, { target: scrollParent });
     useVisibilityChange(root, onScroll);

@@ -69,9 +69,10 @@ export default {
 
 ### Events
 
-| Event  | Description            | Arguments                      |
-| ------ | ---------------------- | ------------------------------ |
-| scroll | Emitted when scrolling | object: { scrollTop, isFixed } |
+| Event | Description | Arguments |
+| --- | --- | --- |
+| change `v3.0.10` | Emitted when sticky status changed | _isFixed: boolean_ |
+| scroll | Emitted when scrolling | _{ scrollTop: number, isFixed: boolean }_ |
 
 ### Less Variables
 

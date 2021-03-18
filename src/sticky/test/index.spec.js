@@ -330,3 +330,22 @@ test('should emit scroll event when visibility changed', async () => {
 
   window.IntersectionObserver = originIntersectionObserver;
 });
+
+test('should emit change event when sticky status changed', async () => {
+  const wrapper = mount(Sticky, {
+    attrs: {
+      style: 'height: 10px',
+    },
+  });
+  const mockStickyRect = jest
+    .spyOn(wrapper.element, 'getBoundingClientRect')
+    .mockReturnValue({
+      top: -100,
+      bottom: -90,
+    });
+
+  await mockScrollTop(100);
+  expect(wrapper.emitted('change')[0]).toEqual([true]);
+
+  mockStickyRect.mockRestore();
+});
