@@ -129,3 +129,16 @@ test('should update width when using width prop', async () => {
   const dialog = wrapper.find('.van-dialog').element;
   expect(dialog.style.width).toEqual('200px');
 });
+
+test('should render footer slot correctly', () => {
+  const wrapper = mount(Dialog, {
+    props: {
+      show: true,
+      message: 'message',
+    },
+    slots: {
+      footer: () => 'Custom Footer',
+    },
+  });
+  expect(wrapper.find('.van-dialog').html()).toMatchSnapshot();
+});
