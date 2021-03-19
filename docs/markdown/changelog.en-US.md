@@ -16,6 +16,37 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.10](https://github.com/youzan/vant/compare/v3.0.9...v3.0.10)
+
+`2021-03-19`
+
+**Feature**
+
+- ActionSheet: add cancel slot [#8333](https://github.com/youzan/vant/issues/8333)
+- Badge: add show-zero prop [#8381](https://github.com/youzan/vant/issues/8381)
+- Cascader: add close-icon prop [#8334](https://github.com/youzan/vant/issues/8334)
+- Popover: add close-on-click-overlay prop [#8351](https://github.com/youzan/vant/issues/8351)
+- Popover: add duration prop [#8355](https://github.com/youzan/vant/issues/8355)
+- Popover: add overlay-class prop [#8353](https://github.com/youzan/vant/issues/8353)
+- Popover: add overlay-style prop [#8354](https://github.com/youzan/vant/issues/8354)
+- ShareSheet: add cancel slot [#8335](https://github.com/youzan/vant/issues/8335)
+- Sticky: add change event [#8374](https://github.com/youzan/vant/issues/8374)
+- Tag: close event param [#8337](https://github.com/youzan/vant/issues/8337)
+- Toast: add iconSize option [#8338](https://github.com/youzan/vant/issues/8338)
+
+**Feature**
+
+- ContactList: add @contact-list-item-radio-icon-color var [#8322](https://github.com/youzan/vant/issues/8322)
+- Coupon: add @coupon-corner-checkbox-icon-color var [#8323](https://github.com/youzan/vant/issues/8323)
+- List: add @list-loading-icon-size less var [#8365](https://github.com/youzan/vant/issues/8365)
+- Loading: add @button-loading-icon-size less var [465bf0](https://github.com/youzan/vant/commit/465bf07095c58e8292b23ef0c64be1550aa9d430)
+- PullRefresh: add @pull-refresh-loading-icon-size less var [#8366](https://github.com/youzan/vant/issues/8366)
+
+**Bug Fixes**
+
+- Popover: close-on-click-outside not work [#8352](https://github.com/youzan/vant/issues/8352)
+- Swipe: incorrect item width after scaled [#8330](https://github.com/youzan/vant/issues/8330)
+
 ### [v3.0.9](https://github.com/youzan/vant/compare/v3.0.8...v3.0.9)
 
 `2021-03-08`

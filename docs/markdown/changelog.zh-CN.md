@@ -16,6 +16,37 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.10](https://github.com/youzan/vant/compare/v3.0.9...v3.0.10)
+
+`2021-03-19`
+
+**Feature**
+
+- ActionSheet: 新增 cancel 插槽 [#8333](https://github.com/youzan/vant/issues/8333)
+- Badge: 新增 show-zero 属性 [#8381](https://github.com/youzan/vant/issues/8381)
+- Cascader: 新增 close-icon 属性 [#8334](https://github.com/youzan/vant/issues/8334)
+- Popover: 新增 close-on-click-overlay 属性 [#8351](https://github.com/youzan/vant/issues/8351)
+- Popover: 新增 duration 属性 [#8355](https://github.com/youzan/vant/issues/8355)
+- Popover: 新增 overlay-class 属性 [#8353](https://github.com/youzan/vant/issues/8353)
+- Popover: 新增 overlay-style 属性 [#8354](https://github.com/youzan/vant/issues/8354)
+- ShareSheet: 新增 cancel 插槽 [#8335](https://github.com/youzan/vant/issues/8335)
+- Sticky: 新增 change event [#8374](https://github.com/youzan/vant/issues/8374)
+- Tag: close 事件新增 event 参数 [#8337](https://github.com/youzan/vant/issues/8337)
+- Toast: 新增 iconSize 选项 [#8338](https://github.com/youzan/vant/issues/8338)
+
+**Feature**
+
+- ContactList: 新增 @contact-list-item-radio-icon-color Less 变量 [#8322](https://github.com/youzan/vant/issues/8322)
+- Coupon: 新增 @coupon-corner-checkbox-icon-color Less 变量 [#8323](https://github.com/youzan/vant/issues/8323)
+- List: 新增 @list-loading-icon-size Less 变量 [#8365](https://github.com/youzan/vant/issues/8365)
+- Loading: 新增 @button-loading-icon-size Less 变量 [465bf0](https://github.com/youzan/vant/commit/465bf07095c58e8292b23ef0c64be1550aa9d430)
+- PullRefresh: 新增 @pull-refresh-loading-icon-size Less 变量 [#8366](https://github.com/youzan/vant/issues/8366)
+
+**Bug Fixes**
+
+- Popover: 修复 close-on-click-outside 属性不生效的问题 [#8352](https://github.com/youzan/vant/issues/8352)
+- Swipe: 修复添加 scale 动画时宽度计算错误的问题 [#8330](https://github.com/youzan/vant/issues/8330)
+
 ### [v3.0.9](https://github.com/youzan/vant/compare/v3.0.8...v3.0.9)
 
 `2021-03-08`
