@@ -132,6 +132,7 @@ app.use(Badge);
 | dot | 是否展示为小红点 | _boolean_ | `false` |
 | max | 最大值，超过最大值会显示 `{max}+`，仅当 content 为数字时有效 | _number \| string_ | - |
 | offset `v3.0.5` | 设置徽标的偏移量，数组的两项分别对应水平和垂直方向的偏移量 | _[number, number]_ | - |
+| show-zero `v3.0.10` | 当 content 为数字 0 时，是否展示徽标 | _boolean_ | `true` |
 
 ### Slots
 
