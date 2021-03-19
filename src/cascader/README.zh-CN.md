@@ -218,6 +218,7 @@ export default {
 | options | 可选项数据源 | _Option[]_ | `[]` |
 | placeholder | 未选中时的提示文案 | _string_ | `请选择` |
 | active-color | 选中状态的高亮颜色 | _string_ | `#ee0a24` |
+| swipeable `v3.0.11` | 是否开启手势左右滑动切换 | _boolean_ | `false` |
 | closeable | 是否显示关闭图标 | _boolean_ | `true` |
 | close-icon `v3.0.10` | 关闭[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `cross` |
 | field-names `v3.0.4` | 自定义 `options` 结构中的字段 | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |

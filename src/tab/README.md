@@ -241,7 +241,7 @@ export default {
 | border | Whether to show border when `type="line"` | _boolean_ | `false` |
 | ellipsis | Whether to ellipsis too long title | _boolean_ | `true` |
 | sticky | Whether to use sticky mode | _boolean_ | `false` |
-| swipeable | Whether to switch tabs with swipe gestrue in the content | _boolean_ | `false` |
+| swipeable | Whether to enable gestures to slide left and right | _boolean_ | `false` |
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
 | scrollspy | Whether to use scrollspy mode | _boolean_ | `false` |
 | offset-top | Sticky offset top , supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `0` |

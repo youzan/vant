@@ -48,6 +48,10 @@ export default defineComponent({
       type: String,
       default: 'cross',
     },
+    swipeable: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   emits: ['close', 'change', 'finish', 'update:modelValue'],
@@ -243,10 +247,10 @@ export default defineComponent({
       <Tabs
         v-model={[state.activeTab, 'active']}
         animated
-        swipeable
-        swipeThreshold={0}
         class={bem('tabs')}
         color={props.activeColor}
+        swipeThreshold={0}
+        swipeable={props.swipeable}
       >
         {state.tabs.map(renderTab)}
       </Tabs>
