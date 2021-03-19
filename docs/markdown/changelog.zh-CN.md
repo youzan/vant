@@ -16,6 +16,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.10](https://github.com/youzan/vant/compare/v2.12.9...v2.12.10)
+
+`2021-03-19`
+
+**Bug Fixes**
+
+- Utils: 修复 deepClone 未正确深拷贝的问题 [#8326](https://github.com/youzan/vant/issues/8326)
+- Swipe: 修复添加 scale 动画时宽度计算错误的问题 [#8329](https://github.com/youzan/vant/issues/8329)
+
 ### [v2.12.9](https://github.com/youzan/vant/compare/v2.12.8...v2.12.9)
 
 `2021-03-09`

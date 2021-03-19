@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.10](https://github.com/youzan/vant/compare/v2.12.9...v2.12.10)
+
+`2021-03-19`
+
+**Bug Fixes**
+
+- Utils: incorrect deepClone [#8326](https://github.com/youzan/vant/issues/8326)
+- Swipe: incorrect item width after scaled [#8329](https://github.com/youzan/vant/issues/8329)
+
 ### [v2.12.9](https://github.com/youzan/vant/compare/v2.12.8...v2.12.9)
 
 `2021-03-09`
