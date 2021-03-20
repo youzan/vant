@@ -199,6 +199,15 @@ export default defineComponent({
       </ActionBar>
     );
 
+    const renderFooter = () => {
+      if (slots.footer) {
+        return slots.footer();
+      }
+      return props.theme === 'round-button'
+        ? renderRoundButtons()
+        : renderButtons();
+    };
+
     return () => {
       const { width, title, theme, message, className } = props;
       return (
@@ -214,7 +223,7 @@ export default defineComponent({
         >
           {renderTitle()}
           {renderContent()}
-          {theme === 'round-button' ? renderRoundButtons() : renderButtons()}
+          {renderFooter()}
         </Popup>
       );
     };

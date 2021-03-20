@@ -204,10 +204,11 @@ export default {
 
 ### Slots
 
-| Name    | Description    |
-| ------- | -------------- |
-| default | Custom message |
-| title   | Custom title   |
+| Name             | Description    |
+| ---------------- | -------------- |
+| default          | Custom message |
+| title            | Custom title   |
+| footer `v3.0.10` | Custom footer  |
 
 ### Less Variables
 

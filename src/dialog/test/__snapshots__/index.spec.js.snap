@@ -29,6 +29,20 @@ exports[`should render default slot correctly 1`] = `
 </div>
 `;
 
+exports[`should render footer slot correctly 1`] = `
+<div class="van-popup van-popup--center van-dialog"
+     role="dialog"
+     aria-labelledby="message"
+>
+  <div class="van-dialog__content van-dialog__content--isolated">
+    <div class="van-dialog__message">
+      message
+    </div>
+  </div>
+  Custom Footer
+</div>
+`;
+
 exports[`should render title slot correctly 1`] = `
 <div class="van-dialog__header van-dialog__header--isolated">
   Custom Title
