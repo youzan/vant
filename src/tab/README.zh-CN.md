@@ -252,7 +252,7 @@ export default {
 | border | 是否显示标签栏外边框，仅在 `type="line"` 时有效 | _boolean_ | `false` |
 | ellipsis | 是否省略过长的标题文字 | _boolean_ | `true` |
 | sticky | 是否使用粘性定位布局 | _boolean_ | `false` |
-| swipeable | 是否开启手势滑动切换 | _boolean_ | `false` |
+| swipeable | 是否开启手势左右滑动切换 | _boolean_ | `false` |
 | lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | _boolean_ | `true` |
 | scrollspy | 是否开启滚动导航 | _boolean_ | `false` |
 | offset-top | 粘性定位布局下与顶部的最小距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
