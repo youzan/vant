@@ -42,7 +42,8 @@ export function useTouch() {
 
   const move = ((event: TouchEvent) => {
     const touch = event.touches[0];
-    deltaX.value = touch.clientX - startX.value;
+    // Fix: Safari back will set clientX to negative number
+    deltaX.value = touch.clientX < 0 ? 0 : touch.clientX - startX.value;
     deltaY.value = touch.clientY - startY.value;
     offsetX.value = Math.abs(deltaX.value);
     offsetY.value = Math.abs(deltaY.value);
