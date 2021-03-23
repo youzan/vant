@@ -31,6 +31,10 @@ export default defineComponent({
       type: String as PropType<keyof HTMLElementTagNameMap>,
       default: 'div',
     },
+    wrap: {
+      type: Boolean,
+      default: true,
+    },
     gutter: {
       type: [Number, String],
       default: 0,
@@ -86,12 +90,13 @@ export default defineComponent({
     linkChildren({ spaces });
 
     return () => {
-      const { tag, align, justify } = props;
+      const { tag, wrap, align, justify } = props;
       return (
         <tag
           class={bem({
             [`align-${align}`]: align,
             [`justify-${justify}`]: justify,
+            nowrap: !wrap,
           })}
         >
           {slots.default?.()}
