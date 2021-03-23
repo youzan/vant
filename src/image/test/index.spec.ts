@@ -137,6 +137,30 @@ test('should change border radius when using border-radius prop', () => {
   expect(wrapper.style.borderRadius).toEqual('3px');
 });
 
+test('should change loading icon size when using icon-size prop', () => {
+  const wrapper = mount(VanImage, {
+    props: {
+      iconSize: '3rem',
+      loadingIcon: 'success',
+    },
+  });
+  expect(wrapper.find('.van-image__loading-icon').style.fontSize).toEqual(
+    '3rem'
+  );
+});
+
+test('should change error icon size when using icon-size prop', async () => {
+  const wrapper = mount(VanImage, {
+    props: {
+      src: IMAGE_URL,
+      iconSize: '3rem',
+      errorIcon: 'error',
+    },
+  });
+  await wrapper.find('img').trigger('error');
+  expect(wrapper.find('.van-image__error-icon').style.fontSize).toEqual('3rem');
+});
+
 test('should render default slot correctly', () => {
   const wrapper = mount(VanImage, {
     props: {
