@@ -1,4 +1,3 @@
-// Utils
 import {
   ref,
   watch,
@@ -9,6 +8,8 @@ import {
   defineComponent,
   getCurrentInstance,
 } from 'vue';
+
+// Utils
 import {
   isDef,
   addUnit,
@@ -36,6 +37,7 @@ export default defineComponent({
     height: [Number, String],
     radius: [Number, String],
     lazyLoad: Boolean,
+    iconSize: [Number, String],
     iconPrefix: String,
     showError: {
       type: Boolean,
@@ -110,6 +112,7 @@ export default defineComponent({
 
       return (
         <Icon
+          size={props.iconSize}
           name={props.loadingIcon}
           class={bem('loading-icon')}
           classPrefix={props.iconPrefix}
@@ -124,6 +127,7 @@ export default defineComponent({
 
       return (
         <Icon
+          size={props.iconSize}
           name={props.errorIcon}
           class={bem('error-icon')}
           classPrefix={props.iconPrefix}
