@@ -59,7 +59,7 @@ export function triggerDrag(
     | HTMLElement,
   relativeX = 0,
   relativeY = 0
-): void {
+) {
   let x = relativeX;
   let y = relativeY;
   let startX = 0;
