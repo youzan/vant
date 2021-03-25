@@ -30,7 +30,7 @@ export default defineComponent({
 
   props: {
     zIndex: [Number, String],
-    container: Element,
+    container: Object as PropType<Element>,
     offsetTop: {
       type: [Number, String],
       default: 0,
