@@ -238,7 +238,9 @@ export default defineComponent({
           return defaultTrigger;
         });
 
-        validate(rules);
+        if (rules.length) {
+          validate(rules);
+        }
       }
     };
 
