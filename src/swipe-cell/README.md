@@ -128,11 +128,10 @@ export default {
 
 ### beforeClose Params
 
-| Attribute | Description                                     | Type        |
-| --------- | ----------------------------------------------- | ----------- |
-| name      | Name                                            | _string_    |
-| position  | Click positon (`left` `right` `cell` `outside`) | _string_    |
-| instance  | SwipeCell instance                              | _SwipeCell_ |
+| Attribute | Description   | Type                                       |
+| --------- | ------------- | ------------------------------------------ |
+| name      | Name          | _string \| number_                         |
+| position  | Click positon | _'left' \| 'right' \| 'cell' \| 'outside'_ |
 
 ### Methods
 
