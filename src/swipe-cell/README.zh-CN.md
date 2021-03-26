@@ -114,7 +114,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| name | 标识符，可以在事件参数中获取到 | _number \| string_ | - |
+| name | 标识符，可以在事件参数中获取到 | _number \| string_ | `''` |
 | left-width | 指定左侧滑动区域宽度，单位为 `px` | _number \| string_ | `auto` |
 | right-width | 指定右侧滑动区域宽度，单位为 `px` | _number \| string_ | `auto` |
 | before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(args) => boolean \| Promise_ | - |
@@ -123,28 +123,28 @@ export default {
 
 ### Slots
 
-| 名称    | 说明           |
-| ------- | -------------- |
-| default | 自定义显示内容 |
-| left    | 左侧滑动内容   |
-| right   | 右侧滑动内容   |
+| 名称    | 说明               |
+| ------- | ------------------ |
+| default | 默认显示的内容     |
+| left    | 左侧滑动区域的内容 |
+| right   | 右侧滑动区域的内容 |
 
 ### Events
 
-| 事件名 | 说明       | 回调参数                                           |
-| ------ | ---------- | -------------------------------------------------- |
-| click  | 点击时触发 | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
-| open   | 打开时触发 | { position: 'left' \| 'right' , name: string }     |
-| close  | 关闭时触发 | { position: string , name: string }                |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| click | 点击时触发 | _position: 'left' \| 'right' \| 'cell' \| 'outside'_ |
+| open | 打开时触发 | _{ name: string \| number, position: 'left' \| 'right' }_ |
+| close | 关闭时触发 | _{ name: string \| number, position: 'left' \| 'right' \| 'cell' \| 'outside' }_ |
 
 ### beforeClose 参数
 
 beforeClose 的第一个参数为对象，对象中包含以下属性：
 
-| 参数名   | 说明                                               | 类型     |
-| -------- | -------------------------------------------------- | -------- |
-| name     | 标识符                                             | _string_ |
-| position | 关闭时的点击位置 (`left` `right` `cell` `outside`) | _string_ |
+| 参数名   | 说明             | 类型                                       |
+| -------- | ---------------- | ------------------------------------------ |
+| name     | 标识符           | _string \| number_                         |
+| position | 关闭时的点击位置 | _'left' \| 'right' \| 'cell' \| 'outside'_ |
 
 ### 方法
 
