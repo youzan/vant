@@ -288,7 +288,9 @@ export default createComponent({
           return defaultTrigger;
         });
 
-        this.validate(rules);
+        if (rules.length) {
+          this.validate(rules);
+        }
       }
     },
 
