@@ -35,7 +35,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date());
+    const currentDate = ref(new Date(2021, 0, 17));
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
