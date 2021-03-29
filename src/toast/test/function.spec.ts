@@ -1,7 +1,7 @@
-import { later } from '../../../test';
-import Toast from '../index';
-import ToastComponent from '../Toast';
 import { createApp } from 'vue';
+import { later } from '../../../test';
+import { Toast } from '../function-call';
+import ToastComponent from '../Toast';
 
 test('toast disappeared after duration', async () => {
   const onClose = jest.fn();

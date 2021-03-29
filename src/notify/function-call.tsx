@@ -103,5 +103,4 @@ Notify.install = (app: App) => {
 
 Notify.Component = withInstall<typeof VanNotify>(VanNotify);
 
-export default Notify;
 export { Notify };
