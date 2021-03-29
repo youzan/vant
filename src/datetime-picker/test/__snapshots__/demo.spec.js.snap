@@ -10,11 +10,11 @@ exports[`renders demo correctly 1`] = `
       <!---->
       <div class="van-picker__columns" style="height: 264px;">
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;">
-            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 66px, 0); transition-duration: 0ms; transition-property: none;">
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
               <div class="van-ellipsis">2020</div>
             </li>
-            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
               <div class="van-ellipsis">2021</div>
             </li>
             <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
@@ -72,8 +72,8 @@ exports[`renders demo correctly 1`] = `
           </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;">
-            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, -594px, 0); transition-duration: 0ms; transition-property: none;">
+            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
               <div class="van-ellipsis">01</div>
             </li>
             <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
@@ -121,7 +121,7 @@ exports[`renders demo correctly 1`] = `
             <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
               <div class="van-ellipsis">16</div>
             </li>
-            <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+            <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
               <div class="van-ellipsis">17</div>
             </li>
             <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
