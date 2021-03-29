@@ -142,7 +142,7 @@ export default {
 | --- | --- | --- | --- |
 | title | Title | _string_ | - |
 | width | Dialog width | _number \| string_ | `320px` |
-| message | Message | _string_ | - |
+| message | Message | _string \| () => JSX.ELement_ | - |
 | messageAlign | Message text align，can be set to `left` `right` | _string_ | `center` |
 | theme | Theme style，can be set to `round-button` | _string_ | `default` |
 | className | Custom className | _string \| Array \| object_ | - |
@@ -170,7 +170,7 @@ export default {
 | v-model:show | Whether to show dialog | _boolean_ | - |
 | title | Title | _string_ | - |
 | width | Width | _number \| string_ | `320px` |
-| message | Message | _string_ | - |
+| message | Message | _string \| () => JSX.ELement_ | - |
 | message-align | Message align，can be set to `left` `right` | _string_ | `center` |
 | theme | Theme style，can be set to `round-button` | _string_ | `default` |
 | show-confirm-button | Whether to show confirm button | _boolean_ | `true` |

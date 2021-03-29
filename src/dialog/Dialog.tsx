@@ -2,7 +2,13 @@ import { PropType, reactive, defineComponent } from 'vue';
 
 // Utils
 import { callInterceptor, Interceptor } from '../utils/interceptor';
-import { createNamespace, addUnit, pick, UnknownProp } from '../utils';
+import {
+  pick,
+  addUnit,
+  isFunction,
+  UnknownProp,
+  createNamespace,
+} from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
@@ -32,7 +38,7 @@ export default defineComponent({
     title: String,
     theme: String as PropType<DialogTheme>,
     width: [Number, String],
-    message: String,
+    message: [String, Object],
     callback: Function as PropType<(action?: DialogAction) => void>,
     allowHtml: Boolean,
     className: UnknownProp,
@@ -119,15 +125,31 @@ export default defineComponent({
       }
     };
 
+    const renderMessage = (hasTitle: boolean) => {
+      const { message, allowHtml, messageAlign } = props;
+      const classNames = bem('message', {
+        'has-title': hasTitle,
+        [messageAlign as string]: messageAlign,
+      });
+
+      if (allowHtml && typeof message === 'string') {
+        return <div class={classNames} innerHTML={message} />;
+      }
+      return (
+        <div class={classNames}>
+          {isFunction(message) ? message() : message}
+        </div>
+      );
+    };
+
     const renderContent = () => {
       if (slots.default) {
         return <div class={bem('content')}>{slots.default()}</div>;
       }
 
-      const { title, message, allowHtml, messageAlign } = props;
+      const { title, message, allowHtml } = props;
       if (message) {
-        const hasTitle = title || slots.title;
-
+        const hasTitle = !!(title || slots.title);
         return (
           <div
             // add key to force re-render
@@ -135,15 +157,7 @@ export default defineComponent({
             key={allowHtml ? 1 : 0}
             class={bem('content', { isolated: !hasTitle })}
           >
-            <div
-              class={bem('message', {
-                'has-title': hasTitle,
-                [messageAlign as string]: messageAlign,
-              })}
-              {...{
-                [allowHtml ? 'innerHTML' : 'textContent']: message,
-              }}
-            />
+            {renderMessage(hasTitle)}
           </div>
         );
       }

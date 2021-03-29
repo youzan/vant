@@ -12,7 +12,7 @@ export type DialogOptions = {
   title?: string;
   width?: string | number;
   theme?: DialogTheme;
-  message?: string;
+  message?: string | (() => JSX.Element);
   overlay?: boolean;
   teleport?: TeleportProps['to'];
   className?: unknown;
