@@ -22,6 +22,7 @@ const [name, bem, t] = createNamespace('dialog');
 
 export type DialogTheme = 'default' | 'round-button';
 export type DialogAction = 'confirm' | 'cancel';
+export type DialogMessage = string | (() => JSX.Element);
 export type DialogMessageAlign = 'left' | 'center' | 'right';
 
 const popupKeys = [
@@ -38,7 +39,7 @@ export default defineComponent({
     title: String,
     theme: String as PropType<DialogTheme>,
     width: [Number, String],
-    message: [String, Object],
+    message: [String, Function] as PropType<DialogMessage>,
     callback: Function as PropType<(action?: DialogAction) => void>,
     allowHtml: Boolean,
     className: UnknownProp,
