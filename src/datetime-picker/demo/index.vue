@@ -120,7 +120,7 @@ export default {
   setup() {
     const t = useTranslate(i18n);
     const value = reactive({
-      date: null,
+      date: new Date(2021, 0, 17),
       time: '12:00',
       datetime: new Date(2020, 0, 1),
       datehour: new Date(2020, 0, 1),
