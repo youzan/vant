@@ -5,6 +5,7 @@ import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanDialog, {
   DialogTheme,
   DialogAction,
+  DialogMessage,
   DialogMessageAlign,
 } from './Dialog';
 
@@ -12,7 +13,7 @@ export type DialogOptions = {
   title?: string;
   width?: string | number;
   theme?: DialogTheme;
-  message?: string;
+  message?: DialogMessage;
   overlay?: boolean;
   teleport?: TeleportProps['to'];
   className?: unknown;
@@ -128,4 +129,4 @@ Dialog.Component = withInstall<typeof VanDialog>(VanDialog);
 
 export default Dialog;
 export { Dialog };
-export type { DialogTheme, DialogMessageAlign };
+export type { DialogTheme, DialogMessage, DialogMessageAlign };

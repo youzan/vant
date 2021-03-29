@@ -49,3 +49,17 @@ test('should close dialog after calling Dialog.call', async () => {
     'van-dialog-bounce-leave-active'
   );
 });
+
+test('should allow to render JSX message', async () => {
+  const wrapper = document.createElement('div');
+  Dialog.alert({
+    message: () => <div>foo</div>,
+    teleport: wrapper,
+  });
+
+  await later();
+  const dialog = wrapper.querySelector('.van-dialog');
+  expect(
+    dialog.querySelector('.van-dialog__message').outerHTML
+  ).toMatchSnapshot();
+});
