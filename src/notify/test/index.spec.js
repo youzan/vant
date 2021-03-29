@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import { later } from '../../../test';
 import { trigger } from '../../utils';
-import { Notify } from '..';
+import { Notify } from '../function-call';
 import NotifyComponent from '../Notify';
 
 test('should not throw error if calling clear method before render notify', () => {

@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import { ImagePreview } from '..';
+import { ImagePreview } from '../function-call';
 import ImagePreviewComponent from '../ImagePreview';
 
 test('should expose ImagePreviewComponent in ImagePreview.Component', () => {

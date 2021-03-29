@@ -103,5 +103,4 @@ ImagePreview.install = (app: App) => {
   app.use(withInstall<typeof VanImagePreview>(VanImagePreview));
 };
 
-export default ImagePreview;
 export { ImagePreview };
