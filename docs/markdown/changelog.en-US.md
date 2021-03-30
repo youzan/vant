@@ -16,6 +16,24 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.11](https://github.com/youzan/vant/compare/v3.0.10...v3.0.11)
+
+`2021-03-30`
+
+**Feature**
+
+- Cascader: add swipeable prop [#8383](https://github.com/youzan/vant/issues/8383)
+- Dialog: add footer slot [#8382](https://github.com/youzan/vant/issues/8382)
+- Dialog: allow to render JSX message [#8420](https://github.com/youzan/vant/issues/8420)
+- Image: add icon-size prop [#8395](https://github.com/youzan/vant/issues/8395)
+- Row: add wrap prop [#8393](https://github.com/youzan/vant/issues/8393)
+
+**Bug Fixes**
+
+- Field: should not reset validation after blured [#8409](https://github.com/youzan/vant/issues/8409)
+- Sticky: Element not exist during SSR [#8407](https://github.com/youzan/vant/issues/8407)
+- Tabs: incorrect horizontal slip judgment [#8388](https://github.com/youzan/vant/issues/8388)
+
 ### [v3.0.10](https://github.com/youzan/vant/compare/v3.0.9...v3.0.10)
 
 `2021-03-19`

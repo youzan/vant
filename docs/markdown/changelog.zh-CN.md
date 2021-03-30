@@ -16,6 +16,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.11](https://github.com/youzan/vant/compare/v3.0.10...v3.0.11)
+
+`2021-03-30`
+
+**Feature**
+
+- Cascader: 新增 swipeable 属性 [#8383](https://github.com/youzan/vant/issues/8383)
+- Dialog: 新增 footer 插槽 [#8382](https://github.com/youzan/vant/issues/8382)
+- Dialog: 支持在 message 中传入 render 函数 [#8420](https://github.com/youzan/vant/issues/8420)
+- Image: 新增 icon-size 属性 [#8395](https://github.com/youzan/vant/issues/8395)
+- Row: 新增 wrap 属性 [#8393](https://github.com/youzan/vant/issues/8393)
+
+**Bug Fixes**
+
+- Field: 修复在个别情况下错误地清除错误提示的问题 [#8409](https://github.com/youzan/vant/issues/8409)
+- Sticky: 修复在 SSR 时提示 Element 不存在的问题 [#8407](https://github.com/youzan/vant/issues/8407)
+- Tabs: 修复在 safari 上左滑退出页面时手势判断错误的问题 [#8388](https://github.com/youzan/vant/issues/8388)
+
 ### [v3.0.10](https://github.com/youzan/vant/compare/v3.0.9...v3.0.10)
 
 `2021-03-19`
