@@ -87,7 +87,8 @@ test('close-on-click-outside', async () => {
 
   await titles[0].trigger('click');
 
-  await document.body.click();
+  document.body.click();
+  await later();
 
   expect(wrapper.html()).toMatchSnapshot();
 });
@@ -102,7 +103,9 @@ test('disable close-on-click-outside', async () => {
   const titles = wrapper.findAll('.van-dropdown-menu__title');
 
   await titles[0].trigger('click');
-  await document.body.click();
+  document.body.click();
+  await later();
+
   expect(wrapper.html()).toMatchSnapshot();
 });
 
