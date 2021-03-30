@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.11](https://github.com/youzan/vant/compare/v2.12.10...v2.12.11)
+
+`2021-03-30`
+
+**Bug Fixes**
+
+- Field: should not reset validation after blured [#8412](https://github.com/youzan/vant/issues/8412)
+- Tabs: fix incorrect horizontal slip judgment [#8387](https://github.com/youzan/vant/issues/8387)
+
 ### [v2.12.10](https://github.com/youzan/vant/compare/v2.12.9...v2.12.10)
 
 `2021-03-19`
