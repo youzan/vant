@@ -2,7 +2,7 @@ import { ref, watch, computed, nextTick, defineComponent } from 'vue';
 
 // Utils
 import { cellProps } from '../cell/Cell';
-import { createNamespace } from '../utils';
+import { createNamespace, pick } from '../utils';
 import { COLLAPSE_KEY, CollapseProvide } from '../collapse/Collapse';
 
 // Composables
@@ -22,6 +22,7 @@ export default defineComponent({
     ...cellProps,
     name: [Number, String],
     disabled: Boolean,
+    readonly: Boolean,
     isLink: {
       type: Boolean,
       default: true,
@@ -94,13 +95,24 @@ export default defineComponent({
     };
 
     const onClickTitle = () => {
-      if (!props.disabled) {
+      if (!props.disabled && !props.readonly) {
         toggle();
       }
     };
 
     const renderTitle = () => {
-      const { border, disabled } = props;
+      const { border, disabled, readonly } = props;
+      const attrs = pick(
+        props,
+        Object.keys(cellProps) as Array<keyof typeof cellProps>
+      );
+
+      if (readonly) {
+        attrs.isLink = false;
+      }
+      if (disabled || readonly) {
+        attrs.clickable = false;
+      }
 
       return (
         <Cell
@@ -116,10 +128,9 @@ export default defineComponent({
             expanded: expanded.value,
             borderless: !border,
           })}
-          tabindex={disabled ? -1 : 0}
           aria-expanded={String(expanded.value)}
           onClick={onClickTitle}
-          {...props}
+          {...attrs}
         />
       );
     };

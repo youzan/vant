@@ -132,6 +132,7 @@ export default {
 | label | Description below the title | _string_ | - |
 | border | Whether to show inner border | _boolean_ | `true` |
 | disabled | Whether to disabled collapse | _boolean_ | `false` |
+| readonly `v3.0.12` | Whether to be readonly | _boolean_ | `false` |
 | is-link | Whether to show link icon | _boolean_ | `true` |
 | title-class | Title className | _string_ | - |
 | value-class | Value className | _string_ | - |

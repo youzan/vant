@@ -7,7 +7,6 @@ exports[`should render slots of CollapseItem correctly 1`] = `
          role="button"
          tabindex="0"
          aria-expanded="false"
-         disabled="false"
     >
       this is icon
       <div class="van-cell__title">

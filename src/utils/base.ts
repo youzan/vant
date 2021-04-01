@@ -38,6 +38,8 @@ export function get(object: any, path: string): any {
   return result;
 }
 
+type Writeable<T> = { -readonly [P in keyof T]: T[P] };
+
 export function pick<T, U extends keyof T>(
   obj: T,
   keys: ReadonlyArray<U>,
@@ -48,5 +50,5 @@ export function pick<T, U extends keyof T>(
       ret[key] = obj[key];
     }
     return ret;
-  }, {} as Pick<T, U>);
+  }, {} as Writeable<Pick<T, U>>);
 }

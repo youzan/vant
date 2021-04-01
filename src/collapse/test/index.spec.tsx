@@ -207,3 +207,31 @@ test('should toggle collapse after calling the toggle method in accordion mode',
   wrapper.vm.itemA.toggle();
   expect(wrapper.vm.active).toEqual('a');
 });
+
+test('should be readonly when using readonly prop', async () => {
+  const wrapper = mount({
+    data() {
+      return {
+        active: [],
+      };
+    },
+    render() {
+      return (
+        <Collapse v-model={this.active}>
+          <CollapseItem title="a" readonly>
+            content
+          </CollapseItem>
+        </Collapse>
+      );
+    },
+  });
+
+  const titles = wrapper.findAll('.van-collapse-item__title');
+  await titles[0].trigger('click');
+  expect(wrapper.vm.active).toEqual([]);
+  expect(wrapper.find('.van-collapse-item__title').classes()).not.toContain(
+    'van-cell--clickable'
+  );
+
+  wrapper.unmount();
+});
