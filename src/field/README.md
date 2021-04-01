@@ -253,7 +253,7 @@ Use `input-align` prop to align the input value.
 | is-link | Whether to show link icon | _boolean_ | `false` |
 | autofocus | Whether to auto focus, unsupported in iOS | _boolean_ | `false` |
 | show-word-limit | Whether to show word limit, need to set the `maxlength` prop | _boolean_ | `false` |
-| error | Whether to show error info | _boolean_ | `false` |
+| error | Whether to mark the input content in red | _boolean_ | `false` |
 | error-message | Error message | _string_ | - |
 | formatter | Input value formatter | _(val: string) => string_ | - |
 | format-trigger | When to format value，can be set to `onBlur` | _string_ | `onChange` |
