@@ -247,6 +247,7 @@ Use `input-align` prop to align the input value.
 | required | Whether to show required mark | _boolean_ | `false` |
 | center | Whether to center content vertically | _boolean_ | `true` |
 | clearable | Whether to be clearable | _boolean_ | `false` |
+| clear-icon `v3.0.12` | Clear icon name | _string_ | `clear` |
 | clear-trigger | When to display the clear icon, `always` means to display the icon when value is not empty, `focus` means to display the icon when input is focused | _string_ | `focus` |
 | clickable | Whether to show click feedback when clicked | _boolean_ | `false` |
 | is-link | Whether to show link icon | _boolean_ | `false` |
@@ -265,7 +266,6 @@ Use `input-align` prop to align the input value.
 | autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| object_ | `false` |
 | left-icon | Left side icon name | _string_ | - |
 | right-icon | Right side icon name | _string_ | - |
-| clear-icon `v3.0.12` | Clear icon name | _string_ | `clear` |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
 | rules | Form validation rules | _Rule[]_ | - |
 | autocomplete `v3.0.3` | [autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) attribute of native input element | _string_ | - |
