@@ -28,6 +28,7 @@ export default defineComponent({
 
   props: {
     label: String,
+    clearIcon: String,
     rightIcon: String,
     modelValue: String,
     actionText: String,
@@ -121,6 +122,7 @@ export default defineComponent({
           ref={filedRef}
           type="search"
           border={false}
+          clearIcon={props.clearIcon}
           onKeypress={onKeypress}
           {...fieldAttrs}
           {...{ 'onUpdate:modelValue': onInput }}
