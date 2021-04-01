@@ -97,6 +97,10 @@ export default defineComponent({
       type: Boolean,
       default: null,
     },
+    clearIcon: {
+      type: String,
+      default: 'clear',
+    },
     modelValue: {
       type: [String, Number],
       default: '',
@@ -546,7 +550,11 @@ export default defineComponent({
           <div class={bem('body')}>
             {renderInput()}
             {showClear.value && (
-              <Icon name="clear" class={bem('clear')} onTouchstart={onClear} />
+              <Icon
+                name={props.clearIcon}
+                class={bem('clear')}
+                onTouchstart={onClear}
+              />
             )}
             {renderRightIcon()}
             {slots.button && <div class={bem('button')}>{slots.button()}</div>}
