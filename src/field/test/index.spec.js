@@ -430,3 +430,17 @@ test('should allow to set autocomplete attribute', () => {
     'on'
   );
 });
+
+test('should change clear icon when using clear-icon prop', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      clearable: true,
+      clearIcon: 'cross',
+      modelValue: 'test',
+    },
+  });
+
+  const input = wrapper.find('input');
+  await input.trigger('focus');
+  expect(wrapper.find('.van-field__clear').html()).toMatchSnapshot();
+});
