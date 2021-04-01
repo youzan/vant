@@ -135,6 +135,7 @@ export default {
 | border | 是否显示内边框 | _boolean_ | `true` |
 | is-link | 是否展示标题栏右侧箭头并开启点击反馈 | _boolean_ | `true` |
 | disabled | 是否禁用面板 | _boolean_ | `false` |
+| readonly `v3.0.12` | 是否为只读状态，只读状态下无法操作面板 | _boolean_ | `false` |
 | title-class | 左侧标题额外类名 | _string_ | - |
 | value-class | 右侧内容额外类名 | _string_ | - |
 | label-class | 描述信息额外类名 | _string_ | - |
