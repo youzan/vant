@@ -144,6 +144,8 @@ export default {
 | disabled | 是否禁用输入框 | _boolean_ | `false` |
 | readonly | 是否将输入框设为只读状态，只读状态下无法输入内容 | _boolean_ | `false` |
 | error | 是否将输入内容标红 | _boolean_ | `false` |
+| formatter `v3.0.12` | 输入内容格式化函数 | _(val: string) => string_ | - |
+| format-trigger `v3.0.12` | 格式化函数触发的时机，可选值为 `onBlur` | _string_ | `onChange` |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | left-icon | 输入框左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `search` |
 | right-icon | 输入框右侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |

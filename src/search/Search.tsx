@@ -15,7 +15,7 @@ import { useExpose } from '../composables/use-expose';
 import { Field } from '../field';
 
 // Types
-import type { FieldClearTrigger } from '../field/types';
+import type { FieldClearTrigger, FieldFormatTrigger } from '../field/types';
 
 const [name, bem, t] = createNamespace('search');
 
@@ -30,11 +30,13 @@ export default defineComponent({
     label: String,
     clearIcon: String,
     rightIcon: String,
+    formatter: Function as PropType<(value: string) => string>,
     modelValue: String,
     actionText: String,
     background: String,
     showAction: Boolean,
     clearTrigger: String as PropType<FieldClearTrigger>,
+    formatTrigger: String as PropType<FieldFormatTrigger>,
     shape: {
       type: String as PropType<SearchShape>,
       default: 'square',
@@ -100,10 +102,13 @@ export default defineComponent({
 
     const fieldPropNames = [
       'leftIcon',
+      'clearIcon',
       'rightIcon',
+      'formatter',
       'clearable',
       'modelValue',
       'clearTrigger',
+      'formatTrigger',
     ] as const;
 
     const renderField = () => {
@@ -122,7 +127,6 @@ export default defineComponent({
           ref={filedRef}
           type="search"
           border={false}
-          clearIcon={props.clearIcon}
           onKeypress={onKeypress}
           {...fieldAttrs}
           {...{ 'onUpdate:modelValue': onInput }}
