@@ -278,7 +278,7 @@ export default {
 | show-word-limit | 是否显示字数统计，需要设置`maxlength`属性 | _boolean_ | `false` |
 | error | 是否将输入内容标红 | _boolean_ | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | _string_ | - |
-| formatter | 输入内容格式化函数 | _Function_ | - |
+| formatter | 输入内容格式化函数 | _(val: string) => string_ | - |
 | format-trigger | 格式化函数触发的时机，可选值为 `onBlur` | _string_ | `onChange` |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
 | label-class | 左侧文本额外类名 | _string \| Array \| object_ | - |
