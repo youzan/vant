@@ -328,12 +328,12 @@ test('zoom in and drag image to move', async () => {
 
   // drag image before load
   triggerDrag(image, 300, 300);
-  expect(wrapper.find('.van-image')).toMatchSnapshot();
+  expect(wrapper.find('.van-image').html()).toMatchSnapshot();
 
   // drag image after load
   image.trigger('load');
   triggerDrag(image, 300, 300);
-  expect(wrapper.find('.van-image')).toMatchSnapshot();
+  expect(wrapper.find('.van-image').html()).toMatchSnapshot();
 
   restore();
 });
