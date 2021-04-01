@@ -275,9 +275,10 @@ export default {
 | clickable | 是否开启点击反馈 | _boolean_ | `false` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` |
 | autofocus | 是否自动聚焦，iOS 系统不支持该属性 | _boolean_ | `false` |
-| show-word-limit | 是否显示字数统计，需要设置`maxlength`属性 | _boolean_ | `false` |
+| show-word-limit | 是否显示字数统计，需要设置 `maxlength` 属性 | _boolean_ | `false` |
 | error | 是否将输入内容标红 | _boolean_ | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | _string_ | - |
+| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | formatter | 输入内容格式化函数 | _(val: string) => string_ | - |
 | format-trigger | 格式化函数触发的时机，可选值为 `onBlur` | _string_ | `onChange` |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
@@ -285,7 +286,6 @@ export default {
 | label-width | 左侧文本宽度，默认单位为 `px` | _number \| string_ | `6.2em` |
 | label-align | 左侧文本对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |
-| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | _boolean \| object_ | `false` |
 | left-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | right-icon | 右侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |

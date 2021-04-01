@@ -35,6 +35,7 @@ export default defineComponent({
     actionText: String,
     background: String,
     showAction: Boolean,
+    errorMessage: String,
     clearTrigger: String as PropType<FieldClearTrigger>,
     formatTrigger: String as PropType<FieldFormatTrigger>,
     shape: {
@@ -51,7 +52,7 @@ export default defineComponent({
     },
   },
 
-  emits: ['update:modelValue', 'search', 'cancel'],
+  emits: ['search', 'cancel', 'update:modelValue'],
 
   setup(props, { emit, slots, attrs }) {
     const filedRef = ref<ComponentInstance>();
@@ -108,6 +109,7 @@ export default defineComponent({
       'clearable',
       'modelValue',
       'clearTrigger',
+      'errorMessage',
       'formatTrigger',
     ] as const;
 

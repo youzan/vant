@@ -128,6 +128,7 @@ Use `action` slot to custom right button, `cancel` event will no longer be Emitt
 | disabled | Whether to disable field | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
 | error | Whether to mark the input content in red | _boolean_ | `false` |
+| error-message `v3.0.12` | Error message | _string_ | - |
 | formatter `v3.0.12` | Input value formatter | _(val: string) => string_ | - |
 | format-trigger `v3.0.12` | When to format value，can be set to `onBlur` | _string_ | `onChange` |
 | input-align | Text align of field, can be set to `center` `right` | _string_ | `left` |

@@ -255,6 +255,7 @@ Use `input-align` prop to align the input value.
 | show-word-limit | Whether to show word limit, need to set the `maxlength` prop | _boolean_ | `false` |
 | error | Whether to mark the input content in red | _boolean_ | `false` |
 | error-message | Error message | _string_ | - |
+| error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
 | formatter | Input value formatter | _(val: string) => string_ | - |
 | format-trigger | When to format value，can be set to `onBlur` | _string_ | `onChange` |
 | arrow-direction | Can be set to `left` `up` `down` | _string_ | `right` |
@@ -262,7 +263,6 @@ Use `input-align` prop to align the input value.
 | label-width | Label width | _number \| string_ | `6.2em` |
 | label-align | Label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Input align, can be set to `center` `right` | _string_ | `left` |
-| error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
 | autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| object_ | `false` |
 | left-icon | Left side icon name | _string_ | - |
 | right-icon | Right side icon name | _string_ | - |
