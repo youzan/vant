@@ -268,7 +268,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | confirm-disabled-text | Confirm button text when disabled | _string_ | `Confirm` |
 | first-day-of-week | Set the start day of week | _0-6_ | `0` |
 
-### Poppable Props
+### Calendar Poppable Props
 
 Following props are supported when the poppable is true
 
@@ -282,7 +282,7 @@ Following props are supported when the poppable is true
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | teleport | Return the mount node for Calendar | _string \| Element_ | - |
 
-### Range Props
+### Calendar Range Props
 
 Following props are supported when the type is range
 
@@ -292,7 +292,7 @@ Following props are supported when the type is range
 | range-prompt | Error message when exceeded max range | _string_ | `Choose no more than xx days` |
 | allow-same-day | Whether the start and end time of the range is allowed on the same day | _boolean_ | `false` |
 
-### Multiple Props
+### Calendar Multiple Props
 
 Following props are supported when the type is multiple
 
