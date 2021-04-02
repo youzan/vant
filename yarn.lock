@@ -1867,10 +1867,10 @@
     "@typescript-eslint/types" "4.6.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/cli@^3.7.1":
-  version "3.7.1"
-  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.7.1.tgz?cache=0&sync_timestamp=1616038598245&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-3.7.1.tgz#d79195fa6cc63fe3ba45aeba45330a4b0ed84b2b"
-  integrity sha1-15GV+mzGP+O6Ra66RTMKSw7YSys=
+"@vant/cli@^3.8.0":
+  version "3.8.0"
+  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.8.0.tgz?cache=0&sync_timestamp=1617347573376&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-3.8.0.tgz#0a37cf5386359c5d08690c594ee641b0bac5c2d0"
+  integrity sha1-CjfPU4Y1nF0IaQxZTuZBsLrFwtA=
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-transform-object-assign" "^7.12.1"
@@ -1884,7 +1884,7 @@
     "@types/webpack-dev-server" "^3.11.1"
     "@vant/eslint-config" "^3.2.0"
     "@vant/markdown-loader" "^4.0.0"
-    "@vant/markdown-vetur" "^2.0.2"
+    "@vant/markdown-vetur" "^2.1.0"
     "@vant/stylelint-config" "^1.4.2"
     "@vant/touch-emulator" "^1.2.0"
     "@vue/babel-plugin-jsx" "^1.0.1"
@@ -1971,10 +1971,10 @@
     markdown-it-anchor "^6.0.0"
     transliteration "^2.1.11"
 
-"@vant/markdown-vetur@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.npm.taobao.org/@vant/markdown-vetur/download/@vant/markdown-vetur-2.0.2.tgz#8e6be188952a2c4b0e1d626bf93f47f84ab0f22d"
-  integrity sha1-jmvhiJUqLEsOHWJr+T9H+Eqw8i0=
+"@vant/markdown-vetur@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/@vant/markdown-vetur/download/@vant/markdown-vetur-2.1.0.tgz?cache=0&sync_timestamp=1617347165035&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fmarkdown-vetur%2Fdownload%2F%40vant%2Fmarkdown-vetur-2.1.0.tgz#cc49ad807dfcccca898562966d64b7a657ca3aad"
+  integrity sha1-zEmtgH38zMqJhWKWbWS3plfKOq0=
   dependencies:
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"
