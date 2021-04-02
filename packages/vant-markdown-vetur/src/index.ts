@@ -28,8 +28,6 @@ export async function parseAndWrite(options: Options) {
     formatter(vueTags, parsedMd, options.tagPrefix);
   });
 
-  // console.log(JSON.stringify(datas, null, 2));
-
   const webTypes = genWebTypes(vueTags, options);
   const veturTags = genVeturTags(vueTags);
   const veturAttributes = genVeturAttributes(vueTags);
