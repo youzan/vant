@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should change selected icon when using selected-icon prop 1`] = `
+<div class="van-ellipsis van-tree-select__item van-tree-select__item--active">
+  city1
+  <i class="van-badge__wrapper van-icon van-icon-foo van-tree-select__selected">
+  </i>
+</div>
+`;
+
+exports[`should render content slot correctly 1`] = `
+<div class="van-tree-select"
+     style="height: 300px;"
+>
+  <div class="van-sidebar van-tree-select__nav">
+    <a class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item">
+      <div class="van-badge__wrapper van-sidebar-item__text">
+        group1
+      </div>
+    </a>
+  </div>
+  <div class="van-tree-select__content">
+    Custom Content
+  </div>
+</div>
+`;
+
+exports[`should render empty TreeSelect correctly 1`] = `
+<div class="van-tree-select"
+     style="height: 300px;"
+>
+  <div class="van-sidebar van-tree-select__nav">
+  </div>
+  <div class="van-tree-select__content">
+  </div>
+</div>
+`;
+
+exports[`should render nav badge correctly 1`] = `
+<div class="van-tree-select"
+     style="height: 300px;"
+>
+  <div class="van-sidebar van-tree-select__nav">
+    <a class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item">
+      <div class="van-badge__wrapper van-sidebar-item__text">
+        group1
+        <div class="van-badge van-badge--fixed">
+          3
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="van-tree-select__content">
+  </div>
+</div>
+`;
