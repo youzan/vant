@@ -1,30 +1,54 @@
 /* eslint-disable no-continue */
-import { Artical, Articals } from './parser';
+import { Articals } from './parser';
 import { formatType, removeVersion, toKebabCase } from './utils';
 import { VueTag } from './type';
 
-function getComponentName(artical: Artical, tagPrefix: string) {
-  if (artical.content) {
-    return tagPrefix + toKebabCase(artical.content.split(' ')[0]);
-  }
-  return '';
+function formatComponentName(name: string, tagPrefix: string) {
+  return tagPrefix + toKebabCase(name);
 }
 
-export function formatter(articals: Articals, tagPrefix: string = '') {
-  if (!articals.length) {
-    return;
+function getNameFromTableTitle(tableTitle: string, tagPrefix: string) {
+  tableTitle = tableTitle.trim();
+  if (tableTitle.includes(' ')) {
+    return formatComponentName(tableTitle, tagPrefix).split(' ')[0];
+  }
+}
+
+function findTag(vueTags: VueTag[], name: string) {
+  const matched = vueTags.find((item) => item.name === name);
+
+  if (matched) {
+    return matched;
   }
 
-  const tag: VueTag = {
-    name: getComponentName(articals[0], tagPrefix),
+  const newTag: VueTag = {
+    name,
     slots: [],
     events: [],
     attributes: [],
   };
 
-  const tables = articals.filter(artical => artical.type === 'table');
+  vueTags.push(newTag);
 
-  tables.forEach(item => {
+  return newTag;
+}
+
+export function formatter(
+  vueTags: VueTag[],
+  articals: Articals,
+  tagPrefix = ''
+) {
+  if (!articals.length) {
+    return;
+  }
+
+  const mainTitle = articals[0].content;
+  const defaultName = mainTitle
+    ? formatComponentName(mainTitle.split(' ')[0], tagPrefix)
+    : '';
+  const tables = articals.filter((artical) => artical.type === 'table');
+
+  tables.forEach((item) => {
     const { table } = item;
     const prevIndex = articals.indexOf(item) - 1;
     const prevArtical = articals[prevIndex];
@@ -36,7 +60,10 @@ export function formatter(articals: Articals, tagPrefix: string = '') {
     const tableTitle = prevArtical.content;
 
     if (tableTitle.includes('Props')) {
-      table.body.forEach(line => {
+      const name = getNameFromTableTitle(tableTitle, tagPrefix) || defaultName;
+      const tag = findTag(vueTags, name);
+
+      table.body.forEach((line) => {
         const [name, desc, type, defaultVal] = line;
         tag.attributes!.push({
           name: removeVersion(name),
@@ -52,7 +79,10 @@ export function formatter(articals: Articals, tagPrefix: string = '') {
     }
 
     if (tableTitle.includes('Events')) {
-      table.body.forEach(line => {
+      const name = getNameFromTableTitle(tableTitle, tagPrefix) || defaultName;
+      const tag = findTag(vueTags, name);
+
+      table.body.forEach((line) => {
         const [name, desc] = line;
         tag.events!.push({
           name: removeVersion(name),
@@ -63,7 +93,10 @@ export function formatter(articals: Articals, tagPrefix: string = '') {
     }
 
     if (tableTitle.includes('Slots')) {
-      table.body.forEach(line => {
+      const name = getNameFromTableTitle(tableTitle, tagPrefix) || defaultName;
+      const tag = findTag(vueTags, name);
+
+      table.body.forEach((line) => {
         const [name, desc] = line;
         tag.slots!.push({
           name: removeVersion(name),
@@ -72,6 +105,4 @@ export function formatter(articals: Articals, tagPrefix: string = '') {
       });
     }
   });
-
-  return tag;
 }

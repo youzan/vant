@@ -272,7 +272,7 @@ export default {
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | _string_ | `确定` |
 | first-day-of-week | 设置周起始日 | _0-6_ | `0` |
 
-### Poppable Props
+### Calendar Poppable Props
 
 当 Canlendar 的 `poppable` 为 `true` 时，支持以下 props:
 
@@ -286,7 +286,7 @@ export default {
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 | teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | - |
 
-### Range Props
+### Calendar Range Props
 
 当 Canlendar 的 `type` 为 `range` 时，支持以下 props:
 
@@ -296,7 +296,7 @@ export default {
 | range-prompt | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
 | allow-same-day | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 
-### Multiple Props
+### Calendar Multiple Props
 
 当 Canlendar 的 `type` 为 `multiple` 时，支持以下 props:
 

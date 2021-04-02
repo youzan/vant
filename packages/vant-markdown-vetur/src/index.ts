@@ -11,8 +11,8 @@ import { genVeturTags, genVeturAttributes } from './vetur';
 async function readMarkdown(options: Options) {
   const mds = await glob(normalizePath(`${options.path}/**/*.md`));
   return mds
-    .filter(md => options.test.test(md))
-    .map(path => readFileSync(path, 'utf-8'));
+    .filter((md) => options.test.test(md))
+    .map((path) => readFileSync(path, 'utf-8'));
 }
 
 export async function parseAndWrite(options: Options) {
@@ -21,13 +21,16 @@ export async function parseAndWrite(options: Options) {
   }
 
   const mds = await readMarkdown(options);
-  const datas = mds
-    .map(md => formatter(mdParser(md), options.tagPrefix))
-    .filter(item => !!item) as VueTag[];
+  const vueTags: VueTag[] = [];
 
-  const webTypes = genWebTypes(datas, options);
-  const veturTags = genVeturTags(datas);
-  const veturAttributes = genVeturAttributes(datas);
+  mds.forEach((md) => {
+    const parsedMd = mdParser(md);
+    formatter(vueTags, parsedMd, options.tagPrefix);
+  });
+
+  const webTypes = genWebTypes(vueTags, options);
+  const veturTags = genVeturTags(vueTags);
+  const veturAttributes = genVeturAttributes(vueTags);
 
   outputFileSync(
     join(options.outputDir, 'tags.json'),
