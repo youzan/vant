@@ -1,3 +1,4 @@
+import { defineComponent } from 'vue';
 import { mount, later } from '../../../test';
 import { Tab } from '..';
 import { Tabs } from '../../tabs';
@@ -64,11 +65,11 @@ test('should render correctly after inserting a tab with name', async () => {
 });
 
 test('should render Tab inside a component correctly', async () => {
-  const MyTab = {
+  const MyTab = defineComponent({
     render() {
       return <Tab title="2">2</Tab>;
     },
-  };
+  });
 
   const wrapper = mount({
     render() {
