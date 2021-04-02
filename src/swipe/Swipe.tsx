@@ -139,14 +139,14 @@ export default defineComponent({
     });
 
     const trackStyle = computed(() => {
-      const mainAxis = props.vertical ? 'height' : 'width';
-      const crossAxis = props.vertical ? 'width' : 'height';
       const style: CSSProperties = {
         transitionDuration: `${state.swiping ? 0 : props.duration}ms`,
         transform: `translate${props.vertical ? 'Y' : 'X'}(${state.offset}px)`,
       };
 
       if (size.value) {
+        const mainAxis = props.vertical ? 'height' : 'width';
+        const crossAxis = props.vertical ? 'width' : 'height';
         style[mainAxis] = `${trackSize.value}px`;
         style[crossAxis] = props[crossAxis] ? `${props[crossAxis]}px` : '';
       }
@@ -225,8 +225,7 @@ export default defineComponent({
 
       if (state.active <= -1) {
         move({ pace: count.value });
-      }
-      if (state.active >= count.value) {
+      } else if (state.active >= count.value) {
         move({ pace: -count.value });
       }
     };

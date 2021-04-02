@@ -381,15 +381,15 @@ export default defineComponent({
               onBlur={onDetailBlur}
               onFocus={() => onFocus('addressDetail')}
               onInput={onChangeDetail}
-              onSelect-search={(event: Event) => emit('select-search', event)}
+              onSelectSearch={(event: Event) => emit('select-search', event)}
             />
             {props.showPostal && (
               <Field
                 v-show={!hideBottomFields.value}
                 v-model={data.postalCode}
                 type="tel"
-                maxlength="6"
                 label={t('postal')}
+                maxlength="6"
                 placeholder={t('postal')}
                 errorMessage={errorInfo.postalCode}
                 onFocus={() => onFocus('postalCode')}
@@ -402,9 +402,9 @@ export default defineComponent({
             <Button
               block
               round
-              loading={props.isSaving}
               type="danger"
               text={props.saveButtonText || t('save')}
+              loading={props.isSaving}
               onClick={onSave}
             />
             {props.showDelete && (
