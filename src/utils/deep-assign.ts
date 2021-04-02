@@ -1,4 +1,4 @@
-import { isDef, isObject } from '.';
+import { isDef, isObject } from './base';
 
 type ObjectIndex = Record<string, any>;
 
