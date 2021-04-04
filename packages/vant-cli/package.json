@@ -73,7 +73,7 @@
     "gh-pages": "^3.1.0",
     "hash-sum": "^2.0.0",
     "html-webpack-plugin": "^5.2.0",
-    "husky": "^4.3.7",
+    "husky": "^6.0.0",
     "jest": "^26.6.3",
     "jest-canvas-mock": "^2.3.0",
     "jest-serializer-html": "^7.0.0",
