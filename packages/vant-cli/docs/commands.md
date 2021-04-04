@@ -59,3 +59,7 @@ npx vant-cli dev
 ## commit-lint
 
 校验 commit message 的格式是否符合规范，需要配合 `husky` 在提交 commit 时触发。
+
+```bash
+npx husky add .husky/commit-msg 'npx --no-install vant-cli commit-lint $1'
+```

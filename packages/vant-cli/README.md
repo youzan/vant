@@ -36,14 +36,9 @@ yarn add @vant/cli --dev
     "test": "vant-cli test",
     "lint": "vant-cli lint",
     "build": "vant-cli build",
+    "prepare": "husky install",
     "release": "vant-cli release",
     "build-site": "vant-cli build-site"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "vant commit-lint"
-    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue}": "eslint --fix",
@@ -70,4 +65,3 @@ yarn add @vant/cli --dev
 - [目录结构](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/directory.md)
 - [桌面端组件](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/desktop.md)
 - [更新日志](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)
-
