@@ -1,5 +1,17 @@
 # 更新日志
 
+## v3.9.1
+
+`2021-04-04`
+
+- commit-lint 命令适配 husky v6
+
+## v3.9.0
+
+`2021-04-04`
+
+- 升级 husky v6，迁移指南参见 [Migrate from v4 to v6](https://typicode.github.io/husky/#/?id=migrate-from-v4-to-v6)
+
 ## v3.8.0
 
 `2021-04-02`

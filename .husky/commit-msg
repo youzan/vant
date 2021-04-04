@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npx vant-cli commit-lint $1
+npx --no-install vant-cli commit-lint $1
