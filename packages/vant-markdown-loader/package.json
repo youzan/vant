@@ -1,6 +1,6 @@
 {
   "name": "@vant/markdown-loader",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Simple and fast vue markdown loader",
   "main": "src/index.js",
   "publishConfig": {
