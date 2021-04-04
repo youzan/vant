@@ -41,7 +41,9 @@ yarn add @vant/cli --dev
     "build-site": "vant-cli build-site"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,vue}": "eslint --fix",
+    "*.md": "prettier --write",
+    "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
+    "*.{ts,tsx,js,vue}": "eslint --fix",
     "*.{vue,css,less,scss}": "stylelint --fix"
   },
   "eslintConfig": {
@@ -54,7 +56,7 @@ yarn add @vant/cli --dev
   "prettier": {
     "singleQuote": true
   },
-  "browserslist": ["Android >= 4.0", "iOS >= 8"]
+  "browserslist": ["Chrome >= 51", "iOS >= 10"]
 }
 ```
 

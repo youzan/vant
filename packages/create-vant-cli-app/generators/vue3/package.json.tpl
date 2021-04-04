@@ -13,29 +13,25 @@
     "test": "vant-cli test",
     "lint": "vant-cli lint",
     "build": "vant-cli build",
+    "prepare": "husky install",
     "release": "vant-cli release",
     "test:coverage": "open test/coverage/index.html",
     "build-site": "vant-cli build-site && gh-pages -d site"
   },
   "author": "",
   "license": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "vant-cli commit-lint"
-    }
-  },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx,vue}": "eslint --fix",
+    "*.md": "prettier --write",
+    "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
+    "*.{ts,tsx,js,vue}": "eslint --fix",
     "*.{vue,css,less,scss}": "stylelint --fix"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vant/cli": "^3.0.0",
+    "@vant/cli": "^3.9.0",
     "@vue/compiler-sfc": "^3.0.0",
-    "babel-plugin-import": "^1.13.0",
     "vue": "^3.0.0"
   },
   "eslintConfig": {
@@ -53,7 +49,7 @@
     "singleQuote": true
   },
   "browserslist": [
-    "Android >= 4.0",
-    "iOS >= 8"
+    "Chrome >= 51",
+    "iOS >= 10"
   ]
 }
