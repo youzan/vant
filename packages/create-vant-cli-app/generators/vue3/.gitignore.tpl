@@ -8,10 +8,16 @@
 node_modules
 package-lock.json
 
-# dist file
-es
-lib
-site
+# husky
+**/.husky/_
 
 # test
 test/coverage
+
+# dist file
+es
+lib
+dist
+vetur
+site
+changelog.generated.md
