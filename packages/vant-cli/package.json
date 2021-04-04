@@ -46,7 +46,7 @@
     "@nuxt/friendly-errors-webpack-plugin": "^2.5.0",
     "@types/webpack-dev-server": "^3.11.1",
     "@vant/eslint-config": "^3.2.0",
-    "@vant/markdown-loader": "^4.0.1",
+    "@vant/markdown-loader": "^4.1.0",
     "@vant/markdown-vetur": "^2.1.0",
     "@vant/stylelint-config": "^1.4.2",
     "@vant/touch-emulator": "^1.2.0",
@@ -93,7 +93,7 @@
     "vue-jest": "^5.0.0-alpha.8",
     "vue-loader": "^16.1.2",
     "vue-router": "^4.0.0",
-    "webpack": "^5.24.1",
+    "webpack": "^5.30.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.7.3",
     "webpackbar": "^5.0.0-3"
