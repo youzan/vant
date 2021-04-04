@@ -49,7 +49,6 @@ module.exports = function (api?: ConfigAPI, options: PresetOption = {}) {
           enableObjectSlots: options.enableObjectSlots,
         },
       ],
-      '@babel/plugin-transform-object-assign',
     ],
   };
 };
