@@ -8,9 +8,6 @@
 node_modules
 package-lock.json
 
-# husky
-**/.husky/_
-
 # test
 test/coverage
 
