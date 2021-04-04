@@ -53,6 +53,8 @@ command('build-site')
 
 command('changelog').description('Generate changelog').action(changelog);
 
-command('commit-lint').description('Lint commit message').action(commitLint);
+command('commit-lint <gitParams>')
+  .description('Lint commit message')
+  .action(commitLint);
 
 parse();
