@@ -19,6 +19,7 @@
     "lint": "vant-cli lint",
     "test": "vant-cli test",
     "build": "vant-cli build",
+    "prepare": "husky install",
     "release": "vant-cli release --tag next",
     "test:watch": "vant-cli test --watch",
     "release:site": "sh docs/site/release.sh",
@@ -26,12 +27,6 @@
   },
   "npm": {
     "tag": "next"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "vant-cli commit-lint"
-    }
   },
   "lint-staged": {
     "*.md": "prettier --write",
@@ -65,7 +60,7 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vant/cli": "^3.8.0",
+    "@vant/cli": "^3.9.0",
     "@vue/compiler-sfc": "^3.0.6",
     "prettier": "2.1.0",
     "vue": "^3.0.6"
