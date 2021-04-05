@@ -16,6 +16,22 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.12](https://github.com/youzan/vant/compare/v3.0.11...v3.0.12)
+
+`2021-04-05`
+
+**Feature**
+
+- CollapseItem: 新增 readonly 属性 [#8445](https://github.com/youzan/vant/issues/8445)
+- Field: 新增 clear-icon 属性 [#8438](https://github.com/youzan/vant/issues/8438)
+- Search: 新增 clear-icon 属性 [#8439](https://github.com/youzan/vant/issues/8439)
+- Search: 新增 error-message 属性 [#8442](https://github.com/youzan/vant/issues/8442)
+- Search: 新增 formatter、format-trigger 属性 [#8441](https://github.com/youzan/vant/issues/8441)
+
+**Bug Fixes**
+
+- 修复 Webstorm 下组件标签提示不正确的问题 [#8450](https://github.com/youzan/vant/issues/8450)
+
 ### [v3.0.11](https://github.com/youzan/vant/compare/v3.0.10...v3.0.11)
 
 `2021-03-30`

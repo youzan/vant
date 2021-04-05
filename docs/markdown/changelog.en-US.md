@@ -16,6 +16,22 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.12](https://github.com/youzan/vant/compare/v3.0.11...v3.0.12)
+
+`2021-04-05`
+
+**Feature**
+
+- CollapseItem: add readonly prop [#8445](https://github.com/youzan/vant/issues/8445)
+- Field: add clear-icon prop [#8438](https://github.com/youzan/vant/issues/8438)
+- Search: add clear-icon prop [#8439](https://github.com/youzan/vant/issues/8439)
+- Search: add error-message prop [#8442](https://github.com/youzan/vant/issues/8442)
+- Search: add formatter、format-trigger prop [#8441](https://github.com/youzan/vant/issues/8441)
+
+**Bug Fixes**
+
+- fix incorrect tag prompts under Webstorm [#8450](https://github.com/youzan/vant/issues/8450)
+
 ### [v3.0.11](https://github.com/youzan/vant/compare/v3.0.10...v3.0.11)
 
 `2021-03-30`
