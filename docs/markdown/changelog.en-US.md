@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.12](https://github.com/youzan/vant/compare/v2.12.11...v2.12.12)
+
+`2021-04-05`
+
+**Bug Fixes**
+
+- fix incorrect tag prompts under Webstorm [#8450](https://github.com/youzan/vant/issues/8450)
+
 ### [v2.12.11](https://github.com/youzan/vant/compare/v2.12.10...v2.12.11)
 
 `2021-03-30`

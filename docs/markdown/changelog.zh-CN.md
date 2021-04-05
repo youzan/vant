@@ -16,6 +16,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.12](https://github.com/youzan/vant/compare/v2.12.11...v2.12.12)
+
+`2021-04-05`
+
+**Bug Fixes**
+
+- 修复 Webstorm 下组件标签提示不正确的问题 [#8450](https://github.com/youzan/vant/issues/8450)
+
 ### [v2.12.11](https://github.com/youzan/vant/compare/v2.12.10...v2.12.11)
 
 `2021-03-30`
