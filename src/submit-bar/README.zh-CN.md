@@ -99,11 +99,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| price | 价格（单位分） | _number_ | - |
-| decimal-length | 价格小数点位数 | _number \| string_ | `2` |
-| label | 价格左侧文案 | _string_ | `合计：` |
-| suffix-label | 价格右侧文案 | _string_ | - |
-| text-align | 价格文案对齐方向，可选值为 `left` | _string_ | `right` |
+| price | 金额（单位分） | _number_ | - |
+| decimal-length | 金额小数点位数 | _number \| string_ | `2` |
+| label | 金额左侧文案 | _string_ | `合计：` |
+| suffix-label | 金额右侧文案 | _string_ | - |
+| text-align | 金额文案对齐方向，可选值为 `left` | _string_ | `right` |
 | button-text | 按钮文字 | _string_ | - |
 | button-type | 按钮类型 | _string_ | `danger` |
 | button-color | 自定义按钮颜色 | _string_ | - |
