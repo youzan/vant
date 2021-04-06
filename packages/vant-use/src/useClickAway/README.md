@@ -59,15 +59,15 @@ export default {
 ### 类型定义
 
 ```ts
+type Options = {
+  eventName?: string;
+};
+
 function useClickAway(
   target: Element | Ref<Element | undefined>,
   listener: EventListener,
   options?: Options
 ): void;
-
-type Options = {
-  eventName?: string;
-};
 ```
 
 ### 参数

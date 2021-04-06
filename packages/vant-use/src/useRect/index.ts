@@ -16,9 +16,9 @@ function makeDOMRect(width: number, height: number) {
 }
 
 export const useRect = (
-  elementRef: (Element | Window) | Ref<Element | Window | undefined>
+  elementOrRef: Element | Window | Ref<Element | Window | undefined>
 ) => {
-  const element = unref(elementRef);
+  const element = unref(elementOrRef);
 
   if (isWindow(element)) {
     const width = element.innerWidth;

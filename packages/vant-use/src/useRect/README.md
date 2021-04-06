@@ -31,7 +31,9 @@ export default {
 ### 类型定义
 
 ```ts
-function useRect((Element | Window) | Ref<Element | Window | undefined>): DOMRect;
+function useRect(
+  element: Element | Window | Ref<Element | Window | undefined>
+): DOMRect;
 ```
 
 ### 返回值
