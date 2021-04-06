@@ -52,9 +52,9 @@
   "dependencies": {
     "@babel/runtime": "7.x",
     "@vant/icons": "^1.5.3",
-    "@vant/lazyload": "^1.0.4",
-    "@vant/popperjs": "^1.0.4",
-    "@vant/use": "^1.0.5"
+    "@vant/lazyload": "^1.1.0",
+    "@vant/popperjs": "^1.1.0",
+    "@vant/use": "^1.1.0"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
