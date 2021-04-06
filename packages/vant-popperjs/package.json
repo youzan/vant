@@ -20,7 +20,7 @@
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-popperjs",
   "dependencies": {
-    "@popperjs/core": "^2.5.4"
+    "@popperjs/core": "^2.9.2"
   },
   "devDependencies": {
     "@babel/runtime": "7.x",
@@ -29,10 +29,6 @@
     "release-it": "^14.2.2",
     "rollup": "^2.33.3"
   },
-  "browserslist": [
-    "Android >= 4.0",
-    "iOS >= 8"
-  ],
   "release-it": {
     "git": {
       "tag": false,
