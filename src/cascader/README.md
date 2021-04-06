@@ -193,6 +193,50 @@ export default {
 };
 ```
 
+### Select Any Level
+
+```html
+<van-cascader
+  v-model="code"
+  title="Select Area"
+  :any-level="true"
+  :options="options"
+  @confirm="onConfirm"
+/>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const code = ref('');
+    const options = [
+      {
+        text: 'Zhejiang',
+        value: '330000',
+        children: [{ text: 'Hangzhou', value: '330100' }],
+      },
+      {
+        text: 'Jiangsu',
+        value: '320000',
+        children: [{ text: 'Nanjing', value: '320100' }],
+      },
+    ];
+    const onConfirm = ({ selectedOptions }) => {
+      state.show = false;
+      state.fieldValue = selectedOptions.map((option) => option.text).join('/');
+    };
+
+    return {
+      code,
+      options,
+      onConfirm,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -206,6 +250,7 @@ export default {
 | active-color | Active color | _string_ | `#ee0a24` |
 | swipeable `v3.0.11` | Whether to enable gestures to slide left and right | _boolean_ | `false` |
 | closeable | Whether to show close icon | _boolean_ | `true` |
+| any-level | Whether to select any level | _boolean_ | `false` |
 | close-icon `v3.0.10` | Close icon name | _string_ | `cross` |
 | field-names `v3.0.4` | Custom the fields of options | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
@@ -216,6 +261,7 @@ export default {
 | change | Emitted when active option changed | `{ value, selectedOptions, tabIndex }` |
 | finish | Emitted when all options is selected | `{ value, selectedOptions, tabIndex }` |
 | close | Emmitted when the close icon is clicked | - |
+| confirm | any-level property is true，Emmitted when option is selected | `{ value, selectedOptions, tabIndex }` |
 
 ### Slots
 
@@ -227,17 +273,20 @@ export default {
 
 How to use: [Custom Theme](#/en-US/theme).
 
-| Name                              | Default Value   | Description |
-| --------------------------------- | --------------- | ----------- |
-| @cascader-header-height           | `48px`          | -           |
-| @cascader-title-font-size         | `@font-size-lg` | -           |
-| @cascader-title-line-height       | `20px`          | -           |
-| @cascader-close-icon-size         | `22px`          | -           |
-| @cascader-close-icon-color        | `@gray-5`       | -           |
-| @cascader-close-icon-active-color | `@gray-6`       | -           |
-| @cascader-selected-icon-size      | `18px`          | -           |
-| @cascader-tabs-height             | `48px`          | -           |
-| @cascader-active-color            | `@red`          | -           |
-| @cascader-options-height          | `384px`         | -           |
-| @cascader-tab-color               | `@text-color`   | -           |
-| @cascader-unselected-tab-color    | `@gray-6`       | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @cascader-header-height | `48px` | - |
+| @cascader-title-font-size | `@font-size-lg` | - |
+| @cascader-title-line-height | `20px` | - |
+| @cascader-close-icon-size | `22px` | - |
+| @cascader-close-icon-color | `@gray-5` | - |
+| @cascader-close-icon-active-color | `@gray-6` | - |
+| @cascader-selected-icon-size | `18px` | - |
+| @cascader-tabs-height | `48px` | - |
+| @cascader-active-color | `@red` | - |
+| @cascader-options-height | `384px` | - |
+| @cascader-tab-color | `@text-color` | - |
+| @cascader-unselected-tab-color | `@gray-6` | - |
+| @cascader-radio-checked-icon-color | `@red` | - |
+| @cascader-radio-border-color | `@gray-5` | - |
+| @cascader-radio-transition-duratio | `@animation-duration-fast` | - |

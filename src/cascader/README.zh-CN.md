@@ -169,6 +169,7 @@ export default {
 <van-cascader
   v-model="code"
   title="请选择所在地区"
+  :any-level="true"
   :options="options"
   :field-names="fieldNames"
 />
@@ -207,6 +208,53 @@ export default {
 };
 ```
 
+### 选择任意一级选项
+
+通过 `any-level` 属性可以选择任意一级选项。
+
+```html
+<van-cascader
+  v-model="code"
+  title="请选择所在地区"
+  :any-level="true"
+  :options="options"
+  @confirm="onConfirm"
+/>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const code = ref('');
+    const options = [
+      {
+        text: '浙江省',
+        value: '330000',
+        children: [{ text: '杭州市', value: '330100' }],
+      },
+      {
+        text: '江苏省',
+        value: '320000',
+        children: [{ text: '南京市', value: '320100' }],
+      },
+    ];
+
+    const onConfirm = ({ selectedOptions }) => {
+      state.show = false;
+      state.fieldValue = selectedOptions.map((option) => option.text).join('/');
+    };
+
+    return {
+      code,
+      options,
+      onConfirm,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -220,16 +268,18 @@ export default {
 | active-color | 选中状态的高亮颜色 | _string_ | `#ee0a24` |
 | swipeable `v3.0.11` | 是否开启手势左右滑动切换 | _boolean_ | `false` |
 | closeable | 是否显示关闭图标 | _boolean_ | `true` |
+| any-level | 是否选择任意一级选项 | _boolean_ | `false` |
 | close-icon `v3.0.10` | 关闭[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `cross` |
 | field-names `v3.0.4` | 自定义 `options` 结构中的字段 | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
 ### Events
 
-| 事件   | 说明                   | 回调参数                               |
-| ------ | ---------------------- | -------------------------------------- |
-| change | 选中项变化时触发       | `{ value, selectedOptions, tabIndex }` |
+| 事件 | 说明 | 回调参数 |
+| --- | --- | --- |
+| change | 选中项变化时触发 | `{ value, selectedOptions, tabIndex }` |
 | finish | 全部选项选择完成后触发 | `{ value, selectedOptions, tabIndex }` |
-| close  | 点击关闭图标时触发     | -                                      |
+| close | 点击关闭图标时触发 | - |
+| confirm | any-level 属性为 true 时候，选中选项触发 | `{ value, selectedOptions, tabIndex }` |
 
 ### Slots
 
@@ -241,17 +291,20 @@ export default {
 
 组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
 
-| 名称                              | 默认值          | 描述 |
-| --------------------------------- | --------------- | ---- |
-| @cascader-header-height           | `48px`          | -    |
-| @cascader-title-font-size         | `@font-size-lg` | -    |
-| @cascader-title-line-height       | `20px`          | -    |
-| @cascader-close-icon-size         | `22px`          | -    |
-| @cascader-close-icon-color        | `@gray-5`       | -    |
-| @cascader-close-icon-active-color | `@gray-6`       | -    |
-| @cascader-selected-icon-size      | `18px`          | -    |
-| @cascader-tabs-height             | `48px`          | -    |
-| @cascader-active-color            | `@red`          | -    |
-| @cascader-options-height          | `384px`         | -    |
-| @cascader-tab-color               | `@text-color`   | -    |
-| @cascader-unselected-tab-color    | `@gray-6`       | -    |
+| 名称                               | 默认值                     | 描述 |
+| ---------------------------------- | -------------------------- | ---- |
+| @cascader-header-height            | `48px`                     | -    |
+| @cascader-title-font-size          | `@font-size-lg`            | -    |
+| @cascader-title-line-height        | `20px`                     | -    |
+| @cascader-close-icon-size          | `22px`                     | -    |
+| @cascader-close-icon-color         | `@gray-5`                  | -    |
+| @cascader-close-icon-active-color  | `@gray-6`                  | -    |
+| @cascader-selected-icon-size       | `18px`                     | -    |
+| @cascader-tabs-height              | `48px`                     | -    |
+| @cascader-active-color             | `@red`                     | -    |
+| @cascader-options-height           | `384px`                    | -    |
+| @cascader-tab-color                | `@text-color`              | -    |
+| @cascader-unselected-tab-color     | `@gray-6`                  | -    |
+| @cascader-radio-checked-icon-color | `@red`                     | -    |
+| @cascader-radio-border-color       | `@gray-5`                  | -    |
+| @cascader-radio-transition-duratio | `@animation-duration-fast` | -    |

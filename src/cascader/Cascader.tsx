@@ -52,9 +52,13 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    anyLevel: {
+      type: Boolean,
+      default: false,
+    },
   },
 
-  emits: ['close', 'change', 'finish', 'update:modelValue'],
+  emits: ['close', 'change', 'confirm', 'finish', 'update:modelValue'],
 
   setup(props, { slots, emit }) {
     const state = reactive({
@@ -141,7 +145,11 @@ export default defineComponent({
       ];
     };
 
-    const onSelect = (option: CascaderOption, tabIndex: number) => {
+    const onSelect = (
+      option: CascaderOption,
+      tabIndex: number,
+      confirm = false
+    ) => {
       state.tabs[tabIndex].selectedOption = option;
 
       if (state.tabs.length > tabIndex + 1) {
@@ -160,9 +168,11 @@ export default defineComponent({
           state.tabs.push(nextTab);
         }
 
-        nextTick(() => {
-          state.activeTab++;
-        });
+        if (!confirm) {
+          nextTick(() => {
+            state.activeTab++;
+          });
+        }
       }
 
       const selectedOptions = state.tabs
@@ -176,6 +186,10 @@ export default defineComponent({
       };
       emit('update:modelValue', option[valueKey]);
       emit('change', eventParams);
+
+      if (confirm) {
+        emit('confirm', eventParams);
+      }
 
       if (!option[childrenKey]) {
         emit('finish', eventParams);
@@ -208,14 +222,34 @@ export default defineComponent({
         const isSelected =
           selectedOption && option[valueKey] === selectedOption[valueKey];
 
+        const radioIconStyle = {
+          borderColor:
+            isSelected && props.activeColor ? props.activeColor : undefined,
+          backgroundColor:
+            isSelected && props.activeColor ? props.activeColor : undefined,
+        };
+
         return (
           <li
             class={bem('option', { selected: isSelected })}
             style={{ color: isSelected ? props.activeColor : undefined }}
             onClick={() => onSelect(option, tabIndex)}
           >
-            <span>{option[textKey]}</span>
-            {isSelected ? (
+            {props.anyLevel ? (
+              <div
+                class={bem('radio-icon', { checked: isSelected })}
+                onClick={(event: Event) => {
+                  event.stopPropagation();
+                  onSelect(option, tabIndex, true);
+                }}
+              >
+                <Icon name="success" style={radioIconStyle} />
+                <span>{option[textKey]}</span>
+              </div>
+            ) : null}
+            {props.anyLevel && option.children ? <Icon name="arrow" /> : null}
+            {!props.anyLevel ? <span>{option[textKey]}</span> : null}
+            {isSelected && !props.anyLevel ? (
               <Icon name="success" class={bem('selected-icon')} />
             ) : null}
           </li>

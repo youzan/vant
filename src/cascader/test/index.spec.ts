@@ -176,3 +176,28 @@ test('should allow to custom field names', async () => {
     },
   ]);
 });
+
+test('should select any level', async () => {
+  const wrapper = mount(Cascader, {
+    props: {
+      options,
+      anyLevel: true,
+      activeColor: '#1989fa',
+    },
+  });
+
+  await later();
+  wrapper
+    .findAll('.van-cascader__option')[0]
+    .find('.van-cascader__radio-icon')
+    .trigger('click');
+
+  const firstOption = options[0];
+  expect(wrapper.emitted('confirm')![0]).toEqual([
+    {
+      value: firstOption.value,
+      tabIndex: 0,
+      selectedOptions: [firstOption],
+    },
+  ]);
+});

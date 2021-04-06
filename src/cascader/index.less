@@ -68,6 +68,42 @@
     }
   }
 
+  &__radio-icon {
+    display: flex;
+    height: 1em;
+    font-size: @cascader-selected-icon-size;
+    line-height: 1em;
+    cursor: pointer;
+
+    .van-icon {
+      display: block;
+      box-sizing: border-box;
+      width: 1.25em;
+      height: 1.25em;
+      color: transparent;
+      font-size: 0.8em;
+      line-height: 1.25;
+      text-align: center;
+      border: 1px solid @cascader-radio-border-color;
+      border-radius: 100%;
+      transition-duration: @cascader-radio-transition-duration;
+      transition-property: color, border-color, background-color;
+    }
+
+    span {
+      margin: 0 0 0 5px;
+      font-size: @font-size-md;
+    }
+
+    &--checked {
+      .van-icon {
+        color: @white;
+        background-color: @cascader-radio-checked-icon-color;
+        border-color: @cascader-radio-checked-icon-color;
+      }
+    }
+  }
+
   &__selected-icon {
     font-size: @cascader-selected-icon-size;
   }

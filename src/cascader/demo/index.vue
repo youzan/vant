@@ -93,7 +93,34 @@
         :options="customFieldOptions"
         :field-names="fieldNames"
         @close="customFieldNames.show = false"
-        @finish="onFinish('customFieldNames', $event)"
+        @finish="onFinish('customFieldNames', false, $event)"
+      />
+    </van-popup>
+  </demo-block>
+
+  <demo-block card :title="t('anyLevel')">
+    <van-field
+      v-model="anyLevel.result"
+      is-link
+      readonly
+      :label="t('area')"
+      :placeholder="t('selectArea')"
+      @click="anyLevel.show = true"
+    />
+    <van-popup
+      v-model:show="anyLevel.show"
+      round
+      teleport="body"
+      position="bottom"
+      safe-area-inset-bottom
+    >
+      <van-cascader
+        v-model="anyLevel.value"
+        :title="t('selectArea')"
+        :options="t('options')"
+        :any-level="true"
+        @close="anyLevel.show = false"
+        @confirm="onFinish('anyLevel', $event)"
       />
     </van-popup>
   </demo-block>
@@ -126,6 +153,7 @@ const i18n = {
       { text: '宁波市', value: '330200' },
     ],
     customFieldNames: '自定义字段名',
+    anyLevel: '选择任意一级选项',
   },
   'en-US': {
     area: 'Area',
@@ -145,6 +173,7 @@ const i18n = {
       { text: 'Ningbo', value: '330200' },
     ],
     customFieldNames: 'Custom Field Names',
+    anyLevel: 'Select Any Level',
   },
 };
 
@@ -176,6 +205,11 @@ export default {
         options: t('asyncOptions1'),
       },
       customFieldNames: {
+        show: false,
+        value: null,
+        result: '',
+      },
+      anyLevel: {
         show: false,
         value: null,
         result: '',
