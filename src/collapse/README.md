@@ -1,5 +1,9 @@
 # Collapse
 
+### Intro
+
+Place a group of content in multiple collapsible panels, click the title of the panel to expand or contract its content.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

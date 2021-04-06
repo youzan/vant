@@ -1,5 +1,9 @@
 # Toast
 
+### Intro
+
+A black translucent prompt pops up in the middle of the page, which is used in scenarios such as message notification, loading prompt, and operation result prompt.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

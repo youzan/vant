@@ -1,5 +1,9 @@
 # NavBar
 
+### Intro
+
+Provide navigation function for the page, often used at the top of the page.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

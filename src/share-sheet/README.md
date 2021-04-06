@@ -1,5 +1,9 @@
 # ShareSheet
 
+### Intro
+
+The sharing panel that pops up at the bottom is used to display the operation buttons corresponding to each sharing channel, and does not include specific sharing logic.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

@@ -1,5 +1,9 @@
 # Field
 
+### Intro
+
+The input box component in the form.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

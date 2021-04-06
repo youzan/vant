@@ -1,5 +1,9 @@
 # Cascader
 
+### Intro
+
+The cascading selection box is used for the selection of multi-level data. The typical scene is the selection of provinces and cities.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

@@ -1,5 +1,9 @@
 # Sticky
 
+### Intro
+
+The Sticky component has the same effect as the `position: sticky` property in CSS. When the component is within the screen range, it will be arranged according to the normal layout. When the component rolls out of the screen, it will always be fixed at the top of the screen.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

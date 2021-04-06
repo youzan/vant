@@ -1,5 +1,9 @@
 # Overlay
 
+### Intro
+
+Create a mask layer to emphasize specific page elements and prevent users from performing other operations.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

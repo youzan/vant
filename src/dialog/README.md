@@ -1,5 +1,9 @@
 # Dialog
 
+### Intro
+
+Pop-up modal boxes are often used for message prompts, message confirmations, or to complete specific interactive operations in the current page. The Dialog component supports two methods: function call and component call.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

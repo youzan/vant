@@ -1,5 +1,9 @@
 # CountDown
 
+### Intro
+
+It is used to display the countdown value in real time, and the accuracy supports milliseconds.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。
