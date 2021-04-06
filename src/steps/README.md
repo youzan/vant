@@ -1,5 +1,9 @@
 # Steps
 
+### Intro
+
+Used to show each link of the operation process and let users understand the position of the current operation in the overall process.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

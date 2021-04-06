@@ -1,5 +1,9 @@
 # Grid
 
+### Intro
+
+Used to divide the page into blocks of equal width in the horizontal direction for displaying content or page navigation.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

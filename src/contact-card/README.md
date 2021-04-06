@@ -1,5 +1,9 @@
 # ContactCard
 
+### Intro
+
+Display contact information in the form of cards.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

@@ -1,5 +1,9 @@
 # Icon
 
+### Intro
+
+The font-based icon set can be used through the Icon component or referenced in other components through the `icon` property.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

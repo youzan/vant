@@ -1,5 +1,9 @@
 # Uploader
 
+### Intro
+
+Used to upload local pictures or files to the server, and display preview images and upload progress during the upload process. Currently, the Uploader component does not contain the interface logic for uploading files to the server. This step needs to be implemented by yourself.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

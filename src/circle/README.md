@@ -1,5 +1,9 @@
 # Circle
 
+### Intro
+
+The circular progress bar component supports the gradient animation of the progress.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

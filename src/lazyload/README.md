@@ -1,5 +1,9 @@
 # Lazyload
 
+### Intro
+
+When the page needs to load a large amount of content, delay loading the content outside the visible area of the page to make the page load smoother.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。

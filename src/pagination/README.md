@@ -1,5 +1,9 @@
 # Pagination
 
+### Intro
+
+When the amount of data is too much, use pagination to separate the data, and load only one page at a time.
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。
