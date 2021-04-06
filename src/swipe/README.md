@@ -6,7 +6,7 @@ Used to loop a group of pictures or content.
 
 ### Install
 
-Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。
+Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways.
 
 ```js
 import { createApp } from 'vue';

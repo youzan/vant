@@ -6,7 +6,7 @@ Used to divide the page into blocks of equal width in the horizontal direction f
 
 ### Install
 
-Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。
+Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways.
 
 ```js
 import { createApp } from 'vue';

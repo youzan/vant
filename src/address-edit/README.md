@@ -6,7 +6,7 @@ Used to create, update, and delete receiving addresses.
 
 ### Install
 
-Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways。
+Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways.
 
 ```js
 import { createApp } from 'vue';
@@ -149,7 +149,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Addres
 
 ### Area Data Structure
 
-Please refer to [Area](#/en-US/area) component。
+Please refer to [Area](#/en-US/area) component.
 
 ### Less Variables
 
