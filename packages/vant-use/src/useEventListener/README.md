@@ -33,17 +33,17 @@ export default {
 ## 类型定义
 
 ```ts
-function useEventListener(
-  type: string,
-  listener: EventListener,
-  options?: Options
-): void;
-
 type Options = {
   target?: EventTarget | Ref<EventTarget>;
   capture?: boolean;
   passive?: boolean;
 };
+
+function useEventListener(
+  type: string,
+  listener: EventListener,
+  options?: Options
+): void;
 ```
 
 ## API

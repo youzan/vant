@@ -24,7 +24,5 @@ export function cancelRaf(id: number) {
 
 // double raf for animation
 export function doubleRaf(fn: FrameRequestCallback): void {
-  raf(() => {
-    raf(fn);
-  });
+  raf(() => raf(fn));
 }

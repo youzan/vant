@@ -62,13 +62,13 @@ export default {
 ### 类型定义
 
 ```ts
-function useCountDown(options: UseCountDownOptions): CountDown;
-
-type UseCountDownOptions = {
-  time: number;
-  millisecond?: boolean;
-  onChange?: (current: CurrentTime) => void;
-  onFinish?: () => void;
+type CurrentTime = {
+  days: number;
+  hours: number;
+  total: number;
+  minutes: number;
+  seconds: number;
+  milliseconds: number;
 };
 
 type CountDown = {
@@ -78,14 +78,14 @@ type CountDown = {
   current: ComputedRef<CurrentTime>;
 };
 
-type CurrentTime = {
-  days: number;
-  hours: number;
-  total: number;
-  minutes: number;
-  seconds: number;
-  milliseconds: number;
+type UseCountDownOptions = {
+  time: number;
+  millisecond?: boolean;
+  onChange?: (current: CurrentTime) => void;
+  onFinish?: () => void;
 };
+
+function useCountDown(options: UseCountDownOptions): CountDown;
 ```
 
 ### 参数
