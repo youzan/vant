@@ -27,10 +27,6 @@
     "release-it": "^14.2.2",
     "vue": "^3.0.0"
   },
-  "browserslist": [
-    "Android >= 4.0",
-    "iOS >= 8"
-  ],
   "release-it": {
     "git": {
       "tag": false,

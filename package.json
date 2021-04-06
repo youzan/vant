@@ -75,9 +75,5 @@
     "tags": "vetur/tags.json",
     "attributes": "vetur/attributes.json"
   },
-  "web-types": "vetur/web-types.json",
-  "browserslist": [
-    "Chrome >= 51",
-    "iOS >= 10"
-  ]
+  "web-types": "vetur/web-types.json"
 }
