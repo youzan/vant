@@ -2,7 +2,7 @@
 
 ### Intro
 
-Used to display a group of message notifications in a loop.
+Used to display a group of message notifications in a continuons loop.
 
 ### Install
 

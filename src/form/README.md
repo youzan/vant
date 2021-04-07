@@ -2,7 +2,7 @@
 
 ### Intro
 
-It is used for data entry and verification, and supports input boxes, radio buttons, check boxes, file uploads and other types.
+Used for data entry and verification, and supports input boxes, radio buttons, check boxes, file uploads and other types.
 
 ### Install
 

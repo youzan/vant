@@ -2,7 +2,7 @@
 
 ### Intro
 
-The input box component used for searching.
+Input box component for search scenarios.
 
 ### Install
 

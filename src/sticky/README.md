@@ -2,7 +2,7 @@
 
 ### Intro
 
-The Sticky component has the same effect as the `position: sticky` property in CSS. When the component is within the screen range, it will be arranged according to the normal layout. When the component rolls out of the screen, it will always be fixed at the top of the screen.
+The sticky component is consistent with the effect achieved by the `position: sticky` property in CSS, in that when the component is within screen range, it will follow the normal layout arrangement, and when the component rolls out of screen range, it will always be fixed at the top of the screen.
 
 ### Install
 

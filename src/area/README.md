@@ -2,7 +2,7 @@
 
 ### Intro
 
-The Picker component is usually used with [Popup](#/en-US/popup) Component.
+A three-level linkage selection of provinces and cities, usually used in conjunction with [Popup](#/en-US/popup) component.
 
 ### Install
 

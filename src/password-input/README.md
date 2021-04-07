@@ -2,7 +2,7 @@
 
 ### Intro
 
-The PasswordInput component is usually used with [NumberKeyboard](#/en-US/number-keyboard) Component.
+The passwordinput component is usually used with [NumberKeyboard](#/en-US/number-keyboard) Component.
 
 ### Install
 

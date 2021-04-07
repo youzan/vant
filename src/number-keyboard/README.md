@@ -2,7 +2,7 @@
 
 ### Intro
 
-The pseudo-numeric keyboard can be used with [PasswordInput](#/en-US/password-input) components or custom input box components.
+The numberkeyboard component can be used with [PasswordInput](#/en-US/password-input) components or custom input box components.
 
 ### Install
 

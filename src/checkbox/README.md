@@ -2,7 +2,7 @@
 
 ### Intro
 
-Used to switch between selected and unselected states.
+A group of options for multiple choices.
 
 ### Install
 

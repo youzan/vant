@@ -2,7 +2,7 @@
 
 ### Intro
 
-It is used to display the countdown value in real time, and the accuracy supports milliseconds.
+Used to display the countdown value in real time, and precision supports milliseconds.
 
 ### Install
 

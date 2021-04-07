@@ -2,7 +2,7 @@
 
 ### Intro
 
-The pop-up layer container is used to display pop-up windows, information prompts, etc., and supports multiple pop-up layers to display.
+Used to display pop-up windows, information prompts, etc., and supports multiple pop-up layers to display.
 
 ### Install
 

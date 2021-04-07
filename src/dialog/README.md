@@ -2,7 +2,7 @@
 
 ### Intro
 
-Pop-up modal boxes are often used for message prompts, message confirmations, or to complete specific interactive operations in the current page. The Dialog component supports two methods: function call and component call.
+A modal box pops up on the page, which is often used for message prompts, message confirmation, or to complete specific interactive operations in the current page. It supports two methods: function call and component call.
 
 ### Install
 

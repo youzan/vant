@@ -2,7 +2,7 @@
 
 ### Intro
 
-A black translucent prompt pops up in the middle of the page, which is used in scenarios such as message notification, loading prompt, and operation result prompt.
+Black semi-transparent pop-up hint in the middle of the page, used for message notification, loading hint, operation result hint and other scenarios.
 
 ### Install
 

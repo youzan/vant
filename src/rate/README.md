@@ -2,7 +2,7 @@
 
 ### Intro
 
-Used for rating things.
+The rate component is used for rating things.
 
 ### Install
 
