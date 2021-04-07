@@ -2,7 +2,7 @@
 
 ### Intro
 
-Used to select a single result among multiple options.
+Single selection among multiple options.
 
 ### Install
 

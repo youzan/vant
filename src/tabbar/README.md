@@ -2,7 +2,7 @@
 
 ### Intro
 
-The bottom navigation bar is used to switch between different pages.
+Used to switch between different pages.
 
 ### Install
 

@@ -2,7 +2,7 @@
 
 ### Intro
 
-Slide the input bar to select a value within a given range.
+Used to select a value within a given range.
 
 ### Install
 

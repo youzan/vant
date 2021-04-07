@@ -2,7 +2,7 @@
 
 ### Intro
 
-The Picker component is usually used with [Popup](#/en-US/popup) Component.
+The picker component is usually used with [Popup](#/en-US/popup) Component.
 
 ### Install
 

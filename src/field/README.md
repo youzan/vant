@@ -2,7 +2,7 @@
 
 ### Intro
 
-The input box component in the form.
+Field component let users enter and edit text.
 
 ### Install
 

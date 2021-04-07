@@ -2,7 +2,7 @@
 
 ### Intro
 
-The sharing panel that pops up at the bottom is used to display the operation buttons corresponding to each sharing channel, and does not include specific sharing logic.
+A pop-up sharing panel at the bottom for displaying the action buttons corresponding to each sharing channel, without specific sharing logic.
 
 ### Install
 

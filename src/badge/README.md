@@ -2,7 +2,7 @@
 
 ### Intro
 
-Display the logo number or small red dot in the upper right corner.
+Display a small badge or a red dot to the top-right of its child.
 
 ### Install
 

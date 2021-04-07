@@ -2,7 +2,7 @@
 
 ### Intro
 
-The font-based icon set can be used through the Icon component or referenced in other components through the `icon` property.
+The font-based icon set that can be used via the Icon component or referenced in other components via the `icon` attribute.
 
 ### Install
 

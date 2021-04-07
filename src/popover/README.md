@@ -2,7 +2,7 @@
 
 ### Intro
 
-Pop-up bubble menu.
+Used to display some content on top of another.
 
 ### Install
 

@@ -2,7 +2,7 @@
 
 ### Intro
 
-Used to upload local pictures or files to the server, and display preview images and upload progress during the upload process. Currently, the Uploader component does not contain the interface logic for uploading files to the server. This step needs to be implemented by yourself.
+Used to upload a local image or file to the server and display a preview image and upload progress during the upload process. The Uploader component does not currently contain the interface logic for uploading files to the server, this step needs to be implemented by the user.
 
 ### Install
 

@@ -2,7 +2,7 @@
 
 ### Intro
 
-Used to show each link of the operation process and let users understand the position of the current operation in the overall process.
+Used to show the various parts of the action flow and let the user know where the current action fits into the overall flow.
 
 ### Install
 

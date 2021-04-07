@@ -2,7 +2,7 @@
 
 ### Intro
 
-The circular progress bar component supports the gradient animation of the progress.
+Circular progress bar component, and supports gradient color animation.
 
 ### Install
 

@@ -2,7 +2,7 @@
 
 ### Intro
 
-This is an enhanced version of the img tag, which provides multiple image filling modes, supports lazy loading of images, prompts during loading, and prompts for loading failures.
+Enhanced img tag with multiple image fill modes, support for image lazy loading, loading hint, loading failure hint.
 
 ### Install
 

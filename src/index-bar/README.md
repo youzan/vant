@@ -2,7 +2,7 @@
 
 ### Intro
 
-Used for the index classification display and quick positioning of the list.
+Used for indexed sorting display and quick positioning of lists.
 
 ### Install
 

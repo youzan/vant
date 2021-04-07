@@ -2,7 +2,7 @@
 
 ### Intro
 
-The stepper consists of an increase button, a decrease button and an input box, which are used to input or adjust numbers within a certain range.
+The stepper component consists of an increase button, a decrease button and an input box, which are used to input and adjust numbers within a certain range.
 
 ### Install
 

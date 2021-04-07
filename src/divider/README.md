@@ -2,7 +2,7 @@
 
 ### Intro
 
-Used to divide content into multiple areas.
+Separate content into multiple areas.
 
 ### Install
 
