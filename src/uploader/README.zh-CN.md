@@ -363,3 +363,5 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 ### 上传 HEIC/HEIF 格式的图片后无法展示？
 
 目前 Chrome、Safari 等浏览器不支持展示 HEIC/HEIF 格式的图片，因此上传后无法在 Uploader 组件中进行预览。
+
+[HEIF] 格式的兼容性请参考 [caniuse](https://caniuse.com/?search=heic)。
