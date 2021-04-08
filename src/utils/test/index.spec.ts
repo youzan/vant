@@ -109,11 +109,13 @@ test('addUnit', () => {
 });
 
 test('unitToPx', () => {
-  const originGetComputedStyle = window.getComputedStyle;
+  const mockedStyle = { fontSize: '16px' } as CSSStyleDeclaration;
+  const spy = jest
+    .spyOn(window, 'getComputedStyle')
+    .mockReturnValue(mockedStyle);
 
   Object.defineProperty(window, 'innerWidth', { value: 100 });
   Object.defineProperty(window, 'innerHeight', { value: 200 });
-  window.getComputedStyle = () => ({ fontSize: '16px' } as CSSStyleDeclaration);
 
   expect(unitToPx(0)).toEqual(0);
   expect(unitToPx(10)).toEqual(10);
@@ -123,5 +125,5 @@ test('unitToPx', () => {
   expect(unitToPx('10vw')).toEqual(10);
   expect(unitToPx('10vh')).toEqual(20);
 
-  window.getComputedStyle = originGetComputedStyle;
+  spy.mockRestore();
 });
