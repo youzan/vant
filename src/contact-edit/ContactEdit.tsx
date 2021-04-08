@@ -1,8 +1,7 @@
 import { watch, reactive, PropType, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
-import { isMobile } from '../utils/validate/mobile';
+import { isMobile, createNamespace } from '../utils';
 
 // Components
 import { Cell } from '../cell';

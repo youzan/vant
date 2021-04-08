@@ -1,6 +1,5 @@
 import { PropType, CSSProperties, defineComponent } from 'vue';
-import { isDef, createNamespace } from '../utils';
-import { isNumeric } from '../utils/validate/number';
+import { isDef, isNumeric, createNamespace } from '../utils';
 
 const [name, bem] = createNamespace('badge');
 

@@ -1,8 +1,7 @@
 import { PropType, ref, defineComponent } from 'vue';
 
 // Utils
-import { ComponentInstance, createNamespace } from '../utils';
-import { isAndroid } from '../utils/validate/system';
+import { isAndroid, ComponentInstance, createNamespace } from '../utils';
 
 // Components
 import { Cell } from '../cell';

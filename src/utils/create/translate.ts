@@ -1,5 +1,6 @@
-import { get, isFunction } from '../base';
+import { get } from '../base';
 import { camelize } from '../format/string';
+import { isFunction } from '../validate';
 import locale from '../../locale';
 
 export function createTranslate(name: string) {

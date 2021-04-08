@@ -1,7 +1,6 @@
 import { ref, watch, computed, PropType, defineComponent } from 'vue';
 
 // Utils
-import { isNaN } from '../utils/validate/number';
 import {
   isDef,
   addUnit,
@@ -106,7 +105,7 @@ export default defineComponent({
 
       value = formatNumber(String(value), !props.integer);
       value = value === '' ? 0 : +value;
-      value = isNaN(value) ? +min : value;
+      value = Number.isNaN(value) ? +min : value;
       value = Math.max(Math.min(+max, value), +min);
 
       // format decimal

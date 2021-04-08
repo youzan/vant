@@ -1,6 +1,6 @@
 import { CSSProperties } from 'vue';
-import { isDef, inBrowser } from '../base';
-import { isNumeric } from '../validate/number';
+import { inBrowser } from '../base';
+import { isDef, isNumeric } from '../validate';
 
 export function addUnit(value?: string | number): string | undefined {
   if (!isDef(value)) {
