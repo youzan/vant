@@ -360,6 +360,41 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 
 ## 常见问题
 
+### 拍照上传的图片被旋转 90 度？
+
+部分手机在拍照上传时会出现图片被旋转 90 度的问题，这个问题可以通过 [compressorjs](https://github.com/fengyuanchen/compressorjs) 或其他开源库进行处理。
+
+compressorjs 是一个开源的图片处理库，提供了图片压缩、图片旋转等能力。
+
+#### 示例
+
+使用 compressorjs 进行处理的示例代码如下:
+
+```html
+<van-uploader :before-read="beforeRead" />
+```
+
+```js
+import Compressor from 'compressorjs';
+
+export default {
+  methods: {
+    beforeRead(file) {
+      return new Promise((resolve) => {
+        // compressorjs 默认开启 checkOrientation 选项
+        // 会将图片修正为正确方向
+        new Compressor(file, {
+          success: resolve,
+          error(err) {
+            console.log(err.message);
+          },
+        });
+      });
+    },
+  },
+};
+```
+
 ### 上传 HEIC/HEIF 格式的图片后无法展示？
 
 目前 Chrome、Safari 等浏览器不支持展示 HEIC/HEIF 格式的图片，因此上传后无法在 Uploader 组件中进行预览。
