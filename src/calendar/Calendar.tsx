@@ -9,8 +9,7 @@ import {
 } from 'vue';
 
 // Utils
-import { pick, getScrollTop, ComponentInstance } from '../utils';
-import { isDate } from '../utils/validate/date';
+import { pick, isDate, getScrollTop, ComponentInstance } from '../utils';
 import {
   t,
   bem,

@@ -1,9 +1,7 @@
 import { deepClone } from '../deep-clone';
 import { deepAssign } from '../deep-assign';
-import { isDef, get, noop } from '..';
-import { isMobile } from '../validate/mobile';
-import { isNumeric } from '../validate/number';
-import { isAndroid } from '../validate/system';
+import { get, noop } from '..';
+import { isDef, isMobile, isNumeric, isAndroid } from '../validate';
 import { camelize } from '../format/string';
 import { formatNumber } from '../format/number';
 import { addUnit, unitToPx } from '../format/unit';

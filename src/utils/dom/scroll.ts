@@ -1,4 +1,4 @@
-import { isIOS as checkIsIOS } from '../validate/system';
+import { isIOS as checkIsIOS } from '../validate';
 
 export type ScrollElement = Element | Window;
 

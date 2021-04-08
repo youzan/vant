@@ -9,8 +9,12 @@ import {
 } from 'vue';
 
 // Utils
-import { ComponentInstance, createNamespace, isObject } from '../utils';
-import { isMobile } from '../utils/validate/mobile';
+import {
+  isObject,
+  isMobile,
+  createNamespace,
+  ComponentInstance,
+} from '../utils';
 
 // Composables
 import { useExpose } from '../composables/use-expose';

@@ -1,4 +1,4 @@
-import { isDef } from './base';
+import { isDef } from './validate';
 
 export function deepClone<T extends Record<string, any> | null | undefined>(
   obj: T
