@@ -136,17 +136,18 @@ Use `badge` prop to show badge in icon.
 
 How to use: [Custom Theme](#/en-US/theme).
 
-| Name                             | Default Value      | Description |
-| -------------------------------- | ------------------ | ----------- |
-| @action-bar-background-color     | `@white`           | -           |
-| @action-bar-height               | `50px`             | -           |
-| @action-bar-icon-width           | `48px`             | -           |
-| @action-bar-icon-height          | `100%`             | -           |
-| @action-bar-icon-color           | `@text-color`      | -           |
-| @action-bar-icon-size            | `18px`             | -           |
-| @action-bar-icon-font-size       | `@font-size-xs`    | -           |
-| @action-bar-icon-active-color    | `@active-color`    | -           |
-| @action-bar-icon-text-color      | `@gray-7`          | -           |
-| @action-bar-button-height        | `40px`             | -           |
-| @action-bar-button-warning-color | `@gradient-orange` | -           |
-| @action-bar-button-danger-color  | `@gradient-red`    | -           |
+| Name                              | Default Value      | Description |
+| --------------------------------- | ------------------ | ----------- |
+| @action-bar-background-color      | `@white`           | -           |
+| @action-bar-height                | `50px`             | -           |
+| @action-bar-icon-width            | `48px`             | -           |
+| @action-bar-icon-height           | `100%`             | -           |
+| @action-bar-icon-color            | `@text-color`      | -           |
+| @action-bar-icon-size             | `18px`             | -           |
+| @action-bar-icon-font-size        | `@font-size-xs`    | -           |
+| @action-bar-icon-active-color     | `@active-color`    | -           |
+| @action-bar-icon-text-color       | `@gray-7`          | -           |
+| @action-bar-icon-background-color | `@white`           | -           |
+| @action-bar-button-height         | `40px`             | -           |
+| @action-bar-button-warning-color  | `@gradient-orange` | -           |
+| @action-bar-button-danger-color   | `@gradient-red`    | -           |
