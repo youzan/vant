@@ -31,7 +31,7 @@ export type PopupPosition = 'top' | 'left' | 'bottom' | 'right' | 'center' | '';
 export type PopupCloseIconPosition =
   | 'top-left'
   | 'top-right'
-  | 'botttom-left'
+  | 'bottom-left'
   | 'bottom-right';
 
 const [name, bem] = createNamespace('popup');
