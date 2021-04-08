@@ -59,7 +59,7 @@ function Notify(options: NotifyMessage | NotifyOptions) {
   clearTimeout(timer);
 
   if (options.duration! > 0) {
-    timer = setTimeout(Notify.clear, options.duration);
+    timer = window.setTimeout(Notify.clear, options.duration);
   }
 
   return instance;
