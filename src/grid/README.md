@@ -73,7 +73,7 @@ app.use(GridItem);
 ### Horizontal
 
 ```html
-<van-grid direction="horizontal" :column-num="2">
+<van-grid direction="horizontal" :column-num="3">
   <van-grid-item icon="photo-o" text="文字" />
   <van-grid-item icon="photo-o" text="文字" />
   <van-grid-item icon="photo-o" text="文字" />
