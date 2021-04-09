@@ -1857,7 +1857,7 @@
 
 "@vant/area-data@^1.0.0":
   version "1.0.0"
-  resolved "http://registry.npm.qima-inc.com/@vant/area-data/download/@vant/area-data-1.0.0.tgz#063af9ccb5ccafa333d7dc28103937501cfec671"
+  resolved "https://registry.npm.taobao.org/@vant/area-data/download/@vant/area-data-1.0.0.tgz#063af9ccb5ccafa333d7dc28103937501cfec671"
   integrity sha1-Bjr5zLXMr6Mz19woEDk3UBz+xnE=
 
 "@vant/cli@^3.9.2":
