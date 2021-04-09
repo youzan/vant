@@ -20,10 +20,52 @@ app.use(Area);
 
 ### Basic Usage
 
-To initailize `Area` component, `area-list` property is required. Data structure will be introduced later.
+To initailize `Area` component, `area-list` property is required.
 
 ```html
 <van-area title="Title" :area-list="areaList" />
+```
+
+### areaList Data Structure
+
+An object contains three properties: `province_list`, `city_list` and `county_list`. Each property is a simple key-value object, key is a 6-bit code of the area of which first two bits stand for the province or state, middle two bits are used as city code and the last two are district code, value is the name of the area. If the code stands for an area that has sub-areas, lower bits of it will be filled with 0.
+
+Sample data:
+
+```js
+export default {
+  province_list: {
+    110000: 'Beijing',
+    330000: 'Zhejiang Province',
+  },
+  city_list: {
+    110100: 'Beijing City',
+    330100: 'Hangzhou',
+  },
+  county_list: {
+    110101: 'Dongcheng District',
+    110102: 'Xicheng District',
+    // ....
+  },
+};
+```
+
+### @vant/area-data
+
+Vant officially provides a default area data, which can be imported through [@vant/area-data](https://github.com/youzan/vant/tree/dev/packages/vant-area-data):
+
+```bash
+yarn add @vant/area-data
+```
+
+```ts
+import { areaList } from '@vant/area-data';
+
+export default {
+  setup() {
+    return { areaList };
+  },
+};
 ```
 
 ### Initial Value
@@ -78,61 +120,13 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| confirm | Emitted when the confirm button is clicked | selected areas |
+| confirm | Emitted when the confirm button is clicked | _result: ConfirmResult_ |
 | cancel | Emitted when the cancel button is clicked | - |
 | change | Emitted when current option changed | current values，column index |
 
-### Slots
+### ConfirmResult
 
-| Name           | Description                  |
-| -------------- | ---------------------------- |
-| title          | Custom title                 |
-| columns-top    | Custom content above columns |
-| columns-bottom | Custom content below columns |
-
-### Methods
-
-Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Area instance and call instance methods.
-
-| Name  | Description               | Attribute       | Return value |
-| ----- | ------------------------- | --------------- | ------------ |
-| reset | Reset all options by code | _code?: string_ | -            |
-
-### areaList Data Structure
-
-An object contains three properties: `province_list`, `city_list` and `county_list`. Each property is a simple key-value object, key is a 6-bit code of the area of which first two bits stand for the province or state, middle two bits are used as city code and the last two are district code, value is the name of the area. If the code stands for an area that has sub-areas, lower bits of it will be filled with 0.
-
-Example of `AreaList`
-
-```js
-export default {
-  province_list: {
-    110000: 'Beijing',
-    330000: 'Zhejiang Province',
-  },
-  city_list: {
-    110100: 'Beijing City',
-    330100: 'Hangzhou',
-  },
-  county_list: {
-    110101: 'Dongcheng District',
-    110102: 'Xicheng District',
-    110105: 'Chaoyang District',
-    110106: 'Fengtai District',
-    330105: 'Gongshu District',
-    330106: 'Xihu District',
-    // ....
-  },
-};
-```
-
-Sample data : [Area.json](https://github.com/youzan/vant/blob/dev/src/area/demo/area-en.ts).
-
-### argument of callback function confirm
-
-An array contains selected area objects.
-
-`code` - code of selected area, `name` - name of selected area
+An array that contains selected area objects.
 
 ```js
 [
@@ -150,3 +144,19 @@ An array contains selected area objects.
   },
 ];
 ```
+
+### Slots
+
+| Name           | Description                  |
+| -------------- | ---------------------------- |
+| title          | Custom title                 |
+| columns-top    | Custom content above columns |
+| columns-bottom | Custom content below columns |
+
+### Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Area instance and call instance methods.
+
+| Name  | Description               | Attribute       | Return value |
+| ----- | ------------------------- | --------------- | ------------ |
+| reset | Reset all options by code | _code?: string_ | -            |

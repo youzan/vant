@@ -19,9 +19,9 @@
 
 <script lang="ts">
 import { reactive, toRefs } from 'vue';
+import { areaList } from '@vant/area-data';
 import { useTranslate } from '@demo/use-translate';
 import { AreaColumnOption } from '../../area';
-import { areaList } from '../../area/demo/area';
 import { areaListEn } from '../../area/demo/area-en';
 
 const i18n = {

@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { ref } from 'vue';
-import { areaList } from './area';
+import { areaList } from '@vant/area-data';
 import { areaListEn } from './area-en';
 import { useTranslate } from '@demo/use-translate';
 
