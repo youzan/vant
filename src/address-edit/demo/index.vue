@@ -17,9 +17,9 @@
 
 <script lang="ts">
 import { ref } from 'vue';
+import { areaList } from '@vant/area-data';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
-import { areaList } from '../../area/demo/area';
 
 const i18n = {
   'zh-CN': {
