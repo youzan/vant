@@ -444,3 +444,14 @@ test('should change clear icon when using clear-icon prop', async () => {
   await input.trigger('focus');
   expect(wrapper.find('.van-field__clear').html()).toMatchSnapshot();
 });
+
+test('should render autofocus attribute to input when using autofocus prop', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      autofocus: true,
+    },
+  });
+
+  const input = wrapper.find('input');
+  expect(input.element.hasAttributes('autofocus')).toBeTruthy();
+});
