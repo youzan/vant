@@ -1,4 +1,4 @@
-import { ref, PropType, CSSProperties, defineComponent } from 'vue';
+import { ref, PropType, defineComponent } from 'vue';
 
 // Utils
 import {
@@ -7,15 +7,13 @@ import {
   preventDefault,
   ComponentInstance,
 } from '../utils';
+import { fieldProps } from '../field/Field';
 
 // Composables
 import { useExpose } from '../composables/use-expose';
 
 // Components
 import { Field } from '../field';
-
-// Types
-import type { FieldClearTrigger, FieldFormatTrigger } from '../field/types';
 
 const [name, bem, t] = createNamespace('search');
 
@@ -24,20 +22,12 @@ export type SearchShape = 'square' | 'round';
 export default defineComponent({
   name,
 
-  inheritAttrs: false,
-
   props: {
+    ...fieldProps,
     label: String,
-    clearIcon: String,
-    rightIcon: String,
-    formatter: Function as PropType<(value: string) => string>,
-    modelValue: String,
     actionText: String,
     background: String,
     showAction: Boolean,
-    errorMessage: String,
-    clearTrigger: String as PropType<FieldClearTrigger>,
-    formatTrigger: String as PropType<FieldFormatTrigger>,
     shape: {
       type: String as PropType<SearchShape>,
       default: 'square',
@@ -101,24 +91,14 @@ export default defineComponent({
     const blur = () => filedRef.value?.blur();
     const focus = () => filedRef.value?.focus();
 
-    const fieldPropNames = [
-      'leftIcon',
-      'clearIcon',
-      'rightIcon',
-      'formatter',
-      'clearable',
-      'modelValue',
-      'clearTrigger',
-      'errorMessage',
-      'formatTrigger',
-    ] as const;
+    const fieldPropNames = Object.keys(fieldProps) as Array<
+      keyof typeof fieldProps
+    >;
 
     const renderField = () => {
       const fieldAttrs = {
         ...attrs,
         ...pick(props, fieldPropNames),
-        style: null,
-        class: null,
       };
 
       const onInput = (value: string) => emit('update:modelValue', value);
@@ -140,11 +120,8 @@ export default defineComponent({
 
     return () => (
       <div
-        class={[bem({ 'show-action': props.showAction }), attrs.class]}
-        style={{
-          background: props.background,
-          ...(attrs.style as CSSProperties),
-        }}
+        class={bem({ 'show-action': props.showAction })}
+        style={{ background: props.background }}
       >
         {slots.left?.()}
         <div class={bem('content', props.shape)}>
