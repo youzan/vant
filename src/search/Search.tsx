@@ -7,15 +7,13 @@ import {
   preventDefault,
   ComponentInstance,
 } from '../utils';
+import { fieldProps } from '../field/Field';
 
 // Composables
 import { useExpose } from '../composables/use-expose';
 
 // Components
 import { Field } from '../field';
-
-// Types
-import type { FieldClearTrigger, FieldFormatTrigger } from '../field/types';
 
 const [name, bem, t] = createNamespace('search');
 
@@ -27,17 +25,11 @@ export default defineComponent({
   inheritAttrs: false,
 
   props: {
+    ...fieldProps,
     label: String,
-    clearIcon: String,
-    rightIcon: String,
-    formatter: Function as PropType<(value: string) => string>,
-    modelValue: String,
     actionText: String,
     background: String,
     showAction: Boolean,
-    errorMessage: String,
-    clearTrigger: String as PropType<FieldClearTrigger>,
-    formatTrigger: String as PropType<FieldFormatTrigger>,
     shape: {
       type: String as PropType<SearchShape>,
       default: 'square',
@@ -101,17 +93,9 @@ export default defineComponent({
     const blur = () => filedRef.value?.blur();
     const focus = () => filedRef.value?.focus();
 
-    const fieldPropNames = [
-      'leftIcon',
-      'clearIcon',
-      'rightIcon',
-      'formatter',
-      'clearable',
-      'modelValue',
-      'clearTrigger',
-      'errorMessage',
-      'formatTrigger',
-    ] as const;
+    const fieldPropNames = Object.keys(fieldProps) as Array<
+      keyof typeof fieldProps
+    >;
 
     const renderField = () => {
       const fieldAttrs = {
