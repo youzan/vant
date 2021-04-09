@@ -1,23 +1,33 @@
+import { nextTick } from 'vue';
 import Uploader, { UploaderFileListItem } from '..';
 import { mount, later, triggerDrag } from '../../../test';
-import { nextTick } from 'vue';
 
 const mockFileDataUrl = 'data:image/test';
 const mockFile = new File([new ArrayBuffer(10000)], 'test.jpg');
-const IMAGE = 'https://img01.yzcdn.cn/vant/cat.jpeg';
-const PDF = 'https://img01.yzcdn.cn/vant/test.pdf';
+const IMAGE = 'https://img.yzcdn.cn/vant/cat.jpeg';
+const PDF = 'https://img.yzcdn.cn/vant/test.pdf';
 
-(window.FileReader as any) = function (this: any) {
-  (this as any).readAsText = function () {
-    this.onload &&
+function mockFileReader() {
+  function mockReadAsText(this: FileReader) {
+    if (this.onload) {
       this.onload({
         target: {
           result: mockFileDataUrl,
         },
-      });
-  };
-  this.readAsDataURL = this.readAsText;
-};
+      } as ProgressEvent<FileReader>);
+    }
+  }
+
+  Object.defineProperty(window.FileReader.prototype, 'readAsText', {
+    value: mockReadAsText,
+  });
+
+  Object.defineProperty(window.FileReader.prototype, 'readAsDataURL', {
+    value: mockReadAsText,
+  });
+}
+
+mockFileReader();
 
 test('disabled', async () => {
   const afterRead = jest.fn();
@@ -256,8 +266,8 @@ test('render preview image', async () => {
   const wrapper = mount(Uploader, {
     props: {
       modelValue: [
-        { url: 'https://img01.yzcdn.cn/vant/cat.jpeg' },
-        { url: 'https://img01.yzcdn.cn/vant/test.pdf' },
+        { url: 'https://img.yzcdn.cn/vant/cat.jpeg' },
+        { url: 'https://img.yzcdn.cn/vant/test.pdf' },
         { file: mockFile },
       ],
     },
@@ -270,7 +280,7 @@ test('image-fit prop', () => {
   const wrapper = mount(Uploader, {
     props: {
       imageFit: 'contain',
-      modelValue: [{ url: 'https://img01.yzcdn.cn/vant/cat.jpeg' }],
+      modelValue: [{ url: 'https://img.yzcdn.cn/vant/cat.jpeg' }],
     },
   });
 

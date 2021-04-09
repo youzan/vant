@@ -38,13 +38,9 @@ export function mockScrollIntoView() {
 }
 
 export function mockGetBoundingClientRect(rect: Partial<DOMRect>): () => void {
-  const originMethod = Element.prototype.getBoundingClientRect;
-
-  Element.prototype.getBoundingClientRect = jest.fn(() => rect as DOMRect);
-
-  return function () {
-    Element.prototype.getBoundingClientRect = originMethod;
-  };
+  const spy = jest.spyOn(Element.prototype, 'getBoundingClientRect');
+  spy.mockReturnValue(rect as DOMRect);
+  return () => spy.mockRestore();
 }
 
 export async function mockScrollTop(value: number) {
