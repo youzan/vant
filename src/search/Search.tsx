@@ -1,4 +1,4 @@
-import { ref, PropType, CSSProperties, defineComponent } from 'vue';
+import { ref, PropType, defineComponent } from 'vue';
 
 // Utils
 import {
@@ -21,8 +21,6 @@ export type SearchShape = 'square' | 'round';
 
 export default defineComponent({
   name,
-
-  inheritAttrs: false,
 
   props: {
     ...fieldProps,
@@ -101,8 +99,6 @@ export default defineComponent({
       const fieldAttrs = {
         ...attrs,
         ...pick(props, fieldPropNames),
-        style: null,
-        class: null,
       };
 
       const onInput = (value: string) => emit('update:modelValue', value);
@@ -124,11 +120,8 @@ export default defineComponent({
 
     return () => (
       <div
-        class={[bem({ 'show-action': props.showAction }), attrs.class]}
-        style={{
-          background: props.background,
-          ...(attrs.style as CSSProperties),
-        }}
+        class={bem({ 'show-action': props.showAction })}
+        style={{ background: props.background }}
       >
         {slots.left?.()}
         <div class={bem('content', props.shape)}>

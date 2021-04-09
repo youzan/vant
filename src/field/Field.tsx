@@ -61,6 +61,7 @@ export const fieldProps = {
   rightIcon: String,
   clearable: Boolean,
   maxlength: [Number, String],
+  inputAlign: String as PropType<FieldTextAlign>,
   placeholder: String,
   errorMessage: String,
   error: {
@@ -106,7 +107,6 @@ export default defineComponent({
     labelWidth: [Number, String],
     labelClass: UnknownProp,
     labelAlign: String as PropType<FieldTextAlign>,
-    inputAlign: String as PropType<FieldTextAlign>,
     autocomplete: String,
     showWordLimit: Boolean,
     errorMessageAlign: String as PropType<FieldTextAlign>,
