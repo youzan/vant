@@ -36,10 +36,10 @@ export function syncPathToChild() {
 
 export function listenToSyncPath() {
   window.addEventListener('message', (event) => {
-    console.log(event.target);
-  // // should preserve hash for anchor
-  // if (window.vueRouter.currentRoute.value.path !== path) {
-  //   window.vueRouter.replace(path).catch(() => {});
-  // }
+    const path = event.data || '';
+    // should preserve hash for anchor
+    if (window.vueRouter.currentRoute.value.path !== path) {
+      window.vueRouter.replace(path).catch(() => {});
+    }
   });
 }
