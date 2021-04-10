@@ -1860,10 +1860,10 @@
   resolved "https://registry.npm.taobao.org/@vant/area-data/download/@vant/area-data-1.0.0.tgz#063af9ccb5ccafa333d7dc28103937501cfec671"
   integrity sha1-Bjr5zLXMr6Mz19woEDk3UBz+xnE=
 
-"@vant/cli@^3.9.2":
-  version "3.9.2"
-  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-3.9.2.tgz#6eb7149004c8b36bc5fc08c16cc36c78bcdd3b4b"
-  integrity sha1-brcUkATIs2vF/AjBbMNseLzdO0s=
+"@vant/cli@^3.9.3":
+  version "3.9.3"
+  resolved "https://registry.npmjs.org/@vant/cli/-/cli-3.9.3.tgz#f9c6d347607d3c740aedc4af398fc2408c944467"
+  integrity sha512-BknTE8bN/AxiKF2BbO6JuVyq/n1YOI7tiqc/hKLHzU0MM9JahcszYr4GQRomLdSsIap4CE7GJjSGcKROAoj2hw==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-transform-runtime" "^7.12.10"
