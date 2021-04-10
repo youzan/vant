@@ -8,13 +8,9 @@ import {
 } from '../common';
 import { SRC_DIR, getPackageJson, getVantConfig } from '../common/constant';
 
-type ExportMode = 'exportAll' | 'exportDefault';
-type Options = {
-  outputPath: string;
-  pathResolver?: (path: string) => string;
-};
+type PathResolver = (path: string) => string;
 
-function getPathByName(name: string, pathResolver?: (path: string) => string) {
+function getPathByName(name: string, pathResolver?: PathResolver) {
   let path = join(SRC_DIR, name);
   if (pathResolver) {
     path = pathResolver(path);
@@ -22,21 +18,28 @@ function getPathByName(name: string, pathResolver?: (path: string) => string) {
   return normalizePath(path);
 }
 
-function genImports(names: string[], { pathResolver }: Options): string {
+function genImports(
+  names: string[],
+  pathResolver?: PathResolver,
+  namedExport?: boolean
+): string {
   return names
-    .map(
-      (name) =>
-        `import ${pascalize(name)} from '${getPathByName(name, pathResolver)}';`
-    )
+    .map((name) => {
+      const pascalName = pascalize(name);
+      const importName = namedExport ? `{ ${pascalName} }` : pascalName;
+      const importPath = getPathByName(name, pathResolver);
+
+      return `import ${importName} from '${importPath}';`;
+    })
     .join('\n');
 }
 
 function genExports(
   names: string[],
-  { pathResolver }: Options,
-  exportMode?: ExportMode
+  pathResolver?: PathResolver,
+  namedExport?: boolean
 ): string {
-  if (exportMode === 'exportAll') {
+  if (namedExport) {
     const exports = names
       .map((name) => `export * from '${getPathByName(name, pathResolver)}';`)
       .join('\n');
@@ -59,17 +62,23 @@ function genExports(
   `;
 }
 
-export function genPackageEntry(options: Options) {
+export function genPackageEntry({
+  outputPath,
+  pathResolver,
+}: {
+  outputPath: string;
+  pathResolver?: PathResolver;
+}) {
   const names = getComponents();
   const vantConfig = getVantConfig();
 
-  const exportMode = get(vantConfig, 'build.exportMode');
+  const namedExport = get(vantConfig, 'build.namedExport', false);
   const skipInstall = get(vantConfig, 'build.skipInstall', []).map(pascalize);
 
   const version = process.env.PACKAGE_VERSION || getPackageJson().version;
 
   const components = names.map(pascalize);
-  const content = `${genImports(names, options)}
+  const content = `${genImports(names, pathResolver, namedExport)}
 
 const version = '${version}';
 
@@ -87,7 +96,7 @@ function install(app) {
   });
 }
 
-${genExports(names, options, exportMode)}
+${genExports(names, pathResolver, namedExport)}
 
 export default {
   install,
@@ -95,5 +104,5 @@ export default {
 };
 `;
 
-  smartOutputFile(options.outputPath, content);
+  smartOutputFile(outputPath, content);
 }

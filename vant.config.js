@@ -2,7 +2,7 @@ module.exports = {
   name: 'vant',
   build: {
     srcDir: 'src',
-    exportMode: 'exportAll',
+    namedExport: true,
     skipInstall: ['lazyload'],
     site: {
       publicPath:

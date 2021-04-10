@@ -5,6 +5,8 @@
     - [name](#name)
     - [build.css](#buildcss)
     - [build.site](#buildsite)
+    - [build.srcDir](#buildsrcdir)
+    - [build.namedExport](#buildnamedexport)
     - [site.title](#sitetitle)
     - [site.logo](#sitelogo)
     - [site.description](#sitedescription)
@@ -123,6 +125,17 @@ module.exports = {
   },
 };
 ```
+
+### build.namedExport
+
+- Type: `boolean`
+- Default: `false`
+
+是否通过 Named Export 对组件进行导出。
+
+未开启此选项时，会通过 `export default from 'xxx'` 导出组件内部的默认模块。
+
+开启此选项后，会通过 `export * from 'xxx'` 导出组件内部的所有模块、类型定义。
 
 ### site.title
 
