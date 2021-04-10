@@ -2,7 +2,28 @@
  * 同步父窗口和 iframe 的 vue-router 状态
  */
 
-import { iframeReady } from '.';
+let queue = [];
+let isIframeReady = false;
+
+function iframeReady(callback) {
+  if (isIframeReady) {
+    callback();
+  } else {
+    queue.push(callback);
+  }
+}
+
+if (window.top === window) {
+  window.addEventListener('message', (event) => {
+    if (event.data.type === 'iframeReady') {
+      isIframeReady = true;
+      queue.forEach((callback) => callback());
+      queue = [];
+    }
+  });
+} else {
+  window.top.postMessage({ type: 'iframeReady' }, '*');
+}
 
 function getCurrentDir() {
   const router = window.vueRouter;
@@ -22,8 +43,8 @@ export function syncPathToParent() {
 export function syncPathToChild() {
   const iframe = document.querySelector('iframe');
   if (iframe) {
-    iframeReady(iframe, () => {
-      iframe.postMessage(
+    iframeReady(() => {
+      iframe.contentWindow.postMessage(
         {
           type: 'replacePath',
           value: getCurrentDir(),
@@ -36,7 +57,11 @@ export function syncPathToChild() {
 
 export function listenToSyncPath(router) {
   window.addEventListener('message', (event) => {
-    const path = event.data || '';
+    if (event.data?.type !== 'replacePath') {
+      return;
+    }
+
+    const path = event.data?.value || '';
     // should preserve hash for anchor
     if (router.currentRoute.value.path !== path) {
       router.replace(path).catch(() => {});
