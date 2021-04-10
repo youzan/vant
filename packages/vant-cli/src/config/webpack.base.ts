@@ -14,10 +14,10 @@ import {
 } from '../common/constant';
 
 const CSS_LOADERS = [
-  'style-loader',
-  'css-loader',
+  require.resolve('style-loader'),
+  require.resolve('css-loader'),
   {
-    loader: 'postcss-loader',
+    loader: require.resolve('postcss-loader'),
     options: {
       postcssOptions: require(POSTCSS_CONFIG_FILE),
     },
@@ -25,7 +25,7 @@ const CSS_LOADERS = [
 ];
 
 const VUE_LOADER = {
-  loader: 'vue-loader',
+  loader: require.resolve('vue-loader'),
   options: {
     compilerOptions: {
       preserveWhitespace: false,
@@ -88,7 +88,7 @@ export const baseConfig: WebpackConfig = {
       {
         test: /\.(js|ts|jsx|tsx)$/,
         exclude: /node_modules\/(?!(@vant\/cli))/,
-        use: ['babel-loader'],
+        use: [require.resolve('babel-loader')],
       },
       {
         test: /\.css$/,
@@ -98,7 +98,7 @@ export const baseConfig: WebpackConfig = {
       {
         test: /\.less$/,
         sideEffects: true,
-        use: [...CSS_LOADERS, 'less-loader'],
+        use: [...CSS_LOADERS, require.resolve('less-loader')],
       },
       {
         test: /\.scss$/,
@@ -106,7 +106,7 @@ export const baseConfig: WebpackConfig = {
         use: [
           ...CSS_LOADERS,
           {
-            loader: 'sass-loader',
+            loader: require.resolve('sass-loader'),
             options: {
               implementation: sass,
             },
@@ -115,7 +115,7 @@ export const baseConfig: WebpackConfig = {
       },
       {
         test: /\.md$/,
-        use: [VUE_LOADER, '@vant/markdown-loader'],
+        use: [VUE_LOADER, require.resolve('@vant/markdown-loader')],
       },
     ],
   },

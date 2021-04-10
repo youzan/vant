@@ -17,25 +17,25 @@ module.exports = function (api?: ConfigAPI, options: PresetOption = {}) {
   return {
     presets: [
       [
-        '@babel/preset-env',
+        require.resolve('@babel/preset-env'),
         {
           modules: useESModules ? false : 'commonjs',
           loose: options.loose,
         },
       ],
-      '@babel/preset-typescript',
+      require.resolve('@babel/preset-typescript'),
       require('../compiler/babel-preset-vue-ts'),
     ],
     plugins: [
       [
-        '@babel/plugin-transform-runtime',
+        require.resolve('@babel/plugin-transform-runtime'),
         {
           corejs: false,
           useESModules,
         },
       ],
       [
-        'import',
+        require.resolve('babel-plugin-import'),
         {
           libraryName: 'vant',
           libraryDirectory: useESModules ? 'es' : 'lib',
@@ -44,7 +44,7 @@ module.exports = function (api?: ConfigAPI, options: PresetOption = {}) {
         'vant',
       ],
       [
-        '@vue/babel-plugin-jsx',
+        require.resolve('@vue/babel-plugin-jsx'),
         {
           enableObjectSlots: options.enableObjectSlots,
         },
