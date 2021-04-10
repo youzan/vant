@@ -34,12 +34,12 @@ export function syncPathToChild() {
   }
 }
 
-export function listenToSyncPath() {
+export function listenToSyncPath(router) {
   window.addEventListener('message', (event) => {
     const path = event.data || '';
     // should preserve hash for anchor
-    if (window.vueRouter.currentRoute.value.path !== path) {
-      window.vueRouter.replace(path).catch(() => {});
+    if (router.currentRoute.value.path !== path) {
+      router.replace(path).catch(() => {});
     }
   });
 }

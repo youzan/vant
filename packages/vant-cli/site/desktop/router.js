@@ -11,7 +11,6 @@ if (isMobile) {
 
 const { locales, defaultLang } = config.site;
 
-listenToSyncPath();
 setDefaultLang(defaultLang);
 
 function parseName(name) {
@@ -120,5 +119,7 @@ export const router = createRouter({
 router.afterEach(() => {
   nextTick(syncPathToChild);
 });
+
+listenToSyncPath(router);
 
 window.vueRouter = router;

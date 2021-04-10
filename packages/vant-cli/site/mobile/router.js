@@ -8,7 +8,6 @@ import { listenToSyncPath, syncPathToParent } from '../common/iframe-router';
 
 const { locales, defaultLang } = config.site;
 
-listenToSyncPath();
 setDefaultLang(defaultLang);
 
 function getLangFromRoute(route) {
@@ -101,5 +100,7 @@ watch(router.currentRoute, () => {
     nextTick(syncPathToParent);
   }
 });
+
+listenToSyncPath(router);
 
 window.vueRouter = router;
