@@ -26,7 +26,7 @@ module.exports = {
     locales: {
       'zh-CN': {
         title: 'Vant',
-        description: '轻量、可靠的移动端 Vue 组件库',
+        description: '轻量、可靠的移动端组件库',
         logo: 'https://img01.yzcdn.cn/vant/logo.png',
         langLabel: '中文',
         links: [
