@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import { isMobile, decamelize } from '../common';
 import { config, documents } from 'site-desktop-shared';
 import { getLang, setDefaultLang } from '../common/locales';
-import '../common/iframe-router';
+import { listenToSyncPath, syncPathToChild } from '../common/iframe-router';
 
 if (isMobile) {
   location.replace('mobile.html' + location.hash);
@@ -48,7 +48,7 @@ function getRoutes() {
   if (locales) {
     routes.push({
       path: '*',
-      redirect: route => `/${getLangFromRoute(route)}/`,
+      redirect: (route) => `/${getLangFromRoute(route)}/`,
     });
   } else {
     routes.push({
@@ -66,7 +66,7 @@ function getRoutes() {
     });
   }
 
-  names.forEach(name => {
+  names.forEach((name) => {
     const { component, lang } = parseName(name);
 
     if (component === 'home') {
@@ -113,7 +113,9 @@ export const router = new VueRouter({
 });
 
 router.afterEach(() => {
-  Vue.nextTick(() => window.syncPath());
+  Vue.nextTick(syncPathToChild);
 });
+
+listenToSyncPath(router);
 
 window.vueRouter = router;
