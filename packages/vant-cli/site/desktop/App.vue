@@ -28,8 +28,7 @@ export default {
     const path = location.pathname.replace(/\/index(\.html)?/, '/');
 
     return {
-      simulator:
-        config.site.simulatorUrl || `${path}mobile.html${location.hash}`,
+      simulator: `${path}mobile.html${location.hash}`,
       hasSimulator: true,
     };
   },
