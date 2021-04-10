@@ -4,7 +4,7 @@ import DemoHome from './components/DemoHome';
 import { decamelize } from '../common';
 import { demos, config } from 'site-mobile-shared';
 import { getLang, setDefaultLang } from '../common/locales';
-import '../common/iframe-router';
+import { listenToSyncPath, syncPathToParent } from '../common/iframe-router';
 
 const { locales, defaultLang } = config.site;
 
@@ -29,10 +29,10 @@ function getRoutes() {
   if (langs.length) {
     routes.push({
       path: '*',
-      redirect: route => `/${getLangFromRoute(route)}/`,
+      redirect: (route) => `/${getLangFromRoute(route)}/`,
     });
 
-    langs.forEach(lang => {
+    langs.forEach((lang) => {
       routes.push({
         path: `/${lang}`,
         component: DemoHome,
@@ -51,11 +51,11 @@ function getRoutes() {
     });
   }
 
-  names.forEach(name => {
+  names.forEach((name) => {
     const component = decamelize(name);
 
     if (langs.length) {
-      langs.forEach(lang => {
+      langs.forEach((lang) => {
         routes.push({
           name: `${lang}/${component}`,
           path: `/${lang}/${component}`,
@@ -91,8 +91,10 @@ export const router = new VueRouter({
 
 router.afterEach(() => {
   if (!router.currentRoute.redirectedFrom) {
-    Vue.nextTick(window.syncPath);
+    syncPathToParent();
   }
 });
+
+listenToSyncPath(router);
 
 window.vueRouter = router;
