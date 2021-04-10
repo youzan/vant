@@ -4,10 +4,11 @@ import DemoHome from './components/DemoHome';
 import { decamelize } from '../common';
 import { demos, config } from 'site-mobile-shared';
 import { getLang, setDefaultLang } from '../common/locales';
-import '../common/iframe-router';
+import { listenToSyncPath, syncPathToParent } from '../common/iframe-router';
 
 const { locales, defaultLang } = config.site;
 
+listenToSyncPath();
 setDefaultLang(defaultLang);
 
 function getLangFromRoute(route) {
@@ -97,7 +98,7 @@ export const router = createRouter({
 
 watch(router.currentRoute, () => {
   if (!router.currentRoute.value.redirectedFrom) {
-    nextTick(window.syncPath);
+    nextTick(syncPathToParent);
   }
 });
 

@@ -2,28 +2,44 @@
  * 同步父窗口和 iframe 的 vue-router 状态
  */
 
-import { iframeReady, isMobile } from '.';
+import { iframeReady } from '.';
 
-window.syncPath = function() {
+function getCurrentDir() {
   const router = window.vueRouter;
-  const isInIframe = window !== window.top;
-  const currentDir = router.currentRoute.value.path;
+  return router.currentRoute.value.path;
+}
 
-  if (isInIframe) {
-    window.top.replacePath(currentDir);
-  } else if (!isMobile) {
-    const iframe = document.querySelector('iframe');
-    if (iframe) {
-      iframeReady(iframe, () => {
-        iframe.contentWindow.replacePath(currentDir);
-      });
-    }
-  }
-};
+export function syncPathToParent() {
+  window.top.postMessage(
+    {
+      type: 'replacePath',
+      value: getCurrentDir(),
+    },
+    '*'
+  );
+}
 
-window.replacePath = function(path = '') {
-  // should preserve hash for anchor
-  if (window.vueRouter.currentRoute.value.path !== path) {
-    window.vueRouter.replace(path).catch(() => {});
+export function syncPathToChild() {
+  const iframe = document.querySelector('iframe');
+  if (iframe) {
+    iframeReady(iframe, () => {
+      iframe.postMessage(
+        {
+          type: 'replacePath',
+          value: getCurrentDir(),
+        },
+        '*'
+      );
+    });
   }
-};
+}
+
+export function listenToSyncPath() {
+  window.addEventListener('message', (event) => {
+    console.log(event.target);
+  // // should preserve hash for anchor
+  // if (window.vueRouter.currentRoute.value.path !== path) {
+  //   window.vueRouter.replace(path).catch(() => {});
+  // }
+  });
+}

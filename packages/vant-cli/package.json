@@ -4,7 +4,7 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "bin": {
-    "vant-cli": "./lib/index.js"
+    "vant-cli": "./lib/bin.js"
   },
   "engines": {
     "node": ">=10"
