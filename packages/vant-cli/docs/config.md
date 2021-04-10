@@ -15,6 +15,7 @@
     - [site.baiduAnalytics](#sitebaiduanalytics)
     - [site.searchConfig](#sitesearchconfig)
     - [site.hideSimulator](#sitehidesimulator)
+    - [site.simulator.url](#sitesimulatorurl)
   - [Webpack](#webpack)
   - [Babel](#babel)
     - [默认配置](#-1)
@@ -244,6 +245,13 @@ module.exports = {
 - Default: `false`
 
 是否隐藏所有页面右侧的手机模拟器，默认不隐藏
+
+### site.simulator.url
+
+- Type: `string`
+- Default: -
+
+自定义手机模拟器的 iframe URL 地址。
 
 ### site.htmlPluginOptions
 

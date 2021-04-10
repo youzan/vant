@@ -16,9 +16,8 @@ module.exports = {
   site: {
     defaultLang: 'en-US',
     versions: [
-      { label: 'Vant v1', link: '/vant/v1/' },
-      { label: 'Vant v2', link: '/vant/' },
-      { label: 'Vant Weapp', link: '/vant-weapp/' },
+      { label: 'v1', link: '/vant/v1/' },
+      { label: 'v2', link: '/vant/' },
     ],
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
@@ -31,10 +30,14 @@ module.exports = {
     locales: {
       'zh-CN': {
         title: 'Vant',
-        description: '轻量、可靠的移动端 Vue 组件库',
+        description: '轻量、可靠的移动端组件库',
         logo: 'https://img.yzcdn.cn/vant/logo.png',
         langLabel: '中',
         links: [
+          {
+            logo: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
+            url: 'https://vant-contrib.gitee.io/vant-weapp/',
+          },
           {
             logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
             url: 'https://github.com/youzan/vant',

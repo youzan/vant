@@ -214,7 +214,7 @@ export default {
       position: absolute;
       top: 34px;
       left: 0;
-      width: 100px;
+      width: 100%;
       z-index: 99;
       color: #333;
       line-height: 36px;
