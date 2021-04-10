@@ -120,6 +120,8 @@ router.afterEach(() => {
   nextTick(syncPathToChild);
 });
 
-listenToSyncPath(router);
+if (config.site.simulator?.syncPathFromSimulator !== false) {
+  listenToSyncPath(router);
+}
 
 window.vueRouter = router;

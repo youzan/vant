@@ -25,15 +25,20 @@ export default {
   },
 
   data() {
-    const path = location.pathname.replace(/\/index(\.html)?/, '/');
-
     return {
-      simulator: `${path}mobile.html${location.hash}`,
       hasSimulator: true,
     };
   },
 
   computed: {
+    simulator() {
+      if (config.site.simulator?.url) {
+        return config.site.simulator?.url;
+      }
+      const path = location.pathname.replace(/\/index(\.html)?/, '/');
+      return `${path}mobile.html${location.hash}`;
+    },
+
     lang() {
       const { lang } = this.$route.meta;
       return lang || '';
