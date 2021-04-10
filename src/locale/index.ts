@@ -10,7 +10,7 @@ const messages = reactive<Messages>({
   'zh-CN': defaultMessages,
 });
 
-export default {
+const Locale = {
   messages(): Message {
     return messages[lang.value];
   },
@@ -24,3 +24,6 @@ export default {
     deepAssign(messages, newMessages);
   },
 };
+
+export default Locale;
+export { Locale };

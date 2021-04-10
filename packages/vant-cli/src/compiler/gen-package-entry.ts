@@ -8,32 +8,64 @@ import {
 } from '../common';
 import { SRC_DIR, getPackageJson, getVantConfig } from '../common/constant';
 
+type ExportMode = 'exportAll' | 'exportDefault';
 type Options = {
   outputPath: string;
-  pathResolver?: Function;
+  pathResolver?: (path: string) => string;
 };
 
-function genImports(components: string[], options: Options): string {
-  return components
-    .map((name) => {
-      let path = join(SRC_DIR, name);
-      if (options.pathResolver) {
-        path = options.pathResolver(path);
-      }
+function getPathByName(name: string, pathResolver?: (path: string) => string) {
+  let path = join(SRC_DIR, name);
+  if (pathResolver) {
+    path = pathResolver(path);
+  }
+  return normalizePath(path);
+}
 
-      return `import ${pascalize(name)} from '${normalizePath(path)}';`;
-    })
+function genImports(names: string[], { pathResolver }: Options): string {
+  return names
+    .map(
+      (name) =>
+        `import ${pascalize(name)} from '${getPathByName(name, pathResolver)}';`
+    )
     .join('\n');
 }
 
-function genExports(names: string[]): string {
-  return names.map((name) => `${name}`).join(',\n  ');
+function genExports(
+  names: string[],
+  { pathResolver }: Options,
+  exportMode?: ExportMode
+): string {
+  if (exportMode === 'exportAll') {
+    const exports = names
+      .map((name) => `export * from '${getPathByName(name, pathResolver)}';`)
+      .join('\n');
+
+    return `
+  export {
+    install,
+    version,
+  };
+  ${exports}
+`;
+  }
+
+  return `
+  export {
+    install,
+    version,
+    ${names.map(pascalize).join(',\n  ')}
+  };
+  `;
 }
 
 export function genPackageEntry(options: Options) {
   const names = getComponents();
   const vantConfig = getVantConfig();
+
+  const exportMode = get(vantConfig, 'build.exportMode');
   const skipInstall = get(vantConfig, 'build.skipInstall', []).map(pascalize);
+
   const version = process.env.PACKAGE_VERSION || getPackageJson().version;
 
   const components = names.map(pascalize);
@@ -55,11 +87,7 @@ function install(app) {
   });
 }
 
-export {
-  install,
-  version,
-  ${genExports(components)}
-};
+${genExports(names, options, exportMode)}
 
 export default {
   install,
