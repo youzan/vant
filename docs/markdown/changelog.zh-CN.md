@@ -16,6 +16,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.13](https://github.com/youzan/vant/compare/v2.12.12...v2.12.13)
+
+`2021-04-11`
+
+**Feature**
+
+- Sticky: 新增 change 事件 [#8479](https://github.com/youzan/vant/issues/8479)
+
 ### [v2.12.12](https://github.com/youzan/vant/compare/v2.12.11...v2.12.12)
 
 `2021-04-05`

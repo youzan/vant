@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.13](https://github.com/youzan/vant/compare/v2.12.12...v2.12.13)
+
+`2021-04-11`
+
+**Feature**
+
+- Sticky: add change event [#8479](https://github.com/youzan/vant/issues/8479)
+
 ### [v2.12.12](https://github.com/youzan/vant/compare/v2.12.11...v2.12.12)
 
 `2021-04-05`
