@@ -22,7 +22,7 @@
     "prepare": "husky install",
     "release": "vant-cli release --tag next",
     "test:watch": "vant-cli test --watch",
-    "release:site": "sh docs/site/release.sh",
+    "release:site": "vant-cli build-site && gh-pages -d site --add --dest v3",
     "test:coverage": "open test/coverage/index.html"
   },
   "npm": {
