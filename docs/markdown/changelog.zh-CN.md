@@ -16,6 +16,26 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.13](https://github.com/youzan/vant/compare/v3.0.12...v3.0.13)
+
+`2021-04-11`
+
+**Feature**
+
+- AcitonBar: 新增 @action-bar-icon-background-color 样式变量 [#8474](https://github.com/youzan/vant/issues/8474)
+- Popover: 升级依赖的 @popperjs/core 到 2.9.2 版本 [0d1323](https://github.com/youzan/vant/commit/0d132337d5d263957a7993d60e47a18efec7313e)
+- perf: 优化包体积 [ba3e6d](https://github.com/youzan/vant/commit/ba3e6d56a0bc7ae3acc25b1380f054da3b9b020f)
+
+**Types**
+
+- Popup: 修复 PopupCloseIconPosition 类型错误 [15d901](https://github.com/youzan/vant/commit/15d901ad6aace3826881cb3c6e0499f75b71df80)
+- Search: 修复在 tsx 下部分 props 不存在的问题 [#8485](https://github.com/youzan/vant/issues/8485)
+- Stepper: 优化 theme 属性类型定义 [#8489](https://github.com/youzan/vant/issues/8489)
+
+**Bug Fixes**
+
+- Field: 修复 autofocus 属性不生效的问题 [#8488](https://github.com/youzan/vant/issues/8488)
+
 ### [v3.0.12](https://github.com/youzan/vant/compare/v3.0.11...v3.0.12)
 
 `2021-04-05`
