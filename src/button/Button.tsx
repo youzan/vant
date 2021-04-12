@@ -6,7 +6,7 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, extend } from '../utils';
 import { BORDER_SURROUND } from '../utils/constant';
 import { useRoute, routeProps } from '../composables/use-route';
 
@@ -28,8 +28,7 @@ export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
 export default defineComponent({
   name,
 
-  props: {
-    ...routeProps,
+  props: extend({}, routeProps, {
     text: String,
     icon: String,
     color: String,
@@ -64,7 +63,7 @@ export default defineComponent({
       type: String as PropType<'left' | 'right'>,
       default: 'left',
     },
-  },
+  }),
 
   emits: ['click'],
 

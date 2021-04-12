@@ -1,7 +1,7 @@
 import { ref, reactive, computed, CSSProperties, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, getZIndexStyle } from '../utils';
+import { createNamespace, extend, getZIndexStyle } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 import { INDEX_BAR_KEY, IndexBarProvide } from '../index-bar/IndexBar';
 import { getScrollTop, getRootScrollTop } from '../utils/dom/scroll';
@@ -46,15 +46,14 @@ export default defineComponent({
       const { zIndex, highlightColor } = parent.props;
 
       if (isSticky()) {
-        return {
-          ...getZIndexStyle(zIndex),
+        return extend(getZIndexStyle(zIndex), {
           left: state.left ? `${state.left}px` : undefined,
           width: state.width ? `${state.width}px` : undefined,
           transform: state.top
             ? `translate3d(0, ${state.top}px, 0)`
             : undefined,
           color: highlightColor,
-        };
+        });
       }
     });
 

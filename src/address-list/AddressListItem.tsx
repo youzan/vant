@@ -1,7 +1,7 @@
 import { PropType, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, extend } from '../utils';
 
 // Components
 import { Tag } from '../tag';
@@ -102,7 +102,7 @@ export default defineComponent({
             border={false}
             valueClass={bem('value')}
           />
-          {slots.bottom?.({ ...props.address, disabled })}
+          {slots.bottom?.(extend({}, props.address, { disabled }))}
         </div>
       );
     };

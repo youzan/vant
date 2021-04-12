@@ -1,7 +1,7 @@
 import { computed, getCurrentInstance, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, isObject } from '../utils';
+import { createNamespace, extend, isObject } from '../utils';
 import { TABBAR_KEY, TabbarProvide } from '../tabbar/Tabbar';
 
 // Composables
@@ -17,14 +17,13 @@ const [name, bem] = createNamespace('tabbar-item');
 export default defineComponent({
   name,
 
-  props: {
-    ...routeProps,
+  props: extend({}, routeProps, {
     dot: Boolean,
     icon: String,
     name: [Number, String],
     badge: [Number, String],
     iconPrefix: String,
-  },
+  }),
 
   emits: ['click'],
 

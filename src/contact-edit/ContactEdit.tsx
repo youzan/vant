@@ -1,7 +1,7 @@
 import { watch, reactive, PropType, defineComponent } from 'vue';
 
 // Utils
-import { isMobile, createNamespace } from '../utils';
+import { isMobile, createNamespace, extend } from '../utils';
 
 // Components
 import { Cell } from '../cell';
@@ -35,7 +35,7 @@ export default defineComponent({
     setDefaultLabel: String,
     contactInfo: {
       type: Object as PropType<ContactEditInfo>,
-      default: () => ({ ...DEFAULT_CONTACT }),
+      default: () => extend({}, DEFAULT_CONTACT),
     },
     telValidator: {
       type: Function as PropType<(val: string) => boolean>,
@@ -46,10 +46,7 @@ export default defineComponent({
   emits: ['save', 'delete', 'change-default'],
 
   setup(props, { emit }) {
-    const contact = reactive({
-      ...DEFAULT_CONTACT,
-      ...props.contactInfo,
-    });
+    const contact = reactive(extend({}, DEFAULT_CONTACT, props.contactInfo));
 
     const onSave = () => {
       if (!props.isSaving) {

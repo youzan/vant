@@ -1,5 +1,5 @@
 import { App, CSSProperties, TeleportProps } from 'vue';
-import { inBrowser, ComponentInstance, withInstall } from '../utils';
+import { inBrowser, ComponentInstance, withInstall, extend } from '../utils';
 import { Interceptor } from '../utils/interceptor';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanDialog, {
@@ -40,7 +40,7 @@ function initInstance() {
   const Wrapper = {
     setup() {
       const { state, toggle } = usePopupState();
-      return () => <VanDialog {...{ ...state, 'onUpdate:show': toggle }} />;
+      return () => <VanDialog {...state} {...{ 'onUpdate:show': toggle }} />;
     },
   };
 
@@ -58,13 +58,13 @@ function Dialog(options: DialogOptions) {
       initInstance();
     }
 
-    instance.open({
-      ...Dialog.currentOptions,
-      ...options,
-      callback: (action: DialogAction) => {
-        (action === 'confirm' ? resolve : reject)(action);
-      },
-    });
+    instance.open(
+      extend({}, Dialog.currentOptions, options, {
+        callback: (action: DialogAction) => {
+          (action === 'confirm' ? resolve : reject)(action);
+        },
+      })
+    );
   });
 }
 
@@ -94,17 +94,12 @@ Dialog.defaultOptions = {
   closeOnClickOverlay: false,
 };
 
-Dialog.currentOptions = {
-  ...Dialog.defaultOptions,
-};
+Dialog.currentOptions = extend({}, Dialog.defaultOptions);
 
 Dialog.alert = Dialog;
 
 Dialog.confirm = (options: DialogOptions) =>
-  Dialog({
-    showCancelButton: true,
-    ...options,
-  });
+  Dialog(extend({ showCancelButton: true }, options));
 
 Dialog.close = () => {
   if (instance) {
@@ -117,7 +112,7 @@ Dialog.setDefaultOptions = (options: DialogOptions) => {
 };
 
 Dialog.resetDefaultOptions = () => {
-  Dialog.currentOptions = { ...Dialog.defaultOptions };
+  Dialog.currentOptions = extend({}, Dialog.defaultOptions);
 };
 
 Dialog.install = (app: App) => {

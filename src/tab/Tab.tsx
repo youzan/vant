@@ -8,7 +8,7 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace, UnknownProp } from '../utils';
+import { createNamespace, extend, UnknownProp } from '../utils';
 import { TABS_KEY, TabsProvide } from '../tabs/Tabs';
 
 // Composables
@@ -23,8 +23,7 @@ const [name, bem] = createNamespace('tab');
 export default defineComponent({
   name,
 
-  props: {
-    ...routeProps,
+  props: extend({}, routeProps, {
     dot: Boolean,
     name: [Number, String],
     badge: [Number, String],
@@ -32,7 +31,7 @@ export default defineComponent({
     disabled: Boolean,
     titleClass: UnknownProp,
     titleStyle: [String, Object] as PropType<string | CSSProperties>,
-  },
+  }),
 
   setup(props, { slots }) {
     const inited = ref(false);

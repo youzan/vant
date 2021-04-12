@@ -1,5 +1,5 @@
 import { computed, PropType, defineComponent } from 'vue';
-import { createNamespace, addUnit, getSizeStyle } from '../utils';
+import { createNamespace, addUnit, getSizeStyle, extend } from '../utils';
 
 const [name, bem] = createNamespace('loading');
 
@@ -29,10 +29,9 @@ export default defineComponent({
   },
 
   setup(props, { slots }) {
-    const spinnerStyle = computed(() => ({
-      color: props.color,
-      ...getSizeStyle(props.size),
-    }));
+    const spinnerStyle = computed(() =>
+      extend({ color: props.color }, getSizeStyle(props.size))
+    );
 
     const renderText = () => {
       if (slots.default) {

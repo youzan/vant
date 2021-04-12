@@ -1,5 +1,11 @@
 import { ref, App, TeleportProps, getCurrentInstance } from 'vue';
-import { isObject, inBrowser, withInstall, ComponentInstance } from '../utils';
+import {
+  isObject,
+  inBrowser,
+  withInstall,
+  ComponentInstance,
+  extend,
+} from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanToast, { ToastType, ToastPosition } from './Toast';
 import type { LoadingType } from '../loading';
@@ -51,7 +57,7 @@ const defaultOptions: ToastOptions = {
 
 let queue: ComponentInstance[] = [];
 let allowMultiple = false;
-let currentOptions = { ...defaultOptions };
+let currentOptions = extend({}, defaultOptions);
 
 // default options of specific type
 let defaultOptionsMap: Record<string, ToastOptions | null> = {};
@@ -78,7 +84,6 @@ function createInstance() {
 
       const render = () => {
         const attrs: Record<string, unknown> = {
-          ...state,
           onClosed,
           'onUpdate:show': toggle,
         };
@@ -87,7 +92,7 @@ function createInstance() {
           attrs.message = message.value;
         }
 
-        return <VanToast {...attrs} />;
+        return <VanToast {...state} {...attrs} />;
       };
 
       // rewrite render function
@@ -121,20 +126,20 @@ function Toast(options: string | ToastOptions = {}) {
   const toast = getInstance();
   const parsedOptions = parseOptions(options);
 
-  toast.open({
-    ...currentOptions,
-    ...defaultOptionsMap[parsedOptions.type || currentOptions.type!],
-    ...parsedOptions,
-  });
+  toast.open(
+    extend(
+      {},
+      currentOptions,
+      defaultOptionsMap[parsedOptions.type || currentOptions.type!],
+      parsedOptions
+    )
+  );
 
   return toast;
 }
 
 const createMethod = (type: ToastType) => (options: string | ToastOptions) =>
-  Toast({
-    type,
-    ...parseOptions(options),
-  });
+  Toast(extend({ type }, parseOptions(options)));
 
 Toast.loading = createMethod('loading');
 Toast.success = createMethod('success');
@@ -171,7 +176,7 @@ Toast.resetDefaultOptions = (type?: ToastType) => {
   if (typeof type === 'string') {
     defaultOptionsMap[type] = null;
   } else {
-    currentOptions = { ...defaultOptions };
+    currentOptions = extend({}, defaultOptions);
     defaultOptionsMap = {};
   }
 };

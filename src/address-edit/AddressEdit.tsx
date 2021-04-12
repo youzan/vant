@@ -10,6 +10,7 @@ import {
 
 // Utils
 import {
+  extend,
   isObject,
   isMobile,
   createNamespace,
@@ -100,7 +101,7 @@ export default defineComponent({
     },
     addressInfo: {
       type: Object as PropType<Partial<AddressEditInfo>>,
-      default: () => ({ ...defaultData }),
+      default: () => extend({}, defaultData),
     },
     telValidator: {
       type: Function as PropType<(val: string) => boolean>,
@@ -321,10 +322,7 @@ export default defineComponent({
     watch(
       () => props.addressInfo,
       (value) => {
-        state.data = {
-          ...defaultData,
-          ...value,
-        };
+        state.data = extend({}, defaultData, value);
         setAreaCode(value.areaCode);
       },
       {

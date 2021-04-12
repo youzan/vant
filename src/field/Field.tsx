@@ -13,6 +13,7 @@ import {
 // Utils
 import {
   isDef,
+  extend,
   addUnit,
   UnknownProp,
   resetScroll,
@@ -98,9 +99,7 @@ export const fieldProps = {
 export default defineComponent({
   name,
 
-  props: {
-    ...cellProps,
-    ...fieldProps,
+  props: extend({}, cellProps, fieldProps, {
     rows: [Number, String],
     name: String,
     rules: Array as PropType<FieldRule[]>,
@@ -119,7 +118,7 @@ export default defineComponent({
       type: Boolean,
       default: null,
     },
-  },
+  }),
 
   emits: [
     'blur',
@@ -415,14 +414,7 @@ export default defineComponent({
         return <textarea {...inputAttrs} />;
       }
 
-      return (
-        <input
-          {...{
-            ...mapInputType(props.type),
-            ...inputAttrs,
-          }}
-        />
-      );
+      return <input {...mapInputType(props.type)} {...inputAttrs} />;
     };
 
     const renderLeftIcon = () => {

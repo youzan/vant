@@ -1,7 +1,7 @@
 import { computed, CSSProperties, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, extend } from '../utils';
 import { BORDER } from '../utils/constant';
 import { GRID_KEY, GridProvide } from '../grid/Grid';
 
@@ -18,14 +18,13 @@ const [name, bem] = createNamespace('grid-item');
 export default defineComponent({
   name,
 
-  props: {
-    ...routeProps,
+  props: extend({}, routeProps, {
     dot: Boolean,
     text: String,
     icon: String,
     badge: [Number, String],
     iconPrefix: String,
-  },
+  }),
 
   setup(props, { slots }) {
     const { parent, index } = useParent<GridProvide>(GRID_KEY);

@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { createNamespace, UnknownProp } from '../utils';
+import { extend, createNamespace, UnknownProp } from '../utils';
 import { ACTION_BAR_KEY } from '../action-bar/ActionBar';
 
 // Composables
@@ -15,15 +15,14 @@ const [name, bem] = createNamespace('action-bar-icon');
 export default defineComponent({
   name,
 
-  props: {
-    ...routeProps,
+  props: extend({}, routeProps, {
     dot: Boolean,
     text: String,
     icon: String,
     color: String,
     badge: [Number, String],
     iconClass: UnknownProp,
-  },
+  }),
 
   setup(props, { slots }) {
     const route = useRoute();

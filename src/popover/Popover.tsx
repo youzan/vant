@@ -17,6 +17,7 @@ import {
   UnknownProp,
   createNamespace,
   ComponentInstance,
+  extend,
 } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
@@ -129,12 +130,11 @@ export default defineComponent({
               gpuAcceleration: false,
             },
           },
-          {
-            ...offsetModifier,
+          extend({}, offsetModifier, {
             options: {
               offset: props.offset,
             },
-          },
+          }),
         ],
       });
     };
@@ -228,11 +228,9 @@ export default defineComponent({
           transition="van-popover-zoom"
           lockScroll={false}
           onTouchstart={onTouchstart}
-          {...{
-            ...attrs,
-            ...pick(props, popupProps),
-            'onUpdate:show': updateShow,
-          }}
+          {...attrs}
+          {...pick(props, popupProps)}
+          {...{ 'onUpdate:show': updateShow }}
         >
           <div class={bem('arrow')} />
           <div role="menu" class={bem('content')}>

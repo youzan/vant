@@ -11,6 +11,7 @@ import {
 import {
   pick,
   range,
+  extend,
   padZero,
   createNamespace,
   ComponentInstance,
@@ -28,8 +29,7 @@ const [name] = createNamespace('time-picker');
 export default defineComponent({
   name,
 
-  props: {
-    ...sharedProps,
+  props: extend({}, sharedProps, {
     modelValue: String,
     minHour: {
       type: [Number, String],
@@ -47,7 +47,7 @@ export default defineComponent({
       type: [Number, String],
       default: 59,
     },
-  },
+  }),
 
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 

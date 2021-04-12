@@ -2,7 +2,7 @@ import { PropType, defineComponent } from 'vue';
 
 // Utils
 import { bem, isImageFile, UploaderFileListItem } from './utils';
-import { isDef, getSizeStyle } from '../utils';
+import { isDef, getSizeStyle, extend } from '../utils';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
 // Components
@@ -77,7 +77,7 @@ export default defineComponent({
         const { index, item } = props;
         return (
           <div class={bem('preview-cover')}>
-            {slots['preview-cover']({ index, ...item })}
+            {slots['preview-cover'](extend({ index }, item))}
           </div>
         );
       }

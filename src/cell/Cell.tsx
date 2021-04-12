@@ -1,7 +1,7 @@
 import { PropType, CSSProperties, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, isDef, UnknownProp } from '../utils';
+import { createNamespace, extend, isDef, UnknownProp } from '../utils';
 
 // Composables
 import { useRoute, routeProps } from '../composables/use-route';
@@ -41,10 +41,7 @@ export const cellProps = {
 export default defineComponent({
   name,
 
-  props: {
-    ...cellProps,
-    ...routeProps,
-  },
+  props: extend({}, cellProps, routeProps),
 
   setup(props, { slots }) {
     const route = useRoute();

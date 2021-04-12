@@ -231,15 +231,13 @@ export default defineComponent({
         class={[bem(), props.className]}
         overlayClass={bem('overlay')}
         onClosed={onClosed}
-        {...{
-          ...pick(props, [
-            'show',
-            'transition',
-            'overlayStyle',
-            'closeOnPopstate',
-          ]),
-          'onUpdate:show': updateShow,
-        }}
+        {...pick(props, [
+          'show',
+          'transition',
+          'overlayStyle',
+          'closeOnPopstate',
+        ])}
+        {...{ 'onUpdate:show': updateShow }}
       >
         {renderClose()}
         {renderImages()}

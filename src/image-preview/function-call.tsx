@@ -1,5 +1,5 @@
 import { App, CSSProperties, TeleportProps } from 'vue';
-import { ComponentInstance, inBrowser, withInstall } from '../utils';
+import { ComponentInstance, extend, inBrowser, withInstall } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import { Interceptor } from '../utils/interceptor';
 import { PopupCloseIconPosition } from '../popup';
@@ -63,8 +63,8 @@ function initInstance() {
 
       return () => (
         <VanImagePreview
+          {...state}
           {...{
-            ...state,
             onClosed,
             'onUpdate:show': toggle,
           }}
@@ -89,10 +89,7 @@ const ImagePreview = (
 
   const options = Array.isArray(images) ? { images, startPosition } : images;
 
-  instance.open({
-    ...defaultConfig,
-    ...options,
-  });
+  instance.open(extend({}, defaultConfig, options));
 
   return instance;
 };

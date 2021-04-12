@@ -14,7 +14,7 @@ import {
 
 // Utils
 import { popupSharedProps } from './shared';
-import { createNamespace, isDef } from '../utils';
+import { createNamespace, extend, isDef } from '../utils';
 
 // Composables
 import { useEventListener } from '@vant/use';
@@ -43,8 +43,7 @@ export default defineComponent({
 
   inheritAttrs: false,
 
-  props: {
-    ...popupSharedProps,
+  props: extend({}, popupSharedProps, {
     round: Boolean,
     closeable: Boolean,
     transition: String,
@@ -62,7 +61,7 @@ export default defineComponent({
       type: String as PropType<PopupCloseIconPosition>,
       default: 'top-right',
     },
-  },
+  }),
 
   emits: [
     'open',

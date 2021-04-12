@@ -15,6 +15,7 @@ import {
   getScrollTop,
   getZIndexStyle,
   createNamespace,
+  extend,
 } from '../utils';
 
 // Composables
@@ -76,12 +77,11 @@ export default defineComponent({
         return;
       }
 
-      const style: CSSProperties = {
-        ...getZIndexStyle(props.zIndex),
+      const style: CSSProperties = extend(getZIndexStyle(props.zIndex), {
         width: `${state.width}px`,
         height: `${state.height}px`,
         [props.position]: `${offset.value}px`,
-      };
+      });
 
       if (state.transform) {
         style.transform = `translate3d(0, ${state.transform}px, 0)`;

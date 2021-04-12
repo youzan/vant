@@ -2,7 +2,7 @@ import { ref, watch, computed, nextTick, defineComponent } from 'vue';
 
 // Utils
 import { cellProps } from '../cell/Cell';
-import { createNamespace, pick } from '../utils';
+import { createNamespace, extend, pick } from '../utils';
 import { COLLAPSE_KEY, CollapseProvide } from '../collapse/Collapse';
 
 // Composables
@@ -18,8 +18,7 @@ const [name, bem] = createNamespace('collapse-item');
 export default defineComponent({
   name,
 
-  props: {
-    ...cellProps,
+  props: extend({}, cellProps, {
     name: [Number, String],
     disabled: Boolean,
     readonly: Boolean,
@@ -27,7 +26,7 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
-  },
+  }),
 
   setup(props, { slots }) {
     const wrapperRef = ref<HTMLElement>();

@@ -1,7 +1,13 @@
 import { ref, reactive, PropType, defineComponent } from 'vue';
 
 // Utils
-import { pick, isPromise, getSizeStyle, ComponentInstance } from '../utils';
+import {
+  pick,
+  isPromise,
+  getSizeStyle,
+  ComponentInstance,
+  extend,
+} from '../utils';
 import {
   bem,
   name,
@@ -250,12 +256,16 @@ export default defineComponent({
           .map((item) => item.content || item.url)
           .filter(Boolean) as string[];
 
-        imagePreview = ImagePreview({
-          images,
-          startPosition: imageFiles.indexOf(item),
-          onClose: onClosePreview,
-          ...props.previewOptions,
-        });
+        imagePreview = ImagePreview(
+          extend(
+            {
+              images,
+              startPosition: imageFiles.indexOf(item),
+              onClose: onClosePreview,
+            },
+            props.previewOptions
+          )
+        );
       }
     };
 
@@ -281,10 +291,10 @@ export default defineComponent({
         'beforeDelete',
       ] as const;
 
-      const previewData = {
-        ...pick(props, needPickData),
-        ...pick(item, needPickData, true),
-      };
+      const previewData = extend(
+        pick(props, needPickData),
+        pick(item, needPickData, true)
+      );
 
       return (
         <UploaderPreviewItem
