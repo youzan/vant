@@ -1,10 +1,10 @@
 import { App } from 'vue';
 import {
+  extend,
   isObject,
   inBrowser,
-  ComponentInstance,
   withInstall,
-  extend,
+  ComponentInstance,
 } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanNotify, { NotifyType } from './Notify';

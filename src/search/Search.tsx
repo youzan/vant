@@ -3,10 +3,10 @@ import { ref, PropType, defineComponent } from 'vue';
 // Utils
 import {
   pick,
+  extend,
   createNamespace,
   preventDefault,
   ComponentInstance,
-  extend,
 } from '../utils';
 import { fieldProps } from '../field/Field';
 

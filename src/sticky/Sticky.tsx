@@ -10,12 +10,12 @@ import {
 
 // Utils
 import {
+  extend,
   isHidden,
   unitToPx,
   getScrollTop,
   getZIndexStyle,
   createNamespace,
-  extend,
 } from '../utils';
 
 // Composables

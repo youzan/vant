@@ -3,10 +3,10 @@ import { ref, reactive, PropType, defineComponent } from 'vue';
 // Utils
 import {
   pick,
+  extend,
   isPromise,
   getSizeStyle,
   ComponentInstance,
-  extend,
 } from '../utils';
 import {
   bem,

@@ -14,10 +14,10 @@ import { Instance, createPopper, offsetModifier } from '@vant/popperjs';
 // Utils
 import {
   pick,
+  extend,
   UnknownProp,
   createNamespace,
   ComponentInstance,
-  extend,
 } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 

@@ -1,10 +1,10 @@
 import { ref, App, TeleportProps, getCurrentInstance } from 'vue';
 import {
+  extend,
   isObject,
   inBrowser,
   withInstall,
   ComponentInstance,
-  extend,
 } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanToast, { ToastType, ToastPosition } from './Toast';

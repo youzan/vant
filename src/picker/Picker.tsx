@@ -2,11 +2,11 @@ import { ref, watch, computed, PropType, defineComponent } from 'vue';
 
 // Utils
 import {
+  extend,
   unitToPx,
   preventDefault,
   createNamespace,
   ComponentInstance,
-  extend,
 } from '../utils';
 import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 
