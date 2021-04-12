@@ -4,12 +4,14 @@ import { mount } from '../../../test';
 const contactInfo = {
   name: 'jack',
   tel: '12345678',
+  isDefault: true,
 };
 
 test('should render ContactList correctly', () => {
   const wrapper = mount(ContactList, {
     props: {
       list: [contactInfo],
+      defaultTagText: '默认',
     },
   });
   expect(wrapper.html()).toMatchSnapshot();
