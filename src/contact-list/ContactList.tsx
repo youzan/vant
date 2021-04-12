@@ -55,7 +55,11 @@ export default defineComponent({
       );
 
       const renderContent = () => {
-        const nodes: JSX.Element[] = [`${item.name}，${item.tel}`];
+        const nodes: JSX.Element[] = [
+          <>
+            `${item.name}，${item.tel}`
+          </>,
+        ];
 
         if (item.isDefault && props.defaultTagText) {
           nodes.push(
