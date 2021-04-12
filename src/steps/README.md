@@ -34,7 +34,7 @@ app.use(Steps);
 import { ref } from 'vue';
 
 export default {
-  steup() {
+  setup() {
     const active = ref(1);
     return { active };
   },
