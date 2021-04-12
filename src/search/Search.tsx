@@ -3,6 +3,7 @@ import { ref, PropType, defineComponent } from 'vue';
 // Utils
 import {
   pick,
+  extend,
   createNamespace,
   preventDefault,
   ComponentInstance,
@@ -22,8 +23,7 @@ export type SearchShape = 'square' | 'round';
 export default defineComponent({
   name,
 
-  props: {
-    ...fieldProps,
+  props: extend({}, fieldProps, {
     label: String,
     actionText: String,
     background: String,
@@ -40,7 +40,7 @@ export default defineComponent({
       type: String,
       default: 'search',
     },
-  },
+  }),
 
   emits: ['search', 'cancel', 'update:modelValue'],
 
@@ -96,10 +96,7 @@ export default defineComponent({
     >;
 
     const renderField = () => {
-      const fieldAttrs = {
-        ...attrs,
-        ...pick(props, fieldPropNames),
-      };
+      const fieldAttrs = extend({}, attrs, pick(props, fieldPropNames));
 
       const onInput = (value: string) => emit('update:modelValue', value);
 

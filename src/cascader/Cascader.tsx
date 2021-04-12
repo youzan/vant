@@ -1,5 +1,5 @@
 import { nextTick, PropType, reactive, watch, defineComponent } from 'vue';
-import { createNamespace } from '../utils';
+import { createNamespace, extend } from '../utils';
 
 // Components
 import { Tab } from '../tab';
@@ -62,12 +62,14 @@ export default defineComponent({
       activeTab: 0,
     });
 
-    const { text: textKey, value: valueKey, children: childrenKey } = {
-      text: 'text',
-      value: 'value',
-      children: 'children',
-      ...props.fieldNames,
-    };
+    const { text: textKey, value: valueKey, children: childrenKey } = extend(
+      {
+        text: 'text',
+        value: 'value',
+        children: 'children',
+      },
+      props.fieldNames
+    );
 
     const getSelectedOptionsByValue = (
       options: CascaderOption[],

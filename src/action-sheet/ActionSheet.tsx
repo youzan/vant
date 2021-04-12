@@ -1,7 +1,7 @@
 import { nextTick, PropType, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, pick } from '../utils';
+import { pick, extend, createNamespace } from '../utils';
 
 // Components
 import { Icon } from '../icon';
@@ -24,8 +24,7 @@ export type ActionSheetAction = {
 export default defineComponent({
   name,
 
-  props: {
-    ...popupSharedProps,
+  props: extend({}, popupSharedProps, {
     title: String,
     actions: Array as PropType<ActionSheetAction[]>,
     cancelText: String,
@@ -48,7 +47,7 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
-  },
+  }),
 
   emits: ['select', 'cancel', 'update:show'],
 
@@ -157,10 +156,8 @@ export default defineComponent({
         round={props.round}
         position="bottom"
         safeAreaInsetBottom={props.safeAreaInsetBottom}
-        {...{
-          ...pick(props, popupSharedPropKeys),
-          'onUpdate:show': updateShow,
-        }}
+        {...pick(props, popupSharedPropKeys)}
+        {...{ 'onUpdate:show': updateShow }}
       >
         {renderHeader()}
         {renderDescription()}

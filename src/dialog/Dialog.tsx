@@ -4,6 +4,7 @@ import { PropType, reactive, defineComponent } from 'vue';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 import {
   pick,
+  extend,
   addUnit,
   isFunction,
   UnknownProp,
@@ -34,8 +35,7 @@ const popupKeys = [
 export default defineComponent({
   name,
 
-  props: {
-    ...popupSharedProps,
+  props: extend({}, popupSharedProps, {
     title: String,
     theme: String as PropType<DialogTheme>,
     width: [Number, String],
@@ -63,7 +63,7 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
-  },
+  }),
 
   emits: ['confirm', 'cancel', 'update:show'],
 
@@ -231,10 +231,8 @@ export default defineComponent({
           class={[bem([theme]), className]}
           style={{ width: addUnit(width) }}
           aria-labelledby={title || message}
-          {...{
-            ...pick(props, popupKeys),
-            'onUpdate:show': updateShow,
-          }}
+          {...pick(props, popupKeys)}
+          {...{ 'onUpdate:show': updateShow }}
         >
           {renderTitle()}
           {renderContent()}

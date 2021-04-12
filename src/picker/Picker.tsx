@@ -2,6 +2,7 @@ import { ref, watch, computed, PropType, defineComponent } from 'vue';
 
 // Utils
 import {
+  extend,
   unitToPx,
   preventDefault,
   createNamespace,
@@ -68,8 +69,7 @@ export const pickerProps = {
 export default defineComponent({
   name,
 
-  props: {
-    ...pickerProps,
+  props: extend({}, pickerProps, {
     columnsFieldNames: Object as PropType<PickerFieldNames>,
     columns: {
       type: Array as PropType<PickerOption[] | PickerColumn[]>,
@@ -89,20 +89,22 @@ export default defineComponent({
       type: String,
       default: 'text',
     },
-  },
+  }),
 
   emits: ['confirm', 'cancel', 'change'],
 
   setup(props, { emit, slots }) {
     const formattedColumns = ref<PickerObjectColumn[]>([]);
 
-    const { text: textKey, values: valuesKey, children: childrenKey } = {
-      // compatible with valueKey prop
-      text: props.valueKey,
-      values: 'values',
-      children: 'children',
-      ...props.columnsFieldNames,
-    };
+    const { text: textKey, values: valuesKey, children: childrenKey } = extend(
+      {
+        // compatible with valueKey prop
+        text: props.valueKey,
+        values: 'values',
+        children: 'children',
+      },
+      props.columnsFieldNames
+    );
 
     const { children, linkChildren } = useChildren<ComponentInstance>(
       PICKER_KEY

@@ -1,7 +1,7 @@
 import { PropType, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, pick } from '../utils';
+import { createNamespace, extend, pick } from '../utils';
 import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
 // Components
@@ -45,8 +45,7 @@ const [name, bem, t] = createNamespace('share-sheet');
 export default defineComponent({
   name,
 
-  props: {
-    ...popupSharedProps,
+  props: extend({}, popupSharedProps, {
     title: String,
     cancelText: String,
     description: String,
@@ -62,7 +61,7 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
-  },
+  }),
 
   emits: ['cancel', 'select', 'update:show'],
 
@@ -143,10 +142,8 @@ export default defineComponent({
         round
         class={bem()}
         position="bottom"
-        {...{
-          ...pick(props, popupKeys),
-          'onUpdate:show': updateShow,
-        }}
+        {...pick(props, popupKeys)}
+        {...{ 'onUpdate:show': updateShow }}
       >
         {renderHeader()}
         {renderRows()}

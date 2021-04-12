@@ -12,7 +12,7 @@ import {
 
 // Utils
 import { deepClone } from '../utils/deep-clone';
-import { pick, createNamespace, ComponentInstance } from '../utils';
+import { pick, createNamespace, ComponentInstance, extend } from '../utils';
 import { pickerProps } from '../picker/Picker';
 
 // Composables
@@ -45,8 +45,7 @@ type ColumnType = 'province' | 'county' | 'city';
 export default defineComponent({
   name,
 
-  props: {
-    ...pickerProps,
+  props: extend({}, pickerProps, {
     value: String,
     areaList: {
       type: Object as PropType<AreaList>,
@@ -64,7 +63,7 @@ export default defineComponent({
       type: Array as PropType<string[]>,
       default: () => [],
     },
-  },
+  }),
 
   emits: ['change', 'confirm'],
 

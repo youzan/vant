@@ -2,6 +2,7 @@ import { PropType, Transition, CSSProperties, defineComponent } from 'vue';
 import {
   noop,
   isDef,
+  extend,
   UnknownProp,
   preventDefault,
   createNamespace,
@@ -34,10 +35,10 @@ export default defineComponent({
     };
 
     const renderOverlay = lazyRender(() => {
-      const style: CSSProperties = {
-        ...getZIndexStyle(props.zIndex),
-        ...props.customStyle,
-      };
+      const style: CSSProperties = extend(
+        getZIndexStyle(props.zIndex),
+        props.customStyle
+      );
 
       if (isDef(props.duration)) {
         style.animationDuration = `${props.duration}s`;

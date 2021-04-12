@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, extend } from '../utils';
 import { SIDEBAR_KEY, SidebarProvide } from '../sidebar/Sidebar';
 
 // Composables
@@ -16,13 +16,12 @@ const [name, bem] = createNamespace('sidebar-item');
 export default defineComponent({
   name,
 
-  props: {
-    ...routeProps,
+  props: extend({}, routeProps, {
     dot: Boolean,
     title: String,
     badge: [Number, String],
     disabled: Boolean,
-  },
+  }),
 
   emits: ['click'],
 
