@@ -23,7 +23,6 @@
   "devDependencies": {
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.9",
-    "@babel/runtime": "7.x",
     "release-it": "^14.2.2",
     "vue": "^3.0.0"
   },
