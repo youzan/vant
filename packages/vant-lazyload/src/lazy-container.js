@@ -19,14 +19,13 @@ class LazyContainer {
 
   update({ el, binding }) {
     this.el = el;
-    this.options = { ...defaultOptions, ...binding.value };
+    this.options = Object.assign({}, defaultOptions, binding.value);
 
     const imgs = this.getImgs();
     imgs.forEach((el) => {
       this.lazy.add(
         el,
-        {
-          ...this.binding,
+        Object.assign({}, this.binding, {
           value: {
             src: 'dataset' in el ? el.dataset.src : el.getAttribute('data-src'),
             error:
@@ -38,7 +37,7 @@ class LazyContainer {
                 ? el.dataset.loading
                 : el.getAttribute('data-loading')) || this.options.loading,
           },
-        },
+        }),
         this.vnode
       );
     });

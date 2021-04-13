@@ -91,10 +91,7 @@ export default function () {
      * @return
      */
     config(options = {}) {
-      this.options = {
-        ...this.options,
-        options,
-      };
+      Object.assign(this.options, options);
     }
 
     /**
