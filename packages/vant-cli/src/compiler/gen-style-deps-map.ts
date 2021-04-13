@@ -3,7 +3,7 @@ import { CSS_LANG } from '../common/css';
 import { existsSync } from 'fs-extra';
 import { getDeps, clearDepsCache, fillExt } from './get-deps';
 import { getComponents, smartOutputFile } from '../common';
-import { SRC_DIR, STYPE_DEPS_JSON_FILE } from '../common/constant';
+import { SRC_DIR, STYLE_DEPS_JSON_FILE } from '../common/constant';
 
 function matchPath(path: string, component: string): boolean {
   const p = relative(SRC_DIR, path);
@@ -28,15 +28,15 @@ function analyzeComponentDeps(components: string[], component: string) {
   function search(filePath: string) {
     record.add(filePath);
 
-    getDeps(filePath).forEach(key => {
+    getDeps(filePath).forEach((key) => {
       if (record.has(key)) {
         return;
       }
 
       search(key);
       components
-        .filter(item => matchPath(key, item))
-        .forEach(item => {
+        .filter((item) => matchPath(key, item))
+        .forEach((item) => {
           if (!checkList.includes(item) && item !== component) {
             checkList.push(item);
           }
@@ -80,7 +80,7 @@ function getSequence(components: string[], depsMap: DepsMap) {
       return;
     }
 
-    const maxIndex = Math.max(...deps.map(dep => sequence.indexOf(dep)));
+    const maxIndex = Math.max(...deps.map((dep) => sequence.indexOf(dep)));
 
     sequence.splice(maxIndex + 1, 0, item);
   }
@@ -93,25 +93,25 @@ function getSequence(components: string[], depsMap: DepsMap) {
 export async function genStyleDepsMap() {
   const components = getComponents();
 
-  return new Promise<void>(resolve => {
+  return new Promise<void>((resolve) => {
     clearDepsCache();
 
     const map = {} as DepsMap;
 
-    components.forEach(component => {
+    components.forEach((component) => {
       map[component] = analyzeComponentDeps(components, component);
     });
 
     const sequence = getSequence(components, map);
 
-    Object.keys(map).forEach(key => {
+    Object.keys(map).forEach((key) => {
       map[key] = map[key].sort(
         (a, b) => sequence.indexOf(a) - sequence.indexOf(b)
       );
     });
 
     smartOutputFile(
-      STYPE_DEPS_JSON_FILE,
+      STYLE_DEPS_JSON_FILE,
       JSON.stringify({ map, sequence }, null, 2)
     );
 

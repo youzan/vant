@@ -1,6 +1,5 @@
 import sass from 'sass';
 import webpack from 'webpack';
-import FriendlyErrorsPlugin from '@nuxt/friendly-errors-webpack-plugin';
 import { VueLoaderPlugin } from 'vue-loader';
 import { join } from 'path';
 import { consola } from '../common/logger';
@@ -39,10 +38,6 @@ const plugins = [
     __VUE_PROD_DEVTOOLS__: 'false',
   }),
   new VueLoaderPlugin(),
-  new FriendlyErrorsPlugin({
-    clearConsole: false,
-    logLevel: 'WARNING',
-  }),
 ];
 
 const tsconfigPath = join(CWD, 'tsconfig.json');

@@ -39,12 +39,12 @@ export const CONFIG_DIR = join(__dirname, '../config');
 // Dist files
 export const PACKAGE_ENTRY_FILE = join(DIST_DIR, 'package-entry.js');
 export const PACKAGE_STYLE_FILE = join(DIST_DIR, 'package-style.css');
-export const SITE_MODILE_SHARED_FILE = join(DIST_DIR, 'site-mobile-shared.js');
+export const SITE_MOBILE_SHARED_FILE = join(DIST_DIR, 'site-mobile-shared.js');
 export const SITE_DESKTOP_SHARED_FILE = join(
   DIST_DIR,
   'site-desktop-shared.js'
 );
-export const STYPE_DEPS_JSON_FILE = join(DIST_DIR, 'style-deps.json');
+export const STYLE_DEPS_JSON_FILE = join(DIST_DIR, 'style-deps.json');
 
 // Config files
 export const BABEL_CONFIG_FILE = join(CONFIG_DIR, 'babel.config.js');
