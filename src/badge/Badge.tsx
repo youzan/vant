@@ -1,5 +1,5 @@
 import { PropType, CSSProperties, defineComponent } from 'vue';
-import { isDef, isNumeric, createNamespace } from '../utils';
+import { isDef, addUnit, isNumeric, createNamespace } from '../utils';
 
 const [name, bem] = createNamespace('badge');
 
@@ -10,7 +10,7 @@ export default defineComponent({
     dot: Boolean,
     max: [Number, String],
     color: String,
-    offset: (Array as unknown) as PropType<[number, number]>,
+    offset: (Array as unknown) as PropType<[string | number, string | number]>,
     content: [Number, String],
     tag: {
       type: String as PropType<keyof HTMLElementTagNameMap>,
@@ -56,11 +56,11 @@ export default defineComponent({
         if (props.offset) {
           const [x, y] = props.offset;
           if (slots.default) {
-            style.top = `${y}px`;
-            style.right = `${-x}px`;
+            style.top = addUnit(y);
+            style.right = `-${addUnit(x)}`;
           } else {
-            style.marginTop = `${y}px`;
-            style.marginLeft = `${x}px`;
+            style.marginTop = addUnit(y);
+            style.marginLeft = addUnit(x);
           }
         }
 
