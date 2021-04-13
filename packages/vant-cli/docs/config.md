@@ -292,23 +292,10 @@ module.exports = {
 
 - @babel/preset-env（不含 core-js）
 - @babel/preset-typescript
-- @babel/plugin-transform-runtime
 - @babel/plugin-transform-object-assign
 - @babel/plugin-proposal-optional-chaining
 - @babel/plugin-proposal-nullish-coalescing-operator
 - @vue/babel-preset-jsx
-
-### 依赖
-
-由于使用了 `@babel/plugin-transform-runtime` 来优化 Babel 的 helper 函数，你需要将 `@babel/runtime` 添加到 `package.json` 的依赖项：
-
-```json
-{
-  "dependencies": {
-    "@babel/runtime": "7.x"
-  }
-}
-```
 
 ## Postcss
 
