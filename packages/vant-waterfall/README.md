@@ -1,5 +1,7 @@
 # Waterfall 瀑布流
 
+Tips: Waterfall 组件已废弃，请使用 List 组件代替。
+
 ### Install
 
 #### NPM
@@ -35,14 +37,15 @@ import Waterfall from '@vant/waterfall';
 export default {
   directives: {
     WaterfallLower: Waterfall('lower'),
-    WaterfallUpper: Waterfall('upper')
-  }
+    WaterfallUpper: Waterfall('upper'),
+  },
 };
 ```
 
 ### 代码演示
 
 #### 基础用法
+
 使用 `v-waterfall-lower` 监听滚动到达底部，并执行相应函数。若是函数执行中需要异步加载数据，可以将 `waterfall-disabled` 指定的值置为 true，禁止 `v-waterfall-lower` 监听滚动事件
 
 注意：`waterfall-disabled` 传入的是 vue 对象中表示是否禁止瀑布流触发 key 值，类型是字符串
@@ -62,12 +65,12 @@ export default {
   data() {
     return {
       list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-      disabled: false
+      disabled: false,
     };
   },
 
   directives: {
-    WaterfallLower: Waterfall('lower')
+    WaterfallLower: Waterfall('lower'),
   },
 
   methods: {
@@ -79,16 +82,16 @@ export default {
         }
         this.disabled = false;
       }, 200);
-    }
-  }
+    },
+  },
 };
 ```
 
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| v-waterfall-lower | 滚动到底部, 触发执行的函数 | *Function* | - | - |
-| v-waterfall-upper | 滚动到顶部, 触发执行的函数 | *Function* | - | - |
-| waterfall-disabled | 在 vue 对象中表示是否禁止瀑布流触发的 key 值 | *string* | - | - |
-| waterfall-offset | 触发瀑布流加载的阈值 | *number* | `300` | - |
+| --- | --- | --- | --- | --- |
+| v-waterfall-lower | 滚动到底部, 触发执行的函数 | _Function_ | - | - |
+| v-waterfall-upper | 滚动到顶部, 触发执行的函数 | _Function_ | - | - |
+| waterfall-disabled | 在 vue 对象中表示是否禁止瀑布流触发的 key 值 | _string_ | - | - |
+| waterfall-offset | 触发瀑布流加载的阈值 | _number_ | `300` | - |
