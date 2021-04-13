@@ -42,7 +42,6 @@
     "@babel/preset-typescript": "^7.12.7",
     "@docsearch/css": "3.0.0-alpha.33",
     "@docsearch/js": "3.0.0-alpha.33",
-    "@nuxt/friendly-errors-webpack-plugin": "^2.5.0",
     "@types/webpack-dev-server": "^3.11.1",
     "@vant/eslint-config": "^3.2.0",
     "@vant/markdown-loader": "^4.1.0",

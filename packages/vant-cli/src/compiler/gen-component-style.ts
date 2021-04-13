@@ -11,11 +11,11 @@ import {
   ES_DIR,
   SRC_DIR,
   LIB_DIR,
-  STYPE_DEPS_JSON_FILE,
+  STYLE_DEPS_JSON_FILE,
 } from '../common/constant';
 
 function getDeps(component: string): string[] {
-  const styleDepsJson = require(STYPE_DEPS_JSON_FILE);
+  const styleDepsJson = require(STYLE_DEPS_JSON_FILE);
 
   if (styleDepsJson.map[component]) {
     const deps = styleDepsJson.map[component].slice(0);
@@ -57,7 +57,7 @@ function genEntry(params: {
 }) {
   const { ext, filename, component, baseFile } = params;
   const deps = getDeps(component);
-  const depsPath = deps.map(dep => getRelativePath(component, dep, ext));
+  const depsPath = deps.map((dep) => getRelativePath(component, dep, ext));
 
   OUTPUT_CONFIG.forEach(({ dir, template }) => {
     const outputDir = join(dir, component, 'style');
@@ -81,13 +81,13 @@ export function genComponentStyle(
   options: { cache: boolean } = { cache: true }
 ) {
   if (!options.cache) {
-    delete require.cache[STYPE_DEPS_JSON_FILE];
+    delete require.cache[STYLE_DEPS_JSON_FILE];
   }
 
   const components = getComponents();
   const baseFile = getCssBaseFile();
 
-  components.forEach(component => {
+  components.forEach((component) => {
     genEntry({
       baseFile,
       component,

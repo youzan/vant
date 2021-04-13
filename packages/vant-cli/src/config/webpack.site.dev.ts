@@ -9,7 +9,7 @@ import { getVantConfig, getWebpackConfig } from '../common';
 import { VantCliSitePlugin } from '../compiler/vant-cli-site-plugin';
 import {
   GREEN,
-  SITE_MODILE_SHARED_FILE,
+  SITE_MOBILE_SHARED_FILE,
   SITE_DESKTOP_SHARED_FILE,
 } from '../common/constant';
 
@@ -48,7 +48,6 @@ export function getSiteDevBaseConfig(): WebpackConfig {
     },
     devServer: {
       port: 8080,
-      quiet: true,
       host: '0.0.0.0',
       stats: 'errors-only',
       publicPath: '/',
@@ -56,7 +55,7 @@ export function getSiteDevBaseConfig(): WebpackConfig {
     },
     resolve: {
       alias: {
-        'site-mobile-shared': SITE_MODILE_SHARED_FILE,
+        'site-mobile-shared': SITE_MOBILE_SHARED_FILE,
         'site-desktop-shared': SITE_DESKTOP_SHARED_FILE,
       },
     },

@@ -10,4 +10,3 @@ declare module 'html-webpack-plugin';
 declare module 'conventional-changelog';
 declare module '@vant/markdown-vetur';
 declare module '@babel/helper-plugin-utils';
-declare module '@nuxt/friendly-errors-webpack-plugin';
