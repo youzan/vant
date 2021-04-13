@@ -77,9 +77,9 @@ export default defineComponent({
 
       return (
         <Loading
-          class={bem('loading')}
           size={props.loadingSize}
           type={props.loadingType}
+          class={bem('loading')}
         />
       );
     };
@@ -116,9 +116,9 @@ export default defineComponent({
     const getStyle = () => {
       const { color, plain } = props;
       if (color) {
-        const style: CSSProperties = {};
-
-        style.color = plain ? color : 'white';
+        const style: CSSProperties = {
+          color: plain ? color : 'white',
+        };
 
         if (!plain) {
           // Use background instead of backgroundColor to make linear-gradient work
@@ -139,8 +139,7 @@ export default defineComponent({
     const onClick = (event: MouseEvent) => {
       if (props.loading) {
         event.preventDefault();
-      }
-      if (!props.loading && !props.disabled) {
+      } else if (!props.disabled) {
         emit('click', event);
         route();
       }
