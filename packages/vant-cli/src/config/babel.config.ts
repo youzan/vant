@@ -28,13 +28,6 @@ module.exports = function (api?: ConfigAPI, options: PresetOption = {}) {
     ],
     plugins: [
       [
-        require.resolve('@babel/plugin-transform-runtime'),
-        {
-          corejs: false,
-          useESModules,
-        },
-      ],
-      [
         require.resolve('babel-plugin-import'),
         {
           libraryName: 'vant',
