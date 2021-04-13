@@ -57,6 +57,22 @@ test('should change dot position when using offset prop', () => {
   expect(badge.style.right).toEqual('-2px');
 });
 
+test('should change dot position when using offset prop with custom unit', () => {
+  const wrapper = mount(Badge, {
+    props: {
+      dot: true,
+      offset: ['2rem', '4em'],
+    },
+    slots: {
+      default: () => 'Child',
+    },
+  });
+
+  const badge = wrapper.find('.van-badge');
+  expect(badge.style.top).toEqual('4em');
+  expect(badge.style.right).toEqual('-2rem');
+});
+
 test('should change dot position when using offset prop without children', () => {
   const wrapper = mount(Badge, {
     props: {
