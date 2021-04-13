@@ -20,7 +20,7 @@ export function useParent<T>(key: string | symbol) {
 
   if (parent) {
     const instance = getCurrentInstance()!;
-    const { link, unlink, internalChildren, ...rest } = parent;
+    const { link, unlink, internalChildren } = parent;
 
     link(instance);
     onUnmounted(() => unlink(instance));
@@ -28,7 +28,7 @@ export function useParent<T>(key: string | symbol) {
     const index = computed(() => internalChildren.indexOf(instance));
 
     return {
-      parent: rest,
+      parent,
       index,
     };
   }
