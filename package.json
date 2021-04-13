@@ -63,7 +63,6 @@
     "@vant/cli": "^3.10.0",
     "@vant/area-data": "^1.0.0",
     "@vue/compiler-sfc": "^3.0.6",
-    "prettier": "2.1.0",
     "vue": "^3.0.6"
   },
   "sideEffects": [
