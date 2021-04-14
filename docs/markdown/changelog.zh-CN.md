@@ -2,7 +2,7 @@
 
 ### 提示
 
-当前文档为 Vant 2 的更新日志，如需查询 Vant 3 的更新内容，请访问 [Vant 3 更新日志](https://youzan.github.io/vant/next/#/zh-CN/changelog)。
+当前文档为 Vant 2 的更新日志，如需查询 Vant 3 的更新内容，请访问 [Vant 3 更新日志](https://youzan.github.io/vant/v3/#/zh-CN/changelog)。
 
 ### 介绍
 
@@ -12,7 +12,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 - 修订号：每周发布，包含新特性和问题修复。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
-- 主版本号：发布时间不定，包含不兼容更新，预计下一个主版本会与 Vue 3.0 同期发布。
+- 主版本号：无固定发布时间，包含不兼容更新。
 
 ## 更新内容
 
