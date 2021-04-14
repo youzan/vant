@@ -105,9 +105,7 @@ export default defineComponent({
 
     watch(
       () => props.contactInfo,
-      (value) => {
-        Object.assign(contact, DEFAULT_CONTACT, value);
-      }
+      (value) => extend(contact, DEFAULT_CONTACT, value)
     );
 
     return () => (

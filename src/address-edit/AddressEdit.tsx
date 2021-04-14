@@ -166,7 +166,7 @@ export default defineComponent({
         const detail = areaRef.value.getArea();
         detail.areaCode = detail.code;
         delete detail.code;
-        Object.assign(state.data, detail);
+        extend(state.data, detail);
       }
     };
 
