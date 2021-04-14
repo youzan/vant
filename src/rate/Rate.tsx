@@ -15,18 +15,34 @@ const [name, bem] = createNamespace('rate');
 
 type RateStatus = 'full' | 'half' | 'void';
 
+type RateListItem = {
+  status: RateStatus;
+  value: number;
+};
+
 function getRateStatus(
   value: number,
   index: number,
-  allowHalf: boolean
-): RateStatus {
+  allowHalf: boolean,
+  readonly: boolean
+): RateListItem {
   if (value >= index) {
-    return 'full';
+    return { status: 'full', value: 1 };
   }
-  if (value + 0.5 >= index && allowHalf) {
-    return 'half';
+
+  if (value + 0.5 >= index && allowHalf && !readonly) {
+    return { status: 'half', value: 0.5 };
   }
-  return 'void';
+
+  if (value + 1 >= index && allowHalf && readonly) {
+    const cardinal = 10 ** 10;
+    return {
+      status: 'half',
+      value: Math.round((value - index + 1) * cardinal) / cardinal,
+    };
+  }
+
+  return { status: 'void', value: 0 };
 }
 
 export default defineComponent({
@@ -72,10 +88,17 @@ export default defineComponent({
     const untouchable = () =>
       props.readonly || props.disabled || !props.touchable;
 
-    const list = computed<RateStatus[]>(() =>
+    const list = computed<RateListItem[]>(() =>
       Array(props.count)
         .fill('')
-        .map((_, i) => getRateStatus(props.modelValue, i + 1, props.allowHalf))
+        .map((_, i) =>
+          getRateStatus(
+            props.modelValue,
+            i + 1,
+            props.allowHalf,
+            props.readonly
+          )
+        )
     );
 
     const select = (index: number) => {
@@ -130,7 +153,7 @@ export default defineComponent({
       }
     };
 
-    const renderStar = (status: RateStatus, index: number) => {
+    const renderStar = (item: RateListItem, index: number) => {
       const {
         icon,
         size,
@@ -145,8 +168,8 @@ export default defineComponent({
         disabledColor,
       } = props;
       const score = index + 1;
-      const isFull = status === 'full';
-      const isVoid = status === 'void';
+      const isFull = item.status === 'full';
+      const isVoid = item.status === 'void';
 
       let style;
       if (gutter && score !== +count) {
@@ -181,6 +204,7 @@ export default defineComponent({
           {allowHalf && (
             <Icon
               size={size}
+              style={{ width: item.value + 'em' }}
               name={isVoid ? voidIcon : icon}
               class={bem('icon', ['half', { disabled, full: !isVoid }])}
               color={disabled ? disabledColor : isVoid ? voidColor : color}

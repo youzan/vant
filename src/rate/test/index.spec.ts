@@ -127,3 +127,16 @@ test('should not emit change event when untouchable rate is touchmoved', () => {
   triggerDrag(wrapper, 100, 0);
   expect(wrapper.emitted('change')).toBeFalsy();
 });
+
+test('should get decimal when using allow-half and readonly prop', () => {
+  const wrapper = mount(Rate, {
+    props: {
+      allowHalf: true,
+      readonly: true,
+      modelValue: 3.3,
+    },
+  });
+
+  const item4 = wrapper.findAll('.van-rate__icon--half')[3];
+  expect(item4.style.width).toEqual('0.3em');
+});
