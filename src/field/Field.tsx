@@ -83,7 +83,7 @@ export const fieldProps = {
     default: 'clear',
   },
   modelValue: {
-    type: [String, Number],
+    type: [Number, String],
     default: '',
   },
   clearTrigger: {

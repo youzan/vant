@@ -12,7 +12,7 @@ import { Loading } from '../loading';
 
 export default defineComponent({
   props: {
-    name: [String, Number],
+    name: [Number, String],
     index: Number,
     imageFit: String as PropType<ImageFit>,
     lazyLoad: Boolean,
