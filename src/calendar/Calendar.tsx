@@ -14,8 +14,8 @@ import {
   t,
   bem,
   name,
-  copyDate,
-  copyDates,
+  cloneDate,
+  cloneDates,
   getPrevDay,
   getNextDay,
   compareDay,
@@ -341,12 +341,12 @@ export default defineComponent({
       return true;
     };
 
-    const onConfirm = () => emit('confirm', copyDates(state.currentDate));
+    const onConfirm = () => emit('confirm', cloneDates(state.currentDate));
 
     const select = (date: Date | Date[], complete?: boolean) => {
       const setCurrentDate = (date: Date | Date[]) => {
         state.currentDate = date;
-        emit('select', copyDates(state.currentDate));
+        emit('select', cloneDates(state.currentDate));
       };
 
       if (complete && props.type === 'range') {
@@ -422,7 +422,7 @@ export default defineComponent({
 
         if (selected) {
           const [unselectedDate] = currentDate.splice(selectedIndex, 1);
-          emit('unselect', copyDate(unselectedDate));
+          emit('unselect', cloneDate(unselectedDate));
         } else if (props.maxRange && currentDate.length >= props.maxRange) {
           Toast(props.rangePrompt || t('rangePrompt', props.maxRange));
         } else {
