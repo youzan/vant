@@ -4,6 +4,7 @@ import { ref, watch, computed, PropType, defineComponent } from 'vue';
 import {
   isDef,
   addUnit,
+  TruthyProp,
   resetScroll,
   formatNumber,
   getSizeStyle,
@@ -39,6 +40,10 @@ export default defineComponent({
     theme: String as PropType<StepperTheme>,
     integer: Boolean,
     disabled: Boolean,
+    showPlus: TruthyProp,
+    showMinus: TruthyProp,
+    showInput: TruthyProp,
+    longPress: TruthyProp,
     allowEmpty: Boolean,
     modelValue: [Number, String],
     inputWidth: [Number, String],
@@ -68,22 +73,6 @@ export default defineComponent({
     defaultValue: {
       type: [Number, String],
       default: 1,
-    },
-    showPlus: {
-      type: Boolean,
-      default: true,
-    },
-    showMinus: {
-      type: Boolean,
-      default: true,
-    },
-    showInput: {
-      type: Boolean,
-      default: true,
-    },
-    longPress: {
-      type: Boolean,
-      default: true,
     },
   },
 

@@ -6,8 +6,12 @@ export const extend = Object.assign;
 
 export const inBrowser = typeof window !== 'undefined';
 
-// unknown type for Vue prop
+// PropTypes
 export const UnknownProp = (null as unknown) as PropType<unknown>;
+export const TruthyProp = {
+  type: Boolean,
+  default: true as const,
+};
 
 // eslint-disable-next-line
 export type ComponentInstance = ComponentPublicInstance<{}, any>;

@@ -1,7 +1,7 @@
 import { PropType, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { TruthyProp, createNamespace } from '../utils';
 
 // Components
 import { Button } from '../button';
@@ -15,6 +15,7 @@ export default defineComponent({
 
   props: {
     modelValue: [Number, String],
+    switchable: TruthyProp,
     disabledText: String,
     addButtonText: String,
     defaultTagText: String,
@@ -25,10 +26,6 @@ export default defineComponent({
     disabledList: {
       type: Array as PropType<AddressListAddress[]>,
       default: () => [],
-    },
-    switchable: {
-      type: Boolean,
-      default: true,
     },
   },
 

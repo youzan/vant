@@ -1,5 +1,5 @@
 import { ref, computed, PropType, defineComponent } from 'vue';
-import { addUnit, extend, UnknownProp } from '../utils';
+import { addUnit, extend, UnknownProp, TruthyProp } from '../utils';
 import { Icon } from '../icon';
 
 export type CheckerShape = 'square' | 'round';
@@ -33,10 +33,7 @@ export default defineComponent({
     role: String,
     parent: Object as PropType<CheckerParent | null>,
     checked: Boolean,
-    bindGroup: {
-      type: Boolean,
-      default: true,
-    },
+    bindGroup: TruthyProp,
     bem: {
       type: Function,
       required: true as const,

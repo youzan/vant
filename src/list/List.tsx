@@ -9,7 +9,7 @@ import {
 } from 'vue';
 
 // Utils
-import { isHidden, createNamespace } from '../utils';
+import { isHidden, TruthyProp, createNamespace } from '../utils';
 
 // Composables
 import { useRect, useScrollParent, useEventListener } from '@vant/use';
@@ -30,6 +30,7 @@ export default defineComponent({
     errorText: String,
     loadingText: String,
     finishedText: String,
+    immediateCheck: TruthyProp,
     offset: {
       type: [Number, String],
       default: 300,
@@ -37,10 +38,6 @@ export default defineComponent({
     direction: {
       type: String as PropType<'up' | 'down'>,
       default: 'down',
-    },
-    immediateCheck: {
-      type: Boolean,
-      default: true,
     },
   },
 

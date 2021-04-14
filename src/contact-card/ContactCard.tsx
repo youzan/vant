@@ -1,5 +1,5 @@
 import { PropType, defineComponent } from 'vue';
-import { createNamespace } from '../utils';
+import { TruthyProp, createNamespace } from '../utils';
 import { Cell } from '../cell';
 
 const [name, bem, t] = createNamespace('contact-card');
@@ -13,10 +13,7 @@ export default defineComponent({
     tel: String,
     name: String,
     addText: String,
-    editable: {
-      type: Boolean,
-      default: true,
-    },
+    editable: TruthyProp,
     type: {
       type: String as PropType<ContactCardType>,
       default: 'add',

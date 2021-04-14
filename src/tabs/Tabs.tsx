@@ -9,8 +9,8 @@ import {
   onActivated,
   CSSProperties,
   defineComponent,
-  ComponentPublicInstance,
   ExtractPropTypes,
+  ComponentPublicInstance,
 } from 'vue';
 
 // Utils
@@ -19,6 +19,7 @@ import {
   addUnit,
   isHidden,
   unitToPx,
+  TruthyProp,
   getVisibleTop,
   getElementTop,
   createNamespace,
@@ -58,9 +59,11 @@ const props = {
   border: Boolean,
   sticky: Boolean,
   animated: Boolean,
+  ellipsis: TruthyProp,
   swipeable: Boolean,
   scrollspy: Boolean,
   background: String,
+  lazyRender: TruthyProp,
   lineWidth: [Number, String],
   lineHeight: [Number, String],
   beforeChange: Function as PropType<Interceptor>,
@@ -74,10 +77,6 @@ const props = {
     type: [Number, String],
     default: 0,
   },
-  ellipsis: {
-    type: Boolean,
-    default: true,
-  },
   duration: {
     type: [Number, String],
     default: 0.3,
@@ -85,10 +84,6 @@ const props = {
   offsetTop: {
     type: [Number, String],
     default: 0,
-  },
-  lazyRender: {
-    type: Boolean,
-    default: true,
   },
   swipeThreshold: {
     type: [Number, String],

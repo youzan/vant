@@ -14,6 +14,7 @@ import {
 import {
   isDef,
   isHidden,
+  TruthyProp,
   getScrollTop,
   preventDefault,
   createNamespace,
@@ -46,12 +47,9 @@ const [name, bem] = createNamespace('index-bar');
 export const INDEX_BAR_KEY = Symbol(name);
 
 const props = {
+  sticky: TruthyProp,
   zIndex: [Number, String],
   highlightColor: String,
-  sticky: {
-    type: Boolean,
-    default: true,
-  },
   stickyOffsetTop: {
     type: Number,
     default: 0,

@@ -1,5 +1,11 @@
 import { PropType, CSSProperties, defineComponent } from 'vue';
-import { isDef, addUnit, isNumeric, createNamespace } from '../utils';
+import {
+  isDef,
+  addUnit,
+  isNumeric,
+  TruthyProp,
+  createNamespace,
+} from '../utils';
 
 const [name, bem] = createNamespace('badge');
 
@@ -12,13 +18,10 @@ export default defineComponent({
     color: String,
     offset: (Array as unknown) as PropType<[string | number, string | number]>,
     content: [Number, String],
+    showZero: TruthyProp,
     tag: {
       type: String as PropType<keyof HTMLElementTagNameMap>,
       default: 'div',
-    },
-    showZero: {
-      type: Boolean,
-      default: true,
     },
   },
 

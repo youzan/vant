@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { createNamespace } from '../utils';
+import { TruthyProp, createNamespace } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 
 const [name, bem] = createNamespace('cell-group');
@@ -11,10 +11,7 @@ export default defineComponent({
 
   props: {
     title: String,
-    border: {
-      type: Boolean,
-      default: true,
-    },
+    border: TruthyProp,
   },
 
   setup(props, { slots, attrs }) {

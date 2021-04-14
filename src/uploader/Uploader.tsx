@@ -5,6 +5,7 @@ import {
   pick,
   extend,
   isPromise,
+  TruthyProp,
   getSizeStyle,
   ComponentInstance,
 } from '../utils';
@@ -60,11 +61,15 @@ export default defineComponent({
     disabled: Boolean,
     lazyLoad: Boolean,
     uploadText: String,
+    deletable: TruthyProp,
     afterRead: Function as PropType<UploaderAfterRead>,
+    showUpload: TruthyProp,
     beforeRead: Function as PropType<UploaderBeforeRead>,
     beforeDelete: Function as PropType<Interceptor>,
     previewSize: [Number, String],
+    previewImage: TruthyProp,
     previewOptions: Object as PropType<ImagePreviewOptions>,
+    previewFullImage: TruthyProp,
     name: {
       type: [Number, String],
       default: '',
@@ -84,22 +89,6 @@ export default defineComponent({
     maxCount: {
       type: [Number, String],
       default: Number.MAX_VALUE,
-    },
-    deletable: {
-      type: Boolean,
-      default: true,
-    },
-    showUpload: {
-      type: Boolean,
-      default: true,
-    },
-    previewImage: {
-      type: Boolean,
-      default: true,
-    },
-    previewFullImage: {
-      type: Boolean,
-      default: true,
     },
     imageFit: {
       type: String as PropType<ImageFit>,

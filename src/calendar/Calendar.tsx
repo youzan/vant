@@ -9,7 +9,13 @@ import {
 } from 'vue';
 
 // Utils
-import { pick, isDate, getScrollTop, ComponentInstance } from '../utils';
+import {
+  pick,
+  isDate,
+  TruthyProp,
+  getScrollTop,
+  ComponentInstance,
+} from '../utils';
 import {
   t,
   bem,
@@ -46,68 +52,38 @@ export default defineComponent({
     show: Boolean,
     title: String,
     color: String,
+    round: TruthyProp,
     readonly: Boolean,
+    poppable: TruthyProp,
     teleport: [String, Object] as PropType<TeleportProps['to']>,
+    showMark: TruthyProp,
+    showTitle: TruthyProp,
     formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
     rowHeight: [Number, String],
     confirmText: String,
     rangePrompt: String,
+    lazyRender: TruthyProp,
+    showConfirm: TruthyProp,
     // TODO: remove any
     // see: https://github.com/vuejs/vue-next/issues/2668
     defaultDate: [Date, Array] as any,
     allowSameDay: Boolean,
+    showSubtitle: TruthyProp,
+    closeOnPopstate: TruthyProp,
     confirmDisabledText: String,
+    closeOnClickOverlay: TruthyProp,
+    safeAreaInsetBottom: TruthyProp,
     type: {
       type: String as PropType<CalendarType>,
       default: 'single',
-    },
-    round: {
-      type: Boolean,
-      default: true,
     },
     position: {
       type: String as PropType<PopupPosition>,
       default: 'bottom',
     },
-    poppable: {
-      type: Boolean,
-      default: true,
-    },
     maxRange: {
       type: [Number, String],
       default: null,
-    },
-    lazyRender: {
-      type: Boolean,
-      default: true,
-    },
-    showMark: {
-      type: Boolean,
-      default: true,
-    },
-    showTitle: {
-      type: Boolean,
-      default: true,
-    },
-    showConfirm: {
-      type: Boolean,
-      default: true,
-    },
-    showSubtitle: {
-      type: Boolean,
-      default: true,
-    },
-    closeOnPopstate: {
-      type: Boolean,
-      default: true,
-    },
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: true,
-    },
-    safeAreaInsetBottom: {
-      type: Boolean,
-      default: true,
     },
     minDate: {
       type: Date,

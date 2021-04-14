@@ -6,6 +6,7 @@ import {
   pick,
   extend,
   addUnit,
+  TruthyProp,
   isFunction,
   UnknownProp,
   createNamespace,
@@ -45,23 +46,17 @@ export default defineComponent({
     className: UnknownProp,
     beforeClose: Function as PropType<Interceptor>,
     messageAlign: String as PropType<DialogMessageAlign>,
+    closeOnPopstate: TruthyProp,
     showCancelButton: Boolean,
     cancelButtonText: String,
     cancelButtonColor: String,
     confirmButtonText: String,
     confirmButtonColor: String,
+    showConfirmButton: TruthyProp,
     closeOnClickOverlay: Boolean,
     transition: {
       type: String,
       default: 'van-dialog-bounce',
-    },
-    showConfirmButton: {
-      type: Boolean,
-      default: true,
-    },
-    closeOnPopstate: {
-      type: Boolean,
-      default: true,
     },
   }),
 

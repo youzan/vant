@@ -1,5 +1,5 @@
 import { PropType, defineComponent, ExtractPropTypes } from 'vue';
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, TruthyProp } from '../utils';
 import { BORDER_TOP } from '../utils/constant';
 import { useChildren } from '@vant/use';
 
@@ -11,6 +11,8 @@ export type GridDirection = 'horizontal' | 'vertical';
 
 const props = {
   square: Boolean,
+  center: TruthyProp,
+  border: TruthyProp,
   gutter: [Number, String],
   iconSize: [Number, String],
   direction: String as PropType<GridDirection>,
@@ -18,14 +20,6 @@ const props = {
   columnNum: {
     type: [Number, String],
     default: 4,
-  },
-  center: {
-    type: Boolean,
-    default: true,
-  },
-  border: {
-    type: Boolean,
-    default: true,
   },
 };
 

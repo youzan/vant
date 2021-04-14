@@ -3,6 +3,7 @@ import {
   noop,
   isDef,
   extend,
+  TruthyProp,
   UnknownProp,
   preventDefault,
   createNamespace,
@@ -20,11 +21,8 @@ export default defineComponent({
     zIndex: [Number, String],
     duration: [Number, String],
     className: UnknownProp,
+    lockScroll: TruthyProp,
     customStyle: Object as PropType<CSSProperties>,
-    lockScroll: {
-      type: Boolean,
-      default: true,
-    },
   },
 
   setup(props, { slots }) {

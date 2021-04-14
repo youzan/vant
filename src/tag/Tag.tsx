@@ -1,5 +1,5 @@
 import { CSSProperties, PropType, Transition, defineComponent } from 'vue';
-import { createNamespace } from '../utils';
+import { TruthyProp, createNamespace } from '../utils';
 import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('tag');
@@ -12,6 +12,7 @@ export default defineComponent({
   props: {
     size: String,
     mark: Boolean,
+    show: TruthyProp,
     color: String,
     plain: Boolean,
     round: Boolean,
@@ -20,10 +21,6 @@ export default defineComponent({
     type: {
       type: String as PropType<TagType>,
       default: 'default',
-    },
-    show: {
-      type: Boolean,
-      default: true,
     },
   },
 

@@ -1,7 +1,13 @@
 import { PropType, CSSProperties, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, extend, isDef, UnknownProp } from '../utils';
+import {
+  createNamespace,
+  extend,
+  isDef,
+  TruthyProp,
+  UnknownProp,
+} from '../utils';
 
 // Composables
 import { useRoute, routeProps } from '../composables/use-route';
@@ -21,6 +27,7 @@ export const cellProps = {
   label: [Number, String],
   center: Boolean,
   isLink: Boolean,
+  border: TruthyProp,
   required: Boolean,
   iconPrefix: String,
   valueClass: UnknownProp,
@@ -28,10 +35,6 @@ export const cellProps = {
   titleClass: UnknownProp,
   titleStyle: (null as unknown) as PropType<string | CSSProperties>,
   arrowDirection: String as PropType<CellArrowDirection>,
-  border: {
-    type: Boolean,
-    default: true,
-  },
   clickable: {
     type: Boolean as PropType<boolean | null>,
     default: null,

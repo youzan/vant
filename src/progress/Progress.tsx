@@ -7,7 +7,7 @@ import {
   onMounted,
   defineComponent,
 } from 'vue';
-import { createNamespace, addUnit } from '../utils';
+import { TruthyProp, createNamespace, addUnit } from '../utils';
 import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('progress');
@@ -20,6 +20,7 @@ export default defineComponent({
     inactive: Boolean,
     pivotText: String,
     textColor: String,
+    showPivot: TruthyProp,
     pivotColor: String,
     trackColor: String,
     strokeWidth: [Number, String],
@@ -27,10 +28,6 @@ export default defineComponent({
       type: [Number, String],
       required: true,
       validator: (value: number | string) => value >= 0 && value <= 100,
-    },
-    showPivot: {
-      type: Boolean,
-      default: true,
     },
   },
 
