@@ -9,7 +9,7 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { truthProp, createNamespace } from '../utils';
 
 // Composables
 import { useWindowSize } from '@vant/use';
@@ -29,8 +29,11 @@ export default defineComponent({
   name,
 
   props: {
+    showCount: truthProp,
     enabledTitle: String,
     disabledTitle: String,
+    showExchangeBar: truthProp,
+    showCloseButton: truthProp,
     closeButtonText: String,
     inputPlaceholder: String,
     exchangeButtonText: String,
@@ -59,18 +62,6 @@ export default defineComponent({
     displayedCouponIndex: {
       type: Number,
       default: -1,
-    },
-    showExchangeBar: {
-      type: Boolean,
-      default: true,
-    },
-    showCloseButton: {
-      type: Boolean,
-      default: true,
-    },
-    showCount: {
-      type: Boolean,
-      default: true,
     },
     currency: {
       type: String,

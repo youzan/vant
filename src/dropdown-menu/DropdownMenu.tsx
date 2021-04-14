@@ -9,7 +9,7 @@ import {
 } from 'vue';
 
 // Utils
-import { isDef, ComponentInstance, createNamespace } from '../utils';
+import { isDef, truthProp, createNamespace, ComponentInstance } from '../utils';
 
 // Composables
 import {
@@ -27,12 +27,11 @@ export const DROPDOWN_KEY = Symbol(name);
 export type DropdownMenuDirection = 'up' | 'down';
 
 const props = {
+  overlay: truthProp,
   zIndex: [Number, String],
   activeColor: String,
-  overlay: {
-    type: Boolean,
-    default: true,
-  },
+  closeOnClickOutside: truthProp,
+  closeOnClickOverlay: truthProp,
   duration: {
     type: [Number, String],
     default: 0.2,
@@ -40,14 +39,6 @@ const props = {
   direction: {
     type: String as PropType<DropdownMenuDirection>,
     default: 'down',
-  },
-  closeOnClickOutside: {
-    type: Boolean,
-    default: true,
-  },
-  closeOnClickOverlay: {
-    type: Boolean,
-    default: true,
   },
 };
 

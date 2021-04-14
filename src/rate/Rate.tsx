@@ -1,7 +1,7 @@
 import { computed, defineComponent } from 'vue';
 
 // Utils
-import { addUnit, createNamespace, preventDefault } from '../utils';
+import { addUnit, truthProp, createNamespace, preventDefault } from '../utils';
 
 // Composables
 import { useRefs } from '../composables/use-refs';
@@ -40,6 +40,7 @@ export default defineComponent({
     disabled: Boolean,
     allowHalf: Boolean,
     voidColor: String,
+    touchable: truthProp,
     iconPrefix: String,
     disabledColor: String,
     modelValue: {
@@ -57,10 +58,6 @@ export default defineComponent({
     count: {
       type: [Number, String],
       default: 5,
-    },
-    touchable: {
-      type: Boolean,
-      default: true,
     },
   },
 

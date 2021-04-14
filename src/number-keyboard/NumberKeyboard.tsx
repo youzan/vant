@@ -9,8 +9,19 @@ import {
   TeleportProps,
   defineComponent,
 } from 'vue';
-import { createNamespace, getZIndexStyle, stopPropagation } from '../utils';
+
+// Utils
+import {
+  truthProp,
+  getZIndexStyle,
+  stopPropagation,
+  createNamespace,
+} from '../utils';
+
+// Composables
 import { useClickAway } from '@vant/use';
+
+// Components
 import NumberKeyboardKey, { KeyType } from './NumberKeyboardKey';
 
 const [name, bem] = createNamespace('number-keyboard');
@@ -32,10 +43,15 @@ export default defineComponent({
     title: String,
     zIndex: [Number, String],
     teleport: [String, Object] as PropType<TeleportProps['to']>,
+    transition: truthProp,
+    blurOnClose: truthProp,
+    showDeleteKey: truthProp,
     randomKeyOrder: Boolean,
     closeButtonText: String,
     deleteButtonText: String,
     closeButtonLoading: Boolean,
+    hideOnClickOutside: truthProp,
+    safeAreaInsetBottom: truthProp,
     theme: {
       type: String as PropType<NumberKeyboardTheme>,
       default: 'default',
@@ -51,26 +67,6 @@ export default defineComponent({
     maxlength: {
       type: [Number, String],
       default: Number.MAX_VALUE,
-    },
-    transition: {
-      type: Boolean,
-      default: true,
-    },
-    blurOnClose: {
-      type: Boolean,
-      default: true,
-    },
-    showDeleteKey: {
-      type: Boolean,
-      default: true,
-    },
-    hideOnClickOutside: {
-      type: Boolean,
-      default: true,
-    },
-    safeAreaInsetBottom: {
-      type: Boolean,
-      default: true,
     },
   },
 

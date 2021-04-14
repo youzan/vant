@@ -4,6 +4,7 @@ import { ref, watch, computed, PropType, defineComponent } from 'vue';
 import {
   extend,
   unitToPx,
+  truthProp,
   preventDefault,
   createNamespace,
   ComponentInstance,
@@ -46,15 +47,12 @@ export const pickerProps = {
   loading: Boolean,
   readonly: Boolean,
   allowHtml: Boolean,
+  showToolbar: truthProp,
   cancelButtonText: String,
   confirmButtonText: String,
   itemHeight: {
     type: [Number, String],
     default: 44,
-  },
-  showToolbar: {
-    type: Boolean,
-    default: true,
   },
   visibleItemCount: {
     type: [Number, String],

@@ -2,7 +2,7 @@ import { ref, watch, computed, nextTick, defineComponent } from 'vue';
 
 // Utils
 import { cellProps } from '../cell/Cell';
-import { createNamespace, extend, pick } from '../utils';
+import { createNamespace, extend, pick, truthProp } from '../utils';
 import { COLLAPSE_KEY, CollapseProvide } from '../collapse/Collapse';
 
 // Composables
@@ -20,12 +20,9 @@ export default defineComponent({
 
   props: extend({}, cellProps, {
     name: [Number, String],
+    isLink: truthProp,
     disabled: Boolean,
     readonly: Boolean,
-    isLink: {
-      type: Boolean,
-      default: true,
-    },
   }),
 
   setup(props, { slots }) {

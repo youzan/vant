@@ -6,8 +6,9 @@ import {
   pick,
   extend,
   addUnit,
+  truthProp,
   isFunction,
-  UnknownProp,
+  unknownProp,
   createNamespace,
 } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
@@ -42,26 +43,20 @@ export default defineComponent({
     message: [String, Function] as PropType<DialogMessage>,
     callback: Function as PropType<(action?: DialogAction) => void>,
     allowHtml: Boolean,
-    className: UnknownProp,
+    className: unknownProp,
     beforeClose: Function as PropType<Interceptor>,
     messageAlign: String as PropType<DialogMessageAlign>,
+    closeOnPopstate: truthProp,
     showCancelButton: Boolean,
     cancelButtonText: String,
     cancelButtonColor: String,
     confirmButtonText: String,
     confirmButtonColor: String,
+    showConfirmButton: truthProp,
     closeOnClickOverlay: Boolean,
     transition: {
       type: String,
       default: 'van-dialog-bounce',
-    },
-    showConfirmButton: {
-      type: Boolean,
-      default: true,
-    },
-    closeOnPopstate: {
-      type: Boolean,
-      default: true,
     },
   }),
 

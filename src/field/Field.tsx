@@ -15,7 +15,7 @@ import {
   isDef,
   extend,
   addUnit,
-  UnknownProp,
+  unknownProp,
   resetScroll,
   formatNumber,
   preventDefault,
@@ -83,7 +83,7 @@ export const fieldProps = {
     default: 'clear',
   },
   modelValue: {
-    type: [String, Number],
+    type: [Number, String],
     default: '',
   },
   clearTrigger: {
@@ -105,7 +105,7 @@ export default defineComponent({
     rules: Array as PropType<FieldRule[]>,
     autosize: [Boolean, Object] as PropType<boolean | FieldAutosizeConfig>,
     labelWidth: [Number, String],
-    labelClass: UnknownProp,
+    labelClass: unknownProp,
     labelAlign: String as PropType<FieldTextAlign>,
     autocomplete: String,
     showWordLimit: Boolean,

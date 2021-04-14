@@ -15,7 +15,8 @@ import { Instance, createPopper, offsetModifier } from '@vant/popperjs';
 import {
   pick,
   extend,
-  UnknownProp,
+  truthProp,
+  unknownProp,
   createNamespace,
   ComponentInstance,
 } from '../utils';
@@ -71,8 +72,11 @@ export default defineComponent({
     show: Boolean,
     overlay: Boolean,
     duration: [Number, String],
-    overlayClass: UnknownProp,
+    overlayClass: unknownProp,
     overlayStyle: Object as PropType<CSSProperties>,
+    closeOnClickAction: truthProp,
+    closeOnClickOverlay: truthProp,
+    closeOnClickOutside: truthProp,
     offset: {
       type: (Array as unknown) as PropType<[number, number]>,
       default: () => [0, 8],
@@ -96,18 +100,6 @@ export default defineComponent({
     teleport: {
       type: [String, Object] as PropType<TeleportProps['to']>,
       default: 'body',
-    },
-    closeOnClickAction: {
-      type: Boolean,
-      default: true,
-    },
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: true,
-    },
-    closeOnClickOutside: {
-      type: Boolean,
-      default: true,
     },
   },
 

@@ -12,7 +12,8 @@ import {
 // Utils
 import {
   pick,
-  UnknownProp,
+  truthProp,
+  unknownProp,
   createNamespace,
   ComponentInstance,
 } from '../utils';
@@ -40,23 +41,19 @@ export default defineComponent({
 
   props: {
     show: Boolean,
+    loop: truthProp,
+    overlay: truthProp,
     closeable: Boolean,
+    showIndex: truthProp,
+    className: unknownProp,
     transition: String,
-    className: UnknownProp,
     beforeClose: Function as PropType<Interceptor>,
     overlayStyle: Object as PropType<CSSProperties>,
     showIndicators: Boolean,
+    closeOnPopstate: truthProp,
     images: {
       type: Array as PropType<string[]>,
       default: () => [],
-    },
-    loop: {
-      type: Boolean,
-      default: true,
-    },
-    overlay: {
-      type: Boolean,
-      default: true,
     },
     minZoom: {
       type: [Number, String],
@@ -65,10 +62,6 @@ export default defineComponent({
     maxZoom: {
       type: [Number, String],
       default: 3,
-    },
-    showIndex: {
-      type: Boolean,
-      default: true,
     },
     swipeDuration: {
       type: [Number, String],
@@ -81,10 +74,6 @@ export default defineComponent({
     closeIcon: {
       type: String,
       default: 'clear',
-    },
-    closeOnPopstate: {
-      type: Boolean,
-      default: true,
     },
     closeIconPosition: {
       type: String as PropType<PopupCloseIconPosition>,

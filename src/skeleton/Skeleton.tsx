@@ -1,5 +1,5 @@
 import { PropType, defineComponent } from 'vue';
-import { createNamespace, addUnit, getSizeStyle } from '../utils';
+import { addUnit, truthProp, getSizeStyle, createNamespace } from '../utils';
 
 const [name, bem] = createNamespace('skeleton');
 const DEFAULT_ROW_WIDTH = '100%';
@@ -12,19 +12,13 @@ export default defineComponent({
     title: Boolean,
     round: Boolean,
     avatar: Boolean,
+    loading: truthProp,
+    animate: truthProp,
     avatarSize: [Number, String],
     titleWidth: [Number, String],
     row: {
       type: [Number, String],
       default: 0,
-    },
-    loading: {
-      type: Boolean,
-      default: true,
-    },
-    animate: {
-      type: Boolean,
-      default: true,
     },
     avatarShape: {
       type: String as PropType<'square' | 'round'>,

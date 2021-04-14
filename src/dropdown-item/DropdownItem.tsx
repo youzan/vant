@@ -8,7 +8,12 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace, getZIndexStyle, UnknownProp } from '../utils';
+import {
+  truthProp,
+  unknownProp,
+  getZIndexStyle,
+  createNamespace,
+} from '../utils';
 import {
   DROPDOWN_KEY,
   DropdownMenuProvide,
@@ -38,15 +43,12 @@ export default defineComponent({
     title: String,
     disabled: Boolean,
     teleport: [String, Object] as PropType<TeleportProps['to']>,
-    modelValue: UnknownProp,
-    titleClass: UnknownProp,
+    lazyRender: truthProp,
+    modelValue: unknownProp,
+    titleClass: unknownProp,
     options: {
       type: Array as PropType<DropdownItemOption[]>,
       default: () => [],
-    },
-    lazyRender: {
-      type: Boolean,
-      default: true,
     },
   },
 

@@ -1,5 +1,5 @@
 import { PropType, CSSProperties, defineComponent } from 'vue';
-import { createNamespace } from '../utils';
+import { truthProp, createNamespace } from '../utils';
 
 // Components
 import { Icon } from '../icon';
@@ -21,10 +21,7 @@ export default defineComponent({
     buttonText: String,
     buttonColor: String,
     suffixLabel: String,
-    safeAreaInsetBottom: {
-      type: Boolean,
-      default: true,
-    },
+    safeAreaInsetBottom: truthProp,
     decimalLength: {
       type: [Number, String],
       default: 2,

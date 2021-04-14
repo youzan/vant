@@ -4,6 +4,7 @@ import { ref, PropType, defineComponent } from 'vue';
 import {
   pick,
   extend,
+  truthProp,
   createNamespace,
   preventDefault,
   ComponentInstance,
@@ -25,16 +26,13 @@ export default defineComponent({
 
   props: extend({}, fieldProps, {
     label: String,
+    clearable: truthProp,
     actionText: String,
     background: String,
     showAction: Boolean,
     shape: {
       type: String as PropType<SearchShape>,
       default: 'square',
-    },
-    clearable: {
-      type: Boolean,
-      default: true,
     },
     leftIcon: {
       type: String,

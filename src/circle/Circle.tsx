@@ -1,6 +1,6 @@
 import { watch, computed, PropType, CSSProperties, defineComponent } from 'vue';
 import { raf, cancelRaf } from '@vant/use';
-import { isObject, getSizeStyle, createNamespace } from '../utils';
+import { isObject, getSizeStyle, truthProp, createNamespace } from '../utils';
 
 const [name, bem] = createNamespace('circle');
 
@@ -24,6 +24,7 @@ export default defineComponent({
     text: String,
     size: [Number, String],
     color: [String, Object] as PropType<string | Record<string, string>>,
+    clockwise: truthProp,
     layerColor: String,
     strokeLinecap: String as PropType<CanvasLineCap>,
     currentRate: {
@@ -45,10 +46,6 @@ export default defineComponent({
     strokeWidth: {
       type: [Number, String],
       default: 40,
-    },
-    clockwise: {
-      type: Boolean,
-      default: true,
     },
   },
 

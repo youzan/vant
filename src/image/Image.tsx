@@ -14,6 +14,7 @@ import {
   isDef,
   addUnit,
   inBrowser,
+  truthProp,
   createNamespace,
   ComponentInstance,
 } from '../utils';
@@ -38,15 +39,9 @@ export default defineComponent({
     radius: [Number, String],
     lazyLoad: Boolean,
     iconSize: [Number, String],
+    showError: truthProp,
     iconPrefix: String,
-    showError: {
-      type: Boolean,
-      default: true,
-    },
-    showLoading: {
-      type: Boolean,
-      default: true,
-    },
+    showLoading: truthProp,
     errorIcon: {
       type: String,
       default: 'photo-fail',

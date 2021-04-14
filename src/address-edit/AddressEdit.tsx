@@ -13,6 +13,7 @@ import {
   extend,
   isObject,
   isMobile,
+  truthProp,
   createNamespace,
   ComponentInstance,
 } from '../utils';
@@ -73,6 +74,8 @@ export default defineComponent({
     validator: Function as PropType<
       (key: string, value: string) => string | undefined
     >,
+    showArea: truthProp,
+    showDetail: truthProp,
     showDelete: Boolean,
     showPostal: Boolean,
     disableArea: Boolean,
@@ -83,14 +86,6 @@ export default defineComponent({
     areaPlaceholder: String,
     deleteButtonText: String,
     showSearchResult: Boolean,
-    showArea: {
-      type: Boolean,
-      default: true,
-    },
-    showDetail: {
-      type: Boolean,
-      default: true,
-    },
     detailRows: {
       type: [Number, String],
       default: 1,

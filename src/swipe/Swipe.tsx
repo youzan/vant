@@ -17,6 +17,7 @@ import {
 import {
   range,
   isHidden,
+  truthProp,
   preventDefault,
   createNamespace,
   ComponentInstance,
@@ -37,15 +38,15 @@ const [name, bem] = createNamespace('swipe');
 export const SWIPE_KEY = Symbol(name);
 
 const props = {
+  loop: truthProp,
   width: [Number, String],
   height: [Number, String],
   vertical: Boolean,
+  touchable: truthProp,
   lazyRender: Boolean,
   indicatorColor: String,
-  loop: {
-    type: Boolean,
-    default: true,
-  },
+  showIndicators: truthProp,
+  stopPropagation: truthProp,
   autoplay: {
     type: [Number, String],
     default: 0,
@@ -54,21 +55,9 @@ const props = {
     type: [Number, String],
     default: 500,
   },
-  touchable: {
-    type: Boolean,
-    default: true,
-  },
   initialSwipe: {
     type: [Number, String],
     default: 0,
-  },
-  showIndicators: {
-    type: Boolean,
-    default: true,
-  },
-  stopPropagation: {
-    type: Boolean,
-    default: true,
   },
 };
 

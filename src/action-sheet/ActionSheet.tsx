@@ -1,7 +1,7 @@
 import { nextTick, PropType, defineComponent } from 'vue';
 
 // Utils
-import { pick, extend, createNamespace } from '../utils';
+import { pick, extend, truthProp, createNamespace } from '../utils';
 
 // Components
 import { Icon } from '../icon';
@@ -26,26 +26,17 @@ export default defineComponent({
 
   props: extend({}, popupSharedProps, {
     title: String,
+    round: truthProp,
     actions: Array as PropType<ActionSheetAction[]>,
+    closeable: truthProp,
     cancelText: String,
     description: String,
     closeOnPopstate: Boolean,
     closeOnClickAction: Boolean,
-    round: {
-      type: Boolean,
-      default: true,
-    },
-    closeable: {
-      type: Boolean,
-      default: true,
-    },
+    safeAreaInsetBottom: truthProp,
     closeIcon: {
       type: String,
       default: 'cross',
-    },
-    safeAreaInsetBottom: {
-      type: Boolean,
-      default: true,
     },
   }),
 

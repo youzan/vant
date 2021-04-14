@@ -1,7 +1,7 @@
 import { ref, PropType, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
-import { createNamespace, getZIndexStyle } from '../utils';
+import { truthProp, createNamespace, getZIndexStyle } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
@@ -15,6 +15,8 @@ export const TABBAR_KEY = Symbol(name);
 
 const props = {
   route: Boolean,
+  fixed: truthProp,
+  border: truthProp,
   zIndex: [Number, String],
   placeholder: Boolean,
   activeColor: String,
@@ -23,14 +25,6 @@ const props = {
   modelValue: {
     type: [Number, String],
     default: 0,
-  },
-  border: {
-    type: Boolean,
-    default: true,
-  },
-  fixed: {
-    type: Boolean,
-    default: true,
   },
   safeAreaInsetBottom: {
     type: Boolean as PropType<boolean | null>,

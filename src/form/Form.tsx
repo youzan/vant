@@ -1,7 +1,7 @@
 import { PropType, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, ComponentInstance } from '../utils';
+import { truthProp, createNamespace, ComponentInstance } from '../utils';
 
 // Composables
 import { useChildren } from '@vant/use';
@@ -30,18 +30,12 @@ export default defineComponent({
     inputAlign: String as PropType<FieldTextAlign>,
     scrollToError: Boolean,
     validateFirst: Boolean,
+    submitOnEnter: truthProp,
+    showErrorMessage: truthProp,
     errorMessageAlign: String as PropType<FieldTextAlign>,
-    submitOnEnter: {
-      type: Boolean,
-      default: true,
-    },
     validateTrigger: {
       type: String as PropType<FieldValidateTrigger>,
       default: 'onBlur',
-    },
-    showErrorMessage: {
-      type: Boolean,
-      default: true,
     },
   },
 
