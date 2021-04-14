@@ -5,8 +5,8 @@ import {
   createNamespace,
   extend,
   isDef,
-  TruthyProp,
-  UnknownProp,
+  truthProp,
+  unknownProp,
 } from '../utils';
 
 // Composables
@@ -27,12 +27,12 @@ export const cellProps = {
   label: [Number, String],
   center: Boolean,
   isLink: Boolean,
-  border: TruthyProp,
+  border: truthProp,
   required: Boolean,
   iconPrefix: String,
-  valueClass: UnknownProp,
-  labelClass: UnknownProp,
-  titleClass: UnknownProp,
+  valueClass: unknownProp,
+  labelClass: unknownProp,
+  titleClass: unknownProp,
   titleStyle: (null as unknown) as PropType<string | CSSProperties>,
   arrowDirection: String as PropType<CellArrowDirection>,
   clickable: {

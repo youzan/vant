@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { extend, createNamespace, UnknownProp } from '../utils';
+import { extend, createNamespace, unknownProp } from '../utils';
 import { ACTION_BAR_KEY } from '../action-bar/ActionBar';
 
 // Composables
@@ -21,7 +21,7 @@ export default defineComponent({
     icon: String,
     color: String,
     badge: [Number, String],
-    iconClass: UnknownProp,
+    iconClass: unknownProp,
   }),
 
   setup(props, { slots }) {

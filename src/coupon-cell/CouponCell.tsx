@@ -1,7 +1,7 @@
 import { PropType, defineComponent } from 'vue';
 
 // Utils
-import { isDef, TruthyProp, createNamespace } from '../utils';
+import { isDef, truthProp, createNamespace } from '../utils';
 
 // Components
 import { Cell } from '../cell';
@@ -38,8 +38,8 @@ export default defineComponent({
 
   props: {
     title: String,
-    border: TruthyProp,
-    editable: TruthyProp,
+    border: truthProp,
+    editable: truthProp,
     coupons: {
       type: Array as PropType<CouponInfo[]>,
       default: () => [],

@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { TruthyProp, createNamespace } from '../utils';
+import { truthProp, createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('action-bar');
@@ -10,7 +10,7 @@ export default defineComponent({
   name,
 
   props: {
-    safeAreaInsetBottom: TruthyProp,
+    safeAreaInsetBottom: truthProp,
   },
 
   setup(props, { slots }) {

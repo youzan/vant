@@ -1,7 +1,7 @@
 import { ref, CSSProperties, defineComponent } from 'vue';
 
 // Utils
-import { TruthyProp, createNamespace, getZIndexStyle } from '../utils';
+import { truthProp, createNamespace, getZIndexStyle } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
 // Composables
@@ -19,7 +19,7 @@ export default defineComponent({
     title: String,
     fixed: Boolean,
     zIndex: [Number, String],
-    border: TruthyProp,
+    border: truthProp,
     leftText: String,
     rightText: String,
     leftArrow: Boolean,

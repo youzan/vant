@@ -1,7 +1,7 @@
 import { PropType, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, UnknownProp } from '../utils';
+import { createNamespace, unknownProp } from '../utils';
 
 // Components
 import { Tag } from '../tag';
@@ -26,7 +26,7 @@ export default defineComponent({
   props: {
     list: Array as PropType<ContactListItem[]>,
     addText: String,
-    modelValue: UnknownProp,
+    modelValue: unknownProp,
     defaultTagText: String,
   },
 

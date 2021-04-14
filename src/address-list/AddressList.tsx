@@ -1,7 +1,7 @@
 import { PropType, defineComponent } from 'vue';
 
 // Utils
-import { TruthyProp, createNamespace } from '../utils';
+import { truthProp, createNamespace } from '../utils';
 
 // Components
 import { Button } from '../button';
@@ -15,7 +15,7 @@ export default defineComponent({
 
   props: {
     modelValue: [Number, String],
-    switchable: TruthyProp,
+    switchable: truthProp,
     disabledText: String,
     addButtonText: String,
     defaultTagText: String,

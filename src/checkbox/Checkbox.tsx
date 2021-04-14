@@ -1,7 +1,7 @@
 import { computed, watch, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, extend, pick, TruthyProp } from '../utils';
+import { createNamespace, extend, pick, truthProp } from '../utils';
 import {
   CHECKBOX_GROUP_KEY,
   CheckboxGroupProvide,
@@ -21,7 +21,7 @@ export default defineComponent({
   name,
 
   props: extend({}, checkerProps, {
-    bindGroup: TruthyProp,
+    bindGroup: truthProp,
   }),
 
   emits: ['change', 'update:modelValue'],

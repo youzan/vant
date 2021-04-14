@@ -3,7 +3,7 @@ import {
   isDef,
   addUnit,
   isNumeric,
-  TruthyProp,
+  truthProp,
   createNamespace,
 } from '../utils';
 
@@ -18,7 +18,7 @@ export default defineComponent({
     color: String,
     offset: (Array as unknown) as PropType<[string | number, string | number]>,
     content: [Number, String],
-    showZero: TruthyProp,
+    showZero: truthProp,
     tag: {
       type: String as PropType<keyof HTMLElementTagNameMap>,
       default: 'div',

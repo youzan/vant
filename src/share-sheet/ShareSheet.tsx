@@ -1,7 +1,7 @@
 import { PropType, defineComponent } from 'vue';
 
 // Utils
-import { TruthyProp, createNamespace, extend, pick } from '../utils';
+import { truthProp, createNamespace, extend, pick } from '../utils';
 import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
 // Components
@@ -49,8 +49,8 @@ export default defineComponent({
     title: String,
     cancelText: String,
     description: String,
-    closeOnPopstate: TruthyProp,
-    safeAreaInsetBottom: TruthyProp,
+    closeOnPopstate: truthProp,
+    safeAreaInsetBottom: truthProp,
     options: {
       type: Array as PropType<ShareSheetOptions>,
       default: () => [],

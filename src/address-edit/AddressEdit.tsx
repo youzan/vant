@@ -13,7 +13,7 @@ import {
   extend,
   isObject,
   isMobile,
-  TruthyProp,
+  truthProp,
   createNamespace,
   ComponentInstance,
 } from '../utils';
@@ -74,8 +74,8 @@ export default defineComponent({
     validator: Function as PropType<
       (key: string, value: string) => string | undefined
     >,
-    showArea: TruthyProp,
-    showDetail: TruthyProp,
+    showArea: truthProp,
+    showDetail: truthProp,
     showDelete: Boolean,
     showPostal: Boolean,
     disableArea: Boolean,

@@ -1,5 +1,5 @@
 import { CSSProperties, PropType, Transition, defineComponent } from 'vue';
-import { TruthyProp, createNamespace } from '../utils';
+import { truthProp, createNamespace } from '../utils';
 import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('tag');
@@ -12,7 +12,7 @@ export default defineComponent({
   props: {
     size: String,
     mark: Boolean,
-    show: TruthyProp,
+    show: truthProp,
     color: String,
     plain: Boolean,
     round: Boolean,

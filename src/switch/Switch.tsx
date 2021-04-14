@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { createNamespace, addUnit, UnknownProp } from '../utils';
+import { createNamespace, addUnit, unknownProp } from '../utils';
 import { useLinkField } from '../composables/use-link-field';
 import { Loading } from '../loading';
 
@@ -12,15 +12,15 @@ export default defineComponent({
     size: [Number, String],
     loading: Boolean,
     disabled: Boolean,
-    modelValue: UnknownProp,
+    modelValue: unknownProp,
     activeColor: String,
     inactiveColor: String,
     activeValue: {
-      type: UnknownProp,
+      type: unknownProp,
       default: true as unknown,
     },
     inactiveValue: {
-      type: UnknownProp,
+      type: unknownProp,
       default: false as unknown,
     },
   },

@@ -1,5 +1,5 @@
 import { computed, PropType, ComputedRef, defineComponent } from 'vue';
-import { TruthyProp, createNamespace, ComponentInstance } from '../utils';
+import { truthProp, createNamespace, ComponentInstance } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('row');
@@ -25,7 +25,7 @@ export default defineComponent({
   name,
 
   props: {
-    wrap: TruthyProp,
+    wrap: truthProp,
     align: String as PropType<RowAlign>,
     justify: String as PropType<RowJustify>,
     tag: {

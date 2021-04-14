@@ -12,8 +12,8 @@ import {
 // Utils
 import {
   pick,
-  TruthyProp,
-  UnknownProp,
+  truthProp,
+  unknownProp,
   createNamespace,
   ComponentInstance,
 } from '../utils';
@@ -41,16 +41,16 @@ export default defineComponent({
 
   props: {
     show: Boolean,
-    loop: TruthyProp,
-    overlay: TruthyProp,
+    loop: truthProp,
+    overlay: truthProp,
     closeable: Boolean,
-    showIndex: TruthyProp,
-    className: UnknownProp,
+    showIndex: truthProp,
+    className: unknownProp,
     transition: String,
     beforeClose: Function as PropType<Interceptor>,
     overlayStyle: Object as PropType<CSSProperties>,
     showIndicators: Boolean,
-    closeOnPopstate: TruthyProp,
+    closeOnPopstate: truthProp,
     images: {
       type: Array as PropType<string[]>,
       default: () => [],

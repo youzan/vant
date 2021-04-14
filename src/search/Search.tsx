@@ -4,7 +4,7 @@ import { ref, PropType, defineComponent } from 'vue';
 import {
   pick,
   extend,
-  TruthyProp,
+  truthProp,
   createNamespace,
   preventDefault,
   ComponentInstance,
@@ -26,7 +26,7 @@ export default defineComponent({
 
   props: extend({}, fieldProps, {
     label: String,
-    clearable: TruthyProp,
+    clearable: truthProp,
     actionText: String,
     background: String,
     showAction: Boolean,

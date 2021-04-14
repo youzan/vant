@@ -8,7 +8,7 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace, extend, UnknownProp } from '../utils';
+import { createNamespace, extend, unknownProp } from '../utils';
 import { TABS_KEY, TabsProvide } from '../tabs/Tabs';
 
 // Composables
@@ -29,7 +29,7 @@ export default defineComponent({
     badge: [Number, String],
     title: String,
     disabled: Boolean,
-    titleClass: UnknownProp,
+    titleClass: unknownProp,
     titleStyle: [String, Object] as PropType<string | CSSProperties>,
   }),
 

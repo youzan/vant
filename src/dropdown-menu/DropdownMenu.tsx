@@ -9,12 +9,7 @@ import {
 } from 'vue';
 
 // Utils
-import {
-  isDef,
-  TruthyProp,
-  createNamespace,
-  ComponentInstance,
-} from '../utils';
+import { isDef, truthProp, createNamespace, ComponentInstance } from '../utils';
 
 // Composables
 import {
@@ -32,11 +27,11 @@ export const DROPDOWN_KEY = Symbol(name);
 export type DropdownMenuDirection = 'up' | 'down';
 
 const props = {
-  overlay: TruthyProp,
+  overlay: truthProp,
   zIndex: [Number, String],
   activeColor: String,
-  closeOnClickOutside: TruthyProp,
-  closeOnClickOverlay: TruthyProp,
+  closeOnClickOutside: truthProp,
+  closeOnClickOverlay: truthProp,
   duration: {
     type: [Number, String],
     default: 0.2,

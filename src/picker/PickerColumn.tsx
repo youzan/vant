@@ -6,7 +6,7 @@ import { deepClone } from '../utils/deep-clone';
 import {
   range,
   isObject,
-  UnknownProp,
+  unknownProp,
   preventDefault,
   createNamespace,
 } from '../utils';
@@ -66,7 +66,7 @@ export default defineComponent({
   props: {
     readonly: Boolean,
     allowHtml: Boolean,
-    className: UnknownProp,
+    className: unknownProp,
     textKey: {
       type: String,
       required: true,

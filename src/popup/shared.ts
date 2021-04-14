@@ -1,5 +1,5 @@
 import { PropType, CSSProperties, TeleportProps } from 'vue';
-import { TruthyProp, UnknownProp } from '../utils';
+import { truthProp, unknownProp } from '../utils';
 
 export const popupSharedProps = {
   // whether to show popup
@@ -7,23 +7,23 @@ export const popupSharedProps = {
   // z-index
   zIndex: [Number, String],
   // whether to show overlay
-  overlay: TruthyProp,
+  overlay: truthProp,
   // transition duration
   duration: [Number, String],
   // teleport
   teleport: [String, Object] as PropType<TeleportProps['to']>,
   // prevent body scroll
-  lockScroll: TruthyProp,
+  lockScroll: truthProp,
   // whether to lazy render
-  lazyRender: TruthyProp,
+  lazyRender: truthProp,
   // overlay custom style
   overlayStyle: Object as PropType<CSSProperties>,
   // overlay custom class name
-  overlayClass: UnknownProp,
+  overlayClass: unknownProp,
   // Initial rendering animation
   transitionAppear: Boolean,
   // whether to close popup when overlay is clicked
-  closeOnClickOverlay: TruthyProp,
+  closeOnClickOverlay: truthProp,
 };
 
 export type PopupSharedPropKeys = Array<keyof typeof popupSharedProps>;

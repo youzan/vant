@@ -7,8 +7,8 @@ export const extend = Object.assign;
 export const inBrowser = typeof window !== 'undefined';
 
 // PropTypes
-export const UnknownProp = (null as unknown) as PropType<unknown>;
-export const TruthyProp = {
+export const unknownProp = (null as unknown) as PropType<unknown>;
+export const truthProp = {
   type: Boolean,
   default: true as const,
 };

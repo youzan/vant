@@ -1,5 +1,5 @@
 import { PropType, defineComponent } from 'vue';
-import { TruthyProp, createNamespace } from '../utils';
+import { truthProp, createNamespace } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { useChildren } from '@vant/use';
 
@@ -16,7 +16,7 @@ export default defineComponent({
   name,
 
   props: {
-    border: TruthyProp,
+    border: truthProp,
     accordion: Boolean,
     modelValue: {
       type: [String, Number, Array] as PropType<

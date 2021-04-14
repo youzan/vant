@@ -1,5 +1,5 @@
 import { watch, defineComponent, ExtractPropTypes } from 'vue';
-import { UnknownProp, createNamespace } from '../utils';
+import { unknownProp, createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 import { useLinkField } from '../composables/use-link-field';
 import { CheckerParent } from '../checkbox/Checker';
@@ -12,7 +12,7 @@ const props = {
   disabled: Boolean,
   iconSize: [Number, String],
   direction: String,
-  modelValue: UnknownProp,
+  modelValue: unknownProp,
   checkedColor: String,
 };
 

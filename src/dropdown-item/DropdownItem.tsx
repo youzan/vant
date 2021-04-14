@@ -9,8 +9,8 @@ import {
 
 // Utils
 import {
-  TruthyProp,
-  UnknownProp,
+  truthProp,
+  unknownProp,
   getZIndexStyle,
   createNamespace,
 } from '../utils';
@@ -43,9 +43,9 @@ export default defineComponent({
     title: String,
     disabled: Boolean,
     teleport: [String, Object] as PropType<TeleportProps['to']>,
-    lazyRender: TruthyProp,
-    modelValue: UnknownProp,
-    titleClass: UnknownProp,
+    lazyRender: truthProp,
+    modelValue: unknownProp,
+    titleClass: unknownProp,
     options: {
       type: Array as PropType<DropdownItemOption[]>,
       default: () => [],

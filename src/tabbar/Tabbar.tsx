@@ -1,7 +1,7 @@
 import { ref, PropType, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
-import { TruthyProp, createNamespace, getZIndexStyle } from '../utils';
+import { truthProp, createNamespace, getZIndexStyle } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
@@ -15,8 +15,8 @@ export const TABBAR_KEY = Symbol(name);
 
 const props = {
   route: Boolean,
-  fixed: TruthyProp,
-  border: TruthyProp,
+  fixed: truthProp,
+  border: truthProp,
   zIndex: [Number, String],
   placeholder: Boolean,
   activeColor: String,

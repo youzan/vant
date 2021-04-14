@@ -4,7 +4,7 @@ import { ref, watch, computed, PropType, defineComponent } from 'vue';
 import {
   extend,
   unitToPx,
-  TruthyProp,
+  truthProp,
   preventDefault,
   createNamespace,
   ComponentInstance,
@@ -47,7 +47,7 @@ export const pickerProps = {
   loading: Boolean,
   readonly: Boolean,
   allowHtml: Boolean,
-  showToolbar: TruthyProp,
+  showToolbar: truthProp,
   cancelButtonText: String,
   confirmButtonText: String,
   itemHeight: {

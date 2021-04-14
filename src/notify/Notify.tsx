@@ -1,5 +1,5 @@
 import { PropType, defineComponent } from 'vue';
-import { createNamespace, extend, UnknownProp } from '../utils';
+import { createNamespace, extend, unknownProp } from '../utils';
 import { Popup } from '../popup';
 import { popupSharedProps } from '../popup/shared';
 
@@ -13,7 +13,7 @@ export default defineComponent({
   props: extend({}, popupSharedProps, {
     color: String,
     message: [Number, String],
-    className: UnknownProp,
+    className: unknownProp,
     background: String,
     lockScroll: Boolean,
     type: {

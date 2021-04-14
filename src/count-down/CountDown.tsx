@@ -1,7 +1,7 @@
 import { watch, computed, defineComponent } from 'vue';
 
 // Utils
-import { TruthyProp, createNamespace } from '../utils';
+import { truthProp, createNamespace } from '../utils';
 import { parseFormat } from './utils';
 
 // Composables
@@ -14,7 +14,7 @@ export default defineComponent({
   name,
 
   props: {
-    autoStart: TruthyProp,
+    autoStart: truthProp,
     millisecond: Boolean,
     time: {
       type: [Number, String],

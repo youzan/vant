@@ -9,7 +9,7 @@ import {
 } from 'vue';
 
 // Utils
-import { TruthyProp, createNamespace } from '../utils';
+import { truthProp, createNamespace } from '../utils';
 
 // Composables
 import { useWindowSize } from '@vant/use';
@@ -29,11 +29,11 @@ export default defineComponent({
   name,
 
   props: {
-    showCount: TruthyProp,
+    showCount: truthProp,
     enabledTitle: String,
     disabledTitle: String,
-    showExchangeBar: TruthyProp,
-    showCloseButton: TruthyProp,
+    showExchangeBar: truthProp,
+    showCloseButton: truthProp,
     closeButtonText: String,
     inputPlaceholder: String,
     exchangeButtonText: String,

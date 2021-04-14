@@ -12,7 +12,7 @@ import {
 
 // Utils
 import {
-  TruthyProp,
+  truthProp,
   getZIndexStyle,
   stopPropagation,
   createNamespace,
@@ -43,15 +43,15 @@ export default defineComponent({
     title: String,
     zIndex: [Number, String],
     teleport: [String, Object] as PropType<TeleportProps['to']>,
-    transition: TruthyProp,
-    blurOnClose: TruthyProp,
-    showDeleteKey: TruthyProp,
+    transition: truthProp,
+    blurOnClose: truthProp,
+    showDeleteKey: truthProp,
     randomKeyOrder: Boolean,
     closeButtonText: String,
     deleteButtonText: String,
     closeButtonLoading: Boolean,
-    hideOnClickOutside: TruthyProp,
-    safeAreaInsetBottom: TruthyProp,
+    hideOnClickOutside: truthProp,
+    safeAreaInsetBottom: truthProp,
     theme: {
       type: String as PropType<NumberKeyboardTheme>,
       default: 'default',
