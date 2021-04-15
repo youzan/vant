@@ -58,4 +58,8 @@ export default {
   width: 18px;
   height: 18px;
 }
+
+.DocSearch-Button-Key {
+  font-size: 12px;
+}
 </style>
