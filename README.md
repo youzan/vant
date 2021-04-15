@@ -67,7 +67,9 @@ Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) bef
 
 ## Browser Support
 
-Modern browsers and Android 4.0+, iOS 8.0+.
+Vant 2 supports modern browsers and Android >= 4.0、iOS >= 8.0.
+
+Vant 3 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3).
 
 ## Ecosystem
 
