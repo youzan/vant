@@ -24,6 +24,7 @@ export default createComponent({
   props: {
     ...popupMixinProps,
     title: String,
+    duration: String,
     cancelText: String,
     description: String,
     getContainer: [String, Function],
