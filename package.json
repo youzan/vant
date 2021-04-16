@@ -50,11 +50,10 @@
   "author": "youzanfe",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "7.x",
     "@vant/icons": "^1.5.3",
-    "@vant/lazyload": "^1.1.0",
+    "@vant/lazyload": "^1.1.1",
     "@vant/popperjs": "^1.1.0",
-    "@vant/use": "^1.1.0"
+    "@vant/use": "^1.1.1"
   },
   "peerDependencies": {
     "vue": "^3.0.0"

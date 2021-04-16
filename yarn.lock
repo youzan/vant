@@ -951,7 +951,7 @@
     "@babel/helper-validator-option" "^7.12.1"
     "@babel/plugin-transform-typescript" "^7.12.1"
 
-"@babel/runtime@7.x", "@babel/runtime@^7.0.0", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.8.4":
   version "7.12.5"
   resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.12.5.tgz?cache=0&sync_timestamp=1604441085826&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
   integrity sha1-QQ5+SHRB4bNgwpvnFdhw2bmFiC4=
@@ -1923,10 +1923,10 @@
   resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.5.3.tgz?cache=0&sync_timestamp=1613997305954&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Ficons%2Fdownload%2F%40vant%2Ficons-1.5.3.tgz#b7779f67bf608d417a82452fbede406dfa46b439"
   integrity sha1-t3efZ79gjUF6gkUvvt5AbfpGtDk=
 
-"@vant/lazyload@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/@vant/lazyload/download/@vant/lazyload-1.1.0.tgz#9b742df97e6a119d4e2bc9096d6b9a5570d4c10c"
-  integrity sha1-m3Qt+X5qEZ1OK8kJbWuaVXDUwQw=
+"@vant/lazyload@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/@vant/lazyload/-/lazyload-1.1.1.tgz#9eafcf85cdd750463a552a07cf18e5c620c6ccef"
+  integrity sha512-ejMxgeWP0GBAuzwaC0RG131JKI4SKSpu9kxNR/wyWdOZmkrAR7HZO0GciGG2illgKvs11gPtepik8X/k9iWIXw==
 
 "@vant/markdown-loader@^4.1.0":
   version "4.1.0"
@@ -1968,12 +1968,10 @@
   resolved "https://registry.yarnpkg.com/@vant/touch-emulator/-/touch-emulator-1.2.0.tgz#486300b23e57db9ce9231a04e0a0c621c68692d8"
   integrity sha512-sJ97zU85zOq51qoi7+CpBEcOyH3CitjP1KC7/GQwqaurUJni+EP7/F9n0HMnAh8GXMjgtgDBNJ5z48x+coNKYQ==
 
-"@vant/use@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/@vant/use/download/@vant/use-1.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fuse%2Fdownload%2F%40vant%2Fuse-1.1.0.tgz#f38f765db36401699310d75d323440e5d8f42674"
-  integrity sha1-8492XbNkAWmTENddMjRA5dj0JnQ=
-  dependencies:
-    "@babel/runtime" "7.x"
+"@vant/use@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/@vant/use/-/use-1.1.1.tgz#fc39c1e918d6027cae52d0cb0c210a1134a7ac6c"
+  integrity sha512-aW7L6d1npRR18IhZ90gw92tYNQZSJecCLxzjnB8+fhUvrjQC97LHdDq0XJLEGB76ZmW0yaSzttfZRnTcj4xUFw==
 
 "@vue/babel-helper-vue-transform-on@^1.0.0":
   version "1.0.0"
