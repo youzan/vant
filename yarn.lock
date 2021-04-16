@@ -1855,10 +1855,10 @@
     "@typescript-eslint/types" "4.6.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/area-data@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npm.taobao.org/@vant/area-data/download/@vant/area-data-1.0.0.tgz#063af9ccb5ccafa333d7dc28103937501cfec671"
-  integrity sha1-Bjr5zLXMr6Mz19woEDk3UBz+xnE=
+"@vant/area-data@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/@vant/area-data/-/area-data-1.1.0.tgz#be48d1c4f8bfe19429625fbf9ed40ab638f4c7f1"
+  integrity sha512-+TNxiOiNxcEmGnDLCcz5TrjzRd125eEsr1PCOZ9uqN3Y9fMXOsl6/oIvLJoLJRSCb/4GIjbIOAavJ+sVrlRslg==
 
 "@vant/cli@^3.10.0":
   version "3.10.0"
@@ -8458,11 +8458,6 @@ prepend-http@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
-
-prettier@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npm.taobao.org/prettier/download/prettier-2.1.0.tgz?cache=0&sync_timestamp=1606521234483&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fprettier%2Fdownload%2Fprettier-2.1.0.tgz#5a9789f767a243118c60f3e56d95cb6544914fbb"
-  integrity sha1-WpeJ92eiQxGMYPPlbZXLZUSRT7s=
 
 prettier@^2.2.1:
   version "2.2.1"
