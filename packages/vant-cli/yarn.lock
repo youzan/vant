@@ -1853,10 +1853,10 @@
     markdown-it-anchor "^7.1.0"
     transliteration "^2.2.0"
 
-"@vant/markdown-vetur@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.npm.taobao.org/@vant/markdown-vetur/download/@vant/markdown-vetur-2.1.0.tgz?cache=0&sync_timestamp=1617347165035&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fmarkdown-vetur%2Fdownload%2F%40vant%2Fmarkdown-vetur-2.1.0.tgz#cc49ad807dfcccca898562966d64b7a657ca3aad"
-  integrity sha1-zEmtgH38zMqJhWKWbWS3plfKOq0=
+"@vant/markdown-vetur@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/@vant/markdown-vetur/-/markdown-vetur-2.2.0.tgz#f62f4060962f6292f35ee969b44f21cd1d602681"
+  integrity sha512-f0IHA08+TrJlDkbtXjKZ1P8I6QurHfbQ5t5KJsDoXo74cGaBh7z/oc+wiuzorGawbovfEHcKB0ejYh+gj1mYwQ==
   dependencies:
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"
