@@ -45,7 +45,7 @@ export type VeturTags = Record<string, VeturTag>;
 export type VeturAttribute = {
   type: string;
   description: string;
-  options: string[];
+  options?: string[];
 };
 
 export type VeturAttributes = Record<string, VeturAttribute>;
