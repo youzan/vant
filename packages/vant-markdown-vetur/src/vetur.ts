@@ -21,6 +21,7 @@ export function genVeturAttributes(tags: VueTag[]) {
         veturAttributes[`${tag.name}/${attr.name}`] = {
           type: attr.value.type,
           description: `${attr.description}, 默认值: ${attr.default}`,
+          options: attr.options
         };
       });
     }
