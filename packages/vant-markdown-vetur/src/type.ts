@@ -20,6 +20,7 @@ export type VueAttribute = {
   name: string;
   default: string;
   description: string;
+  options: string[]
   value: {
     kind: 'expression';
     type: string;
@@ -44,6 +45,7 @@ export type VeturTags = Record<string, VeturTag>;
 export type VeturAttribute = {
   type: string;
   description: string;
+  options?: string[];
 };
 
 export type VeturAttributes = Record<string, VeturAttribute>;
