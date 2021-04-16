@@ -1,6 +1,6 @@
 /* eslint-disable no-continue */
 import { Articals } from './parser';
-import { formatType, removeVersion, toKebabCase } from './utils';
+import { formatOptions, formatType, removeVersion, toKebabCase } from './utils';
 import { VueTag } from './type';
 
 function formatComponentName(name: string, tagPrefix: string) {
@@ -64,11 +64,12 @@ export function formatter(
       const tag = findTag(vueTags, name);
 
       table.body.forEach((line) => {
-        const [name, desc, type, defaultVal] = line;
+        const [name, desc, type, defaultVal, options] = line;
         tag.attributes!.push({
           name: removeVersion(name),
           default: defaultVal,
           description: desc,
+          options: formatOptions(options),
           value: {
             type: formatType(type),
             kind: 'expression',
