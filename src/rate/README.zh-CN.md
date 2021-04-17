@@ -88,6 +88,23 @@ export default {
 <van-rate v-model="value" readonly />
 ```
 
+### 只读状态显示小数
+
+```html
+<van-rate v-model="value" readonly allow-half />
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const value = ref(3.3);
+    return { value };
+  },
+};
+```
+
 ### 监听 change 事件
 
 ```html

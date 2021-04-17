@@ -39,12 +39,12 @@
     <van-rate v-model="value6" readonly />
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('changeEvent')">
-    <van-rate v-model="value7" @change="onChange" />
+  <demo-block :title="t('readonlyHalfStar')">
+    <van-rate v-model="value7" readonly allow-half />
   </demo-block>
 
-  <demo-block :title="t('readonlyHalfStar')">
-    <van-rate v-model="value8" readonly allow-half />
+  <demo-block v-if="!isWeapp" :title="t('changeEvent')">
+    <van-rate v-model="value8" @change="onChange" />
   </demo-block>
 </template>
 
@@ -88,8 +88,8 @@ export default {
       value4: 2.5,
       value5: 4,
       value6: 3,
-      value7: 2,
-      value8: 3.3,
+      value7: 3.3,
+      value8: 2,
     });
 
     const onChange = (value: number) => Toast(t('toastContent', value));
