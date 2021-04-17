@@ -274,7 +274,7 @@ export default {
 
 ### Calendar Poppable Props
 
-当 Canlendar 的 `poppable` 为 `true` 时，支持以下 props:
+当 Calendar 的 `poppable` 为 `true` 时，支持以下 props:
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -288,7 +288,7 @@ export default {
 
 ### Calendar Range Props
 
-当 Canlendar 的 `type` 为 `range` 时，支持以下 props:
+当 Calendar 的 `type` 为 `range` 时，支持以下 props:
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -298,7 +298,7 @@ export default {
 
 ### Calendar Multiple Props
 
-当 Canlendar 的 `type` 为 `multiple` 时，支持以下 props:
+当 Calendar 的 `type` 为 `multiple` 时，支持以下 props:
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
