@@ -166,7 +166,7 @@ function setDefaultOptions(type: ToastType | ToastOptions, options?: any) {
   if (typeof type === 'string') {
     defaultOptionsMap[type] = options;
   } else {
-    Object.assign(currentOptions, type);
+    extend(currentOptions, type);
   }
 }
 

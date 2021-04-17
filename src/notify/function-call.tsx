@@ -85,7 +85,7 @@ Notify.clear = () => {
 Notify.currentOptions = defaultOptions();
 
 Notify.setDefaultOptions = (options: NotifyOptions) => {
-  Object.assign(Notify.currentOptions, options);
+  extend(Notify.currentOptions, options);
 };
 
 Notify.resetDefaultOptions = () => {

@@ -1,6 +1,6 @@
 {
   "name": "@vant/cli",
-  "version": "3.10.0",
+  "version": "3.10.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "bin": {
@@ -45,7 +45,7 @@
     "@types/webpack-dev-server": "^3.11.1",
     "@vant/eslint-config": "^3.2.0",
     "@vant/markdown-loader": "^4.1.0",
-    "@vant/markdown-vetur": "^2.1.0",
+    "@vant/markdown-vetur": "^2.2.0",
     "@vant/stylelint-config": "^1.4.2",
     "@vant/touch-emulator": "^1.2.0",
     "@vue/babel-plugin-jsx": "^1.0.1",

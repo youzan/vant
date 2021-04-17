@@ -108,7 +108,7 @@ Dialog.close = () => {
 };
 
 Dialog.setDefaultOptions = (options: DialogOptions) => {
-  Object.assign(Dialog.currentOptions, options);
+  extend(Dialog.currentOptions, options);
 };
 
 Dialog.resetDefaultOptions = () => {

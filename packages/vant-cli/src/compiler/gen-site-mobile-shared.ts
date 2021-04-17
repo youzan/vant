@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { existsSync, readdirSync } from 'fs-extra';
-import { SRC_DIR, SITE_MODILE_SHARED_FILE } from '../common/constant';
+import { SRC_DIR, SITE_MOBILE_SHARED_FILE } from '../common/constant';
 import {
   pascalize,
   removeExt,
@@ -95,5 +95,5 @@ export function genSiteMobileShared() {
   const dirs = readdirSync(SRC_DIR);
   const code = genCode(dirs);
 
-  smartOutputFile(SITE_MODILE_SHARED_FILE, code);
+  smartOutputFile(SITE_MOBILE_SHARED_FILE, code);
 }
