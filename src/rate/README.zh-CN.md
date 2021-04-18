@@ -90,6 +90,8 @@ export default {
 
 ### 只读状态显示小数
 
+设置 `readonly` 和 `allow-half` 属性后，Rate 组件可以展示任意小数结果。
+
 ```html
 <van-rate v-model="value" readonly allow-half />
 ```
