@@ -88,6 +88,23 @@ export default {
 <van-rate v-model="value" readonly />
 ```
 
+### Readonly Half Star
+
+```html
+<van-rate v-model="value" readonly />
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const value = ref(3.3);
+    return { value };
+  },
+};
+```
+
 ### Change Event
 
 ```html

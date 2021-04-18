@@ -225,7 +225,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
       </i>
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full"
-         style="font-size: 25px;"
+         style="font-size: 25px; width: 1em;"
          data-score="0.5"
       >
       </i>
@@ -243,7 +243,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
       </i>
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full"
-         style="font-size: 25px;"
+         style="font-size: 25px; width: 1em;"
          data-score="1.5"
       >
       </i>
@@ -261,7 +261,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
       </i>
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full"
-         style="font-size: 25px;"
+         style="font-size: 25px; width: 0.5em;"
          data-score="2.5"
       >
       </i>
@@ -279,7 +279,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
       </i>
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half"
-         style="color: rgb(238, 238, 238); font-size: 25px;"
+         style="color: rgb(238, 238, 238); font-size: 25px; width: 0em;"
          data-score="3.5"
       >
       </i>
@@ -297,7 +297,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
       </i>
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half"
-         style="color: rgb(238, 238, 238); font-size: 25px;"
+         style="color: rgb(238, 238, 238); font-size: 25px; width: 0em;"
          data-score="4.5"
       >
       </i>
@@ -512,6 +512,98 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon"
          data-score="5"
+      >
+      </i>
+    </div>
+  </div>
+</div>
+<div>
+  <div role="radiogroup"
+       class="van-rate van-rate--readonly"
+       tabindex="0"
+  >
+    <div role="radio"
+         class="van-rate__item"
+         tabindex="0"
+         aria-setsize="5"
+         aria-posinset="1"
+         aria-checked="true"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full"
+         data-score="1"
+      >
+      </i>
+      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full"
+         style="width: 1em;"
+         data-score="0.5"
+      >
+      </i>
+    </div>
+    <div role="radio"
+         class="van-rate__item"
+         tabindex="0"
+         aria-setsize="5"
+         aria-posinset="2"
+         aria-checked="true"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full"
+         data-score="2"
+      >
+      </i>
+      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full"
+         style="width: 1em;"
+         data-score="1.5"
+      >
+      </i>
+    </div>
+    <div role="radio"
+         class="van-rate__item"
+         tabindex="0"
+         aria-setsize="5"
+         aria-posinset="3"
+         aria-checked="true"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full"
+         data-score="3"
+      >
+      </i>
+      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full"
+         style="width: 1em;"
+         data-score="2.5"
+      >
+      </i>
+    </div>
+    <div role="radio"
+         class="van-rate__item"
+         tabindex="0"
+         aria-setsize="5"
+         aria-posinset="4"
+         aria-checked="true"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon"
+         data-score="4"
+      >
+      </i>
+      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full"
+         style="width: 0.3em;"
+         data-score="3.5"
+      >
+      </i>
+    </div>
+    <div role="radio"
+         class="van-rate__item"
+         tabindex="0"
+         aria-setsize="5"
+         aria-posinset="5"
+         aria-checked="false"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon"
+         data-score="5"
+      >
+      </i>
+      <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon van-rate__icon--half"
+         style="width: 0em;"
+         data-score="4.5"
       >
       </i>
     </div>

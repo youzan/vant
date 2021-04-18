@@ -39,8 +39,12 @@
     <van-rate v-model="value6" readonly />
   </demo-block>
 
+  <demo-block :title="t('readonlyHalfStar')">
+    <van-rate v-model="value7" readonly allow-half />
+  </demo-block>
+
   <demo-block v-if="!isWeapp" :title="t('changeEvent')">
-    <van-rate v-model="value7" @change="onChange" />
+    <van-rate v-model="value8" @change="onChange" />
   </demo-block>
 </template>
 
@@ -57,6 +61,7 @@ const i18n = {
     customStyle: '自定义样式',
     customCount: '自定义数量',
     readonly: '只读状态',
+    readonlyHalfStar: '只读状态小数显示',
     changeEvent: '监听 change 事件',
     toastContent: (value: number) => `当前值：${value}`,
   },
@@ -67,6 +72,7 @@ const i18n = {
     customStyle: 'Custom Style',
     customCount: 'Custom Count',
     readonly: 'Readonly',
+    readonlyHalfStar: 'Readonly Half Star',
     changeEvent: 'Change Event',
     toastContent: (value: number) => `current value：${value}`,
   },
@@ -82,7 +88,8 @@ export default {
       value4: 2.5,
       value5: 4,
       value6: 3,
-      value7: 2,
+      value7: 3.3,
+      value8: 2,
     });
 
     const onChange = (value: number) => Toast(t('toastContent', value));
