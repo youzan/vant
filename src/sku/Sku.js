@@ -421,7 +421,7 @@ export default createComponent({
       });
       if (isEmpty(this.selectedProp)) {
         this.propList.forEach((item) => {
-          // 属性值都为0，默认选中第一个
+          // 没有加价的属性，默认选中第一个
           if (item?.v?.length > 0) {
             const { v, k_id } = item;
             const isHasConfigPrice = v.some((i) => +i.price !== 0);

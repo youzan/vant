@@ -180,7 +180,7 @@ export function getSkuData(largeImageMode = false) {
         ],
       },
       {
-        k: '未配置价格的属性项',
+        k: '未加价的属性项',
         k_id: 126,
         is_multiple: true,
         v: [
