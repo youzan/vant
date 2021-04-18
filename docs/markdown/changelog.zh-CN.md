@@ -16,6 +16,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.14](https://github.com/youzan/vant/compare/v2.12.13...v2.12.14)
+
+`2021-04-18`
+
+**Feature**
+
+- sku: 商品属性默认选中交互逻辑修改 [#8559](https://github.com/youzan/vant/issues/8559)
+- sku: 支持商品属性必选配置 [#8558](https://github.com/youzan/vant/issues/8558)
+
+**Bug Fixes**
+
+- Calendar: 修复在某些下副标题更新不正确的问题 [#8513](https://github.com/youzan/vant/issues/8513)
+- ShareSheet: 修复 duration 属性不生效的问题 [#8542](https://github.com/youzan/vant/issues/8542)
+
 ### [v2.12.13](https://github.com/youzan/vant/compare/v2.12.12...v2.12.13)
 
 `2021-04-11`

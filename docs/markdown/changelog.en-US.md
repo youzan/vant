@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.14](https://github.com/youzan/vant/compare/v2.12.13...v2.12.14)
+
+`2021-04-18`
+
+**Bug Fixes**
+
+- Calendar: failed to update subtitle in some cases [#8513](https://github.com/youzan/vant/issues/8513)
+- ShareSheet: duration prop not work [#8542](https://github.com/youzan/vant/issues/8542)
+
 ### [v2.12.13](https://github.com/youzan/vant/compare/v2.12.12...v2.12.13)
 
 `2021-04-11`
