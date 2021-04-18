@@ -183,9 +183,9 @@ export default createComponent({
       }
 
       // 属性未全选
-      return !this.propList.some(
-        (it) => (this.selectedProp[it.k_id] || []).length < 1
-      );
+      return !this.propList
+        .filter((i) => i.is_necessary !== false)
+        .some((i) => (this.selectedProp[i.k_id] || []).length === 0);
     },
 
     isSkuEmpty() {
