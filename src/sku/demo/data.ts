@@ -197,6 +197,23 @@ export function getSkuData(largeImageMode = false) {
           },
         ],
       },
+      {
+        k: '未加价的属性项',
+        k_id: 126,
+        is_multiple: true,
+        v: [
+          {
+            id: 1244,
+            name: '属性a',
+            price: 0,
+          },
+          {
+            id: 1245,
+            name: '属性b',
+            price: 0,
+          },
+        ],
+      },
     ],
   };
 }

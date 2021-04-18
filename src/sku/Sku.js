@@ -10,7 +10,7 @@ import SkuRowPropItem from './components/SkuRowPropItem';
 import SkuStepper from './components/SkuStepper';
 import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
-import { createNamespace } from '../utils';
+import { createNamespace, isEmpty } from '../utils';
 import {
   isAllSelected,
   isSkuChoosable,
@@ -413,14 +413,24 @@ export default createComponent({
       // 重置商品属性
       this.selectedProp = {};
       const { selectedProp = {} } = this.initialSku;
-      // 只有一个属性值时，默认选中，且选中外部传入信息
+      // 选中外部传入信息
       this.propList.forEach((item) => {
-        if (item.v && item.v.length === 1) {
-          this.selectedProp[item.k_id] = [item.v[0].id];
-        } else if (selectedProp[item.k_id]) {
+        if (selectedProp[item.k_id]) {
           this.selectedProp[item.k_id] = selectedProp[item.k_id];
         }
       });
+      if (isEmpty(this.selectedProp)) {
+        this.propList.forEach((item) => {
+          // 没有加价的属性，默认选中第一个
+          if (item?.v?.length > 0) {
+            const { v, k_id } = item;
+            const isHasConfigPrice = v.some((i) => +i.price !== 0);
+            if (!isHasConfigPrice) {
+              this.selectedProp[k_id] = [v[0].id];
+            }
+          }
+        });
+      }
 
       const propValues = this.selectedPropValues;
       if (propValues.length > 0) {
