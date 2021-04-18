@@ -16,13 +16,26 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.14](https://github.com/youzan/vant/compare/v3.0.13...v3.0.14)
+
+`2021-04-18`
+
+**Feature**
+
+- Badge: offset 属性支持传入任意单位 [35edb7](https://github.com/youzan/vant/commit/35edb72b5cd519d4e75443acaa0a63db16695d2d)
+- Rate: 支持在 readonly 时渲染任意小数结果 [#8528](https://github.com/youzan/vant/issues/8528)
+
+**Bug Fixes**
+
+- ContactList: 修复 nodes 类型错误 [0b764b](https://github.com/youzan/vant/commit/0b764b63470b09f5654d267c8d07a20bc2d31536)
+
 ### [v3.0.13](https://github.com/youzan/vant/compare/v3.0.12...v3.0.13)
 
 `2021-04-11`
 
 **Feature**
 
-- AcitonBar: 新增 @action-bar-icon-background-color 样式变量 [#8474](https://github.com/youzan/vant/issues/8474)
+- ActionBar: 新增 @action-bar-icon-background-color 样式变量 [#8474](https://github.com/youzan/vant/issues/8474)
 - Popover: 升级依赖的 @popperjs/core 到 2.9.2 版本 [0d1323](https://github.com/youzan/vant/commit/0d132337d5d263957a7993d60e47a18efec7313e)
 - perf: 优化包体积 [ba3e6d](https://github.com/youzan/vant/commit/ba3e6d56a0bc7ae3acc25b1380f054da3b9b020f)
 

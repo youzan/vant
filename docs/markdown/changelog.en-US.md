@@ -16,13 +16,26 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.14](https://github.com/youzan/vant/compare/v3.0.13...v3.0.14)
+
+`2021-04-18`
+
+**Feature**
+
+- Badge: offset prop support custom unit [35edb7](https://github.com/youzan/vant/commit/35edb72b5cd519d4e75443acaa0a63db16695d2d)
+- Rate: support decimal modelValue when readonly [#8528](https://github.com/youzan/vant/issues/8528)
+
+**Bug Fixes**
+
+- ContactList: fix nodes type [0b764b](https://github.com/youzan/vant/commit/0b764b63470b09f5654d267c8d07a20bc2d31536)
+
 ### [v3.0.13](https://github.com/youzan/vant/compare/v3.0.12...v3.0.13)
 
 `2021-04-11`
 
 **Feature**
 
-- AcitonBar: add @action-bar-icon-background-color less var [#8474](https://github.com/youzan/vant/issues/8474)
+- ActionBar: add @action-bar-icon-background-color less var [#8474](https://github.com/youzan/vant/issues/8474)
 - Popover: bump @popperjs/core@2.9.2 [0d1323](https://github.com/youzan/vant/commit/0d132337d5d263957a7993d60e47a18efec7313e)
 - perf: reduce bundle size [ba3e6d](https://github.com/youzan/vant/commit/ba3e6d56a0bc7ae3acc25b1380f054da3b9b020f)
 
