@@ -179,6 +179,24 @@ export function getSkuData(largeImageMode = false) {
           },
         ],
       },
+      {
+        k: '非必选属性',
+        k_id: 125,
+        is_multiple: true,
+        is_necessary: false,
+        v: [
+          {
+            id: 1234,
+            name: '属性1',
+            price: 3,
+          },
+          {
+            id: 1235,
+            name: '属性2',
+            price: 4,
+          },
+        ],
+      },
     ],
   };
 }
