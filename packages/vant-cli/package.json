@@ -48,7 +48,7 @@
     "@vant/markdown-vetur": "^2.2.0",
     "@vant/stylelint-config": "^1.4.2",
     "@vant/touch-emulator": "^1.2.0",
-    "@vue/babel-plugin-jsx": "^1.0.1",
+    "@vue/babel-plugin-jsx": "^1.0.5",
     "@vue/test-utils": "2.0.0-rc.1",
     "address": "^1.1.2",
     "autoprefixer": "^9.0.0",
