@@ -9,7 +9,8 @@ let existsCache: Record<string, boolean> = {};
 const IMPORT_RE = /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from(\s+)?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
 
 function matchImports(code: string): string[] {
-  return code.match(IMPORT_RE) || [];
+  const imports = code.match(IMPORT_RE) || [];
+  return imports.filter((line) => !line.includes('import type'));
 }
 
 function exists(filePath: string) {
