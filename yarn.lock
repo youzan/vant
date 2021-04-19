@@ -1841,10 +1841,10 @@
   resolved "https://registry.npmjs.org/@vant/area-data/-/area-data-1.1.0.tgz#be48d1c4f8bfe19429625fbf9ed40ab638f4c7f1"
   integrity sha512-+TNxiOiNxcEmGnDLCcz5TrjzRd125eEsr1PCOZ9uqN3Y9fMXOsl6/oIvLJoLJRSCb/4GIjbIOAavJ+sVrlRslg==
 
-"@vant/cli@^3.10.1":
-  version "3.10.1"
-  resolved "https://registry.npmjs.org/@vant/cli/-/cli-3.10.1.tgz#6dc3e0f39c52b19450445101249b77ea822416df"
-  integrity sha512-/IFrlxqtVMruXYdqroe0jECgw4CDCQs7rRfxmm43rLN9SYwxsDw8Y2NADxwR2Hcw65jqeoU/gg06C4pMmety+w==
+"@vant/cli@^3.10.2":
+  version "3.10.2"
+  resolved "https://registry.nlark.com/@vant/cli/download/@vant/cli-3.10.2.tgz?cache=0&sync_timestamp=1618831336137&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-3.10.2.tgz#b5766a2ab136694543d86d102168ab981acfadff"
+  integrity sha1-tXZqKrE2aUVD2G0QIWirmBrPrf8=
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/preset-env" "^7.12.11"
@@ -1857,7 +1857,7 @@
     "@vant/markdown-vetur" "^2.2.0"
     "@vant/stylelint-config" "^1.4.2"
     "@vant/touch-emulator" "^1.2.0"
-    "@vue/babel-plugin-jsx" "^1.0.1"
+    "@vue/babel-plugin-jsx" "^1.0.5"
     "@vue/test-utils" "2.0.0-rc.1"
     address "^1.1.2"
     autoprefixer "^9.0.0"
@@ -1978,10 +1978,10 @@
   resolved "https://registry.npmjs.org/@vue/babel-helper-vue-transform-on/-/babel-helper-vue-transform-on-1.0.2.tgz#9b9c691cd06fc855221a2475c3cc831d774bc7dc"
   integrity sha512-hz4R8tS5jMn8lDq6iD+yWL6XNB699pGIVLk7WSJnn1dbpjaazsjZQkieJoRX6gW5zpYSCFqQ7jUquPNY65tQYA==
 
-"@vue/babel-plugin-jsx@^1.0.1":
+"@vue/babel-plugin-jsx@^1.0.5":
   version "1.0.5"
-  resolved "https://registry.npmjs.org/@vue/babel-plugin-jsx/-/babel-plugin-jsx-1.0.5.tgz#72820d5fb371c41d2113b31b16787995e8bdf69a"
-  integrity sha512-Jtipy7oI0am5e1q5Ahunm/cCcCh5ssf5VkMQsLR383S3un5Qh7NBfxgSK9kmWf4IXJEhDeYp9kHv8G/EnMai9A==
+  resolved "https://registry.npm.taobao.org/@vue/babel-plugin-jsx/download/@vue/babel-plugin-jsx-1.0.5.tgz?cache=0&sync_timestamp=1618715318432&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fbabel-plugin-jsx%2Fdownload%2F%40vue%2Fbabel-plugin-jsx-1.0.5.tgz#72820d5fb371c41d2113b31b16787995e8bdf69a"
+  integrity sha1-coINX7NxxB0hE7MbFnh5lei99po=
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.0.0"
