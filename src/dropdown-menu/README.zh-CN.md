@@ -222,3 +222,18 @@ export default {
 | @dropdown-menu-option-active-color | `@red` | - |
 | @dropdown-menu-content-max-height | `80%` | - |
 | @dropdown-item-z-index | `10` | - |
+
+## 常见问题
+
+### 父元素设置 transform 后，下拉菜单的位置错误？
+
+把 `DropdownMenu` 嵌套在 `Tabs` 等组件内部使用时，可能会遇到下拉菜单位置错误的问题。这是因为在 Chrome 浏览器中，transform 元素内部的 fixed 布局会降级成 absolute 布局，导致下拉菜单的布局异常。
+
+将 `DropdownItem` 的 `teleport` 属性设置为 `body` 即可避免此问题：
+
+```html
+<van-dropdown-menu>
+  <van-dropdown-item teleport="body" />
+  <van-dropdown-item teleport="body" />
+</van-dropdown-menu>
+```
