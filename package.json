@@ -74,5 +74,7 @@
     "tags": "vetur/tags.json",
     "attributes": "vetur/attributes.json"
   },
-  "web-types": "vetur/web-types.json"
+  "web-types": "vetur/web-types.json",
+  "unpkg": "lib/vant.min.js",
+  "jsdelivr": "lib/vant.min.js"
 }
