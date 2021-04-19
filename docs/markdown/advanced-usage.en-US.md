@@ -50,11 +50,9 @@ Vant uses `px` unit by default，you can use tools such as [postcss--px-to-viewp
 PostCSS config example:
 
 ```js
+// postcss.config.js
 module.exports = {
   plugins: {
-    autoprefixer: {
-      browsers: ['Android >= 4.4', 'iOS >= 8'],
-    },
     'postcss-px-to-viewport': {
       viewportWidth: 375,
     },
@@ -74,13 +72,30 @@ You can use tools such as `postcss-pxtorem` to transform `px` unit to `rem` unit
 PostCSS config example:
 
 ```js
+// postcss.config.js
 module.exports = {
   plugins: {
-    autoprefixer: {
-      browsers: ['Android >= 4.0', 'iOS >= 8'],
-    },
     'postcss-pxtorem': {
       rootValue: 37.5,
+      propList: ['*'],
+    },
+  },
+};
+```
+
+### Custom rootValue
+
+If the size of the design draft is 750 or other sizes, you can adjust the `rootValue` to:
+
+```js
+// postcss.config.js
+module.exports = {
+  plugins: {
+    // postcss-pxtorem version >= 5.0.0
+    'postcss-pxtorem': {
+      rootValue({ file }) {
+        return file.indexOf('vant') !== -1 ? 37.5 : 75;
+      },
       propList: ['*'],
     },
   },

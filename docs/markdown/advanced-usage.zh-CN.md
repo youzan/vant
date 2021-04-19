@@ -107,11 +107,9 @@ Vant 默认使用 `px` 作为样式单位，如果需要使用 `viewport` 单位
 下面提供了一份基本的 PostCSS 示例配置，可以在此配置的基础上根据项目需求进行修改。
 
 ```js
+// postcss.config.js
 module.exports = {
   plugins: {
-    autoprefixer: {
-      browsers: ['Android >= 4.4', 'iOS >= 8'],
-    },
     'postcss-px-to-viewport': {
       viewportWidth: 375,
     },
@@ -133,13 +131,30 @@ module.exports = {
 下面提供了一份基本的 PostCSS 示例配置，可以在此配置的基础上根据项目需求进行修改。
 
 ```js
+// postcss.config.js
 module.exports = {
   plugins: {
-    autoprefixer: {
-      browsers: ['Android >= 4.0', 'iOS >= 8'],
-    },
     'postcss-pxtorem': {
       rootValue: 37.5,
+      propList: ['*'],
+    },
+  },
+};
+```
+
+#### 其他设计稿尺寸
+
+如果设计稿的尺寸不是 375，而是 750 或其他大小，可以将 `rootValue` 配置调整为:
+
+```js
+// postcss.config.js
+module.exports = {
+  plugins: {
+    // postcss-pxtorem 插件的版本需要 >= 5.0.0
+    'postcss-pxtorem': {
+      rootValue({ file }) {
+        return file.indexOf('vant') !== -1 ? 37.5 : 75;
+      },
       propList: ['*'],
     },
   },
