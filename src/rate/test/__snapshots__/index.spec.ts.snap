@@ -13,9 +13,7 @@ exports[`should render gutter when using gutter prop 1`] = `
        aria-posinset="1"
        aria-checked="false"
   >
-    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon"
-       data-score="1"
-    >
+    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
     </i>
   </div>
   <div role="radio"
@@ -26,9 +24,7 @@ exports[`should render gutter when using gutter prop 1`] = `
        aria-posinset="2"
        aria-checked="false"
   >
-    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon"
-       data-score="2"
-    >
+    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
     </i>
   </div>
   <div role="radio"
@@ -39,9 +35,7 @@ exports[`should render gutter when using gutter prop 1`] = `
        aria-posinset="3"
        aria-checked="false"
   >
-    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon"
-       data-score="3"
-    >
+    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
     </i>
   </div>
   <div role="radio"
@@ -52,9 +46,7 @@ exports[`should render gutter when using gutter prop 1`] = `
        aria-posinset="4"
        aria-checked="false"
   >
-    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon"
-       data-score="4"
-    >
+    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
     </i>
   </div>
   <div role="radio"
@@ -64,9 +56,7 @@ exports[`should render gutter when using gutter prop 1`] = `
        aria-posinset="5"
        aria-checked="false"
   >
-    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon"
-       data-score="5"
-    >
+    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
     </i>
   </div>
 </div>

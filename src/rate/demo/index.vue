@@ -18,13 +18,7 @@
   </demo-block>
 
   <demo-block :title="t('halfStar')">
-    <van-rate
-      v-model="value4"
-      :size="25"
-      allow-half
-      void-icon="star"
-      void-color="#eee"
-    />
+    <van-rate v-model="value4" allow-half />
   </demo-block>
 
   <demo-block :title="t('customCount')">

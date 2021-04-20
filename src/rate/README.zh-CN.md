@@ -56,7 +56,7 @@ export default {
 ### 半星
 
 ```html
-<van-rate v-model="value" allow-half void-icon="star" void-color="#eee" />
+<van-rate v-model="value" allow-half />
 ```
 
 ```js
