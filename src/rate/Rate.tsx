@@ -108,6 +108,22 @@ export default defineComponent({
       }
     };
 
+    const getRanges = () => {
+      const rects = itemRefs.value.map((item) => item.getBoundingClientRect());
+
+      ranges = [];
+      rects.forEach((rect, index) => {
+        if (props.allowHalf) {
+          ranges.push(
+            { score: index + 0.5, left: rect.left },
+            { score: index + 1, left: rect.left + rect.width / 2 }
+          );
+        } else {
+          ranges.push({ score: index + 1, left: rect.left });
+        }
+      });
+    };
+
     const getScoreByPosition = (x: number) => {
       for (let i = ranges.length - 1; i > 0; i--) {
         if (x > ranges[i].left) {
@@ -123,20 +139,7 @@ export default defineComponent({
       }
 
       touch.start(event);
-
-      const rects = itemRefs.value.map((item) => item.getBoundingClientRect());
-
-      ranges = [];
-      rects.forEach((rect, index) => {
-        if (props.allowHalf) {
-          ranges.push(
-            { score: index + 0.5, left: rect.left },
-            { score: index + 1, left: rect.left + rect.width / 2 }
-          );
-        } else {
-          ranges.push({ score: index + 1, left: rect.left });
-        }
-      });
+      getRanges();
     };
 
     const onTouchMove = (event: TouchEvent) => {
@@ -179,6 +182,11 @@ export default defineComponent({
         };
       }
 
+      const onClickItem = (event: MouseEvent) => {
+        getRanges();
+        select(allowHalf ? getScoreByPosition(event.clientX) : score);
+      };
+
       return (
         <div
           key={index}
@@ -190,9 +198,7 @@ export default defineComponent({
           aria-setsize={+count}
           aria-posinset={score}
           aria-checked={!isVoid}
-          onClick={(event) =>
-            select(allowHalf ? getScoreByPosition(event.clientX) : score)
-          }
+          onClick={onClickItem}
         >
           <Icon
             size={size}
