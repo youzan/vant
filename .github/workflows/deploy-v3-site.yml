@@ -1,9 +1,9 @@
-name: Deploy Site
+name: Deploy V3 Site
 
 on:
   push:
     tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - 'v3*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
   build-and-deploy:
@@ -11,7 +11,9 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
-      
+        with:
+          ref: 'dev'
+
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
