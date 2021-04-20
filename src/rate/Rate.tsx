@@ -16,8 +16,8 @@ const [name, bem] = createNamespace('rate');
 type RateStatus = 'full' | 'half' | 'void';
 
 type RateListItem = {
-  status: RateStatus;
   value: number;
+  status: RateStatus;
 };
 
 function getRateStatus(
@@ -80,8 +80,6 @@ export default defineComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit }) {
-    let ranges: Array<{ left: number; score: number }>;
-
     const touch = useTouch();
     const [itemRefs, setItemRefs] = useRefs();
 
@@ -101,29 +99,9 @@ export default defineComponent({
         )
     );
 
-    const select = (index: number) => {
-      if (!props.disabled && !props.readonly && index !== props.modelValue) {
-        emit('update:modelValue', index);
-        emit('change', index);
-      }
-    };
+    let ranges: Array<{ left: number; score: number }>;
 
-    const getScoreByPosition = (x: number) => {
-      for (let i = ranges.length - 1; i > 0; i--) {
-        if (x > ranges[i].left) {
-          return ranges[i].score;
-        }
-      }
-      return props.allowHalf ? 0.5 : 1;
-    };
-
-    const onTouchStart = (event: TouchEvent) => {
-      if (untouchable()) {
-        return;
-      }
-
-      touch.start(event);
-
+    const updateRanges = () => {
       const rects = itemRefs.value.map((item) => item.getBoundingClientRect());
 
       ranges = [];
@@ -137,6 +115,31 @@ export default defineComponent({
           ranges.push({ score: index + 1, left: rect.left });
         }
       });
+    };
+
+    const getScoreByPosition = (x: number) => {
+      for (let i = ranges.length - 1; i > 0; i--) {
+        if (x > ranges[i].left) {
+          return ranges[i].score;
+        }
+      }
+      return props.allowHalf ? 0.5 : 1;
+    };
+
+    const select = (index: number) => {
+      if (!props.disabled && !props.readonly && index !== props.modelValue) {
+        emit('update:modelValue', index);
+        emit('change', index);
+      }
+    };
+
+    const onTouchStart = (event: TouchEvent) => {
+      if (untouchable()) {
+        return;
+      }
+
+      touch.start(event);
+      updateRanges();
     };
 
     const onTouchMove = (event: TouchEvent) => {
@@ -170,6 +173,7 @@ export default defineComponent({
       const score = index + 1;
       const isFull = item.status === 'full';
       const isVoid = item.status === 'void';
+      const renderHalf = allowHalf && item.value > 0 && item.value < 1;
 
       let style;
       if (gutter && score !== +count) {
@@ -177,6 +181,11 @@ export default defineComponent({
           paddingRight: addUnit(gutter),
         };
       }
+
+      const onClickItem = (event: MouseEvent) => {
+        updateRanges();
+        select(allowHalf ? getScoreByPosition(event.clientX) : score);
+      };
 
       return (
         <div
@@ -189,6 +198,7 @@ export default defineComponent({
           aria-setsize={+count}
           aria-posinset={score}
           aria-checked={!isVoid}
+          onClick={onClickItem}
         >
           <Icon
             size={size}
@@ -196,12 +206,8 @@ export default defineComponent({
             class={bem('icon', { disabled, full: isFull })}
             color={disabled ? disabledColor : isFull ? color : voidColor}
             classPrefix={iconPrefix}
-            data-score={score}
-            onClick={() => {
-              select(score);
-            }}
           />
-          {allowHalf && (
+          {renderHalf && (
             <Icon
               size={size}
               style={{ width: item.value + 'em' }}
@@ -209,10 +215,6 @@ export default defineComponent({
               class={bem('icon', ['half', { disabled, full: !isVoid }])}
               color={disabled ? disabledColor : isVoid ? voidColor : color}
               classPrefix={iconPrefix}
-              data-score={score - 0.5}
-              onClick={() => {
-                select(score - 0.5);
-              }}
             />
           )}
         </div>

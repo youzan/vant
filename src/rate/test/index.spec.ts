@@ -42,19 +42,6 @@ test('should not emit change and update:modelValue event when rate is not change
   expect(wrapper.emitted('update:modelValue')).toBeFalsy();
 });
 
-test('should allow half rate when using allow-half prop', () => {
-  const wrapper = mount(Rate, {
-    props: {
-      allowHalf: true,
-    },
-  });
-
-  const item4 = wrapper.findAll('.van-rate__icon--half')[3];
-  item4.trigger('click');
-  expect(wrapper.emitted('change')![0]).toEqual([3.5]);
-  expect(wrapper.emitted('update:modelValue')![0]).toEqual([3.5]);
-});
-
 test('should not emit change or update:modelValue event when rate is disabled', () => {
   const wrapper = mount(Rate, {
     props: {
@@ -137,6 +124,6 @@ test('should get decimal when using allow-half and readonly prop', () => {
     },
   });
 
-  const item4 = wrapper.findAll('.van-rate__icon--half')[3];
-  expect(item4.style.width).toEqual('0.3em');
+  const halfIcon = wrapper.find('.van-rate__icon--half');
+  expect(halfIcon.style.width).toEqual('0.3em');
 });
