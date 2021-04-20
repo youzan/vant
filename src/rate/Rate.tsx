@@ -80,8 +80,6 @@ export default defineComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit }) {
-    let ranges: Array<{ left: number; score: number }>;
-
     const touch = useTouch();
     const [itemRefs, setItemRefs] = useRefs();
 
@@ -101,14 +99,9 @@ export default defineComponent({
         )
     );
 
-    const select = (index: number) => {
-      if (!props.disabled && !props.readonly && index !== props.modelValue) {
-        emit('update:modelValue', index);
-        emit('change', index);
-      }
-    };
+    let ranges: Array<{ left: number; score: number }>;
 
-    const getRanges = () => {
+    const updateRanges = () => {
       const rects = itemRefs.value.map((item) => item.getBoundingClientRect());
 
       ranges = [];
@@ -133,13 +126,20 @@ export default defineComponent({
       return props.allowHalf ? 0.5 : 1;
     };
 
+    const select = (index: number) => {
+      if (!props.disabled && !props.readonly && index !== props.modelValue) {
+        emit('update:modelValue', index);
+        emit('change', index);
+      }
+    };
+
     const onTouchStart = (event: TouchEvent) => {
       if (untouchable()) {
         return;
       }
 
       touch.start(event);
-      getRanges();
+      updateRanges();
     };
 
     const onTouchMove = (event: TouchEvent) => {
@@ -183,7 +183,7 @@ export default defineComponent({
       }
 
       const onClickItem = (event: MouseEvent) => {
-        getRanges();
+        updateRanges();
         select(allowHalf ? getScoreByPosition(event.clientX) : score);
       };
 
