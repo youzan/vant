@@ -1,16 +1,17 @@
-name: Build and Deploy Site
-on: [push]
+name: Deploy Site
+on: push
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
+      
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
 
-      - name: Install and Build
-        run: |
-          yarn
-          yarn release:site
+      - name: Build Site
+        run: npx --no-install vant-cli build-site
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.1
