@@ -20,6 +20,8 @@ app.use(Rate);
 
 ### 基础用法
 
+通过 `v-model` 来绑定当前评分值。
+
 ```html
 <van-rate v-model="value" />
 ```
@@ -37,11 +39,15 @@ export default {
 
 ### 自定义图标
 
+通过 `icon` 属性设置选中时的图标，`void-icon` 属性设置未选中时的图标。
+
 ```html
 <van-rate v-model="value" icon="like" void-icon="like-o" />
 ```
 
 ### 自定义样式
+
+通过 `size` 属性设置图标大小，`color` 属性设置选中时的颜色，`void-color` 设置未选中时的颜色。
 
 ```html
 <van-rate
@@ -54,6 +60,8 @@ export default {
 ```
 
 ### 半星
+
+设置 `allow-half` 属性后可以选中半星。
 
 ```html
 <van-rate v-model="value" allow-half />
@@ -72,17 +80,23 @@ export default {
 
 ### 自定义数量
 
+通过 `count` 属性设置评分总数。
+
 ```html
 <van-rate v-model="value" :count="6" />
 ```
 
 ### 禁用状态
 
+通过 `disabled` 属性来禁用评分。
+
 ```html
 <van-rate v-model="value" disabled />
 ```
 
 ### 只读状态
+
+通过 `readonly` 属性将评分设置为只读状态。
 
 ```html
 <van-rate v-model="value" readonly />
@@ -108,6 +122,8 @@ export default {
 ```
 
 ### 监听 change 事件
+
+评分变化时，会触发 `change` 事件。
 
 ```html
 <van-rate v-model="value" @change="onChange" />
