@@ -105,7 +105,7 @@ export default defineComponent({
 
     watch(
       () => props.contactInfo,
-      (value) => extend(contact, DEFAULT_CONTACT, value)
+      (value) => extend({}, DEFAULT_CONTACT, value)
     );
 
     return () => (
