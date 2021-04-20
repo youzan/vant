@@ -1,0 +1,28 @@
+name: Deploy V2 Site
+
+on:
+  push:
+    tags:
+      - 'v2*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          ref: '2.x'
+      
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build Site
+        run: npx --no-install vant-cli build-site
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: site
+          clean: false
