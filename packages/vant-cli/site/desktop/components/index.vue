@@ -25,7 +25,7 @@ import DocContainer from './Container';
 import DocSimulator from './Simulator';
 
 export default {
-  name: 'van-doc',
+  name: 'VanDoc',
 
   components: {
     DocNav,
@@ -83,6 +83,10 @@ export default {
     },
 
     keyboardNav(direction) {
+      if (/win(32|64)/.test(navigator.userAgent.toLocaleLowerCase())) {
+        return;
+      }
+
       const nav = direction === 'prev' ? this.leftNav : this.rightNav;
       if (nav.path) {
         this.$router.push(this.base + nav.path);
