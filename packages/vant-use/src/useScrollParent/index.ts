@@ -1,8 +1,10 @@
 import { ref, Ref, onMounted } from 'vue';
+import { inBrowser } from '../utils';
 
 type ScrollElement = HTMLElement | Window;
 
 const overflowScrollReg = /scroll|auto/i;
+const defaultRoot = inBrowser ? window : undefined;
 
 function isElement(node: Element) {
   const ELEMENT_NODE_TYPE = 1;
@@ -14,7 +16,10 @@ function isElement(node: Element) {
 }
 
 // https://github.com/youzan/vant/issues/3823
-export function getScrollParent(el: Element, root: ScrollElement = window) {
+export function getScrollParent(
+  el: Element,
+  root: ScrollElement | undefined = defaultRoot
+) {
   let node = el;
 
   while (node && node !== root && isElement(node)) {
@@ -30,7 +35,7 @@ export function getScrollParent(el: Element, root: ScrollElement = window) {
 
 export function useScrollParent(
   el: Ref<Element | undefined>,
-  root: ScrollElement = window
+  root: ScrollElement | undefined = defaultRoot
 ) {
   const scrollParent = ref<Element | Window>();
 
