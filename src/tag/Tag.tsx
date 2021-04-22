@@ -36,6 +36,7 @@ export default defineComponent({
       if (props.plain) {
         return {
           color: props.textColor || props.color,
+          borderColor: props.color,
         };
       }
       return {
