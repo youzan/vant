@@ -48,7 +48,7 @@ export default defineComponent({
     },
   },
 
-  emits: ['close', 'change', 'finish', 'update:modelValue'],
+  emits: ['close', 'change', 'finish', 'update:modelValue', 'click-tab'],
 
   setup(props, { slots, emit }) {
     const state = reactive({
@@ -180,6 +180,10 @@ export default defineComponent({
 
     const onClose = () => emit('close');
 
+    const onClickTab = (tabIndex: number, title: string) => {
+      emit('click-tab', tabIndex, title);
+    };
+
     const renderHeader = () => (
       <div class={bem('header')}>
         <h2 class={bem('title')}>
@@ -247,6 +251,9 @@ export default defineComponent({
         color={props.activeColor}
         swipeThreshold={0}
         swipeable={props.swipeable}
+        onClick={(tabIndex, title) => {
+          onClickTab(tabIndex, title);
+        }}
       >
         {state.tabs.map(renderTab)}
       </Tabs>

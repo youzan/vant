@@ -176,3 +176,31 @@ test('should allow to custom field names', async () => {
     },
   ]);
 });
+
+test('should emit click-tab event when a tab is clicked', async () => {
+  const wrapper = mount(Cascader, {
+    props: {
+      options,
+    },
+  });
+
+  await later();
+  wrapper.find('.van-cascader__option').trigger('click');
+  await later();
+  wrapper
+    .findAll('.van-cascader__options')[1]
+    .find('.van-cascader__option')
+    .trigger('click');
+  await later();
+
+  const tabs = wrapper.findAll('.van-tab');
+
+  tabs[0].trigger('click');
+  expect(wrapper.emitted('click-tab')![0]).toEqual([0, options[0].text]);
+
+  tabs[1].trigger('click');
+  expect(wrapper.emitted('click-tab')![1]).toEqual([
+    1,
+    options[0].children[0].text,
+  ]);
+});
