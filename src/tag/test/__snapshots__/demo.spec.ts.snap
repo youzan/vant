@@ -204,7 +204,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <transition-stub>
-        <span style="color: rgb(114, 50, 221);"
+        <span style="color: rgb(114, 50, 221); border-color: #7232dd;"
               class="van-tag van-tag--plain van-tag--default"
         >
           Tag

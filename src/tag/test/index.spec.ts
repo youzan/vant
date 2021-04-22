@@ -36,3 +36,15 @@ test('should not trigger click event when clicking the close icon', () => {
   wrapper.trigger('click');
   expect(onClick).toHaveBeenCalledTimes(1);
 });
+
+test('should render border-color correctly', () => {
+  const wrapper = mount(Tag, {
+    props: {
+      plain: true,
+      color: 'red',
+      textColor: 'blue',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
