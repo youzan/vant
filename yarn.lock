@@ -1969,9 +1969,9 @@
   integrity sha512-sJ97zU85zOq51qoi7+CpBEcOyH3CitjP1KC7/GQwqaurUJni+EP7/F9n0HMnAh8GXMjgtgDBNJ5z48x+coNKYQ==
 
 "@vant/use@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/@vant/use/-/use-1.1.1.tgz#fc39c1e918d6027cae52d0cb0c210a1134a7ac6c"
-  integrity sha512-aW7L6d1npRR18IhZ90gw92tYNQZSJecCLxzjnB8+fhUvrjQC97LHdDq0XJLEGB76ZmW0yaSzttfZRnTcj4xUFw==
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@vant/use/-/use-1.1.2.tgz#d35265e05df88a47b04196a308efb5e89e44ca10"
+  integrity sha512-s4YO6zqJ3NlGeAZ104exb0c/KvlXB908pOhWhCyhfedVBn1eBnKH401ildK0sttazmq0CH8jme6mnw2ZzZvutw==
 
 "@vue/babel-helper-vue-transform-on@^1.0.2":
   version "1.0.2"
