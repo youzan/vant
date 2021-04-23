@@ -1837,9 +1837,9 @@
     eslint-visitor-keys "^2.0.0"
 
 "@vant/area-data@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@vant/area-data/-/area-data-1.1.0.tgz#be48d1c4f8bfe19429625fbf9ed40ab638f4c7f1"
-  integrity sha512-+TNxiOiNxcEmGnDLCcz5TrjzRd125eEsr1PCOZ9uqN3Y9fMXOsl6/oIvLJoLJRSCb/4GIjbIOAavJ+sVrlRslg==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@vant/area-data/-/area-data-1.1.1.tgz#b9acf8a804c0d60f721b6900680299422b006b1a"
+  integrity sha512-MmXTuSh6YYWSvC112iK2/rZhEfe+3vfh6G9TD1sOTOrtw+H9bAnw8ZOiHdkL6hTUCXV+AJEDbFyFsNLpJxqkoA==
 
 "@vant/cli@^3.10.2":
   version "3.10.2"
