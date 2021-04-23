@@ -220,6 +220,7 @@ export default {
 | change | Emitted when active option changed | `{ value, selectedOptions, tabIndex }` |
 | finish | Emitted when all options is selected | `{ value, selectedOptions, tabIndex }` |
 | close | Emmitted when the close icon is clicked | - |
+| click-tab | Emitted when a tab is clicked | _activeTab: number, title: string_ |
 
 ### Slots
 
