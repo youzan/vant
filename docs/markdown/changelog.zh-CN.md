@@ -16,6 +16,16 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.15](https://github.com/youzan/vant/compare/v2.12.14...v2.12.15)
+
+`2021-04-25`
+
+**Bug Fixes**
+
+- Calendar: 修正繁体中文语言包 [#8569](https://github.com/youzan/vant/issues/8569)
+- Tag: 修复使用 plain 和 color 属性时边框颜色不正确的问题 [#8602](https://github.com/youzan/vant/issues/8602)
+- Uploader: 修复使用插槽时 scoped 样式不生效的问题 [#8613](https://github.com/youzan/vant/issues/8613)
+
 ### [v2.12.14](https://github.com/youzan/vant/compare/v2.12.13...v2.12.14)
 
 `2021-04-18`

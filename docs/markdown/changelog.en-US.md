@@ -16,6 +16,16 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.15](https://github.com/youzan/vant/compare/v2.12.14...v2.12.15)
+
+`2021-04-25`
+
+**Bug Fixes**
+
+- Calendar: incorrect weekdays locale [#8569](https://github.com/youzan/vant/issues/8569)
+- Tag: incorrect border color when using plain [#8602](https://github.com/youzan/vant/issues/8602)
+- Uploader: failed to render scoped class [#8613](https://github.com/youzan/vant/issues/8613)
+
 ### [v2.12.14](https://github.com/youzan/vant/compare/v2.12.13...v2.12.14)
 
 `2021-04-18`
