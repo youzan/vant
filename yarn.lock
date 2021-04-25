@@ -2000,10 +2000,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.10.0":
-  version "2.10.0"
-  resolved "https://registry.npmjs.org/@vant/cli/-/cli-2.10.0.tgz#dba23f20d94a4f30843f3b09068b2c78dadc4f89"
-  integrity sha512-46UZb45i8O0lLRo9Cdr24EoM8e4HGsy5LycfKhzmKSHpiwQ2yQP/x7qJ3ZGlYgOeeKk8UNM6Y1uJ5KJLzKCmRA==
+"@vant/cli@^2.10.1":
+  version "2.10.1"
+  resolved "https://registry.nlark.com/@vant/cli/download/@vant/cli-2.10.1.tgz#a51824970f8f5f594e95a233e0a74ed1625c0ad8"
+  integrity sha1-pRgklw+PX1lOlaIz4KdO0WJcCtg=
   dependencies:
     "@babel/core" "^7.10.1"
     "@babel/plugin-syntax-jsx" "^7.10.1"
