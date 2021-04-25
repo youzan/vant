@@ -405,7 +405,7 @@ export default createComponent({
 
       if (slot) {
         return (
-          <div class={bem('input-wrapper')}>
+          <div class={bem('input-wrapper')} key="input-wrapper">
             {slot}
             {Input}
           </div>
