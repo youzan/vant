@@ -11,11 +11,11 @@ export const dateColumns = {
   ],
   'en-US': [
     {
-      values: ['Monday', 'Tuesday', 'Wednesday', 'Thusday', 'Friday'],
+      values: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       defaultIndex: 2,
     },
     {
-      values: ['Morging', 'Afternoon', 'Evening'],
+      values: ['Morning', 'Afternoon', 'Evening'],
       defaultIndex: 1,
     },
   ],
