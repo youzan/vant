@@ -1,4 +1,4 @@
-import { ref, watch, computed, PropType, defineComponent } from 'vue';
+import { ref, watch, computed, PropType, defineComponent, nextTick } from 'vue';
 
 // Utils
 import {
@@ -212,8 +212,10 @@ export default defineComponent({
       const value = format(input.value);
       input.value = String(value);
       current.value = value;
-      emit('blur', event);
-      resetScroll();
+      nextTick(() => {
+        emit('blur', event);
+        resetScroll();
+      })
     };
 
     let isLongPress: boolean;
