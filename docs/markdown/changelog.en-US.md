@@ -16,6 +16,20 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.15](https://github.com/youzan/vant/compare/v2.12.14-test...v3.0.15)
+
+`2021-04-25`
+
+**Feature**
+
+- Cascader: add click-tab event [#8606](https://github.com/youzan/vant/issues/8606)
+
+**Bug Fixes**
+
+- Tab: failed to render during SSR [#8603](https://github.com/youzan/vant/issues/8603)
+- Rate: select half star correctly when clicked [#8580](https://github.com/youzan/vant/issues/8580)
+- Tag: incorrect border color when using plain [#8601](https://github.com/youzan/vant/issues/8601)
+
 ### [v3.0.14](https://github.com/youzan/vant/compare/v3.0.13...v3.0.14)
 
 `2021-04-18`

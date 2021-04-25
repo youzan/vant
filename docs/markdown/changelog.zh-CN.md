@@ -16,6 +16,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.15](https://github.com/youzan/vant/compare/v2.12.14-test...v3.0.15)
+
+`2021-04-25`
+
+**Feature**
+
+- Cascader: 新增 click-tab 事件 [#8606](https://github.com/youzan/vant/issues/8606)
+
+**Bug Fixes**
+
+- Tab: 修复 SSR 时报错的问题 [#8603](https://github.com/youzan/vant/issues/8603)
+- Rate: 修复点击半星时未正确选中的问题 [#8580](https://github.com/youzan/vant/issues/8580)
+- Tag: 修复使用 color 和 plain 属性时边框颜色错误的问题 [#8601](https://github.com/youzan/vant/issues/8601)
+
 ### [v3.0.14](https://github.com/youzan/vant/compare/v3.0.13...v3.0.14)
 
 `2021-04-18`
