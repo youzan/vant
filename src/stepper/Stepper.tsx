@@ -193,13 +193,13 @@ export default defineComponent({
         input.value = formatted;
       }
 
-      // perfer number type
+      // prefer number type
       const isNumeric = formatted === String(+formatted);
       setValue(isNumeric ? +formatted : formatted);
     };
 
     const onFocus = (event: Event) => {
-      // readonly not work in lagacy mobile safari
+      // readonly not work in legacy mobile safari
       if (props.disableInput) {
         inputRef.value?.blur();
       } else {
@@ -315,7 +315,7 @@ export default defineComponent({
           style={inputStyle.value}
           disabled={props.disabled}
           readonly={props.disableInput}
-          // set keyboard in mordern browers
+          // set keyboard in modern browsers
           inputmode={props.integer ? 'numeric' : 'decimal'}
           placeholder={props.placeholder}
           aria-valuemax={+props.max}
