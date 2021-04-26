@@ -172,7 +172,7 @@ Toast.resetDefaultOptions('loading');
 | overlayStyle `v3.0.4` | Custom overlay style | _object_ | - |
 | onOpened | Callback function after opened | _Function_ | - |
 | onClose | Callback function after close | _Function_ | - |
-| transition | Transition, equivalent to `name` prop of [transtion](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
+| transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | teleport | Return the mount node for Toast | _string \| Element_ | `body` |
 
 ### Less Variables
