@@ -1,3 +1,4 @@
+import { nextTick } from 'vue';
 import { Stepper } from '..';
 import { mount, later } from '../../../test';
 
@@ -244,6 +245,7 @@ test('should format input value when stepper blured', async () => {
 
   await input.trigger('blur');
   expect(wrapper.emitted('update:modelValue')![1]).toEqual([3]);
+  await nextTick();
   expect(wrapper.emitted('blur')).toBeTruthy();
 });
 
