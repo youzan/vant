@@ -6,7 +6,7 @@
 
 ### 函数调用
 
-ImagePreview 是一个函数，调用函数后会直接在页面中展示图片预览界面。
+`ImagePreview` 是一个函数，调用函数后会直接在页面中展示图片预览界面。
 
 ```js
 import { ImagePreview } from 'vant';
@@ -16,7 +16,7 @@ ImagePreview(['https://img.yzcdn.cn/vant/apple-1.jpg']);
 
 ### 组件调用
 
-通过组件调用 ImagePreview 时，可以通过下面的方式进行注册。
+通过组件调用 `ImagePreview` 时，可以通过下面的方式进行注册。
 
 ```js
 import { createApp } from 'vue';
@@ -49,7 +49,7 @@ ImagePreview([
 
 ### 指定初始位置
 
-ImagePreview 支持传入配置对象，并通过 `startPosition` 选项指定图片的初始位置（索引值）。
+`ImagePreview` 支持传入配置对象，并通过 `startPosition` 选项指定图片的初始位置（索引值）。
 
 ```js
 ImagePreview({
@@ -268,3 +268,16 @@ export default {
 ### 在桌面端无法操作组件？
 
 参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。
+
+### 在 JSX 中渲染 ImagePreview 组件无法展示？
+
+请注意 `ImagePreview` 是一个函数，`ImagePreview.Component` 才是 ImagePreview 对应的组件。JSX 调用图片预览的正确姿势如下：
+
+```jsx
+export default {
+  setup() {
+    const show = ref(false);
+    return () => <ImagePreview.Component v-model={[show, 'show']} />;
+  },
+};
+```
