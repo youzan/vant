@@ -305,7 +305,7 @@ export default defineComponent({
       state.focused = true;
       emit('focus', event);
 
-      // readonly not work in lagacy mobile safari
+      // readonly not work in legacy mobile safari
       const readonly = getProp('readonly');
       if (readonly) {
         blur();
