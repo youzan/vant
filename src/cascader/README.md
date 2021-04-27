@@ -219,7 +219,7 @@ export default {
 | --- | --- | --- |
 | change | Emitted when active option changed | `{ value, selectedOptions, tabIndex }` |
 | finish | Emitted when all options is selected | `{ value, selectedOptions, tabIndex }` |
-| close | Emmitted when the close icon is clicked | - |
+| close | Emitted when the close icon is clicked | - |
 | click-tab | Emitted when a tab is clicked | _activeTab: number, title: string_ |
 
 ### Slots
@@ -235,6 +235,7 @@ How to use: [Custom Theme](#/en-US/theme).
 | Name                              | Default Value   | Description |
 | --------------------------------- | --------------- | ----------- |
 | @cascader-header-height           | `48px`          | -           |
+| @cascader-header-padding          | `0 @padding-md` | -           |
 | @cascader-title-font-size         | `@font-size-lg` | -           |
 | @cascader-title-line-height       | `20px`          | -           |
 | @cascader-close-icon-size         | `22px`          | -           |

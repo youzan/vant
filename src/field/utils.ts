@@ -83,8 +83,8 @@ export function mapInputType(
   type: InputHTMLAttributes['type'];
   inputmode?: HTMLAttributes['inputmode'];
 } {
-  // type="number" is weired in iOS, and can't prevent dot in Android
-  // so use inputmode to set keyboard in mordern browers
+  // type="number" is weird in iOS, and can't prevent dot in Android
+  // so use inputmode to set keyboard in modern browsers
   if (type === 'number') {
     return {
       type: 'text',

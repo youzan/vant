@@ -245,6 +245,7 @@ export default {
 | 名称                              | 默认值          | 描述 |
 | --------------------------------- | --------------- | ---- |
 | @cascader-header-height           | `48px`          | -    |
+| @cascader-header-padding          | `0 @padding-md` | -    |
 | @cascader-title-font-size         | `@font-size-lg` | -    |
 | @cascader-title-line-height       | `20px`          | -    |
 | @cascader-close-icon-size         | `22px`          | -    |
