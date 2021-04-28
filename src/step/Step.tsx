@@ -57,7 +57,13 @@ export default defineComponent({
     const onClickStep = () => parent.onClickStep(index.value);
 
     const renderCircle = () => {
-      const { finishIcon, activeIcon, activeColor, inactiveIcon } = parentProps;
+      const {
+        iconPrefix,
+        finishIcon,
+        activeIcon,
+        activeColor,
+        inactiveIcon,
+      } = parentProps;
 
       if (isActive()) {
         if (slots['active-icon']) {
@@ -69,6 +75,7 @@ export default defineComponent({
             class={bem('icon', 'active')}
             name={activeIcon}
             color={activeColor}
+            classPrefix={iconPrefix}
           />
         );
       }
@@ -83,6 +90,7 @@ export default defineComponent({
             class={bem('icon', 'finish')}
             name={finishIcon}
             color={activeColor}
+            classPrefix={iconPrefix}
           />
         );
       }
@@ -92,7 +100,13 @@ export default defineComponent({
       }
 
       if (inactiveIcon) {
-        return <Icon class={bem('icon')} name={inactiveIcon} />;
+        return (
+          <Icon
+            class={bem('icon')}
+            name={inactiveIcon}
+            classPrefix={iconPrefix}
+          />
+        );
       }
 
       return <i class={bem('circle')} style={lineStyle.value} />;
