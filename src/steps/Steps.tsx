@@ -9,6 +9,7 @@ export const STEPS_KEY = Symbol(name);
 export type StepsDirection = 'horizontal' | 'vertical';
 
 const props = {
+  iconPrefix: String,
   finishIcon: String,
   activeColor: String,
   inactiveIcon: String,

@@ -7,8 +7,8 @@ test('should render icon slot correctly', () => {
     render() {
       return (
         <Steps active={0}>
-          <Step v-slots={{ 'active-icon': () => `Custim Active Icon` }}>B</Step>
-          <Step v-slots={{ 'inactive-icon': () => `Custim Inactive Icon` }}>
+          <Step v-slots={{ 'active-icon': () => `Custom Active Icon` }}>B</Step>
+          <Step v-slots={{ 'inactive-icon': () => `Custom Inactive Icon` }}>
             A
           </Step>
         </Steps>
@@ -96,7 +96,7 @@ test('should render finish icon slot correctly', () => {
     render() {
       return (
         <Steps active={1}>
-          <Step v-slots={{ 'finish-icon': () => `Custim Fiinsh Icon` }}>A</Step>
+          <Step v-slots={{ 'finish-icon': () => `Custom Finish Icon` }}>A</Step>
           <Step>B</Step>
         </Steps>
       );
@@ -105,4 +105,20 @@ test('should render finish icon slot correctly', () => {
 
   const firstStep = wrapper.find('.van-step');
   expect(firstStep.html()).toMatchSnapshot();
+});
+
+test('should render icon-prefix correctly', () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Steps active={1} iconPrefix="custom-icon">
+          <Step>A</Step>
+          <Step>B</Step>
+        </Steps>
+      );
+    },
+  });
+
+  const steps = wrapper.findAll('.van-step');
+  expect(steps[1].html()).toMatchSnapshot();
 });

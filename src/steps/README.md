@@ -84,6 +84,7 @@ export default {
 | active-icon | Active icon name | _string_ | `checked` |
 | inactive-icon | Inactive icon name | _string_ | - |
 | finish-icon `v3.0.7` | Finish icon name | _string_ | - |
+| icon-prefix `v3.0.15` | Icon className prefix | _string_ | `van-icon` |
 
 ### Step Slots
 
