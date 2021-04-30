@@ -140,8 +140,6 @@ export default {
 | @submit-bar-background-color        | `@white`                     | -    |
 | @submit-bar-button-width            | `110px`                      | -    |
 | @submit-bar-price-color             | `@red`                       | -    |
-| @submit-bar-price-font-size         | `@font-size-md`              | -    |
-| @submit-bar-currency-font-size      | `@font-size-md`              | -    |
 | @submit-bar-text-color              | `@text-color`                | -    |
 | @submit-bar-text-font-size          | `@font-size-md`              | -    |
 | @submit-bar-tip-padding             | `@padding-xs @padding-sm`    | -    |
@@ -152,5 +150,6 @@ export default {
 | @submit-bar-tip-icon-size           | `12px`                       | -    |
 | @submit-bar-button-height           | `40px`                       | -    |
 | @submit-bar-padding                 | `0 @padding-md`              | -    |
+| @submit-bar-price-font-size         | `@font-size-sm`              | -    |
 | @submit-bar-price-integer-font-size | `20px`                       | -    |
 | @submit-bar-price-font-family       | `@price-integer-font-family` | -    |
