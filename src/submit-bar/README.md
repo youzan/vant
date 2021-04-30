@@ -39,7 +39,7 @@ export default {
 
 ### Disabled
 
-`submit` event will not triggerd when disabled.
+`submit` event will not triggered when disabled.
 
 ```html
 <van-submit-bar
@@ -54,7 +54,7 @@ export default {
 
 ### Loading
 
-`submit` event will not triggerd when loading.
+`submit` event will not triggered when loading.
 
 ```html
 <van-submit-bar loading :price="3050" button-text="Submit" @submit="onSubmit" />
@@ -93,7 +93,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | price | Price | _number_ | - |
-| decimal-length | Price dicemal length | _number \| string_ | `2` |
+| decimal-length | Price decimal length | _number \| string_ | `2` |
 | label | Price left label | _string_ | `Total：` |
 | suffix-label | Price right label | _string_ | - |
 | text-align | Price label text align can be set to `left` | _string_ | `right` |
@@ -109,9 +109,9 @@ export default {
 
 ### Events
 
-| Event  | Description                       | Arguments |
-| ------ | --------------------------------- | --------- |
-| submit | Triggerd when click submit button | -         |
+| Event  | Description                        | Arguments |
+| ------ | ---------------------------------- | --------- |
+| submit | Triggered when click submit button | -         |
 
 ### Slots
 
@@ -133,8 +133,6 @@ How to use: [Custom Theme](#/en-US/theme).
 | @submit-bar-background-color | `@white` | - |
 | @submit-bar-button-width | `110px` | - |
 | @submit-bar-price-color | `@red` | - |
-| @submit-bar-price-font-size | `@font-size-md` | - |
-| @submit-bar-currency-font-size | `@font-size-md` | - |
 | @submit-bar-text-color | `@text-color` | - |
 | @submit-bar-text-font-size | `@font-size-md` | - |
 | @submit-bar-tip-padding | `@padding-xs @padding-sm` | - |
@@ -145,5 +143,6 @@ How to use: [Custom Theme](#/en-US/theme).
 | @submit-bar-tip-icon-size | `12px` | - |
 | @submit-bar-button-height | `40px` | - |
 | @submit-bar-padding | `0 @padding-md` | - |
+| @submit-bar-price-font-size | `@font-size-sm` | - |
 | @submit-bar-price-integer-font-size | `20px` | - |
 | @submit-bar-price-font-family | `@price-integer-font-family` | - |
