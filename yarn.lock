@@ -1842,9 +1842,9 @@
   integrity sha512-MmXTuSh6YYWSvC112iK2/rZhEfe+3vfh6G9TD1sOTOrtw+H9bAnw8ZOiHdkL6hTUCXV+AJEDbFyFsNLpJxqkoA==
 
 "@vant/cli@^3.10.2":
-  version "3.10.2"
-  resolved "https://registry.nlark.com/@vant/cli/download/@vant/cli-3.10.2.tgz?cache=0&sync_timestamp=1618831336137&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-3.10.2.tgz#b5766a2ab136694543d86d102168ab981acfadff"
-  integrity sha1-tXZqKrE2aUVD2G0QIWirmBrPrf8=
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-3.10.3.tgz#021d9a136e9be81c5aa51da0fe1ef61410460bf6"
+  integrity sha512-Y9oBGZ26pr5J/B3ygSsOT34WllmTS/UaUklmE98DjehuT8hCI9luqeJr8ZQRhVd3WJic5m14Zgv4MxAw7sdM1w==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/preset-env" "^7.12.11"
