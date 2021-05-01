@@ -1,6 +1,7 @@
 import {
   ref,
   watch,
+  provide,
   Teleport,
   computed,
   PropType,
@@ -21,6 +22,7 @@ import { useEventListener } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { useLockScroll } from '../composables/use-lock-scroll';
 import { useLazyRender } from '../composables/use-lazy-render';
+import { POPUP_TOGGLE_KEY } from '../composables/on-popup-reopen';
 
 // Components
 import { Icon } from '../icon';
@@ -244,6 +246,8 @@ export default defineComponent({
         shouldReopen = true;
       }
     });
+
+    provide(POPUP_TOGGLE_KEY, () => props.show);
 
     return () => {
       if (props.teleport) {
