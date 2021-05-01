@@ -68,6 +68,8 @@ export default {
 
 ### 监听 change 事件
 
+在每一页轮播结束后，会触发 `change` 事件。
+
 ```html
 <van-swipe @change="onChange">
   <van-swipe-item>1</van-swipe-item>
@@ -169,8 +171,8 @@ export default {
 | autoplay         | 自动轮播间隔，单位为 ms  | _number \| string_ | -         |
 | duration         | 动画时长，单位为 ms      | _number \| string_ | `500`     |
 | initial-swipe    | 初始位置索引值           | _number \| string_ | `0`       |
-| width            | 滑块宽度，单位为`px`     | _number \| string_ | `auto`    |
-| height           | 滑块高度，单位为`px`     | _number \| string_ | `auto`    |
+| width            | 滑块宽度，单位为 `px`    | _number \| string_ | `auto`    |
+| height           | 滑块高度，单位为 `px`    | _number \| string_ | `auto`    |
 | loop             | 是否开启循环播放         | _boolean_          | `true`    |
 | show-indicators  | 是否显示指示器           | _boolean_          | `true`    |
 | vertical         | 是否为纵向滚动           | _boolean_          | `false`   |
@@ -199,10 +201,10 @@ export default {
 | --- | --- | --- | --- |
 | prev | 切换到上一轮播 | - | - |
 | next | 切换到下一轮播 | - | - |
-| swipeTo | 切换到指定位置 | index: number, options: Options | - |
+| swipeTo | 切换到指定位置 | _index: number, options: SwipeToOptions_ | - |
 | resize | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 | - | - |
 
-### swipeTo Options 格式
+### SwipeToOptions 格式
 
 | 名称      | 说明         | 类型      |
 | --------- | ------------ | --------- |
@@ -232,7 +234,7 @@ export default {
 
 ### 滑动轮播时为什么触发了 click 事件？
 
-这种情况通常是由于项目中引入了`fastclick`库导致的。`fastclick`的原理是通过 Touch 事件模拟出 click 事件，而 Swipe 内部默认会阻止 touchmove 事件冒泡，干扰了 fastclick 的判断，导致出现这个问题。
+这种情况通常是由于项目中引入了 `fastclick` 库导致的。`fastclick` 的原理是通过 Touch 事件模拟出 click 事件，而 Swipe 内部默认会阻止 touchmove 事件冒泡，干扰了 fastclick 的判断，导致出现这个问题。
 
 将 Swipe 组件的 stop-propagation 属性设置为 false 即可避免该问题。
 

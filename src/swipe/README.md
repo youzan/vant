@@ -193,10 +193,10 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Swipe 
 | --- | --- | --- | --- |
 | prev | Swipe to prev item | - | - |
 | next | Swipe to next item | - | - |
-| swipeTo | Swipe to target index | index: target index, options: Options | - |
+| swipeTo | Swipe to target index | _index: number, options: SwipeToOptions_ | - |
 | resize | Resize Swipe when container element resized or visibility changed | - | - |
 
-### swipeTo Options
+### SwipeToOptions
 
 | Name      | Description               | Type      |
 | --------- | ------------------------- | --------- |
