@@ -123,13 +123,13 @@ export default {
 通过 `indicator` 插槽可以自定义指示器的样式。
 
 ```html
-<van-swipe @change="onChange">
+<van-swipe>
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
-  <template #indicator>
-    <div class="custom-indicator">{{ current + 1 }}/4</div>
+  <template #indicator="{ active }">
+    <div class="custom-indicator">{{ active + 1 }}/4</div>
   </template>
 </van-swipe>
 
@@ -143,23 +143,6 @@ export default {
     background: rgba(0, 0, 0, 0.1);
   }
 </style>
-```
-
-```js
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    const current = ref(0);
-    const onChange = (index) => {
-      current.value = index;
-    };
-    return {
-      current,
-      onChange,
-    };
-  },
-};
 ```
 
 ## API
@@ -212,10 +195,10 @@ export default {
 
 ### Swipe Slots
 
-| 名称      | 说明         |
-| --------- | ------------ |
-| default   | 轮播内容     |
-| indicator | 自定义指示器 |
+| 名称                | 说明         | 参数 |
+| ------------------- | ------------ | ---- |
+| default             | 轮播内容     | -    |
+| indicator `v3.0.16` | 自定义指示器 | -    |
 
 ### 样式变量
 

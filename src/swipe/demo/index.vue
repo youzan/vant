@@ -17,7 +17,7 @@
   </demo-block>
 
   <demo-block :title="t('title3')">
-    <van-swipe indicator-color="white" @change="onChange1">
+    <van-swipe indicator-color="white" @change="onChange">
       <van-swipe-item>1</van-swipe-item>
       <van-swipe-item>2</van-swipe-item>
       <van-swipe-item>3</van-swipe-item>
@@ -50,21 +50,19 @@
   </demo-block>
 
   <demo-block :title="t('title6')">
-    <van-swipe @change="onChange2">
+    <van-swipe>
       <van-swipe-item>1</van-swipe-item>
       <van-swipe-item>2</van-swipe-item>
       <van-swipe-item>3</van-swipe-item>
       <van-swipe-item>4</van-swipe-item>
-
-      <template #indicator>
-        <div class="custom-indicator">{{ current + 1 }}/4</div>
+      <template #indicator="{ active }">
+        <div class="custom-indicator">{{ active + 1 }}/4</div>
       </template>
     </van-swipe>
   </demo-block>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
@@ -90,7 +88,6 @@ const i18n = {
 export default {
   setup() {
     const t = useTranslate(i18n);
-    const current = ref(0);
     const images = [
       'https://img.yzcdn.cn/vant/apple-1.jpg',
       'https://img.yzcdn.cn/vant/apple-2.jpg',
@@ -98,17 +95,12 @@ export default {
       'https://img.yzcdn.cn/vant/apple-4.jpg',
     ];
 
-    const onChange1 = (index: number) => Toast(t('message') + index);
-    const onChange2 = (index: number) => {
-      current.value = index;
-    };
+    const onChange = (index: number) => Toast(t('message') + index);
 
     return {
       t,
       images,
-      current,
-      onChange1,
-      onChange2,
+      onChange,
     };
   },
 };

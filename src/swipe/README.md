@@ -115,13 +115,13 @@ export default {
 ### Custom Indicator
 
 ```html
-<van-swipe @change="onChange">
+<van-swipe>
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
-  <template #indicator>
-    <div class="custom-indicator">{{ current + 1 }}/4</div>
+  <template #indicator="{ active }">
+    <div class="custom-indicator">{{ active + 1 }}/4</div>
   </template>
 </van-swipe>
 
@@ -135,23 +135,6 @@ export default {
     background: rgba(0, 0, 0, 0.1);
   }
 </style>
-```
-
-```js
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    const current = ref(0);
-    const onChange = (index) => {
-      current.value = index;
-    };
-    return {
-      current,
-      onChange,
-    };
-  },
-};
 ```
 
 ## API
@@ -204,10 +187,10 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Swipe 
 
 ### Swipe Slots
 
-| Name      | Description      |
-| --------- | ---------------- |
-| default   | Content          |
-| indicator | Custom indicator |
+| Name                | Description      | SlotProps |
+| ------------------- | ---------------- | --------- |
+| default             | Content          | -         |
+| indicator `v3.0.16` | Custom indicator | -         |
 
 ### Less Variables
 
