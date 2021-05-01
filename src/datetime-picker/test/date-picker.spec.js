@@ -215,7 +215,7 @@ test('use min-date with filter', async () => {
 
 test('v-model', async () => {
   const minDate = new Date(2030, 0, 0, 0, 3);
-  
+
   const wrapper = mount({
     template: `
       <van-datetime-picker
@@ -232,7 +232,7 @@ test('v-model', async () => {
   });
 
   await later();
-  
+
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.vm.date).toEqual(minDate);
 });
@@ -245,6 +245,32 @@ test('value has an inital value', () => {
     },
   });
 
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual(defaultValue);
+});
+
+test('change min-date and emit correct value', async () => {
+  const defaultValue = new Date(2020, 10, 2, 10, 30);
+  const wrapper = mount({
+    template: `
+    <van-datetime-picker
+      v-model="date"
+      :min-date="minDate"
+      @confirm="value => this.$emit('confirm', value)"
+    />
+    `,
+    data() {
+      return {
+        date: defaultValue,
+        minDate: new Date(2010, 0, 1, 10, 30),
+      }
+    },
+    mounted() {
+      this.minDate = defaultValue;
+    },
+  })
+
+  await later();
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[0][0]).toEqual(defaultValue);
 });

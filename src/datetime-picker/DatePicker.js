@@ -30,7 +30,11 @@ export default createComponent({
 
   watch: {
     filter: 'updateInnerValue',
-    minDate: 'updateInnerValue',
+    minDate() {
+      this.$nextTick(() => {
+        this.updateInnerValue();
+      });
+    },
     maxDate: 'updateInnerValue',
 
     value(val) {

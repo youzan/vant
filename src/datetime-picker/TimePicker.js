@@ -45,7 +45,11 @@ export default createComponent({
 
   watch: {
     filter: 'updateInnerValue',
-    minHour: 'updateInnerValue',
+    minHour() {
+      this.$nextTick(() => {
+        this.updateInnerValue();
+      });
+    },
     maxHour: 'updateInnerValue',
     minMinute: 'updateInnerValue',
     maxMinute: 'updateInnerValue',
