@@ -32,6 +32,7 @@ import {
 } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
+import { onPopupReopen } from '../composables/on-popup-reopen';
 
 const [name, bem] = createNamespace('swipe');
 
@@ -219,6 +220,7 @@ export default defineComponent({
       }
     };
 
+    // swipe to prev item
     const prev = () => {
       correctPosition();
       touch.reset();
@@ -232,6 +234,7 @@ export default defineComponent({
       });
     };
 
+    // swipe to next item
     const next = () => {
       correctPosition();
       touch.reset();
@@ -247,13 +250,11 @@ export default defineComponent({
 
     let autoplayTimer: NodeJS.Timeout;
 
-    const stopAutoplay = () => {
-      clearTimeout(autoplayTimer);
-    };
+    const stopAutoplay = () => clearTimeout(autoplayTimer);
 
     const autoplay = () => {
+      stopAutoplay();
       if (props.autoplay > 0 && count.value > 1) {
-        stopAutoplay();
         autoplayTimer = setTimeout(() => {
           next();
           autoplay();
@@ -263,32 +264,30 @@ export default defineComponent({
 
     // initialize swipe position
     const initialize = (active = +props.initialSwipe) => {
-      if (!root.value || isHidden(root)) {
+      if (!root.value) {
         return;
       }
 
-      stopAutoplay();
-
-      const rect = {
-        width: root.value.offsetWidth,
-        height: root.value.offsetHeight,
-      };
+      if (!isHidden(root)) {
+        const rect = {
+          width: root.value.offsetWidth,
+          height: root.value.offsetHeight,
+        };
+        state.rect = rect;
+        state.width = +(props.width ?? rect.width);
+        state.height = +(props.height ?? rect.height);
+      }
 
       if (count.value) {
         active = Math.min(count.value - 1, active);
       }
 
-      state.rect = rect;
-      state.swiping = true;
       state.active = active;
-      state.width = +(props.width ?? rect.width);
-      state.height = +(props.height ?? rect.height);
+      state.swiping = true;
       state.offset = getTargetOffset(active);
       children.forEach((swipe) => {
         swipe.setOffset(0);
       });
-
-      autoplay();
     };
 
     const resize = () => initialize(state.active);
@@ -425,20 +424,8 @@ export default defineComponent({
     );
 
     watch(count, () => initialize(state.active));
-
-    watch(
-      () => props.autoplay,
-      (value) => {
-        if (value > 0) {
-          autoplay();
-        } else {
-          stopAutoplay();
-        }
-      }
-    );
-
+    watch([count, () => props.autoplay], autoplay);
     watch([windowSize.width, windowSize.height], resize);
-
     watch(usePageVisibility(), (visible) => {
       if (visible === 'visible') {
         autoplay();
@@ -449,6 +436,7 @@ export default defineComponent({
 
     onMounted(initialize);
     onActivated(() => initialize(state.active));
+    onPopupReopen(() => initialize(state.active));
     onDeactivated(stopAutoplay);
     onBeforeUnmount(stopAutoplay);
 
