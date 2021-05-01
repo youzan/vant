@@ -187,10 +187,10 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Swipe 
 
 ### Swipe Slots
 
-| Name                | Description      | SlotProps |
-| ------------------- | ---------------- | --------- |
-| default             | Content          | -         |
-| indicator `v3.0.16` | Custom indicator | -         |
+| Name                | Description      | SlotProps            |
+| ------------------- | ---------------- | -------------------- |
+| default             | Content          | -                    |
+| indicator `v3.0.16` | Custom indicator | _{ active: number }_ |
 
 ### Less Variables
 
