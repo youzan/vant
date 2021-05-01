@@ -392,7 +392,9 @@ export default defineComponent({
 
     const renderIndicator = () => {
       if (slots.indicator) {
-        return slots.indicator();
+        return slots.indicator({
+          active: activeIndicator.value,
+        });
       }
       if (props.showIndicators && count.value > 1) {
         return (
