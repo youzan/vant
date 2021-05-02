@@ -57,17 +57,6 @@ function remove(arr, item) {
   if (index > -1) return arr.splice(index, 1);
 }
 
-function some(arr, fn) {
-  let has = false;
-  for (let i = 0, len = arr.length; i < len; i++) {
-    if (fn(arr[i])) {
-      has = true;
-      break;
-    }
-  }
-  return has;
-}
-
 function getBestSelectionFromSrcset(el, scale) {
   if (el.tagName !== 'IMG' || !el.getAttribute('data-srcset')) return;
 
@@ -290,15 +279,6 @@ function isObject(obj) {
   return obj !== null && typeof obj === 'object';
 }
 
-function ArrayFrom(arrLike) {
-  const len = arrLike.length;
-  const list = [];
-  for (let i = 0; i < len; i++) {
-    list.push(arrLike[i]);
-  }
-  return list;
-}
-
 function noop() {}
 
 class ImageCache {
@@ -331,10 +311,8 @@ export {
   inBrowser,
   CustomEvent,
   remove,
-  some,
   find,
   noop,
-  ArrayFrom,
   _,
   isObject,
   throttle,

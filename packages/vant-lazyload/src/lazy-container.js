@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import { find, remove, ArrayFrom } from './util';
+import { find, remove } from './util';
 
 const defaultOptions = {
   selector: 'img',
@@ -44,7 +44,7 @@ class LazyContainer {
   }
 
   getImgs() {
-    return ArrayFrom(this.el.querySelectorAll(this.options.selector));
+    return Array.from(this.el.querySelectorAll(this.options.selector));
   }
 
   clear() {
@@ -57,10 +57,9 @@ class LazyContainer {
   }
 }
 
-export default class LazyContainerMananger {
+export default class LazyContainerManager {
   constructor({ lazy }) {
     this.lazy = lazy;
-    lazy.lazyContainerMananger = this;
     this._queue = [];
   }
 

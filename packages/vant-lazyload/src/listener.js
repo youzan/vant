@@ -1,12 +1,5 @@
 import { loadImageAsync, noop } from './util';
 
-// el: {
-//     state,
-//     src,
-//     error,
-//     loading
-// }
-
 export default class ReactiveListener {
   constructor({
     el,
