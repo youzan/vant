@@ -79,7 +79,7 @@ Notify({
 
 ### 全局方法
 
-通过 `app.use` 注册 Notify 组件后，会自动在 app 的所有子组件上挂载 `$notify` 方法，便于在组件内调用。
+通过 `app.use` 全局注册 Notify 组件后，会自动在 app 的所有子组件上挂载 `$notify` 方法，便于在组件内调用。
 
 ```js
 export default {
@@ -88,6 +88,8 @@ export default {
   },
 };
 ```
+
+> Tips: 由于 setup 选项中无法访问 this，因此不能使用上述方式，请通过 import 引入。
 
 ### 组件调用
 

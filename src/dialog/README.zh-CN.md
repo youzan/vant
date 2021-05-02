@@ -119,7 +119,7 @@ Dialog.confirm({
 
 ### 全局方法
 
-通过 `app.use` 注册 Dialog 组件后，会自动在 app 的所有子组件上挂载 `$dialog` 方法，在所有组件内部都可以直接调用此方法。
+通过 `app.use` 全局注册 Dialog 组件后，会自动在 app 的所有子组件上挂载 `$dialog` 方法，在所有组件内部都可以直接调用此方法。
 
 ```js
 export default {
@@ -130,6 +130,8 @@ export default {
   },
 };
 ```
+
+> Tips: 由于 setup 选项中无法访问 this，因此不能使用上述方式，请通过 import 引入。
 
 ### 组件调用
 
