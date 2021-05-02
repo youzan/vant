@@ -49,6 +49,12 @@ npm i vant@next -S
 </script>
 ```
 
+你可以通过以下免费 CDN 服务来使用 Vant:
+
+- [jsdelivr](https://www.jsdelivr.com/package/npm/vant)
+- [cdnjs](https://cdnjs.com/libraries/vant)
+- [unpkg](https://unpkg.com/)
+
 ### 通过脚手架安装
 
 在新项目中使用 Vant 时，推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目并安装 Vant。

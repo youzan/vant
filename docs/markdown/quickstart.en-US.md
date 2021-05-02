@@ -42,6 +42,12 @@ The easiest way to use Vant is to include a CDN link in the html file, after whi
 </script>
 ```
 
+You can use Vant through these free CDN services:
+
+- [jsdelivr](https://www.jsdelivr.com/package/npm/vant)
+- [cdnjs](https://cdnjs.com/libraries/vant)
+- [unpkg](https://unpkg.com/)
+
 ### CLI
 
 We recomment to use [Vue Cli](https://cli.vuejs.org/) to create a new project.
