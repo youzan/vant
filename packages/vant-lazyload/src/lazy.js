@@ -3,7 +3,6 @@ import {
   inBrowser,
   CustomEvent,
   remove,
-  some,
   find,
   _,
   throttle,
@@ -52,7 +51,6 @@ export default function () {
       observer,
       observerOptions,
     }) {
-      this.version = '__VUE_LAZYLOAD_VERSION__';
       this.mode = modeType.event;
       this.ListenerQueue = [];
       this.TargetIndex = 0;
@@ -126,7 +124,7 @@ export default function () {
      * @return
      */
     add(el, binding, vnode) {
-      if (some(this.ListenerQueue, (item) => item.el === el)) {
+      if (this.ListenerQueue.some((item) => item.el === el)) {
         this.update(el, binding);
         return nextTick(this.lazyLoadHandler);
       }
