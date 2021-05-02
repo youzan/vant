@@ -102,12 +102,6 @@ Vant 3 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一致
 
 <img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="220" height="220" >
 
-## 微信讨论群
-
-欢迎大家加入 Vant 交流群一起讨论，添加下方微信并注明『加入 Vant 交流群』即可
-
-<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
-
 ## 开源协议
 
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) 协议，请自由地享受和参与开源。
