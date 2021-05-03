@@ -24,6 +24,13 @@ Use `name` prop to set icon name or icon URL.
 
 ```html
 <van-icon name="chat-o" />
+```
+
+### Using URL
+
+You can directly passing an image URL to the `name` props.
+
+```html
 <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
 ```
 
@@ -53,18 +60,11 @@ Use `color` prop to set icon color.
 Use `size` prop to set icon size.
 
 ```html
-<van-icon name="chat-o" size="40" /> <van-icon name="chat-o" size="3rem" />
+<!-- Using px unit by default -->
+<van-icon name="chat-o" size="40" />
+<!-- Using rem unit -->
+<van-icon name="chat-o" size="3rem" />
 ```
-
-### Use local font file
-
-Icon uses font file in `yzcdn.cn` by default，if you want to use the local font file，please import the following css file.
-
-```js
-import 'vant/lib/icon/local.css';
-```
-
-> Tips: Starting from version 2.10.13, Vant will use local font files in woff2 format by default
 
 ### Add custom iconfont
 
@@ -91,15 +91,15 @@ import 'vant/lib/icon/local.css';
 
 ### Props
 
-| Attribute    | Description             | Type               | Default    |
-| ------------ | ----------------------- | ------------------ | ---------- |
-| name         | Icon name or URL        | _string_           | `''`       |
-| dot          | Whether to show red dot | _boolean_          | `false`    |
-| badge        | Content of the badge    | _number \| string_ | `''`       |
-| color        | Icon color              | _string_           | `inherit`  |
-| size         | Icon size               | _number \| string_ | `inherit`  |
-| class-prefix | ClassName prefix        | _string_           | `van-icon` |
-| tag          | HTML Tag                | _string_           | `i`        |
+| Attribute    | Description              | Type               | Default    |
+| ------------ | ------------------------ | ------------------ | ---------- |
+| name         | Icon name or URL         | _string_           | `''`       |
+| dot          | Whether to show red dot  | _boolean_          | `false`    |
+| badge        | Content of the badge     | _number \| string_ | `''`       |
+| color        | Icon color               | _string_           | `inherit`  |
+| size         | Icon size                | _number \| string_ | `inherit`  |
+| class-prefix | ClassName prefix         | _string_           | `van-icon` |
+| tag          | HTML Tag of root element | _string_           | `i`        |
 
 ### Events
 

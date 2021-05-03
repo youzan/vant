@@ -20,10 +20,17 @@ app.use(Icon);
 
 ### 基础用法
 
-`Icon` 的 `name` 属性支持传入图标名称或图片链接，所有可用的图标名称见右侧示例。
+通过 `name` 属性来指定需要使用的图标，Vant 内置了一套图标库（见右侧示例），可以直接传入对应的名称来使用。
 
 ```html
 <van-icon name="chat-o" />
+```
+
+### 使用图片 URL
+
+你也可以直接在 `name` 属性中传入一个图片 URL 来作为图标。
+
+```html
 <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
 ```
 
@@ -39,7 +46,7 @@ app.use(Icon);
 
 ### 图标颜色
 
-`Icon` 的 `color` 属性用来设置图标的颜色。
+通过 `color` 属性来设置图标的颜色。
 
 ```html
 <van-icon name="cart-o" color="#1989fa" />
@@ -48,21 +55,14 @@ app.use(Icon);
 
 ### 图标大小
 
-`Icon` 的 `size` 属性用来设置图标的尺寸大小，默认单位为 `px`。
+通过 `size` 属性来设置图标的尺寸大小，可以指定任意 CSS 单位。
 
 ```html
-<van-icon name="chat-o" size="40" /> <van-icon name="chat-o" size="3rem" />
+<!-- 不指定单位，默认使用 px -->
+<van-icon name="chat-o" size="40" />
+<!-- 指定使用 rem 单位 -->
+<van-icon name="chat-o" size="3rem" />
 ```
-
-### 使用本地字体文件
-
-Icon 组件默认引用有赞 CDN 提供的字体文件，并通过网络下载。如果需要在项目中使用本地字体文件，请引入下面的 CSS 文件，并在项目中配置 `url-loader`。
-
-```js
-import 'vant/lib/icon/local.css';
-```
-
-> Tips: Vant 默认使用 woff2 格式的本地字体文件，只有在不支持 woff2 字体的低端浏览器上才会加载有赞 CDN 的网络图标。
 
 ### 自定义图标
 
@@ -101,7 +101,7 @@ import 'vant/lib/icon/local.css';
 | color | 图标颜色 | _string_ | `inherit` |
 | size | 图标大小，如 `20px` `2em`，默认单位为 `px` | _number \| string_ | `inherit` |
 | class-prefix | 类名前缀，用于使用自定义图标 | _string_ | `van-icon` |
-| tag | HTML 标签 | _string_ | `i` |
+| tag | 根节点对应的 HTML 标签名 | _string_ | `i` |
 
 ### Events
 
