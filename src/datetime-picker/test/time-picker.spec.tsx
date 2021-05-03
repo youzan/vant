@@ -11,7 +11,7 @@ function formatter(type: string, value: string): string {
   return `${value} ${type}`;
 }
 
-test('format initial value', async () => {
+test('format initial value', () => {
   const wrapper = mount(TimePicker, {
     props: {
       minHour: 22,
@@ -19,11 +19,10 @@ test('format initial value', async () => {
     },
   });
 
-  await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('max-hour & max-minute', async () => {
+test('max-hour & max-minute', () => {
   const wrapper = mount(TimePicker, {
     props: {
       modelValue: '23:59',
@@ -32,23 +31,21 @@ test('max-hour & max-minute', async () => {
     },
   });
 
-  await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('filter prop', async () => {
+test('filter prop', () => {
   const wrapper = mount(TimePicker, {
     props: {
       filter,
-      value: '12:00',
+      modelValue: '12:00',
     },
   });
 
-  await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('formatter prop', async () => {
+test('formatter prop', () => {
   const wrapper = mount(TimePicker, {
     props: {
       filter,
@@ -57,12 +54,10 @@ test('formatter prop', async () => {
     },
   });
 
-  await later();
   expect(wrapper.html()).toMatchSnapshot();
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker-column ul').trigger('transitionend');
-  await later();
 
   expect((wrapper.vm as Record<string, any>).getPicker().getValues()).toEqual([
     '20 hour',
@@ -73,7 +68,7 @@ test('formatter prop', async () => {
 test('confirm event', () => {
   const wrapper = mount(TimePicker, {
     props: {
-      value: '12:00',
+      modelValue: '12:00',
     },
   });
 
@@ -92,14 +87,12 @@ test('cancel event', () => {
 test('dynamic set value', async () => {
   const wrapper = mount(TimePicker);
 
-  wrapper.setProps({ modelValue: '00:00' });
-  await later();
+  await wrapper.setProps({ modelValue: '00:00' });
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted<[string]>('confirm')![0][0]).toEqual('00:00');
+  await wrapper.setProps({ modelValue: '22:30' });
+  wrapper.find('.van-picker__confirm').trigger('click');
 
-  wrapper.setProps({ modelValue: '22:30' });
-  await later();
-  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted<[string]>('confirm')![0][0]).toEqual('00:00');
   expect(wrapper.emitted<[string]>('confirm')![1][0]).toEqual('22:30');
 });
 
@@ -125,11 +118,10 @@ test('set max-hour & max-minute smaller than current then emit correct value', a
   });
 
   await later();
-  wrapper.setProps({
+  await wrapper.setProps({
     maxHour: 2,
     maxMinute: 2,
   });
-  await later();
 
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted<[string]>('confirm')![0][0]).toEqual('00:00');

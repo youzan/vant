@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`filter prop 1`] = `
-<div class="van-picker"
-     value="Sun Nov 01 2020 00:00:00 GMT+0800 (中国标准时间)"
->
+<div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
             class="van-picker__cancel"
@@ -296,9 +294,7 @@ exports[`filter prop 1`] = `
 `;
 
 exports[`formatter prop 1`] = `
-<div class="van-picker"
-     value="Sun Nov 01 2020 00:00:00 GMT+0800 (中国标准时间)"
->
+<div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
             class="van-picker__cancel"

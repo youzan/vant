@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`filter prop 1`] = `
-<div class="van-picker"
-     value="12:00"
->
+<div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
             class="van-picker__cancel"
@@ -377,13 +375,13 @@ exports[`max-hour & max-minute 1`] = `
        style="height: 264px;"
   >
     <div class="van-picker-column">
-      <ul style="transform: translate3d(0, 22px, 0); transition-duration: 0ms; transition-property: none;"
+      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
           class="van-picker-column__wrapper"
       >
         <li role="button"
             style="height: 44px;"
             tabindex="0"
-            class="van-picker-column__item"
+            class="van-picker-column__item van-picker-column__item--selected"
         >
           <div class="van-ellipsis">
             00
@@ -401,7 +399,7 @@ exports[`max-hour & max-minute 1`] = `
         <li role="button"
             style="height: 44px;"
             tabindex="0"
-            class="van-picker-column__item van-picker-column__item--selected"
+            class="van-picker-column__item"
         >
           <div class="van-ellipsis">
             02
@@ -410,13 +408,13 @@ exports[`max-hour & max-minute 1`] = `
       </ul>
     </div>
     <div class="van-picker-column">
-      <ul style="transform: translate3d(0, 22px, 0); transition-duration: 0ms; transition-property: none;"
+      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
           class="van-picker-column__wrapper"
       >
         <li role="button"
             style="height: 44px;"
             tabindex="0"
-            class="van-picker-column__item"
+            class="van-picker-column__item van-picker-column__item--selected"
         >
           <div class="van-ellipsis">
             00
@@ -434,7 +432,7 @@ exports[`max-hour & max-minute 1`] = `
         <li role="button"
             style="height: 44px;"
             tabindex="0"
-            class="van-picker-column__item van-picker-column__item--selected"
+            class="van-picker-column__item"
         >
           <div class="van-ellipsis">
             02

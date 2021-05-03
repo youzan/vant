@@ -16,25 +16,24 @@ test('filter prop', async () => {
       filter,
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      value: new Date(2020, 10, 1, 0, 0),
+      modelValue: new Date(2020, 10, 1, 0, 0),
     },
   });
 
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('formatter prop', async () => {
+test('formatter prop', () => {
   const wrapper = mount(DatePicker, {
     props: {
       filter,
       formatter,
       minDate: new Date(2010, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      value: new Date(2020, 10, 1, 0, 0),
+      modelValue: new Date(2020, 10, 1, 0, 0),
     },
   });
 
-  await later();
   expect(wrapper.html()).toMatchSnapshot();
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
@@ -49,18 +48,16 @@ test('formatter prop', async () => {
   ]);
 });
 
-test('confirm event', async () => {
+test('confirm event', () => {
   const date = new Date(2020, 10, 1, 0, 0);
 
   const wrapper = mount(DatePicker, {
     props: {
-      value: date,
+      modelValue: date,
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
     },
   });
-
-  await later();
 
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted<[Date]>('confirm')![0][0].getFullYear()).toEqual(2020);
@@ -185,14 +182,12 @@ test('dynamic set value', async () => {
     },
   });
 
-  wrapper.setProps({ modelValue: new Date(2019, 1, 1) });
-  await later();
+  await wrapper.setProps({ modelValue: new Date(2019, 1, 1) });
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted<[Date]>('confirm')![0][0].getFullYear()).toEqual(2019);
+  await wrapper.setProps({ modelValue: new Date(2025, 1, 1) });
+  wrapper.find('.van-picker__confirm').trigger('click');
 
-  wrapper.setProps({ modelValue: new Date(2025, 1, 1) });
-  await later();
-  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted<[Date]>('confirm')![0][0].getFullYear()).toEqual(2019);
   expect(wrapper.emitted<[Date]>('confirm')![1][0].getFullYear()).toEqual(2025);
 });
 
