@@ -21,7 +21,7 @@ type CascaderTab = {
   selectedOption: CascaderOption | null;
 };
 
-type CascaderFieldNames = {
+export type CascaderFieldNames = {
   text?: string;
   value?: string;
   children?: string;

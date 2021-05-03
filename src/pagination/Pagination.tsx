@@ -1,6 +1,6 @@
+import { computed, watch, PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { BORDER } from '../utils/constant';
-import { computed, watch, defineComponent } from 'vue';
 
 const [name, bem, t] = createNamespace('pagination');
 
@@ -18,6 +18,8 @@ function makePage(
   return { number, text, active };
 }
 
+export type PaginationMode = 'simple' | 'multi';
+
 export default defineComponent({
   name,
 
@@ -26,7 +28,7 @@ export default defineComponent({
     nextText: String,
     forceEllipses: Boolean,
     mode: {
-      type: String,
+      type: String as PropType<PaginationMode>,
       default: 'multi',
     },
     modelValue: {
