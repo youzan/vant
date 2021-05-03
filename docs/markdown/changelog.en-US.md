@@ -16,6 +16,18 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.16](https://github.com/youzan/vant/compare/v2.12.15...v2.12.16)
+
+`2021-05-03`
+
+**Feature**
+
+- Steps: add icon-prefix prop [#8630](https://github.com/youzan/vant/issues/8630)
+
+**Bug Fixes**
+
+- DatetimePicker: fixed show incorrect date time when dynamic set mindate or maxdate [#8640](https://github.com/youzan/vant/issues/8640)
+
 ### [v2.12.15](https://github.com/youzan/vant/compare/v2.12.14...v2.12.15)
 
 `2021-04-25`

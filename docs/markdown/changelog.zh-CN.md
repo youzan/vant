@@ -16,6 +16,18 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.16](https://github.com/youzan/vant/compare/v2.12.15...v2.12.16)
+
+`2021-05-03`
+
+**Feature**
+
+- Steps: 新增 icon-prefix 属性 [#8630](https://github.com/youzan/vant/issues/8630)
+
+**Bug Fixes**
+
+- DatetimePicker: 修复动态设置 mindate 或 maxdate 时可能导致日期错误的问题 [#8640](https://github.com/youzan/vant/issues/8640)
+
 ### [v2.12.15](https://github.com/youzan/vant/compare/v2.12.14...v2.12.15)
 
 `2021-04-25`
