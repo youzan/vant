@@ -80,10 +80,9 @@ Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) to 
 npm i babel-plugin-import -D
 ```
 
-Set babel config in .babelrc or babel-loader:
+Set babel config in .babelrc or babel.config.js:
 
 ```json
-// Note: Don't set libraryDirectory if you are using webpack 1.
 {
   "plugins": [
     [
@@ -98,45 +97,56 @@ Set babel config in .babelrc or babel-loader:
 }
 ```
 
+Then you can import components from vant:
+
 ```js
-// For users who use babel7, that can be configured in babel.config.js
-module.exports = {
+// Input
+import { Button } from 'vant';
+
+// Output
+import Button from 'vant/es/button';
+import 'vant/es/button/style';
+```
+
+> If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead.
+
+### 2. Vite Plugin
+
+If you are using Vite, please use [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import).
+
+```bash
+npm i vite-plugin-style-import -D
+```
+
+```js
+// vite.config.js
+import vue from '@vitejs/plugin-vue';
+import styleImport from 'vite-plugin-style-import';
+
+export default {
   plugins: [
-    [
-      'import',
-      {
-        libraryName: 'vant',
-        libraryDirectory: 'es',
-        style: true,
-      },
-      'vant',
-    ],
+    vue(),
+    styleImport({
+      libs: [
+        {
+          libraryName: 'vant',
+          esModule: true,
+          resolveStyle: (name) => `vant/es/${name}/style`,
+        },
+      ],
+    }),
   ],
 };
 ```
 
-Then you can import components from vant:
+### 3. Manually import
 
 ```js
-import { Button } from 'vant';
+import Button from 'vant/es/button';
+import 'vant/es/button/style';
 ```
 
-#### Vite Plugin
-
-If you are using Vite, please use [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) or [vite-plugin-imp](https://github.com/onebay/vite-plugin-imp) instead.
-
-#### TypeScript Plugin
-
-If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead.
-
-### 2. Manually import
-
-```js
-import Button from 'vant/lib/button';
-import 'vant/lib/button/style';
-```
-
-### 3. Import all components
+### 4. Import all components
 
 ```js
 import { createApp } from 'vue';

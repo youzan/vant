@@ -92,19 +92,18 @@ vue ui
 
 ## 引入组件
 
-### 方式一. 自动按需引入组件 (推荐)
+### 方式一. 通过 babel 插件按需引入组件
 
-[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式。
+[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一款 babel 插件，它会在编译过程中将 import 语句自动转换为按需引入的方式。
 
 ```bash
 # 安装插件
 npm i babel-plugin-import -D
 ```
 
-在.babelrc 中添加配置：
+在.babelrc 或 babel.config.js 中添加配置：
 
 ```json
-// 注意：webpack 1 无需设置 libraryDirectory
 {
   "plugins": [
     [
@@ -119,48 +118,61 @@ npm i babel-plugin-import -D
 }
 ```
 
+接着你可以在代码中直接引入 Vant 组件，插件会自动将代码转化为按需引入的形式。
+
 ```js
-// 对于使用 babel7 的用户，可以在 babel.config.js 中配置
-module.exports = {
+// 原始代码
+import { Button } from 'vant';
+
+// 编译后代码
+import Button from 'vant/es/button';
+import 'vant/es/button/style';
+```
+
+> 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入。
+
+### 方式二. 在 Vite 项目中按需引入组件
+
+对于 vite 项目，可以使用 [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) 实现按需引入, 原理和 `babel-plugin-import` 类似。
+
+```bash
+# 安装插件
+npm i vite-plugin-style-import -D
+```
+
+```js
+// vite.config.js
+import vue from '@vitejs/plugin-vue';
+import styleImport from 'vite-plugin-style-import';
+
+export default {
   plugins: [
-    [
-      'import',
-      {
-        libraryName: 'vant',
-        libraryDirectory: 'es',
-        style: true,
-      },
-      'vant',
-    ],
+    vue(),
+    styleImport({
+      libs: [
+        {
+          libraryName: 'vant',
+          esModule: true,
+          resolveStyle: (name) => `vant/es/${name}/style`,
+        },
+      ],
+    }),
   ],
 };
 ```
 
-接着你可以在代码中直接引入 Vant 组件：
+### 方式三. 手动按需引入组件
+
+在不使用插件的情况下，可以手动引入需要使用的组件和样式。
 
 ```js
-// 插件会自动将代码转化为方式二中的按需引入形式
-import { Button } from 'vant';
+// 引入组件
+import Button from 'vant/es/button';
+// 引入组件对应的样式，若组件没有样式文件，则无须引入
+import 'vant/es/button/style';
 ```
 
-#### Vite 插件
-
-对于 vite 项目，可以使用 [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) 或 [vite-plugin-imp](https://github.com/onebay/vite-plugin-imp) 实现按需引入。
-
-#### TypeScript 插件
-
-如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入。
-
-### 方式二. 手动按需引入组件
-
-在不使用插件的情况下，可以手动引入需要的组件。
-
-```js
-import Button from 'vant/lib/button';
-import 'vant/lib/button/style';
-```
-
-### 方式三. 导入所有组件
+### 方式四. 导入所有组件
 
 Vant 支持一次性导入所有组件，引入所有组件会增加代码包体积，因此不推荐这种做法。
 
