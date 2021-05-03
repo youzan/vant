@@ -1,35 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render title slot correctly 1`] = `
-DOMWrapper {
-  "element": <div
-    class="van-picker__toolbar"
+<div class="van-picker__toolbar">
+  <button type="button"
+          class="van-picker__cancel"
   >
-    
-    <button
-      class="van-picker__cancel"
-      type="button"
-    >
-      Cancel
-    </button>
-    
-    Custom title
-    
-    <button
-      class="van-picker__confirm"
-      type="button"
-    >
-      Confirm
-    </button>
-    
-  </div>,
-  "style": CSSStyleDeclaration {
-    "_importants": Object {},
-    "_length": 0,
-    "_onChange": [Function],
-    "_values": Object {},
-  },
-}
+    Cancel
+  </button>
+  Custom title
+  <button type="button"
+          class="van-picker__confirm"
+  >
+    Confirm
+  </button>
+</div>
 `;
 
 exports[`time type 1`] = `

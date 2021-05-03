@@ -47,5 +47,5 @@ test('should render title slot correctly', () => {
     },
   });
 
-  expect(wrapper.find('.van-picker__toolbar')).toMatchSnapshot();
+  expect(wrapper.find('.van-picker__toolbar').html()).toMatchSnapshot();
 });
