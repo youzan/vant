@@ -3,7 +3,7 @@ name: Deploy V3 Site
 on:
   push:
     tags:
-      - 'v3*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - 'v3.**'
 
 jobs:
   build-and-deploy:
