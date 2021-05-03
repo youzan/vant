@@ -51,7 +51,7 @@
   "license": "MIT",
   "dependencies": {
     "@vant/icons": "^1.5.3",
-    "@vant/lazyload": "^1.1.1",
+    "@vant/lazyload": "^1.2.0",
     "@vant/popperjs": "^1.1.0",
     "@vant/use": "^1.1.1"
   },
