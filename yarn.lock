@@ -2000,10 +2000,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.10.1":
-  version "2.10.1"
-  resolved "https://registry.nlark.com/@vant/cli/download/@vant/cli-2.10.1.tgz#a51824970f8f5f594e95a233e0a74ed1625c0ad8"
-  integrity sha1-pRgklw+PX1lOlaIz4KdO0WJcCtg=
+"@vant/cli@^2.10.2":
+  version "2.10.2"
+  resolved "https://registry.nlark.com/@vant/cli/download/@vant/cli-2.10.2.tgz?cache=0&sync_timestamp=1620007557979&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-2.10.2.tgz#0524a8df9f12d20b6f1506223ecc28ab9fefb909"
+  integrity sha1-BSSo358S0gtvFQYiPswoq5/vuQk=
   dependencies:
     "@babel/core" "^7.10.1"
     "@babel/plugin-syntax-jsx" "^7.10.1"
@@ -2016,7 +2016,7 @@
     "@types/webpack" "^4.41.13"
     "@types/webpack-dev-server" "^3.11.0"
     "@vant/eslint-config" "^2.2.2"
-    "@vant/markdown-loader" "^2.4.0"
+    "@vant/markdown-loader" "^2.5.0"
     "@vant/markdown-vetur" "^2.0.2"
     "@vant/stylelint-config" "^1.3.0"
     "@vant/touch-emulator" "^1.2.0"
@@ -2088,13 +2088,13 @@
   resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.5.2.tgz?cache=0&sync_timestamp=1611633258561&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Ficons%2Fdownload%2F%40vant%2Ficons-1.5.2.tgz#3f3ea353a0eacd38c113757bd31836489facb10b"
   integrity sha1-Pz6jU6DqzTjBE3V70xg2SJ+ssQs=
 
-"@vant/markdown-loader@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.npmjs.org/@vant/markdown-loader/-/markdown-loader-2.4.0.tgz#abc5471645eef7a91331e79b27179b8c8584982b"
-  integrity sha512-3TRzCctl4eCcm3o1cXaQpcvWZrf1lB2al/gU7yYiy/PTgCqIPzHgDMJT6b3TJ1cE0tszNgUDc056LMVIhMcNqg==
+"@vant/markdown-loader@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.nlark.com/@vant/markdown-loader/download/@vant/markdown-loader-2.5.0.tgz?cache=0&sync_timestamp=1620007458334&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vant%2Fmarkdown-loader%2Fdownload%2F%40vant%2Fmarkdown-loader-2.5.0.tgz#08cb57da975d2f47c009695ff515b48920e37bbd"
+  integrity sha1-CMtX2pddL0fACWlf9RW0iSDje70=
   dependencies:
     front-matter "^3.0.2"
-    highlight.js "^9.17.1"
+    highlight.js "^10.0.0"
     loader-utils "^1.2.3"
     markdown-it "^10.0.0"
     markdown-it-anchor "^5.2.5"
@@ -6025,10 +6025,10 @@ he@^1.1.0, he@^1.2.0:
   resolved "https://registry.npm.taobao.org/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
 
-highlight.js@^9.17.1:
-  version "9.18.5"
-  resolved "https://registry.npmjs.org/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
-  integrity sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==
+highlight.js@^10.0.0:
+  version "10.7.2"
+  resolved "https://registry.nlark.com/highlight.js/download/highlight.js-10.7.2.tgz#89319b861edc66c48854ed1e6da21ea89f847360"
+  integrity sha1-iTGbhh7cZsSIVO0ebaIeqJ+Ec2A=
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
