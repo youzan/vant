@@ -20,6 +20,8 @@ import { Loading } from '../loading';
 
 const [name, bem, t] = createNamespace('list');
 
+export type ListDirection = 'up' | 'down';
+
 export default defineComponent({
   name,
 
@@ -36,7 +38,7 @@ export default defineComponent({
       default: 300,
     },
     direction: {
-      type: String as PropType<'up' | 'down'>,
+      type: String as PropType<ListDirection>,
       default: 'down',
     },
   },

@@ -5,4 +5,4 @@ const Cascader = withInstall<typeof _Cascader>(_Cascader);
 
 export default Cascader;
 export { Cascader };
-export type { CascaderOption } from './Cascader';
+export type { CascaderOption, CascaderFieldNames } from './Cascader';
