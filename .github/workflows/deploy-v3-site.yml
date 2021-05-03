@@ -2,8 +2,9 @@ name: Deploy V3 Site
 
 on:
   push:
-    tags:
-      - 'v3.**'
+    branches: [dev]
+    paths:
+      - 'docs/**'
 
 jobs:
   build-and-deploy:
