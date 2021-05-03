@@ -16,6 +16,24 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.16](https://github.com/youzan/vant/compare/v3.0.15...v3.0.16)
+
+`2021-05-03`
+
+**Feature**
+
+- Swipe: indicator slot add active param [#8645](https://github.com/youzan/vant/issues/8645)
+- Cascader: add @cascader-header-padding less var [#8626](https://github.com/youzan/vant/issues/8626)
+- Steps: add icon-prefix prop [#8631](https://github.com/youzan/vant/issues/8631)
+- export more types [#8652](https://github.com/youzan/vant/issues/8652)
+
+**Bug Fixes**
+
+- Stepper: fix blur event trigger timing [#8620](https://github.com/youzan/vant/issues/8620)
+- SubmitBar: @submit-bar-price-font-size not work [#8639](https://github.com/youzan/vant/issues/8639)
+- Swipe: re-initialize when popup reopened [#8643](https://github.com/youzan/vant/issues/8643)
+- Tabs: setLine when popup reopened [#8642](https://github.com/youzan/vant/issues/8642)
+
 ### [v3.0.15](https://github.com/youzan/vant/compare/v2.12.14-test...v3.0.15)
 
 `2021-04-25`

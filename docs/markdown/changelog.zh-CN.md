@@ -16,6 +16,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.16](https://github.com/youzan/vant/compare/v3.0.15...v3.0.16)
+
+`2021-05-03`
+
+**Feature**
+
+- Swipe: 新增 indicator 插槽的 active 参数 [#8645](https://github.com/youzan/vant/issues/8645)
+- Cascader: 新增 @cascader-header-padding less 变量 [#8626](https://github.com/youzan/vant/issues/8626)
+- Steps: 新增 icon-prefix 属性 [#8631](https://github.com/youzan/vant/issues/8631)
+- 导出更多类型定义 [#8652](https://github.com/youzan/vant/issues/8652)
+
+**Bug Fixes**
+
+- Stepper: 修复 blur 事件触发时机 [#8620](https://github.com/youzan/vant/issues/8620)
+- SubmitBar: 修复 @submit-bar-price-font-size 变量不生效的问题 [#8639](https://github.com/youzan/vant/issues/8639)
+- Swipe: 修复在 Popup 内时展示可能不正确的问题 [#8643](https://github.com/youzan/vant/issues/8643)
+- Tabs: 修复在 Popup 内时展示可能不正确的问题 [#8642](https://github.com/youzan/vant/issues/8642)
+
 ### [v3.0.15](https://github.com/youzan/vant/compare/v2.12.14-test...v3.0.15)
 
 `2021-04-25`
