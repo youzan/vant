@@ -45,7 +45,7 @@ test('filter prop', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('formatter prop', () => {
+test('formatter prop', async () => {
   const wrapper = mount(TimePicker, {
     props: {
       filter,
@@ -58,6 +58,7 @@ test('formatter prop', () => {
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker-column ul').trigger('transitionend');
+  await later();
 
   expect((wrapper.vm as Record<string, any>).getPicker().getValues()).toEqual([
     '20 hour',
@@ -104,8 +105,8 @@ test('change min-minute and emit correct value', async () => {
     },
   });
 
-  wrapper.setProps({ minMinute: 30 });
   await later();
+  await wrapper.setProps({ minMinute: 30 });
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted<[string]>('confirm')![0][0]).toEqual('12:30');
 });

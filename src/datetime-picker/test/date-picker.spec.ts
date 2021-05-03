@@ -23,7 +23,7 @@ test('filter prop', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('formatter prop', () => {
+test('formatter prop', async () => {
   const wrapper = mount(DatePicker, {
     props: {
       filter,
@@ -38,6 +38,7 @@ test('formatter prop', () => {
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker-column ul').trigger('transitionend');
+  await later();
 
   expect((wrapper.vm as Record<string, any>).getPicker().getValues()).toEqual([
     '2020 year',
