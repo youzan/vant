@@ -1,5 +1,5 @@
-import {later, mount, triggerDrag} from "../../../test"
-import DatePicker from "../DatePicker"
+import { later, mount, triggerDrag } from '../../../test';
+import DatePicker from '../DatePicker';
 
 test('month-day type', async () => {
   const date = new Date(2020, 10, 1, 0, 0);
@@ -15,20 +15,20 @@ test('month-day type', async () => {
 
   await later();
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0].getMonth()).toEqual(10);
-  expect(wrapper.emitted('confirm')[0][0].getDate()).toEqual(1);
+  expect(wrapper.emitted<[Date]>('confirm')![0][0].getMonth()).toEqual(10);
+  expect(wrapper.emitted<[Date]>('confirm')![0][0].getDate()).toEqual(1);
 
   await later();
   triggerDrag(wrapper.find('.van-picker-column'), 0, -300);
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[1][0].getMonth()).toEqual(11);
-  expect(wrapper.emitted('confirm')[1][0].getDate()).toEqual(1);
+  expect(wrapper.emitted<[Date]>('confirm')![1][0].getMonth()).toEqual(11);
+  expect(wrapper.emitted<[Date]>('confirm')![1][0].getDate()).toEqual(1);
 
   await later();
   triggerDrag(wrapper.findAll('.van-picker-column')[1], 0, -300);
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[2][0].getMonth()).toEqual(11);
-  expect(wrapper.emitted('confirm')[2][0].getDate()).toEqual(31);
+  expect(wrapper.emitted<[Date]>('confirm')![2][0].getMonth()).toEqual(11);
+  expect(wrapper.emitted<[Date]>('confirm')![2][0].getDate()).toEqual(31);
 });
 
 test('v-model', async () => {
@@ -37,12 +37,12 @@ test('v-model', async () => {
   const wrapper = mount(DatePicker, {
     props: {
       minDate,
-    }
-  })
-  
+    },
+  });
+
   await later();
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(minDate);
+  expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(minDate);
 });
 
 test('value has an inital value', async () => {
@@ -55,5 +55,5 @@ test('value has an inital value', async () => {
 
   await later();
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(defaultValue);
+  expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(defaultValue);
 });

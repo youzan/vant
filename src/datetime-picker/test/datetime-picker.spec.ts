@@ -6,9 +6,9 @@ test('confirm & cancel event', () => {
   const onCancel = jest.fn();
 
   const wrapper = mount(DatetimePicker, {
-    listeners: {
-      confirm: onConfirm,
-      cancel: onCancel,
+    props: {
+      onConfirm,
+      onCancel,
     },
   });
 
@@ -33,18 +33,19 @@ test('time type', () => {
 
 test('getPicker method', () => {
   const wrapper = mount(DatetimePicker);
+
   expect(wrapper.vm.getPicker()).toBeTruthy();
 });
 
 test('should render title slot correctly', () => {
   const wrapper = mount(DatetimePicker, {
-    propsData: {
+    props: {
       showToolbar: true,
     },
-    scopedSlots: {
+    slots: {
       title: () => 'Custom title',
     },
   });
 
-  expect(wrapper.find('.van-picker__toolbar')).toMatchSnapshot();
+  expect(wrapper.find('.van-picker__toolbar').html()).toMatchSnapshot();
 });
