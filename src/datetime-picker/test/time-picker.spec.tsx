@@ -1,6 +1,7 @@
 import TimePicker from '../TimePicker';
 import { mount, later, triggerDrag } from '../../../test';
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
+import { useExpose } from '../../composables/use-expose';
 
 function filter(type: string, options: string[]): string[] {
   const mod = type === 'minute' ? 10 : 5;
@@ -149,4 +150,38 @@ test('set min-minute dynamically', async () => {
   wrapper.find('.van-picker__confirm').trigger('click');
   await later();
   expect(wrapper.emitted<[string]>('change')![0][0]).toEqual('13:00');
+});
+
+test('should emit value correctly when dynamic change min-hour', async () => {
+  const wrapper = mount({
+    emits: ['confirm'],
+    setup(_, { emit }) {
+      const state = reactive({
+        time: '10:30',
+        minHour: 1,
+      });
+
+      const onChange = () => {
+        state.minHour = 11;
+      };
+
+      useExpose({
+        onChange,
+      });
+
+      return () => (
+        <TimePicker
+          v-model={state.time}
+          minHour={state.minHour}
+          onConfirm={(value: Date) => emit('confirm', value)}
+        />
+      );
+    },
+  });
+
+  await later();
+  (wrapper.vm as Record<string, any>).onChange();
+  await later();
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual('11:30');
 });
