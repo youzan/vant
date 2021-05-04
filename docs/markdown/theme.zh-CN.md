@@ -93,7 +93,7 @@ Vant 使用了 [Less](http://lesscss.org/) 对样式进行预处理，并内置�
 
 #### 按需引入样式（推荐）
 
-在 babel.config.js 中配置按需引入样式源文件，注意 babel6 不支持按需引入样式，请手动引入样式。
+在 babel.config.js 中配置按需引入样式源文件，注意 babel 6 不支持按需引入样式，请手动引入样式。
 
 ```js
 module.exports = {
@@ -176,5 +176,46 @@ module.exports = {
       },
     },
   },
+};
+```
+
+### Vite 项目
+
+如果是 vite 项目，可以跳过以上步骤，直接在 `vite.config.js` 中添加如下配置即可。
+
+```js
+// vite.config.js
+import vue from '@vitejs/plugin-vue';
+import styleImport from 'vite-plugin-style-import';
+
+export default {
+  css: {
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true,
+        // 覆盖样式变量
+        modifyVars: {
+          'text-color': '#111',
+          'border-color': '#eee',
+        },
+      },
+    },
+  },
+  resolve: {
+    alias: [{ find: /^~/, replacement: '' }],
+  },
+  plugins: [
+    vue(),
+    // 按需引入样式源文件
+    styleImport({
+      libs: [
+        {
+          libraryName: 'vant',
+          esModule: true,
+          resolveStyle: (name) => `vant/es/${name}/style/less`,
+        },
+      ],
+    }),
+  ],
 };
 ```

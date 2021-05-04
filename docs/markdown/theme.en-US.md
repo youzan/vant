@@ -133,13 +133,13 @@ module.exports = {
           options: {
             lessOptions: {
               modifyVars: {
-                // overide with less vars
+                // override with less vars
                 'text-color': '#111',
-                'border-color': '#eee'
+                'border-color': '#eee',
                 // or override with less file
-                'hack': `true; @import "your-less-file-path.less";`
+                hack: `true; @import "your-less-file-path.less";`,
               },
-            }
+            },
           },
         },
       ],
@@ -158,7 +158,7 @@ module.exports = {
       less: {
         lessOptions: {
           modifyVars: {
-            // overide with less vars
+            // override with less vars
             'text-color': '#111',
             'border-color': '#eee',
             // or override with less file
@@ -168,5 +168,44 @@ module.exports = {
       },
     },
   },
+};
+```
+
+### Vite
+
+Add the following config in `vite.config.js`.
+
+```js
+// vite.config.js
+import vue from '@vitejs/plugin-vue';
+import styleImport from 'vite-plugin-style-import';
+
+export default {
+  css: {
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true,
+        modifyVars: {
+          'text-color': '#111',
+          'border-color': '#eee',
+        },
+      },
+    },
+  },
+  resolve: {
+    alias: [{ find: /^~/, replacement: '' }],
+  },
+  plugins: [
+    vue(),
+    styleImport({
+      libs: [
+        {
+          libraryName: 'vant',
+          esModule: true,
+          resolveStyle: (name) => `vant/es/${name}/style/less`,
+        },
+      ],
+    }),
+  ],
 };
 ```
