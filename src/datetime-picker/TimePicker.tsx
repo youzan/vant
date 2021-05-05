@@ -146,14 +146,15 @@ export default defineComponent({
     watch(columns, updateColumnValue);
 
     watch(
-      () => [
-        props.filter,
-        props.minHour,
-        props.maxHour,
-        props.minMinute,
-        props.maxMinute,
-      ],
+      () => [props.filter, props.maxHour, props.minMinute, props.maxMinute],
       updateInnerValue
+    );
+
+    watch(
+      () => props.minHour,
+      () => {
+        nextTick(updateInnerValue);
+      }
     );
 
     watch(currentDate, (value) => emit('update:modelValue', value));

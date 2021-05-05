@@ -1,5 +1,7 @@
 import { DatetimePicker } from '..';
-import { mount } from '../../../test';
+import { mount, later } from '../../../test';
+import { reactive } from 'vue';
+import { useExpose } from '../../composables/use-expose';
 
 test('confirm & cancel event', () => {
   const onConfirm = jest.fn();
@@ -48,4 +50,39 @@ test('should render title slot correctly', () => {
   });
 
   expect(wrapper.find('.van-picker__toolbar').html()).toMatchSnapshot();
+});
+
+test('should emit value correctly when dynamic change min-date', async () => {
+  const defaultValue = new Date(2020, 10, 2, 10, 30);
+  const wrapper = mount({
+    emits: ['confirm'],
+    setup(_, { emit }) {
+      const state = reactive({
+        date: defaultValue,
+        minDate: new Date(2010, 0, 1, 10, 30),
+      });
+
+      const onChange = () => {
+        state.minDate = state.date;
+      };
+
+      useExpose({
+        onChange,
+      });
+
+      return () => (
+        <DatetimePicker
+          v-model={state.date}
+          minDate={state.minDate}
+          onConfirm={(value: Date) => emit('confirm', value)}
+        />
+      );
+    },
+  });
+
+  await later();
+  (wrapper.vm as Record<string, any>).onChange();
+  await later();
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(defaultValue);
 });
