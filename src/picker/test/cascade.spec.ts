@@ -30,6 +30,9 @@ const COLUMNS = [
   },
 ];
 
+const pickColumnText = (column: Array<{ text: string }>) =>
+  column.map((item: { text: string }) => item.text);
+
 test('cascade columns', () => {
   const wrapper = mount(Picker, {
     props: {
@@ -39,14 +42,20 @@ test('cascade columns', () => {
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(['A1', 'B1', 'C1']);
+  expect(
+    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![0][0])
+  ).toEqual(['A1', 'B1', 'C1']);
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker-column ul').trigger('transitionend');
-  expect(wrapper.emitted('change')[0][1]).toEqual(['A2', 'B3', 'C5']);
+  expect(
+    pickColumnText(wrapper.emitted<Record<string, any>>('change')![0][0])
+  ).toEqual(['A2', 'B3', 'C5']);
 
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[1][0]).toEqual(['A2', 'B3', 'C5']);
+  expect(
+    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![1][0])
+  ).toEqual(['A2', 'B3', 'C5']);
 });
 
 test('setColumnValue of cascade columns', () => {
@@ -57,13 +66,17 @@ test('setColumnValue of cascade columns', () => {
     },
   });
 
-  wrapper.vm.setColumnValue(0, 'A2');
+  (wrapper.vm as Record<string, any>).setColumnValue(0, 'A2');
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(['A2', 'B3', 'C5']);
+  expect(
+    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![0][0])
+  ).toEqual(['A2', 'B3', 'C5']);
 
-  wrapper.vm.setColumnValue(1, 'B4');
+  (wrapper.vm as Record<string, any>).setColumnValue(1, 'B4');
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[1][0]).toEqual(['A2', 'B4', 'C7']);
+  expect(
+    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![1][0])
+  ).toEqual(['A2', 'B4', 'C7']);
 });
 
 test('setValues of cascade columns', () => {
@@ -74,9 +87,11 @@ test('setValues of cascade columns', () => {
     },
   });
 
-  wrapper.vm.setValues(['A2', 'B4', 'C8']);
+  (wrapper.vm as Record<string, any>).setValues(['A2', 'B4', 'C8']);
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(['A2', 'B4', 'C8']);
+  expect(
+    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![0][0])
+  ).toEqual(['A2', 'B4', 'C8']);
 });
 
 test('setColumnIndex of cascade columns', () => {
@@ -87,13 +102,17 @@ test('setColumnIndex of cascade columns', () => {
     },
   });
 
-  wrapper.vm.setColumnIndex(0, 1);
+  (wrapper.vm as Record<string, any>).setColumnIndex(0, 1);
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(['A2', 'B3', 'C5']);
+  expect(
+    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![0][0])
+  ).toEqual(['A2', 'B3', 'C5']);
 
-  wrapper.vm.setColumnIndex(1, 1);
+  (wrapper.vm as Record<string, any>).setColumnIndex(1, 1);
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[1][0]).toEqual(['A2', 'B4', 'C7']);
+  expect(
+    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![1][0])
+  ).toEqual(['A2', 'B4', 'C7']);
 });
 
 test('setIndexes of cascade columns', () => {
@@ -104,9 +123,11 @@ test('setIndexes of cascade columns', () => {
     },
   });
 
-  wrapper.vm.setIndexes([1, 0, 1]);
+  (wrapper.vm as Record<string, any>).setIndexes([1, 0, 1]);
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(['A2', 'B3', 'C6']);
+  expect(
+    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![0][0])
+  ).toEqual(['A2', 'B3', 'C6']);
 });
 
 test('disabled in cascade', () => {
@@ -123,7 +144,9 @@ test('disabled in cascade', () => {
     },
   });
 
-  expect(wrapper.find('.van-picker-column__item--disabled')).toMatchSnapshot();
+  expect(
+    wrapper.find('.van-picker-column__item--disabled').html()
+  ).toMatchSnapshot();
 });
 
 test('should move to next option when default option is disabled', () => {
