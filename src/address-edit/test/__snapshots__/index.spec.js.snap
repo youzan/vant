@@ -222,6 +222,7 @@ exports[`should valid address detail and render error message correctly 1`] = `
       <textarea rows="1"
                 class="van-field__control"
                 placeholder="Address"
+                style="height: auto;"
       >
       </textarea>
     </div>
