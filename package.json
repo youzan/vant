@@ -53,16 +53,16 @@
     "@vant/icons": "^1.5.3",
     "@vant/lazyload": "^1.2.0",
     "@vant/popperjs": "^1.1.0",
-    "@vant/use": "^1.1.1"
+    "@vant/use": "^1.1.2"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vant/cli": "^3.10.2",
-    "@vant/area-data": "^1.1.0",
-    "@vue/compiler-sfc": "^3.0.6",
-    "vue": "^3.0.6"
+    "@vant/cli": "^3.10.4",
+    "@vant/area-data": "^1.1.1",
+    "@vue/compiler-sfc": "^3.0.11",
+    "vue": "^3.0.11"
   },
   "sideEffects": [
     "es/**/style/*",
