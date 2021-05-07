@@ -1,5 +1,6 @@
 import { Picker } from '..';
 import { mount, triggerDrag } from '../../../test';
+import type { ComponentInstance } from '../../utils';
 
 const COLUMNS = [
   {
@@ -33,6 +34,11 @@ const COLUMNS = [
 const pickColumnText = (column: Array<{ text: string }>) =>
   column.map((item: { text: string }) => item.text);
 
+type ColumnValues = Array<{
+  text: string;
+  children?: ColumnValues[];
+}>;
+
 test('cascade columns', () => {
   const wrapper = mount(Picker, {
     props: {
@@ -42,19 +48,21 @@ test('cascade columns', () => {
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
+
   expect(
-    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![0][0])
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![0][0])
   ).toEqual(['A1', 'B1', 'C1']);
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker-column ul').trigger('transitionend');
+
   expect(
-    pickColumnText(wrapper.emitted<Record<string, any>>('change')![0][0])
+    pickColumnText(wrapper.emitted<[ColumnValues]>('change')![0][0])
   ).toEqual(['A2', 'B3', 'C5']);
 
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![1][0])
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![1][0])
   ).toEqual(['A2', 'B3', 'C5']);
 });
 
@@ -66,16 +74,16 @@ test('setColumnValue of cascade columns', () => {
     },
   });
 
-  (wrapper.vm as Record<string, any>).setColumnValue(0, 'A2');
+  (wrapper.vm as ComponentInstance).setColumnValue(0, 'A2');
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![0][0])
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![0][0])
   ).toEqual(['A2', 'B3', 'C5']);
 
-  (wrapper.vm as Record<string, any>).setColumnValue(1, 'B4');
+  (wrapper.vm as ComponentInstance).setColumnValue(1, 'B4');
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![1][0])
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![1][0])
   ).toEqual(['A2', 'B4', 'C7']);
 });
 
@@ -87,10 +95,10 @@ test('setValues of cascade columns', () => {
     },
   });
 
-  (wrapper.vm as Record<string, any>).setValues(['A2', 'B4', 'C8']);
+  (wrapper.vm as ComponentInstance).setValues(['A2', 'B4', 'C8']);
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![0][0])
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![0][0])
   ).toEqual(['A2', 'B4', 'C8']);
 });
 
@@ -102,16 +110,16 @@ test('setColumnIndex of cascade columns', () => {
     },
   });
 
-  (wrapper.vm as Record<string, any>).setColumnIndex(0, 1);
+  (wrapper.vm as ComponentInstance).setColumnIndex(0, 1);
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![0][0])
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![0][0])
   ).toEqual(['A2', 'B3', 'C5']);
 
-  (wrapper.vm as Record<string, any>).setColumnIndex(1, 1);
+  (wrapper.vm as ComponentInstance).setColumnIndex(1, 1);
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![1][0])
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![1][0])
   ).toEqual(['A2', 'B4', 'C7']);
 });
 
@@ -123,10 +131,10 @@ test('setIndexes of cascade columns', () => {
     },
   });
 
-  (wrapper.vm as Record<string, any>).setIndexes([1, 0, 1]);
+  (wrapper.vm as ComponentInstance).setIndexes([1, 0, 1]);
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    pickColumnText(wrapper.emitted<Record<string, any>>('confirm')![0][0])
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![0][0])
   ).toEqual(['A2', 'B3', 'C6']);
 });
 
