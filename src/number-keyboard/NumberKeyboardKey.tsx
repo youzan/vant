@@ -30,7 +30,7 @@ export default defineComponent({
 
   props: {
     type: String as PropType<KeyType>,
-    text: [Number, String],
+    text: [Number, String , Array],
     color: String,
     wider: Boolean,
     large: Boolean,
