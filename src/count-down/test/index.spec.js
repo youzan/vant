@@ -86,8 +86,8 @@ test('should start counting after calling the start method', async () => {
   wrapper.vm.start();
   await later(50);
 
-  const laterShapShot = wrapper.html();
-  expect(prevSnapShot).not.toEqual(laterShapShot);
+  const laterSnapShot = wrapper.html();
+  expect(prevSnapShot).not.toEqual(laterSnapShot);
 });
 
 test('should pause counting after calling the pause method', async () => {
@@ -102,9 +102,9 @@ test('should pause counting after calling the pause method', async () => {
   const prevSnapShot = wrapper.html();
   wrapper.vm.pause();
   await later(50);
-  const laterShapShot = wrapper.html();
+  const laterSnapShot = wrapper.html();
 
-  expect(prevSnapShot).toEqual(laterShapShot);
+  expect(prevSnapShot).toEqual(laterSnapShot);
 });
 
 test('should reset time after calling the reset method', async () => {
@@ -123,9 +123,9 @@ test('should reset time after calling the reset method', async () => {
   await later(50);
   wrapper.vm.reset();
   await nextTick();
-  const laterShapShot = wrapper.html();
+  const laterSnapShot = wrapper.html();
 
-  expect(prevSnapShot).toEqual(laterShapShot);
+  expect(prevSnapShot).toEqual(laterSnapShot);
 });
 
 test('should format complete time correctly', () => {
@@ -197,8 +197,8 @@ test('should pause counting when deactivated', async () => {
   await later(50);
 
   await wrapper.setData({ render: true });
-  const laterShapShot = wrapper.html();
-  expect(prevSnapShot).toEqual(laterShapShot);
+  const laterSnapShot = wrapper.html();
+  expect(prevSnapShot).toEqual(laterSnapShot);
 });
 
 test('should emit change event when counting', async () => {
