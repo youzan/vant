@@ -7,7 +7,7 @@ const [createComponent, bem, t] = createNamespace('coupon');
 
 function getDate(timeStamp) {
   if (timeStamp >= 1000000000000) {
-    return dateToString(new Date(timeStamp), 'datetime');
+    return dateToString(new Date(timeStamp * 1), 'datetime');
   }
   return dateToString(new Date(timeStamp * 1000));
 }
