@@ -119,13 +119,14 @@ export default {
 | id          | Id                                  | _string_ |
 | name        | Name                                | _string_ |
 | condition   | Condition                           | _string_ |
-| startAt     | Start time (Timestmap, unit second) | _number_ |
-| endAt       | End time (Timestmap, unit second)   | _number_ |
+| startAt     | Start time (Timestmap, unit millisecond) | _number_ |
+| endAt       | End time (Timestmap, unit millisecond)   | _number_ |
 | description | Description                         | _string_ |
 | reason      | Unavailable reason                  | _string_ |
 | value       | Value                               | _number_ |
 | valueDesc   | Value Text                          | _string_ |
 | unitDesc    | Unit Text                           | _string_ |
+| customValidPeriod | custom valid period           | _string_ |
 
 ### Less Variables
 

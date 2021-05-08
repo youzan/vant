@@ -74,6 +74,7 @@ export default {
         description: this.t('coupon.description'),
         startAt: 1489104000,
         endAt: 1514592000,
+        customValidPeriod: '周日 13点起生效',
         valueDesc: '1.5',
         unitDesc: '元',
       };
