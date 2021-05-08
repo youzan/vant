@@ -116,19 +116,19 @@ export default {
 
 ### Coupon 数据结构
 
-| 键名        | 说明                            | 类型     |
-| ----------- | ------------------------------- | -------- |
-| id          | 优惠券 id                       | _string_ |
-| name        | 优惠券名称                      | _string_ |
-| condition   | 满减条件                        | _string_ |
-| startAt     | 卡有效开始时间 (时间戳, 单位毫秒) | _number_ |
-| endAt       | 卡失效日期 (时间戳, 单位毫秒)     | _number_ |
-| description | 描述信息，优惠券可用时展示      | _string_ |
-| reason      | 不可用原因，优惠券不可用时展示  | _string_ |
-| value       | 折扣券优惠金额，单位分          | _number_ |
-| valueDesc   | 折扣券优惠金额文案              | _string_ |
-| unitDesc    | 单位文案                        | _string_ |
-| customValidPeriod | 自定义有效时间文案            | _string_ |
+| 键名              | 说明                              | 类型     |
+| ----------------- | --------------------------------- | -------- |
+| id                | 优惠券 id                         | _string_ |
+| name              | 优惠券名称                        | _string_ |
+| condition         | 满减条件                          | _string_ |
+| startAt           | 卡有效开始时间 (时间戳, 单位毫秒) | _number_ |
+| endAt             | 卡失效日期 (时间戳, 单位毫秒)     | _number_ |
+| description       | 描述信息，优惠券可用时展示        | _string_ |
+| reason            | 不可用原因，优惠券不可用时展示    | _string_ |
+| value             | 折扣券优惠金额，单位分            | _number_ |
+| valueDesc         | 折扣券优惠金额文案                | _string_ |
+| unitDesc          | 单位文案                          | _string_ |
+| customValidPeriod | 自定义有效时间文案                | _string_ |
 
 ### 样式变量
 
