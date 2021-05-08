@@ -1,5 +1,6 @@
 import { Picker } from '..';
 import { mount, triggerDrag } from '../../../test';
+import type { ComponentInstance } from '../../utils';
 
 const COLUMNS = [
   {
@@ -30,6 +31,14 @@ const COLUMNS = [
   },
 ];
 
+const pickColumnText = (column: Array<{ text: string }>) =>
+  column.map((item: { text: string }) => item.text);
+
+type ColumnValues = Array<{
+  text: string;
+  children?: ColumnValues[];
+}>;
+
 test('cascade columns', () => {
   const wrapper = mount(Picker, {
     props: {
@@ -39,14 +48,22 @@ test('cascade columns', () => {
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(['A1', 'B1', 'C1']);
+
+  expect(
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![0][0])
+  ).toEqual(['A1', 'B1', 'C1']);
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker-column ul').trigger('transitionend');
-  expect(wrapper.emitted('change')[0][1]).toEqual(['A2', 'B3', 'C5']);
+
+  expect(
+    pickColumnText(wrapper.emitted<[ColumnValues]>('change')![0][0])
+  ).toEqual(['A2', 'B3', 'C5']);
 
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[1][0]).toEqual(['A2', 'B3', 'C5']);
+  expect(
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![1][0])
+  ).toEqual(['A2', 'B3', 'C5']);
 });
 
 test('setColumnValue of cascade columns', () => {
@@ -57,13 +74,17 @@ test('setColumnValue of cascade columns', () => {
     },
   });
 
-  wrapper.vm.setColumnValue(0, 'A2');
+  (wrapper.vm as ComponentInstance).setColumnValue(0, 'A2');
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(['A2', 'B3', 'C5']);
+  expect(
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![0][0])
+  ).toEqual(['A2', 'B3', 'C5']);
 
-  wrapper.vm.setColumnValue(1, 'B4');
+  (wrapper.vm as ComponentInstance).setColumnValue(1, 'B4');
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[1][0]).toEqual(['A2', 'B4', 'C7']);
+  expect(
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![1][0])
+  ).toEqual(['A2', 'B4', 'C7']);
 });
 
 test('setValues of cascade columns', () => {
@@ -74,9 +95,11 @@ test('setValues of cascade columns', () => {
     },
   });
 
-  wrapper.vm.setValues(['A2', 'B4', 'C8']);
+  (wrapper.vm as ComponentInstance).setValues(['A2', 'B4', 'C8']);
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(['A2', 'B4', 'C8']);
+  expect(
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![0][0])
+  ).toEqual(['A2', 'B4', 'C8']);
 });
 
 test('setColumnIndex of cascade columns', () => {
@@ -87,13 +110,17 @@ test('setColumnIndex of cascade columns', () => {
     },
   });
 
-  wrapper.vm.setColumnIndex(0, 1);
+  (wrapper.vm as ComponentInstance).setColumnIndex(0, 1);
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(['A2', 'B3', 'C5']);
+  expect(
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![0][0])
+  ).toEqual(['A2', 'B3', 'C5']);
 
-  wrapper.vm.setColumnIndex(1, 1);
+  (wrapper.vm as ComponentInstance).setColumnIndex(1, 1);
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[1][0]).toEqual(['A2', 'B4', 'C7']);
+  expect(
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![1][0])
+  ).toEqual(['A2', 'B4', 'C7']);
 });
 
 test('setIndexes of cascade columns', () => {
@@ -104,9 +131,11 @@ test('setIndexes of cascade columns', () => {
     },
   });
 
-  wrapper.vm.setIndexes([1, 0, 1]);
+  (wrapper.vm as ComponentInstance).setIndexes([1, 0, 1]);
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(['A2', 'B3', 'C6']);
+  expect(
+    pickColumnText(wrapper.emitted<[ColumnValues]>('confirm')![0][0])
+  ).toEqual(['A2', 'B3', 'C6']);
 });
 
 test('disabled in cascade', () => {
@@ -123,7 +152,9 @@ test('disabled in cascade', () => {
     },
   });
 
-  expect(wrapper.find('.van-picker-column__item--disabled')).toMatchSnapshot();
+  expect(
+    wrapper.find('.van-picker-column__item--disabled').html()
+  ).toMatchSnapshot();
 });
 
 test('should move to next option when default option is disabled', () => {
