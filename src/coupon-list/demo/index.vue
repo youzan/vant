@@ -11,7 +11,7 @@
         v-model="showList"
         round
         position="bottom"
-        style="height: 90%; padding-top: 4px;"
+        style="height: 90%; padding-top: 4px"
       >
         <van-coupon-list
           :coupons="coupons"
@@ -74,7 +74,6 @@ export default {
         description: this.t('coupon.description'),
         startAt: 1489104000,
         endAt: 1514592000,
-        customValidPeriod: '周日 13点起生效',
         valueDesc: '1.5',
         unitDesc: '元',
       };

@@ -1,15 +1,23 @@
 import { createNamespace } from '../utils';
 import { RED } from '../utils/constant';
-import { dateToString } from '../sku/utils/time-helper';
+import { padZero } from '../utils/format/string';
 import Checkbox from '../checkbox';
 
 const [createComponent, bem, t] = createNamespace('coupon');
 
-function getDate(timeStamp) {
-  if (timeStamp >= 1000000000000) {
-    return dateToString(new Date(timeStamp * 1), 'datetime');
+function formatTimeStamp(timeStamp) {
+  // compatible when the timestamp is seconds
+  if (timeStamp < 10 ** 12) {
+    return timeStamp * 1000;
   }
-  return dateToString(new Date(timeStamp * 1000));
+  return timeStamp;
+}
+
+function getDate(timeStamp) {
+  const date = new Date(formatTimeStamp(timeStamp));
+  return `${date.getFullYear()}.${padZero(date.getMonth() + 1)}.${padZero(
+    date.getDate()
+  )}`;
 }
 
 function formatDiscount(discount) {
@@ -36,7 +44,7 @@ export default createComponent({
   computed: {
     validPeriod() {
       const { startAt, endAt, customValidPeriod } = this.coupon;
-      return customValidPeriod ? customValidPeriod : `${getDate(startAt)} - ${getDate(endAt)}`;
+      return customValidPeriod || `${getDate(startAt)} - ${getDate(endAt)}`;
     },
 
     faceAmount() {
