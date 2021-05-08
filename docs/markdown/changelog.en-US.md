@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.17](https://github.com/youzan/vant/compare/v2.12.16...v2.12.17)
+
+`2021-05-08`
+
+**Feature**
+
+- CouponList: support custom valid period [#8679](https://github.com/youzan/vant/issues/8679)
+
 ### [v2.12.16](https://github.com/youzan/vant/compare/v2.12.15...v2.12.16)
 
 `2021-05-03`

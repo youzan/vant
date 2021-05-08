@@ -16,6 +16,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.17](https://github.com/youzan/vant/compare/v2.12.16...v2.12.17)
+
+`2021-05-08`
+
+**Feature**
+
+- CouponList: 支持通过 customValidPeriod 字段自定义有效期 [#8679](https://github.com/youzan/vant/issues/8679)
+
 ### [v2.12.16](https://github.com/youzan/vant/compare/v2.12.15...v2.12.16)
 
 `2021-05-03`
