@@ -76,7 +76,7 @@ test('should render status slots correctly', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('shoud not emit update:modelValue event after pulling a short distance', () => {
+test('should not emit update:modelValue event after pulling a short distance', () => {
   const wrapper = mount(PullRefresh);
   const track = wrapper.find('.van-pull-refresh__track');
   triggerDrag(track, 0, 10);
