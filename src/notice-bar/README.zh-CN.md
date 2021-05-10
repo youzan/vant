@@ -119,6 +119,7 @@ app.use(NoticeBar);
 | speed | 滚动速率 (px/s) | _number \| string_ | `50` |
 | scrollable | 是否开启滚动播放，内容长度溢出时默认开启 | _boolean_ | - |
 | wrapable | 是否开启文本换行，只在禁用滚动时生效 | _boolean_ | `false` |
+| icon-prefix | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 
 ### Events
 

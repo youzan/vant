@@ -98,6 +98,7 @@ app.use(NoticeBar);
 | speed | Scroll speed (px/s) | _number \| string_ | `50` |
 | scrollable | Whether to scroll content | _boolean_ | - |
 | wrapable | Whether to enable text wrap | _boolean_ | `false` | - |
+| icon-prefix | Icon className prefix | _string_ | `van-icon` |
 
 ### Events
 

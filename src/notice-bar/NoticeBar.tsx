@@ -27,6 +27,7 @@ export default defineComponent({
     mode: String as PropType<NoticeBarMode>,
     color: String,
     leftIcon: String,
+    iconPrefix: String,
     wrapable: Boolean,
     background: String,
     scrollable: {
@@ -64,7 +65,13 @@ export default defineComponent({
         return slots['left-icon']();
       }
       if (props.leftIcon) {
-        return <Icon class={bem('left-icon')} name={props.leftIcon} />;
+        return (
+          <Icon
+            classPrefix={props.iconPrefix}
+            class={bem('left-icon')}
+            name={props.leftIcon}
+          />
+        );
       }
     };
 

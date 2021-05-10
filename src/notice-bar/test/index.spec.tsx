@@ -91,3 +91,14 @@ test('should not start scrolling when content width > wrap width ', async () => 
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should change icon class prefix when using icon-prefix prop', () => {
+  const wrapper = mount(NoticeBar, {
+    props: {
+      icon: 'success',
+      iconPrefix: 'my-icon',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
