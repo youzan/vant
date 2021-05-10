@@ -10,7 +10,7 @@ function formatTimeStamp(timeStamp) {
   if (timeStamp < 10 ** 12) {
     return timeStamp * 1000;
   }
-  return timeStamp;
+  return +timeStamp;
 }
 
 function getDate(timeStamp) {
