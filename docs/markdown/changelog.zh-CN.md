@@ -16,6 +16,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.18](https://github.com/youzan/vant/compare/v2.12.17...v2.12.18)
+
+`2021-05-10`
+
+**Bug Fixes**
+
+- CouponList: 修复时间为字符串格式时展示错误的问题 [c5b4d1](https://github.com/youzan/vant/commit/c5b4d1a66372b94420146f9a640aee31f402889a)
+
 ### [v2.12.17](https://github.com/youzan/vant/compare/v2.12.16...v2.12.17)
 
 `2021-05-08`
