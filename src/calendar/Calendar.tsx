@@ -88,13 +88,13 @@ export default defineComponent({
     minDate: {
       type: Date,
       validator: isDate,
-      default: () => new Date(),
+      default: () => new Date(new Date().setHours(0, 0, 0, 0)),
     },
     maxDate: {
       type: Date,
       validator: isDate,
       default: () => {
-        const now = new Date();
+        const now = new Date(new Date().setHours(0, 0, 0, 0));
         return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
       },
     },
@@ -129,7 +129,7 @@ export default defineComponent({
         return defaultDate;
       }
 
-      const now = new Date();
+      const now = new Date(new Date().setHours(0, 0, 0, 0));
 
       if (type === 'range') {
         if (!Array.isArray(defaultDate)) {
