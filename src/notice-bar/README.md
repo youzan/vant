@@ -95,7 +95,7 @@ app.use(NoticeBar);
 | background | Background color | _string_ | `#fff7cc` |
 | left-icon | Left Icon | _string_ | - |
 | delay | Animation delay (s) | _number \| string_ | `1` |
-| speed | Scroll speed (px/s) | _number \| string_ | `50` |
+| speed | Scroll speed (px/s) | _number \| string_ | `60` |
 | scrollable | Whether to scroll content | _boolean_ | - |
 | wrapable | Whether to enable text wrap | _boolean_ | `false` | - |
 

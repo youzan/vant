@@ -39,7 +39,7 @@ export default defineComponent({
     },
     speed: {
       type: [Number, String],
-      default: 50,
+      default: 60,
     },
   },
 
