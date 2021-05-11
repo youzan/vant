@@ -19,7 +19,7 @@ exports[`should not scroll when content width > wrap width  1`] = `
 exports[`should scroll when content width > wrap width  1`] = `
 <div role="alert" class="van-notice-bar">
   <div role="marquee" class="van-notice-bar__wrap">
-    <div class="van-notice-bar__content" style="transition-duration: 2s; transform: translateX(-100px);">foo</div>
+    <div class="van-notice-bar__content" style="transition-duration: 1.6666666666666667s; transform: translateX(-100px);">foo</div>
   </div>
 </div>
 `;
