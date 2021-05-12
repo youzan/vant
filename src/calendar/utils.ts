@@ -46,6 +46,11 @@ export function getDayByOffset(date: Date, offset: number) {
 
 export const getPrevDay = (date: Date) => getDayByOffset(date, -1);
 export const getNextDay = (date: Date) => getDayByOffset(date, 1);
+export const getToday = () => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return today;
+};
 
 export function calcDateNum(date: [Date, Date]) {
   const day1 = date[0].getTime();

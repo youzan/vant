@@ -24,6 +24,7 @@ import {
   cloneDates,
   getPrevDay,
   getNextDay,
+  getToday,
   compareDay,
   calcDateNum,
   compareMonth,
@@ -88,13 +89,13 @@ export default defineComponent({
     minDate: {
       type: Date,
       validator: isDate,
-      default: () => new Date(new Date().setHours(0, 0, 0, 0)),
+      default: getToday,
     },
     maxDate: {
       type: Date,
       validator: isDate,
       default: () => {
-        const now = new Date(new Date().setHours(0, 0, 0, 0));
+        const now = getToday();
         return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
       },
     },
@@ -129,7 +130,7 @@ export default defineComponent({
         return defaultDate;
       }
 
-      const now = new Date(new Date().setHours(0, 0, 0, 0));
+      const now = getToday();
 
       if (type === 'range') {
         if (!Array.isArray(defaultDate)) {
