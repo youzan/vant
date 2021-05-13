@@ -101,6 +101,7 @@ export default defineComponent({
       type: [String, Object] as PropType<TeleportProps['to']>,
       default: 'body',
     },
+    iconPrefix: String,
   },
 
   emits: ['select', 'touchstart', 'update:show'],
@@ -190,7 +191,13 @@ export default defineComponent({
           style={{ color }}
           onClick={() => onClickAction(action, index)}
         >
-          {icon && <Icon name={icon} class={bem('action-icon')} />}
+          {icon && (
+            <Icon
+              name={icon}
+              classPrefix={props.iconPrefix}
+              class={bem('action-icon')}
+            />
+          )}
           <div class={[bem('action-text'), BORDER_BOTTOM]}>{text}</div>
         </div>
       );
