@@ -10,6 +10,11 @@ exports[`should allow to custom the className of action 1`] = `
 </div>
 `;
 
+exports[`should change icon class prefix when using icon-prefix prop 1`] = `
+<span class="van-popover__wrapper">
+</span>
+`;
+
 exports[`should locate to reference element when showed 1`] = `
 <transition-stub>
 </transition-stub>
