@@ -41,18 +41,28 @@ Vant 2 支持现代浏览器以及 Android >= 4.0、iOS >= 8.0。
 
 Vant 3 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一致）。
 
-### 生态
+### 官方生态
+
+由 Vant 官方团队维护的项目如下：
 
 | 项目 | 描述 |
 | --- | --- |
 | [vant-weapp](https://github.com/youzan/vant-weapp) | Vant 微信小程序版 |
-| [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Vant 支付宝小程序版（由社区维护） |
-| [vant-react](https://github.com/mxdi9i7/vant-react) | Vant React 版（由社区维护） |
 | [vant-use](https://youzan.github.io/vant/vant-use/) | Vant Composition API 合集 |
 | [vant-demo](https://github.com/youzan/vant-demo) | Vant 官方示例合集 |
 | [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | 开箱即用的组件库搭建工具 |
 | [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant 图标库 |
 | [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | 在桌面端使用 Vant 的辅助库 |
+
+### 社区生态
+
+由社区维护的项目如下，欢迎补充：
+
+| 项目                                                   | 描述                |
+| ------------------------------------------------------ | ------------------- |
+| [vant-react](https://github.com/mxdi9i7/vant-react)    | Vant React 版       |
+| [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Vant 支付宝小程序版 |
+| [taroify](https://gitee.com/mallfoundry/taroify)       | Vant Taro 版        |
 
 ### 链接
 
