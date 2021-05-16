@@ -305,14 +305,14 @@ export default {
 
 ### Slots
 
-| 名称           | 说明                                                       |
-| -------------- | ---------------------------------------------------------- |
-| label          | 自定义输入框 label 标签                                    |
-| input          | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效 |
-| left-icon      | 自定义输入框头部图标                                       |
-| right-icon     | 自定义输入框尾部图标                                       |
-| button         | 自定义输入框尾部按钮                                       |
-| extra `v2.8.2` | 自定义输入框最右侧的额外内容                               |
+| 名称 | 说明 |
+| --- | --- |
+| label | 自定义输入框 label 标签 |
+| input | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效。<br>在 Form 组件进行表单校验时，会使用 input 插槽中子组件的 `value`，而不是 Field 组件的 `value`。 |
+| left-icon | 自定义输入框头部图标 |
+| right-icon | 自定义输入框尾部图标 |
+| button | 自定义输入框尾部按钮 |
+| extra `v2.8.2` | 自定义输入框最右侧的额外内容 |
 
 ### 样式变量
 
@@ -344,6 +344,8 @@ export default {
 ### 设置 type 为 number 后，为什么 input 标签的类型仍为 text?
 
 HTML 原生的 `type="number"` 属性在 iOS 和 Android 系统上都存在一定问题，比如 maxlength 属性不生效、无法获取到完整的输入内容等。因此设置 type 为 `number` 时，Field 不会使用原生的 `type="number"` 属性，而是用现代浏览器支持的 [inputmode 属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/inputmode)来控制输入键盘的类型。
+
+### 在表单校验时，
 
 ### 在桌面端点击清除按钮无效？
 
