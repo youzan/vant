@@ -462,6 +462,9 @@ test('popup wrapper', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 
   await wrapper.setProps({ show: true });
+  await later();
+
+  expect(wrapper.html()).toMatchSnapshot();
 
   await wrapper.find('.van-popup__close-icon').trigger('click');
   expect(wrapper.find('.van-calendar__popup').style.display).toEqual('none');
