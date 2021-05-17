@@ -72,6 +72,7 @@ export default defineComponent({
     show: Boolean,
     overlay: Boolean,
     duration: [Number, String],
+    iconPrefix: String,
     overlayClass: unknownProp,
     overlayStyle: Object as PropType<CSSProperties>,
     closeOnClickAction: truthProp,
@@ -101,7 +102,6 @@ export default defineComponent({
       type: [String, Object] as PropType<TeleportProps['to']>,
       default: 'body',
     },
-    iconPrefix: String,
   },
 
   emits: ['select', 'touchstart', 'update:show'],
