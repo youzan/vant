@@ -1,6 +1,6 @@
 import { Calendar } from '..';
 import { mount, later } from '../../../test';
-import { minDate, maxDate, formatRange, formatDate } from './utils';
+import { minDate, maxDate } from './utils';
 
 test('max-range prop when type is range and showConfirm is false', async () => {
   const wrapper = mount(Calendar, {
@@ -11,19 +11,23 @@ test('max-range prop when type is range and showConfirm is false', async () => {
       maxRange: 3,
       poppable: false,
       showConfirm: false,
+      lazyRender: false,
     },
   });
 
   await later();
 
   const days = wrapper.findAll('.van-calendar__day');
-  days.at(12).trigger('click');
-  days.at(18).trigger('click');
+  days[12].trigger('click');
+  days[18].trigger('click');
 
-  expect(formatRange(wrapper.emitted('select')[0][0])).toEqual('2010/1/13-');
-  expect(formatRange(wrapper.emitted('select')[1][0])).toEqual(
-    '2010/1/13-2010/1/19'
-  );
+  expect(wrapper.emitted<[Date]>('select')![0][0]).toEqual([
+    new Date(2010, 0, 13),
+  ]);
+  expect(wrapper.emitted<[Date]>('select')![1][0]).toEqual([
+    new Date(2010, 0, 13),
+    new Date(2010, 0, 19),
+  ]);
   expect(wrapper.emitted('confirm')).toBeFalsy();
 });
 
@@ -35,19 +39,23 @@ test('max-range prop when type is range and showConfirm is true', async () => {
       maxDate,
       maxRange: 3,
       poppable: false,
+      lazyRender: false,
     },
   });
 
   await later();
 
   const days = wrapper.findAll('.van-calendar__day');
-  days.at(12).trigger('click');
-  days.at(18).trigger('click');
+  days[12].trigger('click');
+  days[18].trigger('click');
 
-  expect(formatRange(wrapper.emitted('select')[0][0])).toEqual('2010/1/13-');
-  expect(formatRange(wrapper.emitted('select')[1][0])).toEqual(
-    '2010/1/13-2010/1/15'
-  );
+  expect(wrapper.emitted<[Date]>('select')![0][0]).toEqual([
+    new Date(2010, 0, 13),
+  ]);
+  expect(wrapper.emitted<[Date]>('select')![1][0]).toEqual([
+    new Date(2010, 0, 13),
+    new Date(2010, 0, 15),
+  ]);
   expect(wrapper.emitted('confirm')).toBeFalsy();
 });
 
@@ -60,86 +68,87 @@ test('max-range prop when type is multiple', async () => {
       maxRange: 2,
       poppable: false,
       showConfirm: false,
+      lazyRender: false,
     },
   });
 
   await later();
 
   const days = wrapper.findAll('.van-calendar__day');
-  days.at(13).trigger('click');
-  days.at(14).trigger('click');
+  days[13].trigger('click');
+  days[14].trigger('click');
+  days[15].trigger('click');
 
-  expect(wrapper.emitted('select').length).toEqual(1);
+  expect(wrapper.emitted<[Date]>('select')![0][0]).toHaveLength(2);
 });
 
-test('show-title prop', () => {
+test('show-title prop', async () => {
   const wrapper = mount(Calendar, {
     props: {
-      value: true,
+      show: true,
     },
   });
 
-  expect(wrapper.contains('.van-calendar__header-title')).toBeTruthy();
-  wrapper.setProps({ showTitle: false });
-  expect(wrapper.contains('.van-calendar__header-title')).toBeFalsy();
+  expect(wrapper.find('.van-calendar__header-title').exists()).toBeTruthy();
+  await wrapper.setProps({ showTitle: false });
+  expect(wrapper.find('.van-calendar__header-title').exists()).toBeFalsy();
 });
 
-test('show-subtitle prop', () => {
+test('show-subtitle prop', async () => {
   const wrapper = mount(Calendar, {
     props: {
-      value: true,
+      show: true,
     },
   });
 
-  expect(wrapper.contains('.van-calendar__header-subtitle')).toBeTruthy();
-  wrapper.setProps({ showSubtitle: false });
-  expect(wrapper.contains('.van-calendar__header-subtitle')).toBeFalsy();
+  expect(wrapper.find('.van-calendar__header-subtitle').exists()).toBeTruthy();
+  await wrapper.setProps({ showSubtitle: false });
+  expect(wrapper.find('.van-calendar__header-subtitle').exists()).toBeFalsy();
 });
 
-test('hide close icon when there is no title', () => {
+test('hide close icon when there is no title', async () => {
   const wrapper = mount(Calendar, {
     props: {
-      value: true,
+      show: true,
     },
   });
 
-  expect(wrapper.contains('.van-popup__close-icon')).toBeTruthy();
+  expect(wrapper.find('.van-popup__close-icon').exists()).toBeTruthy();
 
-  wrapper.setProps({
+  await wrapper.setProps({
     showTitle: false,
     showSubtitle: false,
   });
-  expect(wrapper.contains('.van-popup__close-icon')).toBeFalsy();
+  expect(wrapper.find('.van-popup__close-icon').exists()).toBeFalsy();
 });
 
 test('allow-same-day prop', async () => {
-  const select = jest.fn();
+  const onSelect = jest.fn();
   const wrapper = mount(Calendar, {
     props: {
       type: 'range',
       minDate,
       maxDate,
       poppable: false,
-    },
-    listeners: {
-      select,
+      lazyRender: false,
+      onSelect,
     },
   });
 
   await later();
 
   const days = wrapper.findAll('.van-calendar__day');
-  days.at(9).trigger('click');
-  days.at(9).trigger('click');
+  days[9].trigger('click');
+  days[9].trigger('click');
 
-  expect(select).toHaveBeenLastCalledWith([minDate, null]);
+  expect(onSelect).toHaveBeenLastCalledWith([minDate]);
 
-  wrapper.setProps({
+  await wrapper.setProps({
     allowSameDay: true,
   });
 
-  days.at(9).trigger('click');
-  expect(select).toHaveBeenLastCalledWith([minDate, minDate]);
+  days[9].trigger('click');
+  expect(onSelect).toHaveBeenLastCalledWith([minDate, minDate]);
 });
 
 test('min-date after current time', () => {
@@ -148,11 +157,14 @@ test('min-date after current time', () => {
       poppable: false,
       minDate: new Date(2200, 0, 1),
       maxDate: new Date(2200, 0, 2),
+      lazyRender: false,
     },
   });
 
   wrapper.find('.van-calendar__confirm').trigger('click');
-  expect(formatDate(wrapper.emitted('confirm')[0][0])).toEqual('2200/1/1');
+  expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(
+    new Date(2200, 0, 1)
+  );
 });
 
 test('min-date before current time', () => {
@@ -161,11 +173,14 @@ test('min-date before current time', () => {
       poppable: false,
       minDate: new Date(1800, 0, 1),
       maxDate: new Date(1800, 0, 2),
+      lazyRender: false,
     },
   });
 
   wrapper.find('.van-calendar__confirm').trigger('click');
-  expect(formatDate(wrapper.emitted('confirm')[0][0])).toEqual('1800/1/2');
+  expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(
+    new Date(1800, 0, 2)
+  );
 });
 
 test('lazy-render prop', () => {
@@ -184,10 +199,10 @@ test('lazy-render prop', () => {
 test('month-show event', async () => {
   const wrapper = mount(Calendar, {
     props: {
-      value: true,
+      show: true,
     },
   });
-  await later();
+  await later(100);
 
   expect(wrapper.emitted('month-show')).toBeTruthy();
 });
@@ -200,12 +215,13 @@ test('first day of week', async () => {
       minDate: new Date(2020, 7, 1),
       maxDate: new Date(2020, 7, 30),
       firstDayOfWeek: 2,
+      lazyRender: false,
     },
   });
 
   await later();
 
-  expect(wrapper.find('.van-calendar__weekdays').text()[0]).toEqual('二');
+  expect(wrapper.findAll('.van-calendar__weekday')[0].text()).toEqual('Tue');
 
   const day = wrapper.find(
     '.van-calendar__month:first-of-type .van-calendar__day'
@@ -222,16 +238,17 @@ test('readonly prop', async () => {
       maxDate,
       readonly: true,
       poppable: false,
+      lazyRender: false,
     },
   });
 
   await later();
 
   const days = wrapper.findAll('.van-calendar__day');
-  days.at(13).trigger('click');
+  days[13].trigger('click');
   expect(wrapper.emitted('select')).toBeFalsy();
 
-  wrapper.setProps({ readonly: false });
-  days.at(13).trigger('click');
+  await wrapper.setProps({ readonly: false });
+  days[13].trigger('click');
   expect(wrapper.emitted('select')).toBeTruthy();
 });
