@@ -530,5 +530,6 @@ test('close event', async () => {
   });
 
   await wrapper.setProps({ show: false });
+
   expect(onClose).toHaveBeenCalledTimes(1);
 });
