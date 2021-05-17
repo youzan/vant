@@ -187,3 +187,15 @@ test('should not close Popover when outside is clicked and close-on-click-outsid
   trigger(document.body, 'touchstart');
   expect(wrapper.emitted('update:show')).toBeFalsy();
 });
+
+test('should change icon class prefix when using icon-prefix prop', () => {
+  const wrapper = mount(Popover, {
+    props: {
+      show: true,
+      icon: 'success',
+      iconPrefix: 'my-icon',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
