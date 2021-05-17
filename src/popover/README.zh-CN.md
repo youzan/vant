@@ -234,7 +234,7 @@ export default {
 | close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
 | close-on-click-overlay `v3.0.10` | 是否在点击遮罩层后关闭菜单 | _boolean_ | `true` |
 | teleport | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| Element_ | `body` |
-| icon-prefix | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
+| icon-prefix `v3.0.17` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 
 ### Action 数据结构
 

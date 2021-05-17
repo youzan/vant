@@ -13,6 +13,25 @@ exports[`should allow to custom the className of action 1`] = `
 exports[`should change icon class prefix when using icon-prefix prop 1`] = `
 <span class="van-popover__wrapper">
 </span>
+<transition-stub>
+  <div class="van-popup van-popover van-popover--light">
+    <div class="van-popover__arrow">
+    </div>
+    <div role="menu"
+         class="van-popover__content"
+    >
+      <div role="menuitem"
+           class="van-popover__action van-popover__action--with-icon"
+      >
+        <i class="van-badge__wrapper my-icon my-icon-success van-popover__action-icon">
+        </i>
+        <div class="van-popover__action-text van-hairline--bottom">
+          foo
+        </div>
+      </div>
+    </div>
+  </div>
+</transition-stub>
 `;
 
 exports[`should locate to reference element when showed 1`] = `

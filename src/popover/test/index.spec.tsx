@@ -192,8 +192,9 @@ test('should change icon class prefix when using icon-prefix prop', () => {
   const wrapper = mount(Popover, {
     props: {
       show: true,
-      icon: 'success',
+      teleport: null,
       iconPrefix: 'my-icon',
+      actions: [{ icon: 'success', text: 'foo' }],
     },
   });
 
