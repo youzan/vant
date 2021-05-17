@@ -16,6 +16,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.19](https://github.com/youzan/vant/compare/v2.12.18...v2.12.19)
+
+`2021-05-17`
+
+**Feature**
+
+- NoticeBar: speed 属性的默认值由 50 调整为 60 [a48663](https://github.com/youzan/vant/commit/a486630fe3fe10d8854c03817214dba82b70229e)
+- Dependencies: 不再锁死 @vant/icons 的版本号 [#8714](https://github.com/youzan/vant/issues/8714)
+
 ### [v2.12.18](https://github.com/youzan/vant/compare/v2.12.17...v2.12.18)
 
 `2021-05-10`

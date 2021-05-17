@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.19](https://github.com/youzan/vant/compare/v2.12.18...v2.12.19)
+
+`2021-05-17`
+
+**Feature**
+
+- NoticeBar: increase default speed to 60 [a48663](https://github.com/youzan/vant/commit/a486630fe3fe10d8854c03817214dba82b70229e)
+- Dependencies: unlock @vant/icons [#8714](https://github.com/youzan/vant/issues/8714)
+
 ### [v2.12.18](https://github.com/youzan/vant/compare/v2.12.17...v2.12.18)
 
 `2021-05-10`
