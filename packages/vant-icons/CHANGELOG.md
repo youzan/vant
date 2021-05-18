@@ -1,5 +1,9 @@
 ## Changelog
 
+## 1.6.0
+
+- migrate all icons to iconfont.cn
+
 ## 1.5.3
 
 - add config type definition
