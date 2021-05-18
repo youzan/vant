@@ -288,7 +288,7 @@ Following props are supported when the type is range
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| max-range | Number of selectable days | _number \| string_ | Unlimitied |
+| max-range | Number of selectable days | _number \| string_ | Unlimited |
 | range-prompt | Error message when exceeded max range | _string_ | `Choose no more than xx days` |
 | allow-same-day | Whether the start and end time of the range is allowed on the same day | _boolean_ | `false` |
 
@@ -298,7 +298,7 @@ Following props are supported when the type is multiple
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| max-range | Max count of selectable days | _number \| string_ | Unlimitied |
+| max-range | Max count of selectable days | _number \| string_ | Unlimited |
 | range-prompt | Error message when exceeded max count | _string_ | `Choose no more than xx days` |
 
 ### Data Structure of Day
@@ -327,10 +327,12 @@ Following props are supported when the type is multiple
 
 ### Slots
 
-| Name   | Description   |
-| ------ | ------------- |
-| title  | Custom title  |
-| footer | Custom fotter |
+| Name                  | Description               | SlotProps  |
+| --------------------- | ------------------------- | ---------- |
+| title                 | Custom title              | -          |
+| footer                | Custom footer             | -          |
+| top-info `v3.0.17`    | Custom top info of day    | _day: Day_ |
+| bottom-info `v3.0.17` | Custom bottom info of day | _day: Day_ |
 
 ### Methods
 

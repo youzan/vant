@@ -924,6 +924,21 @@ exports[`row-height prop 1`] = `
 </div>
 `;
 
+exports[`should render top-info and bottom-info slot correctly 1`] = `
+<div role="gridcell"
+     style="margin-left: 71.42857142857143%;"
+     class="van-calendar__day van-calendar__day--disabled"
+>
+  <div class="van-calendar__top-info">
+    top: 1
+  </div>
+  1
+  <div class="van-calendar__bottom-info">
+    bottom: 1
+  </div>
+</div>
+`;
+
 exports[`title & footer slot 1`] = `
 <div class="van-calendar">
   <div class="van-calendar__header">

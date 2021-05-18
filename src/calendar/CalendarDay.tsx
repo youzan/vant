@@ -44,7 +44,7 @@ export default defineComponent({
 
   emits: ['click'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const style = computed(() => {
       const { item, index, color, offset, rowHeight } = props;
       const style: CSSProperties = {
@@ -84,17 +84,37 @@ export default defineComponent({
       }
     };
 
+    const renderTopInfo = () => {
+      const { topInfo } = props.item;
+
+      if (topInfo || slots['top-info']) {
+        return (
+          <div class={bem('top-info')}>
+            {slots['top-info'] ? slots['top-info'](props.item) : topInfo}
+          </div>
+        );
+      }
+    };
+
+    const renderBottomInfo = () => {
+      const { bottomInfo } = props.item;
+
+      if (bottomInfo || slots['bottom-info']) {
+        return (
+          <div class={bem('bottom-info')}>
+            {slots['bottom-info']
+              ? slots['bottom-info'](props.item)
+              : bottomInfo}
+          </div>
+        );
+      }
+    };
+
     const renderContent = () => {
       const { item, color, rowHeight } = props;
-      const { type, text, topInfo, bottomInfo } = item;
+      const { type, text } = item;
 
-      const TopInfo = topInfo && <div class={bem('top-info')}>{topInfo}</div>;
-
-      const BottomInfo = bottomInfo && (
-        <div class={bem('bottom-info')}>{bottomInfo}</div>
-      );
-
-      const Nodes = [TopInfo, text, BottomInfo];
+      const Nodes = [renderTopInfo(), text, renderBottomInfo()];
 
       if (type === 'selected') {
         return (
