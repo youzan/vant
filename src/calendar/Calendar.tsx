@@ -416,6 +416,7 @@ export default defineComponent({
       const showMonthTitle = index !== 0 || !props.showSubtitle;
       return (
         <CalendarMonth
+          v-slots={pick(slots, ['top-info', 'bottom-info'])}
           ref={setMonthRefs(index)}
           date={date}
           currentDate={state.currentDate}

@@ -1,7 +1,7 @@
 import { ref, computed, PropType, defineComponent } from 'vue';
 
 // Utils
-import { addUnit, setScrollTop, createNamespace } from '../utils';
+import { addUnit, setScrollTop, createNamespace, pick } from '../utils';
 import { getMonthEndDay } from '../datetime-picker/utils';
 import {
   t,
@@ -55,7 +55,7 @@ export default defineComponent({
 
   emits: ['click', 'update-height'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const [visible, setVisible] = useToggle();
     const daysRef = ref<HTMLElement>();
     const monthRef = ref<HTMLElement>();
@@ -230,6 +230,7 @@ export default defineComponent({
 
     const renderDay = (item: CalendarDayItem, index: number) => (
       <CalendarDay
+        v-slots={pick(slots, ['top-info', 'bottom-info'])}
         item={item}
         index={index}
         color={props.color}

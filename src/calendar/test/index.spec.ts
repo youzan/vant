@@ -533,3 +533,23 @@ test('close event', async () => {
 
   expect(onClose).toHaveBeenCalledTimes(1);
 });
+
+test('should render top-info and bottom-info slot correctly', async () => {
+  const wrapper = mount(Calendar, {
+    props: {
+      minDate,
+      maxDate,
+      poppable: false,
+      defaultDate: minDate,
+      lazyRender: false,
+    },
+    slots: {
+      'top-info': (item) => 'top: ' + item.text,
+      'bottom-info': (item) => 'bottom: ' + item.text,
+    },
+  });
+
+  await later();
+
+  expect(wrapper.find('.van-calendar__day').html()).toMatchSnapshot();
+});
