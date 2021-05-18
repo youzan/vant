@@ -12,22 +12,12 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "export": "node ./build/export.js",
-    "build": "npm run export && gulp --gulpfile ./build/build-iconfont.js",
-    "release": "npm run build && release-it"
+    "release": "release-it"
   },
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-icons",
   "devDependencies": {
-    "fast-glob": "^3.2.2",
-    "fs-extra": "^9.0.1",
-    "gulp": "^4.0.2",
-    "gulp-iconfont": "^10.0.3",
-    "gulp-iconfont-css": "^3.0.0",
-    "md5-file": "^5.0.0",
-    "release-it": "^13.6.2",
-    "shelljs": "^0.8.4",
-    "svgo": "1.2.2"
+    "release-it": "^13.6.2"
   },
   "release-it": {
     "git": {
