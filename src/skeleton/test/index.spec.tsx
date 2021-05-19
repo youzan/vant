@@ -68,3 +68,12 @@ test('should allow to disable animation', async () => {
   await wrapper.setProps({ animate: false });
   expect(wrapper.find('.van-skeleton--animate').exists()).toBeFalsy();
 });
+
+test('should render img when using img prop', () => {
+  const wrapper = mount(Skeleton, {
+    props: {
+      img: true,
+    },
+  });
+  expect(wrapper.find('.van-skeleton__img').html()).toMatchSnapshot();
+});

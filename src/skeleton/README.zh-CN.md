@@ -34,6 +34,22 @@ app.use(Skeleton);
 <van-skeleton title avatar :row="3" />
 ```
 
+### 显示图片
+
+通过 `img` 属性显示图片占位图。
+
+```html
+<van-skeleton avatar img :row="3" />
+```
+
+### 组合用法
+
+多个组件一起使用，通过传入不同属性，达到各种效果。
+
+```html
+<van-skeleton avatar /> <van-skeleton img />
+```
+
 ### 展示子组件
 
 将 `loading` 属性设置成 `false` 表示内容加载完成，此时会隐藏占位图，并显示 `Skeleton` 的子组件。
@@ -72,10 +88,12 @@ export default {
 | row-width | 段落占位图宽度，可传数组来设置每一行的宽度 | _number \| string \|<br>(number \| string)[]_ | `100%` |
 | title | 是否显示标题占位图 | _boolean_ | `false` |
 | avatar | 是否显示头像占位图 | _boolean_ | `false` |
+| img | 是否显示图片占位图 | _boolean_ | `false` |
 | loading | 是否显示骨架屏，传 `false` 时会展示子组件内容 | _boolean_ | `true` |
 | animate | 是否开启动画 | _boolean_ | `true` |
 | round | 是否将标题和段落显示为圆角风格 | _boolean_ | `false` |
 | title-width | 标题占位图宽度 | _number \| string_ | `40%` |
+| img-width | 图片占位图宽度 | _number \| string_ | `100%` |
 | avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
 | avatar-shape | 头像占位图形状，可选值为 `square` | _string_ | `round` |
 

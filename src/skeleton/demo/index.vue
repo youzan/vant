@@ -7,6 +7,15 @@
     <van-skeleton title avatar :row="3" />
   </demo-block>
 
+  <demo-block :title="t('showImg')">
+    <van-skeleton avatar img :row="3" />
+  </demo-block>
+
+  <demo-block :title="t('combination')">
+    <van-skeleton avatar />
+    <van-skeleton img />
+  </demo-block>
+
   <demo-block :title="t('showChildren')">
     <van-switch v-model="show" size="24px" />
     <van-skeleton title avatar :row="3" :loading="!show">
@@ -28,6 +37,8 @@ import { useTranslate } from '@demo/use-translate';
 const i18n = {
   'zh-CN': {
     showAvatar: '显示头像',
+    showImg: '显示图片',
+    combination: '组合用法',
     showChildren: '显示子组件',
     title: '关于 Vant',
     desc:
@@ -35,6 +46,8 @@ const i18n = {
   },
   'en-US': {
     showAvatar: 'Show Avatar',
+    showImg: 'Show Image',
+    combination: 'Combination Usage',
     showChildren: 'Show Children',
     title: 'About Vant',
     desc: 'Vant is a set of Mobile UI Components built on Vue.',
