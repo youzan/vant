@@ -55,7 +55,7 @@ function install(Vue) {
   });
 }
 
-if (typeof window !== 'undefined' && window.Vue) {
+if (!Vue && typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
