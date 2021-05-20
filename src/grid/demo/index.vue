@@ -27,19 +27,19 @@
         <van-grid-item>
           <van-image
             fit="contain"
-            src="https://img.yzcdn.cn/vant/apple-1.jpg"
+            src="https://img01.yzcdn.cn/vant/apple-1.jpg"
           />
         </van-grid-item>
         <van-grid-item>
           <van-image
             fit="contain"
-            src="https://img.yzcdn.cn/vant/apple-2.jpg"
+            src="https://img01.yzcdn.cn/vant/apple-2.jpg"
           />
         </van-grid-item>
         <van-grid-item>
           <van-image
             fit="contain"
-            src="https://img.yzcdn.cn/vant/apple-3.jpg"
+            src="https://img01.yzcdn.cn/vant/apple-3.jpg"
           />
         </van-grid-item>
       </van-grid>

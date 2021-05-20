@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" style="margin-bottom: 10px;">
+    <img alt="logo" src="https://img01.yzcdn.cn/vant/logo.png" width="120" style="margin-bottom: 10px;">
 </p>
 
 <h1 align="center">Vant</h1>
@@ -73,21 +73,9 @@ vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手
 
 ## 浏览器支持
 
-现代浏览器以及 Android 4.0+, iOS 8.0+.
+Vant 2 支持现代浏览器以及 Android >= 4.0、iOS >= 8.0。
 
-## 加入我们
-
-**有赞前端团队**是由一群年轻、皮实、对技术饱含热情的小伙伴组成的，目前共有 100 多名前端工程师，分布在业务中台、电商、零售、美业、资产、有赞云、赋能平台、增长中心等业务线。
-
-我们热爱分享和开源，崇尚用工程师的方式解决问题，因此造了很多工具来解决我们遇到的问题，目前我们维护的开源产品有：
-
-<img src="https://img.yzcdn.cn/public_files/2019/07/22/f4b70763c55c8710c52c667ecf192c05.jpeg" width="320" height="303">
-
-我们正在寻找更多优秀的小伙伴，一起拓展前端技术的边界，期待你的加入！
-
-- <a target="_blank" href="https://app.mokahr.com/apply/youzan/3750#/jobs/?keyword=%E5%89%8D%E7%AB%AF&_k=tueqds">职位详情</a>（Base: 杭州/深圳）
-- <a target="_blank" href="https://tech.youzan.com/tag/front-end/">团队博客</a>
-- <a target="_blank" href="https://github.com/youzan">开源项目</a>
+Vant 3 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一致）。
 
 ## 生态
 
@@ -110,13 +98,13 @@ vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手
 
 可以手机扫码以下二维码访问手机端 demo：
 
-<img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="220" height="220" >
+<img src="https://img01.yzcdn.cn/vant/preview_qrcode_20180528.png" width="220" height="220" >
 
 ## 微信讨论群
 
 欢迎大家加入 Vant 交流群一起讨论，添加下方微信并注明『加入 Vant 交流群』即可
 
-<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
+<img src="https://img01.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
 
 ## 开源协议
 

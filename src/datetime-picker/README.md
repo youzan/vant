@@ -33,7 +33,7 @@ export default {
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
-      currentDate: new Date(),
+      currentDate: new Date(2021, 0, 17),
     };
   },
 };

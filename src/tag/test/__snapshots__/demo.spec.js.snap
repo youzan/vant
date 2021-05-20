@@ -57,15 +57,15 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-cell">
       <div class="van-cell__title"><span>背景颜色</span></div>
-      <div class="van-cell__value"><span class="van-tag van-tag--default" style="background-color: rgb(114, 50, 221);">标签</span></div>
+      <div class="van-cell__value"><span class="van-tag van-tag--default" style="background: rgb(114, 50, 221);">标签</span></div>
     </div>
     <div class="van-cell">
       <div class="van-cell__title"><span>文字颜色</span></div>
-      <div class="van-cell__value"><span class="van-tag van-tag--default" style="background-color: rgb(255, 225, 225); color: rgb(173, 0, 0);">标签</span></div>
+      <div class="van-cell__value"><span class="van-tag van-tag--default" style="color: rgb(173, 0, 0); background: rgb(255, 225, 225);">标签</span></div>
     </div>
     <div class="van-cell">
       <div class="van-cell__title"><span>空心颜色</span></div>
-      <div class="van-cell__value"><span class="van-tag van-tag--plain van-tag--default" style="color: rgb(114, 50, 221);">标签</span></div>
+      <div class="van-cell__value"><span class="van-tag van-tag--plain van-tag--default" style="color: rgb(114, 50, 221); border-color: #7232dd;">标签</span></div>
     </div>
   </div>
 </div>

@@ -2000,10 +2000,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.8.1":
-  version "2.8.1"
-  resolved "https://registry.npm.taobao.org/@vant/cli/download/@vant/cli-2.8.1.tgz?cache=0&sync_timestamp=1610161054392&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-2.8.1.tgz#d8a347c3dccc3f84a35e94ad99614935fe56c08f"
-  integrity sha1-2KNHw9zMP4SjXpStmWFJNf5WwI8=
+"@vant/cli@^2.10.2":
+  version "2.10.2"
+  resolved "https://registry.nlark.com/@vant/cli/download/@vant/cli-2.10.2.tgz?cache=0&sync_timestamp=1620007557979&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-2.10.2.tgz#0524a8df9f12d20b6f1506223ecc28ab9fefb909"
+  integrity sha1-BSSo358S0gtvFQYiPswoq5/vuQk=
   dependencies:
     "@babel/core" "^7.10.1"
     "@babel/plugin-syntax-jsx" "^7.10.1"
@@ -2016,7 +2016,7 @@
     "@types/webpack" "^4.41.13"
     "@types/webpack-dev-server" "^3.11.0"
     "@vant/eslint-config" "^2.2.2"
-    "@vant/markdown-loader" "^2.3.0"
+    "@vant/markdown-loader" "^2.5.0"
     "@vant/markdown-vetur" "^2.0.2"
     "@vant/stylelint-config" "^1.3.0"
     "@vant/touch-emulator" "^1.2.0"
@@ -2035,6 +2035,7 @@
     commander "^5.1.0"
     consola "^2.12.2"
     conventional-changelog "^3.1.21"
+    copy-text-to-clipboard "^3.0.1"
     cross-env "^7.0.2"
     css-loader "^3.5.3"
     eslint "^6.8.0"
@@ -2082,27 +2083,27 @@
     eslint-plugin-import "^2.20.2"
     eslint-plugin-vue "^6.2.2"
 
-"@vant/icons@1.5.0":
-  version "1.5.0"
-  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.5.0.tgz#ce78a2f055a1a4099129bb6c44d54584f3740e27"
-  integrity sha512-qHQU3GiQ6AkpjhYni46xG+YOy36LNmbHFanyjvzi+fODu+pEKYwqfLWluv42Q9CM4hshNET8A+Vsr0pr2UVTnA==
+"@vant/icons@^1.5.3":
+  version "1.5.3"
+  resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.5.3.tgz#b7779f67bf608d417a82452fbede406dfa46b439"
+  integrity sha1-t3efZ79gjUF6gkUvvt5AbfpGtDk=
 
-"@vant/markdown-loader@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@vant/markdown-loader/-/markdown-loader-2.3.0.tgz#ea8ab4d8d41609839b40b817bc3a598cf13f9920"
-  integrity sha512-efNAnJMQbX3yP0+/zvnlYda+xIATLl+T9BXOB179M8KkS3hKk0b8tYHYVeLmdCLbJFeVd8bVXICILIplOYQJ5A==
+"@vant/markdown-loader@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.nlark.com/@vant/markdown-loader/download/@vant/markdown-loader-2.5.0.tgz?cache=0&sync_timestamp=1620007458334&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vant%2Fmarkdown-loader%2Fdownload%2F%40vant%2Fmarkdown-loader-2.5.0.tgz#08cb57da975d2f47c009695ff515b48920e37bbd"
+  integrity sha1-CMtX2pddL0fACWlf9RW0iSDje70=
   dependencies:
     front-matter "^3.0.2"
-    highlight.js "^9.16.2"
+    highlight.js "^10.0.0"
     loader-utils "^1.2.3"
     markdown-it "^10.0.0"
     markdown-it-anchor "^5.2.5"
     transliteration "^2.1.7"
 
 "@vant/markdown-vetur@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.npm.taobao.org/@vant/markdown-vetur/download/@vant/markdown-vetur-2.0.2.tgz#8e6be188952a2c4b0e1d626bf93f47f84ab0f22d"
-  integrity sha1-jmvhiJUqLEsOHWJr+T9H+Eqw8i0=
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/@vant/markdown-vetur/download/@vant/markdown-vetur-2.1.0.tgz?cache=0&sync_timestamp=1617347165035&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Fmarkdown-vetur%2Fdownload%2F%40vant%2Fmarkdown-vetur-2.1.0.tgz#cc49ad807dfcccca898562966d64b7a657ca3aad"
+  integrity sha1-zEmtgH38zMqJhWKWbWS3plfKOq0=
   dependencies:
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"
@@ -4056,6 +4057,11 @@ copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
+
+copy-text-to-clipboard@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npmjs.org/copy-text-to-clipboard/-/copy-text-to-clipboard-3.0.1.tgz#8cbf8f90e0a47f12e4a24743736265d157bce69c"
+  integrity sha512-rvVsHrpFcL4F2P8ihsoLdFHmd404+CMg71S756oRSeQgqk51U3kicGdnvfkrxva0xXH92SjGS62B0XIJsbh+9Q==
 
 core-js-compat@^3.6.2:
   version "3.6.4"
@@ -6019,10 +6025,10 @@ he@^1.1.0, he@^1.2.0:
   resolved "https://registry.npm.taobao.org/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
 
-highlight.js@^9.16.2:
-  version "9.18.1"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.1.tgz#ed21aa001fe6252bb10a3d76d47573c6539fe13c"
-  integrity sha512-OrVKYz70LHsnCgmbXctv/bfuvntIKDz177h0Co37DQ5jamGZLVmoCVMtjMtNZY3X9DrCcKfklHPNeA0uPZhSJg==
+highlight.js@^10.0.0:
+  version "10.7.2"
+  resolved "https://registry.nlark.com/highlight.js/download/highlight.js-10.7.2.tgz#89319b861edc66c48854ed1e6da21ea89f847360"
+  integrity sha1-iTGbhh7cZsSIVO0ebaIeqJ+Ec2A=
 
 hmac-drbg@^1.0.0:
   version "1.0.1"

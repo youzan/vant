@@ -252,6 +252,7 @@ Use `input-align` prop to align the input value.
 | right-icon | Right side icon name | _string_ | - |
 | icon-prefix `v2.5.3` | Icon className prefix | _string_ | `van-icon` |
 | rules `v2.5.0` | Form validation rules | _Rule[]_ | - |
+| autocomplete | [autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) attribute of native input element | _string_ | - |
 
 ### Events
 

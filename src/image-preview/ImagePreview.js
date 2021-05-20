@@ -48,6 +48,10 @@ export default createComponent({
       type: [Number, String],
       default: 3,
     },
+    transition: {
+      type: String,
+      default: 'van-fade',
+    },
     showIndex: {
       type: Boolean,
       default: true,
@@ -211,18 +215,16 @@ export default createComponent({
   },
 
   render() {
-    if (!this.shouldRender) {
-      return;
-    }
-
     return (
-      <transition name="van-fade" onAfterLeave={this.onClosed}>
-        <div vShow={this.value} class={[bem(), this.className]}>
-          {this.genClose()}
-          {this.genImages()}
-          {this.genIndex()}
-          {this.genCover()}
-        </div>
+      <transition name={this.transition} onAfterLeave={this.onClosed}>
+        {this.shouldRender ? (
+          <div vShow={this.value} class={[bem(), this.className]}>
+            {this.genClose()}
+            {this.genImages()}
+            {this.genIndex()}
+            {this.genCover()}
+          </div>
+        ) : null}
       </transition>
     );
   },

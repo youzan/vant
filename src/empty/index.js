@@ -30,7 +30,7 @@ export default createComponent({
       let { image } = this;
 
       if (PRESETS.indexOf(image) !== -1) {
-        image = `https://img.yzcdn.cn/vant/empty-image-${image}.png`;
+        image = `https://img01.yzcdn.cn/vant/empty-image-${image}.png`;
       }
 
       return <img src={image} />;

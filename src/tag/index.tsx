@@ -32,13 +32,17 @@ function Tag(
   slots: DefaultSlots,
   ctx: RenderContext<TagProps>
 ) {
-  const { type, mark, plain, color, round, size } = props;
+  const { type, mark, plain, color, round, size, textColor } = props;
 
   const key = plain ? 'color' : 'backgroundColor';
   const style = { [key]: color };
 
-  if (props.textColor) {
-    style.color = props.textColor;
+  if (plain) {
+    style.color = textColor || color;
+    style.borderColor = color;
+  } else {
+    style.color = textColor;
+    style.background = color;
   }
 
   const classes: { [key: string]: any } = { mark, plain, round };

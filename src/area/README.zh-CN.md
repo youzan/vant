@@ -17,10 +17,54 @@ Vue.use(Area);
 
 ### 基础用法
 
-要初始化一个 `Area` 组件，你需要传入一个 `area-list` 属性，数据格式具体可看下面数据格式章节。
+初始化省市区组件时，需要通过 `area-list` 属性传入省市区数据。
 
 ```html
 <van-area title="标题" :area-list="areaList" />
+```
+
+### areaList 格式
+
+areaList 为对象结构，包含 `province_list`、`city_list`、`county_list` 三个 key。
+
+每项以地区码作为 key，省市区名字作为 value。地区码为 6 位数字，前两位代表省份，中间两位代表城市，后两位代表区县，以 0 补足 6 位。比如北京的地区码为 `11`，以 0 补足 6 位，为 `110000`。
+
+示例数据如下：
+
+```js
+const areaList = {
+  province_list: {
+    110000: '北京市',
+    120000: '天津市',
+  },
+  city_list: {
+    110100: '北京市',
+    120100: '天津市',
+  },
+  county_list: {
+    110101: '东城区',
+    110102: '西城区',
+    // ....
+  },
+};
+```
+
+### @vant/area-data
+
+Vant 官方提供了一份默认的省市区数据，可以通过 [@vant/area-data](https://github.com/youzan/vant/tree/dev/packages/vant-area-data) 引入：
+
+```bash
+yarn add @vant/area-data
+```
+
+```ts
+import { areaList } from '@vant/area-data';
+
+export default {
+  data() {
+    return { areaList };
+  },
+};
 ```
 
 ### 选中省市区
@@ -94,43 +138,6 @@ Vue.use(Area);
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | reset | 根据 code 重置所有选项，若不传 code，则重置到第一项 | code?: string | - |
-
-### 省市区列表数据格式
-
-整体是一个 object，包含 `province_list`, `city_list`, `county_list` 三个 key。
-
-每项以省市区编码作为 key，省市区名字作为 value。编码为 6 位数字，前两位代表省份，中间两位代表城市，后两位代表区县，以 0 补足 6 位。如北京编码为 `11`，以零补足 6 位，为 `110000`。
-
-`AreaList`具体格式如下：
-
-```js
-{
-  province_list: {
-    110000: '北京市',
-    120000: '天津市'
-  },
-  city_list: {
-    110100: '北京市',
-    110200: '县',
-    120100: '天津市',
-    120200: '县'
-  },
-  county_list: {
-    110101: '东城区',
-    110102: '西城区',
-    110105: '朝阳区',
-    110106: '丰台区'
-    120101: '和平区',
-    120102: '河东区',
-    120103: '河西区',
-    120104: '南开区',
-    120105: '河北区',
-    // ....
-  }
-}
-```
-
-完整数据见 [Area.json](https://github.com/youzan/vant/blob/dev/src/area/demo/area.js)
 
 ### 点击完成时返回的数据格式
 

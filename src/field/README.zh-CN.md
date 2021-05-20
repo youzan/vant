@@ -277,6 +277,7 @@ export default {
 | right-icon | 右侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | rules `v2.5.0` | 表单校验规则，详见 [Form 组件](#/zh-CN/form#rule-shu-ju-jie-gou) | _Rule[]_ | - |
+| autocomplete | input 标签原生的[自动完成属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) | _string_ | - |
 
 ### Events
 
@@ -304,14 +305,14 @@ export default {
 
 ### Slots
 
-| 名称           | 说明                                                       |
-| -------------- | ---------------------------------------------------------- |
-| label          | 自定义输入框 label 标签                                    |
-| input          | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效 |
-| left-icon      | 自定义输入框头部图标                                       |
-| right-icon     | 自定义输入框尾部图标                                       |
-| button         | 自定义输入框尾部按钮                                       |
-| extra `v2.8.2` | 自定义输入框最右侧的额外内容                               |
+| 名称 | 说明 |
+| --- | --- |
+| label | 自定义输入框 label 标签 |
+| input | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效。<br>在 Form 组件进行表单校验时，会使用 input 插槽中子组件的 `value`，而不是 Field 组件的 `value`。 |
+| left-icon | 自定义输入框头部图标 |
+| right-icon | 自定义输入框尾部图标 |
+| button | 自定义输入框尾部按钮 |
+| extra `v2.8.2` | 自定义输入框最右侧的额外内容 |
 
 ### 样式变量
 

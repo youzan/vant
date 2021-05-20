@@ -21,10 +21,13 @@ function runDevServer(
   port: number,
   config: ReturnType<typeof getSiteDevConfig>
 ) {
-  const server = new WebpackDevServer(webpack(config), config.devServer);
+  const server = new WebpackDevServer(webpack(config), {
+    ...config.devServer,
+    port,
+  });
 
   // this is a hack to disable wds status log
-  (server as any).showStatus = function() {};
+  (server as any).showStatus = function () {};
 
   const host = get(config.devServer, 'host', 'localhost');
   server.listen(port, host, (err?: Error) => {

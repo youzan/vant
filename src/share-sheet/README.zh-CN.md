@@ -106,15 +106,15 @@ export default {
       options: [
         {
           name: '名称',
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-fire.png',
+          icon: 'https://img01.yzcdn.cn/vant/custom-icon-fire.png',
         },
         {
           name: '名称',
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-light.png',
+          icon: 'https://img01.yzcdn.cn/vant/custom-icon-light.png',
         },
         {
           name: '名称',
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png',
+          icon: 'https://img01.yzcdn.cn/vant/custom-icon-water.png',
         },
       ],
     };

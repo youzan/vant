@@ -104,23 +104,23 @@ export default {
   data() {
     return {
       fileList: [
-        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
-        { url: 'https://img.yzcdn.cn/vant/tree.jpg' },
+        { url: 'https://img01.yzcdn.cn/vant/leaf.jpg' },
+        { url: 'https://img01.yzcdn.cn/vant/tree.jpg' },
       ],
-      fileList2: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
+      fileList2: [{ url: 'https://img01.yzcdn.cn/vant/sand.jpg' }],
       fileList3: [],
-      fileList4: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
+      fileList4: [{ url: 'https://img01.yzcdn.cn/vant/sand.jpg' }],
       fileList5: [
-        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+        { url: 'https://img01.yzcdn.cn/vant/leaf.jpg' },
         {
-          url: 'https://img.yzcdn.cn/vant/sand.jpg',
+          url: 'https://img01.yzcdn.cn/vant/sand.jpg',
           deletable: true,
           beforeDelete: () => {
             this.$toast(this.t('deleteMessage'));
           },
         },
         {
-          url: 'https://img.yzcdn.cn/vant/tree.jpg',
+          url: 'https://img01.yzcdn.cn/vant/tree.jpg',
           deletable: true,
           imageFit: 'contain',
           previewSize: 120,
@@ -134,19 +134,19 @@ export default {
   created() {
     this.statusFileList.push(
       {
-        url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        url: 'https://img01.yzcdn.cn/vant/leaf.jpg',
         status: 'uploading',
         message: this.t('uploading'),
       },
       {
-        url: 'https://img.yzcdn.cn/vant/tree.jpg',
+        url: 'https://img01.yzcdn.cn/vant/tree.jpg',
         status: 'failed',
         message: this.t('failed'),
       }
     );
 
     this.previewCoverFiles.push({
-      url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+      url: 'https://img01.yzcdn.cn/vant/leaf.jpg',
       file: {
         name: this.t('imageName'),
       },

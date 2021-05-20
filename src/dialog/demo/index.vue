@@ -55,7 +55,7 @@ export default {
     return {
       show: false,
       currentRate: 0,
-      image: 'https://img.yzcdn.cn/vant/apple-3.jpg',
+      image: 'https://img01.yzcdn.cn/vant/apple-3.jpg',
     };
   },
 

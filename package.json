@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "2.12.5",
+  "version": "2.12.19",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -54,16 +54,16 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "7.x",
-    "@vant/icons": "1.5.0",
+    "@vant/icons": "^1.5.3",
     "@vant/popperjs": "^1.0.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
-    "vue": ">= 2.5.22"
+    "vue": ">= 2.6.0"
   },
   "devDependencies": {
-    "@vant/cli": "^2.8.1",
+    "@vant/cli": "^2.10.2",
     "prettier": "2.1.0",
     "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
