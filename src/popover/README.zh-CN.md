@@ -288,6 +288,6 @@ export default {
 
 ## 常见问题
 
-### 点击事件无法正确触发？
+### Popover 的点击事件无法正确触发？
 
 这种情况通常是由于项目中引入了 `fastclick` 库导致的。建议移除 `fastclick`，或者配置 `fastclick` 的 [ignore 规则](https://github.com/ftlabs/fastclick#advanced)。
