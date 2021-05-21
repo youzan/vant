@@ -444,7 +444,7 @@ export default defineComponent({
     onActivated(setLine);
     onPopupReopen(setLine);
     onMountedOrActivated(init);
-    useEventListener('scroll', onScroll, { target: scroller.value });
+    useEventListener('scroll', onScroll, { target: scroller });
 
     linkChildren({
       props,
