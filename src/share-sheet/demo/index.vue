@@ -132,15 +132,15 @@ export default {
       return [
         {
           name: this.t('name'),
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-fire.png',
+          icon: 'https://img01.yzcdn.cn/vant/custom-icon-fire.png',
         },
         {
           name: this.t('name'),
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-light.png',
+          icon: 'https://img01.yzcdn.cn/vant/custom-icon-light.png',
         },
         {
           name: this.t('name'),
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png',
+          icon: 'https://img01.yzcdn.cn/vant/custom-icon-water.png',
         },
       ];
     },

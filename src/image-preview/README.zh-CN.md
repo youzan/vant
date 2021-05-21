@@ -11,7 +11,7 @@ ImagePreview 是一个函数，调用函数后会直接在页面中展示图片�
 ```js
 import { ImagePreview } from 'vant';
 
-ImagePreview(['https://img.yzcdn.cn/vant/apple-1.jpg']);
+ImagePreview(['https://img01.yzcdn.cn/vant/apple-1.jpg']);
 ```
 
 ### 组件调用
@@ -41,8 +41,8 @@ export default {
 
 ```js
 ImagePreview([
-  'https://img.yzcdn.cn/vant/apple-1.jpg',
-  'https://img.yzcdn.cn/vant/apple-2.jpg',
+  'https://img01.yzcdn.cn/vant/apple-1.jpg',
+  'https://img01.yzcdn.cn/vant/apple-2.jpg',
 ]);
 ```
 
@@ -53,8 +53,8 @@ ImagePreview 支持传入配置对象，并通过 `startPosition` 选项指定�
 ```js
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   startPosition: 1,
 });
@@ -67,8 +67,8 @@ ImagePreview({
 ```js
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   closeable: true,
 });
@@ -83,8 +83,8 @@ import { Toast } from 'vant';
 
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   onClose() {
     Toast('关闭');
@@ -99,8 +99,8 @@ ImagePreview({
 ```js
 const instance = ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   asyncClose: true,
 });
@@ -127,8 +127,8 @@ export default {
       show: false,
       index: 0,
       images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
+        'https://img01.yzcdn.cn/vant/apple-1.jpg',
+        'https://img01.yzcdn.cn/vant/apple-2.jpg',
       ],
     };
   },
@@ -165,6 +165,7 @@ export default {
 | closeable `v2.5.0` | 是否显示关闭图标 | _boolean_ | `false` |
 | closeIcon `v2.5.0` | 关闭图标名称或图片链接 | _string_ | `clear` |
 | closeIconPosition `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
+| transition `v2.12.8` | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
 | getContainer | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### Props
@@ -187,6 +188,7 @@ export default {
 | closeable `v2.5.0` | 是否显示关闭图标 | _boolean_ | `false` |
 | close-icon `v2.5.0` | 关闭图标名称或图片链接 | _string_ | `clear` |
 | close-icon-position `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
+| transition `v2.12.8` | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
 | get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### Events

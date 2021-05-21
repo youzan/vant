@@ -54,7 +54,6 @@ exports[`render coupon cell with coupon 1`] = `
 </div>
 `;
 
-
 exports[`render coupon cell with zero discount 1`] = `
 <div role="button" tabindex="0" class="van-cell van-cell--clickable van-coupon-cell">
   <div class="van-cell__title"><span>优惠券</span></div>
@@ -235,14 +234,14 @@ exports[`render empty coupon list 1`] = `
     <div class="van-tabs__content">
       <div role="tabpanel" class="van-tab__pane" style="display: none;">
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom" style="height: 628px;">
-          <div class="van-coupon-list__empty"><img src="https://img.yzcdn.cn/vant/coupon-empty.png">
+          <div class="van-coupon-list__empty"><img src="https://img01.yzcdn.cn/vant/coupon-empty.png">
             <p>暂无优惠券</p>
           </div>
         </div>
       </div>
       <div role="tabpanel" class="van-tab__pane" style="">
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom" style="height: 628px;">
-          <div class="van-coupon-list__empty"><img src="https://img.yzcdn.cn/vant/coupon-empty.png">
+          <div class="van-coupon-list__empty"><img src="https://img01.yzcdn.cn/vant/coupon-empty.png">
             <p>暂无优惠券</p>
           </div>
         </div>

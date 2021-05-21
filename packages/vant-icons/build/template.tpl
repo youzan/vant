@@ -5,9 +5,9 @@
   font-family: '<%= fontName %>';
   font-style: normal;
   font-display: auto;
-  src: url('https://img.yzcdn.cn/vant/<%= cssClass %>.woff2') format('woff2'),
-    url('https://img.yzcdn.cn/vant/<%= cssClass %>.woff') format('woff'),
-    url('https://img.yzcdn.cn/vant/<%= cssClass %>.ttf') format('truetype');
+  src: url('https://img01.yzcdn.cn/vant/<%= cssClass %>.woff2') format('woff2'),
+    url('https://img01.yzcdn.cn/vant/<%= cssClass %>.woff') format('woff'),
+    url('https://img01.yzcdn.cn/vant/<%= cssClass %>.ttf') format('truetype');
 }
 
 .van-icon {

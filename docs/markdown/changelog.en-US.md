@@ -16,6 +16,152 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.19](https://github.com/youzan/vant/compare/v2.12.18...v2.12.19)
+
+`2021-05-17`
+
+**Feature**
+
+- NoticeBar: increase default speed to 60 [a48663](https://github.com/youzan/vant/commit/a486630fe3fe10d8854c03817214dba82b70229e)
+- Dependencies: unlock @vant/icons [#8714](https://github.com/youzan/vant/issues/8714)
+
+### [v2.12.18](https://github.com/youzan/vant/compare/v2.12.17...v2.12.18)
+
+`2021-05-10`
+
+**Bug Fixes**
+
+- Coupon: timestamp can be string type [c5b4d1](https://github.com/youzan/vant/commit/c5b4d1a66372b94420146f9a640aee31f402889a)
+
+### [v2.12.17](https://github.com/youzan/vant/compare/v2.12.16...v2.12.17)
+
+`2021-05-08`
+
+**Feature**
+
+- CouponList: support custom valid period [#8679](https://github.com/youzan/vant/issues/8679)
+
+### [v2.12.16](https://github.com/youzan/vant/compare/v2.12.15...v2.12.16)
+
+`2021-05-03`
+
+**Feature**
+
+- Steps: add icon-prefix prop [#8630](https://github.com/youzan/vant/issues/8630)
+
+**Bug Fixes**
+
+- DatetimePicker: fixed show incorrect date time when dynamic set mindate or maxdate [#8640](https://github.com/youzan/vant/issues/8640)
+
+### [v2.12.15](https://github.com/youzan/vant/compare/v2.12.14...v2.12.15)
+
+`2021-04-25`
+
+**Bug Fixes**
+
+- Calendar: incorrect weekdays locale [#8569](https://github.com/youzan/vant/issues/8569)
+- Tag: incorrect border color when using plain [#8602](https://github.com/youzan/vant/issues/8602)
+- Uploader: failed to render scoped class [#8613](https://github.com/youzan/vant/issues/8613)
+
+### [v2.12.14](https://github.com/youzan/vant/compare/v2.12.13...v2.12.14)
+
+`2021-04-18`
+
+**Bug Fixes**
+
+- Calendar: failed to update subtitle in some cases [#8513](https://github.com/youzan/vant/issues/8513)
+- ShareSheet: duration prop not work [#8542](https://github.com/youzan/vant/issues/8542)
+
+### [v2.12.13](https://github.com/youzan/vant/compare/v2.12.12...v2.12.13)
+
+`2021-04-11`
+
+**Feature**
+
+- Sticky: add change event [#8479](https://github.com/youzan/vant/issues/8479)
+
+### [v2.12.12](https://github.com/youzan/vant/compare/v2.12.11...v2.12.12)
+
+`2021-04-05`
+
+**Bug Fixes**
+
+- fix incorrect tag prompts under Webstorm [#8450](https://github.com/youzan/vant/issues/8450)
+
+### [v2.12.11](https://github.com/youzan/vant/compare/v2.12.10...v2.12.11)
+
+`2021-03-30`
+
+**Bug Fixes**
+
+- Field: should not reset validation after blured [#8412](https://github.com/youzan/vant/issues/8412)
+- Tabs: fix incorrect horizontal slip judgment [#8387](https://github.com/youzan/vant/issues/8387)
+
+### [v2.12.10](https://github.com/youzan/vant/compare/v2.12.9...v2.12.10)
+
+`2021-03-19`
+
+**Bug Fixes**
+
+- Utils: incorrect deepClone [#8326](https://github.com/youzan/vant/issues/8326)
+- Swipe: incorrect item width after scaled [#8329](https://github.com/youzan/vant/issues/8329)
+
+### [v2.12.9](https://github.com/youzan/vant/compare/v2.12.8...v2.12.9)
+
+`2021-03-09`
+
+**Feature**
+
+- AddressList: add tag slot [#8311](https://github.com/youzan/vant/issues/8311)
+
+### [v2.12.8](https://github.com/youzan/vant/compare/v2.12.7...v2.12.8)
+
+`2021-03-07`
+
+**Feature**
+
+- ImagePreview: add transition prop [#8273](https://github.com/youzan/vant/issues/8273)
+- PullRefresh: add pull-distance prop [#8279](https://github.com/youzan/vant/issues/8279)
+- Locale: add th-TH lang [#8247](https://github.com/youzan/vant/issues/8247)
+
+**Bug Fixes**
+
+- ActionSheet: should not reopen when closed [#8271](https://github.com/youzan/vant/issues/8271)
+- ImagePreview: missing initial animation [#8274](https://github.com/youzan/vant/issues/8274)
+- Stepper: incorrect text color in iOS14 when disabled [#8278](https://github.com/youzan/vant/issues/8278)
+
+### [v2.12.7](https://github.com/youzan/vant/compare/v2.12.6...v2.12.7)
+
+`2021-02-28`
+
+**Feature**
+
+- Step: add finish-icon slot [#8240](https://github.com/youzan/vant/issues/8240)
+- Steps: add finish-icon prop [#8237](https://github.com/youzan/vant/issues/8237)
+
+**Bug Fixes**
+
+- DatetimePicker: fix incorrecrt inital value when v-model is null [#7832](https://github.com/youzan/vant/issues/7832)
+- Empty: linearGradient id conflict [#8011](https://github.com/youzan/vant/issues/8011)
+- GoodsActionIcon: info warning [#8040](https://github.com/youzan/vant/issues/8040)
+- Tabs: incorrect active tab when active prop is zero [#8087](https://github.com/youzan/vant/issues/8087)
+
+### [v2.12.6](https://github.com/youzan/vant/compare/v2.12.5...v2.12.6)
+
+`2021-01-26`
+
+**Feature**
+
+- Icons: add wechat icon, rename wechat-pay icon [b3cd8c](https://github.com/youzan/vant/commit/b3cd8c14aea9e542a9de4ba9999e50c3ecbf3b3c)
+
+**Bug Fixes**
+
+- fix CDN image url [#8000](https://github.com/youzan/vant/issues/8000)
+
+**perf**
+
+- Sku: using icon instead of cdn image [#7992](https://github.com/youzan/vant/issues/7992)
+
 ### [v2.12.5](https://github.com/youzan/vant/compare/v2.12.4...v2.12.5)
 
 `2021-01-24`
@@ -1294,7 +1440,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 - add Calendar component
 
-![](https://img.yzcdn.cn/vant/calendar-12282.png)
+![](https://img01.yzcdn.cn/vant/calendar-12282.png)
 
 **Feature**
 
@@ -2124,7 +2270,7 @@ Upgrading the style of business components:
 - `IndexBar`、`IndexAnchor` Component
 - `DropdownMenu`、`DropdownItem` Component
 
-![](https://img.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png)
+![](https://img01.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png)
 
 #### Breaking Changes
 

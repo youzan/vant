@@ -214,6 +214,8 @@ export default createComponent({
 
           return false;
         });
+
+        this.onScroll();
       });
     },
 

@@ -1,6 +1,6 @@
 <div class="card">
   <div class="van-doc-intro">
-    <img class="van-doc-intro__logo" style="width: 120px; height: 120px;" src="https://img.yzcdn.cn/vant/logo.png">
+    <img class="van-doc-intro__logo" style="width: 120px; height: 120px;" src="https://img01.yzcdn.cn/vant/logo.png">
     <h2 style="margin: 0; font-size: 36px; line-height: 60px;">Vant</h2>
     <p>Mobile UI Components built on Vue</p>
   </div>
@@ -29,7 +29,9 @@ Please make sure to read the [Contributing Guide](https://github.com/youzan/vant
 
 ### Browser Support
 
-Modern browsers and Android 4.0+, iOS 8.0+.
+Vant 2 supports modern browsers and Android >= 4.0、iOS >= 8.0.
+
+Vant 3 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3).
 
 ### Ecosystem
 

@@ -49,6 +49,12 @@ npm i vant@next -S
 </script>
 ```
 
+你可以通过以下免费 CDN 服务来使用 Vant:
+
+- [jsdelivr](https://www.jsdelivr.com/package/npm/vant)
+- [cdnjs](https://cdnjs.com/libraries/vant)
+- [unpkg](https://unpkg.com/)
+
 ### 通过脚手架安装
 
 在新项目中使用 Vant 时，推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目并安装 Vant。
@@ -64,7 +70,7 @@ vue create hello-world
 vue ui
 ```
 
-![](https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png)
+![](https://img01.yzcdn.cn/vant/vue-cli-demo-201809032000.png)
 
 在图形化界面中，点击 `依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
 

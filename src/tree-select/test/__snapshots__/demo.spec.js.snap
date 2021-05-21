@@ -63,7 +63,7 @@ exports[`renders demo correctly 1`] = `
           </div>
         </a></div>
       <div class="van-tree-select__content">
-        <div class="van-image"><img src="https://img.yzcdn.cn/vant/apple-1.jpg" class="van-image__img"></div>
+        <div class="van-image"><img src="https://img01.yzcdn.cn/vant/apple-1.jpg" class="van-image__img"></div>
         <!---->
       </div>
     </div>

@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       fileList: [
-        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+        { url: 'https://img01.yzcdn.cn/vant/leaf.jpg' },
         // Uploader 根据文件后缀来判断是否为图片文件
         // 如果图片 URL 中不包含类型信息，可以添加 isImage 标记来声明
         { url: 'https://cloud-image', isImage: true },
@@ -71,12 +71,12 @@ export default {
     return {
       fileList: [
         {
-          url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+          url: 'https://img01.yzcdn.cn/vant/leaf.jpg',
           status: 'uploading',
           message: '上传中...',
         },
         {
-          url: 'https://img.yzcdn.cn/vant/tree.jpg',
+          url: 'https://img01.yzcdn.cn/vant/tree.jpg',
           status: 'failed',
           message: '上传失败',
         },
@@ -234,16 +234,16 @@ export default {
   data() {
     return {
       fileList = [
-        { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+        { url: 'https://img01.yzcdn.cn/vant/leaf.jpg' },
         {
-          url: 'https://img.yzcdn.cn/vant/sand.jpg',
+          url: 'https://img01.yzcdn.cn/vant/sand.jpg',
           deletable: true,
           beforeDelete: () => {
             Toast('自定义单个预览图片的事件和样式');
           },
         },
         {
-          url: 'https://img.yzcdn.cn/vant/tree.jpg',
+          url: 'https://img01.yzcdn.cn/vant/tree.jpg',
           deletable: true,
           imageFit: 'contain',
           previewSize: 120,
@@ -357,3 +357,46 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 | @uploader-loading-icon-size        | `22px`               | -    |
 | @uploader-loading-icon-color       | `@white`             | -    |
 | @uploader-disabled-opacity         | `@disabled-opacity`  | -    |
+
+## 常见问题
+
+### 拍照上传的图片被旋转 90 度？
+
+部分手机在拍照上传时会出现图片被旋转 90 度的问题，这个问题可以通过 [compressorjs](https://github.com/fengyuanchen/compressorjs) 或其他开源库进行处理。
+
+compressorjs 是一个开源的图片处理库，提供了图片压缩、图片旋转等能力。
+
+#### 示例
+
+使用 compressorjs 进行处理的示例代码如下:
+
+```html
+<van-uploader :before-read="beforeRead" />
+```
+
+```js
+import Compressor from 'compressorjs';
+
+export default {
+  methods: {
+    beforeRead(file) {
+      return new Promise((resolve) => {
+        // compressorjs 默认开启 checkOrientation 选项
+        // 会将图片修正为正确方向
+        new Compressor(file, {
+          success: resolve,
+          error(err) {
+            console.log(err.message);
+          },
+        });
+      });
+    },
+  },
+};
+```
+
+### 上传 HEIC/HEIF 格式的图片后无法展示？
+
+目前 Chrome、Safari 等浏览器不支持展示 HEIC/HEIF 格式的图片，因此上传后无法在 Uploader 组件中进行预览。
+
+[HEIF] 格式的兼容性请参考 [caniuse](https://caniuse.com/?search=heic)。

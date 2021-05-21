@@ -75,14 +75,14 @@ export default {
 
 ### CouponCell Props
 
-| Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
-| title | Cell title | _string_ | `Coupon` |
-| chosen-coupon | Index of chosen coupon | _number \| string_ | `-1` |
-| coupons | Coupon list | _Coupon[]_ | `[]` |
-| editable | Cell editable | _boolean_ | `true` |
-| border | Whether to show innner border | _boolean_ | `true` |
-| currency | Currency symbol | _string_ | `¥` |
+| Attribute     | Description                  | Type               | Default  |
+| ------------- | ---------------------------- | ------------------ | -------- |
+| title         | Cell title                   | _string_           | `Coupon` |
+| chosen-coupon | Index of chosen coupon       | _number \| string_ | `-1`     |
+| coupons       | Coupon list                  | _Coupon[]_         | `[]`     |
+| editable      | Cell editable                | _boolean_          | `true`   |
+| border        | Whether to show inner border | _boolean_          | `true`   |
+| currency      | Currency symbol              | _string_           | `¥`      |
 
 ### CouponList Props
 
@@ -102,7 +102,7 @@ export default {
 | close-button-text | Close button text | _string_ | `Close` |
 | input-placeholder | Input placeholder | _string_ | `Coupon code` |
 | currency | Currency symbol | _string_ | `¥` |
-| empty-image | Placeholder image when list is empty | _string_ | `https://img.yzcdn.cn/vant/coupon-empty.png` |
+| empty-image | Placeholder image when list is empty | _string_ | `https://img01.yzcdn.cn/vant/coupon-empty.png` |
 | show-count | Whether to show coupon count in tab title | _boolean_ | `true` |
 
 ### CouponList Events
@@ -114,18 +114,19 @@ export default {
 
 ### Data Structure of Coupon
 
-| Key         | Description                         | Type     |
-| ----------- | ----------------------------------- | -------- |
-| id          | Id                                  | _string_ |
-| name        | Name                                | _string_ |
-| condition   | Condition                           | _string_ |
-| startAt     | Start time (Timestmap, unit second) | _number_ |
-| endAt       | End time (Timestmap, unit second)   | _number_ |
-| description | Description                         | _string_ |
-| reason      | Unavailable reason                  | _string_ |
-| value       | Value                               | _number_ |
-| valueDesc   | Value Text                          | _string_ |
-| unitDesc    | Unit Text                           | _string_ |
+| Key               | Description                              | Type     |
+| ----------------- | ---------------------------------------- | -------- |
+| id                | Id                                       | _string_ |
+| name              | Name                                     | _string_ |
+| condition         | Condition                                | _string_ |
+| startAt           | Start time (Timestamp, unit millisecond) | _number_ |
+| endAt             | End time (Timestamp, unit millisecond)   | _number_ |
+| description       | Description                              | _string_ |
+| reason            | Unavailable reason                       | _string_ |
+| value             | Value                                    | _number_ |
+| valueDesc         | Value Text                               | _string_ |
+| unitDesc          | Unit Text                                | _string_ |
+| customValidPeriod | custom valid period                      | _string_ |
 
 ### Less Variables
 

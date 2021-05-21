@@ -203,14 +203,14 @@ sku: {
         {
           id: '1', // skuValueId：规格值 id
           name: '红色', // skuValueName：规格值名称
-          imgUrl: 'https://img.yzcdn.cn/1.jpg', // 规格类目图片，只有第一个规格类目可以定义图片
-          previewImgUrl: 'https://img.yzcdn.cn/1p.jpg', // 用于预览显示的规格类目图片
+          imgUrl: 'https://img01.yzcdn.cn/1.jpg', // 规格类目图片，只有第一个规格类目可以定义图片
+          previewImgUrl: 'https://img01.yzcdn.cn/1p.jpg', // 用于预览显示的规格类目图片
         },
         {
           id: '1',
           name: '蓝色',
-          imgUrl: 'https://img.yzcdn.cn/2.jpg',
-          previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
+          imgUrl: 'https://img01.yzcdn.cn/2.jpg',
+          previewImgUrl: 'https://img01.yzcdn.cn/2p.jpg',
         }
       ],
       largeImageMode: true, //  是否展示大图模式
@@ -294,7 +294,7 @@ sku: {
 ```js
 goods: {
   // 默认商品 sku 缩略图
-  picture: 'https://img.yzcdn.cn/1.jpg';
+  picture: 'https://img01.yzcdn.cn/1.jpg';
 }
 ```
 
@@ -337,7 +337,7 @@ messageConfig: {
   // 图片上传回调，需要返回一个promise，promise正确执行的结果需要是一个图片url
   uploadImg: () => {
     return new Promise((resolve) => {
-      setTimeout(() => resolve('https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
+      setTimeout(() => resolve('https://img01.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
     });
   },
   // 最大上传体积 (MB)

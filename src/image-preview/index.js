@@ -17,6 +17,7 @@ const defaultConfig = {
   closeable: false,
   closeIcon: 'clear',
   asyncClose: false,
+  transition: 'van-fade',
   getContainer: 'body',
   startPosition: 0,
   swipeDuration: 300,

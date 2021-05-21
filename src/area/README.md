@@ -17,10 +17,52 @@ Vue.use(Area);
 
 ### Basic Usage
 
-To initailize `Area` component, `area-list` property is required. Data structure will be introduced later.
+To initailize `Area` component, `area-list` property is required.
 
 ```html
 <van-area title="Title" :area-list="areaList" />
+```
+
+### areaList Data Structure
+
+An object contains three properties: `province_list`, `city_list` and `county_list`. Each property is a simple key-value object, key is a 6-bit code of the area of which first two bits stand for the province or state, middle two bits are used as city code and the last two are district code, value is the name of the area. If the code stands for an area that has sub-areas, lower bits of it will be filled with 0.
+
+Sample data:
+
+```js
+export default {
+  province_list: {
+    110000: 'Beijing',
+    330000: 'Zhejiang Province',
+  },
+  city_list: {
+    110100: 'Beijing City',
+    330100: 'Hangzhou',
+  },
+  county_list: {
+    110101: 'Dongcheng District',
+    110102: 'Xicheng District',
+    // ....
+  },
+};
+```
+
+### @vant/area-data
+
+Vant officially provides a default area data, which can be imported through [@vant/area-data](https://github.com/youzan/vant/tree/dev/packages/vant-area-data):
+
+```bash
+yarn add @vant/area-data
+```
+
+```ts
+import { areaList } from '@vant/area-data';
+
+export default {
+  setup() {
+    return { areaList };
+  },
+};
 ```
 
 ### Initial Value
@@ -94,36 +136,6 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Area instance and call instance 
 | Name  | Description               | Attribute     | Return value |
 | ----- | ------------------------- | ------------- | ------------ |
 | reset | Reset all options by code | code?: string | -            |
-
-### areaList Data Structure
-
-An object contains three properties: `province_list`, `city_list` and `county_list`. Each property is a simple key-value object, key is a 6-bit code of the area of which first two bits stand for the province or state, middle two bits are used as city code and the last two are district code, value is the name of the area. If the code stands for an area that has sub-areas, lower bits of it will be filled with 0.
-
-Example of `AreaList`
-
-```js
-{
-  province_list: {
-    110000: 'Beijing',
-    330000: 'Zhejiang Province'
-  },
-  city_list: {
-    110100: 'Beijing City',
-    330100: 'Hangzhou',
-  },
-  county_list: {
-    110101: 'Dongcheng District',
-    110102: 'Xicheng District',
-    110105: 'Chaoyang District',
-    110106: 'Fengtai District'
-    330105: 'Gongshu District',
-    330106: 'Xihu District',
-    // ....
-  }
-}
-```
-
-All code of China: [Area.json](https://github.com/youzan/vant/blob/dev/src/area/demo/area-en.js)
 
 ### argument of callback function confirm
 

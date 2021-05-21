@@ -150,3 +150,29 @@ test('set min-minute dynamically', async () => {
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[0][0]).toEqual('13:00');
 });
+
+test('change min-hour and emit correct value', async () => {
+  const wrapper = mount({
+    template: `
+    <van-datetime-picker
+      v-model="time"
+      type="time"
+      :min-hour="minHour"
+      @confirm="value => this.$emit('confirm', value)"
+    />
+    `,
+    data() {
+      return {
+        time: '10:30',
+        minHour: 1,
+      }
+    },
+    mounted() {
+      this.minHour = 11;
+    },
+  })
+
+  await later();
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual('11:30');
+});

@@ -35,7 +35,7 @@ Use the image prop to display different placeholder images.
 ```html
 <van-empty
   class="custom-image"
-  image="https://img.yzcdn.cn/vant/leaf.jpg"
+  image="https://img01.yzcdn.cn/vant/leaf.jpg"
   description="Description"
 />
 

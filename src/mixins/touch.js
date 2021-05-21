@@ -28,7 +28,8 @@ export const TouchMixin = {
 
     touchMove(event) {
       const touch = event.touches[0];
-      this.deltaX = touch.clientX - this.startX;
+      // Fix: Safari back will set clientX to negative number
+      this.deltaX = touch.clientX < 0 ? 0 : touch.clientX - this.startX;
       this.deltaY = touch.clientY - this.startY;
       this.offsetX = Math.abs(this.deltaX);
       this.offsetY = Math.abs(this.deltaY);

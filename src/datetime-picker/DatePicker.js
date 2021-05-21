@@ -30,13 +30,17 @@ export default createComponent({
 
   watch: {
     filter: 'updateInnerValue',
-    minDate: 'updateInnerValue',
+    minDate() {
+      this.$nextTick(() => {
+        this.updateInnerValue();
+      });
+    },
     maxDate: 'updateInnerValue',
 
     value(val) {
       val = this.formatValue(val);
 
-      if (val.valueOf() !== this.innerValue.valueOf()) {
+      if (val && val.valueOf() !== this.innerValue.valueOf()) {
         this.innerValue = val;
       }
     },
@@ -50,7 +54,10 @@ export default createComponent({
         maxMonth,
         maxHour,
         maxMinute,
-      } = this.getBoundary('max', this.innerValue);
+      } = this.getBoundary(
+        'max',
+        this.innerValue ? this.innerValue : this.minDate
+      );
 
       const {
         minYear,
@@ -58,7 +65,10 @@ export default createComponent({
         minMonth,
         minHour,
         minMinute,
-      } = this.getBoundary('min', this.innerValue);
+      } = this.getBoundary(
+        'min',
+        this.innerValue ? this.innerValue : this.minDate
+      );
 
       let result = [
         {
@@ -114,7 +124,7 @@ export default createComponent({
   methods: {
     formatValue(value) {
       if (!isDate(value)) {
-        value = this.minDate;
+        return null;
       }
 
       value = Math.max(value, this.minDate.getTime());
@@ -178,7 +188,7 @@ export default createComponent({
       let month;
       let day;
       if (type === 'month-day') {
-        year = this.innerValue.getFullYear();
+        year = (this.innerValue ? this.innerValue : this.minDate).getFullYear();
         month = getValue('month');
         day = getValue('day');
       } else {
@@ -218,7 +228,7 @@ export default createComponent({
     },
 
     updateColumnValue() {
-      const value = this.innerValue;
+      const value = this.innerValue ? this.innerValue : this.minDate;
       const { formatter } = this;
 
       const values = this.originColumns.map((column) => {
