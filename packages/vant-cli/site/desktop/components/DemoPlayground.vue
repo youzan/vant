@@ -19,7 +19,7 @@
             title="Toggle source code panel"
             class="action-icon"
             role="source"
-            @click="toogleSource"
+            @click="toggleSource"
           />
         </div>
         <div
@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     unescape,
-    toogleSource() {
+    toggleSource() {
       this.showSource = !this.showSource;
     },
     copySourceCode() {
