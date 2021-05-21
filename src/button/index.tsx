@@ -86,6 +86,9 @@ function Button(
   }
 
   function onClick(event: Event) {
+    if (props.loading) {
+      event.preventDefault();
+    }
     if (!loading && !disabled) {
       emit(ctx, 'click', event);
       functionalRoute(ctx);
