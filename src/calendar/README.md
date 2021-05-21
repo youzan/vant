@@ -290,6 +290,7 @@ Following props are supported when the type is range
 | --- | --- | --- | --- |
 | max-range | Number of selectable days | _number \| string_ | Unlimited |
 | range-prompt | Error message when exceeded max range | _string_ | `Choose no more than xx days` |
+| show-range-prompt | whether prompt error message when exceeded max range | _boolean_ | `true` |
 | allow-same-day | Whether the start and end time of the range is allowed on the same day | _boolean_ | `false` |
 
 ### Calendar Multiple Props
@@ -324,6 +325,7 @@ Following props are supported when the type is multiple
 | closed | Emitted when Popup is closed | - |
 | unselect | Emitted when unselect date when type is multiple | _value: Date_ |
 | month-show | Emitted when a month enters the visible area | _{ date: Date, title: string }_ |
+| over-range | Emitted when exceeded max range | - |
 
 ### Slots
 
