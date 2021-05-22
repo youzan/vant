@@ -14,6 +14,7 @@ import { isHidden, truthProp, createNamespace } from '../utils';
 // Composables
 import { useRect, useScrollParent, useEventListener } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
+import { useTabStatus } from '../composables/use-tab-status';
 
 // Components
 import { Loading } from '../loading';
@@ -50,11 +51,18 @@ export default defineComponent({
     const loading = ref(false);
     const root = ref<HTMLElement>();
     const placeholder = ref<HTMLElement>();
+    const tabStatus = useTabStatus();
     const scrollParent = useScrollParent(root);
 
     const check = () => {
       nextTick(() => {
-        if (loading.value || props.finished || props.error) {
+        if (
+          loading.value ||
+          props.finished ||
+          props.error ||
+          // skip check when inside an inactive tab
+          tabStatus?.value === false
+        ) {
           return;
         }
 
@@ -62,7 +70,7 @@ export default defineComponent({
         const scrollParentRect = useRect(scrollParent);
 
         if (!scrollParentRect.height || isHidden(root)) {
-          return false;
+          return;
         }
 
         let isReachEdge = false;

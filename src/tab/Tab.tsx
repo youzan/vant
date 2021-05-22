@@ -1,6 +1,8 @@
 import {
   ref,
   watch,
+  provide,
+  computed,
   nextTick,
   PropType,
   CSSProperties,
@@ -14,6 +16,7 @@ import { TABS_KEY, TabsProvide } from '../tabs/Tabs';
 // Composables
 import { useParent } from '@vant/use';
 import { routeProps } from '../composables/use-route';
+import { TAB_STATUS_KEY } from '../composables/use-tab-status';
 
 // Components
 import { SwipeItem } from '../swipe-item';
@@ -56,15 +59,15 @@ export default defineComponent({
       }
     };
 
-    const isActive = () => {
-      const active = getName() === parent.currentName.value;
+    const active = computed(() => {
+      const isActive = getName() === parent.currentName.value;
 
-      if (active && !inited.value) {
+      if (isActive && !inited.value) {
         init();
       }
 
-      return active;
-    };
+      return isActive;
+    });
 
     watch(
       () => props.title,
@@ -74,6 +77,8 @@ export default defineComponent({
       }
     );
 
+    provide(TAB_STATUS_KEY, active);
+
     return () => {
       const { animated, swipeable, scrollspy, lazyRender } = parent.props;
 
@@ -81,15 +86,14 @@ export default defineComponent({
         return;
       }
 
-      const active = isActive();
-      const show = scrollspy || active;
+      const show = scrollspy || active.value;
 
       if (animated || swipeable) {
         return (
           <SwipeItem
             role="tabpanel"
-            aria-hidden={!active}
-            class={bem('pane-wrapper', { inactive: !active })}
+            aria-hidden={!active.value}
+            class={bem('pane-wrapper', { inactive: !active.value })}
           >
             <div class={bem('pane')}>{slots.default?.()}</div>
           </SwipeItem>
