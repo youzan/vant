@@ -1,4 +1,6 @@
 import { List } from '..';
+import { Tab } from '../../tab';
+import { Tabs } from '../../tabs';
 import { mount, later, mockGetBoundingClientRect } from '../../../test';
 
 test('should emit load event when reaching bottom', async () => {
@@ -133,4 +135,26 @@ test('should render correctly when direction is up', async () => {
   children = wrapper.findAll('.van-list > div');
   expect(children[0].classes()).toContain('list-item');
   expect(children[1].classes()).toContain('van-list__placeholder');
+});
+
+test('should not emit load event when inside an inactive tab', async () => {
+  const onLoad1 = jest.fn();
+  const onLoad2 = jest.fn();
+
+  mount({
+    render: () => (
+      <Tabs active={0} animated>
+        <Tab>
+          <List onLoad={onLoad1} />
+        </Tab>
+        <Tab>
+          <List onLoad={onLoad2} />
+        </Tab>
+      </Tabs>
+    ),
+  });
+
+  await later();
+  expect(onLoad1).toHaveBeenCalledTimes(1);
+  expect(onLoad2).toHaveBeenCalledTimes(0);
 });
