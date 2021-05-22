@@ -119,7 +119,7 @@ export default defineComponent({
     watch(() => [props.show, props.forbidClick], toggleClickable);
 
     watch(
-      () => [props.show, props.duration],
+      () => [props.show, props.type, props.message, props.duration],
       () => {
         clearTimer();
         if (props.show && props.duration > 0) {
