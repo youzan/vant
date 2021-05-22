@@ -19,7 +19,7 @@
     <van-uploader
       v-model="fileList4"
       multiple
-      :max-size="isOverSize"
+      :max-size="500 * 1024"
       @oversize="onOversize"
     />
   </demo-block>
@@ -174,17 +174,12 @@ export default {
       Toast(t('overSizeTip'));
     };
 
-    const isOverSize = (file: File) => {
-      console.log(file.type);
-    };
-
     return {
       ...toRefs(state),
       t,
       afterRead,
       beforeRead,
       onOversize,
-      isOverSize,
       afterReadFailed,
     };
   },
