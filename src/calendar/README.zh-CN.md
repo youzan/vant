@@ -294,6 +294,7 @@ export default {
 | --- | --- | --- | --- |
 | max-range | 日期区间最多可选天数 | _number \| string_ | 无限制 |
 | range-prompt | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
+| show-range-prompt | 范围选择超过最多可选天数时，是否展示提示文案 | _boolean_ | `true` |
 | allow-same-day | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 
 ### Calendar Multiple Props
@@ -330,6 +331,7 @@ export default {
 | closed | 关闭弹出层且动画结束后触发 | - |
 | unselect | 当日历组件的 `type` 为 `multiple` 时，取消选中日期时触发 | _value: Date_ |
 | month-show | 当某个月份进入可视区域时触发 | _{ date: Date, title: string }_ |
+| over-range | 范围选择超过最多可选天数时触发 | - |
 
 ### Slots
 

@@ -252,3 +252,50 @@ test('readonly prop', async () => {
   days[13].trigger('click');
   expect(wrapper.emitted('select')).toBeTruthy();
 });
+
+test('should disabled prompt when using show-range-prompt prop', async () => {
+  document.getElementsByTagName('html')[0].innerHTML = '';
+  const wrapper = mount(Calendar, {
+    props: {
+      type: 'range',
+      minDate,
+      maxDate,
+      maxRange: 3,
+      poppable: false,
+      lazyRender: false,
+      showRangePrompt: false,
+    },
+  });
+
+  await later();
+
+  const days = wrapper.findAll('.van-calendar__day');
+  days[12].trigger('click');
+  days[18].trigger('click');
+
+  await later();
+  expect(document.querySelector('.van-toast')).toBeFalsy();
+});
+
+test('should emit over-range when exceeded max range', async () => {
+  const onOverRange = jest.fn();
+  const wrapper = mount(Calendar, {
+    props: {
+      type: 'range',
+      minDate,
+      maxDate,
+      maxRange: 3,
+      onOverRange,
+      poppable: false,
+      lazyRender: false,
+    },
+  });
+
+  await later();
+
+  const days = wrapper.findAll('.van-calendar__day');
+  days[12].trigger('click');
+  days[18].trigger('click');
+
+  expect(onOverRange).toHaveBeenCalledTimes(1);
+});

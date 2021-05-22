@@ -104,9 +104,20 @@ export default defineComponent({
       default: 0,
       validator: (val: number) => val >= 0 && val <= 6,
     },
+    showRangePrompt: {
+      type: Boolean,
+      default: true,
+    },
   },
 
-  emits: ['select', 'confirm', 'unselect', 'month-show', 'update:show'],
+  emits: [
+    'select',
+    'confirm',
+    'unselect',
+    'month-show',
+    'update:show',
+    'over-range',
+  ],
 
   setup(props, { emit, slots }) {
     const limitDateRange = (
@@ -308,10 +319,13 @@ export default defineComponent({
     };
 
     const checkRange = (date: [Date, Date]) => {
-      const { maxRange, rangePrompt } = props;
+      const { maxRange, rangePrompt, showRangePrompt } = props;
 
       if (maxRange && calcDateNum(date) > maxRange) {
-        Toast(rangePrompt || t('rangePrompt', maxRange));
+        if (showRangePrompt) {
+          Toast(rangePrompt || t('rangePrompt', maxRange));
+        }
+        emit('over-range');
         return false;
       }
 
