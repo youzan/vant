@@ -48,8 +48,8 @@ Vant 3 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3).
 
 | Project | Description |
 | --- | --- |
-| [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Alipay MiniProgram UI |
 | [vant-react](https://github.com/mxdi9i7/vant-react) | Vant React |
+| [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Alipay MiniProgram UI |
 | [taroify](https://gitee.com/mallfoundry/taroify) | Vant Taro |
 
 ### Links
