@@ -110,7 +110,26 @@ export default {
   methods: {
     onOversize(file) {
       console.log(file);
-      Toast('File size cannot exceed 500kb);
+      Toast('File size cannot exceed 500kb');
+    },
+  },
+};
+```
+
+If you need to make different size limits for different types of files, you can pass a function to the `max-size` props.
+
+```html
+<van-uploader multiple :max-size="isOverSize" />
+```
+
+```js
+import { Toast } from 'vant';
+
+export default {
+  methods: {
+    isOverSize() {
+      const maxSize = file.type === 'image/jpeg' ? 500 * 1024 : 1000 * 1024;
+      return file.size >= maxSize;
     },
   },
 };
@@ -235,7 +254,7 @@ export default {
 | name | Input name | _number \| string_ | - |
 | preview-size | Size of preview image | _number \| string_ | `80px` |
 | preview-image | Whether to show image preview | _boolean_ | `true` |
-| preview-full-image | Whethe to show full screen image preview when image is clicked | _boolean_ | `true` |
+| preview-full-image | Whether to show full screen image preview when image is clicked | _boolean_ | `true` |
 | preview-options `v2.9.3` | Options of full screen image preview，see [ImagePreview](#/en-US/image-preview) | _object_ | - |
 | multiple | Whether to enable multiple selection pictures | _boolean_ | `false` |
 | disabled | Whether to disabled the upload | _boolean_ | `false` |
@@ -246,7 +265,7 @@ export default {
 | after-read | Hook after reading the file | _Function_ | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | _Function_ | - |
 | before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | _Function_ | - |
-| max-size | Max size of file | _number \| string_ | - |
+| max-size `v2.12.20` | Max size of file | _number \| string \| (file: File) => boolean_ | - |
 | max-count | Max count of image | _number \| string_ | - |
 | result-type | Type of file read result, can be set to `file` `text` | _string_ | `dataUrl` |
 | upload-text | Upload text | _string_ | - |
@@ -269,7 +288,7 @@ export default {
 | default | Custom icon | - |
 | preview-cover `v2.9.1` | Custom content that covers the image preview | `item: FileListItem` |
 
-### Parematers of before-read、after-read、before-delete
+### Parameters of before-read、after-read、before-delete
 
 | Attribute | Description                          | Type     |
 | --------- | ------------------------------------ | -------- |
