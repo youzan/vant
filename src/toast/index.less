@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   box-sizing: content-box;
+  transition: all @animation-duration-fast;
 
   // hack for avoid max-width when use left & fixed
   width: @toast-default-width;
@@ -16,7 +17,7 @@
   font-size: @toast-font-size;
   line-height: @toast-line-height;
 
-  // allow newline charactor
+  // allow newline character
   white-space: pre-wrap;
   text-align: center;
   word-wrap: break-word;
