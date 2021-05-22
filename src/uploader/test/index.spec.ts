@@ -3,7 +3,9 @@ import Uploader, { UploaderFileListItem } from '..';
 import { mount, later, triggerDrag } from '../../../test';
 
 const mockFileDataUrl = 'data:image/test';
-const mockFile = new File([new ArrayBuffer(10000)], 'test.jpg');
+const mockFile = new File([new ArrayBuffer(10000)], 'test.jpg', {
+  type: 'image/test',
+});
 const IMAGE = 'https://img.yzcdn.cn/vant/cat.jpeg';
 const PDF = 'https://img.yzcdn.cn/vant/test.pdf';
 
@@ -218,7 +220,7 @@ test('before read return promise and reject', async () => {
   expect(input.element.value).toEqual('');
 });
 
-test('file size overlimit', async () => {
+test('should trigger oversize event when file size is overlimit', async () => {
   const wrapper = mount(Uploader, {
     props: {
       maxSize: 1,
@@ -248,6 +250,31 @@ test('file size overlimit', async () => {
 
   await later();
   expect(wrapper.emitted<[File]>('oversize')![2]).toBeFalsy();
+});
+
+test('should allow to custom max-size for different type of files', async () => {
+  const wrapper = mount(Uploader, {
+    props: {
+      maxSize(file: File) {
+        if (file.type === 'image/test') {
+          return file.size > 500;
+        }
+        return false;
+      },
+    },
+  });
+
+  const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
+  const fileList = [mockFile];
+
+  Object.defineProperty(input.element, 'files', {
+    get: () => jest.fn().mockReturnValue(fileList)(),
+  });
+
+  await input.trigger('change');
+
+  await later();
+  expect(wrapper.emitted<[File]>('oversize')![0]).toBeTruthy();
 });
 
 test('render upload-text', () => {

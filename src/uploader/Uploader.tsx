@@ -17,6 +17,7 @@ import {
   filterFiles,
   isImageFile,
   readFileContent,
+  UploaderMaxSize,
   UploaderResultType,
   UploaderFileListItem,
 } from './utils';
@@ -83,7 +84,7 @@ export default defineComponent({
       default: () => [],
     },
     maxSize: {
-      type: [Number, String],
+      type: [Number, String, Function] as PropType<UploaderMaxSize>,
       default: Number.MAX_VALUE,
     },
     maxCount: {

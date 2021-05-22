@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, isFunction } from '../utils';
 import type { ImageFit } from '../image';
 import type { Interceptor } from '../utils/interceptor';
 
@@ -20,6 +20,8 @@ export type UploaderFileListItem = {
   previewSize?: number | string;
   beforeDelete?: Interceptor;
 };
+
+export type UploaderMaxSize = number | string | ((file: File) => boolean);
 
 export function toArray<T>(item: T | T[]): T[] {
   if (Array.isArray(item)) {
@@ -52,20 +54,28 @@ export function readFileContent(file: File, resultType: UploaderResultType) {
 
 export function isOversize(
   items: UploaderFileListItem | UploaderFileListItem[],
-  maxSize: number | string
+  maxSize: UploaderMaxSize
 ): boolean {
-  return toArray(items).some((item) => item.file && item.file.size > maxSize);
+  return toArray(items).some((item) => {
+    if (item.file) {
+      if (isFunction(maxSize)) {
+        return maxSize(item.file);
+      }
+      return item.file.size > maxSize;
+    }
+    return false;
+  });
 }
 
 export function filterFiles(
   items: UploaderFileListItem[],
-  maxSize: number | string
+  maxSize: UploaderMaxSize
 ) {
   const valid: UploaderFileListItem[] = [];
   const invalid: UploaderFileListItem[] = [];
 
   items.forEach((item) => {
-    if (item.file && item.file.size > maxSize) {
+    if (isOversize(item, maxSize)) {
       invalid.push(item);
     } else {
       valid.push(item);
