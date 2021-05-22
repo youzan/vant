@@ -4,7 +4,7 @@ import { mount, later, triggerDrag } from '../../../test';
 
 const mockFileDataUrl = 'data:image/test';
 const mockFile = new File([new ArrayBuffer(10000)], 'test.jpg', {
-  type: 'image/test',
+  type: 'test',
 });
 const IMAGE = 'https://img.yzcdn.cn/vant/cat.jpeg';
 const PDF = 'https://img.yzcdn.cn/vant/test.pdf';
@@ -256,7 +256,7 @@ test('should allow to custom max-size for different type of files', async () => 
   const wrapper = mount(Uploader, {
     props: {
       maxSize(file: File) {
-        if (file.type === 'image/test') {
+        if (file.type === 'test') {
           return file.size > 500;
         }
         return false;
