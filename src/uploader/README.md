@@ -272,6 +272,8 @@ export default {
 | image-fit | Preview image fit mode | _string_ | `cover` |
 | upload-icon `v2.5.4` | Upload icon | _string_ | `photograph` |
 
+> Tips: accept, capture and multiple are the attributes of the native input tag, there may be some compatibility issues under different systems and WebView.
+
 ### Events
 
 | Event | Description | Arguments |
