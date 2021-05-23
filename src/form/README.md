@@ -2,7 +2,7 @@
 
 ### Intro
 
-Used for data entry and verification, and supports input boxes, radio buttons, check boxes, file uploads and other types.
+Used for data entry and verification, and supports input boxes, radio buttons, check boxes, file uploads and other types. Should be used with [Field](#/en-US/field) component.
 
 ### Install
 
@@ -10,10 +10,11 @@ Register component globally via `app.use`, refer to [Component Registration](#/e
 
 ```js
 import { createApp } from 'vue';
-import { Form } from 'vant';
+import { Form, Field } from 'vant';
 
 const app = createApp();
 app.use(Form);
+app.use(Field);
 ```
 
 ## Usage
