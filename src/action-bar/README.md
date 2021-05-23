@@ -99,8 +99,9 @@ Use `badge` prop to show badge in icon.
 | icon | Icon | _string_ | - |
 | color | Icon color | _string_ | `#323233` |
 | icon-class | Icon class name | _string \| Array \| object_ | `''` |
-| dot `2.5.5` | Whether to show red dot | _boolean_ | - |
-| badge `2.5.6` | Content of the badge | _number \| string_ | - |
+| icon-prefix `v3.0.17` | Icon className prefix | _string_ | `van-icon` |
+| dot | Whether to show red dot | _boolean_ | - |
+| badge | Content of the badge | _number \| string_ | - |
 | url | Link | _string_ | - |
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |

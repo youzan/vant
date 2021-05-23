@@ -21,6 +21,17 @@ test('should render icon slot correctly', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
+test('should render icon-prefix correctly', () => {
+  const wrapper = mount(ActionBarIcon, {
+    props: {
+      icon: 'success',
+      iconPrefix: 'my-icon',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
 test('should render icon slot with badge correctly', () => {
   const wrapper = mount(ActionBarIcon, {
     props: {

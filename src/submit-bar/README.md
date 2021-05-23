@@ -101,7 +101,7 @@ export default {
 | button-type | Button type | _string_ | `danger` |
 | button-color | Button color | _string_ | - |
 | tip | Tip | _string_ | - |
-| tip-icon | Icon | _string_ | - |
+| tip-icon | Tip left icon | _string_ | - |
 | currency | Currency symbol | _string_ | `¥` |
 | disabled | Whether to disable button | _boolean_ | `false` |
 | loading | Whether to show loading icon | _boolean_ | `false` |

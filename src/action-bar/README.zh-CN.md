@@ -103,7 +103,8 @@ export default {
 | icon | 图标 | _string_ | - |
 | color | 图标颜色 | _string_ | `#323233` |
 | icon-class | 图标额外类名 | _string \| Array \| object_ | - |
-| dot `2.5.5` | 是否显示图标右上角小红点 | _boolean_ | `false` |
+| icon-prefix `v3.0.17` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
+| dot | 是否显示图标右上角小红点 | _boolean_ | `false` |
 | badge | 图标右上角徽标的内容 | _number \| string_ | - |
 | url | 点击后跳转的链接地址 | _string_ | - |
 | to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
