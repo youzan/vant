@@ -32,6 +32,19 @@ test('should change icon size when using icon-size prop', () => {
   expect(wrapper.find('.van-grid-item__icon').style.fontSize).toEqual('10px');
 });
 
+test('should change icon color when using icon-color prop', () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Grid>
+          <GridItem icon="success" icon-color="red" />
+        </Grid>
+      );
+    },
+  });
+  expect(wrapper.find('.van-grid-item__icon').style.color).toEqual('red');
+});
+
 test('should render icon-slot correctly', () => {
   const wrapper = mount({
     render() {
