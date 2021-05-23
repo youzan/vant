@@ -335,6 +335,8 @@ export default {
 | image-fit | 预览图裁剪模式，可选值见 [Image](#/zh-CN/image) 组件 | _string_ | `cover` |
 | upload-icon | 上传区域[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photograph` |
 
+> 注意：accept、capture 和 multiple 为浏览器 input 标签的原生属性，移动端各种机型对这些属性的支持程度有所差异，因此在不同机型和 WebView 下可能出现一些兼容性问题。
+
 ### Events
 
 | 事件名        | 说明                   | 回调参数        |
