@@ -24,6 +24,7 @@ export default defineComponent({
     icon: String,
     badge: [Number, String],
     iconPrefix: String,
+    iconColor: String,
   }),
 
   setup(props, { slots }) {
@@ -89,6 +90,7 @@ export default defineComponent({
             badge={props.badge}
             class={bem('icon')}
             classPrefix={props.iconPrefix}
+            color={props.iconColor}
           />
         );
       }

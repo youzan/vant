@@ -120,6 +120,7 @@ app.use(GridItem);
 | text | Text | _string_ | - |
 | icon | Icon name or URL | _string_ | - |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
+| icon-color | Icon color | _string_ | - |
 | dot | Whether to show red dot | _boolean_ | `false` |
 | badge | Content of the badge | _number \| string_ | - |
 | url | Link URL | _string_ | - |
