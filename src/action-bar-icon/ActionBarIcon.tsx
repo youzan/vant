@@ -22,6 +22,7 @@ export default defineComponent({
     color: String,
     badge: [Number, String],
     iconClass: unknownProp,
+    iconPrefix: String,
   }),
 
   setup(props, { slots }) {
@@ -30,7 +31,7 @@ export default defineComponent({
     useParent(ACTION_BAR_KEY);
 
     const renderIcon = () => {
-      const { dot, badge, icon, color, iconClass } = props;
+      const { dot, badge, icon, color, iconClass, iconPrefix } = props;
 
       if (slots.icon) {
         return (
@@ -48,6 +49,7 @@ export default defineComponent({
           badge={badge}
           color={color}
           class={[bem('icon'), iconClass]}
+          classPrefix={iconPrefix}
         />
       );
     };

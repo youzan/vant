@@ -51,3 +51,13 @@ exports[`should render icon slot with dot correctly 1`] = `
   Content
 </div>
 `;
+
+exports[`should render icon-prefix correctly 1`] = `
+<div role="button"
+     class="van-action-bar-icon"
+     tabindex="0"
+>
+  <div class="van-badge__wrapper my-icon my-icon-success van-action-bar-icon__icon">
+  </div>
+</div>
+`;
