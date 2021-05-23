@@ -16,6 +16,30 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.17](https://github.com/youzan/vant/compare/v3.0.16...v3.0.17)
+
+`2021-05-23`
+
+**Feature**
+
+- ActionBarIcon: add icon-prefix prop [#8748](https://github.com/youzan/vant/issues/8748)
+- Calendar: add show-range-prompt prop [#8739](https://github.com/youzan/vant/issues/8739)
+- Calendar: add top-info、bottom-info slot [#8716](https://github.com/youzan/vant/issues/8716)
+- GridItem: add icon-color prop [#8753](https://github.com/youzan/vant/issues/8753)
+- NoticeBar: increase default speed to 60 [#8694](https://github.com/youzan/vant/issues/8694)
+- Popover: add icon-prefix prop [#8703](https://github.com/youzan/vant/issues/8703)
+- Toast: add transition [#8743](https://github.com/youzan/vant/issues/8743)
+- Uploader: max-size prop can be a function [#8744](https://github.com/youzan/vant/issues/8744)
+
+**Bug Fixes**
+
+- Button: add onClick event shim for tsx [#8665](https://github.com/youzan/vant/issues/8665)
+- Calendar: initial date incorrect [#8696](https://github.com/youzan/vant/issues/8696)
+- DatetimePicker: vant3 fixed incorrect value when dynamic set min/max [#8658](https://github.com/youzan/vant/issues/8658)
+- List: skip check when inside an inactive tab [#8741](https://github.com/youzan/vant/issues/8741)
+- Tabs: fix add scroll event target [#8734](https://github.com/youzan/vant/issues/8734)
+- Toast: should reset duration when type or message changed [#8742](https://github.com/youzan/vant/issues/8742)
+
 ### [v3.0.16](https://github.com/youzan/vant/compare/v3.0.15...v3.0.16)
 
 `2021-05-03`

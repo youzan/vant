@@ -16,6 +16,31 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.0.17](https://github.com/youzan/vant/compare/v3.0.16...v3.0.17)
+
+`2021-05-23`
+
+**Feature**
+
+- ActionBarIcon: 新增 icon-prefix 属性 [#8748](https://github.com/youzan/vant/issues/8748)
+- Calendar: 新增 over-range 事件 [#8739](https://github.com/youzan/vant/issues/8739)
+- Calendar: 新增 show-range-prompt 属性 [#8739](https://github.com/youzan/vant/issues/8739)
+- Calendar: 新增 top-info、bottom-info 插槽 [#8716](https://github.com/youzan/vant/issues/8716)
+- GridItem: 新增 icon-color 属性 [#8753](https://github.com/youzan/vant/issues/8753)
+- NoticeBar: 默认 speed 由 50 调整为 60 [#8694](https://github.com/youzan/vant/issues/8694)
+- Popover: 新增 icon-prefix 属性 [#8703](https://github.com/youzan/vant/issues/8703)
+- Toast: 新增不同类型 Toast 的 transition 过渡效果 [#8743](https://github.com/youzan/vant/issues/8743)
+- Uploader: max-size 属性支持函数格式 [#8744](https://github.com/youzan/vant/issues/8744)
+
+**Bug Fixes**
+
+- Button: 修复 tsx 下使用时缺少 onClick 类型定义的问题 [#8665](https://github.com/youzan/vant/issues/8665)
+- Calendar: 修复默认日期不正确的问题 [#8696](https://github.com/youzan/vant/issues/8696)
+- DatetimePicker: 修复动态设置 minDate、maxDate 时异常的问题 [#8658](https://github.com/youzan/vant/issues/8658)
+- List: 修复在开启 animated 的 Tabs 下使用时加载异常的问题 [#8741](https://github.com/youzan/vant/issues/8741)
+- Tabs: 修复滚动事件监听不正确的问题 [#8734](https://github.com/youzan/vant/issues/8734)
+- Toast: 修复多次调用时持续时间不正确的问题 [#8742](https://github.com/youzan/vant/issues/8742)
+
 ### [v3.0.16](https://github.com/youzan/vant/compare/v3.0.15...v3.0.16)
 
 `2021-05-03`
