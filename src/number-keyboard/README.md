@@ -2,7 +2,7 @@
 
 ### Intro
 
-The numberkeyboard component can be used with [PasswordInput](#/en-US/password-input) components or custom input box components.
+The NumberKeyboard component can be used with [PasswordInput](#/en-US/password-input) component or custom input box components.
 
 ### Install
 
