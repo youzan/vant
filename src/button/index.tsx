@@ -42,7 +42,7 @@ export type ButtonEvents = {
   onClick?(event: Event): void;
 };
 
-export type ButttonSlots = DefaultSlots & {
+export type ButtonSlots = DefaultSlots & {
   loading?: ScopedSlot;
 };
 
@@ -51,7 +51,7 @@ const [createComponent, bem] = createNamespace('button');
 function Button(
   h: CreateElement,
   props: ButtonProps,
-  slots: ButttonSlots,
+  slots: ButtonSlots,
   ctx: RenderContext<ButtonProps>
 ) {
   const {
@@ -215,4 +215,4 @@ Button.props = {
   },
 };
 
-export default createComponent<ButtonProps, ButtonEvents, ButttonSlots>(Button);
+export default createComponent<ButtonProps, ButtonEvents, ButtonSlots>(Button);
