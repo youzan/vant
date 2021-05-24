@@ -198,7 +198,6 @@ export default {
 
 | 名称                    | 默认值          | 描述 |
 | ----------------------- | --------------- | ---- |
-| @list-icon-margin-right | `5px`           | -    |
 | @list-text-color        | `@gray-6`       | -    |
 | @list-text-font-size    | `@font-size-md` | -    |
 | @list-text-line-height  | `50px`          | -    |
