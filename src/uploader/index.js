@@ -44,7 +44,7 @@ export default createComponent({
       default: () => [],
     },
     maxSize: {
-      type: [Number, String],
+      type: [Number, String, Function],
       default: Number.MAX_VALUE,
     },
     maxCount: {
@@ -185,7 +185,7 @@ export default createComponent({
           validFiles = [];
           files.forEach((item) => {
             if (item.file) {
-              if (item.file.size > this.maxSize) {
+              if (isOversize(item.file, this.maxSize)) {
                 oversizeFiles.push(item);
               } else {
                 validFiles.push(item);

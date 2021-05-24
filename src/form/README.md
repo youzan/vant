@@ -1,12 +1,18 @@
 # Form
 
+### Intro
+
+Used for data entry and verification, and supports input boxes, radio buttons, check boxes, file uploads and other types. Should be used with [Field](#/en-US/field) component.
+
 ### Install
 
 ```js
 import Vue from 'vue';
 import { Form } from 'vant';
+import { Field } from 'vant';
 
 Vue.use(Form);
+Vue.use(Field);
 ```
 
 ## Usage
@@ -454,11 +460,11 @@ export default {
 
 ### validate-trigger
 
-| Value    | Description                                                     |
-| -------- | --------------------------------------------------------------- |
-| onSubmit | Trigger validation after submiting form                         |
-| onBlur   | Trigger validation after submiting form or bluring input        |
-| onChange | Trigger validation after submiting form or changing input value |
+| Value    | Description                                                      |
+| -------- | ---------------------------------------------------------------- |
+| onSubmit | Trigger validation after submitting form                         |
+| onBlur   | Trigger validation after submitting form or bluring input        |
+| onChange | Trigger validation after submitting form or changing input value |
 
 ### Events
 

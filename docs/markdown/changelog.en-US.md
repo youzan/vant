@@ -16,6 +16,19 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.20](https://github.com/youzan/vant/compare/v2.12.19...v2.12.20)
+
+`2021-05-23`
+
+**Feature**
+
+- Uploader: max-size prop can be a function [#8745](https://github.com/youzan/vant/issues/8745)
+
+**Bug Fixes**
+
+- Button: should not submit form when loading [#8735](https://github.com/youzan/vant/issues/8735)
+- functional components should inherit "key" [#8718](https://github.com/youzan/vant/issues/8718)
+
 ### [v2.12.19](https://github.com/youzan/vant/compare/v2.12.18...v2.12.19)
 
 `2021-05-17`
