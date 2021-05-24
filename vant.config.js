@@ -148,6 +148,7 @@ module.exports = {
               {
                 path: 'cascader',
                 title: 'Cascader 级联选择',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'checkbox',
@@ -164,14 +165,17 @@ module.exports = {
               {
                 path: 'form',
                 title: 'Form 表单',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'number-keyboard',
                 title: 'NumberKeyboard 数字键盘',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'password-input',
                 title: 'PasswordInput 密码输入框',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'picker',
@@ -237,6 +241,7 @@ module.exports = {
               {
                 path: 'pull-refresh',
                 title: 'PullRefresh 下拉刷新',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'share-sheet',
@@ -254,6 +259,7 @@ module.exports = {
               {
                 path: 'badge',
                 title: 'Badge 徽标',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'circle',
@@ -278,14 +284,17 @@ module.exports = {
               {
                 path: 'image-preview',
                 title: 'ImagePreview 图片预览',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'lazyload',
                 title: 'Lazyload 懒加载',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'list',
                 title: 'List 列表',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'notice-bar',
@@ -294,6 +303,7 @@ module.exports = {
               {
                 path: 'popover',
                 title: 'Popover 气泡弹出框',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'progress',
@@ -314,6 +324,7 @@ module.exports = {
               {
                 path: 'swipe',
                 title: 'Swipe 轮播',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'tag',
@@ -339,6 +350,7 @@ module.exports = {
               {
                 path: 'pagination',
                 title: 'Pagination 分页',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'sidebar',
@@ -364,10 +376,12 @@ module.exports = {
               {
                 path: 'address-edit',
                 title: 'AddressEdit 地址编辑',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'address-list',
                 title: 'AddressList 地址列表',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'area',
@@ -380,18 +394,22 @@ module.exports = {
               {
                 path: 'contact-card',
                 title: 'ContactCard 联系人卡片',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'contact-edit',
                 title: 'ContactEdit 联系人编辑',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'contact-list',
                 title: 'ContactList 联系人列表',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'coupon-list',
                 title: 'Coupon 优惠券',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'goods-action',
@@ -404,6 +422,7 @@ module.exports = {
               {
                 path: 'sku',
                 title: 'Sku 商品规格',
+                className: 'hide-in-weapp',
               },
             ],
           },
@@ -417,6 +436,7 @@ module.exports = {
               {
                 path: 'switch-cell',
                 title: 'SwitchCell 开关单元格',
+                className: 'hide-in-weapp',
               },
             ],
           },

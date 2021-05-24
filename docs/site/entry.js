@@ -18,6 +18,12 @@ const isWeapp = location.search.indexOf('weapp=1') !== -1;
 
 let demoUid = 0;
 
+if (isWeapp) {
+  const style = document.createElement('style');
+  style.textContent = `.hide-in-weapp { display: none }`;
+  document.head.appendChild(style);
+}
+
 // helper for demo locales
 Vue.mixin({
   computed: {
