@@ -50,7 +50,7 @@ You can use Vant through these free CDN services:
 
 ### CLI
 
-We recomment to use [Vue Cli](https://cli.vuejs.org/) to create a new project.
+We recommend to use [Vue Cli](https://cli.vuejs.org/) to create a new project.
 
 ```bash
 # Install Vue Cli

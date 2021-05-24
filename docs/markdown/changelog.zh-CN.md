@@ -16,6 +16,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.20](https://github.com/youzan/vant/compare/v2.12.19...v2.12.20)
+
+`2021-05-23`
+
+**Feature**
+
+- Uploader: max-size 属性支持函数格式 [#8745](https://github.com/youzan/vant/issues/8745)
+
+**Bug Fixes**
+
+- Button: 修复 loading 状态下点击按钮会提交表单的问题 [#8735](https://github.com/youzan/vant/issues/8735)
+- 修复函数式组件未继承 `key` 的问题 [#8718](https://github.com/youzan/vant/issues/8718)
+
 ### [v2.12.19](https://github.com/youzan/vant/compare/v2.12.18...v2.12.19)
 
 `2021-05-17`

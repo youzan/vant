@@ -3,7 +3,7 @@
     <div class="demo-home-nav__title">{{ group.title }}</div>
     <div class="demo-home-nav__group">
       <router-link
-        class="demo-home-nav__block"
+        :class="['demo-home-nav__block', navItem.className]"
         v-for="navItem in group.items"
         :key="navItem.path"
         :to="`${base}/${navItem.path}`"
