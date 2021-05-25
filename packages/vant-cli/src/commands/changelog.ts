@@ -6,12 +6,12 @@ import conventionalChangelog from 'conventional-changelog';
 
 const DIST_FILE = join(ROOT, './changelog.generated.md');
 const MAIN_TEMPLATE = join(__dirname, '../../template/changelog-main.hbs');
-const HEADER_TEMPALTE = join(__dirname, '../../template/changelog-header.hbs');
-const COMMIT_TEMPALTE = join(__dirname, '../../template/changelog-commit.hbs');
+const HEADER_TEMPLATE = join(__dirname, '../../template/changelog-header.hbs');
+const COMMIT_TEMPLATE = join(__dirname, '../../template/changelog-commit.hbs');
 
 const mainTemplate = readFileSync(MAIN_TEMPLATE, 'utf-8');
-const headerPartial = readFileSync(HEADER_TEMPALTE, 'utf-8');
-const commitPartial = readFileSync(COMMIT_TEMPALTE, 'utf-8');
+const headerPartial = readFileSync(HEADER_TEMPLATE, 'utf-8');
+const commitPartial = readFileSync(COMMIT_TEMPLATE, 'utf-8');
 
 function formatType(type: string) {
   const MAP: Record<string, string> = {
