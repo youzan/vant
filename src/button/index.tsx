@@ -43,6 +43,7 @@ export type ButtonEvents = {
 };
 
 export type ButtonSlots = DefaultSlots & {
+  icon?: ScopedSlot;
   loading?: ScopedSlot;
 };
 
@@ -128,6 +129,10 @@ function Button(
           color="currentColor"
         />
       );
+    }
+
+    if (slots.icon) {
+      return <div class={bem('icon')}>{slots.icon()}</div>;
     }
 
     if (icon) {
