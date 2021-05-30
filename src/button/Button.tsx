@@ -89,6 +89,10 @@ export default defineComponent({
         return renderLoadingIcon();
       }
 
+      if (slots.icon) {
+        return <div class={bem('icon')}>{slots.icon()}</div>;
+      }
+
       if (props.icon) {
         return (
           <Icon

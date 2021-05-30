@@ -86,3 +86,13 @@ test('should render icon in the right side when setting icon-position to right',
   });
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should render icon slot correctly', () => {
+  const wrapper = mount(Button, {
+    slots: {
+      default: () => 'Text',
+      icon: () => 'Custom Icon',
+    },
+  });
+  expect(wrapper.html()).toMatchSnapshot();
+});
