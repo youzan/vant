@@ -139,6 +139,7 @@ Vue.use(Button);
 | Name              | Description         |
 | ----------------- | ------------------- |
 | default           | Default slot        |
+| icon `v2.12.21`   | Custom icon         |
 | loading `v2.10.1` | Custom loading icon |
 
 ### Less Variables
