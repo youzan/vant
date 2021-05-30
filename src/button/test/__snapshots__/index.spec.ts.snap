@@ -22,6 +22,21 @@ exports[`should render icon in the right side when setting icon-position to righ
 </button>
 `;
 
+exports[`should render icon slot correctly 1`] = `
+<button type="button"
+        class="van-button van-button--default van-button--normal"
+>
+  <div class="van-button__content">
+    <div class="van-button__icon">
+      Custom Icon
+    </div>
+    <span class="van-button__text">
+      Text
+    </span>
+  </div>
+</button>
+`;
+
 exports[`should render loading slot correctly 1`] = `
 <button type="button"
         class="van-button van-button--default van-button--normal van-button--loading"
