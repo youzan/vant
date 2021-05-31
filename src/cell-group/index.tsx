@@ -35,7 +35,7 @@ function CellGroup(
 
   if (props.title || slots.title) {
     return (
-      <div>
+      <div key={ctx.data.key}>
         <div class={bem('title')}>
           {slots.title ? slots.title() : props.title}
         </div>
