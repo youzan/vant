@@ -11,6 +11,7 @@ import {
   useEventListener,
   onMountedOrActivated,
 } from '@vant/use';
+import { onPopupReopen } from '../composables/on-popup-reopen';
 
 // Components
 import { Icon } from '../icon';
@@ -171,6 +172,7 @@ export default defineComponent({
       }, ms);
     };
 
+    onPopupReopen(start);
     onMountedOrActivated(start);
 
     // fix cache issues with forwards and back history in safari
