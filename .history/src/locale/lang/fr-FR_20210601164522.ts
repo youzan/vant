@@ -1,9 +1,9 @@
 export default {
-  name: 'Name',
-  tel: 'Phone',
+  name: 'Nom',
+  tel: 'Telephone',
   save: 'Sauvegarder',
-  confirm: 'Confirm',
-  cancel: 'Cancel',
+  confirm: 'Confirmer',
+  cancel: 'Annuler',
   delete: 'Delete',
   complete: 'Complete',
   loading: 'Loading...',
@@ -19,7 +19,7 @@ export default {
     startEnd: 'Start/End',
     weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
-    rangePrompt: (maxRange: number) => `Choose no more than ${maxRange} days`,
+    rangePrompt: (maxRange: number) => `Choisir pas plus de ${maxRange} jours`,
   },
   vanCascader: {
     select: 'Select',

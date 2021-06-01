@@ -1,7 +1,7 @@
 export default {
   name: 'Name',
   tel: 'Phone',
-  save: 'Sauvegarder',
+  save: 'Enregistrer',
   confirm: 'Confirm',
   cancel: 'Cancel',
   delete: 'Delete',

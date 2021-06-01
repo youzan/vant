@@ -54,7 +54,6 @@ Locale.add(messages);
 | 罗马尼亚语     | ro-RO        |
 | 土耳其语       | tr-TR        |
 | 泰语           | th-TH        |
-| 法语           | fr-FR        |
 
 > 在 [这里](https://github.com/youzan/vant/tree/dev/src/locale/lang) 查看所有的语言包源文件。
 
