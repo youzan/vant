@@ -189,3 +189,15 @@ test('should render correct close icon when using close-icon prop', () => {
 
   expect(wrapper.find('.van-popup__close-icon').html()).toMatchSnapshot();
 });
+
+test('should change icon class prefix when using icon-prefix prop', () => {
+  const wrapper = mount(Popup, {
+    props: {
+      show: true,
+      closeable: true,
+      iconPrefix: 'my-icon',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
