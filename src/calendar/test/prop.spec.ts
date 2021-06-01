@@ -202,7 +202,7 @@ test('month-show event', async () => {
       show: true,
     },
   });
-  await later(100);
+  await later(200);
 
   expect(wrapper.emitted('month-show')).toBeTruthy();
 });

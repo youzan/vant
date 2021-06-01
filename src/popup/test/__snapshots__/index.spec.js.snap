@@ -23,3 +23,15 @@ exports[`should render correct close icon when using close-icon prop 1`] = `
 >
 </i>
 `;
+
+exports[`should render overlay-content slot correctly 1`] = `
+<transition-stub>
+  <div class="van-overlay">
+    Custom Overlay Content
+  </div>
+</transition-stub>
+<transition-stub>
+  <div class="van-popup van-popup--center">
+  </div>
+</transition-stub>
+`;

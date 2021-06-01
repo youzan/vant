@@ -201,3 +201,16 @@ test('should change icon class prefix when using icon-prefix prop', () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should render overlay-content slot correctly', () => {
+  const wrapper = mount(Popup, {
+    props: {
+      show: true,
+    },
+    slots: {
+      'overlay-content': () => 'Custom Overlay Content',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
