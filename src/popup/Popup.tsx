@@ -49,6 +49,7 @@ export default defineComponent({
     round: Boolean,
     closeable: Boolean,
     transition: String,
+    iconPrefix: String,
     closeOnPopstate: Boolean,
     safeAreaInsetBottom: Boolean,
     position: {
@@ -155,6 +156,7 @@ export default defineComponent({
             tabindex={0}
             name={props.closeIcon}
             class={bem('close-icon', props.closeIconPosition)}
+            classPrefix={props.iconPrefix}
             onClick={onClickCloseIcon}
           />
         );
