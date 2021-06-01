@@ -154,6 +154,13 @@ export default {
 | opened           | Emitted when Popup is opened       | -                   |
 | closed           | Emitted when Popup is closed       | -                   |
 
+### Slots
+
+| Name                      | Description              |
+| ------------------------- | ------------------------ |
+| default                   | Content of Popup         |
+| overlay-content `v3.0.18` | Content of Popup overlay |
+
 ### Less Variables
 
 How to use: [Custom Theme](#/en-US/theme).

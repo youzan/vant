@@ -132,6 +132,7 @@ export default defineComponent({
       if (props.overlay) {
         return (
           <Overlay
+            v-slots={{ default: slots['overlay-content'] }}
             show={props.show}
             class={props.overlayClass}
             zIndex={zIndex.value}
