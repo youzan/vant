@@ -200,6 +200,7 @@ export default createComponent({
             />
           ))}
           {!coupons.length && this.genEmpty()}
+          {this.slots('list-footer')}
         </div>
       </Tab>
     );
@@ -219,6 +220,7 @@ export default createComponent({
             />
           ))}
           {!disabledCoupons.length && this.genEmpty()}
+          {this.slots('disabled-list-footer')}
         </div>
       </Tab>
     );

@@ -34,7 +34,14 @@ Vue.use(CouponList);
     :disabled-coupons="disabledCoupons"
     @change="onChange"
     @exchange="onExchange"
-  />
+  >
+    <template #list-footer>
+      <van-loading size="24px" class="footer">加载中...</van-loading>
+    </template>
+    <template #disabled-list-footer>
+      <div size="24px" class="footer">没有更多内容了</div>
+    </template>
+  </van-coupon-list>
 </van-popup>
 ```
 
@@ -129,6 +136,13 @@ export default {
 | valueDesc         | 折扣券优惠金额文案                | _string_ |
 | unitDesc          | 单位文案                          | _string_ |
 | customValidPeriod | 自定义有效时间文案                | _string_ |
+
+### CouponList Slots
+
+| 名称                 | 说明                 |
+| -------------------- | -------------------- |
+| list-footer          | 优惠券列表底部       |
+| disabled-list-footer | 不可用优惠券列表底部 |
 
 ### 样式变量
 

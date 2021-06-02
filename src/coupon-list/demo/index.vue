@@ -20,7 +20,14 @@
           :show-count="false"
           @change="onChange"
           @exchange="onExchange"
-        />
+        >
+          <template #list-footer>
+            <van-loading size="24px" class="footer">加载中...</van-loading>
+          </template>
+          <template #disabled-list-footer>
+            <div size="24px" class="footer">没有更多内容了</div>
+          </template>
+        </van-coupon-list>
       </van-popup>
     </demo-block>
   </demo-section>
@@ -126,3 +133,10 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.footer {
+  color: #969799;
+  font-size: 14px;
+  text-align: center;
+}
+</style>
