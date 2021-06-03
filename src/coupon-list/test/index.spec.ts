@@ -144,3 +144,18 @@ test('should emit "update:code" event when input a code', async () => {
   await wrapper.setProps({ code: '2' });
   expect(wrapper.emitted('update:code')![2]).toEqual(['2']);
 });
+
+test('should render list-footer slot correctly', async () => {
+  const wrapper = mount(CouponList, {
+    slots: {
+      'list-footer': () => 'List Footer',
+      'disabled-list-footer': () => 'Disabled List Footer',
+    },
+  });
+
+  await later();
+  const tabs = wrapper.findAll('.van-tab');
+  await tabs[1].trigger('click');
+
+  expect(wrapper.html()).toMatchSnapshot();
+});

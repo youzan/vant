@@ -75,7 +75,7 @@ export default defineComponent({
 
   emits: ['change', 'exchange', 'update:code'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const [couponRefs, setCouponRefs] = useRefs();
 
     const state = reactive({
@@ -169,6 +169,7 @@ export default defineComponent({
               />
             ))}
             {!coupons.length && renderEmpty()}
+            {slots['list-footer']?.()}
           </div>
         </Tab>
       );
@@ -194,6 +195,7 @@ export default defineComponent({
               />
             ))}
             {!disabledCoupons.length && renderEmpty()}
+            {slots['disabled-list-footer']?.()}
           </div>
         </Tab>
       );

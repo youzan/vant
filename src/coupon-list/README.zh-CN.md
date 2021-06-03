@@ -129,6 +129,13 @@ export default {
 | change   | 优惠券切换回调 | index, 选中优惠券的索引 |
 | exchange | 兑换优惠券回调 | code, 兑换码            |
 
+### CouponList Slots
+
+| 名称                           | 说明                 |
+| ------------------------------ | -------------------- |
+| list-footer `v3.0.18`          | 优惠券列表底部       |
+| disabled-list-footer `v3.0.18` | 不可用优惠券列表底部 |
+
 ### Coupon 数据结构
 
 | 键名        | 说明                            | 类型     |
