@@ -28,7 +28,7 @@ export default {
     addText: 'Ajouter des informations de contact',
   },
   vanContactList: {
-    addText: 'Ajouter un nouveau contact,
+    addText: 'Ajouter un nouveau contact',
   },
   vanPagination: {
     prev: 'Précédent',
