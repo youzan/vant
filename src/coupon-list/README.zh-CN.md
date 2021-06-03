@@ -34,14 +34,7 @@ Vue.use(CouponList);
     :disabled-coupons="disabledCoupons"
     @change="onChange"
     @exchange="onExchange"
-  >
-    <template #list-footer>
-      <van-loading size="24px" class="footer">加载中...</van-loading>
-    </template>
-    <template #disabled-list-footer>
-      <div size="24px" class="footer">没有更多内容了</div>
-    </template>
-  </van-coupon-list>
+  />
 </van-popup>
 ```
 
