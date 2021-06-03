@@ -16,6 +16,25 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.0.18](https://github.com/youzan/vant/compare/v3.0.17...v3.0.18)
+
+`2021-06-03`
+
+**Feature**
+
+- Button: add icon slot [#8783](https://github.com/youzan/vant/issues/8783)
+- CouponList: add list-footer、disabled-list-footer slot [#8801](https://github.com/youzan/vant/issues/8801)
+- List: remove unused Less var @list-icon-margin-right [#8759](https://github.com/youzan/vant/issues/8759)
+- Locale: add French translations [#8795](https://github.com/youzan/vant/issues/8795)
+- Popup: add icon-prefix prop [#8793](https://github.com/youzan/vant/issues/8793)
+- Popup: add overlay-content slot [#8794](https://github.com/youzan/vant/issues/8794)
+
+**Bug Fixes**
+
+- Collapse: fix safari rendering issues [#8788](https://github.com/youzan/vant/issues/8788)
+- NoticeBar: failed to play when inside a re-opened popup [#8789](https://github.com/youzan/vant/issues/8789)
+- @vant/touch-emulator: add SSR support [#8767](https://github.com/youzan/vant/issues/8767)
+
 ### [v3.0.17](https://github.com/youzan/vant/compare/v3.0.16...v3.0.17)
 
 `2021-05-23`
