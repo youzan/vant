@@ -90,14 +90,14 @@ export default {
 
 ### CouponCell Props
 
-| Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
-| title | Cell title | _string_ | `Coupon` |
-| chosen-coupon | Index of chosen coupon | _number \| string_ | `-1` |
-| coupons | Coupon list | _Coupon[]_ | `[]` |
-| editable | Cell editable | _boolean_ | `true` |
-| border | Whether to show innner border | _boolean_ | `true` |
-| currency | Currency symbol | _string_ | `¥` |
+| Attribute     | Description                  | Type               | Default  |
+| ------------- | ---------------------------- | ------------------ | -------- |
+| title         | Cell title                   | _string_           | `Coupon` |
+| chosen-coupon | Index of chosen coupon       | _number \| string_ | `-1`     |
+| coupons       | Coupon list                  | _Coupon[]_         | `[]`     |
+| editable      | Cell editable                | _boolean_          | `true`   |
+| border        | Whether to show inner border | _boolean_          | `true`   |
+| currency      | Currency symbol              | _string_           | `¥`      |
 
 ### CouponList Props
 
@@ -127,6 +127,13 @@ export default {
 | change | Emitted when chosen coupon changed | index: index of chosen coupon |
 | exchange | Emitted when exchanging coupon | code: exchange code |
 
+### CouponList Slots
+
+| Name                           | Description                     |
+| ------------------------------ | ------------------------------- |
+| list-footer `v3.0.18`          | Coupon list bottom              |
+| disabled-list-footer `v3.0.18` | Unavailable coupons list bottom |
+
 ### Data Structure of Coupon
 
 | Key         | Description                         | Type     |
@@ -134,8 +141,8 @@ export default {
 | id          | Id                                  | _string_ |
 | name        | Name                                | _string_ |
 | condition   | Condition                           | _string_ |
-| startAt     | Start time (Timestmap, unit second) | _number_ |
-| endAt       | End time (Timestmap, unit second)   | _number_ |
+| startAt     | Start time (Timestamp, unit second) | _number_ |
+| endAt       | End time (Timestamp, unit second)   | _number_ |
 | description | Description                         | _string_ |
 | reason      | Unavailable reason                  | _string_ |
 | value       | Value                               | _number_ |
