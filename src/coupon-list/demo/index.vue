@@ -126,10 +126,3 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-.footer {
-  color: #969799;
-  font-size: 14px;
-  text-align: center;
-}
-</style>
