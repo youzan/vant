@@ -130,6 +130,13 @@ export default {
 | unitDesc          | 单位文案                          | _string_ |
 | customValidPeriod | 自定义有效时间文案                | _string_ |
 
+### CouponList Slots
+
+| 名称                 | 说明                 |
+| -------------------- | -------------------- |
+| list-footer          | 优惠券列表底部       |
+| disabled-list-footer | 不可用优惠券列表底部 |
+
 ### 样式变量
 
 组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
