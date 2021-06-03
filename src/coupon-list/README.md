@@ -130,10 +130,10 @@ export default {
 
 ### CouponList Slots
 
-| Name                 | Description                     |
-| -------------------- | ------------------------------- |
-| list-footer          | Coupon list bottom              |
-| disabled-list-footer | Unavailable coupons list bottom |
+| Name                            | Description                     |
+| ------------------------------- | ------------------------------- |
+| list-footer `v2.12.21`          | Coupon list bottom              |
+| disabled-list-footer `v2.12.21` | Unavailable coupons list bottom |
 
 ### Less Variables
 
