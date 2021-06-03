@@ -12,6 +12,25 @@ export type CollapseProvide = {
   isExpanded: (name: number | string) => boolean;
 };
 
+function validateModelValue(
+  modelValue: string | number | Array<string | number>,
+  accordion: boolean
+) {
+  if (accordion && Array.isArray(modelValue)) {
+    console.error(
+      '[Vant] Collapse: "v-model" should not be Array in accordion mode'
+    );
+    return false;
+  }
+  if (!accordion && !Array.isArray(modelValue)) {
+    console.error(
+      '[Vant] Collapse: "v-model" should be Array in non-accordion mode'
+    );
+    return false;
+  }
+  return true;
+}
+
 export default defineComponent({
   name,
 
@@ -55,19 +74,11 @@ export default defineComponent({
     const isExpanded = (name: number | string) => {
       const { accordion, modelValue } = props;
 
-      if (process.env.NODE_ENV !== 'production') {
-        if (accordion && Array.isArray(modelValue)) {
-          console.error(
-            '[Vant] Collapse: "v-model" should not be Array in accordion mode'
-          );
-          return false;
-        }
-        if (!accordion && !Array.isArray(modelValue)) {
-          console.error(
-            '[Vant] Collapse: "v-model" should be Array in non-accordion mode'
-          );
-          return false;
-        }
+      if (
+        process.env.NODE_ENV !== 'production' &&
+        !validateModelValue(modelValue, accordion)
+      ) {
+        return false;
       }
 
       return accordion
