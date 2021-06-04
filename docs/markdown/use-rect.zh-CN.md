@@ -1,5 +1,7 @@
 # useRect
 
+### 介绍
+
 获取元素的大小及其相对于视口的位置，等价于 [Element.getBoundingClientRect](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect)。
 
 ## 代码演示

@@ -410,6 +410,47 @@ module.exports = {
               },
             ],
           },
+          {
+            title: '组合式 API',
+            items: [
+              {
+                path: 'use-toggle',
+                title: 'useToggle',
+              },
+              {
+                path: 'use-count-down',
+                title: 'useCountDown',
+              },
+              {
+                path: 'use-rect',
+                title: 'useRect',
+              },
+              {
+                path: 'use-event-listener',
+                title: 'useEventListener',
+              },
+              {
+                path: 'use-page-visibility',
+                title: 'usePageVisibility',
+              },
+              {
+                path: 'use-scroll-parent',
+                title: 'useScrollParent',
+              },
+              {
+                path: 'use-window-size',
+                title: 'useWindowSize',
+              },
+              {
+                path: 'use-relation',
+                title: 'useRelation',
+              },
+              {
+                path: 'use-click-away',
+                title: 'useClickAway',
+              },
+            ],
+          },
         ],
       },
       'en-US': {

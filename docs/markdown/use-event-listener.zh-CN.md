@@ -1,5 +1,7 @@
 # useEventListener
 
+### 介绍
+
 方便地进行事件绑定，在组件 `mounted` 和 `activated` 时绑定事件，`unmounted` 和 `deactivated` 时解绑事件。
 
 ## 代码演示
@@ -30,7 +32,7 @@ export default {
 };
 ```
 
-## 类型定义
+### 类型定义
 
 ```ts
 type Options = {
