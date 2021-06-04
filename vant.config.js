@@ -414,6 +414,10 @@ module.exports = {
             title: '组合式 API',
             items: [
               {
+                path: 'vant-use-intro',
+                title: '介绍',
+              },
+              {
                 path: 'use-toggle',
                 title: 'useToggle',
               },
