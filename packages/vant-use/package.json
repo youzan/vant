@@ -14,9 +14,7 @@
     "build:lib": "node ./scripts/build.js",
     "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
     "build": "yarn build:lib && yarn build:types",
-    "release": "yarn build && release-it",
-    "docs:dev": "vuepress dev",
-    "docs:build": "vuepress build && gh-pages -d dist/site --add --dest vant-use && rm -rf ./dist/site"
+    "release": "yarn build && release-it"
   },
   "publishConfig": {
     "access": "public",
@@ -26,10 +24,8 @@
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-use",
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "gh-pages": "^3.1.0",
     "release-it": "^14.0.2",
-    "typescript": "^4.0.2",
-    "vuepress": "^1.6.0"
+    "typescript": "^4.0.2"
   },
   "release-it": {
     "git": {
