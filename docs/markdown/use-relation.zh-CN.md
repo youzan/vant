@@ -1,17 +1,20 @@
 # useRelation
 
+### 介绍
+
 建立父子组件之间的关联关系，进行数据通信和方法调用，基于 `provide` 和 `inject` 实现。
 
 ## 代码演示
 
 ### 基本用法
 
+在父组件中使用 `useChildren` 关联子组件:
+
 ```js
-// Parent.vue
 import { ref } from 'vue';
 import { useChildren } from '@vant/use';
 
-const RELATION_KEY = 'my-relation';
+const RELATION_KEY = Symbol('my-relation');
 
 export default {
   setup() {
@@ -26,11 +29,12 @@ export default {
     linkChildren({ add, count });
   },
 };
+```
 
-// Child.vue
+在子组件中使用 `useParent` 获取父组件提供的数据和方法:
+
+```js
 import { useParent } from '@vant/use';
-
-const RELATION_KEY = 'my-relation';
 
 export default {
   setup() {
