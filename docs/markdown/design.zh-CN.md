@@ -44,7 +44,7 @@ Axure 元件库，由社区的 [@axure-tczy](https://github.com/axure-tczy) 同�
 a.design-download {
   display: inline-block;
   width: 100px;
-  color: #fff;
+  color: #fff !important;
   line-height: 40px;
   text-align: center;
   background-color: #38f;

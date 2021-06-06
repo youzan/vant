@@ -23,20 +23,16 @@ export default {
 <style lang="less">
 @import '../../common/style/var';
 
-.van-doc-content {
-  position: relative;
-  flex: 1;
-  padding: 0 0 75px;
+.card {
+  margin-bottom: 24px;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: @van-doc-border-radius;
+  box-shadow: 0 8px 12px #ebedf0;
 
-  .card {
-    margin-bottom: 24px;
-    padding: 24px;
-    background-color: #fff;
-    border-radius: @van-doc-border-radius;
-    box-shadow: 0 8px 12px #ebedf0;
-  }
-
-  a {
+  > p a,
+  > ul a,
+  > table a {
     margin: 0 1px;
     color: @van-doc-blue;
     -webkit-font-smoothing: auto;
@@ -50,12 +46,10 @@ export default {
     }
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
     color: @van-doc-black;
     font-weight: normal;
     line-height: 1.5;
@@ -65,42 +59,31 @@ export default {
     }
   }
 
-  h1 {
-    margin: 0 0 30px;
-    font-size: 30px;
-    cursor: default;
-  }
-
-  h2 {
-    margin: 45px 0 20px;
-    font-size: 25px;
-  }
-
-  h3 {
+  > h3 {
     margin-bottom: 16px;
     font-weight: 600;
     font-size: 18px;
   }
 
-  h4 {
+  > h4 {
     margin: 24px 0 12px;
     font-weight: 600;
     font-size: 16px;
   }
 
-  h5 {
+  > h5 {
     margin: 24px 0 12px;
     font-weight: 600;
     font-size: 15px;
   }
 
-  p {
+  > p {
     color: @van-doc-text-color;
     font-size: 15px;
     line-height: 26px;
   }
 
-  table {
+  > table {
     width: 100%;
     margin-top: 12px;
     color: @van-doc-text-color;
@@ -155,8 +138,8 @@ export default {
     }
   }
 
-  ul li,
-  ol li {
+  > ul li,
+  > ol li {
     position: relative;
     margin: 5px 0 5px 10px;
     padding-left: 15px;
@@ -178,15 +161,15 @@ export default {
     }
   }
 
-  hr {
+  > hr {
     margin: 30px 0;
     border: 0 none;
     border-top: 1px solid #eee;
   }
 
-  p > code,
-  li > code,
-  table code {
+  > p > code,
+  > ul li > code,
+  > table code {
     display: inline;
     margin: 0 2px;
     padding: 2px 5px;
@@ -198,26 +181,54 @@ export default {
     -webkit-font-smoothing: antialiased;
   }
 
-  p > code {
+  > p > code {
     font-size: 14px;
   }
 
-  section {
-    padding: 24px;
-    overflow: hidden;
-  }
-
-  blockquote {
+  > blockquote {
     margin: 16px 0 0;
     padding: 16px;
     background-color: #ecf9ff;
     border-radius: @van-doc-border-radius;
   }
 
-  img {
+  > img {
     width: 100%;
     margin: 16px 0;
     border-radius: @van-doc-border-radius;
+  }
+}
+
+.van-doc-content {
+  position: relative;
+  flex: 1;
+  padding: 0 0 75px;
+
+  > section {
+    padding: 24px;
+    overflow: hidden;
+
+    h1,
+    h2 {
+      color: @van-doc-black;
+      font-weight: normal;
+      line-height: 1.5;
+
+      &[id] {
+        cursor: pointer;
+      }
+    }
+
+    h1 {
+      margin: 0 0 30px;
+      font-size: 30px;
+      cursor: default;
+    }
+
+    h2 {
+      margin: 45px 0 20px;
+      font-size: 25px;
+    }
   }
 
   &--changelog {
