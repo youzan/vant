@@ -4,8 +4,10 @@ import {
   computed,
   nextTick,
   PropType,
+  Teleport,
   onMounted,
   CSSProperties,
+  TeleportProps,
   defineComponent,
   ExtractPropTypes,
 } from 'vue';
@@ -49,6 +51,7 @@ export const INDEX_BAR_KEY = Symbol(name);
 const props = {
   sticky: truthProp,
   zIndex: [Number, String],
+  teleport: [String, Object] as PropType<TeleportProps['to']>,
   highlightColor: String,
   stickyOffsetTop: {
     type: Number,
@@ -252,19 +255,27 @@ export default defineComponent({
       }
     };
 
+    const renderSidebar = () => (
+      <div
+        class={bem('sidebar')}
+        style={sidebarStyle.value}
+        onClick={onClickSidebar}
+        onTouchstart={touch.start}
+        onTouchmove={onTouchMove}
+      >
+        {renderIndexes()}
+      </div>
+    );
+
     useExpose({ scrollTo });
 
     return () => (
       <div ref={root} class={bem()}>
-        <div
-          class={bem('sidebar')}
-          style={sidebarStyle.value}
-          onClick={onClickSidebar}
-          onTouchstart={touch.start}
-          onTouchmove={onTouchMove}
-        >
-          {renderIndexes()}
-        </div>
+        {props.teleport ? (
+          <Teleport to={props.teleport}>{renderSidebar()}</Teleport>
+        ) : (
+          renderSidebar()
+        )}
         {slots.default?.()}
       </div>
     );
