@@ -189,7 +189,7 @@ export default {
 | close-on-click-action | Whether to close when an action is clicked | _boolean_ | `false` |
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
-| teleport | Return the mount node for ActionSheet | _string \| Element_ | - |
+| teleport | Specifies a target element where ActionSheet will be mounted | _string \| Element_ | - |
 
 ### Data Structure of Action
 

@@ -147,7 +147,7 @@ export default {
 | closeIconPosition | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition `v3.0.8` | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | overlay-style `v3.0.8` | Custom overlay style | _object_ | - |
-| teleport | Return the mount node for ImagePreview | _string \| Element_ | - |
+| teleport | Specifies a target element where ImagePreview will be mounted | _string \| Element_ | - |
 
 ### Props
 
@@ -169,7 +169,7 @@ export default {
 | close-icon-position | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition `v3.0.8` | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | overlay-style `v3.0.8` | Custom overlay style | _object_ | - |
-| teleport | Return the mount node for ImagePreview | _string \| Element_ | - |
+| teleport | Specifies a target element where ImagePreview will be mounted | _string \| Element_ | - |
 
 ### Events
 

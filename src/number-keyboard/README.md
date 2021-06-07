@@ -181,7 +181,7 @@ export default {
 | show-delete-key | Whether to show delete button | _boolean_ | `true` |
 | blur-on-close `v3.0.6` | Whether to emit blur event when clicking close button | _boolean_ | `true` |
 | hide-on-click-outside | Whether to hide keyboard when outside is clicked | _boolean_ | `true` |
-| teleport | Return the mount node for NumberKeyboard | _string \| Element_ | - |
+| teleport | Specifies a target element where NumberKeyboard will be mounted | _string \| Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | random-key-order | Whether to shuffle the order of keys | _boolean_ | `false` |
 
