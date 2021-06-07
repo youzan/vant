@@ -39,7 +39,7 @@ export default {
 
 ### 毫秒级渲染
 
-倒计时默认每秒渲染一次，设置 millisecond 属性可以开启毫秒级渲染。
+倒计时默认每秒渲染一次，设置 millisecond 选项可以开启毫秒级渲染。
 
 ```js
 import { useCountDown } from '@vant/use';
