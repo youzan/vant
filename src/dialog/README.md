@@ -165,7 +165,7 @@ export default {
 | allowHtml | Whether to allow HTML rendering in message | _boolean_ | `false` |
 | beforeClose | Callback function before close | _(action) => boolean \| Promise_ | - |
 | transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
-| teleport | Return the mount node for Dialog | _string \| Element_ | `body` |
+| teleport | Specifies a target element where Dialog will be mounted | _string \| Element_ | `body` |
 
 ### Props
 
@@ -193,7 +193,7 @@ export default {
 | allow-html | Whether to allow HTML rendering in message | _boolean_ | `false` |
 | before-close | Callback function before close | _(action) => boolean \| Promise_ | - |
 | transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
-| teleport | Return the mount node for Dialog | _string \| Element_ | - |
+| teleport | Specifies a target element where Dialog will be mounted | _string \| Element_ | - |
 
 ### Events
 

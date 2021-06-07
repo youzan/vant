@@ -165,7 +165,7 @@ Use `active-color` prop to custom active color of the title and options.
 | disabled | Whether to disable dropdown item | _boolean_ | `false` |
 | lazy-render | Whether to lazy render util opened | _boolean_ | `true` |
 | title-class | Title class | _string \| Array \| object_ | - |
-| teleport | Return the mount node for menu | _string \| Element_ | - |
+| teleport | Specifies a target element where DropdownItem will be mounted | _string \| Element_ | - |
 
 ### DropdownItem Events
 

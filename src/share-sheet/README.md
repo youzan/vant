@@ -182,7 +182,7 @@ export default {
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
-| teleport | Return the mount node for ShareSheet | _string \| Element_ | - |
+| teleport | Specifies a target element where ShareSheet will be mounted | _string \| Element_ | - |
 
 ### Data Structure of Option
 

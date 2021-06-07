@@ -280,7 +280,7 @@ Following props are supported when the poppable is true
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
-| teleport | Return the mount node for Calendar | _string \| Element_ | - |
+| teleport | Specifies a target element where Calendar will be mounted | _string \| Element_ | - |
 
 ### Calendar Range Props
 

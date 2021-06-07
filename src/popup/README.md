@@ -139,7 +139,7 @@ export default {
 | icon-prefix `v3.0.18` | Icon className prefix | _string_ | `van-icon` |
 | transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | transition-appear | Whether to apply transition on initial render | _boolean_ | `false` |
-| teleport | Return the mount node for Popup | _string \| Element_ | - |
+| teleport | Specifies a target element where Popup will be mounted | _string \| Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
 
 ### Events
