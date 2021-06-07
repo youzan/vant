@@ -180,12 +180,6 @@ export default {
 .demo-icon {
   font-size: 0;
 
-  &-list {
-    box-sizing: border-box;
-    min-height: calc(100vh - 65px);
-    padding-top: 10px;
-  }
-
   &-notify {
     font-size: 13px;
   }
