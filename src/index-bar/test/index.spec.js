@@ -193,3 +193,16 @@ test('should scroll to target element after calling scrollTo method', () => {
   expect(scrollIntoView).toHaveBeenCalledTimes(1);
   expect(onSelect).toHaveBeenCalledWith('C');
 });
+
+test('should render teleport prop correctly', () => {
+  const root = document.createElement('div');
+  mount({
+    render: () => (
+      <IndexBar teleport={root}>
+        <IndexAnchor index="A">Title A</IndexAnchor>
+      </IndexBar>
+    ),
+  });
+
+  expect(root.querySelector('.van-index-bar__sidebar')).toBeTruthy();
+});
