@@ -32,7 +32,8 @@ export default {
 
   > p a,
   > ul a,
-  > table a {
+  > table a,
+  > blockquote a {
     margin: 0 1px;
     color: @van-doc-blue;
     -webkit-font-smoothing: auto;
