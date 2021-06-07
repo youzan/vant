@@ -822,10 +822,10 @@ module.exports = {
                 path: 'use-toggle',
                 title: 'useToggle',
               },
-              // {
-              //   path: 'use-count-down',
-              //   title: 'useCountDown',
-              // },
+              {
+                path: 'use-count-down',
+                title: 'useCountDown',
+              },
               // {
               //   path: 'use-rect',
               //   title: 'useRect',

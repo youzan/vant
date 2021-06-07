@@ -130,7 +130,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| time | Total time | _number \| string_ | `0` |
+| time | Total time, unit milliseconds | _number \| string_ | `0` |
 | format | Time format | _string_ | `HH:mm:ss` |
 | auto-start | Whether to auto start count down | _boolean_ | `true` |
 | millisecond | Whether to enable millisecond render | _boolean_ | `false` |
@@ -160,7 +160,7 @@ export default {
 | ------- | -------------- | -------------------------- |
 | default | Custom Content | _currentTime: CurrentTime_ |
 
-### TimeData Structure
+### CurrentTime Structure
 
 | Name         | Description                   | Type     |
 | ------------ | ----------------------------- | -------- |
