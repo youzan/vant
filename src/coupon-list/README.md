@@ -128,6 +128,13 @@ export default {
 | unitDesc          | Unit Text                                | _string_ |
 | customValidPeriod | custom valid period                      | _string_ |
 
+### CouponList Slots
+
+| Name                            | Description                     |
+| ------------------------------- | ------------------------------- |
+| list-footer `v2.12.21`          | Coupon list bottom              |
+| disabled-list-footer `v2.12.21` | Unavailable coupons list bottom |
+
 ### Less Variables
 
 How to use: [Custom Theme](#/en-US/theme).

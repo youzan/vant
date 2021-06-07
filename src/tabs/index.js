@@ -42,6 +42,12 @@ export default createComponent({
     }),
   ],
 
+  inject: {
+    vanPopup: {
+      default: null,
+    },
+  },
+
   model: {
     prop: 'active',
   },
@@ -171,6 +177,13 @@ export default createComponent({
 
   mounted() {
     this.init();
+
+    // https://github.com/youzan/vant/issues/7959
+    if (this.vanPopup) {
+      this.vanPopup.onReopen(() => {
+        this.setLine();
+      });
+    }
   },
 
   activated() {

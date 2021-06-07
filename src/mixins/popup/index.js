@@ -58,9 +58,16 @@ export function PopupMixin(options = {}) {
       }),
     ],
 
+    provide() {
+      return {
+        vanPopup: this,
+      };
+    },
+
     props: popupMixinProps,
 
     data() {
+      this.onReopenCallback = [];
       return {
         inited: this.value,
       };
@@ -135,6 +142,9 @@ export function PopupMixin(options = {}) {
         this.opened = true;
         this.renderOverlay();
         this.addLock();
+        this.onReopenCallback.forEach((callback) => {
+          callback();
+        });
       },
 
       addLock() {
@@ -219,6 +229,10 @@ export function PopupMixin(options = {}) {
 
       updateZIndex(value = 0) {
         this.$el.style.zIndex = ++context.zIndex + value;
+      },
+
+      onReopen(callback) {
+        this.onReopenCallback.push(callback);
       },
     },
   };

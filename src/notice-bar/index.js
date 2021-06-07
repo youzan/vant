@@ -14,6 +14,12 @@ export default createComponent({
     }),
   ],
 
+  inject: {
+    vanPopup: {
+      default: null,
+    },
+  },
+
   props: {
     text: String,
     mode: String,
@@ -51,6 +57,15 @@ export default createComponent({
       handler: 'start',
       immediate: true,
     },
+  },
+
+  created() {
+    // https://github.com/youzan/vant/issues/8634
+    if (this.vanPopup) {
+      this.vanPopup.onReopen(() => {
+        this.start();
+      });
+    }
   },
 
   activated() {

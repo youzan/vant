@@ -16,6 +16,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.21](https://github.com/youzan/vant/compare/v2.12.20...v2.12.21)
+
+`2021-06-03`
+
+**Feature**
+
+- Button: 新增 icon 插槽 [#8784](https://github.com/youzan/vant/issues/8784)
+- CouponList: 新增 list-footer、disabled-list-footer 插槽 [#8797](https://github.com/youzan/vant/issues/8797)
+- Locale: 新增 French 法语语言包 [#8795](https://github.com/youzan/vant/issues/8795)
+
+**Bug Fixes**
+
+- CellGroup: 修复在 `v-for` 循环内使用时渲染异常的问题 [#8787](https://github.com/youzan/vant/issues/8787)
+- Collapse: 修复在 safari 上可能出现渲染异常的问题 [#8788](https://github.com/youzan/vant/issues/8788)
+- List: 移除无效的 @list-icon-margin-right 变量 [#8758](https://github.com/youzan/vant/issues/8758)
+- NoticeBar: 修复在 Popup 内嵌套使用时无法正常播放的问题 [#8791](https://github.com/youzan/vant/issues/8791)
+- Tabs: 修复在 Popup 内嵌套使用时底部条位置错误的问题 [#8792](https://github.com/youzan/vant/issues/8792)
+
 ### [v2.12.20](https://github.com/youzan/vant/compare/v2.12.19...v2.12.20)
 
 `2021-05-23`
