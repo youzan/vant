@@ -32,6 +32,10 @@ Vant 是基于有赞 [Zan Design System](https://design.youzan.com/) 视觉规�
 
 <a class="design-download" href="https://github.com/youzan/vant/blob/dev/packages/vant-icons/assets/icons.sketch?raw=true">下载</a>
 
+#### 在线资源
+
+Vant 的所有图标都托管在 **iconfont.cn** 上，点此查看：[Vant 图标库](https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=31945)。
+
 ### Axure 元件库
 
 Axure 元件库，由社区的 [@axure-tczy](https://github.com/axure-tczy) 同学贡献。
