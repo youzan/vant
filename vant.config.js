@@ -500,6 +500,10 @@ module.exports = {
                 title: 'Custom Theme',
               },
               {
+                path: 'design',
+                title: 'Design Resources',
+              },
+              {
                 path: 'locale',
                 title: 'Internationalization',
               },
