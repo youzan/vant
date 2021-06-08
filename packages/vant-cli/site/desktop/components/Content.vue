@@ -168,8 +168,9 @@ export default {
     border-top: 1px solid #eee;
   }
 
-  > p > code,
-  > ul li > code,
+  > p code,
+  > ul code,
+  > ol code,
   > table code {
     display: inline;
     margin: 0 2px;

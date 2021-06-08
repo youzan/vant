@@ -92,7 +92,7 @@ module.exports = {
               },
               {
                 path: 'contribution',
-                title: '开发指南',
+                title: '贡献指南',
               },
               {
                 path: 'design',

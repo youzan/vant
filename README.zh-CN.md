@@ -67,7 +67,7 @@ vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手
 
 ## 贡献代码
 
-修改代码请阅读我们的 [开发指南](https://vant-contrib.gitee.io/vant/#/zh-CN/contribution)。
+修改代码请阅读我们的 [贡献指南](https://vant-contrib.gitee.io/vant/#/zh-CN/contribution)。
 
 使用过程中发现任何问题都可以提 [Issue](https://github.com/youzan/vant/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/youzan/vant/pulls)。
 
