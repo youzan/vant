@@ -105,3 +105,14 @@ test('should emit click event when checkbox icon is clicked', async () => {
   icon.trigger('click');
   expect(onClick).toHaveBeenCalledTimes(2);
 });
+
+test('should render icon slot correctly', async () => {
+  const wrapper = mount(Checkbox, {
+    slots: {
+      icon: ({ checked, disabled }) =>
+        `checked: ${checked}, disabled: ${disabled}`,
+    },
+  });
+
+  expect(wrapper.find('.van-checkbox__icon').html()).toMatchSnapshot();
+});

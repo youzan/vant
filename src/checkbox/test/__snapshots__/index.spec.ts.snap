@@ -15,3 +15,9 @@ exports[`should adjust label position when using label-position prop 1`] = `
   </div>
 </div>
 `;
+
+exports[`should render icon slot correctly 1`] = `
+<div class="van-checkbox__icon van-checkbox__icon--round">
+  checked: false, disabled: false
+</div>
+`;
