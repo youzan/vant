@@ -301,10 +301,10 @@ export default {
 
 ### Checkbox Slots
 
-| 名称    | 说明       | 参数               |
-| ------- | ---------- | ------------------ |
-| default | 自定义文本 | -                  |
-| icon    | 自定义图标 | _checked: boolean_ |
+| 名称    | 说明       | 参数                                      |
+| ------- | ---------- | ----------------------------------------- |
+| default | 自定义文本 | -                                         |
+| icon    | 自定义图标 | _{ checked: boolean, disabled: boolean }_ |
 
 ### CheckboxGroup 方法
 

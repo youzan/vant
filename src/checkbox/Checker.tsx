@@ -90,7 +90,7 @@ export default defineComponent({
           style={{ fontSize: addUnit(iconSize) }}
         >
           {slots.icon ? (
-            slots.icon({ checked })
+            slots.icon({ checked, disabled: disabled.value })
           ) : (
             <Icon name="success" style={iconStyle.value} />
           )}

@@ -283,10 +283,10 @@ export default {
 
 ### Checkbox Slots
 
-| Name    | Description  | SlotProps          |
-| ------- | ------------ | ------------------ |
-| default | Custom label | -                  |
-| icon    | Custom icon  | _checked: boolean_ |
+| Name    | Description  | SlotProps                                 |
+| ------- | ------------ | ----------------------------------------- |
+| default | Custom label | -                                         |
+| icon    | Custom icon  | _{ checked: boolean, disabled: boolean }_ |
 
 ### CheckboxGroup Methods
 
