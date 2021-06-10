@@ -432,6 +432,10 @@ export default createComponent({
           allowSameDay={this.allowSameDay}
           showMonthTitle={showMonthTitle}
           firstDayOfWeek={this.dayOffset}
+          scopedSlots={{
+            'top-info': this.$scopedSlots['top-info'],
+            'bottom-info': this.$scopedSlots['bottom-info'],
+          }}
           onClick={this.onClickDay}
         />
       );
