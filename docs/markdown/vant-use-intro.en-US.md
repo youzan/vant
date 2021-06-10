@@ -19,5 +19,6 @@ console.log(height.value); // -> window height
 
 | Name | Description |
 | --- | --- |
+| [useClickAway](#/en-US/use-click-away) | Triggers a callback when user clicks outside of the target element |
 | [useCountDown](#/en-US/use-count-down) | Used to manage the countdown |
 | [useToggle](#/en-US/use-toggle) | Used to switch between `true` and `false` |
