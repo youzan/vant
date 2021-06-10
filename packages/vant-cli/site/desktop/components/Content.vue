@@ -194,7 +194,8 @@ export default {
     border-radius: @van-doc-border-radius;
   }
 
-  > img {
+  > img,
+  > p img {
     width: 100%;
     margin: 16px 0;
     border-radius: @van-doc-border-radius;
