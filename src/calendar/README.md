@@ -305,10 +305,12 @@ Following props are supported when the type is multiple
 
 ### Slots
 
-| Name   | Description   |
-| ------ | ------------- |
-| title  | Custom title  |
-| footer | Custom fotter |
+| Name                   | Description               | SlotProps  |
+| ---------------------- | ------------------------- | ---------- |
+| title                  | Custom title              | -          |
+| footer                 | Custom footer             | -          |
+| top-info `v2.12.22`    | Custom top info of day    | _day: Day_ |
+| bottom-info `v2.12.22` | Custom bottom info of day | _day: Day_ |
 
 ### Methods
 

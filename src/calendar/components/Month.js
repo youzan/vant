@@ -266,8 +266,28 @@ export default createComponent({
       );
     },
 
+    genTopInfo(item) {
+      const slot = this.$scopedSlots['top-info'];
+      if (item.topInfo || slot) {
+        return (
+          <div class={bem('top-info')}>{slot ? slot(item) : item.topInfo}</div>
+        );
+      }
+    },
+
+    genBottomInfo(item) {
+      const slot = this.$scopedSlots['bottom-info'];
+      if (item.bottomInfo || slot) {
+        return (
+          <div class={bem('bottom-info')}>
+            {slot ? slot(item) : item.bottomInfo}
+          </div>
+        );
+      }
+    },
+
     genDay(item, index) {
-      const { type, topInfo, bottomInfo } = item;
+      const { type } = item;
       const style = this.getDayStyle(type, index);
       const disabled = type === 'disabled';
 
@@ -276,12 +296,6 @@ export default createComponent({
           this.$emit('click', item);
         }
       };
-
-      const TopInfo = topInfo && <div class={bem('top-info')}>{topInfo}</div>;
-
-      const BottomInfo = bottomInfo && (
-        <div class={bem('bottom-info')}>{bottomInfo}</div>
-      );
 
       if (type === 'selected') {
         return (
@@ -300,9 +314,9 @@ export default createComponent({
                 background: this.color,
               }}
             >
-              {TopInfo}
+              {this.genTopInfo(item)}
               {item.text}
-              {BottomInfo}
+              {this.genBottomInfo(item)}
             </div>
           </div>
         );
@@ -316,9 +330,9 @@ export default createComponent({
           tabindex={disabled ? null : -1}
           onClick={onClick}
         >
-          {TopInfo}
+          {this.genTopInfo(item)}
           {item.text}
-          {BottomInfo}
+          {this.genBottomInfo(item)}
         </div>
       );
     },
