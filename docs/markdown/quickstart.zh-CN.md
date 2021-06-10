@@ -189,6 +189,34 @@ app.use(Vant);
 
 ## 常见问题
 
+### 如何自定义 Vant 组件的样式？
+
+#### 1. 主题定制
+
+Vant 提供了主题定制的能力，可以对组件样式进行统一修改，详见[定制主题](#/zh-CN/theme)章节。
+
+#### 2. 覆盖默认样式
+
+如果主题定制不能满足你的需求，也可以通过**自定义样式类**来覆盖默认样式，参考下面的示例：
+
+```html
+<template>
+  <van-button class="my-button">按钮</van-button>
+</template>
+
+<style>
+  /** 覆盖 Button 最外层元素的样式 */
+  .my-button {
+    width: 200px;
+  }
+
+  /** 覆盖 Button 内部子元素的样式 */
+  .my-button .van-button__text {
+    color: red;
+  }
+</style>
+```
+
 ### 在 HTML 中无法正确渲染组件？
 
 在 HTML 中使用 Vant 组件时，你可能会碰到部分示例代码无法正确渲染的情况，比如下面的用法：
