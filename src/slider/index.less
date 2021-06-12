@@ -17,15 +17,15 @@
   width: 100%;
   height: var(--van-slider-bar-height);
   background-color: var(--van-slider-inactive-background-color);
-  border-radius: @border-radius-max;
+  border-radius: var(--van-border-radius-max);
   cursor: pointer;
 
   // use pseudo element to expand click area
   &::before {
     position: absolute;
-    top: -@padding-xs;
+    top: -var(--van-padding-xs);
     right: 0;
-    bottom: -@padding-xs;
+    bottom: -var(--van-padding-xs);
     left: 0;
     content: '';
   }
@@ -36,7 +36,7 @@
     height: 100%;
     background-color: var(--van-slider-active-background-color);
     border-radius: inherit;
-    transition: all @animation-duration-fast;
+    transition: all var(--van-animation-duration-fast);
   }
 
   &__button {
@@ -98,9 +98,9 @@
     // use pseudo element to expand click area
     &::before {
       top: 0;
-      right: -@padding-xs;
+      right: -var(--van-padding-xs);
       bottom: 0;
-      left: -@padding-xs;
+      left: -var(--van-padding-xs);
     }
   }
 }

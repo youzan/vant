@@ -49,7 +49,7 @@
   text-align: center;
   border-radius: var(--van-button-border-radius);
   cursor: pointer;
-  transition: opacity @animation-duration-fast;
+  transition: opacity var(--van-animation-duration-fast);
   -webkit-appearance: none;
 
   &::before {
@@ -58,9 +58,9 @@
     left: 50%;
     width: 100%;
     height: 100%;
-    background-color: @black;
+    background-color: var(--van-black);
     border: inherit;
-    border-color: @black;
+    border-color: var(--van-black);
     border-radius: inherit; /* inherit parent's border radius */
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -166,7 +166,7 @@
     font-size: var(--van-button-mini-font-size);
 
     & + .van-button--mini {
-      margin-left: @padding-base;
+      margin-left: var(--van-padding-base);
     }
   }
 
@@ -216,7 +216,7 @@
   &__loading + &__text,
   &__text + &__icon,
   &__text + &__loading {
-    margin-left: @padding-base;
+    margin-left: var(--van-padding-base);
   }
 
   &--hairline {

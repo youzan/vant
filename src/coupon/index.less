@@ -37,13 +37,13 @@
     box-sizing: border-box;
     min-height: var(--van-coupon-content-height);
     padding: var(--van-coupon-content-padding);
-    color: @gray-8;
+    color: var(--van-gray-8);
   }
 
   &__head {
     position: relative;
     min-width: var(--van-coupon-head-width);
-    padding: 0 @padding-xs;
+    padding: 0 var(--van-padding-xs);
     color: var(--van-coupon-amount-color);
     text-align: center;
   }
@@ -57,7 +57,7 @@
 
   &__amount {
     margin-bottom: 6px;
-    font-weight: @font-weight-bold;
+    font-weight: var(--van-font-weight-bold);
     font-size: var(--van-coupon-amount-font-size);
     .ellipsis();
 
@@ -72,7 +72,7 @@
   }
 
   &__condition {
-    font-size: @font-size-sm;
+    font-size: var(--van-font-size-sm);
     line-height: 16px;
     white-space: pre-wrap;
   }
@@ -88,17 +88,17 @@
     margin-bottom: 10px;
     font-weight: bold;
     font-size: var(--van-coupon-name-font-size);
-    line-height: @line-height-md;
+    line-height: var(--van-line-height-md);
   }
 
   &__valid {
-    font-size: @font-size-sm;
+    font-size: var(--van-font-size-sm);
   }
 
   &__corner {
     position: absolute;
     top: 0;
-    right: @padding-md;
+    right: var(--van-padding-md);
     bottom: 0;
 
     .van-checkbox__icon--checked .van-icon {
@@ -109,7 +109,7 @@
 
   &__description {
     padding: var(--van-coupon-description-padding);
-    font-size: @font-size-sm;
+    font-size: var(--van-font-size-sm);
     border-top: 1px dashed var(--van-coupon-description-border-color);
   }
 

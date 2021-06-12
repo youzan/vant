@@ -124,7 +124,7 @@
       border-radius: 100%;
 
       &:active {
-        opacity: @active-opacity;
+        opacity: var(--van-active-opacity);
       }
 
       &--disabled {
@@ -136,13 +136,13 @@
     }
 
     .van-stepper__plus {
-      color: @white;
+      color: var(--van-white);
       background-color: var(--van-stepper-button-round-theme-color);
     }
 
     .van-stepper__minus {
       color: var(--van-stepper-button-round-theme-color);
-      background-color: @white;
+      background-color: var(--van-white);
       border: 1px solid var(--van-stepper-button-round-theme-color);
     }
   }

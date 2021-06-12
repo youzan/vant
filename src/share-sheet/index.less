@@ -26,7 +26,7 @@
   }
 
   &__title {
-    margin-top: @padding-xs;
+    margin-top: var(--van-padding-xs);
     color: var(--van-share-sheet-title-color);
     font-weight: normal;
     font-size: var(--van-share-sheet-title-font-size);
@@ -35,7 +35,7 @@
 
   &__description {
     display: block;
-    margin-top: @padding-xs;
+    margin-top: var(--van-padding-xs);
     color: var(--van-share-sheet-description-color);
     font-size: var(--van-share-sheet-description-font-size);
     line-height: var(--van-share-sheet-description-line-height);
@@ -44,13 +44,13 @@
   &__options {
     position: relative;
     display: flex;
-    padding: @padding-md 0 @padding-md @padding-xs;
+    padding: var(--van-padding-md) 0 var(--van-padding-md) var(--van-padding-xs);
     overflow-x: auto;
     overflow-y: visible;
     -webkit-overflow-scrolling: touch;
 
     &--border::before {
-      .hairline-top(@border-color, @padding-md);
+      .hairline-top(var(--van-border-color), var(--van-padding-md));
     }
 
     &::-webkit-scrollbar {
@@ -66,25 +66,25 @@
     user-select: none;
 
     &:active {
-      opacity: @active-opacity;
+      opacity: var(--van-active-opacity);
     }
   }
 
   &__icon {
     width: var(--van-share-sheet-icon-size);
     height: var(--van-share-sheet-icon-size);
-    margin: 0 @padding-md;
+    margin: 0 var(--van-padding-md);
   }
 
   &__name {
-    margin-top: @padding-xs;
-    padding: 0 @padding-base;
+    margin-top: var(--van-padding-xs);
+    padding: 0 var(--van-padding-base);
     color: var(--van-share-sheet-option-name-color);
     font-size: var(--van-share-sheet-option-name-font-size);
   }
 
   &__option-description {
-    padding: 0 @padding-base;
+    padding: 0 var(--van-padding-base);
     color: var(--van-share-sheet-option-description-color);
     font-size: var(--van-share-sheet-option-description-font-size);
   }
@@ -102,13 +102,13 @@
 
     &::before {
       display: block;
-      height: @padding-xs;
-      background-color: @background-color;
+      height: var(--van-padding-xs);
+      background-color: var(--van-background-color);
       content: ' ';
     }
 
     &:active {
-      background-color: @active-color;
+      background-color: var(--van-active-color);
     }
   }
 }

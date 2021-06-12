@@ -38,7 +38,7 @@
     cursor: pointer;
 
     &:active {
-      opacity: @active-opacity;
+      opacity: var(--van-active-opacity);
     }
   }
 
@@ -52,7 +52,7 @@
 
   &__title {
     max-width: 50%;
-    font-weight: @font-weight-bold;
+    font-weight: var(--van-font-weight-bold);
     font-size: var(--van-picker-title-font-size);
     line-height: var(--van-picker-title-line-height);
     text-align: center;
@@ -81,8 +81,8 @@
   &__frame {
     position: absolute;
     top: 50%;
-    right: @padding-md;
-    left: @padding-md;
+    right: var(--van-padding-md);
+    left: var(--van-padding-md);
     z-index: 2;
     transform: translateY(-50%);
     pointer-events: none;
@@ -121,7 +121,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0 @padding-base;
+      padding: 0 var(--van-padding-base);
       color: var(--van-picker-option-text-color);
 
       &--disabled {

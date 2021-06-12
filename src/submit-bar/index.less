@@ -63,7 +63,7 @@
 
   &__text {
     flex: 1;
-    padding-right: @padding-sm;
+    padding-right: var(--van-padding-sm);
     color: var(--van-submit-bar-text-color);
     text-align: right;
 
@@ -73,13 +73,13 @@
   }
 
   &__suffix-label {
-    margin-left: @padding-base;
-    font-weight: @font-weight-bold;
+    margin-left: var(--van-padding-base);
+    font-weight: var(--van-font-weight-bold);
   }
 
   &__price {
     color: var(--van-submit-bar-price-color);
-    font-weight: @font-weight-bold;
+    font-weight: var(--van-font-weight-bold);
     font-size: var(--van-submit-bar-price-font-size);
 
     &-integer {
@@ -91,11 +91,11 @@
   &__button {
     width: var(--van-submit-bar-button-width);
     height: var(--van-submit-bar-button-height);
-    font-weight: @font-weight-bold;
+    font-weight: var(--van-font-weight-bold);
     border: none;
 
     &--danger {
-      background: @gradient-red;
+      background: var(--van-gradient-red);
     }
   }
 

@@ -43,14 +43,14 @@
   &__cancel {
     display: block;
     width: 100%;
-    padding: 14px @padding-md;
+    padding: 14px var(--van-padding-md);
     font-size: var(--van-action-sheet-item-font-size);
     background-color: var(--van-action-sheet-item-background);
     border: none;
     cursor: pointer;
 
     &:active {
-      background-color: @active-color;
+      background-color: var(--van-active-color);
     }
   }
 
@@ -82,7 +82,7 @@
   }
 
   &__subname {
-    margin-top: @padding-xs;
+    margin-top: var(--van-padding-xs);
     color: var(--van-action-sheet-subname-color);
     font-size: var(--van-action-sheet-subname-font-size);
     line-height: var(--van-action-sheet-subname-line-height);
@@ -96,7 +96,7 @@
 
   &__header {
     flex-shrink: 0;
-    font-weight: @font-weight-bold;
+    font-weight: var(--van-font-weight-bold);
     font-size: var(--van-action-sheet-header-font-size);
     line-height: var(--van-action-sheet-header-height);
     text-align: center;
@@ -105,14 +105,14 @@
   &__description {
     position: relative;
     flex-shrink: 0;
-    padding: 20px @padding-md;
+    padding: 20px var(--van-padding-md);
     color: var(--van-action-sheet-description-color);
     font-size: var(--van-action-sheet-description-font-size);
     line-height: var(--van-action-sheet-description-line-height);
     text-align: center;
 
     &::after {
-      .hairline-bottom(@border-color, @padding-md, @padding-md);
+      .hairline-bottom(var(--van-border-color), var(--van-padding-md), var(--van-padding-md));
     }
   }
 

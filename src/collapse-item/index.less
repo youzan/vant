@@ -16,7 +16,7 @@
 
   &--border {
     &::after {
-      .hairline-top(@border-color, @padding-md, @padding-md);
+      .hairline-top(var(--van-border-color), var(--van-padding-md), var(--van-padding-md));
     }
   }
 
@@ -29,7 +29,7 @@
     }
 
     &::after {
-      right: @padding-md;
+      right: var(--van-padding-md);
       display: none;
     }
 

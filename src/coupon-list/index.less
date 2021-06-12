@@ -21,13 +21,13 @@
 
     .van-field__body {
       height: 34px;
-      padding-left: @padding-sm;
+      padding-left: var(--van-padding-sm);
       line-height: 34px;
-      background: @gray-1;
+      background: var(--van-gray-1);
       border-radius: 17px;
 
       &::placeholder {
-        color: @gray-5;
+        color: var(--van-gray-5);
       }
     }
 
@@ -39,29 +39,29 @@
   &__exchange-bar {
     display: flex;
     align-items: center;
-    background-color: @white;
+    background-color: var(--van-white);
   }
 
   &__exchange {
     flex: none;
     height: var(--van-coupon-list-exchange-button-height);
-    font-size: @font-size-lg;
+    font-size: var(--van-font-size-lg);
     line-height: calc(var(--van-coupon-list-exchange-button-height) - 2px);
     border: 0;
   }
 
   .van-tabs__wrap {
-    box-shadow: 0 6px 12px -12px @gray-6;
+    box-shadow: 0 6px 12px -12px var(--van-gray-6);
   }
 
   &__list {
     box-sizing: border-box;
-    padding: @padding-md 0 @padding-lg;
+    padding: var(--van-padding-md) 0 var(--van-padding-lg);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
     &--with-bottom {
-      padding-bottom: @padding-md + 50px;
+      padding-bottom: calc(var(--van-padding-md) + 50px);
     }
   }
 
@@ -72,9 +72,9 @@
     z-index: 999;
     box-sizing: border-box;
     width: 100%;
-    padding: 5px @padding-md;
-    font-weight: @font-weight-bold;
-    background-color: @white;
+    padding: 5px var(--van-padding-md);
+    font-weight: var(--van-font-weight-bold);
+    background-color: var(--van-white);
   }
 
   &__close {
@@ -86,7 +86,7 @@
     text-align: center;
 
     p {
-      margin: @padding-md 0;
+      margin: var(--van-padding-md) 0;
       color: var(--van-coupon-list-empty-tip-color);
       font-size: var(--van-coupon-list-empty-tip-font-size);
       line-height: var(--van-coupon-list-empty-tip-line-height);

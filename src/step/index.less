@@ -31,7 +31,7 @@
   &__line {
     position: absolute;
     background-color: var(--van-step-line-color);
-    transition: background-color @animation-duration-base;
+    transition: background-color var(--van-animation-duration-base);
   }
 
   &--horizontal {
@@ -63,10 +63,10 @@
     .van-step__circle-container {
       position: absolute;
       top: 30px;
-      left: -@padding-xs;
+      left: -var(--van-padding-xs);
       z-index: 1;
-      padding: 0 @padding-xs;
-      background-color: @white;
+      padding: 0 var(--van-padding-xs);
+      background-color: var(--van-white);
       transform: translateY(-50%);
     }
 
@@ -98,7 +98,7 @@
     display: block;
     float: none;
     padding: 10px 10px 10px 0;
-    line-height: @line-height-sm;
+    line-height: var(--van-line-height-sm);
 
     &:not(:last-child)::after {
       border-bottom-width: 1px;
@@ -112,7 +112,7 @@
         z-index: 1;
         width: 1px;
         height: 20px;
-        background-color: @white;
+        background-color: var(--van-white);
         content: '';
       }
     }
@@ -152,7 +152,7 @@
 
   &__icon,
   &__title {
-    transition: color @animation-duration-base;
+    transition: color var(--van-animation-duration-base);
 
     &--active,
     &--finish {

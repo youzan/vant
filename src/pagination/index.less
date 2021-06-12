@@ -34,27 +34,28 @@
     user-select: none;
 
     &:active {
-      color: @white;
+      color: var(--van-white);
       background-color: var(--van-pagination-item-default-color);
     }
 
     &::after {
-      border-width: @border-width-base 0 @border-width-base @border-width-base;
+      border-width: var(--van-border-width-base) 0 var(--van-border-width-base)
+        var(--van-border-width-base);
     }
 
     &:last-child::after {
-      border-right-width: @border-width-base;
+      border-right-width: var(--van-border-width-base);
     }
 
     &--active {
-      color: @white;
+      color: var(--van-white);
       background-color: var(--van-pagination-item-default-color);
     }
   }
 
   &__prev,
   &__next {
-    padding: 0 @padding-base;
+    padding: 0 var(--van-padding-base);
     cursor: pointer;
   }
 
@@ -82,7 +83,7 @@
     .van-pagination__prev,
     .van-pagination__next {
       &::after {
-        border-width: @border-width-base;
+        border-width: var(--van-border-width-base);
       }
     }
   }
