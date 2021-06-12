@@ -24,7 +24,7 @@
   align-items: center;
   justify-content: center;
   box-sizing: content-box;
-  transition: all @animation-duration-fast;
+  transition: all var(--van-animation-duration-fast);
 
   // hack for avoid max-width when use left & fixed
   width: var(--van-toast-default-width);
@@ -79,11 +79,11 @@
   }
 
   &__loading {
-    padding: @padding-base;
+    padding: var(--van-padding-base);
     color: var(--van-toast-loading-icon-color);
   }
 
   &__text {
-    margin-top: @padding-xs;
+    margin-top: var(--van-padding-xs);
   }
 }

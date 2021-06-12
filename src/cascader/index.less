@@ -26,7 +26,7 @@
   }
 
   &__title {
-    font-weight: @font-weight-bold;
+    font-weight: var(--van-font-weight-bold);
     font-size: var(--van-cascader-title-font-size);
     line-height: var(--van-cascader-title-line-height);
   }
@@ -58,7 +58,7 @@
 
   &__tab {
     color: var(--van-cascader-tab-color);
-    font-weight: @font-weight-bold;
+    font-weight: var(--van-font-weight-bold);
 
     &--unselected {
       color: var(--van-cascader-unselected-tab-color);
@@ -70,17 +70,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px @padding-md;
-    font-size: @font-size-md;
-    line-height: @line-height-md;
+    padding: 10px var(--van-padding-md);
+    font-size: var(--van-font-size-md);
+    line-height: var(--van-line-height-md);
 
     &:active {
-      background-color: @active-color;
+      background-color: var(--van-active-color);
     }
 
     &--selected {
       color: var(--van-cascader-active-color);
-      font-weight: @font-weight-bold;
+      font-weight: var(--van-font-weight-bold);
     }
   }
 

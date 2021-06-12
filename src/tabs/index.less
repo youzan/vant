@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 0 @padding-base;
+  padding: 0 var(--van-padding-base);
   color: var(--van-tab-text-color);
   font-size: var(--van-tab-font-size);
   line-height: var(--van-tab-line-height);
@@ -30,7 +30,7 @@
 
   &--active {
     color: var(--van-tab-active-text-color);
-    font-weight: @font-weight-bold;
+    font-weight: var(--van-font-weight-bold);
   }
 
   &--disabled {
@@ -66,7 +66,7 @@
     &--scrollable {
       .van-tab {
         flex: 1 0 auto;
-        padding: 0 @padding-sm;
+        padding: 0 var(--van-padding-sm);
       }
 
       .van-tabs__nav {
@@ -94,27 +94,28 @@
     }
 
     &--complete {
-      padding-right: @padding-xs;
-      padding-left: @padding-xs;
+      padding-right: var(--van-padding-xs);
+      padding-left: var(--van-padding-xs);
     }
 
     &--card {
       box-sizing: border-box;
       height: var(--van-tabs-card-height);
-      margin: 0 @padding-md;
-      border: @border-width-base solid var(--van-tabs-default-color);
-      border-radius: @border-radius-sm;
+      margin: 0 var(--van-padding-md);
+      border: var(--van-border-width-base) solid var(--van-tabs-default-color);
+      border-radius: var(--van-border-radius-sm);
 
       .van-tab {
         color: var(--van-tabs-default-color);
-        border-right: @border-width-base solid var(--van-tabs-default-color);
+        border-right: var(--van-border-width-base) solid
+          var(--van-tabs-default-color);
 
         &:last-child {
           border-right: none;
         }
 
         &.van-tab--active {
-          color: @white;
+          color: var(--van-white);
           background-color: var(--van-tabs-default-color);
         }
 

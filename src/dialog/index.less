@@ -65,7 +65,7 @@
     font-size: var(--van-dialog-message-font-size);
     line-height: var(--van-dialog-message-line-height);
 
-    // allow newline charactor
+    // allow newline character
     white-space: pre-wrap;
     text-align: center;
     word-wrap: break-word;
@@ -110,12 +110,12 @@
     .van-dialog__footer {
       position: relative;
       height: auto;
-      padding: @padding-xs @padding-lg @padding-md;
+      padding: var(--van-padding-xs) var(--van-padding-lg) var(--van-padding-md);
     }
 
     .van-dialog__message {
-      padding-bottom: @padding-md;
-      color: @text-color;
+      padding-bottom: var(--van-padding-md);
+      color: var(--van-text-color);
     }
 
     .van-dialog__confirm,
@@ -124,7 +124,7 @@
     }
 
     .van-dialog__confirm {
-      color: @white;
+      color: var(--van-white);
     }
   }
 

@@ -47,9 +47,9 @@
     box-sizing: border-box;
     width: var(--van-popover-action-width);
     height: var(--van-popover-action-height);
-    padding: 0 @padding-md;
+    padding: 0 var(--van-padding-md);
     font-size: var(--van-popover-action-font-size);
-    line-height: @line-height-md;
+    line-height: var(--van-line-height-md);
     cursor: pointer;
 
     &:last-child {
@@ -67,7 +67,7 @@
     }
 
     &-icon {
-      margin-right: @padding-xs;
+      margin-right: var(--van-padding-xs);
       font-size: var(--van-popover-action-icon-size);
     }
 
@@ -99,7 +99,7 @@
     transform-origin: 0 100%;
 
     .van-popover__arrow {
-      left: @padding-md;
+      left: var(--van-padding-md);
     }
   }
 
@@ -107,7 +107,7 @@
     transform-origin: 100% 100%;
 
     .van-popover__arrow {
-      right: @padding-md;
+      right: var(--van-padding-md);
     }
   }
 
@@ -132,7 +132,7 @@
     transform-origin: 100% 0;
 
     .van-popover__arrow {
-      top: @padding-md;
+      top: var(--van-padding-md);
     }
   }
 
@@ -140,7 +140,7 @@
     transform-origin: 100% 100%;
 
     .van-popover__arrow {
-      bottom: @padding-md;
+      bottom: var(--van-padding-md);
     }
   }
 
@@ -165,7 +165,7 @@
     transform-origin: 0 0;
 
     .van-popover__arrow {
-      top: @padding-md;
+      top: var(--van-padding-md);
     }
   }
 
@@ -173,7 +173,7 @@
     transform-origin: 0 100%;
 
     .van-popover__arrow {
-      bottom: @padding-md;
+      bottom: var(--van-padding-md);
     }
   }
 
@@ -198,7 +198,7 @@
     transform-origin: 0 0;
 
     .van-popover__arrow {
-      left: @padding-md;
+      left: var(--van-padding-md);
     }
   }
 
@@ -206,7 +206,7 @@
     transform-origin: 100% 0;
 
     .van-popover__arrow {
-      right: @padding-md;
+      right: var(--van-padding-md);
     }
   }
 
@@ -224,7 +224,7 @@
 
     .van-popover__action {
       &:active {
-        background-color: @active-color;
+        background-color: var(--van-active-color);
       }
 
       &--disabled {
@@ -265,7 +265,7 @@
 
     .van-popover__action-text {
       &::after {
-        border-color: @gray-7;
+        border-color: var(--van-gray-7);
       }
     }
   }
@@ -277,10 +277,10 @@
   }
 
   &-zoom-enter-active {
-    transition-timing-function: @animation-timing-function-enter;
+    transition-timing-function: var(--van-animation-timing-function-enter);
   }
 
   &-zoom-leave-active {
-    transition-timing-function: @animation-timing-function-leave;
+    transition-timing-function: var(--van-animation-timing-function-leave);
   }
 }

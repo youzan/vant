@@ -60,7 +60,7 @@
   &__header-title,
   &__header-subtitle {
     height: var(--van-calendar-header-title-height);
-    font-weight: @font-weight-bold;
+    font-weight: var(--van-font-weight-bold);
     line-height: var(--van-calendar-header-title-height);
     text-align: center;
   }
@@ -137,16 +137,16 @@
     }
 
     &--start {
-      border-radius: @border-radius-md 0 0 @border-radius-md;
+      border-radius: var(--van-border-radius-md) 0 0 var(--van-border-radius-md);
     }
 
     &--end {
-      border-radius: 0 @border-radius-md @border-radius-md 0;
+      border-radius: 0 var(--van-border-radius-md) var(--van-border-radius-md) 0;
     }
 
     &--start-end,
     &--multiple-selected {
-      border-radius: @border-radius-md;
+      border-radius: var(--van-border-radius-md);
     }
 
     &--middle {
@@ -196,12 +196,12 @@
     height: var(--van-calendar-selected-day-size);
     color: var(--van-calendar-selected-day-color);
     background-color: var(--van-calendar-selected-day-background-color);
-    border-radius: @border-radius-md;
+    border-radius: var(--van-border-radius-md);
   }
 
   &__footer {
     flex-shrink: 0;
-    padding: 0 @padding-md;
+    padding: 0 var(--van-padding-md);
     .safe-area-inset-bottom();
 
     &--unfit {

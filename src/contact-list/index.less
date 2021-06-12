@@ -20,13 +20,13 @@
   &__item-value {
     display: flex;
     align-items: center;
-    padding-right: @padding-xl;
-    padding-left: @padding-xs;
+    padding-right: var(--van-padding-xl);
+    padding-left: var(--van-padding-xs);
   }
 
   &__item-tag {
     flex: none;
-    margin-left: @padding-xs;
+    margin-left: var(--van-padding-xs);
     padding-top: 0;
     padding-bottom: 0;
     line-height: 1.4em;
@@ -56,8 +56,8 @@
     bottom: 0;
     left: 0;
     z-index: var(--van-contact-list-add-button-z-index);
-    padding: 0 @padding-md;
-    background-color: @white;
+    padding: 0 var(--van-padding-md);
+    background-color: var(--van-white);
     .safe-area-inset-bottom();
   }
 

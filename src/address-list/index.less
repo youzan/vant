@@ -29,8 +29,8 @@
     z-index: var(--van-address-list-add-button-z-index);
     box-sizing: border-box;
     width: 100%;
-    padding: 0 @padding-md;
-    background-color: @white;
+    padding: 0 var(--van-padding-md);
+    background-color: var(--van-white);
     .safe-area-inset-bottom();
   }
 
@@ -49,11 +49,11 @@
 
 .van-address-item {
   padding: var(--van-address-list-item-padding);
-  background-color: @white;
-  border-radius: @border-radius-lg;
+  background-color: var(--van-white);
+  border-radius: var(--van-border-radius-lg);
 
   &:not(:last-child) {
-    margin-bottom: @padding-sm;
+    margin-bottom: var(--van-padding-sm);
   }
 
   &__value {
@@ -63,14 +63,14 @@
   &__name {
     display: flex;
     align-items: center;
-    margin-bottom: @padding-xs;
-    font-size: @font-size-lg;
-    line-height: @line-height-lg;
+    margin-bottom: var(--van-padding-xs);
+    font-size: var(--van-font-size-lg);
+    line-height: var(--van-line-height-lg);
   }
 
   &__tag {
     flex: none;
-    margin-left: @padding-xs;
+    margin-left: var(--van-padding-xs);
     padding-top: 0;
     padding-bottom: 0;
     line-height: 1.4em;
@@ -92,8 +92,8 @@
   &__edit {
     position: absolute;
     top: 50%;
-    right: @padding-md;
-    color: @gray-6;
+    right: var(--van-padding-md);
+    color: var(--van-gray-6);
     font-size: var(--van-address-list-edit-icon-size);
     transform: translate(0, -50%);
   }
@@ -103,7 +103,7 @@
   }
 
   .van-radio__label {
-    margin-left: @padding-sm;
+    margin-left: var(--van-padding-sm);
   }
 
   .van-radio__icon--checked .van-icon {

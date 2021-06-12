@@ -24,12 +24,12 @@
   &__content {
     display: flex;
     flex: 1;
-    padding-left: @padding-sm;
+    padding-left: var(--van-padding-sm);
     background-color: var(--van-search-content-background-color);
-    border-radius: @border-radius-sm;
+    border-radius: var(--van-border-radius-sm);
 
     &--round {
-      border-radius: @border-radius-max;
+      border-radius: var(--van-border-radius-max);
     }
   }
 
@@ -42,7 +42,7 @@
 
   .van-cell {
     flex: 1;
-    padding: 5px @padding-xs 5px 0;
+    padding: 5px var(--van-padding-xs) 5px 0;
     background-color: transparent;
 
     &__left-icon {
@@ -72,7 +72,7 @@
     user-select: none;
 
     &:active {
-      background-color: @active-color;
+      background-color: var(--van-active-color);
     }
   }
 }

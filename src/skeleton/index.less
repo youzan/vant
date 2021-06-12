@@ -12,17 +12,17 @@
 
 .van-skeleton {
   display: flex;
-  padding: 0 @padding-md;
+  padding: 0 var(--van-padding-md);
 
   &__avatar {
     flex-shrink: 0;
     width: var(--van-skeleton-avatar-size);
     height: var(--van-skeleton-avatar-size);
-    margin-right: @padding-md;
+    margin-right: var(--van-padding-md);
     background-color: var(--van-skeleton-avatar-background-color);
 
     &--round {
-      border-radius: @border-radius-max;
+      border-radius: var(--van-border-radius-max);
     }
   }
 
@@ -31,7 +31,7 @@
   }
 
   &__avatar + &__content {
-    padding-top: @padding-xs;
+    padding-top: var(--van-padding-xs);
   }
 
   &__row,
@@ -63,7 +63,7 @@
   &--round {
     .van-skeleton__row,
     .van-skeleton__title {
-      border-radius: @border-radius-max;
+      border-radius: var(--van-border-radius-max);
     }
   }
 }

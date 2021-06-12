@@ -26,7 +26,7 @@
     box-shadow: var(--van-dropdown-menu-box-shadow);
 
     &--opened {
-      z-index: @dropdown-item-z-index + 1;
+      z-index: calc(var(--van-dropdown-item-z-index) + 1);
     }
   }
 
@@ -39,7 +39,7 @@
     cursor: pointer;
 
     &:active {
-      opacity: @active-opacity;
+      opacity: var(--van-active-opacity);
     }
 
     &--disabled {
@@ -68,7 +68,7 @@
       right: -4px;
       margin-top: -5px;
       border: 3px solid;
-      border-color: transparent transparent @gray-4 @gray-4;
+      border-color: transparent transparent var(--van-gray-4) var(--van-gray-4);
       transform: rotate(-45deg);
       opacity: 0.8;
       content: '';

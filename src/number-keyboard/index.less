@@ -76,7 +76,7 @@
     cursor: pointer;
 
     &:active {
-      opacity: @active-opacity;
+      opacity: var(--van-active-opacity);
     }
   }
 
@@ -98,8 +98,8 @@
   height: var(--van-number-keyboard-key-height);
   font-size: var(--van-number-keyboard-key-font-size);
   line-height: 1.5;
-  background-color: @white;
-  border-radius: @border-radius-lg;
+  background-color: var(--van-white);
+  border-radius: var(--van-border-radius-lg);
   cursor: pointer;
 
   &--large {
@@ -127,7 +127,7 @@
     background-color: var(--van-number-keyboard-button-background-color);
 
     &.van-key--active {
-      background-color: var(--van-number-keyboard-button-active-color);
+      opacity: var(--van-active-opacity);
     }
   }
 

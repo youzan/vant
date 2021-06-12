@@ -28,7 +28,7 @@
   background-color: var(--van-card-background-color);
 
   &:not(:first-child) {
-    margin-top: @padding-xs;
+    margin-top: var(--van-padding-xs);
   }
 
   &__header {
@@ -40,7 +40,7 @@
     flex: none;
     width: var(--van-card-thumb-size);
     height: var(--van-card-thumb-size);
-    margin-right: @padding-xs;
+    margin-right: var(--van-padding-xs);
 
     img {
       border-radius: var(--van-card-thumb-border-radius);
@@ -68,7 +68,7 @@
 
   &__title {
     max-height: 32px;
-    font-weight: @font-weight-bold;
+    font-weight: var(--van-font-weight-bold);
     line-height: var(--van-card-title-line-height);
   }
 
@@ -79,13 +79,13 @@
   }
 
   &__bottom {
-    line-height: @line-height-md;
+    line-height: var(--van-line-height-md);
   }
 
   &__price {
     display: inline-block;
     color: var(--van-card-price-color);
-    font-weight: @font-weight-bold;
+    font-weight: var(--van-font-weight-bold);
     font-size: var(--van-card-price-font-size);
   }
 

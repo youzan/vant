@@ -36,7 +36,7 @@
   background-color: var(--van-cell-background-color);
 
   &::after {
-    .hairline-bottom(var(--van-cell-border-color), @padding-md, @padding-md);
+    .hairline-bottom(var(--van-cell-border-color), var(--van-padding-md), var(--van-padding-md));
   }
 
   &:last-child::after,
@@ -65,7 +65,7 @@
     word-wrap: break-word;
 
     &--alone {
-      color: @text-color;
+      color: var(--van-text-color);
       text-align: left;
     }
   }
@@ -78,11 +78,11 @@
   }
 
   &__left-icon {
-    margin-right: @padding-base;
+    margin-right: var(--van-padding-base);
   }
 
   &__right-icon {
-    margin-left: @padding-base;
+    margin-left: var(--van-padding-base);
     color: var(--van-cell-right-icon-color);
   }
 
@@ -99,7 +99,7 @@
 
     &::before {
       position: absolute;
-      left: @padding-xs;
+      left: var(--van-padding-xs);
       color: var(--van-cell-required-color);
       font-size: var(--van-cell-font-size);
       content: '*';

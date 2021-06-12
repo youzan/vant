@@ -99,14 +99,14 @@
     &--custom {
       display: flex;
       align-items: center;
-      min-height: @cell-line-height;
+      min-height: var(--van-cell-line-height);
     }
 
     // for ios wechat
     &[type='date'],
     &[type='time'],
     &[type='datetime-local'] {
-      min-height: @cell-line-height;
+      min-height: var(--van-cell-line-height);
     }
 
     // for safari
@@ -124,8 +124,8 @@
 
   &__clear,
   &__right-icon {
-    margin-right: -@padding-xs;
-    padding: 0 @padding-xs;
+    margin-right: -var(--van-padding-xs);
+    padding: 0 var(--van-padding-xs);
     line-height: inherit;
   }
 
@@ -143,7 +143,7 @@
   }
 
   &__left-icon {
-    margin-right: @padding-base;
+    margin-right: var(--van-padding-base);
   }
 
   &__right-icon {
@@ -151,7 +151,7 @@
   }
 
   &__button {
-    padding-left: @padding-xs;
+    padding-left: var(--van-padding-xs);
   }
 
   &__error-message {
@@ -169,7 +169,7 @@
   }
 
   &__word-limit {
-    margin-top: @padding-base;
+    margin-top: var(--van-padding-base);
     color: var(--van-field-word-limit-color);
     font-size: var(--van-field-word-limit-font-size);
     line-height: var(--van-field-word-limit-line-height);

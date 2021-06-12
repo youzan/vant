@@ -30,7 +30,7 @@
   }
 
   &__icon + &__text {
-    margin-top: @padding-xs;
+    margin-top: var(--van-padding-xs);
   }
 
   &__content {
@@ -43,7 +43,8 @@
 
     &::after {
       z-index: 1;
-      border-width: 0 @border-width-base @border-width-base 0;
+      border-width: 0 var(--van-border-width-base) var(--van-border-width-base)
+        0;
     }
 
     &--square {
@@ -63,13 +64,13 @@
 
       .van-grid-item__icon + .van-grid-item__text {
         margin-top: 0;
-        margin-left: @padding-xs;
+        margin-left: var(--van-padding-xs);
       }
     }
 
     &--surround {
       &::after {
-        border-width: @border-width-base;
+        border-width: var(--van-border-width-base);
       }
     }
 

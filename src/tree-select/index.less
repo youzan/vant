@@ -37,8 +37,8 @@
 
   &__item {
     position: relative;
-    padding: 0 32px 0 @padding-md;
-    font-weight: @font-weight-bold;
+    padding: 0 32px 0 var(--van-padding-md);
+    font-weight: var(--van-font-weight-bold);
     line-height: var(--van-tree-select-item-height);
     cursor: pointer;
 
@@ -47,7 +47,7 @@
     }
 
     &:active {
-      background-color: @active-color;
+      background-color: var(--van-active-color);
     }
 
     &--disabled {
@@ -63,8 +63,8 @@
   &__selected {
     position: absolute;
     top: 50%;
-    right: @padding-md;
-    margin-top: -@padding-xs;
+    right: var(--van-padding-md);
+    margin-top: -var(--van-padding-xs);
     font-size: var(--van-tree-select-item-selected-size);
   }
 }

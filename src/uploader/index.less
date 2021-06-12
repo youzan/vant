@@ -69,7 +69,7 @@
     box-sizing: border-box;
     width: var(--van-uploader-size);
     height: var(--van-uploader-size);
-    margin: 0 @padding-xs @padding-xs 0;
+    margin: 0 var(--van-padding-xs) var(--van-padding-xs) 0;
     background-color: var(--van-uploader-upload-background-color);
 
     &:active {
@@ -82,7 +82,7 @@
     }
 
     &-text {
-      margin-top: @padding-xs;
+      margin-top: var(--van-padding-xs);
       color: var(--van-uploader-text-color);
       font-size: var(--van-uploader-text-font-size);
     }
@@ -90,7 +90,7 @@
 
   &__preview {
     position: relative;
-    margin: 0 @padding-xs @padding-xs 0;
+    margin: 0 var(--van-padding-xs) var(--van-padding-xs) 0;
     cursor: pointer;
 
     &-image {
@@ -148,7 +148,7 @@
 
     &-message {
       margin-top: 6px;
-      padding: 0 @padding-base;
+      padding: 0 var(--van-padding-base);
       font-size: var(--van-uploader-mask-message-font-size);
       line-height: var(--van-uploader-mask-message-line-height);
     }
