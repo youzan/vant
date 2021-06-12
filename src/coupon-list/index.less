@@ -1,12 +1,23 @@
 @import './var.less';
 
+:root {
+  --van-coupon-list-background-color: @coupon-list-background-color;
+  --van-coupon-list-field-padding: @coupon-list-field-padding;
+  --van-coupon-list-exchange-button-height: @coupon-list-exchange-button-height;
+  --van-coupon-list-close-button-height: @coupon-list-close-button-height;
+  --van-coupon-list-empty-image-size: @coupon-list-empty-image-size;
+  --van-coupon-list-empty-tip-color: @coupon-list-empty-tip-color;
+  --van-coupon-list-empty-tip-font-size: @coupon-list-empty-tip-font-size;
+  --van-coupon-list-empty-tip-line-height: @coupon-list-empty-tip-line-height;
+}
+
 .van-coupon-list {
   position: relative;
   height: 100%;
-  background-color: @coupon-list-background-color;
+  background-color: var(--van-coupon-list-background-color);
 
   &__field {
-    padding: @coupon-list-field-padding;
+    padding: var(--van-coupon-list-field-padding);
 
     .van-field__body {
       height: 34px;
@@ -33,9 +44,9 @@
 
   &__exchange {
     flex: none;
-    height: @coupon-list-exchange-button-height;
+    height: var(--van-coupon-list-exchange-button-height);
     font-size: @font-size-lg;
-    line-height: @coupon-list-exchange-button-height - 2px;
+    line-height: calc(var(--van-coupon-list-exchange-button-height) - 2px);
     border: 0;
   }
 
@@ -67,7 +78,7 @@
   }
 
   &__close {
-    height: @coupon-list-close-button-height;
+    height: var(--van-coupon-list-close-button-height);
   }
 
   &__empty {
@@ -76,14 +87,14 @@
 
     p {
       margin: @padding-md 0;
-      color: @coupon-list-empty-tip-color;
-      font-size: @coupon-list-empty-tip-font-size;
-      line-height: @coupon-list-empty-tip-line-height;
+      color: var(--van-coupon-list-empty-tip-color);
+      font-size: var(--van-coupon-list-empty-tip-font-size);
+      line-height: var(--van-coupon-list-empty-tip-line-height);
     }
 
     img {
-      width: @coupon-list-empty-image-size;
-      height: @coupon-list-empty-image-size;
+      width: var(--van-coupon-list-empty-image-size);
+      height: var(--van-coupon-list-empty-image-size);
     }
   }
 }

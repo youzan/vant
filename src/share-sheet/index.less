@@ -1,26 +1,44 @@
 @import './var.less';
 @import '../style/mixins/hairline';
 
+:root {
+  --van-share-sheet-header-padding: @share-sheet-header-padding;
+  --van-share-sheet-title-color: @share-sheet-title-color;
+  --van-share-sheet-title-font-size: @share-sheet-title-font-size;
+  --van-share-sheet-title-line-height: @share-sheet-title-line-height;
+  --van-share-sheet-description-color: @share-sheet-description-color;
+  --van-share-sheet-description-font-size: @share-sheet-description-font-size;
+  --van-share-sheet-description-line-height: @share-sheet-description-line-height;
+  --van-share-sheet-icon-size: @share-sheet-icon-size;
+  --van-share-sheet-option-name-color: @share-sheet-option-name-color;
+  --van-share-sheet-option-name-font-size: @share-sheet-option-name-font-size;
+  --van-share-sheet-option-description-color: @share-sheet-option-description-color;
+  --van-share-sheet-option-description-font-size: @share-sheet-option-description-font-size;
+  --van-share-sheet-cancel-button-font-size: @share-sheet-cancel-button-font-size;
+  --van-share-sheet-cancel-button-height: @share-sheet-cancel-button-height;
+  --van-share-sheet-cancel-button-background: @share-sheet-cancel-button-background;
+}
+
 .van-share-sheet {
   &__header {
-    padding: @share-sheet-header-padding;
+    padding: var(--van-share-sheet-header-padding);
     text-align: center;
   }
 
   &__title {
     margin-top: @padding-xs;
-    color: @share-sheet-title-color;
+    color: var(--van-share-sheet-title-color);
     font-weight: normal;
-    font-size: @share-sheet-title-font-size;
-    line-height: @share-sheet-title-line-height;
+    font-size: var(--van-share-sheet-title-font-size);
+    line-height: var(--van-share-sheet-title-line-height);
   }
 
   &__description {
     display: block;
     margin-top: @padding-xs;
-    color: @share-sheet-description-color;
-    font-size: @share-sheet-description-font-size;
-    line-height: @share-sheet-description-line-height;
+    color: var(--van-share-sheet-description-color);
+    font-size: var(--van-share-sheet-description-font-size);
+    line-height: var(--van-share-sheet-description-line-height);
   }
 
   &__options {
@@ -53,32 +71,32 @@
   }
 
   &__icon {
-    width: @share-sheet-icon-size;
-    height: @share-sheet-icon-size;
+    width: var(--van-share-sheet-icon-size);
+    height: var(--van-share-sheet-icon-size);
     margin: 0 @padding-md;
   }
 
   &__name {
     margin-top: @padding-xs;
     padding: 0 @padding-base;
-    color: @share-sheet-option-name-color;
-    font-size: @share-sheet-option-name-font-size;
+    color: var(--van-share-sheet-option-name-color);
+    font-size: var(--van-share-sheet-option-name-font-size);
   }
 
   &__option-description {
     padding: 0 @padding-base;
-    color: @share-sheet-option-description-color;
-    font-size: @share-sheet-option-description-font-size;
+    color: var(--van-share-sheet-option-description-color);
+    font-size: var(--van-share-sheet-option-description-font-size);
   }
 
   &__cancel {
     display: block;
     width: 100%;
     padding: 0;
-    font-size: @share-sheet-cancel-button-font-size;
-    line-height: @share-sheet-cancel-button-height;
+    font-size: var(--van-share-sheet-cancel-button-font-size);
+    line-height: var(--van-share-sheet-cancel-button-height);
     text-align: center;
-    background: @share-sheet-cancel-button-background;
+    background: var(--van-share-sheet-cancel-button-background);
     border: none;
     cursor: pointer;
 

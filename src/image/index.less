@@ -1,5 +1,15 @@
 @import './var.less';
 
+:root {
+  --van-image-placeholder-text-color: @image-placeholder-text-color;
+  --van-image-placeholder-font-size: @image-placeholder-font-size;
+  --van-image-placeholder-background-color: @image-placeholder-background-color;
+  --van-image-loading-icon-size: @image-loading-icon-size;
+  --van-image-loading-icon-color: @image-loading-icon-color;
+  --van-image-error-icon-size: @image-error-icon-size;
+  --van-image-error-icon-color: @image-error-icon-color;
+}
+
 .van-image {
   position: relative;
   display: inline-block;
@@ -30,18 +40,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: @image-placeholder-text-color;
-    font-size: @image-placeholder-font-size;
-    background-color: @image-placeholder-background-color;
+    color: var(--van-image-placeholder-text-color);
+    font-size: var(--van-image-placeholder-font-size);
+    background-color: var(--van-image-placeholder-background-color);
   }
 
   &__loading-icon {
-    color: @image-loading-icon-color;
-    font-size: @image-loading-icon-size;
+    color: var(--van-image-loading-icon-color);
+    font-size: var(--van-image-loading-icon-size);
   }
 
   &__error-icon {
-    color: @image-error-icon-color;
-    font-size: @image-error-icon-size;
+    color: var(--van-image-error-icon-color);
+    font-size: var(--van-image-error-icon-size);
   }
 }

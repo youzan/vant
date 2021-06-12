@@ -1,5 +1,14 @@
 @import './var.less';
 
+:root {
+  --van-swipe-indicator-size: @swipe-indicator-size;
+  --van-swipe-indicator-margin: @swipe-indicator-margin;
+  --van-swipe-indicator-active-opacity: @swipe-indicator-active-opacity;
+  --van-swipe-indicator-inactive-opacity: @swipe-indicator-inactive-opacity;
+  --van-swipe-indicator-active-background-color: @swipe-indicator-active-background-color;
+  --van-swipe-indicator-inactive-background-color: @swipe-indicator-inactive-background-color;
+}
+
 .van-swipe {
   position: relative;
   overflow: hidden;
@@ -17,7 +26,7 @@
 
   &__indicators {
     position: absolute;
-    bottom: @swipe-indicator-margin;
+    bottom: var(--van-swipe-indicator-margin);
     left: 50%;
     display: flex;
     transform: translateX(-50%);
@@ -25,32 +34,32 @@
     &--vertical {
       top: 50%;
       bottom: auto;
-      left: @swipe-indicator-margin;
+      left: var(--van-swipe-indicator-margin);
       flex-direction: column;
       transform: translateY(-50%);
 
       .van-swipe__indicator:not(:last-child) {
-        margin-bottom: @swipe-indicator-size;
+        margin-bottom: var(--van-swipe-indicator-size);
       }
     }
   }
 
   &__indicator {
-    width: @swipe-indicator-size;
-    height: @swipe-indicator-size;
-    background-color: @swipe-indicator-inactive-background-color;
+    width: var(--van-swipe-indicator-size);
+    height: var(--van-swipe-indicator-size);
+    background-color: var(--van-swipe-indicator-inactive-background-color);
     border-radius: 100%;
-    opacity: @swipe-indicator-inactive-opacity;
+    opacity: var(--van-swipe-indicator-inactive-opacity);
     transition: opacity @animation-duration-fast,
       background-color @animation-duration-fast;
 
     &:not(:last-child) {
-      margin-right: @swipe-indicator-size;
+      margin-right: var(--van-swipe-indicator-size);
     }
 
     &--active {
-      background-color: @swipe-indicator-active-background-color;
-      opacity: @swipe-indicator-active-opacity;
+      background-color: var(--van-swipe-indicator-active-background-color);
+      opacity: var(--van-swipe-indicator-active-opacity);
     }
   }
 }

@@ -1,5 +1,17 @@
 @import './var.less';
 
+:root {
+  --van-radio-size: @radio-size;
+  --van-radio-border-color: @radio-border-color;
+  --van-radio-transition-duration: @radio-transition-duration;
+  --van-radio-label-margin: @radio-label-margin;
+  --van-radio-label-color: @radio-label-color;
+  --van-radio-checked-icon-color: @radio-checked-icon-color;
+  --van-radio-disabled-icon-color: @radio-disabled-icon-color;
+  --van-radio-disabled-label-color: @radio-disabled-label-color;
+  --van-radio-disabled-background-color: @radio-disabled-background-color;
+}
+
 .van-radio {
   display: flex;
   align-items: center;
@@ -22,7 +34,7 @@
   &__icon {
     flex: none;
     height: 1em;
-    font-size: @radio-size;
+    font-size: var(--van-radio-size);
     line-height: 1em;
     cursor: pointer;
 
@@ -35,8 +47,8 @@
       font-size: 0.8em;
       line-height: 1.25;
       text-align: center;
-      border: 1px solid @radio-border-color;
-      transition-duration: @radio-transition-duration;
+      border: 1px solid var(--van-radio-border-color);
+      transition-duration: var(--van-radio-transition-duration);
       transition-property: color, border-color, background-color;
     }
 
@@ -49,8 +61,8 @@
     &--checked {
       .van-icon {
         color: @white;
-        background-color: @radio-checked-icon-color;
-        border-color: @radio-checked-icon-color;
+        background-color: var(--van-radio-checked-icon-color);
+        border-color: var(--van-radio-checked-icon-color);
       }
     }
 
@@ -58,29 +70,29 @@
       cursor: not-allowed;
 
       .van-icon {
-        background-color: @radio-disabled-background-color;
-        border-color: @radio-disabled-icon-color;
+        background-color: var(--van-radio-disabled-background-color);
+        border-color: var(--van-radio-disabled-icon-color);
       }
     }
 
     &--disabled&--checked {
       .van-icon {
-        color: @radio-disabled-icon-color;
+        color: var(--van-radio-disabled-icon-color);
       }
     }
   }
 
   &__label {
-    margin-left: @radio-label-margin;
-    color: @radio-label-color;
-    line-height: @radio-size;
+    margin-left: var(--van-radio-label-margin);
+    color: var(--van-radio-label-color);
+    line-height: var(--van-radio-size);
 
     &--left {
-      margin: 0 @radio-label-margin 0 0;
+      margin: 0 var(--van-radio-label-margin) 0 0;
     }
 
     &--disabled {
-      color: @radio-disabled-label-color;
+      color: var(--van-radio-disabled-label-color);
     }
   }
 }

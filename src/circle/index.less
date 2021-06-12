@@ -1,10 +1,20 @@
 @import './var.less';
 
+:root {
+  --van-circle-size: @circle-size;
+  --van-circle-color: @circle-color;
+  --van-circle-layer-color: @circle-layer-color;
+  --van-circle-text-color: @circle-text-color;
+  --van-circle-text-font-weight: @circle-text-font-weight;
+  --van-circle-text-font-size: @circle-text-font-size;
+  --van-circle-text-line-height: @circle-text-line-height;
+}
+
 .van-circle {
   position: relative;
   display: inline-block;
-  width: @circle-size;
-  height: @circle-size;
+  width: var(--van-circle-size);
+  height: var(--van-circle-size);
   text-align: center;
 
   svg {
@@ -16,12 +26,12 @@
   }
 
   &__layer {
-    stroke: @circle-layer-color;
+    stroke: var(--van-circle-layer-color);
   }
 
   &__hover {
     fill: none;
-    stroke: @circle-color;
+    stroke: var(--van-circle-color);
     stroke-linecap: round;
   }
 
@@ -32,10 +42,10 @@
     box-sizing: border-box;
     width: 100%;
     padding: 0 @padding-base;
-    color: @circle-text-color;
-    font-weight: @circle-text-font-weight;
-    font-size: @circle-text-font-size;
-    line-height: @circle-text-line-height;
+    color: var(--van-circle-text-color);
+    font-weight: var(--van-circle-text-font-weight);
+    font-size: var(--van-circle-text-font-size);
+    line-height: var(--van-circle-text-line-height);
     transform: translateY(-50%);
   }
 }

@@ -1,12 +1,20 @@
 @import './var.less';
 
+:root {
+  --van-cell-group-background-color: @cell-group-background-color;
+  --van-cell-group-title-color: @cell-group-title-color;
+  --van-cell-group-title-padding: @cell-group-title-padding;
+  --van-cell-group-title-font-size: @cell-group-title-font-size;
+  --van-cell-group-title-line-height: @cell-group-title-line-height;
+}
+
 .van-cell-group {
-  background-color: @cell-group-background-color;
+  background-color: var(--van-cell-group-background-color);
 
   &__title {
-    padding: @cell-group-title-padding;
-    color: @cell-group-title-color;
-    font-size: @cell-group-title-font-size;
-    line-height: @cell-group-title-line-height;
+    padding: var(--van-cell-group-title-padding);
+    color: var(--van-cell-group-title-color);
+    font-size: var(--van-cell-group-title-font-size);
+    line-height: var(--van-cell-group-title-line-height);
   }
 }

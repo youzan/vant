@@ -1,26 +1,37 @@
 @import './var.less';
 
+:root {
+  --van-tree-select-font-size: @tree-select-font-size;
+  --van-tree-select-nav-background-color: @tree-select-nav-background-color;
+  --van-tree-select-content-background-color: @tree-select-content-background-color;
+  --van-tree-select-nav-item-padding: @tree-select-nav-item-padding;
+  --van-tree-select-item-height: @tree-select-item-height;
+  --van-tree-select-item-active-color: @tree-select-item-active-color;
+  --van-tree-select-item-disabled-color: @tree-select-item-disabled-color;
+  --van-tree-select-item-selected-size: @tree-select-item-selected-size;
+}
+
 .van-tree-select {
   position: relative;
   display: flex;
-  font-size: @tree-select-font-size;
+  font-size: var(--van-tree-select-font-size);
   user-select: none;
 
   &__nav {
     flex: 1;
     overflow-y: auto;
-    background-color: @tree-select-nav-background-color;
+    background-color: var(--van-tree-select-nav-background-color);
     -webkit-overflow-scrolling: touch;
 
     &-item {
-      padding: @tree-select-nav-item-padding;
+      padding: var(--van-tree-select-nav-item-padding);
     }
   }
 
   &__content {
     flex: 2;
     overflow-y: auto;
-    background-color: @tree-select-content-background-color;
+    background-color: var(--van-tree-select-content-background-color);
     -webkit-overflow-scrolling: touch;
   }
 
@@ -28,11 +39,11 @@
     position: relative;
     padding: 0 32px 0 @padding-md;
     font-weight: @font-weight-bold;
-    line-height: @tree-select-item-height;
+    line-height: var(--van-tree-select-item-height);
     cursor: pointer;
 
     &--active {
-      color: @tree-select-item-active-color;
+      color: var(--van-tree-select-item-active-color);
     }
 
     &:active {
@@ -40,7 +51,7 @@
     }
 
     &--disabled {
-      color: @tree-select-item-disabled-color;
+      color: var(--van-tree-select-item-disabled-color);
       cursor: not-allowed;
 
       &:active {
@@ -54,6 +65,6 @@
     top: 50%;
     right: @padding-md;
     margin-top: -@padding-xs;
-    font-size: @tree-select-item-selected-size;
+    font-size: var(--van-tree-select-item-selected-size);
   }
 }

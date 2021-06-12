@@ -1,7 +1,15 @@
 @import './var.less';
 
+:root {
+  --van-address-edit-padding: @address-edit-padding;
+  --van-address-edit-buttons-padding: @address-edit-buttons-padding;
+  --van-address-edit-button-margin-bottom: @address-edit-button-margin-bottom;
+  --van-address-edit-detail-finish-color: @address-edit-detail-finish-color;
+  --van-address-edit-detail-finish-font-size: @address-edit-detail-finish-font-size;
+}
+
 .van-address-edit {
-  padding: @address-edit-padding;
+  padding: var(--van-address-edit-padding);
 
   &__fields {
     overflow: hidden;
@@ -19,10 +27,10 @@
   }
 
   &__buttons {
-    padding: @address-edit-buttons-padding;
+    padding: var(--van-address-edit-buttons-padding);
 
     .van-button {
-      margin-bottom: @address-edit-button-margin-bottom;
+      margin-bottom: var(--van-address-edit-button-margin-bottom);
     }
   }
 
@@ -36,8 +44,8 @@
     }
 
     &__finish {
-      color: @address-edit-detail-finish-color;
-      font-size: @address-edit-detail-finish-font-size;
+      color: var(--van-address-edit-detail-finish-color);
+      font-size: var(--van-address-edit-detail-finish-font-size);
     }
   }
 }

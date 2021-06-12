@@ -1,11 +1,15 @@
 @import './var.less';
 @import '../dropdown-menu/var.less';
 
+:root {
+  --van-dropdown-item-z-index: @dropdown-item-z-index;
+}
+
 .van-dropdown-item {
   position: fixed;
   right: 0;
   left: 0;
-  z-index: @dropdown-item-z-index;
+  z-index: var(--van-dropdown-item-z-index);
   overflow: hidden;
 
   &__icon {

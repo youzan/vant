@@ -1,13 +1,30 @@
 @import './var.less';
 
+:root {
+  --van-number-keyboard-background-color: @number-keyboard-background-color;
+  --van-number-keyboard-key-height: @number-keyboard-key-height;
+  --van-number-keyboard-key-font-size: @number-keyboard-key-font-size;
+  --van-number-keyboard-key-active-color: @number-keyboard-key-active-color;
+  --van-number-keyboard-delete-font-size: @number-keyboard-delete-font-size;
+  --van-number-keyboard-title-color: @number-keyboard-title-color;
+  --van-number-keyboard-title-height: @number-keyboard-title-height;
+  --van-number-keyboard-title-font-size: @number-keyboard-title-font-size;
+  --van-number-keyboard-close-padding: @number-keyboard-close-padding;
+  --van-number-keyboard-close-color: @number-keyboard-close-color;
+  --van-number-keyboard-close-font-size: @number-keyboard-close-font-size;
+  --van-number-keyboard-button-text-color: @number-keyboard-button-text-color;
+  --van-number-keyboard-button-background-color: @number-keyboard-button-background-color;
+  --van-number-keyboard-z-index: @number-keyboard-z-index;
+}
+
 .van-number-keyboard {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: @number-keyboard-z-index;
+  z-index: var(--van-number-keyboard-z-index);
   width: 100%;
   padding-bottom: 22px;
-  background-color: @number-keyboard-background-color;
+  background-color: var(--van-number-keyboard-background-color);
   user-select: none;
 
   &--with-title {
@@ -20,10 +37,10 @@
     align-items: center;
     justify-content: center;
     box-sizing: content-box;
-    height: @number-keyboard-title-height;
+    height: var(--van-number-keyboard-title-height);
     padding-top: 6px;
-    color: @number-keyboard-title-color;
-    font-size: @number-keyboard-title-font-size;
+    color: var(--van-number-keyboard-title-color);
+    font-size: var(--van-number-keyboard-title-font-size);
   }
 
   &__title {
@@ -51,9 +68,9 @@
     position: absolute;
     right: 0;
     height: 100%;
-    padding: @number-keyboard-close-padding;
-    color: @number-keyboard-close-color;
-    font-size: @number-keyboard-close-font-size;
+    padding: var(--van-number-keyboard-close-padding);
+    color: var(--van-number-keyboard-close-color);
+    font-size: var(--van-number-keyboard-close-font-size);
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -78,8 +95,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: @number-keyboard-key-height;
-  font-size: @number-keyboard-key-font-size;
+  height: var(--van-number-keyboard-key-height);
+  font-size: var(--van-number-keyboard-key-font-size);
   line-height: 1.5;
   background-color: @white;
   border-radius: @border-radius-lg;
@@ -98,19 +115,19 @@
 
   &--blue,
   &--delete {
-    font-size: @number-keyboard-delete-font-size;
+    font-size: var(--van-number-keyboard-delete-font-size);
   }
 
   &--active {
-    background-color: @number-keyboard-key-active-color;
+    background-color: var(--van-number-keyboard-key-active-color);
   }
 
   &--blue {
-    color: @number-keyboard-button-text-color;
-    background-color: @number-keyboard-button-background-color;
+    color: var(--van-number-keyboard-button-text-color);
+    background-color: var(--van-number-keyboard-button-background-color);
 
     &.van-key--active {
-      background-color: darken(@number-keyboard-button-background-color, 10%);
+      background-color: var(--van-number-keyboard-button-active-color);
     }
   }
 
@@ -137,6 +154,6 @@
   }
 
   &__loading-icon {
-    color: @number-keyboard-button-text-color;
+    color: var(--van-number-keyboard-button-text-color);
   }
 }

@@ -1,21 +1,30 @@
 @import './var.less';
 
+:root {
+  --van-loading-text-color: @loading-text-color;
+  --van-loading-text-font-size: @loading-text-font-size;
+  --van-loading-spinner-color: @loading-spinner-color;
+  --van-loading-spinner-size: @loading-spinner-size;
+  --van-loading-spinner-animation-duration: @loading-spinner-animation-duration;
+}
+
 .van-loading {
   position: relative;
-  color: @loading-spinner-color;
+  color: var(--van-loading-spinner-color);
   font-size: 0;
   vertical-align: middle;
 
   &__spinner {
     position: relative;
     display: inline-block;
-    width: @loading-spinner-size;
+    width: var(--van-loading-spinner-size);
     // compatible for 1.x, users may set width or height in root element
     max-width: 100%;
-    height: @loading-spinner-size;
+    height: var(--van-loading-spinner-size);
     max-height: 100%;
     vertical-align: middle;
-    animation: van-rotate @loading-spinner-animation-duration linear infinite;
+    animation: van-rotate var(--van-loading-spinner-animation-duration) linear
+      infinite;
 
     &--spinner {
       animation-timing-function: steps(12);
@@ -60,8 +69,8 @@
   &__text {
     display: inline-block;
     margin-left: @padding-xs;
-    color: @loading-text-color;
-    font-size: @loading-text-font-size;
+    color: var(--van-loading-text-color);
+    font-size: var(--van-loading-text-font-size);
     vertical-align: middle;
   }
 
