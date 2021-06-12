@@ -1,28 +1,42 @@
 @import './var.less';
 
+:root {
+  --van-switch-size: @switch-size;
+  --van-switch-width: @switch-width;
+  --van-switch-height: @switch-height;
+  --van-switch-node-size: @switch-node-size;
+  --van-switch-node-background-color: @switch-node-background-color;
+  --van-switch-node-box-shadow: @switch-node-box-shadow;
+  --van-switch-background-color: @switch-background-color;
+  --van-switch-on-background-color: @switch-on-background-color;
+  --van-switch-transition-duration: @switch-transition-duration;
+  --van-switch-disabled-opacity: @switch-disabled-opacity;
+  --van-switch-border: @switch-border;
+}
+
 .van-switch {
   position: relative;
   display: inline-block;
   box-sizing: content-box;
-  width: @switch-width;
-  height: @switch-height;
-  font-size: @switch-size;
-  background-color: @switch-background-color;
-  border: @switch-border;
-  border-radius: @switch-node-size;
+  width: var(--van-switch-width);
+  height: var(--van-switch-height);
+  font-size: var(--van-switch-size);
+  background-color: var(--van-switch-background-color);
+  border: var(--van-switch-border);
+  border-radius: var(--van-switch-node-size);
   cursor: pointer;
-  transition: background-color @switch-transition-duration;
+  transition: background-color var(--van-switch-transition-duration);
 
   &__node {
     position: absolute;
     top: 0;
     left: 0;
-    width: @switch-node-size;
-    height: @switch-node-size;
-    background-color: @switch-node-background-color;
+    width: var(--van-switch-node-size);
+    height: var(--van-switch-node-size);
+    background-color: var(--van-switch-node-background-color);
     border-radius: 100%;
-    box-shadow: @switch-node-box-shadow;
-    transition: transform @switch-transition-duration
+    box-shadow: var(--van-switch-node-box-shadow);
+    transition: transform var(--van-switch-transition-duration)
       cubic-bezier(0.3, 1.05, 0.4, 1.05);
   }
 
@@ -35,20 +49,22 @@
   }
 
   &--on {
-    background-color: @switch-on-background-color;
+    background-color: var(--van-switch-on-background-color);
 
     .van-switch__node {
-      transform: translateX(@switch-width - @switch-node-size);
+      transform: translateX(
+        calc(var(--van-switch-width) - var(--van-switch-node-size))
+      );
     }
 
     .van-switch__loading {
-      color: @switch-on-background-color;
+      color: var(--van-switch-on-background-color);
     }
   }
 
   &--disabled {
     cursor: not-allowed;
-    opacity: @switch-disabled-opacity;
+    opacity: var(--van-switch-disabled-opacity);
   }
 
   &--loading {

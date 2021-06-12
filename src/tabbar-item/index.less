@@ -1,19 +1,29 @@
 @import './var.less';
 
+:root {
+  --van-tabbar-item-font-size: @tabbar-item-font-size;
+  --van-tabbar-item-text-color: @tabbar-item-text-color;
+  --van-tabbar-item-active-color: @tabbar-item-active-color;
+  --van-tabbar-item-active-background-color: @tabbar-item-active-background-color;
+  --van-tabbar-item-line-height: @tabbar-item-line-height;
+  --van-tabbar-item-icon-size: @tabbar-item-icon-size;
+  --van-tabbar-item-margin-bottom: @tabbar-item-margin-bottom;
+}
+
 .van-tabbar-item {
   display: flex;
   flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: @tabbar-item-text-color;
-  font-size: @tabbar-item-font-size;
-  line-height: @tabbar-item-line-height;
+  color: var(--van-tabbar-item-text-color);
+  font-size: var(--van-tabbar-item-font-size);
+  line-height: var(--van-tabbar-item-line-height);
   cursor: pointer;
 
   &__icon {
-    margin-bottom: @tabbar-item-margin-bottom;
-    font-size: @tabbar-item-icon-size;
+    margin-bottom: var(--van-tabbar-item-margin-bottom);
+    font-size: var(--van-tabbar-item-icon-size);
 
     .van-icon {
       display: block;
@@ -26,8 +36,8 @@
   }
 
   &--active {
-    color: @tabbar-item-active-color;
-    background-color: @tabbar-item-active-background-color;
+    color: var(--van-tabbar-item-active-color);
+    background-color: var(--van-tabbar-item-active-background-color);
   }
 
   .van-badge {

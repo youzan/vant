@@ -1,13 +1,19 @@
 @import './var.less';
 @import '../style/mixins/safe-area.less';
 
+:root {
+  --van-tabbar-height: @tabbar-height;
+  --van-tabbar-z-index: @tabbar-z-index;
+  --van-tabbar-background-color: @tabbar-background-color;
+}
+
 .van-tabbar {
-  z-index: @tabbar-z-index;
+  z-index: var(--van-tabbar-z-index);
   display: flex;
   box-sizing: content-box;
   width: 100%;
-  height: @tabbar-height;
-  background-color: @tabbar-background-color;
+  height: var(--van-tabbar-height);
+  background-color: var(--van-tabbar-background-color);
   .safe-area-inset-bottom();
 
   &--fixed {

@@ -1,5 +1,21 @@
 @import './var.less';
 
+:root {
+  --van-popover-arrow-size: @popover-arrow-size;
+  --van-popover-border-radius: @popover-border-radius;
+  --van-popover-action-width: @popover-action-width;
+  --van-popover-action-height: @popover-action-height;
+  --van-popover-action-font-size: @popover-action-font-size;
+  --van-popover-action-line-height: @popover-action-line-height;
+  --van-popover-action-icon-size: @popover-action-icon-size;
+  --van-popover-light-text-color: @popover-light-text-color;
+  --van-popover-light-background-color: @popover-light-background-color;
+  --van-popover-light-action-disabled-text-color: @popover-light-action-disabled-text-color;
+  --van-popover-dark-text-color: @popover-dark-text-color;
+  --van-popover-dark-background-color: @popover-dark-background-color;
+  --van-popover-dark-action-disabled-text-color: @popover-dark-action-disabled-text-color;
+}
+
 .van-popover {
   position: absolute;
   overflow: visible;
@@ -16,12 +32,12 @@
     height: 0;
     border-color: transparent;
     border-style: solid;
-    border-width: @popover-arrow-size;
+    border-width: var(--van-popover-arrow-size);
   }
 
   &__content {
     overflow: hidden;
-    border-radius: @popover-border-radius;
+    border-radius: var(--van-popover-border-radius);
   }
 
   &__action {
@@ -29,10 +45,10 @@
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    width: @popover-action-width;
-    height: @popover-action-height;
+    width: var(--van-popover-action-width);
+    height: var(--van-popover-action-height);
     padding: 0 @padding-md;
-    font-size: @popover-action-font-size;
+    font-size: var(--van-popover-action-font-size);
     line-height: @line-height-md;
     cursor: pointer;
 
@@ -52,7 +68,7 @@
 
     &-icon {
       margin-right: @padding-xs;
-      font-size: @popover-action-icon-size;
+      font-size: var(--van-popover-action-icon-size);
     }
 
     &--with-icon {
@@ -195,15 +211,15 @@
   }
 
   &--light {
-    color: @popover-light-text-color;
+    color: var(--van-popover-light-text-color);
 
     .van-popover__content {
-      background-color: @popover-light-background-color;
+      background-color: var(--van-popover-light-background-color);
       box-shadow: 0 2px 12px rgba(50, 50, 51, 0.12);
     }
 
     .van-popover__arrow {
-      color: @popover-light-background-color;
+      color: var(--van-popover-light-background-color);
     }
 
     .van-popover__action {
@@ -212,7 +228,7 @@
       }
 
       &--disabled {
-        color: @popover-light-action-disabled-text-color;
+        color: var(--van-popover-light-action-disabled-text-color);
         cursor: not-allowed;
 
         &:active {
@@ -223,14 +239,14 @@
   }
 
   &--dark {
-    color: @popover-dark-text-color;
+    color: var(--van-popover-dark-text-color);
 
     .van-popover__content {
-      background-color: @popover-dark-background-color;
+      background-color: var(--van-popover-dark-background-color);
     }
 
     .van-popover__arrow {
-      color: @popover-dark-background-color;
+      color: var(--van-popover-dark-background-color);
     }
 
     .van-popover__action {
@@ -239,7 +255,7 @@
       }
 
       &--disabled {
-        color: @popover-dark-action-disabled-text-color;
+        color: var(--van-popover-dark-action-disabled-text-color);
 
         &:active {
           background-color: transparent;

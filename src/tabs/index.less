@@ -1,5 +1,20 @@
 @import './var.less';
 
+:root {
+  --van-tab-text-color: @tab-text-color;
+  --van-tab-active-text-color: @tab-active-text-color;
+  --van-tab-disabled-text-color: @tab-disabled-text-color;
+  --van-tab-font-size: @tab-font-size;
+  --van-tab-line-height: @tab-line-height;
+  --van-tabs-default-color: @tabs-default-color;
+  --van-tabs-line-height: @tabs-line-height;
+  --van-tabs-card-height: @tabs-card-height;
+  --van-tabs-nav-background-color: @tabs-nav-background-color;
+  --van-tabs-bottom-bar-width: @tabs-bottom-bar-width;
+  --van-tabs-bottom-bar-height: @tabs-bottom-bar-height;
+  --van-tabs-bottom-bar-color: @tabs-bottom-bar-color;
+}
+
 .van-tab {
   position: relative;
   display: flex;
@@ -8,18 +23,18 @@
   justify-content: center;
   box-sizing: border-box;
   padding: 0 @padding-base;
-  color: @tab-text-color;
-  font-size: @tab-font-size;
-  line-height: @tab-line-height;
+  color: var(--van-tab-text-color);
+  font-size: var(--van-tab-font-size);
+  line-height: var(--van-tab-line-height);
   cursor: pointer;
 
   &--active {
-    color: @tab-active-text-color;
+    color: var(--van-tab-active-text-color);
     font-weight: @font-weight-bold;
   }
 
   &--disabled {
-    color: @tab-disabled-text-color;
+    color: var(--van-tab-disabled-text-color);
     cursor: not-allowed;
   }
 
@@ -69,7 +84,7 @@
   &__nav {
     position: relative;
     display: flex;
-    background-color: @tabs-nav-background-color;
+    background-color: var(--van-tabs-nav-background-color);
     user-select: none;
 
     &--line {
@@ -85,14 +100,14 @@
 
     &--card {
       box-sizing: border-box;
-      height: @tabs-card-height;
+      height: var(--van-tabs-card-height);
       margin: 0 @padding-md;
-      border: @border-width-base solid @tabs-default-color;
+      border: @border-width-base solid var(--van-tabs-default-color);
       border-radius: @border-radius-sm;
 
       .van-tab {
-        color: @tabs-default-color;
-        border-right: @border-width-base solid @tabs-default-color;
+        color: var(--van-tabs-default-color);
+        border-right: @border-width-base solid var(--van-tabs-default-color);
 
         &:last-child {
           border-right: none;
@@ -100,11 +115,11 @@
 
         &.van-tab--active {
           color: @white;
-          background-color: @tabs-default-color;
+          background-color: var(--van-tabs-default-color);
         }
 
         &--disabled {
-          color: @tab-disabled-text-color;
+          color: var(--van-tab-disabled-text-color);
         }
       }
     }
@@ -115,10 +130,10 @@
     bottom: 15px;
     left: 0;
     z-index: 1;
-    width: @tabs-bottom-bar-width;
-    height: @tabs-bottom-bar-height;
-    background-color: @tabs-bottom-bar-color;
-    border-radius: @tabs-bottom-bar-height;
+    width: var(--van-tabs-bottom-bar-width);
+    height: var(--van-tabs-bottom-bar-height);
+    background-color: var(--van-tabs-bottom-bar-color);
+    border-radius: var(--van-tabs-bottom-bar-height);
   }
 
   &__track {
@@ -137,13 +152,13 @@
 
   &--line {
     .van-tabs__wrap {
-      height: @tabs-line-height;
+      height: var(--van-tabs-line-height);
     }
   }
 
   &--card {
     > .van-tabs__wrap {
-      height: @tabs-card-height;
+      height: var(--van-tabs-card-height);
     }
   }
 }

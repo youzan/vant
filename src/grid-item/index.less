@@ -1,5 +1,14 @@
 @import './var.less';
 
+:root {
+  --van-grid-item-content-padding: @grid-item-content-padding;
+  --van-grid-item-content-background-color: @grid-item-content-background-color;
+  --van-grid-item-content-active-color: @grid-item-content-active-color;
+  --van-grid-item-icon-size: @grid-item-icon-size;
+  --van-grid-item-text-color: @grid-item-text-color;
+  --van-grid-item-text-font-size: @grid-item-text-font-size;
+}
+
 .van-grid-item {
   position: relative;
   box-sizing: border-box;
@@ -9,12 +18,12 @@
   }
 
   &__icon {
-    font-size: @grid-item-icon-size;
+    font-size: var(--van-grid-item-icon-size);
   }
 
   &__text {
-    color: @grid-item-text-color;
-    font-size: @grid-item-text-font-size;
+    color: var(--van-grid-item-text-color);
+    font-size: var(--van-grid-item-text-font-size);
     line-height: 1.5;
     // https://github.com/youzan/vant/issues/3894
     word-break: break-all;
@@ -29,8 +38,8 @@
     flex-direction: column;
     box-sizing: border-box;
     height: 100%;
-    padding: @grid-item-content-padding;
-    background-color: @grid-item-content-background-color;
+    padding: var(--van-grid-item-content-padding);
+    background-color: var(--van-grid-item-content-background-color);
 
     &::after {
       z-index: 1;
@@ -68,7 +77,7 @@
       cursor: pointer;
 
       &:active {
-        background-color: @grid-item-content-active-color;
+        background-color: var(--van-grid-item-content-active-color);
       }
     }
   }

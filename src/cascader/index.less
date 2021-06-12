@@ -1,26 +1,42 @@
 @import './var.less';
 
+:root {
+  --van-cascader-header-height: @cascader-header-height;
+  --van-cascader-header-padding: @cascader-header-padding;
+  --van-cascader-title-font-size: @cascader-title-font-size;
+  --van-cascader-title-line-height: @cascader-title-line-height;
+  --van-cascader-close-icon-size: @cascader-close-icon-size;
+  --van-cascader-close-icon-color: @cascader-close-icon-color;
+  --van-cascader-close-icon-active-color: @cascader-close-icon-active-color;
+  --van-cascader-selected-icon-size: @cascader-selected-icon-size;
+  --van-cascader-tabs-height: @cascader-tabs-height;
+  --van-cascader-active-color: @cascader-active-color;
+  --van-cascader-options-height: @cascader-options-height;
+  --van-cascader-tab-color: @cascader-tab-color;
+  --van-cascader-unselected-tab-color: @cascader-unselected-tab-color;
+}
+
 .van-cascader {
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: @cascader-header-height;
-    padding: @cascader-header-padding;
+    height: var(--van-cascader-header-height);
+    padding: var(--van-cascader-header-padding);
   }
 
   &__title {
     font-weight: @font-weight-bold;
-    font-size: @cascader-title-font-size;
-    line-height: @cascader-title-line-height;
+    font-size: var(--van-cascader-title-font-size);
+    line-height: var(--van-cascader-title-line-height);
   }
 
   &__close-icon {
-    color: @cascader-close-icon-color;
-    font-size: @cascader-close-icon-size;
+    color: var(--van-cascader-close-icon-color);
+    font-size: var(--van-cascader-close-icon-size);
 
     &:active {
-      color: @cascader-close-icon-active-color;
+      color: var(--van-cascader-close-icon-active-color);
     }
   }
 
@@ -31,7 +47,7 @@
     }
 
     &.van-tabs--line .van-tabs__wrap {
-      height: @cascader-tabs-height;
+      height: var(--van-cascader-tabs-height);
     }
 
     .van-tabs__nav--complete {
@@ -41,11 +57,11 @@
   }
 
   &__tab {
-    color: @cascader-tab-color;
+    color: var(--van-cascader-tab-color);
     font-weight: @font-weight-bold;
 
     &--unselected {
-      color: @cascader-unselected-tab-color;
+      color: var(--van-cascader-unselected-tab-color);
       font-weight: normal;
     }
   }
@@ -63,18 +79,18 @@
     }
 
     &--selected {
-      color: @cascader-active-color;
+      color: var(--van-cascader-active-color);
       font-weight: @font-weight-bold;
     }
   }
 
   &__selected-icon {
-    font-size: @cascader-selected-icon-size;
+    font-size: var(--van-cascader-selected-icon-size);
   }
 
   &__options {
     box-sizing: border-box;
-    height: @cascader-options-height;
+    height: var(--van-cascader-options-height);
     padding-top: 6px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;

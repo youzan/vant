@@ -1,16 +1,32 @@
 @import './var.less';
 @import '../style/mixins/safe-area.less';
 
+:root {
+  --van-address-list-padding: @address-list-padding;
+  --van-address-list-disabled-text-color: @address-list-disabled-text-color;
+  --van-address-list-disabled-text-padding: @address-list-disabled-text-padding;
+  --van-address-list-disabled-text-font-size: @address-list-disabled-text-font-size;
+  --van-address-list-disabled-text-line-height: @address-list-disabled-text-line-height;
+  --van-address-list-add-button-z-index: @address-list-add-button-z-index;
+  --van-address-list-item-padding: @address-list-item-padding;
+  --van-address-list-item-text-color: @address-list-item-text-color;
+  --van-address-list-item-disabled-text-color: @address-list-item-disabled-text-color;
+  --van-address-list-item-font-size: @address-list-item-font-size;
+  --van-address-list-item-line-height: @address-list-item-line-height;
+  --van-address-list-item-radio-icon-color: @address-list-item-radio-icon-color;
+  --van-address-list-edit-icon-size: @address-list-edit-icon-size;
+}
+
 .van-address-list {
   box-sizing: border-box;
   height: 100%;
-  padding: @address-list-padding;
+  padding: var(--van-address-list-padding);
 
   &__bottom {
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: @address-list-add-button-z-index;
+    z-index: var(--van-address-list-add-button-z-index);
     box-sizing: border-box;
     width: 100%;
     padding: 0 @padding-md;
@@ -24,15 +40,15 @@
   }
 
   &__disabled-text {
-    padding: @address-list-disabled-text-padding;
-    color: @address-list-disabled-text-color;
-    font-size: @address-list-disabled-text-font-size;
-    line-height: @address-list-disabled-text-line-height;
+    padding: var(--van-address-list-disabled-text-padding);
+    color: var(--van-address-list-disabled-text-color);
+    font-size: var(--van-address-list-disabled-text-font-size);
+    line-height: var(--van-address-list-disabled-text-line-height);
   }
 }
 
 .van-address-item {
-  padding: @address-list-item-padding;
+  padding: var(--van-address-list-item-padding);
   background-color: @white;
   border-radius: @border-radius-lg;
 
@@ -61,15 +77,15 @@
   }
 
   &__address {
-    color: @address-list-item-text-color;
-    font-size: @address-list-item-font-size;
-    line-height: @address-list-item-line-height;
+    color: var(--van-address-list-item-text-color);
+    font-size: var(--van-address-list-item-font-size);
+    line-height: var(--van-address-list-item-line-height);
   }
 
   &--disabled {
     .van-address-item__name,
     .van-address-item__address {
-      color: @address-list-item-disabled-text-color;
+      color: var(--van-address-list-item-disabled-text-color);
     }
   }
 
@@ -78,7 +94,7 @@
     top: 50%;
     right: @padding-md;
     color: @gray-6;
-    font-size: @address-list-edit-icon-size;
+    font-size: var(--van-address-list-edit-icon-size);
     transform: translate(0, -50%);
   }
 
@@ -91,7 +107,7 @@
   }
 
   .van-radio__icon--checked .van-icon {
-    background-color: @address-list-item-radio-icon-color;
-    border-color: @address-list-item-radio-icon-color;
+    background-color: var(--van-address-list-item-radio-icon-color);
+    border-color: var(--van-address-list-item-radio-icon-color);
   }
 }

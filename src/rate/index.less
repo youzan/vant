@@ -1,5 +1,13 @@
 @import './var.less';
 
+:root {
+  --van-rate-icon-size: @rate-icon-size;
+  --van-rate-icon-gutter: @rate-icon-gutter;
+  --van-rate-icon-void-color: @rate-icon-void-color;
+  --van-rate-icon-full-color: @rate-icon-full-color;
+  --van-rate-icon-disabled-color: @rate-icon-disabled-color;
+}
+
 .van-rate {
   display: inline-flex;
   cursor: pointer;
@@ -9,15 +17,15 @@
     position: relative;
 
     &:not(:last-child) {
-      padding-right: @rate-icon-gutter;
+      padding-right: var(--van-rate-icon-gutter);
     }
   }
 
   &__icon {
     display: block;
     width: 1em;
-    color: @rate-icon-void-color;
-    font-size: @rate-icon-size;
+    color: var(--van-rate-icon-void-color);
+    font-size: var(--van-rate-icon-size);
 
     &--half {
       position: absolute;
@@ -27,11 +35,11 @@
     }
 
     &--full {
-      color: @rate-icon-full-color;
+      color: var(--van-rate-icon-full-color);
     }
 
     &--disabled {
-      color: @rate-icon-disabled-color;
+      color: var(--van-rate-icon-disabled-color);
     }
   }
 

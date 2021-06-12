@@ -1,20 +1,36 @@
 @import './var.less';
 
+:root {
+  --van-sidebar-font-size: @sidebar-font-size;
+  --van-sidebar-line-height: @sidebar-line-height;
+  --van-sidebar-text-color: @sidebar-text-color;
+  --van-sidebar-disabled-text-color: @sidebar-disabled-text-color;
+  --van-sidebar-padding: @sidebar-padding;
+  --van-sidebar-active-color: @sidebar-active-color;
+  --van-sidebar-background-color: @sidebar-background-color;
+  --van-sidebar-selected-font-weight: @sidebar-selected-font-weight;
+  --van-sidebar-selected-text-color: @sidebar-selected-text-color;
+  --van-sidebar-selected-border-width: @sidebar-selected-border-width;
+  --van-sidebar-selected-border-height: @sidebar-selected-border-height;
+  --van-sidebar-selected-border-color: @sidebar-selected-border-color;
+  --van-sidebar-selected-background-color: @sidebar-selected-background-color;
+}
+
 .van-sidebar-item {
   position: relative;
   display: block;
   box-sizing: border-box;
-  padding: @sidebar-padding;
+  padding: var(--van-sidebar-padding);
   overflow: hidden;
-  color: @sidebar-text-color;
-  font-size: @sidebar-font-size;
-  line-height: @sidebar-line-height;
-  background-color: @sidebar-background-color;
+  color: var(--van-sidebar-text-color);
+  font-size: var(--van-sidebar-font-size);
+  line-height: var(--van-sidebar-line-height);
+  background-color: var(--van-sidebar-background-color);
   cursor: pointer;
   user-select: none;
 
   &:active {
-    background-color: @sidebar-active-color;
+    background-color: var(--van-sidebar-active-color);
   }
 
   &:not(:last-child)::after {
@@ -27,32 +43,32 @@
   }
 
   &--select {
-    color: @sidebar-selected-text-color;
-    font-weight: @sidebar-selected-font-weight;
+    color: var(--van-sidebar-selected-text-color);
+    font-weight: var(--van-sidebar-selected-font-weight);
 
     &,
     &:active {
-      background-color: @sidebar-selected-background-color;
+      background-color: var(--van-sidebar-selected-background-color);
     }
 
     &::before {
       position: absolute;
       top: 50%;
       left: 0;
-      width: @sidebar-selected-border-width;
-      height: @sidebar-selected-border-height;
-      background-color: @sidebar-selected-border-color;
+      width: var(--van-sidebar-selected-border-width);
+      height: var(--van-sidebar-selected-border-height);
+      background-color: var(--van-sidebar-selected-border-color);
       transform: translateY(-50%);
       content: '';
     }
   }
 
   &--disabled {
-    color: @sidebar-disabled-text-color;
+    color: var(--van-sidebar-disabled-text-color);
     cursor: not-allowed;
 
     &:active {
-      background-color: @sidebar-background-color;
+      background-color: var(--van-sidebar-background-color);
     }
   }
 }

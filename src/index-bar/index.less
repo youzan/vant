@@ -1,11 +1,18 @@
 @import './var.less';
 
+:root {
+  --van-index-bar-sidebar-z-index: @index-bar-sidebar-z-index;
+  --van-index-bar-index-font-size: @index-bar-index-font-size;
+  --van-index-bar-index-line-height: @index-bar-index-line-height;
+  --van-index-bar-index-active-color: @index-bar-index-active-color;
+}
+
 .van-index-bar {
   &__sidebar {
     position: fixed;
     top: 50%;
     right: 0;
-    z-index: @index-bar-sidebar-z-index;
+    z-index: var(--van-index-bar-sidebar-z-index);
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -17,11 +24,11 @@
   &__index {
     padding: 0 @padding-xs 0 @padding-md;
     font-weight: @font-weight-bold;
-    font-size: @index-bar-index-font-size;
-    line-height: @index-bar-index-line-height;
+    font-size: var(--van-index-bar-index-font-size);
+    line-height: var(--van-index-bar-index-line-height);
 
     &--active {
-      color: @index-bar-index-active-color;
+      color: var(--van-index-bar-index-active-color);
     }
   }
 }

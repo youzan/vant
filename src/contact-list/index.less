@@ -1,13 +1,20 @@
 @import './var.less';
 @import '../style/mixins/safe-area.less';
 
+:root {
+  --van-contact-list-edit-icon-size: @contact-list-edit-icon-size;
+  --van-contact-list-add-button-z-index: @contact-list-add-button-z-index;
+  --van-contact-list-item-padding: @contact-list-item-padding;
+  --van-contact-list-item-radio-icon-color: @contact-list-item-radio-icon-color;
+}
+
 .van-contact-list {
   box-sizing: border-box;
   height: 100%;
   padding-bottom: 80px;
 
   &__item {
-    padding: @contact-list-item-padding;
+    padding: var(--van-contact-list-item-padding);
   }
 
   &__item-value {
@@ -33,13 +40,13 @@
   }
 
   &__edit {
-    font-size: @contact-list-edit-icon-size;
+    font-size: var(--van-contact-list-edit-icon-size);
   }
 
   &__radio {
     .van-radio__icon--checked .van-icon {
-      background-color: @contact-list-item-radio-icon-color;
-      border-color: @contact-list-item-radio-icon-color;
+      background-color: var(--van-contact-list-item-radio-icon-color);
+      border-color: var(--van-contact-list-item-radio-icon-color);
     }
   }
 
@@ -48,7 +55,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: @contact-list-add-button-z-index;
+    z-index: var(--van-contact-list-add-button-z-index);
     padding: 0 @padding-md;
     background-color: @white;
     .safe-area-inset-bottom();
