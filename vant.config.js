@@ -120,6 +120,10 @@ module.exports = {
                 title: 'Cell 单元格',
               },
               {
+                path: 'config-provider',
+                title: 'ConfigProvider 全局配置',
+              },
+              {
                 path: 'icon',
                 title: 'Icon 图标',
               },
@@ -519,6 +523,10 @@ module.exports = {
               {
                 path: 'cell',
                 title: 'Cell',
+              },
+              {
+                path: 'config-provider',
+                title: 'ConfigProvider',
               },
               {
                 path: 'icon',
