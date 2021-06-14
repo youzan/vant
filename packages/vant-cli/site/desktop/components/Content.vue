@@ -63,7 +63,7 @@ export default {
   > h3 {
     margin-bottom: 16px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 19px;
   }
 
   > h4 {
@@ -82,6 +82,10 @@ export default {
     color: @van-doc-text-color;
     font-size: 15px;
     line-height: 26px;
+
+    strong {
+      color: black;
+    }
   }
 
   > table {
@@ -177,14 +181,11 @@ export default {
     padding: 2px 5px;
     font-size: 14px;
     font-family: inherit;
+    font-weight: 600;
     word-break: keep-all;
     background-color: @van-doc-background-color;
     border-radius: 4px;
     -webkit-font-smoothing: antialiased;
-  }
-
-  > p > code {
-    font-size: 14px;
   }
 
   > blockquote {
