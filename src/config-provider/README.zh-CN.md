@@ -140,11 +140,11 @@ export default {
 --van-gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
 
 // Component Colors
---van-text-color: #323233;
---van-active-color: #f2f3f5;
+--van-text-color: var(--van-gray-8);
+--van-active-color: var(--van-gray-2);
 --van-active-opacity: 0.7;
 --van-disabled-opacity: 0.5;
---van-background-color: #f7f8fa;
+--van-background-color: var(--van-gray-1);
 --van-background-color-light: #fafafa;
 --van-text-link-color: #576b95;
 
@@ -179,7 +179,7 @@ export default {
 --van-animation-timing-function-leave: ease-in;
 
 // Border
---van-border-color: #ebedf0;
+--van-border-color: var(--van-gray-3);
 --van-border-width-base: 1px;
 --van-border-radius-sm: 2px;
 --van-border-radius-md: 4px;
