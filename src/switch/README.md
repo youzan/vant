@@ -121,20 +121,20 @@ export default {
 | change | Emitted when check status changed | _value: any_        |
 | click  | Emitted when component is clicked | _event: MouseEvent_ |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @switch-size | `30px` | - |
-| @switch-width | `2em` | - |
-| @switch-height | `1em` | - |
-| @switch-node-size | `1em` | - |
-| @switch-node-background-color | `@white` | - |
-| @switch-node-box-shadow | `0 3px 1px 0 rgba(0, 0, 0, 0.05)` | - |
-| @switch-background-color | `@white` | - |
-| @switch-on-background-color | `@blue` | - |
-| @switch-transition-duration | `@animation-duration-base` | - |
-| @switch-disabled-opacity | `@disabled-opacity` | - |
-| @switch-border | `@border-width-base solid rgba(0, 0, 0, 0.1)` | - |
+| --van-switch-size | `30px` | - |
+| --van-switch-width | `2em` | - |
+| --van-switch-height | `1em` | - |
+| --van-switch-node-size | `1em` | - |
+| --van-switch-node-background-color | `@white` | - |
+| --van-switch-node-box-shadow | `0 3px 1px 0 rgba(0, 0, 0, 0.05)` | - |
+| --van-switch-background-color | `@white` | - |
+| --van-switch-on-background-color | `@blue` | - |
+| --van-switch-transition-duration | `@animation-duration-base` | - |
+| --van-switch-disabled-opacity | `@disabled-opacity` | - |
+| --van-switch-border | `@border-width-base solid rgba(0, 0, 0, 0.1)` | - |

@@ -159,13 +159,13 @@ app.use(GridItem);
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                | 默认值                    | 描述 |
-| ----------------------------------- | ------------------------- | ---- |
-| @grid-item-content-padding          | `@padding-md @padding-xs` | -    |
-| @grid-item-content-background-color | `@white`                  | -    |
-| @grid-item-content-active-color     | `@active-color`           | -    |
-| @grid-item-icon-size                | `28px`                    | -    |
-| @grid-item-text-color               | `@gray-7`                 | -    |
-| @grid-item-text-font-size           | `@font-size-sm`           | -    |
+| 名称                                     | 默认值                    | 描述 |
+| ---------------------------------------- | ------------------------- | ---- |
+| --van-grid-item-content-padding          | `@padding-md @padding-xs` | -    |
+| --van-grid-item-content-background-color | `@white`                  | -    |
+| --van-grid-item-content-active-color     | `@active-color`           | -    |
+| --van-grid-item-icon-size                | `28px`                    | -    |
+| --van-grid-item-text-color               | `@gray-7`                 | -    |
+| --van-grid-item-text-font-size           | `@font-size-sm`           | -    |

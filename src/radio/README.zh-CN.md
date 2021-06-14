@@ -215,16 +215,16 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                             | 默认值                     | 描述 |
-| -------------------------------- | -------------------------- | ---- |
-| @radio-size                      | `20px`                     | -    |
-| @radio-border-color              | `@gray-5`                  | -    |
-| @radio-transition-duration       | `@animation-duration-fast` | -    |
-| @radio-label-margin              | `@padding-xs`              | -    |
-| @radio-label-color               | `@text-color`              | -    |
-| @radio-checked-icon-color        | `@blue`                    | -    |
-| @radio-disabled-icon-color       | `@gray-5`                  | -    |
-| @radio-disabled-label-color      | `@gray-5`                  | -    |
-| @radio-disabled-background-color | `@border-color`            | -    |
+| 名称                                  | 默认值                     | 描述 |
+| ------------------------------------- | -------------------------- | ---- |
+| --van-radio-size                      | `20px`                     | -    |
+| --van-radio-border-color              | `@gray-5`                  | -    |
+| --van-radio-transition-duration       | `@animation-duration-fast` | -    |
+| --van-radio-label-margin              | `@padding-xs`              | -    |
+| --van-radio-label-color               | `@text-color`              | -    |
+| --van-radio-checked-icon-color        | `@blue`                    | -    |
+| --van-radio-disabled-icon-color       | `@gray-5`                  | -    |
+| --van-radio-disabled-label-color      | `@gray-5`                  | -    |
+| --van-radio-disabled-background-color | `@border-color`            | -    |

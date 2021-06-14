@@ -155,12 +155,12 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                  | 默认值                      | 描述 |
-| ------------------------------------- | --------------------------- | ---- |
-| @address-edit-padding                 | `@padding-sm`               | -    |
-| @address-edit-buttons-padding         | `@padding-xl @padding-base` | -    |
-| @address-edit-button-margin-bottom    | `@padding-sm`               | -    |
-| @address-edit-detail-finish-color     | `@blue`                     | -    |
-| @address-edit-detail-finish-font-size | `@font-size-sm`             | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-address-edit-padding | `@padding-sm` | - |
+| --van-address-edit-buttons-padding | `@padding-xl @padding-base` | - |
+| --van-address-edit-button-margin-bottom | `@padding-sm` | - |
+| --van-address-edit-detail-finish-color | `@blue` | - |
+| --van-address-edit-detail-finish-font-size | `@font-size-sm` | - |

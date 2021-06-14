@@ -246,7 +246,7 @@ export default {
 ### Checkbox Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model | Check status | _boolean_ | `false` |
 | name | Checkbox name | _any_ | - |
 | shape | Can be set to `square` | _string_ | `round` |
@@ -260,7 +260,7 @@ export default {
 ### CheckboxGroup Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model | Names of all checked checkboxes | _any[]_ | - |
 | disabled | Whether to disable all checkboxes | _boolean_ | `false` |
 | max | Maximum amount of checked options | _number \| string_ | `0`(Unlimited) |
@@ -327,18 +327,18 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Checkb
 | ------ | ------------------- | ------------------- | ------------ |
 | toggle | Toggle check status | _checked?: boolean_ | -            |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @checkbox-size | `20px` | - |
-| @checkbox-border-color | `@gray-5` | - |
-| @checkbox-transition-duration | `@animation-duration-fast` | - |
-| @checkbox-label-margin | `@padding-xs` | - |
-| @checkbox-label-color | `@text-color` | - |
-| @checkbox-checked-icon-color | `@blue` | - |
-| @checkbox-disabled-icon-color | `@gray-5` | - |
-| @checkbox-disabled-label-color | `@gray-5` | - |
-| @checkbox-disabled-background-color | `@border-color` | - |
+| --van-checkbox-size | `20px` | - |
+| --van-checkbox-border-color | `@gray-5` | - |
+| --van-checkbox-transition-duration | `@animation-duration-fast` | - |
+| --van-checkbox-label-margin | `@padding-xs` | - |
+| --van-checkbox-label-color | `@text-color` | - |
+| --van-checkbox-checked-icon-color | `@blue` | - |
+| --van-checkbox-disabled-icon-color | `@gray-5` | - |
+| --van-checkbox-disabled-label-color | `@gray-5` | - |
+| --van-checkbox-disabled-background-color | `@border-color` | - |

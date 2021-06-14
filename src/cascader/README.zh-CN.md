@@ -240,20 +240,20 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                              | 默认值          | 描述 |
-| --------------------------------- | --------------- | ---- |
-| @cascader-header-height           | `48px`          | -    |
-| @cascader-header-padding          | `0 @padding-md` | -    |
-| @cascader-title-font-size         | `@font-size-lg` | -    |
-| @cascader-title-line-height       | `20px`          | -    |
-| @cascader-close-icon-size         | `22px`          | -    |
-| @cascader-close-icon-color        | `@gray-5`       | -    |
-| @cascader-close-icon-active-color | `@gray-6`       | -    |
-| @cascader-selected-icon-size      | `18px`          | -    |
-| @cascader-tabs-height             | `48px`          | -    |
-| @cascader-active-color            | `@red`          | -    |
-| @cascader-options-height          | `384px`         | -    |
-| @cascader-tab-color               | `@text-color`   | -    |
-| @cascader-unselected-tab-color    | `@gray-6`       | -    |
+| 名称                                   | 默认值          | 描述 |
+| -------------------------------------- | --------------- | ---- |
+| --van-cascader-header-height           | `48px`          | -    |
+| --van-cascader-header-padding          | `0 @padding-md` | -    |
+| --van-cascader-title-font-size         | `@font-size-lg` | -    |
+| --van-cascader-title-line-height       | `20px`          | -    |
+| --van-cascader-close-icon-size         | `22px`          | -    |
+| --van-cascader-close-icon-color        | `@gray-5`       | -    |
+| --van-cascader-close-icon-active-color | `@gray-6`       | -    |
+| --van-cascader-selected-icon-size      | `18px`          | -    |
+| --van-cascader-tabs-height             | `48px`          | -    |
+| --van-cascader-active-color            | `@red`          | -    |
+| --van-cascader-options-height          | `384px`         | -    |
+| --van-cascader-tab-color               | `@text-color`   | -    |
+| --van-cascader-unselected-tab-color    | `@gray-6`       | -    |

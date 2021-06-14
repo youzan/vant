@@ -160,16 +160,16 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Collap
 | ------ | ---------------------- | ------------------- | ------------ |
 | toggle | Toggle expanded status | _expanded: boolean_ | -            |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @collapse-item-transition-duration | `@animation-duration-base` | - |
-| @collapse-item-content-padding | `@padding-sm @padding-md` | - |
-| @collapse-item-content-font-size | `@font-size-md` | - |
-| @collapse-item-content-line-height | `1.5` | - |
-| @collapse-item-content-text-color | `@gray-6` | - |
-| @collapse-item-content-background-color | `@white` | - |
-| @collapse-item-title-disabled-color | `@gray-5` | - |
+| --van-collapse-item-transition-duration | `@animation-duration-base` | - |
+| --van-collapse-item-content-padding | `@padding-sm @padding-md` | - |
+| --van-collapse-item-content-font-size | `@font-size-md` | - |
+| --van-collapse-item-content-line-height | `1.5` | - |
+| --van-collapse-item-content-text-color | `@gray-6` | - |
+| --van-collapse-item-content-background-color | `@white` | - |
+| --van-collapse-item-title-disabled-color | `@gray-5` | - |

@@ -157,14 +157,14 @@ beforeClose 的第一个参数为对象，对象中包含以下属性：
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| @switch-cell-padding-top | `@cell-vertical-padding - 1px` | - |
-| @switch-cell-padding-bottom | `@cell-vertical-padding - 1px` | - |
-| @switch-cell-large-padding-top | `@cell-large-vertical-padding - 1px` | - |
-| @switch-cell-large-padding-bottom | `@cell-large-vertical-padding - 1px` | - |
+| --van-switch-cell-padding-top | `@cell-vertical-padding - 1px` | - |
+| --van-switch-cell-padding-bottom | `@cell-vertical-padding - 1px` | - |
+| --van-switch-cell-large-padding-top | `@cell-large-vertical-padding - 1px` | - |
+| --van-switch-cell-large-padding-bottom | `@cell-large-vertical-padding - 1px` | - |
 
 ## 常见问题
 

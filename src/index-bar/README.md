@@ -70,7 +70,7 @@ export default {
 ### IndexBar Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | index-list | Index List | _string[] \| number[]_ | `A-Z` |
 | z-index | z-index | _number \| string_ | `1` |
 | sticky | Whether to enable anchor sticky top | _boolean_ | `true` |
@@ -105,22 +105,22 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get IndexB
 | --- | --- | --- | --- |
 | scrollTo | scroll to target element | _index: number \| string_ | - |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                  | Default Value       | Description |
-| ------------------------------------- | ------------------- | ----------- |
-| @index-bar-sidebar-z-index            | `2`                 | -           |
-| @index-bar-index-font-size            | `@font-size-xs`     | -           |
-| @index-bar-index-line-height          | `@line-height-xs`   | -           |
-| @index-bar-index-active-color         | `@red`              | -           |
-| @index-anchor-z-index                 | `1`                 | -           |
-| @index-anchor-padding                 | `0 @padding-md`     | -           |
-| @index-anchor-text-color              | `@text-color`       | -           |
-| @index-anchor-font-weight             | `@font-weight-bold` | -           |
-| @index-anchor-font-size               | `@font-size-md`     | -           |
-| @index-anchor-line-height             | `32px`              | -           |
-| @index-anchor-background-color        | `transparent`       | -           |
-| @index-anchor-sticky-text-color       | `@red`              | -           |
-| @index-anchor-sticky-background-color | `@white`            | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-index-bar-sidebar-z-index | `2` | - |
+| --van-index-bar-index-font-size | `@font-size-xs` | - |
+| --van-index-bar-index-line-height | `@line-height-xs` | - |
+| --van-index-bar-index-active-color | `@red` | - |
+| --van-index-anchor-z-index | `1` | - |
+| --van-index-anchor-padding | `0 @padding-md` | - |
+| --van-index-anchor-text-color | `@text-color` | - |
+| --van-index-anchor-font-weight | `@font-weight-bold` | - |
+| --van-index-anchor-font-size | `@font-size-md` | - |
+| --van-index-anchor-line-height | `32px` | - |
+| --van-index-anchor-background-color | `transparent` | - |
+| --van-index-anchor-sticky-text-color | `@red` | - |
+| --van-index-anchor-sticky-background-color | `@white` | - |

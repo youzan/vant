@@ -167,15 +167,15 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                           | 默认值                               | 描述 |
-| ------------------------------ | ------------------------------------ | ---- |
-| @popup-background-color        | `@white`                             | -    |
-| @popup-transition              | `transform @animation-duration-base` | -    |
-| @popup-round-border-radius     | `16px`                               | -    |
-| @popup-close-icon-size         | `22px`                               | -    |
-| @popup-close-icon-color        | `@gray-5`                            | -    |
-| @popup-close-icon-active-color | `@gray-6`                            | -    |
-| @popup-close-icon-margin       | `16px`                               | -    |
-| @popup-close-icon-z-index      | `1`                                  | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-popup-background-color | `@white` | - |
+| --van-popup-transition | `transform @animation-duration-base` | - |
+| --van-popup-round-border-radius | `16px` | - |
+| --van-popup-close-icon-size | `22px` | - |
+| --van-popup-close-icon-color | `@gray-5` | - |
+| --van-popup-close-icon-active-color | `@gray-6` | - |
+| --van-popup-close-icon-margin | `16px` | - |
+| --van-popup-close-icon-z-index | `1` | - |

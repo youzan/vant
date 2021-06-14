@@ -311,22 +311,22 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                       | 默认值                | 描述 |
-| -------------------------- | --------------------- | ---- |
-| @tab-text-color            | `@gray-7`             | -    |
-| @tab-active-text-color     | `@text-color`         | -    |
-| @tab-disabled-text-color   | `@gray-5`             | -    |
-| @tab-font-size             | `@font-size-md`       | -    |
-| @tab-line-height           | `@line-height-md`     | -    |
-| @tabs-default-color        | `@red`                | -    |
-| @tabs-line-height          | `44px`                | -    |
-| @tabs-card-height          | `30px`                | -    |
-| @tabs-nav-background-color | `@white`              | -    |
-| @tabs-bottom-bar-width     | `40px`                | -    |
-| @tabs-bottom-bar-height    | `3px`                 | -    |
-| @tabs-bottom-bar-color     | `@tabs-default-color` | -    |
+| 名称                            | 默认值                | 描述 |
+| ------------------------------- | --------------------- | ---- |
+| --van-tab-text-color            | `@gray-7`             | -    |
+| --van-tab-active-text-color     | `@text-color`         | -    |
+| --van-tab-disabled-text-color   | `@gray-5`             | -    |
+| --van-tab-font-size             | `@font-size-md`       | -    |
+| --van-tab-line-height           | `@line-height-md`     | -    |
+| --van-tabs-default-color        | `@red`                | -    |
+| --van-tabs-line-height          | `44px`                | -    |
+| --van-tabs-card-height          | `30px`                | -    |
+| --van-tabs-nav-background-color | `@white`              | -    |
+| --van-tabs-bottom-bar-width     | `40px`                | -    |
+| --van-tabs-bottom-bar-height    | `3px`                 | -    |
+| --van-tabs-bottom-bar-color     | `@tabs-default-color` | -    |
 
 ## 常见问题
 

@@ -93,15 +93,15 @@ Empty 组件内置了多种占位图片类型，可以在不同业务场景下�
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                           | 默认值            | 描述 |
-| ------------------------------ | ----------------- | ---- |
-| @empty-padding                 | `@padding-xl 0`   | -    |
-| @empty-image-size              | `160px`           | -    |
-| @empty-description-margin-top  | `@padding-md`     | -    |
-| @empty-description-padding     | `0 60px`          | -    |
-| @empty-description-color       | `@gray-6`         | -    |
-| @empty-description-font-size   | `@font-size-md`   | -    |
-| @empty-description-line-height | `@line-height-md` | -    |
-| @empty-bottom-margin-top       | `24px`            | -    |
+| 名称                                | 默认值            | 描述 |
+| ----------------------------------- | ----------------- | ---- |
+| --van-empty-padding                 | `@padding-xl 0`   | -    |
+| --van-empty-image-size              | `160px`           | -    |
+| --van-empty-description-margin-top  | `@padding-md`     | -    |
+| --van-empty-description-padding     | `0 60px`          | -    |
+| --van-empty-description-color       | `@gray-6`         | -    |
+| --van-empty-description-font-size   | `@font-size-md`   | -    |
+| --van-empty-description-line-height | `@line-height-md` | -    |
+| --van-empty-bottom-margin-top       | `24px`            | -    |

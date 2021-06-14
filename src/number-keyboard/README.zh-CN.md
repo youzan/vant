@@ -213,24 +213,24 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                     | 默认值             | 描述 |
-| ---------------------------------------- | ------------------ | ---- |
-| @number-keyboard-background-color        | `@gray-2`          | -    |
-| @number-keyboard-key-height              | `48px`             | -    |
-| @number-keyboard-key-font-size           | `28px`             | -    |
-| @number-keyboard-key-active-color        | `@gray-3`          | -    |
-| @number-keyboard-delete-font-size        | `@font-size-lg`    | -    |
-| @number-keyboard-title-color             | `@gray-7`          | -    |
-| @number-keyboard-title-height            | `34px`             | -    |
-| @number-keyboard-title-font-size         | `@font-size-lg`    | -    |
-| @number-keyboard-close-padding           | `0 @padding-md`    | -    |
-| @number-keyboard-close-color             | `@text-link-color` | -    |
-| @number-keyboard-close-font-size         | `@font-size-md`    | -    |
-| @number-keyboard-button-text-color       | `@white`           | -    |
-| @number-keyboard-button-background-color | `@blue`            | -    |
-| @number-keyboard-z-index                 | `100`              | -    |
+| 名称                                          | 默认值             | 描述 |
+| --------------------------------------------- | ------------------ | ---- |
+| --van-number-keyboard-background-color        | `@gray-2`          | -    |
+| --van-number-keyboard-key-height              | `48px`             | -    |
+| --van-number-keyboard-key-font-size           | `28px`             | -    |
+| --van-number-keyboard-key-active-color        | `@gray-3`          | -    |
+| --van-number-keyboard-delete-font-size        | `@font-size-lg`    | -    |
+| --van-number-keyboard-title-color             | `@gray-7`          | -    |
+| --van-number-keyboard-title-height            | `34px`             | -    |
+| --van-number-keyboard-title-font-size         | `@font-size-lg`    | -    |
+| --van-number-keyboard-close-padding           | `0 @padding-md`    | -    |
+| --van-number-keyboard-close-color             | `@text-link-color` | -    |
+| --van-number-keyboard-close-font-size         | `@font-size-md`    | -    |
+| --van-number-keyboard-button-text-color       | `@white`           | -    |
+| --van-number-keyboard-button-background-color | `@blue`            | -    |
+| --van-number-keyboard-z-index                 | `100`              | -    |
 
 ## 常见问题
 

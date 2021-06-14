@@ -102,7 +102,7 @@ export default {
 ### CouponList Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model | Current exchange code | _string_ | - |
 | chosen-coupon | Index of chosen coupon | _number_ | `-1` |
 | coupons | Coupon list | _Coupon[]_ | `[]` |
@@ -149,34 +149,34 @@ export default {
 | valueDesc   | Value Text                          | _string_ |
 | unitDesc    | Unit Text                           | _string_ |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @coupon-margin | `0 @padding-sm @padding-sm` | - |
-| @coupon-content-height | `84px` | - |
-| @coupon-content-padding | `14px 0` | - |
-| @coupon-background-color | `@white` | - |
-| @coupon-active-background-color | `@active-color` | - |
-| @coupon-border-radius | `@border-radius-lg` | - |
-| @coupon-box-shadow | `0 0 4px rgba(0, 0, 0, 0.1)` | - |
-| @coupon-head-width | `96px` | - |
-| @coupon-amount-color | `@red` | - |
-| @coupon-amount-font-size | `30px` | - |
-| @coupon-currency-font-size | `40%` | - |
-| @coupon-name-font-size | `@font-size-md` | - |
-| @coupon-disabled-text-color | `@gray-6` | - |
-| @coupon-description-padding | `@padding-xs @padding-md` | - |
-| @coupon-description-border-color | `@border-color` | - |
-| @coupon-corner-checkbox-icon-color | `@red` | - |
-| @coupon-list-background-color | `@background-color` | - |
-| @coupon-list-field-padding | `5px 0 5px @padding-md` | - |
-| @coupon-list-exchange-button-height | `32px` | - |
-| @coupon-list-close-button-height | `40px` | - |
-| @coupon-list-empty-image-size | `200px` | - |
-| @coupon-list-empty-tip-color | `@gray-6` | - |
-| @coupon-list-empty-tip-font-size | `@font-size-md` | - |
-| @coupon-list-empty-tip-line-height | `@line-height-md` | - |
-| @coupon-cell-selected-text-color | `@text-color` | - |
+| --van-coupon-margin | `0 @padding-sm @padding-sm` | - |
+| --van-coupon-content-height | `84px` | - |
+| --van-coupon-content-padding | `14px 0` | - |
+| --van-coupon-background-color | `@white` | - |
+| --van-coupon-active-background-color | `@active-color` | - |
+| --van-coupon-border-radius | `@border-radius-lg` | - |
+| --van-coupon-box-shadow | `0 0 4px rgba(0, 0, 0, 0.1)` | - |
+| --van-coupon-head-width | `96px` | - |
+| --van-coupon-amount-color | `@red` | - |
+| --van-coupon-amount-font-size | `30px` | - |
+| --van-coupon-currency-font-size | `40%` | - |
+| --van-coupon-name-font-size | `@font-size-md` | - |
+| --van-coupon-disabled-text-color | `@gray-6` | - |
+| --van-coupon-description-padding | `@padding-xs @padding-md` | - |
+| --van-coupon-description-border-color | `@border-color` | - |
+| --van-coupon-corner-checkbox-icon-color | `@red` | - |
+| --van-coupon-list-background-color | `@background-color` | - |
+| --van-coupon-list-field-padding | `5px 0 5px @padding-md` | - |
+| --van-coupon-list-exchange-button-height | `32px` | - |
+| --van-coupon-list-close-button-height | `40px` | - |
+| --van-coupon-list-empty-image-size | `200px` | - |
+| --van-coupon-list-empty-tip-color | `@gray-6` | - |
+| --van-coupon-list-empty-tip-font-size | `@font-size-md` | - |
+| --van-coupon-list-empty-tip-line-height | `@line-height-md` | - |
+| --van-coupon-cell-selected-text-color | `@text-color` | - |

@@ -131,25 +131,25 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                | 默认值                       | 描述 |
-| ----------------------------------- | ---------------------------- | ---- |
-| @submit-bar-height                  | `50px`                       | -    |
-| @submit-bar-z-index                 | `100`                        | -    |
-| @submit-bar-background-color        | `@white`                     | -    |
-| @submit-bar-button-width            | `110px`                      | -    |
-| @submit-bar-price-color             | `@red`                       | -    |
-| @submit-bar-text-color              | `@text-color`                | -    |
-| @submit-bar-text-font-size          | `@font-size-md`              | -    |
-| @submit-bar-tip-padding             | `@padding-xs @padding-sm`    | -    |
-| @submit-bar-tip-font-size           | `@font-size-sm`              | -    |
-| @submit-bar-tip-line-height         | `1.5`                        | -    |
-| @submit-bar-tip-color               | `#f56723`                    | -    |
-| @submit-bar-tip-background-color    | `#fff7cc`                    | -    |
-| @submit-bar-tip-icon-size           | `12px`                       | -    |
-| @submit-bar-button-height           | `40px`                       | -    |
-| @submit-bar-padding                 | `0 @padding-md`              | -    |
-| @submit-bar-price-font-size         | `@font-size-sm`              | -    |
-| @submit-bar-price-integer-font-size | `20px`                       | -    |
-| @submit-bar-price-font-family       | `@price-integer-font-family` | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-submit-bar-height | `50px` | - |
+| --van-submit-bar-z-index | `100` | - |
+| --van-submit-bar-background-color | `@white` | - |
+| --van-submit-bar-button-width | `110px` | - |
+| --van-submit-bar-price-color | `@red` | - |
+| --van-submit-bar-text-color | `@text-color` | - |
+| --van-submit-bar-text-font-size | `@font-size-md` | - |
+| --van-submit-bar-tip-padding | `@padding-xs @padding-sm` | - |
+| --van-submit-bar-tip-font-size | `@font-size-sm` | - |
+| --van-submit-bar-tip-line-height | `1.5` | - |
+| --van-submit-bar-tip-color | `#f56723` | - |
+| --van-submit-bar-tip-background-color | `#fff7cc` | - |
+| --van-submit-bar-tip-icon-size | `12px` | - |
+| --van-submit-bar-button-height | `40px` | - |
+| --van-submit-bar-padding | `0 @padding-md` | - |
+| --van-submit-bar-price-font-size | `@font-size-sm` | - |
+| --van-submit-bar-price-integer-font-size | `20px` | - |
+| --van-submit-bar-price-font-family | `@price-integer-font-family` | - |

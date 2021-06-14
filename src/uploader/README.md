@@ -356,34 +356,34 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Upload
 | closeImagePreview | Close full screen image preview | - | - |
 | chooseFile | Trigger choosing files, works with the user action context only because of browser security | - | - |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                               | Default Value        | Description |
-| ---------------------------------- | -------------------- | ----------- |
-| @uploader-size                     | `80px`               | -           |
-| @uploader-icon-size                | `24px`               | -           |
-| @uploader-icon-color               | `@gray-4`            | -           |
-| @uploader-text-color               | `@gray-6`            | -           |
-| @uploader-text-font-size           | `@font-size-sm`      | -           |
-| @uploader-upload-background-color  | `@gray-1`            | -           |
-| @uploader-upload-active-color      | `@active-color`      | -           |
-| @uploader-delete-color             | `@white`             | -           |
-| @uploader-delete-icon-size         | `14px`               | -           |
-| @uploader-delete-background-color  | `rgba(0, 0, 0, 0.7)` | -           |
-| @uploader-file-background-color    | `@background-color`  | -           |
-| @uploader-file-icon-size           | `20px`               | -           |
-| @uploader-file-icon-color          | `@gray-7`            | -           |
-| @uploader-file-name-padding        | `0 @padding-base`    | -           |
-| @uploader-file-name-margin-top     | `@padding-xs`        | -           |
-| @uploader-file-name-font-size      | `@font-size-sm`      | -           |
-| @uploader-file-name-text-color     | `@gray-7`            | -           |
-| @uploader-mask-text-color          | `@white`             | -           |
-| @uploader-mask-background-color    | `fade(@gray-8, 88%)` | -           |
-| @uploader-mask-icon-size           | `22px`               | -           |
-| @uploader-mask-message-font-size   | `@font-size-sm`      | -           |
-| @uploader-mask-message-line-height | `@line-height-xs`    | -           |
-| @uploader-loading-icon-size        | `22px`               | -           |
-| @uploader-loading-icon-color       | `@white`             | -           |
-| @uploader-disabled-opacity         | `@disabled-opacity`  | -           |
+| Name                                    | Default Value        | Description |
+| --------------------------------------- | -------------------- | ----------- |
+| --van-uploader-size                     | `80px`               | -           |
+| --van-uploader-icon-size                | `24px`               | -           |
+| --van-uploader-icon-color               | `@gray-4`            | -           |
+| --van-uploader-text-color               | `@gray-6`            | -           |
+| --van-uploader-text-font-size           | `@font-size-sm`      | -           |
+| --van-uploader-upload-background-color  | `@gray-1`            | -           |
+| --van-uploader-upload-active-color      | `@active-color`      | -           |
+| --van-uploader-delete-color             | `@white`             | -           |
+| --van-uploader-delete-icon-size         | `14px`               | -           |
+| --van-uploader-delete-background-color  | `rgba(0, 0, 0, 0.7)` | -           |
+| --van-uploader-file-background-color    | `@background-color`  | -           |
+| --van-uploader-file-icon-size           | `20px`               | -           |
+| --van-uploader-file-icon-color          | `@gray-7`            | -           |
+| --van-uploader-file-name-padding        | `0 @padding-base`    | -           |
+| --van-uploader-file-name-margin-top     | `@padding-xs`        | -           |
+| --van-uploader-file-name-font-size      | `@font-size-sm`      | -           |
+| --van-uploader-file-name-text-color     | `@gray-7`            | -           |
+| --van-uploader-mask-text-color          | `@white`             | -           |
+| --van-uploader-mask-background-color    | `fade(@gray-8, 88%)` | -           |
+| --van-uploader-mask-icon-size           | `22px`               | -           |
+| --van-uploader-mask-message-font-size   | `@font-size-sm`      | -           |
+| --van-uploader-mask-message-line-height | `@line-height-xs`    | -           |
+| --van-uploader-loading-icon-size        | `22px`               | -           |
+| --van-uploader-loading-icon-color       | `@white`             | -           |
+| --van-uploader-disabled-opacity         | `@disabled-opacity`  | -           |

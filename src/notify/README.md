@@ -97,7 +97,7 @@ export default {
 ### Methods
 
 | Methods | Attribute | Return value | Description |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | Notify | `options | message` | notify instance | Show notify |
 | Notify.clear | - | `void` | Close notify |
 | Notify.setDefaultOptions | `options` | `void` | Set default options of all notifies |
@@ -106,7 +106,7 @@ export default {
 ### Options
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | type | Can be set to `primary` `success` `warning` | _string_ | `danger` |
 | message | Message | _string_ | - |
 | duration | Duration(ms), won't disappear if value is 0 | _number \| string_ | `3000` |
@@ -118,17 +118,17 @@ export default {
 | onOpened | Callback function after opened | _() => void_ | - |
 | onClose | Callback function after close | _() => void_ | - |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                             | Default Value             | Description |
-| -------------------------------- | ------------------------- | ----------- |
-| @notify-text-color               | `@white`                  | -           |
-| @notify-padding                  | `@padding-xs @padding-md` | -           |
-| @notify-font-size                | `@font-size-md`           | -           |
-| @notify-line-height              | `@line-height-md`         | -           |
-| @notify-primary-background-color | `@blue`                   | -           |
-| @notify-success-background-color | `@green`                  | -           |
-| @notify-danger-background-color  | `@red`                    | -           |
-| @notify-warning-background-color | `@orange`                 | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-notify-text-color | `@white` | - |
+| --van-notify-padding | `@padding-xs @padding-md` | - |
+| --van-notify-font-size | `@font-size-md` | - |
+| --van-notify-line-height | `@line-height-md` | - |
+| --van-notify-primary-background-color | `@blue` | - |
+| --van-notify-success-background-color | `@green` | - |
+| --van-notify-danger-background-color | `@red` | - |
+| --van-notify-warning-background-color | `@orange` | - |

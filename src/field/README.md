@@ -309,27 +309,27 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Field 
 | button     | Insert button               |
 | extra      | Custom content on the right |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                             | Default Value   | Description |
-| -------------------------------- | --------------- | ----------- |
-| @field-label-width               | `6.2em`         | -           |
-| @field-label-color               | `@gray-7`       | -           |
-| @field-label-margin-right        | `@padding-sm`   | -           |
-| @field-input-text-color          | `@text-color`   | -           |
-| @field-input-error-text-color    | `@red`          | -           |
-| @field-input-disabled-text-color | `@gray-5`       | -           |
-| @field-placeholder-text-color    | `@gray-5`       | -           |
-| @field-icon-size                 | `16px`          | -           |
-| @field-clear-icon-size           | `16px`          | -           |
-| @field-clear-icon-color          | `@gray-5`       | -           |
-| @field-right-icon-color          | `@gray-6`       | -           |
-| @field-error-message-color       | `@red`          | -           |
-| @field-error-message-text-color  | `12px`          | -           |
-| @field-text-area-min-height      | `60px`          | -           |
-| @field-word-limit-color          | `@gray-7`       | -           |
-| @field-word-limit-font-size      | `@font-size-sm` | -           |
-| @field-word-limit-line-height    | `16px`          | -           |
-| @field-disabled-text-color       | `@gray-5`       | -           |
+| Name                                  | Default Value   | Description |
+| ------------------------------------- | --------------- | ----------- |
+| --van-field-label-width               | `6.2em`         | -           |
+| --van-field-label-color               | `@gray-7`       | -           |
+| --van-field-label-margin-right        | `@padding-sm`   | -           |
+| --van-field-input-text-color          | `@text-color`   | -           |
+| --van-field-input-error-text-color    | `@red`          | -           |
+| --van-field-input-disabled-text-color | `@gray-5`       | -           |
+| --van-field-placeholder-text-color    | `@gray-5`       | -           |
+| --van-field-icon-size                 | `16px`          | -           |
+| --van-field-clear-icon-size           | `16px`          | -           |
+| --van-field-clear-icon-color          | `@gray-5`       | -           |
+| --van-field-right-icon-color          | `@gray-6`       | -           |
+| --van-field-error-message-color       | `@red`          | -           |
+| --van-field-error-message-text-color  | `12px`          | -           |
+| --van-field-text-area-min-height      | `60px`          | -           |
+| --van-field-word-limit-color          | `@gray-7`       | -           |
+| --van-field-word-limit-font-size      | `@font-size-sm` | -           |
+| --van-field-word-limit-line-height    | `16px`          | -           |
+| --van-field-disabled-text-color       | `@gray-5`       | -           |

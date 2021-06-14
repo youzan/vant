@@ -187,31 +187,31 @@ app.use(CellGroup);
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                          | 默认值                                | 描述 |
-| ----------------------------- | ------------------------------------- | ---- |
-| @cell-font-size               | `@font-size-md`                       | -    |
-| @cell-line-height             | `24px`                                | -    |
-| @cell-vertical-padding        | `10px`                                | -    |
-| @cell-horizontal-padding      | `@padding-md`                         | -    |
-| @cell-text-color              | `@text-color`                         | -    |
-| @cell-background-color        | `@white`                              | -    |
-| @cell-border-color            | `@border-color`                       | -    |
-| @cell-active-color            | `@active-color`                       | -    |
-| @cell-required-color          | `@red`                                | -    |
-| @cell-label-color             | `@gray-6`                             | -    |
-| @cell-label-font-size         | `@font-size-sm`                       | -    |
-| @cell-label-line-height       | `@line-height-sm`                     | -    |
-| @cell-label-margin-top        | `@padding-base`                       | -    |
-| @cell-value-color             | `@gray-6`                             | -    |
-| @cell-icon-size               | `16px`                                | -    |
-| @cell-right-icon-color        | `@gray-6`                             | -    |
-| @cell-large-vertical-padding  | `@padding-sm`                         | -    |
-| @cell-large-title-font-size   | `@font-size-lg`                       | -    |
-| @cell-large-label-font-size   | `@font-size-md`                       | -    |
-| @cell-group-background-color  | `@white`                              | -    |
-| @cell-group-title-color       | `@gray-6`                             | -    |
-| @cell-group-title-padding     | `@padding-md @padding-md @padding-xs` | -    |
-| @cell-group-title-font-size   | `@font-size-md`                       | -    |
-| @cell-group-title-line-height | `16px`                                | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-cell-font-size | `@font-size-md` | - |
+| --van-cell-line-height | `24px` | - |
+| --van-cell-vertical-padding | `10px` | - |
+| --van-cell-horizontal-padding | `@padding-md` | - |
+| --van-cell-text-color | `@text-color` | - |
+| --van-cell-background-color | `@white` | - |
+| --van-cell-border-color | `@border-color` | - |
+| --van-cell-active-color | `@active-color` | - |
+| --van-cell-required-color | `@red` | - |
+| --van-cell-label-color | `@gray-6` | - |
+| --van-cell-label-font-size | `@font-size-sm` | - |
+| --van-cell-label-line-height | `@line-height-sm` | - |
+| --van-cell-label-margin-top | `@padding-base` | - |
+| --van-cell-value-color | `@gray-6` | - |
+| --van-cell-icon-size | `16px` | - |
+| --van-cell-right-icon-color | `@gray-6` | - |
+| --van-cell-large-vertical-padding | `@padding-sm` | - |
+| --van-cell-large-title-font-size | `@font-size-lg` | - |
+| --van-cell-large-label-font-size | `@font-size-md` | - |
+| --van-cell-group-background-color | `@white` | - |
+| --van-cell-group-title-color | `@gray-6` | - |
+| --van-cell-group-title-padding | `@padding-md @padding-md @padding-xs` | - |
+| --van-cell-group-title-font-size | `@font-size-md` | - |
+| --van-cell-group-title-line-height | `16px` | - |

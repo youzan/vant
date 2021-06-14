@@ -151,14 +151,14 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Addres
 
 Please refer to [Area](#/en-US/area) component.
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @address-edit-padding | `@padding-sm` | - |
-| @address-edit-buttons-padding | `@padding-xl @padding-base` | - |
-| @address-edit-button-margin-bottom | `@padding-sm` | - |
-| @address-edit-detail-finish-color | `@blue` | - |
-| @address-edit-detail-finish-font-size | `@font-size-sm` | - |
+| --van-address-edit-padding | `@padding-sm` | - |
+| --van-address-edit-buttons-padding | `@padding-xl @padding-base` | - |
+| --van-address-edit-button-margin-bottom | `@padding-sm` | - |
+| --van-address-edit-detail-finish-color | `@blue` | - |
+| --van-address-edit-detail-finish-font-size | `@font-size-sm` | - |

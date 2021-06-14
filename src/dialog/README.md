@@ -214,28 +214,28 @@ export default {
 | title            | Custom title   |
 | footer `v3.0.10` | Custom footer  |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @dialog-width | `320px` | - |
-| @dialog-small-screen-width | `90%` | - |
-| @dialog-font-size | `@font-size-lg` | - |
-| @dialog-transition | `@animation-duration-base` | - |
-| @dialog-border-radius | `16px` | - |
-| @dialog-background-color | `@white` | - |
-| @dialog-header-font-weight | `@font-weight-bold` | - |
-| @dialog-header-line-height | `24px` | - |
-| @dialog-header-padding-top | `26px` | - |
-| @dialog-header-isolated-padding | `@padding-lg 0` | - |
-| @dialog-message-padding | `@padding-lg` | - |
-| @dialog-message-font-size | `@font-size-md` | - |
-| @dialog-message-line-height | `@line-height-md` | - |
-| @dialog-message-max-height | `60vh` | - |
-| @dialog-has-title-message-text-color | `@gray-7` | - |
-| @dialog-has-title-message-padding-top | `@padding-xs` | - |
-| @dialog-button-height | `48px` | - |
-| @dialog-round-button-height | `36px` | - |
-| @dialog-confirm-button-text-color | `@red` | - |
+| --van-dialog-width | `320px` | - |
+| --van-dialog-small-screen-width | `90%` | - |
+| --van-dialog-font-size | `@font-size-lg` | - |
+| --van-dialog-transition | `@animation-duration-base` | - |
+| --van-dialog-border-radius | `16px` | - |
+| --van-dialog-background-color | `@white` | - |
+| --van-dialog-header-font-weight | `@font-weight-bold` | - |
+| --van-dialog-header-line-height | `24px` | - |
+| --van-dialog-header-padding-top | `26px` | - |
+| --van-dialog-header-isolated-padding | `@padding-lg 0` | - |
+| --van-dialog-message-padding | `@padding-lg` | - |
+| --van-dialog-message-font-size | `@font-size-md` | - |
+| --van-dialog-message-line-height | `@line-height-md` | - |
+| --van-dialog-message-max-height | `60vh` | - |
+| --van-dialog-has-title-message-text-color | `@gray-7` | - |
+| --van-dialog-has-title-message-padding-top | `@padding-xs` | - |
+| --van-dialog-button-height | `48px` | - |
+| --van-dialog-round-button-height | `36px` | - |
+| --van-dialog-confirm-button-text-color | `@red` | - |

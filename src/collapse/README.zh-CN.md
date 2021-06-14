@@ -160,14 +160,14 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                    | 默认值                     | 描述 |
-| --------------------------------------- | -------------------------- | ---- |
-| @collapse-item-transition-duration      | `@animation-duration-base` | -    |
-| @collapse-item-content-padding          | `@padding-sm @padding-md`  | -    |
-| @collapse-item-content-font-size        | `@font-size-md`            | -    |
-| @collapse-item-content-line-height      | `1.5`                      | -    |
-| @collapse-item-content-text-color       | `@gray-6`                  | -    |
-| @collapse-item-content-background-color | `@white`                   | -    |
-| @collapse-item-title-disabled-color     | `@gray-5`                  | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-collapse-item-transition-duration | `@animation-duration-base` | - |
+| --van-collapse-item-content-padding | `@padding-sm @padding-md` | - |
+| --van-collapse-item-content-font-size | `@font-size-md` | - |
+| --van-collapse-item-content-line-height | `1.5` | - |
+| --van-collapse-item-content-text-color | `@gray-6` | - |
+| --van-collapse-item-content-background-color | `@white` | - |
+| --van-collapse-item-title-disabled-color | `@gray-5` | - |

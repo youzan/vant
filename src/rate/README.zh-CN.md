@@ -174,12 +174,12 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                      | 默认值          | 描述 |
-| ------------------------- | --------------- | ---- |
-| @rate-icon-size           | `20px`          | -    |
-| @rate-icon-gutter         | `@padding-base` | -    |
-| @rate-icon-void-color     | `@gray-5`       | -    |
-| @rate-icon-full-color     | `@red`          | -    |
-| @rate-icon-disabled-color | `@gray-5`       | -    |
+| 名称                           | 默认值          | 描述 |
+| ------------------------------ | --------------- | ---- |
+| --van-rate-icon-size           | `20px`          | -    |
+| --van-rate-icon-gutter         | `@padding-base` | -    |
+| --van-rate-icon-void-color     | `@gray-5`       | -    |
+| --van-rate-icon-full-color     | `@red`          | -    |
+| --van-rate-icon-disabled-color | `@gray-5`       | -    |

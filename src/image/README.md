@@ -114,16 +114,16 @@ app.use(Lazyload);
 | loading | Custom loading placeholder         |
 | error   | Custom error placeholder           |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                | Default Value       | Description |
-| ----------------------------------- | ------------------- | ----------- |
-| @image-placeholder-text-color       | `@gray-6`           | -           |
-| @image-placeholder-font-size        | `@font-size-md`     | -           |
-| @image-placeholder-background-color | `@background-color` | -           |
-| @image-loading-icon-size            | `32px`              | -           |
-| @image-loading-icon-color           | `@gray-4`           | -           |
-| @image-error-icon-size              | `32px`              | -           |
-| @image-error-icon-color             | `@gray-4`           | -           |
+| Name                                     | Default Value       | Description |
+| ---------------------------------------- | ------------------- | ----------- |
+| --van-image-placeholder-text-color       | `@gray-6`           | -           |
+| --van-image-placeholder-font-size        | `@font-size-md`     | -           |
+| --van-image-placeholder-background-color | `@background-color` | -           |
+| --van-image-loading-icon-size            | `32px`              | -           |
+| --van-image-loading-icon-color           | `@gray-4`           | -           |
+| --van-image-error-icon-size              | `32px`              | -           |
+| --van-image-error-icon-color             | `@gray-4`           | -           |

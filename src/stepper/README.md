@@ -157,23 +157,23 @@ export default {
 | focus | Emitted when the input is focused | _event: Event_ |
 | blur | Emitted when the input is blured | _event: Event_ |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                     | Default Value       | Description |
-| ---------------------------------------- | ------------------- | ----------- |
-| @stepper-active-color                    | `#e8e8e8`           | -           |
-| @stepper-background-color                | `@active-color`     | -           |
-| @stepper-button-icon-color               | `@text-color`       | -           |
-| @stepper-button-disabled-color           | `@background-color` | -           |
-| @stepper-button-disabled-icon-color      | `@gray-5`           | -           |
-| @stepper-button-round-theme-color        | `@red`              | -           |
-| @stepper-input-width                     | `32px`              | -           |
-| @stepper-input-height                    | `28px`              | -           |
-| @stepper-input-font-size                 | `@font-size-md`     | -           |
-| @stepper-input-line-height               | `normal`            | -           |
-| @stepper-input-text-color                | `@text-color`       | -           |
-| @stepper-input-disabled-text-color       | `@gray-5`           | -           |
-| @stepper-input-disabled-background-color | `@active-color`     | -           |
-| @stepper-border-radius                   | `@border-radius-md` | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-stepper-active-color | `#e8e8e8` | - |
+| --van-stepper-background-color | `@active-color` | - |
+| --van-stepper-button-icon-color | `@text-color` | - |
+| --van-stepper-button-disabled-color | `@background-color` | - |
+| --van-stepper-button-disabled-icon-color | `@gray-5` | - |
+| --van-stepper-button-round-theme-color | `@red` | - |
+| --van-stepper-input-width | `32px` | - |
+| --van-stepper-input-height | `28px` | - |
+| --van-stepper-input-font-size | `@font-size-md` | - |
+| --van-stepper-input-line-height | `normal` | - |
+| --van-stepper-input-text-color | `@text-color` | - |
+| --van-stepper-input-disabled-text-color | `@gray-5` | - |
+| --van-stepper-input-disabled-background-color | `@active-color` | - |
+| --van-stepper-border-radius | `@border-radius-md` | - |

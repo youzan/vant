@@ -122,27 +122,27 @@ export default {
 | top     | Custom top content  |
 | tip     | Custom tips         |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @submit-bar-height | `50px` | - |
-| @submit-bar-z-index | `100` | - |
-| @submit-bar-background-color | `@white` | - |
-| @submit-bar-button-width | `110px` | - |
-| @submit-bar-price-color | `@red` | - |
-| @submit-bar-text-color | `@text-color` | - |
-| @submit-bar-text-font-size | `@font-size-md` | - |
-| @submit-bar-tip-padding | `@padding-xs @padding-sm` | - |
-| @submit-bar-tip-font-size | `@font-size-sm` | - |
-| @submit-bar-tip-line-height | `1.5` | - |
-| @submit-bar-tip-color | `#f56723` | - |
-| @submit-bar-tip-background-color | `#fff7cc` | - |
-| @submit-bar-tip-icon-size | `12px` | - |
-| @submit-bar-button-height | `40px` | - |
-| @submit-bar-padding | `0 @padding-md` | - |
-| @submit-bar-price-font-size | `@font-size-sm` | - |
-| @submit-bar-price-integer-font-size | `20px` | - |
-| @submit-bar-price-font-family | `@price-integer-font-family` | - |
+| --van-submit-bar-height | `50px` | - |
+| --van-submit-bar-z-index | `100` | - |
+| --van-submit-bar-background-color | `@white` | - |
+| --van-submit-bar-button-width | `110px` | - |
+| --van-submit-bar-price-color | `@red` | - |
+| --van-submit-bar-text-color | `@text-color` | - |
+| --van-submit-bar-text-font-size | `@font-size-md` | - |
+| --van-submit-bar-tip-padding | `@padding-xs @padding-sm` | - |
+| --van-submit-bar-tip-font-size | `@font-size-sm` | - |
+| --van-submit-bar-tip-line-height | `1.5` | - |
+| --van-submit-bar-tip-color | `#f56723` | - |
+| --van-submit-bar-tip-background-color | `#fff7cc` | - |
+| --van-submit-bar-tip-icon-size | `12px` | - |
+| --van-submit-bar-button-height | `40px` | - |
+| --van-submit-bar-padding | `0 @padding-md` | - |
+| --van-submit-bar-price-font-size | `@font-size-sm` | - |
+| --van-submit-bar-price-integer-font-size | `20px` | - |
+| --van-submit-bar-price-font-family | `@price-integer-font-family` | - |

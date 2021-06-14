@@ -200,13 +200,13 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get List i
 | finished | Custom finished tips |
 | error    | Custom error tips    |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                    | Default Value   | Description |
-| ----------------------- | --------------- | ----------- |
-| @list-text-color        | `@gray-6`       | -           |
-| @list-text-font-size    | `@font-size-md` | -           |
-| @list-text-line-height  | `50px`          | -           |
-| @list-loading-icon-size | `16px`          | -           |
+| Name                         | Default Value   | Description |
+| ---------------------------- | --------------- | ----------- |
+| --van-list-text-color        | `@gray-6`       | -           |
+| --van-list-text-font-size    | `@font-size-md` | -           |
+| --van-list-text-line-height  | `50px`          | -           |
+| --van-list-loading-icon-size | `16px`          | -           |

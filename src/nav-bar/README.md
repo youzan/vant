@@ -87,17 +87,17 @@ export default {
 | click-left  | Emitted when the left button is clicked  | _event: MouseEvent_ |
 | click-right | Emitted when the right button is clicked | _event: MouseEvent_ |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                      | Default Value   | Description |
-| ------------------------- | --------------- | ----------- |
-| @nav-bar-height           | `46px`          | -           |
-| @nav-bar-background-color | `@white`        | -           |
-| @nav-bar-arrow-size       | `16px`          | -           |
-| @nav-bar-icon-color       | `@blue`         | -           |
-| @nav-bar-text-color       | `@blue`         | -           |
-| @nav-bar-title-font-size  | `@font-size-lg` | -           |
-| @nav-bar-title-text-color | `@text-color`   | -           |
-| @nav-bar-z-index          | `1`             | -           |
+| Name                           | Default Value   | Description |
+| ------------------------------ | --------------- | ----------- |
+| --van-nav-bar-height           | `46px`          | -           |
+| --van-nav-bar-background-color | `@white`        | -           |
+| --van-nav-bar-arrow-size       | `16px`          | -           |
+| --van-nav-bar-icon-color       | `@blue`         | -           |
+| --van-nav-bar-text-color       | `@blue`         | -           |
+| --van-nav-bar-title-font-size  | `@font-size-lg` | -           |
+| --van-nav-bar-title-text-color | `@text-color`   | -           |
+| --van-nav-bar-z-index          | `1`             | -           |

@@ -79,13 +79,13 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                               | 默认值              | 描述 |
-| ---------------------------------- | ------------------- | ---- |
-| @contact-edit-padding              | `@padding-md`       | -    |
-| @contact-edit-fields-radius        | `@border-radius-md` | -    |
-| @contact-edit-buttons-padding      | `@padding-xl 0`     | -    |
-| @contact-edit-button-margin-bottom | `@padding-sm`       | -    |
-| @contact-edit-button-font-size     | `16px`              | -    |
-| @contact-edit-field-label-width    | `4.1em`             | -    |
+| 名称                                    | 默认值              | 描述 |
+| --------------------------------------- | ------------------- | ---- |
+| --van-contact-edit-padding              | `@padding-md`       | -    |
+| --van-contact-edit-fields-radius        | `@border-radius-md` | -    |
+| --van-contact-edit-buttons-padding      | `@padding-xl 0`     | -    |
+| --van-contact-edit-button-margin-bottom | `@padding-sm`       | -    |
+| --van-contact-edit-button-font-size     | `16px`              | -    |
+| --van-contact-edit-field-label-width    | `4.1em`             | -    |

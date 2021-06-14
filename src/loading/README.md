@@ -85,14 +85,14 @@ use `color` or `text-color` to change text color.
 | ------- | ------------ |
 | default | Loading text |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                | Default Value   | Description |
-| ----------------------------------- | --------------- | ----------- |
-| @loading-text-color                 | `@gray-6`       | -           |
-| @loading-text-font-size             | `@font-size-md` | -           |
-| @loading-spinner-color              | `@gray-5`       | -           |
-| @loading-spinner-size               | `30px`          | -           |
-| @loading-spinner-animation-duration | `0.8s`          | -           |
+| Name                                     | Default Value   | Description |
+| ---------------------------------------- | --------------- | ----------- |
+| --van-loading-text-color                 | `@gray-6`       | -           |
+| --van-loading-text-font-size             | `@font-size-md` | -           |
+| --van-loading-spinner-color              | `@gray-5`       | -           |
+| --van-loading-spinner-size               | `30px`          | -           |
+| --van-loading-spinner-animation-duration | `0.8s`          | -           |

@@ -228,22 +228,22 @@ export default {
 | ----- | ------------ |
 | title | Custom title |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                              | Default Value   | Description |
-| --------------------------------- | --------------- | ----------- |
-| @cascader-header-height           | `48px`          | -           |
-| @cascader-header-padding          | `0 @padding-md` | -           |
-| @cascader-title-font-size         | `@font-size-lg` | -           |
-| @cascader-title-line-height       | `20px`          | -           |
-| @cascader-close-icon-size         | `22px`          | -           |
-| @cascader-close-icon-color        | `@gray-5`       | -           |
-| @cascader-close-icon-active-color | `@gray-6`       | -           |
-| @cascader-selected-icon-size      | `18px`          | -           |
-| @cascader-tabs-height             | `48px`          | -           |
-| @cascader-active-color            | `@red`          | -           |
-| @cascader-options-height          | `384px`         | -           |
-| @cascader-tab-color               | `@text-color`   | -           |
-| @cascader-unselected-tab-color    | `@gray-6`       | -           |
+| Name                                   | Default Value   | Description |
+| -------------------------------------- | --------------- | ----------- |
+| --van-cascader-header-height           | `48px`          | -           |
+| --van-cascader-header-padding          | `0 @padding-md` | -           |
+| --van-cascader-title-font-size         | `@font-size-lg` | -           |
+| --van-cascader-title-line-height       | `20px`          | -           |
+| --van-cascader-close-icon-size         | `22px`          | -           |
+| --van-cascader-close-icon-color        | `@gray-5`       | -           |
+| --van-cascader-close-icon-active-color | `@gray-6`       | -           |
+| --van-cascader-selected-icon-size      | `18px`          | -           |
+| --van-cascader-tabs-height             | `48px`          | -           |
+| --van-cascader-active-color            | `@red`          | -           |
+| --van-cascader-options-height          | `384px`         | -           |
+| --van-cascader-tab-color               | `@text-color`   | -           |
+| --van-cascader-unselected-tab-color    | `@gray-6`       | -           |

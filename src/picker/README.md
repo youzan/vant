@@ -383,22 +383,22 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Picker
 | setColumnValues | Set columns data of the column | columnIndex, values | - |
 | confirm | Stop scrolling and emit confirm event | - | - |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                            | Default Value              | Description |
-| ------------------------------- | -------------------------- | ----------- |
-| @picker-background-color        | `@white`                   | -           |
-| @picker-toolbar-height          | `44px`                     | -           |
-| @picker-title-font-size         | `@font-size-lg`            | -           |
-| @picker-title-line-height       | `@line-height-md`          | -           |
-| @picker-action-padding          | `0 @padding-md`            | -           |
-| @picker-action-font-size        | `@font-size-md`            | -           |
-| @picker-confirm-action-color    | `@text-link-color`         | -           |
-| @picker-cancel-action-color     | `@gray-6`                  | -           |
-| @picker-option-font-size        | `@font-size-lg`            | -           |
-| @picker-option-text-color       | `@black`                   | -           |
-| @picker-option-disabled-opacity | `0.3`                      | -           |
-| @picker-loading-icon-color      | `@blue`                    | -           |
-| @picker-loading-mask-color      | `rgba(255, 255, 255, 0.9)` | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-picker-background-color | `@white` | - |
+| --van-picker-toolbar-height | `44px` | - |
+| --van-picker-title-font-size | `@font-size-lg` | - |
+| --van-picker-title-line-height | `@line-height-md` | - |
+| --van-picker-action-padding | `0 @padding-md` | - |
+| --van-picker-action-font-size | `@font-size-md` | - |
+| --van-picker-confirm-action-color | `@text-link-color` | - |
+| --van-picker-cancel-action-color | `@gray-6` | - |
+| --van-picker-option-font-size | `@font-size-lg` | - |
+| --van-picker-option-text-color | `@black` | - |
+| --van-picker-option-disabled-opacity | `0.3` | - |
+| --van-picker-loading-icon-color | `@blue` | - |
+| --van-picker-loading-mask-color | `rgba(255, 255, 255, 0.9)` | - |

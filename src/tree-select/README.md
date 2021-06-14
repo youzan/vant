@@ -230,17 +230,17 @@ In every tree object, `text` property defines `id` stands for the unique key whi
 ];
 ```
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                  | Default Value       | Description |
-| ------------------------------------- | ------------------- | ----------- |
-| @tree-select-font-size                | `@font-size-md`     | -           |
-| @tree-select-nav-background-color     | `@background-color` | -           |
-| @tree-select-content-background-color | `@white`            | -           |
-| @tree-select-nav-item-padding         | `14px @padding-sm`  | -           |
-| @tree-select-item-height              | `48px`              | -           |
-| @tree-select-item-active-color        | `@red`              | -           |
-| @tree-select-item-disabled-color      | `@gray-5`           | -           |
-| @tree-select-item-selected-size       | `16px`              | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-tree-select-font-size | `@font-size-md` | - |
+| --van-tree-select-nav-background-color | `@background-color` | - |
+| --van-tree-select-content-background-color | `@white` | - |
+| --van-tree-select-nav-item-padding | `14px @padding-sm` | - |
+| --van-tree-select-item-height | `48px` | - |
+| --van-tree-select-item-active-color | `@red` | - |
+| --van-tree-select-item-disabled-color | `@gray-5` | - |
+| --van-tree-select-item-selected-size | `16px` | - |

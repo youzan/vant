@@ -182,16 +182,16 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                              | 默认值                         | 描述 |
-| --------------------------------- | ------------------------------ | ---- |
-| @slider-active-background-color   | `@blue`                        | -    |
-| @slider-inactive-background-color | `@gray-3`                      | -    |
-| @slider-disabled-opacity          | `@disabled-opacity`            | -    |
-| @slider-bar-height                | `2px`                          | -    |
-| @slider-button-width              | `24px`                         | -    |
-| @slider-button-height             | `24px`                         | -    |
-| @slider-button-border-radius      | `50%`                          | -    |
-| @slider-button-background-color   | `@white`                       | -    |
-| @slider-button-box-shadow         | `0 1px 2px rgba(0, 0, 0, 0.5)` | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-slider-active-background-color | `@blue` | - |
+| --van-slider-inactive-background-color | `@gray-3` | - |
+| --van-slider-disabled-opacity | `@disabled-opacity` | - |
+| --van-slider-bar-height | `2px` | - |
+| --van-slider-button-width | `24px` | - |
+| --van-slider-button-height | `24px` | - |
+| --van-slider-button-border-radius | `50%` | - |
+| --van-slider-button-background-color | `@white` | - |
+| --van-slider-button-box-shadow | `0 1px 2px rgba(0, 0, 0, 0.5)` | - |

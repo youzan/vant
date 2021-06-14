@@ -347,16 +347,16 @@ checkboxGroup.toggleAll({
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                | 默认值                     | 描述 |
-| ----------------------------------- | -------------------------- | ---- |
-| @checkbox-size                      | `20px`                     | -    |
-| @checkbox-border-color              | `@gray-5`                  | -    |
-| @checkbox-transition-duration       | `@animation-duration-fast` | -    |
-| @checkbox-label-margin              | `@padding-xs`              | -    |
-| @checkbox-label-color               | `@text-color`              | -    |
-| @checkbox-checked-icon-color        | `@blue`                    | -    |
-| @checkbox-disabled-icon-color       | `@gray-5`                  | -    |
-| @checkbox-disabled-label-color      | `@gray-5`                  | -    |
-| @checkbox-disabled-background-color | `@border-color`            | -    |
+| 名称                                     | 默认值                     | 描述 |
+| ---------------------------------------- | -------------------------- | ---- |
+| --van-checkbox-size                      | `20px`                     | -    |
+| --van-checkbox-border-color              | `@gray-5`                  | -    |
+| --van-checkbox-transition-duration       | `@animation-duration-fast` | -    |
+| --van-checkbox-label-margin              | `@padding-xs`              | -    |
+| --van-checkbox-label-color               | `@text-color`              | -    |
+| --van-checkbox-checked-icon-color        | `@blue`                    | -    |
+| --van-checkbox-disabled-icon-color       | `@gray-5`                  | -    |
+| --van-checkbox-disabled-label-color      | `@gray-5`                  | -    |
+| --van-checkbox-disabled-background-color | `@border-color`            | -    |

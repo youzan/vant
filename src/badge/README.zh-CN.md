@@ -143,17 +143,17 @@ app.use(Badge);
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| @badge-size | `16px` | - |
-| @badge-color | `@white` | - |
-| @badge-padding | `0 3px` | - |
-| @badge-font-size | `@font-size-sm` | - |
-| @badge-font-weight | `@font-weight-bold` | - |
-| @badge-border-width | `@border-width-base` | - |
-| @badge-background-color | `@red` | - |
-| @badge-dot-color | `@red` | - |
-| @badge-dot-size | `8px` | - |
-| @badge-font-family | `-apple-system-font, Helvetica Neue, Arial, sans-serif` | - |
+| --van-badge-size | `16px` | - |
+| --van-badge-color | `@white` | - |
+| --van-badge-padding | `0 3px` | - |
+| --van-badge-font-size | `@font-size-sm` | - |
+| --van-badge-font-weight | `@font-weight-bold` | - |
+| --van-badge-border-width | `@border-width-base` | - |
+| --van-badge-background-color | `@red` | - |
+| --van-badge-dot-color | `@red` | - |
+| --van-badge-dot-size | `8px` | - |
+| --van-badge-font-family | `-apple-system-font, Helvetica Neue, Arial, sans-serif` | - |

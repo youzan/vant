@@ -353,35 +353,35 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| @calendar-background-color | `@white` | - |
-| @calendar-popup-height | `80%` | - |
-| @calendar-header-box-shadow | `0 2px 10px rgba(125, 126, 128, 0.16)` | - |
-| @calendar-header-title-height | `44px` | - |
-| @calendar-header-title-font-size | `@font-size-lg` | - |
-| @calendar-header-subtitle-font-size | `@font-size-md` | - |
-| @calendar-weekdays-height | `30px` | - |
-| @calendar-weekdays-font-size | `@font-size-sm` | - |
-| @calendar-month-title-font-size | `@font-size-md` | - |
-| @calendar-month-mark-color | `fade(@gray-2, 80%)` | - |
-| @calendar-month-mark-font-size | `160px` | - |
-| @calendar-day-height | `64px` | - |
-| @calendar-day-font-size | `@font-size-lg` | - |
-| @calendar-range-edge-color | `@white` | - |
-| @calendar-range-edge-background-color | `@red` | - |
-| @calendar-range-middle-color | `@red` | - |
-| @calendar-range-middle-background-opacity | `0.1` | - |
-| @calendar-selected-day-size | `54px` | - |
-| @calendar-selected-day-color | `@white` | - |
-| @calendar-info-font-size | `@font-size-xs` | - |
-| @calendar-info-line-height | `@line-height-xs` | - |
-| @calendar-selected-day-background-color | `@red` | - |
-| @calendar-day-disabled-color | `@gray-5` | - |
-| @calendar-confirm-button-height | `36px` | - |
-| @calendar-confirm-button-margin | `7px 0` | - |
+| --van-calendar-background-color | `@white` | - |
+| --van-calendar-popup-height | `80%` | - |
+| --van-calendar-header-box-shadow | `0 2px 10px rgba(125, 126, 128, 0.16)` | - |
+| --van-calendar-header-title-height | `44px` | - |
+| --van-calendar-header-title-font-size | `@font-size-lg` | - |
+| --van-calendar-header-subtitle-font-size | `@font-size-md` | - |
+| --van-calendar-weekdays-height | `30px` | - |
+| --van-calendar-weekdays-font-size | `@font-size-sm` | - |
+| --van-calendar-month-title-font-size | `@font-size-md` | - |
+| --van-calendar-month-mark-color | `fade(@gray-2, 80%)` | - |
+| --van-calendar-month-mark-font-size | `160px` | - |
+| --van-calendar-day-height | `64px` | - |
+| --van-calendar-day-font-size | `@font-size-lg` | - |
+| --van-calendar-range-edge-color | `@white` | - |
+| --van-calendar-range-edge-background-color | `@red` | - |
+| --van-calendar-range-middle-color | `@red` | - |
+| --van-calendar-range-middle-background-opacity | `0.1` | - |
+| --van-calendar-selected-day-size | `54px` | - |
+| --van-calendar-selected-day-color | `@white` | - |
+| --van-calendar-info-font-size | `@font-size-xs` | - |
+| --van-calendar-info-line-height | `@line-height-xs` | - |
+| --van-calendar-selected-day-background-color | `@red` | - |
+| --van-calendar-day-disabled-color | `@gray-5` | - |
+| --van-calendar-confirm-button-height | `36px` | - |
+| --van-calendar-confirm-button-margin | `7px 0` | - |
 
 ## 常见问题
 

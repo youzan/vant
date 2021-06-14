@@ -178,18 +178,18 @@ export default {
 | ------ | ------------- |
 | button | Custom button |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @slider-active-background-color | `@blue` | - |
-| @slider-inactive-background-color | `@gray-3` | - |
-| @slider-disabled-opacity | `@disabled-opacity` | - |
-| @slider-bar-height | `2px` | - |
-| @slider-button-width | `24px` | - |
-| @slider-button-height | `24px` | - |
-| @slider-button-border-radius | `50%` | - |
-| @slider-button-background-color | `@white` | - |
-| @slider-button-box-shadow | `0 1px 2px rgba(0, 0, 0, 0.5)` | - |
+| --van-slider-active-background-color | `@blue` | - |
+| --van-slider-inactive-background-color | `@gray-3` | - |
+| --van-slider-disabled-opacity | `@disabled-opacity` | - |
+| --van-slider-bar-height | `2px` | - |
+| --van-slider-button-width | `24px` | - |
+| --van-slider-button-height | `24px` | - |
+| --van-slider-button-border-radius | `50%` | - |
+| --van-slider-button-background-color | `@white` | - |
+| --van-slider-button-box-shadow | `0 1px 2px rgba(0, 0, 0, 0.5)` | - |

@@ -73,16 +73,16 @@ export default {
 | avatar-size | Size of avatar placeholder | _number \| string_ | `32px` |
 | avatar-shape | Shape of avatar placeholder，can be set to `square` | _string_ | `round` |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                              | Default Value   | Description |
-| --------------------------------- | --------------- | ----------- |
-| @skeleton-row-height              | `16px`          | -           |
-| @skeleton-row-background-color    | `@active-color` | -           |
-| @skeleton-row-margin-top          | `@padding-sm`   | -           |
-| @skeleton-title-width             | `40%`           | -           |
-| @skeleton-avatar-size             | `32px`          | -           |
-| @skeleton-avatar-background-color | `@active-color` | -           |
-| @skeleton-animation-duration      | `1.2s`          | -           |
+| Name                                   | Default Value   | Description |
+| -------------------------------------- | --------------- | ----------- |
+| --van-skeleton-row-height              | `16px`          | -           |
+| --van-skeleton-row-background-color    | `@active-color` | -           |
+| --van-skeleton-row-margin-top          | `@padding-sm`   | -           |
+| --van-skeleton-title-width             | `40%`           | -           |
+| --van-skeleton-avatar-size             | `32px`          | -           |
+| --van-skeleton-avatar-background-color | `@active-color` | -           |
+| --van-skeleton-animation-duration      | `1.2s`          | -           |

@@ -123,20 +123,20 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| @address-list-padding | `@padding-sm @padding-sm 80px` | - |
-| @address-list-disabled-text-color | `@gray-6` | - |
-| @address-list-disabled-text-padding | `@padding-base * 5 0 @padding-md` | - |
-| @address-list-disabled-text-font-size | `@font-size-md` | - |
-| @address-list-disabled-text-line-height | `@line-height-md` | - |
-| @address-list-add-button-z-index | `999` | - |
-| @address-list-item-padding | `@padding-sm` | - |
-| @address-list-item-text-color | `@text-color` | - |
-| @address-list-item-disabled-text-color | `@gray-5` | - |
-| @address-list-item-font-size | `13px` | - |
-| @address-list-item-line-height | `@line-height-sm` | - |
-| @address-list-item-radio-icon-color | `@red` | - |
-| @address-list-edit-icon-size | `20px` | - |
+| --van-address-list-padding | `@padding-sm @padding-sm 80px` | - |
+| --van-address-list-disabled-text-color | `@gray-6` | - |
+| --van-address-list-disabled-text-padding | `@padding-base * 5 0 @padding-md` | - |
+| --van-address-list-disabled-text-font-size | `@font-size-md` | - |
+| --van-address-list-disabled-text-line-height | `@line-height-md` | - |
+| --van-address-list-add-button-z-index | `999` | - |
+| --van-address-list-item-padding | `@padding-sm` | - |
+| --van-address-list-item-text-color | `@text-color` | - |
+| --van-address-list-item-disabled-text-color | `@gray-5` | - |
+| --van-address-list-item-font-size | `13px` | - |
+| --van-address-list-item-line-height | `@line-height-sm` | - |
+| --van-address-list-item-radio-icon-color | `@red` | - |
+| --van-address-list-edit-icon-size | `20px` | - |

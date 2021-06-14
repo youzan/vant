@@ -200,21 +200,21 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Dropdo
 | value | Value       | _number \| string_ |
 | icon  | Left icon   | _string_           |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @dropdown-menu-height | `48px` | - |
-| @dropdown-menu-background-color | `@white` | - |
-| @dropdown-menu-box-shadow | `0 2px 12px fade(@gray-7, 12)` | - |
-| @dropdown-menu-title-font-size | `15px` | - |
-| @dropdown-menu-title-text-color | `@text-color` | - |
-| @dropdown-menu-title-active-text-color | `@red` | - |
-| @dropdown-menu-title-disabled-text-color | `@gray-6` | - |
-| @dropdown-menu-title-padding | `0 @padding-xs` | - |
-| @dropdown-menu-title-line-height | `@line-height-lg` | - |
-| @dropdown-menu-option-active-color | `@red` | - |
-| @dropdown-menu-content-max-height | `80%` | - |
-| @dropdown-item-z-index | `10` | - |
+| --van-dropdown-menu-height | `48px` | - |
+| --van-dropdown-menu-background-color | `@white` | - |
+| --van-dropdown-menu-box-shadow | `0 2px 12px fade(@gray-7, 12)` | - |
+| --van-dropdown-menu-title-font-size | `15px` | - |
+| --van-dropdown-menu-title-text-color | `@text-color` | - |
+| --van-dropdown-menu-title-active-text-color | `@red` | - |
+| --van-dropdown-menu-title-disabled-text-color | `@gray-6` | - |
+| --van-dropdown-menu-title-padding | `0 @padding-xs` | - |
+| --van-dropdown-menu-title-line-height | `@line-height-lg` | - |
+| --van-dropdown-menu-option-active-color | `@red` | - |
+| --van-dropdown-menu-content-max-height | `80%` | - |
+| --van-dropdown-item-z-index | `10` | - |
