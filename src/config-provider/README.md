@@ -40,7 +40,7 @@ The default values of these variables are defined on the `root` node:
   --van-white: #fff;
   --van-blue: #1989fa;
   --van-button-primary-color: var(--van-white);
-  --van-button-primary-background-color: var(--van-blue);
+  --van-button-primary-background-color: var(--van-primary-color);
 }
 ```
 
@@ -140,6 +140,10 @@ There are some **Basic Variables** below, for component CSS Variables, please re
 --van-gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
 
 // Component Colors
+--van-primary-color: var(--van-blue);
+--van-success-color: var(--van-green);
+--van-danger-color: var(--van-red);
+--van-warning-color: var(--van-orange);
 --van-text-color: var(--van-gray-8);
 --van-active-color: var(--van-gray-2);
 --van-active-opacity: 0.7;

@@ -150,7 +150,7 @@ The component provides the following CSS variables, which can be used to customi
 | Name                          | Default Value                 | Description |
 | ----------------------------- | ----------------------------- | ----------- |
 | --van-circle-size             | _100px_                       | -           |
-| --van-circle-color            | _var(--van-blue)_             | -           |
+| --van-circle-color            | _var(--van-primary-color)_    | -           |
 | --van-circle-layer-color      | _var(--van-white)_            | -           |
 | --van-circle-text-color       | _var(--van-text-color)_       | -           |
 | --van-circle-text-font-weight | _var(--van-font-weight-bold)_ | -           |

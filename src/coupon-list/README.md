@@ -163,14 +163,14 @@ The component provides the following CSS variables, which can be used to customi
 | --van-coupon-border-radius | _var(--van-border-radius-lg)_ | - |
 | --van-coupon-box-shadow | _0 0 4px rgba(0, 0, 0, 0.1)_ | - |
 | --van-coupon-head-width | _96px_ | - |
-| --van-coupon-amount-color | _var(--van-red)_ | - |
+| --van-coupon-amount-color | _var(--van-danger-color)_ | - |
 | --van-coupon-amount-font-size | _30px_ | - |
 | --van-coupon-currency-font-size | _40%_ | - |
 | --van-coupon-name-font-size | _var(--van-font-size-md)_ | - |
 | --van-coupon-disabled-text-color | _var(--van-gary-6)_ | - |
 | --van-coupon-description-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
 | --van-coupon-description-border-color | _var(--van-border-color)_ | - |
-| --van-coupon-corner-checkbox-icon-color | _var(--van-red)_ | - |
+| --van-coupon-corner-checkbox-icon-color | _var(--van-danger-color)_ | - |
 | --van-coupon-list-background-color | _var(--van-background-color)_ | - |
 | --van-coupon-list-field-padding | _5px 0 5px var(--van-padding-md)_ | - |
 | --van-coupon-list-exchange-button-height | _32px_ | - |

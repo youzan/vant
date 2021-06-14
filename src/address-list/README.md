@@ -138,5 +138,5 @@ The component provides the following CSS variables, which can be used to customi
 | --van-address-list-item-disabled-text-color | _var(--van-gary-5)_ | - |
 | --van-address-list-item-font-size | _13px_ | - |
 | --van-address-list-item-line-height | _var(--van-line-height-sm)_ | - |
-| --van-address-list-item-radio-icon-color | _var(--van-red)_ | - |
+| --van-address-list-item-radio-icon-color | _var(--van-danger-color)_ | - |
 | --van-address-list-edit-icon-size | _20px_ | - |

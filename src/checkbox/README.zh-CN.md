@@ -356,7 +356,7 @@ checkboxGroup.toggleAll({
 | --van-checkbox-transition-duration | _var(--van-animation-duration-fast)_ | - |
 | --van-checkbox-label-margin | _var(--van-padding-xs)_ | - |
 | --van-checkbox-label-color | _var(--van-text-color)_ | - |
-| --van-checkbox-checked-icon-color | _var(--van-blue)_ | - |
+| --van-checkbox-checked-icon-color | _var(--van-primary-color)_ | - |
 | --van-checkbox-disabled-icon-color | _var(--van-gary-5)_ | - |
 | --van-checkbox-disabled-label-color | _var(--van-gary-5)_ | - |
 | --van-checkbox-disabled-background-color | _var(--van-border-color)_ | - |

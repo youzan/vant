@@ -211,7 +211,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-tabbar-background-color | _var(--van-white)_ | - |
 | --van-tabbar-item-font-size | _var(--van-font-size-sm)_ | - |
 | --van-tabbar-item-text-color | _var(--van-gary-7)_ | - |
-| --van-tabbar-item-active-color | _var(--van-blue)_ | - |
+| --van-tabbar-item-active-color | _var(--van-primary-color)_ | - |
 | --van-tabbar-item-active-background-color | _var(--van-white)_ | - |
 | --van-tabbar-item-line-height | _1_ | - |
 | --van-tabbar-item-icon-size | _22px_ | - |

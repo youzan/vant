@@ -210,7 +210,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-radio-transition-duration | _var(--van-animation-duration-fast)_ | - |
 | --van-radio-label-margin | _var(--van-padding-xs)_ | - |
 | --van-radio-label-color | _var(--van-text-color)_ | - |
-| --van-radio-checked-icon-color | _var(--van-blue)_ | - |
+| --van-radio-checked-icon-color | _var(--van-primary-color)_ | - |
 | --van-radio-disabled-icon-color | _var(--van-gary-5)_ | - |
 | --van-radio-disabled-label-color | _var(--van-gary-5)_ | - |
 | --van-radio-disabled-background-color | _var(--van-border-color)_ | - |

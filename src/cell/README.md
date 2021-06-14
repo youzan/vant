@@ -196,7 +196,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-cell-background-color | _var(--van-white)_ | - |
 | --van-cell-border-color | _var(--van-border-color)_ | - |
 | --van-cell-active-color | _var(--van-active-color)_ | - |
-| --van-cell-required-color | _var(--van-red)_ | - |
+| --van-cell-required-color | _var(--van-danger-color)_ | - |
 | --van-cell-label-color | _var(--van-gary-6)_ | - |
 | --van-cell-label-font-size | _var(--van-font-size-sm)_ | - |
 | --van-cell-label-line-height | _var(--van-line-height-sm)_ | - |

@@ -229,7 +229,7 @@ export default {
 | --van-number-keyboard-close-color | _var(--van-text-link-color)_ | - |
 | --van-number-keyboard-close-font-size | _var(--van-font-size-md)_ | - |
 | --van-number-keyboard-button-text-color | _var(--van-white)_ | - |
-| --van-number-keyboard-button-background-color | _var(--van-blue)_ | - |
+| --van-number-keyboard-button-background-color | _var(--van-primary-color)_ | - |
 | --van-number-keyboard-z-index | _100_ | - |
 
 ## 常见问题
