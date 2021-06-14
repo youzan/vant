@@ -164,4 +164,4 @@ export default {
 | --van-notify-primary-background-color | _var(--van-blue)_ | - |
 | --van-notify-success-background-color | _var(--van-green)_ | - |
 | --van-notify-danger-background-color | _var(--van-red)_ | - |
-| --van-notify-warning-background-color | _var(--van-orange)_ | - |
+| --van-notify-warning-background-color | _var(--van-warning-color)_ | - |
