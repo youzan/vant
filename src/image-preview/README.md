@@ -215,13 +215,13 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-image-preview-index-text-color | `@white` | - |
-| --van-image-preview-index-font-size | `@font-size-md` | - |
-| --van-image-preview-index-line-height | `@line-height-md` | - |
+| --van-image-preview-index-text-color | `var(--van-white)` | - |
+| --van-image-preview-index-font-size | `var(--van-font-size-md)` | - |
+| --van-image-preview-index-line-height | `var(--van-line-height-md)` | - |
 | --van-image-preview-index-text-shadow | `0 1px 1px @gray-8` | - |
 | --van-image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | - |
 | --van-image-preview-close-icon-size | `22px` | - |
-| --van-image-preview-close-icon-color | `@gray-5` | - |
-| --van-image-preview-close-icon-active-color | `@gray-6` | - |
-| --van-image-preview-close-icon-margin | `@padding-md` | - |
+| --van-image-preview-close-icon-color | `var(--van-gary-5)` | - |
+| --van-image-preview-close-icon-active-color | `var(--van-gary-6)` | - |
+| --van-image-preview-close-icon-margin | `var(--van-padding-md)` | - |
 | --van-image-preview-close-icon-z-index | `1` | - |

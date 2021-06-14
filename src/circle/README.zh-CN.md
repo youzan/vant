@@ -159,12 +159,12 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                          | 默认值              | 描述 |
-| ----------------------------- | ------------------- | ---- |
-| --van-circle-size             | `100px`             | -    |
-| --van-circle-color            | `@blue`             | -    |
-| --van-circle-layer-color      | `@white`            | -    |
-| --van-circle-text-color       | `@text-color`       | -    |
-| --van-circle-text-font-weight | `@font-weight-bold` | -    |
-| --van-circle-text-font-size   | `@font-size-md`     | -    |
-| --van-circle-text-line-height | `@line-height-md`   | -    |
+| 名称                          | 默认值                        | 描述 |
+| ----------------------------- | ----------------------------- | ---- |
+| --van-circle-size             | `100px`                       | -    |
+| --van-circle-color            | `var(--van-blue)`             | -    |
+| --van-circle-layer-color      | `var(--van-white)`            | -    |
+| --van-circle-text-color       | `var(--van-text-color)`       | -    |
+| --van-circle-text-font-weight | `var(--van-font-weight-bold)` | -    |
+| --van-circle-text-font-size   | `var(--van-font-size-md)`     | -    |
+| --van-circle-text-line-height | `var(--van-line-height-md)`   | -    |

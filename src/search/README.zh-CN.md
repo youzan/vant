@@ -185,19 +185,19 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                  | 默认值             | 描述 |
-| ------------------------------------- | ------------------ | ---- |
-| --van-search-padding                  | `10px @padding-sm` | -    |
-| --van-search-background-color         | `@white`           | -    |
-| --van-search-content-background-color | `@gray-1`          | -    |
-| --van-search-input-height             | `34px`             | -    |
-| --van-search-label-padding            | `0 5px`            | -    |
-| --van-search-label-color              | `@text-color`      | -    |
-| --van-search-label-font-size          | `@font-size-md`    | -    |
-| --van-search-left-icon-color          | `@gray-6`          | -    |
-| --van-search-action-padding           | `0 @padding-xs`    | -    |
-| --van-search-action-text-color        | `@text-color`      | -    |
-| --van-search-action-font-size         | `@font-size-md`    | -    |
+| 名称                                  | 默认值                       | 描述 |
+| ------------------------------------- | ---------------------------- | ---- |
+| --van-search-padding                  | `10px var(--van-padding-sm)` | -    |
+| --van-search-background-color         | `var(--van-white)`           | -    |
+| --van-search-content-background-color | `var(--van-gary-1)`          | -    |
+| --van-search-input-height             | `34px`                       | -    |
+| --van-search-label-padding            | `0 5px`                      | -    |
+| --van-search-label-color              | `var(--van-text-color)`      | -    |
+| --van-search-label-font-size          | `var(--van-font-size-md)`    | -    |
+| --van-search-left-icon-color          | `var(--van-gary-6)`          | -    |
+| --van-search-action-padding           | `0 var(--van-padding-xs)`    | -    |
+| --van-search-action-text-color        | `var(--van-text-color)`      | -    |
+| --van-search-action-font-size         | `var(--van-font-size-md)`    | -    |
 
 ## 常见问题
 

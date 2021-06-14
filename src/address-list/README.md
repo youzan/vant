@@ -127,16 +127,16 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-address-list-padding | `@padding-sm @padding-sm 80px` | - |
-| --van-address-list-disabled-text-color | `@gray-6` | - |
-| --van-address-list-disabled-text-padding | `@padding-base * 5 0 @padding-md` | - |
-| --van-address-list-disabled-text-font-size | `@font-size-md` | - |
-| --van-address-list-disabled-text-line-height | `@line-height-md` | - |
+| --van-address-list-padding | `var(--van-padding-sm) var(--van-padding-sm) 80px` | - |
+| --van-address-list-disabled-text-color | `var(--van-gary-6)` | - |
+| --van-address-list-disabled-text-padding | `var(--van-padding-base) * 5 0 var(--van-padding-md)` | - |
+| --van-address-list-disabled-text-font-size | `var(--van-font-size-md)` | - |
+| --van-address-list-disabled-text-line-height | `var(--van-line-height-md)` | - |
 | --van-address-list-add-button-z-index | `999` | - |
-| --van-address-list-item-padding | `@padding-sm` | - |
-| --van-address-list-item-text-color | `@text-color` | - |
-| --van-address-list-item-disabled-text-color | `@gray-5` | - |
+| --van-address-list-item-padding | `var(--van-padding-sm)` | - |
+| --van-address-list-item-text-color | `var(--van-text-color)` | - |
+| --van-address-list-item-disabled-text-color | `var(--van-gary-5)` | - |
 | --van-address-list-item-font-size | `13px` | - |
-| --van-address-list-item-line-height | `@line-height-sm` | - |
-| --van-address-list-item-radio-icon-color | `@red` | - |
+| --van-address-list-item-line-height | `var(--van-line-height-sm)` | - |
+| --van-address-list-item-radio-icon-color | `var(--van-red)` | - |
 | --van-address-list-edit-icon-size | `20px` | - |

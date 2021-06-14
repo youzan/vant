@@ -204,14 +204,14 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                            | 默认值          | 描述 |
-| ----------------------------------------------- | --------------- | ---- |
-| --van-swipe-indicator-size                      | `6px`           | -    |
-| --van-swipe-indicator-margin                    | `@padding-sm`   | -    |
-| --van-swipe-indicator-active-opacity            | `1`             | -    |
-| --van-swipe-indicator-inactive-opacity          | `0.3`           | -    |
-| --van-swipe-indicator-active-background-color   | `@blue`         | -    |
-| --van-swipe-indicator-inactive-background-color | `@border-color` | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-swipe-indicator-size | `6px` | - |
+| --van-swipe-indicator-margin | `var(--van-padding-sm)` | - |
+| --van-swipe-indicator-active-opacity | `1` | - |
+| --van-swipe-indicator-inactive-opacity | `0.3` | - |
+| --van-swipe-indicator-active-background-color | `var(--van-blue)` | - |
+| --van-swipe-indicator-inactive-background-color | `var(--van-border-color)` | - |
 
 ## 常见问题
 

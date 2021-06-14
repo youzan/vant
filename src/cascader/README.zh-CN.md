@@ -242,18 +242,18 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                   | 默认值          | 描述 |
-| -------------------------------------- | --------------- | ---- |
-| --van-cascader-header-height           | `48px`          | -    |
-| --van-cascader-header-padding          | `0 @padding-md` | -    |
-| --van-cascader-title-font-size         | `@font-size-lg` | -    |
-| --van-cascader-title-line-height       | `20px`          | -    |
-| --van-cascader-close-icon-size         | `22px`          | -    |
-| --van-cascader-close-icon-color        | `@gray-5`       | -    |
-| --van-cascader-close-icon-active-color | `@gray-6`       | -    |
-| --van-cascader-selected-icon-size      | `18px`          | -    |
-| --van-cascader-tabs-height             | `48px`          | -    |
-| --van-cascader-active-color            | `@red`          | -    |
-| --van-cascader-options-height          | `384px`         | -    |
-| --van-cascader-tab-color               | `@text-color`   | -    |
-| --van-cascader-unselected-tab-color    | `@gray-6`       | -    |
+| 名称                                   | 默认值                    | 描述 |
+| -------------------------------------- | ------------------------- | ---- |
+| --van-cascader-header-height           | `48px`                    | -    |
+| --van-cascader-header-padding          | `0 var(--van-padding-md)` | -    |
+| --van-cascader-title-font-size         | `var(--van-font-size-lg)` | -    |
+| --van-cascader-title-line-height       | `20px`                    | -    |
+| --van-cascader-close-icon-size         | `22px`                    | -    |
+| --van-cascader-close-icon-color        | `var(--van-gary-5)`       | -    |
+| --van-cascader-close-icon-active-color | `var(--van-gary-6)`       | -    |
+| --van-cascader-selected-icon-size      | `18px`                    | -    |
+| --van-cascader-tabs-height             | `48px`                    | -    |
+| --van-cascader-active-color            | `var(--van-red)`          | -    |
+| --van-cascader-options-height          | `384px`                   | -    |
+| --van-cascader-tab-color               | `var(--van-text-color)`   | -    |
+| --van-cascader-unselected-tab-color    | `var(--van-gary-6)`       | -    |

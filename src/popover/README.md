@@ -261,15 +261,15 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default Value | Description |
 | --- | --- | --- |
 | --van-popover-arrow-size | `6px` | - |
-| --van-popover-border-radius | `@border-radius-lg` | - |
+| --van-popover-border-radius | `var(--van-border-radius-lg)` | - |
 | --van-popover-action-width | `128px` | - |
 | --van-popover-action-height | `44px` | - |
-| --van-popover-action-font-size | `@font-size-md` | - |
-| --van-popover-action-line-height | `@line-height-md` | - |
+| --van-popover-action-font-size | `var(--van-font-size-md)` | - |
+| --van-popover-action-line-height | `var(--van-line-height-md)` | - |
 | --van-popover-action-icon-size | `20px` | - |
-| --van-popover-light-text-color | `@text-color` | - |
-| --van-popover-light-background-color | `@white` | - |
-| --van-popover-light-action-disabled-text-color | `@gray-5` | - |
-| --van-popover-dark-text-color | `@white` | - |
+| --van-popover-light-text-color | `var(--van-text-color)` | - |
+| --van-popover-light-background-color | `var(--van-white)` | - |
+| --van-popover-light-action-disabled-text-color | `var(--van-gary-5)` | - |
+| --van-popover-dark-text-color | `var(--van-white)` | - |
 | --van-popover-dark-background-color | `#4a4a4a` | - |
-| --van-popover-dark-action-disabled-text-color | `@gray-6` | - |
+| --van-popover-dark-action-disabled-text-color | `var(--van-gary-6)` | - |

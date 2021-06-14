@@ -360,30 +360,30 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Upload
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                    | Default Value        | Description |
-| --------------------------------------- | -------------------- | ----------- |
-| --van-uploader-size                     | `80px`               | -           |
-| --van-uploader-icon-size                | `24px`               | -           |
-| --van-uploader-icon-color               | `@gray-4`            | -           |
-| --van-uploader-text-color               | `@gray-6`            | -           |
-| --van-uploader-text-font-size           | `@font-size-sm`      | -           |
-| --van-uploader-upload-background-color  | `@gray-1`            | -           |
-| --van-uploader-upload-active-color      | `@active-color`      | -           |
-| --van-uploader-delete-color             | `@white`             | -           |
-| --van-uploader-delete-icon-size         | `14px`               | -           |
-| --van-uploader-delete-background-color  | `rgba(0, 0, 0, 0.7)` | -           |
-| --van-uploader-file-background-color    | `@background-color`  | -           |
-| --van-uploader-file-icon-size           | `20px`               | -           |
-| --van-uploader-file-icon-color          | `@gray-7`            | -           |
-| --van-uploader-file-name-padding        | `0 @padding-base`    | -           |
-| --van-uploader-file-name-margin-top     | `@padding-xs`        | -           |
-| --van-uploader-file-name-font-size      | `@font-size-sm`      | -           |
-| --van-uploader-file-name-text-color     | `@gray-7`            | -           |
-| --van-uploader-mask-text-color          | `@white`             | -           |
-| --van-uploader-mask-background-color    | `fade(@gray-8, 88%)` | -           |
-| --van-uploader-mask-icon-size           | `22px`               | -           |
-| --van-uploader-mask-message-font-size   | `@font-size-sm`      | -           |
-| --van-uploader-mask-message-line-height | `@line-height-xs`    | -           |
-| --van-uploader-loading-icon-size        | `22px`               | -           |
-| --van-uploader-loading-icon-color       | `@white`             | -           |
-| --van-uploader-disabled-opacity         | `@disabled-opacity`  | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-uploader-size | `80px` | - |
+| --van-uploader-icon-size | `24px` | - |
+| --van-uploader-icon-color | `var(--van-gary-4)` | - |
+| --van-uploader-text-color | `var(--van-gary-6)` | - |
+| --van-uploader-text-font-size | `var(--van-font-size-sm)` | - |
+| --van-uploader-upload-background-color | `var(--van-gary-1)` | - |
+| --van-uploader-upload-active-color | `var(--van-active-color)` | - |
+| --van-uploader-delete-color | `var(--van-white)` | - |
+| --van-uploader-delete-icon-size | `14px` | - |
+| --van-uploader-delete-background-color | `rgba(0, 0, 0, 0.7)` | - |
+| --van-uploader-file-background-color | `var(--van-background-color)` | - |
+| --van-uploader-file-icon-size | `20px` | - |
+| --van-uploader-file-icon-color | `var(--van-gary-7)` | - |
+| --van-uploader-file-name-padding | `0 var(--van-padding-base)` | - |
+| --van-uploader-file-name-margin-top | `var(--van-padding-xs)` | - |
+| --van-uploader-file-name-font-size | `var(--van-font-size-sm)` | - |
+| --van-uploader-file-name-text-color | `var(--van-gary-7)` | - |
+| --van-uploader-mask-text-color | `var(--van-white)` | - |
+| --van-uploader-mask-background-color | `fade(@gray-8, 88%)` | - |
+| --van-uploader-mask-icon-size | `22px` | - |
+| --van-uploader-mask-message-font-size | `var(--van-font-size-sm)` | - |
+| --van-uploader-mask-message-line-height | `var(--van-line-height-xs)` | - |
+| --van-uploader-loading-icon-size | `22px` | - |
+| --van-uploader-loading-icon-color | `var(--van-white)` | - |
+| --van-uploader-disabled-opacity | `var(--van-disabled-opacity)` | - |

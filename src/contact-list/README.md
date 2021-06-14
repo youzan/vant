@@ -100,9 +100,9 @@ export default {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                     | Default Value | Description |
-| ---------------------------------------- | ------------- | ----------- |
-| --van-contact-list-edit-icon-size        | `16px`        | -           |
-| --van-contact-list-add-button-z-index    | `999`         | -           |
-| --van-contact-list-item-padding          | `@padding-md` | -           |
-| --van-contact-list-item-radio-icon-color | `@red`        | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-contact-list-edit-icon-size | `16px` | - |
+| --van-contact-list-add-button-z-index | `999` | - |
+| --van-contact-list-item-padding | `var(--van-padding-md)` | - |
+| --van-contact-list-item-radio-icon-color | `var(--van-red)` | - |

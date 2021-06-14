@@ -132,10 +132,10 @@ export default {
 
 ### beforeClose Params
 
-| Attribute | Description   | Type                                       |
-| --------- | ------------- | ------------------------------------------ |
-| name      | Name          | _string \| number_                         |
-| position  | Click positon | _'left' \| 'right' \| 'cell' \| 'outside'_ |
+| Attribute | Description    | Type                                       |
+| --------- | -------------- | ------------------------------------------ |
+| name      | Name           | _string \| number_                         |
+| position  | Click position | _'left' \| 'right' \| 'cell' \| 'outside'_ |
 
 ### Methods
 
@@ -152,7 +152,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-switch-cell-padding-top | `@cell-vertical-padding - 1px` | - |
-| --van-switch-cell-padding-bottom | `@cell-vertical-padding - 1px` | - |
-| --van-switch-cell-large-padding-top | `@cell-large-vertical-padding - 1px` | - |
-| --van-switch-cell-large-padding-bottom | `@cell-large-vertical-padding - 1px` | - |
+| --van-switch-cell-padding-top | `var(--van-cell-vertical-padding) - 1px` | - |
+| --van-switch-cell-padding-bottom | `var(--van-cell-vertical-padding) - 1px` | - |
+| --van-switch-cell-large-padding-top | `var(--van-cell-large-vertical-padding) - 1px` | - |
+| --van-switch-cell-large-padding-bottom | `var(--van-cell-large-vertical-padding) - 1px` | - |

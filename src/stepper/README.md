@@ -164,16 +164,16 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default Value | Description |
 | --- | --- | --- |
 | --van-stepper-active-color | `#e8e8e8` | - |
-| --van-stepper-background-color | `@active-color` | - |
-| --van-stepper-button-icon-color | `@text-color` | - |
-| --van-stepper-button-disabled-color | `@background-color` | - |
-| --van-stepper-button-disabled-icon-color | `@gray-5` | - |
-| --van-stepper-button-round-theme-color | `@red` | - |
+| --van-stepper-background-color | `var(--van-active-color)` | - |
+| --van-stepper-button-icon-color | `var(--van-text-color)` | - |
+| --van-stepper-button-disabled-color | `var(--van-background-color)` | - |
+| --van-stepper-button-disabled-icon-color | `var(--van-gary-5)` | - |
+| --van-stepper-button-round-theme-color | `var(--van-red)` | - |
 | --van-stepper-input-width | `32px` | - |
 | --van-stepper-input-height | `28px` | - |
-| --van-stepper-input-font-size | `@font-size-md` | - |
+| --van-stepper-input-font-size | `var(--van-font-size-md)` | - |
 | --van-stepper-input-line-height | `normal` | - |
-| --van-stepper-input-text-color | `@text-color` | - |
-| --van-stepper-input-disabled-text-color | `@gray-5` | - |
-| --van-stepper-input-disabled-background-color | `@active-color` | - |
-| --van-stepper-border-radius | `@border-radius-md` | - |
+| --van-stepper-input-text-color | `var(--van-text-color)` | - |
+| --van-stepper-input-disabled-text-color | `var(--van-gary-5)` | - |
+| --van-stepper-input-disabled-background-color | `var(--van-active-color)` | - |
+| --van-stepper-border-radius | `var(--van-border-radius-md)` | - |

@@ -161,11 +161,11 @@ app.use(GridItem);
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                     | 默认值                    | 描述 |
-| ---------------------------------------- | ------------------------- | ---- |
-| --van-grid-item-content-padding          | `@padding-md @padding-xs` | -    |
-| --van-grid-item-content-background-color | `@white`                  | -    |
-| --van-grid-item-content-active-color     | `@active-color`           | -    |
-| --van-grid-item-icon-size                | `28px`                    | -    |
-| --van-grid-item-text-color               | `@gray-7`                 | -    |
-| --van-grid-item-text-font-size           | `@font-size-sm`           | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-grid-item-content-padding | `var(--van-padding-md) var(--van-padding-xs)` | - |
+| --van-grid-item-content-background-color | `var(--van-white)` | - |
+| --van-grid-item-content-active-color | `var(--van-active-color)` | - |
+| --van-grid-item-icon-size | `28px` | - |
+| --van-grid-item-text-color | `var(--van-gary-7)` | - |
+| --van-grid-item-text-font-size | `var(--van-font-size-sm)` | - |

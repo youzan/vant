@@ -136,19 +136,19 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                    | 默认值              | 描述 |
-| --------------------------------------- | ------------------- | ---- |
-| --van-sidebar-width                     | `80px`              | -    |
-| --van-sidebar-font-size                 | `@font-size-md`     | -    |
-| --van-sidebar-line-height               | `@line-height-md`   | -    |
-| --van-sidebar-text-color                | `@text-color`       | -    |
-| --van-sidebar-disabled-text-color       | `@gray-5`           | -    |
-| --van-sidebar-padding                   | `20px @padding-sm`  | -    |
-| --van-sidebar-active-color              | `@active-color`     | -    |
-| --van-sidebar-background-color          | `@background-color` | -    |
-| --van-sidebar-selected-font-weight      | `@font-weight-bold` | -    |
-| --van-sidebar-selected-text-color       | `@text-color`       | -    |
-| --van-sidebar-selected-border-width     | `4px`               | -    |
-| --van-sidebar-selected-border-height    | `16px`              | -    |
-| --van-sidebar-selected-border-color     | `@red`              | -    |
-| --van-sidebar-selected-background-color | `@white`            | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-sidebar-width | `80px` | - |
+| --van-sidebar-font-size | `var(--van-font-size-md)` | - |
+| --van-sidebar-line-height | `var(--van-line-height-md)` | - |
+| --van-sidebar-text-color | `var(--van-text-color)` | - |
+| --van-sidebar-disabled-text-color | `var(--van-gary-5)` | - |
+| --van-sidebar-padding | `20px var(--van-padding-sm)` | - |
+| --van-sidebar-active-color | `var(--van-active-color)` | - |
+| --van-sidebar-background-color | `var(--van-background-color)` | - |
+| --van-sidebar-selected-font-weight | `var(--van-font-weight-bold)` | - |
+| --van-sidebar-selected-text-color | `var(--van-text-color)` | - |
+| --van-sidebar-selected-border-width | `4px` | - |
+| --van-sidebar-selected-border-height | `16px` | - |
+| --van-sidebar-selected-border-color | `var(--van-red)` | - |
+| --van-sidebar-selected-background-color | `var(--van-white)` | - |

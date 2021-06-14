@@ -158,10 +158,10 @@ export default {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                           | Default Value   | Description |
-| ------------------------------ | --------------- | ----------- |
-| --van-rate-icon-size           | `20px`          | -           |
-| --van-rate-icon-gutter         | `@padding-base` | -           |
-| --van-rate-icon-void-color     | `@gray-5`       | -           |
-| --van-rate-icon-full-color     | `@red`          | -           |
-| --van-rate-icon-disabled-color | `@gray-5`       | -           |
+| Name                           | Default Value             | Description |
+| ------------------------------ | ------------------------- | ----------- |
+| --van-rate-icon-size           | `20px`                    | -           |
+| --van-rate-icon-gutter         | `var(--van-padding-base)` | -           |
+| --van-rate-icon-void-color     | `var(--van-gary-5)`       | -           |
+| --van-rate-icon-full-color     | `var(--van-red)`          | -           |
+| --van-rate-icon-disabled-color | `var(--van-gary-5)`       | -           |

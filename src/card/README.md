@@ -114,19 +114,19 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-card-padding | `@padding-xs @padding-md` | - |
-| --van-card-font-size | `@font-size-sm` | - |
-| --van-card-text-color | `@text-color` | - |
-| --van-card-background-color | `@background-color-light` | - |
+| --van-card-padding | `var(--van-padding-xs) var(--van-padding-md)` | - |
+| --van-card-font-size | `var(--van-font-size-sm)` | - |
+| --van-card-text-color | `var(--van-text-color)` | - |
+| --van-card-background-color | `var(--van-background-color-light)` | - |
 | --van-card-thumb-size | `88px` | - |
-| --van-card-thumb-border-radius | `@border-radius-lg` | - |
+| --van-card-thumb-border-radius | `var(--van-border-radius-lg)` | - |
 | --van-card-title-line-height | `16px` | - |
-| --van-card-desc-color | `@gray-7` | - |
-| --van-card-desc-line-height | `@line-height-md` | - |
-| --van-card-price-color | `@gray-8` | - |
-| --van-card-origin-price-color | `@gray-6` | - |
-| --van-card-num-color | `@gray-6` | - |
-| --van-card-origin-price-font-size | `@font-size-xs` | - |
-| --van-card-price-font-size | `@font-size-sm` | - |
-| --van-card-price-integer-font-size | `@font-size-lg` | - |
-| --van-card-price-font-family | `@price-integer-font-family` | - |
+| --van-card-desc-color | `var(--van-gary-7)` | - |
+| --van-card-desc-line-height | `var(--van-line-height-md)` | - |
+| --van-card-price-color | `var(--van-gary-8)` | - |
+| --van-card-origin-price-color | `var(--van-gary-6)` | - |
+| --van-card-num-color | `var(--van-gary-6)` | - |
+| --van-card-origin-price-font-size | `var(--van-font-size-xs)` | - |
+| --van-card-price-font-size | `var(--van-font-size-sm)` | - |
+| --van-card-price-integer-font-size | `var(--van-font-size-lg)` | - |
+| --van-card-price-font-family | `var(--van-price-integer-font-family)` | - |

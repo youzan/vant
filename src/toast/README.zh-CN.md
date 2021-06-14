@@ -190,20 +190,20 @@ Toast.resetDefaultOptions('loading');
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                 | 默认值                    | 描述 |
-| ------------------------------------ | ------------------------- | ---- |
-| --van-toast-max-width                | `70%`                     | -    |
-| --van-toast-font-size                | `@font-size-md`           | -    |
-| --van-toast-text-color               | `@white`                  | -    |
-| --van-toast-loading-icon-color       | `@white`                  | -    |
-| --van-toast-line-height              | `@line-height-md`         | -    |
-| --van-toast-border-radius            | `@border-radius-lg`       | -    |
-| --van-toast-background-color         | `fade(@black, 70%)`       | -    |
-| --van-toast-icon-size                | `36px`                    | -    |
-| --van-toast-text-min-width           | `96px`                    | -    |
-| --van-toast-text-padding             | `@padding-xs @padding-sm` | -    |
-| --van-toast-default-padding          | `@padding-md`             | -    |
-| --van-toast-default-width            | `88px`                    | -    |
-| --van-toast-default-min-height       | `88px`                    | -    |
-| --van-toast-position-top-distance    | `20%`                     | -    |
-| --van-toast-position-bottom-distance | `20%`                     | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-toast-max-width | `70%` | - |
+| --van-toast-font-size | `var(--van-font-size-md)` | - |
+| --van-toast-text-color | `var(--van-white)` | - |
+| --van-toast-loading-icon-color | `var(--van-white)` | - |
+| --van-toast-line-height | `var(--van-line-height-md)` | - |
+| --van-toast-border-radius | `var(--van-border-radius-lg)` | - |
+| --van-toast-background-color | `fade(@black, 70%)` | - |
+| --van-toast-icon-size | `36px` | - |
+| --van-toast-text-min-width | `96px` | - |
+| --van-toast-text-padding | `var(--van-padding-xs) var(--van-padding-sm)` | - |
+| --van-toast-default-padding | `var(--van-padding-md)` | - |
+| --van-toast-default-width | `88px` | - |
+| --van-toast-default-min-height | `88px` | - |
+| --van-toast-position-top-distance | `20%` | - |
+| --van-toast-position-bottom-distance | `20%` | - |

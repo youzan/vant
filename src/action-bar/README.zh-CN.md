@@ -141,18 +141,18 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                   | 默认值             | 描述 |
-| -------------------------------------- | ------------------ | ---- |
-| --van-action-bar-background-color      | `@white`           | -    |
-| --van-action-bar-height                | `50px`             | -    |
-| --van-action-bar-icon-width            | `48px`             | -    |
-| --van-action-bar-icon-height           | `100%`             | -    |
-| --van-action-bar-icon-color            | `@text-color`      | -    |
-| --van-action-bar-icon-size             | `18px`             | -    |
-| --van-action-bar-icon-font-size        | `@font-size-xs`    | -    |
-| --van-action-bar-icon-active-color     | `@active-color`    | -    |
-| --van-action-bar-icon-text-color       | `@gray-7`          | -    |
-| --van-action-bar-icon-background-color | `@white`           | -    |
-| --van-action-bar-button-height         | `40px`             | -    |
-| --van-action-bar-button-warning-color  | `@gradient-orange` | -    |
-| --van-action-bar-button-danger-color   | `@gradient-red`    | -    |
+| 名称                                   | 默认值                       | 描述 |
+| -------------------------------------- | ---------------------------- | ---- |
+| --van-action-bar-background-color      | `var(--van-white)`           | -    |
+| --van-action-bar-height                | `50px`                       | -    |
+| --van-action-bar-icon-width            | `48px`                       | -    |
+| --van-action-bar-icon-height           | `100%`                       | -    |
+| --van-action-bar-icon-color            | `var(--van-text-color)`      | -    |
+| --van-action-bar-icon-size             | `18px`                       | -    |
+| --van-action-bar-icon-font-size        | `var(--van-font-size-xs)`    | -    |
+| --van-action-bar-icon-active-color     | `var(--van-active-color)`    | -    |
+| --van-action-bar-icon-text-color       | `var(--van-gary-7)`          | -    |
+| --van-action-bar-icon-background-color | `var(--van-white)`           | -    |
+| --van-action-bar-button-height         | `40px`                       | -    |
+| --van-action-bar-button-warning-color  | `var(--van-gradient-orange)` | -    |
+| --van-action-bar-button-danger-color   | `var(--van-gradient-red)`    | -    |

@@ -104,17 +104,17 @@ export default {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                  | Default Value   | Description |
-| ------------------------------------- | --------------- | ----------- |
-| --van-step-text-color                 | `@gray-6`       | -           |
-| --van-step-active-color               | `@green`        | -           |
-| --van-step-process-text-color         | `@text-color`   | -           |
-| --van-step-font-size                  | `@font-size-md` | -           |
-| --van-step-line-color                 | `@border-color` | -           |
-| --van-step-finish-line-color          | `@green`        | -           |
-| --van-step-finish-text-color          | `@text-color`   | -           |
-| --van-step-icon-size                  | `12px`          | -           |
-| --van-step-circle-size                | `5px`           | -           |
-| --van-step-circle-color               | `@gray-6`       | -           |
-| --van-step-horizontal-title-font-size | `@font-size-sm` | -           |
-| --van-steps-background-color          | `@white`        | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-step-text-color | `var(--van-gary-6)` | - |
+| --van-step-active-color | `var(--van-green)` | - |
+| --van-step-process-text-color | `var(--van-text-color)` | - |
+| --van-step-font-size | `var(--van-font-size-md)` | - |
+| --van-step-line-color | `var(--van-border-color)` | - |
+| --van-step-finish-line-color | `var(--van-green)` | - |
+| --van-step-finish-text-color | `var(--van-text-color)` | - |
+| --van-step-icon-size | `12px` | - |
+| --van-step-circle-size | `5px` | - |
+| --van-step-circle-color | `var(--van-gary-6)` | - |
+| --van-step-horizontal-title-font-size | `var(--van-font-size-sm)` | - |
+| --van-steps-background-color | `var(--van-white)` | - |

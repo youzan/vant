@@ -167,11 +167,11 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-popup-background-color | `@white` | - |
-| --van-popup-transition | `transform @animation-duration-base` | - |
+| --van-popup-background-color | `var(--van-white)` | - |
+| --van-popup-transition | `transform var(--van-animation-duration-base)` | - |
 | --van-popup-round-border-radius | `16px` | - |
 | --van-popup-close-icon-size | `22px` | - |
-| --van-popup-close-icon-color | `@gray-5` | - |
-| --van-popup-close-icon-active-color | `@gray-6` | - |
+| --van-popup-close-icon-color | `var(--van-gary-5)` | - |
+| --van-popup-close-icon-active-color | `var(--van-gary-6)` | - |
 | --van-popup-close-icon-margin | `16px` | - |
 | --van-popup-close-icon-z-index | `1` | - |

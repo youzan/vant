@@ -155,13 +155,13 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                  | 默认值                    | 描述 |
-| ------------------------------------- | ------------------------- | ---- |
-| --van-notify-text-color               | `@white`                  | -    |
-| --van-notify-padding                  | `@padding-xs @padding-md` | -    |
-| --van-notify-font-size                | `@font-size-md`           | -    |
-| --van-notify-line-height              | `@line-height-md`         | -    |
-| --van-notify-primary-background-color | `@blue`                   | -    |
-| --van-notify-success-background-color | `@green`                  | -    |
-| --van-notify-danger-background-color  | `@red`                    | -    |
-| --van-notify-warning-background-color | `@orange`                 | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-notify-text-color | `var(--van-white)` | - |
+| --van-notify-padding | `var(--van-padding-xs) var(--van-padding-md)` | - |
+| --van-notify-font-size | `var(--van-font-size-md)` | - |
+| --van-notify-line-height | `var(--van-line-height-md)` | - |
+| --van-notify-primary-background-color | `var(--van-blue)` | - |
+| --van-notify-success-background-color | `var(--van-green)` | - |
+| --van-notify-danger-background-color | `var(--van-red)` | - |
+| --van-notify-warning-background-color | `var(--van-orange)` | - |

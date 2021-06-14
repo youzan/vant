@@ -120,21 +120,21 @@ export default {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                             | Default Value               | Description |
-| -------------------------------- | --------------------------- | ----------- |
-| --van-tag-padding                | `0 @padding-base`           | -           |
-| --van-tag-text-color             | `@white`                    | -           |
-| --van-tag-font-size              | `@font-size-sm`             | -           |
-| --van-tag-border-radius          | `2px`                       | -           |
-| --van-tag-line-height            | `16px`                      | -           |
-| --van-tag-medium-padding         | `2px 6px`                   | -           |
-| --van-tag-large-padding          | `@padding-base @padding-xs` | -           |
-| --van-tag-large-border-radius    | `@border-radius-md`         | -           |
-| --van-tag-large-font-size        | `@font-size-md`             | -           |
-| --van-tag-round-border-radius    | `@border-radius-max`        | -           |
-| --van-tag-danger-color           | `@red`                      | -           |
-| --van-tag-primary-color          | `@blue`                     | -           |
-| --van-tag-success-color          | `@green`                    | -           |
-| --van-tag-warning-color          | `@orange`                   | -           |
-| --van-tag-default-color          | `@gray-6`                   | -           |
-| --van-tag-plain-background-color | `@white`                    | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-tag-padding | `0 var(--van-padding-base)` | - |
+| --van-tag-text-color | `var(--van-white)` | - |
+| --van-tag-font-size | `var(--van-font-size-sm)` | - |
+| --van-tag-border-radius | `2px` | - |
+| --van-tag-line-height | `16px` | - |
+| --van-tag-medium-padding | `2px 6px` | - |
+| --van-tag-large-padding | `var(--van-padding-base) var(--van-padding-xs)` | - |
+| --van-tag-large-border-radius | `var(--van-border-radius-md)` | - |
+| --van-tag-large-font-size | `var(--van-font-size-md)` | - |
+| --van-tag-round-border-radius | `var(--van-border-radius-max)` | - |
+| --van-tag-danger-color | `var(--van-red)` | - |
+| --van-tag-primary-color | `var(--van-blue)` | - |
+| --van-tag-success-color | `var(--van-green)` | - |
+| --van-tag-warning-color | `var(--van-orange)` | - |
+| --van-tag-default-color | `var(--van-gary-6)` | - |
+| --van-tag-plain-background-color | `var(--van-white)` | - |

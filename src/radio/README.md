@@ -206,11 +206,11 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default Value | Description |
 | --- | --- | --- |
 | --van-radio-size | `20px` | - |
-| --van-radio-border-color | `@gray-5` | - |
-| --van-radio-transition-duration | `@animation-duration-fast` | - |
-| --van-radio-label-margin | `@padding-xs` | - |
-| --van-radio-label-color | `@text-color` | - |
-| --van-radio-checked-icon-color | `@blue` | - |
-| --van-radio-disabled-icon-color | `@gray-5` | - |
-| --van-radio-disabled-label-color | `@gray-5` | - |
-| --van-radio-disabled-background-color | `@border-color` | - |
+| --van-radio-border-color | `var(--van-gary-5)` | - |
+| --van-radio-transition-duration | `var(--van-animation-duration-fast)` | - |
+| --van-radio-label-margin | `var(--van-padding-xs)` | - |
+| --van-radio-label-color | `var(--van-text-color)` | - |
+| --van-radio-checked-icon-color | `var(--van-blue)` | - |
+| --van-radio-disabled-icon-color | `var(--van-gary-5)` | - |
+| --van-radio-disabled-label-color | `var(--van-gary-5)` | - |
+| --van-radio-disabled-background-color | `var(--van-border-color)` | - |

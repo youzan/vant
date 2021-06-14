@@ -219,12 +219,12 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                         | 默认值          | 描述 |
-| ---------------------------- | --------------- | ---- |
-| --van-list-text-color        | `@gray-6`       | -    |
-| --van-list-text-font-size    | `@font-size-md` | -    |
-| --van-list-text-line-height  | `50px`          | -    |
-| --van-list-loading-icon-size | `16px`          | -    |
+| 名称                         | 默认值                    | 描述 |
+| ---------------------------- | ------------------------- | ---- |
+| --van-list-text-color        | `var(--van-gary-6)`       | -    |
+| --van-list-text-font-size    | `var(--van-font-size-md)` | -    |
+| --van-list-text-line-height  | `50px`                    | -    |
+| --van-list-loading-icon-size | `16px`                    | -    |
 
 ## 常见问题
 

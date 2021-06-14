@@ -103,11 +103,11 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default Value | Description |
 | --- | --- | --- |
 | --van-pagination-height | `40px` | - |
-| --van-pagination-font-size | `@font-size-md` | - |
+| --van-pagination-font-size | `var(--van-font-size-md)` | - |
 | --van-pagination-item-width | `36px` | - |
-| --van-pagination-item-default-color | `@blue` | - |
-| --van-pagination-item-disabled-color | `@gray-7` | - |
-| --van-pagination-item-disabled-background-color | `@background-color` | - |
-| --van-pagination-background-color | `@white` | - |
-| --van-pagination-desc-color | `@gray-7` | - |
-| --van-pagination-disabled-opacity | `@disabled-opacity` | - |
+| --van-pagination-item-default-color | `var(--van-blue)` | - |
+| --van-pagination-item-disabled-color | `var(--van-gary-7)` | - |
+| --van-pagination-item-disabled-background-color | `var(--van-background-color)` | - |
+| --van-pagination-background-color | `var(--van-white)` | - |
+| --van-pagination-desc-color | `var(--van-gary-7)` | - |
+| --van-pagination-disabled-opacity | `var(--van-disabled-opacity)` | - |

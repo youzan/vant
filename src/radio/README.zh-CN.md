@@ -217,14 +217,14 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                  | 默认值                     | 描述 |
-| ------------------------------------- | -------------------------- | ---- |
-| --van-radio-size                      | `20px`                     | -    |
-| --van-radio-border-color              | `@gray-5`                  | -    |
-| --van-radio-transition-duration       | `@animation-duration-fast` | -    |
-| --van-radio-label-margin              | `@padding-xs`              | -    |
-| --van-radio-label-color               | `@text-color`              | -    |
-| --van-radio-checked-icon-color        | `@blue`                    | -    |
-| --van-radio-disabled-icon-color       | `@gray-5`                  | -    |
-| --van-radio-disabled-label-color      | `@gray-5`                  | -    |
-| --van-radio-disabled-background-color | `@border-color`            | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-radio-size | `20px` | - |
+| --van-radio-border-color | `var(--van-gary-5)` | - |
+| --van-radio-transition-duration | `var(--van-animation-duration-fast)` | - |
+| --van-radio-label-margin | `var(--van-padding-xs)` | - |
+| --van-radio-label-color | `var(--van-text-color)` | - |
+| --van-radio-checked-icon-color | `var(--van-blue)` | - |
+| --van-radio-disabled-icon-color | `var(--van-gary-5)` | - |
+| --van-radio-disabled-label-color | `var(--van-gary-5)` | - |
+| --van-radio-disabled-background-color | `var(--van-border-color)` | - |

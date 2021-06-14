@@ -90,13 +90,13 @@ Use the image prop to display different placeholder images.
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                | Default Value     | Description |
-| ----------------------------------- | ----------------- | ----------- |
-| --van-empty-padding                 | `@padding-xl 0`   | -           |
-| --van-empty-image-size              | `160px`           | -           |
-| --van-empty-description-margin-top  | `@padding-md`     | -           |
-| --van-empty-description-padding     | `0 60px`          | -           |
-| --van-empty-description-color       | `@gray-6`         | -           |
-| --van-empty-description-font-size   | `@font-size-md`   | -           |
-| --van-empty-description-line-height | `@line-height-md` | -           |
-| --van-empty-bottom-margin-top       | `24px`            | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-empty-padding | `var(--van-padding-xl) 0` | - |
+| --van-empty-image-size | `160px` | - |
+| --van-empty-description-margin-top | `var(--van-padding-md)` | - |
+| --van-empty-description-padding | `0 60px` | - |
+| --van-empty-description-color | `var(--van-gary-6)` | - |
+| --van-empty-description-font-size | `var(--van-font-size-md)` | - |
+| --van-empty-description-line-height | `var(--van-line-height-md)` | - |
+| --van-empty-bottom-margin-top | `24px` | - |

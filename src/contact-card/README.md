@@ -100,9 +100,9 @@ export default {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                 | Default Value     | Description |
-| ------------------------------------ | ----------------- | ----------- |
-| --van-contact-card-padding           | `@padding-md`     | -           |
-| --van-contact-card-add-icon-size     | `40px`            | -           |
-| --van-contact-card-add-icon-color    | `@blue`           | -           |
-| --van-contact-card-value-line-height | `@line-height-md` | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-contact-card-padding | `var(--van-padding-md)` | - |
+| --van-contact-card-add-icon-size | `40px` | - |
+| --van-contact-card-add-icon-color | `var(--van-blue)` | - |
+| --van-contact-card-value-line-height | `var(--van-line-height-md)` | - |

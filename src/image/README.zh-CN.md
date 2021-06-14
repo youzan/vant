@@ -146,15 +146,15 @@ app.use(Lazyload);
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                     | 默认值              | 描述 |
-| ---------------------------------------- | ------------------- | ---- |
-| --van-image-placeholder-text-color       | `@gray-6`           | -    |
-| --van-image-placeholder-font-size        | `@font-size-md`     | -    |
-| --van-image-placeholder-background-color | `@background-color` | -    |
-| --van-image-loading-icon-size            | `32px`              | -    |
-| --van-image-loading-icon-color           | `@gray-4`           | -    |
-| --van-image-error-icon-size              | `32px`              | -    |
-| --van-image-error-icon-color             | `@gray-4`           | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-image-placeholder-text-color | `var(--van-gary-6)` | - |
+| --van-image-placeholder-font-size | `var(--van-font-size-md)` | - |
+| --van-image-placeholder-background-color | `var(--van-background-color)` | - |
+| --van-image-loading-icon-size | `32px` | - |
+| --van-image-loading-icon-color | `var(--van-gary-4)` | - |
+| --van-image-error-icon-size | `32px` | - |
+| --van-image-error-icon-color | `var(--van-gary-4)` | - |
 
 ## 常见问题
 

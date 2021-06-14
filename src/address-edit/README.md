@@ -157,8 +157,8 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-address-edit-padding | `@padding-sm` | - |
-| --van-address-edit-buttons-padding | `@padding-xl @padding-base` | - |
-| --van-address-edit-button-margin-bottom | `@padding-sm` | - |
-| --van-address-edit-detail-finish-color | `@blue` | - |
-| --van-address-edit-detail-finish-font-size | `@font-size-sm` | - |
+| --van-address-edit-padding | `var(--van-padding-sm)` | - |
+| --van-address-edit-buttons-padding | `var(--van-padding-xl) var(--van-padding-base)` | - |
+| --van-address-edit-button-margin-bottom | `var(--van-padding-sm)` | - |
+| --van-address-edit-detail-finish-color | `var(--van-blue)` | - |
+| --van-address-edit-detail-finish-font-size | `var(--van-font-size-sm)` | - |

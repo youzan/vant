@@ -110,17 +110,17 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                  | 默认值          | 描述 |
-| ------------------------------------- | --------------- | ---- |
-| --van-step-text-color                 | `@gray-6`       | -    |
-| --van-step-active-color               | `@green`        | -    |
-| --van-step-process-text-color         | `@text-color`   | -    |
-| --van-step-font-size                  | `@font-size-md` | -    |
-| --van-step-line-color                 | `@border-color` | -    |
-| --van-step-finish-line-color          | `@green`        | -    |
-| --van-step-finish-text-color          | `@text-color`   | -    |
-| --van-step-icon-size                  | `12px`          | -    |
-| --van-step-circle-size                | `5px`           | -    |
-| --van-step-circle-color               | `@gray-6`       | -    |
-| --van-step-horizontal-title-font-size | `@font-size-sm` | -    |
-| --van-steps-background-color          | `@white`        | -    |
+| 名称                                  | 默认值                    | 描述 |
+| ------------------------------------- | ------------------------- | ---- |
+| --van-step-text-color                 | `var(--van-gary-6)`       | -    |
+| --van-step-active-color               | `var(--van-green)`        | -    |
+| --van-step-process-text-color         | `var(--van-text-color)`   | -    |
+| --van-step-font-size                  | `var(--van-font-size-md)` | -    |
+| --van-step-line-color                 | `var(--van-border-color)` | -    |
+| --van-step-finish-line-color          | `var(--van-green)`        | -    |
+| --van-step-finish-text-color          | `var(--van-text-color)`   | -    |
+| --van-step-icon-size                  | `12px`                    | -    |
+| --van-step-circle-size                | `5px`                     | -    |
+| --van-step-circle-color               | `var(--van-gary-6)`       | -    |
+| --van-step-horizontal-title-font-size | `var(--van-font-size-sm)` | -    |
+| --van-steps-background-color          | `var(--van-white)`        | -    |

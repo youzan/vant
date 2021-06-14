@@ -191,27 +191,27 @@ app.use(CellGroup);
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-cell-font-size | `@font-size-md` | - |
+| --van-cell-font-size | `var(--van-font-size-md)` | - |
 | --van-cell-line-height | `24px` | - |
 | --van-cell-vertical-padding | `10px` | - |
-| --van-cell-horizontal-padding | `@padding-md` | - |
-| --van-cell-text-color | `@text-color` | - |
-| --van-cell-background-color | `@white` | - |
-| --van-cell-border-color | `@border-color` | - |
-| --van-cell-active-color | `@active-color` | - |
-| --van-cell-required-color | `@red` | - |
-| --van-cell-label-color | `@gray-6` | - |
-| --van-cell-label-font-size | `@font-size-sm` | - |
-| --van-cell-label-line-height | `@line-height-sm` | - |
-| --van-cell-label-margin-top | `@padding-base` | - |
-| --van-cell-value-color | `@gray-6` | - |
+| --van-cell-horizontal-padding | `var(--van-padding-md)` | - |
+| --van-cell-text-color | `var(--van-text-color)` | - |
+| --van-cell-background-color | `var(--van-white)` | - |
+| --van-cell-border-color | `var(--van-border-color)` | - |
+| --van-cell-active-color | `var(--van-active-color)` | - |
+| --van-cell-required-color | `var(--van-red)` | - |
+| --van-cell-label-color | `var(--van-gary-6)` | - |
+| --van-cell-label-font-size | `var(--van-font-size-sm)` | - |
+| --van-cell-label-line-height | `var(--van-line-height-sm)` | - |
+| --van-cell-label-margin-top | `var(--van-padding-base)` | - |
+| --van-cell-value-color | `var(--van-gary-6)` | - |
 | --van-cell-icon-size | `16px` | - |
-| --van-cell-right-icon-color | `@gray-6` | - |
-| --van-cell-large-vertical-padding | `@padding-sm` | - |
-| --van-cell-large-title-font-size | `@font-size-lg` | - |
-| --van-cell-large-label-font-size | `@font-size-md` | - |
-| --van-cell-group-background-color | `@white` | - |
-| --van-cell-group-title-color | `@gray-6` | - |
-| --van-cell-group-title-padding | `@padding-md @padding-md @padding-xs` | - |
-| --van-cell-group-title-font-size | `@font-size-md` | - |
+| --van-cell-right-icon-color | `var(--van-gary-6)` | - |
+| --van-cell-large-vertical-padding | `var(--van-padding-sm)` | - |
+| --van-cell-large-title-font-size | `var(--van-font-size-lg)` | - |
+| --van-cell-large-label-font-size | `var(--van-font-size-md)` | - |
+| --van-cell-group-background-color | `var(--van-white)` | - |
+| --van-cell-group-title-color | `var(--van-gary-6)` | - |
+| --van-cell-group-title-padding | `var(--van-padding-md) var(--van-padding-md) var(--van-padding-xs)` | - |
+| --van-cell-group-title-font-size | `var(--van-font-size-md)` | - |
 | --van-cell-group-title-line-height | `16px` | - |

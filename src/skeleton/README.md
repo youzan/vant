@@ -77,12 +77,12 @@ export default {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                   | Default Value   | Description |
-| -------------------------------------- | --------------- | ----------- |
-| --van-skeleton-row-height              | `16px`          | -           |
-| --van-skeleton-row-background-color    | `@active-color` | -           |
-| --van-skeleton-row-margin-top          | `@padding-sm`   | -           |
-| --van-skeleton-title-width             | `40%`           | -           |
-| --van-skeleton-avatar-size             | `32px`          | -           |
-| --van-skeleton-avatar-background-color | `@active-color` | -           |
-| --van-skeleton-animation-duration      | `1.2s`          | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-skeleton-row-height | `16px` | - |
+| --van-skeleton-row-background-color | `var(--van-active-color)` | - |
+| --van-skeleton-row-margin-top | `var(--van-padding-sm)` | - |
+| --van-skeleton-title-width | `40%` | - |
+| --van-skeleton-avatar-size | `32px` | - |
+| --van-skeleton-avatar-background-color | `var(--van-active-color)` | - |
+| --van-skeleton-animation-duration | `1.2s` | - |

@@ -155,28 +155,28 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-coupon-margin | `0 @padding-sm @padding-sm` | - |
+| --van-coupon-margin | `0 var(--van-padding-sm) var(--van-padding-sm)` | - |
 | --van-coupon-content-height | `84px` | - |
 | --van-coupon-content-padding | `14px 0` | - |
-| --van-coupon-background-color | `@white` | - |
-| --van-coupon-active-background-color | `@active-color` | - |
-| --van-coupon-border-radius | `@border-radius-lg` | - |
+| --van-coupon-background-color | `var(--van-white)` | - |
+| --van-coupon-active-background-color | `var(--van-active-color)` | - |
+| --van-coupon-border-radius | `var(--van-border-radius-lg)` | - |
 | --van-coupon-box-shadow | `0 0 4px rgba(0, 0, 0, 0.1)` | - |
 | --van-coupon-head-width | `96px` | - |
-| --van-coupon-amount-color | `@red` | - |
+| --van-coupon-amount-color | `var(--van-red)` | - |
 | --van-coupon-amount-font-size | `30px` | - |
 | --van-coupon-currency-font-size | `40%` | - |
-| --van-coupon-name-font-size | `@font-size-md` | - |
-| --van-coupon-disabled-text-color | `@gray-6` | - |
-| --van-coupon-description-padding | `@padding-xs @padding-md` | - |
-| --van-coupon-description-border-color | `@border-color` | - |
-| --van-coupon-corner-checkbox-icon-color | `@red` | - |
-| --van-coupon-list-background-color | `@background-color` | - |
-| --van-coupon-list-field-padding | `5px 0 5px @padding-md` | - |
+| --van-coupon-name-font-size | `var(--van-font-size-md)` | - |
+| --van-coupon-disabled-text-color | `var(--van-gary-6)` | - |
+| --van-coupon-description-padding | `var(--van-padding-xs) var(--van-padding-md)` | - |
+| --van-coupon-description-border-color | `var(--van-border-color)` | - |
+| --van-coupon-corner-checkbox-icon-color | `var(--van-red)` | - |
+| --van-coupon-list-background-color | `var(--van-background-color)` | - |
+| --van-coupon-list-field-padding | `5px 0 5px var(--van-padding-md)` | - |
 | --van-coupon-list-exchange-button-height | `32px` | - |
 | --van-coupon-list-close-button-height | `40px` | - |
 | --van-coupon-list-empty-image-size | `200px` | - |
-| --van-coupon-list-empty-tip-color | `@gray-6` | - |
-| --van-coupon-list-empty-tip-font-size | `@font-size-md` | - |
-| --van-coupon-list-empty-tip-line-height | `@line-height-md` | - |
-| --van-coupon-cell-selected-text-color | `@text-color` | - |
+| --van-coupon-list-empty-tip-color | `var(--van-gary-6)` | - |
+| --van-coupon-list-empty-tip-font-size | `var(--van-font-size-md)` | - |
+| --van-coupon-list-empty-tip-line-height | `var(--van-line-height-md)` | - |
+| --van-coupon-cell-selected-text-color | `var(--van-text-color)` | - |

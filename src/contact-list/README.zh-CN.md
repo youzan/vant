@@ -100,9 +100,9 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                     | 默认值        | 描述 |
-| ---------------------------------------- | ------------- | ---- |
-| --van-contact-list-edit-icon-size        | `16px`        | -    |
-| --van-contact-list-add-button-z-index    | `999`         | -    |
-| --van-contact-list-item-padding          | `@padding-md` | -    |
-| --van-contact-list-item-radio-icon-color | `@red`        | -    |
+| 名称                                     | 默认值                  | 描述 |
+| ---------------------------------------- | ----------------------- | ---- |
+| --van-contact-list-edit-icon-size        | `16px`                  | -    |
+| --van-contact-list-add-button-z-index    | `999`                   | -    |
+| --van-contact-list-item-padding          | `var(--van-padding-md)` | -    |
+| --van-contact-list-item-radio-icon-color | `var(--van-red)`        | -    |

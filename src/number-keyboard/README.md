@@ -210,17 +210,17 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-number-keyboard-background-color | `@gray-2` | - |
+| --van-number-keyboard-background-color | `var(--van-gary-2)` | - |
 | --van-number-keyboard-key-height | `48px` | - |
 | --van-number-keyboard-key-font-size | `28px` | - |
-| --van-number-keyboard-key-active-color | `@gray-3` | - |
-| --van-number-keyboard-delete-font-size | `@font-size-lg` | - |
-| --van-number-keyboard-title-color | `@gray-7` | - |
+| --van-number-keyboard-key-active-color | `var(--van-gary-3)` | - |
+| --van-number-keyboard-delete-font-size | `var(--van-font-size-lg)` | - |
+| --van-number-keyboard-title-color | `var(--van-gary-7)` | - |
 | --van-number-keyboard-title-height | `34px` | - |
-| --van-number-keyboard-title-font-size | `@font-size-lg` | - |
-| --van-number-keyboard-close-padding | `0 @padding-md` | - |
-| --van-number-keyboard-close-color | `@text-link-color` | - |
-| --van-number-keyboard-close-font-size | `@font-size-md` | - |
-| --van-number-keyboard-button-text-color | `@white` | - |
-| --van-number-keyboard-button-background-color | `@blue` | - |
+| --van-number-keyboard-title-font-size | `var(--van-font-size-lg)` | - |
+| --van-number-keyboard-close-padding | `0 var(--van-padding-md)` | - |
+| --van-number-keyboard-close-color | `var(--van-text-link-color)` | - |
+| --van-number-keyboard-close-font-size | `var(--van-font-size-md)` | - |
+| --van-number-keyboard-button-text-color | `var(--van-white)` | - |
+| --van-number-keyboard-button-background-color | `var(--van-blue)` | - |
 | --van-number-keyboard-z-index | `100` | - |

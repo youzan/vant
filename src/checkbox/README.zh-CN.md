@@ -349,14 +349,14 @@ checkboxGroup.toggleAll({
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                     | 默认值                     | 描述 |
-| ---------------------------------------- | -------------------------- | ---- |
-| --van-checkbox-size                      | `20px`                     | -    |
-| --van-checkbox-border-color              | `@gray-5`                  | -    |
-| --van-checkbox-transition-duration       | `@animation-duration-fast` | -    |
-| --van-checkbox-label-margin              | `@padding-xs`              | -    |
-| --van-checkbox-label-color               | `@text-color`              | -    |
-| --van-checkbox-checked-icon-color        | `@blue`                    | -    |
-| --van-checkbox-disabled-icon-color       | `@gray-5`                  | -    |
-| --van-checkbox-disabled-label-color      | `@gray-5`                  | -    |
-| --van-checkbox-disabled-background-color | `@border-color`            | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-checkbox-size | `20px` | - |
+| --van-checkbox-border-color | `var(--van-gary-5)` | - |
+| --van-checkbox-transition-duration | `var(--van-animation-duration-fast)` | - |
+| --van-checkbox-label-margin | `var(--van-padding-xs)` | - |
+| --van-checkbox-label-color | `var(--van-text-color)` | - |
+| --van-checkbox-checked-icon-color | `var(--van-blue)` | - |
+| --van-checkbox-disabled-icon-color | `var(--van-gary-5)` | - |
+| --van-checkbox-disabled-label-color | `var(--van-gary-5)` | - |
+| --van-checkbox-disabled-background-color | `var(--van-border-color)` | - |

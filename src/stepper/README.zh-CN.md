@@ -181,22 +181,22 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                          | 默认值              | 描述 |
-| --------------------------------------------- | ------------------- | ---- |
-| --van-stepper-active-color                    | `#e8e8e8`           | -    |
-| --van-stepper-background-color                | `@active-color`     | -    |
-| --van-stepper-button-icon-color               | `@text-color`       | -    |
-| --van-stepper-button-disabled-color           | `@background-color` | -    |
-| --van-stepper-button-disabled-icon-color      | `@gray-5`           | -    |
-| --van-stepper-button-round-theme-color        | `@red`              | -    |
-| --van-stepper-input-width                     | `32px`              | -    |
-| --van-stepper-input-height                    | `28px`              | -    |
-| --van-stepper-input-font-size                 | `@font-size-md`     | -    |
-| --van-stepper-input-line-height               | `normal`            | -    |
-| --van-stepper-input-text-color                | `@text-color`       | -    |
-| --van-stepper-input-disabled-text-color       | `@gray-5`           | -    |
-| --van-stepper-input-disabled-background-color | `@active-color`     | -    |
-| --van-stepper-border-radius                   | `@border-radius-md` | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-stepper-active-color | `#e8e8e8` | - |
+| --van-stepper-background-color | `var(--van-active-color)` | - |
+| --van-stepper-button-icon-color | `var(--van-text-color)` | - |
+| --van-stepper-button-disabled-color | `var(--van-background-color)` | - |
+| --van-stepper-button-disabled-icon-color | `var(--van-gary-5)` | - |
+| --van-stepper-button-round-theme-color | `var(--van-red)` | - |
+| --van-stepper-input-width | `32px` | - |
+| --van-stepper-input-height | `28px` | - |
+| --van-stepper-input-font-size | `var(--van-font-size-md)` | - |
+| --van-stepper-input-line-height | `normal` | - |
+| --van-stepper-input-text-color | `var(--van-text-color)` | - |
+| --van-stepper-input-disabled-text-color | `var(--van-gary-5)` | - |
+| --van-stepper-input-disabled-background-color | `var(--van-active-color)` | - |
+| --van-stepper-border-radius | `var(--van-border-radius-md)` | - |
 
 ## 常见问题
 

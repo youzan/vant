@@ -131,10 +131,10 @@ The component provides the following CSS variables, which can be used to customi
 | --van-switch-width | `2em` | - |
 | --van-switch-height | `1em` | - |
 | --van-switch-node-size | `1em` | - |
-| --van-switch-node-background-color | `@white` | - |
+| --van-switch-node-background-color | `var(--van-white)` | - |
 | --van-switch-node-box-shadow | `0 3px 1px 0 rgba(0, 0, 0, 0.05)` | - |
-| --van-switch-background-color | `@white` | - |
-| --van-switch-on-background-color | `@blue` | - |
-| --van-switch-transition-duration | `@animation-duration-base` | - |
-| --van-switch-disabled-opacity | `@disabled-opacity` | - |
-| --van-switch-border | `@border-width-base solid rgba(0, 0, 0, 0.1)` | - |
+| --van-switch-background-color | `var(--van-white)` | - |
+| --van-switch-on-background-color | `var(--van-blue)` | - |
+| --van-switch-transition-duration | `var(--van-animation-duration-base)` | - |
+| --van-switch-disabled-opacity | `var(--van-disabled-opacity)` | - |
+| --van-switch-border | `var(--van-border-width-base) solid rgba(0, 0, 0, 0.1)` | - |

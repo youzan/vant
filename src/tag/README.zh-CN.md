@@ -134,21 +134,21 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                             | 默认值                      | 描述 |
-| -------------------------------- | --------------------------- | ---- |
-| --van-tag-padding                | `0 @padding-base`           | -    |
-| --van-tag-text-color             | `@white`                    | -    |
-| --van-tag-font-size              | `@font-size-sm`             | -    |
-| --van-tag-border-radius          | `2px`                       | -    |
-| --van-tag-line-height            | `16px`                      | -    |
-| --van-tag-medium-padding         | `2px 6px`                   | -    |
-| --van-tag-large-padding          | `@padding-base @padding-xs` | -    |
-| --van-tag-large-border-radius    | `@border-radius-md`         | -    |
-| --van-tag-large-font-size        | `@font-size-md`             | -    |
-| --van-tag-round-border-radius    | `@border-radius-max`        | -    |
-| --van-tag-danger-color           | `@red`                      | -    |
-| --van-tag-primary-color          | `@blue`                     | -    |
-| --van-tag-success-color          | `@green`                    | -    |
-| --van-tag-warning-color          | `@orange`                   | -    |
-| --van-tag-default-color          | `@gray-6`                   | -    |
-| --van-tag-plain-background-color | `@white`                    | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-tag-padding | `0 var(--van-padding-base)` | - |
+| --van-tag-text-color | `var(--van-white)` | - |
+| --van-tag-font-size | `var(--van-font-size-sm)` | - |
+| --van-tag-border-radius | `2px` | - |
+| --van-tag-line-height | `16px` | - |
+| --van-tag-medium-padding | `2px 6px` | - |
+| --van-tag-large-padding | `var(--van-padding-base) var(--van-padding-xs)` | - |
+| --van-tag-large-border-radius | `var(--van-border-radius-md)` | - |
+| --van-tag-large-font-size | `var(--van-font-size-md)` | - |
+| --van-tag-round-border-radius | `var(--van-border-radius-max)` | - |
+| --van-tag-danger-color | `var(--van-red)` | - |
+| --van-tag-primary-color | `var(--van-blue)` | - |
+| --van-tag-success-color | `var(--van-green)` | - |
+| --van-tag-warning-color | `var(--van-orange)` | - |
+| --van-tag-default-color | `var(--van-gary-6)` | - |
+| --van-tag-plain-background-color | `var(--van-white)` | - |
