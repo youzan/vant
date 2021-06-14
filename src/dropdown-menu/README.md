@@ -208,7 +208,7 @@ The component provides the following CSS variables, which can be used to customi
 | --- | --- | --- |
 | --van-dropdown-menu-height | `48px` | - |
 | --van-dropdown-menu-background-color | `var(--van-white)` | - |
-| --van-dropdown-menu-box-shadow | `0 2px 12px fade(@gray-7, 12)` | - |
+| --van-dropdown-menu-box-shadow | `0 2px 12px fade(var(--van-gray-7), 12)` | - |
 | --van-dropdown-menu-title-font-size | `15px` | - |
 | --van-dropdown-menu-title-text-color | `var(--van-text-color)` | - |
 | --van-dropdown-menu-title-active-text-color | `var(--van-red)` | - |

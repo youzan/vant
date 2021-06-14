@@ -360,7 +360,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-calendar-weekdays-height | `30px` | - |
 | --van-calendar-weekdays-font-size | `var(--van-font-size-sm)` | - |
 | --van-calendar-month-title-font-size | `var(--van-font-size-md)` | - |
-| --van-calendar-month-mark-color | `fade(@gray-2, 80%)` | - |
+| --van-calendar-month-mark-color | `fade(var(--van-gray-2), 80%)` | - |
 | --van-calendar-month-mark-font-size | `160px` | - |
 | --van-calendar-day-height | `64px` | - |
 | --van-calendar-day-font-size | `var(--van-font-size-lg)` | - |
