@@ -87,10 +87,6 @@ module.exports = {
                 title: '从 v2 升级',
               },
               {
-                path: 'theme',
-                title: '定制主题',
-              },
-              {
                 path: 'contribution',
                 title: '贡献指南',
               },
@@ -459,6 +455,15 @@ module.exports = {
               },
             ],
           },
+          {
+            title: '废弃',
+            items: [
+              {
+                path: 'theme',
+                title: '定制主题',
+              },
+            ],
+          },
         ],
       },
       'en-US': {
@@ -498,10 +503,6 @@ module.exports = {
               {
                 path: 'changelog',
                 title: 'Changelog',
-              },
-              {
-                path: 'theme',
-                title: 'Custom Theme',
               },
               {
                 path: 'design',
@@ -862,6 +863,15 @@ module.exports = {
               //   path: 'use-click-away',
               //   title: 'useClickAway',
               // },
+            ],
+          },
+          {
+            title: 'Deprecated',
+            items: [
+              {
+                path: 'theme',
+                title: 'Custom Theme',
+              },
             ],
           },
         ],
