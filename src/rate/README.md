@@ -154,14 +154,14 @@ export default {
 | ------ | ------------------------- | ------------ |
 | change | Emitted when rate changed | current rate |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                      | Default Value   | Description |
-| ------------------------- | --------------- | ----------- |
-| @rate-icon-size           | `20px`          | -           |
-| @rate-icon-gutter         | `@padding-base` | -           |
-| @rate-icon-void-color     | `@gray-5`       | -           |
-| @rate-icon-full-color     | `@red`          | -           |
-| @rate-icon-disabled-color | `@gray-5`       | -           |
+| Name                           | Default Value   | Description |
+| ------------------------------ | --------------- | ----------- |
+| --van-rate-icon-size           | `20px`          | -           |
+| --van-rate-icon-gutter         | `@padding-base` | -           |
+| --van-rate-icon-void-color     | `@gray-5`       | -           |
+| --van-rate-icon-full-color     | `@red`          | -           |
+| --van-rate-icon-disabled-color | `@gray-5`       | -           |

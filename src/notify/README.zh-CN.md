@@ -130,7 +130,7 @@ export default {
 ### 方法
 
 | 方法名 | 说明 | 参数 | 返回值 |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | Notify | 展示提示 | `options | message` | notify 实例 |
 | Notify.clear | 关闭提示 | - | `void` |
 | Notify.setDefaultOptions | 修改默认配置，对所有 Notify 生效 | `options` | `void` |
@@ -153,15 +153,15 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                             | 默认值                    | 描述 |
-| -------------------------------- | ------------------------- | ---- |
-| @notify-text-color               | `@white`                  | -    |
-| @notify-padding                  | `@padding-xs @padding-md` | -    |
-| @notify-font-size                | `@font-size-md`           | -    |
-| @notify-line-height              | `@line-height-md`         | -    |
-| @notify-primary-background-color | `@blue`                   | -    |
-| @notify-success-background-color | `@green`                  | -    |
-| @notify-danger-background-color  | `@red`                    | -    |
-| @notify-warning-background-color | `@orange`                 | -    |
+| 名称                                  | 默认值                    | 描述 |
+| ------------------------------------- | ------------------------- | ---- |
+| --van-notify-text-color               | `@white`                  | -    |
+| --van-notify-padding                  | `@padding-xs @padding-md` | -    |
+| --van-notify-font-size                | `@font-size-md`           | -    |
+| --van-notify-line-height              | `@line-height-md`         | -    |
+| --van-notify-primary-background-color | `@blue`                   | -    |
+| --van-notify-success-background-color | `@green`                  | -    |
+| --van-notify-danger-background-color  | `@red`                    | -    |
+| --van-notify-warning-background-color | `@orange`                 | -    |

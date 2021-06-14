@@ -132,23 +132,23 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                        | 默认值                      | 描述 |
-| --------------------------- | --------------------------- | ---- |
-| @tag-padding                | `0 @padding-base`           | -    |
-| @tag-text-color             | `@white`                    | -    |
-| @tag-font-size              | `@font-size-sm`             | -    |
-| @tag-border-radius          | `2px`                       | -    |
-| @tag-line-height            | `16px`                      | -    |
-| @tag-medium-padding         | `2px 6px`                   | -    |
-| @tag-large-padding          | `@padding-base @padding-xs` | -    |
-| @tag-large-border-radius    | `@border-radius-md`         | -    |
-| @tag-large-font-size        | `@font-size-md`             | -    |
-| @tag-round-border-radius    | `@border-radius-max`        | -    |
-| @tag-danger-color           | `@red`                      | -    |
-| @tag-primary-color          | `@blue`                     | -    |
-| @tag-success-color          | `@green`                    | -    |
-| @tag-warning-color          | `@orange`                   | -    |
-| @tag-default-color          | `@gray-6`                   | -    |
-| @tag-plain-background-color | `@white`                    | -    |
+| 名称                             | 默认值                      | 描述 |
+| -------------------------------- | --------------------------- | ---- |
+| --van-tag-padding                | `0 @padding-base`           | -    |
+| --van-tag-text-color             | `@white`                    | -    |
+| --van-tag-font-size              | `@font-size-sm`             | -    |
+| --van-tag-border-radius          | `2px`                       | -    |
+| --van-tag-line-height            | `16px`                      | -    |
+| --van-tag-medium-padding         | `2px 6px`                   | -    |
+| --van-tag-large-padding          | `@padding-base @padding-xs` | -    |
+| --van-tag-large-border-radius    | `@border-radius-md`         | -    |
+| --van-tag-large-font-size        | `@font-size-md`             | -    |
+| --van-tag-round-border-radius    | `@border-radius-max`        | -    |
+| --van-tag-danger-color           | `@red`                      | -    |
+| --van-tag-primary-color          | `@blue`                     | -    |
+| --van-tag-success-color          | `@green`                    | -    |
+| --van-tag-warning-color          | `@orange`                   | -    |
+| --van-tag-default-color          | `@gray-6`                   | -    |
+| --van-tag-plain-background-color | `@white`                    | -    |

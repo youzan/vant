@@ -204,23 +204,23 @@ export default {
 | extra-key  | Custom extra key content  |
 | title-left | Custom title left content |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                     | Default Value      | Description |
-| ---------------------------------------- | ------------------ | ----------- |
-| @number-keyboard-background-color        | `@gray-2`          | -           |
-| @number-keyboard-key-height              | `48px`             | -           |
-| @number-keyboard-key-font-size           | `28px`             | -           |
-| @number-keyboard-key-active-color        | `@gray-3`          | -           |
-| @number-keyboard-delete-font-size        | `@font-size-lg`    | -           |
-| @number-keyboard-title-color             | `@gray-7`          | -           |
-| @number-keyboard-title-height            | `34px`             | -           |
-| @number-keyboard-title-font-size         | `@font-size-lg`    | -           |
-| @number-keyboard-close-padding           | `0 @padding-md`    | -           |
-| @number-keyboard-close-color             | `@text-link-color` | -           |
-| @number-keyboard-close-font-size         | `@font-size-md`    | -           |
-| @number-keyboard-button-text-color       | `@white`           | -           |
-| @number-keyboard-button-background-color | `@blue`            | -           |
-| @number-keyboard-z-index                 | `100`              | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-number-keyboard-background-color | `@gray-2` | - |
+| --van-number-keyboard-key-height | `48px` | - |
+| --van-number-keyboard-key-font-size | `28px` | - |
+| --van-number-keyboard-key-active-color | `@gray-3` | - |
+| --van-number-keyboard-delete-font-size | `@font-size-lg` | - |
+| --van-number-keyboard-title-color | `@gray-7` | - |
+| --van-number-keyboard-title-height | `34px` | - |
+| --van-number-keyboard-title-font-size | `@font-size-lg` | - |
+| --van-number-keyboard-close-padding | `0 @padding-md` | - |
+| --van-number-keyboard-close-color | `@text-link-color` | - |
+| --van-number-keyboard-close-font-size | `@font-size-md` | - |
+| --van-number-keyboard-button-text-color | `@white` | - |
+| --van-number-keyboard-button-background-color | `@blue` | - |
+| --van-number-keyboard-z-index | `100` | - |

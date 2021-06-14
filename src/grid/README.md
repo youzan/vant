@@ -141,15 +141,15 @@ app.use(GridItem);
 | icon    | Custom icon    |
 | text    | Custom text    |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @grid-item-content-padding | `@padding-md @padding-xs` | - |
-| @grid-item-content-background-color | `@white` | - |
-| @grid-item-content-active-color | `@active-color` | - |
-| @grid-item-icon-size | `28px` | - |
-| @grid-item-text-color | `@gray-7` | - |
-| @grid-item-text-font-size | `@font-size-sm` | - |
+| --van-grid-item-content-padding | `@padding-md @padding-xs` | - |
+| --van-grid-item-content-background-color | `@white` | - |
+| --van-grid-item-content-active-color | `@active-color` | - |
+| --van-grid-item-icon-size | `28px` | - |
+| --van-grid-item-text-color | `@gray-7` | - |
+| --van-grid-item-text-font-size | `@font-size-sm` | - |

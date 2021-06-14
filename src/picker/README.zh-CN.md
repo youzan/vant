@@ -410,23 +410,23 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                            | 默认值                     | 描述 |
-| ------------------------------- | -------------------------- | ---- |
-| @picker-background-color        | `@white`                   | -    |
-| @picker-toolbar-height          | `44px`                     | -    |
-| @picker-title-font-size         | `@font-size-lg`            | -    |
-| @picker-title-line-height       | `@line-height-md`          | -    |
-| @picker-action-padding          | `0 @padding-md`            | -    |
-| @picker-action-font-size        | `@font-size-md`            | -    |
-| @picker-confirm-action-color    | `@text-link-color`         | -    |
-| @picker-cancel-action-color     | `@gray-6`                  | -    |
-| @picker-option-font-size        | `@font-size-lg`            | -    |
-| @picker-option-text-color       | `@black`                   | -    |
-| @picker-option-disabled-opacity | `0.3`                      | -    |
-| @picker-loading-icon-color      | `@blue`                    | -    |
-| @picker-loading-mask-color      | `rgba(255, 255, 255, 0.9)` | -    |
+| 名称                                 | 默认值                     | 描述 |
+| ------------------------------------ | -------------------------- | ---- |
+| --van-picker-background-color        | `@white`                   | -    |
+| --van-picker-toolbar-height          | `44px`                     | -    |
+| --van-picker-title-font-size         | `@font-size-lg`            | -    |
+| --van-picker-title-line-height       | `@line-height-md`          | -    |
+| --van-picker-action-padding          | `0 @padding-md`            | -    |
+| --van-picker-action-font-size        | `@font-size-md`            | -    |
+| --van-picker-confirm-action-color    | `@text-link-color`         | -    |
+| --van-picker-cancel-action-color     | `@gray-6`                  | -    |
+| --van-picker-option-font-size        | `@font-size-lg`            | -    |
+| --van-picker-option-text-color       | `@black`                   | -    |
+| --van-picker-option-disabled-opacity | `0.3`                      | -    |
+| --van-picker-loading-icon-color      | `@blue`                    | -    |
+| --van-picker-loading-mask-color      | `rgba(255, 255, 255, 0.9)` | -    |
 
 ## 常见问题
 

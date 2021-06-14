@@ -160,21 +160,21 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                      | 默认值          | 描述 |
-| ----------------------------------------- | --------------- | ---- |
-| @password-input-height                    | `50px`          | -    |
-| @password-input-margin                    | `0 @padding-md` | -    |
-| @password-input-font-size                 | `20px`          | -    |
-| @password-input-border-radius             | `6px`           | -    |
-| @password-input-background-color          | `@white`        | -    |
-| @password-input-info-color                | `@gray-6`       | -    |
-| @password-input-info-font-size            | `@font-size-md` | -    |
-| @password-input-error-info-color          | `@red`          | -    |
-| @password-input-dot-size                  | `10px`          | -    |
-| @password-input-dot-color                 | `@black`        | -    |
-| @password-input-cursor-color              | `@text-color`   | -    |
-| @password-input-cursor-width              | `1px`           | -    |
-| @password-input-cursor-height             | `40%`           | -    |
-| @password-input-cursor-animation-duration | `1s`            | -    |
+| 名称                                           | 默认值          | 描述 |
+| ---------------------------------------------- | --------------- | ---- |
+| --van-password-input-height                    | `50px`          | -    |
+| --van-password-input-margin                    | `0 @padding-md` | -    |
+| --van-password-input-font-size                 | `20px`          | -    |
+| --van-password-input-border-radius             | `6px`           | -    |
+| --van-password-input-background-color          | `@white`        | -    |
+| --van-password-input-info-color                | `@gray-6`       | -    |
+| --van-password-input-info-font-size            | `@font-size-md` | -    |
+| --van-password-input-error-info-color          | `@red`          | -    |
+| --van-password-input-dot-size                  | `10px`          | -    |
+| --van-password-input-dot-color                 | `@black`        | -    |
+| --van-password-input-cursor-color              | `@text-color`   | -    |
+| --van-password-input-cursor-width              | `1px`           | -    |
+| --van-password-input-cursor-height             | `40%`           | -    |
+| --van-password-input-cursor-animation-duration | `1s`            | -    |

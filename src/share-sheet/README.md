@@ -213,24 +213,24 @@ export default {
 | description      | Custom description                  |
 | cancel `v3.0.10` | Custom the content of cancel button |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @share-sheet-header-padding | `@padding-sm @padding-md @padding-base` | - |
-| @share-sheet-title-color | `@text-color` | - |
-| @share-sheet-title-font-size | `@font-size-md` | - |
-| @share-sheet-title-line-height | `@line-height-md` | - |
-| @share-sheet-description-color | `@gray-6` | - |
-| @share-sheet-description-font-size | `@font-size-sm` | - |
-| @share-sheet-description-line-height | `16px` | - |
-| @share-sheet-icon-size | `48px` | - |
-| @share-sheet-option-name-color | `@gray-7` | - |
-| @share-sheet-option-name-font-size | `@font-size-sm` | - |
-| @share-sheet-option-description-color | `@gray-5` | - |
-| @share-sheet-option-description-font-size | `@font-size-sm` | - |
-| @share-sheet-cancel-button-font-size | `@font-size-lg` | - |
-| @share-sheet-cancel-button-height | `48px` | - |
-| @share-sheet-cancel-button-background | `@white` | - |
+| --van-share-sheet-header-padding | `@padding-sm @padding-md @padding-base` | - |
+| --van-share-sheet-title-color | `@text-color` | - |
+| --van-share-sheet-title-font-size | `@font-size-md` | - |
+| --van-share-sheet-title-line-height | `@line-height-md` | - |
+| --van-share-sheet-description-color | `@gray-6` | - |
+| --van-share-sheet-description-font-size | `@font-size-sm` | - |
+| --van-share-sheet-description-line-height | `16px` | - |
+| --van-share-sheet-icon-size | `48px` | - |
+| --van-share-sheet-option-name-color | `@gray-7` | - |
+| --van-share-sheet-option-name-font-size | `@font-size-sm` | - |
+| --van-share-sheet-option-description-color | `@gray-5` | - |
+| --van-share-sheet-option-description-font-size | `@font-size-sm` | - |
+| --van-share-sheet-cancel-button-font-size | `@font-size-lg` | - |
+| --van-share-sheet-cancel-button-height | `48px` | - |
+| --van-share-sheet-cancel-button-background | `@white` | - |

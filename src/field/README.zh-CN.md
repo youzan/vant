@@ -328,28 +328,28 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                             | 默认值          | 描述 |
-| -------------------------------- | --------------- | ---- |
-| @field-label-width               | `6.2em`         | -    |
-| @field-label-color               | `@gray-7`       | -    |
-| @field-label-margin-right        | `@padding-sm`   | -    |
-| @field-input-text-color          | `@text-color`   | -    |
-| @field-input-error-text-color    | `@red`          | -    |
-| @field-input-disabled-text-color | `@gray-5`       | -    |
-| @field-placeholder-text-color    | `@gray-5`       | -    |
-| @field-icon-size                 | `16px`          | -    |
-| @field-clear-icon-size           | `16px`          | -    |
-| @field-clear-icon-color          | `@gray-5`       | -    |
-| @field-right-icon-color          | `@gray-6`       | -    |
-| @field-error-message-color       | `@red`          | -    |
-| @field-error-message-text-color  | `12px`          | -    |
-| @field-text-area-min-height      | `60px`          | -    |
-| @field-word-limit-color          | `@gray-7`       | -    |
-| @field-word-limit-font-size      | `@font-size-sm` | -    |
-| @field-word-limit-line-height    | `16px`          | -    |
-| @field-disabled-text-color       | `@gray-5`       | -    |
+| 名称                                  | 默认值          | 描述 |
+| ------------------------------------- | --------------- | ---- |
+| --van-field-label-width               | `6.2em`         | -    |
+| --van-field-label-color               | `@gray-7`       | -    |
+| --van-field-label-margin-right        | `@padding-sm`   | -    |
+| --van-field-input-text-color          | `@text-color`   | -    |
+| --van-field-input-error-text-color    | `@red`          | -    |
+| --van-field-input-disabled-text-color | `@gray-5`       | -    |
+| --van-field-placeholder-text-color    | `@gray-5`       | -    |
+| --van-field-icon-size                 | `16px`          | -    |
+| --van-field-clear-icon-size           | `16px`          | -    |
+| --van-field-clear-icon-color          | `@gray-5`       | -    |
+| --van-field-right-icon-color          | `@gray-6`       | -    |
+| --van-field-error-message-color       | `@red`          | -    |
+| --van-field-error-message-text-color  | `12px`          | -    |
+| --van-field-text-area-min-height      | `60px`          | -    |
+| --van-field-word-limit-color          | `@gray-7`       | -    |
+| --van-field-word-limit-font-size      | `@font-size-sm` | -    |
+| --van-field-word-limit-line-height    | `16px`          | -    |
+| --van-field-disabled-text-color       | `@gray-5`       | -    |
 
 ## 常见问题
 

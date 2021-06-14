@@ -138,16 +138,16 @@ app.use(NoticeBar);
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                         | 默认值                    | 描述 |
-| ---------------------------- | ------------------------- | ---- |
-| @notice-bar-height           | `40px`                    | -    |
-| @notice-bar-padding          | `0 @padding-md`           | -    |
-| @notice-bar-wrapable-padding | `@padding-xs @padding-md` | -    |
-| @notice-bar-text-color       | `@orange-dark`            | -    |
-| @notice-bar-font-size        | `@font-size-md`           | -    |
-| @notice-bar-line-height      | `24px`                    | -    |
-| @notice-bar-background-color | `@orange-light`           | -    |
-| @notice-bar-icon-size        | `16px`                    | -    |
-| @notice-bar-icon-min-width   | `24px`                    | -    |
+| 名称                              | 默认值                    | 描述 |
+| --------------------------------- | ------------------------- | ---- |
+| --van-notice-bar-height           | `40px`                    | -    |
+| --van-notice-bar-padding          | `0 @padding-md`           | -    |
+| --van-notice-bar-wrapable-padding | `@padding-xs @padding-md` | -    |
+| --van-notice-bar-text-color       | `@orange-dark`            | -    |
+| --van-notice-bar-font-size        | `@font-size-md`           | -    |
+| --van-notice-bar-line-height      | `24px`                    | -    |
+| --van-notice-bar-background-color | `@orange-light`           | -    |
+| --van-notice-bar-icon-size        | `16px`                    | -    |
+| --van-notice-bar-icon-min-width   | `24px`                    | -    |

@@ -144,17 +144,17 @@ app.use(Lazyload);
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                | 默认值              | 描述 |
-| ----------------------------------- | ------------------- | ---- |
-| @image-placeholder-text-color       | `@gray-6`           | -    |
-| @image-placeholder-font-size        | `@font-size-md`     | -    |
-| @image-placeholder-background-color | `@background-color` | -    |
-| @image-loading-icon-size            | `32px`              | -    |
-| @image-loading-icon-color           | `@gray-4`           | -    |
-| @image-error-icon-size              | `32px`              | -    |
-| @image-error-icon-color             | `@gray-4`           | -    |
+| 名称                                     | 默认值              | 描述 |
+| ---------------------------------------- | ------------------- | ---- |
+| --van-image-placeholder-text-color       | `@gray-6`           | -    |
+| --van-image-placeholder-font-size        | `@font-size-md`     | -    |
+| --van-image-placeholder-background-color | `@background-color` | -    |
+| --van-image-loading-icon-size            | `32px`              | -    |
+| --van-image-loading-icon-color           | `@gray-4`           | -    |
+| --van-image-error-icon-size              | `32px`              | -    |
+| --van-image-error-icon-color             | `@gray-4`           | -    |
 
 ## 常见问题
 

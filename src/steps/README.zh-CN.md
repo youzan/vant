@@ -95,7 +95,7 @@ export default {
 ### Step Slots
 
 | 名称 | 说明 |
-| --- | --- |
+| --- | --- | --- | --- |
 | active-icon | 自定义激活状态图标 |
 | inactive-icon | 自定义未激活状态图标 |
 | finish-icon `v3.0.7` | 自定义已完成步骤对应的底部图标，优先级高于 `inactive-icon` | _string_ | - |
@@ -108,19 +108,19 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                             | 默认值          | 描述 |
-| -------------------------------- | --------------- | ---- |
-| @step-text-color                 | `@gray-6`       | -    |
-| @step-active-color               | `@green`        | -    |
-| @step-process-text-color         | `@text-color`   | -    |
-| @step-font-size                  | `@font-size-md` | -    |
-| @step-line-color                 | `@border-color` | -    |
-| @step-finish-line-color          | `@green`        | -    |
-| @step-finish-text-color          | `@text-color`   | -    |
-| @step-icon-size                  | `12px`          | -    |
-| @step-circle-size                | `5px`           | -    |
-| @step-circle-color               | `@gray-6`       | -    |
-| @step-horizontal-title-font-size | `@font-size-sm` | -    |
-| @steps-background-color          | `@white`        | -    |
+| 名称                                  | 默认值          | 描述 |
+| ------------------------------------- | --------------- | ---- |
+| --van-step-text-color                 | `@gray-6`       | -    |
+| --van-step-active-color               | `@green`        | -    |
+| --van-step-process-text-color         | `@text-color`   | -    |
+| --van-step-font-size                  | `@font-size-md` | -    |
+| --van-step-line-color                 | `@border-color` | -    |
+| --van-step-finish-line-color          | `@green`        | -    |
+| --van-step-finish-text-color          | `@text-color`   | -    |
+| --van-step-icon-size                  | `12px`          | -    |
+| --van-step-circle-size                | `5px`           | -    |
+| --van-step-circle-color               | `@gray-6`       | -    |
+| --van-step-horizontal-title-font-size | `@font-size-sm` | -    |
+| --van-steps-background-color          | `@white`        | -    |

@@ -91,15 +91,15 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                      | 默认值          | 描述 |
-| ------------------------- | --------------- | ---- |
-| @nav-bar-height           | `46px`          | -    |
-| @nav-bar-background-color | `@white`        | -    |
-| @nav-bar-arrow-size       | `16px`          | -    |
-| @nav-bar-icon-color       | `@blue`         | -    |
-| @nav-bar-text-color       | `@blue`         | -    |
-| @nav-bar-title-font-size  | `@font-size-lg` | -    |
-| @nav-bar-title-text-color | `@text-color`   | -    |
-| @nav-bar-z-index          | `1`             | -    |
+| 名称                           | 默认值          | 描述 |
+| ------------------------------ | --------------- | ---- |
+| --van-nav-bar-height           | `46px`          | -    |
+| --van-nav-bar-background-color | `@white`        | -    |
+| --van-nav-bar-arrow-size       | `16px`          | -    |
+| --van-nav-bar-icon-color       | `@blue`         | -    |
+| --van-nav-bar-text-color       | `@blue`         | -    |
+| --van-nav-bar-title-font-size  | `@font-size-lg` | -    |
+| --van-nav-bar-title-text-color | `@text-color`   | -    |
+| --van-nav-bar-z-index          | `1`             | -    |

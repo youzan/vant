@@ -217,14 +217,14 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                    | 默认值          | 描述 |
-| ----------------------- | --------------- | ---- |
-| @list-text-color        | `@gray-6`       | -    |
-| @list-text-font-size    | `@font-size-md` | -    |
-| @list-text-line-height  | `50px`          | -    |
-| @list-loading-icon-size | `16px`          | -    |
+| 名称                         | 默认值          | 描述 |
+| ---------------------------- | --------------- | ---- |
+| --van-list-text-color        | `@gray-6`       | -    |
+| --van-list-text-font-size    | `@font-size-md` | -    |
+| --van-list-text-line-height  | `50px`          | -    |
+| --van-list-loading-icon-size | `16px`          | -    |
 
 ## 常见问题
 

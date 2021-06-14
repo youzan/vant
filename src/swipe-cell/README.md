@@ -146,13 +146,13 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get SwipeC
 | open  | open SwipeCell  | position: `left \| right` | -            |
 | close | close SwipeCell | -                         | -            |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @switch-cell-padding-top | `@cell-vertical-padding - 1px` | - |
-| @switch-cell-padding-bottom | `@cell-vertical-padding - 1px` | - |
-| @switch-cell-large-padding-top | `@cell-large-vertical-padding - 1px` | - |
-| @switch-cell-large-padding-bottom | `@cell-large-vertical-padding - 1px` | - |
+| --van-switch-cell-padding-top | `@cell-vertical-padding - 1px` | - |
+| --van-switch-cell-padding-bottom | `@cell-vertical-padding - 1px` | - |
+| --van-switch-cell-large-padding-top | `@cell-large-vertical-padding - 1px` | - |
+| --van-switch-cell-large-padding-bottom | `@cell-large-vertical-padding - 1px` | - |

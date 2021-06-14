@@ -89,10 +89,10 @@ export default {
 ### Step Slots
 
 | Name                 | Description          |
-| -------------------- | -------------------- |
+| -------------------- | -------------------- | -------- | --- |
 | active-icon          | Custom active icon   |
 | inactive-icon        | Custom inactive icon |
-| finish-icon `v3.0.7` | Custom finish icon   | _string_ | - |
+| finish-icon `v3.0.7` | Custom finish icon   | _string_ | -   |
 
 ### Steps Events
 
@@ -100,21 +100,21 @@ export default {
 | --- | --- | --- |
 | click-step | Emitted when a step's title or icon is clicked | _index: number_ |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                             | Default Value   | Description |
-| -------------------------------- | --------------- | ----------- |
-| @step-text-color                 | `@gray-6`       | -           |
-| @step-active-color               | `@green`        | -           |
-| @step-process-text-color         | `@text-color`   | -           |
-| @step-font-size                  | `@font-size-md` | -           |
-| @step-line-color                 | `@border-color` | -           |
-| @step-finish-line-color          | `@green`        | -           |
-| @step-finish-text-color          | `@text-color`   | -           |
-| @step-icon-size                  | `12px`          | -           |
-| @step-circle-size                | `5px`           | -           |
-| @step-circle-color               | `@gray-6`       | -           |
-| @step-horizontal-title-font-size | `@font-size-sm` | -           |
-| @steps-background-color          | `@white`        | -           |
+| Name                                  | Default Value   | Description |
+| ------------------------------------- | --------------- | ----------- |
+| --van-step-text-color                 | `@gray-6`       | -           |
+| --van-step-active-color               | `@green`        | -           |
+| --van-step-process-text-color         | `@text-color`   | -           |
+| --van-step-font-size                  | `@font-size-md` | -           |
+| --van-step-line-color                 | `@border-color` | -           |
+| --van-step-finish-line-color          | `@green`        | -           |
+| --van-step-finish-text-color          | `@text-color`   | -           |
+| --van-step-icon-size                  | `12px`          | -           |
+| --van-step-circle-size                | `5px`           | -           |
+| --van-step-circle-color               | `@gray-6`       | -           |
+| --van-step-horizontal-title-font-size | `@font-size-sm` | -           |
+| --van-steps-background-color          | `@white`        | -           |

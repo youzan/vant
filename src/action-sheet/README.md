@@ -223,31 +223,31 @@ export default {
 | description      | Custom description above the options |
 | cancel `v3.0.10` | Custom the content of cancel button  |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                   | Default Value       | Description |
-| -------------------------------------- | ------------------- | ----------- |
-| @action-sheet-max-height               | `80%`               | -           |
-| @action-sheet-header-height            | `48px`              | -           |
-| @action-sheet-header-font-size         | `@font-size-lg`     | -           |
-| @action-sheet-description-color        | `@gray-6`           | -           |
-| @action-sheet-description-font-size    | `@font-size-md`     | -           |
-| @action-sheet-description-line-height  | `@line-height-md`   | -           |
-| @action-sheet-item-background          | `@white`            | -           |
-| @action-sheet-item-font-size           | `@font-size-lg`     | -           |
-| @action-sheet-item-line-height         | `@line-height-lg`   | -           |
-| @action-sheet-item-text-color          | `@text-color`       | -           |
-| @action-sheet-item-disabled-text-color | `@gray-5`           | -           |
-| @action-sheet-subname-color            | `@gray-6`           | -           |
-| @action-sheet-subname-font-size        | `@font-size-sm`     | -           |
-| @action-sheet-subname-line-height      | `@line-height-sm`   | -           |
-| @action-sheet-close-icon-size          | `22px`              | -           |
-| @action-sheet-close-icon-color         | `@gray-5`           | -           |
-| @action-sheet-close-icon-active-color  | `@gray-6`           | -           |
-| @action-sheet-close-icon-padding       | `0 @padding-md`     | -           |
-| @action-sheet-cancel-text-color        | `@gray-7`           | -           |
-| @action-sheet-cancel-padding-top       | `@padding-xs`       | -           |
-| @action-sheet-cancel-padding-color     | `@background-color` | -           |
-| @action-sheet-loading-icon-size        | `22px`              | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-action-sheet-max-height | `80%` | - |
+| --van-action-sheet-header-height | `48px` | - |
+| --van-action-sheet-header-font-size | `@font-size-lg` | - |
+| --van-action-sheet-description-color | `@gray-6` | - |
+| --van-action-sheet-description-font-size | `@font-size-md` | - |
+| --van-action-sheet-description-line-height | `@line-height-md` | - |
+| --van-action-sheet-item-background | `@white` | - |
+| --van-action-sheet-item-font-size | `@font-size-lg` | - |
+| --van-action-sheet-item-line-height | `@line-height-lg` | - |
+| --van-action-sheet-item-text-color | `@text-color` | - |
+| --van-action-sheet-item-disabled-text-color | `@gray-5` | - |
+| --van-action-sheet-subname-color | `@gray-6` | - |
+| --van-action-sheet-subname-font-size | `@font-size-sm` | - |
+| --van-action-sheet-subname-line-height | `@line-height-sm` | - |
+| --van-action-sheet-close-icon-size | `22px` | - |
+| --van-action-sheet-close-icon-color | `@gray-5` | - |
+| --van-action-sheet-close-icon-active-color | `@gray-6` | - |
+| --van-action-sheet-close-icon-padding | `0 @padding-md` | - |
+| --van-action-sheet-cancel-text-color | `@gray-7` | - |
+| --van-action-sheet-cancel-padding-top | `@padding-xs` | - |
+| --van-action-sheet-cancel-padding-color | `@background-color` | - |
+| --van-action-sheet-loading-icon-size | `22px` | - |

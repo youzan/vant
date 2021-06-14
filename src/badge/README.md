@@ -133,19 +133,19 @@ Use `content` slot to custom :content of badge.
 | default | Default slot         |
 | content | Custom badge content |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @badge-size | `16px` | - |
-| @badge-color | `@white` | - |
-| @badge-padding | `0 3px` | - |
-| @badge-font-size | `@font-size-sm` | - |
-| @badge-font-weight | `@font-weight-bold` | - |
-| @badge-border-width | `@border-width-base` | - |
-| @badge-background-color | `@red` | - |
-| @badge-dot-color | `@red` | - |
-| @badge-dot-size | `8px` | - |
-| @badge-font-family | `-apple-system-font, Helvetica Neue, Arial, sans-serif` | - |
+| --van-badge-size | `16px` | - |
+| --van-badge-color | `@white` | - |
+| --van-badge-padding | `0 3px` | - |
+| --van-badge-font-size | `@font-size-sm` | - |
+| --van-badge-font-weight | `@font-weight-bold` | - |
+| --van-badge-border-width | `@border-width-base` | - |
+| --van-badge-background-color | `@red` | - |
+| --van-badge-dot-color | `@red` | - |
+| --van-badge-dot-size | `8px` | - |
+| --van-badge-font-family | `-apple-system-font, Helvetica Neue, Arial, sans-serif` | - |

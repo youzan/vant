@@ -143,16 +143,16 @@ export default {
 | ------- | ------------------- |
 | default | custom text content |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                     | Default Value       | Description |
-| ------------------------ | ------------------- | ----------- |
-| @circle-size             | `100px`             | -           |
-| @circle-color            | `@blue`             | -           |
-| @circle-layer-color      | `@white`            | -           |
-| @circle-text-color       | `@text-color`       | -           |
-| @circle-text-font-weight | `@font-weight-bold` | -           |
-| @circle-text-font-size   | `@font-size-md`     | -           |
-| @circle-text-line-height | `@line-height-md`   | -           |
+| Name                          | Default Value       | Description |
+| ----------------------------- | ------------------- | ----------- |
+| --van-circle-size             | `100px`             | -           |
+| --van-circle-color            | `@blue`             | -           |
+| --van-circle-layer-color      | `@white`            | -           |
+| --van-circle-text-color       | `@text-color`       | -           |
+| --van-circle-text-font-weight | `@font-weight-bold` | -           |
+| --van-circle-text-font-size   | `@font-size-md`     | -           |
+| --van-circle-text-line-height | `@line-height-md`   | -           |

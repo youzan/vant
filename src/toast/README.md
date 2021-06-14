@@ -175,24 +175,24 @@ Toast.resetDefaultOptions('loading');
 | transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | teleport | Specifies a target element where Toast will be mounted | _string \| Element_ | `body` |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                            | Default Value             | Description |
-| ------------------------------- | ------------------------- | ----------- |
-| @toast-max-width                | `70%`                     | -           |
-| @toast-font-size                | `@font-size-md`           | -           |
-| @toast-text-color               | `@white`                  | -           |
-| @toast-loading-icon-color       | `@white`                  | -           |
-| @toast-line-height              | `@line-height-md`         | -           |
-| @toast-border-radius            | `@border-radius-lg`       | -           |
-| @toast-background-color         | `fade(@black, 70%)`       | -           |
-| @toast-icon-size                | `36px`                    | -           |
-| @toast-text-min-width           | `96px`                    | -           |
-| @toast-text-padding             | `@padding-xs @padding-sm` | -           |
-| @toast-default-padding          | `@padding-md`             | -           |
-| @toast-default-width            | `88px`                    | -           |
-| @toast-default-min-height       | `88px`                    | -           |
-| @toast-position-top-distance    | `20%`                     | -           |
-| @toast-position-bottom-distance | `20%`                     | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-toast-max-width | `70%` | - |
+| --van-toast-font-size | `@font-size-md` | - |
+| --van-toast-text-color | `@white` | - |
+| --van-toast-loading-icon-color | `@white` | - |
+| --van-toast-line-height | `@line-height-md` | - |
+| --van-toast-border-radius | `@border-radius-lg` | - |
+| --van-toast-background-color | `fade(@black, 70%)` | - |
+| --van-toast-icon-size | `36px` | - |
+| --van-toast-text-min-width | `96px` | - |
+| --van-toast-text-padding | `@padding-xs @padding-sm` | - |
+| --van-toast-default-padding | `@padding-md` | - |
+| --van-toast-default-width | `88px` | - |
+| --van-toast-default-min-height | `88px` | - |
+| --van-toast-position-top-distance | `20%` | - |
+| --van-toast-position-bottom-distance | `20%` | - |

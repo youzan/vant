@@ -81,14 +81,14 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                              | 默认值          | 描述 |
-| --------------------------------- | --------------- | ---- |
-| @skeleton-row-height              | `16px`          | -    |
-| @skeleton-row-background-color    | `@active-color` | -    |
-| @skeleton-row-margin-top          | `@padding-sm`   | -    |
-| @skeleton-title-width             | `40%`           | -    |
-| @skeleton-avatar-size             | `32px`          | -    |
-| @skeleton-avatar-background-color | `@active-color` | -    |
-| @skeleton-animation-duration      | `1.2s`          | -    |
+| 名称                                   | 默认值          | 描述 |
+| -------------------------------------- | --------------- | ---- |
+| --van-skeleton-row-height              | `16px`          | -    |
+| --van-skeleton-row-background-color    | `@active-color` | -    |
+| --van-skeleton-row-margin-top          | `@padding-sm`   | -    |
+| --van-skeleton-title-width             | `40%`           | -    |
+| --van-skeleton-avatar-size             | `32px`          | -    |
+| --van-skeleton-avatar-background-color | `@active-color` | -    |
+| --van-skeleton-animation-duration      | `1.2s`          | -    |

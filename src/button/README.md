@@ -149,43 +149,43 @@ app.use(Button);
 | icon `v3.0.18` | Custom icon         |
 | loading        | Custom loading icon |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                             | Default Value        | Description |
-| -------------------------------- | -------------------- | ----------- |
-| @button-mini-height              | `24px`               | -           |
-| @button-mini-padding             | `0 @padding-base`    | -           |
-| @button-mini-font-size           | `@font-size-xs`      | -           |
-| @button-small-height             | `32px`               | -           |
-| @button-small-padding            | `0 @padding-xs`      | -           |
-| @button-small-font-size          | `@font-size-sm`      | -           |
-| @button-normal-font-size         | `@font-size-md`      | -           |
-| @button-normal-padding           | `0 15px`             | -           |
-| @button-large-height             | `50px`               | -           |
-| @button-default-height           | `44px`               | -           |
-| @button-default-line-height      | `1.2`                | -           |
-| @button-default-font-size        | `@font-size-lg`      | -           |
-| @button-default-color            | `@text-color`        | -           |
-| @button-default-background-color | `@white`             | -           |
-| @button-default-border-color     | `@border-color`      | -           |
-| @button-primary-color            | `@white`             | -           |
-| @button-primary-background-color | `@blue`              | -           |
-| @button-primary-border-color     | `@blue`              | -           |
-| @button-success-color            | `@white`             | -           |
-| @button-success-background-color | `@green`             | -           |
-| @button-success-border-color     | `@green`             | -           |
-| @button-danger-color             | `@white`             | -           |
-| @button-danger-background-color  | `@red`               | -           |
-| @button-danger-border-color      | `@red`               | -           |
-| @button-warning-color            | `@white`             | -           |
-| @button-warning-background-color | `@orange`            | -           |
-| @button-warning-border-color     | `@orange`            | -           |
-| @button-border-width             | `@border-width-base` | -           |
-| @button-border-radius            | `@border-radius-sm`  | -           |
-| @button-round-border-radius      | `@border-radius-max` | -           |
-| @button-plain-background-color   | `@white`             | -           |
-| @button-disabled-opacity         | `@disabled-opacity`  | -           |
-| @button-icon-size                | `1.2em`              | -           |
-| @button-loading-icon-size        | `20px`               | -           |
+| Name                                  | Default Value        | Description |
+| ------------------------------------- | -------------------- | ----------- |
+| --van-button-mini-height              | `24px`               | -           |
+| --van-button-mini-padding             | `0 @padding-base`    | -           |
+| --van-button-mini-font-size           | `@font-size-xs`      | -           |
+| --van-button-small-height             | `32px`               | -           |
+| --van-button-small-padding            | `0 @padding-xs`      | -           |
+| --van-button-small-font-size          | `@font-size-sm`      | -           |
+| --van-button-normal-font-size         | `@font-size-md`      | -           |
+| --van-button-normal-padding           | `0 15px`             | -           |
+| --van-button-large-height             | `50px`               | -           |
+| --van-button-default-height           | `44px`               | -           |
+| --van-button-default-line-height      | `1.2`                | -           |
+| --van-button-default-font-size        | `@font-size-lg`      | -           |
+| --van-button-default-color            | `@text-color`        | -           |
+| --van-button-default-background-color | `@white`             | -           |
+| --van-button-default-border-color     | `@border-color`      | -           |
+| --van-button-primary-color            | `@white`             | -           |
+| --van-button-primary-background-color | `@blue`              | -           |
+| --van-button-primary-border-color     | `@blue`              | -           |
+| --van-button-success-color            | `@white`             | -           |
+| --van-button-success-background-color | `@green`             | -           |
+| --van-button-success-border-color     | `@green`             | -           |
+| --van-button-danger-color             | `@white`             | -           |
+| --van-button-danger-background-color  | `@red`               | -           |
+| --van-button-danger-border-color      | `@red`               | -           |
+| --van-button-warning-color            | `@white`             | -           |
+| --van-button-warning-background-color | `@orange`            | -           |
+| --van-button-warning-border-color     | `@orange`            | -           |
+| --van-button-border-width             | `@border-width-base` | -           |
+| --van-button-border-radius            | `@border-radius-sm`  | -           |
+| --van-button-round-border-radius      | `@border-radius-max` | -           |
+| --van-button-plain-background-color   | `@white`             | -           |
+| --van-button-disabled-opacity         | `@disabled-opacity`  | -           |
+| --van-button-icon-size                | `1.2em`              | -           |
+| --van-button-loading-icon-size        | `20px`               | -           |

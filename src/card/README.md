@@ -108,25 +108,25 @@ Use slot to custom content.
 | tags         | Custom tags         |
 | footer       | Custom footer       |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                          | Default Value                | Description |
-| ----------------------------- | ---------------------------- | ----------- |
-| @card-padding                 | `@padding-xs @padding-md`    | -           |
-| @card-font-size               | `@font-size-sm`              | -           |
-| @card-text-color              | `@text-color`                | -           |
-| @card-background-color        | `@background-color-light`    | -           |
-| @card-thumb-size              | `88px`                       | -           |
-| @card-thumb-border-radius     | `@border-radius-lg`          | -           |
-| @card-title-line-height       | `16px`                       | -           |
-| @card-desc-color              | `@gray-7`                    | -           |
-| @card-desc-line-height        | `@line-height-md`            | -           |
-| @card-price-color             | `@gray-8`                    | -           |
-| @card-origin-price-color      | `@gray-6`                    | -           |
-| @card-num-color               | `@gray-6`                    | -           |
-| @card-origin-price-font-size  | `@font-size-xs`              | -           |
-| @card-price-font-size         | `@font-size-sm`              | -           |
-| @card-price-integer-font-size | `@font-size-lg`              | -           |
-| @card-price-font-family       | `@price-integer-font-family` | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-card-padding | `@padding-xs @padding-md` | - |
+| --van-card-font-size | `@font-size-sm` | - |
+| --van-card-text-color | `@text-color` | - |
+| --van-card-background-color | `@background-color-light` | - |
+| --van-card-thumb-size | `88px` | - |
+| --van-card-thumb-border-radius | `@border-radius-lg` | - |
+| --van-card-title-line-height | `16px` | - |
+| --van-card-desc-color | `@gray-7` | - |
+| --van-card-desc-line-height | `@line-height-md` | - |
+| --van-card-price-color | `@gray-8` | - |
+| --van-card-origin-price-color | `@gray-6` | - |
+| --van-card-num-color | `@gray-6` | - |
+| --van-card-origin-price-font-size | `@font-size-xs` | - |
+| --van-card-price-font-size | `@font-size-sm` | - |
+| --van-card-price-integer-font-size | `@font-size-lg` | - |
+| --van-card-price-font-family | `@price-integer-font-family` | - |

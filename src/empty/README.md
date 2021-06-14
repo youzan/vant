@@ -86,17 +86,17 @@ Use the image prop to display different placeholder images.
 | image       | Custom image          |
 | description | Custom description    |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                           | Default Value     | Description |
-| ------------------------------ | ----------------- | ----------- |
-| @empty-padding                 | `@padding-xl 0`   | -           |
-| @empty-image-size              | `160px`           | -           |
-| @empty-description-margin-top  | `@padding-md`     | -           |
-| @empty-description-padding     | `0 60px`          | -           |
-| @empty-description-color       | `@gray-6`         | -           |
-| @empty-description-font-size   | `@font-size-md`   | -           |
-| @empty-description-line-height | `@line-height-md` | -           |
-| @empty-bottom-margin-top       | `24px`            | -           |
+| Name                                | Default Value     | Description |
+| ----------------------------------- | ----------------- | ----------- |
+| --van-empty-padding                 | `@padding-xl 0`   | -           |
+| --van-empty-image-size              | `160px`           | -           |
+| --van-empty-description-margin-top  | `@padding-md`     | -           |
+| --van-empty-description-padding     | `0 60px`          | -           |
+| --van-empty-description-color       | `@gray-6`         | -           |
+| --van-empty-description-font-size   | `@font-size-md`   | -           |
+| --van-empty-description-line-height | `@line-height-md` | -           |
+| --van-empty-bottom-margin-top       | `24px`            | -           |

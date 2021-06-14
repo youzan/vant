@@ -181,12 +181,12 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get CountD
 | pause | Pause count down | -         | -            |
 | reset | Reset count down | -         | -            |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                    | Default Value     | Description |
-| ----------------------- | ----------------- | ----------- |
-| @count-down-text-color  | `@text-color`     | -           |
-| @count-down-font-size   | `@font-size-md`   | -           |
-| @count-down-line-height | `@line-height-md` | -           |
+| Name                         | Default Value     | Description |
+| ---------------------------- | ----------------- | ----------- |
+| --van-count-down-text-color  | `@text-color`     | -           |
+| --van-count-down-font-size   | `@font-size-md`   | -           |
+| --van-count-down-line-height | `@line-height-md` | -           |

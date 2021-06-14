@@ -161,7 +161,7 @@ export default {
 ### Radio Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | name | Radio name | _any_ | - |
 | shape | Can be set to `square` | _string_ | `round` |
 | disabled | Whether to disable radio | _boolean_ | `false` |
@@ -173,7 +173,7 @@ export default {
 ### RadioGroup Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model | Name of checked radio | _any_ | - |
 | disabled | Disable all radios | _boolean_ | `false` |
 | direction | Direction, can be set to `horizontal` | _string_ | `vertical` |
@@ -199,18 +199,18 @@ export default {
 | default | Custom label | -                                         |
 | icon    | Custom icon  | _{ checked: boolean, disabled: boolean }_ |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                             | Default Value              | Description |
-| -------------------------------- | -------------------------- | ----------- |
-| @radio-size                      | `20px`                     | -           |
-| @radio-border-color              | `@gray-5`                  | -           |
-| @radio-transition-duration       | `@animation-duration-fast` | -           |
-| @radio-label-margin              | `@padding-xs`              | -           |
-| @radio-label-color               | `@text-color`              | -           |
-| @radio-checked-icon-color        | `@blue`                    | -           |
-| @radio-disabled-icon-color       | `@gray-5`                  | -           |
-| @radio-disabled-label-color      | `@gray-5`                  | -           |
-| @radio-disabled-background-color | `@border-color`            | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-radio-size | `20px` | - |
+| --van-radio-border-color | `@gray-5` | - |
+| --van-radio-transition-duration | `@animation-duration-fast` | - |
+| --van-radio-label-margin | `@padding-xs` | - |
+| --van-radio-label-color | `@text-color` | - |
+| --van-radio-checked-icon-color | `@blue` | - |
+| --van-radio-disabled-icon-color | `@gray-5` | - |
+| --van-radio-disabled-label-color | `@gray-5` | - |
+| --van-radio-disabled-background-color | `@border-color` | - |

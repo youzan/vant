@@ -133,22 +133,22 @@ Use `badge` prop to show badge in icon.
 | ------- | -------------- |
 | default | Button content |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                              | Default Value      | Description |
-| --------------------------------- | ------------------ | ----------- |
-| @action-bar-background-color      | `@white`           | -           |
-| @action-bar-height                | `50px`             | -           |
-| @action-bar-icon-width            | `48px`             | -           |
-| @action-bar-icon-height           | `100%`             | -           |
-| @action-bar-icon-color            | `@text-color`      | -           |
-| @action-bar-icon-size             | `18px`             | -           |
-| @action-bar-icon-font-size        | `@font-size-xs`    | -           |
-| @action-bar-icon-active-color     | `@active-color`    | -           |
-| @action-bar-icon-text-color       | `@gray-7`          | -           |
-| @action-bar-icon-background-color | `@white`           | -           |
-| @action-bar-button-height         | `40px`             | -           |
-| @action-bar-button-warning-color  | `@gradient-orange` | -           |
-| @action-bar-button-danger-color   | `@gradient-red`    | -           |
+| Name                                   | Default Value      | Description |
+| -------------------------------------- | ------------------ | ----------- |
+| --van-action-bar-background-color      | `@white`           | -           |
+| --van-action-bar-height                | `50px`             | -           |
+| --van-action-bar-icon-width            | `48px`             | -           |
+| --van-action-bar-icon-height           | `100%`             | -           |
+| --van-action-bar-icon-color            | `@text-color`      | -           |
+| --van-action-bar-icon-size             | `18px`             | -           |
+| --van-action-bar-icon-font-size        | `@font-size-xs`    | -           |
+| --van-action-bar-icon-active-color     | `@active-color`    | -           |
+| --van-action-bar-icon-text-color       | `@gray-7`          | -           |
+| --van-action-bar-icon-background-color | `@white`           | -           |
+| --van-action-bar-button-height         | `40px`             | -           |
+| --van-action-bar-button-warning-color  | `@gradient-orange` | -           |
+| --van-action-bar-button-danger-color   | `@gradient-red`    | -           |

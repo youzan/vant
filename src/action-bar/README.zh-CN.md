@@ -113,7 +113,7 @@ export default {
 ### ActionBarButton Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | text | 按钮文字 | _string_ | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | _string_ | `default` |
 | color | 按钮颜色，支持传入 `linear-gradient` 渐变色 | _string_ | - |
@@ -139,20 +139,20 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                              | 默认值             | 描述 |
-| --------------------------------- | ------------------ | ---- |
-| @action-bar-background-color      | `@white`           | -    |
-| @action-bar-height                | `50px`             | -    |
-| @action-bar-icon-width            | `48px`             | -    |
-| @action-bar-icon-height           | `100%`             | -    |
-| @action-bar-icon-color            | `@text-color`      | -    |
-| @action-bar-icon-size             | `18px`             | -    |
-| @action-bar-icon-font-size        | `@font-size-xs`    | -    |
-| @action-bar-icon-active-color     | `@active-color`    | -    |
-| @action-bar-icon-text-color       | `@gray-7`          | -    |
-| @action-bar-icon-background-color | `@white`           | -    |
-| @action-bar-button-height         | `40px`             | -    |
-| @action-bar-button-warning-color  | `@gradient-orange` | -    |
-| @action-bar-button-danger-color   | `@gradient-red`    | -    |
+| 名称                                   | 默认值             | 描述 |
+| -------------------------------------- | ------------------ | ---- |
+| --van-action-bar-background-color      | `@white`           | -    |
+| --van-action-bar-height                | `50px`             | -    |
+| --van-action-bar-icon-width            | `48px`             | -    |
+| --van-action-bar-icon-height           | `100%`             | -    |
+| --van-action-bar-icon-color            | `@text-color`      | -    |
+| --van-action-bar-icon-size             | `18px`             | -    |
+| --van-action-bar-icon-font-size        | `@font-size-xs`    | -    |
+| --van-action-bar-icon-active-color     | `@active-color`    | -    |
+| --van-action-bar-icon-text-color       | `@gray-7`          | -    |
+| --van-action-bar-icon-background-color | `@white`           | -    |
+| --van-action-bar-button-height         | `40px`             | -    |
+| --van-action-bar-button-warning-color  | `@gradient-orange` | -    |
+| --van-action-bar-button-danger-color   | `@gradient-red`    | -    |

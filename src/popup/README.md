@@ -161,17 +161,17 @@ export default {
 | default                   | Content of Popup         |
 | overlay-content `v3.0.18` | Content of Popup overlay |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @popup-background-color | `@white` | - |
-| @popup-transition | `transform @animation-duration-base` | - |
-| @popup-round-border-radius | `16px` | - |
-| @popup-close-icon-size | `22px` | - |
-| @popup-close-icon-color | `@gray-5` | - |
-| @popup-close-icon-active-color | `@gray-6` | - |
-| @popup-close-icon-margin | `16px` | - |
-| @popup-close-icon-z-index | `1` | - |
+| --van-popup-background-color | `@white` | - |
+| --van-popup-transition | `transform @animation-duration-base` | - |
+| --van-popup-round-border-radius | `16px` | - |
+| --van-popup-close-icon-size | `22px` | - |
+| --van-popup-close-icon-color | `@gray-5` | - |
+| --van-popup-close-icon-active-color | `@gray-6` | - |
+| --van-popup-close-icon-margin | `16px` | - |
+| --van-popup-close-icon-z-index | `1` | - |

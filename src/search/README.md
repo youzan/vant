@@ -169,20 +169,20 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Search
 | left-icon  | Custom left icon                                            |
 | right-icon | Custom right icon                                           |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                             | Default Value      | Description |
-| -------------------------------- | ------------------ | ----------- |
-| @search-padding                  | `10px @padding-sm` | -           |
-| @search-background-color         | `@white`           | -           |
-| @search-content-background-color | `@gray-1`          | -           |
-| @search-input-height             | `34px`             | -           |
-| @search-label-padding            | `0 5px`            | -           |
-| @search-label-color              | `@text-color`      | -           |
-| @search-label-font-size          | `@font-size-md`    | -           |
-| @search-left-icon-color          | `@gray-6`          | -           |
-| @search-action-padding           | `0 @padding-xs`    | -           |
-| @search-action-text-color        | `@text-color`      | -           |
-| @search-action-font-size         | `@font-size-md`    | -           |
+| Name                                  | Default Value      | Description |
+| ------------------------------------- | ------------------ | ----------- |
+| --van-search-padding                  | `10px @padding-sm` | -           |
+| --van-search-background-color         | `@white`           | -           |
+| --van-search-content-background-color | `@gray-1`          | -           |
+| --van-search-input-height             | `34px`             | -           |
+| --van-search-label-padding            | `0 5px`            | -           |
+| --van-search-label-color              | `@text-color`      | -           |
+| --van-search-label-font-size          | `@font-size-md`    | -           |
+| --van-search-left-icon-color          | `@gray-6`          | -           |
+| --van-search-action-padding           | `0 @padding-xs`    | -           |
+| --van-search-action-text-color        | `@text-color`      | -           |
+| --van-search-action-font-size         | `@font-size-md`    | -           |

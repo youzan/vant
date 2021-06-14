@@ -248,20 +248,20 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                    | 默认值               | 描述 |
-| --------------------------------------- | -------------------- | ---- |
-| @image-preview-index-text-color         | `@white`             | -    |
-| @image-preview-index-font-size          | `@font-size-md`      | -    |
-| @image-preview-index-line-height        | `@line-height-md`    | -    |
-| @image-preview-index-text-shadow        | `0 1px 1px @gray-8`  | -    |
-| @image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | -    |
-| @image-preview-close-icon-size          | `22px`               | -    |
-| @image-preview-close-icon-color         | `@gray-5`            | -    |
-| @image-preview-close-icon-active-color  | `@gray-6`            | -    |
-| @image-preview-close-icon-margin        | `@padding-md`        | -    |
-| @image-preview-close-icon-z-index       | `1`                  | -    |
+| 名称                                         | 默认值               | 描述 |
+| -------------------------------------------- | -------------------- | ---- |
+| --van-image-preview-index-text-color         | `@white`             | -    |
+| --van-image-preview-index-font-size          | `@font-size-md`      | -    |
+| --van-image-preview-index-line-height        | `@line-height-md`    | -    |
+| --van-image-preview-index-text-shadow        | `0 1px 1px @gray-8`  | -    |
+| --van-image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | -    |
+| --van-image-preview-close-icon-size          | `22px`               | -    |
+| --van-image-preview-close-icon-color         | `@gray-5`            | -    |
+| --van-image-preview-close-icon-active-color  | `@gray-6`            | -    |
+| --van-image-preview-close-icon-margin        | `@padding-md`        | -    |
+| --van-image-preview-close-icon-z-index       | `1`                  | -    |
 
 ## 常见问题
 

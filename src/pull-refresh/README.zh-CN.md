@@ -141,14 +141,14 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                            | 默认值          | 描述 |
-| ------------------------------- | --------------- | ---- |
-| @pull-refresh-head-height       | `50px`          | -    |
-| @pull-refresh-head-font-size    | `@font-size-md` | -    |
-| @pull-refresh-head-text-color   | `@gray-6`       | -    |
-| @pull-refresh-loading-icon-size | `16px`          | -    |
+| 名称                                 | 默认值          | 描述 |
+| ------------------------------------ | --------------- | ---- |
+| --van-pull-refresh-head-height       | `50px`          | -    |
+| --van-pull-refresh-head-font-size    | `@font-size-md` | -    |
+| --van-pull-refresh-head-text-color   | `@gray-6`       | -    |
+| --van-pull-refresh-loading-icon-size | `16px`          | -    |
 
 ## 常见问题
 

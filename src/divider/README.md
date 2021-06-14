@@ -69,17 +69,17 @@ app.use(Divider);
 | ------- | ----------- |
 | default | content     |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                         | Default Value   | Description |
-| ---------------------------- | --------------- | ----------- |
-| @divider-margin              | `@padding-md 0` | -           |
-| @divider-text-color          | `@gray-6`       | -           |
-| @divider-font-size           | `@font-size-md` | -           |
-| @divider-line-height         | `24px`          | -           |
-| @divider-border-color        | `@border-color` | -           |
-| @divider-content-padding     | `@padding-md`   | -           |
-| @divider-content-left-width  | `10%`           | -           |
-| @divider-content-right-width | `10%`           | -           |
+| Name                              | Default Value   | Description |
+| --------------------------------- | --------------- | ----------- |
+| --van-divider-margin              | `@padding-md 0` | -           |
+| --van-divider-text-color          | `@gray-6`       | -           |
+| --van-divider-font-size           | `@font-size-md` | -           |
+| --van-divider-line-height         | `24px`          | -           |
+| --van-divider-border-color        | `@border-color` | -           |
+| --van-divider-content-padding     | `@padding-md`   | -           |
+| --van-divider-content-left-width  | `10%`           | -           |
+| --van-divider-content-right-width | `10%`           | -           |

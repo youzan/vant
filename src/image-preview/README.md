@@ -209,19 +209,19 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get ImagePreview instance and call i
 | index     | Index of current image | _number_ |
 | scale     | scale of current image | _number_ |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                    | Default Value        | Description |
-| --------------------------------------- | -------------------- | ----------- |
-| @image-preview-index-text-color         | `@white`             | -           |
-| @image-preview-index-font-size          | `@font-size-md`      | -           |
-| @image-preview-index-line-height        | `@line-height-md`    | -           |
-| @image-preview-index-text-shadow        | `0 1px 1px @gray-8`  | -           |
-| @image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | -           |
-| @image-preview-close-icon-size          | `22px`               | -           |
-| @image-preview-close-icon-color         | `@gray-5`            | -           |
-| @image-preview-close-icon-active-color  | `@gray-6`            | -           |
-| @image-preview-close-icon-margin        | `@padding-md`        | -           |
-| @image-preview-close-icon-z-index       | `1`                  | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-image-preview-index-text-color | `@white` | - |
+| --van-image-preview-index-font-size | `@font-size-md` | - |
+| --van-image-preview-index-line-height | `@line-height-md` | - |
+| --van-image-preview-index-text-shadow | `0 1px 1px @gray-8` | - |
+| --van-image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | - |
+| --van-image-preview-close-icon-size | `22px` | - |
+| --van-image-preview-close-icon-color | `@gray-5` | - |
+| --van-image-preview-close-icon-active-color | `@gray-6` | - |
+| --van-image-preview-close-icon-margin | `@padding-md` | - |
+| --van-image-preview-close-icon-z-index | `1` | - |

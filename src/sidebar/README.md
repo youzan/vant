@@ -124,23 +124,23 @@ export default {
 | ----- | ----------------- |
 | title | Custom item title |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                               | Default Value       | Description |
-| ---------------------------------- | ------------------- | ----------- |
-| @sidebar-width                     | `80px`              | -           |
-| @sidebar-font-size                 | `@font-size-md`     | -           |
-| @sidebar-line-height               | `@line-height-md`   | -           |
-| @sidebar-text-color                | `@text-color`       | -           |
-| @sidebar-disabled-text-color       | `@gray-5`           | -           |
-| @sidebar-padding                   | `20px @padding-sm`  | -           |
-| @sidebar-active-color              | `@active-color`     | -           |
-| @sidebar-background-color          | `@background-color` | -           |
-| @sidebar-selected-font-weight      | `@font-weight-bold` | -           |
-| @sidebar-selected-text-color       | `@text-color`       | -           |
-| @sidebar-selected-border-width     | `4px`               | -           |
-| @sidebar-selected-border-height    | `16px`              | -           |
-| @sidebar-selected-border-color     | `@red`              | -           |
-| @sidebar-selected-background-color | `@white`            | -           |
+| Name                                    | Default Value       | Description |
+| --------------------------------------- | ------------------- | ----------- |
+| --van-sidebar-width                     | `80px`              | -           |
+| --van-sidebar-font-size                 | `@font-size-md`     | -           |
+| --van-sidebar-line-height               | `@line-height-md`   | -           |
+| --van-sidebar-text-color                | `@text-color`       | -           |
+| --van-sidebar-disabled-text-color       | `@gray-5`           | -           |
+| --van-sidebar-padding                   | `20px @padding-sm`  | -           |
+| --van-sidebar-active-color              | `@active-color`     | -           |
+| --van-sidebar-background-color          | `@background-color` | -           |
+| --van-sidebar-selected-font-weight      | `@font-weight-bold` | -           |
+| --van-sidebar-selected-text-color       | `@text-color`       | -           |
+| --van-sidebar-selected-border-width     | `4px`               | -           |
+| --van-sidebar-selected-border-height    | `16px`              | -           |
+| --van-sidebar-selected-border-color     | `@red`              | -           |
+| --van-sidebar-selected-background-color | `@white`            | -           |

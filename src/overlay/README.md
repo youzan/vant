@@ -86,11 +86,11 @@ export default {
 | ------- | ------------ |
 | default | Default slot |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                      | Default Value        | Description |
-| ------------------------- | -------------------- | ----------- |
-| @overlay-z-index          | `1`                  | -           |
-| @overlay-background-color | `rgba(0, 0, 0, 0.7)` | -           |
+| Name                           | Default Value        | Description |
+| ------------------------------ | -------------------- | ----------- |
+| --van-overlay-z-index          | `1`                  | -           |
+| --van-overlay-background-color | `rgba(0, 0, 0, 0.7)` | -           |

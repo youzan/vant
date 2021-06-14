@@ -136,13 +136,13 @@ Use slots to custom tips.
 | loading | Content of head when at loading       | { distance } |
 | success | Content of head when succeed          | -            |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                            | Default Value   | Description |
-| ------------------------------- | --------------- | ----------- |
-| @pull-refresh-head-height       | `50px`          | -           |
-| @pull-refresh-head-font-size    | `@font-size-md` | -           |
-| @pull-refresh-head-text-color   | `@gray-6`       | -           |
-| @pull-refresh-loading-icon-size | `16px`          | -           |
+| Name                                 | Default Value   | Description |
+| ------------------------------------ | --------------- | ----------- |
+| --van-pull-refresh-head-height       | `50px`          | -           |
+| --van-pull-refresh-head-font-size    | `@font-size-md` | -           |
+| --van-pull-refresh-head-text-color   | `@gray-6`       | -           |
+| --van-pull-refresh-loading-icon-size | `16px`          | -           |

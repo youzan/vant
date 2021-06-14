@@ -96,18 +96,18 @@ export default {
 | prev-text | Custom prev text | `-` |
 | next-text | Custom next text | `-` |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @pagination-height | `40px` | - |
-| @pagination-font-size | `@font-size-md` | - |
-| @pagination-item-width | `36px` | - |
-| @pagination-item-default-color | `@blue` | - |
-| @pagination-item-disabled-color | `@gray-7` | - |
-| @pagination-item-disabled-background-color | `@background-color` | - |
-| @pagination-background-color | `@white` | - |
-| @pagination-desc-color | `@gray-7` | - |
-| @pagination-disabled-opacity | `@disabled-opacity` | - |
+| --van-pagination-height | `40px` | - |
+| --van-pagination-font-size | `@font-size-md` | - |
+| --van-pagination-item-width | `36px` | - |
+| --van-pagination-item-default-color | `@blue` | - |
+| --van-pagination-item-disabled-color | `@gray-7` | - |
+| --van-pagination-item-disabled-background-color | `@background-color` | - |
+| --van-pagination-background-color | `@white` | - |
+| --van-pagination-desc-color | `@gray-7` | - |
+| --van-pagination-disabled-opacity | `@disabled-opacity` | - |

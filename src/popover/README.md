@@ -254,22 +254,22 @@ export default {
 | default   | Custom content    |
 | reference | Reference Element |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| @popover-arrow-size | `6px` | - |
-| @popover-border-radius | `@border-radius-lg` | - |
-| @popover-action-width | `128px` | - |
-| @popover-action-height | `44px` | - |
-| @popover-action-font-size | `@font-size-md` | - |
-| @popover-action-line-height | `@line-height-md` | - |
-| @popover-action-icon-size | `20px` | - |
-| @popover-light-text-color | `@text-color` | - |
-| @popover-light-background-color | `@white` | - |
-| @popover-light-action-disabled-text-color | `@gray-5` | - |
-| @popover-dark-text-color | `@white` | - |
-| @popover-dark-background-color | `#4a4a4a` | - |
-| @popover-dark-action-disabled-text-color | `@gray-6` | - |
+| --van-popover-arrow-size | `6px` | - |
+| --van-popover-border-radius | `@border-radius-lg` | - |
+| --van-popover-action-width | `128px` | - |
+| --van-popover-action-height | `44px` | - |
+| --van-popover-action-font-size | `@font-size-md` | - |
+| --van-popover-action-line-height | `@line-height-md` | - |
+| --van-popover-action-icon-size | `20px` | - |
+| --van-popover-light-text-color | `@text-color` | - |
+| --van-popover-light-background-color | `@white` | - |
+| --van-popover-light-action-disabled-text-color | `@gray-5` | - |
+| --van-popover-dark-text-color | `@white` | - |
+| --van-popover-dark-background-color | `#4a4a4a` | - |
+| --van-popover-dark-action-disabled-text-color | `@gray-6` | - |

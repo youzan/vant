@@ -233,7 +233,7 @@ export default {
 ### Tabs Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model:active | Index of active tab | _number \| string_ | `0` |
 | type | Can be set to `line` `card` | _string_ | `line` |
 | color | Tab color | _string_ | `#ee0a24` |
@@ -302,21 +302,21 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Tabs i
 | default | Content of tab   |
 | title   | Custom tab title |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                       | Default Value         | Description |
-| -------------------------- | --------------------- | ----------- |
-| @tab-text-color            | `@gray-7`             | -           |
-| @tab-active-text-color     | `@text-color`         | -           |
-| @tab-disabled-text-color   | `@gray-5`             | -           |
-| @tab-font-size             | `@font-size-md`       | -           |
-| @tab-line-height           | `@line-height-md`     | -           |
-| @tabs-default-color        | `@red`                | -           |
-| @tabs-line-height          | `44px`                | -           |
-| @tabs-card-height          | `30px`                | -           |
-| @tabs-nav-background-color | `@white`              | -           |
-| @tabs-bottom-bar-width     | `40px`                | -           |
-| @tabs-bottom-bar-height    | `3px`                 | -           |
-| @tabs-bottom-bar-color     | `@tabs-default-color` | -           |
+| Name                            | Default Value         | Description |
+| ------------------------------- | --------------------- | ----------- |
+| --van-tab-text-color            | `@gray-7`             | -           |
+| --van-tab-active-text-color     | `@text-color`         | -           |
+| --van-tab-disabled-text-color   | `@gray-5`             | -           |
+| --van-tab-font-size             | `@font-size-md`       | -           |
+| --van-tab-line-height           | `@line-height-md`     | -           |
+| --van-tabs-default-color        | `@red`                | -           |
+| --van-tabs-line-height          | `44px`                | -           |
+| --van-tabs-card-height          | `30px`                | -           |
+| --van-tabs-nav-background-color | `@white`              | -           |
+| --van-tabs-bottom-bar-width     | `40px`                | -           |
+| --van-tabs-bottom-bar-height    | `3px`                 | -           |
+| --van-tabs-bottom-bar-color     | `@tabs-default-color` | -           |

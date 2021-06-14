@@ -96,13 +96,13 @@ export default {
 | ----- | --------------------------------- | ------------------- |
 | click | Emitted when component is clicked | _event: MouseEvent_ |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                            | Default Value     | Description |
-| ------------------------------- | ----------------- | ----------- |
-| @contact-card-padding           | `@padding-md`     | -           |
-| @contact-card-add-icon-size     | `40px`            | -           |
-| @contact-card-add-icon-color    | `@blue`           | -           |
-| @contact-card-value-line-height | `@line-height-md` | -           |
+| Name                                 | Default Value     | Description |
+| ------------------------------------ | ----------------- | ----------- |
+| --van-contact-card-padding           | `@padding-md`     | -           |
+| --van-contact-card-add-icon-size     | `40px`            | -           |
+| --van-contact-card-add-icon-color    | `@blue`           | -           |
+| --van-contact-card-value-line-height | `@line-height-md` | -           |

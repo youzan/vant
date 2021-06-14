@@ -81,15 +81,15 @@ app.use(Divider);
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                         | 默认值          | 描述 |
-| ---------------------------- | --------------- | ---- |
-| @divider-margin              | `@padding-md 0` | -    |
-| @divider-text-color          | `@gray-6`       | -    |
-| @divider-font-size           | `@font-size-md` | -    |
-| @divider-line-height         | `24px`          | -    |
-| @divider-border-color        | `@border-color` | -    |
-| @divider-content-padding     | `@padding-md`   | -    |
-| @divider-content-left-width  | `10%`           | -    |
-| @divider-content-right-width | `10%`           | -    |
+| 名称                              | 默认值          | 描述 |
+| --------------------------------- | --------------- | ---- |
+| --van-divider-margin              | `@padding-md 0` | -    |
+| --van-divider-text-color          | `@gray-6`       | -    |
+| --van-divider-font-size           | `@font-size-md` | -    |
+| --van-divider-line-height         | `24px`          | -    |
+| --van-divider-border-color        | `@border-color` | -    |
+| --van-divider-content-padding     | `@padding-md`   | -    |
+| --van-divider-content-left-width  | `10%`           | -    |
+| --van-divider-content-right-width | `10%`           | -    |

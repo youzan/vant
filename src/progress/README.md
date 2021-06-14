@@ -77,17 +77,17 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Progress instance and call insta
 | --- | --- | --- | --- |
 | resize | Resize Progress when container element resized or visibility changed | - | - |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                             | Default Value   | Description |
-| -------------------------------- | --------------- | ----------- |
-| @progress-height                 | `4px`           | -           |
-| @progress-color                  | `@blue`         | -           |
-| @progress-background-color       | `@gray-3`       | -           |
-| @progress-pivot-padding          | `0 5px`         | -           |
-| @progress-pivot-text-color       | `@white`        | -           |
-| @progress-pivot-font-size        | `@font-size-xs` | -           |
-| @progress-pivot-line-height      | `1.6`           | -           |
-| @progress-pivot-background-color | `@blue`         | -           |
+| Name                                  | Default Value   | Description |
+| ------------------------------------- | --------------- | ----------- |
+| --van-progress-height                 | `4px`           | -           |
+| --van-progress-color                  | `@blue`         | -           |
+| --van-progress-background-color       | `@gray-3`       | -           |
+| --van-progress-pivot-padding          | `0 5px`         | -           |
+| --van-progress-pivot-text-color       | `@white`        | -           |
+| --van-progress-pivot-font-size        | `@font-size-xs` | -           |
+| --van-progress-pivot-line-height      | `1.6`           | -           |
+| --van-progress-pivot-background-color | `@blue`         | -           |

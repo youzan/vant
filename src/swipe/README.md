@@ -192,15 +192,15 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Swipe 
 | default             | Content          | -                    |
 | indicator `v3.0.16` | Custom indicator | _{ active: number }_ |
 
-### Less Variables
+### CSS Variables
 
-How to use: [Custom Theme](#/en-US/theme).
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                       | Default Value   | Description |
-| ------------------------------------------ | --------------- | ----------- |
-| @swipe-indicator-size                      | `6px`           | -           |
-| @swipe-indicator-margin                    | `@padding-sm`   | -           |
-| @swipe-indicator-active-opacity            | `1`             | -           |
-| @swipe-indicator-inactive-opacity          | `0.3`           | -           |
-| @swipe-indicator-active-background-color   | `@blue`         | -           |
-| @swipe-indicator-inactive-background-color | `@border-color` | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-swipe-indicator-size | `6px` | - |
+| --van-swipe-indicator-margin | `@padding-sm` | - |
+| --van-swipe-indicator-active-opacity | `1` | - |
+| --van-swipe-indicator-inactive-opacity | `0.3` | - |
+| --van-swipe-indicator-active-background-color | `@blue` | - |
+| --van-swipe-indicator-inactive-background-color | `@border-color` | - |

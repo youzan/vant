@@ -202,16 +202,16 @@ export default {
 
 ### 样式变量
 
-组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                       | 默认值          | 描述 |
-| ------------------------------------------ | --------------- | ---- |
-| @swipe-indicator-size                      | `6px`           | -    |
-| @swipe-indicator-margin                    | `@padding-sm`   | -    |
-| @swipe-indicator-active-opacity            | `1`             | -    |
-| @swipe-indicator-inactive-opacity          | `0.3`           | -    |
-| @swipe-indicator-active-background-color   | `@blue`         | -    |
-| @swipe-indicator-inactive-background-color | `@border-color` | -    |
+| 名称                                            | 默认值          | 描述 |
+| ----------------------------------------------- | --------------- | ---- |
+| --van-swipe-indicator-size                      | `6px`           | -    |
+| --van-swipe-indicator-margin                    | `@padding-sm`   | -    |
+| --van-swipe-indicator-active-opacity            | `1`             | -    |
+| --van-swipe-indicator-inactive-opacity          | `0.3`           | -    |
+| --van-swipe-indicator-active-background-color   | `@blue`         | -    |
+| --van-swipe-indicator-inactive-background-color | `@border-color` | -    |
 
 ## 常见问题
 
