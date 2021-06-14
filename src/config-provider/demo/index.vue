@@ -56,7 +56,7 @@ const i18n = {
     slider: '滑块',
     switch: '开关',
     submit: '提交',
-    customTheme: '自定义主题',
+    customTheme: '定制主题',
     defaultTheme: '默认主题',
   },
   'en-US': {
