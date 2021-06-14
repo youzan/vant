@@ -112,6 +112,81 @@ export default {
 };
 ```
 
+### CSS 变量
+
+下面是所有的**基础样式变量**，所有组件的样式变量请参考各个组件文档底部的表格。
+
+```less
+// Color Palette
+--van-black: #000;
+--van-white: #fff;
+--van-gray-1: #f7f8fa;
+--van-gray-2: #f2f3f5;
+--van-gray-3: #ebedf0;
+--van-gray-4: #dcdee0;
+--van-gray-5: #c8c9cc;
+--van-gray-6: #969799;
+--van-gray-7: #646566;
+--van-gray-8: #323233;
+--van-red: #ee0a24;
+--van-blue: #1989fa;
+--van-orange: #ff976a;
+--van-orange-dark: #ed6a0c;
+--van-orange-light: #fffbe8;
+--van-green: #07c160;
+
+// Gradient Colors
+--van-gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+--van-gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
+
+// Component Colors
+--van-text-color: #323233;
+--van-active-color: #f2f3f5;
+--van-active-opacity: 0.7;
+--van-disabled-opacity: 0.5;
+--van-background-color: #f7f8fa;
+--van-background-color-light: #fafafa;
+--van-text-link-color: #576b95;
+
+// Padding
+--van-padding-base: 4px;
+--van-padding-xs: 8px;
+--van-padding-sm: 12px;
+--van-padding-md: 16px;
+--van-padding-lg: 24px;
+--van-padding-xl: 32px;
+
+// Font
+--van-font-size-xs: 10px;
+--van-font-size-sm: 12px;
+--van-font-size-md: 14px;
+--van-font-size-lg: 16px;
+--van-font-weight-bold: 500;
+--van-line-height-xs: 14px;
+--van-line-height-sm: 18px;
+--van-line-height-md: 20px;
+--van-line-height-lg: 22px;
+--van-base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB',
+  'Microsoft Yahei', sans-serif;
+--van-price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue,
+  Arial, sans-serif;
+
+// Animation
+--van-animation-duration-base: 0.3s;
+--van-animation-duration-fast: 0.2s;
+--van-animation-timing-function-enter: ease-out;
+--van-animation-timing-function-leave: ease-in;
+
+// Border
+--van-border-color: #ebedf0;
+--van-border-width-base: 1px;
+--van-border-radius-sm: 2px;
+--van-border-radius-md: 4px;
+--van-border-radius-lg: 8px;
+--van-border-radius-max: 999px;
+```
+
 ## API
 
 ### Props
