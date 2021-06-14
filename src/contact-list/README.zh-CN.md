@@ -102,7 +102,7 @@ export default {
 
 | 名称                                     | 默认值                  | 描述 |
 | ---------------------------------------- | ----------------------- | ---- |
-| --van-contact-list-edit-icon-size        | `16px`                  | -    |
-| --van-contact-list-add-button-z-index    | `999`                   | -    |
-| --van-contact-list-item-padding          | `var(--van-padding-md)` | -    |
-| --van-contact-list-item-radio-icon-color | `var(--van-red)`        | -    |
+| --van-contact-list-edit-icon-size        | _16px_                  | -    |
+| --van-contact-list-add-button-z-index    | _999_                   | -    |
+| --van-contact-list-item-padding          | _var(--van-padding-md)_ | -    |
+| --van-contact-list-item-radio-icon-color | _var(--van-red)_        | -    |

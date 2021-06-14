@@ -181,18 +181,18 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-toast-max-width | `70%` | - |
-| --van-toast-font-size | `var(--van-font-size-md)` | - |
-| --van-toast-text-color | `var(--van-white)` | - |
-| --van-toast-loading-icon-color | `var(--van-white)` | - |
-| --van-toast-line-height | `var(--van-line-height-md)` | - |
-| --van-toast-border-radius | `var(--van-border-radius-lg)` | - |
-| --van-toast-background-color | `fade(var(--van-black), 70%)` | - |
-| --van-toast-icon-size | `36px` | - |
-| --van-toast-text-min-width | `96px` | - |
-| --van-toast-text-padding | `var(--van-padding-xs) var(--van-padding-sm)` | - |
-| --van-toast-default-padding | `var(--van-padding-md)` | - |
-| --van-toast-default-width | `88px` | - |
-| --van-toast-default-min-height | `88px` | - |
-| --van-toast-position-top-distance | `20%` | - |
-| --van-toast-position-bottom-distance | `20%` | - |
+| --van-toast-max-width | _70%_ | - |
+| --van-toast-font-size | _var(--van-font-size-md)_ | - |
+| --van-toast-text-color | _var(--van-white)_ | - |
+| --van-toast-loading-icon-color | _var(--van-white)_ | - |
+| --van-toast-line-height | _var(--van-line-height-md)_ | - |
+| --van-toast-border-radius | _var(--van-border-radius-lg)_ | - |
+| --van-toast-background-color | _fade(var(--van-black), 70%)_ | - |
+| --van-toast-icon-size | _36px_ | - |
+| --van-toast-text-min-width | _96px_ | - |
+| --van-toast-text-padding | _var(--van-padding-xs) var(--van-padding-sm)_ | - |
+| --van-toast-default-padding | _var(--van-padding-md)_ | - |
+| --van-toast-default-width | _88px_ | - |
+| --van-toast-default-min-height | _88px_ | - |
+| --van-toast-position-top-distance | _20%_ | - |
+| --van-toast-position-bottom-distance | _20%_ | - |

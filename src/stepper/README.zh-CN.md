@@ -183,20 +183,20 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-stepper-active-color | `#e8e8e8` | - |
-| --van-stepper-background-color | `var(--van-active-color)` | - |
-| --van-stepper-button-icon-color | `var(--van-text-color)` | - |
-| --van-stepper-button-disabled-color | `var(--van-background-color)` | - |
-| --van-stepper-button-disabled-icon-color | `var(--van-gary-5)` | - |
-| --van-stepper-button-round-theme-color | `var(--van-red)` | - |
-| --van-stepper-input-width | `32px` | - |
-| --van-stepper-input-height | `28px` | - |
-| --van-stepper-input-font-size | `var(--van-font-size-md)` | - |
-| --van-stepper-input-line-height | `normal` | - |
-| --van-stepper-input-text-color | `var(--van-text-color)` | - |
-| --van-stepper-input-disabled-text-color | `var(--van-gary-5)` | - |
-| --van-stepper-input-disabled-background-color | `var(--van-active-color)` | - |
-| --van-stepper-border-radius | `var(--van-border-radius-md)` | - |
+| --van-stepper-active-color | _#e8e8e8_ | - |
+| --van-stepper-background-color | _var(--van-active-color)_ | - |
+| --van-stepper-button-icon-color | _var(--van-text-color)_ | - |
+| --van-stepper-button-disabled-color | _var(--van-background-color)_ | - |
+| --van-stepper-button-disabled-icon-color | _var(--van-gary-5)_ | - |
+| --van-stepper-button-round-theme-color | _var(--van-red)_ | - |
+| --van-stepper-input-width | _32px_ | - |
+| --van-stepper-input-height | _28px_ | - |
+| --van-stepper-input-font-size | _var(--van-font-size-md)_ | - |
+| --van-stepper-input-line-height | _normal_ | - |
+| --van-stepper-input-text-color | _var(--van-text-color)_ | - |
+| --van-stepper-input-disabled-text-color | _var(--van-gary-5)_ | - |
+| --van-stepper-input-disabled-background-color | _var(--van-active-color)_ | - |
+| --van-stepper-border-radius | _var(--van-border-radius-md)_ | - |
 
 ## 常见问题
 

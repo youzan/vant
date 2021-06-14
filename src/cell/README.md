@@ -188,27 +188,27 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-cell-font-size | `var(--van-font-size-md)` | - |
-| --van-cell-line-height | `24px` | - |
-| --van-cell-vertical-padding | `10px` | - |
-| --van-cell-horizontal-padding | `var(--van-padding-md)` | - |
-| --van-cell-text-color | `var(--van-text-color)` | - |
-| --van-cell-background-color | `var(--van-white)` | - |
-| --van-cell-border-color | `var(--van-border-color)` | - |
-| --van-cell-active-color | `var(--van-active-color)` | - |
-| --van-cell-required-color | `var(--van-red)` | - |
-| --van-cell-label-color | `var(--van-gary-6)` | - |
-| --van-cell-label-font-size | `var(--van-font-size-sm)` | - |
-| --van-cell-label-line-height | `var(--van-line-height-sm)` | - |
-| --van-cell-label-margin-top | `var(--van-padding-base)` | - |
-| --van-cell-value-color | `var(--van-gary-6)` | - |
-| --van-cell-icon-size | `16px` | - |
-| --van-cell-right-icon-color | `var(--van-gary-6)` | - |
-| --van-cell-large-vertical-padding | `var(--van-padding-sm)` | - |
-| --van-cell-large-title-font-size | `var(--van-font-size-lg)` | - |
-| --van-cell-large-label-font-size | `var(--van-font-size-md)` | - |
-| --van-cell-group-background-color | `var(--van-white)` | - |
-| --van-cell-group-title-color | `var(--van-gary-6)` | - |
-| --van-cell-group-title-padding | `var(--van-padding-md) var(--van-padding-md) var(--van-padding-xs)` | - |
-| --van-cell-group-title-font-size | `var(--van-font-size-md)` | - |
-| --van-cell-group-title-line-height | `16px` | - |
+| --van-cell-font-size | _var(--van-font-size-md)_ | - |
+| --van-cell-line-height | _24px_ | - |
+| --van-cell-vertical-padding | _10px_ | - |
+| --van-cell-horizontal-padding | _var(--van-padding-md)_ | - |
+| --van-cell-text-color | _var(--van-text-color)_ | - |
+| --van-cell-background-color | _var(--van-white)_ | - |
+| --van-cell-border-color | _var(--van-border-color)_ | - |
+| --van-cell-active-color | _var(--van-active-color)_ | - |
+| --van-cell-required-color | _var(--van-red)_ | - |
+| --van-cell-label-color | _var(--van-gary-6)_ | - |
+| --van-cell-label-font-size | _var(--van-font-size-sm)_ | - |
+| --van-cell-label-line-height | _var(--van-line-height-sm)_ | - |
+| --van-cell-label-margin-top | _var(--van-padding-base)_ | - |
+| --van-cell-value-color | _var(--van-gary-6)_ | - |
+| --van-cell-icon-size | _16px_ | - |
+| --van-cell-right-icon-color | _var(--van-gary-6)_ | - |
+| --van-cell-large-vertical-padding | _var(--van-padding-sm)_ | - |
+| --van-cell-large-title-font-size | _var(--van-font-size-lg)_ | - |
+| --van-cell-large-label-font-size | _var(--van-font-size-md)_ | - |
+| --van-cell-group-background-color | _var(--van-white)_ | - |
+| --van-cell-group-title-color | _var(--van-gary-6)_ | - |
+| --van-cell-group-title-padding | _var(--van-padding-md) var(--van-padding-md) var(--van-padding-xs)_ | - |
+| --van-cell-group-title-font-size | _var(--van-font-size-md)_ | - |
+| --van-cell-group-title-line-height | _16px_ | - |

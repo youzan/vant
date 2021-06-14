@@ -187,6 +187,6 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name                         | Default Value               | Description |
 | ---------------------------- | --------------------------- | ----------- |
-| --van-count-down-text-color  | `var(--van-text-color)`     | -           |
-| --van-count-down-font-size   | `var(--van-font-size-md)`   | -           |
-| --van-count-down-line-height | `var(--van-line-height-md)` | -           |
+| --van-count-down-text-color  | _var(--van-text-color)_     | -           |
+| --van-count-down-font-size   | _var(--van-font-size-md)_   | -           |
+| --van-count-down-line-height | _var(--van-line-height-md)_ | -           |

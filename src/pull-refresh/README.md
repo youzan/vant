@@ -142,7 +142,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-pull-refresh-head-height | `50px` | - |
-| --van-pull-refresh-head-font-size | `var(--van-font-size-md)` | - |
-| --van-pull-refresh-head-text-color | `var(--van-gary-6)` | - |
-| --van-pull-refresh-loading-icon-size | `16px` | - |
+| --van-pull-refresh-head-height | _50px_ | - |
+| --van-pull-refresh-head-font-size | _var(--van-font-size-md)_ | - |
+| --van-pull-refresh-head-text-color | _var(--van-gary-6)_ | - |
+| --van-pull-refresh-loading-icon-size | _16px_ | - |

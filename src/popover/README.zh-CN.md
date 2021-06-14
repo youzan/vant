@@ -272,19 +272,19 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-popover-arrow-size | `6px` | - |
-| --van-popover-border-radius | `var(--van-border-radius-lg)` | - |
-| --van-popover-action-width | `128px` | - |
-| --van-popover-action-height | `44px` | - |
-| --van-popover-action-font-size | `var(--van-font-size-md)` | - |
-| --van-popover-action-line-height | `var(--van-line-height-md)` | - |
-| --van-popover-action-icon-size | `20px` | - |
-| --van-popover-light-text-color | `var(--van-text-color)` | - |
-| --van-popover-light-background-color | `var(--van-white)` | - |
-| --van-popover-light-action-disabled-text-color | `var(--van-gary-5)` | - |
-| --van-popover-dark-text-color | `var(--van-white)` | - |
-| --van-popover-dark-background-color | `#4a4a4a` | - |
-| --van-popover-dark-action-disabled-text-color | `var(--van-gary-6)` | - |
+| --van-popover-arrow-size | _6px_ | - |
+| --van-popover-border-radius | _var(--van-border-radius-lg)_ | - |
+| --van-popover-action-width | _128px_ | - |
+| --van-popover-action-height | _44px_ | - |
+| --van-popover-action-font-size | _var(--van-font-size-md)_ | - |
+| --van-popover-action-line-height | _var(--van-line-height-md)_ | - |
+| --van-popover-action-icon-size | _20px_ | - |
+| --van-popover-light-text-color | _var(--van-text-color)_ | - |
+| --van-popover-light-background-color | _var(--van-white)_ | - |
+| --van-popover-light-action-disabled-text-color | _var(--van-gary-5)_ | - |
+| --van-popover-dark-text-color | _var(--van-white)_ | - |
+| --van-popover-dark-background-color | _#4a4a4a_ | - |
+| --van-popover-dark-action-disabled-text-color | _var(--van-gary-6)_ | - |
 
 ## 常见问题
 

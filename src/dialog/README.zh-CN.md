@@ -255,25 +255,25 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-dialog-width | `320px` | - |
-| --van-dialog-small-screen-width | `90%` | - |
-| --van-dialog-font-size | `var(--van-font-size-lg)` | - |
-| --van-dialog-transition | `var(--van-animation-duration-base)` | - |
-| --van-dialog-border-radius | `16px` | - |
-| --van-dialog-background-color | `var(--van-white)` | - |
-| --van-dialog-header-font-weight | `var(--van-font-weight-bold)` | - |
-| --van-dialog-header-line-height | `24px` | - |
-| --van-dialog-header-padding-top | `26px` | - |
-| --van-dialog-header-isolated-padding | `var(--van-padding-lg) 0` | - |
-| --van-dialog-message-padding | `var(--van-padding-lg)` | - |
-| --van-dialog-message-font-size | `var(--van-font-size-md)` | - |
-| --van-dialog-message-line-height | `var(--van-line-height-md)` | - |
-| --van-dialog-message-max-height | `60vh` | - |
-| --van-dialog-has-title-message-text-color | `var(--van-gary-7)` | - |
-| --van-dialog-has-title-message-padding-top | `var(--van-padding-xs)` | - |
-| --van-dialog-button-height | `48px` | - |
-| --van-dialog-round-button-height | `36px` | - |
-| --van-dialog-confirm-button-text-color | `var(--van-red)` | - |
+| --van-dialog-width | _320px_ | - |
+| --van-dialog-small-screen-width | _90%_ | - |
+| --van-dialog-font-size | _var(--van-font-size-lg)_ | - |
+| --van-dialog-transition | _var(--van-animation-duration-base)_ | - |
+| --van-dialog-border-radius | _16px_ | - |
+| --van-dialog-background-color | _var(--van-white)_ | - |
+| --van-dialog-header-font-weight | _var(--van-font-weight-bold)_ | - |
+| --van-dialog-header-line-height | _24px_ | - |
+| --van-dialog-header-padding-top | _26px_ | - |
+| --van-dialog-header-isolated-padding | _var(--van-padding-lg) 0_ | - |
+| --van-dialog-message-padding | _var(--van-padding-lg)_ | - |
+| --van-dialog-message-font-size | _var(--van-font-size-md)_ | - |
+| --van-dialog-message-line-height | _var(--van-line-height-md)_ | - |
+| --van-dialog-message-max-height | _60vh_ | - |
+| --van-dialog-has-title-message-text-color | _var(--van-gary-7)_ | - |
+| --van-dialog-has-title-message-padding-top | _var(--van-padding-xs)_ | - |
+| --van-dialog-button-height | _48px_ | - |
+| --van-dialog-round-button-height | _36px_ | - |
+| --van-dialog-confirm-button-text-color | _var(--van-red)_ | - |
 
 ## 常见问题
 

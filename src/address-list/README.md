@@ -127,16 +127,16 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-address-list-padding | `var(--van-padding-sm) var(--van-padding-sm) 80px` | - |
-| --van-address-list-disabled-text-color | `var(--van-gary-6)` | - |
-| --van-address-list-disabled-text-padding | `var(--van-padding-base) * 5 0 var(--van-padding-md)` | - |
-| --van-address-list-disabled-text-font-size | `var(--van-font-size-md)` | - |
-| --van-address-list-disabled-text-line-height | `var(--van-line-height-md)` | - |
-| --van-address-list-add-button-z-index | `999` | - |
-| --van-address-list-item-padding | `var(--van-padding-sm)` | - |
-| --van-address-list-item-text-color | `var(--van-text-color)` | - |
-| --van-address-list-item-disabled-text-color | `var(--van-gary-5)` | - |
-| --van-address-list-item-font-size | `13px` | - |
-| --van-address-list-item-line-height | `var(--van-line-height-sm)` | - |
-| --van-address-list-item-radio-icon-color | `var(--van-red)` | - |
-| --van-address-list-edit-icon-size | `20px` | - |
+| --van-address-list-padding | _var(--van-padding-sm) var(--van-padding-sm) 80px_ | - |
+| --van-address-list-disabled-text-color | _var(--van-gary-6)_ | - |
+| --van-address-list-disabled-text-padding | _var(--van-padding-base) \* 5 0 var(--van-padding-md)_ | - |
+| --van-address-list-disabled-text-font-size | _var(--van-font-size-md)_ | - |
+| --van-address-list-disabled-text-line-height | _var(--van-line-height-md)_ | - |
+| --van-address-list-add-button-z-index | _999_ | - |
+| --van-address-list-item-padding | _var(--van-padding-sm)_ | - |
+| --van-address-list-item-text-color | _var(--van-text-color)_ | - |
+| --van-address-list-item-disabled-text-color | _var(--van-gary-5)_ | - |
+| --van-address-list-item-font-size | _13px_ | - |
+| --van-address-list-item-line-height | _var(--van-line-height-sm)_ | - |
+| --van-address-list-item-radio-icon-color | _var(--van-red)_ | - |
+| --van-address-list-edit-icon-size | _20px_ | - |

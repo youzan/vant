@@ -127,14 +127,14 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-switch-size | `30px` | - |
-| --van-switch-width | `2em` | - |
-| --van-switch-height | `1em` | - |
-| --van-switch-node-size | `1em` | - |
-| --van-switch-node-background-color | `var(--van-white)` | - |
-| --van-switch-node-box-shadow | `0 3px 1px 0 rgba(0, 0, 0, 0.05)` | - |
-| --van-switch-background-color | `var(--van-white)` | - |
-| --van-switch-on-background-color | `var(--van-blue)` | - |
-| --van-switch-transition-duration | `var(--van-animation-duration-base)` | - |
-| --van-switch-disabled-opacity | `var(--van-disabled-opacity)` | - |
-| --van-switch-border | `var(--van-border-width-base) solid rgba(0, 0, 0, 0.1)` | - |
+| --van-switch-size | _30px_ | - |
+| --van-switch-width | _2em_ | - |
+| --van-switch-height | _1em_ | - |
+| --van-switch-node-size | _1em_ | - |
+| --van-switch-node-background-color | _var(--van-white)_ | - |
+| --van-switch-node-box-shadow | _0 3px 1px 0 rgba(0, 0, 0, 0.05)_ | - |
+| --van-switch-background-color | _var(--van-white)_ | - |
+| --van-switch-on-background-color | _var(--van-blue)_ | - |
+| --van-switch-transition-duration | _var(--van-animation-duration-base)_ | - |
+| --van-switch-disabled-opacity | _var(--van-disabled-opacity)_ | - |
+| --van-switch-border | _var(--van-border-width-base) solid rgba(0, 0, 0, 0.1)_ | - |

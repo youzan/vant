@@ -333,12 +333,12 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-checkbox-size | `20px` | - |
-| --van-checkbox-border-color | `var(--van-gary-5)` | - |
-| --van-checkbox-transition-duration | `var(--van-animation-duration-fast)` | - |
-| --van-checkbox-label-margin | `var(--van-padding-xs)` | - |
-| --van-checkbox-label-color | `var(--van-text-color)` | - |
-| --van-checkbox-checked-icon-color | `var(--van-blue)` | - |
-| --van-checkbox-disabled-icon-color | `var(--van-gary-5)` | - |
-| --van-checkbox-disabled-label-color | `var(--van-gary-5)` | - |
-| --van-checkbox-disabled-background-color | `var(--van-border-color)` | - |
+| --van-checkbox-size | _20px_ | - |
+| --van-checkbox-border-color | _var(--van-gary-5)_ | - |
+| --van-checkbox-transition-duration | _var(--van-animation-duration-fast)_ | - |
+| --van-checkbox-label-margin | _var(--van-padding-xs)_ | - |
+| --van-checkbox-label-color | _var(--van-text-color)_ | - |
+| --van-checkbox-checked-icon-color | _var(--van-blue)_ | - |
+| --van-checkbox-disabled-icon-color | _var(--van-gary-5)_ | - |
+| --van-checkbox-disabled-label-color | _var(--van-gary-5)_ | - |
+| --van-checkbox-disabled-background-color | _var(--van-border-color)_ | - |

@@ -229,25 +229,25 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-action-sheet-max-height | `80%` | - |
-| --van-action-sheet-header-height | `48px` | - |
-| --van-action-sheet-header-font-size | `var(--van-font-size-lg)` | - |
-| --van-action-sheet-description-color | `var(--van-gary-6)` | - |
-| --van-action-sheet-description-font-size | `var(--van-font-size-md)` | - |
-| --van-action-sheet-description-line-height | `var(--van-line-height-md)` | - |
-| --van-action-sheet-item-background | `var(--van-white)` | - |
-| --van-action-sheet-item-font-size | `var(--van-font-size-lg)` | - |
-| --van-action-sheet-item-line-height | `var(--van-line-height-lg)` | - |
-| --van-action-sheet-item-text-color | `var(--van-text-color)` | - |
-| --van-action-sheet-item-disabled-text-color | `var(--van-gary-5)` | - |
-| --van-action-sheet-subname-color | `var(--van-gary-6)` | - |
-| --van-action-sheet-subname-font-size | `var(--van-font-size-sm)` | - |
-| --van-action-sheet-subname-line-height | `var(--van-line-height-sm)` | - |
-| --van-action-sheet-close-icon-size | `22px` | - |
-| --van-action-sheet-close-icon-color | `var(--van-gary-5)` | - |
-| --van-action-sheet-close-icon-active-color | `var(--van-gary-6)` | - |
-| --van-action-sheet-close-icon-padding | `0 var(--van-padding-md)` | - |
-| --van-action-sheet-cancel-text-color | `var(--van-gary-7)` | - |
-| --van-action-sheet-cancel-padding-top | `var(--van-padding-xs)` | - |
-| --van-action-sheet-cancel-padding-color | `var(--van-background-color)` | - |
-| --van-action-sheet-loading-icon-size | `22px` | - |
+| --van-action-sheet-max-height | _80%_ | - |
+| --van-action-sheet-header-height | _48px_ | - |
+| --van-action-sheet-header-font-size | _var(--van-font-size-lg)_ | - |
+| --van-action-sheet-description-color | _var(--van-gary-6)_ | - |
+| --van-action-sheet-description-font-size | _var(--van-font-size-md)_ | - |
+| --van-action-sheet-description-line-height | _var(--van-line-height-md)_ | - |
+| --van-action-sheet-item-background | _var(--van-white)_ | - |
+| --van-action-sheet-item-font-size | _var(--van-font-size-lg)_ | - |
+| --van-action-sheet-item-line-height | _var(--van-line-height-lg)_ | - |
+| --van-action-sheet-item-text-color | _var(--van-text-color)_ | - |
+| --van-action-sheet-item-disabled-text-color | _var(--van-gary-5)_ | - |
+| --van-action-sheet-subname-color | _var(--van-gary-6)_ | - |
+| --van-action-sheet-subname-font-size | _var(--van-font-size-sm)_ | - |
+| --van-action-sheet-subname-line-height | _var(--van-line-height-sm)_ | - |
+| --van-action-sheet-close-icon-size | _22px_ | - |
+| --van-action-sheet-close-icon-color | _var(--van-gary-5)_ | - |
+| --van-action-sheet-close-icon-active-color | _var(--van-gary-6)_ | - |
+| --van-action-sheet-close-icon-padding | _0 var(--van-padding-md)_ | - |
+| --van-action-sheet-cancel-text-color | _var(--van-gary-7)_ | - |
+| --van-action-sheet-cancel-padding-top | _var(--van-padding-xs)_ | - |
+| --van-action-sheet-cancel-padding-color | _var(--van-background-color)_ | - |
+| --van-action-sheet-loading-icon-size | _22px_ | - |

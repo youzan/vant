@@ -97,7 +97,7 @@ export default {
 
 | 名称                                 | 默认值                      | 描述 |
 | ------------------------------------ | --------------------------- | ---- |
-| --van-contact-card-padding           | `var(--van-padding-md)`     | -    |
-| --van-contact-card-add-icon-size     | `40px`                      | -    |
-| --van-contact-card-add-icon-color    | `var(--van-blue)`           | -    |
-| --van-contact-card-value-line-height | `var(--van-line-height-md)` | -    |
+| --van-contact-card-padding           | _var(--van-padding-md)_     | -    |
+| --van-contact-card-add-icon-size     | _40px_                      | -    |
+| --van-contact-card-add-icon-color    | _var(--van-blue)_           | -    |
+| --van-contact-card-value-line-height | _var(--van-line-height-md)_ | -    |

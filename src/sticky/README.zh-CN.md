@@ -94,4 +94,4 @@ export default {
 
 | 名称                 | 默认值 | 描述 |
 | -------------------- | ------ | ---- |
-| --van-sticky-z-index | `99`   | -    |
+| --van-sticky-z-index | _99_   | -    |

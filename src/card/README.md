@@ -114,19 +114,19 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-card-padding | `var(--van-padding-xs) var(--van-padding-md)` | - |
-| --van-card-font-size | `var(--van-font-size-sm)` | - |
-| --van-card-text-color | `var(--van-text-color)` | - |
-| --van-card-background-color | `var(--van-background-color-light)` | - |
-| --van-card-thumb-size | `88px` | - |
-| --van-card-thumb-border-radius | `var(--van-border-radius-lg)` | - |
-| --van-card-title-line-height | `16px` | - |
-| --van-card-desc-color | `var(--van-gary-7)` | - |
-| --van-card-desc-line-height | `var(--van-line-height-md)` | - |
-| --van-card-price-color | `var(--van-gary-8)` | - |
-| --van-card-origin-price-color | `var(--van-gary-6)` | - |
-| --van-card-num-color | `var(--van-gary-6)` | - |
-| --van-card-origin-price-font-size | `var(--van-font-size-xs)` | - |
-| --van-card-price-font-size | `var(--van-font-size-sm)` | - |
-| --van-card-price-integer-font-size | `var(--van-font-size-lg)` | - |
-| --van-card-price-font-family | `var(--van-price-integer-font-family)` | - |
+| --van-card-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
+| --van-card-font-size | _var(--van-font-size-sm)_ | - |
+| --van-card-text-color | _var(--van-text-color)_ | - |
+| --van-card-background-color | _var(--van-background-color-light)_ | - |
+| --van-card-thumb-size | _88px_ | - |
+| --van-card-thumb-border-radius | _var(--van-border-radius-lg)_ | - |
+| --van-card-title-line-height | _16px_ | - |
+| --van-card-desc-color | _var(--van-gary-7)_ | - |
+| --van-card-desc-line-height | _var(--van-line-height-md)_ | - |
+| --van-card-price-color | _var(--van-gary-8)_ | - |
+| --van-card-origin-price-color | _var(--van-gary-6)_ | - |
+| --van-card-num-color | _var(--van-gary-6)_ | - |
+| --van-card-origin-price-font-size | _var(--van-font-size-xs)_ | - |
+| --van-card-price-font-size | _var(--van-font-size-sm)_ | - |
+| --van-card-price-integer-font-size | _var(--van-font-size-lg)_ | - |
+| --van-card-price-font-family | _var(--van-price-integer-font-family)_ | - |

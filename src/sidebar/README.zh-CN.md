@@ -138,17 +138,17 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-sidebar-width | `80px` | - |
-| --van-sidebar-font-size | `var(--van-font-size-md)` | - |
-| --van-sidebar-line-height | `var(--van-line-height-md)` | - |
-| --van-sidebar-text-color | `var(--van-text-color)` | - |
-| --van-sidebar-disabled-text-color | `var(--van-gary-5)` | - |
-| --van-sidebar-padding | `20px var(--van-padding-sm)` | - |
-| --van-sidebar-active-color | `var(--van-active-color)` | - |
-| --van-sidebar-background-color | `var(--van-background-color)` | - |
-| --van-sidebar-selected-font-weight | `var(--van-font-weight-bold)` | - |
-| --van-sidebar-selected-text-color | `var(--van-text-color)` | - |
-| --van-sidebar-selected-border-width | `4px` | - |
-| --van-sidebar-selected-border-height | `16px` | - |
-| --van-sidebar-selected-border-color | `var(--van-red)` | - |
-| --van-sidebar-selected-background-color | `var(--van-white)` | - |
+| --van-sidebar-width | _80px_ | - |
+| --van-sidebar-font-size | _var(--van-font-size-md)_ | - |
+| --van-sidebar-line-height | _var(--van-line-height-md)_ | - |
+| --van-sidebar-text-color | _var(--van-text-color)_ | - |
+| --van-sidebar-disabled-text-color | _var(--van-gary-5)_ | - |
+| --van-sidebar-padding | _20px var(--van-padding-sm)_ | - |
+| --van-sidebar-active-color | _var(--van-active-color)_ | - |
+| --van-sidebar-background-color | _var(--van-background-color)_ | - |
+| --van-sidebar-selected-font-weight | _var(--van-font-weight-bold)_ | - |
+| --van-sidebar-selected-text-color | _var(--van-text-color)_ | - |
+| --van-sidebar-selected-border-width | _4px_ | - |
+| --van-sidebar-selected-border-height | _16px_ | - |
+| --van-sidebar-selected-border-color | _var(--van-red)_ | - |
+| --van-sidebar-selected-background-color | _var(--van-white)_ | - |

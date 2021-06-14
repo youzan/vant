@@ -124,11 +124,11 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-notify-text-color | `var(--van-white)` | - |
-| --van-notify-padding | `var(--van-padding-xs) var(--van-padding-md)` | - |
-| --van-notify-font-size | `var(--van-font-size-md)` | - |
-| --van-notify-line-height | `var(--van-line-height-md)` | - |
-| --van-notify-primary-background-color | `var(--van-blue)` | - |
-| --van-notify-success-background-color | `var(--van-green)` | - |
-| --van-notify-danger-background-color | `var(--van-red)` | - |
-| --van-notify-warning-background-color | `var(--van-orange)` | - |
+| --van-notify-text-color | _var(--van-white)_ | - |
+| --van-notify-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
+| --van-notify-font-size | _var(--van-font-size-md)_ | - |
+| --van-notify-line-height | _var(--van-line-height-md)_ | - |
+| --van-notify-primary-background-color | _var(--van-blue)_ | - |
+| --van-notify-success-background-color | _var(--van-green)_ | - |
+| --van-notify-danger-background-color | _var(--van-red)_ | - |
+| --van-notify-warning-background-color | _var(--van-orange)_ | - |

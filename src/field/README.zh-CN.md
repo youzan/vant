@@ -332,24 +332,24 @@ export default {
 
 | 名称                                  | 默认值                    | 描述 |
 | ------------------------------------- | ------------------------- | ---- |
-| --van-field-label-width               | `6.2em`                   | -    |
-| --van-field-label-color               | `var(--van-gary-7)`       | -    |
-| --van-field-label-margin-right        | `var(--van-padding-sm)`   | -    |
-| --van-field-input-text-color          | `var(--van-text-color)`   | -    |
-| --van-field-input-error-text-color    | `var(--van-red)`          | -    |
-| --van-field-input-disabled-text-color | `var(--van-gary-5)`       | -    |
-| --van-field-placeholder-text-color    | `var(--van-gary-5)`       | -    |
-| --van-field-icon-size                 | `16px`                    | -    |
-| --van-field-clear-icon-size           | `16px`                    | -    |
-| --van-field-clear-icon-color          | `var(--van-gary-5)`       | -    |
-| --van-field-right-icon-color          | `var(--van-gary-6)`       | -    |
-| --van-field-error-message-color       | `var(--van-red)`          | -    |
-| --van-field-error-message-text-color  | `12px`                    | -    |
-| --van-field-text-area-min-height      | `60px`                    | -    |
-| --van-field-word-limit-color          | `var(--van-gary-7)`       | -    |
-| --van-field-word-limit-font-size      | `var(--van-font-size-sm)` | -    |
-| --van-field-word-limit-line-height    | `16px`                    | -    |
-| --van-field-disabled-text-color       | `var(--van-gary-5)`       | -    |
+| --van-field-label-width               | _6.2em_                   | -    |
+| --van-field-label-color               | _var(--van-gary-7)_       | -    |
+| --van-field-label-margin-right        | _var(--van-padding-sm)_   | -    |
+| --van-field-input-text-color          | _var(--van-text-color)_   | -    |
+| --van-field-input-error-text-color    | _var(--van-red)_          | -    |
+| --van-field-input-disabled-text-color | _var(--van-gary-5)_       | -    |
+| --van-field-placeholder-text-color    | _var(--van-gary-5)_       | -    |
+| --van-field-icon-size                 | _16px_                    | -    |
+| --van-field-clear-icon-size           | _16px_                    | -    |
+| --van-field-clear-icon-color          | _var(--van-gary-5)_       | -    |
+| --van-field-right-icon-color          | _var(--van-gary-6)_       | -    |
+| --van-field-error-message-color       | _var(--van-red)_          | -    |
+| --van-field-error-message-text-color  | _12px_                    | -    |
+| --van-field-text-area-min-height      | _60px_                    | -    |
+| --van-field-word-limit-color          | _var(--van-gary-7)_       | -    |
+| --van-field-word-limit-font-size      | _var(--van-font-size-sm)_ | -    |
+| --van-field-word-limit-line-height    | _16px_                    | -    |
+| --van-field-disabled-text-color       | _var(--van-gary-5)_       | -    |
 
 ## 常见问题
 

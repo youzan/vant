@@ -161,10 +161,10 @@ export default {
 
 | 名称                          | 默认值                        | 描述 |
 | ----------------------------- | ----------------------------- | ---- |
-| --van-circle-size             | `100px`                       | -    |
-| --van-circle-color            | `var(--van-blue)`             | -    |
-| --van-circle-layer-color      | `var(--van-white)`            | -    |
-| --van-circle-text-color       | `var(--van-text-color)`       | -    |
-| --van-circle-text-font-weight | `var(--van-font-weight-bold)` | -    |
-| --van-circle-text-font-size   | `var(--van-font-size-md)`     | -    |
-| --van-circle-text-line-height | `var(--van-line-height-md)`   | -    |
+| --van-circle-size             | _100px_                       | -    |
+| --van-circle-color            | _var(--van-blue)_             | -    |
+| --van-circle-layer-color      | _var(--van-white)_            | -    |
+| --van-circle-text-color       | _var(--van-text-color)_       | -    |
+| --van-circle-text-font-weight | _var(--van-font-weight-bold)_ | -    |
+| --van-circle-text-font-size   | _var(--van-font-size-md)_     | -    |
+| --van-circle-text-line-height | _var(--van-line-height-md)_   | -    |

@@ -197,9 +197,9 @@ export default {
 
 | 名称                         | 默认值                      | 描述 |
 | ---------------------------- | --------------------------- | ---- |
-| --van-count-down-text-color  | `var(--van-text-color)`     | -    |
-| --van-count-down-font-size   | `var(--van-font-size-md)`   | -    |
-| --van-count-down-line-height | `var(--van-line-height-md)` | -    |
+| --van-count-down-text-color  | _var(--van-text-color)_     | -    |
+| --van-count-down-font-size   | _var(--van-font-size-md)_   | -    |
+| --van-count-down-line-height | _var(--van-line-height-md)_ | -    |
 
 ## 常见问题
 

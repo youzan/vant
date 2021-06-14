@@ -75,11 +75,11 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name                              | Default Value             | Description |
 | --------------------------------- | ------------------------- | ----------- |
-| --van-divider-margin              | `var(--van-padding-md) 0` | -           |
-| --van-divider-text-color          | `var(--van-gary-6)`       | -           |
-| --van-divider-font-size           | `var(--van-font-size-md)` | -           |
-| --van-divider-line-height         | `24px`                    | -           |
-| --van-divider-border-color        | `var(--van-border-color)` | -           |
-| --van-divider-content-padding     | `var(--van-padding-md)`   | -           |
-| --van-divider-content-left-width  | `10%`                     | -           |
-| --van-divider-content-right-width | `10%`                     | -           |
+| --van-divider-margin              | _var(--van-padding-md) 0_ | -           |
+| --van-divider-text-color          | _var(--van-gary-6)_       | -           |
+| --van-divider-font-size           | _var(--van-font-size-md)_ | -           |
+| --van-divider-line-height         | _24px_                    | -           |
+| --van-divider-border-color        | _var(--van-border-color)_ | -           |
+| --van-divider-content-padding     | _var(--van-padding-md)_   | -           |
+| --van-divider-content-left-width  | _10%_                     | -           |
+| --van-divider-content-right-width | _10%_                     | -           |

@@ -198,9 +198,9 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-swipe-indicator-size | `6px` | - |
-| --van-swipe-indicator-margin | `var(--van-padding-sm)` | - |
-| --van-swipe-indicator-active-opacity | `1` | - |
-| --van-swipe-indicator-inactive-opacity | `0.3` | - |
-| --van-swipe-indicator-active-background-color | `var(--van-blue)` | - |
-| --van-swipe-indicator-inactive-background-color | `var(--van-border-color)` | - |
+| --van-swipe-indicator-size | _6px_ | - |
+| --van-swipe-indicator-margin | _var(--van-padding-sm)_ | - |
+| --van-swipe-indicator-active-opacity | _1_ | - |
+| --van-swipe-indicator-inactive-opacity | _0.3_ | - |
+| --van-swipe-indicator-active-background-color | _var(--van-blue)_ | - |
+| --van-swipe-indicator-inactive-background-color | _var(--van-border-color)_ | - |

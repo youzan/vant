@@ -389,16 +389,16 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-picker-background-color | `var(--van-white)` | - |
-| --van-picker-toolbar-height | `44px` | - |
-| --van-picker-title-font-size | `var(--van-font-size-lg)` | - |
-| --van-picker-title-line-height | `var(--van-line-height-md)` | - |
-| --van-picker-action-padding | `0 var(--van-padding-md)` | - |
-| --van-picker-action-font-size | `var(--van-font-size-md)` | - |
-| --van-picker-confirm-action-color | `var(--van-text-link-color)` | - |
-| --van-picker-cancel-action-color | `var(--van-gary-6)` | - |
-| --van-picker-option-font-size | `var(--van-font-size-lg)` | - |
-| --van-picker-option-text-color | `var(--van-black)` | - |
-| --van-picker-option-disabled-opacity | `0.3` | - |
-| --van-picker-loading-icon-color | `var(--van-blue)` | - |
-| --van-picker-loading-mask-color | `rgba(255, 255, 255, 0.9)` | - |
+| --van-picker-background-color | _var(--van-white)_ | - |
+| --van-picker-toolbar-height | _44px_ | - |
+| --van-picker-title-font-size | _var(--van-font-size-lg)_ | - |
+| --van-picker-title-line-height | _var(--van-line-height-md)_ | - |
+| --van-picker-action-padding | _0 var(--van-padding-md)_ | - |
+| --van-picker-action-font-size | _var(--van-font-size-md)_ | - |
+| --van-picker-confirm-action-color | _var(--van-text-link-color)_ | - |
+| --van-picker-cancel-action-color | _var(--van-gary-6)_ | - |
+| --van-picker-option-font-size | _var(--van-font-size-lg)_ | - |
+| --van-picker-option-text-color | _var(--van-black)_ | - |
+| --van-picker-option-disabled-opacity | _0.3_ | - |
+| --van-picker-loading-icon-color | _var(--van-blue)_ | - |
+| --van-picker-loading-mask-color | _rgba(255, 255, 255, 0.9)_ | - |

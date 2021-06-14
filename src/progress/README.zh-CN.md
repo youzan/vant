@@ -87,14 +87,14 @@ app.use(Progress);
 
 | 名称                                  | 默认值                    | 描述 |
 | ------------------------------------- | ------------------------- | ---- |
-| --van-progress-height                 | `4px`                     | -    |
-| --van-progress-color                  | `var(--van-blue)`         | -    |
-| --van-progress-background-color       | `var(--van-gary-3)`       | -    |
-| --van-progress-pivot-padding          | `0 5px`                   | -    |
-| --van-progress-pivot-text-color       | `var(--van-white)`        | -    |
-| --van-progress-pivot-font-size        | `var(--van-font-size-xs)` | -    |
-| --van-progress-pivot-line-height      | `1.6`                     | -    |
-| --van-progress-pivot-background-color | `var(--van-blue)`         | -    |
+| --van-progress-height                 | _4px_                     | -    |
+| --van-progress-color                  | _var(--van-blue)_         | -    |
+| --van-progress-background-color       | _var(--van-gary-3)_       | -    |
+| --van-progress-pivot-padding          | _0 5px_                   | -    |
+| --van-progress-pivot-text-color       | _var(--van-white)_        | -    |
+| --van-progress-pivot-font-size        | _var(--van-font-size-xs)_ | -    |
+| --van-progress-pivot-line-height      | _1.6_                     | -    |
+| --van-progress-pivot-background-color | _var(--van-blue)_         | -    |
 
 ## 常见问题
 

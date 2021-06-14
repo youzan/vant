@@ -111,16 +111,16 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-index-bar-sidebar-z-index | `2` | - |
-| --van-index-bar-index-font-size | `var(--van-font-size-xs)` | - |
-| --van-index-bar-index-line-height | `var(--van-line-height-xs)` | - |
-| --van-index-bar-index-active-color | `var(--van-red)` | - |
-| --van-index-anchor-z-index | `1` | - |
-| --van-index-anchor-padding | `0 var(--van-padding-md)` | - |
-| --van-index-anchor-text-color | `var(--van-text-color)` | - |
-| --van-index-anchor-font-weight | `var(--van-font-weight-bold)` | - |
-| --van-index-anchor-font-size | `var(--van-font-size-md)` | - |
-| --van-index-anchor-line-height | `32px` | - |
-| --van-index-anchor-background-color | `transparent` | - |
-| --van-index-anchor-sticky-text-color | `var(--van-red)` | - |
-| --van-index-anchor-sticky-background-color | `var(--van-white)` | - |
+| --van-index-bar-sidebar-z-index | _2_ | - |
+| --van-index-bar-index-font-size | _var(--van-font-size-xs)_ | - |
+| --van-index-bar-index-line-height | _var(--van-line-height-xs)_ | - |
+| --van-index-bar-index-active-color | _var(--van-red)_ | - |
+| --van-index-anchor-z-index | _1_ | - |
+| --van-index-anchor-padding | _0 var(--van-padding-md)_ | - |
+| --van-index-anchor-text-color | _var(--van-text-color)_ | - |
+| --van-index-anchor-font-weight | _var(--van-font-weight-bold)_ | - |
+| --van-index-anchor-font-size | _var(--van-font-size-md)_ | - |
+| --van-index-anchor-line-height | _32px_ | - |
+| --van-index-anchor-background-color | _transparent_ | - |
+| --van-index-anchor-sticky-text-color | _var(--van-red)_ | - |
+| --van-index-anchor-sticky-background-color | _var(--van-white)_ | - |

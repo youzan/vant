@@ -142,12 +142,12 @@ app.use(NoticeBar);
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-notice-bar-height | `40px` | - |
-| --van-notice-bar-padding | `0 var(--van-padding-md)` | - |
-| --van-notice-bar-wrapable-padding | `var(--van-padding-xs) var(--van-padding-md)` | - |
-| --van-notice-bar-text-color | `var(--van-orange-dark)` | - |
-| --van-notice-bar-font-size | `var(--van-font-size-md)` | - |
-| --van-notice-bar-line-height | `24px` | - |
-| --van-notice-bar-background-color | `var(--van-orange-light)` | - |
-| --van-notice-bar-icon-size | `16px` | - |
-| --van-notice-bar-icon-min-width | `24px` | - |
+| --van-notice-bar-height | _40px_ | - |
+| --van-notice-bar-padding | _0 var(--van-padding-md)_ | - |
+| --van-notice-bar-wrapable-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
+| --van-notice-bar-text-color | _var(--van-orange-dark)_ | - |
+| --van-notice-bar-font-size | _var(--van-font-size-md)_ | - |
+| --van-notice-bar-line-height | _24px_ | - |
+| --van-notice-bar-background-color | _var(--van-orange-light)_ | - |
+| --van-notice-bar-icon-size | _16px_ | - |
+| --van-notice-bar-icon-min-width | _24px_ | - |

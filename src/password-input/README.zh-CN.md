@@ -164,17 +164,17 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-password-input-height | `50px` | - |
-| --van-password-input-margin | `0 var(--van-padding-md)` | - |
-| --van-password-input-font-size | `20px` | - |
-| --van-password-input-border-radius | `6px` | - |
-| --van-password-input-background-color | `var(--van-white)` | - |
-| --van-password-input-info-color | `var(--van-gary-6)` | - |
-| --van-password-input-info-font-size | `var(--van-font-size-md)` | - |
-| --van-password-input-error-info-color | `var(--van-red)` | - |
-| --van-password-input-dot-size | `10px` | - |
-| --van-password-input-dot-color | `var(--van-black)` | - |
-| --van-password-input-cursor-color | `var(--van-text-color)` | - |
-| --van-password-input-cursor-width | `1px` | - |
-| --van-password-input-cursor-height | `40%` | - |
-| --van-password-input-cursor-animation-duration | `1s` | - |
+| --van-password-input-height | _50px_ | - |
+| --van-password-input-margin | _0 var(--van-padding-md)_ | - |
+| --van-password-input-font-size | _20px_ | - |
+| --van-password-input-border-radius | _6px_ | - |
+| --van-password-input-background-color | _var(--van-white)_ | - |
+| --van-password-input-info-color | _var(--van-gary-6)_ | - |
+| --van-password-input-info-font-size | _var(--van-font-size-md)_ | - |
+| --van-password-input-error-info-color | _var(--van-red)_ | - |
+| --van-password-input-dot-size | _10px_ | - |
+| --van-password-input-dot-color | _var(--van-black)_ | - |
+| --van-password-input-cursor-color | _var(--van-text-color)_ | - |
+| --van-password-input-cursor-width | _1px_ | - |
+| --van-password-input-cursor-height | _40%_ | - |
+| --van-password-input-cursor-animation-duration | _1s_ | - |

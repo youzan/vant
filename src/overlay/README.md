@@ -92,5 +92,5 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name                           | Default Value        | Description |
 | ------------------------------ | -------------------- | ----------- |
-| --van-overlay-z-index          | `1`                  | -           |
-| --van-overlay-background-color | `rgba(0, 0, 0, 0.7)` | -           |
+| --van-overlay-z-index          | _1_                  | -           |
+| --van-overlay-background-color | _rgba(0, 0, 0, 0.7)_ | -           |

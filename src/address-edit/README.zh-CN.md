@@ -159,8 +159,8 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-address-edit-padding | `var(--van-padding-sm)` | - |
-| --van-address-edit-buttons-padding | `var(--van-padding-xl) var(--van-padding-base)` | - |
-| --van-address-edit-button-margin-bottom | `var(--van-padding-sm)` | - |
-| --van-address-edit-detail-finish-color | `var(--van-blue)` | - |
-| --van-address-edit-detail-finish-font-size | `var(--van-font-size-sm)` | - |
+| --van-address-edit-padding | _var(--van-padding-sm)_ | - |
+| --van-address-edit-buttons-padding | _var(--van-padding-xl) var(--van-padding-base)_ | - |
+| --van-address-edit-button-margin-bottom | _var(--van-padding-sm)_ | - |
+| --van-address-edit-detail-finish-color | _var(--van-blue)_ | - |
+| --van-address-edit-detail-finish-font-size | _var(--van-font-size-sm)_ | - |

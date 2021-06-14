@@ -86,4 +86,4 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name                 | Default Value | Description |
 | -------------------- | ------------- | ----------- |
-| --van-sticky-z-index | `99`          | -           |
+| --van-sticky-z-index | _99_          | -           |

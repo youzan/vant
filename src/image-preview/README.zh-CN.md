@@ -252,16 +252,16 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-image-preview-index-text-color | `var(--van-white)` | - |
-| --van-image-preview-index-font-size | `var(--van-font-size-md)` | - |
-| --van-image-preview-index-line-height | `var(--van-line-height-md)` | - |
-| --van-image-preview-index-text-shadow | `0 1px 1px var(--van-gray-8)` | - |
-| --van-image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | - |
-| --van-image-preview-close-icon-size | `22px` | - |
-| --van-image-preview-close-icon-color | `var(--van-gary-5)` | - |
-| --van-image-preview-close-icon-active-color | `var(--van-gary-6)` | - |
-| --van-image-preview-close-icon-margin | `var(--van-padding-md)` | - |
-| --van-image-preview-close-icon-z-index | `1` | - |
+| --van-image-preview-index-text-color | _var(--van-white)_ | - |
+| --van-image-preview-index-font-size | _var(--van-font-size-md)_ | - |
+| --van-image-preview-index-line-height | _var(--van-line-height-md)_ | - |
+| --van-image-preview-index-text-shadow | _0 1px 1px var(--van-gray-8)_ | - |
+| --van-image-preview-overlay-background-color | _rgba(0, 0, 0, 0.9)_ | - |
+| --van-image-preview-close-icon-size | _22px_ | - |
+| --van-image-preview-close-icon-color | _var(--van-gary-5)_ | - |
+| --van-image-preview-close-icon-active-color | _var(--van-gary-6)_ | - |
+| --van-image-preview-close-icon-margin | _var(--van-padding-md)_ | - |
+| --van-image-preview-close-icon-z-index | _1_ | - |
 
 ## 常见问题
 
