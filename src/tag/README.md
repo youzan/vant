@@ -134,7 +134,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-tag-round-border-radius | _var(--van-border-radius-max)_ | - |
 | --van-tag-danger-color | _var(--van-red)_ | - |
 | --van-tag-primary-color | _var(--van-blue)_ | - |
-| --van-tag-success-color | _var(--van-green)_ | - |
+| --van-tag-success-color | _var(--van-success-color)_ | - |
 | --van-tag-warning-color | _var(--van-warning-color)_ | - |
 | --van-tag-default-color | _var(--van-gary-6)_ | - |
 | --van-tag-plain-background-color | _var(--van-white)_ | - |

@@ -174,8 +174,8 @@ The component provides the following CSS variables, which can be used to customi
 | --van-button-primary-background-color | _var(--van-blue)_ | - |
 | --van-button-primary-border-color | _var(--van-blue)_ | - |
 | --van-button-success-color | _var(--van-white)_ | - |
-| --van-button-success-background-color | _var(--van-green)_ | - |
-| --van-button-success-border-color | _var(--van-green)_ | - |
+| --van-button-success-background-color | _var(--van-success-color)_ | - |
+| --van-button-success-border-color | _var(--van-success-color)_ | - |
 | --van-button-danger-color | _var(--van-white)_ | - |
 | --van-button-danger-background-color | _var(--van-red)_ | - |
 | --van-button-danger-border-color | _var(--van-red)_ | - |
