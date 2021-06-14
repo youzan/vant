@@ -16,6 +16,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.1.0-beta.0](https://github.com/youzan/vant/compare/v3.0.18...v3.1.0-beta.0)
+
+`2021-06-14`
+
+**New Component**
+
+- add [ConfigProvider](/#/en-US/config-provider) Component [#8854](https://github.com/youzan/vant/issues/8854)
+
+**Feature**
+
+- all components support CSS Variables [aef257](https://github.com/youzan/vant/commit/aef2579a95da7c8b528ba7062b227fea698a0487) [fe1cba](https://github.com/youzan/vant/commit/fe1cba97b796eba7e9b5dca0ce4ab0d1de95715c)
+- add more CSS Variables [#8861](https://github.com/youzan/vant/issues/8861)
+- Checkbox: icon slot add disabled param [#8839](https://github.com/youzan/vant/issues/8839)
+- IndexBar: add teleport prop [#8820](https://github.com/youzan/vant/issues/8820)
+
 ### [v3.0.18](https://github.com/youzan/vant/compare/v3.0.17...v3.0.18)
 
 `2021-06-03`

@@ -16,6 +16,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.1.0-beta.0](https://github.com/youzan/vant/compare/v3.0.18...v3.1.0-beta.0)
+
+`2021-06-14`
+
+**New Component**
+
+- 新增 [ConfigProvider](/#/zh-CN/config-provider) 组件，用于主题定制 [#8854](https://github.com/youzan/vant/issues/8854)
+
+**Feature**
+
+- 所有组件支持 CSS 变量 [aef257](https://github.com/youzan/vant/commit/aef2579a95da7c8b528ba7062b227fea698a0487) [fe1cba](https://github.com/youzan/vant/commit/fe1cba97b796eba7e9b5dca0ce4ab0d1de95715c)
+- 新增 primary-color 等样式变量 [#8861](https://github.com/youzan/vant/issues/8861)
+- Checkbox: icon 插槽新增 disabled 参数 [#8839](https://github.com/youzan/vant/issues/8839)
+- IndexBar: 新增 teleport 属性 [#8820](https://github.com/youzan/vant/issues/8820)
+
 ### [v3.0.18](https://github.com/youzan/vant/compare/v3.0.17...v3.0.18)
 
 `2021-06-03`
