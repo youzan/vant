@@ -425,7 +425,7 @@ export default {
 | --van-picker-option-font-size        | _var(--van-font-size-lg)_    | -    |
 | --van-picker-option-text-color       | _var(--van-black)_           | -    |
 | --van-picker-option-disabled-opacity | _0.3_                        | -    |
-| --van-picker-loading-icon-color      | _var(--van-blue)_            | -    |
+| --van-picker-loading-icon-color      | _var(--van-primary-color)_   | -    |
 | --van-picker-loading-mask-color      | _rgba(255, 255, 255, 0.9)_   | -    |
 
 ## 常见问题

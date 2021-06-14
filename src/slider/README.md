@@ -184,7 +184,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-slider-active-background-color | _var(--van-blue)_ | - |
+| --van-slider-active-background-color | _var(--van-primary-color)_ | - |
 | --van-slider-inactive-background-color | _var(--van-gary-3)_ | - |
 | --van-slider-disabled-opacity | _var(--van-disabled-opacity)_ | - |
 | --van-slider-bar-height | _2px_ | - |

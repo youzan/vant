@@ -146,7 +146,7 @@ export default {
 | --van-switch-node-background-color | _var(--van-white)_ | - |
 | --van-switch-node-box-shadow | _0 3px 1px 0 rgba(0, 0, 0, 0.05)_ | - |
 | --van-switch-background-color | _var(--van-white)_ | - |
-| --van-switch-on-background-color | _var(--van-blue)_ | - |
+| --van-switch-on-background-color | _var(--van-primary-color)_ | - |
 | --van-switch-transition-duration | _var(--van-animation-duration-base)_ | - |
 | --van-switch-disabled-opacity | _var(--van-disabled-opacity)_ | - |
 | --van-switch-border | _var(--van-border-width-base) solid rgba(0, 0, 0, 0.1)_ | - |

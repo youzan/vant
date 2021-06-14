@@ -145,7 +145,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-badge-font-size | _var(--van-font-size-sm)_ | - |
 | --van-badge-font-weight | _var(--van-font-weight-bold)_ | - |
 | --van-badge-border-width | _var(--van-border-width-base)_ | - |
-| --van-badge-background-color | _var(--van-red)_ | - |
-| --van-badge-dot-color | _var(--van-red)_ | - |
+| --van-badge-background-color | _var(--van-danger-color)_ | - |
+| --van-badge-dot-color | _var(--van-danger-color)_ | - |
 | --van-badge-dot-size | _8px_ | - |
 | --van-badge-font-family | _-apple-system-font, Helvetica Neue, Arial, sans-serif_ | - |

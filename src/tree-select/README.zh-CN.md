@@ -247,6 +247,6 @@ export default {
 | --van-tree-select-content-background-color | _var(--van-white)_ | - |
 | --van-tree-select-nav-item-padding | _14px var(--van-padding-sm)_ | - |
 | --van-tree-select-item-height | _48px_ | - |
-| --van-tree-select-item-active-color | _var(--van-red)_ | - |
+| --van-tree-select-item-active-color | _var(--van-danger-color)_ | - |
 | --van-tree-select-item-disabled-color | _var(--van-gary-5)_ | - |
 | --van-tree-select-item-selected-size | _16px_ | - |

@@ -107,11 +107,11 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default Value | Description |
 | --- | --- | --- |
 | --van-step-text-color | _var(--van-gary-6)_ | - |
-| --van-step-active-color | _var(--van-green)_ | - |
+| --van-step-active-color | _var(--van-success-color)_ | - |
 | --van-step-process-text-color | _var(--van-text-color)_ | - |
 | --van-step-font-size | _var(--van-font-size-md)_ | - |
 | --van-step-line-color | _var(--van-border-color)_ | - |
-| --van-step-finish-line-color | _var(--van-green)_ | - |
+| --van-step-finish-line-color | _var(--van-success-color)_ | - |
 | --van-step-finish-text-color | _var(--van-text-color)_ | - |
 | --van-step-icon-size | _12px_ | - |
 | --van-step-circle-size | _5px_ | - |

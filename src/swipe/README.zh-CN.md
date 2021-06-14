@@ -210,7 +210,7 @@ export default {
 | --van-swipe-indicator-margin | _var(--van-padding-sm)_ | - |
 | --van-swipe-indicator-active-opacity | _1_ | - |
 | --van-swipe-indicator-inactive-opacity | _0.3_ | - |
-| --van-swipe-indicator-active-background-color | _var(--van-blue)_ | - |
+| --van-swipe-indicator-active-background-color | _var(--van-primary-color)_ | - |
 | --van-swipe-indicator-inactive-background-color | _var(--van-border-color)_ | - |
 
 ## 常见问题

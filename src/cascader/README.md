@@ -243,7 +243,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-cascader-close-icon-active-color | _var(--van-gary-6)_ | - |
 | --van-cascader-selected-icon-size | _18px_ | - |
 | --van-cascader-tabs-height | _48px_ | - |
-| --van-cascader-active-color | _var(--van-red)_ | - |
+| --van-cascader-active-color | _var(--van-danger-color)_ | - |
 | --van-cascader-options-height | _384px_ | - |
 | --van-cascader-tab-color | _var(--van-text-color)_ | - |
 | --van-cascader-unselected-tab-color | _var(--van-gary-6)_ | - |

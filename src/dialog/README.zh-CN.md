@@ -273,7 +273,7 @@ export default {
 | --van-dialog-has-title-message-padding-top | _var(--van-padding-xs)_ | - |
 | --van-dialog-button-height | _48px_ | - |
 | --van-dialog-round-button-height | _36px_ | - |
-| --van-dialog-confirm-button-text-color | _var(--van-red)_ | - |
+| --van-dialog-confirm-button-text-color | _var(--van-danger-color)_ | - |
 
 ## 常见问题
 

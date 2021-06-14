@@ -132,7 +132,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-submit-bar-z-index | _100_ | - |
 | --van-submit-bar-background-color | _var(--van-white)_ | - |
 | --van-submit-bar-button-width | _110px_ | - |
-| --van-submit-bar-price-color | _var(--van-red)_ | - |
+| --van-submit-bar-price-color | _var(--van-danger-color)_ | - |
 | --van-submit-bar-text-color | _var(--van-text-color)_ | - |
 | --van-submit-bar-text-font-size | _var(--van-font-size-md)_ | - |
 | --van-submit-bar-tip-padding | _var(--van-padding-xs) var(--van-padding-sm)_ | - |

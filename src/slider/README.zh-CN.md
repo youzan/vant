@@ -186,7 +186,7 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-slider-active-background-color | _var(--van-blue)_ | - |
+| --van-slider-active-background-color | _var(--van-primary-color)_ | - |
 | --van-slider-inactive-background-color | _var(--van-gary-3)_ | - |
 | --van-slider-disabled-opacity | _var(--van-disabled-opacity)_ | - |
 | --van-slider-bar-height | _2px_ | - |

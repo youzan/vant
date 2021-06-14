@@ -371,14 +371,14 @@ export default {
 | --van-calendar-day-height | _64px_ | - |
 | --van-calendar-day-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-range-edge-color | _var(--van-white)_ | - |
-| --van-calendar-range-edge-background-color | _var(--van-red)_ | - |
-| --van-calendar-range-middle-color | _var(--van-red)_ | - |
+| --van-calendar-range-edge-background-color | _var(--van-danger-color)_ | - |
+| --van-calendar-range-middle-color | _var(--van-danger-color)_ | - |
 | --van-calendar-range-middle-background-opacity | _0.1_ | - |
 | --van-calendar-selected-day-size | _54px_ | - |
 | --van-calendar-selected-day-color | _var(--van-white)_ | - |
 | --van-calendar-info-font-size | _var(--van-font-size-xs)_ | - |
 | --van-calendar-info-line-height | _var(--van-line-height-xs)_ | - |
-| --van-calendar-selected-day-background-color | _var(--van-red)_ | - |
+| --van-calendar-selected-day-background-color | _var(--van-danger-color)_ | - |
 | --van-calendar-day-disabled-color | _var(--van-gary-5)_ | - |
 | --van-calendar-confirm-button-height | _36px_ | - |
 | --van-calendar-confirm-button-margin | _7px 0_ | - |

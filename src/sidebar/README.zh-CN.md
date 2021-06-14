@@ -150,5 +150,5 @@ export default {
 | --van-sidebar-selected-text-color | _var(--van-text-color)_ | - |
 | --van-sidebar-selected-border-width | _4px_ | - |
 | --van-sidebar-selected-border-height | _16px_ | - |
-| --van-sidebar-selected-border-color | _var(--van-red)_ | - |
+| --van-sidebar-selected-border-color | _var(--van-danger-color)_ | - |
 | --van-sidebar-selected-background-color | _var(--van-white)_ | - |

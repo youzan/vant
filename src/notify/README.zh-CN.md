@@ -161,7 +161,7 @@ export default {
 | --van-notify-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
 | --van-notify-font-size | _var(--van-font-size-md)_ | - |
 | --van-notify-line-height | _var(--van-line-height-md)_ | - |
-| --van-notify-primary-background-color | _var(--van-blue)_ | - |
-| --van-notify-success-background-color | _var(--van-green)_ | - |
-| --van-notify-danger-background-color | _var(--van-red)_ | - |
-| --van-notify-warning-background-color | _var(--van-orange)_ | - |
+| --van-notify-primary-background-color | _var(--van-primary-color)_ | - |
+| --van-notify-success-background-color | _var(--van-success-color)_ | - |
+| --van-notify-danger-background-color | _var(--van-danger-color)_ | - |
+| --van-notify-warning-background-color | _var(--van-warning-color)_ | - |
