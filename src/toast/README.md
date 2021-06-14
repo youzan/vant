@@ -187,7 +187,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-toast-loading-icon-color | `var(--van-white)` | - |
 | --van-toast-line-height | `var(--van-line-height-md)` | - |
 | --van-toast-border-radius | `var(--van-border-radius-lg)` | - |
-| --van-toast-background-color | `fade(@black, 70%)` | - |
+| --van-toast-background-color | `fade(var(--van-black), 70%)` | - |
 | --van-toast-icon-size | `36px` | - |
 | --van-toast-text-min-width | `96px` | - |
 | --van-toast-text-padding | `var(--van-padding-xs) var(--van-padding-sm)` | - |

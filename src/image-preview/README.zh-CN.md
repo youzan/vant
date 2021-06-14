@@ -255,7 +255,7 @@ export default {
 | --van-image-preview-index-text-color | `var(--van-white)` | - |
 | --van-image-preview-index-font-size | `var(--van-font-size-md)` | - |
 | --van-image-preview-index-line-height | `var(--van-line-height-md)` | - |
-| --van-image-preview-index-text-shadow | `0 1px 1px @gray-8` | - |
+| --van-image-preview-index-text-shadow | `0 1px 1px var(--van-gray-8)` | - |
 | --van-image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | - |
 | --van-image-preview-close-icon-size | `22px` | - |
 | --van-image-preview-close-icon-color | `var(--van-gary-5)` | - |

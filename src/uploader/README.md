@@ -380,7 +380,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-uploader-file-name-font-size | `var(--van-font-size-sm)` | - |
 | --van-uploader-file-name-text-color | `var(--van-gary-7)` | - |
 | --van-uploader-mask-text-color | `var(--van-white)` | - |
-| --van-uploader-mask-background-color | `fade(@gray-8, 88%)` | - |
+| --van-uploader-mask-background-color | `fade(var(--van-gray-8), 88%)` | - |
 | --van-uploader-mask-icon-size | `22px` | - |
 | --van-uploader-mask-message-font-size | `var(--van-font-size-sm)` | - |
 | --van-uploader-mask-message-line-height | `var(--van-line-height-xs)` | - |
