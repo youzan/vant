@@ -78,7 +78,8 @@ export default {
     font-size: 15px;
   }
 
-  > p {
+  > p,
+  > blockquote p {
     color: @van-doc-text-color;
     font-size: 15px;
     line-height: 26px;

@@ -240,13 +240,13 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                       | 默认值              | 描述 |
-| ------------------------------------------ | ------------------- | ---- |
-| --van-tree-select-font-size                | `@font-size-md`     | -    |
-| --van-tree-select-nav-background-color     | `@background-color` | -    |
-| --van-tree-select-content-background-color | `@white`            | -    |
-| --van-tree-select-nav-item-padding         | `14px @padding-sm`  | -    |
-| --van-tree-select-item-height              | `48px`              | -    |
-| --van-tree-select-item-active-color        | `@red`              | -    |
-| --van-tree-select-item-disabled-color      | `@gray-5`           | -    |
-| --van-tree-select-item-selected-size       | `16px`              | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-tree-select-font-size | `var(--van-font-size-md)` | - |
+| --van-tree-select-nav-background-color | `var(--van-background-color)` | - |
+| --van-tree-select-content-background-color | `var(--van-white)` | - |
+| --van-tree-select-nav-item-padding | `14px var(--van-padding-sm)` | - |
+| --van-tree-select-item-height | `48px` | - |
+| --van-tree-select-item-active-color | `var(--van-red)` | - |
+| --van-tree-select-item-disabled-color | `var(--van-gary-5)` | - |
+| --van-tree-select-item-selected-size | `16px` | - |

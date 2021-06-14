@@ -118,12 +118,12 @@ app.use(Lazyload);
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                     | Default Value       | Description |
-| ---------------------------------------- | ------------------- | ----------- |
-| --van-image-placeholder-text-color       | `@gray-6`           | -           |
-| --van-image-placeholder-font-size        | `@font-size-md`     | -           |
-| --van-image-placeholder-background-color | `@background-color` | -           |
-| --van-image-loading-icon-size            | `32px`              | -           |
-| --van-image-loading-icon-color           | `@gray-4`           | -           |
-| --van-image-error-icon-size              | `32px`              | -           |
-| --van-image-error-icon-color             | `@gray-4`           | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-image-placeholder-text-color | `var(--van-gary-6)` | - |
+| --van-image-placeholder-font-size | `var(--van-font-size-md)` | - |
+| --van-image-placeholder-background-color | `var(--van-background-color)` | - |
+| --van-image-loading-icon-size | `32px` | - |
+| --van-image-loading-icon-color | `var(--van-gary-4)` | - |
+| --van-image-error-icon-size | `32px` | - |
+| --van-image-error-icon-color | `var(--van-gary-4)` | - |

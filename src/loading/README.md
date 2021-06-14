@@ -89,10 +89,10 @@ use `color` or `text-color` to change text color.
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                     | Default Value   | Description |
-| ---------------------------------------- | --------------- | ----------- |
-| --van-loading-text-color                 | `@gray-6`       | -           |
-| --van-loading-text-font-size             | `@font-size-md` | -           |
-| --van-loading-spinner-color              | `@gray-5`       | -           |
-| --van-loading-spinner-size               | `30px`          | -           |
-| --van-loading-spinner-animation-duration | `0.8s`          | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-loading-text-color | `var(--van-gary-6)` | - |
+| --van-loading-text-font-size | `var(--van-font-size-md)` | - |
+| --van-loading-spinner-color | `var(--van-gary-5)` | - |
+| --van-loading-spinner-size | `30px` | - |
+| --van-loading-spinner-animation-duration | `0.8s` | - |

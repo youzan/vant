@@ -140,14 +140,14 @@ app.use(NoticeBar);
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                              | 默认值                    | 描述 |
-| --------------------------------- | ------------------------- | ---- |
-| --van-notice-bar-height           | `40px`                    | -    |
-| --van-notice-bar-padding          | `0 @padding-md`           | -    |
-| --van-notice-bar-wrapable-padding | `@padding-xs @padding-md` | -    |
-| --van-notice-bar-text-color       | `@orange-dark`            | -    |
-| --van-notice-bar-font-size        | `@font-size-md`           | -    |
-| --van-notice-bar-line-height      | `24px`                    | -    |
-| --van-notice-bar-background-color | `@orange-light`           | -    |
-| --van-notice-bar-icon-size        | `16px`                    | -    |
-| --van-notice-bar-icon-min-width   | `24px`                    | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-notice-bar-height | `40px` | - |
+| --van-notice-bar-padding | `0 var(--van-padding-md)` | - |
+| --van-notice-bar-wrapable-padding | `var(--van-padding-xs) var(--van-padding-md)` | - |
+| --van-notice-bar-text-color | `var(--van-orange-dark)` | - |
+| --van-notice-bar-font-size | `var(--van-font-size-md)` | - |
+| --van-notice-bar-line-height | `24px` | - |
+| --van-notice-bar-background-color | `var(--van-orange-light)` | - |
+| --van-notice-bar-icon-size | `16px` | - |
+| --van-notice-bar-icon-min-width | `24px` | - |

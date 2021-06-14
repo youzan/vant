@@ -99,10 +99,10 @@ app.use(Loading);
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                     | 默认值          | 描述 |
-| ---------------------------------------- | --------------- | ---- |
-| --van-loading-text-color                 | `@gray-6`       | -    |
-| --van-loading-text-font-size             | `@font-size-md` | -    |
-| --van-loading-spinner-color              | `@gray-5`       | -    |
-| --van-loading-spinner-size               | `30px`          | -    |
-| --van-loading-spinner-animation-duration | `0.8s`          | -    |
+| 名称                                     | 默认值                    | 描述 |
+| ---------------------------------------- | ------------------------- | ---- |
+| --van-loading-text-color                 | `var(--van-gary-6)`       | -    |
+| --van-loading-text-font-size             | `var(--van-font-size-md)` | -    |
+| --van-loading-spinner-color              | `var(--van-gary-5)`       | -    |
+| --van-loading-spinner-size               | `30px`                    | -    |
+| --van-loading-spinner-animation-duration | `0.8s`                    | -    |

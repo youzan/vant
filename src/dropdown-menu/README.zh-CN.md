@@ -211,15 +211,15 @@ export default {
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
 | --van-dropdown-menu-height | `48px` | - |
-| --van-dropdown-menu-background-color | `@white` | - |
+| --van-dropdown-menu-background-color | `var(--van-white)` | - |
 | --van-dropdown-menu-box-shadow | `0 2px 12px fade(@gray-7, 12)` | - |
 | --van-dropdown-menu-title-font-size | `15px` | - |
-| --van-dropdown-menu-title-text-color | `@text-color` | - |
-| --van-dropdown-menu-title-active-text-color | `@red` | - |
-| --van-dropdown-menu-title-disabled-text-color | `@gray-6` | - |
-| --van-dropdown-menu-title-padding | `0 @padding-xs` | - |
-| --van-dropdown-menu-title-line-height | `@line-height-lg` | - |
-| --van-dropdown-menu-option-active-color | `@red` | - |
+| --van-dropdown-menu-title-text-color | `var(--van-text-color)` | - |
+| --van-dropdown-menu-title-active-text-color | `var(--van-red)` | - |
+| --van-dropdown-menu-title-disabled-text-color | `var(--van-gary-6)` | - |
+| --van-dropdown-menu-title-padding | `0 var(--van-padding-xs)` | - |
+| --van-dropdown-menu-title-line-height | `var(--van-line-height-lg)` | - |
+| --van-dropdown-menu-option-active-color | `var(--van-red)` | - |
 | --van-dropdown-menu-content-max-height | `80%` | - |
 | --van-dropdown-item-z-index | `10` | - |
 

@@ -204,9 +204,9 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get List i
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                         | Default Value   | Description |
-| ---------------------------- | --------------- | ----------- |
-| --van-list-text-color        | `@gray-6`       | -           |
-| --van-list-text-font-size    | `@font-size-md` | -           |
-| --van-list-text-line-height  | `50px`          | -           |
-| --van-list-loading-icon-size | `16px`          | -           |
+| Name                         | Default Value             | Description |
+| ---------------------------- | ------------------------- | ----------- |
+| --van-list-text-color        | `var(--van-gary-6)`       | -           |
+| --van-list-text-font-size    | `var(--van-font-size-md)` | -           |
+| --van-list-text-line-height  | `50px`                    | -           |
+| --van-list-loading-icon-size | `16px`                    | -           |

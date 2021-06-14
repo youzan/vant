@@ -147,12 +147,12 @@ export default {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                          | Default Value       | Description |
-| ----------------------------- | ------------------- | ----------- |
-| --van-circle-size             | `100px`             | -           |
-| --van-circle-color            | `@blue`             | -           |
-| --van-circle-layer-color      | `@white`            | -           |
-| --van-circle-text-color       | `@text-color`       | -           |
-| --van-circle-text-font-weight | `@font-weight-bold` | -           |
-| --van-circle-text-font-size   | `@font-size-md`     | -           |
-| --van-circle-text-line-height | `@line-height-md`   | -           |
+| Name                          | Default Value                 | Description |
+| ----------------------------- | ----------------------------- | ----------- |
+| --van-circle-size             | `100px`                       | -           |
+| --van-circle-color            | `var(--van-blue)`             | -           |
+| --van-circle-layer-color      | `var(--van-white)`            | -           |
+| --van-circle-text-color       | `var(--van-text-color)`       | -           |
+| --van-circle-text-font-weight | `var(--van-font-weight-bold)` | -           |
+| --van-circle-text-font-size   | `var(--van-font-size-md)`     | -           |
+| --van-circle-text-line-height | `var(--van-line-height-md)`   | -           |

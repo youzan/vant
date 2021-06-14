@@ -257,23 +257,23 @@ export default {
 | --- | --- | --- |
 | --van-dialog-width | `320px` | - |
 | --van-dialog-small-screen-width | `90%` | - |
-| --van-dialog-font-size | `@font-size-lg` | - |
-| --van-dialog-transition | `@animation-duration-base` | - |
+| --van-dialog-font-size | `var(--van-font-size-lg)` | - |
+| --van-dialog-transition | `var(--van-animation-duration-base)` | - |
 | --van-dialog-border-radius | `16px` | - |
-| --van-dialog-background-color | `@white` | - |
-| --van-dialog-header-font-weight | `@font-weight-bold` | - |
+| --van-dialog-background-color | `var(--van-white)` | - |
+| --van-dialog-header-font-weight | `var(--van-font-weight-bold)` | - |
 | --van-dialog-header-line-height | `24px` | - |
 | --van-dialog-header-padding-top | `26px` | - |
-| --van-dialog-header-isolated-padding | `@padding-lg 0` | - |
-| --van-dialog-message-padding | `@padding-lg` | - |
-| --van-dialog-message-font-size | `@font-size-md` | - |
-| --van-dialog-message-line-height | `@line-height-md` | - |
+| --van-dialog-header-isolated-padding | `var(--van-padding-lg) 0` | - |
+| --van-dialog-message-padding | `var(--van-padding-lg)` | - |
+| --van-dialog-message-font-size | `var(--van-font-size-md)` | - |
+| --van-dialog-message-line-height | `var(--van-line-height-md)` | - |
 | --van-dialog-message-max-height | `60vh` | - |
-| --van-dialog-has-title-message-text-color | `@gray-7` | - |
-| --van-dialog-has-title-message-padding-top | `@padding-xs` | - |
+| --van-dialog-has-title-message-text-color | `var(--van-gary-7)` | - |
+| --van-dialog-has-title-message-padding-top | `var(--van-padding-xs)` | - |
 | --van-dialog-button-height | `48px` | - |
 | --van-dialog-round-button-height | `36px` | - |
-| --van-dialog-confirm-button-text-color | `@red` | - |
+| --van-dialog-confirm-button-text-color | `var(--van-red)` | - |
 
 ## 常见问题
 

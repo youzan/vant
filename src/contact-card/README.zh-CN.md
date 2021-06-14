@@ -95,9 +95,9 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                 | 默认值            | 描述 |
-| ------------------------------------ | ----------------- | ---- |
-| --van-contact-card-padding           | `@padding-md`     | -    |
-| --van-contact-card-add-icon-size     | `40px`            | -    |
-| --van-contact-card-add-icon-color    | `@blue`           | -    |
-| --van-contact-card-value-line-height | `@line-height-md` | -    |
+| 名称                                 | 默认值                      | 描述 |
+| ------------------------------------ | --------------------------- | ---- |
+| --van-contact-card-padding           | `var(--van-padding-md)`     | -    |
+| --van-contact-card-add-icon-size     | `40px`                      | -    |
+| --van-contact-card-add-icon-color    | `var(--van-blue)`           | -    |
+| --van-contact-card-value-line-height | `var(--van-line-height-md)` | -    |

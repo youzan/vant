@@ -119,14 +119,14 @@ app.use(NoticeBar);
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                              | Default Value             | Description |
-| --------------------------------- | ------------------------- | ----------- |
-| --van-notice-bar-height           | `40px`                    | -           |
-| --van-notice-bar-padding          | `0 @padding-md`           | -           |
-| --van-notice-bar-wrapable-padding | `@padding-xs @padding-md` | -           |
-| --van-notice-bar-text-color       | `@orange-dark`            | -           |
-| --van-notice-bar-font-size        | `@font-size-md`           | -           |
-| --van-notice-bar-line-height      | `24px`                    | -           |
-| --van-notice-bar-background-color | `@orange-light`           | -           |
-| --van-notice-bar-icon-size        | `16px`                    | -           |
-| --van-notice-bar-icon-min-width   | `24px`                    | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-notice-bar-height | `40px` | - |
+| --van-notice-bar-padding | `0 var(--van-padding-md)` | - |
+| --van-notice-bar-wrapable-padding | `var(--van-padding-xs) var(--van-padding-md)` | - |
+| --van-notice-bar-text-color | `var(--van-orange-dark)` | - |
+| --van-notice-bar-font-size | `var(--van-font-size-md)` | - |
+| --van-notice-bar-line-height | `24px` | - |
+| --van-notice-bar-background-color | `var(--van-orange-light)` | - |
+| --van-notice-bar-icon-size | `16px` | - |
+| --van-notice-bar-icon-min-width | `24px` | - |

@@ -155,16 +155,16 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default Value | Description |
 | --- | --- | --- |
 | --van-password-input-height | `50px` | - |
-| --van-password-input-margin | `0 @padding-md` | - |
+| --van-password-input-margin | `0 var(--van-padding-md)` | - |
 | --van-password-input-font-size | `20px` | - |
 | --van-password-input-border-radius | `6px` | - |
-| --van-password-input-background-color | `@white` | - |
-| --van-password-input-info-color | `@gray-6` | - |
-| --van-password-input-info-font-size | `@font-size-md` | - |
-| --van-password-input-error-info-color | `@red` | - |
+| --van-password-input-background-color | `var(--van-white)` | - |
+| --van-password-input-info-color | `var(--van-gary-6)` | - |
+| --van-password-input-info-font-size | `var(--van-font-size-md)` | - |
+| --van-password-input-error-info-color | `var(--van-red)` | - |
 | --van-password-input-dot-size | `10px` | - |
-| --van-password-input-dot-color | `@black` | - |
-| --van-password-input-cursor-color | `@text-color` | - |
+| --van-password-input-dot-color | `var(--van-black)` | - |
+| --van-password-input-cursor-color | `var(--van-text-color)` | - |
 | --van-password-input-cursor-width | `1px` | - |
 | --van-password-input-cursor-height | `40%` | - |
 | --van-password-input-cursor-animation-duration | `1s` | - |

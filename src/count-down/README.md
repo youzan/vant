@@ -185,8 +185,8 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get CountD
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                         | Default Value     | Description |
-| ---------------------------- | ----------------- | ----------- |
-| --van-count-down-text-color  | `@text-color`     | -           |
-| --van-count-down-font-size   | `@font-size-md`   | -           |
-| --van-count-down-line-height | `@line-height-md` | -           |
+| Name                         | Default Value               | Description |
+| ---------------------------- | --------------------------- | ----------- |
+| --van-count-down-text-color  | `var(--van-text-color)`     | -           |
+| --van-count-down-font-size   | `var(--van-font-size-md)`   | -           |
+| --van-count-down-line-height | `var(--van-line-height-md)` | -           |

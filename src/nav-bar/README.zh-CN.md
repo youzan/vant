@@ -93,13 +93,13 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                           | 默认值          | 描述 |
-| ------------------------------ | --------------- | ---- |
-| --van-nav-bar-height           | `46px`          | -    |
-| --van-nav-bar-background-color | `@white`        | -    |
-| --van-nav-bar-arrow-size       | `16px`          | -    |
-| --van-nav-bar-icon-color       | `@blue`         | -    |
-| --van-nav-bar-text-color       | `@blue`         | -    |
-| --van-nav-bar-title-font-size  | `@font-size-lg` | -    |
-| --van-nav-bar-title-text-color | `@text-color`   | -    |
-| --van-nav-bar-z-index          | `1`             | -    |
+| 名称                           | 默认值                    | 描述 |
+| ------------------------------ | ------------------------- | ---- |
+| --van-nav-bar-height           | `46px`                    | -    |
+| --van-nav-bar-background-color | `var(--van-white)`        | -    |
+| --van-nav-bar-arrow-size       | `16px`                    | -    |
+| --van-nav-bar-icon-color       | `var(--van-blue)`         | -    |
+| --van-nav-bar-text-color       | `var(--van-blue)`         | -    |
+| --van-nav-bar-title-font-size  | `var(--van-font-size-lg)` | -    |
+| --van-nav-bar-title-text-color | `var(--van-text-color)`   | -    |
+| --van-nav-bar-z-index          | `1`                       | -    |

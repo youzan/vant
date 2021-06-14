@@ -81,11 +81,11 @@ export default {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                    | Default Value       | Description |
-| --------------------------------------- | ------------------- | ----------- |
-| --van-contact-edit-padding              | `@padding-md`       | -           |
-| --van-contact-edit-fields-radius        | `@border-radius-md` | -           |
-| --van-contact-edit-buttons-padding      | `@padding-xl 0`     | -           |
-| --van-contact-edit-button-margin-bottom | `@padding-sm`       | -           |
-| --van-contact-edit-button-font-size     | `16px`              | -           |
-| --van-contact-edit-field-label-width    | `4.1em`             | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-contact-edit-padding | `var(--van-padding-md)` | - |
+| --van-contact-edit-fields-radius | `var(--van-border-radius-md)` | - |
+| --van-contact-edit-buttons-padding | `var(--van-padding-xl) 0` | - |
+| --van-contact-edit-button-margin-bottom | `var(--van-padding-sm)` | - |
+| --van-contact-edit-button-font-size | `16px` | - |
+| --van-contact-edit-field-label-width | `4.1em` | - |

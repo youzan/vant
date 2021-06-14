@@ -166,10 +166,10 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-collapse-item-transition-duration | `@animation-duration-base` | - |
-| --van-collapse-item-content-padding | `@padding-sm @padding-md` | - |
-| --van-collapse-item-content-font-size | `@font-size-md` | - |
+| --van-collapse-item-transition-duration | `var(--van-animation-duration-base)` | - |
+| --van-collapse-item-content-padding | `var(--van-padding-sm) var(--van-padding-md)` | - |
+| --van-collapse-item-content-font-size | `var(--van-font-size-md)` | - |
 | --van-collapse-item-content-line-height | `1.5` | - |
-| --van-collapse-item-content-text-color | `@gray-6` | - |
-| --van-collapse-item-content-background-color | `@white` | - |
-| --van-collapse-item-title-disabled-color | `@gray-5` | - |
+| --van-collapse-item-content-text-color | `var(--van-gary-6)` | - |
+| --van-collapse-item-content-background-color | `var(--van-white)` | - |
+| --van-collapse-item-title-disabled-color | `var(--van-gary-5)` | - |

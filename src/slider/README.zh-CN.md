@@ -186,12 +186,12 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-slider-active-background-color | `@blue` | - |
-| --van-slider-inactive-background-color | `@gray-3` | - |
-| --van-slider-disabled-opacity | `@disabled-opacity` | - |
+| --van-slider-active-background-color | `var(--van-blue)` | - |
+| --van-slider-inactive-background-color | `var(--van-gary-3)` | - |
+| --van-slider-disabled-opacity | `var(--van-disabled-opacity)` | - |
 | --van-slider-bar-height | `2px` | - |
 | --van-slider-button-width | `24px` | - |
 | --van-slider-button-height | `24px` | - |
 | --van-slider-button-border-radius | `50%` | - |
-| --van-slider-button-background-color | `@white` | - |
+| --van-slider-button-background-color | `var(--van-white)` | - |
 | --van-slider-button-box-shadow | `0 1px 2px rgba(0, 0, 0, 0.5)` | - |

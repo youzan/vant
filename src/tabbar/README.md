@@ -204,15 +204,15 @@ export default {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                                      | Default Value   | Description |
-| ----------------------------------------- | --------------- | ----------- |
-| --van-tabbar-height                       | `50px`          | -           |
-| --van-tabbar-z-index                      | `1`             | -           |
-| --van-tabbar-background-color             | `@white`        | -           |
-| --van-tabbar-item-font-size               | `@font-size-sm` | -           |
-| --van-tabbar-item-text-color              | `@gray-7`       | -           |
-| --van-tabbar-item-active-color            | `@blue`         | -           |
-| --van-tabbar-item-active-background-color | `@white`        | -           |
-| --van-tabbar-item-line-height             | `1`             | -           |
-| --van-tabbar-item-icon-size               | `22px`          | -           |
-| --van-tabbar-item-margin-bottom           | `4px`           | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-tabbar-height | `50px` | - |
+| --van-tabbar-z-index | `1` | - |
+| --van-tabbar-background-color | `var(--van-white)` | - |
+| --van-tabbar-item-font-size | `var(--van-font-size-sm)` | - |
+| --van-tabbar-item-text-color | `var(--van-gary-7)` | - |
+| --van-tabbar-item-active-color | `var(--van-blue)` | - |
+| --van-tabbar-item-active-background-color | `var(--van-white)` | - |
+| --van-tabbar-item-line-height | `1` | - |
+| --van-tabbar-item-icon-size | `22px` | - |
+| --van-tabbar-item-margin-bottom | `4px` | - |

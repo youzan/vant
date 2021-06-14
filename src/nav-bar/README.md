@@ -91,13 +91,13 @@ export default {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                           | Default Value   | Description |
-| ------------------------------ | --------------- | ----------- |
-| --van-nav-bar-height           | `46px`          | -           |
-| --van-nav-bar-background-color | `@white`        | -           |
-| --van-nav-bar-arrow-size       | `16px`          | -           |
-| --van-nav-bar-icon-color       | `@blue`         | -           |
-| --van-nav-bar-text-color       | `@blue`         | -           |
-| --van-nav-bar-title-font-size  | `@font-size-lg` | -           |
-| --van-nav-bar-title-text-color | `@text-color`   | -           |
-| --van-nav-bar-z-index          | `1`             | -           |
+| Name                           | Default Value             | Description |
+| ------------------------------ | ------------------------- | ----------- |
+| --van-nav-bar-height           | `46px`                    | -           |
+| --van-nav-bar-background-color | `var(--van-white)`        | -           |
+| --van-nav-bar-arrow-size       | `16px`                    | -           |
+| --van-nav-bar-icon-color       | `var(--van-blue)`         | -           |
+| --van-nav-bar-text-color       | `var(--van-blue)`         | -           |
+| --van-nav-bar-title-font-size  | `var(--van-font-size-lg)` | -           |
+| --van-nav-bar-title-text-color | `var(--van-text-color)`   | -           |
+| --van-nav-bar-z-index          | `1`                       | -           |

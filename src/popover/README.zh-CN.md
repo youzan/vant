@@ -270,21 +270,21 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                           | 默认值              | 描述 |
-| ---------------------------------------------- | ------------------- | ---- |
-| --van-popover-arrow-size                       | `6px`               | -    |
-| --van-popover-border-radius                    | `@border-radius-lg` | -    |
-| --van-popover-action-width                     | `128px`             | -    |
-| --van-popover-action-height                    | `44px`              | -    |
-| --van-popover-action-font-size                 | `@font-size-md`     | -    |
-| --van-popover-action-line-height               | `@line-height-md`   | -    |
-| --van-popover-action-icon-size                 | `20px`              | -    |
-| --van-popover-light-text-color                 | `@text-color`       | -    |
-| --van-popover-light-background-color           | `@white`            | -    |
-| --van-popover-light-action-disabled-text-color | `@gray-5`           | -    |
-| --van-popover-dark-text-color                  | `@white`            | -    |
-| --van-popover-dark-background-color            | `#4a4a4a`           | -    |
-| --van-popover-dark-action-disabled-text-color  | `@gray-6`           | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-popover-arrow-size | `6px` | - |
+| --van-popover-border-radius | `var(--van-border-radius-lg)` | - |
+| --van-popover-action-width | `128px` | - |
+| --van-popover-action-height | `44px` | - |
+| --van-popover-action-font-size | `var(--van-font-size-md)` | - |
+| --van-popover-action-line-height | `var(--van-line-height-md)` | - |
+| --van-popover-action-icon-size | `20px` | - |
+| --van-popover-light-text-color | `var(--van-text-color)` | - |
+| --van-popover-light-background-color | `var(--van-white)` | - |
+| --van-popover-light-action-disabled-text-color | `var(--van-gary-5)` | - |
+| --van-popover-dark-text-color | `var(--van-white)` | - |
+| --van-popover-dark-background-color | `#4a4a4a` | - |
+| --van-popover-dark-action-disabled-text-color | `var(--van-gary-6)` | - |
 
 ## 常见问题
 

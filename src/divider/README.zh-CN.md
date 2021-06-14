@@ -83,13 +83,13 @@ app.use(Divider);
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                              | 默认值          | 描述 |
-| --------------------------------- | --------------- | ---- |
-| --van-divider-margin              | `@padding-md 0` | -    |
-| --van-divider-text-color          | `@gray-6`       | -    |
-| --van-divider-font-size           | `@font-size-md` | -    |
-| --van-divider-line-height         | `24px`          | -    |
-| --van-divider-border-color        | `@border-color` | -    |
-| --van-divider-content-padding     | `@padding-md`   | -    |
-| --van-divider-content-left-width  | `10%`           | -    |
-| --van-divider-content-right-width | `10%`           | -    |
+| 名称                              | 默认值                    | 描述 |
+| --------------------------------- | ------------------------- | ---- |
+| --van-divider-margin              | `var(--van-padding-md) 0` | -    |
+| --van-divider-text-color          | `var(--van-gary-6)`       | -    |
+| --van-divider-font-size           | `var(--van-font-size-md)` | -    |
+| --van-divider-line-height         | `24px`                    | -    |
+| --van-divider-border-color        | `var(--van-border-color)` | -    |
+| --van-divider-content-padding     | `var(--van-padding-md)`   | -    |
+| --van-divider-content-left-width  | `10%`                     | -    |
+| --van-divider-content-right-width | `10%`                     | -    |

@@ -389,16 +389,16 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-picker-background-color | `@white` | - |
+| --van-picker-background-color | `var(--van-white)` | - |
 | --van-picker-toolbar-height | `44px` | - |
-| --van-picker-title-font-size | `@font-size-lg` | - |
-| --van-picker-title-line-height | `@line-height-md` | - |
-| --van-picker-action-padding | `0 @padding-md` | - |
-| --van-picker-action-font-size | `@font-size-md` | - |
-| --van-picker-confirm-action-color | `@text-link-color` | - |
-| --van-picker-cancel-action-color | `@gray-6` | - |
-| --van-picker-option-font-size | `@font-size-lg` | - |
-| --van-picker-option-text-color | `@black` | - |
+| --van-picker-title-font-size | `var(--van-font-size-lg)` | - |
+| --van-picker-title-line-height | `var(--van-line-height-md)` | - |
+| --van-picker-action-padding | `0 var(--van-padding-md)` | - |
+| --van-picker-action-font-size | `var(--van-font-size-md)` | - |
+| --van-picker-confirm-action-color | `var(--van-text-link-color)` | - |
+| --van-picker-cancel-action-color | `var(--van-gary-6)` | - |
+| --van-picker-option-font-size | `var(--van-font-size-lg)` | - |
+| --van-picker-option-text-color | `var(--van-black)` | - |
 | --van-picker-option-disabled-opacity | `0.3` | - |
-| --van-picker-loading-icon-color | `@blue` | - |
+| --van-picker-loading-icon-color | `var(--van-blue)` | - |
 | --van-picker-loading-mask-color | `rgba(255, 255, 255, 0.9)` | - |

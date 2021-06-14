@@ -108,14 +108,14 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                            | 默认值              | 描述 |
-| ----------------------------------------------- | ------------------- | ---- |
-| --van-pagination-height                         | `40px`              | -    |
-| --van-pagination-font-size                      | `@font-size-md`     | -    |
-| --van-pagination-item-width                     | `36px`              | -    |
-| --van-pagination-item-default-color             | `@blue`             | -    |
-| --van-pagination-item-disabled-color            | `@gray-7`           | -    |
-| --van-pagination-item-disabled-background-color | `@background-color` | -    |
-| --van-pagination-background-color               | `@white`            | -    |
-| --van-pagination-desc-color                     | `@gray-7`           | -    |
-| --van-pagination-disabled-opacity               | `@disabled-opacity` | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-pagination-height | `40px` | - |
+| --van-pagination-font-size | `var(--van-font-size-md)` | - |
+| --van-pagination-item-width | `36px` | - |
+| --van-pagination-item-default-color | `var(--van-blue)` | - |
+| --van-pagination-item-disabled-color | `var(--van-gary-7)` | - |
+| --van-pagination-item-disabled-background-color | `var(--van-background-color)` | - |
+| --van-pagination-background-color | `var(--van-white)` | - |
+| --van-pagination-desc-color | `var(--van-gary-7)` | - |
+| --van-pagination-disabled-opacity | `var(--van-disabled-opacity)` | - |

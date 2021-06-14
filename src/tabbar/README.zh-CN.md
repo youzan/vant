@@ -216,15 +216,15 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                      | 默认值          | 描述 |
-| ----------------------------------------- | --------------- | ---- |
-| --van-tabbar-height                       | `50px`          | -    |
-| --van-tabbar-z-index                      | `1`             | -    |
-| --van-tabbar-background-color             | `@white`        | -    |
-| --van-tabbar-item-font-size               | `@font-size-sm` | -    |
-| --van-tabbar-item-text-color              | `@gray-7`       | -    |
-| --van-tabbar-item-active-color            | `@blue`         | -    |
-| --van-tabbar-item-active-background-color | `@white`        | -    |
-| --van-tabbar-item-line-height             | `1`             | -    |
-| --van-tabbar-item-icon-size               | `22px`          | -    |
-| --van-tabbar-item-margin-bottom           | `4px`           | -    |
+| 名称                                      | 默认值                    | 描述 |
+| ----------------------------------------- | ------------------------- | ---- |
+| --van-tabbar-height                       | `50px`                    | -    |
+| --van-tabbar-z-index                      | `1`                       | -    |
+| --van-tabbar-background-color             | `var(--van-white)`        | -    |
+| --van-tabbar-item-font-size               | `var(--van-font-size-sm)` | -    |
+| --van-tabbar-item-text-color              | `var(--van-gary-7)`       | -    |
+| --van-tabbar-item-active-color            | `var(--van-blue)`         | -    |
+| --van-tabbar-item-active-background-color | `var(--van-white)`        | -    |
+| --van-tabbar-item-line-height             | `1`                       | -    |
+| --van-tabbar-item-icon-size               | `22px`                    | -    |
+| --van-tabbar-item-margin-bottom           | `4px`                     | -    |

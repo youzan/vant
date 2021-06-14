@@ -195,11 +195,11 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                         | 默认值            | 描述 |
-| ---------------------------- | ----------------- | ---- |
-| --van-count-down-text-color  | `@text-color`     | -    |
-| --van-count-down-font-size   | `@font-size-md`   | -    |
-| --van-count-down-line-height | `@line-height-md` | -    |
+| 名称                         | 默认值                      | 描述 |
+| ---------------------------- | --------------------------- | ---- |
+| --van-count-down-text-color  | `var(--van-text-color)`     | -    |
+| --van-count-down-font-size   | `var(--van-font-size-md)`   | -    |
+| --van-count-down-line-height | `var(--van-line-height-md)` | -    |
 
 ## 常见问题
 

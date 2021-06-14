@@ -148,12 +148,12 @@ app.use(Badge);
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
 | --van-badge-size | `16px` | - |
-| --van-badge-color | `@white` | - |
+| --van-badge-color | `var(--van-white)` | - |
 | --van-badge-padding | `0 3px` | - |
-| --van-badge-font-size | `@font-size-sm` | - |
-| --van-badge-font-weight | `@font-weight-bold` | - |
-| --van-badge-border-width | `@border-width-base` | - |
-| --van-badge-background-color | `@red` | - |
-| --van-badge-dot-color | `@red` | - |
+| --van-badge-font-size | `var(--van-font-size-sm)` | - |
+| --van-badge-font-weight | `var(--van-font-weight-bold)` | - |
+| --van-badge-border-width | `var(--van-border-width-base)` | - |
+| --van-badge-background-color | `var(--van-red)` | - |
+| --van-badge-dot-color | `var(--van-red)` | - |
 | --van-badge-dot-size | `8px` | - |
 | --van-badge-font-family | `-apple-system-font, Helvetica Neue, Arial, sans-serif` | - |

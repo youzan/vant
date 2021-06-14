@@ -176,10 +176,10 @@ export default {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                           | 默认值          | 描述 |
-| ------------------------------ | --------------- | ---- |
-| --van-rate-icon-size           | `20px`          | -    |
-| --van-rate-icon-gutter         | `@padding-base` | -    |
-| --van-rate-icon-void-color     | `@gray-5`       | -    |
-| --van-rate-icon-full-color     | `@red`          | -    |
-| --van-rate-icon-disabled-color | `@gray-5`       | -    |
+| 名称                           | 默认值                    | 描述 |
+| ------------------------------ | ------------------------- | ---- |
+| --van-rate-icon-size           | `20px`                    | -    |
+| --van-rate-icon-gutter         | `var(--van-padding-base)` | -    |
+| --van-rate-icon-void-color     | `var(--van-gary-5)`       | -    |
+| --van-rate-icon-full-color     | `var(--van-red)`          | -    |
+| --van-rate-icon-disabled-color | `var(--van-gary-5)`       | -    |
