@@ -147,9 +147,9 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-grid-item-content-padding | `var(--van-padding-md) var(--van-padding-xs)` | - |
-| --van-grid-item-content-background-color | `var(--van-white)` | - |
-| --van-grid-item-content-active-color | `var(--van-active-color)` | - |
-| --van-grid-item-icon-size | `28px` | - |
-| --van-grid-item-text-color | `var(--van-gary-7)` | - |
-| --van-grid-item-text-font-size | `var(--van-font-size-sm)` | - |
+| --van-grid-item-content-padding | _var(--van-padding-md) var(--van-padding-xs)_ | - |
+| --van-grid-item-content-background-color | _var(--van-white)_ | - |
+| --van-grid-item-content-active-color | _var(--van-active-color)_ | - |
+| --van-grid-item-icon-size | _28px_ | - |
+| --van-grid-item-text-color | _var(--van-gary-7)_ | - |
+| --van-grid-item-text-font-size | _var(--van-font-size-sm)_ | - |

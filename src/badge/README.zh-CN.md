@@ -147,13 +147,13 @@ app.use(Badge);
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-badge-size | `16px` | - |
-| --van-badge-color | `var(--van-white)` | - |
-| --van-badge-padding | `0 3px` | - |
-| --van-badge-font-size | `var(--van-font-size-sm)` | - |
-| --van-badge-font-weight | `var(--van-font-weight-bold)` | - |
-| --van-badge-border-width | `var(--van-border-width-base)` | - |
-| --van-badge-background-color | `var(--van-red)` | - |
-| --van-badge-dot-color | `var(--van-red)` | - |
-| --van-badge-dot-size | `8px` | - |
-| --van-badge-font-family | `-apple-system-font, Helvetica Neue, Arial, sans-serif` | - |
+| --van-badge-size | _16px_ | - |
+| --van-badge-color | _var(--van-white)_ | - |
+| --van-badge-padding | _0 3px_ | - |
+| --van-badge-font-size | _var(--van-font-size-sm)_ | - |
+| --van-badge-font-weight | _var(--van-font-weight-bold)_ | - |
+| --van-badge-border-width | _var(--van-border-width-base)_ | - |
+| --van-badge-background-color | _var(--van-red)_ | - |
+| --van-badge-dot-color | _var(--van-red)_ | - |
+| --van-badge-dot-size | _8px_ | - |
+| --van-badge-font-family | _-apple-system-font, Helvetica Neue, Arial, sans-serif_ | - |

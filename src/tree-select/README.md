@@ -236,11 +236,11 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-tree-select-font-size | `var(--van-font-size-md)` | - |
-| --van-tree-select-nav-background-color | `var(--van-background-color)` | - |
-| --van-tree-select-content-background-color | `var(--van-white)` | - |
-| --van-tree-select-nav-item-padding | `14px var(--van-padding-sm)` | - |
-| --van-tree-select-item-height | `48px` | - |
-| --van-tree-select-item-active-color | `var(--van-red)` | - |
-| --van-tree-select-item-disabled-color | `var(--van-gary-5)` | - |
-| --van-tree-select-item-selected-size | `16px` | - |
+| --van-tree-select-font-size | _var(--van-font-size-md)_ | - |
+| --van-tree-select-nav-background-color | _var(--van-background-color)_ | - |
+| --van-tree-select-content-background-color | _var(--van-white)_ | - |
+| --van-tree-select-nav-item-padding | _14px var(--van-padding-sm)_ | - |
+| --van-tree-select-item-height | _48px_ | - |
+| --van-tree-select-item-active-color | _var(--van-red)_ | - |
+| --van-tree-select-item-disabled-color | _var(--van-gary-5)_ | - |
+| --van-tree-select-item-selected-size | _16px_ | - |

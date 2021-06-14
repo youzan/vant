@@ -217,20 +217,20 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-number-keyboard-background-color | `var(--van-gary-2)` | - |
-| --van-number-keyboard-key-height | `48px` | - |
-| --van-number-keyboard-key-font-size | `28px` | - |
-| --van-number-keyboard-key-active-color | `var(--van-gary-3)` | - |
-| --van-number-keyboard-delete-font-size | `var(--van-font-size-lg)` | - |
-| --van-number-keyboard-title-color | `var(--van-gary-7)` | - |
-| --van-number-keyboard-title-height | `34px` | - |
-| --van-number-keyboard-title-font-size | `var(--van-font-size-lg)` | - |
-| --van-number-keyboard-close-padding | `0 var(--van-padding-md)` | - |
-| --van-number-keyboard-close-color | `var(--van-text-link-color)` | - |
-| --van-number-keyboard-close-font-size | `var(--van-font-size-md)` | - |
-| --van-number-keyboard-button-text-color | `var(--van-white)` | - |
-| --van-number-keyboard-button-background-color | `var(--van-blue)` | - |
-| --van-number-keyboard-z-index | `100` | - |
+| --van-number-keyboard-background-color | _var(--van-gary-2)_ | - |
+| --van-number-keyboard-key-height | _48px_ | - |
+| --van-number-keyboard-key-font-size | _28px_ | - |
+| --van-number-keyboard-key-active-color | _var(--van-gary-3)_ | - |
+| --van-number-keyboard-delete-font-size | _var(--van-font-size-lg)_ | - |
+| --van-number-keyboard-title-color | _var(--van-gary-7)_ | - |
+| --van-number-keyboard-title-height | _34px_ | - |
+| --van-number-keyboard-title-font-size | _var(--van-font-size-lg)_ | - |
+| --van-number-keyboard-close-padding | _0 var(--van-padding-md)_ | - |
+| --van-number-keyboard-close-color | _var(--van-text-link-color)_ | - |
+| --van-number-keyboard-close-font-size | _var(--van-font-size-md)_ | - |
+| --van-number-keyboard-button-text-color | _var(--van-white)_ | - |
+| --van-number-keyboard-button-background-color | _var(--van-blue)_ | - |
+| --van-number-keyboard-z-index | _100_ | - |
 
 ## 常见问题
 

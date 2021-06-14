@@ -92,11 +92,11 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-empty-padding | `var(--van-padding-xl) 0` | - |
-| --van-empty-image-size | `160px` | - |
-| --van-empty-description-margin-top | `var(--van-padding-md)` | - |
-| --van-empty-description-padding | `0 60px` | - |
-| --van-empty-description-color | `var(--van-gary-6)` | - |
-| --van-empty-description-font-size | `var(--van-font-size-md)` | - |
-| --van-empty-description-line-height | `var(--van-line-height-md)` | - |
-| --van-empty-bottom-margin-top | `24px` | - |
+| --van-empty-padding | _var(--van-padding-xl) 0_ | - |
+| --van-empty-image-size | _160px_ | - |
+| --van-empty-description-margin-top | _var(--van-padding-md)_ | - |
+| --van-empty-description-padding | _0 60px_ | - |
+| --van-empty-description-color | _var(--van-gary-6)_ | - |
+| --van-empty-description-font-size | _var(--van-font-size-md)_ | - |
+| --van-empty-description-line-height | _var(--van-line-height-md)_ | - |
+| --van-empty-bottom-margin-top | _24px_ | - |

@@ -161,10 +161,10 @@ beforeClose 的第一个参数为对象，对象中包含以下属性：
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-switch-cell-padding-top | `var(--van-cell-vertical-padding) - 1px` | - |
-| --van-switch-cell-padding-bottom | `var(--van-cell-vertical-padding) - 1px` | - |
-| --van-switch-cell-large-padding-top | `var(--van-cell-large-vertical-padding) - 1px` | - |
-| --van-switch-cell-large-padding-bottom | `var(--van-cell-large-vertical-padding) - 1px` | - |
+| --van-switch-cell-padding-top | _var(--van-cell-vertical-padding) - 1px_ | - |
+| --van-switch-cell-padding-bottom | _var(--van-cell-vertical-padding) - 1px_ | - |
+| --van-switch-cell-large-padding-top | _var(--van-cell-large-vertical-padding) - 1px_ | - |
+| --van-switch-cell-large-padding-bottom | _var(--van-cell-large-vertical-padding) - 1px_ | - |
 
 ## 常见问题
 

@@ -178,8 +178,8 @@ export default {
 
 | 名称                           | 默认值                    | 描述 |
 | ------------------------------ | ------------------------- | ---- |
-| --van-rate-icon-size           | `20px`                    | -    |
-| --van-rate-icon-gutter         | `var(--van-padding-base)` | -    |
-| --van-rate-icon-void-color     | `var(--van-gary-5)`       | -    |
-| --van-rate-icon-full-color     | `var(--van-red)`          | -    |
-| --van-rate-icon-disabled-color | `var(--van-gary-5)`       | -    |
+| --van-rate-icon-size           | _20px_                    | -    |
+| --van-rate-icon-gutter         | _var(--van-padding-base)_ | -    |
+| --van-rate-icon-void-color     | _var(--van-gary-5)_       | -    |
+| --van-rate-icon-full-color     | _var(--van-red)_          | -    |
+| --van-rate-icon-disabled-color | _var(--van-gary-5)_       | -    |

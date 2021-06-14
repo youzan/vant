@@ -94,5 +94,5 @@ export default {
 
 | 名称                           | 默认值               | 描述 |
 | ------------------------------ | -------------------- | ---- |
-| --van-overlay-z-index          | `1`                  | -    |
-| --van-overlay-background-color | `rgba(0, 0, 0, 0.7)` | -    |
+| --van-overlay-z-index          | _1_                  | -    |
+| --van-overlay-background-color | _rgba(0, 0, 0, 0.7)_ | -    |

@@ -91,8 +91,8 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-loading-text-color | `var(--van-gary-6)` | - |
-| --van-loading-text-font-size | `var(--van-font-size-md)` | - |
-| --van-loading-spinner-color | `var(--van-gary-5)` | - |
-| --van-loading-spinner-size | `30px` | - |
-| --van-loading-spinner-animation-duration | `0.8s` | - |
+| --van-loading-text-color | _var(--van-gary-6)_ | - |
+| --van-loading-text-font-size | _var(--van-font-size-md)_ | - |
+| --van-loading-spinner-color | _var(--van-gary-5)_ | - |
+| --van-loading-spinner-size | _30px_ | - |
+| --van-loading-spinner-animation-duration | _0.8s_ | - |

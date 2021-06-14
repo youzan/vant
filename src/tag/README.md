@@ -122,19 +122,19 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-tag-padding | `0 var(--van-padding-base)` | - |
-| --van-tag-text-color | `var(--van-white)` | - |
-| --van-tag-font-size | `var(--van-font-size-sm)` | - |
-| --van-tag-border-radius | `2px` | - |
-| --van-tag-line-height | `16px` | - |
-| --van-tag-medium-padding | `2px 6px` | - |
-| --van-tag-large-padding | `var(--van-padding-base) var(--van-padding-xs)` | - |
-| --van-tag-large-border-radius | `var(--van-border-radius-md)` | - |
-| --van-tag-large-font-size | `var(--van-font-size-md)` | - |
-| --van-tag-round-border-radius | `var(--van-border-radius-max)` | - |
-| --van-tag-danger-color | `var(--van-red)` | - |
-| --van-tag-primary-color | `var(--van-blue)` | - |
-| --van-tag-success-color | `var(--van-green)` | - |
-| --van-tag-warning-color | `var(--van-orange)` | - |
-| --van-tag-default-color | `var(--van-gary-6)` | - |
-| --van-tag-plain-background-color | `var(--van-white)` | - |
+| --van-tag-padding | _0 var(--van-padding-base)_ | - |
+| --van-tag-text-color | _var(--van-white)_ | - |
+| --van-tag-font-size | _var(--van-font-size-sm)_ | - |
+| --van-tag-border-radius | _2px_ | - |
+| --van-tag-line-height | _16px_ | - |
+| --van-tag-medium-padding | _2px 6px_ | - |
+| --van-tag-large-padding | _var(--van-padding-base) var(--van-padding-xs)_ | - |
+| --van-tag-large-border-radius | _var(--van-border-radius-md)_ | - |
+| --van-tag-large-font-size | _var(--van-font-size-md)_ | - |
+| --van-tag-round-border-radius | _var(--van-border-radius-max)_ | - |
+| --van-tag-danger-color | _var(--van-red)_ | - |
+| --van-tag-primary-color | _var(--van-blue)_ | - |
+| --van-tag-success-color | _var(--van-green)_ | - |
+| --van-tag-warning-color | _var(--van-orange)_ | - |
+| --van-tag-default-color | _var(--van-gary-6)_ | - |
+| --van-tag-plain-background-color | _var(--van-white)_ | - |

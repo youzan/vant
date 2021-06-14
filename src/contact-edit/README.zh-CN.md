@@ -83,9 +83,9 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-contact-edit-padding | `var(--van-padding-md)` | - |
-| --van-contact-edit-fields-radius | `var(--van-border-radius-md)` | - |
-| --van-contact-edit-buttons-padding | `var(--van-padding-xl) 0` | - |
-| --van-contact-edit-button-margin-bottom | `var(--van-padding-sm)` | - |
-| --van-contact-edit-button-font-size | `16px` | - |
-| --van-contact-edit-field-label-width | `4.1em` | - |
+| --van-contact-edit-padding | _var(--van-padding-md)_ | - |
+| --van-contact-edit-fields-radius | _var(--van-border-radius-md)_ | - |
+| --van-contact-edit-buttons-padding | _var(--van-padding-xl) 0_ | - |
+| --van-contact-edit-button-margin-bottom | _var(--van-padding-sm)_ | - |
+| --van-contact-edit-button-font-size | _16px_ | - |
+| --van-contact-edit-field-label-width | _4.1em_ | - |

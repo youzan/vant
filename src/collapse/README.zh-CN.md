@@ -164,10 +164,10 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-collapse-item-transition-duration | `var(--van-animation-duration-base)` | - |
-| --van-collapse-item-content-padding | `var(--van-padding-sm) var(--van-padding-md)` | - |
-| --van-collapse-item-content-font-size | `var(--van-font-size-md)` | - |
-| --van-collapse-item-content-line-height | `1.5` | - |
-| --van-collapse-item-content-text-color | `var(--van-gary-6)` | - |
-| --van-collapse-item-content-background-color | `var(--van-white)` | - |
-| --van-collapse-item-title-disabled-color | `var(--van-gary-5)` | - |
+| --van-collapse-item-transition-duration | _var(--van-animation-duration-base)_ | - |
+| --van-collapse-item-content-padding | _var(--van-padding-sm) var(--van-padding-md)_ | - |
+| --van-collapse-item-content-font-size | _var(--van-font-size-md)_ | - |
+| --van-collapse-item-content-line-height | _1.5_ | - |
+| --van-collapse-item-content-text-color | _var(--van-gary-6)_ | - |
+| --van-collapse-item-content-background-color | _var(--van-white)_ | - |
+| --van-collapse-item-title-disabled-color | _var(--van-gary-5)_ | - |

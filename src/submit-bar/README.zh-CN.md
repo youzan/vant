@@ -135,21 +135,21 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-submit-bar-height | `50px` | - |
-| --van-submit-bar-z-index | `100` | - |
-| --van-submit-bar-background-color | `var(--van-white)` | - |
-| --van-submit-bar-button-width | `110px` | - |
-| --van-submit-bar-price-color | `var(--van-red)` | - |
-| --van-submit-bar-text-color | `var(--van-text-color)` | - |
-| --van-submit-bar-text-font-size | `var(--van-font-size-md)` | - |
-| --van-submit-bar-tip-padding | `var(--van-padding-xs) var(--van-padding-sm)` | - |
-| --van-submit-bar-tip-font-size | `var(--van-font-size-sm)` | - |
-| --van-submit-bar-tip-line-height | `1.5` | - |
-| --van-submit-bar-tip-color | `#f56723` | - |
-| --van-submit-bar-tip-background-color | `#fff7cc` | - |
-| --van-submit-bar-tip-icon-size | `12px` | - |
-| --van-submit-bar-button-height | `40px` | - |
-| --van-submit-bar-padding | `0 var(--van-padding-md)` | - |
-| --van-submit-bar-price-font-size | `var(--van-font-size-sm)` | - |
-| --van-submit-bar-price-integer-font-size | `20px` | - |
-| --van-submit-bar-price-font-family | `var(--van-price-integer-font-family)` | - |
+| --van-submit-bar-height | _50px_ | - |
+| --van-submit-bar-z-index | _100_ | - |
+| --van-submit-bar-background-color | _var(--van-white)_ | - |
+| --van-submit-bar-button-width | _110px_ | - |
+| --van-submit-bar-price-color | _var(--van-red)_ | - |
+| --van-submit-bar-text-color | _var(--van-text-color)_ | - |
+| --van-submit-bar-text-font-size | _var(--van-font-size-md)_ | - |
+| --van-submit-bar-tip-padding | _var(--van-padding-xs) var(--van-padding-sm)_ | - |
+| --van-submit-bar-tip-font-size | _var(--van-font-size-sm)_ | - |
+| --van-submit-bar-tip-line-height | _1.5_ | - |
+| --van-submit-bar-tip-color | _#f56723_ | - |
+| --van-submit-bar-tip-background-color | _#fff7cc_ | - |
+| --van-submit-bar-tip-icon-size | _12px_ | - |
+| --van-submit-bar-button-height | _40px_ | - |
+| --van-submit-bar-padding | _0 var(--van-padding-md)_ | - |
+| --van-submit-bar-price-font-size | _var(--van-font-size-sm)_ | - |
+| --van-submit-bar-price-integer-font-size | _20px_ | - |
+| --van-submit-bar-price-font-family | _var(--van-price-integer-font-family)_ | - |

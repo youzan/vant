@@ -93,11 +93,11 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name                           | Default Value             | Description |
 | ------------------------------ | ------------------------- | ----------- |
-| --van-nav-bar-height           | `46px`                    | -           |
-| --van-nav-bar-background-color | `var(--van-white)`        | -           |
-| --van-nav-bar-arrow-size       | `16px`                    | -           |
-| --van-nav-bar-icon-color       | `var(--van-blue)`         | -           |
-| --van-nav-bar-text-color       | `var(--van-blue)`         | -           |
-| --van-nav-bar-title-font-size  | `var(--van-font-size-lg)` | -           |
-| --van-nav-bar-title-text-color | `var(--van-text-color)`   | -           |
-| --van-nav-bar-z-index          | `1`                       | -           |
+| --van-nav-bar-height           | _46px_                    | -           |
+| --van-nav-bar-background-color | _var(--van-white)_        | -           |
+| --van-nav-bar-arrow-size       | _16px_                    | -           |
+| --van-nav-bar-icon-color       | _var(--van-blue)_         | -           |
+| --van-nav-bar-text-color       | _var(--van-blue)_         | -           |
+| --van-nav-bar-title-font-size  | _var(--van-font-size-lg)_ | -           |
+| --van-nav-bar-title-text-color | _var(--van-text-color)_   | -           |
+| --van-nav-bar-z-index          | _1_                       | -           |

@@ -175,14 +175,14 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-search-padding | `10px var(--van-padding-sm)` | - |
-| --van-search-background-color | `var(--van-white)` | - |
-| --van-search-content-background-color | `var(--van-gary-1)` | - |
-| --van-search-input-height | `34px` | - |
-| --van-search-label-padding | `0 5px` | - |
-| --van-search-label-color | `var(--van-text-color)` | - |
-| --van-search-label-font-size | `var(--van-font-size-md)` | - |
-| --van-search-left-icon-color | `var(--van-gary-6)` | - |
-| --van-search-action-padding | `0 var(--van-padding-xs)` | - |
-| --van-search-action-text-color | `var(--van-text-color)` | - |
-| --van-search-action-font-size | `var(--van-font-size-md)` | - |
+| --van-search-padding | _10px var(--van-padding-sm)_ | - |
+| --van-search-background-color | _var(--van-white)_ | - |
+| --van-search-content-background-color | _var(--van-gary-1)_ | - |
+| --van-search-input-height | _34px_ | - |
+| --van-search-label-padding | _0 5px_ | - |
+| --van-search-label-color | _var(--van-text-color)_ | - |
+| --van-search-label-font-size | _var(--van-font-size-md)_ | - |
+| --van-search-left-icon-color | _var(--van-gary-6)_ | - |
+| --van-search-action-padding | _0 var(--van-padding-xs)_ | - |
+| --van-search-action-text-color | _var(--van-text-color)_ | - |
+| --van-search-action-font-size | _var(--van-font-size-md)_ | - |

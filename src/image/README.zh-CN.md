@@ -148,13 +148,13 @@ app.use(Lazyload);
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-image-placeholder-text-color | `var(--van-gary-6)` | - |
-| --van-image-placeholder-font-size | `var(--van-font-size-md)` | - |
-| --van-image-placeholder-background-color | `var(--van-background-color)` | - |
-| --van-image-loading-icon-size | `32px` | - |
-| --van-image-loading-icon-color | `var(--van-gary-4)` | - |
-| --van-image-error-icon-size | `32px` | - |
-| --van-image-error-icon-color | `var(--van-gary-4)` | - |
+| --van-image-placeholder-text-color | _var(--van-gary-6)_ | - |
+| --van-image-placeholder-font-size | _var(--van-font-size-md)_ | - |
+| --van-image-placeholder-background-color | _var(--van-background-color)_ | - |
+| --van-image-loading-icon-size | _32px_ | - |
+| --van-image-loading-icon-color | _var(--van-gary-4)_ | - |
+| --van-image-error-icon-size | _32px_ | - |
+| --van-image-error-icon-color | _var(--van-gary-4)_ | - |
 
 ## 常见问题
 

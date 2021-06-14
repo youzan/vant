@@ -351,28 +351,28 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-calendar-background-color | `var(--van-white)` | - |
-| --van-calendar-popup-height | `80%` | - |
-| --van-calendar-header-box-shadow | `0 2px 10px rgba(125, 126, 128, 0.16)` | - |
-| --van-calendar-header-title-height | `44px` | - |
-| --van-calendar-header-title-font-size | `var(--van-font-size-lg)` | - |
-| --van-calendar-header-subtitle-font-size | `var(--van-font-size-md)` | - |
-| --van-calendar-weekdays-height | `30px` | - |
-| --van-calendar-weekdays-font-size | `var(--van-font-size-sm)` | - |
-| --van-calendar-month-title-font-size | `var(--van-font-size-md)` | - |
-| --van-calendar-month-mark-color | `fade(var(--van-gray-2), 80%)` | - |
-| --van-calendar-month-mark-font-size | `160px` | - |
-| --van-calendar-day-height | `64px` | - |
-| --van-calendar-day-font-size | `var(--van-font-size-lg)` | - |
-| --van-calendar-range-edge-color | `var(--van-white)` | - |
-| --van-calendar-range-edge-background-color | `var(--van-red)` | - |
-| --van-calendar-range-middle-color | `var(--van-red)` | - |
-| --van-calendar-range-middle-background-opacity | `0.1` | - |
-| --van-calendar-selected-day-size | `54px` | - |
-| --van-calendar-selected-day-color | `var(--van-white)` | - |
-| --van-calendar-info-font-size | `var(--van-font-size-xs)` | - |
-| --van-calendar-info-line-height | `var(--van-line-height-xs)` | - |
-| --van-calendar-selected-day-background-color | `var(--van-red)` | - |
-| --van-calendar-day-disabled-color | `var(--van-gary-5)` | - |
-| --van-calendar-confirm-button-height | `36px` | - |
-| --van-calendar-confirm-button-margin | `7px 0` | - |
+| --van-calendar-background-color | _var(--van-white)_ | - |
+| --van-calendar-popup-height | _80%_ | - |
+| --van-calendar-header-box-shadow | _0 2px 10px rgba(125, 126, 128, 0.16)_ | - |
+| --van-calendar-header-title-height | _44px_ | - |
+| --van-calendar-header-title-font-size | _var(--van-font-size-lg)_ | - |
+| --van-calendar-header-subtitle-font-size | _var(--van-font-size-md)_ | - |
+| --van-calendar-weekdays-height | _30px_ | - |
+| --van-calendar-weekdays-font-size | _var(--van-font-size-sm)_ | - |
+| --van-calendar-month-title-font-size | _var(--van-font-size-md)_ | - |
+| --van-calendar-month-mark-color | _fade(var(--van-gray-2), 80%)_ | - |
+| --van-calendar-month-mark-font-size | _160px_ | - |
+| --van-calendar-day-height | _64px_ | - |
+| --van-calendar-day-font-size | _var(--van-font-size-lg)_ | - |
+| --van-calendar-range-edge-color | _var(--van-white)_ | - |
+| --van-calendar-range-edge-background-color | _var(--van-red)_ | - |
+| --van-calendar-range-middle-color | _var(--van-red)_ | - |
+| --van-calendar-range-middle-background-opacity | _0.1_ | - |
+| --van-calendar-selected-day-size | _54px_ | - |
+| --van-calendar-selected-day-color | _var(--van-white)_ | - |
+| --van-calendar-info-font-size | _var(--van-font-size-xs)_ | - |
+| --van-calendar-info-line-height | _var(--van-line-height-xs)_ | - |
+| --van-calendar-selected-day-background-color | _var(--van-red)_ | - |
+| --van-calendar-day-disabled-color | _var(--van-gary-5)_ | - |
+| --van-calendar-confirm-button-height | _36px_ | - |
+| --van-calendar-confirm-button-margin | _7px 0_ | - |

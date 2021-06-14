@@ -157,28 +157,28 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-coupon-margin | `0 var(--van-padding-sm) var(--van-padding-sm)` | - |
-| --van-coupon-content-height | `84px` | - |
-| --van-coupon-content-padding | `14px 0` | - |
-| --van-coupon-background-color | `var(--van-white)` | - |
-| --van-coupon-active-background-color | `var(--van-active-color)` | - |
-| --van-coupon-border-radius | `var(--van-border-radius-lg)` | - |
-| --van-coupon-box-shadow | `0 0 4px rgba(0, 0, 0, 0.1)` | - |
-| --van-coupon-head-width | `96px` | - |
-| --van-coupon-amount-color | `var(--van-red)` | - |
-| --van-coupon-amount-font-size | `30px` | - |
-| --van-coupon-currency-font-size | `40%` | - |
-| --van-coupon-name-font-size | `var(--van-font-size-md)` | - |
-| --van-coupon-disabled-text-color | `var(--van-gary-6)` | - |
-| --van-coupon-description-padding | `var(--van-padding-xs) var(--van-padding-md)` | - |
-| --van-coupon-description-border-color | `var(--van-border-color)` | - |
-| --van-coupon-corner-checkbox-icon-color | `var(--van-red)` | - |
-| --van-coupon-list-background-color | `var(--van-background-color)` | - |
-| --van-coupon-list-field-padding | `5px 0 5px var(--van-padding-md)` | - |
-| --van-coupon-list-exchange-button-height | `32px` | - |
-| --van-coupon-list-close-button-height | `40px` | - |
-| --van-coupon-list-empty-image-size | `200px` | - |
-| --van-coupon-list-empty-tip-color | `var(--van-gary-6)` | - |
-| --van-coupon-list-empty-tip-font-size | `var(--van-font-size-md)` | - |
-| --van-coupon-list-empty-tip-line-height | `var(--van-line-height-md)` | - |
-| --van-coupon-cell-selected-text-color | `var(--van-text-color)` | - |
+| --van-coupon-margin | _0 var(--van-padding-sm) var(--van-padding-sm)_ | - |
+| --van-coupon-content-height | _84px_ | - |
+| --van-coupon-content-padding | _14px 0_ | - |
+| --van-coupon-background-color | _var(--van-white)_ | - |
+| --van-coupon-active-background-color | _var(--van-active-color)_ | - |
+| --van-coupon-border-radius | _var(--van-border-radius-lg)_ | - |
+| --van-coupon-box-shadow | _0 0 4px rgba(0, 0, 0, 0.1)_ | - |
+| --van-coupon-head-width | _96px_ | - |
+| --van-coupon-amount-color | _var(--van-red)_ | - |
+| --van-coupon-amount-font-size | _30px_ | - |
+| --van-coupon-currency-font-size | _40%_ | - |
+| --van-coupon-name-font-size | _var(--van-font-size-md)_ | - |
+| --van-coupon-disabled-text-color | _var(--van-gary-6)_ | - |
+| --van-coupon-description-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
+| --van-coupon-description-border-color | _var(--van-border-color)_ | - |
+| --van-coupon-corner-checkbox-icon-color | _var(--van-red)_ | - |
+| --van-coupon-list-background-color | _var(--van-background-color)_ | - |
+| --van-coupon-list-field-padding | _5px 0 5px var(--van-padding-md)_ | - |
+| --van-coupon-list-exchange-button-height | _32px_ | - |
+| --van-coupon-list-close-button-height | _40px_ | - |
+| --van-coupon-list-empty-image-size | _200px_ | - |
+| --van-coupon-list-empty-tip-color | _var(--van-gary-6)_ | - |
+| --van-coupon-list-empty-tip-font-size | _var(--van-font-size-md)_ | - |
+| --van-coupon-list-empty-tip-line-height | _var(--van-line-height-md)_ | - |
+| --van-coupon-cell-selected-text-color | _var(--van-text-color)_ | - |

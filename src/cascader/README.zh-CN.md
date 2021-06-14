@@ -244,16 +244,16 @@ export default {
 
 | 名称                                   | 默认值                    | 描述 |
 | -------------------------------------- | ------------------------- | ---- |
-| --van-cascader-header-height           | `48px`                    | -    |
-| --van-cascader-header-padding          | `0 var(--van-padding-md)` | -    |
-| --van-cascader-title-font-size         | `var(--van-font-size-lg)` | -    |
-| --van-cascader-title-line-height       | `20px`                    | -    |
-| --van-cascader-close-icon-size         | `22px`                    | -    |
-| --van-cascader-close-icon-color        | `var(--van-gary-5)`       | -    |
-| --van-cascader-close-icon-active-color | `var(--van-gary-6)`       | -    |
-| --van-cascader-selected-icon-size      | `18px`                    | -    |
-| --van-cascader-tabs-height             | `48px`                    | -    |
-| --van-cascader-active-color            | `var(--van-red)`          | -    |
-| --van-cascader-options-height          | `384px`                   | -    |
-| --van-cascader-tab-color               | `var(--van-text-color)`   | -    |
-| --van-cascader-unselected-tab-color    | `var(--van-gary-6)`       | -    |
+| --van-cascader-header-height           | _48px_                    | -    |
+| --van-cascader-header-padding          | _0 var(--van-padding-md)_ | -    |
+| --van-cascader-title-font-size         | _var(--van-font-size-lg)_ | -    |
+| --van-cascader-title-line-height       | _20px_                    | -    |
+| --van-cascader-close-icon-size         | _22px_                    | -    |
+| --van-cascader-close-icon-color        | _var(--van-gary-5)_       | -    |
+| --van-cascader-close-icon-active-color | _var(--van-gary-6)_       | -    |
+| --van-cascader-selected-icon-size      | _18px_                    | -    |
+| --van-cascader-tabs-height             | _48px_                    | -    |
+| --van-cascader-active-color            | _var(--van-red)_          | -    |
+| --van-cascader-options-height          | _384px_                   | -    |
+| --van-cascader-tab-color               | _var(--van-text-color)_   | -    |
+| --van-cascader-unselected-tab-color    | _var(--van-gary-6)_       | -    |

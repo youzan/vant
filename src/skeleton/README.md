@@ -79,10 +79,10 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-skeleton-row-height | `16px` | - |
-| --van-skeleton-row-background-color | `var(--van-active-color)` | - |
-| --van-skeleton-row-margin-top | `var(--van-padding-sm)` | - |
-| --van-skeleton-title-width | `40%` | - |
-| --van-skeleton-avatar-size | `32px` | - |
-| --van-skeleton-avatar-background-color | `var(--van-active-color)` | - |
-| --van-skeleton-animation-duration | `1.2s` | - |
+| --van-skeleton-row-height | _16px_ | - |
+| --van-skeleton-row-background-color | _var(--van-active-color)_ | - |
+| --van-skeleton-row-margin-top | _var(--van-padding-sm)_ | - |
+| --van-skeleton-title-width | _40%_ | - |
+| --van-skeleton-avatar-size | _32px_ | - |
+| --van-skeleton-avatar-background-color | _var(--van-active-color)_ | - |
+| --van-skeleton-animation-duration | _1.2s_ | - |

@@ -308,15 +308,15 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name                            | Default Value               | Description |
 | ------------------------------- | --------------------------- | ----------- |
-| --van-tab-text-color            | `var(--van-gary-7)`         | -           |
-| --van-tab-active-text-color     | `var(--van-text-color)`     | -           |
-| --van-tab-disabled-text-color   | `var(--van-gary-5)`         | -           |
-| --van-tab-font-size             | `var(--van-font-size-md)`   | -           |
-| --van-tab-line-height           | `var(--van-line-height-md)` | -           |
-| --van-tabs-default-color        | `var(--van-red)`            | -           |
-| --van-tabs-line-height          | `44px`                      | -           |
-| --van-tabs-card-height          | `30px`                      | -           |
-| --van-tabs-nav-background-color | `var(--van-white)`          | -           |
-| --van-tabs-bottom-bar-width     | `40px`                      | -           |
-| --van-tabs-bottom-bar-height    | `3px`                       | -           |
-| --van-tabs-bottom-bar-color     | `var(--van-red)`            | -           |
+| --van-tab-text-color            | _var(--van-gary-7)_         | -           |
+| --van-tab-active-text-color     | _var(--van-text-color)_     | -           |
+| --van-tab-disabled-text-color   | _var(--van-gary-5)_         | -           |
+| --van-tab-font-size             | _var(--van-font-size-md)_   | -           |
+| --van-tab-line-height           | _var(--van-line-height-md)_ | -           |
+| --van-tabs-default-color        | _var(--van-red)_            | -           |
+| --van-tabs-line-height          | _44px_                      | -           |
+| --van-tabs-card-height          | _30px_                      | -           |
+| --van-tabs-nav-background-color | _var(--van-white)_          | -           |
+| --van-tabs-bottom-bar-width     | _40px_                      | -           |
+| --van-tabs-bottom-bar-height    | _3px_                       | -           |
+| --van-tabs-bottom-bar-color     | _var(--van-red)_            | -           |

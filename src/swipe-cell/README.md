@@ -152,7 +152,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-switch-cell-padding-top | `var(--van-cell-vertical-padding) - 1px` | - |
-| --van-switch-cell-padding-bottom | `var(--van-cell-vertical-padding) - 1px` | - |
-| --van-switch-cell-large-padding-top | `var(--van-cell-large-vertical-padding) - 1px` | - |
-| --van-switch-cell-large-padding-bottom | `var(--van-cell-large-vertical-padding) - 1px` | - |
+| --van-switch-cell-padding-top | _var(--van-cell-vertical-padding) - 1px_ | - |
+| --van-switch-cell-padding-bottom | _var(--van-cell-vertical-padding) - 1px_ | - |
+| --van-switch-cell-large-padding-top | _var(--van-cell-large-vertical-padding) - 1px_ | - |
+| --van-switch-cell-large-padding-bottom | _var(--van-cell-large-vertical-padding) - 1px_ | - |

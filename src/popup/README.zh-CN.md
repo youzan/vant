@@ -171,11 +171,11 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-popup-background-color | `var(--van-white)` | - |
-| --van-popup-transition | `transform var(--van-animation-duration-base)` | - |
-| --van-popup-round-border-radius | `16px` | - |
-| --van-popup-close-icon-size | `22px` | - |
-| --van-popup-close-icon-color | `var(--van-gary-5)` | - |
-| --van-popup-close-icon-active-color | `var(--van-gary-6)` | - |
-| --van-popup-close-icon-margin | `16px` | - |
-| --van-popup-close-icon-z-index | `1` | - |
+| --van-popup-background-color | _var(--van-white)_ | - |
+| --van-popup-transition | _transform var(--van-animation-duration-base)_ | - |
+| --van-popup-round-border-radius | _16px_ | - |
+| --van-popup-close-icon-size | _22px_ | - |
+| --van-popup-close-icon-color | _var(--van-gary-5)_ | - |
+| --van-popup-close-icon-active-color | _var(--van-gary-6)_ | - |
+| --van-popup-close-icon-margin | _16px_ | - |
+| --van-popup-close-icon-z-index | _1_ | - |

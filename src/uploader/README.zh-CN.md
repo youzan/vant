@@ -387,31 +387,31 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-uploader-size | `80px` | - |
-| --van-uploader-icon-size | `24px` | - |
-| --van-uploader-icon-color | `var(--van-gary-4)` | - |
-| --van-uploader-text-color | `var(--van-gary-6)` | - |
-| --van-uploader-text-font-size | `var(--van-font-size-sm)` | - |
-| --van-uploader-upload-background-color | `var(--van-gary-1)` | - |
-| --van-uploader-upload-active-color | `var(--van-active-color)` | - |
-| --van-uploader-delete-color | `var(--van-white)` | - |
-| --van-uploader-delete-icon-size | `14px` | - |
-| --van-uploader-delete-background-color | `rgba(0, 0, 0, 0.7)` | - |
-| --van-uploader-file-background-color | `var(--van-background-color)` | - |
-| --van-uploader-file-icon-size | `20px` | - |
-| --van-uploader-file-icon-color | `var(--van-gary-7)` | - |
-| --van-uploader-file-name-padding | `0 var(--van-padding-base)` | - |
-| --van-uploader-file-name-margin-top | `var(--van-padding-xs)` | - |
-| --van-uploader-file-name-font-size | `var(--van-font-size-sm)` | - |
-| --van-uploader-file-name-text-color | `var(--van-gary-7)` | - |
-| --van-uploader-mask-text-color | `var(--van-white)` | - |
-| --van-uploader-mask-background-color | `fade(var(--van-gray-8), 88%)` | - |
-| --van-uploader-mask-icon-size | `22px` | - |
-| --van-uploader-mask-message-font-size | `var(--van-font-size-sm)` | - |
-| --van-uploader-mask-message-line-height | `var(--van-line-height-xs)` | - |
-| --van-uploader-loading-icon-size | `22px` | - |
-| --van-uploader-loading-icon-color | `var(--van-white)` | - |
-| --van-uploader-disabled-opacity | `var(--van-disabled-opacity)` | - |
+| --van-uploader-size | _80px_ | - |
+| --van-uploader-icon-size | _24px_ | - |
+| --van-uploader-icon-color | _var(--van-gary-4)_ | - |
+| --van-uploader-text-color | _var(--van-gary-6)_ | - |
+| --van-uploader-text-font-size | _var(--van-font-size-sm)_ | - |
+| --van-uploader-upload-background-color | _var(--van-gary-1)_ | - |
+| --van-uploader-upload-active-color | _var(--van-active-color)_ | - |
+| --van-uploader-delete-color | _var(--van-white)_ | - |
+| --van-uploader-delete-icon-size | _14px_ | - |
+| --van-uploader-delete-background-color | _rgba(0, 0, 0, 0.7)_ | - |
+| --van-uploader-file-background-color | _var(--van-background-color)_ | - |
+| --van-uploader-file-icon-size | _20px_ | - |
+| --van-uploader-file-icon-color | _var(--van-gary-7)_ | - |
+| --van-uploader-file-name-padding | _0 var(--van-padding-base)_ | - |
+| --van-uploader-file-name-margin-top | _var(--van-padding-xs)_ | - |
+| --van-uploader-file-name-font-size | _var(--van-font-size-sm)_ | - |
+| --van-uploader-file-name-text-color | _var(--van-gary-7)_ | - |
+| --van-uploader-mask-text-color | _var(--van-white)_ | - |
+| --van-uploader-mask-background-color | _fade(var(--van-gray-8), 88%)_ | - |
+| --van-uploader-mask-icon-size | _22px_ | - |
+| --van-uploader-mask-message-font-size | _var(--van-font-size-sm)_ | - |
+| --van-uploader-mask-message-line-height | _var(--van-line-height-xs)_ | - |
+| --van-uploader-loading-icon-size | _22px_ | - |
+| --van-uploader-loading-icon-color | _var(--van-white)_ | - |
+| --van-uploader-disabled-opacity | _var(--van-disabled-opacity)_ | - |
 
 ## 常见问题
 
