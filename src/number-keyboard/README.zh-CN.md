@@ -141,7 +141,7 @@ export default {
 
 ### 双向绑定
 
-可以通过 `v-model` 绑定键盘当前输入值。
+可以通过 `v-model` 绑定键盘当前输入值，并通过 `maxlength` 属性来限制输入长度。
 
 ```html
 <van-field v-model="value" readonly clickable @touchstart.stop="show = true" />
