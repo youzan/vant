@@ -113,14 +113,8 @@ export default defineComponent({
     };
 
     return () => {
-      const {
-        center,
-        border,
-        square,
-        gutter,
-        direction,
-        clickable,
-      } = parent.props;
+      const { center, border, square, gutter, reverse, direction, clickable } =
+        parent.props;
 
       const classes = [
         bem('content', [
@@ -128,6 +122,7 @@ export default defineComponent({
           {
             center,
             square,
+            reverse,
             clickable,
             surround: border && gutter,
           },

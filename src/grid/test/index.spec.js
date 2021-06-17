@@ -58,3 +58,19 @@ test('should render icon-slot correctly', () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should render ".van-grid-item__content--reverse" class when using reverse prop', () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Grid reverse>
+          <GridItem />
+        </Grid>
+      );
+    },
+  });
+
+  expect(wrapper.find('.van-grid-item__content').classes()).toContain(
+    'van-grid-item__content--reverse'
+  );
+});

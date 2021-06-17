@@ -62,9 +62,24 @@
     &--horizontal {
       flex-direction: row;
 
-      .van-grid-item__icon + .van-grid-item__text {
-        margin-top: 0;
-        margin-left: var(--van-padding-xs);
+      .van-grid-item__text {
+        margin: 0 0 0 var(--van-padding-xs);
+      }
+    }
+
+    &--reverse {
+      flex-direction: column-reverse;
+
+      .van-grid-item__text {
+        margin: 0 0 var(--van-padding-xs);
+      }
+    }
+
+    &--horizontal&--reverse {
+      flex-direction: row-reverse;
+
+      .van-grid-item__text {
+        margin: 0 var(--van-padding-xs) 0 0;
       }
     }
 

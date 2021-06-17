@@ -121,6 +121,7 @@ app.use(GridItem);
 | icon | Icon name or URL | _string_ | - |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
 | icon-color | Icon color | _string_ | - |
+| reverse `v3.1.0` | Whether to reverse the position of icon and text | _boolean_ | `false` |
 | dot | Whether to show red dot | _boolean_ | `false` |
 | badge | Content of the badge | _number \| string_ | - |
 | url | Link URL | _string_ | - |
