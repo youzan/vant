@@ -12,6 +12,7 @@ export type CascaderOption = {
   text?: string;
   value?: string | number;
   children?: CascaderOption[];
+  className?: unknown;
   // for custom filed names
   [key: string]: any;
 };
@@ -56,7 +57,11 @@ export default defineComponent({
       activeTab: 0,
     });
 
-    const { text: textKey, value: valueKey, children: childrenKey } = extend(
+    const {
+      text: textKey,
+      value: valueKey,
+      children: childrenKey,
+    } = extend(
       {
         text: 'text',
         value: 'value',
@@ -210,7 +215,7 @@ export default defineComponent({
 
         return (
           <li
-            class={bem('option', { selected: isSelected })}
+            class={[bem('option', { selected: isSelected }), option.className]}
             style={{ color: isSelected ? props.activeColor : undefined }}
             onClick={() => onSelect(option, tabIndex)}
           >
