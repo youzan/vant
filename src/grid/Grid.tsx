@@ -14,6 +14,7 @@ const props = {
   center: truthProp,
   border: truthProp,
   gutter: [Number, String],
+  reverse: Boolean,
   iconSize: [Number, String],
   direction: String as PropType<GridDirection>,
   clickable: Boolean,
