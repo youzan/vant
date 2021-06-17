@@ -104,7 +104,7 @@ test('should render title slot correctly', () => {
 //   expect(lastSelectedOption.html()).toMatchSnapshot();
 // });
 
-test('should reset selected options when value is set to emtpy', async () => {
+test('should reset selected options when value is set to empty', async () => {
   const wrapper = mount(Cascader, {
     props: {
       options,
@@ -203,4 +203,16 @@ test('should emit click-tab event when a tab is clicked', async () => {
     1,
     options[0].children[0].text,
   ]);
+});
+
+test('should allow to custom the className of option', async () => {
+  const wrapper = mount(Cascader, {
+    props: {
+      options: [{ value: '1', text: 'foo', className: 'foo' }],
+    },
+  });
+
+  await later();
+  const option = wrapper.find('.van-cascader__option');
+  expect(option.classes()).toContain('foo');
 });

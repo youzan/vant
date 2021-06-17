@@ -215,11 +215,12 @@ export default {
 
 ### Data Structure of Option
 
-| Key      | Description      | Type               |
-| -------- | ---------------- | ------------------ |
-| text     | Option text      | _string_           |
-| value    | Option value     | _string \| number_ |
-| children | Cascade children | _Option[]_         |
+| Key                | Description              | Type                        |
+| ------------------ | ------------------------ | --------------------------- |
+| text               | Option text              | _string_                    |
+| value              | Option value             | _string \| number_          |
+| children           | Cascade children         | _Option[]_                  |
+| className `v3.1.0` | className for the option | _string \| Array \| object_ |
 
 ### Events
 
