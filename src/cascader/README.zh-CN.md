@@ -223,6 +223,16 @@ export default {
 | close-icon `v3.0.10` | 关闭[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `cross` |
 | field-names `v3.0.4` | 自定义 `options` 结构中的字段 | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
+### Option 数据结构
+
+`options` 属性是一个由对象构成的数组，数组中的每个对象配置一个可选项，对象可以包含以下值：
+
+| 键名     | 说明         | 类型               |
+| -------- | ------------ | ------------------ |
+| text     | 选项文字     | _string_           |
+| value    | 选项对应的值 | _string \| number_ |
+| children | 子选项列表   | _Option[]_         |
+
 ### Events
 
 | 事件      | 说明                   | 回调参数                               |
