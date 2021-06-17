@@ -128,14 +128,13 @@ export default defineComponent({
         [messageAlign as string]: messageAlign,
       });
 
-      if (allowHtml && typeof message === 'string') {
-        return <div class={classNames} innerHTML={message} />;
+      const content = isFunction(message) ? message() : message;
+
+      if (allowHtml && typeof content === 'string') {
+        return <div class={classNames} innerHTML={content} />;
       }
-      return (
-        <div class={classNames}>
-          {isFunction(message) ? message() : message}
-        </div>
-      );
+
+      return <div class={classNames}>{content}</div>;
     };
 
     const renderContent = () => {
