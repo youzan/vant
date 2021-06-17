@@ -213,6 +213,14 @@ export default {
 | close-icon `v3.0.10` | Close icon name | _string_ | `cross` |
 | field-names `v3.0.4` | Custom the fields of options | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
+### Data Structure of Option
+
+| Key      | Description      | Type               |
+| -------- | ---------------- | ------------------ |
+| text     | Option text      | _string_           |
+| value    | Option value     | _string \| number_ |
+| children | Cascade children | _Option[]_         |
+
 ### Events
 
 | Event | Description | Arguments |
