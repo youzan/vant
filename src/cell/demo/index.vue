@@ -6,7 +6,7 @@
     </van-cell-group>
   </demo-block>
 
-  <demo-block :title="t('insetGrouped')">
+  <demo-block v-if="!isWeapp" :title="t('insetGrouped')">
     <van-cell-group inset>
       <van-cell :title="t('cell')" :value="t('content')" />
       <van-cell :title="t('cell')" :value="t('content')" :label="t('desc')" />
