@@ -229,8 +229,9 @@ export default {
 
 | 键名               | 说明                     | 类型                        |
 | ------------------ | ------------------------ | --------------------------- |
-| text               | 选项文字                 | _string_                    |
-| value              | 选项对应的值             | _string \| number_          |
+| text               | 选项文字（必填）         | _string_                    |
+| value              | 选项对应的值（必填）     | _string \| number_          |
+| color `v3.1.0`     | 选项文字颜色             | _string_                    |
 | children           | 子选项列表               | _Option[]_                  |
 | className `v3.1.0` | 为对应列添加额外的 class | _string \| Array \| object_ |
 

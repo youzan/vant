@@ -11,6 +11,7 @@ const [name, bem, t] = createNamespace('cascader');
 export type CascaderOption = {
   text?: string;
   value?: string | number;
+  color?: string;
   children?: CascaderOption[];
   className?: unknown;
   // for custom filed names
@@ -212,11 +213,13 @@ export default defineComponent({
       const renderOption = (option: CascaderOption) => {
         const isSelected =
           selectedOption && option[valueKey] === selectedOption[valueKey];
+        const color =
+          option.color || (isSelected ? props.activeColor : undefined);
 
         return (
           <li
             class={[bem('option', { selected: isSelected }), option.className]}
-            style={{ color: isSelected ? props.activeColor : undefined }}
+            style={{ color }}
             onClick={() => onSelect(option, tabIndex)}
           >
             <span>{option[textKey]}</span>

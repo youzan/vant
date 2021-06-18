@@ -219,6 +219,7 @@ export default {
 | ------------------ | ------------------------ | --------------------------- |
 | text               | Option text              | _string_                    |
 | value              | Option value             | _string \| number_          |
+| color `v3.1.0`     | Text color               | _string_                    |
 | children           | Cascade children         | _Option[]_                  |
 | className `v3.1.0` | className for the option | _string \| Array \| object_ |
 
