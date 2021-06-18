@@ -33,6 +33,37 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
+  <div class="van-cell-group van-cell-group--inset">
+    <div class="van-cell">
+      <div class="van-cell__title">
+        <span>
+          Cell title
+        </span>
+      </div>
+      <div class="van-cell__value">
+        <span>
+          Content
+        </span>
+      </div>
+    </div>
+    <div class="van-cell">
+      <div class="van-cell__title">
+        <span>
+          Cell title
+        </span>
+        <div class="van-cell__label">
+          Description
+        </div>
+      </div>
+      <div class="van-cell__value">
+        <span>
+          Content
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
   <div class="van-cell van-cell--large">
     <div class="van-cell__title">
       <span>

@@ -30,6 +30,17 @@ app.use(CellGroup);
 </van-cell-group>
 ```
 
+### 卡片风格
+
+通过 `CellGroup` 的 `inset` 属性，可以将单元格转换为圆角卡片风格。
+
+```html
+<van-cell-group inset>
+  <van-cell title="单元格" value="内容" />
+  <van-cell title="单元格" value="内容" label="描述信息" />
+</van-cell-group>
+```
+
 ### 单元格大小
 
 通过 `size` 属性可以控制单元格的大小。
@@ -132,10 +143,11 @@ app.use(CellGroup);
 
 ### CellGroup Props
 
-| 参数   | 说明           | 类型      | 默认值 |
-| ------ | -------------- | --------- | ------ |
-| title  | 分组标题       | _string_  | `-`    |
-| border | 是否显示外边框 | _boolean_ | `true` |
+| 参数           | 说明                   | 类型      | 默认值  |
+| -------------- | ---------------------- | --------- | ------- |
+| title          | 分组标题               | _string_  | `-`     |
+| inset `v3.1.0` | 是否展示为圆角卡片风格 | _boolean_ | `false` |
+| border         | 是否显示外边框         | _boolean_ | `true`  |
 
 ### Cell Props
 
@@ -215,3 +227,6 @@ app.use(CellGroup);
 | --van-cell-group-title-padding | _var(--van-padding-md) var(--van-padding-md) var(--van-padding-xs)_ | - |
 | --van-cell-group-title-font-size | _var(--van-font-size-md)_ | - |
 | --van-cell-group-title-line-height | _16px_ | - |
+| --van-cell-group-inset-padding | _0 var(--van-padding-md)_ | - |
+| --van-cell-group-inset-border-radius | _var(--van-border-radius-lg)_ | - |
+| --van-cell-group-inset-title-padding | _var(--van-padding-md) var(--van-padding-md) var(--van-padding-xs) var(--van-padding-xl)_ | - |

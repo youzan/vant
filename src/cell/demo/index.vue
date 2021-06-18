@@ -6,6 +6,13 @@
     </van-cell-group>
   </demo-block>
 
+  <demo-block v-if="!isWeapp" :title="t('insetGrouped')">
+    <van-cell-group inset>
+      <van-cell :title="t('cell')" :value="t('content')" />
+      <van-cell :title="t('cell')" :value="t('content')" :label="t('desc')" />
+    </van-cell-group>
+  </demo-block>
+
   <demo-block :title="t('largeSize')">
     <van-cell :title="t('cell')" :value="t('content')" size="large" />
     <van-cell
@@ -80,30 +87,32 @@ import { useTranslate } from '@demo/use-translate';
 const i18n = {
   'zh-CN': {
     cell: '单元格',
-    valueOnly: '只设置 value',
-    showIcon: '展示图标',
-    showArrow: '展示箭头',
-    largeSize: '单元格大小',
     group: '分组',
-    groupTitle: '分组标题',
     router: '页面导航',
     urlRoute: 'URL 跳转',
     vueRoute: '路由跳转',
     useSlots: '使用插槽',
+    showIcon: '展示图标',
+    showArrow: '展示箭头',
+    largeSize: '单元格大小',
+    valueOnly: '只设置 value',
+    groupTitle: '分组标题',
+    insetGrouped: '卡片风格',
     verticalCenter: '垂直居中',
   },
   'en-US': {
     cell: 'Cell title',
-    valueOnly: 'Value only',
-    showIcon: 'Left Icon',
-    showArrow: 'Link',
-    largeSize: 'Size',
     group: 'Group',
-    groupTitle: 'Group Title',
     router: 'Router',
     urlRoute: 'URL',
     vueRoute: 'Vue Router',
     useSlots: 'Use Slots',
+    showIcon: 'Left Icon',
+    showArrow: 'Link',
+    largeSize: 'Size',
+    valueOnly: 'Value only',
+    groupTitle: 'Group Title',
+    insetGrouped: 'Inset Grouped',
     verticalCenter: 'Vertical center',
   },
 };

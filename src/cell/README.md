@@ -28,6 +28,15 @@ app.use(CellGroup);
 </van-cell-group>
 ```
 
+### Inset Grouped
+
+```html
+<van-cell-group inset>
+  <van-cell title="Cell title" value="Content" />
+  <van-cell title="Cell title" value="Content" label="Description" />
+</van-cell-group>
+```
+
 ### Size
 
 ```html
@@ -129,10 +138,11 @@ app.use(CellGroup);
 
 ### CellGroup Props
 
-| Attribute | Description                  | Type      | Default |
-| --------- | ---------------------------- | --------- | ------- |
-| title     | Group title                  | _string_  | -       |
-| border    | Whether to show outer border | _boolean_ | `true`  |
+| Attribute      | Description                  | Type      | Default |
+| -------------- | ---------------------------- | --------- | ------- |
+| title          | Group title                  | _string_  | -       |
+| inset `v3.1.0` | Whether to be inset grouped  | _boolean_ | `false` |
+| border         | Whether to show outer border | _boolean_ | `true`  |
 
 ### Cell Props
 
@@ -212,3 +222,6 @@ The component provides the following CSS variables, which can be used to customi
 | --van-cell-group-title-padding | _var(--van-padding-md) var(--van-padding-md) var(--van-padding-xs)_ | - |
 | --van-cell-group-title-font-size | _var(--van-font-size-md)_ | - |
 | --van-cell-group-title-line-height | _16px_ | - |
+| --van-cell-group-inset-padding | _0 var(--van-padding-md)_ | - |
+| --van-cell-group-inset-border-radius | _var(--van-border-radius-lg)_ | - |
+| --van-cell-group-inset-title-padding | _var(--van-padding-md) var(--van-padding-md) var(--van-padding-xs) var(--van-padding-xl)_ | - |
