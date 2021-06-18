@@ -11,18 +11,25 @@ export default defineComponent({
 
   props: {
     title: String,
+    inset: Boolean,
     border: truthProp,
   },
 
   setup(props, { slots, attrs }) {
     const renderGroup = () => (
-      <div class={[bem(), { [BORDER_TOP_BOTTOM]: props.border }]} {...attrs}>
+      <div
+        class={[
+          bem({ inset: props.inset }),
+          { [BORDER_TOP_BOTTOM]: props.border && !props.inset },
+        ]}
+        {...attrs}
+      >
         {slots.default?.()}
       </div>
     );
 
     const renderTitle = () => (
-      <div class={bem('title')}>
+      <div class={bem('title', { inset: props.inset })}>
         {slots.title ? slots.title() : props.title}
       </div>
     );
