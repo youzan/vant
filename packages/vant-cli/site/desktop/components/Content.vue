@@ -136,10 +136,12 @@ export default {
     }
 
     em {
+      display: inline-block;
       color: @van-doc-green;
       font-size: 14px;
       font-family: @van-doc-code-font-family;
       font-style: normal;
+      max-width: 400px;
       -webkit-font-smoothing: auto;
     }
   }
