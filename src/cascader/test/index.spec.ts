@@ -216,3 +216,15 @@ test('should allow to custom the className of option', async () => {
   const option = wrapper.find('.van-cascader__option');
   expect(option.classes()).toContain('foo');
 });
+
+test('should allow to custom the color of option', async () => {
+  const wrapper = mount(Cascader, {
+    props: {
+      options: [{ value: '1', text: 'foo', color: 'red' }],
+    },
+  });
+
+  await later();
+  const option = wrapper.find('.van-cascader__option');
+  expect(option.style.color).toEqual('red');
+});
