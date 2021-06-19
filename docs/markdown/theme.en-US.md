@@ -2,7 +2,7 @@
 
 ### Deprecated
 
-This document is deprecated. Vant provides a more convenient [ConfigProvider](/#zh-CN/config-provider) component for theme configuration. Less variables **will be removed in the next major version**.
+This document is deprecated. Vant provides a more convenient [ConfigProvider](#/en-US/config-provider) component for theme configuration. Less variables **will be removed in the next major version**.
 
 ### Intro
 
