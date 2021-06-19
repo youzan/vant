@@ -2,7 +2,9 @@ import { ref, computed, PropType, CSSProperties, defineComponent } from 'vue';
 
 // Utils
 import {
+  range,
   addUnit,
+  addNumber,
   getSizeStyle,
   preventDefault,
   stopPropagation,
@@ -102,9 +104,13 @@ export default defineComponent({
     });
 
     const format = (value: number) => {
-      const { min, max, step } = props;
-      value = Math.max(+min, Math.min(value, +max));
-      return Math.round(value / +step) * +step;
+      const min = +props.min;
+      const max = +props.max;
+      const step = +props.step;
+
+      value = range(value, min, max);
+      const diff = Math.round((value - min) / step) * step;
+      return addNumber(min, diff);
     };
 
     const isSameValue = (newValue: SliderValue, oldValue: SliderValue) =>

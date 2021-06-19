@@ -4,6 +4,7 @@ import { ref, watch, computed, PropType, defineComponent, nextTick } from 'vue';
 import {
   isDef,
   addUnit,
+  addNumber,
   truthProp,
   resetScroll,
   formatNumber,
@@ -23,12 +24,6 @@ const LONG_PRESS_START_TIME = 600;
 
 function equal(value1?: string | number, value2?: string | number) {
   return String(value1) === String(value2);
-}
-
-// add num and avoid float number
-function add(num1: number, num2: number) {
-  const cardinal = 10 ** 10;
-  return Math.round((num1 + num2) * cardinal) / cardinal;
 }
 
 export type StepperTheme = 'default' | 'round';
@@ -168,7 +163,7 @@ export default defineComponent({
       }
 
       const diff = actionType === 'minus' ? -props.step : +props.step;
-      const value = format(add(+current.value, diff));
+      const value = format(addNumber(+current.value, diff));
 
       setValue(value);
       emit(actionType);
@@ -215,7 +210,7 @@ export default defineComponent({
       nextTick(() => {
         emit('blur', event);
         resetScroll();
-      })
+      });
     };
 
     let isLongPress: boolean;

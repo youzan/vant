@@ -37,3 +37,9 @@ export function formatNumber(
 
   return value.replace(regExp, '');
 }
+
+// add num and avoid float number
+export function addNumber(num1: number, num2: number) {
+  const cardinal = 10 ** 10;
+  return Math.round((num1 + num2) * cardinal) / cardinal;
+}
