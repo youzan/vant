@@ -22,7 +22,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **New Component**
 
-- 新增 [ConfigProvider](/#/zh-CN/config-provider) 组件，用于主题定制 [#8854](https://github.com/youzan/vant/issues/8854)
+- 新增 [ConfigProvider](#/zh-CN/config-provider) 组件，用于主题定制 [#8854](https://github.com/youzan/vant/issues/8854)
 
 **Feature**
 
