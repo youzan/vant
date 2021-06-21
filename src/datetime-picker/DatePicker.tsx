@@ -11,7 +11,7 @@ import {
 // Utils
 import {
   pick,
-  range,
+  clamp,
   extend,
   isDate,
   padZero,
@@ -63,7 +63,7 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const formatValue = (value?: Date) => {
       if (isDate(value)) {
-        const timestamp = range(
+        const timestamp = clamp(
           value.getTime(),
           props.minDate.getTime(),
           props.maxDate.getTime()

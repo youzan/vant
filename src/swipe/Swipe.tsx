@@ -15,7 +15,7 @@ import {
 
 // Utils
 import {
-  range,
+  clamp,
   isHidden,
   truthProp,
   preventDefault,
@@ -93,9 +93,8 @@ export default defineComponent({
 
     const touch = useTouch();
     const windowSize = useWindowSize();
-    const { children, linkChildren } = useChildren<ComponentInstance>(
-      SWIPE_KEY
-    );
+    const { children, linkChildren } =
+      useChildren<ComponentInstance>(SWIPE_KEY);
 
     const count = computed(() => children.length);
 
@@ -149,9 +148,9 @@ export default defineComponent({
 
       if (pace) {
         if (props.loop) {
-          return range(active + pace, -1, count.value);
+          return clamp(active + pace, -1, count.value);
         }
-        return range(active + pace, 0, maxCount.value);
+        return clamp(active + pace, 0, maxCount.value);
       }
       return active;
     };
@@ -164,7 +163,7 @@ export default defineComponent({
 
       let targetOffset = offset - currentPosition;
       if (!props.loop) {
-        targetOffset = range(targetOffset, minOffset.value, 0);
+        targetOffset = clamp(targetOffset, minOffset.value, 0);
       }
 
       return targetOffset;

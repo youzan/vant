@@ -10,7 +10,7 @@ import {
 // Utils
 import {
   pick,
-  range,
+  clamp,
   extend,
   padZero,
   createNamespace,
@@ -60,8 +60,8 @@ export default defineComponent({
       }
 
       let [hour, minute] = value.split(':');
-      hour = padZero(range(+hour, +minHour, +maxHour));
-      minute = padZero(range(+minute, +minMinute, +maxMinute));
+      hour = padZero(clamp(+hour, +minHour, +maxHour));
+      minute = padZero(clamp(+minute, +minMinute, +maxMinute));
 
       return `${hour}:${minute}`;
     };
