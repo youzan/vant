@@ -1,7 +1,7 @@
 import { watch, computed, reactive, CSSProperties, defineComponent } from 'vue';
 
 // Utils
-import { range, preventDefault, createNamespace } from '../utils';
+import { clamp, preventDefault, createNamespace } from '../utils';
 
 // Composables
 import { useTouch } from '../composables/use-touch';
@@ -107,7 +107,7 @@ export default defineComponent({
     });
 
     const setScale = (scale: number) => {
-      scale = range(scale, +props.minZoom, +props.maxZoom);
+      scale = clamp(scale, +props.minZoom, +props.maxZoom);
 
       if (scale !== state.scale) {
         state.scale = scale;
@@ -171,8 +171,8 @@ export default defineComponent({
         const { deltaX, deltaY } = touch;
         const moveX = deltaX.value + startMoveX;
         const moveY = deltaY.value + startMoveY;
-        state.moveX = range(moveX, -maxMoveX.value, maxMoveX.value);
-        state.moveY = range(moveY, -maxMoveY.value, maxMoveY.value);
+        state.moveX = clamp(moveX, -maxMoveX.value, maxMoveX.value);
+        state.moveY = clamp(moveY, -maxMoveY.value, maxMoveY.value);
       }
 
       if (state.zooming && touches.length === 2) {
@@ -224,8 +224,8 @@ export default defineComponent({
 
         if (!event.touches.length) {
           if (state.zooming) {
-            state.moveX = range(state.moveX, -maxMoveX.value, maxMoveX.value);
-            state.moveY = range(state.moveY, -maxMoveY.value, maxMoveY.value);
+            state.moveX = clamp(state.moveX, -maxMoveX.value, maxMoveX.value);
+            state.moveY = clamp(state.moveY, -maxMoveY.value, maxMoveY.value);
             state.zooming = false;
           }
 

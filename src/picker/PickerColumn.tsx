@@ -4,7 +4,7 @@ import { ref, watch, reactive, PropType, defineComponent } from 'vue';
 // Utils
 import { deepClone } from '../utils/deep-clone';
 import {
-  range,
+  clamp,
   isObject,
   unknownProp,
   preventDefault,
@@ -119,7 +119,7 @@ export default defineComponent({
       (props.itemHeight * (+props.visibleItemCount - 1)) / 2;
 
     const adjustIndex = (index: number) => {
-      index = range(index, 0, count());
+      index = clamp(index, 0, count());
 
       for (let i = index; i < count(); i++) {
         if (!isOptionDisabled(state.options[i])) return i;
@@ -178,7 +178,7 @@ export default defineComponent({
     };
 
     const getIndexByOffset = (offset: number) =>
-      range(Math.round(-offset / props.itemHeight), 0, count() - 1);
+      clamp(Math.round(-offset / props.itemHeight), 0, count() - 1);
 
     const momentum = (distance: number, duration: number) => {
       const speed = Math.abs(distance / duration);
@@ -234,7 +234,7 @@ export default defineComponent({
         preventDefault(event, true);
       }
 
-      state.offset = range(
+      state.offset = clamp(
         startOffset + touch.deltaY.value,
         -(count() * props.itemHeight),
         props.itemHeight

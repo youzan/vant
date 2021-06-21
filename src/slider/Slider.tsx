@@ -2,7 +2,7 @@ import { ref, computed, PropType, CSSProperties, defineComponent } from 'vue';
 
 // Utils
 import {
-  range,
+  clamp,
   addUnit,
   addNumber,
   getSizeStyle,
@@ -108,7 +108,7 @@ export default defineComponent({
       const max = +props.max;
       const step = +props.step;
 
-      value = range(value, min, max);
+      value = clamp(value, min, max);
       const diff = Math.round((value - min) / step) * step;
       return addNumber(min, diff);
     };

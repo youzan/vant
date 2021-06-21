@@ -1,7 +1,7 @@
 import { ref, Ref, reactive, computed, PropType, defineComponent } from 'vue';
 
 // Utils
-import { range, isDef, createNamespace, preventDefault } from '../utils';
+import { clamp, isDef, createNamespace, preventDefault } from '../utils';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
 // Composables
@@ -117,7 +117,7 @@ export default defineComponent({
           preventDefault(event, props.stopPropagation);
         }
 
-        state.offset = range(
+        state.offset = clamp(
           deltaX.value + startOffset,
           -rightWidth.value,
           leftWidth.value
@@ -154,14 +154,13 @@ export default defineComponent({
       }
     };
 
-    const getClickHandler = (position: SwipeCellPosition, stop?: boolean) => (
-      event: MouseEvent
-    ) => {
-      if (stop) {
-        event.stopPropagation();
-      }
-      onClick(position);
-    };
+    const getClickHandler =
+      (position: SwipeCellPosition, stop?: boolean) => (event: MouseEvent) => {
+        if (stop) {
+          event.stopPropagation();
+        }
+        onClick(position);
+      };
 
     const renderSideContent = (
       side: SwipeCellSide,

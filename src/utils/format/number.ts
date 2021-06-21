@@ -1,4 +1,5 @@
-export function range(num: number, min: number, max: number): number {
+/** clamps number within the inclusive lower and upper bounds */
+export function clamp(num: number, min: number, max: number): number {
   return Math.min(Math.max(num, min), max);
 }
 
