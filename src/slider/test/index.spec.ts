@@ -1,5 +1,6 @@
 import { Slider } from '..';
 import {
+  later,
   mount,
   trigger,
   triggerDrag,
@@ -144,7 +145,7 @@ test('should change slider bar height when using bar-height prop', () => {
   expect(wrapper.style.height).toEqual('10px');
 });
 
-test('shoud change button size when using button-size prop', () => {
+test('should change button size when using button-size prop', () => {
   const wrapper = mount(Slider, {
     props: {
       modelValue: 50,
@@ -186,4 +187,19 @@ test('should not emit change event when value not changed', async () => {
   trigger(wrapper, 'click', 100, 0);
 
   expect(wrapper.emitted('change')!.length).toEqual(1);
+});
+
+// https://github.com/youzan/vant/issues/8889
+test('should format v-model with step correctly', async () => {
+  const wrapper = mount(Slider, {
+    props: {
+      min: 29,
+      max: 39,
+      step: 2,
+      modelValue: 30.5,
+    },
+  });
+
+  await later();
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([31]);
 });

@@ -2,7 +2,7 @@
 
 ### 废弃提示
 
-本文档已废弃，Vant 提供了更方便的 [ConfigProvider 全局配置](/#zh-CN/config-provider) 组件进行主题配置。基于 Less 变量进行定制的方式**将在下个大版本废弃**。
+本文档已废弃，Vant 提供了更方便的 [ConfigProvider 全局配置](#/zh-CN/config-provider) 组件进行主题配置。基于 Less 变量进行定制的方式**将在下个大版本废弃**。
 
 ### 介绍
 

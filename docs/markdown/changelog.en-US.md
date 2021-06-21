@@ -22,7 +22,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **New Component**
 
-- add [ConfigProvider](/#/en-US/config-provider) Component [#8854](https://github.com/youzan/vant/issues/8854)
+- add [ConfigProvider](#/en-US/config-provider) Component [#8854](https://github.com/youzan/vant/issues/8854)
 
 **Feature**
 
