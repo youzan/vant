@@ -16,9 +16,9 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
-### [v3.1.0-beta.0](https://github.com/youzan/vant/compare/v3.0.18...v3.1.0-beta.0)
+### [v3.1.0](https://github.com/youzan/vant/compare/v3.1.0-beta.0...v3.1.0)
 
-`2021-06-14`
+`2021-06-22`
 
 **New Component**
 
@@ -29,7 +29,16 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 所有组件支持 CSS 变量 [aef257](https://github.com/youzan/vant/commit/aef2579a95da7c8b528ba7062b227fea698a0487) [fe1cba](https://github.com/youzan/vant/commit/fe1cba97b796eba7e9b5dca0ce4ab0d1de95715c)
 - 新增 primary-color 等样式变量 [#8861](https://github.com/youzan/vant/issues/8861)
 - Checkbox: icon 插槽新增 disabled 参数 [#8839](https://github.com/youzan/vant/issues/8839)
+- Cascader: 新增 className 选项 [#8882](https://github.com/youzan/vant/issues/8882)
+- Cascader: 新增 color 选项 [#8883](https://github.com/youzan/vant/issues/8883)
+- CellGroup: 新增 inset 属性 [#8885](https://github.com/youzan/vant/issues/8885)
+- GridItem: 新增 reverse 属性 [#8878](https://github.com/youzan/vant/issues/8878)
 - IndexBar: 新增 teleport 属性 [#8820](https://github.com/youzan/vant/issues/8820)
+
+**Bug Fixes**
+
+- Dialog: 修复 message 作为函数时返回 HTML 字符串无效的问题 [#8872](https://github.com/youzan/vant/issues/8872)
+- Slider: 修复设置 step 属性时，输入值格式化错误的问题 [#8893](https://github.com/youzan/vant/issues/8893)
 
 ### [v3.0.18](https://github.com/youzan/vant/compare/v3.0.17...v3.0.18)
 

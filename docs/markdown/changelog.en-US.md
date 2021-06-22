@@ -16,9 +16,9 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
-### [v3.1.0-beta.0](https://github.com/youzan/vant/compare/v3.0.18...v3.1.0-beta.0)
+### [v3.1.0](https://github.com/youzan/vant/compare/v3.1.0-beta.0...v3.1.0)
 
-`2021-06-14`
+`2021-06-22`
 
 **New Component**
 
@@ -29,7 +29,16 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - all components support CSS Variables [aef257](https://github.com/youzan/vant/commit/aef2579a95da7c8b528ba7062b227fea698a0487) [fe1cba](https://github.com/youzan/vant/commit/fe1cba97b796eba7e9b5dca0ce4ab0d1de95715c)
 - add more CSS Variables [#8861](https://github.com/youzan/vant/issues/8861)
 - Checkbox: icon slot add disabled param [#8839](https://github.com/youzan/vant/issues/8839)
+- Cascader: add className option [#8882](https://github.com/youzan/vant/issues/8882)
+- Cascader: add color option [#8883](https://github.com/youzan/vant/issues/8883)
+- CellGroup: add inset prop [#8885](https://github.com/youzan/vant/issues/8885)
+- GridItem: add reverse prop [#8878](https://github.com/youzan/vant/issues/8878)
 - IndexBar: add teleport prop [#8820](https://github.com/youzan/vant/issues/8820)
+
+**Bug Fixes**
+
+- Dialog: allow message function to return html [#8872](https://github.com/youzan/vant/issues/8872)
+- Slider: format v-model with step correctly [#8893](https://github.com/youzan/vant/issues/8893)
 
 ### [v3.0.18](https://github.com/youzan/vant/compare/v3.0.17...v3.0.18)
 
