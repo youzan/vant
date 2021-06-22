@@ -16,6 +16,18 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.22](https://github.com/youzan/vant/compare/v2.12.21...v2.12.22)
+
+`2021-06-22`
+
+**Feature**
+
+- Calendar: 新增 top-info、bottom-info 插槽 [#8847](https://github.com/youzan/vant/issues/8847)
+
+**Bug Fixes**
+
+- Slider: 修复设置 step 属性时，输入值格式化错误的问题 [#8894](https://github.com/youzan/vant/issues/8894)
+
 ### [v2.12.21](https://github.com/youzan/vant/compare/v2.12.20...v2.12.21)
 
 `2021-06-03`

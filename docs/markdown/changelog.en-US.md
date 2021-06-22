@@ -16,6 +16,18 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.22](https://github.com/youzan/vant/compare/v2.12.21...v2.12.22)
+
+`2021-06-22`
+
+**Feature**
+
+- Calendar: add top-info、bottom-info slot [#8847](https://github.com/youzan/vant/issues/8847)
+
+**Bug Fixes**
+
+- Slider: format v-model with step correctly [#8894](https://github.com/youzan/vant/issues/8894)
+
 ### [v2.12.21](https://github.com/youzan/vant/compare/v2.12.20...v2.12.21)
 
 `2021-06-03`
