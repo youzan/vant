@@ -7,7 +7,8 @@ import { compileJs } from './compile-js';
 import { compileStyle } from './compile-style';
 
 const RENDER_FN = '__vue_render__';
-const EXPORT = 'export default {';
+const VUEIDS = '__vue_sfc__';
+const EXPORT = 'export default';
 
 // trim some unused code
 function trim(code: string) {
@@ -25,14 +26,14 @@ function injectRender(script: string, render: string) {
 
   render = render.replace('export function render', `function ${RENDER_FN}`);
 
-  return script.replace(
-    EXPORT,
-    `${render}\n${EXPORT}\n  render: ${RENDER_FN},\n`
-  );
+  script += `\n${render}\n${VUEIDS}.render = ${RENDER_FN} \n`;
+
+  return script;
 }
 
 function injectScopeId(script: string, scopeId: string) {
-  return script.replace(EXPORT, `${EXPORT}\n  _scopeId: '${scopeId}',\n\n`);
+  script += `\n${VUEIDS}._scopeId = '${scopeId}'`;
+  return script;
 }
 
 function injectStyle(script: string, styles: SFCBlock[], filePath: string) {
@@ -44,7 +45,9 @@ function injectStyle(script: string, styles: SFCBlock[], filePath: string) {
       })
       .join('\n');
 
-    return script.replace(EXPORT, `${imports}\n\n${EXPORT}`);
+    script = `${imports}\n${script}`;
+
+    return script;
   }
 
   return script;
@@ -63,6 +66,7 @@ export async function compileSfc(filePath: string): Promise<any> {
   const tasks = [remove(filePath)];
   const source = readFileSync(filePath, 'utf-8');
   const descriptor = parseSfc(filePath);
+
   const { template, styles } = descriptor;
 
   const hasScoped = styles.some((s) => s.scoped);
@@ -78,18 +82,23 @@ export async function compileSfc(filePath: string): Promise<any> {
         let script = descriptor.script!.content;
         script = injectStyle(script, styles, filePath);
 
+        script = script.replace(EXPORT, `const ${VUEIDS} =`);
+
         if (template) {
           const render = compileTemplate({
             id: scopeId,
             source: template.content,
             filename: filePath,
           }).code;
+
           script = injectRender(script, render);
         }
 
         if (scopeId) {
           script = injectScopeId(script, scopeId);
         }
+
+        script += `\n${EXPORT} ${VUEIDS}`;
 
         writeFileSync(scriptFilePath, script);
         compileJs(scriptFilePath).then(resolve).catch(reject);
