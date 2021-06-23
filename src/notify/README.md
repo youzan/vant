@@ -97,8 +97,8 @@ export default {
 ### Methods
 
 | Methods | Attribute | Return value | Description |
-| --- | --- | --- | --- | --- |
-| Notify | `options | message` | notify instance | Show notify |
+| --- | --- | --- | --- |
+| Notify | `options \| message` | notify instance | Show notify |
 | Notify.clear | - | `void` | Close notify |
 | Notify.setDefaultOptions | `options` | `void` | Set default options of all notifies |
 | Notify.resetDefaultOptions | - | `void` | Reset default options of all notifies |
