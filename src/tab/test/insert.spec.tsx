@@ -86,3 +86,14 @@ test('should render Tab inside a component correctly', async () => {
   await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should render nav-bottom slot correctly', async () => {
+  const wrapper = mount(Tabs, {
+    slots: {
+      'nav-bottom': () => 'Nav Bottom',
+    },
+  });
+
+  await later();
+  expect(wrapper.html()).toMatchSnapshot();
+});

@@ -463,9 +463,10 @@ export default defineComponent({
             onScroll={onStickyScroll}
           >
             {renderHeader()}
+            {slots['nav-bottom']?.()}
           </Sticky>
         ) : (
-          renderHeader()
+          [renderHeader(), slots['nav-bottom']?.()]
         )}
         <TabsContent
           count={children.length}

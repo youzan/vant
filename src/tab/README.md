@@ -21,7 +21,7 @@ app.use(Tabs);
 
 ### Basic Usage
 
-The first tab is actived by default, you can set `v-model:active` to active specified tab.
+The first tab is active by default, you can set `v-model:active` to active specified tab.
 
 ```html
 <van-tabs v-model:active="active">
@@ -174,7 +174,7 @@ Use `animated` props to change tabs with animation.
 
 ### Swipeable
 
-In swipeable mode, you can switch tabs with swipe gestrue in the content.
+In swipeable mode, you can switch tabs with swipe gesture in the content.
 
 ```html
 <van-tabs v-model:active="active" swipeable>
@@ -290,10 +290,11 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Tabs i
 
 ### Tabs Slots
 
-| Name      | Description              |
-| --------- | ------------------------ |
-| nav-left  | Custom nav left content  |
-| nav-right | Custom nav right content |
+| Name                | Description               |
+| ------------------- | ------------------------- |
+| nav-left            | Custom nav left content   |
+| nav-right           | Custom nav right content  |
+| nav-bottom `v3.1.1` | Custom nav bottom content |
 
 ### Tab Slots
 
