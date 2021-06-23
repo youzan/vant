@@ -3,7 +3,7 @@ import { Field } from '../../field';
 import { mountForm } from './shared';
 import { later } from '../../../test';
 
-test('should not reset validation after blured when validate-trigger is onChange', async () => {
+test('should not reset validation after blurred when validate-trigger is onChange', async () => {
   const validator = (val: string) => val.length > 4;
   const wrapper = mountForm({
     data() {
