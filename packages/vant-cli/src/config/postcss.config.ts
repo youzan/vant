@@ -2,7 +2,7 @@ import { existsSync } from 'fs-extra';
 import { ROOT_POSTCSS_CONFIG_FILE } from '../common/constant';
 
 type PostcssConfig = {
-  plugins?: Record<string, unknown> | unknown[];
+  plugins?: Record<string, unknown> | any[];
 };
 
 export function getRootPostcssConfig(): PostcssConfig {
@@ -16,6 +16,13 @@ function getPostcssPlugins(rootConfig: PostcssConfig) {
   const plugins = rootConfig.plugins || [];
 
   if (Array.isArray(plugins)) {
+    const hasPostcssPlugin = plugins.find(
+      (plugin) =>
+        plugin === 'autoprefixer' && plugin.postcssPlugin === 'autoprefixer'
+    );
+    if (hasPostcssPlugin) {
+      return plugins;
+    }
     return [require('autoprefixer'), ...plugins];
   }
 
