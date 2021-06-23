@@ -32,7 +32,7 @@ app.use(CellGroup);
 
 ### 卡片风格
 
-通过 `CellGroup` 的 `inset` 属性，可以将单元格转换为圆角卡片风格。
+通过 `CellGroup` 的 `inset` 属性，可以将单元格转换为圆角卡片风格（从 3.1.0 版本开始支持）。
 
 ```html
 <van-cell-group inset>
