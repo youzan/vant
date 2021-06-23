@@ -230,7 +230,7 @@ test('should emit focus event when input is focused', async () => {
   expect(wrapper.emitted('focus')).toBeTruthy();
 });
 
-test('should format input value when stepper blured', async () => {
+test('should format input value when stepper blurred', async () => {
   const wrapper = mount(Stepper, {
     props: {
       min: 3,

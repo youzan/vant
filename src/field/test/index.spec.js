@@ -312,7 +312,7 @@ test('should allow to format value with formatter prop', () => {
   expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('efg');
 });
 
-test('should trigger format after bluring when format-trigger prop is blur', async () => {
+test('should trigger format after blurring when format-trigger prop is blur', async () => {
   const wrapper = mount(Field, {
     props: {
       modelValue: 'abc123',
