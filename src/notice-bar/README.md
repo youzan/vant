@@ -107,6 +107,14 @@ app.use(NoticeBar);
 | close  | Emitted when NoticeBar is closed   | _event: MouseEvent_ |
 | replay | Emitted when NoticeBar is replayed | -                   |
 
+### Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get NoticeBar instance and call instance methods.
+
+| Name           | Description     | Attribute | Return value |
+| -------------- | --------------- | --------- | ------------ |
+| reset `v3.1.1` | Reset NoticeBar | -         | -            |
+
 ### Slots
 
 | Name       | Description         |

@@ -11,6 +11,7 @@ import {
   useEventListener,
   onMountedOrActivated,
 } from '@vant/use';
+import { useExpose } from '../composables/use-expose';
 import { onPopupReopen } from '../composables/on-popup-reopen';
 
 // Components
@@ -140,17 +141,13 @@ export default defineComponent({
     };
 
     const reset = () => {
+      const { delay, speed, scrollable } = props;
+      const ms = isDef(delay) ? +delay * 1000 : 0;
+
       wrapWidth = 0;
       contentWidth = 0;
       state.offset = 0;
       state.duration = 0;
-    };
-
-    const start = () => {
-      const { delay, speed, scrollable } = props;
-      const ms = isDef(delay) ? +delay * 1000 : 0;
-
-      reset();
 
       clearTimeout(startTimer);
       startTimer = setTimeout(() => {
@@ -172,14 +169,15 @@ export default defineComponent({
       }, ms);
     };
 
-    onPopupReopen(start);
-    onMountedOrActivated(start);
+    onPopupReopen(reset);
+    onMountedOrActivated(reset);
 
     // fix cache issues with forwards and back history in safari
     // see: https://guwii.com/cache-issues-with-forwards-and-back-history-in-safari/
-    useEventListener('pageshow', start);
+    useEventListener('pageshow', reset);
+    useExpose({ reset });
 
-    watch(() => [props.text, props.scrollable], start);
+    watch(() => [props.text, props.scrollable], reset);
 
     return () => {
       const { color, wrapable, background } = props;
