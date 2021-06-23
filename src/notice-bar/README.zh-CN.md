@@ -128,6 +128,14 @@ app.use(NoticeBar);
 | close  | 关闭通知栏时触发             | _event: MouseEvent_ |
 | replay | 每当滚动栏重新开始滚动时触发 | -                   |
 
+### 方法
+
+通过 ref 可以获取到 NoticeBar 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名         | 说明                 | 参数 | 返回值 |
+| -------------- | -------------------- | ---- | ------ |
+| reset `v3.1.1` | 重置通知栏到初始状态 | -    | -      |
+
 ### Slots
 
 | 名称       | 内容           |
