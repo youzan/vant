@@ -127,8 +127,14 @@ export default createComponent({
         return null;
       }
 
-      value = Math.max(value, this.minDate.getTime());
-      value = Math.min(value, this.maxDate.getTime());
+      value = Math.max(
+        value,
+        this._minDate ? this._minDate.getTime() : this.minDate.getTime()
+      );
+      value = Math.min(
+        value,
+        this._maxDate ? this._maxDate.getTime() : this.maxDate.getTime()
+      );
 
       return new Date(value);
     },
@@ -231,7 +237,27 @@ export default createComponent({
       const value = this.innerValue ? this.innerValue : this.minDate;
       const { formatter } = this;
 
-      const values = this.originColumns.map((column) => {
+      /** 如果有一个项缺失代表不能使用此数据作为minDate使用, 转而使用 prop.minDate */
+      let isUse = true;
+      const minDate = [];
+      const maxDate = [];
+      const values = this.originColumns.map((column, index) => {
+        /**
+         * @description
+         * 可能存在 filter 因使用最终范围的最大值和最小值作为minDate 或 maxDate
+         * 如果计算范围的存在valuse长度为空, 此时使用传进来的 minDate maxDate
+         * 潜在问题 filter以后 可能会缺失某一下
+         */
+        if (!column.values.length) {
+          isUse = false;
+          minDate.push(0);
+        } else {
+          minDate.push(parseInt(column.values[0], 10) - (index === 1 ? 1 : 0));
+          maxDate.push(
+            parseInt(column.values[column.values.length - 1], 10) -
+              (index === 1 ? 1 : 0)
+          );
+        }
         switch (column.type) {
           case 'year':
             return formatter('year', `${value.getFullYear()}`);
@@ -248,6 +274,9 @@ export default createComponent({
             return null;
         }
       });
+
+      this._minDate = isUse ? new Date(...minDate) : false;
+      this._maxDate = isUse ? new Date(...maxDate) : false;
 
       this.$nextTick(() => {
         this.getPicker().setValues(values);
