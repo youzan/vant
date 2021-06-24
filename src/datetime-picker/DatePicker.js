@@ -239,25 +239,27 @@ export default createComponent({
 
       /** 如果有一个项缺失代表不能使用此数据作为minDate使用, 转而使用 prop.minDate */
       let isUse = true;
-      const minDate = [];
-      const maxDate = [];
+      const minDate = {};
+      const maxDate = {};
+
       const values = this.originColumns.map((column, index) => {
         /**
          * @description
          * 可能存在 filter 因使用最终范围的最大值和最小值作为minDate 或 maxDate
          * 如果计算范围的存在valuse长度为空, 此时使用传进来的 minDate maxDate
-         * 潜在问题 filter以后 可能会缺失某一下
+         * 潜在问题 filter以后 可能会缺失某一项
          */
         if (!column.values.length) {
           isUse = false;
-          minDate.push(0);
         } else {
-          minDate.push(parseInt(column.values[0], 10) - (index === 1 ? 1 : 0));
-          maxDate.push(
+          minDate[column.type] =
+            parseInt(column.values[0], 10) - (index === 1 ? 1 : 0);
+
+          maxDate[column.type] =
             parseInt(column.values[column.values.length - 1], 10) -
-              (index === 1 ? 1 : 0)
-          );
+            (index === 1 ? 1 : 0);
         }
+
         switch (column.type) {
           case 'year':
             return formatter('year', `${value.getFullYear()}`);
@@ -275,8 +277,67 @@ export default createComponent({
         }
       });
 
-      this._minDate = isUse ? new Date(...minDate) : false;
-      this._maxDate = isUse ? new Date(...maxDate) : false;
+      if (isUse) {
+        this._minDate = [];
+        this._maxDate = [];
+
+        /** 补全 Date */
+        ['year', 'month', 'day', 'hour', 'minute'].forEach((key, index) => {
+          if (Object.keys(minDate).includes(key)) {
+            this._minDate[index] = minDate[key];
+          } else {
+            switch (key) {
+              case 'year':
+                this._minDate[index] = this.minDate.getFullYear();
+                break;
+              case 'month':
+                this._minDate[index] = this.minDate.getMonth();
+                break;
+              case 'day':
+                this._minDate[index] = this.minDate.getDay();
+                break;
+              case 'hour':
+                this._minDate[index] = this.minDate.getHours();
+                break;
+              case 'minute':
+                this._minDate[index] = this.minDate.getMinutes();
+                break;
+              default:
+                break;
+            }
+          }
+
+          if (Object.keys(maxDate).includes(key)) {
+            this._maxDate[index] = maxDate[key];
+          } else {
+            switch (key) {
+              case 'year':
+                this._maxDate[index] = this.maxDate.getFullYear();
+                break;
+              case 'month':
+                this._maxDate[index] = this.maxDate.getMonth();
+                break;
+              case 'day':
+                this._maxDate[index] = this.maxDate.getDay();
+                break;
+              case 'hour':
+                this._maxDate[index] = this.maxDate.getHours();
+                break;
+              case 'minute':
+                this._maxDate[index] = this.maxDate.getMinutes();
+                break;
+              default:
+                break;
+            }
+          }
+        });
+
+        this._minDate = new Date(...this._minDate);
+        this._maxDate = new Date(...this._maxDate);
+      } else {
+        this._minDate = false;
+        this._maxDate = false;
+      }
 
       this.$nextTick(() => {
         this.getPicker().setValues(values);
