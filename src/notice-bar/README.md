@@ -88,7 +88,7 @@ app.use(NoticeBar);
 ### Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | mode | Mode, can be set to `closeable` `link` | _string_ | `''` |
 | text | Notice text content | _string_ | `''` | - |
 | color | Text color | _string_ | `#f60` |

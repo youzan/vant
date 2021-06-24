@@ -233,7 +233,7 @@ export default {
 ### Tabs Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | v-model:active | Index of active tab | _number \| string_ | `0` |
 | type | Can be set to `line` `card` | _string_ | `line` |
 | color | Tab color | _string_ | `#ee0a24` |

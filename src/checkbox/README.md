@@ -246,7 +246,7 @@ export default {
 ### Checkbox Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | v-model | Check status | _boolean_ | `false` |
 | name | Checkbox name | _any_ | - |
 | shape | Can be set to `square` | _string_ | `round` |
@@ -260,7 +260,7 @@ export default {
 ### CheckboxGroup Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | v-model | Names of all checked checkboxes | _any[]_ | - |
 | disabled | Whether to disable all checkboxes | _boolean_ | `false` |
 | max | Maximum amount of checked options | _number \| string_ | `0`(Unlimited) |
