@@ -242,7 +242,7 @@ export default createComponent({
       const minDate = {};
       const maxDate = {};
 
-      const values = this.originColumns.map((column, index) => {
+      const values = this.originColumns.map((column) => {
         /**
          * @description
          * 可能存在 filter 因使用最终范围的最大值和最小值作为minDate 或 maxDate
@@ -253,11 +253,11 @@ export default createComponent({
           isUse = false;
         } else {
           minDate[column.type] =
-            parseInt(column.values[0], 10) - (index === 1 ? 1 : 0);
+            parseInt(column.values[0], 10) - (column.type === 'month' ? 1 : 0);
 
           maxDate[column.type] =
             parseInt(column.values[column.values.length - 1], 10) -
-            (index === 1 ? 1 : 0);
+            (column.type === 'month' ? 1 : 0);
         }
 
         switch (column.type) {
@@ -280,7 +280,6 @@ export default createComponent({
       if (isUse) {
         this._minDate = [];
         this._maxDate = [];
-
         /** 补全 Date */
         ['year', 'month', 'day', 'hour', 'minute'].forEach((key, index) => {
           if (Object.keys(minDate).includes(key)) {
@@ -306,7 +305,6 @@ export default createComponent({
                 break;
             }
           }
-
           if (Object.keys(maxDate).includes(key)) {
             this._maxDate[index] = maxDate[key];
           } else {
