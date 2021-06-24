@@ -1883,10 +1883,10 @@
   resolved "https://registry.nlark.com/@vant/area-data/download/@vant/area-data-1.1.1.tgz#b9acf8a804c0d60f721b6900680299422b006b1a"
   integrity sha1-uaz4qATA1g9yG2kAaAKZQisAaxo=
 
-"@vant/cli@^3.10.6":
-  version "3.10.6"
-  resolved "https://registry.nlark.com/@vant/cli/download/@vant/cli-3.10.6.tgz?cache=0&sync_timestamp=1623391338835&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-3.10.6.tgz#bb00687290ab5a4c73389b7e49589ae9fdc0e79a"
-  integrity sha1-uwBocpCrWkxzOJt+SVia6f3A55o=
+"@vant/cli@^3.10.9":
+  version "3.10.9"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-3.10.9.tgz#25d3459c37494faf907756939a2a5b8a34cb0ce6"
+  integrity sha512-id8EhYEpA+VM87F4h0TZg0Z8Oqm/bPKSd+SWZdjfxCSLtb5dRAgAOilnB/+pAbf6Kjr1ph+Msc9oTDDt0k7/qg==
   dependencies:
     "@babel/core" "^7.14.5"
     "@babel/preset-env" "^7.14.5"
@@ -1928,10 +1928,10 @@
     lodash "^4.17.21"
     ora "^5.4.1"
     portfinder "^1.0.28"
-    postcss "^7.0.0"
+    postcss "^7.0.36"
     postcss-load-config "^3.0.1"
     postcss-loader "^4.1.0"
-    prettier "2.3.1"
+    prettier "2.1.0"
     release-it "^14.8.0"
     sass "^1.34.1"
     sass-loader "^10.1.1"
@@ -8550,7 +8550,7 @@ postcss-value-parser@^4.1.0:
   resolved "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
   integrity sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==
 
-postcss@^7.0.0, postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.35, postcss@^7.0.5, postcss@^7.0.6:
+postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.35, postcss@^7.0.36, postcss@^7.0.5, postcss@^7.0.6:
   version "7.0.36"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.36.tgz#056f8cffa939662a8f5905950c07d5285644dfcb"
   integrity sha512-BebJSIUMwJHRH0HAQoxN4u1CN86glsrwsW0q7T+/m44eXOUAxSNdHRkNZPYz5vVUbg17hFgOQDE7fZk7li3pZw==
@@ -8593,10 +8593,10 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier@2.3.1:
-  version "2.3.1"
-  resolved "https://registry.nlark.com/prettier/download/prettier-2.3.1.tgz#76903c3f8c4449bc9ac597acefa24dc5ad4cbea6"
-  integrity sha1-dpA8P4xESbyaxZes76JNxa1MvqY=
+prettier@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.1.0.tgz#5a9789f767a243118c60f3e56d95cb6544914fbb"
+  integrity sha512-lz28cCbA1cDFHVuY8vvj6QuqOwIpyIfPUYkSl8AZ/vxH8qBXMMjE2knfLHCrZCmUsK/H1bg1P0tOo0dJkTJHvw==
 
 pretty-error@^2.1.1:
   version "2.1.1"
