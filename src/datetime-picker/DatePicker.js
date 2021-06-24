@@ -131,6 +131,7 @@ export default createComponent({
         value,
         this._minDate ? this._minDate.getTime() : this.minDate.getTime()
       );
+
       value = Math.min(
         value,
         this._maxDate ? this._maxDate.getTime() : this.maxDate.getTime()
@@ -281,53 +282,15 @@ export default createComponent({
         this._minDate = [];
         this._maxDate = [];
         /** 补全 Date */
-        ['year', 'month', 'day', 'hour', 'minute'].forEach((key, index) => {
-          if (Object.keys(minDate).includes(key)) {
-            this._minDate[index] = minDate[key];
-          } else {
-            switch (key) {
-              case 'year':
-                this._minDate[index] = this.minDate.getFullYear();
-                break;
-              case 'month':
-                this._minDate[index] = this.minDate.getMonth();
-                break;
-              case 'day':
-                this._minDate[index] = this.minDate.getDay();
-                break;
-              case 'hour':
-                this._minDate[index] = this.minDate.getHours();
-                break;
-              case 'minute':
-                this._minDate[index] = this.minDate.getMinutes();
-                break;
-              default:
-                break;
-            }
-          }
-          if (Object.keys(maxDate).includes(key)) {
-            this._maxDate[index] = maxDate[key];
-          } else {
-            switch (key) {
-              case 'year':
-                this._maxDate[index] = this.maxDate.getFullYear();
-                break;
-              case 'month':
-                this._maxDate[index] = this.maxDate.getMonth();
-                break;
-              case 'day':
-                this._maxDate[index] = this.maxDate.getDay();
-                break;
-              case 'hour':
-                this._maxDate[index] = this.maxDate.getHours();
-                break;
-              case 'minute':
-                this._maxDate[index] = this.maxDate.getMinutes();
-                break;
-              default:
-                break;
-            }
-          }
+        [
+          { type: 'year', action: 'getFullYear' },
+          { type: 'month', action: 'getMonth' },
+          { type: 'day', action: 'getDay' },
+          { type: 'hour', action: 'getHours' },
+          { type: 'minute', action: 'getMinutes' },
+        ].forEach(({ type, action }, index) => {
+          this._minDate[index] = minDate[type] || this.minDate[action]();
+          this._maxDate[index] = maxDate[type] || this.maxDate[action]();
         });
 
         this._minDate = new Date(...this._minDate);

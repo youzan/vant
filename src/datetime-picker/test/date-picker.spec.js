@@ -213,6 +213,61 @@ test('use min-date with filter', async () => {
   expect(wrapper.emitted('confirm')[0][0]).toEqual(new Date(2030, 0, 0, 0, 30));
 });
 
+test('use min-date with filter 2', async () => {
+  const minDate = new Date(2030, 0, 1, 1, 24);
+  const maxDate = new Date(2040, 0, 0, 0, 0);
+
+  const wrapper = mount(DatePicker, {
+    propsData: {
+      minDate,
+      maxDate,
+      value: new Date(2020, 0, 1, 1, 24),
+      filter(type, values) {
+        if (type === 'minute') {
+          return values.filter((value) => value % 10 === 0);
+        }
+
+        return values;
+      },
+    },
+  });
+
+  await later();
+
+  triggerDrag(wrapper.findAll('.van-picker-column').at(3), 0, -300);
+  wrapper.findAll('.van-picker-column ul').at(3).trigger('transitionend');
+  await later();
+  expect(wrapper.emitted('change')[0][0].getValues()).toEqual([
+    '2030',
+    '01',
+    '01',
+    '23',
+    '30',
+  ]);
+
+  triggerDrag(wrapper.findAll('.van-picker-column').at(4), 0, 100);
+  wrapper.findAll('.van-picker-column ul').at(4).trigger('transitionend');
+  await later();
+  expect(wrapper.emitted('change')[0][0].getValues()).toEqual([
+    '2030',
+    '01',
+    '01',
+    '23',
+    '00',
+  ]);
+
+  triggerDrag(wrapper.findAll('.van-picker-column').at(3), 0, 100);
+  wrapper.findAll('.van-picker-column ul').at(3).trigger('transitionend');
+  await later();
+  expect(wrapper.emitted('change')[0][0].getValues()).toEqual([
+    '2030',
+    '01',
+    '01',
+    '01',
+    '30',
+  ]);
+});
+
 test('v-model', async () => {
   const minDate = new Date(2030, 0, 0, 0, 3);
 
@@ -226,7 +281,7 @@ test('v-model', async () => {
     data() {
       return {
         date: null,
-        minDate: new Date(2030, 0, 0, 0, 3)
+        minDate: new Date(2030, 0, 0, 0, 3),
       };
     },
   });
@@ -263,12 +318,12 @@ test('change min-date and emit correct value', async () => {
       return {
         date: defaultValue,
         minDate: new Date(2010, 0, 1, 10, 30),
-      }
+      };
     },
     mounted() {
       this.minDate = defaultValue;
     },
-  })
+  });
 
   await later();
   wrapper.find('.van-picker__confirm').trigger('click');
