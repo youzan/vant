@@ -80,7 +80,7 @@
     "postcss": "^7.0.36",
     "postcss-load-config": "^3.0.1",
     "postcss-loader": "^4.1.0",
-    "prettier": "2.3.1",
+    "prettier": "2.1.0",
     "release-it": "^14.8.0",
     "sass": "^1.34.1",
     "sass-loader": "^10.1.1",
