@@ -19,12 +19,12 @@ import { genVeturConfig } from '../compiler/gen-vetur-config';
 import {
   isDir,
   isSfc,
+  isAsset,
   isStyle,
   isScript,
   isDemoDir,
   isTestDir,
   setNodeEnv,
-  isAssetDir,
   setModuleEnv,
   setBuildTarget,
 } from '../common';
@@ -42,6 +42,10 @@ async function compileFile(filePath: string) {
     return compileStyle(filePath);
   }
 
+  if (isAsset(filePath)) {
+    return Promise.resolve();
+  }
+
   return remove(filePath);
 }
 
@@ -54,10 +58,6 @@ async function compileDir(dir: string) {
 
       if (isDemoDir(filePath) || isTestDir(filePath)) {
         return remove(filePath);
-      }
-
-      if (isAssetDir(filePath)) {
-        return Promise.resolve();
       }
 
       if (isDir(filePath)) {
