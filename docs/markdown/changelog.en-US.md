@@ -178,7 +178,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **Bug Fixes**
 
-- Field: should not reset validation after blured [#8409](https://github.com/youzan/vant/issues/8409)
+- Field: should not reset validation after blurred [#8409](https://github.com/youzan/vant/issues/8409)
 - Sticky: Element not exist during SSR [#8407](https://github.com/youzan/vant/issues/8407)
 - Tabs: incorrect horizontal slip judgment [#8388](https://github.com/youzan/vant/issues/8388)
 

@@ -8283,10 +8283,10 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier@2.3.1:
-  version "2.3.1"
-  resolved "https://registry.nlark.com/prettier/download/prettier-2.3.1.tgz#76903c3f8c4449bc9ac597acefa24dc5ad4cbea6"
-  integrity sha1-dpA8P4xESbyaxZes76JNxa1MvqY=
+prettier@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.nlark.com/prettier/download/prettier-2.1.0.tgz#5a9789f767a243118c60f3e56d95cb6544914fbb"
+  integrity sha1-WpeJ92eiQxGMYPPlbZXLZUSRT7s=
 
 pretty-error@^2.1.1:
   version "2.1.1"

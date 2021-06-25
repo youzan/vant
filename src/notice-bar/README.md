@@ -88,7 +88,7 @@ app.use(NoticeBar);
 ### Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | mode | Mode, can be set to `closeable` `link` | _string_ | `''` |
 | text | Notice text content | _string_ | `''` | - |
 | color | Text color | _string_ | `#f60` |
@@ -106,6 +106,14 @@ app.use(NoticeBar);
 | click  | Emitted when NoticeBar is clicked  | _event: MouseEvent_ |
 | close  | Emitted when NoticeBar is closed   | _event: MouseEvent_ |
 | replay | Emitted when NoticeBar is replayed | -                   |
+
+### Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get NoticeBar instance and call instance methods.
+
+| Name           | Description     | Attribute | Return value |
+| -------------- | --------------- | --------- | ------------ |
+| reset `v3.1.1` | Reset NoticeBar | -         | -            |
 
 ### Slots
 

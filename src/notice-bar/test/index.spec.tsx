@@ -1,5 +1,6 @@
 import { NoticeBar } from '..';
 import { mount, later } from '../../../test';
+import type { ComponentInstance } from '../../utils';
 
 test('should emit close event when close icon is clicked', () => {
   const wrapper = mount(NoticeBar, {
@@ -90,4 +91,14 @@ test('should not start scrolling when content width > wrap width ', async () => 
   await later(50);
 
   expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should expose reset methods', async () => {
+  const wrapper = mount(NoticeBar, {
+    props: {
+      text: 'foo',
+    },
+  });
+
+  expect((wrapper.vm as ComponentInstance).reset).toBeTruthy();
 });

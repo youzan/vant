@@ -514,11 +514,11 @@ export default {
 
 ### validate-trigger
 
-| Value    | Description                                                     |
-| -------- | --------------------------------------------------------------- |
-| onSubmit | Trigger validation after submiting form                         |
-| onBlur   | Trigger validation after submiting form or bluring input        |
-| onChange | Trigger validation after submiting form or changing input value |
+| Value    | Description                                                      |
+| -------- | ---------------------------------------------------------------- |
+| onSubmit | Trigger validation after submitting form                         |
+| onBlur   | Trigger validation after submitting form or blurring input       |
+| onChange | Trigger validation after submitting form or changing input value |
 
 ### Events
 
