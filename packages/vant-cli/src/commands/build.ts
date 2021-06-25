@@ -19,6 +19,7 @@ import { genVeturConfig } from '../compiler/gen-vetur-config';
 import {
   isDir,
   isSfc,
+  isAsset,
   isStyle,
   isScript,
   isDemoDir,
@@ -39,6 +40,10 @@ async function compileFile(filePath: string) {
 
   if (isStyle(filePath)) {
     return compileStyle(filePath);
+  }
+
+  if (isAsset(filePath)) {
+    return Promise.resolve();
   }
 
   return remove(filePath);
