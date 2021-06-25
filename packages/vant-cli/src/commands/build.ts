@@ -24,6 +24,7 @@ import {
   isDemoDir,
   isTestDir,
   setNodeEnv,
+  isAssetDir,
   setModuleEnv,
   setBuildTarget,
 } from '../common';
@@ -53,6 +54,10 @@ async function compileDir(dir: string) {
 
       if (isDemoDir(filePath) || isTestDir(filePath)) {
         return remove(filePath);
+      }
+
+      if (isAssetDir(filePath)) {
+        return Promise.resolve();
       }
 
       if (isDir(filePath)) {
