@@ -14,6 +14,7 @@ export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;
 export const DEMO_REGEXP = new RegExp('\\' + sep + 'demo$');
 export const TEST_REGEXP = new RegExp('\\' + sep + 'test$');
+export const ASSET_REGEXP = /\.(png|jpe?g|gif|webp|ico|jfif|svg|woff2?|ttf)$/i;
 export const STYLE_REGEXP = /\.(css|less|scss)$/;
 export const SCRIPT_REGEXP = /\.(js|ts|jsx|tsx)$/;
 export const ENTRY_EXTS = ['js', 'ts', 'tsx', 'jsx', 'vue'];
@@ -57,6 +58,10 @@ export function isDemoDir(dir: string) {
 
 export function isTestDir(dir: string) {
   return TEST_REGEXP.test(dir);
+}
+
+export function isAsset(path: string) {
+  return ASSET_REGEXP.test(path);
 }
 
 export function isSfc(path: string) {
