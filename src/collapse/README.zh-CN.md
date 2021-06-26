@@ -142,13 +142,14 @@ export default {
 
 ### CollapseItem Slots
 
-| 名称       | 说明                           |
-| ---------- | ------------------------------ |
-| default    | 面板内容                       |
-| value      | 自定义显示内容                 |
-| icon       | 自定义 `icon`                  |
-| title      | 自定义 `title`                 |
-| right-icon | 自定义右侧按钮，默认是 `arrow` |
+| 名称           | 说明                 |
+| -------------- | -------------------- |
+| default        | 面板内容             |
+| title          | 自定义标题栏左侧内容 |
+| value          | 自定义标题栏右侧内容 |
+| label `v3.1.1` | 自定义标题栏描述信息 |
+| icon           | 自定义标题栏左侧图标 |
+| right-icon     | 自定义标题栏右侧按钮 |
 
 ### CollapseItem 方法
 

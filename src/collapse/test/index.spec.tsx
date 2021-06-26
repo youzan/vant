@@ -85,9 +85,10 @@ test('should render slots of CollapseItem correctly', () => {
         <Collapse v-model={this.active}>
           <CollapseItem
             v-slots={{
+              icon: () => 'this is icon',
               title: () => 'this is title',
               value: () => 'this is value',
-              icon: () => 'this is icon',
+              label: () => 'this is label',
               'right-icon': () => 'this is right icon',
             }}
           />

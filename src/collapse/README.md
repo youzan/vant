@@ -144,13 +144,14 @@ export default {
 
 ### CollapseItem Slots
 
-| Name       | Description       |
-| ---------- | ----------------- |
-| default    | Content           |
-| value      | Custom value      |
-| icon       | Custom icon       |
-| title      | Custom title      |
-| right-icon | Custom right icon |
+| Name           | Description              |
+| -------------- | ------------------------ |
+| default        | Content                  |
+| title          | Custom header title      |
+| value          | Custom header value      |
+| label `v3.1.1` | Custom header label      |
+| icon           | Custom header left icon  |
+| right-icon     | Custom header right icon |
 
 ### CollapseItem Methods
 
