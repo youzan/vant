@@ -4,7 +4,16 @@ import { mount } from '../../../test';
 test('should render default slot correctly', () => {
   const wrapper = mount(Cell, {
     slots: {
-      default: () => 'Custom Default',
+      default: () => 'Custom Value',
+    },
+  });
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should render value slot correctly', () => {
+  const wrapper = mount(Cell, {
+    slots: {
+      value: () => 'Custom Value',
     },
   });
   expect(wrapper.html()).toMatchSnapshot();
