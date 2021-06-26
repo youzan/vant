@@ -149,7 +149,7 @@ export default {
 | value          | 自定义标题栏右侧内容 |
 | label `v3.1.1` | 自定义标题栏描述信息 |
 | icon           | 自定义标题栏左侧图标 |
-| right-icon     | 自定义标题栏右侧按钮 |
+| right-icon     | 自定义标题栏右侧图标 |
 
 ### CollapseItem 方法
 
