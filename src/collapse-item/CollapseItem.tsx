@@ -15,6 +15,8 @@ import { Cell } from '../cell';
 
 const [name, bem] = createNamespace('collapse-item');
 
+const CELL_SLOTS = ['icon', 'title', 'value', 'label', 'right-icon'] as const;
+
 export default defineComponent({
   name,
 
@@ -112,12 +114,7 @@ export default defineComponent({
 
       return (
         <Cell
-          v-slots={{
-            icon: slots.icon,
-            title: slots.title,
-            default: slots.value,
-            'right-icon': slots['right-icon'],
-          }}
+          v-slots={pick(slots, CELL_SLOTS)}
           role="button"
           class={bem('title', {
             disabled,

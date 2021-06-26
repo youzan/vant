@@ -11,6 +11,9 @@ exports[`should render slots of CollapseItem correctly 1`] = `
       this is icon
       <div class="van-cell__title">
         this is title
+        <div class="van-cell__label">
+          this is label
+        </div>
       </div>
       <div class="van-cell__value">
         this is value
