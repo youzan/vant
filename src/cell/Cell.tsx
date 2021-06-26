@@ -33,7 +33,7 @@ export const cellProps = {
   valueClass: unknownProp,
   labelClass: unknownProp,
   titleClass: unknownProp,
-  titleStyle: (null as unknown) as PropType<string | CSSProperties>,
+  titleStyle: null as unknown as PropType<string | CSSProperties>,
   arrowDirection: String as PropType<CellArrowDirection>,
   clickable: {
     type: Boolean as PropType<boolean | null>,
@@ -76,13 +76,16 @@ export default defineComponent({
     };
 
     const renderValue = () => {
-      const hasValue = slots.default || isDef(props.value);
+      // default slot is deprecated
+      // should be removed in next major version
+      const slot = slots.value || slots.default;
+      const hasValue = slot || isDef(props.value);
 
       if (hasValue) {
         const hasTitle = slots.title || isDef(props.title);
         return (
           <div class={[bem('value', { alone: !hasTitle }), props.valueClass]}>
-            {slots.default ? slots.default() : <span>{props.value}</span>}
+            {slot ? slot() : <span>{props.value}</span>}
           </div>
         );
       }

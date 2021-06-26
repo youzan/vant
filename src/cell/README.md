@@ -183,14 +183,14 @@ app.use(CellGroup);
 
 ### Cell Slots
 
-| Name       | Description                       |
-| ---------- | --------------------------------- |
-| default    | Custom value                      |
-| icon       | Custom icon                       |
-| title      | Custom title                      |
-| label      | Custom label                      |
-| right-icon | Custom right icon                 |
-| extra      | Custom extra content on the right |
+| Name           | Description                       |
+| -------------- | --------------------------------- |
+| title          | Custom title                      |
+| value `v3.1.1` | Custom value                      |
+| label          | Custom label                      |
+| icon           | Custom left icon                  |
+| right-icon     | Custom right icon                 |
+| extra          | Custom extra content on the right |
 
 ### CSS Variables
 

@@ -15,7 +15,7 @@ exports[`should change icon class prefix when using icon-prefix prop 1`] = `
 exports[`should render default slot correctly 1`] = `
 <div class="van-cell">
   <div class="van-cell__value van-cell__value--alone">
-    Custom Default
+    Custom Value
   </div>
 </div>
 `;
@@ -49,6 +49,14 @@ exports[`should render title slot correctly 1`] = `
 <div class="van-cell">
   <div class="van-cell__title">
     Custom Title
+  </div>
+</div>
+`;
+
+exports[`should render value slot correctly 1`] = `
+<div class="van-cell">
+  <div class="van-cell__value van-cell__value--alone">
+    Custom Value
   </div>
 </div>
 `;
