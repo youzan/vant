@@ -16,6 +16,17 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.1.1](https://github.com/youzan/vant/compare/v3.1.0...v3.1.1)
+
+`2021-06-27`
+
+**Feature**
+
+- Cell: add value slot [#8933](https://github.com/youzan/vant/issues/8933)
+- CollapseItem: add label slot [#8934](https://github.com/youzan/vant/issues/8934)
+- NoticeBar: add reset method [#8917](https://github.com/youzan/vant/issues/8917)
+- Tabs: add nav-bottom slot [#8915](https://github.com/youzan/vant/issues/8915)
+
 ### [v3.1.0](https://github.com/youzan/vant/compare/v3.1.0-beta.0...v3.1.0)
 
 `2021-06-22`

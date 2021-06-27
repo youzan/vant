@@ -16,6 +16,17 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.1.1](https://github.com/youzan/vant/compare/v3.1.0...v3.1.1)
+
+`2021-06-27`
+
+**Feature**
+
+- Cell: 新增 value 插槽 [#8933](https://github.com/youzan/vant/issues/8933)
+- CollapseItem: 新增 label 插槽 [#8934](https://github.com/youzan/vant/issues/8934)
+- NoticeBar: 新增 reset 方法 [#8917](https://github.com/youzan/vant/issues/8917)
+- Tabs: 新增 nav-bottom 插槽 [#8915](https://github.com/youzan/vant/issues/8915)
+
 ### [v3.1.0](https://github.com/youzan/vant/compare/v3.1.0-beta.0...v3.1.0)
 
 `2021-06-22`
