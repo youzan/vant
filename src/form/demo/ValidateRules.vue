@@ -1,34 +1,36 @@
 <template>
   <demo-block :title="t('title')">
     <van-form @sumbit="onSubmit" @failed="onFailed">
-      <van-field
-        v-model="value1"
-        name="pattern"
-        :label="t('label')"
-        :rules="[{ pattern, message: t('message') }]"
-        :placeholder="t('pattern')"
-      />
-      <van-field
-        v-model="value2"
-        name="validator"
-        :label="t('label')"
-        :rules="[{ validator, message: t('message') }]"
-        :placeholder="t('validator')"
-      />
-      <van-field
-        v-model="value3"
-        name="validatorMessage"
-        :label="t('label')"
-        :rules="[{ validator: validatorMessage }]"
-        :placeholder="t('validatorMessage')"
-      />
-      <van-field
-        v-model="value4"
-        name="asyncValidator"
-        :label="t('label')"
-        :rules="[{ validator: asyncValidator, message: t('message') }]"
-        :placeholder="t('asyncValidator')"
-      />
+      <van-cell-group inset>
+        <van-field
+          v-model="value1"
+          name="pattern"
+          :label="t('label')"
+          :rules="[{ pattern, message: t('message') }]"
+          :placeholder="t('pattern')"
+        />
+        <van-field
+          v-model="value2"
+          name="validator"
+          :label="t('label')"
+          :rules="[{ validator, message: t('message') }]"
+          :placeholder="t('validator')"
+        />
+        <van-field
+          v-model="value3"
+          name="validatorMessage"
+          :label="t('label')"
+          :rules="[{ validator: validatorMessage }]"
+          :placeholder="t('validatorMessage')"
+        />
+        <van-field
+          v-model="value4"
+          name="asyncValidator"
+          :label="t('label')"
+          :rules="[{ validator: asyncValidator, message: t('message') }]"
+          :placeholder="t('asyncValidator')"
+        />
+      </van-cell-group>
       <div style="margin: 16px 16px 0">
         <van-button round block type="primary" native-type="submit">
           {{ t('submit') }}

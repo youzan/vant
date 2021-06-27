@@ -10,11 +10,12 @@
 
 ```js
 import { createApp } from 'vue';
-import { Form, Field } from 'vant';
+import { Form, Field, CellGroup } from 'vant';
 
 const app = createApp();
 app.use(Form);
 app.use(Field);
+app.use(CellGroup);
 ```
 
 ## 代码演示
@@ -25,21 +26,23 @@ app.use(Field);
 
 ```html
 <van-form @submit="onSubmit">
-  <van-field
-    v-model="state.username"
-    name="用户名"
-    label="用户名"
-    placeholder="用户名"
-    :rules="[{ required: true, message: '请填写用户名' }]"
-  />
-  <van-field
-    v-model="state.password"
-    type="password"
-    name="密码"
-    label="密码"
-    placeholder="密码"
-    :rules="[{ required: true, message: '请填写密码' }]"
-  />
+  <van-cell-group inset>
+    <van-field
+      v-model="state.username"
+      name="用户名"
+      label="用户名"
+      placeholder="用户名"
+      :rules="[{ required: true, message: '请填写用户名' }]"
+    />
+    <van-field
+      v-model="state.password"
+      type="password"
+      name="密码"
+      label="密码"
+      placeholder="密码"
+      :rules="[{ required: true, message: '请填写密码' }]"
+    />
+  </van-cell-group>
   <div style="margin: 16px;">
     <van-button round block type="primary" native-type="submit">
       提交
@@ -75,34 +78,36 @@ export default {
 
 ```html
 <van-form @failed="onFailed">
-  <!-- 通过 pattern 进行正则校验 -->
-  <van-field
-    v-model="state.value1"
-    name="pattern"
-    placeholder="正则校验"
-    :rules="[{ pattern, message: '请输入正确内容' }]"
-  />
-  <!-- 通过 validator 进行函数校验 -->
-  <van-field
-    v-model="state.value2"
-    name="validator"
-    placeholder="函数校验"
-    :rules="[{ validator, message: '请输入正确内容' }]"
-  />
-  <!-- 通过 validator 返回错误提示 -->
-  <van-field
-    v-model="state.value3"
-    name="validatorMessage"
-    placeholder="校验函数返回错误提示"
-    :rules="[{ validator: validatorMessage }]"
-  />
-  <!-- 通过 validator 进行异步函数校验 -->
-  <van-field
-    v-model="state.value4"
-    name="asyncValidator"
-    placeholder="异步函数校验"
-    :rules="[{ validator: asyncValidator, message: '请输入正确内容' }]"
-  />
+  <van-cell-group inset>
+    <!-- 通过 pattern 进行正则校验 -->
+    <van-field
+      v-model="state.value1"
+      name="pattern"
+      placeholder="正则校验"
+      :rules="[{ pattern, message: '请输入正确内容' }]"
+    />
+    <!-- 通过 validator 进行函数校验 -->
+    <van-field
+      v-model="state.value2"
+      name="validator"
+      placeholder="函数校验"
+      :rules="[{ validator, message: '请输入正确内容' }]"
+    />
+    <!-- 通过 validator 返回错误提示 -->
+    <van-field
+      v-model="state.value3"
+      name="validatorMessage"
+      placeholder="校验函数返回错误提示"
+      :rules="[{ validator: validatorMessage }]"
+    />
+    <!-- 通过 validator 进行异步函数校验 -->
+    <van-field
+      v-model="state.value4"
+      name="asyncValidator"
+      placeholder="异步函数校验"
+      :rules="[{ validator: asyncValidator, message: '请输入正确内容' }]"
+    />
+  </van-cell-group>
   <div style="margin: 16px;">
     <van-button round block type="primary" native-type="submit">
       提交

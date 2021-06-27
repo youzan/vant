@@ -1,7 +1,17 @@
 <template>
   <demo-block :title="t('disabled')">
-    <van-field :model-value="t('inputReadonly')" :label="t('text')" readonly />
-    <van-field :model-value="t('inputDisabled')" :label="t('text')" disabled />
+    <van-cell-group inset>
+      <van-field
+        :model-value="t('inputReadonly')"
+        :label="t('text')"
+        readonly
+      />
+      <van-field
+        :model-value="t('inputDisabled')"
+        :label="t('text')"
+        disabled
+      />
+    </van-cell-group>
   </demo-block>
 </template>
 

@@ -1,13 +1,15 @@
 <template>
   <demo-block :title="t('autosize')">
-    <van-field
-      v-model="value"
-      autosize
-      rows="1"
-      type="textarea"
-      :label="t('message')"
-      :placeholder="t('placeholder')"
-    />
+    <van-cell-group inset>
+      <van-field
+        v-model="value"
+        autosize
+        rows="1"
+        type="textarea"
+        :label="t('message')"
+        :placeholder="t('placeholder')"
+      />
+    </van-cell-group>
   </demo-block>
 </template>
 

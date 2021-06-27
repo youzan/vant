@@ -2,7 +2,7 @@
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-cell-group van-hairline--top-bottom">
+  <div class="van-cell-group van-cell-group--inset">
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
         <span>
@@ -21,307 +21,325 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Text
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               class="van-field__control"
-               placeholder="Text"
-        >
-      </div>
-    </div>
-  </div>
-  <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Phone
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="tel"
-               class="van-field__control"
-               placeholder="Phone"
-        >
-      </div>
-    </div>
-  </div>
-  <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Digit
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="tel"
-               inputmode="numeric"
-               class="van-field__control"
-               placeholder="Digit"
-        >
-      </div>
-    </div>
-  </div>
-  <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Number
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               inputmode="decimal"
-               class="van-field__control"
-               placeholder="Number"
-        >
-      </div>
-    </div>
-  </div>
-  <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Password
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="password"
-               class="van-field__control"
-               placeholder="Password"
-        >
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Text
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               class="van-field__control"
-               readonly
-        >
-      </div>
-    </div>
-  </div>
-  <div class="van-cell van-field van-field--disabled">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Text
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               class="van-field__control"
-               disabled
-        >
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="van-cell van-field">
-    <div class="van-field__left-icon">
-      <i class="van-badge__wrapper van-icon van-icon-smile-o">
-      </i>
-    </div>
-    <div class="van-cell__title van-field__label">
-      <span>
-        Text
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               class="van-field__control"
-               placeholder="Show Icon"
-        >
-        <div class="van-field__right-icon">
-          <i class="van-badge__wrapper van-icon van-icon-warning-o">
-          </i>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="van-cell van-field">
-    <div class="van-field__left-icon">
-      <i class="van-badge__wrapper van-icon van-icon-music-o">
-      </i>
-    </div>
-    <div class="van-cell__title van-field__label">
-      <span>
-        Text
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               class="van-field__control"
-               placeholder="Show Clear Icon"
-        >
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="van-cell van-cell--required van-field van-field--error">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Username
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               class="van-field__control"
-               placeholder="Username"
-        >
-      </div>
-    </div>
-  </div>
-  <div class="van-cell van-cell--required van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Phone
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               class="van-field__control"
-               placeholder="Phone"
-        >
-      </div>
-      <div class="van-field__error-message">
-        Invalid phone
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="van-cell van-cell--center van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        SMS
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               class="van-field__control"
-               placeholder="SMS"
-        >
-        <div class="van-field__button">
-          <button type="button"
-                  class="van-button van-button--primary van-button--small"
-          >
-            <div class="van-button__content">
-              <span class="van-button__text">
-                Send SMS
-              </span>
-            </div>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Text
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               class="van-field__control"
-               placeholder="Format On Change"
-        >
-      </div>
-    </div>
-  </div>
-  <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Text
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               class="van-field__control"
-               placeholder="Format On Blur"
-        >
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="van-cell van-field">
-    <div class="van-cell__value van-cell__value--alone van-field__value">
-      <div class="van-field__body">
-        <textarea rows="1"
-                  class="van-field__control"
-                  placeholder="Message"
-                  style="height: auto;"
-        >
-        </textarea>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Message
-      </span>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <textarea rows="2"
-                  class="van-field__control"
-                  placeholder="Message"
-                  style="height: auto;"
-        >
-        </textarea>
-      </div>
-      <div class="van-field__word-limit">
-        <span class="van-field__word-num">
-          0
+  <div class="van-cell-group van-cell-group--inset">
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Text
         </span>
-        /50
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 placeholder="Text"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Phone
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="tel"
+                 class="van-field__control"
+                 placeholder="Phone"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Digit
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="tel"
+                 inputmode="numeric"
+                 class="van-field__control"
+                 placeholder="Digit"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Number
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 inputmode="decimal"
+                 class="van-field__control"
+                 placeholder="Number"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Password
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="password"
+                 class="van-field__control"
+                 placeholder="Password"
+          >
+        </div>
       </div>
     </div>
   </div>
 </div>
 <div>
-  <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label">
-      <span>
-        Text
-      </span>
+  <div class="van-cell-group van-cell-group--inset">
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Text
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 readonly
+          >
+        </div>
+      </div>
     </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               class="van-field__control van-field__control--right"
-               placeholder="Input Align Right"
-        >
+    <div class="van-cell van-field van-field--disabled">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Text
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 disabled
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell-group van-cell-group--inset">
+    <div class="van-cell van-field">
+      <div class="van-field__left-icon">
+        <i class="van-badge__wrapper van-icon van-icon-smile-o">
+        </i>
+      </div>
+      <div class="van-cell__title van-field__label">
+        <span>
+          Text
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 placeholder="Show Icon"
+          >
+          <div class="van-field__right-icon">
+            <i class="van-badge__wrapper van-icon van-icon-warning-o">
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field">
+      <div class="van-field__left-icon">
+        <i class="van-badge__wrapper van-icon van-icon-music-o">
+        </i>
+      </div>
+      <div class="van-cell__title van-field__label">
+        <span>
+          Text
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 placeholder="Show Clear Icon"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell-group van-cell-group--inset">
+    <div class="van-cell van-cell--required van-field van-field--error">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Username
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 placeholder="Username"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-cell--required van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Phone
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 placeholder="Phone"
+          >
+        </div>
+        <div class="van-field__error-message">
+          Invalid phone
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell-group van-cell-group--inset">
+    <div class="van-cell van-cell--center van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          SMS
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 placeholder="SMS"
+          >
+          <div class="van-field__button">
+            <button type="button"
+                    class="van-button van-button--primary van-button--small"
+            >
+              <div class="van-button__content">
+                <span class="van-button__text">
+                  Send SMS
+                </span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell-group van-cell-group--inset">
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Text
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 placeholder="Format On Change"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Text
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 placeholder="Format On Blur"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell-group van-cell-group--inset">
+    <div class="van-cell van-field">
+      <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-field__body">
+          <textarea rows="1"
+                    class="van-field__control"
+                    placeholder="Message"
+                    style="height: auto;"
+          >
+          </textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell-group van-cell-group--inset">
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Message
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <textarea rows="2"
+                    class="van-field__control"
+                    placeholder="Message"
+                    style="height: auto;"
+          >
+          </textarea>
+        </div>
+        <div class="van-field__word-limit">
+          <span class="van-field__word-num">
+            0
+          </span>
+          /50
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell-group van-cell-group--inset">
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Text
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control van-field__control--right"
+                 placeholder="Input Align Right"
+          >
+        </div>
       </div>
     </div>
   </div>

@@ -1,68 +1,70 @@
 <template>
   <demo-block :title="t('fieldType')">
     <van-form @submit="onSubmit">
-      <van-field name="switch" :label="t('switch')">
-        <template #input>
-          <van-switch v-model="switchChecked" size="20" />
-        </template>
-      </van-field>
+      <van-cell-group inset>
+        <van-field name="switch" :label="t('switch')">
+          <template #input>
+            <van-switch v-model="switchChecked" size="20" />
+          </template>
+        </van-field>
 
-      <van-field name="checkbox" :label="t('checkbox')">
-        <template #input>
-          <van-checkbox v-model="checkbox" shape="square" />
-        </template>
-      </van-field>
+        <van-field name="checkbox" :label="t('checkbox')">
+          <template #input>
+            <van-checkbox v-model="checkbox" shape="square" />
+          </template>
+        </van-field>
 
-      <van-field name="checkboxGroup" :label="t('checkboxGroup')">
-        <template #input>
-          <van-checkbox-group v-model="checkboxGroup" direction="horizontal">
-            <van-checkbox name="1" shape="square">
-              {{ t('checkbox') }} 1
-            </van-checkbox>
-            <van-checkbox name="2" shape="square">
-              {{ t('checkbox') }} 2
-            </van-checkbox>
-          </van-checkbox-group>
-        </template>
-      </van-field>
+        <van-field name="checkboxGroup" :label="t('checkboxGroup')">
+          <template #input>
+            <van-checkbox-group v-model="checkboxGroup" direction="horizontal">
+              <van-checkbox name="1" shape="square">
+                {{ t('checkbox') }} 1
+              </van-checkbox>
+              <van-checkbox name="2" shape="square">
+                {{ t('checkbox') }} 2
+              </van-checkbox>
+            </van-checkbox-group>
+          </template>
+        </van-field>
 
-      <van-field name="radio" :label="t('radio')">
-        <template #input>
-          <van-radio-group v-model="radio" direction="horizontal">
-            <van-radio name="1">{{ t('radio') }} 1</van-radio>
-            <van-radio name="2">{{ t('radio') }} 2</van-radio>
-          </van-radio-group>
-        </template>
-      </van-field>
+        <van-field name="radio" :label="t('radio')">
+          <template #input>
+            <van-radio-group v-model="radio" direction="horizontal">
+              <van-radio name="1">{{ t('radio') }} 1</van-radio>
+              <van-radio name="2">{{ t('radio') }} 2</van-radio>
+            </van-radio-group>
+          </template>
+        </van-field>
 
-      <van-field name="stepper" :label="t('stepper')">
-        <template #input>
-          <van-stepper v-model="stepper" />
-        </template>
-      </van-field>
+        <van-field name="stepper" :label="t('stepper')">
+          <template #input>
+            <van-stepper v-model="stepper" />
+          </template>
+        </van-field>
 
-      <van-field name="rate" :label="t('rate')">
-        <template #input>
-          <van-rate v-model="rate" />
-        </template>
-      </van-field>
+        <van-field name="rate" :label="t('rate')">
+          <template #input>
+            <van-rate v-model="rate" />
+          </template>
+        </van-field>
 
-      <van-field name="slider" :label="t('slider')">
-        <template #input>
-          <van-slider v-model="slider" />
-        </template>
-      </van-field>
+        <van-field name="slider" :label="t('slider')">
+          <template #input>
+            <van-slider v-model="slider" />
+          </template>
+        </van-field>
 
-      <van-field name="uploader" :label="t('uploader')">
-        <template #input>
-          <van-uploader v-model="uploader" max-count="2" />
-        </template>
-      </van-field>
+        <van-field name="uploader" :label="t('uploader')">
+          <template #input>
+            <van-uploader v-model="uploader" max-count="2" />
+          </template>
+        </van-field>
 
-      <field-type-picker />
-      <field-type-datetime-picker />
-      <field-type-area />
-      <field-type-calendar />
+        <field-type-picker />
+        <field-type-datetime-picker />
+        <field-type-area />
+        <field-type-calendar />
+      </van-cell-group>
 
       <div style="margin: 16px 16px 0">
         <van-button round block type="primary" native-type="submit">

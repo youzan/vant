@@ -10,11 +10,12 @@ Register component globally via `app.use`, refer to [Component Registration](#/e
 
 ```js
 import { createApp } from 'vue';
-import { Form, Field } from 'vant';
+import { Form, Field, CellGroup } from 'vant';
 
 const app = createApp();
 app.use(Form);
 app.use(Field);
+app.use(CellGroup);
 ```
 
 ## Usage
@@ -23,21 +24,23 @@ app.use(Field);
 
 ```html
 <van-form @submit="onSubmit">
-  <van-field
-    v-model="state.username"
-    name="Username"
-    label="Username"
-    placeholder="Username"
-    :rules="[{ required: true, message: 'Username is required' }]"
-  />
-  <van-field
-    v-model="state.password"
-    type="password"
-    name="Password"
-    label="Password"
-    placeholder="Password"
-    :rules="[{ required: true, message: 'Password is required' }]"
-  />
+  <van-cell-group inset>
+    <van-field
+      v-model="state.username"
+      name="Username"
+      label="Username"
+      placeholder="Username"
+      :rules="[{ required: true, message: 'Username is required' }]"
+    />
+    <van-field
+      v-model="state.password"
+      type="password"
+      name="Password"
+      label="Password"
+      placeholder="Password"
+      :rules="[{ required: true, message: 'Password is required' }]"
+    />
+  </van-cell-group>
   <div style="margin: 16px;">
     <van-button round block type="primary" native-type="submit">
       Submit
@@ -71,30 +74,32 @@ export default {
 
 ```html
 <van-form @failed="onFailed">
-  <van-field
-    v-model="state.value1"
-    name="pattern"
-    placeholder="Use pattern"
-    :rules="[{ pattern, message: 'Error message' }]"
-  />
-  <van-field
-    v-model="state.value2"
-    name="validator"
-    placeholder="Use validator"
-    :rules="[{ validator, message: 'Error message' }]"
-  />
-  <van-field
-    v-model="state.value3"
-    name="validatorMessage"
-    placeholder="Use validator to return message"
-    :rules="[{ validator: validatorMessage }]"
-  />
-  <van-field
-    v-model="state.value4"
-    name="asyncValidator"
-    placeholder="Use async validator"
-    :rules="[{ validator: asyncValidator, message: 'Error message' }]"
-  />
+  <van-cell-group inset>
+    <van-field
+      v-model="state.value1"
+      name="pattern"
+      placeholder="Use pattern"
+      :rules="[{ pattern, message: 'Error message' }]"
+    />
+    <van-field
+      v-model="state.value2"
+      name="validator"
+      placeholder="Use validator"
+      :rules="[{ validator, message: 'Error message' }]"
+    />
+    <van-field
+      v-model="state.value3"
+      name="validatorMessage"
+      placeholder="Use validator to return message"
+      :rules="[{ validator: validatorMessage }]"
+    />
+    <van-field
+      v-model="state.value4"
+      name="asyncValidator"
+      placeholder="Use async validator"
+      :rules="[{ validator: asyncValidator, message: 'Error message' }]"
+    />
+  </van-cell-group>
   <div style="margin: 16px;">
     <van-button round block type="primary" native-type="submit">
       Submit

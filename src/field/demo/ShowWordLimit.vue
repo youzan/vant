@@ -1,15 +1,17 @@
 <template>
   <demo-block v-if="!isWeapp" :title="t('showWordLimit')">
-    <van-field
-      v-model="value"
-      autosize
-      show-word-limit
-      rows="2"
-      type="textarea"
-      maxlength="50"
-      :label="t('message')"
-      :placeholder="t('placeholder')"
-    />
+    <van-cell-group inset>
+      <van-field
+        v-model="value"
+        autosize
+        show-word-limit
+        rows="2"
+        type="textarea"
+        maxlength="50"
+        :label="t('message')"
+        :placeholder="t('placeholder')"
+      />
+    </van-cell-group>
   </demo-block>
 </template>
 

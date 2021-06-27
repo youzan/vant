@@ -1,18 +1,20 @@
 <template>
   <demo-block :title="t('insertButton')">
-    <van-field
-      v-model="sms"
-      center
-      clearable
-      :label="t('sms')"
-      :placeholder="t('smsPlaceholder')"
-    >
-      <template #button>
-        <van-button size="small" type="primary">
-          {{ t('sendSMS') }}
-        </van-button>
-      </template>
-    </van-field>
+    <van-cell-group inset>
+      <van-field
+        v-model="sms"
+        center
+        clearable
+        :label="t('sms')"
+        :placeholder="t('smsPlaceholder')"
+      >
+        <template #button>
+          <van-button size="small" type="primary">
+            {{ t('sendSMS') }}
+          </van-button>
+        </template>
+      </van-field>
+    </van-cell-group>
   </demo-block>
 </template>
 
