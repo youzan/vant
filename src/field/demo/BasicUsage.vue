@@ -1,6 +1,6 @@
 <template>
   <demo-block :title="t('basicUsage')">
-    <van-cell-group>
+    <van-cell-group inset>
       <van-field
         v-model="value"
         :label="t('label')"

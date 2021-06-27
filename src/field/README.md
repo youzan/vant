@@ -10,10 +10,11 @@ Register component globally via `app.use`, refer to [Component Registration](#/e
 
 ```js
 import { createApp } from 'vue';
-import { Field } from 'vant';
+import { Field, CellGroup } from 'vant';
 
 const app = createApp();
 app.use(Field);
+app.use(CellGroup);
 ```
 
 ## Usage
@@ -23,7 +24,7 @@ app.use(Field);
 The value of field is bound with v-model.
 
 ```html
-<van-cell-group>
+<van-cell-group inset>
   <van-field v-model="value" label="Label" placeholder="Text" />
 </van-cell-group>
 ```
@@ -44,11 +45,13 @@ export default {
 Use `type` prop to custom different type fields.
 
 ```html
-<van-field v-model="state.text" label="Text" />
-<van-field v-model="state.tel" type="tel" label="Phone" />
-<van-field v-model="state.digit" type="digit" label="Digit" />
-<van-field v-model="state.number" type="number" label="Number" />
-<van-field v-model="state.password" type="password" label="Password" />
+<van-cell-group inset>
+  <van-field v-model="state.text" label="Text" />
+  <van-field v-model="state.tel" type="tel" label="Phone" />
+  <van-field v-model="state.digit" type="digit" label="Digit" />
+  <van-field v-model="state.number" type="number" label="Number" />
+  <van-field v-model="state.password" type="password" label="Password" />
+</van-cell-group>
 ```
 
 ```js
@@ -72,7 +75,7 @@ export default {
 ### Disabled
 
 ```html
-<van-cell-group>
+<van-cell-group inset>
   <van-field label="Text" model-value="Input Readonly" readonly />
   <van-field label="Text" model-value="Input Disabled" disabled />
 </van-cell-group>
@@ -81,7 +84,7 @@ export default {
 ### Show Icon
 
 ```html
-<van-cell-group>
+<van-cell-group inset>
   <van-field
     v-model="state.value1"
     label="Text"
@@ -119,7 +122,7 @@ export default {
 Use `error` or `error-message` to show error info.
 
 ```html
-<van-cell-group>
+<van-cell-group inset>
   <van-field
     v-model="username"
     error
@@ -142,11 +145,13 @@ Use `error` or `error-message` to show error info.
 Use button slot to insert button.
 
 ```html
-<van-field v-model="sms" center clearable label="SMS" placeholder="SMS">
-  <template #button>
-    <van-button size="small" type="primary">Send SMS</van-button>
-  </template>
-</van-field>
+<van-cell-group inset>
+  <van-field v-model="sms" center clearable label="SMS" placeholder="SMS">
+    <template #button>
+      <van-button size="small" type="primary">Send SMS</van-button>
+    </template>
+  </van-field>
+</van-cell-group>
 ```
 
 ### Format Value
@@ -154,19 +159,21 @@ Use button slot to insert button.
 Use `formatter` prop to format the input value.
 
 ```html
-<van-field
-  v-model="state.value1"
-  label="Text"
-  :formatter="formatter"
-  placeholder="Format On Change"
-/>
-<van-field
-  v-model="state.value2"
-  label="Text"
-  :formatter="formatter"
-  format-trigger="onBlur"
-  placeholder="Format On Blur"
-/>
+<van-cell-group inset>
+  <van-field
+    v-model="state.value1"
+    label="Text"
+    :formatter="formatter"
+    placeholder="Format On Change"
+  />
+  <van-field
+    v-model="state.value2"
+    label="Text"
+    :formatter="formatter"
+    format-trigger="onBlur"
+    placeholder="Format On Blur"
+  />
+</van-cell-group>
 ```
 
 ```js
@@ -193,29 +200,33 @@ export default {
 Textarea Field can be auto resize when has `autosize` prop.
 
 ```html
-<van-field
-  v-model="message"
-  label="Message"
-  type="textarea"
-  placeholder="Message"
-  rows="1"
-  autosize
-/>
+<van-cell-group inset>
+  <van-field
+    v-model="message"
+    label="Message"
+    type="textarea"
+    placeholder="Message"
+    rows="1"
+    autosize
+  />
+</van-cell-group>
 ```
 
 ### Show Word Limit
 
 ```html
-<van-field
-  v-model="message"
-  rows="2"
-  autosize
-  label="Message"
-  type="textarea"
-  maxlength="50"
-  placeholder="Message"
-  show-word-limit
-/>
+<van-cell-group inset>
+  <van-field
+    v-model="message"
+    rows="2"
+    autosize
+    label="Message"
+    type="textarea"
+    maxlength="50"
+    placeholder="Message"
+    show-word-limit
+  />
+</van-cell-group>
 ```
 
 ### Input Align
@@ -223,12 +234,14 @@ Textarea Field can be auto resize when has `autosize` prop.
 Use `input-align` prop to align the input value.
 
 ```html
-<van-field
-  v-model="value"
-  label="Text"
-  placeholder="Input Align Right"
-  input-align="right"
-/>
+<van-cell-group inset>
+  <van-field
+    v-model="value"
+    label="Text"
+    placeholder="Input Align Right"
+    input-align="right"
+  />
+</van-cell-group>
 ```
 
 ## API
@@ -267,7 +280,7 @@ Use `input-align` prop to align the input value.
 | label-width | Label width | _number \| string_ | `6.2em` |
 | label-align | Label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Input align, can be set to `center` `right` | _string_ | `left` |
-| autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| object_ | `false` |
+| autosize | Textarea auto resize，can accept an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| object_ | `false` |
 | left-icon | Left side icon name | _string_ | - |
 | right-icon | Right side icon name | _string_ | - |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
@@ -275,8 +288,6 @@ Use `input-align` prop to align the input value.
 | autocomplete `v3.0.3` | [autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) attribute of native input element | _string_ | - |
 
 ### Events
-
-Field support all native events of input tag
 
 | Event | Description | Parameters |
 | --- | --- | --- |

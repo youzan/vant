@@ -1,34 +1,36 @@
 <template>
   <demo-block :title="t('customType')">
-    <van-field
-      v-model="text"
-      :label="t('text')"
-      :placeholder="t('textPlaceholder')"
-    />
-    <van-field
-      v-model="phone"
-      type="tel"
-      :label="t('phone')"
-      :placeholder="t('phonePlaceholder')"
-    />
-    <van-field
-      v-model="digit"
-      type="digit"
-      :label="t('digit')"
-      :placeholder="t('digitPlaceholder')"
-    />
-    <van-field
-      v-model="number"
-      type="number"
-      :label="t('number')"
-      :placeholder="t('numberPlaceholder')"
-    />
-    <van-field
-      v-model="password"
-      type="password"
-      :label="t('password')"
-      :placeholder="t('passwordPlaceholder')"
-    />
+    <van-cell-group inset>
+      <van-field
+        v-model="text"
+        :label="t('text')"
+        :placeholder="t('textPlaceholder')"
+      />
+      <van-field
+        v-model="phone"
+        type="tel"
+        :label="t('phone')"
+        :placeholder="t('phonePlaceholder')"
+      />
+      <van-field
+        v-model="digit"
+        type="digit"
+        :label="t('digit')"
+        :placeholder="t('digitPlaceholder')"
+      />
+      <van-field
+        v-model="number"
+        type="number"
+        :label="t('number')"
+        :placeholder="t('numberPlaceholder')"
+      />
+      <van-field
+        v-model="password"
+        type="password"
+        :label="t('password')"
+        :placeholder="t('passwordPlaceholder')"
+      />
+    </van-cell-group>
   </demo-block>
 </template>
 

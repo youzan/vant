@@ -1,11 +1,13 @@
 <template>
   <demo-block :title="t('inputAlign')">
-    <van-field
-      v-model="value"
-      :label="t('text')"
-      :placeholder="t('alignPlaceHolder')"
-      input-align="right"
-    />
+    <van-cell-group inset>
+      <van-field
+        v-model="value"
+        :label="t('text')"
+        :placeholder="t('alignPlaceHolder')"
+        input-align="right"
+      />
+    </van-cell-group>
   </demo-block>
 </template>
 

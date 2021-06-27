@@ -1,18 +1,20 @@
 <template>
   <demo-block v-if="!isWeapp" :title="t('formatValue')">
-    <van-field
-      v-model="value1"
-      :label="t('text')"
-      :formatter="formatter"
-      :placeholder="t('formatOnChange')"
-    />
-    <van-field
-      v-model="value2"
-      :label="t('text')"
-      :formatter="formatter"
-      format-trigger="onBlur"
-      :placeholder="t('formatOnBlur')"
-    />
+    <van-cell-group inset>
+      <van-field
+        v-model="value1"
+        :label="t('text')"
+        :formatter="formatter"
+        :placeholder="t('formatOnChange')"
+      />
+      <van-field
+        v-model="value2"
+        :label="t('text')"
+        :formatter="formatter"
+        format-trigger="onBlur"
+        :placeholder="t('formatOnBlur')"
+      />
+    </van-cell-group>
   </demo-block>
 </template>
 
