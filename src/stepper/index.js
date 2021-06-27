@@ -232,7 +232,7 @@ export default createComponent({
     onBlur(event) {
       const value = this.format(event.target.value);
       event.target.value = value;
-      this.currentValue = value;
+      this.emitChange(value);
       this.$emit('blur', event);
 
       resetScroll();
