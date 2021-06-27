@@ -95,7 +95,7 @@ export default {
 
 ### 异步变更
 
-通过 `before-change` 属性可以在
+通过 `before-change` 属性可以在输入值变化前进行校验和拦截。
 
 ```html
 <van-stepper v-model="value" :before-change="beforeChange" />
