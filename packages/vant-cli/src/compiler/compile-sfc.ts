@@ -9,7 +9,6 @@ import { compileStyle } from './compile-style';
 
 const RENDER_FN = '__vue_render__';
 const STATIC_RENDER_FN = '__vue_staticRenderFns__';
-const EXPORT = 'export default {';
 
 // trim some unused code
 function trim(code: string) {
@@ -21,6 +20,14 @@ function getSfcStylePath(filePath: string, ext: string, index: number) {
   return replaceExt(filePath, `-sfc${number}.${ext}`);
 }
 
+function getExportKeyword(script: string) {
+  const EXPORT_DEFAULT = 'export default {';
+  const EXPORT_WITH_DEFINE_COMPONENT = 'export default defineComponent({';
+  return script.includes(EXPORT_WITH_DEFINE_COMPONENT)
+    ? EXPORT_WITH_DEFINE_COMPONENT
+    : EXPORT_DEFAULT;
+}
+
 // inject render fn to script
 function injectRender(script: string, render: string) {
   script = trim(script);
@@ -29,14 +36,20 @@ function injectRender(script: string, render: string) {
     .replace('var render', `var ${RENDER_FN}`)
     .replace('var staticRenderFns', `var ${STATIC_RENDER_FN}`);
 
+  const exportKeyword = getExportKeyword(script);
+
   return script.replace(
-    EXPORT,
-    `${render}\n${EXPORT}\n  render: ${RENDER_FN},\n\n  staticRenderFns: ${STATIC_RENDER_FN},\n`
+    exportKeyword,
+    `${render}\n${exportKeyword}\n  render: ${RENDER_FN},\n\n  staticRenderFns: ${STATIC_RENDER_FN},\n`
   );
 }
 
 function injectScopeId(script: string, scopeId: string) {
-  return script.replace(EXPORT, `${EXPORT}\n  _scopeId: '${scopeId}',\n\n`);
+  const exportKeyword = getExportKeyword(script);
+  return script.replace(
+    exportKeyword,
+    `${exportKeyword}\n  _scopeId: '${scopeId}',\n\n`
+  );
 }
 
 function injectStyle(
@@ -45,6 +58,7 @@ function injectStyle(
   filePath: string
 ) {
   if (styles.length) {
+    const exportKeyword = getExportKeyword(script);
     const imports = styles
       .map((style, index) => {
         const { base } = parse(getSfcStylePath(filePath, 'css', index));
@@ -52,7 +66,7 @@ function injectStyle(
       })
       .join('\n');
 
-    return script.replace(EXPORT, `${imports}\n\n${EXPORT}`);
+    return script.replace(exportKeyword, `${imports}\n\n${exportKeyword}`);
   }
 
   return script;
