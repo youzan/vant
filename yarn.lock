@@ -1884,9 +1884,9 @@
   integrity sha1-uaz4qATA1g9yG2kAaAKZQisAaxo=
 
 "@vant/cli@^3.10.9":
-  version "3.10.9"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-3.10.9.tgz#25d3459c37494faf907756939a2a5b8a34cb0ce6"
-  integrity sha512-id8EhYEpA+VM87F4h0TZg0Z8Oqm/bPKSd+SWZdjfxCSLtb5dRAgAOilnB/+pAbf6Kjr1ph+Msc9oTDDt0k7/qg==
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-3.11.0.tgz#95812fd72f15c844b2a81f974e85901219a599ec"
+  integrity sha512-MERBUKZlJvbQT8JJVKkoxL0z532uXHnT5lfs9puszi9uvxLV042PuTm2eF/CAz5mwV5jEZyTapMTZBpmOfLuUA==
   dependencies:
     "@babel/core" "^7.14.5"
     "@babel/preset-env" "^7.14.5"
