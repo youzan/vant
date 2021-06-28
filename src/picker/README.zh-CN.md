@@ -422,6 +422,7 @@ export default {
 | --van-picker-action-font-size        | _var(--van-font-size-md)_    | -    |
 | --van-picker-confirm-action-color    | _var(--van-text-link-color)_ | -    |
 | --van-picker-cancel-action-color     | _var(--van-gary-6)_          | -    |
+| --van-picker-option-padding          | _0 var(--van-padding-base)_  | -    |
 | --van-picker-option-font-size        | _var(--van-font-size-lg)_    | -    |
 | --van-picker-option-text-color       | _var(--van-black)_           | -    |
 | --van-picker-option-disabled-opacity | _0.3_                        | -    |
