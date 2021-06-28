@@ -10,6 +10,7 @@
   --van-picker-confirm-action-color: @picker-confirm-action-color;
   --van-picker-cancel-action-color: @picker-cancel-action-color;
   --van-picker-option-font-size: @picker-option-font-size;
+  --van-picker-option-padding: @picker-option-padding;
   --van-picker-option-text-color: @picker-option-text-color;
   --van-picker-option-disabled-opacity: @picker-option-disabled-opacity;
   --van-picker-loading-icon-color: @picker-loading-icon-color;
@@ -121,7 +122,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0 var(--van-padding-base);
+      padding: var(--van-picker-option-padding);
       color: var(--van-picker-option-text-color);
 
       &--disabled {
