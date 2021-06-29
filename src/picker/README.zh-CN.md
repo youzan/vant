@@ -359,7 +359,7 @@ export default {
 
 ### Events
 
-当选择器有多列时，事件回调参数会返回数组
+当选择器有多列时，事件回调参数会返回数组。
 
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
@@ -385,7 +385,7 @@ export default {
 
 | 键名         | 说明                       | 类型                        |
 | ------------ | -------------------------- | --------------------------- |
-| values       | 列中对应的备选值           | _string[]_                  |
+| values       | 列中对应的备选值           | _Array<string \| number>_   |
 | defaultIndex | 初始选中项的索引，默认为 0 | _number_                    |
 | className    | 为对应列添加额外的类名     | _string \| Array \| object_ |
 | children     | 级联选项                   | _Column_                    |
