@@ -95,7 +95,7 @@ export default {
 ### Step Slots
 
 | 名称 | 说明 |
-| --- | --- | --- | --- |
+| --- | --- |
 | active-icon | 自定义激活状态图标 |
 | inactive-icon | 自定义未激活状态图标 |
 | finish-icon `v3.0.7` | 自定义已完成步骤对应的底部图标，优先级高于 `inactive-icon` | _string_ | - |
@@ -112,7 +112,7 @@ export default {
 
 | 名称                                  | 默认值                     | 描述 |
 | ------------------------------------- | -------------------------- | ---- |
-| --van-step-text-color                 | _var(--van-gary-6)_        | -    |
+| --van-step-text-color                 | _var(--van-gray-6)_        | -    |
 | --van-step-active-color               | _var(--van-success-color)_ | -    |
 | --van-step-process-text-color         | _var(--van-text-color)_    | -    |
 | --van-step-font-size                  | _var(--van-font-size-md)_  | -    |
@@ -121,6 +121,6 @@ export default {
 | --van-step-finish-text-color          | _var(--van-text-color)_    | -    |
 | --van-step-icon-size                  | _12px_                     | -    |
 | --van-step-circle-size                | _5px_                      | -    |
-| --van-step-circle-color               | _var(--van-gary-6)_        | -    |
+| --van-step-circle-color               | _var(--van-gray-6)_        | -    |
 | --van-step-horizontal-title-font-size | _var(--van-font-size-sm)_  | -    |
 | --van-steps-background-color          | _var(--van-white)_         | -    |

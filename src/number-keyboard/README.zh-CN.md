@@ -217,12 +217,12 @@ export default {
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-number-keyboard-background-color | _var(--van-gary-2)_ | - |
+| --van-number-keyboard-background-color | _var(--van-gray-2)_ | - |
 | --van-number-keyboard-key-height | _48px_ | - |
 | --van-number-keyboard-key-font-size | _28px_ | - |
-| --van-number-keyboard-key-active-color | _var(--van-gary-3)_ | - |
+| --van-number-keyboard-key-active-color | _var(--van-gray-3)_ | - |
 | --van-number-keyboard-delete-font-size | _var(--van-font-size-lg)_ | - |
-| --van-number-keyboard-title-color | _var(--van-gary-7)_ | - |
+| --van-number-keyboard-title-color | _var(--van-gray-7)_ | - |
 | --van-number-keyboard-title-height | _34px_ | - |
 | --van-number-keyboard-title-font-size | _var(--van-font-size-lg)_ | - |
 | --van-number-keyboard-close-padding | _0 var(--van-padding-md)_ | - |

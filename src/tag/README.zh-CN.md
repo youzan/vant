@@ -150,5 +150,5 @@ export default {
 | --van-tag-primary-color | _var(--van-primary-color)_ | - |
 | --van-tag-success-color | _var(--van-success-color)_ | - |
 | --van-tag-warning-color | _var(--van-warning-color)_ | - |
-| --van-tag-default-color | _var(--van-gary-6)_ | - |
+| --van-tag-default-color | _var(--van-gray-6)_ | - |
 | --van-tag-plain-background-color | _var(--van-white)_ | - |

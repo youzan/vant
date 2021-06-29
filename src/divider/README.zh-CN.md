@@ -86,7 +86,7 @@ app.use(Divider);
 | 名称                              | 默认值                    | 描述 |
 | --------------------------------- | ------------------------- | ---- |
 | --van-divider-margin              | _var(--van-padding-md) 0_ | -    |
-| --van-divider-text-color          | _var(--van-gary-6)_       | -    |
+| --van-divider-text-color          | _var(--van-gray-6)_       | -    |
 | --van-divider-font-size           | _var(--van-font-size-md)_ | -    |
 | --van-divider-line-height         | _24px_                    | -    |
 | --van-divider-border-color        | _var(--van-border-color)_ | -    |

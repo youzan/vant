@@ -161,7 +161,7 @@ export default {
 ### Radio Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | name | Radio name | _any_ | - |
 | shape | Can be set to `square` | _string_ | `round` |
 | disabled | Whether to disable radio | _boolean_ | `false` |
@@ -173,7 +173,7 @@ export default {
 ### RadioGroup Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | v-model | Name of checked radio | _any_ | - |
 | disabled | Disable all radios | _boolean_ | `false` |
 | direction | Direction, can be set to `horizontal` | _string_ | `vertical` |
@@ -206,11 +206,11 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default Value | Description |
 | --- | --- | --- |
 | --van-radio-size | _20px_ | - |
-| --van-radio-border-color | _var(--van-gary-5)_ | - |
+| --van-radio-border-color | _var(--van-gray-5)_ | - |
 | --van-radio-transition-duration | _var(--van-animation-duration-fast)_ | - |
 | --van-radio-label-margin | _var(--van-padding-xs)_ | - |
 | --van-radio-label-color | _var(--van-text-color)_ | - |
 | --van-radio-checked-icon-color | _var(--van-primary-color)_ | - |
-| --van-radio-disabled-icon-color | _var(--van-gary-5)_ | - |
-| --van-radio-disabled-label-color | _var(--van-gary-5)_ | - |
+| --van-radio-disabled-icon-color | _var(--van-gray-5)_ | - |
+| --van-radio-disabled-label-color | _var(--van-gray-5)_ | - |
 | --van-radio-disabled-background-color | _var(--van-border-color)_ | - |
