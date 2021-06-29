@@ -12,6 +12,7 @@
   --van-cascader-tabs-height: @cascader-tabs-height;
   --van-cascader-active-color: @cascader-active-color;
   --van-cascader-options-height: @cascader-options-height;
+  --van-cascader-option-disabled-color: @cascader-option-disabled-color;
   --van-cascader-tab-color: @cascader-tab-color;
   --van-cascader-unselected-tab-color: @cascader-unselected-tab-color;
 }
@@ -81,6 +82,15 @@
     &--selected {
       color: var(--van-cascader-active-color);
       font-weight: var(--van-font-weight-bold);
+    }
+
+    &--disabled {
+      color: var(--van-cascader-option-disabled-color);
+      cursor: not-allowed;
+
+      &:active {
+        background-color: transparent;
+      }
     }
   }
 

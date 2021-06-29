@@ -12,6 +12,7 @@ export type CascaderOption = {
   text?: string;
   value?: string | number;
   color?: string;
+  disabled?: boolean;
   children?: CascaderOption[];
   className?: unknown;
   // for custom filed names
@@ -144,6 +145,10 @@ export default defineComponent({
     };
 
     const onSelect = (option: CascaderOption, tabIndex: number) => {
+      if (option.disabled) {
+        return;
+      }
+
       state.tabs[tabIndex].selectedOption = option;
 
       if (state.tabs.length > tabIndex + 1) {
@@ -218,7 +223,13 @@ export default defineComponent({
 
         return (
           <li
-            class={[bem('option', { selected: isSelected }), option.className]}
+            class={[
+              bem('option', {
+                selected: isSelected,
+                disabled: option.disabled,
+              }),
+              option.className,
+            ]}
             style={{ color }}
             onClick={() => onSelect(option, tabIndex)}
           >
