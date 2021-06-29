@@ -360,7 +360,7 @@ Picker events will pass different parameters according to the columns are single
 
 | Key          | Description               | Type                        |
 | ------------ | ------------------------- | --------------------------- |
-| values       | Value of column           | _string[]_                  |
+| values       | Value of column           | _Array<string \| number>_   |
 | defaultIndex | Default value index       | _number_                    |
 | className    | ClassName for this column | _string \| Array \| object_ |
 | children     | Cascade children          | _Column_                    |

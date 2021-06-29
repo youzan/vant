@@ -37,13 +37,13 @@ function getElementTranslateY(element: Element) {
 export const PICKER_KEY = Symbol(name);
 
 export type PickerObjectOption = {
-  text?: string;
+  text?: string | number;
   disabled?: boolean;
   // for custom filed names
   [key: string]: any;
 };
 
-export type PickerOption = string | PickerObjectOption;
+export type PickerOption = string | number | PickerObjectOption;
 
 export type PickerObjectColumn = {
   values?: PickerOption[];

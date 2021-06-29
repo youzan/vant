@@ -94,7 +94,11 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const formattedColumns = ref<PickerObjectColumn[]>([]);
 
-    const { text: textKey, values: valuesKey, children: childrenKey } = extend(
+    const {
+      text: textKey,
+      values: valuesKey,
+      children: childrenKey,
+    } = extend(
       {
         // compatible with valueKey prop
         text: props.valueKey,
@@ -104,9 +108,8 @@ export default defineComponent({
       props.columnsFieldNames
     );
 
-    const { children, linkChildren } = useChildren<ComponentInstance>(
-      PICKER_KEY
-    );
+    const { children, linkChildren } =
+      useChildren<ComponentInstance>(PICKER_KEY);
 
     linkChildren();
 
@@ -114,7 +117,7 @@ export default defineComponent({
 
     const dataType = computed(() => {
       const firstColumn = props.columns[0];
-      if (firstColumn && typeof firstColumn !== 'string') {
+      if (typeof firstColumn === 'object') {
         if (childrenKey in firstColumn) {
           return 'cascade';
         }
