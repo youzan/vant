@@ -233,6 +233,7 @@ export default {
 | value              | 选项对应的值（必填）     | _string \| number_          |
 | color `v3.1.0`     | 选项文字颜色             | _string_                    |
 | children           | 子选项列表               | _Option[]_                  |
+| disabled `v3.1.2`  | 是否禁用选项             | _boolean_                   |
 | className `v3.1.0` | 为对应列添加额外的 class | _string \| Array \| object_ |
 
 ### Events
@@ -267,5 +268,6 @@ export default {
 | --van-cascader-tabs-height             | _48px_                    | -    |
 | --van-cascader-active-color            | _var(--van-danger-color)_ | -    |
 | --van-cascader-options-height          | _384px_                   | -    |
+| --van-cascader-option-disabled-color   | _van(--van-gray-5)_       | -    |
 | --van-cascader-tab-color               | _var(--van-text-color)_   | -    |
 | --van-cascader-unselected-tab-color    | _var(--van-gary-6)_       | -    |

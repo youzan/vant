@@ -215,13 +215,14 @@ export default {
 
 ### Data Structure of Option
 
-| Key                | Description              | Type                        |
-| ------------------ | ------------------------ | --------------------------- |
-| text               | Option text              | _string_                    |
-| value              | Option value             | _string \| number_          |
-| color `v3.1.0`     | Text color               | _string_                    |
-| children           | Cascade children         | _Option[]_                  |
-| className `v3.1.0` | className for the option | _string \| Array \| object_ |
+| Key                | Description               | Type                        |
+| ------------------ | ------------------------- | --------------------------- |
+| text               | Option text               | _string_                    |
+| value              | Option value              | _string \| number_          |
+| color `v3.1.0`     | Text color                | _string_                    |
+| children           | Cascade children          | _Option[]_                  |
+| disabled `v3.1.2`  | Whether to disable option | _boolean_                   |
+| className `v3.1.0` | className for the option  | _string \| Array \| object_ |
 
 ### Events
 
