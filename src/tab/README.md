@@ -233,7 +233,7 @@ export default {
 ### Tabs Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model:active | Index of active tab | _number \| string_ | `0` |
 | type | Can be set to `line` `card` | _string_ | `line` |
 | color | Tab color | _string_ | `#ee0a24` |
@@ -309,9 +309,9 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name                            | Default Value               | Description |
 | ------------------------------- | --------------------------- | ----------- |
-| --van-tab-text-color            | _var(--van-gary-7)_         | -           |
+| --van-tab-text-color            | _var(--van-gray-7)_         | -           |
 | --van-tab-active-text-color     | _var(--van-text-color)_     | -           |
-| --van-tab-disabled-text-color   | _var(--van-gary-5)_         | -           |
+| --van-tab-disabled-text-color   | _var(--van-gray-5)_         | -           |
 | --van-tab-font-size             | _var(--van-font-size-md)_   | -           |
 | --van-tab-line-height           | _var(--van-line-height-md)_ | -           |
 | --van-tabs-default-color        | _var(--van-danger-color)_   | -           |

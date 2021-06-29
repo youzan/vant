@@ -281,10 +281,10 @@ export default {
 | --van-popover-action-icon-size | _20px_ | - |
 | --van-popover-light-text-color | _var(--van-text-color)_ | - |
 | --van-popover-light-background-color | _var(--van-white)_ | - |
-| --van-popover-light-action-disabled-text-color | _var(--van-gary-5)_ | - |
+| --van-popover-light-action-disabled-text-color | _var(--van-gray-5)_ | - |
 | --van-popover-dark-text-color | _var(--van-white)_ | - |
 | --van-popover-dark-background-color | _#4a4a4a_ | - |
-| --van-popover-dark-action-disabled-text-color | _var(--van-gary-6)_ | - |
+| --van-popover-dark-action-disabled-text-color | _var(--van-gray-6)_ | - |
 
 ## 常见问题
 

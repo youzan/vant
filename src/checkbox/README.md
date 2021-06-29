@@ -246,7 +246,7 @@ export default {
 ### Checkbox Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model | Check status | _boolean_ | `false` |
 | name | Checkbox name | _any_ | - |
 | shape | Can be set to `square` | _string_ | `round` |
@@ -260,7 +260,7 @@ export default {
 ### CheckboxGroup Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model | Names of all checked checkboxes | _any[]_ | - |
 | disabled | Whether to disable all checkboxes | _boolean_ | `false` |
 | max | Maximum amount of checked options | _number \| string_ | `0`(Unlimited) |
@@ -334,11 +334,11 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default Value | Description |
 | --- | --- | --- |
 | --van-checkbox-size | _20px_ | - |
-| --van-checkbox-border-color | _var(--van-gary-5)_ | - |
+| --van-checkbox-border-color | _var(--van-gray-5)_ | - |
 | --van-checkbox-transition-duration | _var(--van-animation-duration-fast)_ | - |
 | --van-checkbox-label-margin | _var(--van-padding-xs)_ | - |
 | --van-checkbox-label-color | _var(--van-text-color)_ | - |
 | --van-checkbox-checked-icon-color | _var(--van-primary-color)_ | - |
-| --van-checkbox-disabled-icon-color | _var(--van-gary-5)_ | - |
-| --van-checkbox-disabled-label-color | _var(--van-gary-5)_ | - |
+| --van-checkbox-disabled-icon-color | _var(--van-gray-5)_ | - |
+| --van-checkbox-disabled-label-color | _var(--van-gray-5)_ | - |
 | --van-checkbox-disabled-background-color | _var(--van-border-color)_ | - |

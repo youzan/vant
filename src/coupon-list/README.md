@@ -102,7 +102,7 @@ export default {
 ### CouponList Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | v-model | Current exchange code | _string_ | - |
 | chosen-coupon | Index of chosen coupon | _number_ | `-1` |
 | coupons | Coupon list | _Coupon[]_ | `[]` |
@@ -167,7 +167,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-coupon-amount-font-size | _30px_ | - |
 | --van-coupon-currency-font-size | _40%_ | - |
 | --van-coupon-name-font-size | _var(--van-font-size-md)_ | - |
-| --van-coupon-disabled-text-color | _var(--van-gary-6)_ | - |
+| --van-coupon-disabled-text-color | _var(--van-gray-6)_ | - |
 | --van-coupon-description-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
 | --van-coupon-description-border-color | _var(--van-border-color)_ | - |
 | --van-coupon-corner-checkbox-icon-color | _var(--van-danger-color)_ | - |
@@ -176,7 +176,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-coupon-list-exchange-button-height | _32px_ | - |
 | --van-coupon-list-close-button-height | _40px_ | - |
 | --van-coupon-list-empty-image-size | _200px_ | - |
-| --van-coupon-list-empty-tip-color | _var(--van-gary-6)_ | - |
+| --van-coupon-list-empty-tip-color | _var(--van-gray-6)_ | - |
 | --van-coupon-list-empty-tip-font-size | _var(--van-font-size-md)_ | - |
 | --van-coupon-list-empty-tip-line-height | _var(--van-line-height-md)_ | - |
 | --van-coupon-cell-selected-text-color | _var(--van-text-color)_ | - |

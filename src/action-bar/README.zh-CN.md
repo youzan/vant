@@ -113,7 +113,7 @@ export default {
 ### ActionBarButton Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | text | 按钮文字 | _string_ | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | _string_ | `default` |
 | color | 按钮颜色，支持传入 `linear-gradient` 渐变色 | _string_ | - |
@@ -151,7 +151,7 @@ export default {
 | --van-action-bar-icon-size             | _18px_                       | -    |
 | --van-action-bar-icon-font-size        | _var(--van-font-size-xs)_    | -    |
 | --van-action-bar-icon-active-color     | _var(--van-active-color)_    | -    |
-| --van-action-bar-icon-text-color       | _var(--van-gary-7)_          | -    |
+| --van-action-bar-icon-text-color       | _var(--van-gray-7)_          | -    |
 | --van-action-bar-icon-background-color | _var(--van-white)_           | -    |
 | --van-action-bar-button-height         | _40px_                       | -    |
 | --van-action-bar-button-warning-color  | _var(--van-gradient-orange)_ | -    |

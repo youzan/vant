@@ -162,6 +162,6 @@ The component provides the following CSS variables, which can be used to customi
 | ------------------------------ | ------------------------- | ----------- |
 | --van-rate-icon-size           | _20px_                    | -           |
 | --van-rate-icon-gutter         | _var(--van-padding-base)_ | -           |
-| --van-rate-icon-void-color     | _var(--van-gary-5)_       | -           |
+| --van-rate-icon-void-color     | _var(--van-gray-5)_       | -           |
 | --van-rate-icon-full-color     | _var(--van-danger-color)_ | -           |
-| --van-rate-icon-disabled-color | _var(--van-gary-5)_       | -           |
+| --van-rate-icon-disabled-color | _var(--van-gray-5)_       | -           |

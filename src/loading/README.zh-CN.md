@@ -101,8 +101,8 @@ app.use(Loading);
 
 | 名称                                     | 默认值                    | 描述 |
 | ---------------------------------------- | ------------------------- | ---- |
-| --van-loading-text-color                 | _var(--van-gary-6)_       | -    |
+| --van-loading-text-color                 | _var(--van-gray-6)_       | -    |
 | --van-loading-text-font-size             | _var(--van-font-size-md)_ | -    |
-| --van-loading-spinner-color              | _var(--van-gary-5)_       | -    |
+| --van-loading-spinner-color              | _var(--van-gray-5)_       | -    |
 | --van-loading-spinner-size               | _30px_                    | -    |
 | --van-loading-spinner-animation-duration | _0.8s_                    | -    |

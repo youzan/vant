@@ -152,5 +152,5 @@ The component provides the following CSS variables, which can be used to customi
 | --van-grid-item-content-background-color | _var(--van-white)_ | - |
 | --van-grid-item-content-active-color | _var(--van-active-color)_ | - |
 | --van-grid-item-icon-size | _28px_ | - |
-| --van-grid-item-text-color | _var(--van-gary-7)_ | - |
+| --van-grid-item-text-color | _var(--van-gray-7)_ | - |
 | --van-grid-item-text-font-size | _var(--van-font-size-sm)_ | - |

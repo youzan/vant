@@ -85,7 +85,7 @@ The component provides the following CSS variables, which can be used to customi
 | --- | --- | --- |
 | --van-progress-height | _4px_ | - |
 | --van-progress-color | _var(--van-primary-color)_ | - |
-| --van-progress-background-color | _var(--van-gary-3)_ | - |
+| --van-progress-background-color | _var(--van-gray-3)_ | - |
 | --van-progress-pivot-padding | _0 5px_ | - |
 | --van-progress-pivot-text-color | _var(--van-white)_ | - |
 | --van-progress-pivot-font-size | _var(--van-font-size-xs)_ | - |

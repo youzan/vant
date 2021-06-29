@@ -101,7 +101,7 @@ Empty 组件内置了多种占位图片类型，可以在不同业务场景下�
 | --van-empty-image-size              | _160px_                     | -    |
 | --van-empty-description-margin-top  | _var(--van-padding-md)_     | -    |
 | --van-empty-description-padding     | _0 60px_                    | -    |
-| --van-empty-description-color       | _var(--van-gary-6)_         | -    |
+| --van-empty-description-color       | _var(--van-gray-6)_         | -    |
 | --van-empty-description-font-size   | _var(--van-font-size-md)_   | -    |
 | --van-empty-description-line-height | _var(--van-line-height-md)_ | -    |
 | --van-empty-bottom-margin-top       | _24px_                      | -    |

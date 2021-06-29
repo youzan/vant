@@ -316,9 +316,9 @@ export default {
 
 | 名称                            | 默认值                      | 描述 |
 | ------------------------------- | --------------------------- | ---- |
-| --van-tab-text-color            | _var(--van-gary-7)_         | -    |
+| --van-tab-text-color            | _var(--van-gray-7)_         | -    |
 | --van-tab-active-text-color     | _var(--van-text-color)_     | -    |
-| --van-tab-disabled-text-color   | _var(--van-gary-5)_         | -    |
+| --van-tab-disabled-text-color   | _var(--van-gray-5)_         | -    |
 | --van-tab-font-size             | _var(--van-font-size-md)_   | -    |
 | --van-tab-line-height           | _var(--van-line-height-md)_ | -    |
 | --van-tabs-default-color        | _var(--van-danger-color)_   | -    |
