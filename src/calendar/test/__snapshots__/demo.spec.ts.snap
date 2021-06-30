@@ -190,34 +190,24 @@ exports[`should render demo and match snapshot 1`] = `
         <div role="grid"
              class="van-calendar__days"
         >
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
         </div>
@@ -229,34 +219,24 @@ exports[`should render demo and match snapshot 1`] = `
         <div role="grid"
              class="van-calendar__days"
         >
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
         </div>
@@ -268,34 +248,24 @@ exports[`should render demo and match snapshot 1`] = `
         <div role="grid"
              class="van-calendar__days"
         >
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
-          <div role="gridcell"
+          <div class="van-calendar__day"
                style="width: 100%;"
-               class="van-calendar__day van-calendar__day--placeholder"
-               tabindex="-1"
           >
           </div>
         </div>
