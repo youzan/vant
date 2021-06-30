@@ -136,6 +136,11 @@ export default defineComponent({
 
     return () => {
       const { type, className } = props.item;
+
+      if (type === 'placeholder') {
+        return <div class={bem('day')} style={style.value} />;
+      }
+
       return (
         <div
           role="gridcell"
