@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs-extra';
 import { consola } from '../common/logger';
 
-const commitRE = /^(revert: )?(fix|feat|docs|perf|test|types|style|build|chore|refactor|breaking change)(\(.+\))?: .{1,50}/;
+const commitRE = /^(revert: )?(fix|feat|docs|perf|test|types|style|build|chore|release|refactor|breaking change)(\(.+\))?: .{1,50}/;
 const mergeRE = /Merge /;
 
 export function commitLint(gitParams: string) {
@@ -28,6 +28,7 @@ Allowed Types:
 - types
 - build
 - chore
+- release
 - refactor
 - breaking change
 - Merge branch 'foo' into 'bar'
