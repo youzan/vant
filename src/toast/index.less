@@ -38,7 +38,8 @@
   // allow newline character
   white-space: pre-wrap;
   text-align: center;
-  word-wrap: break-word;
+  // https://github.com/youzan/vant/issues/8959
+  word-break: break-all;
   background-color: var(--van-toast-background-color);
   border-radius: var(--van-toast-border-radius);
 
