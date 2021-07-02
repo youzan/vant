@@ -147,11 +147,14 @@ An array that contains selected area objects.
 
 ### Slots
 
-| Name           | Description                  |
-| -------------- | ---------------------------- |
-| title          | Custom title                 |
-| columns-top    | Custom content above columns |
-| columns-bottom | Custom content below columns |
+| Name            | Description                  | SlotProps |
+| --------------- | ---------------------------- | --------- |
+| toolbar `3.1.2` | Custom toolbar content       | -         |
+| title           | Custom title                 | -         |
+| confirm `3.1.2` | Custom confirm button text   | -         |
+| cancel `3.1.2`  | Custom cancel button text    | -         |
+| columns-top     | Custom content above columns | -         |
+| columns-bottom  | Custom content below columns | -         |
 
 ### Methods
 

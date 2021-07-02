@@ -24,6 +24,24 @@ import { Picker } from '../picker';
 const [name, bem] = createNamespace('area');
 
 const EMPTY_CODE = '000000';
+const INHERIT_SLOTS = [
+  'title',
+  'cancel',
+  'confirm',
+  'toolbar',
+  'columns-top',
+  'columns-bottom',
+] as const;
+const INHERIT_PROPS = [
+  'title',
+  'loading',
+  'readonly',
+  'itemHeight',
+  'swipeDuration',
+  'visibleItemCount',
+  'cancelButtonText',
+  'confirmButtonText',
+] as const;
 
 function isOverseaCode(code: string) {
   return code[0] === '9';
@@ -305,23 +323,14 @@ export default defineComponent({
 
       return (
         <Picker
-          v-slots={pick(slots, ['title', 'columns-top', 'columns-bottom'])}
+          v-slots={pick(slots, INHERIT_SLOTS)}
           ref={pickerRef}
           class={bem()}
           columns={columns}
           valueKey="name"
           onChange={onChange}
           onConfirm={onConfirm}
-          {...pick(props, [
-            'title',
-            'loading',
-            'readonly',
-            'itemHeight',
-            'swipeDuration',
-            'visibleItemCount',
-            'cancelButtonText',
-            'confirmButtonText',
-          ])}
+          {...pick(props, INHERIT_PROPS)}
         />
       );
     };
