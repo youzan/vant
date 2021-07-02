@@ -134,8 +134,17 @@ export default defineComponent({
         }
       };
 
+      const renderIcon = () => {
+        if (active) {
+          return (
+            <Icon class={bem('icon')} color={activeColor} name="success" />
+          );
+        }
+      };
+
       return (
         <Cell
+          v-slots={{ value: renderIcon }}
           clickable
           key={option.value}
           icon={option.icon}
@@ -143,11 +152,7 @@ export default defineComponent({
           class={bem('option', { active })}
           style={{ color: active ? activeColor : '' }}
           onClick={onClick}
-        >
-          {active && (
-            <Icon class={bem('icon')} color={activeColor} name="success" />
-          )}
-        </Cell>
+        ></Cell>
       );
     };
 
