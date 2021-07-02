@@ -92,6 +92,12 @@ export default defineComponent({
   emits: ['confirm', 'cancel', 'change'],
 
   setup(props, { emit, slots }) {
+    if (slots.default) {
+      console.warn(
+        '[Vant] Picker: "default" slot is deprecated, please use "toolbar" slot instead.'
+      );
+    }
+
     const formattedColumns = ref<PickerObjectColumn[]>([]);
 
     const { text: textKey, values: valuesKey, children: childrenKey } = extend(

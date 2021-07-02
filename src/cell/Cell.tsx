@@ -33,7 +33,7 @@ export const cellProps = {
   valueClass: unknownProp,
   labelClass: unknownProp,
   titleClass: unknownProp,
-  titleStyle: null as unknown as PropType<string | CSSProperties>,
+  titleStyle: (null as unknown) as PropType<string | CSSProperties>,
   arrowDirection: String as PropType<CellArrowDirection>,
   clickable: {
     type: Boolean as PropType<boolean | null>,
@@ -47,6 +47,14 @@ export default defineComponent({
   props: extend({}, cellProps, routeProps),
 
   setup(props, { slots }) {
+    if (process.env.NODE_ENV !== 'production') {
+      if (slots.default) {
+        console.warn(
+          '[Vant] Cell: "default" slot is deprecated, please use "value" slot instead.'
+        );
+      }
+    }
+
     const route = useRoute();
 
     const renderLabel = () => {
