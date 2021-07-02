@@ -61,8 +61,8 @@
   "devDependencies": {
     "@vant/cli": "^3.10.9",
     "@vant/area-data": "^1.1.1",
-    "@vue/compiler-sfc": "^3.1.1",
-    "vue": "^3.1.1"
+    "@vue/compiler-sfc": "^3.1.3",
+    "vue": "^3.1.3"
   },
   "sideEffects": [
     "es/**/style/*",
