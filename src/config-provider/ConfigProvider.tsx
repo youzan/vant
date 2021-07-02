@@ -23,6 +23,10 @@ export default defineComponent({
 
   props: {
     themeVars: Object as PropType<Record<string, string | number>>,
+    tag: {
+      type: String as PropType<keyof HTMLElementTagNameMap>,
+      default: 'div',
+    },
   },
 
   setup(props, { slots }) {
@@ -33,9 +37,9 @@ export default defineComponent({
     });
 
     return () => (
-      <div class={bem()} style={style.value}>
+      <props.tag class={bem()} style={style.value}>
         {slots.default?.()}
-      </div>
+      </props.tag>
     );
   },
 });

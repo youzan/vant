@@ -1,0 +1,6 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render tag prop correctly 1`] = `
+<section class="van-config-provider">
+</section>
+`;
