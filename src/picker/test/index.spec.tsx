@@ -141,7 +141,7 @@ test('column watch default index', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('render title slot', () => {
+test('should render title slot correctly', () => {
   const wrapper = mount(Picker, {
     slots: {
       title: () => 'Custom title',
@@ -151,7 +151,16 @@ test('render title slot', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('render confirm/cancel slot', () => {
+test('should render toolbar slot correctly', () => {
+  const wrapper = mount(Picker, {
+    slots: {
+      toolbar: () => 'Custom toolbar',
+    },
+  });
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should render confirm/cancel slot correctly', () => {
   const wrapper = mount(Picker, {
     slots: {
       confirm: () => 'Custom Confirm',

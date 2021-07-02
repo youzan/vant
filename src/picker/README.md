@@ -346,15 +346,15 @@ Picker events will pass different parameters according to the columns are single
 
 ### Slots
 
-| Name           | Description                  | SlotProps                  |
-| -------------- | ---------------------------- | -------------------------- |
-| default        | Custom toolbar content       | -                          |
-| title          | Custom title                 | -                          |
-| confirm        | Custom confirm button text   | -                          |
-| cancel         | Custom cancel button text    | -                          |
-| option         | Custom option content        | _option: string \| object_ |
-| columns-top    | Custom content above columns | -                          |
-| columns-bottom | Custom content below columns | -                          |
+| Name            | Description                  | SlotProps                  |
+| --------------- | ---------------------------- | -------------------------- |
+| toolbar `3.1.2` | Custom toolbar content       | -                          |
+| title           | Custom title                 | -                          |
+| confirm         | Custom confirm button text   | -                          |
+| cancel          | Custom cancel button text    | -                          |
+| option          | Custom option content        | _option: string \| object_ |
+| columns-top     | Custom content above columns | -                          |
+| columns-bottom  | Custom content below columns | -                          |
 
 ### Data Structure of Column
 
