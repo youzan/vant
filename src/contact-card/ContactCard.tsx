@@ -42,6 +42,7 @@ export default defineComponent({
 
     return () => (
       <Cell
+        v-slots={{ value: renderContent }}
         center
         icon={props.type === 'edit' ? 'contact' : 'add-square'}
         class={bem([props.type])}
@@ -49,9 +50,7 @@ export default defineComponent({
         isLink={props.editable}
         valueClass={bem('value')}
         onClick={onClick}
-      >
-        {renderContent()}
-      </Cell>
+      />
     );
   },
 });

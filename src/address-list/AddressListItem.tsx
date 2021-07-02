@@ -96,7 +96,7 @@ export default defineComponent({
         <div class={bem({ disabled })} onClick={onClick}>
           <Cell
             v-slots={{
-              default: renderContent,
+              value: renderContent,
               'right-icon': renderRightIcon,
             }}
             border={false}

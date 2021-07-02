@@ -72,7 +72,7 @@ export default defineComponent({
         <Cell
           v-slots={{
             icon: renderEditIcon,
-            default: renderContent,
+            value: renderContent,
             'right-icon': renderRightIcon,
           }}
           key={item.id}

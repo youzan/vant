@@ -486,6 +486,23 @@ export default defineComponent({
       }
     };
 
+    const renderFieldBody = () => [
+      <div class={bem('body')}>
+        {renderInput()}
+        {showClear.value && (
+          <Icon
+            name={props.clearIcon}
+            class={bem('clear')}
+            onTouchstart={onClear}
+          />
+        )}
+        {renderRightIcon()}
+        {slots.button && <div class={bem('button')}>{slots.button()}</div>}
+      </div>,
+      renderWordLimit(),
+      renderMessage(),
+    ];
+
     useExpose({
       blur,
       focus,
@@ -526,6 +543,7 @@ export default defineComponent({
           v-slots={{
             icon: LeftIcon ? () => LeftIcon : null,
             title: Label ? () => Label : null,
+            value: renderFieldBody,
             extra: slots.extra,
           }}
           size={props.size}
@@ -545,22 +563,7 @@ export default defineComponent({
           valueClass={bem('value')}
           titleClass={[bem('label', labelAlign), props.labelClass]}
           arrowDirection={props.arrowDirection}
-        >
-          <div class={bem('body')}>
-            {renderInput()}
-            {showClear.value && (
-              <Icon
-                name={props.clearIcon}
-                class={bem('clear')}
-                onTouchstart={onClear}
-              />
-            )}
-            {renderRightIcon()}
-            {slots.button && <div class={bem('button')}>{slots.button()}</div>}
-          </div>
-          {renderWordLimit()}
-          {renderMessage()}
-        </Cell>
+        />
       );
     };
   },
