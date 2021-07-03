@@ -1,3 +1,5 @@
+import type { Ref } from 'vue';
+
 export type FieldType =
   | 'tel'
   | 'text'
@@ -35,6 +37,12 @@ export type FieldRule = {
     rule: FieldRule
   ) => boolean | string | Promise<boolean | string>;
   formatter?: (value: any, rule: FieldRule) => string;
+};
+
+export type FieldProvide = {
+  childFieldValue: Ref<(() => unknown) | undefined>;
+  resetValidation: () => void;
+  validateWithTrigger: (trigger: FieldValidateTrigger) => void;
 };
 
 declare global {
