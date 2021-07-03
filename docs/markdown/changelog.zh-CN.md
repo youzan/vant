@@ -16,13 +16,31 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.1.2](https://github.com/youzan/vant/compare/v3.1.1...v3.1.2)
+
+`2021-07-03`
+
+**Feature**
+
+- Area: 新增 toolbar、confirm、cancel 插槽 [#8969](https://github.com/youzan/vant/issues/8969)
+- Calendar: 优化日期较多时的加载性能 [#8955](https://github.com/youzan/vant/issues/8955)
+- Cascader: 新增 disabled 选项 [#8952](https://github.com/youzan/vant/issues/8952)
+- ConfigProvider: 新增 tag 属性 [#8967](https://github.com/youzan/vant/issues/8967)
+- Picker: 新增 toolbar 插槽，将 default 插槽标记为废弃 [#8968](https://github.com/youzan/vant/issues/8968)
+- Picker: 允许 Option 的值为 number 类型 [#8951](https://github.com/youzan/vant/issues/8951)
+- Picker: 新增 picker-option-padding CSS 变量 [#8947](https://github.com/youzan/vant/issues/8947)
+
+**Bug Fixes**
+
+- Toast: 修复文字换行问题 [#8965](https://github.com/youzan/vant/issues/8965)
+
 ### [v3.1.1](https://github.com/youzan/vant/compare/v3.1.0...v3.1.1)
 
 `2021-06-27`
 
 **Feature**
 
-- Cell: 新增 value 插槽 [#8933](https://github.com/youzan/vant/issues/8933)
+- Cell: 新增 value 插槽，将 default 插槽标记为废弃 [#8933](https://github.com/youzan/vant/issues/8933)
 - CollapseItem: 新增 label 插槽 [#8934](https://github.com/youzan/vant/issues/8934)
 - NoticeBar: 新增 reset 方法 [#8917](https://github.com/youzan/vant/issues/8917)
 - Tabs: 新增 nav-bottom 插槽 [#8915](https://github.com/youzan/vant/issues/8915)

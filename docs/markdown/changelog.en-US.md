@@ -16,6 +16,24 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.1.2](https://github.com/youzan/vant/compare/v3.1.1...v3.1.2)
+
+`2021-07-03`
+
+**Feature**
+
+- Area: add toolbar、confirm、cancel slots [#8969](https://github.com/youzan/vant/issues/8969)
+- Calendar: simplify placeholder dom [#8955](https://github.com/youzan/vant/issues/8955)
+- Cascader: add disabled option [#8952](https://github.com/youzan/vant/issues/8952)
+- ConfigProvider: add tag prop [#8967](https://github.com/youzan/vant/issues/8967)
+- Picker: add toolbar slot [#8968](https://github.com/youzan/vant/issues/8968)
+- Picker: allow option text to be number type [#8951](https://github.com/youzan/vant/issues/8951)
+- Picker: add picker-option-padding CSS var [#8947](https://github.com/youzan/vant/issues/8947)
+
+**Bug Fixes**
+
+- Toast: fix word break [#8965](https://github.com/youzan/vant/issues/8965)
+
 ### [v3.1.1](https://github.com/youzan/vant/compare/v3.1.0...v3.1.1)
 
 `2021-06-27`
