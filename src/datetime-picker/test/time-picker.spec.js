@@ -208,3 +208,48 @@ test('dynamic set max-hour then emit correct value', async () => {
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[3][0]).toEqual('10:30');
 });
+
+test('dynamic set max-minute then emit correct value', async () => {
+  const wrapper = mount({
+    template: `
+      <van-datetime-picker
+        v-model="time"
+        type="time"
+        :max-minute="maxMinute"
+        @confirm="value => this.$emit('confirm', value)"
+      />
+    `,
+
+    data() {
+      return {
+        time: '12:30',
+        maxMinute: 59,
+      }
+    },
+
+    methods: {
+      onChangeMaxMinute(value) {
+        this.maxMinute = value;
+      },
+    }
+  })
+
+  await later();
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual('12:30');
+
+  await later();
+  wrapper.vm.onChangeMaxMinute(50);
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[1][0]).toEqual('12:30');
+
+  await later();
+  wrapper.vm.onChangeMaxMinute(20);
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[2][0]).toEqual('12:20');
+
+  await later();
+  wrapper.vm.onChangeMaxMinute(25);
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[3][0]).toEqual('12:20');
+});
