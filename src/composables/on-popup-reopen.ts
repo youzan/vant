@@ -1,13 +1,10 @@
-import { inject, watch } from 'vue';
+import { inject, InjectionKey, watch } from 'vue';
 
 // eslint-disable-next-line
-export const POPUP_TOGGLE_KEY = Symbol();
+export const POPUP_TOGGLE_KEY: InjectionKey<() => boolean> = Symbol();
 
 export function onPopupReopen(callback: () => void) {
-  const popupToggleStatus = inject<(() => boolean) | null>(
-    POPUP_TOGGLE_KEY,
-    null
-  );
+  const popupToggleStatus = inject(POPUP_TOGGLE_KEY, null);
 
   if (popupToggleStatus) {
     watch(popupToggleStatus, (show) => {
