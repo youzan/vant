@@ -35,8 +35,13 @@ export default createComponent({
         this.updateInnerValue();
       });
     },
-    maxDate: 'updateInnerValue',
-
+    maxDate(value) {
+      if (this.innerValue.valueOf() >= value.valueOf()) {
+        this.innerValue = value;
+      } else {
+        this.updateInnerValue();
+      }
+    },
     value(val) {
       val = this.formatValue(val);
 
