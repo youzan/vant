@@ -344,7 +344,7 @@ test('formatter prop', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('title & footer slot', async () => {
+test('should render title、footer、subtitle slot correctly', async () => {
   const wrapper = mount(Calendar, {
     props: {
       minDate,
@@ -356,6 +356,7 @@ test('title & footer slot', async () => {
     slots: {
       title: () => 'Custom Title',
       footer: () => 'Custom Footer',
+      subtitle: () => 'Custom Subtitle',
     },
   });
 

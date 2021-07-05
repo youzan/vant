@@ -26,7 +26,8 @@ export default defineComponent({
 
     const renderSubtitle = () => {
       if (props.showSubtitle) {
-        return <div class={bem('header-subtitle')}>{props.subtitle}</div>;
+        const title = slots.subtitle ? slots.subtitle() : props.subtitle;
+        return <div class={bem('header-subtitle')}>{title}</div>;
       }
     };
 
