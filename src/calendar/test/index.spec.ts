@@ -554,3 +554,18 @@ test('should render top-info and bottom-info slot correctly', async () => {
 
   expect(wrapper.find('.van-calendar__day').html()).toMatchSnapshot();
 });
+
+test('should emit click-subtitle event when clicking the subtitle', async () => {
+  const wrapper = mount(Calendar, {
+    props: {
+      minDate,
+      maxDate,
+      poppable: false,
+      lazyRender: false,
+    },
+  });
+
+  await later();
+  wrapper.find('.van-calendar__header-subtitle').trigger('click');
+  expect(wrapper.emitted('click-subtitle')).toBeTruthy();
+});

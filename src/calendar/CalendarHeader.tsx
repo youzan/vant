@@ -15,7 +15,9 @@ export default defineComponent({
     firstDayOfWeek: Number,
   },
 
-  setup(props, { slots }) {
+  emits: ['click-subtitle'],
+
+  setup(props, { slots, emit }) {
     const renderTitle = () => {
       if (props.showTitle) {
         const text = props.title || t('title');
@@ -24,10 +26,18 @@ export default defineComponent({
       }
     };
 
+    const onClickSubtitle = (event: MouseEvent) => {
+      emit('click-subtitle', event);
+    };
+
     const renderSubtitle = () => {
       if (props.showSubtitle) {
         const title = slots.subtitle ? slots.subtitle() : props.subtitle;
-        return <div class={bem('header-subtitle')}>{title}</div>;
+        return (
+          <div class={bem('header-subtitle')} onClick={onClickSubtitle}>
+            {title}
+          </div>
+        );
       }
     };
 
