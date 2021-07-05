@@ -115,8 +115,9 @@ export default defineComponent({
     'confirm',
     'unselect',
     'month-show',
-    'update:show',
     'over-range',
+    'update:show',
+    'click-subtitle',
   ],
 
   setup(props, { emit, slots }) {
@@ -495,6 +496,9 @@ export default defineComponent({
           showTitle={props.showTitle}
           showSubtitle={props.showSubtitle}
           firstDayOfWeek={dayOffset.value}
+          onClick-subtitle={(event: MouseEvent) => {
+            emit('click-subtitle', event);
+          }}
         />
         <div ref={bodyRef} class={bem('body')} onScroll={onScroll}>
           {months.value.map(renderMonth)}
