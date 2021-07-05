@@ -135,7 +135,7 @@ test('set min-minute dynamically', async () => {
   expect(wrapper.emitted('confirm')[0][0]).toEqual('13:00');
 });
 
-test('dynamic set min-hour & min-hour then emit correct value', async () => {
+test('dynamic set min-hour & min-minute then emit correct value', async () => {
   const wrapper = mount({
     template: `
     <van-datetime-picker
@@ -164,7 +164,7 @@ test('dynamic set min-hour & min-hour then emit correct value', async () => {
   expect(wrapper.emitted('confirm')[0][0]).toEqual('11:40');
 });
 
-test('dynamic set max-hour & max-hour then emit correct value', async () => {
+test('dynamic set max-hour & max-minute then emit correct value', async () => {
   const wrapper = mount({
     template: `
       <van-datetime-picker
