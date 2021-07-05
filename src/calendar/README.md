@@ -332,6 +332,7 @@ Following props are supported when the type is multiple
 | Name                  | Description               | SlotProps  |
 | --------------------- | ------------------------- | ---------- |
 | title                 | Custom title              | -          |
+| subtitle `v3.1.3`     | Custom subtitle           | -          |
 | footer                | Custom footer             | -          |
 | top-info `v3.0.17`    | Custom top info of day    | _day: Day_ |
 | bottom-info `v3.0.17` | Custom bottom info of day | _day: Day_ |

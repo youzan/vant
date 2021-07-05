@@ -489,10 +489,10 @@ export default defineComponent({
     const renderCalendar = () => (
       <div class={bem()}>
         <CalendarHeader
-          v-slots={{ title: slots.title }}
+          v-slots={pick(slots, ['title', 'subtitle'])}
           title={props.title}
-          showTitle={props.showTitle}
           subtitle={state.subtitle}
+          showTitle={props.showTitle}
           showSubtitle={props.showSubtitle}
           firstDayOfWeek={dayOffset.value}
         />
