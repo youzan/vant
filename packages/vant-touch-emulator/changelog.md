@@ -1,5 +1,11 @@
 # Changelog
 
+### [v1.3.1]
+
+`2021-07-06`
+
+- support data-no-touch-simulate attr
+
 ### [v1.3.0]
 
 `2021-05-26`
