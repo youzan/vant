@@ -249,7 +249,7 @@ test('value has an inital value', () => {
   expect(wrapper.emitted('confirm')[0][0]).toEqual(defaultValue);
 });
 
-test('change min-date and emit correct value', async () => {
+test('dynamic set min-date then emit correct value', async () => {
   const defaultValue = new Date(2020, 10, 2, 10, 30);
   const wrapper = mount({
     template: `
@@ -268,9 +268,66 @@ test('change min-date and emit correct value', async () => {
     mounted() {
       this.minDate = defaultValue;
     },
-  })
+  });
 
   await later();
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[0][0]).toEqual(defaultValue);
+});
+
+test('dynamic set max-date then emit correct value', async () => {
+  const date = new Date(2020, 10, 2, 10, 30);
+  const minDate = new Date(0);
+  const wrapper = mount({
+    template: `
+      <van-datetime-picker
+        v-model="date"
+        :min-date="minDate"
+        :max-date="maxDate"
+        @confirm="value => this.$emit('confirm', value)"
+      />
+    `,
+
+    data() {
+      return {
+        date,
+        minDate,
+        maxDate: new Date(2030, 0, 1, 10, 30),
+      };
+    },
+
+    methods: {
+      onChangeMaxDate(date) {
+        this.maxDate = date;
+      },
+    },
+  });
+
+  await later();
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual(date);
+
+  await later();
+  wrapper.vm.onChangeMaxDate(new Date(2029, 10, 10, 10, 10));
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[1][0]).toEqual(date);
+
+  await later();
+  wrapper.vm.onChangeMaxDate(new Date(2020, 10, 10, 10, 10));
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[2][0]).toEqual(date);
+
+  await later();
+  wrapper.vm.onChangeMaxDate(new Date(2019, 10, 10, 10, 10));
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[3][0]).toEqual(
+    new Date(2019, 10, 10, 10, 10)
+  );
+
+  await later();
+  wrapper.vm.onChangeMaxDate(new Date(2040, 10, 10, 10, 10));
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[4][0]).toEqual(
+    new Date(2019, 10, 10, 10, 10)
+  );
 });

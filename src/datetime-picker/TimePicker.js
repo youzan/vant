@@ -50,10 +50,25 @@ export default createComponent({
         this.updateInnerValue();
       });
     },
-    maxHour: 'updateInnerValue',
+    maxHour(value) {
+      const [hour, minute] = this.innerValue.split(':');
+      if (hour >= value) {
+        this.innerValue = this.formatValue(`${value}:${minute}`);
+        this.updateColumnValue();
+      } else {
+        this.updateInnerValue();
+      }
+    },
     minMinute: 'updateInnerValue',
-    maxMinute: 'updateInnerValue',
-
+    maxMinute(value) {
+      const [hour, minute] = this.innerValue.split(':');
+      if (minute >= value) {
+        this.innerValue = this.formatValue(`${hour}:${value}`);
+        this.updateColumnValue();
+      } else {
+        this.updateInnerValue();
+      }
+    },
     value(val) {
       val = this.formatValue(val);
 
