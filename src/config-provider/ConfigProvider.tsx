@@ -1,14 +1,22 @@
-import { computed, CSSProperties, defineComponent, PropType } from 'vue';
-import { createNamespace } from '../utils';
+import {
+  provide,
+  computed,
+  PropType,
+  CSSProperties,
+  InjectionKey,
+  defineComponent,
+} from 'vue';
+import { createNamespace, kebabCase } from '../utils';
 
 const [name, bem] = createNamespace('config-provider');
 
-export function kebabCase(word: string) {
-  return word
-    .replace(/([A-Z])/g, '-$1')
-    .toLowerCase()
-    .replace(/^-/, '');
-}
+export type ConfigProviderProvide = {
+  iconPrefix?: string;
+};
+
+export const CONFIG_PROVIDER_KEY: InjectionKey<ConfigProviderProvide> = Symbol(
+  name
+);
 
 function mapThemeVarsToCSSVars(themeVars: Record<string, string | number>) {
   const cssVars: Record<string, string | number> = {};
@@ -23,6 +31,7 @@ export default defineComponent({
 
   props: {
     themeVars: Object as PropType<Record<string, string | number>>,
+    iconPrefix: String,
     tag: {
       type: String as PropType<keyof HTMLElementTagNameMap>,
       default: 'div',
@@ -35,6 +44,8 @@ export default defineComponent({
         return mapThemeVarsToCSSVars(props.themeVars);
       }
     });
+
+    provide(CONFIG_PROVIDER_KEY, props);
 
     return () => (
       <props.tag class={bem()} style={style.value}>

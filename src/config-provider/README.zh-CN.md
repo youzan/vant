@@ -195,7 +195,8 @@ export default {
 
 ### Props
 
-| 参数         | 说明                     | 类型     | 默认值 |
-| ------------ | ------------------------ | -------- | ------ |
-| theme-vars   | 自定义主题变量           | _object_ | -      |
-| tag `v3.1.2` | 根节点对应的 HTML 标签名 | _string_ | `div`  |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| theme-vars | 自定义主题变量 | _object_ | - |
+| tag `v3.1.2` | 根节点对应的 HTML 标签名 | _string_ | `div` |
+| icon-prefix `v3.1.3` | 所有图标的类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |

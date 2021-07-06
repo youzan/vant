@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should change icon class-prefix when using icon-prefix prop 1`] = `
+<div class="van-config-provider">
+  <i class="van-badge__wrapper foo foo-success">
+  </i>
+</div>
+`;
+
+exports[`should render tag prop correctly 1`] = `
+<section class="van-config-provider">
+</section>
+`;
