@@ -16,6 +16,16 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.23](https://github.com/youzan/vant/compare/v2.12.22...v2.12.23)
+
+`2021-07-06`
+
+**Bug Fixes**
+
+- DatetimePicker: fix change max-date、max-hour emit incorrect value [#8977](https://github.com/youzan/vant/issues/8977)
+- Stepper: incorrect value after blurred when using async-change [#8936](https://github.com/youzan/vant/issues/8936)
+- Toast: fix word break [#8966](https://github.com/youzan/vant/issues/8966)
+
 ### [v2.12.22](https://github.com/youzan/vant/compare/v2.12.21...v2.12.22)
 
 `2021-06-22`

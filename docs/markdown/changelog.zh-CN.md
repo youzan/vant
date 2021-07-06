@@ -16,6 +16,16 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.23](https://github.com/youzan/vant/compare/v2.12.22...v2.12.23)
+
+`2021-07-06`
+
+**Bug Fixes**
+
+- DatetimePicker: 修复设置 max-date、max-hour 等属性时可能导致当前日期不正确的问题 [#8977](https://github.com/youzan/vant/issues/8977)
+- Stepper: 修复开启 async-change 且 blur 后输入值不正确的问题 [#8936](https://github.com/youzan/vant/issues/8936)
+- Toast: 修复长单词换行问题 [#8966](https://github.com/youzan/vant/issues/8966)
+
 ### [v2.12.22](https://github.com/youzan/vant/compare/v2.12.21...v2.12.22)
 
 `2021-06-22`
