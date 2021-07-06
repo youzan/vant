@@ -195,7 +195,8 @@ There are some **Basic Variables** below, for component CSS Variables, please re
 
 ### Props
 
-| Attribute    | Description              | Type     | Default |
-| ------------ | ------------------------ | -------- | ------- |
-| theme-vars   | Theme variables          | _object_ | -       |
-| tag `v3.1.2` | HTML Tag of root element | _string_ | `div`   |
+| Attribute            | Description              | Type     | Default    |
+| -------------------- | ------------------------ | -------- | ---------- |
+| theme-vars           | Theme variables          | _object_ | -          |
+| tag `v3.1.2`         | HTML Tag of root element | _string_ | `div`      |
+| icon-prefix `v3.1.3` | Icon className prefix    | _string_ | `van-icon` |
