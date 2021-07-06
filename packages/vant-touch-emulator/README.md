@@ -29,3 +29,11 @@ import '@vant/touch-emulator';
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@vant/touch-emulator"></script>
 ```
+
+## 禁用 touch 模拟
+
+在标签上添加 `data-no-touch-simulate` 属性后，可以使这个标签（以及它的子元素）不触发 `touch` 模拟事件。
+
+```html
+<div data-no-touch-simulate />
+```
