@@ -51,6 +51,19 @@
     };
   }
 
+  if (!Element.prototype.closest) {
+    Element.prototype.closest = function (s) {
+      var el = this;
+
+      do {
+        if (el.matches(s)) return el;
+        el = el.parentElement || el.parentNode;
+      } while (el !== null && el.nodeType === 1);
+
+      return null;
+    };
+  }
+
   /**
    * create an touch point
    * @constructor
@@ -130,7 +143,9 @@
         eventTarget = ev.target;
       }
 
-      triggerTouch(touchType, ev);
+      if (eventTarget.closest('[data-no-touch-simulate]') == null) {
+        triggerTouch(touchType, ev);
+      }
 
       // reset
       if (ev.type === 'mouseup') {
