@@ -176,9 +176,11 @@ export default {
 
 ### Slots
 
-| 名称   | 说明           |
-| ------ | -------------- |
-| button | 自定义滑动按钮 |
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| button | 自定义滑块按钮 | _{ value: number }_ |
+| left-button `v3.1.3` | 自定义左侧滑块按钮（双滑块模式下） | _{ value: number }_ |
+| right-button `v3.1.3` | 自定义右侧滑块按钮 （双滑块模式下） | _{ value: number }_ |
 
 ### 样式变量
 

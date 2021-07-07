@@ -18,7 +18,7 @@ import { useLinkField } from '../composables/use-link-field';
 
 const [name, bem] = createNamespace('slider');
 
-type SliderValue = number | number[];
+type SliderValue = number | [number, number];
 
 export default defineComponent({
   name,
@@ -53,7 +53,7 @@ export default defineComponent({
   emits: ['change', 'drag-end', 'drag-start', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    let buttonIndex: number;
+    let buttonIndex: 0 | 1;
     let startValue: SliderValue;
     let currentValue: SliderValue;
 
@@ -71,8 +71,8 @@ export default defineComponent({
       };
     });
 
-    const isRange = (val: unknown): val is number[] =>
-      !!props.range && Array.isArray(val);
+    const isRange = (val: unknown): val is [number, number] =>
+      props.range && Array.isArray(val);
 
     // 计算选中条的长度百分比
     const calcMainAxis = () => {
@@ -117,7 +117,7 @@ export default defineComponent({
       JSON.stringify(newValue) === JSON.stringify(oldValue);
 
     // 处理两个滑块重叠之后的情况
-    const handleOverlap = (value: number[]) => {
+    const handleOverlap = (value: [number, number]) => {
       if (value[0] > value[1]) {
         return value.slice(0).reverse();
       }
@@ -126,7 +126,7 @@ export default defineComponent({
 
     const updateValue = (value: SliderValue, end?: boolean) => {
       if (isRange(value)) {
-        value = handleOverlap(value).map(format);
+        value = handleOverlap(value).map(format) as [number, number];
       } else {
         value = format(value);
       }
@@ -178,7 +178,7 @@ export default defineComponent({
       currentValue = props.modelValue;
 
       if (isRange(currentValue)) {
-        startValue = currentValue.map(format);
+        startValue = currentValue.map(format) as [number, number];
       } else {
         startValue = format(currentValue);
       }
@@ -205,7 +205,7 @@ export default defineComponent({
       const diff = (delta / total) * scope.value;
 
       if (isRange(startValue)) {
-        (currentValue as number[])[buttonIndex] =
+        (currentValue as [number, number])[buttonIndex] =
           startValue[buttonIndex] + diff;
       } else {
         currentValue = startValue + diff;
@@ -226,46 +226,59 @@ export default defineComponent({
       dragStatus.value = '';
     };
 
-    const renderButton = (index?: number) => {
-      const getClassName = () => {
-        if (typeof index === 'number') {
-          const position = ['left', 'right'];
-          return `button-wrapper-${position[index]}`;
-        }
-        return `button-wrapper`;
-      };
+    const getButtonClassName = (index?: 0 | 1) => {
+      if (typeof index === 'number') {
+        const position = ['left', 'right'];
+        return bem(`button-wrapper-${position[index]}`);
+      }
+      return bem('button-wrapper');
+    };
 
+    const renderButtonContent = (value: number, index?: 0 | 1) => {
+      if (typeof index === 'number') {
+        const slot = slots[index === 0 ? 'left-button' : 'right-button'];
+        if (slot) {
+          return slot({ value });
+        }
+      }
+
+      if (slots.button) {
+        return slots.button({ value });
+      }
+
+      return (
+        <div class={bem('button')} style={getSizeStyle(props.buttonSize)} />
+      );
+    };
+
+    const renderButton = (index?: 0 | 1) => {
       const currentValue =
         typeof index === 'number'
-          ? (props.modelValue as number[])[index]
+          ? (props.modelValue as [number, number])[index]
           : (props.modelValue as number);
 
       return (
         <div
           role="slider"
-          class={bem(getClassName())}
+          class={getButtonClassName(index)}
           tabindex={props.disabled || props.readonly ? -1 : 0}
           aria-valuemin={+props.min}
           aria-valuenow={currentValue}
           aria-valuemax={+props.max}
           aria-orientation={props.vertical ? 'vertical' : 'horizontal'}
-          onTouchstart={(e) => {
+          onTouchstart={(event) => {
             if (typeof index === 'number') {
               // save index of current button
               buttonIndex = index;
             }
-            onTouchStart(e);
+            onTouchStart(event);
           }}
           onTouchmove={onTouchMove}
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}
           onClick={stopPropagation}
         >
-          {slots.button ? (
-            slots.button()
-          ) : (
-            <div class={bem('button')} style={getSizeStyle(props.buttonSize)} />
-          )}
+          {renderButtonContent(currentValue, index)}
         </div>
       );
     };
