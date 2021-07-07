@@ -150,7 +150,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Current value | _number \| number[]_ | `0` |
+| v-model | Current value | _number \| [number, number]_ | `0` |
 | max | Max value | _number \| string_ | `100` |
 | min | Min value | _number \| string_ | `0` |
 | step | Step size | _number \| string_ | `1` |
@@ -167,10 +167,10 @@ export default {
 
 | Event              | Description                    | Arguments           |
 | ------------------ | ------------------------------ | ------------------- |
-| update:model-value | Emitted when value is changing | value: current rate |
-| change             | Emitted after value changed    | value: current rate |
-| drag-start         | Emitted when start draging     | -                   |
-| drag-end           | Emitted when end draging       | -                   |
+| update:model-value | Emitted when value is changing | _value: number_     |
+| change             | Emitted after value changed    | _value: number_     |
+| drag-start         | Emitted when start draging     | _event: TouchEvent_ |
+| drag-end           | Emitted when end draging       | _event: TouchEvent_ |
 
 ### Slots
 
