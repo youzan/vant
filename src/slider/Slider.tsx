@@ -192,7 +192,7 @@ export default defineComponent({
       }
 
       if (dragStatus.value === 'start') {
-        emit('drag-start');
+        emit('drag-start', event);
       }
 
       preventDefault(event, true);
@@ -213,14 +213,14 @@ export default defineComponent({
       updateValue(currentValue);
     };
 
-    const onTouchEnd = () => {
+    const onTouchEnd = (event: TouchEvent) => {
       if (props.disabled || props.readonly) {
         return;
       }
 
       if (dragStatus.value === 'draging') {
         updateValue(currentValue, true);
-        emit('drag-end');
+        emit('drag-end', event);
       }
 
       dragStatus.value = '';

@@ -152,12 +152,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model | 当前进度百分比 | _number \| number[]_ | `0` |
+| v-model | 当前进度百分比，在双滑块模式下为数组格式 | _number \| [number, number]_ | `0` |
 | max | 最大值 | _number \| string_ | `100` |
 | min | 最小值 | _number \| string_ | `0` |
 | step | 步长 | _number \| string_ | `1` |
-| bar-height | 进度条高度，默认单位为`px` | _number \| string_ | `2px` |
-| button-size | 滑块按钮大小，默认单位为`px` | _number \| string_ | `24px` |
+| bar-height | 进度条高度，默认单位为 `px` | _number \| string_ | `2px` |
+| button-size | 滑块按钮大小，默认单位为 `px` | _number \| string_ | `24px` |
 | active-color | 进度条激活态颜色 | _string_ | `#1989fa` |
 | inactive-color | 进度条非激活态颜色 | _string_ | `#e5e5e5` |
 | range | 是否开启双滑块模式 | _boolean_ | `false` |
@@ -167,12 +167,12 @@ export default {
 
 ### Events
 
-| 事件名             | 说明                     | 回调参数        |
-| ------------------ | ------------------------ | --------------- |
-| update:model-value | 进度变化时实时触发       | value: 当前进度 |
-| change             | 进度变化且结束拖动后触发 | value: 当前进度 |
-| drag-start         | 开始拖动时触发           | -               |
-| drag-end           | 结束拖动时触发           | -               |
+| 事件名             | 说明                     | 回调参数            |
+| ------------------ | ------------------------ | ------------------- |
+| update:model-value | 进度变化时实时触发       | _value: number_     |
+| change             | 进度变化且结束拖动后触发 | _value: number_     |
+| drag-start         | 开始拖动时触发           | _event: TouchEvent_ |
+| drag-end           | 结束拖动时触发           | _event: TouchEvent_ |
 
 ### Slots
 
