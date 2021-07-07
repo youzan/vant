@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render left-button、right-button slot correctly 1`] = `
+<div class="van-slider">
+  <div class="van-slider__bar"
+       style="width: 50%; left: 30%;"
+  >
+    <div role="slider"
+         class="van-slider__button-wrapper-left"
+         tabindex="0"
+         aria-valuemin="0"
+         aria-valuenow="30"
+         aria-valuemax="100"
+         aria-orientation="horizontal"
+    >
+      left-30
+    </div>
+    <div role="slider"
+         class="van-slider__button-wrapper-right"
+         tabindex="0"
+         aria-valuemin="0"
+         aria-valuenow="80"
+         aria-valuemax="100"
+         aria-orientation="horizontal"
+    >
+      right-80
+    </div>
+  </div>
+</div>
+`;

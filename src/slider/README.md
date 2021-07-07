@@ -174,9 +174,11 @@ export default {
 
 ### Slots
 
-| Name   | Description   |
-| ------ | ------------- |
-| button | Custom button |
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| button | Custom button | _{ value: number }_ |
+| left-button `v3.1.3` | Custom left button in range mode | _{ value: number }_ |
+| right-button `v3.1.3` | Custom right button in range mode | _{ value: number }_ |
 
 ### CSS Variables
 

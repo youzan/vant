@@ -203,3 +203,19 @@ test('should format v-model with step correctly', async () => {
   await later();
   expect(wrapper.emitted('update:modelValue')![0]).toEqual([31]);
 });
+
+test('should render left-button、right-button slot correctly', async () => {
+  const wrapper = mount(Slider, {
+    props: {
+      range: true,
+      modelValue: [30, 80],
+    },
+    slots: {
+      'left-button': ({ value }) => `left-${value}`,
+      'right-button': ({ value }) => `right-${value}`,
+    },
+  });
+
+  await later();
+  expect(wrapper.html()).toMatchSnapshot();
+});
