@@ -68,6 +68,9 @@ export default defineComponent({
   name,
 
   props: extend({}, pickerProps, {
+    // @deprecated
+    // should be removed in next major version
+    valueKey: String,
     columnsFieldNames: Object as PropType<PickerFieldNames>,
     columns: {
       type: Array as PropType<PickerOption[] | PickerColumn[]>,
@@ -81,21 +84,22 @@ export default defineComponent({
       type: String as PropType<PickerToolbarPosition>,
       default: 'top',
     },
-    // @deprecated
-    // should be removed in next major version
-    valueKey: {
-      type: String,
-      default: 'text',
-    },
   }),
 
   emits: ['confirm', 'cancel', 'change'],
 
   setup(props, { emit, slots }) {
-    if (slots.default) {
-      console.warn(
-        '[Vant] Picker: "default" slot is deprecated, please use "toolbar" slot instead.'
-      );
+    if (process.env.NODE_ENV !== 'production') {
+      if (slots.default) {
+        console.warn(
+          '[Vant] Picker: "default" slot is deprecated, please use "toolbar" slot instead.'
+        );
+      }
+      if (props.valueKey) {
+        console.warn(
+          '[Vant] Picker: "valueKey" prop is deprecated, please use "columnsFieldNames" prop instead.'
+        );
+      }
     }
 
     const formattedColumns = ref<PickerObjectColumn[]>([]);
@@ -103,7 +107,7 @@ export default defineComponent({
     const { text: textKey, values: valuesKey, children: childrenKey } = extend(
       {
         // compatible with valueKey prop
-        text: props.valueKey,
+        text: props.valueKey || 'text',
         values: 'values',
         children: 'children',
       },

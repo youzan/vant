@@ -6,8 +6,10 @@ exports[`should render demo and match snapshot 1`] = `
        role="button"
        tabindex="0"
   >
-    <div class="van-cell__value van-cell__value--alone">
-      Show Default Keyboard
+    <div class="van-cell__title">
+      <span>
+        Show Default Keyboard
+      </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
@@ -16,8 +18,10 @@ exports[`should render demo and match snapshot 1`] = `
        role="button"
        tabindex="0"
   >
-    <div class="van-cell__value van-cell__value--alone">
-      Show Keyboard With Sidebar
+    <div class="van-cell__title">
+      <span>
+        Show Keyboard With Sidebar
+      </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
@@ -26,8 +30,10 @@ exports[`should render demo and match snapshot 1`] = `
        role="button"
        tabindex="0"
   >
-    <div class="van-cell__value van-cell__value--alone">
-      Show IdNumber Keyboard
+    <div class="van-cell__title">
+      <span>
+        Show IdNumber Keyboard
+      </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
@@ -36,8 +42,10 @@ exports[`should render demo and match snapshot 1`] = `
        role="button"
        tabindex="0"
   >
-    <div class="van-cell__value van-cell__value--alone">
-      Show Keyboard With Title
+    <div class="van-cell__title">
+      <span>
+        Show Keyboard With Title
+      </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
@@ -46,8 +54,10 @@ exports[`should render demo and match snapshot 1`] = `
        role="button"
        tabindex="0"
   >
-    <div class="van-cell__value van-cell__value--alone">
-      Show Keyboard With Multiple ExtraKey
+    <div class="van-cell__title">
+      <span>
+        Show Keyboard With Multiple ExtraKey
+      </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
@@ -56,8 +66,10 @@ exports[`should render demo and match snapshot 1`] = `
        role="button"
        tabindex="0"
   >
-    <div class="van-cell__value van-cell__value--alone">
-      Show Keyboard With Random Key Order
+    <div class="van-cell__title">
+      <span>
+        Show Keyboard With Random Key Order
+      </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
