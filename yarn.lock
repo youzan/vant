@@ -1888,10 +1888,10 @@
   resolved "https://registry.nlark.com/@vant/area-data/download/@vant/area-data-1.1.1.tgz#b9acf8a804c0d60f721b6900680299422b006b1a"
   integrity sha1-uaz4qATA1g9yG2kAaAKZQisAaxo=
 
-"@vant/cli@^3.10.9":
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-3.11.0.tgz#95812fd72f15c844b2a81f974e85901219a599ec"
-  integrity sha512-MERBUKZlJvbQT8JJVKkoxL0z532uXHnT5lfs9puszi9uvxLV042PuTm2eF/CAz5mwV5jEZyTapMTZBpmOfLuUA==
+"@vant/cli@^3.11.1":
+  version "3.11.1"
+  resolved "https://registry.nlark.com/@vant/cli/download/@vant/cli-3.11.1.tgz?cache=0&sync_timestamp=1625709472627&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-3.11.1.tgz#131977e0df7522ff845fa2c8f6304abfd7d33f73"
+  integrity sha1-Exl34N91Iv+EX6LI9jBKv9fTP3M=
   dependencies:
     "@babel/core" "^7.14.5"
     "@babel/preset-env" "^7.14.5"

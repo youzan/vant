@@ -99,7 +99,7 @@
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "chore: release @vant/cli@${version}"
+      "commitMessage": "release: @vant/cli ${version}"
     }
   }
 }

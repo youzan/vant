@@ -31,7 +31,7 @@
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "chore: release @vant/popperjs ${version}"
+      "commitMessage": "release: @vant/popperjs ${version}"
     }
   }
 }

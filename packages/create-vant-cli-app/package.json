@@ -45,7 +45,7 @@
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "chore: release create-vant-cli-app@${version}"
+      "commitMessage": "release: create-vant-cli-app ${version}"
     }
   }
 }

@@ -29,7 +29,7 @@
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "chore: release @vant/lazyload ${version}"
+      "commitMessage": "release: @vant/lazyload ${version}"
     }
   }
 }
