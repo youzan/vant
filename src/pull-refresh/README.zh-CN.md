@@ -152,13 +152,20 @@ export default {
 
 ## 常见问题
 
-### PullReresh 的内容未填满屏幕时，只有一部分区域可以下拉？
+### PullRefresh 的内容未填满屏幕时，只有一部分区域可以下拉？
 
 默认情况下，下拉区域的高度是和内容高度保持一致的，如果需要让下拉区域始终为全屏，可以给 PullRefresh 设置一个与屏幕大小相等的最小高度：
 
 ```html
 <van-pull-refresh style="min-height: 100vh;" />
 ```
+
+### PullRefresh 的触发条件是？
+
+PullRefresh 的触发条件是「父级滚动元素的滚动条在顶部位置」。
+
+- 如果最近一个可滚动的父级元素是 `window`，则要求 `window.pageYOffset === 0`。
+- 如果最近一个可滚动的父级元素是 `Element`，则要求 `Element.scrollTop === 0`。
 
 ### 在桌面端无法操作组件？
 
