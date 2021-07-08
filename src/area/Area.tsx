@@ -327,7 +327,7 @@ export default defineComponent({
           ref={pickerRef}
           class={bem()}
           columns={columns}
-          valueKey="name"
+          columnsFieldNames={{ text: 'name' }}
           onChange={onChange}
           onConfirm={onConfirm}
           {...pick(props, INHERIT_PROPS)}

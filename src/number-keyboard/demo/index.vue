@@ -1,23 +1,35 @@
 <template>
   <demo-block card>
-    <van-cell is-link @touchstart.stop="keyboard = 'default'">
-      {{ t('button1') }}
-    </van-cell>
-    <van-cell is-link @touchstart.stop="keyboard = 'custom'">
-      {{ t('button2') }}
-    </van-cell>
-    <van-cell is-link @touchstart.stop="keyboard = 'extraKey'">
-      {{ t('button3') }}
-    </van-cell>
-    <van-cell is-link @touchstart.stop="keyboard = 'title'">
-      {{ t('button4') }}
-    </van-cell>
-    <van-cell is-link @touchstart.stop="keyboard = 'multiExtraKey'">
-      {{ t('button5') }}
-    </van-cell>
-    <van-cell is-link @touchstart.stop="keyboard = 'randomKeyOrder'">
-      {{ t('button6') }}
-    </van-cell>
+    <van-cell
+      is-link
+      :title="t('button1')"
+      @touchstart.stop="keyboard = 'default'"
+    />
+    <van-cell
+      is-link
+      :title="t('button2')"
+      @touchstart.stop="keyboard = 'custom'"
+    />
+    <van-cell
+      is-link
+      :title="t('button3')"
+      @touchstart.stop="keyboard = 'extraKey'"
+    />
+    <van-cell
+      is-link
+      :title="t('button4')"
+      @touchstart.stop="keyboard = 'title'"
+    />
+    <van-cell
+      is-link
+      :title="t('button5')"
+      @touchstart.stop="keyboard = 'multiExtraKey'"
+    />
+    <van-cell
+      is-link
+      :title="t('button6')"
+      @touchstart.stop="keyboard = 'randomKeyOrder'"
+    />
     <van-field
       v-model="value"
       readonly
