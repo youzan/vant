@@ -79,6 +79,10 @@ export default createComponent({
       type: String,
       default: 'photograph',
     },
+    beforeChoose: {
+      type: [String, Function],
+      default: ''
+    }
   },
 
   computed: {
@@ -391,7 +395,15 @@ export default createComponent({
 
       const slot = this.slots();
 
-      const Input = (
+      const propBeforeChoose = this.beforeChoose;
+      const hasPropBeforeChoose = typeof propBeforeChoose === 'function';
+      const beforeChoose = (event) => {
+        event.preventDefault();
+        typeof propBeforeChoose === 'function' &&
+          propBeforeChoose(event, this.onChange);
+      };
+
+      const OriginInput = (
         <input
           {...{ attrs: this.$attrs }}
           ref="input"
@@ -401,6 +413,12 @@ export default createComponent({
           disabled={this.disabled}
           onChange={this.onChange}
         />
+      );
+
+      const Input = hasPropBeforeChoose ? (
+        <span onClick={beforeChoose}>{OriginInput}</span>
+      ) : (
+        OriginInput
       );
 
       if (slot) {
