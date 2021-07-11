@@ -2051,6 +2051,17 @@
     estree-walker "^2.0.1"
     source-map "^0.6.1"
 
+"@vue/compiler-core@3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.1.4.tgz#a3a74cf52e8f01af386d364ac8a099cbeb260424"
+  integrity sha512-TnUz+1z0y74O/A4YKAbzsdUfamyHV73MihrEfvettWpm9bQKVoZd1nEmR1cGN9LsXWlwAvVQBetBlWdOjmQO5Q==
+  dependencies:
+    "@babel/parser" "^7.12.0"
+    "@babel/types" "^7.12.0"
+    "@vue/shared" "3.1.4"
+    estree-walker "^2.0.1"
+    source-map "^0.6.1"
+
 "@vue/compiler-dom@3.1.3":
   version "3.1.3"
   resolved "https://registry.nlark.com/@vue/compiler-dom/download/@vue/compiler-dom-3.1.3.tgz?cache=0&sync_timestamp=1625182908685&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fcompiler-dom%2Fdownload%2F%40vue%2Fcompiler-dom-3.1.3.tgz#ade4ff7db4b0a197c543dd67b5bd467d737ac344"
@@ -2058,6 +2069,14 @@
   dependencies:
     "@vue/compiler-core" "3.1.3"
     "@vue/shared" "3.1.3"
+
+"@vue/compiler-dom@3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.1.4.tgz#bf3795e1449f32c965d38c4ea6d808ca05fdfc97"
+  integrity sha512-3tG2ScHkghhUBuFwl9KgyZhrS8CPFZsO7hUDekJgIp5b1OMkROr4AvxHu6rRMl4WkyvYkvidFNBS2VfOnwa6Kw==
+  dependencies:
+    "@vue/compiler-core" "3.1.4"
+    "@vue/shared" "3.1.4"
 
 "@vue/compiler-sfc@^3.1.3":
   version "3.1.3"
@@ -2090,34 +2109,39 @@
     "@vue/compiler-dom" "3.1.3"
     "@vue/shared" "3.1.3"
 
-"@vue/reactivity@3.1.3":
-  version "3.1.3"
-  resolved "https://registry.nlark.com/@vue/reactivity/download/@vue/reactivity-3.1.3.tgz?cache=0&sync_timestamp=1625182286830&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Freactivity%2Fdownload%2F%40vue%2Freactivity-3.1.3.tgz#0aa4dfbac33f1fa296b9436042e5cbd3d84eeb46"
-  integrity sha1-CqTfusM/H6KWuUNgQuXL09hO60Y=
+"@vue/reactivity@3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.1.4.tgz#d926ed46fb0d48582ccf8665b062d37b5d35ba99"
+  integrity sha512-YDlgii2Cr9yAoKVZFzgY4j0mYlVT73986X3e5SPp6ifqckSEoFSUWXZK2Tb53TB/9qO29BEEbspnKD3m3wAwkA==
   dependencies:
-    "@vue/shared" "3.1.3"
+    "@vue/shared" "3.1.4"
 
-"@vue/runtime-core@3.1.3":
-  version "3.1.3"
-  resolved "https://registry.nlark.com/@vue/runtime-core/download/@vue/runtime-core-3.1.3.tgz#8524f6e965aba3a94ae30ded715f13ec6be59c46"
-  integrity sha1-hST26WWro6lK4w3tcV8T7GvlnEY=
+"@vue/runtime-core@3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@vue/runtime-core/-/runtime-core-3.1.4.tgz#3e30ae6ecbfff06df5adc9414491143191a375ba"
+  integrity sha512-qmVJgJuFxfT7M4qHQ4M6KqhKC66fjuswK+aBivE8dWiZ2rtIGl9gtJGpwqwjQEcKEBTOfvvrtrwBncYArJUO8Q==
   dependencies:
-    "@vue/reactivity" "3.1.3"
-    "@vue/shared" "3.1.3"
+    "@vue/reactivity" "3.1.4"
+    "@vue/shared" "3.1.4"
 
-"@vue/runtime-dom@3.1.3":
-  version "3.1.3"
-  resolved "https://registry.nlark.com/@vue/runtime-dom/download/@vue/runtime-dom-3.1.3.tgz?cache=0&sync_timestamp=1625183312585&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fruntime-dom%2Fdownload%2F%40vue%2Fruntime-dom-3.1.3.tgz#cb1c218564892db0705ce9576b39e50f820b27b8"
-  integrity sha1-yxwhhWSJLbBwXOlXaznlD4ILJ7g=
+"@vue/runtime-dom@3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@vue/runtime-dom/-/runtime-dom-3.1.4.tgz#acfeee200d5c45fc2cbdf7058cda1498f9b45849"
+  integrity sha512-vbmwgTxku1BU87Kw7r29adv0OIrDXCW0PslOPQT0O/9R5SqcXgS94Yj6zsztDjvghegenwIAPNLlDR1Auh5s+w==
   dependencies:
-    "@vue/runtime-core" "3.1.3"
-    "@vue/shared" "3.1.3"
+    "@vue/runtime-core" "3.1.4"
+    "@vue/shared" "3.1.4"
     csstype "^2.6.8"
 
 "@vue/shared@3.1.3":
   version "3.1.3"
   resolved "https://registry.nlark.com/@vue/shared/download/@vue/shared-3.1.3.tgz?cache=0&sync_timestamp=1625182288628&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fshared%2Fdownload%2F%40vue%2Fshared-3.1.3.tgz#3f6f5e7226d8d2d965ef39780ae3f89dc906b5fc"
   integrity sha1-P29ecibY0tll7zl4CuP4nckGtfw=
+
+"@vue/shared@3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.1.4.tgz#c14c461ec42ea2c1556e86f60b0354341d91adc3"
+  integrity sha512-6O45kZAmkLvzGLToBxEz4lR2W6kXohCtebV2UxjH9GXjd8X9AhEn68FN9eNanFtWNzvgw1hqd6HkPRVQalqf7Q==
 
 "@vue/test-utils@2.0.0-rc.6":
   version "2.0.0-rc.6"
@@ -10893,13 +10917,13 @@ vue-router@^4.0.0:
   integrity sha1-rZtLe72tYiQHtP8YmxZG9IwekFM=
 
 vue@^3.1.3:
-  version "3.1.3"
-  resolved "https://registry.nlark.com/vue/download/vue-3.1.3.tgz?cache=0&sync_timestamp=1625182289257&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fvue%2Fdownload%2Fvue-3.1.3.tgz#8659cdcd18bae0fc0aa79ddde6594c1e0b2facae"
-  integrity sha1-hlnNzRi64PwKp53d5llMHgsvrK4=
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-3.1.4.tgz#120d6818c51eaa35d0879e5bc1cff60135bc69fd"
+  integrity sha512-p8dcdyeCgmaAiZsbLyDkmOLcFGZb/jEVdCLW65V68LRCXTNX8jKsgah2F7OZ/v/Ai2V0Fb1MNO0vz/GFqsPVMA==
   dependencies:
-    "@vue/compiler-dom" "3.1.3"
-    "@vue/runtime-dom" "3.1.3"
-    "@vue/shared" "3.1.3"
+    "@vue/compiler-dom" "3.1.4"
+    "@vue/runtime-dom" "3.1.4"
+    "@vue/shared" "3.1.4"
 
 w3c-hr-time@^1.0.2:
   version "1.0.2"
