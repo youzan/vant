@@ -16,6 +16,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.1.3](https://github.com/youzan/vant/compare/v3.1.2...v3.1.3)
+
+`2021-07-11`
+
+**Feature**
+
+- Calendar: add click-subtitle event [#8981](https://github.com/youzan/vant/issues/8981)
+- Calendar: add subtitle slot [#8980](https://github.com/youzan/vant/issues/8980)
+- ConfigProvider: add icon-prefix prop [#8986](https://github.com/youzan/vant/issues/8986)
+- Slider: add drag event param [#8990](https://github.com/youzan/vant/issues/8990)
+- Slider: add left-button、right-button slot [#8989](https://github.com/youzan/vant/issues/8989)
+- touch-emulator: support data-no-touch-simulate [#8984](https://github.com/youzan/vant/issues/8984)
+
+**Bug Fixes**
+
+- Step: fix z-index issue [#9003](https://github.com/youzan/vant/issues/9003)
+
 ### [v3.1.2](https://github.com/youzan/vant/compare/v3.1.1...v3.1.2)
 
 `2021-07-03`

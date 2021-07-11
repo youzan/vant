@@ -16,6 +16,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.1.3](https://github.com/youzan/vant/compare/v3.1.2...v3.1.3)
+
+`2021-07-11`
+
+**Feature**
+
+- Calendar: 新增 click-subtitle 事件 [#8981](https://github.com/youzan/vant/issues/8981)
+- Calendar: 新增 subtitle 插槽 [#8980](https://github.com/youzan/vant/issues/8980)
+- ConfigProvider: 新增 icon-prefix 属性 [#8986](https://github.com/youzan/vant/issues/8986)
+- Slider: 新增 drag 事件参数 [#8990](https://github.com/youzan/vant/issues/8990)
+- Slider: 新增 left-button、right-button 插槽 [#8989](https://github.com/youzan/vant/issues/8989)
+- touch-emulator: 支持通过白名单排除节点 [#8984](https://github.com/youzan/vant/issues/8984)
+
+**Bug Fixes**
+
+- Step: 修复 z-index 过高问题 [#9003](https://github.com/youzan/vant/issues/9003)
+
 ### [v3.1.2](https://github.com/youzan/vant/compare/v3.1.1...v3.1.2)
 
 `2021-07-03`
