@@ -132,8 +132,57 @@ export default createComponent({
         return null;
       }
 
-      value = Math.max(value, this.minDate.getTime());
-      value = Math.min(value, this.maxDate.getTime());
+      let minDate = new Date(this.minDate);
+      let maxDate = new Date(this.maxDate);
+      const dateMethods = {
+        year: 'getFullYear',
+        month: 'getMonth',
+        day: 'getDate',
+        hour: 'getHours',
+        minute: 'getMinutes',
+      };
+      const getValues = (method, range, min, max) => {
+        const minDateVal = minDate[method]();
+        const maxDateVal = maxDate[method]();
+
+        return [
+          minDateVal < range[0] ? Math.max(minDateVal, min) : min || minDateVal,
+          maxDateVal > range[1] ? Math.min(maxDateVal, max) : max || maxDateVal,
+        ];
+      };
+
+      if (this.originColumns) {
+        const values = this.originColumns.map(({ type, values }) => {
+          const { range } = this.ranges.find((item) => item.type === type);
+          const min = type === 'month' ? +values[0] - 1 : +values[0];
+          const max =
+            type === 'month'
+              ? +values[values.length - 1] - 1
+              : +values[values.length - 1];
+
+          return {
+            type,
+            values: getValues(dateMethods[type], range, min, max),
+          };
+        });
+
+        if (this.type === 'month-day') {
+          const year = (this.innerValue
+            ? this.innerValue
+            : this.minDate
+          ).getFullYear();
+          values.unshift({ type: 'year', values: [year, year] });
+        }
+
+        const dateList = Object.keys(dateMethods)
+          .map((type) => values.find((item) => item.type === type)?.values)
+          .filter((item) => item);
+        minDate = new Date(...dateList.map((val) => getTrueValue(val[0])));
+        maxDate = new Date(...dateList.map((val) => getTrueValue(val[1])));
+      }
+
+      value = Math.max(value, minDate.getTime());
+      value = Math.min(value, maxDate.getTime());
 
       return new Date(value);
     },
