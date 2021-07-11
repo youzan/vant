@@ -141,19 +141,11 @@ export default createComponent({
         hour: 'getHours',
         minute: 'getMinutes',
       };
-      const getValues = (method, range, min, max) => {
-        const minDateVal = minDate[method]();
-        const maxDateVal = maxDate[method]();
-
-        return [
-          minDateVal < range[0] ? Math.max(minDateVal, min) : min || minDateVal,
-          maxDateVal > range[1] ? Math.min(maxDateVal, max) : max || maxDateVal,
-        ];
-      };
-
       if (this.originColumns) {
         const values = this.originColumns.map(({ type, values }) => {
           const { range } = this.ranges.find((item) => item.type === type);
+          const minDateVal = minDate[dateMethods[type]]();
+          const maxDateVal = minDate[dateMethods[type]]();
           const min = type === 'month' ? +values[0] - 1 : +values[0];
           const max =
             type === 'month'
@@ -162,7 +154,10 @@ export default createComponent({
 
           return {
             type,
-            values: getValues(dateMethods[type], range, min, max),
+            values: [
+              minDateVal < range[0] ? Math.max(minDateVal, min) : min || minDateVal,
+              maxDateVal > range[1] ? Math.min(maxDateVal, max) : max || maxDateVal,
+            ]
           };
         });
 
