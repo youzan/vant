@@ -3,7 +3,7 @@ import { ref, reactive, computed, CSSProperties, defineComponent } from 'vue';
 // Utils
 import { createNamespace, extend, getZIndexStyle } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
-import { INDEX_BAR_KEY, IndexBarProvide } from '../index-bar/IndexBar';
+import { INDEX_BAR_KEY } from '../index-bar/IndexBar';
 import { getScrollTop, getRootScrollTop } from '../utils/dom/scroll';
 
 // Composables
@@ -29,7 +29,7 @@ export default defineComponent({
     });
 
     const root = ref<HTMLElement>();
-    const { parent } = useParent<IndexBarProvide>(INDEX_BAR_KEY);
+    const { parent } = useParent(INDEX_BAR_KEY);
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {

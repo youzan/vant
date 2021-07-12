@@ -55,6 +55,16 @@ import type {
 
 const [name, bem] = createNamespace('field');
 
+// Shared props of Field and Form
+type SharedProps =
+  | 'colon'
+  | 'disabled'
+  | 'readonly'
+  | 'labelWidth'
+  | 'labelAlign'
+  | 'inputAlign'
+  | 'errorMessageAlign';
+
 // provide to Search component to inherit
 export const fieldProps = {
   formatter: Function as PropType<(value: string) => string>,
@@ -141,11 +151,11 @@ export default defineComponent({
     const inputRef = ref<HTMLInputElement>();
     const childFieldValue = ref<() => unknown>();
 
-    const { parent: form } = useParent<any>(FORM_KEY);
+    const { parent: form } = useParent(FORM_KEY);
 
     const getModelValue = () => String(props.modelValue ?? '');
 
-    const getProp = (key: keyof typeof props) => {
+    const getProp = <T extends SharedProps>(key: T) => {
       if (isDef(props[key])) {
         return props[key];
       }

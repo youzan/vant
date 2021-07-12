@@ -1,4 +1,10 @@
-import { ref, PropType, defineComponent, ExtractPropTypes } from 'vue';
+import {
+  ref,
+  PropType,
+  InjectionKey,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import { truthProp, createNamespace, getZIndexStyle } from '../utils';
@@ -10,8 +16,6 @@ import { useChildren } from '@vant/use';
 import { usePlaceholder } from '../composables/use-placeholder';
 
 const [name, bem] = createNamespace('tabbar');
-
-export const TABBAR_KEY = Symbol(name);
 
 const props = {
   route: Boolean,
@@ -36,6 +40,8 @@ export type TabbarProvide = {
   props: ExtractPropTypes<typeof props>;
   setActive: (active: number | string) => void;
 };
+
+export const TABBAR_KEY: InjectionKey<TabbarProvide> = Symbol(name);
 
 export default defineComponent({
   name,

@@ -1,7 +1,7 @@
 import { computed, PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { useParent } from '@vant/use';
-import { ROW_KEY, RowProvide } from '../row/Row';
+import { ROW_KEY } from '../row/Row';
 
 const [name, bem] = createNamespace('col');
 
@@ -21,7 +21,7 @@ export default defineComponent({
   },
 
   setup(props, { slots }) {
-    const { parent, index } = useParent<RowProvide>(ROW_KEY);
+    const { parent, index } = useParent(ROW_KEY);
 
     const style = computed(() => {
       if (!parent) {

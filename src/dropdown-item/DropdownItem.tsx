@@ -14,10 +14,7 @@ import {
   getZIndexStyle,
   createNamespace,
 } from '../utils';
-import {
-  DROPDOWN_KEY,
-  DropdownMenuProvide,
-} from '../dropdown-menu/DropdownMenu';
+import { DROPDOWN_KEY } from '../dropdown-menu/DropdownMenu';
 
 // Composables
 import { useParent } from '@vant/use';
@@ -61,7 +58,7 @@ export default defineComponent({
       showWrapper: false,
     });
 
-    const { parent } = useParent<DropdownMenuProvide>(DROPDOWN_KEY);
+    const { parent } = useParent(DROPDOWN_KEY);
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {

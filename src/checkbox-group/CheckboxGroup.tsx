@@ -1,4 +1,10 @@
-import { PropType, watch, defineComponent, ExtractPropTypes } from 'vue';
+import {
+  watch,
+  PropType,
+  InjectionKey,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
@@ -6,8 +12,6 @@ import { useLinkField } from '../composables/use-link-field';
 import { CheckerParent, CheckerDirection } from '../checkbox/Checker';
 
 const [name, bem] = createNamespace('checkbox-group');
-
-export const CHECKBOX_GROUP_KEY = Symbol(name);
 
 const props = {
   max: [Number, String],
@@ -32,6 +36,10 @@ export type CheckboxGroupProvide = CheckerParent & {
   props: ExtractPropTypes<typeof props>;
   updateValue: (value: unknown[]) => void;
 };
+
+export const CHECKBOX_GROUP_KEY: InjectionKey<CheckboxGroupProvide> = Symbol(
+  name
+);
 
 export default defineComponent({
   name,

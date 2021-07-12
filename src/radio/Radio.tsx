@@ -2,7 +2,7 @@ import { defineComponent } from 'vue';
 
 // Utils
 import { pick, createNamespace } from '../utils';
-import { RADIO_KEY, RadioGroupProvide } from '../radio-group/RadioGroup';
+import { RADIO_KEY } from '../radio-group/RadioGroup';
 
 // Composables
 import { useParent } from '@vant/use';
@@ -20,7 +20,7 @@ export default defineComponent({
   emits: ['update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const { parent } = useParent<RadioGroupProvide>(RADIO_KEY);
+    const { parent } = useParent(RADIO_KEY);
 
     const checked = () => {
       const value = parent ? parent.props.modelValue : props.modelValue;

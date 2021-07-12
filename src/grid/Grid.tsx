@@ -1,11 +1,9 @@
-import { PropType, defineComponent, ExtractPropTypes } from 'vue';
+import { PropType, defineComponent, ExtractPropTypes, InjectionKey } from 'vue';
 import { createNamespace, addUnit, truthProp } from '../utils';
 import { BORDER_TOP } from '../utils/constant';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('grid');
-
-export const GRID_KEY = Symbol(name);
 
 export type GridDirection = 'horizontal' | 'vertical';
 
@@ -27,6 +25,8 @@ const props = {
 export type GridProvide = {
   props: ExtractPropTypes<typeof props>;
 };
+
+export const GRID_KEY: InjectionKey<GridProvide> = Symbol(name);
 
 export default defineComponent({
   name,

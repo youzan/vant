@@ -1,16 +1,16 @@
-import { PropType, defineComponent } from 'vue';
+import { PropType, defineComponent, InjectionKey } from 'vue';
 import { truthProp, createNamespace } from '../utils';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('collapse');
 
-export const COLLAPSE_KEY = Symbol(name);
-
 export type CollapseProvide = {
   toggle: (name: number | string, expanded: boolean) => void;
   isExpanded: (name: number | string) => boolean;
 };
+
+export const COLLAPSE_KEY: InjectionKey<CollapseProvide> = Symbol(name);
 
 function validateModelValue(
   modelValue: string | number | Array<string | number>,

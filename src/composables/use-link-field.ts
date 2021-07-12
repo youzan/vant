@@ -1,7 +1,8 @@
 import { watch, inject, InjectionKey } from 'vue';
+import type { FormProvide } from '../form/Form';
 import type { FieldProvide } from '../field/types';
 
-export const FORM_KEY = Symbol('van-form');
+export const FORM_KEY: InjectionKey<FormProvide> = Symbol('van-form');
 export const FIELD_KEY: InjectionKey<FieldProvide> = Symbol('van-field');
 
 export function useLinkField(getValue: () => unknown) {

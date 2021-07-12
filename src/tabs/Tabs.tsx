@@ -7,6 +7,7 @@ import {
   PropType,
   ComputedRef,
   onActivated,
+  InjectionKey,
   CSSProperties,
   defineComponent,
   ExtractPropTypes,
@@ -50,8 +51,6 @@ import TabsTitle from './TabsTitle';
 import TabsContent from './TabsContent';
 
 const [name, bem] = createNamespace('tabs');
-
-export const TABS_KEY = Symbol(name);
 
 export type TabsType = 'line' | 'card';
 
@@ -100,6 +99,8 @@ export type TabsProvide = {
   currentName: ComputedRef<number | string | undefined>;
 };
 
+export const TABS_KEY: InjectionKey<TabsProvide> = Symbol(name);
+
 export default defineComponent({
   name,
 
@@ -119,7 +120,7 @@ export default defineComponent({
     const windowSize = useWindowSize();
     const scroller = useScrollParent(root);
     const [titleRefs, setTitleRefs] = useRefs<ComponentInstance>();
-    const { children, linkChildren } = useChildren<ComponentInstance>(TABS_KEY);
+    const { children, linkChildren } = useChildren(TABS_KEY);
 
     const state = reactive({
       inited: false,

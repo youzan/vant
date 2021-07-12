@@ -1,15 +1,15 @@
-import { defineComponent } from 'vue';
+import { defineComponent, InjectionKey } from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('sidebar');
 
-export const SIDEBAR_KEY = Symbol(name);
-
 export type SidebarProvide = {
   getActive: () => number;
   setActive: (value: number) => void;
 };
+
+export const SIDEBAR_KEY: InjectionKey<SidebarProvide> = Symbol(name);
 
 export default defineComponent({
   name,

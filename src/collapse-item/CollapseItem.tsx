@@ -3,7 +3,7 @@ import { ref, watch, computed, nextTick, defineComponent } from 'vue';
 // Utils
 import { cellProps } from '../cell/Cell';
 import { createNamespace, extend, pick, truthProp } from '../utils';
-import { COLLAPSE_KEY, CollapseProvide } from '../collapse/Collapse';
+import { COLLAPSE_KEY } from '../collapse/Collapse';
 
 // Composables
 import { raf, doubleRaf, useParent } from '@vant/use';
@@ -30,7 +30,7 @@ export default defineComponent({
   setup(props, { slots }) {
     const wrapperRef = ref<HTMLElement>();
     const contentRef = ref<HTMLElement>();
-    const { parent, index } = useParent<CollapseProvide>(COLLAPSE_KEY);
+    const { parent, index } = useParent(COLLAPSE_KEY);
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {

@@ -2,7 +2,7 @@ import { defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, extend } from '../utils';
-import { SIDEBAR_KEY, SidebarProvide } from '../sidebar/Sidebar';
+import { SIDEBAR_KEY } from '../sidebar/Sidebar';
 
 // Composables
 import { useParent } from '@vant/use';
@@ -27,7 +27,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const route = useRoute();
-    const { parent, index } = useParent<SidebarProvide>(SIDEBAR_KEY);
+    const { parent, index } = useParent(SIDEBAR_KEY);
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
