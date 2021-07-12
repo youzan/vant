@@ -142,10 +142,10 @@ export default createComponent({
         minute: 'getMinutes',
       };
       if (this.originColumns) {
-        const values = this.originColumns.map(({ type, values }) => {
-          const { range } = this.ranges.find((item) => item.type === type);
+        const dateColumns = this.originColumns.map(({ type, values }, index) => {
+          const { range } = this.ranges[index];
           const minDateVal = minDate[dateMethods[type]]();
-          const maxDateVal = minDate[dateMethods[type]]();
+          const maxDateVal = maxDate[dateMethods[type]]();
           const min = type === 'month' ? +values[0] - 1 : +values[0];
           const max =
             type === 'month'
@@ -162,18 +162,15 @@ export default createComponent({
         });
 
         if (this.type === 'month-day') {
-          const year = (this.innerValue
-            ? this.innerValue
-            : this.minDate
-          ).getFullYear();
-          values.unshift({ type: 'year', values: [year, year] });
+          const year = (this.innerValue || this.minDate).getFullYear();
+          dateColumns.unshift({ type: 'year', values: [year, year] });
         }
 
-        const dateList = Object.keys(dateMethods)
-          .map((type) => values.find((item) => item.type === type)?.values)
-          .filter((item) => item);
-        minDate = new Date(...dateList.map((val) => getTrueValue(val[0])));
-        maxDate = new Date(...dateList.map((val) => getTrueValue(val[1])));
+        const dates = Object.keys(dateMethods).map((type) =>
+          dateColumns.filter(item => item.type === type)[0]?.values
+        ).filter((item) => item);
+        minDate = new Date(...dates.map((val) => getTrueValue(val[0])));
+        maxDate = new Date(...dates.map((val) => getTrueValue(val[1])));
       }
 
       value = Math.max(value, minDate.getTime());
@@ -237,7 +234,7 @@ export default createComponent({
       let month;
       let day;
       if (type === 'month-day') {
-        year = (this.innerValue ? this.innerValue : this.minDate).getFullYear();
+        year = (this.innerValue || this.minDate).getFullYear();
         month = getValue('month');
         day = getValue('day');
       } else {
