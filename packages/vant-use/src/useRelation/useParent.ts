@@ -3,6 +3,7 @@ import {
   inject,
   computed,
   onUnmounted,
+  InjectionKey,
   getCurrentInstance,
   ComponentPublicInstance,
   ComponentInternalInstance,
@@ -15,8 +16,8 @@ type ParentProvide<T> = T & {
   internalChildren: ComponentInternalInstance[];
 };
 
-export function useParent<T>(key: string | symbol) {
-  const parent = inject<ParentProvide<T> | null>(key, null);
+export function useParent<T>(key: InjectionKey<ParentProvide<T>>) {
+  const parent = inject(key, null);
 
   if (parent) {
     const instance = getCurrentInstance()!;
