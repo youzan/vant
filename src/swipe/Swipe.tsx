@@ -6,6 +6,7 @@ import {
   onMounted,
   ComputedRef,
   onActivated,
+  InjectionKey,
   CSSProperties,
   onDeactivated,
   onBeforeUnmount,
@@ -20,7 +21,6 @@ import {
   truthProp,
   preventDefault,
   createNamespace,
-  ComponentInstance,
 } from '../utils';
 
 // Composables
@@ -35,8 +35,6 @@ import { useExpose } from '../composables/use-expose';
 import { onPopupReopen } from '../composables/on-popup-reopen';
 
 const [name, bem] = createNamespace('swipe');
-
-export const SWIPE_KEY = Symbol(name);
 
 const props = {
   loop: truthProp,
@@ -73,6 +71,8 @@ export type SwipeProvide = {
   activeIndicator: ComputedRef<number>;
 };
 
+export const SWIPE_KEY: InjectionKey<SwipeProvide> = Symbol(name);
+
 export default defineComponent({
   name,
 
@@ -93,8 +93,7 @@ export default defineComponent({
 
     const touch = useTouch();
     const windowSize = useWindowSize();
-    const { children, linkChildren } =
-      useChildren<ComponentInstance>(SWIPE_KEY);
+    const { children, linkChildren } = useChildren(SWIPE_KEY);
 
     const count = computed(() => children.length);
 

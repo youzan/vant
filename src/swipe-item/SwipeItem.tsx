@@ -9,7 +9,7 @@ import {
 
 // Utils
 import { createNamespace } from '../utils';
-import { SWIPE_KEY, SwipeProvide } from '../swipe/Swipe';
+import { SWIPE_KEY } from '../swipe/Swipe';
 
 // Composables
 import { useParent } from '@vant/use';
@@ -28,7 +28,7 @@ export default defineComponent({
       mounted: false,
     });
 
-    const { parent, index } = useParent<SwipeProvide>(SWIPE_KEY);
+    const { parent, index } = useParent(SWIPE_KEY);
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {

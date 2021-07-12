@@ -11,7 +11,7 @@ import {
 
 // Utils
 import { createNamespace, extend, unknownProp } from '../utils';
-import { TABS_KEY, TabsProvide } from '../tabs/Tabs';
+import { TABS_KEY } from '../tabs/Tabs';
 
 // Composables
 import { useParent } from '@vant/use';
@@ -38,7 +38,7 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const inited = ref(false);
-    const { parent, index } = useParent<TabsProvide>(TABS_KEY);
+    const { parent, index } = useParent(TABS_KEY);
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {

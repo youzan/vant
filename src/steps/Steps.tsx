@@ -1,10 +1,8 @@
-import { PropType, defineComponent, ExtractPropTypes } from 'vue';
+import { PropType, defineComponent, ExtractPropTypes, InjectionKey } from 'vue';
 import { createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('steps');
-
-export const STEPS_KEY = Symbol(name);
 
 export type StepsDirection = 'horizontal' | 'vertical';
 
@@ -32,6 +30,8 @@ export type StepsProvide = {
   props: ExtractPropTypes<typeof props>;
   onClickStep: (index: number) => void;
 };
+
+export const STEPS_KEY: InjectionKey<StepsProvide> = Symbol(name);
 
 export default defineComponent({
   name,

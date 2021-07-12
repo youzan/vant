@@ -3,7 +3,7 @@ import { computed, defineComponent } from 'vue';
 // Utils
 import { createNamespace } from '../utils';
 import { BORDER } from '../utils/constant';
-import { STEPS_KEY, StepsProvide } from '../steps/Steps';
+import { STEPS_KEY } from '../steps/Steps';
 
 // Composables
 import { useParent } from '@vant/use';
@@ -17,7 +17,7 @@ export default defineComponent({
   name,
 
   setup(props, { slots }) {
-    const { parent, index } = useParent<StepsProvide>(STEPS_KEY);
+    const { parent, index } = useParent(STEPS_KEY);
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {

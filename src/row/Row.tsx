@@ -1,16 +1,22 @@
-import { computed, PropType, ComputedRef, defineComponent } from 'vue';
-import { truthProp, createNamespace, ComponentInstance } from '../utils';
+import {
+  computed,
+  PropType,
+  ComputedRef,
+  InjectionKey,
+  defineComponent,
+} from 'vue';
+import { truthProp, createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('row');
-
-export const ROW_KEY = Symbol(name);
 
 export type RowSpaces = { left?: number; right: number }[];
 
 export type RowProvide = {
   spaces: ComputedRef<RowSpaces>;
 };
+
+export const ROW_KEY: InjectionKey<RowProvide> = Symbol(name);
 
 export type RowAlign = 'top' | 'center' | 'bottom';
 
@@ -39,7 +45,7 @@ export default defineComponent({
   },
 
   setup(props, { slots }) {
-    const { children, linkChildren } = useChildren<ComponentInstance>(ROW_KEY);
+    const { children, linkChildren } = useChildren(ROW_KEY);
 
     const groups = computed(() => {
       const groups: number[][] = [[]];

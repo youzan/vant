@@ -7,7 +7,6 @@ import {
   truthProp,
   preventDefault,
   createNamespace,
-  ComponentInstance,
 } from '../utils';
 import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 
@@ -114,9 +113,7 @@ export default defineComponent({
       props.columnsFieldNames
     );
 
-    const { children, linkChildren } = useChildren<ComponentInstance>(
-      PICKER_KEY
-    );
+    const { children, linkChildren } = useChildren(PICKER_KEY);
 
     linkChildren();
 

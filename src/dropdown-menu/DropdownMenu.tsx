@@ -3,6 +3,7 @@ import {
   Ref,
   computed,
   PropType,
+  InjectionKey,
   CSSProperties,
   defineComponent,
   ExtractPropTypes,
@@ -21,8 +22,6 @@ import {
 } from '@vant/use';
 
 const [name, bem] = createNamespace('dropdown-menu');
-
-export const DROPDOWN_KEY = Symbol(name);
 
 export type DropdownMenuDirection = 'up' | 'down';
 
@@ -47,6 +46,8 @@ export type DropdownMenuProvide = {
   offset: Ref<number>;
 };
 
+export const DROPDOWN_KEY: InjectionKey<DropdownMenuProvide> = Symbol(name);
+
 export default defineComponent({
   name,
 
@@ -57,9 +58,7 @@ export default defineComponent({
     const barRef = ref<HTMLElement>();
     const offset = ref(0);
 
-    const { children, linkChildren } = useChildren<ComponentInstance>(
-      DROPDOWN_KEY
-    );
+    const { children, linkChildren } = useChildren(DROPDOWN_KEY);
     const scrollParent = useScrollParent(root);
 
     const opened = computed(() =>

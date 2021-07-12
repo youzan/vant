@@ -6,6 +6,7 @@ import {
   PropType,
   Teleport,
   onMounted,
+  InjectionKey,
   CSSProperties,
   TeleportProps,
   defineComponent,
@@ -22,7 +23,6 @@ import {
   createNamespace,
   getRootScrollTop,
   setRootScrollTop,
-  ComponentInstance,
 } from '../utils';
 
 // Composables
@@ -46,8 +46,6 @@ function genAlphabet() {
 
 const [name, bem] = createNamespace('index-bar');
 
-export const INDEX_BAR_KEY = Symbol(name);
-
 const props = {
   sticky: truthProp,
   zIndex: [Number, String],
@@ -67,6 +65,8 @@ export type IndexBarProvide = {
   props: ExtractPropTypes<typeof props>;
 };
 
+export const INDEX_BAR_KEY: InjectionKey<IndexBarProvide> = Symbol(name);
+
 export default defineComponent({
   name,
 
@@ -80,9 +80,7 @@ export default defineComponent({
 
     const touch = useTouch();
     const scrollParent = useScrollParent(root);
-    const { children, linkChildren } = useChildren<ComponentInstance>(
-      INDEX_BAR_KEY
-    );
+    const { children, linkChildren } = useChildren(INDEX_BAR_KEY);
 
     linkChildren({ props });
 

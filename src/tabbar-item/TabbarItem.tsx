@@ -2,7 +2,7 @@ import { computed, getCurrentInstance, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, extend, isObject } from '../utils';
-import { TABBAR_KEY, TabbarProvide } from '../tabbar/Tabbar';
+import { TABBAR_KEY } from '../tabbar/Tabbar';
 
 // Composables
 import { useParent } from '@vant/use';
@@ -30,7 +30,7 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const route = useRoute();
     const vm = getCurrentInstance()!.proxy!;
-    const { parent, index } = useParent<TabbarProvide>(TABBAR_KEY);
+    const { parent, index } = useParent(TABBAR_KEY);
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {

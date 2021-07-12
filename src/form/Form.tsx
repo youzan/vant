@@ -1,7 +1,7 @@
-import { PropType, defineComponent } from 'vue';
+import { PropType, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
-import { truthProp, createNamespace, ComponentInstance } from '../utils';
+import { truthProp, createNamespace } from '../utils';
 
 // Composables
 import { useChildren } from '@vant/use';
@@ -17,32 +17,38 @@ import type {
 
 const [name, bem] = createNamespace('form');
 
+const props = {
+  colon: Boolean,
+  disabled: Boolean,
+  readonly: Boolean,
+  showError: Boolean,
+  labelWidth: [Number, String],
+  labelAlign: String as PropType<FieldTextAlign>,
+  inputAlign: String as PropType<FieldTextAlign>,
+  scrollToError: Boolean,
+  validateFirst: Boolean,
+  submitOnEnter: truthProp,
+  showErrorMessage: truthProp,
+  errorMessageAlign: String as PropType<FieldTextAlign>,
+  validateTrigger: {
+    type: String as PropType<FieldValidateTrigger>,
+    default: 'onBlur',
+  },
+};
+
+export type FormProvide = {
+  props: ExtractPropTypes<typeof props>;
+};
+
 export default defineComponent({
   name,
 
-  props: {
-    colon: Boolean,
-    disabled: Boolean,
-    readonly: Boolean,
-    showError: Boolean,
-    labelWidth: [Number, String],
-    labelAlign: String as PropType<FieldTextAlign>,
-    inputAlign: String as PropType<FieldTextAlign>,
-    scrollToError: Boolean,
-    validateFirst: Boolean,
-    submitOnEnter: truthProp,
-    showErrorMessage: truthProp,
-    errorMessageAlign: String as PropType<FieldTextAlign>,
-    validateTrigger: {
-      type: String as PropType<FieldValidateTrigger>,
-      default: 'onBlur',
-    },
-  },
+  props,
 
   emits: ['submit', 'failed'],
 
   setup(props, { emit, slots }) {
-    const { children, linkChildren } = useChildren<ComponentInstance>(FORM_KEY);
+    const { children, linkChildren } = useChildren(FORM_KEY);
 
     const getFieldsByNames = (names?: string[]) => {
       if (names) {

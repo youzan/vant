@@ -3,7 +3,7 @@ import { computed, CSSProperties, defineComponent } from 'vue';
 // Utils
 import { createNamespace, addUnit, extend } from '../utils';
 import { BORDER } from '../utils/constant';
-import { GRID_KEY, GridProvide } from '../grid/Grid';
+import { GRID_KEY } from '../grid/Grid';
 
 // Composables
 import { useParent } from '@vant/use';
@@ -28,7 +28,7 @@ export default defineComponent({
   }),
 
   setup(props, { slots }) {
-    const { parent, index } = useParent<GridProvide>(GRID_KEY);
+    const { parent, index } = useParent(GRID_KEY);
     const route = useRoute();
 
     if (!parent) {
@@ -113,8 +113,15 @@ export default defineComponent({
     };
 
     return () => {
-      const { center, border, square, gutter, reverse, direction, clickable } =
-        parent.props;
+      const {
+        center,
+        border,
+        square,
+        gutter,
+        reverse,
+        direction,
+        clickable,
+      } = parent.props;
 
       const classes = [
         bem('content', [

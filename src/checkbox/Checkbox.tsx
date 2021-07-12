@@ -2,10 +2,7 @@ import { computed, watch, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, extend, pick, truthProp } from '../utils';
-import {
-  CHECKBOX_GROUP_KEY,
-  CheckboxGroupProvide,
-} from '../checkbox-group/CheckboxGroup';
+import { CHECKBOX_GROUP_KEY } from '../checkbox-group/CheckboxGroup';
 
 // Composables
 import { useParent } from '@vant/use';
@@ -27,7 +24,7 @@ export default defineComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const { parent } = useParent<CheckboxGroupProvide>(CHECKBOX_GROUP_KEY);
+    const { parent } = useParent(CHECKBOX_GROUP_KEY);
 
     const setParentValue = (checked: boolean) => {
       const { name } = props;

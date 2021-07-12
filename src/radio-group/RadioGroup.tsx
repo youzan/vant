@@ -1,25 +1,31 @@
-import { watch, defineComponent, ExtractPropTypes } from 'vue';
+import {
+  watch,
+  PropType,
+  InjectionKey,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 import { unknownProp, createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 import { useLinkField } from '../composables/use-link-field';
-import { CheckerParent } from '../checkbox/Checker';
+import type { CheckerDirection } from '../checkbox/Checker';
 
 const [name, bem] = createNamespace('radio-group');
-
-export const RADIO_KEY = Symbol(name);
 
 const props = {
   disabled: Boolean,
   iconSize: [Number, String],
-  direction: String,
+  direction: String as PropType<CheckerDirection>,
   modelValue: unknownProp,
   checkedColor: String,
 };
 
-export type RadioGroupProvide = CheckerParent & {
+export type RadioGroupProvide = {
   props: ExtractPropTypes<typeof props>;
   updateValue: (value: unknown) => void;
 };
+
+export const RADIO_KEY: InjectionKey<RadioGroupProvide> = Symbol(name);
 
 export default defineComponent({
   name,
