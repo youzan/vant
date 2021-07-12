@@ -1,63 +1,91 @@
 <template>
   <demo-block card :title="t('basicUsage')">
     <van-cell :title="`primary ${t('type')}`">
-      <van-tag type="primary">{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag type="primary">{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
     <van-cell :title="`success ${t('type')}`">
-      <van-tag type="success">{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag type="success">{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
     <van-cell :title="`danger ${t('type')}`">
-      <van-tag type="danger">{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag type="danger">{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
     <van-cell :title="`warning ${t('type')}`">
-      <van-tag type="warning">{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag type="warning">{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
   </demo-block>
 
   <demo-block card :title="t('tagStyle')">
     <van-cell :title="t('plain')">
-      <van-tag plain type="primary">{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag plain type="primary">{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
     <van-cell :title="t('round')">
-      <van-tag round type="primary">{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag round type="primary">{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
     <van-cell :title="t('mark')">
-      <van-tag mark type="primary">{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag mark type="primary">{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
     <van-cell :title="t('closeable')">
-      <van-tag
-        closeable
-        :show="show"
-        size="medium"
-        type="primary"
-        @close="close"
-      >
-        {{ t('tag') }}
-      </van-tag>
+      <template #value>
+        <van-tag
+          closeable
+          :show="show"
+          size="medium"
+          type="primary"
+          @close="close"
+        >
+          {{ t('tag') }}
+        </van-tag>
+      </template>
     </van-cell>
   </demo-block>
 
   <demo-block card :title="t('customSize')">
     <van-cell :title="t('smallSize')">
-      <van-tag type="primary">{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag type="primary">{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
     <van-cell :title="t('mediumSize')">
-      <van-tag type="primary" size="medium">{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag type="primary" size="medium">{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
     <van-cell :title="t('largeSize')">
-      <van-tag type="primary" size="large">{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag type="primary" size="large">{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
   </demo-block>
 
   <demo-block card :title="t('customColor')">
     <van-cell :title="t('customBgColor')">
-      <van-tag color="#7232dd">{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag color="#7232dd">{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
     <van-cell :title="t('customTextColor')">
-      <van-tag color="#ffe1e1" text-color="#ad0000">{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag color="#ffe1e1" text-color="#ad0000">{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
     <van-cell :title="t('customPlainColor')">
-      <van-tag color="#7232dd" plain>{{ t('tag') }}</van-tag>
+      <template #value>
+        <van-tag color="#7232dd" plain>{{ t('tag') }}</van-tag>
+      </template>
     </van-cell>
   </demo-block>
 </template>
