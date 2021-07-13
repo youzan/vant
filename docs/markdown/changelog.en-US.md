@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.24](https://github.com/youzan/vant/compare/v2.12.23...v2.12.24)
+
+`2021-07-13`
+
+**Bug Fixes**
+
+- DatetimePicker: fix incorrect value when using filter [#9009](https://github.com/youzan/vant/issues/9009)
+- Step: z-index issue [#9004](https://github.com/youzan/vant/issues/9004)
+
 ### [v2.12.23](https://github.com/youzan/vant/compare/v2.12.22...v2.12.23)
 
 `2021-07-06`

@@ -16,6 +16,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.24](https://github.com/youzan/vant/compare/v2.12.23...v2.12.24)
+
+`2021-07-13`
+
+**Bug Fixes**
+
+- DatetimePicker: 修复设置 filter 属性时可能出现当前日期不正确的问题 [#9009](https://github.com/youzan/vant/issues/9009)
+- Step: 修复 z-index 层级问题 [#9004](https://github.com/youzan/vant/issues/9004)
+
 ### [v2.12.23](https://github.com/youzan/vant/compare/v2.12.22...v2.12.23)
 
 `2021-07-06`
