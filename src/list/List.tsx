@@ -139,6 +139,14 @@ export default defineComponent({
       check
     );
 
+    if (tabStatus) {
+      watch(tabStatus, (tabActive) => {
+        if (tabActive) {
+          check();
+        }
+      });
+    }
+
     onUpdated(() => {
       loading.value = props.loading!;
     });

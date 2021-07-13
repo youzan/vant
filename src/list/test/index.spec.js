@@ -158,3 +158,38 @@ test('should not emit load event when inside an inactive tab', async () => {
   expect(onLoad1).toHaveBeenCalledTimes(1);
   expect(onLoad2).toHaveBeenCalledTimes(0);
 });
+
+// https://github.com/youzan/vant/issues/9017
+test('should emit load event when parent tab is activated', async () => {
+  const onLoad1 = jest.fn();
+  const onLoad2 = jest.fn();
+
+  const wrapper = mount({
+    data() {
+      return {
+        active: 0,
+      };
+    },
+    render() {
+      return (
+        <Tabs active={this.active} swipeable>
+          <Tab>
+            <List onLoad={onLoad1} />
+          </Tab>
+          <Tab>
+            <List onLoad={onLoad2} />
+          </Tab>
+        </Tabs>
+      );
+    },
+  });
+
+  await later();
+  expect(onLoad1).toHaveBeenCalledTimes(1);
+  expect(onLoad2).toHaveBeenCalledTimes(0);
+
+  await wrapper.setData({ active: 1 });
+  await later();
+  expect(onLoad1).toHaveBeenCalledTimes(1);
+  expect(onLoad2).toHaveBeenCalledTimes(1);
+});
