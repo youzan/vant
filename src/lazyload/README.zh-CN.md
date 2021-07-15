@@ -87,3 +87,17 @@ app.use(Lazyload, {
 | lazyComponent | 是否能懒加载模块 | _boolean_  | `false`    |
 
 > 更多内容请参照：[vue-lazyload 官方文档](https://github.com/hilongjw/vue-lazyload)
+
+## 常见问题
+
+### 通过 CDN 引入 Vant 时，没有自动注册 Lazyload 组件？
+
+由于 Lazyload 组件在注册时可以传入一些配置项，所以我们不会自动注册 Lazyload 组件，需要手动进行注册：
+
+```js
+const app = Vue.createApp();
+
+app.use(vant.Lazyload, {
+  lazyComponent: true,
+});
+```
