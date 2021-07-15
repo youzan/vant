@@ -1,6 +1,6 @@
 {
   "name": "@vant/cli",
-  "version": "3.11.1",
+  "version": "3.11.2",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "bin": {
