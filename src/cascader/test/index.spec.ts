@@ -88,6 +88,20 @@ test('should render title slot correctly', () => {
   expect(wrapper.find('.van-cascader__title').html()).toMatchSnapshot();
 });
 
+test('should render option slot correctly', async () => {
+  const option = { value: '1', text: 'foo' };
+  const wrapper = mount(Cascader, {
+    props: {
+      options: [option],
+    },
+    slots: {
+      option: ({ option }) => `Custom Option ${option.text}`,
+    },
+  });
+  await later();
+  expect(wrapper.find('.van-cascader__option').html()).toMatchSnapshot();
+});
+
 // TODO
 // test('should select correct option when value changed', async () => {
 //   const wrapper = mount(Cascader, {

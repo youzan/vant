@@ -59,11 +59,7 @@ export default defineComponent({
       activeTab: 0,
     });
 
-    const {
-      text: textKey,
-      value: valueKey,
-      children: childrenKey,
-    } = extend(
+    const { text: textKey, value: valueKey, children: childrenKey } = extend(
       {
         text: 'text',
         value: 'value',
@@ -210,39 +206,52 @@ export default defineComponent({
       </div>
     );
 
+    const renderOption = (
+      option: CascaderOption,
+      selectedOption: CascaderOption | null,
+      tabIndex: number
+    ) => {
+      const selected =
+        selectedOption && option[valueKey] === selectedOption[valueKey];
+      const color = option.color || (selected ? props.activeColor : undefined);
+
+      const Text = slots.option ? (
+        slots.option({ option, selected })
+      ) : (
+        <span>{option[textKey]}</span>
+      );
+
+      return (
+        <li
+          class={[
+            bem('option', {
+              selected,
+              disabled: option.disabled,
+            }),
+            option.className,
+          ]}
+          style={{ color }}
+          onClick={() => onSelect(option, tabIndex)}
+        >
+          {Text}
+          {selected ? (
+            <Icon name="success" class={bem('selected-icon')} />
+          ) : null}
+        </li>
+      );
+    };
+
     const renderOptions = (
       options: CascaderOption[],
       selectedOption: CascaderOption | null,
       tabIndex: number
-    ) => {
-      const renderOption = (option: CascaderOption) => {
-        const isSelected =
-          selectedOption && option[valueKey] === selectedOption[valueKey];
-        const color =
-          option.color || (isSelected ? props.activeColor : undefined);
-
-        return (
-          <li
-            class={[
-              bem('option', {
-                selected: isSelected,
-                disabled: option.disabled,
-              }),
-              option.className,
-            ]}
-            style={{ color }}
-            onClick={() => onSelect(option, tabIndex)}
-          >
-            <span>{option[textKey]}</span>
-            {isSelected ? (
-              <Icon name="success" class={bem('selected-icon')} />
-            ) : null}
-          </li>
-        );
-      };
-
-      return <ul class={bem('options')}>{options.map(renderOption)}</ul>;
-    };
+    ) => (
+      <ul class={bem('options')}>
+        {options.map((option) =>
+          renderOption(option, selectedOption, tabIndex)
+        )}
+      </ul>
+    );
 
     const renderTab = (tab: CascaderTab, tabIndex: number) => {
       const { options, selectedOption } = tab;
