@@ -280,7 +280,8 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
-| click | 点击标签时触发 | _name: string \| number, title: string_ |
+| click-tab `v3.1.4` | 点击标签时触发 | _{ name: string \| number, title: string, event: MouseEvent }_ |
+| click | 点击标签时触发（已废弃，请使用 click-tab 事件） | _name: string \| number, title: string_ |
 | change | 当前激活的标签改变时触发 | _name: string \| number, title: string_ |
 | disabled | 点击被禁用的标签时触发 | _name: string \| number, title: string_ |
 | rendered | 标签内容首次渲染时触发（仅在开启延迟渲染后触发） | _name: string \| number, title: string_ |
