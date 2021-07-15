@@ -15,6 +15,10 @@ export function test(command: any) {
     watch: command.watch,
     config: JEST_CONFIG_FILE,
     clearCache: command.clearCache,
+    changedSince: command.changedSince,
+    logHeapUsage: command.logHeapUsage,
+    runInBand: command.runInBand,
+    debug: command.debug,
   } as any;
 
   runCLI(config, [ROOT])
