@@ -88,14 +88,14 @@ test('should render title slot correctly', () => {
   expect(wrapper.find('.van-cascader__title').html()).toMatchSnapshot();
 });
 
-test('should render option-text slot correctly', async () => {
+test('should render option slot correctly', async () => {
   const option = { value: '1', text: 'foo' };
   const wrapper = mount(Cascader, {
     props: {
       options: [option],
     },
     slots: {
-      'option-text': (option) => `Custom Option Text ${option.text}`,
+      option: ({ option }) => `Custom Option ${option.text}`,
     },
   });
   await later();

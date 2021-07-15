@@ -211,13 +211,12 @@ export default defineComponent({
       selectedOption: CascaderOption | null,
       tabIndex: number
     ) => {
-      const isSelected =
+      const selected =
         selectedOption && option[valueKey] === selectedOption[valueKey];
-      const color =
-        option.color || (isSelected ? props.activeColor : undefined);
+      const color = option.color || (selected ? props.activeColor : undefined);
 
-      const OptionText = slots['option-text'] ? (
-        slots['option-text'](option)
+      const Text = slots.option ? (
+        slots.option({ option, selected })
       ) : (
         <span>{option[textKey]}</span>
       );
@@ -226,7 +225,7 @@ export default defineComponent({
         <li
           class={[
             bem('option', {
-              selected: isSelected,
+              selected,
               disabled: option.disabled,
             }),
             option.className,
@@ -234,8 +233,8 @@ export default defineComponent({
           style={{ color }}
           onClick={() => onSelect(option, tabIndex)}
         >
-          {OptionText}
-          {isSelected ? (
+          {Text}
+          {selected ? (
             <Icon name="success" class={bem('selected-icon')} />
           ) : null}
         </li>
