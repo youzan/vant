@@ -5,6 +5,12 @@ exports[`should change close icon when using close-icon prop 1`] = `
 </i>
 `;
 
+exports[`should render option-text slot correctly 1`] = `
+<li class="van-cascader__option">
+  Custom Option Text foo
+</li>
+`;
+
 exports[`should render title slot correctly 1`] = `
 <h2 class="van-cascader__title">
   Custom Title

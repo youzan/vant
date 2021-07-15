@@ -235,9 +235,10 @@ export default {
 
 ### Slots
 
-| Name  | Description  |
-| ----- | ------------ |
-| title | Custom title |
+| Name                 | Description        | SlotProps            |
+| -------------------- | ------------------ | -------------------- |
+| title                | Custom title       | -                    |
+| option-text `v3.1.4` | Custom option text | _{ option: Option }_ |
 
 ### CSS Variables
 
