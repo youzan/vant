@@ -183,8 +183,8 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-cell-group van-cell-group--inset">
-    <div class="van-cell van-cell--required van-field van-field--error">
-      <div class="van-cell__title van-field__label">
+    <div class="van-cell van-field van-field--error">
+      <div class="van-cell__title van-field__label van-field__label--required">
         <span>
           Username
         </span>
@@ -198,8 +198,8 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
     </div>
-    <div class="van-cell van-cell--required van-field">
-      <div class="van-cell__title van-field__label">
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label van-field__label--required">
         <span>
           Phone
         </span>

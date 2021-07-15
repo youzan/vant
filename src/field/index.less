@@ -20,6 +20,7 @@
   --van-field-word-limit-font-size: @field-word-limit-font-size;
   --van-field-word-limit-line-height: @field-word-limit-line-height;
   --van-field-disabled-text-color: @field-disabled-text-color;
+  --van-field-required-mark-color: @field-required-mark-color;
 }
 
 .van-field {
@@ -38,6 +39,14 @@
 
     &--right {
       text-align: right;
+    }
+
+    &--required {
+      &::before {
+        margin-right: 2px;
+        color: var(--van-field-required-mark-color);
+        content: '*';
+      }
     }
   }
 

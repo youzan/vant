@@ -567,11 +567,13 @@ export default defineComponent({
           center={props.center}
           border={props.border}
           isLink={props.isLink}
-          required={props.required}
           clickable={props.clickable}
           titleStyle={labelStyle.value}
           valueClass={bem('value')}
-          titleClass={[bem('label', labelAlign), props.labelClass]}
+          titleClass={[
+            bem('label', [labelAlign, { required: props.required }]),
+            props.labelClass,
+          ]}
           arrowDirection={props.arrowDirection}
         />
       );

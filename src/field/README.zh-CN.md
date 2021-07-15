@@ -363,6 +363,7 @@ export default {
 | --van-field-word-limit-font-size      | _var(--van-font-size-sm)_ | -    |
 | --van-field-word-limit-line-height    | _16px_                    | -    |
 | --van-field-disabled-text-color       | _var(--van-gray-5)_       | -    |
+| --van-field-required-mark-color       | _var(--van-red)_          | -    |
 
 ## 常见问题
 
