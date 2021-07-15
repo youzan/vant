@@ -273,7 +273,8 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Emitted when a tab is clicked | _name: string \| number, title: string_ |
+| click-tab `v3.1.4` | Emitted when a tab is clicked | _{ name: string \| number, title: string, event: MouseEvent }_ |
+| click | Emitted when a tab is clicked (Deprecated) | _name: string \| number, title: string_ |
 | change | Emitted when active tab changed | _name: string \| number, title: string_ |
 | disabled | Emitted when a disabled tab is clicked | _name: string \| number, title: string_ |
 | rendered | Emitted when content first rendered in lazy-render mode | _name: string \| number, title: string_ |

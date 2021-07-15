@@ -106,7 +106,15 @@ export default defineComponent({
 
   props,
 
-  emits: ['click', 'change', 'scroll', 'disabled', 'rendered', 'update:active'],
+  emits: [
+    'click',
+    'change',
+    'scroll',
+    'disabled',
+    'rendered',
+    'click-tab',
+    'update:active',
+  ],
 
   setup(props, { emit, slots }) {
     let tabHeight: number;
@@ -281,7 +289,11 @@ export default defineComponent({
     };
 
     // emit event when clicked
-    const onClick = (item: ComponentInstance, index: number) => {
+    const onClickTab = (
+      item: ComponentInstance,
+      index: number,
+      event: MouseEvent
+    ) => {
       const { title, disabled } = children[index];
       const name = getTabName(children[index], index);
 
@@ -297,7 +309,16 @@ export default defineComponent({
           },
         });
 
+        emit('click-tab', {
+          name,
+          title,
+          event,
+        });
+
+        // @deprecated
+        // should be removed in next major version
         emit('click', name, title);
+
         route(item as ComponentPublicInstance<RouteProps>);
       }
     };
@@ -353,8 +374,8 @@ export default defineComponent({
           renderTitle={item.$slots.title}
           activeColor={props.titleActiveColor}
           inactiveColor={props.titleInactiveColor}
-          onClick={() => {
-            onClick(item, index);
+          onClick={(event: MouseEvent) => {
+            onClickTab(item, index, event);
           }}
         />
       ));
