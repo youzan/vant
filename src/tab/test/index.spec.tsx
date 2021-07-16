@@ -45,6 +45,7 @@ test('should emit click-tab event when tab is clicked', async () => {
     expect.objectContaining({
       name: 0,
       title: 'title1',
+      disabled: false,
     })
   );
 });

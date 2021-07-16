@@ -68,7 +68,7 @@ export default {
 By default more than 5 tabs, you can scroll through the tabs. You can set `swipe-threshold` attribute to customize threshold number.
 
 ```html
-<van-tabs>
+<van-tabs v-model:active="active">
   <van-tab v-for="index in 8" :title="'tab' + index">
     content of tab {{ index }}
   </van-tab>
@@ -77,27 +77,14 @@ By default more than 5 tabs, you can scroll through the tabs. You can set `swipe
 
 ### Disabled Tab
 
-You can set `disabled` attribute on the corresponding `van-tab`.
+Use `disabled` prop to disable a tab.
 
 ```html
-<van-tabs @disabled="onClickDisabled">
+<van-tabs v-model:active="active">
   <van-tab v-for="index in 3" :title="'tab' + index" :disabled="index === 2">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
-```
-
-```js
-import { Toast } from 'vant';
-
-export default {
-  setup() {
-    const onClickDisabled = (name, title) => Toast(`${name} is disabled`);
-    return {
-      onClickDisabled,
-    };
-  },
-};
 ```
 
 ### Card Style
@@ -105,17 +92,17 @@ export default {
 Tabs styled as cards.
 
 ```html
-<van-tabs type="card">
+<van-tabs v-model:active="active" type="card">
   <van-tab v-for="index in 3" :title="'tab' + index">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
 
-### Click Event
+### Click Tab Event
 
 ```html
-<van-tabs @click="onClick">
+<van-tabs v-model:active="active" @click-tab="onClickTab">
   <van-tab v-for="index in 2" :title="'tab' + index">
     content of tab {{ index }}
   </van-tab>
@@ -127,9 +114,9 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onClick = (name, title) => Toast(title);
+    const onClickTab = ({ title }) => Toast(title);
     return {
-      onClick,
+      onClickTab,
     };
   },
 };
@@ -199,7 +186,7 @@ In scrollspy mode, the list of content will be tiled.
 ### Before Change
 
 ```html
-<van-tabs :before-change="beforeChange">
+<van-tabs v-model:active="active" :before-change="beforeChange">
   <van-tab v-for="index in 4" :title="'tab ' + index">
     content {{ index }}
   </van-tab>
@@ -207,8 +194,11 @@ In scrollspy mode, the list of content will be tiled.
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   setup() {
+    const active = ref(0);
     const beforeChange = (index) => {
       // prevent change
       if (index === 1) {
@@ -222,6 +212,7 @@ export default {
     };
 
     return {
+      active,
       beforeChange,
     };
   },
@@ -273,12 +264,12 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click-tab `v3.1.4` | Emitted when a tab is clicked | _{ name: string \| number, title: string, event: MouseEvent }_ |
-| click | Emitted when a tab is clicked (Deprecated) | _name: string \| number, title: string_ |
+| click-tab `v3.1.4` | Emitted when a tab is clicked | _{ name: string \| number, title: string, event: MouseEvent, disabled: boolean }_ |
 | change | Emitted when active tab changed | _name: string \| number, title: string_ |
-| disabled | Emitted when a disabled tab is clicked | _name: string \| number, title: string_ |
 | rendered | Emitted when content first rendered in lazy-render mode | _name: string \| number, title: string_ |
 | scroll | Emitted when tab scrolling in sticky mode | _{ scrollTop: number, isFixed: boolean }_ |
+
+> Tips：click and disabled event is deprecated，place use click-tab event instead.
 
 ### Tabs Methods
 

@@ -71,7 +71,7 @@ export default {
 标签数量超过 5 个时，标签栏可以在水平方向上滚动，切换时会自动将当前标签居中。
 
 ```html
-<van-tabs>
+<van-tabs v-model:active="active">
   <van-tab v-for="index in 8" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
@@ -80,27 +80,14 @@ export default {
 
 ### 禁用标签
 
-设置 `disabled` 属性即可禁用标签，如果需要监听禁用标签的点击事件，可以在 `van-tabs` 上监听`disabled` 事件。
+设置 `disabled` 属性即可禁用标签。
 
 ```html
-<van-tabs @disabled="onClickDisabled">
+<van-tabs v-model:active="active">
   <van-tab title="标签 1">内容 1</van-tab>
   <van-tab title="标签 2" disabled>内容 2</van-tab>
   <van-tab title="标签 3">内容 3</van-tab>
 </van-tabs>
-```
-
-```js
-import { Toast } from 'vant';
-
-export default {
-  setup() {
-    const onClickDisabled = (name, title) => Toast(`${name}已被禁用`);
-    return {
-      onClickDisabled,
-    };
-  },
-};
 ```
 
 ### 样式风格
@@ -108,7 +95,7 @@ export default {
 `Tab` 支持两种样式风格：`line` 和`card`，默认为 `line` 样式，可以通过 `type` 属性切换样式风格。
 
 ```html
-<van-tabs type="card">
+<van-tabs v-model:active="active" type="card">
   <van-tab title="标签 1">内容 1</van-tab>
   <van-tab title="标签 2">内容 2</van-tab>
   <van-tab title="标签 3">内容 3</van-tab>
@@ -117,23 +104,26 @@ export default {
 
 ### 点击事件
 
-可以在 `van-tabs` 上绑定 `click` 事件，事件传参为标签对应的标识符和标题。
+点击标签页时，会触发 `click-tab` 事件。
 
 ```html
-<van-tabs @click="onClick">
+<van-tabs v-model:active="active" @click-tab="onClickTab">
   <van-tab title="标签 1">内容 1</van-tab>
   <van-tab title="标签 2">内容 2</van-tab>
 </van-tabs>
 ```
 
 ```js
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onClick = (name, title) => Toast(title);
+    const active = ref(0);
+    const onClickTab = ({ title }) => Toast(title);
     return {
-      onClick,
+      active,
+      onClickTab,
     };
   },
 };
@@ -205,7 +195,7 @@ export default {
 通过 `before-change` 属性可以在切换标签前执行特定的逻辑。
 
 ```html
-<van-tabs :before-change="beforeChange">
+<van-tabs v-model:active="active" :before-change="beforeChange">
   <van-tab v-for="index in 4" :title="'选项 ' + index">
     内容 {{ index }}
   </van-tab>
@@ -213,8 +203,11 @@ export default {
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   setup() {
+    const active = ref(0);
     const beforeChange = (index) => {
       // 返回 false 表示阻止此次切换
       if (index === 1) {
@@ -280,12 +273,12 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
-| click-tab `v3.1.4` | 点击标签时触发 | _{ name: string \| number, title: string, event: MouseEvent }_ |
-| click | 点击标签时触发（已废弃，请使用 click-tab 事件） | _name: string \| number, title: string_ |
+| click-tab `v3.1.4` | 点击标签时触发 | _{ name: string \| number, title: string, event: MouseEvent, disabled: boolean }_ |
 | change | 当前激活的标签改变时触发 | _name: string \| number, title: string_ |
-| disabled | 点击被禁用的标签时触发 | _name: string \| number, title: string_ |
 | rendered | 标签内容首次渲染时触发（仅在开启延迟渲染后触发） | _name: string \| number, title: string_ |
 | scroll | 滚动时触发，仅在 sticky 模式下生效 | _{ scrollTop: number, isFixed: boolean }_ |
+
+> 提示：click 和 disabled 事件已废弃，请使用 click-tab 事件代替。
 
 ### Tabs 方法
 

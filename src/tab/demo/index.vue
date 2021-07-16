@@ -24,7 +24,7 @@
   </demo-block>
 
   <demo-block :title="t('title3')">
-    <van-tabs @disabled="onClickDisabled">
+    <van-tabs>
       <van-tab
         v-for="index in 3"
         :title="t('tab') + index"
@@ -45,7 +45,7 @@
   </demo-block>
 
   <demo-block :title="t('title5')">
-    <van-tabs @click="onClick">
+    <van-tabs @click-tab="onClickTab">
       <van-tab v-for="index in 2" :title="t('tab') + index" :key="index">
         {{ t('content') }} {{ index }}
       </van-tab>
@@ -151,12 +151,8 @@ export default {
 
     const tabs = [1, 2, 3, 4];
 
-    const onClick = (index: number, title: string) => {
+    const onClickTab = ({ title }: { title: string }) => {
       Toast(title);
-    };
-
-    const onClickDisabled = (index: number, title: string) => {
-      Toast(title + t('disabled'));
     };
 
     const beforeChange = (name: number) => {
@@ -172,9 +168,8 @@ export default {
       ...toRefs(state),
       t,
       tabs,
-      onClick,
+      onClickTab,
       beforeChange,
-      onClickDisabled,
     };
   },
 };
