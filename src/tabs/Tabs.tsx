@@ -297,7 +297,16 @@ export default defineComponent({
       const { title, disabled } = children[index];
       const name = getTabName(children[index], index);
 
+      emit('click-tab', {
+        name,
+        title,
+        event,
+        disabled,
+      });
+
       if (disabled) {
+        // @deprecated
+        // should be removed in next major version
         emit('disabled', name, title);
       } else {
         callInterceptor({
@@ -307,12 +316,6 @@ export default defineComponent({
             setCurrentIndex(index);
             scrollToCurrentContent();
           },
-        });
-
-        emit('click-tab', {
-          name,
-          title,
-          event,
         });
 
         // @deprecated
