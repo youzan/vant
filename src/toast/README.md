@@ -147,7 +147,7 @@ Toast.resetDefaultOptions('loading');
 | Toast.success | `options \| message` | toast instance | Show success toast |
 | Toast.fail | `options \| message` | toast instance | Show fail toast |
 | Toast.clear | `clearAll: boolean` | `void` | Close toast |
-| Toast.allowMultiple | - | `void` | Allow multlple toast at the same time |
+| Toast.allowMultiple | - | `void` | Allow multiple toast at the same time |
 | Toast.setDefaultOptions | `type \| options` | `void` | Set default options of all toasts |
 | Toast.resetDefaultOptions | `type` | `void` | Reset default options of all toasts |
 

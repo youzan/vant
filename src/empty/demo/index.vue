@@ -4,7 +4,7 @@
   </demo-block>
 
   <demo-block :title="t('imageType')">
-    <van-tabs v-model="active">
+    <van-tabs v-model:active="active">
       <van-tab name="error" :title="t('error')">
         <van-empty image="error" :description="t('description')" />
       </van-tab>

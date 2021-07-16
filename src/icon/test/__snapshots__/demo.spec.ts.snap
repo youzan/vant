@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render demo and match snapshot 1`] = `
-<div class="van-tabs van-tabs--line"
-     modelvalue="0"
->
+<div class="van-tabs van-tabs--line">
   <div>
     <div class="van-sticky">
       <div class="van-tabs__wrap">

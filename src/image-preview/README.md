@@ -195,14 +195,14 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get ImagePreview instance and call i
 | index | Custom index | { index: index of current image } |
 | cover | Custom content that covers the image preview | - |
 
-### onClose Parematers
+### onClose Parameters
 
 | Attribute | Description            | Type     |
 | --------- | ---------------------- | -------- |
 | url       | Url of current image   | _number_ |
 | index     | Index of current image | _number_ |
 
-### onScale Parematers
+### onScale Parameters
 
 | Attribute | Description            | Type     |
 | --------- | ---------------------- | -------- |

@@ -1,7 +1,7 @@
 import { Field } from '..';
 import { mount } from '../../../test';
 
-test('should emit "update:modelValue" event when after inputing', () => {
+test('should emit "update:modelValue" event when after inputting', () => {
   const wrapper = mount(Field);
   const input = wrapper.find('input');
 
@@ -16,7 +16,7 @@ test('should emit click-input event when input is clicked', () => {
   expect(wrapper.emitted('click-input')[0][0]).toBeTruthy();
 });
 
-test('should evit click-input event when using input slot', () => {
+test('should emit click-input event when using input slot', () => {
   const wrapper = mount(Field, {
     slots: {
       input: () => 'Custom Input',

@@ -58,7 +58,7 @@ export default defineComponent({
     let currentValue: SliderValue;
 
     const root = ref<HTMLElement>();
-    const dragStatus = ref<'start' | 'draging' | ''>();
+    const dragStatus = ref<'start' | 'dragging' | ''>();
     const touch = useTouch();
 
     const scope = computed(() => Number(props.max) - Number(props.min));
@@ -197,7 +197,7 @@ export default defineComponent({
 
       preventDefault(event, true);
       touch.move(event);
-      dragStatus.value = 'draging';
+      dragStatus.value = 'dragging';
 
       const rect = useRect(root);
       const delta = props.vertical ? touch.deltaY.value : touch.deltaX.value;
@@ -218,7 +218,7 @@ export default defineComponent({
         return;
       }
 
-      if (dragStatus.value === 'draging') {
+      if (dragStatus.value === 'dragging') {
         updateValue(currentValue, true);
         emit('drag-end', event);
       }

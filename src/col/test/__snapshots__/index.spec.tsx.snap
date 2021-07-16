@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Col correcly 1`] = `
+exports[`should render Col correctly 1`] = `
 <div class="van-col van-col--8">
 </div>
 `;

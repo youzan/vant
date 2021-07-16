@@ -1,5 +1,5 @@
 <template>
-  <van-tabs v-model="tab" sticky>
+  <van-tabs v-model:active="tab" sticky>
     <van-tab :title="t('demo')">
       <demo-block :title="t('basicUsage')">
         <van-row>

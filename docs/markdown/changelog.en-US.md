@@ -317,7 +317,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 **Bug Fixes**
 
 - ActionSheet: fix safe-area-inset-bottom prop not work [#8085](https://github.com/youzan/vant/issues/8085)
-- DateTimePicker: fix incorrecrt inital value [#8193](https://github.com/youzan/vant/issues/8193)
+- DateTimePicker: fix incorrect initial value [#8193](https://github.com/youzan/vant/issues/8193)
 - Form: may scroll to incorrect field after submitted [#8159](https://github.com/youzan/vant/issues/8159)
 - ImagePreview: fix incorrect image display during the second call [#8060](https://github.com/youzan/vant/issues/8060)
 - IndexBar: failed to render active anchor when inited [#8164](https://github.com/youzan/vant/issues/8164)
