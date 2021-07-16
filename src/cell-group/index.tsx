@@ -27,7 +27,10 @@ function CellGroup(
 ) {
   const Group = (
     <div
-      class={[bem({ inset: props.inset }), { [BORDER_TOP_BOTTOM]: props.border }]}
+      class={[
+        bem({ inset: props.inset }),
+        { [BORDER_TOP_BOTTOM]: props.border },
+      ]}
       {...inherit(ctx, true)}
     >
       {slots.default?.()}
