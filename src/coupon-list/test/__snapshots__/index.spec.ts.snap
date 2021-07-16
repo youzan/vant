@@ -24,9 +24,7 @@ exports[`should be the sames as the last snapshot when render coupon list 1`] = 
       </div>
     </button>
   </div>
-  <div class="van-tabs van-tabs--line van-coupon-list__tab"
-       modelvalue="0"
-  >
+  <div class="van-tabs van-tabs--line van-coupon-list__tab">
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"
@@ -304,9 +302,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
       </div>
     </button>
   </div>
-  <div class="van-tabs van-tabs--line van-coupon-list__tab"
-       modelvalue="0"
-  >
+  <div class="van-tabs van-tabs--line van-coupon-list__tab">
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"
@@ -404,9 +400,7 @@ exports[`should render list-footer slot correctly 1`] = `
       </div>
     </button>
   </div>
-  <div class="van-tabs van-tabs--line van-coupon-list__tab"
-       modelvalue="0"
-  >
+  <div class="van-tabs van-tabs--line van-coupon-list__tab">
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"
@@ -506,9 +500,7 @@ exports[`should use custom src when using empty-image prop 1`] = `
       </div>
     </button>
   </div>
-  <div class="van-tabs van-tabs--line van-coupon-list__tab"
-       modelvalue="0"
-  >
+  <div class="van-tabs van-tabs--line van-coupon-list__tab">
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"
