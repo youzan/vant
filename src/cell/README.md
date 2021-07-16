@@ -21,6 +21,15 @@ Vue.use(CellGroup);
 </van-cell-group>
 ```
 
+### Inset Grouped
+
+```html
+<van-cell-group inset>
+  <van-cell title="Cell title" value="Content" />
+  <van-cell title="Cell title" value="Content" label="Description" />
+</van-cell-group>
+```
+
 ### Size
 
 ```html

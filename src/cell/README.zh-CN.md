@@ -27,6 +27,17 @@ Vue.use(CellGroup);
 </van-cell-group>
 ```
 
+### 卡片风格
+
+通过 `CellGroup` 的 `inset` 属性，可以将单元格转换为圆角卡片风格（从 2.12.25 版本开始支持）。
+
+```html
+<van-cell-group inset>
+  <van-cell title="单元格" value="内容" />
+  <van-cell title="单元格" value="内容" label="描述信息" />
+</van-cell-group>
+```
+
 ### 单元格大小
 
 通过 `size` 属性可以控制单元格的大小。
