@@ -115,7 +115,7 @@ test('change min-minute and emit correct value', async () => {
 test('set max-hour & max-minute smaller than current then emit correct value', async () => {
   const wrapper = mount(TimePicker, {
     props: {
-      modelvalue: '23:59',
+      modelValue: '23:59',
     },
   });
 

@@ -12,9 +12,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-tabs van-tabs--line"
-       modelvalue="error"
-  >
+  <div class="van-tabs van-tabs--line">
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"

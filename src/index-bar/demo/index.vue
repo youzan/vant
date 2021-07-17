@@ -1,5 +1,5 @@
 <template>
-  <van-tabs v-model="activeTab">
+  <van-tabs v-model:active="activeTab">
     <van-tab :title="t('basicUsage')">
       <van-index-bar>
         <div v-for="index in indexList" :key="index">

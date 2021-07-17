@@ -45,7 +45,7 @@ test('v-model', async () => {
   expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(minDate);
 });
 
-test('value has an inital value', async () => {
+test('value has an initial value', async () => {
   const defaultValue = new Date(2020, 0, 0, 0, 0);
   const wrapper = mount(DatePicker, {
     propsData: {

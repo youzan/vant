@@ -203,8 +203,8 @@ app.use(Button);
 | --van-button-danger-background-color | _var(--van-danger-color)_ | - |
 | --van-button-danger-border-color | _var(--van-danger-color)_ | - |
 | --van-button-warning-color | _var(--van-white)_ | - |
-| --van-button-warning-background-color | _var(--van-organge)_ | - |
-| --van-button-warning-border-color | _var(--van-organge)_ | - |
+| --van-button-warning-background-color | _var(--van-orange)_ | - |
+| --van-button-warning-border-color | _var(--van-orange)_ | - |
 | --van-button-border-width | _var(--van-border-width-base)_ | - |
 | --van-button-border-radius | _var(--van-border-radius-sm)_ | - |
 | --van-button-round-border-radius | _var(--van-border-radius-max)_ | - |

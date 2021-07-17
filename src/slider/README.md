@@ -169,8 +169,8 @@ export default {
 | ------------------ | ------------------------------ | ------------------- |
 | update:model-value | Emitted when value is changing | _value: number_     |
 | change             | Emitted after value changed    | _value: number_     |
-| drag-start         | Emitted when start draging     | _event: TouchEvent_ |
-| drag-end           | Emitted when end draging       | _event: TouchEvent_ |
+| drag-start         | Emitted when start dragging    | _event: TouchEvent_ |
+| drag-end           | Emitted when end dragging      | _event: TouchEvent_ |
 
 ### Slots
 

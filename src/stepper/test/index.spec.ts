@@ -325,7 +325,7 @@ test('should hide input when show-input prop is false', () => {
   expect(wrapper.find('input').isVisible()).toBeFalsy();
 });
 
-test('should limit dicimal length when using decimal-length prop', async () => {
+test('should limit decimal length when using decimal-length prop', async () => {
   const wrapper = mount(Stepper, {
     props: {
       step: 0.2,
@@ -339,7 +339,7 @@ test('should limit dicimal length when using decimal-length prop', async () => {
   expect(wrapper.emitted('update:modelValue')![1]).toEqual(['1.20']);
 });
 
-test('should limit decimal-length when inputing', async () => {
+test('should limit decimal-length when inputting', async () => {
   const wrapper = mount(Stepper, {
     props: {
       step: 0.2,

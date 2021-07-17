@@ -110,7 +110,7 @@ test('should emit close event with name when using name prop', () => {
   expect(wrapper.emitted('close')[0]).toEqual([{ name: 'test' }]);
 });
 
-test('should reset transform after short draging', async () => {
+test('should reset transform after short dragging', async () => {
   const wrapper = mount(SwipeCell, defaultProps);
 
   triggerDrag(wrapper, 5, 0);

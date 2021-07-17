@@ -2,7 +2,7 @@ import { Col } from '..';
 import { Row } from '../../row';
 import { mount } from '../../../test';
 
-test('should render Col correcly', () => {
+test('should render Col correctly', () => {
   const wrapper = mount(Col, {
     props: {
       span: 8,
