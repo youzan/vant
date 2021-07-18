@@ -17,6 +17,20 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
+    <div class="van-cell-group van-cell-group--inset van-hairline--top-bottom">
+      <div class="van-cell">
+        <div class="van-cell__title"><span>单元格</span></div>
+        <div class="van-cell__value"><span>内容</span></div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title"><span>单元格</span>
+          <div class="van-cell__label">描述信息</div>
+        </div>
+        <div class="van-cell__value"><span>内容</span></div>
+      </div>
+    </div>
+  </div>
+  <div>
     <div class="van-cell van-cell--large">
       <div class="van-cell__title"><span>单元格</span></div>
       <div class="van-cell__value"><span>内容</span></div>

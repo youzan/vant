@@ -27,6 +27,17 @@ Vue.use(CellGroup);
 </van-cell-group>
 ```
 
+### 卡片风格
+
+通过 `CellGroup` 的 `inset` 属性，可以将单元格转换为圆角卡片风格（从 2.12.25 版本开始支持）。
+
+```html
+<van-cell-group inset>
+  <van-cell title="单元格" value="内容" />
+  <van-cell title="单元格" value="内容" label="描述信息" />
+</van-cell-group>
+```
+
 ### 单元格大小
 
 通过 `size` 属性可以控制单元格的大小。
@@ -136,27 +147,27 @@ Vue.use(CellGroup);
 
 ### Cell Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| title | 左侧标题 | _number \| string_ | - |
-| value | 右侧内容 | _number \| string_ | - |
-| label | 标题下方的描述信息 | _string_ | - |
-| size | 单元格大小，可选值为 `large` | _string_ | - |
-| icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
-| icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
-| url | 点击后跳转的链接地址 | _string_ | - |
-| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
-| border | 是否显示内边框 | _boolean_ | `true` |
-| replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
-| clickable | 是否开启点击反馈 | _boolean_ | `null` |
-| is-link | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` |
-| required | 是否显示表单必填星号 | _boolean_ | `false` |
-| center | 是否使内容垂直居中 | _boolean_ | `false` |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
-| title-style | 左侧标题额外样式 | _any_ | - |
-| title-class | 左侧标题额外类名 | _any_ | - |
-| value-class | 右侧内容额外类名 | _any_ | - |
-| label-class | 描述信息额外类名 | _any_ | - |
+| 参数                 | 说明                                                                                      | 类型               | 默认值     |
+| -------------------- | ----------------------------------------------------------------------------------------- | ------------------ | ---------- |
+| title                | 左侧标题                                                                                  | _number \| string_ | -          |
+| value                | 右侧内容                                                                                  | _number \| string_ | -          |
+| label                | 标题下方的描述信息                                                                        | _string_           | -          |
+| size                 | 单元格大小，可选值为 `large`                                                              | _string_           | -          |
+| icon                 | 左侧[图标名称](#/zh-CN/icon)或图片链接                                                    | _string_           | -          |
+| icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props)                      | _string_           | `van-icon` |
+| url                  | 点击后跳转的链接地址                                                                      | _string_           | -          |
+| to                   | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | -          |
+| border               | 是否显示内边框                                                                            | _boolean_          | `true`     |
+| replace              | 是否在跳转时替换当前页面历史                                                              | _boolean_          | `false`    |
+| clickable            | 是否开启点击反馈                                                                          | _boolean_          | `null`     |
+| is-link              | 是否展示右侧箭头并开启点击反馈                                                            | _boolean_          | `false`    |
+| required             | 是否显示表单必填星号                                                                      | _boolean_          | `false`    |
+| center               | 是否使内容垂直居中                                                                        | _boolean_          | `false`    |
+| arrow-direction      | 箭头方向，可选值为 `left` `up` `down`                                                     | _string_           | `right`    |
+| title-style          | 左侧标题额外样式                                                                          | _any_              | -          |
+| title-class          | 左侧标题额外类名                                                                          | _any_              | -          |
+| value-class          | 右侧内容额外类名                                                                          | _any_              | -          |
+| label-class          | 描述信息额外类名                                                                          | _any_              | -          |
 
 ### Cell Events
 
