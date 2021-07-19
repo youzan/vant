@@ -50,6 +50,7 @@ export default createComponent({
       duration: 0,
       options: deepClone(this.initialOptions),
       currentIndex: this.defaultIndex,
+      altitude:this.itemHeight * (this.visibleItemCount - 1) / 2
     };
   },
 
@@ -87,7 +88,7 @@ export default createComponent({
     },
 
     baseOffset() {
-      return (this.itemHeight * (this.visibleItemCount - 1)) / 2;
+      return this.altitude;
     },
   },
 
