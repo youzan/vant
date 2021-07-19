@@ -16,6 +16,25 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.1.4](https://github.com/youzan/vant/compare/v3.1.3...v3.1.4)
+
+`2021-07-19`
+
+**Feature**
+
+- ActionSheet: add before-close prop [#9068](https://github.com/youzan/vant/issues/9068)
+- Cascader: add option slot [#9036](https://github.com/youzan/vant/issues/9036)
+- Cascader: improve option cursor [#9032](https://github.com/youzan/vant/issues/9032)
+- Popup: add before-close prop [#9067](https://github.com/youzan/vant/issues/9067)
+- ShareSheet: add before-close prop [#9068](https://github.com/youzan/vant/issues/9068)
+- Tabs: add click-tab event [#9037](https://github.com/youzan/vant/issues/9037)
+
+**Bug Fixes**
+
+- Field: required mark position [#9035](https://github.com/youzan/vant/issues/9035)
+- List: should emit load event when parent tab is activated [#9022](https://github.com/youzan/vant/issues/9022)
+- Popup: missing open、close event in some cases [#9065](https://github.com/youzan/vant/issues/9065)
+
 ### [v3.1.3](https://github.com/youzan/vant/compare/v3.1.2...v3.1.3)
 
 `2021-07-11`

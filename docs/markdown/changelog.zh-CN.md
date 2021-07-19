@@ -16,6 +16,25 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.1.4](https://github.com/youzan/vant/compare/v3.1.3...v3.1.4)
+
+`2021-07-19`
+
+**Feature**
+
+- ActionSheet: 新增 before-close 属性 [#9068](https://github.com/youzan/vant/issues/9068)
+- Cascader: 新增 option 插槽 [#9036](https://github.com/youzan/vant/issues/9036)
+- Cascader: 优化光标展示 [#9032](https://github.com/youzan/vant/issues/9032)
+- Popup: 新增 before-close 属性 [#9067](https://github.com/youzan/vant/issues/9067)
+- ShareSheet: 新增 before-close 属性 [#9068](https://github.com/youzan/vant/issues/9068)
+- Tabs: 新增 click-tab 事件 [#9037](https://github.com/youzan/vant/issues/9037)
+
+**Bug Fixes**
+
+- Field: 修复 label-align 为 right 时 required 标记位置错误的问题 [#9035](https://github.com/youzan/vant/issues/9035)
+- List: 修复在 Tabs 内嵌套使用时，切换 Tabs 不触发 load 事件的问题 [#9022](https://github.com/youzan/vant/issues/9022)
+- Popup: 修复某些情况下未正确触发 open、close 事件的问题 [#9065](https://github.com/youzan/vant/issues/9065)
+
 ### [v3.1.3](https://github.com/youzan/vant/compare/v3.1.2...v3.1.3)
 
 `2021-07-11`
