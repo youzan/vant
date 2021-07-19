@@ -1,5 +1,6 @@
 import { PropType, CSSProperties, TeleportProps } from 'vue';
 import { truthProp, unknownProp } from '../utils';
+import type { Interceptor } from '../utils/interceptor';
 
 export const popupSharedProps = {
   // whether to show popup
@@ -16,6 +17,8 @@ export const popupSharedProps = {
   lockScroll: truthProp,
   // whether to lazy render
   lazyRender: truthProp,
+  // callback function before close
+  beforeClose: Function as PropType<Interceptor>,
   // overlay custom style
   overlayStyle: Object as PropType<CSSProperties>,
   // overlay custom class name

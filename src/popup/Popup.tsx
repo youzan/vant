@@ -16,7 +16,7 @@ import {
 // Utils
 import { popupSharedProps } from './shared';
 import { createNamespace, extend, isDef } from '../utils';
-import { callInterceptor, Interceptor } from '../utils/interceptor';
+import { callInterceptor } from '../utils/interceptor';
 
 // Composables
 import { useEventListener } from '@vant/use';
@@ -51,7 +51,6 @@ export default defineComponent({
     closeable: Boolean,
     transition: String,
     iconPrefix: String,
-    beforeClose: Function as PropType<Interceptor>,
     closeOnPopstate: Boolean,
     safeAreaInsetBottom: Boolean,
     position: {
