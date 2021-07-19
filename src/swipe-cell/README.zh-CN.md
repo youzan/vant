@@ -117,7 +117,7 @@ export default {
 | name | 标识符，可以在事件参数中获取到 | _number \| string_ | `''` |
 | left-width | 指定左侧滑动区域宽度，单位为 `px` | _number \| string_ | `auto` |
 | right-width | 指定右侧滑动区域宽度，单位为 `px` | _number \| string_ | `auto` |
-| before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(args) => boolean \| Promise_ | - |
+| before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(args) => boolean \| Promise\<boolean\>_ | - |
 | disabled | 是否禁用滑动 | _boolean_ | `false` |
 | stop-propagation | 是否阻止滑动事件冒泡 | _boolean_ | `false` |
 

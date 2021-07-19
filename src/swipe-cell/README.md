@@ -110,17 +110,17 @@ export default {
 | name | Identifier of SwipeCell | _number \| string_ | - |
 | left-width | Width of the left swipe area | _number \| string_ | `auto` |
 | right-width | Width of the right swipe area | _number \| string_ | `auto` |
-| before-close | Callback function before close | _(args) => boolean \| Promise_ | - |
+| before-close | Callback function before close | _(args) => boolean \| Promise\<boolean\>_ | - |
 | disabled | Whether to disabled swipe | _boolean_ | `false` |
 | stop-propagation | Whether to stop touchmove event propagation | _boolean_ | `false` |
 
 ### Slots
 
-| Name    | Description                     |
-| ------- | ------------------------------- |
-| default | custom content                  |
-| left    | content of left scrollable area |
-| right   | content of right scrollabe area |
+| Name    | Description                      |
+| ------- | -------------------------------- |
+| default | custom content                   |
+| left    | content of left scrollable area  |
+| right   | content of right scrollable area |
 
 ### Events
 
