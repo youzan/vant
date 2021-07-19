@@ -110,12 +110,15 @@ export default defineComponent({
 
         opened = true;
         zIndex.value = ++globalZIndex;
+
+        emit('open');
       }
     };
 
     const close = () => {
       if (opened) {
         opened = false;
+        emit('close');
         emit('update:show', false);
       }
     };
@@ -211,10 +214,8 @@ export default defineComponent({
       (value) => {
         if (value) {
           open();
-          emit('open');
         } else {
           close();
-          emit('close');
         }
       }
     );
