@@ -141,7 +141,7 @@ export default {
       font-size: 14px;
       font-family: @van-doc-code-font-family;
       font-style: normal;
-      max-width: 400px;
+      max-width: 300px;
       -webkit-font-smoothing: auto;
     }
   }

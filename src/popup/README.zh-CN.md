@@ -140,6 +140,7 @@ export default {
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |
 | close-icon | 关闭[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `cross` |
 | close-icon-position | 关闭图标位置，可选值为 `top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
+| before-close `v3.1.4` | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 | icon-prefix `v3.0.18` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | transition | 动画类名，等价于 [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性 | _string_ | - |
 | transition-appear | 是否在初始渲染时启用过渡动画 | _boolean_ | `false` |
