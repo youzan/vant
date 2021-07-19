@@ -214,3 +214,19 @@ test('should render overlay-content slot correctly', () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should allow to prevent close with before-close prop', async () => {
+  const wrapper = mount(Popup, {
+    props: {
+      show: true,
+      beforeClose: () => false,
+    },
+  });
+
+  await wrapper.find('.van-overlay').trigger('click');
+  expect(wrapper.emitted('update:show')).toBeFalsy();
+
+  await wrapper.setProps({ beforeClose: () => true });
+  await wrapper.find('.van-overlay').trigger('click');
+  expect(wrapper.emitted('update:show')[0]).toEqual([false]);
+});
