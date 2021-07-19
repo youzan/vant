@@ -159,7 +159,7 @@ export default {
 | disable-plus | 是否禁用增加按钮 | _boolean_ | `false` |
 | disable-minus | 是否禁用减少按钮 | _boolean_ | `false` |
 | disable-input | 是否禁用输入框 | _boolean_ | `false` |
-| before-change | 输入值变化前的回调函数，返回 `false` 可阻止输入，支持返回 Promise | _(value) => boolean \| Promise_ | `false` |
+| before-change | 输入值变化前的回调函数，返回 `false` 可阻止输入，支持返回 Promise | _(value: number \| string) => boolean \| Promise\<boolean\>_ | `false` |
 | show-plus | 是否显示增加按钮 | _boolean_ | `true` |
 | show-minus | 是否显示减少按钮 | _boolean_ | `true` |
 | show-input | 是否显示输入框 | _boolean_ | `true` |

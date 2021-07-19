@@ -75,7 +75,7 @@ Dialog.alert({
 });
 ```
 
-### Asnyc Close
+### Async Close
 
 ```js
 const beforeClose = (action) =>
@@ -94,7 +94,7 @@ Dialog.confirm({
 
 ### Global Method
 
-After registering the Dialog component through `app.use`, the `$dialog` method will be automatically mounted on all subcomponents of the app.
+After registering the Dialog component through `app.use`, the `$dialog` method will be automatically mounted on all subComponents of the app.
 
 ```js
 export default {
@@ -135,7 +135,7 @@ export default {
 | --- | --- | --- | --- |
 | Dialog | Show dialog | _options: DialogOptions_ | `Promise<void>` |
 | Dialog.alert | Show alert dialog | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.confirm | Show confim dialog | _options: DialogOptions_ | `Promise<void>` |
+| Dialog.confirm | Show confirm dialog | _options: DialogOptions_ | `Promise<void>` |
 | Dialog.setDefaultOptions | Set default options of all dialogs | _options: DialogOptions_ | `void` |
 | Dialog.resetDefaultOptions | Reset default options of all dialogs | - | `void` |
 | Dialog.close | Close dialog | - | `void` |
@@ -163,7 +163,7 @@ export default {
 | closeOnClickOverlay | Whether to close when overlay is clicked | _boolean_ | `false` |
 | lockScroll | Whether to lock body scroll | _boolean_ | `true` |
 | allowHtml | Whether to allow HTML rendering in message | _boolean_ | `false` |
-| beforeClose | Callback function before close | _(action) => boolean \| Promise_ | - |
+| beforeClose | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Specifies a target element where Dialog will be mounted | _string \| Element_ | `body` |
 
@@ -191,7 +191,7 @@ export default {
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | allow-html | Whether to allow HTML rendering in message | _boolean_ | `false` |
-| before-close | Callback function before close | _(action) => boolean \| Promise_ | - |
+| before-close | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Specifies a target element where Dialog will be mounted | _string \| Element_ | - |
 

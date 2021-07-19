@@ -153,13 +153,14 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
+| v-model:show | Whether to show ImagePreview | _boolean_ | `false` |
 | images | Images URL list | _string[]_ | `[]` |
 | start-position | Start position | _number \| string_ | `0` |
 | swipe-duration | Animation duration (ms) | _number \| string_ | `300` |
 | show-index | Whether to show index | _boolean_ | `true` |
 | show-indicators | Whether to show indicators | _boolean_ | `false` |
 | loop | Whether to enable loop | _boolean_ | `true` |
-| before-close | Callback function before close | _(action) => boolean \| Promise_ | - |
+| before-close | Callback function before close | _(action: number) => boolean \| Promise\<boolean\>_ | - |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
 | class-name | Custom className | _string \| Array \| object_ | - |
 | max-zoom | Max zoom | _number \| string_ | `3` |
