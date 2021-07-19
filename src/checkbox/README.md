@@ -147,7 +147,7 @@ export default {
 ### Maximum amount of checked options
 
 ```html
-<van-checkbox-group v-model="result" :max="2">
+<van-checkbox-group v-model="checked" :max="2">
   <van-checkbox name="a">Checkbox a</van-checkbox>
   <van-checkbox name="b">Checkbox b</van-checkbox>
   <van-checkbox name="c">Checkbox c</van-checkbox>

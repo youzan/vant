@@ -161,7 +161,7 @@ export default {
 通过 `max` 属性可以限制复选框组的最大可选数。
 
 ```html
-<van-checkbox-group v-model="result" :max="2">
+<van-checkbox-group v-model="checked" :max="2">
   <van-checkbox name="a">复选框 a</van-checkbox>
   <van-checkbox name="b">复选框 b</van-checkbox>
   <van-checkbox name="c">复选框 c</van-checkbox>
@@ -173,7 +173,7 @@ export default {
 通过 `CheckboxGroup` 实例上的 `toggleAll` 方法可以实现全选与反选。
 
 ```html
-<van-checkbox-group v-model="result" ref="checkboxGroup">
+<van-checkbox-group v-model="checked" ref="checkboxGroup">
   <van-checkbox name="a">复选框 a</van-checkbox>
   <van-checkbox name="b">复选框 b</van-checkbox>
   <van-checkbox name="c">复选框 c</van-checkbox>
