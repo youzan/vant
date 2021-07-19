@@ -1,7 +1,6 @@
 import { PropType, reactive, defineComponent } from 'vue';
 
 // Utils
-import { callInterceptor, Interceptor } from '../utils/interceptor';
 import {
   pick,
   extend,
@@ -11,6 +10,7 @@ import {
   unknownProp,
   createNamespace,
 } from '../utils';
+import { callInterceptor } from '../utils/interceptor';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
@@ -44,7 +44,6 @@ export default defineComponent({
     callback: Function as PropType<(action?: DialogAction) => void>,
     allowHtml: Boolean,
     className: unknownProp,
-    beforeClose: Function as PropType<Interceptor>,
     messageAlign: String as PropType<DialogMessageAlign>,
     closeOnPopstate: truthProp,
     showCancelButton: Boolean,
