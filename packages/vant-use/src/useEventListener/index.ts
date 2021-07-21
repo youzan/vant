@@ -1,4 +1,4 @@
-import { Ref, unref, onUnmounted, onDeactivated } from 'vue';
+import { Ref, unref, onUnmounted, onDeactivated, watch } from 'vue';
 import { onMountedOrActivated } from '../onMountedOrActivated';
 import { inBrowser } from '../utils';
 
@@ -37,7 +37,7 @@ export function useEventListener(
 
   let attached: boolean;
 
-  const add = () => {
+  const add = (target?: EventTarget | Ref<EventTarget | undefined>) => {
     const element = unref(target);
 
     if (element && !attached) {
@@ -50,7 +50,7 @@ export function useEventListener(
     }
   };
 
-  const remove = () => {
+  const remove = (target?: EventTarget | Ref<EventTarget | undefined>) => {
     const element = unref(target);
 
     if (element && attached) {
@@ -59,7 +59,12 @@ export function useEventListener(
     }
   };
 
-  onUnmounted(remove);
-  onDeactivated(remove);
-  onMountedOrActivated(add);
+  onUnmounted(() => remove(target));
+  onDeactivated(() => remove(target));
+  onMountedOrActivated(() => add(target));
+
+  watch(target, (val, oldVal) => {
+    remove(oldVal);
+    add(val);
+  });
 }
