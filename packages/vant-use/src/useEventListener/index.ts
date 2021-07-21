@@ -18,8 +18,10 @@ if (inBrowser) {
   } catch (e) {}
 }
 
+type TargetRef = EventTarget | Ref<EventTarget | undefined>;
+
 export type UseEventListenerOptions = {
-  target?: EventTarget | Ref<EventTarget | undefined>;
+  target?: TargetRef;
   capture?: boolean;
   passive?: boolean;
 };
@@ -37,7 +39,7 @@ export function useEventListener(
 
   let attached: boolean;
 
-  const add = (target?: EventTarget | Ref<EventTarget | undefined>) => {
+  const add = (target?: TargetRef) => {
     const element = unref(target);
 
     if (element && !attached) {
@@ -50,7 +52,7 @@ export function useEventListener(
     }
   };
 
-  const remove = (target?: EventTarget | Ref<EventTarget | undefined>) => {
+  const remove = (target?: TargetRef) => {
     const element = unref(target);
 
     if (element && attached) {
