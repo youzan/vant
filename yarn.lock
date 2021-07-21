@@ -2015,10 +2015,10 @@
   resolved "https://registry.nlark.com/@vant/touch-emulator/download/@vant/touch-emulator-1.3.0.tgz#f53a7d0c5809b91d51b7fd4c24e762673bf1f679"
   integrity sha1-9Tp9DFgJuR1Rt/1MJOdiZzvx9nk=
 
-"@vant/use@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.nlark.com/@vant/use/download/@vant/use-1.2.0.tgz?cache=0&sync_timestamp=1626093726995&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vant%2Fuse%2Fdownload%2F%40vant%2Fuse-1.2.0.tgz#c762c85aa5beda8e847ed553793acad7bfde2d07"
-  integrity sha1-x2LIWqW+2o6EftVTeTrK17/eLQc=
+"@vant/use@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.nlark.com/@vant/use/download/@vant/use-1.2.1.tgz#0a0237d48e4ea347b2e732d55cf53869209238fc"
+  integrity sha1-CgI31I5Oo0ey5zLVXPU4aSCSOPw=
 
 "@vue/babel-helper-vue-transform-on@^1.0.2":
   version "1.0.2"
