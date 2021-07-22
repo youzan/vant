@@ -1,5 +1,11 @@
 # 更新日志
 
+### v1.2.2
+
+`2021-07-22`
+
+- `useEventListener`: 修复 `invalid watch source` 问题
+
 ### v1.2.1
 
 `2021-07-21`
