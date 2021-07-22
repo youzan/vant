@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-search">
+    <div class="van-search__content van-search__content--square">
+      <div class="van-cell van-cell--borderless van-field">
+        <div class="van-field__left-icon">
+          <i class="van-badge__wrapper van-icon van-icon-search">
+          </i>
+        </div>
+        <div class="van-cell__value van-cell__value--alone van-field__value">
+          <div class="van-field__body">
+            <input type="search"
+                   class="van-field__control"
+                   placeholder="Placeholder"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <form action="/">
+    <div class="van-search van-search--show-action">
+      <div class="van-search__content van-search__content--square">
+        <div class="van-cell van-cell--borderless van-field">
+          <div class="van-field__left-icon">
+            <i class="van-badge__wrapper van-icon van-icon-search">
+            </i>
+          </div>
+          <div class="van-cell__value van-cell__value--alone van-field__value">
+            <div class="van-field__body">
+              <input type="search"
+                     class="van-field__control"
+                     placeholder="Placeholder"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="van-search__action"
+           role="button"
+           tabindex="0"
+      >
+        Cancel
+      </div>
+    </div>
+  </form>
+</div>
+<div>
+  <div class="van-search">
+    <div class="van-search__content van-search__content--square">
+      <div class="van-cell van-cell--borderless van-field">
+        <div class="van-field__left-icon">
+          <i class="van-badge__wrapper van-icon van-icon-search">
+          </i>
+        </div>
+        <div class="van-cell__value van-cell__value--alone van-field__value">
+          <div class="van-field__body">
+            <input type="search"
+                   class="van-field__control van-field__control--center"
+                   placeholder="Placeholder"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-search">
+    <div class="van-search__content van-search__content--square">
+      <div class="van-cell van-cell--borderless van-field van-field--disabled">
+        <div class="van-field__left-icon">
+          <i class="van-badge__wrapper van-icon van-icon-search">
+          </i>
+        </div>
+        <div class="van-cell__value van-cell__value--alone van-field__value">
+          <div class="van-field__body">
+            <input type="search"
+                   class="van-field__control"
+                   disabled
+                   placeholder="Placeholder"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-search"
+       style="background: rgb(79, 192, 141);"
+  >
+    <div class="van-search__content van-search__content--round">
+      <div class="van-cell van-cell--borderless van-field">
+        <div class="van-field__left-icon">
+          <i class="van-badge__wrapper van-icon van-icon-search">
+          </i>
+        </div>
+        <div class="van-cell__value van-cell__value--alone van-field__value">
+          <div class="van-field__body">
+            <input type="search"
+                   class="van-field__control"
+                   placeholder="Placeholder"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-search van-search--show-action">
+    <div class="van-search__content van-search__content--square">
+      <div class="van-search__label">
+        Address
+      </div>
+      <div class="van-cell van-cell--borderless van-field">
+        <div class="van-field__left-icon">
+          <i class="van-badge__wrapper van-icon van-icon-search">
+          </i>
+        </div>
+        <div class="van-cell__value van-cell__value--alone van-field__value">
+          <div class="van-field__body">
+            <input type="search"
+                   class="van-field__control"
+                   placeholder="Placeholder"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="van-search__action"
+         role="button"
+         tabindex="0"
+    >
+      <div>
+        Search
+      </div>
+    </div>
+  </div>
+</div>
+`;

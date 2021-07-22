@@ -1,0 +1,11 @@
+@import './var.less';
+
+:root {
+  --van-sidebar-width: @sidebar-width;
+}
+
+.van-sidebar {
+  width: var(--van-sidebar-width);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}

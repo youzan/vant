@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render button text correctly 1`] = `
+<div class="van-hairline--top van-dialog__footer">
+  <button type="button"
+          class="van-button van-button--default van-button--large van-dialog__cancel"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Custom Cancel
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Custom Confirm
+      </span>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`should render default slot correctly 1`] = `
+<div class="van-dialog__content">
+  Custom Message
+</div>
+`;
+
+exports[`should render footer slot correctly 1`] = `
+<div class="van-popup van-popup--center van-dialog"
+     role="dialog"
+     aria-labelledby="message"
+>
+  <div class="van-dialog__content van-dialog__content--isolated">
+    <div class="van-dialog__message">
+      message
+    </div>
+  </div>
+  Custom Footer
+</div>
+`;
+
+exports[`should render title slot correctly 1`] = `
+<div class="van-dialog__header van-dialog__header--isolated">
+  Custom Title
+</div>
+`;

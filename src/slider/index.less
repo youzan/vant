@@ -1,0 +1,106 @@
+@import './var.less';
+
+:root {
+  --van-slider-active-background-color: @slider-active-background-color;
+  --van-slider-inactive-background-color: @slider-inactive-background-color;
+  --van-slider-disabled-opacity: @slider-disabled-opacity;
+  --van-slider-bar-height: @slider-bar-height;
+  --van-slider-button-width: @slider-button-width;
+  --van-slider-button-height: @slider-button-height;
+  --van-slider-button-border-radius: @slider-button-border-radius;
+  --van-slider-button-background-color: @slider-button-background-color;
+  --van-slider-button-box-shadow: @slider-button-box-shadow;
+}
+
+.van-slider {
+  position: relative;
+  width: 100%;
+  height: var(--van-slider-bar-height);
+  background-color: var(--van-slider-inactive-background-color);
+  border-radius: var(--van-border-radius-max);
+  cursor: pointer;
+
+  // use pseudo element to expand click area
+  &::before {
+    position: absolute;
+    top: -var(--van-padding-xs);
+    right: 0;
+    bottom: -var(--van-padding-xs);
+    left: 0;
+    content: '';
+  }
+
+  &__bar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--van-slider-active-background-color);
+    border-radius: inherit;
+    transition: all var(--van-animation-duration-fast);
+  }
+
+  &__button {
+    width: var(--van-slider-button-width);
+    height: var(--van-slider-button-height);
+    background-color: var(--van-slider-button-background-color);
+    border-radius: var(--van-slider-button-border-radius);
+    box-shadow: var(--van-slider-button-box-shadow);
+
+    &-wrapper,
+    &-wrapper-right {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate3d(50%, -50%, 0);
+      cursor: grab;
+    }
+
+    &-wrapper-left {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate3d(-50%, -50%, 0);
+      cursor: grab;
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: var(--van-slider-disabled-opacity);
+
+    .van-slider__button-wrapper,
+    .van-slider__button-wrapper-left,
+    .van-slider__button-wrapper-right {
+      cursor: not-allowed;
+    }
+  }
+
+  &--vertical {
+    display: inline-block;
+    width: var(--van-slider-bar-height);
+    height: 100%;
+
+    .van-slider__button-wrapper,
+    .van-slider__button-wrapper-right {
+      top: auto;
+      right: 50%;
+      bottom: 0;
+      transform: translate3d(50%, 50%, 0);
+    }
+
+    .van-slider__button-wrapper-left {
+      top: 0;
+      right: 50%;
+      left: auto;
+      transform: translate3d(50%, -50%, 0);
+    }
+
+    // use pseudo element to expand click area
+    &::before {
+      top: 0;
+      right: -var(--van-padding-xs);
+      bottom: 0;
+      left: -var(--van-padding-xs);
+    }
+  }
+}

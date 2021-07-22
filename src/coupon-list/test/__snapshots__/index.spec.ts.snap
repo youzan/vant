@@ -1,0 +1,565 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should be the sames as the last snapshot when render coupon list 1`] = `
+<div class="van-coupon-list">
+  <div class="van-coupon-list__exchange-bar">
+    <div class="van-cell van-cell--borderless van-field van-coupon-list__field">
+      <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 placeholder="Coupon code"
+          >
+        </div>
+      </div>
+    </div>
+    <button type="button"
+            class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange"
+            disabled
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Exchange
+        </span>
+      </div>
+    </button>
+  </div>
+  <div class="van-tabs van-tabs--line van-coupon-list__tab">
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+      >
+        <div role="tab"
+             class="van-tab van-tab--active"
+             aria-selected="true"
+        >
+          <span class="van-tab__text van-tab__text--ellipsis">
+            Available (6)
+          </span>
+        </div>
+        <div role="tab"
+             class="van-tab"
+             aria-selected="false"
+        >
+          <span class="van-tab__text van-tab__text--ellipsis">
+            Unavailable (2)
+          </span>
+        </div>
+        <div class="van-tabs__line"
+             style="transform: translateX(0px) translateX(-50%);"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style
+      >
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
+             style="height: 628px;"
+        >
+          <div class="van-coupon">
+            <div class="van-coupon__content">
+              <div class="van-coupon__head">
+                <h2 class="van-coupon__amount">
+                </h2>
+                <p class="van-coupon__condition">
+                  Unlimited
+                </p>
+              </div>
+              <div class="van-coupon__body">
+                <p class="van-coupon__name">
+                </p>
+                <p class="van-coupon__valid">
+                  2017.03.10 - 2017.12.30
+                </p>
+                <div role="checkbox"
+                     class="van-checkbox van-coupon__corner"
+                     tabindex="0"
+                     aria-checked="false"
+                >
+                  <div class="van-checkbox__icon van-checkbox__icon--round">
+                    <i class="van-badge__wrapper van-icon van-icon-success">
+                    </i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="van-coupon">
+            <div class="van-coupon__content">
+              <div class="van-coupon__head">
+                <h2 class="van-coupon__amount">
+                  <span>
+                    ¥
+                  </span>
+                  1.5
+                </h2>
+                <p class="van-coupon__condition">
+                  Unlimited
+                </p>
+              </div>
+              <div class="van-coupon__body">
+                <p class="van-coupon__name">
+                  name
+                </p>
+                <p class="van-coupon__valid">
+                  2017.03.10 - 2017.12.30
+                </p>
+                <div role="checkbox"
+                     class="van-checkbox van-coupon__corner"
+                     tabindex="0"
+                     aria-checked="true"
+                >
+                  <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+                    <i class="van-badge__wrapper van-icon van-icon-success">
+                    </i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="van-coupon__description">
+              description
+            </p>
+          </div>
+          <div class="van-coupon">
+            <div class="van-coupon__content">
+              <div class="van-coupon__head">
+                <h2 class="van-coupon__amount">
+                  <span>
+                    ¥
+                  </span>
+                  1
+                </h2>
+                <p class="van-coupon__condition">
+                  Unlimited
+                </p>
+              </div>
+              <div class="van-coupon__body">
+                <p class="van-coupon__name">
+                  name
+                </p>
+                <p class="van-coupon__valid">
+                  2017.03.10 - 2017.12.30
+                </p>
+                <div role="checkbox"
+                     class="van-checkbox van-coupon__corner"
+                     tabindex="0"
+                     aria-checked="false"
+                >
+                  <div class="van-checkbox__icon van-checkbox__icon--round">
+                    <i class="van-badge__wrapper van-icon van-icon-success">
+                    </i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="van-coupon__description">
+              description
+            </p>
+          </div>
+          <div class="van-coupon">
+            <div class="van-coupon__content">
+              <div class="van-coupon__head">
+                <h2 class="van-coupon__amount">
+                  <span>
+                    ¥
+                  </span>
+                  1.23
+                </h2>
+                <p class="van-coupon__condition">
+                  Unlimited
+                </p>
+              </div>
+              <div class="van-coupon__body">
+                <p class="van-coupon__name">
+                  name
+                </p>
+                <p class="van-coupon__valid">
+                  2017.03.10 - 2017.12.30
+                </p>
+                <div role="checkbox"
+                     class="van-checkbox van-coupon__corner"
+                     tabindex="0"
+                     aria-checked="false"
+                >
+                  <div class="van-checkbox__icon van-checkbox__icon--round">
+                    <i class="van-badge__wrapper van-icon van-icon-success">
+                    </i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="van-coupon__description">
+              description
+            </p>
+          </div>
+          <div class="van-coupon">
+            <div class="van-coupon__content">
+              <div class="van-coupon__head">
+                <h2 class="van-coupon__amount">
+                  88% off
+                </h2>
+                <p class="van-coupon__condition">
+                  At least 0.5
+                </p>
+              </div>
+              <div class="van-coupon__body">
+                <p class="van-coupon__name">
+                  name
+                </p>
+                <p class="van-coupon__valid">
+                  2017.03.10 - 2017.12.30
+                </p>
+                <div role="checkbox"
+                     class="van-checkbox van-coupon__corner"
+                     tabindex="0"
+                     aria-checked="false"
+                >
+                  <div class="van-checkbox__icon van-checkbox__icon--round">
+                    <i class="van-badge__wrapper van-icon van-icon-success">
+                    </i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="van-coupon">
+            <div class="van-coupon__content">
+              <div class="van-coupon__head">
+                <h2 class="van-coupon__amount">
+                  90% off
+                </h2>
+                <p class="van-coupon__condition">
+                  At least 0.5
+                </p>
+              </div>
+              <div class="van-coupon__body">
+                <p class="van-coupon__name">
+                  name
+                </p>
+                <p class="van-coupon__valid">
+                  2017.03.10 - 2017.12.30
+                </p>
+                <div role="checkbox"
+                     class="van-checkbox van-coupon__corner"
+                     tabindex="0"
+                     aria-checked="false"
+                >
+                  <div class="van-checkbox__icon van-checkbox__icon--round">
+                    <i class="van-badge__wrapper van-icon van-icon-success">
+                    </i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style="display: none;"
+      >
+      </div>
+    </div>
+  </div>
+  <div class="van-coupon-list__bottom">
+    <button type="button"
+            class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Close
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`should have two "van-coupon-list__empty" classes when render coupon list is empty 1`] = `
+<div class="van-coupon-list">
+  <div class="van-coupon-list__exchange-bar">
+    <div class="van-cell van-cell--borderless van-field van-coupon-list__field">
+      <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 placeholder="Coupon code"
+          >
+        </div>
+      </div>
+    </div>
+    <button type="button"
+            class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange"
+            disabled
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Exchange
+        </span>
+      </div>
+    </button>
+  </div>
+  <div class="van-tabs van-tabs--line van-coupon-list__tab">
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+      >
+        <div role="tab"
+             class="van-tab"
+             aria-selected="false"
+        >
+          <span class="van-tab__text van-tab__text--ellipsis">
+            Available (0)
+          </span>
+        </div>
+        <div role="tab"
+             class="van-tab van-tab--active"
+             aria-selected="true"
+        >
+          <span class="van-tab__text van-tab__text--ellipsis">
+            Unavailable (0)
+          </span>
+        </div>
+        <div class="van-tabs__line"
+             style="transform: translateX(0px) translateX(-50%);"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style="display: none;"
+      >
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
+             style="height: 628px;"
+        >
+          <div class="van-coupon-list__empty">
+            <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
+            <p>
+              No coupons
+            </p>
+          </div>
+        </div>
+      </div>
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style
+      >
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
+             style="height: 628px;"
+        >
+          <div class="van-coupon-list__empty">
+            <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
+            <p>
+              No coupons
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="van-coupon-list__bottom">
+    <button type="button"
+            class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Close
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`should render list-footer slot correctly 1`] = `
+<div class="van-coupon-list">
+  <div class="van-coupon-list__exchange-bar">
+    <div class="van-cell van-cell--borderless van-field van-coupon-list__field">
+      <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 placeholder="Coupon code"
+          >
+        </div>
+      </div>
+    </div>
+    <button type="button"
+            class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange"
+            disabled
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Exchange
+        </span>
+      </div>
+    </button>
+  </div>
+  <div class="van-tabs van-tabs--line van-coupon-list__tab">
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+      >
+        <div role="tab"
+             class="van-tab"
+             aria-selected="false"
+        >
+          <span class="van-tab__text van-tab__text--ellipsis">
+            Available (0)
+          </span>
+        </div>
+        <div role="tab"
+             class="van-tab van-tab--active"
+             aria-selected="true"
+        >
+          <span class="van-tab__text van-tab__text--ellipsis">
+            Unavailable (0)
+          </span>
+        </div>
+        <div class="van-tabs__line"
+             style="transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style="display: none;"
+      >
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
+             style="height: 628px;"
+        >
+          <div class="van-coupon-list__empty">
+            <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
+            <p>
+              No coupons
+            </p>
+          </div>
+          List Footer
+        </div>
+      </div>
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style
+      >
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
+             style="height: 628px;"
+        >
+          <div class="van-coupon-list__empty">
+            <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
+            <p>
+              No coupons
+            </p>
+          </div>
+          Disabled List Footer
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="van-coupon-list__bottom">
+    <button type="button"
+            class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Close
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`should use custom src when using empty-image prop 1`] = `
+<div class="van-coupon-list">
+  <div class="van-coupon-list__exchange-bar">
+    <div class="van-cell van-cell--borderless van-field van-coupon-list__field">
+      <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 class="van-field__control"
+                 placeholder="Coupon code"
+          >
+        </div>
+      </div>
+    </div>
+    <button type="button"
+            class="van-button van-button--danger van-button--normal van-button--plain van-button--disabled van-coupon-list__exchange"
+            disabled
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Exchange
+        </span>
+      </div>
+    </button>
+  </div>
+  <div class="van-tabs van-tabs--line van-coupon-list__tab">
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+      >
+        <div role="tab"
+             class="van-tab van-tab--active"
+             aria-selected="true"
+        >
+          <span class="van-tab__text van-tab__text--ellipsis">
+            Available (0)
+          </span>
+        </div>
+        <div role="tab"
+             class="van-tab"
+             aria-selected="false"
+        >
+          <span class="van-tab__text van-tab__text--ellipsis">
+            Unavailable (0)
+          </span>
+        </div>
+        <div class="van-tabs__line"
+             style="transform: translateX(0px) translateX(-50%);"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style
+      >
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
+             style="height: 628px;"
+        >
+          <div class="van-coupon-list__empty">
+            <img src="https://img.yzcdn.com/xxx.png">
+            <p>
+              No coupons
+            </p>
+          </div>
+        </div>
+      </div>
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style="display: none;"
+      >
+      </div>
+    </div>
+  </div>
+  <div class="van-coupon-list__bottom">
+    <button type="button"
+            class="van-button van-button--danger van-button--normal van-button--block van-button--round van-coupon-list__close"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Close
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;

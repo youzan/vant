@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render left slot correctly 1`] = `
+<div class="van-nav-bar__left">
+  Custom Left
+</div>
+`;
+
+exports[`should render left slot correctly 2`] = `
+<div class="van-nav-bar__right">
+  Custom Right
+</div>
+`;
+
+exports[`should render placeholder element when using placeholder prop 1`] = `
+<div class="van-nav-bar__placeholder"
+     style="height: 50px;"
+>
+  <div class="van-nav-bar van-nav-bar--fixed van-hairline--bottom">
+    <div class="van-nav-bar__content">
+      <div class="van-nav-bar__title van-ellipsis">
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render title slot correctly 1`] = `
+<div class="van-nav-bar__title van-ellipsis">
+  Custom Title
+</div>
+`;

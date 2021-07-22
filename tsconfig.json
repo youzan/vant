@@ -2,22 +2,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "preserve",
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ES2019",
+    "module": "ESNext",
     "strict": true,
     "allowJs": true,
-    "noEmit": true,
+    "skipLibCheck": true,
     "noImplicitThis": true,
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "paths": {
+      "@demo/*": ["docs/site/*"]
+    }
   },
-  "include": [
-    "types/**/*",
-    "packages/**/*",
-  ],
-  "exclude": [
-    "**/*.spec.ts",
-    "**/*.spec.js",
-    "node_modules"
-  ]
+  "include": ["src/**/*", "types/**/*", "docs/**/*", "test/**/*"]
 }

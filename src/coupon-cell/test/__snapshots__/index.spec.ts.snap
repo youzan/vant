@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render CouponCell correctly 1`] = `
+<div class="van-cell van-cell--clickable van-coupon-cell"
+     role="button"
+     tabindex="0"
+>
+  <div class="van-cell__title">
+    <span>
+      Coupon
+    </span>
+  </div>
+  <div class="van-cell__value van-coupon-cell__value">
+    <span>
+      No coupons
+    </span>
+  </div>
+  <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+  </i>
+</div>
+`;
+
+exports[`should render CouponCell correctly with zero discount 1`] = `
+<div class="van-cell van-cell--clickable van-coupon-cell"
+     role="button"
+     tabindex="0"
+>
+  <div class="van-cell__title">
+    <span>
+      Coupon
+    </span>
+  </div>
+  <div class="van-cell__value van-coupon-cell__value van-coupon-cell__value--selected">
+    <span>
+      -¥ 0.00
+    </span>
+  </div>
+  <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+  </i>
+</div>
+`;
+
+exports[`should render CouponCell with chosenCoupon correctly 1`] = `
+<div class="van-cell van-cell--clickable van-coupon-cell"
+     role="button"
+     tabindex="0"
+>
+  <div class="van-cell__title">
+    <span>
+      Coupon
+    </span>
+  </div>
+  <div class="van-cell__value van-coupon-cell__value van-coupon-cell__value--selected">
+    <span>
+      -¥ 1.50
+    </span>
+  </div>
+  <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+  </i>
+</div>
+`;

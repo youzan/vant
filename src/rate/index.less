@@ -1,0 +1,53 @@
+@import './var.less';
+
+:root {
+  --van-rate-icon-size: @rate-icon-size;
+  --van-rate-icon-gutter: @rate-icon-gutter;
+  --van-rate-icon-void-color: @rate-icon-void-color;
+  --van-rate-icon-full-color: @rate-icon-full-color;
+  --van-rate-icon-disabled-color: @rate-icon-disabled-color;
+}
+
+.van-rate {
+  display: inline-flex;
+  cursor: pointer;
+  user-select: none;
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      padding-right: var(--van-rate-icon-gutter);
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 1em;
+    color: var(--van-rate-icon-void-color);
+    font-size: var(--van-rate-icon-size);
+
+    &--half {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    &--full {
+      color: var(--van-rate-icon-full-color);
+    }
+
+    &--disabled {
+      color: var(--van-rate-icon-disabled-color);
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--readonly {
+    cursor: default;
+  }
+}

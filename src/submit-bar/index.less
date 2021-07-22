@@ -1,0 +1,105 @@
+@import './var.less';
+@import '../style/mixins/safe-area.less';
+
+:root {
+  --van-submit-bar-height: @submit-bar-height;
+  --van-submit-bar-z-index: @submit-bar-z-index;
+  --van-submit-bar-background-color: @submit-bar-background-color;
+  --van-submit-bar-button-width: @submit-bar-button-width;
+  --van-submit-bar-price-color: @submit-bar-price-color;
+  --van-submit-bar-price-font-size: @submit-bar-price-font-size;
+  --van-submit-bar-currency-font-size: @submit-bar-currency-font-size;
+  --van-submit-bar-text-color: @submit-bar-text-color;
+  --van-submit-bar-text-font-size: @submit-bar-text-font-size;
+  --van-submit-bar-tip-padding: @submit-bar-tip-padding;
+  --van-submit-bar-tip-font-size: @submit-bar-tip-font-size;
+  --van-submit-bar-tip-line-height: @submit-bar-tip-line-height;
+  --van-submit-bar-tip-color: @submit-bar-tip-color;
+  --van-submit-bar-tip-background-color: @submit-bar-tip-background-color;
+  --van-submit-bar-tip-icon-size: @submit-bar-tip-icon-size;
+  --van-submit-bar-button-height: @submit-bar-button-height;
+  --van-submit-bar-padding: @submit-bar-padding;
+  --van-submit-bar-price-font-size: @submit-bar-price-font-size;
+  --van-submit-bar-price-integer-font-size: @submit-bar-price-integer-font-size;
+  --van-submit-bar-price-font-family: @submit-bar-price-font-family;
+}
+
+.van-submit-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--van-submit-bar-z-index);
+  width: 100%;
+  background-color: var(--van-submit-bar-background-color);
+  user-select: none;
+  .safe-area-inset-bottom();
+
+  &__tip {
+    padding: var(--van-submit-bar-tip-padding);
+    color: var(--van-submit-bar-tip-color);
+    font-size: var(--van-submit-bar-tip-font-size);
+    line-height: var(--van-submit-bar-tip-line-height);
+    background-color: var(--van-submit-bar-tip-background-color);
+  }
+
+  &__tip-icon {
+    min-width: calc(var(--van-submit-bar-tip-icon-size) * 1.5);
+    font-size: var(--van-submit-bar-tip-icon-size);
+    vertical-align: middle;
+  }
+
+  &__tip-text {
+    vertical-align: middle;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: var(--van-submit-bar-height);
+    padding: var(--van-submit-bar-padding);
+    font-size: var(--van-submit-bar-text-font-size);
+  }
+
+  &__text {
+    flex: 1;
+    padding-right: var(--van-padding-sm);
+    color: var(--van-submit-bar-text-color);
+    text-align: right;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  &__suffix-label {
+    margin-left: var(--van-padding-base);
+    font-weight: var(--van-font-weight-bold);
+  }
+
+  &__price {
+    color: var(--van-submit-bar-price-color);
+    font-weight: var(--van-font-weight-bold);
+    font-size: var(--van-submit-bar-price-font-size);
+
+    &-integer {
+      font-size: var(--van-submit-bar-price-integer-font-size);
+      font-family: var(--van-submit-bar-price-font-family);
+    }
+  }
+
+  &__button {
+    width: var(--van-submit-bar-button-width);
+    height: var(--van-submit-bar-button-height);
+    font-weight: var(--van-font-weight-bold);
+    border: none;
+
+    &--danger {
+      background: var(--van-gradient-red);
+    }
+  }
+
+  &--unfit {
+    padding-bottom: 0;
+  }
+}

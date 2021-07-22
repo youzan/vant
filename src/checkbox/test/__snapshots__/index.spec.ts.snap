@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should adjust label position when using label-position prop 1`] = `
+<div role="checkbox"
+     class="van-checkbox"
+     tabindex="0"
+     aria-checked="false"
+>
+  <span class="van-checkbox__label van-checkbox__label--left">
+    Label
+  </span>
+  <div class="van-checkbox__icon van-checkbox__icon--round">
+    <i class="van-badge__wrapper van-icon van-icon-success">
+    </i>
+  </div>
+</div>
+`;
+
+exports[`should render icon slot correctly 1`] = `
+<div class="van-checkbox__icon van-checkbox__icon--round">
+  checked: false, disabled: false
+</div>
+`;

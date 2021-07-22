@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render gutter when using gutter prop 1`] = `
+<div role="radiogroup"
+     class="van-rate"
+     tabindex="0"
+>
+  <div role="radio"
+       style="padding-right: 10px;"
+       class="van-rate__item"
+       tabindex="0"
+       aria-setsize="5"
+       aria-posinset="1"
+       aria-checked="false"
+  >
+    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
+    </i>
+  </div>
+  <div role="radio"
+       style="padding-right: 10px;"
+       class="van-rate__item"
+       tabindex="0"
+       aria-setsize="5"
+       aria-posinset="2"
+       aria-checked="false"
+  >
+    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
+    </i>
+  </div>
+  <div role="radio"
+       style="padding-right: 10px;"
+       class="van-rate__item"
+       tabindex="0"
+       aria-setsize="5"
+       aria-posinset="3"
+       aria-checked="false"
+  >
+    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
+    </i>
+  </div>
+  <div role="radio"
+       style="padding-right: 10px;"
+       class="van-rate__item"
+       tabindex="0"
+       aria-setsize="5"
+       aria-posinset="4"
+       aria-checked="false"
+  >
+    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
+    </i>
+  </div>
+  <div role="radio"
+       class="van-rate__item"
+       tabindex="0"
+       aria-setsize="5"
+       aria-posinset="5"
+       aria-checked="false"
+  >
+    <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
+    </i>
+  </div>
+</div>
+`;

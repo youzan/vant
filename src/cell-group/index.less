@@ -1,0 +1,33 @@
+@import './var.less';
+
+:root {
+  --van-cell-group-background-color: @cell-group-background-color;
+  --van-cell-group-title-color: @cell-group-title-color;
+  --van-cell-group-title-padding: @cell-group-title-padding;
+  --van-cell-group-title-font-size: @cell-group-title-font-size;
+  --van-cell-group-title-line-height: @cell-group-title-line-height;
+  --van-cell-group-inset-padding: @cell-group-inset-padding;
+  --van-cell-group-inset-border-radius: @cell-group-inset-border-radius;
+  --van-cell-group-inset-title-padding: @cell-group-inset-title-padding;
+}
+
+.van-cell-group {
+  background-color: var(--van-cell-group-background-color);
+
+  &--inset {
+    margin: var(--van-cell-group-inset-padding);
+    border-radius: var(--van-cell-group-inset-border-radius);
+    overflow: hidden;
+  }
+
+  &__title {
+    padding: var(--van-cell-group-title-padding);
+    color: var(--van-cell-group-title-color);
+    font-size: var(--van-cell-group-title-font-size);
+    line-height: var(--van-cell-group-title-line-height);
+
+    &--inset {
+      padding: var(--van-cell-group-inset-title-padding);
+    }
+  }
+}

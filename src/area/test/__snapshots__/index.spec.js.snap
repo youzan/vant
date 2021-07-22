@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render columns-top、columns-bottom slot correctly 1`] = `
+<div class="van-picker van-area">
+  <div class="van-picker__toolbar">
+    <button type="button"
+            class="van-picker__cancel"
+    >
+      Cancel
+    </button>
+    <button type="button"
+            class="van-picker__confirm"
+    >
+      Confirm
+    </button>
+  </div>
+  Top
+  <div class="van-picker__columns"
+       style="height: 264px;"
+  >
+    <div class="van-picker-column">
+      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+          class="van-picker-column__wrapper"
+      >
+      </ul>
+    </div>
+    <div class="van-picker-column">
+      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+          class="van-picker-column__wrapper"
+      >
+      </ul>
+    </div>
+    <div class="van-picker-column">
+      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+          class="van-picker-column__wrapper"
+      >
+      </ul>
+    </div>
+    <div class="van-picker__mask"
+         style="background-size: 100% 110px;"
+    >
+    </div>
+    <div class="van-hairline-unset--top-bottom van-picker__frame"
+         style="height: 44px;"
+    >
+    </div>
+  </div>
+  Bottom
+</div>
+`;
+
+exports[`should render title slot correctly 1`] = `
+<div class="van-picker__toolbar">
+  <button type="button"
+          class="van-picker__cancel"
+  >
+    Cancel
+  </button>
+  Custom Title
+  <button type="button"
+          class="van-picker__confirm"
+  >
+    Confirm
+  </button>
+</div>
+`;
+
+exports[`should render two columns when columns-num prop is two 1`] = `
+<div class="van-picker van-area">
+  <div class="van-picker__toolbar">
+    <button type="button"
+            class="van-picker__cancel"
+    >
+      Cancel
+    </button>
+    <button type="button"
+            class="van-picker__confirm"
+    >
+      Confirm
+    </button>
+  </div>
+  <div class="van-picker__columns"
+       style="height: 264px;"
+  >
+    <div class="van-picker-column">
+      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+          class="van-picker-column__wrapper"
+      >
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
+        >
+          <div class="van-ellipsis">
+            北京市
+          </div>
+        </li>
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item"
+        >
+          <div class="van-ellipsis">
+            天津市
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="van-picker-column">
+      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+          class="van-picker-column__wrapper"
+      >
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
+        >
+          <div class="van-ellipsis">
+            北京市
+          </div>
+        </li>
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item"
+        >
+          <div class="van-ellipsis">
+            县
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="van-picker__mask"
+         style="background-size: 100% 110px;"
+    >
+    </div>
+    <div class="van-hairline-unset--top-bottom van-picker__frame"
+         style="height: 44px;"
+    >
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should reset selected option after calling the reset method 1`] = `
+<li role="button"
+    style="height: 44px;"
+    tabindex="0"
+    class="van-picker-column__item van-picker-column__item--selected"
+>
+  <div class="van-ellipsis">
+    天津市
+  </div>
+</li>
+`;
+
+exports[`should reset selected option after calling the reset method 2`] = `
+<li role="button"
+    style="height: 44px;"
+    tabindex="0"
+    class="van-picker-column__item van-picker-column__item--selected"
+>
+  <div class="van-ellipsis">
+    北京市
+  </div>
+</li>
+`;
+
+exports[`should watch value prop and render correctly 1`] = `
+<li role="button"
+    style="height: 44px;"
+    tabindex="0"
+    class="van-picker-column__item van-picker-column__item--selected"
+>
+  <div class="van-ellipsis">
+    北京市
+  </div>
+</li>
+`;
+
+exports[`should watch value prop and render correctly 2`] = `
+<li role="button"
+    style="height: 44px;"
+    tabindex="0"
+    class="van-picker-column__item van-picker-column__item--selected"
+>
+  <div class="van-ellipsis">
+    天津市
+  </div>
+</li>
+`;
+
+exports[`should watch value prop and render correctly 3`] = `
+<li role="button"
+    style="height: 44px;"
+    tabindex="0"
+    class="van-picker-column__item van-picker-column__item--selected"
+>
+  <div class="van-ellipsis">
+    北京市
+  </div>
+</li>
+`;

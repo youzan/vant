@@ -1,0 +1,68 @@
+@import './var.less';
+@import '../style/mixins/safe-area.less';
+
+:root {
+  --van-contact-list-edit-icon-size: @contact-list-edit-icon-size;
+  --van-contact-list-add-button-z-index: @contact-list-add-button-z-index;
+  --van-contact-list-item-padding: @contact-list-item-padding;
+  --van-contact-list-item-radio-icon-color: @contact-list-item-radio-icon-color;
+}
+
+.van-contact-list {
+  box-sizing: border-box;
+  height: 100%;
+  padding-bottom: 80px;
+
+  &__item {
+    padding: var(--van-contact-list-item-padding);
+  }
+
+  &__item-value {
+    display: flex;
+    align-items: center;
+    padding-right: var(--van-padding-xl);
+    padding-left: var(--van-padding-xs);
+  }
+
+  &__item-tag {
+    flex: none;
+    margin-left: var(--van-padding-xs);
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1.4em;
+  }
+
+  &__group {
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__edit {
+    font-size: var(--van-contact-list-edit-icon-size);
+  }
+
+  &__radio {
+    .van-radio__icon--checked .van-icon {
+      background-color: var(--van-contact-list-item-radio-icon-color);
+      border-color: var(--van-contact-list-item-radio-icon-color);
+    }
+  }
+
+  &__bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--van-contact-list-add-button-z-index);
+    padding: 0 var(--van-padding-md);
+    background-color: var(--van-white);
+    .safe-area-inset-bottom();
+  }
+
+  &__add {
+    height: 40px;
+    margin: 5px 0;
+  }
+}

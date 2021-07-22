@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render error info correctly 1`] = `
+<div class="van-password-input__error-info">
+  error!
+</div>
+`;

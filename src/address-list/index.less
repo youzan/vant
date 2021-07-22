@@ -1,0 +1,113 @@
+@import './var.less';
+@import '../style/mixins/safe-area.less';
+
+:root {
+  --van-address-list-padding: @address-list-padding;
+  --van-address-list-disabled-text-color: @address-list-disabled-text-color;
+  --van-address-list-disabled-text-padding: @address-list-disabled-text-padding;
+  --van-address-list-disabled-text-font-size: @address-list-disabled-text-font-size;
+  --van-address-list-disabled-text-line-height: @address-list-disabled-text-line-height;
+  --van-address-list-add-button-z-index: @address-list-add-button-z-index;
+  --van-address-list-item-padding: @address-list-item-padding;
+  --van-address-list-item-text-color: @address-list-item-text-color;
+  --van-address-list-item-disabled-text-color: @address-list-item-disabled-text-color;
+  --van-address-list-item-font-size: @address-list-item-font-size;
+  --van-address-list-item-line-height: @address-list-item-line-height;
+  --van-address-list-item-radio-icon-color: @address-list-item-radio-icon-color;
+  --van-address-list-edit-icon-size: @address-list-edit-icon-size;
+}
+
+.van-address-list {
+  box-sizing: border-box;
+  height: 100%;
+  padding: var(--van-address-list-padding);
+
+  &__bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: var(--van-address-list-add-button-z-index);
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 var(--van-padding-md);
+    background-color: var(--van-white);
+    .safe-area-inset-bottom();
+  }
+
+  &__add {
+    height: 40px;
+    margin: 5px 0;
+  }
+
+  &__disabled-text {
+    padding: var(--van-address-list-disabled-text-padding);
+    color: var(--van-address-list-disabled-text-color);
+    font-size: var(--van-address-list-disabled-text-font-size);
+    line-height: var(--van-address-list-disabled-text-line-height);
+  }
+}
+
+.van-address-item {
+  padding: var(--van-address-list-item-padding);
+  background-color: var(--van-white);
+  border-radius: var(--van-border-radius-lg);
+
+  &:not(:last-child) {
+    margin-bottom: var(--van-padding-sm);
+  }
+
+  &__value {
+    padding-right: 44px;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--van-padding-xs);
+    font-size: var(--van-font-size-lg);
+    line-height: var(--van-line-height-lg);
+  }
+
+  &__tag {
+    flex: none;
+    margin-left: var(--van-padding-xs);
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1.4em;
+  }
+
+  &__address {
+    color: var(--van-address-list-item-text-color);
+    font-size: var(--van-address-list-item-font-size);
+    line-height: var(--van-address-list-item-line-height);
+  }
+
+  &--disabled {
+    .van-address-item__name,
+    .van-address-item__address {
+      color: var(--van-address-list-item-disabled-text-color);
+    }
+  }
+
+  &__edit {
+    position: absolute;
+    top: 50%;
+    right: var(--van-padding-md);
+    color: var(--van-gray-6);
+    font-size: var(--van-address-list-edit-icon-size);
+    transform: translate(0, -50%);
+  }
+
+  .van-cell {
+    padding: 0;
+  }
+
+  .van-radio__label {
+    margin-left: var(--van-padding-sm);
+  }
+
+  .van-radio__icon--checked .van-icon {
+    background-color: var(--van-address-list-item-radio-icon-color);
+    border-color: var(--van-address-list-item-radio-icon-color);
+  }
+}

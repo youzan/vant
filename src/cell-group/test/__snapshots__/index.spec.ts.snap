@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render title slot correctly 1`] = `
+<div class="van-cell-group__title">
+  Custom Title
+</div>
+<div class="van-cell-group van-hairline--top-bottom">
+</div>
+`;

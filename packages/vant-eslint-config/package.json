@@ -1,0 +1,27 @@
+{
+  "name": "@vant/eslint-config",
+  "version": "3.2.0",
+  "description": "eslint config of vant",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-eslint-config",
+  "peerDependencies": {
+    "eslint": "^7.0.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-markdown": "^2.0.0",
+    "eslint-plugin-vue": "^7.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1"
+  }
+}

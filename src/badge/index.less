@@ -1,0 +1,51 @@
+@import './var.less';
+
+:root {
+  --van-badge-size: @badge-size;
+  --van-badge-color: @badge-color;
+  --van-badge-padding: @badge-padding;
+  --van-badge-font-size: @badge-font-size;
+  --van-badge-font-weight: @badge-font-weight;
+  --van-badge-border-width: @badge-border-width;
+  --van-badge-background-color: @badge-background-color;
+  --van-badge-dot-color: @badge-dot-color;
+  --van-badge-dot-size: @badge-dot-size;
+  --van-badge-font-family: @badge-font-family;
+}
+
+.van-badge {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: var(--van-badge-size);
+  padding: var(--van-badge-padding);
+  color: var(--van-badge-color);
+  font-weight: var(--van-badge-font-weight);
+  font-size: var(--van-badge-font-size);
+  font-family: var(--van-badge-font-family);
+  line-height: 1.2;
+  text-align: center;
+  background-color: var(--van-badge-background-color);
+  border: var(--van-badge-border-width) solid var(--van-white);
+  border-radius: var(--van-border-radius-max);
+
+  &--fixed {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    transform-origin: 100%;
+  }
+
+  &--dot {
+    width: var(--van-badge-dot-size);
+    min-width: 0;
+    height: var(--van-badge-dot-size);
+    background-color: var(--van-badge-dot-color);
+    border-radius: 100%;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+  }
+}

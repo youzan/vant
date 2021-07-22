@@ -1,0 +1,159 @@
+@import './var.less';
+
+:root {
+  --van-number-keyboard-background-color: @number-keyboard-background-color;
+  --van-number-keyboard-key-height: @number-keyboard-key-height;
+  --van-number-keyboard-key-font-size: @number-keyboard-key-font-size;
+  --van-number-keyboard-key-active-color: @number-keyboard-key-active-color;
+  --van-number-keyboard-delete-font-size: @number-keyboard-delete-font-size;
+  --van-number-keyboard-title-color: @number-keyboard-title-color;
+  --van-number-keyboard-title-height: @number-keyboard-title-height;
+  --van-number-keyboard-title-font-size: @number-keyboard-title-font-size;
+  --van-number-keyboard-close-padding: @number-keyboard-close-padding;
+  --van-number-keyboard-close-color: @number-keyboard-close-color;
+  --van-number-keyboard-close-font-size: @number-keyboard-close-font-size;
+  --van-number-keyboard-button-text-color: @number-keyboard-button-text-color;
+  --van-number-keyboard-button-background-color: @number-keyboard-button-background-color;
+  --van-number-keyboard-z-index: @number-keyboard-z-index;
+}
+
+.van-number-keyboard {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--van-number-keyboard-z-index);
+  width: 100%;
+  padding-bottom: 22px;
+  background-color: var(--van-number-keyboard-background-color);
+  user-select: none;
+
+  &--with-title {
+    border-radius: 20px 20px 0 0;
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    height: var(--van-number-keyboard-title-height);
+    padding-top: 6px;
+    color: var(--van-number-keyboard-title-color);
+    font-size: var(--van-number-keyboard-title-font-size);
+  }
+
+  &__title {
+    display: inline-block;
+    font-weight: normal;
+
+    &-left {
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  &__body {
+    display: flex;
+    padding: 6px 0 0 6px;
+  }
+
+  &__keys {
+    display: flex;
+    flex: 3;
+    flex-wrap: wrap;
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    padding: var(--van-number-keyboard-close-padding);
+    color: var(--van-number-keyboard-close-color);
+    font-size: var(--van-number-keyboard-close-font-size);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:active {
+      opacity: var(--van-active-opacity);
+    }
+  }
+
+  &__sidebar {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  &--unfit {
+    padding-bottom: 0;
+  }
+}
+
+.van-key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--van-number-keyboard-key-height);
+  font-size: var(--van-number-keyboard-key-font-size);
+  line-height: 1.5;
+  background-color: var(--van-white);
+  border-radius: var(--van-border-radius-lg);
+  cursor: pointer;
+
+  &--large {
+    // height: 100% can't fill flex parent on legacy safari
+    // see: https://stackoverflow.com/questions/33636796
+    position: absolute;
+    top: 0;
+    right: 6px;
+    bottom: 6px;
+    left: 0;
+    height: auto;
+  }
+
+  &--blue,
+  &--delete {
+    font-size: var(--van-number-keyboard-delete-font-size);
+  }
+
+  &--active {
+    background-color: var(--van-number-keyboard-key-active-color);
+  }
+
+  &--blue {
+    color: var(--van-number-keyboard-button-text-color);
+    background-color: var(--van-number-keyboard-button-background-color);
+
+    &.van-key--active {
+      opacity: var(--van-active-opacity);
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    flex: 1;
+    flex-basis: 33%;
+    box-sizing: border-box;
+    padding: 0 6px 6px 0;
+
+    &--wider {
+      flex-basis: 66%;
+    }
+  }
+
+  &__delete-icon {
+    width: 32px;
+    height: 22px;
+  }
+
+  &__collapse-icon {
+    width: 30px;
+    height: 24px;
+  }
+
+  &__loading-icon {
+    color: var(--van-number-keyboard-button-text-color);
+  }
+}

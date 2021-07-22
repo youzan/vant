@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render image 1`] = `
+<transition-stub class="van-image-preview__overlay">
+  <div class="van-overlay">
+  </div>
+</transition-stub>
+<transition-stub>
+  <div class="van-popup van-popup--center van-image-preview">
+    <div class="van-swipe van-image-preview__swipe">
+      <div style="transition-duration: 300ms; transform: translateX(0px);"
+           class="van-swipe__track"
+      >
+        <div class="van-swipe-item van-image-preview__swipe-item">
+        </div>
+        <div class="van-swipe-item van-image-preview__swipe-item">
+        </div>
+        <div class="van-swipe-item van-image-preview__swipe-item">
+        </div>
+      </div>
+    </div>
+    <div class="van-image-preview__index">
+      1 / 3
+    </div>
+  </div>
+</transition-stub>
+`;
+
+exports[`should change close icon position when using close-icon-position prop 1`] = `
+<i class="van-badge__wrapper van-icon van-icon-clear van-image-preview__close-icon van-image-preview__close-icon--top-left"
+   role="button"
+>
+</i>
+`;
+
+exports[`should change close icon when using close-icon prop 1`] = `
+<i class="van-badge__wrapper van-icon van-icon-success van-image-preview__close-icon van-image-preview__close-icon--top-right"
+   role="button"
+>
+</i>
+`;
+
+exports[`should render cover slot correctly 1`] = `
+<transition-stub class="van-image-preview__overlay">
+  <div class="van-overlay">
+  </div>
+</transition-stub>
+<transition-stub>
+  <div class="van-popup van-popup--center van-image-preview">
+    <div class="van-swipe van-image-preview__swipe">
+      <div style="transition-duration: 300ms; transform: translateX(0px);"
+           class="van-swipe__track"
+      >
+      </div>
+    </div>
+    <div class="van-image-preview__index">
+      1 / 0
+    </div>
+    <div class="van-image-preview__cover">
+      Custom Cover
+    </div>
+  </div>
+</transition-stub>
+`;
+
+exports[`should render index slot correctly 1`] = `
+<div class="van-image-preview__index">
+  Custom Index: 0
+</div>
+`;
+
+exports[`should swipe to currect index after calling the swipeTo method 1`] = `
+<div class="van-image-preview__index">
+  3 / 3
+</div>
+`;
+
+exports[`zoom in and drag image to move 1`] = `
+<div class="van-image van-image-preview__image"
+     style="transition-duration: .3s;"
+>
+  <img src="https://img.yzcdn.cn/1.png"
+       class="van-image__img"
+       style="object-fit: contain;"
+  >
+  <div class="van-image__loading">
+    <div class="van-loading van-loading--spinner">
+      <span class="van-loading__spinner van-loading__spinner--spinner">
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`zoom in and drag image to move 2`] = `
+<div class="van-image van-image-preview__image"
+     style="transition-duration: .3s;"
+>
+  <img src="https://img.yzcdn.cn/1.png"
+       class="van-image__img"
+       style="object-fit: contain;"
+  >
+  <div class="van-image__loading">
+    <div class="van-loading van-loading--spinner">
+      <span class="van-loading__spinner van-loading__spinner--spinner">
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+        <i>
+        </i>
+      </span>
+    </div>
+  </div>
+</div>
+`;

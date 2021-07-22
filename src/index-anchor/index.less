@@ -1,0 +1,33 @@
+@import './var.less';
+
+:root {
+  --van-index-anchor-z-index: @index-anchor-z-index;
+  --van-index-anchor-padding: @index-anchor-padding;
+  --van-index-anchor-text-color: @index-anchor-text-color;
+  --van-index-anchor-font-weight: @index-anchor-font-weight;
+  --van-index-anchor-font-size: @index-anchor-font-size;
+  --van-index-anchor-line-height: @index-anchor-line-height;
+  --van-index-anchor-background-color: @index-anchor-background-color;
+  --van-index-anchor-sticky-text-color: @index-anchor-sticky-text-color;
+  --van-index-anchor-sticky-background-color: @index-anchor-sticky-background-color;
+}
+
+.van-index-anchor {
+  z-index: var(--van-index-anchor-z-index);
+  box-sizing: border-box;
+  padding: var(--van-index-anchor-padding);
+  color: var(--van-index-anchor-text-color);
+  font-weight: var(--van-index-anchor-font-weight);
+  font-size: var(--van-index-anchor-font-size);
+  line-height: var(--van-index-anchor-line-height);
+  background-color: var(--van-index-anchor-background-color);
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    color: var(--van-index-anchor-sticky-text-color);
+    background-color: var(--van-index-anchor-sticky-background-color);
+  }
+}

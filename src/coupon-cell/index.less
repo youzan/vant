@@ -1,0 +1,11 @@
+@import './var.less';
+
+:root {
+  --van-coupon-cell-selected-text-color: @coupon-cell-selected-text-color;
+}
+
+.van-coupon-cell {
+  &__value--selected {
+    color: var(--van-coupon-cell-selected-text-color);
+  }
+}

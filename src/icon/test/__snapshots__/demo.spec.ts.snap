@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div class="van-tabs van-tabs--line">
+  <div>
+    <div class="van-sticky">
+      <div class="van-tabs__wrap">
+        <div role="tablist"
+             class="van-tabs__nav van-tabs__nav--line"
+        >
+          <div role="tab"
+               class="van-tab van-tab--active"
+               aria-selected="true"
+          >
+            <span class="van-tab__text van-tab__text--ellipsis">
+              Demo
+            </span>
+          </div>
+          <div role="tab"
+               class="van-tab"
+               aria-selected="false"
+          >
+            <span class="van-tab__text van-tab__text--ellipsis">
+              Basic
+            </span>
+          </div>
+          <div role="tab"
+               class="van-tab"
+               aria-selected="false"
+          >
+            <span class="van-tab__text van-tab__text--ellipsis">
+              Outline
+            </span>
+          </div>
+          <div role="tab"
+               class="van-tab"
+               aria-selected="false"
+          >
+            <span class="van-tab__text van-tab__text--ellipsis">
+              Filled
+            </span>
+          </div>
+          <div class="van-tabs__line"
+               style="transform: translateX(0px) translateX(-50%);"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="van-tabs__content">
+    <div role="tabpanel"
+         class="van-tab__pane"
+         style
+    >
+      <div>
+        <div class="van-row">
+          <div class="van-col van-col--6">
+            <i class="van-badge__wrapper van-icon van-icon-chat-o">
+            </i>
+          </div>
+          <div class="van-col van-col--6">
+            <i class="van-badge__wrapper van-icon">
+              <img class="van-icon__image"
+                   src="https://b.yzcdn.cn/vant/icon-demo-1126.png"
+              >
+            </i>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="van-row">
+          <div class="van-col van-col--6">
+            <i class="van-badge__wrapper van-icon van-icon-chat-o">
+              <div class="van-badge van-badge--dot van-badge--fixed">
+              </div>
+            </i>
+          </div>
+          <div class="van-col van-col--6">
+            <i class="van-badge__wrapper van-icon van-icon-chat-o">
+              <div class="van-badge van-badge--fixed">
+                9
+              </div>
+            </i>
+          </div>
+          <div class="van-col van-col--6">
+            <i class="van-badge__wrapper van-icon van-icon-chat-o">
+              <div class="van-badge van-badge--fixed">
+                99+
+              </div>
+            </i>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="van-row">
+          <div class="van-col van-col--6">
+            <i class="van-badge__wrapper van-icon van-icon-cart-o"
+               style="color: rgb(25, 137, 250);"
+            >
+            </i>
+          </div>
+          <div class="van-col van-col--6">
+            <i class="van-badge__wrapper van-icon van-icon-fire-o"
+               style="color: rgb(238, 10, 36);"
+            >
+            </i>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="van-row">
+          <div class="van-col van-col--6">
+            <i class="van-badge__wrapper van-icon van-icon-chat-o"
+               style="font-size: 40px;"
+            >
+            </i>
+          </div>
+          <div class="van-col van-col--6">
+            <i class="van-badge__wrapper van-icon van-icon-chat-o"
+               style="font-size: 3rem;"
+            >
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel"
+         class="van-tab__pane"
+         style="display: none;"
+    >
+    </div>
+    <div role="tabpanel"
+         class="van-tab__pane"
+         style="display: none;"
+    >
+    </div>
+    <div role="tabpanel"
+         class="van-tab__pane"
+         style="display: none;"
+    >
+    </div>
+  </div>
+</div>
+`;

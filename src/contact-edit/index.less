@@ -1,0 +1,39 @@
+@import './var.less';
+
+:root {
+  --van-contact-edit-padding: @contact-edit-padding;
+  --van-contact-edit-fields-radius: @contact-edit-fields-radius;
+  --van-contact-edit-buttons-padding: @contact-edit-buttons-padding;
+  --van-contact-edit-button-margin-bottom: @contact-edit-button-margin-bottom;
+  --van-contact-edit-button-font-size: @contact-edit-button-font-size;
+  --van-contact-edit-field-label-width: @contact-edit-field-label-width;
+}
+
+.van-contact-edit {
+  padding: var(--van-contact-edit-padding);
+
+  &__fields {
+    overflow: hidden;
+    border-radius: var(--van-contact-edit-fields-radius);
+
+    .van-field__label {
+      width: var(--van-contact-edit-field-label-width);
+    }
+  }
+
+  &__switch-cell {
+    margin-top: 10px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border-radius: var(--van-contact-edit-fields-radius);
+  }
+
+  &__buttons {
+    padding: var(--van-contact-edit-buttons-padding);
+  }
+
+  .van-button {
+    margin-bottom: var(--van-contact-edit-button-margin-bottom);
+    font-size: var(--van-contact-edit-button-font-size);
+  }
+}

@@ -1,0 +1,312 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-radio-group demo-radio-group"
+       role="radiogroup"
+  >
+    <div role="radio"
+         class="van-radio"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        Radio 1
+      </span>
+    </div>
+    <div role="radio"
+         class="van-radio"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-radio__icon van-radio__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        Radio 2
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-radio-group van-radio-group--horizontal demo-radio-group"
+       role="radiogroup"
+  >
+    <div role="radio"
+         class="van-radio van-radio--horizontal"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        Radio 1
+      </span>
+    </div>
+    <div role="radio"
+         class="van-radio van-radio--horizontal"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-radio__icon van-radio__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        Radio 2
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-radio-group demo-radio-group"
+       role="radiogroup"
+  >
+    <div role="radio"
+         class="van-radio van-radio--disabled"
+         tabindex="-1"
+         aria-checked="false"
+    >
+      <div class="van-radio__icon van-radio__icon--round van-radio__icon--disabled">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label van-radio__label--disabled">
+        Radio 1
+      </span>
+    </div>
+    <div role="radio"
+         class="van-radio van-radio--disabled"
+         tabindex="-1"
+         aria-checked="true"
+    >
+      <div class="van-radio__icon van-radio__icon--round van-radio__icon--disabled van-radio__icon--checked">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label van-radio__label--disabled">
+        Radio 2
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-radio-group demo-radio-group"
+       role="radiogroup"
+  >
+    <div role="radio"
+         class="van-radio"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <div class="van-radio__icon van-radio__icon--square van-radio__icon--checked">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        Radio 1
+      </span>
+    </div>
+    <div role="radio"
+         class="van-radio"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-radio__icon van-radio__icon--square">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        Radio 2
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-radio-group demo-radio-group"
+       role="radiogroup"
+  >
+    <div role="radio"
+         class="van-radio"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
+        <i class="van-badge__wrapper van-icon van-icon-success"
+           style="border-color: #ee0a24; background-color: rgb(238, 10, 36);"
+        >
+        </i>
+      </div>
+      <span class="van-radio__label">
+        Radio 1
+      </span>
+    </div>
+    <div role="radio"
+         class="van-radio"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-radio__icon van-radio__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        Radio 2
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-radio-group demo-radio-group"
+       role="radiogroup"
+  >
+    <div role="radio"
+         class="van-radio"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
+           style="font-size: 24px;"
+      >
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        Radio 1
+      </span>
+    </div>
+    <div role="radio"
+         class="van-radio"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-radio__icon van-radio__icon--round"
+           style="font-size: 24px;"
+      >
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        Radio 2
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-radio-group demo-radio-group"
+       role="radiogroup"
+  >
+    <div role="radio"
+         class="van-radio"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
+        <img src="https://img.yzcdn.cn/vant/user-active.png">
+      </div>
+      <span class="van-radio__label">
+        Radio 1
+      </span>
+    </div>
+    <div role="radio"
+         class="van-radio"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-radio__icon van-radio__icon--round">
+        <img src="https://img.yzcdn.cn/vant/user-inactive.png">
+      </div>
+      <span class="van-radio__label">
+        Radio 2
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-radio-group demo-radio-group"
+       role="radiogroup"
+  >
+    <div role="radio"
+         class="van-radio van-radio--label-disabled"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        Radio 1
+      </span>
+    </div>
+    <div role="radio"
+         class="van-radio van-radio--label-disabled"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-radio__icon van-radio__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        Radio 2
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-radio-group"
+       role="radiogroup"
+  >
+    <div class="van-cell-group van-hairline--top-bottom">
+      <div class="van-cell van-cell--clickable"
+           role="button"
+           tabindex="0"
+      >
+        <div class="van-cell__title">
+          <span>
+            Radio1
+          </span>
+        </div>
+        <div role="radio"
+             class="van-radio"
+             tabindex="0"
+             aria-checked="true"
+        >
+          <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
+            <i class="van-badge__wrapper van-icon van-icon-success">
+            </i>
+          </div>
+        </div>
+      </div>
+      <div class="van-cell van-cell--clickable"
+           role="button"
+           tabindex="0"
+      >
+        <div class="van-cell__title">
+          <span>
+            Radio2
+          </span>
+        </div>
+        <div role="radio"
+             class="van-radio"
+             tabindex="0"
+             aria-checked="false"
+        >
+          <div class="van-radio__icon van-radio__icon--round">
+            <i class="van-badge__wrapper van-icon van-icon-success">
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

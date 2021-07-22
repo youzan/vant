@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <form class="van-form">
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Rate
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <div class="van-field__control van-field__control--custom">
+            <div role="radiogroup"
+                 class="van-rate"
+                 tabindex="0"
+            >
+              <div role="radio"
+                   class="van-rate__item"
+                   tabindex="0"
+                   aria-setsize="5"
+                   aria-posinset="1"
+                   aria-checked="true"
+              >
+                <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
+                </i>
+              </div>
+              <div role="radio"
+                   class="van-rate__item"
+                   tabindex="0"
+                   aria-setsize="5"
+                   aria-posinset="2"
+                   aria-checked="true"
+              >
+                <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
+                </i>
+              </div>
+              <div role="radio"
+                   class="van-rate__item"
+                   tabindex="0"
+                   aria-setsize="5"
+                   aria-posinset="3"
+                   aria-checked="true"
+              >
+                <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
+                </i>
+              </div>
+              <div role="radio"
+                   class="van-rate__item"
+                   tabindex="0"
+                   aria-setsize="5"
+                   aria-posinset="4"
+                   aria-checked="true"
+              >
+                <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
+                </i>
+              </div>
+              <div role="radio"
+                   class="van-rate__item"
+                   tabindex="0"
+                   aria-setsize="5"
+                   aria-posinset="5"
+                   aria-checked="false"
+              >
+                <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
+                </i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <span>
+          Slider
+        </span>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <div class="van-field__control van-field__control--custom">
+            <div class="van-slider">
+              <div class="van-slider__bar"
+                   style="width: 50%; left: 0%;"
+              >
+                <div role="slider"
+                     class="van-slider__button-wrapper"
+                     tabindex="0"
+                     aria-valuemin="0"
+                     aria-valuenow="50"
+                     aria-valuemax="100"
+                     aria-orientation="horizontal"
+                >
+                  <div class="van-slider__button">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin: 16px;">
+      <button type="submit"
+              class="van-button van-button--primary van-button--normal van-button--block van-button--round"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Submit
+          </span>
+        </div>
+      </button>
+    </div>
+  </form>
+</div>
+<div>
+  <div class="van-config-provider"
+       style="--van-rate-icon-full-color: #07c160; --van-slider-bar-height: 4px; --van-slider-button-width: 20px; --van-slider-button-height: 20px; --van-slider-active-background-color: #07c160; --van-button-primary-border-color: #07c160; --van-button-primary-background-color: #07c160;"
+  >
+    <form class="van-form">
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label">
+          <span>
+            Rate
+          </span>
+        </div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <div class="van-field__control van-field__control--custom">
+              <div role="radiogroup"
+                   class="van-rate"
+                   tabindex="0"
+              >
+                <div role="radio"
+                     class="van-rate__item"
+                     tabindex="0"
+                     aria-setsize="5"
+                     aria-posinset="1"
+                     aria-checked="true"
+                >
+                  <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
+                  </i>
+                </div>
+                <div role="radio"
+                     class="van-rate__item"
+                     tabindex="0"
+                     aria-setsize="5"
+                     aria-posinset="2"
+                     aria-checked="true"
+                >
+                  <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
+                  </i>
+                </div>
+                <div role="radio"
+                     class="van-rate__item"
+                     tabindex="0"
+                     aria-setsize="5"
+                     aria-posinset="3"
+                     aria-checked="true"
+                >
+                  <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
+                  </i>
+                </div>
+                <div role="radio"
+                     class="van-rate__item"
+                     tabindex="0"
+                     aria-setsize="5"
+                     aria-posinset="4"
+                     aria-checked="true"
+                >
+                  <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
+                  </i>
+                </div>
+                <div role="radio"
+                     class="van-rate__item"
+                     tabindex="0"
+                     aria-setsize="5"
+                     aria-posinset="5"
+                     aria-checked="false"
+                >
+                  <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
+                  </i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label">
+          <span>
+            Slider
+          </span>
+        </div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <div class="van-field__control van-field__control--custom">
+              <div class="van-slider">
+                <div class="van-slider__bar"
+                     style="width: 50%; left: 0%;"
+                >
+                  <div role="slider"
+                       class="van-slider__button-wrapper"
+                       tabindex="0"
+                       aria-valuemin="0"
+                       aria-valuenow="50"
+                       aria-valuemax="100"
+                       aria-orientation="horizontal"
+                  >
+                    <div class="van-slider__button">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin: 16px;">
+        <button type="submit"
+                class="van-button van-button--primary van-button--normal van-button--block van-button--round"
+        >
+          <div class="van-button__content">
+            <span class="van-button__text">
+              Submit
+            </span>
+          </div>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;

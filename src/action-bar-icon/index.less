@@ -1,0 +1,36 @@
+@import './var.less';
+
+:root {
+  --van-action-bar-icon-width: @action-bar-icon-width;
+  --van-action-bar-icon-height: @action-bar-icon-height;
+  --van-action-bar-icon-color: @action-bar-icon-color;
+  --van-action-bar-icon-size: @action-bar-icon-size;
+  --van-action-bar-icon-font-size: @action-bar-icon-font-size;
+  --van-action-bar-icon-active-color: @action-bar-icon-active-color;
+  --van-action-bar-icon-text-color: @action-bar-icon-text-color;
+  --van-action-bar-icon-background-color: @action-bar-icon-background-color;
+}
+
+.van-action-bar-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: var(--van-action-bar-icon-width);
+  height: var(--van-action-bar-icon-height);
+  color: var(--van-action-bar-icon-text-color);
+  font-size: var(--van-action-bar-icon-font-size);
+  line-height: 1;
+  text-align: center;
+  background-color: var(--van-action-bar-icon-background-color);
+  cursor: pointer;
+
+  &:active {
+    background-color: var(--van-action-bar-icon-active-color);
+  }
+
+  &__icon {
+    margin: 0 auto var(--van-padding-base);
+    color: var(--van-action-bar-icon-color);
+    font-size: var(--van-action-bar-icon-size);
+  }
+}

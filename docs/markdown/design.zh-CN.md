@@ -1,35 +1,62 @@
-## 设计资源
+# 设计资源
 
-这里提供了 Vant 现有的设计资源，更多资源还在整理中。
+### 介绍
 
-### 组件
+Vant 是基于有赞 [Zan Design System](https://design.youzan.com/) 视觉规范实现的组件库，在这里可以下载 Vant 的设计资源。
 
-包含 Sketch 格式的组件设计规范、色彩规范。
+## 设计稿
 
-<img src="https://img.yzcdn.cn/vant/design-components-0321.png" style="width: 80%; box-shadow: 0 1px 3px rgba(0, 0, 0, .3);">
+### 组件设计稿（Sketch）
+
+包含 Sketch 格式的色彩规范、字体规范、组件设计规范。
+
+#### 色彩规范
+
+<img src="https://img.yzcdn.cn/vant/color_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+
+#### 字体规范
+
+<img src="https://img.yzcdn.cn/vant/words_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+
+#### 组件规范
+
+<img src="https://img.yzcdn.cn/vant/tab_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
 <a class="design-download" href="https://github.com/youzan/vant/blob/dev/docs/assets/design.sketch?raw=true">下载</a>
 
-### 图标
+### 图标设计稿（Sketch）
 
 包含 Sketch 格式的图标库资源。
 
-<img src="https://img.yzcdn.cn/vant/design-icons-0321.png" style="width: 80%; box-shadow: 0 1px 3px rgba(0, 0, 0, .3);">
+<img src="https://img.yzcdn.cn/vant/design-icons-0321.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
-<a class="design-download" href="https://github.com/youzan/vant-icons/blob/master/assets/icons.sketch?raw=true">下载</a>
+<a class="design-download" href="https://github.com/youzan/vant/blob/dev/packages/vant-icons/assets/icons.sketch?raw=true">下载</a>
+
+#### 在线资源
+
+Vant 的所有图标都托管在 **iconfont.cn** 上，点此查看：[Vant 图标库](https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=31945)。
+
+### Axure 元件库
+
+Axure 元件库，由社区的 [@axure-tczy](https://github.com/axure-tczy) 同学贡献。
+
+<img src="https://img.yzcdn.cn/vant/vant-axure-0905.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+
+<a class="design-download" href="https://b.yzcdn.cn/vant/vant-axure-20200905.zip">下载</a>
 
 <style>
 a.design-download {
   display: inline-block;
-  color: #fff;
   width: 100px;
+  color: #fff !important;
   line-height: 40px;
-  background-color: #38f;
   text-align: center;
+  background-color: #38f;
   border-radius: 3px;
 }
 
 a.design-download:hover {
+  color: #fff;
   opacity: .9;
 }
 

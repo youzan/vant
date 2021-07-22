@@ -1,0 +1,285 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title">
+      <span>
+        Basic Usage
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <div class="van-stepper">
+        <button type="button"
+                class="van-stepper__minus van-stepper__minus--disabled"
+        >
+        </button>
+        <input type="text"
+               role="spinbutton"
+               class="van-stepper__input"
+               inputmode="decimal"
+               aria-valuemax="Infinity"
+               aria-valuemin="1"
+               aria-valuenow="1"
+        >
+        <button type="button"
+                class="van-stepper__plus"
+        >
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title">
+      <span>
+        Step
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <div class="van-stepper">
+        <button type="button"
+                class="van-stepper__minus van-stepper__minus--disabled"
+        >
+        </button>
+        <input type="text"
+               role="spinbutton"
+               class="van-stepper__input"
+               inputmode="decimal"
+               aria-valuemax="Infinity"
+               aria-valuemin="1"
+               aria-valuenow="1"
+        >
+        <button type="button"
+                class="van-stepper__plus"
+        >
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title">
+      <span>
+        Range
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <div class="van-stepper">
+        <button type="button"
+                class="van-stepper__minus van-stepper__minus--disabled"
+        >
+        </button>
+        <input type="text"
+               role="spinbutton"
+               class="van-stepper__input"
+               inputmode="decimal"
+               aria-valuemax="8"
+               aria-valuemin="5"
+               aria-valuenow="5"
+        >
+        <button type="button"
+                class="van-stepper__plus"
+        >
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title">
+      <span>
+        Integer
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <div class="van-stepper">
+        <button type="button"
+                class="van-stepper__minus van-stepper__minus--disabled"
+        >
+        </button>
+        <input type="tel"
+               role="spinbutton"
+               class="van-stepper__input"
+               inputmode="numeric"
+               aria-valuemax="Infinity"
+               aria-valuemin="1"
+               aria-valuenow="1"
+        >
+        <button type="button"
+                class="van-stepper__plus"
+        >
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title">
+      <span>
+        Disabled
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <div class="van-stepper">
+        <button type="button"
+                class="van-stepper__minus van-stepper__minus--disabled"
+        >
+        </button>
+        <input type="text"
+               role="spinbutton"
+               class="van-stepper__input"
+               disabled
+               inputmode="decimal"
+               aria-valuemax="Infinity"
+               aria-valuemin="1"
+               aria-valuenow="1"
+        >
+        <button type="button"
+                class="van-stepper__plus van-stepper__plus--disabled"
+        >
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title">
+      <span>
+        Disable Input
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <div class="van-stepper">
+        <button type="button"
+                class="van-stepper__minus van-stepper__minus--disabled"
+        >
+        </button>
+        <input type="text"
+               role="spinbutton"
+               class="van-stepper__input"
+               readonly
+               inputmode="decimal"
+               aria-valuemax="Infinity"
+               aria-valuemin="1"
+               aria-valuenow="1"
+        >
+        <button type="button"
+                class="van-stepper__plus"
+        >
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title">
+      <span>
+        Decimal Length
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <div class="van-stepper">
+        <button type="button"
+                class="van-stepper__minus van-stepper__minus--disabled"
+        >
+        </button>
+        <input type="text"
+               role="spinbutton"
+               class="van-stepper__input"
+               inputmode="decimal"
+               aria-valuemax="Infinity"
+               aria-valuemin="1"
+               aria-valuenow="1"
+        >
+        <button type="button"
+                class="van-stepper__plus"
+        >
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title">
+      <span>
+        Custom Size
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <div class="van-stepper">
+        <button type="button"
+                style="width: 32px; height: 32px;"
+                class="van-stepper__minus van-stepper__minus--disabled"
+        >
+        </button>
+        <input type="text"
+               role="spinbutton"
+               class="van-stepper__input"
+               style="width: 40px; height: 32px;"
+               inputmode="decimal"
+               aria-valuemax="Infinity"
+               aria-valuemin="1"
+               aria-valuenow="1"
+        >
+        <button type="button"
+                style="width: 32px; height: 32px;"
+                class="van-stepper__plus"
+        >
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title">
+      <span>
+        Before Change
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <div class="van-stepper">
+        <button type="button"
+                class="van-stepper__minus van-stepper__minus--disabled"
+        >
+        </button>
+        <input type="text"
+               role="spinbutton"
+               class="van-stepper__input"
+               inputmode="decimal"
+               aria-valuemax="Infinity"
+               aria-valuemin="1"
+               aria-valuenow="1"
+        >
+        <button type="button"
+                class="van-stepper__plus"
+        >
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title">
+      <span>
+        Round Theme
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <div class="van-stepper van-stepper--round">
+        <button type="button"
+                style="width: 22px; height: 22px;"
+                class="van-stepper__minus van-stepper__minus--disabled"
+        >
+        </button>
+        <input type="text"
+               role="spinbutton"
+               class="van-stepper__input"
+               style="height: 22px;"
+               readonly
+               inputmode="decimal"
+               aria-valuemax="Infinity"
+               aria-valuemin="1"
+               aria-valuenow="1"
+        >
+        <button type="button"
+                style="width: 22px; height: 22px;"
+                class="van-stepper__plus"
+        >
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

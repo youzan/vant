@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div class="van-tabs van-tabs--line">
+  <div class="van-tabs__wrap">
+    <div role="tablist"
+         class="van-tabs__nav van-tabs__nav--line"
+    >
+      <div role="tab"
+           class="van-tab van-tab--active"
+           aria-selected="true"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          Basic Usage
+        </span>
+      </div>
+      <div role="tab"
+           class="van-tab"
+           aria-selected="false"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          Error Info
+        </span>
+      </div>
+      <div role="tab"
+           class="van-tab"
+           aria-selected="false"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          PullRefresh
+        </span>
+      </div>
+      <div class="van-tabs__line"
+           style="transform: translateX(0px) translateX(-50%);"
+      >
+      </div>
+    </div>
+  </div>
+  <div class="van-tabs__content">
+    <div role="tabpanel"
+         class="van-tab__pane"
+         style
+    >
+      <div role="feed"
+           class="van-list"
+           aria-busy="true"
+      >
+        <div class="van-list__loading">
+          <div class="van-loading van-loading--circular van-list__loading-icon">
+            <span class="van-loading__spinner van-loading__spinner--circular">
+              <svg class="van-loading__circular"
+                   viewbox="25 25 50 50"
+              >
+                <circle cx="50"
+                        cy="50"
+                        r="20"
+                        fill="none"
+                >
+                </circle>
+              </svg>
+            </span>
+            <span class="van-loading__text">
+              Loading...
+            </span>
+          </div>
+        </div>
+        <div class="van-list__placeholder">
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel"
+         class="van-tab__pane"
+         style="display: none;"
+    >
+    </div>
+    <div role="tabpanel"
+         class="van-tab__pane"
+         style="display: none;"
+    >
+    </div>
+  </div>
+</div>
+`;

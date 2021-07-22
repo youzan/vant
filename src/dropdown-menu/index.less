@@ -1,0 +1,92 @@
+@import './var.less';
+@import '../dropdown-item/var.less';
+
+:root {
+  --van-dropdown-menu-height: @dropdown-menu-height;
+  --van-dropdown-menu-background-color: @dropdown-menu-background-color;
+  --van-dropdown-menu-box-shadow: @dropdown-menu-box-shadow;
+  --van-dropdown-menu-title-font-size: @dropdown-menu-title-font-size;
+  --van-dropdown-menu-title-text-color: @dropdown-menu-title-text-color;
+  --van-dropdown-menu-title-active-text-color: @dropdown-menu-title-active-text-color;
+  --van-dropdown-menu-title-disabled-text-color: @dropdown-menu-title-disabled-text-color;
+  --van-dropdown-menu-title-padding: @dropdown-menu-title-padding;
+  --van-dropdown-menu-title-line-height: @dropdown-menu-title-line-height;
+  --van-dropdown-menu-option-active-color: @dropdown-menu-option-active-color;
+  --van-dropdown-menu-content-max-height: @dropdown-menu-content-max-height;
+}
+
+.van-dropdown-menu {
+  user-select: none;
+
+  &__bar {
+    position: relative;
+    display: flex;
+    height: var(--van-dropdown-menu-height);
+    background-color: var(--van-dropdown-menu-background-color);
+    box-shadow: var(--van-dropdown-menu-box-shadow);
+
+    &--opened {
+      z-index: calc(var(--van-dropdown-item-z-index) + 1);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    min-width: 0; // hack for flex ellipsis
+    cursor: pointer;
+
+    &:active {
+      opacity: var(--van-active-opacity);
+    }
+
+    &--disabled {
+      &:active {
+        opacity: 1;
+      }
+
+      .van-dropdown-menu__title {
+        color: var(--van-dropdown-menu-title-disabled-text-color);
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: var(--van-dropdown-menu-title-padding);
+    color: var(--van-dropdown-menu-title-text-color);
+    font-size: var(--van-dropdown-menu-title-font-size);
+    line-height: var(--van-dropdown-menu-title-line-height);
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: -4px;
+      margin-top: -5px;
+      border: 3px solid;
+      border-color: transparent transparent var(--van-gray-4) var(--van-gray-4);
+      transform: rotate(-45deg);
+      opacity: 0.8;
+      content: '';
+    }
+
+    &--active {
+      color: var(--van-dropdown-menu-title-active-text-color);
+
+      &::after {
+        border-color: transparent transparent currentColor currentColor;
+      }
+    }
+
+    &--down {
+      &::after {
+        margin-top: -1px;
+        transform: rotate(135deg);
+      }
+    }
+  }
+}

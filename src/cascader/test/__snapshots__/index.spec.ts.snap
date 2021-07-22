@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should change close icon when using close-icon prop 1`] = `
+<i class="van-badge__wrapper van-icon van-icon-success van-cascader__close-icon">
+</i>
+`;
+
+exports[`should render option slot correctly 1`] = `
+<li class="van-cascader__option">
+  Custom Option foo
+</li>
+`;
+
+exports[`should render title slot correctly 1`] = `
+<h2 class="van-cascader__title">
+  Custom Title
+</h2>
+`;
+
+exports[`should update tabs when previous tab is clicked 1`] = `
+<div class="van-cascader">
+  <div class="van-cascader__header">
+    <h2 class="van-cascader__title">
+    </h2>
+    <i class="van-badge__wrapper van-icon van-icon-cross van-cascader__close-icon">
+    </i>
+  </div>
+  <div class="van-tabs van-tabs--line van-cascader__tabs">
+    <div class="van-tabs__wrap van-tabs__wrap--scrollable">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line van-tabs__nav--complete"
+      >
+        <div role="tab"
+             class="van-tab van-cascader__tab"
+             aria-selected="false"
+        >
+          <span class="van-tab__text">
+            Jiangsu
+          </span>
+        </div>
+        <div role="tab"
+             class="van-tab van-tab--active van-cascader__tab van-cascader__tab--unselected"
+             aria-selected="true"
+        >
+          <span class="van-tab__text">
+            Select
+          </span>
+        </div>
+        <div class="van-tabs__line"
+             style="transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="van-tabs__content van-tabs__content--animated">
+      <div class="van-swipe van-tabs__track">
+        <div style="transition-duration: 0ms; transform: translateX(0px);"
+             class="van-swipe__track"
+        >
+          <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+               role="tabpanel"
+               aria-hidden="true"
+          >
+            <div class="van-tab__pane">
+              <ul class="van-cascader__options">
+                <li class="van-cascader__option">
+                  <span>
+                    Zhejiang
+                  </span>
+                </li>
+                <li class="van-cascader__option van-cascader__option--selected">
+                  <span>
+                    Jiangsu
+                  </span>
+                  <i class="van-badge__wrapper van-icon van-icon-success van-cascader__selected-icon">
+                  </i>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="van-swipe-item van-tab__pane-wrapper"
+               role="tabpanel"
+               aria-hidden="false"
+          >
+            <div class="van-tab__pane">
+              <ul class="van-cascader__options">
+                <li class="van-cascader__option">
+                  <span>
+                    Nanjing
+                  </span>
+                </li>
+                <li class="van-cascader__option">
+                  <span>
+                    Wuxi
+                  </span>
+                </li>
+                <li class="van-cascader__option">
+                  <span>
+                    Xuzhou
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

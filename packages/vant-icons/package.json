@@ -1,0 +1,30 @@
+{
+  "name": "@vant/icons",
+  "version": "1.6.0",
+  "description": "vant icons",
+  "main": "./src/config.js",
+  "types": "./src/config.d.ts",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "release": "release-it"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-icons",
+  "devDependencies": {
+    "release-it": "^13.6.2"
+  },
+  "release-it": {
+    "git": {
+      "tag": false,
+      "commitMessage": "release: @vant/icons ${version}",
+      "addUntrackedFiles": true,
+      "requireCleanWorkingDir": false
+    }
+  }
+}

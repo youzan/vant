@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <span class="van-popover__wrapper">
+    <button type="button"
+            class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Light Theme
+        </span>
+      </div>
+    </button>
+  </span>
+  <span class="van-popover__wrapper">
+    <button type="button"
+            class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Dark Theme
+        </span>
+      </div>
+    </button>
+  </span>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable van-field"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title van-field__label">
+      <span>
+        Placement
+      </span>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               name="picker"
+               class="van-field__control"
+               readonly
+        >
+      </div>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <transition-stub>
+  </transition-stub>
+  <transition-stub>
+  </transition-stub>
+</div>
+<div>
+  <span class="van-popover__wrapper">
+    <button type="button"
+            class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Show Icon
+        </span>
+      </div>
+    </button>
+  </span>
+  <span class="van-popover__wrapper">
+    <button type="button"
+            class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Disable Action
+        </span>
+      </div>
+    </button>
+  </span>
+</div>
+<div>
+  <span class="van-popover__wrapper">
+    <button type="button"
+            class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Custom Content
+        </span>
+      </div>
+    </button>
+  </span>
+</div>
+`;

@@ -1,0 +1,350 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="demo-button-row">
+    <button type="button"
+            class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Primary
+        </span>
+      </div>
+    </button>
+    <button type="button"
+            class="van-button van-button--success van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Success
+        </span>
+      </div>
+    </button>
+    <button type="button"
+            class="van-button van-button--default van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Default
+        </span>
+      </div>
+    </button>
+  </div>
+  <button type="button"
+          class="van-button van-button--danger van-button--normal"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Danger
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--warning van-button--normal"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Warning
+      </span>
+    </div>
+  </button>
+</div>
+<div>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal van-button--plain"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Plain
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--success van-button--normal van-button--plain"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Plain
+      </span>
+    </div>
+  </button>
+</div>
+<div>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal van-button--plain van-button--hairline van-hairline--surround"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Hairline
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--success van-button--normal van-button--plain van-button--hairline van-hairline--surround"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Hairline
+      </span>
+    </div>
+  </button>
+</div>
+<div>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal van-button--disabled"
+          disabled
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Disabled
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--success van-button--normal van-button--disabled"
+          disabled
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Disabled
+      </span>
+    </div>
+  </button>
+</div>
+<div>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal van-button--loading"
+  >
+    <div class="van-button__content">
+      <div class="van-loading van-loading--circular van-button__loading">
+        <span class="van-loading__spinner van-loading__spinner--circular">
+          <svg class="van-loading__circular"
+               viewbox="25 25 50 50"
+          >
+            <circle cx="50"
+                    cy="50"
+                    r="20"
+                    fill="none"
+            >
+            </circle>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal van-button--loading"
+  >
+    <div class="van-button__content">
+      <div class="van-loading van-loading--spinner van-button__loading">
+        <span class="van-loading__spinner van-loading__spinner--spinner">
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+          <i>
+          </i>
+        </span>
+      </div>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--success van-button--normal van-button--loading"
+  >
+    <div class="van-button__content">
+      <div class="van-loading van-loading--circular van-button__loading">
+        <span class="van-loading__spinner van-loading__spinner--circular">
+          <svg class="van-loading__circular"
+               viewbox="25 25 50 50"
+          >
+            <circle cx="50"
+                    cy="50"
+                    r="20"
+                    fill="none"
+            >
+            </circle>
+          </svg>
+        </span>
+      </div>
+      <span class="van-button__text">
+        Loading...
+      </span>
+    </div>
+  </button>
+</div>
+<div>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal van-button--square"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Square
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--success van-button--normal van-button--round"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Round
+      </span>
+    </div>
+  </button>
+</div>
+<div>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal"
+  >
+    <div class="van-button__content">
+      <i class="van-badge__wrapper van-icon van-icon-plus van-button__icon">
+      </i>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal"
+  >
+    <div class="van-button__content">
+      <i class="van-badge__wrapper van-icon van-icon-plus van-button__icon">
+      </i>
+      <span class="van-button__text">
+        Button
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal van-button--plain"
+  >
+    <div class="van-button__content">
+      <i class="van-badge__wrapper van-icon van-button__icon">
+        <img class="van-icon__image"
+             src="https://img.yzcdn.cn/vant/user-active.png"
+        >
+      </i>
+      <span class="van-button__text">
+        Button
+      </span>
+    </div>
+  </button>
+</div>
+<div>
+  <button type="button"
+          class="van-button van-button--primary van-button--large"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Large
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Normal
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--primary van-button--small"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Small
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--primary van-button--mini"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Mini
+      </span>
+    </div>
+  </button>
+</div>
+<div>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal van-button--block"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Block Element
+      </span>
+    </div>
+  </button>
+</div>
+<div>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        URL
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--primary van-button--normal"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Vue Router
+      </span>
+    </div>
+  </button>
+</div>
+<div>
+  <button type="button"
+          class="van-button van-button--default van-button--normal"
+          style="color: white; background: rgb(114, 50, 221); border-color: #7232dd;"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Pure
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--default van-button--normal van-button--plain"
+          style="color: rgb(114, 50, 221); border-color: #7232dd;"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Pure
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--default van-button--normal"
+          style="color: white; border: 0px;"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Gradient
+      </span>
+    </div>
+  </button>
+</div>
+`;

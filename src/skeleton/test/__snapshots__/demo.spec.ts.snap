@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-skeleton van-skeleton--animate">
+    <div class="van-skeleton__content">
+      <h3 class="van-skeleton__title">
+      </h3>
+      <div class="van-skeleton__row"
+           style="width: 100%;"
+      >
+      </div>
+      <div class="van-skeleton__row"
+           style="width: 100%;"
+      >
+      </div>
+      <div class="van-skeleton__row"
+           style="width: 60%;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-skeleton van-skeleton--animate">
+    <div class="van-skeleton__avatar van-skeleton__avatar--round">
+    </div>
+    <div class="van-skeleton__content">
+      <h3 class="van-skeleton__title">
+      </h3>
+      <div class="van-skeleton__row"
+           style="width: 100%;"
+      >
+      </div>
+      <div class="van-skeleton__row"
+           style="width: 100%;"
+      >
+      </div>
+      <div class="van-skeleton__row"
+           style="width: 60%;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div role="switch"
+       class="van-switch"
+       style="font-size: 24px;"
+       aria-checked="false"
+  >
+    <div class="van-switch__node">
+    </div>
+  </div>
+  <div class="van-skeleton van-skeleton--animate">
+    <div class="van-skeleton__avatar van-skeleton__avatar--round">
+    </div>
+    <div class="van-skeleton__content">
+      <h3 class="van-skeleton__title">
+      </h3>
+      <div class="van-skeleton__row"
+           style="width: 100%;"
+      >
+      </div>
+      <div class="van-skeleton__row"
+           style="width: 100%;"
+      >
+      </div>
+      <div class="van-skeleton__row"
+           style="width: 60%;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+`;

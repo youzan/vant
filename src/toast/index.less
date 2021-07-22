@@ -1,0 +1,90 @@
+@import './var.less';
+
+:root {
+  --van-toast-max-width: @toast-max-width;
+  --van-toast-font-size: @toast-font-size;
+  --van-toast-text-color: @toast-text-color;
+  --van-toast-loading-icon-color: @toast-loading-icon-color;
+  --van-toast-line-height: @toast-line-height;
+  --van-toast-border-radius: @toast-border-radius;
+  --van-toast-background-color: @toast-background-color;
+  --van-toast-icon-size: @toast-icon-size;
+  --van-toast-text-min-width: @toast-text-min-width;
+  --van-toast-text-padding: @toast-text-padding;
+  --van-toast-default-padding: @toast-default-padding;
+  --van-toast-default-width: @toast-default-width;
+  --van-toast-default-min-height: @toast-default-min-height;
+  --van-toast-position-top-distance: @toast-position-top-distance;
+  --van-toast-position-bottom-distance: @toast-position-bottom-distance;
+}
+
+.van-toast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+  transition: all var(--van-animation-duration-fast);
+
+  // hack for avoid max-width when use left & fixed
+  width: var(--van-toast-default-width);
+  max-width: var(--van-toast-max-width);
+  min-height: var(--van-toast-default-min-height);
+  padding: var(--van-toast-default-padding);
+  color: var(--van-toast-text-color);
+  font-size: var(--van-toast-font-size);
+  line-height: var(--van-toast-line-height);
+
+  // allow newline character
+  white-space: pre-wrap;
+  text-align: center;
+  // https://github.com/youzan/vant/issues/8959
+  word-break: break-all;
+  background-color: var(--van-toast-background-color);
+  border-radius: var(--van-toast-border-radius);
+
+  &--unclickable {
+    // lock scroll
+    overflow: hidden;
+
+    // should not add pointer-events: none directly to body tag
+    // that will cause unexpected tap-highlight-color in mobile safari
+    * {
+      pointer-events: none;
+    }
+  }
+
+  &--text,
+  &--html {
+    width: fit-content;
+    min-width: var(--van-toast-text-min-width);
+    min-height: 0;
+    padding: var(--van-toast-text-padding);
+
+    .van-toast__text {
+      margin-top: 0;
+    }
+  }
+
+  &--top {
+    top: var(--van-toast-position-top-distance);
+  }
+
+  &--bottom {
+    top: auto;
+    bottom: var(--van-toast-position-bottom-distance);
+  }
+
+  &__icon {
+    font-size: var(--van-toast-icon-size);
+  }
+
+  &__loading {
+    padding: var(--van-padding-base);
+    color: var(--van-toast-loading-icon-color);
+  }
+
+  &__text {
+    margin-top: var(--van-padding-xs);
+  }
+}

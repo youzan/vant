@@ -1,0 +1,6 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should allow to disable safe-area-inset-bottom prop 1`] = `
+<div class="van-action-bar van-action-bar--unfit">
+</div>
+`;

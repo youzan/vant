@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-steps van-steps--horizontal">
+    <div class="van-steps__items">
+      <div class="van-hairline van-step van-step--horizontal van-step--finish">
+        <div class="van-step__title">
+          Step1
+        </div>
+        <div class="van-step__circle-container">
+          <i class="van-step__circle">
+          </i>
+        </div>
+        <div class="van-step__line">
+        </div>
+      </div>
+      <div class="van-hairline van-step van-step--horizontal van-step--process">
+        <div class="van-step__title van-step__title--active">
+          Step2
+        </div>
+        <div class="van-step__circle-container">
+          <i class="van-badge__wrapper van-icon van-icon-checked van-step__icon van-step__icon--active">
+          </i>
+        </div>
+        <div class="van-step__line">
+        </div>
+      </div>
+      <div class="van-hairline van-step van-step--horizontal van-step--waiting">
+        <div class="van-step__title">
+          Step3
+        </div>
+        <div class="van-step__circle-container">
+          <i class="van-step__circle">
+          </i>
+        </div>
+        <div class="van-step__line">
+        </div>
+      </div>
+      <div class="van-hairline van-step van-step--horizontal van-step--waiting">
+        <div class="van-step__title">
+          Step4
+        </div>
+        <div class="van-step__circle-container">
+          <i class="van-step__circle">
+          </i>
+        </div>
+        <div class="van-step__line">
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button"
+          class="van-button van-button--default van-button--normal"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Next Step
+      </span>
+    </div>
+  </button>
+</div>
+<div>
+  <div class="van-steps van-steps--horizontal">
+    <div class="van-steps__items">
+      <div class="van-hairline van-step van-step--horizontal van-step--finish">
+        <div class="van-step__title">
+          Step1
+        </div>
+        <div class="van-step__circle-container">
+          <i class="van-badge__wrapper van-icon van-icon-arrow van-step__icon">
+          </i>
+        </div>
+        <div class="van-step__line"
+             style="background: rgb(51, 136, 255);"
+        >
+        </div>
+      </div>
+      <div class="van-hairline van-step van-step--horizontal van-step--process">
+        <div class="van-step__title van-step__title--active"
+             style="color: rgb(51, 136, 255);"
+        >
+          Step2
+        </div>
+        <div class="van-step__circle-container">
+          <i class="van-badge__wrapper van-icon van-icon-success van-step__icon van-step__icon--active"
+             style="color: rgb(51, 136, 255);"
+          >
+          </i>
+        </div>
+        <div class="van-step__line">
+        </div>
+      </div>
+      <div class="van-hairline van-step van-step--horizontal van-step--waiting">
+        <div class="van-step__title">
+          Step3
+        </div>
+        <div class="van-step__circle-container">
+          <i class="van-badge__wrapper van-icon van-icon-arrow van-step__icon">
+          </i>
+        </div>
+        <div class="van-step__line">
+        </div>
+      </div>
+      <div class="van-hairline van-step van-step--horizontal van-step--waiting">
+        <div class="van-step__title">
+          Step4
+        </div>
+        <div class="van-step__circle-container">
+          <i class="van-badge__wrapper van-icon van-icon-arrow van-step__icon">
+          </i>
+        </div>
+        <div class="van-step__line">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-steps van-steps--vertical">
+    <div class="van-steps__items">
+      <div class="van-hairline van-step van-step--vertical van-step--process">
+        <div class="van-step__title van-step__title--active">
+          <h3>
+            【City】Status1
+          </h3>
+          <p>
+            2016-07-12 12:40
+          </p>
+        </div>
+        <div class="van-step__circle-container">
+          <i class="van-badge__wrapper van-icon van-icon-checked van-step__icon van-step__icon--active">
+          </i>
+        </div>
+        <div class="van-step__line">
+        </div>
+      </div>
+      <div class="van-hairline van-step van-step--vertical van-step--waiting">
+        <div class="van-step__title">
+          <h3>
+            【City】Status2
+          </h3>
+          <p>
+            2016-07-11 10:00
+          </p>
+        </div>
+        <div class="van-step__circle-container">
+          <i class="van-step__circle">
+          </i>
+        </div>
+        <div class="van-step__line">
+        </div>
+      </div>
+      <div class="van-hairline van-step van-step--vertical van-step--waiting">
+        <div class="van-step__title">
+          <h3>
+            【City】Status3
+          </h3>
+          <p>
+            2016-07-10 09:30
+          </p>
+        </div>
+        <div class="van-step__circle-container">
+          <i class="van-step__circle">
+          </i>
+        </div>
+        <div class="van-step__line">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

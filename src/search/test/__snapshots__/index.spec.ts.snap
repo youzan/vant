@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render action text when using action-text prop 1`] = `
+<div class="van-search__action"
+     role="button"
+     tabindex="0"
+>
+  Custom Text
+</div>
+`;
+
+exports[`should render label slot correctly 1`] = `
+<div class="van-search__label">
+  Custom Label
+</div>
+`;
+
+exports[`should render left icon when using left-icon prop 1`] = `
+<div class="van-field__left-icon">
+  <i class="van-badge__wrapper van-icon van-icon-setting-o">
+  </i>
+</div>
+`;
+
+exports[`should render left slot correctly 1`] = `
+<div class="van-search">
+  Custom Left Content
+  <div class="van-search__content van-search__content--square">
+    <div class="van-cell van-cell--borderless van-field">
+      <div class="van-field__left-icon">
+        <i class="van-badge__wrapper van-icon van-icon-search">
+        </i>
+      </div>
+      <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-field__body">
+          <input type="search"
+                 class="van-field__control"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render right icon when using right-icon prop 1`] = `
+<div class="van-field__right-icon">
+  <i class="van-badge__wrapper van-icon van-icon-setting-o">
+  </i>
+</div>
+`;
+
+exports[`should render right-icon slot correctly 1`] = `
+<div class="van-field__right-icon">
+  Custom Right Icon
+</div>
+`;

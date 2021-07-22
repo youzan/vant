@@ -1,0 +1,114 @@
+@import './var.less';
+@import '../style/mixins/hairline';
+
+:root {
+  --van-share-sheet-header-padding: @share-sheet-header-padding;
+  --van-share-sheet-title-color: @share-sheet-title-color;
+  --van-share-sheet-title-font-size: @share-sheet-title-font-size;
+  --van-share-sheet-title-line-height: @share-sheet-title-line-height;
+  --van-share-sheet-description-color: @share-sheet-description-color;
+  --van-share-sheet-description-font-size: @share-sheet-description-font-size;
+  --van-share-sheet-description-line-height: @share-sheet-description-line-height;
+  --van-share-sheet-icon-size: @share-sheet-icon-size;
+  --van-share-sheet-option-name-color: @share-sheet-option-name-color;
+  --van-share-sheet-option-name-font-size: @share-sheet-option-name-font-size;
+  --van-share-sheet-option-description-color: @share-sheet-option-description-color;
+  --van-share-sheet-option-description-font-size: @share-sheet-option-description-font-size;
+  --van-share-sheet-cancel-button-font-size: @share-sheet-cancel-button-font-size;
+  --van-share-sheet-cancel-button-height: @share-sheet-cancel-button-height;
+  --van-share-sheet-cancel-button-background: @share-sheet-cancel-button-background;
+}
+
+.van-share-sheet {
+  &__header {
+    padding: var(--van-share-sheet-header-padding);
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: var(--van-padding-xs);
+    color: var(--van-share-sheet-title-color);
+    font-weight: normal;
+    font-size: var(--van-share-sheet-title-font-size);
+    line-height: var(--van-share-sheet-title-line-height);
+  }
+
+  &__description {
+    display: block;
+    margin-top: var(--van-padding-xs);
+    color: var(--van-share-sheet-description-color);
+    font-size: var(--van-share-sheet-description-font-size);
+    line-height: var(--van-share-sheet-description-line-height);
+  }
+
+  &__options {
+    position: relative;
+    display: flex;
+    padding: var(--van-padding-md) 0 var(--van-padding-md) var(--van-padding-xs);
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+
+    &--border::before {
+      .hairline-top(var(--van-border-color), var(--van-padding-md));
+    }
+
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+  }
+
+  &__option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    &:active {
+      opacity: var(--van-active-opacity);
+    }
+  }
+
+  &__icon {
+    width: var(--van-share-sheet-icon-size);
+    height: var(--van-share-sheet-icon-size);
+    margin: 0 var(--van-padding-md);
+  }
+
+  &__name {
+    margin-top: var(--van-padding-xs);
+    padding: 0 var(--van-padding-base);
+    color: var(--van-share-sheet-option-name-color);
+    font-size: var(--van-share-sheet-option-name-font-size);
+  }
+
+  &__option-description {
+    padding: 0 var(--van-padding-base);
+    color: var(--van-share-sheet-option-description-color);
+    font-size: var(--van-share-sheet-option-description-font-size);
+  }
+
+  &__cancel {
+    display: block;
+    width: 100%;
+    padding: 0;
+    font-size: var(--van-share-sheet-cancel-button-font-size);
+    line-height: var(--van-share-sheet-cancel-button-height);
+    text-align: center;
+    background: var(--van-share-sheet-cancel-button-background);
+    border: none;
+    cursor: pointer;
+
+    &::before {
+      display: block;
+      height: var(--van-padding-xs);
+      background-color: var(--van-background-color);
+      content: ' ';
+    }
+
+    &:active {
+      background-color: var(--van-active-color);
+    }
+  }
+}

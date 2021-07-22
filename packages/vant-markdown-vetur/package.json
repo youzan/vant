@@ -1,0 +1,28 @@
+{
+  "name": "@vant/markdown-vetur",
+  "version": "2.2.0",
+  "description": "simple parse markdown to vue component description for vetur auto-completion",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-markdown-vetur",
+  "author": "zhangshuai",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "release": "npm run build && npm publish"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.2",
+    "fs-extra": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^8.1.0"
+  }
+}

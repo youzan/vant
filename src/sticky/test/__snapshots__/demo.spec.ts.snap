@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div>
+    <div class="van-sticky">
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+              style="margin-left: 15px;"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Basic Usage
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <div>
+    <div class="van-sticky">
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+              style="margin-left: 115px;"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Offset Top
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <div style="height: 150px; background-color: rgb(255, 255, 255);">
+    <div>
+      <div class="van-sticky">
+        <button type="button"
+                class="van-button van-button--warning van-button--normal"
+                style="margin-left: 215px;"
+        >
+          <div class="van-button__content">
+            <span class="van-button__text">
+              Set Container
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div style="height: 200px;">
+  </div>
+  <div>
+    <div class="van-sticky">
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+              style="margin-left: 15px;"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Offset Bottom
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;

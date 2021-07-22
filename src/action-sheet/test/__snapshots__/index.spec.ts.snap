@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should allow to custom close icon with closeIcon prop 1`] = `
+<i class="van-badge__wrapper van-icon van-icon-cross van-action-sheet__close">
+</i>
+`;
+
+exports[`should render cancel slot correctly 1`] = `
+<button type="button"
+        class="van-action-sheet__cancel"
+>
+  Custom Cancel
+</button>
+`;
+
+exports[`should render default slot correctly 1`] = `
+<transition-stub>
+  <div class="van-overlay">
+  </div>
+</transition-stub>
+<transition-stub>
+  <div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-action-sheet">
+    <div class="van-action-sheet__header">
+      Title
+      <i class="van-badge__wrapper van-icon van-icon-cross van-action-sheet__close">
+      </i>
+    </div>
+    <div class="van-action-sheet__content">
+      Default
+    </div>
+  </div>
+</transition-stub>
+`;
+
+exports[`should render description correctly 1`] = `
+<div class="van-action-sheet__description">
+  This is a description
+</div>
+`;
+
+exports[`should render description slot when match snapshot 1`] = `
+<div class="van-action-sheet__description">
+  Custom Description
+</div>
+`;
+
+exports[`should render subname correctly 1`] = `
+<button type="button"
+        class="van-action-sheet__item"
+>
+  <span class="van-action-sheet__name">
+    Option
+  </span>
+  <div class="van-action-sheet__subname">
+    Subname
+  </div>
+</button>
+`;

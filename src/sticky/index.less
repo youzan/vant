@@ -1,0 +1,12 @@
+@import './var.less';
+
+:root {
+  --van-sticky-z-index: @sticky-z-index;
+}
+
+.van-sticky {
+  &--fixed {
+    position: fixed;
+    z-index: var(--van-sticky-z-index);
+  }
+}

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render title slot correctly 1`] = `
+<div class="van-sidebar">
+  <a class="van-sidebar-item van-sidebar-item--select">
+    <div class="van-badge__wrapper van-sidebar-item__text">
+      Custom Title
+    </div>
+  </a>
+</div>
+`;

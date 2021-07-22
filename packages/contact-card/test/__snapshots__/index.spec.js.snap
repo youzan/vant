@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`ContactList render 1`] = `
-<div class="van-contact-list">
-  <div class="van-radio-group van-contact-list__group"></div><button class="van-button van-button--danger van-button--large van-button--square van-contact-list__add"><span class="van-button__text">新建联系人</span></button>
-</div>
-`;

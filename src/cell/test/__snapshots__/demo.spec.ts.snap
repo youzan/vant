@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-cell-group van-hairline--top-bottom">
+    <div class="van-cell">
+      <div class="van-cell__title">
+        <span>
+          Cell title
+        </span>
+      </div>
+      <div class="van-cell__value">
+        <span>
+          Content
+        </span>
+      </div>
+    </div>
+    <div class="van-cell">
+      <div class="van-cell__title">
+        <span>
+          Cell title
+        </span>
+        <div class="van-cell__label">
+          Description
+        </div>
+      </div>
+      <div class="van-cell__value">
+        <span>
+          Content
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell-group van-cell-group--inset">
+    <div class="van-cell">
+      <div class="van-cell__title">
+        <span>
+          Cell title
+        </span>
+      </div>
+      <div class="van-cell__value">
+        <span>
+          Content
+        </span>
+      </div>
+    </div>
+    <div class="van-cell">
+      <div class="van-cell__title">
+        <span>
+          Cell title
+        </span>
+        <div class="van-cell__label">
+          Description
+        </div>
+      </div>
+      <div class="van-cell__value">
+        <span>
+          Content
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--large">
+    <div class="van-cell__title">
+      <span>
+        Cell title
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <span>
+        Content
+      </span>
+    </div>
+  </div>
+  <div class="van-cell van-cell--large">
+    <div class="van-cell__title">
+      <span>
+        Cell title
+      </span>
+      <div class="van-cell__label">
+        Description
+      </div>
+    </div>
+    <div class="van-cell__value">
+      <span>
+        Content
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell">
+    <i class="van-badge__wrapper van-icon van-icon-location-o van-cell__left-icon">
+    </i>
+    <div class="van-cell__title">
+      <span>
+        Cell title
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <span>
+        Content
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell">
+    <div class="van-cell__value van-cell__value--alone">
+      <span>
+        Content
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Cell title
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Cell title
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <span>
+        Content
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Cell title
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <span>
+        Content
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow-down van-cell__right-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        URL
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Vue Router
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div class="van-cell-group__title">
+    Group 1
+  </div>
+  <div class="van-cell-group van-hairline--top-bottom">
+    <div class="van-cell">
+      <div class="van-cell__title">
+        <span>
+          Cell title
+        </span>
+      </div>
+      <div class="van-cell__value">
+        <span>
+          Content
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="van-cell-group__title">
+    Group 2
+  </div>
+  <div class="van-cell-group van-hairline--top-bottom">
+    <div class="van-cell">
+      <div class="van-cell__title">
+        <span>
+          Cell title
+        </span>
+      </div>
+      <div class="van-cell__value">
+        <span>
+          Content
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span class="custom-title">
+        Cell title
+      </span>
+      <transition-stub>
+        <span class="van-tag van-tag--danger">
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+    <div class="van-cell__value">
+      <span>
+        Content
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <div class="van-cell">
+    <i class="van-badge__wrapper van-icon van-icon-shop-o van-cell__left-icon">
+    </i>
+    <div class="van-cell__title">
+      <span>
+        Cell title
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-search search-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--center">
+    <div class="van-cell__title">
+      <span>
+        Cell title
+      </span>
+      <div class="van-cell__label">
+        Description
+      </div>
+    </div>
+    <div class="van-cell__value">
+      <span>
+        Content
+      </span>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-progress">
+    <span class="van-progress__portion"
+          style="width: 0px;"
+    >
+      <span style="left: 0px;"
+            class="van-progress__pivot"
+      >
+        50%
+      </span>
+    </span>
+  </div>
+</div>
+<div>
+  <div class="van-progress"
+       style="height: 8px;"
+  >
+    <span class="van-progress__portion"
+          style="width: 0px;"
+    >
+      <span style="left: 0px;"
+            class="van-progress__pivot"
+      >
+        50%
+      </span>
+    </span>
+  </div>
+</div>
+<div>
+  <div class="van-progress">
+    <span class="van-progress__portion"
+          style="background: rgb(202, 202, 202); width: 0px;"
+    >
+      <span style="left: 0px; background: rgb(202, 202, 202);"
+            class="van-progress__pivot"
+      >
+        50%
+      </span>
+    </span>
+  </div>
+</div>
+<div>
+  <div class="van-progress">
+    <span class="van-progress__portion"
+          style="background: rgb(242, 130, 106); width: 0px;"
+    >
+      <span style="left: 0px; background: rgb(242, 130, 106);"
+            class="van-progress__pivot"
+      >
+        Orange
+      </span>
+    </span>
+  </div>
+  <div class="van-progress">
+    <span class="van-progress__portion"
+          style="background: rgb(238, 10, 36); width: 0px;"
+    >
+      <span style="left: 0px; background: rgb(238, 10, 36);"
+            class="van-progress__pivot"
+      >
+        Red
+      </span>
+    </span>
+  </div>
+  <div class="van-progress">
+    <span class="van-progress__portion"
+          style="width: 0px;"
+    >
+      <span style="left: 0px; background: rgb(114, 50, 221);"
+            class="van-progress__pivot"
+      >
+        Purple
+      </span>
+    </span>
+  </div>
+</div>
+`;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render slots of CollapseItem correctly 1`] = `
+<div class="van-collapse van-hairline--top-bottom">
+  <div class="van-collapse-item">
+    <div class="van-cell van-cell--clickable van-collapse-item__title"
+         role="button"
+         tabindex="0"
+         aria-expanded="false"
+    >
+      this is icon
+      <div class="van-cell__title">
+        this is title
+        <div class="van-cell__label">
+          this is label
+        </div>
+      </div>
+      <div class="van-cell__value">
+        this is value
+      </div>
+      this is right icon
+    </div>
+  </div>
+</div>
+`;

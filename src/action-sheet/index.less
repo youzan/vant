@@ -1,0 +1,137 @@
+@import './var.less';
+@import '../style/mixins/hairline';
+
+:root {
+  --van-action-sheet-max-height: @action-sheet-max-height;
+  --van-action-sheet-header-height: @action-sheet-header-height;
+  --van-action-sheet-header-font-size: @action-sheet-header-font-size;
+  --van-action-sheet-description-color: @action-sheet-description-color;
+  --van-action-sheet-description-font-size: @action-sheet-description-font-size;
+  --van-action-sheet-description-line-height: @action-sheet-description-line-height;
+  --van-action-sheet-item-background: @action-sheet-item-background;
+  --van-action-sheet-item-font-size: @action-sheet-item-font-size;
+  --van-action-sheet-item-line-height: @action-sheet-item-line-height;
+  --van-action-sheet-item-text-color: @action-sheet-item-text-color;
+  --van-action-sheet-item-disabled-text-color: @action-sheet-item-disabled-text-color;
+  --van-action-sheet-subname-color: @action-sheet-subname-color;
+  --van-action-sheet-subname-font-size: @action-sheet-subname-font-size;
+  --van-action-sheet-subname-line-height: @action-sheet-subname-line-height;
+  --van-action-sheet-close-icon-size: @action-sheet-close-icon-size;
+  --van-action-sheet-close-icon-color: @action-sheet-close-icon-color;
+  --van-action-sheet-close-icon-active-color: @action-sheet-close-icon-active-color;
+  --van-action-sheet-close-icon-padding: @action-sheet-close-icon-padding;
+  --van-action-sheet-cancel-text-color: @action-sheet-cancel-text-color;
+  --van-action-sheet-cancel-padding-top: @action-sheet-cancel-padding-top;
+  --van-action-sheet-cancel-padding-color: @action-sheet-cancel-padding-color;
+  --van-action-sheet-loading-icon-size: @action-sheet-loading-icon-size;
+}
+
+.van-action-sheet {
+  display: flex;
+  flex-direction: column;
+  max-height: var(--van-action-sheet-max-height);
+  overflow: hidden;
+  color: var(--van-action-sheet-item-text-color);
+
+  &__content {
+    flex: 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__item,
+  &__cancel {
+    display: block;
+    width: 100%;
+    padding: 14px var(--van-padding-md);
+    font-size: var(--van-action-sheet-item-font-size);
+    background-color: var(--van-action-sheet-item-background);
+    border: none;
+    cursor: pointer;
+
+    &:active {
+      background-color: var(--van-active-color);
+    }
+  }
+
+  &__item {
+    line-height: var(--van-action-sheet-item-line-height);
+
+    &--loading,
+    &--disabled {
+      color: var(--van-action-sheet-item-disabled-text-color);
+
+      &:active {
+        background-color: var(--van-action-sheet-item-background);
+      }
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+    }
+
+    &--loading {
+      cursor: default;
+    }
+  }
+
+  &__cancel {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    color: var(--van-action-sheet-cancel-text-color);
+  }
+
+  &__subname {
+    margin-top: var(--van-padding-xs);
+    color: var(--van-action-sheet-subname-color);
+    font-size: var(--van-action-sheet-subname-font-size);
+    line-height: var(--van-action-sheet-subname-line-height);
+  }
+
+  &__gap {
+    display: block;
+    height: var(--van-action-sheet-cancel-padding-top);
+    background-color: var(--van-action-sheet-cancel-padding-color);
+  }
+
+  &__header {
+    flex-shrink: 0;
+    font-weight: var(--van-font-weight-bold);
+    font-size: var(--van-action-sheet-header-font-size);
+    line-height: var(--van-action-sheet-header-height);
+    text-align: center;
+  }
+
+  &__description {
+    position: relative;
+    flex-shrink: 0;
+    padding: 20px var(--van-padding-md);
+    color: var(--van-action-sheet-description-color);
+    font-size: var(--van-action-sheet-description-font-size);
+    line-height: var(--van-action-sheet-description-line-height);
+    text-align: center;
+
+    &::after {
+      .hairline-bottom(var(--van-border-color), var(--van-padding-md), var(--van-padding-md));
+    }
+  }
+
+  &__loading-icon .van-loading__spinner {
+    width: var(--van-action-sheet-loading-icon-size);
+    height: var(--van-action-sheet-loading-icon-size);
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: var(--van-action-sheet-close-icon-padding);
+    color: var(--van-action-sheet-close-icon-color);
+    font-size: var(--van-action-sheet-close-icon-size);
+    line-height: inherit;
+
+    &:active {
+      color: var(--van-action-sheet-close-icon-active-color);
+    }
+  }
+}

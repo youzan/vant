@@ -1,0 +1,57 @@
+@import './var.less';
+
+:root {
+  --van-image-placeholder-text-color: @image-placeholder-text-color;
+  --van-image-placeholder-font-size: @image-placeholder-font-size;
+  --van-image-placeholder-background-color: @image-placeholder-background-color;
+  --van-image-loading-icon-size: @image-loading-icon-size;
+  --van-image-loading-icon-color: @image-loading-icon-color;
+  --van-image-error-icon-size: @image-error-icon-size;
+  --van-image-error-icon-color: @image-error-icon-color;
+}
+
+.van-image {
+  position: relative;
+  display: inline-block;
+
+  &--round {
+    overflow: hidden;
+    border-radius: 50%;
+
+    img {
+      border-radius: inherit;
+    }
+  }
+
+  &__img,
+  &__error,
+  &__loading {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__error,
+  &__loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--van-image-placeholder-text-color);
+    font-size: var(--van-image-placeholder-font-size);
+    background-color: var(--van-image-placeholder-background-color);
+  }
+
+  &__loading-icon {
+    color: var(--van-image-loading-icon-color);
+    font-size: var(--van-image-loading-icon-size);
+  }
+
+  &__error-icon {
+    color: var(--van-image-error-icon-color);
+    font-size: var(--van-image-error-icon-size);
+  }
+}

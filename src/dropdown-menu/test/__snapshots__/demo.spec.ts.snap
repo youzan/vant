@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-dropdown-menu">
+    <div class="van-dropdown-menu__bar">
+      <div role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option1
+          </div>
+        </span>
+      </div>
+      <div role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option A
+          </div>
+        </span>
+      </div>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub>
+      </transition-stub>
+      <transition-stub>
+      </transition-stub>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub>
+      </transition-stub>
+      <transition-stub>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-dropdown-menu">
+    <div class="van-dropdown-menu__bar">
+      <div role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option1
+          </div>
+        </span>
+      </div>
+      <div role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Title
+          </div>
+        </span>
+      </div>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub>
+      </transition-stub>
+      <transition-stub>
+      </transition-stub>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub>
+      </transition-stub>
+      <transition-stub>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-dropdown-menu">
+    <div class="van-dropdown-menu__bar">
+      <div role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option1
+          </div>
+        </span>
+      </div>
+      <div role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option A
+          </div>
+        </span>
+      </div>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub>
+      </transition-stub>
+      <transition-stub>
+      </transition-stub>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub>
+      </transition-stub>
+      <transition-stub>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-dropdown-menu">
+    <div class="van-dropdown-menu__bar">
+      <div role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item"
+      >
+        <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
+          <div class="van-ellipsis">
+            Option1
+          </div>
+        </span>
+      </div>
+      <div role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item"
+      >
+        <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
+          <div class="van-ellipsis">
+            Option A
+          </div>
+        </span>
+      </div>
+    </div>
+    <div style="bottom: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--up"
+    >
+      <transition-stub>
+      </transition-stub>
+      <transition-stub>
+      </transition-stub>
+    </div>
+    <div style="bottom: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--up"
+    >
+      <transition-stub>
+      </transition-stub>
+      <transition-stub>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-dropdown-menu">
+    <div class="van-dropdown-menu__bar">
+      <div role="button"
+           tabindex="-1"
+           class="van-dropdown-menu__item van-dropdown-menu__item--disabled"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option1
+          </div>
+        </span>
+      </div>
+      <div role="button"
+           tabindex="-1"
+           class="van-dropdown-menu__item van-dropdown-menu__item--disabled"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option A
+          </div>
+        </span>
+      </div>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub>
+      </transition-stub>
+      <transition-stub>
+      </transition-stub>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub>
+      </transition-stub>
+      <transition-stub>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+`;

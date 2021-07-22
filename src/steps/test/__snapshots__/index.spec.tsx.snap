@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should change finish icon when using finish-icon prop 1`] = `
+<div class="van-hairline van-step van-step--horizontal van-step--finish">
+  <div class="van-step__title">
+    A
+  </div>
+  <div class="van-step__circle-container">
+    <i class="van-badge__wrapper van-icon van-icon-foo van-step__icon van-step__icon--finish">
+    </i>
+  </div>
+  <div class="van-step__line">
+  </div>
+</div>
+`;
+
+exports[`should change inactive color when using inactive-color prop 1`] = `
+<div class="van-steps van-steps--horizontal">
+  <div class="van-steps__items">
+    <div class="van-hairline van-step van-step--horizontal van-step--process">
+      <div class="van-step__title van-step__title--active">
+        A
+      </div>
+      <div class="van-step__circle-container">
+        <i class="van-badge__wrapper van-icon van-icon-checked van-step__icon van-step__icon--active">
+        </i>
+      </div>
+      <div class="van-step__line"
+           style="background: red;"
+      >
+      </div>
+    </div>
+    <div class="van-hairline van-step van-step--horizontal van-step--waiting">
+      <div class="van-step__title">
+        B
+      </div>
+      <div class="van-step__circle-container">
+        <i class="van-step__circle"
+           style="background: red;"
+        >
+        </i>
+      </div>
+      <div class="van-step__line"
+           style="background: red;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should change inactive icon when using inactive-icon prop 1`] = `
+<div class="van-hairline van-step van-step--horizontal van-step--waiting">
+  <div class="van-step__title">
+    B
+  </div>
+  <div class="van-step__circle-container">
+    <i class="van-badge__wrapper van-icon van-icon-foo van-step__icon">
+    </i>
+  </div>
+  <div class="van-step__line">
+  </div>
+</div>
+`;
+
+exports[`should render finish icon slot correctly 1`] = `
+<div class="van-hairline van-step van-step--horizontal van-step--finish">
+  <div class="van-step__title">
+    A
+  </div>
+  <div class="van-step__circle-container">
+    Custom Finish Icon
+  </div>
+  <div class="van-step__line">
+  </div>
+</div>
+`;
+
+exports[`should render icon slot correctly 1`] = `
+<div class="van-steps van-steps--horizontal">
+  <div class="van-steps__items">
+    <div class="van-hairline van-step van-step--horizontal van-step--process">
+      <div class="van-step__title van-step__title--active">
+        B
+      </div>
+      <div class="van-step__circle-container">
+        Custom Active Icon
+      </div>
+      <div class="van-step__line">
+      </div>
+    </div>
+    <div class="van-hairline van-step van-step--horizontal van-step--waiting">
+      <div class="van-step__title">
+        A
+      </div>
+      <div class="van-step__circle-container">
+        Custom Inactive Icon
+      </div>
+      <div class="van-step__line">
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render icon-prefix correctly 1`] = `
+<div class="van-hairline van-step van-step--horizontal van-step--process">
+  <div class="van-step__title van-step__title--active">
+    B
+  </div>
+  <div class="van-step__circle-container">
+    <i class="van-badge__wrapper custom-icon custom-icon-checked van-step__icon van-step__icon--active">
+    </i>
+  </div>
+  <div class="van-step__line">
+  </div>
+</div>
+`;

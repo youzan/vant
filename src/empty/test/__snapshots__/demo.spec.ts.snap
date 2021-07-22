@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-empty">
+    <div class="van-empty__image">
+      <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
+    </div>
+    <p class="van-empty__description">
+      Description
+    </p>
+  </div>
+</div>
+<div>
+  <div class="van-tabs van-tabs--line">
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+      >
+        <div role="tab"
+             class="van-tab van-tab--active"
+             aria-selected="true"
+        >
+          <span class="van-tab__text van-tab__text--ellipsis">
+            Error
+          </span>
+        </div>
+        <div role="tab"
+             class="van-tab"
+             aria-selected="false"
+        >
+          <span class="van-tab__text van-tab__text--ellipsis">
+            Network
+          </span>
+        </div>
+        <div role="tab"
+             class="van-tab"
+             aria-selected="false"
+        >
+          <span class="van-tab__text van-tab__text--ellipsis">
+            Search
+          </span>
+        </div>
+        <div class="van-tabs__line"
+             style="transform: translateX(0px) translateX(-50%);"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style
+      >
+        <div class="van-empty">
+          <div class="van-empty__image">
+            <img src="https://img.yzcdn.cn/vant/empty-image-error.png">
+          </div>
+          <p class="van-empty__description">
+            Description
+          </p>
+        </div>
+      </div>
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style="display: none;"
+      >
+      </div>
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style="display: none;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-empty custom-image">
+    <div class="van-empty__image">
+      <img src="https://img.yzcdn.cn/vant/custom-empty-image.png">
+    </div>
+    <p class="van-empty__description">
+      Description
+    </p>
+  </div>
+</div>
+<div>
+  <div class="van-empty">
+    <div class="van-empty__image">
+      <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
+    </div>
+    <p class="van-empty__description">
+      Description
+    </p>
+    <div class="van-empty__bottom">
+      <button type="button"
+              class="van-button van-button--danger van-button--normal van-button--round bottom-button"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;

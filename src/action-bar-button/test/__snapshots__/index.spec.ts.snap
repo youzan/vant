@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render default slot correctly 1`] = `
+<button type="button"
+        class="van-button van-button--default van-button--large van-action-bar-button"
+>
+  <div class="van-button__content">
+    <span class="van-button__text">
+      Content
+    </span>
+  </div>
+</button>
+`;

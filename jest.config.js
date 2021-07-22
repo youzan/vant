@@ -1,24 +1,12 @@
 module.exports = {
-  preset: 'ts-jest',
-  setupFiles: ['<rootDir>/test/jest.init.js'],
-  moduleFileExtensions: ['js', 'vue', 'ts', 'tsx'],
-  transform: {
-    '^.+\\.(js|ts|tsx)$': '<rootDir>/test/jest.transform.js',
-    '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
-  },
-  moduleNameMapper: {
-    '^packages/(.*)$': '<rootDir>/packages/$1'
-  },
-  snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
+  testPathIgnorePatterns: ['/node_modules/', '/packages/'],
   collectCoverageFrom: [
-    'packages/**/*.{js,ts,tsx,vue}',
-    '!**/style/**',
+    'src/**/*.{js,jsx,ts,tsx,vue}',
     '!**/demo/**',
-    '!**/locale/lang/**',
-    '!**/sku/**',
-    '!**/waterfall/**'
+    '!**/test/**',
+    '!**/lang/**',
   ],
-  collectCoverage: true,
-  coverageReporters: ['html', 'lcov', 'text-summary'],
-  coverageDirectory: './test/coverage'
+  moduleNameMapper: {
+    '^@demo(.*)$': '<rootDir>/docs/site$1',
+  },
 };

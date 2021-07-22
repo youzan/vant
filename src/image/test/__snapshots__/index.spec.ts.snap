@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should apply icon-prefix prop to error-icon 1`] = `
+<i class="van-badge__wrapper my-icon my-icon-error van-image__error-icon">
+</i>
+`;
+
+exports[`should apply icon-prefix prop to loading-icon 1`] = `
+<i class="van-badge__wrapper my-icon my-icon-success van-image__loading-icon">
+</i>
+`;
+
+exports[`should emit load event after image loaded 1`] = `
+<div class="van-image">
+  <img src="https://img.com"
+       class="van-image__img"
+  >
+</div>
+`;
+
+exports[`should render default slot correctly 1`] = `
+<div class="van-image">
+  <img src="https://img.com"
+       class="van-image__img"
+  >
+  <div class="van-image__loading">
+    <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+    </i>
+  </div>
+  Custom Default
+</div>
+`;
+
+exports[`should render loading placeholder when using lazy-load prop 1`] = `
+<div class="van-image">
+  <img class="van-image__img">
+  <div class="van-image__loading">
+    <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+    </i>
+  </div>
+</div>
+`;
+
+exports[`should watch src and reset 1`] = `
+<div class="van-image">
+  <div class="van-image__loading">
+    <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+    </i>
+  </div>
+</div>
+`;

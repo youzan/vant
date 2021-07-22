@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not allow to drag swipe when touchable is false 1`] = `
+<div class="van-swipe"
+     style="width: 100px; height: 100px;"
+>
+  <div style="transition-duration: 0ms; transform: translateX(0px); width: 300px;"
+       class="van-swipe__track"
+  >
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      1
+    </div>
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      2
+    </div>
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      3
+    </div>
+  </div>
+  <div class="van-swipe__indicators">
+    <i class="van-swipe__indicator van-swipe__indicator--active">
+    </i>
+    <i class="van-swipe__indicator">
+    </i>
+    <i class="van-swipe__indicator">
+    </i>
+  </div>
+</div>
+`;
+
+exports[`should render dynamic SwipeItem correctly 1`] = `
+<div class="van-swipe"
+     style="width: 100px; height: 100px;"
+>
+  <div style="transition-duration: 500ms; transform: translateX(0px);"
+       class="van-swipe__track"
+  >
+  </div>
+</div>
+`;
+
+exports[`should render dynamic SwipeItem correctly 2`] = `
+<div class="van-swipe"
+     style="width: 100px; height: 100px;"
+>
+  <div style="transition-duration: 0ms; transform: translateX(0px); width: 200px;"
+       class="van-swipe__track"
+  >
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      <span>
+        1
+      </span>
+    </div>
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      <span>
+        2
+      </span>
+    </div>
+  </div>
+  <div class="van-swipe__indicators">
+    <i class="van-swipe__indicator van-swipe__indicator--active">
+    </i>
+    <i class="van-swipe__indicator">
+    </i>
+  </div>
+</div>
+`;
+
+exports[`should render initial swipe correctly 1`] = `
+<div class="van-swipe"
+     style="width: 100px; height: 100px;"
+>
+  <div style="transition-duration: 0ms; transform: translateX(0px); width: 300px;"
+       class="van-swipe__track"
+  >
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      1
+    </div>
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      2
+    </div>
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      3
+    </div>
+  </div>
+  <div class="van-swipe__indicators">
+    <i class="van-swipe__indicator van-swipe__indicator--active">
+    </i>
+    <i class="van-swipe__indicator">
+    </i>
+    <i class="van-swipe__indicator">
+    </i>
+  </div>
+</div>
+`;
+
+exports[`should render initial swipe correctly 2`] = `
+<div class="van-swipe"
+     style="width: 100px; height: 100px;"
+>
+  <div style="transition-duration: 0ms; transform: translateX(-200px); width: 300px;"
+       class="van-swipe__track"
+  >
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      1
+    </div>
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      2
+    </div>
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      3
+    </div>
+  </div>
+  <div class="van-swipe__indicators">
+    <i class="van-swipe__indicator">
+    </i>
+    <i class="van-swipe__indicator">
+    </i>
+    <i class="van-swipe__indicator van-swipe__indicator--active">
+    </i>
+  </div>
+</div>
+`;
+
+exports[`should render vertical swipe when using vertical prop 1`] = `
+<div class="van-swipe"
+     style="width: 100px; height: 100px;"
+>
+  <div style="transition-duration: 500ms; transform: translateY(-100px); height: 300px;"
+       class="van-swipe__track van-swipe__track--vertical"
+  >
+    <div class="van-swipe-item"
+         style="height: 100px;"
+    >
+      1
+    </div>
+    <div class="van-swipe-item"
+         style="height: 100px;"
+    >
+      2
+    </div>
+    <div class="van-swipe-item"
+         style="height: 100px;"
+    >
+      3
+    </div>
+  </div>
+  <div class="van-swipe__indicators van-swipe__indicators--vertical">
+    <i class="van-swipe__indicator">
+    </i>
+    <i class="van-swipe__indicator van-swipe__indicator--active">
+    </i>
+    <i class="van-swipe__indicator">
+    </i>
+  </div>
+</div>
+`;

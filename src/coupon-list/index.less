@@ -1,0 +1,100 @@
+@import './var.less';
+
+:root {
+  --van-coupon-list-background-color: @coupon-list-background-color;
+  --van-coupon-list-field-padding: @coupon-list-field-padding;
+  --van-coupon-list-exchange-button-height: @coupon-list-exchange-button-height;
+  --van-coupon-list-close-button-height: @coupon-list-close-button-height;
+  --van-coupon-list-empty-image-size: @coupon-list-empty-image-size;
+  --van-coupon-list-empty-tip-color: @coupon-list-empty-tip-color;
+  --van-coupon-list-empty-tip-font-size: @coupon-list-empty-tip-font-size;
+  --van-coupon-list-empty-tip-line-height: @coupon-list-empty-tip-line-height;
+}
+
+.van-coupon-list {
+  position: relative;
+  height: 100%;
+  background-color: var(--van-coupon-list-background-color);
+
+  &__field {
+    padding: var(--van-coupon-list-field-padding);
+
+    .van-field__body {
+      height: 34px;
+      padding-left: var(--van-padding-sm);
+      line-height: 34px;
+      background: var(--van-gray-1);
+      border-radius: 17px;
+
+      &::placeholder {
+        color: var(--van-gray-5);
+      }
+    }
+
+    .van-field__clear {
+      margin-right: 0;
+    }
+  }
+
+  &__exchange-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--van-white);
+  }
+
+  &__exchange {
+    flex: none;
+    height: var(--van-coupon-list-exchange-button-height);
+    font-size: var(--van-font-size-lg);
+    line-height: calc(var(--van-coupon-list-exchange-button-height) - 2px);
+    border: 0;
+  }
+
+  .van-tabs__wrap {
+    box-shadow: 0 6px 12px -12px var(--van-gray-6);
+  }
+
+  &__list {
+    box-sizing: border-box;
+    padding: var(--van-padding-md) 0 var(--van-padding-lg);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &--with-bottom {
+      padding-bottom: calc(var(--van-padding-md) + 50px);
+    }
+  }
+
+  &__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px var(--van-padding-md);
+    font-weight: var(--van-font-weight-bold);
+    background-color: var(--van-white);
+  }
+
+  &__close {
+    height: var(--van-coupon-list-close-button-height);
+  }
+
+  &__empty {
+    padding-top: 60px;
+    text-align: center;
+
+    p {
+      margin: var(--van-padding-md) 0;
+      color: var(--van-coupon-list-empty-tip-color);
+      font-size: var(--van-coupon-list-empty-tip-font-size);
+      line-height: var(--van-coupon-list-empty-tip-line-height);
+    }
+
+    img {
+      width: var(--van-coupon-list-empty-image-size);
+      height: var(--van-coupon-list-empty-image-size);
+    }
+  }
+}

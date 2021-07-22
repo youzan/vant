@@ -1,0 +1,49 @@
+@import './var.less';
+
+:root {
+  --van-contact-card-padding: @contact-card-padding;
+  --van-contact-card-add-icon-size: @contact-card-add-icon-size;
+  --van-contact-card-add-icon-color: @contact-card-add-icon-color;
+  --van-contact-card-value-line-height: @contact-card-value-line-height;
+}
+
+.van-contact-card {
+  padding: var(--van-contact-card-padding);
+
+  &__value {
+    margin-left: 5px;
+    line-height: var(--van-contact-card-value-line-height);
+  }
+
+  &--add {
+    .van-contact-card__value {
+      line-height: var(--van-contact-card-add-icon-size);
+    }
+
+    .van-cell__left-icon {
+      color: var(--van-contact-card-add-icon-color);
+      font-size: var(--van-contact-card-add-icon-size);
+    }
+  }
+
+  &::before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: repeating-linear-gradient(
+      -45deg,
+      #ff6c6c 0,
+      #ff6c6c 20%,
+      transparent 0,
+      transparent 25%,
+      var(--van-primary-color) 0,
+      var(--van-primary-color) 45%,
+      transparent 0,
+      transparent 50%
+    );
+    background-size: 80px;
+    content: '';
+  }
+}

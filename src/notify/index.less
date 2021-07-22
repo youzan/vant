@@ -1,0 +1,44 @@
+@import './var.less';
+
+:root {
+  --van-notify-text-color: @notify-text-color;
+  --van-notify-padding: @notify-padding;
+  --van-notify-font-size: @notify-font-size;
+  --van-notify-line-height: @notify-line-height;
+  --van-notify-primary-background-color: @notify-primary-background-color;
+  --van-notify-success-background-color: @notify-success-background-color;
+  --van-notify-danger-background-color: @notify-danger-background-color;
+  --van-notify-warning-background-color: @notify-warning-background-color;
+}
+
+.van-notify {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: var(--van-notify-padding);
+  color: var(--van-notify-text-color);
+  font-size: var(--van-notify-font-size);
+  line-height: var(--van-notify-line-height);
+
+  // allow newline character
+  white-space: pre-wrap;
+  text-align: center;
+  word-wrap: break-word;
+
+  &--primary {
+    background-color: var(--van-notify-primary-background-color);
+  }
+
+  &--success {
+    background-color: var(--van-notify-success-background-color);
+  }
+
+  &--danger {
+    background-color: var(--van-notify-danger-background-color);
+  }
+
+  &--warning {
+    background-color: var(--van-notify-warning-background-color);
+  }
+}

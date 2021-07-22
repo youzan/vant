@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-nav-bar van-hairline--bottom">
+    <div class="van-nav-bar__content">
+      <div class="van-nav-bar__left">
+        <i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow">
+        </i>
+        <span class="van-nav-bar__text">
+          Back
+        </span>
+      </div>
+      <div class="van-nav-bar__title van-ellipsis">
+        Title
+      </div>
+      <div class="van-nav-bar__right">
+        <span class="van-nav-bar__text">
+          Button
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-nav-bar van-hairline--bottom">
+    <div class="van-nav-bar__content">
+      <div class="van-nav-bar__left">
+        <i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow">
+        </i>
+        <span class="van-nav-bar__text">
+          Back
+        </span>
+      </div>
+      <div class="van-nav-bar__title van-ellipsis">
+        Title
+      </div>
+      <div class="van-nav-bar__right">
+        <i class="van-badge__wrapper van-icon van-icon-search"
+           style="font-size: 18px;"
+        >
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;

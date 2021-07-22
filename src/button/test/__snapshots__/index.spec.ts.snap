@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should change icon class prefix when using icon-prefix prop 1`] = `
+<button type="button"
+        class="van-button van-button--default van-button--normal"
+>
+  <div class="van-button__content">
+    <i class="van-badge__wrapper my-icon my-icon-success van-button__icon">
+    </i>
+  </div>
+</button>
+`;
+
+exports[`should render icon in the right side when setting icon-position to right 1`] = `
+<button type="button"
+        class="van-button van-button--default van-button--normal"
+>
+  <div class="van-button__content">
+    <i class="van-badge__wrapper van-icon van-icon-plus van-button__icon">
+    </i>
+  </div>
+</button>
+`;
+
+exports[`should render icon slot correctly 1`] = `
+<button type="button"
+        class="van-button van-button--default van-button--normal"
+>
+  <div class="van-button__content">
+    <div class="van-button__icon">
+      Custom Icon
+    </div>
+    <span class="van-button__text">
+      Text
+    </span>
+  </div>
+</button>
+`;
+
+exports[`should render loading slot correctly 1`] = `
+<button type="button"
+        class="van-button van-button--default van-button--normal van-button--loading"
+>
+  <div class="van-button__content">
+    Custom Loading
+  </div>
+</button>
+`;

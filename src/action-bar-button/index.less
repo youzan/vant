@@ -1,0 +1,40 @@
+@import './var.less';
+
+:root {
+  --van-action-bar-button-height: @action-bar-button-height;
+  --van-action-bar-button-warning-color: @action-bar-button-warning-color;
+  --van-action-bar-button-danger-color: @action-bar-button-danger-color;
+}
+
+.van-action-bar-button {
+  flex: 1;
+  height: var(--van-action-bar-button-height);
+  font-weight: var(--van-font-weight-bold);
+  font-size: var(--van-font-size-md);
+  border: none;
+  border-radius: 0;
+
+  &--first {
+    margin-left: 5px;
+    border-top-left-radius: var(--van-border-radius-max);
+    border-bottom-left-radius: var(--van-border-radius-max);
+  }
+
+  &--last {
+    margin-right: 5px;
+    border-top-right-radius: var(--van-border-radius-max);
+    border-bottom-right-radius: var(--van-border-radius-max);
+  }
+
+  &--warning {
+    background: var(--van-action-bar-button-warning-color);
+  }
+
+  &--danger {
+    background: var(--van-action-bar-button-danger-color);
+  }
+
+  @media (max-width: 321px) {
+    font-size: 13px;
+  }
+}

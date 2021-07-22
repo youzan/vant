@@ -1,1 +1,0 @@
-require('@babel/polyfill');

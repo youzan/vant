@@ -1,0 +1,337 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div role="checkbox"
+       class="van-checkbox"
+       tabindex="0"
+       aria-checked="true"
+  >
+    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+      <i class="van-badge__wrapper van-icon van-icon-success">
+      </i>
+    </div>
+    <span class="van-checkbox__label">
+      Checkbox
+    </span>
+  </div>
+</div>
+<div>
+  <div role="checkbox"
+       class="van-checkbox van-checkbox--disabled"
+       tabindex="-1"
+       aria-checked="false"
+  >
+    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled">
+      <i class="van-badge__wrapper van-icon van-icon-success">
+      </i>
+    </div>
+    <span class="van-checkbox__label van-checkbox__label--disabled">
+      Checkbox
+    </span>
+  </div>
+  <div role="checkbox"
+       class="van-checkbox van-checkbox--disabled"
+       tabindex="-1"
+       aria-checked="true"
+  >
+    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled van-checkbox__icon--checked">
+      <i class="van-badge__wrapper van-icon van-icon-success">
+      </i>
+    </div>
+    <span class="van-checkbox__label van-checkbox__label--disabled">
+      Checkbox
+    </span>
+  </div>
+</div>
+<div>
+  <div role="checkbox"
+       class="van-checkbox"
+       tabindex="0"
+       aria-checked="true"
+  >
+    <div class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked">
+      <i class="van-badge__wrapper van-icon van-icon-success">
+      </i>
+    </div>
+    <span class="van-checkbox__label">
+      Custom Shape
+    </span>
+  </div>
+</div>
+<div>
+  <div role="checkbox"
+       class="van-checkbox"
+       tabindex="0"
+       aria-checked="true"
+  >
+    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+      <i class="van-badge__wrapper van-icon van-icon-success"
+         style="border-color: #ee0a24; background-color: rgb(238, 10, 36);"
+      >
+      </i>
+    </div>
+    <span class="van-checkbox__label">
+      Custom Color
+    </span>
+  </div>
+</div>
+<div>
+  <div role="checkbox"
+       class="van-checkbox"
+       tabindex="0"
+       aria-checked="true"
+  >
+    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+         style="font-size: 24px;"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-success">
+      </i>
+    </div>
+    <span class="van-checkbox__label">
+      Custom Icon Size
+    </span>
+  </div>
+</div>
+<div>
+  <div role="checkbox"
+       class="van-checkbox"
+       tabindex="0"
+       aria-checked="true"
+  >
+    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+      <img src="https://img.yzcdn.cn/vant/user-active.png">
+    </div>
+    <span class="van-checkbox__label">
+      Custom Icon
+    </span>
+  </div>
+</div>
+<div>
+  <div role="checkbox"
+       class="van-checkbox van-checkbox--label-disabled"
+       tabindex="0"
+       aria-checked="true"
+  >
+    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+      <i class="van-badge__wrapper van-icon van-icon-success">
+      </i>
+    </div>
+    <span class="van-checkbox__label">
+      Checkbox
+    </span>
+  </div>
+</div>
+<div>
+  <div class="van-checkbox-group">
+    <div role="checkbox"
+         class="van-checkbox"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox a
+      </span>
+    </div>
+    <div role="checkbox"
+         class="van-checkbox"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox b
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-checkbox-group van-checkbox-group--horizontal">
+    <div role="checkbox"
+         class="van-checkbox van-checkbox--horizontal"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox a
+      </span>
+    </div>
+    <div role="checkbox"
+         class="van-checkbox van-checkbox--horizontal"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox b
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-checkbox-group">
+    <div role="checkbox"
+         class="van-checkbox"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox a
+      </span>
+    </div>
+    <div role="checkbox"
+         class="van-checkbox"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox b
+      </span>
+    </div>
+    <div role="checkbox"
+         class="van-checkbox"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox c
+      </span>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-checkbox-group">
+    <div role="checkbox"
+         class="van-checkbox"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox a
+      </span>
+    </div>
+    <div role="checkbox"
+         class="van-checkbox"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox b
+      </span>
+    </div>
+    <div role="checkbox"
+         class="van-checkbox"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox c
+      </span>
+    </div>
+  </div>
+  <div class="demo-checkbox-buttons">
+    <button type="button"
+            class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Check All
+        </span>
+      </div>
+    </button>
+    <button type="button"
+            class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Inverse
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+<div>
+  <div class="van-checkbox-group">
+    <div class="van-cell-group van-hairline--top-bottom">
+      <div class="van-cell van-cell--clickable"
+           role="button"
+           tabindex="0"
+      >
+        <div class="van-cell__title">
+          <span>
+            Checkbox a
+          </span>
+        </div>
+        <div role="checkbox"
+             class="van-checkbox"
+             tabindex="0"
+             aria-checked="false"
+        >
+          <div class="van-checkbox__icon van-checkbox__icon--round">
+            <i class="van-badge__wrapper van-icon van-icon-success">
+            </i>
+          </div>
+        </div>
+      </div>
+      <div class="van-cell van-cell--clickable"
+           role="button"
+           tabindex="0"
+      >
+        <div class="van-cell__title">
+          <span>
+            Checkbox b
+          </span>
+        </div>
+        <div role="checkbox"
+             class="van-checkbox"
+             tabindex="0"
+             aria-checked="false"
+        >
+          <div class="van-checkbox__icon van-checkbox__icon--round">
+            <i class="van-badge__wrapper van-icon van-icon-success">
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

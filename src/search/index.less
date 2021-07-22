@@ -1,0 +1,78 @@
+@import './var.less';
+
+:root {
+  --van-search-padding: @search-padding;
+  --van-search-background-color: @search-background-color;
+  --van-search-content-background-color: @search-content-background-color;
+  --van-search-input-height: @search-input-height;
+  --van-search-label-padding: @search-label-padding;
+  --van-search-label-color: @search-label-color;
+  --van-search-label-font-size: @search-label-font-size;
+  --van-search-left-icon-color: @search-left-icon-color;
+  --van-search-action-padding: @search-action-padding;
+  --van-search-action-text-color: @search-action-text-color;
+  --van-search-action-font-size: @search-action-font-size;
+}
+
+.van-search {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: var(--van-search-padding);
+  background-color: var(--van-search-background-color);
+
+  &__content {
+    display: flex;
+    flex: 1;
+    padding-left: var(--van-padding-sm);
+    background-color: var(--van-search-content-background-color);
+    border-radius: var(--van-border-radius-sm);
+
+    &--round {
+      border-radius: var(--van-border-radius-max);
+    }
+  }
+
+  &__label {
+    padding: var(--van-search-label-padding);
+    color: var(--van-search-label-color);
+    font-size: var(--van-search-label-font-size);
+    line-height: var(--van-search-input-height);
+  }
+
+  .van-cell {
+    flex: 1;
+    padding: 5px var(--van-padding-xs) 5px 0;
+    background-color: transparent;
+
+    &__left-icon {
+      color: var(--van-search-left-icon-color);
+    }
+  }
+
+  &--show-action {
+    padding-right: 0;
+  }
+
+  input {
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
+
+  &__action {
+    padding: var(--van-search-action-padding);
+    color: var(--van-search-action-text-color);
+    font-size: var(--van-search-action-font-size);
+    line-height: var(--van-search-input-height);
+    cursor: pointer;
+    user-select: none;
+
+    &:active {
+      background-color: var(--van-active-color);
+    }
+  }
+}

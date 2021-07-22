@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div role="alert"
+       class="van-notice-bar"
+  >
+    <i class="van-badge__wrapper van-icon van-icon-volume-o van-notice-bar__left-icon">
+    </i>
+    <div role="marquee"
+         class="van-notice-bar__wrap"
+    >
+      <div style="transition-duration: 0s;"
+           class="van-notice-bar__content"
+      >
+        Technology is the common soul of the people who developed it.
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div role="alert"
+       class="van-notice-bar"
+  >
+    <div role="marquee"
+         class="van-notice-bar__wrap"
+    >
+      <div style="transition-duration: 0s;"
+           class="van-notice-bar__content"
+      >
+        Some short text.
+      </div>
+    </div>
+  </div>
+  <div role="alert"
+       class="van-notice-bar"
+  >
+    <div role="marquee"
+         class="van-notice-bar__wrap"
+    >
+      <div style="transition-duration: 0s;"
+           class="van-notice-bar__content van-ellipsis"
+      >
+        Technology is the common soul of the people who developed it.
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div role="alert"
+       class="van-notice-bar van-notice-bar--wrapable"
+  >
+    <div role="marquee"
+         class="van-notice-bar__wrap"
+    >
+      <div style="transition-duration: 0s;"
+           class="van-notice-bar__content"
+      >
+        Technology is the common soul of the people who developed it.
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div role="alert"
+       class="van-notice-bar"
+  >
+    <div role="marquee"
+         class="van-notice-bar__wrap"
+    >
+      <div style="transition-duration: 0s;"
+           class="van-notice-bar__content"
+      >
+        Some short text.
+      </div>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-cross van-notice-bar__right-icon">
+    </i>
+  </div>
+  <div role="alert"
+       class="van-notice-bar"
+  >
+    <div role="marquee"
+         class="van-notice-bar__wrap"
+    >
+      <div style="transition-duration: 0s;"
+           class="van-notice-bar__content"
+      >
+        Some short text.
+      </div>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-notice-bar__right-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div role="alert"
+       class="van-notice-bar"
+       style="color: rgb(25, 137, 250); background: rgb(236, 249, 255);"
+  >
+    <i class="van-badge__wrapper van-icon van-icon-info-o van-notice-bar__left-icon">
+    </i>
+    <div role="marquee"
+         class="van-notice-bar__wrap"
+    >
+      <div style="transition-duration: 0s;"
+           class="van-notice-bar__content"
+      >
+        Some short text.
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div role="alert"
+       class="van-notice-bar"
+  >
+    <i class="van-badge__wrapper van-icon van-icon-volume-o van-notice-bar__left-icon">
+    </i>
+    <div role="marquee"
+         class="van-notice-bar__wrap"
+    >
+      <div style="transition-duration: 0s;"
+           class="van-notice-bar__content van-ellipsis"
+      >
+        <div class="van-swipe notice-swipe">
+          <div style="transition-duration: 0ms; transform: translateY(0px);"
+               class="van-swipe__track van-swipe__track--vertical"
+          >
+            <div class="van-swipe-item">
+              Content 1
+            </div>
+            <div class="van-swipe-item">
+              Content 2
+            </div>
+            <div class="van-swipe-item">
+              Content 3
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

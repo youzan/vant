@@ -1,0 +1,129 @@
+@import './var.less';
+@import '../style/mixins/ellipsis';
+
+:root {
+  --van-coupon-margin: @coupon-margin;
+  --van-coupon-content-height: @coupon-content-height;
+  --van-coupon-content-padding: @coupon-content-padding;
+  --van-coupon-background-color: @coupon-background-color;
+  --van-coupon-active-background-color: @coupon-active-background-color;
+  --van-coupon-border-radius: @coupon-border-radius;
+  --van-coupon-box-shadow: @coupon-box-shadow;
+  --van-coupon-head-width: @coupon-head-width;
+  --van-coupon-amount-color: @coupon-amount-color;
+  --van-coupon-amount-font-size: @coupon-amount-font-size;
+  --van-coupon-currency-font-size: @coupon-currency-font-size;
+  --van-coupon-name-font-size: @coupon-name-font-size;
+  --van-coupon-disabled-text-color: @coupon-disabled-text-color;
+  --van-coupon-description-padding: @coupon-description-padding;
+  --van-coupon-description-border-color: @coupon-description-border-color;
+  --van-coupon-corner-checkbox-icon-color: @coupon-corner-checkbox-icon-color;
+}
+
+.van-coupon {
+  margin: var(--van-coupon-margin);
+  overflow: hidden;
+  background-color: var(--van-coupon-background-color);
+  border-radius: var(--van-coupon-border-radius);
+  box-shadow: var(--van-coupon-box-shadow);
+
+  &:active {
+    background-color: var(--van-coupon-active-background-color);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: var(--van-coupon-content-height);
+    padding: var(--van-coupon-content-padding);
+    color: var(--van-gray-8);
+  }
+
+  &__head {
+    position: relative;
+    min-width: var(--van-coupon-head-width);
+    padding: 0 var(--van-padding-xs);
+    color: var(--van-coupon-amount-color);
+    text-align: center;
+  }
+
+  &__amount,
+  &__condition,
+  &__name,
+  &__valid {
+    .ellipsis();
+  }
+
+  &__amount {
+    margin-bottom: 6px;
+    font-weight: var(--van-font-weight-bold);
+    font-size: var(--van-coupon-amount-font-size);
+    .ellipsis();
+
+    span {
+      font-weight: normal;
+      font-size: var(--van-coupon-currency-font-size);
+
+      &:not(:empty) {
+        margin-left: 2px;
+      }
+    }
+  }
+
+  &__condition {
+    font-size: var(--van-font-size-sm);
+    line-height: 16px;
+    white-space: pre-wrap;
+  }
+
+  &__body {
+    position: relative;
+    flex: 1;
+    border-radius: 0 var(--van-coupon-border-radius)
+      var(--van-coupon-border-radius) 0;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: var(--van-coupon-name-font-size);
+    line-height: var(--van-line-height-md);
+  }
+
+  &__valid {
+    font-size: var(--van-font-size-sm);
+  }
+
+  &__corner {
+    position: absolute;
+    top: 0;
+    right: var(--van-padding-md);
+    bottom: 0;
+
+    .van-checkbox__icon--checked .van-icon {
+      background-color: var(--van-coupon-corner-checkbox-icon-color);
+      border-color: var(--van-coupon-corner-checkbox-icon-color);
+    }
+  }
+
+  &__description {
+    padding: var(--van-coupon-description-padding);
+    font-size: var(--van-font-size-sm);
+    border-top: 1px dashed var(--van-coupon-description-border-color);
+  }
+
+  &--disabled {
+    &:active {
+      background-color: var(--van-coupon-background-color);
+    }
+
+    .van-coupon-item__content {
+      height: calc(var(--van-coupon-content-height) - 10px);
+    }
+
+    .van-coupon__head {
+      color: inherit;
+    }
+  }
+}

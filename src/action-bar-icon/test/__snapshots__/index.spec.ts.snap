@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render default slot correctly 1`] = `
+<div role="button"
+     class="van-action-bar-icon"
+     tabindex="0"
+>
+  <div class="van-badge__wrapper van-icon van-icon-undefined van-action-bar-icon__icon">
+  </div>
+  Content
+</div>
+`;
+
+exports[`should render icon slot correctly 1`] = `
+<div role="button"
+     class="van-action-bar-icon"
+     tabindex="0"
+>
+  <div class="van-badge__wrapper van-action-bar-icon__icon">
+    Custom Icon
+  </div>
+  Content
+</div>
+`;
+
+exports[`should render icon slot with badge correctly 1`] = `
+<div role="button"
+     class="van-action-bar-icon"
+     tabindex="0"
+>
+  <div class="van-badge__wrapper van-action-bar-icon__icon">
+    Custom Icon
+    <div class="van-badge van-badge--fixed">
+      1
+    </div>
+  </div>
+  Content
+</div>
+`;
+
+exports[`should render icon slot with dot correctly 1`] = `
+<div role="button"
+     class="van-action-bar-icon"
+     tabindex="0"
+>
+  <div class="van-badge__wrapper van-action-bar-icon__icon">
+    Custom Icon
+    <div class="van-badge van-badge--dot van-badge--fixed">
+    </div>
+  </div>
+  Content
+</div>
+`;
+
+exports[`should render icon-prefix correctly 1`] = `
+<div role="button"
+     class="van-action-bar-icon"
+     tabindex="0"
+>
+  <div class="van-badge__wrapper my-icon my-icon-success van-action-bar-icon__icon">
+  </div>
+</div>
+`;

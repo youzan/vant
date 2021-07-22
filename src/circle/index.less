@@ -1,0 +1,51 @@
+@import './var.less';
+
+:root {
+  --van-circle-size: @circle-size;
+  --van-circle-color: @circle-color;
+  --van-circle-layer-color: @circle-layer-color;
+  --van-circle-text-color: @circle-text-color;
+  --van-circle-text-font-weight: @circle-text-font-weight;
+  --van-circle-text-font-size: @circle-text-font-size;
+  --van-circle-text-line-height: @circle-text-line-height;
+}
+
+.van-circle {
+  position: relative;
+  display: inline-block;
+  width: var(--van-circle-size);
+  height: var(--van-circle-size);
+  text-align: center;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__layer {
+    stroke: var(--van-circle-layer-color);
+  }
+
+  &__hover {
+    fill: none;
+    stroke: var(--van-circle-color);
+    stroke-linecap: round;
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 var(--van-padding-base);
+    color: var(--van-circle-text-color);
+    font-weight: var(--van-circle-text-font-weight);
+    font-size: var(--van-circle-text-font-size);
+    line-height: var(--van-circle-text-line-height);
+    transform: translateY(-50%);
+  }
+}

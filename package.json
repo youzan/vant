@@ -1,135 +1,80 @@
 {
   "name": "vant",
-  "version": "1.6.15",
+  "version": "3.1.4",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
   "style": "lib/index.css",
-  "typings": "types/index.d.ts",
+  "typings": "lib/index.d.ts",
   "files": [
     "es",
     "lib",
-    "packages",
-    "types",
     "vetur"
   ],
-  "scripts": {
-    "bootstrap": "yarn || npm i",
-    "dev": "npm run build:entry && webpack-serve --config build/webpack.dev.js",
-    "lint": "eslint ./packages --ext .js,.vue,.ts,.tsx && stylelint \"packages/*.less\"",
-    "build:entry": "node build/build-entry.js",
-    "build:components": "node build/build-components.js --color",
-    "build:vant": "cross-env NODE_ENV=production webpack --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --color --config build/webpack.build.js",
-    "build:style": "gulp --gulpfile ./build/build-style.js",
-    "build:style-entry": "node build/build-style-entry.js",
-    "build:changelog": "vant-doc changelog ./changelog.generated.md",
-    "build:lib": "node build/build-lib.js",
-    "build:site": "rimraf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:clear-cache": "jest --clearCache",
-    "test:coverage": "open test/coverage/index.html",
-    "release": "sh build/release.sh"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "scripts": {
+    "dev": "vant-cli dev",
+    "lint": "vant-cli lint",
+    "test": "vant-cli test",
+    "build": "vant-cli build",
+    "prepare": "husky install",
+    "release": "vant-cli release --tag next",
+    "test:watch": "vant-cli test --watch",
+    "release:site": "vant-cli build-site && gh-pages -d site --add --dest v3",
+    "test:coverage": "open test/coverage/index.html"
+  },
+  "npm": {
+    "tag": "next"
   },
   "lint-staged": {
-    "*.{js,vue}": [
-      "eslint",
-      "git add"
-    ],
-    "*.{vue,css}": [
-      "stylelint",
-      "git add"
-    ]
+    "*.md": "prettier --write",
+    "*.{ts,tsx,js,vue,less}": "prettier --write",
+    "*.{ts,tsx,js,vue}": "eslint --fix",
+    "*.{vue,css,less}": "stylelint --fix"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:youzan/vant.git"
   },
   "keywords": [
-    "youzan",
+    "ui",
     "vue",
-    "component"
+    "vue3",
+    "mobile",
+    "frontend",
+    "component",
+    "components"
   ],
   "author": "youzanfe",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.4.3",
-    "@vant/icons": "1.1.6",
-    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.3",
-    "vue-lazyload": "1.2.3"
+    "@vant/icons": "^1.6.0",
+    "@vant/lazyload": "^1.2.0",
+    "@vant/popperjs": "^1.1.0",
+    "@vant/use": "^1.2.1"
   },
   "peerDependencies": {
-    "vue": ">= 2.5.0"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-syntax-jsx": "^7.2.0",
-    "@babel/plugin-transform-object-assign": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.4.3",
-    "@babel/polyfill": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/preset-typescript": "^7.3.3",
-    "@types/jest": "^24.0.11",
-    "@vant/doc": "^1.0.25",
-    "@vant/eslint-config": "^1.1.2",
-    "@vant/markdown-loader": "^1.0.3",
-    "@vue/babel-preset-jsx": "^1.0.0-beta.3",
-    "@vue/server-test-utils": "^1.0.0-beta.29",
-    "@vue/test-utils": "^1.0.0-beta.29",
-    "autoprefixer": "^9.5.1",
-    "babel-jest": "^24.7.1",
-    "babel-loader": "^8.0.4",
-    "codecov": "^3.3.0",
-    "cross-env": "^5.2.0",
-    "css-loader": "^2.1.1",
-    "dependency-tree": "^7.0.2",
-    "eslint": "^5.16.0",
-    "fast-glob": "^2.2.4",
-    "gh-pages": "^2.0.1",
-    "gulp": "3.9.1",
-    "gulp-csso": "^3.0.1",
-    "gulp-less": "^4.0.1",
-    "gulp-postcss": "^8.0.0",
-    "html-webpack-plugin": "3.2.0",
-    "husky": "^1.2.1",
-    "jest": "^24.7.1",
-    "jest-serializer-vue": "^2.0.2",
-    "less": "^3.8.1",
-    "less-loader": "^4.1.0",
-    "lint-staged": "^8.1.5",
-    "markdown-vetur": "0.0.5",
-    "postcss": "^7.0.14",
-    "postcss-loader": "^3.0.0",
-    "progress-bar-webpack-plugin": "^1.12.1",
-    "rimraf": "^2.5.4",
-    "shelljs": "^0.8.3",
-    "signale": "^1.4.0",
-    "style-loader": "^0.23.1",
-    "stylelint": "^10.0.1",
-    "stylelint-config-standard": "^18.3.0",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.4.4",
-    "uppercamelcase": "^3.0.0",
-    "url-loader": "^1.1.2",
-    "vue": "2.6.10",
-    "vue-jest": "4.0.0-beta.1",
-    "vue-loader": "^15.7.0",
-    "vue-router": "^3.0.6",
-    "vue-server-renderer": "^2.6.10",
-    "vue-template-compiler": "2.6.10",
-    "vue-template-es2015-compiler": "^1.9.1",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.0",
-    "webpack-serve": "^2.0.3"
+    "@vant/cli": "^3.11.1",
+    "@vant/area-data": "^1.1.1",
+    "@vue/compiler-sfc": "^3.1.4",
+    "vue": "^3.1.4"
   },
+  "sideEffects": [
+    "es/**/style/*",
+    "lib/**/style/*",
+    "*.css",
+    "*.less"
+  ],
   "vetur": {
     "tags": "vetur/tags.json",
     "attributes": "vetur/attributes.json"
-  }
+  },
+  "web-types": "vetur/web-types.json",
+  "unpkg": "lib/vant.min.js",
+  "jsdelivr": "lib/vant.min.js"
 }

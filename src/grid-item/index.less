@@ -1,0 +1,100 @@
+@import './var.less';
+
+:root {
+  --van-grid-item-content-padding: @grid-item-content-padding;
+  --van-grid-item-content-background-color: @grid-item-content-background-color;
+  --van-grid-item-content-active-color: @grid-item-content-active-color;
+  --van-grid-item-icon-size: @grid-item-icon-size;
+  --van-grid-item-text-color: @grid-item-text-color;
+  --van-grid-item-text-font-size: @grid-item-text-font-size;
+}
+
+.van-grid-item {
+  position: relative;
+  box-sizing: border-box;
+
+  &--square {
+    height: 0;
+  }
+
+  &__icon {
+    font-size: var(--van-grid-item-icon-size);
+  }
+
+  &__text {
+    color: var(--van-grid-item-text-color);
+    font-size: var(--van-grid-item-text-font-size);
+    line-height: 1.5;
+    // https://github.com/youzan/vant/issues/3894
+    word-break: break-all;
+  }
+
+  &__icon + &__text {
+    margin-top: var(--van-padding-xs);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    padding: var(--van-grid-item-content-padding);
+    background-color: var(--van-grid-item-content-background-color);
+
+    &::after {
+      z-index: 1;
+      border-width: 0 var(--van-border-width-base) var(--van-border-width-base)
+        0;
+    }
+
+    &--square {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+
+    &--center {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--horizontal {
+      flex-direction: row;
+
+      .van-grid-item__text {
+        margin: 0 0 0 var(--van-padding-xs);
+      }
+    }
+
+    &--reverse {
+      flex-direction: column-reverse;
+
+      .van-grid-item__text {
+        margin: 0 0 var(--van-padding-xs);
+      }
+    }
+
+    &--horizontal&--reverse {
+      flex-direction: row-reverse;
+
+      .van-grid-item__text {
+        margin: 0 var(--van-padding-xs) 0 0;
+      }
+    }
+
+    &--surround {
+      &::after {
+        border-width: var(--van-border-width-base);
+      }
+    }
+
+    &--clickable {
+      cursor: pointer;
+
+      &:active {
+        background-color: var(--van-grid-item-content-active-color);
+      }
+    }
+  }
+}

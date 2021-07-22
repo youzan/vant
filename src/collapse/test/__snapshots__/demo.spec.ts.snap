@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-collapse van-hairline--top-bottom">
+    <div class="van-collapse-item">
+      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
+           role="button"
+           tabindex="0"
+           aria-expanded="true"
+      >
+        <div class="van-cell__title">
+          <span>
+            Title1
+          </span>
+        </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
+      </div>
+      <div class="van-collapse-item__wrapper">
+        <div class="van-collapse-item__content">
+          Content
+        </div>
+      </div>
+    </div>
+    <div class="van-collapse-item van-collapse-item--border">
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            Title2
+          </span>
+        </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
+      </div>
+    </div>
+    <div class="van-collapse-item van-collapse-item--border">
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            Title3
+          </span>
+        </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-collapse van-hairline--top-bottom">
+    <div class="van-collapse-item">
+      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
+           role="button"
+           tabindex="0"
+           aria-expanded="true"
+      >
+        <div class="van-cell__title">
+          <span>
+            Title1
+          </span>
+        </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
+      </div>
+      <div class="van-collapse-item__wrapper">
+        <div class="van-collapse-item__content">
+          Content
+        </div>
+      </div>
+    </div>
+    <div class="van-collapse-item van-collapse-item--border">
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            Title2
+          </span>
+        </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
+      </div>
+    </div>
+    <div class="van-collapse-item van-collapse-item--border">
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            Title3
+          </span>
+        </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-collapse van-hairline--top-bottom">
+    <div class="van-collapse-item">
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            Title1
+          </span>
+        </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
+      </div>
+    </div>
+    <div class="van-collapse-item van-collapse-item--border">
+      <div class="van-cell van-collapse-item__title van-collapse-item__title--disabled"
+           role="button"
+           aria-expanded="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            Title2
+          </span>
+        </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
+      </div>
+    </div>
+    <div class="van-collapse-item van-collapse-item--border">
+      <div class="van-cell van-collapse-item__title van-collapse-item__title--disabled"
+           role="button"
+           aria-expanded="false"
+      >
+        <div class="van-cell__title">
+          <span>
+            Title3
+          </span>
+        </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-collapse van-hairline--top-bottom">
+    <div class="van-collapse-item">
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+      >
+        <div class="van-cell__title">
+          Title1
+          <i class="van-badge__wrapper van-icon van-icon-question-o">
+          </i>
+        </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
+      </div>
+    </div>
+    <div class="van-collapse-item van-collapse-item--border">
+      <div class="van-cell van-cell--clickable van-collapse-item__title"
+           role="button"
+           tabindex="0"
+           aria-expanded="false"
+      >
+        <i class="van-badge__wrapper van-icon van-icon-shop-o van-cell__left-icon">
+        </i>
+        <div class="van-cell__title">
+          <span>
+            Title2
+          </span>
+        </div>
+        <div class="van-cell__value">
+          <span>
+            Content
+          </span>
+        </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;

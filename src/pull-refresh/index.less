@@ -1,0 +1,39 @@
+@import './var.less';
+
+:root {
+  --van-pull-refresh-head-height: @pull-refresh-head-height;
+  --van-pull-refresh-head-font-size: @pull-refresh-head-font-size;
+  --van-pull-refresh-head-text-color: @pull-refresh-head-text-color;
+  --van-pull-refresh-loading-icon-size: @pull-refresh-loading-icon-size;
+}
+
+.van-pull-refresh {
+  overflow: hidden;
+  user-select: none;
+
+  &__track {
+    position: relative;
+    height: 100%;
+    transition-property: transform;
+  }
+
+  &__head {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: var(--van-pull-refresh-head-height);
+    overflow: hidden;
+    color: var(--van-pull-refresh-head-text-color);
+    font-size: var(--van-pull-refresh-head-font-size);
+    line-height: var(--van-pull-refresh-head-height);
+    text-align: center;
+    transform: translateY(-100%);
+  }
+
+  &__loading {
+    .van-loading__spinner {
+      width: var(--van-pull-refresh-loading-icon-size);
+      height: var(--van-pull-refresh-loading-icon-size);
+    }
+  }
+}

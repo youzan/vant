@@ -1,8 +1,65 @@
-## 快速上手
+# 快速上手
 
-### 脚手架
+### 介绍
 
-推荐使用 Vue 官方提供的脚手架 [Vue Cli 3](https://cli.vuejs.org/zh/) 创建项目
+通过本章节你可以了解到 Vant 的安装方法和基本使用姿势。
+
+## 安装
+
+### 通过 npm 安装
+
+在现有项目中使用 Vant 时，可以通过 `npm` 或 `yarn` 进行安装：
+
+```bash
+# Vue 2 项目，安装 Vant 2：
+npm i vant -S
+
+# Vue 3 项目，安装 Vant 3：
+npm i vant@next -S
+```
+
+### 通过 CDN 安装
+
+使用 Vant 最简单的方法是直接在 html 文件中引入 CDN 链接，之后你可以通过全局变量 `vant` 访问到所有组件。
+
+```html
+<!-- 引入样式文件 -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/vant@next/lib/index.css"
+/>
+
+<!-- 引入 Vue 和 Vant 的 JS 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@next/lib/vant.min.js"></script>
+
+<script>
+  // 在 #app 标签下渲染一个按钮组件
+  const app = Vue.createApp({
+    template: `<van-button>按钮</van-button>`,
+  });
+  app.use(vant);
+
+  // 通过 CDN 引入时不会自动注册 Lazyload 组件
+  // 可以通过下面的方式手动注册
+  app.use(vant.Lazyload);
+
+  // 调用函数组件，弹出一个 Toast
+  vant.Toast('提示');
+
+  app.mount('#app');
+</script>
+```
+
+你可以通过以下免费 CDN 服务来使用 Vant:
+
+- [jsdelivr](https://www.jsdelivr.com/package/npm/vant)
+- [cdnjs](https://cdnjs.com/libraries/vant)
+- [unpkg](https://unpkg.com/)
+
+### 通过脚手架安装
+
+在新项目中使用 Vant 时，推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目并安装 Vant。
 
 ```bash
 # 安装 Vue Cli
@@ -10,139 +67,174 @@ npm install -g @vue/cli
 
 # 创建一个项目
 vue create hello-world
-```
 
-创建完成后，可以通过命令打开图形化界面
-
-```bash
-# 打开图形化界面
+# 创建完成后，可以通过命令打开图形化界面，如下图所示
 vue ui
 ```
 
-在图形化界面中，点击`依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
+![](https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png)
 
-<img width="100%" style="box-shadow: 0 1px 1px rgba(0, 0, 0, .1); border-radius: 3px;" src="https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png" >
+在图形化界面中，点击 `依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
+
+## 示例
 
 ### 示例工程
 
-我们提供了一个基于 Vue Cli 3 的示例工程，仓库地址为 [Vant Demo](https://github.com/youzan/vant-demo)，示例工程会帮助你了解如下内容：
+我们提供了丰富的[示例工程](https://github.com/youzan/vant-demo)，通过示例工程你可以了解如下内容：
 
-- 基于 vant 搭建单页面应用
-- 配置 rem 适配方案
-- 自定义主题色方案
+- 基于 Vue Cli 和 Vant 搭建应用
+- 基于 Nuxt 和 Vant 搭建应用
+- 配置按需引入组件
+- 配置基于 Rem 的适配方案
+- 配置基于 Viewport 的适配方案
+- 配置基于 TypeScript 的工程
+- 配置自定义主题色方案
 
-### 安装
+## 引入组件
 
-#### NPM
+### 方式一. 通过 babel 插件按需引入组件
 
-```shell
-npm i vant -S
-```
-
-#### YARN
-
-```shell
-yarn add vant
-```
-
-#### CDN
-
-```html
-<!-- 引入样式 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@1.6/lib/index.css">
-
-<!-- 引入组件 -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@1.6/lib/vant.min.js"></script>
-```
-
-### 引入组件
-
-#### 方式一. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
-
-`babel-plugin-import` 是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式
+[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一款 babel 插件，它会在编译过程中将 import 语句自动转换为按需引入的方式。
 
 ```bash
-# 安装 babel-plugin-import 插件
+# 安装插件
 npm i babel-plugin-import -D
 ```
 
-```js
-// .babelrc 中配置
-// 注意：webpack 1 无需设置 libraryDirectory
+在.babelrc 或 babel.config.js 中添加配置：
+
+```json
 {
   "plugins": [
-    ["import", {
-      "libraryName": "vant",
-      "libraryDirectory": "es",
-      "style": true
-    }]
+    [
+      "import",
+      {
+        "libraryName": "vant",
+        "libraryDirectory": "es",
+        "style": true
+      }
+    ]
   ]
 }
+```
 
-// 对于使用 babel7 的用户，可以在 babel.config.js 中配置
-module.exports = {
+接着你可以在代码中直接引入 Vant 组件，插件会自动将代码转化为按需引入的形式。
+
+```js
+// 原始代码
+import { Button } from 'vant';
+
+// 编译后代码
+import Button from 'vant/es/button';
+import 'vant/es/button/style';
+```
+
+> 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入。
+
+### 方式二. 在 Vite 项目中按需引入组件
+
+对于 vite 项目，可以使用 [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) 实现按需引入, 原理和 `babel-plugin-import` 类似。
+
+```bash
+# 安装插件
+npm i vite-plugin-style-import -D
+```
+
+```js
+// vite.config.js
+import vue from '@vitejs/plugin-vue';
+import styleImport from 'vite-plugin-style-import';
+
+export default {
   plugins: [
-    ['import', {
-      libraryName: 'vant',
-      libraryDirectory: 'es',
-      style: true
-    }, 'vant']
-  ]
+    vue(),
+    styleImport({
+      libs: [
+        {
+          libraryName: 'vant',
+          esModule: true,
+          resolveStyle: (name) => `vant/es/${name}/style`,
+        },
+      ],
+    }),
+  ],
 };
 ```
 
-接着你可以在代码中直接引入 Vant 组件，插件会自动将代码转化为方式二中的按需引入形式
+### 方式三. 手动按需引入组件
+
+在不使用插件的情况下，可以手动引入需要使用的组件和样式。
 
 ```js
-import { Button, Cell } from 'vant';
+// 引入组件
+import Button from 'vant/es/button';
+// 引入组件对应的样式，若组件没有样式文件，则无须引入
+import 'vant/es/button/style';
 ```
 
-> 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入
+### 方式四. 导入所有组件
 
-#### 方式二. 按需引入组件
-
-在不使用插件的情况下，可以手动引入需要的组件
+Vant 支持一次性导入所有组件，引入所有组件会增加代码包体积，因此不推荐这种做法。
 
 ```js
-import Button from 'vant/lib/button';
-import 'vant/lib/button/style';
-```
- 
-#### 方式三. 导入所有组件
-
-```js
-import Vue from 'vue';
+import { createApp } from 'vue';
 import Vant from 'vant';
 import 'vant/lib/index.css';
 
-Vue.use(Vant);
+const app = createApp();
+app.use(Vant);
 ```
 
-> 注意：配置 babel-plugin-import 插件后将不允许导入所有组件
+> Tips: 配置按需引入后，将不允许直接导入所有组件。
 
+## 常见问题
 
-### Rem 适配
+### 如何自定义 Vant 组件的样式？
 
-Vant 中的样式默认使用`px`作为单位，如果需要使用`rem`单位，推荐使用以下两个工具
+#### 1. 主题定制
 
-- [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem) 是一款 postcss 插件，用于将单位转化为 rem
-- [lib-flexible](https://github.com/amfe/lib-flexible) 用于设置 rem 基准值
+Vant 基于 CSS 变量提供了主题定制的能力，可以对组件样式进行统一修改，详见 [ConfigProvider 全局配置](#/zh-CN/config-provider) 组件。
 
-下面提供了一份基本的 postcss 配置，可以在此配置的基础上根据项目需求进行修改
+#### 2. 覆盖默认样式
 
-```js
-module.exports = {
-  plugins: {
-    'autoprefixer': {
-      browsers: ['Android >= 4.0', 'iOS >= 7']
-    },
-    'postcss-pxtorem': {
-      rootValue: 37.5,
-      propList: ['*']
-    }
+如果主题定制不能满足你的需求，也可以通过**自定义样式类**来覆盖默认样式，参考下面的示例：
+
+```html
+<template>
+  <van-button class="my-button">按钮</van-button>
+</template>
+
+<style>
+  /** 覆盖 Button 最外层元素的样式 */
+  .my-button {
+    width: 200px;
   }
-}
+
+  /** 覆盖 Button 内部子元素的样式 */
+  .my-button .van-button__text {
+    color: red;
+  }
+</style>
 ```
 
-> 注意：在配置 postcss-loader 时，应避免 ignore node_modules 目录，这会导致 Vant 的样式无法被编译
+### 在 HTML 中无法正确渲染组件？
+
+在 HTML 中使用 Vant 组件时，你可能会碰到部分示例代码无法正确渲染的情况，比如下面的用法：
+
+```html
+<van-cell-group>
+  <van-cell title="单元格" value="内容" />
+  <van-cell title="单元格" value="内容" />
+</van-cell-group>
+```
+
+这是因为 HTML 并不支持自闭合的自定义元素，也就是说 `<van-cell />` 这样的语法是不被识别的，使用完整的闭合标签可以避免这个问题：
+
+```html
+<van-cell-group>
+  <van-cell title="单元格" value="内容"></van-cell>
+  <van-cell title="单元格" value="内容"></van-cell>
+</van-cell-group>
+```
+
+在单文件组件、字符串模板和 JSX 中可以使用自闭合的自定义元素，因此不会出现这个问题。

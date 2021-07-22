@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should change avatar shape when using avatar-shape prop 1`] = `
+<div class="van-skeleton__avatar van-skeleton__avatar--square">
+</div>
+`;
+
+exports[`should change avatar size when using avatar-size prop: 20rem 1`] = `"20rem"`;
+
+exports[`should change avatar size when using avatar-size prop: 20ren 1`] = `"20rem"`;
+
+exports[`should render default slot when loading is false 1`] = `
+<div>
+  Content
+</div>
+`;
+
+exports[`should render with row width array correctly 1`] = `
+<div class="van-skeleton van-skeleton--animate">
+  <div class="van-skeleton__content">
+    <div class="van-skeleton__row"
+         style="width: 100%;"
+    >
+    </div>
+    <div class="van-skeleton__row"
+         style="width: 30px;"
+    >
+    </div>
+    <div class="van-skeleton__row"
+         style="width: 5rem;"
+    >
+    </div>
+    <div class="van-skeleton__row">
+    </div>
+  </div>
+</div>
+`;

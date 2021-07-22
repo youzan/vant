@@ -1,0 +1,29 @@
+name: Deploy V3 Site
+
+on:
+  push:
+    branches: [dev]
+    paths:
+      - 'docs/**'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          ref: 'dev'
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build Site
+        run: npx --no-install vant-cli build-site
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: site
+          target-folder: v3

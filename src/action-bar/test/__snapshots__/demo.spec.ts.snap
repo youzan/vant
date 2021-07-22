@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-action-bar">
+    <div role="button"
+         class="van-action-bar-icon"
+         tabindex="0"
+    >
+      <div class="van-badge__wrapper van-icon van-icon-chat-o van-action-bar-icon__icon">
+      </div>
+      Icon1
+    </div>
+    <div role="button"
+         class="van-action-bar-icon"
+         tabindex="0"
+    >
+      <div class="van-badge__wrapper van-icon van-icon-cart-o van-action-bar-icon__icon">
+      </div>
+      Icon2
+    </div>
+    <div role="button"
+         class="van-action-bar-icon"
+         tabindex="0"
+    >
+      <div class="van-badge__wrapper van-icon van-icon-shop-o van-action-bar-icon__icon">
+      </div>
+      Icon3
+    </div>
+    <button type="button"
+            class="van-button van-button--danger van-button--large van-action-bar-button van-action-bar-button--danger van-action-bar-button--last van-action-bar-button--first"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Button
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+<div>
+  <div class="van-action-bar">
+    <div role="button"
+         class="van-action-bar-icon"
+         tabindex="0"
+    >
+      <div class="van-badge__wrapper van-icon van-icon-chat-o van-action-bar-icon__icon">
+        <div class="van-badge van-badge--dot van-badge--fixed">
+        </div>
+      </div>
+      Icon1
+    </div>
+    <div role="button"
+         class="van-action-bar-icon"
+         tabindex="0"
+    >
+      <div class="van-badge__wrapper van-icon van-icon-cart-o van-action-bar-icon__icon">
+        <div class="van-badge van-badge--fixed">
+          5
+        </div>
+      </div>
+      Icon2
+    </div>
+    <div role="button"
+         class="van-action-bar-icon"
+         tabindex="0"
+    >
+      <div class="van-badge__wrapper van-icon van-icon-shop-o van-action-bar-icon__icon">
+        <div class="van-badge van-badge--fixed">
+          12
+        </div>
+      </div>
+      Icon3
+    </div>
+    <button type="button"
+            class="van-button van-button--warning van-button--large van-action-bar-button van-action-bar-button--warning van-action-bar-button--first"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Button
+        </span>
+      </div>
+    </button>
+    <button type="button"
+            class="van-button van-button--danger van-button--large van-action-bar-button van-action-bar-button--danger van-action-bar-button--last"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Button
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+<div>
+  <div class="van-action-bar">
+    <div role="button"
+         class="van-action-bar-icon"
+         tabindex="0"
+    >
+      <div class="van-badge__wrapper van-icon van-icon-chat-o van-action-bar-icon__icon"
+           style="color: rgb(238, 10, 36);"
+      >
+      </div>
+      Icon1
+    </div>
+    <div role="button"
+         class="van-action-bar-icon"
+         tabindex="0"
+    >
+      <div class="van-badge__wrapper van-icon van-icon-cart-o van-action-bar-icon__icon">
+      </div>
+      Icon2
+    </div>
+    <div role="button"
+         class="van-action-bar-icon"
+         tabindex="0"
+    >
+      <div class="van-badge__wrapper van-icon van-icon-star van-action-bar-icon__icon"
+           style="color: rgb(255, 80, 0);"
+      >
+      </div>
+      Collected
+    </div>
+    <button type="button"
+            class="van-button van-button--warning van-button--large van-action-bar-button van-action-bar-button--warning van-action-bar-button--first"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Button
+        </span>
+      </div>
+    </button>
+    <button type="button"
+            class="van-button van-button--danger van-button--large van-action-bar-button van-action-bar-button--danger van-action-bar-button--last"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Button
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+<div>
+  <div class="van-action-bar">
+    <div role="button"
+         class="van-action-bar-icon"
+         tabindex="0"
+    >
+      <div class="van-badge__wrapper van-icon van-icon-chat-o van-action-bar-icon__icon">
+      </div>
+      Icon1
+    </div>
+    <div role="button"
+         class="van-action-bar-icon"
+         tabindex="0"
+    >
+      <div class="van-badge__wrapper van-icon van-icon-cart-o van-action-bar-icon__icon">
+      </div>
+      Icon2
+    </div>
+    <button type="button"
+            class="van-button van-button--warning van-button--large van-action-bar-button van-action-bar-button--warning van-action-bar-button--first"
+            style="color: white; border-color: #be99ff; background: rgb(190, 153, 255);"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Button
+        </span>
+      </div>
+    </button>
+    <button type="button"
+            class="van-button van-button--danger van-button--large van-action-bar-button van-action-bar-button--danger van-action-bar-button--last"
+            style="color: white; background: rgb(114, 50, 221); border-color: #7232dd;"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Button
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;

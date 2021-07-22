@@ -1,0 +1,35 @@
+{
+  "name": "@vant/lazyload",
+  "version": "1.2.0",
+  "description": "This is a fork of vue-lazyload",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "types/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "dev": "babel src --out-dir dist/esm --watch",
+    "build": "babel src --out-dir dist/esm && BABEL_MODULE=commonjs babel src --out-dir dist/cjs",
+    "release": "npm run build && release-it"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-lazyload",
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "release-it": "^14.2.2",
+    "vue": "^3.0.0"
+  },
+  "release-it": {
+    "git": {
+      "tag": false,
+      "commitMessage": "release: @vant/lazyload ${version}"
+    }
+  }
+}

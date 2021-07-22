@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-circle">
+    <svg viewbox="0 0 1040 1040">
+      <path class="van-circle__layer"
+            style="fill: none; stroke-width: 40px;"
+            d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+      >
+      </path>
+      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+            style="stroke-width: 41px; stroke-dasharray: 2198px 3140px;"
+            class="van-circle__hover"
+      >
+      </path>
+    </svg>
+    <div class="van-circle__text">
+      70%
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-circle">
+    <svg viewbox="0 0 1060 1060">
+      <path class="van-circle__layer"
+            style="fill: none; stroke-width: 60px;"
+            d="M 530 530 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+      >
+      </path>
+      <path d="M 530 530 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+            style="stroke-width: 61px; stroke-dasharray: 2198px 3140px;"
+            class="van-circle__hover"
+      >
+      </path>
+    </svg>
+    <div class="van-circle__text">
+      Custom Width
+    </div>
+  </div>
+  <div class="van-circle">
+    <svg viewbox="0 0 1040 1040">
+      <path class="van-circle__layer"
+            style="fill: none; stroke: #ebedf0; stroke-width: 40px;"
+            d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+      >
+      </path>
+      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+            style="stroke: #ee0a24; stroke-width: 41px; stroke-dasharray: 2198px 3140px;"
+            class="van-circle__hover"
+            stroke="#ee0a24"
+      >
+      </path>
+    </svg>
+    <div class="van-circle__text">
+      Custom Color
+    </div>
+  </div>
+  <div class="van-circle">
+    <svg viewbox="0 0 1040 1040">
+      <defs>
+        <linearGradient id="van-circle-3"
+                        x1="100%"
+                        y1="0%"
+                        x2="0%"
+                        y2="0%"
+        >
+          <stop offset="0%"
+                stop-color="#3fecff"
+          >
+          </stop>
+          <stop offset="100%"
+                stop-color="#6149f6"
+          >
+          </stop>
+        </linearGradient>
+      </defs>
+      <path class="van-circle__layer"
+            style="fill: none; stroke-width: 40px;"
+            d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+      >
+      </path>
+      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+            style="stroke: url(#van-circle-3); stroke-width: 41px; stroke-dasharray: 2198px 3140px;"
+            class="van-circle__hover"
+            stroke="url(#van-circle-3)"
+      >
+      </path>
+    </svg>
+    <div class="van-circle__text">
+      Gradient
+    </div>
+  </div>
+  <div class="van-circle"
+       style="margin-top: 15px;"
+  >
+    <svg viewbox="0 0 1040 1040">
+      <path class="van-circle__layer"
+            style="fill: none; stroke-width: 40px;"
+            d="M 520 520 m 0, -500 a 500, 500 0 1, 0 0, 1000 a 500, 500 0 1, 0 0, -1000"
+      >
+      </path>
+      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 0 0, 1000 a 500, 500 0 1, 0 0, -1000"
+            style="stroke: #07c160; stroke-width: 41px; stroke-dasharray: 2198px 3140px;"
+            class="van-circle__hover"
+            stroke="#07c160"
+      >
+      </path>
+    </svg>
+    <div class="van-circle__text">
+      Counter Clockwise
+    </div>
+  </div>
+  <div class="van-circle"
+       style="width: 120px; height: 120px; margin-top: 15px;"
+  >
+    <svg viewbox="0 0 1040 1040">
+      <path class="van-circle__layer"
+            style="fill: none; stroke-width: 40px;"
+            d="M 520 520 m 0, -500 a 500, 500 0 1, 0 0, 1000 a 500, 500 0 1, 0 0, -1000"
+      >
+      </path>
+      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 0 0, 1000 a 500, 500 0 1, 0 0, -1000"
+            style="stroke: #7232dd; stroke-width: 41px; stroke-dasharray: 2198px 3140px;"
+            class="van-circle__hover"
+            stroke="#7232dd"
+      >
+      </path>
+    </svg>
+    <div class="van-circle__text">
+      Custom Size
+    </div>
+  </div>
+</div>
+<div style="margin-top: 15px;">
+  <button type="button"
+          class="van-button van-button--primary van-button--small"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Add
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--danger van-button--small"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Decrease
+      </span>
+    </div>
+  </button>
+</div>
+`;

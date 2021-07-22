@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-cell van-cell--center van-cell--clickable van-cell--borderless van-contact-card van-contact-card--add"
+       role="button"
+       tabindex="0"
+  >
+    <i class="van-badge__wrapper van-icon van-icon-add-square van-cell__left-icon">
+    </i>
+    <div class="van-cell__value van-cell__value--alone van-contact-card__value">
+      Add contact info
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--center van-cell--clickable van-cell--borderless van-contact-card van-contact-card--edit"
+       role="button"
+       tabindex="0"
+  >
+    <i class="van-badge__wrapper van-icon van-icon-contact van-cell__left-icon">
+    </i>
+    <div class="van-cell__value van-cell__value--alone van-contact-card__value">
+      <div>
+        Name：John Snow
+      </div>
+      <div>
+        Phone：13000000000
+      </div>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--center van-cell--borderless van-contact-card van-contact-card--edit">
+    <i class="van-badge__wrapper van-icon van-icon-contact van-cell__left-icon">
+    </i>
+    <div class="van-cell__value van-cell__value--alone van-contact-card__value">
+      <div>
+        Name：John Snow
+      </div>
+      <div>
+        Phone：13000000000
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should change the color of submit button when using button-color prop 1`] = `
+<button type="button"
+        class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
+        style="color: white; background: red; border-color: red;"
+>
+  <div class="van-button__content">
+  </div>
+</button>
+`;
+
+exports[`should render button slot correctly 1`] = `
+<div class="van-submit-bar">
+  <div class="van-submit-bar__bar">
+    Custom button
+  </div>
+</div>
+`;
+
+exports[`should render decimal length correctly when using decimal-length prop 1`] = `
+<span class="van-submit-bar__price">
+  ¥
+  <span class="van-submit-bar__price-integer">
+    1
+  </span>
+  .1
+</span>
+`;
+
+exports[`should render decimal length correctly when using decimal-length prop 2`] = `
+<span class="van-submit-bar__price">
+  ¥
+  <span class="van-submit-bar__price-integer">
+    1
+  </span>
+</span>
+`;
+
+exports[`should render disabled submit button correctly 1`] = `
+<button type="button"
+        class="van-button van-button--danger van-button--normal van-button--round van-button--disabled van-submit-bar__button van-submit-bar__button--danger"
+        disabled
+>
+  <div class="van-button__content">
+  </div>
+</button>
+`;
+
+exports[`should render suffix-label correctly 1`] = `
+<div class="van-submit-bar__text">
+  <span>
+    Label
+  </span>
+  <span class="van-submit-bar__price">
+    ¥
+    <span class="van-submit-bar__price-integer">
+      1
+    </span>
+    .11
+  </span>
+  <span class="van-submit-bar__suffix-label">
+    Suffix Label
+  </span>
+</div>
+`;
+
+exports[`should render top slot correctly 1`] = `
+<div class="van-submit-bar">
+  Custom Top
+  <div class="van-submit-bar__bar">
+    <button type="button"
+            class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
+    >
+      <div class="van-button__content">
+      </div>
+    </button>
+  </div>
+</div>
+`;

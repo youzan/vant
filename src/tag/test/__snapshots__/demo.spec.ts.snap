@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        primary
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span class="van-tag van-tag--primary">
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        success
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span class="van-tag van-tag--success">
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        danger
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span class="van-tag van-tag--danger">
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        warning
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span class="van-tag van-tag--warning">
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        Plain style
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span class="van-tag van-tag--plain van-tag--primary">
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        Round style
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span class="van-tag van-tag--round van-tag--primary">
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        Mark style
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span class="van-tag van-tag--mark van-tag--primary">
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        Closeable
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span class="van-tag van-tag--medium van-tag--primary">
+          Tag
+          <i class="van-badge__wrapper van-icon van-icon-cross van-tag__close">
+          </i>
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        Small Size
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span class="van-tag van-tag--primary">
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        Medium Size
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span class="van-tag van-tag--medium van-tag--primary">
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        Large Size
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span class="van-tag van-tag--large van-tag--primary">
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        Background Color
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span style="background: rgb(114, 50, 221);"
+              class="van-tag van-tag--default"
+        >
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        Text Color
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span style="color: rgb(173, 0, 0); background: rgb(255, 225, 225);"
+              class="van-tag van-tag--default"
+        >
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+  <div class="van-cell">
+    <div class="van-cell__title">
+      <span>
+        Plain Color
+      </span>
+    </div>
+    <div class="van-cell__value">
+      <transition-stub>
+        <span style="color: rgb(114, 50, 221); border-color: #7232dd;"
+              class="van-tag van-tag--plain van-tag--default"
+        >
+          Tag
+        </span>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+`;

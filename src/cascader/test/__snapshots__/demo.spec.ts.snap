@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-cell van-cell--clickable van-field"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title van-field__label">
+      <span>
+        Area
+      </span>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control"
+               readonly
+               placeholder="Select Area"
+        >
+      </div>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable van-field"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title van-field__label">
+      <span>
+        Area
+      </span>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control"
+               readonly
+               placeholder="Select Area"
+        >
+      </div>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable van-field"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title van-field__label">
+      <span>
+        Area
+      </span>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control"
+               readonly
+               placeholder="Select Area"
+        >
+      </div>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable van-field"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title van-field__label">
+      <span>
+        Area
+      </span>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control"
+               readonly
+               placeholder="Select Area"
+        >
+      </div>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+</div>
+`;

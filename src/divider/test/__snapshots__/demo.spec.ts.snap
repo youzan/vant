@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div role="separator"
+       class="van-divider van-divider--hairline"
+  >
+  </div>
+</div>
+<div>
+  <div role="separator"
+       class="van-divider van-divider--hairline van-divider--content-center"
+  >
+    Text
+  </div>
+</div>
+<div>
+  <div role="separator"
+       class="van-divider van-divider--hairline van-divider--content-left"
+  >
+    Text
+  </div>
+  <div role="separator"
+       class="van-divider van-divider--hairline van-divider--content-right"
+  >
+    Text
+  </div>
+</div>
+<div>
+  <div role="separator"
+       class="van-divider van-divider--dashed van-divider--content-center"
+  >
+    Text
+  </div>
+</div>
+<div>
+  <div role="separator"
+       class="van-divider van-divider--hairline van-divider--content-center"
+       style="border-color: #1989fa; color: rgb(25, 137, 250); padding: 0px 16px;"
+  >
+    Text
+  </div>
+</div>
+`;

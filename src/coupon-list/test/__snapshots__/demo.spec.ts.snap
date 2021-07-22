@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-cell van-cell--clickable van-coupon-cell"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Coupon
+      </span>
+    </div>
+    <div class="van-cell__value van-coupon-cell__value">
+      <span>
+        You have 2 coupons
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <transition-stub>
+  </transition-stub>
+  <transition-stub>
+  </transition-stub>
+</div>
+`;

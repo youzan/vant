@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should allow to custom the className of action 1`] = `
+<div role="menuitem"
+     class="van-popover__action foo"
+>
+  <div class="van-popover__action-text van-hairline--bottom">
+    Option
+  </div>
+</div>
+`;
+
+exports[`should change icon class prefix when using icon-prefix prop 1`] = `
+<span class="van-popover__wrapper">
+</span>
+<transition-stub>
+  <div class="van-popup van-popover van-popover--light">
+    <div class="van-popover__arrow">
+    </div>
+    <div role="menu"
+         class="van-popover__content"
+    >
+      <div role="menuitem"
+           class="van-popover__action van-popover__action--with-icon"
+      >
+        <i class="van-badge__wrapper my-icon my-icon-success van-popover__action-icon">
+        </i>
+        <div class="van-popover__action-text van-hairline--bottom">
+          foo
+        </div>
+      </div>
+    </div>
+  </div>
+</transition-stub>
+`;
+
+exports[`should locate to reference element when showed 1`] = `
+<transition-stub>
+</transition-stub>
+`;
+
+exports[`should locate to reference element when showed 2`] = `
+<transition-stub>
+  <div style="z-index: 2007; position: absolute; left: 0px; top: 8px; margin: 0px;"
+       class="van-popup van-popover van-popover--light"
+       data-popper-placement="bottom"
+  >
+    <div class="van-popover__arrow">
+    </div>
+    <div role="menu"
+         class="van-popover__content"
+    >
+    </div>
+  </div>
+</transition-stub>
+`;
+
+exports[`should locate to reference element when showed 3`] = `
+<transition-stub>
+  <div style="z-index: 2007; display: none;"
+       class="van-popup van-popover van-popover--light"
+  >
+    <div class="van-popover__arrow">
+    </div>
+    <div role="menu"
+         class="van-popover__content"
+    >
+    </div>
+  </div>
+</transition-stub>
+`;
+
+exports[`should watch placement prop and update location 1`] = `
+<transition-stub>
+  <div style="z-index: 2008; position: absolute; left: 0px; top: -8px; margin: 0px;"
+       class="van-popup van-popover van-popover--light"
+       data-popper-placement="top"
+  >
+    <div class="van-popover__arrow">
+    </div>
+    <div role="menu"
+         class="van-popover__content"
+    >
+    </div>
+  </div>
+</transition-stub>
+`;

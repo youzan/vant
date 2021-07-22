@@ -1,0 +1,31 @@
+@import './var.less';
+
+:root {
+  --van-list-text-color: @list-text-color;
+  --van-list-text-font-size: @list-text-font-size;
+  --van-list-text-line-height: @list-text-line-height;
+  --van-list-loading-icon-size: @list-loading-icon-size;
+}
+
+.van-list {
+  &__loading,
+  &__finished-text,
+  &__error-text {
+    color: var(--van-list-text-color);
+    font-size: var(--van-list-text-font-size);
+    line-height: var(--van-list-text-line-height);
+    text-align: center;
+  }
+
+  &__placeholder {
+    height: 0;
+    pointer-events: none;
+  }
+
+  &__loading-icon {
+    .van-loading__spinner {
+      width: var(--van-list-loading-icon-size);
+      height: var(--van-list-loading-icon-size);
+    }
+  }
+}

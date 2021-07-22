@@ -1,0 +1,327 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should allow to custom anchor content 1`] = `
+<div class="van-index-anchor">
+  Title A
+</div>
+`;
+
+exports[`should update active anchor after page scroll 1`] = `
+<div class="van-index-bar">
+  <div class="van-index-bar__sidebar">
+    <span class="van-index-bar__index van-index-bar__index--active"
+          data-index="A"
+    >
+      A
+    </span>
+    <span class="van-index-bar__index"
+          data-index="B"
+    >
+      B
+    </span>
+    <span class="van-index-bar__index"
+          data-index="C"
+    >
+      C
+    </span>
+    <span class="van-index-bar__index"
+          data-index="D"
+    >
+      D
+    </span>
+    <span class="van-index-bar__index"
+          data-index="E"
+    >
+      E
+    </span>
+    <span class="van-index-bar__index"
+          data-index="F"
+    >
+      F
+    </span>
+    <span class="van-index-bar__index"
+          data-index="G"
+    >
+      G
+    </span>
+    <span class="van-index-bar__index"
+          data-index="H"
+    >
+      H
+    </span>
+    <span class="van-index-bar__index"
+          data-index="I"
+    >
+      I
+    </span>
+    <span class="van-index-bar__index"
+          data-index="J"
+    >
+      J
+    </span>
+    <span class="van-index-bar__index"
+          data-index="K"
+    >
+      K
+    </span>
+    <span class="van-index-bar__index"
+          data-index="L"
+    >
+      L
+    </span>
+    <span class="van-index-bar__index"
+          data-index="M"
+    >
+      M
+    </span>
+    <span class="van-index-bar__index"
+          data-index="N"
+    >
+      N
+    </span>
+    <span class="van-index-bar__index"
+          data-index="O"
+    >
+      O
+    </span>
+    <span class="van-index-bar__index"
+          data-index="P"
+    >
+      P
+    </span>
+    <span class="van-index-bar__index"
+          data-index="Q"
+    >
+      Q
+    </span>
+    <span class="van-index-bar__index"
+          data-index="R"
+    >
+      R
+    </span>
+    <span class="van-index-bar__index"
+          data-index="S"
+    >
+      S
+    </span>
+    <span class="van-index-bar__index"
+          data-index="T"
+    >
+      T
+    </span>
+    <span class="van-index-bar__index"
+          data-index="U"
+    >
+      U
+    </span>
+    <span class="van-index-bar__index"
+          data-index="V"
+    >
+      V
+    </span>
+    <span class="van-index-bar__index"
+          data-index="W"
+    >
+      W
+    </span>
+    <span class="van-index-bar__index"
+          data-index="X"
+    >
+      X
+    </span>
+    <span class="van-index-bar__index"
+          data-index="Y"
+    >
+      Y
+    </span>
+    <span class="van-index-bar__index"
+          data-index="Z"
+    >
+      Z
+    </span>
+  </div>
+  <div data-index="0">
+    <div class="van-index-anchor">
+      1
+    </div>
+  </div>
+  <div data-index="1">
+    <div class="van-index-anchor">
+      2
+    </div>
+  </div>
+  <div data-index="2">
+    <div class="van-index-anchor">
+      3
+    </div>
+  </div>
+  <div data-index="3">
+    <div class="van-index-anchor">
+      4
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should update active anchor after page scroll 2`] = `
+<div class="van-index-bar">
+  <div class="van-index-bar__sidebar">
+    <span class="van-index-bar__index"
+          data-index="A"
+    >
+      A
+    </span>
+    <span class="van-index-bar__index van-index-bar__index--active"
+          data-index="B"
+    >
+      B
+    </span>
+    <span class="van-index-bar__index"
+          data-index="C"
+    >
+      C
+    </span>
+    <span class="van-index-bar__index"
+          data-index="D"
+    >
+      D
+    </span>
+    <span class="van-index-bar__index"
+          data-index="E"
+    >
+      E
+    </span>
+    <span class="van-index-bar__index"
+          data-index="F"
+    >
+      F
+    </span>
+    <span class="van-index-bar__index"
+          data-index="G"
+    >
+      G
+    </span>
+    <span class="van-index-bar__index"
+          data-index="H"
+    >
+      H
+    </span>
+    <span class="van-index-bar__index"
+          data-index="I"
+    >
+      I
+    </span>
+    <span class="van-index-bar__index"
+          data-index="J"
+    >
+      J
+    </span>
+    <span class="van-index-bar__index"
+          data-index="K"
+    >
+      K
+    </span>
+    <span class="van-index-bar__index"
+          data-index="L"
+    >
+      L
+    </span>
+    <span class="van-index-bar__index"
+          data-index="M"
+    >
+      M
+    </span>
+    <span class="van-index-bar__index"
+          data-index="N"
+    >
+      N
+    </span>
+    <span class="van-index-bar__index"
+          data-index="O"
+    >
+      O
+    </span>
+    <span class="van-index-bar__index"
+          data-index="P"
+    >
+      P
+    </span>
+    <span class="van-index-bar__index"
+          data-index="Q"
+    >
+      Q
+    </span>
+    <span class="van-index-bar__index"
+          data-index="R"
+    >
+      R
+    </span>
+    <span class="van-index-bar__index"
+          data-index="S"
+    >
+      S
+    </span>
+    <span class="van-index-bar__index"
+          data-index="T"
+    >
+      T
+    </span>
+    <span class="van-index-bar__index"
+          data-index="U"
+    >
+      U
+    </span>
+    <span class="van-index-bar__index"
+          data-index="V"
+    >
+      V
+    </span>
+    <span class="van-index-bar__index"
+          data-index="W"
+    >
+      W
+    </span>
+    <span class="van-index-bar__index"
+          data-index="X"
+    >
+      X
+    </span>
+    <span class="van-index-bar__index"
+          data-index="Y"
+    >
+      Y
+    </span>
+    <span class="van-index-bar__index"
+          data-index="Z"
+    >
+      Z
+    </span>
+  </div>
+  <div data-index="0"
+       style="height: 10px;"
+  >
+    <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom">
+      1
+    </div>
+  </div>
+  <div data-index="1"
+       style="height: 10px;"
+  >
+    <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom"
+         style="transform: translate3d(0, 10px, 0);"
+    >
+      2
+    </div>
+  </div>
+  <div data-index="2">
+    <div class="van-index-anchor">
+      3
+    </div>
+  </div>
+  <div data-index="3">
+    <div class="van-index-anchor">
+      4
+    </div>
+  </div>
+</div>
+`;

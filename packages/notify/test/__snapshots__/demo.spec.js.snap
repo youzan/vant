@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`renders demo correctly 1`] = `
-<div>
-  <div><button class="van-button van-button--default van-button--normal"><span class="van-button__text">显示消息通知</span></button></div>
-  <div><button class="van-button van-button--default van-button--normal"><span class="van-button__text">显示自定义消息通知</span></button></div>
-</div>
-`;

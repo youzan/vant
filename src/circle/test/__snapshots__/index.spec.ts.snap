@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should change stroke linecap when using stroke-linecap prop 1`] = `
+<div class="van-circle">
+  <svg viewbox="0 0 1040 1040">
+    <path class="van-circle__layer"
+          style="fill: none; stroke-width: 40px;"
+          d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+    >
+    </path>
+    <path d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+          style="stroke-width: 41px; stroke-linecap: square; stroke-dasharray: 0px 3140px;"
+          class="van-circle__hover"
+    >
+    </path>
+  </svg>
+</div>
+`;

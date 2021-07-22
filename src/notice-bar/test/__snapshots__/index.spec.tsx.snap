@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not start scrolling when content width > wrap width  1`] = `
+<div role="alert"
+     class="van-notice-bar"
+>
+  <div role="marquee"
+       class="van-notice-bar__wrap"
+  >
+    <div style="transition-duration: 0s;"
+         class="van-notice-bar__content"
+    >
+      foo
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render icon slot correct 1`] = `
+<div role="alert"
+     class="van-notice-bar"
+>
+  Custom Left Icon
+  <div role="marquee"
+       class="van-notice-bar__wrap"
+  >
+    <div style="transition-duration: 0s;"
+         class="van-notice-bar__content"
+    >
+      Content
+    </div>
+  </div>
+  Custom Right Icon
+</div>
+`;
+
+exports[`should start scrolling when content width > wrap width  1`] = `
+<div role="alert"
+     class="van-notice-bar"
+>
+  <div role="marquee"
+       class="van-notice-bar__wrap"
+  >
+    <div style="transition-duration: 1.6666666666666667s; transform: translateX(-100px);"
+         class="van-notice-bar__content"
+    >
+      foo
+    </div>
+  </div>
+</div>
+`;

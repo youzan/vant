@@ -1,0 +1,16 @@
+{
+  "name": "@vant/area-data",
+  "version": "1.1.1",
+  "description": "Vant 省市区数据",
+  "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsc",
+    "release": "yarn build && npm publish"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/youzan/vant"
+}

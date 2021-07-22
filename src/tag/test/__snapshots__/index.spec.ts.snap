@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should hide tag when the show prop is false 1`] = `
+<transition-stub>
+</transition-stub>
+`;
+
+exports[`should render border-color correctly 1`] = `
+<transition-stub>
+  <span style="color: blue; border-color: red;"
+        class="van-tag van-tag--plain van-tag--default"
+  >
+  </span>
+</transition-stub>
+`;

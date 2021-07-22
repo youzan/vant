@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div class="van-tabs van-tabs--line">
+  <div class="van-tabs__wrap">
+    <div role="tablist"
+         class="van-tabs__nav van-tabs__nav--line"
+    >
+      <div role="tab"
+           class="van-tab van-tab--active"
+           aria-selected="true"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          Basic Usage
+        </span>
+      </div>
+      <div role="tab"
+           class="van-tab"
+           aria-selected="false"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          Success Tip
+        </span>
+      </div>
+      <div role="tab"
+           class="van-tab"
+           aria-selected="false"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          Custom Tips
+        </span>
+      </div>
+      <div class="van-tabs__line"
+           style="transform: translateX(0px) translateX(-50%);"
+      >
+      </div>
+    </div>
+  </div>
+  <div class="van-tabs__content">
+    <div role="tabpanel"
+         class="van-tab__pane"
+         style
+    >
+      <div class="van-pull-refresh">
+        <div class="van-pull-refresh__track"
+             style="transition-duration: 0ms;"
+        >
+          <div class="van-pull-refresh__head">
+          </div>
+          <p>
+            Try it down
+          </p>
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel"
+         class="van-tab__pane"
+         style="display: none;"
+    >
+    </div>
+    <div role="tabpanel"
+         class="van-tab__pane"
+         style="display: none;"
+    >
+    </div>
+  </div>
+</div>
+`;

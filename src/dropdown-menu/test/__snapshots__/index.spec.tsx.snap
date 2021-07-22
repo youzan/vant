@@ -1,0 +1,850 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`click option 1`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="top: 0px;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+      <div style="z-index: 2007; position: absolute; animation-duration: 0.2s; display: none;"
+           class="van-overlay"
+      >
+      </div>
+    </transition-stub>
+    <transition-stub>
+      <div style="z-index: 2007; transition-duration: 0.2s; display: none;"
+           class="van-popup van-popup--top van-dropdown-item__content"
+      >
+        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              A
+            </span>
+          </div>
+          <div class="van-cell__value">
+            <i class="van-badge__wrapper van-icon van-icon-success van-dropdown-item__icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-cell van-cell--clickable van-dropdown-item__option"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              B
+            </span>
+          </div>
+          <div class="van-cell__value">
+          </div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+  <div style="top: 0px; display: none;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`close-on-click-outside 1`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="top: 0px;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+      <div style="z-index: 2004; position: absolute; animation-duration: 0.2s; display: none;"
+           class="van-overlay"
+      >
+      </div>
+    </transition-stub>
+    <transition-stub>
+      <div style="z-index: 2004; transition-duration: 0.2s; display: none;"
+           class="van-popup van-popup--top van-dropdown-item__content"
+      >
+        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              A
+            </span>
+          </div>
+          <div class="van-cell__value">
+            <i class="van-badge__wrapper van-icon van-icon-success van-dropdown-item__icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-cell van-cell--clickable van-dropdown-item__option"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              B
+            </span>
+          </div>
+          <div class="van-cell__value">
+          </div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+  <div style="top: 0px; display: none;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`destroy one item 1`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar">
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="top: 0px; display: none;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`direction up 1`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar">
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="bottom: 0px; display: none;"
+       class="van-dropdown-item van-dropdown-item--up"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+  <div style="bottom: 0px; display: none;"
+       class="van-dropdown-item van-dropdown-item--up"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`direction up 2`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title van-dropdown-menu__title--active">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="bottom: 768px;"
+       class="van-dropdown-item van-dropdown-item--up"
+  >
+    <transition-stub>
+      <div style="z-index: 2006; position: absolute; animation-duration: 0.2s;"
+           class="van-overlay"
+      >
+      </div>
+    </transition-stub>
+    <transition-stub>
+      <div style="z-index: 2006; transition-duration: 0.2s;"
+           class="van-popup van-popup--bottom van-dropdown-item__content"
+      >
+        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              A
+            </span>
+          </div>
+          <div class="van-cell__value">
+            <i class="van-badge__wrapper van-icon van-icon-success van-dropdown-item__icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-cell van-cell--clickable van-dropdown-item__option"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              B
+            </span>
+          </div>
+          <div class="van-cell__value">
+          </div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+  <div style="bottom: 768px; display: none;"
+       class="van-dropdown-item van-dropdown-item--up"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`disable close-on-click-outside 1`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="top: 0px;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+      <div style="z-index: 2005; position: absolute; animation-duration: 0.2s;"
+           class="van-overlay"
+      >
+      </div>
+    </transition-stub>
+    <transition-stub>
+      <div style="z-index: 2005; transition-duration: 0.2s;"
+           class="van-popup van-popup--top van-dropdown-item__content"
+      >
+        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              A
+            </span>
+          </div>
+          <div class="van-cell__value">
+            <i class="van-badge__wrapper van-icon van-icon-success van-dropdown-item__icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-cell van-cell--clickable van-dropdown-item__option"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              B
+            </span>
+          </div>
+          <div class="van-cell__value">
+          </div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+  <div style="top: 0px; display: none;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`disable dropdown item 1`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar">
+    <div role="button"
+         tabindex="-1"
+         class="van-dropdown-menu__item van-dropdown-menu__item--disabled"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="top: 0px; display: none;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`render option icon 1`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="top: 0px;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+      <div style="z-index: 2003; position: absolute; animation-duration: 0.2s;"
+           class="van-overlay"
+      >
+      </div>
+    </transition-stub>
+    <transition-stub>
+      <div style="z-index: 2003; transition-duration: 0.2s;"
+           class="van-popup van-popup--top van-dropdown-item__content"
+      >
+        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+             role="button"
+             tabindex="0"
+        >
+          <i class="van-badge__wrapper van-icon van-icon-success van-cell__left-icon">
+          </i>
+          <div class="van-cell__title">
+            <span>
+              A
+            </span>
+          </div>
+          <div class="van-cell__value">
+            <i class="van-badge__wrapper van-icon van-icon-success van-dropdown-item__icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-cell van-cell--clickable van-dropdown-item__option"
+             role="button"
+             tabindex="0"
+        >
+          <i class="van-badge__wrapper van-icon van-icon-success van-cell__left-icon">
+          </i>
+          <div class="van-cell__title">
+            <span>
+              B
+            </span>
+          </div>
+          <div class="van-cell__value">
+          </div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+  <div style="top: 0px; display: none;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`show dropdown item 1`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="top: 0px;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+      <div style="z-index: 2001; position: absolute; animation-duration: 0.2s;"
+           class="van-overlay"
+      >
+      </div>
+    </transition-stub>
+    <transition-stub>
+      <div style="z-index: 2001; transition-duration: 0.2s;"
+           class="van-popup van-popup--top van-dropdown-item__content"
+      >
+        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              A
+            </span>
+          </div>
+          <div class="van-cell__value">
+            <i class="van-badge__wrapper van-icon van-icon-success van-dropdown-item__icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-cell van-cell--clickable van-dropdown-item__option"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              B
+            </span>
+          </div>
+          <div class="van-cell__value">
+          </div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+  <div style="top: 0px; display: none;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`show dropdown item 2`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="top: 0px;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+      <div style="z-index: 2001; position: absolute; animation-duration: 0s; display: none;"
+           class="van-overlay"
+      >
+      </div>
+    </transition-stub>
+    <transition-stub>
+      <div style="z-index: 2001; transition-duration: 0s; display: none;"
+           class="van-popup van-popup--top van-dropdown-item__content"
+      >
+        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              A
+            </span>
+          </div>
+          <div class="van-cell__value">
+            <i class="van-badge__wrapper van-icon van-icon-success van-dropdown-item__icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-cell van-cell--clickable van-dropdown-item__option"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              B
+            </span>
+          </div>
+          <div class="van-cell__value">
+          </div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+  <div style="top: 0px;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+      <div style="z-index: 2002; position: absolute; animation-duration: 0.2s;"
+           class="van-overlay"
+      >
+      </div>
+    </transition-stub>
+    <transition-stub>
+      <div style="z-index: 2002; transition-duration: 0.2s;"
+           class="van-popup van-popup--top van-dropdown-item__content"
+      >
+        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              A
+            </span>
+          </div>
+          <div class="van-cell__value">
+            <i class="van-badge__wrapper van-icon van-icon-success van-dropdown-item__icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-cell van-cell--clickable van-dropdown-item__option"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              B
+            </span>
+          </div>
+          <div class="van-cell__value">
+          </div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`show dropdown item 3`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          A
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="top: 0px;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+      <div style="z-index: 2001; position: absolute; animation-duration: 0s; display: none;"
+           class="van-overlay"
+      >
+      </div>
+    </transition-stub>
+    <transition-stub>
+      <div style="z-index: 2001; transition-duration: 0s; display: none;"
+           class="van-popup van-popup--top van-dropdown-item__content"
+      >
+        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              A
+            </span>
+          </div>
+          <div class="van-cell__value">
+            <i class="van-badge__wrapper van-icon van-icon-success van-dropdown-item__icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-cell van-cell--clickable van-dropdown-item__option"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              B
+            </span>
+          </div>
+          <div class="van-cell__value">
+          </div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+  <div style="top: 0px;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+      <div style="z-index: 2002; position: absolute; animation-duration: 0.2s; display: none;"
+           class="van-overlay"
+      >
+      </div>
+    </transition-stub>
+    <transition-stub>
+      <div style="z-index: 2002; transition-duration: 0.2s; display: none;"
+           class="van-popup van-popup--top van-dropdown-item__content"
+      >
+        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              A
+            </span>
+          </div>
+          <div class="van-cell__value">
+            <i class="van-badge__wrapper van-icon van-icon-success van-dropdown-item__icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-cell van-cell--clickable van-dropdown-item__option"
+             role="button"
+             tabindex="0"
+        >
+          <div class="van-cell__title">
+            <span>
+              B
+            </span>
+          </div>
+          <div class="van-cell__value">
+          </div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`title prop 1`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar">
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          Title
+        </div>
+      </span>
+    </div>
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          Title
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="top: 0px; display: none;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+  <div style="top: 0px; display: none;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`title slot 1`] = `
+<div class="van-dropdown-menu">
+  <div class="van-dropdown-menu__bar">
+    <div role="button"
+         tabindex="0"
+         class="van-dropdown-menu__item"
+    >
+      <span class="van-dropdown-menu__title">
+        <div class="van-ellipsis">
+          Custom Title
+        </div>
+      </span>
+    </div>
+  </div>
+  <div style="top: 0px; display: none;"
+       class="van-dropdown-item van-dropdown-item--down"
+  >
+    <transition-stub>
+    </transition-stub>
+    <transition-stub>
+    </transition-stub>
+  </div>
+</div>
+`;

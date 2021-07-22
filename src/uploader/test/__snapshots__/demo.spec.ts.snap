@@ -1,0 +1,343 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-uploader">
+    <div class="van-uploader__wrapper">
+      <div class="van-uploader__upload">
+        <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
+        </i>
+        <input type="file"
+               class="van-uploader__input"
+               accept="image/*"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-uploader">
+    <div class="van-uploader__wrapper">
+      <div class="van-uploader__preview">
+        <div class="van-image van-uploader__preview-image">
+          <img src="https://img.yzcdn.cn/vant/leaf.jpg"
+               class="van-image__img"
+               style="object-fit: cover;"
+          >
+          <div class="van-image__loading">
+            <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-uploader__preview-delete">
+          <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
+          </i>
+        </div>
+      </div>
+      <div class="van-uploader__preview">
+        <div class="van-image van-uploader__preview-image">
+          <img src="https://img.yzcdn.cn/vant/tree.jpg"
+               class="van-image__img"
+               style="object-fit: cover;"
+          >
+          <div class="van-image__loading">
+            <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-uploader__preview-delete">
+          <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
+          </i>
+        </div>
+      </div>
+      <div class="van-uploader__upload">
+        <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
+        </i>
+        <input type="file"
+               class="van-uploader__input"
+               accept="*"
+               multiple
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-uploader">
+    <div class="van-uploader__wrapper">
+      <div class="van-uploader__preview">
+        <div class="van-image van-uploader__preview-image">
+          <img src="https://img.yzcdn.cn/vant/leaf.jpg"
+               class="van-image__img"
+               style="object-fit: cover;"
+          >
+          <div class="van-image__loading">
+            <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-uploader__mask">
+          <div class="van-loading van-loading--circular van-uploader__loading">
+            <span class="van-loading__spinner van-loading__spinner--circular">
+              <svg class="van-loading__circular"
+                   viewbox="25 25 50 50"
+              >
+                <circle cx="50"
+                        cy="50"
+                        r="20"
+                        fill="none"
+                >
+                </circle>
+              </svg>
+            </span>
+          </div>
+          <div class="van-uploader__mask-message">
+            Uploading...
+          </div>
+        </div>
+      </div>
+      <div class="van-uploader__preview">
+        <div class="van-image van-uploader__preview-image">
+          <img src="https://img.yzcdn.cn/vant/tree.jpg"
+               class="van-image__img"
+               style="object-fit: cover;"
+          >
+          <div class="van-image__loading">
+            <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-uploader__mask">
+          <i class="van-badge__wrapper van-icon van-icon-close van-uploader__mask-icon">
+          </i>
+          <div class="van-uploader__mask-message">
+            Failed
+          </div>
+        </div>
+        <div class="van-uploader__preview-delete">
+          <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
+          </i>
+        </div>
+      </div>
+      <div class="van-uploader__upload">
+        <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
+        </i>
+        <input type="file"
+               class="van-uploader__input"
+               accept="image/*"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-uploader">
+    <div class="van-uploader__wrapper">
+      <div class="van-uploader__preview">
+        <div class="van-image van-uploader__preview-image">
+          <img src="https://img.yzcdn.cn/vant/sand.jpg"
+               class="van-image__img"
+               style="object-fit: cover;"
+          >
+          <div class="van-image__loading">
+            <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-uploader__preview-delete">
+          <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
+          </i>
+        </div>
+      </div>
+      <div class="van-uploader__upload">
+        <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
+        </i>
+        <input type="file"
+               class="van-uploader__input"
+               accept="image/*"
+               multiple
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-uploader">
+    <div class="van-uploader__wrapper">
+      <div class="van-uploader__preview">
+        <div class="van-image van-uploader__preview-image">
+          <img src="https://img.yzcdn.cn/vant/sand.jpg"
+               class="van-image__img"
+               style="object-fit: cover;"
+          >
+          <div class="van-image__loading">
+            <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-uploader__preview-delete">
+          <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
+          </i>
+        </div>
+      </div>
+      <div class="van-uploader__upload">
+        <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
+        </i>
+        <input type="file"
+               class="van-uploader__input"
+               accept="image/*"
+               multiple
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-uploader">
+    <div class="van-uploader__wrapper">
+      <div class="van-uploader__input-wrapper">
+        <button type="button"
+                class="van-button van-button--primary van-button--normal"
+        >
+          <div class="van-button__content">
+            <i class="van-badge__wrapper van-icon van-icon-plus van-button__icon">
+            </i>
+            <span class="van-button__text">
+              Upload File
+            </span>
+          </div>
+        </button>
+        <input type="file"
+               class="van-uploader__input"
+               accept="image/*"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-uploader">
+    <div class="van-uploader__wrapper">
+      <div class="van-uploader__preview">
+        <div class="van-image van-uploader__preview-image">
+          <img src="https://img.yzcdn.cn/vant/leaf.jpg"
+               class="van-image__img"
+               style="object-fit: cover;"
+          >
+          <div class="van-image__loading">
+            <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+            </i>
+          </div>
+          <div class="van-uploader__preview-cover">
+            <div class="preview-cover van-ellipsis">
+              Image Name
+            </div>
+          </div>
+        </div>
+        <div class="van-uploader__preview-delete">
+          <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
+          </i>
+        </div>
+      </div>
+      <div class="van-uploader__upload">
+        <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
+        </i>
+        <input type="file"
+               class="van-uploader__input"
+               accept="image/*"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-uploader">
+    <div class="van-uploader__wrapper">
+      <div class="van-uploader__upload">
+        <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
+        </i>
+        <input type="file"
+               class="van-uploader__input"
+               accept="image/*"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-uploader">
+    <div class="van-uploader__wrapper van-uploader__wrapper--disabled">
+      <div class="van-uploader__upload">
+        <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
+        </i>
+        <input type="file"
+               class="van-uploader__input"
+               accept="image/*"
+               disabled
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-uploader">
+    <div class="van-uploader__wrapper">
+      <div class="van-uploader__preview">
+        <div class="van-image van-uploader__preview-image">
+          <img src="https://img.yzcdn.cn/vant/leaf.jpg"
+               class="van-image__img"
+               style="object-fit: cover;"
+          >
+          <div class="van-image__loading">
+            <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+            </i>
+          </div>
+        </div>
+      </div>
+      <div class="van-uploader__preview">
+        <div class="van-image van-uploader__preview-image">
+          <img src="https://img.yzcdn.cn/vant/sand.jpg"
+               class="van-image__img"
+               style="object-fit: cover;"
+          >
+          <div class="van-image__loading">
+            <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-uploader__preview-delete">
+          <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
+          </i>
+        </div>
+      </div>
+      <div class="van-uploader__preview">
+        <div class="van-image van-uploader__preview-image"
+             style="width: 120px; height: 120px;"
+        >
+          <img src="https://img.yzcdn.cn/vant/tree.jpg"
+               class="van-image__img"
+               style="object-fit: contain;"
+          >
+          <div class="van-image__loading">
+            <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+            </i>
+          </div>
+        </div>
+        <div class="van-uploader__preview-delete">
+          <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
+          </i>
+        </div>
+      </div>
+      <div class="van-uploader__upload">
+        <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
+        </i>
+        <input type="file"
+               class="van-uploader__input"
+               accept="*"
+               multiple
+        >
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,118 @@
+@import './var.less';
+
+:root {
+  --van-image-preview-index-text-color: @image-preview-index-text-color;
+  --van-image-preview-index-font-size: @image-preview-index-font-size;
+  --van-image-preview-index-line-height: @image-preview-index-line-height;
+  --van-image-preview-index-text-shadow: @image-preview-index-text-shadow;
+  --van-image-preview-overlay-background-color: @image-preview-overlay-background-color;
+  --van-image-preview-close-icon-size: @image-preview-close-icon-size;
+  --van-image-preview-close-icon-color: @image-preview-close-icon-color;
+  --van-image-preview-close-icon-active-color: @image-preview-close-icon-active-color;
+  --van-image-preview-close-icon-margin: @image-preview-close-icon-margin;
+  --van-image-preview-close-icon-z-index: @image-preview-close-icon-z-index;
+}
+
+.van-image-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transform: none;
+
+  &__swipe {
+    height: 100%;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+  }
+
+  &__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__image {
+    width: 100%;
+    transition-property: transform;
+
+    &--vertical {
+      width: auto;
+      height: 100%;
+    }
+
+    img {
+      // disable desktop browser image drag
+      -webkit-user-drag: none;
+    }
+
+    .van-image {
+      &__error {
+        top: 30%;
+        height: 40%;
+      }
+
+      &__error-icon {
+        font-size: 36px;
+      }
+
+      &__loading {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__index {
+    position: absolute;
+    top: var(--van-padding-md);
+    left: 50%;
+    color: var(--van-image-preview-index-text-color);
+    font-size: var(--van-image-preview-index-font-size);
+    line-height: var(--van-image-preview-index-line-height);
+    text-shadow: var(--van-image-preview-index-text-shadow);
+    transform: translate(-50%, 0);
+  }
+
+  &__overlay {
+    background-color: var(--van-image-preview-overlay-background-color);
+  }
+
+  &__close-icon {
+    position: absolute;
+    z-index: var(--van-image-preview-close-icon-z-index);
+    color: var(--van-image-preview-close-icon-color);
+    font-size: var(--van-image-preview-close-icon-size);
+    cursor: pointer;
+
+    &:active {
+      color: var(--van-image-preview-close-icon-active-color);
+    }
+
+    &--top-left {
+      top: var(--van-image-preview-close-icon-margin);
+      left: var(--van-image-preview-close-icon-margin);
+    }
+
+    &--top-right {
+      top: var(--van-image-preview-close-icon-margin);
+      right: var(--van-image-preview-close-icon-margin);
+    }
+
+    &--bottom-left {
+      bottom: var(--van-image-preview-close-icon-margin);
+      left: var(--van-image-preview-close-icon-margin);
+    }
+
+    &--bottom-right {
+      right: var(--van-image-preview-close-icon-margin);
+      bottom: var(--van-image-preview-close-icon-margin);
+    }
+  }
+}

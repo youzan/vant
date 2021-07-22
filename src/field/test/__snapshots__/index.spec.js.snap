@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should change clear icon when using clear-icon prop 1`] = `
+<i class="van-badge__wrapper van-icon van-icon-cross van-field__clear">
+</i>
+`;
+
+exports[`should render colon when using colon prop 1`] = `
+<div class="van-cell__title van-field__label">
+  <span>
+    foo:
+  </span>
+</div>
+`;
+
+exports[`should render extra slot correctly 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-cell__value--alone van-field__value">
+    <div class="van-field__body">
+      <input type="text"
+             class="van-field__control"
+      >
+    </div>
+  </div>
+  Extra
+</div>
+`;
+
+exports[`should render input slot correctly 1`] = `
+<div class="van-field__control van-field__control--custom">
+  Custom Input
+</div>
+`;
+
+exports[`should render label slot correctly 1`] = `
+<div class="van-cell__title van-field__label">
+  Custom Label
+</div>
+`;
+
+exports[`should render word limit correctly 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-cell__value--alone van-field__value">
+    <div class="van-field__body">
+      <input type="text"
+             class="van-field__control"
+      >
+    </div>
+    <div class="van-field__word-limit">
+      <span class="van-field__word-num">
+        3
+      </span>
+      /3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render word limit correctly when modelValue is null 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-cell__value--alone van-field__value">
+    <div class="van-field__body">
+      <input type="text"
+             class="van-field__control"
+      >
+    </div>
+    <div class="van-field__word-limit">
+      <span class="van-field__word-num">
+        0
+      </span>
+      /3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render word limit correctly when modelValue is undefined 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-cell__value--alone van-field__value">
+    <div class="van-field__body">
+      <input type="text"
+             class="van-field__control"
+      >
+    </div>
+    <div class="van-field__word-limit">
+      <span class="van-field__word-num">
+        0
+      </span>
+      /3
+    </div>
+  </div>
+</div>
+`;

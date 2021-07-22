@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render thumb and tag slot correctly 1`] = `
+<div class="van-card">
+  <div class="van-card__header">
+    <a class="van-card__thumb">
+      Custom Thumb
+      <div class="van-card__tag">
+        Custom Tag
+      </div>
+    </a>
+    <div class="van-card__content">
+      <div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render bottom slot correctly 1`] = `
+<div class="van-card">
+  <div class="van-card__header">
+    <div class="van-card__content">
+      <div>
+      </div>
+      <div class="van-card__bottom">
+        Custom Bottom
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render origin-price slot correctly 1`] = `
+<div class="van-card">
+  <div class="van-card__header">
+    <div class="van-card__content">
+      <div>
+      </div>
+      <div class="van-card__bottom">
+        <div class="van-card__origin-price">
+          Custom Origin Price
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render price and num slot correctly 1`] = `
+<div class="van-card">
+  <div class="van-card__header">
+    <div class="van-card__content">
+      <div>
+      </div>
+      <div class="van-card__bottom">
+        <div class="van-card__price">
+          Custom Price
+        </div>
+        <div class="van-card__num">
+          Custom Num
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render price and price-top slot correctly 1`] = `
+<div class="van-card">
+  <div class="van-card__header">
+    <div class="van-card__content">
+      <div>
+      </div>
+      <div class="van-card__bottom">
+        Custom Price-top
+        <div class="van-card__price">
+          Custom Price
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render title and desc slot correctly 1`] = `
+<div class="van-card">
+  <div class="van-card__header">
+    <div class="van-card__content">
+      <div>
+        Custom TitleCustom desc
+      </div>
+    </div>
+  </div>
+</div>
+`;

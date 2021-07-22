@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should validate contact name before submitting form 1`] = `
+<div class="van-field__error-message">
+  Malformed name
+</div>
+`;
+
+exports[`should validate contact tel before submitting form 1`] = `
+<div class="van-field__error-message">
+  Malformed phone number
+</div>
+`;

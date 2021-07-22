@@ -1,0 +1,37 @@
+{
+  "name": "@vant/popperjs",
+  "version": "1.1.0",
+  "description": "Precompiled popperjs core",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "dev": "rollup --config rollup.config.js --watch",
+    "build": "rollup --config rollup.config.js && tsc -p ./tsconfig.json --emitDeclarationOnly",
+    "release": "npm run build && release-it"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-popperjs",
+  "dependencies": {
+    "@popperjs/core": "^2.9.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "release-it": "^14.2.2",
+    "rollup": "^2.33.3"
+  },
+  "release-it": {
+    "git": {
+      "tag": false,
+      "commitMessage": "release: @vant/popperjs ${version}"
+    }
+  }
+}

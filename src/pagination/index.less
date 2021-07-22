@@ -1,0 +1,90 @@
+@import './var.less';
+
+:root {
+  --van-pagination-height: @pagination-height;
+  --van-pagination-font-size: @pagination-font-size;
+  --van-pagination-item-width: @pagination-item-width;
+  --van-pagination-item-default-color: @pagination-item-default-color;
+  --van-pagination-item-disabled-color: @pagination-item-disabled-color;
+  --van-pagination-item-disabled-background-color: @pagination-item-disabled-background-color;
+  --van-pagination-background-color: @pagination-background-color;
+  --van-pagination-desc-color: @pagination-desc-color;
+  --van-pagination-disabled-opacity: @pagination-disabled-opacity;
+}
+
+.van-pagination {
+  display: flex;
+  font-size: var(--van-pagination-font-size);
+
+  &__item,
+  &__page-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__item {
+    flex: 1;
+    box-sizing: border-box;
+    min-width: var(--van-pagination-item-width);
+    height: var(--van-pagination-height);
+    color: var(--van-pagination-item-default-color);
+    background-color: var(--van-pagination-background-color);
+    cursor: pointer;
+    user-select: none;
+
+    &:active {
+      color: var(--van-white);
+      background-color: var(--van-pagination-item-default-color);
+    }
+
+    &::after {
+      border-width: var(--van-border-width-base) 0 var(--van-border-width-base)
+        var(--van-border-width-base);
+    }
+
+    &:last-child::after {
+      border-right-width: var(--van-border-width-base);
+    }
+
+    &--active {
+      color: var(--van-white);
+      background-color: var(--van-pagination-item-default-color);
+    }
+  }
+
+  &__prev,
+  &__next {
+    padding: 0 var(--van-padding-base);
+    cursor: pointer;
+  }
+
+  &__item--disabled {
+    &,
+    &:active {
+      color: var(--van-pagination-item-disabled-color);
+      background-color: var(--van-pagination-item-disabled-background-color);
+      cursor: not-allowed;
+      opacity: var(--van-pagination-disabled-opacity);
+    }
+  }
+
+  &__page {
+    flex-grow: 0;
+  }
+
+  &__page-desc {
+    flex: 1;
+    height: var(--van-pagination-height);
+    color: var(--van-pagination-desc-color);
+  }
+
+  &--simple {
+    .van-pagination__prev,
+    .van-pagination__next {
+      &::after {
+        border-width: var(--van-border-width-base);
+      }
+    }
+  }
+}

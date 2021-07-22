@@ -1,0 +1,51 @@
+{
+  "name": "create-vant-cli-app",
+  "version": "1.1.1",
+  "description": "Create Vant Cli App",
+  "main": "lib/index.js",
+  "bin": {
+    "create-vant-cli-app": "./lib/index.js"
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "release": "tsc & release-it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youzan/vant/tree/dev/packages/create-vant-cli-app"
+  },
+  "files": [
+    "lib",
+    "generators"
+  ],
+  "keywords": [
+    "vant"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "chenjiahan",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/fs-extra": "^8.1.0",
+    "@types/yeoman-environment": "^2.3.3",
+    "@types/yeoman-generator": "^3.1.4",
+    "release-it": "^13.0.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "consola": "^2.11.3",
+    "fast-glob": "^3.2.4",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.6",
+    "yeoman-environment": "^2.8.0",
+    "yeoman-generator": "^4.6.0"
+  },
+  "release-it": {
+    "git": {
+      "tag": false,
+      "commitMessage": "release: create-vant-cli-app ${version}"
+    }
+  }
+}
