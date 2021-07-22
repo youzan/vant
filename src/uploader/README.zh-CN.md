@@ -124,7 +124,7 @@ export default {
 ```
 
 ```js
-import Toast from 'vant';
+import { Toast } from 'vant';
 
 export default {
   methods: {
