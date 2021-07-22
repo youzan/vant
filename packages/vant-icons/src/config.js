@@ -236,7 +236,7 @@ module.exports = {
     'audio',
     'graphic',
     'column',
-    'invition',
+    'invitation',
     'play',
     'pause',
     'stop',
