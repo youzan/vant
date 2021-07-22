@@ -52,6 +52,7 @@ Locale.add(messages);
 | 日语           | ja-JP        |
 | 挪威语         | nb-NO        |
 | 罗马尼亚语     | ro-RO        |
+| 俄罗斯语       | ru-RU        |
 | 土耳其语       | tr-TR        |
 | 泰语           | th-TH        |
 | 法语           | fr-FR        |
