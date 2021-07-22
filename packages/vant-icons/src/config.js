@@ -147,7 +147,7 @@ module.exports = {
     'idcard',
     'replay',
     'shrink',
-    'security-o',
+    'shield-o',
   ],
   filled: [
     // has corresponding outline icon
