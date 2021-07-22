@@ -112,6 +112,8 @@ export default {
 };
 ```
 
+> Tips：ConfigProvider only affects its child components.
+
 ### CSS Variables
 
 There are some **Basic Variables** below, for component CSS Variables, please refer to the documentation of each component.
