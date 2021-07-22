@@ -51,6 +51,7 @@ Current supported languages:
 | Japanese                 | ja-JP        |
 | Norwegian                | nb-NO        |
 | Romanian                 | ro-RO        |
+| Russian                  | ru-RU        |
 | Turkish                  | tr-TR        |
 | Thai                     | th-TH        |
 | French                   | fr-FR        |
