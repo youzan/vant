@@ -1,5 +1,11 @@
 ## Changelog
 
+## 1.7.0
+
+- add shield-o icon
+- fix invitation typo
+- deprecate encode.less
+
 ## 1.6.0
 
 - migrate all icons to iconfont.cn
