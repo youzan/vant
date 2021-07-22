@@ -1,4 +1,4 @@
-import { Ref, unref, onUnmounted, onDeactivated, watch } from 'vue';
+import { Ref, watch, isRef, unref, onUnmounted, onDeactivated } from 'vue';
 import { onMountedOrActivated } from '../onMountedOrActivated';
 import { inBrowser } from '../utils';
 
@@ -65,8 +65,10 @@ export function useEventListener(
   onDeactivated(() => remove(target));
   onMountedOrActivated(() => add(target));
 
-  watch(target, (val, oldVal) => {
-    remove(oldVal);
-    add(val);
-  });
+  if (isRef(target)) {
+    watch(target, (val, oldVal) => {
+      remove(oldVal);
+      add(val);
+    });
+  }
 }
