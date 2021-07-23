@@ -24,16 +24,16 @@
 git clone git@github.com:youzan/vant.git
 
 # 安装依赖
-cd vant && npm run bootstrap
+cd vant && yarn
 
 # 进入开发模式，浏览器访问 http://localhost:8080
-npm run dev
+yarn dev
 ```
 
 ### 目录结构
 
 - 仓库的组件代码位于 src 下，每个组件一个文件夹
-- docs 目录下是文档网站的代码，本地开发时可以在目录下运行 npm run dev 开启文档网站
+- docs 目录下是文档网站的代码，本地开发时可以在目录下运行 `yarn dev` 开启文档网站
 
 项目主要目录如下：
 
