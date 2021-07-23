@@ -103,6 +103,7 @@ export default defineComponent({
           v-slots={pick(slots, ['left-icon', 'right-icon'])}
           ref={filedRef}
           type="search"
+          class={bem('field')}
           border={false}
           onKeypress={onKeypress}
           {...fieldAttrs}
