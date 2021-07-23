@@ -26,7 +26,7 @@ exports[`should render left slot correctly 1`] = `
 <div class="van-search">
   Custom Left Content
   <div class="van-search__content van-search__content--square">
-    <div class="van-cell van-cell--borderless van-field">
+    <div class="van-cell van-cell--borderless van-field van-search__field">
       <div class="van-field__left-icon">
         <i class="van-badge__wrapper van-icon van-icon-search">
         </i>
