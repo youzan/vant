@@ -386,14 +386,18 @@ export default defineComponent({
     };
 
     const renderInput = () => {
-      const inputAlign = getProp('inputAlign');
+      const controlClass = bem('control', [
+        getProp('inputAlign'),
+        {
+          error: showError.value,
+          custom: !!slots.input,
+          'min-height': props.type === 'textarea' && !props.autosize,
+        },
+      ]);
 
       if (slots.input) {
         return (
-          <div
-            class={bem('control', [inputAlign, 'custom'])}
-            onClick={onClickInput}
-          >
+          <div class={controlClass} onClick={onClickInput}>
             {slots.input()}
           </div>
         );
@@ -403,7 +407,7 @@ export default defineComponent({
         ref: inputRef,
         name: props.name,
         rows: props.rows !== undefined ? +props.rows : undefined,
-        class: bem('control', inputAlign),
+        class: controlClass,
         value: props.modelValue,
         disabled: getProp('disabled'),
         readonly: getProp('readonly'),
@@ -559,10 +563,8 @@ export default defineComponent({
           size={props.size}
           icon={props.leftIcon}
           class={bem({
-            error: showError.value,
             disabled,
             [`label-${labelAlign}`]: labelAlign,
-            'min-height': props.type === 'textarea' && !props.autosize,
           })}
           center={props.center}
           border={props.border}
