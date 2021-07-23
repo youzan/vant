@@ -111,6 +111,16 @@
       min-height: var(--van-cell-line-height);
     }
 
+    &--error,
+    &--error::placeholder {
+      color: var(--van-field-input-error-text-color);
+      -webkit-text-fill-color: currentColor;
+    }
+
+    &--min-height {
+      min-height: var(--van-field-text-area-min-height);
+    }
+
     // for ios wechat
     &[type='date'],
     &[type='time'],
@@ -183,21 +193,5 @@
     font-size: var(--van-field-word-limit-font-size);
     line-height: var(--van-field-word-limit-line-height);
     text-align: right;
-  }
-
-  &--error {
-    .van-field__control {
-      &,
-      &::placeholder {
-        color: var(--van-field-input-error-text-color);
-        -webkit-text-fill-color: currentColor;
-      }
-    }
-  }
-
-  &--min-height {
-    .van-field__control {
-      min-height: var(--van-field-text-area-min-height);
-    }
   }
 }
