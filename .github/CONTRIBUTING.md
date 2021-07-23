@@ -31,9 +31,9 @@ git clone git@github.com:youzan/vant.git
 
 cd vant
 
-npm run bootstrap
+yarn
 
-npm run dev
+yarn dev
 
 # open http://localhost:8080
 ```
