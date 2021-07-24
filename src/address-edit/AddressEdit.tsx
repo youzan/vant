@@ -401,6 +401,7 @@ export default defineComponent({
               round
               type="danger"
               text={props.saveButtonText || t('save')}
+              class={bem('button')}
               loading={props.isSaving}
               onClick={onSave}
             />
@@ -408,6 +409,7 @@ export default defineComponent({
               <Button
                 block
                 round
+                class={bem('button')}
                 loading={props.isDeleting}
                 text={props.deleteButtonText || t('delete')}
                 onClick={onDelete}

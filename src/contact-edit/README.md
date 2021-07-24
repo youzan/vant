@@ -87,5 +87,5 @@ The component provides the following CSS variables, which can be used to customi
 | --van-contact-edit-fields-radius | _var(--van-border-radius-md)_ | - |
 | --van-contact-edit-buttons-padding | _var(--van-padding-xl) 0_ | - |
 | --van-contact-edit-button-margin-bottom | _var(--van-padding-sm)_ | - |
-| --van-contact-edit-button-font-size | _16px_ | - |
+| --van-contact-edit-button-font-size | _var(--van-font-size-lg)_ | - |
 | --van-contact-edit-field-label-width | _4.1em_ | - |
