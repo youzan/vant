@@ -67,6 +67,7 @@ export default defineComponent({
           round
           type="danger"
           text={t('save')}
+          class={bem('button')}
           loading={props.isSaving}
           nativeType="submit"
         />
@@ -75,6 +76,7 @@ export default defineComponent({
             block
             round
             text={t('delete')}
+            class={bem('button')}
             loading={props.isDeleting}
             onClick={onDelete}
           />
