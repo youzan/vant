@@ -114,9 +114,20 @@ export default {
 
 > 注意：ConfigProvider 仅影响它的子组件的样式，不影响全局 root 节点。
 
-### CSS 变量
+### 基础变量
 
-下面是所有的**基础样式变量**，所有组件的样式变量请参考各个组件文档底部的表格。
+Vant 中的 CSS 变量分为 **基础变量** 和 **组件变量**。组件变量会继承基础变量，因此在修改基础变量后，会影响所有相关的组件。
+
+#### 修改变量
+
+由于 CSS 变量继承机制的原因， 两者的修改方式有一定差异：
+
+- 基础变量只能通过 `root 选择器` 修改，不能通过 `ConfigProvider 组件` 修改。
+- 组件变量可以通过 `root 选择器` 和 `ConfigProvider 组件` 修改。
+
+#### 变量列表
+
+下面是所有的基础变量：
 
 ```less
 // Color Palette
@@ -192,6 +203,8 @@ export default {
 --van-border-radius-lg: 8px;
 --van-border-radius-max: 999px;
 ```
+
+你可以在各个组件文档底部的表格中查看组件变量。
 
 ## API
 

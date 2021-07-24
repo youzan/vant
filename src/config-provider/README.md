@@ -114,9 +114,18 @@ export default {
 
 > Tips：ConfigProvider only affects its child components.
 
-### CSS Variables
+### Basic Variables
 
-There are some **Basic Variables** below, for component CSS Variables, please refer to the documentation of each component.
+CSS variables in Vant are divided into **basic variables** and **component variables**. Component variables will inherit the basic variables. After modifying the basic variables, all related components will be affected.
+
+#### Modify Basic Variables
+
+- The basic variables can only be modified through the `root` selector.
+- The component variables can be modified through the `root` selector and `ConfigProvider` component.
+
+#### Variable List
+
+There are all **Basic Variables** below, for component CSS Variables, please refer to the documentation of each component.
 
 ```less
 // Color Palette
