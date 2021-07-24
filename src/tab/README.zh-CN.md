@@ -228,6 +228,8 @@ export default {
 };
 ```
 
+> Tips: 通过手势滑动不会触发 before-change 属性。
+
 ## API
 
 ### Tabs Props
