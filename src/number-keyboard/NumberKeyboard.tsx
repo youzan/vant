@@ -251,7 +251,7 @@ export default defineComponent({
     );
 
     if (props.hideOnClickOutside) {
-      useClickAway(root, onClose, { eventName: 'touchstart' });
+      useClickAway(root, onBlur, { eventName: 'touchstart' });
     }
 
     return () => {
