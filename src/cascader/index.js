@@ -200,6 +200,10 @@ export default createComponent({
           selectedOption &&
           option[this.valueKey] === selectedOption[this.valueKey];
 
+        const Text = this.slots('option', { option, selected: isSelected }) || (
+          <span>{option[this.textKey]}</span>
+        );
+
         return (
           <li
             class={bem('option', { selected: isSelected })}
@@ -208,7 +212,7 @@ export default createComponent({
               this.onSelect(option, tabIndex);
             }}
           >
-            <span>{option[this.textKey]}</span>
+            {Text}
             {isSelected ? (
               <Icon name="success" class={bem('selected-icon')} />
             ) : null}

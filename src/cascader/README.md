@@ -192,13 +192,14 @@ export default {
 | --- | --- | --- |
 | change | Emitted when active option changed | `{ value, selectedOptions, tabIndex }` |
 | finish | Emitted when all options is selected | `{ value, selectedOptions, tabIndex }` |
-| close | Emmitted when the close icon is clicked | - |
+| close | Emitted when the close icon is clicked | - |
 
 ### Slots
 
-| Name  | Description  |
-| ----- | ------------ |
-| title | Custom title |
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| title | Custom title | - |
+| option `v2.12.25` | Custom option text | _{ option: Option, selected: boolean }_ |
 
 ### Less Variables
 
