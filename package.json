@@ -59,10 +59,10 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vant/cli": "^3.11.1",
+    "@vant/cli": "^3.11.2",
     "@vant/area-data": "^1.1.1",
-    "@vue/compiler-sfc": "^3.1.4",
-    "vue": "^3.1.4"
+    "@vue/compiler-sfc": "^3.1.5",
+    "vue": "^3.1.5"
   },
   "sideEffects": [
     "es/**/style/*",
