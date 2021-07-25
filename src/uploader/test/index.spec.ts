@@ -609,3 +609,13 @@ test('preview-cover slot', async () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should not render upload input when using readonly prop', async () => {
+  const wrapper = mount(Uploader, {
+    props: {
+      readonly: true,
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
