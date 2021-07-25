@@ -139,29 +139,29 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-button__content">
       <div class="van-loading van-loading--spinner van-button__loading">
         <span class="van-loading__spinner van-loading__spinner--spinner">
-          <i>
+          <i class="van-loading__line van-loading__line--1">
           </i>
-          <i>
+          <i class="van-loading__line van-loading__line--2">
           </i>
-          <i>
+          <i class="van-loading__line van-loading__line--3">
           </i>
-          <i>
+          <i class="van-loading__line van-loading__line--4">
           </i>
-          <i>
+          <i class="van-loading__line van-loading__line--5">
           </i>
-          <i>
+          <i class="van-loading__line van-loading__line--6">
           </i>
-          <i>
+          <i class="van-loading__line van-loading__line--7">
           </i>
-          <i>
+          <i class="van-loading__line van-loading__line--8">
           </i>
-          <i>
+          <i class="van-loading__line van-loading__line--9">
           </i>
-          <i>
+          <i class="van-loading__line van-loading__line--10">
           </i>
-          <i>
+          <i class="van-loading__line van-loading__line--11">
           </i>
-          <i>
+          <i class="van-loading__line van-loading__line--12">
           </i>
         </span>
       </div>
