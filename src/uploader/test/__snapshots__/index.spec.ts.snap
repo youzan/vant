@@ -266,6 +266,17 @@ exports[`render preview image 1`] = `
 </div>
 `;
 
+exports[`should not render upload input when using readonly prop 1`] = `
+<div class="van-uploader">
+  <div class="van-uploader__wrapper">
+    <div class="van-uploader__upload van-uploader__upload--readonly">
+      <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
+      </i>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`upload-icon prop 1`] = `
 <div class="van-uploader">
   <div class="van-uploader__wrapper">

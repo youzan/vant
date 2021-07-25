@@ -60,6 +60,7 @@ export default defineComponent({
     capture: String,
     multiple: Boolean,
     disabled: Boolean,
+    readonly: Boolean,
     lazyLoad: Boolean,
     uploadText: String,
     deletable: truthProp,
@@ -311,7 +312,7 @@ export default defineComponent({
         return;
       }
 
-      const Input = (
+      const Input = props.readonly ? null : (
         <input
           ref={inputRef}
           type="file"
@@ -334,7 +335,10 @@ export default defineComponent({
       }
 
       return (
-        <div class={bem('upload')} style={getSizeStyle(props.previewSize)}>
+        <div
+          class={bem('upload', { readonly: props.readonly })}
+          style={getSizeStyle(props.previewSize)}
+        >
           <Icon name={props.uploadIcon} class={bem('upload-icon')} />
           {props.uploadText && (
             <span class={bem('upload-text')}>{props.uploadText}</span>
