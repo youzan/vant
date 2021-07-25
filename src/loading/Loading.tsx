@@ -3,7 +3,9 @@ import { createNamespace, addUnit, getSizeStyle, extend } from '../utils';
 
 const [name, bem] = createNamespace('loading');
 
-const SpinIcon: JSX.Element[] = Array(12).fill(<i />);
+const SpinIcon: JSX.Element[] = Array(12)
+  .fill(null)
+  .map((_, index) => <i class={bem('line', String(index + 1))} />);
 
 const CircularIcon = (
   <svg class={bem('circular')} viewBox="25 25 50 50">
