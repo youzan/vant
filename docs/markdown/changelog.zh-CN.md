@@ -16,6 +16,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.25](https://github.com/youzan/vant/compare/v2.12.24...v2.12.25)
+
+`2021-07-25`
+
+**Feature**
+
+- Cascader: 新增 option 插槽 [#9111](https://github.com/youzan/vant/issues/9111)
+- CellGroup: 新增 inset 属性 [#9055](https://github.com/youzan/vant/issues/9055)
+
 ### [v2.12.24](https://github.com/youzan/vant/compare/v2.12.23...v2.12.24)
 
 `2021-07-13`

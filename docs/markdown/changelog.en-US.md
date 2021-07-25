@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.25](https://github.com/youzan/vant/compare/v2.12.24...v2.12.25)
+
+`2021-07-25`
+
+**Feature**
+
+- Cascader: add option slot [#9111](https://github.com/youzan/vant/issues/9111)
+- CellGroup: add inset prop [#9055](https://github.com/youzan/vant/issues/9055)
+
 ### [v2.12.24](https://github.com/youzan/vant/compare/v2.12.23...v2.12.24)
 
 `2021-07-13`
