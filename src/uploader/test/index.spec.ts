@@ -619,3 +619,9 @@ test('should not render upload input when using readonly prop', async () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should emit click-upload event when upload area is clicked', async () => {
+  const wrapper = mount(Uploader);
+  wrapper.find('.van-uploader__upload').trigger('click');
+  expect(wrapper.emitted('click-upload')).toBeTruthy();
+});

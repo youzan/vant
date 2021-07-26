@@ -109,6 +109,7 @@ export default defineComponent({
   emits: [
     'delete',
     'oversize',
+    'click-upload',
     'close-preview',
     'click-preview',
     'update:modelValue',
@@ -307,6 +308,8 @@ export default defineComponent({
       }
     };
 
+    const onClickUpload = (event: MouseEvent) => emit('click-upload', event);
+
     const renderUpload = () => {
       if (props.modelValue.length >= props.maxCount || !props.showUpload) {
         return;
@@ -327,7 +330,7 @@ export default defineComponent({
 
       if (slots.default) {
         return (
-          <div class={bem('input-wrapper')}>
+          <div class={bem('input-wrapper')} onClick={onClickUpload}>
             {slots.default()}
             {Input}
           </div>
@@ -338,6 +341,7 @@ export default defineComponent({
         <div
           class={bem('upload', { readonly: props.readonly })}
           style={getSizeStyle(props.previewSize)}
+          onClick={onClickUpload}
         >
           <Icon name={props.uploadIcon} class={bem('upload-icon')} />
           {props.uploadText && (
