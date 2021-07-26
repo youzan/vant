@@ -60,7 +60,7 @@ let allowMultiple = false;
 let currentOptions = extend({}, defaultOptions);
 
 // default options of specific type
-let defaultOptionsMap: Record<string, ToastOptions | null> = {};
+const defaultOptionsMap = new Map<string, ToastOptions>();
 
 function parseOptions(message: string | ToastOptions): ToastOptions {
   if (isObject(message)) {
@@ -130,7 +130,7 @@ function Toast(options: string | ToastOptions = {}) {
     extend(
       {},
       currentOptions,
-      defaultOptionsMap[parsedOptions.type || currentOptions.type!],
+      defaultOptionsMap.get(parsedOptions.type || currentOptions.type!),
       parsedOptions
     )
   );
@@ -164,7 +164,7 @@ function setDefaultOptions(options: ToastOptions): void;
 function setDefaultOptions(type: ToastType, options: ToastOptions): void;
 function setDefaultOptions(type: ToastType | ToastOptions, options?: any) {
   if (typeof type === 'string') {
-    defaultOptionsMap[type] = options;
+    defaultOptionsMap.set(type, options);
   } else {
     extend(currentOptions, type);
   }
@@ -174,10 +174,10 @@ Toast.setDefaultOptions = setDefaultOptions;
 
 Toast.resetDefaultOptions = (type?: ToastType) => {
   if (typeof type === 'string') {
-    defaultOptionsMap[type] = null;
+    defaultOptionsMap.delete(type);
   } else {
     currentOptions = extend({}, defaultOptions);
-    defaultOptionsMap = {};
+    defaultOptionsMap.clear();
   }
 };
 
