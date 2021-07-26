@@ -16,6 +16,26 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.1.5](https://github.com/youzan/vant/compare/v3.1.4...v3.1.5)
+
+`2021-07-26`
+
+**Feature**
+
+- AddressEdit: add address-edit-button-font-size var [#9113](https://github.com/youzan/vant/issues/9113)
+- Icon: add shield-o icon [#9082](https://github.com/youzan/vant/issues/9082)
+- Locale: add Russian language [#9088](https://github.com/youzan/vant/issues/9088)
+- Toast: improve unclickable cursor [#9116](https://github.com/youzan/vant/issues/9116)
+- Uploader: add click-upload event [#9119](https://github.com/youzan/vant/issues/9119)
+- Uploader: add readonly prop [#9118](https://github.com/youzan/vant/issues/9118)
+
+**Bug Fixes**
+
+- Icon: fix invitation typo [#9096](https://github.com/youzan/vant/issues/9096)
+- NumberKeyboard: should not emit close event when click away [#9108](https://github.com/youzan/vant/issues/9108)
+- Search: fix incorrect left icon color [#9100](https://github.com/youzan/vant/issues/9100)
+- Tabbar: fix tabbar-item-icon-margin-bottom var name [#9101](https://github.com/youzan/vant/issues/9101)
+
 ### [v3.1.4](https://github.com/youzan/vant/compare/v3.1.3...v3.1.4)
 
 `2021-07-19`

@@ -16,6 +16,26 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.1.5](https://github.com/youzan/vant/compare/v3.1.4...v3.1.5)
+
+`2021-07-26`
+
+**Feature**
+
+- AddressEdit: 新增 address-edit-button-font-size 样式变量 [#9113](https://github.com/youzan/vant/issues/9113)
+- Icon: 新增 shield-o 图标 [#9082](https://github.com/youzan/vant/issues/9082)
+- Locale: 新增 Russian 俄罗斯语言包 [#9088](https://github.com/youzan/vant/issues/9088)
+- Toast: 优化不可点击状态下的光标展示 [#9116](https://github.com/youzan/vant/issues/9116)
+- Uploader: 新增 click-upload 事件 [#9119](https://github.com/youzan/vant/issues/9119)
+- Uploader: 新增 readonly 属性 [#9118](https://github.com/youzan/vant/issues/9118)
+
+**Bug Fixes**
+
+- Icon: 修复 invitation 图标名称拼写错误 [#9096](https://github.com/youzan/vant/issues/9096)
+- NumberKeyboard: 修复点击外部时会触发 close 事件的问题 [#9108](https://github.com/youzan/vant/issues/9108)
+- Search: 修复左侧图标颜色不正确的问题 [#9100](https://github.com/youzan/vant/issues/9100)
+- Tabbar: 修复 tabbar-item-icon-margin-bottom 样式变量名称 [#9101](https://github.com/youzan/vant/issues/9101)
+
 ### [v3.1.4](https://github.com/youzan/vant/compare/v3.1.3...v3.1.4)
 
 `2021-07-19`
