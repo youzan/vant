@@ -55,6 +55,13 @@ const [name, bem] = createNamespace('tabs');
 
 export type TabsType = 'line' | 'card';
 
+export type TabsClickTabEventParams = {
+  name: string | number;
+  title: string;
+  event: MouseEvent;
+  disabled: boolean;
+};
+
 const props = {
   color: String,
   border: Boolean,
