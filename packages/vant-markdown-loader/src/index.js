@@ -11,6 +11,17 @@ function camelize(str) {
   return `-${str}`.replace(/-(\w)/g, (_, c) => (c ? c.toUpperCase() : ''));
 }
 
+function winPath(path) {
+  const isExtendedLengthPath = /^\\\\\?\\/.test(path);
+  const hasNonAscii = /[^\u0000-\u0080]+/.test(path); // eslint-disable-line no-control-regex
+
+  if (isExtendedLengthPath || hasNonAscii) {
+    return path;
+  }
+
+  return path.replace(/\\/g, '/');
+}
+
 const sharedVueOptions = `mounted() {
     const anchors = [].slice.call(this.$el.querySelectorAll('h2, h3, h4, h5'));
 
@@ -73,7 +84,8 @@ ${demoLinks
   .map((link) => {
     return `import DemoCode${camelize(
       path.basename(link, '.vue')
-    )} from '${link}';`;
+      // 处理 win path
+    )} from '${winPath(link)}';`;
   })
   .join('\n')}
 
