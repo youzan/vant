@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const os = require('os');
 const parser = require('./md-parser');
 
 function hyphenate(str) {
@@ -7,6 +8,7 @@ function hyphenate(str) {
 }
 
 module.exports = function extraDemo(content) {
+  const isWin = /^win/.test(os.platform());
   const markdownDir = path.dirname(this.resourcePath);
   const demoLinks = [];
 
@@ -15,7 +17,12 @@ module.exports = function extraDemo(content) {
     function (_, attrs, link) {
       link = link.trim(); // 去换行符
       const tag = 'demo-code-' + hyphenate(path.basename(link, '.vue'));
-      const fullLink = path.join(markdownDir, link);
+      let fullLink;
+      if (isWin) {
+        fullLink = path.posix.join(...markdownDir.split(path.sep), link);
+      } else {
+        fullLink = path.join(markdownDir, link);
+      }
       demoLinks.indexOf(fullLink) === -1 && demoLinks.push(fullLink);
       const demoContent = fs.readFileSync(fullLink, { encoding: 'utf8' });
       const demoParseredContent = parser.render(
