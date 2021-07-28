@@ -193,7 +193,7 @@ export default defineComponent({
     };
 
     linkChildren({ props });
-    useExpose({
+    useExpose<FormExpose>({
       submit,
       validate,
       scrollToField,
