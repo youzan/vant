@@ -327,6 +327,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Checkb
 | ------ | ------------------- | ------------------- | ------------ |
 | toggle | Toggle check status | _checked?: boolean_ | -            |
 
+### Types
+
+Get the type definition of the Checkbox instance through `CheckboxInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { CheckboxInstance } from 'vant';
+
+const checkboxRef = ref<CheckboxInstance>();
+
+checkboxRef.value?.toggle();
+```
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
