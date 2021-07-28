@@ -49,7 +49,7 @@ function Notify(options: NotifyMessage | NotifyOptions) {
     initInstance();
   }
 
-  options = extend(Notify.currentOptions, parseOptions(options));
+  options = extend({}, Notify.currentOptions, parseOptions(options));
 
   instance.open(options);
   clearTimeout(timer);
