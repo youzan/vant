@@ -345,17 +345,19 @@ checkboxGroup.toggleAll({
 | --- | --- | --- | --- |
 | toggle | 切换选中状态，传 `true` 为选中，`false` 为取消选中，不传参为取反 | _checked?: boolean_ | - |
 
-### Checkbox 类型定义
+### 类型定义
 
-通过 `CheckboxInstance` 获取 Checkbox 实例的类型定义。
+通过 `CheckboxInstance` 和 `CheckboxGroupInstance` 获取 Checkbox 实例的类型定义。
 
 ```ts
 import { ref } from 'vue';
-import type { CheckboxInstance } from 'vant';
+import type { CheckboxInstance, CheckboxGroupInstance } from 'vant';
 
 const checkboxRef = ref<CheckboxInstance>();
+const checkboxGroupRef = ref<CheckboxGroupInstance>();
 
 checkboxRef.value?.toggle();
+checkboxGroupRef.value?.toggleAll();
 ```
 
 ### 样式变量
