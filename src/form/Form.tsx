@@ -1,4 +1,9 @@
-import { PropType, defineComponent, ExtractPropTypes } from 'vue';
+import {
+  PropType,
+  defineComponent,
+  ExtractPropTypes,
+  ComponentPublicInstance,
+} from 'vue';
 
 // Utils
 import { truthProp, createNamespace } from '../utils';
@@ -36,8 +41,22 @@ const props = {
   },
 };
 
+type FormProps = ExtractPropTypes<typeof props>;
+
+type FormExpose = {
+  submit: () => void;
+  validate: (name?: string | string[] | undefined) => Promise<void>;
+  scrollToField: (
+    name: string,
+    options?: boolean | ScrollIntoViewOptions | undefined
+  ) => void;
+  resetValidation: (name?: string | string[] | undefined) => void;
+};
+
+export type FormInstance = ComponentPublicInstance<FormProps, FormExpose>;
+
 export type FormProvide = {
-  props: ExtractPropTypes<typeof props>;
+  props: FormProps;
 };
 
 export default defineComponent({
@@ -174,7 +193,7 @@ export default defineComponent({
     };
 
     linkChildren({ props });
-    useExpose({
+    useExpose<FormExpose>({
       submit,
       validate,
       scrollToField,

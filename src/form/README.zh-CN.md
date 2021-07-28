@@ -582,6 +582,19 @@ export default {
 | resetValidation | 重置表单项的验证提示，支持传入 `name` 来重置单个或部分表单项 | _name?: string \| string[]_ | - |
 | scrollToField | 滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部 | _name: string, alignToTop: boolean_ | - |
 
+### 类型定义
+
+通过 `FormInstance` 获取 Form 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { FormInstance } from 'vant';
+
+const formRef = ref<FormInstance>();
+
+formRef.value?.submit();
+```
+
 ### Slots
 
 | 名称    | 说明     |
