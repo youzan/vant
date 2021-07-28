@@ -129,12 +129,12 @@ export default defineComponent({
       const props = getCurrentInstance()?.vnode?.props;
       if (props && 'onClick' in props) {
         console.warn(
-          '[Vant] Tabs: "click" event is disabled, using "click-tab" instead.'
+          '[Vant] Tabs: "click" event is deprecated, using "click-tab" instead.'
         );
       }
       if (props && 'onDisabled' in props) {
         console.warn(
-          '[Vant] Tabs: "disabled" event is disabled, using "click-tab" instead.'
+          '[Vant] Tabs: "disabled" event is deprecated, using "click-tab" instead.'
         );
       }
     }
