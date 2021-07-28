@@ -75,6 +75,7 @@ export default {
 | class-name | 自定义类名 | _string_ | - |
 | custom-style | 自定义样式 | _object_ | - |
 | lock-scroll | 是否锁定背景滚动，锁定时蒙层里的内容也将无法滚动 | _boolean_ | `true` |
+| disable-animation | 是否禁用动画 | _boolean_ | `false` |
 
 ### Events
 

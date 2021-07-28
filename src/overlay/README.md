@@ -73,6 +73,7 @@ export default {
 | class-name | ClassName | _string_ | - |
 | custom-class | Custom style | _object_ | - |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
+| disable-animation | Whether to disable animation | _boolean_ | `false` |
 
 ### Events
 
