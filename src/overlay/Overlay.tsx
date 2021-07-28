@@ -23,6 +23,7 @@ export default defineComponent({
     className: unknownProp,
     lockScroll: truthProp,
     customStyle: Object as PropType<CSSProperties>,
+    disableAnimation: Boolean,
   },
 
   setup(props, { slots }) {
@@ -38,7 +39,7 @@ export default defineComponent({
         props.customStyle
       );
 
-      if (isDef(props.duration)) {
+      if (isDef(props.duration) && !props.disableAnimation) {
         style.animationDuration = `${props.duration}s`;
       }
 
@@ -54,6 +55,11 @@ export default defineComponent({
       );
     });
 
-    return () => <Transition name="van-fade">{renderOverlay()}</Transition>;
+    return () =>
+      !!props.disableAnimation ? (
+        renderOverlay()
+      ) : (
+        <Transition name="van-fade">{renderOverlay()}</Transition>
+      );
   },
 });
