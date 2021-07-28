@@ -5,3 +5,4 @@ const Checkbox = withInstall<typeof _Checkbox>(_Checkbox);
 
 export default Checkbox;
 export { Checkbox };
+export type { CheckboxInstance } from './Checkbox';
