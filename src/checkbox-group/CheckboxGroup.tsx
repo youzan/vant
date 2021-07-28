@@ -4,11 +4,18 @@ import {
   InjectionKey,
   defineComponent,
   ExtractPropTypes,
+  ComponentPublicInstance,
 } from 'vue';
+
+// Utils
 import { createNamespace } from '../utils';
+
+// Composables
 import { useChildren } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { useLinkField } from '../composables/use-link-field';
+
+// Types
 import { CheckerParent, CheckerDirection } from '../checkbox/Checker';
 
 const [name, bem] = createNamespace('checkbox-group');
@@ -32,8 +39,19 @@ export type CheckboxGroupToggleAllOptions =
       skipDisabled?: boolean;
     };
 
+type CheckboxGroupProps = ExtractPropTypes<typeof props>;
+
+type CheckboxGroupExpose = {
+  toggleAll: (options?: CheckboxGroupToggleAllOptions) => void;
+};
+
+export type CheckboxGroupInstance = ComponentPublicInstance<
+  CheckboxGroupProps,
+  CheckboxGroupExpose
+>;
+
 export type CheckboxGroupProvide = CheckerParent & {
-  props: ExtractPropTypes<typeof props>;
+  props: CheckboxGroupProps;
   updateValue: (value: unknown[]) => void;
 };
 
@@ -79,7 +97,7 @@ export default defineComponent({
       (value) => emit('change', value)
     );
 
-    useExpose({ toggleAll });
+    useExpose<CheckboxGroupExpose>({ toggleAll });
     useLinkField(() => props.modelValue);
     linkChildren({
       props,

@@ -5,4 +5,7 @@ const CheckboxGroup = withInstall<typeof _CheckboxGroup>(_CheckboxGroup);
 
 export default CheckboxGroup;
 export { CheckboxGroup };
-export type { CheckboxGroupToggleAllOptions } from './CheckboxGroup';
+export type {
+  CheckboxGroupInstance,
+  CheckboxGroupToggleAllOptions,
+} from './CheckboxGroup';

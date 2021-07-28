@@ -329,15 +329,17 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Checkb
 
 ### Types
 
-Get the type definition of the Checkbox instance through `CheckboxInstance`.
+Get the type definition of the Checkbox instance through `CheckboxInstance` and `CheckboxGroupInstance`.
 
 ```ts
 import { ref } from 'vue';
-import type { CheckboxInstance } from 'vant';
+import type { CheckboxInstance, CheckboxGroupInstance } from 'vant';
 
 const checkboxRef = ref<CheckboxInstance>();
+const checkboxGroupRef = ref<CheckboxGroupInstance>();
 
 checkboxRef.value?.toggle();
+checkboxGroupRef.value?.toggleAll();
 ```
 
 ### CSS Variables
