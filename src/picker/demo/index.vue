@@ -49,8 +49,8 @@
   <demo-block card v-if="!isWeapp" :title="t('withPopup')">
     <van-field
       v-model="fieldValue"
+      is-link
       readonly
-      clickable
       :label="t('city')"
       :placeholder="t('chooseCity')"
       @click="onClickField"

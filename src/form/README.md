@@ -318,8 +318,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="picker"
   label="Picker"
   placeholder="Select city"
@@ -364,8 +364,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="datetimePicker"
   label="Datetime Picker"
   placeholder="Select time"
@@ -407,8 +407,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="area"
   label="Area Picker"
   placeholder="Select area"
@@ -454,8 +454,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="calendar"
   label="Calendar"
   placeholder="Select date"
