@@ -181,6 +181,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get CountD
 | pause | Pause count down | -         | -            |
 | reset | Reset count down | -         | -            |
 
+### Types
+
+Get the type definition of the CountDown instance through `CountDownInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { CountDownInstance } from 'vant';
+
+const countDownRef = ref<CountDownInstance>();
+
+countDownRef.value?.start();
+```
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
