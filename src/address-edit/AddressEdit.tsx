@@ -355,8 +355,7 @@ export default defineComponent({
               v-show={props.showArea}
               readonly
               label={t('area')}
-              clickable={!disableArea}
-              rightIcon={!disableArea ? 'arrow' : undefined}
+              is-link={!disableArea}
               modelValue={areaText.value}
               placeholder={props.areaPlaceholder || t('areaPlaceholder')}
               errorMessage={errorInfo.areaCode}

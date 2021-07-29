@@ -1,8 +1,8 @@
 <template>
   <van-field
     v-model="value"
+    is-link
     readonly
-    clickable
     name="area"
     :label="t('picker')"
     :placeholder="t('placeholder')"

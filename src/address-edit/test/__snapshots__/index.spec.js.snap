@@ -55,12 +55,10 @@ exports[`should render AddressEdit correctly 1`] = `
                  readonly
                  placeholder="Area"
           >
-          <div class="van-field__right-icon">
-            <i class="van-badge__wrapper van-icon van-icon-arrow">
-            </i>
-          </div>
         </div>
       </div>
+      <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+      </i>
     </div>
     <div class="van-cell van-field van-address-edit-detail">
       <div class="van-cell__title van-field__label">
@@ -142,12 +140,10 @@ exports[`should render AddressEdit with props correctly 1`] = `
                  readonly
                  placeholder="Area"
           >
-          <div class="van-field__right-icon">
-            <i class="van-badge__wrapper van-icon van-icon-arrow">
-            </i>
-          </div>
         </div>
       </div>
+      <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+      </i>
     </div>
     <div class="van-cell van-field van-address-edit-detail">
       <div class="van-cell__title van-field__label">
@@ -270,15 +266,13 @@ exports[`should valid area code and render error message correctly 1`] = `
              readonly
              placeholder="Area"
       >
-      <div class="van-field__right-icon">
-        <i class="van-badge__wrapper van-icon van-icon-arrow">
-        </i>
-      </div>
     </div>
     <div class="van-field__error-message">
       Please select a receiving area
     </div>
   </div>
+  <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+  </i>
 </div>
 `;
 
@@ -299,12 +293,10 @@ exports[`should valid area code and render error message correctly 2`] = `
              readonly
              placeholder="Area"
       >
-      <div class="van-field__right-icon">
-        <i class="van-badge__wrapper van-icon van-icon-arrow">
-        </i>
-      </div>
     </div>
   </div>
+  <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+  </i>
 </div>
 `;
 

@@ -241,8 +241,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   label="城市"
   placeholder="选择城市"
   @click="state.showPicker = true"

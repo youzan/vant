@@ -50,12 +50,10 @@ exports[`should render demo and match snapshot 1`] = `
                    readonly
                    placeholder="Area"
             >
-            <div class="van-field__right-icon">
-              <i class="van-badge__wrapper van-icon van-icon-arrow">
-              </i>
-            </div>
           </div>
         </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
       <div class="van-cell van-field van-address-edit-detail">
         <div class="van-cell__title van-field__label">

@@ -345,8 +345,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="picker"
   label="选择器"
   placeholder="点击选择城市"
@@ -393,8 +393,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="datetimePicker"
   label="时间选择"
   placeholder="点击选择时间"
@@ -438,8 +438,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="area"
   label="地区选择"
   placeholder="点击选择省市区"
@@ -487,8 +487,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="calendar"
   label="日历"
   placeholder="点击选择日期"

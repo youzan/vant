@@ -451,6 +451,8 @@ exports[`should render demo and match snapshot 1`] = `
             >
           </div>
         </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
       <div class="van-cell van-cell--clickable van-field"
            role="button"
@@ -471,6 +473,8 @@ exports[`should render demo and match snapshot 1`] = `
             >
           </div>
         </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
       <div class="van-cell van-cell--clickable van-field"
            role="button"
@@ -491,6 +495,8 @@ exports[`should render demo and match snapshot 1`] = `
             >
           </div>
         </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
       <div class="van-cell van-cell--clickable van-field"
            role="button"
@@ -511,6 +517,8 @@ exports[`should render demo and match snapshot 1`] = `
             >
           </div>
         </div>
+        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+        </i>
       </div>
     </div>
     <div style="margin: 16px 16px 0px;">
