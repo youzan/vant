@@ -1,8 +1,8 @@
 <template>
   <van-field
     v-model="value"
+    is-link
     readonly
-    clickable
     name="calendar"
     :label="t('calendar')"
     :placeholder="t('placeholder')"

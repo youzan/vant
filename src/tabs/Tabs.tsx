@@ -11,6 +11,7 @@ import {
   CSSProperties,
   defineComponent,
   ExtractPropTypes,
+  getCurrentInstance,
   ComponentPublicInstance,
 } from 'vue';
 
@@ -53,6 +54,13 @@ import TabsContent from './TabsContent';
 const [name, bem] = createNamespace('tabs');
 
 export type TabsType = 'line' | 'card';
+
+export type TabsClickTabEventParams = {
+  name: string | number;
+  title: string;
+  event: MouseEvent;
+  disabled: boolean;
+};
 
 const props = {
   color: String,
@@ -117,6 +125,20 @@ export default defineComponent({
   ],
 
   setup(props, { emit, slots }) {
+    if (process.env.NODE_ENV !== 'production') {
+      const props = getCurrentInstance()?.vnode?.props;
+      if (props && 'onClick' in props) {
+        console.warn(
+          '[Vant] Tabs: "click" event is deprecated, using "click-tab" instead.'
+        );
+      }
+      if (props && 'onDisabled' in props) {
+        console.warn(
+          '[Vant] Tabs: "disabled" event is deprecated, using "click-tab" instead.'
+        );
+      }
+    }
+
     let tabHeight: number;
     let lockScroll: boolean;
     let stickyFixed: boolean;

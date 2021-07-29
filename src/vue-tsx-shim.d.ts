@@ -32,6 +32,7 @@ declare module 'vue' {
     onPreview?: EventHandler;
     onKeypress?: EventHandler;
     onTouchend?: EventHandler;
+    onClickTab?: EventHandler;
     onClickStep?: EventHandler;
     onTouchmove?: EventHandler;
     onTouchstart?: EventHandler;

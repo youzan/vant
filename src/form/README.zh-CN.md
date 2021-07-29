@@ -345,8 +345,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="picker"
   label="选择器"
   placeholder="点击选择城市"
@@ -393,8 +393,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="datetimePicker"
   label="时间选择"
   placeholder="点击选择时间"
@@ -438,8 +438,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="area"
   label="地区选择"
   placeholder="点击选择省市区"
@@ -487,8 +487,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="calendar"
   label="日历"
   placeholder="点击选择日期"
@@ -581,6 +581,19 @@ export default {
 | validate | 验证表单，支持传入 `name` 来验证单个或部分表单项 | _name?: string \| string[]_ | _Promise_ |
 | resetValidation | 重置表单项的验证提示，支持传入 `name` 来重置单个或部分表单项 | _name?: string \| string[]_ | - |
 | scrollToField | 滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部 | _name: string, alignToTop: boolean_ | - |
+
+### 类型定义
+
+通过 `FormInstance` 获取 Form 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { FormInstance } from 'vant';
+
+const formRef = ref<FormInstance>();
+
+formRef.value?.submit();
+```
 
 ### Slots
 

@@ -6,6 +6,9 @@ import { Tab } from '../tab';
 import { Tabs } from '../tabs';
 import { Icon } from '../icon';
 
+// Types
+import type { TabsClickTabEventParams } from '../tabs/Tabs';
+
 const [name, bem, t] = createNamespace('cascader');
 
 export type CascaderOption = {
@@ -187,9 +190,8 @@ export default defineComponent({
 
     const onClose = () => emit('close');
 
-    const onClickTab = (tabIndex: number, title: string) => {
-      emit('click-tab', tabIndex, title);
-    };
+    const onClickTab = ({ name, title }: TabsClickTabEventParams) =>
+      emit('click-tab', name, title);
 
     const renderHeader = () => (
       <div class={bem('header')}>
@@ -279,7 +281,7 @@ export default defineComponent({
         color={props.activeColor}
         swipeThreshold={0}
         swipeable={props.swipeable}
-        onClick={onClickTab}
+        onClickTab={onClickTab}
       >
         {state.tabs.map(renderTab)}
       </Tabs>

@@ -318,8 +318,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="picker"
   label="Picker"
   placeholder="Select city"
@@ -364,8 +364,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="datetimePicker"
   label="Datetime Picker"
   placeholder="Select time"
@@ -407,8 +407,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="area"
   label="Area Picker"
   placeholder="Select area"
@@ -454,8 +454,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   name="calendar"
   label="Calendar"
   placeholder="Select date"
@@ -542,6 +542,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Form i
 | validate | Validate form | _name?: string \| string[]_ | _Promise_ |
 | resetValidation | Reset validation | _name?: string \| string[]_ | - |
 | scrollToField | Scroll to field | _name: string, alignToTop: boolean_ | - |
+
+### Types
+
+Get the type definition of the Form instance through `FormInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { FormInstance } from 'vant';
+
+const formRef = ref<FormInstance>();
+
+formRef.value?.submit();
+```
 
 ### Slots
 

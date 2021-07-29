@@ -217,8 +217,8 @@ export default {
 ```html
 <van-field
   v-model="state.value"
+  is-link
   readonly
-  clickable
   label="City"
   placeholder="Choose City"
   @click="state.showPicker = true"

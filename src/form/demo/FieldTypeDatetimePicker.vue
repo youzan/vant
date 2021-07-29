@@ -1,8 +1,8 @@
 <template>
   <van-field
     v-model="value"
+    is-link
     readonly
-    clickable
     name="datetimePicker"
     :label="t('label')"
     :placeholder="t('placeholder')"
