@@ -5,4 +5,4 @@ const Swipe = withInstall<typeof _Swipe>(_Swipe);
 
 export default Swipe;
 export { Swipe };
-export type { SwipeToOptions } from './Swipe';
+export type { SwipeInstance, SwipeToOptions } from './types';

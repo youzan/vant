@@ -4,7 +4,6 @@ import {
   reactive,
   computed,
   onMounted,
-  ComputedRef,
   onActivated,
   InjectionKey,
   CSSProperties,
@@ -34,6 +33,9 @@ import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 import { onPopupReopen } from '../composables/on-popup-reopen';
 
+// Types
+import { SwipeState, SwipeExpose, SwipeProvide, SwipeToOptions } from './types';
+
 const [name, bem] = createNamespace('swipe');
 
 const props = {
@@ -60,16 +62,7 @@ const props = {
   },
 };
 
-export type SwipeToOptions = {
-  immediate?: boolean;
-};
-
-export type SwipeProvide = {
-  props: ExtractPropTypes<typeof props>;
-  size: ComputedRef<number>;
-  count: ComputedRef<number>;
-  activeIndicator: ComputedRef<number>;
-};
+export type SwipeProps = ExtractPropTypes<typeof props>;
 
 export const SWIPE_KEY: InjectionKey<SwipeProvide> = Symbol(name);
 
@@ -82,8 +75,8 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const root = ref<HTMLElement>();
-    const state = reactive({
-      rect: null as { width: number; height: number } | null,
+    const state = reactive<SwipeState>({
+      rect: null,
       width: 0,
       height: 0,
       offset: 0,
@@ -403,7 +396,7 @@ export default defineComponent({
       }
     };
 
-    useExpose({
+    useExpose<SwipeExpose>({
       prev,
       next,
       state,
