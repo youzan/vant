@@ -122,9 +122,9 @@ export default {
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get AddressEdit instance and call instance methods.
 
-| Name             | Description        | Attribute             | Return value |
-| ---------------- | ------------------ | --------------------- | ------------ |
-| setAddressDetail | Set address detail | addressDetail: string | -            |
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| setAddressDetail | Set address detail | _addressDetail: string_ | - |
 
 ### AddressInfo Data Structure
 

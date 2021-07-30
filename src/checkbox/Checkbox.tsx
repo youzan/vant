@@ -1,11 +1,4 @@
-import {
-  watch,
-  computed,
-  ComputedRef,
-  defineComponent,
-  ExtractPropTypes,
-  ComponentPublicInstance,
-} from 'vue';
+import { watch, computed, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import { createNamespace, extend, pick, truthProp } from '../utils';
@@ -19,30 +12,16 @@ import { useLinkField } from '../composables/use-link-field';
 // Components
 import Checker, { checkerProps } from './Checker';
 
+// Types
+import type { CheckboxExpose } from './types';
+
 const [name, bem] = createNamespace('checkbox');
 
 const props = extend({}, checkerProps, {
   bindGroup: truthProp,
 });
 
-type CheckboxProps = ExtractPropTypes<typeof props>;
-
-type CheckboxExpose = {
-  toggle: (newValue?: boolean) => void;
-  /**
-   * @private
-   */
-  props: CheckboxProps;
-  /**
-   * @private
-   */
-  checked: ComputedRef<boolean>;
-};
-
-export type CheckboxInstance = ComponentPublicInstance<
-  CheckboxProps,
-  CheckboxExpose
->;
+export type CheckboxProps = ExtractPropTypes<typeof props>;
 
 export default defineComponent({
   name,

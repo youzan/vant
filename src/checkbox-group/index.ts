@@ -8,4 +8,4 @@ export { CheckboxGroup };
 export type {
   CheckboxGroupInstance,
   CheckboxGroupToggleAllOptions,
-} from './CheckboxGroup';
+} from './types';

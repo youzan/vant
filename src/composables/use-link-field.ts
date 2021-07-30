@@ -1,5 +1,5 @@
 import { watch, inject, InjectionKey } from 'vue';
-import type { FormProvide } from '../form/Form';
+import type { FormProvide } from '../form/types';
 import type { FieldProvide } from '../field/types';
 
 export const FORM_KEY: InjectionKey<FormProvide> = Symbol('van-form');
