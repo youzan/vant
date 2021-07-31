@@ -206,6 +206,19 @@ export default {
 | --- | --- | --- | --- |
 | check | 检查当前的滚动位置，若已滚动至底部，则会触发 load 事件 | - | - |
 
+### 类型定义
+
+通过 `ListInstance` 获取 List 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { ListInstance } from 'vant';
+
+const listRef = ref<ListInstance>();
+
+listRef.value?.check();
+```
+
 ### Slots
 
 | 名称     | 说明                       |

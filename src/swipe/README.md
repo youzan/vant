@@ -179,6 +179,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Swipe 
 | swipeTo | Swipe to target index | _index: number, options: SwipeToOptions_ | - |
 | resize | Resize Swipe when container element resized or visibility changed | - | - |
 
+### Types
+
+Get the type definition of the Swipe instance through `SwipeInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { SwipeInstance } from 'vant';
+
+const swipeRef = ref<SwipeInstance>();
+
+swipeRef.value?.next();
+```
+
 ### SwipeToOptions
 
 | Name      | Description               | Type      |

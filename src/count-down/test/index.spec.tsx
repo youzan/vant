@@ -1,6 +1,7 @@
 import { KeepAlive, nextTick } from 'vue';
 import { CountDown } from '..';
 import { mount, later } from '../../../test';
+import type { CountDownCurrentTime, CountDownInstance } from '../CountDown';
 
 test('should emit finish event when finished', async () => {
   const wrapper = mount(CountDown, {
@@ -82,8 +83,9 @@ test('should start counting after calling the start method', async () => {
   });
 
   const prevSnapShot = wrapper.html();
+  const instance = wrapper.vm as CountDownInstance;
 
-  wrapper.vm.start();
+  instance.start();
   await later(50);
 
   const laterSnapShot = wrapper.html();
@@ -100,7 +102,9 @@ test('should pause counting after calling the pause method', async () => {
   });
 
   const prevSnapShot = wrapper.html();
-  wrapper.vm.pause();
+  const instance = wrapper.vm as CountDownInstance;
+
+  instance.pause();
   await later(50);
   const laterSnapShot = wrapper.html();
 
@@ -118,10 +122,11 @@ test('should reset time after calling the reset method', async () => {
   });
 
   const prevSnapShot = wrapper.html();
+  const instance = wrapper.vm as CountDownInstance;
 
-  wrapper.vm.start();
+  instance.start();
   await later(50);
-  wrapper.vm.reset();
+  instance.reset();
   await nextTick();
   const laterSnapShot = wrapper.html();
 
@@ -210,12 +215,14 @@ test('should emit change event when counting', async () => {
 
   expect(wrapper.emitted('change')).toBeFalsy();
   await later(50);
-  expect(wrapper.emitted('change')[0][0]).toEqual({
-    days: 0,
-    hours: 0,
-    milliseconds: 0,
-    minutes: 0,
-    seconds: 0,
-    total: 0,
-  });
+  expect(wrapper.emitted<CountDownCurrentTime>('change')![0]).toEqual([
+    {
+      days: 0,
+      hours: 0,
+      milliseconds: 0,
+      minutes: 0,
+      seconds: 0,
+      total: 0,
+    },
+  ]);
 });

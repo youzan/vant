@@ -4,7 +4,6 @@ import {
   InjectionKey,
   defineComponent,
   ExtractPropTypes,
-  ComponentPublicInstance,
 } from 'vue';
 
 // Utils
@@ -16,7 +15,12 @@ import { useExpose } from '../composables/use-expose';
 import { useLinkField } from '../composables/use-link-field';
 
 // Types
-import { CheckerParent, CheckerDirection } from '../checkbox/Checker';
+import type { CheckerDirection } from '../checkbox/Checker';
+import type {
+  CheckboxGroupExpose,
+  CheckboxGroupProvide,
+  CheckboxGroupToggleAllOptions,
+} from './types';
 
 const [name, bem] = createNamespace('checkbox-group');
 
@@ -32,28 +36,7 @@ const props = {
   },
 };
 
-export type CheckboxGroupToggleAllOptions =
-  | boolean
-  | {
-      checked?: boolean;
-      skipDisabled?: boolean;
-    };
-
-type CheckboxGroupProps = ExtractPropTypes<typeof props>;
-
-type CheckboxGroupExpose = {
-  toggleAll: (options?: CheckboxGroupToggleAllOptions) => void;
-};
-
-export type CheckboxGroupInstance = ComponentPublicInstance<
-  CheckboxGroupProps,
-  CheckboxGroupExpose
->;
-
-export type CheckboxGroupProvide = CheckerParent & {
-  props: CheckboxGroupProps;
-  updateValue: (value: unknown[]) => void;
-};
+export type CheckboxGroupProps = ExtractPropTypes<typeof props>;
 
 export const CHECKBOX_GROUP_KEY: InjectionKey<CheckboxGroupProvide> = Symbol(
   name

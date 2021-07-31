@@ -191,6 +191,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get List i
 | ----- | --------------------- | --------- | ------------ |
 | check | Check scroll position | -         | -            |
 
+### Types
+
+Get the type definition of the List instance through `ListInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { ListInstance } from 'vant';
+
+const listRef = ref<ListInstance>();
+
+listRef.value?.check();
+```
+
 ### Slots
 
 | Name     | Description          |

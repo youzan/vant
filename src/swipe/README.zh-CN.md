@@ -187,6 +187,19 @@ export default {
 | swipeTo | 切换到指定位置 | _index: number, options: SwipeToOptions_ | - |
 | resize | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 | - | - |
 
+### 类型定义
+
+通过 `SwipeInstance` 获取 Swipe 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { SwipeInstance } from 'vant';
+
+const swipeRef = ref<SwipeInstance>();
+
+swipeRef.value?.next();
+```
+
 ### SwipeToOptions 格式
 
 | 名称      | 说明         | 类型      |

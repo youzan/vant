@@ -1,30 +1,53 @@
-import { watch, computed, defineComponent } from 'vue';
+import {
+  watch,
+  computed,
+  defineComponent,
+  ExtractPropTypes,
+  ComponentPublicInstance,
+} from 'vue';
 
 // Utils
 import { truthProp, createNamespace } from '../utils';
 import { parseFormat } from './utils';
 
 // Composables
-import { useCountDown } from '@vant/use';
+import { useCountDown, CurrentTime } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('count-down');
 
+const props = {
+  autoStart: truthProp,
+  millisecond: Boolean,
+  time: {
+    type: [Number, String],
+    default: 0,
+  },
+  format: {
+    type: String,
+    default: 'HH:mm:ss',
+  },
+};
+
+type CountDownProps = ExtractPropTypes<typeof props>;
+
+type CountDownExpose = {
+  start: () => void;
+  pause: () => void;
+  reset: () => void;
+};
+
+export type CountDownInstance = ComponentPublicInstance<
+  CountDownProps,
+  CountDownExpose
+>;
+
+export type CountDownCurrentTime = CurrentTime;
+
 export default defineComponent({
   name,
 
-  props: {
-    autoStart: truthProp,
-    millisecond: Boolean,
-    time: {
-      type: [Number, String],
-      default: 0,
-    },
-    format: {
-      type: String,
-      default: 'HH:mm:ss',
-    },
-  },
+  props,
 
   emits: ['change', 'finish'],
 

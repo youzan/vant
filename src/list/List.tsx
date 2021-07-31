@@ -6,6 +6,7 @@ import {
   onUpdated,
   onMounted,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -19,30 +20,35 @@ import { useTabStatus } from '../composables/use-tab-status';
 // Components
 import { Loading } from '../loading';
 
+// Types
+import type { ListExpose, ListDirection } from './types';
+
 const [name, bem, t] = createNamespace('list');
 
-export type ListDirection = 'up' | 'down';
+const props = {
+  error: Boolean,
+  loading: Boolean,
+  finished: Boolean,
+  errorText: String,
+  loadingText: String,
+  finishedText: String,
+  immediateCheck: truthProp,
+  offset: {
+    type: [Number, String],
+    default: 300,
+  },
+  direction: {
+    type: String as PropType<ListDirection>,
+    default: 'down',
+  },
+};
+
+export type ListProps = ExtractPropTypes<typeof props>;
 
 export default defineComponent({
   name,
 
-  props: {
-    error: Boolean,
-    loading: Boolean,
-    finished: Boolean,
-    errorText: String,
-    loadingText: String,
-    finishedText: String,
-    immediateCheck: truthProp,
-    offset: {
-      type: [Number, String],
-      default: 300,
-    },
-    direction: {
-      type: String as PropType<ListDirection>,
-      default: 'down',
-    },
-  },
+  props,
 
   emits: ['load', 'update:error', 'update:loading'],
 
@@ -157,7 +163,7 @@ export default defineComponent({
       }
     });
 
-    useExpose({ check });
+    useExpose<ListExpose>({ check });
 
     useEventListener('scroll', check, { target: scrollParent });
 
