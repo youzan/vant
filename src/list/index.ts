@@ -5,4 +5,4 @@ const List = withInstall<typeof _List>(_List);
 
 export default List;
 export { List };
-export type { ListDirection } from './List';
+export type { ListInstance, ListDirection } from './types';
