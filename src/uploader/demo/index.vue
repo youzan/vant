@@ -56,7 +56,7 @@
 <script lang="ts">
 import { reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import { UploaderFileListItem } from '../utils';
+import { UploaderFileListItem } from '../types';
 import { Toast } from '../../toast';
 
 const i18n = {
