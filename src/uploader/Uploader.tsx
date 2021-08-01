@@ -1,4 +1,10 @@
-import { ref, reactive, PropType, defineComponent } from 'vue';
+import {
+  ref,
+  reactive,
+  PropType,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import {
@@ -17,9 +23,6 @@ import {
   filterFiles,
   isImageFile,
   readFileContent,
-  UploaderMaxSize,
-  UploaderResultType,
-  UploaderFileListItem,
 } from './utils';
 
 // Composables
@@ -34,77 +37,71 @@ import UploaderPreviewItem from './UploaderPreviewItem';
 // Types
 import type { ImageFit } from '../image';
 import type { Interceptor } from '../utils/interceptor';
+import type {
+  UploaderExpose,
+  UploaderMaxSize,
+  UploaderAfterRead,
+  UploaderBeforeRead,
+  UploaderResultType,
+  UploaderFileListItem,
+} from './types';
 
-type PromiseOrNot<T> = T | Promise<T>;
+const props = {
+  capture: String,
+  multiple: Boolean,
+  disabled: Boolean,
+  readonly: Boolean,
+  lazyLoad: Boolean,
+  uploadText: String,
+  deletable: truthProp,
+  afterRead: Function as PropType<UploaderAfterRead>,
+  showUpload: truthProp,
+  beforeRead: Function as PropType<UploaderBeforeRead>,
+  beforeDelete: Function as PropType<Interceptor>,
+  previewSize: [Number, String],
+  previewImage: truthProp,
+  previewOptions: Object as PropType<ImagePreviewOptions>,
+  previewFullImage: truthProp,
+  name: {
+    type: [Number, String],
+    default: '',
+  },
+  accept: {
+    type: String,
+    default: 'image/*',
+  },
+  modelValue: {
+    type: Array as PropType<UploaderFileListItem[]>,
+    default: () => [],
+  },
+  maxSize: {
+    type: [Number, String, Function] as PropType<UploaderMaxSize>,
+    default: Number.MAX_VALUE,
+  },
+  maxCount: {
+    type: [Number, String],
+    default: Number.MAX_VALUE,
+  },
+  imageFit: {
+    type: String as PropType<ImageFit>,
+    default: 'cover',
+  },
+  resultType: {
+    type: String as PropType<UploaderResultType>,
+    default: 'dataUrl',
+  },
+  uploadIcon: {
+    type: String,
+    default: 'photograph',
+  },
+};
 
-export type UploaderBeforeRead = (
-  file: File | File[],
-  detail: {
-    name: string | number;
-    index: number;
-  }
-) => PromiseOrNot<File | File[] | undefined>;
-
-export type UploaderAfterRead = (
-  items: UploaderFileListItem | UploaderFileListItem[],
-  detail: {
-    name: string | number;
-    index: number;
-  }
-) => void;
+export type UploaderProps = ExtractPropTypes<typeof props>;
 
 export default defineComponent({
   name,
 
-  props: {
-    capture: String,
-    multiple: Boolean,
-    disabled: Boolean,
-    readonly: Boolean,
-    lazyLoad: Boolean,
-    uploadText: String,
-    deletable: truthProp,
-    afterRead: Function as PropType<UploaderAfterRead>,
-    showUpload: truthProp,
-    beforeRead: Function as PropType<UploaderBeforeRead>,
-    beforeDelete: Function as PropType<Interceptor>,
-    previewSize: [Number, String],
-    previewImage: truthProp,
-    previewOptions: Object as PropType<ImagePreviewOptions>,
-    previewFullImage: truthProp,
-    name: {
-      type: [Number, String],
-      default: '',
-    },
-    accept: {
-      type: String,
-      default: 'image/*',
-    },
-    modelValue: {
-      type: Array as PropType<UploaderFileListItem[]>,
-      default: () => [],
-    },
-    maxSize: {
-      type: [Number, String, Function] as PropType<UploaderMaxSize>,
-      default: Number.MAX_VALUE,
-    },
-    maxCount: {
-      type: [Number, String],
-      default: Number.MAX_VALUE,
-    },
-    imageFit: {
-      type: String as PropType<ImageFit>,
-      default: 'cover',
-    },
-    resultType: {
-      type: String as PropType<UploaderResultType>,
-      default: 'dataUrl',
-    },
-    uploadIcon: {
-      type: String,
-      default: 'photograph',
-    },
-  },
+  props,
 
   emits: [
     'delete',
@@ -358,7 +355,7 @@ export default defineComponent({
       }
     };
 
-    useExpose({
+    useExpose<UploaderExpose>({
       chooseFile,
       closeImagePreview,
     });

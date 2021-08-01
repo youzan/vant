@@ -1,7 +1,7 @@
 import { PropType, defineComponent } from 'vue';
 
 // Utils
-import { bem, isImageFile, UploaderFileListItem } from './utils';
+import { bem, isImageFile } from './utils';
 import { isDef, getSizeStyle, extend } from '../utils';
 import { callInterceptor, Interceptor } from '../utils/interceptor';
 
@@ -9,6 +9,9 @@ import { callInterceptor, Interceptor } from '../utils/interceptor';
 import { Icon } from '../icon';
 import { Image, ImageFit } from '../image';
 import { Loading } from '../loading';
+
+// Types
+import type { UploaderFileListItem } from './types';
 
 export default defineComponent({
   props: {

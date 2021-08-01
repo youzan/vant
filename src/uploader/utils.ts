@@ -1,27 +1,13 @@
 import { createNamespace, isFunction } from '../utils';
-import type { ImageFit } from '../image';
-import type { Interceptor } from '../utils/interceptor';
+import type {
+  UploaderMaxSize,
+  UploaderResultType,
+  UploaderFileListItem,
+} from './types';
 
 const [name, bem] = createNamespace('uploader');
 
 export { name, bem };
-
-export type UploaderResultType = 'dataUrl' | 'text' | 'file';
-
-export type UploaderFileListItem = {
-  url?: string;
-  file?: File;
-  content?: string;
-  isImage?: boolean;
-  status?: '' | 'uploading' | 'done' | 'failed';
-  message?: string;
-  imageFit?: ImageFit;
-  deletable?: boolean;
-  previewSize?: number | string;
-  beforeDelete?: Interceptor;
-};
-
-export type UploaderMaxSize = number | string | ((file: File) => boolean);
 
 export function toArray<T>(item: T | T[]): T[] {
   if (Array.isArray(item)) {
