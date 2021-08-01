@@ -38,6 +38,7 @@ import UploaderPreviewItem from './UploaderPreviewItem';
 import type { ImageFit } from '../image';
 import type { Interceptor } from '../utils/interceptor';
 import type {
+  UploaderExpose,
   UploaderMaxSize,
   UploaderAfterRead,
   UploaderBeforeRead,
@@ -354,7 +355,7 @@ export default defineComponent({
       }
     };
 
-    useExpose({
+    useExpose<UploaderExpose>({
       chooseFile,
       closeImagePreview,
     });
