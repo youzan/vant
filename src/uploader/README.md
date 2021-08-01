@@ -358,6 +358,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Upload
 | closeImagePreview | Close full screen image preview | - | - |
 | chooseFile | Trigger choosing files, works with the user action context only because of browser security | - | - |
 
+### Types
+
+Get the type definition of the Uploader instance through `UploaderInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { UploaderInstance } from 'vant';
+
+const uploaderRef = ref<UploaderInstance>();
+
+uploaderRef.value?.chooseFile();
+```
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
