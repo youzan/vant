@@ -1,4 +1,5 @@
-import type { Ref } from 'vue';
+import type { ComponentPublicInstance, ComputedRef, Ref } from 'vue';
+import type { FieldProps } from './Field';
 
 export type FieldType =
   | 'tel'
@@ -44,6 +45,31 @@ export type FieldProvide = {
   resetValidation: () => void;
   validateWithTrigger: (trigger: FieldValidateTrigger) => void;
 };
+
+// Shared props of Field and Form
+export type FieldFormSharedProps =
+  | 'colon'
+  | 'disabled'
+  | 'readonly'
+  | 'labelWidth'
+  | 'labelAlign'
+  | 'inputAlign'
+  | 'errorMessageAlign';
+
+export type FieldExpose = {
+  blur: () => void | undefined;
+  focus: () => void | undefined;
+  validate: (
+    rules?: FieldRule[] | undefined
+  ) => Promise<void | FieldValidateError>;
+  resetValidation: () => void;
+  /**
+   * @private
+   */
+  formValue: ComputedRef<unknown>;
+};
+
+export type FieldInstance = ComponentPublicInstance<FieldProps, FieldExpose>;
 
 declare global {
   interface EventTarget {

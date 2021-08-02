@@ -9,7 +9,7 @@ import {
   preventDefault,
   ComponentInstance,
 } from '../utils';
-import { fieldProps } from '../field/Field';
+import { fieldSharedProps } from '../field/Field';
 
 // Composables
 import { useExpose } from '../composables/use-expose';
@@ -24,7 +24,7 @@ export type SearchShape = 'square' | 'round';
 export default defineComponent({
   name,
 
-  props: extend({}, fieldProps, {
+  props: extend({}, fieldSharedProps, {
     label: String,
     clearable: truthProp,
     actionText: String,
@@ -89,8 +89,8 @@ export default defineComponent({
     const blur = () => filedRef.value?.blur();
     const focus = () => filedRef.value?.focus();
 
-    const fieldPropNames = Object.keys(fieldProps) as Array<
-      keyof typeof fieldProps
+    const fieldPropNames = Object.keys(fieldSharedProps) as Array<
+      keyof typeof fieldSharedProps
     >;
 
     const renderField = () => {
