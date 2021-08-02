@@ -5,5 +5,9 @@ const Calendar = withInstall<typeof _Calendar>(_Calendar);
 
 export default Calendar;
 export { Calendar };
-export type { CalendarType } from './CalendarMonth';
-export type { CalendarDayItem, CalendarDayType } from './CalendarDay';
+export type {
+  CalendarType,
+  CalendarDayItem,
+  CalendarDayType,
+  CalendarInstance,
+} from './types';

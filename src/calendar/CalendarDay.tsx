@@ -1,29 +1,9 @@
 import { computed, CSSProperties, PropType, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 import { bem } from './utils';
+import type { CalendarDayItem } from './types';
 
 const [name] = createNamespace('calendar-day');
-
-export type CalendarDayType =
-  | ''
-  | 'start'
-  | 'start-end'
-  | 'middle'
-  | 'end'
-  | 'selected'
-  | 'multiple-middle'
-  | 'multiple-selected'
-  | 'disabled'
-  | 'placeholder';
-
-export type CalendarDayItem = {
-  date?: Date;
-  text?: string | number;
-  type?: CalendarDayType;
-  topInfo?: string;
-  className?: unknown;
-  bottomInfo?: string;
-};
 
 export default defineComponent({
   name,

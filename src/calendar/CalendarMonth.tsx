@@ -18,11 +18,12 @@ import { useExpose } from '../composables/use-expose';
 import { useHeight } from '../composables/use-height';
 
 // Components
-import CalendarDay, { CalendarDayItem, CalendarDayType } from './CalendarDay';
+import CalendarDay from './CalendarDay';
+
+// Types
+import type { CalendarType, CalendarDayItem, CalendarDayType } from './types';
 
 const [name] = createNamespace('calendar-month');
-
-export type CalendarType = 'single' | 'range' | 'multiple';
 
 export default defineComponent({
   name,

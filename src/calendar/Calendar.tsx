@@ -6,6 +6,7 @@ import {
   PropType,
   TeleportProps,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -40,75 +41,79 @@ import { useExpose } from '../composables/use-expose';
 import { Popup, PopupPosition } from '../popup';
 import { Button } from '../button';
 import { Toast } from '../toast';
-import CalendarMonth, { CalendarType } from './CalendarMonth';
+import CalendarMonth from './CalendarMonth';
 import CalendarHeader from './CalendarHeader';
 
 // Types
-import type { CalendarDayItem } from './CalendarDay';
+import type { CalendarType, CalendarExpose, CalendarDayItem } from './types';
+
+const props = {
+  show: Boolean,
+  title: String,
+  color: String,
+  round: truthProp,
+  readonly: Boolean,
+  poppable: truthProp,
+  teleport: [String, Object] as PropType<TeleportProps['to']>,
+  showMark: truthProp,
+  showTitle: truthProp,
+  formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
+  rowHeight: [Number, String],
+  confirmText: String,
+  rangePrompt: String,
+  lazyRender: truthProp,
+  showConfirm: truthProp,
+  // TODO: remove any
+  // see: https://github.com/vuejs/vue-next/issues/2668
+  defaultDate: [Date, Array] as any,
+  allowSameDay: Boolean,
+  showSubtitle: truthProp,
+  closeOnPopstate: truthProp,
+  confirmDisabledText: String,
+  closeOnClickOverlay: truthProp,
+  safeAreaInsetBottom: truthProp,
+  type: {
+    type: String as PropType<CalendarType>,
+    default: 'single',
+  },
+  position: {
+    type: String as PropType<PopupPosition>,
+    default: 'bottom',
+  },
+  maxRange: {
+    type: [Number, String],
+    default: null,
+  },
+  minDate: {
+    type: Date,
+    validator: isDate,
+    default: getToday,
+  },
+  maxDate: {
+    type: Date,
+    validator: isDate,
+    default: () => {
+      const now = getToday();
+      return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
+    },
+  },
+  firstDayOfWeek: {
+    type: [Number, String],
+    default: 0,
+    validator: (val: number) => val >= 0 && val <= 6,
+  },
+  showRangePrompt: {
+    type: Boolean,
+    default: true,
+  },
+};
+
+export type CalendarProps = ExtractPropTypes<typeof props>;
 
 export default defineComponent({
   name,
 
-  props: {
-    show: Boolean,
-    title: String,
-    color: String,
-    round: truthProp,
-    readonly: Boolean,
-    poppable: truthProp,
-    teleport: [String, Object] as PropType<TeleportProps['to']>,
-    showMark: truthProp,
-    showTitle: truthProp,
-    formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
-    rowHeight: [Number, String],
-    confirmText: String,
-    rangePrompt: String,
-    lazyRender: truthProp,
-    showConfirm: truthProp,
-    // TODO: remove any
-    // see: https://github.com/vuejs/vue-next/issues/2668
-    defaultDate: [Date, Array] as any,
-    allowSameDay: Boolean,
-    showSubtitle: truthProp,
-    closeOnPopstate: truthProp,
-    confirmDisabledText: String,
-    closeOnClickOverlay: truthProp,
-    safeAreaInsetBottom: truthProp,
-    type: {
-      type: String as PropType<CalendarType>,
-      default: 'single',
-    },
-    position: {
-      type: String as PropType<PopupPosition>,
-      default: 'bottom',
-    },
-    maxRange: {
-      type: [Number, String],
-      default: null,
-    },
-    minDate: {
-      type: Date,
-      validator: isDate,
-      default: getToday,
-    },
-    maxDate: {
-      type: Date,
-      validator: isDate,
-      default: () => {
-        const now = getToday();
-        return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
-      },
-    },
-    firstDayOfWeek: {
-      type: [Number, String],
-      default: 0,
-      validator: (val: number) => val >= 0 && val <= 6,
-    },
-    showRangePrompt: {
-      type: Boolean,
-      default: true,
-    },
-  },
+  props,
 
   emits: [
     'select',
@@ -522,7 +527,7 @@ export default defineComponent({
       }
     );
 
-    useExpose({
+    useExpose<CalendarExpose>({
       reset,
       scrollToDate,
     });

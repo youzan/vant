@@ -347,6 +347,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Calend
 | reset | Reset selected date, will reset to default date when no params passed | _date?: Date \| Date[]_ | - |
 | scrollToDate | Scroll to date | _date: Date_ | - |
 
+### Types
+
+Get the type definition of the Calendar instance through `CalendarInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { CalendarInstance } from 'vant';
+
+const calendarRef = ref<CalendarInstance>();
+
+calendarRef.value?.reset();
+```
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
