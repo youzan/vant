@@ -309,6 +309,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Field 
 | focus | Trigger input focus | -         | -            |
 | blur  | Trigger input blur  | -         | -            |
 
+### Types
+
+Get the type definition of the Field instance through `FieldInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { FieldInstance } from 'vant';
+
+const fieldRef = ref<FieldInstance>();
+
+fieldRef.value?.focus();
+```
+
 ### Slots
 
 | Name       | Description                 |

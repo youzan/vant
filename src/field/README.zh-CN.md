@@ -328,6 +328,19 @@ export default {
 | focus  | 获取输入框焦点 | -    | -      |
 | blur   | 取消输入框焦点 | -    | -      |
 
+### 类型定义
+
+通过 `FieldInstance` 获取 Field 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { FieldInstance } from 'vant';
+
+const fieldRef = ref<FieldInstance>();
+
+fieldRef.value?.focus();
+```
+
 ### Slots
 
 | 名称 | 说明 |

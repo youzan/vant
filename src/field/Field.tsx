@@ -8,6 +8,7 @@ import {
   PropType,
   onMounted,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -45,28 +46,20 @@ import { Cell } from '../cell';
 import type {
   FieldRule,
   FieldType,
+  FieldExpose,
   FieldTextAlign,
   FieldClearTrigger,
   FieldFormatTrigger,
   FieldValidateError,
   FieldAutosizeConfig,
   FieldValidateTrigger,
+  FieldFormSharedProps,
 } from './types';
 
 const [name, bem] = createNamespace('field');
 
-// Shared props of Field and Form
-type SharedProps =
-  | 'colon'
-  | 'disabled'
-  | 'readonly'
-  | 'labelWidth'
-  | 'labelAlign'
-  | 'inputAlign'
-  | 'errorMessageAlign';
-
 // provide to Search component to inherit
-export const fieldProps = {
+export const fieldSharedProps = {
   formatter: Function as PropType<(value: string) => string>,
   leftIcon: String,
   rightIcon: String,
@@ -106,29 +99,33 @@ export const fieldProps = {
   },
 };
 
+const props = extend({}, cellProps, fieldSharedProps, {
+  rows: [Number, String],
+  name: String,
+  rules: Array as PropType<FieldRule[]>,
+  autosize: [Boolean, Object] as PropType<boolean | FieldAutosizeConfig>,
+  labelWidth: [Number, String],
+  labelClass: unknownProp,
+  labelAlign: String as PropType<FieldTextAlign>,
+  autocomplete: String,
+  showWordLimit: Boolean,
+  errorMessageAlign: String as PropType<FieldTextAlign>,
+  type: {
+    type: String as PropType<FieldType>,
+    default: 'text',
+  },
+  colon: {
+    type: Boolean,
+    default: null,
+  },
+});
+
+export type FieldProps = ExtractPropTypes<typeof props>;
+
 export default defineComponent({
   name,
 
-  props: extend({}, cellProps, fieldProps, {
-    rows: [Number, String],
-    name: String,
-    rules: Array as PropType<FieldRule[]>,
-    autosize: [Boolean, Object] as PropType<boolean | FieldAutosizeConfig>,
-    labelWidth: [Number, String],
-    labelClass: unknownProp,
-    labelAlign: String as PropType<FieldTextAlign>,
-    autocomplete: String,
-    showWordLimit: Boolean,
-    errorMessageAlign: String as PropType<FieldTextAlign>,
-    type: {
-      type: String as PropType<FieldType>,
-      default: 'text',
-    },
-    colon: {
-      type: Boolean,
-      default: null,
-    },
-  }),
+  props,
 
   emits: [
     'blur',
@@ -155,7 +152,7 @@ export default defineComponent({
 
     const getModelValue = () => String(props.modelValue ?? '');
 
-    const getProp = <T extends SharedProps>(key: T) => {
+    const getProp = <T extends FieldFormSharedProps>(key: T) => {
       if (isDef(props[key])) {
         return props[key];
       }
@@ -517,7 +514,7 @@ export default defineComponent({
       renderMessage(),
     ];
 
-    useExpose({
+    useExpose<FieldExpose>({
       blur,
       focus,
       validate,
