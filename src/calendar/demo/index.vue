@@ -120,9 +120,9 @@
 </template>
 
 <script lang="ts">
-import { reactive, toRefs } from 'vue';
+import { defineComponent, reactive, toRefs } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import { CalendarDayItem } from '../CalendarDay';
+import type { CalendarDayItem } from '../types';
 
 const i18n = {
   'zh-CN': {
@@ -175,7 +175,7 @@ const i18n = {
   },
 };
 
-export default {
+export default defineComponent({
   setup() {
     const t = useTranslate(i18n);
     const state = reactive<Record<string, any>>({
@@ -331,5 +331,5 @@ export default {
       formatMultiple,
     };
   },
-};
+});
 </script>
