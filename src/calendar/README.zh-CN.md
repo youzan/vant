@@ -353,6 +353,19 @@ export default {
 | reset | 将选中的日期重置到指定日期，未传参时会重置到默认日期 | _date?: Date \| Date[]_ | - |
 | scrollToDate | 滚动到某个日期 | _date: Date_ | - |
 
+### 类型定义
+
+通过 `CalendarInstance` 获取 Calendar 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { CalendarInstance } from 'vant';
+
+const calendarRef = ref<CalendarInstance>();
+
+calendarRef.value?.reset();
+```
+
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
