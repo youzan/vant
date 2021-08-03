@@ -5,7 +5,6 @@ import {
   reactive,
   nextTick,
   PropType,
-  ComputedRef,
   onActivated,
   InjectionKey,
   CSSProperties,
@@ -51,16 +50,10 @@ import { Sticky } from '../sticky';
 import TabsTitle from './TabsTitle';
 import TabsContent from './TabsContent';
 
+// Types
+import type { TabsProvide, TabsType } from './types';
+
 const [name, bem] = createNamespace('tabs');
-
-export type TabsType = 'line' | 'card';
-
-export type TabsClickTabEventParams = {
-  name: string | number;
-  title: string;
-  event: MouseEvent;
-  disabled: boolean;
-};
 
 const props = {
   color: String,
@@ -99,13 +92,7 @@ const props = {
   },
 };
 
-export type TabsProvide = {
-  props: ExtractPropTypes<typeof props>;
-  setLine: () => void;
-  onRendered: (name: string | number, title?: string) => void;
-  scrollIntoView: (immediate?: boolean) => void;
-  currentName: ComputedRef<number | string | undefined>;
-};
+export type TabsProps = ExtractPropTypes<typeof props>;
 
 export const TABS_KEY: InjectionKey<TabsProvide> = Symbol(name);
 

@@ -7,7 +7,7 @@ import { Tabs } from '../tabs';
 import { Icon } from '../icon';
 
 // Types
-import type { TabsClickTabEventParams } from '../tabs/Tabs';
+import type { TabsClickTabEventParams } from '../tabs/types';
 
 const [name, bem, t] = createNamespace('cascader');
 
