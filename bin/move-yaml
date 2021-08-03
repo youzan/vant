@@ -1,0 +1,59 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path=require('path');
+const YAML = require('yaml');
+
+const ATTR_ORDER = ['name', 'title', 'type', 'sync', 'model', 'options', 'default', 'description', 'advanced'];
+const genObjectFromOrder = (order) => {
+    const obj = {};
+    order.forEach((key) => obj[key] = undefined);
+    return obj;
+};
+const clearObject = (obj) => {
+    Object.keys(obj).forEach((key) => {
+        if (obj[key] === undefined)
+            delete obj[key];
+    });
+};
+
+function travel(dir){
+    fs.readdirSync(dir).forEach((file)=>{
+        var pathname=path.join(dir,file)
+        if(fs.statSync(pathname).isDirectory()){
+          const apiFilePath = `./yaml/${file}.yaml`;
+          let json;
+          let content;
+          try {
+            content = fs.readFileSync(path.resolve(process.cwd(), apiFilePath), 'utf8');
+            json = YAML.parse(content);
+            console.error(`解析 ${apiFilePath} 成功！`);
+          } catch (e) {
+            console.error(e)
+              console.error(`解析 ${apiFilePath} 出错或者不存在！`);
+          }
+
+          if (json) {
+            json.forEach((comp) => {
+            if (comp.attrs) {
+                comp.attrs.forEach((attr, index) => {
+                    const newAttr = genObjectFromOrder(ATTR_ORDER);
+                    Object.keys(attr).forEach((key) => {
+                        newAttr[key] = attr[key];
+                    });
+                    clearObject(newAttr);
+                    comp.attrs[index] = newAttr;
+                });
+            }
+          });
+          // fs.unlinkSync(path.join(pathname, file))
+          // fs.unlinkSync(path.join(pathname, file + '.yaml'))
+
+          // fs.writeFileSync(path.join(pathname, file + '.yaml'), JSON.stringify('5678'));
+          fs.writeFileSync(path.join(pathname, 'api.yaml'), YAML.stringify(json), 'utf8');
+          }
+
+        }
+    })
+}
+travel(path.resolve(__dirname, '../src'));

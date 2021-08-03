@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+const fs = require('fs')
+const fse = require('fs-extra')
+const path=require('path');
+
+function move(dir){
+    fs.readdirSync(dir).forEach((file)=>{
+        var pathname=path.join(dir,file);
+        if(fs.statSync(pathname).isDirectory()){
+          const apiFilePath = `./vusion-docs/${file}`;
+          try {
+            console.error(`解析 ${apiFilePath} 成功！`);
+            fse.copySync(apiFilePath, path.resolve(dir, pathname));
+          } catch (e) {
+            console.error(e)
+            console.error(`解析 ${apiFilePath} 出错或者不存在！`);
+          }
+        }
+    })
+}
+move(path.resolve(__dirname, '../src'));

@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const vusion = require('vusion-api');
+
+const argv = require('minimist')(process.argv.slice(2));
+let components;
+
+if (argv._[0]) {
+    components = argv._[0].split(',').map((name) => ({ name }));
+} else {
+    components = fs.readdirSync('src/components').filter((file) => file.endsWith('.vue')).map((name) => ({ name: name.replace(/\.vue$/, '') }));
+}
+
+components.forEach((component) => {
+    const command = `vusion transform --temp src/components/${component.name}.vue`;
+    console.info(command);
+    vusion.cli.execSync(command);
+});

@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+const shelljs = require('shelljs');
+const oldList = require('./oldList.json');
+
+const include = /\.vue$|\.vue\/index\.js$/;
+const root = process.argv[2];
+let files = [];
+files = files.concat(shelljs.ls('-RA', path.join(process.cwd(), root)).stdout.split('\n').filter((root) => include.test(root)).map((filePath) => path.join(process.cwd(), root, filePath)).filter((root) => fs.statSync(root).isFile()));
+
+files.forEach((file) => {
+    const content = fs.readFileSync(file).toString();
+    oldList.forEach((oldName) => {
+        if (new RegExp(`name:\\s+['"]${oldName}['"]`, 'g').test(content))
+            console.log(file, oldName);
+    });
+});

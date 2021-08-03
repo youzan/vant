@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+const vusion = require('vusion-api');
+
+const argv = require('minimist')(process.argv.slice(2));
+let components;
+
+if (argv._[0]) {
+    components = argv._[0].split(',').map((name) => ({ name }));
+} else {
+    const config = require('../vusion.config.js');
+    components = config.docs.components.filter((component) => !component.href && !component.path && !component.deprecated);
+}
+
+const packageJSON = require('../package.json');
+const libInfo = `${packageJSON.name}`;
+components.forEach((component) => {
+    const command = `vusion deploy --framework cloud-ui src/components/${component.name}.vue/drawings`;
+    console.log(command);
+    vusion.cli.execSync(command);
+    vusion.cli.done(component.name + '.vue');
+});

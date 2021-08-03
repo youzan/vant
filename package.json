@@ -1,6 +1,8 @@
 {
   "name": "vant",
   "version": "2.12.25",
+  "lcapname": "@lcap/mobile-ui",
+  "lcapversion": "0.1.0",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -24,7 +26,12 @@
     "release": "vant-cli release",
     "test:watch": "vant-cli test --watch",
     "release:site": "sh docs/site/release.sh",
-    "test:coverage": "open test/coverage/index.html"
+    "test:coverage": "open test/coverage/index.html",
+    "move-yaml": "node bin/move-yaml",
+    "move-docs": "node bin/move-docs",
+    "screenshot": "node bin/screenshot",
+    "deploy:dev": "node ./scripts/lcap && lcap deploy lib --platform http://lcp.vusion.top --name @lcap/mobile-ui --version 0.1.0 && node bin/deploy-lcp-images --platform=http://lcp.vusion.top",
+    "deploy:dev2": "node ./scripts/lcap && node ./bin/upload.js"
   },
   "husky": {
     "hooks": {
@@ -64,9 +71,13 @@
   },
   "devDependencies": {
     "@vant/cli": "^2.10.3",
+    "@xgheaven/nos-node-sdk": "^0.2.5",
     "prettier": "2.1.0",
     "vue": "^2.6.12",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+    "vusion": "^0.12.18",
+    "vusion-api": "^0.7.36",
+    "yaml": "^1.10.2"
   },
   "sideEffects": [
     "es/**/style/*",
