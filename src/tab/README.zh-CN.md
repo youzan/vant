@@ -291,6 +291,19 @@ export default {
 | resize | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 | - | - |
 | scrollTo | 滚动到指定的标签页，在滚动导航模式下可用 | _name: string \| number_ | - |
 
+### 类型定义
+
+通过 `TabsInstance` 获取 Tabs 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { TabsInstance } from 'vant';
+
+const tabsRef = ref<TabsInstance>();
+
+tabsRef.value?.scrollTo(0);
+```
+
 ### Tabs Slots
 
 | 名称                | 说明           |

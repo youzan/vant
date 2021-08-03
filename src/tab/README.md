@@ -280,6 +280,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Tabs i
 | resize | Resize Tabs when container element resized or visibility changed | - | - |
 | scrollTo | Go to specified tab in scrollspy mode | _name: string \| number_ | - |
 
+### Types
+
+Get the type definition of the Tabs instance through `TabsInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { TabsInstance } from 'vant';
+
+const tabsRef = ref<TabsInstance>();
+
+tabsRef.value?.scrollTo(0);
+```
+
 ### Tabs Slots
 
 | Name                | Description               |
