@@ -1,0 +1,65 @@
+- name: swipe
+  title: 幻灯片
+  icon: swipe
+  description: 用于循环播放一组图片或内容
+  labels:
+    - Display
+  next: true
+  nexted: false
+  attrs:
+    - name: duration
+      title: 动画时间
+      type: number
+      default: 4000
+      description: 单位：毫秒，幻灯片切换时间，如果设置值小于动画时长，会在动画完成后切换
+    - name: loop
+      title: 循环播放
+      type: boolean
+      default: true
+      description: 是否循环播放
+    - name: touchable
+      title: 手势滑动
+      type: boolean
+      default: true
+      description: 是否可以通过手势滑动
+     - name: show-indicators
+      title: 指示器
+      type: boolean
+      default: true
+      description: 是否显示指示器
+  slots:
+    - name: default
+      description: 插入`van-swipe-item`子组件。
+      support:
+        - name: van-swipe-item
+          title: 幻灯片子项
+          snippet: <van-swipe-item>内容</van-swipe-item>
+  events:
+    - name: change
+      title: 选择后
+      description: 选择某一页时触发
+      advanced: true
+      params:
+        - name: $event
+          type: object
+          description: 自定义事件对象
+          schema:
+            $ref: "#/systemTypes/ChangeItemEvent"
+        - name: $event.value
+          type: any
+          description: 选中项的值
+        - name: $event.oldValue
+          type: any
+          description: 旧的值
+        - name: $event.itemVM
+          type: UCarouselItem
+          description: 选中项实例
+        - name: senderVM
+          type: UCarousel
+          description: 发送事件实例
+- name: van-swipe-item
+  title: 幻灯片选项
+  next: false
+  nested: false
+  attrs:
+  description: 幻灯片选项

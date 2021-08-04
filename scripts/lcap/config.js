@@ -9,7 +9,9 @@ module.exports = [
     // { group: 'Layout', show: true, name: 'u-crumb', alias: '面包屑' },
     // { group: 'Layout', show: true, name: 'u-panel', alias: '面板' },
     // { group: 'Layout', show: true, name: 'u-collapse', alias: '折叠面板' },
-    { group: 'Layout', show: true, name: 'divider', alias: '折叠面板' },
+    { group: 'Layout', show: true, name: 'divider', alias: '分割线' },
+    { group: 'Layout', show: true, name: 'button', alias: '按钮' },
+    { group: 'Layout', show: true, name: 'image', alias: '图片' },
 
     // { group: 'Display', show: true, name: 'u-text', alias: '文本' },
     // { group: 'Display', show: true, name: 'u-link', alias: '链接' },

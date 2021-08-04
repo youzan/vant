@@ -1,0 +1,108 @@
+- name: button
+  title: 按钮
+  icon: button
+  labels:
+    - Display
+  description: 按钮用于触发一个操作，如提交表单。
+  next: true
+  nested: false
+  attrs:
+    - name: text
+      title: 文本
+      type: string
+      description: 按钮文字
+    - name: type
+      title: 按钮颜色类型
+      type: string
+      options:
+        - value: primary
+          title: 主要按钮
+        - value: info
+          title: 信息按钮
+        - value: default
+          title: 默认按钮
+        - value: warning
+          title: 警告按钮
+        - value: danger
+          title: 危险按钮
+      default: default
+      description: 设置按钮类型
+    - name: hairline
+      title: 细边框
+      type: boolean
+      default: false
+      description: 边框是否是0.5px细边框。
+    - name: size
+      title: 尺寸
+      type: string
+      options:
+        - value: large
+          title: 大
+        - value: normal
+          title: 正常
+        - value: small
+          title: 小
+        - value: mini
+          title: 迷你
+      default: normal
+      description: 设置尺寸
+    - name: square
+      title: 形状
+      type: string
+      options:
+        - value: default
+          title: 默认
+        - value: square
+          title: 方形
+        - value: round
+          title: 圆角
+      default: default
+      description: 设置形状
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: 是否禁用。禁用后不会响应点击事件。
+    - name: block
+      title: 展示方式
+      type: boolean
+      options:
+        - value: false
+          title: 行内展示
+        - value: true
+          title: 块级展示
+      default: inline
+      description: 展示方式
+    - name: icon
+      title: 图标
+      type: string
+      options:
+        - value: replay
+          title: 刷新
+        - value: setting-o
+          title: 设置
+        - value: success
+          title: 成功
+      default: success
+      description: 设置图标。
+    - name: loading
+      title: 加载中
+      type: boolean
+      default: false
+      description: 是否为加载中。
+    - name: url
+      title: 跳转地址
+      uiType: h5
+      type: string
+      default: ''
+      description: 跳转地址
+    - name: to
+      title: 路由链接
+      type: string, Location
+      description: 需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。
+      advanced: true
+  events:
+    - name: $listeners
+      kind: click
+      description: 监听点击事件。
+      params: []

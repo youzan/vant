@@ -1,4 +1,4 @@
-- name: van-divider
+- name: divider
   title: 文本
   icon: text
   labels:
