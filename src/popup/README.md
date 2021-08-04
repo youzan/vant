@@ -98,23 +98,7 @@ Use `teleport` prop to specify mount location.
 
 <!-- teleport to #app -->
 <van-popup v-model:show="show" teleport="#app" />
-
-<!-- teleport to Element -->
-<van-popup v-model:show="show" :teleport="myContainer" />
 ```
-
-```js
-export default {
-  setup() {
-    const myContainer = document.querySelector('.my-container');
-    return {
-      myContainer,
-    };
-  },
-};
-```
-
-> Tips: The teleport prop cannot be used on the root node
 
 ## API
 
