@@ -1,4 +1,11 @@
-import { ref, watch, computed, PropType, defineComponent } from 'vue';
+import {
+  ref,
+  watch,
+  computed,
+  PropType,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import {
@@ -16,30 +23,19 @@ import { useExpose } from '../composables/use-expose';
 
 // Components
 import { Loading } from '../loading';
-import Column, {
-  PICKER_KEY,
+import Column, { PICKER_KEY } from './PickerColumn';
+
+// Types
+import type {
   PickerColumn,
   PickerOption,
+  PickerExpose,
+  PickerFieldNames,
   PickerObjectColumn,
-  PickerObjectOption,
-} from './PickerColumn';
+  PickerToolbarPosition,
+} from './types';
 
 const [name, bem, t] = createNamespace('picker');
-
-export type PickerToolbarPosition = 'top' | 'bottom';
-
-export type PickerFieldNames = {
-  text?: string;
-  values?: string;
-  children?: string;
-};
-
-export type {
-  PickerColumn,
-  PickerOption,
-  PickerObjectColumn,
-  PickerObjectOption,
-};
 
 export const pickerProps = {
   title: String,
@@ -62,6 +58,8 @@ export const pickerProps = {
     default: 1000,
   },
 };
+
+export type PickerProps = ExtractPropTypes<typeof pickerProps>;
 
 export default defineComponent({
   name,
@@ -380,7 +378,7 @@ export default defineComponent({
 
     watch(() => props.columns, format, { immediate: true });
 
-    useExpose({
+    useExpose<PickerExpose>({
       confirm,
       getValues,
       setValues,

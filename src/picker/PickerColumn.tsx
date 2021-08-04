@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 import { ref, watch, reactive, PropType, defineComponent } from 'vue';
 
 // Utils
@@ -15,6 +14,9 @@ import {
 import { useParent } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
+
+// Types
+import type { PickerOption } from './types';
 
 const DEFAULT_DURATION = 200;
 
@@ -35,26 +37,6 @@ function getElementTranslateY(element: Element) {
 }
 
 export const PICKER_KEY = Symbol(name);
-
-export type PickerObjectOption = {
-  text?: string | number;
-  disabled?: boolean;
-  // for custom filed names
-  [key: string]: any;
-};
-
-export type PickerOption = string | number | PickerObjectOption;
-
-export type PickerObjectColumn = {
-  values?: PickerOption[];
-  children?: PickerColumn;
-  className?: unknown;
-  defaultIndex?: number;
-  // for custom filed names
-  [key: string]: any;
-};
-
-export type PickerColumn = PickerOption[] | PickerObjectColumn;
 
 function isOptionDisabled(option: PickerOption) {
   return isObject(option) && option.disabled;
@@ -316,7 +298,7 @@ export default defineComponent({
       }
     };
 
-    const getValue = () => state.options[state.index];
+    const getValue = (): PickerOption => state.options[state.index];
 
     setIndex(state.index);
 

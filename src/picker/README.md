@@ -382,6 +382,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Picker
 | setColumnValues | Set columns data of the column | columnIndex, values | - |
 | confirm | Stop scrolling and emit confirm event | - | - |
 
+### Types
+
+Get the type definition of the Picker instance through `PickerInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { PickerInstance } from 'vant';
+
+const pickerRef = ref<PickerInstance>();
+
+pickerRef.value?.confirm();
+```
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
