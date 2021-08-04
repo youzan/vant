@@ -407,6 +407,19 @@ export default {
 | setColumnValues | 设置对应列中所有选项 | columnIndex, values | - |
 | confirm | 停止惯性滚动并触发 confirm 事件 | - | - |
 
+### 类型定义
+
+通过 `PickerInstance` 获取 Picker 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { PickerInstance } from 'vant';
+
+const pickerRef = ref<PickerInstance>();
+
+pickerRef.value?.confirm();
+```
+
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。

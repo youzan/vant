@@ -8,8 +8,9 @@ export { Picker };
 export type {
   PickerColumn,
   PickerOption,
+  PickerInstance,
   PickerFieldNames,
   PickerObjectColumn,
   PickerObjectOption,
   PickerToolbarPosition,
-} from './Picker';
+} from './types';
