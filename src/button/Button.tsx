@@ -40,7 +40,7 @@ export default defineComponent({
     hairline: Boolean,
     disabled: Boolean,
     iconPrefix: String,
-    loadingSize: String,
+    loadingSize: [Number, String],
     loadingText: String,
     loadingType: String as PropType<LoadingType>,
     tag: {
