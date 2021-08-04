@@ -154,7 +154,7 @@ export default {
 | active-color | 菜单标题和选项的选中态颜色 | _string_ | `#ee0a24` |
 | direction | 菜单展开方向，可选值为`up` | _string_ | `down` |
 | z-index | 菜单栏 z-index 层级 | _number \| string_ | `10` |
-| duration | 动画时长，单位秒 | _number \| string_ | `0.2` |
+| duration | 动画时长，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.2` |
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭菜单 | _boolean_ | `true` |
 | close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
