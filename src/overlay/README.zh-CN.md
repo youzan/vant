@@ -71,7 +71,7 @@ export default {
 | --- | --- | --- | --- |
 | show | 是否展示遮罩层 | _boolean_ | `false` |
 | z-index | z-index 层级 | _number \| string_ | `1` |
-| duration | 动画时长，单位秒 | _number \| string_ | `0.3` |
+| duration | 动画时长，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.3` |
 | class-name | 自定义类名 | _string_ | - |
 | custom-style | 自定义样式 | _object_ | - |
 | lock-scroll | 是否锁定背景滚动，锁定时蒙层里的内容也将无法滚动 | _boolean_ | `true` |

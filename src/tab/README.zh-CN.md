@@ -240,7 +240,7 @@ export default {
 | type | 样式风格类型，可选值为 `card` | _string_ | `line` |
 | color | 标签主题色 | _string_ | `#ee0a24` |
 | background | 标签栏背景色 | _string_ | `white` |
-| duration | 动画时间，单位秒 | _number \| string_ | `0.3` |
+| duration | 动画时间，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.3` |
 | line-width | 底部条宽度，默认单位 `px` | _number \| string_ | `40px` |
 | line-height | 底部条高度，默认单位 `px` | _number \| string_ | `3px` |
 | animated | 是否开启切换标签内容时的转场动画 | _boolean_ | `false` |

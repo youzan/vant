@@ -188,7 +188,7 @@ export default {
 | description | 选项上方的描述信息 | _string_ | - |
 | closeable | 是否显示关闭图标 | _boolean_ | `true` |
 | close-icon | 关闭[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `cross` |
-| duration | 动画时长，单位秒 | _number \| string_ | `0.3` |
+| duration | 动画时长，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.3` |
 | round | 是否显示圆角 | _boolean_ | `true` |
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
 | overlay-class | 自定义遮罩层类名 | _string \| Array \| object_ | - |
