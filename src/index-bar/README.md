@@ -91,19 +91,19 @@ export default {
 | select | Emitted when an index is selected | _index: number \| string_ |
 | change | Emitted when active index changed | _index: number \| string_ |
 
-### IndexAnchor Slots
-
-| Name    | Description                           |
-| ------- | ------------------------------------- |
-| default | Anchor content, show index by default |
-
-### Methods
+### IndexBar Methods
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get IndexBar instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | scrollTo | scroll to target element | _index: number \| string_ | - |
+
+### IndexAnchor Slots
+
+| Name    | Description                           |
+| ------- | ------------------------------------- |
+| default | Anchor content, show index by default |
 
 ### CSS Variables
 
