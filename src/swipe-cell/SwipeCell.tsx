@@ -1,4 +1,12 @@
-import { ref, Ref, reactive, computed, PropType, defineComponent } from 'vue';
+import {
+  ref,
+  Ref,
+  reactive,
+  computed,
+  PropType,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import { clamp, isDef, createNamespace, preventDefault } from '../utils';
@@ -9,25 +17,33 @@ import { useRect, useClickAway } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
+// Types
+import type {
+  SwipeCellSide,
+  SwipeCellExpose,
+  SwipeCellPosition,
+} from './types';
+
 const [name, bem] = createNamespace('swipe-cell');
 
-export type SwipeCellSide = 'left' | 'right';
-export type SwipeCellPosition = SwipeCellSide | 'cell' | 'outside';
+const props = {
+  disabled: Boolean,
+  leftWidth: [Number, String],
+  rightWidth: [Number, String],
+  beforeClose: Function as PropType<Interceptor>,
+  stopPropagation: Boolean,
+  name: {
+    type: [Number, String],
+    default: '',
+  },
+};
+
+export type SwipeCellProps = ExtractPropTypes<typeof props>;
 
 export default defineComponent({
   name,
 
-  props: {
-    disabled: Boolean,
-    leftWidth: [Number, String],
-    rightWidth: [Number, String],
-    beforeClose: Function as PropType<Interceptor>,
-    stopPropagation: Boolean,
-    name: {
-      type: [Number, String],
-      default: '',
-    },
-  },
+  props,
 
   emits: ['open', 'close', 'click'],
 
@@ -154,13 +170,14 @@ export default defineComponent({
       }
     };
 
-    const getClickHandler =
-      (position: SwipeCellPosition, stop?: boolean) => (event: MouseEvent) => {
-        if (stop) {
-          event.stopPropagation();
-        }
-        onClick(position);
-      };
+    const getClickHandler = (position: SwipeCellPosition, stop?: boolean) => (
+      event: MouseEvent
+    ) => {
+      if (stop) {
+        event.stopPropagation();
+      }
+      onClick(position);
+    };
 
     const renderSideContent = (
       side: SwipeCellSide,
@@ -180,7 +197,7 @@ export default defineComponent({
       }
     };
 
-    useExpose({
+    useExpose<SwipeCellExpose>({
       open,
       close,
     });

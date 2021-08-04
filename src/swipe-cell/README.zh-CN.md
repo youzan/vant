@@ -155,6 +155,19 @@ beforeClose 的第一个参数为对象，对象中包含以下属性：
 | open   | 打开单元格侧边栏 | position: `left \| right` | -      |
 | close  | 收起单元格侧边栏 | -                         | -      |
 
+### 类型定义
+
+通过 `SwipeCellInstance` 获取 SwipeCell 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { SwipeCellInstance } from 'vant';
+
+const swipeCellRef = ref<SwipeCellInstance>();
+
+swipeCellRef.value?.close();
+```
+
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。

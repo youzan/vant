@@ -146,6 +146,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get SwipeC
 | open  | open SwipeCell  | position: `left \| right` | -            |
 | close | close SwipeCell | -                         | -            |
 
+### Types
+
+Get the type definition of the SwipeCell instance through `SwipeCellInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { SwipeCellInstance } from 'vant';
+
+const swipeCellRef = ref<SwipeCellInstance>();
+
+swipeCellRef.value?.close();
+```
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
