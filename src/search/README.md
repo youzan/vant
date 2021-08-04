@@ -160,6 +160,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Search
 | focus | Trigger input focus | -         | -            |
 | blur  | Trigger input blur  | -         | -            |
 
+### Types
+
+Get the type definition of the Search instance through `SearchInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { SearchInstance } from 'vant';
+
+const searchRef = ref<SearchInstance>();
+
+searchRef.value?.focus();
+```
+
 ### Slots
 
 | Name       | Description                                                 |

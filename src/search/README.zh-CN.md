@@ -172,15 +172,28 @@ export default {
 | focus  | 获取输入框焦点 | -    | -      |
 | blur   | 取消输入框焦点 | -    | -      |
 
+### 类型定义
+
+通过 `SearchInstance` 获取 Search 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { SearchInstance } from 'vant';
+
+const searchRef = ref<SearchInstance>();
+
+searchRef.value?.focus();
+```
+
 ### Slots
 
-| 名称       | 说明                                                    |
-| ---------- | ------------------------------------------------------- |
-| left       | 自定义左侧内容（搜索框外）                              |
-| action     | 自定义右侧内容（搜索框外），设置`show-action`属性后展示 |
-| label      | 自定义左侧文本（搜索框内）                              |
-| left-icon  | 自定义左侧图标（搜索框内）                              |
-| right-icon | 自定义右侧图标（搜索框内）                              |
+| 名称       | 说明                                                      |
+| ---------- | --------------------------------------------------------- |
+| left       | 自定义左侧内容（搜索框外）                                |
+| action     | 自定义右侧内容（搜索框外），设置 `show-action` 属性后展示 |
+| label      | 自定义左侧文本（搜索框内）                                |
+| left-icon  | 自定义左侧图标（搜索框内）                                |
+| right-icon | 自定义右侧图标（搜索框内）                                |
 
 ### 样式变量
 
