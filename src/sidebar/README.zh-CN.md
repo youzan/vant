@@ -117,7 +117,7 @@ export default {
 | badge | 图标右上角徽标的内容 | _number \| string_ | - |
 | disabled | 是否禁用该项 | _boolean_ | `false` |
 | url | 点击后跳转的链接地址 | _string_ | - |
-| to | 点击后跳转的目标路由对象，同 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
+| to | 点击后跳转的目标路由对象，等同于 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
 
 ### SidebarItem Events
