@@ -1,4 +1,4 @@
-- name: image
+- name: van-image
   icon: image
   title: 图片展示
   labels:
@@ -29,17 +29,15 @@
           title: 取 contain、none 中较小的
       default: contain
       description: 图片地址
-  slots: false
+  slots:
+    - name: loading
+      title: 加载中
+      description: 加载中提示
+    - name: error
+      title: 加载失败
+      description: 加载失败提示
   events:
-    - name: click
-      title: 点击
+    - name: $listeners
+      kind: click
       description: 点击此项时触发
-      params:
-        - name: $event
-          type: MouseEvent
-          description: 鼠标事件对象
-          schema:
-            $ref: "#/systemTypes/MouseEvent"
-        - name: senderVM
-          type: Vue
-          description: 发送事件实例
+      params: []

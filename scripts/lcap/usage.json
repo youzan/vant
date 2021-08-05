@@ -1,133 +1,58 @@
 [
     {
-        "symbol": "divider",
-        "name": "文本",
-        "icon": "text",
+        "symbol": "van-divider",
+        "name": "分隔线",
+        "icon": "divider",
         "depDescription": {},
-        "description": "用于展示文字或表达式",
+        "description": "用于将内容分隔为多个区域",
         "labels": [
             "Display"
         ],
         "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/divider/screenshots/0.png",
         "blocks": "[]",
         "jsonSchema": {
-            "name": "divider",
-            "title": "文本",
-            "description": "用于展示文字或表达式",
+            "name": "van-divider",
+            "title": "分隔线",
+            "description": "用于将内容分隔为多个区域",
             "category": "Display",
             "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/divider/screenshots/0.png",
             "drawings": "",
             "blocks": [],
             "attrs": [
                 {
-                    "name": "text",
-                    "title": "文本",
-                    "type": "string",
-                    "description": "文本内容"
+                    "name": "dashed",
+                    "title": "虚线类型",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否使用虚线"
                 },
                 {
-                    "name": "color",
-                    "title": "颜色",
+                    "name": "content-position",
+                    "title": "内容位置",
                     "type": "string",
                     "options": [
                         {
-                            "value": "default",
-                            "title": "默认"
+                            "value": "center",
+                            "title": "居中"
                         },
                         {
-                            "value": "primary",
-                            "title": "主要色"
+                            "value": "left",
+                            "title": "左"
                         },
                         {
-                            "value": "secondary",
-                            "title": "辅助色"
-                        },
-                        {
-                            "value": "success",
-                            "title": "成功色"
-                        },
-                        {
-                            "value": "warning",
-                            "title": "警告色"
-                        },
-                        {
-                            "value": "error",
-                            "title": "错误色"
-                        },
-                        {
-                            "value": "disabled",
-                            "title": "禁用色"
+                            "value": "right",
+                            "title": "右"
                         }
                     ],
-                    "default": "default",
-                    "description": "设置颜色"
-                },
+                    "default": "center",
+                    "description": "内容位置"
+                }
+            ],
+            "slots": [
                 {
-                    "name": "size",
-                    "title": "尺寸",
-                    "type": "string",
-                    "options": [
-                        {
-                            "value": "small",
-                            "title": "小"
-                        },
-                        {
-                            "value": "normal",
-                            "title": "正常"
-                        },
-                        {
-                            "value": "large",
-                            "title": "大"
-                        },
-                        {
-                            "value": "huge",
-                            "title": "巨大"
-                        }
-                    ],
-                    "default": "normal",
-                    "description": "尺寸设置"
-                },
-                {
-                    "name": "display",
-                    "title": "展示方式",
-                    "type": "string",
-                    "options": [
-                        {
-                            "value": "inline",
-                            "title": "行内"
-                        },
-                        {
-                            "value": "block",
-                            "title": "块级"
-                        }
-                    ],
-                    "default": "inline",
-                    "description": "展示方式"
-                },
-                {
-                    "name": "overflow",
-                    "title": "隐藏处理",
-                    "type": "string",
-                    "options": [
-                        {
-                            "value": "normal",
-                            "title": "默认不处理"
-                        },
-                        {
-                            "value": "ellipsis",
-                            "title": "多余的文本省略"
-                        },
-                        {
-                            "value": "break",
-                            "title": "强制换行且英文自动添加换行符"
-                        },
-                        {
-                            "value": "nowrap",
-                            "title": "始终不换行"
-                        }
-                    ],
-                    "default": "normal",
-                    "description": "文本过长的处理方式"
+                    "name": "default",
+                    "title": "默认",
+                    "description": "显示的文本"
                 }
             ],
             "events": [
@@ -142,7 +67,7 @@
         }
     },
     {
-        "symbol": "button",
+        "symbol": "van-button",
         "name": "按钮",
         "icon": "button",
         "depDescription": {},
@@ -153,7 +78,7 @@
         "screenShot": "",
         "blocks": "[]",
         "jsonSchema": {
-            "name": "button",
+            "name": "van-button",
             "title": "按钮",
             "description": "按钮用于触发一个操作，如提交表单。",
             "category": "Display",
@@ -317,6 +242,7 @@
                     "advanced": true
                 }
             ],
+            "slots": false,
             "events": [
                 {
                     "name": "$listeners",
@@ -329,7 +255,7 @@
         }
     },
     {
-        "symbol": "image",
+        "symbol": "van-image",
         "name": "图片展示",
         "icon": "image",
         "depDescription": {},
@@ -340,7 +266,7 @@
         "screenShot": "",
         "blocks": "[]",
         "jsonSchema": {
-            "name": "image",
+            "name": "van-image",
             "title": "图片展示",
             "description": "可以用来展示一张图片，支持设置图片地址。",
             "category": "Display",
@@ -386,27 +312,24 @@
                     "description": "图片地址"
                 }
             ],
-            "slots": false,
+            "slots": [
+                {
+                    "name": "loading",
+                    "title": "加载中",
+                    "description": "加载中提示"
+                },
+                {
+                    "name": "error",
+                    "title": "加载失败",
+                    "description": "加载失败提示"
+                }
+            ],
             "events": [
                 {
-                    "name": "click",
-                    "title": "点击",
-                    "description": "点击此项时触发，与原生 click 事件不同的是，它只会在非只读和禁用的情况下触发。",
-                    "params": [
-                        {
-                            "name": "$event",
-                            "type": "MouseEvent",
-                            "description": "鼠标事件对象",
-                            "schema": {
-                                "$ref": "#/systemTypes/MouseEvent"
-                            }
-                        },
-                        {
-                            "name": "senderVM",
-                            "type": "Vue",
-                            "description": "发送事件实例"
-                        }
-                    ]
+                    "name": "$listeners",
+                    "kind": "click",
+                    "description": "点击此项时触发",
+                    "params": []
                 }
             ],
             "children": []

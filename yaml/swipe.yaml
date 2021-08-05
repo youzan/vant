@@ -1,4 +1,4 @@
-- name: swipe
+- name: van-swipe
   title: 幻灯片
   icon: swipe
   description: 用于循环播放一组图片或内容
@@ -34,32 +34,14 @@
         - name: van-swipe-item
           title: 幻灯片子项
           snippet: <van-swipe-item>内容</van-swipe-item>
-  events:
-    - name: change
-      title: 选择后
-      description: 选择某一页时触发
-      advanced: true
-      params:
-        - name: $event
-          type: object
-          description: 自定义事件对象
-          schema:
-            $ref: "#/systemTypes/ChangeItemEvent"
-        - name: $event.value
-          type: any
-          description: 选中项的值
-        - name: $event.oldValue
-          type: any
-          description: 旧的值
-        - name: $event.itemVM
-          type: UCarouselItem
-          description: 选中项实例
-        - name: senderVM
-          type: UCarousel
-          description: 发送事件实例
 - name: van-swipe-item
   title: 幻灯片选项
   next: false
-  nested: false
-  attrs:
+  nested: true
+  attrs: []
   description: 幻灯片选项
+  events:
+    - name: click
+      title: 点击后
+      description: 点击某一项后触发
+      params: []

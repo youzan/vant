@@ -1,0 +1,83 @@
+- name: van-tabs
+  title: 分隔线
+  icon: tabs
+  labels:
+    - Selector
+  description: 选项卡切换组件，常用于平级区域大块内容的收纳和展现
+  next: true
+  nested: false
+  attrs:
+    - name: value
+      title: 值
+      type: any
+      sync: true
+      model: true
+      description: 选中标签页的值。
+    - name: type
+      title: 样式风格
+      type: string
+      options:
+        - value: line
+          title: 线条
+        - value: card
+          title: 卡片
+      default: line
+      description: 选型卡样式风格
+    - name: sticky
+      title: 自动吸顶
+      type: boolean
+      default: false
+      description: 是否自动吸顶
+    - name: swipeable
+      title: 滑动切换
+      type: boolean
+      default: false
+      description: 是否滑动切换
+    - name: scrollspy
+      title: 滚动导航
+      type: boolean
+      default: false
+      description: 是否滚动导航
+    - name: animated
+      title: 转场动画
+      type: boolean
+      default: false
+      description: 是否开启转场动画
+  slots:
+    - name: default
+      title: 默认
+      description: 插入`<van-tab>`子组件。
+      support:
+        - name: van-tab
+          title: 子选项
+          snippet: <van-tab title="标签页">内容</van-tab>
+  events:
+    - name: $listeners
+      title: 监听事件
+      description: 监听所有`<span>`元素的事件。
+      params: []
+- name: van-tab
+  title: 标签页
+  control: button
+  next: false
+  nested: true
+  attrs:
+    - name: title
+      title: 标题
+      type: string
+      default: '标题'
+      description: 自定义标题
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: 是否禁用
+    - name: badge
+      title: 徽标
+      type: string
+      description: 徽标的内容
+  slots:
+    - name: default
+      title: 默认
+      description: 显示的内容
+
