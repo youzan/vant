@@ -22,7 +22,7 @@
       type: boolean
       default: true
       description: 是否可以通过手势滑动
-     - name: show-indicators
+    - name: show-indicators
       title: 指示器
       type: boolean
       default: true

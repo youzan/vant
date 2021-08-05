@@ -4,6 +4,7 @@ import defaultMessages from './lang/zh-CN';
 
 declare module 'vue' {
   interface VueConstructor {
+    // @ts-ignore：官方炸了
     util: {
       defineReactive(obj: object, key: string, value: any): void;
     };
@@ -11,6 +12,7 @@ declare module 'vue' {
 }
 
 const proto = Vue.prototype;
+ // @ts-ignore：官方炸了
 const { defineReactive } = Vue.util;
 
 defineReactive(proto, '$vantLang', 'zh-CN');
