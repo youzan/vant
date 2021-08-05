@@ -58,6 +58,7 @@
             "events": [
                 {
                     "name": "$listeners",
+                    "kind": "click",
                     "title": "监听事件",
                     "description": "监听所有`<span>`元素的事件。",
                     "params": []
@@ -332,6 +333,516 @@
                     "params": []
                 }
             ],
+            "children": []
+        }
+    },
+    {
+        "symbol": "van-cell-group",
+        "name": "单元格模块",
+        "icon": "cell-group",
+        "depDescription": {},
+        "description": "单元格为列表中的单个展示项",
+        "labels": [
+            "Display"
+        ],
+        "screenShot": "",
+        "blocks": "[]",
+        "jsonSchema": {
+            "name": "van-cell-group",
+            "title": "单元格模块",
+            "description": "单元格为列表中的单个展示项",
+            "category": "Display",
+            "screenShot": "",
+            "drawings": "",
+            "blocks": [],
+            "attrs": [
+                {
+                    "name": "inset",
+                    "title": "卡片风格",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否是卡片风格"
+                }
+            ],
+            "slots": [
+                {
+                    "name": "default",
+                    "description": "插入`<van-cell>`子组件。",
+                    "support": [
+                        {
+                            "name": "van-cell",
+                            "title": "插入单元格",
+                            "snippet": "<van-cell title=\"单元格\" value=\"内容\" />"
+                        }
+                    ]
+                }
+            ],
+            "children": [
+                {
+                    "name": "van-cell",
+                    "attrs": [
+                        {
+                            "name": "is-link",
+                            "title": "箭头",
+                            "type": "boolean",
+                            "default": true,
+                            "description": "是否展示箭头"
+                        },
+                        {
+                            "name": "center",
+                            "title": "垂直居中",
+                            "type": "boolean",
+                            "default": true,
+                            "description": "是否垂直居中"
+                        },
+                        {
+                            "name": "arrow-direction",
+                            "title": "箭头方向",
+                            "type": "string",
+                            "options": [
+                                {
+                                    "value": "left",
+                                    "title": "左"
+                                },
+                                {
+                                    "value": "up",
+                                    "title": "上"
+                                },
+                                {
+                                    "value": "down",
+                                    "title": "下"
+                                },
+                                {
+                                    "value": "right",
+                                    "title": "右"
+                                }
+                            ],
+                            "default": "right",
+                            "description": "箭头得方向"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "symbol": "van-popup",
+        "name": "弹出层",
+        "icon": "popup",
+        "depDescription": {},
+        "description": "弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示。",
+        "labels": [
+            "Container"
+        ],
+        "screenShot": "",
+        "blocks": "[]",
+        "jsonSchema": {
+            "name": "van-popup",
+            "title": "弹出层",
+            "description": "弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示。",
+            "category": "Container",
+            "screenShot": "",
+            "drawings": "",
+            "blocks": [],
+            "attrs": [
+                {
+                    "name": "show",
+                    "type": "boolean",
+                    "sync": true,
+                    "model": true,
+                    "default": false,
+                    "description": "是否展示弹层"
+                },
+                {
+                    "name": "position",
+                    "title": "弹出位置",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "center",
+                            "title": "中间"
+                        },
+                        {
+                            "value": "top",
+                            "title": "上"
+                        },
+                        {
+                            "value": "bottom",
+                            "title": "下"
+                        },
+                        {
+                            "value": "right",
+                            "title": "右"
+                        },
+                        {
+                            "value": "left",
+                            "title": "左"
+                        }
+                    ],
+                    "default": "center",
+                    "description": "弹出具体位置"
+                },
+                {
+                    "name": "close-on-click-overlay",
+                    "title": "点击遮罩层后关闭",
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否在点击遮罩层后关闭"
+                }
+            ],
+            "events": [
+                {
+                    "name": "click",
+                    "title": "点击弹出层",
+                    "description": "点击弹出层时触发",
+                    "params": []
+                },
+                {
+                    "name": "click-overlay",
+                    "title": "点击遮罩层",
+                    "description": "点击遮罩层时触发",
+                    "params": []
+                }
+            ],
+            "children": []
+        }
+    },
+    {
+        "symbol": "van-row",
+        "name": "栅格布局",
+        "icon": "row",
+        "depDescription": {},
+        "description": "内部元素按照一定的规则布局",
+        "labels": [
+            "Layout"
+        ],
+        "screenShot": "",
+        "blocks": "[]",
+        "jsonSchema": {
+            "name": "van-row",
+            "title": "栅格布局",
+            "description": "内部元素按照一定的规则布局",
+            "category": "Layout",
+            "screenShot": "",
+            "drawings": "",
+            "blocks": [],
+            "attrs": [
+                {
+                    "name": "type",
+                    "title": "布局方式",
+                    "type": "string",
+                    "default": "flex",
+                    "description": "元素布局方式"
+                },
+                {
+                    "name": "gutter",
+                    "title": "列间距",
+                    "type": "string",
+                    "description": "列元素之间的间距（单位为 px）"
+                },
+                {
+                    "name": "justify",
+                    "title": "对齐方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "start",
+                            "title": "左"
+                        },
+                        {
+                            "value": "center",
+                            "title": "居中"
+                        },
+                        {
+                            "value": "end",
+                            "title": "右"
+                        },
+                        {
+                            "value": "space-around",
+                            "title": "环绕"
+                        },
+                        {
+                            "value": "space-between",
+                            "title": "两端"
+                        }
+                    ],
+                    "default": "start",
+                    "description": "flex布局对齐方式"
+                }
+            ],
+            "slots": [
+                {
+                    "name": "default",
+                    "description": "插入`<van-col>`子组件。",
+                    "support": [
+                        {
+                            "name": "van-col",
+                            "title": "插入三列",
+                            "snippet": "<van-col span=\"8\">span8</van-col><van-col span=\"8\">span8</van-col><van-col span=\"8\">span8</van-col>"
+                        }
+                    ]
+                }
+            ],
+            "children": [
+                {
+                    "name": "van-col",
+                    "title": "栅格列",
+                    "description": "内部元素行内列布局",
+                    "attrs": [
+                        {
+                            "name": "span",
+                            "title": "宽度",
+                            "type": "number",
+                            "default": 8,
+                            "description": "列元素宽度"
+                        },
+                        {
+                            "name": "offset",
+                            "title": "偏移",
+                            "type": "number",
+                            "default": 0,
+                            "description": "列偏移宽度（计算方式与 span 相同）"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "symbol": "van-swipe",
+        "name": "幻灯片",
+        "icon": "swipe",
+        "depDescription": {},
+        "description": "用于循环播放一组图片或内容",
+        "labels": [
+            "Display"
+        ],
+        "screenShot": "",
+        "blocks": "[]",
+        "jsonSchema": {
+            "name": "van-swipe",
+            "title": "幻灯片",
+            "description": "用于循环播放一组图片或内容",
+            "category": "Display",
+            "screenShot": "",
+            "drawings": "",
+            "blocks": [],
+            "attrs": [
+                {
+                    "name": "duration",
+                    "title": "动画时间",
+                    "type": "number",
+                    "default": 4000,
+                    "description": "单位：毫秒，幻灯片切换时间，如果设置值小于动画时长，会在动画完成后切换"
+                },
+                {
+                    "name": "loop",
+                    "title": "循环播放",
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否循环播放"
+                },
+                {
+                    "name": "touchable",
+                    "title": "手势滑动",
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否可以通过手势滑动"
+                },
+                {
+                    "name": "show-indicators",
+                    "title": "指示器",
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否显示指示器"
+                }
+            ],
+            "slots": [
+                {
+                    "name": "default",
+                    "description": "插入`van-swipe-item`子组件。",
+                    "support": [
+                        {
+                            "name": "van-swipe-item",
+                            "title": "幻灯片子项",
+                            "snippet": "<van-swipe-item>内容</van-swipe-item>"
+                        }
+                    ]
+                }
+            ],
+            "children": [
+                {
+                    "name": "van-swipe-item",
+                    "title": "幻灯片选项",
+                    "description": "幻灯片选项",
+                    "attrs": [],
+                    "events": [
+                        {
+                            "name": "click",
+                            "title": "点击后",
+                            "description": "点击某一项后触发",
+                            "params": []
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "symbol": "van-tabs",
+        "name": "分隔线",
+        "icon": "tabs",
+        "depDescription": {},
+        "description": "选项卡切换组件，常用于平级区域大块内容的收纳和展现",
+        "labels": [
+            "Selector"
+        ],
+        "screenShot": "",
+        "blocks": "[]",
+        "jsonSchema": {
+            "name": "van-tabs",
+            "title": "分隔线",
+            "description": "选项卡切换组件，常用于平级区域大块内容的收纳和展现",
+            "category": "Selector",
+            "screenShot": "",
+            "drawings": "",
+            "blocks": [],
+            "attrs": [
+                {
+                    "name": "value",
+                    "title": "值",
+                    "type": "any",
+                    "sync": true,
+                    "model": true,
+                    "description": "选中标签页的值。"
+                },
+                {
+                    "name": "type",
+                    "title": "样式风格",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "line",
+                            "title": "线条"
+                        },
+                        {
+                            "value": "card",
+                            "title": "卡片"
+                        }
+                    ],
+                    "default": "line",
+                    "description": "选型卡样式风格"
+                },
+                {
+                    "name": "sticky",
+                    "title": "自动吸顶",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否自动吸顶"
+                },
+                {
+                    "name": "swipeable",
+                    "title": "滑动切换",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否滑动切换"
+                },
+                {
+                    "name": "scrollspy",
+                    "title": "滚动导航",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否滚动导航"
+                },
+                {
+                    "name": "animated",
+                    "title": "转场动画",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否开启转场动画"
+                }
+            ],
+            "slots": [
+                {
+                    "name": "default",
+                    "title": "默认",
+                    "description": "插入`<van-tab>`子组件。",
+                    "support": [
+                        {
+                            "name": "van-tab",
+                            "title": "子选项",
+                            "snippet": "<van-tab title=\"标签页\">内容</van-tab>"
+                        }
+                    ]
+                }
+            ],
+            "events": [
+                {
+                    "name": "$listeners",
+                    "kind": "click",
+                    "title": "监听事件",
+                    "description": "监听所有`<span>`元素的事件。",
+                    "params": []
+                }
+            ],
+            "children": [
+                {
+                    "name": "van-tab",
+                    "title": "标签页",
+                    "control": "button",
+                    "attrs": [
+                        {
+                            "name": "title",
+                            "title": "标题",
+                            "type": "string",
+                            "default": "标题",
+                            "description": "自定义标题"
+                        },
+                        {
+                            "name": "disabled",
+                            "title": "禁用",
+                            "type": "boolean",
+                            "default": false,
+                            "description": "是否禁用"
+                        },
+                        {
+                            "name": "badge",
+                            "title": "徽标",
+                            "type": "string",
+                            "description": "徽标的内容"
+                        }
+                    ],
+                    "slots": [
+                        {
+                            "name": "default",
+                            "title": "默认",
+                            "description": "显示的内容"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "symbol": "van-router-view",
+        "name": "子页面容器",
+        "icon": "router-view",
+        "depDescription": {},
+        "description": "放置子页面的容器。",
+        "labels": [
+            "Container"
+        ],
+        "screenShot": "",
+        "blocks": "[]",
+        "jsonSchema": {
+            "name": "van-router-view",
+            "title": "子页面容器",
+            "description": "放置子页面的容器。",
+            "category": "Container",
+            "screenShot": "",
+            "drawings": "",
+            "blocks": [],
+            "slots": false,
             "children": []
         }
     }

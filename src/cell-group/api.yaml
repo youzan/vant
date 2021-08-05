@@ -1,0 +1,49 @@
+- name: van-cell-group
+  icon: cell-group
+  title: 单元格模块
+  description: 单元格为列表中的单个展示项
+  labels:
+    - Display
+  next: true
+  nested: false
+  attrs:
+    - name: inset
+      title: 卡片风格
+      type: boolean
+      default: false
+      description: 是否是卡片风格
+  slots:
+    - name: default
+      description: 插入`<van-cell>`子组件。
+      support:
+        - name: van-cell
+          title: 插入单元格
+          snippet: <van-cell title="单元格" value="内容" />
+- name: van-cell
+  next: false
+  nested: true
+  attrs:
+    - name: is-link
+      title: 箭头
+      type: boolean
+      default: true
+      description: 是否展示箭头
+    - name: center
+      title: 垂直居中
+      type: boolean
+      default: true
+      description: 是否垂直居中
+    - name: arrow-direction
+      title: 箭头方向
+      type: string
+      options:
+        - value: left
+          title: 左
+        - value: up
+          title: 上
+        - value: down
+          title: 下
+        - value: right
+          title: 右
+      default: right
+      description: 箭头得方向

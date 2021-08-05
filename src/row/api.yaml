@@ -1,0 +1,58 @@
+- name: van-row
+  icon: row
+  title: 栅格布局
+  description: 内部元素按照一定的规则布局
+  labels:
+    - Layout
+  next: true
+  nested: false
+  attrs:
+    - name: type
+      title: 布局方式
+      type: string
+      default: flex
+      description: 元素布局方式
+    - name: gutter
+      title: 列间距
+      type: string
+      description: 列元素之间的间距（单位为 px）
+    - name: justify
+      title: 对齐方式
+      type: string
+      options:
+        - value: start
+          title: 左
+        - value: center
+          title: 居中
+        - value: end
+          title: 右
+        - value: space-around
+          title: 环绕
+        - value: space-between
+          title: 两端
+      default: start
+      description: flex布局对齐方式
+  slots:
+    - name: default
+      description: 插入`<van-col>`子组件。
+      support:
+        - name: van-col
+          title: 插入三列
+          snippet: <van-col span="8">span8</van-col><van-col
+            span="8">span8</van-col><van-col span="8">span8</van-col>
+- name: van-col
+  title: 栅格列
+  description: 内部元素行内列布局
+  next: false
+  nested: true
+  attrs:
+    - name: span
+      title: 宽度
+      type: number
+      default: 8
+      description: 列元素宽度
+    - name: offset
+      title: 偏移
+      type: number
+      default: 0
+      description: 列偏移宽度（计算方式与 span 相同）
