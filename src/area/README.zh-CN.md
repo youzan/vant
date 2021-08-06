@@ -166,6 +166,19 @@ confirm 事件返回的数据整体为一个数组，数组每一项对应一列
 | --- | --- | --- | --- |
 | reset | 根据地区码重置所有选项，若不传地区码，则重置到第一项 | _code?: string_ | - |
 
+### 类型定义
+
+通过 `AreaInstance` 获取 Area 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { AreaInstance } from 'vant';
+
+const areaRef = ref<AreaInstance>();
+
+areaRef.value?.reset();
+```
+
 ## 常见问题
 
 ### 在桌面端无法操作组件？

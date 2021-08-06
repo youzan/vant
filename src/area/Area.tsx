@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import {
   ref,
   watch,
@@ -8,6 +7,7 @@ import {
   PropType,
   onMounted,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -20,6 +20,9 @@ import { useExpose } from '../composables/use-expose';
 
 // Components
 import { Picker } from '../picker';
+
+// Types
+import type { AreaList, AreaColumnType, AreaColumnOption } from './types';
 
 const [name, bem] = createNamespace('area');
 
@@ -47,41 +50,32 @@ function isOverseaCode(code: string) {
   return code[0] === '9';
 }
 
-export type AreaList = {
-  city_list: Record<string, string>;
-  county_list: Record<string, string>;
-  province_list: Record<string, string>;
-};
+const props = extend({}, pickerProps, {
+  value: String,
+  areaList: {
+    type: Object as PropType<AreaList>,
+    default: () => ({}),
+  },
+  columnsNum: {
+    type: [Number, String],
+    default: 3,
+  },
+  isOverseaCode: {
+    type: Function as PropType<(code: string) => boolean>,
+    default: isOverseaCode,
+  },
+  columnsPlaceholder: {
+    type: Array as PropType<string[]>,
+    default: () => [],
+  },
+});
 
-export type AreaColumnOption = {
-  name: string;
-  code: string;
-};
-
-type ColumnType = 'province' | 'county' | 'city';
+export type AreaProps = ExtractPropTypes<typeof props>;
 
 export default defineComponent({
   name,
 
-  props: extend({}, pickerProps, {
-    value: String,
-    areaList: {
-      type: Object as PropType<AreaList>,
-      default: () => ({}),
-    },
-    columnsNum: {
-      type: [Number, String],
-      default: 3,
-    },
-    isOverseaCode: {
-      type: Function as PropType<(code: string) => boolean>,
-      default: isOverseaCode,
-    },
-    columnsPlaceholder: {
-      type: Array as PropType<string[]>,
-      default: () => [],
-    },
-  }),
+  props,
 
   emits: ['change', 'confirm'],
 
@@ -131,7 +125,7 @@ export default defineComponent({
       return '';
     };
 
-    const getColumnValues = (type: ColumnType, code?: string) => {
+    const getColumnValues = (type: AreaColumnType, code?: string) => {
       let column: AreaColumnOption[] = [];
       if (type !== 'province' && !code) {
         return column;
@@ -170,7 +164,7 @@ export default defineComponent({
     };
 
     // get index by code
-    const getIndex = (type: ColumnType, code: string) => {
+    const getIndex = (type: AreaColumnType, code: string) => {
       let compareNum = code.length;
       if (type === 'province') {
         compareNum = props.isOverseaCode(code) ? 1 : 2;
