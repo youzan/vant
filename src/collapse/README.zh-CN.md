@@ -140,6 +140,27 @@ export default {
 | value-class | 右侧内容额外类名 | _string_ | - |
 | label-class | 描述信息额外类名 | _string_ | - |
 
+### CollapseItem 方法
+
+通过 ref 可以获取到 CollapseItem 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名 | 说明 | 参数 | 返回值 |
+| --- | --- | --- | --- |
+| toggle | 切换面试展开状态，传 `true` 为展开，`false` 为收起，不传参为切换 | _expand?: boolean_ | - |
+
+### 类型定义
+
+通过 `CollapseItemInstance` 获取 CollapseItem 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { CollapseItemInstance } from 'vant';
+
+const collapseItemRef = ref<CollapseItemInstance>();
+
+collapseItemRef.value?.toggle();
+```
+
 ### CollapseItem Slots
 
 | 名称           | 说明                 |
@@ -150,14 +171,6 @@ export default {
 | label `v3.1.1` | 自定义标题栏描述信息 |
 | icon           | 自定义标题栏左侧图标 |
 | right-icon     | 自定义标题栏右侧图标 |
-
-### CollapseItem 方法
-
-通过 ref 可以获取到 CollapseItem 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
-
-| 方法名 | 说明 | 参数 | 返回值 |
-| --- | --- | --- | --- |
-| toggle | 切换面试展开状态，传 `true` 为展开，`false` 为收起，不传参为切换 | _expand?: boolean_ | - |
 
 ### 样式变量
 

@@ -1,4 +1,11 @@
-import { ref, watch, computed, nextTick, defineComponent } from 'vue';
+import {
+  ref,
+  watch,
+  computed,
+  nextTick,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import { cellProps } from '../cell/Cell';
@@ -17,15 +24,19 @@ const [name, bem] = createNamespace('collapse-item');
 
 const CELL_SLOTS = ['icon', 'title', 'value', 'label', 'right-icon'] as const;
 
+const props = extend({}, cellProps, {
+  name: [Number, String],
+  isLink: truthProp,
+  disabled: Boolean,
+  readonly: Boolean,
+});
+
+export type CollapseItemProps = ExtractPropTypes<typeof props>;
+
 export default defineComponent({
   name,
 
-  props: extend({}, cellProps, {
-    name: [Number, String],
-    isLink: truthProp,
-    disabled: Boolean,
-    readonly: Boolean,
-  }),
+  props,
 
   setup(props, { slots }) {
     const wrapperRef = ref<HTMLElement>();
