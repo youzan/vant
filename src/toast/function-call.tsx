@@ -1,4 +1,4 @@
-import { ref, App, TeleportProps, getCurrentInstance } from 'vue';
+import { ref, App, TeleportProps, getCurrentInstance, watch } from 'vue';
 import {
   extend,
   isObject,
@@ -87,13 +87,13 @@ function createInstance() {
           onClosed,
           'onUpdate:show': toggle,
         };
-
-        if (message.value) {
-          attrs.message = message.value;
-        }
-
         return <VanToast {...state} {...attrs} />;
       };
+
+      // support dynamic modification of message
+      watch(message, (val) => {
+        state.message = val;
+      });
 
       // rewrite render function
       (getCurrentInstance() as any).render = render;

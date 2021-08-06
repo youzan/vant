@@ -3,7 +3,10 @@ import { extend } from '../utils';
 import { useExpose } from '../composables/use-expose';
 
 export function usePopupState() {
-  const state = reactive({
+  const state = reactive<{
+    show: boolean;
+    [key: string]: any;
+  }>({
     show: false,
   });
 
