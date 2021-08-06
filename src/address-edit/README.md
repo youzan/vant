@@ -126,6 +126,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Addres
 | --- | --- | --- | --- |
 | setAddressDetail | Set address detail | _addressDetail: string_ | - |
 
+### Types
+
+Get the type definition of the AddressEdit instance through `AddressEditInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { AddressEditInstance } from 'vant';
+
+const addressEditRef = ref<AddressEditInstance>();
+
+addressEditRef.value?.setAddressDetail('');
+```
+
 ### AddressInfo Data Structure
 
 | key           | Description        | Type      |

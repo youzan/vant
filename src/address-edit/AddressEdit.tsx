@@ -6,6 +6,7 @@ import {
   reactive,
   PropType,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -30,24 +31,14 @@ import { Toast } from '../toast';
 import { Button } from '../button';
 import { Dialog } from '../dialog';
 import { Switch } from '../switch';
-import AddressEditDetail, { AddressEditSearchItem } from './AddressEditDetail';
+import AddressEditDetail from './AddressEditDetail';
+
+// Types
+import type { AddressEditInfo, AddressEditSearchItem } from './types';
 
 const [name, bem, t] = createNamespace('address-edit');
 
-export type AddressEditInfo = {
-  tel: string;
-  name: string;
-  city: string;
-  county: string;
-  country: string;
-  province: string;
-  areaCode: string;
-  isDefault?: boolean;
-  postalCode?: string;
-  addressDetail: string;
-};
-
-const defaultData: AddressEditInfo = {
+const DEFAULT_DATA: AddressEditInfo = {
   name: '',
   tel: '',
   city: '',
@@ -64,53 +55,57 @@ function isPostal(value: string) {
   return /^\d{6}$/.test(value);
 }
 
+const props = {
+  areaList: Object as PropType<AreaList>,
+  isSaving: Boolean,
+  isDeleting: Boolean,
+  validator: Function as PropType<
+    (key: string, value: string) => string | undefined
+  >,
+  showArea: truthProp,
+  showDetail: truthProp,
+  showDelete: Boolean,
+  showPostal: Boolean,
+  disableArea: Boolean,
+  searchResult: Array as PropType<AddressEditSearchItem[]>,
+  telMaxlength: [Number, String],
+  showSetDefault: Boolean,
+  saveButtonText: String,
+  areaPlaceholder: String,
+  deleteButtonText: String,
+  showSearchResult: Boolean,
+  detailRows: {
+    type: [Number, String],
+    default: 1,
+  },
+  detailMaxlength: {
+    type: [Number, String],
+    default: 200,
+  },
+  addressInfo: {
+    type: Object as PropType<Partial<AddressEditInfo>>,
+    default: () => extend({}, DEFAULT_DATA),
+  },
+  telValidator: {
+    type: Function as PropType<(val: string) => boolean>,
+    default: isMobile,
+  },
+  postalValidator: {
+    type: Function as PropType<(val: string) => boolean>,
+    default: isPostal,
+  },
+  areaColumnsPlaceholder: {
+    type: Array as PropType<string[]>,
+    default: () => [],
+  },
+};
+
+export type AddressEditProps = ExtractPropTypes<typeof props>;
+
 export default defineComponent({
   name,
 
-  props: {
-    areaList: Object as PropType<AreaList>,
-    isSaving: Boolean,
-    isDeleting: Boolean,
-    validator: Function as PropType<
-      (key: string, value: string) => string | undefined
-    >,
-    showArea: truthProp,
-    showDetail: truthProp,
-    showDelete: Boolean,
-    showPostal: Boolean,
-    disableArea: Boolean,
-    searchResult: Array as PropType<AddressEditSearchItem[]>,
-    telMaxlength: [Number, String],
-    showSetDefault: Boolean,
-    saveButtonText: String,
-    areaPlaceholder: String,
-    deleteButtonText: String,
-    showSearchResult: Boolean,
-    detailRows: {
-      type: [Number, String],
-      default: 1,
-    },
-    detailMaxlength: {
-      type: [Number, String],
-      default: 200,
-    },
-    addressInfo: {
-      type: Object as PropType<Partial<AddressEditInfo>>,
-      default: () => extend({}, defaultData),
-    },
-    telValidator: {
-      type: Function as PropType<(val: string) => boolean>,
-      default: isMobile,
-    },
-    postalValidator: {
-      type: Function as PropType<(val: string) => boolean>,
-      default: isPostal,
-    },
-    areaColumnsPlaceholder: {
-      type: Array as PropType<string[]>,
-      default: () => [],
-    },
-  },
+  props,
 
   emits: [
     'save',
@@ -317,7 +312,7 @@ export default defineComponent({
     watch(
       () => props.addressInfo,
       (value) => {
-        state.data = extend({}, defaultData, value);
+        state.data = extend({}, DEFAULT_DATA, value);
         setAreaCode(value.areaCode);
       },
       {

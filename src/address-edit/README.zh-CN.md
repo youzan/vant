@@ -126,6 +126,19 @@ export default {
 | ---------------- | ------------ | ----------------------- | ------ |
 | setAddressDetail | 设置详细地址 | _addressDetail: string_ | -      |
 
+### 类型定义
+
+通过 `AddressEditInstance` 获取 AddressEdit 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { AddressEditInstance } from 'vant';
+
+const addressEditRef = ref<AddressEditInstance>();
+
+addressEditRef.value?.setAddressDetail('');
+```
+
 ### AddressInfo 数据格式
 
 注意：`AddressInfo` 仅作为初始值传入，表单最终内容可以在 save 事件中获取。
