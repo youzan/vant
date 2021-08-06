@@ -142,6 +142,27 @@ export default {
 | value-class | Value className | _string_ | - |
 | label-class | Label className | _string_ | - |
 
+### CollapseItem Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get CollapseItem instance and call instance methods.
+
+| Name   | Description            | Attribute           | Return value |
+| ------ | ---------------------- | ------------------- | ------------ |
+| toggle | Toggle expanded status | _expanded: boolean_ | -            |
+
+### Types
+
+Get the type definition of the CollapseItem instance through `CollapseItemInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { CollapseItemInstance } from 'vant';
+
+const collapseItemRef = ref<CollapseItemInstance>();
+
+collapseItemRef.value?.toggle();
+```
+
 ### CollapseItem Slots
 
 | Name           | Description              |
@@ -152,14 +173,6 @@ export default {
 | label `v3.1.1` | Custom header label      |
 | icon           | Custom header left icon  |
 | right-icon     | Custom header right icon |
-
-### CollapseItem Methods
-
-Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get CollapseItem instance and call instance methods.
-
-| Name   | Description            | Attribute           | Return value |
-| ------ | ---------------------- | ------------------- | ------------ |
-| toggle | Toggle expanded status | _expanded: boolean_ | -            |
 
 ### CSS Variables
 
