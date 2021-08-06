@@ -5,4 +5,4 @@ const Area = withInstall<typeof _Area>(_Area);
 
 export default Area;
 export { Area };
-export type { AreaList, AreaColumnOption } from './Area';
+export type { AreaList, AreaInstance, AreaColumnOption } from './types';

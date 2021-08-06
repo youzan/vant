@@ -163,3 +163,16 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Area i
 | Name  | Description               | Attribute       | Return value |
 | ----- | ------------------------- | --------------- | ------------ |
 | reset | Reset all options by code | _code?: string_ | -            |
+
+### Types
+
+Get the type definition of the Area instance through `AreaInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { AreaInstance } from 'vant';
+
+const areaRef = ref<AreaInstance>();
+
+areaRef.value?.reset();
+```
