@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
-
-import { ComponentPublicInstance } from 'vue';
-import { AreaProps } from './Area';
+import type { ComponentPublicInstance } from 'vue';
+import type { AreaProps } from './Area';
 
 export type AreaList = {
   city_list: Record<string, string>;

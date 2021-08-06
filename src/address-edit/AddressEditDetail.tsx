@@ -7,13 +7,11 @@ import { isAndroid, ComponentInstance, createNamespace } from '../utils';
 import { Cell } from '../cell';
 import { Field } from '../field';
 
+// Types
+import type { AddressEditSearchItem } from './types';
+
 const [name, bem, t] = createNamespace('address-edit-detail');
 const android = isAndroid();
-
-export type AddressEditSearchItem = {
-  name: string;
-  address: string;
-};
 
 export default defineComponent({
   name,
