@@ -426,6 +426,10 @@ module.exports = {
                 title: 'useCountDown',
               },
               {
+                path: 'use-custom-field-value',
+                title: 'useCustomFieldValue',
+              },
+              {
                 path: 'use-rect',
                 title: 'useRect',
               },
@@ -834,6 +838,10 @@ module.exports = {
               {
                 path: 'use-count-down',
                 title: 'useCountDown',
+              },
+              {
+                path: 'use-custom-field-value',
+                title: 'useCustomFieldValue',
               },
               // {
               //   path: 'use-rect',
