@@ -1,4 +1,4 @@
-import { PropType, CSSProperties, defineComponent } from 'vue';
+import { PropType, CSSProperties, defineComponent, computed } from 'vue';
 import {
   isDef,
   addUnit,
@@ -50,27 +50,36 @@ export default defineComponent({
       }
     };
 
+    const style = computed(() => {
+      const style: CSSProperties = {
+        background: props.color,
+      };
+
+      if (props.offset) {
+        const [x, y] = props.offset;
+        if (slots.default) {
+          style.top = addUnit(y);
+
+          if (typeof x === 'number') {
+            style.right = addUnit(-x);
+          } else {
+            style.right = x.startsWith('-') ? x.replace('-', '') : `-${x}`;
+          }
+        } else {
+          style.marginTop = addUnit(y);
+          style.marginLeft = addUnit(x);
+        }
+      }
+
+      return style;
+    });
+
     const renderBadge = () => {
       if (hasContent() || props.dot) {
-        const style: CSSProperties = {
-          background: props.color,
-        };
-
-        if (props.offset) {
-          const [x, y] = props.offset;
-          if (slots.default) {
-            style.top = addUnit(y);
-            style.right = `-${addUnit(x)}`;
-          } else {
-            style.marginTop = addUnit(y);
-            style.marginLeft = addUnit(x);
-          }
-        }
-
         return (
           <div
             class={bem({ dot: props.dot, fixed: !!slots.default })}
-            style={style}
+            style={style.value}
           >
             {renderContent()}
           </div>
