@@ -1,11 +1,10 @@
 import { PropType, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
-import { truthProp, createNamespace } from '../utils';
+import { truthProp, FORM_KEY, createNamespace } from '../utils';
 
 // Composables
 import { useChildren } from '@vant/use';
-import { FORM_KEY } from '../composables/use-link-field';
 import { useExpose } from '../composables/use-expose';
 
 // Types

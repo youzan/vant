@@ -1,6 +1,11 @@
 import { defineComponent } from 'vue';
-import { createNamespace, addUnit, truthProp } from '../utils';
-import { BORDER_LEFT, BORDER_SURROUND } from '../utils/constant';
+import {
+  addUnit,
+  truthProp,
+  BORDER_LEFT,
+  BORDER_SURROUND,
+  createNamespace,
+} from '../utils';
 
 const [name, bem] = createNamespace('password-input');
 

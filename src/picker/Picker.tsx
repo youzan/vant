@@ -14,8 +14,8 @@ import {
   truthProp,
   preventDefault,
   createNamespace,
+  BORDER_UNSET_TOP_BOTTOM,
 } from '../utils';
-import { BORDER_UNSET_TOP_BOTTOM } from '../utils/constant';
 
 // Composables
 import { useChildren } from '@vant/use';

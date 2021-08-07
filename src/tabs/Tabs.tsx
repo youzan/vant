@@ -21,16 +21,17 @@ import {
   isHidden,
   unitToPx,
   truthProp,
+  Interceptor,
   getVisibleTop,
   getElementTop,
+  callInterceptor,
   createNamespace,
   getVisibleHeight,
   setRootScrollTop,
   ComponentInstance,
+  BORDER_TOP_BOTTOM,
 } from '../utils';
 import { scrollLeftTo, scrollTopTo } from './utils';
-import { BORDER_TOP_BOTTOM } from '../utils/constant';
-import { callInterceptor, Interceptor } from '../utils/interceptor';
 
 // Composables
 import {

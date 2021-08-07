@@ -6,8 +6,7 @@ import {
   ExtractPropTypes,
 } from 'vue';
 import { unknownProp, createNamespace } from '../utils';
-import { useChildren } from '@vant/use';
-import { useLinkField } from '../composables/use-link-field';
+import { useChildren, useCustomFieldValue } from '@vant/use';
 import type { CheckerDirection } from '../checkbox/Checker';
 
 const [name, bem] = createNamespace('radio-group');
@@ -49,7 +48,7 @@ export default defineComponent({
       updateValue,
     });
 
-    useLinkField(() => props.modelValue);
+    useCustomFieldValue(() => props.modelValue);
 
     return () => (
       <div class={bem([props.direction])} role="radiogroup">

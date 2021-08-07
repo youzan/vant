@@ -12,9 +12,8 @@ import {
 } from '../utils';
 
 // Composables
-import { useRect } from '@vant/use';
+import { useRect, useCustomFieldValue } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
-import { useLinkField } from '../composables/use-link-field';
 
 const [name, bem] = createNamespace('slider');
 
@@ -285,7 +284,7 @@ export default defineComponent({
 
     // format initial value
     updateValue(props.modelValue);
-    useLinkField(() => props.modelValue);
+    useCustomFieldValue(() => props.modelValue);
 
     return () => (
       <div

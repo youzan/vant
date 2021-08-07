@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue';
 import { createNamespace, addUnit, unknownProp } from '../utils';
-import { useLinkField } from '../composables/use-link-field';
+import { useCustomFieldValue } from '@vant/use';
 import { Loading } from '../loading';
 
 const [name, bem] = createNamespace('switch');
@@ -45,7 +45,7 @@ export default defineComponent({
       }
     };
 
-    useLinkField(() => props.modelValue);
+    useCustomFieldValue(() => props.modelValue);
 
     return () => {
       const { size, loading, disabled, activeColor, inactiveColor } = props;

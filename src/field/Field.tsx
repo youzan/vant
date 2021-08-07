@@ -16,6 +16,7 @@ import {
   isDef,
   extend,
   addUnit,
+  FORM_KEY,
   unknownProp,
   resetScroll,
   formatNumber,
@@ -34,9 +35,8 @@ import {
 import { cellProps } from '../cell/Cell';
 
 // Composables
-import { useParent } from '@vant/use';
+import { CUSTOM_FIELD_INJECTION_KEY, useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
-import { FORM_KEY, FIELD_KEY } from '../composables/use-link-field';
 
 // Components
 import { Icon } from '../icon';
@@ -146,7 +146,7 @@ export default defineComponent({
     });
 
     const inputRef = ref<HTMLInputElement>();
-    const childFieldValue = ref<() => unknown>();
+    const customValue = ref<() => unknown>();
 
     const { parent: form } = useParent(FORM_KEY);
 
@@ -176,8 +176,8 @@ export default defineComponent({
     });
 
     const formValue = computed(() => {
-      if (childFieldValue.value && slots.input) {
-        return childFieldValue.value();
+      if (customValue.value && slots.input) {
+        return customValue.value();
       }
       return props.modelValue;
     });
@@ -522,8 +522,8 @@ export default defineComponent({
       resetValidation,
     });
 
-    provide(FIELD_KEY, {
-      childFieldValue,
+    provide(CUSTOM_FIELD_INJECTION_KEY, {
+      customValue,
       resetValidation,
       validateWithTrigger,
     });

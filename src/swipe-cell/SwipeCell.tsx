@@ -9,8 +9,14 @@ import {
 } from 'vue';
 
 // Utils
-import { clamp, isDef, createNamespace, preventDefault } from '../utils';
-import { callInterceptor, Interceptor } from '../utils/interceptor';
+import {
+  clamp,
+  isDef,
+  Interceptor,
+  preventDefault,
+  callInterceptor,
+  createNamespace,
+} from '../utils';
 
 // Composables
 import { useRect, useClickAway } from '@vant/use';

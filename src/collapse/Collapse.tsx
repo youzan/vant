@@ -1,6 +1,5 @@
 import { PropType, defineComponent, InjectionKey } from 'vue';
-import { truthProp, createNamespace } from '../utils';
-import { BORDER_TOP_BOTTOM } from '../utils/constant';
+import { truthProp, createNamespace, BORDER_TOP_BOTTOM } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('collapse');

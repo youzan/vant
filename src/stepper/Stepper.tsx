@@ -7,15 +7,16 @@ import {
   addNumber,
   truthProp,
   resetScroll,
+  Interceptor,
   formatNumber,
   getSizeStyle,
   preventDefault,
   createNamespace,
+  callInterceptor,
 } from '../utils';
 
 // Composables
-import { useLinkField } from '../composables/use-link-field';
-import { Interceptor, callInterceptor } from '../utils/interceptor';
+import { useCustomFieldValue } from '@vant/use';
 
 const [name, bem] = createNamespace('stepper');
 
@@ -291,7 +292,7 @@ export default defineComponent({
       emit('change', value, { name: props.name });
     });
 
-    useLinkField(() => props.modelValue);
+    useCustomFieldValue(() => props.modelValue);
 
     return () => (
       <div class={bem([props.theme])}>

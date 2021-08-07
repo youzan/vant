@@ -10,9 +10,8 @@ import {
 import { createNamespace } from '../utils';
 
 // Composables
-import { useChildren } from '@vant/use';
+import { useChildren, useCustomFieldValue } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
-import { useLinkField } from '../composables/use-link-field';
 
 // Types
 import type { CheckerDirection } from '../checkbox/Checker';
@@ -81,7 +80,7 @@ export default defineComponent({
     );
 
     useExpose<CheckboxGroupExpose>({ toggleAll });
-    useLinkField(() => props.modelValue);
+    useCustomFieldValue(() => props.modelValue);
     linkChildren({
       props,
       updateValue,

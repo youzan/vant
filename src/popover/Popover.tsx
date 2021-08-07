@@ -17,10 +17,10 @@ import {
   extend,
   truthProp,
   unknownProp,
+  BORDER_BOTTOM,
   createNamespace,
   ComponentInstance,
 } from '../utils';
-import { BORDER_BOTTOM } from '../utils/constant';
 
 // Composables
 import { useClickAway } from '@vant/use';
