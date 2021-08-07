@@ -41,7 +41,7 @@ test('should render content slot correctly', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should change dot position when using offset prop', () => {
+test('should change dot position when using offset prop', async () => {
   const wrapper = mount(Badge, {
     props: {
       dot: true,
@@ -55,9 +55,15 @@ test('should change dot position when using offset prop', () => {
   const badge = wrapper.find('.van-badge');
   expect(badge.style.top).toEqual('4px');
   expect(badge.style.right).toEqual('-2px');
+
+  await wrapper.setProps({
+    offset: [-2, -4],
+  });
+  expect(badge.style.top).toEqual('-4px');
+  expect(badge.style.right).toEqual('2px');
 });
 
-test('should change dot position when using offset prop with custom unit', () => {
+test('should change dot position when using offset prop with custom unit', async () => {
   const wrapper = mount(Badge, {
     props: {
       dot: true,
@@ -71,6 +77,12 @@ test('should change dot position when using offset prop with custom unit', () =>
   const badge = wrapper.find('.van-badge');
   expect(badge.style.top).toEqual('4em');
   expect(badge.style.right).toEqual('-2rem');
+
+  await wrapper.setProps({
+    offset: ['-2rem', '-4em'],
+  });
+  expect(badge.style.top).toEqual('-4em');
+  expect(badge.style.right).toEqual('2rem');
 });
 
 test('should change dot position when using offset prop without children', () => {
