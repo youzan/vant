@@ -8,4 +8,5 @@ export * from './useWindowSize';
 export * from './useScrollParent';
 export * from './useEventListener';
 export * from './usePageVisibility';
+export * from './useCustomFieldValue';
 export * from './onMountedOrActivated';
