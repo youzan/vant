@@ -1,8 +1,12 @@
 import { ref, CSSProperties, defineComponent } from 'vue';
 
 // Utils
-import { truthProp, createNamespace, getZIndexStyle } from '../utils';
-import { BORDER_BOTTOM } from '../utils/constant';
+import {
+  truthProp,
+  BORDER_BOTTOM,
+  getZIndexStyle,
+  createNamespace,
+} from '../utils';
 
 // Composables
 import { usePlaceholder } from '../composables/use-placeholder';

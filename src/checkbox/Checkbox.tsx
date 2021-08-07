@@ -5,9 +5,8 @@ import { createNamespace, extend, pick, truthProp } from '../utils';
 import { CHECKBOX_GROUP_KEY } from '../checkbox-group/CheckboxGroup';
 
 // Composables
-import { useParent } from '@vant/use';
+import { useParent, useCustomFieldValue } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
-import { useLinkField } from '../composables/use-link-field';
 
 // Components
 import Checker, { checkerProps } from './Checker';
@@ -82,7 +81,7 @@ export default defineComponent({
     );
 
     useExpose<CheckboxExpose>({ toggle, props, checked });
-    useLinkField(() => props.modelValue);
+    useCustomFieldValue(() => props.modelValue);
 
     return () => (
       <Checker

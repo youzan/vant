@@ -1,8 +1,12 @@
 import { ref, reactive, computed, CSSProperties, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, extend, getZIndexStyle } from '../utils';
-import { BORDER_BOTTOM } from '../utils/constant';
+import {
+  extend,
+  BORDER_BOTTOM,
+  getZIndexStyle,
+  createNamespace,
+} from '../utils';
 import { INDEX_BAR_KEY } from '../index-bar/IndexBar';
 import { getScrollTop, getRootScrollTop } from '../utils/dom/scroll';
 

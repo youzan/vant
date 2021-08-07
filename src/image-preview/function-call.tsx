@@ -1,7 +1,12 @@
 import { App, CSSProperties, TeleportProps } from 'vue';
-import { ComponentInstance, extend, inBrowser, withInstall } from '../utils';
+import {
+  extend,
+  inBrowser,
+  withInstall,
+  Interceptor,
+  ComponentInstance,
+} from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
-import { Interceptor } from '../utils/interceptor';
 import { PopupCloseIconPosition } from '../popup';
 import VanImagePreview from './ImagePreview';
 

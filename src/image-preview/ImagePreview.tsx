@@ -14,10 +14,11 @@ import {
   pick,
   truthProp,
   unknownProp,
+  Interceptor,
+  callInterceptor,
   createNamespace,
   ComponentInstance,
 } from '../utils';
-import { callInterceptor, Interceptor } from '../utils/interceptor';
 
 // Composables
 import { useWindowSize } from '@vant/use';

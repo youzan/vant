@@ -1,6 +1,5 @@
 import { computed, watch, PropType, defineComponent } from 'vue';
-import { createNamespace } from '../utils';
-import { BORDER } from '../utils/constant';
+import { BORDER, createNamespace } from '../utils';
 
 const [name, bem, t] = createNamespace('pagination');
 

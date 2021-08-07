@@ -1,6 +1,5 @@
 import { defineComponent } from 'vue';
-import { truthProp, createNamespace } from '../utils';
-import { BORDER_TOP_BOTTOM } from '../utils/constant';
+import { truthProp, createNamespace, BORDER_TOP_BOTTOM } from '../utils';
 
 const [name, bem] = createNamespace('cell-group');
 

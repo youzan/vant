@@ -1,6 +1,11 @@
 import { App, CSSProperties, TeleportProps } from 'vue';
-import { inBrowser, ComponentInstance, withInstall, extend } from '../utils';
-import { Interceptor } from '../utils/interceptor';
+import {
+  extend,
+  inBrowser,
+  withInstall,
+  Interceptor,
+  ComponentInstance,
+} from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanDialog, {
   DialogTheme,

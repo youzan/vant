@@ -6,8 +6,7 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace, extend } from '../utils';
-import { BORDER_SURROUND } from '../utils/constant';
+import { createNamespace, BORDER_SURROUND, extend } from '../utils';
 import { useRoute, routeProps } from '../composables/use-route';
 
 // Components

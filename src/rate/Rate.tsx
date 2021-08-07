@@ -4,9 +4,9 @@ import { computed, defineComponent } from 'vue';
 import { addUnit, truthProp, createNamespace, preventDefault } from '../utils';
 
 // Composables
+import { useCustomFieldValue } from '@vant/use';
 import { useRefs } from '../composables/use-refs';
 import { useTouch } from '../composables/use-touch';
-import { useLinkField } from '../composables/use-link-field';
 
 // Components
 import { Icon } from '../icon';
@@ -221,7 +221,7 @@ export default defineComponent({
       );
     };
 
-    useLinkField(() => props.modelValue);
+    useCustomFieldValue(() => props.modelValue);
 
     return () => (
       <div

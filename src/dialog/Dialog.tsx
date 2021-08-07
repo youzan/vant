@@ -7,11 +7,12 @@ import {
   addUnit,
   truthProp,
   isFunction,
+  BORDER_TOP,
+  BORDER_LEFT,
   unknownProp,
+  callInterceptor,
   createNamespace,
 } from '../utils';
-import { callInterceptor } from '../utils/interceptor';
-import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
 // Components

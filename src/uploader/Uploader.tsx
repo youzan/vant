@@ -12,6 +12,7 @@ import {
   extend,
   isPromise,
   truthProp,
+  Interceptor,
   getSizeStyle,
   ComponentInstance,
 } from '../utils';
@@ -26,8 +27,8 @@ import {
 } from './utils';
 
 // Composables
+import { useCustomFieldValue } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
-import { useLinkField } from '../composables/use-link-field';
 
 // Components
 import { Icon } from '../icon';
@@ -36,7 +37,6 @@ import UploaderPreviewItem from './UploaderPreviewItem';
 
 // Types
 import type { ImageFit } from '../image';
-import type { Interceptor } from '../utils/interceptor';
 import type {
   UploaderExpose,
   UploaderMaxSize,
@@ -359,8 +359,7 @@ export default defineComponent({
       chooseFile,
       closeImagePreview,
     });
-
-    useLinkField(() => props.modelValue);
+    useCustomFieldValue(() => props.modelValue);
 
     return () => (
       <div class={bem()}>

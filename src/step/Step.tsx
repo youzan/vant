@@ -1,8 +1,7 @@
 import { computed, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
-import { BORDER } from '../utils/constant';
+import { BORDER, createNamespace } from '../utils';
 import { STEPS_KEY } from '../steps/Steps';
 
 // Composables

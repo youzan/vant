@@ -7,9 +7,14 @@ import {
 } from 'vue';
 
 // Utils
-import { truthProp, createNamespace, getZIndexStyle } from '../utils';
-import { BORDER_TOP_BOTTOM } from '../utils/constant';
-import { callInterceptor, Interceptor } from '../utils/interceptor';
+import {
+  truthProp,
+  Interceptor,
+  getZIndexStyle,
+  createNamespace,
+  callInterceptor,
+  BORDER_TOP_BOTTOM,
+} from '../utils';
 
 // Composables
 import { useChildren } from '@vant/use';

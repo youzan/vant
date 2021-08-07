@@ -1,6 +1,6 @@
 import type { ComponentPublicInstance } from 'vue';
 import type { ImageFit } from '../image';
-import type { Interceptor } from '../utils/interceptor';
+import type { Interceptor } from '../utils';
 import type { UploaderProps } from './Uploader';
 
 export type UploaderResultType = 'dataUrl' | 'text' | 'file';

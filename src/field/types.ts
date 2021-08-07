@@ -1,4 +1,4 @@
-import type { ComponentPublicInstance, ComputedRef, Ref } from 'vue';
+import type { ComputedRef, ComponentPublicInstance } from 'vue';
 import type { FieldProps } from './Field';
 
 export type FieldType =
@@ -38,12 +38,6 @@ export type FieldRule = {
     rule: FieldRule
   ) => boolean | string | Promise<boolean | string>;
   formatter?: (value: any, rule: FieldRule) => string;
-};
-
-export type FieldProvide = {
-  childFieldValue: Ref<(() => unknown) | undefined>;
-  resetValidation: () => void;
-  validateWithTrigger: (trigger: FieldValidateTrigger) => void;
 };
 
 // Shared props of Field and Form

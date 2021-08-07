@@ -1,8 +1,7 @@
 import { computed, CSSProperties, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, addUnit, extend } from '../utils';
-import { BORDER } from '../utils/constant';
+import { createNamespace, BORDER, addUnit, extend } from '../utils';
 import { GRID_KEY } from '../grid/Grid';
 
 // Composables

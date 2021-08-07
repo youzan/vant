@@ -2,8 +2,13 @@ import { PropType, defineComponent } from 'vue';
 
 // Utils
 import { bem, isImageFile } from './utils';
-import { isDef, getSizeStyle, extend } from '../utils';
-import { callInterceptor, Interceptor } from '../utils/interceptor';
+import {
+  isDef,
+  extend,
+  Interceptor,
+  getSizeStyle,
+  callInterceptor,
+} from '../utils';
 
 // Components
 import { Icon } from '../icon';
