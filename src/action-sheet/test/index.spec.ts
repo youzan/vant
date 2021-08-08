@@ -248,13 +248,13 @@ test('should allow to control safe-area with safe-area-inset-bottom prop', async
   });
 
   expect(wrapper.find('.van-action-sheet').classes()).toContain(
-    'van-popup--safe-area-inset-bottom'
+    'van-safe-area-bottom'
   );
 
   await wrapper.setProps({
     safeAreaInsetBottom: false,
   });
   expect(wrapper.find('.van-action-sheet').classes()).not.toContain(
-    'van-popup--safe-area-inset-bottom'
+    'van-safe-area-bottom'
   );
 });

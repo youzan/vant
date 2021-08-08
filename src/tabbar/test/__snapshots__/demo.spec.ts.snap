@@ -2,7 +2,7 @@
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom">
+  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom">
     <div class="van-tabbar-item van-tabbar-item--active">
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-home-o">
@@ -42,7 +42,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom">
+  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom">
     <div class="van-tabbar-item van-tabbar-item--active">
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-home-o">
@@ -82,7 +82,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom">
+  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom">
     <div class="van-tabbar-item van-tabbar-item--active">
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-home-o">
@@ -130,7 +130,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom">
+  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom">
     <div class="van-tabbar-item van-tabbar-item--active">
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <img src="https://img.yzcdn.cn/vant/user-active.png">
@@ -165,7 +165,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom">
+  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom">
     <div class="van-tabbar-item van-tabbar-item--active"
          style="color: rgb(238, 10, 36);"
     >
@@ -213,7 +213,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom">
+  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom">
     <div class="van-tabbar-item van-tabbar-item--active">
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-home-o">

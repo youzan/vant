@@ -2,7 +2,7 @@
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-action-bar">
+  <div class="van-action-bar van-safe-area-bottom">
     <div role="button"
          class="van-action-bar-icon"
          tabindex="0"
@@ -39,7 +39,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-action-bar">
+  <div class="van-action-bar van-safe-area-bottom">
     <div role="button"
          class="van-action-bar-icon"
          tabindex="0"
@@ -93,7 +93,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-action-bar">
+  <div class="van-action-bar van-safe-area-bottom">
     <div role="button"
          class="van-action-bar-icon"
          tabindex="0"
@@ -143,7 +143,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-action-bar">
+  <div class="van-action-bar van-safe-area-bottom">
     <div role="button"
          class="van-action-bar-icon"
          tabindex="0"
