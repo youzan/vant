@@ -352,6 +352,19 @@ export default {
 | --- | --- | --- | --- |
 | getPicker | 获取 Picker 实例，用于调用 Picker 的[实例方法](#/zh-CN/picker#fang-fa) | - | - |
 
+### 类型定义
+
+通过 `DatetimePickerInstance` 获取 DatetimePicker 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { DatetimePickerInstance } from 'vant';
+
+const datetimePickerRef = ref<DatetimePickerInstance>();
+
+datetimePickerRef.value?.getPicker();
+```
+
 ## 常见问题
 
 ### 设置 min-date 或 max-date 后出现页面卡死的情况？

@@ -342,3 +342,16 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Dateti
 | Name      | Description         | Attribute | Return value |
 | --------- | ------------------- | --------- | ------------ |
 | getPicker | get Picker instance | -         | -            |
+
+### Types
+
+Get the type definition of the DatetimePicker instance through `DatetimePickerInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { DatetimePickerInstance } from 'vant';
+
+const datetimePickerRef = ref<DatetimePickerInstance>();
+
+datetimePickerRef.value?.getPicker();
+```
