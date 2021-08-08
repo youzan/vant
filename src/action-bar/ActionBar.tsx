@@ -19,7 +19,9 @@ export default defineComponent({
     linkChildren();
 
     return () => (
-      <div class={bem({ unfit: !props.safeAreaInsetBottom })}>
+      <div
+        class={[bem(), { 'van-safe-area-bottom': props.safeAreaInsetBottom }]}
+      >
         {slots.default?.()}
       </div>
     );

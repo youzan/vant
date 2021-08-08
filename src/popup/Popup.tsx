@@ -185,11 +185,13 @@ export default defineComponent({
           v-show={props.show}
           ref={popupRef}
           style={style.value}
-          class={bem({
-            round,
-            [position]: position,
-            'safe-area-inset-bottom': safeAreaInsetBottom,
-          })}
+          class={[
+            bem({
+              round,
+              [position]: position,
+            }),
+            { 'van-safe-area-bottom': safeAreaInsetBottom },
+          ]}
           onClick={onClick}
           {...attrs}
         >

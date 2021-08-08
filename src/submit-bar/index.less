@@ -1,5 +1,4 @@
 @import './var.less';
-@import '../style/mixins/safe-area.less';
 
 :root {
   --van-submit-bar-height: @submit-bar-height;
@@ -32,7 +31,6 @@
   width: 100%;
   background-color: var(--van-submit-bar-background-color);
   user-select: none;
-  .safe-area-inset-bottom();
 
   &__tip {
     padding: var(--van-submit-bar-tip-padding);
@@ -97,9 +95,5 @@
     &--danger {
       background: var(--van-gradient-red);
     }
-  }
-
-  &--unfit {
-    padding-bottom: 0;
   }
 }

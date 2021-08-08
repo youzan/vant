@@ -61,7 +61,7 @@ export default defineComponent({
     const renderPlaceholder = usePlaceholder(root, bem);
 
     // enable safe-area-inset-bottom by default when fixed
-    const isUnfit = () => !(props.safeAreaInsetBottom ?? props.fixed);
+    const enableSafeArea = () => props.safeAreaInsetBottom ?? props.fixed;
 
     const renderTabbar = () => {
       const { fixed, zIndex, border } = props;
@@ -70,8 +70,11 @@ export default defineComponent({
           ref={root}
           style={getZIndexStyle(zIndex)}
           class={[
-            bem({ unfit: isUnfit(), fixed }),
-            { [BORDER_TOP_BOTTOM]: border },
+            bem({ fixed }),
+            {
+              [BORDER_TOP_BOTTOM]: border,
+              'van-safe-area-bottom': enableSafeArea(),
+            },
           ]}
         >
           {slots.default?.()}

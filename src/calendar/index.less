@@ -1,5 +1,4 @@
 @import './var.less';
-@import '../style/mixins/safe-area.less';
 
 :root {
   --van-calendar-background-color: @calendar-background-color;
@@ -201,12 +200,8 @@
 
   &__footer {
     flex-shrink: 0;
-    padding: 0 var(--van-padding-md);
-    .safe-area-inset-bottom();
-
-    &--unfit {
-      padding-bottom: 0;
-    }
+    padding-left: var(--van-padding-md);
+    padding-right: var(--van-padding-md);
   }
 
   &__confirm {

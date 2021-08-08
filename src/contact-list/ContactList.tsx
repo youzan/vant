@@ -90,7 +90,7 @@ export default defineComponent({
         <RadioGroup modelValue={props.modelValue} class={bem('group')}>
           {props.list && props.list.map(renderItem)}
         </RadioGroup>
-        <div class={bem('bottom')}>
+        <div class={[bem('bottom'), 'van-safe-area-bottom']}>
           <Button
             round
             block
