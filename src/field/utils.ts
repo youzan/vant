@@ -1,5 +1,12 @@
 import { HTMLAttributes, InputHTMLAttributes } from 'vue';
-import { trigger, isObject, isPromise, isFunction } from '../utils';
+import {
+  trigger,
+  isObject,
+  isPromise,
+  isFunction,
+  getRootScrollTop,
+  setRootScrollTop,
+} from '../utils';
 import type { FieldRule, FieldType, FieldAutosizeConfig } from './types';
 
 function isEmptyValue(value: unknown) {
@@ -59,6 +66,7 @@ export function resizeTextarea(
   input: HTMLInputElement,
   autosize: true | FieldAutosizeConfig
 ) {
+  const scrollTop = getRootScrollTop();
   input.style.height = 'auto';
 
   let height = input.scrollHeight;
@@ -74,6 +82,8 @@ export function resizeTextarea(
 
   if (height) {
     input.style.height = `${height}px`;
+    // https://github.com/youzan/vant/issues/9178
+    setRootScrollTop(scrollTop);
   }
 }
 
