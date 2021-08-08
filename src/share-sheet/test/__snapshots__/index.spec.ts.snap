@@ -28,7 +28,7 @@ exports[`should render title and description slot correctly 1`] = `
   </div>
 </transition-stub>
 <transition-stub>
-  <div class="van-popup van-popup--round van-popup--bottom van-popup--safe-area-inset-bottom van-share-sheet">
+  <div class="van-popup van-popup--round van-popup--bottom van-safe-area-bottom van-share-sheet">
     <div class="van-share-sheet__header">
       <h2 class="van-share-sheet__title">
         Custom Title

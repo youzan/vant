@@ -6,7 +6,7 @@ exports[`should render tag slot correctly 1`] = `
        role="radiogroup"
   >
   </div>
-  <div class="van-address-list__bottom">
+  <div class="van-address-list__bottom van-safe-area-bottom">
     <button type="button"
             class="van-button van-button--danger van-button--normal van-button--block van-button--round van-address-list__add"
     >

@@ -1,5 +1,4 @@
 @import './var.less';
-@import '../style/mixins/safe-area.less';
 
 :root {
   --van-popup-background-color: @popup-background-color;
@@ -77,10 +76,6 @@
         border-radius: 0 var(--van-popup-round-border-radius)
           var(--van-popup-round-border-radius) 0;
       }
-    }
-
-    &--safe-area-inset-bottom {
-      .safe-area-inset-bottom();
     }
 
     &-slide-top-enter-active,

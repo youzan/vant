@@ -87,7 +87,7 @@ test('should allow to disable safe-area-inset-bottom prop', () => {
       safeAreaInsetBottom: false,
     },
   });
-  expect(wrapper.find('.van-submit-bar--unfit').exists()).toBeTruthy();
+  expect(wrapper.find('.van-safe-area-bottom').exists()).toBeFalsy();
 });
 
 test('should change the color of submit button when using button-color prop', () => {

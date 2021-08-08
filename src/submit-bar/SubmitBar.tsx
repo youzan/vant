@@ -104,7 +104,9 @@ export default defineComponent({
     };
 
     return () => (
-      <div class={bem({ unfit: !props.safeAreaInsetBottom })}>
+      <div
+        class={[bem(), { 'van-safe-area-bottom': props.safeAreaInsetBottom }]}
+      >
         {slots.top?.()}
         {renderTip()}
         <div class={bem('bar')}>
