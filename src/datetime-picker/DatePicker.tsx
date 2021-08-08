@@ -20,12 +20,10 @@ import {
 } from '../utils';
 import {
   times,
-  ColumnType,
   pickerKeys,
   sharedProps,
   getTrueValue,
   getMonthEndDay,
-  DatetimePickerType,
 } from './utils';
 
 // Composables
@@ -33,6 +31,9 @@ import { useExpose } from '../composables/use-expose';
 
 // Components
 import { Picker } from '../picker';
+
+// Types
+import { DatetimePickerColumnType, DatetimePickerType } from './types';
 
 const currentYear = new Date().getFullYear();
 const [name] = createNamespace('date-picker');
@@ -125,7 +126,7 @@ export default defineComponent({
         currentDate.value || props.minDate
       );
 
-      let result: Array<{ type: ColumnType; range: number[] }> = [
+      let result: Array<{ type: DatetimePickerColumnType; range: number[] }> = [
         {
           type: 'year',
           range: [minYear, maxYear],
@@ -231,7 +232,7 @@ export default defineComponent({
       const { type } = props;
       const indexes = picker.value!.getIndexes();
 
-      const getValue = (type: ColumnType) => {
+      const getValue = (type: DatetimePickerColumnType) => {
         let index = 0;
         originColumns.value.forEach((column, columnIndex) => {
           if (type === column.type) {

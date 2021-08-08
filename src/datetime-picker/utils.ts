@@ -1,20 +1,11 @@
 import { PropType } from 'vue';
 import { extend } from '../utils';
 import { pickerProps } from '../picker/Picker';
-
-export type ColumnType = 'year' | 'month' | 'day' | 'hour' | 'minute';
-
-export type DatetimePickerType =
-  | 'date'
-  | 'time'
-  | 'datetime'
-  | 'datehour'
-  | 'month-day'
-  | 'year-month';
+import type { DatetimePickerColumnType } from './types';
 
 export const sharedProps = extend({}, pickerProps, {
   filter: Function as PropType<(type: string, values: string[]) => string[]>,
-  columnsOrder: Array as PropType<ColumnType[]>,
+  columnsOrder: Array as PropType<DatetimePickerColumnType[]>,
   formatter: {
     type: Function as PropType<(type: string, value: string) => string>,
     default: (type: string, value: string) => value,
