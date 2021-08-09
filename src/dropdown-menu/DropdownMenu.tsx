@@ -1,6 +1,5 @@
 import {
   ref,
-  Ref,
   computed,
   PropType,
   InjectionKey,
@@ -21,9 +20,10 @@ import {
   useEventListener,
 } from '@vant/use';
 
-const [name, bem] = createNamespace('dropdown-menu');
+// Types
+import type { DropdownMenuProvide, DropdownMenuDirection } from './types';
 
-export type DropdownMenuDirection = 'up' | 'down';
+const [name, bem] = createNamespace('dropdown-menu');
 
 const props = {
   overlay: truthProp,
@@ -41,10 +41,7 @@ const props = {
   },
 };
 
-export type DropdownMenuProvide = {
-  props: ExtractPropTypes<typeof props>;
-  offset: Ref<number>;
-};
+export type DropdownMenuProps = ExtractPropTypes<typeof props>;
 
 export const DROPDOWN_KEY: InjectionKey<DropdownMenuProvide> = Symbol(name);
 

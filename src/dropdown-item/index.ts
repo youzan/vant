@@ -5,4 +5,4 @@ const DropdownItem = withInstall<typeof _DropdownItem>(_DropdownItem);
 
 export default DropdownItem;
 export { DropdownItem };
-export type { DropdownItemOption } from './DropdownItem';
+export type { DropdownItemInstance, DropdownItemOption } from './types';
