@@ -76,14 +76,14 @@
         "labels": [
             "Display"
         ],
-        "screenShot": "",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/button/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/button/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/button/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/button/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/button/screenshots/4.png",
         "blocks": "[{\"title\":\"主要按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"primary\\\" text=\\\"主要按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"信息按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"info\\\" text=\\\"信息按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"默认按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"default\\\" text=\\\"默认按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"警告按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"warning\\\" text=\\\"警告按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"危险按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"danger\\\" text=\\\"危险按钮\\\"></van-button>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-button",
             "title": "按钮",
             "description": "按钮用于触发一个操作，如提交表单。",
             "category": "Display",
-            "screenShot": "",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/button/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/button/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/button/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/button/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/button/screenshots/4.png",
             "drawings": "",
             "blocks": [
                 {

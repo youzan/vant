@@ -2,12 +2,12 @@
   <demo-section>
     <demo-block :title="t('type')">
       <div class="demo-button-row">
-        <van-button type="primary">{{ t('primary') }}</van-button>
-        <van-button type="info">{{ t('info') }}</van-button>
-        <van-button type="default">{{ t('default') }}</van-button>
+        <van-button type="primary" class="u-code-example_demo_">{{ t('primary') }}</van-button>
+        <van-button type="info" class="u-code-example_demo_">{{ t('info') }}</van-button>
+        <van-button type="default" class="u-code-example_demo_">{{ t('default') }}</van-button>
       </div>
-      <van-button type="danger">{{ t('danger') }}</van-button>
-      <van-button type="warning">{{ t('warning') }}</van-button>
+      <van-button type="danger" class="u-code-example_demo_">{{ t('danger') }}</van-button>
+      <van-button type="warning" class="u-code-example_demo_">{{ t('warning') }}</van-button>
     </demo-block>
 
     <demo-block :title="t('plain')">
