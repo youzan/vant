@@ -220,9 +220,22 @@ export default {
 
 通过组件调用 `ImagePreview` 时，通过 ref 可以获取到 ImagePreview 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
-| 方法名          | 说明           | 参数                            | 返回值 |
-| --------------- | -------------- | ------------------------------- | ------ |
-| swipeTo `2.9.0` | 切换到指定位置 | index: number, options: Options | -      |
+| 方法名 | 说明 | 参数 | 返回值 |
+| --- | --- | --- | --- |
+| swipeTo `2.9.0` | 切换到指定位置 | _index: number, options?: SwipeToOptions_ | - |
+
+### 类型定义
+
+通过 `ImagePreviewInstance` 获取 ImagePreview 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { ImagePreviewInstance } from 'vant';
+
+const imagePreviewRef = ref<ImagePreviewInstance>();
+
+imagePreviewRef.value?.swipeTo(1);
+```
 
 ### Slots
 

@@ -1,39 +1,10 @@
-import { App, CSSProperties, TeleportProps } from 'vue';
-import {
-  extend,
-  inBrowser,
-  withInstall,
-  Interceptor,
-  ComponentInstance,
-} from '../utils';
+import { extend, inBrowser, withInstall, ComponentInstance } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
-import { PopupCloseIconPosition } from '../popup';
 import VanImagePreview from './ImagePreview';
+import type { App } from 'vue';
+import type { ImagePreviewOptions } from './types';
 
 let instance: ComponentInstance;
-
-export type ImagePreviewOptions = {
-  loop?: boolean;
-  images: string[];
-  maxZoom?: number;
-  minZoom?: number;
-  teleport?: TeleportProps['to'];
-  className?: unknown;
-  showIndex?: boolean;
-  closeable?: boolean;
-  closeIcon?: string;
-  transition?: string;
-  beforeClose?: Interceptor;
-  overlayStyle?: CSSProperties;
-  swipeDuration?: number;
-  startPosition?: number;
-  showIndicators?: boolean;
-  closeOnPopstate?: boolean;
-  closeIconPosition?: PopupCloseIconPosition;
-  onClose?(): void;
-  onScale?(args: { scale: number; index: number }): void;
-  onChange?(index: number): void;
-};
 
 const defaultConfig: ImagePreviewOptions = {
   loop: true,
