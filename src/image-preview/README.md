@@ -187,7 +187,20 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get ImagePreview instance and call i
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| swipeTo `2.9.0` | Swipe to target index | index: target index, options: Options | - |
+| swipeTo `2.9.0` | Swipe to target index | _index: number, options?: SwipeToOptions_ | - |
+
+### Types
+
+Get the type definition of the ImagePreview instance through `ImagePreviewInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { ImagePreviewInstance } from 'vant';
+
+const imagePreviewRef = ref<ImagePreviewInstance>();
+
+imagePreviewRef.value?.swipeTo(1);
+```
 
 ### Slots
 

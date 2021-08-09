@@ -7,6 +7,7 @@ import {
   onMounted,
   CSSProperties,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -30,57 +31,59 @@ import { Swipe, SwipeToOptions } from '../swipe';
 import { Popup, PopupCloseIconPosition } from '../popup';
 import ImagePreviewItem from './ImagePreviewItem';
 
+// Types
+import { ImagePreviewScaleEventParams } from './types';
+
 const [name, bem] = createNamespace('image-preview');
 
-export type ScaleEventParams = {
-  scale: number;
-  index: number;
+const props = {
+  show: Boolean,
+  loop: truthProp,
+  overlay: truthProp,
+  closeable: Boolean,
+  showIndex: truthProp,
+  className: unknownProp,
+  transition: String,
+  beforeClose: Function as PropType<Interceptor>,
+  overlayStyle: Object as PropType<CSSProperties>,
+  showIndicators: Boolean,
+  closeOnPopstate: truthProp,
+  images: {
+    type: Array as PropType<string[]>,
+    default: () => [],
+  },
+  minZoom: {
+    type: [Number, String],
+    default: 1 / 3,
+  },
+  maxZoom: {
+    type: [Number, String],
+    default: 3,
+  },
+  swipeDuration: {
+    type: [Number, String],
+    default: 300,
+  },
+  startPosition: {
+    type: [Number, String],
+    default: 0,
+  },
+  closeIcon: {
+    type: String,
+    default: 'clear',
+  },
+  closeIconPosition: {
+    type: String as PropType<PopupCloseIconPosition>,
+    default: 'top-right',
+  },
 };
+
+export type ImagePreviewProps = ExtractPropTypes<typeof props>;
 
 export default defineComponent({
   name,
 
-  props: {
-    show: Boolean,
-    loop: truthProp,
-    overlay: truthProp,
-    closeable: Boolean,
-    showIndex: truthProp,
-    className: unknownProp,
-    transition: String,
-    beforeClose: Function as PropType<Interceptor>,
-    overlayStyle: Object as PropType<CSSProperties>,
-    showIndicators: Boolean,
-    closeOnPopstate: truthProp,
-    images: {
-      type: Array as PropType<string[]>,
-      default: () => [],
-    },
-    minZoom: {
-      type: [Number, String],
-      default: 1 / 3,
-    },
-    maxZoom: {
-      type: [Number, String],
-      default: 3,
-    },
-    swipeDuration: {
-      type: [Number, String],
-      default: 300,
-    },
-    startPosition: {
-      type: [Number, String],
-      default: 0,
-    },
-    closeIcon: {
-      type: String,
-      default: 'clear',
-    },
-    closeIconPosition: {
-      type: String as PropType<PopupCloseIconPosition>,
-      default: 'top-right',
-    },
-  },
+  props,
 
   emits: ['scale', 'close', 'closed', 'change', 'update:show'],
 
@@ -103,7 +106,8 @@ export default defineComponent({
       }
     };
 
-    const emitScale = (args: ScaleEventParams) => emit('scale', args);
+    const emitScale = (args: ImagePreviewScaleEventParams) =>
+      emit('scale', args);
 
     const updateShow = (show: boolean) => emit('update:show', show);
 

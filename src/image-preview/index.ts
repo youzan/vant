@@ -1,5 +1,9 @@
-import { ImagePreview, ImagePreviewOptions } from './function-call';
+import { ImagePreview } from './function-call';
 
 export default ImagePreview;
 export { ImagePreview };
-export type { ImagePreviewOptions };
+export type {
+  ImagePreviewOptions,
+  ImagePreviewInstance,
+  ImagePreviewScaleEventParams,
+} from './types';
