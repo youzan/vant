@@ -11,7 +11,7 @@ function move(dir){
           const apiFilePath = `./vusion-docs/${file}`;
           try {
             console.error(`解析 ${apiFilePath} 成功！`);
-            fse.copySync(apiFilePath, path.resolve(dir, pathname));
+            fse.copySync(apiFilePath, path.resolve(dir, pathname, './docs'));
           } catch (e) {
             console.error(e)
             console.error(`解析 ${apiFilePath} 出错或者不存在！`);

@@ -77,7 +77,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[]",
+        "blocks": "[{\"title\":\"主要按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"primary\\\" text=\\\"主要按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"信息按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"info\\\" text=\\\"信息按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"默认按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"default\\\" text=\\\"默认按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"警告按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"warning\\\" text=\\\"警告按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"危险按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"danger\\\" text=\\\"危险按钮\\\"></van-button>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-button",
             "title": "按钮",
@@ -85,7 +85,33 @@
             "category": "Display",
             "screenShot": "",
             "drawings": "",
-            "blocks": [],
+            "blocks": [
+                {
+                    "title": "主要按钮",
+                    "description": "",
+                    "code": "<template>\n<van-button type=\"primary\" text=\"主要按钮\"></van-button>\n</template>\n"
+                },
+                {
+                    "title": "信息按钮",
+                    "description": "",
+                    "code": "<template>\n<van-button type=\"info\" text=\"信息按钮\"></van-button>\n</template>\n"
+                },
+                {
+                    "title": "默认按钮",
+                    "description": "",
+                    "code": "<template>\n<van-button type=\"default\" text=\"默认按钮\"></van-button>\n</template>\n"
+                },
+                {
+                    "title": "警告按钮",
+                    "description": "",
+                    "code": "<template>\n<van-button type=\"warning\" text=\"警告按钮\"></van-button>\n</template>\n"
+                },
+                {
+                    "title": "危险按钮",
+                    "description": "",
+                    "code": "<template>\n<van-button type=\"danger\" text=\"危险按钮\"></van-button>\n</template>\n"
+                }
+            ],
             "attrs": [
                 {
                     "name": "text",

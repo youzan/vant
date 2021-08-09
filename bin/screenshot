@@ -15,9 +15,9 @@ if (argv._[0]) {
 
 components.forEach((component) => {
     // if(component.name !== 'divider') return;
-    const hasBlocks = fs.existsSync(`src/${component.name}/docs/blocks.md`);
+    // const hasBlocks = fs.existsSync(`src/${component.name}/docs/blocks.md`);
     vusion.cli.execSync(`rm -rf src/${component.name}/screenshots`);
-    const command = `vusion screenshot --server http://127.0.0.1:8080/mobile.html#/zh-CN/${component.name} --smart-crop -o src/${component.name}/screenshots/0.png`;
+    const command = `vusion screenshot --server http://127.0.0.1:8080/mobile.html#/zh-CN/${component.name} --selector [class^="van-button--"] --smart-crop -o src/${component.name}/screenshots/0.png`;
     console.info('  Screenshoting... ' + component.name);
     console.log(command);
     vusion.cli.execSync(command);
