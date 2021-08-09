@@ -188,9 +188,22 @@ Use `active-color` prop to custom active color of the title and options.
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get DropdownItem instance and call instance methods.
 
-| Name   | Description    | Attribute       | Return value |
-| ------ | -------------- | --------------- | ------------ |
-| toggle | Toggle display | _show: boolean_ | -            |
+| Name   | Description    | Attribute        | Return value |
+| ------ | -------------- | ---------------- | ------------ |
+| toggle | Toggle display | _show?: boolean_ | -            |
+
+### Types
+
+Get the type definition of the DropdownItem instance through `DropdownItemInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { DropdownItemInstance } from 'vant';
+
+const dropdownItemRef = ref<DropdownItemInstance>();
+
+dropdownItemRef.value?.toggle();
+```
 
 ### Data Structure of Option
 

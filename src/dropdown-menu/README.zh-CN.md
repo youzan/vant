@@ -196,6 +196,19 @@ export default {
 | --- | --- | --- | --- |
 | toggle | 切换菜单展示状态，传 `true` 为显示，`false` 为隐藏，不传参为取反 | _show?: boolean_ | - |
 
+### 类型定义
+
+通过 `DropdownItemInstance` 获取 DropdownItem 实例的类型定义。
+
+```ts
+import { ref } from 'vue';
+import type { DropdownItemInstance } from 'vant';
+
+const dropdownItemRef = ref<DropdownItemInstance>();
+
+dropdownItemRef.value?.toggle();
+```
+
 ### Option 数据结构
 
 | 键名  | 说明                                   | 类型               |

@@ -5,6 +5,7 @@ import {
   TeleportProps,
   CSSProperties,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -25,29 +26,30 @@ import { Cell } from '../cell';
 import { Icon } from '../icon';
 import { Popup } from '../popup';
 
+// Types
+import type { DropdownItemOption } from './types';
+
 const [name, bem] = createNamespace('dropdown-item');
 
-export type DropdownItemOption = {
-  text: string;
-  icon?: string;
-  value: number | string;
+const props = {
+  title: String,
+  disabled: Boolean,
+  teleport: [String, Object] as PropType<TeleportProps['to']>,
+  lazyRender: truthProp,
+  modelValue: unknownProp,
+  titleClass: unknownProp,
+  options: {
+    type: Array as PropType<DropdownItemOption[]>,
+    default: () => [],
+  },
 };
+
+export type DropdownItemProps = ExtractPropTypes<typeof props>;
 
 export default defineComponent({
   name,
 
-  props: {
-    title: String,
-    disabled: Boolean,
-    teleport: [String, Object] as PropType<TeleportProps['to']>,
-    lazyRender: truthProp,
-    modelValue: unknownProp,
-    titleClass: unknownProp,
-    options: {
-      type: Array as PropType<DropdownItemOption[]>,
-      default: () => [],
-    },
-  },
+  props,
 
   emits: ['open', 'opened', 'close', 'closed', 'change', 'update:modelValue'],
 
