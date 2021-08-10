@@ -8,7 +8,7 @@
 
     <demo-block :title="t('fitMode')">
       <van-row gutter="20">
-        <van-col v-for="fit in fits" span="8" :key="fit">
+        <van-col v-for="fit in fits" span="8" :key="fit" class="u-code-example_demo_">
           <van-image :fit="fit" width="100%" height="27vw" :src="image" />
           <div class="text">{{ fit }}</div>
         </van-col>
@@ -86,7 +86,7 @@ export default {
   data() {
     return {
       image: 'https://img01.yzcdn.cn/vant/cat.jpeg',
-      fits: ['contain', 'cover', 'fill', 'none', 'scale-down'],
+      fits: ['fill', 'contain', 'cover', 'none', 'scale-down'],
     };
   },
 };

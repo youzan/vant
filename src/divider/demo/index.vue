@@ -1,11 +1,11 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
-      <van-divider />
+      <van-divider class="u-code-example_demo_" />
     </demo-block>
 
     <demo-block :title="t('withText')">
-      <van-divider>
+      <van-divider class="u-code-example_demo_">
         {{ t('text') }}
       </van-divider>
     </demo-block>
