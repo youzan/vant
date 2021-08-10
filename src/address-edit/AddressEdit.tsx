@@ -372,7 +372,7 @@ export default defineComponent({
               onBlur={onDetailBlur}
               onFocus={() => onFocus('addressDetail')}
               onInput={onChangeDetail}
-              onSelectSearch={(event: Event) => emit('select-search', event)}
+              onSelect-search={(event: Event) => emit('select-search', event)}
             />
             {props.showPostal && (
               <Field
