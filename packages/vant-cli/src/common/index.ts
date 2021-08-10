@@ -6,9 +6,10 @@ import {
   readFileSync,
   outputFileSync,
 } from 'fs-extra';
-import merge from 'webpack-merge';
+import { mergeWithCustomize } from 'webpack-merge';
 import { SRC_DIR, getVantConfig, ROOT_WEBPACK_CONFIG_FILE } from './constant';
 import { WebpackConfig } from './types';
+import _ from 'lodash';
 
 export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;
@@ -104,14 +105,19 @@ export function normalizePath(path: string): string {
 export function getWebpackConfig(defaultConfig: WebpackConfig): object {
   if (existsSync(ROOT_WEBPACK_CONFIG_FILE)) {
     const config = require(ROOT_WEBPACK_CONFIG_FILE);
+    const customMerge = mergeWithCustomize({
+      customizeArray(arr1, arr2) {
+        return _.uniqWith([...arr1, ...arr2], _.isEqual);
+      }
+    })
 
     // 如果是函数形式，可能并不仅仅是添加额外的处理流程，而是在原有流程上进行修改
     // 比如修改markdown-loader,添加options.enableMetaData
     if (typeof config === 'function') {
-      return merge(defaultConfig, config(defaultConfig));
+      return customMerge(defaultConfig, config(defaultConfig));
     }
 
-    return merge(defaultConfig, config);
+    return customMerge(defaultConfig, config);
   }
 
   return defaultConfig;
