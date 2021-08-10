@@ -122,8 +122,8 @@ export default {
 
 | 事件    | 说明               | 回调参数                       |
 | ------- | ------------------ | ------------------------------ |
-| confirm | 点击右上方完成按钮 | _result: ConfirmResult_        |
-| cancel  | 点击取消按钮时     | -                              |
+| confirm | 点击完成按钮时触发 | _result: ConfirmResult_        |
+| cancel  | 点击取消按钮时触发 | -                              |
 | change  | 选项改变时触发     | 所有列选中值，当前列对应的索引 |
 
 ### ConfirmResult 格式
