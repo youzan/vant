@@ -43,7 +43,7 @@
     "@docsearch/css": "3.0.0-alpha.33",
     "@docsearch/js": "3.0.0-alpha.33",
     "@types/webpack-dev-server": "^3.11.4",
-    "@vant/eslint-config": "^3.2.0",
+    "@vant/eslint-config": "^3.3.2",
     "@vant/markdown-loader": "^4.1.0",
     "@vant/markdown-vetur": "^2.2.0",
     "@vant/stylelint-config": "^1.4.2",
