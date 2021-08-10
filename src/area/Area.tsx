@@ -77,7 +77,7 @@ export default defineComponent({
 
   props,
 
-  emits: ['change', 'confirm'],
+  emits: ['change', 'confirm', 'cancel'],
 
   setup(props, { emit, slots }) {
     const pickerRef = ref<ComponentInstance>();
@@ -293,6 +293,8 @@ export default defineComponent({
       emit('confirm', parseValues(values), index);
     };
 
+    const onCancel = () => emit('cancel');
+
     onMounted(setValues);
 
     watch(
@@ -323,6 +325,7 @@ export default defineComponent({
           columns={columns}
           columnsFieldNames={{ text: 'name' }}
           onChange={onChange}
+          onCancel={onCancel}
           onConfirm={onConfirm}
           {...pick(props, INHERIT_PROPS)}
         />
