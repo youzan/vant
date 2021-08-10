@@ -192,16 +192,32 @@
         "labels": [
             "Layout"
         ],
-        "screenShot": "",
-        "blocks": "[]",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/row/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/row/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/row/screenshots/2.png",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-row>\\n  <van-col span=\\\"8\\\">span: 8</van-col>\\n  <van-col span=\\\"8\\\">span: 8</van-col>\\n  <van-col span=\\\"8\\\">span: 8</van-col>\\n</van-row>\\n</template>\\n\"},{\"title\":\"列元素间距\",\"description\":\"\",\"code\":\"<template>\\n<van-row gutter=\\\"20\\\">\\n  <van-col span=\\\"8\\\">span: 8</van-col>\\n  <van-col span=\\\"8\\\">span: 8</van-col>\\n  <van-col span=\\\"8\\\">span: 8</van-col>\\n</van-row>\\n</template>\\n\"},{\"title\":\"flex布局\",\"description\":\"\",\"code\":\"<template>\\n<van-row type=\\\"flex\\\">\\n  <van-col span=\\\"6\\\">span: 6</van-col>\\n  <van-col span=\\\"6\\\">span: 6</van-col>\\n  <van-col span=\\\"6\\\">span: 6</van-col>\\n</van-row>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-row",
             "title": "栅格布局",
             "description": "内部元素按照一定的规则布局",
             "category": "Layout",
-            "screenShot": "",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/row/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/row/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/row/screenshots/2.png",
             "drawings": "",
-            "blocks": [],
+            "blocks": [
+                {
+                    "title": "基本用法",
+                    "description": "",
+                    "code": "<template>\n<van-row>\n  <van-col span=\"8\">span: 8</van-col>\n  <van-col span=\"8\">span: 8</van-col>\n  <van-col span=\"8\">span: 8</van-col>\n</van-row>\n</template>\n"
+                },
+                {
+                    "title": "列元素间距",
+                    "description": "",
+                    "code": "<template>\n<van-row gutter=\"20\">\n  <van-col span=\"8\">span: 8</van-col>\n  <van-col span=\"8\">span: 8</van-col>\n  <van-col span=\"8\">span: 8</van-col>\n</van-row>\n</template>\n"
+                },
+                {
+                    "title": "flex布局",
+                    "description": "",
+                    "code": "<template>\n<van-row type=\"flex\">\n  <van-col span=\"6\">span: 6</van-col>\n  <van-col span=\"6\">span: 6</van-col>\n  <van-col span=\"6\">span: 6</van-col>\n</van-row>\n</template>\n"
+                }
+            ],
             "attrs": [
                 {
                     "name": "type",
@@ -614,16 +630,22 @@
         "labels": [
             "Display"
         ],
-        "screenShot": "",
-        "blocks": "[]",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/swipe/screenshots/0.png",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-swipe class=\\\"my-swipe\\\" :autoplay=\\\"3000\\\" indicator-color=\\\"white\\\">\\n  <van-swipe-item>1</van-swipe-item>\\n  <van-swipe-item>2</van-swipe-item>\\n  <van-swipe-item>3</van-swipe-item>\\n  <van-swipe-item>4</van-swipe-item>\\n</van-swipe>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-swipe",
             "title": "幻灯片",
             "description": "用于循环播放一组图片或内容",
             "category": "Display",
-            "screenShot": "",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.1.0/src/swipe/screenshots/0.png",
             "drawings": "",
-            "blocks": [],
+            "blocks": [
+                {
+                    "title": "基本用法",
+                    "description": "",
+                    "code": "<template>\n<van-swipe class=\"my-swipe\" :autoplay=\"3000\" indicator-color=\"white\">\n  <van-swipe-item>1</van-swipe-item>\n  <van-swipe-item>2</van-swipe-item>\n  <van-swipe-item>3</van-swipe-item>\n  <van-swipe-item>4</van-swipe-item>\n</van-swipe>\n</template>\n"
+                }
+            ],
             "attrs": [
                 {
                     "name": "duration",
