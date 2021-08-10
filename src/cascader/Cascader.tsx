@@ -281,7 +281,7 @@ export default defineComponent({
         color={props.activeColor}
         swipeThreshold={0}
         swipeable={props.swipeable}
-        onClickTab={onClickTab}
+        onClick-tab={onClickTab}
       >
         {state.tabs.map(renderTab)}
       </Tabs>

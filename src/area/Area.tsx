@@ -293,7 +293,7 @@ export default defineComponent({
       emit('confirm', parseValues(values), index);
     };
 
-    const onCancel = () => emit('cancel');
+    const onCancel = (...args: unknown[]) => emit('cancel', ...args);
 
     onMounted(setValues);
 

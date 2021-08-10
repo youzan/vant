@@ -23,7 +23,7 @@ test('should emit click-step event when step is clicked', () => {
   const wrapper = mount({
     setup() {
       return () => (
-        <Steps active={1} onClickStep={onClickStep}>
+        <Steps active={1} onClick-step={onClickStep}>
           <Step>A</Step>
           <Step>B</Step>
           <Step>C</Step>
