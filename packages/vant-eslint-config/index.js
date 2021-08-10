@@ -54,6 +54,7 @@ module.exports = {
     'vue/require-v-for-key': 'off',
     'vue/require-default-prop': 'off',
     'vue/no-unused-components': 'off',
+    'vue/return-in-computed-property': 'off',
     // typescript-eslint
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
