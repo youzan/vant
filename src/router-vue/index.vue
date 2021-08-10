@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    name: 'van-router-view',
+    name: 'u-router-view',
 };
 </script>
 

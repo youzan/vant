@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block card :title="t('basicUsage')">
       <van-cell :title="t('buttonBasic')" is-link @click="showBasic = true" />
-      <van-popup v-model="showBasic" :style="{ padding: '30px 50px' }">
+      <van-popup v-model="showBasic" :style="{ padding: '30px 50px' }" >
         {{ t('content') }}
       </van-popup>
     </demo-block>
@@ -13,7 +13,7 @@
       <van-cell :title="t('buttonLeft')" is-link @click="showLeft = true" />
       <van-cell :title="t('buttonRight')" is-link @click="showRight = true" />
 
-      <van-popup v-model="showTop" position="top" :style="{ height: '30%' }" />
+      <van-popup v-model="showTop" position="top" :style="{ height: '30%' }">内容</van-popup>
       <van-popup
         v-model="showBottom"
         position="bottom"

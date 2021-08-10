@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
-      <van-tabs v-model="active">
+      <van-tabs v-model="active" class="u-code-example_demo_">
         <van-tab :title="t('tab') + index" v-for="index in tabs" :key="index">
           {{ t('content') }} {{ index }}
         </van-tab>
@@ -38,7 +38,15 @@
     </demo-block>
 
     <demo-block :title="t('title4')">
-      <van-tabs type="card">
+      <van-tabs type="line" class="u-code-example_demo_">
+        <van-tab v-for="index in 3" :title="t('tab') + index" :key="index">
+          {{ t('content') }} {{ index }}
+        </van-tab>
+      </van-tabs>
+    </demo-block>
+
+    <demo-block :title="t('title4')">
+      <van-tabs type="card" class="u-code-example_demo_">
         <van-tab v-for="index in 3" :title="t('tab') + index" :key="index">
           {{ t('content') }} {{ index }}
         </van-tab>
@@ -79,7 +87,7 @@
     </demo-block>
 
     <demo-block :title="t('title9')">
-      <van-tabs :active="active" swipeable>
+      <van-tabs :active="active" swipeable class="u-code-example_demo_">
         <van-tab :title="t('tab') + index" v-for="index in tabs" :key="index">
           {{ t('content') }} {{ index }}
         </van-tab>
@@ -87,7 +95,7 @@
     </demo-block>
 
     <demo-block v-if="!isWeapp" :title="t('title10')">
-      <van-tabs scrollspy sticky>
+      <van-tabs scrollspy sticky class="u-code-example_demo_">
         <van-tab :title="t('tab') + index" v-for="index in 8" :key="index">
           {{ t('content') }} {{ index }}
         </van-tab>
