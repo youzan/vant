@@ -106,7 +106,7 @@
     "vue-router": "^3.3.1",
     "webpack": "^4.43.0",
     "webpack-dev-server": "3.11.0",
-    "webpack-merge": "^4.2.2",
+    "webpack-merge": "^5.8.0",
     "webpackbar": "^4.0.0"
   },
   "release-it": {
