@@ -190,8 +190,8 @@ export default defineComponent({
       );
     };
 
-    const renderKeys = () => {
-      return keys.value.map((key) => {
+    const renderKeys = () =>
+      keys.value.map((key) => {
         const keySlots: Record<string, Slot | undefined> = {};
 
         if (key.type === 'delete') {
@@ -213,7 +213,6 @@ export default defineComponent({
           />
         );
       });
-    };
 
     const renderSidebar = () => {
       if (props.theme === 'custom') {

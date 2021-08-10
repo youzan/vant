@@ -221,8 +221,8 @@ export default {
     };
 
     // 返回 Promise
-    const asyncBeforeRead = (file) => {
-      return new Promise((resolve, reject) => {
+    const asyncBeforeRead = (file) =>
+      new Promise((resolve, reject) => {
         if (file.type !== 'image/jpeg') {
           Toast('Please upload an image in jpg format');
           reject();
@@ -233,7 +233,6 @@ export default {
           resolve(img);
         }
       });
-    };
 
     return {
       beforeRead,

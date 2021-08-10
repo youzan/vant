@@ -241,14 +241,12 @@ export default defineComponent({
       />
     );
 
-    const renderDays = () => {
-      return (
-        <div ref={daysRef} role="grid" class={bem('days')}>
-          {renderMark()}
-          {(shouldRender.value ? days : placeholders).value.map(renderDay)}
-        </div>
-      );
-    };
+    const renderDays = () => (
+      <div ref={daysRef} role="grid" class={bem('days')}>
+        {renderMark()}
+        {(shouldRender.value ? days : placeholders).value.map(renderDay)}
+      </div>
+    );
 
     useExpose({
       getTitle,

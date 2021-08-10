@@ -240,8 +240,8 @@ export default {
     };
 
     // 返回 Promise
-    const asyncBeforeRead = (file) => {
-      return new Promise((resolve, reject) => {
+    const asyncBeforeRead = (file) =>
+      new Promise((resolve, reject) => {
         if (file.type !== 'image/jpeg') {
           Toast('请上传 jpg 格式图片');
           reject();
@@ -252,7 +252,6 @@ export default {
           resolve(img);
         }
       });
-    };
 
     return {
       beforeRead,
@@ -449,8 +448,8 @@ import Compressor from 'compressorjs';
 
 export default {
   setup() {
-    const beforeRead = (file) => {
-      return new Promise((resolve) => {
+    const beforeRead = (file) =>
+      new Promise((resolve) => {
         // compressorjs 默认开启 checkOrientation 选项
         // 会将图片修正为正确方向
         new Compressor(file, {
@@ -460,7 +459,6 @@ export default {
           },
         });
       });
-    };
 
     return {
       beforeRead,

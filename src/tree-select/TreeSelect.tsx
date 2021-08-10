@@ -65,11 +65,10 @@ export default defineComponent({
   ],
 
   setup(props, { emit, slots }) {
-    const isActiveItem = (id: number | string) => {
-      return Array.isArray(props.activeId)
+    const isActiveItem = (id: number | string) =>
+      Array.isArray(props.activeId)
         ? props.activeId.includes(id)
         : props.activeId === id;
-    };
 
     const renderSubItem = (item: TreeSelectChild) => {
       const onClick = () => {
