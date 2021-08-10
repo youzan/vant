@@ -1,7 +1,7 @@
 const pkg = require('./package.json');
 
 module.exports = {
-    version: '>=0.1.0',
+    version: '>=0.1.1',
     type: 'library',
     name: '@lcap/mobile-ui',
     CamelName: 'LcapMobileUI',
@@ -21,8 +21,8 @@ module.exports = {
             { group: 'Layout', name: 'cell-group', alias: '单元格', vscode: false },
             { group: 'Display', name: 'button', alias: '按钮', vscode: false },
             { group: 'Display', name: 'image', alias: '图片', vscode: false },
-            { group: 'Display', name: 'tab', alias: '选项卡' },
-            { group: 'Container', name: 'popup', alias: '弹窗'}
+            { group: 'Display', name: 'tab', alias: '选项卡', vscode: false },
+            { group: 'Container', name: 'popup', alias: '弹窗', vscode: false}
         ],
         blocks: [],
         directives: [

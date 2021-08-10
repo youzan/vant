@@ -90,6 +90,11 @@
       type: boolean
       default: false
       description: 是否为加载中。
+    - name: loading-text
+      title: 加载中文案
+      type: string
+      default: '加载中。。。'
+      description: 加载中文案
     - name: url
       title: 跳转地址
       uiType: h5
@@ -101,7 +106,6 @@
       type: string, Location
       description: 需要 vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。
       advanced: true
-  slots: false
   events:
     - name: $listeners
       kind: click

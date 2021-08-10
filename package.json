@@ -2,7 +2,7 @@
   "name": "vant",
   "version": "2.12.25",
   "lcapname": "@lcap/mobile-ui",
-  "lcapversion": "0.1.0",
+  "lcapversion": "0.1.1",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -30,7 +30,7 @@
     "move-yaml": "node bin/move-yaml",
     "move-docs": "node bin/move-docs",
     "screenshot": "node bin/screenshot",
-    "deploy:dev": "node ./scripts/lcap && lcap deploy lib --platform http://lcp.vusion.top --name @lcap/mobile-ui --version 0.1.0 && node bin/deploy-lcp-images --platform=http://lcp.vusion.top",
+    "deploy:dev": "node ./scripts/lcap && lcap deploy lib --platform http://lcp.vusion.top --name @lcap/mobile-ui --version 0.1.1 && node bin/deploy-lcp-images --platform=http://lcp.vusion.top",
     "deploy:dev2": "node ./scripts/lcap && node ./bin/upload.js"
   },
   "husky": {
