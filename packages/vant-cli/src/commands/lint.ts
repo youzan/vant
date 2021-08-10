@@ -25,7 +25,7 @@ function runCommand(
       })
       .catch((err: any) => {
         spinner.fail(messages.failed);
-        console.log(err.stdout);
+        console.log(err.stderr || err.stdout);
         resolve(false);
       });
   });

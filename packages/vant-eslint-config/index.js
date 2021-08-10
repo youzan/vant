@@ -4,8 +4,6 @@ module.exports = {
     'airbnb-base',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'prettier/vue',
-    'prettier/@typescript-eslint',
     'plugin:markdown/recommended',
   ],
 
