@@ -18,6 +18,7 @@ module.exports = {
         ],
         components: [
             { group: 'Layout', name: 'divider', alias: '分割线', vscode: false },
+            { group: 'Layout', name: 'cell-group', alias: '单元格', vscode: false },
             { group: 'Display', name: 'button', alias: '按钮', vscode: false },
             { group: 'Display', name: 'image', alias: '图片', vscode: false },
             { group: 'Display', name: 'tab', alias: '选项卡' },
