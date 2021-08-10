@@ -101,7 +101,7 @@ test('clear multiple toast', async () => {
   Toast.allowMultiple(false);
 });
 
-test('remove toast DOM when cleared in multiple mode', async function () {
+test('remove toast DOM when cleared in multiple mode', async () => {
   Toast.allowMultiple();
   Toast.clear(true);
   const toast = Toast({ className: 'remove-toast' });

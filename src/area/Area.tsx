@@ -219,8 +219,8 @@ export default defineComponent({
     };
 
     // parse output columns data
-    const parseValues = (values: AreaColumnOption[]) => {
-      return values.map((value, index) => {
+    const parseValues = (values: AreaColumnOption[]) =>
+      values.map((value, index) => {
         if (value) {
           value = deepClone(value);
 
@@ -232,7 +232,6 @@ export default defineComponent({
 
         return value;
       });
-    };
 
     const getValues = () => {
       if (pickerRef.value) {
