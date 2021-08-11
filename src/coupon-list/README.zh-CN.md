@@ -30,7 +30,7 @@ app.use(CouponList);
 />
 <!-- 优惠券列表 -->
 <van-popup
-  v-model="state.showList"
+  v-model:show="state.showList"
   round
   position="bottom"
   style="height: 90%; padding-top: 4px;"
