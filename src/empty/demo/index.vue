@@ -1,3 +1,32 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    error: '通用错误',
+    search: '搜索提示',
+    network: '网络错误',
+    imageType: '图片类型',
+    description: '描述文字',
+    customImage: '自定义图片',
+    bottomContent: '底部内容',
+  },
+  'en-US': {
+    error: 'Error',
+    search: 'Search',
+    network: 'Network',
+    imageType: 'Image Type',
+    description: 'Description',
+    customImage: 'Custom Image',
+    bottomContent: 'Bottom Content',
+  },
+};
+
+const t = useTranslate(i18n);
+const active = ref('error');
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-empty :description="t('description')" />
@@ -33,44 +62,6 @@
     </van-empty>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    error: '通用错误',
-    search: '搜索提示',
-    network: '网络错误',
-    imageType: '图片类型',
-    description: '描述文字',
-    customImage: '自定义图片',
-    bottomContent: '底部内容',
-  },
-  'en-US': {
-    error: 'Error',
-    search: 'Search',
-    network: 'Network',
-    imageType: 'Image Type',
-    description: 'Description',
-    customImage: 'Custom Image',
-    bottomContent: 'Bottom Content',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const active = ref('error');
-
-    return {
-      t,
-      active,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

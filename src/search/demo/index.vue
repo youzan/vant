@@ -1,3 +1,41 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { Toast } from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    label: '地址',
+    disabled: '禁用搜索框',
+    inputAlign: '搜索框内容对齐',
+    background: '自定义背景色',
+    placeholder: '请输入搜索关键词',
+    customButton: '自定义按钮',
+    listenToEvents: '事件监听',
+  },
+  'en-US': {
+    label: 'Address',
+    disabled: 'Disabled',
+    inputAlign: 'Input Align',
+    background: 'Custom Background Color',
+    placeholder: 'Placeholder',
+    customButton: 'Custom Action Button',
+    listenToEvents: 'Listen to Events',
+  },
+};
+
+const t = useTranslate(i18n);
+const value1 = ref('');
+const value2 = ref('');
+const value3 = ref('');
+const value4 = ref('');
+const value5 = ref('');
+const value6 = ref('');
+
+const onSearch = (val: string) => Toast(val);
+const onCancel = () => Toast(t('cancel'));
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-search v-model="value1" :placeholder="t('placeholder')" />
@@ -50,54 +88,3 @@
     </van-search>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { Toast } from '../../toast';
-
-const i18n = {
-  'zh-CN': {
-    label: '地址',
-    disabled: '禁用搜索框',
-    inputAlign: '搜索框内容对齐',
-    background: '自定义背景色',
-    placeholder: '请输入搜索关键词',
-    customButton: '自定义按钮',
-    listenToEvents: '事件监听',
-  },
-  'en-US': {
-    label: 'Address',
-    disabled: 'Disabled',
-    inputAlign: 'Input Align',
-    background: 'Custom Background Color',
-    placeholder: 'Placeholder',
-    customButton: 'Custom Action Button',
-    listenToEvents: 'Listen to Events',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      value1: '',
-      value2: '',
-      value3: '',
-      value4: '',
-      value5: '',
-      value6: '',
-    });
-
-    const onSearch = (val: string) => Toast(val);
-    const onCancel = () => Toast(t('cancel'));
-
-    return {
-      ...toRefs(state),
-      t,
-      onSearch,
-      onCancel,
-    };
-  },
-};
-</script>

@@ -1,17 +1,4 @@
-<template>
-  <demo-block :title="t('basicUsage')">
-    <van-contact-list
-      v-model="chosenContactId"
-      :list="t('list')"
-      :default-tag-text="t('defaultTagText')"
-      @add="onAdd"
-      @edit="onEdit"
-      @select="onSelect"
-    />
-  </demo-block>
-</template>
-
-<script lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
@@ -57,31 +44,32 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const chosenContactId = ref('1');
+const t = useTranslate(i18n);
+const chosenContactId = ref('1');
 
-    const onAdd = () => {
-      Toast(t('add'));
-    };
-    const onEdit = (contact: { id: string }) => {
-      Toast(t('edit') + contact.id);
-    };
-    const onSelect = (contact: { id: string }) => {
-      Toast(t('select') + contact.id);
-    };
-
-    return {
-      t,
-      onAdd,
-      onEdit,
-      onSelect,
-      chosenContactId,
-    };
-  },
+const onAdd = () => {
+  Toast(t('add'));
+};
+const onEdit = (contact: { id: string }) => {
+  Toast(t('edit') + contact.id);
+};
+const onSelect = (contact: { id: string }) => {
+  Toast(t('select') + contact.id);
 };
 </script>
+
+<template>
+  <demo-block :title="t('basicUsage')">
+    <van-contact-list
+      v-model="chosenContactId"
+      :list="t('list')"
+      :default-tag-text="t('defaultTagText')"
+      @add="onAdd"
+      @edit="onEdit"
+      @select="onSelect"
+    />
+  </demo-block>
+</template>
 
 <style lang="less">
 @import '../../style/var';

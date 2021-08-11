@@ -1,3 +1,28 @@
+<script setup lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    type: '加载类型',
+    text: '加载文案',
+    size: '自定义大小',
+    color: '自定义颜色',
+    vertical: '垂直排列',
+    textColor: '自定义文本颜色',
+  },
+  'en-US': {
+    type: 'Type',
+    text: 'Text',
+    size: 'Size',
+    color: 'Color',
+    vertical: 'Vertical',
+    textColor: 'Text Color',
+  },
+};
+
+const t = useTranslate(i18n);
+</script>
+
 <template>
   <demo-block :title="t('type')">
     <van-loading />
@@ -35,36 +60,6 @@
     </van-loading>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    type: '加载类型',
-    text: '加载文案',
-    size: '自定义大小',
-    color: '自定义颜色',
-    vertical: '垂直排列',
-    textColor: '自定义文本颜色',
-  },
-  'en-US': {
-    type: 'Type',
-    text: 'Text',
-    size: 'Size',
-    color: 'Color',
-    vertical: 'Vertical',
-    textColor: 'Text Color',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    return { t };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

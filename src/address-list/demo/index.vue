@@ -1,18 +1,4 @@
-<template>
-  <demo-block :title="t('basicUsage')">
-    <van-address-list
-      v-model="chosenAddressId"
-      :list="t('list')"
-      :disabled-list="t('disabledList')"
-      :disabled-text="t('disabledText')"
-      :default-tag-text="t('defaultTagText')"
-      @add="onAdd"
-      @edit="onEdit"
-    />
-  </demo-block>
-</template>
-
-<script lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
@@ -78,26 +64,29 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const chosenAddressId = ref('1');
-    const onAdd = () => {
-      Toast(t('add'));
-    };
-    const onEdit = (item: unknown, index: number) => {
-      Toast(`${t('edit')}:${index}`);
-    };
-
-    return {
-      t,
-      onAdd,
-      onEdit,
-      chosenAddressId,
-    };
-  },
+const t = useTranslate(i18n);
+const chosenAddressId = ref('1');
+const onAdd = () => {
+  Toast(t('add'));
+};
+const onEdit = (item: unknown, index: number) => {
+  Toast(`${t('edit')}:${index}`);
 };
 </script>
+
+<template>
+  <demo-block :title="t('basicUsage')">
+    <van-address-list
+      v-model="chosenAddressId"
+      :list="t('list')"
+      :disabled-list="t('disabledList')"
+      :disabled-text="t('disabledText')"
+      :default-tag-text="t('defaultTagText')"
+      @add="onAdd"
+      @edit="onEdit"
+    />
+  </demo-block>
+</template>
 
 <style lang="less">
 .demo-address-list {

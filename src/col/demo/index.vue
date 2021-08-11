@@ -1,3 +1,20 @@
+<script setup lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    title2: '在列元素之间增加间距',
+    justify: '对齐方式',
+  },
+  'en-US': {
+    title2: 'Column Spacing',
+    justify: 'Justify Content',
+  },
+};
+
+const t = useTranslate(i18n);
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-row>
@@ -50,28 +67,6 @@
     </van-row>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    title2: '在列元素之间增加间距',
-    justify: '对齐方式',
-  },
-  'en-US': {
-    title2: 'Column Spacing',
-    justify: 'Justify Content',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    return { t };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

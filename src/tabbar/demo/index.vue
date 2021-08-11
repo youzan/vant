@@ -1,3 +1,43 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { Toast } from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    badge: '徽标提示',
+    customIcon: '自定义图标',
+    customColor: '自定义颜色',
+    matchByName: '通过名称匹配',
+    switchEvent: '监听切换事件',
+  },
+  'en-US': {
+    badge: 'Show Badge',
+    customIcon: 'Custom Icon',
+    customColor: 'Custom Color',
+    matchByName: 'Match by name',
+    switchEvent: 'Change Event',
+  },
+};
+
+const t = useTranslate(i18n);
+const active = ref(0);
+const active2 = ref(0);
+const active3 = ref(0);
+const active4 = ref(0);
+const active5 = ref(0);
+const activeName = ref('home');
+
+const icon = {
+  active: 'https://img.yzcdn.cn/vant/user-active.png',
+  inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+};
+
+const onChange = (index: number) => {
+  Toast(`${t('tab')} ${index + 1}`);
+};
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-tabbar v-model="active">
@@ -69,57 +109,6 @@
     </van-tabbar>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { Toast } from '../../toast';
-
-const i18n = {
-  'zh-CN': {
-    badge: '徽标提示',
-    customIcon: '自定义图标',
-    customColor: '自定义颜色',
-    matchByName: '通过名称匹配',
-    switchEvent: '监听切换事件',
-  },
-  'en-US': {
-    badge: 'Show Badge',
-    customIcon: 'Custom Icon',
-    customColor: 'Custom Color',
-    matchByName: 'Match by name',
-    switchEvent: 'Change Event',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      active: 0,
-      active2: 0,
-      active3: 0,
-      active4: 0,
-      active5: 0,
-      activeName: 'home',
-    });
-
-    const onChange = (index: number) => {
-      Toast(`${t('tab')} ${index + 1}`);
-    };
-
-    return {
-      ...toRefs(state),
-      t,
-      icon: {
-        active: 'https://img.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
-      },
-      onChange,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 .demo-tabbar {

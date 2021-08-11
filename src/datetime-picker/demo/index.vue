@@ -1,3 +1,72 @@
+<script setup lang="ts">
+import { reactive } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    day: '日',
+    year: '年',
+    month: '月',
+    timeType: '选择时间',
+    dateType: '选择年月日',
+    datetimeType: '选择完整时间',
+    datehourType: '选择年月日小时',
+    monthDayType: '选择月日',
+    yearMonthType: '选择年月',
+    optionFilter: '选项过滤器',
+    sortColumns: '自定义列排序',
+  },
+  'en-US': {
+    day: ' Day',
+    year: ' Year',
+    month: ' Month',
+    timeType: 'Choose Time',
+    dateType: 'Choose Date',
+    datetimeType: 'Choose DateTime',
+    datehourType: 'Choose DateHour',
+    monthDayType: 'Choose Month-Day',
+    yearMonthType: 'Choose Year-Month',
+    optionFilter: 'Option Filter',
+    sortColumns: 'Columns Order',
+  },
+};
+
+const t = useTranslate(i18n);
+const value = reactive({
+  date: new Date(2021, 0, 17),
+  time: '12:00',
+  datetime: new Date(2020, 0, 1),
+  datehour: new Date(2020, 0, 1),
+  monthDay: new Date(2020, 0, 1),
+  yearMonth: new Date(2020, 0, 1),
+  optionFilter: '12:00',
+  sortColumnsDate: new Date(2020, 0, 1),
+});
+
+const minDate = new Date(2020, 0, 1);
+const maxDate = new Date(2025, 10, 1);
+
+const filter = (type: string, values: string[]) => {
+  if (type === 'minute') {
+    return values.filter((value) => Number(value) % 5 === 0);
+  }
+  return values;
+};
+
+const formatter = (type: string, value: string) => {
+  if (type === 'year') {
+    return value + t('year');
+  }
+  if (type === 'month') {
+    return value + t('month');
+  }
+  if (type === 'day') {
+    return value + t('day');
+  }
+  return value;
+};
+</script>
+
 <template>
   <demo-block card :title="t('dateType')">
     <van-datetime-picker
@@ -22,7 +91,7 @@
 
   <demo-block v-if="!isWeapp" card :title="t('monthDayType')">
     <van-datetime-picker
-      v-model="value.monthDayType"
+      v-model="value.monthDay"
       type="month-day"
       :title="t('monthDayType')"
       :min-date="minDate"
@@ -82,82 +151,3 @@
     />
   </demo-block>
 </template>
-
-<script lang="ts">
-import { reactive } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    day: '日',
-    year: '年',
-    month: '月',
-    timeType: '选择时间',
-    dateType: '选择年月日',
-    datetimeType: '选择完整时间',
-    datehourType: '选择年月日小时',
-    monthDayType: '选择月日',
-    yearMonthType: '选择年月',
-    optionFilter: '选项过滤器',
-    sortColumns: '自定义列排序',
-  },
-  'en-US': {
-    day: ' Day',
-    year: ' Year',
-    month: ' Month',
-    timeType: 'Choose Time',
-    dateType: 'Choose Date',
-    datetimeType: 'Choose DateTime',
-    datehourType: 'Choose DateHour',
-    monthDayType: 'Choose Month-Day',
-    yearMonthType: 'Choose Year-Month',
-    optionFilter: 'Option Filter',
-    sortColumns: 'Columns Order',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const value = reactive({
-      date: new Date(2021, 0, 17),
-      time: '12:00',
-      datetime: new Date(2020, 0, 1),
-      datehour: new Date(2020, 0, 1),
-      monthDay: new Date(2020, 0, 1),
-      yearMonth: new Date(2020, 0, 1),
-      optionFilter: '12:00',
-      sortColumnsDate: new Date(2020, 0, 1),
-    });
-
-    const filter = (type: string, values: string[]) => {
-      if (type === 'minute') {
-        return values.filter((value) => Number(value) % 5 === 0);
-      }
-      return values;
-    };
-
-    const formatter = (type: string, value: string) => {
-      if (type === 'year') {
-        return value + t('year');
-      }
-      if (type === 'month') {
-        return value + t('month');
-      }
-      if (type === 'day') {
-        return value + t('day');
-      }
-      return value;
-    };
-
-    return {
-      t,
-      value,
-      filter,
-      minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1),
-      formatter,
-    };
-  },
-};
-</script>

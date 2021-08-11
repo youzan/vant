@@ -1,3 +1,31 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { Toast } from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    title: '标签名',
+    disabled: '禁用选项',
+    showBadge: '徽标提示',
+    changeEvent: '监听切换事件',
+  },
+  'en-US': {
+    disabled: 'Disabled',
+    showBadge: 'Show Badge',
+    changeEvent: 'Change Event',
+  },
+};
+
+const t = useTranslate(i18n);
+const active1 = ref(0);
+const active2 = ref(0);
+const active3 = ref(0);
+const active4 = ref(0);
+
+const onChange = (index: number) => Toast(`${t('title')} ${index + 1}`);
+</script>
+
 <template>
   <van-grid :column-num="2" :border="false">
     <van-grid-item>
@@ -37,46 +65,6 @@
     </van-grid-item>
   </van-grid>
 </template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { Toast } from '../../toast';
-
-const i18n = {
-  'zh-CN': {
-    title: '标签名',
-    disabled: '禁用选项',
-    showBadge: '徽标提示',
-    changeEvent: '监听切换事件',
-  },
-  'en-US': {
-    disabled: 'Disabled',
-    showBadge: 'Show Badge',
-    changeEvent: 'Change Event',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      active1: 0,
-      active2: 0,
-      active3: 0,
-      active4: 0,
-    });
-
-    const onChange = (index: number) => Toast(`${t('title')} ${index + 1}`);
-
-    return {
-      ...toRefs(state),
-      t,
-      onChange,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

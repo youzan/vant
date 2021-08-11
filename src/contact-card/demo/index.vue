@@ -1,3 +1,36 @@
+<script setup lang="ts">
+import { computed } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { Toast } from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    add: '新增',
+    edit: '编辑',
+    name: '张三',
+    addContact: '添加联系人',
+    editContact: '编辑联系人',
+  },
+  'en-US': {
+    add: 'Add',
+    edit: 'Edit',
+    name: 'John Snow',
+    addContact: 'Add Contact',
+    editContact: 'Edit Contact',
+  },
+};
+
+const t = useTranslate(i18n);
+
+const currentContact = computed(() => ({
+  name: t('name'),
+  tel: '13000000000',
+}));
+
+const onAdd = () => Toast(t('add'));
+const onEdit = () => Toast(t('edit'));
+</script>
+
 <template>
   <demo-block :title="t('addContact')">
     <van-contact-card type="add" @click="onAdd" />
@@ -21,47 +54,3 @@
     />
   </demo-block>
 </template>
-
-<script lang="ts">
-import { computed } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { Toast } from '../../toast';
-
-const i18n = {
-  'zh-CN': {
-    add: '新增',
-    edit: '编辑',
-    name: '张三',
-    addContact: '添加联系人',
-    editContact: '编辑联系人',
-  },
-  'en-US': {
-    add: 'Add',
-    edit: 'Edit',
-    name: 'John Snow',
-    addContact: 'Add Contact',
-    editContact: 'Edit Contact',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-
-    const currentContact = computed(() => ({
-      name: t('name'),
-      tel: '13000000000',
-    }));
-
-    const onAdd = () => Toast(t('add'));
-    const onEdit = () => Toast(t('edit'));
-
-    return {
-      t,
-      onAdd,
-      onEdit,
-      currentContact,
-    };
-  },
-};
-</script>

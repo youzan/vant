@@ -1,3 +1,36 @@
+<script setup lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    text: '文字',
+    route: '页面导航',
+    gutter: '格子间距',
+    square: '正方形格子',
+    columnNum: '自定义列数',
+    customContent: '自定义内容',
+    urlRoute: 'URL 跳转',
+    vueRoute: '路由跳转',
+    showBadge: '徽标提示',
+    horizontal: '内容横排',
+  },
+  'en-US': {
+    text: 'Text',
+    route: 'Route',
+    gutter: 'Gutter',
+    square: 'Square',
+    columnNum: 'Column Num',
+    customContent: 'Custom Content',
+    urlRoute: 'URL',
+    vueRoute: 'Vue Router',
+    showBadge: 'Show Badge',
+    horizontal: 'Horizontal',
+  },
+};
+
+const t = useTranslate(i18n);
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-grid>
@@ -63,45 +96,3 @@
     </van-grid>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    text: '文字',
-    route: '页面导航',
-    gutter: '格子间距',
-    square: '正方形格子',
-    columnNum: '自定义列数',
-    customContent: '自定义内容',
-    urlRoute: 'URL 跳转',
-    vueRoute: '路由跳转',
-    showBadge: '徽标提示',
-    horizontal: '内容横排',
-  },
-  'en-US': {
-    text: 'Text',
-    route: 'Route',
-    gutter: 'Gutter',
-    square: 'Square',
-    columnNum: 'Column Num',
-    customContent: 'Custom Content',
-    urlRoute: 'URL',
-    vueRoute: 'Vue Router',
-    showBadge: 'Show Badge',
-    horizontal: 'Horizontal',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    return { t };
-  },
-};
-</script>
-
-<style lang="less">
-@import '../../style/var';
-</style>

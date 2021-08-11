@@ -1,3 +1,46 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { Toast } from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    halfStar: '半星',
+    disabled: '禁用状态',
+    customIcon: '自定义图标',
+    customStyle: '自定义样式',
+    customCount: '自定义数量',
+    readonly: '只读状态',
+    readonlyHalfStar: '只读状态小数显示',
+    changeEvent: '监听 change 事件',
+    toastContent: (value: number) => `当前值：${value}`,
+  },
+  'en-US': {
+    halfStar: 'Half Star',
+    disabled: 'Disabled',
+    customIcon: 'Custom Icon',
+    customStyle: 'Custom Style',
+    customCount: 'Custom Count',
+    readonly: 'Readonly',
+    readonlyHalfStar: 'Readonly Half Star',
+    changeEvent: 'Change Event',
+    toastContent: (value: number) => `current value：${value}`,
+  },
+};
+
+const t = useTranslate(i18n);
+const value1 = ref(3);
+const value2 = ref(3);
+const value3 = ref(3);
+const value4 = ref(2.5);
+const value5 = ref(4);
+const value6 = ref(3);
+const value7 = ref(3.3);
+const value8 = ref(2);
+
+const onChange = (value: number) => Toast(t('toastContent', value));
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-rate v-model="value1" />
@@ -41,61 +84,6 @@
     <van-rate v-model="value8" @change="onChange" />
   </demo-block>
 </template>
-
-<script lang="ts">
-import { toRefs, reactive } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { Toast } from '../../toast';
-
-const i18n = {
-  'zh-CN': {
-    halfStar: '半星',
-    disabled: '禁用状态',
-    customIcon: '自定义图标',
-    customStyle: '自定义样式',
-    customCount: '自定义数量',
-    readonly: '只读状态',
-    readonlyHalfStar: '只读状态小数显示',
-    changeEvent: '监听 change 事件',
-    toastContent: (value: number) => `当前值：${value}`,
-  },
-  'en-US': {
-    halfStar: 'Half Star',
-    disabled: 'Disabled',
-    customIcon: 'Custom Icon',
-    customStyle: 'Custom Style',
-    customCount: 'Custom Count',
-    readonly: 'Readonly',
-    readonlyHalfStar: 'Readonly Half Star',
-    changeEvent: 'Change Event',
-    toastContent: (value: number) => `current value：${value}`,
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      value1: 3,
-      value2: 3,
-      value3: 3,
-      value4: 2.5,
-      value5: 4,
-      value6: 3,
-      value7: 3.3,
-      value8: 2,
-    });
-
-    const onChange = (value: number) => Toast(t('toastContent', value));
-
-    return {
-      ...toRefs(state),
-      t,
-      onChange,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

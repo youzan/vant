@@ -1,26 +1,5 @@
-<template>
-  <demo-block :title="t('showIcon')">
-    <van-cell-group inset>
-      <van-field
-        v-model="icon1"
-        :label="t('text')"
-        left-icon="smile-o"
-        right-icon="warning-o"
-        :placeholder="t('showIcon')"
-      />
-      <van-field
-        v-model="icon2"
-        clearable
-        :label="t('text')"
-        left-icon="music-o"
-        :placeholder="t('showClearIcon')"
-      />
-    </van-cell-group>
-  </demo-block>
-</template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
+<script setup lang="ts">
+import { reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -36,18 +15,30 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      icon1: '',
-      icon2: '123',
-    });
-
-    return {
-      ...toRefs(state),
-      t,
-    };
-  },
-};
+const t = useTranslate(i18n);
+const state = reactive({
+  icon1: '',
+  icon2: '123',
+});
 </script>
+
+<template>
+  <demo-block :title="t('showIcon')">
+    <van-cell-group inset>
+      <van-field
+        v-model="state.icon1"
+        :label="t('text')"
+        left-icon="smile-o"
+        right-icon="warning-o"
+        :placeholder="t('showIcon')"
+      />
+      <van-field
+        v-model="state.icon2"
+        clearable
+        :label="t('text')"
+        left-icon="music-o"
+        :placeholder="t('showClearIcon')"
+      />
+    </van-cell-group>
+  </demo-block>
+</template>

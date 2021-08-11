@@ -1,3 +1,49 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    position: '弹出位置',
+    buttonBasic: '展示弹出层',
+    buttonTop: '顶部弹出',
+    buttonBottom: '底部弹出',
+    buttonLeft: '左侧弹出',
+    buttonRight: '右侧弹出',
+    teleport: '指定挂载节点',
+    roundCorner: '圆角弹窗',
+    closeIcon: '关闭图标',
+    customCloseIcon: '自定义图标',
+    customIconPosition: '图标位置',
+  },
+  'en-US': {
+    position: 'Position',
+    buttonBasic: 'Show Popup',
+    buttonTop: 'From Top',
+    buttonBottom: 'From Bottom',
+    buttonLeft: 'From Left',
+    buttonRight: 'From Right',
+    teleport: 'Get Container',
+    roundCorner: 'Round Corner',
+    closeIcon: 'Close Icon',
+    customCloseIcon: 'Custom Icon',
+    customIconPosition: 'Icon Position',
+  },
+};
+
+const t = useTranslate(i18n);
+const showBasic = ref(false);
+const showTop = ref(false);
+const showBottom = ref(false);
+const showLeft = ref(false);
+const showRight = ref(false);
+const showCloseIcon = ref(false);
+const showRoundCorner = ref(false);
+const showGetContainer = ref(false);
+const showCustomCloseIcon = ref(false);
+const showCustomIconPosition = ref(false);
+</script>
+
 <template>
   <demo-block card :title="t('basicUsage')">
     <van-cell :title="t('buttonBasic')" is-link @click="showBasic = true" />
@@ -92,63 +138,6 @@
     />
   </demo-block>
 </template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    position: '弹出位置',
-    buttonBasic: '展示弹出层',
-    buttonTop: '顶部弹出',
-    buttonBottom: '底部弹出',
-    buttonLeft: '左侧弹出',
-    buttonRight: '右侧弹出',
-    teleport: '指定挂载节点',
-    roundCorner: '圆角弹窗',
-    closeIcon: '关闭图标',
-    customCloseIcon: '自定义图标',
-    customIconPosition: '图标位置',
-  },
-  'en-US': {
-    position: 'Position',
-    buttonBasic: 'Show Popup',
-    buttonTop: 'From Top',
-    buttonBottom: 'From Bottom',
-    buttonLeft: 'From Left',
-    buttonRight: 'From Right',
-    teleport: 'Get Container',
-    roundCorner: 'Round Corner',
-    closeIcon: 'Close Icon',
-    customCloseIcon: 'Custom Icon',
-    customIconPosition: 'Icon Position',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      showBasic: false,
-      showTop: false,
-      showBottom: false,
-      showLeft: false,
-      showRight: false,
-      showCloseIcon: false,
-      showRoundCorner: false,
-      showGetContainer: false,
-      showCustomCloseIcon: false,
-      showCustomIconPosition: false,
-    });
-
-    return {
-      ...toRefs(state),
-      t,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

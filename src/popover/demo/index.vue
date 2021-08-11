@@ -1,3 +1,94 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { Toast } from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    actions: [{ text: '选项一' }, { text: '选项二' }, { text: '选项三' }],
+    shortActions: [{ text: '选项一' }, { text: '选项二' }],
+    actionsWithIcon: [
+      { text: '选项一', icon: 'add-o' },
+      { text: '选项二', icon: 'music-o' },
+      { text: '选项三', icon: 'more-o' },
+    ],
+    actionsDisabled: [
+      { text: '选项一', disabled: true },
+      { text: '选项二', disabled: true },
+      { text: '选项三' },
+    ],
+    showIcon: '展示图标',
+    placement: '弹出位置',
+    darkTheme: '深色风格',
+    lightTheme: '浅色风格',
+    showPopover: '点击弹出气泡',
+    actionOptions: '选项配置',
+    customContent: '自定义内容',
+    disableAction: '禁用选项',
+    choosePlacement: '选择弹出位置',
+  },
+  'en-US': {
+    actions: [{ text: 'Option 1' }, { text: 'Option 2' }, { text: 'Option 3' }],
+    shortActions: [{ text: 'Option 1' }, { text: 'Option 2' }],
+    actionsWithIcon: [
+      { text: 'Option 1', icon: 'add-o' },
+      { text: 'Option 2', icon: 'music-o' },
+      { text: 'Option 3', icon: 'more-o' },
+    ],
+    actionsDisabled: [
+      { text: 'Option 1', disabled: true },
+      { text: 'Option 2', disabled: true },
+      { text: 'Option 3' },
+    ],
+    showIcon: 'Show Icon',
+    placement: 'Placement',
+    darkTheme: 'Dark Theme',
+    lightTheme: 'Light Theme',
+    showPopover: 'Show Popover',
+    actionOptions: 'Action Options',
+    customContent: 'Custom Content',
+    disableAction: 'Disable Action',
+    choosePlacement: 'Placement',
+  },
+};
+
+const placements = [
+  'top',
+  'top-start',
+  'top-end',
+  'left',
+  'left-start',
+  'left-end',
+  'right',
+  'right-start',
+  'right-end',
+  'bottom',
+  'bottom-start',
+  'bottom-end',
+];
+
+const t = useTranslate(i18n);
+const show = ref({
+  showIcon: false,
+  placement: false,
+  darkTheme: false,
+  lightTheme: false,
+  customContent: false,
+  disableAction: false,
+});
+const showPicker = ref(false);
+const currentPlacement = ref('top');
+
+const onPickerChange = (value: string) => {
+  setTimeout(() => {
+    show.value.placement = true;
+    currentPlacement.value = value;
+  });
+};
+
+const onSelect = (action: { text: string }) => Toast(action.text);
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-popover
@@ -118,111 +209,6 @@
     </van-popover>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { Toast } from '../../toast';
-
-const i18n = {
-  'zh-CN': {
-    actions: [{ text: '选项一' }, { text: '选项二' }, { text: '选项三' }],
-    shortActions: [{ text: '选项一' }, { text: '选项二' }],
-    actionsWithIcon: [
-      { text: '选项一', icon: 'add-o' },
-      { text: '选项二', icon: 'music-o' },
-      { text: '选项三', icon: 'more-o' },
-    ],
-    actionsDisabled: [
-      { text: '选项一', disabled: true },
-      { text: '选项二', disabled: true },
-      { text: '选项三' },
-    ],
-    showIcon: '展示图标',
-    placement: '弹出位置',
-    darkTheme: '深色风格',
-    lightTheme: '浅色风格',
-    showPopover: '点击弹出气泡',
-    actionOptions: '选项配置',
-    customContent: '自定义内容',
-    disableAction: '禁用选项',
-    choosePlacement: '选择弹出位置',
-  },
-  'en-US': {
-    actions: [{ text: 'Option 1' }, { text: 'Option 2' }, { text: 'Option 3' }],
-    shortActions: [{ text: 'Option 1' }, { text: 'Option 2' }],
-    actionsWithIcon: [
-      { text: 'Option 1', icon: 'add-o' },
-      { text: 'Option 2', icon: 'music-o' },
-      { text: 'Option 3', icon: 'more-o' },
-    ],
-    actionsDisabled: [
-      { text: 'Option 1', disabled: true },
-      { text: 'Option 2', disabled: true },
-      { text: 'Option 3' },
-    ],
-    showIcon: 'Show Icon',
-    placement: 'Placement',
-    darkTheme: 'Dark Theme',
-    lightTheme: 'Light Theme',
-    showPopover: 'Show Popover',
-    actionOptions: 'Action Options',
-    customContent: 'Custom Content',
-    disableAction: 'Disable Action',
-    choosePlacement: 'Placement',
-  },
-};
-
-const placements = [
-  'top',
-  'top-start',
-  'top-end',
-  'left',
-  'left-start',
-  'left-end',
-  'right',
-  'right-start',
-  'right-end',
-  'bottom',
-  'bottom-start',
-  'bottom-end',
-];
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      show: {
-        showIcon: false,
-        placement: false,
-        darkTheme: false,
-        lightTheme: false,
-        customContent: false,
-        disableAction: false,
-      },
-      showPicker: false,
-      currentPlacement: 'top',
-    });
-
-    const onPickerChange = (value: string) => {
-      setTimeout(() => {
-        state.show.placement = true;
-        state.currentPlacement = value;
-      });
-    };
-
-    const onSelect = (action: { text: string }) => Toast(action.text);
-
-    return {
-      ...toRefs(state),
-      t,
-      onSelect,
-      placements,
-      onPickerChange,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

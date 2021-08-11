@@ -1,3 +1,58 @@
+<script setup lang="ts">
+import { computed, onMounted, ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { Toast } from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    try: '下拉试试',
+    text: '刷新次数',
+    success: '刷新成功',
+    successTip: '成功提示',
+    customTips: '自定义提示',
+  },
+  'en-US': {
+    try: 'Try it down',
+    text: 'Refresh Count',
+    success: 'Refresh success',
+    successTip: 'Success Tip',
+    customTips: 'Custom Tips',
+  },
+};
+
+const t = useTranslate(i18n);
+const count = ref(0);
+const loading = ref(false);
+
+const tips = computed(() => {
+  if (count.value) {
+    return `${t('text')}: ${count.value}`;
+  }
+  return t('try');
+});
+
+const onRefresh = (showToast: boolean) => {
+  setTimeout(() => {
+    if (showToast) {
+      Toast(t('success'));
+    }
+    loading.value = false;
+    count.value++;
+  }, 1000);
+};
+
+const preloadImage = () => {
+  // preload doge image
+  const doge = new Image();
+  const dogeFire = new Image();
+
+  doge.src = 'https://b.yzcdn.cn/vant/doge.png';
+  dogeFire.src = 'https://b.yzcdn.cn/vant/doge-fire.jpg';
+};
+
+onMounted(preloadImage);
+</script>
+
 <template>
   <van-tabs>
     <van-tab :title="t('basicUsage')">
@@ -40,74 +95,6 @@
     </van-tab>
   </van-tabs>
 </template>
-
-<script lang="ts">
-import { computed, onMounted, reactive, toRefs } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { Toast } from '../../toast';
-
-const i18n = {
-  'zh-CN': {
-    try: '下拉试试',
-    text: '刷新次数',
-    success: '刷新成功',
-    successTip: '成功提示',
-    customTips: '自定义提示',
-  },
-  'en-US': {
-    try: 'Try it down',
-    text: 'Refresh Count',
-    success: 'Refresh success',
-    successTip: 'Success Tip',
-    customTips: 'Custom Tips',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      count: 0,
-      loading: false,
-    });
-
-    const tips = computed(() => {
-      if (state.count) {
-        return `${t('text')}: ${state.count}`;
-      }
-      return t('try');
-    });
-
-    const onRefresh = (showToast: boolean) => {
-      setTimeout(() => {
-        if (showToast) {
-          Toast(t('success'));
-        }
-        state.loading = false;
-        state.count++;
-      }, 1000);
-    };
-
-    const preloadImage = () => {
-      // preload doge image
-      const doge = new Image();
-      const dogeFire = new Image();
-
-      doge.src = 'https://b.yzcdn.cn/vant/doge.png';
-      dogeFire.src = 'https://b.yzcdn.cn/vant/doge-fire.jpg';
-    };
-
-    onMounted(preloadImage);
-
-    return {
-      ...toRefs(state),
-      t,
-      tips,
-      onRefresh,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

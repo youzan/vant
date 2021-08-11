@@ -1,3 +1,50 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { ComponentInstance } from '../../utils';
+import { Toast } from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    reset: '重置',
+    pause: '暂停',
+    start: '开始',
+    finished: '倒计时结束',
+    millisecond: '毫秒级渲染',
+    customStyle: '自定义样式',
+    customFormat: '自定义格式',
+    manualControl: '手动控制',
+    formatWithDay: 'DD 天 HH 时 mm 分 ss 秒',
+  },
+  'en-US': {
+    reset: 'Reset',
+    pause: 'Pause',
+    start: 'Start',
+    finished: 'Finished',
+    millisecond: 'Millisecond',
+    customStyle: 'Custom Style',
+    customFormat: 'Custom Format',
+    manualControl: 'Manual Control',
+    formatWithDay: 'DD Day, HH:mm:ss',
+  },
+};
+
+const t = useTranslate(i18n);
+const time = ref(30 * 60 * 60 * 1000);
+const countDown = ref<ComponentInstance>();
+
+const start = () => {
+  countDown.value?.start();
+};
+const pause = () => {
+  countDown.value?.pause();
+};
+const reset = () => {
+  countDown.value?.reset();
+};
+const onFinish = () => Toast(t('finished'));
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-count-down :time="time" />
@@ -39,67 +86,6 @@
     </van-grid>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { ComponentInstance } from '../../utils';
-import { Toast } from '../../toast';
-
-const i18n = {
-  'zh-CN': {
-    reset: '重置',
-    pause: '暂停',
-    start: '开始',
-    finished: '倒计时结束',
-    millisecond: '毫秒级渲染',
-    customStyle: '自定义样式',
-    customFormat: '自定义格式',
-    manualControl: '手动控制',
-    formatWithDay: 'DD 天 HH 时 mm 分 ss 秒',
-  },
-  'en-US': {
-    reset: 'Reset',
-    pause: 'Pause',
-    start: 'Start',
-    finished: 'Finished',
-    millisecond: 'Millisecond',
-    customStyle: 'Custom Style',
-    customFormat: 'Custom Format',
-    manualControl: 'Manual Control',
-    formatWithDay: 'DD Day, HH:mm:ss',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const time = ref(30 * 60 * 60 * 1000);
-    const countDown = ref<ComponentInstance>();
-
-    const start = () => {
-      countDown.value?.start();
-    };
-    const pause = () => {
-      countDown.value?.pause();
-    };
-    const reset = () => {
-      countDown.value?.reset();
-    };
-    const onFinish = () => Toast(t('finished'));
-
-    return {
-      t,
-      time,
-      start,
-      pause,
-      reset,
-      onFinish,
-      countDown,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

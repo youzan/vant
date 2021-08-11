@@ -1,20 +1,5 @@
-<template>
-  <van-field
-    v-model="value"
-    is-link
-    readonly
-    name="datetimePicker"
-    :label="t('label')"
-    :placeholder="t('placeholder')"
-    @click="showPicker = true"
-  />
-  <van-popup v-model:show="showPicker" round position="bottom" teleport="body">
-    <van-datetime-picker type="time" @confirm="onConfirm" @cancel="onCancel" />
-  </van-popup>
-</template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
+<script setup lang="ts">
+import { reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -28,29 +13,38 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      value: '',
-      showPicker: false,
-    });
+const t = useTranslate(i18n);
+const state = reactive({
+  value: '',
+  showPicker: false,
+});
 
-    const onConfirm = (time: string) => {
-      state.value = time;
-      state.showPicker = false;
-    };
+const onConfirm = (time: string) => {
+  state.value = time;
+  state.showPicker = false;
+};
 
-    const onCancel = () => {
-      state.showPicker = false;
-    };
-
-    return {
-      ...toRefs(state),
-      t,
-      onCancel,
-      onConfirm,
-    };
-  },
+const onCancel = () => {
+  state.showPicker = false;
 };
 </script>
+
+<template>
+  <van-field
+    v-model="state.value"
+    is-link
+    readonly
+    name="datetimePicker"
+    :label="t('label')"
+    :placeholder="t('placeholder')"
+    @click="state.showPicker = true"
+  />
+  <van-popup
+    v-model:show="state.showPicker"
+    round
+    position="bottom"
+    teleport="body"
+  >
+    <van-datetime-picker type="time" @confirm="onConfirm" @cancel="onCancel" />
+  </van-popup>
+</template>

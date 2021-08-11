@@ -1,40 +1,5 @@
-<template>
-  <demo-block card :title="t('basicUsage')">
-    <van-cell is-link @click="showImagePreview()">
-      {{ t('showImages') }}
-    </van-cell>
-  </demo-block>
-
-  <demo-block card :title="t('customConfig')">
-    <van-cell is-link @click="showImagePreview({ startPosition: 1 })">
-      {{ t('startPosition') }}
-    </van-cell>
-    <van-cell is-link @click="showImagePreview({ closeable: true })">
-      {{ t('showClose') }}
-    </van-cell>
-    <van-cell is-link @click="showImagePreview({ onClose })">
-      {{ t('closeEvent') }}
-    </van-cell>
-  </demo-block>
-
-  <demo-block card :title="t('beforeClose')">
-    <van-cell is-link @click="showImagePreview({ beforeClose })">
-      {{ t('beforeClose') }}
-    </van-cell>
-  </demo-block>
-
-  <demo-block card :title="t('componentCall')">
-    <van-cell is-link @click="showComponentCall">
-      {{ t('componentCall') }}
-    </van-cell>
-    <van-image-preview v-model:show="show" :images="images" @change="onChange">
-      <template #index>{{ t('index', index) }}</template>
-    </van-image-preview>
-  </demo-block>
-</template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
+<script setup lang="ts">
+import { reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { ImagePreview, ImagePreviewOptions } from '..';
 import { Toast } from '../../toast';
@@ -71,54 +36,78 @@ const images = [
   'https://img.yzcdn.cn/vant/apple-4.jpg',
 ];
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      show: false,
-      index: 0,
-    });
+const t = useTranslate(i18n);
+const state = reactive({
+  show: false,
+  index: 0,
+});
 
-    const onClose = () => Toast(t('closed'));
+const onClose = () => Toast(t('closed'));
 
-    const beforeClose = () =>
-      new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(true);
-        }, 1000);
-      });
+const beforeClose = () =>
+  new Promise<boolean>((resolve) => {
+    setTimeout(() => {
+      resolve(true);
+    }, 1000);
+  });
 
-    const showComponentCall = () => {
-      state.show = true;
-    };
+const showComponentCall = () => {
+  state.show = true;
+};
 
-    const onChange = (index: number) => {
-      state.index = index;
-    };
+const onChange = (index: number) => {
+  state.index = index;
+};
 
-    const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
-      const instance = ImagePreview({
-        images,
-        ...options,
-      });
+const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
+  const instance = ImagePreview({
+    images,
+    ...options,
+  });
 
-      if (options.beforeClose) {
-        setTimeout(() => {
-          instance?.close();
-        }, 2000);
-      }
-    };
-
-    return {
-      ...toRefs(state),
-      t,
-      images,
-      onClose,
-      onChange,
-      beforeClose,
-      showImagePreview,
-      showComponentCall,
-    };
-  },
+  if (options.beforeClose) {
+    setTimeout(() => {
+      instance?.close();
+    }, 2000);
+  }
 };
 </script>
+
+<template>
+  <demo-block card :title="t('basicUsage')">
+    <van-cell is-link @click="showImagePreview()">
+      {{ t('showImages') }}
+    </van-cell>
+  </demo-block>
+
+  <demo-block card :title="t('customConfig')">
+    <van-cell is-link @click="showImagePreview({ startPosition: 1 })">
+      {{ t('startPosition') }}
+    </van-cell>
+    <van-cell is-link @click="showImagePreview({ closeable: true })">
+      {{ t('showClose') }}
+    </van-cell>
+    <van-cell is-link @click="showImagePreview({ onClose })">
+      {{ t('closeEvent') }}
+    </van-cell>
+  </demo-block>
+
+  <demo-block card :title="t('beforeClose')">
+    <van-cell is-link @click="showImagePreview({ beforeClose })">
+      {{ t('beforeClose') }}
+    </van-cell>
+  </demo-block>
+
+  <demo-block card :title="t('componentCall')">
+    <van-cell is-link @click="showComponentCall">
+      {{ t('componentCall') }}
+    </van-cell>
+    <van-image-preview
+      v-model:show="state.show"
+      :images="images"
+      @change="onChange"
+    >
+      <template #index>{{ t('index', state.index) }}</template>
+    </van-image-preview>
+  </demo-block>
+</template>

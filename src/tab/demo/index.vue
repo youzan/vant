@@ -1,3 +1,62 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { Toast } from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    tab: '标签 ',
+    title2: '标签栏滚动',
+    title3: '禁用标签',
+    title4: '样式风格',
+    title5: '点击事件',
+    title6: '粘性布局',
+    title7: '自定义标签',
+    title8: '切换动画',
+    title9: '滑动切换',
+    title10: '滚动导航',
+    disabled: ' 已被禁用',
+    matchByName: '通过名称匹配',
+    beforeChange: '异步切换',
+  },
+  'en-US': {
+    tab: 'Tab ',
+    content: 'content of tab',
+    title2: 'Swipe Tabs',
+    title3: 'Disabled Tab',
+    title4: 'Card Style',
+    title5: 'Click Event',
+    title6: 'Sticky',
+    title7: 'Custom Tab',
+    title8: 'Switch Animation',
+    title9: 'Swipeable',
+    title10: 'Scrollspy',
+    disabled: ' is disabled',
+    matchByName: 'Match By Name',
+    beforeChange: 'Before Change',
+  },
+};
+
+const t = useTranslate(i18n);
+const active = ref(2);
+const activeName = ref('b');
+
+const tabs = [1, 2, 3, 4];
+
+const onClickTab = ({ title }: { title: string }) => {
+  Toast(title);
+};
+
+const beforeChange = (name: number) => {
+  if (name === 1) {
+    return false;
+  }
+  return new Promise((resolve) => {
+    resolve(name !== 3);
+  });
+};
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-tabs v-model:active="active">
@@ -101,79 +160,6 @@
     </van-tabs>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { Toast } from '../../toast';
-
-const i18n = {
-  'zh-CN': {
-    tab: '标签 ',
-    title2: '标签栏滚动',
-    title3: '禁用标签',
-    title4: '样式风格',
-    title5: '点击事件',
-    title6: '粘性布局',
-    title7: '自定义标签',
-    title8: '切换动画',
-    title9: '滑动切换',
-    title10: '滚动导航',
-    disabled: ' 已被禁用',
-    matchByName: '通过名称匹配',
-    beforeChange: '异步切换',
-  },
-  'en-US': {
-    tab: 'Tab ',
-    content: 'content of tab',
-    title2: 'Swipe Tabs',
-    title3: 'Disabled Tab',
-    title4: 'Card Style',
-    title5: 'Click Event',
-    title6: 'Sticky',
-    title7: 'Custom Tab',
-    title8: 'Switch Animation',
-    title9: 'Swipeable',
-    title10: 'Scrollspy',
-    disabled: ' is disabled',
-    matchByName: 'Match By Name',
-    beforeChange: 'Before Change',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      active: 2,
-      activeName: 'b',
-    });
-
-    const tabs = [1, 2, 3, 4];
-
-    const onClickTab = ({ title }: { title: string }) => {
-      Toast(title);
-    };
-
-    const beforeChange = (name: number) => {
-      if (name === 1) {
-        return false;
-      }
-      return new Promise((resolve) => {
-        resolve(name !== 3);
-      });
-    };
-
-    return {
-      ...toRefs(state),
-      t,
-      tabs,
-      onClickTab,
-      beforeChange,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

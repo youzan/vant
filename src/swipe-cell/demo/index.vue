@@ -1,3 +1,49 @@
+<script setup lang="ts">
+import { useTranslate } from '@demo/use-translate';
+import { Dialog } from '../../dialog';
+
+const i18n = {
+  'zh-CN': {
+    select: '选择',
+    delete: '删除',
+    collect: '收藏',
+    title: '单元格',
+    confirm: '确定删除吗？',
+    cardTitle: '商品标题',
+    beforeClose: '异步关闭',
+    customContent: '自定义内容',
+  },
+  'en-US': {
+    select: 'Select',
+    delete: 'Delete',
+    collect: 'Collect',
+    title: 'Cell',
+    confirm: 'Are you sure to delete?',
+    cardTitle: 'Title',
+    beforeClose: 'Before Close',
+    customContent: 'Custom Content',
+  },
+};
+
+const t = useTranslate(i18n);
+const imageURL = 'https://img.yzcdn.cn/vant/ipad.jpeg';
+
+const beforeClose = ({ position }: { position: string }) => {
+  switch (position) {
+    case 'left':
+    case 'cell':
+    case 'outside':
+      return true;
+    case 'right':
+      return new Promise((resolve) => {
+        Dialog.confirm({
+          title: t('confirm'),
+        }).then(resolve);
+      });
+  }
+};
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-swipe-cell>
@@ -44,60 +90,6 @@
     </van-swipe-cell>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { useTranslate } from '@demo/use-translate';
-import { Dialog } from '../../dialog';
-
-const i18n = {
-  'zh-CN': {
-    select: '选择',
-    delete: '删除',
-    collect: '收藏',
-    title: '单元格',
-    confirm: '确定删除吗？',
-    cardTitle: '商品标题',
-    beforeClose: '异步关闭',
-    customContent: '自定义内容',
-  },
-  'en-US': {
-    select: 'Select',
-    delete: 'Delete',
-    collect: 'Collect',
-    title: 'Cell',
-    confirm: 'Are you sure to delete?',
-    cardTitle: 'Title',
-    beforeClose: 'Before Close',
-    customContent: 'Custom Content',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const beforeClose = ({ position }: { position: string }) => {
-      switch (position) {
-        case 'left':
-        case 'cell':
-        case 'outside':
-          return true;
-        case 'right':
-          return new Promise((resolve) => {
-            Dialog.confirm({
-              title: t('confirm'),
-            }).then(resolve);
-          });
-      }
-    };
-
-    return {
-      t,
-      imageURL: 'https://img.yzcdn.cn/vant/ipad.jpeg',
-      beforeClose,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

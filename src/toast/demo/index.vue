@@ -1,36 +1,4 @@
-<template>
-  <demo-block card :title="t('basicUsage')">
-    <van-cell is-link :title="t('title1')" @click="$toast(t('text'))" />
-    <van-cell is-link :title="t('title2')" @click="showLoadingToast()" />
-    <van-cell is-link :title="t('success')" @click="showSuccessToast" />
-    <van-cell is-link :title="t('fail')" @click="showFailToast" />
-  </demo-block>
-
-  <demo-block card v-if="!isWeapp" :title="t('customIcon')">
-    <van-cell is-link :title="t('customIcon')" @click="showIconToast" />
-    <van-cell is-link :title="t('customImage')" @click="showImageToast" />
-    <van-cell
-      is-link
-      :title="t('loadingType')"
-      @click="showLoadingToast('spinner')"
-    />
-  </demo-block>
-
-  <demo-block card v-if="!isWeapp" :title="t('customPosition')">
-    <van-cell is-link :title="t('positionTop')" @click="showTopToast" />
-    <van-cell is-link :title="t('positionBottom')" @click="showBottomToast" />
-  </demo-block>
-
-  <demo-block card :title="t('updateMessage')">
-    <van-cell
-      is-link
-      :title="t('updateMessage')"
-      @click="showCustomizedToast"
-    />
-  </demo-block>
-</template>
-
-<script lang="ts">
+<script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '..';
 import type { LoadingType } from '../../loading';
@@ -74,84 +42,100 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
+const t = useTranslate(i18n);
 
-    const showLoadingToast = (loadingType: LoadingType) => {
-      Toast.loading({
-        forbidClick: true,
-        message: t('loading'),
-        loadingType,
-      });
-    };
+const showLoadingToast = (loadingType?: LoadingType) => {
+  Toast.loading({
+    forbidClick: true,
+    message: t('loading'),
+    loadingType,
+  });
+};
 
-    const showSuccessToast = () => {
-      Toast.success(t('text2'));
-    };
+const showSuccessToast = () => {
+  Toast.success(t('text2'));
+};
 
-    const showFailToast = () => {
-      Toast.fail(t('text3'));
-    };
+const showFailToast = () => {
+  Toast.fail(t('text3'));
+};
 
-    const showTopToast = () => {
-      Toast({
-        message: t('positionTop'),
-        position: 'top',
-      });
-    };
+const showTopToast = () => {
+  Toast({
+    message: t('positionTop'),
+    position: 'top',
+  });
+};
 
-    const showBottomToast = () => {
-      Toast({
-        message: t('positionBottom'),
-        position: 'bottom',
-      });
-    };
+const showBottomToast = () => {
+  Toast({
+    message: t('positionBottom'),
+    position: 'bottom',
+  });
+};
 
-    const showIconToast = () => {
-      Toast({
-        message: t('customIcon'),
-        icon: 'like-o',
-      });
-    };
+const showIconToast = () => {
+  Toast({
+    message: t('customIcon'),
+    icon: 'like-o',
+  });
+};
 
-    const showImageToast = () => {
-      Toast({
-        message: t('customImage'),
-        icon: 'https://img.yzcdn.cn/vant/logo.png',
-      });
-    };
+const showImageToast = () => {
+  Toast({
+    message: t('customImage'),
+    icon: 'https://img.yzcdn.cn/vant/logo.png',
+  });
+};
 
-    const showCustomizedToast = () => {
-      const toast = Toast.loading({
-        duration: 0,
-        forbidClick: true,
-        message: t('text4', 3),
-      });
+const showCustomizedToast = () => {
+  const toast = Toast.loading({
+    duration: 0,
+    forbidClick: true,
+    message: t('text4', 3),
+  });
 
-      let second = 3;
-      const timer = setInterval(() => {
-        second--;
-        if (second) {
-          toast.message = t('text4', second);
-        } else {
-          clearInterval(timer);
-          Toast.clear();
-        }
-      }, 1000);
-    };
-
-    return {
-      t,
-      showTopToast,
-      showFailToast,
-      showIconToast,
-      showImageToast,
-      showBottomToast,
-      showLoadingToast,
-      showSuccessToast,
-      showCustomizedToast,
-    };
-  },
+  let second = 3;
+  const timer = setInterval(() => {
+    second--;
+    if (second) {
+      toast.message = t('text4', second);
+    } else {
+      clearInterval(timer);
+      Toast.clear();
+    }
+  }, 1000);
 };
 </script>
+
+<template>
+  <demo-block card :title="t('basicUsage')">
+    <van-cell is-link :title="t('title1')" @click="Toast(t('text'))" />
+    <van-cell is-link :title="t('title2')" @click="showLoadingToast()" />
+    <van-cell is-link :title="t('success')" @click="showSuccessToast" />
+    <van-cell is-link :title="t('fail')" @click="showFailToast" />
+  </demo-block>
+
+  <demo-block card v-if="!isWeapp" :title="t('customIcon')">
+    <van-cell is-link :title="t('customIcon')" @click="showIconToast" />
+    <van-cell is-link :title="t('customImage')" @click="showImageToast" />
+    <van-cell
+      is-link
+      :title="t('loadingType')"
+      @click="showLoadingToast('spinner')"
+    />
+  </demo-block>
+
+  <demo-block card v-if="!isWeapp" :title="t('customPosition')">
+    <van-cell is-link :title="t('positionTop')" @click="showTopToast" />
+    <van-cell is-link :title="t('positionBottom')" @click="showBottomToast" />
+  </demo-block>
+
+  <demo-block card :title="t('updateMessage')">
+    <van-cell
+      is-link
+      :title="t('updateMessage')"
+      @click="showCustomizedToast"
+    />
+  </demo-block>
+</template>

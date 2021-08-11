@@ -1,3 +1,23 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    showOverlay: '显示遮罩层',
+    embeddedContent: '嵌入内容',
+  },
+  'en-US': {
+    showOverlay: 'Show Overlay',
+    embeddedContent: 'Embedded Content',
+  },
+};
+
+const t = useTranslate(i18n);
+const show = ref(false);
+const showEmbedded = ref(false);
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-button
@@ -23,37 +43,6 @@
     </van-overlay>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    showOverlay: '显示遮罩层',
-    embeddedContent: '嵌入内容',
-  },
-  'en-US': {
-    showOverlay: 'Show Overlay',
-    embeddedContent: 'Embedded Content',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      show: false,
-      showEmbedded: false,
-    });
-
-    return {
-      ...toRefs(state),
-      t,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

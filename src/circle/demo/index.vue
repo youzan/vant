@@ -1,74 +1,5 @@
-<template>
-  <demo-block :title="t('basicUsage')">
-    <van-circle
-      v-model:current-rate="currentRate1"
-      :rate="rate"
-      :speed="100"
-      :text="currentRate1.toFixed(0) + '%'"
-    />
-  </demo-block>
-
-  <demo-block :title="t('customStyle')">
-    <van-circle
-      v-model:current-rate="currentRate3"
-      :rate="rate"
-      :speed="100"
-      :stroke-width="60"
-      :text="t('customWidth')"
-    />
-
-    <van-circle
-      v-model:current-rate="currentRate3"
-      color="#ee0a24"
-      :rate="rate"
-      layer-color="#ebedf0"
-      :speed="100"
-      :text="t('customColor')"
-    />
-
-    <van-circle
-      v-model:current-rate="currentRate2"
-      :rate="rate"
-      :speed="100"
-      :color="gradientColor"
-      :text="t('gradient')"
-    />
-
-    <van-circle
-      v-model:current-rate="currentRate4"
-      color="#07c160"
-      :rate="rate"
-      :speed="100"
-      :clockwise="false"
-      :text="t('counterClockwise')"
-      style="margin-top: 15px"
-    />
-
-    <van-circle
-      v-model:current-rate="currentRate4"
-      color="#7232dd"
-      :rate="rate"
-      :speed="100"
-      size="120px"
-      :clockwise="false"
-      :text="t('customSize')"
-      style="margin-top: 15px"
-    />
-  </demo-block>
-
-  <div style="margin-top: 15px">
-    <van-button :text="t('add')" type="primary" size="small" @click="add" />
-    <van-button
-      :text="t('decrease')"
-      type="danger"
-      size="small"
-      @click="reduce"
-    />
-  </div>
-</template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
+<script setup lang="ts">
+import { reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const format = (rate: number) => Math.min(Math.max(rate, 0), 100);
@@ -92,40 +23,97 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      rate: 70,
-      currentRate1: 70,
-      currentRate2: 70,
-      currentRate3: 70,
-      currentRate4: 70,
-    });
+const t = useTranslate(i18n);
+const state = reactive({
+  rate: 70,
+  currentRate1: 70,
+  currentRate2: 70,
+  currentRate3: 70,
+  currentRate4: 70,
+});
 
-    const gradientColor = {
-      '0%': '#3fecff',
-      '100%': '#6149f6',
-    };
+const gradientColor = {
+  '0%': '#3fecff',
+  '100%': '#6149f6',
+};
 
-    const add = () => {
-      state.rate = format(state.rate + 20);
-    };
+const add = () => {
+  state.rate = format(state.rate + 20);
+};
 
-    const reduce = () => {
-      state.rate = format(state.rate - 20);
-    };
-
-    return {
-      ...toRefs(state),
-      t,
-      add,
-      reduce,
-      gradientColor,
-    };
-  },
+const reduce = () => {
+  state.rate = format(state.rate - 20);
 };
 </script>
+
+<template>
+  <demo-block :title="t('basicUsage')">
+    <van-circle
+      v-model:current-rate="state.currentRate1"
+      :rate="state.rate"
+      :speed="100"
+      :text="state.currentRate1.toFixed(0) + '%'"
+    />
+  </demo-block>
+
+  <demo-block :title="t('customStyle')">
+    <van-circle
+      v-model:current-rate="state.currentRate3"
+      :rate="state.rate"
+      :speed="100"
+      :stroke-width="60"
+      :text="t('customWidth')"
+    />
+
+    <van-circle
+      v-model:current-rate="state.currentRate3"
+      color="#ee0a24"
+      :rate="state.rate"
+      layer-color="#ebedf0"
+      :speed="100"
+      :text="t('customColor')"
+    />
+
+    <van-circle
+      v-model:current-rate="state.currentRate2"
+      :rate="state.rate"
+      :speed="100"
+      :color="gradientColor"
+      :text="t('gradient')"
+    />
+
+    <van-circle
+      v-model:current-rate="state.currentRate4"
+      color="#07c160"
+      :rate="state.rate"
+      :speed="100"
+      :clockwise="false"
+      :text="t('counterClockwise')"
+      style="margin-top: 15px"
+    />
+
+    <van-circle
+      v-model:current-rate="state.currentRate4"
+      color="#7232dd"
+      :rate="state.rate"
+      :speed="100"
+      size="120px"
+      :clockwise="false"
+      :text="t('customSize')"
+      style="margin-top: 15px"
+    />
+  </demo-block>
+
+  <div style="margin-top: 15px">
+    <van-button :text="t('add')" type="primary" size="small" @click="add" />
+    <van-button
+      :text="t('decrease')"
+      type="danger"
+      size="small"
+      @click="reduce"
+    />
+  </div>
+</template>
 
 <style lang="less">
 @import '../../style/var';

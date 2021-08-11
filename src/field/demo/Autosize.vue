@@ -1,19 +1,4 @@
-<template>
-  <demo-block :title="t('autosize')">
-    <van-cell-group inset>
-      <van-field
-        v-model="value"
-        autosize
-        rows="1"
-        type="textarea"
-        :label="t('message')"
-        :placeholder="t('placeholder')"
-      />
-    </van-cell-group>
-  </demo-block>
-</template>
-
-<script lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
@@ -30,12 +15,21 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const value = ref('');
-
-    return { t, value };
-  },
-};
+const t = useTranslate(i18n);
+const value = ref('');
 </script>
+
+<template>
+  <demo-block :title="t('autosize')">
+    <van-cell-group inset>
+      <van-field
+        v-model="value"
+        autosize
+        rows="1"
+        type="textarea"
+        :label="t('message')"
+        :placeholder="t('placeholder')"
+      />
+    </van-cell-group>
+  </demo-block>
+</template>

@@ -1,26 +1,5 @@
-<template>
-  <demo-block :title="t('errorInfo')">
-    <van-cell-group inset>
-      <van-field
-        v-model="username"
-        error
-        required
-        :label="t('username')"
-        :placeholder="t('usernamePlaceholder')"
-      />
-      <van-field
-        v-model="phone"
-        required
-        :label="t('phone')"
-        :placeholder="t('phonePlaceholder')"
-        :error-message="t('phoneError')"
-      />
-    </van-cell-group>
-  </demo-block>
-</template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
+<script setup lang="ts">
+import { reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -38,18 +17,30 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      phone: '123',
-      username: '',
-    });
-
-    return {
-      ...toRefs(state),
-      t,
-    };
-  },
-};
+const t = useTranslate(i18n);
+const state = reactive({
+  phone: '123',
+  username: '',
+});
 </script>
+
+<template>
+  <demo-block :title="t('errorInfo')">
+    <van-cell-group inset>
+      <van-field
+        v-model="state.username"
+        error
+        required
+        :label="t('username')"
+        :placeholder="t('usernamePlaceholder')"
+      />
+      <van-field
+        v-model="state.phone"
+        required
+        :label="t('phone')"
+        :placeholder="t('phonePlaceholder')"
+        :error-message="t('phoneError')"
+      />
+    </van-cell-group>
+  </demo-block>
+</template>

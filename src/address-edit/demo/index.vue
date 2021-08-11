@@ -1,21 +1,4 @@
-<template>
-  <demo-block :title="t('basicUsage')">
-    <van-address-edit
-      :area-list="areaList"
-      show-postal
-      show-delete
-      show-set-default
-      show-search-result
-      :search-result="searchResult"
-      :area-columns-placeholder="t('areaColumnsPlaceholder')"
-      @save="onSave"
-      @delete="onDelete"
-      @change-detail="onChangeDetail"
-    />
-  </demo-block>
-</template>
-
-<script lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue';
 import { areaList } from '@vant/area-data';
 import { useTranslate } from '@demo/use-translate';
@@ -56,28 +39,32 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const searchResult = ref([]);
+const t = useTranslate(i18n);
+const searchResult = ref([]);
 
-    const onSave = () => Toast(t('save'));
-    const onDelete = () => Toast(t('delete'));
-    const onChangeDetail = (val: string) => {
-      searchResult.value = val ? t('searchResult') : [];
-    };
-
-    return {
-      t,
-      onSave,
-      onDelete,
-      areaList,
-      searchResult,
-      onChangeDetail,
-    };
-  },
+const onSave = () => Toast(t('save'));
+const onDelete = () => Toast(t('delete'));
+const onChangeDetail = (val: string) => {
+  searchResult.value = val ? t('searchResult') : [];
 };
 </script>
+
+<template>
+  <demo-block :title="t('basicUsage')">
+    <van-address-edit
+      :area-list="areaList"
+      show-postal
+      show-delete
+      show-set-default
+      show-search-result
+      :search-result="searchResult"
+      :area-columns-placeholder="t('areaColumnsPlaceholder')"
+      @save="onSave"
+      @delete="onDelete"
+      @change-detail="onChangeDetail"
+    />
+  </demo-block>
+</template>
 
 <style lang="less">
 .demo-address-edit {
