@@ -1,5 +1,8 @@
 import { createNamespace, isDef, addUnit, inBrowser } from '../utils';
 import Icon from '../icon';
+// eslint-disable-next-line import/no-cycle
+import ImagePreview from '../image-preview';
+
 
 const [createComponent, bem] = createNamespace('image');
 
@@ -110,7 +113,11 @@ export default createComponent({
     },
 
     onClick(event) {
-      this.$emit('click', event);
+      if (this.$listeners.click) {
+        this.$emit('click', event);
+      } else {
+        ImagePreview([this.src]);
+      }
     },
 
     genPlaceholder() {

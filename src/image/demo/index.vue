@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block :title="t('basicUsage')">
       <van-row>
-        <van-image width="100" height="100" :src="image" />
+        <van-image width="100" height="100" :src="image" @click="clickImage"/>
       </van-row>
     </demo-block>
 
@@ -89,6 +89,11 @@ export default {
       fits: ['fill', 'contain', 'cover', 'none', 'scale-down'],
     };
   },
+  methods: {
+    clickImage() {
+      console.log(345678);
+    }
+  }
 };
 </script>
 
