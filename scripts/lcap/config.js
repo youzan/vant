@@ -16,7 +16,7 @@ module.exports = [
     { group: 'Display', show: true, name: 'image', alias: '图片' },
     { group: 'Display', show: true, name: 'swipe', alias: '轮播' },
     { group: 'Container', show: true, name: 'popup', alias: '弹窗' },
-    { group: 'Container', show: true, name: 'router-vue', alias: '子页面' },
+    { group: 'Container', show: true, name: 'router-view', alias: '子页面' },
     { group: 'Display', show: true, name: 'tabs', alias: '选项卡' },
 
     // { group: 'Display', show: true, name: 'u-text', alias: '文本' },

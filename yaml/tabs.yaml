@@ -1,5 +1,5 @@
 - name: van-tabs
-  title: 分隔线
+  title: 选项卡
   icon: tabs
   labels:
     - Selector

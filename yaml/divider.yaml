@@ -28,9 +28,4 @@
     - name: default
       title: 默认
       description: 显示的文本
-  events:
-    - name: $listeners
-      kind: click
-      title: 监听事件
-      description: 监听所有`<span>`元素的事件。
-      params: []
+  events: []
