@@ -1,7 +1,7 @@
 import { h, defineComponent } from 'vue';
 import Locale from '../src/locale';
 import { mount, later } from '.';
-import { DemoLocaleMixin } from '../docs/site/demo-locale';
+import '../docs/site/demo-locale';
 
 const EmptyComponent = defineComponent({
   inheritAttrs: false,
@@ -22,7 +22,6 @@ export function snapshotDemo(Demo: any, option: any = {}) {
 
     const wrapper = mount(Demo, {
       global: {
-        mixins: [DemoLocaleMixin],
         components: {
           'demo-block': EmptyComponent,
         },

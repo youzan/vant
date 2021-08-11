@@ -41,7 +41,7 @@ const t = useTranslate(i18n);
     </van-row>
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('justify')">
+  <demo-block :title="t('justify')">
     <van-row justify="center">
       <van-col span="6">span: 6</van-col>
       <van-col span="6">span: 6</van-col>

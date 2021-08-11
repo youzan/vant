@@ -22,7 +22,7 @@ const t = useTranslate(i18n);
     <van-progress :percentage="50" />
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('strokeWidth')">
+  <demo-block :title="t('strokeWidth')">
     <van-progress :percentage="50" stroke-width="8" />
   </demo-block>
 

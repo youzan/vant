@@ -119,7 +119,7 @@ const beforeChange = (name: number) => {
     </van-tabs>
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('title7')">
+  <demo-block :title="t('title7')">
     <van-tabs :active="active">
       <van-tab v-for="index in 2" :key="index">
         <template #title> <van-icon name="more-o" />{{ t('tab') }} </template>
@@ -144,7 +144,7 @@ const beforeChange = (name: number) => {
     </van-tabs>
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('title10')">
+  <demo-block :title="t('title10')">
     <van-tabs scrollspy sticky>
       <van-tab :title="t('tab') + index" v-for="index in 8" :key="index">
         {{ t('content') }} {{ index }}
@@ -152,7 +152,7 @@ const beforeChange = (name: number) => {
     </van-tabs>
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('beforeChange')">
+  <demo-block :title="t('beforeChange')">
     <van-tabs :before-change="beforeChange">
       <van-tab :title="t('tab') + index" v-for="index in 4" :key="index">
         {{ t('content') }} {{ index }}

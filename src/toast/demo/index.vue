@@ -116,7 +116,7 @@ const showCustomizedToast = () => {
     <van-cell is-link :title="t('fail')" @click="showFailToast" />
   </demo-block>
 
-  <demo-block card v-if="!isWeapp" :title="t('customIcon')">
+  <demo-block card :title="t('customIcon')">
     <van-cell is-link :title="t('customIcon')" @click="showIconToast" />
     <van-cell is-link :title="t('customImage')" @click="showImageToast" />
     <van-cell
@@ -126,7 +126,7 @@ const showCustomizedToast = () => {
     />
   </demo-block>
 
-  <demo-block card v-if="!isWeapp" :title="t('customPosition')">
+  <demo-block card :title="t('customPosition')">
     <van-cell is-link :title="t('positionTop')" @click="showTopToast" />
     <van-cell is-link :title="t('positionBottom')" @click="showBottomToast" />
   </demo-block>

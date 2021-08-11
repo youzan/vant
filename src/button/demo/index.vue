@@ -124,7 +124,7 @@ const t = useTranslate(i18n);
     <van-button type="primary" block>{{ t('blockElement') }}</van-button>
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('router')">
+  <demo-block :title="t('router')">
     <van-button :text="t('urlRoute')" type="primary" url="/vant/mobile.html" />
     <van-button :text="t('vueRoute')" type="primary" to="index" />
   </demo-block>

@@ -5,15 +5,6 @@ Locale.add({
   'en-US': enUS,
 });
 
-export const DemoLocaleMixin = {
-  computed: {
-    // flag for vant-weapp demos
-    isWeapp() {
-      return location.search.indexOf('weapp=1') !== -1;
-    },
-  },
-};
-
 // switch lang after routing
 if (window.vueRouter) {
   window.vueRouter.afterEach((to) => {

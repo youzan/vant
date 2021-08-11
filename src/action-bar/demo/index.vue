@@ -72,7 +72,7 @@ const onClickButton = () => Toast(t('clickButton'));
     </van-action-bar>
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('customIconColor')">
+  <demo-block :title="t('customIconColor')">
     <van-action-bar>
       <van-action-bar-icon icon="chat-o" :text="t('icon1')" color="#ee0a24" />
       <van-action-bar-icon icon="cart-o" :text="t('icon2')" />

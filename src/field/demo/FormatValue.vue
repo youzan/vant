@@ -26,7 +26,7 @@ const formatter = (value: string) => value.replace(/\d/g, '');
 </script>
 
 <template>
-  <demo-block v-if="!isWeapp" :title="t('formatValue')">
+  <demo-block :title="t('formatValue')">
     <van-cell-group inset>
       <van-field
         v-model="state.value1"

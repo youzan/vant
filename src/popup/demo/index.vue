@@ -129,7 +129,7 @@ const showCustomIconPosition = ref(false);
     />
   </demo-block>
 
-  <demo-block card v-if="!isWeapp" :title="t('teleport')">
+  <demo-block card :title="t('teleport')">
     <van-cell :title="t('teleport')" is-link @click="showGetContainer = true" />
     <van-popup
       v-model:show="showGetContainer"
