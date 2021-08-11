@@ -1,3 +1,35 @@
+<script setup lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    title2: '背景图懒加载',
+    title3: '懒加载模块',
+  },
+  'en-US': {
+    title2: 'Lazyload Background Image',
+    title3: 'Lazyload Component',
+  },
+};
+
+const t = useTranslate(i18n);
+
+const imageList = [
+  'https://img.yzcdn.cn/vant/apple-1.jpg',
+  'https://img.yzcdn.cn/vant/apple-2.jpg',
+  'https://img.yzcdn.cn/vant/apple-3.jpg',
+  'https://img.yzcdn.cn/vant/apple-4.jpg',
+];
+const backgroundImageList = [
+  'https://img.yzcdn.cn/vant/apple-5.jpg',
+  'https://img.yzcdn.cn/vant/apple-6.jpg',
+];
+const componentImageList = [
+  'https://img.yzcdn.cn/vant/apple-8.jpg',
+  'https://img.yzcdn.cn/vant/apple-7.jpg',
+];
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <img v-for="img in imageList" :key="img" v-lazy="img" />
@@ -17,45 +49,6 @@
     </lazy-component>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    title2: '背景图懒加载',
-    title3: '懒加载模块',
-  },
-  'en-US': {
-    title2: 'Lazyload Background Image',
-    title3: 'Lazyload Component',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-
-    return {
-      t,
-      imageList: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
-        'https://img.yzcdn.cn/vant/apple-3.jpg',
-        'https://img.yzcdn.cn/vant/apple-4.jpg',
-      ],
-      backgroundImageList: [
-        'https://img.yzcdn.cn/vant/apple-5.jpg',
-        'https://img.yzcdn.cn/vant/apple-6.jpg',
-      ],
-      componentImageList: [
-        'https://img.yzcdn.cn/vant/apple-8.jpg',
-        'https://img.yzcdn.cn/vant/apple-7.jpg',
-      ],
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

@@ -1,3 +1,70 @@
+<script setup lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    type: '按钮类型',
+    size: '按钮尺寸',
+    icon: '图标按钮',
+    loading: '加载状态',
+    shape: '按钮形状',
+    default: '默认按钮',
+    primary: '主要按钮',
+    success: '成功按钮',
+    danger: '危险按钮',
+    warning: '警告按钮',
+    large: '大号按钮',
+    normal: '普通按钮',
+    small: '小型按钮',
+    mini: '迷你按钮',
+    plain: '朴素按钮',
+    square: '方形按钮',
+    round: '圆形按钮',
+    hairline: '细边框',
+    hairlineButton: '细边框按钮',
+    loadingText: '加载中...',
+    router: '页面导航',
+    urlRoute: 'URL 跳转',
+    vueRoute: '路由跳转',
+    customColor: '自定义颜色',
+    pure: '单色按钮',
+    gradient: '渐变色按钮',
+    blockElement: '块级元素',
+  },
+  'en-US': {
+    type: 'Type',
+    size: 'Size',
+    icon: 'Icon',
+    loading: 'Loading',
+    shape: 'Shape',
+    default: 'Default',
+    primary: 'Primary',
+    success: 'Success',
+    danger: 'Danger',
+    warning: 'Warning',
+    large: 'Large',
+    normal: 'Normal',
+    small: 'Small',
+    mini: 'Mini',
+    plain: 'Plain',
+    square: 'Square',
+    round: 'Round',
+    hairline: 'Hairline',
+    hairlineButton: 'Hairline',
+    loadingText: 'Loading...',
+    router: 'Router',
+    urlRoute: 'URL',
+    vueRoute: 'Vue Router',
+    customColor: 'Custom Color',
+    pure: 'Pure',
+    gradient: 'Gradient',
+    blockElement: 'Block Element',
+  },
+};
+
+const t = useTranslate(i18n);
+</script>
+
 <template>
   <demo-block :title="t('type')">
     <div class="demo-button-row">
@@ -71,78 +138,6 @@
     />
   </demo-block>
 </template>
-
-<script lang="ts">
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    type: '按钮类型',
-    size: '按钮尺寸',
-    icon: '图标按钮',
-    loading: '加载状态',
-    shape: '按钮形状',
-    default: '默认按钮',
-    primary: '主要按钮',
-    success: '成功按钮',
-    danger: '危险按钮',
-    warning: '警告按钮',
-    large: '大号按钮',
-    normal: '普通按钮',
-    small: '小型按钮',
-    mini: '迷你按钮',
-    plain: '朴素按钮',
-    square: '方形按钮',
-    round: '圆形按钮',
-    hairline: '细边框',
-    hairlineButton: '细边框按钮',
-    loadingText: '加载中...',
-    router: '页面导航',
-    urlRoute: 'URL 跳转',
-    vueRoute: '路由跳转',
-    customColor: '自定义颜色',
-    pure: '单色按钮',
-    gradient: '渐变色按钮',
-    blockElement: '块级元素',
-  },
-  'en-US': {
-    type: 'Type',
-    size: 'Size',
-    icon: 'Icon',
-    loading: 'Loading',
-    shape: 'Shape',
-    default: 'Default',
-    primary: 'Primary',
-    success: 'Success',
-    danger: 'Danger',
-    warning: 'Warning',
-    large: 'Large',
-    normal: 'Normal',
-    small: 'Small',
-    mini: 'Mini',
-    plain: 'Plain',
-    square: 'Square',
-    round: 'Round',
-    hairline: 'Hairline',
-    hairlineButton: 'Hairline',
-    loadingText: 'Loading...',
-    router: 'Router',
-    urlRoute: 'URL',
-    vueRoute: 'Vue Router',
-    customColor: 'Custom Color',
-    pure: 'Pure',
-    gradient: 'Gradient',
-    blockElement: 'Block Element',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    return { t };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

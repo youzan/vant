@@ -1,3 +1,42 @@
+<script setup lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    cell: '单元格',
+    group: '分组',
+    router: '页面导航',
+    urlRoute: 'URL 跳转',
+    vueRoute: '路由跳转',
+    useSlots: '使用插槽',
+    showIcon: '展示图标',
+    showArrow: '展示箭头',
+    largeSize: '单元格大小',
+    valueOnly: '只设置 value',
+    groupTitle: '分组标题',
+    insetGrouped: '卡片风格',
+    verticalCenter: '垂直居中',
+  },
+  'en-US': {
+    cell: 'Cell title',
+    group: 'Group',
+    router: 'Router',
+    urlRoute: 'URL',
+    vueRoute: 'Vue Router',
+    useSlots: 'Use Slots',
+    showIcon: 'Left Icon',
+    showArrow: 'Link',
+    largeSize: 'Size',
+    valueOnly: 'Value only',
+    groupTitle: 'Group Title',
+    insetGrouped: 'Inset Grouped',
+    verticalCenter: 'Vertical center',
+  },
+};
+
+const t = useTranslate(i18n);
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-cell-group>
@@ -80,50 +119,6 @@
     />
   </demo-block>
 </template>
-
-<script lang="ts">
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    cell: '单元格',
-    group: '分组',
-    router: '页面导航',
-    urlRoute: 'URL 跳转',
-    vueRoute: '路由跳转',
-    useSlots: '使用插槽',
-    showIcon: '展示图标',
-    showArrow: '展示箭头',
-    largeSize: '单元格大小',
-    valueOnly: '只设置 value',
-    groupTitle: '分组标题',
-    insetGrouped: '卡片风格',
-    verticalCenter: '垂直居中',
-  },
-  'en-US': {
-    cell: 'Cell title',
-    group: 'Group',
-    router: 'Router',
-    urlRoute: 'URL',
-    vueRoute: 'Vue Router',
-    useSlots: 'Use Slots',
-    showIcon: 'Left Icon',
-    showArrow: 'Link',
-    largeSize: 'Size',
-    valueOnly: 'Value only',
-    groupTitle: 'Group Title',
-    insetGrouped: 'Inset Grouped',
-    verticalCenter: 'Vertical center',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    return { t };
-  },
-};
-</script>
 
 <style lang="less">
 .demo-cell {

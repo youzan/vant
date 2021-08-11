@@ -1,3 +1,22 @@
+<script setup lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    title2: '置灰',
+    title3: '样式定制',
+    strokeWidth: '线条粗细',
+  },
+  'en-US': {
+    title2: 'Inactive',
+    title3: 'Custom Style',
+    strokeWidth: 'Stroke Width',
+  },
+};
+
+const t = useTranslate(i18n);
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-progress :percentage="50" />
@@ -22,30 +41,6 @@
     />
   </demo-block>
 </template>
-
-<script lang="ts">
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    title2: '置灰',
-    title3: '样式定制',
-    strokeWidth: '线条粗细',
-  },
-  'en-US': {
-    title2: 'Inactive',
-    title3: 'Custom Style',
-    strokeWidth: 'Stroke Width',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    return { t };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

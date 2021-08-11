@@ -1,3 +1,48 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    radio: '单选框',
+    text1: '未选中禁用',
+    text2: '选中且禁用',
+    withCell: '与 Cell 组件一起使用',
+    horizontal: '水平排列',
+    customIcon: '自定义图标',
+    customColor: '自定义颜色',
+    customShape: '自定义形状',
+    customIconSize: '自定义大小',
+    disableLabel: '禁用文本点击',
+  },
+  'en-US': {
+    radio: 'Radio',
+    text1: 'Disabled',
+    text2: 'Disabled and checked',
+    withCell: 'Inside a Cell',
+    horizontal: 'Hrizontal',
+    customIcon: 'Custom Icon',
+    customColor: 'Custom Color',
+    customShape: 'Custom Shape',
+    customIconSize: 'Custom Icon Size',
+    disableLabel: 'Disable label click',
+  },
+};
+
+const t = useTranslate(i18n);
+const radio1 = ref('1');
+const radio2 = ref('2');
+const radio3 = ref('1');
+const radio4 = ref('1');
+const radio5 = ref('1');
+const radioLabel = ref('1');
+const radioShape = ref('1');
+const radioIconSize = ref('1');
+const radioHorizontal = ref('1');
+const activeIcon = 'https://img.yzcdn.cn/vant/user-active.png';
+const inactiveIcon = 'https://img.yzcdn.cn/vant/user-inactive.png';
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-radio-group v-model="radio1" class="demo-radio-group">
@@ -90,62 +135,6 @@
     </van-radio-group>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    radio: '单选框',
-    text1: '未选中禁用',
-    text2: '选中且禁用',
-    withCell: '与 Cell 组件一起使用',
-    horizontal: '水平排列',
-    customIcon: '自定义图标',
-    customColor: '自定义颜色',
-    customShape: '自定义形状',
-    customIconSize: '自定义大小',
-    disableLabel: '禁用文本点击',
-  },
-  'en-US': {
-    radio: 'Radio',
-    text1: 'Disabled',
-    text2: 'Disabled and checked',
-    withCell: 'Inside a Cell',
-    horizontal: 'Hrizontal',
-    customIcon: 'Custom Icon',
-    customColor: 'Custom Color',
-    customShape: 'Custom Shape',
-    customIconSize: 'Custom Icon Size',
-    disableLabel: 'Disable label click',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      radio1: '1',
-      radio2: '2',
-      radio3: '1',
-      radio4: '1',
-      radio5: '1',
-      radioLabel: '1',
-      radioShape: '1',
-      radioIconSize: '1',
-      radioHorizontal: '1',
-    });
-
-    return {
-      ...toRefs(state),
-      t,
-      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

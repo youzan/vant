@@ -1,3 +1,32 @@
+<script setup lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    fitMode: '填充模式',
+    round: '圆形图片',
+    loading: '加载中提示',
+    error: '加载失败提示',
+    defaultTip: '默认提示',
+    customTip: '自定义提示',
+    loadFail: '加载失败',
+  },
+  'en-US': {
+    fitMode: 'Fit Mode',
+    round: 'Round',
+    loading: 'Loading',
+    error: 'Error',
+    defaultTip: 'Default Tip',
+    customTip: 'Custom Tip',
+    loadFail: 'Load failed',
+  },
+};
+
+const t = useTranslate(i18n);
+const image = 'https://img.yzcdn.cn/vant/cat.jpeg';
+const fits = ['contain', 'cover', 'fill', 'none', 'scale-down'];
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-row>
@@ -57,43 +86,6 @@
     </van-row>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    fitMode: '填充模式',
-    round: '圆形图片',
-    loading: '加载中提示',
-    error: '加载失败提示',
-    defaultTip: '默认提示',
-    customTip: '自定义提示',
-    loadFail: '加载失败',
-  },
-  'en-US': {
-    fitMode: 'Fit Mode',
-    round: 'Round',
-    loading: 'Loading',
-    error: 'Error',
-    defaultTip: 'Default Tip',
-    customTip: 'Custom Tip',
-    loadFail: 'Load failed',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-
-    return {
-      t,
-      image: 'https://img.yzcdn.cn/vant/cat.jpeg',
-      fits: ['contain', 'cover', 'fill', 'none', 'scale-down'],
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

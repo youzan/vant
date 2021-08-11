@@ -1,3 +1,24 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    offsetTop: '吸顶距离',
+    offsetBottom: '吸底距离',
+    setContainer: '指定容器',
+  },
+  'en-US': {
+    offsetTop: 'Offset Top',
+    offsetBottom: 'Offset Bottom',
+    setContainer: 'Set Container',
+  },
+};
+
+const t = useTranslate(i18n);
+const container = ref(null);
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-sticky>
@@ -34,36 +55,6 @@
     </van-sticky>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    offsetTop: '吸顶距离',
-    offsetBottom: '吸底距离',
-    setContainer: '指定容器',
-  },
-  'en-US': {
-    offsetTop: 'Offset Top',
-    offsetBottom: 'Offset Bottom',
-    setContainer: 'Set Container',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const container = ref(null);
-
-    return {
-      t,
-      container,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

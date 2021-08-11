@@ -1,3 +1,22 @@
+<script setup lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    title: '商品名称',
+    discountInfo: '营销信息',
+    customContent: '自定义内容',
+  },
+  'en-US': {
+    discountInfo: 'Discount Info',
+    customContent: 'Custom Content',
+  },
+};
+
+const t = useTranslate(i18n);
+const imageURL = 'https://img.yzcdn.cn/vant/ipad.jpeg';
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-card
@@ -51,33 +70,6 @@
     </van-card>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    title: '商品名称',
-    discountInfo: '营销信息',
-    customContent: '自定义内容',
-  },
-  'en-US': {
-    discountInfo: 'Discount Info',
-    customContent: 'Custom Content',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-
-    return {
-      t,
-      imageURL: 'https://img.yzcdn.cn/vant/ipad.jpeg',
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

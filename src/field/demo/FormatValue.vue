@@ -1,25 +1,5 @@
-<template>
-  <demo-block v-if="!isWeapp" :title="t('formatValue')">
-    <van-cell-group inset>
-      <van-field
-        v-model="value1"
-        :label="t('text')"
-        :formatter="formatter"
-        :placeholder="t('formatOnChange')"
-      />
-      <van-field
-        v-model="value2"
-        :label="t('text')"
-        :formatter="formatter"
-        format-trigger="onBlur"
-        :placeholder="t('formatOnBlur')"
-      />
-    </van-cell-group>
-  </demo-block>
-</template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
+<script setup lang="ts">
+import { reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -37,20 +17,30 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      value1: '',
-      value2: '',
-    });
-    const formatter = (value: string) => value.replace(/\d/g, '');
-
-    return {
-      ...toRefs(state),
-      t,
-      formatter,
-    };
-  },
-};
+const t = useTranslate(i18n);
+const state = reactive({
+  value1: '',
+  value2: '',
+});
+const formatter = (value: string) => value.replace(/\d/g, '');
 </script>
+
+<template>
+  <demo-block v-if="!isWeapp" :title="t('formatValue')">
+    <van-cell-group inset>
+      <van-field
+        v-model="state.value1"
+        :label="t('text')"
+        :formatter="formatter"
+        :placeholder="t('formatOnChange')"
+      />
+      <van-field
+        v-model="state.value2"
+        :label="t('text')"
+        :formatter="formatter"
+        format-trigger="onBlur"
+        :placeholder="t('formatOnBlur')"
+      />
+    </van-cell-group>
+  </demo-block>
+</template>

@@ -1,3 +1,47 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { Toast } from '../../toast';
+
+const i18n = {
+  'zh-CN': {
+    text: '当前值：',
+    title1: '基础用法',
+    title2: '双滑块',
+    title3: '指定选择范围',
+    title4: '禁用',
+    title5: '指定步长',
+    vertical: '垂直方向',
+    customStyle: '自定义样式',
+    customButton: '自定义按钮',
+  },
+  'en-US': {
+    text: 'Current value: ',
+    title1: 'Basic Usage',
+    title2: 'Dual thumb mode',
+    title3: 'Range',
+    title4: 'Disabled',
+    title5: 'Step size',
+    vertical: 'Vertical',
+    customStyle: 'Custom Style',
+    customButton: 'Custom Button',
+  },
+};
+
+const t = useTranslate(i18n);
+const value1 = ref(50);
+const value2 = ref([20, 60]);
+const value3 = ref(0);
+const value4 = ref(50);
+const value5 = ref(50);
+const value6 = ref(50);
+const value7 = ref(50);
+const value8 = ref(50);
+const value9 = ref([20, 60]);
+
+const onChange = (value: string) => Toast(t('text') + value);
+</script>
+
 <template>
   <demo-block :title="t('title1')">
     <van-slider v-model="value1" @change="onChange" />
@@ -49,62 +93,6 @@
     </div>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { Toast } from '../../toast';
-
-const i18n = {
-  'zh-CN': {
-    text: '当前值：',
-    title1: '基础用法',
-    title2: '双滑块',
-    title3: '指定选择范围',
-    title4: '禁用',
-    title5: '指定步长',
-    vertical: '垂直方向',
-    customStyle: '自定义样式',
-    customButton: '自定义按钮',
-  },
-  'en-US': {
-    text: 'Current value: ',
-    title1: 'Basic Usage',
-    title2: 'Dual thumb mode',
-    title3: 'Range',
-    title4: 'Disabled',
-    title5: 'Step size',
-    vertical: 'Vertical',
-    customStyle: 'Custom Style',
-    customButton: 'Custom Button',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      value1: 50,
-      value2: [20, 60],
-      value3: 0,
-      value4: 50,
-      value5: 50,
-      value6: 50,
-      value7: 50,
-      value8: 50,
-      value9: [20, 60],
-    });
-
-    const onChange = (value: string) => Toast(t('text') + value);
-
-    return {
-      ...toRefs(state),
-      t,
-      onChange,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

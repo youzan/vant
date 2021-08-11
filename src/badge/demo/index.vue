@@ -1,3 +1,24 @@
+<script setup lang="ts">
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    max: '最大值',
+    standalone: '独立展示',
+    customColor: '自定义颜色',
+    customContent: '自定义徽标内容',
+  },
+  'en-US': {
+    max: 'Max',
+    standalone: 'Standalone',
+    customColor: 'Custom Color',
+    customContent: 'Custom Content',
+  },
+};
+
+const t = useTranslate(i18n);
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-badge content="5">
@@ -64,32 +85,6 @@
     <van-badge content="200" max="99" style="margin-left: 16px" />
   </demo-block>
 </template>
-
-<script lang="ts">
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    max: '最大值',
-    standalone: '独立展示',
-    customColor: '自定义颜色',
-    customContent: '自定义徽标内容',
-  },
-  'en-US': {
-    max: 'Max',
-    standalone: 'Standalone',
-    customColor: 'Custom Color',
-    customContent: 'Custom Content',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    return { t };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

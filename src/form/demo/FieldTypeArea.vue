@@ -1,24 +1,5 @@
-<template>
-  <van-field
-    v-model="value"
-    is-link
-    readonly
-    name="area"
-    :label="t('picker')"
-    :placeholder="t('placeholder')"
-    @click="showArea = true"
-  />
-  <van-popup v-model:show="showArea" round position="bottom" teleport="body">
-    <van-area
-      :area-list="t('areaList')"
-      @confirm="onConfirm"
-      @cancel="onCancel"
-    />
-  </van-popup>
-</template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
+<script setup lang="ts">
+import { reactive } from 'vue';
 import { areaList } from '@vant/area-data';
 import { useTranslate } from '@demo/use-translate';
 import { AreaColumnOption } from '../../area';
@@ -37,32 +18,45 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      value: '',
-      showArea: false,
-    });
+const t = useTranslate(i18n);
+const state = reactive({
+  value: '',
+  showArea: false,
+});
 
-    const onConfirm = (values: AreaColumnOption[]) => {
-      state.value = values
-        .filter((item) => !!item)
-        .map((item) => item.name)
-        .join('/');
-      state.showArea = false;
-    };
+const onConfirm = (values: AreaColumnOption[]) => {
+  state.value = values
+    .filter((item) => !!item)
+    .map((item) => item.name)
+    .join('/');
+  state.showArea = false;
+};
 
-    const onCancel = () => {
-      state.showArea = false;
-    };
-
-    return {
-      ...toRefs(state),
-      t,
-      onCancel,
-      onConfirm,
-    };
-  },
+const onCancel = () => {
+  state.showArea = false;
 };
 </script>
+
+<template>
+  <van-field
+    v-model="state.value"
+    is-link
+    readonly
+    name="area"
+    :label="t('picker')"
+    :placeholder="t('placeholder')"
+    @click="state.showArea = true"
+  />
+  <van-popup
+    v-model:show="state.showArea"
+    round
+    position="bottom"
+    teleport="body"
+  >
+    <van-area
+      :area-list="t('areaList')"
+      @confirm="onConfirm"
+      @cancel="onCancel"
+    />
+  </van-popup>
+</template>

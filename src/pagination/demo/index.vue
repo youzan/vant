@@ -1,3 +1,31 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+
+const i18n = {
+  'zh-CN': {
+    title2: '简单模式',
+    title3: '显示省略号',
+    title4: '自定义按钮',
+    prevText: '上一页',
+    nextText: '下一页',
+  },
+  'en-US': {
+    title2: 'Simple Mode',
+    title3: 'Show ellipses',
+    title4: 'Custom Button',
+    prevText: 'Prev',
+    nextText: 'Next',
+  },
+};
+
+const t = useTranslate(i18n);
+const currentPage1 = ref(1);
+const currentPage2 = ref(1);
+const currentPage3 = ref(1);
+const currentPage4 = ref(1);
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-pagination
@@ -47,45 +75,6 @@
     </van-pagination>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-
-const i18n = {
-  'zh-CN': {
-    title2: '简单模式',
-    title3: '显示省略号',
-    title4: '自定义按钮',
-    prevText: '上一页',
-    nextText: '下一页',
-  },
-  'en-US': {
-    title2: 'Simple Mode',
-    title3: 'Show ellipses',
-    title4: 'Custom Button',
-    prevText: 'Prev',
-    nextText: 'Next',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      currentPage1: 1,
-      currentPage2: 1,
-      currentPage3: 1,
-      currentPage4: 1,
-    });
-
-    return {
-      ...toRefs(state),
-      t,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

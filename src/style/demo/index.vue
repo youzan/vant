@@ -1,28 +1,5 @@
-<template>
-  <demo-block :title="t('ellipsis')">
-    <div class="van-ellipsis">{{ t('text1') }}</div>
-    <div class="van-multi-ellipsis--l2">{{ t('text2') }}</div>
-  </demo-block>
-
-  <demo-block card :title="t('hairline')">
-    <div class="van-hairline--top" />
-  </demo-block>
-
-  <demo-block card :title="t('animation')">
-    <van-cell is-link title="Fade" @click="animate('van-fade')" />
-    <van-cell is-link title="Slide Up" @click="animate('van-slide-up')" />
-    <van-cell is-link title="Slide Down" @click="animate('van-slide-down')" />
-    <van-cell is-link title="Slide Left" @click="animate('van-slide-left')" />
-    <van-cell is-link title="Slide Right" @click="animate('van-slide-right')" />
-  </demo-block>
-
-  <transition :name="transitionName">
-    <div v-show="show" class="demo-animate-block" />
-  </transition>
-</template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
+<script setup lang="ts">
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -47,31 +24,42 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      show: false,
-      transitionName: '',
-    });
+const t = useTranslate(i18n);
+const show = ref(false);
+const transitionName = ref('');
 
-    const animate = (transitionName: string) => {
-      state.show = true;
-      state.transitionName = transitionName;
+const animate = (newName: string) => {
+  show.value = true;
+  transitionName.value = newName;
 
-      setTimeout(() => {
-        state.show = false;
-      }, 500);
-    };
-
-    return {
-      ...toRefs(state),
-      t,
-      animate,
-    };
-  },
+  setTimeout(() => {
+    show.value = false;
+  }, 500);
 };
 </script>
+
+<template>
+  <demo-block :title="t('ellipsis')">
+    <div class="van-ellipsis">{{ t('text1') }}</div>
+    <div class="van-multi-ellipsis--l2">{{ t('text2') }}</div>
+  </demo-block>
+
+  <demo-block card :title="t('hairline')">
+    <div class="van-hairline--top" />
+  </demo-block>
+
+  <demo-block card :title="t('animation')">
+    <van-cell is-link title="Fade" @click="animate('van-fade')" />
+    <van-cell is-link title="Slide Up" @click="animate('van-slide-up')" />
+    <van-cell is-link title="Slide Down" @click="animate('van-slide-down')" />
+    <van-cell is-link title="Slide Left" @click="animate('van-slide-left')" />
+    <van-cell is-link title="Slide Right" @click="animate('van-slide-right')" />
+  </demo-block>
+
+  <transition :name="transitionName">
+    <div v-show="show" class="demo-animate-block" />
+  </transition>
+</template>
 
 <style lang="less">
 @import '../../style/var';

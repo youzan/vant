@@ -1,126 +1,5 @@
-<template>
-  <demo-block card :title="t('basicUsage')">
-    <van-cell
-      is-link
-      :title="t('selectSingle')"
-      :value="formatFullDate(date.selectSingle)"
-      @click="show('single', 'selectSingle')"
-    />
-
-    <van-cell
-      is-link
-      :title="t('selectMultiple')"
-      :value="formatMultiple(date.selectMultiple)"
-      @click="show('multiple', 'selectMultiple')"
-    />
-
-    <van-cell
-      is-link
-      :title="t('selectRange')"
-      :value="formatRange(date.selectRange)"
-      @click="show('range', 'selectRange')"
-    />
-  </demo-block>
-
-  <demo-block card :title="t('quickSelect')">
-    <van-cell
-      is-link
-      :title="t('selectSingle')"
-      :value="formatFullDate(date.quickSelect1)"
-      @click="show('single', 'quickSelect1')"
-    />
-
-    <van-cell
-      is-link
-      :title="t('selectRange')"
-      :value="formatRange(date.quickSelect2)"
-      @click="show('range', 'quickSelect2')"
-    />
-  </demo-block>
-
-  <demo-block card :title="t('customCalendar')">
-    <van-cell
-      is-link
-      :title="t('customColor')"
-      :value="formatRange(date.customColor)"
-      @click="show('range', 'customColor')"
-    />
-
-    <van-cell
-      is-link
-      :title="t('customRange')"
-      :value="formatFullDate(date.customRange)"
-      @click="show('single', 'customRange')"
-    />
-
-    <van-cell
-      is-link
-      :title="t('customConfirm')"
-      :value="formatRange(date.customConfirm)"
-      @click="show('range', 'customConfirm')"
-    />
-
-    <van-cell
-      is-link
-      :title="t('customDayText')"
-      :value="formatRange(date.customDayText)"
-      @click="show('range', 'customDayText')"
-    />
-
-    <van-cell
-      is-link
-      :title="t('customPosition')"
-      :value="formatFullDate(date.customPosition)"
-      @click="show('single', 'customPosition')"
-    />
-
-    <van-cell
-      is-link
-      :title="t('maxRange')"
-      :value="formatRange(date.maxRange)"
-      @click="show('range', 'maxRange')"
-    />
-
-    <van-cell
-      v-if="!isWeapp"
-      is-link
-      :title="t('firstDayOfWeek')"
-      @click="show('single', 'firstDayOfWeek')"
-    />
-  </demo-block>
-
-  <demo-block card :title="t('tiledDisplay')">
-    <van-calendar
-      :title="t('calendar')"
-      :poppable="false"
-      :show-confirm="false"
-      :min-date="tiledMinDate"
-      :max-date="tiledMaxDate"
-      :default-date="tiledMinDate"
-      :style="{ height: '500px' }"
-    />
-  </demo-block>
-
-  <van-calendar
-    v-model:show="showCalendar"
-    :type="type"
-    :color="color"
-    :round="round"
-    :position="position"
-    :min-date="minDate"
-    :max-date="maxDate"
-    :max-range="maxRange"
-    :formatter="formatter"
-    :show-confirm="showConfirm"
-    :confirm-text="confirmText"
-    :confirm-disabled-text="confirmDisabledText"
-    :first-day-of-week="firstDayOfWeek"
-    @confirm="onConfirm"
-  />
-</template>
-
-<script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue';
+<script setup lang="ts">
+import { reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import type { CalendarDayItem } from '../types';
 
@@ -175,161 +54,267 @@ const i18n = {
   },
 };
 
-export default defineComponent({
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive<Record<string, any>>({
-      date: {
-        maxRange: [],
-        selectSingle: null,
-        selectRange: [],
-        selectMultiple: [],
-        quickSelect1: null,
-        quickSelect2: [],
-        customColor: [],
-        customConfirm: [],
-        customRange: null,
-        customDayText: [],
-        customPosition: null,
-      },
-      type: 'single',
-      round: true,
-      color: undefined,
-      minDate: undefined,
-      maxDate: undefined,
-      maxRange: undefined,
-      position: undefined,
-      formatter: undefined,
-      showConfirm: false,
-      showCalendar: false,
-      tiledMinDate: new Date(2012, 0, 10),
-      tiledMaxDate: new Date(2012, 2, 20),
-      confirmText: undefined,
-      confirmDisabledText: undefined,
-      firstDayOfWeek: 0,
-    });
-
-    const resetSettings = () => {
-      state.round = true;
-      state.color = undefined;
-      state.minDate = undefined;
-      state.maxDate = undefined;
-      state.maxRange = undefined;
-      state.position = undefined;
-      state.formatter = undefined;
-      state.showConfirm = true;
-      state.confirmText = undefined;
-      state.confirmDisabledText = undefined;
-      state.firstDayOfWeek = 0;
-    };
-
-    const dayFormatter = (day: CalendarDayItem) => {
-      if (!day.date) {
-        return day;
-      }
-
-      const month = day.date.getMonth() + 1;
-      const date = day.date.getDate();
-
-      if (month === 5) {
-        if (date === 1) {
-          day.topInfo = t('laborDay');
-        } else if (date === 4) {
-          day.topInfo = t('youthDay');
-        } else if (date === 11) {
-          day.text = t('today');
-        }
-      }
-
-      if (day.type === 'start') {
-        day.bottomInfo = t('in');
-      } else if (day.type === 'end') {
-        day.bottomInfo = t('out');
-      }
-
-      return day;
-    };
-
-    const show = (type: string, id: string) => {
-      resetSettings();
-      state.id = id;
-      state.type = type;
-      state.showCalendar = true;
-
-      switch (id) {
-        case 'quickSelect1':
-        case 'quickSelect2':
-          state.showConfirm = false;
-          break;
-        case 'customColor':
-          state.color = '#1989fa';
-          break;
-        case 'customConfirm':
-          state.confirmText = t('confirmText');
-          state.confirmDisabledText = t('confirmDisabledText');
-          break;
-        case 'customRange':
-          state.minDate = new Date(2010, 0, 1);
-          state.maxDate = new Date(2010, 0, 31);
-          break;
-        case 'customDayText':
-          state.minDate = new Date(2010, 4, 1);
-          state.maxDate = new Date(2010, 4, 31);
-          state.formatter = dayFormatter;
-          break;
-        case 'customPosition':
-          state.round = false;
-          state.position = 'right';
-          break;
-        case 'maxRange':
-          state.maxRange = 3;
-          break;
-        case 'firstDayOfWeek':
-          state.firstDayOfWeek = 1;
-          break;
-      }
-    };
-
-    const formatDate = (date: Date) => {
-      if (date) {
-        return `${date.getMonth() + 1}/${date.getDate()}`;
-      }
-    };
-
-    const formatFullDate = (date: Date) => {
-      if (date) {
-        return `${date.getFullYear()}/${formatDate(date)}`;
-      }
-    };
-
-    const formatMultiple = (dates: Date[]) => {
-      if (dates.length) {
-        return t('selectCount', dates.length);
-      }
-    };
-
-    const formatRange = (dateRange: Date[]) => {
-      if (dateRange.length) {
-        const [start, end] = dateRange;
-        return `${formatDate(start)} - ${formatDate(end)}`;
-      }
-    };
-
-    const onConfirm = (date: Date | Date[]) => {
-      state.showCalendar = false;
-      state.date[state.id] = date;
-    };
-
-    return {
-      ...toRefs(state),
-      t,
-      show,
-      onConfirm,
-      formatDate,
-      formatRange,
-      formatFullDate,
-      formatMultiple,
-    };
+const t = useTranslate(i18n);
+const state = reactive<Record<string, any>>({
+  date: {
+    maxRange: [],
+    selectSingle: null,
+    selectRange: [],
+    selectMultiple: [],
+    quickSelect1: null,
+    quickSelect2: [],
+    customColor: [],
+    customConfirm: [],
+    customRange: null,
+    customDayText: [],
+    customPosition: null,
   },
+  type: 'single',
+  round: true,
+  color: undefined,
+  minDate: undefined,
+  maxDate: undefined,
+  maxRange: undefined,
+  position: undefined,
+  formatter: undefined,
+  showConfirm: false,
+  showCalendar: false,
+  tiledMinDate: new Date(2012, 0, 10),
+  tiledMaxDate: new Date(2012, 2, 20),
+  confirmText: undefined,
+  confirmDisabledText: undefined,
+  firstDayOfWeek: 0,
 });
+
+const resetSettings = () => {
+  state.round = true;
+  state.color = undefined;
+  state.minDate = undefined;
+  state.maxDate = undefined;
+  state.maxRange = undefined;
+  state.position = undefined;
+  state.formatter = undefined;
+  state.showConfirm = true;
+  state.confirmText = undefined;
+  state.confirmDisabledText = undefined;
+  state.firstDayOfWeek = 0;
+};
+
+const dayFormatter = (day: CalendarDayItem) => {
+  if (!day.date) {
+    return day;
+  }
+
+  const month = day.date.getMonth() + 1;
+  const date = day.date.getDate();
+
+  if (month === 5) {
+    if (date === 1) {
+      day.topInfo = t('laborDay');
+    } else if (date === 4) {
+      day.topInfo = t('youthDay');
+    } else if (date === 11) {
+      day.text = t('today');
+    }
+  }
+
+  if (day.type === 'start') {
+    day.bottomInfo = t('in');
+  } else if (day.type === 'end') {
+    day.bottomInfo = t('out');
+  }
+
+  return day;
+};
+
+const show = (type: string, id: string) => {
+  resetSettings();
+  state.id = id;
+  state.type = type;
+  state.showCalendar = true;
+
+  switch (id) {
+    case 'quickSelect1':
+    case 'quickSelect2':
+      state.showConfirm = false;
+      break;
+    case 'customColor':
+      state.color = '#1989fa';
+      break;
+    case 'customConfirm':
+      state.confirmText = t('confirmText');
+      state.confirmDisabledText = t('confirmDisabledText');
+      break;
+    case 'customRange':
+      state.minDate = new Date(2010, 0, 1);
+      state.maxDate = new Date(2010, 0, 31);
+      break;
+    case 'customDayText':
+      state.minDate = new Date(2010, 4, 1);
+      state.maxDate = new Date(2010, 4, 31);
+      state.formatter = dayFormatter;
+      break;
+    case 'customPosition':
+      state.round = false;
+      state.position = 'right';
+      break;
+    case 'maxRange':
+      state.maxRange = 3;
+      break;
+    case 'firstDayOfWeek':
+      state.firstDayOfWeek = 1;
+      break;
+  }
+};
+
+const formatDate = (date: Date) => {
+  if (date) {
+    return `${state.date.getMonth() + 1}/${state.date.getDate()}`;
+  }
+};
+
+const formatFullDate = (date: Date) => {
+  if (date) {
+    return `${state.date.getFullYear()}/${formatDate(date)}`;
+  }
+};
+
+const formatMultiple = (dates: Date[]) => {
+  if (dates.length) {
+    return t('selectCount', dates.length);
+  }
+};
+
+const formatRange = (dateRange: Date[]) => {
+  if (dateRange.length) {
+    const [start, end] = dateRange;
+    return `${formatDate(start)} - ${formatDate(end)}`;
+  }
+};
+
+const onConfirm = (date: Date | Date[]) => {
+  state.showCalendar = false;
+  state.date[state.id] = date;
+};
 </script>
+
+<template>
+  <demo-block card :title="t('basicUsage')">
+    <van-cell
+      is-link
+      :title="t('selectSingle')"
+      :value="formatFullDate(state.date.selectSingle)"
+      @click="show('single', 'selectSingle')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('selectMultiple')"
+      :value="formatMultiple(state.date.selectMultiple)"
+      @click="show('multiple', 'selectMultiple')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('selectRange')"
+      :value="formatRange(state.date.selectRange)"
+      @click="show('range', 'selectRange')"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('quickSelect')">
+    <van-cell
+      is-link
+      :title="t('selectSingle')"
+      :value="formatFullDate(state.date.quickSelect1)"
+      @click="show('single', 'quickSelect1')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('selectRange')"
+      :value="formatRange(state.date.quickSelect2)"
+      @click="show('range', 'quickSelect2')"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('customCalendar')">
+    <van-cell
+      is-link
+      :title="t('customColor')"
+      :value="formatRange(state.date.customColor)"
+      @click="show('range', 'customColor')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('customRange')"
+      :value="formatFullDate(state.date.customRange)"
+      @click="show('single', 'customRange')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('customConfirm')"
+      :value="formatRange(state.date.customConfirm)"
+      @click="show('range', 'customConfirm')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('customDayText')"
+      :value="formatRange(state.date.customDayText)"
+      @click="show('range', 'customDayText')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('customPosition')"
+      :value="formatFullDate(state.date.customPosition)"
+      @click="show('single', 'customPosition')"
+    />
+
+    <van-cell
+      is-link
+      :title="t('maxRange')"
+      :value="formatRange(state.date.maxRange)"
+      @click="show('range', 'maxRange')"
+    />
+
+    <van-cell
+      v-if="!isWeapp"
+      is-link
+      :title="t('firstDayOfWeek')"
+      @click="show('single', 'firstDayOfWeek')"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('tiledDisplay')">
+    <van-calendar
+      :title="t('calendar')"
+      :poppable="false"
+      :show-confirm="false"
+      :min-date="state.tiledMinDate"
+      :max-date="state.tiledMaxDate"
+      :default-date="state.tiledMinDate"
+      :style="{ height: '500px' }"
+    />
+  </demo-block>
+
+  <van-calendar
+    v-model:show="state.showCalendar"
+    :type="state.type"
+    :color="state.color"
+    :round="state.round"
+    :position="state.position"
+    :min-date="state.minDate"
+    :max-date="state.maxDate"
+    :max-range="state.maxRange"
+    :formatter="state.formatter"
+    :show-confirm="state.showConfirm"
+    :confirm-text="state.confirmText"
+    :first-day-of-week="state.firstDayOfWeek"
+    :confirm-disabled-text="state.confirmDisabledText"
+    @confirm="onConfirm"
+  />
+</template>

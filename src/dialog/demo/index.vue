@@ -1,3 +1,82 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { Dialog } from '..';
+import type { DialogAction } from '../Dialog';
+
+const i18n = {
+  'zh-CN': {
+    alert1: '提示弹窗',
+    alert2: '提示弹窗（无标题）',
+    confirm: '确认弹窗',
+    beforeClose: '异步关闭',
+    roundButton: '圆角按钮样式',
+    componentCall: '组件调用',
+    content: '代码是写出来给人看的，附带能在机器上运行',
+  },
+  'en-US': {
+    alert1: 'Alert',
+    alert2: 'Alert without title',
+    confirm: 'Confirm dialog',
+    beforeClose: 'Before Close',
+    roundButton: 'Round Button Style',
+    componentCall: 'Component Call',
+  },
+};
+
+const t = useTranslate(i18n);
+const show = ref(false);
+const image = 'https://img.yzcdn.cn/vant/apple-3.jpg';
+
+const onClickAlert = () => {
+  Dialog.alert({
+    title: t('title'),
+    message: t('content'),
+  });
+};
+
+const onClickAlert2 = () => {
+  Dialog.alert({
+    message: t('content'),
+  });
+};
+
+const onClickRound = () => {
+  Dialog.alert({
+    theme: 'round-button',
+    title: t('title'),
+    message: t('content'),
+  });
+};
+
+const onClickRound2 = () => {
+  Dialog.alert({
+    theme: 'round-button',
+    message: t('content'),
+  });
+};
+
+const onClickConfirm = () => {
+  Dialog.confirm({
+    title: t('title'),
+    message: t('content'),
+  });
+};
+
+const onClickBeforeClose = () => {
+  const beforeClose = (action: DialogAction) =>
+    new Promise<boolean>((resolve) => {
+      setTimeout(() => resolve(action === 'confirm'), 1000);
+    });
+
+  Dialog.confirm({
+    title: t('title'),
+    message: t('content'),
+    beforeClose,
+  });
+};
+</script>
+
 <template>
   <demo-block card :title="t('basicUsage')">
     <van-cell is-link :title="t('alert1')" @click="onClickAlert" />
@@ -26,100 +105,6 @@
     </van-dialog>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { Dialog } from '..';
-import type { DialogAction } from '../Dialog';
-
-const i18n = {
-  'zh-CN': {
-    alert1: '提示弹窗',
-    alert2: '提示弹窗（无标题）',
-    confirm: '确认弹窗',
-    beforeClose: '异步关闭',
-    roundButton: '圆角按钮样式',
-    componentCall: '组件调用',
-    content: '代码是写出来给人看的，附带能在机器上运行',
-  },
-  'en-US': {
-    alert1: 'Alert',
-    alert2: 'Alert without title',
-    confirm: 'Confirm dialog',
-    beforeClose: 'Before Close',
-    roundButton: 'Round Button Style',
-    componentCall: 'Component Call',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const show = ref(false);
-
-    const onClickAlert = () => {
-      Dialog.alert({
-        title: t('title'),
-        message: t('content'),
-      });
-    };
-
-    const onClickAlert2 = () => {
-      Dialog.alert({
-        message: t('content'),
-      });
-    };
-
-    const onClickRound = () => {
-      Dialog.alert({
-        theme: 'round-button',
-        title: t('title'),
-        message: t('content'),
-      });
-    };
-
-    const onClickRound2 = () => {
-      Dialog.alert({
-        theme: 'round-button',
-        message: t('content'),
-      });
-    };
-
-    const onClickConfirm = () => {
-      Dialog.confirm({
-        title: t('title'),
-        message: t('content'),
-      });
-    };
-
-    const onClickBeforeClose = () => {
-      const beforeClose = (action: DialogAction) =>
-        new Promise<boolean>((resolve) => {
-          setTimeout(() => resolve(action === 'confirm'), 1000);
-        });
-
-      Dialog.confirm({
-        title: t('title'),
-        message: t('content'),
-        beforeClose,
-      });
-    };
-
-    return {
-      t,
-      show,
-      image: 'https://img.yzcdn.cn/vant/apple-3.jpg',
-      onClickAlert,
-      onClickAlert2,
-      onClickRound,
-      onClickRound2,
-      onClickConfirm,
-      onClickBeforeClose,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

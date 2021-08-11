@@ -1,3 +1,92 @@
+<script setup lang="ts">
+import icons from '@vant/icons';
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { Notify } from '../../notify';
+
+// from https://30secondsofcode.org
+function copyToClipboard(str: string) {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+
+  const selection = document.getSelection();
+
+  if (!selection) {
+    return;
+  }
+
+  const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
+
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+
+  if (selected) {
+    selection.removeAllRanges();
+    selection.addRange(selected);
+  }
+}
+
+const i18n = {
+  'zh-CN': {
+    title: '图标列表',
+    badge: '徽标提示',
+    basic: '基础图标',
+    copied: '复制成功',
+    outline: '线框风格',
+    filled: '实底风格',
+    demo: '用法示例',
+    color: '图标颜色',
+    size: '图标大小',
+  },
+  'en-US': {
+    title: 'Icon List',
+    badge: 'Show Badge',
+    basic: 'Basic',
+    copied: 'Copied',
+    outline: 'Outline',
+    filled: 'Filled',
+    demo: 'Demo',
+    color: 'Icon Color',
+    size: 'Icon Size',
+  },
+};
+
+const t = useTranslate(i18n);
+const tab = ref(0);
+const demoIcon = 'chat-o';
+const demoImage = 'https://b.yzcdn.cn/vant/icon-demo-1126.png';
+
+const copy = (icon: string, option: Record<string, unknown> = {}) => {
+  let tag = `<van-icon name="${icon}"`;
+  if ('dot' in option) {
+    tag = `${tag} ${option.dot ? 'dot' : ''}`;
+  }
+  if ('badge' in option) {
+    tag = `${tag} badge="${option.badge}"`;
+  }
+  if ('color' in option) {
+    tag = `${tag} color="${option.color}"`;
+  }
+  if ('size' in option) {
+    tag = `${tag} size="${option.size}"`;
+  }
+  tag = `${tag} />`;
+  copyToClipboard(tag);
+
+  Notify({
+    type: 'success',
+    duration: 1500,
+    className: 'demo-icon-notify',
+    message: `${t('copied')}：${tag}`,
+  });
+};
+</script>
+
 <template>
   <van-tabs v-model:active="tab" sticky>
     <van-tab :title="t('demo')">
@@ -92,106 +181,6 @@
     </van-tab>
   </van-tabs>
 </template>
-
-<script lang="ts">
-import icons from '@vant/icons';
-import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { Notify } from '../../notify';
-
-// from https://30secondsofcode.org
-function copyToClipboard(str: string) {
-  const el = document.createElement('textarea');
-  el.value = str;
-  el.setAttribute('readonly', '');
-  el.style.position = 'absolute';
-  el.style.left = '-9999px';
-  document.body.appendChild(el);
-
-  const selection = document.getSelection();
-
-  if (!selection) {
-    return;
-  }
-
-  const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
-
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
-
-  if (selected) {
-    selection.removeAllRanges();
-    selection.addRange(selected);
-  }
-}
-
-const i18n = {
-  'zh-CN': {
-    title: '图标列表',
-    badge: '徽标提示',
-    basic: '基础图标',
-    copied: '复制成功',
-    outline: '线框风格',
-    filled: '实底风格',
-    demo: '用法示例',
-    color: '图标颜色',
-    size: '图标大小',
-  },
-  'en-US': {
-    title: 'Icon List',
-    badge: 'Show Badge',
-    basic: 'Basic',
-    copied: 'Copied',
-    outline: 'Outline',
-    filled: 'Filled',
-    demo: 'Demo',
-    color: 'Icon Color',
-    size: 'Icon Size',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const tab = ref(0);
-
-    const copy = (icon: string, option: Record<string, unknown> = {}) => {
-      let tag = `<van-icon name="${icon}"`;
-      if ('dot' in option) {
-        tag = `${tag} ${option.dot ? 'dot' : ''}`;
-      }
-      if ('badge' in option) {
-        tag = `${tag} badge="${option.badge}"`;
-      }
-      if ('color' in option) {
-        tag = `${tag} color="${option.color}"`;
-      }
-      if ('size' in option) {
-        tag = `${tag} size="${option.size}"`;
-      }
-      tag = `${tag} />`;
-      copyToClipboard(tag);
-
-      Notify({
-        type: 'success',
-        duration: 1500,
-        className: 'demo-icon-notify',
-        message: `${t('copied')}：${tag}`,
-      });
-    };
-
-    return {
-      t,
-      tab,
-      copy,
-      icons,
-      demoIcon: 'chat-o',
-      demoImage: 'https://b.yzcdn.cn/vant/icon-demo-1126.png',
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';

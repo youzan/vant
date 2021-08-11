@@ -1,47 +1,5 @@
-<template>
-  <demo-block :title="t('title')">
-    <van-form @sumbit="onSubmit" @failed="onFailed">
-      <van-cell-group inset>
-        <van-field
-          v-model="value1"
-          name="pattern"
-          :label="t('label')"
-          :rules="[{ pattern, message: t('message') }]"
-          :placeholder="t('pattern')"
-        />
-        <van-field
-          v-model="value2"
-          name="validator"
-          :label="t('label')"
-          :rules="[{ validator, message: t('message') }]"
-          :placeholder="t('validator')"
-        />
-        <van-field
-          v-model="value3"
-          name="validatorMessage"
-          :label="t('label')"
-          :rules="[{ validator: validatorMessage }]"
-          :placeholder="t('validatorMessage')"
-        />
-        <van-field
-          v-model="value4"
-          name="asyncValidator"
-          :label="t('label')"
-          :rules="[{ validator: asyncValidator, message: t('message') }]"
-          :placeholder="t('asyncValidator')"
-        />
-      </van-cell-group>
-      <div style="margin: 16px 16px 0">
-        <van-button round block type="primary" native-type="submit">
-          {{ t('submit') }}
-        </van-button>
-      </div>
-    </van-form>
-  </demo-block>
-</template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
+<script setup lang="ts">
+import { reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { FieldValidateError } from '../../field/types';
 import { Toast } from '../../toast';
@@ -73,51 +31,79 @@ const i18n = {
   },
 };
 
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      value1: '',
-      value2: '',
-      value3: 'abc',
-      value4: '',
-    });
+const t = useTranslate(i18n);
+const state = reactive({
+  value1: '',
+  value2: '',
+  value3: 'abc',
+  value4: '',
+});
+const pattern = /\d{6}/;
 
-    const validator = (val: string) => /1\d{10}/.test(val);
+const validator = (val: string) => /1\d{10}/.test(val);
 
-    const validatorMessage = (val: string) => t('invalid', val);
+const validatorMessage = (val: string) => t('invalid', val);
 
-    const asyncValidator = (val: string) =>
-      new Promise((resolve) => {
-        Toast.loading(t('validating'));
+const asyncValidator = (val: string) =>
+  new Promise((resolve) => {
+    Toast.loading(t('validating'));
 
-        setTimeout(() => {
-          Toast.clear();
-          resolve(val === '1234');
-        }, 1000);
-      });
+    setTimeout(() => {
+      Toast.clear();
+      resolve(val === '1234');
+    }, 1000);
+  });
 
-    const onSubmit = (values: Record<string, string>) => {
-      console.log('submit', values);
-    };
+const onSubmit = (values: Record<string, string>) => {
+  console.log('submit', values);
+};
 
-    const onFailed = (errorInfo: {
-      values: Record<string, string>;
-      errors: FieldValidateError[];
-    }) => {
-      console.log('failed', errorInfo);
-    };
-
-    return {
-      ...toRefs(state),
-      t,
-      pattern: /\d{6}/,
-      onSubmit,
-      onFailed,
-      validator,
-      asyncValidator,
-      validatorMessage,
-    };
-  },
+const onFailed = (errorInfo: {
+  values: Record<string, string>;
+  errors: FieldValidateError[];
+}) => {
+  console.log('failed', errorInfo);
 };
 </script>
+
+<template>
+  <demo-block :title="t('title')">
+    <van-form @sumbit="onSubmit" @failed="onFailed">
+      <van-cell-group inset>
+        <van-field
+          v-model="state.value1"
+          name="pattern"
+          :label="t('label')"
+          :rules="[{ pattern, message: t('message') }]"
+          :placeholder="t('pattern')"
+        />
+        <van-field
+          v-model="state.value2"
+          name="validator"
+          :label="t('label')"
+          :rules="[{ validator, message: t('message') }]"
+          :placeholder="t('validator')"
+        />
+        <van-field
+          v-model="state.value3"
+          name="validatorMessage"
+          :label="t('label')"
+          :rules="[{ validator: validatorMessage }]"
+          :placeholder="t('validatorMessage')"
+        />
+        <van-field
+          v-model="state.value4"
+          name="asyncValidator"
+          :label="t('label')"
+          :rules="[{ validator: asyncValidator, message: t('message') }]"
+          :placeholder="t('asyncValidator')"
+        />
+      </van-cell-group>
+      <div style="margin: 16px 16px 0">
+        <van-button round block type="primary" native-type="submit">
+          {{ t('submit') }}
+        </van-button>
+      </div>
+    </van-form>
+  </demo-block>
+</template>

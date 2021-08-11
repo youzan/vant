@@ -1,3 +1,46 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useTranslate } from '@demo/use-translate';
+import { Dialog } from '../../dialog';
+
+const i18n = {
+  'zh-CN': {
+    title: '标题',
+    confirm: '提醒',
+    message: '是否切换开关？',
+    withCell: '搭配单元格使用',
+    customSize: '自定义大小',
+    customColor: '自定义颜色',
+    asyncControl: '异步控制',
+  },
+  'en-US': {
+    title: 'Title',
+    confirm: 'Confirm',
+    message: 'Are you sure to toggle switch?',
+    withCell: 'Inside a Cell',
+    customSize: 'Custom Size',
+    customColor: 'Custom Color',
+    asyncControl: 'Async Control',
+  },
+};
+
+const t = useTranslate(i18n);
+const checked = ref(true);
+const checked2 = ref(true);
+const checked3 = ref(true);
+const checked4 = ref(true);
+const checked5 = ref(true);
+
+const onUpdateValue = (checked: boolean) => {
+  Dialog.confirm({
+    title: t('title'),
+    message: t('message'),
+  }).then(() => {
+    checked4.value = checked;
+  });
+};
+</script>
+
 <template>
   <demo-block :title="t('basicUsage')">
     <van-switch v-model="checked" />
@@ -35,62 +78,6 @@
     </van-cell>
   </demo-block>
 </template>
-
-<script lang="ts">
-import { reactive, toRefs } from 'vue';
-import { useTranslate } from '@demo/use-translate';
-import { Dialog } from '../../dialog';
-
-const i18n = {
-  'zh-CN': {
-    title: '标题',
-    confirm: '提醒',
-    message: '是否切换开关？',
-    withCell: '搭配单元格使用',
-    customSize: '自定义大小',
-    customColor: '自定义颜色',
-    asyncControl: '异步控制',
-  },
-  'en-US': {
-    title: 'Title',
-    confirm: 'Confirm',
-    message: 'Are you sure to toggle switch?',
-    withCell: 'Inside a Cell',
-    customSize: 'Custom Size',
-    customColor: 'Custom Color',
-    asyncControl: 'Async Control',
-  },
-};
-
-export default {
-  setup() {
-    const t = useTranslate(i18n);
-    const state = reactive({
-      checked: true,
-      checked2: true,
-      checked3: true,
-      checked4: true,
-      checked5: true,
-      checked6: false,
-    });
-
-    const onUpdateValue = (checked: boolean) => {
-      Dialog.confirm({
-        title: t('title'),
-        message: t('message'),
-      }).then(() => {
-        state.checked4 = checked;
-      });
-    };
-
-    return {
-      ...toRefs(state),
-      t,
-      onUpdateValue,
-    };
-  },
-};
-</script>
 
 <style lang="less">
 @import '../../style/var';
