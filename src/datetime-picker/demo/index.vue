@@ -89,7 +89,7 @@ const formatter = (type: string, value: string) => {
     />
   </demo-block>
 
-  <demo-block v-if="!isWeapp" card :title="t('monthDayType')">
+  <demo-block card :title="t('monthDayType')">
     <van-datetime-picker
       v-model="value.monthDay"
       type="month-day"
@@ -120,7 +120,7 @@ const formatter = (type: string, value: string) => {
     />
   </demo-block>
 
-  <demo-block v-if="!isWeapp" card :title="t('datehourType')">
+  <demo-block card :title="t('datehourType')">
     <van-datetime-picker
       v-model="value.datehour"
       type="datehour"
@@ -139,7 +139,7 @@ const formatter = (type: string, value: string) => {
     />
   </demo-block>
 
-  <demo-block v-if="!isWeapp" card :title="t('sortColumns')">
+  <demo-block card :title="t('sortColumns')">
     <van-datetime-picker
       v-model="value.sortColumnsDate"
       type="date"

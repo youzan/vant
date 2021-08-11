@@ -106,7 +106,7 @@ const beforeChange = () => {
       </template>
     </van-cell>
 
-    <van-cell v-if="!isWeapp" center :title="t('roundTheme')">
+    <van-cell center :title="t('roundTheme')">
       <template #value>
         <van-stepper
           v-model="stepperRound"

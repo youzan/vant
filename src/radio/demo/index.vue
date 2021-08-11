@@ -51,7 +51,7 @@ const inactiveIcon = 'https://img.yzcdn.cn/vant/user-inactive.png';
     </van-radio-group>
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('horizontal')">
+  <demo-block :title="t('horizontal')">
     <van-radio-group
       v-model="radioHorizontal"
       class="demo-radio-group"

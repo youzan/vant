@@ -47,7 +47,7 @@ const onChange = (value: string) => Toast(t('text') + value);
     <van-slider v-model="value1" @change="onChange" />
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('title2')">
+  <demo-block :title="t('title2')">
     <van-slider range v-model="value2" @change="onChange" />
   </demo-block>
 
@@ -80,7 +80,7 @@ const onChange = (value: string) => Toast(t('text') + value);
     </van-slider>
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('vertical')">
+  <demo-block :title="t('vertical')">
     <div :style="{ height: '150px', paddingLeft: '30px' }">
       <van-slider v-model="value8" vertical @change="onChange" />
       <van-slider

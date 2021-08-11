@@ -36,7 +36,7 @@ const container = ref(null);
     </van-sticky>
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('setContainer')">
+  <demo-block :title="t('setContainer')">
     <div ref="container" style="height: 150px; background-color: #fff">
       <van-sticky :container="container">
         <van-button type="warning" style="margin-left: 215px">

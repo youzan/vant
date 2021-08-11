@@ -45,7 +45,7 @@ const t = useTranslate(i18n);
     </van-cell-group>
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('insetGrouped')">
+  <demo-block :title="t('insetGrouped')">
     <van-cell-group inset>
       <van-cell :title="t('cell')" :value="t('content')" />
       <van-cell :title="t('cell')" :value="t('content')" :label="t('desc')" />
@@ -66,7 +66,7 @@ const t = useTranslate(i18n);
     <van-cell :title="t('cell')" :value="t('content')" icon="location-o" />
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('valueOnly')">
+  <demo-block :title="t('valueOnly')">
     <van-cell :value="t('content')" />
   </demo-block>
 

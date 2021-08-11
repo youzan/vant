@@ -149,7 +149,7 @@ const onConfirm2 = (value: string) => {
     />
   </demo-block>
 
-  <demo-block card v-if="!isWeapp" :title="t('cascade')">
+  <demo-block card :title="t('cascade')">
     <van-picker :title="t('title')" :columns="t('cascadeColumns')" />
   </demo-block>
 
@@ -170,7 +170,7 @@ const onConfirm2 = (value: string) => {
     <van-picker loading :title="t('title')" :columns="columns" />
   </demo-block>
 
-  <demo-block card v-if="!isWeapp" :title="t('withPopup')">
+  <demo-block card :title="t('withPopup')">
     <van-field
       v-model="fieldValue"
       is-link

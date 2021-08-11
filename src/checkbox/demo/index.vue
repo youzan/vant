@@ -126,7 +126,7 @@ const toggleAll = () => {
     </van-checkbox-group>
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('horizontal')">
+  <demo-block :title="t('horizontal')">
     <van-checkbox-group v-model="state.horizontalResult" direction="horizontal">
       <van-checkbox name="a">{{ t('checkbox') }} a</van-checkbox>
       <van-checkbox name="b">{{ t('checkbox') }} b</van-checkbox>
@@ -141,7 +141,7 @@ const toggleAll = () => {
     </van-checkbox-group>
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('toggleAll')">
+  <demo-block :title="t('toggleAll')">
     <van-checkbox-group v-model="state.checkAllResult" ref="group">
       <van-checkbox name="a">{{ t('checkbox') }} a</van-checkbox>
       <van-checkbox name="b">{{ t('checkbox') }} b</van-checkbox>

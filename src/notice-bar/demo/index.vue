@@ -55,7 +55,7 @@ const t = useTranslate(i18n);
     />
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('verticalScroll')">
+  <demo-block :title="t('verticalScroll')">
     <van-notice-bar left-icon="volume-o" :scrollable="false">
       <van-swipe
         vertical

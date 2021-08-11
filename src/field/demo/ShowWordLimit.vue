@@ -20,7 +20,7 @@ const value = ref('');
 </script>
 
 <template>
-  <demo-block v-if="!isWeapp" :title="t('showWordLimit')">
+  <demo-block :title="t('showWordLimit')">
     <van-cell-group inset>
       <van-field
         v-model="value"

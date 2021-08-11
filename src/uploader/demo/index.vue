@@ -132,7 +132,7 @@ const onOversize = (file: UploaderFileListItem, detail: unknown) => {
     <van-uploader v-model="fileList" multiple accept="*" />
   </demo-block>
 
-  <demo-block v-if="!isWeapp" :title="t('status')">
+  <demo-block :title="t('status')">
     <van-uploader v-model="statusFileList" :after-read="afterReadFailed" />
   </demo-block>
 
