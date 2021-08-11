@@ -1,6 +1,7 @@
 import { h, defineComponent } from 'vue';
 import Locale from '../src/locale';
 import { mount, later } from '.';
+import '../docs/site/demo-locale';
 
 const EmptyComponent = defineComponent({
   inheritAttrs: false,
