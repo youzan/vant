@@ -30,7 +30,7 @@ app.use(CouponList);
 />
 <!-- Coupon List -->
 <van-popup
-  v-model="state.showList"
+  v-model:show="state.showList"
   round
   position="bottom"
   style="height: 90%; padding-top: 4px;"
