@@ -8,6 +8,7 @@ export { Field };
 export type {
   FieldType,
   FieldRule,
+  FieldInstance,
   FieldTextAlign,
   FieldClearTrigger,
   FieldFormatTrigger,
