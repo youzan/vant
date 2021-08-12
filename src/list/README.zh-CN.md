@@ -208,7 +208,7 @@ export default {
 
 ### 类型定义
 
-通过 `ListInstance` 获取 List 实例的类型定义。
+通过 `ListInstance` 获取 List 实例的类型定义（从 3.2.0 版本开始支持）。
 
 ```ts
 import { ref } from 'vue';

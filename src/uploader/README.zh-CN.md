@@ -384,7 +384,7 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 
 ### 类型定义
 
-通过 `UploaderInstance` 获取 Uploader 实例的类型定义。
+通过 `UploaderInstance` 获取 Uploader 实例的类型定义（从 3.2.0 版本开始支持）。
 
 ```ts
 import { ref } from 'vue';
