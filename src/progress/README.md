@@ -77,6 +77,19 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Progress instance and call insta
 | --- | --- | --- | --- |
 | resize | Resize Progress when container element resized or visibility changed | - | - |
 
+### Types
+
+Get the type definition of the Progress instance through `ProgressInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { ProgressInstance } from 'vant';
+
+const progressRef = ref<ProgressInstance>();
+
+progressRef.value?.resize();
+```
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
