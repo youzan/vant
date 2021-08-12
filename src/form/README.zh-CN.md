@@ -605,4 +605,4 @@ formRef.value?.submit();
 
 ### 如何自定义表单项？
 
-Vant 支持在 Form 组件中插入自定义的表单项，具体用法参见 [useCustomFieldValue](/zh-CN/use-custom-field-value)。
+Vant 支持在 Form 组件中插入自定义的表单项，具体用法参见 [useCustomFieldValue](#/zh-CN/use-custom-field-value)。
