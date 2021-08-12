@@ -6,6 +6,7 @@ import type { DialogAction } from '../Dialog';
 
 const i18n = {
   'zh-CN': {
+    title: '标题',
     alert1: '提示弹窗',
     alert2: '提示弹窗（无标题）',
     confirm: '确认弹窗',
@@ -15,6 +16,7 @@ const i18n = {
     content: '代码是写出来给人看的，附带能在机器上运行',
   },
   'en-US': {
+    title: 'Title',
     alert1: 'Alert',
     alert2: 'Alert without title',
     confirm: 'Confirm dialog',
