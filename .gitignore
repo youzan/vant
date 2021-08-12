@@ -16,5 +16,5 @@ es
 lib
 dist
 vetur
-site
+./site
 changelog.generated.md
