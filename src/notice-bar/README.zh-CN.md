@@ -136,6 +136,19 @@ app.use(NoticeBar);
 | -------------- | -------------------- | ---- | ------ |
 | reset `v3.1.1` | 重置通知栏到初始状态 | -    | -      |
 
+### 类型定义
+
+通过 `NoticeBarInstance` 获取 NoticeBar 实例的类型定义（从 3.2.0 版本开始支持）。
+
+```ts
+import { ref } from 'vue';
+import type { NoticeBarInstance } from 'vant';
+
+const noticeBarRef = ref<NoticeBarInstance>();
+
+noticeBarRef.value?.reset();
+```
+
 ### Slots
 
 | 名称       | 内容           |
