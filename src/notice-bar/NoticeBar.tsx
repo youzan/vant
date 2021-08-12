@@ -1,4 +1,11 @@
-import { ref, watch, reactive, PropType, defineComponent } from 'vue';
+import {
+  ref,
+  watch,
+  reactive,
+  PropType,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import { isDef, createNamespace } from '../utils';
@@ -17,33 +24,38 @@ import { onPopupReopen } from '../composables/on-popup-reopen';
 // Components
 import { Icon } from '../icon';
 
-export type NoticeBarMode = 'closeable' | 'link';
+// Types
+import { NoticeBarMode } from './types';
 
 const [name, bem] = createNamespace('notice-bar');
+
+const props = {
+  text: String,
+  mode: String as PropType<NoticeBarMode>,
+  color: String,
+  leftIcon: String,
+  wrapable: Boolean,
+  background: String,
+  scrollable: {
+    type: Boolean as PropType<boolean | null>,
+    default: null,
+  },
+  delay: {
+    type: [Number, String],
+    default: 1,
+  },
+  speed: {
+    type: [Number, String],
+    default: 60,
+  },
+};
+
+export type NoticeBarProps = ExtractPropTypes<typeof props>;
 
 export default defineComponent({
   name,
 
-  props: {
-    text: String,
-    mode: String as PropType<NoticeBarMode>,
-    color: String,
-    leftIcon: String,
-    wrapable: Boolean,
-    background: String,
-    scrollable: {
-      type: Boolean as PropType<boolean | null>,
-      default: null,
-    },
-    delay: {
-      type: [Number, String],
-      default: 1,
-    },
-    speed: {
-      type: [Number, String],
-      default: 60,
-    },
-  },
+  props,
 
   emits: ['close', 'replay'],
 

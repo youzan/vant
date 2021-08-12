@@ -115,6 +115,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Notice
 | -------------- | --------------- | --------- | ------------ |
 | reset `v3.1.1` | Reset NoticeBar | -         | -            |
 
+### Types
+
+Get the type definition of the NoticeBar instance through `NoticeBarInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { NoticeBarInstance } from 'vant';
+
+const noticeBarRef = ref<NoticeBarInstance>();
+
+noticeBarRef.value?.reset();
+```
+
 ### Slots
 
 | Name       | Description         |
