@@ -93,7 +93,7 @@
     - name: loading-text
       title: 加载中文案
       type: string
-      default: '加载中。。。'
+      default: ''
       description: 加载中文案
     - name: linkType
       title: 链接类型

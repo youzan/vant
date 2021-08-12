@@ -1,11 +1,11 @@
 ### 基本用法
 
 ``` html
-<van-popup v-model="false">内容</van-popup>
+<van-popup><div style="height: 100px;width: 100px;">内容</div></van-popup>
 ```
 
 ### 弹出位置
 
 ``` html
-<van-popup v-model="false" position="top" :style="{ height: '30%' }">内容</van-popup>
+<van-popup position="top"><div style="height: 100px;width: 100px;">内容</div></van-popup>
 ```

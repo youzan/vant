@@ -1,5 +1,5 @@
 ### 基本用法
 
 ``` html
-<u-router-view></u-router-view>
+<van-router-view></van-router-view>
 ```

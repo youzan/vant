@@ -1,4 +1,4 @@
-- name: u-router-view
+- name: van-router-view
   title: 子页面容器
   icon: router-view
   labels:

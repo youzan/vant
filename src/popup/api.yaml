@@ -7,10 +7,8 @@
   next: true
   nested: false
   attrs:
-    - name: show
+    - name: value
       type: boolean
-      sync: true
-      model: true
       default: false
       description: 是否展示弹层
     - name: position
@@ -34,6 +32,9 @@
       type: boolean
       default: true
       description: 是否在点击遮罩层后关闭
+  slots:
+    - name: default
+      description: 内容自定义
   events:
     - name: click
       title: 点击弹出层
