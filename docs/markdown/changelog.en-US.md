@@ -16,6 +16,51 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.2.0](https://github.com/youzan/vant/compare/v3.1.5...v3.2.0)
+
+`2021-08-12`
+
+**Feature**
+
+- Form: add useCustomFieldValue api [#9200](https://github.com/youzan/vant/issues/9200)
+- Button: loading-size prop support number type [#9177](https://github.com/youzan/vant/issues/9177)
+- Style: add van-safe-area-bottom util class [#9205](https://github.com/youzan/vant/issues/9205)
+
+**Types**
+
+- AddressEdit: add AddressEditInstance type [#9197](https://github.com/youzan/vant/issues/9197)
+- Area: add AreaInstance type [#9195](https://github.com/youzan/vant/issues/9195)
+- Calendar: add CalendarInstance type [#9165](https://github.com/youzan/vant/issues/9165)
+- Checkbox: add CheckboxInstance type [#9140](https://github.com/youzan/vant/issues/9140)
+- CheckboxGroup: add CheckboxGroupInstance type [#9142](https://github.com/youzan/vant/issues/9142)
+- CollapseItem: add CollapseItemInstance type [#9194](https://github.com/youzan/vant/issues/9194)
+- CountDown: add CountDownInstance type [#9153](https://github.com/youzan/vant/issues/9153)
+- DatetimePicker: add DatetimePickerInstance type [#9208](https://github.com/youzan/vant/issues/9208)
+- DropdownItem: add DropdownItemInstance type [#9214](https://github.com/youzan/vant/issues/9214)
+- Field: add FieldInstance type [#9166](https://github.com/youzan/vant/issues/9166)
+- Form: add FormInstance type [#9139](https://github.com/youzan/vant/issues/9139)
+- ImagePreview: add ImagePreviewInstance type [#9216](https://github.com/youzan/vant/issues/9216)
+- IndexBar: add IndexBarInstance type [#9246](https://github.com/youzan/vant/issues/9246)
+- List: add ListInstance type [#9159](https://github.com/youzan/vant/issues/9159)
+- NoticeBar: add NoticeBarInstance type [#9245](https://github.com/youzan/vant/issues/9245)
+- Picker: add PickerInstance type [#9183](https://github.com/youzan/vant/issues/9183)
+- Progress: add ProgressInstance type [#9247](https://github.com/youzan/vant/issues/9247)
+- Search: add SearchInstance type [#9181](https://github.com/youzan/vant/issues/9181)
+- Swipe: add SwipeInstance type [#9158](https://github.com/youzan/vant/issues/9158)
+- SwipeCell: add SwipeCellInstance type [#9179](https://github.com/youzan/vant/issues/9179)
+- Tabs: add TabsInstance type [#9174](https://github.com/youzan/vant/issues/9174)
+- Uploader: add UploaderInstance type [#9164](https://github.com/youzan/vant/issues/9164)
+
+**Bug Fixes**
+
+- Badge: minus x offset not work [#9199](https://github.com/youzan/vant/issues/9199)
+- Image: fix border radius value [#9163](https://github.com/youzan/vant/issues/9163)
+- Field: textarea scroll to top after resizing [#9206](https://github.com/youzan/vant/issues/9206)
+- Notify: default option is overridden [#9138](https://github.com/youzan/vant/issues/9138)
+- Rate: should enable flex wrap [#9192](https://github.com/youzan/vant/issues/9192)
+- Tabs: remove invalid head padding for card type [#9168](https://github.com/youzan/vant/issues/9168)
+- Toast: failed to update message [#9196](https://github.com/youzan/vant/issues/9196)
+
 ### [v3.1.5](https://github.com/youzan/vant/compare/v3.1.4...v3.1.5)
 
 `2021-07-26`

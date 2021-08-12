@@ -16,6 +16,51 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.2.0](https://github.com/youzan/vant/compare/v3.1.5...v3.2.0)
+
+`2021-08-12`
+
+**Feature**
+
+- Form: 新增 useCustomFieldValue 方法，用于自定义表单项 [#9200](https://github.com/youzan/vant/issues/9200)
+- Button: loading-size 属性支持 number 类型 [#9177](https://github.com/youzan/vant/issues/9177)
+- Style: 新增 van-safe-area-bottom 样式类 [#9205](https://github.com/youzan/vant/issues/9205)
+
+**Types**
+
+- AddressEdit: 新增 AddressEditInstance 类型 [#9197](https://github.com/youzan/vant/issues/9197)
+- Area: 新增 AreaInstance 类型 [#9195](https://github.com/youzan/vant/issues/9195)
+- Calendar: 新增 CalendarInstance 类型 [#9165](https://github.com/youzan/vant/issues/9165)
+- Checkbox: 新增 CheckboxInstance 类型 [#9140](https://github.com/youzan/vant/issues/9140)
+- CheckboxGroup: 新增 CheckboxGroupInstance 类型 [#9142](https://github.com/youzan/vant/issues/9142)
+- CollapseItem: 新增 CollapseItemInstance 类型 [#9194](https://github.com/youzan/vant/issues/9194)
+- CountDown: 新增 CountDownInstance 类型 [#9153](https://github.com/youzan/vant/issues/9153)
+- DatetimePicker: 新增 DatetimePickerInstance 类型 [#9208](https://github.com/youzan/vant/issues/9208)
+- DropdownItem: 新增 DropdownItemInstance 类型 [#9214](https://github.com/youzan/vant/issues/9214)
+- Field: 新增 FieldInstance 类型 [#9166](https://github.com/youzan/vant/issues/9166)
+- Form: 新增 FormInstance 类型 [#9139](https://github.com/youzan/vant/issues/9139)
+- ImagePreview: 新增 ImagePreviewInstance 类型 [#9216](https://github.com/youzan/vant/issues/9216)
+- IndexBar: 新增 IndexBarInstance 类型 [#9246](https://github.com/youzan/vant/issues/9246)
+- List: 新增 ListInstance 类型 [#9159](https://github.com/youzan/vant/issues/9159)
+- NoticeBar: 新增 NoticeBarInstance 类型 [#9245](https://github.com/youzan/vant/issues/9245)
+- Picker: 新增 PickerInstance 类型 [#9183](https://github.com/youzan/vant/issues/9183)
+- Progress: 新增 ProgressInstance 类型 [#9247](https://github.com/youzan/vant/issues/9247)
+- Search: 新增 SearchInstance 类型 [#9181](https://github.com/youzan/vant/issues/9181)
+- Swipe: 新增 SwipeInstance 类型 [#9158](https://github.com/youzan/vant/issues/9158)
+- SwipeCell: 新增 SwipeCellInstance 类型 [#9179](https://github.com/youzan/vant/issues/9179)
+- Tabs: 新增 TabsInstance 类型 [#9174](https://github.com/youzan/vant/issues/9174)
+- Uploader: 新增 UploaderInstance 类型 [#9164](https://github.com/youzan/vant/issues/9164)
+
+**Bug Fixes**
+
+- Badge: 修复 offset 为负数时不生效的问题 [#9199](https://github.com/youzan/vant/issues/9199)
+- Image: 修复圆角数值不正确的问题 [#9163](https://github.com/youzan/vant/issues/9163)
+- Field: 修复 Textarea 内容较多时，输入会导致页面滚动到顶部的问题 [#9206](https://github.com/youzan/vant/issues/9206)
+- Notify: 修复默认选项被错误覆盖的问题 [#9138](https://github.com/youzan/vant/issues/9138)
+- Rate: 修复星星较多时无法自动换行的问题 [#9192](https://github.com/youzan/vant/issues/9192)
+- Tabs: 修复 card 类型内边距错误的问题 [#9168](https://github.com/youzan/vant/issues/9168)
+- Toast: 修复某些情况下 message 无法更新的问题 [#9196](https://github.com/youzan/vant/issues/9196)
+
 ### [v3.1.5](https://github.com/youzan/vant/compare/v3.1.4...v3.1.5)
 
 `2021-07-26`
