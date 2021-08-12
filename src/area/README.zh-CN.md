@@ -168,7 +168,7 @@ confirm 事件返回的数据整体为一个数组，数组每一项对应一列
 
 ### 类型定义
 
-通过 `AreaInstance` 获取 Area 实例的类型定义。
+通过 `AreaInstance` 获取 Area 实例的类型定义（从 3.2.0 版本开始支持）。
 
 ```ts
 import { ref } from 'vue';

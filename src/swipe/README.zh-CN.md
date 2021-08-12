@@ -189,7 +189,7 @@ export default {
 
 ### 类型定义
 
-通过 `SwipeInstance` 获取 Swipe 实例的类型定义。
+通过 `SwipeInstance` 获取 Swipe 实例的类型定义（从 3.2.0 版本开始支持）。
 
 ```ts
 import { ref } from 'vue';

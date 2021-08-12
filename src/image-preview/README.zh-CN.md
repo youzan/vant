@@ -226,7 +226,7 @@ export default {
 
 ### 类型定义
 
-通过 `ImagePreviewInstance` 获取 ImagePreview 实例的类型定义。
+通过 `ImagePreviewInstance` 获取 ImagePreview 实例的类型定义（从 3.2.0 版本开始支持）。
 
 ```ts
 import { ref } from 'vue';
