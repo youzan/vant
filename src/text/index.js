@@ -1,7 +1,7 @@
-import UText from './index.vue';
+import VText from './index.vue';
 
 export {
-    UText,
+  VText,
 };
 
-export default UText;
+export default VText;

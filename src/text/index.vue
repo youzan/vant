@@ -1,6 +1,6 @@
 <template>
 <span class="root" v-on="$listeners" vusion-slot-name="text">
-    <slot>{{ text }}</slot>
+    {{ text }}
 </span>
 </template>
 

@@ -18,6 +18,7 @@ module.exports = [
     { group: 'Container', show: true, name: 'popup', alias: '弹窗' },
     { group: 'Container', show: true, name: 'router-view', alias: '子页面' },
     { group: 'Display', show: true, name: 'tabs', alias: '选项卡' },
+    { group: 'Display', show: true, name: 'text', alias: '文本' },
 
     // { group: 'Display', show: true, name: 'u-text', alias: '文本' },
     // { group: 'Display', show: true, name: 'u-link', alias: '链接' },
