@@ -1,5 +1,7 @@
-import './demo-locale';
+import { initDemoLocale } from './demo-locale';
 import Lazyload from '../../src/lazyload';
+
+initDemoLocale();
 
 const { app } = window;
 if (app) {
