@@ -81,6 +81,19 @@ app.use(Progress);
 | ------ | -------------------------------------------- | ---- | ------ |
 | resize | 外层元素大小变化后，可以调用此方法来触发重绘 | -    | -      |
 
+### 类型定义
+
+通过 `ProgressInstance` 获取 Progress 实例的类型定义（从 3.2.0 版本开始支持）。
+
+```ts
+import { ref } from 'vue';
+import type { ProgressInstance } from 'vant';
+
+const progressRef = ref<ProgressInstance>();
+
+progressRef.value?.resize();
+```
+
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。

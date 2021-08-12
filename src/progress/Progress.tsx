@@ -6,30 +6,34 @@ import {
   reactive,
   onMounted,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 import { truthProp, createNamespace, addUnit } from '../utils';
 import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('progress');
 
+const props = {
+  color: String,
+  inactive: Boolean,
+  pivotText: String,
+  textColor: String,
+  showPivot: truthProp,
+  pivotColor: String,
+  trackColor: String,
+  strokeWidth: [Number, String],
+  percentage: {
+    type: [Number, String],
+    validator: (value: number | string) => value >= 0 && value <= 100,
+  },
+};
+
+export type ProgressProps = ExtractPropTypes<typeof props>;
+
 export default defineComponent({
   name,
 
-  props: {
-    color: String,
-    inactive: Boolean,
-    pivotText: String,
-    textColor: String,
-    showPivot: truthProp,
-    pivotColor: String,
-    trackColor: String,
-    strokeWidth: [Number, String],
-    percentage: {
-      type: [Number, String],
-      required: true,
-      validator: (value: number | string) => value >= 0 && value <= 100,
-    },
-  },
+  props,
 
   setup(props) {
     const root = ref<HTMLElement>();
@@ -58,7 +62,7 @@ export default defineComponent({
       const show = props.showPivot && text;
 
       if (show) {
-        const left = ((rootWidth - pivotWidth) * +percentage) / 100;
+        const left = ((rootWidth - pivotWidth) * +percentage!) / 100;
         const style = {
           color: textColor,
           left: `${left}px`,
@@ -85,7 +89,7 @@ export default defineComponent({
       };
       const portionStyle = {
         background: background.value,
-        width: (state.rootWidth * +percentage) / 100 + 'px',
+        width: (state.rootWidth * +percentage!) / 100 + 'px',
       };
 
       return (
