@@ -99,6 +99,19 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get IndexB
 | --- | --- | --- | --- |
 | scrollTo | scroll to target element | _index: number \| string_ | - |
 
+### Types
+
+Get the type definition of the IndexBar instance through `IndexBarInstance`.
+
+```ts
+import { ref } from 'vue';
+import type { IndexBarInstance } from 'vant';
+
+const indexBarRef = ref<IndexBarInstance>();
+
+indexBarRef.value?.scrollTo('B');
+```
+
 ### IndexAnchor Slots
 
 | Name    | Description                           |

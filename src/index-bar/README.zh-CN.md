@@ -103,6 +103,19 @@ export default {
 | -------- | -------------- | ------------------------- | ------ |
 | scrollTo | 滚动到指定锚点 | _index: number \| string_ | -      |
 
+### 类型定义
+
+通过 `IndexBarInstance` 获取 IndexBar 实例的类型定义（从 3.2.0 版本开始支持）。
+
+```ts
+import { ref } from 'vue';
+import type { IndexBarInstance } from 'vant';
+
+const indexBarRef = ref<IndexBarInstance>();
+
+indexBarRef.value?.scrollTo('B');
+```
+
 ### IndexAnchor Slots
 
 | 名称    | 说明                             |

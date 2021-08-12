@@ -5,3 +5,4 @@ const IndexBar = withInstall<typeof _IndexBar>(_IndexBar);
 
 export default IndexBar;
 export { IndexBar };
+export type { IndexBarInstance } from './types';

@@ -35,6 +35,9 @@ import {
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
+// Types
+import { IndexBarProvide } from './types';
+
 function genAlphabet() {
   const charCodeOfA = 'A'.charCodeAt(0);
   const indexList = Array(26)
@@ -61,9 +64,7 @@ const props = {
   },
 };
 
-export type IndexBarProvide = {
-  props: ExtractPropTypes<typeof props>;
-};
+export type IndexBarProps = ExtractPropTypes<typeof props>;
 
 export const INDEX_BAR_KEY: InjectionKey<IndexBarProvide> = Symbol(name);
 
@@ -200,11 +201,8 @@ export default defineComponent({
         );
       });
 
-    const scrollTo = (index: string) => {
-      if (!index) {
-        return;
-      }
-
+    const scrollTo = (index: string | number) => {
+      index = String(index);
       const match = children.find((item) => String(item.index) === index);
 
       if (match) {
