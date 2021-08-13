@@ -16,7 +16,6 @@ import {
   isDate,
   padZero,
   createNamespace,
-  ComponentInstance,
 } from '../utils';
 import {
   times,
@@ -30,7 +29,7 @@ import {
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import { Picker } from '../picker';
+import { Picker, PickerInstance } from '../picker';
 
 // Types
 import { DatetimePickerColumnType, DatetimePickerType } from './types';
@@ -75,7 +74,7 @@ export default defineComponent({
       return undefined;
     };
 
-    const picker = ref<ComponentInstance>();
+    const picker = ref<PickerInstance>();
     const currentDate = ref(formatValue(props.modelValue));
 
     const getBoundary = (type: 'max' | 'min', value: Date) => {
@@ -218,8 +217,7 @@ export default defineComponent({
           case 'minute':
             return formatter('minute', padZero(value.getMinutes()));
           default:
-            // no default
-            return null;
+            return '';
         }
       });
 

@@ -1,7 +1,7 @@
 import { PropType, ref, defineComponent } from 'vue';
 
 // Utils
-import { isAndroid, ComponentInstance, createNamespace } from '../utils';
+import { isAndroid, createNamespace } from '../utils';
 
 // Components
 import { Cell } from '../cell';
@@ -9,6 +9,7 @@ import { Field } from '../field';
 
 // Types
 import type { AddressEditSearchItem } from './types';
+import type { FieldInstance } from '../field/types';
 
 const [name, bem, t] = createNamespace('address-edit-detail');
 const android = isAndroid();
@@ -30,7 +31,7 @@ export default defineComponent({
   emits: ['blur', 'focus', 'input', 'select-search'],
 
   setup(props, { emit }) {
-    const field = ref<ComponentInstance>();
+    const field = ref<FieldInstance>();
 
     const showSearchResult = () =>
       props.focused && props.searchResult && props.showSearchResult;

@@ -5,9 +5,8 @@ import {
   pick,
   extend,
   truthProp,
-  createNamespace,
   preventDefault,
-  ComponentInstance,
+  createNamespace,
 } from '../utils';
 import { fieldSharedProps } from '../field/Field';
 
@@ -15,7 +14,7 @@ import { fieldSharedProps } from '../field/Field';
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import { Field } from '../field';
+import { Field, FieldInstance } from '../field';
 
 // Types
 import type { SearchShape } from './types';
@@ -48,7 +47,7 @@ export default defineComponent({
   emits: ['search', 'cancel', 'update:modelValue'],
 
   setup(props, { emit, slots, attrs }) {
-    const filedRef = ref<ComponentInstance>();
+    const filedRef = ref<FieldInstance>();
 
     const onCancel = () => {
       if (!slots.action) {

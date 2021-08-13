@@ -2,7 +2,8 @@
 import { ref, reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { useRefs } from '../../composables/use-refs';
-import { ComponentInstance } from '../../utils';
+import type { CheckboxInstance } from '../types';
+import type { CheckboxGroupInstance } from '../../checkbox-group';
 
 const i18n = {
   'zh-CN': {
@@ -56,8 +57,8 @@ const state = reactive({
 const activeIcon = 'https://img.yzcdn.cn/vant/user-active.png';
 const inactiveIcon = 'https://img.yzcdn.cn/vant/user-inactive.png';
 
-const group = ref<ComponentInstance>();
-const [refs, setRefs] = useRefs<ComponentInstance>();
+const group = ref<CheckboxGroupInstance>();
+const [refs, setRefs] = useRefs<CheckboxInstance>();
 
 const toggle = (index: number) => {
   refs.value[index].toggle();

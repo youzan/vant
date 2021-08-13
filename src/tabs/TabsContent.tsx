@@ -1,6 +1,6 @@
 import { ref, watch, onMounted, defineComponent } from 'vue';
-import { ComponentInstance, createNamespace } from '../utils';
-import { Swipe } from '../swipe';
+import { createNamespace } from '../utils';
+import { Swipe, SwipeInstance } from '../swipe';
 
 const [name, bem] = createNamespace('tabs');
 
@@ -29,7 +29,7 @@ export default defineComponent({
   emits: ['change'],
 
   setup(props, { emit, slots }) {
-    const swipeRef = ref<ComponentInstance>();
+    const swipeRef = ref<SwipeInstance>();
 
     const onChange = (index: number) => emit('change', index);
 

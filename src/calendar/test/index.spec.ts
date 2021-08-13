@@ -2,7 +2,7 @@ import { Calendar, CalendarDayItem } from '..';
 import { mount, later } from '../../../test';
 import { getNextDay, getPrevDay } from '../utils';
 import { now, minDate, maxDate } from './utils';
-import type { ComponentInstance } from '../../utils';
+import type { CalendarInstance } from '../types';
 
 test('should reset to default date when calling reset method', async () => {
   const defaultDate = [minDate, getNextDay(minDate)];
@@ -21,7 +21,7 @@ test('should reset to default date when calling reset method', async () => {
   await days[15].trigger('click');
   await days[18].trigger('click');
 
-  (wrapper.vm as ComponentInstance).reset();
+  (wrapper.vm as CalendarInstance).reset();
 
   wrapper.find('.van-calendar__confirm').trigger('click');
   expect(wrapper.emitted<[Date, Date]>('confirm')![0][0]).toEqual(defaultDate);
@@ -44,7 +44,7 @@ test('should reset to specific date when calling reset method with date', async 
   await days[18].trigger('click');
 
   const newDate = [getPrevDay(maxDate), maxDate];
-  (wrapper.vm as ComponentInstance).reset(newDate);
+  (wrapper.vm as CalendarInstance).reset(newDate);
 
   wrapper.find('.van-calendar__confirm').trigger('click');
   expect(wrapper.emitted<[Date, Date]>('confirm')![0][0]).toEqual(newDate);

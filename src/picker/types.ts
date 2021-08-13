@@ -32,15 +32,15 @@ export type PickerColumn = PickerOption[] | PickerObjectColumn;
 
 export type PickerExpose = {
   confirm: () => void;
-  getValues: () => PickerOption[];
+  getValues: <T = PickerOption>() => T[];
   setValues: (values: string[]) => void;
   getIndexes: () => number[];
   setIndexes: (indexes: number[]) => void;
   getColumnIndex: (index: number) => number;
   setColumnIndex: (columnIndex: number, optionIndex: number) => void;
-  getColumnValue: (index: number) => PickerOption;
+  getColumnValue: <T = PickerOption>(index: number) => T;
   setColumnValue: (index: number, value: string) => void;
-  getColumnValues: (index: number) => PickerOption[];
+  getColumnValues: <T = PickerOption>(index: number) => T[];
   setColumnValues: (index: number, options: PickerOption[]) => void;
 };
 

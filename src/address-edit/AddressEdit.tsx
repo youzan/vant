@@ -16,14 +16,13 @@ import {
   isMobile,
   truthProp,
   createNamespace,
-  ComponentInstance,
 } from '../utils';
 
 // Composables
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import { Area, AreaList, AreaColumnOption } from '../area';
+import { Area, AreaList, AreaColumnOption, AreaInstance } from '../area';
 import { Cell } from '../cell';
 import { Field } from '../field';
 import { Popup } from '../popup';
@@ -120,7 +119,7 @@ export default defineComponent({
   ],
 
   setup(props, { emit, slots }) {
-    const areaRef = ref<ComponentInstance>();
+    const areaRef = ref<AreaInstance>();
 
     const state = reactive({
       data: {} as AddressEditInfo,
@@ -158,7 +157,7 @@ export default defineComponent({
 
     const assignAreaValues = () => {
       if (areaRef.value) {
-        const detail = areaRef.value.getArea();
+        const detail: Record<string, string> = areaRef.value.getArea();
         detail.areaCode = detail.code;
         delete detail.code;
         extend(state.data, detail);
