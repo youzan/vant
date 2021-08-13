@@ -33,6 +33,16 @@
       type: boolean
       default: true
       description: 是否垂直居中
+    - name: title
+      title: 左侧标题
+      type: string
+      default: 单元格
+      description: 左侧标题
+    - name: label
+      title: 标题下方的描述信息
+      type: string
+      default: 这是单元格
+      description: 标题下方的描述信息
     - name: arrow-direction
       title: 箭头方向
       type: string

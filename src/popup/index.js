@@ -33,10 +33,10 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    getContainer: {
-      type: String,
-      default: 'body',
-    },
+    // getContainer: {
+    //   type: String,
+    //   default: 'body',
+    // },
   },
 
   beforeCreate() {

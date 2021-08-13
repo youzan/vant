@@ -42,7 +42,7 @@ function Cell(
 
     if (showLabel) {
       return (
-        <div class={[bem('label'), props.labelClass]}>
+        <div class={[bem('label'), props.labelClass]} vusion-slot-name="label">
           {slots.label ? slots.label() : label}
         </div>
       );
@@ -53,7 +53,7 @@ function Cell(
     if (showTitle) {
       return (
         <div class={[bem('title'), props.titleClass]} style={props.titleStyle}>
-          {slots.title ? slots.title() : <span>{title}</span>}
+          {slots.title ? slots.title() : <span vusion-slot-name="title">{title}</span>}
           {Label()}
         </div>
       );
@@ -66,7 +66,7 @@ function Cell(
     if (showValue) {
       return (
         <div class={[bem('value', { alone: !showTitle }), props.valueClass]}>
-          {slots.default ? slots.default() : <span>{value}</span>}
+          {slots.default ? slots.default() : <span vusion-slot-name="default">{value}</span>}
         </div>
       );
     }

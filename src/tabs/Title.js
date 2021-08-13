@@ -52,10 +52,11 @@ export default createComponent({
 
     genText() {
       const Text = (
-        <span class={bem('text', { ellipsis: !this.scrollable })}>
+        <span class={bem('text', { ellipsis: !this.scrollable })} vusion-slot-name="text">
           {this.slots() || this.title}
         </span>
       );
+
 
       if (this.dot || (isDef(this.info) && this.info !== '')) {
         return (
