@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import { ComponentInstance } from '../../utils';
+import type { DropdownItemInstance } from '../../dropdown-item';
 
 const i18n = {
   'zh-CN': {
@@ -44,7 +44,7 @@ const i18n = {
   },
 };
 
-const item = ref<ComponentInstance>();
+const item = ref<DropdownItemInstance>();
 const t = useTranslate(i18n);
 
 const state = reactive({

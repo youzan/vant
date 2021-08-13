@@ -12,14 +12,14 @@ import {
 
 // Utils
 import { deepClone } from '../utils/deep-clone';
-import { pick, createNamespace, ComponentInstance, extend } from '../utils';
+import { pick, createNamespace, extend } from '../utils';
 import { pickerProps } from '../picker/Picker';
 
 // Composables
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import { Picker } from '../picker';
+import { Picker, PickerInstance } from '../picker';
 
 // Types
 import type { AreaList, AreaColumnType, AreaColumnOption } from './types';
@@ -80,7 +80,7 @@ export default defineComponent({
   emits: ['change', 'confirm', 'cancel'],
 
   setup(props, { emit, slots }) {
-    const pickerRef = ref<ComponentInstance>();
+    const pickerRef = ref<PickerInstance>();
 
     const state = reactive({
       code: props.value,
@@ -235,7 +235,9 @@ export default defineComponent({
 
     const getValues = () => {
       if (pickerRef.value) {
-        const values = pickerRef.value.getValues().filter(Boolean);
+        const values = pickerRef.value
+          .getValues<AreaColumnOption>()
+          .filter(Boolean);
         return parseValues(values);
       }
       return [];

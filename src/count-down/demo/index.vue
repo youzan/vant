@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import { ComponentInstance } from '../../utils';
 import { Toast } from '../../toast';
+import type { CountDownInstance } from '../CountDown';
 
 const i18n = {
   'zh-CN': {
@@ -31,7 +31,7 @@ const i18n = {
 
 const t = useTranslate(i18n);
 const time = ref(30 * 60 * 60 * 1000);
-const countDown = ref<ComponentInstance>();
+const countDown = ref<CountDownInstance>();
 
 const start = () => {
   countDown.value?.start();

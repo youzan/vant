@@ -8,21 +8,14 @@ import {
 } from 'vue';
 
 // Utils
-import {
-  pick,
-  clamp,
-  extend,
-  padZero,
-  createNamespace,
-  ComponentInstance,
-} from '../utils';
+import { pick, clamp, extend, padZero, createNamespace } from '../utils';
 import { times, sharedProps, pickerKeys } from './utils';
 
 // Composables
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import { Picker } from '../picker';
+import { Picker, PickerInstance } from '../picker';
 
 const [name] = createNamespace('time-picker');
 
@@ -66,7 +59,7 @@ export default defineComponent({
       return `${hour}:${minute}`;
     };
 
-    const picker = ref<ComponentInstance>();
+    const picker = ref<PickerInstance>();
     const currentDate = ref(formatValue(props.modelValue));
 
     const ranges = computed(() => [

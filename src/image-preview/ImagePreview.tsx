@@ -18,7 +18,6 @@ import {
   Interceptor,
   callInterceptor,
   createNamespace,
-  ComponentInstance,
 } from '../utils';
 
 // Composables
@@ -27,7 +26,7 @@ import { useExpose } from '../composables/use-expose';
 
 // Components
 import { Icon } from '../icon';
-import { Swipe, SwipeToOptions } from '../swipe';
+import { Swipe, SwipeInstance, SwipeToOptions } from '../swipe';
 import { Popup, PopupCloseIconPosition } from '../popup';
 import ImagePreviewItem from './ImagePreviewItem';
 
@@ -88,7 +87,7 @@ export default defineComponent({
   emits: ['scale', 'close', 'closed', 'change', 'update:show'],
 
   setup(props, { emit, slots }) {
-    const swipeRef = ref<ComponentInstance>();
+    const swipeRef = ref<SwipeInstance>();
     const windowSize = useWindowSize();
 
     const state = reactive({
