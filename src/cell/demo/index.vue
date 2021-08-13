@@ -70,6 +70,9 @@
           <van-icon name="search" class="search-icon" />
         </template>
       </van-cell>
+      <van-cell :value="t('content')" is-link center >
+        <van-image src="https://static-vusion.163yun.com/assets/cloud-ui/1.jpg"></van-image>
+      </van-cell>
     </demo-block>
 
     <demo-block :title="t('verticalCenter')">

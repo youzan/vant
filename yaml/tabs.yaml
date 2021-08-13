@@ -1,5 +1,5 @@
 - name: van-tabs
-  title: 选项卡
+  title: tabs选项卡
   icon: tabs
   labels:
     - Selector
@@ -52,13 +52,12 @@
           title: 子选项
           snippet: <van-tab title="标签页">内容</van-tab>
   events:
-    - name: $listeners
-      kind: click
-      title: 监听事件
+    - name: click
+      title: 点击后
       description: 监听所有`<span>`元素的事件。
       params: []
 - name: van-tab
-  title: 标签页
+  title: tab标签页
   control: button
   next: false
   nested: true

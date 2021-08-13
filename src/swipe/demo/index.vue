@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
-      <van-swipe :autoplay="3000" indicator-color="white">
+      <van-swipe :autoplay="3000" indicator-color="white" style="height:300px;">
         <van-swipe-item>1</van-swipe-item>
         <van-swipe-item>2</van-swipe-item>
         <van-swipe-item>3</van-swipe-item>

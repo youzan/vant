@@ -107,9 +107,64 @@ function Cell(
     }
   }
 
+  function currentHref() {
+    if (props.href !== undefined)
+        return props.href;
+    if (props.destination !== undefined)
+        return props.destination;
+    else if (ctx.parent?.$router && props.to !== undefined)
+        return ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href;
+    else
+        return undefined;
+  }
+
   function onClick(event: Event) {
     emit(ctx, 'click', event);
-    functionalRoute(ctx);
+
+    if (!props.href && !ctx.listeners.click) {
+      event.preventDefault();
+    }
+    // @ts-ignore：没办法
+    if (props.target !== '_self')
+      return;
+
+    let to;
+    if (props.destination) {
+        // 只处理/a/b形式的链接
+        const origin = window.location.origin;
+        const path = window.location.href.replace(origin, '').split('/');
+        const destination = props.destination.replace(origin, '').split('/');
+        if (path[1] === destination[1]) {
+            to = '/' + destination.slice(2).join('/');
+        } else {
+            return;
+        }
+    }
+
+
+    const currentTo = to || props.to;
+    if (currentTo === undefined)
+        return;
+    let cancel = false;
+    emit(ctx, 'before-navigate',  {
+      to: currentTo,
+      replace: props.replace,
+      append: props.append,
+      preventDefault: () => (cancel = true),
+    });
+  if (cancel)
+      return;
+  const $router = ctx.parent?.$router;
+  const $route = ctx.parent?.$route;
+  const { location } = $router.resolve(
+      currentTo,
+      $route,
+      props.append,
+  );
+  props.replace ? $router.replace(location) : $router.push(location);
+
+  emit(ctx, 'navigate',  { to: currentTo, replace: props.replace, append: props.append });
+    // functionalRoute(ctx);
   }
 
   const clickable = props.clickable ?? isLink;
@@ -130,6 +185,7 @@ function Cell(
       class={bem(classes)}
       role={clickable ? 'button' : null}
       tabindex={clickable ? 0 : null}
+      href={currentHref()}
       onClick={onClick}
       {...inherit(ctx)}
     >

@@ -37,9 +37,8 @@
       description: 插入`<van-col>`子组件。
       support:
         - name: van-col
-          title: 插入三列
-          snippet: <van-col span="8">span8</van-col><van-col
-            span="8">span8</van-col><van-col span="8">span8</van-col>
+          title: 插入一列
+          snippet: <van-col span="8">span:8</van-col>
 - name: van-col
   title: 栅格列
   description: 内部元素行内列布局

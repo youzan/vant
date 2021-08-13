@@ -15,6 +15,14 @@ export type SharedCellProps = {
   value?: string | number;
   label?: string | number;
   arrowDirection?: 'up' | 'down' | 'left' | 'right';
+  href?: string;
+  target?: object;
+  to?: [string, object];
+  replace?: { type: boolean; default: false };
+  append?: boolean;
+  decoration?: { type: boolean; default: true };
+  download?: { type: boolean; default: false };
+  destination?: string;
 };
 
 export const cellProps = {
@@ -40,4 +48,12 @@ export const cellProps = {
     type: Boolean,
     default: null,
   },
+  href: String,
+  target: { type: String, default: '_self' },
+  to: [String, Object],
+  replace: { type: Boolean, default: false },
+  append: { type: Boolean, default: false },
+  decoration: { type: Boolean, default: true },
+  download: { type: Boolean, default: false },
+  destination: String,
 };

@@ -33,11 +33,11 @@
       support:
         - name: van-swipe-item
           title: 幻灯片子项
-          snippet: <van-swipe-item>内容</van-swipe-item>
+          snippet: <van-swipe-item><van-image style="width:100%;height:100%" src="https://static-vusion.163yun.com/assets/cloud-ui/1.jpg"></van-image></van-swipe-item>
 - name: van-swipe-item
   title: 幻灯片选项
   next: false
-  nested: true
+  nested: false
   attrs: []
   description: 幻灯片选项
   events:
