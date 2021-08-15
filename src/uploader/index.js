@@ -249,6 +249,10 @@ export default createComponent({
       }
     },
 
+    onClickUpload(event) {
+      this.$emit('click-upload', event);
+    },
+
     onPreviewImage(item) {
       if (!this.previewFullImage) {
         return;
@@ -406,7 +410,11 @@ export default createComponent({
 
       if (slot) {
         return (
-          <div class={bem('input-wrapper')} key="input-wrapper">
+          <div
+            class={bem('input-wrapper')}
+            key="input-wrapper"
+            onClick={this.onClickUpload}
+          >
             {slot}
             {Input}
           </div>
@@ -423,7 +431,11 @@ export default createComponent({
       }
 
       return (
-        <div class={bem('upload', { readonly: this.readonly })} style={style}>
+        <div
+          class={bem('upload', { readonly: this.readonly })}
+          style={style}
+          onClick={this.onClickUpload}
+        >
           <Icon name={this.uploadIcon} class={bem('upload-icon')} />
           {this.uploadText && (
             <span class={bem('upload-text')}>{this.uploadText}</span>
