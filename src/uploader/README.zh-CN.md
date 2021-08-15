@@ -307,12 +307,13 @@ export default {
 
 ### Events
 
-| 事件名        | 说明                   | 回调参数        |
-| ------------- | ---------------------- | --------------- |
-| oversize      | 文件大小超过限制时触发 | 同 `after-read` |
-| click-preview | 点击预览图时触发       | 同 `after-read` |
-| close-preview | 关闭全屏图片预览时触发 | -               |
-| delete        | 删除文件预览时触发     | 同 `after-read` |
+| 事件名                  | 说明                   | 回调参数            |
+| ----------------------- | ---------------------- | ------------------- |
+| oversize                | 文件大小超过限制时触发 | 同 `after-read`     |
+| click-upload `v2.12.26` | 点击上传区域时触发     | _event: MouseEvent_ |
+| click-preview           | 点击预览图时触发       | 同 `after-read`     |
+| close-preview           | 关闭全屏图片预览时触发 | -                   |
+| delete                  | 删除文件预览时触发     | 同 `after-read`     |
 
 ### Slots
 

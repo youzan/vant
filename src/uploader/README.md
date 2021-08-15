@@ -280,6 +280,7 @@ export default {
 | Event | Description | Arguments |
 | --- | --- | --- |
 | oversize | Emitted when file size over limit | Same as after-read |
+| click-upload `v2.12.26` | Emitted when click upload area | _event: MouseEvent_ |
 | click-preview | Emitted when preview image is clicked | Same as after-read |
 | close-preview | Emitted when the full screen image preview is closed | - |
 | delete | Emitted when preview file is deleted | Same as after-read |
