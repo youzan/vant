@@ -16,6 +16,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.26](https://github.com/youzan/vant/compare/v2.12.25...v2.12.26)
+
+`2021-08-15`
+
+**Feature**
+
+- Uploader: 新增 click-upload 事件 [#9260](https://github.com/youzan/vant/issues/9260)
+- Uploader: 新增 readonly 属性 [#9257](https://github.com/youzan/vant/issues/9257)
+
+**Bug Fixes**
+
+- Field: 修复 Textarea 内容较多时，输入会导致页面滚动到顶部的问题 [#9207](https://github.com/youzan/vant/issues/9207)
+- Rate: 修复星星较多时无法自动换行的问题 [#9193](https://github.com/youzan/vant/issues/9193)
+- Tabs: 修复 card 类型内边距错误的问题 [#9169](https://github.com/youzan/vant/issues/9169)
+
 ### [v2.12.25](https://github.com/youzan/vant/compare/v2.12.24...v2.12.25)
 
 `2021-07-25`

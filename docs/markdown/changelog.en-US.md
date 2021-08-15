@@ -16,6 +16,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.26](https://github.com/youzan/vant/compare/v2.12.25...v2.12.26)
+
+`2021-08-15`
+
+**Feature**
+
+- Uploader: add click-upload event [#9260](https://github.com/youzan/vant/issues/9260)
+- Uploader: add readonly prop [#9257](https://github.com/youzan/vant/issues/9257)
+
+**Bug Fixes**
+
+- Field: textarea scroll to top after resizing [#9207](https://github.com/youzan/vant/issues/9207)
+- Rate: should enable flex wrap [#9193](https://github.com/youzan/vant/issues/9193)
+- Tabs: remove invalid head padding for card type [#9169](https://github.com/youzan/vant/issues/9169)
+
 ### [v2.12.25](https://github.com/youzan/vant/compare/v2.12.24...v2.12.25)
 
 `2021-07-25`
