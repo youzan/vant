@@ -16,7 +16,7 @@ function fallback(fn: FrameRequestCallback): number {
 }
 
 /* istanbul ignore next */
-const root = (isServer ? global : window) as Window;
+const root = (isServer ? global : window) as unknown as Window;
 
 /* istanbul ignore next */
 const iRaf = root.requestAnimationFrame || fallback;

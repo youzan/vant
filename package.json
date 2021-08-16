@@ -2,7 +2,7 @@
   "name": "vant",
   "version": "2.12.25",
   "lcapname": "@lcap/mobile-ui",
-  "lcapversion": "0.2.5",
+  "lcapversion": "0.2.6",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -71,6 +71,8 @@
   },
   "devDependencies": {
     "@vant/cli": "^2.10.3",
+    "@vant/eslint-config": "^3.3.2",
+    "@vue/compiler-sfc": "^3.2.2",
     "@xgheaven/nos-node-sdk": "^0.2.5",
     "prettier": "2.1.0",
     "vue": "^2.6.12",
