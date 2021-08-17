@@ -75,8 +75,6 @@ const onClickLink = () => Toast(t('clickLink'));
 Ï
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-submit-bar {
   .van-submit-bar {
     position: relative;
@@ -84,11 +82,11 @@ const onClickLink = () => Toast(t('clickLink'));
   }
 
   .edit-address {
-    color: @blue;
+    color: var(--van-blue);
   }
 
   .van-checkbox {
-    margin-right: @padding-sm;
+    margin-right: var(--van-padding-sm);
   }
 }
 </style>

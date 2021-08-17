@@ -69,13 +69,11 @@ const t = useTranslate(i18n);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-col {
-  background: @white;
+  background: var(--van-white);
 
   .van-doc-demo-block {
-    padding: 0 @padding-md;
+    padding: 0 var(--van-padding-md);
   }
 
   .van-doc-demo-block__title {
@@ -84,7 +82,7 @@ const t = useTranslate(i18n);
 
   .van-col {
     margin-bottom: 10px;
-    color: @white;
+    color: var(--van-white);
     font-size: 13px;
     line-height: 30px;
     text-align: center;

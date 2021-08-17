@@ -46,18 +46,16 @@ const show = ref(false);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-skeleton {
-  background-color: @white;
+  background-color: var(--van-white);
 
   .van-switch {
-    margin: 0 @padding-md @padding-xs;
+    margin: 0 var(--van-padding-md) var(--van-padding-xs);
   }
 
   .demo-preview {
     display: flex;
-    padding: 0 @padding-md;
+    padding: 0 var(--van-padding-md);
 
     .demo-content {
       padding-top: 6px;
@@ -79,7 +77,7 @@ const show = ref(false);
       flex-shrink: 0;
       width: 32px;
       height: 32px;
-      margin-right: @padding-md;
+      margin-right: var(--van-padding-md);
     }
   }
 }

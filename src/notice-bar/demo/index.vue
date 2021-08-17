@@ -72,10 +72,8 @@ const t = useTranslate(i18n);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-notice-bar {
-  background: @white;
+  background: var(--van-white);
 
   .van-notice-bar:not(:first-of-type) {
     margin-top: 4px;

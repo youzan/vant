@@ -62,10 +62,8 @@ const t = useTranslate(i18n);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-loading {
-  background: @white;
+  background: var(--van-white);
 
   .van-loading {
     display: inline-block;

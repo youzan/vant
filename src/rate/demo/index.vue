@@ -86,14 +86,12 @@ const onChange = (value: number) => Toast(t('toastContent', value));
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-rate {
   padding-bottom: 20px;
   background-color: #fff;
 
   .van-rate {
-    margin-left: @padding-md;
+    margin-left: var(--van-padding-md);
   }
 }
 </style>

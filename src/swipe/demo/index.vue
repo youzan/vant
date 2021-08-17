@@ -97,14 +97,12 @@ const onChange = (index: number) => Toast(t('message') + index);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-swipe {
   padding-bottom: 30px;
 
   .van-swipe {
     &-item {
-      color: @white;
+      color: var(--van-white);
       font-size: 20px;
       line-height: 150px;
       text-align: center;
@@ -124,7 +122,7 @@ const onChange = (index: number) => Toast(t('message') + index);
       width: 100%;
       height: 240px;
       padding: 30px 60px;
-      background-color: @white;
+      background-color: var(--van-white);
       pointer-events: none;
     }
   }
@@ -140,7 +138,7 @@ const onChange = (index: number) => Toast(t('message') + index);
     right: 5px;
     bottom: 5px;
     padding: 2px 5px;
-    color: @white;
+    color: var(--van-white);
     font-size: 12px;
     background: rgba(0, 0, 0, 0.1);
   }

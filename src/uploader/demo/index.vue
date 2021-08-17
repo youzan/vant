@@ -179,13 +179,11 @@ const onOversize = (file: UploaderFileListItem, detail: unknown) => {
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-uploader {
-  background-color: @white;
+  background-color: var(--van-white);
 
   .van-uploader {
-    margin-left: @padding-md;
+    margin-left: var(--van-padding-md);
   }
 
   .preview-cover {

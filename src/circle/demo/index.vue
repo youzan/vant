@@ -116,18 +116,16 @@ const reduce = () => {
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-circle {
   .van-circle {
-    margin-left: @padding-md;
+    margin-left: var(--van-padding-md);
   }
 
   .van-button {
-    margin: @padding-md 0 0 10px;
+    margin: var(--van-padding-md) 0 0 10px;
 
     &:first-of-type {
-      margin-left: @padding-md;
+      margin-left: var(--van-padding-md);
     }
   }
 }

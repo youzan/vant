@@ -211,18 +211,16 @@ const onSelect = (action: { text: string }) => Toast(action.text);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-popover {
   &-refer {
     width: 60px;
     height: 60px;
-    background-color: @blue;
+    background-color: var(--van-blue);
     border-radius: 8px;
   }
 
   .van-popover__wrapper {
-    margin-left: @padding-md;
+    margin-left: var(--van-padding-md);
   }
 
   .van-field {

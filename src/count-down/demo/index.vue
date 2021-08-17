@@ -88,19 +88,17 @@ const onFinish = () => Toast(t('finished'));
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-count-down {
-  background-color: @white;
+  background-color: var(--van-white);
 
   .van-count-down {
-    margin-left: @padding-md;
+    margin-left: var(--van-padding-md);
   }
 
   .colon {
     display: inline-block;
     margin: 0 4px;
-    color: @red;
+    color: var(--van-red);
   }
 
   .block {
@@ -109,7 +107,7 @@ const onFinish = () => Toast(t('finished'));
     color: #fff;
     font-size: 12px;
     text-align: center;
-    background-color: @red;
+    background-color: var(--van-red);
     border-radius: 4px;
   }
 

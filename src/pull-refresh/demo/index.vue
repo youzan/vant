@@ -97,10 +97,8 @@ onMounted(preloadImage);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-pull-refresh {
-  background-color: @white;
+  background-color: var(--van-white);
 
   .van-pull-refresh {
     height: calc(100vh - 50px);
@@ -115,7 +113,7 @@ onMounted(preloadImage);
 
   p {
     margin: 0;
-    padding: @padding-md 0 0 @padding-md;
+    padding: var(--van-padding-md) 0 0 var(--van-padding-md);
   }
 }
 </style>

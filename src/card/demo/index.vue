@@ -72,9 +72,7 @@ const imageURL = 'https://img.yzcdn.cn/vant/ipad.jpeg';
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-card {
-  background-color: @white;
+  background-color: var(--van-white);
 }
 </style>

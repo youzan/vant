@@ -162,8 +162,6 @@ const beforeChange = (name: number) => {
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-tab {
   margin-bottom: 80vh;
 
@@ -174,7 +172,7 @@ const beforeChange = (name: number) => {
 
   .van-tab__pane {
     padding: 24px 20px;
-    background-color: @white;
+    background-color: var(--van-white);
   }
 
   .van-tabs--card .van-tab__pane {

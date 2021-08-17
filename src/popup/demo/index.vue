@@ -140,15 +140,13 @@ const showCustomIconPosition = ref(false);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-popup {
   .van-row {
-    margin-bottom: @padding-md;
+    margin-bottom: var(--van-padding-md);
   }
 
   .van-button {
-    margin-left: @padding-md;
+    margin-left: var(--van-padding-md);
   }
 }
 </style>

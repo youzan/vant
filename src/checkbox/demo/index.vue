@@ -179,10 +179,8 @@ const toggleAll = () => {
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-checkbox {
-  background: @white;
+  background: var(--van-white);
 
   .van-checkbox {
     margin: 0 0 8px 20px;
@@ -199,10 +197,10 @@ const toggleAll = () => {
   }
 
   &-buttons {
-    margin-top: @padding-md;
+    margin-top: var(--van-padding-md);
 
     .van-button {
-      margin-left: @padding-md;
+      margin-left: var(--van-padding-md);
     }
   }
 

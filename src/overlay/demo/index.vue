@@ -45,10 +45,8 @@ const showEmbedded = ref(false);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-overlay {
-  background: @white;
+  background: var(--van-white);
 
   .wrapper {
     display: flex;
@@ -60,7 +58,7 @@ const showEmbedded = ref(false);
   .block {
     width: 120px;
     height: 120px;
-    background-color: @white;
+    background-color: var(--van-white);
     border-radius: 4px;
   }
 }

@@ -88,14 +88,12 @@ const fits = ['contain', 'cover', 'fill', 'none', 'scale-down'];
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-image {
   overflow-x: hidden;
-  background-color: @white;
+  background-color: var(--van-white);
 
   .van-row {
-    padding: 0 @padding-md;
+    padding: 0 var(--van-padding-md);
   }
 
   .van-col {
@@ -104,7 +102,7 @@ const fits = ['contain', 'cover', 'fill', 'none', 'scale-down'];
 
   .text {
     margin-top: 5px;
-    color: @gray-7;
+    color: var(--van-gray-7);
     font-size: 14px;
     text-align: center;
   }

@@ -77,8 +77,6 @@ const currentPage4 = ref(1);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-pagination {
   .van-pagination {
     width: 100%;
@@ -86,7 +84,7 @@ const currentPage4 = ref(1);
   }
 
   .van-doc-demo-block {
-    padding: 0 @padding-md;
+    padding: 0 var(--van-padding-md);
   }
 
   .van-doc-demo-block__title {

@@ -87,19 +87,17 @@ const t = useTranslate(i18n);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-badge {
-  background-color: @white;
+  background-color: var(--van-white);
 
   .van-badge__wrapper {
-    margin-left: @padding-md;
+    margin-left: var(--van-padding-md);
   }
 
   .child {
     width: 40px;
     height: 40px;
-    background: @gray-2;
+    background: var(--van-gray-2);
     border-radius: 4px;
   }
 
