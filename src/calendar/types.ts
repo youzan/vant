@@ -1,5 +1,6 @@
 import type { ComponentPublicInstance } from 'vue';
 import type { CalendarProps } from './Calendar';
+import type { CalendarMonthProps } from './CalendarMonth';
 
 export type CalendarType = 'single' | 'range' | 'multiple';
 
@@ -32,4 +33,15 @@ export type CalendarExpose = {
 export type CalendarInstance = ComponentPublicInstance<
   CalendarProps,
   CalendarExpose
+>;
+
+export type CalendarMonthInstance = ComponentPublicInstance<
+  CalendarMonthProps,
+  {
+    showed?: boolean;
+    getTitle: () => any;
+    getHeight: () => number;
+    setVisible: (value?: boolean | undefined) => void;
+    scrollIntoView: (body: Element) => void;
+  }
 >;

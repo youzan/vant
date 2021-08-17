@@ -1,4 +1,10 @@
-import { ref, computed, PropType, defineComponent } from 'vue';
+import {
+  ref,
+  computed,
+  PropType,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import { addUnit, setScrollTop, createNamespace, pick } from '../utils';
@@ -25,34 +31,38 @@ import type { CalendarType, CalendarDayItem, CalendarDayType } from './types';
 
 const [name] = createNamespace('calendar-month');
 
+const props = {
+  type: String as PropType<CalendarType>,
+  color: String,
+  showMark: Boolean,
+  rowHeight: [Number, String],
+  formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
+  lazyRender: Boolean,
+  currentDate: [Date, Array] as PropType<Date | Date[]>,
+  allowSameDay: Boolean,
+  showSubtitle: Boolean,
+  showMonthTitle: Boolean,
+  firstDayOfWeek: Number,
+  date: {
+    type: Date,
+    required: true as const,
+  },
+  minDate: {
+    type: Date,
+    required: true as const,
+  },
+  maxDate: {
+    type: Date,
+    required: true as const,
+  },
+};
+
+export type CalendarMonthProps = ExtractPropTypes<typeof props>;
+
 export default defineComponent({
   name,
 
-  props: {
-    type: String as PropType<CalendarType>,
-    color: String,
-    showMark: Boolean,
-    rowHeight: [Number, String],
-    formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
-    lazyRender: Boolean,
-    currentDate: [Date, Array] as PropType<Date | Date[]>,
-    allowSameDay: Boolean,
-    showSubtitle: Boolean,
-    showMonthTitle: Boolean,
-    firstDayOfWeek: Number,
-    date: {
-      type: Date,
-      required: true,
-    },
-    minDate: {
-      type: Date,
-      required: true,
-    },
-    maxDate: {
-      type: Date,
-      required: true,
-    },
-  },
+  props,
 
   emits: ['click', 'update-height'],
 
