@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -18,24 +18,22 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const state = reactive({
-  phone: '123',
-  username: '',
-});
+const phone = ref('123');
+const username = ref('');
 </script>
 
 <template>
   <demo-block :title="t('errorInfo')">
     <van-cell-group inset>
       <van-field
-        v-model="state.username"
+        v-model="username"
         error
         required
         :label="t('username')"
         :placeholder="t('usernamePlaceholder')"
       />
       <van-field
-        v-model="state.phone"
+        v-model="phone"
         required
         :label="t('phone')"
         :placeholder="t('phonePlaceholder')"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const format = (rate: number) => Math.min(Math.max(rate, 0), 100);
@@ -24,13 +24,11 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const state = reactive({
-  rate: 70,
-  currentRate1: 70,
-  currentRate2: 70,
-  currentRate3: 70,
-  currentRate4: 70,
-});
+const rate = ref(70);
+const currentRate1 = ref(70);
+const currentRate2 = ref(70);
+const currentRate3 = ref(70);
+const currentRate4 = ref(70);
 
 const gradientColor = {
   '0%': '#3fecff',
@@ -38,54 +36,54 @@ const gradientColor = {
 };
 
 const add = () => {
-  state.rate = format(state.rate + 20);
+  rate.value = format(rate.value + 20);
 };
 
 const reduce = () => {
-  state.rate = format(state.rate - 20);
+  rate.value = format(rate.value - 20);
 };
 </script>
 
 <template>
   <demo-block :title="t('basicUsage')">
     <van-circle
-      v-model:current-rate="state.currentRate1"
-      :rate="state.rate"
+      v-model:current-rate="currentRate1"
+      :rate="rate"
       :speed="100"
-      :text="state.currentRate1.toFixed(0) + '%'"
+      :text="currentRate1.toFixed(0) + '%'"
     />
   </demo-block>
 
   <demo-block :title="t('customStyle')">
     <van-circle
-      v-model:current-rate="state.currentRate3"
-      :rate="state.rate"
+      v-model:current-rate="currentRate3"
+      :rate="rate"
       :speed="100"
       :stroke-width="60"
       :text="t('customWidth')"
     />
 
     <van-circle
-      v-model:current-rate="state.currentRate3"
+      v-model:current-rate="currentRate3"
       color="#ee0a24"
-      :rate="state.rate"
+      :rate="rate"
       layer-color="#ebedf0"
       :speed="100"
       :text="t('customColor')"
     />
 
     <van-circle
-      v-model:current-rate="state.currentRate2"
-      :rate="state.rate"
+      v-model:current-rate="currentRate2"
+      :rate="rate"
       :speed="100"
       :color="gradientColor"
       :text="t('gradient')"
     />
 
     <van-circle
-      v-model:current-rate="state.currentRate4"
+      v-model:current-rate="currentRate4"
       color="#07c160"
-      :rate="state.rate"
+      :rate="rate"
       :speed="100"
       :clockwise="false"
       :text="t('counterClockwise')"
@@ -93,9 +91,9 @@ const reduce = () => {
     />
 
     <van-circle
-      v-model:current-rate="state.currentRate4"
+      v-model:current-rate="currentRate4"
       color="#7232dd"
-      :rate="state.rate"
+      :rate="rate"
       :speed="100"
       size="120px"
       :clockwise="false"

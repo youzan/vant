@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, reactive } from 'vue';
+import { ref, computed } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { ShareSheetOption, ShareSheetOptions } from '..';
 import { Toast } from '../../toast';
@@ -42,12 +42,10 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const show = reactive({
-  basic: false,
-  withDesc: false,
-  multiLine: false,
-  customIcon: false,
-});
+const showBasic = ref(false);
+const showWithDesc = ref(false);
+const showMultiLine = ref(false);
+const showCustomIcon = ref(false);
 
 const options = computed(() => [
   { name: t('wechat'), icon: 'wechat' },
@@ -101,18 +99,18 @@ const optionsWithDesc = computed<ShareSheetOptions>(() => [
 
 const onSelect = (option: ShareSheetOption) => {
   Toast(option.name);
-  show.basic = false;
-  show.withDesc = false;
-  show.multiLine = false;
-  show.customIcon = false;
+  showBasic.value = false;
+  showWithDesc.value = false;
+  showMultiLine.value = false;
+  showCustomIcon.value = false;
 };
 </script>
 
 <template>
   <demo-block card :title="t('basicUsage')">
-    <van-cell is-link :title="t('showSheet')" @click="show.basic = true" />
+    <van-cell is-link :title="t('showSheet')" @click="showBasic = true" />
     <van-share-sheet
-      v-model:show="show.basic"
+      v-model:show="showBasic"
       :title="t('title')"
       :options="options"
       @select="onSelect"
@@ -120,9 +118,9 @@ const onSelect = (option: ShareSheetOption) => {
   </demo-block>
 
   <demo-block card :title="t('multiLine')">
-    <van-cell is-link :title="t('showSheet')" @click="show.multiLine = true" />
+    <van-cell is-link :title="t('showSheet')" @click="showMultiLine = true" />
     <van-share-sheet
-      v-model:show="show.multiLine"
+      v-model:show="showMultiLine"
       :title="t('title')"
       :options="multiLineOptions"
       @select="onSelect"
@@ -130,18 +128,18 @@ const onSelect = (option: ShareSheetOption) => {
   </demo-block>
 
   <demo-block card :title="t('customIcon')">
-    <van-cell is-link :title="t('showSheet')" @click="show.customIcon = true" />
+    <van-cell is-link :title="t('showSheet')" @click="showCustomIcon = true" />
     <van-share-sheet
-      v-model:show="show.customIcon"
+      v-model:show="showCustomIcon"
       :options="customIconOptions"
       @select="onSelect"
     />
   </demo-block>
 
   <demo-block card :title="t('withDesc')">
-    <van-cell is-link :title="t('showSheet')" @click="show.withDesc = true" />
+    <van-cell is-link :title="t('showSheet')" @click="showWithDesc = true" />
     <van-share-sheet
-      v-model:show="show.withDesc"
+      v-model:show="showWithDesc"
       :title="t('title')"
       :options="optionsWithDesc"
       :description="t('description')"

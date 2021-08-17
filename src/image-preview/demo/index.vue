@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { ImagePreview, ImagePreviewOptions } from '..';
 import { Toast } from '../../toast';
@@ -37,10 +37,8 @@ const images = [
 ];
 
 const t = useTranslate(i18n);
-const state = reactive({
-  show: false,
-  index: 0,
-});
+const show = ref(false);
+const index = ref(0);
 
 const onClose = () => Toast(t('closed'));
 
@@ -52,11 +50,11 @@ const beforeClose = () =>
   });
 
 const showComponentCall = () => {
-  state.show = true;
+  show.value = true;
 };
 
-const onChange = (index: number) => {
-  state.index = index;
+const onChange = (newIndex: number) => {
+  index.value = newIndex;
 };
 
 const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
@@ -102,12 +100,8 @@ const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
     <van-cell is-link @click="showComponentCall">
       {{ t('componentCall') }}
     </van-cell>
-    <van-image-preview
-      v-model:show="state.show"
-      :images="images"
-      @change="onChange"
-    >
-      <template #index>{{ t('index', state.index) }}</template>
+    <van-image-preview v-model:show="show" :images="images" @change="onChange">
+      <template #index>{{ t('index', index) }}</template>
     </van-image-preview>
   </demo-block>
 </template>

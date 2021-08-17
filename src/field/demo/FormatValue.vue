@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -18,10 +18,8 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const state = reactive({
-  value1: '',
-  value2: '',
-});
+const value1 = ref('');
+const value2 = ref('');
 const formatter = (value: string) => value.replace(/\d/g, '');
 </script>
 
@@ -29,13 +27,13 @@ const formatter = (value: string) => value.replace(/\d/g, '');
   <demo-block :title="t('formatValue')">
     <van-cell-group inset>
       <van-field
-        v-model="state.value1"
+        v-model="value1"
         :label="t('text')"
         :formatter="formatter"
         :placeholder="t('formatOnChange')"
       />
       <van-field
-        v-model="state.value2"
+        v-model="value2"
         :label="t('text')"
         :formatter="formatter"
         format-trigger="onBlur"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { FieldValidateError } from '../../field/types';
 
@@ -21,10 +21,8 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const state = reactive({
-  username: '',
-  password: '',
-});
+const username = ref('');
+const password = ref('');
 
 const onSubmit = (values: Record<string, string>) => {
   console.log('submit', values);
@@ -43,14 +41,14 @@ const onFailed = (errorInfo: {
     <van-form @submit="onSubmit" @failed="onFailed">
       <van-cell-group inset>
         <van-field
-          v-model="state.username"
+          v-model="username"
           name="username"
           :label="t('username')"
           :rules="[{ required: true, message: t('requireUsername') }]"
           :placeholder="t('username')"
         />
         <van-field
-          v-model="state.password"
+          v-model="password"
           type="password"
           name="password"
           :label="t('password')"

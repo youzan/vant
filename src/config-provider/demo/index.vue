@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
-import { reactive } from '@vue/reactivity';
 
 const i18n = {
   'zh-CN': {
@@ -22,12 +22,8 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const state = reactive({
-  rate: 4,
-  slider: 50,
-  switchChecked: true,
-});
-
+const rate = ref(4);
+const slider = ref(50);
 const themeVars = {
   rateIconFullColor: '#07c160',
   sliderBarHeight: '4px',
@@ -44,13 +40,13 @@ const themeVars = {
     <van-form>
       <van-field name="rate" :label="t('rate')">
         <template #input>
-          <van-rate v-model="state.rate" />
+          <van-rate v-model="rate" />
         </template>
       </van-field>
 
       <van-field name="slider" :label="t('slider')">
         <template #input>
-          <van-slider v-model="state.slider" />
+          <van-slider v-model="slider" />
         </template>
       </van-field>
 
@@ -67,13 +63,13 @@ const themeVars = {
       <van-form>
         <van-field name="rate" :label="t('rate')">
           <template #input>
-            <van-rate v-model="state.rate" />
+            <van-rate v-model="rate" />
           </template>
         </van-field>
 
         <van-field name="slider" :label="t('slider')">
           <template #input>
-            <van-slider v-model="state.slider" />
+            <van-slider v-model="slider" />
           </template>
         </van-field>
 
