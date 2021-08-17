@@ -10,22 +10,16 @@ import {
 } from 'vue';
 
 // Utils
-import {
-  pick,
-  isDate,
-  truthProp,
-  getScrollTop,
-  ComponentInstance,
-} from '../utils';
+import { pick, isDate, truthProp, getScrollTop } from '../utils';
 import {
   t,
   bem,
   name,
+  getToday,
   cloneDate,
   cloneDates,
   getPrevDay,
   getNextDay,
-  getToday,
   compareDay,
   calcDateNum,
   compareMonth,
@@ -45,7 +39,12 @@ import CalendarMonth from './CalendarMonth';
 import CalendarHeader from './CalendarHeader';
 
 // Types
-import type { CalendarType, CalendarExpose, CalendarDayItem } from './types';
+import type {
+  CalendarType,
+  CalendarExpose,
+  CalendarDayItem,
+  CalendarMonthInstance,
+} from './types';
 
 const props = {
   show: Boolean,
@@ -184,7 +183,7 @@ export default defineComponent({
       currentDate: getInitialDate(),
     });
 
-    const [monthRefs, setMonthRefs] = useRefs<ComponentInstance>();
+    const [monthRefs, setMonthRefs] = useRefs<CalendarMonthInstance>();
 
     const dayOffset = computed(() =>
       props.firstDayOfWeek ? +props.firstDayOfWeek % 7 : 0
@@ -255,7 +254,7 @@ export default defineComponent({
             monthRefs.value[i].showed = true;
             emit('month-show', {
               date: month.date,
-              title: month.title,
+              title: month.getTitle(),
             });
           }
         }
@@ -279,7 +278,9 @@ export default defineComponent({
       raf(() => {
         months.value.some((month, index) => {
           if (compareMonth(month, targetDate) === 0) {
-            monthRefs.value[index].scrollIntoView(bodyRef.value);
+            if (bodyRef.value) {
+              monthRefs.value[index].scrollIntoView(bodyRef.value);
+            }
             return true;
           }
 
