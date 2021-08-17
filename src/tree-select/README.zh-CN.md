@@ -182,7 +182,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| items | 分类显示所需的数据 | _Item[]_ | `[]` |
+| items | 分类显示所需的数据 | _TreeSelectItem[]_ | `[]` |
 | height | 高度，默认单位为`px` | _number \| string_ | `300` |
 | main-active-index | 左侧选中项的索引 | _number \| string_ | `0` |
 | active-id | 右侧选中项的 id，支持传入数组 | _number \| string \|<br>(number \| string)[]_ | `0` |
@@ -191,10 +191,10 @@ export default {
 
 ### Events
 
-| 事件名     | 说明                 | 回调参数                  |
-| ---------- | -------------------- | ------------------------- |
-| click-nav  | 点击左侧导航时触发   | index：被点击的导航的索引 |
-| click-item | 点击右侧选择项时触发 | data: 该点击项的数据      |
+| 事件名     | 说明                 | 回调参数                |
+| ---------- | -------------------- | ----------------------- |
+| click-nav  | 点击左侧导航时触发   | _index: number_         |
+| click-item | 点击右侧选择项时触发 | _item: TreeSelectChild_ |
 
 ### Slots
 
@@ -202,9 +202,9 @@ export default {
 | ------- | ------------------ |
 | content | 自定义右侧区域内容 |
 
-### Item 数据结构
+### TreeSelectItem 数据结构
 
-`items` 整体为一个数组，数组内包含一系列描述分类的对象，每个分类里，`text`表示当前分类的名称，`children`表示分类里的可选项。
+`TreeSelectItem` 整体为一个数组，数组内包含一系列描述分类的对象，每个分类里，`text` 表示当前分类的名称，`children` 表示分类里的可选项。
 
 ```js
 [

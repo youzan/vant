@@ -174,7 +174,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| items | Required datasets for the component | _Item[]_ | `[]` |
+| items | Required datasets for the component | _TreeSelectItem[]_ | `[]` |
 | height | Height | _number \| string_ | `300` |
 | main-active-index | The index of selected parent node | _number \| string_ | `0` |
 | active-id | Id of selected item | _number \| string \|<br>(number \| string)[]_ | `0` |
@@ -183,10 +183,10 @@ export default {
 
 ### Events
 
-| Event | Description | Arguments |
-| --- | --- | --- |
-| click-nav | Emitted when parent node is selected | index: index of selected parent |
-| click-item | Emitted when item is selected | data: selected item |
+| Event      | Description                          | Arguments               |
+| ---------- | ------------------------------------ | ----------------------- |
+| click-nav  | Emitted when parent node is selected | _index: number_         |
+| click-item | Emitted when item is selected        | _item: TreeSelectChild_ |
 
 ### Slots
 
@@ -194,9 +194,9 @@ export default {
 | ------- | -------------------- |
 | content | Custom right content |
 
-### Data Structure of Item
+### Data Structure of TreeSelectItem
 
-`items` should be an array contains specified tree objects.
+`TreeSelectItem` should be an array contains specified tree objects.
 
 In every tree object, `text` property defines `id` stands for the unique key while the `children` contains sub-tree objects.
 
