@@ -140,24 +140,22 @@ const t = useTranslate(i18n);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-button {
-  background: @white;
+  background: var(--van-white);
 
   .van-button {
     &--large {
-      margin-bottom: @padding-md;
+      margin-bottom: var(--van-padding-md);
     }
 
     &--small,
     &--normal:not(:last-child) {
-      margin-right: @padding-md;
+      margin-right: var(--van-padding-md);
     }
   }
 
   .van-doc-demo-block {
-    padding: 0 @padding-md;
+    padding: 0 var(--van-padding-md);
   }
 
   .van-doc-demo-block__title {
@@ -165,7 +163,7 @@ const t = useTranslate(i18n);
   }
 
   &-row {
-    margin-bottom: @padding-sm;
+    margin-bottom: var(--van-padding-sm);
   }
 }
 </style>

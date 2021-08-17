@@ -84,16 +84,14 @@ const nextStep = () => {
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-steps {
   .steps-success,
   .van-icon-location {
-    color: @green;
+    color: var(--van-green);
   }
 
   .van-button {
-    margin: @padding-md 0 0 @padding-md;
+    margin: var(--van-padding-md) 0 0 var(--van-padding-md);
   }
 
   p,

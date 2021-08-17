@@ -95,14 +95,12 @@ const onChange = (value: string) => Toast(t('text') + value);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-slider {
-  background: @white;
+  background: var(--van-white);
   user-select: none;
 
   .van-doc-demo-block {
-    padding: 0 @padding-md 20px;
+    padding: 0 var(--van-padding-md) 20px;
   }
 
   .van-doc-demo-block__title {
@@ -115,7 +113,7 @@ const onChange = (value: string) => Toast(t('text') + value);
     font-size: 10px;
     line-height: 18px;
     text-align: center;
-    background-color: @red;
+    background-color: var(--van-red);
     border-radius: 100px;
   }
 }

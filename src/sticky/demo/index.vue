@@ -57,13 +57,11 @@ const container = ref(null);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-sticky {
   height: 200vh;
 
   .van-button {
-    margin-left: @padding-md;
+    margin-left: var(--van-padding-md);
   }
 }
 </style>

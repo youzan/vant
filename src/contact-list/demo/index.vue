@@ -72,12 +72,10 @@ const onSelect = (contact: { id: string }) => {
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-contact-card {
   .van-popup {
     height: 100%;
-    background-color: @background-color;
+    background-color: var(--van-background-color);
   }
 }
 </style>

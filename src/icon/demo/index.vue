@@ -183,8 +183,6 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-icon {
   font-size: 0;
 
@@ -210,19 +208,19 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
       height: 36px;
       margin: -4px 0 4px;
       padding: 0 5px;
-      color: @gray-7;
+      color: var(--van-gray-7);
       font-size: 12px;
       line-height: 18px;
     }
 
     &:active {
-      background-color: @active-color;
+      background-color: var(--van-active-color);
     }
   }
 
   .van-icon {
     margin: 16px 0 16px;
-    color: @text-color;
+    color: var(--van-text-color);
     font-size: 32px;
   }
 

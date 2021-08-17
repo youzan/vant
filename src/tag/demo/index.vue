@@ -136,11 +136,9 @@ const close = () => {
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-tag {
   .van-tag + .van-tag {
-    margin-left: @padding-xs;
+    margin-left: var(--van-padding-xs);
   }
 }
 </style>

@@ -64,10 +64,8 @@ const active = ref('error');
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-empty {
-  background: @white;
+  background: var(--van-white);
 
   .custom-image {
     .van-empty__image {

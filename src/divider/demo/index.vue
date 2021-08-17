@@ -58,13 +58,11 @@ const t = useTranslate(i18n);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-divider {
-  background-color: @white;
+  background-color: var(--van-white);
 
   .van-doc-demo-block__title {
-    padding-top: @padding-md;
+    padding-top: var(--van-padding-md);
   }
 }
 </style>

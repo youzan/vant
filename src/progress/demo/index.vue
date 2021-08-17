@@ -43,10 +43,8 @@ const t = useTranslate(i18n);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-progress {
-  background: @white;
+  background: var(--van-white);
 
   .van-progress {
     margin: 20px;

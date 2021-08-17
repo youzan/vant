@@ -67,18 +67,16 @@ const onChange = (index: number) => Toast(`${t('title')} ${index + 1}`);
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-sidebar {
-  background-color: @white;
+  background-color: var(--van-white);
 
   .van-sidebar {
-    margin-left: @padding-md;
+    margin-left: var(--van-padding-md);
   }
 
   &-title {
     margin-bottom: 16px;
-    color: @gray-6;
+    color: var(--van-gray-6);
     font-weight: normal;
     font-size: 14px;
   }

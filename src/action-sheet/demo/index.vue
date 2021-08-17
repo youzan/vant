@@ -124,11 +124,10 @@ const onCancel = () => Toast(t('cancel'));
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-action-sheet {
   &-content {
-    padding: @padding-md @padding-md @padding-md * 10;
+    padding: var(--van-padding-md) var(--van-padding-md)
+      calc(var(--van-padding-md) * 10);
   }
 }
 </style>

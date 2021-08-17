@@ -109,8 +109,6 @@ const onClickBeforeClose = () => {
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-dialog {
   img {
     box-sizing: border-box;

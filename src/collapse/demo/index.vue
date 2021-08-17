@@ -87,12 +87,10 @@ const state = reactive({
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-collapse {
   .van-icon-question-o {
     margin-left: 5px;
-    color: @blue;
+    color: var(--van-blue);
     font-size: 15px;
     vertical-align: -3px;
   }

@@ -92,14 +92,12 @@ const beforeClose = ({ position }: { position: string }) => {
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-swipe-cell {
   user-select: none;
 
   .van-card {
     margin: 0;
-    background-color: @white;
+    background-color: var(--van-white);
   }
 
   .delete-button {

@@ -51,19 +51,17 @@ const componentImageList = [
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-lazyload {
-  padding-right: @padding-md;
-  padding-left: @padding-md;
+  padding-right: var(--van-padding-md);
+  padding-left: var(--van-padding-md);
 
   img,
   div[lazy] {
     box-sizing: border-box;
     width: 100%;
     height: 250px;
-    margin-bottom: @padding-md;
-    padding: @padding-md;
+    margin-bottom: var(--van-padding-md);
+    padding: var(--van-padding-md);
     background-color: white;
     background-repeat: no-repeat;
     background-size: 100% 100%;

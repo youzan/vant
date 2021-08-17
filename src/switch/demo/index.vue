@@ -80,11 +80,9 @@ const onUpdateValue = (checked: boolean) => {
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-switch {
   .van-switch {
-    margin-left: @padding-md;
+    margin-left: var(--van-padding-md);
   }
 }
 </style>

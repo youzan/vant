@@ -153,13 +153,11 @@ const isTest = process.env.NODE_ENV === 'test';
 </template>
 
 <style lang="less">
-@import '../../style/var';
-
 .demo-number-keyboard {
   padding-bottom: 300px;
 
   .van-button {
-    margin-left: @padding-md;
+    margin-left: var(--van-padding-md);
   }
 }
 </style>
