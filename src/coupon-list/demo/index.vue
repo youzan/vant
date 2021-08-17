@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, reactive } from 'vue';
+import { ref, computed } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { CouponInfo } from '../../coupon';
 import { Toast } from '../../toast';
@@ -27,11 +27,9 @@ const getRandomId = (max = 999999) =>
   String(Math.floor(Math.random() * max) + 1);
 
 const t = useTranslate(i18n);
-const state = reactive({
-  showList: false,
-  chosenCoupon: -1,
-  exchangedCoupons: [] as CouponInfo[],
-});
+const showList = ref(false);
+const chosenCoupon = ref(-1);
+const exchangedCoupons = ref<CouponInfo[]>([]);
 
 const coupon = computed(() => ({
   id: 1,
@@ -71,7 +69,7 @@ const disabledDiscountCoupon = computed(() => ({
 const coupons = computed(() => [
   coupon.value,
   discountCoupon.value,
-  ...state.exchangedCoupons,
+  ...exchangedCoupons.value,
 ]);
 
 const disabledCoupons = computed(() => [
@@ -80,13 +78,13 @@ const disabledCoupons = computed(() => [
 ]);
 
 const onChange = (index: number) => {
-  state.showList = false;
-  state.chosenCoupon = index;
+  showList.value = false;
+  chosenCoupon.value = index;
 };
 
 const onExchange = () => {
   Toast(t('exchange'));
-  state.exchangedCoupons.push({
+  exchangedCoupons.value.push({
     ...coupon.value,
     id: getRandomId(),
   });
@@ -97,18 +95,18 @@ const onExchange = () => {
   <demo-block :title="t('basicUsage')">
     <van-coupon-cell
       :coupons="coupons"
-      :chosen-coupon="state.chosenCoupon"
-      @click="state.showList = true"
+      :chosen-coupon="chosenCoupon"
+      @click="showList = true"
     />
     <van-popup
-      v-model:show="state.showList"
+      v-model:show="showList"
       round
       position="bottom"
       style="height: 90%; padding-top: 4px"
     >
       <van-coupon-list
         :coupons="coupons"
-        :chosen-coupon="state.chosenCoupon"
+        :chosen-coupon="chosenCoupon"
         :disabled-coupons="disabledCoupons"
         :show-count="false"
         @change="onChange"

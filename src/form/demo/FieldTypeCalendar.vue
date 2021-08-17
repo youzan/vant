@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -14,31 +14,29 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const state = reactive({
-  value: '',
-  showCalendar: false,
-});
+const result = ref('');
+const showCalendar = ref(false);
 
 const formatDate = (date: Date) => `${date.getMonth() + 1}/${date.getDate()}`;
 
 const onConfirm = (date: Date) => {
-  state.value = formatDate(date);
-  state.showCalendar = false;
+  result.value = formatDate(date);
+  showCalendar.value = false;
 };
 </script>
 
 <template>
   <van-field
-    v-model="state.value"
+    v-model="result"
     is-link
     readonly
     name="calendar"
     :label="t('calendar')"
     :placeholder="t('placeholder')"
-    @click="state.showCalendar = true"
+    @click="showCalendar = true"
   />
   <van-calendar
-    v-model:show="state.showCalendar"
+    v-model:show="showCalendar"
     round
     teleport="body"
     @confirm="onConfirm"

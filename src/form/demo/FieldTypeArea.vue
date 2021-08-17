@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { areaList } from '@vant/area-data';
 import { useTranslate } from '@demo/use-translate';
 import { AreaColumnOption } from '../../area';
@@ -19,40 +19,33 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const state = reactive({
-  value: '',
-  showArea: false,
-});
+const areaCode = ref('');
+const showArea = ref(false);
 
 const onConfirm = (values: AreaColumnOption[]) => {
-  state.value = values
+  areaCode.value = values
     .filter((item) => !!item)
     .map((item) => item.name)
     .join('/');
-  state.showArea = false;
+  showArea.value = false;
 };
 
 const onCancel = () => {
-  state.showArea = false;
+  showArea.value = false;
 };
 </script>
 
 <template>
   <van-field
-    v-model="state.value"
+    v-model="areaCode"
     is-link
     readonly
     name="area"
     :label="t('picker')"
     :placeholder="t('placeholder')"
-    @click="state.showArea = true"
+    @click="showArea = true"
   />
-  <van-popup
-    v-model:show="state.showArea"
-    round
-    position="bottom"
-    teleport="body"
-  >
+  <van-popup v-model:show="showArea" round position="bottom" teleport="body">
     <van-area
       :area-list="t('areaList')"
       @confirm="onConfirm"

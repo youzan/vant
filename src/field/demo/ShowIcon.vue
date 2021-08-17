@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -16,24 +16,22 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const state = reactive({
-  icon1: '',
-  icon2: '123',
-});
+const icon1 = ref('');
+const icon2 = ref('123');
 </script>
 
 <template>
   <demo-block :title="t('showIcon')">
     <van-cell-group inset>
       <van-field
-        v-model="state.icon1"
+        v-model="icon1"
         :label="t('text')"
         left-icon="smile-o"
         right-icon="warning-o"
         :placeholder="t('showIcon')"
       />
       <van-field
-        v-model="state.icon2"
+        v-model="icon2"
         clearable
         :label="t('text')"
         left-icon="music-o"

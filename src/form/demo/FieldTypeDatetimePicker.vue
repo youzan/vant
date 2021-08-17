@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -14,37 +14,30 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const state = reactive({
-  value: '',
-  showPicker: false,
-});
+const result = ref('');
+const showPicker = ref(false);
 
 const onConfirm = (time: string) => {
-  state.value = time;
-  state.showPicker = false;
+  result.value = time;
+  showPicker.value = false;
 };
 
 const onCancel = () => {
-  state.showPicker = false;
+  showPicker.value = false;
 };
 </script>
 
 <template>
   <van-field
-    v-model="state.value"
+    v-model="result"
     is-link
     readonly
     name="datetimePicker"
     :label="t('label')"
     :placeholder="t('placeholder')"
-    @click="state.showPicker = true"
+    @click="showPicker = true"
   />
-  <van-popup
-    v-model:show="state.showPicker"
-    round
-    position="bottom"
-    teleport="body"
-  >
+  <van-popup v-model:show="showPicker" round position="bottom" teleport="body">
     <van-datetime-picker type="time" @confirm="onConfirm" @cancel="onCancel" />
   </van-popup>
 </template>

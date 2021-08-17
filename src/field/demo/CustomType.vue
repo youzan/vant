@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
 const i18n = {
@@ -30,43 +30,41 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const state = reactive({
-  text: '',
-  phone: '',
-  digit: '',
-  number: '',
-  password: '',
-});
+const text = ref('');
+const phone = ref('');
+const digit = ref('');
+const number = ref('');
+const password = ref('');
 </script>
 
 <template>
   <demo-block :title="t('customType')">
     <van-cell-group inset>
       <van-field
-        v-model="state.text"
+        v-model="text"
         :label="t('text')"
         :placeholder="t('textPlaceholder')"
       />
       <van-field
-        v-model="state.phone"
+        v-model="phone"
         type="tel"
         :label="t('phone')"
         :placeholder="t('phonePlaceholder')"
       />
       <van-field
-        v-model="state.digit"
+        v-model="digit"
         type="digit"
         :label="t('digit')"
         :placeholder="t('digitPlaceholder')"
       />
       <van-field
-        v-model="state.number"
+        v-model="number"
         type="number"
         :label="t('number')"
         :placeholder="t('numberPlaceholder')"
       />
       <van-field
-        v-model="state.password"
+        v-model="password"
         type="password"
         :label="t('password')"
         :placeholder="t('passwordPlaceholder')"

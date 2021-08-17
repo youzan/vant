@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, reactive } from 'vue';
+import { ref, computed } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { ActionSheetAction } from '..';
 import { Toast } from '../../toast';
@@ -36,13 +36,11 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const show = reactive({
-  basic: false,
-  cancel: false,
-  title: false,
-  status: false,
-  description: false,
-});
+const showBasic = ref(false);
+const showCancel = ref(false);
+const showTitle = ref(false);
+const showStatus = ref(false);
+const showDescription = ref(false);
 
 const simpleActions = computed<ActionSheetAction[]>(() => [
   { name: t('option1') },
@@ -63,7 +61,7 @@ const actionsWithDescription = computed<ActionSheetAction[]>(() => [
 ]);
 
 const onSelect = (item: ActionSheetAction) => {
-  show.basic = false;
+  showBasic.value = false;
   Toast(item.name);
 };
 
@@ -72,31 +70,31 @@ const onCancel = () => Toast(t('cancel'));
 
 <template>
   <demo-block card :title="t('basicUsage')">
-    <van-cell is-link :title="t('basicUsage')" @click="show.basic = true" />
-    <van-cell is-link :title="t('showCancel')" @click="show.cancel = true" />
+    <van-cell is-link :title="t('basicUsage')" @click="showBasic = true" />
+    <van-cell is-link :title="t('showCancel')" @click="showCancel = true" />
     <van-cell
       is-link
       :title="t('showDescription')"
-      @click="show.description = true"
+      @click="showDescription = true"
     />
   </demo-block>
 
   <demo-block card :title="t('optionStatus')">
-    <van-cell is-link :title="t('optionStatus')" @click="show.status = true" />
+    <van-cell is-link :title="t('optionStatus')" @click="showStatus = true" />
   </demo-block>
 
   <demo-block card :title="t('customPanel')">
-    <van-cell is-link :title="t('customPanel')" @click="show.title = true" />
+    <van-cell is-link :title="t('customPanel')" @click="showTitle = true" />
   </demo-block>
 
   <van-action-sheet
-    v-model:show="show.basic"
+    v-model:show="showBasic"
     :actions="simpleActions"
     @select="onSelect"
   />
 
   <van-action-sheet
-    v-model:show="show.cancel"
+    v-model:show="showCancel"
     :actions="simpleActions"
     close-on-click-action
     :cancel-text="t('cancel')"
@@ -104,7 +102,7 @@ const onCancel = () => Toast(t('cancel'));
   />
 
   <van-action-sheet
-    v-model:show="show.description"
+    v-model:show="showDescription"
     :actions="actionsWithDescription"
     close-on-click-action
     :cancel-text="t('cancel')"
@@ -112,13 +110,13 @@ const onCancel = () => Toast(t('cancel'));
   />
 
   <van-action-sheet
-    v-model:show="show.status"
+    v-model:show="showStatus"
     close-on-click-action
     :actions="statusActions"
     :cancel-text="t('cancel')"
   />
 
-  <van-action-sheet v-model:show="show.title" :title="t('title')">
+  <van-action-sheet v-model:show="showTitle" :title="t('title')">
     <div class="demo-action-sheet-content">{{ t('content') }}</div>
   </van-action-sheet>
 </template>

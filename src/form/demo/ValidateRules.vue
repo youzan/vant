@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { FieldValidateError } from '../../field/types';
 import { Toast } from '../../toast';
@@ -32,12 +32,10 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const state = reactive({
-  value1: '',
-  value2: '',
-  value3: 'abc',
-  value4: '',
-});
+const value1 = ref('');
+const value2 = ref('');
+const value3 = ref('abc');
+const value4 = ref('');
 const pattern = /\d{6}/;
 
 const validator = (val: string) => /1\d{10}/.test(val);
@@ -71,28 +69,28 @@ const onFailed = (errorInfo: {
     <van-form @sumbit="onSubmit" @failed="onFailed">
       <van-cell-group inset>
         <van-field
-          v-model="state.value1"
+          v-model="value1"
           name="pattern"
           :label="t('label')"
           :rules="[{ pattern, message: t('message') }]"
           :placeholder="t('pattern')"
         />
         <van-field
-          v-model="state.value2"
+          v-model="value2"
           name="validator"
           :label="t('label')"
           :rules="[{ validator, message: t('message') }]"
           :placeholder="t('validator')"
         />
         <van-field
-          v-model="state.value3"
+          v-model="value3"
           name="validatorMessage"
           :label="t('label')"
           :rules="[{ validator: validatorMessage }]"
           :placeholder="t('validatorMessage')"
         />
         <van-field
-          v-model="state.value4"
+          v-model="value4"
           name="asyncValidator"
           :label="t('label')"
           :rules="[{ validator: asyncValidator, message: t('message') }]"

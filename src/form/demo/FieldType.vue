@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import FieldTypeArea from './FieldTypeArea.vue';
 import FieldTypePicker from './FieldTypePicker.vue';
@@ -38,16 +38,14 @@ const i18n = {
 };
 
 const t = useTranslate(i18n);
-const state = reactive({
-  rate: 3,
-  radio: '1',
-  slider: 50,
-  stepper: 1,
-  uploader: [{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }],
-  checkbox: false,
-  checkboxGroup: [],
-  switchChecked: false,
-});
+const rate = ref(3);
+const radio = ref('1');
+const slider = ref(50);
+const stepper = ref(1);
+const uploader = ref([{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }]);
+const checkbox = ref(false);
+const checkboxGroup = ref([]);
+const switchChecked = ref(false);
 
 const onSubmit = (values: Record<string, string>) => {
   console.log(values);
@@ -60,22 +58,19 @@ const onSubmit = (values: Record<string, string>) => {
       <van-cell-group inset>
         <van-field name="switch" :label="t('switch')">
           <template #input>
-            <van-switch v-model="state.switchChecked" size="20" />
+            <van-switch v-model="switchChecked" size="20" />
           </template>
         </van-field>
 
         <van-field name="checkbox" :label="t('checkbox')">
           <template #input>
-            <van-checkbox v-model="state.checkbox" shape="square" />
+            <van-checkbox v-model="checkbox" shape="square" />
           </template>
         </van-field>
 
         <van-field name="checkboxGroup" :label="t('checkboxGroup')">
           <template #input>
-            <van-checkbox-group
-              v-model="state.checkboxGroup"
-              direction="horizontal"
-            >
+            <van-checkbox-group v-model="checkboxGroup" direction="horizontal">
               <van-checkbox name="1" shape="square">
                 {{ t('checkbox') }} 1
               </van-checkbox>
@@ -88,7 +83,7 @@ const onSubmit = (values: Record<string, string>) => {
 
         <van-field name="radio" :label="t('radio')">
           <template #input>
-            <van-radio-group v-model="state.radio" direction="horizontal">
+            <van-radio-group v-model="radio" direction="horizontal">
               <van-radio name="1">{{ t('radio') }} 1</van-radio>
               <van-radio name="2">{{ t('radio') }} 2</van-radio>
             </van-radio-group>
@@ -97,25 +92,25 @@ const onSubmit = (values: Record<string, string>) => {
 
         <van-field name="stepper" :label="t('stepper')">
           <template #input>
-            <van-stepper v-model="state.stepper" />
+            <van-stepper v-model="stepper" />
           </template>
         </van-field>
 
         <van-field name="rate" :label="t('rate')">
           <template #input>
-            <van-rate v-model="state.rate" />
+            <van-rate v-model="rate" />
           </template>
         </van-field>
 
         <van-field name="slider" :label="t('slider')">
           <template #input>
-            <van-slider v-model="state.slider" />
+            <van-slider v-model="slider" />
           </template>
         </van-field>
 
         <van-field name="uploader" :label="t('uploader')">
           <template #input>
-            <van-uploader v-model="state.uploader" max-count="2" />
+            <van-uploader v-model="uploader" max-count="2" />
           </template>
         </van-field>
 
