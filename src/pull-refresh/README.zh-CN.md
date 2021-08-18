@@ -39,8 +39,8 @@ export default {
     const onRefresh = () => {
       setTimeout(() => {
         Toast('刷新成功');
-        loading = false;
-        count++;
+        loading.value = false;
+        count.value++;
       }, 1000);
     };
 

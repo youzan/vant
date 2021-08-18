@@ -104,8 +104,8 @@ export default {
       'https://img.yzcdn.cn/vant/apple-1.jpg',
       'https://img.yzcdn.cn/vant/apple-2.jpg',
     ];
-    const onChange = (index) => {
-      index = index;
+    const onChange = (newIndex) => {
+      index.value = newIndex;
     };
 
     return {
