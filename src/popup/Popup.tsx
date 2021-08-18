@@ -229,7 +229,7 @@ export default defineComponent({
       }
     );
 
-    useExpose({ popupRef });
+    useExpose({ popupRef, triggerClose });
 
     useLockScroll(popupRef, () => props.show && props.lockScroll);
 
