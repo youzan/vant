@@ -29,7 +29,7 @@ app.use(DropdownItem);
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {

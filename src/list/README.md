@@ -22,42 +22,42 @@ app.use(List);
 
 ```html
 <van-list
-  v-model:loading="state.loading"
-  :finished="state.finished"
+  v-model:loading="loading"
+  :finished="finished"
   finished-text="Finished"
   @load="onLoad"
 >
-  <van-cell v-for="item in state.list" :key="item" :title="item" />
+  <van-cell v-for="item in list" :key="item" :title="item" />
 </van-list>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      list: [],
-      loading: false,
-      finished: false,
-    });
+    const list = ref([]);
+    const loading = ref(false);
+    const finished = ref(false);
 
     const onLoad = () => {
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
-          state.list.push(state.list.length + 1);
+          list.value.push(list.value.length + 1);
         }
-        state.loading = false;
+        loading.value = false;
 
-        if (state.list.length >= 40) {
-          state.finished = true;
+        if (list.value.length >= 40) {
+          finished.value = true;
         }
       }, 1000);
     };
 
     return {
-      state,
+      list,
       onLoad,
+      loading,
+      finished,
     };
   },
 };
@@ -67,35 +67,34 @@ export default {
 
 ```html
 <van-list
-  v-model:loading="state.loading"
-  v-model:error="state.error"
+  v-model:loading="loading"
+  v-model:error="error"
   error-text="Request failed. Click to reload"
   @load="onLoad"
 >
-  <van-cell v-for="item in state.list" :key="item" :title="item" />
+  <van-cell v-for="item in list" :key="item" :title="item" />
 </van-list>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      list: [],
-      error: false,
-      loading: false,
-    });
-
+    const list = ref([]);
+    const error = ref(false);
+    const loading = ref(false);
     const onLoad = () => {
       fetchSomeThing().catch(() => {
-        state.error = true;
+        error.value = true;
       });
     };
 
     return {
-      state,
+      list,
+      error,
       onLoad,
+      loading,
     };
   },
 };
@@ -104,58 +103,59 @@ export default {
 ### PullRefresh
 
 ```html
-<van-pull-refresh v-model="state.refreshing" @refresh="onRefresh">
+<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
   <van-list
-    v-model:loading="state.loading"
-    :finished="state.finished"
+    v-model:loading="loading"
+    :finished="finished"
     finished-text="Finished"
     @load="onLoad"
   >
-    <van-cell v-for="item in state.list" :key="item" :title="item" />
+    <van-cell v-for="item in list" :key="item" :title="item" />
   </van-list>
 </van-pull-refresh>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      list: [],
-      loading: false,
-      finished: false,
-      refreshing: false,
-    });
+    const list = ref([]);
+    const loading = ref(false);
+    const finished = ref(false);
+    const refreshing = ref(false);
 
     const onLoad = () => {
       setTimeout(() => {
-        if (state.refreshing) {
-          state.list = [];
-          state.refreshing = false;
+        if (refreshing.value) {
+          list.value = [];
+          refreshing.value = false;
         }
 
         for (let i = 0; i < 10; i++) {
-          state.list.push(state.list.length + 1);
+          list.value.push(list.value.length + 1);
         }
-        state.loading = false;
+        loading.value = false;
 
-        if (state.list.length >= 40) {
-          state.finished = true;
+        if (list.value.length >= 40) {
+          finished.value = true;
         }
       }, 1000);
     };
 
     const onRefresh = () => {
-      state.finished = false;
-      state.loading = true;
+      finished.value = false;
+      loading.value = true;
       onLoad();
     };
 
     return {
-      state,
+      list,
       onLoad,
+      loading,
+      finished,
       onRefresh,
+      refreshing,
     };
   },
 };

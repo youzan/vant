@@ -40,28 +40,21 @@ export default {
 ### 编辑联系人
 
 ```html
-<van-contact-card
-  type="edit"
-  :name="currentContact.name"
-  :tel="currentContact.tel"
-  @click="onEdit"
-/>
+<van-contact-card type="edit" :tel="tel" :name="name" @click="onEdit" />
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
   setup() {
-    const currentContact = reactive({
-      name: '张三',
-      tel: '13000000000',
-    });
+    const tel = ref('13000000000');
+    const name = ref('张三');
     const onEdit = () => Toast('edit');
-
     return {
-      onEdit,
+      tel,
+      name,
       currentContact,
     };
   },

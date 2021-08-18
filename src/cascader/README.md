@@ -22,34 +22,32 @@ app.use(Cascader);
 
 ```html
 <van-field
-  v-model="state.fieldValue"
+  v-model="fieldValue"
   is-link
   readonly
   label="Area"
   placeholder="Select Area"
-  @click="state.show = true"
+  @click="show = true"
 />
-<van-popup v-model="state.show" round position="bottom">
+<van-popup v-model="show" round position="bottom">
   <van-cascader
-    v-model="state.cascaderValue"
+    v-model="cascaderValue"
     title="Select Area"
     :options="options"
-    @close="state.show = false"
+    @close="show = false"
     @finish="onFinish"
   />
 </van-popup>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      show: false,
-      fieldValue: '',
-      cascaderValue: '',
-    });
+    const show = ref(false);
+    const fieldValue = ref('');
+    const cascaderValue = ref('');
     const options = [
       {
         text: 'Zhejiang',
@@ -63,14 +61,16 @@ export default {
       },
     ];
     const onFinish = ({ selectedOptions }) => {
-      state.show = false;
-      state.fieldValue = selectedOptions.map((option) => option.text).join('/');
+      show.value = false;
+      fieldValue.value = selectedOptions.map((option) => option.text).join('/');
     };
 
     return {
-      state,
+      show,
       options,
       onFinish,
+      fieldValue,
+      cascaderValue,
     };
   },
 };
@@ -80,11 +80,11 @@ export default {
 
 ```html
 <van-cascader
-  v-model="state.cascaderValue"
+  v-model="cascaderValue"
   title="Select Area"
   :options="options"
   active-color="#1989fa"
-  @close="state.show = false"
+  @close="show = false"
   @finish="onFinish"
 />
 ```
@@ -93,19 +93,19 @@ export default {
 
 ```html
 <van-field
-  v-model="state.fieldValue"
+  v-model="fieldValue"
   is-link
   readonly
   label="Area"
   placeholder="Select Area"
-  @click="state.show = true"
+  @click="show = true"
 />
-<van-popup v-model="state.show" round position="bottom">
+<van-popup v-model="show" round position="bottom">
   <van-cascader
-    v-model="state.cascaderValue"
+    v-model="cascaderValue"
     title="Select Area"
-    :options="state.options"
-    @close="state.show = false"
+    :options="options"
+    @close="show = false"
     @change="onChange"
     @finish="onFinish"
   />
@@ -113,26 +113,24 @@ export default {
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      show: false,
-      fieldValue: '',
-      cascaderValue: '',
-      options: [
-        {
-          text: 'Zhejiang',
-          value: '330000',
-          children: [],
-        },
-      ],
-    });
+    const show = ref(false);
+    const fieldValue = ref('');
+    const cascaderValue = ref('');
+    const options = ref([
+      {
+        text: 'Zhejiang',
+        value: '330000',
+        children: [],
+      },
+    ]);
     const onChange = ({ value }) => {
-      if (value === state.options[0].value) {
+      if (value === options.value[0].value) {
         setTimeout(() => {
-          state.options[0].children = [
+          options.value[0].children = [
             { text: 'Hangzhou', value: '330100' },
             { text: 'Ningbo', value: '330200' },
           ];
@@ -140,14 +138,16 @@ export default {
       }
     };
     const onFinish = ({ selectedOptions }) => {
-      state.show = false;
-      state.fieldValue = selectedOptions.map((option) => option.text).join('/');
+      show.value = false;
+      fieldValue.value = selectedOptions.map((option) => option.text).join('/');
     };
 
     return {
-      state,
-      onChange,
+      show,
+      options,
       onFinish,
+      fieldValue,
+      cascaderValue,
     };
   },
 };

@@ -24,34 +24,32 @@ app.use(Cascader);
 
 ```html
 <van-field
-  v-model="state.fieldValue"
+  v-model="fieldValue"
   is-link
   readonly
   label="地区"
   placeholder="请选择所在地区"
-  @click="state.show = true"
+  @click="show = true"
 />
-<van-popup v-model:show="state.show" round position="bottom">
+<van-popup v-model:show="show" round position="bottom">
   <van-cascader
-    v-model="state.cascaderValue"
+    v-model="cascaderValue"
     title="请选择所在地区"
     :options="options"
-    @close="state.show = false"
+    @close="show = false"
     @finish="onFinish"
   />
 </van-popup>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      show: false,
-      fieldValue: '',
-      cascaderValue: '',
-    });
+    const show = ref(false);
+    const fieldValue = ref('');
+    const cascaderValue = ref('');
     // 选项列表，children 代表子选项，支持多级嵌套
     const options = [
       {
@@ -67,14 +65,16 @@ export default {
     ];
     // 全部选项选择完毕后，会触发 finish 事件
     const onFinish = ({ selectedOptions }) => {
-      state.show = false;
-      state.fieldValue = selectedOptions.map((option) => option.text).join('/');
+      show.value = false;
+      fieldValue.value = selectedOptions.map((option) => option.text).join('/');
     };
 
     return {
-      state,
+      show,
       options,
       onFinish,
+      fieldValue,
+      cascaderValue,
     };
   },
 };
@@ -86,11 +86,11 @@ export default {
 
 ```html
 <van-cascader
-  v-model="state.cascaderValue"
+  v-model="cascaderValue"
   title="请选择所在地区"
   :options="options"
   active-color="#1989fa"
-  @close="state.show = false"
+  @close="show = false"
   @finish="onFinish"
 />
 ```
@@ -101,19 +101,19 @@ export default {
 
 ```html
 <van-field
-  v-model="state.fieldValue"
+  v-model="fieldValue"
   is-link
   readonly
   label="地区"
   placeholder="请选择所在地区"
-  @click="state.show = true"
+  @click="show = true"
 />
-<van-popup v-model:show="state.show" round position="bottom">
+<van-popup v-model:show="show" round position="bottom">
   <van-cascader
-    v-model="state.cascaderValue"
+    v-model="cascaderValue"
     title="请选择所在地区"
-    :options="state.options"
-    @close="state.show = false"
+    :options="options"
+    @close="show = false"
     @change="onChange"
     @finish="onFinish"
   />
@@ -121,26 +121,24 @@ export default {
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      show: false,
-      fieldValue: '',
-      cascaderValue: '',
-      options: [
-        {
-          text: '浙江省',
-          value: '330000',
-          children: [],
-        },
-      ],
-    });
+    const show = ref(false);
+    const fieldValue = ref('');
+    const cascaderValue = ref('');
+    const options = ref([
+      {
+        text: '浙江省',
+        value: '330000',
+        children: [],
+      },
+    ]);
     const onChange = ({ value }) => {
-      if (value === state.options[0].value) {
+      if (value === options.value[0].value) {
         setTimeout(() => {
-          state.options[0].children = [
+          options.value[0].children = [
             { text: '杭州市', value: '330100' },
             { text: '宁波市', value: '330200' },
           ];
@@ -148,14 +146,16 @@ export default {
       }
     };
     const onFinish = ({ selectedOptions }) => {
-      state.show = false;
-      state.fieldValue = selectedOptions.map((option) => option.text).join('/');
+      show.value = false;
+      fieldValue.value = selectedOptions.map((option) => option.text).join('/');
     };
 
     return {
-      state,
-      onChange,
+      show,
+      options,
       onFinish,
+      fieldValue,
+      cascaderValue,
     };
   },
 };

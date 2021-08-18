@@ -189,25 +189,23 @@ export default {
 When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt.
 
 ```html
-<van-picker title="Title" :columns="state.columns" :loading="state.loading" />
+<van-picker title="Title" :columns="columns" :loading="loading" />
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      columns: [],
-      loading: true,
-    });
+    const columns = ref([]);
+    const loading = ref(true);
 
     setTimeout(() => {
-      state.loading = false;
-      state.columns = ['Option'];
+      columns.value = ['Option'];
+      loading.value = false;
     }, 1000);
 
-    return { state };
+    return { columns, loading };
   },
 };
 ```
@@ -216,43 +214,42 @@ export default {
 
 ```html
 <van-field
-  v-model="state.value"
+  v-model="result"
   is-link
   readonly
   label="City"
   placeholder="Choose City"
-  @click="state.showPicker = true"
+  @click="showPicker = true"
 />
 <van-popup v-model:show="showPicker" round position="bottom">
   <van-picker
     title="Title"
-    :columns="state.columns"
-    @cancel="state.showPicker = false"
+    :columns="columns"
+    @cancel="showPicker = false"
     @confirm="onConfirm"
   />
 </van-popup>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
     const columns = ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'];
-    const state = reactive({
-      value: '',
-      showPicker: false,
-    });
+    const result = ref('');
+    const showPicker = ref(false);
 
     const onConfirm = (value) => {
-      state.value = value;
-      state.showPicker = false;
+      result.value = value;
+      showPicker.value = false;
     };
 
     return {
-      state,
+      result,
       columns,
       onConfirm,
+      showPicker,
     };
   },
 };
