@@ -32,37 +32,36 @@ app.use(ContactList);
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
   setup() {
-    const state = reactive({
-      chosenContactId: '1',
-      list: [
-        {
-          id: '1',
-          name: 'John Snow',
-          tel: '13000000000',
-          isDefault: true,
-        },
-        {
-          id: '2',
-          name: 'Ned Stark',
-          tel: '1310000000',
-        },
-      ],
-    });
+    const chosenContactId = ref('1');
+    const list = ref([
+      {
+        id: '1',
+        name: 'John Snow',
+        tel: '13000000000',
+        isDefault: true,
+      },
+      {
+        id: '2',
+        name: 'Ned Stark',
+        tel: '1310000000',
+      },
+    ]);
 
     const onAdd = () => Toast('Add');
     const onEdit = (contact) => Toast('Edit' + contact.id);
     const onSelect = (contact) => Toast('Select' + contact.id);
 
     return {
-      state,
+      list,
       onAdd,
       onEdit,
       onSelect,
+      chosenContactId,
     };
   },
 };

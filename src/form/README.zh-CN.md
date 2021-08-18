@@ -28,14 +28,14 @@ app.use(CellGroup);
 <van-form @submit="onSubmit">
   <van-cell-group inset>
     <van-field
-      v-model="state.username"
+      v-model="username"
       name="用户名"
       label="用户名"
       placeholder="用户名"
       :rules="[{ required: true, message: '请填写用户名' }]"
     />
     <van-field
-      v-model="state.password"
+      v-model="password"
       type="password"
       name="密码"
       label="密码"
@@ -52,20 +52,19 @@ app.use(CellGroup);
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      username: '',
-      password: '',
-    });
+    const username = ref('');
+    const password = ref('');
     const onSubmit = (values) => {
       console.log('submit', values);
     };
 
     return {
-      state,
+      username,
+      password,
       onSubmit,
     };
   },
@@ -81,28 +80,28 @@ export default {
   <van-cell-group inset>
     <!-- 通过 pattern 进行正则校验 -->
     <van-field
-      v-model="state.value1"
+      v-model="value1"
       name="pattern"
       placeholder="正则校验"
       :rules="[{ pattern, message: '请输入正确内容' }]"
     />
     <!-- 通过 validator 进行函数校验 -->
     <van-field
-      v-model="state.value2"
+      v-model="value2"
       name="validator"
       placeholder="函数校验"
       :rules="[{ validator, message: '请输入正确内容' }]"
     />
     <!-- 通过 validator 返回错误提示 -->
     <van-field
-      v-model="state.value3"
+      v-model="value3"
       name="validatorMessage"
       placeholder="校验函数返回错误提示"
       :rules="[{ validator: validatorMessage }]"
     />
     <!-- 通过 validator 进行异步函数校验 -->
     <van-field
-      v-model="state.value4"
+      v-model="value4"
       name="asyncValidator"
       placeholder="异步函数校验"
       :rules="[{ validator: asyncValidator, message: '请输入正确内容' }]"
@@ -117,17 +116,15 @@ export default {
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
   setup() {
-    const state = reactive({
-      value1: '',
-      value2: '',
-      value3: '',
-      value4: '',
-    });
+    const value1 = ref('');
+    const value2 = ref('');
+    const value3 = ref('');
+    const value4 = ref('');
     const pattern = /\d{6}/;
 
     // 校验函数返回 true 表示校验通过，false 表示不通过
@@ -152,7 +149,10 @@ export default {
     };
 
     return {
-      state,
+      value1,
+      value2,
+      value3,
+      value4,
       pattern,
       onFailed,
       validator,
@@ -344,43 +344,42 @@ export default {
 
 ```html
 <van-field
-  v-model="state.value"
+  v-model="result"
   is-link
   readonly
   name="picker"
   label="选择器"
   placeholder="点击选择城市"
-  @click="state.showPicker = true"
+  @click="showPicker = true"
 />
-<van-popup v-model:show="state.showPicker" position="bottom">
+<van-popup v-model:show="showPicker" position="bottom">
   <van-picker
     :columns="columns"
     @confirm="onConfirm"
-    @cancel="state.showPicker = false"
+    @cancel="showPicker = false"
   />
 </van-popup>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      value: '',
-      showPicker: false,
-    });
+    const result = ref('');
+    const showPicker = ref(false);
     const columns = ['杭州', '宁波', '温州', '嘉兴', '湖州'];
 
     const onConfirm = (value) => {
-      state.value = value;
-      state.showPicker = false;
+      result.value = value;
+      showPicker.value = false;
     };
 
     return {
-      state,
+      result,
       columns,
       onConfirm,
+      showPicker,
     };
   },
 };
@@ -392,40 +391,40 @@ export default {
 
 ```html
 <van-field
-  v-model="state.value"
+  v-model="result"
   is-link
   readonly
   name="datetimePicker"
   label="时间选择"
   placeholder="点击选择时间"
-  @click="state.showPicker = true"
+  @click="showPicker = true"
 />
-<van-popup v-model:show="state.showPicker" position="bottom">
+<van-popup v-model:show="showPicker" position="bottom">
   <van-datetime-picker
     type="time"
     @confirm="onConfirm"
-    @cancel="state.showPicker = false"
+    @cancel="showPicker = false"
   />
 </van-popup>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      value: '',
-      showPicker: false,
-    });
+    const result = ref('');
+    const showPicker = ref(false);
+
     const onConfirm = (value) => {
-      state.value = value;
-      state.showPicker = false;
+      result.value = value;
+      showPicker.value = false;
     };
 
     return {
-      state,
+      result,
       onConfirm,
+      showPicker,
     };
   },
 };
@@ -437,43 +436,43 @@ export default {
 
 ```html
 <van-field
-  v-model="state.value"
+  v-model="result"
   is-link
   readonly
   name="area"
   label="地区选择"
   placeholder="点击选择省市区"
-  @click="state.showArea = true"
+  @click="showArea = true"
 />
-<van-popup v-model:show="state.showArea" position="bottom">
+<van-popup v-model:show="showArea" position="bottom">
   <van-area
     :area-list="areaList"
     @confirm="onConfirm"
-    @cancel="state.showArea = false"
+    @cancel="showArea = false"
   />
 </van-popup>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
+import { areaList } from '@vant/area-data';
 
 export default {
   setup() {
-    const state = reactive({
-      value: '',
-      showArea: false,
-    });
+    const result = ref('');
+    const showArea = ref(false);
     const onConfirm = (value) => {
-      state.showArea = false;
-      state.value = values
+      showArea.value = false;
+      result.value = values
         .filter((item) => !!item)
         .map((item) => item.name)
         .join('/');
     };
 
     return {
-      state,
-      areaList: {}, // 数据格式见 Area 组件文档
+      result,
+      areaList,
+      showArea,
       onConfirm,
     };
   },
@@ -486,34 +485,33 @@ export default {
 
 ```html
 <van-field
-  v-model="state.value"
+  v-model="value"
   is-link
   readonly
   name="calendar"
   label="日历"
   placeholder="点击选择日期"
-  @click="state.showCalendar = true"
+  @click="showCalendar = true"
 />
-<van-calendar v-model:show="state.showCalendar" @confirm="onConfirm" />
+<van-calendar v-model:show="showCalendar" @confirm="onConfirm" />
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      value: '',
-      showCalendar: false,
-    });
+    const result = ref('');
+    const showCalendar = ref(false);
     const onConfirm = (date) => {
-      state.value = `${date.getMonth() + 1}/${date.getDate()}`;
-      state.showCalendar = false;
+      result.value = `${date.getMonth() + 1}/${date.getDate()}`;
+      showCalendar.value = false;
     };
 
     return {
-      state,
+      result,
       onConfirm,
+      showCalendar,
     };
   },
 };

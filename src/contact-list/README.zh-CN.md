@@ -22,8 +22,8 @@ app.use(ContactList);
 
 ```html
 <van-contact-list
-  v-model="state.chosenContactId"
-  :list="state.list"
+  v-model="chosenContactId"
+  :list="list"
   default-tag-text="默认"
   @add="onAdd"
   @edit="onEdit"
@@ -32,37 +32,36 @@ app.use(ContactList);
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
   setup() {
-    const state = reactive({
-      chosenContactId: '1',
-      list: [
-        {
-          id: '1',
-          name: '张三',
-          tel: '13000000000',
-          isDefault: true,
-        },
-        {
-          id: '2',
-          name: '李四',
-          tel: '1310000000',
-        },
-      ],
-    });
+    const chosenContactId = ref('1');
+    const list = ref([
+      {
+        id: '1',
+        name: '张三',
+        tel: '13000000000',
+        isDefault: true,
+      },
+      {
+        id: '2',
+        name: '李四',
+        tel: '1310000000',
+      },
+    ]);
 
     const onAdd = () => Toast('新增');
     const onEdit = (contact) => Toast('编辑' + contact.id);
     const onSelect = (contact) => Toast('选择' + contact.id);
 
     return {
-      state,
+      list,
       onAdd,
       onEdit,
       onSelect,
+      chosenContactId,
     };
   },
 };

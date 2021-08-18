@@ -24,21 +24,19 @@ app.use(TreeSelect);
 
 ```html
 <van-tree-select
-  v-model:active-id="state.activeId"
-  v-model:main-active-index="state.activeIndex"
+  v-model:active-id="activeId"
+  v-model:main-active-index="activeIndex"
   :items="items"
 />
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      activeId: 1,
-      activeIndex: 0,
-    });
+    const activeId = ref(1);
+    const activeIndex = ref(0);
     const items = [
       {
         text: '浙江',
@@ -57,8 +55,9 @@ export default {
     ];
 
     return {
-      state,
       items,
+      activeId,
+      activeIndex,
     };
   },
 };
@@ -70,21 +69,19 @@ export default {
 
 ```html
 <van-tree-select
-  v-model:active-id="state.activeIds"
-  v-model:main-active-index="state.activeIndex"
+  v-model:active-id="activeIds"
+  v-model:main-active-index="activeIndex"
   :items="items"
 />
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      activeId: [1, 2],
-      activeIndex: 0,
-    });
+    const activeId = ref([1, 2]);
+    const activeIndex = ref(0);
     const items = [
       {
         text: '浙江',
@@ -103,8 +100,9 @@ export default {
     ];
 
     return {
-      state,
       items,
+      activeId,
+      activeIndex,
     };
   },
 };

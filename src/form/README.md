@@ -26,14 +26,14 @@ app.use(CellGroup);
 <van-form @submit="onSubmit">
   <van-cell-group inset>
     <van-field
-      v-model="state.username"
+      v-model="username"
       name="Username"
       label="Username"
       placeholder="Username"
       :rules="[{ required: true, message: 'Username is required' }]"
     />
     <van-field
-      v-model="state.password"
+      v-model="password"
       type="password"
       name="Password"
       label="Password"
@@ -50,20 +50,19 @@ app.use(CellGroup);
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      username: '',
-      password: '',
-    });
+    const username = ref('');
+    const password = ref('');
     const onSubmit = (values) => {
       console.log('submit', values);
     };
 
     return {
-      state,
+      username,
+      password,
       onSubmit,
     };
   },
@@ -76,25 +75,25 @@ export default {
 <van-form @failed="onFailed">
   <van-cell-group inset>
     <van-field
-      v-model="state.value1"
+      v-model="value1"
       name="pattern"
       placeholder="Use pattern"
       :rules="[{ pattern, message: 'Error message' }]"
     />
     <van-field
-      v-model="state.value2"
+      v-model="value2"
       name="validator"
       placeholder="Use validator"
       :rules="[{ validator, message: 'Error message' }]"
     />
     <van-field
-      v-model="state.value3"
+      v-model="value3"
       name="validatorMessage"
       placeholder="Use validator to return message"
       :rules="[{ validator: validatorMessage }]"
     />
     <van-field
-      v-model="state.value4"
+      v-model="value4"
       name="asyncValidator"
       placeholder="Use async validator"
       :rules="[{ validator: asyncValidator, message: 'Error message' }]"
@@ -109,16 +108,15 @@ export default {
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
   setup() {
-    const state = reactive({
-      value1: '',
-      value2: '',
-      value3: '',
-    });
+    const value1 = ref('');
+    const value2 = ref('');
+    const value3 = ref('');
+    const value4 = ref('');
     const pattern = /\d{6}/;
 
     const validator = (val) => /1\d{10}/.test(val);
@@ -140,7 +138,10 @@ export default {
     };
 
     return {
-      state,
+      value1,
+      value2,
+      value3,
+      value4,
       pattern,
       onFailed,
       validator,
@@ -317,43 +318,42 @@ export default {
 
 ```html
 <van-field
-  v-model="state.value"
+  v-model="result"
   is-link
   readonly
   name="picker"
   label="Picker"
   placeholder="Select city"
-  @click="state.showPicker = true"
+  @click="showPicker = true"
 />
-<van-popup v-model:show="state.showPicker" position="bottom">
+<van-popup v-model:show="showPicker" position="bottom">
   <van-picker
     :columns="columns"
     @confirm="onConfirm"
-    @cancel="state.showPicker = false"
+    @cancel="showPicker = false"
   />
 </van-popup>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      value: '',
-      showPicker: false,
-    });
+    const result = ref('');
+    const showPicker = ref(false);
     const columns = ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'];
 
     const onConfirm = (value) => {
-      state.value = value;
-      state.showPicker = false;
+      result.value = value;
+      showPicker.value = false;
     };
 
     return {
-      state,
+      result,
       columns,
       onConfirm,
+      showPicker,
     };
   },
 };
@@ -363,40 +363,40 @@ export default {
 
 ```html
 <van-field
-  v-model="state.value"
+  v-model="result"
   is-link
   readonly
   name="datetimePicker"
   label="Datetime Picker"
   placeholder="Select time"
-  @click="state.showPicker = true"
+  @click="showPicker = true"
 />
-<van-popup v-model:show="state.showPicker" position="bottom">
+<van-popup v-model:show="showPicker" position="bottom">
   <van-datetime-picker
     type="time"
     @confirm="onConfirm"
-    @cancel="state.showPicker = false"
+    @cancel="showPicker = false"
   />
 </van-popup>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      value: '',
-      showPicker: false,
-    });
+    const result = ref('');
+    const showPicker = ref(false);
+
     const onConfirm = (value) => {
-      state.value = value;
-      state.showPicker = false;
+      result.value = value;
+      showPicker.value = false;
     };
 
     return {
-      state,
+      result,
       onConfirm,
+      showPicker,
     };
   },
 };
@@ -406,43 +406,43 @@ export default {
 
 ```html
 <van-field
-  v-model="state.value"
+  v-model="result"
   is-link
   readonly
   name="area"
   label="Area Picker"
   placeholder="Select area"
-  @click="state.showArea = true"
+  @click="showArea = true"
 />
-<van-popup v-model:show="state.showArea" position="bottom">
+<van-popup v-model:show="showArea" position="bottom">
   <van-area
     :area-list="areaList"
     @confirm="onConfirm"
-    @cancel="state.showArea = false"
+    @cancel="showArea = false"
   />
 </van-popup>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
+import { areaList } from '@vant/area-data';
 
 export default {
   setup() {
-    const state = reactive({
-      value: '',
-      showArea: false,
-    });
+    const result = ref('');
+    const showArea = ref(false);
     const onConfirm = (value) => {
-      state.showArea = false;
-      state.value = values
+      showArea.value = false;
+      result.value = values
         .filter((item) => !!item)
         .map((item) => item.name)
         .join('/');
     };
 
     return {
-      state,
-      areaList: {},
+      result,
+      areaList,
+      showArea,
       onConfirm,
     };
   },
@@ -453,34 +453,33 @@ export default {
 
 ```html
 <van-field
-  v-model="state.value"
+  v-model="result"
   is-link
   readonly
   name="calendar"
   label="Calendar"
   placeholder="Select date"
-  @click="state.showCalendar = true"
+  @click="showCalendar = true"
 />
-<van-calendar v-model:show="state.showCalendar" @confirm="onConfirm" />
+<van-calendar v-model:show="showCalendar" @confirm="onConfirm" />
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      value: '',
-      showCalendar: false,
-    });
+    const result = ref('');
+    const showCalendar = ref(false);
     const onConfirm = (date) => {
-      state.value = `${date.getMonth() + 1}/${date.getDate()}`;
-      state.showCalendar = false;
+      result.value = `${date.getMonth() + 1}/${date.getDate()}`;
+      showCalendar.value = false;
     };
 
     return {
-      state,
+      result,
       onConfirm,
+      showCalendar,
     };
   },
 };

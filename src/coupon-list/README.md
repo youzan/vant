@@ -24,20 +24,20 @@ app.use(CouponList);
 ```html
 <!-- Coupon Cell -->
 <van-coupon-cell
-  :coupons="state.coupons"
-  :chosen-coupon="state.chosenCoupon"
-  @click="state.showList = true"
+  :coupons="coupons"
+  :chosen-coupon="chosenCoupon"
+  @click="showList = true"
 />
 <!-- Coupon List -->
 <van-popup
-  v-model:show="state.showList"
+  v-model:show="showList"
   round
   position="bottom"
   style="height: 90%; padding-top: 4px;"
 >
   <van-coupon-list
-    :coupons="state.coupons"
-    :chosen-coupon="state.chosenCoupon"
+    :coupons="coupons"
+    :chosen-coupon="chosenCoupon"
     :disabled-coupons="disabledCoupons"
     @change="onChange"
     @exchange="onExchange"
@@ -46,40 +46,40 @@ app.use(CouponList);
 ```
 
 ```js
-import { reactive } from 'vue';
-
-const coupon = {
-  available: 1,
-  originCondition: 0,
-  reason: '',
-  value: 150,
-  name: 'Coupon name',
-  startAt: 1489104000,
-  endAt: 1514592000,
-  valueDesc: '1.5',
-  unitDesc: '元',
-};
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      coupons: [coupon],
-      showList: false,
-      chosenCoupon: -1,
-    });
+    const coupon = {
+      available: 1,
+      originCondition: 0,
+      reason: '',
+      value: 150,
+      name: 'Coupon name',
+      startAt: 1489104000,
+      endAt: 1514592000,
+      valueDesc: '1.5',
+      unitDesc: '元',
+    };
+
+    const coupons = ref([coupon]);
+    const showList = ref(false);
+    const chosenCoupon = ref(-1);
 
     const onChange = (index) => {
-      state.showList = false;
-      state.chosenCoupon = index;
+      showList.value = false;
+      chosenCoupon.value = index;
     };
     const onExchange = (code) => {
-      state.coupons.push(coupon);
+      coupons.value.push(coupon);
     };
 
     return {
-      state,
+      coupons,
+      showList,
       onChange,
       onExchange,
+      chosenCoupon,
       disabledCoupons: [coupon],
     };
   },

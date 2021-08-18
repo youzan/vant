@@ -211,25 +211,23 @@ export default {
 若选择器数据是异步获取的，可以通过 `loading` 属性显示加载提示。
 
 ```html
-<van-picker :columns="state.columns" :loading="state.loading" />
+<van-picker :columns="columns" :loading="loading" />
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      columns: [],
-      loading: true,
-    });
+    const columns = ref([]);
+    const loading = ref(true);
 
     setTimeout(() => {
-      state.loading = false;
-      state.columns = ['选项'];
+      columns.value = ['选项'];
+      loading.value = false;
     }, 1000);
 
-    return { state };
+    return { columns, loading };
   },
 };
 ```
@@ -240,42 +238,41 @@ export default {
 
 ```html
 <van-field
-  v-model="state.value"
+  v-model="value"
   is-link
   readonly
   label="城市"
   placeholder="选择城市"
-  @click="state.showPicker = true"
+  @click="showPicker = true"
 />
-<van-popup v-model:show="state.showPicker" round position="bottom">
+<van-popup v-model:show="showPicker" round position="bottom">
   <van-picker
     :columns="columns"
-    @cancel="state.showPicker = false"
+    @cancel="showPicker = false"
     @confirm="onConfirm"
   />
 </van-popup>
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
     const columns = ['杭州', '宁波', '温州', '绍兴', '湖州', '嘉兴', '金华'];
-    const state = reactive({
-      value: '',
-      showPicker: false,
-    });
+    const result = ref('');
+    const showPicker = ref(false);
 
     const onConfirm = (value) => {
-      state.value = value;
-      state.showPicker = false;
+      result.value = value;
+      showPicker.value = false;
     };
 
     return {
-      state,
+      result,
       columns,
       onConfirm,
+      showPicker,
     };
   },
 };

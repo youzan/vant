@@ -40,29 +40,23 @@ export default {
 ### Edit Contact
 
 ```html
-<van-contact-card
-  type="edit"
-  :name="currentContact.name"
-  :tel="currentContact.tel"
-  @click="onEdit"
-/>
+<van-contact-card type="edit" :tel="tel" :name="name" @click="onEdit" />
 ```
 
 ```js
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import { Toast } from 'vant';
 
 export default {
   setup() {
-    const currentContact = reactive({
-      name: 'John Snow',
-      tel: '13000000000',
-    });
+    const tel = ref('13000000000');
+    const name = ref('John Snow');
     const onEdit = () => Toast('edit');
 
     return {
+      tel,
+      name,
       onEdit,
-      currentContact,
     };
   },
 };
