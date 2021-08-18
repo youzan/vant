@@ -23,8 +23,8 @@ app.use(DropdownItem);
 
 ```html
 <van-dropdown-menu>
-  <van-dropdown-item v-model="state.value1" :options="option1" />
-  <van-dropdown-item v-model="state.value2" :options="option2" />
+  <van-dropdown-item v-model="value1" :options="option1" />
+  <van-dropdown-item v-model="value2" :options="option2" />
 </van-dropdown-menu>
 ```
 
@@ -33,10 +33,8 @@ import { reactive } from 'vue';
 
 export default {
   setup() {
-    const state = reactive({
-      value1: 0,
-      value2: 'a',
-    });
+    const value1 = ref(0);
+    const value2 = ref('a');
     const option1 = [
       { text: '全部商品', value: 0 },
       { text: '新款商品', value: 1 },
@@ -49,7 +47,8 @@ export default {
     ];
 
     return {
-      state,
+      value1,
+      value2,
       option1,
       option2,
     };
@@ -85,16 +84,14 @@ export default {
 ```
 
 ```js
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 export default {
   setup() {
     const item = ref(null);
-    const state = reactive({
-      value: 0,
-      switch1: false,
-      switch2: false,
-    });
+    const value = ref(0);
+    const switch1 = ref(false);
+    const switch2 = ref(false);
     const options = [
       { text: '全部商品', value: 0 },
       { text: '新款商品', value: 1 },
@@ -106,7 +103,9 @@ export default {
 
     return {
       item,
-      state,
+      value,
+      switch1,
+      switch2,
       options,
       onConfirm,
     };
