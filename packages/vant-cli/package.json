@@ -34,8 +34,7 @@
   "devDependencies": {
     "@types/fs-extra": "^9.0.11",
     "@types/lodash": "^4.14.170",
-    "@types/postcss-load-config": "^2.0.1",
-    "simple-progress-webpack-plugin": "^2.0.0"
+    "@types/postcss-load-config": "^2.0.1"
   },
   "dependencies": {
     "@babel/core": "^7.14.5",

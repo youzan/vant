@@ -2774,14 +2774,6 @@ chalk@4.1.1, chalk@^4.0.0, chalk@^4.1.0, chalk@^4.1.1:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@4.1.x:
-  version "4.1.2"
-  resolved "https://registry.nlark.com/chalk/download/chalk-4.1.2.tgz?cache=0&sync_timestamp=1627646697260&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fchalk%2Fdownload%2Fchalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
-  integrity sha1-qsTit3NKdAhnrrFr8CqtVWoeegE=
-  dependencies:
-    ansi-styles "^4.1.0"
-    supports-color "^7.1.0"
-
 chalk@^2.0.0, chalk@^2.1.0, chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
@@ -4405,7 +4397,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
-figures@3.2.x, figures@^3.0.0, figures@^3.2.0:
+figures@^3.0.0, figures@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/figures/-/figures-3.2.0.tgz#625c18bd293c604dc4a8ddb2febf0c88341746af"
   integrity sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==
@@ -6714,7 +6706,7 @@ log-symbols@^4.0.0, log-symbols@^4.1.0:
     chalk "^4.1.0"
     is-unicode-supported "^0.1.0"
 
-log-update@4.0.x, log-update@^4.0.0:
+log-update@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npm.taobao.org/log-update/download/log-update-4.0.0.tgz?cache=0&sync_timestamp=1587903562831&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flog-update%2Fdownload%2Flog-update-4.0.0.tgz#589ecd352471f2a1c0c570287543a64dfd20e0a1"
   integrity sha1-WJ7NNSRx8qHAxXAodUOmTf0g4KE=
@@ -8988,15 +8980,6 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3:
   version "3.0.3"
   resolved "https://registry.npm.taobao.org/signal-exit/download/signal-exit-3.0.3.tgz?cache=0&sync_timestamp=1592843131591&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsignal-exit%2Fdownload%2Fsignal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha1-oUEMLt2PB3sItOJTyOrPyvBXRhw=
-
-simple-progress-webpack-plugin@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.nlark.com/simple-progress-webpack-plugin/download/simple-progress-webpack-plugin-2.0.0.tgz#2d51a63e266070cdd181215a6665e29ea6e82055"
-  integrity sha1-LVGmPiZgcM3RgSFaZmXinqboIFU=
-  dependencies:
-    chalk "4.1.x"
-    figures "3.2.x"
-    log-update "4.0.x"
 
 sisteransi@^1.0.4:
   version "1.0.4"
