@@ -115,17 +115,15 @@ export default defineComponent({
       }
     };
 
-    const triggerClose = () => {
-      opened = false;
-      emit('close');
-      emit('update:show', false);
-    };
-
     const close = () => {
       if (opened) {
         callInterceptor({
           interceptor: props.beforeClose,
-          done: triggerClose,
+          done() {
+            opened = false;
+            emit('close');
+            emit('update:show', false);
+          },
         });
       }
     };
@@ -224,12 +222,13 @@ export default defineComponent({
         if (value) {
           open();
         } else {
-          close();
+          opened = false;
+          emit('close');
         }
       }
     );
 
-    useExpose({ popupRef, triggerClose });
+    useExpose({ popupRef });
 
     useLockScroll(popupRef, () => props.show && props.lockScroll);
 

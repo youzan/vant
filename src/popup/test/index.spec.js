@@ -230,3 +230,16 @@ test('should allow to prevent close with before-close prop', async () => {
   await wrapper.find('.van-overlay').trigger('click');
   expect(wrapper.emitted('update:show')[0]).toEqual([false]);
 });
+
+test('should not call before-close when show prop becomes false', async () => {
+  const beforeClose = jest.fn();
+  const wrapper = mount(Popup, {
+    props: {
+      show: true,
+      beforeClose,
+    },
+  });
+
+  await wrapper.setProps({ show: false });
+  expect(beforeClose).toHaveBeenCalledTimes(0);
+});
