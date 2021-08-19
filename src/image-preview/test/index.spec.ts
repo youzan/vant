@@ -215,7 +215,6 @@ test('before close prop', async () => {
   expect(wrapper.emitted('close')).toBeFalsy();
 
   await wrapper.setProps({ show: false });
-  expect(wrapper.emitted('update:show')![0]).toBeTruthy();
   expect(wrapper.emitted('close')![0]).toBeTruthy();
 });
 
