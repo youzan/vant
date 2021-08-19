@@ -1,4 +1,4 @@
-import { PropType, reactive, defineComponent } from 'vue';
+import { ref, PropType, reactive, defineComponent } from 'vue';
 
 // Utils
 import {
@@ -68,10 +68,17 @@ export default defineComponent({
       cancel: false,
     });
 
+    const popupRef = ref();
+
     const updateShow = (value: boolean) => emit('update:show', value);
 
     const close = (action: DialogAction) => {
-      updateShow(false);
+      if (popupRef.value) {
+        popupRef.value.triggerClose();
+      } else {
+        updateShow(false);
+      }
+
       if (props.callback) {
         props.callback(action);
       }
@@ -221,6 +228,7 @@ export default defineComponent({
       const { width, title, theme, message, className } = props;
       return (
         <Popup
+          ref={popupRef}
           role="dialog"
           class={[bem([theme]), className]}
           style={{ width: addUnit(width) }}
