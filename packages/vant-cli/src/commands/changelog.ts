@@ -52,6 +52,7 @@ export async function changelog(): Promise<void> {
     conventionalChangelog(
       {
         preset: 'angular',
+        releaseCount: 2,
       },
       null,
       null,
