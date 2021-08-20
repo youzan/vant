@@ -51,7 +51,7 @@ test('disabled', async () => {
   expect(afterRead).toHaveBeenCalledTimes(0);
 });
 
-test('result-type as text', async (done) => {
+test('result-type as text', (done) => {
   const wrapper = mount(Uploader, {
     props: {
       resultType: 'text',
@@ -555,7 +555,7 @@ test('show-upload prop', async () => {
   expect(wrapper.find('.van-uploader__upload').exists()).toBeFalsy();
 });
 
-test('file message should be reactive', async (done) => {
+test('file message should be reactive', (done) => {
   const wrapper = mount(Uploader, {
     props: {
       modelValue: [],
