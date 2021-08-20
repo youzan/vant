@@ -14,7 +14,8 @@
   background-color: @cell-background-color;
 
   &::after {
-    .hairline-bottom(@cell-border-color, @padding-md, @padding-md);
+    // .hairline-bottom(@cell-border-color, @padding-md, @padding-md);
+    .hairline-bottom(@cell-border-color, @padding-md, 0);
   }
 
   &:last-child::after,
@@ -32,6 +33,10 @@
   &__title,
   &__value {
     flex: 1;
+  }
+
+  &__title {
+    // padding-left: 16px;
   }
 
   &__value {

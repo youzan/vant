@@ -1,10 +1,18 @@
-module.exports = {
-  plugins: {
-    'postcss-px-to-viewport': {
-      viewportWidth: 375,
-      // propList: ["*", "!font-size", "!line-height"],
-      propList: ["*"],
-      selectorBlackList: ["nov"]
+if (process.env.scecn == 'desktop') {
+  module.exports = {
+    plugins: {
     }
-  }
-};
+  };
+} else {
+  module.exports = {
+    plugins: {
+      'postcss-px-to-viewport': {
+        viewportWidth: 375,
+        // propList: ["*", "!font-size", "!line-height"],
+        propList: ["*"],
+        selectorBlackList: ["nov"]
+      }
+    }
+  };
+}
+

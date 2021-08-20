@@ -90,7 +90,7 @@ export default createComponent({
           })}
           onClick={this.onClick}
         >
-           {this.slots('inject')}
+          {this.slots('inject')}
           {this.slots()}
           {this.closeable && (
             <Icon
