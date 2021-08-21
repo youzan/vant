@@ -47,7 +47,8 @@ Vant 3 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3).
 
 | Project | Description |
 | --- | --- |
-| [vant-react](https://github.com/mxdi9i7/vant-react) | Vant React |
+| [3lang3/react-vant](https://github.com/3lang3/react-vant) | React mobile UI Components base on Vant |
+| [mxdi9i7/vant-react](https://github.com/mxdi9i7/vant-react) | Mobile UI Components built on React and TS, inspired by Vant |
 | [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Alipay MiniProgram UI |
 | [taroify](https://gitee.com/mallfoundry/taroify) | Vant Taro |
 
