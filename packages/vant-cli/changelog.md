@@ -11,6 +11,7 @@
 - ts-jest v27
 - postcss v8
 - clean-css v5
+- commander v8
 - css-loader v6
 - babel-jest v27
 - sass-loader v12

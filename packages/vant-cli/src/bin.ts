@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { command, parse, version } from 'commander';
+import { Command } from 'commander';
 
 import {
   dev,
@@ -14,13 +14,16 @@ import {
   cliVersion,
 } from '.';
 
-version(`@vant/cli ${cliVersion}`);
+const program = new Command();
 
-command('dev').description('Run webpack dev server').action(dev);
+program.version(`@vant/cli ${cliVersion}`);
 
-command('lint').description('Run eslint and stylelint').action(lint);
+program.command('dev').description('Run webpack dev server').action(dev);
 
-command('test')
+program.command('lint').description('Run eslint and stylelint').action(lint);
+
+program
+  .command('test')
   .description('Run unit tests through jest')
   .option(
     '--watch',
@@ -45,26 +48,33 @@ command('test')
   .option('--debug', 'Print debugging info about your Jest config')
   .action(test);
 
-command('clean').description('Clean all dist files').action(clean);
+program.command('clean').description('Clean all dist files').action(clean);
 
-command('build')
+program
+  .command('build')
   .description('Compile components in production mode')
   .option('--watch', 'Watch file change')
   .action(build);
 
-command('release')
+program
+  .command('release')
   .description('Compile components and release it')
   .option('--tag <tag>', 'Release tag')
   .action(release);
 
-command('build-site')
+program
+  .command('build-site')
   .description('Compile site in production mode')
   .action(buildSite);
 
-command('changelog').description('Generate changelog').action(changelog);
+program
+  .command('changelog')
+  .description('Generate changelog')
+  .action(changelog);
 
-command('commit-lint <gitParams>')
+program
+  .command('commit-lint <gitParams>')
   .description('Lint commit message')
   .action(commitLint);
 
-parse();
+program.parse();
