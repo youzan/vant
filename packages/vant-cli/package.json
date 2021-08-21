@@ -1,13 +1,13 @@
 {
   "name": "@vant/cli",
-  "version": "3.12.0-alpha.0-postcss",
+  "version": "4.0.0-beta.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "bin": {
     "vant-cli": "./lib/bin.js"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "publishConfig": {
     "access": "public",
@@ -66,17 +66,17 @@
     "gh-pages": "^3.2.0",
     "hash-sum": "^2.0.0",
     "html-webpack-plugin": "^5.3.1",
-    "husky": "^6.0.0",
+    "husky": "^7.0.0",
     "jest": "^27.0.6",
     "jest-canvas-mock": "^2.3.1",
     "jest-serializer-html": "^7.1.0",
     "less": "^4.1.1",
     "less-loader": "^10.0.1",
-    "lint-staged": "^10.5.3",
+    "lint-staged": "^11.0.0",
     "lodash": "^4.17.21",
     "ora": "^5.4.1",
     "portfinder": "^1.0.28",
-    "postcss": "^7.0.36",
+    "postcss": "^8.0.0",
     "postcss-load-config": "^3.0.1",
     "postcss-loader": "^6.1.1",
     "prettier": "2.1.0",
