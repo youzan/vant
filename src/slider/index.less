@@ -23,9 +23,9 @@
   // use pseudo element to expand click area
   &::before {
     position: absolute;
-    top: -var(--van-padding-xs);
+    top: calc(var(--van-padding-xs) * -1);
     right: 0;
-    bottom: -var(--van-padding-xs);
+    bottom: calc(var(--van-padding-xs) * -1);
     left: 0;
     content: '';
   }
@@ -98,9 +98,9 @@
     // use pseudo element to expand click area
     &::before {
       top: 0;
-      right: -var(--van-padding-xs);
+      right: calc(var(--van-padding-xs) * -1);
       bottom: 0;
-      left: -var(--van-padding-xs);
+      left: calc(var(--van-padding-xs) * -1);
     }
   }
 }
