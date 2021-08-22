@@ -16,6 +16,25 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.2.1](https://github.com/youzan/vant/compare/v3.2.0...v3.2.1)
+
+`2021-08-22`
+
+**Feature**
+
+- Circle: 新增 start-position 属性 [#9305](https://github.com/youzan/vant/issues/9305)
+- Slider: 新增 reverse 属性 [#9308](https://github.com/youzan/vant/issues/9308)
+- NumberKeyboard: 新增 van-number-keyboard-key-background-color CSS 变量 [#9303](https://github.com/youzan/vant/issues/9303)
+- PasswordInput: add password-input-text-color CSS 变量 [#9304](https://github.com/youzan/vant/issues/9304)
+
+**Bug Fixes**
+
+- Calendar: 修复 month-show 事件缺少 title 参数的问题 [#9275](https://github.com/youzan/vant/issues/9275)
+- Dialog: 修复 beforeClose 重复触发的问题 [#9283](https://github.com/youzan/vant/issues/9283) [#9291](https://github.com/youzan/vant/issues/9291)
+- Field: 修复 FieldInstance 类型未导出的问题 [#9254](https://github.com/youzan/vant/issues/9254)
+- Rate: 修复 count 属性传入字符串类型时展示错误的问题 [#9307](https://github.com/youzan/vant/issues/9307)
+- TreeSelect: 修复 CSS 负数变量不生效导致样式错误的问题 [#9306](https://github.com/youzan/vant/issues/9306)
+
 ### [v3.2.0](https://github.com/youzan/vant/compare/v3.1.5...v3.2.0)
 
 `2021-08-12`

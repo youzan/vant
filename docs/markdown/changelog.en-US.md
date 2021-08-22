@@ -16,6 +16,25 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.2.1](https://github.com/youzan/vant/compare/v3.2.0...v3.2.1)
+
+`2021-08-22`
+
+**Feature**
+
+- Circle: add start-position prop [#9305](https://github.com/youzan/vant/issues/9305)
+- Slider: add reverse prop [#9308](https://github.com/youzan/vant/issues/9308)
+- NumberKeyboard: add van-number-keyboard-key-background-color css var [#9303](https://github.com/youzan/vant/issues/9303)
+- PasswordInput: add password-input-text-color css var [#9304](https://github.com/youzan/vant/issues/9304)
+
+**Bug Fixes**
+
+- Calendar: title is undefined in month-show event [#9275](https://github.com/youzan/vant/issues/9275)
+- Dialog: fix beforeClose repeat trigger [#9283](https://github.com/youzan/vant/issues/9283) [#9291](https://github.com/youzan/vant/issues/9291)
+- Field: should export FieldInstance type [#9254](https://github.com/youzan/vant/issues/9254)
+- Rate: convert count type [#9307](https://github.com/youzan/vant/issues/9307)
+- TreeSelect: fix negative css vars [#9306](https://github.com/youzan/vant/issues/9306)
+
 ### [v3.2.0](https://github.com/youzan/vant/compare/v3.1.5...v3.2.0)
 
 `2021-08-12`
