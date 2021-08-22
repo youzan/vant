@@ -174,6 +174,7 @@ export default {
 | --van-password-input-error-info-color | _var(--van-danger-color)_ | - |
 | --van-password-input-dot-size | _10px_ | - |
 | --van-password-input-dot-color | _var(--van-black)_ | - |
+| --van-password-input-text-color | _var(--van-text-color)_ | - |
 | --van-password-input-cursor-color | _var(--van-text-color)_ | - |
 | --van-password-input-cursor-width | _1px_ | - |
 | --van-password-input-cursor-height | _40%_ | - |
