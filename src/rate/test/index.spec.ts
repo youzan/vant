@@ -127,3 +127,15 @@ test('should get decimal when using allow-half and readonly prop', () => {
   const halfIcon = wrapper.find('.van-rate__icon--half');
   expect(halfIcon.style.width).toEqual('0.3em');
 });
+
+test('should render correct count when using string prop', () => {
+  const wrapper = mount(Rate, {
+    props: {
+      count: '4',
+    },
+  });
+
+  const icons = wrapper.findAll('.van-rate__item');
+
+  expect(icons).toHaveLength(4);
+});

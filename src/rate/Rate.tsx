@@ -87,7 +87,7 @@ export default defineComponent({
       props.readonly || props.disabled || !props.touchable;
 
     const list = computed<RateListItem[]>(() =>
-      Array(props.count)
+      Array(+props.count)
         .fill('')
         .map((_, i) =>
           getRateStatus(
