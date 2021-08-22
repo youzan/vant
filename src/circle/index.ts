@@ -5,3 +5,4 @@ const Circle = withInstall<typeof _Circle>(_Circle);
 
 export default Circle;
 export { Circle };
+export type { CircleStartPosition } from './Circle';

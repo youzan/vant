@@ -6,19 +6,27 @@ const format = (rate: number) => Math.min(Math.max(rate, 0), 100);
 
 const i18n = {
   'zh-CN': {
+    left: '左侧',
+    right: '右侧',
+    bottom: '底部',
     gradient: '渐变色',
     customSize: '大小定制',
     customStyle: '样式定制',
     customColor: '颜色定制',
     customWidth: '宽度定制',
+    startPosition: '起始位置',
     counterClockwise: '逆时针',
   },
   'en-US': {
+    left: 'Left',
+    right: 'Right',
+    bottom: 'Bottom',
     gradient: 'Gradient',
     customSize: 'Custom Size',
     customStyle: 'Custom Style',
     customColor: 'Custom Color',
     customWidth: 'Custom Width',
+    startPosition: 'Start Position',
     counterClockwise: 'Counter Clockwise',
   },
 };
@@ -111,6 +119,27 @@ const reduce = () => {
       @click="reduce"
     />
   </div>
+
+  <demo-block :title="t('startPosition')">
+    <van-circle
+      :current-rate="75"
+      :rate="rate"
+      :text="t('left')"
+      start-position="left"
+    />
+    <van-circle
+      :current-rate="75"
+      :rate="rate"
+      :text="t('right')"
+      start-position="right"
+    />
+    <van-circle
+      :current-rate="75"
+      :rate="rate"
+      :text="t('bottom')"
+      start-position="bottom"
+    />
+  </demo-block>
 </template>
 
 <style lang="less">

@@ -131,6 +131,31 @@ export default {
 />
 ```
 
+### 起始位置
+
+进度条默认从顶部开始，可以通过 `start-position` 属性设置起始位置。
+
+```html
+<van-circle
+  v-model:current-rate="currentRate"
+  :rate="rate"
+  :text="左侧"
+  start-position="left"
+/>
+<van-circle
+  v-model:current-rate="currentRate"
+  :rate="rate"
+  text="右侧"
+  start-position="right"
+/>
+<van-circle
+  v-model:current-rate="currentRate"
+  :rate="rate"
+  text="底部"
+  start-position="bottom"
+/>
+```
+
 ## API
 
 ### Props
@@ -148,6 +173,7 @@ export default {
 | stroke-width | 进度条宽度 | _number \| string_ | `40` |
 | stroke-linecap | 进度条端点的形状，可选值为 `square` `butt` | _string_ | `round` |
 | clockwise | 是否顺时针增加 | _boolean_ | `true` |
+| start-position `v3.2.1` | 进度起始位置，可选值为 `left`、`right`、`bottom` | _CircleStartPosition_ | `top` |
 
 ### Slots
 
