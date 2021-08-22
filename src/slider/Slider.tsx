@@ -94,7 +94,7 @@ export default defineComponent({
       return '0%';
     };
 
-    const barStyle = computed<CSSProperties>(() => {
+    const barStyle = computed(() => {
       const mainAxis = props.vertical ? 'height' : 'width';
       const style: CSSProperties = {
         [mainAxis]: calcMainAxis(),
