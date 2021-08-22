@@ -17,13 +17,16 @@ import { useTouch } from '../composables/use-touch';
 
 const [name, bem] = createNamespace('slider');
 
-type SliderValue = number | [number, number];
+type NumberRange = [number, number];
+
+type SliderValue = number | NumberRange;
 
 export default defineComponent({
   name,
 
   props: {
     range: Boolean,
+    reverse: Boolean,
     disabled: Boolean,
     readonly: Boolean,
     vertical: Boolean,
@@ -70,7 +73,7 @@ export default defineComponent({
       };
     });
 
-    const isRange = (val: unknown): val is [number, number] =>
+    const isRange = (val: unknown): val is NumberRange =>
       props.range && Array.isArray(val);
 
     // 计算选中条的长度百分比
@@ -91,15 +94,27 @@ export default defineComponent({
       return '0%';
     };
 
-    const barStyle = computed<CSSProperties>(() => {
+    const barStyle = computed(() => {
       const mainAxis = props.vertical ? 'height' : 'width';
-      return {
+      const style: CSSProperties = {
         [mainAxis]: calcMainAxis(),
-        left: props.vertical ? undefined : calcOffset(),
-        top: props.vertical ? calcOffset() : undefined,
         background: props.activeColor,
-        transition: dragStatus.value ? 'none' : undefined,
       };
+
+      if (dragStatus.value) {
+        style.transition = 'none';
+      }
+
+      const getPositionKey = () => {
+        if (props.vertical) {
+          return props.reverse ? 'bottom' : 'top';
+        }
+        return props.reverse ? 'right' : 'left';
+      };
+
+      style[getPositionKey()] = calcOffset();
+
+      return style;
     });
 
     const format = (value: number) => {
@@ -116,7 +131,7 @@ export default defineComponent({
       JSON.stringify(newValue) === JSON.stringify(oldValue);
 
     // 处理两个滑块重叠之后的情况
-    const handleOverlap = (value: [number, number]) => {
+    const handleOverlap = (value: NumberRange) => {
       if (value[0] > value[1]) {
         return value.slice(0).reverse();
       }
@@ -125,7 +140,7 @@ export default defineComponent({
 
     const updateValue = (value: SliderValue, end?: boolean) => {
       if (isRange(value)) {
-        value = handleOverlap(value).map(format) as [number, number];
+        value = handleOverlap(value).map(format) as NumberRange;
       } else {
         value = format(value);
       }
@@ -146,13 +161,24 @@ export default defineComponent({
         return;
       }
 
-      const { min, vertical, modelValue } = props;
+      const { min, reverse, vertical, modelValue } = props;
       const rect = useRect(root);
-      const delta = vertical
-        ? event.clientY - rect.top
-        : event.clientX - rect.left;
+
+      const getDelta = () => {
+        if (vertical) {
+          if (reverse) {
+            return rect.bottom - event.clientY;
+          }
+          return event.clientY - rect.top;
+        }
+        if (reverse) {
+          return rect.right - event.clientX;
+        }
+        return event.clientX - rect.left;
+      };
+
       const total = vertical ? rect.height : rect.width;
-      const value = Number(min) + (delta / total) * scope.value;
+      const value = Number(min) + (getDelta() / total) * scope.value;
 
       if (isRange(modelValue)) {
         const [left, right] = modelValue;
@@ -177,7 +203,7 @@ export default defineComponent({
       currentValue = props.modelValue;
 
       if (isRange(currentValue)) {
-        startValue = currentValue.map(format) as [number, number];
+        startValue = currentValue.map(format) as NumberRange;
       } else {
         startValue = format(currentValue);
       }
@@ -201,11 +227,15 @@ export default defineComponent({
       const rect = useRect(root);
       const delta = props.vertical ? touch.deltaY.value : touch.deltaX.value;
       const total = props.vertical ? rect.height : rect.width;
-      const diff = (delta / total) * scope.value;
+
+      let diff = (delta / total) * scope.value;
+      if (props.reverse) {
+        diff = -diff;
+      }
 
       if (isRange(startValue)) {
-        (currentValue as [number, number])[buttonIndex] =
-          startValue[buttonIndex] + diff;
+        const index = props.reverse ? 1 - buttonIndex : buttonIndex;
+        (currentValue as NumberRange)[index] = startValue[index] + diff;
       } else {
         currentValue = startValue + diff;
       }
@@ -228,9 +258,9 @@ export default defineComponent({
     const getButtonClassName = (index?: 0 | 1) => {
       if (typeof index === 'number') {
         const position = ['left', 'right'];
-        return bem(`button-wrapper-${position[index]}`);
+        return bem(`button-wrapper`, position[index]);
       }
-      return bem('button-wrapper');
+      return bem('button-wrapper', props.reverse ? 'left' : 'right');
     };
 
     const renderButtonContent = (value: number, index?: 0 | 1) => {
@@ -253,7 +283,7 @@ export default defineComponent({
     const renderButton = (index?: 0 | 1) => {
       const currentValue =
         typeof index === 'number'
-          ? (props.modelValue as [number, number])[index]
+          ? (props.modelValue as NumberRange)[index]
           : (props.modelValue as number);
 
       return (

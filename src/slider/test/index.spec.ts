@@ -219,3 +219,63 @@ test('should render left-button、right-button slot correctly', async () => {
   await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should render reversed slider correctly', () => {
+  const wrapper = mount(Slider, {
+    props: {
+      reverse: true,
+      modelValue: 25,
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should render reversed vertical slider correctly', () => {
+  const wrapper = mount(Slider, {
+    props: {
+      reverse: true,
+      vertical: true,
+      modelValue: 25,
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should render reversed range slider correctly', () => {
+  const wrapper = mount(Slider, {
+    props: {
+      range: true,
+      reverse: true,
+      modelValue: [25, 40],
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should update modelValue correctly after clicking the reversed slider', () => {
+  const wrapper = mount(Slider, {
+    props: {
+      reverse: true,
+      modelValue: 50,
+    },
+  });
+
+  trigger(wrapper, 'click', 100, 0);
+  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([0]);
+});
+
+test('should update modelValue correctly after clicking the reversed vertical slider', () => {
+  const wrapper = mount(Slider, {
+    props: {
+      reverse: true,
+      vertical: true,
+      modelValue: 50,
+    },
+  });
+
+  trigger(wrapper, 'click', 0, 100);
+  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([0]);
+});
