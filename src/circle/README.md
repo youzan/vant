@@ -119,6 +119,29 @@ export default {
 />
 ```
 
+### Start Position
+
+```html
+<van-circle
+  v-model:current-rate="currentRate"
+  :rate="rate"
+  :text="Left"
+  start-position="left"
+/>
+<van-circle
+  v-model:current-rate="currentRate"
+  :rate="rate"
+  text="Right"
+  start-position="right"
+/>
+<van-circle
+  v-model:current-rate="currentRate"
+  :rate="rate"
+  text="Bottom"
+  start-position="bottom"
+/>
+```
+
 ## API
 
 ### Props

@@ -131,6 +131,31 @@ export default {
 />
 ```
 
+### 起始位置
+
+进度条默认从顶部开始，可以通过 `start-position` 属性设置起始位置。
+
+```html
+<van-circle
+  v-model:current-rate="currentRate"
+  :rate="rate"
+  :text="左侧"
+  start-position="left"
+/>
+<van-circle
+  v-model:current-rate="currentRate"
+  :rate="rate"
+  text="右侧"
+  start-position="right"
+/>
+<van-circle
+  v-model:current-rate="currentRate"
+  :rate="rate"
+  text="底部"
+  start-position="bottom"
+/>
+```
+
 ## API
 
 ### Props
