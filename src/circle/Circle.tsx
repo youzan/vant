@@ -17,6 +17,8 @@ function getPath(clockwise: boolean, viewBoxSize: number) {
   } m 0, -500 a 500, 500 0 1, ${sweepFlag} 0, 1000 a 500, 500 0 1, ${sweepFlag} 0, -1000`;
 }
 
+export type CircleStartPosition = 'top' | 'right' | 'bottom' | 'left';
+
 export default defineComponent({
   name,
 
@@ -47,6 +49,10 @@ export default defineComponent({
       type: [Number, String],
       default: 40,
     },
+    startPosition: {
+      type: String as PropType<CircleStartPosition>,
+      default: 'top',
+    },
   },
 
   emits: ['update:currentRate'],
@@ -57,6 +63,22 @@ export default defineComponent({
     const viewBoxSize = computed(() => +props.strokeWidth + 1000);
 
     const path = computed(() => getPath(props.clockwise, viewBoxSize.value));
+
+    const svgStyle = computed(() => {
+      const ROTATE_ANGLE_MAP: Record<CircleStartPosition, number> = {
+        top: 0,
+        right: 90,
+        bottom: 180,
+        left: 270,
+      };
+
+      const angleValue = ROTATE_ANGLE_MAP[props.startPosition];
+      if (angleValue) {
+        return {
+          transform: `rotate(${angleValue}deg)`,
+        };
+      }
+    });
 
     watch(
       () => props.rate,
@@ -160,7 +182,10 @@ export default defineComponent({
 
     return () => (
       <div class={bem()} style={getSizeStyle(props.size)}>
-        <svg viewBox={`0 0 ${viewBoxSize.value} ${viewBoxSize.value}`}>
+        <svg
+          viewBox={`0 0 ${viewBoxSize.value} ${viewBoxSize.value}`}
+          style={svgStyle.value}
+        >
           {renderGradient()}
           {renderLayer()}
           {renderHover()}

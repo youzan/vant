@@ -47,3 +47,22 @@ test('should change stroke linecap when using stroke-linecap prop', () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should render start-position prop correctly', async () => {
+  const wrapper = mount(Circle, {
+    props: {
+      startPosition: 'top',
+    },
+  });
+
+  expect(wrapper.find('svg').style.transform).toEqual('');
+
+  await wrapper.setProps({ startPosition: 'right' });
+  expect(wrapper.find('svg').style.transform).toEqual('rotate(90deg)');
+
+  await wrapper.setProps({ startPosition: 'bottom' });
+  expect(wrapper.find('svg').style.transform).toEqual('rotate(180deg)');
+
+  await wrapper.setProps({ startPosition: 'left' });
+  expect(wrapper.find('svg').style.transform).toEqual('rotate(270deg)');
+});
