@@ -36,6 +36,8 @@ export default defineComponent({
   props,
 
   setup(props) {
+    const transition = 'all 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96)';
+
     const root = ref<HTMLElement>();
     const pivotRef = ref<HTMLElement>();
 
@@ -67,6 +69,7 @@ export default defineComponent({
           color: textColor,
           left: `${left}px`,
           background: pivotColor || background.value,
+          transition,
         };
 
         return (
@@ -90,6 +93,7 @@ export default defineComponent({
       const portionStyle = {
         background: background.value,
         width: (state.rootWidth * +percentage!) / 100 + 'px',
+        transition,
       };
 
       return (
