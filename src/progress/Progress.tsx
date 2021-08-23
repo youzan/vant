@@ -3,6 +3,8 @@ import { truthProp, createNamespace, addUnit } from '../utils';
 
 const [name, bem] = createNamespace('progress');
 
+const transition = 'all 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96)';
+
 const props = {
   color: String,
   inactive: Boolean,
@@ -31,13 +33,6 @@ export default defineComponent({
     );
 
     const scaleX = computed(() => +props.percentage! / 100);
-    const translateX = computed(() => {
-      let offset = 0;
-      if (+props.percentage! !== 0) {
-        offset = (100 - +props.percentage!) / 2 / (+props.percentage! / 100);
-      }
-      return `${offset}%`;
-    });
 
     const renderPivot = () => {
       const { textColor, pivotText, pivotColor, percentage } = props;
@@ -50,6 +45,7 @@ export default defineComponent({
           left: `${+percentage!}%`,
           transform: `translate(-${+percentage!}%,-50%)`,
           background: pivotColor || background.value,
+          transition,
         };
 
         return (
@@ -69,7 +65,9 @@ export default defineComponent({
       const portionStyle = {
         background: background.value,
         width: '100%',
-        transform: `scaleX(${scaleX.value}) translateX(-${translateX.value})`,
+        transform: `scaleX(${scaleX.value})`,
+        'transform-origin': 0,
+        transition,
       };
 
       return (
