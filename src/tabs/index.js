@@ -375,8 +375,8 @@ export default createComponent({
   render() {
     const { type, animated, scrollable } = this;
 
-    const Nav = this.children.map((item, index) => (
-      <Title
+    const Nav = this.children.map((item, index) => {
+      return <Title
         ref="titles"
         refInFor
         type={type}
@@ -391,6 +391,9 @@ export default createComponent({
         scrollable={scrollable}
         activeColor={this.titleActiveColor}
         inactiveColor={this.titleInactiveColor}
+        vusion-scope-id={item.$vnode.context.$options._scopeId}
+        vusion-node-path={item.$attrs['vusion-node-path']}
+        vusion-node-tag={item.$attrs['vusion-node-tag']}
         scopedSlots={{
           default: () => item.slots('title'),
         }}
@@ -398,7 +401,7 @@ export default createComponent({
           this.onClick(item, index);
         }}
       />
-    ));
+      });
 
     const Wrap = (
       <div

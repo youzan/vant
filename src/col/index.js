@@ -43,8 +43,10 @@ export default createComponent({
         style={this.style}
         class={bem({ [span]: span, [`offset-${offset}`]: offset })}
         onClick={this.onClick}
+        empty={!this.slots.default}
       >
         {this.slots()}
+        {(!this.slots.default) && (this.$env && this.$env.VUE_APP_DESIGNER) ? <div class="van-col-empty">+</div> : null}
       </this.tag>
     );
   },

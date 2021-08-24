@@ -69,6 +69,9 @@ export default createComponent({
 
       return Text;
     },
+    designerControl() {
+      this.onClick();
+    },
   },
 
   render() {
