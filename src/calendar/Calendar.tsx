@@ -371,6 +371,27 @@ export default defineComponent({
       }
     };
 
+    const includeDisabled = (
+      monthDays: CalendarDayItem[][],
+      startDay: any,
+      date: any
+    ) => {
+      let isComparing = false;
+      return monthDays.some((monthday) =>
+        monthday.some((day: CalendarDayItem) => {
+          if (!isComparing && compareDay(day.date!, startDay) === 0) {
+            isComparing = true;
+          }
+          if (isComparing && compareDay(day.date!, date) === 0) {
+            isComparing = false;
+          }
+          if (!isComparing) return false;
+          if (day.type === 'disabled') return true;
+          return false;
+        })
+      );
+    };
+
     const onClickDay = (item: CalendarDayItem) => {
       if (props.readonly || !item.date) {
         return;
@@ -392,7 +413,16 @@ export default defineComponent({
           const compareToStart = compareDay(date, startDay);
 
           if (compareToStart === 1) {
-            select([startDay, date], true);
+            const isIncludeDisabled = includeDisabled(
+              monthRefs.value.map((ref) => ref.days.value),
+              startDay,
+              date
+            );
+            if (isIncludeDisabled) {
+              select([date]);
+            } else {
+              select([startDay, date], true);
+            }
           } else if (compareToStart === -1) {
             select([date]);
           } else if (props.allowSameDay) {

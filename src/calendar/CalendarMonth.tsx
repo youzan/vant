@@ -263,6 +263,7 @@ export default defineComponent({
       getHeight: () => height.value,
       setVisible,
       scrollIntoView,
+      days
     });
 
     return () => (
