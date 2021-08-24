@@ -39,6 +39,34 @@ export default {
 
 > For more information, please refer to [Vue.js - Component Registration](https://v3.vuejs.org/guide/component-registration.html#component-registration)。
 
+#### \<script setup\>
+
+Vant components can be used directly in `<script setup>` without component registration.
+
+```xml
+<script setup>
+  import { Button } from 'vant';
+</script>
+
+<template>
+  <Button />
+</template>
+```
+
+#### JSX/TSX
+
+Vant components can be used directly in JSX and TSX without component registration.
+
+```jsx
+import { Button } from 'vant';
+
+export default {
+  render() {
+    return <Button />;
+  },
+};
+```
+
 ## Browser adaptation
 
 ### Viewport Units

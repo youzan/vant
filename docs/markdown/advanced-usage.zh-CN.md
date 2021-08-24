@@ -45,6 +45,34 @@ export default {
 
 > 对于组件注册更详细的介绍，请参考 [Vue 官方文档 - 组件注册](https://v3.cn.vuejs.org/guide/component-registration.html#%E7%BB%84%E4%BB%B6%E6%B3%A8%E5%86%8C)。
 
+#### \<script setup\>
+
+在 `<script setup>` 中可以直接使用 Vant 组件，不需要进行组件注册。
+
+```xml
+<script setup>
+  import { Button } from 'vant';
+</script>
+
+<template>
+  <Button />
+</template>
+```
+
+#### JSX/TSX
+
+在 JSX 和 TSX 中可以直接使用 Vant 组件，不需要进行组件注册。
+
+```jsx
+import { Button } from 'vant';
+
+export default {
+  render() {
+    return <Button />;
+  },
+};
+```
+
 ### 组件插槽
 
 Vant 提供了丰富的组件插槽，通过插槽可以对组件的某一部分进行个性化定制。如果你对 Vue 的插槽不太熟悉，可以阅读 Vue 官方文档中的[插槽章节](https://v3.cn.vuejs.org/guide/component-slots.html)。下面是通过插槽来定制 Checkbox 图标的示例：
