@@ -1,6 +1,12 @@
 ### 基本用法
 
 ``` html
+<van-popup></van-popup>
+```
+
+### 基本用法2
+
+``` html
 <van-popup><div style="height: 30vh;width: 30vw;">内容</div></van-popup>
 ```
 
