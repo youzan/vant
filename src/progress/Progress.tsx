@@ -14,6 +14,7 @@ const props = {
   strokeWidth: [Number, String],
   percentage: {
     type: [Number, String],
+    default: 0,
     validator: (value: number | string) => value >= 0 && value <= 100,
   },
 };
@@ -30,18 +31,15 @@ export default defineComponent({
       props.inactive ? '#cacaca' : props.color
     );
 
-    const scaleX = computed(() => +props.percentage! / 100);
-
     const renderPivot = () => {
       const { textColor, pivotText, pivotColor, percentage } = props;
       const text = pivotText ?? `${percentage}%`;
-      const show = props.showPivot && text;
 
-      if (show) {
+      if (props.showPivot && text) {
         const style = {
           color: textColor,
-          left: `${+percentage!}%`,
-          transform: `translate(-${+percentage!}%,-50%)`,
+          left: `${+percentage}%`,
+          transform: `translate(-${+percentage}%,-50%)`,
           background: pivotColor || background.value,
         };
 
@@ -54,14 +52,14 @@ export default defineComponent({
     };
 
     return () => {
-      const { trackColor, strokeWidth } = props;
+      const { trackColor, percentage, strokeWidth } = props;
       const rootStyle = {
         background: trackColor,
         height: addUnit(strokeWidth),
       };
       const portionStyle = {
         background: background.value,
-        transform: `scaleX(${scaleX.value})`,
+        transform: `scaleX(${+percentage / 100})`,
       };
 
       return (
