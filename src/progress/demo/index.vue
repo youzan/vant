@@ -75,7 +75,7 @@ const reduce = () => {
   background: var(--van-white);
 
   .van-progress {
-    margin: 20px;
+    margin: 20px 16px;
 
     &:first-of-type {
       margin-top: 5px;
