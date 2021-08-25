@@ -2,8 +2,6 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const format = (rate: number) => Math.min(Math.max(rate, 0), 100);
-
 const i18n = {
   'zh-CN': {
     left: '左侧',
@@ -42,6 +40,8 @@ const gradientColor = {
   '0%': '#3fecff',
   '100%': '#6149f6',
 };
+
+const format = (rate: number) => Math.min(Math.max(rate, 0), 100);
 
 const add = () => {
   rate.value = format(rate.value + 20);
