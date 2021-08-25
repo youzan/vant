@@ -20,9 +20,12 @@
   &__portion {
     position: absolute;
     left: 0;
+    width: 100%;
     height: 100%;
     background: var(--van-progress-color);
     border-radius: inherit;
+    transform-origin: 0;
+    transition: all 0.3s ease-out;
   }
 
   &__pivot {
@@ -38,6 +41,6 @@
     word-break: keep-all;
     background-color: var(--van-progress-pivot-background-color);
     border-radius: 1em;
-    transform: translate(0, -50%);
+    transition: all 0.3s ease-out;
   }
 }
