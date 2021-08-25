@@ -1,6 +1,6 @@
 - name: van-tabs
   title: tabs选项卡
-  icon: tabs
+  icon: tabsh5
   labels:
     - Selector
   description: 选项卡切换组件，常用于平级区域大块内容的收纳和展现
