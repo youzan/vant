@@ -9,7 +9,6 @@ export default {
   loading: 'Загрузка...',
   telEmpty: 'Пожалуйста укажите телефон',
   nameEmpty: 'Пожалуйста укажите имя',
-  nameInvalid: 'Некорректное имя',
   confirmDelete: 'Вы уверены, что хотите удалить?',
   telInvalid: 'Некорректный номер телефона',
   vanCalendar: {
@@ -66,9 +65,6 @@ export default {
     addressEmpty: 'Адрес не может быть пустым',
     postalEmpty: 'Некорректный индекс',
     defaultAddress: 'Сделать адресом по умолчанию',
-    telPlaceholder: 'Телефон',
-    namePlaceholder: 'Имя',
-    areaPlaceholder: 'Область',
   },
   vanAddressEditDetail: {
     label: 'Адрес',

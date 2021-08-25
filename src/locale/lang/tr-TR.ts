@@ -9,7 +9,6 @@ export default {
   loading: 'Yükleniyor...',
   telEmpty: 'Lütfen tel. no giriniz',
   nameEmpty: 'Lütfen isim giriniz',
-  nameInvalid: 'Geçersiz isim',
   confirmDelete: 'Silmek istediğinize emin misiniz?',
   telInvalid: 'Geçersiz tel. numarası',
   vanCalendar: {
@@ -66,9 +65,6 @@ export default {
     addressEmpty: 'Adres boş olamaz!',
     postalEmpty: 'Yanlış posta kodu',
     defaultAddress: 'Varsayılan adres olarak ayarla',
-    telPlaceholder: 'Telefone',
-    namePlaceholder: 'İsim',
-    areaPlaceholder: 'Alan',
   },
   vanAddressEditDetail: {
     label: 'Adres',

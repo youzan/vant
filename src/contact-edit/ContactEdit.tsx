@@ -117,7 +117,7 @@ export default defineComponent({
             v-model={contact.name}
             clearable
             label={t('name')}
-            rules={[{ required: true, message: t('nameInvalid') }]}
+            rules={[{ required: true, message: t('nameEmpty') }]}
             maxlength="30"
             placeholder={t('nameEmpty')}
           />
