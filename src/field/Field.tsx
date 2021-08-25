@@ -560,6 +560,7 @@ export default defineComponent({
           size={props.size}
           icon={props.leftIcon}
           class={bem({
+            error: showError.value,
             disabled,
             [`label-${labelAlign}`]: labelAlign,
           })}
