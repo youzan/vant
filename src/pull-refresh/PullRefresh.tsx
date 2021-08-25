@@ -123,7 +123,7 @@ export default defineComponent({
         return slots[status]!({ distance });
       }
 
-      const nodes = [];
+      const nodes: JSX.Element[] = [];
 
       if (TEXT_STATUS.includes(status)) {
         nodes.push(<div class={bem('text')}>{getStatusText()}</div>);

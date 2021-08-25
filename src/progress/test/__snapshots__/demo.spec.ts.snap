@@ -4,13 +4,13 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-progress">
     <span class="van-progress__portion"
-          style="width: 0px;"
+          style="transform: scaleX(0.5);"
     >
-      <span style="left: 0px;"
-            class="van-progress__pivot"
-      >
-        50%
-      </span>
+    </span>
+    <span style="left: 50%; transform: translate(-50%,-50%);"
+          class="van-progress__pivot"
+    >
+      50%
     </span>
   </div>
 </div>
@@ -19,62 +19,95 @@ exports[`should render demo and match snapshot 1`] = `
        style="height: 8px;"
   >
     <span class="van-progress__portion"
-          style="width: 0px;"
+          style="transform: scaleX(0.5);"
     >
-      <span style="left: 0px;"
-            class="van-progress__pivot"
-      >
-        50%
-      </span>
+    </span>
+    <span style="left: 50%; transform: translate(-50%,-50%);"
+          class="van-progress__pivot"
+    >
+      50%
     </span>
   </div>
 </div>
 <div>
   <div class="van-progress">
     <span class="van-progress__portion"
-          style="background: rgb(202, 202, 202); width: 0px;"
+          style="background: rgb(202, 202, 202); transform: scaleX(0.5);"
     >
-      <span style="left: 0px; background: rgb(202, 202, 202);"
-            class="van-progress__pivot"
-      >
-        50%
-      </span>
+    </span>
+    <span style="left: 50%; transform: translate(-50%,-50%); background: rgb(202, 202, 202);"
+          class="van-progress__pivot"
+    >
+      50%
     </span>
   </div>
 </div>
 <div>
   <div class="van-progress">
     <span class="van-progress__portion"
-          style="background: rgb(242, 130, 106); width: 0px;"
+          style="background: rgb(242, 130, 106); transform: scaleX(0.25);"
     >
-      <span style="left: 0px; background: rgb(242, 130, 106);"
-            class="van-progress__pivot"
-      >
-        Orange
-      </span>
+    </span>
+    <span style="left: 25%; transform: translate(-25%,-50%); background: rgb(242, 130, 106);"
+          class="van-progress__pivot"
+    >
+      Orange
     </span>
   </div>
   <div class="van-progress">
     <span class="van-progress__portion"
-          style="background: rgb(238, 10, 36); width: 0px;"
+          style="background: rgb(238, 10, 36); transform: scaleX(0.5);"
     >
-      <span style="left: 0px; background: rgb(238, 10, 36);"
-            class="van-progress__pivot"
-      >
-        Red
-      </span>
+    </span>
+    <span style="left: 50%; transform: translate(-50%,-50%); background: rgb(238, 10, 36);"
+          class="van-progress__pivot"
+    >
+      Red
     </span>
   </div>
   <div class="van-progress">
     <span class="van-progress__portion"
-          style="width: 0px;"
+          style="transform: scaleX(0.75);"
     >
-      <span style="left: 0px; background: rgb(114, 50, 221);"
-            class="van-progress__pivot"
-      >
-        Purple
-      </span>
     </span>
+    <span style="left: 75%; transform: translate(-75%,-50%); background: rgb(114, 50, 221);"
+          class="van-progress__pivot"
+    >
+      Purple
+    </span>
+  </div>
+</div>
+<div>
+  <div class="van-progress">
+    <span class="van-progress__portion"
+          style="background: rgb(202, 202, 202); transform: scaleX(0);"
+    >
+    </span>
+    <span style="left: 0%; transform: translate(-0%,-50%); background: rgb(202, 202, 202);"
+          class="van-progress__pivot"
+    >
+      0%
+    </span>
+  </div>
+  <div style="display: flex; justify-content: space-around;">
+    <button type="button"
+            class="van-button van-button--default van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          decrease
+        </span>
+      </div>
+    </button>
+    <button type="button"
+            class="van-button van-button--default van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          increase
+        </span>
+      </div>
+    </button>
   </div>
 </div>
 `;
