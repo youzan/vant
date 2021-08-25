@@ -371,25 +371,25 @@ export default defineComponent({
       }
     };
 
-    const includeDisabled = (
+    const getDisabledDate = (
       monthDays: CalendarDayItem[][],
-      startDay: any,
-      date: any
+      startDay: Date,
+      date: Date
     ) => {
       let isComparing = false;
-      return monthDays.some((monthday) =>
-        monthday.some((day: CalendarDayItem) => {
+      for (const monthDay of monthDays) {
+        for (const day of monthDay) {
           if (!isComparing && compareDay(day.date!, startDay) === 0) {
             isComparing = true;
           }
           if (isComparing && compareDay(day.date!, date) === 0) {
             isComparing = false;
           }
-          if (!isComparing) return false;
-          if (day.type === 'disabled') return true;
-          return false;
-        })
-      );
+          if (isComparing) {
+            if (day.type === 'disabled') return day;
+          }
+        }
+      }
     };
 
     const onClickDay = (item: CalendarDayItem) => {
@@ -413,13 +413,17 @@ export default defineComponent({
           const compareToStart = compareDay(date, startDay);
 
           if (compareToStart === 1) {
-            const isIncludeDisabled = includeDisabled(
+            const disabledDate = getDisabledDate(
               monthRefs.value.map((ref) => ref.days.value),
               startDay,
               date
             );
-            if (isIncludeDisabled) {
-              select([date]);
+
+            if (disabledDate) {
+              const lastAbledEndDay = new Date(
+                disabledDate.date!.setDate(disabledDate.date!.getDate() - 1)
+              );
+              select([startDay, lastAbledEndDay]);
             } else {
               select([startDay, date], true);
             }
