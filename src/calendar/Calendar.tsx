@@ -190,7 +190,7 @@ export default defineComponent({
     );
 
     const months = computed(() => {
-      const months = [];
+      const months: Date[] = [];
       const cursor = new Date(props.minDate);
 
       cursor.setDate(1);
