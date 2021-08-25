@@ -73,14 +73,6 @@ app.use(Progress);
 | inactive | 是否置灰 | _boolean_ | `false` |
 | show-pivot | 是否显示进度文字 | _boolean_ | `true` |
 
-### 方法
-
-通过 ref 可以获取到 Progress 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
-
-| 方法名 | 说明                                         | 参数 | 返回值 |
-| ------ | -------------------------------------------- | ---- | ------ |
-| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | -    | -      |
-
 ### 类型定义
 
 通过 `ProgressInstance` 获取 Progress 实例的类型定义（从 3.2.0 版本开始支持）。
