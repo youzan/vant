@@ -293,7 +293,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | max-range | 日期区间最多可选天数 | _number \| string_ | 无限制 |
-| range-prompt | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
+| range-prompt | 范围选择超过最多可选天数时的提示文案 | _string_ | `最多选择 xx 天` |
 | show-range-prompt | 范围选择超过最多可选天数时，是否展示提示文案 | _boolean_ | `true` |
 | allow-same-day | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 
@@ -304,7 +304,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | max-range | 日期最多可选天数 | _number \| string_ | 无限制 |
-| range-prompt | 选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
+| range-prompt | 选择超过最多可选天数时的提示文案 | _string_ | `最多选择 xx 天` |
 
 ### Day 数据结构
 

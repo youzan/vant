@@ -9,9 +9,8 @@ export default {
   loading: '加载中...',
   telEmpty: '请填写电话',
   nameEmpty: '请填写姓名',
-  nameInvalid: '请输入正确的姓名',
   confirmDelete: '确定要删除吗',
-  telInvalid: '请输入正确的手机号',
+  telInvalid: '请输入正确的电话',
   vanCalendar: {
     end: '结束',
     start: '开始',
@@ -20,7 +19,7 @@ export default {
     startEnd: '开始/结束',
     weekdays: ['日', '一', '二', '三', '四', '五', '六'],
     monthTitle: (year: number, month: number) => `${year}年${month}月`,
-    rangePrompt: (maxRange: number) => `选择天数不能超过 ${maxRange} 天`,
+    rangePrompt: (maxRange: number) => `最多选择 ${maxRange} 天`,
   },
   vanCascader: {
     select: '请选择',
@@ -65,15 +64,12 @@ export default {
     postal: '邮政编码',
     areaEmpty: '请选择地区',
     addressEmpty: '请填写详细地址',
-    postalEmpty: '邮政编码格式不正确',
+    postalEmpty: '邮政编码不正确',
     defaultAddress: '设为默认收货地址',
-    telPlaceholder: '收货人手机号',
-    namePlaceholder: '收货人姓名',
-    areaPlaceholder: '选择省 / 市 / 区',
   },
   vanAddressEditDetail: {
     label: '详细地址',
-    placeholder: '街道门牌、楼层房间号等信息',
+    placeholder: '街道门牌信息',
   },
   vanAddressList: {
     add: '新增地址',

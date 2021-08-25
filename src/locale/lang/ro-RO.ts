@@ -9,7 +9,6 @@ export default {
   loading: 'Încărcare...',
   telEmpty: 'Te rugăm să completezi telefonul',
   nameEmpty: 'Te rugăm să completezi numele',
-  nameInvalid: 'Nume incorect',
   confirmDelete: 'Ești sigur ca vrei sa stergi?',
   telInvalid: 'Număr de telefon invalid',
   vanCalendar: {
@@ -66,9 +65,6 @@ export default {
     addressEmpty: 'Adresa nu poate fi goală',
     postalEmpty: 'Cod postal invalid',
     defaultAddress: 'Setează ca adresă de pornire',
-    telPlaceholder: 'Telefon',
-    namePlaceholder: 'Nume',
-    areaPlaceholder: 'Zonă',
   },
   vanAddressEditDetail: {
     label: 'Adresă',

@@ -331,7 +331,7 @@ export default defineComponent({
               v-model={data.name}
               clearable
               label={t('name')}
-              placeholder={t('namePlaceholder')}
+              placeholder={t('name')}
               errorMessage={errorInfo.name}
               onFocus={() => onFocus('name')}
             />
@@ -341,7 +341,7 @@ export default defineComponent({
               type="tel"
               label={t('tel')}
               maxlength={props.telMaxlength}
-              placeholder={t('telPlaceholder')}
+              placeholder={t('tel')}
               errorMessage={errorInfo.tel}
               onFocus={() => onFocus('tel')}
             />
@@ -351,7 +351,7 @@ export default defineComponent({
               label={t('area')}
               is-link={!disableArea}
               modelValue={areaText.value}
-              placeholder={props.areaPlaceholder || t('areaPlaceholder')}
+              placeholder={props.areaPlaceholder || t('area')}
               errorMessage={errorInfo.areaCode}
               onFocus={() => onFocus('areaCode')}
               onClick={() => {

@@ -9,7 +9,6 @@ export default {
   loading: 'Laster...',
   telEmpty: 'Vennligst fyll inn telefonnummer',
   nameEmpty: 'Vennligst fyll inn navn',
-  nameInvalid: 'Ugyldig navn',
   confirmDelete: 'Er du sikker på at du vil slette?',
   telInvalid: 'Ugyldig telefonnummer',
   vanCalendar: {
@@ -66,9 +65,6 @@ export default {
     addressEmpty: 'Addresse kan ikke være tomt',
     postalEmpty: 'Feil postkode',
     defaultAddress: 'Sett som standard adresse',
-    telPlaceholder: 'Telefon',
-    namePlaceholder: 'Navn',
-    areaPlaceholder: 'Område',
   },
   vanAddressEditDetail: {
     label: 'Adresse',
