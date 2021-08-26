@@ -6,6 +6,12 @@
         {{ t('content') }}
       </van-popup>
     </demo-block>
+    <demo-block card :title="t('basicUsage')">
+      <van-cell :title="t('buttonBasic')" is-link @click="testModal" />
+      <van-popup ref="van_modal" :style="{ padding: '30px 50px' }" >
+        {{ t('content') }}
+      </van-popup>
+    </demo-block>
 
     <demo-block card :title="t('position')">
       <van-cell :title="t('buttonTop')" is-link @click="showTop = true" />
@@ -140,6 +146,12 @@ export default {
       showCustomIconPosition: false,
     };
   },
+  methods: {
+    testModal() {
+      console.log(this.$refs.van_modal);
+      this.$refs.van_modal.setRealValue(true);
+    }
+  }
 };
 </script>
 

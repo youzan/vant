@@ -52,14 +52,13 @@ export default createComponent({
     onClickCloseIcon(event) {
       this.$emit('click-close-icon', event);
       this.close();
-    },
+    }
   },
 
   render() {
     if (!this.shouldRender) {
       return;
     }
-
     const { round, position, duration } = this;
     const isCenter = position === 'center';
 
@@ -81,7 +80,7 @@ export default createComponent({
         onAfterLeave={this.onClosed}
       >
         <div
-          vShow={this.value}
+          vShow={this.realValue}
           style={style}
           class={bem({
             round,

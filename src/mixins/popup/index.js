@@ -70,6 +70,7 @@ export function PopupMixin(options = {}) {
       this.onReopenCallback = [];
       return {
         inited: this.value,
+        realValue: this.value,
       };
     },
 
@@ -83,13 +84,22 @@ export function PopupMixin(options = {}) {
       value(val) {
         const type = val ? 'open' : 'close';
         this.inited = this.inited || this.value;
+        this.realValue = this.value;
         this[type]();
 
         if (!options.skipToggleEvent) {
           this.$emit(type);
         }
       },
+      realValue(val) {
+        const type = val ? 'open' : 'close';
+        this.inited = this.inited || this.realValue;
+        this[type]();
 
+        if (!options.skipToggleEvent) {
+          this.$emit(type);
+        }
+      },
       overlay: 'renderOverlay',
     },
 
@@ -207,7 +217,7 @@ export function PopupMixin(options = {}) {
       },
 
       renderOverlay() {
-        if (this.$isServer || !this.value) {
+        if (this.$isServer || !this.realValue) {
           return;
         }
 

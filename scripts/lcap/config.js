@@ -15,7 +15,7 @@ module.exports = [
     { group: 'Display', show: true, name: 'button', alias: '按钮' },
     { group: 'Display', show: true, name: 'image', alias: '图片' },
     { group: 'Display', show: true, name: 'swipe', alias: '轮播' },
-    { group: 'Container', show: true, name: 'popup', alias: '弹窗' },
+    { group: 'Container', show: true, name: 'popup', alias: '弹出层' },
     { group: 'Container', show: true, name: 'router-view', alias: '子页面' },
     { group: 'Display', show: true, name: 'tabs', alias: '选项卡' },
     { group: 'Display', show: true, name: 'text', alias: '文本' },
