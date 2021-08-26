@@ -80,31 +80,31 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-progress">
     <span class="van-progress__portion"
-          style="background: rgb(202, 202, 202); transform: scaleX(0);"
+          style="background: rgb(202, 202, 202); transform: scaleX(0.5);"
     >
     </span>
-    <span style="left: 0%; transform: translate(-0%,-50%); background: rgb(202, 202, 202);"
+    <span style="left: 50%; transform: translate(-50%,-50%); background: rgb(202, 202, 202);"
           class="van-progress__pivot"
     >
-      0%
+      50%
     </span>
   </div>
-  <div style="display: flex; justify-content: space-around;">
+  <div style="margin-top: 15px;">
     <button type="button"
-            class="van-button van-button--default van-button--normal"
+            class="van-button van-button--primary van-button--small"
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          decrease
+          Add
         </span>
       </div>
     </button>
     <button type="button"
-            class="van-button van-button--default van-button--normal"
+            class="van-button van-button--danger van-button--small"
     >
       <div class="van-button__content">
         <span class="van-button__text">
-          increase
+          Decrease
         </span>
       </div>
     </button>
