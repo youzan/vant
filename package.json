@@ -2,7 +2,7 @@
   "name": "vant",
   "version": "2.12.25",
   "lcapname": "@lcap/mobile-ui",
-  "lcapversion": "0.3.5",
+  "lcapversion": "0.3.7",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",

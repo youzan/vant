@@ -45,3 +45,8 @@
       title: 点击遮罩层
       description: 点击遮罩层时触发
       params: []
+  methods:
+    - name: open
+      description: 打开弹窗
+    - name: close
+      description: 关闭弹窗

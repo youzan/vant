@@ -7,6 +7,15 @@
         :placeholder="t('placeholder')"
       />
     </van-cell-group>
+
+    <van-cell-group>
+      <van-field
+        :value="value2"
+        :label="t('label')"
+        :placeholder="t('placeholder')"
+        @input="(v) => updateV(v, 'value2')"
+      />
+    </van-cell-group>
   </demo-block>
 </template>
 
@@ -26,7 +35,13 @@ export default {
   data() {
     return {
       value: '',
+      value2: '',
     };
   },
+  methods: {
+    updateV(v, name) {
+      this[name] = v;
+    }
+  }
 };
 </script>
