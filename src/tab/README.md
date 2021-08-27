@@ -259,7 +259,7 @@ export default {
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 | title-style | Custom title style | _string \| Array \| object_ | - |
 | title-class | Custom title class name | _string \| Array \| object_ | - |
-| show-zero-badge `v3.2.1` | Whether to show badge when the value is zero | _boolean_ | `true` |
+| show-zero-badge `v3.2.2` | Whether to show badge when the value is zero | _boolean_ | `true` |
 
 ### Tabs Events
 
