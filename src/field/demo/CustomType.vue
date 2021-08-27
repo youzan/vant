@@ -25,9 +25,11 @@
     />
     <van-field
       v-model="password"
-      type="password"
+      :type="passwordortext"
+      eye="yes"
       :label="t('password')"
       :placeholder="t('passwordPlaceholder')"
+      @click-right-icon="clickRightIcon"
     />
   </demo-block>
 </template>
@@ -68,7 +70,18 @@ export default {
       digit: '',
       number: '',
       password: '',
+      passwordortext: 'password',
     };
   },
+  methods: {
+    clickRightIcon(evea){
+      const now = this.passwordortext;
+      if (now === 'password') {
+        this.passwordortext = 'text';
+      } else {
+        this.passwordortext = 'password';
+      }
+    }
+  }
 };
 </script>

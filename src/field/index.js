@@ -83,6 +83,10 @@ export default createComponent({
       type: String,
       default: 'onChange',
     },
+    eye: {
+      type: String,
+      default: '',
+    },
   },
 
   data() {
@@ -505,8 +509,20 @@ export default createComponent({
     },
 
     genRightIcon() {
+      const ifPwd = this.type === 'password';
+      const ifEye = this.eye === 'yes';
       const { slots } = this;
       const showRightIcon = slots('right-icon') || this.rightIcon;
+
+      if(ifEye) {
+        return (
+          <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
+            {(
+              <Icon name={!ifPwd ? '//static-vusion.nos-eastchina1.126.net/h5-template/eye-open-icon.png' : '//static-vusion.nos-eastchina1.126.net/h5-template/eye-close-icon.png'} classPrefix={this.iconPrefix} />
+            )}
+          </div>
+        );
+      }
 
       if (showRightIcon) {
         return (

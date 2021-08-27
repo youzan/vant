@@ -13,7 +13,7 @@
         :value="value2"
         :label="t('label')"
         :placeholder="t('placeholder')"
-        @input="(v) => updateV(v, 'value2')"
+        @input="updateV"
       />
     </van-cell-group>
   </demo-block>
@@ -39,8 +39,9 @@ export default {
     };
   },
   methods: {
-    updateV(v, name) {
-      this[name] = v;
+    updateV(v) {
+      console.log(v);
+      this.value2 = v;
     }
   }
 };
