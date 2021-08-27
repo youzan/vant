@@ -152,6 +152,13 @@ export default {
 <van-pull-refresh style="min-height: 100vh;" />
 ```
 
+### PullRefresh 的触发条件是？
+
+PullRefresh 的触发条件是「父级滚动元素的滚动条在顶部位置」。
+
+- 如果最近一个可滚动的父级元素是 `window`，则要求 `window.pageYOffset === 0`。
+- 如果最近一个可滚动的父级元素是 `Element`，则要求 `Element.scrollTop === 0`。
+
 ### 在桌面端无法操作组件？
 
 参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。
