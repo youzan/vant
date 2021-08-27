@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     text: '文字',
     route: '页面导航',
@@ -26,9 +26,7 @@ const i18n = {
     showBadge: 'Show Badge',
     horizontal: 'Horizontal',
   },
-};
-
-const t = useTranslate(i18n);
+});
 </script>
 
 <template>

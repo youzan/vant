@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     text: '文本',
     dashed: '虚线',
@@ -16,9 +16,7 @@ const i18n = {
     contentPosition: 'Content Position',
     customStyle: 'Custom Style',
   },
-};
-
-const t = useTranslate(i18n);
+});
 </script>
 
 <template>

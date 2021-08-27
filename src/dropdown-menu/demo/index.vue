@@ -3,7 +3,7 @@ import { computed, ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import type { DropdownItemInstance } from '../../dropdown-item';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     disableMenu: '禁用菜单',
     switchTitle1: '包邮',
@@ -42,10 +42,9 @@ const i18n = {
       { text: 'Option C', value: 'c' },
     ],
   },
-};
+});
 
 const item = ref<DropdownItemInstance>();
-const t = useTranslate(i18n);
 
 const switch1 = ref(true);
 const switch2 = ref(false);

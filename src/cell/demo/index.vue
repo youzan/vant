@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     cell: '单元格',
     group: '分组',
@@ -32,9 +32,7 @@ const i18n = {
     insetGrouped: 'Inset Grouped',
     verticalCenter: 'Vertical center',
   },
-};
-
-const t = useTranslate(i18n);
+});
 </script>
 
 <template>

@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     tab: '标签 ',
     title2: '标签栏滚动',
@@ -35,9 +35,8 @@ const i18n = {
     matchByName: 'Match By Name',
     beforeChange: 'Before Change',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const active = ref(2);
 const activeName = ref('b');
 

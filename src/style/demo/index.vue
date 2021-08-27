@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     hairline: '1px 边框',
     ellipsis: '文字省略',
@@ -22,9 +22,8 @@ const i18n = {
     text2:
       'This is a paragraph that displays up to two lines of text, and the rest of the text will be omitted.',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const show = ref(false);
 const transitionName = ref('');
 

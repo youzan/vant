@@ -2,7 +2,7 @@
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     title2: '懒加载',
     title3: '监听 change 事件',
@@ -19,9 +19,8 @@ const i18n = {
     title6: 'Custom indicator',
     message: 'Current Swipe index:',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const images = [
   'https://img.yzcdn.cn/vant/apple-1.jpg',
   'https://img.yzcdn.cn/vant/apple-2.jpg',

@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     errorInfo: '错误提示',
     errorText: '请求失败，点击重新加载',
@@ -15,9 +15,8 @@ const i18n = {
     pullRefresh: 'PullRefresh',
     finishedText: 'Finished',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const list = ref([
   {
     items: [] as string[],

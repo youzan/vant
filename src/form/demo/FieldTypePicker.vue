@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     picker: '选择器',
     placeholder: '点击选择城市',
@@ -13,9 +13,8 @@ const i18n = {
     placeholder: 'Select city',
     textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
   },
-};
+});
 
-const t = useTranslate(i18n);
 const result = ref('');
 const showPicker = ref(false);
 

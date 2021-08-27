@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     actions: [{ text: '选项一' }, { text: '选项二' }, { text: '选项三' }],
     shortActions: [{ text: '选项一' }, { text: '选项二' }],
@@ -50,7 +50,7 @@ const i18n = {
     disableAction: 'Disable Action',
     choosePlacement: 'Placement',
   },
-};
+});
 
 const placements = [
   'top',
@@ -67,7 +67,6 @@ const placements = [
   'bottom-end',
 ];
 
-const t = useTranslate(i18n);
 const show = ref({
   showIcon: false,
   placement: false,

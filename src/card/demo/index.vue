@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     title: '商品名称',
     discountInfo: '营销信息',
@@ -11,9 +11,8 @@ const i18n = {
     discountInfo: 'Discount Info',
     customContent: 'Custom Content',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const imageURL = 'https://img.yzcdn.cn/vant/ipad.jpeg';
 </script>
 

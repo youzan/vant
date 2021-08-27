@@ -6,7 +6,7 @@ import FieldTypePicker from './FieldTypePicker.vue';
 import FieldTypeCalendar from './FieldTypeCalendar.vue';
 import FieldTypeDatetimePicker from './FieldTypeDatetimePicker.vue';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     rate: '评分',
     radio: '单选框',
@@ -35,9 +35,8 @@ const i18n = {
     checkboxGroup: 'Checkbox Group',
     requireCheckbox: 'Checkbox is required',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const rate = ref(3);
 const radio = ref('1');
 const slider = ref(50);

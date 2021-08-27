@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     type: '加载类型',
     text: '加载文案',
@@ -18,9 +18,7 @@ const i18n = {
     vertical: 'Vertical',
     textColor: 'Text Color',
   },
-};
-
-const t = useTranslate(i18n);
+});
 </script>
 
 <template>

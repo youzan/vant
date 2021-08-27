@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     badge: '徽标提示',
     customIcon: '自定义图标',
@@ -18,9 +18,8 @@ const i18n = {
     matchByName: 'Match by name',
     switchEvent: 'Change Event',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const active = ref(0);
 const active2 = ref(0);
 const active3 = ref(0);

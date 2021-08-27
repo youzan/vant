@@ -4,7 +4,7 @@ import { useTranslate } from '@demo/use-translate';
 import { FieldValidateError } from '../../field/types';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     label: '文本',
     title: '校验规则',
@@ -29,9 +29,8 @@ const i18n = {
     asyncValidator: 'Use async validator',
     validatorMessage: 'Use validator to return message',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const value1 = ref('');
 const value2 = ref('');
 const value3 = ref('abc');

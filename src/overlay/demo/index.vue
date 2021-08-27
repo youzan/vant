@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     showOverlay: '显示遮罩层',
     embeddedContent: '嵌入内容',
@@ -11,9 +11,8 @@ const i18n = {
     showOverlay: 'Show Overlay',
     embeddedContent: 'Embedded Content',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const show = ref(false);
 const showEmbedded = ref(false);
 </script>

@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     left: '左侧',
     right: '右侧',
@@ -27,9 +27,8 @@ const i18n = {
     startPosition: 'Start Position',
     counterClockwise: 'Counter Clockwise',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const rate = ref(70);
 const currentRate1 = ref(70);
 const currentRate2 = ref(70);

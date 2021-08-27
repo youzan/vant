@@ -4,7 +4,7 @@ import { useTranslate } from '@demo/use-translate';
 import { Dialog } from '..';
 import type { DialogAction } from '../Dialog';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     title: '标题',
     alert1: '提示弹窗',
@@ -24,9 +24,8 @@ const i18n = {
     roundButton: 'Round Button Style',
     componentCall: 'Component Call',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const show = ref(false);
 const image = 'https://img.yzcdn.cn/vant/apple-3.jpg';
 

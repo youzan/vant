@@ -3,7 +3,7 @@ import { useTranslate } from '@demo/use-translate';
 import { Toast } from '..';
 import type { LoadingType } from '../../loading';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     fail: '失败提示',
     text: '提示内容',
@@ -40,9 +40,7 @@ const i18n = {
     positionBottom: 'Bottom',
     customPosition: 'Custom Position',
   },
-};
-
-const t = useTranslate(i18n);
+});
 
 const showLoadingToast = (loadingType?: LoadingType) => {
   Toast.loading({

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     title2: '背景图懒加载',
     title3: '懒加载模块',
@@ -10,9 +10,7 @@ const i18n = {
     title2: 'Lazyload Background Image',
     title3: 'Lazyload Component',
   },
-};
-
-const t = useTranslate(i18n);
+});
 
 const imageList = [
   'https://img.yzcdn.cn/vant/apple-1.jpg',

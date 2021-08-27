@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     label: '文本',
     placeholder: '请输入文本',
@@ -11,9 +11,8 @@ const i18n = {
     label: 'Label',
     placeholder: 'Text',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const value = ref('');
 </script>
 

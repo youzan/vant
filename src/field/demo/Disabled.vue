@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     text: '文本',
     disabled: '禁用输入框',
@@ -13,9 +13,7 @@ const i18n = {
     inputReadonly: 'Input Readonly',
     inputDisabled: 'Input Disabled',
   },
-};
-
-const t = useTranslate(i18n);
+});
 </script>
 
 <template>

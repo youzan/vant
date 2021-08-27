@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     title2: '置灰',
     title3: '样式定制',
@@ -15,9 +15,7 @@ const i18n = {
     strokeWidth: 'Stroke Width',
     transition: 'Transition',
   },
-};
-
-const t = useTranslate(i18n);
+});
 
 const percentage = ref(50);
 

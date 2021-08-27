@@ -31,7 +31,7 @@ function copyToClipboard(str: string) {
   }
 }
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     title: '图标列表',
     badge: '徽标提示',
@@ -54,9 +54,8 @@ const i18n = {
     color: 'Icon Color',
     size: 'Icon Size',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const tab = ref(0);
 const demoIcon = 'chat-o';
 const demoImage = 'https://b.yzcdn.cn/vant/icon-demo-1126.png';

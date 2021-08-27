@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     position: '弹出位置',
     buttonBasic: '展示弹出层',
@@ -29,9 +29,8 @@ const i18n = {
     customCloseIcon: 'Custom Icon',
     customIconPosition: 'Icon Position',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const showBasic = ref(false);
 const showTop = ref(false);
 const showBottom = ref(false);

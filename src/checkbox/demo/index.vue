@@ -5,7 +5,7 @@ import { useRefs } from '../../composables/use-refs';
 import type { CheckboxInstance } from '../types';
 import type { CheckboxGroupInstance } from '../../checkbox-group';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     checkbox: '复选框',
     customIcon: '自定义图标',
@@ -36,9 +36,8 @@ const i18n = {
     horizontal: 'Horizontal',
     disableLabel: 'Disable label click',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const state = reactive({
   checkbox1: true,
   checkbox2: true,

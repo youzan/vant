@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     add: '新增',
     edit: '编辑',
@@ -42,9 +42,8 @@ const i18n = {
     select: 'Select',
     defaultTagText: 'default',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const chosenContactId = ref('1');
 
 const onAdd = () => {

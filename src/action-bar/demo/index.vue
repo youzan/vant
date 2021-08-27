@@ -2,7 +2,7 @@
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     icon1: '客服',
     icon2: '购物车',
@@ -29,9 +29,7 @@ const i18n = {
     customIconColor: 'Custom Icon Color',
     customButtonColor: 'Custom Button Color',
   },
-};
-
-const t = useTranslate(i18n);
+});
 const onClickIcon = () => Toast(t('clickIcon'));
 const onClickButton = () => Toast(t('clickButton'));
 </script>

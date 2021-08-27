@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { FieldValidateError } from '../../field/types';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     submit: '提交',
     username: '用户名',
@@ -18,9 +18,8 @@ const i18n = {
     requireUsername: 'Username is required',
     requirePassword: 'Password is required',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const username = ref('');
 const password = ref('');
 
