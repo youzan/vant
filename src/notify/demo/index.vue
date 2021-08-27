@@ -4,7 +4,7 @@ import { useTranslate } from '@demo/use-translate';
 import { Notify } from '..';
 import { NotifyType } from '../Notify';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     primary: '主要通知',
     success: '成功通知',
@@ -29,9 +29,8 @@ const i18n = {
     componentCall: 'Component Call',
     customDuration: 'Custom Duration',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const show = ref(false);
 
 const showNotify = () => {

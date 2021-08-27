@@ -2,16 +2,15 @@
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     useSlot: '使用插槽',
   },
   'en-US': {
     useSlot: 'Use Slot',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const onClickLeft = () => Toast(t('back'));
 const onClickRight = () => Toast(t('button'));
 </script>

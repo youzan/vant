@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     tip1: '你的收货地址不支持同城送, 我们已为你推荐快递',
     tip2: '你的收货地址不支持同城送, ',
@@ -22,9 +22,8 @@ const i18n = {
     clickLink: 'Click Link',
     clickButton: 'Submit',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const checked = ref(true);
 
 const onSubmit = () => Toast(t('clickButton'));

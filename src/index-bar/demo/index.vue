@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     text: '文本',
     customIndexList: '自定义索引列表',
@@ -11,9 +11,8 @@ const i18n = {
     text: 'Text',
     customIndexList: 'Custom Index List',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const activeTab = ref(0);
 const indexList: string[] = [];
 const customIndexList = [1, 2, 3, 4, 5, 6, 8, 9, 10];

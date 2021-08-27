@@ -6,7 +6,7 @@ import { deepClone } from '../../utils/deep-clone';
 import zhCNOptions from './area-zh-CN';
 import enUSOptions from './area-en-US';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     area: '地区',
     options: zhCNOptions,
@@ -45,7 +45,7 @@ const i18n = {
     ],
     customFieldNames: 'Custom Field Names',
   },
-};
+});
 
 type StateItem = {
   show: boolean;
@@ -54,7 +54,6 @@ type StateItem = {
   options?: CascaderOption[];
 };
 
-const t = useTranslate(i18n);
 const baseState = reactive<StateItem>({
   show: false,
   value: '',

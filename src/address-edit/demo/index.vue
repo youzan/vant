@@ -4,7 +4,7 @@ import { areaList } from '@vant/area-data';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     areaColumnsPlaceholder: ['请选择', '请选择', '请选择'],
     searchResult: [
@@ -37,9 +37,7 @@ const i18n = {
       },
     ],
   },
-};
-
-const t = useTranslate(i18n);
+});
 const searchResult = ref([]);
 
 const onSave = () => Toast(t('save'));

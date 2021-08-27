@@ -4,7 +4,7 @@ import { useTranslate } from '@demo/use-translate';
 import { ShareSheetOption, ShareSheetOptions } from '..';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     qq: 'QQ',
     name: '名称',
@@ -39,9 +39,8 @@ const i18n = {
     weappQrcode: 'Weapp Qrcode',
     wechatMoments: 'Wechat Moments',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const showBasic = ref(false);
 const showWithDesc = ref(false);
 const showMultiLine = ref(false);

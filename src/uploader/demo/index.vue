@@ -4,7 +4,7 @@ import { useTranslate } from '@demo/use-translate';
 import { UploaderFileListItem } from '../types';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     status: '上传状态',
     failed: '上传失败',
@@ -41,9 +41,7 @@ const i18n = {
     customPreviewImage: 'Custom single prevew image',
     deleteMessage: 'Before Delete',
   },
-};
-
-const t = useTranslate(i18n);
+});
 
 const fileList = ref([
   { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },

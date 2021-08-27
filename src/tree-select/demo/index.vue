@@ -5,7 +5,7 @@ import { zhCNData } from './data-zh';
 import { enUSData } from './data-en';
 import { deepClone } from '../../utils/deep-clone';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     showBadge: '徽标提示',
     radioMode: '单选模式',
@@ -22,9 +22,8 @@ const i18n = {
     data: enUSData,
     dataSimple: [{ text: 'Group 1' }, { text: 'Group 2' }],
   },
-};
+});
 
-const t = useTranslate(i18n);
 const activeId = ref(1);
 const activeId2 = ref(1);
 const activeIds = ref([1, 2]);

@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     title2: '简单模式',
     title3: '显示省略号',
@@ -17,9 +17,8 @@ const i18n = {
     prevText: 'Prev',
     nextText: 'Next',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const currentPage1 = ref(1);
 const currentPage2 = ref(1);
 const currentPage3 = ref(1);

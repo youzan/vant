@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     radio: '单选框',
     text1: '未选中禁用',
@@ -27,9 +27,8 @@ const i18n = {
     customIconSize: 'Custom Icon Size',
     disableLabel: 'Disable label click',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const radio1 = ref('1');
 const radio2 = ref('2');
 const radio3 = ref('1');

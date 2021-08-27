@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     max: '最大值',
     standalone: '独立展示',
@@ -14,9 +14,7 @@ const i18n = {
     customColor: 'Custom Color',
     customContent: 'Custom Content',
   },
-};
-
-const t = useTranslate(i18n);
+});
 </script>
 
 <template>

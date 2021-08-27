@@ -4,7 +4,7 @@ import { areaList } from '@vant/area-data';
 import { areaListEn } from './area-en';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     title2: '选中省市区',
     title3: '配置显示列',
@@ -19,9 +19,8 @@ const i18n = {
     columnsPlaceholder: ['Choose', 'Choose', 'Choose'],
     areaList: areaListEn,
   },
-};
+});
 
-const t = useTranslate(i18n);
 const value = ref('330302');
 </script>
 

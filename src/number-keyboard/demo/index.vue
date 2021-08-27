@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     close: '完成',
     input: '输入',
@@ -36,9 +36,8 @@ const i18n = {
     multiExtraKey: 'Multiple ExtraKey',
     randomKeyOrder: 'Random Key Order',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const value = ref('');
 const keyboard = ref('default');
 

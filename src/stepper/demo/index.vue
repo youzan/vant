@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     step: '步长设置',
     range: '限制输入范围',
@@ -24,9 +24,8 @@ const i18n = {
     disableInput: 'Disable Input',
     decimalLength: 'Decimal Length',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const stepper1 = ref(1);
 const stepper2 = ref(1);
 const stepper3 = ref(1);

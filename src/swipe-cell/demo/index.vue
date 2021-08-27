@@ -2,7 +2,7 @@
 import { useTranslate } from '@demo/use-translate';
 import { Dialog } from '../../dialog';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     select: '选择',
     delete: '删除',
@@ -23,9 +23,8 @@ const i18n = {
     beforeClose: 'Before Close',
     customContent: 'Custom Content',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const imageURL = 'https://img.yzcdn.cn/vant/ipad.jpeg';
 
 const beforeClose = ({ position }: { position: string }) => {

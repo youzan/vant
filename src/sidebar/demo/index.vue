@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     title: '标签名',
     disabled: '禁用选项',
@@ -15,9 +15,8 @@ const i18n = {
     showBadge: 'Show Badge',
     changeEvent: 'Change Event',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const active1 = ref(0);
 const active2 = ref(0);
 const active3 = ref(0);

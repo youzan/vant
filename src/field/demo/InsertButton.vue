@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     sms: '短信验证码',
     sendSMS: '发送验证码',
@@ -15,9 +15,8 @@ const i18n = {
     insertButton: 'Insert Button',
     smsPlaceholder: 'SMS',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const sms = ref('');
 </script>
 

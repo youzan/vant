@@ -3,16 +3,15 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     defaultLabel: '设为默认联系人',
   },
   'en-US': {
     defaultLabel: 'Set as the default contact',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const editingContact = ref({});
 
 const onSave = () => Toast(t('save'));

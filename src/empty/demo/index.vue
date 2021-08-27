@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     error: '通用错误',
     search: '搜索提示',
@@ -21,9 +21,8 @@ const i18n = {
     customImage: 'Custom Image',
     bottomContent: 'Bottom Content',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const active = ref('error');
 </script>
 

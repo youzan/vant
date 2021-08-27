@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     rate: '评分',
     slider: '滑块',
@@ -19,9 +19,8 @@ const i18n = {
     customTheme: 'Custom Theme',
     defaultTheme: 'DefaultTheme',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const rate = ref(4);
 const slider = ref(50);
 const themeVars = {
