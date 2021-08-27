@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
+import TiledDisplay from './TiledDisplay.vue';
 import type { CalendarDayItem } from '../types';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     in: '入店',
     out: '离店',
     today: '今天',
     laborDay: '劳动节',
     youthDay: '青年节',
-    calendar: '日历',
     maxRange: '日期区间最大范围',
     selectCount: (count: number) => `选择了 ${count} 个日期`,
     selectSingle: '选择单个日期',
@@ -26,7 +26,6 @@ const i18n = {
     customCalendar: '自定义日历',
     confirmDisabledText: '请选择结束时间',
     firstDayOfWeek: '自定义周起始日',
-    tiledDisplay: '平铺展示',
   },
   'en-US': {
     in: 'In',
@@ -34,7 +33,6 @@ const i18n = {
     today: 'Today',
     laborDay: 'Labor day',
     youthDay: 'Youth Day',
-    calendar: 'Calendar',
     maxRange: 'Max Range',
     selectCount: (count: number) => `${count} dates selected`,
     selectSingle: 'Select Single Date',
@@ -50,11 +48,8 @@ const i18n = {
     customCalendar: 'Custom Calendar',
     firstDayOfWeek: 'Custom First Day Of Week',
     confirmDisabledText: 'Select End Time',
-    tiledDisplay: 'Tiled display',
   },
-};
-
-const t = useTranslate(i18n);
+});
 const state = reactive<Record<string, any>>({
   date: {
     maxRange: [],
@@ -79,8 +74,6 @@ const state = reactive<Record<string, any>>({
   formatter: undefined,
   showConfirm: false,
   showCalendar: false,
-  tiledMinDate: new Date(2012, 0, 10),
-  tiledMaxDate: new Date(2012, 2, 20),
   confirmText: undefined,
   confirmDisabledText: undefined,
   firstDayOfWeek: 0,
@@ -288,17 +281,7 @@ const onConfirm = (date: Date | Date[]) => {
     />
   </demo-block>
 
-  <demo-block card :title="t('tiledDisplay')">
-    <van-calendar
-      :title="t('calendar')"
-      :poppable="false"
-      :show-confirm="false"
-      :min-date="state.tiledMinDate"
-      :max-date="state.tiledMaxDate"
-      :default-date="state.tiledMinDate"
-      :style="{ height: '500px' }"
-    />
-  </demo-block>
+  <TiledDisplay />
 
   <van-calendar
     v-model:show="state.showCalendar"
