@@ -28,3 +28,20 @@ test('should emit click-tab event when tab is clicked', async () => {
     })
   );
 });
+
+test('should not render zero badge when show-zero-badge prop is false', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Tabs>
+          <Tab badge={0}>1</Tab>
+          <Tab badge={0} showZeroBadge={false}>
+            2
+          </Tab>
+        </Tabs>
+      );
+    },
+  });
+  await later();
+  expect(wrapper.html()).toMatchSnapshot();
+});

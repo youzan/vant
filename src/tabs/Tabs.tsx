@@ -30,6 +30,7 @@ import {
   setRootScrollTop,
   ComponentInstance,
   BORDER_TOP_BOTTOM,
+  pick,
 } from '../utils';
 import { scrollLeftTo, scrollTopTo } from './utils';
 
@@ -374,15 +375,11 @@ export default defineComponent({
       children.map((item, index) => (
         <TabsTitle
           ref={setTitleRefs(index)}
-          dot={item.dot}
           type={props.type}
-          badge={item.badge}
-          title={item.title}
           color={props.color}
           style={item.titleStyle}
           class={item.titleClass}
           isActive={index === state.currentIndex}
-          disabled={item.disabled}
           scrollable={scrollable.value}
           renderTitle={item.$slots.title}
           activeColor={props.titleActiveColor}
@@ -390,6 +387,13 @@ export default defineComponent({
           onClick={(event: MouseEvent) => {
             onClickTab(item, index, event);
           }}
+          {...pick(item, [
+            'dot',
+            'badge',
+            'title',
+            'disabled',
+            'showZeroBadge',
+          ])}
         />
       ));
 

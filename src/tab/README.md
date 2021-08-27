@@ -229,7 +229,7 @@ export default {
 | type | Can be set to `line` `card` | _string_ | `line` |
 | color | Tab color | _string_ | `#ee0a24` |
 | background | Background color | _string_ | `white` |
-| duration | Toggle tab's animation time | _number \| string_ | `0.3` | - |
+| duration | Toggle tab's animation time | _number \| string_ | `0.3` |
 | line-width | Width of tab line | _number \| string_ | `40px` |
 | line-height | Height of tab line | _number \| string_ | `3px` |
 | animated | Whether to change tabs with animation | _boolean_ | `false` |
@@ -240,7 +240,7 @@ export default {
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
 | scrollspy | Whether to use scrollspy mode | _boolean_ | `false` |
 | offset-top | Sticky offset top , supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `0` |
-| swipe-threshold | Set swipe tabs threshold | _number \| string_ | `5` | - |
+| swipe-threshold | Set swipe tabs threshold | _number \| string_ | `5` |
 | title-active-color | Title active color | _string_ | - |
 | title-inactive-color | Title inactive color | _string_ | - |
 | before-change | Callback function before changing tabs，return `false` to prevent change，support return Promise | _(name: number \| string) => boolean \| Promise\<boolean\>_ | - |
@@ -259,6 +259,7 @@ export default {
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 | title-style | Custom title style | _string \| Array \| object_ | - |
 | title-class | Custom title class name | _string \| Array \| object_ | - |
+| show-zero-badge `v3.2.2` | Whether to show badge when the value is zero | _boolean_ | `true` |
 
 ### Tabs Events
 
