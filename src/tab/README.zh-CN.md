@@ -270,6 +270,7 @@ export default {
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
 | title-style | 自定义标题样式 | _string \| Array \| object_ | - |
 | title-class | 自定义标题类名 | _string \| Array \| object_ | - |
+| show-zero-badge `v3.2.1` | 当 badge 为数字 0 时，是否展示徽标 | _boolean_ | `true` |
 
 ### Tabs Events
 

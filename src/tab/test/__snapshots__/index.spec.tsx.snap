@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should not render zero badge when show-zero-badge prop is false 1`] = `
+<div class="van-tabs van-tabs--line">
+  <div class="van-tabs__wrap">
+    <div role="tablist"
+         class="van-tabs__nav van-tabs__nav--line"
+    >
+      <div role="tab"
+           class="van-tab van-tab--active"
+           aria-selected="true"
+      >
+        <div class="van-badge__wrapper">
+          <span class="van-tab__text van-tab__text--ellipsis">
+          </span>
+          <div class="van-badge van-badge--fixed">
+            0
+          </div>
+        </div>
+      </div>
+      <div role="tab"
+           class="van-tab"
+           aria-selected="false"
+      >
+        <div class="van-badge__wrapper">
+          <span class="van-tab__text van-tab__text--ellipsis">
+          </span>
+        </div>
+      </div>
+      <div class="van-tabs__line"
+           style="transform: translateX(0px) translateX(-50%);"
+      >
+      </div>
+    </div>
+  </div>
+  <div class="van-tabs__content">
+    <div role="tabpanel"
+         class="van-tab__pane"
+         style
+    >
+      1
+    </div>
+    <div role="tabpanel"
+         class="van-tab__pane"
+         style="display: none;"
+    >
+    </div>
+  </div>
+</div>
+`;
