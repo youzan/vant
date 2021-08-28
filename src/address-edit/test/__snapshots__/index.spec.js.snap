@@ -11,9 +11,9 @@ exports[`should render AddressEdit correctly 1`] = `
   <div class="van-address-edit__fields">
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <span>
+        <label>
           Name
-        </span>
+        </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
@@ -26,9 +26,9 @@ exports[`should render AddressEdit correctly 1`] = `
     </div>
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <span>
+        <label>
           Phone
-        </span>
+        </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
@@ -44,9 +44,9 @@ exports[`should render AddressEdit correctly 1`] = `
          tabindex="0"
     >
       <div class="van-cell__title van-field__label">
-        <span>
+        <label>
           Area
-        </span>
+        </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
@@ -62,9 +62,9 @@ exports[`should render AddressEdit correctly 1`] = `
     </div>
     <div class="van-cell van-field van-address-edit-detail">
       <div class="van-cell__title van-field__label">
-        <span>
+        <label>
           Address
-        </span>
+        </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
@@ -96,9 +96,9 @@ exports[`should render AddressEdit with props correctly 1`] = `
   <div class="van-address-edit__fields">
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <span>
+        <label>
           Name
-        </span>
+        </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
@@ -111,9 +111,9 @@ exports[`should render AddressEdit with props correctly 1`] = `
     </div>
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <span>
+        <label>
           Phone
-        </span>
+        </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
@@ -129,9 +129,9 @@ exports[`should render AddressEdit with props correctly 1`] = `
          tabindex="0"
     >
       <div class="van-cell__title van-field__label">
-        <span>
+        <label>
           Area
-        </span>
+        </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
@@ -147,9 +147,9 @@ exports[`should render AddressEdit with props correctly 1`] = `
     </div>
     <div class="van-cell van-field van-address-edit-detail">
       <div class="van-cell__title van-field__label">
-        <span>
+        <label>
           Address
-        </span>
+        </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
@@ -163,9 +163,9 @@ exports[`should render AddressEdit with props correctly 1`] = `
     </div>
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <span>
+        <label>
           Postal
-        </span>
+        </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
@@ -209,9 +209,9 @@ exports[`should render AddressEdit with props correctly 1`] = `
 exports[`should valid address detail and render error message correctly 1`] = `
 <div class="van-cell van-field van-address-edit-detail">
   <div class="van-cell__title van-field__label">
-    <span>
+    <label>
       Address
-    </span>
+    </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
@@ -232,9 +232,9 @@ exports[`should valid address detail and render error message correctly 1`] = `
 exports[`should valid address detail and render error message correctly 2`] = `
 <div class="van-cell van-field van-address-edit-detail">
   <div class="van-cell__title van-field__label">
-    <span>
+    <label>
       Address
-    </span>
+    </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
@@ -255,9 +255,9 @@ exports[`should valid area code and render error message correctly 1`] = `
      tabindex="0"
 >
   <div class="van-cell__title van-field__label">
-    <span>
+    <label>
       Area
-    </span>
+    </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
@@ -282,9 +282,9 @@ exports[`should valid area code and render error message correctly 2`] = `
      tabindex="0"
 >
   <div class="van-cell__title van-field__label">
-    <span>
+    <label>
       Area
-    </span>
+    </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
@@ -303,9 +303,9 @@ exports[`should valid area code and render error message correctly 2`] = `
 exports[`should valid name and render error message correctly 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__title van-field__label">
-    <span>
+    <label>
       Name
-    </span>
+    </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
@@ -324,9 +324,9 @@ exports[`should valid name and render error message correctly 1`] = `
 exports[`should valid name and render error message correctly 2`] = `
 <div class="van-cell van-field">
   <div class="van-cell__title van-field__label">
-    <span>
+    <label>
       Name
-    </span>
+    </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
@@ -342,9 +342,9 @@ exports[`should valid name and render error message correctly 2`] = `
 exports[`should valid postal code and render error message correctly 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__title van-field__label">
-    <span>
+    <label>
       Postal
-    </span>
+    </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
@@ -363,9 +363,9 @@ exports[`should valid postal code and render error message correctly 1`] = `
 exports[`should valid postal code and render error message correctly 2`] = `
 <div class="van-cell van-field">
   <div class="van-cell__title van-field__label">
-    <span>
+    <label>
       Postal
-    </span>
+    </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
@@ -381,9 +381,9 @@ exports[`should valid postal code and render error message correctly 2`] = `
 exports[`should valid tel and render error message correctly 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__title van-field__label">
-    <span>
+    <label>
       Phone
-    </span>
+    </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
@@ -402,9 +402,9 @@ exports[`should valid tel and render error message correctly 1`] = `
 exports[`should valid tel and render error message correctly 2`] = `
 <div class="van-cell van-field">
   <div class="van-cell__title van-field__label">
-    <span>
+    <label>
       Phone
-    </span>
+    </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
