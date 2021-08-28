@@ -493,7 +493,7 @@ export default defineComponent({
         return [slots.label(), colon];
       }
       if (props.label) {
-        return <span>{props.label + colon}</span>;
+        return <label>{props.label + colon}</label>;
       }
     };
 

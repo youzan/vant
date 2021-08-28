@@ -7,9 +7,9 @@ exports[`should render demo and match snapshot 1`] = `
        tabindex="0"
   >
     <div class="van-cell__title van-field__label">
-      <span>
+      <label>
         Area
-      </span>
+      </label>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
@@ -30,9 +30,9 @@ exports[`should render demo and match snapshot 1`] = `
        tabindex="0"
   >
     <div class="van-cell__title van-field__label">
-      <span>
+      <label>
         Area
-      </span>
+      </label>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
@@ -53,9 +53,9 @@ exports[`should render demo and match snapshot 1`] = `
        tabindex="0"
   >
     <div class="van-cell__title van-field__label">
-      <span>
+      <label>
         Area
-      </span>
+      </label>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
@@ -76,9 +76,9 @@ exports[`should render demo and match snapshot 1`] = `
        tabindex="0"
   >
     <div class="van-cell__title van-field__label">
-      <span>
+      <label>
         Area
-      </span>
+      </label>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">

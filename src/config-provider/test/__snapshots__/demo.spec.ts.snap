@@ -5,9 +5,9 @@ exports[`should render demo and match snapshot 1`] = `
   <form class="van-form">
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <span>
+        <label>
           Rate
-        </span>
+        </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
@@ -73,9 +73,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <span>
+        <label>
           Slider
-        </span>
+        </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
@@ -121,9 +121,9 @@ exports[`should render demo and match snapshot 1`] = `
     <form class="van-form">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <span>
+          <label>
             Rate
-          </span>
+          </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
@@ -189,9 +189,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <span>
+          <label>
             Slider
-          </span>
+          </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
