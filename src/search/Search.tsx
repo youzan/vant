@@ -67,9 +67,9 @@ export default defineComponent({
     const renderLabel = () => {
       if (slots.label || props.label) {
         return (
-          <div class={bem('label')}>
+          <label class={bem('label')} for={props.id}>
             {slots.label ? slots.label() : props.label}
-          </div>
+          </label>
         );
       }
     };

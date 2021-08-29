@@ -115,9 +115,9 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-search van-search--show-action">
     <div class="van-search__content van-search__content--square">
-      <div class="van-search__label">
+      <label class="van-search__label">
         Address
-      </div>
+      </label>
       <div class="van-cell van-cell--borderless van-field van-search__field">
         <div class="van-field__left-icon">
           <i class="van-badge__wrapper van-icon van-icon-search">
