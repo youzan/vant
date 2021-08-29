@@ -249,7 +249,8 @@ Use `input-align` prop to align the input value.
 | --- | --- | --- | --- |
 | v-model | Field value | _number \| string_ | - |
 | label | Field label | _string_ | - |
-| name | Name | _string_ | - |
+| name | Field name | _string_ | - |
+| id `v3.2.2` | Input id, the for attribute of the label also will be set | _string_ | - |
 | type | Input type, can be set to `tel` `digit`<br>`number` `textarea` `password` | _string_ | `text` |
 | size | Size，can be set to `large` | _string_ | - |
 | maxlength | Max length of value | _number \| string_ | - |

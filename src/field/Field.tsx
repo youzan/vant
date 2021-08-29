@@ -60,6 +60,7 @@ const [name, bem] = createNamespace('field');
 
 // provide to Search component to inherit
 export const fieldSharedProps = {
+  id: String,
   formatter: Function as PropType<(value: string) => string>,
   leftIcon: String,
   rightIcon: String,
@@ -401,6 +402,7 @@ export default defineComponent({
       }
 
       const inputAttrs = {
+        id: props.id,
         ref: inputRef,
         name: props.name,
         rows: props.rows !== undefined ? +props.rows : undefined,
@@ -493,7 +495,7 @@ export default defineComponent({
         return [slots.label(), colon];
       }
       if (props.label) {
-        return <label>{props.label + colon}</label>;
+        return <label for={props.id}>{props.label + colon}</label>;
       }
     };
 
