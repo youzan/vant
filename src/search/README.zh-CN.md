@@ -132,6 +132,7 @@ export default {
 | --- | --- | --- | --- |
 | label | 搜索框左侧文本 | _string_ | - |
 | shape | 搜索框形状，可选值为 `round` | _string_ | `square` |
+| id `v3.2.2` | 搜索框 id，同时会设置 label 的 for 属性 | _string_ | - |
 | background | 搜索框外部背景色 | _string_ | `#f2f2f2` |
 | maxlength | 输入的最大字符数 | _number \| string_ | - |
 | placeholder | 占位提示文字 | _string_ | - |

@@ -120,6 +120,7 @@ Use `action` slot to custom right button, `cancel` event will no longer be Emitt
 | --- | --- | --- | --- |
 | label | Left side label | _string_ | - |
 | shape | Shape of field, can be set to `round` | _string_ | `square` |
+| id `v3.2.2` | Input id, the for attribute of the label also will be set | _string_ | - |
 | background | Background color of field | _string_ | `#f2f2f2` |
 | maxlength | Max length of value | _number \| string_ | - |
 | placeholder | Placeholder | _string_ | - |

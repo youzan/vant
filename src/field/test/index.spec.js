@@ -456,7 +456,7 @@ test('should render autofocus attribute to input when using autofocus prop', asy
   expect(input.element.hasAttributes('autofocus')).toBeTruthy();
 });
 
-test('should render id props correctly', async () => {
+test('should render id prop correctly', async () => {
   const wrapper = mount(Field, {
     props: {
       label: 'Label',
