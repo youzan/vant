@@ -285,8 +285,10 @@ export default defineComponent({
       state.code = values[index].code;
       setValues();
 
-      const parsedValues = parseValues(pickerRef.value!.getValues());
-      emit('change', parsedValues, index);
+      if (pickerRef.value) {
+        const parsedValues = parseValues(pickerRef.value.getValues());
+        emit('change', parsedValues, index);
+      }
     };
 
     const onConfirm = (values: AreaColumnOption[], index: number) => {
