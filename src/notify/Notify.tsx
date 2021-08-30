@@ -23,25 +23,21 @@ export default defineComponent({
   }),
 
   setup(props, { slots }) {
-    return () => {
-      const style = {
-        color: props.color,
-        background: props.background,
-      };
-
-      return (
-        <Popup
-          show={props.show}
-          class={[bem([props.type]), props.className]}
-          style={style}
-          overlay={false}
-          position="top"
-          duration={0.2}
-          lockScroll={props.lockScroll}
-        >
-          {slots.default ? slots.default() : props.message}
-        </Popup>
-      );
-    };
+    return () => (
+      <Popup
+        show={props.show}
+        class={[bem([props.type]), props.className]}
+        style={{
+          color: props.color,
+          background: props.background,
+        }}
+        overlay={false}
+        position="top"
+        duration={0.2}
+        lockScroll={props.lockScroll}
+      >
+        {slots.default ? slots.default() : props.message}
+      </Popup>
+    );
   },
 });

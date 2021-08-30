@@ -54,11 +54,10 @@ export default defineComponent({
       }
     };
 
-    const onDelete = () => {
+    const onDelete = () =>
       Dialog.confirm({
         title: t('confirmDelete'),
       }).then(() => emit('delete', contact));
-    };
 
     const renderButtons = () => (
       <div class={bem('buttons')}>

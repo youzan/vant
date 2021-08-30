@@ -78,9 +78,7 @@ export default defineComponent({
       }
     };
 
-    const clearTimer = () => {
-      clearTimeout(timer);
-    };
+    const clearTimer = () => clearTimeout(timer);
 
     const renderIcon = () => {
       const { icon, type, iconSize, iconPrefix, loadingType } = props;

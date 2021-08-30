@@ -155,7 +155,7 @@ Toast.clear = (all?: boolean) => {
     } else if (!allowMultiple) {
       queue[0].clear();
     } else {
-      queue.shift()!.clear();
+      queue.shift()?.clear();
     }
   }
 };
