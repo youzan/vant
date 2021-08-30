@@ -113,27 +113,25 @@ export default defineComponent({
     const popoverRef = ref<ComponentInstance>();
 
     const createPopperInstance = () => {
-      if (!wrapperRef.value || !popoverRef.value) {
-        return;
+      if (wrapperRef.value && popoverRef.value) {
+        createPopper(wrapperRef.value, popoverRef.value.popupRef.value, {
+          placement: props.placement,
+          modifiers: [
+            {
+              name: 'computeStyles',
+              options: {
+                adaptive: false,
+                gpuAcceleration: false,
+              },
+            },
+            extend({}, offsetModifier, {
+              options: {
+                offset: props.offset,
+              },
+            }),
+          ],
+        });
       }
-
-      createPopper(wrapperRef.value, popoverRef.value.popupRef.value, {
-        placement: props.placement,
-        modifiers: [
-          {
-            name: 'computeStyles',
-            options: {
-              adaptive: false,
-              gpuAcceleration: false,
-            },
-          },
-          extend({}, offsetModifier, {
-            options: {
-              offset: props.offset,
-            },
-          }),
-        ],
-      });
     };
 
     const updateLocation = () => {
