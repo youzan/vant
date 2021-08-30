@@ -114,7 +114,7 @@ export default defineComponent({
 
     const createPopperInstance = () => {
       if (wrapperRef.value && popoverRef.value) {
-        createPopper(wrapperRef.value, popoverRef.value.popupRef.value, {
+        return createPopper(wrapperRef.value, popoverRef.value.popupRef.value, {
           placement: props.placement,
           modifiers: [
             {
@@ -132,6 +132,7 @@ export default defineComponent({
           ],
         });
       }
+      return null;
     };
 
     const updateLocation = () => {
