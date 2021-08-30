@@ -377,6 +377,7 @@ export default createComponent({
 
     const Nav = this.children.map((item, index) => {
       return <Title
+        vusion-slot-name="extra"
         ref="titles"
         refInFor
         type={type}

@@ -56,6 +56,8 @@ export default createComponent({
   },
 
   render() {
+    // this.$env = {};
+    // this.$env.VUE_APP_DESIGNER = true;
     if (!this.shouldRender) {
       return;
     }
@@ -88,6 +90,7 @@ export default createComponent({
             'safe-area-inset-bottom': this.safeAreaInsetBottom,
           })}
           onClick={this.onClick}
+          empty={!this.$slots.default}
         >
           {this.slots('inject')}
           {this.slots()}

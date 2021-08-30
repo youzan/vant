@@ -47,6 +47,7 @@
     - name: default
       title: 默认
       description: 插入`<van-tab>`子组件。
+      empty-background: add-sub
       support:
         - name: van-tab
           title: 子选项
@@ -61,6 +62,7 @@
   control: button
   next: false
   nested: true
+  is-sub: true
   attrs:
     - name: title
       title: 标题

@@ -9,7 +9,8 @@
     <demo-block card :title="t('basicUsage')">
       <van-cell :title="t('buttonBasic')" is-link @click="testModal" />
       <van-popup ref="van_modal" :style="{ padding: '30px 50px' }" >
-        {{ t('content') }}
+        <!-- {{ t('content') }} -->
+        <div class="van-popup-default"></div>
       </van-popup>
     </demo-block>
 
@@ -149,7 +150,7 @@ export default {
   methods: {
     testModal() {
       console.log(this.$refs.van_modal);
-      this.$refs.van_modal.setRealValue(true);
+      this.$refs.van_modal.realValue = true;
     }
   }
 };

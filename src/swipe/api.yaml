@@ -30,6 +30,7 @@
   slots:
     - name: default
       description: 插入`van-swipe-item`子组件。
+      empty-background: add-sub-large
       support:
         - name: van-swipe-item
           title: 幻灯片子项

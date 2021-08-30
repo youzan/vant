@@ -84,6 +84,7 @@ export function PopupMixin(options = {}) {
       value(val) {
         const type = val ? 'open' : 'close';
         this.inited = this.inited || this.value;
+        console.log(8888)
         this.realValue = this.value;
         this[type]();
 
@@ -113,6 +114,7 @@ export function PopupMixin(options = {}) {
     activated() {
       if (this.shouldReopen) {
         this.$emit('input', true);
+        this.realValue = true;
         this.shouldReopen = false;
       }
     },
@@ -190,6 +192,7 @@ export function PopupMixin(options = {}) {
         this.opened = false;
         this.removeLock();
         this.$emit('input', false);
+        this.realValue = false;
       },
 
       onTouchMove(event) {
