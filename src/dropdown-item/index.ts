@@ -1,8 +1,6 @@
 import { withInstall } from '../utils';
 import _DropdownItem from './DropdownItem';
 
-const DropdownItem = withInstall<typeof _DropdownItem>(_DropdownItem);
-
+export const DropdownItem = withInstall(_DropdownItem);
 export default DropdownItem;
-export { DropdownItem };
 export type { DropdownItemInstance, DropdownItemOption } from './types';

@@ -26,4 +26,3 @@ const Locale = {
 };
 
 export default Locale;
-export { Locale };
