@@ -70,10 +70,10 @@ const ImagePreview = (
   return instance;
 };
 
-ImagePreview.Component = withInstall<typeof VanImagePreview>(VanImagePreview);
+ImagePreview.Component = withInstall(VanImagePreview);
 
 ImagePreview.install = (app: App) => {
-  app.use(withInstall<typeof VanImagePreview>(VanImagePreview));
+  app.use(ImagePreview.Component);
 };
 
 export { ImagePreview };
