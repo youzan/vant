@@ -120,11 +120,11 @@ Dialog.resetDefaultOptions = () => {
   Dialog.currentOptions = extend({}, Dialog.defaultOptions);
 };
 
+Dialog.Component = withInstall(VanDialog);
+
 Dialog.install = (app: App) => {
-  app.use(withInstall<typeof VanDialog>(VanDialog));
+  app.use(Dialog.Component);
   app.config.globalProperties.$dialog = Dialog;
 };
-
-Dialog.Component = withInstall<typeof VanDialog>(VanDialog);
 
 export { Dialog };
