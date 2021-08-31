@@ -162,13 +162,13 @@ const show = (type: string, id: string) => {
 
 const formatDate = (date: Date) => {
   if (date) {
-    return `${state.date.getMonth() + 1}/${state.date.getDate()}`;
+    return `${date.getMonth() + 1}/${date.getDate()}`;
   }
 };
 
 const formatFullDate = (date: Date) => {
   if (date) {
-    return `${state.date.getFullYear()}/${formatDate(date)}`;
+    return `${date.getFullYear()}/${formatDate(date)}`;
   }
 };
 
