@@ -373,7 +373,7 @@ export default defineComponent({
       monthDays: CalendarDayItem[],
       startDay: Date,
       date: Date
-    ) => {
+    ): CalendarDayItem | undefined => {
       let isComparing = false;
       for (const day of monthDays) {
         if (!isComparing && compareDay(day.date!, startDay) === 0) {
@@ -396,7 +396,7 @@ export default defineComponent({
       }, [] as any)
     );
 
-    const monthDaysCache = ref([]);
+    const monthDaysCache = ref<CalendarDayItem[]>([]);
 
     watch(monthRefsCache, (v) => {
       if (props.show) {
