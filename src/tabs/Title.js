@@ -7,6 +7,8 @@ export default createComponent({
   props: {
     dot: Boolean,
     type: String,
+    badgebtn: Boolean,
+    badgemax: Number,
     info: [Number, String],
     color: String,
     title: String,
@@ -62,7 +64,7 @@ export default createComponent({
         return (
           <span class={bem('text-wrapper')}>
             {Text}
-            {<Info dot={this.dot} info={this.info} />}
+            {<Info dot={this.dot} info={this.info} badgemax={this.badgemax} />}
           </span>
         );
       }

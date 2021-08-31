@@ -10,10 +10,17 @@ export type InfoProps = {
   dot?: boolean;
   info?: string | number;
   badge?: string | number;
+  badgemax?: number;
 };
 
 const [createComponent, bem] = createNamespace('info');
-
+const isNumber = (i: any) => typeof i === 'number';
+const maxContent = (max: number, info: number) => {
+  if(info <= max) {
+    return info;
+  }
+  return max + '+';
+}
 function Info(
   h: CreateElement,
   props: InfoProps,
@@ -29,7 +36,7 @@ function Info(
 
   return (
     <div class={bem({ dot })} {...inherit(ctx, true)}>
-      {dot ? '' : props.info}
+      {dot ? '' : ((isNumber(props.info) && props.badgemax) ? maxContent(props.badgemax, props.info as number) : props.info)}
     </div>
   );
 }
@@ -37,6 +44,7 @@ function Info(
 Info.props = {
   dot: Boolean,
   info: [Number, String],
+  badgemax: Number,
 };
 
 export default createComponent<InfoProps>(Info);

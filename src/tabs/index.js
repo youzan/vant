@@ -93,6 +93,10 @@ export default createComponent({
       type: [Number, String],
       default: 5,
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -373,7 +377,7 @@ export default createComponent({
   },
 
   render() {
-    const { type, animated, scrollable } = this;
+    const { type, animated, scrollable, disabled } = this;
 
     const Nav = this.children.map((item, index) => {
       return <Title
@@ -382,13 +386,14 @@ export default createComponent({
         refInFor
         type={type}
         dot={item.dot}
-        info={item.badge ?? item.info}
+        info={item.badgebtn ? (item.badge ? item.badge : item.info) : null}
+        badgemax={item.badgemax}
         title={item.title}
         color={this.color}
         style={item.titleStyle}
         class={item.titleClass}
         isActive={index === this.currentIndex}
-        disabled={item.disabled}
+        disabled={disabled || item.disabled}
         scrollable={scrollable}
         activeColor={this.titleActiveColor}
         inactiveColor={this.titleInactiveColor}
@@ -399,6 +404,7 @@ export default createComponent({
           default: () => item.slots('title'),
         }}
         onClick={() => {
+          if(disabled) return;
           this.onClick(item, index);
         }}
       />

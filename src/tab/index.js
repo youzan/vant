@@ -14,6 +14,8 @@ export default createComponent({
     // @deprecated
     info: [Number, String],
     badge: [Number, String],
+    badgebtn: Boolean,
+    badgemax: Number,
     title: String,
     titleStyle: null,
     titleClass: null,

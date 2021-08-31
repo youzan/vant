@@ -13,8 +13,13 @@
       sync: true
       model: true
       description: 选中标签页的值。
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: 是否禁用。
     - name: type
-      title: 样式风格
+      title: 展示外观
       type: string
       options:
         - value: line
@@ -22,22 +27,22 @@
         - value: card
           title: 卡片
       default: line
-      description: 选型卡样式风格
+      description: 选项卡样式风格
     - name: sticky
       title: 自动吸顶
       type: boolean
-      default: false
+      default: true
       description: 是否自动吸顶
     - name: swipeable
       title: 滑动切换
       type: boolean
-      default: false
+      default: true
       description: 是否滑动切换
     - name: scrollspy
       title: 滚动导航
       type: boolean
       default: false
-      description: 是否滚动导航
+      description: 是否开启滚动导航
     - name: animated
       title: 转场动画
       type: boolean
@@ -54,8 +59,12 @@
           snippet: <van-tab title="标签页">内容</van-tab>
   events:
     - name: click
-      title: 点击后
-      description: 监听所有`<span>`元素的事件。
+      title: 点击标签
+      description: 点击标签时触发
+      params: []
+    - name: change
+      title: 标签改变
+      description: 当前激活的标签改变时触发
       params: []
 - name: van-tab
   title: tab标签页
@@ -74,11 +83,21 @@
       type: boolean
       default: false
       description: 是否禁用
+    - name: badgebtn
+      title: 徽标显示
+      type: boolean
+      default: false
+      description: 是否显示徽标
     - name: badge
       title: 徽标
-      type: string
+      type: string, number
       description: 徽标的内容
+    - name: badgemax
+      title: 最大值
+      type: number
+      description: 徽标内容为数字时显示的最大值
   slots:
     - name: default
       title: 默认
+      empty-background: add-any
       description: 显示的内容

@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
-      <van-tabs v-model="active" class="u-code-example_demo_">
+      <van-tabs v-model="active" class="u-code-example_demo_" @change="changeTab">
         <van-tab :title="t('tab') + index" v-for="index in tabs" :key="index">
           {{ t('content') }} {{ index }}
         </van-tab>
@@ -10,7 +10,7 @@
 
     <demo-block :title="t('matchByName')">
       <van-tabs v-model="activeName">
-        <van-tab name="a" :title="t('tab') + 1"> {{ t('content') }} 1 </van-tab>
+        <van-tab name="a" :title="t('tab') + 1" :badgebtn="true" :badge="50" :badgemax="48"> {{ t('content') }} 1 </van-tab>
         <van-tab name="b" :title="t('tab') + 2"> {{ t('content') }} 2 </van-tab>
         <van-tab name="c" :title="t('tab') + 3"> {{ t('content') }} 3 </van-tab>
       </van-tabs>
@@ -164,7 +164,9 @@ export default {
     onClick(index, title) {
       this.$toast(title);
     },
-
+    changeTab(name) {
+      console.log(name)
+    },
     beforeChange(name) {
       if (name === 1) {
         return false;

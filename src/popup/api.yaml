@@ -45,8 +45,16 @@
       title: 点击遮罩层
       description: 点击遮罩层时触发
       params: []
-  methods:
     - name: open
-      description: 打开弹窗
+      title: 打开弹出层后
+      description: 打开弹出层时触发
+      params: []
     - name: close
+      title: 关闭弹出层后
+      description: 关闭弹出层时触发
+      params: []
+  methods:
+    - name: openModal
+      description: 打开弹窗
+    - name: closeModal
       description: 关闭弹窗
