@@ -349,7 +349,18 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Calend
 
 ### Types
 
-Get the type definition of the Calendar instance through `CalendarInstance`.
+The component exports the following type definitions:
+
+```ts
+import type {
+  CalendarType,
+  CalendarDayItem,
+  CalendarDayType,
+  CalendarInstance,
+} from 'vant';
+```
+
+`CalendarInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -359,6 +370,8 @@ const calendarRef = ref<CalendarInstance>();
 
 calendarRef.value?.reset();
 ```
+
+## Theming
 
 ### CSS Variables
 

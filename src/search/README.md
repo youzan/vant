@@ -163,7 +163,13 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Search
 
 ### Types
 
-Get the type definition of the Search instance through `SearchInstance`.
+The component exports the following type definitions:
+
+```ts
+import type { SearchShape, SearchInstance } from 'vant';
+```
+
+`SearchInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -183,6 +189,8 @@ searchRef.value?.focus();
 | label      | Custom Search label                                         |
 | left-icon  | Custom left icon                                            |
 | right-icon | Custom right icon                                           |
+
+## Theming
 
 ### CSS Variables
 

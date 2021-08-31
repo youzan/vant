@@ -208,7 +208,13 @@ export default {
 
 ### 类型定义
 
-通过 `ListInstance` 获取 List 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { ListInstance, ListDirection } from 'vant';
+```
+
+`ListInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -227,6 +233,8 @@ listRef.value?.check();
 | loading  | 自定义底部加载中提示       |
 | finished | 自定义加载完成后的提示文案 |
 | error    | 自定义加载失败后的提示文案 |
+
+## 主题定制
 
 ### 样式变量
 

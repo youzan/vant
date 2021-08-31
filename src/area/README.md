@@ -166,7 +166,13 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Area i
 
 ### Types
 
-Get the type definition of the Area instance through `AreaInstance`.
+The component exports the following type definitions:
+
+```ts
+import type { AreaList, AreaInstance, AreaColumnOption } from 'vant';
+```
+
+`AreaInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';

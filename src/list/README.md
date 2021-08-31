@@ -193,7 +193,13 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get List i
 
 ### Types
 
-Get the type definition of the List instance through `ListInstance`.
+The component exports the following type definitions:
+
+```ts
+import type { ListInstance, ListDirection } from 'vant';
+```
+
+`ListInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -212,6 +218,8 @@ listRef.value?.check();
 | loading  | Custom loading tips  |
 | finished | Custom finished tips |
 | error    | Custom error tips    |
+
+## Theming
 
 ### CSS Variables
 

@@ -146,6 +146,8 @@ Use `teleport` prop to specify mount location.
 | default                   | Content of Popup         |
 | overlay-content `v3.0.18` | Content of Popup overlay |
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

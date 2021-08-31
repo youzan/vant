@@ -193,7 +193,17 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Dropdo
 
 ### Types
 
-Get the type definition of the DropdownItem instance through `DropdownItemInstance`.
+The component exports the following type definitions:
+
+```ts
+import type {
+  DropdownItemOption,
+  DropdownItemInstance,
+  DropdownMenuDirection,
+} from 'vant';
+```
+
+`DropdownItemInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -211,6 +221,8 @@ dropdownItemRef.value?.toggle();
 | text  | Text        | _string_           |
 | value | Value       | _number \| string_ |
 | icon  | Left icon   | _string_           |
+
+## Theming
 
 ### CSS Variables
 

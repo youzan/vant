@@ -78,8 +78,8 @@ export default {
 | area-list | Area List | _object_ | - |
 | area-columns-placeholder | placeholder of area columns | _string[]_ | `[]` |
 | area-placeholder | placeholder of area input field | _string_ | `Area` |
-| address-info | Address Info | _AddressInfo_ | `{}` |
-| search-result | Address search result | _SearchResult[]_ | `[]` |
+| address-info | Address Info | _AddressEditInfo_ | `{}` |
+| search-result | Address search result | _AddressEditSearchItem[]_ | `[]` |
 | show-postal | Whether to show postal field | _boolean_ | `false` |
 | show-delete | Whether to show delete button | _boolean_ | `false` |
 | show-set-default | Whether to show default address switch | _boolean_ | `false` |
@@ -128,7 +128,17 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Addres
 
 ### Types
 
-Get the type definition of the AddressEdit instance through `AddressEditInstance`.
+The component exports the following type definitions:
+
+```ts
+import type {
+  AddressEditInfo,
+  AddressEditInstance,
+  AddressEditSearchItem,
+} from 'vant';
+```
+
+`AddressEditInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -139,7 +149,7 @@ const addressEditRef = ref<AddressEditInstance>();
 addressEditRef.value?.setAddressDetail('');
 ```
 
-### AddressInfo Data Structure
+### AddressEditInfo Data Structure
 
 | key           | Description        | Type      |
 | ------------- | ------------------ | --------- |
@@ -153,7 +163,7 @@ addressEditRef.value?.setAddressDetail('');
 | postalCode    | Postal code        | _string_  |
 | isDefault     | Is default address | _boolean_ |
 
-### SearchResult Data Structure
+### AddressEditSearchItem Data Structure
 
 | key     | Description | Type     |
 | ------- | ----------- | -------- |
@@ -163,6 +173,8 @@ addressEditRef.value?.setAddressDetail('');
 ### Area Data Structure
 
 Please refer to [Area](#/en-US/area) component.
+
+## Theming
 
 ### CSS Variables
 

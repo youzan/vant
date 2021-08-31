@@ -133,6 +133,8 @@ Use `badge` prop to show badge in icon.
 | ------- | -------------- |
 | default | Button content |
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

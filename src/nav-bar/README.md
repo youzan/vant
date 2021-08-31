@@ -87,6 +87,8 @@ export default {
 | click-left  | Emitted when the left button is clicked  | _event: MouseEvent_ |
 | click-right | Emitted when the right button is clicked | _event: MouseEvent_ |
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

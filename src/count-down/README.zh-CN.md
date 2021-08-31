@@ -193,7 +193,13 @@ export default {
 
 ### 类型定义
 
-通过 `CountDownInstance` 获取 CountDown 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { CountDownInstance, CountDownCurrentTime } from 'vant';
+```
+
+`CountDownInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -203,6 +209,8 @@ const countDownRef = ref<CountDownInstance>();
 
 countDownRef.value?.start();
 ```
+
+## 主题定制
 
 ### 样式变量
 

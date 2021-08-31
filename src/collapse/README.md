@@ -152,7 +152,13 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Collap
 
 ### Types
 
-Get the type definition of the CollapseItem instance through `CollapseItemInstance`.
+The component exports the following type definitions:
+
+```ts
+import type { CollapseItemInstance } from 'vant';
+```
+
+`CollapseItemInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -173,6 +179,8 @@ collapseItemRef.value?.toggle();
 | label `v3.1.1` | Custom header label      |
 | icon           | Custom header left icon  |
 | right-icon     | Custom header right icon |
+
+## Theming
 
 ### CSS Variables
 

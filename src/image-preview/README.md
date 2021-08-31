@@ -187,7 +187,17 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get ImagePreview instance and call i
 
 ### Types
 
-Get the type definition of the ImagePreview instance through `ImagePreviewInstance`.
+The component exports the following type definitions:
+
+```ts
+import type {
+  ImagePreviewOptions,
+  ImagePreviewInstance,
+  ImagePreviewScaleEventParams,
+} from 'vant';
+```
+
+`ImagePreviewInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -218,6 +228,8 @@ imagePreviewRef.value?.swipeTo(1);
 | --------- | ---------------------- | -------- |
 | index     | Index of current image | _number_ |
 | scale     | scale of current image | _number_ |
+
+## Theming
 
 ### CSS Variables
 

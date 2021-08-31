@@ -110,13 +110,15 @@ export default {
 | type | Can be set to `primary` `success` `warning` | _string_ | `danger` |
 | message | Message | _string_ | - |
 | duration | Duration(ms), won't disappear if value is 0 | _number \| string_ | `3000` |
-| color | Message color | _string_ | `white` |  |
+| color | Message color | _string_ | `white` |
 | background | Background color | _string_ | - |
 | className | Custom className | _string \| Array \| object_ | - |
 | lockScroll `v3.0.7` | Whether to lock background scroll | _boolean_ | `false` |
 | onClick | Callback function after click | _(event: MouseEvent) => void_ | - |
 | onOpened | Callback function after opened | _() => void_ | - |
 | onClose | Callback function after close | _() => void_ | - |
+
+## Theming
 
 ### CSS Variables
 

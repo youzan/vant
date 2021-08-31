@@ -283,7 +283,13 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Tabs i
 
 ### Types
 
-Get the type definition of the Tabs instance through `TabsInstance`.
+The component exports the following type definitions:
+
+```ts
+import type { TabsType, TabsInstance } from 'vant';
+```
+
+`TabsInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -308,6 +314,8 @@ tabsRef.value?.scrollTo(0);
 | ------- | ---------------- |
 | default | Content of tab   |
 | title   | Custom tab title |
+
+## Theming
 
 ### CSS Variables
 

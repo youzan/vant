@@ -582,7 +582,13 @@ export default {
 
 ### 类型定义
 
-通过 `FormInstance` 获取 Form 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { FormInstance } from 'vant';
+```
+
+`FormInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';

@@ -133,6 +133,8 @@ export default {
 | change | 开关状态切换时触发 | _value: any_        |
 | click  | 点击时触发         | _event: MouseEvent_ |
 
+## 主题定制
+
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。

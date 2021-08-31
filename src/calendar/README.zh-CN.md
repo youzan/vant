@@ -355,7 +355,18 @@ export default {
 
 ### 类型定义
 
-通过 `CalendarInstance` 获取 Calendar 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type {
+  CalendarType,
+  CalendarDayItem,
+  CalendarDayType,
+  CalendarInstance,
+} from 'vant';
+```
+
+`CalendarInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -365,6 +376,8 @@ const calendarRef = ref<CalendarInstance>();
 
 calendarRef.value?.reset();
 ```
+
+## 主题定制
 
 ### 样式变量
 

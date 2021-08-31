@@ -138,7 +138,13 @@ app.use(NoticeBar);
 
 ### 类型定义
 
-通过 `NoticeBarInstance` 获取 NoticeBar 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { NoticeBarMode, NoticeBarInstance } from 'vant';
+```
+
+`NoticeBarInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -156,6 +162,8 @@ noticeBarRef.value?.reset();
 | default    | 通知文本内容   |
 | left-icon  | 自定义左侧图标 |
 | right-icon | 自定义右侧图标 |
+
+## 主题定制
 
 ### 样式变量
 

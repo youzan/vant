@@ -118,8 +118,8 @@ export default {
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | _string_ | `default` |
 | color | 按钮颜色，支持传入 `linear-gradient` 渐变色 | _string_ | - |
 | icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
-| disabled | 是否禁用按钮 | _boolean_ | `false` | - |
-| loading | 是否显示为加载状态 | _boolean_ | `false` | - |
+| disabled | 是否禁用按钮 | _boolean_ | `false` |
+| loading | 是否显示为加载状态 | _boolean_ | `false` |
 | url | 点击后跳转的链接地址 | _string_ | - |
 | to | 点击后跳转的目标路由对象，等同于 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
@@ -136,6 +136,8 @@ export default {
 | 名称    | 说明         |
 | ------- | ------------ |
 | default | 按钮显示内容 |
+
+## 主题定制
 
 ### 样式变量
 

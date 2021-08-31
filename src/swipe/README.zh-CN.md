@@ -189,7 +189,13 @@ export default {
 
 ### 类型定义
 
-通过 `SwipeInstance` 获取 Swipe 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { SwipeInstance, SwipeToOptions } from 'vant';
+```
+
+`SwipeInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -212,6 +218,8 @@ swipeRef.value?.next();
 | ------------------- | ------------ | -------------------- |
 | default             | 轮播内容     | -                    |
 | indicator `v3.0.16` | 自定义指示器 | _{ active: number }_ |
+
+## 主题定制
 
 ### 样式变量
 

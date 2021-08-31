@@ -116,6 +116,8 @@ export default {
 | click | Emitted when component is clicked  | _event: MouseEvent_ |
 | close | Emitted when close icon is clicked | _event: MouseEvent_ |
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

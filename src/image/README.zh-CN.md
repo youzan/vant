@@ -142,6 +142,8 @@ app.use(Lazyload);
 | loading | 自定义加载中的提示内容     |
 | error   | 自定义加载失败时的提示内容 |
 
+## 主题定制
+
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。

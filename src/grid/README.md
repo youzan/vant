@@ -142,6 +142,8 @@ app.use(GridItem);
 | icon    | Custom icon    |
 | text    | Custom text    |
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

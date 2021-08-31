@@ -204,6 +204,8 @@ export default {
 | extra-key  | Custom extra key content  |
 | title-left | Custom title left content |
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

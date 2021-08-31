@@ -75,7 +75,13 @@ app.use(Progress);
 
 ### 类型定义
 
-通过 `ProgressInstance` 获取 Progress 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { ProgressInstance } from 'vant';
+```
+
+`ProgressInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -85,6 +91,8 @@ const progressRef = ref<ProgressInstance>();
 
 progressRef.value?.resize();
 ```
+
+## 主题定制
 
 ### 样式变量
 

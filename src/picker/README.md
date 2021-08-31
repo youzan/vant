@@ -381,7 +381,21 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Picker
 
 ### Types
 
-Get the type definition of the Picker instance through `PickerInstance`.
+The component exports the following type definitions:
+
+```ts
+import type {
+  PickerColumn,
+  PickerOption,
+  PickerInstance,
+  PickerFieldNames,
+  PickerObjectColumn,
+  PickerObjectOption,
+  PickerToolbarPosition,
+} from 'vant';
+```
+
+`PickerInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -391,6 +405,8 @@ const pickerRef = ref<PickerInstance>();
 
 pickerRef.value?.confirm();
 ```
+
+## Theming
 
 ### CSS Variables
 

@@ -181,7 +181,13 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Swipe 
 
 ### Types
 
-Get the type definition of the Swipe instance through `SwipeInstance`.
+The component exports the following type definitions:
+
+```ts
+import type { SwipeInstance, SwipeToOptions } from 'vant';
+```
+
+`SwipeInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -204,6 +210,8 @@ swipeRef.value?.next();
 | ------------------- | ---------------- | -------------------- |
 | default             | Content          | -                    |
 | indicator `v3.0.16` | Custom indicator | _{ active: number }_ |
+
+## Theming
 
 ### CSS Variables
 
