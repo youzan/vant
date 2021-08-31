@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     fitMode: '填充模式',
     round: '圆形图片',
@@ -20,9 +20,8 @@ const i18n = {
     customTip: 'Custom Tip',
     loadFail: 'Load failed',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const image = 'https://img.yzcdn.cn/vant/cat.jpeg';
 const fits = ['contain', 'cover', 'fill', 'none', 'scale-down'];
 </script>

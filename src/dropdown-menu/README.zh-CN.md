@@ -197,7 +197,17 @@ export default {
 
 ### 类型定义
 
-通过 `DropdownItemInstance` 获取 DropdownItem 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type {
+  DropdownItemOption,
+  DropdownItemInstance,
+  DropdownMenuDirection,
+} from 'vant';
+```
+
+`DropdownItemInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -215,6 +225,8 @@ dropdownItemRef.value?.toggle();
 | text  | 文字                                   | _string_           |
 | value | 标识符                                 | _number \| string_ |
 | icon  | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_           |
+
+## 主题定制
 
 ### 样式变量
 

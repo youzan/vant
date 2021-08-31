@@ -293,7 +293,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | max-range | 日期区间最多可选天数 | _number \| string_ | 无限制 |
-| range-prompt | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
+| range-prompt | 范围选择超过最多可选天数时的提示文案 | _string_ | `最多选择 xx 天` |
 | show-range-prompt | 范围选择超过最多可选天数时，是否展示提示文案 | _boolean_ | `true` |
 | allow-same-day | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 
@@ -304,7 +304,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | max-range | 日期最多可选天数 | _number \| string_ | 无限制 |
-| range-prompt | 选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
+| range-prompt | 选择超过最多可选天数时的提示文案 | _string_ | `最多选择 xx 天` |
 
 ### Day 数据结构
 
@@ -355,7 +355,18 @@ export default {
 
 ### 类型定义
 
-通过 `CalendarInstance` 获取 Calendar 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type {
+  CalendarType,
+  CalendarDayItem,
+  CalendarDayType,
+  CalendarInstance,
+} from 'vant';
+```
+
+`CalendarInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -365,6 +376,8 @@ const calendarRef = ref<CalendarInstance>();
 
 calendarRef.value?.reset();
 ```
+
+## 主题定制
 
 ### 样式变量
 

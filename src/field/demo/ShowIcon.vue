@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     text: '文本',
     showIcon: '显示图标',
@@ -13,9 +13,8 @@ const i18n = {
     showIcon: 'Show Icon',
     showClearIcon: 'Show Clear Icon',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const icon1 = ref('');
 const icon2 = ref('123');
 </script>

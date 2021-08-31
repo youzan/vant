@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     offsetTop: '吸顶距离',
     offsetBottom: '吸底距离',
@@ -13,9 +13,8 @@ const i18n = {
     offsetBottom: 'Offset Bottom',
     setContainer: 'Set Container',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const container = ref(null);
 </script>
 

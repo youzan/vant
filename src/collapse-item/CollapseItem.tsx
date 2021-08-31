@@ -61,8 +61,8 @@ export default defineComponent({
     const onTransitionEnd = () => {
       if (!expanded.value) {
         show.value = false;
-      } else {
-        wrapperRef.value!.style.height = '';
+      } else if (wrapperRef.value) {
+        wrapperRef.value.style.height = '';
       }
     };
 

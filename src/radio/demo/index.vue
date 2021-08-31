@@ -2,12 +2,12 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     radio: '单选框',
     text1: '未选中禁用',
     text2: '选中且禁用',
-    withCell: '与 Cell 组件一起使用',
+    withCell: '搭配单元格组件使用',
     horizontal: '水平排列',
     customIcon: '自定义图标',
     customColor: '自定义颜色',
@@ -27,9 +27,8 @@ const i18n = {
     customIconSize: 'Custom Icon Size',
     disableLabel: 'Disable label click',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const radio1 = ref('1');
 const radio2 = ref('2');
 const radio3 = ref('1');

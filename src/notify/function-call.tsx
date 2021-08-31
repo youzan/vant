@@ -92,11 +92,11 @@ Notify.resetDefaultOptions = () => {
   Notify.currentOptions = defaultOptions();
 };
 
+Notify.Component = withInstall(VanNotify);
+
 Notify.install = (app: App) => {
-  app.use(withInstall<typeof VanNotify>(VanNotify));
+  app.use(Notify.Component);
   app.config.globalProperties.$notify = Notify;
 };
-
-Notify.Component = withInstall<typeof VanNotify>(VanNotify);
 
 export { Notify };

@@ -268,7 +268,8 @@ export default {
 | --- | --- | --- | --- |
 | v-model | 当前输入的值 | _number \| string_ | - |
 | label | 输入框左侧文本 | _string_ | - |
-| name | 名称，提交表单的标识符 | _string_ | - |
+| name | 名称，作为提交表单时的标识符 | _string_ | - |
+| id `v3.2.2` | 输入框 id，同时会设置 label 的 for 属性 | _string_ | - |
 | type | 输入框类型, 可选值为 `tel` `digit`<br>`number` `textarea` `password` 等 | _string_ | `text` |
 | size | 大小，可选值为 `large` | _string_ | - |
 | maxlength | 输入的最大字符数 | _number \| string_ | - |
@@ -327,7 +328,23 @@ export default {
 
 ### 类型定义
 
-通过 `FieldInstance` 获取 Field 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type {
+  FieldType,
+  FieldRule,
+  FieldInstance,
+  FieldTextAlign,
+  FieldClearTrigger,
+  FieldFormatTrigger,
+  FieldValidateError,
+  FieldAutosizeConfig,
+  FieldValidateTrigger,
+} from 'vant';
+```
+
+`FieldInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -348,6 +365,8 @@ fieldRef.value?.focus();
 | right-icon | 自定义输入框尾部图标 |
 | button | 自定义输入框尾部按钮 |
 | extra | 自定义输入框最右侧的额外内容 |
+
+## 主题定制
 
 ### 样式变量
 

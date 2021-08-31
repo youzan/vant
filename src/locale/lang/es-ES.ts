@@ -9,7 +9,6 @@ export default {
   loading: 'Cargando...',
   telEmpty: 'Por favor rellena el teléfono',
   nameEmpty: 'Por favor rellena el nombre',
-  nameInvalid: 'nombre inválido',
   confirmDelete: 'Estás seguro de eliminarlo?',
   telInvalid: 'Teléfono inválido',
   vanCalendar: {
@@ -66,9 +65,6 @@ export default {
     addressEmpty: 'La dirección no puede estar vacia',
     postalEmpty: 'Código postal inválido',
     defaultAddress: 'Establecer como dirección por defecto',
-    telPlaceholder: 'Teléfono',
-    namePlaceholder: 'Nombre',
-    areaPlaceholder: 'Área',
   },
   vanAddressEditDetail: {
     label: 'Dirección',

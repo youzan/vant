@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     type: '按钮类型',
     size: '按钮尺寸',
@@ -60,9 +60,7 @@ const i18n = {
     gradient: 'Gradient',
     blockElement: 'Block Element',
   },
-};
-
-const t = useTranslate(i18n);
+});
 </script>
 
 <template>

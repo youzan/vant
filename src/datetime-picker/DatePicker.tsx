@@ -222,7 +222,7 @@ export default defineComponent({
       });
 
       nextTick(() => {
-        picker.value!.setValues(values);
+        picker.value?.setValues(values);
       });
     };
 

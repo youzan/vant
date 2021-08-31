@@ -168,7 +168,7 @@ export default {
 | label-disabled | Whether to disable label click | _boolean_ | `false` |
 | label-position | Can be set to `left` | _string_ | `right` |
 | icon-size | Icon size | _number \| string_ | `20px` |
-| checked-color | Checked color | _string_ | `#1989fa` | - |
+| checked-color | Checked color | _string_ | `#1989fa` |
 
 ### RadioGroup Props
 
@@ -178,7 +178,7 @@ export default {
 | disabled | Disable all radios | _boolean_ | `false` |
 | direction | Direction, can be set to `horizontal` | _string_ | `vertical` |
 | icon-size | Icon size of all radios | _number \| string_ | `20px` |
-| checked-color | Checked color of all radios | _string_ | `#1989fa` | - |
+| checked-color | Checked color of all radios | _string_ | `#1989fa` |
 
 ### Radio Events
 
@@ -198,6 +198,8 @@ export default {
 | ------- | ------------ | ----------------------------------------- |
 | default | Custom label | -                                         |
 | icon    | Custom icon  | _{ checked: boolean, disabled: boolean }_ |
+
+## Theming
 
 ### CSS Variables
 

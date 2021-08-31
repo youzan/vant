@@ -73,17 +73,15 @@ app.use(Progress);
 | inactive | 是否置灰 | _boolean_ | `false` |
 | show-pivot | 是否显示进度文字 | _boolean_ | `true` |
 
-### 方法
-
-通过 ref 可以获取到 Progress 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
-
-| 方法名 | 说明                                         | 参数 | 返回值 |
-| ------ | -------------------------------------------- | ---- | ------ |
-| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | -    | -      |
-
 ### 类型定义
 
-通过 `ProgressInstance` 获取 Progress 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { ProgressInstance } from 'vant';
+```
+
+`ProgressInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -93,6 +91,8 @@ const progressRef = ref<ProgressInstance>();
 
 progressRef.value?.resize();
 ```
+
+## 主题定制
 
 ### 样式变量
 
@@ -108,30 +108,3 @@ progressRef.value?.resize();
 | --van-progress-pivot-font-size        | _var(--van-font-size-xs)_  | -    |
 | --van-progress-pivot-line-height      | _1.6_                      | -    |
 | --van-progress-pivot-background-color | _var(--van-primary-color)_ | -    |
-
-## 常见问题
-
-### 组件从隐藏状态切换到显示状态时，渲染不正确？
-
-Progress 组件在挂载时，会获取自身的宽度，并计算出进度条的样式。如果组件一开始处于隐藏状态，则获取到的宽度永远为 0，因此无法展示正确的进度。
-
-#### 解决方法
-
-方法一，如果是使用 `v-show` 来控制组件展示的，则替换为 `v-if` 即可解决此问题：
-
-```html
-<!-- Before -->
-<van-progress v-show="show" />
-<!-- After -->
-<van-progress v-if="show" />
-```
-
-方法二，调用组件的 resize 方法来主动触发重绘：
-
-```html
-<van-progress v-show="show" ref="progress" />
-```
-
-```js
-this.$refs.progress.resize();
-```

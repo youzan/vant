@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     title2: '在列元素之间增加间距',
     justify: '对齐方式',
@@ -10,9 +10,7 @@ const i18n = {
     title2: 'Column Spacing',
     justify: 'Justify Content',
   },
-};
-
-const t = useTranslate(i18n);
+});
 </script>
 
 <template>

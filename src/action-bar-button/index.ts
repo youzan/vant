@@ -1,7 +1,5 @@
 import { withInstall } from '../utils';
 import _ActionBarButton from './ActionBarButton';
 
-const ActionBarButton = withInstall<typeof _ActionBarButton>(_ActionBarButton);
-
+export const ActionBarButton = withInstall(_ActionBarButton);
 export default ActionBarButton;
-export { ActionBarButton };

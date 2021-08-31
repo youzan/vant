@@ -168,7 +168,7 @@ Toast.resetDefaultOptions('loading');
 | --- | --- | --- | --- |
 | type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | _string_ | `text` |
 | position | 位置，可选值为 `top` `bottom` | _string_ | `middle` |
-| message | 文本内容，支持通过`\n`换行 | _string_ | `''` | - |
+| message | 文本内容，支持通过`\n`换行 | _string_ | `''` |
 | icon | 自定义图标，支持传入[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | iconSize | 图标大小，如 `20px` `2em`，默认单位为 `px` | _number \| string_ | `36px` |
 | iconPrefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
@@ -185,6 +185,8 @@ Toast.resetDefaultOptions('loading');
 | onClose | 关闭时的回调函数 | _Function_ | - |
 | transition | 动画类名，等价于 [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的`name`属性 | _string_ | `van-fade` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
+
+## 主题定制
 
 ### 样式变量
 

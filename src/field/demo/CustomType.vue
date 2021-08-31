@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     text: '文本',
     digit: '整数',
@@ -27,9 +27,8 @@ const i18n = {
     phonePlaceholder: 'Phone',
     numberPlaceholder: 'Number',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const text = ref('');
 const phone = ref('');
 const digit = ref('');

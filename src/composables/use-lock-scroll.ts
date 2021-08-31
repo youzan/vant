@@ -71,17 +71,9 @@ export function useLockScroll(
     }
   };
 
-  const init = () => {
-    if (shouldLock()) {
-      lock();
-    }
-  };
+  const init = () => shouldLock() && lock();
 
-  const destroy = () => {
-    if (shouldLock()) {
-      unlock();
-    }
-  };
+  const destroy = () => shouldLock() && unlock();
 
   onMountedOrActivated(init);
   onDeactivated(destroy);

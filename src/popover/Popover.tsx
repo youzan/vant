@@ -79,7 +79,7 @@ export default defineComponent({
     closeOnClickOverlay: truthProp,
     closeOnClickOutside: truthProp,
     offset: {
-      type: (Array as unknown) as PropType<[number, number]>,
+      type: Array as unknown as PropType<[number, number]>,
       default: () => [0, 8],
     },
     theme: {
@@ -112,24 +112,28 @@ export default defineComponent({
     const wrapperRef = ref<HTMLElement>();
     const popoverRef = ref<ComponentInstance>();
 
-    const createPopperInstance = () =>
-      createPopper(wrapperRef.value!, popoverRef.value!.popupRef.value, {
-        placement: props.placement,
-        modifiers: [
-          {
-            name: 'computeStyles',
-            options: {
-              adaptive: false,
-              gpuAcceleration: false,
+    const createPopperInstance = () => {
+      if (wrapperRef.value && popoverRef.value) {
+        return createPopper(wrapperRef.value, popoverRef.value.popupRef.value, {
+          placement: props.placement,
+          modifiers: [
+            {
+              name: 'computeStyles',
+              options: {
+                adaptive: false,
+                gpuAcceleration: false,
+              },
             },
-          },
-          extend({}, offsetModifier, {
-            options: {
-              offset: props.offset,
-            },
-          }),
-        ],
-      });
+            extend({}, offsetModifier, {
+              options: {
+                offset: props.offset,
+              },
+            }),
+          ],
+        });
+      }
+      return null;
+    };
 
     const updateLocation = () => {
       nextTick(() => {

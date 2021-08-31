@@ -210,7 +210,7 @@ export default {
 
 ### 搭配单元格组件使用
 
-此时你需要再引入 `Cell` 和 `CellGroup` 组件，并通过 `Checkbox` 实例上的 toggle 方法触发切换。
+搭配单元格组件使用时，需要再引入 `Cell` 和 `CellGroup` 组件，并通过 `Checkbox` 实例上的 toggle 方法触发切换。
 
 ```html
 <van-checkbox-group v-model="checked">
@@ -347,7 +347,17 @@ checkboxGroup.toggleAll({
 
 ### 类型定义
 
-通过 `CheckboxInstance` 和 `CheckboxGroupInstance` 获取 Checkbox 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type {
+  CheckboxInstance,
+  CheckboxGroupInstance,
+  CheckboxGroupToggleAllOptions,
+} from 'vant';
+```
+
+`CheckboxInstance` 和 `CheckboxGroupInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -359,6 +369,8 @@ const checkboxGroupRef = ref<CheckboxGroupInstance>();
 checkboxRef.value?.toggle();
 checkboxGroupRef.value?.toggleAll();
 ```
+
+## 主题定制
 
 ### 样式变量
 

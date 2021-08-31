@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     phone: '手机号',
     errorInfo: '错误提示',
@@ -15,9 +15,8 @@ const i18n = {
     phoneError: 'Invalid phone',
     phonePlaceholder: 'Phone',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const phone = ref('123');
 const username = ref('');
 </script>

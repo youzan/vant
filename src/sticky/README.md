@@ -80,6 +80,8 @@ export default {
 | change `v3.0.10` | Emitted when sticky status changed | _isFixed: boolean_ |
 | scroll | Emitted when scrolling | _{ scrollTop: number, isFixed: boolean }_ |
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

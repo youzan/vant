@@ -455,3 +455,15 @@ test('should render autofocus attribute to input when using autofocus prop', asy
   const input = wrapper.find('input');
   expect(input.element.hasAttributes('autofocus')).toBeTruthy();
 });
+
+test('should render id prop correctly', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      label: 'Label',
+      id: 'my-id',
+    },
+  });
+
+  expect(wrapper.find('input').attributes('id')).toEqual('my-id');
+  expect(wrapper.find('label').attributes('for')).toEqual('my-id');
+});

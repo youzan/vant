@@ -1,7 +1,5 @@
 import { withInstall } from '../utils';
 import _GridItem from './GridItem';
 
-const GridItem = withInstall<typeof _GridItem>(_GridItem);
-
+export const GridItem = withInstall(_GridItem);
 export default GridItem;
-export { GridItem };

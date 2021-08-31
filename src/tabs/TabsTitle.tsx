@@ -1,5 +1,5 @@
 import { computed, CSSProperties, defineComponent } from 'vue';
-import { createNamespace, isDef } from '../utils';
+import { createNamespace, isDef, truthProp } from '../utils';
 import { Badge } from '../badge';
 
 const [name, bem] = createNamespace('tab');
@@ -19,19 +19,14 @@ export default defineComponent({
     activeColor: String,
     renderTitle: Function,
     inactiveColor: String,
+    showZeroBadge: truthProp,
   },
 
   setup(props) {
     const style = computed(() => {
       const style: CSSProperties = {};
-      const {
-        type,
-        color,
-        disabled,
-        isActive,
-        activeColor,
-        inactiveColor,
-      } = props;
+      const { type, color, disabled, isActive, activeColor, inactiveColor } =
+        props;
 
       const isCard = type === 'card';
 
@@ -65,7 +60,11 @@ export default defineComponent({
 
       if (props.dot || (isDef(props.badge) && props.badge !== '')) {
         return (
-          <Badge dot={props.dot} content={props.badge}>
+          <Badge
+            dot={props.dot}
+            content={props.badge}
+            showZero={props.showZeroBadge}
+          >
             {Text}
           </Badge>
         );

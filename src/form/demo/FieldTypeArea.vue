@@ -5,7 +5,7 @@ import { useTranslate } from '@demo/use-translate';
 import { AreaColumnOption } from '../../area';
 import { areaListEn } from '../../area/demo/area-en';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     picker: '地区选择',
     areaList,
@@ -16,9 +16,8 @@ const i18n = {
     areaList: areaListEn,
     placeholder: 'Select area',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const areaCode = ref('');
 const showArea = ref(false);
 

@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     label: '时间选择',
     placeholder: '点击选择时间',
@@ -11,9 +11,8 @@ const i18n = {
     label: 'Datetime Picker',
     placeholder: 'Select time',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const result = ref('');
 const showPicker = ref(false);
 

@@ -249,7 +249,8 @@ Use `input-align` prop to align the input value.
 | --- | --- | --- | --- |
 | v-model | Field value | _number \| string_ | - |
 | label | Field label | _string_ | - |
-| name | Name | _string_ | - |
+| name | Field name | _string_ | - |
+| id `v3.2.2` | Input id, the for attribute of the label also will be set | _string_ | - |
 | type | Input type, can be set to `tel` `digit`<br>`number` `textarea` `password` | _string_ | `text` |
 | size | Size，can be set to `large` | _string_ | - |
 | maxlength | Max length of value | _number \| string_ | - |
@@ -308,7 +309,23 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Field 
 
 ### Types
 
-Get the type definition of the Field instance through `FieldInstance`.
+The component exports the following type definitions:
+
+```ts
+import type {
+  FieldType,
+  FieldRule,
+  FieldInstance,
+  FieldTextAlign,
+  FieldClearTrigger,
+  FieldFormatTrigger,
+  FieldValidateError,
+  FieldAutosizeConfig,
+  FieldValidateTrigger,
+} from 'vant';
+```
+
+`FieldInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -329,6 +346,8 @@ fieldRef.value?.focus();
 | right-icon | Custom right icon           |
 | button     | Insert button               |
 | extra      | Custom content on the right |
+
+## Theming
 
 ### CSS Variables
 

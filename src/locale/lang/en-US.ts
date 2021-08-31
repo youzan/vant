@@ -9,7 +9,6 @@ export default {
   loading: 'Loading...',
   telEmpty: 'Please fill in the tel',
   nameEmpty: 'Please fill in the name',
-  nameInvalid: 'Malformed name',
   confirmDelete: 'Are you sure you want to delete?',
   telInvalid: 'Malformed phone number',
   vanCalendar: {
@@ -66,9 +65,6 @@ export default {
     addressEmpty: 'Address can not be empty',
     postalEmpty: 'Wrong postal code',
     defaultAddress: 'Set as the default address',
-    telPlaceholder: 'Phone',
-    namePlaceholder: 'Name',
-    areaPlaceholder: 'Area',
   },
   vanAddressEditDetail: {
     label: 'Address',

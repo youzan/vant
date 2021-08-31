@@ -270,6 +270,7 @@ export default {
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
 | title-style | 自定义标题样式 | _string \| Array \| object_ | - |
 | title-class | 自定义标题类名 | _string \| Array \| object_ | - |
+| show-zero-badge `v3.2.2` | 当 badge 为数字 0 时，是否展示徽标 | _boolean_ | `true` |
 
 ### Tabs Events
 
@@ -293,7 +294,13 @@ export default {
 
 ### 类型定义
 
-通过 `TabsInstance` 获取 Tabs 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { TabsType, TabsInstance } from 'vant';
+```
+
+`TabsInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -318,6 +325,8 @@ tabsRef.value?.scrollTo(0);
 | ------- | ---------- |
 | default | 标签页内容 |
 | title   | 自定义标题 |
+
+## 主题定制
 
 ### 样式变量
 

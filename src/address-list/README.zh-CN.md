@@ -2,7 +2,7 @@
 
 ### 介绍
 
-展示收货地址列表。
+展示地址信息列表。
 
 ### 引入
 
@@ -107,9 +107,9 @@ export default {
 | 键名      | 说明               | 类型               |
 | --------- | ------------------ | ------------------ |
 | id        | 每条地址的唯一标识 | _number \| string_ |
-| name      | 收货人姓名         | _string_           |
-| tel       | 收货人手机号       | _number \| string_ |
-| address   | 收货地址           | _string_           |
+| name      | 姓名               | _string_           |
+| tel       | 手机号             | _number \| string_ |
+| address   | 详细地址           | _string_           |
 | isDefault | 是否为默认地址     | _boolean_          |
 
 ### Slots
@@ -120,6 +120,8 @@ export default {
 | top          | 在顶部插入内容       | -               |
 | item-bottom  | 在列表项底部插入内容 | _item: Address_ |
 | tag `v3.0.9` | 自定义列表项标签内容 | _item: Address_ |
+
+## 主题定制
 
 ### 样式变量
 

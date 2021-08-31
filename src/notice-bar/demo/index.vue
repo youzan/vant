@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     text: '在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。',
     mode: '通知栏模式',
@@ -22,9 +22,7 @@ const i18n = {
     scrollable: 'Scrollable',
     verticalScroll: 'Vertical Scroll',
   },
-};
-
-const t = useTranslate(i18n);
+});
 </script>
 
 <template>

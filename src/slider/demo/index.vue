@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     text: '当前值：',
     title1: '基础用法',
@@ -26,9 +26,8 @@ const i18n = {
     customStyle: 'Custom Style',
     customButton: 'Custom Button',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const value1 = ref(50);
 const value2 = ref([20, 60]);
 const value3 = ref(0);

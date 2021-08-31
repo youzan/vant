@@ -4,7 +4,7 @@ import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 import type { CountDownInstance } from '../CountDown';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     reset: '重置',
     pause: '暂停',
@@ -27,9 +27,8 @@ const i18n = {
     manualControl: 'Manual Control',
     formatWithDay: 'DD Day, HH:mm:ss',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const time = ref(30 * 60 * 60 * 1000);
 const countDown = ref<CountDownInstance>();
 

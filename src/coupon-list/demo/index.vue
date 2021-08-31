@@ -4,7 +4,7 @@ import { useTranslate } from '@demo/use-translate';
 import { CouponInfo } from '../../coupon';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     coupon: {
       name: '优惠券名称',
@@ -21,12 +21,11 @@ const i18n = {
     },
     exchange: 'Success',
   },
-};
+});
 
 const getRandomId = (max = 999999) =>
   String(Math.floor(Math.random() * max) + 1);
 
-const t = useTranslate(i18n);
 const showList = ref(false);
 const chosenCoupon = ref(-1);
 const exchangedCoupons = ref<CouponInfo[]>([]);

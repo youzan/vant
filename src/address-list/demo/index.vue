@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     list: [
       {
@@ -62,9 +62,8 @@ const i18n = {
     disabledText: 'The following address is out of range',
     defaultTagText: 'Default',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const chosenAddressId = ref('1');
 const onAdd = () => {
   Toast(t('add'));

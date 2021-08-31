@@ -2,7 +2,7 @@
 
 ### 介绍
 
-收货地址编辑组件，用于新建、更新、删除收货地址。
+地址编辑组件，用于新建、更新、删除地址信息。
 
 ### 引入
 
@@ -78,8 +78,8 @@ export default {
 | area-list | 地区列表 | _object_ | - |
 | area-columns-placeholder | 地区选择列占位提示文字 | _string[]_ | `[]` |
 | area-placeholder | 地区输入框占位提示文字 | _string_ | `选择省 / 市 / 区` |
-| address-info | 收货人信息初始值 | _AddressInfo_ | `{}` |
-| search-result | 详细地址搜索结果 | _SearchResult[]_ | `[]` |
+| address-info | 地址信息初始值 | _AddressEditInfo_ | `{}` |
+| search-result | 详细地址搜索结果 | _AddressEditSearchItem[]_ | `[]` |
 | show-postal | 是否显示邮政编码 | _boolean_ | `false` |
 | show-delete | 是否显示删除按钮 | _boolean_ | `false` |
 | show-set-default | 是否显示默认地址栏 | _boolean_ | `false` |
@@ -128,7 +128,17 @@ export default {
 
 ### 类型定义
 
-通过 `AddressEditInstance` 获取 AddressEdit 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type {
+  AddressEditInfo,
+  AddressEditInstance,
+  AddressEditSearchItem,
+} from 'vant';
+```
+
+`AddressEditInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -139,14 +149,14 @@ const addressEditRef = ref<AddressEditInstance>();
 addressEditRef.value?.setAddressDetail('');
 ```
 
-### AddressInfo 数据格式
+### AddressEditInfo 数据格式
 
-注意：`AddressInfo` 仅作为初始值传入，表单最终内容可以在 save 事件中获取。
+注意：`AddressEditInfo` 仅作为初始值传入，表单最终内容可以在 save 事件中获取。
 
 | key | 说明 | 类型 |
 | --- | --- | --- |
-| name | 收货人姓名 | _string_ |
-| tel | 收货人手机号 | _string_ |
+| name | 姓名 | _string_ |
+| tel | 手机号 | _string_ |
 | province | 省份 | _string_ |
 | city | 城市 | _string_ |
 | county | 区县 | _string_ |
@@ -155,7 +165,7 @@ addressEditRef.value?.setAddressDetail('');
 | postalCode | 邮政编码 | _string_ |
 | isDefault | 是否为默认地址 | _boolean_ |
 
-### SearchResult 数据格式
+### AddressEditSearchItem 数据格式
 
 | key     | 说明     | 类型     |
 | ------- | -------- | -------- |
@@ -164,7 +174,9 @@ addressEditRef.value?.setAddressDetail('');
 
 ### 省市县列表数据格式
 
-请参考 [Area](#/zh-CN/area) 组件。
+请参考 [Area 省市区选择](#/zh-CN/area) 组件。
+
+## 主题定制
 
 ### 样式变量
 

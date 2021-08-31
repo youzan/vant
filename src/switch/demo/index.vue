@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Dialog } from '../../dialog';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     title: '标题',
     confirm: '提醒',
@@ -22,9 +22,8 @@ const i18n = {
     customColor: 'Custom Color',
     asyncControl: 'Async Control',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const checked = ref(true);
 const checked2 = ref(true);
 const checked3 = ref(true);

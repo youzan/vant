@@ -91,6 +91,8 @@ Empty 组件内置了多种占位图片类型，可以在不同业务场景下�
 | image       | 自定义图标     |
 | description | 自定义描述文字 |
 
+## 主题定制
+
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。

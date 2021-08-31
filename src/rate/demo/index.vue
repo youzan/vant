@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     halfStar: '半星',
     disabled: '禁用状态',
@@ -26,9 +26,8 @@ const i18n = {
     changeEvent: 'Change Event',
     toastContent: (value: number) => `current value：${value}`,
   },
-};
+});
 
-const t = useTranslate(i18n);
 const value1 = ref(3);
 const value2 = ref(3);
 const value3 = ref(3);

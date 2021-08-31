@@ -4,7 +4,7 @@ import { dateColumns, cascadeColumns, cascadeColumnsCustomKey } from './data';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     city: '城市',
     cascade: '级联选择',
@@ -68,9 +68,8 @@ const i18n = {
     toastContent: (value: string, index: number) =>
       `Value: ${value}, Index：${index}`,
   },
-};
+});
 
-const t = useTranslate(i18n);
 const picker = ref();
 const showPicker = ref(false);
 const fieldValue = ref('');

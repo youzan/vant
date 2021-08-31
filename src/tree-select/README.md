@@ -228,6 +228,8 @@ In every tree object, `text` property defines `id` stands for the unique key whi
 ];
 ```
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

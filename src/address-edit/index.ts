@@ -1,10 +1,8 @@
 import { withInstall } from '../utils';
 import _AddressEdit from './AddressEdit';
 
-const AddressEdit = withInstall<typeof _AddressEdit>(_AddressEdit);
-
+export const AddressEdit = withInstall(_AddressEdit);
 export default AddressEdit;
-export { AddressEdit };
 export type {
   AddressEditInfo,
   AddressEditInstance,

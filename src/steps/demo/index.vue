@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     nextStep: '下一步',
     step1: '买家下单',
@@ -29,9 +29,8 @@ const i18n = {
     status3: '【City】Status3',
     customStyle: 'Custom Style',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const active = ref(1);
 
 const nextStep = () => {

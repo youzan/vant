@@ -41,9 +41,7 @@ export default defineComponent({
       emit('input', `${express.address || ''} ${express.name || ''}`.trim());
     };
 
-    const onFinish = () => {
-      field.value!.blur();
-    };
+    const onFinish = () => field.value?.blur();
 
     const renderFinish = () => {
       if (props.value && props.focused && android) {

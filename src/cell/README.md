@@ -192,6 +192,8 @@ app.use(CellGroup);
 | right-icon     | Custom right icon                 |
 | extra          | Custom extra content on the right |
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

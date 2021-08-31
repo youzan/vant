@@ -359,7 +359,17 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Upload
 
 ### Types
 
-Get the type definition of the Uploader instance through `UploaderInstance`.
+The component exports the following type definitions:
+
+```ts
+import type {
+  UploaderInstance,
+  UploaderResultType,
+  UploaderFileListItem,
+} from 'vant';
+```
+
+`UploaderInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -369,6 +379,8 @@ const uploaderRef = ref<UploaderInstance>();
 
 uploaderRef.value?.chooseFile();
 ```
+
+## Theming
 
 ### CSS Variables
 

@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     type: '类型',
     mark: '标记样式',
@@ -34,9 +34,8 @@ const i18n = {
     customTextColor: 'Text Color',
     customPlainColor: 'Plain Color',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const show = ref(true);
 const close = () => {
   show.value = false;

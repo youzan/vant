@@ -3,7 +3,7 @@ import { ref, watch } from 'vue';
 import { ComponentInstance } from '../../utils';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     info: '密码为 6 位数字',
     showInfo: '提示信息',
@@ -20,9 +20,8 @@ const i18n = {
     removeMask: 'Remove Mask',
     customLength: 'Custom Length',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const initialValue = {
   showInfo: '123',
   addGutter: '123',

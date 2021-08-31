@@ -54,11 +54,10 @@ export default defineComponent({
       }
     };
 
-    const onDelete = () => {
+    const onDelete = () =>
       Dialog.confirm({
         title: t('confirmDelete'),
       }).then(() => emit('delete', contact));
-    };
 
     const renderButtons = () => (
       <div class={bem('buttons')}>
@@ -117,7 +116,7 @@ export default defineComponent({
             v-model={contact.name}
             clearable
             label={t('name')}
-            rules={[{ required: true, message: t('nameInvalid') }]}
+            rules={[{ required: true, message: t('nameEmpty') }]}
             maxlength="30"
             placeholder={t('nameEmpty')}
           />

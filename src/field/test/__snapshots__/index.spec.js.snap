@@ -7,9 +7,9 @@ exports[`should change clear icon when using clear-icon prop 1`] = `
 
 exports[`should render colon when using colon prop 1`] = `
 <div class="van-cell__title van-field__label">
-  <span>
+  <label>
     foo:
-  </span>
+  </label>
 </div>
 `;
 

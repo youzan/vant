@@ -4,7 +4,7 @@ import { useTranslate } from '@demo/use-translate';
 import { ActionSheetAction } from '..';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     option1: '选项一',
     option2: '选项二',
@@ -33,9 +33,7 @@ const i18n = {
     disabledOption: 'Disabled Option',
     showDescription: 'Show Description',
   },
-};
-
-const t = useTranslate(i18n);
+});
 const showBasic = ref(false);
 const showCancel = ref(false);
 const showTitle = ref(false);

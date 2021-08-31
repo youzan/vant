@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     accordion: '手风琴',
     titleSlot: '自定义标题内容',
@@ -13,9 +13,8 @@ const i18n = {
     titleSlot: 'Custom title',
     text: 'Content',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const active1 = ref([0]);
 const active2 = ref(0);
 const active3 = ref([]);

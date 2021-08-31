@@ -2,7 +2,7 @@
 
 exports[`should validate contact name before submitting form 1`] = `
 <div class="van-field__error-message">
-  Malformed name
+  Please fill in the name
 </div>
 `;
 

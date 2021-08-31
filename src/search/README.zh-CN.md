@@ -132,6 +132,7 @@ export default {
 | --- | --- | --- | --- |
 | label | 搜索框左侧文本 | _string_ | - |
 | shape | 搜索框形状，可选值为 `round` | _string_ | `square` |
+| id `v3.2.2` | 搜索框 id，同时会设置 label 的 for 属性 | _string_ | - |
 | background | 搜索框外部背景色 | _string_ | `#f2f2f2` |
 | maxlength | 输入的最大字符数 | _number \| string_ | - |
 | placeholder | 占位提示文字 | _string_ | - |
@@ -174,7 +175,13 @@ export default {
 
 ### 类型定义
 
-通过 `SearchInstance` 获取 Search 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { SearchShape, SearchInstance } from 'vant';
+```
+
+`SearchInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -194,6 +201,8 @@ searchRef.value?.focus();
 | label      | 自定义左侧文本（搜索框内）                                |
 | left-icon  | 自定义左侧图标（搜索框内）                                |
 | right-icon | 自定义右侧图标（搜索框内）                                |
+
+## 主题定制
 
 ### 样式变量
 

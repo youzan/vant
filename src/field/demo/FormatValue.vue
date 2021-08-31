@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     text: '文本',
     formatValue: '格式化输入内容',
@@ -15,9 +15,8 @@ const i18n = {
     formatOnBlur: 'Format On Blur',
     formatOnChange: 'Format On Change',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const value1 = ref('');
 const value2 = ref('');
 const formatter = (value: string) => value.replace(/\d/g, '');

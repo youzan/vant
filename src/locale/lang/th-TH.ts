@@ -9,7 +9,6 @@ export default {
   loading: 'กำลังโหลด...',
   telEmpty: 'กรุณากรอกข้อมูลในโทรศัพท์',
   nameEmpty: 'กรุณากรอกชื่อของคุณ',
-  nameInvalid: 'กรุณากรอกชื่อที่ถูกต้อง',
   confirmDelete: 'คุณแน่ใจว่าต้องการลบ',
   telInvalid: 'กรุณากรอกหมายเลขโทรศัพท์ที่ถูกต้อง',
   vanCalendar: {
@@ -68,9 +67,6 @@ export default {
     addressEmpty: 'กรุณากรอกที่อยู่โดยละเอียด',
     postalEmpty: 'รูปแบบรหัสไปรษณีย์ไม่ถูกต้อง',
     defaultAddress: 'ตั้งเป็นที่อยู่จัดส่งเริ่มต้น',
-    telPlaceholder: 'หมายเลขโทรศัพท์มือถือของผู้รับสินค้า',
-    namePlaceholder: 'ชื่อผู้รับ',
-    areaPlaceholder: 'เลือกจังหวัด / เมือง / อำเภอ',
   },
   vanAddressEditDetail: {
     label: 'ที่อยู่',

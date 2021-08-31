@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     text: '文本',
     inputAlign: '输入框内容对齐',
@@ -13,9 +13,8 @@ const i18n = {
     inputAlign: 'Input Align',
     alignPlaceHolder: 'Input Align Right',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const value = ref('');
 </script>
 

@@ -95,7 +95,7 @@ export default {
 ### Step Slots
 
 | 名称 | 说明 |
-| --- | --- |
+| --- | --- | --- | --- |
 | active-icon | 自定义激活状态图标 |
 | inactive-icon | 自定义未激活状态图标 |
 | finish-icon `v3.0.7` | 自定义已完成步骤对应的底部图标，优先级高于 `inactive-icon` | _string_ | - |
@@ -105,6 +105,8 @@ export default {
 | 事件名     | 说明                       | 回调参数        |
 | ---------- | -------------------------- | --------------- |
 | click-step | 点击步骤的标题或图标时触发 | _index: number_ |
+
+## 主题定制
 
 ### 样式变量
 

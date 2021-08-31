@@ -1,15 +1,5 @@
-import {
-  ref,
-  watch,
-  computed,
-  nextTick,
-  reactive,
-  onMounted,
-  defineComponent,
-  ExtractPropTypes,
-} from 'vue';
+import { computed, defineComponent, ExtractPropTypes } from 'vue';
 import { truthProp, createNamespace, addUnit } from '../utils';
-import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('progress');
 
@@ -24,6 +14,7 @@ const props = {
   strokeWidth: [Number, String],
   percentage: {
     type: [Number, String],
+    default: 0,
     validator: (value: number | string) => value >= 0 && value <= 100,
   },
 };
@@ -36,50 +27,29 @@ export default defineComponent({
   props,
 
   setup(props) {
-    const root = ref<HTMLElement>();
-    const pivotRef = ref<HTMLElement>();
-
-    const state = reactive({
-      rootWidth: 0,
-      pivotWidth: 0,
-    });
-
     const background = computed(() =>
       props.inactive ? '#cacaca' : props.color
     );
 
-    const resize = () => {
-      nextTick(() => {
-        state.rootWidth = root.value ? root.value.offsetWidth : 0;
-        state.pivotWidth = pivotRef.value ? pivotRef.value.offsetWidth : 0;
-      });
-    };
-
     const renderPivot = () => {
-      const { rootWidth, pivotWidth } = state;
       const { textColor, pivotText, pivotColor, percentage } = props;
       const text = pivotText ?? `${percentage}%`;
-      const show = props.showPivot && text;
 
-      if (show) {
-        const left = ((rootWidth - pivotWidth) * +percentage!) / 100;
+      if (props.showPivot && text) {
         const style = {
           color: textColor,
-          left: `${left}px`,
+          left: `${+percentage}%`,
+          transform: `translate(-${+percentage}%,-50%)`,
           background: pivotColor || background.value,
         };
 
         return (
-          <span ref={pivotRef} style={style} class={bem('pivot')}>
+          <span style={style} class={bem('pivot')}>
             {text}
           </span>
         );
       }
     };
-
-    watch(() => [props.showPivot, props.pivotText], resize);
-    onMounted(resize);
-    useExpose({ resize });
 
     return () => {
       const { trackColor, percentage, strokeWidth } = props;
@@ -89,14 +59,13 @@ export default defineComponent({
       };
       const portionStyle = {
         background: background.value,
-        width: (state.rootWidth * +percentage!) / 100 + 'px',
+        transform: `scaleX(${+percentage / 100})`,
       };
 
       return (
-        <div ref={root} class={bem()} style={rootStyle}>
-          <span class={bem('portion')} style={portionStyle}>
-            {renderPivot()}
-          </span>
+        <div class={bem()} style={rootStyle}>
+          <span class={bem('portion')} style={portionStyle}></span>
+          {renderPivot()}
         </div>
       );
     };

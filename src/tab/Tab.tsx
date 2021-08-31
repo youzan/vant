@@ -10,7 +10,7 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace, extend, unknownProp } from '../utils';
+import { createNamespace, extend, truthProp, unknownProp } from '../utils';
 import { TABS_KEY } from '../tabs/Tabs';
 
 // Composables
@@ -34,6 +34,7 @@ export default defineComponent({
     disabled: Boolean,
     titleClass: unknownProp,
     titleStyle: [String, Object] as PropType<string | CSSProperties>,
+    showZeroBadge: truthProp,
   }),
 
   setup(props, { slots }) {

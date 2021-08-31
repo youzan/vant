@@ -138,3 +138,15 @@ test('should call input.blur when vm.blur is called', () => {
   (wrapper.vm as SearchInstance).blur();
   expect(onBlur).toHaveBeenCalledTimes(1);
 });
+
+test('should render id prop correctly', async () => {
+  const wrapper = mount(Search, {
+    props: {
+      label: 'Label',
+      id: 'my-id',
+    },
+  });
+
+  expect(wrapper.find('input').attributes('id')).toEqual('my-id');
+  expect(wrapper.find('label').attributes('for')).toEqual('my-id');
+});

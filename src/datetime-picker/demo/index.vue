@@ -2,7 +2,7 @@
 import { reactive } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     day: '日',
     year: '年',
@@ -29,9 +29,8 @@ const i18n = {
     optionFilter: 'Option Filter',
     sortColumns: 'Columns Order',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const value = reactive({
   date: new Date(2021, 0, 17),
   time: '12:00',

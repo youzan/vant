@@ -38,7 +38,7 @@ const props = {
   rowHeight: [Number, String],
   formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
   lazyRender: Boolean,
-  currentDate: [Date, Array] as PropType<Date | Date[]>,
+  currentDate: [Date, Array] as PropType<Date | Date[] | null>,
   allowSameDay: Boolean,
   showSubtitle: Boolean,
   showMonthTitle: Boolean,
@@ -94,12 +94,14 @@ export default defineComponent({
     const scrollIntoView = (body: Element) => {
       const el = props.showSubtitle ? daysRef.value : monthRef.value;
 
-      const scrollTop =
-        el!.getBoundingClientRect().top -
-        body.getBoundingClientRect().top +
-        body.scrollTop;
+      if (el) {
+        const scrollTop =
+          el.getBoundingClientRect().top -
+          body.getBoundingClientRect().top +
+          body.scrollTop;
 
-      setScrollTop(body, scrollTop);
+        setScrollTop(body, scrollTop);
+      }
     };
 
     const getMultipleDayType = (day: Date) => {

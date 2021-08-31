@@ -181,6 +181,8 @@ export default {
 | left-button `v3.1.3` | Custom left button in range mode | _{ value: number }_ |
 | right-button `v3.1.3` | Custom right button in range mode | _{ value: number }_ |
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

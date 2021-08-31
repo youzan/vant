@@ -3,7 +3,7 @@ import { computed, onMounted, ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     try: '下拉试试',
     text: '刷新次数',
@@ -18,9 +18,8 @@ const i18n = {
     successTip: 'Success Tip',
     customTips: 'Custom Tips',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const count = ref(0);
 const loading = ref(false);
 

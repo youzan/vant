@@ -9,7 +9,6 @@ export default {
   loading: '読み込み中...',
   telEmpty: '電話番号を入力してください',
   nameEmpty: '名前を入力してください',
-  nameInvalid: '正しい名前を入力してください',
   confirmDelete: '本当に削除しますか',
   telInvalid: '正しい電話番号を入力してください',
   vanCalendar: {
@@ -20,7 +19,7 @@ export default {
     startEnd: '開始/終了',
     weekdays: ['日', '月', '火', '水', '木', '金', '土'],
     monthTitle: (year: number, month: number) => `${year}年${month}月`,
-    rangePrompt: (maxRange: number) => `${maxRange}日以内を選択してください`,
+    rangePrompt: (maxRange: number) => `${maxRange}日まで選択`,
   },
   vanCascader: {
     select: '選択する',
@@ -65,11 +64,8 @@ export default {
     postal: '郵便番号',
     areaEmpty: '地域を選択してください',
     addressEmpty: '詳しい住所を入力してください',
-    postalEmpty: '邮政编码格式不正确',
+    postalEmpty: '間違った郵便番号',
     defaultAddress: 'デフォルトの住所に設定',
-    telPlaceholder: '荷受人の携帯番号',
-    namePlaceholder: '荷受人の名前',
-    areaPlaceholder: '县 / 市 / 町を選択',
   },
   vanAddressEditDetail: {
     label: '詳しい住所',

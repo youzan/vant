@@ -9,7 +9,6 @@ export default {
   loading: 'Laden...',
   telEmpty: 'Bitte füllen Sie das Telefon aus',
   nameEmpty: 'Bitte geben Sie den Name an',
-  nameInvalid: 'Ungültiger Name',
   confirmDelete: 'Sind Sie sicher, dass Sie löschen möchten?',
   telInvalid: 'Ungültige Telefonnummer',
   vanCalendar: {
@@ -66,9 +65,6 @@ export default {
     addressEmpty: 'Adresse darf nicht leer sein',
     postalEmpty: 'Falsche Postleitzahl',
     defaultAddress: 'Als Standardadresse festgelegen',
-    telPlaceholder: 'Telefon',
-    namePlaceholder: 'Name',
-    areaPlaceholder: 'Ort',
   },
   vanAddressEditDetail: {
     label: 'Adresse',

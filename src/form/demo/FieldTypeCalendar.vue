@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useTranslate } from '@demo/use-translate';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     calendar: '日历',
     placeholder: '点击选择日期',
@@ -11,9 +11,8 @@ const i18n = {
     calendar: 'Calendar',
     placeholder: 'Select date',
   },
-};
+});
 
-const t = useTranslate(i18n);
 const result = ref('');
 const showCalendar = ref(false);
 

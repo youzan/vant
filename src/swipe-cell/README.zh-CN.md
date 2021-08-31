@@ -157,7 +157,13 @@ beforeClose 的第一个参数为对象，对象中包含以下属性：
 
 ### 类型定义
 
-通过 `SwipeCellInstance` 获取 SwipeCell 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { SwipeCellSide, SwipeCellPosition, SwipeCellInstance } from 'vant';
+```
+
+`SwipeCellInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -167,6 +173,8 @@ const swipeCellRef = ref<SwipeCellInstance>();
 
 swipeCellRef.value?.close();
 ```
+
+## 主题定制
 
 ### 样式变量
 

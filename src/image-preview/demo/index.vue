@@ -4,7 +4,7 @@ import { useTranslate } from '@demo/use-translate';
 import { ImagePreview, ImagePreviewOptions } from '..';
 import { Toast } from '../../toast';
 
-const i18n = {
+const t = useTranslate({
   'zh-CN': {
     closed: '关闭',
     showClose: '展示关闭按钮',
@@ -27,7 +27,7 @@ const i18n = {
     componentCall: 'Component Call',
     index: (index: number) => `Page: ${index}`,
   },
-};
+});
 
 const images = [
   'https://img.yzcdn.cn/vant/apple-1.jpg',
@@ -36,7 +36,6 @@ const images = [
   'https://img.yzcdn.cn/vant/apple-4.jpg',
 ];
 
-const t = useTranslate(i18n);
 const show = ref(false);
 const index = ref(0);
 
