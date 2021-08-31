@@ -368,6 +368,46 @@ export default defineComponent({
       }
     };
 
+    // get disabled date between date range
+    const getDisabledDate = (
+      monthDays: CalendarDayItem[],
+      startDay: Date,
+      date: Date
+    ): CalendarDayItem | undefined => {
+      let isComparing = false;
+      for (const day of monthDays) {
+        if (!isComparing && compareDay(day.date!, startDay) === 0) {
+          isComparing = true;
+        }
+        if (compareDay(day.date!, date) === 0) {
+          break;
+        }
+        if (isComparing) {
+          if (day.type === 'disabled') return day;
+        }
+      }
+    };
+
+    // CalendarMonth refs
+    const monthRefsCache = computed(() =>
+      monthRefs.value.reduce((arr, ref) => {
+        arr.push(ref.days);
+        return arr;
+      }, [] as any)
+    );
+
+    const monthDaysCache = ref<CalendarDayItem[]>([]);
+
+    watch(monthRefsCache, (v) => {
+      if (props.show) {
+        const list = v.reduce((arr: any, ref: any) => {
+          arr.push(...ref.value);
+          return arr;
+        }, [] as any);
+        monthDaysCache.value = list;
+      }
+    });
+
     const onClickDay = (item: CalendarDayItem) => {
       if (props.readonly || !item.date) {
         return;
@@ -388,7 +428,21 @@ export default defineComponent({
           const compareToStart = compareDay(date, startDay);
 
           if (compareToStart === 1) {
-            select([startDay, date], true);
+            const disabledDate = getDisabledDate(
+              monthDaysCache.value,
+              startDay,
+              date
+            );
+
+            if (disabledDate) {
+              const dateCopy = new Date(disabledDate.date!);
+              const lastAbledEndDay = new Date(
+                dateCopy.setDate(dateCopy.getDate() - 1)
+              );
+              select([startDay, lastAbledEndDay]);
+            } else {
+              select([startDay, date], true);
+            }
           } else if (compareToStart === -1) {
             select([date]);
           } else if (props.allowSameDay) {

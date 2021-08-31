@@ -1,4 +1,4 @@
-import type { ComponentPublicInstance } from 'vue';
+import type { ComponentPublicInstance, ComputedRef, Ref } from 'vue';
 import type { CalendarProps } from './Calendar';
 import type { CalendarMonthProps } from './CalendarMonth';
 
@@ -43,5 +43,6 @@ export type CalendarMonthInstance = ComponentPublicInstance<
     getHeight: () => number;
     setVisible: (value?: boolean | undefined) => void;
     scrollIntoView: (body: Element) => void;
+    days: Ref<ComputedRef<CalendarDayItem[]>>;
   }
 >;
