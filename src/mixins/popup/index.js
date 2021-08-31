@@ -102,6 +102,19 @@ export function PopupMixin(options = {}) {
         }
       },
       overlay: 'renderOverlay',
+      $route(to, from) {
+        // 对路由变化作出响应...
+        try {
+          this.realValue = false;
+          this.close();
+          if (!options.skipToggleEvent) {
+            this.$emit('close');
+          }
+        }
+        catch (e) {
+
+        }
+      },
     },
 
     mounted() {

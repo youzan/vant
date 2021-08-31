@@ -46,7 +46,7 @@
       description: 点击遮罩层时触发
       params: []
   methods:
-    - name: open
+    - name: openModal
       description: 打开弹窗
-    - name: close
+    - name: closeModal
       description: 关闭弹窗

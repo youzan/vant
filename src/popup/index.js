@@ -52,6 +52,12 @@ export default createComponent({
     onClickCloseIcon(event) {
       this.$emit('click-close-icon', event);
       this.close();
+    },
+    openModal() {
+      this.realValue = true;
+    },
+    closeModal() {
+      this.realValue = false;
     }
   },
 
