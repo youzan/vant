@@ -90,14 +90,14 @@ app.use(NoticeBar);
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | mode | Mode, can be set to `closeable` `link` | _string_ | `''` |
-| text | Notice text content | _string_ | `''` | - |
+| text | Notice text content | _string_ | `''` |
 | color | Text color | _string_ | `#f60` |
 | background | Background color | _string_ | `#fff7cc` |
 | left-icon | Left Icon | _string_ | - |
 | delay | Animation delay (s) | _number \| string_ | `1` |
 | speed | Scroll speed (px/s) | _number \| string_ | `60` |
 | scrollable | Whether to scroll content | _boolean_ | - |
-| wrapable | Whether to enable text wrap | _boolean_ | `false` | - |
+| wrapable | Whether to enable text wrap | _boolean_ | `false` |
 
 ### Events
 
@@ -117,7 +117,13 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Notice
 
 ### Types
 
-Get the type definition of the NoticeBar instance through `NoticeBarInstance`.
+The component exports the following type definitions:
+
+```ts
+import type { NoticeBarMode, NoticeBarInstance } from 'vant';
+```
+
+`NoticeBarInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -135,6 +141,8 @@ noticeBarRef.value?.reset();
 | default    | Notice text content |
 | left-icon  | Custom left icon    |
 | right-icon | Custom right icon   |
+
+## Theming
 
 ### CSS Variables
 

@@ -544,7 +544,13 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Form i
 
 ### Types
 
-Get the type definition of the Form instance through `FormInstance`.
+The component exports the following type definitions:
+
+```ts
+import type { FormInstance } from 'vant';
+```
+
+`FormInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';

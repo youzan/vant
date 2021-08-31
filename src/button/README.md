@@ -149,6 +149,8 @@ app.use(Button);
 | icon `v3.0.18` | Custom icon         |
 | loading        | Custom loading icon |
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

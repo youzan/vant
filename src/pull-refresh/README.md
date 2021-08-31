@@ -135,6 +135,8 @@ Use slots to custom tips.
 | loading | Content of head when at loading       | { distance } |
 | success | Content of head when succeed          | -            |
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

@@ -309,7 +309,23 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Field 
 
 ### Types
 
-Get the type definition of the Field instance through `FieldInstance`.
+The component exports the following type definitions:
+
+```ts
+import type {
+  FieldType,
+  FieldRule,
+  FieldInstance,
+  FieldTextAlign,
+  FieldClearTrigger,
+  FieldFormatTrigger,
+  FieldValidateError,
+  FieldAutosizeConfig,
+  FieldValidateTrigger,
+} from 'vant';
+```
+
+`FieldInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -330,6 +346,8 @@ fieldRef.value?.focus();
 | right-icon | Custom right icon           |
 | button     | Insert button               |
 | extra      | Custom content on the right |
+
+## Theming
 
 ### CSS Variables
 

@@ -88,6 +88,8 @@ export default {
 | change `v3.0.10` | 当吸顶状态改变时触发 | _isFixed: boolean_ |
 | scroll | 滚动时触发 | _{ scrollTop: number, isFixed: boolean }_ |
 
+## 主题定制
+
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。

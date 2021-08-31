@@ -71,7 +71,13 @@ Use `pivot-text` to custom text，use `color` to custom bar color.
 
 ### Types
 
-Get the type definition of the Progress instance through `ProgressInstance`.
+The component exports the following type definitions:
+
+```ts
+import type { ProgressInstance } from 'vant';
+```
+
+`ProgressInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -81,6 +87,8 @@ const progressRef = ref<ProgressInstance>();
 
 progressRef.value?.resize();
 ```
+
+## Theming
 
 ### CSS Variables
 

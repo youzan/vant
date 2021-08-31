@@ -75,7 +75,7 @@ export default {
 | z-index | z-index | _number \| string_ | `1` |
 | sticky | Whether to enable anchor sticky top | _boolean_ | `true` |
 | sticky-offset-top | Anchor offset top when sticky | _number_ | `0` |
-| highlight-color | Index character highlight color | _string_ | `#ee0a24` | - |
+| highlight-color | Index character highlight color | _string_ | `#ee0a24` |
 | teleport `v3.0.19` | Specifies a target element where IndexBar will be mounted | _string \| Element_ | - |
 
 ### IndexAnchor Props
@@ -101,7 +101,13 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get IndexB
 
 ### Types
 
-Get the type definition of the IndexBar instance through `IndexBarInstance`.
+The component exports the following type definitions:
+
+```ts
+import type { IndexBarInstance } from 'vant';
+```
+
+`IndexBarInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -117,6 +123,8 @@ indexBarRef.value?.scrollTo('B');
 | Name    | Description                           |
 | ------- | ------------------------------------- |
 | default | Anchor content, show index by default |
+
+## Theming
 
 ### CSS Variables
 

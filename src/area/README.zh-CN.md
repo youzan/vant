@@ -168,7 +168,13 @@ confirm 事件返回的数据整体为一个数组，数组每一项对应一列
 
 ### 类型定义
 
-通过 `AreaInstance` 获取 Area 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { AreaList, AreaInstance, AreaColumnOption } from 'vant';
+```
+
+`AreaInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';

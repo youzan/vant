@@ -95,6 +95,8 @@ export default {
 | tel       | 联系人手机号         | _number \| string_ |
 | isDefault | 是否为默认联系人     | _boolean_          |
 
+## 主题定制
+
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。

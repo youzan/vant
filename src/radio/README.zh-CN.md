@@ -149,9 +149,9 @@ export default {
 </van-radio-group>
 ```
 
-### 与 Cell 组件一起使用
+### 搭配单元格组件使用
 
-此时你需要再引入 `Cell` 和 `CellGroup` 组件。
+搭配单元格组件使用时，需要再引入 `Cell` 和 `CellGroup` 组件。
 
 ```html
 <van-radio-group v-model="checked">
@@ -212,6 +212,8 @@ export default {
 | ------- | ---------- | ----------------------------------------- |
 | default | 自定义文本 | -                                         |
 | icon    | 自定义图标 | _{ checked: boolean, disabled: boolean }_ |
+
+## 主题定制
 
 ### 样式变量
 

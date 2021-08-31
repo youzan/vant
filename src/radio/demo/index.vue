@@ -7,7 +7,7 @@ const t = useTranslate({
     radio: '单选框',
     text1: '未选中禁用',
     text2: '选中且禁用',
-    withCell: '与 Cell 组件一起使用',
+    withCell: '搭配单元格组件使用',
     horizontal: '水平排列',
     customIcon: '自定义图标',
     customColor: '自定义颜色',

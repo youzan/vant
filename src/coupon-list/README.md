@@ -107,8 +107,8 @@ export default {
 | chosen-coupon | Index of chosen coupon | _number_ | `-1` |
 | coupons | Coupon list | _Coupon[]_ | `[]` |
 | disabled-coupons | Disabled coupon list | _Coupon[]_ | `[]` |
-| enabled-title | Title of coupon list | _string_ | `Available` | - |
-| disabled-title | Title of disabled coupon list | _string_ | `Unavailable` | - |
+| enabled-title | Title of coupon list | _string_ | `Available` |
+| disabled-title | Title of disabled coupon list | _string_ | `Unavailable` |
 | exchange-button-text | Exchange button text | _string_ | `Exchange` |
 | exchange-button-loading | Whether to show loading in exchange button | _boolean_ | `false` |
 | exchange-button-disabled | Whether to disable exchange button | _boolean_ | `false` |
@@ -148,6 +148,8 @@ export default {
 | value       | Value                               | _number_ |
 | valueDesc   | Value Text                          | _string_ |
 | unitDesc    | Unit Text                           | _string_ |
+
+## Theming
 
 ### CSS Variables
 

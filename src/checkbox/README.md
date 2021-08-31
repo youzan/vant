@@ -254,7 +254,7 @@ export default {
 | label-disabled | Whether to disable label click | _boolean_ | `false` |
 | label-position | Can be set to `left` | _string_ | `right` |
 | icon-size | Icon size | _number \| string_ | `20px` |
-| checked-color | Checked color | _string_ | `#1989fa` | - |
+| checked-color | Checked color | _string_ | `#1989fa` |
 | bind-group | Whether to bind with CheckboxGroup | _boolean_ | `true` |
 
 ### CheckboxGroup Props
@@ -266,7 +266,7 @@ export default {
 | max | Maximum amount of checked options | _number \| string_ | `0`(Unlimited) |
 | direction | Direction, can be set to `horizontal` | _string_ | `vertical` |
 | icon-size | Icon size of all checkboxes | _number \| string_ | `20px` |
-| checked-color | Checked color of all checkboxes | _string_ | `#1989fa` | - |
+| checked-color | Checked color of all checkboxes | _string_ | `#1989fa` |
 
 ### Checkbox Events
 
@@ -329,7 +329,17 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Checkb
 
 ### Types
 
-Get the type definition of the Checkbox instance through `CheckboxInstance` and `CheckboxGroupInstance`.
+The component exports the following type definitions:
+
+```ts
+import type {
+  CheckboxInstance,
+  CheckboxGroupInstance,
+  CheckboxGroupToggleAllOptions,
+} from 'vant';
+```
+
+`CheckboxInstance` and `CheckboxGroupInstance` is the type of component instance:
 
 ```ts
 import { ref } from 'vue';
@@ -341,6 +351,8 @@ const checkboxGroupRef = ref<CheckboxGroupInstance>();
 checkboxRef.value?.toggle();
 checkboxGroupRef.value?.toggleAll();
 ```
+
+## Theming
 
 ### CSS Variables
 

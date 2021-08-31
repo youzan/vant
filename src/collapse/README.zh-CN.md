@@ -150,7 +150,13 @@ export default {
 
 ### 类型定义
 
-通过 `CollapseItemInstance` 获取 CollapseItem 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { CollapseItemInstance } from 'vant';
+```
+
+`CollapseItemInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -171,6 +177,8 @@ collapseItemRef.value?.toggle();
 | label `v3.1.1` | 自定义标题栏描述信息 |
 | icon           | 自定义标题栏左侧图标 |
 | right-icon     | 自定义标题栏右侧图标 |
+
+## 主题定制
 
 ### 样式变量
 

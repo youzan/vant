@@ -249,6 +249,8 @@ export default {
 | title            | 自定义标题         |
 | footer `v3.0.10` | 自定义底部按钮区域 |
 
+## 主题定制
+
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。

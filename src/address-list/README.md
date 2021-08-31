@@ -121,6 +121,8 @@ export default {
 | item-bottom  | Custom content after list item | _item: Address_ |
 | tag `v3.0.9` | Custom tag of list item        | _item: Address_ |
 
+## Theming
+
 ### CSS Variables
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).

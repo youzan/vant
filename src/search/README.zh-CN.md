@@ -175,7 +175,13 @@ export default {
 
 ### 类型定义
 
-通过 `SearchInstance` 获取 Search 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type { SearchShape, SearchInstance } from 'vant';
+```
+
+`SearchInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -195,6 +201,8 @@ searchRef.value?.focus();
 | label      | 自定义左侧文本（搜索框内）                                |
 | left-icon  | 自定义左侧图标（搜索框内）                                |
 | right-icon | 自定义右侧图标（搜索框内）                                |
+
+## 主题定制
 
 ### 样式变量
 

@@ -222,7 +222,17 @@ export default {
 
 ### 类型定义
 
-通过 `ImagePreviewInstance` 获取 ImagePreview 实例的类型定义（从 3.2.0 版本开始支持）。
+组件导出以下类型定义：
+
+```ts
+import type {
+  ImagePreviewOptions,
+  ImagePreviewInstance,
+  ImagePreviewScaleEventParams,
+} from 'vant';
+```
+
+`ImagePreviewInstance` 是组件实例的类型，用法如下：
 
 ```ts
 import { ref } from 'vue';
@@ -255,6 +265,8 @@ imagePreviewRef.value?.swipeTo(1);
 | ------ | ---------------- | -------- |
 | index  | 当前图片的索引值 | _number_ |
 | scale  | 当前图片的缩放值 | _number_ |
+
+## 主题定制
 
 ### 样式变量
 
