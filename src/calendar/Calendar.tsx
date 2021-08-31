@@ -1,7 +1,6 @@
 import {
   ref,
   watch,
-  reactive,
   computed,
   PropType,
   TeleportProps,
@@ -62,9 +61,7 @@ const props = {
   rangePrompt: String,
   lazyRender: truthProp,
   showConfirm: truthProp,
-  // TODO: remove any
-  // see: https://github.com/vuejs/vue-next/issues/2668
-  defaultDate: [Date, Array] as any,
+  defaultDate: [Date, Array] as PropType<Date | Date[] | null>,
   allowSameDay: Boolean,
   showSubtitle: truthProp,
   closeOnPopstate: truthProp,
@@ -178,10 +175,8 @@ export default defineComponent({
 
     const bodyRef = ref<HTMLElement>();
 
-    const state = reactive({
-      subtitle: '',
-      currentDate: getInitialDate(),
-    });
+    const subtitle = ref('');
+    const currentDate = ref(getInitialDate());
 
     const [monthRefs, setMonthRefs] = useRefs<CalendarMonthInstance>();
 
@@ -204,18 +199,18 @@ export default defineComponent({
     });
 
     const buttonDisabled = computed(() => {
-      const { currentDate } = state;
-
-      if (currentDate) {
+      if (currentDate.value) {
         if (props.type === 'range') {
-          return !(currentDate as Date[])[0] || !(currentDate as Date[])[1];
+          return (
+            !(currentDate.value as Date[])[0] ||
+            !(currentDate.value as Date[])[1]
+          );
         }
         if (props.type === 'multiple') {
-          return !(currentDate as Date[]).length;
+          return !(currentDate.value as Date[]).length;
         }
       }
-
-      return !currentDate;
+      return !currentDate.value;
     });
 
     // calculate the position of the elements
@@ -270,7 +265,7 @@ export default defineComponent({
 
       /* istanbul ignore else */
       if (currentMonth) {
-        state.subtitle = currentMonth.getTitle();
+        subtitle.value = currentMonth.getTitle();
       }
     };
 
@@ -297,10 +292,11 @@ export default defineComponent({
         return;
       }
 
-      const { currentDate } = state;
-      if (currentDate) {
+      if (currentDate.value) {
         const targetDate =
-          props.type === 'single' ? currentDate : (currentDate as Date[])[0];
+          props.type === 'single'
+            ? (currentDate.value as Date)
+            : (currentDate.value as Date[])[0];
         scrollToDate(targetDate);
       } else {
         raf(onScroll);
@@ -321,7 +317,7 @@ export default defineComponent({
     };
 
     const reset = (date = getInitialDate()) => {
-      state.currentDate = date;
+      currentDate.value = date;
       scrollIntoView();
     };
 
@@ -339,12 +335,13 @@ export default defineComponent({
       return true;
     };
 
-    const onConfirm = () => emit('confirm', cloneDates(state.currentDate));
+    const onConfirm = () =>
+      emit('confirm', currentDate.value ?? cloneDates(currentDate.value!));
 
     const select = (date: Date | Date[], complete?: boolean) => {
       const setCurrentDate = (date: Date | Date[]) => {
-        state.currentDate = date;
-        emit('select', cloneDates(state.currentDate));
+        currentDate.value = date;
+        emit('select', cloneDates(date));
       };
 
       if (complete && props.type === 'range') {
@@ -378,15 +375,14 @@ export default defineComponent({
 
       const { date } = item;
       const { type } = props;
-      const { currentDate } = state;
 
       if (type === 'range') {
-        if (!currentDate) {
+        if (!currentDate.value) {
           select([date]);
           return;
         }
 
-        const [startDay, endDay] = currentDate;
+        const [startDay, endDay] = currentDate.value as [Date, Date];
 
         if (startDay && !endDay) {
           const compareToStart = compareDay(date, startDay);
@@ -402,29 +398,23 @@ export default defineComponent({
           select([date]);
         }
       } else if (type === 'multiple') {
-        if (!currentDate) {
+        if (!currentDate.value) {
           select([date]);
           return;
         }
+        const dates = currentDate.value as Date[];
 
-        let selectedIndex;
-        const selected = state.currentDate.some(
-          (dateItem: Date, index: number) => {
-            const equal = compareDay(dateItem, date) === 0;
-            if (equal) {
-              selectedIndex = index;
-            }
-            return equal;
-          }
+        const selectedIndex = dates.findIndex(
+          (dateItem: Date) => compareDay(dateItem, date) === 0
         );
 
-        if (selected) {
-          const [unselectedDate] = currentDate.splice(selectedIndex, 1);
+        if (selectedIndex !== -1) {
+          const [unselectedDate] = dates.splice(selectedIndex, 1);
           emit('unselect', cloneDate(unselectedDate));
-        } else if (props.maxRange && currentDate.length >= props.maxRange) {
+        } else if (props.maxRange && dates.length >= props.maxRange) {
           Toast(props.rangePrompt || t('rangePrompt', props.maxRange));
         } else {
-          select([...currentDate, date]);
+          select([...dates, date]);
         }
       } else {
         select(date, true);
@@ -440,7 +430,7 @@ export default defineComponent({
           v-slots={pick(slots, ['top-info', 'bottom-info'])}
           ref={setMonthRefs(index)}
           date={date}
-          currentDate={state.currentDate}
+          currentDate={currentDate.value}
           showMonthTitle={showMonthTitle}
           firstDayOfWeek={dayOffset.value}
           {...pick(props, [
@@ -503,7 +493,7 @@ export default defineComponent({
         <CalendarHeader
           v-slots={pick(slots, ['title', 'subtitle'])}
           title={props.title}
-          subtitle={state.subtitle}
+          subtitle={subtitle.value}
           showTitle={props.showTitle}
           showSubtitle={props.showSubtitle}
           firstDayOfWeek={dayOffset.value}
@@ -522,13 +512,13 @@ export default defineComponent({
     watch(
       () => [props.type, props.minDate, props.maxDate],
       () => {
-        reset(getInitialDate(state.currentDate));
+        reset(getInitialDate(currentDate.value));
       }
     );
     watch(
       () => props.defaultDate,
-      (value) => {
-        state.currentDate = value;
+      (value = null) => {
+        currentDate.value = value;
         scrollIntoView();
       }
     );

@@ -38,7 +38,7 @@ const props = {
   rowHeight: [Number, String],
   formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
   lazyRender: Boolean,
-  currentDate: [Date, Array] as PropType<Date | Date[]>,
+  currentDate: [Date, Array] as PropType<Date | Date[] | null>,
   allowSameDay: Boolean,
   showSubtitle: Boolean,
   showMonthTitle: Boolean,
