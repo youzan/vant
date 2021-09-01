@@ -151,6 +151,14 @@ export default {
 | onOpened | 完全展示后的回调函数 | _() => void_ | - |
 | onClose | 关闭时的回调函数 | _() => void_ | - |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { NotifyType, NotifyOptions } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

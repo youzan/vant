@@ -149,6 +149,14 @@ app.use(Button);
 | icon `v3.0.18` | Custom icon         |
 | loading        | Custom loading icon |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { ButtonType, ButtonSize } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

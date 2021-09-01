@@ -221,10 +221,10 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | v-model:show | 是否展示气泡弹出层 | _boolean_ | `false` |
-| actions | 选项列表 | _Action[]_ | `[]` |
-| placement | 弹出位置 | _string_ | `bottom` |
-| theme | 主题风格，可选值为 `dark` | _string_ | `light` |
-| trigger | 触发方式，可选值为 `manual` | `click` |
+| actions | 选项列表 | _PopoverAction[]_ | `[]` |
+| placement | 弹出位置 | _PopoverPlacement_ | `bottom` |
+| theme | 主题风格，可选值为 `dark` | _PopoverTheme_ | `light` |
+| trigger | 触发方式，可选值为 `manual` | _PopoverTrigger_ | `click` |
 | duration | 动画时长，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.3` |
 | offset | 出现位置的偏移量 | _[number, number]_ | `[0, 8]` |
 | overlay | 是否显示遮罩层 | _boolean_ | `false` |
@@ -236,7 +236,7 @@ export default {
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
 | icon-prefix `v3.0.17` | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 
-### Action 数据结构
+### PopoverAction 数据结构
 
 `actions` 属性是一个由对象构成的数组，数组中的每个对象配置一列，对象可以包含以下值：
 
@@ -265,6 +265,19 @@ export default {
 | --------- | --------------------------- |
 | default   | 自定义菜单内容              |
 | reference | 触发 Popover 显示的元素内容 |
+
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type {
+  PopoverTheme,
+  PopoverAction,
+  PopoverTrigger,
+  PopoverPlacement,
+} from 'vant';
+```
 
 ## 主题定制
 

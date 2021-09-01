@@ -85,6 +85,14 @@ use `color` or `text-color` to change text color.
 | ------- | ------------ |
 | default | Loading text |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { LoadingType } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

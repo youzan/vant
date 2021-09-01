@@ -142,6 +142,14 @@ app.use(Lazyload);
 | loading | 自定义加载中的提示内容     |
 | error   | 自定义加载失败时的提示内容 |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { ImageFit } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

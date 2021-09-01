@@ -90,6 +90,14 @@ export default {
 | ----- | --------------------------------- | ------------------- |
 | click | Emitted when component is clicked | _event: MouseEvent_ |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { ContactCardType } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

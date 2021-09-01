@@ -181,6 +181,14 @@ export default {
 | ------- | -------------- |
 | default | 自定义文字内容 |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { CircleStartPosition } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

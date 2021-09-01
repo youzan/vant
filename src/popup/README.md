@@ -146,6 +146,14 @@ Use `teleport` prop to specify mount location.
 | default                   | Content of Popup         |
 | overlay-content `v3.0.18` | Content of Popup overlay |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { PopupPosition, PopupCloseIconPosition } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

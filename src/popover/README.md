@@ -211,10 +211,10 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | v-model:show | Whether to show Popover | _boolean_ | `false` |
-| actions | Actions | _Action[]_ | `[]` |
-| placement | Placement | _string_ | `bottom` |
-| theme | Theme，can be set to `dark` | _string_ | `light` |
-| trigger | Trigger mode，can be set to `manual` | `click` |
+| actions | Actions | _PopoverAction[]_ | `[]` |
+| placement | Placement | _PopoverPlacement_ | `bottom` |
+| theme | Theme，can be set to `dark` | _PopoverTheme_ | `light` |
+| trigger | Trigger mode，can be set to `manual` | _PopoverTrigger_ | `click` |
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
 | offset | Distance to reference | _[number, number]_ | `[0, 8]` |
 | overlay | Whether to show overlay | _boolean_ | `false` |
@@ -226,7 +226,7 @@ export default {
 | teleport | Specifies a target element where Popover will be mounted | _string \| Element_ | `body` |
 | icon-prefix `v3.0.17` | Icon className prefix | _string_ | `van-icon` |
 
-### Data Structure of Action
+### Data Structure of PopoverAction
 
 | Key       | Description             | Type                        |
 | --------- | ----------------------- | --------------------------- |
@@ -253,6 +253,19 @@ export default {
 | --------- | ----------------- |
 | default   | Custom content    |
 | reference | Reference Element |
+
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type {
+  PopoverTheme,
+  PopoverAction,
+  PopoverTrigger,
+  PopoverPlacement,
+} from 'vant';
+```
 
 ## Theming
 

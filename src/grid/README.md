@@ -142,6 +142,14 @@ app.use(GridItem);
 | icon    | Custom icon    |
 | text    | Custom text    |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { GridDirection } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

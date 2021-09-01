@@ -121,6 +121,14 @@ export default {
 | item-bottom  | Custom content after list item | _item: Address_ |
 | tag `v3.0.9` | Custom tag of list item        | _item: Address_ |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { AddressListAddress } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

@@ -214,6 +214,14 @@ export default {
 | description      | Custom description                  |
 | cancel `v3.0.10` | Custom the content of cancel button |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { ShareSheetOption, ShareSheetOptions } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

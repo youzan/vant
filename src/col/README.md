@@ -112,3 +112,11 @@ Set grid spacing using `gutter` attribute. The default value is 0.
 | Event | Description                     | Arguments           |
 | ----- | ------------------------------- | ------------------- |
 | click | Emitted when the col is clicked | _event: MouseEvent_ |
+
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { RowAlign, RowJustify } from 'vant';
+```

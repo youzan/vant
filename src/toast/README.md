@@ -155,8 +155,8 @@ Toast.resetDefaultOptions('loading');
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| type | Can be set to `loading` `success` `fail` `html` | _string_ | `text` |
-| position | Can be set to `top` `middle` `bottom` | _string_ | `middle` |
+| type | Can be set to `loading` `success` `fail` `html` | _ToastType_ | `text` |
+| position | Can be set to `top` `middle` `bottom` | _ToastPosition_ | `middle` |
 | message | Message | _string_ | `''` |
 | icon | Custom icon | _string_ | - |
 | iconSize | Custom icon size | _number \| string_ | `36px` |
@@ -174,6 +174,14 @@ Toast.resetDefaultOptions('loading');
 | onClose | Callback function after close | _Function_ | - |
 | transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | teleport | Specifies a target element where Toast will be mounted | _string \| Element_ | `body` |
+
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { ToastType, ToastOptions, ToastPosition } from 'vant';
+```
 
 ## Theming
 

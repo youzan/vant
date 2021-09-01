@@ -95,6 +95,14 @@ export default {
 | tel       | 联系人手机号         | _number \| string_ |
 | isDefault | 是否为默认联系人     | _boolean_          |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { ContactListItem } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

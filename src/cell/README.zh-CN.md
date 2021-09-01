@@ -197,6 +197,14 @@ app.use(CellGroup);
 | right-icon     | 自定义右侧图标               |
 | extra          | 自定义单元格最右侧的额外内容 |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { CellArrowDirection } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

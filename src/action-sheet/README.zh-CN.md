@@ -182,7 +182,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | v-model:show | 是否显示动作面板 | _boolean_ | `false` |
-| actions | 面板选项列表 | _Action[]_ | `[]` |
+| actions | 面板选项列表 | _ActionSheetAction[]_ | `[]` |
 | title | 顶部标题 | _string_ | - |
 | cancel-text | 取消按钮文字 | _string_ | - |
 | description | 选项上方的描述信息 | _string_ | - |
@@ -214,13 +214,13 @@ export default {
 | className | 为对应列添加额外的 class | _string \| Array \| object_ |
 | loading   | 是否为加载状态           | _boolean_                   |
 | disabled  | 是否为禁用状态           | _boolean_                   |
-| callback  | 点击时触发的回调函数     | _action: Action_            |
+| callback  | 点击时触发的回调函数     | _action: ActionSheetAction_ |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
-| select | 点击选项时触发，禁用或加载状态下不会触发 | _action: Action, index: number_ |
+| select | 点击选项时触发，禁用或加载状态下不会触发 | _action: ActionSheetAction, index: number_ |
 | cancel | 点击取消按钮时触发 | - |
 | open | 打开面板时触发 | - |
 | close | 关闭面板时触发 | - |
@@ -235,6 +235,14 @@ export default {
 | default          | 自定义面板的展示内容 |
 | description      | 自定义描述文案       |
 | cancel `v3.0.10` | 自定义取消按钮内容   |
+
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { ActionSheetAction } from 'vant';
+```
 
 ## 主题定制
 

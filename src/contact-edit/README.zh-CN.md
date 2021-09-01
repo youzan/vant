@@ -77,6 +77,14 @@ export default {
 | name | 联系人姓名   | _string_           |
 | tel  | 联系人手机号 | _number \| string_ |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { ContactEditInfo } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

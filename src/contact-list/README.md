@@ -95,6 +95,14 @@ export default {
 | tel       | Phone              | _string_           |
 | isDefault | Is default contact | _boolean_          |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { ContactListItem } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

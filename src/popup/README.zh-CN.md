@@ -152,6 +152,14 @@ export default {
 | default                   | 弹窗内容     |
 | overlay-content `v3.0.18` | 遮罩层的内容 |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { PopupPosition, PopupCloseIconPosition } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量
