@@ -83,6 +83,14 @@
         :label="t('desc')"
       />
     </demo-block>
+    <demo-block>
+      <van-cell-group>
+        <van-cell title="垂直居中" is-link vusion-slot-name="default">内容</van-cell>
+      </van-cell-group>
+    </demo-block>
+    <demo-block>
+      <van-cell title="垂直居中" is-link vusion-slot-name="default" href="https://www.baidu.com">内容</van-cell>
+    </demo-block>
   </demo-section>
 </template>
 

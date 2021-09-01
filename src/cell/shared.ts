@@ -16,7 +16,7 @@ export type SharedCellProps = {
   label?: string | number;
   arrowDirection?: 'up' | 'down' | 'left' | 'right';
   href?: string;
-  target?: object;
+  target: { type: String, default: '_self' };
   to?: [string, object];
   replace?: { type: boolean; default: false };
   append?: boolean;

@@ -8,10 +8,15 @@
   nested: false
   attrs:
     - name: dashed
-      title: 虚线类型
+      title: 线条类型
       type: boolean
       default: false
-      description: 是否使用虚线
+      options:
+        - value: true
+          title: 虚线
+        - value: false
+          title: 实线
+      description: 线条类型
     - name: content-position
       title: 内容位置
       type: string

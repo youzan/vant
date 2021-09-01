@@ -4,6 +4,10 @@
       <van-divider class="u-code-example_demo_" />
     </demo-block>
 
+    <demo-block :title="t('basicUsage')">
+      <van-divider class="u-code-example_demo_" dashed/>
+    </demo-block>
+
     <demo-block :title="t('withText')">
       <van-divider class="u-code-example_demo_">
         {{ t('text') }}

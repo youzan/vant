@@ -1,9 +1,14 @@
-### 基础用法
+### 实线
 
 ``` html
 <van-divider></van-divider>
 ```
-### 展示文本
+### 虚线
+
+``` html
+<van-divider dashed></van-divider>
+```
+### 带文本
 
 ``` html
 <van-divider>文字</van-divider>
