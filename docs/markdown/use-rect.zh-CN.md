@@ -19,7 +19,7 @@ import { useRect } from '@vant/use';
 export default {
   setup() {
     const root = ref();
-    const rect = useRect();
+    const rect = useRect(root);
 
     console.log(rect); // -> 元素的大小及其相对于视口的位置
 
