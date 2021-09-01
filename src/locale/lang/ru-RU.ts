@@ -6,6 +6,7 @@ export default {
   cancel: 'Отмена',
   delete: 'Удалить',
   loading: 'Загрузка...',
+  noCoupon: 'Нет купонов',
   nameEmpty: 'Пожалуйста укажите имя',
   confirmDelete: 'Вы уверены, что хотите удалить?',
   telInvalid: 'Некорректный номер телефона',
@@ -45,11 +46,9 @@ export default {
   },
   vanCouponCell: {
     title: 'Купон',
-    tips: 'Нет купонов',
     count: (count: number) => `У вас есть ${count} купонов`,
   },
   vanCouponList: {
-    empty: 'Нет купонов',
     exchange: 'Обмен',
     close: 'Закрыть',
     enable: 'Доступно',

@@ -1,8 +1,9 @@
 import { ref, defineComponent, ExtractPropTypes } from 'vue';
-import { pick, createNamespace, ComponentInstance, extend } from '../utils';
+import { pick, extend, createNamespace } from '../utils';
 import { useExpose } from '../composables/use-expose';
 import TimePicker from './TimePicker';
 import DatePicker from './DatePicker';
+import { DatetimePickerInstance } from './types';
 
 const [name, bem] = createNamespace('datetime-picker');
 
@@ -20,7 +21,7 @@ export default defineComponent({
   props,
 
   setup(props, { attrs, slots }) {
-    const root = ref<ComponentInstance>();
+    const root = ref<DatetimePickerInstance>();
 
     useExpose({
       getPicker: () => root.value?.getPicker(),

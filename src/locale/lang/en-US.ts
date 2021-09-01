@@ -6,6 +6,7 @@ export default {
   cancel: 'Cancel',
   delete: 'Delete',
   loading: 'Loading...',
+  noCoupon: 'No coupons',
   nameEmpty: 'Please fill in the name',
   confirmDelete: 'Are you sure you want to delete?',
   telInvalid: 'Malformed phone number',
@@ -45,11 +46,9 @@ export default {
   },
   vanCouponCell: {
     title: 'Coupon',
-    tips: 'No coupons',
     count: (count: number) => `You have ${count} coupons`,
   },
   vanCouponList: {
-    empty: 'No coupons',
     exchange: 'Exchange',
     close: 'Close',
     enable: 'Available',

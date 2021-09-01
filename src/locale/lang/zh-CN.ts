@@ -6,9 +6,10 @@ export default {
   cancel: '取消',
   delete: '删除',
   loading: '加载中...',
+  noCoupon: '暂无优惠券',
   nameEmpty: '请填写姓名',
   confirmDelete: '确定要删除吗',
-  telInvalid: '请输入正确的电话',
+  telInvalid: '请填写正确的电话',
   vanCalendar: {
     end: '结束',
     start: '开始',
@@ -46,11 +47,9 @@ export default {
   },
   vanCouponCell: {
     title: '优惠券',
-    tips: '暂无可用',
     count: (count: number) => `${count}张可用`,
   },
   vanCouponList: {
-    empty: '暂无优惠券',
     exchange: '兑换',
     close: '不使用优惠券',
     enable: '可用',

@@ -6,6 +6,7 @@ export default {
   cancel: 'Anulează',
   delete: 'Șterge',
   loading: 'Încărcare...',
+  noCoupon: 'Fără cupoane',
   nameEmpty: 'Te rugăm să completezi numele',
   confirmDelete: 'Ești sigur ca vrei sa stergi?',
   telInvalid: 'Număr de telefon invalid',
@@ -45,11 +46,9 @@ export default {
   },
   vanCouponCell: {
     title: 'Cupon',
-    tips: 'Fără cupoane',
     count: (count: number) => `Ai ${count} cupoane`,
   },
   vanCouponList: {
-    empty: 'Fără cupoane',
     exchange: 'Schimbă',
     close: 'Închide',
     enable: 'Disponibil',

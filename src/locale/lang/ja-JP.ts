@@ -6,6 +6,7 @@ export default {
   cancel: 'キャンセル',
   delete: '削除',
   loading: '読み込み中...',
+  noCoupon: 'クーポンはありません',
   nameEmpty: '名前を入力してください',
   confirmDelete: '本当に削除しますか',
   telInvalid: '正しい電話番号を入力してください',
@@ -46,11 +47,9 @@ export default {
   },
   vanCouponCell: {
     title: 'クーポン',
-    tips: '利用可能なクーポンがありません',
     count: (count: number) => `${count}枚が利用可能`,
   },
   vanCouponList: {
-    empty: 'クーポンはありません',
     exchange: '両替',
     close: 'クーポンを使用しません',
     enable: '利用可能',
