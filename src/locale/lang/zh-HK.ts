@@ -5,7 +5,6 @@ export default {
   confirm: '確認',
   cancel: '取消',
   delete: '刪除',
-  complete: '完成',
   loading: '加載中...',
   nameEmpty: '請填寫姓名',
   confirmDelete: '確定要刪除嗎',

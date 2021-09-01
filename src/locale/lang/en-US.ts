@@ -5,7 +5,6 @@ export default {
   confirm: 'Confirm',
   cancel: 'Cancel',
   delete: 'Delete',
-  complete: 'Complete',
   loading: 'Loading...',
   nameEmpty: 'Please fill in the name',
   confirmDelete: 'Are you sure you want to delete?',

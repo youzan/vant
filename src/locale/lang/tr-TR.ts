@@ -5,7 +5,6 @@ export default {
   confirm: 'Onayla',
   cancel: 'İptal',
   delete: 'Sil',
-  complete: 'Tamamla',
   loading: 'Yükleniyor...',
   nameEmpty: 'Lütfen isim giriniz',
   confirmDelete: 'Silmek istediğinize emin misiniz?',

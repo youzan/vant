@@ -5,7 +5,6 @@ export default {
   confirm: '確認',
   cancel: 'キャンセル',
   delete: '削除',
-  complete: '完了',
   loading: '読み込み中...',
   nameEmpty: '名前を入力してください',
   confirmDelete: '本当に削除しますか',

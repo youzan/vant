@@ -5,7 +5,6 @@ export default {
   confirm: 'Confirmă',
   cancel: 'Anulează',
   delete: 'Șterge',
-  complete: 'Finalizează',
   loading: 'Încărcare...',
   nameEmpty: 'Te rugăm să completezi numele',
   confirmDelete: 'Ești sigur ca vrei sa stergi?',

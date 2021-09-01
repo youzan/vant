@@ -1,7 +1,7 @@
 import { PropType, ref, defineComponent } from 'vue';
 
 // Utils
-import { isAndroid, createNamespace } from '../utils';
+import { createNamespace } from '../utils';
 
 // Components
 import { Cell } from '../cell';
@@ -12,7 +12,6 @@ import type { AddressEditSearchItem } from './types';
 import type { FieldInstance } from '../field/types';
 
 const [name, bem, t] = createNamespace('address-edit-detail');
-const android = isAndroid();
 
 export default defineComponent({
   name,
@@ -39,18 +38,6 @@ export default defineComponent({
     const onSelect = (express: AddressEditSearchItem) => {
       emit('select-search', express);
       emit('input', `${express.address || ''} ${express.name || ''}`.trim());
-    };
-
-    const onFinish = () => field.value?.blur();
-
-    const renderFinish = () => {
-      if (props.value && props.focused && android) {
-        return (
-          <div class={bem('finish')} onClick={onFinish}>
-            {t('complete')}
-          </div>
-        );
-      }
     };
 
     const renderSearchTitle = (express: AddressEditSearchItem) => {
@@ -95,15 +82,14 @@ export default defineComponent({
         return (
           <>
             <Field
-              v-slots={{ icon: renderFinish }}
               autosize
+              clearable
               ref={field}
               class={bem()}
               rows={props.detailRows}
               type="textarea"
               label={t('label')}
               border={!showSearchResult()}
-              clearable={!android}
               maxlength={props.detailMaxlength}
               modelValue={props.value}
               placeholder={t('placeholder')}
