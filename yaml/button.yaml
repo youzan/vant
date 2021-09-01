@@ -12,7 +12,7 @@
       type: string
       description: 按钮文字
     - name: type
-      title: 按钮颜色类型
+      title: 颜色类型
       type: string
       options:
         - value: primary
@@ -25,13 +25,13 @@
           title: 警告按钮
         - value: danger
           title: 危险按钮
-      default: default
-      description: 设置按钮类型
+      default: primary
+      description: 设置按钮颜色类型
     - name: hairline
       title: 细边框
       type: boolean
       default: false
-      description: 边框是否是0.5px细边框。
+      description: 边框是否是细边框。
     - name: size
       title: 尺寸
       type: string
@@ -47,17 +47,15 @@
       default: normal
       description: 设置尺寸
     - name: square
-      title: 形状
-      type: string
-      options:
-        - value: default
-          title: 默认
-        - value: square
-          title: 方形
-        - value: round
-          title: 圆角
-      default: default
-      description: 设置形状
+      title: 是否方形
+      type: boolean
+      default: true
+      description: 设置方形形状
+    - name: round
+      title: 是否圆形
+      type: boolean
+      default: false
+      description: 设置圆形形状
     - name: disabled
       title: 禁用
       type: boolean
@@ -71,19 +69,12 @@
           title: 行内展示
         - value: true
           title: 块级展示
-      default: inline
+      default: false
       description: 展示方式
     - name: icon
       title: 图标
       type: string
-      options:
-        - value: replay
-          title: 刷新
-        - value: setting-o
-          title: 设置
-        - value: success
-          title: 成功
-      default: success
+      default: ''
       description: 设置图标。
     - name: loading
       title: 加载中

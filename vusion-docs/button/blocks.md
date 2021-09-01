@@ -15,14 +15,13 @@
 ``` html
 <van-button type="default" text="默认按钮"></van-button>
 ```
-
-### 警告按钮
+### 图标按钮
 
 ``` html
-<van-button type="warning" text="警告按钮"></van-button>
+<van-button icon="plus" type="primary" text="图标按钮"></van-button>
 ```
-
-### 危险按钮
+### 细边框
 
 ``` html
-<van-button type="danger" text="危险按钮"></van-button>
+<van-button plain hairline type="primary" text="细边框按钮"></van-button>
+```

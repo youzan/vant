@@ -16,6 +16,7 @@
       title: 循环播放
       type: boolean
       default: true
+      advanced: true
       description: 是否循环播放
     - name: touchable
       title: 手势滑动
@@ -26,6 +27,7 @@
       title: 指示器
       type: boolean
       default: true
+      advanced: true
       description: 是否显示指示器
   slots:
     - name: default

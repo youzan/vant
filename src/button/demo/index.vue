@@ -19,6 +19,9 @@
       <van-button plain hairline type="primary" :text="t('hairlineButton')" />
       <van-button plain hairline type="info" :text="t('hairlineButton')" />
     </demo-block>
+    <demo-block :title="t('hairline')">
+      <van-button plain hairline type="primary" :text="t('hairlineButton')" />
+    </demo-block>
 
     <demo-block :title="t('disabled')">
       <van-button disabled type="primary" :text="t('disabled')" />
@@ -45,6 +48,9 @@
         icon="https://img01.yzcdn.cn/vant/user-active.png"
         :text="t('button')"
       />
+    </demo-block>
+    <demo-block :title="t('icon')">
+      <van-button icon="plus" type="primary" text="图标按钮"></van-button>
     </demo-block>
 
     <demo-block :title="t('size')">
