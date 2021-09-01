@@ -7,7 +7,6 @@ export default {
   delete: 'Sil',
   complete: 'Tamamla',
   loading: 'Yükleniyor...',
-  telEmpty: 'Lütfen tel. no giriniz',
   nameEmpty: 'Lütfen isim giriniz',
   confirmDelete: 'Silmek istediğinize emin misiniz?',
   telInvalid: 'Geçersiz tel. numarası',

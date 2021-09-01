@@ -118,7 +118,7 @@ export default defineComponent({
             label={t('name')}
             rules={[{ required: true, message: t('nameEmpty') }]}
             maxlength="30"
-            placeholder={t('nameEmpty')}
+            placeholder={t('name')}
           />
           <Field
             v-model={contact.tel}
@@ -128,7 +128,7 @@ export default defineComponent({
             rules={[
               { validator: props.telValidator, message: t('telInvalid') },
             ]}
-            placeholder={t('telEmpty')}
+            placeholder={t('tel')}
           />
         </div>
         {renderSetDefault()}

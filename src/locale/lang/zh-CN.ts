@@ -7,7 +7,6 @@ export default {
   delete: '删除',
   complete: '完成',
   loading: '加载中...',
-  telEmpty: '请填写电话',
   nameEmpty: '请填写姓名',
   confirmDelete: '确定要删除吗',
   telInvalid: '请输入正确的电话',

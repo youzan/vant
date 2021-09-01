@@ -7,7 +7,6 @@ export default {
   delete: 'Удалить',
   complete: 'Завершить',
   loading: 'Загрузка...',
-  telEmpty: 'Пожалуйста укажите телефон',
   nameEmpty: 'Пожалуйста укажите имя',
   confirmDelete: 'Вы уверены, что хотите удалить?',
   telInvalid: 'Некорректный номер телефона',

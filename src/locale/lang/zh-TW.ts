@@ -7,7 +7,6 @@ export default {
   delete: '刪除',
   complete: '完成',
   loading: '載入中...',
-  telEmpty: '請填寫電話',
   nameEmpty: '請填寫姓名',
   confirmDelete: '確定要刪除嗎',
   telInvalid: '請填寫正確的電話',

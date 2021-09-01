@@ -7,7 +7,6 @@ export default {
   delete: 'Șterge',
   complete: 'Finalizează',
   loading: 'Încărcare...',
-  telEmpty: 'Te rugăm să completezi telefonul',
   nameEmpty: 'Te rugăm să completezi numele',
   confirmDelete: 'Ești sigur ca vrei sa stergi?',
   telInvalid: 'Număr de telefon invalid',
