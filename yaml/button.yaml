@@ -73,8 +73,9 @@
       description: 展示方式
     - name: icon
       title: 图标
-      type: string
+      type: image
       default: ''
+      compType: linkInput
       description: 设置图标。
     - name: loading
       title: 加载中
