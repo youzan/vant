@@ -102,6 +102,10 @@ export default defineComponent({
       type: [String, Object] as PropType<TeleportProps['to']>,
       default: 'body',
     },
+    showArrow: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   emits: ['select', 'touchstart', 'update:show'],
@@ -234,7 +238,7 @@ export default defineComponent({
           {...pick(props, popupProps)}
           {...{ 'onUpdate:show': updateShow }}
         >
-          <div class={bem('arrow')} />
+          {props.showArrow && <div class={bem('arrow')} />}
           <div role="menu" class={bem('content')}>
             {slots.default ? slots.default() : props.actions.map(renderAction)}
           </div>
