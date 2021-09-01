@@ -172,7 +172,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | v-model:show | Whether to show ActionSheet | _boolean_ | `false` |
-| actions | Options | _Action[]_ | `[]` |
+| actions | Options | _ActionSheetAction[]_ | `[]` |
 | title | Title | _string_ | - |
 | cancel-text | Text of cancel button | _string_ | - |
 | description | Description above the options | _string_ | - |
@@ -192,7 +192,7 @@ export default {
 | teleport | Specifies a target element where ActionSheet will be mounted | _string \| Element_ | - |
 | before-close `v3.1.4` | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 
-### Data Structure of Action
+### Data Structure of ActionSheetAction
 
 | Key       | Description                     | Type                        |
 | --------- | ------------------------------- | --------------------------- |
@@ -202,13 +202,13 @@ export default {
 | className | className for the option        | _string \| Array \| object_ |
 | loading   | Whether to be loading status    | _boolean_                   |
 | disabled  | Whether to be disabled          | _boolean_                   |
-| callback  | Callback function after clicked | _action: Action_            |
+| callback  | Callback function after clicked | _action: ActionSheetAction_ |
 
 ### Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| select | Emitted when an option is clicked | _action: Action, index: number_ |
+| select | Emitted when an option is clicked | _action: ActionSheetAction, index: number_ |
 | cancel | Emitted when the cancel button is clicked | - |
 | open | Emitted when opening ActionSheet | - |
 | close | Emitted when closing ActionSheet | - |
