@@ -5,7 +5,6 @@ export default {
   confirm: 'Bekreft',
   cancel: 'Avbryt',
   delete: 'Slett',
-  complete: 'Fullfør',
   loading: 'Laster...',
   nameEmpty: 'Vennligst fyll inn navn',
   confirmDelete: 'Er du sikker på at du vil slette?',

@@ -35,10 +35,6 @@ export function isNumeric(val: string | number): val is string {
   return typeof val === 'number' || /^\d+(\.\d+)?$/.test(val);
 }
 
-export function isAndroid(): boolean {
-  return inBrowser ? /android/.test(navigator.userAgent.toLowerCase()) : false;
-}
-
 export function isIOS(): boolean {
   return inBrowser
     ? /ios|iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase())

@@ -5,7 +5,6 @@ export default {
   confirm: 'Подтвердить',
   cancel: 'Отмена',
   delete: 'Удалить',
-  complete: 'Завершить',
   loading: 'Загрузка...',
   nameEmpty: 'Пожалуйста укажите имя',
   confirmDelete: 'Вы уверены, что хотите удалить?',

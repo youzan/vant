@@ -5,7 +5,6 @@ export default {
   confirm: 'ยืนยัน',
   cancel: 'ยกเลิก',
   delete: 'ลบ',
-  complete: 'ดำเนินการ',
   loading: 'กำลังโหลด...',
   nameEmpty: 'กรุณากรอกชื่อของคุณ',
   confirmDelete: 'คุณแน่ใจว่าต้องการลบ',

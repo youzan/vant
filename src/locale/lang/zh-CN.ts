@@ -5,7 +5,6 @@ export default {
   confirm: '确认',
   cancel: '取消',
   delete: '删除',
-  complete: '完成',
   loading: '加载中...',
   nameEmpty: '请填写姓名',
   confirmDelete: '确定要删除吗',

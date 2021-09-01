@@ -5,7 +5,6 @@ export default {
   confirm: 'Bestätigen',
   cancel: 'Abbrechen',
   delete: 'Löschen',
-  complete: 'Complete',
   loading: 'Laden...',
   nameEmpty: 'Bitte geben Sie den Name an',
   confirmDelete: 'Sind Sie sicher, dass Sie löschen möchten?',

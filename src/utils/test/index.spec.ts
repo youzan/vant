@@ -1,7 +1,7 @@
 import { deepClone } from '../deep-clone';
 import { deepAssign } from '../deep-assign';
 import { get, noop } from '..';
-import { isDef, isMobile, isNumeric, isAndroid } from '../validate';
+import { isDef, isMobile, isNumeric } from '../validate';
 import { camelize } from '../format/string';
 import { formatNumber } from '../format/number';
 import { addUnit, unitToPx } from '../format/unit';
@@ -55,10 +55,6 @@ test('get', () => {
   expect(get({ a: 1 }, 'a')).toEqual(1);
   expect(get({ a: { b: 2 } }, 'a.b')).toEqual(2);
   expect(get({ a: { b: 2 } }, 'a.b.c')).toEqual('');
-});
-
-test('isAndroid', () => {
-  expect(isAndroid()).toBeFalsy();
 });
 
 test('isMobile', () => {
