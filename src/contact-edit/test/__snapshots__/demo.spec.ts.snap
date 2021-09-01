@@ -14,7 +14,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-field__body">
             <input type="text"
                    class="van-field__control"
-                   placeholder="Please fill in the name"
+                   placeholder="Name"
             >
           </div>
         </div>
@@ -29,7 +29,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-field__body">
             <input type="tel"
                    class="van-field__control"
-                   placeholder="Please fill in the tel"
+                   placeholder="Phone"
             >
           </div>
         </div>
