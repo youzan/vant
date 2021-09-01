@@ -220,6 +220,7 @@ export default {
 | overlay | Whether to show overlay | _boolean_ | `false` |
 | overlay-class `v3.0.10` | Custom overlay class | _string \| Array \| object_ | - |
 | overlay-style `v3.0.10` | Custom overlay style | _object_ | - |
+| show-arrow `v3.2.2` | Whether to show arrow | _boolean_ | `true` |
 | close-on-click-action | Whether to close when clicking action | _boolean_ | `true` |
 | close-on-click-outside | Whether to close when clicking outside | _boolean_ | `true` |
 | close-on-click-overlay `v3.0.10` | Whether to close when clicking overlay | _boolean_ | `true` |

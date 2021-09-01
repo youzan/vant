@@ -200,3 +200,15 @@ test('should change icon class prefix when using icon-prefix prop', () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should allow to hide arrow', () => {
+  const wrapper = mount(Popover, {
+    props: {
+      show: true,
+      teleport: null,
+      showArrow: false,
+    },
+  });
+
+  expect(wrapper.find('.van-popover__arrow').exists()).toBeFalsy();
+});
