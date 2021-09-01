@@ -162,12 +162,12 @@ Toast.resetDefaultOptions('loading');
 | Toast.setDefaultOptions | 修改默认配置，对所有 Toast 生效。<br>传入 type 可以修改指定类型的默认配置 | `type \| options` | `void` |
 | Toast.resetDefaultOptions | 重置默认配置，对所有 Toast 生效。<br>传入 type 可以重置指定类型的默认配置 | `type` | `void` |
 
-### Options
+### ToastOptions 数据结构
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | _string_ | `text` |
-| position | 位置，可选值为 `top` `bottom` | _string_ | `middle` |
+| type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | _ToastType_ | `text` |
+| position | 位置，可选值为 `top` `bottom` | _ToastPosition_ | `middle` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | `''` |
 | icon | 自定义图标，支持传入[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | iconSize | 图标大小，如 `20px` `2em`，默认单位为 `px` | _number \| string_ | `36px` |
@@ -185,6 +185,14 @@ Toast.resetDefaultOptions('loading');
 | onClose | 关闭时的回调函数 | _Function_ | - |
 | transition | 动画类名，等价于 [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的`name`属性 | _string_ | `van-fade` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
+
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { ToastType, ToastOptions, ToastPosition } from 'vant';
+```
 
 ## 主题定制
 

@@ -88,6 +88,14 @@ export default {
 | change `v3.0.10` | 当吸顶状态改变时触发 | _isFixed: boolean_ |
 | scroll | 滚动时触发 | _{ scrollTop: number, isFixed: boolean }_ |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { StickyPosition } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

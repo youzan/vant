@@ -118,6 +118,14 @@ export default {
 | onOpened | Callback function after opened | _() => void_ | - |
 | onClose | Callback function after close | _() => void_ | - |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { NotifyType, NotifyOptions } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

@@ -249,6 +249,19 @@ export default {
 | title            | 自定义标题         |
 | footer `v3.0.10` | 自定义底部按钮区域 |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type {
+  DialogTheme,
+  DialogMessage,
+  DialogOptions,
+  DialogMessageAlign,
+} from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

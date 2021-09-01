@@ -211,6 +211,14 @@ export default {
 | extra-key  | 自定义左下角按键内容 |
 | title-left | 自定义标题栏左侧内容 |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { NumberKeyboardTheme } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

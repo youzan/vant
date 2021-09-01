@@ -192,6 +192,14 @@ app.use(CellGroup);
 | right-icon     | Custom right icon                 |
 | extra          | Custom extra content on the right |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { CellArrowDirection } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

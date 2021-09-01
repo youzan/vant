@@ -167,6 +167,14 @@ export default {
 | ------- | ------------------- |
 | default | custom text content |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { CircleStartPosition } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

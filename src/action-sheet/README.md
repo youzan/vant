@@ -224,6 +224,14 @@ export default {
 | description      | Custom description above the options |
 | cancel `v3.0.10` | Custom the content of cancel button  |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { ActionSheetAction } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

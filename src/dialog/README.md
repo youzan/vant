@@ -214,6 +214,19 @@ export default {
 | title            | Custom title   |
 | footer `v3.0.10` | Custom footer  |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type {
+  DialogTheme,
+  DialogMessage,
+  DialogOptions,
+  DialogMessageAlign,
+} from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

@@ -77,6 +77,14 @@ export default {
 | name | Name        | _string_ |
 | tel  | Phone       | _string_ |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { ContactEditInfo } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

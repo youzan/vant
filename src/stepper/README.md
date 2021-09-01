@@ -157,6 +157,14 @@ export default {
 | focus | Emitted when the input is focused | _event: Event_ |
 | blur | Emitted when the input is blurred | _event: Event_ |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { StepperTheme } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

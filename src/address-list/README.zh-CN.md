@@ -81,28 +81,28 @@ export default {
 
 ### Props
 
-| 参数             | 说明              | 类型        | 默认值     |
-| ---------------- | ----------------- | ----------- | ---------- |
-| v-model          | 当前选中地址的 id | _string_    | -          |
-| list             | 地址列表          | _Address[]_ | `[]`       |
-| disabled-list    | 不可配送地址列表  | _Address[]_ | `[]`       |
-| disabled-text    | 不可配送提示文案  | _string_    | -          |
-| switchable       | 是否允许切换地址  | _boolean_   | `true`     |
-| add-button-text  | 底部按钮文字      | _string_    | `新增地址` |
-| default-tag-text | 默认地址标签文字  | _string_    | -          |
+| 参数             | 说明              | 类型                   | 默认值     |
+| ---------------- | ----------------- | ---------------------- | ---------- |
+| v-model          | 当前选中地址的 id | _string_               | -          |
+| list             | 地址列表          | _AddressListAddress[]_ | `[]`       |
+| disabled-list    | 不可配送地址列表  | _AddressListAddress[]_ | `[]`       |
+| disabled-text    | 不可配送提示文案  | _string_               | -          |
+| switchable       | 是否允许切换地址  | _boolean_              | `true`     |
+| add-button-text  | 底部按钮文字      | _string_               | `新增地址` |
+| default-tag-text | 默认地址标签文字  | _string_               | -          |
 
 ### Events
 
-| 事件名          | 说明                     | 回调参数                       |
-| --------------- | ------------------------ | ------------------------------ |
-| add             | 点击新增按钮时触发       | -                              |
-| edit            | 点击编辑按钮时触发       | _item: Address, index: number_ |
-| select          | 切换选中的地址时触发     | _item: Address, index: number_ |
-| edit-disabled   | 编辑不可配送的地址时触发 | _item: Address, index: number_ |
-| select-disabled | 选中不可配送的地址时触发 | _item: Address, index: number_ |
-| click-item      | 点击任意地址时触发       | _item: Address, index: number_ |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| add | 点击新增按钮时触发 | - |
+| edit | 点击编辑按钮时触发 | _item: AddressListAddress, index: number_ |
+| select | 切换选中的地址时触发 | _item: AddressListAddress, index: number_ |
+| edit-disabled | 编辑不可配送的地址时触发 | _item: AddressListAddress, index: number_ |
+| select-disabled | 选中不可配送的地址时触发 | _item: AddressListAddress, index: number_ |
+| click-item | 点击任意地址时触发 | _item: AddressListAddress, index: number_ |
 
-### Address 数据结构
+### AddressListAddress 数据结构
 
 | 键名      | 说明               | 类型               |
 | --------- | ------------------ | ------------------ |
@@ -114,12 +114,20 @@ export default {
 
 ### Slots
 
-| 名称         | 说明                 | 参数            |
-| ------------ | -------------------- | --------------- |
-| default      | 在列表下方插入内容   | -               |
-| top          | 在顶部插入内容       | -               |
-| item-bottom  | 在列表项底部插入内容 | _item: Address_ |
-| tag `v3.0.9` | 自定义列表项标签内容 | _item: Address_ |
+| 名称         | 说明                 | 参数                       |
+| ------------ | -------------------- | -------------------------- |
+| default      | 在列表下方插入内容   | -                          |
+| top          | 在顶部插入内容       | -                          |
+| item-bottom  | 在列表项底部插入内容 | _item: AddressListAddress_ |
+| tag `v3.0.9` | 自定义列表项标签内容 | _item: AddressListAddress_ |
+
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { AddressListAddress } from 'vant';
+```
 
 ## 主题定制
 

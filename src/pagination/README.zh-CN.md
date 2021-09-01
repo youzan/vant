@@ -101,8 +101,16 @@ export default {
 | 名称 | 描述 | 参数 |
 | --- | --- | --- |
 | page | 自定义页码 | _{ number: number, text: string, active: boolean }_ |
-| prev-text | 自定义上一页按钮文字 | `-` |
-| next-text | 自定义下一页按钮文字 | `-` |
+| prev-text | 自定义上一页按钮文字 | - |
+| next-text | 自定义下一页按钮文字 | - |
+
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { PaginationMode } from 'vant';
+```
 
 ## 主题定制
 

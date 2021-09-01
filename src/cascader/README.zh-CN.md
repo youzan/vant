@@ -252,6 +252,14 @@ export default {
 | title           | 自定义顶部标题 | -                                       |
 | option `v3.1.4` | 自定义选项文字 | _{ option: Option, selected: boolean }_ |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { CascaderOption, CascaderFieldNames } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

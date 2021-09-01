@@ -240,6 +240,14 @@ export default {
 | title | Custom title | - |
 | option `v3.1.4` | Custom option text | _{ option: Option, selected: boolean }_ |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { CascaderOption, CascaderFieldNames } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

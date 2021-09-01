@@ -69,6 +69,14 @@ app.use(Divider);
 | ------- | ----------- |
 | default | content     |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { DividerContentPosition } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

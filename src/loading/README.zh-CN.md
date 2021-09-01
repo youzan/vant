@@ -95,6 +95,14 @@ app.use(Loading);
 | ------- | -------- |
 | default | 加载文案 |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { LoadingType } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

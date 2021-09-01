@@ -114,6 +114,14 @@ app.use(Lazyload);
 | loading | Custom loading placeholder         |
 | error   | Custom error placeholder           |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { ImageFit } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

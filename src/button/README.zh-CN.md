@@ -172,6 +172,14 @@ app.use(Button);
 | icon `v3.0.18` | 自定义图标     |
 | loading        | 自定义加载图标 |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { ButtonType, ButtonSize } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

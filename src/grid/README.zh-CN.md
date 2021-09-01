@@ -158,6 +158,14 @@ app.use(GridItem);
 | icon    | 自定义图标           |
 | text    | 自定义文字           |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { GridDirection } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

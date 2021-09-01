@@ -228,6 +228,14 @@ export default {
 | description      | 自定义描述文字     |
 | cancel `v3.0.10` | 自定义取消按钮内容 |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { ShareSheetOption, ShareSheetOptions } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

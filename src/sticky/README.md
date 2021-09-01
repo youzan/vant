@@ -80,6 +80,14 @@ export default {
 | change `v3.0.10` | Emitted when sticky status changed | _isFixed: boolean_ |
 | scroll | Emitted when scrolling | _{ scrollTop: number, isFixed: boolean }_ |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { StickyPosition } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

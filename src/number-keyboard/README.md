@@ -189,7 +189,7 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| input | Emitted when keydown | key: Content of the key |
+| input | Emitted when a key is pressed | key: Content of the key |
 | delete | Emitted when the delete key is pressed | - |
 | close | Emitted when the close button is clicked | - |
 | blur | Emitted when the close button is clicked or the keyboard is blurred | - |
@@ -203,6 +203,14 @@ export default {
 | delete     | Custom delete key content |
 | extra-key  | Custom extra key content  |
 | title-left | Custom title left content |
+
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { NumberKeyboardTheme } from 'vant';
+```
 
 ## Theming
 

@@ -93,8 +93,16 @@ export default {
 | Name | Description | SlotProps |
 | --- | --- | --- |
 | page | Custom pagination item | _{ number: number, text: string, active: boolean }_ |
-| prev-text | Custom prev text | `-` |
-| next-text | Custom next text | `-` |
+| prev-text | Custom prev text | - |
+| next-text | Custom next text | - |
+
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { PaginationMode } from 'vant';
+```
 
 ## Theming
 

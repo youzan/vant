@@ -177,6 +177,14 @@ export default {
 | focus | 输入框聚焦时触发 | _event: Event_ |
 | blur | 输入框失焦时触发 | _event: Event_ |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { StepperTheme } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

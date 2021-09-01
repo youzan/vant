@@ -84,6 +84,14 @@ export default {
 | ------ | ---------- | ------------------- |
 | click  | 点击时触发 | _event: MouseEvent_ |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { ContactCardType } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量
