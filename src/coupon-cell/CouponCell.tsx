@@ -30,7 +30,7 @@ function formatValue(
     return `-${currency} ${(value / 100).toFixed(2)}`;
   }
 
-  return coupons.length === 0 ? t('tips') : t('count', coupons.length);
+  return coupons.length === 0 ? t('noCoupon') : t('count', coupons.length);
 }
 
 export default defineComponent({

@@ -6,6 +6,7 @@ export default {
   cancel: 'Avbryt',
   delete: 'Slett',
   loading: 'Laster...',
+  noCoupon: 'Ingen kuponger',
   nameEmpty: 'Vennligst fyll inn navn',
   confirmDelete: 'Er du sikker på at du vil slette?',
   telInvalid: 'Ugyldig telefonnummer',
@@ -45,11 +46,9 @@ export default {
   },
   vanCouponCell: {
     title: 'Kupong',
-    tips: 'Ingen kuponger',
     count: (count: number) => `Du har ${count} kuponger`,
   },
   vanCouponList: {
-    empty: 'Ingen kuponger',
     exchange: 'Bytte',
     close: 'Lukk',
     enable: 'Tilgjengelig',

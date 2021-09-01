@@ -117,7 +117,7 @@ export default defineComponent({
     const renderEmpty = () => (
       <div class={bem('empty')}>
         <img src={props.emptyImage} />
-        <p>{t('empty')}</p>
+        <p>{t('noCoupon')}</p>
       </div>
     );
 

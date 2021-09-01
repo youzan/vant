@@ -6,6 +6,7 @@ export default {
   cancel: 'ยกเลิก',
   delete: 'ลบ',
   loading: 'กำลังโหลด...',
+  noCoupon: 'ไม่มีคูปอง',
   nameEmpty: 'กรุณากรอกชื่อของคุณ',
   confirmDelete: 'คุณแน่ใจว่าต้องการลบ',
   telInvalid: 'กรุณากรอกหมายเลขโทรศัพท์ที่ถูกต้อง',
@@ -47,11 +48,9 @@ export default {
   },
   vanCouponCell: {
     title: 'คูปอง',
-    tips: 'ไม่สามารถใช้ได้',
     count: (count: number) => `มีรูปภาพ ${count} รูป`,
   },
   vanCouponList: {
-    empty: 'ไม่มีคูปอง',
     exchange: 'แลกเปลี่ยน',
     close: 'ห้ามใช้คูปอง',
     enable: 'พร้อมใช้งาน',

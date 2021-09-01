@@ -6,6 +6,7 @@ export default {
   cancel: '取消',
   delete: '刪除',
   loading: '載入中...',
+  noCoupon: '暫無優惠券',
   nameEmpty: '請填寫姓名',
   confirmDelete: '確定要刪除嗎',
   telInvalid: '請填寫正確的電話',
@@ -46,11 +47,9 @@ export default {
   },
   vanCouponCell: {
     title: '優惠券',
-    tips: '暫無可用',
     count: (count: number) => `${count}張可用`,
   },
   vanCouponList: {
-    empty: '暫無優惠券',
     exchange: '兌換',
     close: '不使用優惠',
     enable: '可使用優惠券',

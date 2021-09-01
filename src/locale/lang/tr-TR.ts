@@ -6,6 +6,7 @@ export default {
   cancel: 'İptal',
   delete: 'Sil',
   loading: 'Yükleniyor...',
+  noCoupon: 'Kupon yok',
   nameEmpty: 'Lütfen isim giriniz',
   confirmDelete: 'Silmek istediğinize emin misiniz?',
   telInvalid: 'Geçersiz tel. numarası',
@@ -45,11 +46,9 @@ export default {
   },
   vanCouponCell: {
     title: 'Kupon',
-    tips: 'Kupon yok',
     count: (count: number) => `${count} adet teklif var`,
   },
   vanCouponList: {
-    empty: 'Kupon yok',
     exchange: 'Takas',
     close: 'Kapat',
     enable: 'Mevcut',
