@@ -113,7 +113,6 @@ export default createComponent({
     },
 
     onClick(event) {
-      console.log(this);
       if (this.$listeners.click) {
         this.$emit('click', event);
       } else {

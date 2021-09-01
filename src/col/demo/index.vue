@@ -19,6 +19,20 @@
           offset: 12, span: 12
         </van-col>
       </van-row>
+
+
+      <van-row>
+      <van-row>
+        <van-col span="8">8</van-col>
+        <van-col span="8">8</van-col>
+        <van-col span="8">8</van-col>
+      </van-row>
+      <van-row>
+        <van-col span="8">8</van-col>
+        <van-col span="8">8</van-col>
+        <van-col span="8">8</van-col>
+      </van-row>
+    </van-row>
     </demo-block>
 
     <demo-block :title="t('title2')">

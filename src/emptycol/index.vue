@@ -1,0 +1,23 @@
+<template>
+<div :class="['empty']" s-empty="true">+</div>
+</template>
+
+<script>
+export default {
+    name: 'van-empty-col',
+};
+</script>
+
+<style scoped>
+.empty {
+  background: #F7F8FA;
+  text-align: center;
+  color: #ccc;
+  min-height: 32px;
+  min-width: 90px;
+  width: 100%;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+</style>
