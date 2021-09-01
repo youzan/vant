@@ -7,7 +7,6 @@ export default {
   delete: '削除',
   complete: '完了',
   loading: '読み込み中...',
-  telEmpty: '電話番号を入力してください',
   nameEmpty: '名前を入力してください',
   confirmDelete: '本当に削除しますか',
   telInvalid: '正しい電話番号を入力してください',

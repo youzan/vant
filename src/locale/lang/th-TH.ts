@@ -7,7 +7,6 @@ export default {
   delete: 'ลบ',
   complete: 'ดำเนินการ',
   loading: 'กำลังโหลด...',
-  telEmpty: 'กรุณากรอกข้อมูลในโทรศัพท์',
   nameEmpty: 'กรุณากรอกชื่อของคุณ',
   confirmDelete: 'คุณแน่ใจว่าต้องการลบ',
   telInvalid: 'กรุณากรอกหมายเลขโทรศัพท์ที่ถูกต้อง',
