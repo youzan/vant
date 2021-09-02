@@ -36,14 +36,14 @@ export type ButtonProps = RouteProps & {
   loadingType?: LoadingType;
   loadingText?: string;
   iconPosition: 'left' | 'right';
-  href?: string;
-  target?: Object;
-  to?: [String, Object],
-  replace?: { type: Boolean, default: false },
-  append?: boolean,
-  decoration?: { type: Boolean, default: true },
-  download?: { type: Boolean, default: false },
-  destination?: String,
+  href: String,
+  target: { type: String, default: '_self' },
+  to: [String, Object],
+  replace: { type: Boolean, default: false },
+  append: { type: Boolean, default: false },
+  decoration: { type: Boolean, default: true },
+  download: { type: Boolean, default: false },
+  destination: String,
 };
 
 export type ButtonEvents = {
@@ -107,6 +107,7 @@ function Button(
       if (!hrefR && !ctx.listeners.click) {
         event.preventDefault();
       }
+      // @ts-ignore：没办法
       if (props.target !== '_self')
         return;
 
@@ -141,11 +142,23 @@ function Button(
       const { location } = $router.resolve(
           currentTo,
           $route,
+          // @ts-ignore：没办法
           props.append,
       );
       props.replace ? $router.replace(location) : $router.push(location);
 
       emit(ctx, 'navigate',  { to: currentTo, replace: props.replace, append: props.append });
+      }  else {
+        function downloadClick() {
+          const a = document.createElement("a");
+          a.setAttribute("href", hrefR as string);
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(() => {
+            document.body.removeChild(a);
+          }, 500);
+        }
+        downloadClick();
       }
 
     // functionalRoute(ctx);
@@ -204,6 +217,7 @@ function Button(
     if (props.destination !== undefined)
         return props.destination;
     else if (ctx.parent?.$router && props.to !== undefined)
+    // @ts-ignore：没办法
         return ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href;
     else
         return undefined;
@@ -267,7 +281,7 @@ Button.props = {
   loadingType: String,
   tag: {
     type: String,
-    default: 'a',
+    default: 'button',
   },
   type: {
     type: String,

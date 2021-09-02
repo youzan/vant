@@ -17,6 +17,7 @@
       type: boolean
       default: true
       description: 是否循环播放
+      advanced: true
     - name: touchable
       title: 手势滑动
       type: boolean
@@ -27,6 +28,7 @@
       type: boolean
       default: true
       description: 是否显示指示器
+      advanced: true
   slots:
     - name: default
       description: 插入`van-swipe-item`子组件。

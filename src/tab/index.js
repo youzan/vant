@@ -83,13 +83,13 @@ export default createComponent({
           aria-hidden={!isActive}
           class={bem('pane-wrapper', { inactive: !isActive })}
         >
-          <div class={bem('pane')}>{Content}</div>
+          <div class={bem('pane')} vusion-slot-name="default">{Content}</div>
         </div>
       );
     }
 
     return (
-      <div vShow={show} role="tabpanel" class={bem('pane')}>
+      <div vShow={show} role="tabpanel" class={bem('pane')} vusion-slot-name="default">
         {Content}
       </div>
     );
