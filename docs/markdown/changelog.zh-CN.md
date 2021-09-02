@@ -16,6 +16,28 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.2.2](https://github.com/youzan/vant/compare/v3.2.1...v3.2.2)
+
+`2021-09-02`
+
+**Feature**
+
+- Field: 新增 id 属性 [#9347](https://github.com/youzan/vant/issues/9347)
+- Field: 新增 `van-field__error` 类名 [#9327](https://github.com/youzan/vant/issues/9327)
+- Field: label 现在会使用原生 `label` 标签 [#9346](https://github.com/youzan/vant/issues/9346)
+- Popover: 新增 show-arrow 属性 [#9372](https://github.com/youzan/vant/issues/9372)
+- Progress: 新增过渡动画效果 [ba4ff5](https://github.com/youzan/vant/commit/ba4ff58af6ccf67e255bf43ef905677dc64596a3)
+- Search: 新增 id 属性 [#9349](https://github.com/youzan/vant/issues/9349)
+- Tab: 新增 show-zero-badge 属性 [#9343](https://github.com/youzan/vant/issues/9343)
+- Locale: 精简一部分国际化文本配置 [#9329](https://github.com/youzan/vant/issues/9329)
+
+**Bug Fixes**
+
+- AddressEdit: 移除了无效的样式变量 [#9364](https://github.com/youzan/vant/issues/9364)
+- Progress: 修复在 v-show 内使用时无法正确渲染的问题 [841e09](https://github.com/youzan/vant/commit/841e09d0529961058ecb63ed26f018cf3a66a3bf)
+- Progress: 修复 percentage 属性缺少默认值的问题 [8ac597](https://github.com/youzan/vant/commit/8ac597dc3d2316d34f866dcfd7e1646c695da180)
+- 修复动画相关的 CSS 变量不生效的问题 [#9337](https://github.com/youzan/vant/issues/9337)
+
 ### [v3.2.1](https://github.com/youzan/vant/compare/v3.2.0...v3.2.1)
 
 `2021-08-22`

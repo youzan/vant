@@ -16,6 +16,28 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.2.2](https://github.com/youzan/vant/compare/v3.2.1...v3.2.2)
+
+`2021-09-02`
+
+**Feature**
+
+- Field: add id prop [#9347](https://github.com/youzan/vant/issues/9347)
+- Field: add `van-field__error` class when error [#9327](https://github.com/youzan/vant/issues/9327)
+- Field: using `label` tag for label [#9346](https://github.com/youzan/vant/issues/9346)
+- Popover: add show-arrow prop [#9372](https://github.com/youzan/vant/issues/9372)
+- Progress: add transition effect [ba4ff5](https://github.com/youzan/vant/commit/ba4ff58af6ccf67e255bf43ef905677dc64596a3)
+- Search: add id prop [#9349](https://github.com/youzan/vant/issues/9349)
+- Tab: add show-zero-badge prop [#9343](https://github.com/youzan/vant/issues/9343)
+- Locale: simplify locale configs [#9329](https://github.com/youzan/vant/issues/9329)
+
+**Bug Fixes**
+
+- AddressEdit: remove unused finish button [#9364](https://github.com/youzan/vant/issues/9364)
+- Progress: fix render error when use v-show and improve performance [841e09](https://github.com/youzan/vant/commit/841e09d0529961058ecb63ed26f018cf3a66a3bf)
+- Progress: percentage missing default value [8ac597](https://github.com/youzan/vant/commit/8ac597dc3d2316d34f866dcfd7e1646c695da180)
+- fix animation css vars not work [#9337](https://github.com/youzan/vant/issues/9337)
+
 ### [v3.2.1](https://github.com/youzan/vant/compare/v3.2.0...v3.2.1)
 
 `2021-08-22`
