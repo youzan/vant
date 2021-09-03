@@ -1936,6 +1936,17 @@
     estree-walker "^2.0.2"
     source-map "^0.6.1"
 
+"@vue/compiler-core@3.2.8":
+  version "3.2.8"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.2.8.tgz#13b2386bdb03455c9f6c6af2f3468561a5ae5b1d"
+  integrity sha512-Sx8qJ030+QM/NakUrkQuUGCeDEb+0d0AgFOl5W4qRvR6e+YgLnW2ew0jREf4T1hak9Fdk8Edl67StECHrhEuew==
+  dependencies:
+    "@babel/parser" "^7.15.0"
+    "@babel/types" "^7.15.0"
+    "@vue/shared" "3.2.8"
+    estree-walker "^2.0.2"
+    source-map "^0.6.1"
+
 "@vue/compiler-dom@3.2.6":
   version "3.2.6"
   resolved "https://registry.nlark.com/@vue/compiler-dom/download/@vue/compiler-dom-3.2.6.tgz#3764d7fe1a696e39fb2a3c9d638da0749e369b2d"
@@ -1944,19 +1955,27 @@
     "@vue/compiler-core" "3.2.6"
     "@vue/shared" "3.2.6"
 
+"@vue/compiler-dom@3.2.8":
+  version "3.2.8"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.2.8.tgz#69bc9e08928a12295c31299067f18d87301981a9"
+  integrity sha512-nxBW6k8FMWQ74294CRbqR+iEJRO5vIjx85I3YCOyZFD6FsDHyFL60g76TcJzucp+F2XXIDaYz+A+F4gQlDatjw==
+  dependencies:
+    "@vue/compiler-core" "3.2.8"
+    "@vue/shared" "3.2.8"
+
 "@vue/compiler-sfc@^3.2.6":
-  version "3.2.6"
-  resolved "https://registry.nlark.com/@vue/compiler-sfc/download/@vue/compiler-sfc-3.2.6.tgz?cache=0&sync_timestamp=1629824593182&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fcompiler-sfc%2Fdownload%2F%40vue%2Fcompiler-sfc-3.2.6.tgz#d6ab7410cff57081ab627b15a1ea51a1072c7cf1"
-  integrity sha1-1qt0EM/1cIGrYnsVoepRoQcsfPE=
+  version "3.2.8"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.2.8.tgz#23699f69d38b1c32ec54f8b470f3e6375ffc6b6e"
+  integrity sha512-XClueQAXoWtN2EToKgfYH9FCL70Ac4bxx6OZFZzxYSg1bei8IB9srJP1UOfnJb2IpnM1heikAz1dp1HI1wHcyQ==
   dependencies:
     "@babel/parser" "^7.15.0"
     "@babel/types" "^7.15.0"
     "@types/estree" "^0.0.48"
-    "@vue/compiler-core" "3.2.6"
-    "@vue/compiler-dom" "3.2.6"
-    "@vue/compiler-ssr" "3.2.6"
-    "@vue/ref-transform" "3.2.6"
-    "@vue/shared" "3.2.6"
+    "@vue/compiler-core" "3.2.8"
+    "@vue/compiler-dom" "3.2.8"
+    "@vue/compiler-ssr" "3.2.8"
+    "@vue/ref-transform" "3.2.8"
+    "@vue/shared" "3.2.8"
     consolidate "^0.16.0"
     estree-walker "^2.0.2"
     hash-sum "^2.0.0"
@@ -1968,13 +1987,13 @@
     postcss-selector-parser "^6.0.4"
     source-map "^0.6.1"
 
-"@vue/compiler-ssr@3.2.6":
-  version "3.2.6"
-  resolved "https://registry.nlark.com/@vue/compiler-ssr/download/@vue/compiler-ssr-3.2.6.tgz#cadcf199859fa00739f4275b4c85970e4b0abe7d"
-  integrity sha1-ytzxmYWfoAc59CdbTIWXDksKvn0=
+"@vue/compiler-ssr@3.2.8":
+  version "3.2.8"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-ssr/-/compiler-ssr-3.2.8.tgz#99733532f44d77144ce1e3b853f2fa08ba394e7a"
+  integrity sha512-QqyiFRiIl55W0abDNQ6cNG/7iIfBHmbXVtssUAjX3IlI87ELeT0xackmrCyTSnfIX12ixljg9AN0COIZwlvt5A==
   dependencies:
-    "@vue/compiler-dom" "3.2.6"
-    "@vue/shared" "3.2.6"
+    "@vue/compiler-dom" "3.2.8"
+    "@vue/shared" "3.2.8"
 
 "@vue/reactivity@3.2.6":
   version "3.2.6"
@@ -1983,14 +2002,14 @@
   dependencies:
     "@vue/shared" "3.2.6"
 
-"@vue/ref-transform@3.2.6":
-  version "3.2.6"
-  resolved "https://registry.nlark.com/@vue/ref-transform/download/@vue/ref-transform-3.2.6.tgz?cache=0&sync_timestamp=1629824591536&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fref-transform%2Fdownload%2F%40vue%2Fref-transform-3.2.6.tgz#30b5f1fa77daf9894bc23e6a5a0e3586a4a796b8"
-  integrity sha1-MLXx+nfa+YlLwj5qWg41hqSnlrg=
+"@vue/ref-transform@3.2.8":
+  version "3.2.8"
+  resolved "https://registry.yarnpkg.com/@vue/ref-transform/-/ref-transform-3.2.8.tgz#a527047bab43ce50ef3d400ce71312ab30f825dc"
+  integrity sha512-9LdADd4JM3klt+b2qNT8a7b7JvBETNBy2Btv5rDzyPrAVS4Vrw+1WWay6gZBgnxfJ9TPSvG8f/9zu6gNGHmJLA==
   dependencies:
     "@babel/parser" "^7.15.0"
-    "@vue/compiler-core" "3.2.6"
-    "@vue/shared" "3.2.6"
+    "@vue/compiler-core" "3.2.8"
+    "@vue/shared" "3.2.8"
     estree-walker "^2.0.2"
     magic-string "^0.25.7"
 
@@ -2015,6 +2034,11 @@
   version "3.2.6"
   resolved "https://registry.nlark.com/@vue/shared/download/@vue/shared-3.2.6.tgz#2c22bae88fe2b7b59fa68a9c9c4cd60bae2c1794"
   integrity sha1-LCK66I/it7WfpoqcnEzWC64sF5Q=
+
+"@vue/shared@3.2.8":
+  version "3.2.8"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.8.tgz#2f918e330aeb3f56ab1031ca60a5b30672512457"
+  integrity sha512-E2DQQnG7Qr4GwTs3GlfPPlHliGVADoufTnhpwfoViw7JlyLMmYtjfnTwM6nXAwvSJWiF7D+7AxpnWBBT3VWo6Q==
 
 "@vue/test-utils@2.0.0-rc.6":
   version "2.0.0-rc.6"
