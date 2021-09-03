@@ -29,7 +29,7 @@ It's welcomed to pull request, And there are some tips about that:
 ```bash
 git clone git@github.com:youzan/vant.git
 
-cd vant && yarn
+cd packages/vant && yarn
 
 npm run dev
 
