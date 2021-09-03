@@ -5,6 +5,7 @@
     "dev": "cd packages/vant && yarn dev",
     "lint": "cd packages/vant && yarn lint",
     "test": "cd packages/vant && yarn test",
-    "build": "cd packages/vant && yarn build"
+    "build": "cd packages/vant && yarn build",
+    "build:site": "cd packages/vant && build:site"
   }
 }

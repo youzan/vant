@@ -11,11 +11,10 @@ jobs:
       with:
         node-version: '14.x'
 
-    - name: cd vant
-      run: cd packages/vant
-
     - name: Install dependencies
       uses: bahmutov/npm-install@v1
+      with:
+        working-directory: packages/vant
 
     - name: Run linter
       run: npm run lint
@@ -28,11 +27,10 @@ jobs:
       with:
         node-version: '14.x'
 
-    - name: cd vant
-      run: cd packages/vant
-
     - name: Install dependencies
       uses: bahmutov/npm-install@v1
+      with:
+        working-directory: packages/vant
 
     - name: Run test cases
       run: npm test
@@ -50,11 +48,10 @@ jobs:
       with:
         node-version: '14.x'
 
-    - name: cd vant
-      run: cd packages/vant
-
     - name: Install dependencies
       uses: bahmutov/npm-install@v1
+      with:
+        working-directory: packages/vant
 
     - name: Build
       run: npm run build

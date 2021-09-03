@@ -15,18 +15,17 @@ jobs:
         with:
           ref: 'dev'
 
-      - name: cd vant
-        run: cd packages/vant
-
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
+        with:
+          working-directory: packages/vant
 
       - name: Build Site
-        run: npx --no-install vant-cli build-site
+        run: npm run build:site
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages
-          folder: site
+          folder: packages/vant/site
           target-folder: v3

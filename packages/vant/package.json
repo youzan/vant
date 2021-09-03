@@ -19,9 +19,10 @@
     "lint": "vant-cli lint",
     "test": "vant-cli test",
     "build": "vant-cli build",
+    "build:site": "vant-cli build-site",
     "release": "vant-cli release --tag next",
+    "release:site": "yarn build:site && gh-pages -d site --add --dest v3",
     "test:watch": "vant-cli test --watch",
-    "release:site": "vant-cli build-site && gh-pages -d site --add --dest v3",
     "test:coverage": "open test/coverage/index.html"
   },
   "lint-staged": {
