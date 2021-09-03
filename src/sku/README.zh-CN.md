@@ -340,6 +340,14 @@ messageConfig: {
       setTimeout(() => resolve('https://img01.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
     });
   },
+  // 可选项，自定义图片上传逻辑，使用此选项时，会禁用原生图片选择
+  customUpload: () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('https://img01.yzcdn.cn/vant/leaf.jpg');
+      }, 1000);
+    });
+  },
   // 最大上传体积 (MB)
   uploadMaxSize: 3,
   // placeholder 配置
