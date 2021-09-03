@@ -6,6 +6,6 @@
     "lint": "cd packages/vant && yarn lint",
     "test": "cd packages/vant && yarn test",
     "build": "cd packages/vant && yarn build",
-    "build:site": "cd packages/vant && build:site"
+    "build:site": "cd packages/vant && yarn build:site"
   }
 }
