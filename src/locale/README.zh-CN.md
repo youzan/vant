@@ -56,7 +56,7 @@ Locale.add(messages);
 | 泰语           | th-TH        |
 | 法语           | fr-FR        |
 
-> 在 [这里](https://github.com/youzan/vant/tree/dev/src/locale/lang) 查看所有的语言包源文件。
+> 在 [这里](https://github.com/youzan/vant/tree/2.x/src/locale/lang) 查看所有的语言包源文件。
 
 ## 常见问题
 
