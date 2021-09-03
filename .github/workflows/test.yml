@@ -13,6 +13,8 @@ jobs:
 
     - name: Install dependencies
       uses: bahmutov/npm-install@v1
+      with:
+        working-directory: packages/vant
 
     - name: Run linter
       run: npm run lint
@@ -27,6 +29,8 @@ jobs:
 
     - name: Install dependencies
       uses: bahmutov/npm-install@v1
+      with:
+        working-directory: packages/vant
 
     - name: Run test cases
       run: npm test
@@ -46,6 +50,8 @@ jobs:
 
     - name: Install dependencies
       uses: bahmutov/npm-install@v1
+      with:
+        working-directory: packages/vant
 
     - name: Build
       run: npm run build

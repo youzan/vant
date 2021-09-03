@@ -9,7 +9,7 @@ node_modules
 package-lock.json
 
 # test
-test/coverage
+**/test/coverage
 
 # dist file
 es

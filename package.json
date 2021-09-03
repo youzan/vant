@@ -1,80 +1,11 @@
 {
-  "name": "vant",
-  "version": "3.2.2",
-  "description": "Mobile UI Components built on Vue",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "style": "lib/index.css",
-  "typings": "lib/index.d.ts",
-  "files": [
-    "es",
-    "lib",
-    "vetur"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
+  "private": true,
   "scripts": {
-    "dev": "vant-cli dev",
-    "lint": "vant-cli lint",
-    "test": "vant-cli test",
-    "build": "vant-cli build",
     "prepare": "husky install",
-    "release": "vant-cli release --tag next",
-    "test:watch": "vant-cli test --watch",
-    "release:site": "vant-cli build-site && gh-pages -d site --add --dest v3",
-    "test:coverage": "open test/coverage/index.html"
-  },
-  "npm": {
-    "tag": "next"
-  },
-  "lint-staged": {
-    "*.md": "prettier --write",
-    "*.{ts,tsx,js,vue,less}": "prettier --write",
-    "*.{ts,tsx,js,vue}": "eslint --fix",
-    "*.{vue,css,less}": "stylelint --fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:youzan/vant.git"
-  },
-  "keywords": [
-    "ui",
-    "vue",
-    "vue3",
-    "mobile",
-    "frontend",
-    "component",
-    "components"
-  ],
-  "author": "youzanfe",
-  "license": "MIT",
-  "dependencies": {
-    "@vant/icons": "^1.7.0",
-    "@vant/lazyload": "^1.2.0",
-    "@vant/popperjs": "^1.1.0",
-    "@vant/use": "^1.3.0"
-  },
-  "peerDependencies": {
-    "vue": "^3.0.0"
-  },
-  "devDependencies": {
-    "@vant/cli": "^4.0.0-beta.1",
-    "@vant/area-data": "^1.1.1",
-    "@vue/compiler-sfc": "^3.2.6",
-    "vue": "^3.2.6"
-  },
-  "sideEffects": [
-    "es/**/style/*",
-    "lib/**/style/*",
-    "*.css",
-    "*.less"
-  ],
-  "vetur": {
-    "tags": "vetur/tags.json",
-    "attributes": "vetur/attributes.json"
-  },
-  "web-types": "vetur/web-types.json",
-  "unpkg": "lib/vant.min.js",
-  "jsdelivr": "lib/vant.min.js"
+    "dev": "cd packages/vant && yarn dev",
+    "lint": "cd packages/vant && yarn lint",
+    "test": "cd packages/vant && yarn test",
+    "build": "cd packages/vant && yarn build",
+    "build:site": "cd packages/vant && build:site"
+  }
 }
