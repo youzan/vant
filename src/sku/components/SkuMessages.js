@@ -59,8 +59,6 @@ export default createComponent({
         messages[`message_${index}`] = item.value;
       });
 
-      console.log('messages', messages);
-
       return messages;
     },
 
