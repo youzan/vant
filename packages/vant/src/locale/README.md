@@ -56,7 +56,7 @@ Current supported languages:
 | Thai                     | th-TH        |
 | French                   | fr-FR        |
 
-> View all language configs [Here](https://github.com/youzan/vant/tree/dev/src/locale/lang).
+> View all language configs [Here](https://github.com/youzan/vant/tree/dev/packages/vant/src/locale/lang).
 
 ### Add new language
 
