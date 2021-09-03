@@ -11,6 +11,9 @@ jobs:
       with:
         node-version: '14.x'
 
+    - name: cd Vant
+      run: cd vant
+
     - name: Install dependencies
       uses: bahmutov/npm-install@v1
 
@@ -24,6 +27,9 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '14.x'
+
+    - name: cd Vant
+      run: cd vant
 
     - name: Install dependencies
       uses: bahmutov/npm-install@v1
@@ -43,6 +49,9 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '14.x'
+
+    - name: cd Vant
+      run: cd vant
 
     - name: Install dependencies
       uses: bahmutov/npm-install@v1

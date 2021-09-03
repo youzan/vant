@@ -15,6 +15,9 @@ jobs:
         with:
           ref: 'dev'
 
+      - name: cd Vant
+        run: cd vant
+
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
