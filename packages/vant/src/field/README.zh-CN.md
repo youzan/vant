@@ -386,7 +386,7 @@ fieldRef.value?.focus();
 | --van-field-clear-icon-color          | _var(--van-gray-5)_       | -    |
 | --van-field-right-icon-color          | _var(--van-gray-6)_       | -    |
 | --van-field-error-message-color       | _var(--van-danger-color)_ | -    |
-| --van-field-error-message-text-color  | _12px_                    | -    |
+| --van-field-error-message-font-size   | _12px_                    | -    |
 | --van-field-text-area-min-height      | _60px_                    | -    |
 | --van-field-word-limit-color          | _var(--van-gray-7)_       | -    |
 | --van-field-word-limit-font-size      | _var(--van-font-size-sm)_ | -    |
