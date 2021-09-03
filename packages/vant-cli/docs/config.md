@@ -321,6 +321,6 @@ module.exports = {
 
 ```json
 {
-  "browserslist": ["Android >= 4.0", "iOS >= 8"]
+  "browserslist": ["Chrome >= 51", "iOS >= 10"]
 }
 ```
