@@ -60,8 +60,9 @@ export default createComponent({
 
     onClickUpload() {
       if (this.customUpload) {
-        this.customUpload().then((file) => {
-          this.fileList.push(file);
+        this.customUpload().then((url) => {
+          this.fileList.push({ url });
+          this.$emit('input', url);
         });
       }
     },
