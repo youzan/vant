@@ -79,7 +79,12 @@ function resolveDocuments(components: string[]): DocumentItem[] {
 
 function genImportDocuments(items: DocumentItem[]) {
   return items
-    .map((item) => `import ${item.name} from '${normalizePath(item.path)}';`)
+    .map(
+      (item) =>
+        `const ${
+          item.name
+        } = defineAsyncComponent(() => import('${normalizePath(item.path)}'));`
+    )
     .join('\n');
 }
 
@@ -102,24 +107,15 @@ function genExportVersion() {
   return `export const packageVersion = '${getPackageJson().version}';`;
 }
 
-function genInstall() {
-  return `import './package-style.less';`;
-}
-
-function genExportPackageEntry() {
-  return `export { default as packageEntry } from './package-entry';`;
-}
-
 export function genSiteDesktopShared() {
   const dirs = readdirSync(SRC_DIR);
   const documents = resolveDocuments(dirs);
 
-  const code = `${genInstall()}
+  const code = `import { defineAsyncComponent } from 'vue';
 ${genImportDocuments(documents)}
 
 ${genVantConfigContent()}
 
-${genExportPackageEntry()}
 ${genExportConfig()}
 ${genExportDocuments(documents)}
 ${genExportVersion()}
