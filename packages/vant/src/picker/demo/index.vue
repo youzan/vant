@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { dateColumns, cascadeColumns, cascadeColumnsCustomKey } from './data';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

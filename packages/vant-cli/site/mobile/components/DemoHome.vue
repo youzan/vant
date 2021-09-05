@@ -21,7 +21,7 @@
 
 <script>
 import { config } from 'site-mobile-shared';
-import DemoHomeNav from './DemoHomeNav';
+import DemoHomeNav from './DemoHomeNav.vue';
 
 export default {
   components: {

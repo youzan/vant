@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { areaList } from '@vant/area-data';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { AreaColumnOption } from '../../area';
 import { areaListEn } from '../../area/demo/area-en';
 

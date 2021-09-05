@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import type { DropdownItemInstance } from '../../dropdown-item';
 
 const t = useTranslate({

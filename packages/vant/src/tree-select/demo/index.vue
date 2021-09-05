@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { zhCNData } from './data-zh';
 import { enUSData } from './data-en';
 import { deepClone } from '../../utils/deep-clone';

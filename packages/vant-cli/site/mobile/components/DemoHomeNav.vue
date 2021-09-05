@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import ArrowRight from './ArrowRight';
+import ArrowRight from './ArrowRight.vue';
 
 export default {
   components: {

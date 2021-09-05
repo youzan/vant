@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import TiledDisplay from './TiledDisplay.vue';
 import type { CalendarDayItem } from '../types';
 

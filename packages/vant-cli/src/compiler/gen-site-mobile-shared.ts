@@ -18,7 +18,7 @@ type DemoItem = {
 
 function genInstall() {
   return `import packageEntry from './package-entry';
-import './package-style';
+import './package-style.less';
 `;
 }
 

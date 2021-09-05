@@ -6,6 +6,7 @@ import {
   getVantConfig,
   smartOutputFile,
   normalizePath,
+  isDev,
 } from '../common';
 import {
   SRC_DIR,
@@ -79,12 +80,13 @@ function resolveDocuments(components: string[]): DocumentItem[] {
 
 function genImportDocuments(items: DocumentItem[]) {
   return items
-    .map(
-      (item) =>
-        `const ${
-          item.name
-        } = defineAsyncComponent(() => import('${normalizePath(item.path)}'));`
-    )
+    .map((item) => {
+      const path = normalizePath(item.path);
+      if (isDev()) {
+        return `const ${item.name} = defineAsyncComponent(() => import('${path}'));`;
+      }
+      return `import ${item.name} from '${path}';`;
+    })
     .join('\n');
 }
 

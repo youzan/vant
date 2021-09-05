@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { useRefs } from '../../composables/use-refs';
 import type { CheckboxInstance } from '../types';
 import type { CheckboxGroupInstance } from '../../checkbox-group';

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import DemoNav from './components/DemoNav';
+import DemoNav from './components/DemoNav.vue';
 
 export default {
   components: { DemoNav },

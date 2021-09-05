@@ -1,9 +1,9 @@
 import { createApp } from 'vue';
-import DemoBlock from './components/DemoBlock';
-import DemoSection from './components/DemoSection';
+import DemoBlock from './components/DemoBlock.vue';
+import DemoSection from './components/DemoSection.vue';
 import { router } from './router';
 import { packageEntry } from 'site-mobile-shared';
-import App from './App';
+import App from './App.vue';
 import '@vant/touch-emulator';
 
 window.app = createApp(App)

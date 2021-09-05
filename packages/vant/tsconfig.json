@@ -10,9 +10,6 @@
     "noImplicitThis": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "paths": {
-      "@demo/*": ["docs/site/*"]
-    }
   },
   "include": ["src/**/*", "types/**/*", "docs/**/*", "test/**/*"]
 }

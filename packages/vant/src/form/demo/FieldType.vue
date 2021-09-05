@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import FieldTypeArea from './FieldTypeArea.vue';
 import FieldTypePicker from './FieldTypePicker.vue';
 import FieldTypeCalendar from './FieldTypeCalendar.vue';
