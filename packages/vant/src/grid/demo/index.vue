@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import VanGrid from '..';
+import VanGridItem from '../../grid-item';
+import VanImage from '../../image';
 import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({

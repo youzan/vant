@@ -1,7 +1,7 @@
 import { h, defineComponent } from 'vue';
 import Locale from '../src/locale';
 import { mount, later } from '.';
-import { initDemoLocale } from '../docs/site/demo-locale';
+import { initDemoLocale } from '../docs/site/use-translate';
 
 initDemoLocale();
 

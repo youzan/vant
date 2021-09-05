@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import VanSticky from '..';
+import VanButton from '../../button';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 

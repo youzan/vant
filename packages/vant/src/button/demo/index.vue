@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import VanButton from '..';
 import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({

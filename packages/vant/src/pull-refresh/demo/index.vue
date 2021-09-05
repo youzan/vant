@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import VanTabs from '../../tabs';
+import VanTab from '../../tab';
+import VanPullRefresh from '..';
 import { computed, onMounted, ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';

@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import VanPopover from '..';
+import VanButton from '../../button';
+import VanField from '../../field';
+import VanPopup from '../../popup';
+import VanPicker from '../../picker';
+import VanGrid from '../../grid';
+import VanGridItem from '../../grid-item';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';

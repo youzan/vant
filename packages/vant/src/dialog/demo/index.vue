@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import VanCell from '../../cell';
+import { Dialog } from '..';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
-import { Dialog } from '..';
 import type { DialogAction } from '../Dialog';
+
+const VanDialog = Dialog.Component;
 
 const t = useTranslate({
   'zh-CN': {

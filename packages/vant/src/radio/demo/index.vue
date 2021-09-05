@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import VanRadioGroup from '../../radio-group';
+import VanRadio from '..';
+import VanCellGroup from '../../cell-group';
+import VanCell from '../../cell';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 

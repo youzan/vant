@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import VanNavBar from '..';
+import VanIcon from '../../icon';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
 

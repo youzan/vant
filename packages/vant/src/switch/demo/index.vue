@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import VanSwitch from '..';
+import VanCell from '../../cell';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Dialog } from '../../dialog';

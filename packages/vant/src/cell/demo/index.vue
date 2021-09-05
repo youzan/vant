@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import VanCellGroup from '../../cell-group';
+import VanCell from '..';
+import VanTag from '../../tag';
+import VanIcon from '../../icon';
 import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({

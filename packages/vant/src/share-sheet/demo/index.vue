@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import VanCell from '../../cell';
+import VanShareSheet, { ShareSheetOption, ShareSheetOptions } from '..';
 import { ref, computed } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
-import { ShareSheetOption, ShareSheetOptions } from '..';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

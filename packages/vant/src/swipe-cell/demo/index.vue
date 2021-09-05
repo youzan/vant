@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import VanSwipeCell from '..';
+import VanButton from '../../button';
+import VanCell from '../../cell';
+import VanCard from '../../card';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Dialog } from '../../dialog';
 

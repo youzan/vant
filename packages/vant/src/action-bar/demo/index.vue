@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import VanActionBar from '..';
+import VanActionBarIcon from '../../action-bar-icon';
+import VanActionBarButton from '../../action-bar-button';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
 

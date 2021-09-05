@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import VanContactCard from '..';
 import { computed } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';

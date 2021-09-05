@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import VanRow from '../../row';
+import VanImage from '..';
+import VanCol from '../../col';
+import VanLoading from '../../loading';
 import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({

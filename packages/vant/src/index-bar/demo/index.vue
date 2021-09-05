@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import VanTabs from '../../tabs';
+import VanTab from '../../tab';
+import VanIndexBar from '..';
+import VanIndexAnchor from '../../index-anchor';
+import VanCell from '../../cell';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 

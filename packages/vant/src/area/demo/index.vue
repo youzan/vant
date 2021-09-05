@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import VanArea from '..';
 import { ref } from 'vue';
 import { areaList } from '@vant/area-data';
 import { areaListEn } from './area-en';

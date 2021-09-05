@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import VanCell from '../../cell';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 

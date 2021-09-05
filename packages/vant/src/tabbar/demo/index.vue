@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import VanTabbar from '..';
+import VanTabbarItem from '../../tabbar-item';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';

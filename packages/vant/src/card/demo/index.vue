@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import VanCard from '..';
+import VanTag from '../../tag';
+import VanButton from '../../button';
 import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({

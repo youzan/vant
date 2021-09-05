@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import VanDatetimePicker from '..';
 import { reactive } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 

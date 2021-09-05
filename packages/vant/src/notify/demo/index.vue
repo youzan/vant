@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import VanCell from '../../cell';
+import VanIcon from '../../icon';
+import { Notify } from '..';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
-import { Notify } from '..';
 import { NotifyType } from '../Notify';
+
+const VanNotify = Notify.Component;
 
 const t = useTranslate({
   'zh-CN': {

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import VanAddressEdit from '..';
 import { ref } from 'vue';
 import { areaList } from '@vant/area-data';
 import { useTranslate } from '../../../docs/site/use-translate';

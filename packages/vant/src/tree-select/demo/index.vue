@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import VanTreeSelect from '..';
+import VanImage from '../../image';
 import { ref, computed } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { zhCNData } from './data-zh';

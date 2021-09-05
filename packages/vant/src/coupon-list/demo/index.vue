@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import VanCouponCell from '../../coupon-cell';
+import VanPopup from '../../popup';
+import VanCouponList from '..';
 import { ref, computed } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { CouponInfo } from '../../coupon';

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import VanCountDown from '..';
+import VanGrid from '../../grid';
+import VanGridItem from '../../grid-item';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
