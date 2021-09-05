@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import VanDoc from './components';
+import VanDoc from './components/index.vue';
 import { config } from 'site-desktop-shared';
 import { setLang } from '../common/locales';
 

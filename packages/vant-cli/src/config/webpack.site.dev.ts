@@ -6,7 +6,6 @@ import { merge } from 'webpack-merge';
 import { baseConfig } from './webpack.base';
 import { WebpackConfig } from '../common/types';
 import { getVantConfig, getWebpackConfig } from '../common';
-import { VantCliSitePlugin } from '../compiler/vant-cli-site-plugin';
 import {
   GREEN,
   SITE_MOBILE_SHARED_FILE,
@@ -81,7 +80,6 @@ export function getSiteDevBaseConfig(): WebpackConfig {
         name: 'Vant Cli',
         color: GREEN,
       }),
-      new VantCliSitePlugin(),
       new HtmlWebpackPlugin({
         title,
         logo: siteConfig.logo,

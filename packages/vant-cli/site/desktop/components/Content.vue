@@ -23,7 +23,7 @@ export default {
 <style lang="less">
 @import '../../common/style/var';
 
-.card {
+.van-doc-card {
   margin-bottom: 24px;
   padding: 24px;
   background-color: #fff;
@@ -211,7 +211,7 @@ export default {
   flex: 1;
   padding: 0 0 75px;
 
-  > section {
+  .van-doc-markdown-body {
     padding: 24px;
     overflow: hidden;
 

@@ -1,9 +1,8 @@
 import glob from 'fast-glob';
 import { join, parse } from 'path';
-import { existsSync, readdirSync } from 'fs-extra';
+import { existsSync, readFileSync, readdirSync } from 'fs-extra';
 import {
   pascalize,
-  removeExt,
   getVantConfig,
   smartOutputFile,
   normalizePath,
@@ -90,8 +89,9 @@ function genExportDocuments(items: DocumentItem[]) {
 };`;
 }
 
-function genImportConfig() {
-  return `import config from '${removeExt(normalizePath(VANT_CONFIG_FILE))}';`;
+function genVantConfigContent() {
+  const content = readFileSync(VANT_CONFIG_FILE, 'utf-8');
+  return content.replace('module.exports', 'const config');
 }
 
 function genExportConfig() {
@@ -103,7 +103,7 @@ function genExportVersion() {
 }
 
 function genInstall() {
-  return `import './package-style';`;
+  return `import './package-style.less';`;
 }
 
 function genExportPackageEntry() {
@@ -114,9 +114,10 @@ export function genSiteDesktopShared() {
   const dirs = readdirSync(SRC_DIR);
   const documents = resolveDocuments(dirs);
 
-  const code = `${genImportConfig()}
-${genInstall()}
+  const code = `${genInstall()}
 ${genImportDocuments(documents)}
+
+${genVantConfigContent()}
 
 ${genExportPackageEntry()}
 ${genExportConfig()}
