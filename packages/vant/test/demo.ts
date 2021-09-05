@@ -27,7 +27,6 @@ export function snapshotDemo(Demo: any, option: any = {}) {
         components: {
           'demo-block': EmptyComponent,
         },
-        plugins: [(window as any).vant],
       },
     });
 

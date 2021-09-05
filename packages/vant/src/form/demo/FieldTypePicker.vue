@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import VanField from '../../field';
+import VanPopup from '../../popup';
+import VanPicker from '../../picker';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 

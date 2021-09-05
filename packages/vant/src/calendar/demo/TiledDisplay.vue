@@ -1,4 +1,5 @@
 <script setup>
+import VanCalendar from '..';
 import { useTranslate } from '../../../docs/site/use-translate';
 
 const minDate = new Date(2012, 0, 10);

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import VanField from '..';
+import VanButton from '../../button';
+import VanCellGroup from '../../cell-group';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 
