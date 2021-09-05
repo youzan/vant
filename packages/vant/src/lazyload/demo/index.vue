@@ -1,5 +1,10 @@
 <script setup lang="ts">
+import Lazyload from '..';
 import { useTranslate } from '../../../docs/site/use-translate';
+
+if (window.app) {
+  window.app.use(Lazyload, { lazyComponent: true });
+}
 
 const t = useTranslate({
   'zh-CN': {
