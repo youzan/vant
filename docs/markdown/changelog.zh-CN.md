@@ -16,6 +16,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.27](https://github.com/youzan/vant/compare/v2.12.27-beta.0...v2.12.27)
+
+`2021-09-06`
+
+**Feature**
+
+- Sku: 新增 custom-upload 配置项 [#9389](https://github.com/youzan/vant/issues/9389)
+
+**Bug Fixes**
+
+- Field: 修复 field-error-message-font-size 样式变量名称 [#9393](https://github.com/youzan/vant/issues/9393)
+- Popup: 修复内存泄露问题 [#9336](https://github.com/youzan/vant/issues/9336)
+
 ### [v2.12.26](https://github.com/youzan/vant/compare/v2.12.25...v2.12.26)
 
 `2021-08-15`

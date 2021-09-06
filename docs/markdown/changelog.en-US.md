@@ -16,6 +16,19 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.27](https://github.com/youzan/vant/compare/v2.12.27-beta.0...v2.12.27)
+
+`2021-09-06`
+
+**Feature**
+
+- Sku: add custom-upload prop [#9389](https://github.com/youzan/vant/issues/9389)
+
+**Bug Fixes**
+
+- Field: field-error-message-font-size var name [#9393](https://github.com/youzan/vant/issues/9393)
+- Popup: fix memory leak issue [#9336](https://github.com/youzan/vant/issues/9336)
+
 ### [v2.12.26](https://github.com/youzan/vant/compare/v2.12.25...v2.12.26)
 
 `2021-08-15`
