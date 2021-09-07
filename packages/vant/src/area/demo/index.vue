@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import VanArea from '..';
 import { ref } from 'vue';
 import { areaList } from '@vant/area-data';
 import { areaListEn } from './area-en';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
   'zh-CN': {

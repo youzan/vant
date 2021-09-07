@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import VanSubmitBar from '..';
+import VanCheckbox from '../../checkbox';
 import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

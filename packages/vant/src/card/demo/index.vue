@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { useTranslate } from '@demo/use-translate';
+import VanCard from '..';
+import VanTag from '../../tag';
+import VanButton from '../../button';
+import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
   'zh-CN': {

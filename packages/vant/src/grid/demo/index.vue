@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { useTranslate } from '@demo/use-translate';
+import VanGrid from '..';
+import VanGridItem from '../../grid-item';
+import VanImage from '../../image';
+import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
   'zh-CN': {

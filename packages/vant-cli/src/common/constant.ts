@@ -25,16 +25,16 @@ export const ES_DIR = join(ROOT, 'es');
 export const LIB_DIR = join(ROOT, 'lib');
 export const DOCS_DIR = join(ROOT, 'docs');
 export const VETUR_DIR = join(ROOT, 'vetur');
-export const SITE_DIST_DIR = join(ROOT, 'site');
+export const SITE_DIST_DIR = join(ROOT, 'site-dist');
 export const VANT_CONFIG_FILE = join(ROOT, 'vant.config.js');
 export const PACKAGE_JSON_FILE = join(ROOT, 'package.json');
-export const ROOT_WEBPACK_CONFIG_FILE = join(ROOT, 'webpack.config.js');
 export const ROOT_POSTCSS_CONFIG_FILE = join(ROOT, 'postcss.config.js');
 export const CACHE_DIR = join(ROOT, 'node_modules/.cache');
 
 // Relative paths
 export const DIST_DIR = join(__dirname, '../../dist');
 export const CONFIG_DIR = join(__dirname, '../config');
+export const SITE_SRC_DIR = join(__dirname, '../../site');
 
 // Dist files
 export const PACKAGE_ENTRY_FILE = join(DIST_DIR, 'package-entry.js');

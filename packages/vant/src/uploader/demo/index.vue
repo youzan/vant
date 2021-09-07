@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import VanUploader from '..';
+import VanButton from '../../button';
 import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { UploaderFileListItem } from '../types';
 import { Toast } from '../../toast';
 
@@ -71,7 +73,7 @@ const fileList5 = ref([
   },
 ]);
 
-const statusFileList = [
+const statusFileList = ref([
   {
     url: 'https://img.yzcdn.cn/vant/leaf.jpg',
     status: 'uploading',
@@ -82,7 +84,7 @@ const statusFileList = [
     status: 'failed',
     message: t('failed'),
   },
-];
+]);
 
 const previewCoverFiles = ref([
   {

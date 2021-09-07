@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import VanPasswordInput from '..';
+import VanNumberKeyboard from '../../number-keyboard';
 import { ref, watch } from 'vue';
 import { ComponentInstance } from '../../utils';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
   'zh-CN': {

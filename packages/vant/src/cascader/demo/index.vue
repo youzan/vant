@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import VanField from '../../field';
+import VanPopup from '../../popup';
+import VanCascader, { CascaderOption } from '..';
 import { computed, reactive } from 'vue';
-import { CascaderOption } from '..';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { deepClone } from '../../utils/deep-clone';
 import zhCNOptions from './area-zh-CN';
 import enUSOptions from './area-en-US';

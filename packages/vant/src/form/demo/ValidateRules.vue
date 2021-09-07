@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import VanForm from '../../form';
+import VanField from '../../field';
+import VanButton from '../../button';
+import VanCellGroup from '../../cell-group';
 import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { FieldValidateError } from '../../field/types';
 import { Toast } from '../../toast';
 
@@ -42,7 +46,7 @@ const validator = (val: string) => /1\d{10}/.test(val);
 const validatorMessage = (val: string) => t('invalid', val);
 
 const asyncValidator = (val: string) =>
-  new Promise((resolve) => {
+  new Promise<boolean>((resolve) => {
     Toast.loading(t('validating'));
 
     setTimeout(() => {

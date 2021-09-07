@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { useTranslate } from '@demo/use-translate';
+import VanActionBar from '..';
+import VanActionBarIcon from '../../action-bar-icon';
+import VanActionBarButton from '../../action-bar-button';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

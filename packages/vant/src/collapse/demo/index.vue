@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import VanCollapse from '..';
+import VanCollapseItem from '../../collapse-item';
+import VanIcon from '../../icon';
 import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
   'zh-CN': {

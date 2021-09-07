@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import SearchInput from './SearchInput';
+import SearchInput from './SearchInput.vue';
 import { packageVersion } from 'site-desktop-shared';
 
 export default {

@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import VanField from '../../field';
+import VanPopup from '../../popup';
+import VanDatetimePicker from '../../datetime-picker';
 import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
   'zh-CN': {

@@ -1,7 +1,12 @@
 <script setup lang="ts">
+import VanIcon from '..';
+import VanTabs from '../../tabs';
+import VanTab from '../../tab';
+import VanRow from '../../row';
+import VanCol from '../../col';
 import icons from '@vant/icons';
 import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { Notify } from '../../notify';
 
 // from https://30secondsofcode.org

@@ -9,11 +9,11 @@
   },
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-stylelint-config",
-  "peerDependencies": {
-    "stylelint": "^13.0.0"
-  },
   "dependencies": {
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^20.0.0"
+  },
+  "devDependencies": {
+    "stylelint": "^13.0.0"
   }
 }

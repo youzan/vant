@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import VanGrid from '../../grid';
+import VanGridItem from '../../grid-item';
+import VanSidebar from '..';
+import VanSidebarItem from '../../sidebar-item';
 import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

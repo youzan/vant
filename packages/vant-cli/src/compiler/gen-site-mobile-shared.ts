@@ -17,17 +17,17 @@ type DemoItem = {
 };
 
 function genInstall() {
-  return `import packageEntry from './package-entry';
-import './package-style';
+  return `import { defineAsyncComponent } from 'vue';
+import './package-style.less';
 `;
 }
 
 function genImports(demos: DemoItem[]) {
   return demos
-    .map(
-      (item) =>
-        `import ${item.name} from '${removeExt(normalizePath(item.path))}';`
-    )
+    .map((item) => {
+      const path = removeExt(normalizePath(item.path));
+      return `const ${item.name} = defineAsyncComponent(() => import('${path}'))`;
+    })
     .join('\n');
 }
 
@@ -81,8 +81,6 @@ function genCode(components: string[]) {
 
   return `${genInstall()}
 ${genImports(demos)}
-
-export { packageEntry };
 
 ${getSetName(demos)}
 

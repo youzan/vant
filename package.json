@@ -1,11 +1,23 @@
 {
   "private": true,
+  "workspaces": [
+    "packages/vant",
+    "packages/vant-cli",
+    "packages/vant-eslint-config",
+    "packages/vant-stylelint-config"
+  ],
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky install && cd packages/vant-cli && yarn build",
     "dev": "cd packages/vant && yarn dev",
     "lint": "cd packages/vant && yarn lint",
     "test": "cd packages/vant && yarn test",
     "build": "cd packages/vant && yarn build",
     "build:site": "cd packages/vant && yarn build:site"
+  },
+  "lint-staged": {
+    "*.md": "prettier --write",
+    "*.{ts,tsx,js,vue,less}": "prettier --write",
+    "*.{ts,tsx,js,vue}": "eslint --fix",
+    "*.{vue,css,less}": "stylelint --fix"
   }
 }

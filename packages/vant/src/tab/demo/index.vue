@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import VanTabs from '../../tabs';
+import VanTab from '..';
+import VanIcon from '../../icon';
 import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

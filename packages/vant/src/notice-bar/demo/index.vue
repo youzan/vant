@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { useTranslate } from '@demo/use-translate';
+import VanNoticeBar from '..';
+import VanSwipe from '../../swipe';
+import VanSwipeItem from '../../swipe-item';
+import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
   'zh-CN': {

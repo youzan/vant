@@ -1,6 +1,12 @@
 <script setup lang="ts">
+import VanForm from '../../form';
+import VanField from '../../field';
+import VanRate from '../../rate';
+import VanSlider from '../../slider';
+import VanButton from '../../button';
+import VanConfigProvider from '..';
 import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
   'zh-CN': {

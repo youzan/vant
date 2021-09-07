@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import VanCell from '../../cell';
 import { ImagePreview, ImagePreviewOptions } from '..';
+import { ref } from 'vue';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
+
+const VanImagePreview = ImagePreview.Component;
 
 const t = useTranslate({
   'zh-CN': {
@@ -72,33 +75,37 @@ const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
 
 <template>
   <demo-block card :title="t('basicUsage')">
-    <van-cell is-link @click="showImagePreview()">
-      {{ t('showImages') }}
-    </van-cell>
+    <van-cell is-link :value="t('showImages')" @click="showImagePreview()" />
   </demo-block>
 
   <demo-block card :title="t('customConfig')">
-    <van-cell is-link @click="showImagePreview({ startPosition: 1 })">
-      {{ t('startPosition') }}
-    </van-cell>
-    <van-cell is-link @click="showImagePreview({ closeable: true })">
-      {{ t('showClose') }}
-    </van-cell>
-    <van-cell is-link @click="showImagePreview({ onClose })">
-      {{ t('closeEvent') }}
-    </van-cell>
+    <van-cell
+      is-link
+      :value="t('startPosition')"
+      @click="showImagePreview({ startPosition: 1 })"
+    />
+    <van-cell
+      is-link
+      :value="t('showClose')"
+      @click="showImagePreview({ closeable: true })"
+    />
+    <van-cell
+      is-link
+      :value="t('closeEvent')"
+      @click="showImagePreview({ onClose })"
+    />
   </demo-block>
 
   <demo-block card :title="t('beforeClose')">
-    <van-cell is-link @click="showImagePreview({ beforeClose })">
-      {{ t('beforeClose') }}
-    </van-cell>
+    <van-cell
+      is-link
+      :value="t('beforeClose')"
+      @click="showImagePreview({ beforeClose })"
+    />
   </demo-block>
 
   <demo-block card :title="t('componentCall')">
-    <van-cell is-link @click="showComponentCall">
-      {{ t('componentCall') }}
-    </van-cell>
+    <van-cell is-link :value="t('componentCall')" @click="showComponentCall" />
     <van-image-preview v-model:show="show" :images="images" @change="onChange">
       <template #index>{{ t('index', index) }}</template>
     </van-image-preview>

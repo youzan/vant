@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import { Command } from 'commander';
 
 import {
@@ -18,7 +17,7 @@ const program = new Command();
 
 program.version(`@vant/cli ${cliVersion}`);
 
-program.command('dev').description('Run webpack dev server').action(dev);
+program.command('dev').description('Run dev server').action(dev);
 
 program.command('lint').description('Run eslint and stylelint').action(lint);
 
@@ -53,7 +52,6 @@ program.command('clean').description('Clean all dist files').action(clean);
 program
   .command('build')
   .description('Compile components in production mode')
-  .option('--watch', 'Watch file change')
   .action(build);
 
 program

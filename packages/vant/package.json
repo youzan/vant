@@ -21,15 +21,9 @@
     "build": "vant-cli build",
     "build:site": "vant-cli build-site",
     "release": "vant-cli release --tag next",
-    "release:site": "yarn build:site && gh-pages -d site --add --dest v3",
+    "release:site": "yarn build:site && gh-pages -d site-dist --add --dest v3",
     "test:watch": "vant-cli test --watch",
     "test:coverage": "open test/coverage/index.html"
-  },
-  "lint-staged": {
-    "*.md": "prettier --write",
-    "*.{ts,tsx,js,vue,less}": "prettier --write",
-    "*.{ts,tsx,js,vue}": "eslint --fix",
-    "*.{vue,css,less}": "stylelint --fix"
   },
   "npm": {
     "tag": "next"
@@ -59,10 +53,10 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vant/cli": "^4.0.0-beta.1",
     "@vant/area-data": "^1.1.1",
-    "@vue/compiler-sfc": "^3.2.6",
-    "vue": "^3.2.6"
+    "@vant/cli": "^4.0.0-beta.5",
+    "@vue/compiler-sfc": "3.2.8",
+    "vue": "3.2.8"
   },
   "sideEffects": [
     "es/**/style/*",

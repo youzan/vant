@@ -1,6 +1,11 @@
 <script setup lang="ts">
+import VanDropdownMenu from '..';
+import VanDropdownItem from '../../dropdown-item';
+import VanCell from '../../cell';
+import VanSwitch from '../../switch';
+import VanButton from '../../button';
 import { computed, ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import type { DropdownItemInstance } from '../../dropdown-item';
 
 const t = useTranslate({

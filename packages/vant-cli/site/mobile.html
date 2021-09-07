@@ -2,32 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <meta
-      name="description"
-      content="<%= htmlWebpackPlugin.options.description %>"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="<%= htmlWebpackPlugin.options.logo %>"
-    />
+    <title><%- title %></title>
+    <meta name="description" content="<%- description %>" />
+    <link rel="icon" type="image/png" href="<%- logo %>" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
     />
+    <%- meta %>
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <% if (htmlWebpackPlugin.options.baiduAnalytics) { %>
+    <% if (baiduAnalytics) { %>
     <script>
       // avoid to load analytics in iframe
       if (window.top === window) {
         var _hmt = _hmt || [];
-        (function() {
+        (function () {
           var hm = document.createElement('script');
-          hm.src =
-            'https://hm.baidu.com/hm.js?<%= htmlWebpackPlugin.options.baiduAnalytics.seed %>';
+          hm.src = 'https://hm.baidu.com/hm.js?<%- baiduAnalytics.seed %>';
           var s = document.getElementsByTagName('script')[0];
           s.parentNode.insertBefore(hm, s);
         })();
@@ -37,5 +30,6 @@
   </head>
   <body ontouchstart>
     <div id="app"></div>
+    <script type="module" src="/mobile/main.js"></script>
   </body>
 </html>

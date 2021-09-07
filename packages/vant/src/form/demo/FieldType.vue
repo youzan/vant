@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
+import VanForm from '..';
+import VanRate from '../../rate';
+import VanRadio from '../../radio';
+import VanField from '../../field';
+import VanButton from '../../button';
+import VanSlider from '../../slider';
+import VanSwitch from '../../switch';
+import VanStepper from '../../stepper';
+import VanCheckbox from '../../checkbox';
+import VanUploader from '../../uploader';
+import VanCellGroup from '../../cell-group';
+import VanRadioGroup from '../../radio-group';
+import VanCheckboxGroup from '../../checkbox-group';
 import FieldTypeArea from './FieldTypeArea.vue';
 import FieldTypePicker from './FieldTypePicker.vue';
 import FieldTypeCalendar from './FieldTypeCalendar.vue';

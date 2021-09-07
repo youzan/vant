@@ -51,7 +51,7 @@ function initInstance() {
 }
 
 const ImagePreview = (
-  images: string[] | ImagePreviewOptions,
+  options: string[] | ImagePreviewOptions,
   startPosition = 0
 ) => {
   /* istanbul ignore if */
@@ -63,7 +63,9 @@ const ImagePreview = (
     initInstance();
   }
 
-  const options = Array.isArray(images) ? { images, startPosition } : images;
+  options = Array.isArray(options)
+    ? { images: options, startPosition }
+    : options;
 
   instance.open(extend({}, defaultConfig, options));
 

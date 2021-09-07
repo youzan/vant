@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import VanEmpty from '..';
+import VanTabs from '../../tabs';
+import VanTab from '../../tab';
+import VanButton from '../../button';
 import { ref } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
   'zh-CN': {

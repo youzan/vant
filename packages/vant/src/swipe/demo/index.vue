@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { useTranslate } from '@demo/use-translate';
+import VanSwipe from '..';
+import VanSwipeItem from '../../swipe-item';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

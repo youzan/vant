@@ -1,6 +1,11 @@
 <script setup lang="ts">
+import VanCheckbox from '..';
+import VanCheckboxGroup from '../../checkbox-group';
+import VanButton from '../../button';
+import VanCellGroup from '../../cell-group';
+import VanCell from '../../cell';
 import { ref, reactive } from 'vue';
-import { useTranslate } from '@demo/use-translate';
+import { useTranslate } from '../../../docs/site/use-translate';
 import { useRefs } from '../../composables/use-refs';
 import type { CheckboxInstance } from '../types';
 import type { CheckboxGroupInstance } from '../../checkbox-group';
