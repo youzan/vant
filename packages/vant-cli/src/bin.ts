@@ -53,7 +53,6 @@ program.command('clean').description('Clean all dist files').action(clean);
 program
   .command('build')
   .description('Compile components in production mode')
-  .option('--watch', 'Watch file change')
   .action(build);
 
 program

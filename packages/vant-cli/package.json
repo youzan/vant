@@ -53,7 +53,6 @@
     "@vue/test-utils": "2.0.0-rc.6",
     "autoprefixer": "^10.3.1",
     "babel-jest": "^27.0.6",
-    "chokidar": "^3.5.2",
     "clean-css": "^5.1.5",
     "commander": "^8.1.0",
     "consola": "^2.15.3",

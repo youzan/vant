@@ -7,6 +7,7 @@
 - 使用 vite 代替 webpack 进行构建
 - 站点构建产物的目录由 `site` 调整为 `site-dist`
 - 不再支持 webpack.config.js 配置文件
+- 不再支持 build 命令的 --watch 参数
 - 不再内置 babel-plugin-import 插件
 
 ## v4.0.0-beta.1
