@@ -28,7 +28,6 @@ export const VETUR_DIR = join(ROOT, 'vetur');
 export const SITE_DIST_DIR = join(ROOT, 'site');
 export const VANT_CONFIG_FILE = join(ROOT, 'vant.config.js');
 export const PACKAGE_JSON_FILE = join(ROOT, 'package.json');
-export const ROOT_WEBPACK_CONFIG_FILE = join(ROOT, 'webpack.config.js');
 export const ROOT_POSTCSS_CONFIG_FILE = join(ROOT, 'postcss.config.js');
 export const CACHE_DIR = join(ROOT, 'node_modules/.cache');
 

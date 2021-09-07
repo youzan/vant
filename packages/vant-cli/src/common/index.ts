@@ -6,9 +6,7 @@ import {
   readFileSync,
   outputFileSync,
 } from 'fs-extra';
-import { merge } from 'webpack-merge';
-import { SRC_DIR, getVantConfig, ROOT_WEBPACK_CONFIG_FILE } from './constant';
-import { WebpackConfig } from './types';
+import { SRC_DIR, getVantConfig } from './constant';
 
 export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;
@@ -100,22 +98,6 @@ export function decamelize(str: string, sep = '-') {
 
 export function normalizePath(path: string): string {
   return path.replace(/\\/g, '/');
-}
-
-export function getWebpackConfig(defaultConfig: WebpackConfig): WebpackConfig {
-  if (existsSync(ROOT_WEBPACK_CONFIG_FILE)) {
-    const config = require(ROOT_WEBPACK_CONFIG_FILE);
-
-    // 如果是函数形式，可能并不仅仅是添加额外的处理流程，而是在原有流程上进行修改
-    // 比如修改markdown-loader,添加options.enableMetaData
-    if (typeof config === 'function') {
-      return merge(defaultConfig, config(defaultConfig));
-    }
-
-    return merge(defaultConfig, config);
-  }
-
-  return defaultConfig;
 }
 
 export type ModuleEnv = 'esmodule' | 'commonjs';

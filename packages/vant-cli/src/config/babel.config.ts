@@ -28,15 +28,6 @@ module.exports = function (api?: ConfigAPI, options: PresetOption = {}) {
     ],
     plugins: [
       [
-        require.resolve('babel-plugin-import'),
-        {
-          libraryName: 'vant',
-          libraryDirectory: useESModules ? 'es' : 'lib',
-          style: true,
-        },
-        'vant',
-      ],
-      [
         require.resolve('@vue/babel-plugin-jsx'),
         {
           enableObjectSlots: options.enableObjectSlots,

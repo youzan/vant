@@ -18,7 +18,7 @@ const program = new Command();
 
 program.version(`@vant/cli ${cliVersion}`);
 
-program.command('dev').description('Run webpack dev server').action(dev);
+program.command('dev').description('Run dev server').action(dev);
 
 program.command('lint').description('Run eslint and stylelint').action(lint);
 

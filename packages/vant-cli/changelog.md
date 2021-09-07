@@ -1,8 +1,16 @@
 # 更新日志
 
-## v4.0.0
+## v4.0.0-beta.2
 
-`unreleased`
+### 不兼容更新
+
+- 使用 vite 代替 webpack 进行构建
+- 不再支持 webpack.config.js 配置文件
+- 不再内置 babel-plugin-import 插件
+
+## v4.0.0-beta.1
+
+`2021-08-21`
 
 对以下依赖进行了大版本升级：
 
