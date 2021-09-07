@@ -8,9 +8,15 @@
     "build": "cd packages/vant && yarn build",
     "build:site": "cd packages/vant && yarn build:site"
   },
+  "lint-staged": {
+    "*.md": "prettier --write",
+    "*.{ts,tsx,js,vue,less}": "prettier --write",
+    "*.{ts,tsx,js,vue}": "eslint --fix",
+    "*.{vue,css,less}": "stylelint --fix"
+  },
   "devDependencies": {
-    "@vue/compiler-sfc": "^3.2.6",
-    "vue": "^3.2.6",
-    "husky": "^7.0.0"
+    "@vant/cli": "^4.0.0-beta.1",
+    "@vue/compiler-sfc": "3.2.8",
+    "vue": "3.2.8"
   }
 }
