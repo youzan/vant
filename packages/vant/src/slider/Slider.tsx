@@ -130,17 +130,17 @@ export default defineComponent({
     const isSameValue = (newValue: SliderValue, oldValue: SliderValue) =>
       JSON.stringify(newValue) === JSON.stringify(oldValue);
 
-    // 处理两个滑块重叠之后的情况
-    const handleOverlap = (value: NumberRange) => {
-      if (value[0] > value[1]) {
-        return value.slice(0).reverse();
-      }
-      return value;
+    const handleRangeValue = (value: NumberRange) => {
+      // 设置默认值
+      const left = value[0] ?? Math.max(Number(props.min), 0);
+      const right = value[1] ?? Math.min(Number(props.max), 100);
+      // 处理两个滑块重叠之后的情况
+      return left > right ? [right, left] : [left, right];
     };
 
     const updateValue = (value: SliderValue, end?: boolean) => {
       if (isRange(value)) {
-        value = handleOverlap(value).map(format) as NumberRange;
+        value = handleRangeValue(value).map(format) as NumberRange;
       } else {
         value = format(value);
       }
