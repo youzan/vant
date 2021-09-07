@@ -15,7 +15,8 @@
   },
   "scripts": {
     "dev": "tsc --watch",
-    "release": "tsc & release-it"
+    "build": "tsc",
+    "release": "yarn build & release-it"
   },
   "files": [
     "lib",
