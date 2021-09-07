@@ -9,6 +9,11 @@
 - 不再支持 webpack.config.js 配置文件
 - 不再支持 build 命令的 --watch 参数
 - 不再内置 babel-plugin-import 插件
+- 不再内置 sass 依赖，如果使用 sass，需要手动安装：
+
+```bash
+yarn add sass
+```
 
 ## v4.0.0-beta.1
 
