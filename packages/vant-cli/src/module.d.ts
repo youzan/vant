@@ -1,5 +1,4 @@
 // some modules with missing type definitions
-declare module 'less';
 declare module 'execa';
 declare module 'hash-sum';
 declare module 'clean-css';
