@@ -368,45 +368,25 @@ export default defineComponent({
       }
     };
 
-    // get disabled date between date range
+    // get first disabled calendarDay between date range
     const getDisabledDate = (
-      monthDays: CalendarDayItem[],
+      disabledDays: CalendarDayItem[],
       startDay: Date,
       date: Date
-    ): CalendarDayItem | undefined => {
-      let isComparing = false;
-      for (const day of monthDays) {
-        if (!isComparing && compareDay(day.date!, startDay) === 0) {
-          isComparing = true;
-        }
-        if (compareDay(day.date!, date) === 0) {
-          break;
-        }
-        if (isComparing) {
-          if (day.type === 'disabled') return day;
-        }
-      }
-    };
+    ): Date | undefined =>
+      disabledDays.find(
+        (day) =>
+          compareDay(startDay, day.date!) === -1 &&
+          compareDay(day.date!, date) === -1
+      )?.date;
 
-    // CalendarMonth refs
-    const monthRefsCache = computed(() =>
+    // disabled calendarDay
+    const disabledDays = computed(() =>
       monthRefs.value.reduce((arr, ref) => {
-        arr.push(ref.days);
+        arr.push(...(ref.disabledDays?.value ?? []));
         return arr;
-      }, [] as any)
+      }, [] as CalendarDayItem[])
     );
-
-    const monthDaysCache = ref<CalendarDayItem[]>([]);
-
-    watch(monthRefsCache, (v) => {
-      if (props.show) {
-        const list = v.reduce((arr: any, ref: any) => {
-          arr.push(...ref.value);
-          return arr;
-        }, [] as any);
-        monthDaysCache.value = list;
-      }
-    });
 
     const onClickDay = (item: CalendarDayItem) => {
       if (props.readonly || !item.date) {
@@ -428,17 +408,14 @@ export default defineComponent({
           const compareToStart = compareDay(date, startDay);
 
           if (compareToStart === 1) {
-            const disabledDate = getDisabledDate(
-              monthDaysCache.value,
+            const disabledDay = getDisabledDate(
+              disabledDays.value,
               startDay,
               date
             );
 
-            if (disabledDate) {
-              const dateCopy = new Date(disabledDate.date!);
-              const lastAbledEndDay = new Date(
-                dateCopy.setDate(dateCopy.getDate() - 1)
-              );
+            if (disabledDay) {
+              const lastAbledEndDay = getPrevDay(disabledDay);
               select([startDay, lastAbledEndDay]);
             } else {
               select([startDay, date], true);

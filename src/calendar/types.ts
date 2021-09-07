@@ -43,6 +43,6 @@ export type CalendarMonthInstance = ComponentPublicInstance<
     getHeight: () => number;
     setVisible: (value?: boolean | undefined) => void;
     scrollIntoView: (body: Element) => void;
-    days: Ref<ComputedRef<CalendarDayItem[]>>;
+    disabledDays: Ref<ComputedRef<CalendarDayItem[]>>;
   }
 >;
