@@ -2,7 +2,9 @@
   "private": true,
   "workspaces": [
     "packages/vant",
-    "packages/vant-cli"
+    "packages/vant-cli",
+    "packages/vant-eslint-config",
+    "packages/vant-stylelint-config"
   ],
   "scripts": {
     "prepare": "husky install && cd packages/vant-cli && yarn build",
