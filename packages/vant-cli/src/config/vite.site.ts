@@ -6,8 +6,10 @@ import vitePluginVue from '@vitejs/plugin-vue';
 import vitePluginJsx from '@vitejs/plugin-vue-jsx';
 import { setBuildTarget, getVantConfig } from '../common';
 import {
-  SITE_DESKTOP_SHARED_FILE,
+  SITE_DIST_DIR,
   SITE_MOBILE_SHARED_FILE,
+  SITE_DESKTOP_SHARED_FILE,
+  SITE_SRC_DIR,
 } from '../common/constant';
 import { injectHtml } from 'vite-plugin-html';
 import type { InlineConfig } from 'vite';
@@ -67,7 +69,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
   const baiduAnalytics = get(vantConfig, 'site.baiduAnalytics');
 
   return {
-    root: join(__dirname, '../../site'),
+    root: SITE_SRC_DIR,
 
     plugins: [
       vitePluginVue({
@@ -109,6 +111,29 @@ export function getViteConfigForSiteDev(): InlineConfig {
 
     server: {
       host: '0.0.0.0',
+    },
+  };
+}
+
+export function getViteConfigForSiteProd(): InlineConfig {
+  const devConfig = getViteConfigForSiteDev();
+  const vantConfig = getVantConfig();
+  const outDir = get(vantConfig, 'build.site.outputDir', SITE_DIST_DIR);
+  const publicPath = get(vantConfig, 'build.site.publicPath', '/');
+
+  return {
+    ...devConfig,
+    base: publicPath,
+    build: {
+      outDir,
+      brotliSize: false,
+      emptyOutDir: true,
+      rollupOptions: {
+        input: {
+          main: join(SITE_SRC_DIR, 'index.html'),
+          nested: join(SITE_SRC_DIR, 'mobile.html'),
+        },
+      },
     },
   };
 }

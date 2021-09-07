@@ -73,7 +73,7 @@ const fileList5 = ref([
   },
 ]);
 
-const statusFileList = [
+const statusFileList = ref([
   {
     url: 'https://img.yzcdn.cn/vant/leaf.jpg',
     status: 'uploading',
@@ -84,7 +84,7 @@ const statusFileList = [
     status: 'failed',
     message: t('failed'),
   },
-];
+]);
 
 const previewCoverFiles = ref([
   {

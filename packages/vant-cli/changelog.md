@@ -5,6 +5,7 @@
 ### 不兼容更新
 
 - 使用 vite 代替 webpack 进行构建
+- 站点构建产物的目录由 `site` 调整为 `site-dist`
 - 不再支持 webpack.config.js 配置文件
 - 不再内置 babel-plugin-import 插件
 

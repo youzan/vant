@@ -108,9 +108,9 @@ export default {
         []
       );
 
-      const current = navItems.find((item) => {
-        return item.path === this.$route.meta.name;
-      });
+      const current = navItems.find(
+        (item) => item.path === this.$route.meta.name
+      );
 
       if (current && current.title) {
         title = current.title + ' - ' + title;
