@@ -8,6 +8,7 @@
 - 站点构建产物的目录由 `site` 调整为 `site-dist`
 - 不再支持 webpack.config.js 配置文件
 - 不再支持 less import 语法中使用波浪号
+- 不再在 demo 文件中自动注册组件
 - 移除 build 命令的 --watch 参数
 - 移除内置的 babel-plugin-import 插件
 - 由于不再使用 html-webpack-plugin, 因此移除了 site.htmlPluginOptions 配置项
