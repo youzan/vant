@@ -1,5 +1,5 @@
 import execa from 'execa';
-import { ora } from '../common/logger';
+import { consola, ora } from '../common/logger';
 import { SCRIPT_EXTS } from '../common/constant';
 
 type RunCommandMessages = {
@@ -17,6 +17,7 @@ function runCommand(
 
   return new Promise((resolve) => {
     execa(cmd, options, {
+      preferLocal: true,
       env: { FORCE_COLOR: true },
     })
       .then(() => {
@@ -25,7 +26,7 @@ function runCommand(
       })
       .catch((err: any) => {
         spinner.fail(messages.failed);
-        console.log(err.stderr || err.stdout);
+        consola.error(err.stderr || err.stdout);
         resolve(false);
       });
   });

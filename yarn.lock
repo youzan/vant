@@ -1728,10 +1728,10 @@
     "@typescript-eslint/types" "4.31.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/cli@^4.0.0-beta.3":
-  version "4.0.0-beta.3"
-  resolved "https://registry.npmjs.org/@vant/cli/-/cli-4.0.0-beta.3.tgz#ab1cbd1b2c7007e45814a447bb6ec2ba1f2aff6f"
-  integrity sha512-Q1xGOjw6U3AI1c1P1XdEk6H6QuZpD7kYr7cPkrqXE/Ias8q34MDrhHxZSlPUxZFUrAwVHFKWmUk/gBNqaHxtDQ==
+"@vant/cli@^4.0.0-beta.4":
+  version "4.0.0-beta.4"
+  resolved "https://registry.npmjs.org/@vant/cli/-/cli-4.0.0-beta.4.tgz#1e6b085674e8e849983a6a8dddf9c59d399b9f03"
+  integrity sha512-ortFKMTGDinKravnOjr0fO9MyhtJvXvj2fClBxA0vl+r84qfOma+xy3zmFdW/jFADzZoPVprwMibwyeLT0O5Hg==
   dependencies:
     "@babel/core" "^7.15.0"
     "@babel/preset-env" "^7.15.0"
