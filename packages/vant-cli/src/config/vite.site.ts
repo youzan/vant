@@ -60,6 +60,18 @@ function getTitle(config: { title: string; description?: string }) {
   return title;
 }
 
+function getHTMLMeta(vantConfig: any) {
+  const meta = get(vantConfig, 'site.htmlMeta');
+
+  if (meta) {
+    return Object.keys(meta)
+      .map((key) => `<meta name="${key}" content="${meta[key]}">`)
+      .join('\n');
+  }
+
+  return '';
+}
+
 export function getViteConfigForSiteDev(): InlineConfig {
   setBuildTarget('package');
 
@@ -98,6 +110,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
           ...siteConfig,
           title,
           baiduAnalytics,
+          meta: getHTMLMeta(vantConfig),
         },
       }),
     ],

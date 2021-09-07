@@ -1,24 +1,28 @@
 # 更新日志
 
-## v4.0.0-beta.3
+## v4.0.0-beta.6
 
 ### 不兼容更新
 
-- 使用 vite 代替 webpack 进行构建
+- 使用 vite 代替 webpack 进行构建，移除了所有 webpack 相关依赖
 - 站点构建产物的目录由 `site` 调整为 `site-dist`
 - 不再支持 webpack.config.js 配置文件
-- 不再支持 build 命令的 --watch 参数
-- 不再内置 babel-plugin-import 插件
 - 不再支持 less import 语法中使用波浪号
-- 不再内置 sass 依赖，如果使用 sass，需要手动安装：
+- 移除 build 命令的 --watch 参数
+- 移除内置的 babel-plugin-import 插件
+- 由于不再使用 html-webpack-plugin, 因此移除了 site.htmlPluginOptions 配置项
+- 为了减少依赖数量，移除了默认安装的 sass 依赖，使用 sass 时需要手动安装：
 
 ```bash
 yarn add sass
 ```
 
-## v4.0.0-beta.1
+### Features
 
-`2021-08-21`
+- 新增 site.htmlMeta 配置项
+- 新增 ESModule 格式的构建产物，分别为 `lib/[name].es.js` 和 `lib/[name].es.min.js`
+
+### 依赖升级
 
 对以下依赖进行了大版本升级：
 
@@ -28,15 +32,9 @@ yarn add sass
 - postcss v8
 - clean-css v5
 - commander v8
-- css-loader v6
 - babel-jest v27
-- sass-loader v12
-- less-loader v10
 - lint-staged v11
-- style-loader v3
 - autoprefixer v10
-- postcss-loader v6
-- webpack-dev-server v4
 
 ## v3.11.2
 
