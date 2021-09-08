@@ -141,6 +141,8 @@ export function getViteConfigForSiteProd(): InlineConfig {
       outDir,
       brotliSize: false,
       emptyOutDir: true,
+      // reduce small CSS files
+      cssCodeSplit: false,
       rollupOptions: {
         input: {
           main: join(SITE_SRC_DIR, 'index.html'),
