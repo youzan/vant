@@ -83,7 +83,7 @@ function genImportDocuments(items: DocumentItem[]) {
     .map((item) => {
       const path = normalizePath(item.path);
       if (isDev()) {
-        return `const ${item.name} = defineAsyncComponent(() => import('${path}'));`;
+        return `const ${item.name} = () => import('${path}');`;
       }
       return `import ${item.name} from '${path}';`;
     })
@@ -113,8 +113,7 @@ export function genSiteDesktopShared() {
   const dirs = readdirSync(SRC_DIR);
   const documents = resolveDocuments(dirs);
 
-  const code = `import { defineAsyncComponent } from 'vue';
-${genImportDocuments(documents)}
+  const code = `${genImportDocuments(documents)}
 
 ${genVantConfigContent()}
 
