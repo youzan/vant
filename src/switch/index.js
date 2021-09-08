@@ -36,6 +36,7 @@ export default createComponent({
         const newValue = this.checked ? this.inactiveValue : this.activeValue;
         this.$emit('input', newValue);
         this.$emit('change', newValue);
+        this.$emit('update:value', newValue);
       }
     },
 

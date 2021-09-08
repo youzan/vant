@@ -6,6 +6,11 @@
           <van-switch v-model="switchChecked" size="20" />
         </template>
       </van-field>
+      <van-field name="switch77" :label="t('switch')">
+        <template #input>
+          <van-switch v-model="switchChecked77" size="20" />
+        </template>
+      </van-field>
 
       <van-field name="checkbox" :label="t('checkbox')">
         <template #input>
@@ -128,6 +133,7 @@ export default {
       checkbox: false,
       checkboxGroup: [],
       switchChecked: false,
+      switchChecked77: false,
     };
   },
 

@@ -104,7 +104,7 @@ function Button(
       // console.log(ctx.parent.$route);
       emit(ctx, 'click', event);
       const hrefR = currentHref();
-      if (!hrefR && !ctx.listeners.click) {
+      if (!ctx.props.nativeType && !hrefR && !ctx.listeners.click) {
         event.preventDefault();
       }
       // @ts-ignore：没办法

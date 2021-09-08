@@ -23,6 +23,10 @@ export type SharedCellProps = {
   decoration?: { type: boolean; default: true };
   download?: { type: boolean; default: false };
   destination?: string;
+  vusionCut?: boolean,
+  vusionMove?: boolean,
+  vusionNodePath?: string,
+  vusionNodeTag?: string,
 };
 
 export const cellProps = {
@@ -56,4 +60,8 @@ export const cellProps = {
   decoration: { type: Boolean, default: true },
   download: { type: Boolean, default: false },
   destination: String,
+  vusionCut: Boolean,
+  vusionMove: Boolean,
+  vusionNodePath: String,
+  vusionNodeTag: String,
 };

@@ -8,14 +8,14 @@
         "labels": [
             "Display"
         ],
-        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/divider/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/divider/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/divider/screenshots/2.png",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/divider/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/divider/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/divider/screenshots/2.png",
         "blocks": "[{\"title\":\"实线\",\"description\":\"\",\"code\":\"<template>\\n<van-divider></van-divider>\\n</template>\\n\"},{\"title\":\"虚线\",\"description\":\"\",\"code\":\"<template>\\n<van-divider dashed></van-divider>\\n</template>\\n\"},{\"title\":\"带文本\",\"description\":\"\",\"code\":\"<template>\\n<van-divider>文字</van-divider>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-divider",
             "title": "分隔线",
             "description": "用于将内容分隔为多个区域",
             "category": "Display",
-            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/divider/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/divider/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/divider/screenshots/2.png",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/divider/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/divider/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/divider/screenshots/2.png",
             "drawings": "",
             "blocks": [
                 {
@@ -96,14 +96,14 @@
         "labels": [
             "Display"
         ],
-        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/cell-group/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/cell-group/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/cell-group/screenshots/2.png",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/cell-group/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/cell-group/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/cell-group/screenshots/2.png",
         "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-cell-group>\\n  <van-cell title=\\\"单元格\\\" is-link vusion-slot-name=\\\"default\\\">内容</van-cell>\\n</van-cell-group>\\n</template>\\n\"},{\"title\":\"圆角风格\",\"description\":\"\",\"code\":\"<template>\\n<van-cell-group inset>\\n  <van-cell title=\\\"圆角风格\\\" is-link vusion-slot-name=\\\"default\\\">内容</van-cell>\\n</van-cell-group>\\n</template>\\n\"},{\"title\":\"垂直居中\",\"description\":\"\",\"code\":\"<template>\\n<van-cell-group>\\n  <van-cell title=\\\"垂直居中\\\" is-link vusion-slot-name=\\\"default\\\">内容</van-cell>\\n</van-cell-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-cell-group",
             "title": "单元格group",
             "description": "单元格为列表中的单个展示项",
             "category": "Display",
-            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/cell-group/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/cell-group/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/cell-group/screenshots/2.png",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/cell-group/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/cell-group/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/cell-group/screenshots/2.png",
             "drawings": "",
             "blocks": [
                 {
@@ -294,14 +294,14 @@
         "labels": [
             "Layout"
         ],
-        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/row/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/row/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/row/screenshots/2.png",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/row/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/row/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/row/screenshots/2.png",
         "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n  <van-row>\\n    <van-col span=\\\"8\\\"></van-col>\\n    <van-col span=\\\"8\\\"></van-col>\\n    <van-col span=\\\"8\\\"></van-col>\\n  </van-row>\\n\\n</template>\\n\"},{\"title\":\"列元素间距\",\"description\":\"\",\"code\":\"<template>\\n<van-row>\\n  <van-col span=\\\"8\\\"></van-col>\\n  <van-col span=\\\"8\\\" offset=\\\"8\\\"></van-col>\\n</van-row>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-row",
             "title": "栅格布局",
             "description": "内部元素按照一定的规则布局",
             "category": "Layout",
-            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/row/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/row/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/row/screenshots/2.png",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/row/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/row/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/row/screenshots/2.png",
             "drawings": "",
             "blocks": [
                 {
@@ -439,14 +439,14 @@
         "labels": [
             "Display"
         ],
-        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/button/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/button/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/button/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/button/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/button/screenshots/4.png",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/button/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/button/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/button/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/button/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/button/screenshots/4.png",
         "blocks": "[{\"title\":\"主要按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"primary\\\" text=\\\"主要按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"信息按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"info\\\" text=\\\"信息按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"默认按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"default\\\" text=\\\"默认按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"图标按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button icon=\\\"plus\\\" type=\\\"primary\\\" text=\\\"图标按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"细边框\",\"description\":\"\",\"code\":\"<template>\\n<van-button plain hairline type=\\\"primary\\\" text=\\\"细边框按钮\\\"></van-button>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-button",
             "title": "按钮",
             "description": "按钮用于触发一个操作，如提交表单。",
             "category": "Display",
-            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/button/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/button/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/button/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/button/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/button/screenshots/4.png",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/button/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/button/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/button/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/button/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/button/screenshots/4.png",
             "drawings": "",
             "blocks": [
                 {
@@ -782,14 +782,14 @@
         "labels": [
             "Display"
         ],
-        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/image/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/image/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/image/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/image/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/image/screenshots/4.png",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/image/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/image/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/image/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/image/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/image/screenshots/4.png",
         "blocks": "[{\"title\":\"拉伸图片，使图片填满元素\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\\\" fit=\\\"fill\\\"></van-image>\\n</template>\\n\"},{\"title\":\"保持宽高缩放图片，使图片的长边能完全显示出来\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\\\" fit=\\\"contain\\\"></van-image>\\n</template>\\n\"},{\"title\":\"保持宽高缩放图片，使图片的短边能完全显示出来，裁剪长边\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\\\" fit=\\\"cover\\\"></van-image>\\n</template>\\n\"},{\"title\":\"保持图片原有尺寸\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\\\" fit=\\\"none\\\"></van-image>\\n</template>\\n\"},{\"title\":\"取 contain、none 中较小的\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\\\" fit=\\\"scale-down\\\"></van-image>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-image",
             "title": "图片展示",
             "description": "可以用来展示一张图片，支持设置图片地址。",
             "category": "Display",
-            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/image/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/image/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/image/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/image/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/image/screenshots/4.png",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/image/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/image/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/image/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/image/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/image/screenshots/4.png",
             "drawings": "",
             "blocks": [
                 {
@@ -880,14 +880,14 @@
         "labels": [
             "Display"
         ],
-        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/swipe/screenshots/0.png",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/swipe/screenshots/0.png",
         "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-swipe class=\\\"my-swipe\\\" :autoplay=\\\"3000\\\" indicator-color=\\\"white\\\" style=\\\"height:200px;\\\">\\n  <van-swipe-item><van-image style=\\\"width:100%;height:100%\\\" src=\\\"https://static-vusion.163yun.com/assets/cloud-ui/1.jpg\\\"></van-image></van-swipe-item>\\n  <van-swipe-item><van-image style=\\\"width:100%;height:100%\\\" src=\\\"https://static-vusion.163yun.com/assets/cloud-ui/2.jpg\\\"></van-image></van-swipe-item>\\n  <van-swipe-item><van-image style=\\\"width:100%;height:100%\\\" src=\\\"https://static-vusion.163yun.com/assets/cloud-ui/3.jpg\\\"></van-image></van-swipe-item>\\n  <van-swipe-item><van-image style=\\\"width:100%;height:100%\\\" src=\\\"https://static-vusion.163yun.com/assets/cloud-ui/4.jpg\\\"></van-image></van-swipe-item>\\n</van-swipe>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-swipe",
             "title": "幻灯片",
             "description": "用于循环播放一组图片或内容",
             "category": "Display",
-            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/swipe/screenshots/0.png",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/swipe/screenshots/0.png",
             "drawings": "",
             "blocks": [
                 {
@@ -972,14 +972,14 @@
         "labels": [
             "Container"
         ],
-        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/popup/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/popup/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/popup/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/popup/screenshots/3.png",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/popup/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/popup/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/popup/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/popup/screenshots/3.png",
         "blocks": "[{\"title\":\"弹出位置下\",\"description\":\"\",\"code\":\"<template>\\n<van-popup position=\\\"bottom\\\"><div vusion-slot-name=\\\"default\\\" style=\\\"min-height: 200px;width: 100vw;\\\">内容</div></van-popup>\\n</template>\\n\"},{\"title\":\"弹出位置上\",\"description\":\"\",\"code\":\"<template>\\n<van-popup position=\\\"top\\\"><div vusion-slot-name=\\\"default\\\" style=\\\"min-height: 200px;width: 100vw;\\\">内容</div></van-popup>\\n</template>\\n\"},{\"title\":\"弹出位置左\",\"description\":\"\",\"code\":\"<template>\\n<van-popup position=\\\"left\\\"><div vusion-slot-name=\\\"default\\\" style=\\\"min-width: 200px;heigth: 100vw;\\\">内容</div></van-popup>\\n</template>\\n\"},{\"title\":\"弹出位置右\",\"description\":\"\",\"code\":\"<template>\\n<van-popup position=\\\"right\\\"><div vusion-slot-name=\\\"default\\\" style=\\\"min-width: 200px;height: 100vw;\\\">内容</div></van-popup>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-popup",
             "title": "弹出层",
             "description": "弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示。",
             "category": "Container",
-            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/popup/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/popup/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/popup/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/popup/screenshots/3.png",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/popup/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/popup/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/popup/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/popup/screenshots/3.png",
             "drawings": "",
             "blocks": [
                 {
@@ -1135,14 +1135,14 @@
         "labels": [
             "Selector"
         ],
-        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/tabs/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/tabs/screenshots/1.png",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/tabs/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/tabs/screenshots/1.png",
         "blocks": "[{\"title\":\"\",\"description\":\"\",\"code\":\"<template>\\n<van-tabs type=\\\"line\\\">\\n  <van-tab title=\\\"标签 1\\\">内容 1</van-tab>\\n  <van-tab title=\\\"标签 2\\\">内容 2</van-tab>\\n  <van-tab title=\\\"标签 3\\\">内容 3</van-tab>\\n</van-tabs>\\n</template>\\n\"},{\"title\":\"外观-card\",\"description\":\"\",\"code\":\"<template>\\n<van-tabs type=\\\"card\\\">\\n  <van-tab title=\\\"标签 1\\\">内容 1</van-tab>\\n  <van-tab title=\\\"标签 2\\\">内容 2</van-tab>\\n  <van-tab title=\\\"标签 3\\\">内容 3</van-tab>\\n</van-tabs>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-tabs",
             "title": "tabs选项卡",
             "description": "选项卡切换组件，常用于平级区域大块内容的收纳和展现",
             "category": "Selector",
-            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/tabs/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/tabs/screenshots/1.png",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/tabs/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/tabs/screenshots/1.png",
             "drawings": "",
             "blocks": [
                 {
@@ -1312,14 +1312,14 @@
         "labels": [
             "Display"
         ],
-        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/4.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/5.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/6.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/7.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/8.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/9.png",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/4.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/5.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/6.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/7.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/8.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/9.png",
         "blocks": "[{\"title\":\"普通文本\",\"description\":\"\",\"code\":\"<template>\\n<van-text text=\\\"普通文本\\\"></van-text>\\n</template>\\n\"},{\"title\":\"小号文本\",\"description\":\"\",\"code\":\"<template>\\n<van-text size=\\\"small\\\" text=\\\"小号文本\\\"></van-text>\\n</template>\\n\"},{\"title\":\"大号文本\",\"description\":\"\",\"code\":\"<template>\\n<van-text size=\\\"large\\\" text=\\\"大号文本\\\"></van-text>\\n</template>\\n\"},{\"title\":\"主要文本\",\"description\":\"\",\"code\":\"<template>\\n<van-text color=\\\"primary\\\" text=\\\"主要文本\\\"></van-text>\\n</template>\\n\"},{\"title\":\"次要文本\",\"description\":\"\",\"code\":\"<template>\\n<van-text color=\\\"secondary\\\" text=\\\"次要文本\\\"></van-text>\\n</template>\\n\"},{\"title\":\"成功文本\",\"description\":\"\",\"code\":\"<template>\\n<van-text color=\\\"success\\\" text=\\\"成功文本\\\"></van-text>\\n</template>\\n\"},{\"title\":\"警告文本\",\"description\":\"\",\"code\":\"<template>\\n<van-text color=\\\"warning\\\" text=\\\"警告文本\\\"></van-text>\\n</template>\\n\"},{\"title\":\"错误文本\",\"description\":\"\",\"code\":\"<template>\\n<van-text color=\\\"error\\\" text=\\\"错误文本\\\"></van-text>\\n</template>\\n\"},{\"title\":\"禁默文本\",\"description\":\"\",\"code\":\"<template>\\n<van-text color=\\\"disabled\\\" text=\\\"禁默文本\\\"></van-text>\\n</template>\\n\"},{\"title\":\"文本过长省略\",\"description\":\"\",\"code\":\"<template>\\n<van-text overflow=\\\"ellipsis\\\" text=\\\"文字过长省略过长省略过长省略过长省略过长省略。\\\"></van-text>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-text",
             "title": "文本",
             "description": "用于展示文字或表达式",
             "category": "Display",
-            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/4.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/5.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/6.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/7.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/8.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.1/src/text/screenshots/9.png",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/4.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/5.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/6.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/7.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/8.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.5.8/src/text/screenshots/9.png",
             "drawings": "",
             "blocks": [
                 {
@@ -1490,6 +1490,279 @@
                     "name": "$listeners",
                     "title": "监听事件",
                     "description": "监听所有`<span>`元素的事件。",
+                    "params": []
+                }
+            ],
+            "next": true,
+            "nested": false,
+            "children": []
+        }
+    },
+    {
+        "symbol": "van-form",
+        "name": "表单",
+        "icon": "form",
+        "depDescription": {},
+        "description": "具有数据收集、校验和提交功能的表单，包含输入框、选择框、复选框、单选框等元素。",
+        "labels": [
+            "Form"
+        ],
+        "screenShot": "",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-form>\\n  <van-field required placeholder=\\\"请输入\\\" label=\\\"名称\\\">\\n  </van-field>\\n  <van-field name=\\\"radio\\\" label=\\\"单选框\\\">\\n    <template #input>\\n      <van-radio-group direction=\\\"horizontal\\\">\\n        <van-radio name=\\\"1\\\">单选框 1</van-radio>\\n        <van-radio name=\\\"2\\\">单选框 2</van-radio>\\n      </van-radio-group>\\n    </template>\\n  </van-field>\\n</van-form>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "van-form",
+            "title": "表单",
+            "description": "具有数据收集、校验和提交功能的表单，包含输入框、选择框、复选框、单选框等元素。",
+            "category": "Form",
+            "screenShot": "",
+            "drawings": "",
+            "blocks": [
+                {
+                    "title": "基础用法",
+                    "description": "",
+                    "code": "<template>\n<van-form>\n  <van-field required placeholder=\"请输入\" label=\"名称\">\n  </van-field>\n  <van-field name=\"radio\" label=\"单选框\">\n    <template #input>\n      <van-radio-group direction=\"horizontal\">\n        <van-radio name=\"1\">单选框 1</van-radio>\n        <van-radio name=\"2\">单选框 2</van-radio>\n      </van-radio-group>\n    </template>\n  </van-field>\n</van-form>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "label-align",
+                    "title": "标签对齐方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "left",
+                            "title": "左"
+                        },
+                        {
+                            "value": "center",
+                            "title": "中"
+                        },
+                        {
+                            "value": "right",
+                            "title": "右"
+                        }
+                    ],
+                    "default": "left",
+                    "description": "标签对齐方式"
+                },
+                {
+                    "name": "input-align",
+                    "title": "输入框对齐方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "left",
+                            "title": "左"
+                        },
+                        {
+                            "value": "center",
+                            "title": "中"
+                        },
+                        {
+                            "value": "right",
+                            "title": "右"
+                        }
+                    ],
+                    "default": "left",
+                    "description": "输入框对齐方式"
+                }
+            ],
+            "slots": [
+                {
+                    "name": "default",
+                    "description": "插入`<van-field>`子组件。",
+                    "empty-background": "add-sub-large",
+                    "support": [
+                        {
+                            "name": "van-field",
+                            "title": "表单项",
+                            "snippet": "<van-field label=\"input类型表单项\"></van-field>"
+                        },
+                        {
+                            "name": "van-field",
+                            "title": "特殊表单项",
+                            "snippet": "<van-field label=\"非input类型表单项\"><template #input></template></van-field>"
+                        }
+                    ]
+                }
+            ],
+            "events": [
+                {
+                    "name": "submit",
+                    "title": "验证通过",
+                    "description": "提交表单且验证通过后触发"
+                },
+                {
+                    "name": "failed",
+                    "title": "验证不通过",
+                    "description": "提交表单且验证不通过后触发"
+                }
+            ],
+            "next": true,
+            "nested": false,
+            "children": [
+                {
+                    "name": "van-field",
+                    "title": "表单项",
+                    "attrs": [
+                        {
+                            "name": "value",
+                            "title": "表单值",
+                            "type": "any",
+                            "sync": true,
+                            "model": true,
+                            "default": "",
+                            "description": "表单值"
+                        },
+                        {
+                            "name": "name",
+                            "title": "提交表单的标识符",
+                            "type": "string",
+                            "description": "提交表单的标识符"
+                        },
+                        {
+                            "name": "type",
+                            "title": "输入框类型",
+                            "type": "string",
+                            "options": [
+                                {
+                                    "value": "text",
+                                    "title": "text"
+                                },
+                                {
+                                    "value": "number",
+                                    "title": "number"
+                                },
+                                {
+                                    "value": "password",
+                                    "title": "password"
+                                },
+                                {
+                                    "value": "textarea",
+                                    "title": "textarea"
+                                },
+                                {
+                                    "value": "digit",
+                                    "title": "digit"
+                                },
+                                {
+                                    "value": "tel",
+                                    "title": "tel"
+                                }
+                            ],
+                            "default": "text",
+                            "description": "输入框类型"
+                        },
+                        {
+                            "name": "label",
+                            "title": "标签名称",
+                            "type": "string",
+                            "default": "表单项",
+                            "description": "输入框左侧文本"
+                        },
+                        {
+                            "name": "size",
+                            "title": "标签大小",
+                            "type": "string",
+                            "options": [
+                                {
+                                    "value": "-",
+                                    "title": "正常"
+                                },
+                                {
+                                    "value": "large",
+                                    "title": "大"
+                                }
+                            ],
+                            "default": "-",
+                            "description": "输入框左侧文本大小"
+                        },
+                        {
+                            "name": "placeholder",
+                            "title": "输入框占位提示文字",
+                            "type": "string"
+                        },
+                        {
+                            "name": "required",
+                            "title": "必填标记",
+                            "type": "boolean",
+                            "default": false
+                        },
+                        {
+                            "name": "rules",
+                            "title": "验证规则",
+                            "type": "string | Array",
+                            "description": "验证规则。简写格式为字符串类型，完整格式或混合格式为数组类型",
+                            "compType": "validationRulesSelect"
+                        }
+                    ],
+                    "slots": [
+                        {
+                            "name": "input",
+                            "description": "插入自定义输入框"
+                        }
+                    ],
+                    "next": false,
+                    "nested": false
+                }
+            ]
+        }
+    },
+    {
+        "symbol": "van-switch",
+        "name": "开关",
+        "icon": "switch",
+        "depDescription": {},
+        "description": "开关",
+        "labels": [
+            "Form"
+        ],
+        "screenShot": "",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-switch :value=\\\"false\\\"></van-switch>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "van-switch",
+            "title": "开关",
+            "description": "开关",
+            "category": "Form",
+            "screenShot": "",
+            "drawings": "",
+            "blocks": [
+                {
+                    "title": "基本用法",
+                    "description": "",
+                    "code": "<template>\n<van-switch :value=\"false\"></van-switch>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "value",
+                    "title": "值",
+                    "type": "boolean",
+                    "sync": true,
+                    "model": true,
+                    "default": false,
+                    "description": "开关状态"
+                },
+                {
+                    "name": "disabled",
+                    "title": "禁用",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否禁用"
+                }
+            ],
+            "slots": false,
+            "events": [
+                {
+                    "name": "click",
+                    "title": "点击",
+                    "description": "点击时触发",
+                    "params": []
+                },
+                {
+                    "name": "change",
+                    "title": "状态切换",
+                    "description": "开关状态切换时触发",
                     "params": []
                 }
             ],

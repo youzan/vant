@@ -16,6 +16,9 @@ import Icon from '../icon';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 
+import VanEmptyCol from '../emptycol/index';
+
+
 const [createComponent, bem] = createNamespace('field');
 
 export default createComponent({
@@ -32,7 +35,9 @@ export default createComponent({
       default: null,
     },
   },
-
+  components: {
+    VanEmptyCol
+  },
   props: {
     ...cellProps,
     name: String,
@@ -335,6 +340,7 @@ export default createComponent({
 
       if (value !== this.value) {
         this.$emit('input', value);
+        this.$emit('update:value', value);
       }
     },
 
@@ -437,7 +443,8 @@ export default createComponent({
       const readonly = this.getProp('readonly');
       const inputSlot = this.slots('input');
       const inputAlign = this.getProp('inputAlign');
-
+      const hasInputSlot = this.$slots.hasOwnProperty('input');
+      const ifDesigner = (this.$env && this.$env.VUE_APP_DESIGNER);
       if (inputSlot) {
         return (
           <div
@@ -448,7 +455,17 @@ export default createComponent({
           </div>
         );
       }
-
+      if ((!inputSlot && hasInputSlot && ifDesigner)) {
+        return (
+          <div
+            class={bem('control', [inputAlign, 'custom'])}
+            onClick={this.onClickInput}
+            vusion-slot-name="input"
+          >
+            <van-empty-col></van-empty-col>
+          </div>
+        );
+      }
       const inputProps = {
         ref: 'input',
         class: bem('control', inputAlign),
@@ -490,7 +507,6 @@ export default createComponent({
         inputType = 'tel';
         inputMode = 'numeric';
       }
-
       return <input type={inputType} inputmode={inputMode} {...inputProps} />;
     },
 
@@ -591,6 +607,11 @@ export default createComponent({
     const disabled = this.getProp('disabled');
     const labelAlign = this.getProp('labelAlign');
 
+    const vusionCut = this.getProp('vusionCut');
+    const vusionMove = this.getProp('vusionMove');
+    const vusionNodePath = this.getProp('vusionNodePath');
+    const vusionNodeTag = this.getProp('vusionNodeTag');
+
     const scopedSlots = {
       icon: this.genLeftIcon,
     };
@@ -604,7 +625,6 @@ export default createComponent({
     if (extra) {
       scopedSlots.extra = () => extra;
     }
-
     return (
       <Cell
         icon={this.leftIcon}
@@ -626,6 +646,10 @@ export default createComponent({
           'min-height': this.type === 'textarea' && !this.autosize,
         })}
         onClick={this.onClick}
+        vusionCut={vusionCut}
+        vusionMove={vusionMove}
+        vusionNodePath={vusionNodePath}
+        vusionNodeTag={vusionNodeTag}
       >
         <div class={bem('body')}>
           {this.genInput()}

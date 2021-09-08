@@ -12,6 +12,9 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { ScopedSlot, DefaultSlots } from '../utils/types';
 import { Mods } from '../utils/create/bem';
 
+import VanEmptyCol from '../emptycol/index';
+
+
 export type CellProps = RouteProps & SharedCellProps;
 
 export type CellSlots = DefaultSlots & {
@@ -62,14 +65,18 @@ function Cell(
 
   function Value() {
     const showValue = slots.default || isDef(value);
-
-    if (showValue) {
+    //@ts-ignore
+    const ifDesigner = (ctx.parent.$env && ctx.parent.$env.VUE_APP_DESIGNER);
+    //@ts-ignore
+    console.log(ifDesigner, !isDef(value), !slots.default, 888)
+    // if (showValue) {
       return (
-        <div class={[bem('value', { alone: !showTitle }), props.valueClass]}>
-          {slots.default ? slots.default() : <span vusion-slot-name="default">{value}</span>}
+        <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default">
+          {slots.default ? slots.default() : (isDef(value) ? <span>{value}</span>  : null)}
+          {(ifDesigner && !isDef(value) && !slots.default) ? <van-empty-col></van-empty-col> : null}
         </div>
       );
-    }
+    // }
   }
 
   function LeftIcon() {
@@ -194,7 +201,6 @@ function Cell(
   if (size) {
     classes[size] = size;
   }
-
   return (
     <div
       class={bem(classes)}
@@ -202,6 +208,10 @@ function Cell(
       tabindex={clickable ? 0 : null}
       onClick={onClick}
       {...inherit(ctx)}
+      vusion-cut={ctx.props.vusionCut}
+      vusion-move={ctx.props.vusionMove}
+      vusion-node-path={ctx.props.vusionNodePath}
+      vusion-node-tag={ctx.props.vusionNodeTag}
     >
       {LeftIcon()}
       {Title()}
