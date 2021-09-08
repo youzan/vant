@@ -16,17 +16,11 @@ type DemoItem = {
   component: string;
 };
 
-function genInstall() {
-  return `import { defineAsyncComponent } from 'vue';
-import './package-style.less';
-`;
-}
-
 function genImports(demos: DemoItem[]) {
   return demos
     .map((item) => {
       const path = removeExt(normalizePath(item.path));
-      return `const ${item.name} = defineAsyncComponent(() => import('${path}'))`;
+      return `const ${item.name} = () => import('${path}')`;
     })
     .join('\n');
 }
@@ -35,12 +29,6 @@ function genExports(demos: DemoItem[]) {
   return `export const demos = {\n  ${demos
     .map((item) => item.name)
     .join(',\n  ')}\n};`;
-}
-
-function getSetName(demos: DemoItem[]) {
-  return demos
-    .map((item) => `${item.name}.name = 'demo-${item.component}';`)
-    .join('\n');
 }
 
 function genConfig(demos: DemoItem[]) {
@@ -79,10 +67,8 @@ function genCode(components: string[]) {
     }))
     .filter((item) => existsSync(item.path));
 
-  return `${genInstall()}
+  return `import './package-style.less';
 ${genImports(demos)}
-
-${getSetName(demos)}
 
 ${genExports(demos)}
 ${genConfig(demos)}
