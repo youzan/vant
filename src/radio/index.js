@@ -20,6 +20,7 @@ export default createComponent({
 
       set(val) {
         (this.parent || this).$emit('input', val);
+        (this.parent || this).$emit('update:value', val);
       },
     },
 

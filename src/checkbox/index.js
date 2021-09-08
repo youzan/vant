@@ -26,6 +26,7 @@ export default createComponent({
           this.setParentValue(val);
         } else {
           this.$emit('input', val);
+          this.$emit('update:value', val);
         }
       },
     },
@@ -34,6 +35,7 @@ export default createComponent({
   watch: {
     value(val) {
       this.$emit('change', val);
+      this.$emit('update:value', val);
     },
   },
 
@@ -62,6 +64,7 @@ export default createComponent({
         if (value.indexOf(this.name) === -1) {
           value.push(this.name);
           parent.$emit('input', value);
+          parent.$emit('update:value', value);
         }
       } else {
         const index = value.indexOf(this.name);
@@ -70,6 +73,7 @@ export default createComponent({
         if (index !== -1) {
           value.splice(index, 1);
           parent.$emit('input', value);
+          parent.$emit('update:value', value);
         }
       }
     },

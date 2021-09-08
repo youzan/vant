@@ -37,12 +37,11 @@
       empty-background: add-sub-large
       support:
         - name: van-field
-          title: 表单项
-          snippet: <van-field label="input类型表单项"></van-field>
+          title: input类型表单项
+          snippet: <van-field label="表单项"></van-field>
         - name: van-field
-          title: 特殊表单项
-          snippet: '<van-field label="非input类型表单项"><template
-            #input></template></van-field>'
+          title: 非input类型表单项
+          snippet: '<van-field label="表单项"><template #input></template></van-field>'
   events:
     - name: submit
       title: 验证通过
@@ -83,7 +82,7 @@
         - value: tel
           title: tel
       default: text
-      description: 输入框类型
+      description: input输入框类型
     - name: label
       title: 标签名称
       type: string

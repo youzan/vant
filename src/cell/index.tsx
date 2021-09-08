@@ -67,8 +67,7 @@ function Cell(
     const showValue = slots.default || isDef(value);
     //@ts-ignore
     const ifDesigner = (ctx.parent.$env && ctx.parent.$env.VUE_APP_DESIGNER);
-    //@ts-ignore
-    console.log(ifDesigner, !isDef(value), !slots.default, 888)
+
     // if (showValue) {
       return (
         <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default">

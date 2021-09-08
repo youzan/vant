@@ -12,6 +12,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
   props: {
     name: null,
     value: null,
+    title: String,
     disabled: Boolean,
     iconSize: [Number, String],
     checkedColor: String,
@@ -102,8 +103,8 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
 
     genLabel() {
       const slot = this.slots();
-
-      if (slot) {
+      const title = this.title;
+      if (slot || title) {
         return (
           <span
             class={bem('label', [
@@ -111,7 +112,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
               { disabled: this.isDisabled },
             ])}
           >
-            {slot}
+            {slot ? slot : title}
           </span>
         );
       }

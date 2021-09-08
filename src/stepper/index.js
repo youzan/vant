@@ -75,6 +75,7 @@ export default createComponent({
 
     if (!equal(value, this.value)) {
       this.$emit('input', value);
+      this.$emit('update:value', value);
     }
 
     return {
@@ -136,6 +137,7 @@ export default createComponent({
     currentValue(val) {
       this.$emit('input', val);
       this.$emit('change', val, { name: this.name });
+      this.$emit('update:value', val);
     },
   },
 
@@ -199,6 +201,8 @@ export default createComponent({
       if (this.asyncChange) {
         this.$emit('input', value);
         this.$emit('change', value, { name: this.name });
+        this.$emit('update:value', value);
+
       } else {
         this.currentValue = value;
       }

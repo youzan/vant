@@ -1,0 +1,56 @@
+- name: van-stepper
+  title: 步进器
+  labels:
+    - Form
+  icon: switch
+  next: true
+  nested: false
+  attrs:
+    - name: value
+      title: 值
+      type: boolean
+      sync: true
+      model: true
+      default: false
+      description: 开关状态
+    - name: min
+      title: 最小值
+      type: string, number
+      default: 1
+      description: 最小值
+    - name: max
+      title: 最大值
+      type: boolean
+      default: false
+      description: 最大值
+    - name: disable-plus
+      title: 是否禁用增加按钮
+      type: boolean
+      default: false
+      description: 是否禁用增加按钮
+    - name: disable-minus
+      title: 是否禁用减少按钮
+      type: boolean
+      default: false
+      description: 是否禁用减少按钮
+    - name: theme
+      title: 样式风格
+      type: string
+      options:
+        - value: ""
+          title: 默认
+        - value: round
+          title: 圆角
+      default: round
+      description: 样式风格
+  slots: false
+  events:
+    - name: click
+      title: 点击
+      description: 点击时触发
+      params: []
+    - name: change
+      title: 状态切换
+      description: 开关状态切换时触发
+      params: []
+  description: 开关

@@ -82,7 +82,7 @@
           title: digit
         - value: tel
           title: tel
-      description: 输入框类型
+      description: input输入框类型
     - name: label
       title: 标签名称
       type: string
