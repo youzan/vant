@@ -27,7 +27,7 @@ const t = useTranslate({
 });
 
 const image = 'https://img.yzcdn.cn/vant/cat.jpeg';
-const fits = ['contain', 'cover', 'fill', 'none', 'scale-down'];
+const fits = ['contain', 'cover', 'fill', 'none', 'scale-down'] as const;
 </script>
 
 <template>
@@ -76,12 +76,12 @@ const fits = ['contain', 'cover', 'fill', 'none', 'scale-down'];
   <demo-block :title="t('error')">
     <van-row gutter="20">
       <van-col span="8">
-        <van-image width="100%" height="27vw" src="x" />
+        <van-image width="100%" height="27vw" src="http://x" />
         <div class="text">{{ t('defaultTip') }}</div>
       </van-col>
 
       <van-col span="8">
-        <van-image width="100%" height="27vw" src="x">
+        <van-image width="100%" height="27vw" src="http://x">
           <template #error>{{ t('loadFail') }}</template>
         </van-image>
         <div class="text">{{ t('customTip') }}</div>
