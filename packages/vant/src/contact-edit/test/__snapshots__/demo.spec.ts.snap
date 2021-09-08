@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <form class="van-form van-contact-edit">
+    <div class="van-contact-edit__fields">
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label">
+          <label>
+            Name
+          </label>
+        </div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <input type="text"
+                   class="van-field__control"
+                   placeholder="Name"
+            >
+          </div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label">
+          <label>
+            Phone
+          </label>
+        </div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <input type="tel"
+                   class="van-field__control"
+                   placeholder="Phone"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-cell--borderless van-contact-edit__switch-cell">
+      <div class="van-cell__title">
+        <span>
+          Set as the default contact
+        </span>
+      </div>
+      <div role="switch"
+           class="van-switch"
+           style="font-size: 24px;"
+           aria-checked="false"
+      >
+        <div class="van-switch__node">
+        </div>
+      </div>
+    </div>
+    <div class="van-contact-edit__buttons">
+      <button type="submit"
+              class="van-button van-button--danger van-button--normal van-button--block van-button--round van-contact-edit__button"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Save
+          </span>
+        </div>
+      </button>
+      <button type="button"
+              class="van-button van-button--default van-button--normal van-button--block van-button--round van-contact-edit__button"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Delete
+          </span>
+        </div>
+      </button>
+    </div>
+  </form>
+</div>
+`;

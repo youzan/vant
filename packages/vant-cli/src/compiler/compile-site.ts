@@ -1,53 +1,44 @@
-import webpack from 'webpack';
-import WebpackDevServer from 'webpack-dev-server';
-import { get } from 'lodash';
-import { getPortPromise } from 'portfinder';
-import { getSiteDevConfig } from '../config/webpack.site.dev';
-import { getSitePrdConfig } from '../config/webpack.site.prd';
+import { createServer, build } from 'vite';
+import {
+  getViteConfigForSiteDev,
+  getViteConfigForSiteProd,
+} from '../config/vite.site';
+import { replaceExt } from '../common';
+import { CSS_LANG } from '../common/css';
+import { genPackageEntry } from './gen-package-entry';
+import { genPackageStyle } from './gen-package-style';
+import { genSiteMobileShared } from './gen-site-mobile-shared';
+import { genSiteDesktopShared } from './gen-site-desktop-shared';
+import { genStyleDepsMap } from './gen-style-deps-map';
+import { PACKAGE_ENTRY_FILE, PACKAGE_STYLE_FILE } from '../common/constant';
 
-async function runDevServer(
-  port: number,
-  config: ReturnType<typeof getSiteDevConfig>
-) {
-  const host = get(config.devServer, 'host', 'localhost');
-  const server = new WebpackDevServer(
-    {
-      ...config.devServer,
-      port,
-      host,
-    },
-    webpack(config)
-  );
-
-  await server.start();
-}
-
-async function watch() {
-  const config = getSiteDevConfig();
-  const port = await getPortPromise({
-    port: config.devServer.port,
-  });
-  await runDevServer(port, config);
-}
-
-function build() {
-  return new Promise<void>((resolve, reject) => {
-    const config = getSitePrdConfig();
-
-    webpack(config, (err, stats) => {
-      if (err || (stats && stats.hasErrors())) {
-        reject();
-      } else {
+export async function genSiteEntry(): Promise<void> {
+  return new Promise((resolve, reject) => {
+    genStyleDepsMap()
+      .then(() => {
+        genPackageEntry({
+          outputPath: PACKAGE_ENTRY_FILE,
+        });
+        genPackageStyle({
+          outputPath: replaceExt(PACKAGE_STYLE_FILE, `.${CSS_LANG}`),
+        });
+        genSiteMobileShared();
+        genSiteDesktopShared();
         resolve();
-      }
-    });
+      })
+      .catch((err) => {
+        console.log(err);
+        reject(err);
+      });
   });
 }
 
 export async function compileSite(production = false) {
+  await genSiteEntry();
   if (production) {
-    await build();
+    await build(getViteConfigForSiteProd());
   } else {
-    await watch();
+    const server = await createServer(getViteConfigForSiteDev());
+    await server.listen();
   }
 }

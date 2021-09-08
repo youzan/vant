@@ -15,7 +15,7 @@
     "build": "vant-cli build",
     "release": "vant-cli release",
     "test:coverage": "open test/coverage/index.html",
-    "build-site": "vant-cli build-site && gh-pages -d site"
+    "build-site": "vant-cli build-site && gh-pages -d site-dist"
   },
   "author": "",
   "license": "MIT",

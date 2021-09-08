@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import DocNav from './Nav';
-import DocHeader from './Header';
-import DocContent from './Content';
-import DocContainer from './Container';
-import DocSimulator from './Simulator';
+import DocNav from './Nav.vue';
+import DocHeader from './Header.vue';
+import DocContent from './Content.vue';
+import DocContainer from './Container.vue';
+import DocSimulator from './Simulator.vue';
 
 export default {
   name: 'VanDoc',

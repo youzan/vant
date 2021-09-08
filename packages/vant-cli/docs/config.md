@@ -4,7 +4,7 @@
   - [vant.config.js](#vantconfigjs)
     - [name](#name)
     - [build.css](#buildcss)
-    - [build.site](#buildsite)
+    - [build.site.publicPath](#buildsitepublicpath)
     - [build.srcDir](#buildsrcdir)
     - [build.namedExport](#buildnamedexport)
     - [site.title](#sitetitle)
@@ -16,7 +16,7 @@
     - [site.searchConfig](#sitesearchconfig)
     - [site.hideSimulator](#sitehidesimulator)
     - [site.simulator.url](#sitesimulatorurl)
-  - [Webpack](#webpack)
+    - [site.htmlMeta](#sitehtmlmeta)
   - [Babel](#babel)
     - [默认配置](#-1)
     - [依赖](#-2)
@@ -95,14 +95,14 @@ module.exports = {
 };
 ```
 
-### build.site
+### build.site.publicPath
 
-- Type: `object`
-- Default: `{ publicPath: '/' }`
+- Type: `string`
+- Default: `/`
 
-`site.publicPath`等价于 webpack 的`output.publicPath`配置。
+等价于 vite 的 `build.outDir` 配置。
 
-一般来说，我们的文档网站会部署在一个域名的子路径上，如 `https://my.github.io/demo-ui/`，这时候`publicPath`需要跟子路径保持一致，即`/demo-ui/`。
+一般来说，我们的文档网站会部署在一个域名的子路径上，如 `https://my.github.io/demo-ui/`，这时候 `publicPath` 需要跟子路径保持一致，即 `/demo-ui/`。
 
 ```js
 module.exports = {
@@ -253,26 +253,12 @@ module.exports = {
 
 自定义手机模拟器的 iframe URL 地址。
 
-### site.htmlPluginOptions
+### site.htmlMeta
 
-- Type: `object`
+- Type: `Record<string, string>`
 - Default: `undefined`
 
-html-webpack-plugin 的配置项，详见 [Options](https://github.com/jantimon/html-webpack-plugin#options)。
-
-## Webpack
-
-通过根目录下的`webpack.config.js`文件可以修改 Webpack 配置，配置内容会通过 [webpack-merge](https://github.com/survivejs/webpack-merge) 合并到最终的配置中。
-
-比如修改 devServer 端口：
-
-```js
-module.exports = {
-  devServer: {
-    port: 9000,
-  },
-};
-```
+配置 HTML 中的 meta 标签，对象的 key 为 name，value 为 content。
 
 ## Babel
 
@@ -321,6 +307,6 @@ module.exports = {
 
 ```json
 {
-  "browserslist": ["Android >= 4.0", "iOS >= 8"]
+  "browserslist": ["Chrome >= 51", "iOS >= 10"]
 }
 ```

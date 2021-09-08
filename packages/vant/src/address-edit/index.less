@@ -1,0 +1,46 @@
+@import './var.less';
+
+:root {
+  --van-address-edit-padding: @address-edit-padding;
+  --van-address-edit-buttons-padding: @address-edit-buttons-padding;
+  --van-address-edit-button-margin-bottom: @address-edit-button-margin-bottom;
+  --van-contact-edit-button-font-size: @address-edit-button-font-size;
+}
+
+.van-address-edit {
+  padding: var(--van-address-edit-padding);
+
+  &__fields {
+    overflow: hidden;
+    border-radius: var(--van-padding-xs);
+
+    .van-field__label {
+      width: 4.1em;
+    }
+  }
+
+  &__default {
+    margin-top: var(--van-padding-sm);
+    overflow: hidden;
+    border-radius: var(--van-padding-xs);
+  }
+
+  &__buttons {
+    padding: var(--van-address-edit-buttons-padding);
+  }
+
+  &__button {
+    margin-bottom: var(--van-address-edit-button-margin-bottom);
+    font-size: var(--van-address-edit-button-font-size);
+  }
+
+  &-detail {
+    &__search-item {
+      background-color: var(--van-gray-2);
+    }
+
+    &__keyword {
+      color: var(--van-danger-color);
+    }
+  }
+}
