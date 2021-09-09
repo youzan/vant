@@ -24,6 +24,7 @@ export default createComponent({
 
   props: {
     disabled: Boolean,
+    readonly: Boolean,
     lazyLoad: Boolean,
     uploadText: String,
     afterRead: Function,
@@ -248,6 +249,10 @@ export default createComponent({
       }
     },
 
+    onClickUpload(event) {
+      this.$emit('click-upload', event);
+    },
+
     onPreviewImage(item) {
       if (!this.previewFullImage) {
         return;
@@ -391,7 +396,7 @@ export default createComponent({
 
       const slot = this.slots();
 
-      const Input = (
+      const Input = this.readonly ? null : (
         <input
           {...{ attrs: this.$attrs }}
           ref="input"
@@ -405,7 +410,11 @@ export default createComponent({
 
       if (slot) {
         return (
-          <div class={bem('input-wrapper')} key="input-wrapper">
+          <div
+            class={bem('input-wrapper')}
+            key="input-wrapper"
+            onClick={this.onClickUpload}
+          >
             {slot}
             {Input}
           </div>
@@ -422,7 +431,11 @@ export default createComponent({
       }
 
       return (
-        <div class={bem('upload')} style={style}>
+        <div
+          class={bem('upload', { readonly: this.readonly })}
+          style={style}
+          onClick={this.onClickUpload}
+        >
           <Icon name={this.uploadIcon} class={bem('upload-icon')} />
           {this.uploadText && (
             <span class={bem('upload-text')}>{this.uploadText}</span>

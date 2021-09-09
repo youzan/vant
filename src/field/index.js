@@ -2,6 +2,7 @@
 import { resetScroll } from '../utils/dom/reset-scroll';
 import { formatNumber } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
+import { getRootScrollTop, setRootScrollTop } from '../utils/dom/scroll';
 import {
   isDef,
   addUnit,
@@ -357,7 +358,7 @@ export default createComponent({
       this.focused = true;
       this.$emit('focus', event);
 
-      // readonly not work in lagacy mobile safari
+      // readonly not work in legacy mobile safari
       /* istanbul ignore if */
       const readonly = this.getProp('readonly');
       if (readonly) {
@@ -419,6 +420,7 @@ export default createComponent({
         return;
       }
 
+      const scrollTop = getRootScrollTop();
       input.style.height = 'auto';
 
       let height = input.scrollHeight;
@@ -434,6 +436,8 @@ export default createComponent({
 
       if (height) {
         input.style.height = height + 'px';
+        // https://github.com/youzan/vant/issues/9178
+        setRootScrollTop(scrollTop);
       }
     },
 
@@ -496,8 +500,8 @@ export default createComponent({
       let inputType = type;
       let inputMode;
 
-      // type="number" is weired in iOS, and can't prevent dot in Android
-      // so use inputmode to set keyboard in mordern browers
+      // type="number" is weird in iOS, and can't prevent dot in Android
+      // so use inputmode to set keyboard in modern browsers
       if (type === 'number') {
         inputType = 'text';
         inputMode = 'decimal';

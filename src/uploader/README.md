@@ -258,6 +258,7 @@ export default {
 | preview-options `v2.9.3` | Options of full screen image preview，see [ImagePreview](#/en-US/image-preview) | _object_ | - |
 | multiple | Whether to enable multiple selection pictures | _boolean_ | `false` |
 | disabled | Whether to disabled the upload | _boolean_ | `false` |
+| readonly `v2.12.26` | Whether to make upload area readonly | _boolean_ | `false` |
 | deletable | Whether to show delete icon | _boolean_ | `true` |
 | show-upload `v2.5.6` | Whether to show upload area | _boolean_ | `true` |
 | lazy-load `v2.6.2` | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
@@ -279,6 +280,7 @@ export default {
 | Event | Description | Arguments |
 | --- | --- | --- |
 | oversize | Emitted when file size over limit | Same as after-read |
+| click-upload `v2.12.26` | Emitted when click upload area | _event: MouseEvent_ |
 | click-preview | Emitted when preview image is clicked | Same as after-read |
 | close-preview | Emitted when the full screen image preview is closed | - |
 | delete | Emitted when preview file is deleted | Same as after-read |
