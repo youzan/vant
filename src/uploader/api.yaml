@@ -37,8 +37,8 @@
     - name: url
       title: 上传地址
       type: string
-      description: 文件上传的地址
       default: null
+      description: 文件上传的地址
       required: true
       compType: interfaceSelect
     - name: headers
@@ -83,12 +83,12 @@
     - name: capture
       title: 图片选择模式
       type: string
-      default: ''
       options:
-        - value: ''
+        - value: ""
           title: 默认图库
-        - value: 'camera'
+        - value: camera
           title: 相机
+      default: ""
       description: 图片选择模式
     - name: disabled
       title: 禁用

@@ -44,7 +44,7 @@
       description: 选择值改变时触发
       params: []
 - name: van-checkbox
-  title: 单选项
+  title: 多选项
   is-sub: true
   attrs:
     - name: title

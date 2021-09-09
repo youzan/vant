@@ -11,6 +11,8 @@ import Image from '../image';
 import Loading from '../loading';
 import ImagePreview from '../image-preview';
 
+import ajax from './ajax';
+
 const [createComponent, bem] = createNamespace('uploader');
 
 export default createComponent({
@@ -23,6 +25,12 @@ export default createComponent({
   },
 
   props: {
+    url: { type: String, default: '', required: true },
+    headers: Object,
+    autoUpload: { type: Boolean, default: true },
+    withCredentials: { type: Boolean, default: false },
+    data: Object,
+    urlField: { type: String, default: 'url' },
     disabled: Boolean,
     readonly: Boolean,
     lazyLoad: Boolean,
@@ -34,7 +42,7 @@ export default createComponent({
     previewOptions: Object,
     name: {
       type: [Number, String],
-      default: '',
+      default: 'file',
     },
     accept: {
       type: String,
@@ -138,7 +146,6 @@ export default createComponent({
 
     readFile(files) {
       const oversize = isOversize(files, this.maxSize);
-
       if (Array.isArray(files)) {
         const maxCount = this.maxCount - this.fileList.length;
 
@@ -205,10 +212,18 @@ export default createComponent({
 
       if (isValidFiles) {
         this.$emit('input', [...this.fileList, ...toArray(validFiles)]);
+        this.$emit('update:fileList', [...this.fileList, ...toArray(validFiles)]);
 
         if (this.afterRead) {
           this.afterRead(validFiles, this.getDetail());
         }
+        this.$nextTick(function () {
+          this.fileList.forEach((file, index) => {
+            file.status = 'uploading';
+            file.message = '上传中...';
+            this.post(file, index);
+          });
+        });
       }
     },
 
@@ -239,6 +254,7 @@ export default createComponent({
       fileList.splice(index, 1);
 
       this.$emit('input', fileList);
+      this.$emit('update:fileList', fileList);
       this.$emit('delete', file, this.getDetail(index));
     },
 
@@ -443,6 +459,57 @@ export default createComponent({
           {Input}
         </div>
       );
+    },
+
+    post(file, index) {
+      const xhr = ajax({
+          url: this.url,
+          headers: this.headers,
+          withCredentials: this.withCredentials,
+          file,
+          data: this.data,
+          name: this.name,
+          onProgress: (e) => {
+              // file.status = 'uploading';
+              // file.message = e.percent + '%' || '上传中...';
+              this.$emit('progress', {
+                  e, file, file, xhr,
+              }, this);
+          },
+          onSuccess: (res) => {
+              file.status = '';
+              file.message = '';
+              if (res[this.urlField])
+                  file.url = res[this.urlField];
+              file.response = res;
+
+              this.$emit('success', {
+                  res,
+                  file,
+                  file,
+                  xhr,
+              }, this);
+
+              const value = this.fileList;
+              this.$emit('input', value);
+              this.$emit('update:fileList', value);
+          },
+          onError: (e, res) => {
+              file.status = 'failed';
+              file.message = '上传失败';
+              this.$emit('error', {
+                  e,
+                  res,
+                  file,
+                  file,
+                  xhr,
+              }, this);
+
+              const value = this.fileList;
+              this.$emit('input', value);
+              this.$emit('update:fileList', value);
+          },
+      });
     },
   },
 

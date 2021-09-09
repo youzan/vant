@@ -12,5 +12,9 @@
       </van-radio-group>
     </template>
   </van-field>
+  <div style="margin: 16px 16px 0">
+    <van-button round block type="info" native-type="submit" text="提交">
+    </van-button>
+  </div>
 </van-form>
 ```

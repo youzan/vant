@@ -57,6 +57,10 @@
         :deletable="false"
       />
     </demo-block>
+
+    <demo-block :title="t('basicUsage')+'666'">
+      <van-uploader :fileList.sync="fileList6" multiple url="https://www.mocky.io/v2/5cc8019d300000980a055e76"/>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -126,6 +130,7 @@ export default {
           previewSize: 120,
         },
       ],
+      fileList6:[],
       statusFileList: [],
       previewCoverFiles: [],
     };
