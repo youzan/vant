@@ -84,7 +84,6 @@ export function PopupMixin(options = {}) {
       value(val) {
         const type = val ? 'open' : 'close';
         this.inited = this.inited || this.value;
-        console.log(8888)
         this.realValue = this.value;
         this[type]();
 

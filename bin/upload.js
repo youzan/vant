@@ -39,7 +39,7 @@ function listFile(dir, root) {
             if (fullpath.includes('.DS_Store'))
                 return;
             const fileinfo = fs.readFileSync(path.posix.join(process.cwd(), fullpath));
-            const objectKey = `packages/@lcap/${'mobile-ui' || root}@${version}/${fullpath}`.replace(/\/lib/,'');
+            const objectKey = `packages/@lcap/${'mobile-ui' || root}@${version}/${fullpath}`;
 
             console.log(`NosClient: putObject start --------> ${objectKey}`);
 

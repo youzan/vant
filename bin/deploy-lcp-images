@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 const vusion = require('vusion-api');
-
+const pkg = require('../package.json');
+const version = pkg.version;
 const argv = require('minimist')(process.argv.slice(2));
 
 const config = require('../vusion.config.js');
@@ -11,11 +12,11 @@ components.forEach((component) => {
     let command = `lcap deploy src/${component.name}/screenshots`;
     let commandDrawings = `lcap deploy src/${component.name}/drawings`;
     if (argv.platform) {
-        command = `${command} --platform ${argv.platform} --name @lcap/mobile-ui --version 0.1.0`;
+        command = `${command} --platform ${argv.platform} --name @lcap/mobile-ui --version ${version}`;
         commandDrawings = `${commandDrawings} --platform ${argv.platform}`;
     }
     console.log(command);
     vusion.cli.execSync(command);
     // vusion.cli.execSync(commandDrawings);
-    vusion.cli.done(component.name + '.vue');
+    vusion.cli.done(component.name);
 });
