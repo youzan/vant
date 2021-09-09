@@ -17,6 +17,24 @@ export default {
       return this.$route.name;
     },
   },
+
+  mounted() {
+    const anchors = [].slice.call(this.$el.querySelectorAll('h2, h3, h4, h5'));
+    anchors.forEach((anchor) => {
+      anchor.addEventListener('click', this.scrollToAnchor);
+    });
+  },
+
+  methods: {
+    scrollToAnchor(event) {
+      if (event.target.id) {
+        this.$router.push({
+          name: this.$route.name,
+          hash: '#' + event.target.id,
+        });
+      }
+    },
+  },
 };
 </script>
 
