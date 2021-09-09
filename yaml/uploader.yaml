@@ -1,0 +1,59 @@
+- name: van-uploader
+  title: 文件上传
+  labels:
+    - Form
+  icon: uploader
+  description: 上传文件。
+  attrs:
+    - name: fileList
+      title: 文件列表
+      type: array
+      sync: true
+      model: true
+      default: []
+      description: 已上传的文件列表
+    - name: accept
+      title: 文件类型
+      type: string
+      default: image/*
+      description: 允许上传的文件类型
+    - name: multiple
+      title: 多文件上传
+      type: boolean
+      default: false
+      description: 多文件上传
+    - name: max-count
+      title: 列表数量上限
+      type: number,string
+      default: 999
+      description: 列表数量上限
+    - name: max-size
+      title: 最大文件大小
+      type: number,string
+      default: 10485760
+      description: 文件大小限制，单位为 byte, 默认为10MB
+    - name: capture
+      title: 图片选择模式
+      type: string
+      default: ''
+      options:
+        - value: ''
+          title: 默认图库
+        - value: 'camera'
+          title: 相机
+      description: 图片选择模式
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: 是否禁用
+  slots: false
+  events:
+    - name: click
+      title: 点击
+      description: 点击时触发
+      params: []
+    - name: change
+      title: 状态切换
+      description: 开关状态切换时触发
+      params: []
