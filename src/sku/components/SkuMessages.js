@@ -59,6 +59,8 @@ export default createComponent({
         messages[`message_${index}`] = item.value;
       });
 
+      console.log('messages', messages);
+
       return messages;
     },
 
@@ -141,6 +143,7 @@ export default createComponent({
               vModel={this.messageValues[index].value}
               maxSize={this.messageConfig.uploadMaxSize}
               uploadImg={this.messageConfig.uploadImg}
+              customUpload={this.messageConfig.customUpload}
             />
             <div class={bem('image-cell-label')}>{t('imageLabel')}</div>
           </Cell>
