@@ -368,6 +368,26 @@ export default defineComponent({
       }
     };
 
+    // get first disabled calendarDay between date range
+    const getDisabledDate = (
+      disabledDays: CalendarDayItem[],
+      startDay: Date,
+      date: Date
+    ): Date | undefined =>
+      disabledDays.find(
+        (day) =>
+          compareDay(startDay, day.date!) === -1 &&
+          compareDay(day.date!, date) === -1
+      )?.date;
+
+    // disabled calendarDay
+    const disabledDays = computed(() =>
+      monthRefs.value.reduce((arr, ref) => {
+        arr.push(...(ref.disabledDays?.value ?? []));
+        return arr;
+      }, [] as CalendarDayItem[])
+    );
+
     const onClickDay = (item: CalendarDayItem) => {
       if (props.readonly || !item.date) {
         return;
@@ -388,7 +408,18 @@ export default defineComponent({
           const compareToStart = compareDay(date, startDay);
 
           if (compareToStart === 1) {
-            select([startDay, date], true);
+            const disabledDay = getDisabledDate(
+              disabledDays.value,
+              startDay,
+              date
+            );
+
+            if (disabledDay) {
+              const lastAbledEndDay = getPrevDay(disabledDay);
+              select([startDay, lastAbledEndDay]);
+            } else {
+              select([startDay, date], true);
+            }
           } else if (compareToStart === -1) {
             select([date]);
           } else if (props.allowSameDay) {

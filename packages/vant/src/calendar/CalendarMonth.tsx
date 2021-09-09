@@ -241,6 +241,10 @@ export default defineComponent({
       return days;
     });
 
+    const disabledDays = computed(() =>
+      days.value.filter((day) => day.type === 'disabled')
+    );
+
     const renderDay = (item: CalendarDayItem, index: number) => (
       <CalendarDay
         v-slots={pick(slots, ['top-info', 'bottom-info'])}
@@ -265,6 +269,7 @@ export default defineComponent({
       getHeight: () => height.value,
       setVisible,
       scrollIntoView,
+      disabledDays,
     });
 
     return () => (
