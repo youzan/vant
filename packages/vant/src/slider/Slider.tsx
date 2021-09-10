@@ -132,8 +132,8 @@ export default defineComponent({
 
     const handleRangeValue = (value: NumberRange) => {
       // 设置默认值
-      const left = value[0] ?? Math.max(Number(props.min), 0);
-      const right = value[1] ?? Math.min(Number(props.max), 100);
+      const left = value[0] ?? Number(props.min);
+      const right = value[1] ?? Number(props.max);
       // 处理两个滑块重叠之后的情况
       return left > right ? [right, left] : [left, right];
     };
