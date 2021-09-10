@@ -12,7 +12,7 @@ components.forEach((component) => {
     }
 });
 const packageJSON = require('../../package.json');
-const libInfo = `${packageJSON.lcapname}@${packageJSON.lcapversion}`;
+const libInfo = `${packageJSON.name}@${packageJSON.version}`;
 Object.values(map).forEach((item) => {
     let screenShot = JSON.parse(item.screenShot);
     screenShot = screenShot
