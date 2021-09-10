@@ -10,10 +10,10 @@ const components = config.docs.components.filter((component) => !component.href 
 
 components.forEach((component) => {
     let command = `lcap deploy src/${component.name}/screenshots`;
-    let commandDrawings = `lcap deploy src/${component.name}/drawings`;
+    // let commandDrawings = `lcap deploy src/${component.name}/drawings`;
     if (argv.platform) {
-        command = `${command} --platform ${argv.platform} --name @lcap/mobile-ui --version ${version}`;
-        commandDrawings = `${commandDrawings} --platform ${argv.platform}`;
+        command = `${command} --platform ${argv.platform}`;
+        // commandDrawings = `${commandDrawings} --platform ${argv.platform}`;
     }
     console.log(command);
     vusion.cli.execSync(command);
