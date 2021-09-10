@@ -9,5 +9,5 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"]
   },
-  "include": ["src/**/*", "site"]
+  "include": ["src/**/*"]
 }
