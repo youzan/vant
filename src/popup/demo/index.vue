@@ -92,10 +92,30 @@
         :style="{ padding: '30px 50px' }"
       />
     </demo-block>
+
+    <demo-block card :title="t('destroyOnClose')">
+      <van-cell
+        :title="t('destroyOnClose')"
+        is-link
+        @click="showDestroyOnClose = true"
+      />
+      <van-popup
+        v-model="showDestroyOnClose"
+        round
+        position="bottom"
+        :style="{ height: '30%' }"
+        destroy-on-close
+      >
+        <destroy-on-close-test />
+      </van-popup>
+    </demo-block>
+
   </demo-section>
 </template>
 
 <script>
+import DestroyOnCloseTest from './DestroyOnCloseTest'
+
 export default {
   i18n: {
     'zh-CN': {
@@ -110,6 +130,7 @@ export default {
       closeIcon: '关闭图标',
       customCloseIcon: '自定义图标',
       customIconPosition: '图标位置',
+      destroyOnClose: '关闭时销毁 Popup 中的元素'
     },
     'en-US': {
       position: 'Position',
@@ -123,9 +144,10 @@ export default {
       closeIcon: 'Close Icon',
       customCloseIcon: 'Custom Icon',
       customIconPosition: 'Icon Position',
+      destroyOnClose: 'destroyOnClose'
     },
   },
-
+  components: { DestroyOnCloseTest },
   data() {
     return {
       showBasic: false,
@@ -138,6 +160,7 @@ export default {
       showGetContainer: false,
       showCustomCloseIcon: false,
       showCustomIconPosition: false,
+      showDestroyOnClose: false
     };
   },
 };

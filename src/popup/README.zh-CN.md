@@ -137,6 +137,7 @@ export default {
 | transition-appear `v2.10.14` | 是否在初始渲染时启用过渡动画 | _boolean_ | `false` |
 | get-container | 指定挂载的节点 | _string \| () => Element_ | - |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `false` |
+| destroy-on-close | 关闭时销毁 Popup 中的元素 | _boolean_ | `false` |
 
 ### Events
 

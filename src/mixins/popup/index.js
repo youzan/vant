@@ -68,6 +68,7 @@ export function PopupMixin(options = {}) {
 
     data() {
       this.onReopenCallback = [];
+      this.keyCount = 0
       return {
         inited: this.value,
       };
@@ -87,6 +88,11 @@ export function PopupMixin(options = {}) {
 
         if (!options.skipToggleEvent) {
           this.$emit(type);
+        }
+        if (this.destroyOnClose) {
+          this.$nextTick(() => {
+            this.keyCount++;
+          });
         }
       },
 

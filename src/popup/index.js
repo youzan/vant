@@ -33,6 +33,10 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    destroyOnClose: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   beforeCreate() {
@@ -42,13 +46,14 @@ export default createComponent({
     this.onClick = createEmitter('click');
     this.onOpened = createEmitter('opened');
     this.onClosed = createEmitter('closed');
+    this.destroySlot = false
   },
 
   methods: {
     onClickCloseIcon(event) {
       this.$emit('click-close-icon', event);
       this.close();
-    },
+    }
   },
 
   render() {
@@ -79,6 +84,7 @@ export default createComponent({
         <div
           vShow={this.value}
           style={style}
+          key={this.keyCount}
           class={bem({
             round,
             [position]: position,
