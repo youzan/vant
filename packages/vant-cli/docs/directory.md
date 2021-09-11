@@ -81,3 +81,30 @@ button
     ├─ index.js     # 按需引入编译后的样式
     └─ less.js      # 按需引入未编译的样式，可用于主题定制
 ```
+
+### 生成类型声明
+
+当组件库使用 TS 编写，且根目录下存在 `tsconfig.declaration.json` 文件，Vant Cli 会自动生成 `.d.ts` 类型声明文件。
+
+`tsconfig.declaration.json` 的参考格式如下：
+
+```json
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": ".",
+    "emitDeclarationOnly": true
+  },
+  "include": ["es/**/*", "lib/**/*"],
+  "exclude": ["node_modules", "**/test/**/*", "**/demo/**/*"]
+}
+```
+
+成功生成类型声明后，请在 `package.json` 中添加类型入口声明：
+
+```json
+{
+  "typings": "lib/index.d.ts"
+}
+```
