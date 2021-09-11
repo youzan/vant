@@ -53,19 +53,21 @@ button
 
 ```
 project
-├─ es               # es 目录下的代码遵循 esmodule 规范
-│   ├─ button      # button 组件编译后的代码目录
-│   ├─ dialog      # dialog 组件编译后的代码目录
-│   └─ index.js    # 引入所有组件的入口，支持 tree shaking
+├─ es                   # es 目录下的代码遵循 esmodule 规范
+│   ├─ button          # button 组件编译后的代码目录
+│   ├─ dialog          # dialog 组件编译后的代码目录
+│   └─ index.js        # 引入所有组件的入口 (ESModule)
 │
-└─ lib              # lib 目录下的代码遵循 commonjs 规范
-    ├─ button       # button 组件编译后的代码目录
-    ├─ dialog       # dialog 组件编译后的代码目录
-    ├─ index.js     # 引入所有组件的入口
-    ├─ index.less   # 所有组件未编译的样式
-    ├─ index.css    # 所有组件打包后的样式，用于 CDN 引入
-    ├─ name.js      # 所有组件打包后的脚本，未压缩，用于 CDN 引入
-    └─ name.min.js  # 所有组件打包后的脚本，已压缩，用于 CDN 引入
+└─ lib                  # lib 目录下的代码遵循 commonjs 规范
+    ├─ button           # button 组件编译后的代码目录
+    ├─ dialog           # dialog 组件编译后的代码目录
+    ├─ index.js         # 引入所有组件的入口
+    ├─ index.less       # 所有组件未编译的样式入口
+    ├─ index.css        # 打包后的组件样式，用于 CDN 引入
+    ├─ [name].js        # 打包后的组件脚本，UMD 格式
+    ├─ [name].es.js     # 打包后的组件脚本，ESModule 格式
+    ├─ [name].min.js    # 打包和压缩后的组件脚本，UMD 格式
+    └─ [name].es.min.js # 打包和压缩后的组件脚本，ESModule 格式
 ```
 
 单个组件编译后的目录如下：
