@@ -64,10 +64,10 @@ project
     ├─ index.js         # 引入所有组件的入口
     ├─ index.less       # 所有组件未编译的样式入口
     ├─ index.css        # 打包后的组件样式，用于 CDN 引入
-    ├─ [name].js        # 打包后的组件脚本，用于 CDN 引入
-    ├─ [name].min.js    # 打包后的组件脚本（已压缩），用于 CDN 引入
-    ├─ [name].es.js    # 打包后的组件脚本，ESModule 格式
-    └─ [name].es.min.js # 打包后的组件脚本（已压缩），ESModule 格式
+    ├─ [name].js        # 打包后的组件脚本，UMD 格式
+    ├─ [name].es.js     # 打包后的组件脚本，ESModule 格式
+    ├─ [name].min.js    # 打包和压缩后的组件脚本，UMD 格式
+    └─ [name].es.min.js # 打包和压缩后的组件脚本，ESModule 格式
 ```
 
 单个组件编译后的目录如下：
