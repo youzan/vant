@@ -16,6 +16,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.2.3](https://github.com/youzan/vant/compare/v3.2.2...v3.2.3)
+
+`2021-09-12`
+
+**Bug Fixes**
+
+- Button: 修复无法通过 CSS 变量设置渐变背景色的问题 [#9454](https://github.com/youzan/vant/issues/9454)
+- Calendar: 日历组件已经禁用部分日期依然可以选择日期区间的问题 [#9361](https://github.com/youzan/vant/issues/9361)
+- Field: 修复全局设置 user-select: none 时 IOS 下无法输入的问题 [#9418](https://github.com/youzan/vant/issues/9418)
+- FIeld: 修复 field-error-message-font-size 变量名称错误的问题 [#9394](https://github.com/youzan/vant/issues/9394)
+- Popup: 修复在 keep-alive 下激活时无法开启自动轮播的问题 [#9452](https://github.com/youzan/vant/issues/9452)
+- Theme: 移除了内部 less import 的波浪号 [a7ab2f](https://github.com/youzan/vant/commit/a7ab2f8049b7c18d2a2f74aeac26f72dfbadaf6f)
+- slider: 修复双滑块情况下，传入空数组无法滑动的问题 [#9409](https://github.com/youzan/vant/issues/9409)
+- Uploader: 修复 --van-uploader-delete-icon-size 变量未正确生效的问题 [#9453](https://github.com/youzan/vant/issues/9453)
+
 ### [v3.2.2](https://github.com/youzan/vant/compare/v3.2.1...v3.2.2)
 
 `2021-09-02`

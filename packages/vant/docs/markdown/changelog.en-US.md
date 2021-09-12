@@ -16,6 +16,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.2.3](https://github.com/youzan/vant/compare/v3.2.2...v3.2.3)
+
+`2021-09-12`
+
+**Bug Fixes**
+
+- Button: should support CSS vars gradient background color [#9454](https://github.com/youzan/vant/issues/9454)
+- Calendar: fix disabled date selection [#9361](https://github.com/youzan/vant/issues/9361)
+- Field: fix user-select input issue in iOS [#9418](https://github.com/youzan/vant/issues/9418)
+- FIeld: field-error-message-font-size var name [#9394](https://github.com/youzan/vant/issues/9394)
+- Popup: failed to autoplay when activated [#9452](https://github.com/youzan/vant/issues/9452)
+- Theme: remove less tilde [a7ab2f](https://github.com/youzan/vant/commit/a7ab2f8049b7c18d2a2f74aeac26f72dfbadaf6f)
+- slider: fix empty range value [#9409](https://github.com/youzan/vant/issues/9409)
+- Uploader: uploader-delete-icon-size should affect icon size [#9453](https://github.com/youzan/vant/issues/9453)
+
 ### [v3.2.2](https://github.com/youzan/vant/compare/v3.2.1...v3.2.2)
 
 `2021-09-02`
