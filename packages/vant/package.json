@@ -2,8 +2,8 @@
   "name": "vant",
   "version": "3.2.3",
   "description": "Mobile UI Components built on Vue",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "lib/vant.js",
+  "module": "lib/vant.es.js",
   "style": "lib/index.css",
   "typings": "lib/index.d.ts",
   "files": [
