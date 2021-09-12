@@ -279,6 +279,8 @@ export default defineComponent({
       children.forEach((swipe) => {
         swipe.setOffset(0);
       });
+
+      autoplay();
     };
 
     const resize = () => initialize(state.active);
@@ -417,7 +419,7 @@ export default defineComponent({
     );
 
     watch(count, () => initialize(state.active));
-    watch([count, () => props.autoplay], autoplay);
+    watch(() => props.autoplay, autoplay);
     watch([windowSize.width, windowSize.height], resize);
     watch(usePageVisibility(), (visible) => {
       if (visible === 'visible') {
