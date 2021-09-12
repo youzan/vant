@@ -84,7 +84,6 @@ export default createComponent({
         <div
           vShow={this.value}
           style={style}
-          key={this.keyCount}
           class={bem({
             round,
             [position]: position,
@@ -92,7 +91,9 @@ export default createComponent({
           })}
           onClick={this.onClick}
         >
-          {this.slots()}
+          <div key={this.keyCount}>
+            {this.slots()}
+          </div>
           {this.closeable && (
             <Icon
               role="button"
