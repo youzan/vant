@@ -55,7 +55,9 @@ export default createComponent({
   },
 
   mounted() {
-    this.updateLocation();
+    setTimeout(()=>{
+      this.updateLocation();
+    }, 500)
   },
 
   beforeDestroy() {
