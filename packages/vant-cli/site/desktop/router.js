@@ -112,7 +112,7 @@ export const router = createRouter({
       return { el: to.hash };
     }
 
-    return { x: 0, y: 0 };
+    return { top: 0 };
   },
 });
 
