@@ -3,6 +3,9 @@
     <demo-block card :title="t('basicUsage')">
       <van-area :title="t('title')" :area-list="t('areaList')" />
     </demo-block>
+    <demo-block card :title="t('basicUsage')">
+      <van-area :title="t('title')" />
+    </demo-block>
 
     <demo-block card :title="t('title2')">
       <van-area :title="t('title')" :area-list="t('areaList')" :value="value" />

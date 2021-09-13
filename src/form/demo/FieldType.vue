@@ -33,7 +33,20 @@
 
       <van-field name="radio" :label="t('radio')">
         <template #input>
+
+        </template>
+        <template #input>
           <van-radio-group v-model="radio" direction="horizontal">
+            <van-radio name="1">{{ t('radio') }} 1</van-radio>
+            <van-radio name="2">{{ t('radio') }} 2</van-radio>
+          </van-radio-group>
+        </template>
+
+      </van-field>
+
+      <van-field name="radio" :label="t('radio')">
+        <template #input>
+          <van-radio-group :value.sync="radio666" direction="horizontal">
             <van-radio name="1">{{ t('radio') }} 1</van-radio>
             <van-radio name="2">{{ t('radio') }} 2</van-radio>
           </van-radio-group>
@@ -126,7 +139,8 @@ export default {
   data() {
     return {
       rate: 3,
-      radio: '1',
+      radio: '2',
+      radio666: '1',
       slider: 50,
       stepper: 1,
       uploader: [{ url: 'https://img01.yzcdn.cn/vant/leaf.jpg' }],

@@ -9,6 +9,13 @@
         :placeholder="t('username')"
       />
       <van-field
+        :value.sync="username666"
+        name="username6666"
+        :label="t('username')"
+        :rules="[{ required: true, message: t('requireUsername') }]"
+        :placeholder="t('username')"
+      />
+      <van-field
         v-model="password"
         type="password"
         name="password"
@@ -47,6 +54,7 @@ export default {
   data() {
     return {
       username: '',
+      username666:'',
       password: '',
     };
   },

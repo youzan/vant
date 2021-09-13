@@ -1,3 +1,5 @@
+import { areaList } from '@vant/area-data';
+
 import { createNamespace } from '../utils';
 import { pickerProps } from '../picker/shared';
 import Picker from '../picker';
@@ -31,7 +33,7 @@ export default createComponent({
     value: String,
     areaList: {
       type: Object,
-      default: () => ({}),
+      default: () => (areaList || {}),
     },
     columnsNum: {
       type: [Number, String],

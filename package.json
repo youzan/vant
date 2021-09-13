@@ -74,6 +74,7 @@
     "vue": ">= 2.6.0"
   },
   "devDependencies": {
+    "@vant/area-data": "^1.1.1",
     "@vant/cli": "^2.10.3",
     "@vant/eslint-config": "^3.3.2",
     "@vue/compiler-sfc": "^3.2.2",

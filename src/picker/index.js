@@ -13,6 +13,7 @@ const [createComponent, bem, t] = createNamespace('picker');
 
 export default createComponent({
   props: {
+    pvalue: [Number, String],
     ...pickerProps,
     defaultIndex: {
       type: [Number, String],
@@ -113,6 +114,7 @@ export default createComponent({
     emit(event) {
       if (this.dataType === 'text') {
         this.$emit(event, this.getColumnValue(0), this.getColumnIndex(0));
+        this.$emit('update:pvalue', this.getColumnValue(0));
       } else {
         let values = this.getValues();
 
@@ -124,6 +126,7 @@ export default createComponent({
         }
 
         this.$emit(event, values, this.getIndexes());
+        this.$emit('update:pvalue', values);
       }
     },
 
