@@ -24,6 +24,7 @@ import Header from './components/Header';
 
 export default createComponent({
   props: {
+    cvalue: [Date, Array],
     title: String,
     color: String,
     value: Boolean,
@@ -91,14 +92,17 @@ export default createComponent({
     minDate: {
       type: Date,
       validator: isDate,
-      default: () => new Date(),
+      default() {
+        const now = new Date();
+        return new Date(now.getFullYear() - 20, now.getMonth(), now.getDate());
+      },
     },
     maxDate: {
       type: Date,
       validator: isDate,
       default() {
         const now = new Date();
-        return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
+        return new Date(now.getFullYear() + 20, now.getMonth(), now.getDate());
       },
     },
     firstDayOfWeek: {
@@ -231,9 +235,9 @@ export default createComponent({
     },
 
     getInitialDate() {
-      const { type, minDate, maxDate, defaultDate } = this;
+      const { type, minDate, maxDate, defaultDate, cvalue } = this;
 
-      if (defaultDate === null) {
+      if (cvalue === null || defaultDate === null) {
         return defaultDate;
       }
 
@@ -246,15 +250,15 @@ export default createComponent({
       }
 
       if (type === 'range') {
-        const [startDay, endDay] = defaultDate || [];
+        const [startDay, endDay] = cvalue || defaultDate || [];
         return [startDay || defaultVal, endDay || getNextDay(defaultVal)];
       }
 
       if (type === 'multiple') {
-        return defaultDate || [defaultVal];
+        return cvalue || defaultDate || [defaultVal];
       }
 
-      return defaultDate || defaultVal;
+      return cvalue || defaultDate || defaultVal;
     },
 
     // calculate the position of the elements
@@ -410,6 +414,7 @@ export default createComponent({
 
     onConfirm() {
       this.$emit('confirm', copyDates(this.currentDate));
+      this.$emit('update:cvalue', copyDates(this.currentDate));
     },
 
     genMonth(date, index) {

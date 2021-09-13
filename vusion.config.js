@@ -17,6 +17,7 @@ module.exports = {
             { text: '布局', to: '/layouts' },
         ],
         components: [
+            { group: 'Layout', show: true, name: 'divider', alias: '分割线' },
             { group: 'Layout', show: true, name: 'cell-group', alias: '单元格' },
             { group: 'Layout', show: true, name: 'row', alias: '栅格' },
             { group: 'Display', show: true, name: 'button', alias: '按钮' },
@@ -39,6 +40,11 @@ module.exports = {
             // { group: 'Form', show: true, name: 'u-rate', alias: '评分' },
             // { group: 'Form', show: true, name: 'u-combo-slider', alias: '滑块' },
             { group: 'Form', show: true, name: 'uploader', alias: '文件上传' },
+            { group: 'Selector', show: true, name: 'picker', alias: 'picker选择器' },
+            { group: 'Selector', show: true, name: 'area', alias: '地区选择器' },
+            { group: 'Selector', show: true, name: 'cascader', alias: '级联选择器' },
+            { group: 'Selector', show: true, name: 'datetime-picker', alias: '日期选择器' },
+            { group: 'Feedback', show: true, name: 'dialog', alias: '弹出框' },
         ],
         blocks: [],
         directives: [

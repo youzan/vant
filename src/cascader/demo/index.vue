@@ -21,7 +21,7 @@
           :title="t('selectArea')"
           :options="t('options')"
           @close="base.show = false"
-          @finish="onFinish('base', $event)"
+          @finish="onFinish1('base', $event)"
         />
       </van-popup>
     </demo-block>
@@ -222,6 +222,18 @@ export default {
           this.async.options[0].children = this.t('asyncOptions2');
         }, 500);
       }
+    },
+
+    onFinish1(type, { value, selectedOptions }) {
+      const result = selectedOptions
+        .map((option) => option.text || option.name)
+        .join('/');
+
+      this[type] = {
+        ...this[type],
+        value,
+        result,
+      };
     },
 
     onFinish(type, { value, selectedOptions }) {

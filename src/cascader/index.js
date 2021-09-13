@@ -168,10 +168,15 @@ export default createComponent({
         selectedOptions,
       };
       this.$emit('input', option[this.valueKey]);
+      this.$emit('update:value', option[this.valueKey]);
       this.$emit('change', eventParams);
 
       if (!option[this.childrenKey]) {
         this.$emit('finish', eventParams);
+        console.log(this.$parent);
+        if (this.$parent) {
+          this.$parent.realValue = false;
+        }
       }
     },
 

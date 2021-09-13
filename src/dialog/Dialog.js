@@ -4,12 +4,15 @@ import { PopupMixin } from '../mixins/popup';
 import Button from '../button';
 import GoodsAction from '../goods-action';
 import GoodsActionButton from '../goods-action-button';
+import Text from '../text';
 
 const [createComponent, bem, t] = createNamespace('dialog');
 
 export default createComponent({
   mixins: [PopupMixin()],
-
+  components: {
+    [Button.name]: Button,
+  },
   props: {
     title: String,
     theme: String,
@@ -23,7 +26,10 @@ export default createComponent({
     cancelButtonColor: String,
     confirmButtonText: String,
     confirmButtonColor: String,
-    showCancelButton: Boolean,
+    showCancelButton: {
+      type: Boolean,
+      default: true,
+    },
     overlay: {
       type: Boolean,
       default: true,
@@ -142,7 +148,7 @@ export default createComponent({
       return (
         <div class={[BORDER_TOP, bem('footer')]}>
           {this.showCancelButton && (
-            <Button
+            <van-button
               size="large"
               class={bem('cancel')}
               loading={this.loading.cancel}
@@ -154,7 +160,7 @@ export default createComponent({
             />
           )}
           {this.showConfirmButton && (
-            <Button
+            <van-button
               size="large"
               class={[bem('confirm'), { [BORDER_LEFT]: multiple }]}
               loading={this.loading.confirm}
@@ -193,6 +199,12 @@ export default createComponent({
         );
       }
     },
+    openModal() {
+      this.realValue = true;
+    },
+    closeModal() {
+      this.realValue = false;
+    }
   },
 
   render() {
@@ -204,9 +216,12 @@ export default createComponent({
     const messageSlot = this.slots();
     const title = this.slots('title') || this.title;
     const Title = title && (
-      <div class={bem('header', { isolated: !message && !messageSlot })}>
+      // <div class={bem('header', { isolated: !message && !messageSlot })}>
+      //   {title}
+      // </div>
+      <Text class={bem('header', { isolated: !message && !messageSlot })}>
         {title}
-      </div>
+      </Text>
     );
 
     return (
@@ -216,7 +231,7 @@ export default createComponent({
         onAfterLeave={this.onClosed}
       >
         <div
-          vShow={this.value}
+          vShow={this.realValue}
           role="dialog"
           aria-labelledby={this.title || message}
           class={[bem([this.theme]), this.className]}
@@ -224,6 +239,7 @@ export default createComponent({
         >
           {Title}
           {this.genContent(title, messageSlot)}
+          {this.slots('inject')}
           {this.theme === 'round-button'
             ? this.genRoundButtons()
             : this.genButtons()}

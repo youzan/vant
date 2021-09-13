@@ -1,0 +1,43 @@
+- name: van-cascader
+  title: 级联选择器
+  icon: cascader
+  labels:
+    - Selector
+  description: 级联选择框，用于多层级数据的选择，典型场景为省市区选择
+  attrs:
+    - name: value
+      title: 值
+      type: string, number
+      sync: true
+      model: true
+      default: ''
+      description: 选中的值
+      advanced: true
+    - name: options
+      title: 数据数组
+      type: array
+      default: []
+      description: 一个包含字符串或对象的数组
+    - name: title
+      title: 顶部栏标题
+      type: string
+      default: '标题'
+      description: 顶部栏标题
+    - name: placeholder
+      title: 未选中时的提示文案
+      type: string
+      default: '请选择'
+      description: 未选中时的提示文案
+    - name: field-names
+      title: 自定义 options 结构中的字段
+      type: object
+      default: { text: 'text', value: 'value', children: 'children' }
+      description: 自定义 options 结构中的字段
+  slots: false
+  events:
+    - name: finish
+      title: 全部选项选择完成后触发
+      description: 全部选项选择完成后触发
+    - name: change
+      title: 选中项变化时触发
+      description: 选中项变化时触发

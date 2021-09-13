@@ -18,12 +18,12 @@ export default createComponent({
     },
     minDate: {
       type: Date,
-      default: () => new Date(currentYear - 10, 0, 1),
+      default: () => new Date(currentYear - 20, 0, 1),
       validator: isDate,
     },
     maxDate: {
       type: Date,
-      default: () => new Date(currentYear + 10, 11, 31),
+      default: () => new Date(currentYear + 20, 11, 31),
       validator: isDate,
     },
   },

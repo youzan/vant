@@ -10,23 +10,23 @@
       type: string
       sync: true
       model: true
-      default: ''
+      default: ""
       description: 当前选中的省市区code
       advanced: true
     - name: title
       title: 顶部栏标题
       type: string
-      default: '标题'
+      default: 标题
       description: 顶部栏标题
     - name: confirm-button-text
       title: 确认按钮文字
       type: string
-      default: '确认'
+      default: 确认
       description: 确认按钮文字
     - name: cancel-button-text
       title: 取消按钮文字
       type: string
-      default: '取消'
+      default: 取消
       description: 取消按钮文字
     - name: visible-item-count
       title: 可见选项个数

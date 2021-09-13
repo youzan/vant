@@ -32,6 +32,12 @@ module.exports = [
     // { group: 'Form', show: true, name: 'u-rate', alias: '评分' },
     // { group: 'Form', show: true, name: 'u-combo-slider', alias: '滑块' },
     { group: 'Form', show: true, name: 'uploader', alias: '文件上传' },
+    { group: 'Selector', show: true, name: 'picker', alias: 'picker选择器' },
+    { group: 'Selector', show: true, name: 'area', alias: '地区选择器' },
+    { group: 'Selector', show: true, name: 'cascader', alias: '级联选择器' },
+    { group: 'Selector', show: true, name: 'datetime-picker', alias: '日期选择器' },
+    { group: 'Feedback', show: true, name: 'dialog', alias: '弹出框' },
+
 
     // { group: 'Display', show: true, name: 'u-text', alias: '文本' },
     // { group: 'Display', show: true, name: 'u-link', alias: '链接' },
