@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block card :title="t('basicUsage')">
       <van-cell :title="t('buttonBasic')" is-link @click="showBasic = true" />
-      <van-popup v-model="showBasic" :style="{ padding: '30px 50px' }" >
+      <van-popup v-model="showBasic" :style="{ padding: '30px 50px' }" design-title="怎么说">
         {{ t('content') }}
       </van-popup>
     </demo-block>

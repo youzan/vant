@@ -234,6 +234,7 @@ export default {
         value,
         result,
       };
+      console.log(this.base.value);
     },
 
     onFinish(type, { value, selectedOptions }) {

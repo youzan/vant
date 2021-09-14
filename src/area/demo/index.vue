@@ -8,7 +8,7 @@
     </demo-block>
 
     <demo-block card :title="t('title2')">
-      <van-area :title="t('title')" :area-list="t('areaList')" :value="value" />
+      <van-area :title="t('title')" :area-list="t('areaList')" :value.sync="value" />
     </demo-block>
 
     <demo-block card :title="t('title3')">

@@ -10,9 +10,9 @@ const [createComponent, bem, t] = createNamespace('dialog');
 
 export default createComponent({
   mixins: [PopupMixin()],
-  components: {
-    [Button.name]: Button,
-  },
+  // components: {
+  //   [Button.name]: Button,
+  // },
   props: {
     title: String,
     theme: String,
@@ -142,13 +142,17 @@ export default createComponent({
       );
     },
 
-    genButtons() {
+    genButtons(footerSlot) {
       const multiple = this.showCancelButton && this.showConfirmButton;
-
+      if (footerSlot) {
+        return <div class={[BORDER_TOP, bem('footer')]} vusion-slot-name="footer">
+          {footerSlot}
+        </div>
+      }
       return (
-        <div class={[BORDER_TOP, bem('footer')]}>
+        <div class={[BORDER_TOP, bem('footer')]} vusion-slot-name="footer">
           {this.showCancelButton && (
-            <van-button
+            <Button
               size="large"
               class={bem('cancel')}
               loading={this.loading.cancel}
@@ -160,7 +164,7 @@ export default createComponent({
             />
           )}
           {this.showConfirmButton && (
-            <van-button
+            <Button
               size="large"
               class={[bem('confirm'), { [BORDER_LEFT]: multiple }]}
               loading={this.loading.confirm}
@@ -214,12 +218,14 @@ export default createComponent({
 
     const { message } = this;
     const messageSlot = this.slots();
+    const footerSlot = this.slots('footer');
     const title = this.slots('title') || this.title;
+    console.log(this.title);
     const Title = title && (
       // <div class={bem('header', { isolated: !message && !messageSlot })}>
       //   {title}
       // </div>
-      <Text class={bem('header', { isolated: !message && !messageSlot })}>
+      <Text class={bem('header', { isolated: !message && !messageSlot })} style={{'display': 'block'}}>
         {title}
       </Text>
     );
@@ -240,9 +246,10 @@ export default createComponent({
           {Title}
           {this.genContent(title, messageSlot)}
           {this.slots('inject')}
-          {this.theme === 'round-button'
+          {this.genButtons(footerSlot)}
+          {/* {this.theme === 'round-button'
             ? this.genRoundButtons()
-            : this.genButtons()}
+            : this.genButtons(footerSlot)} */}
         </div>
       </transition>
     );

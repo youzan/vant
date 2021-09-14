@@ -19,11 +19,29 @@
       <van-cell is-link :title="t('componentCall')" @click="show = true" />
       <van-dialog
         v-model="show"
-        :title="t('title')"
+        :title="'退下' || t('title')"
         show-cancel-button
         :lazy-render="false"
       >
         <img :src="image" />
+        <!-- <template #footer>77777</template> -->
+      </van-dialog>
+    </demo-block>
+    <demo-block card :title="t('componentCall')">
+      <van-cell is-link :title="t('componentCall')" @click="show2 = true" />
+      <van-dialog
+        v-model="show2"
+        :title="'退下2' || t('title')"
+        show-cancel-button
+        :lazy-render="false"
+      >
+        <div vusion-slot-name="default" style="min-height: 200px;width: 100%;">内容</div>
+        <template #footer>
+          <van-row style="width: 100%">
+            <van-col span="12" style="text-align: center;"><van-button style="border: none">取消</van-button></van-col>
+            <van-col span="12" style="text-align: center;"><van-button style="border: none">确认</van-button></van-col>
+          </van-row>
+        </template>
       </van-dialog>
     </demo-block>
   </demo-section>
@@ -54,6 +72,7 @@ export default {
   data() {
     return {
       show: false,
+      show2: false,
       currentRate: 0,
       image: 'https://img01.yzcdn.cn/vant/apple-3.jpg',
     };

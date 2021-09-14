@@ -1,9 +1,11 @@
 ### 基础用法
 
 ``` html
-<van-picker
-  title="标题"
-  show-toolbar
->
-</van-picker>
+<van-popup design-title="双击编辑picker选择器" round position="bottom" safe-area-inset-bottom>
+  <van-picker
+    title="标题"
+    show-toolbar
+  >
+  </van-picker>
+</van-popup>
 ```

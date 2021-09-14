@@ -8,7 +8,6 @@
         @change="onChange1"
       />
     </demo-block>
-
     <demo-block card :title="t('defaultIndex')">
       <van-picker
         show-toolbar
@@ -44,6 +43,7 @@
         show-toolbar
         :title="t('title')"
         :columns="t('disabledColumns')"
+        @confirm="onConfirm222"
       />
     </demo-block>
 
@@ -111,7 +111,7 @@ export default {
       ],
       disabledColumns: [
         { text: '杭州', disabled: true },
-        { text: '宁波' },
+        { text: '宁波', value: 7777 },
         { text: '温州' },
       ],
       column3: {
@@ -150,6 +150,7 @@ export default {
     return {
       showPicker: false,
       fieldValue: '',
+      pupupd: true,
     };
   },
 
@@ -195,7 +196,9 @@ export default {
       this.showPicker = false;
       this.fieldValue = value;
     },
-
+    onConfirm222(value) {
+      console.log(value);
+    },
     onCancel2() {
       this.showPicker = false;
     },

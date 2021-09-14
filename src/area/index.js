@@ -97,7 +97,7 @@ export default createComponent({
       this.$nextTick(() => {
         this.setValues();
       });
-    },
+    }
   },
 
   mounted() {
@@ -195,6 +195,7 @@ export default createComponent({
       values = this.parseOutputValues(values);
       this.setValues();
       this.$emit('confirm', values, index);
+      this.$emit('update:value', this.code);
     },
 
     getDefaultCode() {

@@ -33,6 +33,7 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    designTitle: String,
     // getContainer: {
     //   type: String,
     //   default: 'body',
