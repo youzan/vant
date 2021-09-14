@@ -97,7 +97,7 @@
         :show-confirm="false"
         :min-date="tiledMinDate"
         :max-date="tiledMaxDate"
-        :default-date="tiledMinDate"
+        :default-date.sync="cvalue"
         :style="{ height: '500px' }"
       />
     </demo-block>
@@ -117,6 +117,7 @@
       :confirm-disabled-text="confirmDisabledText"
       :first-day-of-week="firstDayOfWeek"
       @confirm="onConfirm"
+      :default-date.sync="cvalue"
     />
   </demo-section>
 </template>
@@ -176,6 +177,7 @@ export default {
 
   data() {
     return {
+      cvalue: null,
       date: {
         maxRange: [],
         selectSingle: null,

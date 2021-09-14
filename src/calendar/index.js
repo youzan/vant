@@ -24,7 +24,6 @@ import Header from './components/Header';
 
 export default createComponent({
   props: {
-    cvalue: [Date, Array],
     title: String,
     color: String,
     value: Boolean,
@@ -235,9 +234,9 @@ export default createComponent({
     },
 
     getInitialDate() {
-      const { type, minDate, maxDate, defaultDate, cvalue } = this;
+      const { type, minDate, maxDate, defaultDate } = this;
 
-      if (cvalue === null || defaultDate === null) {
+      if (defaultDate === null) {
         return defaultDate;
       }
 
@@ -250,15 +249,15 @@ export default createComponent({
       }
 
       if (type === 'range') {
-        const [startDay, endDay] = cvalue || defaultDate || [];
+        const [startDay, endDay] = defaultDate || [];
         return [startDay || defaultVal, endDay || getNextDay(defaultVal)];
       }
 
       if (type === 'multiple') {
-        return cvalue || defaultDate || [defaultVal];
+        return defaultDate || [defaultVal];
       }
 
-      return cvalue || defaultDate || defaultVal;
+      return defaultDate || defaultVal;
     },
 
     // calculate the position of the elements
@@ -414,7 +413,7 @@ export default createComponent({
 
     onConfirm() {
       this.$emit('confirm', copyDates(this.currentDate));
-      this.$emit('update:cvalue', copyDates(this.currentDate));
+      this.$emit('update:default-date', copyDates(this.currentDate));
     },
 
     genMonth(date, index) {
@@ -506,11 +505,15 @@ export default createComponent({
   },
 
   render() {
+    if (this.$env && this.$env.VUE_APP_DESIGNER) {
+      return this.genCalendar();
+    }
     if (this.poppable) {
       const createListener = (name) => () => this.$emit(name);
 
       return (
         <Popup
+          safe-area-inset-bottom
           round
           class={bem('popup')}
           value={this.value}

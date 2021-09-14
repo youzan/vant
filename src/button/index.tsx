@@ -99,7 +99,7 @@ function Button(
       event.preventDefault();
     }
     if (!loading && !disabled) {
-      console.log(ctx, 'button ctx');
+      // console.log(ctx, 'button ctx');
       // console.log(ctx.parent.$router);
       // console.log(ctx.parent.$route);
       emit(ctx, 'click', event);

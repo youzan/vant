@@ -4,7 +4,7 @@
     - Selector
   icon: switchg
   attrs:
-    - name: cvalue
+    - name: default-date
       title: 值
       type: Date, Array
       sync: true
