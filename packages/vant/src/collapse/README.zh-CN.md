@@ -146,7 +146,7 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| toggle | 切换面试展开状态，传 `true` 为展开，`false` 为收起，不传参为切换 | _expand?: boolean_ | - |
+| toggle | 切换面板展开状态，传 `true` 为展开，`false` 为收起，不传参为切换 | _expand?: boolean_ | - |
 
 ### 类型定义
 
