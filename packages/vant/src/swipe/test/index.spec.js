@@ -61,7 +61,7 @@ test('should swipe to specific swipe after calling the swipeTo method', async ()
   const { swipe } = wrapper.vm.$refs;
   swipe.swipeTo(2);
 
-  await later(50);
+  await later(100);
   expect(onChange).toHaveBeenCalledWith(2);
 });
 
@@ -78,7 +78,7 @@ test('should allow to call swipeTo method with immediate option', async () => {
     immediate: true,
   });
 
-  await later(50);
+  await later(100);
   expect(onChange).toHaveBeenCalledWith(2);
 });
 
@@ -92,7 +92,7 @@ test('should swipe to next swipe after calling next method', async () => {
 
   const { swipe } = wrapper.vm.$refs;
   swipe.next();
-  await later(50);
+  await later(100);
   expect(onChange).toHaveBeenCalledWith(1);
 });
 
@@ -106,7 +106,7 @@ test('should swipe to prev swipe after calling prev method', async () => {
 
   const { swipe } = wrapper.vm.$refs;
   swipe.prev();
-  await later(50);
+  await later(100);
   expect(onChange).toHaveBeenCalledWith(2);
 });
 
