@@ -7,7 +7,7 @@
     - name: type
       type: string
       title: 时间类型
-      default: "date"
+      default: "datetime"
       options:
         - value: time
           title: 时间选择器
@@ -23,13 +23,11 @@
     - name: min-date
       title: 最小日期
       type: Date
-      default: null
-      description: 可选的最小时间，精确到分钟
+      description: 当时间选择器类型为datetime时可选的最小时间，精确到分钟, 默认为十年前
     - name: max-date
       title: 最大日期
       type: Date
-      default: null
-      description: 可选的最大时间，精确到分钟
+      description: 当时间选择器类型为datetime时可选的最大时间，精确到分钟, 默认为十年后
     - name: max-hour
       title: 最大小时
       type: string, number
@@ -50,6 +48,10 @@
       type: string, number
       default: 0
       description: 当时间选择器类型为 time 时
+    - name: title
+      type: string
+      default: ''
+      description: 顶部栏标题
   slots: false
   events:
     - name: confirm

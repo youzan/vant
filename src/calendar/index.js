@@ -24,6 +24,7 @@ import Header from './components/Header';
 
 export default createComponent({
   props: {
+    wga: Boolean,
     title: String,
     color: String,
     value: Boolean,
@@ -91,17 +92,14 @@ export default createComponent({
     minDate: {
       type: Date,
       validator: isDate,
-      default() {
-        const now = new Date();
-        return new Date(now.getFullYear() - 20, now.getMonth(), now.getDate());
-      },
+      default: () => new Date(),
     },
     maxDate: {
       type: Date,
       validator: isDate,
       default() {
         const now = new Date();
-        return new Date(now.getFullYear() + 20, now.getMonth(), now.getDate());
+        return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
       },
     },
     firstDayOfWeek: {
@@ -505,7 +503,7 @@ export default createComponent({
   },
 
   render() {
-    if (this.$env && this.$env.VUE_APP_DESIGNER) {
+    if (this.wga || this.$env && this.$env.VUE_APP_DESIGNER) {
       return this.genCalendar();
     }
     if (this.poppable) {

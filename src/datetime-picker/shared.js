@@ -60,7 +60,7 @@ export const TimePickerMixin = {
       if (!oldVal) {
         this.$emit('input', null);
       } else {
-        this.$emit('input', val)
+        this.$emit('input', val);
       }
     },
   },
@@ -81,6 +81,7 @@ export const TimePickerMixin = {
 
     onConfirm() {
       this.$emit('input', this.innerValue)
+      this.$emit('update:value', this.innerValue);
       this.$emit('confirm', this.innerValue);
     },
 

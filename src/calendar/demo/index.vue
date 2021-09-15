@@ -1,5 +1,19 @@
 <template>
   <demo-section>
+    <demo-block>
+         <van-cell
+            is-link
+            :title="t('selectSingle')"
+            @click="showCalendarTest = true"
+          />
+        <van-popup round position="bottom" safe-area-inset-bottom design-title="双击编辑Calendar选择器" class="van-calendar__popup" :value.sync="showCalendarTest">
+    <van-calendar
+    wga
+    :lazy-render="false"
+    title="选择日期"
+  ></van-calendar >
+</van-popup>
+    </demo-block>
     <demo-block card :title="t('basicUsage')">
       <van-cell
         is-link
@@ -177,6 +191,7 @@ export default {
 
   data() {
     return {
+      showCalendarTest: false,
       cvalue: null,
       date: {
         maxRange: [],

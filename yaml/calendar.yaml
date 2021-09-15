@@ -26,11 +26,11 @@
     - name: min-date
       title: 最小日期
       type: Date
-      default: null
+      description: 最小日期,默认为今天
     - name: max-date
       title: 最大日期
       type: Date
-      default: null
+      description: 最大日期,默认当前日期的六个月后
     - name: title
       title: 日历标题
       type: String

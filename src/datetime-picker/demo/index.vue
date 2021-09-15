@@ -34,7 +34,7 @@
 
     <demo-block card :title="t('timeType')">
       <van-datetime-picker
-        v-model="value.time"
+        :value.sync="value.time"
         type="time"
         :title="t('timeType')"
         :min-hour="10"
