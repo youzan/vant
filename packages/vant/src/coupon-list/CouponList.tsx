@@ -94,7 +94,7 @@ export default defineComponent({
     );
 
     const listStyle = computed(() => ({
-      height: windowHeight.value - (props.showExchangeBar ? 140 : 94) + 'px',
+      height: windowHeight.value - (props.showExchangeBar ? 152 : 102) + 'px',
     }));
 
     const onExchange = () => {

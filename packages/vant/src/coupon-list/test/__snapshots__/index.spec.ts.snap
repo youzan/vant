@@ -57,7 +57,7 @@ exports[`should be the sames as the last snapshot when render coupon list 1`] = 
            style
       >
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
-             style="height: 628px;"
+             style="height: 616px;"
         >
           <div class="van-coupon">
             <div class="van-coupon__content">
@@ -335,7 +335,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
            style="display: none;"
       >
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
-             style="height: 628px;"
+             style="height: 616px;"
         >
           <div class="van-coupon-list__empty">
             <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
@@ -350,7 +350,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
            style
       >
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
-             style="height: 628px;"
+             style="height: 616px;"
         >
           <div class="van-coupon-list__empty">
             <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
@@ -433,7 +433,7 @@ exports[`should render list-footer slot correctly 1`] = `
            style="display: none;"
       >
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
-             style="height: 628px;"
+             style="height: 616px;"
         >
           <div class="van-coupon-list__empty">
             <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
@@ -449,7 +449,7 @@ exports[`should render list-footer slot correctly 1`] = `
            style
       >
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
-             style="height: 628px;"
+             style="height: 616px;"
         >
           <div class="van-coupon-list__empty">
             <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
@@ -533,7 +533,7 @@ exports[`should use custom src when using empty-image prop 1`] = `
            style
       >
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
-             style="height: 628px;"
+             style="height: 616px;"
         >
           <div class="van-coupon-list__empty">
             <img src="https://img.yzcdn.com/xxx.png">
