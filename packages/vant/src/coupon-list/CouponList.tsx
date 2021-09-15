@@ -12,7 +12,6 @@ import {
 import { truthProp, createNamespace } from '../utils';
 
 // Composables
-import { useWindowSize } from '@vant/use';
 import { useRefs } from '../composables/use-refs';
 
 // Components
@@ -83,8 +82,6 @@ export default defineComponent({
       code: props.code,
     });
 
-    const { height: windowHeight } = useWindowSize();
-
     const buttonDisabled = computed(
       () =>
         !props.exchangeButtonLoading &&
@@ -92,10 +89,6 @@ export default defineComponent({
           !state.code ||
           state.code.length < props.exchangeMinLength)
     );
-
-    const listStyle = computed(() => ({
-      height: windowHeight.value - (props.showExchangeBar ? 140 : 94) + 'px',
-    }));
 
     const onExchange = () => {
       emit('exchange', state.code);
@@ -155,8 +148,10 @@ export default defineComponent({
       return (
         <Tab title={title}>
           <div
-            class={bem('list', { 'with-bottom': props.showCloseButton })}
-            style={listStyle.value}
+            class={bem('list', {
+              'with-bar': props.showExchangeBar,
+              'with-bottom': props.showCloseButton,
+            })}
           >
             {coupons.map((coupon, index) => (
               <Coupon
@@ -183,8 +178,10 @@ export default defineComponent({
       return (
         <Tab title={title}>
           <div
-            class={bem('list', { 'with-bottom': props.showCloseButton })}
-            style={listStyle.value}
+            class={bem('list', {
+              'with-bar': props.showExchangeBar,
+              'with-bottom': props.showCloseButton,
+            })}
           >
             {disabledCoupons.map((coupon) => (
               <Coupon
