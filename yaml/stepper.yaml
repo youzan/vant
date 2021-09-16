@@ -2,7 +2,7 @@
   title: 步进器
   labels:
     - Form
-  icon: switch
+  icon: stepper
   next: true
   nested: false
   attrs:

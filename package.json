@@ -78,6 +78,7 @@
     "@vant/cli": "^2.10.3",
     "@vant/eslint-config": "^3.3.2",
     "@vue/compiler-sfc": "^3.2.2",
+    "@vusion/validator": "^0.3.0",
     "@xgheaven/nos-node-sdk": "^0.2.5",
     "cross-env": "^7.0.3",
     "postcss-px-to-viewport": "^1.1.1",

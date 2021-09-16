@@ -2,13 +2,33 @@
   <demo-block :title="t('basicUsage')">
     <van-form @submit="onSubmit" @failed="onFailed">
       <van-field
+        v-model="username"
+        name="username"
+        :label="t('username')"
+        :rules="[{ required: true, message: t('requireUsername') }]"
+        :placeholder="t('username')"
+      />
+      <van-field
         :value.sync="username666"
         name="username6666"
         :label="t('username')"
-        rules="required | integer | range(1,65535) @i"
+        rules="required | pattern(/^[a-zA-Z0-9/\s]+$/)"
         wga
         :placeholder="t('username')"
       />
+      <van-field
+        v-model="password"
+        type="password"
+        name="password"
+        :label="t('password')"
+        :rules="[{ required: true, message: t('requirePassword') }]"
+        :placeholder="t('password')"
+      />
+      <div style="margin: 16px 16px 0;">
+        <van-button round block type="info" native-type="submit">
+          {{ t('submit') }}
+        </van-button>
+      </div>
     </van-form>
   </demo-block>
 </template>

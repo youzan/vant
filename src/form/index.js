@@ -1,3 +1,7 @@
+import Vue from 'vue';
+import VueVusionValidator from '@vusion/validator/VuePlugin';
+Vue.use(VueVusionValidator);
+
 import { createNamespace } from '../utils';
 import { sortChildren } from '../utils/vnodes';
 

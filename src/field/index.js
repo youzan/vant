@@ -19,6 +19,7 @@ import { cellProps } from '../cell/shared';
 
 import VanEmptyCol from '../emptycol/index';
 
+import VusionValidator from '@vusion/validator';
 
 const [createComponent, bem] = createNamespace('field');
 
@@ -42,7 +43,7 @@ export default createComponent({
   props: {
     ...cellProps,
     name: String,
-    rules: Array,
+    rules: [Array, String],
     disabled: {
       type: Boolean,
       default: null,
@@ -93,6 +94,10 @@ export default createComponent({
       type: String,
       default: '',
     },
+    wga: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -107,11 +112,23 @@ export default createComponent({
     value() {
       this.updateValue(this.value);
       this.resetValidation();
-      this.validateWithTrigger('onChange');
+      // this.validateWithTrigger('onChange');
+      this.validateWithTriggerVusion('change');
       this.$nextTick(this.adjustSize);
     },
   },
-
+  created() {
+    try {
+      this.validatorVuF = new VusionValidator(
+        this.$options.validators,
+        this.$options.rules,
+        this.rules || [],
+        this,
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  },
   mounted() {
     this.updateValue(this.value, this.formatTrigger);
     this.$nextTick(this.adjustSize);
@@ -128,6 +145,10 @@ export default createComponent({
   },
 
   computed: {
+    currentRules() {
+      // return (this.rules || (this.rootVM && this.rootVM.rules && this.rootVM.rules[this.name]));
+      return this.rules;
+    },
     showClear() {
       const readonly = this.getProp('readonly');
 
@@ -233,7 +254,19 @@ export default createComponent({
 
       return message;
     },
-
+    runRulesVusion(rules, trigger='') {
+      let value = this.formValue;
+      let validatorVuF = this.validatorVuF;
+      return validatorVuF.validate(value, trigger, Object.assign({
+        label: this.label || '字段',
+      })).then(() => {
+        console.log('tongguo');
+      }).catch((error) => {
+        console.log(error)
+        this.validateFailed = true;
+        this.validateMessage = error;
+      });
+    },
     runRules(rules) {
       return rules.reduce(
         (promise, rule) =>
@@ -287,6 +320,26 @@ export default createComponent({
       });
     },
 
+    validateVusion(rules = this.rules, trigger) {
+      return new Promise((resolve) => {
+        if (!rules) {
+          resolve();
+        }
+
+        this.resetValidation();
+        this.runRulesVusion(rules, trigger).then(() => {
+          if (this.validateFailed) {
+            resolve({
+              name: this.name,
+              message: this.validateMessage,
+            });
+          } else {
+            resolve();
+          }
+        });
+      });
+    },
+
     validateWithTrigger(trigger) {
       if (this.vanForm && this.rules) {
         const defaultTrigger = this.vanForm.validateTrigger === trigger;
@@ -303,7 +356,23 @@ export default createComponent({
         }
       }
     },
+    validateWithTriggerVusion(trigger) {
+      if (this.vanForm && this.rules) {
+        // const defaultTrigger = this.vanForm.validateTrigger === trigger;
+        // const rules = this.rules.filter((rule) => {
+        //   if (rule.trigger) {
+        //     return rule.trigger === trigger;
+        //   }
 
+        //   return defaultTrigger;
+        // });
+
+        // if (rules.length) {
+        //   this.validate(rules);
+        // }
+        this.validateVusion(this.rules, trigger);
+      }
+    },
     resetValidation() {
       if (this.validateFailed) {
         this.validateFailed = false;
@@ -370,7 +439,8 @@ export default createComponent({
       this.focused = false;
       this.updateValue(this.value, 'onBlur');
       this.$emit('blur', event);
-      this.validateWithTrigger('onBlur');
+      // this.validateWithTrigger('onBlur');
+      this.validateWithTriggerVusion('blur');
       resetScroll();
     },
 

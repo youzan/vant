@@ -49,6 +49,9 @@
     - name: failed
       title: 验证不通过
       description: 提交表单且验证不通过后触发
+  methods:
+    - name: validate
+      description: 验证表单，支持传入 name 来验证单个或部分表单项
 - name: van-field
   title: 表单项
   next: false
