@@ -1605,10 +1605,10 @@
   resolved "https://registry.nlark.com/@types/less/download/@types/less-3.0.3.tgz#f9451dbb9548d25391107d65d6401a0cfb15db92"
   integrity sha1-+UUdu5VI0lOREH1l1kAaDPsV25I=
 
-"@types/lodash@^4.14.172":
-  version "4.14.172"
-  resolved "https://registry.nlark.com/@types/lodash/download/@types/lodash-4.14.172.tgz#aad774c28e7bfd7a67de25408e03ee5a8c3d028a"
-  integrity sha1-qtd0wo57/Xpn3iVAjgPuWow9Aoo=
+"@types/lodash@^4.14.173":
+  version "4.14.173"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.173.tgz#9d3b674c67a26cf673756f6aca7b429f237f91ed"
+  integrity sha512-vv0CAYoaEjCw/mLy96GBTnRoZrSxkGE0BKzKimdR8P3OzrNYNvBgtW7p055A+E8C31vXNUhWKoFCbhq7gbyhFg==
 
 "@types/mdast@^3.0.0":
   version "3.0.10"
