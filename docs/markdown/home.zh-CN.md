@@ -67,6 +67,7 @@ Vant 3 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一致
 | [mxdi9i7/vant-react](https://github.com/mxdi9i7/vant-react) | 基于 React 和 TS 构建的移动端组件库 |
 | [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Vant 支付宝小程序版 |
 | [taroify](https://gitee.com/mallfoundry/taroify) | Vant Taro 版 |
+| [vant-theme](https://github.com/Aisen60/vant-theme) | Vant 在线主题预览工具 |
 
 ### 链接
 
