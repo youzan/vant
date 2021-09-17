@@ -71,7 +71,7 @@ export default defineComponent({
     const onClick = (event: MouseEvent) => {
       const { target } = event;
       const icon = iconRef.value;
-      const iconClicked = icon === target || icon!.contains(target as Node);
+      const iconClicked = icon === target || icon?.contains(target as Node);
 
       if (!disabled.value && (iconClicked || !props.labelDisabled)) {
         emit('toggle');
