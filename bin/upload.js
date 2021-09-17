@@ -9,7 +9,7 @@ const client = new NosClient({
     defaultBucket: 'test-lcpapp-static', // 默认的 Bucket，如果不设置，那么需要在单独的每次请求中进行设置
 });
 
-const version = pkg.lcapversion;
+const version = pkg.version;
 
 const dirs = ['lib', 'src'];
 

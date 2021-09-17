@@ -8,7 +8,7 @@
   attrs:
     - name: value
       title: 值
-      type: boolean
+      type: number
       sync: true
       model: true
       default: false

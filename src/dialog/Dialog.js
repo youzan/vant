@@ -246,10 +246,10 @@ export default createComponent({
           {Title}
           {this.genContent(title, messageSlot)}
           {this.slots('inject')}
-          {this.genButtons(footerSlot)}
-          {/* {this.theme === 'round-button'
+          {/* {this.genButtons(footerSlot)} */}
+          {this.theme === 'round-button'
             ? this.genRoundButtons()
-            : this.genButtons(footerSlot)} */}
+            : this.genButtons(footerSlot)}
         </div>
       </transition>
     );

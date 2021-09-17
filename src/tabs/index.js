@@ -55,9 +55,15 @@ export default createComponent({
   props: {
     color: String,
     border: Boolean,
-    sticky: Boolean,
+    sticky: {
+      type: Boolean,
+      default: true,
+    },
     animated: Boolean,
-    swipeable: Boolean,
+    swipeable: {
+      type: Boolean,
+      default: true,
+    },
     scrollspy: Boolean,
     background: String,
     lineWidth: [Number, String],
