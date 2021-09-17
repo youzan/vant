@@ -65,7 +65,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
     onClick(event) {
       const { target } = event;
       const { icon } = this.$refs;
-      const iconClicked = icon === target || icon.contains(target);
+      const iconClicked = icon === target || icon?.contains(target);
 
       if (!this.isDisabled && (iconClicked || !this.labelDisabled)) {
         this.toggle();
