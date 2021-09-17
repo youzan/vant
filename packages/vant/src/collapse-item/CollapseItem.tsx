@@ -91,7 +91,9 @@ export default defineComponent({
 
           // use double raf to ensure animation can start
           doubleRaf(() => {
-            wrapperRef.value!.style.height = value ? contentHeight : '0';
+            if (wrapperRef.value) {
+              wrapperRef.value.style.height = value ? contentHeight : '0';
+            }
           });
         } else {
           onTransitionEnd();
