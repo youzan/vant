@@ -148,6 +148,7 @@ module.exports = {
     'replay',
     'shrink',
     'shield-o',
+    'guide-o',
   ],
   filled: [
     // has corresponding outline icon
