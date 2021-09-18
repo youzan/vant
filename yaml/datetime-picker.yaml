@@ -2,7 +2,7 @@
   title: 时间选择器
   labels:
     - Selector
-  icon: switchg
+  icon: date-time-picker
   attrs:
     - name: type
       type: string

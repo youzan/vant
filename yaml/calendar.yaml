@@ -2,7 +2,7 @@
   title: 日期选择器
   labels:
     - Selector
-  icon: switchg
+  icon: time-picker
   attrs:
     - name: default-date
       title: 值

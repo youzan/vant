@@ -2,13 +2,13 @@
   title: 步进器
   labels:
     - Form
-  icon: switch
+  icon: stepper
   next: true
   nested: false
   attrs:
     - name: value
       title: 值
-      type: boolean
+      type: number
       sync: true
       model: true
       default: false

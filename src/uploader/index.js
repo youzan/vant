@@ -515,7 +515,7 @@ export default createComponent({
 
   render() {
     return (
-      <div class={bem()}>
+      <div class={bem()} {...{ attrs: this.$attrs }}>
         <div class={bem('wrapper', { disabled: this.disabled })}>
           {this.genPreviewList()}
           {this.genUpload()}

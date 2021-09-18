@@ -8,6 +8,7 @@
   nested: false
   attrs:
     - name: value
+      title: 是否展示
       type: boolean
       sync: true
       default: false
@@ -16,8 +17,6 @@
       title: 弹出位置
       type: string
       options:
-        - value: center
-          title: 中间
         - value: top
           title: 上
         - value: bottom
@@ -26,12 +25,12 @@
           title: 右
         - value: left
           title: 左
-      default: center
+      default: bottom
       description: 弹出具体位置
     - name: close-on-click-overlay
       title: 点击遮罩层后关闭
       type: boolean
-      default: true
+      default: false
       description: 是否在点击遮罩层后关闭
   slots:
     - name: default
