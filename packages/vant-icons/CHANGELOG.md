@@ -1,5 +1,10 @@
 ## Changelog
 
+## 1.7.1
+
+- add guide-o icon
+- config.js now is esmodule
+
 ## 1.7.0
 
 - add shield-o icon

@@ -1762,10 +1762,10 @@
   resolved "https://registry.nlark.com/@vant/area-data/download/@vant/area-data-1.1.1.tgz#b9acf8a804c0d60f721b6900680299422b006b1a"
   integrity sha1-uaz4qATA1g9yG2kAaAKZQisAaxo=
 
-"@vant/icons@^1.7.0":
-  version "1.7.0"
-  resolved "https://registry.nlark.com/@vant/icons/download/@vant/icons-1.7.0.tgz?cache=0&sync_timestamp=1626958553251&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vant%2Ficons%2Fdownload%2F%40vant%2Ficons-1.7.0.tgz#02d427532a8142c35db159da9c364fe6890c3ac9"
-  integrity sha1-AtQnUyqBQsNdsVnanDZP5okMOsk=
+"@vant/icons@^1.7.1":
+  version "1.7.1"
+  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.7.1.tgz#49ae420302b5581e54e6894891e5a05bc76e9f87"
+  integrity sha512-66LPEq89w4kl258nALZcRNd14eUJC8VajvTJwvZKOaZawz6CUeVZ6ybhedTUhQhRjeA8SyWD7dFt4ALf33Sabw==
 
 "@vant/lazyload@^1.2.0":
   version "1.2.0"
