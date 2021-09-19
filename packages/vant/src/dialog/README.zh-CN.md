@@ -34,6 +34,21 @@ export default {
 };
 ```
 
+在 `script setup` 中，可以通过以下方式使用：
+
+```html
+<script setup>
+  const VanDialog = Dialog.Component;
+</script>
+
+<template>
+  <!-- 中划线命名 -->
+  <van-dialog />
+  <!-- 也支持大驼峰命名 -->
+  <VanDialog>
+</template>
+```
+
 ## 代码演示
 
 ### 消息提示
