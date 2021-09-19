@@ -34,6 +34,21 @@ export default {
 };
 ```
 
+在 `script setup` 中，可以通过以下方式使用：
+
+```html
+<script setup>
+  const VanNotify = Notify.Component;
+</script>
+
+<template>
+  <!-- 中划线命名 -->
+  <van-notify />
+  <!-- 也支持大驼峰命名 -->
+  <VanNotify>
+</template>
+```
+
 ## 代码演示
 
 ### 基础用法
