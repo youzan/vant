@@ -5673,10 +5673,10 @@ map-obj@^4.0.0:
   resolved "https://registry.nlark.com/map-obj/download/map-obj-4.2.1.tgz#e4ea399dbc979ae735c83c863dd31bdf364277b7"
   integrity sha1-5Oo5nbyXmuc1yDyGPdMb3zZCd7c=
 
-markdown-it-anchor@^8.3.0:
-  version "8.3.0"
-  resolved "https://registry.nlark.com/markdown-it-anchor/download/markdown-it-anchor-8.3.0.tgz?cache=0&sync_timestamp=1630012373548&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmarkdown-it-anchor%2Fdownload%2Fmarkdown-it-anchor-8.3.0.tgz#9e1a71766f778c382e5b6d3808d8c4d3a3b4ae30"
-  integrity sha1-nhpxdm93jDguW204CNjE06O0rjA=
+markdown-it-anchor@^8.3.1:
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/markdown-it-anchor/-/markdown-it-anchor-8.3.1.tgz#b48a2097c89f82e1625db772b8a6a03e9e637cdc"
+  integrity sha512-i12nPHfLM5uKQXVkzyJt5tZ7DetcYqZoCeiUc9OPqhAhqAR6SOswqMgzqEvDyT5BK6DOc8MmV78VjzCsYM5J5g==
 
 markdown-it@^12.2.0:
   version "12.2.0"
