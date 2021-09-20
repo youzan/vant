@@ -13,16 +13,14 @@
       options:
         - value: false
           title: 否
-        - value: value
+        - value: true
           title: 是
       default: false
       description: 是否是卡片风格
 - name: van-cell
   title: 单元格
-  next: false
-  nested: true
   attrs:
-    - name: is-link
+    - name: isLink
       title: 箭头
       type: boolean
       default: true
@@ -37,7 +35,7 @@
           title: 上
         - value: down
           title: 下
-        - value: right
+        - value: ""
           title: 右
       default: right
       description: 箭头得方向

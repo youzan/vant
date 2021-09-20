@@ -46,16 +46,16 @@
           title: 迷你
       default: normal
       description: 设置尺寸
-    - name: square
-      title: 是否方形
-      type: boolean
-      default: true
+    - name: squareroud
+      title: 形状
+      type: string
+      options:
+        - value: square
+          title: 方形
+        - value: round
+          title: 圆形
+      default: ""
       description: 设置方形形状
-    - name: round
-      title: 是否圆形
-      type: boolean
-      default: false
-      description: 设置圆形形状
     - name: disabled
       title: 禁用
       type: boolean
@@ -63,7 +63,7 @@
       description: 是否禁用。禁用后不会响应点击事件。
     - name: block
       title: 展示方式
-      type: boolean
+      type: string
       options:
         - value: false
           title: 行内展示

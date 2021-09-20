@@ -44,6 +44,7 @@ export type ButtonProps = RouteProps & {
   decoration: { type: Boolean, default: true },
   download: { type: Boolean, default: false },
   destination: String,
+  squareroud?: String
 };
 
 export type ButtonEvents = {
@@ -179,8 +180,10 @@ function Button(
         disabled,
         hairline,
         block: props.block,
-        round: props.round,
-        square: props.square,
+        // round: props.round,
+        // square: props.square,
+        round: props.squareroud && props.squareroud === 'round' ? true : false,
+        square: props.squareroud && props.squareroud === 'square' ? true : false,
       },
     ]),
     { [BORDER_SURROUND]: hairline },
@@ -270,8 +273,9 @@ Button.props = {
   color: String,
   block: Boolean,
   plain: Boolean,
-  round: Boolean,
-  square: Boolean,
+  // round: Boolean,
+  // square: Boolean,
+  squareroud: String,
   loading: Boolean,
   hairline: Boolean,
   disabled: Boolean,

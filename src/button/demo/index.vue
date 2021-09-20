@@ -3,7 +3,7 @@
     <demo-block :title="t('type')">
       <div class="demo-button-row">
         <van-button type="primary" class="u-code-example_demo_" @before-navigate="beforeNavigate" to="666">{{ t('primary') }}</van-button>
-        <van-button type="info" class="u-code-example_demo_">{{ t('info') }}</van-button>
+        <van-button type="info" class="u-code-example_demo_" squareroud="round">{{ t('info') }}</van-button>
         <van-button type="default" class="u-code-example_demo_">{{ t('default') }}</van-button>
       </div>
       <van-button type="danger" class="u-code-example_demo_">{{ t('danger') }}</van-button>
