@@ -7969,11 +7969,12 @@ vite-plugin-html@^2.1.0:
     fs-extra "^10.0.0"
     html-minifier-terser "^5.1.1"
 
-vite-plugin-md@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.nlark.com/vite-plugin-md/download/vite-plugin-md-0.11.0.tgz#cb397270e1a27bc17588d43f1a8a6478055eceac"
-  integrity sha1-yzlycOGie8F1iNQ/GopkeAVezqw=
+vite-plugin-md@^0.11.1:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-md/-/vite-plugin-md-0.11.1.tgz#bc40455eb56767395e9ccf46ef4a50e8c0d2b748"
+  integrity sha512-nS+VmwFpUv+RiUcHntMPGXb8QxdJupW7q4AtqWpdpkAmTgI/HRilLRFtBIPxt4d+ZVtuMFrG3l1TG/hTUgghUg==
   dependencies:
+    "@rollup/pluginutils" "^4.1.1"
     gray-matter "^4.0.3"
     markdown-it "^12.2.0"
 
