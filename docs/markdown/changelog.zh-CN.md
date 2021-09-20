@@ -16,6 +16,18 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.28](https://github.com/youzan/vant/compare/v2.12.27...v2.12.28)
+
+`2021-09-20`
+
+**Feature**
+
+- Icons: 新增 shield-o、guide-o 图标 [fc2406](https://github.com/youzan/vant/commit/fc2406ee2849af989b151b31f9de138213fadf23)
+
+**Bug Fixes**
+
+- Radio: 修复 icon ref 可能为 undefined 导致报错的问题 [#9504](https://github.com/youzan/vant/issues/9504)
+
 ### [v2.12.27](https://github.com/youzan/vant/compare/v2.12.27-beta.0...v2.12.27)
 
 `2021-09-06`

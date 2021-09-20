@@ -16,6 +16,18 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.28](https://github.com/youzan/vant/compare/v2.12.27...v2.12.28)
+
+`2021-09-20`
+
+**Feature**
+
+- Icons: add shield-o、guide-o icon [fc2406](https://github.com/youzan/vant/commit/fc2406ee2849af989b151b31f9de138213fadf23)
+
+**Bug Fixes**
+
+- Radio: icon ref may be undefined [#9504](https://github.com/youzan/vant/issues/9504)
+
 ### [v2.12.27](https://github.com/youzan/vant/compare/v2.12.27-beta.0...v2.12.27)
 
 `2021-09-06`
