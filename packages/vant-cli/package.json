@@ -49,7 +49,7 @@
     "@vant/markdown-vetur": "^2.2.0",
     "@vant/stylelint-config": "^1.4.2",
     "@vant/touch-emulator": "^1.3.2",
-    "@vitejs/plugin-vue": "^1.6.2",
+    "@vitejs/plugin-vue": "^1.8.1",
     "@vitejs/plugin-vue-jsx": "^1.1.8",
     "@vue/babel-plugin-jsx": "^1.0.7",
     "@vue/test-utils": "2.0.0-rc.6",
