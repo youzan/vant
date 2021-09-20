@@ -11,7 +11,10 @@ export type DividerProps = {
   hairline: boolean;
   borderColor?: string;
   contentPosition: 'left' | 'center' | 'right';
+  title?: string;
 };
+
+// import Text from '../text';
 
 const [createComponent, bem] = createNamespace('divider');
 
@@ -28,11 +31,12 @@ function Divider(
       class={bem({
         dashed: props.dashed,
         hairline: props.hairline,
-        [`content-${props.contentPosition}`]: slots.default,
+        [`content-${props.contentPosition}`]: props.title || slots.default,
       })}
       {...inherit(ctx, true)}
     >
-      {slots.default && slots.default()}
+      {/* {slots.default && slots.default()} */}
+      {props.title ? <span vusion-slot-name="text">{props.title}</span> : ''}
     </div>
   );
 }
@@ -47,6 +51,7 @@ Divider.props = {
     type: String,
     default: 'center',
   },
+  title: String,
 };
 
 export default createComponent<DividerProps>(Divider);

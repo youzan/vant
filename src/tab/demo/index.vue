@@ -8,6 +8,14 @@
       </van-tabs>
     </demo-block>
 
+    <demo-block :title="t('basicUsage')">
+      <van-tabs type="line" v-model="active2222">
+        <van-tab title="标签 1" name="1">内容 1</van-tab>
+        <van-tab title="标签 2" name="2">内容 2</van-tab>
+        <van-tab title="标签 3" name="3">内容 3</van-tab>
+      </van-tabs>
+    </demo-block>
+
     <demo-block :title="t('matchByName')">
       <van-tabs v-model="activeName">
         <van-tab name="a" :title="t('tab') + 1" :badgebtn="true" :badge="50" :badgemax="48"> {{ t('content') }} 1 </van-tab>
@@ -151,6 +159,7 @@ export default {
   data() {
     return {
       active: 2,
+      active2222: '2',
       activeName: 'b',
       tabs: [1, 2, 3, 4],
     };

@@ -12,6 +12,7 @@
       type: any
       sync: true
       model: true
+      default: 0
       description: 选中标签页的值。
     - name: disabled
       title: 禁用
@@ -25,7 +26,7 @@
         - value: line
           title: 线条
         - value: card
-          title: 卡片
+          title: 胶囊
       default: line
       description: 选项卡样式风格
     - name: sticky
@@ -73,6 +74,11 @@
   nested: true
   is-sub: true
   attrs:
+    - name: name
+      title: 值
+      type: string
+      default: 标题
+      description: 标签页的值
     - name: title
       title: 标题
       type: string
@@ -84,18 +90,18 @@
       default: false
       description: 是否禁用
     - name: badgebtn
-      title: 徽标显示
+      title: 徽章显示
       type: boolean
       default: false
-      description: 是否显示徽标
+      description: 是否显示徽章
     - name: badge
-      title: 徽标
+      title: 徽章
       type: string, number
-      description: 徽标的内容
+      description: 徽章的内容
     - name: badgemax
       title: 最大值
       type: number
-      description: 徽标内容为数字时显示的最大值
+      description: 徽章内容为数字时显示的最大值
   slots:
     - name: default
       title: 默认

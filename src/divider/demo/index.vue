@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
-      <van-divider class="u-code-example_demo_" />
+      <van-divider class="u-code-example_demo_" title="waga77" />
     </demo-block>
 
     <demo-block :title="t('basicUsage')">
@@ -14,7 +14,7 @@
       </van-divider>
     </demo-block>
 
-    <demo-block :title="t('contentPosition')">
+    <demo-block :title="t('contentPosition')" >
       <van-divider content-position="left">
         {{ t('text') }}
       </van-divider>
@@ -25,7 +25,7 @@
     </demo-block>
 
     <demo-block :title="t('dashed')">
-      <van-divider dashed :hairline="false">
+      <van-divider dashed :hairline="false" title="waga">
         {{ t('text') }}
       </van-divider>
     </demo-block>

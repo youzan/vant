@@ -277,9 +277,11 @@ export default createComponent({
 
       if (newName !== this.active) {
         this.$emit('input', newName);
+        this.$emit('update:active', newName);
 
         if (shouldEmitChange) {
           this.$emit('change', newName, newTab.title);
+          this.$emit('update:active', newName, newTab.title);
         }
       }
     },

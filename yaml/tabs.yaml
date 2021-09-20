@@ -12,6 +12,7 @@
       type: any
       sync: true
       model: true
+      default: 0
       description: 选中标签页的值。
     - name: disabled
       title: 禁用
@@ -25,7 +26,7 @@
         - value: line
           title: 线条
         - value: card
-          title: 卡片
+          title: 胶囊
       default: line
       description: 选项卡样式风格
     - name: sticky
@@ -73,6 +74,11 @@
   nested: true
   is-sub: true
   attrs:
+    - name: name
+      title: 值
+      type: string
+      default: '标题'
+      description: 标签页的值
     - name: title
       title: 标题
       type: string

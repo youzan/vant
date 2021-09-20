@@ -7,20 +7,6 @@
   next: true
   nested: false
   attrs:
-    - name: gutter
-      title: 列间距
-      type: string, number
-      options:
-        - value: 0
-          title: 无
-        - value: 5
-          title: 小
-        - value: 10
-          title: 正常
-        - value: 20
-          title: 大
-      default: 0
-      description: 列元素之间的间距（单位为 px）
     - name: type
       title: 布局方式
       type: string
@@ -31,6 +17,20 @@
           title: 正常
       default: flex
       description: 元素布局方式
+    - name: gutter
+      title: 列间距
+      type: string
+      options:
+        - value: 0
+          title: 无
+        - value: 10
+          title: 小
+        - value: 20
+          title: 正常
+        - value: 30
+          title: 大
+      default: 0
+      description: 列元素之间的间距（单位为 px）
     - name: justify
       title: 对齐方式
       type: string

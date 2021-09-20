@@ -1,6 +1,6 @@
 - name: van-cascader
   title: 级联选择器
-  icon: cascader
+  icon: cascade-select
   labels:
     - Selector
   description: 级联选择框，用于多层级数据的选择，典型场景为省市区选择

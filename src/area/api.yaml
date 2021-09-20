@@ -1,6 +1,6 @@
 - name: van-area
   title: 地区选择器选择器
-  icon: area
+  icon: region-select
   labels:
     - Selector
   description: 省市区三级联动选择

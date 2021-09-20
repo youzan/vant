@@ -1,7 +1,7 @@
 ### 基本用法
 
 ``` html
-  <van-row>
+  <van-row gutter="0">
     <van-col span="8"></van-col>
     <van-col span="8"></van-col>
     <van-col span="8"></van-col>
