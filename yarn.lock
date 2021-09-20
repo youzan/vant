@@ -1524,10 +1524,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@popperjs/core@^2.5.4":
-  version "2.5.4"
-  resolved "https://registry.npm.taobao.org/@popperjs/core/download/@popperjs/core-2.5.4.tgz#de25b5da9f727985a3757fd59b5d028aba75841a"
-  integrity sha1-3iW12p9yeYWjdX/Vm10Cirp1hBo=
+"@popperjs/core@^2.9.2":
+  version "2.10.1"
+  resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.10.1.tgz#728ecd95ab207aab8a9a4e421f0422db329232be"
+  integrity sha512-HnUhk1Sy9IuKrxEMdIRCxpIqPw6BFsbYSEUO9p/hNw5sMld/+3OLMWQP80F8/db9qsv3qUjs7ZR5bS/R+iinXw==
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -2083,10 +2083,10 @@
     eslint-plugin-import "^2.20.2"
     eslint-plugin-vue "^6.2.2"
 
-"@vant/icons@^1.5.3":
-  version "1.5.3"
-  resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.5.3.tgz#b7779f67bf608d417a82452fbede406dfa46b439"
-  integrity sha1-t3efZ79gjUF6gkUvvt5AbfpGtDk=
+"@vant/icons@^1.7.1":
+  version "1.7.1"
+  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.7.1.tgz#49ae420302b5581e54e6894891e5a05bc76e9f87"
+  integrity sha512-66LPEq89w4kl258nALZcRNd14eUJC8VajvTJwvZKOaZawz6CUeVZ6ybhedTUhQhRjeA8SyWD7dFt4ALf33Sabw==
 
 "@vant/markdown-loader@^2.5.0":
   version "2.5.0"
@@ -2108,12 +2108,12 @@
     fast-glob "^3.2.2"
     fs-extra "^9.0.0"
 
-"@vant/popperjs@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@vant/popperjs/-/popperjs-1.0.0.tgz#2d66ab4b8e275c98fb82f5efd43fdd47964d11f2"
-  integrity sha512-2OAl3URmH37OOATcKuT8iuZozoZVNMc8iLLZvurWZqHlWlAojsDHm7lQ2OKlAV4jlxbiFJt0en6DY+WlxHvN9w==
+"@vant/popperjs@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/@vant/popperjs/-/popperjs-1.1.0.tgz#b4edee5bbfa6fb18705986e313d4fd5f17942a0f"
+  integrity sha512-8MD1gz146awV/uPxYjz4pet22f7a9YVKqk7T+gFkWFwT9mEcrIUEg/xPrdOnWKLP9puXyYtm7oVfSDSefZ/p/w==
   dependencies:
-    "@popperjs/core" "^2.5.4"
+    "@popperjs/core" "^2.9.2"
 
 "@vant/stylelint-config@^1.3.0":
   version "1.3.0"
