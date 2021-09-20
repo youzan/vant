@@ -260,6 +260,13 @@ module.exports = {
 
 配置 HTML 中的 meta 标签，对象的 key 为 name，value 为 content。
 
+### site.enableVConsole
+
+- Type: `boolean`
+- Default: `false`
+
+是否在 dev 时开启 [vConsole](https://github.com/Tencent/vConsole) 调试，用于移动端 debug。
+
 ## Babel
 
 通过根目录下的`babel.config.js`文件可以对 Babel 进行配置。

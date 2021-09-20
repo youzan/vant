@@ -4,7 +4,7 @@ import hljs from 'highlight.js';
 import vitePluginMd from 'vite-plugin-md';
 import vitePluginVue from '@vitejs/plugin-vue';
 import vitePluginJsx from '@vitejs/plugin-vue-jsx';
-import { setBuildTarget, getVantConfig } from '../common';
+import { setBuildTarget, getVantConfig, isDev } from '../common';
 import {
   SITE_DIST_DIR,
   SITE_MOBILE_SHARED_FILE,
@@ -79,6 +79,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
   const siteConfig = getSiteConfig(vantConfig);
   const title = getTitle(siteConfig);
   const baiduAnalytics = get(vantConfig, 'site.baiduAnalytics');
+  const enableVConsole = isDev() && get(vantConfig, 'site.enableVConsole');
 
   return {
     root: SITE_SRC_DIR,
@@ -110,6 +111,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
           ...siteConfig,
           title,
           baiduAnalytics,
+          enableVConsole,
           meta: getHTMLMeta(vantConfig),
         },
       }),
