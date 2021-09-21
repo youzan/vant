@@ -44,7 +44,7 @@
     "@babel/preset-typescript": "^7.15.0",
     "@docsearch/css": "3.0.0-alpha.40",
     "@docsearch/js": "3.0.0-alpha.40",
-    "@types/jest": "^27.0.1",
+    "@types/jest": "^27.0.2",
     "@vant/eslint-config": "^3.3.2",
     "@vant/markdown-vetur": "^2.2.0",
     "@vant/stylelint-config": "^1.4.2",
