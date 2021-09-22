@@ -31,7 +31,7 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@types/fs-extra": "^9.0.12",
+    "@types/fs-extra": "^9.0.13",
     "@types/less": "^3.0.3",
     "@types/lodash": "^4.14.173",
     "@types/postcss-load-config": "^3.0.1",
