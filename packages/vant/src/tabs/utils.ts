@@ -1,15 +1,11 @@
-import { raf, cancelRaf } from '@vant/use';
+import { raf } from '@vant/use';
 import { ScrollElement, getScrollTop, setScrollTop } from '../utils';
-
-let rafId: number;
 
 export function scrollLeftTo(
   scroller: HTMLElement,
   to: number,
   duration: number
 ) {
-  cancelRaf(rafId);
-
   let count = 0;
   const from = scroller.scrollLeft;
   const frames = duration === 0 ? 1 : Math.round((duration * 1000) / 16);
@@ -18,7 +14,7 @@ export function scrollLeftTo(
     scroller.scrollLeft += (to - from) / frames;
 
     if (++count < frames) {
-      rafId = raf(animate);
+      raf(animate);
     }
   }
 
