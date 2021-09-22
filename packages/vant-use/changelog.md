@@ -1,5 +1,9 @@
 # 更新日志
 
+### v1.3.1
+
+- 移除 requestAnimationFrame 的 polyfill
+
 ### v1.3.0
 
 - 新增 `useCustomFieldValue` 方法
