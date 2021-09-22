@@ -16,6 +16,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.29](https://github.com/youzan/vant/compare/v2.12.28...v2.12.29)
+
+`2021-09-22`
+
+**Bug Fixes**
+
+- Tabs: 修复多个 Tabs 组件同时存在时动画失效的问题 [#9542](https://github.com/youzan/vant/issues/9542)
+
 ### [v2.12.28](https://github.com/youzan/vant/compare/v2.12.27...v2.12.28)
 
 `2021-09-20`

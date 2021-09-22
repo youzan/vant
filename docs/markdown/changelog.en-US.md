@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.29](https://github.com/youzan/vant/compare/v2.12.28...v2.12.29)
+
+`2021-09-22`
+
+**Bug Fixes**
+
+- Tabs: failed to scroll into view when render multiple tabs [#9542](https://github.com/youzan/vant/issues/9542)
+
 ### [v2.12.28](https://github.com/youzan/vant/compare/v2.12.27...v2.12.28)
 
 `2021-09-20`
