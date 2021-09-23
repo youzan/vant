@@ -166,7 +166,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Search
 The component exports the following type definitions:
 
 ```ts
-import type { SearchShape, SearchInstance } from 'vant';
+import type { SearchProps, SearchShape, SearchInstance } from 'vant';
 ```
 
 `SearchInstance` is the type of component instance:

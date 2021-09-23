@@ -197,6 +197,8 @@ The component exports the following type definitions:
 
 ```ts
 import type {
+  DropdownMenuProps,
+  DropdownItemProps,
   DropdownItemOption,
   DropdownItemInstance,
   DropdownMenuDirection,

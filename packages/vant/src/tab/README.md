@@ -286,7 +286,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Tabs i
 The component exports the following type definitions:
 
 ```ts
-import type { TabsType, TabsInstance } from 'vant';
+import type { TabsType, TabsProps, TabsInstance } from 'vant';
 ```
 
 `TabsInstance` is the type of component instance:

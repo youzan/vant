@@ -315,6 +315,7 @@ The component exports the following type definitions:
 import type {
   FieldType,
   FieldRule,
+  FieldProps,
   FieldInstance,
   FieldTextAlign,
   FieldClearTrigger,

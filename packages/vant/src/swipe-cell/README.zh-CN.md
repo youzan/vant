@@ -160,7 +160,12 @@ beforeClose 的第一个参数为对象，对象中包含以下属性：
 组件导出以下类型定义：
 
 ```ts
-import type { SwipeCellSide, SwipeCellPosition, SwipeCellInstance } from 'vant';
+import type {
+  SwipeCellSide,
+  SwipeCellProps,
+  SwipeCellPosition,
+  SwipeCellInstance,
+} from 'vant';
 ```
 
 `SwipeCellInstance` 是组件实例的类型，用法如下：

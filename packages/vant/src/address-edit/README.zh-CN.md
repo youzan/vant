@@ -133,6 +133,7 @@ export default {
 ```ts
 import type {
   AddressEditInfo,
+  AddressEditProps,
   AddressEditInstance,
   AddressEditSearchItem,
 } from 'vant';

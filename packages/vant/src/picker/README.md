@@ -385,6 +385,7 @@ The component exports the following type definitions:
 
 ```ts
 import type {
+  PickerProps,
   PickerColumn,
   PickerOption,
   PickerInstance,

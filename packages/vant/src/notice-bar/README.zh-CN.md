@@ -141,7 +141,7 @@ app.use(NoticeBar);
 组件导出以下类型定义：
 
 ```ts
-import type { NoticeBarMode, NoticeBarInstance } from 'vant';
+import type { NoticeBarMode, NoticeBarProps, NoticeBarInstance } from 'vant';
 ```
 
 `NoticeBarInstance` 是组件实例的类型，用法如下：

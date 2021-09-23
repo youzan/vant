@@ -410,6 +410,7 @@ export default {
 
 ```ts
 import type {
+  PickerProps,
   PickerColumn,
   PickerOption,
   PickerInstance,

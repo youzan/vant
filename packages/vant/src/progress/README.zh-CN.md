@@ -78,7 +78,7 @@ app.use(Progress);
 组件导出以下类型定义：
 
 ```ts
-import type { ProgressInstance } from 'vant';
+import type { ProgressProps, ProgressInstance } from 'vant';
 ```
 
 `ProgressInstance` 是组件实例的类型，用法如下：

@@ -191,6 +191,7 @@ The component exports the following type definitions:
 
 ```ts
 import type {
+  ImagePreviewProps,
   ImagePreviewOptions,
   ImagePreviewInstance,
   ImagePreviewScaleEventParams,

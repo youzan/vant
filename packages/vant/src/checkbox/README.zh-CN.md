@@ -351,7 +351,9 @@ checkboxGroup.toggleAll({
 
 ```ts
 import type {
+  CheckboxProps,
   CheckboxInstance,
+  CheckboxGroupProps,
   CheckboxGroupInstance,
   CheckboxGroupToggleAllOptions,
 } from 'vant';
