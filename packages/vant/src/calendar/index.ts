@@ -1,8 +1,9 @@
 import { withInstall } from '../utils';
-import _Calendar from './Calendar';
+import _Calendar, { CalendarProps } from './Calendar';
 
 export const Calendar = withInstall(_Calendar);
 export default Calendar;
+export type { CalendarProps };
 export type {
   CalendarType,
   CalendarDayItem,

@@ -1,17 +1,11 @@
-import {
-  watch,
-  computed,
-  defineComponent,
-  ExtractPropTypes,
-  ComponentPublicInstance,
-} from 'vue';
+import { watch, computed, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import { truthProp, createNamespace } from '../utils';
 import { parseFormat } from './utils';
 
 // Composables
-import { useCountDown, CurrentTime } from '@vant/use';
+import { useCountDown } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('count-down');
@@ -29,20 +23,7 @@ const props = {
   },
 };
 
-type CountDownProps = ExtractPropTypes<typeof props>;
-
-type CountDownExpose = {
-  start: () => void;
-  pause: () => void;
-  reset: () => void;
-};
-
-export type CountDownInstance = ComponentPublicInstance<
-  CountDownProps,
-  CountDownExpose
->;
-
-export type CountDownCurrentTime = CurrentTime;
+export type CountDownProps = ExtractPropTypes<typeof props>;
 
 export default defineComponent({
   name,
