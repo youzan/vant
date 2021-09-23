@@ -66,7 +66,7 @@ export default createComponent({
             (promise, field) =>
               promise.then(() => {
                 if (!errors.length) {
-                  return field.validate().then((error) => {
+                  return field.validateVusion().then((error) => {
                     if (error) {
                       errors.push(error);
                     }
@@ -88,7 +88,7 @@ export default createComponent({
     validateFields(names) {
       return new Promise((resolve, reject) => {
         const fields = this.getFieldsByNames(names);
-        Promise.all(fields.map((item) => item.validate())).then((errors) => {
+        Promise.all(fields.map((item) => item.validateVusion())).then((errors) => {
           errors = errors.filter((item) => item);
 
           if (errors.length) {
@@ -115,7 +115,7 @@ export default createComponent({
 
       if (matched.length) {
         return new Promise((resolve, reject) => {
-          matched[0].validate().then((error) => {
+          matched[0].validateVusion().then((error) => {
             if (error) {
               reject(error);
             } else {
