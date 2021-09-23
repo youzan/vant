@@ -63,6 +63,7 @@ export type PopoverAction = {
   color?: string;
   disabled?: boolean;
   className?: string;
+  [key: PropertyKey]: any;
 };
 
 export default defineComponent({
