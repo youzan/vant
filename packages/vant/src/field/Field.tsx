@@ -69,6 +69,7 @@ export const fieldSharedProps = {
   maxlength: [Number, String],
   inputAlign: String as PropType<FieldTextAlign>,
   placeholder: String,
+  autocomplete: String,
   errorMessage: String,
   error: {
     type: Boolean,
@@ -108,7 +109,6 @@ const props = extend({}, cellProps, fieldSharedProps, {
   labelWidth: [Number, String],
   labelClass: unknownProp,
   labelAlign: String as PropType<FieldTextAlign>,
-  autocomplete: String,
   showWordLimit: Boolean,
   errorMessageAlign: String as PropType<FieldTextAlign>,
   type: {

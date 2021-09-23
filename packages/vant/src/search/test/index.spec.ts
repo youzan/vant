@@ -150,3 +150,14 @@ test('should render id prop correctly', async () => {
   expect(wrapper.find('input').attributes('id')).toEqual('my-id');
   expect(wrapper.find('label').attributes('for')).toEqual('my-id');
 });
+
+test('should allow to set autocomplete attribute', () => {
+  const wrapper = mount(Search, {
+    props: {
+      autocomplete: 'on',
+    },
+  });
+  expect(wrapper.find('input').element.getAttribute('autocomplete')).toEqual(
+    'on'
+  );
+});

@@ -139,6 +139,7 @@ Use `action` slot to custom right button, `cancel` event will no longer be Emitt
 | input-align | Text align of field, can be set to `center` `right` | _string_ | `left` |
 | left-icon | Left icon name | _string_ | `search` |
 | right-icon | Right icon name | _string_ | - |
+| autocomplete `v3.2.3` | [autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) attribute of native input element | _string_ | - |
 
 ### Events
 

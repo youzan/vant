@@ -151,6 +151,7 @@ export default {
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | left-icon | 输入框左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `search` |
 | right-icon | 输入框右侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
+| autocomplete `v3.2.3` | input 标签原生的[自动完成属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) | _string_ | - |
 
 ### Events
 
