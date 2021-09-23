@@ -26,6 +26,6 @@ import '@vant/touch-emulator';
 
 ## CDN 引入
 
-```html
+```htm
 <script src="https://cdn.jsdelivr.net/npm/@vant/touch-emulator"></script>
 ```

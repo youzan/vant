@@ -19,7 +19,8 @@
   },
   "scripts": {
     "bootstrap": "yarn || npm i",
-    "dev": "cross-env scecn=desktop vant-cli dev",
+    "dev": "vue-cli-service doc --port 9100",
+    "dev3": "cross-env scecn=desktop vant-cli dev",
     "dev2": "vant-cli dev",
     "lint": "vant-cli lint",
     "test": "vant-cli test",
@@ -68,6 +69,7 @@
     "@vant/icons": "^1.5.3",
     "@vant/popperjs": "^1.0.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "cloud-ui.vusion": "^0.12.0",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
@@ -77,6 +79,9 @@
     "@vant/area-data": "^1.1.1",
     "@vant/cli": "^2.10.3",
     "@vant/eslint-config": "^3.3.2",
+    "@vue/cli-plugin-babel": "^4.5.13",
+    "@vue/cli-plugin-typescript": "^4.5.13",
+    "@vue/cli-service": "^4.5.13",
     "@vue/compiler-sfc": "^3.2.2",
     "@vusion/validator": "^0.3.0",
     "@xgheaven/nos-node-sdk": "^0.2.5",
@@ -84,6 +89,9 @@
     "postcss-px-to-viewport": "^1.1.1",
     "prettier": "2.1.0",
     "vue": "^2.6.12",
+    "vue-cli-plugin-vusion": "^0.13.3",
+    "vue-i18n": "^8.26.0",
+    "vue-router": "^3.5.2",
     "vue-template-compiler": "^2.6.12",
     "vusion": "^0.12.18",
     "vusion-api": "^0.7.36",
