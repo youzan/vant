@@ -11,8 +11,8 @@
       type: number
       sync: true
       model: true
-      default: false
-      description: 开关状态
+      default: 1
+      description: 值
     - name: min
       title: 最小值
       type: string, number

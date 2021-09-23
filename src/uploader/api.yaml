@@ -7,10 +7,10 @@
   attrs:
     - name: fileList
       title: 文件列表
-      type: array
+      type: Array
       sync: true
       model: true
-      default: []
+      default: "[]"
       description: 已上传的文件列表
     - name: name
       title: 上传的文件字段名
