@@ -12,7 +12,11 @@
 
 ``` vue
 <template>
-    <u-list-view v-model="value" :data-source="load"></u-list-view>
+    <van-list-view :data-source="load">
+        <template #item="scope">
+            <van-cell :title="scope.item.text" isLink></van-cell>
+        </template>
+    </van-list-view>
 </template>
 <script>
 // 模拟后端请求

@@ -8,3 +8,11 @@ export default {
     extends: UListViewItem,
 }
 </script>
+
+<style module>
+/* @import 'cloud-ui.vusion/src/components/u-list-view.vue/item.css'; */
+
+.root:hover {
+    background: none;;
+}
+</style>
