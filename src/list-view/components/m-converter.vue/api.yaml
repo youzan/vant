@@ -1,0 +1,3 @@
+- name: m-converter
+  title: 转换器
+  description: 该 Mixin 集成了数据转换方式。继承之后直接使用converter方法

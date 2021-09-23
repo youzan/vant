@@ -1,0 +1,52 @@
+- name: m-emitter
+  title: 发送器
+  description: 该 Mixin 集成了一些发送事件相关的方法。继承之后直接使用方法即可。
+  methods:
+    - name: $contact(condition, callback)
+      description: 联系符合条件的上级组件。
+      params:
+        - name: condition
+          type: string, Function<$parent, boolean>
+          description: 查找条件。如果为字符串，则根据上级组件的`name`是否与之相同来判断；如果为函数，传入上级组件实例，根据返回的布尔值判断。
+        - name: callback
+          type: Function<$parent>
+          description: 联系成功时的回调函数。
+    - name: $dispatch(condition, eventName, ...args)
+      description: 向符合条件的上级组件发送事件。
+      params:
+        - name: condition
+          type: string, Function<$parent, boolean>
+          description: 查找条件。如果为字符串，则根据上级组件的`name`是否与之相同来判断；如果为函数，传入上级组件实例，根据返回的布尔值判断。
+        - name: eventName
+          type: string
+          description: 发送的事件名称。
+        - name: ...args
+          type: Array<any>
+          description: 发送的事件参数。
+    - name: $broadcast(condition, eventName, ...args)
+      description: 向下级组件广播事件。
+      params:
+        - name: condition
+          type: string, Function<$parent, boolean>
+          description: 查找条件。如果为字符串，则根据上级组件的`name`是否与之相同来判断；如果为函数，传入上级组件实例，根据返回的布尔值判断。
+        - name: eventName
+          type: string
+          description: 发送的事件名称。
+        - name: ...args
+          type: Array<any>
+          description: 发送的事件参数。
+    - name: $emitPrevent(name, $event, senderVM, ...args)
+      description: 抛出一个包含`preventDefault`方法的事件。
+      params:
+        - name: name
+          type: string
+          description: 事件名称
+        - name: $event
+          type: object
+          description: 事件对象
+        - name: senderVM
+          type: Vue
+          description: 发送事件的组件实例
+        - name: ...args
+          type: Array<any>
+          description: 其他参数

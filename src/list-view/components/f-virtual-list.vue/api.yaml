@@ -1,0 +1,87 @@
+- name: f-virtual-list
+  title: 虚拟列表
+  description: 用于提升大数据量列表的性能。支持自动计算列表项高度。
+  attrs:
+    - name: list
+      type: Array<Object>
+      default: null
+      description: 含有全部数据的列表。用于获取渲染的长度和位置等信息。
+    - name: item-height
+      type: number
+      default: null
+      description: 默认可以不填，会自动计算和缓存每个列表项的高度，用于处理列表项高度不确定的情形。如果每个列表项的高度是个固定值，可以设置该属性，能够减少由获取高度产生的性能开销。
+    - name: virtual
+      type: boolean
+      default: true
+      description: 是否开启虚拟列表
+    - name: virtual-count
+      type: number
+      default: 60
+      description: 虚拟列表实际渲染的节点数。该数字不宜过大，一般在 200 以内为好。
+    - name: throttle
+      type: number
+      default: 60
+      description: 滚动截流的毫秒数。在该时间内最多更新一次虚拟列表。
+    - name: tag-name
+      type: string
+      default: div
+      description: 设置列表容器的标签名
+    - name: list-key
+      type: string
+      default: list
+      description: 列表的键。一般用于 mixin 方式，修改全部数据的列表来源。
+  data:
+    - name: virtualIndex
+      type: number
+      default: 0
+      description: 实际渲染的首个列表项索引
+    - name: virtualTop
+      type: number
+      default: 0
+      description: 虚拟的顶部高度
+    - name: virtualBottom
+      type: number
+      default: 0
+      description: 虚拟的底部高度
+  computed:
+    - name: virtualList
+      type: Array<Object>
+      description: 实际渲染的列表
+    - name: virtualSlot
+      type: Array<VNode>
+      description: 实际渲染的 VNode 节点
+  slots:
+    - name: default
+      description: 插入使用 v-for 遍历的列表项。
+  events:
+    - name: scroll
+      description: 修改时触发
+      params:
+        - name: $event
+          type: Event
+          description: 原生滚动事件对象
+        - name: senderVM
+          type: FVirtualList
+          description: 发送事件实例
+    - name: virtual-scroll
+      description: 每次处理更新虚拟滚动时触发
+      params:
+        - name: virtualIndex
+          type: number
+          default: 0
+          description: 实际渲染的首个列表项索引
+        - name: virtualCount
+          type: number
+          default: 60
+          description: 虚拟列表实际渲染的节点数
+        - name: virtualTop
+          type: number
+          default: 0
+          description: 虚拟的顶部高度
+        - name: virtualBottom
+          type: number
+          default: 0
+          description: 虚拟的底部高度
+        - name: senderVM
+          type: FVirtualList
+          description: 发送事件实例

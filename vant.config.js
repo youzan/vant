@@ -297,6 +297,11 @@ module.exports = {
                 className: 'hide-in-weapp',
               },
               {
+                path: 'list-view',
+                title: 'ListView 列表',
+                className: 'hide-in-weapp',
+              },
+              {
                 path: 'notice-bar',
                 title: 'NoticeBar 通知栏',
               },
@@ -684,6 +689,10 @@ module.exports = {
               {
                 path: 'list',
                 title: 'List',
+              },
+              {
+                path: 'list-view',
+                title: 'ListView',
               },
               {
                 path: 'notice-bar',

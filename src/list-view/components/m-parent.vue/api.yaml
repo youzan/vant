@@ -1,0 +1,29 @@
+- name: m-parent
+  title: 父子模式
+  options:
+    - name: childName
+      type: string
+      default: m-child
+      description: 子组件的名称
+  data:
+    - name: itemVMs
+      type: Array<MChild>
+      default: []
+      description: 子组件集合
+  slots:
+    - name: default
+      description: 插入`<m-child>`子组件。
+- name: m-child
+  options:
+    - name: parentName
+      type: string
+      default: m-parent
+      description: 父组件的名称
+  data:
+    - name: parentVM
+      type: MParent
+      default: null
+      description: 父组件实例
+  slots:
+    - name: default
+      description: 插入文本或 HTML。

@@ -1,0 +1,164 @@
+- name: m-singlex
+  title: 单选模式
+  description: 常见的单项选择模式，用于快速派生出像`<u-navbar>`、`<u-tabs>`这样的组件。
+  attrs:
+    - name: value
+      type: any
+      sync: true
+      model: true
+      default: null
+      description: 当前选择的值
+    - name: auto-select
+      type: boolean
+      default: false
+      description: 是否自动选择第一个非禁用的项
+    - name: cancelable
+      type: boolean
+      default: false
+      description: 是否可以取消选择
+    - name: router
+      type: boolean
+      default: false
+      description: 是否开启路由模式
+    - name: readonly
+      type: boolean
+      default: false
+      description: 是否只读
+    - name: disabled
+      type: boolean
+      default: false
+      description: 是否禁用
+  slots:
+    - name: default
+      description: 插入`<m-singlex-item>`子组件。
+  events:
+    - name: before-select
+      description: 选择某一项前触发
+      params:
+        - name: $event.value
+          type: any
+          description: 选择项的值
+        - name: $event.oldValue
+          type: any
+          description: 旧的值
+        - name: $event.item
+          type: object
+          description: 选择项相关对象
+        - name: $event.oldItem
+          type: object
+          description: 旧的选择项相关对象
+        - name: $event.itemVM
+          type: MSinglexItem
+          description: 选择项子组件
+        - name: $event.oldVM
+          type: MSinglexItem
+          description: 旧的选择项子组件
+        - name: $event.preventDefault
+          type: Function
+          description: 阻止选择流程
+        - name: senderVM
+          type: MSinglex
+          description: 发送事件实例
+    - name: input
+      description: 选择某一项时触发
+      params:
+        - name: $event
+          type: any
+          description: 选择项的值
+        - name: senderVM
+          type: MSinglex
+          description: 发送事件实例
+    - name: select
+      description: 选择某一项时触发
+      params:
+        - name: $event.value
+          type: any
+          description: 改变后的值
+        - name: $event.oldValue
+          type: any
+          description: 旧的值
+        - name: $event.item
+          type: object
+          description: 选择项相关对象
+        - name: $event.oldItem
+          type: object
+          description: 旧的选择项相关对象
+        - name: $event.itemVM
+          type: MSinglexItem
+          description: 选择项子组件
+        - name: $event.oldVM
+          type: MSinglexItem
+          description: 旧的选择项子组件
+        - name: senderVM
+          type: MSinglex
+          description: 发送事件实例
+    - name: change
+      description: 选择值改变时触发
+      params:
+        - name: $event.value
+          type: any
+          description: 选择项的值
+        - name: $event.oldValue
+          type: any
+          description: 旧的值
+        - name: $event.item
+          type: object
+          description: 选择项相关对象
+        - name: $event.oldItem
+          type: object
+          description: 旧的选择项相关对象
+        - name: $event.itemVM
+          type: MSinglexItem
+          description: 选择项子组件
+        - name: $event.oldVM
+          type: MSinglexItem
+          description: 旧的选择项子组件
+        - name: senderVM
+          type: MSinglex
+          description: 发送事件实例
+- name: m-singlex-item
+  attrs:
+    - name: text
+      title: 文本
+      type: string
+      description: 文本内容
+    - name: value
+      type: any
+      default: null
+      description: 此项的值
+    - name: disabled
+      type: boolean
+      default: false
+      description: 禁用此项
+    - name: item
+      type: object
+      default: null
+      description: 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发
+  events:
+    - name: click
+      description: 点击此项时触发。与原生 click 事件不同的是，它只会在非只读和禁用的情况下触发。
+      params:
+        - name: $event
+          type: MouseEvent
+          description: 鼠标事件对象
+        - name: senderVM
+          type: MSinglexItem
+          description: 发送事件实例
+    - name: before-select
+      description: 选择此项前触发
+      params:
+        - name: $event.value
+          type: any
+          description: 此项的值
+        - name: $event.item
+          type: object
+          description: 此项的相关对象
+        - name: $event.itemVM
+          type: MSinglexItem
+          description: 此组件
+        - name: $event.preventDefault
+          type: Function
+          description: 阻止选择流程
+        - name: senderVM
+          type: MSinglexItem
+          description: 发送事件实例

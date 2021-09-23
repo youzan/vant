@@ -1,0 +1,157 @@
+- name: m-multiplex
+  title: 多选模式
+  description: 常见的多选模式。
+  extends: m-parent
+  attrs:
+    - name: value
+      type: Array
+      sync: true
+      model: true
+      default: null
+      description: 所有选中项的值
+    - name: readonly
+      type: boolean
+      default: false
+      description: 是否只读
+    - name: disabled
+      type: boolean
+      default: false
+      description: 是否禁用
+  slots:
+    - name: default
+      description: 插入`<m-multiplex-item>`子组件。
+  events:
+    - name: before-select
+      description: 选择某一项前触发
+      params:
+        - name: $event.selected
+          type: boolean
+          description: 选中还是取消
+        - name: $event.item
+          type: boolean
+          description: 该选中项相关对象
+        - name: $event.itemVM
+          type: boolean
+          description: 该选中项子组件
+        - name: $event.oldValue
+          type: Array
+          description: 旧的所有选中项的值
+        - name: $event.oldItems
+          type: Array<object>
+          description: 旧的所有选中项相关对象的数组
+        - name: $event.oldVMs
+          type: Array<MMultiplexItem>
+          description: 旧的所有选中项子组件的数组
+        - name: $event.preventDefault
+          type: Function
+          description: 阻止选择流程
+        - name: senderVM
+          type: MMultiplex
+          description: 发送事件实例
+    - name: input
+      description: 选择某一项时触发
+      params:
+        - name: $event
+          type: Array
+          description: 所有选中项的值
+        - name: senderVM
+          type: MMultiplex
+          description: 发送事件实例
+    - name: select
+      description: 选择某一项时触发
+      params:
+        - name: $event.selected
+          type: boolean
+          description: 选中还是取消
+        - name: $event.item
+          type: boolean
+          description: 该选中项相关对象
+        - name: $event.itemVM
+          type: boolean
+          description: 该选中项子组件
+        - name: $event.value
+          type: Array
+          description: 改变后的值
+        - name: $event.oldValue
+          type: Array
+          description: 旧的值
+        - name: $event.items
+          type: Array<object>
+          description: 所有选中项相关对象的数组
+        - name: $event.oldItems
+          type: Array<object>
+          description: 旧的所有选中项相关对象的数组
+        - name: $event.itemVMs
+          type: Array<MMultiplexItem>
+          description: 所有选中项子组件的数组
+        - name: $event.oldVMs
+          type: Array<MMultiplexItem>
+          description: 旧的所有选中项子组件的数组
+        - name: senderVM
+          type: MMultiplex
+          description: 发送事件实例
+    - name: change
+      description: 选择值改变时触发
+      params:
+        - name: $event.value
+          type: Array
+          description: 所有选中项的值
+        - name: $event.items
+          type: Array<object>
+          description: 所有选中项相关对象的数组
+        - name: $event.itemVMs
+          type: Array<MMultiplexItem>
+          description: 所有选中项子组件的数组
+        - name: senderVM
+          type: MMultiplex
+          description: 发送事件实例
+- name: m-multiplex-item
+  attrs:
+    - name: text
+      title: 文本
+      type: string
+      description: 文本内容
+    - name: value
+      type: any
+      default: null
+      description: 此项的值
+    - name: selected
+      type: boolean
+      default: false
+      description: 是否选择此项
+    - name: disabled
+      type: boolean
+      default: false
+      description: 禁用此项
+    - name: item
+      type: object
+      default: null
+      description: 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发
+  events:
+    - name: click
+      description: 点击此项时触发。与原生 click 事件不同的是，它只会在非只读和禁用的情况下触发。
+      params:
+        - name: $event
+          type: MouseEvent
+          description: 鼠标事件对象
+        - name: senderVM
+          type: MMultiplexItem
+          description: 发送事件实例
+    - name: before-select
+      description: 选择此项前触发
+      params:
+        - name: $event.value
+          type: any
+          description: 此项的值
+        - name: $event.item
+          type: object
+          description: 此项的相关对象
+        - name: $event.itemVM
+          type: MMultiplexItem
+          description: 此组件
+        - name: $event.preventDefault
+          type: Function
+          description: 阻止选择流程
+        - name: senderVM
+          type: MMultiplexItem
+          description: 发送事件实例

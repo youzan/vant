@@ -1,0 +1,7 @@
+{
+    "loading": "Loading...",
+    "error": "Failed to load. Please try again",
+    "empty": "No data",
+    "loadMore": "Load more",
+    "noMore": "No more items"
+}
