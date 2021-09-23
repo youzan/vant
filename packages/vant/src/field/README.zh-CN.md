@@ -334,6 +334,7 @@ export default {
 import type {
   FieldType,
   FieldRule,
+  FieldProps,
   FieldInstance,
   FieldTextAlign,
   FieldClearTrigger,

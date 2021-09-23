@@ -333,7 +333,9 @@ The component exports the following type definitions:
 
 ```ts
 import type {
+  CheckboxProps,
   CheckboxInstance,
+  CheckboxGroupProps,
   CheckboxGroupInstance,
   CheckboxGroupToggleAllOptions,
 } from 'vant';

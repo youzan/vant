@@ -169,7 +169,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Area i
 The component exports the following type definitions:
 
 ```ts
-import type { AreaList, AreaInstance, AreaColumnOption } from 'vant';
+import type { AreaProps, AreaList, AreaInstance, AreaColumnOption } from 'vant';
 ```
 
 `AreaInstance` is the type of component instance:

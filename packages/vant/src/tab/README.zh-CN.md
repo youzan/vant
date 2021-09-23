@@ -299,7 +299,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { TabsType, TabsInstance } from 'vant';
+import type { TabsType, TabsProps, TabsInstance } from 'vant';
 ```
 
 `TabsInstance` 是组件实例的类型，用法如下：

@@ -348,7 +348,11 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Dateti
 The component exports the following type definitions:
 
 ```ts
-import type { DatetimePickerType, DatetimePickerInstance } from 'vant';
+import type {
+  DatetimePickerType,
+  DatetimePickerProps,
+  DatetimePickerInstance,
+} from 'vant';
 ```
 
 `DatetimePickerInstance` is the type of component instance:

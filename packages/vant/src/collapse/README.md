@@ -155,7 +155,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Collap
 The component exports the following type definitions:
 
 ```ts
-import type { CollapseItemInstance } from 'vant';
+import type { CollapseItemProps, CollapseItemInstance } from 'vant';
 ```
 
 `CollapseItemInstance` is the type of component instance:

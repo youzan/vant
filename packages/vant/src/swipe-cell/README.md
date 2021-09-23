@@ -151,7 +151,12 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get SwipeC
 The component exports the following type definitions:
 
 ```ts
-import type { SwipeCellSide, SwipeCellPosition, SwipeCellInstance } from 'vant';
+import type {
+  SwipeCellSide,
+  SwipeCellProps,
+  SwipeCellPosition,
+  SwipeCellInstance,
+} from 'vant';
 ```
 
 `SwipeCellInstance` is the type of component instance:

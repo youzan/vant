@@ -241,6 +241,7 @@ export default {
 
 ```ts
 import type {
+  ImagePreviewProps,
   ImagePreviewOptions,
   ImagePreviewInstance,
   ImagePreviewScaleEventParams,

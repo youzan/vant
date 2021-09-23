@@ -388,6 +388,7 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 
 ```ts
 import type {
+  UploaderProps,
   UploaderInstance,
   UploaderResultType,
   UploaderFileListItem,

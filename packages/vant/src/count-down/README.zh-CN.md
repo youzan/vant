@@ -196,7 +196,11 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { CountDownInstance, CountDownCurrentTime } from 'vant';
+import type {
+  CountDownProps,
+  CountDownInstance,
+  CountDownCurrentTime,
+} from 'vant';
 ```
 
 `CountDownInstance` 是组件实例的类型，用法如下：

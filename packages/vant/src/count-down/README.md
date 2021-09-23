@@ -186,7 +186,11 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get CountD
 The component exports the following type definitions:
 
 ```ts
-import type { CountDownInstance, CountDownCurrentTime } from 'vant';
+import type {
+  CountDownProps,
+  CountDownInstance,
+  CountDownCurrentTime,
+} from 'vant';
 ```
 
 `CountDownInstance` is the type of component instance:

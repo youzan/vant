@@ -354,6 +354,7 @@ The component exports the following type definitions:
 ```ts
 import type {
   CalendarType,
+  CalendarProps,
   CalendarDayItem,
   CalendarDayType,
   CalendarInstance,

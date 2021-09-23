@@ -74,7 +74,7 @@ Use `pivot-text` to custom text，use `color` to custom bar color.
 The component exports the following type definitions:
 
 ```ts
-import type { ProgressInstance } from 'vant';
+import type { ProgressProps, ProgressInstance } from 'vant';
 ```
 
 `ProgressInstance` is the type of component instance:

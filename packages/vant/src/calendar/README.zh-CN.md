@@ -360,6 +360,7 @@ export default {
 ```ts
 import type {
   CalendarType,
+  CalendarProps,
   CalendarDayItem,
   CalendarDayType,
   CalendarInstance,

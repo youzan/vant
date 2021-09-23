@@ -133,6 +133,7 @@ The component exports the following type definitions:
 ```ts
 import type {
   AddressEditInfo,
+  AddressEditProps,
   AddressEditInstance,
   AddressEditSearchItem,
 } from 'vant';

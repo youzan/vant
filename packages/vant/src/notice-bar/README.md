@@ -120,7 +120,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Notice
 The component exports the following type definitions:
 
 ```ts
-import type { NoticeBarMode, NoticeBarInstance } from 'vant';
+import type { NoticeBarMode, NoticeBarProps, NoticeBarInstance } from 'vant';
 ```
 
 `NoticeBarInstance` is the type of component instance:
