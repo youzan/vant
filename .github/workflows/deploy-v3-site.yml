@@ -4,7 +4,7 @@ on:
   push:
     branches: [dev]
     paths:
-      - 'docs/**'
+      - 'packages/vant/docs/**'
 
 jobs:
   build-and-deploy:
@@ -25,5 +25,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages
-          folder: packages/vant/site
+          folder: packages/vant/site-dist
           target-folder: v3
