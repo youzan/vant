@@ -109,6 +109,7 @@ Use `title` prop to set keyboard title.
 </van-cell>
 <van-number-keyboard
   :show="show"
+  theme="custom"
   :extra-key="['00', '.']"
   close-button-text="Close"
   @blur="show = false"

@@ -116,6 +116,7 @@ export default {
 </van-cell>
 <van-number-keyboard
   :show="show"
+  theme="custom"
   :extra-key="['00', '.']"
   close-button-text="完成"
   @blur="show = false"
