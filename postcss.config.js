@@ -1,4 +1,4 @@
-if (process.env.scecn == 'desktop') {
+if (process.env.scene == 'desktop') {
   module.exports = {
     plugins: {
     }

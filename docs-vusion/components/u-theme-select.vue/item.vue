@@ -1,3 +1,4 @@
+<script>
 import { USelectItem } from 'cloud-ui.vusion';
 
 export const UThemeSelectItem = {
@@ -7,3 +8,12 @@ export const UThemeSelectItem = {
 };
 
 export default UThemeSelectItem;
+</script>
+
+<style module>
+@extend;
+
+.root {
+    line-height: 36px;
+}
+</style>

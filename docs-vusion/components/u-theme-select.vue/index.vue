@@ -1,3 +1,16 @@
+<script>
+import { USelect } from 'cloud-ui.vusion';
+
+export const UThemeSelect = {
+    name: 'u-theme-select',
+    childName: 'u-theme-select-item',
+    extends: USelect,
+};
+
+export default UThemeSelect;
+</script>
+
+<style module>
 @extend;
 
 .root {
@@ -28,3 +41,4 @@
     color: #333;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
 }
+</style>

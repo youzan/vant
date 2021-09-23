@@ -6,6 +6,7 @@ module.exports = {
     name: '@lcap/mobile-ui',
     CamelName: 'LcapMobileUI',
     srcPath: './src-vusion',
+    docsPath: './docs-vusion',
     docs: {
         title: '@lcap/mobile-ui组件库',
         logo: '组件库',

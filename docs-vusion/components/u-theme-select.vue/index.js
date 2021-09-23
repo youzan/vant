@@ -1,11 +1,9 @@
-import { USelect } from 'cloud-ui.vusion';
+import UThemeSelect from './index.vue';
+import UThemeSelectItem from './item.vue';
 
-export const UThemeSelect = {
-    name: 'u-theme-select',
-    childName: 'u-theme-select-item',
-    extends: USelect,
+export {
+    UThemeSelect,
+    UThemeSelectItem,
 };
-
-export * from './item.vue';
 
 export default UThemeSelect;

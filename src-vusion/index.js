@@ -6,6 +6,7 @@ export { utils };
 export { install } from '@vusion/utils';
 
 
+import '../src/style/base.less';
 const requires = require.context('../src/', true, /\.less$/);
 requires.keys().map((key) => requires(key));
 // requires.keys().forEach((key) => {
