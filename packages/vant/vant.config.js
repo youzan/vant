@@ -77,6 +77,10 @@ module.exports = {
                 title: '进阶用法',
               },
               {
+                path: 'faq',
+                title: '常见问题',
+              },
+              {
                 path: 'changelog',
                 title: '更新日志',
               },
