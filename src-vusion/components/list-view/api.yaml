@@ -1,0 +1,273 @@
+- name: u-list-view
+  title: 数据列表
+  description: 用于列举大量数据的列表框，支持单选、多选、过滤（搜索）、分页等功能。
+  attrs:
+    - name: value
+      type: any
+      sync: true
+      model: true
+      default: null
+      description: 当前选择的值
+    - name: field
+      type: string
+      default: text
+      description: 选项文本的字段名
+      deprecated: true
+    - name: text-field
+      type: string
+      default: text
+      description: 选项文本的字段名
+    - name: value-field
+      type: string
+      default: value
+      description: 选项值的字段名
+    - name: data
+      type: Array<{ text, value }>
+      default: null
+      description: 列表数据
+    - name: data-source
+      type: object, Function, DataSource
+      default: null
+      description: 多功能数据源
+    - name: cancelable
+      type: boolean
+      default: false
+      description: 是否可以取消选择
+    - name: multiple
+      type: boolean
+      default: false
+      description: 是否可以多选
+    - name: repeat
+      type: number
+      default: 5
+      description: 每行排列几项
+    - name: show-head
+      type: boolean
+      default: false
+      description: 是否显示头部
+    - name: title
+      type: string
+      default: 列表
+      description: 列表标题
+    - name: show-foot
+      type: boolean
+      default: false
+      description: 是否显示尾部
+    - name: loading-text
+      type: string
+      default: 加载中...
+      description: 加载时的文字。使用分页加载时才会出现
+    - name: initial-load
+      type: boolean
+      default: true
+      description: 是否在初始时立即加载
+    - name: filterable
+      type: boolean
+      default: false
+      description: 是否可以过滤（搜索），开启将会显示搜索框。
+    - name: placeholder
+      type: string
+      default: 请输入
+      description: 搜索框的占位符
+    - name: clearable
+      type: boolean
+      default: false
+      description: 搜索框是否有清除按钮
+    - name: match-method
+      type: string, Function
+      default: includes
+      description: 过滤时的匹配方法
+    - name: case-sensitive
+      type: string, Function
+      default: includes
+      description: 过滤时大小写是否敏感
+    - name: remote-filtering
+      type: boolean
+      default: false
+      description: 是否使用后端过滤
+    - name: pageable
+      type: boolean
+      default: false
+      description: 是否需要分页
+    - name: page-size
+      type: number
+      default: 50
+      description: 分页大小
+    - name: remote-paging
+      type: number
+      default: false
+      description: 是否使用后端分页
+    - name: readonly
+      type: boolean
+      default: false
+      description: 是否只读
+    - name: disabled
+      type: boolean
+      default: false
+      description: 是否禁用
+    - name: size
+      type: enum
+      options:
+        - normal
+        - large
+        - huge
+        - auto
+        - full
+      description: 设置尺寸。五种宽高的自由组合。
+  slots:
+    - name: default
+      description: 插入文本或 HTML
+    - name: item
+      description: 自定义选项的结构和样式
+  events:
+    - name: before-select
+      description: 选择某一项前触发
+      params:
+        - name: $event.value
+          type: any
+          description: 选择项的值
+        - name: $event.oldValue
+          type: any
+          description: 旧的值
+        - name: $event.item
+          type: object
+          description: 选择项相关对象
+        - name: $event.itemVM
+          type: UListViewItem
+          description: 选择项子组件
+        - name: $event.preventDefault
+          type: Function
+          description: 阻止选择流程
+        - name: senderVM
+          type: UListView
+          description: 发送事件实例
+    - name: input
+      description: 选择某一项时触发
+      params:
+        - name: $event
+          type: any
+          description: 选择项的值
+        - name: senderVM
+          type: UListView
+          description: 发送事件实例
+    - name: select
+      description: 选择某一项时触发。单选模式中：
+      params:
+        - name: $event.value
+          type: any
+          description: 改变后的值
+        - name: $event.oldValue
+          type: any
+          description: 旧的值
+        - name: $event.item
+          type: object
+          description: 选择项相关对象
+        - name: $event.oldItem
+          type: object
+          description: 旧的选择项相关对象
+        - name: $event.itemVM
+          type: UListViewItem
+          description: 选择项子组件
+        - name: $event.oldVM
+          type: UListViewItem
+          description: 旧的选择项子组件
+        - name: senderVM
+          type: UListView
+          description: 发送事件实例
+    - name: select
+      description: 选择某一项时触发。多选模式中：
+      params:
+        - name: $event.selected
+          type: boolean
+          description: 选中还是取消
+        - name: $event.item
+          type: boolean
+          description: 该选中项相关对象
+        - name: $event.itemVM
+          type: boolean
+          description: 该选中项子组件
+        - name: $event.value
+          type: Array
+          description: 改变后的值
+        - name: $event.oldValue
+          type: Array
+          description: 旧的值
+        - name: $event.items
+          type: Array<object>
+          description: 所有选中项相关对象的数组
+        - name: $event.oldItems
+          type: Array<object>
+          description: 旧的所有选中项相关对象的数组
+        - name: $event.itemVMs
+          type: Array<UListViewItem>
+          description: 所有选中项子组件的数组
+        - name: $event.oldVMs
+          type: Array<UListViewItem>
+          description: 旧的所有选中项子组件的数组
+        - name: senderVM
+          type: UListView
+          description: 发送事件实例
+    - name: change
+      description: 选择值改变时触发。单选模式中：
+      params:
+        - name: $event.value
+          type: any
+          description: 选择项的值
+        - name: $event.oldValue
+          type: any
+          description: 旧的值
+        - name: $event.item
+          type: object
+          description: 选择项相关对象
+        - name: $event.oldItem
+          type: object
+          description: 旧的选择项相关对象
+        - name: $event.itemVM
+          type: UListViewItem
+          description: 选择项子组件
+        - name: $event.oldVM
+          type: UListViewItem
+          description: 旧的选择项子组件
+        - name: senderVM
+          type: UListView
+          description: 发送事件实例
+    - name: change
+      description: 选择值改变时触发。多选模式中：
+      params:
+        - name: $event.value
+          type: Array
+          description: 所有选中项的值
+        - name: $event.items
+          type: Array<object>
+          description: 所有选中项相关对象的数组
+        - name: $event.itemVMs
+          type: Array<UListViewItem>
+          description: 所有选中项子组件的数组
+        - name: senderVM
+          type: UListView
+          description: 发送事件实例
+    - name: before-load
+      description: 加载前触发
+      params:
+        - name: $event.preventDefault
+          type: Function
+          description: 阻止加载流程
+        - name: senderVM
+          type: UTableView
+          description: 发送事件实例
+    - name: load
+      description: 加载时触发
+      params:
+        - name: $event
+          type: ""
+          description: 空
+        - name: senderVM
+          type: UTableView
+          description: 发送事件实例
+  methods:
+    - name: load()
+      description: 带缓存地加载
+      params: []
+    - name: reload()
+      description: 清除缓存，重新加载
+      params: []

@@ -93,3 +93,5 @@ export { default as VanText } from '../../src/text';
 export { default as VanToast } from '../../src/toast';
 export { default as VanTreeSelect } from '../../src/tree-select';
 export { default as VanUploader } from '../../src/uploader';
+
+export * from './list-view';
