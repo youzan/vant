@@ -1,31 +1,10 @@
-const inBrowser = typeof window !== 'undefined' && window !== null;
+const inBrowser = typeof window !== 'undefined';
 
-function checkIntersectionObserver() {
-  if (
-    inBrowser &&
-    'IntersectionObserver' in window &&
-    'IntersectionObserverEntry' in window &&
-    'intersectionRatio' in window.IntersectionObserverEntry.prototype
-  ) {
-    // Minimal polyfill for Edge 15's lack of `isIntersecting`
-    // See: https://github.com/w3c/IntersectionObserver/issues/211
-    if (!('isIntersecting' in window.IntersectionObserverEntry.prototype)) {
-      Object.defineProperty(
-        window.IntersectionObserverEntry.prototype,
-        'isIntersecting',
-        {
-          get() {
-            return this.intersectionRatio > 0;
-          },
-        }
-      );
-    }
-    return true;
-  }
-  return false;
-}
-
-export const hasIntersectionObserver = checkIntersectionObserver();
+export const hasIntersectionObserver =
+  inBrowser &&
+  'IntersectionObserver' in window &&
+  'IntersectionObserverEntry' in window &&
+  'intersectionRatio' in window.IntersectionObserverEntry.prototype;
 
 export const modeType = {
   event: 'event',
@@ -86,7 +65,7 @@ function getBestSelectionFromSrcset(el, scale) {
     return [tmpWidth, tmpSrc];
   });
 
-  result.sort(function (a, b) {
+  result.sort((a, b) => {
     if (a[0] < b[0]) {
       return 1;
     }
@@ -236,17 +215,13 @@ const loadImageAsync = (item, resolve, reject) => {
   };
 };
 
-const style = (el, prop) => {
-  return typeof getComputedStyle !== 'undefined'
+const style = (el, prop) =>
+  typeof getComputedStyle !== 'undefined'
     ? getComputedStyle(el, null).getPropertyValue(prop)
     : el.style[prop];
-};
 
-const overflow = (el) => {
-  return (
-    style(el, 'overflow') + style(el, 'overflow-y') + style(el, 'overflow-x')
-  );
-};
+const overflow = (el) =>
+  style(el, 'overflow') + style(el, 'overflow-y') + style(el, 'overflow-x');
 
 const scrollParent = (el) => {
   if (!inBrowser) return;
