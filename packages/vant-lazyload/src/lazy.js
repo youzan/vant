@@ -472,8 +472,14 @@ export default function () {
 
       // value is object
       if (isObject(value)) {
-        if (!value.src && !this.options.silent)
-          console.error('Vue Lazyload warning: miss src with ' + value);
+        if (
+          process.env.NODE_ENV !== 'production' &&
+          !value.src &&
+          !this.options.silent
+        ) {
+          console.error('[@vant/lazyload] miss src with ' + value);
+        }
+
         ({ src } = value);
         loading = value.loading || this.options.loading;
         error = value.error || this.options.error;
