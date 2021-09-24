@@ -197,6 +197,9 @@ export default createComponent({
 
     // @exposed-api
     scrollToDate(targetDate) {
+      this.type === 'single'
+        ? (this.currentDate = targetDate)
+        : (this.currentDate[0] = targetDate);
       raf(() => {
         const displayed = this.value || !this.poppable;
 
@@ -525,7 +528,6 @@ export default createComponent({
         </Popup>
       );
     }
-
     return this.genCalendar();
   },
 });
