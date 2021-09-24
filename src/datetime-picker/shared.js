@@ -81,7 +81,7 @@ export const TimePickerMixin = {
 
     onConfirm() {
       this.$emit('input', this.innerValue)
-      this.$emit('update:value', this.innerValue);
+      this.$emit('update:value', this.type==="datetime" ? this.innerValue.formath("yyyy-MM-dd HH:mm:ss") : this.innerValue);
       this.$emit('confirm', this.innerValue);
     },
 
@@ -99,7 +99,8 @@ export const TimePickerMixin = {
     return (
       <Picker
         ref="picker"
-        columns={this.columns}
+        // columns={this.columns}
+        columnsprop={this.columns}
         readonly={this.readonly}
         scopedSlots={this.$scopedSlots}
         onChange={this.onChange}

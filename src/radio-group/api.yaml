@@ -50,7 +50,7 @@
     - name: name
       title: 选中的值
       type: string
-      description: 选中的值
+      description: 选项值
     - name: disabled
       title: 禁用
       type: boolean
@@ -65,7 +65,7 @@
         - value: lfet
           title: 左
       default: right
-      description: 是否禁用
+      description: 文本位置
   slots: false
   events:
     - name: click

@@ -2,8 +2,8 @@
   <demo-section>
     <demo-block :title="t('basicUsage')">
       <van-radio-group v-model="radio1" class="demo-radio-group">
-        <van-radio name="1">{{ t('radio') }} 1</van-radio>
-        <van-radio name="2">{{ t('radio') }} 2</van-radio>
+        <van-radio name="1" readonly>{{ t('radio') }} 1</van-radio>
+        <van-radio name="2" readonly>{{ t('radio') }} 2</van-radio>
       </van-radio-group>
     </demo-block>
 

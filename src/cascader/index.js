@@ -12,7 +12,7 @@ export default createComponent({
     fieldNames: Object,
     placeholder: String,
     activeColor: String,
-    options: {
+    optionsprop: {
       type: Array,
       default: () => [],
     },
@@ -20,12 +20,17 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    converter: {
+      type: String,
+      default: 'json'
+    },
   },
 
   data() {
     return {
       tabs: [],
       activeTab: 0,
+      options: [],
     };
   },
 
@@ -42,7 +47,7 @@ export default createComponent({
   },
 
   watch: {
-    options: {
+    optionsprop: {
       deep: true,
       handler: 'updateTabs',
     },
@@ -84,8 +89,19 @@ export default createComponent({
         }
       }
     },
-
+    fromValue(value) {
+      if (this.converter === 'json')
+          try {
+            if(typeof value === 'string') return JSON.parse(value || '[]');
+            if(typeof value === 'object') return value;
+          } catch (err) {
+              return [];
+          }
+        else
+            return value || [];
+    },
     updateTabs() {
+      this.options = this.fromValue(this.optionsprop);
       if (this.value || this.value === 0) {
         const selectedOptions = this.getSelectedOptionsByValue(
           this.options,

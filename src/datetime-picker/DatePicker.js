@@ -53,6 +53,7 @@ export default createComponent({
 
   computed: {
     ranges() {
+      console.log(this.innerValue, 565656);
       const {
         maxYear,
         maxDate,
@@ -97,7 +98,6 @@ export default createComponent({
           range: [minMinute, maxMinute],
         },
       ];
-
       switch (this.type) {
         case 'date':
           result = result.slice(0, 3);
@@ -128,8 +128,17 @@ export default createComponent({
 
   methods: {
     formatValue(value) {
-      if (!isDate(value)) {
-        return null;
+      // if (!isDate(value)) {
+      //   return null;
+      // }
+      if (isDate(value)) {
+
+      } else {
+        try {
+          value = new Date(value);
+        } catch (e) {
+          console.warn(e, 'error date');
+        }
       }
 
       let minDate = new Date(this.minDate);
@@ -175,7 +184,6 @@ export default createComponent({
 
       value = Math.max(value, minDate.getTime());
       value = Math.min(value, maxDate.getTime());
-
       return new Date(value);
     },
 
@@ -190,6 +198,7 @@ export default createComponent({
       if (type === 'max') {
         month = 12;
         date = getMonthEndDay(value.getFullYear(), value.getMonth() + 1);
+        console.log(value, date, 9999999);
         hour = 23;
         minute = 59;
       }

@@ -12,38 +12,11 @@
       model: true
       default: ""
       description: 选中的值
-      advanced: true
     - name: columns
       title: 数据源
       type: array
-      default:
-        - text: 杭州
-          value: 1111
-        - text: 宁波
-          value: 2222
-        - text: 绍兴
-          value: 3333
-        - text: 宁波
-          value: 4444
-        - text: 湖州
-          value: 5555
-        - text: 嘉兴
-          value: 6666
-        - text: 金华
-          value: 7777
-        - text: 温州
-          value: 8888
-          disabled: true
+      default: '["杭州","宁波","温州","绍兴","湖州","嘉兴","金华","衢州"]'
       description: 一个包含字符串或对象的数组
-      default2:
-        - 杭州
-        - 宁波
-        - 温州
-        - 绍兴
-        - 湖州
-        - 嘉兴
-        - 金华
-        - 衢州
     - name: value-key
       title: 选项对象中，选项文字对应的键名
       type: string

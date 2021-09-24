@@ -2,6 +2,9 @@
   <demo-section>
     <demo-block :title="t('basicUsage')">
       <van-cell-group>
+
+      </van-cell-group>
+      <van-cell-group>
         <van-cell :title="t('cell')" :value="t('content')" isLink/>
         <van-cell :title="t('cell')" :value="t('content')" :label="t('desc')" />
       </van-cell-group>

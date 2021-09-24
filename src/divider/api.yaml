@@ -9,7 +9,7 @@
   attrs:
     - name: dashed
       title: 线条类型
-      type: boolean
+      type: string
       options:
         - value: true
           title: 虚线

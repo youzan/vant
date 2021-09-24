@@ -31,10 +31,7 @@ export default createComponent({
   props: {
     ...pickerProps,
     value: String,
-    areaList: {
-      type: Object,
-      default: () => (areaList || {}),
-    },
+    areaListprop: [Object, String],
     columnsNum: {
       type: [Number, String],
       default: 3,
@@ -47,12 +44,17 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
+    converter: {
+      type: String,
+      default: 'json'
+    },
   },
 
   data() {
     return {
       code: this.value,
       columns: [{ values: [] }, { values: [] }, { values: [] }],
+      areaList: {},
     };
   },
 
@@ -88,7 +90,7 @@ export default createComponent({
       this.setValues();
     },
 
-    areaList: {
+    areaListprop: {
       deep: true,
       handler: 'setValues',
     },
@@ -105,6 +107,17 @@ export default createComponent({
   },
 
   methods: {
+    fromValue(value) {
+      if (this.converter === 'json')
+          try {
+            if(typeof value === 'string') return JSON.parse(value || '[]');
+            if(typeof value === 'object') return value;
+          } catch (err) {
+              return {};
+          }
+        else
+            return value || {};
+    },
     // get list by code
     getList(type, code) {
       let result = [];
@@ -217,6 +230,7 @@ export default createComponent({
     },
 
     setValues() {
+      this.areaList = this.areaListprop ? this.fromValue(this.areaListprop) : areaList;
       let { code } = this;
 
       if (!code) {

@@ -4,7 +4,7 @@
       <van-picker
         show-toolbar
         :title="t('title')"
-        :columns="t('textColumns')"
+        :columnsprop="t('textColumns')"
         @change="onChange1"
       />
     </demo-block>
@@ -12,7 +12,7 @@
       <van-picker
         show-toolbar
         :title="t('title')"
-        :columns="t('textColumns')"
+        :columnsprop="t('textColumns')"
         :default-index="2"
         @change="onChange1"
       />
@@ -22,7 +22,7 @@
       <van-picker
         show-toolbar
         :title="t('title')"
-        :columns="t('dateColumns')"
+        :columnsprop="t('dateColumns')"
         @cancel="onCancel"
         @confirm="onConfirm"
       />
@@ -32,7 +32,7 @@
       <van-picker
         show-toolbar
         :title="t('title')"
-        :columns="t('cascadeColumns')"
+        :columnsprop="t('cascadeColumns')"
         @cancel="onCancel"
         @confirm="onConfirm"
       />
@@ -42,7 +42,7 @@
       <van-picker
         show-toolbar
         :title="t('title')"
-        :columns="t('disabledColumns')"
+        :columnsprop="t('disabledColumns')"
         @confirm="onConfirm222"
       />
     </demo-block>
@@ -51,13 +51,13 @@
       <van-picker
         show-toolbar
         :title="t('title')"
-        :columns="columns"
+        :columnsprop="columns"
         @change="onChange2"
       />
     </demo-block>
 
     <demo-block card :title="t('loadingStatus')">
-      <van-picker loading show-toolbar :title="t('title')" :columns="columns" />
+      <van-picker loading show-toolbar :title="t('title')" :columnsprop="columns" />
     </demo-block>
 
     <demo-block card v-if="!isWeapp" :title="t('withPopup')">
@@ -73,7 +73,7 @@
         <van-picker
           show-toolbar
           :title="t('title')"
-          :columns="t('textColumns')"
+          :columnsprop="t('textColumns')"
           @cancel="onCancel2"
           @confirm="onConfirm2"
         />
@@ -99,7 +99,7 @@ export default {
       cascadeColumns: cascadeColumns['zh-CN'],
       multipleColumns: '多列选择',
       setColumnValues: '动态设置选项',
-      textColumns: [
+      textColumns: JSON.stringify([
         '杭州',
         '宁波',
         '温州',
@@ -108,7 +108,7 @@ export default {
         '嘉兴',
         '金华',
         '衢州',
-      ],
+      ]),
       disabledColumns: [
         { text: '杭州', disabled: true },
         { text: '宁波', value: 7777 },

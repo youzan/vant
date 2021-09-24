@@ -33,7 +33,7 @@ function CellGroup(
       ]}
       {...inherit(ctx, true)}
     >
-      {slots.default?.()}
+      {slots.default ? slots.default?.() : <van-empty-col></van-empty-col> }
     </div>
   );
 
