@@ -23,8 +23,7 @@
   "devDependencies": {
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.9",
-    "release-it": "^14.2.2",
-    "vue": "^3.0.0"
+    "release-it": "^14.2.2"
   },
   "release-it": {
     "git": {

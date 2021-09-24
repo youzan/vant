@@ -43,3 +43,13 @@ export declare type LazyloadOptions = {
 export declare const Lazyload: {
   install(app: App, options?: LazyloadOptions): void;
 };
+
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $Lazyload: {
+      $on: (event: string, handler: Callback) => void;
+      $off: (event: string, handler?: Callback) => void;
+      $once: (event: string, handler: Callback) => void;
+    };
+  }
+}
