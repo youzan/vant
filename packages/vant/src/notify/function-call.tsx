@@ -7,25 +7,11 @@ import {
   ComponentInstance,
 } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
-import VanNotify, { NotifyType } from './Notify';
+import VanNotify from './Notify';
+import type { NotifyMessage, NotifyOptions } from './types';
 
 let timer: number;
 let instance: ComponentInstance;
-
-export type NotifyMessage = string | number;
-
-export type NotifyOptions = {
-  type?: NotifyType;
-  color?: string;
-  message?: NotifyMessage;
-  duration?: number;
-  className?: unknown;
-  background?: string;
-  lockScroll?: boolean;
-  onClick?: (event: MouseEvent) => void;
-  onClose?: () => void;
-  onOpened?: () => void;
-};
 
 function parseOptions(message: NotifyMessage | NotifyOptions) {
   return isObject(message) ? message : { message };
@@ -98,11 +84,5 @@ Notify.install = (app: App) => {
   app.use(Notify.Component);
   app.config.globalProperties.$notify = Notify;
 };
-
-declare module '@vue/runtime-core' {
-  interface ComponentCustomProperties {
-    $notify: typeof Notify;
-  }
-}
 
 export { Notify };
