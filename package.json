@@ -24,6 +24,7 @@
     "dev2": "vant-cli dev",
     "lint": "vant-cli lint",
     "test": "vant-cli test",
+    "build:vusion": "vue-cli-service library-build --dest dist-theme && rm -rf lib && mv dist-theme lib && mv lib/index.js lib/vant.min.js",
     "build2": "vant-cli build",
     "build": "cross-env scene=desktop vant-cli build",
     "release": "vant-cli release",
