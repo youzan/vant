@@ -92,9 +92,10 @@ export default createComponent({
           errors = errors.filter((item) => item);
 
           if (errors.length) {
-            reject(errors);
+            // reject(errors);
+            resolve({valid: false, errors});
           } else {
-            resolve();
+            resolve({valid: true});
           }
         });
       });
