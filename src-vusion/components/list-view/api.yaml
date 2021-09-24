@@ -1,4 +1,4 @@
-- name: u-list-view
+- name: van-list-view
   title: 数据列表
   description: 用于列举大量数据的列表框，支持单选、多选、过滤（搜索）、分页等功能。
   attrs:
