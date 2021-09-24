@@ -2,10 +2,9 @@ import { PropType, defineComponent } from 'vue';
 import { createNamespace, extend, unknownProp } from '../utils';
 import { Popup } from '../popup';
 import { popupSharedProps } from '../popup/shared';
+import type { NotifyType } from './types';
 
 const [name, bem] = createNamespace('notify');
-
-export type NotifyType = 'primary' | 'success' | 'danger' | 'warning';
 
 export default defineComponent({
   name,

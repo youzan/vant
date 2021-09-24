@@ -1,4 +1,4 @@
-import { ref, App, TeleportProps, getCurrentInstance, watch } from 'vue';
+import { ref, App, getCurrentInstance, watch } from 'vue';
 import {
   extend,
   isObject,
@@ -7,31 +7,8 @@ import {
   ComponentInstance,
 } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
-import VanToast, { ToastType, ToastPosition } from './Toast';
-import type { LoadingType } from '../loading';
-
-export type ToastOptions = {
-  icon?: string;
-  type?: ToastType;
-  mask?: boolean;
-  message?: string | number;
-  onClose?: () => void;
-  onOpened?: () => void;
-  overlay?: boolean;
-  duration?: number;
-  teleport?: TeleportProps['to'];
-  iconSize?: number | string;
-  position?: ToastPosition;
-  className?: unknown;
-  transition?: string;
-  iconPrefix?: string;
-  loadingType?: LoadingType;
-  forbidClick?: boolean;
-  closeOnClick?: boolean;
-  overlayClass?: unknown;
-  overlayStyle?: Record<string, any>;
-  closeOnClickOverlay?: boolean;
-};
+import VanToast from './Toast';
+import type { ToastType, ToastOptions } from './types';
 
 const defaultOptions: ToastOptions = {
   icon: '',

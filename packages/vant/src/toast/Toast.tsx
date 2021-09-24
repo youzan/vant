@@ -16,10 +16,10 @@ import { Icon } from '../icon';
 import { Popup } from '../popup';
 import { Loading, LoadingType } from '../loading';
 
-const [name, bem] = createNamespace('toast');
+// Types
+import type { ToastType, ToastPosition } from './types';
 
-export type ToastType = 'text' | 'loading' | 'success' | 'fail' | 'html';
-export type ToastPosition = 'top' | 'middle' | 'bottom';
+const [name, bem] = createNamespace('toast');
 
 export default defineComponent({
   name,

@@ -21,12 +21,15 @@ import { Button } from '../button';
 import { ActionBar } from '../action-bar';
 import { ActionBarButton } from '../action-bar-button';
 
-const [name, bem, t] = createNamespace('dialog');
+// Types
+import type {
+  DialogTheme,
+  DialogAction,
+  DialogMessage,
+  DialogMessageAlign,
+} from './types';
 
-export type DialogTheme = 'default' | 'round-button';
-export type DialogAction = 'confirm' | 'cancel';
-export type DialogMessage = string | (() => JSX.Element);
-export type DialogMessageAlign = 'left' | 'center' | 'right';
+const [name, bem, t] = createNamespace('dialog');
 
 const popupKeys = [
   ...popupSharedPropKeys,
