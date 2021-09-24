@@ -2632,7 +2632,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-uploader></van-uploader>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-uploader converter=\\\"json\\\"></van-uploader>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-uploader",
             "title": "文件上传",
@@ -2644,12 +2644,12 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-uploader></van-uploader>\n</template>\n"
+                    "code": "<template>\n<van-uploader converter=\"json\"></van-uploader>\n</template>\n"
                 }
             ],
             "attrs": [
                 {
-                    "name": "fileList",
+                    "name": "fileListProp",
                     "title": "文件列表",
                     "type": "Array",
                     "sync": true,
@@ -2670,6 +2670,19 @@
                     "type": "string",
                     "default": "image/*",
                     "description": "允许上传的文件类型"
+                },
+                {
+                    "name": "converter",
+                    "title": "转换器",
+                    "type": "string",
+                    "options": [
+                        {
+                            "title": "JSON",
+                            "value": "json"
+                        }
+                    ],
+                    "default": "json",
+                    "description": "转换器"
                 },
                 {
                     "name": "result-type",

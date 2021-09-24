@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block card :title="t('dateType')">
       <van-datetime-picker
-        v-model="value.date"
+        :value.sync="value.date"
         type="date"
         :title="t('dateType')"
         :min-date="minDate"
@@ -12,7 +12,7 @@
 
     <demo-block card :title="t('yearMonthType')">
       <van-datetime-picker
-        v-model="value.yearMonth"
+        :value.sync="value.yearMonth"
         type="year-month"
         :title="t('yearMonthType')"
         :min-date="minDate"
@@ -23,7 +23,7 @@
 
     <demo-block v-if="!isWeapp" card :title="t('monthDayType')">
       <van-datetime-picker
-        v-model="value.monthDayType"
+        :value.sync="value.monthDayType"
         type="month-day"
         :title="t('monthDayType')"
         :min-date="minDate"
@@ -44,7 +44,7 @@
 
     <demo-block card :title="t('datetimeType')">
       <van-datetime-picker
-        v-model="value.datetime"
+        :value.sync="value.datetime"
         type="datetime"
         :title="t('datetimeType')"
         :min-date="minDate"
@@ -54,7 +54,7 @@
 
     <demo-block v-if="!isWeapp" card :title="t('datehourType')">
       <van-datetime-picker
-        v-model="value.datehour"
+        :value.sync="value.datehour"
         type="datehour"
         :title="t('datehourType')"
         :min-date="minDate"
@@ -64,7 +64,7 @@
 
     <demo-block card :title="t('optionFilter')">
       <van-datetime-picker
-        v-model="value.optionFilter"
+        :value.sync="value.optionFilter"
         type="time"
         :title="t('optionFilter')"
         :filter="filter"
@@ -73,7 +73,7 @@
 
     <demo-block v-if="!isWeapp" card :title="t('sortColumns')">
       <van-datetime-picker
-        v-model="value.sortColumnsDate"
+        :value.sync="value.sortColumnsDate"
         type="date"
         :title="t('sortColumns')"
         :columns-order="['month', 'day', 'year']"
@@ -121,7 +121,7 @@ export default {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
       value: {
-        date: new Date(2021, 0, 17),
+        date: "2021-01-13 00:00:00" || new Date(2021, 0, 17),
         time: '12:00',
         datetime: new Date(2020, 0, 1),
         datehour: new Date(2020, 0, 1),

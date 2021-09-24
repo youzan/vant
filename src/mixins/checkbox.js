@@ -14,6 +14,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
     value: null,
     title: String,
     disabled: Boolean,
+    readonly: Boolean,
     iconSize: [Number, String],
     checkedColor: String,
     labelPosition: String,
@@ -36,6 +37,9 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
     isDisabled() {
       return (this.parent && this.parent.disabled) || this.disabled;
     },
+    isReadOnly() {
+      return (this.parent && this.parent.readonly) || this.readonly;
+    },
 
     direction() {
       return (this.parent && this.parent.direction) || null;
@@ -54,7 +58,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
     },
 
     tabindex() {
-      if (this.isDisabled || (role === 'radio' && !this.checked)) {
+      if ((this.isDisabled || this.isReadOnly) ||(role === 'radio' && !this.checked)) {
         return -1;
       }
 
@@ -68,7 +72,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
       const { icon } = this.$refs;
       const iconClicked = icon === target || icon.contains(target);
 
-      if (!this.isDisabled && (iconClicked || !this.labelDisabled)) {
+      if (!this.isDisabled && !this.isReadOnly && (iconClicked || !this.labelDisabled)) {
         this.toggle();
 
         // wait for toggle method to complete

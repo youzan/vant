@@ -5,7 +5,7 @@
   icon: uploader
   description: 上传文件。
   attrs:
-    - name: fileList
+    - name: fileListProp
       title: 文件列表
       type: Array
       sync: true
@@ -22,6 +22,14 @@
       type: string
       default: image/*
       description: 允许上传的文件类型
+    - name: converter
+      title: 转换器
+      type: string
+      options:
+        - title: JSON
+          value: json
+      default: json
+      description: 转换器
     - name: result-type
       title: 文件读取结果的类型
       type: string

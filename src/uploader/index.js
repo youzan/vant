@@ -21,10 +21,11 @@ export default createComponent({
   mixins: [FieldMixin],
 
   model: {
-    prop: 'fileList',
+    prop: 'fileListprop',
   },
 
   props: {
+    // fileListprop: { type: Array, default: [] },
     url: { type: String, default: '', required: true },
     headers: Object,
     autoUpload: { type: Boolean, default: true },
@@ -48,7 +49,11 @@ export default createComponent({
       type: String,
       default: 'image/*',
     },
-    fileList: {
+    // fileList: {
+    //   type: Array,
+    //   default: () => [],
+    // },
+    fileListprop: {
       type: Array,
       default: () => [],
     },
@@ -88,6 +93,10 @@ export default createComponent({
       type: String,
       default: 'photograph',
     },
+    converter: {
+      type: String,
+      default: 'json'
+    },
   },
 
   computed: {
@@ -97,11 +106,32 @@ export default createComponent({
 
     // for form
     value() {
-      return this.fileList;
+      return this.toValue(this.fileList);
     },
+    fileList() {
+      return this.fromValue(this.fileListprop);
+    }
   },
 
   methods: {
+    fromValue(value) {
+      if (this.converter === 'json')
+          try {
+            if(typeof value === 'string') return JSON.parse(value || '[]');
+            if(typeof value === 'object') return value;
+          } catch (err) {
+              return [];
+          }
+        else
+            return value || [];
+    },
+    toValue(value) {
+        if (this.converter === 'json')
+            // fix for u-validator rules="required"
+            return Array.isArray(value) && value.length === 0 ? null : JSON.stringify(value);
+        else
+            return value;
+    },
     getDetail(index = this.fileList.length) {
       return {
         name: this.name,
@@ -212,7 +242,7 @@ export default createComponent({
 
       if (isValidFiles) {
         this.$emit('input', [...this.fileList, ...toArray(validFiles)]);
-        this.$emit('update:fileList', [...this.fileList, ...toArray(validFiles)]);
+        this.$emit('update:fileListprop', [...this.fileList, ...toArray(validFiles)]);
 
         if (this.afterRead) {
           this.afterRead(validFiles, this.getDetail());

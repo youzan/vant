@@ -19,10 +19,7 @@ export default createComponent({
       type: [Number, String],
       default: 0,
     },
-    columns: {
-      type: Array,
-      default: () => [],
-    },
+    columnsprop:[Array, String],
     toolbarPosition: {
       type: String,
       default: 'top',
@@ -31,12 +28,17 @@ export default createComponent({
       type: String,
       default: 'text',
     },
+    converter: {
+      type: String,
+      default: 'json'
+    },
   },
 
   data() {
     return {
       children: [],
       formattedColumns: [],
+      columns: [],
     };
   },
 
@@ -62,7 +64,7 @@ export default createComponent({
   },
 
   watch: {
-    columns: {
+    columnsprop: {
       handler: 'format',
       immediate: true,
     },
@@ -70,6 +72,7 @@ export default createComponent({
 
   methods: {
     format() {
+      this.columns = this.fromValue(this.columnsprop);
       const { columns, dataType } = this;
 
       if (dataType === 'text') {
@@ -80,7 +83,17 @@ export default createComponent({
         this.formattedColumns = columns;
       }
     },
-
+    fromValue(value) {
+      if (this.converter === 'json')
+          try {
+              if(typeof value === 'string') return JSON.parse(value || '[]');
+              if(typeof value === 'object') return value;
+          } catch (err) {
+              return [];
+          }
+        else
+            return value || [];
+    },
     formatCascade() {
       const formatted = [];
 
