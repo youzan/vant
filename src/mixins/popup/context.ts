@@ -7,7 +7,7 @@ export type StackItem = {
 };
 
 export const context = {
-  zIndex: 2000,
+  zIndex: 9001,
   lockCount: 0,
   stack: [] as StackItem[],
   find(vm: any): StackItem | undefined {
