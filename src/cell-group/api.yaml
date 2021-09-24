@@ -49,13 +49,11 @@
       type: string
       default: 单元格
       description: 左侧标题
-      advanced: true
     - name: label
       title: 标题下方的描述信息
       type: string
       default: 这是单元格
       description: 标题下方的描述信息
-      advanced: true
     - name: linkType
       title: 链接类型
       type: string

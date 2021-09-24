@@ -4,7 +4,7 @@ module.exports = {
     version: '>=0.1.1',
     type: 'library',
     name: '@lcap/mobile-ui',
-    CamelName: 'LcapMobileUI',
+    CamelName: 'vant',
     srcPath: './src-vusion',
     docsPath: './docs-vusion',
     docs: {

@@ -1,6 +1,6 @@
 {
   "name": "@lcap/mobile-ui",
-  "version": "0.10.6",
+  "version": "0.10.7",
   "lcapname": "@lcap/mobile-ui",
   "lcapversion": "0.6.3",
   "description": "Mobile UI Components built on Vue",

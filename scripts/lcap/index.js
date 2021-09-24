@@ -5,12 +5,17 @@ const fs = require('fs-extra');
 const map = [];
 const getUsage = require('vusion/lib/lcap');
 const root = path.join(__dirname, '../../src');
+const root2 = path.join(__dirname, '../../src-vusion/components');
 components.forEach((component) => {
     if (component.show) {
-        const targetFile = path.join(root, component.name);
+        let targetFile = path.join(root, component.name);
+        if (!fs.existsSync(targetFile))
+            targetFile = path.join(root2, component.name);
+
         map.push(getUsage(targetFile));
     }
 });
+
 const packageJSON = require('../../package.json');
 const libInfo = `${packageJSON.name}@${packageJSON.version}`;
 Object.values(map).forEach((item) => {

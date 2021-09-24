@@ -1,1 +1,3 @@
-export * from './src-vusion';
+import * as vant from './src-vusion';
+
+export default vant;
