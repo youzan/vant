@@ -16,7 +16,6 @@ import {
   inBrowser,
   truthProp,
   createNamespace,
-  ComponentInstance,
 } from '../utils';
 
 // Components
@@ -59,8 +58,7 @@ export default defineComponent({
     const loading = ref(true);
     const imageRef = ref<HTMLElement>();
 
-    // TODO: types
-    const { $Lazyload } = getCurrentInstance()!.proxy as ComponentInstance;
+    const { $Lazyload } = getCurrentInstance()!.proxy!;
 
     const style = computed(() => {
       const style: CSSProperties = {};

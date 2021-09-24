@@ -1767,10 +1767,10 @@
   resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.7.1.tgz#49ae420302b5581e54e6894891e5a05bc76e9f87"
   integrity sha512-66LPEq89w4kl258nALZcRNd14eUJC8VajvTJwvZKOaZawz6CUeVZ6ybhedTUhQhRjeA8SyWD7dFt4ALf33Sabw==
 
-"@vant/lazyload@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.nlark.com/@vant/lazyload/download/@vant/lazyload-1.2.0.tgz#62e9779bd7844ad8f71c2ca2bf852e6147c7a86d"
-  integrity sha1-Yul3m9eEStj3HCyiv4UuYUfHqG0=
+"@vant/lazyload@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.npmmirror.com/@vant/lazyload/download/@vant/lazyload-1.3.0.tgz?cache=0&sync_timestamp=1632451239649&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40vant%2Flazyload%2Fdownload%2F%40vant%2Flazyload-1.3.0.tgz#2a743339f271989dbf87f7a4c55c9fff7ebc774e"
+  integrity sha1-KnQzOfJxmJ2/h/ekxVyf/368d04=
 
 "@vant/markdown-vetur@^2.2.0":
   version "2.2.0"
