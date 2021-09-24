@@ -127,4 +127,10 @@ Dialog.install = (app: App) => {
   app.config.globalProperties.$dialog = Dialog;
 };
 
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $dialog: typeof Dialog;
+  }
+}
+
 export { Dialog };

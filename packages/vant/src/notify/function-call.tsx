@@ -99,4 +99,10 @@ Notify.install = (app: App) => {
   app.config.globalProperties.$notify = Notify;
 };
 
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $notify: typeof Notify;
+  }
+}
+
 export { Notify };

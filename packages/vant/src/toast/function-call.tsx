@@ -190,4 +190,10 @@ Toast.install = (app: App) => {
   app.config.globalProperties.$toast = Toast;
 };
 
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $toast: typeof Toast;
+  }
+}
+
 export { Toast };
