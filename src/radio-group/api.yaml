@@ -36,7 +36,7 @@
           snippet: <van-radio title="第N个"></van-radio>
   events:
     - name: change
-      title: 值改变
+      title: 值改变时
       description: 选择值改变时触发
       params: []
 - name: van-radio

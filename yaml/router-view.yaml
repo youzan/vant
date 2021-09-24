@@ -1,9 +1,0 @@
-- name: van-router-view
-  title: 子页面容器
-  icon: router-view
-  labels:
-    - Container
-  next: true
-  nested: false
-  description: 放置子页面的容器。
-  slots: false
