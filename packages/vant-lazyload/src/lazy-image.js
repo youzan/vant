@@ -80,10 +80,15 @@ export default (lazyManager) => ({
     },
     load(onFinish = noop) {
       if (this.state.attempt > this.options.attempt - 1 && this.state.error) {
-        if (!lazyManager.options.silent)
+        if (
+          process.env.NODE_ENV !== 'production' &&
+          !lazyManager.options.silent
+        ) {
           console.log(
-            `VueLazyload log: ${this.options.src} tried too more than ${this.options.attempt} times`
+            `[@vant/lazyload] ${this.options.src} tried too more than ${this.options.attempt} times`
           );
+        }
+
         onFinish();
         return;
       }
