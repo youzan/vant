@@ -130,7 +130,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| v-model | 当前输入的值 | _number \| string_ | - |
 | label | 搜索框左侧文本 | _string_ | - |
+| name `v3.2.3` | 名称，作为提交表单时的标识符 | _string_ | - |
 | shape | 搜索框形状，可选值为 `round` | _string_ | `square` |
 | id `v3.2.2` | 搜索框 id，同时会设置 label 的 for 属性 | _string_ | - |
 | background | 搜索框外部背景色 | _string_ | `#f2f2f2` |
