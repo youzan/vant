@@ -161,3 +161,12 @@ test('should allow to set autocomplete attribute', () => {
     'on'
   );
 });
+
+test('should render input name when using name prop', () => {
+  const wrapper = mount(Search, {
+    props: {
+      name: 'foo',
+    },
+  });
+  expect(wrapper.find('input').element.getAttribute('name')).toEqual('foo');
+});

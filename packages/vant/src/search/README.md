@@ -118,7 +118,9 @@ Use `action` slot to custom right button, `cancel` event will no longer be Emitt
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
+| v-model | Input value | _number \| string_ | - |
 | label | Left side label | _string_ | - |
+| name `v3.2.3` | As the identifier when submitting the form | _string_ | - |
 | shape | Shape of field, can be set to `round` | _string_ | `square` |
 | id `v3.2.2` | Input id, the for attribute of the label also will be set | _string_ | - |
 | background | Background color of field | _string_ | `#f2f2f2` |
