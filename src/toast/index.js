@@ -140,6 +140,8 @@ const createMethod = (type) => (options) =>
     ...parseOptions(options),
   });
 
+Toast.show = (options) => Toast(options);
+
 ['loading', 'success', 'fail'].forEach((method) => {
   Toast[method] = createMethod(method);
 });

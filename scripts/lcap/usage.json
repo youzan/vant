@@ -3091,7 +3091,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n  <van-cascader title=\\\"请选择\\\" converter=\\\"json\\\"></van-cascader>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n  <van-cascader title=\\\"请选择\\\" converter=\\\"json\\\" label-field=\\\"级联选择\\\"></van-cascader>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-cascader",
             "title": "级联选择器",
@@ -3103,7 +3103,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n  <van-cascader title=\"请选择\" converter=\"json\"></van-cascader>\n</template>\n"
+                    "code": "<template>\n  <van-cascader title=\"请选择\" converter=\"json\" label-field=\"级联选择\"></van-cascader>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -3117,10 +3117,17 @@
                     "description": "选中的值"
                 },
                 {
-                    "name": "dataSource",
+                    "name": "label-field",
+                    "title": "左侧标题",
+                    "type": "string",
+                    "default": "左侧标题",
+                    "description": "左侧标题"
+                },
+                {
+                    "name": "data-source",
                     "title": "数据源",
                     "type": "array",
-                    "default": "[{\"text\":\"理学\",\"value\":\"理学\",\"children\":[{\"text\":\"物理学\",\"value\":\"物理学\",\"children\":[{\"text\":\"理论物理\",\"value\":\"理论物理\"},{\"text\":\"凝聚态物理\",\"value\":\"凝聚态物理\"},{\"text\":\"材料物理\",\"value\":\"材料物理\"}]},{\"text\":\"数学\",\"value\":\"数学\",\"children\":[{\"text\":\"基础数学\",\"value\":\"基础数学\"},{\"text\":\"计算数学\",\"value\":\"计算数学\"},{\"text\":\"应用数学\",\"value\":\"应用数学\"}]},{\"text\":\"化学\",\"value\":\"化学\"}]},{\"text\":\"工学\",\"value\":\"工学\",\"children\":[{\"text\":\"计算机科学与技术\",\"value\":\"计算机科学与技术\",\"children\":[{\"text\":\"计算机系统结构\",\"value\":\"计算机系统结构\"},{\"text\":\"计算机软件与理论\",\"value\":\"计算机软件与理论\",\"disabled\":true},{\"text\":\"计算机应用技术\",\"value\":\"计算机应用技术\"}]},{\"text\":\"软件工程\",\"value\":\"软件工程\",\"disabled\":true},{\"text\":\"机械工程\",\"value\":\"机械工程\",\"children\":[{\"text\":\"机械制造及其自动化\",\"value\":\"机械制造及其自动化\"},{\"text\":\"机械电子工程\",\"value\":\"机械电子工程\"},{\"text\":\"机械设计及理论\",\"value\":\"机械设计及理论\",\"disabled\":true},{\"text\":\"车辆工程\",\"value\":\"车辆工程\",\"disabled\":true}]}]}]",
+                    "default2": "[{\"text\":\"理学\",\"value\":\"理学\",\"children\":[{\"text\":\"物理学\",\"value\":\"物理学\",\"children\":[{\"text\":\"理论物理\",\"value\":\"理论物理\"},{\"text\":\"凝聚态物理\",\"value\":\"凝聚态物理\"},{\"text\":\"材料物理\",\"value\":\"材料物理\"}]},{\"text\":\"数学\",\"value\":\"数学\",\"children\":[{\"text\":\"基础数学\",\"value\":\"基础数学\"},{\"text\":\"计算数学\",\"value\":\"计算数学\"},{\"text\":\"应用数学\",\"value\":\"应用数学\"}]},{\"text\":\"化学\",\"value\":\"化学\"}]},{\"text\":\"工学\",\"value\":\"工学\",\"children\":[{\"text\":\"计算机科学与技术\",\"value\":\"计算机科学与技术\",\"children\":[{\"text\":\"计算机系统结构\",\"value\":\"计算机系统结构\"},{\"text\":\"计算机软件与理论\",\"value\":\"计算机软件与理论\",\"disabled\":true},{\"text\":\"计算机应用技术\",\"value\":\"计算机应用技术\"}]},{\"text\":\"软件工程\",\"value\":\"软件工程\",\"disabled\":true},{\"text\":\"机械工程\",\"value\":\"机械工程\",\"children\":[{\"text\":\"机械制造及其自动化\",\"value\":\"机械制造及其自动化\"},{\"text\":\"机械电子工程\",\"value\":\"机械电子工程\"},{\"text\":\"机械设计及理论\",\"value\":\"机械设计及理论\",\"disabled\":true},{\"text\":\"车辆工程\",\"value\":\"车辆工程\",\"disabled\":true}]}]}]",
                     "description": "一个包含字符串或对象的数组"
                 },
                 {
@@ -3285,7 +3292,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-popup round position=\\\"bottom\\\" safe-area-inset-bottom design-title=\\\"双击编辑Calendar选择器\\\" class=\\\"van-calendar__popup\\\">\\n  <van-calendar title=\\\"选择日期\\\" :lazy-render=\\\"false\\\"></van-calendar>\\n</van-popup>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-calendar title=\\\"选择日期\\\" label-field=\\\"日历选择\\\"></van-calendar>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-calendar",
             "title": "日期选择器",
@@ -3297,10 +3304,17 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-popup round position=\"bottom\" safe-area-inset-bottom design-title=\"双击编辑Calendar选择器\" class=\"van-calendar__popup\">\n  <van-calendar title=\"选择日期\" :lazy-render=\"false\"></van-calendar>\n</van-popup>\n</template>\n"
+                    "code": "<template>\n<van-calendar title=\"选择日期\" label-field=\"日历选择\"></van-calendar>\n</template>\n"
                 }
             ],
             "attrs": [
+                {
+                    "name": "label-field",
+                    "title": "左侧标题",
+                    "type": "string",
+                    "default": "左侧标题",
+                    "description": "左侧标题"
+                },
                 {
                     "name": "default-date",
                     "title": "值",
