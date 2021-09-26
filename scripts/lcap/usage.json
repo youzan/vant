@@ -1521,7 +1521,7 @@
             "Table"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-list-view></van-list-view>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-list-view pageable=\\\"load-more\\\"></van-list-view>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-list-view",
             "title": "数据列表",
@@ -1533,7 +1533,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-list-view></van-list-view>\n</template>\n"
+                    "code": "<template>\n<van-list-view pageable=\"load-more\"></van-list-view>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -1638,9 +1638,23 @@
                 },
                 {
                     "name": "pageable",
-                    "title": "可分页",
-                    "type": "boolean",
+                    "title": "分页加载更多",
+                    "type": "string",
                     "default": false,
+                    "options": [
+                        {
+                            "value": false,
+                            "title": "不分页"
+                        },
+                        {
+                            "value": "auto-more",
+                            "title": "滚动加载更多"
+                        },
+                        {
+                            "value": "load-more",
+                            "title": "点击加载更多"
+                        }
+                    ],
                     "description": "是否需要分页"
                 },
                 {
@@ -1653,7 +1667,7 @@
                 {
                     "name": "remote-paging",
                     "title": "是否需要后端分页",
-                    "type": "number",
+                    "type": "boolean",
                     "default": false,
                     "description": "是否使用后端分页"
                 },

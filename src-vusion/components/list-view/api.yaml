@@ -79,9 +79,16 @@
       default: 加载中...
       description: 加载时的文字。使用分页加载时才会出现
     - name: pageable
-      title: 可分页
-      type: boolean
+      title: 分页加载更多
+      type: string
       default: false
+      options:
+        - value: false
+          title: 不分页
+        - value: auto-more
+          title: 滚动加载更多
+        - value: load-more
+          title: 点击加载更多
       description: 是否需要分页
     - name: page-size
       title: 分页大小
@@ -90,7 +97,7 @@
       description: 分页大小
     - name: remote-paging
       title: 是否需要后端分页
-      type: number
+      type: boolean
       default: false
       description: 是否使用后端分页
     - name: filterable
