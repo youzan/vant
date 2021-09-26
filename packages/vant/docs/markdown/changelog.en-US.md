@@ -16,6 +16,35 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.2.4](https://github.com/youzan/vant/compare/v3.2.3...v3.2.4)
+
+`2021-09-26`
+
+**Feature**
+
+- Icon: add guide-o icon [c5f45a](https://github.com/youzan/vant/commit/c5f45a5c134bf9d789c943b247c620a1a2391d03)
+- Search: add autocomplete prop [#9553](https://github.com/youzan/vant/issues/9553)
+- Search: add name prop [#9563](https://github.com/youzan/vant/issues/9563)
+
+**perf**
+
+- Lazyload: reduce production log [33d7aa](https://github.com/youzan/vant/commit/33d7aa8f1aee38576f1a0b3549560edd7b5fe0ed)
+- Lazyload: remove edge 15 polyfill [00b156](https://github.com/youzan/vant/commit/00b1568887321cf452ed4b8872fe99f089a74b22)
+- @vant/use: remove raf polyfill [#9544](https://github.com/youzan/vant/issues/9544)
+
+**Types**
+
+- export props types [a3380f](https://github.com/youzan/vant/commit/a3380f08c06f5fd32443e9b033e3d8a29c1f726a)
+- fix $toast、$dialog、$notify typing [#9556](https://github.com/youzan/vant/issues/9556)
+- Popover: PopoverAction type allow extra properties [#9554](https://github.com/youzan/vant/issues/9554)
+
+**Bug Fixes**
+
+- Collapse: wrapperRef may be undefined [#9505](https://github.com/youzan/vant/issues/9505)
+- CouponList: fix scroll issue [#9480](https://github.com/youzan/vant/issues/9480)
+- Radio: icon ref may be undefined [#9503](https://github.com/youzan/vant/issues/9503)
+- Tabs: failed to scroll into view when rendering multiple tabs [#9543](https://github.com/youzan/vant/issues/9543)
+
 ### [v3.2.3](https://github.com/youzan/vant/compare/v3.2.2...v3.2.3)
 
 `2021-09-12`
