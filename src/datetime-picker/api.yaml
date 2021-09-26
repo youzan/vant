@@ -4,6 +4,11 @@
     - Selector
   icon: date-time-picker
   attrs:
+    - name: label-field
+      title: 左侧标题
+      type: string
+      default: 左侧标题
+      description: 左侧标题
     - name: type
       title: 时间类型
       type: string
