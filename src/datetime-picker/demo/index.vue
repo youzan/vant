@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block card :title="t('dateType')">
+    <!-- <demo-block card :title="t('dateType')">
       <van-datetime-picker
         :value.sync="value.date"
         type="date"
@@ -40,7 +40,7 @@
         :min-hour="10"
         :max-hour="20"
       />
-    </demo-block>
+    </demo-block> -->
 
     <demo-block card :title="t('datetimeType')">
       <van-datetime-picker
@@ -52,7 +52,7 @@
       />
     </demo-block>
 
-    <demo-block v-if="!isWeapp" card :title="t('datehourType')">
+    <!-- <demo-block v-if="!isWeapp" card :title="t('datehourType')">
       <van-datetime-picker
         :value.sync="value.datehour"
         type="datehour"
@@ -81,7 +81,7 @@
         :max-date="maxDate"
         :formatter="formatter"
       />
-    </demo-block>
+    </demo-block> -->
   </demo-section>
 </template>
 

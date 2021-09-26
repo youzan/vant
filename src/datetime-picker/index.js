@@ -1,6 +1,9 @@
 import { createNamespace } from '../utils';
+import { isDate } from '../utils/validate/date';
 import TimePicker from './TimePicker';
 import DatePicker from './DatePicker';
+import Popup from '../popup';
+import Field from '../field';
 
 const [createComponent, bem] = createNamespace('datetime-picker');
 
@@ -8,9 +11,25 @@ export default createComponent({
   props: {
     ...TimePicker.props,
     ...DatePicker.props,
+    labelField: String,
   },
-
+  data() {
+    return {
+      valuepopup: false,
+    }
+  },
   methods: {
+    getTitle() {
+      return isDate(this.value) ? this.value.formath("yyyy/MM/dd HH:mm:ss") : this.value;
+    },
+    togglePopup() {
+      this.valuepopup = !this.valuepopup;
+      if (this.valuepopup) {
+        this.$refs.popforcas.openModal();
+      } else {
+        this.$refs.popforcas.closeModal();
+      }
+    },
     // @exposed-api
     getPicker() {
       return this.$refs.root.getPicker();
@@ -21,15 +40,34 @@ export default createComponent({
     const Component = this.type === 'time' ? TimePicker : DatePicker;
 
     return (
-      <Component
-        ref="root"
-        class={bem()}
-        scopedSlots={this.$scopedSlots}
-        {...{
-          props: this.$props,
-          on: this.$listeners,
-        }}
-      />
+      <div class={bem('wrapppdtpicker')}>
+        <Field
+          label={this.labelField}
+          value={this.getTitle()}
+          readonly
+          isLink
+          input-align="right"
+          onClick={this.togglePopup}
+        />
+        <Popup
+          safe-area-inset-bottom
+          round
+          ref="popforcas"
+          class={bem('popup')}
+          position={'bottom'}
+          onClickOverlay={this.togglePopup}
+        >
+          <Component
+            ref="root"
+            class={bem()}
+            scopedSlots={this.$scopedSlots}
+            {...{
+              props: this.$props,
+              on: this.$listeners,
+            }}
+          />
+        </Popup>
+      </div>
     );
   },
 });

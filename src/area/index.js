@@ -3,6 +3,8 @@ import { areaList } from '@vant/area-data';
 import { createNamespace } from '../utils';
 import { pickerProps } from '../picker/shared';
 import Picker from '../picker';
+import Popup from '../popup';
+import Field from '../field';
 
 const [createComponent, bem] = createNamespace('area');
 
@@ -48,6 +50,7 @@ export default createComponent({
       type: String,
       default: 'json'
     },
+    labelField: String,
   },
 
   data() {
@@ -55,6 +58,8 @@ export default createComponent({
       code: this.value,
       columns: [{ values: [] }, { values: [] }, { values: [] }],
       areaList: {},
+      valuepopup: false,
+      getTitle: ''
     };
   },
 
@@ -107,16 +112,35 @@ export default createComponent({
   },
 
   methods: {
+    setTitle() {
+      const areaP = this.getValues();
+      console.log(areaP);
+      const result = areaP.map((item) => item.name).join('/');
+      this.getTitle = result;
+    },
+    togglePopup() {
+      this.valuepopup = !this.valuepopup;
+      if (this.valuepopup) {
+        this.$refs.popforcas.openModal();
+        this.$nextTick(function () {
+          this.setValues();
+        });
+
+      } else {
+        this.$refs.popforcas.closeModal();
+      }
+    },
     fromValue(value) {
-      if (this.converter === 'json')
-          try {
-            if(typeof value === 'string') return JSON.parse(value || '[]');
-            if(typeof value === 'object') return value;
-          } catch (err) {
-              return {};
-          }
-        else
-            return value || {};
+      if (this.converter === 'json') {
+        try {
+          if(typeof value === 'string') return JSON.parse(value || '{}');
+          if(typeof value === 'object') return value;
+        } catch (err) {
+            return {};
+        }
+      } else {
+        return value || {};
+      }
     },
     // get list by code
     getList(type, code) {
@@ -209,8 +233,12 @@ export default createComponent({
       this.setValues();
       this.$emit('confirm', values, index);
       this.$emit('update:value', this.code);
+      this.setTitle();
+      this.togglePopup();
     },
-
+    onCancel() {
+      this.togglePopup();
+    },
     getDefaultCode() {
       if (this.columnsPlaceholder.length) {
         return PLACEHOLDER_CODE;
@@ -236,11 +264,9 @@ export default createComponent({
       if (!code) {
         code = this.getDefaultCode();
       }
-
       const { picker } = this.$refs;
       const province = this.getList('province');
       const city = this.getList('city', code.slice(0, 2));
-
       if (!picker) {
         return;
       }
@@ -321,27 +347,48 @@ export default createComponent({
     };
 
     return (
-      <Picker
-        ref="picker"
-        class={bem()}
-        showToolbar
-        valueKey="name"
-        title={this.title}
-        columns={this.displayColumns}
-        loading={this.loading}
-        readonly={this.readonly}
-        itemHeight={this.itemHeight}
-        swipeDuration={this.swipeDuration}
-        visibleItemCount={this.visibleItemCount}
-        cancelButtonText={this.cancelButtonText}
-        confirmButtonText={this.confirmButtonText}
-        scopedSlots={pickSlots(this, [
-          'title',
-          'columns-top',
-          'columns-bottom',
-        ])}
-        {...{ on }}
-      />
+      <div class={bem('wrappparea')}>
+        <Field
+          label={this.labelField}
+          value={this.getTitle}
+          readonly
+          isLink
+          input-align="right"
+          onClick={this.togglePopup}
+        />
+        <Popup
+          safe-area-inset-bottom
+          round
+          ref="popforcas"
+          class={bem('popup')}
+          position={'bottom'}
+          onClickOverlay={this.togglePopup}
+        >
+          <Picker
+            ref="picker"
+            class={bem()}
+            showToolbar
+            valueKey="name"
+            title={this.title}
+            columns={this.displayColumns}
+            columnsprop={this.displayColumns}
+            loading={this.loading}
+            readonly={this.readonly}
+            itemHeight={this.itemHeight}
+            swipeDuration={this.swipeDuration}
+            visibleItemCount={this.visibleItemCount}
+            cancelButtonText={this.cancelButtonText}
+            confirmButtonText={this.confirmButtonText}
+            onCancel={this.onCancel}
+            scopedSlots={pickSlots(this, [
+              'title',
+              'columns-top',
+              'columns-bottom',
+            ])}
+            {...{ on }}
+          />
+        </Popup>
+      </div>
     );
   },
 });
