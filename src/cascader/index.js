@@ -135,10 +135,12 @@ export default createComponent({
     async updateTabs() {
       if (isFunction(this.optionsprop)) {
         try {
-          this.options = await this.optionsprop({
+          const res = await this.optionsprop({
             page: 1,
             size: 1000
           });
+          console.log(res);
+          this.options = res.content;
         } catch (error) {
           console.error(error);
         }
