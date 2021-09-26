@@ -135,10 +135,12 @@ export default createComponent({
     async updateTabs() {
       if (isFunction(this.dataSource)) {
         try {
-          this.options = await this.dataSource({
+          const res = await this.dataSource({
             page: 1,
             size: 1000
           });
+          console.log(res);
+          this.options = res.content;
         } catch (error) {
           console.error(error);
         }
