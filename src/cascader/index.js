@@ -16,7 +16,7 @@ export default createComponent({
     fieldNames: Object,
     placeholder: String,
     activeColor: String,
-    optionsprop: {
+    dataSource: {
       type: Array,
       default: () => [],
     },
@@ -63,7 +63,7 @@ export default createComponent({
   },
 
   watch: {
-    optionsprop: {
+    dataSource: {
       deep: true,
       handler: 'updateTabs',
     },
@@ -133,9 +133,9 @@ export default createComponent({
             return value || [];
     },
     async updateTabs() {
-      if (isFunction(this.optionsprop)) {
+      if (isFunction(this.dataSource)) {
         try {
-          this.options = await this.optionsprop({
+          this.options = await this.dataSource({
             page: 1,
             size: 1000
           });
@@ -143,7 +143,7 @@ export default createComponent({
           console.error(error);
         }
       } else {
-        this.options = this.fromValue(this.optionsprop);
+        this.options = this.fromValue(this.dataSource);
       }
       if (this.value || this.value === 0) {
         const selectedOptions = this.getSelectedOptionsByValue(
