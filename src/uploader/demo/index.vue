@@ -64,6 +64,12 @@
     <demo-block :title="t('basicUsage')+'666'">
       <van-uploader :fileListprop.sync="fileList67" multiple url="http://lcp.vusion.top/api/v1/vusion/upload"/>
     </demo-block>
+    <demo-block>
+      <van-field label="表单项"><template #input></template><template #input="scope"></template></van-field>
+    </demo-block>
+    <demo-block>
+      <van-field label="表单项" drole="other"><template #input="scope"></template>\n</van-field>
+    </demo-block>
   </demo-section>
 </template>
 

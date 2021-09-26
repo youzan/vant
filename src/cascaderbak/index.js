@@ -2,12 +2,8 @@ import { createNamespace, isFunction } from '../utils';
 import Tab from '../tab';
 import Tabs from '../tabs';
 import Icon from '../icon';
-import Popup from '../popup';
-import Field from '../field';
 
-const _ = require('lodash');
-
-const [createComponent, bem, t] = createNamespace('cascader');
+const [createComponent, bem, t] = createNamespace('cascaderbak');
 
 export default createComponent({
   props: {
@@ -28,17 +24,6 @@ export default createComponent({
       type: String,
       default: 'json'
     },
-    labelField: String,
-    textField: String,
-    valueField: String,
-    closeOnPopstate: {
-      type: Boolean,
-      default: true,
-    },
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: true,
-    },
   },
 
   data() {
@@ -46,16 +31,15 @@ export default createComponent({
       tabs: [],
       activeTab: 0,
       options: [],
-      valuepopup: false,
     };
   },
 
   computed: {
     textKey() {
-      return this.textField || this.fieldNames?.text || 'text';
+      return this.fieldNames?.text || 'text';
     },
     valueKey() {
-      return this.valueField || this.fieldNames?.value || 'value';
+      return this.fieldNames?.value || 'value';
     },
     childrenKey() {
       return this.fieldNames?.children || 'children';
@@ -71,13 +55,7 @@ export default createComponent({
     value(value) {
       if (value || value === 0) {
         const values = this.tabs.map(
-          (tab) => {
-            if (tab.selectedOption) {
-              // return tab.selectedOption?.[this.valueKey];
-              return _.get(tab.selectedOption, this.valueKey);
-            }
-            return tab.selectedOption;
-          }
+          (tab) => tab.selectedOption?.[this.valueKey]
         );
         if (values.indexOf(value) !== -1) {
           return;
@@ -92,21 +70,11 @@ export default createComponent({
   },
 
   methods: {
-    getTitle() {
-      const selectedOptions = this.getSelectedOptionsByValue(
-        this.options,
-        this.value
-      ) || [];
-      const result = selectedOptions
-        .map((option) => _.get(option, this.textKey))
-        .join('/');
-      return result;
-    },
     getSelectedOptionsByValue(options, value) {
       for (let i = 0; i < options.length; i++) {
         const option = options[i];
 
-        if (_.get(option, this.valueKey) === value) {
+        if (option[this.valueKey] === value) {
           return [option];
         }
 
@@ -158,7 +126,7 @@ export default createComponent({
             };
 
             const next = optionsCursor.filter(
-              (item) => _.get(item, this.valueKey) === _.get(option, this.valueKey)
+              (item) => item[this.valueKey] === option[this.valueKey]
             );
             if (next.length) {
               optionsCursor = next[0][this.childrenKey];
@@ -219,34 +187,25 @@ export default createComponent({
         .filter((item) => !!item);
 
       const eventParams = {
-        value: _.get(option, this.valueKey),
+        value: option[this.valueKey],
         tabIndex,
         selectedOptions,
       };
-      this.$emit('input', _.get(option, this.valueKey));
-      this.$emit('update:value', _.get(option, this.valueKey));
+      this.$emit('input', option[this.valueKey]);
+      this.$emit('update:value', option[this.valueKey]);
       this.$emit('change', eventParams);
 
       if (!option[this.childrenKey]) {
         this.$emit('finish', eventParams);
         console.log(this.$parent);
-        // if (this.$parent) {
-        //   this.$parent.realValue = false;
-        // }
-        this.togglePopup();
+        if (this.$parent) {
+          this.$parent.realValue = false;
+        }
       }
     },
 
     onClose() {
       this.$emit('close');
-    },
-    togglePopup() {
-      this.valuepopup = !this.valuepopup;
-      if (this.valuepopup) {
-        this.$refs.popforcas.openModal();
-      } else {
-        this.$refs.popforcas.closeModal();
-      }
     },
 
     renderHeader() {
@@ -267,11 +226,11 @@ export default createComponent({
     renderOptions(options, selectedOption, tabIndex) {
       const renderOption = (option) => {
         const isSelected =
-          selectedOption && (_.get(option, this.valueKey) === _.get(selectedOption, this.valueKey))
-          // option[this.valueKey] === selectedOption[this.valueKey];
-          // console.log(option);
+          selectedOption &&
+          option[this.valueKey] === selectedOption[this.valueKey];
+
         const Text = this.slots('option', { option, selected: isSelected }) || (
-          <span>{_.get(option, this.textKey)}</span>
+          <span>{option[this.textKey]}</span>
         );
 
         return (
@@ -296,7 +255,7 @@ export default createComponent({
     renderTab(item, tabIndex) {
       const { options, selectedOption } = item;
       const title = selectedOption
-        ? _.get(selectedOption, this.textKey)
+        ? selectedOption[this.textKey]
         : this.placeholder || t('select');
 
       return (
@@ -329,28 +288,9 @@ export default createComponent({
 
   render() {
     return (
-      <div class={bem('wrapppcascader')}>
-        <Field
-          label={this.labelField}
-          value={this.getTitle()}
-          readonly
-          isLink
-          input-align="right"
-          onClick={this.togglePopup}
-        />
-        <Popup
-          safe-area-inset-bottom
-          round
-          ref="popforcas"
-          class={bem('popup')}
-          position={'bottom'}
-          onClickOverlay={this.togglePopup}
-        >
-          <div class={bem()}>
-            {this.renderHeader()}
-            {this.renderTabs()}
-          </div>
-        </Popup>
+      <div class={bem()}>
+        {this.renderHeader()}
+        {this.renderTabs()}
       </div>
     );
   },

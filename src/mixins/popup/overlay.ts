@@ -20,10 +20,10 @@ function mountOverlay(vm: any) {
       // close popup when overlay clicked & closeOnClickOverlay is true
       click() {
         vm.$emit('click-overlay');
-
         if (vm.closeOnClickOverlay) {
-          if (vm.onClickOverlay) {
-            vm.onClickOverlay();
+          if (vm.onClickOverlay || vm.$listeners['clickOverlay']) {
+            vm.onClickOverlay && vm.onClickOverlay();
+            vm.$listeners['clickOverlay'] && vm.$listeners['clickOverlay']();
           } else {
             vm.close();
           }

@@ -96,7 +96,7 @@ export default createComponent({
     converter: {
       type: String,
       default: 'json'
-    },
+    }
   },
 
   computed: {

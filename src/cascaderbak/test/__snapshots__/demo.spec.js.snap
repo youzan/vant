@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+      <div class="van-cell__title van-field__label"><span>地区</span></div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body"><input type="text" readonly="readonly" placeholder="请选择所在地区" class="van-field__control"></div>
+      </div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+  </div>
+  <div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+      <div class="van-cell__title van-field__label"><span>地区</span></div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body"><input type="text" readonly="readonly" placeholder="请选择所在地区" class="van-field__control"></div>
+      </div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+  </div>
+  <div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+      <div class="van-cell__title van-field__label"><span>地区</span></div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body"><input type="text" readonly="readonly" placeholder="请选择所在地区" class="van-field__control"></div>
+      </div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+  </div>
+  <div>
+    <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
+      <div class="van-cell__title van-field__label"><span>地区</span></div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body"><input type="text" readonly="readonly" placeholder="请选择所在地区" class="van-field__control"></div>
+      </div><i class="van-icon van-icon-arrow van-cell__right-icon">
+        <!----></i>
+    </div>
+  </div>
+</div>
+`;

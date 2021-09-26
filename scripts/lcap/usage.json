@@ -252,7 +252,7 @@
             "Display"
         ],
         "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.10.7/src/cell-group/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.10.7/src/cell-group/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.10.7/src/cell-group/screenshots/2.png",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-cell-group>\\n  <van-cell title=\\\"单元格\\\" isLink vusion-slot-name=\\\"default\\\" center>内容</van-cell>\\n</van-cell-group>\\n</template>\\n\"},{\"title\":\"圆角风格\",\"description\":\"\",\"code\":\"<template>\\n<van-cell-group inset>\\n  <van-cell title=\\\"圆角风格\\\" isLink vusion-slot-name=\\\"default\\\" center>内容</van-cell>\\n</van-cell-group>\\n</template>\\n\"},{\"title\":\"垂直居中\",\"description\":\"\",\"code\":\"<template>\\n<van-cell-group>\\n  <van-cell title=\\\"垂直居中\\\" isLink vusion-slot-name=\\\"default\\\" center>内容</van-cell>\\n</van-cell-group>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-cell-group>\\n  <van-cell title=\\\"单元格\\\" isLink center>内容</van-cell>\\n</van-cell-group>\\n</template>\\n\"},{\"title\":\"圆角风格\",\"description\":\"\",\"code\":\"<template>\\n<van-cell-group inset>\\n  <van-cell title=\\\"圆角风格\\\" isLink center>内容</van-cell>\\n</van-cell-group>\\n</template>\\n\"},{\"title\":\"垂直居中\",\"description\":\"\",\"code\":\"<template>\\n<van-cell-group>\\n  <van-cell title=\\\"垂直居中\\\" isLink center>内容</van-cell>\\n</van-cell-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-cell-group",
             "title": "单元格group",
@@ -264,17 +264,17 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-cell-group>\n  <van-cell title=\"单元格\" isLink vusion-slot-name=\"default\" center>内容</van-cell>\n</van-cell-group>\n</template>\n"
+                    "code": "<template>\n<van-cell-group>\n  <van-cell title=\"单元格\" isLink center>内容</van-cell>\n</van-cell-group>\n</template>\n"
                 },
                 {
                     "title": "圆角风格",
                     "description": "",
-                    "code": "<template>\n<van-cell-group inset>\n  <van-cell title=\"圆角风格\" isLink vusion-slot-name=\"default\" center>内容</van-cell>\n</van-cell-group>\n</template>\n"
+                    "code": "<template>\n<van-cell-group inset>\n  <van-cell title=\"圆角风格\" isLink center>内容</van-cell>\n</van-cell-group>\n</template>\n"
                 },
                 {
                     "title": "垂直居中",
                     "description": "",
-                    "code": "<template>\n<van-cell-group>\n  <van-cell title=\"垂直居中\" isLink vusion-slot-name=\"default\" center>内容</van-cell>\n</van-cell-group>\n</template>\n"
+                    "code": "<template>\n<van-cell-group>\n  <van-cell title=\"垂直居中\" isLink center>内容</van-cell>\n</van-cell-group>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -3117,7 +3117,7 @@
                     "description": "选中的值"
                 },
                 {
-                    "name": "options",
+                    "name": "optionsprop",
                     "title": "数据源",
                     "type": "array",
                     "default": "[{\"text\":\"理学\",\"value\":\"理学\",\"children\":[{\"text\":\"物理学\",\"value\":\"物理学\",\"children\":[{\"text\":\"理论物理\",\"value\":\"理论物理\"},{\"text\":\"凝聚态物理\",\"value\":\"凝聚态物理\"},{\"text\":\"材料物理\",\"value\":\"材料物理\"}]},{\"text\":\"数学\",\"value\":\"数学\",\"children\":[{\"text\":\"基础数学\",\"value\":\"基础数学\"},{\"text\":\"计算数学\",\"value\":\"计算数学\"},{\"text\":\"应用数学\",\"value\":\"应用数学\"}]},{\"text\":\"化学\",\"value\":\"化学\"}]},{\"text\":\"工学\",\"value\":\"工学\",\"children\":[{\"text\":\"计算机科学与技术\",\"value\":\"计算机科学与技术\",\"children\":[{\"text\":\"计算机系统结构\",\"value\":\"计算机系统结构\"},{\"text\":\"计算机软件与理论\",\"value\":\"计算机软件与理论\",\"disabled\":true},{\"text\":\"计算机应用技术\",\"value\":\"计算机应用技术\"}]},{\"text\":\"软件工程\",\"value\":\"软件工程\",\"disabled\":true},{\"text\":\"机械工程\",\"value\":\"机械工程\",\"children\":[{\"text\":\"机械制造及其自动化\",\"value\":\"机械制造及其自动化\"},{\"text\":\"机械电子工程\",\"value\":\"机械电子工程\"},{\"text\":\"机械设计及理论\",\"value\":\"机械设计及理论\",\"disabled\":true},{\"text\":\"车辆工程\",\"value\":\"车辆工程\",\"disabled\":true}]}]}]",
