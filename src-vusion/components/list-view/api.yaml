@@ -74,10 +74,18 @@
       default: false
       description: 是否显示底部
     - name: loading-text
-      title: 加载中文字
+      title: 加载中提示文字
       type: string
       default: 加载中...
       description: 加载时的文字。使用分页加载时才会出现
+    - name: error-text
+      title: 加载失败提示文字
+      type: string
+      default: 加载失败，请重试
+    - name: empty-text
+      title: 无数据提示文字
+      type: string
+      default: 暂无数据
     - name: pageable
       title: 分页加载更多
       type: string
@@ -93,13 +101,38 @@
     - name: page-size
       title: 分页大小
       type: number
-      default: 50
+      default: 20
       description: 分页大小
     - name: remote-paging
       title: 是否需要后端分页
       type: boolean
       default: false
       description: 是否使用后端分页
+    - name: pull-refresh
+      title: 下拉刷新
+      type: boolean
+      default: true
+      description: 是否开启下拉刷新
+    - name: pulling-text
+      title: 下拉过程中提示文字
+      type: string
+      default: 下拉刷新
+    - name: loosing-text
+      title: 释放过程中提示文字
+      type: string
+      default: 释放刷新
+    - name: success-text
+      title: 刷新成功提示文字
+      type: string
+      default: 已刷新
+    - name: success-duration
+      title: 刷新成功提示展示时长(ms)
+      type: number
+      default: 500
+    - name: pull-distance
+      title: 触发下拉刷新的距离
+      type: number
+      default: 50
     - name: filterable
       title: 可筛选
       type: boolean

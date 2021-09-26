@@ -1631,10 +1631,22 @@
                 },
                 {
                     "name": "loading-text",
-                    "title": "加载中文字",
+                    "title": "加载中提示文字",
                     "type": "string",
                     "default": "加载中...",
                     "description": "加载时的文字。使用分页加载时才会出现"
+                },
+                {
+                    "name": "error-text",
+                    "title": "加载失败提示文字",
+                    "type": "string",
+                    "default": "加载失败，请重试"
+                },
+                {
+                    "name": "empty-text",
+                    "title": "无数据提示文字",
+                    "type": "string",
+                    "default": "暂无数据"
                 },
                 {
                     "name": "pageable",
@@ -1661,7 +1673,7 @@
                     "name": "page-size",
                     "title": "分页大小",
                     "type": "number",
-                    "default": 50,
+                    "default": 20,
                     "description": "分页大小"
                 },
                 {
@@ -1670,6 +1682,43 @@
                     "type": "boolean",
                     "default": false,
                     "description": "是否使用后端分页"
+                },
+                {
+                    "name": "pull-refresh",
+                    "title": "下拉刷新",
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否开启下拉刷新"
+                },
+                {
+                    "name": "pulling-text",
+                    "title": "下拉过程中提示文字",
+                    "type": "string",
+                    "default": "下拉刷新"
+                },
+                {
+                    "name": "loosing-text",
+                    "title": "释放过程中提示文字",
+                    "type": "string",
+                    "default": "释放刷新"
+                },
+                {
+                    "name": "success-text",
+                    "title": "刷新成功提示文字",
+                    "type": "string",
+                    "default": "已刷新"
+                },
+                {
+                    "name": "success-duration",
+                    "title": "刷新成功提示展示时长(ms)",
+                    "type": "number",
+                    "default": 500
+                },
+                {
+                    "name": "pull-distance",
+                    "title": "触发下拉刷新的距离",
+                    "type": "number",
+                    "default": 50
                 },
                 {
                     "name": "filterable",
@@ -2992,7 +3041,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-popup round position=\\\"bottom\\\" safe-area-inset-bottom design-title=\\\"双击编辑area选择器\\\">\\n  <van-area title=\\\"标题\\\" converter=\\\"json\\\"></van-area>\\n</van-popup>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n  <van-area title=\\\"标题\\\" converter=\\\"json\\\" label-field=\\\"地区选择\\\"></van-area>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-area",
             "title": "地区选择器选择器",
@@ -3004,7 +3053,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-popup round position=\"bottom\" safe-area-inset-bottom design-title=\"双击编辑area选择器\">\n  <van-area title=\"标题\" converter=\"json\"></van-area>\n</van-popup>\n</template>\n"
+                    "code": "<template>\n  <van-area title=\"标题\" converter=\"json\" label-field=\"地区选择\"></van-area>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -3018,10 +3067,17 @@
                     "description": "当前选中的省市区code"
                 },
                 {
+                    "name": "label-field",
+                    "title": "左侧标题",
+                    "type": "string",
+                    "default": "左侧标题",
+                    "description": "左侧标题"
+                },
+                {
                     "name": "areaListprop",
                     "title": "数据源(不填写的话默认全国)",
                     "type": "array",
-                    "default": "{\"province_list\":{\"110000\":\"北京市\"},\"city_list\":{\"110100\":\"北京市\"},\"county_list\":{\"110101\":\"东城区\",\"110102\":\"西城区\",\"110105\":\"朝阳区\",\"110106\":\"丰台区\",\"110107\":\"石景山区\",\"110108\":\"海淀区\",\"110109\":\"门头沟区\",\"110111\":\"房山区\",\"110112\":\"通州区\",\"110113\":\"顺义区\",\"110114\":\"昌平区\",\"110115\":\"大兴区\",\"110116\":\"怀柔区\",\"110117\":\"平谷区\",\"110118\":\"密云区\",\"110119\":\"延庆区\"}}",
+                    "default2": "{\"province_list\":{\"110000\":\"北京市\"},\"city_list\":{\"110100\":\"北京市\"},\"county_list\":{\"110101\":\"东城区\",\"110102\":\"西城区\",\"110105\":\"朝阳区\",\"110106\":\"丰台区\",\"110107\":\"石景山区\",\"110108\":\"海淀区\",\"110109\":\"门头沟区\",\"110111\":\"房山区\",\"110112\":\"通州区\",\"110113\":\"顺义区\",\"110114\":\"昌平区\",\"110115\":\"大兴区\",\"110116\":\"怀柔区\",\"110117\":\"平谷区\",\"110118\":\"密云区\",\"110119\":\"延庆区\"}}",
                     "description": "一个包含字符串或对象的数组"
                 },
                 {
@@ -3182,7 +3238,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-popup round position=\\\"bottom\\\" safe-area-inset-bottom design-title=\\\"双击编辑TimePicker选择器\\\">\\n  <van-datetime-picker\\n    type=\\\"datetime\\\"\\n    title=\\\"选择完整时间\\\"\\n  ></van-datetime-picker>\\n</van-popup>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-datetime-picker\\n    type=\\\"datetime\\\"\\n    title=\\\"选择完整时间\\\"\\n    label-field=\\\"选择时间\\\"\\n  ></van-datetime-picker>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-datetime-picker",
             "title": "时间选择器",
@@ -3194,10 +3250,17 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-popup round position=\"bottom\" safe-area-inset-bottom design-title=\"双击编辑TimePicker选择器\">\n  <van-datetime-picker\n    type=\"datetime\"\n    title=\"选择完整时间\"\n  ></van-datetime-picker>\n</van-popup>\n</template>\n"
+                    "code": "<template>\n<van-datetime-picker\n    type=\"datetime\"\n    title=\"选择完整时间\"\n    label-field=\"选择时间\"\n  ></van-datetime-picker>\n</template>\n"
                 }
             ],
             "attrs": [
+                {
+                    "name": "label-field",
+                    "title": "左侧标题",
+                    "type": "string",
+                    "default": "左侧标题",
+                    "description": "左侧标题"
+                },
                 {
                     "name": "type",
                     "title": "时间类型",
