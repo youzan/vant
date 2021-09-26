@@ -21,18 +21,18 @@ import Button from '../button';
 import Toast from '../toast';
 import Month from './components/Month';
 import Header from './components/Header';
+import Field from '../field';
 
 export default createComponent({
   props: {
-    wga: Boolean,
     title: String,
     color: String,
-    value: Boolean,
     readonly: Boolean,
     formatter: Function,
     rowHeight: [Number, String],
     confirmText: String,
     rangePrompt: String,
+    labelField: String,
     defaultDate: [Date, Array],
     getContainer: [String, Function],
     allowSameDay: Boolean,
@@ -59,7 +59,7 @@ export default createComponent({
     },
     lazyRender: {
       type: Boolean,
-      default: true,
+      default: false, // ???
     },
     showMark: {
       type: Boolean,
@@ -113,6 +113,8 @@ export default createComponent({
     return {
       subtitle: '',
       currentDate: this.getInitialDate(),
+      valuepopup: false,
+      value: false,
     };
   },
 
@@ -174,6 +176,18 @@ export default createComponent({
   },
 
   methods: {
+    getTitle() {
+      return isDate(this.defaultDate) ? this.defaultDate.formath("yyyy/MM/dd") : '';
+    },
+    togglePopup() {
+      this.valuepopup = !this.valuepopup;
+      this.value = !this.value
+      if (this.valuepopup) {
+        this.$refs.popforcas.openModal();
+      } else {
+        this.$refs.popforcas.closeModal();
+      }
+    },
     // @exposed-api
     reset(date = this.getInitialDate()) {
       this.currentDate = date;
@@ -367,9 +381,9 @@ export default createComponent({
       }
     },
 
-    togglePopup(val) {
-      this.$emit('input', val);
-    },
+    // togglePopup(val) {
+    //   this.$emit('input', val);
+    // },
 
     select(date, complete) {
       const emit = (date) => {
@@ -412,6 +426,7 @@ export default createComponent({
     onConfirm() {
       this.$emit('confirm', copyDates(this.currentDate));
       this.$emit('update:default-date', copyDates(this.currentDate));
+      this.togglePopup();
     },
 
     genMonth(date, index) {
@@ -503,33 +518,38 @@ export default createComponent({
   },
 
   render() {
-    if (this.wga || this.$env && this.$env.VUE_APP_DESIGNER) {
-      return this.genCalendar();
-    }
     if (this.poppable) {
       const createListener = (name) => () => this.$emit(name);
-
-      return (
+      return <div class={bem('wrapppcalendar')}>
+        <Field
+          label={this.labelField}
+          value={this.getTitle()}
+          readonly
+          isLink
+          input-align="right"
+          onClick={this.togglePopup}
+        />
         <Popup
           safe-area-inset-bottom
           round
           class={bem('popup')}
-          value={this.value}
           round={this.round}
           position={this.position}
-          closeable={this.showTitle || this.showSubtitle}
-          getContainer={this.getContainer}
-          closeOnPopstate={this.closeOnPopstate}
-          closeOnClickOverlay={this.closeOnClickOverlay}
-          onInput={this.togglePopup}
-          onOpen={createListener('open')}
-          onOpened={createListener('opened')}
-          onClose={createListener('close')}
-          onClosed={createListener('closed')}
+          ref="popforcas"
+          onClickOverlay={this.togglePopup}
+          // closeable={this.showTitle || this.showSubtitle}
+          // getContainer={this.getContainer}
+          // closeOnPopstate={this.closeOnPopstate}
+          // closeOnClickOverlay={this.closeOnClickOverlay}
+          // onInput={this.togglePopup}
+          // onOpen={createListener('open')}
+          // onOpened={createListener('opened')}
+          // onClose={createListener('close')}
+          // onClosed={createListener('closed')}
         >
           {this.genCalendar()}
         </Popup>
-      );
+      </div>
     }
 
     return this.genCalendar();

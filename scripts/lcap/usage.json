@@ -3091,7 +3091,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-popup round position=\\\"bottom\\\" safe-area-inset-bottom design-title=\\\"双击编辑Cascader选择器\\\">\\n  <van-cascader\\n    title=\\\"请选择\\\"\\n    converter=\\\"json\\\"\\n  ></van-cascader>\\n</van-popup>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n  <van-cascader title=\\\"请选择\\\" converter=\\\"json\\\"></van-cascader>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-cascader",
             "title": "级联选择器",
@@ -3103,7 +3103,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-popup round position=\"bottom\" safe-area-inset-bottom design-title=\"双击编辑Cascader选择器\">\n  <van-cascader\n    title=\"请选择\"\n    converter=\"json\"\n  ></van-cascader>\n</van-popup>\n</template>\n"
+                    "code": "<template>\n  <van-cascader title=\"请选择\" converter=\"json\"></van-cascader>\n</template>\n"
                 }
             ],
             "attrs": [

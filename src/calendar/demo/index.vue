@@ -1,18 +1,11 @@
 <template>
   <demo-section>
     <demo-block>
-         <van-cell
-            is-link
-            :title="t('selectSingle')"
-            @click="showCalendarTest = true"
-          />
-        <van-popup round position="bottom" safe-area-inset-bottom design-title="双击编辑Calendar选择器" class="van-calendar__popup" :value.sync="showCalendarTest">
-    <van-calendar
-    wga
-    :lazy-render="false"
-    title="选择日期"
-  ></van-calendar >
-</van-popup>
+      <van-calendar
+      label-field="日历选择"
+      :default-date.sync="ddateffff"
+      title="选择日期"
+    ></van-calendar >
     </demo-block>
     <demo-block card :title="t('basicUsage')">
       <van-cell
@@ -104,7 +97,7 @@
       />
     </demo-block>
 
-    <demo-block card :title="t('tiledDisplay')">
+    <!-- <demo-block card :title="t('tiledDisplay')">
       <van-calendar
         :title="t('calendar')"
         :poppable="false"
@@ -114,7 +107,7 @@
         :default-date.sync="cvalue"
         :style="{ height: '500px' }"
       />
-    </demo-block>
+    </demo-block> -->
 
     <van-calendar
       v-model="showCalendar"
@@ -191,6 +184,7 @@ export default {
 
   data() {
     return {
+      ddateffff: new Date(),
       showCalendarTest: false,
       cvalue: null,
       date: {
