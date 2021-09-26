@@ -90,7 +90,7 @@
     "postcss-px-to-viewport": "^1.1.1",
     "prettier": "2.1.0",
     "vue": "^2.6.12",
-    "vue-cli-plugin-vusion": "^0.13.3",
+    "vue-cli-plugin-vusion": "^0.14.0",
     "vue-i18n": "^8.26.0",
     "vue-router": "^3.5.2",
     "vue-template-compiler": "^2.6.12",

@@ -193,7 +193,7 @@
                 {
                     "name": "dashed",
                     "title": "线条类型",
-                    "type": "boolean",
+                    "type": "string",
                     "options": [
                         {
                             "value": true,
@@ -294,6 +294,20 @@
                     ],
                     "default": false,
                     "description": "是否是卡片风格"
+                }
+            ],
+            "slots": [
+                {
+                    "name": "default",
+                    "description": "插入`<van-cell>`子组件。",
+                    "empty-background": "add-sub-large",
+                    "support": [
+                        {
+                            "name": "van-cell",
+                            "title": "单元格",
+                            "snippet": "<van-cell title=\"单元格\" isLink vusion-slot-name=\"default\" center>内容</van-cell>"
+                        }
+                    ]
                 }
             ],
             "next": true,
@@ -2269,7 +2283,7 @@
                             "name": "name",
                             "title": "选中的值",
                             "type": "string",
-                            "description": "选中的值"
+                            "description": "选项值"
                         },
                         {
                             "name": "disabled",
@@ -2293,7 +2307,7 @@
                                 }
                             ],
                             "default": "right",
-                            "description": "是否禁用"
+                            "description": "文本位置"
                         }
                     ],
                     "slots": false,
@@ -2869,59 +2883,14 @@
                     "sync": true,
                     "model": true,
                     "default": "",
-                    "description": "选中的值",
-                    "advanced": true
+                    "description": "选中的值"
                 },
                 {
                     "name": "columns",
                     "title": "数据源",
                     "type": "array",
-                    "default": [
-                        {
-                            "text": "杭州",
-                            "value": 1111
-                        },
-                        {
-                            "text": "宁波",
-                            "value": 2222
-                        },
-                        {
-                            "text": "绍兴",
-                            "value": 3333
-                        },
-                        {
-                            "text": "宁波",
-                            "value": 4444
-                        },
-                        {
-                            "text": "湖州",
-                            "value": 5555
-                        },
-                        {
-                            "text": "嘉兴",
-                            "value": 6666
-                        },
-                        {
-                            "text": "金华",
-                            "value": 7777
-                        },
-                        {
-                            "text": "温州",
-                            "value": 8888,
-                            "disabled": true
-                        }
-                    ],
-                    "description": "一个包含字符串或对象的数组",
-                    "default2": [
-                        "杭州",
-                        "宁波",
-                        "温州",
-                        "绍兴",
-                        "湖州",
-                        "嘉兴",
-                        "金华",
-                        "衢州"
-                    ]
+                    "default": "[\"杭州\",\"宁波\",\"温州\",\"绍兴\",\"湖州\",\"嘉兴\",\"金华\",\"衢州\"]",
+                    "description": "一个包含字符串或对象的数组"
                 },
                 {
                     "name": "value-key",
@@ -3009,7 +2978,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-popup round position=\\\"bottom\\\" safe-area-inset-bottom design-title=\\\"双击编辑area选择器\\\">\\n  <van-area title=\\\"标题\\\"></van-area>\\n</van-popup>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-popup round position=\\\"bottom\\\" safe-area-inset-bottom design-title=\\\"双击编辑area选择器\\\">\\n  <van-area title=\\\"标题\\\" converter=\\\"json\\\"></van-area>\\n</van-popup>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-area",
             "title": "地区选择器选择器",
@@ -3021,7 +2990,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-popup round position=\"bottom\" safe-area-inset-bottom design-title=\"双击编辑area选择器\">\n  <van-area title=\"标题\"></van-area>\n</van-popup>\n</template>\n"
+                    "code": "<template>\n<van-popup round position=\"bottom\" safe-area-inset-bottom design-title=\"双击编辑area选择器\">\n  <van-area title=\"标题\" converter=\"json\"></van-area>\n</van-popup>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -3032,8 +3001,14 @@
                     "sync": true,
                     "model": true,
                     "default": "",
-                    "description": "当前选中的省市区code",
-                    "advanced": true
+                    "description": "当前选中的省市区code"
+                },
+                {
+                    "name": "areaListprop",
+                    "title": "数据源(不填写的话默认全国)",
+                    "type": "array",
+                    "default": "{\"province_list\":{\"110000\":\"北京市\"},\"city_list\":{\"110100\":\"北京市\"},\"county_list\":{\"110101\":\"东城区\",\"110102\":\"西城区\",\"110105\":\"朝阳区\",\"110106\":\"丰台区\",\"110107\":\"石景山区\",\"110108\":\"海淀区\",\"110109\":\"门头沟区\",\"110111\":\"房山区\",\"110112\":\"通州区\",\"110113\":\"顺义区\",\"110114\":\"昌平区\",\"110115\":\"大兴区\",\"110116\":\"怀柔区\",\"110117\":\"平谷区\",\"110118\":\"密云区\",\"110119\":\"延庆区\"}}",
+                    "description": "一个包含字符串或对象的数组"
                 },
                 {
                     "name": "title",
@@ -3102,7 +3077,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-popup round position=\\\"bottom\\\" safe-area-inset-bottom design-title=\\\"双击编辑Cascader选择器\\\">\\n  <van-cascader\\n    title=\\\"请选择\\\"\\n  ></van-cascader>\\n</van-popup>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-popup round position=\\\"bottom\\\" safe-area-inset-bottom design-title=\\\"双击编辑Cascader选择器\\\">\\n  <van-cascader\\n    title=\\\"请选择\\\"\\n    converter=\\\"json\\\"\\n  ></van-cascader>\\n</van-popup>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-cascader",
             "title": "级联选择器",
@@ -3114,7 +3089,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-popup round position=\"bottom\" safe-area-inset-bottom design-title=\"双击编辑Cascader选择器\">\n  <van-cascader\n    title=\"请选择\"\n  ></van-cascader>\n</van-popup>\n</template>\n"
+                    "code": "<template>\n<van-popup round position=\"bottom\" safe-area-inset-bottom design-title=\"双击编辑Cascader选择器\">\n  <van-cascader\n    title=\"请选择\"\n    converter=\"json\"\n  ></van-cascader>\n</van-popup>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -3129,130 +3104,9 @@
                 },
                 {
                     "name": "options",
-                    "title": "数据数组",
+                    "title": "数据源",
                     "type": "array",
-                    "default": [
-                        {
-                            "text": "浙江省",
-                            "value": "330000",
-                            "children": [
-                                {
-                                    "text": "杭州市",
-                                    "value": "330100",
-                                    "children": [
-                                        {
-                                            "text": "上城区",
-                                            "value": "330102"
-                                        },
-                                        {
-                                            "text": "下城区",
-                                            "value": "330103"
-                                        },
-                                        {
-                                            "text": "江干区",
-                                            "value": "330104"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "text": "宁波市",
-                                    "value": "330200",
-                                    "children": [
-                                        {
-                                            "text": "海曙区",
-                                            "value": "330203"
-                                        },
-                                        {
-                                            "text": "江北区",
-                                            "value": "330205"
-                                        },
-                                        {
-                                            "text": "北仑区",
-                                            "value": "330206"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "text": "温州市",
-                                    "value": "330300",
-                                    "children": [
-                                        {
-                                            "text": "鹿城区",
-                                            "value": "330302"
-                                        },
-                                        {
-                                            "text": "龙湾区",
-                                            "value": "330303"
-                                        },
-                                        {
-                                            "text": "瓯海区",
-                                            "value": "330304"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "text": "江苏省",
-                            "value": "320000",
-                            "children": [
-                                {
-                                    "text": "南京市",
-                                    "value": "320100",
-                                    "children": [
-                                        {
-                                            "text": "玄武区",
-                                            "value": "320102"
-                                        },
-                                        {
-                                            "text": "秦淮区",
-                                            "value": "320104"
-                                        },
-                                        {
-                                            "text": "建邺区",
-                                            "value": "320105"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "text": "无锡市",
-                                    "value": "320200",
-                                    "children": [
-                                        {
-                                            "text": "锡山区",
-                                            "value": "320205"
-                                        },
-                                        {
-                                            "text": "惠山区",
-                                            "value": "320206"
-                                        },
-                                        {
-                                            "text": "滨湖区",
-                                            "value": "320211"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "text": "徐州市",
-                                    "value": "320300",
-                                    "children": [
-                                        {
-                                            "text": "鼓楼区",
-                                            "value": "320302"
-                                        },
-                                        {
-                                            "text": "云龙区",
-                                            "value": "320303"
-                                        },
-                                        {
-                                            "text": "贾汪区",
-                                            "value": "320305"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
+                    "default": "[{\"text\":\"理学\",\"value\":\"理学\",\"children\":[{\"text\":\"物理学\",\"value\":\"物理学\",\"children\":[{\"text\":\"理论物理\",\"value\":\"理论物理\"},{\"text\":\"凝聚态物理\",\"value\":\"凝聚态物理\"},{\"text\":\"材料物理\",\"value\":\"材料物理\"}]},{\"text\":\"数学\",\"value\":\"数学\",\"children\":[{\"text\":\"基础数学\",\"value\":\"基础数学\"},{\"text\":\"计算数学\",\"value\":\"计算数学\"},{\"text\":\"应用数学\",\"value\":\"应用数学\"}]},{\"text\":\"化学\",\"value\":\"化学\"}]},{\"text\":\"工学\",\"value\":\"工学\",\"children\":[{\"text\":\"计算机科学与技术\",\"value\":\"计算机科学与技术\",\"children\":[{\"text\":\"计算机系统结构\",\"value\":\"计算机系统结构\"},{\"text\":\"计算机软件与理论\",\"value\":\"计算机软件与理论\",\"disabled\":true},{\"text\":\"计算机应用技术\",\"value\":\"计算机应用技术\"}]},{\"text\":\"软件工程\",\"value\":\"软件工程\",\"disabled\":true},{\"text\":\"机械工程\",\"value\":\"机械工程\",\"children\":[{\"text\":\"机械制造及其自动化\",\"value\":\"机械制造及其自动化\"},{\"text\":\"机械电子工程\",\"value\":\"机械电子工程\"},{\"text\":\"机械设计及理论\",\"value\":\"机械设计及理论\",\"disabled\":true},{\"text\":\"车辆工程\",\"value\":\"车辆工程\",\"disabled\":true}]}]}]",
                     "description": "一个包含字符串或对象的数组"
                 },
                 {
