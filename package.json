@@ -1,6 +1,6 @@
 {
   "name": "@lcap/mobile-ui",
-  "version": "0.10.6",
+  "version": "0.11.1",
   "lcapname": "@lcap/mobile-ui",
   "lcapversion": "0.6.3",
   "description": "Mobile UI Components built on Vue",
@@ -65,9 +65,10 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "7.x",
-    "@vant/icons": "^1.5.3",
-    "@vant/popperjs": "^1.0.0",
+    "@vant/icons": "^1.7.1",
+    "@vant/popperjs": "^1.1.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "lodash": "^4.17.21",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {

@@ -55,9 +55,9 @@ function Cell(
   function Title() {
     if (showTitle) {
       return (
-        <div class={[bem('title'), props.titleClass]} style={props.titleStyle}>
-          {slots.title ? slots.title() : <span vusion-slot-name="title">{title}</span>}
-          {Label()}
+        <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title">
+          {slots.title ? slots.title() : title}
+          {/* {Label()} */}
         </div>
       );
     }
