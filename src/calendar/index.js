@@ -474,7 +474,7 @@ export default createComponent({
           <Button
             round
             block
-            type="danger"
+            type="info"
             color={this.color}
             class={bem('confirm')}
             disabled={this.buttonDisabled}

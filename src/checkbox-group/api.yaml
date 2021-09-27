@@ -15,6 +15,11 @@
       title: 最大可选数
       type: number
       description: 最大可选数(0为不限制)
+    - name: min
+      title: 最小选择数量
+      type: number
+      default: 0
+      description: 最小选择数量
     - name: disabled
       title: 禁用
       type: boolean

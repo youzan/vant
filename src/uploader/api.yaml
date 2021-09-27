@@ -6,11 +6,11 @@
   description: 上传文件。
   attrs:
     - name: fileListProp
-      title: 文件列表
+      title: 值
       type: Array
       sync: true
       model: true
-      default: "[]"
+      default2: "[]"
       description: 已上传的文件列表
     - name: name
       title: 上传的文件字段名
@@ -41,6 +41,7 @@
         - title: file
           value: file
       default: dataUrl
+      advanced: true
       description: 文件读取结果的类型，上传大文件时，建议使用 file 类型，避免卡顿
     - name: url
       title: 上传地址
@@ -84,10 +85,10 @@
       default: 999
       description: 列表数量上限
     - name: max-size
-      title: 最大文件大小
+      title: 最大文件大小,单位为MB
       type: number,string
-      default: 10485760
-      description: 文件大小限制，单位为 byte, 默认为10MB
+      default: 10
+      description: 文件大小限制，默认为10MB
     - name: capture
       title: 图片选择模式
       type: string

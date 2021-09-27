@@ -9,6 +9,10 @@ export default createComponent({
 
   props: {
     max: [Number, String],
+    min: {
+      type: Number,
+      default: 1,
+    },
     disabled: Boolean,
     direction: String,
     iconSize: [Number, String],

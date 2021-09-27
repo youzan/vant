@@ -54,7 +54,7 @@ export default createComponent({
     setParentValue(val) {
       const { parent } = this;
       const value = parent.value.slice();
-
+      console.log(val, value);
       if (val) {
         if (parent.max && value.length >= parent.max) {
           return;
@@ -68,7 +68,9 @@ export default createComponent({
         }
       } else {
         const index = value.indexOf(this.name);
-
+        if (parent.min && value.length <= parent.min) {
+          return;
+        }
         /* istanbul ignore else */
         if (index !== -1) {
           value.splice(index, 1);

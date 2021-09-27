@@ -37,11 +37,11 @@
       empty-background: add-sub-large
       support:
         - name: van-field
-          title: input类型表单项
+          title: 添加输入框
           snippet: <van-field label="表单项"></van-field>
         - name: van-field
-          title: 非input类型表单项
-          snippet: '<van-field label="表单项"><template #input></template></van-field>'
+          title: 添加其他
+          snippet: '<van-field label="表单项" drole="other"><template #input></template></van-field>'
   events:
     - name: submit
       title: 验证通过
@@ -58,12 +58,12 @@
   nested: false
   attrs:
     - name: value
-      title: 表单值
+      title: 表单项值
       type: any
       sync: true
       model: true
       default: ""
-      description: 表单值
+      description: 表单项值
     - name: name
       title: 提交表单的标识符
       type: string

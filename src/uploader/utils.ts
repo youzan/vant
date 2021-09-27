@@ -42,7 +42,7 @@ export function isOversize(
       if (isFunction(maxSize)) {
         return maxSize(file);
       }
-      return file.size > maxSize;
+      return file.size > ((parseInt(String(maxSize), 10)) * 1024 * 1024);
     }
     return false;
   });

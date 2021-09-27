@@ -13,9 +13,9 @@
       default: ""
       description: 选中的值
     - name: columns
-      title: 数据源
+      title: 数据源(一维数组)
       type: array
-      default: '["杭州","宁波","温州","绍兴","湖州","嘉兴","金华","衢州"]'
+      default222: '["杭州","宁波","温州","绍兴","湖州","嘉兴","金华","衢州"]'
       description: 一个包含字符串或对象的数组
     - name: value-key
       title: 选项对象中，选项文字对应的键名
