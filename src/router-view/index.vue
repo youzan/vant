@@ -1,5 +1,5 @@
 <template>
-<div :class="['fake']" v-if="$env && $env.VUE_APP_DESIGNER">
+<div :class="$style.fake" v-if="$env.VUE_APP_DESIGNER">
     <router-view></router-view>
 </div>
 <router-view v-else></router-view>
@@ -11,7 +11,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style module>
 .fake:empty {
     background: linear-gradient(-45deg, white 25%,
     rgba(138, 205, 78, 0.25) 25%, rgba(138, 205, 78, 0.25) 50%,

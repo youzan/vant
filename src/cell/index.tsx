@@ -72,7 +72,7 @@ function Cell(
       return (
         <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default">
           {slots.default ? slots.default() : (isDef(value) ? <span>{value}</span>  : null)}
-          {(ifDesigner && !isDef(value) && !slots.default) ? <van-empty-col></van-empty-col> : null}
+          {(ifDesigner && !isDef(value) && !slots.default) ? <VanEmptyCol></VanEmptyCol> : null}
         </div>
       );
     // }

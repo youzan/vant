@@ -1,5 +1,5 @@
 <template>
-<div :class="{vline: true}" v-on="$listeners" vusion-slot-name="default">
+<div :class="$style.vline" v-on="$listeners" vusion-slot-name="default">
     <slot></slot>
     <van-empty-col v-if="(!$slots.default) && $env.VUE_APP_DESIGNER"></van-empty-col>
 </div>
@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style module>
 /* 默认为 block */
 .vline{
   background-color: transparent;

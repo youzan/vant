@@ -6,6 +6,8 @@ import { BORDER_TOP_BOTTOM } from '../utils/constant';
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots, ScopedSlot } from '../utils/types';
+import VanEmptyCol from '../emptycol/index';
+
 
 export type CellGroupProps = {
   title?: string;
@@ -33,7 +35,7 @@ function CellGroup(
       ]}
       {...inherit(ctx, true)}
     >
-      {slots.default ? slots.default?.() : <van-empty-col></van-empty-col> }
+      {slots.default ? slots.default?.() : <VanEmptyCol></VanEmptyCol> }
     </div>
   );
 

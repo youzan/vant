@@ -1,5 +1,5 @@
 <template>
-<span class="root" v-on="$listeners" vusion-slot-name="text">
+<span :class="$style.root" v-on="$listeners" vusion-slot-name="text">
     {{ text }}
 </span>
 </template>
@@ -13,7 +13,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style module>
 .root {}
 
 .root[size="small"] {

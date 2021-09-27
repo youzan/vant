@@ -1,5 +1,5 @@
 <template>
-<div :class="['empty']" s-empty="true">+</div>
+<div :class="$style.empty" s-empty="true">+</div>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style module>
 .empty {
   background: #F7F8FA;
   text-align: center;

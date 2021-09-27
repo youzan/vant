@@ -1,6 +1,10 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
+      <van-row>
+        <van-col offset="12" span="12">
+        </van-col>
+      </van-row>
       <van-row gutter="0">
         <van-col span="8">span: 8</van-col>
         <van-col span="8">span: 8</van-col>

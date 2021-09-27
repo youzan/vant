@@ -1,11 +1,14 @@
 import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
+import VanEmptyCol from '../emptycol/index';
 
 const [createComponent, bem] = createNamespace('col');
 
 export default createComponent({
   mixins: [ChildrenMixin('vanRow')],
-
+  components: {
+    VanEmptyCol,
+  },
   props: {
     span: [Number, String],
     offset: [Number, String],
