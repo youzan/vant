@@ -12,6 +12,7 @@ package-lock.json
 es
 lib
 dist
+dist-theme
 /site
 changelog.generated.md
 test/coverage

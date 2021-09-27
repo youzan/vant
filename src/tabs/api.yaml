@@ -4,15 +4,13 @@
   labels:
     - Selector
   description: 选项卡切换组件，常用于平级区域大块内容的收纳和展现
-  next: true
-  nested: false
   attrs:
     - name: value
       title: 值
       type: any
       sync: true
       model: true
-      default: 0
+      default: "a"
       description: 选中标签页的值。
     - name: disabled
       title: 禁用
@@ -39,15 +37,20 @@
       type: boolean
       default: true
       description: 是否滑动切换
-    - name: scrollspy
-      title: 滚动导航
-      type: boolean
-      default: false
-      description: 是否开启滚动导航
+    - name: scrollspystr
+      title: 导航模式
+      type: string
+      default: 'no'
+      options:
+        - value: 'no'
+          title: 切换导航
+        - value: 'scrollspy'
+          title: 滚动导航
+      description: 导航模式
     - name: animated
-      title: 转场动画
+      title: 切换动画
       type: boolean
-      default: false
+      default: true
       description: 是否开启转场动画
   slots:
     - name: default
@@ -70,14 +73,11 @@
 - name: van-tab
   title: tab标签页
   control: button
-  next: false
-  nested: true
   is-sub: true
   attrs:
     - name: name
       title: 值
       type: string
-      default: 标题
       description: 标签页的值
     - name: title
       title: 标题
@@ -90,12 +90,12 @@
       default: false
       description: 是否禁用
     - name: badgebtn
-      title: 徽章显示
+      title: 徽章
       type: boolean
       default: false
       description: 是否显示徽章
     - name: badge
-      title: 徽章
+      title: 徽章值
       type: string, number
       description: 徽章的内容
     - name: badgemax

@@ -59,12 +59,15 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
-    animated: Boolean,
+    animated: {
+      type: Boolean,
+      default: true,
+    },
     swipeable: {
       type: Boolean,
       default: true,
     },
-    scrollspy: Boolean,
+    scrollspystr: String,
     background: String,
     lineWidth: [Number, String],
     lineHeight: [Number, String],
@@ -116,6 +119,9 @@ export default createComponent({
   },
 
   computed: {
+    scrollspy() {
+      return this.scrollspystr === 'scrollspy';
+    },
     // whether the nav is scrollable
     scrollable() {
       return this.children.length > this.swipeThreshold || !this.ellipsis;
