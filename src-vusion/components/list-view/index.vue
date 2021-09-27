@@ -38,10 +38,10 @@
             <div :class="$style.status" status="error" v-else-if="currentData === null || currentError">
                 <slot name="error">{{ errorText }}</slot>
             </div>
-            <div :class="$style.status" v-else-if="pageable === 'load-more' && currentDataSource.hasMore()">
+            <div :class="$style.status" v-else-if="pageable === 'load-more' && currentDataSource && currentDataSource.hasMore()">
                 <u-link @click="load(true)">{{ $t('loadMore') }}</u-link>
             </div>
-            <div :class="$style.status" v-else-if="(pageable === 'auto-more' || pageable === 'load-more') && !currentDataSource.hasMore()">
+            <div :class="$style.status" v-else-if="(pageable === 'auto-more' || pageable === 'load-more') && currentDataSource && !currentDataSource.hasMore()">
                 {{ $t('noMore') }}
             </div>
             <div :class="$style.status" v-else-if="currentData && !currentData.length">
