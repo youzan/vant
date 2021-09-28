@@ -148,7 +148,12 @@ export function getViteConfigForSiteProd(): InlineConfig {
       rollupOptions: {
         input: {
           main: join(SITE_SRC_DIR, 'index.html'),
-          nested: join(SITE_SRC_DIR, 'mobile.html'),
+          mobile: join(SITE_SRC_DIR, 'mobile.html'),
+        },
+        output: {
+          manualChunks: {
+            'vue-libs': ['vue', 'vue-router'],
+          },
         },
       },
     },
