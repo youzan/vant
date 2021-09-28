@@ -1,4 +1,4 @@
-import { createApp, reactive, Component, nextTick } from 'vue';
+import { createApp, reactive, Component } from 'vue';
 import { extend } from '../utils';
 import { useExpose } from '../composables/use-expose';
 
@@ -15,14 +15,11 @@ export function usePopupState() {
   };
 
   const open = (props: Record<string, any>) => {
-    extend(state, props);
-    // for transition
-    nextTick(() => toggle(true));
+    extend(state, props, { transitionAppear: true });
+    toggle(true);
   };
 
-  const close = () => {
-    nextTick(() => toggle(false));
-  };
+  const close = () => toggle(false);
 
   useExpose({ open, close, toggle });
 

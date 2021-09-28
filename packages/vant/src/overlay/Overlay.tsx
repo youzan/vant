@@ -54,6 +54,10 @@ export default defineComponent({
       );
     });
 
-    return () => <Transition name="van-fade">{renderOverlay()}</Transition>;
+    return () => (
+      <Transition name="van-fade" appear>
+        {renderOverlay()}
+      </Transition>
+    );
   },
 });
