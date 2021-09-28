@@ -19,7 +19,7 @@
   },
   "scripts": {
     "bootstrap": "yarn || npm i",
-    "dev:vusion": "vue-cli-service doc --port 9100",
+    "dev:vusion": "cross-env scene=desktop vue-cli-service doc --port 9100",
     "dev": "cross-env scene=desktop vant-cli dev",
     "dev2": "vant-cli dev",
     "lint": "vant-cli lint",
