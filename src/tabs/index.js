@@ -394,7 +394,13 @@ export default createComponent({
     const { type, animated, scrollable, disabled } = this;
 
     const Nav = this.children.map((item, index) => {
+      const aId = item.$vnode.context.$options._scopeId;
+      const aIdo = {
+        ...item.$attrs,
+        [aId] : ''
+      }
       return <Title
+        {...{attrs: {...aIdo}}}
         vusion-slot-name="extra"
         ref="titles"
         refInFor
@@ -411,7 +417,7 @@ export default createComponent({
         scrollable={scrollable}
         activeColor={this.titleActiveColor}
         inactiveColor={this.titleInactiveColor}
-        vusion-scope-id={item.$vnode.context.$options._scopeId}
+        vusion-scope-id={aId}
         vusion-node-path={item.$attrs['vusion-node-path']}
         vusion-node-tag={item.$attrs['vusion-node-tag']}
         scopedSlots={{
