@@ -29,10 +29,8 @@ const MOMENTUM_LIMIT_DISTANCE = 15;
 const [name, bem] = createNamespace('picker-column');
 
 function getElementTranslateY(element: Element) {
-  const style = window.getComputedStyle(element);
-  const translateY = style.transform
-    .slice(7, style.transform.length - 1)
-    .split(', ')[5];
+  const { transform } = window.getComputedStyle(element);
+  const translateY = transform.slice(7, transform.length - 1).split(', ')[5];
   return Number(translateY);
 }
 
