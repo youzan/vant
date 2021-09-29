@@ -22,6 +22,7 @@
       type: string
       default: text
       description: 选项对象中，选项文字对应的键名
+      advanced: true
     - name: default-index
       title: 单列选择时，默认选中项的索引
       type: number

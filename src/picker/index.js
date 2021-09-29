@@ -278,10 +278,20 @@ export default createComponent({
     confirm() {
       this.children.forEach((child) => child.stopMomentum());
       this.emit('confirm');
+      try {
+        this.$parent.closeModal();
+      } catch (error) {
+        console.error(error);
+      }
     },
 
     cancel() {
       this.emit('cancel');
+      try {
+        this.$parent.closeModal();
+      } catch (error) {
+        console.error(error);
+      }
     },
 
     genTitle() {
