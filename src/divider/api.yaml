@@ -11,11 +11,11 @@
       title: 线条类型
       type: string
       options:
-        - value: true
+        - value: b
           title: 虚线
-        - value: false
+        - value: a
           title: 实线
-      default: false
+      default: a
       description: 线条类型
     - name: content-position
       title: 内容位置

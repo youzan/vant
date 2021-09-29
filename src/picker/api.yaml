@@ -12,7 +12,7 @@
       model: true
       default: ""
       description: 选中的值
-    - name: columns
+    - name: columnsprop
       title: 数据源(一维数组)
       type: array
       default222: '["杭州","宁波","温州","绍兴","湖州","嘉兴","金华","衢州"]'

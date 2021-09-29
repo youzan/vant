@@ -7,7 +7,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 
 export type DividerProps = {
-  dashed?: boolean;
+  dashed?: string;
   hairline: boolean;
   borderColor?: string;
   contentPosition: 'left' | 'center' | 'right';
@@ -29,7 +29,7 @@ function Divider(
       role="separator"
       style={{ borderColor: props.borderColor }}
       class={bem({
-        dashed: props.dashed,
+        dashed: props.dashed !== 'a',
         hairline: props.hairline,
         [`content-${props.contentPosition}`]: props.title || slots.default,
       })}
@@ -42,7 +42,10 @@ function Divider(
 }
 
 Divider.props = {
-  dashed: Boolean,
+  dashed: {
+    type: String,
+    default: 'a',
+  },
   hairline: {
     type: Boolean,
     default: true,

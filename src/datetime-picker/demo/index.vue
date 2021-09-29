@@ -51,6 +51,13 @@
         :max-date="maxDate"
       />
     </demo-block>
+    <demo-block card :title="t('datetimeType')">
+      <van-datetime-picker
+    type="datetime"
+    title="选择完整时间"
+    label-field="选择时间"
+  ></van-datetime-picker>
+    </demo-block>
 
     <!-- <demo-block v-if="!isWeapp" card :title="t('datehourType')">
       <van-datetime-picker

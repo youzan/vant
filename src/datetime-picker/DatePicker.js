@@ -135,7 +135,11 @@ export default createComponent({
 
       } else {
         try {
-          value = new Date(value);
+          if (!value) {
+            value = new Date();
+          } else {
+            value = new Date(value);
+          }
         } catch (e) {
           console.warn(e, 'error date');
         }
