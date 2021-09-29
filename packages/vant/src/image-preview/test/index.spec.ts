@@ -1,53 +1,13 @@
-import { nextTick } from 'vue';
-import { DOMWrapper } from '@vue/test-utils/dist/domWrapper';
 import {
   mount,
   later,
-  trigger,
   triggerDrag,
   mockGetBoundingClientRect,
 } from '../../../test';
-import { ImagePreview } from '../function-call';
 import ImagePreviewComponent from '../ImagePreview';
+import { images, triggerZoom } from './shared';
 
-const images = [
-  'https://img.yzcdn.cn/1.png',
-  'https://img.yzcdn.cn/2.png',
-  'https://img.yzcdn.cn/3.png',
-];
-
-function triggerTwoFingerTouchmove(
-  el: Element | DOMWrapper<Element>,
-  x: number,
-  y: number
-) {
-  trigger(el, 'touchmove', -x, -y, { x, y });
-}
-
-function triggerZoom(
-  el: Element | DOMWrapper<Element>,
-  x: number,
-  y: number,
-  direction = 'in'
-) {
-  trigger(el, 'touchstart', 0, 0, { x, y });
-
-  if (direction === 'in') {
-    triggerTwoFingerTouchmove(el, x / 4, y / 4);
-    triggerTwoFingerTouchmove(el, x / 3, y / 3);
-    triggerTwoFingerTouchmove(el, x / 2, y / 2);
-    triggerTwoFingerTouchmove(el, x, y);
-  } else if (direction === 'out') {
-    triggerTwoFingerTouchmove(el, x, y);
-    triggerTwoFingerTouchmove(el, x / 2, y / 2);
-    triggerTwoFingerTouchmove(el, x / 3, y / 3);
-    triggerTwoFingerTouchmove(el, x / 4, y / 4);
-  }
-
-  trigger(el, 'touchend', 0, 0, { touchList: [] });
-}
-
-test('should swipe to currect index after calling the swipeTo method', async () => {
+test('should swipe to current index after calling the swipeTo method', async () => {
   const wrapper = mount(ImagePreviewComponent, {
     props: {
       show: true,
@@ -218,21 +178,6 @@ test('before close prop', async () => {
   expect(wrapper.emitted('close')![0]).toBeTruthy();
 });
 
-test('function call', async () => {
-  ImagePreview({ images });
-  ImagePreview({ images: images.slice(0, 1) });
-
-  await later();
-  await nextTick();
-  const wrapper = document.querySelector(
-    '.van-image-preview'
-  ) as HTMLDivElement;
-  const swipe = wrapper.querySelector('.van-swipe__track') as HTMLDivElement;
-  triggerDrag(swipe, 0, 0);
-
-  expect(wrapper.querySelectorAll('img').length).toEqual(1);
-});
-
 test('double click', async () => {
   const onScale = jest.fn();
   const wrapper = mount(ImagePreviewComponent, {
@@ -259,54 +204,6 @@ test('double click', async () => {
     index: 0,
     scale: 1,
   });
-});
-
-test('onClose option', async () => {
-  const onClose = jest.fn();
-  const instance = ImagePreview({
-    images,
-    startPosition: 1,
-    onClose,
-  });
-
-  await instance?.close();
-
-  expect(onClose).toHaveBeenCalledTimes(1);
-  expect(onClose).toHaveBeenCalledWith({
-    index: 0,
-    url: images[0],
-  });
-});
-
-test('onChange option', async () => {
-  const onChange = jest.fn();
-  ImagePreview({
-    images,
-    startPosition: 0,
-    onChange,
-  });
-
-  await nextTick();
-  const swipe = document.querySelector('.van-swipe__track') as HTMLDivElement;
-  triggerDrag(swipe, 1000, 0);
-  expect(onChange).toHaveBeenCalledWith(2);
-});
-
-test('onScale option', async () => {
-  const restore = mockGetBoundingClientRect({ width: 100 });
-  ImagePreview({
-    images,
-    startPosition: 0,
-    onScale({ index, scale }) {
-      expect(index).toEqual(2);
-      expect(scale <= 2).toBeTruthy();
-    },
-  });
-
-  await later();
-  const image = document.querySelector('img') as HTMLImageElement;
-  triggerZoom(image, 300, 300);
-  restore();
 });
 
 test('zoom in and drag image to move', async () => {
@@ -356,28 +253,4 @@ test('zoom out', async () => {
   expect(onScale).toHaveBeenLastCalledWith({ index: 0, scale: 1 });
 
   restore();
-});
-
-test('should allow to use the teleport option', async () => {
-  const element = document.createElement('div');
-  element.id = 'parent-node';
-  document.body.appendChild(element);
-  ImagePreview({ images, teleport: element });
-
-  await later();
-  await nextTick();
-  const wrapperDiv = document.querySelector(
-    '.van-image-preview'
-  ) as HTMLDivElement;
-  expect(wrapperDiv.parentElement?.parentElement?.id).toEqual(element.id);
-  document.body.removeChild(element);
-
-  ImagePreview(images);
-
-  await later();
-  await nextTick();
-  const wrapperBody = document.querySelector(
-    '.van-image-preview'
-  ) as HTMLDivElement;
-  expect(wrapperBody.parentElement?.parentElement).toEqual(document.body);
 });
