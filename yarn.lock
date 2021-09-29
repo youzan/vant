@@ -1930,10 +1930,10 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.12.tgz#304064a4b56fc6c7b9169d80e9ee62ecb4bf0a1c"
   integrity sha512-5CkaifUCJwcTuru7FDwKFacPJuEoGUTw0LKSa5bw40B23s0TS+MGlYR1285nbV/ju3QUGlA6d6PD+GJkWy7uFg==
 
-"@vue/test-utils@2.0.0-rc.6":
-  version "2.0.0-rc.6"
-  resolved "https://registry.nlark.com/@vue/test-utils/download/@vue/test-utils-2.0.0-rc.6.tgz?cache=0&sync_timestamp=1630892900586&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Ftest-utils%2Fdownload%2F%40vue%2Ftest-utils-2.0.0-rc.6.tgz#d0aac24d20450d379e183f70542c0822670b8783"
-  integrity sha1-0KrCTSBFDTeeGD9wVCwIImcLh4M=
+"@vue/test-utils@2.0.0-rc.14":
+  version "2.0.0-rc.14"
+  resolved "https://registry.npmmirror.com/@vue/test-utils/download/@vue/test-utils-2.0.0-rc.14.tgz#9da1be7b0e365ff5f945677da17bf6c8a7a83abd"
+  integrity sha1-naG+ew42X/X5RWd9oXv2yKeoOr0=
 
 JSONStream@^1.0.4:
   version "1.3.5"
