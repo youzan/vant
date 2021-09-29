@@ -1,4 +1,5 @@
-import { inBrowser, loadImageAsync, noop } from './util';
+import { inBrowser } from '@vant/use';
+import { loadImageAsync, noop } from './util';
 
 export default (lazyManager) => ({
   props: {

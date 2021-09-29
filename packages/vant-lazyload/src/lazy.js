@@ -1,13 +1,12 @@
 import { nextTick } from 'vue';
+import { inBrowser, getScrollParent } from '@vant/use';
 import {
-  inBrowser,
   remove,
-  find,
-  _,
+  on,
+  off,
   throttle,
   supportWebp,
   getDPR,
-  scrollParent,
   getBestSelectionFromSrcset,
   isObject,
   hasIntersectionObserver,
@@ -147,7 +146,7 @@ export default function () {
         }
 
         if (!$parent) {
-          $parent = scrollParent(el);
+          $parent = getScrollParent(el);
         }
 
         const newListener = new ReactiveListener({
@@ -186,7 +185,7 @@ export default function () {
       let { src } = value;
       src = getBestSelectionFromSrcset(el, this.options.scale) || src;
 
-      const exist = find(this.ListenerQueue, (item) => item.el === el);
+      const exist = this.ListenerQueue.find((item) => item.el === el);
       if (!exist) {
         this.add(el, binding, vnode);
       } else {
@@ -212,7 +211,7 @@ export default function () {
     remove(el) {
       if (!el) return;
       this._observer && this._observer.unobserve(el);
-      const existItem = find(this.ListenerQueue, (item) => item.el === el);
+      const existItem = this.ListenerQueue.find((item) => item.el === el);
       if (existItem) {
         this._removeListenerTarget(existItem.$parent);
         this._removeListenerTarget(window);
@@ -273,7 +272,7 @@ export default function () {
      */
     _addListenerTarget(el) {
       if (!el) return;
-      let target = find(this.TargetQueue, (target) => target.el === el);
+      let target = this.TargetQueue.find((target) => target.el === el);
       if (!target) {
         target = {
           el,
@@ -315,7 +314,7 @@ export default function () {
      */
     _initListen(el, start) {
       this.options.ListenEvents.forEach((evt) =>
-        _[start ? 'on' : 'off'](el, evt, this.lazyLoadHandler)
+        (start ? on : off)(el, evt, this.lazyLoadHandler)
       );
     }
 

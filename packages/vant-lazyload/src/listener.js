@@ -32,7 +32,6 @@ export default class ReactiveListener {
     this.elRenderer = elRenderer;
     this._imageCache = imageCache;
     this.performanceData = {
-      init: Date.now(),
       loadStart: 0,
       loadEnd: 0,
     };

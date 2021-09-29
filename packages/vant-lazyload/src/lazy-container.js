@@ -1,5 +1,6 @@
 /* eslint-disable max-classes-per-file */
-import { find, remove } from './util';
+/* eslint-disable prefer-object-spread */
+import { remove } from './util';
 
 const defaultOptions = {
   selector: 'img',
@@ -74,13 +75,13 @@ export default class LazyContainerManager {
   }
 
   update(el, binding, vnode) {
-    const container = find(this._queue, (item) => item.el === el);
+    const container = this._queue.find((item) => item.el === el);
     if (!container) return;
     container.update({ el, binding, vnode });
   }
 
   unbind(el) {
-    const container = find(this._queue, (item) => item.el === el);
+    const container = this._queue.find((item) => item.el === el);
     if (!container) return;
     container.clear();
     remove(this._queue, container);
