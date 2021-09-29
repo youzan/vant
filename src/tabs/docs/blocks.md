@@ -1,4 +1,4 @@
-#### 外观-line（默认）
+### 外观-line
 
 ``` html
 <van-tabs type="line">
