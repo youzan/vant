@@ -135,35 +135,12 @@ function throttle(action, delay) {
   };
 }
 
-function testSupportsPassive() {
-  if (!inBrowser) return;
-  let support = false;
-  try {
-    const opts = Object.defineProperty({}, 'passive', {
-      // eslint-disable-next-line getter-return
-      get() {
-        support = true;
-      },
-    });
-    window.addEventListener('test', null, opts);
-  } catch (e) {
-    //
-  }
-  return support;
-}
-
-const supportsPassive = testSupportsPassive();
-
 const _ = {
   on(el, type, func, capture = false) {
-    if (supportsPassive) {
-      el.addEventListener(type, func, {
-        capture,
-        passive: true,
-      });
-    } else {
-      el.addEventListener(type, func, capture);
-    }
+    el.addEventListener(type, func, {
+      capture,
+      passive: true,
+    });
   },
   off(el, type, func, capture = false) {
     el.removeEventListener(type, func, capture);
