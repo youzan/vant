@@ -1,7 +1,6 @@
 import { nextTick } from 'vue';
 import {
   inBrowser,
-  CustomEvent,
   remove,
   find,
   _,

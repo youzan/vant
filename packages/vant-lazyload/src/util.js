@@ -11,25 +11,6 @@ export const modeType = {
   observer: 'observer',
 };
 
-// CustomEvent polyfill
-const CustomEvent = (function () {
-  if (!inBrowser) return;
-  if (typeof window.CustomEvent === 'function') return window.CustomEvent;
-  function CustomEvent(event, params) {
-    params = params || { bubbles: false, cancelable: false, detail: undefined };
-    const evt = document.createEvent('CustomEvent');
-    evt.initCustomEvent(
-      event,
-      params.bubbles,
-      params.cancelable,
-      params.detail
-    );
-    return evt;
-  }
-  CustomEvent.prototype = window.Event.prototype;
-  return CustomEvent;
-})();
-
 function remove(arr, item) {
   if (!arr.length) return;
   const index = arr.indexOf(item);
@@ -284,7 +265,6 @@ class ImageCache {
 export {
   ImageCache,
   inBrowser,
-  CustomEvent,
   remove,
   find,
   noop,
