@@ -107,7 +107,7 @@ function Cell(
       return (
         <Icon
           class={bem('right-icon')}
-          name={arrowDirection ? `arrow-${arrowDirection}` : 'arrow'}
+          name={(arrowDirection && arrowDirection !== 'right') ? `arrow-${arrowDirection}` : 'arrow'}
         />
       );
     }

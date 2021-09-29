@@ -37,10 +37,10 @@
       empty-background: add-sub-large
       support:
         - name: van-field
-          title: 添加输入框
+          title: 输入框
           snippet: <van-field label="表单项"></van-field>
         - name: van-field
-          title: 添加其他
+          title: 其他
           snippet: '<van-field label="表单项" drole="other"><template #input></template></van-field>'
   events:
     - name: submit

@@ -43,7 +43,7 @@
           title: 上
         - value: down
           title: 下
-        - value: ""
+        - value: right
           title: 右
       default: right
       description: 箭头得方向
