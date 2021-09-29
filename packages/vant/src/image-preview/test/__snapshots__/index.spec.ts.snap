@@ -69,7 +69,7 @@ exports[`should render index slot correctly 1`] = `
 </div>
 `;
 
-exports[`should swipe to currect index after calling the swipeTo method 1`] = `
+exports[`should swipe to current index after calling the swipeTo method 1`] = `
 <div class="van-image-preview__index">
   3 / 3
 </div>
