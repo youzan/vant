@@ -1,5 +1,9 @@
 export const inBrowser = typeof window !== 'undefined';
 
+// Keep forward compatible
+// should be removed in next major version
+export const supportsPassive = true;
+
 export function raf(fn: FrameRequestCallback): number {
   return inBrowser ? requestAnimationFrame(fn) : -1;
 }
