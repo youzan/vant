@@ -415,8 +415,7 @@ export default defineComponent({
             );
 
             if (disabledDay) {
-              const lastAbledEndDay = getPrevDay(disabledDay);
-              select([startDay, lastAbledEndDay]);
+              select([startDay, getPrevDay(disabledDay)]);
             } else {
               select([startDay, date], true);
             }
@@ -528,9 +527,9 @@ export default defineComponent({
           showTitle={props.showTitle}
           showSubtitle={props.showSubtitle}
           firstDayOfWeek={dayOffset.value}
-          onClick-subtitle={(event: MouseEvent) => {
-            emit('click-subtitle', event);
-          }}
+          onClick-subtitle={(event: MouseEvent) =>
+            emit('click-subtitle', event)
+          }
         />
         <div ref={bodyRef} class={bem('body')} onScroll={onScroll}>
           {months.value.map(renderMonth)}
@@ -542,9 +541,7 @@ export default defineComponent({
     watch(() => props.show, init);
     watch(
       () => [props.type, props.minDate, props.maxDate],
-      () => {
-        reset(getInitialDate(currentDate.value));
-      }
+      () => reset(getInitialDate(currentDate.value))
     );
     watch(
       () => props.defaultDate,

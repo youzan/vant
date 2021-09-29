@@ -29,10 +29,8 @@ const MOMENTUM_LIMIT_DISTANCE = 15;
 const [name, bem] = createNamespace('picker-column');
 
 function getElementTranslateY(element: Element) {
-  const style = window.getComputedStyle(element);
-  const transform = style.transform || style.webkitTransform;
+  const { transform } = window.getComputedStyle(element);
   const translateY = transform.slice(7, transform.length - 1).split(', ')[5];
-
   return Number(translateY);
 }
 
@@ -316,36 +314,30 @@ export default defineComponent({
 
     watch(
       () => props.defaultIndex,
-      (value) => {
-        setIndex(value);
-      }
+      (value) => setIndex(value)
     );
 
-    return () => {
-      const wrapperStyle = {
-        transform: `translate3d(0, ${state.offset + baseOffset()}px, 0)`,
-        transitionDuration: `${state.duration}ms`,
-        transitionProperty: state.duration ? 'all' : 'none',
-      };
-
-      return (
-        <div
-          class={[bem(), props.className]}
-          onTouchstart={onTouchStart}
-          onTouchmove={onTouchMove}
-          onTouchend={onTouchEnd}
-          onTouchcancel={onTouchEnd}
+    return () => (
+      <div
+        class={[bem(), props.className]}
+        onTouchstart={onTouchStart}
+        onTouchmove={onTouchMove}
+        onTouchend={onTouchEnd}
+        onTouchcancel={onTouchEnd}
+      >
+        <ul
+          ref={wrapper}
+          style={{
+            transform: `translate3d(0, ${state.offset + baseOffset()}px, 0)`,
+            transitionDuration: `${state.duration}ms`,
+            transitionProperty: state.duration ? 'all' : 'none',
+          }}
+          class={bem('wrapper')}
+          onTransitionend={stopMomentum}
         >
-          <ul
-            ref={wrapper}
-            style={wrapperStyle}
-            class={bem('wrapper')}
-            onTransitionend={stopMomentum}
-          >
-            {renderOptions()}
-          </ul>
-        </div>
-      );
-    };
+          {renderOptions()}
+        </ul>
+      </div>
+    );
   },
 });

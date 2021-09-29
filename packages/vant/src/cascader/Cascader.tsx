@@ -24,7 +24,7 @@ export type CascaderOption = {
 
 type CascaderTab = {
   options: CascaderOption[];
-  selectedOption: CascaderOption | null;
+  selected: CascaderOption | null;
 };
 
 export type CascaderFieldNames = {
@@ -111,7 +111,7 @@ export default defineComponent({
           state.tabs = selectedOptions.map((option) => {
             const tab = {
               options: optionsCursor,
-              selectedOption: option,
+              selected: option,
             };
 
             const next = optionsCursor.find(
@@ -127,7 +127,7 @@ export default defineComponent({
           if (optionsCursor) {
             state.tabs.push({
               options: optionsCursor,
-              selectedOption: null,
+              selected: null,
             });
           }
 
@@ -142,7 +142,7 @@ export default defineComponent({
       state.tabs = [
         {
           options: props.options,
-          selectedOption: null,
+          selected: null,
         },
       ];
     };
@@ -152,7 +152,7 @@ export default defineComponent({
         return;
       }
 
-      state.tabs[tabIndex].selectedOption = option;
+      state.tabs[tabIndex].selected = option;
 
       if (state.tabs.length > tabIndex + 1) {
         state.tabs = state.tabs.slice(0, tabIndex + 1);
@@ -161,7 +161,7 @@ export default defineComponent({
       if (option[childrenKey]) {
         const nextTab = {
           options: option[childrenKey],
-          selectedOption: null,
+          selected: null,
         };
 
         if (state.tabs[tabIndex + 1]) {
@@ -176,7 +176,7 @@ export default defineComponent({
       }
 
       const selectedOptions = state.tabs
-        .map((tab) => tab.selectedOption)
+        .map((tab) => tab.selected)
         .filter(Boolean);
 
       const eventParams = {
@@ -260,19 +260,19 @@ export default defineComponent({
     );
 
     const renderTab = (tab: CascaderTab, tabIndex: number) => {
-      const { options, selectedOption } = tab;
-      const title = selectedOption
-        ? selectedOption[textKey]
+      const { options, selected } = tab;
+      const title = selected
+        ? selected[textKey]
         : props.placeholder || t('select');
 
       return (
         <Tab
           title={title}
           titleClass={bem('tab', {
-            unselected: !selectedOption,
+            unselected: !selected,
           })}
         >
-          {renderOptions(options, selectedOption, tabIndex)}
+          {renderOptions(options, selected, tabIndex)}
         </Tab>
       );
     };
@@ -298,9 +298,7 @@ export default defineComponent({
       () => props.modelValue,
       (value) => {
         if (value || value === 0) {
-          const values = state.tabs.map(
-            (tab) => tab.selectedOption?.[valueKey]
-          );
+          const values = state.tabs.map((tab) => tab.selected?.[valueKey]);
           if (values.includes(value)) {
             return;
           }
