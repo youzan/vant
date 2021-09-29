@@ -1,5 +1,5 @@
 import { h } from 'vue';
-import { inBrowser } from './util';
+import { inBrowser } from '@vant/use';
 
 export default (lazy) => ({
   props: {

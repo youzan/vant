@@ -1,4 +1,4 @@
-const inBrowser = typeof window !== 'undefined';
+import { inBrowser } from '@vant/use';
 
 export const hasIntersectionObserver =
   inBrowser &&
@@ -11,13 +11,13 @@ export const modeType = {
   observer: 'observer',
 };
 
-function remove(arr, item) {
+export function remove(arr, item) {
   if (!arr.length) return;
   const index = arr.indexOf(item);
   if (index > -1) return arr.splice(index, 1);
 }
 
-function getBestSelectionFromSrcset(el, scale) {
+export function getBestSelectionFromSrcset(el, scale) {
   if (el.tagName !== 'IMG' || !el.getAttribute('data-srcset')) return;
 
   let options = el.getAttribute('data-srcset');
@@ -82,21 +82,10 @@ function getBestSelectionFromSrcset(el, scale) {
   return bestSelectedSrc;
 }
 
-function find(arr, fn) {
-  let item;
-  for (let i = 0, len = arr.length; i < len; i++) {
-    if (fn(arr[i])) {
-      item = arr[i];
-      break;
-    }
-  }
-  return item;
-}
-
-const getDPR = (scale = 1) =>
+export const getDPR = (scale = 1) =>
   inBrowser ? window.devicePixelRatio || scale : scale;
 
-function supportWebp() {
+export function supportWebp() {
   if (!inBrowser) return false;
 
   let support = true;
@@ -114,7 +103,7 @@ function supportWebp() {
   return support;
 }
 
-function throttle(action, delay) {
+export function throttle(action, delay) {
   let timeout = null;
   let lastRun = 0;
   return function (...args) {
@@ -135,19 +124,18 @@ function throttle(action, delay) {
   };
 }
 
-const _ = {
-  on(el, type, func, capture = false) {
-    el.addEventListener(type, func, {
-      capture,
-      passive: true,
-    });
-  },
-  off(el, type, func, capture = false) {
-    el.removeEventListener(type, func, capture);
-  },
-};
+export function on(el, type, func) {
+  el.addEventListener(type, func, {
+    capture: false,
+    passive: true,
+  });
+}
 
-const loadImageAsync = (item, resolve, reject) => {
+export function off(el, type, func) {
+  el.removeEventListener(type, func, false);
+}
+
+export const loadImageAsync = (item, resolve, reject) => {
   const image = new Image();
 
   if (!item || !item.src) {
@@ -160,61 +148,23 @@ const loadImageAsync = (item, resolve, reject) => {
     image.crossOrigin = item.cors;
   }
 
-  image.onload = function () {
+  image.onload = () =>
     resolve({
       naturalHeight: image.naturalHeight,
       naturalWidth: image.naturalWidth,
       src: image.src,
     });
-  };
 
-  image.onerror = function (e) {
-    reject(e);
-  };
+  image.onerror = (e) => reject(e);
 };
 
-const style = (el, prop) =>
-  typeof getComputedStyle !== 'undefined'
-    ? getComputedStyle(el, null).getPropertyValue(prop)
-    : el.style[prop];
-
-const overflow = (el) =>
-  style(el, 'overflow') + style(el, 'overflow-y') + style(el, 'overflow-x');
-
-const scrollParent = (el) => {
-  if (!inBrowser) return;
-  if (!(el instanceof HTMLElement)) {
-    return window;
-  }
-
-  let parent = el;
-
-  while (parent) {
-    if (parent === document.body || parent === document.documentElement) {
-      break;
-    }
-
-    if (!parent.parentNode) {
-      break;
-    }
-
-    if (/(scroll|auto)/.test(overflow(parent))) {
-      return parent;
-    }
-
-    parent = parent.parentNode;
-  }
-
-  return window;
-};
-
-function isObject(obj) {
+export function isObject(obj) {
   return obj !== null && typeof obj === 'object';
 }
 
-function noop() {}
+export function noop() {}
 
-class ImageCache {
+export class ImageCache {
   constructor({ max }) {
     this.options = {
       max: max || 100,
@@ -238,19 +188,3 @@ class ImageCache {
     this._caches.shift();
   }
 }
-
-export {
-  ImageCache,
-  inBrowser,
-  remove,
-  find,
-  noop,
-  _,
-  isObject,
-  throttle,
-  supportWebp,
-  getDPR,
-  scrollParent,
-  loadImageAsync,
-  getBestSelectionFromSrcset,
-};
