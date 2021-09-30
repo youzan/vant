@@ -1,5 +1,9 @@
 # 更新日志
 
+### v1.3.2
+
+- 移除 passive event 的 polyfill
+
 ### v1.3.1
 
 - 移除 requestAnimationFrame 的 polyfill

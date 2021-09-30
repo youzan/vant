@@ -397,10 +397,10 @@
   dependencies:
     "@types/node" "*"
 
-"@vant/use@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.nlark.com/@vant/use/download/@vant/use-1.3.1.tgz?cache=0&sync_timestamp=1632302722581&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vant%2Fuse%2Fdownload%2F%40vant%2Fuse-1.3.1.tgz#8609fc7f86713df0c4ace7109eee6df2f3bd9a0f"
-  integrity sha1-hgn8f4ZxPfDErOcQnu5t8vO9mg8=
+"@vant/use@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.npmmirror.com/@vant/use/download/@vant/use-1.3.2.tgz?cache=0&sync_timestamp=1632970350432&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40vant%2Fuse%2Fdownload%2F%40vant%2Fuse-1.3.2.tgz#d4f232f0440df3c058c65037ae6f20ebd0c06ad3"
+  integrity sha1-1PIy8EQN88BYxlA3rm8g69DAatM=
 
 ansi-align@^3.0.0:
   version "3.0.0"
