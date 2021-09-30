@@ -46,9 +46,7 @@ const INHERIT_PROPS = [
   'confirmButtonText',
 ] as const;
 
-function isOverseaCode(code: string) {
-  return code[0] === '9';
-}
+const isOverseaCode = (code: string) => code[0] === '9';
 
 const props = extend({}, pickerProps, {
   value: String,

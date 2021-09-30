@@ -9,13 +9,8 @@ const [name, bem] = createNamespace('uploader');
 
 export { name, bem };
 
-export function toArray<T>(item: T | T[]): T[] {
-  if (Array.isArray(item)) {
-    return item;
-  }
-
-  return [item];
-}
+export const toArray = <T>(item: T | T[]): T[] =>
+  Array.isArray(item) ? item : [item];
 
 export function readFileContent(file: File, resultType: UploaderResultType) {
   return new Promise<string | void>((resolve) => {
@@ -73,9 +68,7 @@ export function filterFiles(
 
 const IMAGE_REGEXP = /\.(jpeg|jpg|gif|png|svg|webp|jfif|bmp|dpg)/i;
 
-export function isImageUrl(url: string): boolean {
-  return IMAGE_REGEXP.test(url);
-}
+export const isImageUrl = (url: string): boolean => IMAGE_REGEXP.test(url);
 
 export function isImageFile(item: UploaderFileListItem): boolean {
   // some special urls cannot be recognized

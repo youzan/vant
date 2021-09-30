@@ -50,9 +50,7 @@ const DEFAULT_DATA: AddressEditInfo = {
   addressDetail: '',
 };
 
-function isPostal(value: string) {
-  return /^\d{6}$/.test(value);
-}
+const isPostal = (value: string) => /^\d{6}$/.test(value);
 
 const props = {
   areaList: Object as PropType<AreaList>,

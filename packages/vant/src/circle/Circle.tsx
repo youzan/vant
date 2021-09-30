@@ -6,9 +6,7 @@ const [name, bem] = createNamespace('circle');
 
 let uid = 0;
 
-function format(rate: string | number) {
-  return Math.min(Math.max(+rate, 0), 100);
-}
+const format = (rate: string | number) => Math.min(Math.max(+rate, 0), 100);
 
 function getPath(clockwise: boolean, viewBoxSize: number) {
   const sweepFlag = clockwise ? 1 : 0;

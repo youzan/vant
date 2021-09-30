@@ -5,9 +5,7 @@ import { CONFIG_PROVIDER_KEY } from '../config-provider/ConfigProvider';
 
 const [name, bem] = createNamespace('icon');
 
-function isImage(name?: string) {
-  return name?.includes('/');
-}
+const isImage = (name?: string) => name?.includes('/');
 
 export default defineComponent({
   name,

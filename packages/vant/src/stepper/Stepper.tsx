@@ -23,9 +23,8 @@ const [name, bem] = createNamespace('stepper');
 const LONG_PRESS_INTERVAL = 200;
 const LONG_PRESS_START_TIME = 600;
 
-function equal(value1?: string | number, value2?: string | number) {
-  return String(value1) === String(value2);
-}
+const isEqual = (value1?: string | number, value2?: string | number) =>
+  String(value1) === String(value2);
 
 export type StepperTheme = 'default' | 'round';
 
@@ -107,7 +106,7 @@ export default defineComponent({
       const defaultValue = props.modelValue ?? props.defaultValue;
       const value = format(defaultValue);
 
-      if (!equal(value, props.modelValue)) {
+      if (!isEqual(value, props.modelValue)) {
         emit('update:modelValue', value);
       }
 
@@ -135,7 +134,7 @@ export default defineComponent({
 
     const check = () => {
       const value = format(current.value);
-      if (!equal(value, current.value)) {
+      if (!isEqual(value, current.value)) {
         current.value = value;
       }
     };
@@ -185,7 +184,7 @@ export default defineComponent({
 
       if (props.beforeChange) {
         input.value = String(current.value);
-      } else if (!equal(value, formatted)) {
+      } else if (!isEqual(value, formatted)) {
         input.value = formatted;
       }
 
@@ -281,7 +280,7 @@ export default defineComponent({
     watch(
       () => props.modelValue,
       (value) => {
-        if (!equal(value, current.value)) {
+        if (!isEqual(value, current.value)) {
           current.value = format(value!);
         }
       }

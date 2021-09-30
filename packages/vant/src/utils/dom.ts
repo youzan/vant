@@ -1,10 +1,9 @@
-import { isIOS as checkIsIOS } from '../validate';
+import { unref, Ref } from 'vue';
+import { isIOS as checkIsIOS } from './validate';
 
 export type ScrollElement = Element | Window;
 
-function isWindow(val: unknown): val is Window {
-  return val === window;
-}
+const isWindow = (val: unknown): val is Window => val === window;
 
 export function getScrollTop(el: ScrollElement): number {
   const top = 'scrollTop' in el ? el.scrollTop : el.pageYOffset;
@@ -67,4 +66,42 @@ export function resetScroll() {
   if (isIOS) {
     setRootScrollTop(getRootScrollTop());
   }
+}
+
+export const stopPropagation = (event: Event) => event.stopPropagation();
+
+export function preventDefault(event: Event, isStopPropagation?: boolean) {
+  /* istanbul ignore else */
+  if (typeof event.cancelable !== 'boolean' || event.cancelable) {
+    event.preventDefault();
+  }
+
+  if (isStopPropagation) {
+    stopPropagation(event);
+  }
+}
+
+export function trigger(target: Element, type: string) {
+  const inputEvent = document.createEvent('HTMLEvents');
+  inputEvent.initEvent(type, true, true);
+  target.dispatchEvent(inputEvent);
+}
+
+export function isHidden(
+  elementRef: HTMLElement | Ref<HTMLElement | undefined>
+) {
+  const el = unref(elementRef);
+  if (!el) {
+    return false;
+  }
+
+  const style = window.getComputedStyle(el);
+  const hidden = style.display === 'none';
+
+  // offsetParent returns null in the following situations:
+  // 1. The element or its parent element has the display property set to none.
+  // 2. The element has the position property set to fixed
+  const parentHidden = el.offsetParent === null && style.position !== 'fixed';
+
+  return hidden || parentHidden;
 }

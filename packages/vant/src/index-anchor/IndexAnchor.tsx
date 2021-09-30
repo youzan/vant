@@ -8,7 +8,7 @@ import {
   createNamespace,
 } from '../utils';
 import { INDEX_BAR_KEY } from '../index-bar/IndexBar';
-import { getScrollTop, getRootScrollTop } from '../utils/dom/scroll';
+import { getScrollTop, getRootScrollTop } from '../utils/dom';
 
 // Composables
 import { useRect, useParent } from '@vant/use';

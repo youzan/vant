@@ -1,7 +1,6 @@
 import Locale from '../../src/locale';
 import enUS from '../../src/locale/lang/en-US';
-import { camelize } from '../../src/utils/format/string';
-import { createTranslate } from '../../src/utils/create/translate';
+import { camelize, createTranslate } from '../../src/utils';
 import type { App } from 'vue';
 import type { Router } from 'vue-router';
 

@@ -36,9 +36,8 @@ function getElementTranslateY(element: Element) {
 
 export const PICKER_KEY = Symbol(name);
 
-function isOptionDisabled(option: PickerOption) {
-  return isObject(option) && option.disabled;
-}
+const isOptionDisabled = (option: PickerOption) =>
+  isObject(option) && option.disabled;
 
 export default defineComponent({
   name,
