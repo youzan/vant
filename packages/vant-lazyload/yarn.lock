@@ -805,9 +805,9 @@ git-url-parse@11.4.0:
     git-up "^4.0.0"
 
 glob-parent@^5.1.0:
-  version "5.1.1"
-  resolved "https://registry.npm.taobao.org/glob-parent/download/glob-parent-5.1.1.tgz#b6c1ef417c4e5663ea498f1c45afac6916bbc229"
-  integrity sha1-tsHvQXxOVmPqSY8cRa+saRa7wik=
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.2.tgz#869832c58034fe68a4093c17dc15e8340d8401c4"
+  integrity sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==
   dependencies:
     is-glob "^4.0.1"
 
@@ -1035,7 +1035,7 @@ is-core-module@^2.2.0:
 
 is-extglob@^2.1.1:
   version "2.1.1"
-  resolved "https://registry.npm.taobao.org/is-extglob/download/is-extglob-2.1.1.tgz#a88c02535791f02ed37c76a1b9ea9773c833f8c2"
+  resolved "https://registry.yarnpkg.com/is-extglob/-/is-extglob-2.1.1.tgz#a88c02535791f02ed37c76a1b9ea9773c833f8c2"
   integrity sha1-qIwCU1eR8C7TfHahueqXc8gz+MI=
 
 is-fullwidth-code-point@^2.0.0:
@@ -1049,9 +1049,9 @@ is-fullwidth-code-point@^3.0.0:
   integrity sha1-8Rb4Bk/pCz94RKOJl8C3UFEmnx0=
 
 is-glob@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.npm.taobao.org/is-glob/download/is-glob-4.0.1.tgz#7567dbe9f2f5e2467bc77ab83c4a29482407a5dc"
-  integrity sha1-dWfb6fL14kZ7x3q4PEopSCQHpdw=
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/is-glob/-/is-glob-4.0.3.tgz#64f61e42cbbb2eec2071a9dac0b28ba1e65d5084"
+  integrity sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==
   dependencies:
     is-extglob "^2.1.1"
 
