@@ -13,6 +13,7 @@ import {
 } from '../common/constant';
 import { injectHtml } from 'vite-plugin-html';
 import type { InlineConfig } from 'vite';
+import type MarkdownIt from 'markdown-it';
 
 function markdownHighlight(str: string, lang: string) {
   if (lang && hljs.getLanguage(lang)) {
@@ -38,6 +39,24 @@ function markdownCardWrapper(htmlCode: string) {
       return fragment;
     })
     .join('');
+}
+
+// add target="_blank" to all links
+function markdownLinkOpen(md: MarkdownIt) {
+  const defaultRender =
+    md.renderer.rules.link_open ||
+    ((tokens, idx, options, env, self) =>
+      self.renderToken(tokens, idx, options));
+
+  md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+    const aIndex = tokens[idx].attrIndex('target');
+
+    if (aIndex < 0) {
+      tokens[idx].attrPush(['target', '_blank']); // add new attribute
+    }
+
+    return defaultRender(tokens, idx, options, env, self);
+  };
 }
 
 function getSiteConfig(vantConfig: any) {
@@ -96,9 +115,12 @@ export function getViteConfigForSiteDev(): InlineConfig {
         markdownItOptions: {
           highlight: markdownHighlight,
         },
-        markdownItSetup(md: any) {
+        markdownItSetup(md: MarkdownIt) {
           const { slugify } = require('transliteration');
           const markdownItAnchor = require('markdown-it-anchor');
+
+          markdownLinkOpen(md);
+
           md.use(markdownItAnchor, {
             level: 2,
             slugify,
