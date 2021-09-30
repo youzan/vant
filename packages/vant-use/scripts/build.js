@@ -9,8 +9,8 @@ const srcFiles = glob.sync(join(srcDir, '**', '*.ts'), {
   ignore: ['**/node_modules', '**/*.spec.ts'],
 });
 
-const compile = (filePath, distDir) => {
-  return new Promise((resolve, reject) => {
+const compile = (filePath, distDir) =>
+  new Promise((resolve, reject) => {
     const code = readFileSync(filePath, 'utf-8');
     const distPath = filePath.replace(srcDir, distDir).replace('.ts', '.js');
 
@@ -23,7 +23,6 @@ const compile = (filePath, distDir) => {
       })
       .catch(reject);
   });
-};
 
 async function build() {
   // esm output
