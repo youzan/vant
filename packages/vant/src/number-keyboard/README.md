@@ -172,7 +172,7 @@ export default {
 | show | Whether to show keyboard | _boolean_ | - |
 | title | Keyboard title | _string_ | - |
 | theme | Keyboard theme，can be set to `custom` | _string_ | `default` |
-| maxlength | Value maxlength | _number \| string_ | - |
+| maxlength | Value maxlength | _number \| string_ | `Infinity` |
 | transition | Whether to show transition animation | _boolean_ | `true` |
 | z-index | Keyboard z-index | _number \| string_ | `100` |
 | extra-key | Content of bottom left key | _string \| string[]_ | `''` |

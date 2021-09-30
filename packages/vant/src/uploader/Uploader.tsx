@@ -57,7 +57,7 @@ const props = {
   disabled: Boolean,
   readonly: Boolean,
   lazyLoad: Boolean,
-  maxCount: makeNumericProp(Number.MAX_VALUE),
+  maxCount: makeNumericProp(Infinity),
   imageFit: makeStringProp<ImageFit>('cover'),
   resultType: makeStringProp<UploaderResultType>('dataUrl'),
   uploadIcon: makeStringProp('photograph'),
@@ -77,7 +77,7 @@ const props = {
   },
   maxSize: {
     type: [Number, String, Function] as PropType<UploaderMaxSize>,
-    default: Number.MAX_VALUE,
+    default: Infinity,
   },
 };
 
