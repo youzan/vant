@@ -10,7 +10,12 @@ import {
 } from 'vue';
 
 // Utils
-import { isHidden, truthProp, createNamespace } from '../utils';
+import {
+  isHidden,
+  truthProp,
+  createNamespace,
+  makeNumericProp,
+} from '../utils';
 
 // Composables
 import { useRect, useScrollParent, useEventListener } from '@vant/use';
@@ -27,16 +32,13 @@ const [name, bem, t] = createNamespace('list');
 
 const props = {
   error: Boolean,
+  offset: makeNumericProp(300),
   loading: Boolean,
   finished: Boolean,
   errorText: String,
   loadingText: String,
   finishedText: String,
   immediateCheck: truthProp,
-  offset: {
-    type: [Number, String],
-    default: 300,
-  },
   direction: {
     type: String as PropType<ListDirection>,
     default: 'down',

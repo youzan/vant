@@ -15,6 +15,8 @@ import {
   isObject,
   isMobile,
   truthProp,
+  numericProp,
+  makeNumericProp,
   createNamespace,
 } from '../utils';
 
@@ -65,20 +67,14 @@ const props = {
   showPostal: Boolean,
   disableArea: Boolean,
   searchResult: Array as PropType<AddressEditSearchItem[]>,
-  telMaxlength: [Number, String],
+  telMaxlength: numericProp,
   showSetDefault: Boolean,
   saveButtonText: String,
   areaPlaceholder: String,
   deleteButtonText: String,
   showSearchResult: Boolean,
-  detailRows: {
-    type: [Number, String],
-    default: 1,
-  },
-  detailMaxlength: {
-    type: [Number, String],
-    default: 200,
-  },
+  detailRows: makeNumericProp(1),
+  detailMaxlength: makeNumericProp(200),
   addressInfo: {
     type: Object as PropType<Partial<AddressEditInfo>>,
     default: () => extend({}, DEFAULT_DATA),

@@ -18,8 +18,10 @@ import {
   clamp,
   isHidden,
   truthProp,
+  numericProp,
   preventDefault,
   createNamespace,
+  makeNumericProp,
 } from '../utils';
 
 // Composables
@@ -40,26 +42,17 @@ const [name, bem] = createNamespace('swipe');
 
 const props = {
   loop: truthProp,
-  width: [Number, String],
-  height: [Number, String],
+  width: numericProp,
+  height: numericProp,
   vertical: Boolean,
+  autoplay: makeNumericProp(0),
+  duration: makeNumericProp(500),
   touchable: truthProp,
   lazyRender: Boolean,
+  initialSwipe: makeNumericProp(0),
   indicatorColor: String,
   showIndicators: truthProp,
   stopPropagation: truthProp,
-  autoplay: {
-    type: [Number, String],
-    default: 0,
-  },
-  duration: {
-    type: [Number, String],
-    default: 500,
-  },
-  initialSwipe: {
-    type: [Number, String],
-    default: 0,
-  },
 };
 
 export type SwipeProps = ExtractPropTypes<typeof props>;

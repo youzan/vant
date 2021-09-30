@@ -1,5 +1,5 @@
 import { ref, PropType, defineComponent } from 'vue';
-import { createNamespace } from '../utils';
+import { numericProp, createNamespace } from '../utils';
 import { useTouch } from '../composables/use-touch';
 import { Loading } from '../loading';
 
@@ -30,7 +30,7 @@ export default defineComponent({
 
   props: {
     type: String as PropType<KeyType>,
-    text: [Number, String],
+    text: numericProp,
     color: String,
     wider: Boolean,
     large: Boolean,

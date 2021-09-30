@@ -1,15 +1,15 @@
 import { PropType, CSSProperties, TeleportProps } from 'vue';
-import { truthProp, unknownProp, Interceptor } from '../utils';
+import { truthProp, unknownProp, Interceptor, numericProp } from '../utils';
 
 export const popupSharedProps = {
   // whether to show popup
   show: Boolean,
   // z-index
-  zIndex: [Number, String],
+  zIndex: numericProp,
   // whether to show overlay
   overlay: truthProp,
   // transition duration
-  duration: [Number, String],
+  duration: numericProp,
   // teleport
   teleport: [String, Object] as PropType<TeleportProps['to']>,
   // prevent body scroll

@@ -6,6 +6,7 @@ import {
   isDef,
   extend,
   Interceptor,
+  numericProp,
   getSizeStyle,
   callInterceptor,
 } from '../utils';
@@ -20,12 +21,12 @@ import type { UploaderFileListItem } from './types';
 
 export default defineComponent({
   props: {
-    name: [Number, String],
+    name: numericProp,
     index: Number,
     imageFit: String as PropType<ImageFit>,
     lazyLoad: Boolean,
     deletable: Boolean,
-    previewSize: [Number, String],
+    previewSize: numericProp,
     beforeDelete: Function as PropType<Interceptor>,
     item: {
       type: Object as PropType<UploaderFileListItem>,

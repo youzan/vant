@@ -1,5 +1,5 @@
 import { computed, watch, PropType, defineComponent } from 'vue';
-import { BORDER, createNamespace } from '../utils';
+import { BORDER, makeNumericProp, createNamespace } from '../utils';
 
 const [name, bem, t] = createNamespace('pagination');
 
@@ -23,6 +23,10 @@ export default defineComponent({
   props: {
     prevText: String,
     nextText: String,
+    pageCount: makeNumericProp(0),
+    totalItems: makeNumericProp(0),
+    showPageSize: makeNumericProp(5),
+    itemsPerPage: makeNumericProp(10),
     forceEllipses: Boolean,
     mode: {
       type: String as PropType<PaginationMode>,
@@ -31,22 +35,6 @@ export default defineComponent({
     modelValue: {
       type: Number,
       default: 0,
-    },
-    pageCount: {
-      type: [Number, String],
-      default: 0,
-    },
-    totalItems: {
-      type: [Number, String],
-      default: 0,
-    },
-    itemsPerPage: {
-      type: [Number, String],
-      default: 10,
-    },
-    showPageSize: {
-      type: [Number, String],
-      default: 5,
     },
   },
 

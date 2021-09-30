@@ -1,5 +1,5 @@
 import { PropType, defineComponent, ExtractPropTypes, InjectionKey } from 'vue';
-import { createNamespace } from '../utils';
+import { makeNumericProp, createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('steps');
@@ -7,15 +7,12 @@ const [name, bem] = createNamespace('steps');
 export type StepsDirection = 'horizontal' | 'vertical';
 
 const props = {
+  active: makeNumericProp(0),
   iconPrefix: String,
   finishIcon: String,
   activeColor: String,
   inactiveIcon: String,
   inactiveColor: String,
-  active: {
-    type: [Number, String],
-    default: 0,
-  },
   direction: {
     type: String as PropType<StepsDirection>,
     default: 'horizontal',

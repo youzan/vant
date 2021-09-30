@@ -1,5 +1,5 @@
 import { PropType, defineComponent, inject, computed } from 'vue';
-import { addUnit, createNamespace } from '../utils';
+import { addUnit, numericProp, createNamespace } from '../utils';
 import { Badge } from '../badge';
 import { CONFIG_PROVIDER_KEY } from '../config-provider/ConfigProvider';
 
@@ -13,8 +13,8 @@ export default defineComponent({
   props: {
     dot: Boolean,
     name: String,
-    size: [Number, String],
-    badge: [Number, String],
+    size: numericProp,
+    badge: numericProp,
     color: String,
     classPrefix: String,
     tag: {

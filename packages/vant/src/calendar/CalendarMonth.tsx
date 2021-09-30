@@ -7,7 +7,13 @@ import {
 } from 'vue';
 
 // Utils
-import { addUnit, setScrollTop, createNamespace, pick } from '../utils';
+import {
+  pick,
+  addUnit,
+  numericProp,
+  setScrollTop,
+  createNamespace,
+} from '../utils';
 import { getMonthEndDay } from '../datetime-picker/utils';
 import {
   t,
@@ -35,7 +41,7 @@ const props = {
   type: String as PropType<CalendarType>,
   color: String,
   showMark: Boolean,
-  rowHeight: [Number, String],
+  rowHeight: numericProp,
   formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
   lazyRender: Boolean,
   currentDate: [Date, Array] as PropType<Date | Date[] | null>,

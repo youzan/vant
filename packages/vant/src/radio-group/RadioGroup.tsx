@@ -5,7 +5,7 @@ import {
   defineComponent,
   ExtractPropTypes,
 } from 'vue';
-import { unknownProp, createNamespace } from '../utils';
+import { unknownProp, numericProp, createNamespace } from '../utils';
 import { useChildren, useCustomFieldValue } from '@vant/use';
 import type { CheckerDirection } from '../checkbox/Checker';
 
@@ -13,7 +13,7 @@ const [name, bem] = createNamespace('radio-group');
 
 const props = {
   disabled: Boolean,
-  iconSize: [Number, String],
+  iconSize: numericProp,
   direction: String as PropType<CheckerDirection>,
   modelValue: unknownProp,
   checkedColor: String,

@@ -12,10 +12,12 @@ import {
 import {
   clamp,
   isDef,
+  numericProp,
   Interceptor,
   preventDefault,
   callInterceptor,
   createNamespace,
+  makeNumericProp,
 } from '../utils';
 
 // Composables
@@ -33,15 +35,12 @@ import type {
 const [name, bem] = createNamespace('swipe-cell');
 
 const props = {
+  name: makeNumericProp(''),
   disabled: Boolean,
-  leftWidth: [Number, String],
-  rightWidth: [Number, String],
+  leftWidth: numericProp,
+  rightWidth: numericProp,
   beforeClose: Function as PropType<Interceptor>,
   stopPropagation: Boolean,
-  name: {
-    type: [Number, String],
-    default: '',
-  },
 };
 
 export type SwipeCellProps = ExtractPropTypes<typeof props>;

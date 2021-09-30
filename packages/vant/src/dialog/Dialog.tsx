@@ -10,6 +10,7 @@ import {
   BORDER_TOP,
   BORDER_LEFT,
   unknownProp,
+  numericProp,
   callInterceptor,
   createNamespace,
 } from '../utils';
@@ -43,7 +44,7 @@ export default defineComponent({
   props: extend({}, popupSharedProps, {
     title: String,
     theme: String as PropType<DialogTheme>,
-    width: [Number, String],
+    width: numericProp,
     message: [String, Function] as PropType<DialogMessage>,
     callback: Function as PropType<(action?: DialogAction) => void>,
     allowHtml: Boolean,

@@ -9,7 +9,14 @@ import {
 } from 'vue';
 
 // Utils
-import { pick, isDate, truthProp, getScrollTop } from '../utils';
+import {
+  pick,
+  isDate,
+  truthProp,
+  numericProp,
+  getScrollTop,
+  makeNumericProp,
+} from '../utils';
 import {
   t,
   bem,
@@ -56,7 +63,7 @@ const props = {
   showMark: truthProp,
   showTitle: truthProp,
   formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
-  rowHeight: [Number, String],
+  rowHeight: numericProp,
   confirmText: String,
   rangePrompt: String,
   lazyRender: truthProp,
@@ -76,10 +83,7 @@ const props = {
     type: String as PropType<PopupPosition>,
     default: 'bottom',
   },
-  maxRange: {
-    type: [Number, String],
-    default: null,
-  },
+  maxRange: makeNumericProp(null),
   minDate: {
     type: Date,
     validator: isDate,
@@ -94,7 +98,7 @@ const props = {
     },
   },
   firstDayOfWeek: {
-    type: [Number, String],
+    type: numericProp,
     default: 0,
     validator: (val: number) => val >= 0 && val <= 6,
   },

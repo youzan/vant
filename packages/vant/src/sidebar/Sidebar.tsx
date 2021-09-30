@@ -1,5 +1,5 @@
 import { defineComponent, InjectionKey } from 'vue';
-import { createNamespace } from '../utils';
+import { makeNumericProp, createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('sidebar');
@@ -15,10 +15,7 @@ export default defineComponent({
   name,
 
   props: {
-    modelValue: {
-      type: [Number, String],
-      default: 0,
-    },
+    modelValue: makeNumericProp(0),
   },
 
   emits: ['change', 'update:modelValue'],

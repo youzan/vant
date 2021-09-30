@@ -6,12 +6,18 @@ export const extend = Object.assign;
 
 export const inBrowser = typeof window !== 'undefined';
 
-// PropTypes
+// propType helpers
+// help us to write less code, reduce bundle size
 export const unknownProp = null as unknown as PropType<unknown>;
+export const numericProp = [Number, String];
 export const truthProp = {
   type: Boolean,
   default: true as const,
 };
+export const makeNumericProp = <T>(defaultVal: T) => ({
+  type: [Number, String],
+  default: defaultVal,
+});
 
 // eslint-disable-next-line
 export type ComponentInstance = ComponentPublicInstance<{}, any>;

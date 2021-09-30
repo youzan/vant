@@ -1,7 +1,14 @@
 import { computed, defineComponent } from 'vue';
 
 // Utils
-import { addUnit, truthProp, createNamespace, preventDefault } from '../utils';
+import {
+  addUnit,
+  truthProp,
+  numericProp,
+  preventDefault,
+  createNamespace,
+  makeNumericProp,
+} from '../utils';
 
 // Composables
 import { useCustomFieldValue } from '@vant/use';
@@ -49,9 +56,10 @@ export default defineComponent({
   name,
 
   props: {
-    size: [Number, String],
+    size: numericProp,
     color: String,
-    gutter: [Number, String],
+    count: makeNumericProp(5),
+    gutter: numericProp,
     readonly: Boolean,
     disabled: Boolean,
     allowHalf: Boolean,
@@ -70,10 +78,6 @@ export default defineComponent({
     voidIcon: {
       type: String,
       default: 'star-o',
-    },
-    count: {
-      type: [Number, String],
-      default: 5,
     },
   },
 

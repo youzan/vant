@@ -17,10 +17,12 @@ import {
   extend,
   addUnit,
   FORM_KEY,
+  numericProp,
   unknownProp,
   resetScroll,
   formatNumber,
   preventDefault,
+  makeNumericProp,
   createNamespace,
 } from '../utils';
 import {
@@ -67,7 +69,8 @@ export const fieldSharedProps = {
   rightIcon: String,
   autofocus: Boolean,
   clearable: Boolean,
-  maxlength: [Number, String],
+  maxlength: numericProp,
+  modelValue: makeNumericProp(''),
   inputAlign: String as PropType<FieldTextAlign>,
   placeholder: String,
   autocomplete: String,
@@ -88,10 +91,6 @@ export const fieldSharedProps = {
     type: String,
     default: 'clear',
   },
-  modelValue: {
-    type: [Number, String],
-    default: '',
-  },
   clearTrigger: {
     type: String as PropType<FieldClearTrigger>,
     default: 'focus',
@@ -103,10 +102,10 @@ export const fieldSharedProps = {
 };
 
 const props = extend({}, cellProps, fieldSharedProps, {
-  rows: [Number, String],
+  rows: numericProp,
   rules: Array as PropType<FieldRule[]>,
   autosize: [Boolean, Object] as PropType<boolean | FieldAutosizeConfig>,
-  labelWidth: [Number, String],
+  labelWidth: numericProp,
   labelClass: unknownProp,
   labelAlign: String as PropType<FieldTextAlign>,
   showWordLimit: Boolean,

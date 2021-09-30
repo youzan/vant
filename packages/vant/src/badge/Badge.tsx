@@ -4,6 +4,7 @@ import {
   addUnit,
   isNumeric,
   truthProp,
+  numericProp,
   createNamespace,
 } from '../utils';
 
@@ -14,10 +15,10 @@ export default defineComponent({
 
   props: {
     dot: Boolean,
-    max: [Number, String],
+    max: numericProp,
     color: String,
     offset: Array as unknown as PropType<[string | number, string | number]>,
-    content: [Number, String],
+    content: numericProp,
     showZero: truthProp,
     tag: {
       type: String as PropType<keyof HTMLElementTagNameMap>,

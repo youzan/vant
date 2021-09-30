@@ -9,7 +9,13 @@ import {
 
 // Utils
 import { cellProps } from '../cell/Cell';
-import { createNamespace, extend, pick, truthProp } from '../utils';
+import {
+  pick,
+  extend,
+  truthProp,
+  numericProp,
+  createNamespace,
+} from '../utils';
 import { COLLAPSE_KEY } from '../collapse/Collapse';
 
 // Composables
@@ -25,7 +31,7 @@ const [name, bem] = createNamespace('collapse-item');
 const CELL_SLOTS = ['icon', 'title', 'value', 'label', 'right-icon'] as const;
 
 const props = extend({}, cellProps, {
-  name: [Number, String],
+  name: numericProp,
   isLink: truthProp,
   disabled: Boolean,
   readonly: Boolean,

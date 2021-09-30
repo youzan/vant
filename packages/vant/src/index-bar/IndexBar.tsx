@@ -18,6 +18,7 @@ import {
   isDef,
   isHidden,
   truthProp,
+  numericProp,
   getScrollTop,
   preventDefault,
   createNamespace,
@@ -51,7 +52,7 @@ const [name, bem] = createNamespace('index-bar');
 
 const props = {
   sticky: truthProp,
-  zIndex: [Number, String],
+  zIndex: numericProp,
   teleport: [String, Object] as PropType<TeleportProps['to']>,
   highlightColor: String,
   stickyOffsetTop: {

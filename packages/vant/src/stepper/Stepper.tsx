@@ -8,11 +8,13 @@ import {
   truthProp,
   resetScroll,
   Interceptor,
+  numericProp,
   formatNumber,
   getSizeStyle,
   preventDefault,
   createNamespace,
   callInterceptor,
+  makeNumericProp,
 } from '../utils';
 
 // Composables
@@ -32,6 +34,10 @@ export default defineComponent({
   name,
 
   props: {
+    min: makeNumericProp(1),
+    max: makeNumericProp(Infinity),
+    name: makeNumericProp(''),
+    step: makeNumericProp(1),
     theme: String as PropType<StepperTheme>,
     integer: Boolean,
     disabled: Boolean,
@@ -40,35 +46,16 @@ export default defineComponent({
     showInput: truthProp,
     longPress: truthProp,
     allowEmpty: Boolean,
-    modelValue: [Number, String],
-    inputWidth: [Number, String],
-    buttonSize: [Number, String],
+    modelValue: numericProp,
+    inputWidth: numericProp,
+    buttonSize: numericProp,
     placeholder: String,
     disablePlus: Boolean,
     disableMinus: Boolean,
     disableInput: Boolean,
     beforeChange: Function as PropType<Interceptor>,
-    decimalLength: [Number, String],
-    name: {
-      type: [Number, String],
-      default: '',
-    },
-    min: {
-      type: [Number, String],
-      default: 1,
-    },
-    max: {
-      type: [Number, String],
-      default: Infinity,
-    },
-    step: {
-      type: [Number, String],
-      default: 1,
-    },
-    defaultValue: {
-      type: [Number, String],
-      default: 1,
-    },
+    defaultValue: makeNumericProp(1),
+    decimalLength: numericProp,
   },
 
   emits: [

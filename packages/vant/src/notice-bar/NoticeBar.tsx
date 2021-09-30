@@ -8,7 +8,7 @@ import {
 } from 'vue';
 
 // Utils
-import { isDef, createNamespace } from '../utils';
+import { isDef, createNamespace, makeNumericProp } from '../utils';
 
 // Composables
 import {
@@ -33,20 +33,14 @@ const props = {
   text: String,
   mode: String as PropType<NoticeBarMode>,
   color: String,
+  delay: makeNumericProp(1),
+  speed: makeNumericProp(60),
   leftIcon: String,
   wrapable: Boolean,
   background: String,
   scrollable: {
     type: Boolean as PropType<boolean | null>,
     default: null,
-  },
-  delay: {
-    type: [Number, String],
-    default: 1,
-  },
-  speed: {
-    type: [Number, String],
-    default: 60,
   },
 };
 

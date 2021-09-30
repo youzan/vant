@@ -1,7 +1,13 @@
 import { ref, watch, reactive, nextTick, defineComponent } from 'vue';
 
 // Utils
-import { preventDefault, getScrollTop, createNamespace } from '../utils';
+import {
+  numericProp,
+  getScrollTop,
+  preventDefault,
+  createNamespace,
+  makeNumericProp,
+} from '../utils';
 
 // Composables
 import { useScrollParent } from '@vant/use';
@@ -27,27 +33,15 @@ export default defineComponent({
 
   props: {
     disabled: Boolean,
+    modelValue: Boolean,
+    headHeight: makeNumericProp(DEFAULT_HEAD_HEIGHT),
     successText: String,
     pullingText: String,
     loosingText: String,
     loadingText: String,
-    pullDistance: [Number, String],
-    modelValue: {
-      type: Boolean,
-      default: false,
-    },
-    successDuration: {
-      type: [Number, String],
-      default: 500,
-    },
-    animationDuration: {
-      type: [Number, String],
-      default: 300,
-    },
-    headHeight: {
-      type: [Number, String],
-      default: DEFAULT_HEAD_HEIGHT,
-    },
+    pullDistance: numericProp,
+    successDuration: makeNumericProp(500),
+    animationDuration: makeNumericProp(300),
   },
 
   emits: ['refresh', 'update:modelValue'],

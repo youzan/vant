@@ -1,5 +1,5 @@
 import { computed, CSSProperties, defineComponent } from 'vue';
-import { createNamespace, isDef, truthProp } from '../utils';
+import { isDef, truthProp, numericProp, createNamespace } from '../utils';
 import { Badge } from '../badge';
 
 const [name, bem] = createNamespace('tab');
@@ -12,7 +12,7 @@ export default defineComponent({
     type: String,
     color: String,
     title: String,
-    badge: [Number, String],
+    badge: numericProp,
     isActive: Boolean,
     disabled: Boolean,
     scrollable: Boolean,

@@ -1,5 +1,5 @@
 import { PropType, CSSProperties, defineComponent } from 'vue';
-import { truthProp, createNamespace } from '../utils';
+import { truthProp, makeNumericProp, createNamespace } from '../utils';
 
 // Components
 import { Icon } from '../icon';
@@ -21,11 +21,8 @@ export default defineComponent({
     buttonText: String,
     buttonColor: String,
     suffixLabel: String,
+    decimalLength: makeNumericProp(2),
     safeAreaInsetBottom: truthProp,
-    decimalLength: {
-      type: [Number, String],
-      default: 2,
-    },
     currency: {
       type: String,
       default: '¥',

@@ -3,6 +3,7 @@ import { ref, CSSProperties, defineComponent } from 'vue';
 // Utils
 import {
   truthProp,
+  numericProp,
   BORDER_BOTTOM,
   getZIndexStyle,
   createNamespace,
@@ -22,7 +23,7 @@ export default defineComponent({
   props: {
     title: String,
     fixed: Boolean,
-    zIndex: [Number, String],
+    zIndex: numericProp,
     border: truthProp,
     leftText: String,
     rightText: String,

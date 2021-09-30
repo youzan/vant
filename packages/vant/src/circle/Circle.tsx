@@ -1,6 +1,13 @@
 import { watch, computed, PropType, CSSProperties, defineComponent } from 'vue';
 import { raf, cancelRaf } from '@vant/use';
-import { isObject, getSizeStyle, truthProp, createNamespace } from '../utils';
+import {
+  isObject,
+  truthProp,
+  numericProp,
+  getSizeStyle,
+  makeNumericProp,
+  createNamespace,
+} from '../utils';
 
 const [name, bem] = createNamespace('circle');
 
@@ -22,30 +29,21 @@ export default defineComponent({
 
   props: {
     text: String,
-    size: [Number, String],
+    size: numericProp,
+    rate: makeNumericProp(100),
+    speed: makeNumericProp(0),
     color: [String, Object] as PropType<string | Record<string, string>>,
     clockwise: truthProp,
     layerColor: String,
+    strokeWidth: makeNumericProp(40),
     strokeLinecap: String as PropType<CanvasLineCap>,
     currentRate: {
       type: Number,
       default: 0,
     },
-    speed: {
-      type: [Number, String],
-      default: 0,
-    },
     fill: {
       type: String,
       default: 'none',
-    },
-    rate: {
-      type: [Number, String],
-      default: 100,
-    },
-    strokeWidth: {
-      type: [Number, String],
-      default: 40,
     },
     startPosition: {
       type: String as PropType<CircleStartPosition>,

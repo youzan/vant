@@ -7,7 +7,7 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { numericProp, createNamespace } from '../utils';
 
 // Composables
 import { useChildren, useCustomFieldValue } from '@vant/use';
@@ -24,10 +24,10 @@ import type {
 const [name, bem] = createNamespace('checkbox-group');
 
 const props = {
-  max: [Number, String],
+  max: numericProp,
   disabled: Boolean,
   direction: String as PropType<CheckerDirection>,
-  iconSize: [Number, String],
+  iconSize: numericProp,
   checkedColor: String,
   modelValue: {
     type: Array as PropType<unknown[]>,

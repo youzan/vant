@@ -1,7 +1,7 @@
 import { watch, computed, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
-import { truthProp, createNamespace } from '../utils';
+import { truthProp, createNamespace, makeNumericProp } from '../utils';
 import { parseFormat } from './utils';
 
 // Composables
@@ -11,12 +11,9 @@ import { useExpose } from '../composables/use-expose';
 const [name, bem] = createNamespace('count-down');
 
 const props = {
+  time: makeNumericProp(0),
   autoStart: truthProp,
   millisecond: Boolean,
-  time: {
-    type: [Number, String],
-    default: 0,
-  },
   format: {
     type: String,
     default: 'HH:mm:ss',

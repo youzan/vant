@@ -10,7 +10,13 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace, extend, truthProp, unknownProp } from '../utils';
+import {
+  extend,
+  truthProp,
+  unknownProp,
+  numericProp,
+  createNamespace,
+} from '../utils';
 import { TABS_KEY } from '../tabs/Tabs';
 
 // Composables
@@ -28,8 +34,8 @@ export default defineComponent({
 
   props: extend({}, routeProps, {
     dot: Boolean,
-    name: [Number, String],
-    badge: [Number, String],
+    name: numericProp,
+    badge: numericProp,
     title: String,
     disabled: Boolean,
     titleClass: unknownProp,

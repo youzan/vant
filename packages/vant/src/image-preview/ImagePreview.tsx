@@ -18,6 +18,7 @@ import {
   Interceptor,
   callInterceptor,
   createNamespace,
+  makeNumericProp,
 } from '../utils';
 
 // Composables
@@ -38,6 +39,8 @@ const [name, bem] = createNamespace('image-preview');
 const props = {
   show: Boolean,
   loop: truthProp,
+  minZoom: makeNumericProp(1 / 3),
+  maxZoom: makeNumericProp(3),
   overlay: truthProp,
   closeable: Boolean,
   showIndex: truthProp,
@@ -45,27 +48,13 @@ const props = {
   transition: String,
   beforeClose: Function as PropType<Interceptor>,
   overlayStyle: Object as PropType<CSSProperties>,
+  swipeDuration: makeNumericProp(300),
+  startPosition: makeNumericProp(0),
   showIndicators: Boolean,
   closeOnPopstate: truthProp,
   images: {
     type: Array as PropType<string[]>,
     default: () => [],
-  },
-  minZoom: {
-    type: [Number, String],
-    default: 1 / 3,
-  },
-  maxZoom: {
-    type: [Number, String],
-    default: 3,
-  },
-  swipeDuration: {
-    type: [Number, String],
-    default: 300,
-  },
-  startPosition: {
-    type: [Number, String],
-    default: 0,
   },
   closeIcon: {
     type: String,
