@@ -154,7 +154,12 @@ app.use(Button);
 The component exports the following type definitions:
 
 ```ts
-import type { ButtonType, ButtonSize } from 'vant';
+import type {
+  ButtonType,
+  ButtonSize,
+  ButtonNativeType,
+  ButtonIconPosition,
+} from 'vant';
 ```
 
 ## Theming
