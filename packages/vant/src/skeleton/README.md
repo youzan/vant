@@ -73,6 +73,14 @@ export default {
 | avatar-size | Size of avatar placeholder | _number \| string_ | `32px` |
 | avatar-shape | Shape of avatar placeholder，can be set to `square` | _string_ | `round` |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { SkeletonAvatarShape } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

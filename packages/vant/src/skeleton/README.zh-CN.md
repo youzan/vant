@@ -79,6 +79,14 @@ export default {
 | avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
 | avatar-shape | 头像占位图形状，可选值为 `square` | _string_ | `round` |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { SkeletonAvatarShape } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量
