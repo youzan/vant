@@ -177,7 +177,12 @@ app.use(Button);
 组件导出以下类型定义：
 
 ```ts
-import type { ButtonType, ButtonSize } from 'vant';
+import type {
+  ButtonType,
+  ButtonSize,
+  ButtonNativeType,
+  ButtonIconPosition,
+} from 'vant';
 ```
 
 ## 主题定制
