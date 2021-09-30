@@ -42,7 +42,7 @@ export function formatNumber(
 
   const regExp = allowDot ? /[^-0-9.]/g : /[^-0-9]/g;
 
-  return value.replace(regExp, '');
+  return Number(value.replace(regExp, ''));
 }
 
 // add num and avoid float number
