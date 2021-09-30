@@ -4,6 +4,7 @@
       <van-calendar
       label-field="日历选择"
       :default-date.sync="ddateffff"
+      type="multiple"
       title="选择日期"
     ></van-calendar >
     </demo-block>
@@ -184,7 +185,7 @@ export default {
 
   data() {
     return {
-      ddateffff: new Date(),
+      ddateffff: null,
       showCalendarTest: false,
       cvalue: null,
       date: {

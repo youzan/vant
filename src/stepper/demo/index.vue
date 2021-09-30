@@ -1,6 +1,9 @@
 <template>
   <demo-section>
     <van-cell center :title="t('basicUsage')">
+      <van-stepper :value.sync="stepper122222" />
+    </van-cell>
+    <van-cell center :title="t('basicUsage')">
       <van-stepper v-model="stepper1" />
     </van-cell>
 
@@ -74,6 +77,7 @@ export default {
 
   data() {
     return {
+      stepper122222: 10,
       stepper1: 1,
       stepper2: 1,
       stepper3: 1,

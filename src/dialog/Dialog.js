@@ -5,6 +5,7 @@ import Button from '../button';
 import GoodsAction from '../goods-action';
 import GoodsActionButton from '../goods-action-button';
 import Text from '../text';
+import VanEmptyCol from '../emptycol/index';
 
 const [createComponent, bem, t] = createNamespace('dialog');
 
@@ -55,7 +56,9 @@ export default createComponent({
       default: false,
     },
   },
-
+  components: {
+    VanEmptyCol,
+  },
   data() {
     return {
       loading: {
@@ -182,6 +185,10 @@ export default createComponent({
     genContent(hasTitle, messageSlot) {
       if (messageSlot) {
         return <div class={bem('content')}>{messageSlot}</div>;
+      }
+
+      if (!messageSlot && this.$env && this.$env.VUE_APP_DESIGNER) {
+        return <div class={bem('content')} vusion-slot-name="default"><van-empty-col></van-empty-col></div>;
       }
 
       const { message, messageAlign } = this;

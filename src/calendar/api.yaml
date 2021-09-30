@@ -18,13 +18,13 @@
       description: 值
     - name: type
       title: 类型
-      type: String
+      type: string
       options:
-        - name: single
+        - title: single
           value: single
-        - name: multiple
+        - title: multiple
           value: multiple
-        - name: range
+        - title: range
           value: range
       default: single
       description: 选择类型

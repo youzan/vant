@@ -2,6 +2,8 @@ import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 import { routeProps } from '../utils/router';
 
+import VanEmptyCol  from '../emptycol/index';
+
 const [createComponent, bem] = createNamespace('tab');
 
 export default createComponent({
@@ -27,7 +29,9 @@ export default createComponent({
       inited: false,
     };
   },
-
+  components: {
+    VanEmptyCol
+  },
   computed: {
     computedName() {
       return this.name ?? this.index;
@@ -74,7 +78,10 @@ export default createComponent({
 
     const show = parent.scrollspy || isActive;
     const shouldRender = this.inited || parent.scrollspy || !parent.lazyRender;
-    const Content = shouldRender ? slotContent : h();
+    let Content = shouldRender ? slotContent : h();
+    if (!slotContent && this.$env && this.$env.VUE_APP_DESIGNER) {
+      Content = <van-empty-col></van-empty-col>;
+    }
 
     if (parent.animated) {
       return (
@@ -89,7 +96,7 @@ export default createComponent({
     }
 
     return (
-      <div vShow={show} role="tabpanel" class={bem('pane')} vusion-slot-name="default">
+      <div vShow={show} role="tabpanel" class={bem('pane')}>
         {Content}
       </div>
     );

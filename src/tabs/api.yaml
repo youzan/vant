@@ -105,5 +105,4 @@
   slots:
     - name: default
       title: 默认
-      empty-background: add-any
       description: 显示的内容

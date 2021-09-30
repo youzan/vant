@@ -26,7 +26,7 @@ export default createComponent({
 
   props: {
     // fileListprop: { type: Array, default: [] },
-    url: { type: String, default: '', required: true },
+    url: { type: String, default: '/gateway/lowcode/api/v1/app/upload' },
     headers: Object,
     autoUpload: { type: Boolean, default: true },
     withCredentials: { type: Boolean, default: false },

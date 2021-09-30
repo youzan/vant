@@ -18,7 +18,10 @@ export default createComponent({
   mixins: [FieldMixin],
 
   props: {
-    value: null,
+    value: {
+      type: [Number, String],
+      default: 1,
+    },
     theme: String,
     integer: Boolean,
     disabled: Boolean,

@@ -38,7 +38,10 @@ export default createComponent({
     confirmText: String,
     rangePrompt: String,
     labelField: String,
-    defaultDate: [Date, Array],
+    defaultDate: {
+      type: [Date, Array],
+      default: null
+    },
     getContainer: [String, Function],
     allowSameDay: Boolean,
     confirmDisabledText: String,
@@ -182,7 +185,14 @@ export default createComponent({
 
   methods: {
     getTitle() {
-      return isDate(this.defaultDate) ? this.defaultDate.formath("yyyy/MM/dd") : '';
+      if (this.defaultDate) {
+        if (Array.isArray(this.defaultDate)) {
+          return this.defaultDate.reduce((p, c) => p+ c.formath("yyyy/MM/dd")+'-', '');
+        } else {
+          return isDate(this.defaultDate) ? this.defaultDate.formath("yyyy/MM/dd") : '';
+        }
+      }
+      return '';
     },
     togglePopup() {
       this.valuepopup = !this.valuepopup;
@@ -256,6 +266,35 @@ export default createComponent({
       if (defaultDate === null) {
         return defaultDate;
       }
+
+
+      if (isDate(defaultDate)) {
+
+      } else {
+        try {
+          if (!defaultDate) {
+            defaultDate = new Date();
+          } else {
+            if (Array.isArray(defaultDate)) {
+              if (type === 'range' || type === 'multiple') {
+                defaultDate = defaultDate.map((item) => {
+                  if (isDate(item)) {
+                    return item;
+                  } else {
+                    return new Date(item);
+                  }
+                });
+              }
+            } else {
+              defaultDate = isDate(defaultDate) ? defaultDate : new Date(defaultDate);
+            }
+
+          }
+        } catch (e) {
+          console.warn(e, 'error date');
+        }
+      }
+
 
       let defaultVal = new Date();
 

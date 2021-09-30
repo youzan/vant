@@ -1,5 +1,8 @@
 <template>
   <demo-section>
+    <demo-block>
+      <van-tabs type="line"><van-tab title="标签 1" name="a"></van-tab><van-tab title="标签 2" name="b"><van-text text="内容 2"></van-text></van-tab><van-tab title="标签 3" name="c"><van-text text="内容 3"></van-text></van-tab></van-tabs>
+    </demo-block>
     <demo-block :title="t('basicUsage')">
       <van-tabs v-model="active" class="u-code-example_demo_" @change="changeTab">
         <van-tab :title="t('tab') + index" v-for="index in tabs" :key="index">

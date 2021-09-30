@@ -1,9 +1,9 @@
 - name: van-dialog
-  title: 弹出模态框
+  title: 弹出框
   icon: dialog
   labels:
     - Feedback
-  description: 弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。
+  description: 弹出框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。
   attrs:
     - name: value
       title: 是否展示弹框
