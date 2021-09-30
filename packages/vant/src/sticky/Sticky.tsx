@@ -16,8 +16,9 @@ import {
   numericProp,
   getScrollTop,
   getZIndexStyle,
-  createNamespace,
+  makeStringProp,
   makeNumericProp,
+  createNamespace,
 } from '../utils';
 
 // Composables
@@ -33,13 +34,10 @@ export default defineComponent({
 
   props: {
     zIndex: numericProp,
+    position: makeStringProp<StickyPosition>('top'),
     container: Object as PropType<Element>,
     offsetTop: makeNumericProp(0),
     offsetBottom: makeNumericProp(0),
-    position: {
-      type: String as PropType<StickyPosition>,
-      default: 'top',
-    },
   },
 
   emits: ['scroll', 'change'],

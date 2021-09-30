@@ -1,7 +1,6 @@
 import {
   ref,
   computed,
-  PropType,
   InjectionKey,
   CSSProperties,
   defineComponent,
@@ -13,8 +12,9 @@ import {
   isDef,
   truthProp,
   numericProp,
-  createNamespace,
+  makeStringProp,
   makeNumericProp,
+  createNamespace,
   ComponentInstance,
 } from '../utils';
 
@@ -36,13 +36,10 @@ const props = {
   overlay: truthProp,
   zIndex: numericProp,
   duration: makeNumericProp(0.2),
+  direction: makeStringProp<DropdownMenuDirection>('down'),
   activeColor: String,
   closeOnClickOutside: truthProp,
   closeOnClickOverlay: truthProp,
-  direction: {
-    type: String as PropType<DropdownMenuDirection>,
-    default: 'down',
-  },
 };
 
 export type DropdownMenuProps = ExtractPropTypes<typeof props>;

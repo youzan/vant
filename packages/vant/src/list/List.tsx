@@ -2,7 +2,6 @@ import {
   ref,
   watch,
   nextTick,
-  PropType,
   onUpdated,
   onMounted,
   defineComponent,
@@ -13,8 +12,9 @@ import {
 import {
   isHidden,
   truthProp,
-  createNamespace,
+  makeStringProp,
   makeNumericProp,
+  createNamespace,
 } from '../utils';
 
 // Composables
@@ -36,13 +36,10 @@ const props = {
   loading: Boolean,
   finished: Boolean,
   errorText: String,
+  direction: makeStringProp<ListDirection>('down'),
   loadingText: String,
   finishedText: String,
   immediateCheck: truthProp,
-  direction: {
-    type: String as PropType<ListDirection>,
-    default: 'down',
-  },
 };
 
 export type ListProps = ExtractPropTypes<typeof props>;

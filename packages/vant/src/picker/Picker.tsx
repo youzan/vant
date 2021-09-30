@@ -13,6 +13,7 @@ import {
   unitToPx,
   truthProp,
   preventDefault,
+  makeStringProp,
   createNamespace,
   makeNumericProp,
   BORDER_UNSET_TOP_BOTTOM,
@@ -61,14 +62,11 @@ export default defineComponent({
     // should be removed in next major version
     valueKey: String,
     defaultIndex: makeNumericProp(0),
+    toolbarPosition: makeStringProp<PickerToolbarPosition>('top'),
     columnsFieldNames: Object as PropType<PickerFieldNames>,
     columns: {
       type: Array as PropType<PickerOption[] | PickerColumn[]>,
       default: () => [],
-    },
-    toolbarPosition: {
-      type: String as PropType<PickerToolbarPosition>,
-      default: 'top',
     },
   }),
 

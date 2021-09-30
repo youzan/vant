@@ -1,5 +1,5 @@
-import { PropType, defineComponent } from 'vue';
-import { truthProp, createNamespace } from '../utils';
+import { defineComponent } from 'vue';
+import { truthProp, makeStringProp, createNamespace } from '../utils';
 import { Cell } from '../cell';
 
 const [name, bem, t] = createNamespace('contact-card');
@@ -12,12 +12,9 @@ export default defineComponent({
   props: {
     tel: String,
     name: String,
+    type: makeStringProp<ContactCardType>('add'),
     addText: String,
     editable: truthProp,
-    type: {
-      type: String as PropType<ContactCardType>,
-      default: 'add',
-    },
   },
 
   emits: ['click'],

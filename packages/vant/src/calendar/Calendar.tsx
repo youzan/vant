@@ -15,6 +15,7 @@ import {
   truthProp,
   numericProp,
   getScrollTop,
+  makeStringProp,
   makeNumericProp,
 } from '../utils';
 import {
@@ -54,11 +55,14 @@ import type {
 
 const props = {
   show: Boolean,
+  type: makeStringProp<CalendarType>('single'),
   title: String,
   color: String,
   round: truthProp,
   readonly: Boolean,
   poppable: truthProp,
+  maxRange: makeNumericProp(null),
+  position: makeStringProp<PopupPosition>('bottom'),
   teleport: [String, Object] as PropType<TeleportProps['to']>,
   showMark: truthProp,
   showTitle: truthProp,
@@ -75,15 +79,6 @@ const props = {
   confirmDisabledText: String,
   closeOnClickOverlay: truthProp,
   safeAreaInsetBottom: truthProp,
-  type: {
-    type: String as PropType<CalendarType>,
-    default: 'single',
-  },
-  position: {
-    type: String as PropType<PopupPosition>,
-    default: 'bottom',
-  },
-  maxRange: makeNumericProp(null),
   minDate: {
     type: Date,
     validator: isDate,

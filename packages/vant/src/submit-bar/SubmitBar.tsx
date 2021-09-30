@@ -1,5 +1,10 @@
 import { PropType, CSSProperties, defineComponent } from 'vue';
-import { truthProp, makeNumericProp, createNamespace } from '../utils';
+import {
+  truthProp,
+  makeStringProp,
+  makeNumericProp,
+  createNamespace,
+} from '../utils';
 
 // Components
 import { Icon } from '../icon';
@@ -16,21 +21,15 @@ export default defineComponent({
     price: Number,
     tipIcon: String,
     loading: Boolean,
+    currency: makeStringProp('¥'),
     disabled: Boolean,
     textAlign: String as PropType<CSSProperties['textAlign']>,
     buttonText: String,
+    buttonType: makeStringProp<ButtonType>('danger'),
     buttonColor: String,
     suffixLabel: String,
     decimalLength: makeNumericProp(2),
     safeAreaInsetBottom: truthProp,
-    currency: {
-      type: String,
-      default: '¥',
-    },
-    buttonType: {
-      type: String as PropType<ButtonType>,
-      default: 'danger',
-    },
   },
 
   emits: ['submit'],

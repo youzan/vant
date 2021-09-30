@@ -1,7 +1,13 @@
 import { nextTick, PropType, defineComponent } from 'vue';
 
 // Utils
-import { pick, extend, truthProp, createNamespace } from '../utils';
+import {
+  pick,
+  extend,
+  truthProp,
+  makeStringProp,
+  createNamespace,
+} from '../utils';
 
 // Components
 import { Icon } from '../icon';
@@ -28,16 +34,13 @@ export default defineComponent({
     title: String,
     round: truthProp,
     actions: Array as PropType<ActionSheetAction[]>,
+    closeIcon: makeStringProp('cross'),
     closeable: truthProp,
     cancelText: String,
     description: String,
     closeOnPopstate: Boolean,
     closeOnClickAction: Boolean,
     safeAreaInsetBottom: truthProp,
-    closeIcon: {
-      type: String,
-      default: 'cross',
-    },
   }),
 
   emits: ['select', 'cancel', 'update:show'],

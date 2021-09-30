@@ -1,5 +1,10 @@
-import { PropType, defineComponent, inject, computed } from 'vue';
-import { addUnit, numericProp, createNamespace } from '../utils';
+import { defineComponent, inject, computed } from 'vue';
+import {
+  addUnit,
+  numericProp,
+  makeStringProp,
+  createNamespace,
+} from '../utils';
 import { Badge } from '../badge';
 import { CONFIG_PROVIDER_KEY } from '../config-provider/ConfigProvider';
 
@@ -12,15 +17,12 @@ export default defineComponent({
 
   props: {
     dot: Boolean,
+    tag: makeStringProp<keyof HTMLElementTagNameMap>('i'),
     name: String,
     size: numericProp,
     badge: numericProp,
     color: String,
     classPrefix: String,
-    tag: {
-      type: String as PropType<keyof HTMLElementTagNameMap>,
-      default: 'i',
-    },
   },
 
   setup(props, { slots }) {

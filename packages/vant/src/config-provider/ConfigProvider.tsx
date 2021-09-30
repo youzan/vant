@@ -2,11 +2,11 @@ import {
   provide,
   computed,
   PropType,
-  CSSProperties,
   InjectionKey,
+  CSSProperties,
   defineComponent,
 } from 'vue';
-import { createNamespace, kebabCase } from '../utils';
+import { kebabCase, makeStringProp, createNamespace } from '../utils';
 
 const [name, bem] = createNamespace('config-provider');
 
@@ -29,12 +29,9 @@ export default defineComponent({
   name,
 
   props: {
+    tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
     themeVars: Object as PropType<Record<string, string | number>>,
     iconPrefix: String,
-    tag: {
-      type: String as PropType<keyof HTMLElementTagNameMap>,
-      default: 'div',
-    },
   },
 
   setup(props, { slots }) {

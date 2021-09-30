@@ -22,6 +22,7 @@ import {
   resetScroll,
   formatNumber,
   preventDefault,
+  makeStringProp,
   makeNumericProp,
   createNamespace,
 } from '../utils';
@@ -64,17 +65,20 @@ const [name, bem] = createNamespace('field');
 export const fieldSharedProps = {
   id: String,
   name: String,
-  formatter: Function as PropType<(value: string) => string>,
   leftIcon: String,
   rightIcon: String,
   autofocus: Boolean,
   clearable: Boolean,
   maxlength: numericProp,
+  formatter: Function as PropType<(value: string) => string>,
+  clearIcon: makeStringProp('clear'),
   modelValue: makeNumericProp(''),
   inputAlign: String as PropType<FieldTextAlign>,
   placeholder: String,
   autocomplete: String,
   errorMessage: String,
+  clearTrigger: makeStringProp<FieldClearTrigger>('focus'),
+  formatTrigger: makeStringProp<FieldFormatTrigger>('onChange'),
   error: {
     type: Boolean,
     default: null,
@@ -87,22 +91,11 @@ export const fieldSharedProps = {
     type: Boolean,
     default: null,
   },
-  clearIcon: {
-    type: String,
-    default: 'clear',
-  },
-  clearTrigger: {
-    type: String as PropType<FieldClearTrigger>,
-    default: 'focus',
-  },
-  formatTrigger: {
-    type: String as PropType<FieldFormatTrigger>,
-    default: 'onChange',
-  },
 };
 
 const props = extend({}, cellProps, fieldSharedProps, {
   rows: numericProp,
+  type: makeStringProp<FieldType>('text'),
   rules: Array as PropType<FieldRule[]>,
   autosize: [Boolean, Object] as PropType<boolean | FieldAutosizeConfig>,
   labelWidth: numericProp,
@@ -110,10 +103,6 @@ const props = extend({}, cellProps, fieldSharedProps, {
   labelAlign: String as PropType<FieldTextAlign>,
   showWordLimit: Boolean,
   errorMessageAlign: String as PropType<FieldTextAlign>,
-  type: {
-    type: String as PropType<FieldType>,
-    default: 'text',
-  },
   colon: {
     type: Boolean,
     default: null,

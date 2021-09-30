@@ -4,7 +4,6 @@ import {
   computed,
   nextTick,
   onMounted,
-  PropType,
   defineComponent,
 } from 'vue';
 
@@ -15,6 +14,7 @@ import {
   extend,
   isDate,
   padZero,
+  makeStringProp,
   createNamespace,
 } from '../utils';
 import {
@@ -41,11 +41,8 @@ export default defineComponent({
   name,
 
   props: extend({}, sharedProps, {
+    type: makeStringProp<DatetimePickerType>('datetime'),
     modelValue: Date,
-    type: {
-      type: String as PropType<DatetimePickerType>,
-      default: 'datetime',
-    },
     minDate: {
       type: Date,
       default: () => new Date(currentYear - 10, 0, 1),

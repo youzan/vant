@@ -1,5 +1,11 @@
 import { nextTick, PropType, reactive, watch, defineComponent } from 'vue';
-import { extend, numericProp, truthProp, createNamespace } from '../utils';
+import {
+  extend,
+  truthProp,
+  numericProp,
+  makeStringProp,
+  createNamespace,
+} from '../utils';
 
 // Components
 import { Tab } from '../tab';
@@ -40,6 +46,7 @@ export default defineComponent({
     title: String,
     closeable: truthProp,
     swipeable: truthProp,
+    closeIcon: makeStringProp('cross'),
     modelValue: numericProp,
     fieldNames: Object as PropType<CascaderFieldNames>,
     placeholder: String,
@@ -47,10 +54,6 @@ export default defineComponent({
     options: {
       type: Array as PropType<CascaderOption[]>,
       default: () => [],
-    },
-    closeIcon: {
-      type: String,
-      default: 'cross',
     },
   },
 

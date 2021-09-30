@@ -1,5 +1,11 @@
-import { PropType, defineComponent } from 'vue';
-import { extend, numericProp, unknownProp, createNamespace } from '../utils';
+import { defineComponent } from 'vue';
+import {
+  extend,
+  numericProp,
+  unknownProp,
+  makeStringProp,
+  createNamespace,
+} from '../utils';
 import { Popup } from '../popup';
 import { popupSharedProps } from '../popup/shared';
 import type { NotifyType } from './types';
@@ -10,15 +16,12 @@ export default defineComponent({
   name,
 
   props: extend({}, popupSharedProps, {
+    type: makeStringProp<NotifyType>('danger'),
     color: String,
     message: numericProp,
     className: unknownProp,
     background: String,
     lockScroll: Boolean,
-    type: {
-      type: String as PropType<NotifyType>,
-      default: 'danger',
-    },
   }),
 
   setup(props, { slots }) {

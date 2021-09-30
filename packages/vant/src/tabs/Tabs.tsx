@@ -26,6 +26,7 @@ import {
   Interceptor,
   getVisibleTop,
   getElementTop,
+  makeStringProp,
   callInterceptor,
   createNamespace,
   makeNumericProp,
@@ -60,6 +61,7 @@ import type { TabsProvide, TabsType } from './types';
 const [name, bem] = createNamespace('tabs');
 
 const props = {
+  type: makeStringProp<TabsType>('line'),
   color: String,
   border: Boolean,
   sticky: Boolean,
@@ -78,10 +80,6 @@ const props = {
   swipeThreshold: makeNumericProp(5),
   titleActiveColor: String,
   titleInactiveColor: String,
-  type: {
-    type: String as PropType<TabsType>,
-    default: 'line',
-  },
 };
 
 export type TabsProps = ExtractPropTypes<typeof props>;

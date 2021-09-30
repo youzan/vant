@@ -1,5 +1,10 @@
 import { defineComponent } from 'vue';
-import { createNamespace, getSizeStyle, numericProp } from '../utils';
+import {
+  numericProp,
+  getSizeStyle,
+  makeStringProp,
+  createNamespace,
+} from '../utils';
 import { Network } from './Network';
 
 const [name, bem] = createNamespace('empty');
@@ -10,12 +15,9 @@ export default defineComponent({
   name,
 
   props: {
+    image: makeStringProp('default'),
     imageSize: numericProp,
     description: String,
-    image: {
-      type: String,
-      default: 'default',
-    },
   },
 
   setup(props, { slots }) {

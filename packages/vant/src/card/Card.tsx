@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
 
 // Utils
-import { isDef, numericProp, createNamespace } from '../utils';
+import { isDef, numericProp, makeStringProp, createNamespace } from '../utils';
 
 // Components
 import { Tag } from '../tag';
@@ -21,12 +21,9 @@ export default defineComponent({
     price: numericProp,
     centered: Boolean,
     lazyLoad: Boolean,
+    currency: makeStringProp('¥'),
     thumbLink: String,
     originPrice: numericProp,
-    currency: {
-      type: String,
-      default: '¥',
-    },
   },
 
   emits: ['click-thumb'],

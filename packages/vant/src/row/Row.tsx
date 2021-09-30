@@ -5,7 +5,12 @@ import {
   InjectionKey,
   defineComponent,
 } from 'vue';
-import { truthProp, makeNumericProp, createNamespace } from '../utils';
+import {
+  truthProp,
+  makeStringProp,
+  makeNumericProp,
+  createNamespace,
+} from '../utils';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('row');
@@ -31,14 +36,11 @@ export default defineComponent({
   name,
 
   props: {
+    tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
     wrap: truthProp,
     align: String as PropType<RowAlign>,
     gutter: makeNumericProp(0),
     justify: String as PropType<RowJustify>,
-    tag: {
-      type: String as PropType<keyof HTMLElementTagNameMap>,
-      default: 'div',
-    },
   },
 
   setup(props, { slots }) {
