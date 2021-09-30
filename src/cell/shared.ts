@@ -32,7 +32,10 @@ export type SharedCellProps = {
 export const cellProps = {
   icon: String,
   size: String,
-  center: Boolean,
+  center: {
+    type: Boolean,
+    default: true,
+  },
   isLink: Boolean,
   required: Boolean,
   iconPrefix: String,
