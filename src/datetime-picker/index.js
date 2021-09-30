@@ -4,10 +4,13 @@ import TimePicker from './TimePicker';
 import DatePicker from './DatePicker';
 import Popup from '../popup';
 import Field from '../field';
+import { FieldMixin } from '../mixins/field';
 
 const [createComponent, bem] = createNamespace('datetime-picker');
 
 export default createComponent({
+  mixins: [FieldMixin],
+
   props: {
     ...TimePicker.props,
     ...DatePicker.props,

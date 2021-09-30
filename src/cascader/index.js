@@ -5,11 +5,16 @@ import Icon from '../icon';
 import Popup from '../popup';
 import Field from '../field';
 
+// Mixins
+import { FieldMixin } from '../mixins/field';
+
 const _ = require('lodash');
 
 const [createComponent, bem, t] = createNamespace('cascader');
 
 export default createComponent({
+  mixins: [FieldMixin],
+
   props: {
     title: String,
     value: [Number, String],

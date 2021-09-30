@@ -87,7 +87,7 @@ export default createComponent({
         return (
           <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default">
             {slots() ? slots()  : (isDef(value) ? <span>{value}</span>  : null)}
-            {(ifDesigner && !isDef(value) && !slots()) ? <van-empty-col></van-empty-col> : null}
+            {/* {(ifDesigner && !isDef(value) && !slots()) ? <van-empty-col></van-empty-col> : null} */}
           </div>
         );
       // }

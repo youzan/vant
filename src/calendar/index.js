@@ -23,7 +23,12 @@ import Month from './components/Month';
 import Header from './components/Header';
 import Field from '../field';
 
+import { FieldMixin } from '../mixins/field';
+
+
 export default createComponent({
+  mixins: [FieldMixin],
+
   props: {
     title: String,
     color: String,

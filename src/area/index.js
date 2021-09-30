@@ -6,6 +6,8 @@ import Picker from '../picker';
 import Popup from '../popup';
 import Field from '../field';
 
+import { FieldMixin } from '../mixins/field';
+
 const [createComponent, bem] = createNamespace('area');
 
 const PLACEHOLDER_CODE = '000000';
@@ -30,6 +32,7 @@ function pickSlots(instance, keys) {
 }
 
 export default createComponent({
+  mixins: [FieldMixin],
   props: {
     ...pickerProps,
     value: String,

@@ -14,6 +14,14 @@ export const FieldMixin = {
         field.validateWithTrigger('onChange');
       }
     },
+    defaultDate() {
+      const field = this.vanField;
+
+      if (field) {
+        field.resetValidation();
+        field.validateWithTrigger('onChange');
+      }
+    },
   },
 
   created() {
