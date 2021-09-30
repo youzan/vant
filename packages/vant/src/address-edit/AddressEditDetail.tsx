@@ -1,7 +1,7 @@
 import { PropType, ref, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, numericProp } from '../utils';
 
 // Components
 import { Cell } from '../cell';
@@ -20,10 +20,10 @@ export default defineComponent({
     show: Boolean,
     value: String,
     focused: Boolean,
-    detailRows: [Number, String],
+    detailRows: numericProp,
     searchResult: Array as PropType<AddressEditSearchItem[]>,
     errorMessage: String,
-    detailMaxlength: [Number, String],
+    detailMaxlength: numericProp,
     showSearchResult: Boolean,
   },
 

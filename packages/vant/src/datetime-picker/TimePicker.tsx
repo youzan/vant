@@ -8,7 +8,14 @@ import {
 } from 'vue';
 
 // Utils
-import { pick, clamp, extend, padZero, createNamespace } from '../utils';
+import {
+  pick,
+  clamp,
+  extend,
+  padZero,
+  createNamespace,
+  makeNumericProp,
+} from '../utils';
 import { times, sharedProps, pickerKeys } from './utils';
 
 // Composables
@@ -23,23 +30,11 @@ export default defineComponent({
   name,
 
   props: extend({}, sharedProps, {
+    minHour: makeNumericProp(0),
+    maxHour: makeNumericProp(23),
+    minMinute: makeNumericProp(0),
+    maxMinute: makeNumericProp(59),
     modelValue: String,
-    minHour: {
-      type: [Number, String],
-      default: 0,
-    },
-    maxHour: {
-      type: [Number, String],
-      default: 23,
-    },
-    minMinute: {
-      type: [Number, String],
-      default: 0,
-    },
-    maxMinute: {
-      type: [Number, String],
-      default: 59,
-    },
   }),
 
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],

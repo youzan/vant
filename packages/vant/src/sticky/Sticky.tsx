@@ -13,9 +13,11 @@ import {
   extend,
   isHidden,
   unitToPx,
+  numericProp,
   getScrollTop,
   getZIndexStyle,
   createNamespace,
+  makeNumericProp,
 } from '../utils';
 
 // Composables
@@ -30,16 +32,10 @@ export default defineComponent({
   name,
 
   props: {
-    zIndex: [Number, String],
+    zIndex: numericProp,
     container: Object as PropType<Element>,
-    offsetTop: {
-      type: [Number, String],
-      default: 0,
-    },
-    offsetBottom: {
-      type: [Number, String],
-      default: 0,
-    },
+    offsetTop: makeNumericProp(0),
+    offsetBottom: makeNumericProp(0),
     position: {
       type: String as PropType<StickyPosition>,
       default: 'top',

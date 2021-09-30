@@ -2,9 +2,11 @@ import { defineComponent } from 'vue';
 import {
   addUnit,
   truthProp,
+  numericProp,
   BORDER_LEFT,
   BORDER_SURROUND,
   createNamespace,
+  makeNumericProp,
 } from '../utils';
 
 const [name, bem] = createNamespace('password-input');
@@ -15,16 +17,13 @@ export default defineComponent({
   props: {
     info: String,
     mask: truthProp,
-    gutter: [Number, String],
+    gutter: numericProp,
+    length: makeNumericProp(6),
     focused: Boolean,
     errorInfo: String,
     value: {
       type: String,
       default: '',
-    },
-    length: {
-      type: [Number, String],
-      default: 6,
     },
   },
 

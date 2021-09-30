@@ -2,11 +2,12 @@ import { PropType, CSSProperties, defineComponent } from 'vue';
 
 // Utils
 import {
-  createNamespace,
-  extend,
   isDef,
+  extend,
   truthProp,
   unknownProp,
+  numericProp,
+  createNamespace,
 } from '../utils';
 
 // Composables
@@ -22,9 +23,9 @@ export type CellArrowDirection = 'up' | 'down' | 'left' | 'right';
 export const cellProps = {
   icon: String,
   size: String as PropType<'large'>,
-  title: [Number, String],
-  value: [Number, String],
-  label: [Number, String],
+  title: numericProp,
+  value: numericProp,
+  label: numericProp,
   center: Boolean,
   isLink: Boolean,
   border: truthProp,

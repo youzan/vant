@@ -1,5 +1,11 @@
 import { PropType, defineComponent, ExtractPropTypes, InjectionKey } from 'vue';
-import { createNamespace, addUnit, truthProp } from '../utils';
+import {
+  createNamespace,
+  addUnit,
+  truthProp,
+  numericProp,
+  makeNumericProp,
+} from '../utils';
 import { BORDER_TOP } from '../utils/constant';
 import { useChildren } from '@vant/use';
 
@@ -11,15 +17,12 @@ const props = {
   square: Boolean,
   center: truthProp,
   border: truthProp,
-  gutter: [Number, String],
+  gutter: numericProp,
   reverse: Boolean,
-  iconSize: [Number, String],
+  iconSize: numericProp,
   direction: String as PropType<GridDirection>,
   clickable: Boolean,
-  columnNum: {
-    type: [Number, String],
-    default: 4,
-  },
+  columnNum: makeNumericProp(4),
 };
 
 export type GridProvide = {

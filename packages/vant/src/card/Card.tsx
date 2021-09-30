@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, isDef } from '../utils';
+import { isDef, numericProp, createNamespace } from '../utils';
 
 // Components
 import { Tag } from '../tag';
@@ -14,15 +14,15 @@ export default defineComponent({
 
   props: {
     tag: String,
-    num: [Number, String],
+    num: numericProp,
     desc: String,
     thumb: String,
     title: String,
-    price: [Number, String],
+    price: numericProp,
     centered: Boolean,
     lazyLoad: Boolean,
     thumbLink: String,
-    originPrice: [Number, String],
+    originPrice: numericProp,
     currency: {
       type: String,
       default: '¥',

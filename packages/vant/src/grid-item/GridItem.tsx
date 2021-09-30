@@ -1,7 +1,13 @@
 import { computed, CSSProperties, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, BORDER, addUnit, extend } from '../utils';
+import {
+  BORDER,
+  extend,
+  addUnit,
+  numericProp,
+  createNamespace,
+} from '../utils';
 import { GRID_KEY } from '../grid/Grid';
 
 // Composables
@@ -21,9 +27,9 @@ export default defineComponent({
     dot: Boolean,
     text: String,
     icon: String,
-    badge: [Number, String],
-    iconPrefix: String,
+    badge: numericProp,
     iconColor: String,
+    iconPrefix: String,
   }),
 
   setup(props, { slots }) {

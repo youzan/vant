@@ -16,6 +16,7 @@ import {
   pick,
   extend,
   truthProp,
+  numericProp,
   unknownProp,
   BORDER_BOTTOM,
   createNamespace,
@@ -72,7 +73,7 @@ export default defineComponent({
   props: {
     show: Boolean,
     overlay: Boolean,
-    duration: [Number, String],
+    duration: numericProp,
     iconPrefix: String,
     overlayClass: unknownProp,
     overlayStyle: Object as PropType<CSSProperties>,

@@ -3,6 +3,7 @@ import { ref, reactive, computed, CSSProperties, defineComponent } from 'vue';
 // Utils
 import {
   extend,
+  numericProp,
   BORDER_BOTTOM,
   getZIndexStyle,
   createNamespace,
@@ -20,7 +21,7 @@ export default defineComponent({
   name,
 
   props: {
-    index: [Number, String],
+    index: numericProp,
   },
 
   setup(props, { slots }) {

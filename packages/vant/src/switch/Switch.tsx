@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue';
-import { createNamespace, addUnit, unknownProp } from '../utils';
+import { addUnit, numericProp, unknownProp, createNamespace } from '../utils';
 import { useCustomFieldValue } from '@vant/use';
 import { Loading } from '../loading';
 
@@ -9,7 +9,7 @@ export default defineComponent({
   name,
 
   props: {
-    size: [Number, String],
+    size: numericProp,
     loading: Boolean,
     disabled: Boolean,
     modelValue: unknownProp,

@@ -16,21 +16,23 @@ import {
 
 // Utils
 import {
+  pick,
   isDef,
   addUnit,
   isHidden,
   unitToPx,
   truthProp,
+  numericProp,
   Interceptor,
   getVisibleTop,
   getElementTop,
   callInterceptor,
   createNamespace,
+  makeNumericProp,
   getVisibleHeight,
   setRootScrollTop,
   ComponentInstance,
   BORDER_TOP_BOTTOM,
-  pick,
 } from '../utils';
 import { scrollLeftTo, scrollTopTo } from './utils';
 
@@ -61,36 +63,24 @@ const props = {
   color: String,
   border: Boolean,
   sticky: Boolean,
+  active: makeNumericProp(0),
+  duration: makeNumericProp(0.3),
   animated: Boolean,
   ellipsis: truthProp,
   swipeable: Boolean,
   scrollspy: Boolean,
+  offsetTop: makeNumericProp(0),
   background: String,
   lazyRender: truthProp,
-  lineWidth: [Number, String],
-  lineHeight: [Number, String],
+  lineWidth: numericProp,
+  lineHeight: numericProp,
   beforeChange: Function as PropType<Interceptor>,
+  swipeThreshold: makeNumericProp(5),
   titleActiveColor: String,
   titleInactiveColor: String,
   type: {
     type: String as PropType<TabsType>,
     default: 'line',
-  },
-  active: {
-    type: [Number, String],
-    default: 0,
-  },
-  duration: {
-    type: [Number, String],
-    default: 0.3,
-  },
-  offsetTop: {
-    type: [Number, String],
-    default: 0,
-  },
-  swipeThreshold: {
-    type: [Number, String],
-    default: 5,
   },
 };
 

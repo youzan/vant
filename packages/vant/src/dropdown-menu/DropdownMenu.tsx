@@ -9,7 +9,14 @@ import {
 } from 'vue';
 
 // Utils
-import { isDef, truthProp, createNamespace, ComponentInstance } from '../utils';
+import {
+  isDef,
+  truthProp,
+  numericProp,
+  createNamespace,
+  makeNumericProp,
+  ComponentInstance,
+} from '../utils';
 
 // Composables
 import {
@@ -27,14 +34,11 @@ const [name, bem] = createNamespace('dropdown-menu');
 
 const props = {
   overlay: truthProp,
-  zIndex: [Number, String],
+  zIndex: numericProp,
+  duration: makeNumericProp(0.2),
   activeColor: String,
   closeOnClickOutside: truthProp,
   closeOnClickOverlay: truthProp,
-  duration: {
-    type: [Number, String],
-    default: 0.2,
-  },
   direction: {
     type: String as PropType<DropdownMenuDirection>,
     default: 'down',

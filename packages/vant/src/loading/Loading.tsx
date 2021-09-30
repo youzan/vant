@@ -1,5 +1,11 @@
 import { computed, PropType, defineComponent } from 'vue';
-import { createNamespace, addUnit, getSizeStyle, extend } from '../utils';
+import {
+  extend,
+  addUnit,
+  numericProp,
+  getSizeStyle,
+  createNamespace,
+} from '../utils';
 
 const [name, bem] = createNamespace('loading');
 
@@ -19,10 +25,10 @@ export default defineComponent({
   name,
 
   props: {
-    size: [Number, String],
+    size: numericProp,
     color: String,
     vertical: Boolean,
-    textSize: [Number, String],
+    textSize: numericProp,
     textColor: String,
     type: {
       type: String as PropType<LoadingType>,

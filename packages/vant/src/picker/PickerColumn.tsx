@@ -6,6 +6,7 @@ import {
   clamp,
   isObject,
   unknownProp,
+  numericProp,
   preventDefault,
   createNamespace,
 } from '../utils';
@@ -55,11 +56,11 @@ export default defineComponent({
       required: true,
     },
     swipeDuration: {
-      type: [Number, String],
+      type: numericProp,
       required: true,
     },
     visibleItemCount: {
-      type: [Number, String],
+      type: numericProp,
       required: true,
     },
     defaultIndex: {

@@ -5,10 +5,12 @@ import {
   clamp,
   addUnit,
   addNumber,
+  numericProp,
   getSizeStyle,
   preventDefault,
   stopPropagation,
   createNamespace,
+  makeNumericProp,
 } from '../utils';
 
 // Composables
@@ -25,27 +27,18 @@ export default defineComponent({
   name,
 
   props: {
+    min: makeNumericProp(0),
+    max: makeNumericProp(100),
+    step: makeNumericProp(1),
     range: Boolean,
     reverse: Boolean,
     disabled: Boolean,
     readonly: Boolean,
     vertical: Boolean,
-    barHeight: [Number, String],
-    buttonSize: [Number, String],
+    barHeight: numericProp,
+    buttonSize: numericProp,
     activeColor: String,
     inactiveColor: String,
-    min: {
-      type: [Number, String],
-      default: 0,
-    },
-    max: {
-      type: [Number, String],
-      default: 100,
-    },
-    step: {
-      type: [Number, String],
-      default: 1,
-    },
     modelValue: {
       type: [Number, Array] as PropType<SliderValue>,
       default: 0,

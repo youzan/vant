@@ -1,5 +1,5 @@
 import { nextTick, PropType, reactive, watch, defineComponent } from 'vue';
-import { createNamespace, truthProp, extend } from '../utils';
+import { extend, numericProp, truthProp, createNamespace } from '../utils';
 
 // Components
 import { Tab } from '../tab';
@@ -40,7 +40,7 @@ export default defineComponent({
     title: String,
     closeable: truthProp,
     swipeable: truthProp,
-    modelValue: [Number, String],
+    modelValue: numericProp,
     fieldNames: Object as PropType<CascaderFieldNames>,
     placeholder: String,
     activeColor: String,

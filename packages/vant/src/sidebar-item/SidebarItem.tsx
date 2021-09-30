@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, extend } from '../utils';
+import { extend, numericProp, createNamespace } from '../utils';
 import { SIDEBAR_KEY } from '../sidebar/Sidebar';
 
 // Composables
@@ -19,7 +19,7 @@ export default defineComponent({
   props: extend({}, routeProps, {
     dot: Boolean,
     title: String,
-    badge: [Number, String],
+    badge: numericProp,
     disabled: Boolean,
   }),
 

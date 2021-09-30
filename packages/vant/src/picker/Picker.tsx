@@ -14,6 +14,7 @@ import {
   truthProp,
   preventDefault,
   createNamespace,
+  makeNumericProp,
   BORDER_UNSET_TOP_BOTTOM,
 } from '../utils';
 
@@ -42,21 +43,12 @@ export const pickerProps = {
   loading: Boolean,
   readonly: Boolean,
   allowHtml: Boolean,
+  itemHeight: makeNumericProp(44),
   showToolbar: truthProp,
+  swipeDuration: makeNumericProp(1000),
+  visibleItemCount: makeNumericProp(6),
   cancelButtonText: String,
   confirmButtonText: String,
-  itemHeight: {
-    type: [Number, String],
-    default: 44,
-  },
-  visibleItemCount: {
-    type: [Number, String],
-    default: 6,
-  },
-  swipeDuration: {
-    type: [Number, String],
-    default: 1000,
-  },
 };
 
 export type PickerProps = ExtractPropTypes<typeof pickerProps>;
@@ -68,14 +60,11 @@ export default defineComponent({
     // @deprecated
     // should be removed in next major version
     valueKey: String,
+    defaultIndex: makeNumericProp(0),
     columnsFieldNames: Object as PropType<PickerFieldNames>,
     columns: {
       type: Array as PropType<PickerOption[] | PickerColumn[]>,
       default: () => [],
-    },
-    defaultIndex: {
-      type: [Number, String],
-      default: 0,
     },
     toolbarPosition: {
       type: String as PropType<PickerToolbarPosition>,

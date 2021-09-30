@@ -8,7 +8,7 @@ import {
 } from 'vue';
 
 // Utils
-import { createNamespace, isDef, unknownProp } from '../utils';
+import { isDef, unknownProp, numericProp, createNamespace } from '../utils';
 import { lockClick } from './lock-click';
 
 // Components
@@ -28,8 +28,8 @@ export default defineComponent({
     icon: String,
     show: Boolean,
     overlay: Boolean,
-    message: [Number, String],
-    iconSize: [Number, String],
+    message: numericProp,
+    iconSize: numericProp,
     className: unknownProp,
     iconPrefix: String,
     loadingType: String as PropType<LoadingType>,

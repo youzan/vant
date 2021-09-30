@@ -10,9 +10,11 @@ import {
 import {
   truthProp,
   Interceptor,
+  numericProp,
   getZIndexStyle,
   createNamespace,
   callInterceptor,
+  makeNumericProp,
   BORDER_TOP_BOTTOM,
 } from '../utils';
 
@@ -26,15 +28,12 @@ const props = {
   route: Boolean,
   fixed: truthProp,
   border: truthProp,
-  zIndex: [Number, String],
+  zIndex: numericProp,
   placeholder: Boolean,
   activeColor: String,
   beforeChange: Function as PropType<Interceptor>,
   inactiveColor: String,
-  modelValue: {
-    type: [Number, String],
-    default: 0,
-  },
+  modelValue: makeNumericProp(0),
   safeAreaInsetBottom: {
     type: Boolean as PropType<boolean | null>,
     default: null,

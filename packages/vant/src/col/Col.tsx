@@ -1,5 +1,5 @@
 import { computed, PropType, defineComponent } from 'vue';
-import { createNamespace } from '../utils';
+import { numericProp, createNamespace, makeNumericProp } from '../utils';
 import { useParent } from '@vant/use';
 import { ROW_KEY } from '../row/Row';
 
@@ -9,14 +9,11 @@ export default defineComponent({
   name,
 
   props: {
-    offset: [Number, String],
+    span: makeNumericProp(0),
+    offset: numericProp,
     tag: {
       type: String as PropType<keyof HTMLElementTagNameMap>,
       default: 'div',
-    },
-    span: {
-      type: [Number, String],
-      default: 0,
     },
   },
 

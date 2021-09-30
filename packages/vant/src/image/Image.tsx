@@ -15,6 +15,7 @@ import {
   addUnit,
   inBrowser,
   truthProp,
+  numericProp,
   createNamespace,
 } from '../utils';
 
@@ -33,11 +34,11 @@ export default defineComponent({
     alt: String,
     fit: String as PropType<ImageFit>,
     round: Boolean,
-    width: [Number, String],
-    height: [Number, String],
-    radius: [Number, String],
+    width: numericProp,
+    height: numericProp,
+    radius: numericProp,
     lazyLoad: Boolean,
-    iconSize: [Number, String],
+    iconSize: numericProp,
     showError: truthProp,
     iconPrefix: String,
     showLoading: truthProp,

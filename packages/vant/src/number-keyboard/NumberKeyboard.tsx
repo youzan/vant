@@ -13,9 +13,11 @@ import {
 // Utils
 import {
   truthProp,
+  numericProp,
   getZIndexStyle,
   stopPropagation,
   createNamespace,
+  makeNumericProp,
 } from '../utils';
 
 // Composables
@@ -41,8 +43,9 @@ export default defineComponent({
   props: {
     show: Boolean,
     title: String,
-    zIndex: [Number, String],
+    zIndex: numericProp,
     teleport: [String, Object] as PropType<TeleportProps['to']>,
+    maxlength: makeNumericProp(Number.MAX_VALUE),
     transition: truthProp,
     blurOnClose: truthProp,
     showDeleteKey: truthProp,
@@ -63,10 +66,6 @@ export default defineComponent({
     extraKey: {
       type: [String, Array] as PropType<string | string[]>,
       default: '',
-    },
-    maxlength: {
-      type: [Number, String],
-      default: Number.MAX_VALUE,
     },
   },
 

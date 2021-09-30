@@ -1,7 +1,7 @@
 import { PropType, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
-import { truthProp, FORM_KEY, createNamespace } from '../utils';
+import { truthProp, FORM_KEY, numericProp, createNamespace } from '../utils';
 
 // Composables
 import { useChildren } from '@vant/use';
@@ -22,7 +22,7 @@ const props = {
   disabled: Boolean,
   readonly: Boolean,
   showError: Boolean,
-  labelWidth: [Number, String],
+  labelWidth: numericProp,
   labelAlign: String as PropType<FieldTextAlign>,
   inputAlign: String as PropType<FieldTextAlign>,
   scrollToError: Boolean,

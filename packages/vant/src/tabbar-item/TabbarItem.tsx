@@ -1,7 +1,7 @@
 import { computed, getCurrentInstance, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, extend, isObject } from '../utils';
+import { createNamespace, extend, isObject, numericProp } from '../utils';
 import { TABBAR_KEY } from '../tabbar/Tabbar';
 
 // Composables
@@ -20,8 +20,8 @@ export default defineComponent({
   props: extend({}, routeProps, {
     dot: Boolean,
     icon: String,
-    name: [Number, String],
-    badge: [Number, String],
+    name: numericProp,
+    badge: numericProp,
     iconPrefix: String,
   }),
 

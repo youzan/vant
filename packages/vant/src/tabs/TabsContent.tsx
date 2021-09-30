@@ -1,5 +1,5 @@
 import { ref, watch, onMounted, defineComponent } from 'vue';
-import { createNamespace } from '../utils';
+import { numericProp, createNamespace } from '../utils';
 import { Swipe, SwipeInstance } from '../swipe';
 
 const [name, bem] = createNamespace('tabs');
@@ -17,7 +17,7 @@ export default defineComponent({
       required: true,
     },
     duration: {
-      type: [Number, String],
+      type: numericProp,
       required: true,
     },
     currentIndex: {

@@ -4,6 +4,7 @@ import {
   isDef,
   extend,
   truthProp,
+  numericProp,
   unknownProp,
   preventDefault,
   createNamespace,
@@ -18,8 +19,8 @@ export default defineComponent({
 
   props: {
     show: Boolean,
-    zIndex: [Number, String],
-    duration: [Number, String],
+    zIndex: numericProp,
+    duration: numericProp,
     className: unknownProp,
     lockScroll: truthProp,
     customStyle: Object as PropType<CSSProperties>,

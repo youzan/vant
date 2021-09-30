@@ -1,5 +1,5 @@
 import { computed, defineComponent, ExtractPropTypes } from 'vue';
-import { truthProp, createNamespace, addUnit } from '../utils';
+import { addUnit, truthProp, numericProp, createNamespace } from '../utils';
 
 const [name, bem] = createNamespace('progress');
 
@@ -11,9 +11,9 @@ const props = {
   showPivot: truthProp,
   pivotColor: String,
   trackColor: String,
-  strokeWidth: [Number, String],
+  strokeWidth: numericProp,
   percentage: {
-    type: [Number, String],
+    type: numericProp,
     default: 0,
     validator: (value: number | string) => value >= 0 && value <= 100,
   },

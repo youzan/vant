@@ -12,8 +12,10 @@ import {
   extend,
   isPromise,
   truthProp,
+  numericProp,
   Interceptor,
   getSizeStyle,
+  makeNumericProp,
   ComponentInstance,
 } from '../utils';
 import {
@@ -47,25 +49,23 @@ import type {
 } from './types';
 
 const props = {
+  name: makeNumericProp(''),
   capture: String,
   multiple: Boolean,
   disabled: Boolean,
   readonly: Boolean,
   lazyLoad: Boolean,
+  maxCount: makeNumericProp(Number.MAX_VALUE),
   uploadText: String,
   deletable: truthProp,
   afterRead: Function as PropType<UploaderAfterRead>,
   showUpload: truthProp,
   beforeRead: Function as PropType<UploaderBeforeRead>,
   beforeDelete: Function as PropType<Interceptor>,
-  previewSize: [Number, String],
+  previewSize: numericProp,
   previewImage: truthProp,
   previewOptions: Object as PropType<ImagePreviewOptions>,
   previewFullImage: truthProp,
-  name: {
-    type: [Number, String],
-    default: '',
-  },
   accept: {
     type: String,
     default: 'image/*',
@@ -76,10 +76,6 @@ const props = {
   },
   maxSize: {
     type: [Number, String, Function] as PropType<UploaderMaxSize>,
-    default: Number.MAX_VALUE,
-  },
-  maxCount: {
-    type: [Number, String],
     default: Number.MAX_VALUE,
   },
   imageFit: {
