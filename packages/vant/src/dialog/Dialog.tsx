@@ -11,6 +11,7 @@ import {
   BORDER_LEFT,
   unknownProp,
   numericProp,
+  makeStringProp,
   callInterceptor,
   createNamespace,
 } from '../utils';
@@ -49,6 +50,7 @@ export default defineComponent({
     callback: Function as PropType<(action?: DialogAction) => void>,
     allowHtml: Boolean,
     className: unknownProp,
+    transition: makeStringProp('van-dialog-bounce'),
     messageAlign: String as PropType<DialogMessageAlign>,
     closeOnPopstate: truthProp,
     showCancelButton: Boolean,
@@ -58,10 +60,6 @@ export default defineComponent({
     confirmButtonColor: String,
     showConfirmButton: truthProp,
     closeOnClickOverlay: Boolean,
-    transition: {
-      type: String,
-      default: 'van-dialog-bounce',
-    },
   }),
 
   emits: ['confirm', 'cancel', 'update:show'],

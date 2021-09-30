@@ -6,8 +6,9 @@ import {
   truthProp,
   numericProp,
   preventDefault,
-  createNamespace,
+  makeStringProp,
   makeNumericProp,
+  createNamespace,
 } from '../utils';
 
 // Composables
@@ -57,11 +58,13 @@ export default defineComponent({
 
   props: {
     size: numericProp,
+    icon: makeStringProp('star'),
     color: String,
     count: makeNumericProp(5),
     gutter: numericProp,
     readonly: Boolean,
     disabled: Boolean,
+    voidIcon: makeStringProp('star-o'),
     allowHalf: Boolean,
     voidColor: String,
     touchable: truthProp,
@@ -70,14 +73,6 @@ export default defineComponent({
     modelValue: {
       type: Number,
       default: 0,
-    },
-    icon: {
-      type: String,
-      default: 'star',
-    },
-    voidIcon: {
-      type: String,
-      default: 'star-o',
     },
   },
 

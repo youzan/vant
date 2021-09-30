@@ -1,5 +1,10 @@
-import { computed, watch, PropType, defineComponent } from 'vue';
-import { BORDER, makeNumericProp, createNamespace } from '../utils';
+import { computed, watch, defineComponent } from 'vue';
+import {
+  BORDER,
+  makeStringProp,
+  makeNumericProp,
+  createNamespace,
+} from '../utils';
 
 const [name, bem, t] = createNamespace('pagination');
 
@@ -21,6 +26,7 @@ export default defineComponent({
   name,
 
   props: {
+    mode: makeStringProp<PaginationMode>('multi'),
     prevText: String,
     nextText: String,
     pageCount: makeNumericProp(0),
@@ -28,10 +34,6 @@ export default defineComponent({
     showPageSize: makeNumericProp(5),
     itemsPerPage: makeNumericProp(10),
     forceEllipses: Boolean,
-    mode: {
-      type: String as PropType<PaginationMode>,
-      default: 'multi',
-    },
     modelValue: {
       type: Number,
       default: 0,

@@ -9,6 +9,7 @@ import {
 import {
   extend,
   numericProp,
+  makeStringProp,
   createNamespace,
   BORDER_SURROUND,
 } from '../utils';
@@ -29,12 +30,19 @@ export type ButtonType =
 
 export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
 
+export type ButtonNativeType = NonNullable<ButtonHTMLAttributes['type']>;
+
+export type ButtonIconPosition = 'left' | 'right';
+
 export default defineComponent({
   name,
 
   props: extend({}, routeProps, {
+    tag: makeStringProp<keyof HTMLElementTagNameMap>('button'),
     text: String,
     icon: String,
+    type: makeStringProp<ButtonType>('default'),
+    size: makeStringProp<ButtonSize>('normal'),
     color: String,
     block: Boolean,
     plain: Boolean,
@@ -44,29 +52,11 @@ export default defineComponent({
     hairline: Boolean,
     disabled: Boolean,
     iconPrefix: String,
+    nativeType: makeStringProp<ButtonNativeType>('button'),
     loadingSize: numericProp,
     loadingText: String,
     loadingType: String as PropType<LoadingType>,
-    tag: {
-      type: String as PropType<keyof HTMLElementTagNameMap>,
-      default: 'button',
-    },
-    type: {
-      type: String as PropType<ButtonType>,
-      default: 'default',
-    },
-    size: {
-      type: String as PropType<ButtonSize>,
-      default: 'normal',
-    },
-    nativeType: {
-      type: String as PropType<ButtonHTMLAttributes['type']>,
-      default: 'button',
-    },
-    iconPosition: {
-      type: String as PropType<'left' | 'right'>,
-      default: 'left',
-    },
+    iconPosition: makeStringProp<ButtonIconPosition>('left'),
   }),
 
   emits: ['click'],

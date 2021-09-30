@@ -15,9 +15,10 @@ import {
   truthProp,
   numericProp,
   getZIndexStyle,
+  makeStringProp,
+  makeNumericProp,
   stopPropagation,
   createNamespace,
-  makeNumericProp,
 } from '../utils';
 
 // Composables
@@ -43,9 +44,11 @@ export default defineComponent({
   props: {
     show: Boolean,
     title: String,
+    theme: makeStringProp<NumberKeyboardTheme>('default'),
     zIndex: numericProp,
     teleport: [String, Object] as PropType<TeleportProps['to']>,
     maxlength: makeNumericProp(Number.MAX_VALUE),
+    modelValue: makeStringProp(''),
     transition: truthProp,
     blurOnClose: truthProp,
     showDeleteKey: truthProp,
@@ -55,14 +58,6 @@ export default defineComponent({
     closeButtonLoading: Boolean,
     hideOnClickOutside: truthProp,
     safeAreaInsetBottom: truthProp,
-    theme: {
-      type: String as PropType<NumberKeyboardTheme>,
-      default: 'default',
-    },
-    modelValue: {
-      type: String,
-      default: '',
-    },
     extraKey: {
       type: [String, Array] as PropType<string | string[]>,
       default: '',

@@ -9,7 +9,7 @@ import {
 } from 'vue';
 
 // Utils
-import { truthProp, createNamespace } from '../utils';
+import { truthProp, makeStringProp, createNamespace } from '../utils';
 
 // Composables
 import { useRefs } from '../composables/use-refs';
@@ -28,7 +28,10 @@ export default defineComponent({
   name,
 
   props: {
+    code: makeStringProp(''),
+    currency: makeStringProp('¥'),
     showCount: truthProp,
+    emptyImage: makeStringProp(EMPTY_IMAGE),
     enabledTitle: String,
     disabledTitle: String,
     showExchangeBar: truthProp,
@@ -38,10 +41,6 @@ export default defineComponent({
     exchangeButtonText: String,
     exchangeButtonLoading: Boolean,
     exchangeButtonDisabled: Boolean,
-    code: {
-      type: String,
-      default: '',
-    },
     exchangeMinLength: {
       type: Number,
       default: 1,
@@ -61,14 +60,6 @@ export default defineComponent({
     displayedCouponIndex: {
       type: Number,
       default: -1,
-    },
-    currency: {
-      type: String,
-      default: '¥',
-    },
-    emptyImage: {
-      type: String,
-      default: EMPTY_IMAGE,
     },
   },
 

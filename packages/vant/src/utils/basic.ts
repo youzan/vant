@@ -15,7 +15,11 @@ export const truthProp = {
   default: true as const,
 };
 export const makeNumericProp = <T>(defaultVal: T) => ({
-  type: [Number, String],
+  type: numericProp,
+  default: defaultVal,
+});
+export const makeStringProp = <T>(defaultVal: T) => ({
+  type: String as unknown as PropType<T>,
   default: defaultVal,
 });
 

@@ -1,5 +1,5 @@
-import { CSSProperties, PropType, Transition, defineComponent } from 'vue';
-import { truthProp, createNamespace } from '../utils';
+import { CSSProperties, Transition, defineComponent } from 'vue';
+import { truthProp, makeStringProp, createNamespace } from '../utils';
 import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('tag');
@@ -13,15 +13,12 @@ export default defineComponent({
     size: String,
     mark: Boolean,
     show: truthProp,
+    type: makeStringProp<TagType>('default'),
     color: String,
     plain: Boolean,
     round: Boolean,
     textColor: String,
     closeable: Boolean,
-    type: {
-      type: String as PropType<TagType>,
-      default: 'default',
-    },
   },
 
   emits: ['close'],

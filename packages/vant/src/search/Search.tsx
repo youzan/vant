@@ -1,4 +1,4 @@
-import { ref, PropType, defineComponent, ExtractPropTypes } from 'vue';
+import { ref, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -6,6 +6,7 @@ import {
   extend,
   truthProp,
   preventDefault,
+  makeStringProp,
   createNamespace,
 } from '../utils';
 import { fieldSharedProps } from '../field/Field';
@@ -23,18 +24,12 @@ const [name, bem, t] = createNamespace('search');
 
 const props = extend({}, fieldSharedProps, {
   label: String,
+  shape: makeStringProp<SearchShape>('square'),
+  leftIcon: makeStringProp('search'),
   clearable: truthProp,
   actionText: String,
   background: String,
   showAction: Boolean,
-  shape: {
-    type: String as PropType<SearchShape>,
-    default: 'square',
-  },
-  leftIcon: {
-    type: String,
-    default: 'search',
-  },
 });
 
 export type SearchProps = ExtractPropTypes<typeof props>;

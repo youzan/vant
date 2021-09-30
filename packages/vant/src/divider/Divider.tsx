@@ -1,5 +1,5 @@
-import { PropType, defineComponent } from 'vue';
-import { truthProp, createNamespace } from '../utils';
+import { defineComponent } from 'vue';
+import { truthProp, makeStringProp, createNamespace } from '../utils';
 
 const [name, bem] = createNamespace('divider');
 
@@ -11,10 +11,7 @@ export default defineComponent({
   props: {
     dashed: Boolean,
     hairline: truthProp,
-    contentPosition: {
-      type: String as PropType<DividerContentPosition>,
-      default: 'center',
-    },
+    contentPosition: makeStringProp<DividerContentPosition>('center'),
   },
 
   setup(props, { slots }) {

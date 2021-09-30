@@ -4,7 +4,6 @@ import {
   provide,
   Teleport,
   computed,
-  PropType,
   onMounted,
   Transition,
   onActivated,
@@ -15,7 +14,13 @@ import {
 
 // Utils
 import { popupSharedProps } from './shared';
-import { extend, isDef, callInterceptor, createNamespace } from '../utils';
+import {
+  isDef,
+  extend,
+  makeStringProp,
+  callInterceptor,
+  createNamespace,
+} from '../utils';
 
 // Composables
 import { useEventListener } from '@vant/use';
@@ -47,23 +52,14 @@ export default defineComponent({
 
   props: extend({}, popupSharedProps, {
     round: Boolean,
+    position: makeStringProp<PopupPosition>('center'),
+    closeIcon: makeStringProp('cross'),
     closeable: Boolean,
     transition: String,
     iconPrefix: String,
     closeOnPopstate: Boolean,
+    closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
     safeAreaInsetBottom: Boolean,
-    position: {
-      type: String as PropType<PopupPosition>,
-      default: 'center',
-    },
-    closeIcon: {
-      type: String,
-      default: 'cross',
-    },
-    closeIconPosition: {
-      type: String as PropType<PopupCloseIconPosition>,
-      default: 'top-right',
-    },
   }),
 
   emits: [

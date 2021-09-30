@@ -15,6 +15,7 @@ import {
   numericProp,
   Interceptor,
   getSizeStyle,
+  makeStringProp,
   makeNumericProp,
   ComponentInstance,
 } from '../utils';
@@ -50,12 +51,16 @@ import type {
 
 const props = {
   name: makeNumericProp(''),
+  accept: makeStringProp('image/*'),
   capture: String,
   multiple: Boolean,
   disabled: Boolean,
   readonly: Boolean,
   lazyLoad: Boolean,
   maxCount: makeNumericProp(Number.MAX_VALUE),
+  imageFit: makeStringProp<ImageFit>('cover'),
+  resultType: makeStringProp<UploaderResultType>('dataUrl'),
+  uploadIcon: makeStringProp('photograph'),
   uploadText: String,
   deletable: truthProp,
   afterRead: Function as PropType<UploaderAfterRead>,
@@ -66,10 +71,6 @@ const props = {
   previewImage: truthProp,
   previewOptions: Object as PropType<ImagePreviewOptions>,
   previewFullImage: truthProp,
-  accept: {
-    type: String,
-    default: 'image/*',
-  },
   modelValue: {
     type: Array as PropType<UploaderFileListItem[]>,
     default: () => [],
@@ -77,18 +78,6 @@ const props = {
   maxSize: {
     type: [Number, String, Function] as PropType<UploaderMaxSize>,
     default: Number.MAX_VALUE,
-  },
-  imageFit: {
-    type: String as PropType<ImageFit>,
-    default: 'cover',
-  },
-  resultType: {
-    type: String as PropType<UploaderResultType>,
-    default: 'dataUrl',
-  },
-  uploadIcon: {
-    type: String,
-    default: 'photograph',
   },
 };
 

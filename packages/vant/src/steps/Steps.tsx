@@ -1,5 +1,5 @@
-import { PropType, defineComponent, ExtractPropTypes, InjectionKey } from 'vue';
-import { makeNumericProp, createNamespace } from '../utils';
+import { defineComponent, ExtractPropTypes, InjectionKey } from 'vue';
+import { makeStringProp, makeNumericProp, createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('steps');
@@ -8,19 +8,13 @@ export type StepsDirection = 'horizontal' | 'vertical';
 
 const props = {
   active: makeNumericProp(0),
+  direction: makeStringProp<StepsDirection>('horizontal'),
+  activeIcon: makeStringProp('checked'),
   iconPrefix: String,
   finishIcon: String,
   activeColor: String,
   inactiveIcon: String,
   inactiveColor: String,
-  direction: {
-    type: String as PropType<StepsDirection>,
-    default: 'horizontal',
-  },
-  activeIcon: {
-    type: String,
-    default: 'checked',
-  },
 };
 
 export type StepsProvide = {

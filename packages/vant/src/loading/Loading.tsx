@@ -1,9 +1,10 @@
-import { computed, PropType, defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
 import {
   extend,
   addUnit,
   numericProp,
   getSizeStyle,
+  makeStringProp,
   createNamespace,
 } from '../utils';
 
@@ -26,14 +27,11 @@ export default defineComponent({
 
   props: {
     size: numericProp,
+    type: makeStringProp<LoadingType>('circular'),
     color: String,
     vertical: Boolean,
     textSize: numericProp,
     textColor: String,
-    type: {
-      type: String as PropType<LoadingType>,
-      default: 'circular',
-    },
   },
 
   setup(props, { slots }) {

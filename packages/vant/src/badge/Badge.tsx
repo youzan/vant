@@ -5,6 +5,7 @@ import {
   isNumeric,
   truthProp,
   numericProp,
+  makeStringProp,
   createNamespace,
 } from '../utils';
 
@@ -16,14 +17,11 @@ export default defineComponent({
   props: {
     dot: Boolean,
     max: numericProp,
+    tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
     color: String,
     offset: Array as unknown as PropType<[string | number, string | number]>,
     content: numericProp,
     showZero: truthProp,
-    tag: {
-      type: String as PropType<keyof HTMLElementTagNameMap>,
-      default: 'div',
-    },
   },
 
   setup(props, { slots }) {

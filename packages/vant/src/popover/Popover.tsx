@@ -19,6 +19,7 @@ import {
   numericProp,
   unknownProp,
   BORDER_BOTTOM,
+  makeStringProp,
   createNamespace,
   ComponentInstance,
 } from '../utils';
@@ -72,8 +73,11 @@ export default defineComponent({
 
   props: {
     show: Boolean,
+    theme: makeStringProp<PopoverTheme>('light'),
     overlay: Boolean,
+    trigger: makeStringProp<PopoverTrigger>('click'),
     duration: numericProp,
+    placement: makeStringProp<PopoverPlacement>('bottom'),
     iconPrefix: String,
     overlayClass: unknownProp,
     overlayStyle: Object as PropType<CSSProperties>,
@@ -84,21 +88,9 @@ export default defineComponent({
       type: Array as unknown as PropType<[number, number]>,
       default: () => [0, 8],
     },
-    theme: {
-      type: String as PropType<PopoverTheme>,
-      default: 'light',
-    },
-    trigger: {
-      type: String as PropType<PopoverTrigger>,
-      default: 'click',
-    },
     actions: {
       type: Array as PropType<PopoverAction[]>,
       default: () => [],
-    },
-    placement: {
-      type: String as PropType<PopoverPlacement>,
-      default: 'bottom',
     },
     teleport: {
       type: [String, Object] as PropType<TeleportProps['to']>,

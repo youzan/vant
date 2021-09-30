@@ -1,7 +1,13 @@
 import { PropType, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
-import { truthProp, FORM_KEY, numericProp, createNamespace } from '../utils';
+import {
+  FORM_KEY,
+  truthProp,
+  numericProp,
+  makeStringProp,
+  createNamespace,
+} from '../utils';
 
 // Composables
 import { useChildren } from '@vant/use';
@@ -28,12 +34,9 @@ const props = {
   scrollToError: Boolean,
   validateFirst: Boolean,
   submitOnEnter: truthProp,
+  validateTrigger: makeStringProp<FieldValidateTrigger>('onBlur'),
   showErrorMessage: truthProp,
   errorMessageAlign: String as PropType<FieldTextAlign>,
-  validateTrigger: {
-    type: String as PropType<FieldValidateTrigger>,
-    default: 'onBlur',
-  },
 };
 
 export type FormProps = ExtractPropTypes<typeof props>;

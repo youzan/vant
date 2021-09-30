@@ -4,6 +4,7 @@ import {
   truthProp,
   numericProp,
   BORDER_LEFT,
+  makeStringProp,
   BORDER_SURROUND,
   createNamespace,
   makeNumericProp,
@@ -17,14 +18,11 @@ export default defineComponent({
   props: {
     info: String,
     mask: truthProp,
+    value: makeStringProp(''),
     gutter: numericProp,
     length: makeNumericProp(6),
     focused: Boolean,
     errorInfo: String,
-    value: {
-      type: String,
-      default: '',
-    },
   },
 
   emits: ['focus'],

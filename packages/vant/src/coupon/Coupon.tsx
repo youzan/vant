@@ -1,5 +1,5 @@
 import { computed, PropType, defineComponent } from 'vue';
-import { padZero, createNamespace } from '../utils';
+import { padZero, makeStringProp, createNamespace } from '../utils';
 import { Checkbox } from '../checkbox';
 
 export type CouponInfo = {
@@ -39,13 +39,10 @@ export default defineComponent({
   props: {
     chosen: Boolean,
     disabled: Boolean,
+    currency: makeStringProp('¥'),
     coupon: {
       type: Object as PropType<CouponInfo>,
       required: true,
-    },
-    currency: {
-      type: String,
-      default: '¥',
     },
   },
 

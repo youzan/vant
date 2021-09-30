@@ -8,7 +8,13 @@ import {
 } from 'vue';
 
 // Utils
-import { isDef, unknownProp, numericProp, createNamespace } from '../utils';
+import {
+  isDef,
+  unknownProp,
+  numericProp,
+  makeStringProp,
+  createNamespace,
+} from '../utils';
 import { lockClick } from './lock-click';
 
 // Components
@@ -27,32 +33,23 @@ export default defineComponent({
   props: {
     icon: String,
     show: Boolean,
+    type: makeStringProp<ToastType>('text'),
     overlay: Boolean,
     message: numericProp,
     iconSize: numericProp,
+    position: makeStringProp<ToastPosition>('middle'),
     className: unknownProp,
     iconPrefix: String,
+    transition: makeStringProp('van-fade'),
     loadingType: String as PropType<LoadingType>,
     forbidClick: Boolean,
     overlayClass: unknownProp,
     overlayStyle: Object as PropType<CSSProperties>,
     closeOnClick: Boolean,
     closeOnClickOverlay: Boolean,
-    type: {
-      type: String as PropType<ToastType>,
-      default: 'text',
-    },
     duration: {
       type: Number,
       default: 2000,
-    },
-    position: {
-      type: String as PropType<ToastPosition>,
-      default: 'middle',
-    },
-    transition: {
-      type: String,
-      default: 'van-fade',
     },
   },
 

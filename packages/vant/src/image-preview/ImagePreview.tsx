@@ -16,9 +16,10 @@ import {
   truthProp,
   unknownProp,
   Interceptor,
+  makeStringProp,
+  makeNumericProp,
   callInterceptor,
   createNamespace,
-  makeNumericProp,
 } from '../utils';
 
 // Composables
@@ -45,6 +46,7 @@ const props = {
   closeable: Boolean,
   showIndex: truthProp,
   className: unknownProp,
+  closeIcon: makeStringProp('clear'),
   transition: String,
   beforeClose: Function as PropType<Interceptor>,
   overlayStyle: Object as PropType<CSSProperties>,
@@ -52,17 +54,10 @@ const props = {
   startPosition: makeNumericProp(0),
   showIndicators: Boolean,
   closeOnPopstate: truthProp,
+  closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
   images: {
     type: Array as PropType<string[]>,
     default: () => [],
-  },
-  closeIcon: {
-    type: String,
-    default: 'clear',
-  },
-  closeIconPosition: {
-    type: String as PropType<PopupCloseIconPosition>,
-    default: 'top-right',
   },
 };
 

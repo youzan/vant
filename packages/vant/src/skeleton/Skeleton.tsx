@@ -4,13 +4,16 @@ import {
   truthProp,
   numericProp,
   getSizeStyle,
-  createNamespace,
+  makeStringProp,
   makeNumericProp,
+  createNamespace,
 } from '../utils';
 
 const [name, bem] = createNamespace('skeleton');
 const DEFAULT_ROW_WIDTH = '100%';
 const DEFAULT_LAST_ROW_WIDTH = '60%';
+
+export type SkeletonAvatarShape = 'square' | 'round';
 
 export default defineComponent({
   name,
@@ -24,10 +27,7 @@ export default defineComponent({
     animate: truthProp,
     avatarSize: numericProp,
     titleWidth: numericProp,
-    avatarShape: {
-      type: String as PropType<'square' | 'round'>,
-      default: 'round',
-    },
+    avatarShape: makeStringProp<SkeletonAvatarShape>('round'),
     rowWidth: {
       type: [Number, String, Array] as PropType<
         number | string | (number | string)[]

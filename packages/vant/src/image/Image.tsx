@@ -16,6 +16,7 @@ import {
   inBrowser,
   truthProp,
   numericProp,
+  makeStringProp,
   createNamespace,
 } from '../utils';
 
@@ -40,16 +41,10 @@ export default defineComponent({
     lazyLoad: Boolean,
     iconSize: numericProp,
     showError: truthProp,
+    errorIcon: makeStringProp('photo-fail'),
     iconPrefix: String,
     showLoading: truthProp,
-    errorIcon: {
-      type: String,
-      default: 'photo-fail',
-    },
-    loadingIcon: {
-      type: String,
-      default: 'photo',
-    },
+    loadingIcon: makeStringProp('photo'),
   },
 
   emits: ['load', 'error'],
