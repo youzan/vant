@@ -179,7 +179,7 @@ export default {
 | show | 是否显示键盘 | _boolean_ | - |
 | title | 键盘标题 | _string_ | - |
 | theme | 样式风格，可选值为 `custom` | _string_ | `default` |
-| maxlength | 输入值最大长度 | _number \| string_ | - |
+| maxlength | 输入值最大长度 | _number \| string_ | `Infinity` |
 | transition | 是否开启过场动画 | _boolean_ | `true` |
 | z-index | 键盘 z-index 层级 | _number \| string_ | `100` |
 | extra-key | 底部额外按键的内容 | _string \| string[]_ | `''` |

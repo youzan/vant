@@ -307,8 +307,8 @@ export default {
 | after-read | Hook after reading the file | _Function_ | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | _Function_ | - |
 | before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | _Function_ | - |
-| max-size `v3.0.17` | Max size of file | _number \| string \| (file: File) => boolean_ | - |
-| max-count | Max count of image | _number \| string_ | - |
+| max-size `v3.0.17` | Max size of file | _number \| string \| (file: File) => boolean_ | `Infinity` |
+| max-count | Max count of image | _number \| string_ | `Infinity` |
 | result-type | Type of file read result, can be set to `file` `text` | _string_ | `dataUrl` |
 | upload-text | Upload text | _string_ | - |
 | image-fit | Preview image fit mode | _string_ | `cover` |

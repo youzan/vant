@@ -47,7 +47,7 @@ export default defineComponent({
     theme: makeStringProp<NumberKeyboardTheme>('default'),
     zIndex: numericProp,
     teleport: [String, Object] as PropType<TeleportProps['to']>,
-    maxlength: makeNumericProp(Number.MAX_VALUE),
+    maxlength: makeNumericProp(Infinity),
     modelValue: makeStringProp(''),
     transition: truthProp,
     blurOnClose: truthProp,
