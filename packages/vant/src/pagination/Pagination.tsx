@@ -9,13 +9,11 @@ type PageItem = {
   active?: boolean;
 };
 
-function makePage(
+const makePage = (
   number: number,
   text: string | number,
   active?: boolean
-): PageItem {
-  return { number, text, active };
-}
+): PageItem => ({ number, text, active });
 
 export type PaginationMode = 'simple' | 'multi';
 

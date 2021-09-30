@@ -11,12 +11,11 @@ import { Image } from '../image';
 import { Loading } from '../loading';
 import { SwipeItem } from '../swipe-item';
 
-function getDistance(touches: TouchList) {
-  return Math.sqrt(
+const getDistance = (touches: TouchList) =>
+  Math.sqrt(
     (touches[0].clientX - touches[1].clientX) ** 2 +
       (touches[0].clientY - touches[1].clientY) ** 2
   );
-}
 
 const bem = createNamespace('image-preview')[1];
 

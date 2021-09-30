@@ -1,5 +1,5 @@
 import { App } from 'vue';
-import { camelize } from './format/string';
+import { camelize } from './format';
 
 // https://github.com/youzan/vant/issues/8302
 type EventShim = {

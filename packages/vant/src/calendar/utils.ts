@@ -4,9 +4,8 @@ const [name, bem, t] = createNamespace('calendar');
 
 export { name, bem, t };
 
-export function formatMonthTitle(date: Date) {
-  return t('monthTitle', date.getFullYear(), date.getMonth() + 1);
-}
+export const formatMonthTitle = (date: Date) =>
+  t('monthTitle', date.getFullYear(), date.getMonth() + 1);
 
 export function compareMonth(date1: Date, date2: Date) {
   const year1 = date1.getFullYear();

@@ -1,28 +1,21 @@
-import { inBrowser } from './base';
+import { inBrowser } from './basic';
 
-export function isDef<T>(val: T): val is NonNullable<T> {
-  return val !== undefined && val !== null;
-}
+export const isDef = <T>(val: T): val is NonNullable<T> =>
+  val !== undefined && val !== null;
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-export function isFunction(val: unknown): val is Function {
-  return typeof val === 'function';
-}
+export const isFunction = (val: unknown): val is Function =>
+  typeof val === 'function';
 
-export function isObject(val: unknown): val is Record<any, any> {
-  return val !== null && typeof val === 'object';
-}
+export const isObject = (val: unknown): val is Record<any, any> =>
+  val !== null && typeof val === 'object';
 
-export function isPromise<T = any>(val: unknown): val is Promise<T> {
-  return isObject(val) && isFunction(val.then) && isFunction(val.catch);
-}
+export const isPromise = <T = any>(val: unknown): val is Promise<T> =>
+  isObject(val) && isFunction(val.then) && isFunction(val.catch);
 
-export function isDate(val: unknown): val is Date {
-  return (
-    Object.prototype.toString.call(val) === '[object Date]' &&
-    !Number.isNaN((val as Date).getTime())
-  );
-}
+export const isDate = (val: unknown): val is Date =>
+  Object.prototype.toString.call(val) === '[object Date]' &&
+  !Number.isNaN((val as Date).getTime());
 
 export function isMobile(value: string): boolean {
   value = value.replace(/[^-|\d]/g, '');
@@ -31,12 +24,10 @@ export function isMobile(value: string): boolean {
   );
 }
 
-export function isNumeric(val: string | number): val is string {
-  return typeof val === 'number' || /^\d+(\.\d+)?$/.test(val);
-}
+export const isNumeric = (val: string | number): val is string =>
+  typeof val === 'number' || /^\d+(\.\d+)?$/.test(val);
 
-export function isIOS(): boolean {
-  return inBrowser
+export const isIOS = (): boolean =>
+  inBrowser
     ? /ios|iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase())
     : false;
-}

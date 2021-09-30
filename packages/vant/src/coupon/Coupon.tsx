@@ -27,15 +27,11 @@ function getDate(timeStamp: number) {
   )}`;
 }
 
-function formatDiscount(discount: number) {
-  return (discount / 10).toFixed(discount % 10 === 0 ? 0 : 1);
-}
+const formatDiscount = (discount: number) =>
+  (discount / 10).toFixed(discount % 10 === 0 ? 0 : 1);
 
-function formatAmount(amount: number) {
-  return (amount / 100).toFixed(
-    amount % 100 === 0 ? 0 : amount % 10 === 0 ? 1 : 2
-  );
-}
+const formatAmount = (amount: number) =>
+  (amount / 100).toFixed(amount % 100 === 0 ? 0 : amount % 10 === 0 ? 1 : 2);
 
 export default defineComponent({
   name,

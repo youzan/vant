@@ -1,10 +1,8 @@
+import { get, noop } from '../basic';
 import { deepClone } from '../deep-clone';
 import { deepAssign } from '../deep-assign';
-import { get, noop } from '..';
 import { isDef, isMobile, isNumeric } from '../validate';
-import { camelize } from '../format/string';
-import { formatNumber } from '../format/number';
-import { addUnit, unitToPx } from '../format/unit';
+import { addUnit, unitToPx, camelize, formatNumber } from '../format';
 
 test('deepClone', () => {
   const a = { foo: 0 };

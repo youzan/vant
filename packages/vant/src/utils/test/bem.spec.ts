@@ -1,4 +1,4 @@
-import { createBEM } from '../create/bem';
+import { createBEM } from '../create';
 
 test('bem', () => {
   const bem = createBEM('button');

@@ -43,6 +43,5 @@ export function getTrueValue(value: string | undefined): number {
   return parseInt(value, 10);
 }
 
-export function getMonthEndDay(year: number, month: number): number {
-  return 32 - new Date(year, month - 1, 32).getDate();
-}
+export const getMonthEndDay = (year: number, month: number): number =>
+  32 - new Date(year, month - 1, 32).getDate();
