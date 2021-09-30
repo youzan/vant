@@ -1605,10 +1605,24 @@
   resolved "https://registry.nlark.com/@types/less/download/@types/less-3.0.3.tgz#f9451dbb9548d25391107d65d6401a0cfb15db92"
   integrity sha1-+UUdu5VI0lOREH1l1kAaDPsV25I=
 
+"@types/linkify-it@*":
+  version "3.0.2"
+  resolved "https://registry.nlark.com/@types/linkify-it/download/@types/linkify-it-3.0.2.tgz#fd2cd2edbaa7eaac7e7f3c1748b52a19143846c9"
+  integrity sha1-/SzS7bqn6qx+fzwXSLUqGRQ4Rsk=
+
 "@types/lodash@^4.14.173":
   version "4.14.173"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.173.tgz#9d3b674c67a26cf673756f6aca7b429f237f91ed"
   integrity sha512-vv0CAYoaEjCw/mLy96GBTnRoZrSxkGE0BKzKimdR8P3OzrNYNvBgtW7p055A+E8C31vXNUhWKoFCbhq7gbyhFg==
+
+"@types/markdown-it@^12.2.1":
+  version "12.2.1"
+  resolved "https://registry.nlark.com/@types/markdown-it/download/@types/markdown-it-12.2.1.tgz#ca36e1edce6f15a770f3e99e68622d1d2e2f0c65"
+  integrity sha1-yjbh7c5vFadw8+meaGItHS4vDGU=
+  dependencies:
+    "@types/linkify-it" "*"
+    "@types/mdurl" "*"
+    highlight.js "^10.7.2"
 
 "@types/mdast@^3.0.0":
   version "3.0.10"
@@ -1616,6 +1630,11 @@
   integrity sha1-RyQkSoKkWYiEy76bz9c9/5J+6K8=
   dependencies:
     "@types/unist" "*"
+
+"@types/mdurl@*":
+  version "1.0.2"
+  resolved "https://registry.nlark.com/@types/mdurl/download/@types/mdurl-1.0.2.tgz?cache=0&sync_timestamp=1629708373717&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fmdurl%2Fdownload%2F%40types%2Fmdurl-1.0.2.tgz#e2ce9d83a613bacf284c7be7d491945e39e1f8e9"
+  integrity sha1-4s6dg6YTus8oTHvn1JGUXjnh+Ok=
 
 "@types/minimist@^1.2.0":
   version "1.2.2"
@@ -4222,6 +4241,11 @@ he@^1.2.0:
   version "1.2.0"
   resolved "https://registry.nlark.com/he/download/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
+
+highlight.js@^10.7.2:
+  version "10.7.3"
+  resolved "https://registry.nlark.com/highlight.js/download/highlight.js-10.7.3.tgz#697272e3991356e40c3cac566a74eef681756531"
+  integrity sha1-aXJy45kTVuQMPKxWanTu9oF1ZTE=
 
 highlight.js@^11.2.0:
   version "11.2.0"

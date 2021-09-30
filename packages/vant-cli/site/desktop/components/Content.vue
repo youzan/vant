@@ -1,5 +1,8 @@
 <template>
-  <div :class="['van-doc-content', `van-doc-content--${currentPage}`]">
+  <div
+    :class="['van-doc-content', `van-doc-content--${currentPage}`]"
+    @click="onClick"
+  >
     <slot />
   </div>
 </template>
@@ -18,19 +21,18 @@ export default {
     },
   },
 
-  mounted() {
-    const anchors = [].slice.call(this.$el.querySelectorAll('h2, h3, h4, h5'));
-    anchors.forEach((anchor) => {
-      anchor.addEventListener('click', this.scrollToAnchor);
-    });
-  },
-
   methods: {
-    scrollToAnchor(event) {
-      if (event.target.id) {
+    onClick({ target }) {
+      if (['H2', 'H3', 'H4', 'H5'].includes(target.tagName)) {
+        this.scrollToAnchor(target);
+      }
+    },
+
+    scrollToAnchor(target) {
+      if (target.id) {
         this.$router.push({
           name: this.$route.name,
-          hash: '#' + event.target.id,
+          hash: '#' + target.id,
         });
       }
     },
