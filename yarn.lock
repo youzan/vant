@@ -8053,10 +8053,10 @@ vfile@^4.0.0:
     unist-util-stringify-position "^2.0.0"
     vfile-message "^2.0.0"
 
-vite-plugin-html@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.nlark.com/vite-plugin-html/download/vite-plugin-html-2.1.0.tgz#77b6ee11d9cdbdf766b5731fd416bacf26744fce"
-  integrity sha1-d7buEdnNvfdmtXMf1Ba6zyZ0T84=
+vite-plugin-html@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-html/-/vite-plugin-html-2.1.1.tgz#014b44126a72d459cd460bd156800c225d124cbe"
+  integrity sha512-TCLLYzibNDEMwbtRYAYYmI7CqMuU0qFFfoTVhEQ8w4P9Tjfe5Xrh/0+XXydifgd/H7xzuWkFUjSYT6Egy7Y27Q==
   dependencies:
     "@rollup/pluginutils" "^4.1.1"
     dotenv "^10.0.0"
