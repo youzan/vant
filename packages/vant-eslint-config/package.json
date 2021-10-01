@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-eslint-config",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.31.1",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
