@@ -75,7 +75,7 @@
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.3.1",
     "ora": "^5.4.1",
-    "postcss": "^8.3.6",
+    "postcss": "^8.3.8",
     "postcss-load-config": "^3.1.0",
     "prettier": "^2.4.1",
     "release-it": "^14.11.5",
