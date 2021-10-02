@@ -1830,10 +1830,10 @@
     "@vue/babel-plugin-jsx" "^1.0.7"
     hash-sum "^2.0.0"
 
-"@vitejs/plugin-vue@^1.9.0":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-1.9.0.tgz#ae458a2eaac1d06efac8d71a4427d5d742466d72"
-  integrity sha512-TQB87f8baZsTZO/g7Az/dTCwV8eDxwkrP8hMl8HpwLJz/NKvmXtBqa7bYg8GKWNwqjy+pBRLdgiML+BI3HphOw==
+"@vitejs/plugin-vue@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-1.9.2.tgz#7234efb8c3c3d60c7eac350a935074ab1820ae0e"
+  integrity sha512-QnUQJvGmY+YT9xTidLcjr6NAjKWNdSuul1M+BZ6uwTQaO5vpAY9USBncXESATk742dYMZGJenegJgeJhG/HMNQ==
 
 "@vue/babel-helper-vue-transform-on@^1.0.2":
   version "1.0.2"
