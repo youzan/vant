@@ -10559,10 +10559,10 @@ vue-jest@^5.0.0-alpha.8:
     extract-from-css "^0.4.4"
     tsconfig "^7.0.0"
 
-vue-loader@^16.1.2:
-  version "16.1.2"
-  resolved "https://registry.npmjs.org/vue-loader/-/vue-loader-16.1.2.tgz#5c03b6c50d2a5f983c7ceba15c50d78ca2b298f4"
-  integrity sha512-8QTxh+Fd+HB6fiL52iEVLKqE9N1JSlMXLR92Ijm6g8PZrwIxckgpqjPDWRP5TWxdiPaHR+alUWsnu1ShQOwt+Q==
+vue-loader@16.5.0:
+  version "16.5.0"
+  resolved "https://registry.npmmirror.com/vue-loader/download/vue-loader-16.5.0.tgz#09c4e0712466899e34b99a686524f19165fb2892"
+  integrity sha1-CcTgcSRmiZ40uZpoZSTxkWX7KJI=
   dependencies:
     chalk "^4.1.0"
     hash-sum "^2.0.0"
