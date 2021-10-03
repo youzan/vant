@@ -33,7 +33,7 @@
   "devDependencies": {
     "@types/fs-extra": "^9.0.12",
     "@types/less": "^3.0.3",
-    "@types/lodash": "^4.14.173",
+    "@types/lodash": "^4.14.175",
     "@types/markdown-it": "^12.2.1",
     "@types/postcss-load-config": "^3.0.1",
     "@vue/compiler-sfc": "3.2.12",
