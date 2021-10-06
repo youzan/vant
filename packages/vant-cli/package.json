@@ -55,7 +55,7 @@
     "@vue/babel-plugin-jsx": "^1.0.7",
     "@vue/test-utils": "2.0.0-rc.14",
     "autoprefixer": "^10.3.6",
-    "babel-jest": "^27.2.1",
+    "babel-jest": "^27.2.4",
     "clean-css": "^5.1.5",
     "commander": "^8.2.0",
     "consola": "^2.15.3",
