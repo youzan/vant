@@ -37,7 +37,7 @@
     "@types/markdown-it": "^12.2.1",
     "@types/postcss-load-config": "^3.0.1",
     "@vue/compiler-sfc": "3.2.12",
-    "vue": "3.2.12"
+    "vue": "3.2.19"
   },
   "dependencies": {
     "@babel/core": "^7.15.5",
