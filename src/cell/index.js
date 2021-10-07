@@ -22,6 +22,10 @@ export default createComponent({
   },
   props: {
     ...cellProps,
+    infield: {
+      type: Boolean,
+      default: false,
+    },
     ...routeProps,
   },
 
@@ -52,7 +56,7 @@ export default createComponent({
     const props = this._props;
     const parent = this.$parent;
     const that = this;
-    const { icon, size, title, label, value, isLink } = this._props;
+    const { icon, size, title, label, value, isLink, infield } = this._props;
     const showTitle = slots('title') || isDef(title);
 
     function Labelb() {
@@ -82,7 +86,13 @@ export default createComponent({
       const showValue = slots() || isDef(value);
       //@ts-ignore
       const ifDesigner = (parent.$env && parent.$env.VUE_APP_DESIGNER);
-
+      if(infield) {
+        return (
+          <div class={[bem('value', { alone: !showTitle }), props.valueClass]}>
+            {slots() ? slots()  : (isDef(value) ? <span>{value}</span>  : null)}
+          </div>
+        );
+      }
       // if (showValue) {
         return (
           <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default">

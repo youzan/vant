@@ -38,7 +38,7 @@ export default createComponent({
     },
   },
   components: {
-    VanEmptyCol
+    VanEmptyCol,
   },
   props: {
     ...cellProps,
@@ -726,6 +726,7 @@ export default createComponent({
         vusionMove={vusionMove}
         vusionNodePath={vusionNodePath}
         vusionNodeTag={vusionNodeTag}
+        infield={this.drole === 'other'}
       >
         <div class={bem('body')}>
           {this.genInput()}
