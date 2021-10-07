@@ -129,14 +129,14 @@ export default createComponent({
   computed: {
     months() {
       const months = [];
-      const cursor = new Date(this.minDate);
+      const cursor = new Date(isDate(this.minDate) ? this.minDate : new Date(this.minDate));
 
       cursor.setDate(1);
 
       do {
         months.push(new Date(cursor));
         cursor.setMonth(cursor.getMonth() + 1);
-      } while (compareMonth(cursor, this.maxDate) !== 1);
+      } while (compareMonth(cursor, isDate(this.maxDate) ? this.maxDate : new Date(this.maxDate)) !== 1);
 
       return months;
     },
@@ -298,10 +298,10 @@ export default createComponent({
 
       let defaultVal = new Date();
 
-      if (compareDay(defaultVal, minDate) === -1) {
-        defaultVal = minDate;
-      } else if (compareDay(defaultVal, maxDate) === 1) {
-        defaultVal = maxDate;
+      if (compareDay(defaultVal, isDate(minDate) ? minDate : new Date(minDate)) === -1) {
+        defaultVal = isDate(minDate) ? minDate : new Date(minDate);
+      } else if (compareDay(defaultVal, isDate(maxDate) ? maxDate : new Date(maxDate)) === 1) {
+        defaultVal = isDate(maxDate) ? maxDate : new Date(maxDate);
       }
 
       if (type === 'range') {
@@ -482,8 +482,8 @@ export default createComponent({
           date={date}
           type={this.type}
           color={this.color}
-          minDate={this.minDate}
-          maxDate={this.maxDate}
+          minDate={isDate(this.minDate) ? this.minDate : new Date(this.minDate)}
+          maxDate={isDate(this.maxDate) ? this.maxDate : new Date(this.maxDate)}
           showMark={this.showMark}
           formatter={this.formatter}
           rowHeight={this.rowHeight}

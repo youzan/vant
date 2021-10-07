@@ -20,8 +20,7 @@
       description: 最小值
     - name: max
       title: 最大值
-      type: boolean
-      default: false
+      type: string, number
       description: 最大值
     - name: disable-plus
       title: 是否禁用增加按钮

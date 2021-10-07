@@ -131,12 +131,19 @@ export default createComponent({
     integer: 'check',
     decimalLength: 'check',
 
-    value(val) {
-      if (!equal(val, this.currentValue)) {
-        this.currentValue = this.format(val);
-      }
+    // value(val) {
+    //   if (!equal(val, this.currentValue)) {
+    //     this.currentValue = this.format(val);
+    //   }
+    // },
+    value: {
+      handler: function (val, oldVal) {
+        if (!equal(val, this.currentValue)) {
+          this.currentValue = this.format(val);
+        }
+      },
+      immediate: true
     },
-
     currentValue(val) {
       this.$emit('input', val);
       this.$emit('change', val, { name: this.name });
