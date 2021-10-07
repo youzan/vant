@@ -113,6 +113,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
           after: markdownCardWrapper,
         },
         markdownItOptions: {
+          typographer: false, // https://markdown-it.github.io/markdown-it/#MarkdownIt
           highlight: markdownHighlight,
         },
         markdownItSetup(md: MarkdownIt) {
