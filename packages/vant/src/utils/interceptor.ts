@@ -1,4 +1,5 @@
-import { isPromise, noop } from '.';
+import { noop } from './basic';
+import { isPromise } from './validate';
 
 export type Interceptor = (...args: any[]) => Promise<boolean> | boolean;
 
