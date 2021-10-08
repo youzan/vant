@@ -20,12 +20,11 @@ export default createComponent({
 
   mixins: [FieldMixin],
 
-  model: {
-    prop: 'fileListprop',
-  },
+  // model: {
+  //   prop: 'fileListprop',
+  // },
 
   props: {
-    // fileListprop: { type: Array, default: [] },
     url: { type: String, default: '/gateway/lowcode/api/v1/app/upload' },
     headers: Object,
     autoUpload: { type: Boolean, default: true },
@@ -53,13 +52,13 @@ export default createComponent({
     //   type: Array,
     //   default: () => [],
     // },
-    fileListprop: {
+    fileListProp: {
       type: Array,
       default: () => [],
     },
     maxSize: {
       type: [Number, String, Function],
-      default: Number.MAX_VALUE,
+      default: 10 || Number.MAX_VALUE,
     },
     maxCount: {
       type: [Number, String],
@@ -109,7 +108,7 @@ export default createComponent({
       return this.toValue(this.fileList);
     },
     fileList() {
-      return this.fromValue(this.fileListprop);
+      return this.fromValue(this.fileListProp);
     }
   },
 
@@ -120,7 +119,7 @@ export default createComponent({
             if(typeof value === 'string') return JSON.parse(value || '[]');
             if(typeof value === 'object') return value;
           } catch (err) {
-              return [];
+            return [];
           }
         else
             return value || [];
@@ -241,19 +240,24 @@ export default createComponent({
         : Boolean(validFiles);
 
       if (isValidFiles) {
-        this.$emit('input', [...this.fileList, ...toArray(validFiles)]);
-        this.$emit('update:fileListprop', [...this.fileList, ...toArray(validFiles)]);
+        const tempArr = [...this.fileList, ...toArray(validFiles)];
+        this.$emit('input', tempArr);
+        this.$emit('update:fileListProp', tempArr);
 
         if (this.afterRead) {
           this.afterRead(validFiles, this.getDetail());
         }
-        this.$nextTick(function () {
+        //this.$nextTick(function () {
+        setTimeout(() => {
           this.fileList.forEach((file, index) => {
-            file.status = 'uploading';
-            file.message = '上传中...';
-            this.post(file, index);
+            if (!file.url) {
+              file.status = 'uploading';
+              file.message = '上传中...';
+              this.post(file, index);
+            }
           });
-        });
+        }, 100)
+        //});
       }
     },
 
@@ -522,7 +526,7 @@ export default createComponent({
 
               const value = this.fileList;
               this.$emit('input', value);
-              this.$emit('update:fileList', value);
+              this.$emit('update:fileListProp', value);
           },
           onError: (e, res) => {
               file.status = 'failed';
@@ -537,7 +541,7 @@ export default createComponent({
 
               const value = this.fileList;
               this.$emit('input', value);
-              this.$emit('update:fileList', value);
+              this.$emit('update:fileListProp', value);
           },
       });
     },
