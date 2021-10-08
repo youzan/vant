@@ -6,6 +6,7 @@ import {
   numericProp,
   unknownProp,
   makeStringProp,
+  makeRequiredProp,
 } from '../utils';
 import { Icon } from '../icon';
 
@@ -34,14 +35,11 @@ export const checkerProps = {
 
 export default defineComponent({
   props: extend({}, checkerProps, {
+    bem: makeRequiredProp(Function),
     role: String,
     parent: Object as PropType<CheckerParent | null>,
     checked: Boolean,
     bindGroup: truthProp,
-    bem: {
-      type: Function,
-      required: true as const,
-    },
   }),
 
   emits: ['click', 'toggle'],

@@ -1,27 +1,10 @@
-import { PropType, ComponentPublicInstance } from 'vue';
+import type { ComponentPublicInstance } from 'vue';
 
 export function noop() {}
 
 export const extend = Object.assign;
 
 export const inBrowser = typeof window !== 'undefined';
-
-// propType helpers
-// help us to write less code, reduce bundle size
-export const unknownProp = null as unknown as PropType<unknown>;
-export const numericProp = [Number, String];
-export const truthProp = {
-  type: Boolean,
-  default: true as const,
-};
-export const makeNumericProp = <T>(defaultVal: T) => ({
-  type: numericProp,
-  default: defaultVal,
-});
-export const makeStringProp = <T>(defaultVal: T) => ({
-  type: String as unknown as PropType<T>,
-  default: defaultVal,
-});
 
 // eslint-disable-next-line
 export type ComponentInstance = ComponentPublicInstance<{}, any>;

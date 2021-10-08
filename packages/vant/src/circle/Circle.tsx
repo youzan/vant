@@ -6,6 +6,7 @@ import {
   numericProp,
   getSizeStyle,
   makeStringProp,
+  makeNumberProp,
   makeNumericProp,
   createNamespace,
 } from '../utils';
@@ -37,13 +38,10 @@ export default defineComponent({
     color: [String, Object] as PropType<string | Record<string, string>>,
     clockwise: truthProp,
     layerColor: String,
+    currentRate: makeNumberProp(0),
     strokeWidth: makeNumericProp(40),
     strokeLinecap: String as PropType<CanvasLineCap>,
     startPosition: makeStringProp<CircleStartPosition>('top'),
-    currentRate: {
-      type: Number,
-      default: 0,
-    },
   },
 
   emits: ['update:currentRate'],

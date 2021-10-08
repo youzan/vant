@@ -16,6 +16,7 @@ import {
   isMobile,
   truthProp,
   numericProp,
+  makeArrayProp,
   makeNumericProp,
   createNamespace,
 } from '../utils';
@@ -75,6 +76,7 @@ const props = {
   showSearchResult: Boolean,
   detailRows: makeNumericProp(1),
   detailMaxlength: makeNumericProp(200),
+  areaColumnsPlaceholder: makeArrayProp<string>(),
   addressInfo: {
     type: Object as PropType<Partial<AddressEditInfo>>,
     default: () => extend({}, DEFAULT_DATA),
@@ -86,10 +88,6 @@ const props = {
   postalValidator: {
     type: Function as PropType<(val: string) => boolean>,
     default: isPostal,
-  },
-  areaColumnsPlaceholder: {
-    type: Array as PropType<string[]>,
-    default: () => [],
   },
 };
 

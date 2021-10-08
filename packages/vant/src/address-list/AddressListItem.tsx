@@ -1,7 +1,7 @@
 import { PropType, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, extend } from '../utils';
+import { createNamespace, extend, makeRequiredProp } from '../utils';
 
 // Components
 import { Tag } from '../tag';
@@ -23,13 +23,10 @@ export default defineComponent({
   name,
 
   props: {
+    address: makeRequiredProp<PropType<AddressListAddress>>(Object),
     disabled: Boolean,
     switchable: Boolean,
     defaultTagText: String,
-    address: {
-      type: Object as PropType<AddressListAddress>,
-      required: true,
-    },
   },
 
   emits: ['edit', 'click', 'select'],

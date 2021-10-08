@@ -12,7 +12,13 @@ import {
 
 // Utils
 import { deepClone } from '../utils/deep-clone';
-import { pick, createNamespace, extend, makeNumericProp } from '../utils';
+import {
+  pick,
+  extend,
+  makeArrayProp,
+  makeNumericProp,
+  createNamespace,
+} from '../utils';
 import { pickerProps } from '../picker/Picker';
 
 // Composables
@@ -51,6 +57,7 @@ const isOverseaCode = (code: string) => code[0] === '9';
 const props = extend({}, pickerProps, {
   value: String,
   columnsNum: makeNumericProp(3),
+  columnsPlaceholder: makeArrayProp<string>(),
   areaList: {
     type: Object as PropType<AreaList>,
     default: () => ({}),
@@ -58,10 +65,6 @@ const props = extend({}, pickerProps, {
   isOverseaCode: {
     type: Function as PropType<(code: string) => boolean>,
     default: isOverseaCode,
-  },
-  columnsPlaceholder: {
-    type: Array as PropType<string[]>,
-    default: () => [],
   },
 });
 

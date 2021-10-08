@@ -3,13 +3,18 @@ import {
   computed,
   nextTick,
   reactive,
-  PropType,
   onMounted,
   defineComponent,
 } from 'vue';
 
 // Utils
-import { truthProp, makeStringProp, createNamespace } from '../utils';
+import {
+  truthProp,
+  makeArrayProp,
+  makeStringProp,
+  makeNumberProp,
+  createNamespace,
+} from '../utils';
 
 // Composables
 import { useRefs } from '../composables/use-refs';
@@ -29,38 +34,23 @@ export default defineComponent({
 
   props: {
     code: makeStringProp(''),
+    coupons: makeArrayProp<CouponInfo>(),
     currency: makeStringProp('¥'),
     showCount: truthProp,
     emptyImage: makeStringProp(EMPTY_IMAGE),
+    chosenCoupon: makeNumberProp(-1),
     enabledTitle: String,
     disabledTitle: String,
+    disabledCoupons: makeArrayProp<CouponInfo>(),
     showExchangeBar: truthProp,
     showCloseButton: truthProp,
     closeButtonText: String,
     inputPlaceholder: String,
+    exchangeMinLength: makeNumberProp(1),
     exchangeButtonText: String,
+    displayedCouponIndex: makeNumberProp(-1),
     exchangeButtonLoading: Boolean,
     exchangeButtonDisabled: Boolean,
-    exchangeMinLength: {
-      type: Number,
-      default: 1,
-    },
-    chosenCoupon: {
-      type: Number,
-      default: -1,
-    },
-    coupons: {
-      type: Array as PropType<CouponInfo[]>,
-      default: () => [],
-    },
-    disabledCoupons: {
-      type: Array as PropType<CouponInfo[]>,
-      default: () => [],
-    },
-    displayedCouponIndex: {
-      type: Number,
-      default: -1,
-    },
   },
 
   emits: ['change', 'exchange', 'update:code'],

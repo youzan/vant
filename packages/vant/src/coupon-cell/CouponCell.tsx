@@ -1,9 +1,10 @@
-import { PropType, defineComponent } from 'vue';
+import { defineComponent } from 'vue';
 
 // Utils
 import {
   isDef,
   truthProp,
+  makeArrayProp,
   makeStringProp,
   makeNumericProp,
   createNamespace,
@@ -46,12 +47,9 @@ export default defineComponent({
     title: String,
     border: truthProp,
     editable: truthProp,
+    coupons: makeArrayProp<CouponInfo>(),
     currency: makeStringProp('¥'),
     chosenCoupon: makeNumericProp(-1),
-    coupons: {
-      type: Array as PropType<CouponInfo[]>,
-      default: () => [],
-    },
   },
 
   setup(props) {

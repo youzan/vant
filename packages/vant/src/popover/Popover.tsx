@@ -22,6 +22,7 @@ import {
   makeStringProp,
   createNamespace,
   ComponentInstance,
+  makeArrayProp,
 } from '../utils';
 
 // Composables
@@ -75,8 +76,10 @@ export default defineComponent({
     show: Boolean,
     theme: makeStringProp<PopoverTheme>('light'),
     overlay: Boolean,
+    actions: makeArrayProp<PopoverAction>(),
     trigger: makeStringProp<PopoverTrigger>('click'),
     duration: numericProp,
+    showArrow: truthProp,
     placement: makeStringProp<PopoverPlacement>('bottom'),
     iconPrefix: String,
     overlayClass: unknownProp,
@@ -88,17 +91,9 @@ export default defineComponent({
       type: Array as unknown as PropType<[number, number]>,
       default: () => [0, 8],
     },
-    actions: {
-      type: Array as PropType<PopoverAction[]>,
-      default: () => [],
-    },
     teleport: {
       type: [String, Object] as PropType<TeleportProps['to']>,
       default: 'body',
-    },
-    showArrow: {
-      type: Boolean,
-      default: true,
     },
   },
 

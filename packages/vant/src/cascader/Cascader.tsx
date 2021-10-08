@@ -3,6 +3,7 @@ import {
   extend,
   truthProp,
   numericProp,
+  makeArrayProp,
   makeStringProp,
   createNamespace,
 } from '../utils';
@@ -25,7 +26,7 @@ export type CascaderOption = {
   children?: CascaderOption[];
   className?: unknown;
   // for custom filed names
-  [key: string]: any;
+  [key: PropertyKey]: any;
 };
 
 type CascaderTab = {
@@ -44,6 +45,7 @@ export default defineComponent({
 
   props: {
     title: String,
+    options: makeArrayProp<CascaderOption>(),
     closeable: truthProp,
     swipeable: truthProp,
     closeIcon: makeStringProp('cross'),
@@ -51,10 +53,6 @@ export default defineComponent({
     fieldNames: Object as PropType<CascaderFieldNames>,
     placeholder: String,
     activeColor: String,
-    options: {
-      type: Array as PropType<CascaderOption[]>,
-      default: () => [],
-    },
   },
 
   emits: ['close', 'change', 'finish', 'update:modelValue', 'click-tab'],

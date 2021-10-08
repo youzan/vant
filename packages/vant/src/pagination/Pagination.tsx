@@ -2,6 +2,7 @@ import { computed, watch, defineComponent } from 'vue';
 import {
   BORDER,
   makeStringProp,
+  makeNumberProp,
   makeNumericProp,
   createNamespace,
 } from '../utils';
@@ -30,14 +31,11 @@ export default defineComponent({
     prevText: String,
     nextText: String,
     pageCount: makeNumericProp(0),
+    modelValue: makeNumberProp(0),
     totalItems: makeNumericProp(0),
     showPageSize: makeNumericProp(5),
     itemsPerPage: makeNumericProp(10),
     forceEllipses: Boolean,
-    modelValue: {
-      type: Number,
-      default: 0,
-    },
   },
 
   emits: ['change', 'update:modelValue'],

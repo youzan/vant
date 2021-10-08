@@ -40,7 +40,7 @@ export default defineComponent({
     activeColor: String,
     inactiveColor: String,
     modelValue: {
-      type: [Number, Array] as PropType<SliderValue>,
+      type: numericProp as PropType<SliderValue>,
       default: 0,
     },
   },

@@ -1,5 +1,5 @@
 import { ref, watch, onMounted, defineComponent } from 'vue';
-import { numericProp, createNamespace } from '../utils';
+import { numericProp, makeRequiredProp, createNamespace } from '../utils';
 import { Swipe, SwipeInstance } from '../swipe';
 
 const [name, bem] = createNamespace('tabs');
@@ -8,22 +8,13 @@ export default defineComponent({
   name,
 
   props: {
+    count: makeRequiredProp(Number),
     inited: Boolean,
     animated: Boolean,
+    duration: makeRequiredProp(numericProp),
     swipeable: Boolean,
     lazyRender: Boolean,
-    count: {
-      type: Number,
-      required: true,
-    },
-    duration: {
-      type: numericProp,
-      required: true,
-    },
-    currentIndex: {
-      type: Number,
-      required: true,
-    },
+    currentIndex: makeRequiredProp(Number),
   },
 
   emits: ['change'],

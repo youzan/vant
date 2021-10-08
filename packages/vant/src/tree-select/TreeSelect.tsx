@@ -3,6 +3,7 @@ import { PropType, defineComponent } from 'vue';
 // Utils
 import {
   addUnit,
+  makeArrayProp,
   makeStringProp,
   makeNumericProp,
   createNamespace,
@@ -35,13 +36,10 @@ export default defineComponent({
 
   props: {
     max: makeNumericProp(Infinity),
+    items: makeArrayProp<TreeSelectItem>(),
     height: makeNumericProp(300),
     selectedIcon: makeStringProp('success'),
     mainActiveIndex: makeNumericProp(0),
-    items: {
-      type: Array as PropType<TreeSelectItem[]>,
-      default: () => [],
-    },
     activeId: {
       type: [Number, String, Array] as PropType<
         number | string | Array<number | string>

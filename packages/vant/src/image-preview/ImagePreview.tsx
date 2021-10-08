@@ -16,6 +16,7 @@ import {
   truthProp,
   unknownProp,
   Interceptor,
+  makeArrayProp,
   makeStringProp,
   makeNumericProp,
   callInterceptor,
@@ -40,6 +41,7 @@ const [name, bem] = createNamespace('image-preview');
 const props = {
   show: Boolean,
   loop: truthProp,
+  images: makeArrayProp<string>(),
   minZoom: makeNumericProp(1 / 3),
   maxZoom: makeNumericProp(3),
   overlay: truthProp,
@@ -55,10 +57,6 @@ const props = {
   showIndicators: Boolean,
   closeOnPopstate: truthProp,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
-  images: {
-    type: Array as PropType<string[]>,
-    default: () => [],
-  },
 };
 
 export type ImagePreviewProps = ExtractPropTypes<typeof props>;

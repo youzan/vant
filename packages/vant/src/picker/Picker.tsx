@@ -12,10 +12,11 @@ import {
   extend,
   unitToPx,
   truthProp,
+  makeArrayProp,
   preventDefault,
   makeStringProp,
-  createNamespace,
   makeNumericProp,
+  createNamespace,
   BORDER_UNSET_TOP_BOTTOM,
 } from '../utils';
 
@@ -58,16 +59,13 @@ export default defineComponent({
   name,
 
   props: extend({}, pickerProps, {
+    columns: makeArrayProp<PickerOption | PickerColumn>(),
     // @deprecated
     // should be removed in next major version
     valueKey: String,
     defaultIndex: makeNumericProp(0),
     toolbarPosition: makeStringProp<PickerToolbarPosition>('top'),
     columnsFieldNames: Object as PropType<PickerFieldNames>,
-    columns: {
-      type: Array as PropType<PickerOption[] | PickerColumn[]>,
-      default: () => [],
-    },
   }),
 
   emits: ['confirm', 'cancel', 'change'],
