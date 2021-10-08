@@ -59,10 +59,10 @@
     </demo-block>
 
     <demo-block :title="t('basicUsage')+'666'">
-      <van-uploader :fileListprop.sync="fileList6" multiple url="https://www.mocky.io/v2/5cc8019d300000980a055e76"/>
+      <van-uploader :fileListProp.sync="fileList6" multiple url="https://www.mocky.io/v2/5cc8019d300000980a055e76"/>
     </demo-block>
     <demo-block :title="t('basicUsage')+'666'">
-      <van-uploader :fileListprop.sync="fileList67" multiple url="http://lcp.vusion.top/api/v1/vusion/upload"/>
+      <van-uploader :fileListProp.sync="fileList67" multiple url="http://lcp.vusion.top/api/v1/vusion/upload"/>
     </demo-block>
     <demo-block>
       <van-field label="表单项"><template #input></template><template #input="scope"></template></van-field>
