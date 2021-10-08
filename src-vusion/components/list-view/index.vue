@@ -134,6 +134,7 @@ export default {
 }
 
 .body {
+    height: 100%;
     flex: auto;
     user-select: none;
     overflow: auto;
