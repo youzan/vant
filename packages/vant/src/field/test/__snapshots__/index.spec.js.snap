@@ -13,6 +13,12 @@ exports[`should render colon when using colon prop 1`] = `
 </div>
 `;
 
+exports[`should render error-message slot correctly 1`] = `
+<div class="van-field__error-message">
+  Custom error
+</div>
+`;
+
 exports[`should render extra slot correctly 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__value van-cell__value--alone van-field__value">

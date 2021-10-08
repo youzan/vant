@@ -469,9 +469,12 @@ export default defineComponent({
       const message = props.errorMessage || state.validateMessage;
 
       if (message) {
+        const slot = slots['error-message'];
         const errorMessageAlign = getProp('errorMessageAlign');
         return (
-          <div class={bem('error-message', errorMessageAlign)}>{message}</div>
+          <div class={bem('error-message', errorMessageAlign)}>
+            {slot ? slot({ message }) : message}
+          </div>
         );
       }
     };
