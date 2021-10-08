@@ -76,6 +76,7 @@ const props = {
   allowSameDay: Boolean,
   showSubtitle: truthProp,
   closeOnPopstate: truthProp,
+  showRangePrompt: truthProp,
   confirmDisabledText: String,
   closeOnClickOverlay: truthProp,
   safeAreaInsetBottom: truthProp,
@@ -96,10 +97,6 @@ const props = {
     type: numericProp,
     default: 0,
     validator: (val: number) => val >= 0 && val <= 6,
-  },
-  showRangePrompt: {
-    type: Boolean,
-    default: true,
   },
 };
 

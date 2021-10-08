@@ -9,6 +9,7 @@ import {
   numericProp,
   getSizeStyle,
   callInterceptor,
+  makeRequiredProp,
 } from '../utils';
 
 // Components
@@ -22,16 +23,13 @@ import type { UploaderFileListItem } from './types';
 export default defineComponent({
   props: {
     name: numericProp,
+    item: makeRequiredProp<PropType<UploaderFileListItem>>(Object),
     index: Number,
     imageFit: String as PropType<ImageFit>,
     lazyLoad: Boolean,
     deletable: Boolean,
     previewSize: numericProp,
     beforeDelete: Function as PropType<Interceptor>,
-    item: {
-      type: Object as PropType<UploaderFileListItem>,
-      required: true,
-    },
   },
 
   emits: ['delete', 'preview'],

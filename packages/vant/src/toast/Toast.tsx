@@ -13,6 +13,7 @@ import {
   unknownProp,
   numericProp,
   makeStringProp,
+  makeNumberProp,
   createNamespace,
 } from '../utils';
 import { lockClick } from './lock-click';
@@ -37,6 +38,7 @@ export default defineComponent({
     overlay: Boolean,
     message: numericProp,
     iconSize: numericProp,
+    duration: makeNumberProp(2000),
     position: makeStringProp<ToastPosition>('middle'),
     className: unknownProp,
     iconPrefix: String,
@@ -47,10 +49,6 @@ export default defineComponent({
     overlayStyle: Object as PropType<CSSProperties>,
     closeOnClick: Boolean,
     closeOnClickOverlay: Boolean,
-    duration: {
-      type: Number,
-      default: 2000,
-    },
   },
 
   emits: ['update:show'],

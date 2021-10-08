@@ -1,5 +1,5 @@
 import { computed, CSSProperties, PropType, defineComponent } from 'vue';
-import { createNamespace } from '../utils';
+import { makeNumberProp, createNamespace, makeRequiredProp } from '../utils';
 import { bem } from './utils';
 import type { CalendarDayItem } from './types';
 
@@ -9,17 +9,11 @@ export default defineComponent({
   name,
 
   props: {
+    item: makeRequiredProp<PropType<CalendarDayItem>>(Object),
     color: String,
     index: Number,
+    offset: makeNumberProp(0),
     rowHeight: String,
-    offset: {
-      type: Number,
-      default: 0,
-    },
-    item: {
-      type: Object as PropType<CalendarDayItem>,
-      required: true,
-    },
   },
 
   emits: ['click'],

@@ -13,6 +13,7 @@ import {
   numericProp,
   setScrollTop,
   createNamespace,
+  makeRequiredProp,
 } from '../utils';
 import { getMonthEndDay } from '../datetime-picker/utils';
 import {
@@ -38,8 +39,11 @@ import type { CalendarType, CalendarDayItem, CalendarDayType } from './types';
 const [name] = createNamespace('calendar-month');
 
 const props = {
+  date: makeRequiredProp(Date),
   type: String as PropType<CalendarType>,
   color: String,
+  minDate: makeRequiredProp(Date),
+  maxDate: makeRequiredProp(Date),
   showMark: Boolean,
   rowHeight: numericProp,
   formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
@@ -49,18 +53,6 @@ const props = {
   showSubtitle: Boolean,
   showMonthTitle: Boolean,
   firstDayOfWeek: Number,
-  date: {
-    type: Date,
-    required: true as const,
-  },
-  minDate: {
-    type: Date,
-    required: true as const,
-  },
-  maxDate: {
-    type: Date,
-    required: true as const,
-  },
 };
 
 export type CalendarMonthProps = ExtractPropTypes<typeof props>;

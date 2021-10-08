@@ -1,7 +1,13 @@
 import { watch, computed, reactive, CSSProperties, defineComponent } from 'vue';
 
 // Utils
-import { clamp, preventDefault, numericProp, createNamespace } from '../utils';
+import {
+  clamp,
+  numericProp,
+  preventDefault,
+  createNamespace,
+  makeRequiredProp,
+} from '../utils';
 
 // Composables
 import { useTouch } from '../composables/use-touch';
@@ -24,22 +30,10 @@ export default defineComponent({
     src: String,
     show: Boolean,
     active: Number,
-    minZoom: {
-      type: numericProp,
-      required: true,
-    },
-    maxZoom: {
-      type: numericProp,
-      required: true,
-    },
-    rootWidth: {
-      type: Number,
-      required: true,
-    },
-    rootHeight: {
-      type: Number,
-      required: true,
-    },
+    minZoom: makeRequiredProp(numericProp),
+    maxZoom: makeRequiredProp(numericProp),
+    rootWidth: makeRequiredProp(Number),
+    rootHeight: makeRequiredProp(Number),
   },
 
   emits: ['scale', 'close'],

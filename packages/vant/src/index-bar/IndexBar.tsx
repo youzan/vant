@@ -21,6 +21,7 @@ import {
   numericProp,
   getScrollTop,
   preventDefault,
+  makeNumberProp,
   createNamespace,
   getRootScrollTop,
   setRootScrollTop,
@@ -55,10 +56,7 @@ const props = {
   zIndex: numericProp,
   teleport: [String, Object] as PropType<TeleportProps['to']>,
   highlightColor: String,
-  stickyOffsetTop: {
-    type: Number,
-    default: 0,
-  },
+  stickyOffsetTop: makeNumberProp(0),
   indexList: {
     type: Array as PropType<string[]>,
     default: genAlphabet,

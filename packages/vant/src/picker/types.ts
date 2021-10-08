@@ -14,7 +14,7 @@ export type PickerObjectOption = {
   text?: string | number;
   disabled?: boolean;
   // for custom filed names
-  [key: string]: any;
+  [key: PropertyKey]: any;
 };
 
 export type PickerOption = string | number | PickerObjectOption;
@@ -25,7 +25,7 @@ export type PickerObjectColumn = {
   className?: unknown;
   defaultIndex?: number;
   // for custom filed names
-  [key: string]: any;
+  [key: PropertyKey]: any;
 };
 
 export type PickerColumn = PickerOption[] | PickerObjectColumn;

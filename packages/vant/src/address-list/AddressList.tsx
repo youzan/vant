@@ -1,7 +1,12 @@
-import { PropType, defineComponent } from 'vue';
+import { defineComponent } from 'vue';
 
 // Utils
-import { truthProp, numericProp, createNamespace } from '../utils';
+import {
+  truthProp,
+  numericProp,
+  makeArrayProp,
+  createNamespace,
+} from '../utils';
 
 // Components
 import { Button } from '../button';
@@ -14,19 +19,13 @@ export default defineComponent({
   name,
 
   props: {
+    list: makeArrayProp<AddressListAddress>(),
     modelValue: numericProp,
     switchable: truthProp,
     disabledText: String,
+    disabledList: makeArrayProp<AddressListAddress>(),
     addButtonText: String,
     defaultTagText: String,
-    list: {
-      type: Array as PropType<AddressListAddress[]>,
-      default: () => [],
-    },
-    disabledList: {
-      type: Array as PropType<AddressListAddress[]>,
-      default: () => [],
-    },
   },
 
   emits: [

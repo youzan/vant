@@ -14,6 +14,7 @@ import {
   unknownProp,
   getZIndexStyle,
   createNamespace,
+  makeArrayProp,
 } from '../utils';
 import { DROPDOWN_KEY } from '../dropdown-menu/DropdownMenu';
 
@@ -33,15 +34,12 @@ const [name, bem] = createNamespace('dropdown-item');
 
 const props = {
   title: String,
+  options: makeArrayProp<DropdownItemOption>(),
   disabled: Boolean,
   teleport: [String, Object] as PropType<TeleportProps['to']>,
   lazyRender: truthProp,
   modelValue: unknownProp,
   titleClass: unknownProp,
-  options: {
-    type: Array as PropType<DropdownItemOption[]>,
-    default: () => [],
-  },
 };
 
 export type DropdownItemProps = ExtractPropTypes<typeof props>;

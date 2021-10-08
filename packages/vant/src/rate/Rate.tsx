@@ -7,6 +7,7 @@ import {
   numericProp,
   preventDefault,
   makeStringProp,
+  makeNumberProp,
   makeNumericProp,
   createNamespace,
 } from '../utils';
@@ -69,11 +70,8 @@ export default defineComponent({
     voidColor: String,
     touchable: truthProp,
     iconPrefix: String,
+    modelValue: makeNumberProp(0),
     disabledColor: String,
-    modelValue: {
-      type: Number,
-      default: 0,
-    },
   },
 
   emits: ['change', 'update:modelValue'],
