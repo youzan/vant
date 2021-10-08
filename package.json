@@ -24,7 +24,7 @@
     "dev2": "vant-cli dev",
     "lint": "vant-cli lint",
     "test": "vant-cli test",
-    "build:vusion": "vue-cli-service library-build --dest dist-theme && shx rm -rf lib && shx mv dist-theme lib && shx mv lib/index.js lib/vant.min.js",
+    "build:vusion": "vue-cli-service library-build --dest dist-theme",
     "build2": "vant-cli build",
     "build": "cross-env scene=desktop vant-cli build",
     "release": "vant-cli release",
@@ -34,9 +34,9 @@
     "move-yaml": "node bin/move-yaml",
     "move-docs": "node bin/move-docs",
     "screenshot": "node bin/screenshot",
-    "deploy:dev": "node ./scripts/lcap && lcap deploy lib --platform http://lcp.vusion.top && node bin/deploy-lcp-images --platform=http://lcp.vusion.top",
+    "deploy:dev": "node ./scripts/lcap && lcap deploy dist-theme --platform http://lcp.vusion.top && node bin/deploy-lcp-images --platform=http://lcp.vusion.top",
     "deploy:dev2": "node ./scripts/lcap && node ./bin/upload.js",
-    "deploy:test": "node ./scripts/lcap && lcap deploy lib --platform http://defaulttenant.low-code-fe.qa-ci-lowcode.service.163.org && node bin/deploy-lcp-images --platform=http://defaulttenant.low-code-fe.qa-ci-lowcode.service.163.org",
+    "deploy:test": "node ./scripts/lcap && lcap deploy dist-theme --platform http://defaulttenant.low-code-fe.qa-ci-lowcode.service.163.org && node bin/deploy-lcp-images --platform=http://defaulttenant.low-code-fe.qa-ci-lowcode.service.163.org",
     "deploy:online": "node ./scripts/lcap && vusion deploy --framework cloud-ui.vusion@0.11 -v minor && vusion deploy --framework cloud-ui dist-theme && node bin/deploy-screenshots && node bin/deploy-drawings"
   },
   "husky": {
