@@ -1,9 +1,8 @@
+import { useRect } from '@vant/use';
 import { unref, Ref } from 'vue';
 import { isIOS as checkIsIOS } from './validate';
 
 export type ScrollElement = Element | Window;
-
-const isWindow = (val: unknown): val is Window => val === window;
 
 export function getScrollTop(el: ScrollElement): number {
   const top = 'scrollTop' in el ? el.scrollTop : el.pageYOffset;
@@ -36,26 +35,12 @@ export function setRootScrollTop(value: number) {
 
 // get distance from element top to page top or scroller top
 export function getElementTop(el: ScrollElement, scroller?: ScrollElement) {
-  if (isWindow(el)) {
+  if (el === window) {
     return 0;
   }
 
   const scrollTop = scroller ? getScrollTop(scroller) : getRootScrollTop();
-  return el.getBoundingClientRect().top + scrollTop;
-}
-
-export function getVisibleHeight(el: ScrollElement) {
-  if (isWindow(el)) {
-    return el.innerHeight;
-  }
-  return el.getBoundingClientRect().height;
-}
-
-export function getVisibleTop(el: ScrollElement) {
-  if (isWindow(el)) {
-    return 0;
-  }
-  return el.getBoundingClientRect().top;
+  return useRect(el).top + scrollTop;
 }
 
 const isIOS = checkIsIOS();

@@ -25,7 +25,7 @@ import {
 } from './utils';
 
 // Composables
-import { useToggle } from '@vant/use';
+import { useRect, useToggle } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 import { useHeight } from '../composables/use-height';
 
@@ -101,11 +101,7 @@ export default defineComponent({
       const el = props.showSubtitle ? daysRef.value : monthRef.value;
 
       if (el) {
-        const scrollTop =
-          el.getBoundingClientRect().top -
-          body.getBoundingClientRect().top +
-          body.scrollTop;
-
+        const scrollTop = useRect(el).top - useRect(body).top + body.scrollTop;
         setScrollTop(body, scrollTop);
       }
     };

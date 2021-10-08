@@ -23,7 +23,7 @@ import {
 } from '../utils';
 
 // Composables
-import { useWindowSize } from '@vant/use';
+import { useRect, useWindowSize } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
@@ -82,7 +82,7 @@ export default defineComponent({
 
     const resize = () => {
       if (swipeRef.value) {
-        const rect = swipeRef.value.$el.getBoundingClientRect();
+        const rect = useRect(swipeRef.value.$el);
         state.rootWidth = rect.width;
         state.rootHeight = rect.height;
         swipeRef.value.resize();
