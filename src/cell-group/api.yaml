@@ -60,7 +60,7 @@
     - name: value
       title: 右侧内容
       type: string
-      default: 内容
+      default2: 内容
       description: 右侧内容
     - name: label
       title: 标题下方的描述信息
