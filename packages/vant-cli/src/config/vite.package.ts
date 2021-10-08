@@ -22,7 +22,8 @@ export function getViteConfigForPackage(minify: boolean): InlineConfig {
           return minify ? `${name}${suffix}.min.js` : `${name}${suffix}.js`;
         },
       },
-      minify,
+      // terser has better compression than esbuild
+      minify: minify ? 'terser' : false,
       rollupOptions: {
         external: ['vue'],
         output: {
