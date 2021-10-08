@@ -63,6 +63,8 @@
     - name: value
       title: 是否选中
       type: boolean
+      sync: true
+      model: true
       default: false
       description: 是否选中
     - name: disabled

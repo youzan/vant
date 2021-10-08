@@ -195,7 +195,7 @@ export default createComponent({
       if (this.children && (this.$scopedSlots.input || this.$slots.input)) {
         return this.children.value;
       }
-      return this.value;
+      return (this.type === 'number' || this.type === 'digit') ? Number(this.value) : this.value;
     },
   },
 
@@ -410,8 +410,8 @@ export default createComponent({
       }
 
       if (value !== this.value) {
-        this.$emit('input', value);
-        this.$emit('update:value', value);
+        this.$emit('input', (this.type === 'number' || this.type === 'digit') ? Number(value) : value);
+        this.$emit('update:value', (this.type === 'number' || this.type === 'digit') ? Number(value) : value);
       }
     },
 

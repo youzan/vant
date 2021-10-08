@@ -47,6 +47,7 @@ export default createComponent({
 
       const names = children.map((item) => item.name);
       this.$emit('input', names);
+      this.$emit('update:value', names);
     },
   },
 

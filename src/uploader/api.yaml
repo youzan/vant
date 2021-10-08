@@ -94,7 +94,7 @@
       type: string
       options:
         - value: waga
-          title: 默认图库
+          title: 图库
         - value: camera
           title: 相机
       default: waga
