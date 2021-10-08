@@ -49,8 +49,8 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     let buttonIndex: 0 | 1;
+    let current: SliderValue;
     let startValue: SliderValue;
-    let currentValue: SliderValue;
 
     const root = ref<HTMLElement>();
     const dragStatus = ref<'start' | 'dragging' | ''>();
@@ -193,12 +193,12 @@ export default defineComponent({
       }
 
       touch.start(event);
-      currentValue = props.modelValue;
+      current = props.modelValue;
 
-      if (isRange(currentValue)) {
-        startValue = currentValue.map(format) as NumberRange;
+      if (isRange(current)) {
+        startValue = current.map(format) as NumberRange;
       } else {
-        startValue = format(currentValue);
+        startValue = format(current);
       }
 
       dragStatus.value = 'start';
@@ -228,11 +228,11 @@ export default defineComponent({
 
       if (isRange(startValue)) {
         const index = props.reverse ? 1 - buttonIndex : buttonIndex;
-        (currentValue as NumberRange)[index] = startValue[index] + diff;
+        (current as NumberRange)[index] = startValue[index] + diff;
       } else {
-        currentValue = startValue + diff;
+        current = startValue + diff;
       }
-      updateValue(currentValue);
+      updateValue(current);
     };
 
     const onTouchEnd = (event: TouchEvent) => {
@@ -241,7 +241,7 @@ export default defineComponent({
       }
 
       if (dragStatus.value === 'dragging') {
-        updateValue(currentValue, true);
+        updateValue(current, true);
         emit('drag-end', event);
       }
 
@@ -274,7 +274,7 @@ export default defineComponent({
     };
 
     const renderButton = (index?: 0 | 1) => {
-      const currentValue =
+      const current =
         typeof index === 'number'
           ? (props.modelValue as NumberRange)[index]
           : (props.modelValue as number);
@@ -285,7 +285,7 @@ export default defineComponent({
           class={getButtonClassName(index)}
           tabindex={props.disabled || props.readonly ? -1 : 0}
           aria-valuemin={+props.min}
-          aria-valuenow={currentValue}
+          aria-valuenow={current}
           aria-valuemax={+props.max}
           aria-orientation={props.vertical ? 'vertical' : 'horizontal'}
           onTouchstart={(event) => {
@@ -300,7 +300,7 @@ export default defineComponent({
           onTouchcancel={onTouchEnd}
           onClick={stopPropagation}
         >
-          {renderButtonContent(currentValue, index)}
+          {renderButtonContent(current, index)}
         </div>
       );
     };
