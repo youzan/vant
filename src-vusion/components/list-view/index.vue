@@ -16,9 +16,9 @@
     <u-input v-if="filterable" :class="$style.filter" :disabled="disabled" :placeholder="placeholder" size="small" suffix="search" :clearable="clearable"
         :value="filterText" @input="onInput">
     </u-input>
-    <van-pull-refresh :value="$env.VUE_APP_DESIGNER ? false : currentLoading" :disabled="!pullRefresh"
+    <van-pull-refresh :value="$env.VUE_APP_DESIGNER ? false : refreshing" :disabled="!pullRefresh"
         :pullingText="pullingText" :loosingText="loosingText" :loadingText="loadingText" :successText="successText" :successDuration="successDuration" :pullDistance="pullDistance"
-        @refresh="reload">
+        @refresh="refresh">
         <div ref="body" :class="$style.body" @scroll.stop="onScroll">
             <slot></slot>
             <div ref="virtual" v-if="(!currentLoading && !currentError || pageable === 'auto-more' || pageable === 'load-more') && currentData && currentData.length"
@@ -91,7 +91,19 @@ export default {
             filtering: this.filtering,
             remoteFiltering: this.remoteFiltering,
             getExtraParams: this.getExtraParams,
+            refreshing: false,
         };
+    },
+    methods: {
+        async refresh() {
+            this.refreshing = true;
+            this.currentDataSource.page({
+                size: this.currentDataSource.paging.size,
+                number: 1,
+            });
+            await this.reload();
+            this.refreshing = false;
+        },
     },
 }
 </script>
