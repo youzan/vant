@@ -16,6 +16,29 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.2.5](https://github.com/youzan/vant/compare/v3.2.4...v3.2.5)
+
+`2021-10-08`
+
+**Feature**
+
+- Field: add error-message slot [#9634](https://github.com/youzan/vant/issues/9634)
+
+**Performance**
+
+- remove CustomEvent polyfill [#9589](https://github.com/youzan/vant/issues/9589)
+- remove passive event polyfill [#9590](https://github.com/youzan/vant/issues/9590)
+
+**Types**
+
+- Button: add ButtonNativeType、ButtonIconPosition type [#9604](https://github.com/youzan/vant/issues/9604)
+- Skeleton: add SkeletonAvatarShape type [#9605](https://github.com/youzan/vant/issues/9605)
+
+**Bug Fixes**
+
+- Toast: failed to sync clear toast [a48caa](https://github.com/youzan/vant/commit/a48caa7c98f88d9c87de3f9e9f208771c1c98ab5)
+- Revert "chore: adjust package entry file" [#9642](https://github.com/youzan/vant/issues/9642) [#9455](https://github.com/youzan/vant/issues/9455)
+
 ### [v3.2.4](https://github.com/youzan/vant/compare/v3.2.3...v3.2.4)
 
 `2021-09-26`
@@ -26,7 +49,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Search: add autocomplete prop [#9553](https://github.com/youzan/vant/issues/9553)
 - Search: add name prop [#9563](https://github.com/youzan/vant/issues/9563)
 
-**perf**
+**Performance**
 
 - Lazyload: reduce production log [33d7aa](https://github.com/youzan/vant/commit/33d7aa8f1aee38576f1a0b3549560edd7b5fe0ed)
 - Lazyload: remove edge 15 polyfill [00b156](https://github.com/youzan/vant/commit/00b1568887321cf452ed4b8872fe99f089a74b22)

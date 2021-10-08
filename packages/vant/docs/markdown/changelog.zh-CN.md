@@ -16,6 +16,29 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.2.5](https://github.com/youzan/vant/compare/v3.2.4...v3.2.5)
+
+`2021-10-08`
+
+**Feature**
+
+- Field: 新增 error-message 插槽 [#9634](https://github.com/youzan/vant/issues/9634)
+
+**Performance**
+
+- 移除 CustomEvent polyfill [#9589](https://github.com/youzan/vant/issues/9589)
+- 移除 passive event polyfill [#9590](https://github.com/youzan/vant/issues/9590)
+
+**Types**
+
+- Button: 新增 ButtonNativeType、ButtonIconPosition 类型 [#9604](https://github.com/youzan/vant/issues/9604)
+- Skeleton: 新增 SkeletonAvatarShape 类型 [#9605](https://github.com/youzan/vant/issues/9605)
+
+**Bug Fixes**
+
+- Toast: 修复同步调用 Toast.clear 不生效的问题 [a48caa](https://github.com/youzan/vant/commit/a48caa7c98f88d9c87de3f9e9f208771c1c98ab5)
+- 修复全量引入时，useCustomFieldValue 不生效的问题 [#9642](https://github.com/youzan/vant/issues/9642) [#9455](https://github.com/youzan/vant/issues/9455)
+
 ### [v3.2.4](https://github.com/youzan/vant/compare/v3.2.3...v3.2.4)
 
 `2021-09-26`
@@ -26,7 +49,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - Search: 新增 autocomplete 属性 [#9553](https://github.com/youzan/vant/issues/9553)
 - Search: 新增 name 属性 [#9563](https://github.com/youzan/vant/issues/9563)
 
-**perf**
+**Performance**
 
 - Lazyload: 移除生产环境的 log 信息 [33d7aa](https://github.com/youzan/vant/commit/33d7aa8f1aee38576f1a0b3549560edd7b5fe0ed)
 - Lazyload: 移除 edge 15 polyfill [00b156](https://github.com/youzan/vant/commit/00b1568887321cf452ed4b8872fe99f089a74b22)
