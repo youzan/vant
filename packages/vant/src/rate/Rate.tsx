@@ -12,7 +12,7 @@ import {
 } from '../utils';
 
 // Composables
-import { useCustomFieldValue } from '@vant/use';
+import { useRect, useCustomFieldValue } from '@vant/use';
 import { useRefs } from '../composables/use-refs';
 import { useTouch } from '../composables/use-touch';
 
@@ -101,7 +101,7 @@ export default defineComponent({
     let ranges: Array<{ left: number; score: number }>;
 
     const updateRanges = () => {
-      const rects = itemRefs.value.map((item) => item.getBoundingClientRect());
+      const rects = itemRefs.value.map(useRect);
 
       ranges = [];
       rects.forEach((rect, index) => {

@@ -24,13 +24,11 @@ import {
   truthProp,
   numericProp,
   Interceptor,
-  getVisibleTop,
   getElementTop,
   makeStringProp,
   callInterceptor,
   createNamespace,
   makeNumericProp,
-  getVisibleHeight,
   setRootScrollTop,
   ComponentInstance,
   BORDER_TOP_BOTTOM,
@@ -39,6 +37,7 @@ import { scrollLeftTo, scrollTopTo } from './utils';
 
 // Composables
 import {
+  useRect,
   useChildren,
   useWindowSize,
   useScrollParent,
@@ -342,7 +341,7 @@ export default defineComponent({
 
     const getCurrentIndexOnScroll = () => {
       for (let index = 0; index < children.length; index++) {
-        const top = getVisibleTop(children[index].$el);
+        const { top } = useRect(children[index].$el);
 
         if (top > scrollOffset.value) {
           return index === 0 ? 0 : index - 1;
@@ -455,7 +454,9 @@ export default defineComponent({
       setCurrentIndexByName(props.active);
       nextTick(() => {
         state.inited = true;
-        tabHeight = getVisibleHeight(wrapRef.value!);
+        if (wrapRef.value) {
+          tabHeight = useRect(wrapRef.value).height;
+        }
         scrollIntoView(true);
       });
     };
