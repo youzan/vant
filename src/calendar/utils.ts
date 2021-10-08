@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-
+import { isDate } from '../utils/validate/date'
 const [createComponent, bem, t] = createNamespace('calendar');
 
 export { createComponent, bem, t };
@@ -71,4 +71,14 @@ export function copyDates(dates: Date | Date[]) {
   }
 
   return copyDate(dates);
+}
+
+export function transErrorDate(date: any) {
+  let fDate;
+  try {
+    fDate = isDate(date) ? date : new Date(date);
+  } catch (error) {
+    fDate = new Date();
+  }
+  return fDate;
 }

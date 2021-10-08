@@ -87,17 +87,17 @@
     - name: max-size
       title: 最大文件大小,单位为MB
       type: number,string
-      default: 10
-      description: 文件大小限制，默认为10MB
+      default: 50
+      description: 文件大小限制，默认为50MB
     - name: capture
       title: 图片选择模式
       type: string
       options:
-        - value: ""
+        - value: waga
           title: 默认图库
         - value: camera
           title: 相机
-      default: ""
+      default: waga
       description: 图片选择模式
     - name: disabled
       title: 禁用

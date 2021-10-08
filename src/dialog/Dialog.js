@@ -188,6 +188,7 @@ export default createComponent({
       }
 
       if (!messageSlot && this.$env && this.$env.VUE_APP_DESIGNER) {
+        console.log(this)
         return <div class={bem('content')} vusion-slot-name="default"><van-empty-col></van-empty-col></div>;
       }
 

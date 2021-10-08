@@ -58,7 +58,7 @@ export default createComponent({
     },
     maxSize: {
       type: [Number, String, Function],
-      default: 10 || Number.MAX_VALUE,
+      default: 50 || Number.MAX_VALUE,
     },
     maxCount: {
       type: [Number, String],

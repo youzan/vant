@@ -1,6 +1,7 @@
 // Utils
 import { raf } from '../utils/dom/raf';
 import { isDate } from '../utils/validate/date';
+import { isNaN } from '../utils/validate/number';
 import { getScrollTop } from '../utils/dom/scroll';
 import {
   t,
@@ -132,11 +133,11 @@ export default createComponent({
       const cursor = new Date(isDate(this.minDate) ? this.minDate : new Date(this.minDate));
 
       cursor.setDate(1);
-
+      const tmaxDate = isDate(this.maxDate) ? this.maxDate : new Date(this.maxDate);
       do {
         months.push(new Date(cursor));
         cursor.setMonth(cursor.getMonth() + 1);
-      } while (compareMonth(cursor, isDate(this.maxDate) ? this.maxDate : new Date(this.maxDate)) !== 1);
+      } while (!isNaN(cursor.getTime()) && !isNaN(tmaxDate.getTime()) && compareMonth(cursor, tmaxDate) !== 1);
 
       return months;
     },
