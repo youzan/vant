@@ -2,7 +2,8 @@
 <div :class="$style.root" :readonly="readonly" :readonly-mode="readonlyMode" :disabled="disabled"
     :tabindex="readonly || disabled ? '' : 0"
     @keydown.prevent.up="shift(-1)"
-    @keydown.prevent.down="shift(+1)">
+    @keydown.prevent.down="shift(+1)"
+    :vusion-designer="$env.VUE_APP_DESIGNER">
     <div v-show="showHead" :class="$style.head">
         <slot name="head">
             <u-checkbox v-if="multiple" :value="allChecked" @check="checkAll($event.value)"></u-checkbox>
@@ -15,7 +16,7 @@
     <u-input v-if="filterable" :class="$style.filter" :disabled="disabled" :placeholder="placeholder" size="small" suffix="search" :clearable="clearable"
         :value="filterText" @input="onInput">
     </u-input>
-    <van-pull-refresh :value="currentLoading" :disabled="!pullRefresh"
+    <van-pull-refresh :value="$env.VUE_APP_DESIGNER ? false : currentLoading" :disabled="!pullRefresh"
         :pullingText="pullingText" :loosingText="loosingText" :loadingText="loadingText" :successText="successText" :successDuration="successDuration" :pullDistance="pullDistance"
         @refresh="reload">
         <div ref="body" :class="$style.body" @scroll.stop="onScroll">
@@ -41,7 +42,7 @@
             <div :class="$style.status" v-else-if="pageable === 'load-more' && currentDataSource && currentDataSource.hasMore()">
                 <u-link @click="load(true)">{{ $t('loadMore') }}</u-link>
             </div>
-            <div :class="$style.status" v-else-if="(pageable === 'auto-more' || pageable === 'load-more') && currentDataSource && !currentDataSource.hasMore()">
+            <div :class="$style.status" v-else-if="(pageable === 'auto-more' || pageable === 'load-more') && currentDataSource && !currentDataSource.hasMore() && !$env.VUE_APP_DESIGNER">
                 {{ $t('noMore') }}
             </div>
             <div :class="$style.status" v-else-if="currentData && !currentData.length">
@@ -179,5 +180,9 @@ export default {
 
 .root {
     height: 100%;
+}
+
+.root[vusion-designer] {
+    height: auto;
 }
 </style>
