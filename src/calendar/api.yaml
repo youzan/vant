@@ -27,6 +27,7 @@
         - title: range
           value: range
       default: single
+      advanced: true
       description: 选择类型
     - name: min-date
       title: 最小日期

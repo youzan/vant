@@ -217,7 +217,7 @@ function Button(
   function currentHref() {
     if (props.href !== undefined)
         return props.href;
-    if (props.destination !== undefined)
+    if (props.destination !== undefined && props.destination !== "")
         return props.destination;
     else if (ctx.parent?.$router && props.to !== undefined)
     // @ts-ignore：没办法

@@ -3426,6 +3426,7 @@
                         }
                     ],
                     "default": "single",
+                    "advanced": true,
                     "description": "选择类型"
                 },
                 {
