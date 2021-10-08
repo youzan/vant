@@ -467,3 +467,16 @@ test('should render id prop correctly', async () => {
   expect(wrapper.find('input').attributes('id')).toEqual('my-id');
   expect(wrapper.find('label').attributes('for')).toEqual('my-id');
 });
+
+test('should render error-message slot correctly', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      errorMessage: 'error',
+    },
+    slots: {
+      'error-message': ({ message }) => `Custom ${message}`,
+    },
+  });
+
+  expect(wrapper.find('.van-field__error-message').html()).toMatchSnapshot();
+});

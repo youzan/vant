@@ -339,14 +339,15 @@ fieldRef.value?.focus();
 
 ### Slots
 
-| Name       | Description                 |
-| ---------- | --------------------------- |
-| label      | Custom label                |
-| input      | Custom input                |
-| left-icon  | Custom left icon            |
-| right-icon | Custom right icon           |
-| button     | Insert button               |
-| extra      | Custom content on the right |
+| Name                   | Description                 | SlotProps             |
+| ---------------------- | --------------------------- | --------------------- |
+| label                  | Custom label                | -                     |
+| input                  | Custom input                | -                     |
+| left-icon              | Custom left icon            | -                     |
+| right-icon             | Custom right icon           | -                     |
+| button                 | Insert button               | -                     |
+| error-message `v3.2.5` | Custom error message        | _{ message: string }_ |
+| extra                  | Custom content on the right | -                     |
 
 ## Theming
 
