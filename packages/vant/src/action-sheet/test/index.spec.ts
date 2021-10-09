@@ -120,7 +120,7 @@ test('should allow to use the teleport prop', () => {
   expect(root.querySelector('.van-action-sheet')).toBeTruthy();
 });
 
-test('should have "van-popup--round" class when setting the round prop', () => {
+test('should have "van-popup--round" class when setting the round prop', async () => {
   const wrapper = mount(ActionSheet, {
     props: {
       show: true,
@@ -129,6 +129,9 @@ test('should have "van-popup--round" class when setting the round prop', () => {
   });
 
   expect(wrapper.find('.van-popup--round').exists()).toBeTruthy();
+
+  await wrapper.setProps({ round: false });
+  expect(wrapper.find('.van-popup--round').exists()).toBeFalsy();
 });
 
 test('should change option color when using the color prop', () => {

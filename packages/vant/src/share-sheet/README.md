@@ -174,6 +174,7 @@ export default {
 | cancel-text | Cancel button text | _string_ | `'Cancel'` |
 | description | Description | _string_ | - |
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
+| round `v3.2.6` | Whether to show round corner | _boolean_ | `true` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | overlay-class | Custom overlay class | _string \| Array \| object_ | - |
 | overlay-style | Custom overlay style | _object_ | - |

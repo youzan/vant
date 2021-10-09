@@ -35,6 +35,7 @@ const PRESET_ICONS = [
 
 const popupKeys = [
   ...popupSharedPropKeys,
+  'round',
   'closeOnPopstate',
   'safeAreaInsetBottom',
 ] as const;
@@ -53,6 +54,7 @@ export default defineComponent({
 
   props: extend({}, popupSharedProps, {
     title: String,
+    round: truthProp,
     options: makeArrayProp<ShareSheetOption | ShareSheetOption[]>(),
     cancelText: String,
     description: String,
@@ -136,7 +138,6 @@ export default defineComponent({
 
     return () => (
       <Popup
-        round
         class={bem()}
         position="bottom"
         {...pick(props, popupKeys)}
