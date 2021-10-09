@@ -272,36 +272,35 @@ export default createComponent({
       }
 
 
-      if (isDate(defaultDate)) {
+      // if (isDate(defaultDate)) {
 
-      } else {
-        try {
-          if (!defaultDate) {
-            defaultDate = new Date();
-          } else {
-            if (Array.isArray(defaultDate)) {
-              if (type === 'range' || type === 'multiple') {
-                defaultDate = defaultDate.map((item) => {
-                  if (isDate(item)) {
-                    return item;
-                  } else {
-                    return new Date(item);
-                  }
-                });
-              }
-            } else {
-              defaultDate = isDate(defaultDate) ? defaultDate : new Date(defaultDate);
-            }
+      // } else {
+      //   try {
+      //     if (!defaultDate) {
+      //       defaultDate = new Date();
+      //     } else {
+      //       if (Array.isArray(defaultDate)) {
+      //         if (type === 'range' || type === 'multiple') {
+      //           defaultDate = defaultDate.map((item) => {
+      //             if (isDate(item)) {
+      //               return item;
+      //             } else {
+      //               return new Date(item);
+      //             }
+      //           });
+      //         }
+      //       } else {
+      //         defaultDate = isDate(defaultDate) ? defaultDate : new Date(defaultDate);
+      //       }
 
-          }
-        } catch (e) {
-          console.warn(e, 'error date');
-        }
-      }
+      //     }
+      //   } catch (e) {
+      //     console.warn(e, 'error date');
+      //   }
+      // }
 
 
       let defaultVal = new Date();
-
       if (compareDay(defaultVal, transErrorDate(minDate, 'min')) === -1) {
         defaultVal = transErrorDate(minDate, 'min');
       } else if (compareDay(defaultVal, transErrorDate(maxDate, 'max')) === 1) {
@@ -486,8 +485,8 @@ export default createComponent({
           date={date}
           type={this.type}
           color={this.color}
-          minDate={transErrorDate(this.minDate, 'min')}
-          maxDate={transErrorDate(this.maxDate, 'max')}
+          minDate={this.minDate}
+          maxDate={this.maxDate}
           showMark={this.showMark}
           formatter={this.formatter}
           rowHeight={this.rowHeight}

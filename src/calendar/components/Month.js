@@ -9,6 +9,7 @@ import {
   formatMonthTitle,
 } from '../utils';
 import { getMonthEndDay } from '../../datetime-picker/utils';
+import { transErrorDate } from '../utils'
 
 const [createComponent] = createNamespace('calendar-month');
 
@@ -179,8 +180,8 @@ export default createComponent({
 
     getDayType(day) {
       const { type, minDate, maxDate, currentDate } = this;
-
-      if (compareDay(day, minDate) < 0 || compareDay(day, maxDate) > 0) {
+// console.log(transErrorDate(minDate, 'min'), transErrorDate(maxDate, 'max'));
+      if (compareDay(day, transErrorDate(minDate, 'min')) < 0 || compareDay(day, transErrorDate(maxDate, 'max')) > 0) {
         return 'disabled';
       }
 
