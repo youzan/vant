@@ -30,7 +30,7 @@ export default createComponent({
     autoUpload: { type: Boolean, default: true },
     withCredentials: { type: Boolean, default: false },
     data: Object,
-    urlField: { type: String, default: 'url' },
+    urlField: { type: String, default: 'result' },
     disabled: Boolean,
     readonly: Boolean,
     lazyLoad: Boolean,
@@ -502,7 +502,7 @@ export default createComponent({
           withCredentials: this.withCredentials,
           file,
           data: this.data,
-          name: this.name,
+          name: 'file',
           onProgress: (e) => {
               // file.status = 'uploading';
               // file.message = e.percent + '%' || '上传中...';

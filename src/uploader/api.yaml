@@ -67,7 +67,7 @@
     - name: url-field
       title: URL 字段名
       type: string
-      default: url
+      default: result
       description: 请求返回的 URL 字段名
     - name: auto-upload
       title: 是否自动上传
