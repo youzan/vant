@@ -117,3 +117,17 @@ test('should render cancel slot correctly', async () => {
 
   expect(wrapper.find('.van-share-sheet__cancel').html()).toMatchSnapshot();
 });
+
+test('should have "van-popup--round" class when setting the round prop', async () => {
+  const wrapper = mount(ShareSheet, {
+    props: {
+      show: true,
+      round: true,
+    },
+  });
+
+  expect(wrapper.find('.van-popup--round').exists()).toBeTruthy();
+
+  await wrapper.setProps({ round: false });
+  expect(wrapper.find('.van-popup--round').exists()).toBeFalsy();
+});
