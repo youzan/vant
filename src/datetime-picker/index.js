@@ -14,7 +14,10 @@ export default createComponent({
   props: {
     ...TimePicker.props,
     ...DatePicker.props,
-    labelField: String,
+    labelField: {
+      type: String,
+      default: '左侧标题'
+    },
   },
   data() {
     return {

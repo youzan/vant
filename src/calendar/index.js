@@ -38,7 +38,10 @@ export default createComponent({
     rowHeight: [Number, String],
     confirmText: String,
     rangePrompt: String,
-    labelField: String,
+    labelField: {
+      type: String,
+      default: '左侧标题'
+    },
     defaultDate: {
       type: [Date, Array],
       default: null

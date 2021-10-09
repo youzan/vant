@@ -33,7 +33,10 @@ export default createComponent({
       type: String,
       default: 'json'
     },
-    labelField: String,
+    labelField: {
+      type: String,
+      default: '左侧标题'
+    },
     textField: String,
     valueField: String,
     closeOnPopstate: {

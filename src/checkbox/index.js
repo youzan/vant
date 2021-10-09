@@ -16,6 +16,7 @@ export default createComponent({
     checked: {
       get() {
         if (this.parent) {
+          console.log(this.parent, this.parent.value, this.name)
           return this.parent.value.indexOf(this.name) !== -1;
         }
         return this.value;
@@ -36,6 +37,9 @@ export default createComponent({
     value(val) {
       this.$emit('change', val);
       this.$emit('update:value', val);
+      if ((this.$env && this.$env.VUE_APP_DESIGNER) && this.parent) {
+        this.toggle(val)
+      }
     },
   },
 
