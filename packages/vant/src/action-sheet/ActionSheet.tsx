@@ -27,6 +27,13 @@ export type ActionSheetAction = {
   className?: unknown;
 };
 
+const popupKeys = [
+  ...popupSharedPropKeys,
+  'round',
+  'closeOnPopstate',
+  'safeAreaInsetBottom',
+] as const;
+
 export default defineComponent({
   name,
 
@@ -38,7 +45,7 @@ export default defineComponent({
     closeable: truthProp,
     cancelText: String,
     description: String,
-    closeOnPopstate: Boolean,
+    closeOnPopstate: truthProp,
     closeOnClickAction: Boolean,
     safeAreaInsetBottom: truthProp,
   }),
@@ -140,10 +147,8 @@ export default defineComponent({
     return () => (
       <Popup
         class={bem()}
-        round={props.round}
         position="bottom"
-        safeAreaInsetBottom={props.safeAreaInsetBottom}
-        {...pick(props, popupSharedPropKeys)}
+        {...pick(props, popupKeys)}
         {...{ 'onUpdate:show': updateShow }}
       >
         {renderHeader()}

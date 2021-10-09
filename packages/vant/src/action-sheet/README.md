@@ -185,7 +185,7 @@ export default {
 | overlay-style | Custom overlay style | _object_ | - |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
-| close-on-popstate | Whether to close when popstate | _boolean_ | `false` |
+| close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
 | close-on-click-action | Whether to close when an action is clicked | _boolean_ | `false` |
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
