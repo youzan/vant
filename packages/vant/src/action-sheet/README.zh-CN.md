@@ -195,7 +195,7 @@ export default {
 | overlay-style | 自定义遮罩层样式 | _object_ | - |
 | lock-scroll | 是否锁定背景滚动 | _boolean_ | `true` |
 | lazy-render | 是否在显示弹层时才渲染节点 | _boolean_ | `true` |
-| close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `false` |
+| close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
