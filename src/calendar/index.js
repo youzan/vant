@@ -3,6 +3,7 @@ import { raf } from '../utils/dom/raf';
 import { isDate } from '../utils/validate/date';
 import { isNaN } from '../utils/validate/number';
 import { getScrollTop } from '../utils/dom/scroll';
+import { transErrorDate } from './utils'
 import {
   t,
   bem,
@@ -133,14 +134,13 @@ export default createComponent({
   computed: {
     months() {
       const months = [];
-      const cursor = new Date(isDate(this.minDate) ? this.minDate : new Date(this.minDate));
+      const cursor = transErrorDate(this.minDate, 'min');
 
       cursor.setDate(1);
-      const tmaxDate = isDate(this.maxDate) ? this.maxDate : new Date(this.maxDate);
       do {
         months.push(new Date(cursor));
         cursor.setMonth(cursor.getMonth() + 1);
-      } while (!isNaN(cursor.getTime()) && !isNaN(tmaxDate.getTime()) && compareMonth(cursor, tmaxDate) !== 1);
+      } while (compareMonth(cursor, transErrorDate(this.maxDate, 'max')) !== 1);
 
       return months;
     },
@@ -302,10 +302,10 @@ export default createComponent({
 
       let defaultVal = new Date();
 
-      if (compareDay(defaultVal, isDate(minDate) ? minDate : new Date(minDate)) === -1) {
-        defaultVal = isDate(minDate) ? minDate : new Date(minDate);
-      } else if (compareDay(defaultVal, isDate(maxDate) ? maxDate : new Date(maxDate)) === 1) {
-        defaultVal = isDate(maxDate) ? maxDate : new Date(maxDate);
+      if (compareDay(defaultVal, transErrorDate(minDate, 'min')) === -1) {
+        defaultVal = transErrorDate(minDate, 'min');
+      } else if (compareDay(defaultVal, transErrorDate(maxDate, 'max')) === 1) {
+        defaultVal = transErrorDate(maxDate, 'max');
       }
 
       if (type === 'range') {
@@ -486,8 +486,8 @@ export default createComponent({
           date={date}
           type={this.type}
           color={this.color}
-          minDate={isDate(this.minDate) ? this.minDate : new Date(this.minDate)}
-          maxDate={isDate(this.maxDate) ? this.maxDate : new Date(this.maxDate)}
+          minDate={transErrorDate(this.minDate, 'min')}
+          maxDate={transErrorDate(this.maxDate, 'max')}
           showMark={this.showMark}
           formatter={this.formatter}
           rowHeight={this.rowHeight}

@@ -1,6 +1,9 @@
 import { createNamespace } from '../utils';
 import { isDate } from '../utils/validate/date'
 const [createComponent, bem, t] = createNamespace('calendar');
+const now = new Date();
+const calendarMin = new Date();
+const calendarMax = new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
 
 export { createComponent, bem, t };
 
@@ -73,12 +76,20 @@ export function copyDates(dates: Date | Date[]) {
   return copyDate(dates);
 }
 
-export function transErrorDate(date: any) {
+export function transErrorDate(date: any, type: any) {
   let fDate;
   try {
     fDate = isDate(date) ? date : new Date(date);
   } catch (error) {
     fDate = new Date();
+  }
+  if(!isDate(fDate)) {
+    if(type === 'min') {
+      fDate = calendarMin;
+    }
+    if(type === 'max') {
+      fDate = calendarMax;
+    }
   }
   return fDate;
 }
