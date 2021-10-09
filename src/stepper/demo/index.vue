@@ -77,7 +77,7 @@ export default {
 
   data() {
     return {
-      stepper122222: 10,
+      stepper122222: "",
       stepper1: 1,
       stepper2: 1,
       stepper3: 1,

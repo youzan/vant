@@ -20,12 +20,14 @@ export default createComponent({
   props: {
     value: {
       type: [Number, String],
-      default: 1,
     },
     theme: String,
     integer: Boolean,
     disabled: Boolean,
-    allowEmpty: Boolean,
+    allowEmpty: {
+      type: Boolean,
+      default: true,
+    },
     inputWidth: [Number, String],
     buttonSize: [Number, String],
     asyncChange: Boolean,
@@ -172,7 +174,7 @@ export default createComponent({
       value = this.formatNumber(value);
 
       // format range
-      value = value === '' ? 0 : +value;
+      value = value === '' ? 1 : +value;
       value = isNaN(value) ? this.min : value;
       value = Math.max(Math.min(this.max, value), this.min);
 
