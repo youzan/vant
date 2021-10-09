@@ -53,7 +53,7 @@ export default createComponent({
     //   default: () => [],
     // },
     fileListProp: {
-      type: Array,
+      type: [Array,String],
       default: () => [],
     },
     maxSize: {
@@ -127,7 +127,7 @@ export default createComponent({
     toValue(value) {
         if (this.converter === 'json')
             // fix for u-validator rules="required"
-            return Array.isArray(value) && value.length === 0 ? null : JSON.stringify(value);
+            return Array.isArray(value) && value.length === 0 ? '[]' : JSON.stringify(value);
         else
             return value;
     },
@@ -241,8 +241,8 @@ export default createComponent({
 
       if (isValidFiles) {
         const tempArr = [...this.fileList, ...toArray(validFiles)];
-        this.$emit('input', tempArr);
-        this.$emit('update:fileListProp', tempArr);
+        this.$emit('input', this.toValue(tempArr));
+        this.$emit('update:fileListProp', this.toValue(tempArr));
 
         if (this.afterRead) {
           this.afterRead(validFiles, this.getDetail());
@@ -284,11 +284,11 @@ export default createComponent({
     },
 
     deleteFile(file, index) {
-      const fileList = this.fileListProp.slice(0);
+      const fileList = this.fileList.slice(0);
       fileList.splice(index, 1);
 
-      this.$emit('input', fileList);
-      this.$emit('update:fileListProp', fileList);
+      this.$emit('input', this.toValue(fileList));
+      this.$emit('update:fileListProp', this.toValue(fileList));
       this.$emit('delete', file, this.getDetail(index));
     },
 
@@ -513,20 +513,22 @@ export default createComponent({
           onSuccess: (res) => {
               file.status = '';
               file.message = '';
-              if (res[this.urlField])
-                  file.url = res[this.urlField];
+              if (res[this.urlField]) {
+                file.url = res[this.urlField];
+              }
               file.response = res;
-
               this.$emit('success', {
                   res,
                   file,
                   file,
                   xhr,
               }, this);
+              setTimeout(() => {
+                const value = this.fileList.filter(file => file.url && file.url.length > 0);
+                this.$emit('input', this.toValue(value));
+                this.$emit('update:fileListProp', this.toValue(value));
+              })
 
-              const value = this.fileList;
-              this.$emit('input', value);
-              this.$emit('update:fileListProp', value);
           },
           onError: (e, res) => {
               file.status = 'failed';
@@ -539,9 +541,11 @@ export default createComponent({
                   xhr,
               }, this);
 
-              const value = this.fileList;
-              this.$emit('input', value);
-              this.$emit('update:fileListProp', value);
+              setTimeout(() => {
+                const value = this.fileList.filter(file => file.url && file.url.length > 0);
+                this.$emit('input', this.toValue(value));
+                this.$emit('update:fileListProp', this.toValue(value));
+              })
           },
       });
     },
