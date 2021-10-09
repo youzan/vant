@@ -11,7 +11,7 @@ const client = new NosClient({
 
 const version = pkg.version;
 
-const dirs = ['lib', 'src'];
+const dirs = ['dist-theme', 'src'];
 
 // check build files
 const existDirs = dirs.filter((dir) => !fs.existsSync(dir));
