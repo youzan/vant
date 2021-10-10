@@ -95,9 +95,17 @@ export default createComponent({
     converter: {
       type: String,
       default: 'json'
+    },
+    readonlyy: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      fileList: this.fromValue(this.fileListProp)
     }
   },
-
   computed: {
     previewSizeWithUnit() {
       return addUnit(this.previewSize);
@@ -107,11 +115,12 @@ export default createComponent({
     value() {
       return this.toValue(this.fileList);
     },
-    fileList() {
-      return this.fromValue(this.fileListProp);
+  },
+  watch: {
+    fileListProp(val) {
+      this.fileList = this.fromValue(val);
     }
   },
-
   methods: {
     fromValue(value) {
       if (this.converter === 'json')
@@ -241,8 +250,10 @@ export default createComponent({
 
       if (isValidFiles) {
         const tempArr = [...this.fileList, ...toArray(validFiles)];
-        this.$emit('input', this.toValue(tempArr));
-        this.$emit('update:fileListProp', this.toValue(tempArr));
+        // this.$emit('input', this.toValue(tempArr));
+        // this.$emit('update:fileListProp', this.toValue(tempArr));
+
+        this.fileList = tempArr;
 
         if (this.afterRead) {
           this.afterRead(validFiles, this.getDetail());
@@ -301,6 +312,7 @@ export default createComponent({
 
     onClickUpload(event) {
       this.$emit('click-upload', event);
+      event.stopPropagation();
     },
 
     onPreviewImage(item) {
@@ -440,6 +452,7 @@ export default createComponent({
     },
 
     genUpload() {
+      if (this.readonlyy) return;
       if (this.fileList.length >= this.maxCount || !this.showUpload) {
         return;
       }
@@ -524,10 +537,12 @@ export default createComponent({
                   xhr,
               }, this);
               setTimeout(() => {
-                const value = this.fileList.filter(file => file.url && file.url.length > 0);
+                const value = this.fileList.filter(file => file.url && file.url.length > 0).map(file => {
+                  return {url: file.url}
+                })
                 this.$emit('input', this.toValue(value));
                 this.$emit('update:fileListProp', this.toValue(value));
-              })
+              }, 500)
 
           },
           onError: (e, res) => {
@@ -541,11 +556,11 @@ export default createComponent({
                   xhr,
               }, this);
 
-              setTimeout(() => {
-                const value = this.fileList.filter(file => file.url && file.url.length > 0);
-                this.$emit('input', this.toValue(value));
-                this.$emit('update:fileListProp', this.toValue(value));
-              })
+              // setTimeout(() => {
+              //   const value = this.fileList.filter(file => file.url && file.url.length > 0).map(file => file.url);
+              //   this.$emit('input', this.toValue(value));
+              //   this.$emit('update:fileListProp', this.toValue(value));
+              // }, 500)
           },
       });
     },

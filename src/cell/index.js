@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isDef } from '../utils';
+import { createNamespace, isDef, isDef2 } from '../utils';
 import { emit } from '../utils/functional';
 import { routeProps, functionalRoute } from '../utils/router';
 import { cellProps } from './shared';
@@ -86,21 +86,29 @@ export default createComponent({
       const showValue = slots() || isDef(value);
       //@ts-ignore
       const ifDesigner = (parent.$env && parent.$env.VUE_APP_DESIGNER);
-      if(infield) {
-        return (
-          <div class={[bem('value', { alone: !showTitle }), props.valueClass]}>
-            {slots() ? slots()  : (isDef(value) ? <span>{value}</span>  : null)}
-          </div>
-        );
-      }
-      // if (showValue) {
-        return (
-          <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default">
-            {slots() ? slots()  : (isDef(value) ? <span>{value}</span>  : null)}
-            {/* {(ifDesigner && !isDef(value) && !slots()) ? <van-empty-col></van-empty-col> : null} */}
-          </div>
-        );
+      // if(infield) {
+      //   return (
+      //     <div class={[bem('value', { alone: !showTitle }), props.valueClass]}>
+      //       {slots() ? slots()  : (isDef(value) ? <span>{value}</span>  : null)}
+      //     </div>
+      //   );
       // }
+      if (ifDesigner) {
+        return (
+          <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default" vusion-scope-id={that.$vnode.context.$options._scopeId}>
+            {slots() ? slots()  : (isDef(value) && value !== '' ? <span>{value}</span>  : null)}
+            {((!isDef(value) || value === '') && !slots()) ? <van-empty-col></van-empty-col> : null}
+          </div>
+        );
+      } else {
+        if (showValue) {
+          return (
+            <div class={[bem('value', { alone: !showTitle }), props.valueClass]}>
+              {slots() ? slots() : <span>{value}</span>}
+            </div>
+          );
+        }
+      }
     }
 
     function LeftIcon() {
@@ -141,7 +149,7 @@ export default createComponent({
     function currentHref() {
       if (props.href !== undefined)
           return props.href;
-      if (props.destination !== undefined)
+      if (props.destination !== undefined && props.destination !== "")
           return props.destination;
       else if (parent?.$router && props.to !== undefined)
           return parent?.$router.resolve(props.to, parent?.$route, props.append).href;
@@ -151,12 +159,12 @@ export default createComponent({
 
     function onClick(event) {
       // emit(that, 'click', event);
-      console.log(that, event);
-      that.$listeners?.click?.(event);
       const hrefR = currentHref();
       if (!hrefR && !that.$listeners.click) {
-        event.preventDefault();
+        // event.preventDefault();
+        return
       }
+      that.$listeners?.click?.(event);
       // @ts-ignore：没办法
       if (props.target !== '_self')
         return;

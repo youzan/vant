@@ -519,7 +519,7 @@ export default createComponent({
       const drole = this.getProp('drole') === 'other';
       const inputSlot = this.slots('input');
       const inputAlign = this.getProp('inputAlign');
-      const hasInputSlot = this.$slots.hasOwnProperty('input');
+      // const hasInputSlot = this.$slots.hasOwnProperty('input');
       const ifDesigner = (this.$env && this.$env.VUE_APP_DESIGNER);
       if (inputSlot) {
         return (
@@ -531,7 +531,7 @@ export default createComponent({
           </div>
         );
       }
-      if (hasInputSlot && (!inputSlot && drole && ifDesigner)) {
+      if ((!inputSlot && drole && ifDesigner)) {
         return (
           <div
             class={bem('control', [inputAlign, 'custom'])}

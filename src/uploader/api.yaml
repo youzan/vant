@@ -59,6 +59,11 @@
       type: object
       default: null
       description: 附加数据
+    - name: readonlyy
+      title: 是否只读
+      type: boolean
+      default: false
+      description: 是否自动上传
     - name: with-credentials
       title: 设置cookie值
       type: boolean

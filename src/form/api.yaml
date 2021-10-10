@@ -41,7 +41,7 @@
           snippet: <van-field label="表单项"></van-field>
         - name: van-field
           title: 其他
-          snippet: '<van-field label="表单项" drole="other"><template #input></template></van-field>'
+          snippet: '<van-field label="表单项" drole="other"></van-field>'
   events:
     - name: submit
       title: 验证通过

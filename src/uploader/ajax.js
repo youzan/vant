@@ -53,6 +53,7 @@ export default function upload(options) {
 
   // const files = options.file.length ? Array.from(options.file) : [options.file];
   // files.forEach((file) => formData.append(options.name, file, file.name));
+  // console.log(options)
   formData.append(options.name, options.file.file);
 
   xhr.onerror = function onerror(e) {
