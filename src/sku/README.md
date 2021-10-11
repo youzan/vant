@@ -227,7 +227,8 @@ sku: {
       name: 'Message',
       type: 'text',
       required: '1'，
-      placeholder: ''
+      placeholder: '',
+      extraDesc: ''
     }
   ],
   hide_stock: false,

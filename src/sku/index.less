@@ -342,6 +342,22 @@
         line-height: @cell-label-line-height;
       }
     }
+
+    &__cell-block {
+      position: relative;
+
+      &::after {
+        .hairline-bottom(@cell-border-color, @padding-md, @padding-md);
+      }
+    }
+
+    &__extra-message {
+      margin-top: -2px;
+      padding: 0 16px 12px;
+      color: @cell-label-color;
+      font-size: @cell-label-font-size;
+      line-height: @cell-label-line-height;
+    }
   }
 
   &-actions {
