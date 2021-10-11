@@ -228,8 +228,8 @@ export default defineComponent({
           class={[bem([theme]), className]}
           style={{ width: addUnit(width) }}
           aria-labelledby={title || message}
+          onUpdate:show={updateShow}
           {...pick(props, popupKeys)}
-          {...{ 'onUpdate:show': updateShow }}
         >
           {renderTitle()}
           {renderContent()}

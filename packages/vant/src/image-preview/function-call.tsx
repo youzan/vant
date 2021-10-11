@@ -40,10 +40,8 @@ function initInstance() {
       return () => (
         <VanImagePreview
           {...state}
-          {...{
-            onClosed,
-            'onUpdate:show': toggle,
-          }}
+          onClosed={onClosed}
+          onUpdate:show={toggle}
         />
       );
     },

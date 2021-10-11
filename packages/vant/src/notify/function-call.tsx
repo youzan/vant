@@ -20,7 +20,7 @@ function initInstance() {
   ({ instance } = mountComponent({
     setup() {
       const { state, toggle } = usePopupState();
-      return () => <VanNotify {...state} {...{ 'onUpdate:show': toggle }} />;
+      return () => <VanNotify {...state} onUpdate:show={toggle} />;
     },
   }));
 }

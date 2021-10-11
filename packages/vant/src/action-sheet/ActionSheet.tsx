@@ -148,8 +148,8 @@ export default defineComponent({
       <Popup
         class={bem()}
         position="bottom"
+        onUpdate:show={updateShow}
         {...pick(props, popupKeys)}
-        {...{ 'onUpdate:show': updateShow }}
       >
         {renderHeader()}
         {renderDescription()}
