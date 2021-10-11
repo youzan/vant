@@ -174,7 +174,7 @@ export default defineComponent({
           onClick={onClickWrapper}
         >
           <Popup
-            v-model={[state.showPopup, 'show']}
+            v-model:show={state.showPopup}
             class={bem('content')}
             overlay={overlay}
             position={direction === 'down' ? 'top' : 'bottom'}

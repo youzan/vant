@@ -7,7 +7,7 @@ test('should render correctly after inserting a tab', async () => {
   const wrapper = mount({
     render() {
       return (
-        <Tabs v-model={[this.active, 'active']}>
+        <Tabs v-model:active={this.active}>
           <Tab title="1">1</Tab>
           {this.insert && (
             <div>
@@ -37,7 +37,7 @@ test('should render correctly after inserting a tab with name', async () => {
   const wrapper = mount({
     render() {
       return (
-        <Tabs v-model={[this.active, 'active']} onChange={onChange}>
+        <Tabs v-model:active={this.active} onChange={onChange}>
           {this.insert && (
             <Tab title="bar" name="bar">
               bar
