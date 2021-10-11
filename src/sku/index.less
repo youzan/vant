@@ -349,6 +349,12 @@
       &::after {
         .hairline-bottom(@cell-border-color, @padding-md, @padding-md);
       }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
     }
 
     &__extra-message {
