@@ -183,6 +183,7 @@ export default createComponent({
             placeholder={this.getPlaceholder(message)}
             type={this.getType(message)}
             formatter={this.getFormatter(message)}
+            border={false}
           />
           {this.getExtraDesc(message)}
         </div>
