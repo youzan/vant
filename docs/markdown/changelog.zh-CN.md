@@ -16,6 +16,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.30-beta.0](https://github.com/youzan/vant/compare/v2.12.29...v2.12.30-beta.0)
+
+`2021-10-11`
+
+**Feature**
+
+- Sku: 支持在留言下方定义描述文案 [#9651](https://github.com/youzan/vant/issues/9651)
+
 ### [v2.12.29](https://github.com/youzan/vant/compare/v2.12.28...v2.12.29)
 
 `2021-09-22`
