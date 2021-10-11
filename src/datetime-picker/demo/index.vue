@@ -47,7 +47,7 @@
         :value.sync="value.datetime"
         type="datetime"
         :title="t('datetimeType')"
-        :min-date="minDate"
+
         :max-date="maxDate"
       />
     </demo-block>
@@ -126,11 +126,11 @@ export default {
   data() {
     return {
       minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1),
+      maxDate: "2020-12-12 12:12:12" || new Date(2025, 10, 1),
       value: {
         date: "2021-01-13 00:00:00" || new Date(2021, 0, 17),
         time: '12:00',
-        datetime: new Date(2020, 0, 1),
+        datetime: '',
         datehour: new Date(2020, 0, 1),
         monthDay: new Date(2020, 0, 1),
         yearMonth: new Date(2020, 0, 1),

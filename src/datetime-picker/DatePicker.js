@@ -17,12 +17,12 @@ export default createComponent({
       default: 'datetime',
     },
     minDate: {
-      type: Date,
+      type: [Date, String],
       default: () => new Date(currentYear - 20, 0, 1),
       validator: isDate,
     },
     maxDate: {
-      type: Date,
+      type: [Date, String],
       default: () => new Date(currentYear + 20, 11, 31),
       validator: isDate,
     },
@@ -62,7 +62,6 @@ export default createComponent({
 
   computed: {
     ranges() {
-      console.log(this.innerValue, 565656);
       const {
         maxYear,
         maxDate,
@@ -218,7 +217,6 @@ export default createComponent({
       if (type === 'max') {
         month = 12;
         date = getMonthEndDay(value.getFullYear(), value.getMonth() + 1);
-        console.log(value, date, 9999999);
         hour = 23;
         minute = 59;
       }
@@ -288,7 +286,6 @@ export default createComponent({
       }
 
       const value = new Date(year, month - 1, day, hour, minute);
-
       this.innerValue = this.formatValue(value);
     },
 
@@ -298,6 +295,7 @@ export default createComponent({
       this.$nextTick(() => {
         this.$nextTick(() => {
           this.$emit('change', picker);
+          this.updateInnerValue();
         });
       });
     },

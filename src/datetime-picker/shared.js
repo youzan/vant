@@ -79,7 +79,7 @@ export const TimePickerMixin = {
       return this.$refs.picker;
     },
 
-    onConfirm() {console.log(this.innerValue);
+    onConfirm() {
       this.$emit('input', this.innerValue)
       this.$emit('update:value', this.type==="datetime" ? this.innerValue.formath("yyyy/MM/dd HH:mm:ss") : this.innerValue);
       this.$emit('confirm', this.innerValue);
