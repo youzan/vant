@@ -238,7 +238,8 @@ sku: {
       name: '留言', // 留言名称
       type: 'text', // 留言类型，可选: id_no（身份证）, text, tel, date, time, email
       required: '1', // 是否必填 '1' 表示必填
-      placeholder: '' // 可选值，占位文本
+      placeholder: '', // 可选值，占位文本
+      extraDesc: ''  // 可选值，附加描述文案
     }
   ],
   hide_stock: false // 是否隐藏剩余库存

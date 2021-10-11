@@ -105,6 +105,8 @@ export function getSkuData(largeImageMode = false) {
           name: '留言2',
           type: 'id_no',
           required: 0,
+          extraDesc:
+            '身份证号码为敏感信息，系统将会对其进行安全处理，请放心。如对收集原因有疑问，请联系商家。',
         },
         {
           datetime: '0',
