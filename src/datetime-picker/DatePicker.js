@@ -1,7 +1,7 @@
 import { createNamespace } from '../utils';
 import { isDate } from '../utils/validate/date';
 import { padZero } from '../utils/format/string';
-import { getTrueValue, getMonthEndDay } from './utils';
+import { getTrueValue, getMonthEndDay, transErrorDate } from './utils';
 import { sharedProps, TimePickerMixin } from './shared';
 
 const currentYear = new Date().getFullYear();
@@ -42,12 +42,21 @@ export default createComponent({
         this.updateInnerValue();
       }
     },
-    value(val) {
-      val = this.formatValue(val);
+    // value(val) {
+    //   val = this.formatValue(val);
 
-      if (val && val.valueOf() !== this.innerValue.valueOf()) {
-        this.innerValue = val;
-      }
+    //   if (val && val.valueOf() !== this.innerValue.valueOf()) {
+    //     this.innerValue = val;
+    //   }
+    // },
+    value: {
+      handler: function (val, oldVal) {
+        val = this.formatValue(val);
+        if (val && val.valueOf() !== this.innerValue.valueOf()) {
+          this.innerValue = val;
+        }
+      },
+      immediate: true
     },
   },
 
@@ -135,7 +144,7 @@ export default createComponent({
 
       } else {
         try {
-          if (!value) {
+          if (!value || value === '') {
             value = new Date();
           } else {
             value = new Date(value);
@@ -145,8 +154,14 @@ export default createComponent({
         }
       }
 
-      let minDate = new Date(this.minDate);
-      let maxDate = new Date(this.maxDate);
+      if (!isDate(value)) {
+        value = new Date();
+      }
+
+      let minDate = transErrorDate(this.minDate, 'min');
+      let maxDate = transErrorDate(this.maxDate, 'max');
+
+
       const dateMethods = {
         year: 'getFullYear',
         month: 'getMonth',
@@ -192,7 +207,8 @@ export default createComponent({
     },
 
     getBoundary(type, value) {
-      const boundary = this[`${type}Date`];
+      let boundary = this[`${type}Date`];
+      boundary = transErrorDate(boundary, type)
       const year = boundary.getFullYear();
       let month = 1;
       let date = 1;

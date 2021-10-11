@@ -1,4 +1,6 @@
 import { isNaN } from '../utils/validate/number';
+import { isDate } from '../utils/validate/date'
+
 
 export function times(n: number, iteratee: (index: number) => any[]) {
   let index = -1;
@@ -72,4 +74,22 @@ Date.prototype.formath = function(fmt) {
       }
   }
   return fmt;
+}
+
+export function transErrorDate(date: any, type: any) {
+  const now = new Date();
+  const calendarMin = new Date();
+  const calendarMax = new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
+  let fDate;
+  fDate = new Date(date);
+  if(isDate(fDate)) {
+  } else {
+    if(type === 'min') {
+      fDate = calendarMin;
+    }
+    if(type === 'max') {
+      fDate = calendarMax;
+    }
+  }
+  return fDate;
 }
