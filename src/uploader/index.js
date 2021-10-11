@@ -452,7 +452,7 @@ export default createComponent({
     },
 
     genUpload() {
-      if (this.readonlyy && (this.$env && this.$env.VUE_APP_DESIGNER)) return;
+      if (this.readonlyy && !(this.$env && this.$env.VUE_APP_DESIGNER)) return;
       if (this.fileList.length >= this.maxCount || !this.showUpload) {
         return;
       }
