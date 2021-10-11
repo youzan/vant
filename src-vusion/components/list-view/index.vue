@@ -191,7 +191,7 @@ export default {
 
 
 .root {
-    height: 100%;
+    height: 100vh;
 }
 
 .root[vusion-designer] {
