@@ -10,16 +10,16 @@ export function useWindowSize() {
     width = ref(0);
     height = ref(0);
 
-    const updateSize = () => {
+    const update = () => {
       if (inBrowser) {
         width.value = window.innerWidth;
         height.value = window.innerHeight;
       }
     };
 
-    updateSize();
-    useEventListener('resize', updateSize);
-    useEventListener('orientationchange', updateSize);
+    update();
+    useEventListener('resize', update);
+    useEventListener('orientationchange', update);
   }
 
   return { width, height };
