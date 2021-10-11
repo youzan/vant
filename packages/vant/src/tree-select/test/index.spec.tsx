@@ -151,7 +151,7 @@ test('should allow to select multiple items when activeId is array', async () =>
     render() {
       return (
         <TreeSelect
-          v-model={[this.activeId, 'activeId']}
+          v-model:activeId={this.activeId}
           items={this.items}
           mainActiveIndex={0}
         />
@@ -185,7 +185,7 @@ test('should limit the selected item number when using max prop', async () => {
     render() {
       return (
         <TreeSelect
-          v-model={[this.activeId, 'activeId']}
+          v-model:activeId={this.activeId}
           max={1}
           items={this.items}
           mainActiveIndex={0}

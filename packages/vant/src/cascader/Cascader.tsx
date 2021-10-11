@@ -280,7 +280,7 @@ export default defineComponent({
 
     const renderTabs = () => (
       <Tabs
-        v-model={[state.activeTab, 'active']}
+        v-model:active={state.activeTab}
         animated
         class={bem('tabs')}
         color={props.activeColor}

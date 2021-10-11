@@ -402,7 +402,7 @@ export default defineComponent({
             )}
           </div>
           <Popup
-            v-model={[state.showAreaPopup, 'show']}
+            v-model:show={state.showAreaPopup}
             round
             teleport="body"
             position="bottom"

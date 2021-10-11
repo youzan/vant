@@ -200,7 +200,7 @@ export default defineComponent({
     return () => (
       <div class={bem()}>
         {renderExchangeBar()}
-        <Tabs v-model={[state.tab, 'active']} class={bem('tab')} border={false}>
+        <Tabs v-model:active={state.tab} class={bem('tab')} border={false}>
           {renderCouponTab()}
           {renderDisabledTab()}
         </Tabs>

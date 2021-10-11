@@ -371,9 +371,7 @@ export default defineComponent({
           renderTitle={item.$slots.title}
           activeColor={props.titleActiveColor}
           inactiveColor={props.titleInactiveColor}
-          onClick={(event: MouseEvent) => {
-            onClickTab(item, index, event);
-          }}
+          onClick={(event: MouseEvent) => onClickTab(item, index, event)}
           {...pick(item, [
             'dot',
             'badge',
