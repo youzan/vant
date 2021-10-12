@@ -116,10 +116,13 @@ export default defineComponent({
     };
 
     return () => {
-      const nodes: (JSX.Element | undefined)[] =
-        props.labelPosition === 'right'
-          ? [renderIcon(), renderLabel()]
-          : [renderLabel(), renderIcon()];
+      const nodes: (JSX.Element | undefined)[] = [renderIcon()];
+
+      if (props.labelPosition === 'left') {
+        nodes.unshift(renderLabel());
+      } else {
+        nodes.push(renderLabel());
+      }
 
       return (
         <div
