@@ -6,5 +6,6 @@ export default CheckboxGroup;
 export type { CheckboxGroupProps };
 export type {
   CheckboxGroupInstance,
+  CheckboxGroupDirection,
   CheckboxGroupToggleAllOptions,
 } from './types';

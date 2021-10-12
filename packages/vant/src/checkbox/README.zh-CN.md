@@ -352,9 +352,12 @@ checkboxGroup.toggleAll({
 ```ts
 import type {
   CheckboxProps,
+  CheckboxShape,
   CheckboxInstance,
+  CheckboxLabelPosition,
   CheckboxGroupProps,
   CheckboxGroupInstance,
+  CheckboxGroupDirection,
   CheckboxGroupToggleAllOptions,
 } from 'vant';
 ```
