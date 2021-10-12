@@ -44,16 +44,13 @@ export default defineComponent({
       index: number,
       disabled?: boolean
     ) => {
-      const onEdit = () => {
-        const name = disabled ? 'edit-disabled' : 'edit';
-        emit(name, item, index);
-      };
+      const onEdit = () =>
+        emit(disabled ? 'edit-disabled' : 'edit', item, index);
 
       const onClick = () => emit('click-item', item, index);
 
       const onSelect = () => {
-        const name = disabled ? 'select-disabled' : 'select';
-        emit(name, item, index);
+        emit(disabled ? 'select-disabled' : 'select', item, index);
 
         if (!disabled) {
           emit('update:modelValue', item.id);

@@ -89,16 +89,25 @@ export default {
 ### Step Slots
 
 | Name                 | Description          |
-| -------------------- | -------------------- | -------- | --- |
+| -------------------- | -------------------- |
+| default              | Step content         |
 | active-icon          | Custom active icon   |
 | inactive-icon        | Custom inactive icon |
-| finish-icon `v3.0.7` | Custom finish icon   | _string_ | -   |
+| finish-icon `v3.0.7` | Custom finish icon   |
 
 ### Steps Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
 | click-step | Emitted when a step's title or icon is clicked | _index: number_ |
+
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { StepsDirection } from 'vant';
+```
 
 ## Theming
 

@@ -32,12 +32,7 @@ export default defineComponent({
   emits: ['edit', 'click', 'select'],
 
   setup(props, { slots, emit }) {
-    const onClick = () => {
-      if (props.switchable) {
-        emit('select');
-      }
-      emit('click');
-    };
+    const onClick = () => emit(props.switchable ? 'select' : 'click');
 
     const renderRightIcon = () => (
       <Icon
