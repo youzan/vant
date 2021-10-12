@@ -29,7 +29,7 @@ export const checkerProps = {
   iconSize: numericProp,
   modelValue: unknownProp,
   checkedColor: String,
-  labelPosition: makeStringProp<CheckerLabelPosition>('right'),
+  labelPosition: String as PropType<CheckerLabelPosition>,
   labelDisabled: Boolean,
 };
 
@@ -117,9 +117,9 @@ export default defineComponent({
 
     return () => {
       const nodes: (JSX.Element | undefined)[] =
-        props.labelPosition === 'right'
-          ? [renderIcon(), renderLabel()]
-          : [renderLabel(), renderIcon()];
+        props.labelPosition === 'left'
+          ? [renderLabel(), renderIcon()]
+          : [renderIcon(), renderLabel()];
 
       return (
         <div
