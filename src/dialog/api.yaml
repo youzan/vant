@@ -16,11 +16,13 @@
       title: 是否展示确认按钮
       type: boolean
       default: true
+      advanced: true
       description: 是否展示确认按钮
     - name: show-cancel-button
       title: 是否展示取消按钮
       type: boolean
       default: true
+      advanced: true
       description: 是否展示取消按钮
   slots:
     - name: default

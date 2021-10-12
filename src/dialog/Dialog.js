@@ -152,10 +152,12 @@ export default createComponent({
           {footerSlot}
         </div>
       }
+
       return (
-        <div class={[BORDER_TOP, bem('footer')]} vusion-slot-name="footer">
+        <div class={[BORDER_TOP, bem('footer')]}>
           {this.showCancelButton && (
             <Button
+              vusionnodetag="aaa"
               size="large"
               class={bem('cancel')}
               loading={this.loading.cancel}
@@ -168,6 +170,7 @@ export default createComponent({
           )}
           {this.showConfirmButton && (
             <Button
+              {...{attrs:{vusionnodeyytag: 'bbb'}}}
               size="large"
               class={[bem('confirm'), { [BORDER_LEFT]: multiple }]}
               loading={this.loading.confirm}
@@ -187,9 +190,9 @@ export default createComponent({
         return <div class={bem('content')}>{messageSlot}</div>;
       }
 
-      if (!messageSlot && this.$env && this.$env.VUE_APP_DESIGNER) {
-        return <div class={bem('content')} vusion-slot-name="default" vusion-scope-id={this.$parent.$parent.$options._scopeId}><van-empty-col></van-empty-col></div>;
-      }
+      // if (!messageSlot && this.$env && this.$env.VUE_APP_DESIGNER) {
+      //   return <div class={bem('content')} vusion-slot-name="default" vusion-scope-id={this.$parent.$parent.$options._scopeId}><van-empty-col></van-empty-col></div>;
+      // }
 
       const { message, messageAlign } = this;
       if (message) {
@@ -227,7 +230,7 @@ export default createComponent({
     const messageSlot = this.slots();
     const footerSlot = this.slots('footer');
     const title = this.slots('title') || this.title;
-    console.log(this.title);
+    console.log(this);
     const Title = title && (
       // <div class={bem('header', { isolated: !message && !messageSlot })}>
       //   {title}
@@ -247,7 +250,7 @@ export default createComponent({
           vShow={this.realValue}
           role="dialog"
           aria-labelledby={this.title || message}
-          class={[bem([this.theme]), this.className]}
+          class={[bem([this.theme]), this.className, 'noforvant']}
           style={{ width: addUnit(this.width) }}
         >
           {Title}

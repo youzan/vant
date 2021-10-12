@@ -37,10 +37,16 @@
       >
         <div vusion-slot-name="default" style="min-height: 200px;width: 100%;">内容</div>
         <template #footer>
-          <van-row style="width: 100%">
-            <van-col span="12" style="text-align: center;"><van-button style="border: none">取消</van-button></van-col>
-            <van-col span="12" style="text-align: center;"><van-button style="border: none">确认</van-button></van-col>
-          </van-row>
+          <van-button
+            size="large"
+            class="van-button van-button--default van-button--large van-dialog__cancel"
+            text="取消"
+          ></van-button>
+          <van-button
+            size="large"
+            class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"
+            text="确认"
+          ></van-button>
         </template>
       </van-dialog>
     </demo-block>

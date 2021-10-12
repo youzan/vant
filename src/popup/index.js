@@ -91,11 +91,11 @@ export default createComponent({
         <div
           vShow={this.realValue}
           style={style}
-          class={bem({
+          class={[bem({
             round,
             [position]: position,
             'safe-area-inset-bottom': this.safeAreaInsetBottom,
-          })}
+          }), 'noforvant']}
           onClick={this.onClick}
           empty={!this.$slots.default}
         >

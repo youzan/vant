@@ -1,0 +1,44 @@
+- name: van-count-down
+  title: 倒计时
+  labels:
+    - Display
+  icon: countdown
+  description: 倒计时
+  attrs:
+    - name: time
+      title: 倒计时时长,单位秒
+      type: number,string
+      default: 0
+      description: 倒计时总时长
+    - name: format
+      title: 时间格式
+      type: string
+      default: HH:mm:ss
+      description: 时间格式,DD	天数,HH	小时,mm	分钟,ss	秒数,S	毫秒（1 位）,SS	毫秒（2 位）,SSS	毫秒（3 位）
+    - name: auto-start
+      title: 是否自动开始倒计时
+      type: boolean
+      default: true
+      description: 是否自动开始倒计时
+    - name: millisecond
+      title: 是否开启毫秒级渲染
+      type: boolean
+      default: false
+      description: 是否开启毫秒级渲染
+  slots: false
+  events:
+    - name: finish
+      title: 倒计时结束时触发
+      description: 倒计时结束时触发
+      params: []
+    - name: change
+      title: 倒计时变化时触发
+      description: 倒计时变化时触发
+      params: []
+  methods:
+    - name: start
+      description: 开始倒计时
+    - name: pause
+      description: 暂停倒计时
+    - name: reset
+      description: 重设倒计时

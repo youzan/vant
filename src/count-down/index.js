@@ -84,7 +84,7 @@ export default createComponent({
     // @exposed-api
     reset() {
       this.pause();
-      this.remain = +this.time;
+      this.remain = (+this.time) * 1000;
 
       if (this.autoStart) {
         this.start();

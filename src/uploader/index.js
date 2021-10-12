@@ -117,7 +117,7 @@ export default createComponent({
     },
   },
   watch: {
-    fileListProp(val) {
+    fileListProp(val, oldVal) {
       this.fileList = this.fromValue(val);
     }
   },
@@ -125,6 +125,7 @@ export default createComponent({
     fromValue(value) {
       if (this.converter === 'json')
           try {
+            if(value === null || value === '') return [];
             if(typeof value === 'string') return JSON.parse(value || '[]');
             if(typeof value === 'object') return value;
           } catch (err) {

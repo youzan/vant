@@ -30,7 +30,7 @@
         millisecond
         :time="3000"
         :auto-start="false"
-        format="ss:SSS"
+        format="HH:mm:ss:SSS"
         @finish="$toast(t('finished'))"
       />
       <van-grid clickable :column-num="3">
@@ -75,7 +75,7 @@ export default {
 
   data() {
     return {
-      time: 30 * 60 * 60 * 1000,
+      time: 30 * 60 * 60,
     };
   },
 
