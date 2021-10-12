@@ -96,7 +96,7 @@ export default defineComponent({
               errorMessage={props.errorMessage}
               onBlur={onBlur}
               onFocus={onFocus}
-              {...{ 'onUpdate:modelValue': onInput }}
+              onUpdate:modelValue={onInput}
             />
             {renderSearchResult()}
           </>

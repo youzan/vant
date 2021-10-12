@@ -566,7 +566,7 @@ export default defineComponent({
             teleport={props.teleport}
             closeOnPopstate={props.closeOnPopstate}
             closeOnClickOverlay={props.closeOnClickOverlay}
-            {...{ 'onUpdate:show': updateShow }}
+            onUpdate:show={updateShow}
           >
             {renderCalendar()}
           </Popup>

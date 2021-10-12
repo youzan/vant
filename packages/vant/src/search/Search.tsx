@@ -105,8 +105,8 @@ export default defineComponent({
           class={bem('field')}
           border={false}
           onKeypress={onKeypress}
+          onUpdate:modelValue={onInput}
           {...fieldAttrs}
-          {...{ 'onUpdate:modelValue': onInput }}
         />
       );
     };

@@ -24,7 +24,11 @@ export default defineComponent({
     lockScroll: Boolean,
   }),
 
-  setup(props, { slots }) {
+  emits: ['update:show'],
+
+  setup(props, { emit, slots }) {
+    const updateShow = (show: boolean) => emit('update:show', show);
+
     return () => (
       <Popup
         show={props.show}
@@ -37,6 +41,7 @@ export default defineComponent({
         position="top"
         duration={0.2}
         lockScroll={props.lockScroll}
+        onUpdate:show={updateShow}
       >
         {slots.default ? slots.default() : props.message}
       </Popup>

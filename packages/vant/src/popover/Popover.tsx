@@ -223,9 +223,9 @@ export default defineComponent({
           transition="van-popover-zoom"
           lockScroll={false}
           onTouchstart={onTouchstart}
+          onUpdate:show={updateShow}
           {...attrs}
           {...pick(props, popupProps)}
-          {...{ 'onUpdate:show': updateShow }}
         >
           {props.showArrow && <div class={bem('arrow')} />}
           <div role="menu" class={bem('content')}>

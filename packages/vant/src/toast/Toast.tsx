@@ -141,7 +141,7 @@ export default defineComponent({
         closeOnClickOverlay={props.closeOnClickOverlay}
         onClick={onClick}
         onClosed={clearTimer}
-        {...{ 'onUpdate:show': updateShow }}
+        onUpdate:show={updateShow}
       >
         {renderIcon()}
         {renderMessage()}
