@@ -1,3 +1,4 @@
+import chalk from 'chalk';
 import { createServer, build } from 'vite';
 import {
   getViteConfigForSiteDev,
@@ -40,5 +41,10 @@ export async function compileSite(production = false) {
   } else {
     const server = await createServer(getViteConfigForSiteDev());
     await server.listen();
+
+    console.log(
+      '\n  ' + chalk.cyan('vant-cli') + chalk.green(` dev server running at:\n`)
+    );
+    server.printUrls();
   }
 }
