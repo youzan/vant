@@ -11,10 +11,12 @@ import type { CheckerDirection } from '../checkbox/Checker';
 
 const [name, bem] = createNamespace('radio-group');
 
+export type RadioGroupDirection = CheckerDirection;
+
 const props = {
   disabled: Boolean,
   iconSize: numericProp,
-  direction: String as PropType<CheckerDirection>,
+  direction: String as PropType<RadioGroupDirection>,
   modelValue: unknownProp,
   checkedColor: String,
 };

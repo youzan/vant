@@ -156,6 +156,14 @@ export default {
 </van-radio-group>
 ```
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { RadioShape, RadioLabelPosition, RadioGroupDirection } from 'vant';
+```
+
 ## API
 
 ### Radio Props

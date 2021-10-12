@@ -181,7 +181,7 @@ export default {
 | disabled       | 是否为禁用状态            | _boolean_          | `false`   |
 | label-disabled | 是否禁用文本内容点击      | _boolean_          | `false`   |
 | label-position | 文本位置，可选值为 `left` | _string_           | `right`   |
-| icon-size      | 图标大小，默认单位为`px`  | _number \| string_ | `20px`    |
+| icon-size      | 图标大小，默认单位为 `px` | _number \| string_ | `20px`    |
 | checked-color  | 选中状态颜色              | _string_           | `#1989fa` |
 
 ### RadioGroup Props
@@ -190,8 +190,8 @@ export default {
 | --- | --- | --- | --- |
 | v-model | 当前选中项的标识符 | _any_ | - |
 | disabled | 是否禁用所有单选框 | _boolean_ | `false` |
-| direction | 排列方向，可选值为`horizontal` | _string_ | `vertical` |
-| icon-size | 所有单选框的图标大小，默认单位为`px` | _number \| string_ | `20px` |
+| direction | 排列方向，可选值为 `horizontal` | _string_ | `vertical` |
+| icon-size | 所有单选框的图标大小，默认单位为 `px` | _number \| string_ | `20px` |
 | checked-color | 所有单选框的选中状态颜色 | _string_ | `#1989fa` |
 
 ### Radio Events
@@ -212,6 +212,14 @@ export default {
 | ------- | ---------- | ----------------------------------------- |
 | default | 自定义文本 | -                                         |
 | icon    | 自定义图标 | _{ checked: boolean, disabled: boolean }_ |
+
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { RadioShape, RadioLabelPosition, RadioGroupDirection } from 'vant';
+```
 
 ## 主题定制
 

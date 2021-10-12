@@ -8,7 +8,14 @@ import { RADIO_KEY } from '../radio-group/RadioGroup';
 import { useParent } from '@vant/use';
 
 // Components
-import Checker, { checkerProps } from '../checkbox/Checker';
+import Checker, {
+  checkerProps,
+  CheckerShape,
+  CheckerLabelPosition,
+} from '../checkbox/Checker';
+
+export type RadioShape = CheckerShape;
+export type RadioLabelPosition = CheckerLabelPosition;
 
 const [name, bem] = createNamespace('radio');
 
