@@ -29,9 +29,5 @@ It's welcomed to pull request, And there are some tips about that:
 ```bash
 git clone git@github.com:youzan/vant.git
 
-cd packages/vant && yarn
-
-npm run dev
-
-# open http://localhost:8080
+yarn && yarn dev
 ```

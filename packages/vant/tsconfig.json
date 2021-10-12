@@ -2,14 +2,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "preserve",
-    "target": "ES2019",
-    "module": "ESNext",
+    "target": "ES2015",
+    "module": "ES2015",
     "strict": true,
     "allowJs": true,
     "skipLibCheck": true,
     "noImplicitThis": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "node"
   },
   "include": ["src/**/*", "types/**/*", "docs/**/*", "test/**/*"]
 }
