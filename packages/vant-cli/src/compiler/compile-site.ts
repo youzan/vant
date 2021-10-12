@@ -42,9 +42,9 @@ export async function compileSite(production = false) {
     const server = await createServer(getViteConfigForSiteDev());
     await server.listen();
 
-    console.log(
-      '\n  ' + chalk.cyan('vant-cli') + chalk.green(` dev server running at:\n`)
-    );
+    const { version } = require('vite/package.json');
+    const viteInfo = chalk.cyan(`vite v${version}`);
+    console.log(`\n  ${viteInfo}` + chalk.green(` dev server running at:\n`));
     server.printUrls();
   }
 }
