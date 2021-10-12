@@ -1,5 +1,6 @@
 import {
   ref,
+  Slot,
   watch,
   computed,
   PropType,
@@ -94,31 +95,15 @@ export default defineComponent({
       emit('error', event);
     };
 
-    const renderLoadingIcon = () => {
-      if (slots.loading) {
-        return slots.loading();
+    const renderIcon = (name: string, className: unknown, slot?: Slot) => {
+      if (slot) {
+        return slot();
       }
-
       return (
         <Icon
+          name={name}
           size={props.iconSize}
-          name={props.loadingIcon}
-          class={bem('loading-icon')}
-          classPrefix={props.iconPrefix}
-        />
-      );
-    };
-
-    const renderErrorIcon = () => {
-      if (slots.error) {
-        return slots.error();
-      }
-
-      return (
-        <Icon
-          size={props.iconSize}
-          name={props.errorIcon}
-          class={bem('error-icon')}
+          class={className}
           classPrefix={props.iconPrefix}
         />
       );
@@ -126,10 +111,18 @@ export default defineComponent({
 
     const renderPlaceholder = () => {
       if (loading.value && props.showLoading) {
-        return <div class={bem('loading')}>{renderLoadingIcon()}</div>;
+        return (
+          <div class={bem('loading')}>
+            {renderIcon(props.loadingIcon, bem('loading-icon'), slots.loading)}
+          </div>
+        );
       }
       if (error.value && props.showError) {
-        return <div class={bem('error')}>{renderErrorIcon()}</div>;
+        return (
+          <div class={bem('error')}>
+            {renderIcon(props.errorIcon, bem('error-icon'), slots.error)}
+          </div>
+        );
       }
     };
 

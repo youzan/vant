@@ -100,16 +100,6 @@ export default defineComponent({
       }
     });
 
-    const getScrollerRect = () => {
-      if ('getBoundingClientRect' in scrollParent.value!) {
-        return useRect(scrollParent);
-      }
-      return {
-        top: 0,
-        left: 0,
-      };
-    };
-
     const getActiveAnchor = (
       scrollTop: number,
       rects: Array<{ top: number; height: number }>
@@ -133,7 +123,7 @@ export default defineComponent({
 
       const { sticky, indexList } = props;
       const scrollTop = getScrollTop(scrollParent.value!);
-      const scrollParentRect = getScrollerRect();
+      const scrollParentRect = useRect(scrollParent);
 
       const rects = children.map((item) =>
         item.getRect(scrollParent.value, scrollParentRect)
