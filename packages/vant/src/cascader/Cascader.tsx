@@ -80,9 +80,7 @@ export default defineComponent({
       options: CascaderOption[],
       value: string | number
     ): CascaderOption[] | undefined => {
-      for (let i = 0; i < options.length; i++) {
-        const option = options[i];
-
+      for (const option of options) {
         if (option[valueKey] === value) {
           return [option];
         }

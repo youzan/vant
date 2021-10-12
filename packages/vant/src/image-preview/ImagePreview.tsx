@@ -38,6 +38,13 @@ import { ImagePreviewScaleEventParams } from './types';
 
 const [name, bem] = createNamespace('image-preview');
 
+const popupProps = [
+  'show',
+  'transition',
+  'overlayStyle',
+  'closeOnPopstate',
+] as const;
+
 const props = {
   show: Boolean,
   loop: truthProp,
@@ -207,12 +214,7 @@ export default defineComponent({
         overlayClass={bem('overlay')}
         onClosed={onClosed}
         onUpdate:show={updateShow}
-        {...pick(props, [
-          'show',
-          'transition',
-          'overlayStyle',
-          'closeOnPopstate',
-        ])}
+        {...pick(props, popupProps)}
       >
         {renderClose()}
         {renderImages()}

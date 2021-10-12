@@ -9,6 +9,7 @@ import {
 
 // Utils
 import {
+  pick,
   isDef,
   unknownProp,
   numericProp,
@@ -27,6 +28,15 @@ import { Loading, LoadingType } from '../loading';
 import type { ToastType, ToastPosition } from './types';
 
 const [name, bem] = createNamespace('toast');
+
+const popupProps = [
+  'show',
+  'overlay',
+  'transition',
+  'overlayClass',
+  'overlayStyle',
+  'closeOnClickOverlay',
+] as const;
 
 export default defineComponent({
   name,
@@ -128,20 +138,15 @@ export default defineComponent({
 
     return () => (
       <Popup
-        show={props.show}
         class={[
           bem([props.position, { [props.type]: !props.icon }]),
           props.className,
         ]}
-        overlay={props.overlay}
         lockScroll={false}
-        transition={props.transition}
-        overlayClass={props.overlayClass}
-        overlayStyle={props.overlayStyle}
-        closeOnClickOverlay={props.closeOnClickOverlay}
         onClick={onClick}
         onClosed={clearTimer}
         onUpdate:show={updateShow}
+        {...pick(props, popupProps)}
       >
         {renderIcon()}
         {renderMessage()}

@@ -1,10 +1,11 @@
-import { nextTick, PropType, defineComponent } from 'vue';
+import { nextTick, defineComponent } from 'vue';
 
 // Utils
 import {
   pick,
   extend,
   truthProp,
+  makeArrayProp,
   makeStringProp,
   createNamespace,
 } from '../utils';
@@ -40,7 +41,7 @@ export default defineComponent({
   props: extend({}, popupSharedProps, {
     title: String,
     round: truthProp,
-    actions: Array as PropType<ActionSheetAction[]>,
+    actions: makeArrayProp<ActionSheetAction>(),
     closeIcon: makeStringProp('cross'),
     closeable: truthProp,
     cancelText: String,
@@ -138,12 +139,6 @@ export default defineComponent({
       }
     };
 
-    const renderOptions = () => {
-      if (props.actions) {
-        return props.actions.map(renderOption);
-      }
-    };
-
     return () => (
       <Popup
         class={bem()}
@@ -154,7 +149,7 @@ export default defineComponent({
         {renderHeader()}
         {renderDescription()}
         <div class={bem('content')}>
-          {renderOptions()}
+          {props.actions.map(renderOption)}
           {slots.default?.()}
         </div>
         {renderCancel()}
