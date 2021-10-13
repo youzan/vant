@@ -207,10 +207,7 @@ test('should emit delete event after clicking the delete button', async () => {
   });
 
   const deleteButton = wrapper.findAll('.van-button')[1];
-  deleteButton.trigger('click');
-  await later();
-  document.querySelector('.van-dialog__confirm').click();
-  await later();
+  await deleteButton.trigger('click');
   expect(wrapper.emitted('delete')).toBeTruthy();
 });
 
