@@ -39,7 +39,6 @@ exports[`should render svg when image is network 1`] = `
                         x1="64.022%"
                         y1="100%"
                         x2="64.022%"
-                        y2="0%"
         >
           <stop stop-color="#FFF"
                 offset="0%"
@@ -53,7 +52,6 @@ exports[`should render svg when image is network 1`] = `
         </linearGradient>
         <linearGradient id="van-empty-network-2"
                         x1="50%"
-                        y1="0%"
                         x2="50%"
                         y2="84.459%"
         >
@@ -69,7 +67,6 @@ exports[`should render svg when image is network 1`] = `
         </linearGradient>
         <linearGradient id="van-empty-network-3"
                         x1="100%"
-                        y1="0%"
                         x2="100%"
                         y2="100%"
         >
@@ -86,7 +83,6 @@ exports[`should render svg when image is network 1`] = `
                         x1="100%"
                         y1="100%"
                         x2="100%"
-                        y2="0%"
         >
           <stop stop-color="#EAEDF0"
                 offset="0%"
@@ -97,37 +93,7 @@ exports[`should render svg when image is network 1`] = `
           >
           </stop>
         </linearGradient>
-        <linearGradient id="van-empty-network-5"
-                        x1="0%"
-                        y1="43.982%"
-                        x2="100%"
-                        y2="54.703%"
-        >
-          <stop stop-color="#EAEDF0"
-                offset="0%"
-          >
-          </stop>
-          <stop stop-color="#DCDEE0"
-                offset="100%"
-          >
-          </stop>
-        </linearGradient>
-        <linearGradient id="van-empty-network-6"
-                        x1="94.535%"
-                        y1="43.837%"
-                        x2="5.465%"
-                        y2="54.948%"
-        >
-          <stop stop-color="#EAEDF0"
-                offset="0%"
-          >
-          </stop>
-          <stop stop-color="#DCDEE0"
-                offset="100%"
-          >
-          </stop>
-        </linearGradient>
-        <radialGradient id="van-empty-network-7"
+        <radialGradient id="van-empty-network-5"
                         cx="50%"
                         cy="0%"
                         fx="50%"
@@ -146,9 +112,7 @@ exports[`should render svg when image is network 1`] = `
           </stop>
         </radialGradient>
       </defs>
-      <g fill="none"
-         fill-rule="evenodd"
-      >
+      <g fill="none">
         <g opacity=".8">
           <path d="M0 124V46h20v20h14v58H0z"
                 fill="url(#van-empty-network-1)"
@@ -161,13 +125,12 @@ exports[`should render svg when image is network 1`] = `
           >
           </path>
         </g>
-        <path fill="url(#van-empty-network-7)"
+        <path fill="url(#van-empty-network-5)"
               d="M0 139h160v21H0z"
         >
         </path>
         <path d="M37 18a7 7 0 013 13.326v26.742c0 1.23-.997 2.227-2.227 2.227h-1.546A2.227 2.227 0 0134 58.068V31.326A7 7 0 0137 18z"
               fill="url(#van-empty-network-2)"
-              fill-rule="nonzero"
               transform="translate(43 36)"
         >
         </path>
@@ -196,10 +159,8 @@ exports[`should render svg when image is network 1`] = `
           >
           </path>
         </g>
-        <g transform="translate(31 105)"
-           fill-rule="nonzero"
-        >
-          <rect fill="url(#van-empty-network-5)"
+        <g transform="translate(31 105)">
+          <rect fill="#EBEDF0"
                 width="98"
                 height="34"
                 rx="2"
@@ -213,7 +174,7 @@ exports[`should render svg when image is network 1`] = `
                 rx="1.114"
           >
           </rect>
-          <rect fill="url(#van-empty-network-6)"
+          <rect fill="#EBEDF0"
                 x="15"
                 y="12"
                 width="18"

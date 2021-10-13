@@ -6,50 +6,24 @@ const renderStop = (color: string, offset: number, opacity?: number) => (
 export const Network = (
   <svg viewBox="0 0 160 160">
     <defs>
-      <linearGradient
-        id={`${prefix}1`}
-        x1="64.022%"
-        y1="100%"
-        x2="64.022%"
-        y2="0%"
-      >
+      <linearGradient id={`${prefix}1`} x1="64.022%" y1="100%" x2="64.022%">
         {renderStop('#FFF', 0, 0.5)}
         {renderStop('#F2F3F5', 100)}
       </linearGradient>
-      <linearGradient id={`${prefix}2`} x1="50%" y1="0%" x2="50%" y2="84.459%">
+      <linearGradient id={`${prefix}2`} x1="50%" x2="50%" y2="84.459%">
         {renderStop('#EBEDF0', 0)}
         {renderStop('#DCDEE0', 100, 0)}
       </linearGradient>
-      <linearGradient id={`${prefix}3`} x1="100%" y1="0%" x2="100%" y2="100%">
+      <linearGradient id={`${prefix}3`} x1="100%" x2="100%" y2="100%">
         {renderStop('#EAEDF0', 0)}
         {renderStop('#DCDEE0', 100)}
       </linearGradient>
-      <linearGradient id={`${prefix}4`} x1="100%" y1="100%" x2="100%" y2="0%">
-        {renderStop('#EAEDF0', 0)}
-        {renderStop('#DCDEE0', 100)}
-      </linearGradient>
-      <linearGradient
-        id={`${prefix}5`}
-        x1="0%"
-        y1="43.982%"
-        x2="100%"
-        y2="54.703%"
-      >
-        {renderStop('#EAEDF0', 0)}
-        {renderStop('#DCDEE0', 100)}
-      </linearGradient>
-      <linearGradient
-        id={`${prefix}6`}
-        x1="94.535%"
-        y1="43.837%"
-        x2="5.465%"
-        y2="54.948%"
-      >
+      <linearGradient id={`${prefix}4`} x1="100%" y1="100%" x2="100%">
         {renderStop('#EAEDF0', 0)}
         {renderStop('#DCDEE0', 100)}
       </linearGradient>
       <radialGradient
-        id={`${prefix}7`}
+        id={`${prefix}5`}
         cx="50%"
         cy="0%"
         fx="50%"
@@ -61,7 +35,7 @@ export const Network = (
         {renderStop('#FFF', 100, 0)}
       </radialGradient>
     </defs>
-    <g fill="none" fill-rule="evenodd">
+    <g fill="none">
       <g opacity=".8">
         <path
           d="M0 124V46h20v20h14v58H0z"
@@ -74,11 +48,10 @@ export const Network = (
           transform="translate(2 7)"
         />
       </g>
-      <path fill={`url(#${prefix}7)`} d="M0 139h160v21H0z" />
+      <path fill={`url(#${prefix}5)`} d="M0 139h160v21H0z" />
       <path
         d="M37 18a7 7 0 013 13.326v26.742c0 1.23-.997 2.227-2.227 2.227h-1.546A2.227 2.227 0 0134 58.068V31.326A7 7 0 0137 18z"
         fill={`url(#${prefix}2)`}
-        fill-rule="nonzero"
         transform="translate(43 36)"
       />
       <g opacity=".6" stroke-linecap="round" stroke-width="7">
@@ -103,17 +76,10 @@ export const Network = (
           transform="rotate(-180 89.791 42.146)"
         />
       </g>
-      <g transform="translate(31 105)" fill-rule="nonzero">
-        <rect fill={`url(#${prefix}5)`} width="98" height="34" rx="2" />
+      <g transform="translate(31 105)">
+        <rect fill="#EBEDF0" width="98" height="34" rx="2" />
         <rect fill="#FFF" x="9" y="8" width="80" height="18" rx="1.114" />
-        <rect
-          fill={`url(#${prefix}6)`}
-          x="15"
-          y="12"
-          width="18"
-          height="6"
-          rx="1.114"
-        />
+        <rect fill="#EBEDF0" x="15" y="12" width="18" height="6" rx="1.114" />
       </g>
     </g>
   </svg>
