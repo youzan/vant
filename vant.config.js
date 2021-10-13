@@ -182,6 +182,10 @@ module.exports = {
                 title: 'Picker 选择器',
               },
               {
+                path: 'pickerson',
+                title: 'Pickerson 选择器',
+              },
+              {
                 path: 'radio',
                 title: 'Radio 单选框',
               },

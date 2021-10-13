@@ -1,0 +1,117 @@
+@import '../style/var';
+
+.van-pickerson {
+  position: relative;
+  background-color: @picker-background-color;
+  user-select: none;
+
+  &__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: @picker-toolbar-height;
+  }
+
+  &__cancel,
+  &__confirm {
+    height: 100%;
+    padding: @picker-action-padding;
+    font-size: @picker-action-font-size;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:active {
+      opacity: @active-opacity;
+    }
+  }
+
+  &__confirm {
+    color: @picker-confirm-action-color;
+  }
+
+  &__cancel {
+    color: @picker-cancel-action-color;
+  }
+
+  &__title {
+    max-width: 50%;
+    font-weight: @font-weight-bold;
+    font-size: @picker-title-font-size;
+    line-height: @picker-title-line-height;
+    text-align: center;
+  }
+
+  &__columns {
+    position: relative;
+    display: flex;
+    cursor: grab;
+  }
+
+  &__loading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: @picker-loading-icon-color;
+    background-color: @picker-loading-mask-color;
+  }
+
+  &__frame {
+    position: absolute;
+    top: 50%;
+    right: @padding-md;
+    left: @padding-md;
+    z-index: 2;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  &__mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        180deg,
+        hsla(0, 0%, 100%, 0.9),
+        hsla(0, 0%, 100%, 0.4)
+      ),
+      linear-gradient(0deg, hsla(0, 0%, 100%, 0.9), hsla(0, 0%, 100%, 0.4));
+    background-repeat: no-repeat;
+    background-position: top, bottom;
+    // fix rendering failure during animation on safari
+    transform: translateZ(0);
+    pointer-events: none;
+  }
+
+  &-column {
+    flex: 1;
+    overflow: hidden;
+    font-size: @picker-option-font-size;
+
+    &__wrapper {
+      transition-timing-function: cubic-bezier(0.23, 1, 0.68, 1);
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 @padding-base;
+      color: @picker-option-text-color;
+
+      &--disabled {
+        cursor: not-allowed;
+        opacity: @picker-option-disabled-opacity;
+      }
+    }
+  }
+}

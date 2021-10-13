@@ -57,6 +57,7 @@ export { default as VanPagination } from '../../src/pagination';
 export { default as VanPanel } from '../../src/panel';
 export { default as VanPasswordInput } from '../../src/password-input';
 export { default as VanPicker } from '../../src/picker';
+export { default as VanPickerson } from '../../src/pickerson';
 export { default as VanPopover } from '../../src/popover';
 export { default as VanPopup } from '../../src/popup';
 export { default as VanProgress } from '../../src/progress';
