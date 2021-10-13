@@ -8,7 +8,6 @@ import { Cell } from '../cell';
 import { Form } from '../form';
 import { Field } from '../field';
 import { Button } from '../button';
-import { Dialog } from '../dialog';
 import { Switch } from '../switch';
 
 const [name, bem, t] = createNamespace('contact-edit');
@@ -54,10 +53,7 @@ export default defineComponent({
       }
     };
 
-    const onDelete = () =>
-      Dialog.confirm({
-        title: t('confirmDelete'),
-      }).then(() => emit('delete', contact));
+    const onDelete = () => emit('delete', contact);
 
     const renderButtons = () => (
       <div class={bem('buttons')}>

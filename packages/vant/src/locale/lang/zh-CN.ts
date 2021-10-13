@@ -8,7 +8,6 @@ export default {
   loading: '加载中...',
   noCoupon: '暂无优惠券',
   nameEmpty: '请填写姓名',
-  confirmDelete: '确定要删除吗',
   telInvalid: '请填写正确的电话',
   vanCalendar: {
     end: '结束',

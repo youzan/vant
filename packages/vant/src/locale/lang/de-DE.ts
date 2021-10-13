@@ -8,7 +8,6 @@ export default {
   loading: 'Laden...',
   noCoupon: 'Keine Coupons',
   nameEmpty: 'Bitte den Name angeben',
-  confirmDelete: 'Bist du sicher, dass du löschen möchtest?',
   telInvalid: 'Ungültige Telefonnummer',
   vanCalendar: {
     end: 'Ende',

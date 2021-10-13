@@ -214,21 +214,6 @@ test('should emit delete event after clicking the delete button', async () => {
   expect(wrapper.emitted('delete')).toBeTruthy();
 });
 
-test('should emit cancel-delete event after canceling deletion', async () => {
-  const wrapper = mount(AddressEdit, {
-    props: {
-      showDelete: true,
-    },
-  });
-
-  const deleteButton = wrapper.findAll('.van-button')[1];
-  deleteButton.trigger('click');
-  await later();
-  document.querySelector('.van-dialog__cancel').click();
-  await later();
-  expect(wrapper.emitted('cancel-delete')).toBeTruthy();
-});
-
 test('should update address detail after calling the setAddressDetail method', async () => {
   const { vm, wrapper } = createComponent();
   const textarea = wrapper.find('.van-address-edit-detail').find('textarea');

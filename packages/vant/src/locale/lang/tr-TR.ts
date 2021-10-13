@@ -8,7 +8,6 @@ export default {
   loading: 'Yükleniyor...',
   noCoupon: 'Kupon yok',
   nameEmpty: 'Lütfen isim giriniz',
-  confirmDelete: 'Silmek istediğinize emin misiniz?',
   telInvalid: 'Geçersiz tel. numarası',
   vanCalendar: {
     end: 'Son',

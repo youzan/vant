@@ -31,7 +31,6 @@ import { Field } from '../field';
 import { Popup } from '../popup';
 import { Toast } from '../toast';
 import { Button } from '../button';
-import { Dialog } from '../dialog';
 import { Switch } from '../switch';
 import AddressEditDetail from './AddressEditDetail';
 
@@ -105,7 +104,6 @@ export default defineComponent({
     'click-area',
     'change-area',
     'change-detail',
-    'cancel-delete',
     'select-search',
     'change-default',
   ],
@@ -232,13 +230,7 @@ export default defineComponent({
       emit('change-area', values);
     };
 
-    const onDelete = () => {
-      Dialog.confirm({
-        title: t('confirmDelete'),
-      })
-        .then(() => emit('delete', state.data))
-        .catch(() => emit('cancel-delete', state.data));
-    };
+    const onDelete = () => emit('delete', state.data);
 
     // get values of area component
     const getArea = () => (areaRef.value ? areaRef.value.getValues() : []);

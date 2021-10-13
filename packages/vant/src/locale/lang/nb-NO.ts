@@ -8,7 +8,6 @@ export default {
   loading: 'Laster...',
   noCoupon: 'Ingen kuponger',
   nameEmpty: 'Vennligst fyll inn navn',
-  confirmDelete: 'Er du sikker på at du vil slette?',
   telInvalid: 'Ugyldig telefonnummer',
   vanCalendar: {
     end: 'Slutt',

@@ -8,7 +8,6 @@ export default {
   loading: '加載中...',
   noCoupon: '暫無優惠券',
   nameEmpty: '請填寫姓名',
-  confirmDelete: '確定要刪除嗎',
   telInvalid: '請填寫正確的電話',
   vanCalendar: {
     end: '結束',
