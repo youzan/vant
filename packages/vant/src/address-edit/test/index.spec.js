@@ -207,26 +207,8 @@ test('should emit delete event after clicking the delete button', async () => {
   });
 
   const deleteButton = wrapper.findAll('.van-button')[1];
-  deleteButton.trigger('click');
-  await later();
-  document.querySelector('.van-dialog__confirm').click();
-  await later();
+  await deleteButton.trigger('click');
   expect(wrapper.emitted('delete')).toBeTruthy();
-});
-
-test('should emit cancel-delete event after canceling deletion', async () => {
-  const wrapper = mount(AddressEdit, {
-    props: {
-      showDelete: true,
-    },
-  });
-
-  const deleteButton = wrapper.findAll('.van-button')[1];
-  deleteButton.trigger('click');
-  await later();
-  document.querySelector('.van-dialog__cancel').click();
-  await later();
-  expect(wrapper.emitted('cancel-delete')).toBeTruthy();
 });
 
 test('should update address detail after calling the setAddressDetail method', async () => {

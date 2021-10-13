@@ -8,7 +8,6 @@ export default {
   loading: 'Încărcare...',
   noCoupon: 'Fără cupoane',
   nameEmpty: 'Te rugăm să completezi numele',
-  confirmDelete: 'Ești sigur ca vrei sa stergi?',
   telInvalid: 'Număr de telefon invalid',
   vanCalendar: {
     end: 'Sfârșit',
