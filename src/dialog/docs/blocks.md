@@ -2,7 +2,7 @@
 
 ``` html
 <van-dialog safe-area-inset-bottom>
-  <div vusion-slot-name="default" style="min-height: 100px;">内容</div>
+  <div vusion-slot-name="default" style="min-height: 100px;" :vusion-disabled-cut="true">内容</div>
   <template #footer>
     <van-button
       size="large"
