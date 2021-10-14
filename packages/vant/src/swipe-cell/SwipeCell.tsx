@@ -162,8 +162,7 @@ export default defineComponent({
       emit('click', position);
 
       if (opened && !lockClick) {
-        callInterceptor({
-          interceptor: props.beforeClose,
+        callInterceptor(props.beforeClose, {
           args: [
             {
               name: props.name,

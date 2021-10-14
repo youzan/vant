@@ -113,8 +113,7 @@ export default defineComponent({
 
     const close = () => {
       if (opened) {
-        callInterceptor({
-          interceptor: props.beforeClose,
+        callInterceptor(props.beforeClose, {
           done() {
             opened = false;
             emit('close');

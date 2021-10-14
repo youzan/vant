@@ -60,8 +60,7 @@ export default defineComponent({
     const onDelete = (event: MouseEvent) => {
       const { name, item, index, beforeDelete } = props;
       event.stopPropagation();
-      callInterceptor({
-        interceptor: beforeDelete,
+      callInterceptor(beforeDelete, {
         args: [item, { name, index }],
         done: () => emit('delete'),
       });
