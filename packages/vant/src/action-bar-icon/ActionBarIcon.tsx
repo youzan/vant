@@ -35,9 +35,12 @@ export default defineComponent({
 
       if (slots.icon) {
         return (
-          <Badge dot={dot} content={badge} class={bem('icon')}>
-            {slots.icon()}
-          </Badge>
+          <Badge
+            v-slots={{ default: slots.icon }}
+            dot={dot}
+            content={badge}
+            class={bem('icon')}
+          />
         );
       }
 

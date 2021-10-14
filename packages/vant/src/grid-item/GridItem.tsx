@@ -80,9 +80,11 @@ export default defineComponent({
     const renderIcon = () => {
       if (slots.icon) {
         return (
-          <Badge dot={props.dot} content={props.badge}>
-            {slots.icon()}
-          </Badge>
+          <Badge
+            v-slots={{ default: slots.icon }}
+            dot={props.dot}
+            content={props.badge}
+          />
         );
       }
 

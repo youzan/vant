@@ -198,7 +198,9 @@ export default defineComponent({
 
     return () => {
       if (props.teleport) {
-        return <Teleport to={props.teleport}>{renderContent()}</Teleport>;
+        return (
+          <Teleport v-slots={{ default: renderContent }} to={props.teleport} />
+        );
       }
       return renderContent();
     };

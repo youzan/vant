@@ -123,7 +123,12 @@ export default defineComponent({
         nodes.push(<div class={bem('text')}>{getStatusText()}</div>);
       }
       if (status === 'loading') {
-        nodes.push(<Loading class={bem('loading')}>{getStatusText()}</Loading>);
+        nodes.push(
+          <Loading
+            v-slots={{ default: getStatusText }}
+            class={bem('loading')}
+          />
+        );
       }
 
       return nodes;

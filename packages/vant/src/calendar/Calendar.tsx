@@ -558,6 +558,7 @@ export default defineComponent({
       if (props.poppable) {
         return (
           <Popup
+            v-slots={{ default: renderCalendar }}
             show={props.show}
             class={bem('popup')}
             round={props.round}
@@ -567,9 +568,7 @@ export default defineComponent({
             closeOnPopstate={props.closeOnPopstate}
             closeOnClickOverlay={props.closeOnClickOverlay}
             onUpdate:show={updateShow}
-          >
-            {renderCalendar()}
-          </Popup>
+          />
         );
       }
 

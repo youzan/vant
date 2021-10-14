@@ -95,6 +95,7 @@ export default defineComponent({
       if (isImageFile(item)) {
         return (
           <Image
+            v-slots={{ default: renderCover }}
             fit={props.imageFit}
             src={item.content || item.url}
             class={bem('preview-image')}
@@ -102,9 +103,7 @@ export default defineComponent({
             height={props.previewSize}
             lazyLoad={props.lazyLoad}
             onClick={onPreview}
-          >
-            {renderCover()}
-          </Image>
+          />
         );
       }
 
