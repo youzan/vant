@@ -5,7 +5,7 @@ import { replaceExt } from '../common';
 import { replaceCSSImportExt } from '../common/css';
 import { replaceScriptImportExt } from './get-deps';
 
-export async function compileJs(filePath: string): Promise<void> {
+export async function compileScript(filePath: string): Promise<void> {
   return new Promise((resolve, reject) => {
     if (filePath.includes('.d.ts')) {
       resolve();

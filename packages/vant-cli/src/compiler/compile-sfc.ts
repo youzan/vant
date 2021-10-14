@@ -1,10 +1,8 @@
 import hash from 'hash-sum';
 import path from 'path';
 import { parse, SFCBlock, compileTemplate } from '@vue/compiler-sfc';
-import { remove, writeFileSync, readFileSync } from 'fs-extra';
+import { remove, readFileSync, outputFile } from 'fs-extra';
 import { replaceExt } from '../common';
-import { compileJs } from './compile-js';
-import { compileStyle } from './compile-style';
 
 const RENDER_FN = '__vue_render__';
 const VUEIDS = '__vue_sfc__';
@@ -78,10 +76,16 @@ export async function compileSfc(filePath: string): Promise<any> {
     const scriptFilePath = replaceExt(filePath, `.${lang}`);
 
     tasks.push(
-      new Promise((resolve, reject) => {
-        let script = descriptor.script!.content;
-        script = injectStyle(script, styles, filePath);
+      new Promise((resolve) => {
+        let script = '';
 
+        // the generated render fn lacks type definitions
+        if (lang === 'ts') {
+          script += '// @ts-nocheck\n';
+        }
+
+        script += descriptor.script!.content;
+        script = injectStyle(script, styles, filePath);
         script = script.replace(EXPORT, `const ${VUEIDS} =`);
 
         if (template) {
@@ -100,15 +104,14 @@ export async function compileSfc(filePath: string): Promise<any> {
 
         script += `\n${EXPORT} ${VUEIDS}`;
 
-        writeFileSync(scriptFilePath, script);
-        compileJs(scriptFilePath).then(resolve).catch(reject);
+        outputFile(scriptFilePath, script).then(resolve);
       })
     );
   }
 
   // compile style part
   tasks.push(
-    ...styles.map((style, index: number) => {
+    ...styles.map(async (style, index: number) => {
       const cssFilePath = getSfcStylePath(filePath, style.lang || 'css', index);
 
       const styleSource = trim(style.content);
@@ -124,9 +127,7 @@ export async function compileSfc(filePath: string): Promise<any> {
       //   }).code;
       // }
 
-      writeFileSync(cssFilePath, styleSource);
-
-      return compileStyle(cssFilePath);
+      return outputFile(cssFilePath, styleSource);
     })
   );
 
