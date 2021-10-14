@@ -24,6 +24,7 @@
       title: 是否开启毫秒级渲染
       type: boolean
       default: false
+      advanced: true
       description: 是否开启毫秒级渲染
   slots: false
   events:
