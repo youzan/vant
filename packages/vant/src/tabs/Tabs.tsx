@@ -307,8 +307,7 @@ export default defineComponent({
         // should be removed in next major version
         emit('disabled', name, title);
       } else {
-        callInterceptor({
-          interceptor: props.beforeChange,
+        callInterceptor(props.beforeChange, {
           args: [name],
           done: () => {
             setCurrentIndex(index);

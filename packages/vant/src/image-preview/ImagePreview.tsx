@@ -100,8 +100,7 @@ export default defineComponent({
     const updateShow = (show: boolean) => emit('update:show', show);
 
     const emitClose = () => {
-      callInterceptor({
-        interceptor: props.beforeClose,
+      callInterceptor(props.beforeClose, {
         args: [state.active],
         done: () => updateShow(false),
       });

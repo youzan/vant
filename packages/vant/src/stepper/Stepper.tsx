@@ -128,9 +128,8 @@ export default defineComponent({
 
     const setValue = (value: string | number) => {
       if (props.beforeChange) {
-        callInterceptor({
+        callInterceptor(props.beforeChange, {
           args: [value],
-          interceptor: props.beforeChange,
           done() {
             current.value = value;
           },

@@ -83,8 +83,7 @@ export default defineComponent({
 
     const setActive = (active: number | string) => {
       if (active !== props.modelValue) {
-        callInterceptor({
-          interceptor: props.beforeChange,
+        callInterceptor(props.beforeChange, {
           args: [active],
           done() {
             emit('update:modelValue', active);

@@ -3,50 +3,47 @@ import { callInterceptor } from '../interceptor';
 
 test('callInterceptor', async () => {
   const done = jest.fn();
-  callInterceptor({ done });
+  callInterceptor(undefined, { done });
   expect(done).toHaveBeenCalledTimes(1);
 
-  callInterceptor({
-    interceptor: () => false,
+  callInterceptor(() => false, {
     done,
   });
   expect(done).toHaveBeenCalledTimes(1);
 
-  callInterceptor({
-    interceptor: () => true,
+  callInterceptor(() => true, {
     done,
   });
   expect(done).toHaveBeenCalledTimes(2);
 
-  callInterceptor({
-    interceptor: () => Promise.resolve(false),
+  callInterceptor(() => Promise.resolve(false), {
     done,
   });
   await later();
   expect(done).toHaveBeenCalledTimes(2);
 
-  callInterceptor({
-    interceptor: () => Promise.resolve(true),
+  callInterceptor(() => Promise.resolve(true), {
     done,
   });
   await later();
   expect(done).toHaveBeenCalledTimes(3);
 
-  callInterceptor({
-    interceptor: () => Promise.reject(),
+  callInterceptor(() => Promise.reject(), {
     done,
   });
   await later();
   expect(done).toHaveBeenCalledTimes(3);
 
-  callInterceptor({
-    interceptor: (...args) => {
+  callInterceptor(
+    (...args) => {
       expect(args).toEqual(['foo']);
       return false;
     },
-    args: ['foo'],
-    done,
-  });
+    {
+      args: ['foo'],
+      done,
+    }
+  );
 
   expect(done).toHaveBeenCalledTimes(3);
 });

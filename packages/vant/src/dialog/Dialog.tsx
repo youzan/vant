@@ -74,10 +74,7 @@ export default defineComponent({
 
     const close = (action: DialogAction) => {
       updateShow(false);
-
-      if (props.callback) {
-        props.callback(action);
-      }
+      props.callback?.(action);
     };
 
     const getActionHandler = (action: DialogAction) => () => {
@@ -90,8 +87,7 @@ export default defineComponent({
 
       if (props.beforeClose) {
         loading[action] = true;
-        callInterceptor({
-          interceptor: props.beforeClose,
+        callInterceptor(props.beforeClose, {
           args: [action],
           done() {
             close(action);
