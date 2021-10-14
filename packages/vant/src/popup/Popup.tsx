@@ -201,13 +201,12 @@ export default defineComponent({
 
       return (
         <Transition
+          v-slots={{ default: renderPopup }}
           name={transition || name}
           appear={transitionAppear}
           onAfterEnter={onOpened}
           onAfterLeave={onClosed}
-        >
-          {renderPopup()}
-        </Transition>
+        />
       );
     };
 

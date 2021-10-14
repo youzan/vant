@@ -83,9 +83,12 @@ export default defineComponent({
           style={{ color }}
           onClick={onClick}
         >
-          <Badge dot={dot} content={badge} class={bem('icon')}>
-            {renderIcon()}
-          </Badge>
+          <Badge
+            v-slots={{ default: renderIcon }}
+            dot={dot}
+            content={badge}
+            class={bem('icon')}
+          />
           <div class={bem('text')}>
             {slots.default?.({ active: active.value })}
           </div>

@@ -56,9 +56,7 @@ export default defineComponent({
     });
 
     return () => (
-      <Transition name="van-fade" appear>
-        {renderOverlay()}
-      </Transition>
+      <Transition v-slots={{ default: renderOverlay }} name="van-fade" appear />
     );
   },
 });
