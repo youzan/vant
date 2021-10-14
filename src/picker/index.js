@@ -73,6 +73,7 @@ export default createComponent({
   methods: {
     format() {
       this.columns = this.fromValue(this.columnsprop);
+      console.log(this.columns)
       const { columns, dataType } = this;
 
       if (dataType === 'text') {
@@ -86,6 +87,7 @@ export default createComponent({
     fromValue(value) {
       if (this.converter === 'json')
           try {
+              if (value === null || value === undefined) return [];
               if(typeof value === 'string') return JSON.parse(value || '[]');
               if(typeof value === 'object') return value;
           } catch (err) {
