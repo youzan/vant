@@ -16,8 +16,7 @@ export default createComponent({
     checked: {
       get() {
         if (this.parent) {
-          console.log(this.parent, this.parent.value, this.name)
-          return this.parent.value.indexOf(this.name) !== -1;
+          return this.parent.datatemp.indexOf(this.name) !== -1;
         }
         return this.value;
       },
@@ -27,19 +26,24 @@ export default createComponent({
           this.setParentValue(val);
         } else {
           this.$emit('input', val);
-          this.$emit('update:value', val);
+          // this.$emit('update:value', val);
         }
       },
     },
   },
 
   watch: {
-    value(val) {
-      this.$emit('change', val);
-      this.$emit('update:value', val);
-      if ((this.$env && this.$env.VUE_APP_DESIGNER) && this.parent) {
-        this.toggle(val)
-      }
+    value: {
+      handler: function (val, oldVal) {
+        this.$emit('change', val);
+        this.$emit('update:value', val);
+        if (val === true && typeof oldVal === 'undefined') {
+          if (this.parent) {
+            this.setParentValue(val);
+          }
+        }
+      },
+      immediate: true
     },
   },
 
@@ -57,7 +61,7 @@ export default createComponent({
 
     setParentValue(val) {
       const { parent } = this;
-      const value = parent.value.slice();
+      const value = parent.datatemp.slice();
       console.log(val, value);
       if (val) {
         if (parent.max && value.length >= parent.max) {
@@ -67,19 +71,22 @@ export default createComponent({
         /* istanbul ignore else */
         if (value.indexOf(this.name) === -1) {
           value.push(this.name);
-          parent.$emit('input', value);
-          parent.$emit('update:value', value);
+          parent.datatemp = value;
+          // parent.$emit('input', value);
+          // parent.$emit('update:value', value);
         }
       } else {
         const index = value.indexOf(this.name);
-        if (parent.min && value.length <= parent.min) {
+        if (parent.min && value.length < parent.min) {
           return;
         }
         /* istanbul ignore else */
         if (index !== -1) {
           value.splice(index, 1);
-          parent.$emit('input', value);
-          parent.$emit('update:value', value);
+          parent.datatemp = value;
+
+          // parent.$emit('input', value);
+          // parent.$emit('update:value', value);
         }
       }
     },

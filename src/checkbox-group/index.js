@@ -11,25 +11,46 @@ export default createComponent({
     max: [Number, String],
     min: {
       type: Number,
-      default: 1,
+      default: 0,
     },
     disabled: Boolean,
     direction: String,
     iconSize: [Number, String],
     checkedColor: String,
     value: {
-      type: Array,
+      type: [Array, String],
       default: () => [],
     },
   },
-
+  data() {
+    return {
+      datatemp: this.fromValue(this.value),
+    }
+  },
   watch: {
     value(val) {
       this.$emit('change', val);
     },
+    datatemp(val) {
+      this.$emit('change', this.toValue(val));
+      this.$emit('input', this.toValue(val));
+      this.$emit('update:value', this.toValue(val));
+    },
   },
 
   methods: {
+    fromValue(value) {console.log(value, 5555)
+      try {
+        if(value === null || value === '') return [];
+        if(typeof value === 'string') return JSON.parse(value || '[]');
+        if(typeof value === 'object') return value;
+      } catch (err) {
+        return [];
+      }
+    },
+    toValue(value) {
+      return Array.isArray(value) && value.length === 0 ? '[]' : JSON.stringify(value);
+    },
     // @exposed-api
     toggleAll(options = {}) {
       if (typeof options === 'boolean') {
@@ -46,8 +67,7 @@ export default createComponent({
       });
 
       const names = children.map((item) => item.name);
-      this.$emit('input', names);
-      this.$emit('update:value', names);
+      this.datatemp = names;
     },
   },
 
