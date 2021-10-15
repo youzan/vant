@@ -257,7 +257,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { CascaderOption, CascaderFieldNames } from 'vant';
+import type { CascaderProps, CascaderOption, CascaderFieldNames } from 'vant';
 ```
 
 ## 主题定制
