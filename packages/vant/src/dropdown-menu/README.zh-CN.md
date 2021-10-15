@@ -62,7 +62,7 @@ export default {
 
 ```html
 <van-dropdown-menu>
-  <van-dropdown-item v-model="value" :options="option" />
+  <van-dropdown-item v-model="value" :options="options" />
   <van-dropdown-item title="筛选" ref="item">
     <van-cell center title="包邮">
       <template #right-icon>
