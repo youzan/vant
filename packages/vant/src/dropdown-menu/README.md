@@ -60,7 +60,7 @@ export default {
 
 ```html
 <van-dropdown-menu>
-  <van-dropdown-item v-model="value" :options="option" />
+  <van-dropdown-item v-model="value" :options="options" />
   <van-dropdown-item title="Title" ref="item">
     <van-cell center title="Title">
       <template #right-icon>
