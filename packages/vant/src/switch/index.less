@@ -21,7 +21,7 @@
   width: var(--van-switch-width);
   height: var(--van-switch-height);
   font-size: var(--van-switch-size);
-  background-color: var(--van-switch-background-color);
+  background: var(--van-switch-background-color);
   border: var(--van-switch-border);
   border-radius: var(--van-switch-node-size);
   cursor: pointer;
@@ -33,7 +33,7 @@
     left: 0;
     width: var(--van-switch-node-size);
     height: var(--van-switch-node-size);
-    background-color: var(--van-switch-node-background-color);
+    background: var(--van-switch-node-background-color);
     border-radius: 100%;
     box-shadow: var(--van-switch-node-box-shadow);
     transition: transform var(--van-switch-transition-duration)
@@ -49,7 +49,7 @@
   }
 
   &--on {
-    background-color: var(--van-switch-on-background-color);
+    background: var(--van-switch-on-background-color);
 
     .van-switch__node {
       transform: translateX(
