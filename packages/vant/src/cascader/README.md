@@ -245,7 +245,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { CascaderOption, CascaderFieldNames } from 'vant';
+import type { CascaderProps, CascaderOption, CascaderFieldNames } from 'vant';
 ```
 
 ## Theming
