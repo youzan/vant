@@ -482,10 +482,9 @@ export default defineComponent({
       }
 
       if (props.showConfirm) {
-        const text = buttonDisabled.value
-          ? props.confirmDisabledText
-          : props.confirmText;
-
+        const slot = slots['confirm-text'];
+        const disabled = buttonDisabled.value;
+        const text = disabled ? props.confirmDisabledText : props.confirmText;
         return (
           <Button
             round
@@ -493,11 +492,11 @@ export default defineComponent({
             type="danger"
             color={props.color}
             class={bem('confirm')}
-            disabled={buttonDisabled.value}
+            disabled={disabled}
             nativeType="button"
             onClick={onConfirm}
           >
-            {text || t('confirm')}
+            {slot ? slot({ disabled }) : text || t('confirm')}
           </Button>
         );
       }

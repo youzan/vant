@@ -569,3 +569,19 @@ test('should emit click-subtitle event when clicking the subtitle', async () => 
   wrapper.find('.van-calendar__header-subtitle').trigger('click');
   expect(wrapper.emitted('click-subtitle')).toBeTruthy();
 });
+
+test('should render confirm-text slot correctly', async () => {
+  const wrapper = mount(Calendar, {
+    props: {
+      poppable: false,
+      lazyRender: false,
+    },
+    slots: {
+      'confirm-text': ({ disabled }) => `Custom confirm text ${disabled}`,
+    },
+  });
+
+  await later();
+
+  expect(wrapper.find('.van-calendar__confirm').html()).toMatchSnapshot();
+});
