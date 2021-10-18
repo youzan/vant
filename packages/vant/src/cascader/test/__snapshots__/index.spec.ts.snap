@@ -17,6 +17,16 @@ exports[`should render title slot correctly 1`] = `
 </h2>
 `;
 
+exports[`should select correct option when value changed 1`] = `
+<li class="van-cascader__option van-cascader__option--selected">
+  <span>
+    Wenzhou
+  </span>
+  <i class="van-badge__wrapper van-icon van-icon-success van-cascader__selected-icon">
+  </i>
+</li>
+`;
+
 exports[`should update tabs when previous tab is clicked 1`] = `
 <div class="van-cascader">
   <div class="van-cascader__header">

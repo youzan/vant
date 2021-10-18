@@ -1,18 +1,17 @@
 import { Circle } from '..';
 import { mount, later } from '../../../test';
 
-// TODO
-// test('should update to final rate immediately if speed is 0', async () => {
-//   const wrapper = mount(Circle, {
-//     props: {
-//       rate: 50,
-//       currentRate: 0,
-//     },
-//   });
+test('should update to final rate immediately if speed is 0', async () => {
+  const wrapper = mount(Circle, {
+    props: {
+      rate: 50,
+      currentRate: 0,
+    },
+  });
 
-//   await later();
-//   expect(wrapper.emitted('update:currentRate')).toBeTruthy();
-// });
+  await later();
+  expect(wrapper.emitted('update:currentRate')).toBeTruthy();
+});
 
 test('should emit "update:currentRate" event during animation', async () => {
   const wrapper = mount(Circle, {
