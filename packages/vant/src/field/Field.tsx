@@ -309,7 +309,6 @@ export default defineComponent({
     };
 
     const onBlur = (event: Event) => {
-      console.log('onBlur');
       state.focused = false;
       updateValue(getModelValue(), 'onBlur');
       emit('blur', event);
