@@ -189,11 +189,11 @@ export default createComponent({
 
   methods: {
     getTitle() {
-      if (this.defaultDate) {
-        if (Array.isArray(this.defaultDate)) {
-          return this.defaultDate.reduce((p, c) => p+ c.formath("yyyy/MM/dd")+'-', '');
+      if (this.currentDate) {
+        if (Array.isArray(this.currentDate)) {
+          return this.currentDate.reduce((p, c) => p + (isDate(c) ? c.formath("yyyy/MM/dd") : c)+'-', '');
         } else {
-          return isDate(this.defaultDate) ? this.defaultDate.formath("yyyy/MM/dd") : '';
+          return isDate(this.currentDate) ? this.currentDate.formath("yyyy/MM/dd") : this.currentDate;
         }
       }
       return '';
