@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should emit failed event when validating failed 1`] = `
+<form class="van-form">
+  <div class="van-cell van-field">
+    <div class="van-cell__value van-cell__value--alone van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               name="A"
+               class="van-field__control"
+        >
+      </div>
+      <div class="van-field__error-message">
+        A failed
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-field">
+    <div class="van-cell__value van-cell__value--alone van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               name="B"
+               class="van-field__control"
+        >
+      </div>
+      <div class="van-field__error-message">
+        B failed
+      </div>
+    </div>
+  </div>
+</form>
+`;
