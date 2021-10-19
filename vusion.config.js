@@ -32,7 +32,7 @@ module.exports = {
             { group: 'Display', show: true, name: 'count-down', alias: '倒计时' },
             { group: 'Data', show: true, name: 'list-view', alias: '数据列表' },
             { group: 'Form', show: true, name: 'form', alias: '表单' },
-            // { group: 'Form', show: true, name: 'u-input', alias: '单行输入' },
+            { group: 'Form', show: true, name: 'fieldinput', alias: '单行输入' },
             // { group: 'Form', show: true, name: 'u-number-input', alias: '数字输入' },
             // { group: 'Form', show: true, name: 'u-textarea', alias: '多行输入' },
             { group: 'Form', show: true, name: 'radio-group', alias: '单选组' },

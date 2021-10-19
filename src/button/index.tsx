@@ -250,7 +250,6 @@ function Button(
 
     return content;
   }
-console.log(ctx, 999)
   return (
     <tag
       style={style}

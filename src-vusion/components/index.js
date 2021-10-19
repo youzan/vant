@@ -32,6 +32,8 @@ export { default as VanDropdownMenu } from '../../src/dropdown-menu';
 export { default as VanEmpty } from '../../src/empty';
 export { default as VanEmptycol } from '../../src/emptycol';
 export { default as VanField } from '../../src/field';
+export { default as VanFieldinput } from '../../src/fieldinput';
+
 export { default as VanForm } from '../../src/form';
 export { default as VanGoodsAction } from '../../src/goods-action';
 export { default as VanGoodsActionButton } from '../../src/goods-action-button';

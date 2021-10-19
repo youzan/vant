@@ -18,6 +18,7 @@ import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 
 import VanEmptyCol from '../emptycol/index';
+import VanFieldinput from '../fieldinput/index';
 
 import VusionValidator from '@vusion/validator';
 
@@ -39,6 +40,7 @@ export default createComponent({
   },
   components: {
     VanEmptyCol,
+    VanFieldinput
   },
   props: {
     ...cellProps,
@@ -150,18 +152,6 @@ export default createComponent({
       // return (this.rules || (this.rootVM && this.rootVM.rules && this.rootVM.rules[this.name]));
       return this.rules;
     },
-    showClear() {
-      const readonly = this.getProp('readonly');
-
-      if (this.clearable && !readonly) {
-        const hasValue = isDef(this.value) && this.value !== '';
-        const trigger =
-          this.clearTrigger === 'always' ||
-          (this.clearTrigger === 'focus' && this.focused);
-
-        return hasValue && trigger;
-      }
-    },
 
     showError() {
       if (this.error !== null) {
@@ -200,6 +190,25 @@ export default createComponent({
   },
 
   methods: {
+    showClear() {
+      let child = null;
+      if (this.children && this.children.$options._componentTag === 'van-fieldinput') {
+        child = this.children;
+      }
+
+      const readonly = this.getProp('readonly');
+      if ((child && child.clearable && !child.readonly)) {
+        return true;
+      }
+      if ((this.clearable && !readonly)) {
+        const hasValue = isDef(this.value) && this.value !== '';
+        const trigger =
+          this.clearTrigger === 'always' ||
+          (this.clearTrigger === 'focus' && this.focused);
+
+        return hasValue && trigger;
+      }
+    },
     // @exposed-api
     focus() {
       if (this.$refs.input) {
@@ -465,6 +474,9 @@ export default createComponent({
       preventDefault(event);
       this.$emit('input', '');
       this.$emit('clear', event);
+      if (this.children && this.children.$options._componentTag === 'van-fieldinput') {
+        this.children.currentValue = '';
+      }
     },
 
     onKeypress(event) {
@@ -522,9 +534,10 @@ export default createComponent({
       // const hasInputSlot = this.$slots.hasOwnProperty('input');
       const ifDesigner = (this.$env && this.$env.VUE_APP_DESIGNER);
       if (inputSlot) {
-        return (
+        const ifInput = inputSlot[0].componentOptions.tag === 'van-fieldinput';
+        return ifInput ? (inputSlot) : (
           <div
-            class={bem('control', [inputAlign, 'custom'])}
+            class={bem(!ifInput ? 'control' : '', [inputAlign, 'custom'])}
             onClick={this.onClickInput}
           >
             {inputSlot}
@@ -543,6 +556,7 @@ export default createComponent({
           </div>
         );
       }
+
       const inputProps = {
         ref: 'input',
         class: bem('control', inputAlign),
@@ -731,7 +745,7 @@ export default createComponent({
       >
         <div class={bem('body')}>
           {this.genInput()}
-          {this.showClear && (
+          {this.showClear() && (
             <Icon
               name="clear"
               class={bem('clear')}
