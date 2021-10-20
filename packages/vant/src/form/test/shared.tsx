@@ -1,5 +1,6 @@
+import { ref } from 'vue';
 import { mount, later } from '../../../test';
-import { Form } from '..';
+import { Form, FormInstance } from '..';
 import { Field } from '../../field';
 import type { VueWrapper } from '@vue/test-utils';
 
@@ -15,11 +16,13 @@ export function getSimpleRules() {
   };
 }
 
-export function mountSimpleRulesForm(options: any) {
-  return mount({
+export function mountSimpleRulesForm(options: any = {}) {
+  const formRef = ref<FormInstance>();
+  const form = mount({
     render() {
+      const onFailed = 'onFailed' in this ? this.onFailed : () => {};
       return (
-        <Form ref="form" onFailed={this.onFailed}>
+        <Form ref={formRef} onFailed={onFailed}>
           <Field name="A" rules={this.rulesA} modelValue="" />
           <Field name="B" rules={this.rulesB} modelValue="" />
         </Form>
@@ -28,4 +31,9 @@ export function mountSimpleRulesForm(options: any) {
     data: getSimpleRules,
     ...options,
   });
+
+  return {
+    form,
+    formRef,
+  };
 }

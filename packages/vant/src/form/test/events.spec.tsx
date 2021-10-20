@@ -22,15 +22,15 @@ test('should emit submit event when submitting form', async () => {
 
 test('should emit failed event when validating failed', async () => {
   const onFailed = jest.fn();
-  const wrapper = mountSimpleRulesForm({
+  const { form } = mountSimpleRulesForm({
     methods: {
       onFailed,
     },
   });
 
-  await submitForm(wrapper);
+  await submitForm(form);
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(form.html()).toMatchSnapshot();
   expect(onFailed).toHaveBeenCalledWith({
     errors: [
       { name: 'A', message: 'A failed' },
