@@ -21,6 +21,34 @@ app.use(NavBar);
 ### Basic Usage
 
 ```html
+<van-nav-bar title="Title" />
+```
+
+### Back
+
+```html
+<van-nav-bar
+  title="Title"
+  left-text="Back"
+  left-arrow
+  @click-left="onClickLeft"
+/>
+```
+
+```js
+export default {
+  setup() {
+    const onClickLeft = () => history.back();
+    return {
+      onClickLeft,
+    };
+  },
+};
+```
+
+### Right Button
+
+```html
 <van-nav-bar
   title="Title"
   left-text="Back"
@@ -36,7 +64,7 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const onClickLeft = () => Toast('Back');
+    const onClickLeft = () => history.back();
     const onClickRight = () => Toast('Button');
     return {
       onClickLeft,
