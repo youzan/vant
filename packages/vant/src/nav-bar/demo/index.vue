@@ -7,9 +7,13 @@ import { Toast } from '../../toast';
 const t = useTranslate({
   'zh-CN': {
     useSlot: '使用插槽',
+    showBack: '返回上级',
+    rightButton: '右侧按钮',
   },
   'en-US': {
     useSlot: 'Use Slot',
+    showBack: 'Back',
+    rightButton: 'Right Button',
   },
 });
 
@@ -19,6 +23,19 @@ const onClickRight = () => Toast(t('button'));
 
 <template>
   <demo-block :title="t('basicUsage')">
+    <van-nav-bar :title="t('title')" />
+  </demo-block>
+
+  <demo-block :title="t('showBack')">
+    <van-nav-bar
+      :title="t('title')"
+      :left-text="t('back')"
+      left-arrow
+      @click-right="onClickRight"
+    />
+  </demo-block>
+
+  <demo-block :title="t('rightButton')">
     <van-nav-bar
       :title="t('title')"
       :left-text="t('back')"
