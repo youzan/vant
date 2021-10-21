@@ -34,7 +34,7 @@ module.exports = {
             { group: 'Form', show: true, name: 'form', alias: '表单' },
             { group: 'Form', show: true, name: 'fieldinput', alias: '单行输入' },
             // { group: 'Form', show: true, name: 'u-number-input', alias: '数字输入' },
-            // { group: 'Form', show: true, name: 'u-textarea', alias: '多行输入' },
+            { group: 'Form', show: true, name: 'fieldtextarea', alias: '多行输入' },
             { group: 'Form', show: true, name: 'radio-group', alias: '单选组' },
             { group: 'Form', show: true, name: 'switch', alias: '开关' },
             { group: 'Form', show: true, name: 'checkbox-group', alias: '多选组' },

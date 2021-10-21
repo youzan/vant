@@ -167,6 +167,10 @@ module.exports = {
                 title: 'FieldInput 输入框',
               },
               {
+                path: 'fieldtextarea',
+                title: 'fieldtextarea 输入框',
+              },
+              {
                 path: 'form',
                 title: 'Form 表单',
                 className: 'hide-in-weapp',
@@ -566,6 +570,10 @@ module.exports = {
               {
                 path: 'fieldinput',
                 title: 'FieldInput',
+              },
+              {
+                path: 'fieldtextarea',
+                title: 'FieldTextarea',
               },
               {
                 path: 'form',

@@ -10,6 +10,16 @@
         <van-fieldinput :value.sync="sms2" clearable></van-fieldinput>
       </template>
     </van-field>
+    <van-field
+      v-model="sms5"
+      center
+      :label="t('sms')"
+      :placeholder="t('smsPlaceholder')"
+    >
+      <template #input>
+        <van-fieldtextarea :value.sync="sms222" clearable show-word-limit maxlength="100"  autosize></van-fieldtextarea>
+      </template>
+    </van-field>
   </demo-block>
 </template>
 
@@ -33,7 +43,9 @@ export default {
   data() {
     return {
       sms: '',
-      sms2: ''
+      sms2: '',
+      sms5: '',
+      sms222: ''
     };
   },
 };
