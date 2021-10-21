@@ -166,6 +166,8 @@ export function getViteConfigForSiteProd(): InlineConfig {
       outDir,
       brotliSize: false,
       emptyOutDir: true,
+      // https://github.com/youzan/vant/issues/9703
+      cssTarget: ['chrome53'],
       rollupOptions: {
         input: {
           main: join(SITE_SRC_DIR, 'index.html'),
