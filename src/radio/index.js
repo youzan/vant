@@ -15,12 +15,18 @@ export default createComponent({
   computed: {
     currentValue: {
       get() {
-        return this.parent ? this.parent.value : this.value;
+        return this.parent ? this.parent.datatemp : this.value;
       },
 
       set(val) {
-        (this.parent || this).$emit('input', val);
-        (this.parent || this).$emit('update:value', val);
+        if (this.parent) {
+          this.parent.datatemp = val;
+        } else {
+          this.$emit('input', val);
+          this.$emit('update:value', val);
+        }
+        // (this.parent || this).$emit('input', val);
+        // (this.parent || this).$emit('update:value', val);
       },
     },
 

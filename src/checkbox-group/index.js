@@ -39,7 +39,7 @@ export default createComponent({
   },
 
   methods: {
-    fromValue(value) {console.log(value, 5555)
+    fromValue(value) {
       try {
         if(value === null || value === '') return [];
         if(typeof value === 'string') return JSON.parse(value || '[]');
