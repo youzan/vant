@@ -3,6 +3,7 @@
 :root {
   --van-progress-height: @progress-height;
   --van-progress-color: @progress-color;
+  --van-progress-inactive-color: @progress-inactive-color;
   --van-progress-background-color: @progress-background-color;
   --van-progress-pivot-padding: @progress-pivot-padding;
   --van-progress-pivot-text-color: @progress-pivot-text-color;
@@ -27,6 +28,10 @@
     transform-origin: 0;
     transition: all var(--van-animation-duration-base)
       var(--van-animation-timing-function-enter);
+
+    &--inactive {
+      background: var(--van-progress-inactive-color);
+    }
   }
 
   &__pivot {
@@ -44,5 +49,9 @@
     border-radius: 1em;
     transition: all var(--van-animation-duration-base)
       var(--van-animation-timing-function-enter);
+
+    &--inactive {
+      background: var(--van-progress-inactive-color);
+    }
   }
 }
