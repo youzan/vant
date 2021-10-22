@@ -16,12 +16,17 @@
 
 ```js
 // MyComponent.vue
+import { ref } from 'vue';
 import { useCustomFieldValue } from '@vant/use';
 
 export default {
   setup() {
+    const myValue = ref(0);
+
     // 此处传入的值会替代 Field 组件内部的 value
-    useCustomFieldValue(() => 'Some value');
+    useCustomFieldValue(() => myValue.value);
+
+    return { myValue };
   },
 };
 ```
