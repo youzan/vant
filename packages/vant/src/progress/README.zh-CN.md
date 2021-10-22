@@ -70,6 +70,7 @@ app.use(Progress);
 | pivot-text | 进度文字内容 | _string_ | 百分比 |
 | pivot-color | 进度文字背景色 | _string_ | 同进度条颜色 |
 | text-color | 进度文字颜色 | _string_ | `white` |
+| inactive-color | 置灰状态下的 |
 | inactive | 是否置灰 | _boolean_ | `false` |
 | show-pivot | 是否显示进度文字 | _boolean_ | `true` |
 
@@ -102,6 +103,7 @@ progressRef.value?.resize();
 | ------------------------------------- | -------------------------- | ---- |
 | --van-progress-height                 | _4px_                      | -    |
 | --van-progress-color                  | _var(--van-primary-color)_ | -    |
+| --van-progress-inactive-color         | _var(--van-gray-5)_        | -    |
 | --van-progress-background-color       | _var(--van-gray-3)_        | -    |
 | --van-progress-pivot-padding          | _0 5px_                    | -    |
 | --van-progress-pivot-text-color       | _var(--van-white)_         | -    |

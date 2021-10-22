@@ -28,7 +28,7 @@ export default defineComponent({
 
   setup(props) {
     const background = computed(() =>
-      props.inactive ? '#cacaca' : props.color
+      props.inactive ? undefined : props.color
     );
 
     const renderPivot = () => {
@@ -44,7 +44,10 @@ export default defineComponent({
         };
 
         return (
-          <span style={style} class={bem('pivot')}>
+          <span
+            style={style}
+            class={bem('pivot', { inactive: props.inactive })}
+          >
             {text}
           </span>
         );
@@ -64,7 +67,10 @@ export default defineComponent({
 
       return (
         <div class={bem()} style={rootStyle}>
-          <span class={bem('portion')} style={portionStyle}></span>
+          <span
+            class={bem('portion', { inactive: props.inactive })}
+            style={portionStyle}
+          />
           {renderPivot()}
         </div>
       );

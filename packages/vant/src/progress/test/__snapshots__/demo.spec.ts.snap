@@ -31,12 +31,12 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-progress">
-    <span class="van-progress__portion"
-          style="background: rgb(202, 202, 202); transform: scaleX(0.5);"
+    <span class="van-progress__portion van-progress__portion--inactive"
+          style="transform: scaleX(0.5);"
     >
     </span>
-    <span style="left: 50%; transform: translate(-50%,-50%); background: rgb(202, 202, 202);"
-          class="van-progress__pivot"
+    <span style="left: 50%; transform: translate(-50%,-50%);"
+          class="van-progress__pivot van-progress__pivot--inactive"
     >
       50%
     </span>
@@ -80,10 +80,10 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-progress">
     <span class="van-progress__portion"
-          style="background: rgb(202, 202, 202); transform: scaleX(0.5);"
+          style="transform: scaleX(0.5);"
     >
     </span>
-    <span style="left: 50%; transform: translate(-50%,-50%); background: rgb(202, 202, 202);"
+    <span style="left: 50%; transform: translate(-50%,-50%);"
           class="van-progress__pivot"
     >
       50%
