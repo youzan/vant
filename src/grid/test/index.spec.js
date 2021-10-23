@@ -19,7 +19,7 @@ test('click grid item', () => {
   expect(onClick).toHaveBeenCalledTimes(1);
 });
 
-test('sqaure and set gutter', () => {
+test('square and set gutter', () => {
   const wrapper = mount({
     template: `
       <van-grid square :column-num="2" gutter="10rem">

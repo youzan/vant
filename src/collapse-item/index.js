@@ -7,7 +7,7 @@ import { ChildrenMixin } from '../mixins/relation';
 
 // Components
 import Cell from '../cell';
-import { cellProps } from '../cell/shared';
+import { cellSharedProps } from '../cell/shared';
 
 const [createComponent, bem] = createNamespace('collapse-item');
 
@@ -17,7 +17,7 @@ export default createComponent({
   mixins: [ChildrenMixin('vanCollapse')],
 
   props: {
-    ...cellProps,
+    ...cellSharedProps,
     name: [Number, String],
     disabled: Boolean,
     isLink: {
