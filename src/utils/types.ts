@@ -38,3 +38,9 @@ export type FunctionComponent<
   model?: ModelOptions;
   inject?: InjectOptions;
 };
+
+export interface CompatibleWheelEvent extends WheelEvent {
+  readonly wheelDeltaX: number;
+  readonly wheelDeltaY: number;
+  readonly wheelDelta: number;
+}
