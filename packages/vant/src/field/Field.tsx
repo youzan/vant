@@ -297,9 +297,17 @@ export default defineComponent({
     const blur = () => inputRef.value?.blur();
     const focus = () => inputRef.value?.focus();
 
+    const adjustTextareaSize = () => {
+      const input = inputRef.value;
+      if (props.type === 'textarea' && props.autosize && input) {
+        resizeTextarea(input, props.autosize);
+      }
+    };
+
     const onFocus = (event: Event) => {
       state.focused = true;
       emit('focus', event);
+      nextTick(adjustTextareaSize);
 
       // readonly not work in legacy mobile safari
       const readonly = getProp('readonly');
@@ -313,6 +321,7 @@ export default defineComponent({
       updateValue(getModelValue(), 'onBlur');
       emit('blur', event);
       validateWithTrigger('onBlur');
+      nextTick(adjustTextareaSize);
       resetScroll();
     };
 
@@ -362,13 +371,6 @@ export default defineComponent({
       }
 
       emit('keypress', event);
-    };
-
-    const adjustTextareaSize = () => {
-      const input = inputRef.value;
-      if (props.type === 'textarea' && props.autosize && input) {
-        resizeTextarea(input, props.autosize);
-      }
     };
 
     const renderInput = () => {
