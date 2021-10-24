@@ -119,7 +119,7 @@ app.use(Lazyload);
 The component exports the following type definitions:
 
 ```ts
-import type { ImageFit } from 'vant';
+import type { ImageFit, ImageProps } from 'vant';
 ```
 
 ## Theming

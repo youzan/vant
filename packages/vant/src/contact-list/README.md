@@ -100,7 +100,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { ContactListItem } from 'vant';
+import type { ContactListItem, ContactListProps } from 'vant';
 ```
 
 ## Theming

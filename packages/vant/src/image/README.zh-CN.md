@@ -147,7 +147,7 @@ app.use(Lazyload);
 组件导出以下类型定义：
 
 ```ts
-import type { ImageFit } from 'vant';
+import type { ImageFit, ImageProps } from 'vant';
 ```
 
 ## 主题定制

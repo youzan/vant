@@ -2,6 +2,7 @@ import {
   PropType,
   CSSProperties,
   defineComponent,
+  ExtractPropTypes,
   ButtonHTMLAttributes,
 } from 'vue';
 
@@ -34,30 +35,34 @@ export type ButtonNativeType = NonNullable<ButtonHTMLAttributes['type']>;
 
 export type ButtonIconPosition = 'left' | 'right';
 
+const props = extend({}, routeProps, {
+  tag: makeStringProp<keyof HTMLElementTagNameMap>('button'),
+  text: String,
+  icon: String,
+  type: makeStringProp<ButtonType>('default'),
+  size: makeStringProp<ButtonSize>('normal'),
+  color: String,
+  block: Boolean,
+  plain: Boolean,
+  round: Boolean,
+  square: Boolean,
+  loading: Boolean,
+  hairline: Boolean,
+  disabled: Boolean,
+  iconPrefix: String,
+  nativeType: makeStringProp<ButtonNativeType>('button'),
+  loadingSize: numericProp,
+  loadingText: String,
+  loadingType: String as PropType<LoadingType>,
+  iconPosition: makeStringProp<ButtonIconPosition>('left'),
+});
+
+export type ButtonProps = ExtractPropTypes<typeof props>;
+
 export default defineComponent({
   name,
 
-  props: extend({}, routeProps, {
-    tag: makeStringProp<keyof HTMLElementTagNameMap>('button'),
-    text: String,
-    icon: String,
-    type: makeStringProp<ButtonType>('default'),
-    size: makeStringProp<ButtonSize>('normal'),
-    color: String,
-    block: Boolean,
-    plain: Boolean,
-    round: Boolean,
-    square: Boolean,
-    loading: Boolean,
-    hairline: Boolean,
-    disabled: Boolean,
-    iconPrefix: String,
-    nativeType: makeStringProp<ButtonNativeType>('button'),
-    loadingSize: numericProp,
-    loadingText: String,
-    loadingType: String as PropType<LoadingType>,
-    iconPosition: makeStringProp<ButtonIconPosition>('left'),
-  }),
+  props,
 
   emits: ['click'],
 

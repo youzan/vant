@@ -241,7 +241,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { ActionSheetAction } from 'vant';
+import type { ActionSheetProps, ActionSheetAction } from 'vant';
 ```
 
 ## 主题定制

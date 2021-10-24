@@ -91,6 +91,14 @@ Empty 组件内置了多种占位图片类型，可以在不同业务场景下�
 | image       | 自定义图标     |
 | description | 自定义描述文字 |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { EmptyProps } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

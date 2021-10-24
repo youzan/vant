@@ -1,4 +1,11 @@
-import { watch, computed, PropType, CSSProperties, defineComponent } from 'vue';
+import {
+  watch,
+  computed,
+  PropType,
+  CSSProperties,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 import { raf, cancelRaf } from '@vant/use';
 import {
   isObject,
@@ -26,23 +33,27 @@ function getPath(clockwise: boolean, viewBoxSize: number) {
 
 export type CircleStartPosition = 'top' | 'right' | 'bottom' | 'left';
 
+const props = {
+  text: String,
+  size: numericProp,
+  fill: makeStringProp('none'),
+  rate: makeNumericProp(100),
+  speed: makeNumericProp(0),
+  color: [String, Object] as PropType<string | Record<string, string>>,
+  clockwise: truthProp,
+  layerColor: String,
+  currentRate: makeNumberProp(0),
+  strokeWidth: makeNumericProp(40),
+  strokeLinecap: String as PropType<CanvasLineCap>,
+  startPosition: makeStringProp<CircleStartPosition>('top'),
+};
+
+export type CircleProps = ExtractPropTypes<typeof props>;
+
 export default defineComponent({
   name,
 
-  props: {
-    text: String,
-    size: numericProp,
-    fill: makeStringProp('none'),
-    rate: makeNumericProp(100),
-    speed: makeNumericProp(0),
-    color: [String, Object] as PropType<string | Record<string, string>>,
-    clockwise: truthProp,
-    layerColor: String,
-    currentRate: makeNumberProp(0),
-    strokeWidth: makeNumericProp(40),
-    strokeLinecap: String as PropType<CanvasLineCap>,
-    startPosition: makeStringProp<CircleStartPosition>('top'),
-  },
+  props,
 
   emits: ['update:currentRate'],
 

@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -18,11 +18,18 @@ import type { CouponInfo } from '../coupon';
 
 const [name, bem, t] = createNamespace('coupon-cell');
 
-function formatValue(
-  coupons: CouponInfo[],
-  chosenCoupon: number | string,
-  currency: string
-) {
+const props = {
+  title: String,
+  border: truthProp,
+  editable: truthProp,
+  coupons: makeArrayProp<CouponInfo>(),
+  currency: makeStringProp('¥'),
+  chosenCoupon: makeNumericProp(-1),
+};
+
+export type CouponCellProps = ExtractPropTypes<typeof props>;
+
+function formatValue({ coupons, chosenCoupon, currency }: CouponCellProps) {
   const coupon = coupons[+chosenCoupon];
 
   if (coupon) {
@@ -43,28 +50,15 @@ function formatValue(
 export default defineComponent({
   name,
 
-  props: {
-    title: String,
-    border: truthProp,
-    editable: truthProp,
-    coupons: makeArrayProp<CouponInfo>(),
-    currency: makeStringProp('¥'),
-    chosenCoupon: makeNumericProp(-1),
-  },
+  props,
 
   setup(props) {
     return () => {
       const selected = props.coupons[+props.chosenCoupon];
-      const value = formatValue(
-        props.coupons,
-        props.chosenCoupon,
-        props.currency
-      );
-
       return (
         <Cell
           class={bem()}
-          value={value}
+          value={formatValue(props)}
           title={props.title || t('title')}
           border={props.border}
           isLink={props.editable}

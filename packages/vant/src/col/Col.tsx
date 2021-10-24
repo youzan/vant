@@ -1,4 +1,4 @@
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, ExtractPropTypes } from 'vue';
 import {
   numericProp,
   createNamespace,
@@ -10,14 +10,18 @@ import { ROW_KEY } from '../row/Row';
 
 const [name, bem] = createNamespace('col');
 
+const props = {
+  tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
+  span: makeNumericProp(0),
+  offset: numericProp,
+};
+
+export type ColProps = ExtractPropTypes<typeof props>;
+
 export default defineComponent({
   name,
 
-  props: {
-    tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
-    span: makeNumericProp(0),
-    offset: numericProp,
-  },
+  props,
 
   setup(props, { slots }) {
     const { parent, index } = useParent(ROW_KEY);

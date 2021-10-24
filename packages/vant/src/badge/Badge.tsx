@@ -1,4 +1,10 @@
-import { PropType, CSSProperties, defineComponent, computed } from 'vue';
+import {
+  computed,
+  PropType,
+  CSSProperties,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 import {
   isDef,
   addUnit,
@@ -11,18 +17,22 @@ import {
 
 const [name, bem] = createNamespace('badge');
 
+const props = {
+  dot: Boolean,
+  max: numericProp,
+  tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
+  color: String,
+  offset: Array as unknown as PropType<[string | number, string | number]>,
+  content: numericProp,
+  showZero: truthProp,
+};
+
+export type BadgeProps = ExtractPropTypes<typeof props>;
+
 export default defineComponent({
   name,
 
-  props: {
-    dot: Boolean,
-    max: numericProp,
-    tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
-    color: String,
-    offset: Array as unknown as PropType<[string | number, string | number]>,
-    content: numericProp,
-    showZero: truthProp,
-  },
+  props,
 
   setup(props, { slots }) {
     const hasContent = () => {

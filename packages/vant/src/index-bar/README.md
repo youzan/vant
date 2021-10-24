@@ -104,7 +104,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get IndexB
 The component exports the following type definitions:
 
 ```ts
-import type { IndexBarProps, IndexBarInstance } from 'vant';
+import type { IndexBarProps, IndexAnchorProps, IndexBarInstance } from 'vant';
 ```
 
 `IndexBarInstance` is the type of component instance:

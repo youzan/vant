@@ -1,4 +1,11 @@
-import { ref, reactive, computed, CSSProperties, defineComponent } from 'vue';
+import {
+  ref,
+  reactive,
+  computed,
+  CSSProperties,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import {
@@ -17,12 +24,16 @@ import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('index-anchor');
 
+const props = {
+  index: numericProp,
+};
+
+export type IndexAnchorProps = ExtractPropTypes<typeof props>;
+
 export default defineComponent({
   name,
 
-  props: {
-    index: numericProp,
-  },
+  props,
 
   setup(props, { slots }) {
     const state = reactive({

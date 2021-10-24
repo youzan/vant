@@ -1,4 +1,4 @@
-import { nextTick, defineComponent } from 'vue';
+import { nextTick, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -28,6 +28,21 @@ export type ActionSheetAction = {
   className?: unknown;
 };
 
+const props = extend({}, popupSharedProps, {
+  title: String,
+  round: truthProp,
+  actions: makeArrayProp<ActionSheetAction>(),
+  closeIcon: makeStringProp('cross'),
+  closeable: truthProp,
+  cancelText: String,
+  description: String,
+  closeOnPopstate: truthProp,
+  closeOnClickAction: Boolean,
+  safeAreaInsetBottom: truthProp,
+});
+
+export type ActionSheetProps = ExtractPropTypes<typeof props>;
+
 const popupKeys = [
   ...popupSharedPropKeys,
   'round',
@@ -38,18 +53,7 @@ const popupKeys = [
 export default defineComponent({
   name,
 
-  props: extend({}, popupSharedProps, {
-    title: String,
-    round: truthProp,
-    actions: makeArrayProp<ActionSheetAction>(),
-    closeIcon: makeStringProp('cross'),
-    closeable: truthProp,
-    cancelText: String,
-    description: String,
-    closeOnPopstate: truthProp,
-    closeOnClickAction: Boolean,
-    safeAreaInsetBottom: truthProp,
-  }),
+  props,
 
   emits: ['select', 'cancel', 'update:show'],
 

@@ -1,4 +1,4 @@
-import { PropType, reactive, defineComponent } from 'vue';
+import { PropType, reactive, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -33,6 +33,28 @@ import type {
 
 const [name, bem, t] = createNamespace('dialog');
 
+const props = extend({}, popupSharedProps, {
+  title: String,
+  theme: String as PropType<DialogTheme>,
+  width: numericProp,
+  message: [String, Function] as PropType<DialogMessage>,
+  callback: Function as PropType<(action?: DialogAction) => void>,
+  allowHtml: Boolean,
+  className: unknownProp,
+  transition: makeStringProp('van-dialog-bounce'),
+  messageAlign: String as PropType<DialogMessageAlign>,
+  closeOnPopstate: truthProp,
+  showCancelButton: Boolean,
+  cancelButtonText: String,
+  cancelButtonColor: String,
+  confirmButtonText: String,
+  confirmButtonColor: String,
+  showConfirmButton: truthProp,
+  closeOnClickOverlay: Boolean,
+});
+
+export type DialogProps = ExtractPropTypes<typeof props>;
+
 const popupKeys = [
   ...popupSharedPropKeys,
   'transition',
@@ -42,25 +64,7 @@ const popupKeys = [
 export default defineComponent({
   name,
 
-  props: extend({}, popupSharedProps, {
-    title: String,
-    theme: String as PropType<DialogTheme>,
-    width: numericProp,
-    message: [String, Function] as PropType<DialogMessage>,
-    callback: Function as PropType<(action?: DialogAction) => void>,
-    allowHtml: Boolean,
-    className: unknownProp,
-    transition: makeStringProp('van-dialog-bounce'),
-    messageAlign: String as PropType<DialogMessageAlign>,
-    closeOnPopstate: truthProp,
-    showCancelButton: Boolean,
-    cancelButtonText: String,
-    cancelButtonColor: String,
-    confirmButtonText: String,
-    confirmButtonColor: String,
-    showConfirmButton: truthProp,
-    closeOnClickOverlay: Boolean,
-  }),
+  props,
 
   emits: ['confirm', 'cancel', 'update:show'],
 

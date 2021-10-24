@@ -172,7 +172,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { CircleStartPosition } from 'vant';
+import type { CircleProps, CircleStartPosition } from 'vant';
 ```
 
 ## Theming

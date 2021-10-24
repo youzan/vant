@@ -25,8 +25,10 @@ const props = {
   columnNum: makeNumericProp(4),
 };
 
+export type GridProps = ExtractPropTypes<typeof props>;
+
 export type GridProvide = {
-  props: ExtractPropTypes<typeof props>;
+  props: GridProps;
 };
 
 export const GRID_KEY: InjectionKey<GridProvide> = Symbol(name);

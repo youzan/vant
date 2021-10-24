@@ -126,7 +126,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { AddressListAddress } from 'vant';
+import type { AddressListProps, AddressListAddress } from 'vant';
 ```
 
 ## Theming

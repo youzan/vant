@@ -108,3 +108,11 @@ app.use(Icon);
 | 事件名 | 说明           | 回调参数            |
 | ------ | -------------- | ------------------- |
 | click  | 点击图标时触发 | _event: MouseEvent_ |
+
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { IconProps } from 'vant';
+```

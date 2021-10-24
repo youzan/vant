@@ -6,6 +6,7 @@ export default Button;
 export type {
   ButtonType,
   ButtonSize,
+  ButtonProps,
   ButtonNativeType,
   ButtonIconPosition,
 } from './Button';

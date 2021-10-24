@@ -133,6 +133,18 @@ Use `badge` prop to show badge in icon.
 | ------- | -------------- |
 | default | Button content |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type {
+  ActionBarProps,
+  ActionBarIconProps,
+  ActionBarButtonProps,
+} from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

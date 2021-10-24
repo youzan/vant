@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, ExtractPropTypes } from 'vue';
 import {
   numericProp,
   getSizeStyle,
@@ -11,14 +11,18 @@ const [name, bem] = createNamespace('empty');
 
 const PRESET_IMAGES = ['error', 'search', 'default'];
 
+const props = {
+  image: makeStringProp('default'),
+  imageSize: numericProp,
+  description: String,
+};
+
+export type EmptyProps = ExtractPropTypes<typeof props>;
+
 export default defineComponent({
   name,
 
-  props: {
-    image: makeStringProp('default'),
-    imageSize: numericProp,
-    description: String,
-  },
+  props,
 
   setup(props, { slots }) {
     const renderImage = () => {

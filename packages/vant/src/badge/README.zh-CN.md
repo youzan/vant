@@ -141,6 +141,14 @@ app.use(Badge);
 | default | 徽标包裹的子元素 |
 | content | 自定义徽标内容   |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { BadgeProps } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量
