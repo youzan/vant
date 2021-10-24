@@ -165,7 +165,6 @@ export default defineComponent({
 
         nextTick(() => {
           activeTab.value++;
-          emit('change-tab', activeTab.value);
         });
       }
 
@@ -191,9 +190,6 @@ export default defineComponent({
 
     const onClickTab = ({ name, title }: TabsClickTabEventParams) => {
       emit('click-tab', name, title);
-      nextTick(() => {
-        emit('change-tab', activeTab.value);
-      });
     };
 
     const renderHeader = () => (
@@ -293,6 +289,9 @@ export default defineComponent({
     );
 
     updateTabs();
+    watch(activeTab, () => {
+      emit('change-tab', activeTab.value);
+    });
 
     watch(() => props.options, updateTabs, { deep: true });
     watch(
