@@ -45,7 +45,14 @@ export default defineComponent({
 
   props,
 
-  emits: ['close', 'change', 'finish', 'click-tab', 'update:modelValue'],
+  emits: [
+    'close',
+    'change',
+    'finish',
+    'click-tab',
+    'update:modelValue',
+    'change-tab',
+  ],
 
   setup(props, { slots, emit }) {
     const tabs = ref<CascaderTab[]>([]);
@@ -158,6 +165,7 @@ export default defineComponent({
 
         nextTick(() => {
           activeTab.value++;
+          emit('change-tab', activeTab.value);
         });
       }
 
@@ -181,8 +189,12 @@ export default defineComponent({
 
     const onClose = () => emit('close');
 
-    const onClickTab = ({ name, title }: TabsClickTabEventParams) =>
+    const onClickTab = ({ name, title }: TabsClickTabEventParams) => {
       emit('click-tab', name, title);
+      nextTick(() => {
+        emit('change-tab', activeTab.value);
+      });
+    };
 
     const renderHeader = () => (
       <div class={bem('header')}>
@@ -258,6 +270,9 @@ export default defineComponent({
             unselected: !selected,
           })}
         >
+          {slots.optionTop ? (
+            <div class={bem('option-top')}> {slots.optionTop()} </div>
+          ) : null}
           {renderOptions(options, selected, tabIndex)}
         </Tab>
       );

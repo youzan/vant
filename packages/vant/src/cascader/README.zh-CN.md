@@ -207,6 +207,52 @@ export default {
 };
 ```
 
+### 自定义内容
+
+通过 `field-names` 属性可以自定义 `options` 里的字段名称。
+
+```html
+<van-cascader
+  v-model="code"
+  title="请选择所在地区"
+  :options="options"
+  :field-names="fieldNames"
+/>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const code = ref('');
+    const fieldNames = {
+      text: 'name',
+      value: 'code',
+      children: 'items',
+    };
+    const options = [
+      {
+        name: '浙江省',
+        code: '330000',
+        items: [{ name: '杭州市', code: '330100' }],
+      },
+      {
+        name: '江苏省',
+        code: '320000',
+        items: [{ name: '南京市', code: '320100' }],
+      },
+    ];
+
+    return {
+      code,
+      options,
+      fieldNames,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
