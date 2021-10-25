@@ -82,7 +82,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { ContactEditInfo } from 'vant';
+import type { ContactEditInfo, ContactEditProps } from 'vant';
 ```
 
 ## Theming

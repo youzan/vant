@@ -32,7 +32,7 @@ import type { DropdownMenuProvide, DropdownMenuDirection } from './types';
 
 const [name, bem] = createNamespace('dropdown-menu');
 
-const props = {
+const dropdownMenuProps = {
   overlay: truthProp,
   zIndex: numericProp,
   duration: makeNumericProp(0.2),
@@ -42,14 +42,14 @@ const props = {
   closeOnClickOverlay: truthProp,
 };
 
-export type DropdownMenuProps = ExtractPropTypes<typeof props>;
+export type DropdownMenuProps = ExtractPropTypes<typeof dropdownMenuProps>;
 
 export const DROPDOWN_KEY: InjectionKey<DropdownMenuProvide> = Symbol(name);
 
 export default defineComponent({
   name,
 
-  props,
+  props: dropdownMenuProps,
 
   setup(props, { slots }) {
     const root = ref<HTMLElement>();

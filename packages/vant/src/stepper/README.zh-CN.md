@@ -182,7 +182,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { StepperTheme } from 'vant';
+import type { StepperTheme, StepperProps } from 'vant';
 ```
 
 ## 主题定制

@@ -13,7 +13,7 @@ const [name, bem] = createNamespace('radio-group');
 
 export type RadioGroupDirection = CheckerDirection;
 
-const props = {
+const radioGroupProps = {
   disabled: Boolean,
   iconSize: numericProp,
   direction: String as PropType<RadioGroupDirection>,
@@ -21,8 +21,10 @@ const props = {
   checkedColor: String,
 };
 
+export type RadioGroupProps = ExtractPropTypes<typeof radioGroupProps>;
+
 export type RadioGroupProvide = {
-  props: ExtractPropTypes<typeof props>;
+  props: RadioGroupProps;
   updateValue: (value: unknown) => void;
 };
 
@@ -31,7 +33,7 @@ export const RADIO_KEY: InjectionKey<RadioGroupProvide> = Symbol(name);
 export default defineComponent({
   name,
 
-  props,
+  props: radioGroupProps,
 
   emits: ['change', 'update:modelValue'],
 

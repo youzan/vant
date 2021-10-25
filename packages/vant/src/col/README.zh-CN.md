@@ -123,5 +123,5 @@ Layout 组件提供了 `24列栅格`，通过在 `Col` 上添加 `span` 属性�
 组件导出以下类型定义：
 
 ```ts
-import type { RowAlign, RowJustify } from 'vant';
+import type { ColProps, RowProps, RowAlign, RowJustify } from 'vant';
 ```

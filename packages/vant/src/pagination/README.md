@@ -101,7 +101,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { PaginationMode } from 'vant';
+import type { PaginationMode, PaginationProps } from 'vant';
 ```
 
 ## Theming

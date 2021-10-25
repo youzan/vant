@@ -1,4 +1,12 @@
-import { ref, watch, computed, PropType, defineComponent, nextTick } from 'vue';
+import {
+  ref,
+  watch,
+  computed,
+  PropType,
+  nextTick,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import {
@@ -30,33 +38,37 @@ const isEqual = (value1?: string | number, value2?: string | number) =>
 
 export type StepperTheme = 'default' | 'round';
 
+const stepperProps = {
+  min: makeNumericProp(1),
+  max: makeNumericProp(Infinity),
+  name: makeNumericProp(''),
+  step: makeNumericProp(1),
+  theme: String as PropType<StepperTheme>,
+  integer: Boolean,
+  disabled: Boolean,
+  showPlus: truthProp,
+  showMinus: truthProp,
+  showInput: truthProp,
+  longPress: truthProp,
+  allowEmpty: Boolean,
+  modelValue: numericProp,
+  inputWidth: numericProp,
+  buttonSize: numericProp,
+  placeholder: String,
+  disablePlus: Boolean,
+  disableMinus: Boolean,
+  disableInput: Boolean,
+  beforeChange: Function as PropType<Interceptor>,
+  defaultValue: makeNumericProp(1),
+  decimalLength: numericProp,
+};
+
+export type StepperProps = ExtractPropTypes<typeof stepperProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    min: makeNumericProp(1),
-    max: makeNumericProp(Infinity),
-    name: makeNumericProp(''),
-    step: makeNumericProp(1),
-    theme: String as PropType<StepperTheme>,
-    integer: Boolean,
-    disabled: Boolean,
-    showPlus: truthProp,
-    showMinus: truthProp,
-    showInput: truthProp,
-    longPress: truthProp,
-    allowEmpty: Boolean,
-    modelValue: numericProp,
-    inputWidth: numericProp,
-    buttonSize: numericProp,
-    placeholder: String,
-    disablePlus: Boolean,
-    disableMinus: Boolean,
-    disableInput: Boolean,
-    beforeChange: Function as PropType<Interceptor>,
-    defaultValue: makeNumericProp(1),
-    decimalLength: numericProp,
-  },
+  props: stepperProps,
 
   emits: [
     'plus',

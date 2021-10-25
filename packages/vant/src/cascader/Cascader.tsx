@@ -26,7 +26,7 @@ import type { CascaderTab, CascaderOption, CascaderFieldNames } from './types';
 
 const [name, bem, t] = createNamespace('cascader');
 
-const props = {
+const cascaderProps = {
   title: String,
   options: makeArrayProp<CascaderOption>(),
   closeable: truthProp,
@@ -38,12 +38,12 @@ const props = {
   activeColor: String,
 };
 
-export type CascaderProps = ExtractPropTypes<typeof props>;
+export type CascaderProps = ExtractPropTypes<typeof cascaderProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: cascaderProps,
 
   emits: ['close', 'change', 'finish', 'click-tab', 'update:modelValue'],
 

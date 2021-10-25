@@ -1,4 +1,9 @@
-import { PropType, CSSProperties, defineComponent } from 'vue';
+import {
+  PropType,
+  CSSProperties,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import {
@@ -20,7 +25,7 @@ const [name, bem] = createNamespace('cell');
 
 export type CellArrowDirection = 'up' | 'down' | 'left' | 'right';
 
-export const cellProps = {
+export const cellSharedProps = {
   icon: String,
   size: String as PropType<'large'>,
   title: numericProp,
@@ -42,10 +47,14 @@ export const cellProps = {
   },
 };
 
+const cellProps = extend({}, cellSharedProps, routeProps);
+
+export type CellProps = ExtractPropTypes<typeof cellProps>;
+
 export default defineComponent({
   name,
 
-  props: extend({}, cellProps, routeProps),
+  props: cellProps,
 
   setup(props, { slots }) {
     if (process.env.NODE_ENV !== 'production') {

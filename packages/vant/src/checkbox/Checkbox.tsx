@@ -16,16 +16,16 @@ import type { CheckboxExpose } from './types';
 
 const [name, bem] = createNamespace('checkbox');
 
-const props = extend({}, checkerProps, {
+const checkboxProps = extend({}, checkerProps, {
   bindGroup: truthProp,
 });
 
-export type CheckboxProps = ExtractPropTypes<typeof props>;
+export type CheckboxProps = ExtractPropTypes<typeof checkboxProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: checkboxProps,
 
   emits: ['change', 'update:modelValue'],
 

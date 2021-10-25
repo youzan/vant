@@ -82,7 +82,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { ContactEditInfo } from 'vant';
+import type { ContactEditInfo, ContactEditProps } from 'vant';
 ```
 
 ## 主题定制

@@ -5,6 +5,7 @@ import {
   onUnmounted,
   CSSProperties,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -29,7 +30,7 @@ import type { ToastType, ToastPosition } from './types';
 
 const [name, bem] = createNamespace('toast');
 
-const popupProps = [
+const popupInheritProps = [
   'show',
   'overlay',
   'transition',
@@ -38,28 +39,32 @@ const popupProps = [
   'closeOnClickOverlay',
 ] as const;
 
+const toastProps = {
+  icon: String,
+  show: Boolean,
+  type: makeStringProp<ToastType>('text'),
+  overlay: Boolean,
+  message: numericProp,
+  iconSize: numericProp,
+  duration: makeNumberProp(2000),
+  position: makeStringProp<ToastPosition>('middle'),
+  className: unknownProp,
+  iconPrefix: String,
+  transition: makeStringProp('van-fade'),
+  loadingType: String as PropType<LoadingType>,
+  forbidClick: Boolean,
+  overlayClass: unknownProp,
+  overlayStyle: Object as PropType<CSSProperties>,
+  closeOnClick: Boolean,
+  closeOnClickOverlay: Boolean,
+};
+
+export type ToastProps = ExtractPropTypes<typeof toastProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    icon: String,
-    show: Boolean,
-    type: makeStringProp<ToastType>('text'),
-    overlay: Boolean,
-    message: numericProp,
-    iconSize: numericProp,
-    duration: makeNumberProp(2000),
-    position: makeStringProp<ToastPosition>('middle'),
-    className: unknownProp,
-    iconPrefix: String,
-    transition: makeStringProp('van-fade'),
-    loadingType: String as PropType<LoadingType>,
-    forbidClick: Boolean,
-    overlayClass: unknownProp,
-    overlayStyle: Object as PropType<CSSProperties>,
-    closeOnClick: Boolean,
-    closeOnClickOverlay: Boolean,
-  },
+  props: toastProps,
 
   emits: ['update:show'],
 
@@ -146,7 +151,7 @@ export default defineComponent({
         onClick={onClick}
         onClosed={clearTimer}
         onUpdate:show={updateShow}
-        {...pick(props, popupProps)}
+        {...pick(props, popupInheritProps)}
       >
         {renderIcon()}
         {renderMessage()}

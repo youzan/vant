@@ -133,6 +133,14 @@ Use `content` slot to custom :content of badge.
 | default | Default slot         |
 | content | Custom badge content |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { BadgeProps } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

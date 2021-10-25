@@ -123,6 +123,14 @@ export default {
 | click-left  | 点击左侧按钮时触发 | _event: MouseEvent_ |
 | click-right | 点击右侧按钮时触发 | _event: MouseEvent_ |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { NavbarProps } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

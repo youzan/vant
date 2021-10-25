@@ -3,3 +3,4 @@ import _Badge from './Badge';
 
 export const Badge = withInstall(_Badge);
 export default Badge;
+export type { BadgeProps } from './Badge';

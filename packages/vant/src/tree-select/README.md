@@ -233,7 +233,7 @@ In every tree object, `text` property defines `id` stands for the unique key whi
 The component exports the following type definitions:
 
 ```ts
-import type { TreeSelectItem, TreeSelectChild } from 'vant';
+import type { TreeSelectItem, TreeSelectChild, TreeSelectProps } from 'vant';
 ```
 
 ## Theming

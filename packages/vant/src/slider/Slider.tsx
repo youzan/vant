@@ -1,4 +1,11 @@
-import { ref, computed, PropType, CSSProperties, defineComponent } from 'vue';
+import {
+  ref,
+  computed,
+  PropType,
+  CSSProperties,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import {
@@ -23,27 +30,31 @@ type NumberRange = [number, number];
 
 type SliderValue = number | NumberRange;
 
+const sliderProps = {
+  min: makeNumericProp(0),
+  max: makeNumericProp(100),
+  step: makeNumericProp(1),
+  range: Boolean,
+  reverse: Boolean,
+  disabled: Boolean,
+  readonly: Boolean,
+  vertical: Boolean,
+  barHeight: numericProp,
+  buttonSize: numericProp,
+  activeColor: String,
+  inactiveColor: String,
+  modelValue: {
+    type: [Number, Array] as PropType<SliderValue>,
+    default: 0,
+  },
+};
+
+export type SliderProps = ExtractPropTypes<typeof sliderProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    min: makeNumericProp(0),
-    max: makeNumericProp(100),
-    step: makeNumericProp(1),
-    range: Boolean,
-    reverse: Boolean,
-    disabled: Boolean,
-    readonly: Boolean,
-    vertical: Boolean,
-    barHeight: numericProp,
-    buttonSize: numericProp,
-    activeColor: String,
-    inactiveColor: String,
-    modelValue: {
-      type: [Number, Array] as PropType<SliderValue>,
-      default: 0,
-    },
-  },
+  props: sliderProps,
 
   emits: ['change', 'drag-end', 'drag-start', 'update:modelValue'],
 

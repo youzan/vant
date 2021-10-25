@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import { isDef, numericProp, makeStringProp, createNamespace } from '../utils';
@@ -9,22 +9,26 @@ import { Image } from '../image';
 
 const [name, bem] = createNamespace('card');
 
+const cardProps = {
+  tag: String,
+  num: numericProp,
+  desc: String,
+  thumb: String,
+  title: String,
+  price: numericProp,
+  centered: Boolean,
+  lazyLoad: Boolean,
+  currency: makeStringProp('¥'),
+  thumbLink: String,
+  originPrice: numericProp,
+};
+
+export type CardProps = ExtractPropTypes<typeof cardProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    tag: String,
-    num: numericProp,
-    desc: String,
-    thumb: String,
-    title: String,
-    price: numericProp,
-    centered: Boolean,
-    lazyLoad: Boolean,
-    currency: makeStringProp('¥'),
-    thumbLink: String,
-    originPrice: numericProp,
-  },
+  props: cardProps,
 
   emits: ['click-thumb'],
 

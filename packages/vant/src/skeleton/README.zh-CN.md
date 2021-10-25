@@ -84,7 +84,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { SkeletonAvatarShape } from 'vant';
+import type { SkeletonProps, SkeletonAvatarShape } from 'vant';
 ```
 
 ## 主题定制

@@ -32,7 +32,7 @@ import type { DropdownItemOption } from './types';
 
 const [name, bem] = createNamespace('dropdown-item');
 
-const props = {
+const dropdownItemProps = {
   title: String,
   options: makeArrayProp<DropdownItemOption>(),
   disabled: Boolean,
@@ -42,12 +42,12 @@ const props = {
   titleClass: unknownProp,
 };
 
-export type DropdownItemProps = ExtractPropTypes<typeof props>;
+export type DropdownItemProps = ExtractPropTypes<typeof dropdownItemProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: dropdownItemProps,
 
   emits: ['open', 'opened', 'close', 'closed', 'change', 'update:modelValue'],
 

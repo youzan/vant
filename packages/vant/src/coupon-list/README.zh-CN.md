@@ -151,6 +151,14 @@ export default {
 | valueDesc   | 折扣券优惠金额文案              | _string_ |
 | unitDesc    | 单位文案                        | _string_ |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { CouponCellProps, CouponListProps } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

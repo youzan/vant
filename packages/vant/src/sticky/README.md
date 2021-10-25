@@ -85,7 +85,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { StickyPosition } from 'vant';
+import type { StickyProps, StickyPosition } from 'vant';
 ```
 
 ## Theming

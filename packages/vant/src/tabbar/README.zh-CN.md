@@ -212,6 +212,14 @@ export default {
 | ---- | ---------- | ----------------- |
 | icon | 自定义图标 | _active: boolean_ |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { TabbarProps, TabbarItemProps } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

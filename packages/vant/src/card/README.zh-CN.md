@@ -110,6 +110,14 @@ app.use(Card);
 | tags         | 自定义描述下方标签区域 |
 | footer       | 自定义右下角内容       |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { CardProps } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

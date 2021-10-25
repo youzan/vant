@@ -197,7 +197,7 @@ app.use(CellGroup);
 The component exports the following type definitions:
 
 ```ts
-import type { CellArrowDirection } from 'vant';
+import type { CellProps, CellGroupProps, CellArrowDirection } from 'vant';
 ```
 
 ## Theming

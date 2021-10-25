@@ -129,14 +129,22 @@ export default {
 
 ### Slots
 
-| 名称    | 说明                 | 参数                       |
-| ------- | -------------------- | -------------------------- |
-| default | 自定义内容           | -                          |
-| normal  | 非下拉状态时顶部内容 | -                          |
-| pulling | 下拉过程中顶部内容   | { distance: 当前下拉距离 } |
-| loosing | 释放过程中顶部内容   | { distance: 当前下拉距离 } |
-| loading | 加载过程中顶部内容   | { distance: 当前下拉距离 } |
-| success | 刷新成功提示内容     | -                          |
+| 名称    | 说明                 | 参数                   |
+| ------- | -------------------- | ---------------------- |
+| default | 自定义内容           | -                      |
+| normal  | 非下拉状态时顶部内容 | -                      |
+| pulling | 下拉过程中顶部内容   | _{ distance: number }_ |
+| loosing | 释放过程中顶部内容   | _{ distance: number }_ |
+| loading | 加载过程中顶部内容   | _{ distance: number }_ |
+| success | 刷新成功提示内容     | -                      |
+
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { PullRefreshProps } from 'vant';
+```
 
 ## 主题定制
 

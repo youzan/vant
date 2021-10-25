@@ -181,6 +181,14 @@ export default {
 | left-button `v3.1.3` | Custom left button in range mode | _{ value: number }_ |
 | right-button `v3.1.3` | Custom right button in range mode | _{ value: number }_ |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { SliderProps } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

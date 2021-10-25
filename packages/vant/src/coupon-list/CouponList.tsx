@@ -5,6 +5,7 @@ import {
   reactive,
   onMounted,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -28,30 +29,33 @@ import { Coupon, CouponInfo } from '../coupon';
 
 const [name, bem, t] = createNamespace('coupon-list');
 const EMPTY_IMAGE = 'https://img.yzcdn.cn/vant/coupon-empty.png';
+const couponListProps = {
+  code: makeStringProp(''),
+  coupons: makeArrayProp<CouponInfo>(),
+  currency: makeStringProp('¥'),
+  showCount: truthProp,
+  emptyImage: makeStringProp(EMPTY_IMAGE),
+  chosenCoupon: makeNumberProp(-1),
+  enabledTitle: String,
+  disabledTitle: String,
+  disabledCoupons: makeArrayProp<CouponInfo>(),
+  showExchangeBar: truthProp,
+  showCloseButton: truthProp,
+  closeButtonText: String,
+  inputPlaceholder: String,
+  exchangeMinLength: makeNumberProp(1),
+  exchangeButtonText: String,
+  displayedCouponIndex: makeNumberProp(-1),
+  exchangeButtonLoading: Boolean,
+  exchangeButtonDisabled: Boolean,
+};
+
+export type CouponListProps = ExtractPropTypes<typeof couponListProps>;
 
 export default defineComponent({
   name,
 
-  props: {
-    code: makeStringProp(''),
-    coupons: makeArrayProp<CouponInfo>(),
-    currency: makeStringProp('¥'),
-    showCount: truthProp,
-    emptyImage: makeStringProp(EMPTY_IMAGE),
-    chosenCoupon: makeNumberProp(-1),
-    enabledTitle: String,
-    disabledTitle: String,
-    disabledCoupons: makeArrayProp<CouponInfo>(),
-    showExchangeBar: truthProp,
-    showCloseButton: truthProp,
-    closeButtonText: String,
-    inputPlaceholder: String,
-    exchangeMinLength: makeNumberProp(1),
-    exchangeButtonText: String,
-    displayedCouponIndex: makeNumberProp(-1),
-    exchangeButtonLoading: Boolean,
-    exchangeButtonDisabled: Boolean,
-  },
+  props: couponListProps,
 
   emits: ['change', 'exchange', 'update:code'],
 

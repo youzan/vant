@@ -149,6 +149,14 @@ export default {
 | valueDesc   | Value Text                          | _string_ |
 | unitDesc    | Unit Text                           | _string_ |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { CouponCellProps, CouponListProps } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

@@ -186,7 +186,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { CircleStartPosition } from 'vant';
+import type { CircleProps, CircleStartPosition } from 'vant';
 ```
 
 ## 主题定制

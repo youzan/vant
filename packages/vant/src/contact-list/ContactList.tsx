@@ -1,4 +1,4 @@
-import { PropType, defineComponent } from 'vue';
+import { PropType, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import { createNamespace, unknownProp } from '../utils';
@@ -20,15 +20,19 @@ export type ContactListItem = {
   isDefault?: boolean;
 };
 
+const contactListProps = {
+  list: Array as PropType<ContactListItem[]>,
+  addText: String,
+  modelValue: unknownProp,
+  defaultTagText: String,
+};
+
+export type ContactListProps = ExtractPropTypes<typeof contactListProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    list: Array as PropType<ContactListItem[]>,
-    addText: String,
-    modelValue: unknownProp,
-    defaultTagText: String,
-  },
+  props: contactListProps,
 
   emits: ['add', 'edit', 'select', 'update:modelValue'],
 

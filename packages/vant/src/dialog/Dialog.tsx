@@ -1,4 +1,4 @@
-import { PropType, reactive, defineComponent } from 'vue';
+import { PropType, reactive, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -33,7 +33,29 @@ import type {
 
 const [name, bem, t] = createNamespace('dialog');
 
-const popupKeys = [
+const dialogProps = extend({}, popupSharedProps, {
+  title: String,
+  theme: String as PropType<DialogTheme>,
+  width: numericProp,
+  message: [String, Function] as PropType<DialogMessage>,
+  callback: Function as PropType<(action?: DialogAction) => void>,
+  allowHtml: Boolean,
+  className: unknownProp,
+  transition: makeStringProp('van-dialog-bounce'),
+  messageAlign: String as PropType<DialogMessageAlign>,
+  closeOnPopstate: truthProp,
+  showCancelButton: Boolean,
+  cancelButtonText: String,
+  cancelButtonColor: String,
+  confirmButtonText: String,
+  confirmButtonColor: String,
+  showConfirmButton: truthProp,
+  closeOnClickOverlay: Boolean,
+});
+
+export type DialogProps = ExtractPropTypes<typeof dialogProps>;
+
+const popupInheritKeys = [
   ...popupSharedPropKeys,
   'transition',
   'closeOnPopstate',
@@ -42,25 +64,7 @@ const popupKeys = [
 export default defineComponent({
   name,
 
-  props: extend({}, popupSharedProps, {
-    title: String,
-    theme: String as PropType<DialogTheme>,
-    width: numericProp,
-    message: [String, Function] as PropType<DialogMessage>,
-    callback: Function as PropType<(action?: DialogAction) => void>,
-    allowHtml: Boolean,
-    className: unknownProp,
-    transition: makeStringProp('van-dialog-bounce'),
-    messageAlign: String as PropType<DialogMessageAlign>,
-    closeOnPopstate: truthProp,
-    showCancelButton: Boolean,
-    cancelButtonText: String,
-    cancelButtonColor: String,
-    confirmButtonText: String,
-    confirmButtonColor: String,
-    showConfirmButton: truthProp,
-    closeOnClickOverlay: Boolean,
-  }),
+  props: dialogProps,
 
   emits: ['confirm', 'cancel', 'update:show'],
 
@@ -225,7 +229,7 @@ export default defineComponent({
           style={{ width: addUnit(width) }}
           aria-labelledby={title || message}
           onUpdate:show={updateShow}
-          {...pick(props, popupKeys)}
+          {...pick(props, popupInheritKeys)}
         >
           {renderTitle()}
           {renderContent()}

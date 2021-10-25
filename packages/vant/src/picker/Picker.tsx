@@ -40,7 +40,7 @@ import type {
 
 const [name, bem, t] = createNamespace('picker');
 
-export const pickerProps = {
+export const pickerSharedProps = {
   title: String,
   loading: Boolean,
   readonly: Boolean,
@@ -53,20 +53,22 @@ export const pickerProps = {
   confirmButtonText: String,
 };
 
+const pickerProps = extend({}, pickerSharedProps, {
+  columns: makeArrayProp<PickerOption | PickerColumn>(),
+  // @deprecated
+  // should be removed in next major version
+  valueKey: String,
+  defaultIndex: makeNumericProp(0),
+  toolbarPosition: makeStringProp<PickerToolbarPosition>('top'),
+  columnsFieldNames: Object as PropType<PickerFieldNames>,
+});
+
 export type PickerProps = ExtractPropTypes<typeof pickerProps>;
 
 export default defineComponent({
   name,
 
-  props: extend({}, pickerProps, {
-    columns: makeArrayProp<PickerOption | PickerColumn>(),
-    // @deprecated
-    // should be removed in next major version
-    valueKey: String,
-    defaultIndex: makeNumericProp(0),
-    toolbarPosition: makeStringProp<PickerToolbarPosition>('top'),
-    columnsFieldNames: Object as PropType<PickerFieldNames>,
-  }),
+  props: pickerProps,
 
   emits: ['confirm', 'cancel', 'change'],
 

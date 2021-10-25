@@ -1,4 +1,4 @@
-import { PropType, defineComponent, InjectionKey } from 'vue';
+import { PropType, defineComponent, InjectionKey, ExtractPropTypes } from 'vue';
 import { truthProp, createNamespace, BORDER_TOP_BOTTOM } from '../utils';
 import { useChildren } from '@vant/use';
 
@@ -10,6 +10,19 @@ export type CollapseProvide = {
 };
 
 export const COLLAPSE_KEY: InjectionKey<CollapseProvide> = Symbol(name);
+
+const collapseProps = {
+  border: truthProp,
+  accordion: Boolean,
+  modelValue: {
+    type: [String, Number, Array] as PropType<
+      string | number | Array<string | number>
+    >,
+    default: '',
+  },
+};
+
+export type CollapseProps = ExtractPropTypes<typeof collapseProps>;
 
 function validateModelValue(
   modelValue: string | number | Array<string | number>,
@@ -33,16 +46,7 @@ function validateModelValue(
 export default defineComponent({
   name,
 
-  props: {
-    border: truthProp,
-    accordion: Boolean,
-    modelValue: {
-      type: [String, Number, Array] as PropType<
-        string | number | Array<string | number>
-      >,
-      default: '',
-    },
-  },
+  props: collapseProps,
 
   emits: ['change', 'update:modelValue'],
 

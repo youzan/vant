@@ -1,4 +1,10 @@
-import { PropType, Transition, CSSProperties, defineComponent } from 'vue';
+import {
+  PropType,
+  Transition,
+  CSSProperties,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 import {
   noop,
   isDef,
@@ -14,17 +20,21 @@ import { useLazyRender } from '../composables/use-lazy-render';
 
 const [name, bem] = createNamespace('overlay');
 
+const overlayProps = {
+  show: Boolean,
+  zIndex: numericProp,
+  duration: numericProp,
+  className: unknownProp,
+  lockScroll: truthProp,
+  customStyle: Object as PropType<CSSProperties>,
+};
+
+export type OverlayProps = ExtractPropTypes<typeof overlayProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    show: Boolean,
-    zIndex: numericProp,
-    duration: numericProp,
-    className: unknownProp,
-    lockScroll: truthProp,
-    customStyle: Object as PropType<CSSProperties>,
-  },
+  props: overlayProps,
 
   setup(props, { slots }) {
     const lazyRender = useLazyRender(() => props.show);

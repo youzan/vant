@@ -123,7 +123,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { NotifyType, NotifyOptions } from 'vant';
+import type { NotifyType, NotifyProps, NotifyOptions } from 'vant';
 ```
 
 ## Theming

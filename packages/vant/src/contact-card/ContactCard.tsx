@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, ExtractPropTypes } from 'vue';
 import { truthProp, makeStringProp, createNamespace } from '../utils';
 import { Cell } from '../cell';
 
@@ -6,16 +6,20 @@ const [name, bem, t] = createNamespace('contact-card');
 
 export type ContactCardType = 'add' | 'edit';
 
+const contactCardProps = {
+  tel: String,
+  name: String,
+  type: makeStringProp<ContactCardType>('add'),
+  addText: String,
+  editable: truthProp,
+};
+
+export type ContactCardProps = ExtractPropTypes<typeof contactCardProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    tel: String,
-    name: String,
-    type: makeStringProp<ContactCardType>('add'),
-    addText: String,
-    editable: truthProp,
-  },
+  props: contactCardProps,
 
   emits: ['click'],
 

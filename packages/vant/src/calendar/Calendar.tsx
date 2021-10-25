@@ -53,7 +53,7 @@ import type {
   CalendarMonthInstance,
 } from './types';
 
-const props = {
+const calendarProps = {
   show: Boolean,
   type: makeStringProp<CalendarType>('single'),
   title: String,
@@ -100,12 +100,12 @@ const props = {
   },
 };
 
-export type CalendarProps = ExtractPropTypes<typeof props>;
+export type CalendarProps = ExtractPropTypes<typeof calendarProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: calendarProps,
 
   emits: [
     'select',

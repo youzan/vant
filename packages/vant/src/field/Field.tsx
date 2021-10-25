@@ -35,7 +35,7 @@ import {
   resizeTextarea,
   runRuleValidator,
 } from './utils';
-import { cellProps } from '../cell/Cell';
+import { cellSharedProps } from '../cell/Cell';
 
 // Composables
 import { CUSTOM_FIELD_INJECTION_KEY, useParent } from '@vant/use';
@@ -93,7 +93,7 @@ export const fieldSharedProps = {
   },
 };
 
-const props = extend({}, cellProps, fieldSharedProps, {
+const fieldProps = extend({}, cellSharedProps, fieldSharedProps, {
   rows: numericProp,
   type: makeStringProp<FieldType>('text'),
   rules: Array as PropType<FieldRule[]>,
@@ -109,12 +109,12 @@ const props = extend({}, cellProps, fieldSharedProps, {
   },
 });
 
-export type FieldProps = ExtractPropTypes<typeof props>;
+export type FieldProps = ExtractPropTypes<typeof fieldProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: fieldProps,
 
   emits: [
     'blur',

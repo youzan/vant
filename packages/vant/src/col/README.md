@@ -118,5 +118,5 @@ Set grid spacing using `gutter` attribute. The default value is 0.
 The component exports the following type definitions:
 
 ```ts
-import type { RowAlign, RowJustify } from 'vant';
+import type { ColProps, RowProps, RowAlign, RowJustify } from 'vant';
 ```

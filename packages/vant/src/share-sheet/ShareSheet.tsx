@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -33,7 +33,7 @@ const PRESET_ICONS = [
   'wechat-moments',
 ];
 
-const popupKeys = [
+const popupInheritKeys = [
   ...popupSharedPropKeys,
   'round',
   'closeOnPopstate',
@@ -49,18 +49,22 @@ function getIconURL(icon: string) {
 
 const [name, bem, t] = createNamespace('share-sheet');
 
+const shareSheetProps = extend({}, popupSharedProps, {
+  title: String,
+  round: truthProp,
+  options: makeArrayProp<ShareSheetOption | ShareSheetOption[]>(),
+  cancelText: String,
+  description: String,
+  closeOnPopstate: truthProp,
+  safeAreaInsetBottom: truthProp,
+});
+
+export type ShareSheetProps = ExtractPropTypes<typeof shareSheetProps>;
+
 export default defineComponent({
   name,
 
-  props: extend({}, popupSharedProps, {
-    title: String,
-    round: truthProp,
-    options: makeArrayProp<ShareSheetOption | ShareSheetOption[]>(),
-    cancelText: String,
-    description: String,
-    closeOnPopstate: truthProp,
-    safeAreaInsetBottom: truthProp,
-  }),
+  props: shareSheetProps,
 
   emits: ['cancel', 'select', 'update:show'],
 
@@ -141,7 +145,7 @@ export default defineComponent({
         class={bem()}
         position="bottom"
         onUpdate:show={updateShow}
-        {...pick(props, popupKeys)}
+        {...pick(props, popupInheritKeys)}
       >
         {renderHeader()}
         {renderRows()}

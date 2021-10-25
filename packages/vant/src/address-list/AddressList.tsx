@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -15,18 +15,22 @@ import AddressListItem, { AddressListAddress } from './AddressListItem';
 
 const [name, bem, t] = createNamespace('address-list');
 
+const addressListProps = {
+  list: makeArrayProp<AddressListAddress>(),
+  modelValue: numericProp,
+  switchable: truthProp,
+  disabledText: String,
+  disabledList: makeArrayProp<AddressListAddress>(),
+  addButtonText: String,
+  defaultTagText: String,
+};
+
+export type AddressListProps = ExtractPropTypes<typeof addressListProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    list: makeArrayProp<AddressListAddress>(),
-    modelValue: numericProp,
-    switchable: truthProp,
-    disabledText: String,
-    disabledList: makeArrayProp<AddressListAddress>(),
-    addButtonText: String,
-    defaultTagText: String,
-  },
+  props: addressListProps,
 
   emits: [
     'add',

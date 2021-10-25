@@ -220,6 +220,7 @@ The component exports the following type definitions:
 
 ```ts
 import type {
+  DialogProps,
   DialogTheme,
   DialogMessage,
   DialogOptions,

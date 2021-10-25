@@ -78,7 +78,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { SkeletonAvatarShape } from 'vant';
+import type { SkeletonProps, SkeletonAvatarShape } from 'vant';
 ```
 
 ## Theming

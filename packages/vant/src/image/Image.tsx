@@ -7,6 +7,7 @@ import {
   CSSProperties,
   onBeforeUnmount,
   defineComponent,
+  ExtractPropTypes,
   getCurrentInstance,
 } from 'vue';
 
@@ -28,25 +29,29 @@ const [name, bem] = createNamespace('image');
 
 export type ImageFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
 
+const imageProps = {
+  src: String,
+  alt: String,
+  fit: String as PropType<ImageFit>,
+  round: Boolean,
+  width: numericProp,
+  height: numericProp,
+  radius: numericProp,
+  lazyLoad: Boolean,
+  iconSize: numericProp,
+  showError: truthProp,
+  errorIcon: makeStringProp('photo-fail'),
+  iconPrefix: String,
+  showLoading: truthProp,
+  loadingIcon: makeStringProp('photo'),
+};
+
+export type ImageProps = ExtractPropTypes<typeof imageProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    src: String,
-    alt: String,
-    fit: String as PropType<ImageFit>,
-    round: Boolean,
-    width: numericProp,
-    height: numericProp,
-    radius: numericProp,
-    lazyLoad: Boolean,
-    iconSize: numericProp,
-    showError: truthProp,
-    errorIcon: makeStringProp('photo-fail'),
-    iconPrefix: String,
-    showLoading: truthProp,
-    loadingIcon: makeStringProp('photo'),
-  },
+  props: imageProps,
 
   emits: ['load', 'error'],
 

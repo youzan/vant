@@ -1,4 +1,4 @@
-import { computed, defineComponent } from 'vue';
+import { computed, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -54,25 +54,29 @@ function getRateStatus(
   return { status: 'void', value: 0 };
 }
 
+const rateProps = {
+  size: numericProp,
+  icon: makeStringProp('star'),
+  color: String,
+  count: makeNumericProp(5),
+  gutter: numericProp,
+  readonly: Boolean,
+  disabled: Boolean,
+  voidIcon: makeStringProp('star-o'),
+  allowHalf: Boolean,
+  voidColor: String,
+  touchable: truthProp,
+  iconPrefix: String,
+  modelValue: makeNumberProp(0),
+  disabledColor: String,
+};
+
+export type RateProps = ExtractPropTypes<typeof rateProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    size: numericProp,
-    icon: makeStringProp('star'),
-    color: String,
-    count: makeNumericProp(5),
-    gutter: numericProp,
-    readonly: Boolean,
-    disabled: Boolean,
-    voidIcon: makeStringProp('star-o'),
-    allowHalf: Boolean,
-    voidColor: String,
-    touchable: truthProp,
-    iconPrefix: String,
-    modelValue: makeNumberProp(0),
-    disabledColor: String,
-  },
+  props: rateProps,
 
   emits: ['change', 'update:modelValue'],
 

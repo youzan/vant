@@ -108,7 +108,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { IndexBarProps, IndexBarInstance } from 'vant';
+import type { IndexBarProps, IndexAnchorProps, IndexBarInstance } from 'vant';
 ```
 
 `IndexBarInstance` 是组件实例的类型，用法如下：

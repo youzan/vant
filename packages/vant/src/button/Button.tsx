@@ -2,7 +2,7 @@ import {
   PropType,
   CSSProperties,
   defineComponent,
-  ButtonHTMLAttributes,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -19,45 +19,44 @@ import { useRoute, routeProps } from '../composables/use-route';
 import { Icon } from '../icon';
 import { Loading, LoadingType } from '../loading';
 
+// Types
+import {
+  ButtonSize,
+  ButtonType,
+  ButtonNativeType,
+  ButtonIconPosition,
+} from './types';
+
 const [name, bem] = createNamespace('button');
 
-export type ButtonType =
-  | 'default'
-  | 'primary'
-  | 'success'
-  | 'warning'
-  | 'danger';
+const buttonProps = extend({}, routeProps, {
+  tag: makeStringProp<keyof HTMLElementTagNameMap>('button'),
+  text: String,
+  icon: String,
+  type: makeStringProp<ButtonType>('default'),
+  size: makeStringProp<ButtonSize>('normal'),
+  color: String,
+  block: Boolean,
+  plain: Boolean,
+  round: Boolean,
+  square: Boolean,
+  loading: Boolean,
+  hairline: Boolean,
+  disabled: Boolean,
+  iconPrefix: String,
+  nativeType: makeStringProp<ButtonNativeType>('button'),
+  loadingSize: numericProp,
+  loadingText: String,
+  loadingType: String as PropType<LoadingType>,
+  iconPosition: makeStringProp<ButtonIconPosition>('left'),
+});
 
-export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
-
-export type ButtonNativeType = NonNullable<ButtonHTMLAttributes['type']>;
-
-export type ButtonIconPosition = 'left' | 'right';
+export type ButtonProps = ExtractPropTypes<typeof buttonProps>;
 
 export default defineComponent({
   name,
 
-  props: extend({}, routeProps, {
-    tag: makeStringProp<keyof HTMLElementTagNameMap>('button'),
-    text: String,
-    icon: String,
-    type: makeStringProp<ButtonType>('default'),
-    size: makeStringProp<ButtonSize>('normal'),
-    color: String,
-    block: Boolean,
-    plain: Boolean,
-    round: Boolean,
-    square: Boolean,
-    loading: Boolean,
-    hairline: Boolean,
-    disabled: Boolean,
-    iconPrefix: String,
-    nativeType: makeStringProp<ButtonNativeType>('button'),
-    loadingSize: numericProp,
-    loadingText: String,
-    loadingType: String as PropType<LoadingType>,
-    iconPosition: makeStringProp<ButtonIconPosition>('left'),
-  }),
+  props: buttonProps,
 
   emits: ['click'],
 

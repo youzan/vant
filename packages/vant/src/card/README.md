@@ -108,6 +108,14 @@ Use slot to custom content.
 | tags         | Custom tags         |
 | footer       | Custom footer       |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { CardProps } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables
