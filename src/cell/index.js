@@ -166,8 +166,8 @@ export default createComponent({
       }
       that.$listeners?.click?.(event);
       // @ts-ignore：没办法
-      if (props.target !== '_self')
-        return;
+      // if (props.target !== '_self')
+      //   return;
 
       if (hrefR === undefined) {
         let to;

@@ -105,12 +105,13 @@ function Button(
       // console.log(ctx.parent.$route);
       emit(ctx, 'click', event);
       const hrefR = currentHref();
+      console.log(hrefR, ctx.props)
       if (!ctx.props.nativeType && !hrefR && !ctx.listeners.click) {
         event.preventDefault();
       }
       // @ts-ignore：没办法
-      if (props.target !== '_self')
-        return;
+      // if (props.target !== '_self')
+      //   return;
 
       if (hrefR === undefined) {
         let to;
