@@ -30,7 +30,7 @@
     - name: close-on-click-overlay
       title: 点击遮罩层后关闭
       type: boolean
-      default: false
+      default: true
       description: 是否在点击遮罩层后关闭
   slots:
     - name: default
