@@ -91,13 +91,13 @@ export default createComponent({
   computed: {
     minusDisabled() {
       return (
-        this.disabled || this.disableMinus || this.currentValue <= +this.min
+        (this.disabled) || this.disableMinus || this.currentValue <= +this.min
       );
     },
 
     plusDisabled() {
       return (
-        this.disabled || this.disablePlus || this.currentValue >= +this.max
+        (this.disabled) || this.disablePlus || this.currentValue >= +this.max
       );
     },
 
@@ -223,7 +223,7 @@ export default createComponent({
     onChange() {
       const { type } = this;
 
-      if (this[`${type}Disabled`]) {
+      if (this.disableInput || this[`${type}Disabled`]) {
         this.$emit('overlimit', type);
         return;
       }
