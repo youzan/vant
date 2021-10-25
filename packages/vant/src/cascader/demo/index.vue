@@ -27,7 +27,7 @@ const t = useTranslate({
       { text: '宁波市', value: '330200' },
     ],
     customFieldNames: '自定义字段名',
-    customContent: '自定义内容',
+    customContent: '自定义增加内容',
   },
   'en-US': {
     area: 'Area',
@@ -47,7 +47,7 @@ const t = useTranslate({
       { text: 'Ningbo', value: '330200' },
     ],
     customFieldNames: 'Custom Field Names',
-    customContent: 'Custom Content',
+    customContent: 'Custom additions',
   },
 });
 
@@ -270,8 +270,8 @@ const onFinish = (
         @finish="onFinish(customFieldState, $event)"
         @change-tab="customContent.tabIndex = $event"
       >
-        <template #optionTop>
-          <span>{{ customContent.tabIndex }}</span>
+        <template #optionsTop>
+          <span>当前为第{{ customContent.tabIndex }}级</span>
         </template>
       </van-cascader>
     </van-popup>

@@ -266,8 +266,8 @@ export default defineComponent({
             unselected: !selected,
           })}
         >
-          {slots.optionTop ? (
-            <div class={bem('option-top')}> {slots.optionTop()} </div>
+          {slots.optionsTop ? (
+            <div class={bem('options-top')}> {slots.optionsTop()} </div>
           ) : null}
           {renderOptions(options, selected, tabIndex)}
         </Tab>

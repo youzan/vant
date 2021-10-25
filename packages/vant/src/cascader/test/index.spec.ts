@@ -241,3 +241,22 @@ test('should allow to custom the color of option', async () => {
   const option = wrapper.find('.van-cascader__option');
   expect(option.style.color).toEqual('red');
 });
+
+test(' should allow more custom content', async () => {
+  const wrapper = mount(Cascader, {
+    slots: {
+      optionsTop: () => '内容',
+    },
+    data() {
+      return {
+        activeTab: 0,
+      };
+    },
+  });
+  await later();
+  const top = wrapper.find('.van-cascader__options-top');
+  expect(top.exists()).toBeTruthy();
+  wrapper.vm.$emit('change-tab');
+  await wrapper.vm.$nextTick();
+  expect(wrapper.emitted('change-tab')).toBeTruthy();
+});
