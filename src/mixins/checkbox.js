@@ -139,7 +139,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
         class={bem([
           {
             disabled: this.isDisabled,
-            'label-disabled': this.labelDisabled,
+            'label-disabled': this.labelDisabled || this.isDisabled,
           },
           this.direction,
         ])}
