@@ -25,7 +25,7 @@ import { Badge } from '../badge';
 
 const [name, bem] = createNamespace('grid-item');
 
-const props = extend({}, routeProps, {
+const gridItemProps = extend({}, routeProps, {
   dot: Boolean,
   text: String,
   icon: String,
@@ -34,12 +34,12 @@ const props = extend({}, routeProps, {
   iconPrefix: String,
 });
 
-export type GridItemProps = ExtractPropTypes<typeof props>;
+export type GridItemProps = ExtractPropTypes<typeof gridItemProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: gridItemProps,
 
   setup(props, { slots }) {
     const { parent, index } = useParent(GRID_KEY);

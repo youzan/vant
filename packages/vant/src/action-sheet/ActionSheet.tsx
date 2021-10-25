@@ -28,7 +28,7 @@ export type ActionSheetAction = {
   className?: unknown;
 };
 
-const props = extend({}, popupSharedProps, {
+const actionSheetProps = extend({}, popupSharedProps, {
   title: String,
   round: truthProp,
   actions: makeArrayProp<ActionSheetAction>(),
@@ -41,9 +41,9 @@ const props = extend({}, popupSharedProps, {
   safeAreaInsetBottom: truthProp,
 });
 
-export type ActionSheetProps = ExtractPropTypes<typeof props>;
+export type ActionSheetProps = ExtractPropTypes<typeof actionSheetProps>;
 
-const popupKeys = [
+const popupInheritKeys = [
   ...popupSharedPropKeys,
   'round',
   'closeOnPopstate',
@@ -53,7 +53,7 @@ const popupKeys = [
 export default defineComponent({
   name,
 
-  props,
+  props: actionSheetProps,
 
   emits: ['select', 'cancel', 'update:show'],
 
@@ -148,7 +148,7 @@ export default defineComponent({
         class={bem()}
         position="bottom"
         onUpdate:show={updateShow}
-        {...pick(props, popupKeys)}
+        {...pick(props, popupInheritKeys)}
       >
         {renderHeader()}
         {renderDescription()}

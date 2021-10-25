@@ -9,7 +9,7 @@ import { Image } from '../image';
 
 const [name, bem] = createNamespace('card');
 
-const props = {
+const cardProps = {
   tag: String,
   num: numericProp,
   desc: String,
@@ -23,12 +23,12 @@ const props = {
   originPrice: numericProp,
 };
 
-export type CardProps = ExtractPropTypes<typeof props>;
+export type CardProps = ExtractPropTypes<typeof cardProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: cardProps,
 
   emits: ['click-thumb'],
 

@@ -54,7 +54,7 @@ const DEFAULT_DATA: AddressEditInfo = {
 
 const isPostal = (value: string) => /^\d{6}$/.test(value);
 
-const props = {
+const addressEditProps = {
   areaList: Object as PropType<AreaList>,
   isSaving: Boolean,
   isDeleting: Boolean,
@@ -90,12 +90,12 @@ const props = {
   },
 };
 
-export type AddressEditProps = ExtractPropTypes<typeof props>;
+export type AddressEditProps = ExtractPropTypes<typeof addressEditProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: addressEditProps,
 
   emits: [
     'save',

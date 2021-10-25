@@ -150,9 +150,17 @@ export default {
 
 ### Events
 
-| Event  | Description               | Parameters   |
-| ------ | ------------------------- | ------------ |
-| change | Emitted when rate changed | current rate |
+| Event  | Description               | Parameters             |
+| ------ | ------------------------- | ---------------------- |
+| change | Emitted when rate changed | _currentValue: number_ |
+
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { RateProps } from 'vant';
+```
 
 ## Theming
 

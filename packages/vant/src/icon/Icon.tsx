@@ -12,7 +12,7 @@ const [name, bem] = createNamespace('icon');
 
 const isImage = (name?: string) => name?.includes('/');
 
-const props = {
+const iconProps = {
   dot: Boolean,
   tag: makeStringProp<keyof HTMLElementTagNameMap>('i'),
   name: String,
@@ -22,12 +22,12 @@ const props = {
   classPrefix: String,
 };
 
-export type IconProps = ExtractPropTypes<typeof props>;
+export type IconProps = ExtractPropTypes<typeof iconProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: iconProps,
 
   setup(props, { slots }) {
     const config = inject(CONFIG_PROVIDER_KEY, null);

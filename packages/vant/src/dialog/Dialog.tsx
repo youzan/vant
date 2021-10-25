@@ -33,7 +33,7 @@ import type {
 
 const [name, bem, t] = createNamespace('dialog');
 
-const props = extend({}, popupSharedProps, {
+const dialogProps = extend({}, popupSharedProps, {
   title: String,
   theme: String as PropType<DialogTheme>,
   width: numericProp,
@@ -53,9 +53,9 @@ const props = extend({}, popupSharedProps, {
   closeOnClickOverlay: Boolean,
 });
 
-export type DialogProps = ExtractPropTypes<typeof props>;
+export type DialogProps = ExtractPropTypes<typeof dialogProps>;
 
-const popupKeys = [
+const popupInheritKeys = [
   ...popupSharedPropKeys,
   'transition',
   'closeOnPopstate',
@@ -64,7 +64,7 @@ const popupKeys = [
 export default defineComponent({
   name,
 
-  props,
+  props: dialogProps,
 
   emits: ['confirm', 'cancel', 'update:show'],
 
@@ -229,7 +229,7 @@ export default defineComponent({
           style={{ width: addUnit(width) }}
           aria-labelledby={title || message}
           onUpdate:show={updateShow}
-          {...pick(props, popupKeys)}
+          {...pick(props, popupInheritKeys)}
         >
           {renderTitle()}
           {renderContent()}

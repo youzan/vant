@@ -3,20 +3,20 @@ import { truthProp, createNamespace, BORDER_TOP_BOTTOM } from '../utils';
 
 const [name, bem] = createNamespace('cell-group');
 
-const props = {
+const cellGroupProps = {
   title: String,
   inset: Boolean,
   border: truthProp,
 };
 
-export type CellGroupProps = ExtractPropTypes<typeof props>;
+export type CellGroupProps = ExtractPropTypes<typeof cellGroupProps>;
 
 export default defineComponent({
   name,
 
   inheritAttrs: false,
 
-  props,
+  props: cellGroupProps,
 
   setup(props, { slots, attrs }) {
     const renderGroup = () => (

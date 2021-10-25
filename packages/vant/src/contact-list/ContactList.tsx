@@ -20,19 +20,19 @@ export type ContactListItem = {
   isDefault?: boolean;
 };
 
-const props = {
+const contactListProps = {
   list: Array as PropType<ContactListItem[]>,
   addText: String,
   modelValue: unknownProp,
   defaultTagText: String,
 };
 
-export type ContactListProps = ExtractPropTypes<typeof props>;
+export type ContactListProps = ExtractPropTypes<typeof contactListProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: contactListProps,
 
   emits: ['add', 'edit', 'select', 'update:modelValue'],
 

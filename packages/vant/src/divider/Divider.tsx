@@ -5,18 +5,18 @@ const [name, bem] = createNamespace('divider');
 
 export type DividerContentPosition = 'left' | 'center' | 'right';
 
-const props = {
+const dividerProps = {
   dashed: Boolean,
   hairline: truthProp,
   contentPosition: makeStringProp<DividerContentPosition>('center'),
 };
 
-export type DividerProps = ExtractPropTypes<typeof props>;
+export type DividerProps = ExtractPropTypes<typeof dividerProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: dividerProps,
 
   setup(props, { slots }) {
     return () => (

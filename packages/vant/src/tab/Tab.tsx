@@ -7,6 +7,7 @@ import {
   PropType,
   CSSProperties,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -29,19 +30,23 @@ import { SwipeItem } from '../swipe-item';
 
 const [name, bem] = createNamespace('tab');
 
+const tabProps = extend({}, routeProps, {
+  dot: Boolean,
+  name: numericProp,
+  badge: numericProp,
+  title: String,
+  disabled: Boolean,
+  titleClass: unknownProp,
+  titleStyle: [String, Object] as PropType<string | CSSProperties>,
+  showZeroBadge: truthProp,
+});
+
+export type TabProps = ExtractPropTypes<typeof tabProps>;
+
 export default defineComponent({
   name,
 
-  props: extend({}, routeProps, {
-    dot: Boolean,
-    name: numericProp,
-    badge: numericProp,
-    title: String,
-    disabled: Boolean,
-    titleClass: unknownProp,
-    titleStyle: [String, Object] as PropType<string | CSSProperties>,
-    showZeroBadge: truthProp,
-  }),
+  props: tabProps,
 
   setup(props, { slots }) {
     const inited = ref(false);

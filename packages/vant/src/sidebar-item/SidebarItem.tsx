@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import { extend, numericProp, createNamespace } from '../utils';
@@ -13,15 +13,19 @@ import { Badge } from '../badge';
 
 const [name, bem] = createNamespace('sidebar-item');
 
+const sidebarItemProps = extend({}, routeProps, {
+  dot: Boolean,
+  title: String,
+  badge: numericProp,
+  disabled: Boolean,
+});
+
+export type SidebarItemProps = ExtractPropTypes<typeof sidebarItemProps>;
+
 export default defineComponent({
   name,
 
-  props: extend({}, routeProps, {
-    dot: Boolean,
-    title: String,
-    badge: numericProp,
-    disabled: Boolean,
-  }),
+  props: sidebarItemProps,
 
   emits: ['click'],
 

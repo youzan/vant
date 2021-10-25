@@ -1,4 +1,11 @@
-import { ref, watch, reactive, nextTick, defineComponent } from 'vue';
+import {
+  ref,
+  watch,
+  reactive,
+  nextTick,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import {
@@ -28,21 +35,25 @@ type PullRefreshStatus =
   | 'pulling'
   | 'success';
 
+const pullRefreshProps = {
+  disabled: Boolean,
+  modelValue: Boolean,
+  headHeight: makeNumericProp(DEFAULT_HEAD_HEIGHT),
+  successText: String,
+  pullingText: String,
+  loosingText: String,
+  loadingText: String,
+  pullDistance: numericProp,
+  successDuration: makeNumericProp(500),
+  animationDuration: makeNumericProp(300),
+};
+
+export type PullRefreshProps = ExtractPropTypes<typeof pullRefreshProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    disabled: Boolean,
-    modelValue: Boolean,
-    headHeight: makeNumericProp(DEFAULT_HEAD_HEIGHT),
-    successText: String,
-    pullingText: String,
-    loosingText: String,
-    loadingText: String,
-    pullDistance: numericProp,
-    successDuration: makeNumericProp(500),
-    animationDuration: makeNumericProp(300),
-  },
+  props: pullRefreshProps,
 
   emits: ['refresh', 'update:modelValue'],
 

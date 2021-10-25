@@ -33,7 +33,7 @@ export type RowJustify =
   | 'space-around'
   | 'space-between';
 
-const props = {
+const rowProps = {
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
   wrap: truthProp,
   align: String as PropType<RowAlign>,
@@ -41,12 +41,12 @@ const props = {
   justify: String as PropType<RowJustify>,
 };
 
-export type RowProps = ExtractPropTypes<typeof props>;
+export type RowProps = ExtractPropTypes<typeof rowProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: rowProps,
 
   setup(props, { slots }) {
     const { children, linkChildren } = useChildren(ROW_KEY);

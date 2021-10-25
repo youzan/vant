@@ -34,7 +34,7 @@ import type {
 
 const [name, bem] = createNamespace('swipe-cell');
 
-const props = {
+const swipeCellProps = {
   name: makeNumericProp(''),
   disabled: Boolean,
   leftWidth: numericProp,
@@ -43,12 +43,12 @@ const props = {
   stopPropagation: Boolean,
 };
 
-export type SwipeCellProps = ExtractPropTypes<typeof props>;
+export type SwipeCellProps = ExtractPropTypes<typeof swipeCellProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: swipeCellProps,
 
   emits: ['open', 'close', 'click'],
 

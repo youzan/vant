@@ -181,7 +181,15 @@ export default {
 | --- | --- | --- |
 | button | 自定义滑块按钮 | _{ value: number }_ |
 | left-button `v3.1.3` | 自定义左侧滑块按钮（双滑块模式下） | _{ value: number }_ |
-| right-button `v3.1.3` | 自定义右侧滑块按钮 （双滑块模式下） | _{ value: number }_ |
+| right-button `v3.1.3` | 自定义右侧滑块按钮（双滑块模式下） | _{ value: number }_ |
+
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { SliderProps } from 'vant';
+```
 
 ## 主题定制
 

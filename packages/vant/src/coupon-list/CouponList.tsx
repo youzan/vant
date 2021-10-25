@@ -29,7 +29,7 @@ import { Coupon, CouponInfo } from '../coupon';
 
 const [name, bem, t] = createNamespace('coupon-list');
 const EMPTY_IMAGE = 'https://img.yzcdn.cn/vant/coupon-empty.png';
-const props = {
+const couponListProps = {
   code: makeStringProp(''),
   coupons: makeArrayProp<CouponInfo>(),
   currency: makeStringProp('¥'),
@@ -50,12 +50,12 @@ const props = {
   exchangeButtonDisabled: Boolean,
 };
 
-export type CouponListProps = ExtractPropTypes<typeof props>;
+export type CouponListProps = ExtractPropTypes<typeof couponListProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: couponListProps,
 
   emits: ['change', 'exchange', 'update:code'],
 

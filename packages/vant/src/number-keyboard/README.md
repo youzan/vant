@@ -210,7 +210,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { NumberKeyboardTheme } from 'vant';
+import type { NumberKeyboardProps, NumberKeyboardTheme } from 'vant';
 ```
 
 ## Theming

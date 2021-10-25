@@ -29,7 +29,7 @@ const DEFAULT_CONTACT: ContactEditInfo = {
   name: '',
 };
 
-const props = {
+const contactEditProps = {
   isEdit: Boolean,
   isSaving: Boolean,
   isDeleting: Boolean,
@@ -45,12 +45,12 @@ const props = {
   },
 };
 
-export type ContactEditProps = ExtractPropTypes<typeof props>;
+export type ContactEditProps = ExtractPropTypes<typeof contactEditProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: contactEditProps,
 
   emits: ['save', 'delete', 'change-default'],
 

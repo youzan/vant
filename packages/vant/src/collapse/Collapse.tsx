@@ -11,7 +11,7 @@ export type CollapseProvide = {
 
 export const COLLAPSE_KEY: InjectionKey<CollapseProvide> = Symbol(name);
 
-const props = {
+const collapseProps = {
   border: truthProp,
   accordion: Boolean,
   modelValue: {
@@ -22,7 +22,7 @@ const props = {
   },
 };
 
-export type CollapseProps = ExtractPropTypes<typeof props>;
+export type CollapseProps = ExtractPropTypes<typeof collapseProps>;
 
 function validateModelValue(
   modelValue: string | number | Array<string | number>,
@@ -46,7 +46,7 @@ function validateModelValue(
 export default defineComponent({
   name,
 
-  props,
+  props: collapseProps,
 
   emits: ['change', 'update:modelValue'],
 

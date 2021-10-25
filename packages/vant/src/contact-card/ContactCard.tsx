@@ -6,7 +6,7 @@ const [name, bem, t] = createNamespace('contact-card');
 
 export type ContactCardType = 'add' | 'edit';
 
-const props = {
+const contactCardProps = {
   tel: String,
   name: String,
   type: makeStringProp<ContactCardType>('add'),
@@ -14,12 +14,12 @@ const props = {
   editable: truthProp,
 };
 
-export type ContactCardProps = ExtractPropTypes<typeof props>;
+export type ContactCardProps = ExtractPropTypes<typeof contactCardProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: contactCardProps,
 
   emits: ['click'],
 

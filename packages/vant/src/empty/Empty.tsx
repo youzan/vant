@@ -11,18 +11,18 @@ const [name, bem] = createNamespace('empty');
 
 const PRESET_IMAGES = ['error', 'search', 'default'];
 
-const props = {
+const emptyProps = {
   image: makeStringProp('default'),
   imageSize: numericProp,
   description: String,
 };
 
-export type EmptyProps = ExtractPropTypes<typeof props>;
+export type EmptyProps = ExtractPropTypes<typeof emptyProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: emptyProps,
 
   setup(props, { slots }) {
     const renderImage = () => {

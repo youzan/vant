@@ -86,6 +86,14 @@ export default {
 | ------- | ------------ |
 | default | Default slot |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { OverlayProps } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

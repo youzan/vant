@@ -38,7 +38,7 @@ import type { CalendarType, CalendarDayItem, CalendarDayType } from './types';
 
 const [name] = createNamespace('calendar-month');
 
-const props = {
+const calendarMonthProps = {
   date: makeRequiredProp(Date),
   type: String as PropType<CalendarType>,
   color: String,
@@ -55,12 +55,12 @@ const props = {
   firstDayOfWeek: Number,
 };
 
-export type CalendarMonthProps = ExtractPropTypes<typeof props>;
+export type CalendarMonthProps = ExtractPropTypes<typeof calendarMonthProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: calendarMonthProps,
 
   emits: ['click', 'update-height'],
 

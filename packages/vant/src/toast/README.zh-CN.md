@@ -191,7 +191,7 @@ Toast.resetDefaultOptions('loading');
 组件导出以下类型定义：
 
 ```ts
-import type { ToastType, ToastOptions, ToastPosition } from 'vant';
+import type { ToastType, ToastProps, ToastOptions, ToastPosition } from 'vant';
 ```
 
 ## 主题定制

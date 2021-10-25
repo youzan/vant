@@ -3,7 +3,6 @@ import {
   CSSProperties,
   defineComponent,
   ExtractPropTypes,
-  ButtonHTMLAttributes,
 } from 'vue';
 
 // Utils
@@ -20,22 +19,17 @@ import { useRoute, routeProps } from '../composables/use-route';
 import { Icon } from '../icon';
 import { Loading, LoadingType } from '../loading';
 
+// Types
+import {
+  ButtonSize,
+  ButtonType,
+  ButtonNativeType,
+  ButtonIconPosition,
+} from './types';
+
 const [name, bem] = createNamespace('button');
 
-export type ButtonType =
-  | 'default'
-  | 'primary'
-  | 'success'
-  | 'warning'
-  | 'danger';
-
-export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
-
-export type ButtonNativeType = NonNullable<ButtonHTMLAttributes['type']>;
-
-export type ButtonIconPosition = 'left' | 'right';
-
-const props = extend({}, routeProps, {
+const buttonProps = extend({}, routeProps, {
   tag: makeStringProp<keyof HTMLElementTagNameMap>('button'),
   text: String,
   icon: String,
@@ -57,12 +51,12 @@ const props = extend({}, routeProps, {
   iconPosition: makeStringProp<ButtonIconPosition>('left'),
 });
 
-export type ButtonProps = ExtractPropTypes<typeof props>;
+export type ButtonProps = ExtractPropTypes<typeof buttonProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: buttonProps,
 
   emits: ['click'],
 

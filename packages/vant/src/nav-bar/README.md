@@ -115,6 +115,14 @@ export default {
 | click-left  | Emitted when the left button is clicked  | _event: MouseEvent_ |
 | click-right | Emitted when the right button is clicked | _event: MouseEvent_ |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { NavbarProps } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

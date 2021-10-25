@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, ExtractPropTypes } from 'vue';
 import {
   extend,
   numericProp,
@@ -12,17 +12,21 @@ import type { NotifyType } from './types';
 
 const [name, bem] = createNamespace('notify');
 
+const notifyProps = extend({}, popupSharedProps, {
+  type: makeStringProp<NotifyType>('danger'),
+  color: String,
+  message: numericProp,
+  className: unknownProp,
+  background: String,
+  lockScroll: Boolean,
+});
+
+export type NotifyProps = ExtractPropTypes<typeof notifyProps>;
+
 export default defineComponent({
   name,
 
-  props: extend({}, popupSharedProps, {
-    type: makeStringProp<NotifyType>('danger'),
-    color: String,
-    message: numericProp,
-    className: unknownProp,
-    background: String,
-    lockScroll: Boolean,
-  }),
+  props: notifyProps,
 
   emits: ['update:show'],
 

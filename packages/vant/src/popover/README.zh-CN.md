@@ -273,6 +273,7 @@ export default {
 
 ```ts
 import type {
+  PopoverProps,
   PopoverTheme,
   PopoverAction,
   PopoverTrigger,

@@ -93,7 +93,7 @@ export const fieldSharedProps = {
   },
 };
 
-const props = extend({}, cellSharedProps, fieldSharedProps, {
+const fieldProps = extend({}, cellSharedProps, fieldSharedProps, {
   rows: numericProp,
   type: makeStringProp<FieldType>('text'),
   rules: Array as PropType<FieldRule[]>,
@@ -109,12 +109,12 @@ const props = extend({}, cellSharedProps, fieldSharedProps, {
   },
 });
 
-export type FieldProps = ExtractPropTypes<typeof props>;
+export type FieldProps = ExtractPropTypes<typeof fieldProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: fieldProps,
 
   emits: [
     'blur',

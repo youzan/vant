@@ -6,16 +6,16 @@ const [name, bem] = createNamespace('action-bar');
 
 export const ACTION_BAR_KEY = Symbol(name);
 
-const props = {
+const actionBarProps = {
   safeAreaInsetBottom: truthProp,
 };
 
-export type ActionBarProps = ExtractPropTypes<typeof props>;
+export type ActionBarProps = ExtractPropTypes<typeof actionBarProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: actionBarProps,
 
   setup(props, { slots }) {
     const { linkChildren } = useChildren(ACTION_BAR_KEY);

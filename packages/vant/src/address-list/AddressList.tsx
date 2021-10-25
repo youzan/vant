@@ -15,7 +15,7 @@ import AddressListItem, { AddressListAddress } from './AddressListItem';
 
 const [name, bem, t] = createNamespace('address-list');
 
-const props = {
+const addressListProps = {
   list: makeArrayProp<AddressListAddress>(),
   modelValue: numericProp,
   switchable: truthProp,
@@ -25,12 +25,12 @@ const props = {
   defaultTagText: String,
 };
 
-export type AddressListProps = ExtractPropTypes<typeof props>;
+export type AddressListProps = ExtractPropTypes<typeof addressListProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: addressListProps,
 
   emits: [
     'add',

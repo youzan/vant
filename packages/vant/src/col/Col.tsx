@@ -10,18 +10,18 @@ import { ROW_KEY } from '../row/Row';
 
 const [name, bem] = createNamespace('col');
 
-const props = {
+const colProps = {
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
   span: makeNumericProp(0),
   offset: numericProp,
 };
 
-export type ColProps = ExtractPropTypes<typeof props>;
+export type ColProps = ExtractPropTypes<typeof colProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: colProps,
 
   setup(props, { slots }) {
     const { parent, index } = useParent(ROW_KEY);

@@ -1,4 +1,4 @@
-import { ref, CSSProperties, defineComponent } from 'vue';
+import { ref, CSSProperties, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -17,20 +17,24 @@ import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('nav-bar');
 
+const navBarProps = {
+  title: String,
+  fixed: Boolean,
+  zIndex: numericProp,
+  border: truthProp,
+  leftText: String,
+  rightText: String,
+  leftArrow: Boolean,
+  placeholder: Boolean,
+  safeAreaInsetTop: Boolean,
+};
+
+export type NavbarProps = ExtractPropTypes<typeof navBarProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    title: String,
-    fixed: Boolean,
-    zIndex: numericProp,
-    border: truthProp,
-    leftText: String,
-    rightText: String,
-    leftArrow: Boolean,
-    placeholder: Boolean,
-    safeAreaInsetTop: Boolean,
-  },
+  props: navBarProps,
 
   emits: ['click-left', 'click-right'],
 

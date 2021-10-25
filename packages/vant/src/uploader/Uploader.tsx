@@ -50,7 +50,7 @@ import type {
   UploaderFileListItem,
 } from './types';
 
-const props = {
+const uploaderProps = {
   name: makeNumericProp(''),
   accept: makeStringProp('image/*'),
   capture: String,
@@ -79,12 +79,12 @@ const props = {
   },
 };
 
-export type UploaderProps = ExtractPropTypes<typeof props>;
+export type UploaderProps = ExtractPropTypes<typeof uploaderProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: uploaderProps,
 
   emits: [
     'delete',

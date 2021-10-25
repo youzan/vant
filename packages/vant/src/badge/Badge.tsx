@@ -17,7 +17,7 @@ import {
 
 const [name, bem] = createNamespace('badge');
 
-const props = {
+const badgeProps = {
   dot: Boolean,
   max: numericProp,
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
@@ -27,12 +27,12 @@ const props = {
   showZero: truthProp,
 };
 
-export type BadgeProps = ExtractPropTypes<typeof props>;
+export type BadgeProps = ExtractPropTypes<typeof badgeProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: badgeProps,
 
   setup(props, { slots }) {
     const hasContent = () => {

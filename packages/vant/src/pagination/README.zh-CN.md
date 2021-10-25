@@ -109,7 +109,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { PaginationMode } from 'vant';
+import type { PaginationMode, PaginationProps } from 'vant';
 ```
 
 ## 主题定制

@@ -29,7 +29,7 @@ import { NoticeBarMode } from './types';
 
 const [name, bem] = createNamespace('notice-bar');
 
-const props = {
+const noticeBarProps = {
   text: String,
   mode: String as PropType<NoticeBarMode>,
   color: String,
@@ -44,12 +44,12 @@ const props = {
   },
 };
 
-export type NoticeBarProps = ExtractPropTypes<typeof props>;
+export type NoticeBarProps = ExtractPropTypes<typeof noticeBarProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: noticeBarProps,
 
   emits: ['close', 'replay'],
 

@@ -29,7 +29,7 @@ const [name, bem] = createNamespace('image');
 
 export type ImageFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
 
-const props = {
+const imageProps = {
   src: String,
   alt: String,
   fit: String as PropType<ImageFit>,
@@ -46,12 +46,12 @@ const props = {
   loadingIcon: makeStringProp('photo'),
 };
 
-export type ImageProps = ExtractPropTypes<typeof props>;
+export type ImageProps = ExtractPropTypes<typeof imageProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: imageProps,
 
   emits: ['load', 'error'],
 

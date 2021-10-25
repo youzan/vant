@@ -126,14 +126,22 @@ Use slots to custom tips.
 
 ### Slots
 
-| Name    | Description                           | SlotProps    |
-| ------- | ------------------------------------- | ------------ |
-| default | Default slot                          | -            |
-| normal  | Content of head when at normal status | -            |
-| pulling | Content of head when at pulling       | { distance } |
-| loosing | Content of head when at loosing       | { distance } |
-| loading | Content of head when at loading       | { distance } |
-| success | Content of head when succeed          | -            |
+| Name    | Description                           | SlotProps              |
+| ------- | ------------------------------------- | ---------------------- |
+| default | Default slot                          | -                      |
+| normal  | Content of head when at normal status | -                      |
+| pulling | Content of head when at pulling       | _{ distance: number }_ |
+| loosing | Content of head when at loosing       | _{ distance: number }_ |
+| loading | Content of head when at loading       | _{ distance: number }_ |
+| success | Content of head when succeed          | -                      |
+
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { PullRefreshProps } from 'vant';
+```
 
 ## Theming
 

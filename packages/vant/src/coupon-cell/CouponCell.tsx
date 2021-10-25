@@ -18,7 +18,7 @@ import type { CouponInfo } from '../coupon';
 
 const [name, bem, t] = createNamespace('coupon-cell');
 
-const props = {
+const couponCellProps = {
   title: String,
   border: truthProp,
   editable: truthProp,
@@ -27,7 +27,7 @@ const props = {
   chosenCoupon: makeNumericProp(-1),
 };
 
-export type CouponCellProps = ExtractPropTypes<typeof props>;
+export type CouponCellProps = ExtractPropTypes<typeof couponCellProps>;
 
 function formatValue({ coupons, chosenCoupon, currency }: CouponCellProps) {
   const coupon = coupons[+chosenCoupon];
@@ -50,7 +50,7 @@ function formatValue({ coupons, chosenCoupon, currency }: CouponCellProps) {
 export default defineComponent({
   name,
 
-  props,
+  props: couponCellProps,
 
   setup(props) {
     return () => {

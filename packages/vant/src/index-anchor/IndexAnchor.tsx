@@ -24,16 +24,16 @@ import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('index-anchor');
 
-const props = {
+const indexAnchorProps = {
   index: numericProp,
 };
 
-export type IndexAnchorProps = ExtractPropTypes<typeof props>;
+export type IndexAnchorProps = ExtractPropTypes<typeof indexAnchorProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: indexAnchorProps,
 
   setup(props, { slots }) {
     const state = reactive({

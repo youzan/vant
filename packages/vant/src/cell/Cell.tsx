@@ -47,14 +47,14 @@ export const cellSharedProps = {
   },
 };
 
-const props = extend({}, cellSharedProps, routeProps);
+const cellProps = extend({}, cellSharedProps, routeProps);
 
-export type CellProps = ExtractPropTypes<typeof props>;
+export type CellProps = ExtractPropTypes<typeof cellProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: cellProps,
 
   setup(props, { slots }) {
     if (process.env.NODE_ENV !== 'production') {

@@ -121,6 +121,14 @@ export default {
 | change | Emitted when check status changed | _value: any_        |
 | click  | Emitted when component is clicked | _event: MouseEvent_ |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { SwitchProps } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

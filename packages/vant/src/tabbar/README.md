@@ -200,6 +200,14 @@ export default {
 | ---- | ----------- | ----------------- |
 | icon | Custom icon | _active: boolean_ |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { TabbarProps, TabbarItemProps } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

@@ -100,7 +100,7 @@ app.use(Loading);
 组件导出以下类型定义：
 
 ```ts
-import type { LoadingType } from 'vant';
+import type { LoadingType, LoadingProps } from 'vant';
 ```
 
 ## 主题定制

@@ -33,7 +33,7 @@ function getPath(clockwise: boolean, viewBoxSize: number) {
 
 export type CircleStartPosition = 'top' | 'right' | 'bottom' | 'left';
 
-const props = {
+const circleProps = {
   text: String,
   size: numericProp,
   fill: makeStringProp('none'),
@@ -48,12 +48,12 @@ const props = {
   startPosition: makeStringProp<CircleStartPosition>('top'),
 };
 
-export type CircleProps = ExtractPropTypes<typeof props>;
+export type CircleProps = ExtractPropTypes<typeof circleProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: circleProps,
 
   emits: ['update:currentRate'],
 

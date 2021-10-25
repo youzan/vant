@@ -106,7 +106,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { StepsDirection } from 'vant';
+import type { StepsProps, StepsDirection } from 'vant';
 ```
 
 ## Theming

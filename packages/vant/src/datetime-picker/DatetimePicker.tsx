@@ -7,18 +7,18 @@ import { DatetimePickerInstance } from './types';
 
 const [name, bem] = createNamespace('datetime-picker');
 
-const timePickerProps = Object.keys(TimePicker.props);
-const datePickerProps = Object.keys(DatePicker.props);
-const props = extend({}, TimePicker.props, DatePicker.props, {
+const timePickerPropKeys = Object.keys(TimePicker.props);
+const datePickerPropKeys = Object.keys(DatePicker.props);
+const datetimePickerProps = extend({}, TimePicker.props, DatePicker.props, {
   modelValue: [String, Date],
 });
 
-export type DatetimePickerProps = ExtractPropTypes<typeof props>;
+export type DatetimePickerProps = ExtractPropTypes<typeof datetimePickerProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: datetimePickerProps,
 
   setup(props, { attrs, slots }) {
     const root = ref<DatetimePickerInstance>();
@@ -32,7 +32,7 @@ export default defineComponent({
       const Component = isTimePicker ? TimePicker : DatePicker;
       const inheritProps = pick(
         props,
-        isTimePicker ? timePickerProps : datePickerProps
+        isTimePicker ? timePickerPropKeys : datePickerPropKeys
       );
 
       return (

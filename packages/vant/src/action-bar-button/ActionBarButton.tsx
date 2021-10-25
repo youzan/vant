@@ -12,7 +12,7 @@ import { Button, ButtonType } from '../button';
 
 const [name, bem] = createNamespace('action-bar-button');
 
-const props = extend({}, routeProps, {
+const actionBarButtonProps = extend({}, routeProps, {
   type: String as PropType<ButtonType>,
   text: String,
   icon: String,
@@ -21,12 +21,14 @@ const props = extend({}, routeProps, {
   disabled: Boolean,
 });
 
-export type ActionBarButtonProps = ExtractPropTypes<typeof props>;
+export type ActionBarButtonProps = ExtractPropTypes<
+  typeof actionBarButtonProps
+>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: actionBarButtonProps,
 
   setup(props, { slots }) {
     const route = useRoute();
