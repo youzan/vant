@@ -35,6 +35,7 @@ export default createComponent({
     title: String,
     color: String,
     readonly: Boolean,
+    disabled: Boolean,
     formatter: Function,
     rowHeight: [Number, String],
     confirmText: String,
@@ -372,7 +373,7 @@ export default createComponent({
     },
 
     onClickDay(item) {
-      if (this.readonly) {
+      if (this.readonly || this.disabled) {
         return;
       }
 
@@ -484,6 +485,7 @@ export default createComponent({
           refInFor
           date={date}
           type={this.type}
+          disabled={this.disabled}
           color={this.color}
           minDate={this.minDate}
           maxDate={this.maxDate}
@@ -587,7 +589,7 @@ export default createComponent({
           // closeable={this.showTitle || this.showSubtitle}
           // getContainer={this.getContainer}
           // closeOnPopstate={this.closeOnPopstate}
-          // closeOnClickOverlay={this.closeOnClickOverlay}
+          closeOnClickOverlay={this.disabled || this.readonly}
           // onInput={this.togglePopup}
           // onOpen={createListener('open')}
           // onOpened={createListener('opened')}

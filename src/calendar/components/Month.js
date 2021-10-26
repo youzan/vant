@@ -17,6 +17,7 @@ export default createComponent({
   props: {
     date: Date,
     type: String,
+    disabled: Boolean,
     color: String,
     minDate: Date,
     maxDate: Date,
@@ -179,9 +180,9 @@ export default createComponent({
     },
 
     getDayType(day) {
-      const { type, minDate, maxDate, currentDate } = this;
+      const { type, minDate, maxDate, currentDate, disabled } = this;
 // console.log(transErrorDate(minDate, 'min'), transErrorDate(maxDate, 'max'));
-      if (compareDay(day, transErrorDate(minDate, 'min')) < 0 || compareDay(day, transErrorDate(maxDate, 'max')) > 0) {
+      if (disabled || compareDay(day, transErrorDate(minDate, 'min')) < 0 || compareDay(day, transErrorDate(maxDate, 'max')) > 0) {
         return 'disabled';
       }
 
