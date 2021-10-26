@@ -5,6 +5,7 @@ import {
   InjectionKey,
   CSSProperties,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 import { kebabCase, makeStringProp, createNamespace } from '../utils';
 
@@ -17,6 +18,14 @@ export type ConfigProviderProvide = {
 export const CONFIG_PROVIDER_KEY: InjectionKey<ConfigProviderProvide> =
   Symbol(name);
 
+const configProviderProps = {
+  tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
+  themeVars: Object as PropType<Record<string, string | number>>,
+  iconPrefix: String,
+};
+
+export type ConfigProviderProps = ExtractPropTypes<typeof configProviderProps>;
+
 function mapThemeVarsToCSSVars(themeVars: Record<string, string | number>) {
   const cssVars: Record<string, string | number> = {};
   Object.keys(themeVars).forEach((key) => {
@@ -28,11 +37,7 @@ function mapThemeVarsToCSSVars(themeVars: Record<string, string | number>) {
 export default defineComponent({
   name,
 
-  props: {
-    tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
-    themeVars: Object as PropType<Record<string, string | number>>,
-    iconPrefix: String,
-  },
+  props: configProviderProps,
 
   setup(props, { slots }) {
     const style = computed<CSSProperties | undefined>(() => {

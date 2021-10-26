@@ -19,10 +19,10 @@ import {
 } from '../utils';
 import {
   times,
-  pickerKeys,
   sharedProps,
   getTrueValue,
   getMonthEndDay,
+  pickerInheritKeys,
 } from './utils';
 
 // Composables
@@ -327,7 +327,7 @@ export default defineComponent({
         onChange={onChange}
         onCancel={onCancel}
         onConfirm={onConfirm}
-        {...pick(props, pickerKeys)}
+        {...pick(props, pickerInheritKeys)}
       />
     );
   },

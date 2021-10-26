@@ -16,6 +16,35 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.2.6](https://github.com/youzan/vant/compare/v3.2.5...v3.2.6)
+
+`2021-10-24`
+
+**Feature**
+
+- AddressEdit: remove confirm delete dialog [#9671](https://github.com/youzan/vant/issues/9671)
+- Calendar: add confirm-text slot [#9689](https://github.com/youzan/vant/issues/9689)
+- Progress: add --van-progress-inactive-color var [#9711](https://github.com/youzan/vant/issues/9711)
+- ShareSheet: add round prop [#9645](https://github.com/youzan/vant/issues/9645)
+- css vars support gradient background color [#9678](https://github.com/youzan/vant/issues/9678)
+
+**Performance**
+
+- reduce event listener of useWindowSize [#9658](https://github.com/youzan/vant/issues/9658)
+- Empty: minify empty icon [#9673](https://github.com/youzan/vant/issues/9673)
+
+**Types**
+
+- Cascader: add CascaderProps type [#9684](https://github.com/youzan/vant/issues/9684)
+- Checkbox: export more types [#9665](https://github.com/youzan/vant/issues/9665)
+- Steps: export StepsDirection type [#9664](https://github.com/youzan/vant/issues/9664)
+
+**Bug Fixes**
+
+- ActionSheet: closeOnPopstate prop not work [#9644](https://github.com/youzan/vant/issues/9644)
+- AddressEdit: fix address-edit-button-font-size var name [#9662](https://github.com/youzan/vant/issues/9662)
+- Badge: fix style issues when the dot option is turned on [#9686](https://github.com/youzan/vant/issues/9686) [#9687](https://github.com/youzan/vant/issues/9687)
+
 ### [v3.2.5](https://github.com/youzan/vant/compare/v3.2.4...v3.2.5)
 
 `2021-10-08`

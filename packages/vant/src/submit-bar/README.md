@@ -122,6 +122,14 @@ export default {
 | top     | Custom top content  |
 | tip     | Custom tips         |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { SubmitBarProps } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

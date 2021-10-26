@@ -1,4 +1,9 @@
-import { computed, CSSProperties, defineComponent } from 'vue';
+import {
+  computed,
+  CSSProperties,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import {
@@ -20,17 +25,21 @@ import { Badge } from '../badge';
 
 const [name, bem] = createNamespace('grid-item');
 
+const gridItemProps = extend({}, routeProps, {
+  dot: Boolean,
+  text: String,
+  icon: String,
+  badge: numericProp,
+  iconColor: String,
+  iconPrefix: String,
+});
+
+export type GridItemProps = ExtractPropTypes<typeof gridItemProps>;
+
 export default defineComponent({
   name,
 
-  props: extend({}, routeProps, {
-    dot: Boolean,
-    text: String,
-    icon: String,
-    badge: numericProp,
-    iconColor: String,
-    iconPrefix: String,
-  }),
+  props: gridItemProps,
 
   setup(props, { slots }) {
     const { parent, index } = useParent(GRID_KEY);

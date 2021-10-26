@@ -10,6 +10,7 @@ import {
   CSSProperties,
   onDeactivated,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -41,6 +42,20 @@ export type PopupCloseIconPosition =
   | 'bottom-left'
   | 'bottom-right';
 
+const popupProps = extend({}, popupSharedProps, {
+  round: Boolean,
+  position: makeStringProp<PopupPosition>('center'),
+  closeIcon: makeStringProp('cross'),
+  closeable: Boolean,
+  transition: String,
+  iconPrefix: String,
+  closeOnPopstate: Boolean,
+  closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
+  safeAreaInsetBottom: Boolean,
+});
+
+export type PopupProps = ExtractPropTypes<typeof popupProps>;
+
 const [name, bem] = createNamespace('popup');
 
 let globalZIndex = 2000;
@@ -50,17 +65,7 @@ export default defineComponent({
 
   inheritAttrs: false,
 
-  props: extend({}, popupSharedProps, {
-    round: Boolean,
-    position: makeStringProp<PopupPosition>('center'),
-    closeIcon: makeStringProp('cross'),
-    closeable: Boolean,
-    transition: String,
-    iconPrefix: String,
-    closeOnPopstate: Boolean,
-    closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
-    safeAreaInsetBottom: Boolean,
-  }),
+  props: popupProps,
 
   emits: [
     'open',

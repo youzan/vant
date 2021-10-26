@@ -4,6 +4,31 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-nav-bar van-hairline--bottom">
     <div class="van-nav-bar__content">
+      <div class="van-nav-bar__title van-ellipsis">
+        Title
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-nav-bar van-hairline--bottom">
+    <div class="van-nav-bar__content">
+      <div class="van-nav-bar__left">
+        <i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow">
+        </i>
+        <span class="van-nav-bar__text">
+          Back
+        </span>
+      </div>
+      <div class="van-nav-bar__title van-ellipsis">
+        Title
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-nav-bar van-hairline--bottom">
+    <div class="van-nav-bar__content">
       <div class="van-nav-bar__left">
         <i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow">
         </i>

@@ -261,6 +261,7 @@ The component exports the following type definitions:
 
 ```ts
 import type {
+  PopoverProps,
   PopoverTheme,
   PopoverAction,
   PopoverTrigger,

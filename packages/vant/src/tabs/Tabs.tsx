@@ -59,7 +59,7 @@ import type { TabsProvide, TabsType } from './types';
 
 const [name, bem] = createNamespace('tabs');
 
-const props = {
+const tabsProps = {
   type: makeStringProp<TabsType>('line'),
   color: String,
   border: Boolean,
@@ -81,14 +81,14 @@ const props = {
   titleInactiveColor: String,
 };
 
-export type TabsProps = ExtractPropTypes<typeof props>;
+export type TabsProps = ExtractPropTypes<typeof tabsProps>;
 
 export const TABS_KEY: InjectionKey<TabsProvide> = Symbol(name);
 
 export default defineComponent({
   name,
 
-  props,
+  props: tabsProps,
 
   emits: [
     'click',

@@ -95,7 +95,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { ContactCardType } from 'vant';
+import type { ContactCardType, ContactCardProps } from 'vant';
 ```
 
 ## Theming

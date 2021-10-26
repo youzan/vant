@@ -35,7 +35,7 @@ import {
   resizeTextarea,
   runRuleValidator,
 } from './utils';
-import { cellProps } from '../cell/Cell';
+import { cellSharedProps } from '../cell/Cell';
 
 // Composables
 import { CUSTOM_FIELD_INJECTION_KEY, useParent } from '@vant/use';
@@ -93,7 +93,7 @@ export const fieldSharedProps = {
   },
 };
 
-const props = extend({}, cellProps, fieldSharedProps, {
+const fieldProps = extend({}, cellSharedProps, fieldSharedProps, {
   rows: numericProp,
   type: makeStringProp<FieldType>('text'),
   rules: Array as PropType<FieldRule[]>,
@@ -109,12 +109,12 @@ const props = extend({}, cellProps, fieldSharedProps, {
   },
 });
 
-export type FieldProps = ExtractPropTypes<typeof props>;
+export type FieldProps = ExtractPropTypes<typeof fieldProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: fieldProps,
 
   emits: [
     'blur',
@@ -297,9 +297,17 @@ export default defineComponent({
     const blur = () => inputRef.value?.blur();
     const focus = () => inputRef.value?.focus();
 
+    const adjustTextareaSize = () => {
+      const input = inputRef.value;
+      if (props.type === 'textarea' && props.autosize && input) {
+        resizeTextarea(input, props.autosize);
+      }
+    };
+
     const onFocus = (event: Event) => {
       state.focused = true;
       emit('focus', event);
+      nextTick(adjustTextareaSize);
 
       // readonly not work in legacy mobile safari
       const readonly = getProp('readonly');
@@ -313,6 +321,7 @@ export default defineComponent({
       updateValue(getModelValue(), 'onBlur');
       emit('blur', event);
       validateWithTrigger('onBlur');
+      nextTick(adjustTextareaSize);
       resetScroll();
     };
 
@@ -362,13 +371,6 @@ export default defineComponent({
       }
 
       emit('keypress', event);
-    };
-
-    const adjustTextareaSize = () => {
-      const input = inputRef.value;
-      if (props.type === 'textarea' && props.autosize && input) {
-        resizeTextarea(input, props.autosize);
-      }
     };
 
     const renderInput = () => {

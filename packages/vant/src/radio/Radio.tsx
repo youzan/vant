@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import { pick, createNamespace } from '../utils';
@@ -16,6 +16,7 @@ import Checker, {
 
 export type RadioShape = CheckerShape;
 export type RadioLabelPosition = CheckerLabelPosition;
+export type RadioProps = ExtractPropTypes<typeof checkerProps>;
 
 const [name, bem] = createNamespace('radio');
 

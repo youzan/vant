@@ -23,7 +23,7 @@ import type { FormExpose } from './types';
 
 const [name, bem] = createNamespace('form');
 
-const props = {
+const formProps = {
   colon: Boolean,
   disabled: Boolean,
   readonly: Boolean,
@@ -39,12 +39,12 @@ const props = {
   errorMessageAlign: String as PropType<FieldTextAlign>,
 };
 
-export type FormProps = ExtractPropTypes<typeof props>;
+export type FormProps = ExtractPropTypes<typeof formProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: formProps,
 
   emits: ['submit', 'failed'],
 

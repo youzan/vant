@@ -90,7 +90,7 @@ use `color` or `text-color` to change text color.
 The component exports the following type definitions:
 
 ```ts
-import type { LoadingType } from 'vant';
+import type { LoadingType, LoadingProps } from 'vant';
 ```
 
 ## Theming

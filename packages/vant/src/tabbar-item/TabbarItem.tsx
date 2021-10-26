@@ -1,4 +1,9 @@
-import { computed, getCurrentInstance, defineComponent } from 'vue';
+import {
+  computed,
+  defineComponent,
+  ExtractPropTypes,
+  getCurrentInstance,
+} from 'vue';
 
 // Utils
 import { createNamespace, extend, isObject, numericProp } from '../utils';
@@ -14,16 +19,20 @@ import { Badge } from '../badge';
 
 const [name, bem] = createNamespace('tabbar-item');
 
+const tabbarItemProps = extend({}, routeProps, {
+  dot: Boolean,
+  icon: String,
+  name: numericProp,
+  badge: numericProp,
+  iconPrefix: String,
+});
+
+export type TabbarItemProps = ExtractPropTypes<typeof tabbarItemProps>;
+
 export default defineComponent({
   name,
 
-  props: extend({}, routeProps, {
-    dot: Boolean,
-    icon: String,
-    name: numericProp,
-    badge: numericProp,
-    iconPrefix: String,
-  }),
+  props: tabbarItemProps,
 
   emits: ['click'],
 

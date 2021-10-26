@@ -180,6 +180,7 @@ app.use(Button);
 import type {
   ButtonType,
   ButtonSize,
+  ButtonProps,
   ButtonNativeType,
   ButtonIconPosition,
 } from 'vant';

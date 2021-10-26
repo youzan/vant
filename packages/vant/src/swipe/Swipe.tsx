@@ -40,7 +40,7 @@ import { SwipeState, SwipeExpose, SwipeProvide, SwipeToOptions } from './types';
 
 const [name, bem] = createNamespace('swipe');
 
-const props = {
+const swipeProps = {
   loop: truthProp,
   width: numericProp,
   height: numericProp,
@@ -55,14 +55,14 @@ const props = {
   stopPropagation: truthProp,
 };
 
-export type SwipeProps = ExtractPropTypes<typeof props>;
+export type SwipeProps = ExtractPropTypes<typeof swipeProps>;
 
 export const SWIPE_KEY: InjectionKey<SwipeProvide> = Symbol(name);
 
 export default defineComponent({
   name,
 
-  props,
+  props: swipeProps,
 
   emits: ['change'],
 

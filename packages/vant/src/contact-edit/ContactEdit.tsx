@@ -1,4 +1,10 @@
-import { watch, reactive, PropType, defineComponent } from 'vue';
+import {
+  watch,
+  reactive,
+  PropType,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import { isMobile, createNamespace, extend } from '../utils';
@@ -23,24 +29,28 @@ const DEFAULT_CONTACT: ContactEditInfo = {
   name: '',
 };
 
+const contactEditProps = {
+  isEdit: Boolean,
+  isSaving: Boolean,
+  isDeleting: Boolean,
+  showSetDefault: Boolean,
+  setDefaultLabel: String,
+  contactInfo: {
+    type: Object as PropType<ContactEditInfo>,
+    default: () => extend({}, DEFAULT_CONTACT),
+  },
+  telValidator: {
+    type: Function as PropType<(val: string) => boolean>,
+    default: isMobile,
+  },
+};
+
+export type ContactEditProps = ExtractPropTypes<typeof contactEditProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    isEdit: Boolean,
-    isSaving: Boolean,
-    isDeleting: Boolean,
-    showSetDefault: Boolean,
-    setDefaultLabel: String,
-    contactInfo: {
-      type: Object as PropType<ContactEditInfo>,
-      default: () => extend({}, DEFAULT_CONTACT),
-    },
-    telValidator: {
-      type: Function as PropType<(val: string) => boolean>,
-      default: isMobile,
-    },
-  },
+  props: contactEditProps,
 
   emits: ['save', 'delete', 'change-default'],
 

@@ -129,6 +129,14 @@ export default {
 | top     | 自定义订单栏上方内容 |
 | tip     | 提示文案中的额外内容 |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { SubmitBarProps } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

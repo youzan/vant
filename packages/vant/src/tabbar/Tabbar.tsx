@@ -24,7 +24,7 @@ import { usePlaceholder } from '../composables/use-placeholder';
 
 const [name, bem] = createNamespace('tabbar');
 
-const props = {
+const tabbarProps = {
   route: Boolean,
   fixed: truthProp,
   border: truthProp,
@@ -40,8 +40,10 @@ const props = {
   },
 };
 
+export type TabbarProps = ExtractPropTypes<typeof tabbarProps>;
+
 export type TabbarProvide = {
-  props: ExtractPropTypes<typeof props>;
+  props: TabbarProps;
   setActive: (active: number | string) => void;
 };
 
@@ -50,7 +52,7 @@ export const TABBAR_KEY: InjectionKey<TabbarProvide> = Symbol(name);
 export default defineComponent({
   name,
 
-  props,
+  props: tabbarProps,
 
   emits: ['change', 'update:modelValue'],
 

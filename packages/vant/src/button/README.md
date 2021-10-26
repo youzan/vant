@@ -157,6 +157,7 @@ The component exports the following type definitions:
 import type {
   ButtonType,
   ButtonSize,
+  ButtonProps,
   ButtonNativeType,
   ButtonIconPosition,
 } from 'vant';

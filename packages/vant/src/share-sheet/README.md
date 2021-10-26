@@ -220,7 +220,11 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { ShareSheetOption, ShareSheetOptions } from 'vant';
+import type {
+  ShareSheetProps,
+  ShareSheetOption,
+  ShareSheetOptions,
+} from 'vant';
 ```
 
 ## Theming

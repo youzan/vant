@@ -147,7 +147,7 @@ app.use(GridItem);
 The component exports the following type definitions:
 
 ```ts
-import type { GridDirection } from 'vant';
+import type { GridProps, GridDirection, GridItemProps } from 'vant';
 ```
 
 ## Theming

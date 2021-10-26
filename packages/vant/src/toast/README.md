@@ -180,7 +180,7 @@ Toast.resetDefaultOptions('loading');
 The component exports the following type definitions:
 
 ```ts
-import type { ToastType, ToastOptions, ToastPosition } from 'vant';
+import type { ToastType, ToastProps, ToastOptions, ToastPosition } from 'vant';
 ```
 
 ## Theming

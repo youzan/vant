@@ -9,6 +9,7 @@ import {
   smartOutputFile,
   normalizePath,
 } from '../common';
+import { CSS_LANG } from '../common/css';
 
 type DemoItem = {
   name: string;
@@ -67,7 +68,7 @@ function genCode(components: string[]) {
     }))
     .filter((item) => existsSync(item.path));
 
-  return `import './package-style.less';
+  return `import './package-style.${CSS_LANG}';
 ${genImports(demos)}
 
 ${genExports(demos)}

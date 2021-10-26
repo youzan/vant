@@ -1,4 +1,4 @@
-import { nextTick, defineComponent } from 'vue';
+import { nextTick, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -28,7 +28,22 @@ export type ActionSheetAction = {
   className?: unknown;
 };
 
-const popupKeys = [
+const actionSheetProps = extend({}, popupSharedProps, {
+  title: String,
+  round: truthProp,
+  actions: makeArrayProp<ActionSheetAction>(),
+  closeIcon: makeStringProp('cross'),
+  closeable: truthProp,
+  cancelText: String,
+  description: String,
+  closeOnPopstate: truthProp,
+  closeOnClickAction: Boolean,
+  safeAreaInsetBottom: truthProp,
+});
+
+export type ActionSheetProps = ExtractPropTypes<typeof actionSheetProps>;
+
+const popupInheritKeys = [
   ...popupSharedPropKeys,
   'round',
   'closeOnPopstate',
@@ -38,18 +53,7 @@ const popupKeys = [
 export default defineComponent({
   name,
 
-  props: extend({}, popupSharedProps, {
-    title: String,
-    round: truthProp,
-    actions: makeArrayProp<ActionSheetAction>(),
-    closeIcon: makeStringProp('cross'),
-    closeable: truthProp,
-    cancelText: String,
-    description: String,
-    closeOnPopstate: truthProp,
-    closeOnClickAction: Boolean,
-    safeAreaInsetBottom: truthProp,
-  }),
+  props: actionSheetProps,
 
   emits: ['select', 'cancel', 'update:show'],
 
@@ -144,7 +148,7 @@ export default defineComponent({
         class={bem()}
         position="bottom"
         onUpdate:show={updateShow}
-        {...pick(props, popupKeys)}
+        {...pick(props, popupInheritKeys)}
       >
         {renderHeader()}
         {renderDescription()}

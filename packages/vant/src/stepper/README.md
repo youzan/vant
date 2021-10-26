@@ -162,7 +162,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { StepperTheme } from 'vant';
+import type { StepperTheme, StepperProps } from 'vant';
 ```
 
 ## Theming

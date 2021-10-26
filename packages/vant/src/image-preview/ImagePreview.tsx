@@ -45,7 +45,7 @@ const popupProps = [
   'closeOnPopstate',
 ] as const;
 
-const props = {
+const imagePreviewProps = {
   show: Boolean,
   loop: truthProp,
   images: makeArrayProp<string>(),
@@ -66,12 +66,12 @@ const props = {
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
 };
 
-export type ImagePreviewProps = ExtractPropTypes<typeof props>;
+export type ImagePreviewProps = ExtractPropTypes<typeof imagePreviewProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: imagePreviewProps,
 
   emits: ['scale', 'close', 'closed', 'change', 'update:show'],
 

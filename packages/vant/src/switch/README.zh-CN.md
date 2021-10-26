@@ -133,6 +133,14 @@ export default {
 | change | 开关状态切换时触发 | _value: any_        |
 | click  | 点击时触发         | _event: MouseEvent_ |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { SwitchProps } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

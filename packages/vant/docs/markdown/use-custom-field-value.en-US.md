@@ -14,11 +14,16 @@ If you want to custom Form items, you can insert your component into the `input`
 
 ```js
 // MyComponent.vue
+import { ref } from 'vue';
 import { useCustomFieldValue } from '@vant/use';
 
 export default {
   setup() {
-    useCustomFieldValue(() => 'Some value');
+    const myValue = ref(0);
+
+    useCustomFieldValue(() => myValue.value);
+
+    return { myValue };
   },
 };
 ```

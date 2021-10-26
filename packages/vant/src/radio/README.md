@@ -161,7 +161,13 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { RadioShape, RadioLabelPosition, RadioGroupDirection } from 'vant';
+import type {
+  RadioProps,
+  RadioShape,
+  RadioGroupProps,
+  RadioLabelPosition,
+  RadioGroupDirection,
+} from 'vant';
 ```
 
 ## API

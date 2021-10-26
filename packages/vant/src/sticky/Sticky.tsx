@@ -6,6 +6,7 @@ import {
   reactive,
   CSSProperties,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -29,16 +30,20 @@ const [name, bem] = createNamespace('sticky');
 
 export type StickyPosition = 'top' | 'bottom';
 
+const stickyProps = {
+  zIndex: numericProp,
+  position: makeStringProp<StickyPosition>('top'),
+  container: Object as PropType<Element>,
+  offsetTop: makeNumericProp(0),
+  offsetBottom: makeNumericProp(0),
+};
+
+export type StickyProps = ExtractPropTypes<typeof stickyProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    zIndex: numericProp,
-    position: makeStringProp<StickyPosition>('top'),
-    container: Object as PropType<Element>,
-    offsetTop: makeNumericProp(0),
-    offsetBottom: makeNumericProp(0),
-  },
+  props: stickyProps,
 
   emits: ['scroll', 'change'],
 

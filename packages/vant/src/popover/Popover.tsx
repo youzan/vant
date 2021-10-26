@@ -8,6 +8,7 @@ import {
   TeleportProps,
   onBeforeUnmount,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 import { Instance, createPopper, offsetModifier } from '@vant/popperjs';
 
@@ -32,6 +33,14 @@ import { useClickAway } from '@vant/use';
 import { Icon } from '../icon';
 import { Popup } from '../popup';
 
+// Types
+import {
+  PopoverTheme,
+  PopoverAction,
+  PopoverTrigger,
+  PopoverPlacement,
+} from './types';
+
 const [name, bem] = createNamespace('popover');
 
 const popupProps = [
@@ -44,58 +53,37 @@ const popupProps = [
   'closeOnClickOverlay',
 ] as const;
 
-export type PopoverTheme = 'light' | 'dark';
-export type PopoverTrigger = 'manual' | 'click';
-export type PopoverPlacement =
-  | 'top'
-  | 'top-start'
-  | 'top-end'
-  | 'left'
-  | 'left-start'
-  | 'left-end'
-  | 'right'
-  | 'right-start'
-  | 'right-end'
-  | 'bottom'
-  | 'bottom-start'
-  | 'bottom-end';
-
-export type PopoverAction = {
-  text: string;
-  icon?: string;
-  color?: string;
-  disabled?: boolean;
-  className?: string;
-  [key: PropertyKey]: any;
+const popoverProps = {
+  show: Boolean,
+  theme: makeStringProp<PopoverTheme>('light'),
+  overlay: Boolean,
+  actions: makeArrayProp<PopoverAction>(),
+  trigger: makeStringProp<PopoverTrigger>('click'),
+  duration: numericProp,
+  showArrow: truthProp,
+  placement: makeStringProp<PopoverPlacement>('bottom'),
+  iconPrefix: String,
+  overlayClass: unknownProp,
+  overlayStyle: Object as PropType<CSSProperties>,
+  closeOnClickAction: truthProp,
+  closeOnClickOverlay: truthProp,
+  closeOnClickOutside: truthProp,
+  offset: {
+    type: Array as unknown as PropType<[number, number]>,
+    default: () => [0, 8],
+  },
+  teleport: {
+    type: [String, Object] as PropType<TeleportProps['to']>,
+    default: 'body',
+  },
 };
+
+export type PopoverProps = ExtractPropTypes<typeof popoverProps>;
 
 export default defineComponent({
   name,
 
-  props: {
-    show: Boolean,
-    theme: makeStringProp<PopoverTheme>('light'),
-    overlay: Boolean,
-    actions: makeArrayProp<PopoverAction>(),
-    trigger: makeStringProp<PopoverTrigger>('click'),
-    duration: numericProp,
-    showArrow: truthProp,
-    placement: makeStringProp<PopoverPlacement>('bottom'),
-    iconPrefix: String,
-    overlayClass: unknownProp,
-    overlayStyle: Object as PropType<CSSProperties>,
-    closeOnClickAction: truthProp,
-    closeOnClickOverlay: truthProp,
-    closeOnClickOutside: truthProp,
-    offset: {
-      type: Array as unknown as PropType<[number, number]>,
-      default: () => [0, 8],
-    },
-    teleport: {
-      type: [String, Object] as PropType<TeleportProps['to']>,
-      default: 'body',
-    },
-  },
+  props: popoverProps,
 
   emits: ['select', 'touchstart', 'update:show'],
 

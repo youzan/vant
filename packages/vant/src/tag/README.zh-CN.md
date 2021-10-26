@@ -130,6 +130,14 @@ export default {
 | click  | 点击时触发     | _event: MouseEvent_ |
 | close  | 关闭标签时触发 | _event: MouseEvent_ |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { TagSize, TagType, TagProps } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

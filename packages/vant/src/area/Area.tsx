@@ -19,7 +19,7 @@ import {
   makeNumericProp,
   createNamespace,
 } from '../utils';
-import { pickerProps } from '../picker/Picker';
+import { pickerSharedProps } from '../picker/Picker';
 
 // Composables
 import { useExpose } from '../composables/use-expose';
@@ -54,7 +54,7 @@ const INHERIT_PROPS = [
 
 const isOverseaCode = (code: string) => code[0] === '9';
 
-const props = extend({}, pickerProps, {
+const areaProps = extend({}, pickerSharedProps, {
   value: String,
   columnsNum: makeNumericProp(3),
   columnsPlaceholder: makeArrayProp<string>(),
@@ -68,12 +68,12 @@ const props = extend({}, pickerProps, {
   },
 });
 
-export type AreaProps = ExtractPropTypes<typeof props>;
+export type AreaProps = ExtractPropTypes<typeof areaProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: areaProps,
 
   emits: ['change', 'confirm', 'cancel'],
 

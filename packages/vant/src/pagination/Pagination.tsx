@@ -1,4 +1,4 @@
-import { computed, watch, defineComponent } from 'vue';
+import { computed, watch, defineComponent, ExtractPropTypes } from 'vue';
 import {
   BORDER,
   makeStringProp,
@@ -23,20 +23,24 @@ const makePage = (
 
 export type PaginationMode = 'simple' | 'multi';
 
+const paginationProps = {
+  mode: makeStringProp<PaginationMode>('multi'),
+  prevText: String,
+  nextText: String,
+  pageCount: makeNumericProp(0),
+  modelValue: makeNumberProp(0),
+  totalItems: makeNumericProp(0),
+  showPageSize: makeNumericProp(5),
+  itemsPerPage: makeNumericProp(10),
+  forceEllipses: Boolean,
+};
+
+export type PaginationProps = ExtractPropTypes<typeof paginationProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    mode: makeStringProp<PaginationMode>('multi'),
-    prevText: String,
-    nextText: String,
-    pageCount: makeNumericProp(0),
-    modelValue: makeNumberProp(0),
-    totalItems: makeNumericProp(0),
-    showPageSize: makeNumericProp(5),
-    itemsPerPage: makeNumericProp(10),
-    forceEllipses: Boolean,
-  },
+  props: paginationProps,
 
   emits: ['change', 'update:modelValue'],
 

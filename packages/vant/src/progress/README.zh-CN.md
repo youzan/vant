@@ -102,6 +102,7 @@ progressRef.value?.resize();
 | ------------------------------------- | -------------------------- | ---- |
 | --van-progress-height                 | _4px_                      | -    |
 | --van-progress-color                  | _var(--van-primary-color)_ | -    |
+| --van-progress-inactive-color         | _var(--van-gray-5)_        | -    |
 | --van-progress-background-color       | _var(--van-gray-3)_        | -    |
 | --van-progress-pivot-padding          | _0 5px_                    | -    |
 | --van-progress-pivot-text-color       | _var(--van-white)_         | -    |

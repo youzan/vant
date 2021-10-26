@@ -137,6 +137,18 @@ export default {
 | ------- | ------------ |
 | default | 按钮显示内容 |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type {
+  ActionBarProps,
+  ActionBarIconProps,
+  ActionBarButtonProps,
+} from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

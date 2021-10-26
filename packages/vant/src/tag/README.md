@@ -116,6 +116,14 @@ export default {
 | click | Emitted when component is clicked  | _event: MouseEvent_ |
 | close | Emitted when close icon is clicked | _event: MouseEvent_ |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { TagSize, TagType, TagProps } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

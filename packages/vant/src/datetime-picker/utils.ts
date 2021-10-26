@@ -1,9 +1,9 @@
 import { PropType } from 'vue';
 import { extend } from '../utils';
-import { pickerProps } from '../picker/Picker';
+import { pickerSharedProps } from '../picker/Picker';
 import type { DatetimePickerColumnType } from './types';
 
-export const sharedProps = extend({}, pickerProps, {
+export const sharedProps = extend({}, pickerSharedProps, {
   filter: Function as PropType<(type: string, values: string[]) => string[]>,
   columnsOrder: Array as PropType<DatetimePickerColumnType[]>,
   formatter: {
@@ -12,8 +12,8 @@ export const sharedProps = extend({}, pickerProps, {
   },
 });
 
-export const pickerKeys = Object.keys(pickerProps) as Array<
-  keyof typeof pickerProps
+export const pickerInheritKeys = Object.keys(pickerSharedProps) as Array<
+  keyof typeof pickerSharedProps
 >;
 
 export function times<T>(n: number, iteratee: (index: number) => T) {

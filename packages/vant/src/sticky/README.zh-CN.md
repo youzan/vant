@@ -93,7 +93,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { StickyPosition } from 'vant';
+import type { StickyProps, StickyPosition } from 'vant';
 ```
 
 ## 主题定制

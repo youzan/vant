@@ -30,7 +30,7 @@ import type { ListExpose, ListDirection } from './types';
 
 const [name, bem, t] = createNamespace('list');
 
-const props = {
+const listProps = {
   error: Boolean,
   offset: makeNumericProp(300),
   loading: Boolean,
@@ -42,12 +42,12 @@ const props = {
   immediateCheck: truthProp,
 };
 
-export type ListProps = ExtractPropTypes<typeof props>;
+export type ListProps = ExtractPropTypes<typeof listProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: listProps,
 
   emits: ['load', 'update:error', 'update:loading'],
 

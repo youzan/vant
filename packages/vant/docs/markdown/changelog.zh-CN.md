@@ -16,6 +16,35 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.2.6](https://github.com/youzan/vant/compare/v3.2.5...v3.2.6)
+
+`2021-10-24`
+
+**Feature**
+
+- AddressEdit: 移除点击删除按钮的弹窗交互 [#9671](https://github.com/youzan/vant/issues/9671)
+- Calendar: 新增 confirm-text 插槽 [#9689](https://github.com/youzan/vant/issues/9689)
+- Progress: 新增 --van-progress-inactive-color 样式变量 [#9711](https://github.com/youzan/vant/issues/9711)
+- ShareSheet: 新增 round 属性 [#9645](https://github.com/youzan/vant/issues/9645)
+- 支持通过 css vars 定义渐变的背景色 [#9678](https://github.com/youzan/vant/issues/9678)
+
+**Performance**
+
+- 减少 useWindowSize 绑定的事件监听器数量 [#9658](https://github.com/youzan/vant/issues/9658)
+- Empty: 压缩 empty 图标 [#9673](https://github.com/youzan/vant/issues/9673)
+
+**Types**
+
+- Cascader: 新增 CascaderProps 类型 [#9684](https://github.com/youzan/vant/issues/9684)
+- Checkbox: 导出更多类型定义 [#9665](https://github.com/youzan/vant/issues/9665)
+- Steps: 新增 StepsDirection 类型 [#9664](https://github.com/youzan/vant/issues/9664)
+
+**Bug Fixes**
+
+- ActionSheet: 修复 closeOnPopstate 属性不生效的问题 [#9644](https://github.com/youzan/vant/issues/9644)
+- AddressEdit: 修复 address-edit-button-font-size 变量不生效的问题 [#9662](https://github.com/youzan/vant/issues/9662)
+- Badge: 修复使用 dot 属性且自定义大小时样式错误的问题 [#9686](https://github.com/youzan/vant/issues/9686) [#9687](https://github.com/youzan/vant/issues/9687)
+
 ### [v3.2.5](https://github.com/youzan/vant/compare/v3.2.4...v3.2.5)
 
 `2021-10-08`

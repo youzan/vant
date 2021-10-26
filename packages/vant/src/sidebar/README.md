@@ -124,6 +124,14 @@ export default {
 | ----- | ----------------- |
 | title | Custom item title |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { SidebarProps, SidebarItemProps } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

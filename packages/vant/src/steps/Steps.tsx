@@ -6,7 +6,7 @@ const [name, bem] = createNamespace('steps');
 
 export type StepsDirection = 'horizontal' | 'vertical';
 
-const props = {
+const stepsProps = {
   active: makeNumericProp(0),
   direction: makeStringProp<StepsDirection>('horizontal'),
   activeIcon: makeStringProp('checked'),
@@ -17,8 +17,10 @@ const props = {
   inactiveColor: String,
 };
 
+export type StepsProps = ExtractPropTypes<typeof stepsProps>;
+
 export type StepsProvide = {
-  props: ExtractPropTypes<typeof props>;
+  props: StepsProps;
   onClickStep: (index: number) => void;
 };
 
@@ -27,7 +29,7 @@ export const STEPS_KEY: InjectionKey<StepsProvide> = Symbol(name);
 export default defineComponent({
   name,
 
-  props,
+  props: stepsProps,
 
   emits: ['click-step'],
 

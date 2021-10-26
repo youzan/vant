@@ -8,7 +8,7 @@ import {
 } from 'vue';
 
 // Utils
-import { cellProps } from '../cell/Cell';
+import { cellSharedProps } from '../cell/Cell';
 import {
   pick,
   extend,
@@ -30,19 +30,19 @@ const [name, bem] = createNamespace('collapse-item');
 
 const CELL_SLOTS = ['icon', 'title', 'value', 'label', 'right-icon'] as const;
 
-const props = extend({}, cellProps, {
+const collapseItemProps = extend({}, cellSharedProps, {
   name: numericProp,
   isLink: truthProp,
   disabled: Boolean,
   readonly: Boolean,
 });
 
-export type CollapseItemProps = ExtractPropTypes<typeof props>;
+export type CollapseItemProps = ExtractPropTypes<typeof collapseItemProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: collapseItemProps,
 
   setup(props, { slots }) {
     const wrapperRef = ref<HTMLElement>();
@@ -121,7 +121,7 @@ export default defineComponent({
       const { border, disabled, readonly } = props;
       const attrs = pick(
         props,
-        Object.keys(cellProps) as Array<keyof typeof cellProps>
+        Object.keys(cellSharedProps) as Array<keyof typeof cellSharedProps>
       );
 
       if (readonly) {

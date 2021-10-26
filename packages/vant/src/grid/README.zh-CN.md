@@ -163,7 +163,7 @@ app.use(GridItem);
 组件导出以下类型定义：
 
 ```ts
-import type { GridDirection } from 'vant';
+import type { GridProps, GridDirection, GridItemProps } from 'vant';
 ```
 
 ## 主题定制

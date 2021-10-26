@@ -22,7 +22,7 @@ import type { SearchShape } from './types';
 
 const [name, bem, t] = createNamespace('search');
 
-const props = extend({}, fieldSharedProps, {
+const searchProps = extend({}, fieldSharedProps, {
   label: String,
   shape: makeStringProp<SearchShape>('square'),
   leftIcon: makeStringProp('search'),
@@ -32,12 +32,12 @@ const props = extend({}, fieldSharedProps, {
   showAction: Boolean,
 });
 
-export type SearchProps = ExtractPropTypes<typeof props>;
+export type SearchProps = ExtractPropTypes<typeof searchProps>;
 
 export default defineComponent({
   name,
 
-  props,
+  props: searchProps,
 
   emits: ['search', 'cancel', 'update:modelValue'],
 

@@ -16,7 +16,7 @@ import {
   createNamespace,
   makeNumericProp,
 } from '../utils';
-import { times, sharedProps, pickerKeys } from './utils';
+import { times, sharedProps, pickerInheritKeys } from './utils';
 
 // Composables
 import { useExpose } from '../composables/use-expose';
@@ -171,7 +171,7 @@ export default defineComponent({
         onChange={onChange}
         onCancel={onCancel}
         onConfirm={onConfirm}
-        {...pick(props, pickerKeys)}
+        {...pick(props, pickerInheritKeys)}
       />
     );
   },

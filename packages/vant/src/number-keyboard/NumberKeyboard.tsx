@@ -8,6 +8,7 @@ import {
   Transition,
   TeleportProps,
   defineComponent,
+  ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -38,31 +39,35 @@ type KeyConfig = {
   wider?: boolean;
 };
 
+const numberKeyboardProps = {
+  show: Boolean,
+  title: String,
+  theme: makeStringProp<NumberKeyboardTheme>('default'),
+  zIndex: numericProp,
+  teleport: [String, Object] as PropType<TeleportProps['to']>,
+  maxlength: makeNumericProp(Infinity),
+  modelValue: makeStringProp(''),
+  transition: truthProp,
+  blurOnClose: truthProp,
+  showDeleteKey: truthProp,
+  randomKeyOrder: Boolean,
+  closeButtonText: String,
+  deleteButtonText: String,
+  closeButtonLoading: Boolean,
+  hideOnClickOutside: truthProp,
+  safeAreaInsetBottom: truthProp,
+  extraKey: {
+    type: [String, Array] as PropType<string | string[]>,
+    default: '',
+  },
+};
+
+export type NumberKeyboardProps = ExtractPropTypes<typeof numberKeyboardProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    show: Boolean,
-    title: String,
-    theme: makeStringProp<NumberKeyboardTheme>('default'),
-    zIndex: numericProp,
-    teleport: [String, Object] as PropType<TeleportProps['to']>,
-    maxlength: makeNumericProp(Infinity),
-    modelValue: makeStringProp(''),
-    transition: truthProp,
-    blurOnClose: truthProp,
-    showDeleteKey: truthProp,
-    randomKeyOrder: Boolean,
-    closeButtonText: String,
-    deleteButtonText: String,
-    closeButtonLoading: Boolean,
-    hideOnClickOutside: truthProp,
-    safeAreaInsetBottom: truthProp,
-    extraKey: {
-      type: [String, Array] as PropType<string | string[]>,
-      default: '',
-    },
-  },
+  props: numberKeyboardProps,
 
   emits: [
     'show',

@@ -106,3 +106,11 @@ Use `size` prop to set icon size.
 | Event | Description                  | Arguments           |
 | ----- | ---------------------------- | ------------------- |
 | click | Emitted when icon is clicked | _event: MouseEvent_ |
+
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { IconProps } from 'vant';
+```

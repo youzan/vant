@@ -86,6 +86,14 @@ Use the image prop to display different placeholder images.
 | image       | Custom image          |
 | description | Custom description    |
 
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { EmptyProps } from 'vant';
+```
+
 ## Theming
 
 ### CSS Variables

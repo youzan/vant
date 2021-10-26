@@ -1,4 +1,4 @@
-import { defineComponent, inject, computed } from 'vue';
+import { defineComponent, inject, computed, ExtractPropTypes } from 'vue';
 import {
   addUnit,
   numericProp,
@@ -12,18 +12,22 @@ const [name, bem] = createNamespace('icon');
 
 const isImage = (name?: string) => name?.includes('/');
 
+const iconProps = {
+  dot: Boolean,
+  tag: makeStringProp<keyof HTMLElementTagNameMap>('i'),
+  name: String,
+  size: numericProp,
+  badge: numericProp,
+  color: String,
+  classPrefix: String,
+};
+
+export type IconProps = ExtractPropTypes<typeof iconProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    dot: Boolean,
-    tag: makeStringProp<keyof HTMLElementTagNameMap>('i'),
-    name: String,
-    size: numericProp,
-    badge: numericProp,
-    color: String,
-    classPrefix: String,
-  },
+  props: iconProps,
 
   setup(props, { slots }) {
     const config = inject(CONFIG_PROVIDER_KEY, null);

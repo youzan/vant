@@ -270,6 +270,7 @@ export default {
 
 ```ts
 import type {
+  DialogProps,
   DialogTheme,
   DialogMessage,
   DialogOptions,

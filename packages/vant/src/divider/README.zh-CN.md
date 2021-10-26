@@ -84,7 +84,7 @@ app.use(Divider);
 组件导出以下类型定义：
 
 ```ts
-import type { DividerContentPosition } from 'vant';
+import type { DividerProps, DividerContentPosition } from 'vant';
 ```
 
 ## 主题定制

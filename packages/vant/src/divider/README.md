@@ -74,7 +74,7 @@ app.use(Divider);
 The component exports the following type definitions:
 
 ```ts
-import type { DividerContentPosition } from 'vant';
+import type { DividerProps, DividerContentPosition } from 'vant';
 ```
 
 ## Theming

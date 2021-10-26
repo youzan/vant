@@ -229,7 +229,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { ActionSheetAction } from 'vant';
+import type { ActionSheetProps, ActionSheetAction } from 'vant';
 ```
 
 ## Theming

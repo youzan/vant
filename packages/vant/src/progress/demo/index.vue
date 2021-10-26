@@ -57,7 +57,7 @@ const reduce = () => {
   </demo-block>
 
   <demo-block :title="t('transition')">
-    <van-progress inactive :percentage="percentage" />
+    <van-progress :percentage="percentage" />
     <div style="margin-top: 15px">
       <van-button :text="t('add')" type="primary" size="small" @click="add" />
       <van-button

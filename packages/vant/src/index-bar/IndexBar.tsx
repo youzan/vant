@@ -51,7 +51,7 @@ function genAlphabet() {
 
 const [name, bem] = createNamespace('index-bar');
 
-const props = {
+const indexBarProps = {
   sticky: truthProp,
   zIndex: numericProp,
   teleport: [String, Object] as PropType<TeleportProps['to']>,
@@ -63,14 +63,14 @@ const props = {
   },
 };
 
-export type IndexBarProps = ExtractPropTypes<typeof props>;
+export type IndexBarProps = ExtractPropTypes<typeof indexBarProps>;
 
 export const INDEX_BAR_KEY: InjectionKey<IndexBarProvide> = Symbol(name);
 
 export default defineComponent({
   name,
 
-  props,
+  props: indexBarProps,
 
   emits: ['select', 'change'],
 

@@ -1,4 +1,4 @@
-import { PropType, defineComponent } from 'vue';
+import { PropType, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -31,22 +31,26 @@ export type TreeSelectItem = {
   className?: unknown;
 };
 
+const treeSelectProps = {
+  max: makeNumericProp(Infinity),
+  items: makeArrayProp<TreeSelectItem>(),
+  height: makeNumericProp(300),
+  selectedIcon: makeStringProp('success'),
+  mainActiveIndex: makeNumericProp(0),
+  activeId: {
+    type: [Number, String, Array] as PropType<
+      number | string | Array<number | string>
+    >,
+    default: 0,
+  },
+};
+
+export type TreeSelectProps = ExtractPropTypes<typeof treeSelectProps>;
+
 export default defineComponent({
   name,
 
-  props: {
-    max: makeNumericProp(Infinity),
-    items: makeArrayProp<TreeSelectItem>(),
-    height: makeNumericProp(300),
-    selectedIcon: makeStringProp('success'),
-    mainActiveIndex: makeNumericProp(0),
-    activeId: {
-      type: [Number, String, Array] as PropType<
-        number | string | Array<number | string>
-      >,
-      default: 0,
-    },
-  },
+  props: treeSelectProps,
 
   emits: [
     'click-nav',
