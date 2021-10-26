@@ -1,6 +1,6 @@
 import { isDef, isObject } from './validate';
 
-type ObjectIndex = Record<string, any>;
+type ObjectIndex = Record<string, unknown>;
 
 const { hasOwnProperty } = Object.prototype;
 
@@ -15,7 +15,7 @@ function assignKey(to: ObjectIndex, from: ObjectIndex, key: string) {
     to[key] = val;
   } else {
     // eslint-disable-next-line no-use-before-define
-    to[key] = deepAssign(Object(to[key]), from[key]);
+    to[key] = deepAssign(Object(to[key]), val);
   }
 }
 
