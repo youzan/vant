@@ -1,9 +1,9 @@
 import {
-  ref,
   Ref,
   reactive,
   computed,
   PropType,
+  shallowRef,
   defineComponent,
   ExtractPropTypes,
 } from 'vue';
@@ -57,9 +57,9 @@ export default defineComponent({
     let lockClick: boolean;
     let startOffset: number;
 
-    const root = ref<HTMLElement>();
-    const leftRef = ref<HTMLElement>();
-    const rightRef = ref<HTMLElement>();
+    const root = shallowRef<HTMLElement>();
+    const leftRef = shallowRef<HTMLElement>();
+    const rightRef = shallowRef<HTMLElement>();
 
     const state = reactive({
       offset: 0,

@@ -6,6 +6,7 @@ import {
   PropType,
   Teleport,
   onMounted,
+  shallowRef,
   InjectionKey,
   CSSProperties,
   TeleportProps,
@@ -75,7 +76,7 @@ export default defineComponent({
   emits: ['select', 'change'],
 
   setup(props, { emit, slots }) {
-    const root = ref<HTMLElement>();
+    const root = shallowRef<HTMLElement>();
     const activeAnchor = ref('');
 
     const touch = useTouch();

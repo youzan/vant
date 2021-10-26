@@ -1,8 +1,8 @@
 import {
-  ref,
   watch,
   reactive,
   PropType,
+  shallowRef,
   defineComponent,
   ExtractPropTypes,
 } from 'vue';
@@ -58,8 +58,8 @@ export default defineComponent({
     let contentWidth = 0;
     let startTimer: NodeJS.Timeout;
 
-    const wrapRef = ref<HTMLElement>();
-    const contentRef = ref<HTMLElement>();
+    const wrapRef = shallowRef<HTMLElement>();
+    const contentRef = shallowRef<HTMLElement>();
 
     const state = reactive({
       show: true,

@@ -1,4 +1,4 @@
-import { ref, watch, reactive, defineComponent } from 'vue';
+import { watch, reactive, shallowRef, defineComponent } from 'vue';
 
 // Utils
 import { deepClone } from '../utils/deep-clone';
@@ -67,7 +67,7 @@ export default defineComponent({
     let momentumOffset: number;
     let transitionEndTrigger: null | (() => void);
 
-    const wrapper = ref<HTMLElement>();
+    const wrapper = shallowRef<HTMLElement>();
 
     const state = reactive({
       index: props.defaultIndex,

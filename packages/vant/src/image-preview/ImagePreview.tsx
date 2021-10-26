@@ -1,10 +1,10 @@
 import {
-  ref,
   watch,
   nextTick,
   PropType,
   reactive,
   onMounted,
+  shallowRef,
   CSSProperties,
   defineComponent,
   ExtractPropTypes,
@@ -76,7 +76,7 @@ export default defineComponent({
   emits: ['scale', 'close', 'closed', 'change', 'update:show'],
 
   setup(props, { emit, slots }) {
-    const swipeRef = ref<SwipeInstance>();
+    const swipeRef = shallowRef<SwipeInstance>();
     const windowSize = useWindowSize();
 
     const state = reactive({

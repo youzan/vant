@@ -1,10 +1,10 @@
 import {
-  ref,
   Slot,
   watch,
   computed,
   Teleport,
   PropType,
+  shallowRef,
   Transition,
   TeleportProps,
   defineComponent,
@@ -80,7 +80,7 @@ export default defineComponent({
   ],
 
   setup(props, { emit, slots }) {
-    const root = ref<HTMLElement>();
+    const root = shallowRef<HTMLElement>();
 
     const genBasicKeys = () => {
       const keys: KeyConfig[] = Array(9)

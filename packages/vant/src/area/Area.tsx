@@ -1,11 +1,11 @@
 import {
-  ref,
   watch,
   computed,
   reactive,
   nextTick,
   PropType,
   onMounted,
+  shallowRef,
   defineComponent,
   ExtractPropTypes,
 } from 'vue';
@@ -78,7 +78,7 @@ export default defineComponent({
   emits: ['change', 'confirm', 'cancel'],
 
   setup(props, { emit, slots }) {
-    const pickerRef = ref<PickerInstance>();
+    const pickerRef = shallowRef<PickerInstance>();
 
     const state = reactive({
       code: props.value,

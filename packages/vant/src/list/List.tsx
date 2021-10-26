@@ -4,6 +4,7 @@ import {
   nextTick,
   onUpdated,
   onMounted,
+  shallowRef,
   defineComponent,
   ExtractPropTypes,
 } from 'vue';
@@ -54,8 +55,8 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     // use sync innerLoading state to avoid repeated loading in some edge cases
     const loading = ref(false);
-    const root = ref<HTMLElement>();
-    const placeholder = ref<HTMLElement>();
+    const root = shallowRef<HTMLElement>();
+    const placeholder = shallowRef<HTMLElement>();
     const tabStatus = useTabStatus();
     const scrollParent = useScrollParent(root);
 

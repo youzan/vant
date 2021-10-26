@@ -4,6 +4,7 @@ import {
   computed,
   PropType,
   nextTick,
+  shallowRef,
   defineComponent,
   ExtractPropTypes,
 } from 'vue';
@@ -113,7 +114,7 @@ export default defineComponent({
     };
 
     let actionType: 'plus' | 'minus';
-    const inputRef = ref<HTMLInputElement>();
+    const inputRef = shallowRef<HTMLInputElement>();
     const current = ref(getInitialValue());
 
     const minusDisabled = computed(

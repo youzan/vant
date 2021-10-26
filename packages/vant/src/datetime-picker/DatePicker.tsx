@@ -4,6 +4,7 @@ import {
   computed,
   nextTick,
   onMounted,
+  shallowRef,
   defineComponent,
 } from 'vue';
 
@@ -71,7 +72,7 @@ export default defineComponent({
       return undefined;
     };
 
-    const picker = ref<PickerInstance>();
+    const picker = shallowRef<PickerInstance>();
     const currentDate = ref(formatValue(props.modelValue));
 
     const getBoundary = (type: 'max' | 'min', value: Date) => {

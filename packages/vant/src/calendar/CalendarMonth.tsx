@@ -1,7 +1,7 @@
 import {
-  ref,
   computed,
   PropType,
+  shallowRef,
   defineComponent,
   ExtractPropTypes,
 } from 'vue';
@@ -66,8 +66,8 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const [visible, setVisible] = useToggle();
-    const daysRef = ref<HTMLElement>();
-    const monthRef = ref<HTMLElement>();
+    const daysRef = shallowRef<HTMLElement>();
+    const monthRef = shallowRef<HTMLElement>();
     const height = useHeight(monthRef);
 
     const title = computed(() => formatMonthTitle(props.date));

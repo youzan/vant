@@ -6,6 +6,7 @@ import {
   computed,
   onMounted,
   Transition,
+  shallowRef,
   onActivated,
   CSSProperties,
   onDeactivated,
@@ -83,7 +84,7 @@ export default defineComponent({
     let shouldReopen: boolean;
 
     const zIndex = ref<number>();
-    const popupRef = ref<HTMLElement>();
+    const popupRef = shallowRef<HTMLElement>();
 
     const lazyRender = useLazyRender(() => props.show || !props.lazyRender);
 

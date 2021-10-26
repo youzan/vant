@@ -1,10 +1,10 @@
 import {
-  ref,
   watch,
   computed,
   reactive,
   nextTick,
   PropType,
+  shallowRef,
   onActivated,
   InjectionKey,
   CSSProperties,
@@ -119,9 +119,9 @@ export default defineComponent({
     let lockScroll: boolean;
     let stickyFixed: boolean;
 
-    const root = ref<HTMLElement>();
-    const navRef = ref<HTMLElement>();
-    const wrapRef = ref<HTMLElement>();
+    const root = shallowRef<HTMLElement>();
+    const navRef = shallowRef<HTMLElement>();
+    const wrapRef = shallowRef<HTMLElement>();
 
     const windowSize = useWindowSize();
     const scroller = useScrollParent(root);

@@ -1,10 +1,10 @@
 import {
-  ref,
   watch,
   computed,
   nextTick,
   reactive,
   PropType,
+  shallowRef,
   defineComponent,
   ExtractPropTypes,
 } from 'vue';
@@ -109,7 +109,7 @@ export default defineComponent({
   ],
 
   setup(props, { emit, slots }) {
-    const areaRef = ref<AreaInstance>();
+    const areaRef = shallowRef<AreaInstance>();
 
     const state = reactive({
       data: {} as AddressEditInfo,

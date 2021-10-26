@@ -1,9 +1,9 @@
 import {
-  ref,
   watch,
   nextTick,
   PropType,
   onMounted,
+  shallowRef,
   CSSProperties,
   TeleportProps,
   onBeforeUnmount,
@@ -90,8 +90,8 @@ export default defineComponent({
   setup(props, { emit, slots, attrs }) {
     let popper: Instance | null;
 
-    const wrapperRef = ref<HTMLElement>();
-    const popoverRef = ref<ComponentInstance>();
+    const wrapperRef = shallowRef<HTMLElement>();
+    const popoverRef = shallowRef<ComponentInstance>();
 
     const createPopperInstance = () => {
       if (wrapperRef.value && popoverRef.value) {

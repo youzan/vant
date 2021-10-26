@@ -1,6 +1,6 @@
 import {
-  ref,
   PropType,
+  shallowRef,
   InjectionKey,
   defineComponent,
   ExtractPropTypes,
@@ -57,7 +57,7 @@ export default defineComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const root = ref<HTMLElement>();
+    const root = shallowRef<HTMLElement>();
     const { linkChildren } = useChildren(TABBAR_KEY);
     const renderPlaceholder = usePlaceholder(root, bem);
 

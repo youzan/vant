@@ -1,9 +1,9 @@
 import {
-  ref,
   watch,
   reactive,
   computed,
   onMounted,
+  shallowRef,
   onActivated,
   InjectionKey,
   CSSProperties,
@@ -67,7 +67,7 @@ export default defineComponent({
   emits: ['change'],
 
   setup(props, { emit, slots }) {
-    const root = ref<HTMLElement>();
+    const root = shallowRef<HTMLElement>();
     const state = reactive<SwipeState>({
       rect: null,
       width: 0,

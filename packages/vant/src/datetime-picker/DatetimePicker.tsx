@@ -1,4 +1,4 @@
-import { ref, defineComponent, ExtractPropTypes } from 'vue';
+import { shallowRef, defineComponent, ExtractPropTypes } from 'vue';
 import { pick, extend, createNamespace } from '../utils';
 import { useExpose } from '../composables/use-expose';
 import TimePicker from './TimePicker';
@@ -21,7 +21,7 @@ export default defineComponent({
   props: datetimePickerProps,
 
   setup(props, { attrs, slots }) {
-    const root = ref<DatetimePickerInstance>();
+    const root = shallowRef<DatetimePickerInstance>();
 
     useExpose({
       getPicker: () => root.value?.getPicker(),

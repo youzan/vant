@@ -1,7 +1,7 @@
 import {
-  ref,
   reactive,
   computed,
+  shallowRef,
   CSSProperties,
   defineComponent,
   ExtractPropTypes,
@@ -44,7 +44,7 @@ export default defineComponent({
       active: false,
     });
 
-    const root = ref<HTMLElement>();
+    const root = shallowRef<HTMLElement>();
     const { parent } = useParent(INDEX_BAR_KEY);
 
     if (!parent) {

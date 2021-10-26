@@ -1,4 +1,4 @@
-import { PropType, ref, defineComponent } from 'vue';
+import { PropType, shallowRef, defineComponent } from 'vue';
 
 // Utils
 import { createNamespace, numericProp } from '../utils';
@@ -30,7 +30,7 @@ export default defineComponent({
   emits: ['blur', 'focus', 'input', 'select-search'],
 
   setup(props, { emit }) {
-    const field = ref<FieldInstance>();
+    const field = shallowRef<FieldInstance>();
 
     const showSearchResult = () =>
       props.focused && props.searchResult && props.showSearchResult;

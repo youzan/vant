@@ -1,9 +1,9 @@
 import {
-  ref,
   watch,
   computed,
   PropType,
   reactive,
+  shallowRef,
   CSSProperties,
   defineComponent,
   ExtractPropTypes,
@@ -48,7 +48,7 @@ export default defineComponent({
   emits: ['scroll', 'change'],
 
   setup(props, { emit, slots }) {
-    const root = ref<HTMLElement>();
+    const root = shallowRef<HTMLElement>();
     const scrollParent = useScrollParent(root);
     const state = reactive({
       fixed: false,

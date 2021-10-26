@@ -3,6 +3,7 @@ import {
   watch,
   computed,
   PropType,
+  shallowRef,
   TeleportProps,
   defineComponent,
   ExtractPropTypes,
@@ -169,7 +170,7 @@ export default defineComponent({
 
     let bodyHeight: number;
 
-    const bodyRef = ref<HTMLElement>();
+    const bodyRef = shallowRef<HTMLElement>();
 
     const subtitle = ref('');
     const currentDate = ref(getInitialDate());

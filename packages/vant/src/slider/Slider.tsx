@@ -2,6 +2,7 @@ import {
   ref,
   computed,
   PropType,
+  shallowRef,
   CSSProperties,
   defineComponent,
   ExtractPropTypes,
@@ -63,7 +64,7 @@ export default defineComponent({
     let current: SliderValue;
     let startValue: SliderValue;
 
-    const root = ref<HTMLElement>();
+    const root = shallowRef<HTMLElement>();
     const dragStatus = ref<'start' | 'dragging' | ''>();
     const touch = useTouch();
 

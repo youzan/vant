@@ -1,5 +1,4 @@
 import {
-  ref,
   watch,
   provide,
   computed,
@@ -7,6 +6,7 @@ import {
   reactive,
   PropType,
   onMounted,
+  shallowRef,
   defineComponent,
   ExtractPropTypes,
 } from 'vue';
@@ -134,8 +134,8 @@ export default defineComponent({
       validateMessage: '',
     });
 
-    const inputRef = ref<HTMLInputElement>();
-    const customValue = ref<() => unknown>();
+    const inputRef = shallowRef<HTMLInputElement>();
+    const customValue = shallowRef<() => unknown>();
 
     const { parent: form } = useParent(FORM_KEY);
 

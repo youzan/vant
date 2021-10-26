@@ -1,4 +1,4 @@
-import { ref, defineComponent, ExtractPropTypes } from 'vue';
+import { shallowRef, defineComponent, ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -42,7 +42,7 @@ export default defineComponent({
   emits: ['search', 'cancel', 'update:modelValue'],
 
   setup(props, { emit, slots, attrs }) {
-    const filedRef = ref<FieldInstance>();
+    const filedRef = shallowRef<FieldInstance>();
 
     const onCancel = () => {
       if (!slots.action) {

@@ -1,4 +1,9 @@
-import { ref, CSSProperties, defineComponent, ExtractPropTypes } from 'vue';
+import {
+  shallowRef,
+  CSSProperties,
+  defineComponent,
+  ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import {
@@ -39,7 +44,7 @@ export default defineComponent({
   emits: ['click-left', 'click-right'],
 
   setup(props, { emit, slots }) {
-    const navBarRef = ref<HTMLElement>();
+    const navBarRef = shallowRef<HTMLElement>();
     const renderPlaceholder = usePlaceholder(navBarRef, bem);
 
     const onClickLeft = (event: MouseEvent) => emit('click-left', event);

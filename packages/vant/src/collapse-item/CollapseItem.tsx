@@ -3,6 +3,7 @@ import {
   watch,
   computed,
   nextTick,
+  shallowRef,
   defineComponent,
   ExtractPropTypes,
 } from 'vue';
@@ -45,8 +46,8 @@ export default defineComponent({
   props: collapseItemProps,
 
   setup(props, { slots }) {
-    const wrapperRef = ref<HTMLElement>();
-    const contentRef = ref<HTMLElement>();
+    const wrapperRef = shallowRef<HTMLElement>();
+    const contentRef = shallowRef<HTMLElement>();
     const { parent, index } = useParent(COLLAPSE_KEY);
 
     if (!parent) {

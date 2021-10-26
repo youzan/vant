@@ -1,6 +1,7 @@
 import {
   ref,
   computed,
+  shallowRef,
   InjectionKey,
   CSSProperties,
   defineComponent,
@@ -52,8 +53,8 @@ export default defineComponent({
   props: dropdownMenuProps,
 
   setup(props, { slots }) {
-    const root = ref<HTMLElement>();
-    const barRef = ref<HTMLElement>();
+    const root = shallowRef<HTMLElement>();
+    const barRef = shallowRef<HTMLElement>();
     const offset = ref(0);
 
     const { children, linkChildren } = useChildren(DROPDOWN_KEY);

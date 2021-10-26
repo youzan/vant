@@ -4,6 +4,7 @@ import {
   watch,
   computed,
   PropType,
+  shallowRef,
   CSSProperties,
   onBeforeUnmount,
   defineComponent,
@@ -58,7 +59,7 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const error = ref(false);
     const loading = ref(true);
-    const imageRef = ref<HTMLElement>();
+    const imageRef = shallowRef<HTMLElement>();
 
     const { $Lazyload } = getCurrentInstance()!.proxy!;
 

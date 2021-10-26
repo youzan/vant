@@ -1,4 +1,4 @@
-import { ref, computed, PropType, defineComponent } from 'vue';
+import { computed, PropType, shallowRef, defineComponent } from 'vue';
 import {
   extend,
   addUnit,
@@ -45,7 +45,7 @@ export default defineComponent({
   emits: ['click', 'toggle'],
 
   setup(props, { emit, slots }) {
-    const iconRef = ref<HTMLElement>();
+    const iconRef = shallowRef<HTMLElement>();
 
     const getParentProp = <T extends keyof CheckerParent['props']>(name: T) => {
       if (props.parent && props.bindGroup) {

@@ -1,4 +1,4 @@
-import { ref, watch, onMounted, defineComponent } from 'vue';
+import { watch, shallowRef, onMounted, defineComponent } from 'vue';
 import { numericProp, makeRequiredProp, createNamespace } from '../utils';
 import { Swipe, SwipeInstance } from '../swipe';
 
@@ -20,7 +20,7 @@ export default defineComponent({
   emits: ['change'],
 
   setup(props, { emit, slots }) {
-    const swipeRef = ref<SwipeInstance>();
+    const swipeRef = shallowRef<SwipeInstance>();
 
     const onChange = (index: number) => emit('change', index);
 

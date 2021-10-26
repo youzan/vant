@@ -1,8 +1,8 @@
 import {
-  ref,
   watch,
   reactive,
   nextTick,
+  shallowRef,
   defineComponent,
   ExtractPropTypes,
 } from 'vue';
@@ -60,7 +60,7 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     let reachTop: boolean;
 
-    const root = ref<HTMLElement>();
+    const root = shallowRef<HTMLElement>();
     const scrollParent = useScrollParent(root);
 
     const state = reactive({
