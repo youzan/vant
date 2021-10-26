@@ -232,6 +232,7 @@ export default {
 | finish | Emitted when all options is selected | `{ value, selectedOptions, tabIndex }` |
 | close | Emitted when the close icon is clicked | - |
 | click-tab | Emitted when a tab is clicked | _activeTab: number, title: string_ |
+| change-tab | Emitted when a tab is changed | tabIndex: number |
 
 ### Slots
 
@@ -239,6 +240,7 @@ export default {
 | --- | --- | --- |
 | title | Custom title | - |
 | option `v3.1.4` | Custom option text | _{ option: Option, selected: boolean }_ |
+| optionsTop | Custom additions | - |
 
 ### Types
 

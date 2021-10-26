@@ -87,7 +87,7 @@ const fieldNames = {
   children: 'items',
 };
 
-const customContent = reactive<StateItem>({
+const customContentState = reactive<StateItem>({
   show: false,
   value: null,
   result: '',
@@ -247,31 +247,31 @@ const onFinish = (
 
   <demo-block card :title="t('customContent')">
     <van-field
-      v-model="customFieldState.result"
+      v-model="customContentState.result"
       is-link
       readonly
       :label="t('area')"
       :placeholder="t('selectArea')"
-      @click="customFieldState.show = true"
+      @click="customContentState.show = true"
     />
     <van-popup
-      v-model:show="customFieldState.show"
+      v-model:show="customContentState.show"
       round
       teleport="body"
       position="bottom"
       safe-area-inset-bottom
     >
       <van-cascader
-        v-model="customContent.value"
+        v-model="customContentState.value"
         :title="t('selectArea')"
         :options="customFieldOptions"
         :field-names="fieldNames"
-        @close="customContent.show = false"
-        @finish="onFinish(customFieldState, $event)"
-        @change-tab="customContent.tabIndex = $event"
+        @close="customContentState.show = false"
+        @finish="onFinish(customContentState, $event)"
+        @change-tab="customContentState.tabIndex = $event"
       >
         <template #optionsTop>
-          <span>当前为第{{ customContent.tabIndex }}级</span>
+          <span>当前为第{{ customContentState.tabIndex }}级</span>
         </template>
       </van-cascader>
     </van-popup>
