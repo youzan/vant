@@ -66,12 +66,6 @@ export function preventDefault(event: Event, isStopPropagation?: boolean) {
   }
 }
 
-export function trigger(target: Element, type: string) {
-  const inputEvent = document.createEvent('HTMLEvents');
-  inputEvent.initEvent(type, true, true);
-  target.dispatchEvent(inputEvent);
-}
-
 export function isHidden(
   elementRef: HTMLElement | Ref<HTMLElement | undefined>
 ) {
