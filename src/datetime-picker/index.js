@@ -62,6 +62,7 @@ export default createComponent({
           ref="popforcas"
           class={bem('popup')}
           position={'bottom'}
+          closeOnClickOverlay={this.disabled || this.readonly}
           onClickOverlay={this.togglePopup}
         >
           <Component

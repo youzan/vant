@@ -56,6 +56,7 @@
     type="datetime"
     title="选择完整时间222"
     label-field="选择时间"
+    readonly
   ></van-datetime-picker>
     </demo-block>
 

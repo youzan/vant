@@ -57,6 +57,16 @@
       type: string
       default: ""
       description: 顶部栏标题
+    - name: readonly
+      title: 只读
+      type: boolean
+      default: false
+      description: 是否只读
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: 是否禁用
   slots: false
   events:
     - name: confirm
