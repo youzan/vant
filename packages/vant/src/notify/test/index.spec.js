@@ -1,6 +1,5 @@
 import { createApp } from 'vue';
 import { later } from '../../../test';
-import { trigger } from '../../utils';
 import { Notify } from '../function-call';
 import NotifyComponent from '../Notify';
 
@@ -65,6 +64,6 @@ test('should call onClick option when clicked', async () => {
 
   await later();
   const notify = document.querySelector('.van-notify');
-  trigger(notify, 'click');
+  notify.click();
   expect(onClick).toHaveBeenCalledTimes(1);
 });

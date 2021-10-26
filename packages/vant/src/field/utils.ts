@@ -1,6 +1,5 @@
 import { HTMLAttributes, InputHTMLAttributes } from 'vue';
 import {
-  trigger,
   isObject,
   isPromise,
   isFunction,
@@ -50,15 +49,14 @@ export function getRuleMessage(value: unknown, rule: FieldRule) {
   return message || '';
 }
 
-export function startComposing(event: Event) {
-  event.target!.composing = true;
+export function startComposing({ target }: CompositionEvent) {
+  target!.composing = true;
 }
 
-export function endComposing(event: Event) {
-  const { target } = event;
+export function endComposing({ target }: CompositionEvent) {
   if (target!.composing) {
     target!.composing = false;
-    trigger(target as Element, 'input');
+    target!.dispatchEvent(new Event('input'));
   }
 }
 
