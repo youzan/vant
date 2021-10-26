@@ -86,7 +86,7 @@ export default createComponent({
     },
     resultType: {
       type: String,
-      default: 'dataUrl',
+      default: 'file',
     },
     uploadIcon: {
       type: String,
@@ -103,7 +103,7 @@ export default createComponent({
   },
   data() {
     return {
-      fileList: this.fromValue(this.fileListProp)
+      fileList: this.fromValue(this.fileListProp),
     }
   },
   computed: {
@@ -115,6 +115,11 @@ export default createComponent({
     value() {
       return this.toValue(this.fileList);
     },
+    canUp() {
+      if (this.fileList.length === 0) return true;
+      let can = this.fileList.every((item) => item.status !== 'uploading');
+      return can;
+    }
   },
   watch: {
     fileListProp(val, oldVal) {
@@ -259,17 +264,17 @@ export default createComponent({
         if (this.afterRead) {
           this.afterRead(validFiles, this.getDetail());
         }
-        //this.$nextTick(function () {
-        setTimeout(() => {
+        this.$nextTick(function () {
+        // setTimeout(() => {
           this.fileList.forEach((file, index) => {
-            if (!file.url) {
+            if (!file.url && !file.status) {
               file.status = 'uploading';
               file.message = '上传中...';
               this.post(file, index);
             }
           });
-        }, 100)
-        //});
+         // }, 100)
+        });
       }
     },
 
@@ -453,6 +458,7 @@ export default createComponent({
     },
 
     genUpload() {
+      if (!this.canUp) return;
       if (this.readonlyy && !(this.$env && this.$env.VUE_APP_DESIGNER)) return;
       if (this.fileList.length >= this.maxCount || !this.showUpload) {
         return;
@@ -538,12 +544,18 @@ export default createComponent({
                   xhr,
               }, this);
               setTimeout(() => {
-                const value = this.fileList.filter(file => file.url && file.url.length > 0).map(file => {
-                  return {url: file.url}
-                })
-                this.$emit('input', this.toValue(value));
-                this.$emit('update:fileListProp', this.toValue(value));
-              }, 500)
+                // const value = [...this.fileList].filter(file => file.url && file.url.length > 0).map(file => {
+                //   return {url: file.url}
+                // })
+
+                if (this.canUp) {
+                  const value = this.fileList.map(file => {
+                    return {url: file.url}
+                  })
+                  this.$emit('input', this.toValue(value));
+                  this.$emit('update:fileListProp', this.toValue(value));
+                }
+              }, 100)
 
           },
           onError: (e, res) => {

@@ -1,3 +1,7 @@
+import VConsole from 'vconsole';
+if (window && /defaulttenant\.dev\.qa-ci\.lcap\.group|vconsolee/.test(window.location.href)) {
+  window.vconsolee = new VConsole();
+}
 export * from './components';
 
 import * as utils from 'cloud-ui.vusion/src/utils';

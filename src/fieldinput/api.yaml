@@ -1,0 +1,95 @@
+- name: van-fieldinput
+  title: 单行输入
+  icon: input
+  labels:
+    - Form
+  description: 基本的表单输入组件
+  attrs:
+    - name: type
+      title: 类型
+      type: string
+      options:
+        - value: text
+          title: 文本
+        - value: password
+          title: 密码
+      default: text
+      description: 输入框的类型
+    - name: value
+      title: 值
+      type: string
+      sync: true
+      model: true
+      description: 输入框的值
+    - name: clearable
+      title: 清除按钮
+      type: boolean
+      description: 开启并在输入框有内容时会显示清除按钮。
+    - name: placeholder
+      title: 占位符
+      type: string
+      description: 原生属性
+    - name: readonly
+      title: 只读
+      type: boolean
+      default: false
+      description: 是否只读
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: 是否禁用
+    - name: prefix
+      title: 前缀图标
+      type: string
+      advanced: true
+      options:
+        - value: search
+          title: 搜索
+        - value: ""
+          title: 暂无
+      default: ""
+      description: 前缀图标
+    - name: suffix
+      title: 后缀图标
+      type: string
+      advanced: true
+      options:
+        - value: search
+          title: 搜索
+        - value: ""
+          title: 暂无
+      default: ""
+      description: 后缀图标
+  slots: []
+  events:
+    - name: input
+      title: 输入时
+      description: 输入时触发。
+      params: []
+    - name: change
+      title: 改变后
+      description: 值变化时触发。（注意：与原生事件不同）
+      params: []
+    - name: focus
+      title: 获得焦点
+      description: 获得焦点时触发。
+      params: []
+    - name: blur
+      title: 失去焦点
+      description: 失去焦点时触发。
+      params: []
+    - name: clear
+      title: 清空后
+      description: 清空后触发。
+      params: []
+  methods:
+    - name: focus
+      description: 让输入框获取焦点。
+      params: []
+    - name: blur
+      description: 让输入框失去焦点。
+      params: []
+    - name: clear
+      description: 清空输入框。
+      params: []

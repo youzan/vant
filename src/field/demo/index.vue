@@ -1,6 +1,7 @@
 <template>
   <demo-section>
     <basic-usage />
+    <basic-usage2 />
     <custom-type />
     <disabled />
     <show-icon />
@@ -15,6 +16,7 @@
 
 <script>
 import BasicUsage from './BasicUsage';
+import BasicUsage2 from './BasicUsage2';
 import CustomType from './CustomType';
 import Disabled from './Disabled';
 import ShowIcon from './ShowIcon';
@@ -28,6 +30,7 @@ import InputAlign from './InputAlign';
 export default {
   components: {
     BasicUsage,
+    BasicUsage2,
     CustomType,
     Disabled,
     ShowIcon,

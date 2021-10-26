@@ -73,6 +73,7 @@ export default createComponent({
   methods: {
     format() {
       this.columns = this.fromValue(this.columnsprop);
+      console.log(this.columns)
       const { columns, dataType } = this;
 
       if (dataType === 'text') {
@@ -86,6 +87,7 @@ export default createComponent({
     fromValue(value) {
       if (this.converter === 'json')
           try {
+              if (value === null || value === undefined) return [];
               if(typeof value === 'string') return JSON.parse(value || '[]');
               if(typeof value === 'object') return value;
           } catch (err) {
@@ -127,7 +129,7 @@ export default createComponent({
     emit(event) {
       if (this.dataType === 'text') {
         this.$emit(event, this.getColumnValue(0), this.getColumnIndex(0));
-        this.$emit('update:pvalue', this.getColumnValue(0));
+        'confirm' === event && this.$emit('update:pvalue', this.getColumnValue(0));
       } else {
         let values = this.getValues();
 
@@ -139,7 +141,7 @@ export default createComponent({
         }
 
         this.$emit(event, values, this.getIndexes());
-        this.$emit('update:pvalue', values);
+        'confirm' === event && this.$emit('update:pvalue', values);
       }
     },
 
@@ -366,6 +368,7 @@ export default createComponent({
       return this.formattedColumns.map((item, columnIndex) => (
         <PickerColumn
           readonly={this.readonly}
+          disabled={this.disabled}
           valueKey={this.valueKey}
           allowHtml={this.allowHtml}
           className={item.className}

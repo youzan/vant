@@ -42,6 +42,16 @@
           title: 圆角
       default: round
       description: 样式风格
+    - name: disableInput
+      title: 只读
+      type: boolean
+      default: false
+      description: 是否只读
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: 是否禁用
   slots: false
   events:
     - name: click

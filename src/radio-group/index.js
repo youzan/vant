@@ -14,10 +14,19 @@ export default createComponent({
     checkedColor: String,
     iconSize: [Number, String],
   },
-
+  data() {
+    return {
+      datatemp: (this.value) || null,
+    }
+  },
   watch: {
     value(value) {
-      this.$emit('change', value);
+      this.datatemp = value;
+    },
+    datatemp(val) {
+      this.$emit('input', (val));
+      this.$emit('update:value', (val));
+      this.$emit('change', val);
     },
   },
 

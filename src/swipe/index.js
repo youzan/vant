@@ -10,6 +10,8 @@ import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 
+import Icont from './icont.vue';
+
 const [createComponent, bem] = createNamespace('swipe');
 
 export default createComponent({
@@ -74,7 +76,9 @@ export default createComponent({
       computedHeight: 0,
     };
   },
-
+  components: {
+    Icont
+  },
   watch: {
     children() {
       this.initialize();
@@ -379,6 +383,9 @@ export default createComponent({
     },
 
     autoPlay() {
+      if (this.$env && this.$env.VUE_APP_DESIGNER) {
+        return
+      }
       const { autoplay } = this;
 
       if (autoplay > 0 && this.count > 1) {
@@ -389,22 +396,27 @@ export default createComponent({
         }, autoplay);
       }
     },
-
+    clickIndicator(index) {
+      this.swipeTo(index);
+    },
     genIndicator() {
       const { count, activeIndicator } = this;
       const slot = this.slots('indicator');
-
+      const _this = this;
       if (slot) {
         return slot;
       }
-
+      const _scopeId = this.$vnode.context.$options._scopeId;
       if (this.showIndicators && count > 1) {
         return (
           <div class={bem('indicators', { vertical: this.vertical })}>
             {Array(...Array(count)).map((empty, index) => (
-              <i
+              <Icont
+                index={index}
+                vusion-scope-id={_scopeId}
                 class={bem('indicator', { active: index === activeIndicator })}
                 style={index === activeIndicator ? this.indicatorStyle : null}
+                onClick={(i) => _this.clickIndicator(i)}
               />
             ))}
           </div>

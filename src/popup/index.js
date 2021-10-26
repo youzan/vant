@@ -31,7 +31,7 @@ export default createComponent({
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     designTitle: String,
     // getContainer: {

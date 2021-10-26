@@ -22,11 +22,12 @@ export default createComponent({
   data() {
     return {
       valuepopup: false,
+      cvalue: null
     }
   },
   methods: {
     getTitle() {
-      return isDate(this.value) ? this.value.formath("yyyy/MM/dd HH:mm:ss") : this.value;
+      return isDate(this.cvalue) ? this.cvalue.formath("yyyy/MM/dd HH:mm:ss") : this.cvalue;
     },
     togglePopup() {
       this.valuepopup = !this.valuepopup;
@@ -61,6 +62,7 @@ export default createComponent({
           ref="popforcas"
           class={bem('popup')}
           position={'bottom'}
+          closeOnClickOverlay={this.disabled || this.readonly}
           onClickOverlay={this.togglePopup}
         >
           <Component
@@ -69,7 +71,9 @@ export default createComponent({
             scopedSlots={this.$scopedSlots}
             {...{
               props: this.$props,
-              on: this.$listeners,
+              on: { ...this.$listeners, 'update:cvalue': (v) => {
+                this.cvalue = v;
+              }},
             }}
           />
         </Popup>

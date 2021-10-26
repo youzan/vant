@@ -18,10 +18,12 @@ import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 
 import VanEmptyCol from '../emptycol/index';
+import VanFieldinput from '../fieldinput/index';
 
 import VusionValidator from '@vusion/validator';
 
 const [createComponent, bem] = createNamespace('field');
+const comSet = new Set(['van-fieldinput','van-fieldtextarea','van-fieldnumber']);
 
 export default createComponent({
   inheritAttrs: false,
@@ -39,6 +41,7 @@ export default createComponent({
   },
   components: {
     VanEmptyCol,
+    VanFieldinput
   },
   props: {
     ...cellProps,
@@ -150,18 +153,6 @@ export default createComponent({
       // return (this.rules || (this.rootVM && this.rootVM.rules && this.rootVM.rules[this.name]));
       return this.rules;
     },
-    showClear() {
-      const readonly = this.getProp('readonly');
-
-      if (this.clearable && !readonly) {
-        const hasValue = isDef(this.value) && this.value !== '';
-        const trigger =
-          this.clearTrigger === 'always' ||
-          (this.clearTrigger === 'focus' && this.focused);
-
-        return hasValue && trigger;
-      }
-    },
 
     showError() {
       if (this.error !== null) {
@@ -200,6 +191,25 @@ export default createComponent({
   },
 
   methods: {
+    showClear() {
+      let child = null;
+      if (this.children && (this.children.$options._componentTag === 'van-fieldinput' || this.children.$options._componentTag === 'van-fieldtextarea')) {
+        child = this.children;
+      }
+
+      const readonly = this.getProp('readonly');
+      if ((child && child.clearable && !child.readonly)) {
+        return true;
+      }
+      if ((this.clearable && !readonly)) {
+        const hasValue = isDef(this.value) && this.value !== '';
+        const trigger =
+          this.clearTrigger === 'always' ||
+          (this.clearTrigger === 'focus' && this.focused);
+
+        return hasValue && trigger;
+      }
+    },
     // @exposed-api
     focus() {
       if (this.$refs.input) {
@@ -465,6 +475,9 @@ export default createComponent({
       preventDefault(event);
       this.$emit('input', '');
       this.$emit('clear', event);
+      if (this.children && (this.children.$options._componentTag === 'van-fieldinput' || this.children.$options._componentTag === 'van-fieldtextarea')) {
+        this.children.currentValue = '';
+      }
     },
 
     onKeypress(event) {
@@ -486,17 +499,26 @@ export default createComponent({
     },
 
     adjustSize() {
-      const { input } = this.$refs;
-      if (!(this.type === 'textarea' && this.autosize) || !input) {
-        return;
+      let input = this.$refs.input;
+      let inputn = this.children;
+      if (inputn && comSet.has(inputn.$options._componentTag)) {
+        if (inputn.type !== 'textarea') {
+          return;
+        } else {
+          input = inputn.$refs.input;
+        }
+      } else {
+        if (!(this.type === 'textarea' && this.autosize) || !input) {
+          return;
+        }
       }
 
       const scrollTop = getRootScrollTop();
       input.style.height = 'auto';
 
       let height = input.scrollHeight;
-      if (isObject(this.autosize)) {
-        const { maxHeight, minHeight } = this.autosize;
+      if (isObject(this.autosize || input.autosize)) {
+        const { maxHeight, minHeight } = this.autosize || input.autosize;
         if (maxHeight) {
           height = Math.min(height, maxHeight);
         }
@@ -522,9 +544,10 @@ export default createComponent({
       // const hasInputSlot = this.$slots.hasOwnProperty('input');
       const ifDesigner = (this.$env && this.$env.VUE_APP_DESIGNER);
       if (inputSlot) {
-        return (
+        const ifInput = comSet.has(inputSlot[0].componentOptions.tag);
+        return ifInput ? (inputSlot) : (
           <div
-            class={bem('control', [inputAlign, 'custom'])}
+            class={bem(!ifInput ? 'control' : '', [inputAlign, 'custom'])}
             onClick={this.onClickInput}
           >
             {inputSlot}
@@ -543,6 +566,7 @@ export default createComponent({
           </div>
         );
       }
+
       const inputProps = {
         ref: 'input',
         class: bem('control', inputAlign),
@@ -629,12 +653,13 @@ export default createComponent({
     },
 
     genWordLimit() {
-      if (this.showWordLimit && this.maxlength) {
+      const childlmit = this.children;
+      if ((this.showWordLimit && this.maxlength) || (childlmit && comSet.has(this.children.$options._componentTag) && childlmit.showWordLimit && childlmit.maxlength)) {
         const count = (this.value || '').length;
 
         return (
           <div class={bem('word-limit')}>
-            <span class={bem('word-num')}>{count}</span>/{this.maxlength}
+            <span class={bem('word-num')}>{count}</span>/{this.maxlength || childlmit.maxlength}
           </div>
         );
       }
@@ -720,7 +745,7 @@ export default createComponent({
           error: this.showError,
           disabled,
           [`label-${labelAlign}`]: labelAlign,
-          'min-height': this.type === 'textarea' && !this.autosize,
+          'min-height': ((this.type === 'textarea' && !this.autosize) || (this.children && this.children.type === 'textarea' && !this.children.autosize)),
         })}
         onClick={this.onClick}
         vusionCut={vusionCut}
@@ -731,7 +756,7 @@ export default createComponent({
       >
         <div class={bem('body')}>
           {this.genInput()}
-          {this.showClear && (
+          {this.showClear() && (
             <Icon
               name="clear"
               class={bem('clear')}

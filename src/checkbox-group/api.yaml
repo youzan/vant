@@ -72,6 +72,11 @@
       type: boolean
       default: false
       description: 是否禁用
+    - name: readonly
+      title: 只读
+      type: boolean
+      default: false
+      description: 是否只读
     - name: label-position
       title: 文本位置
       type: string

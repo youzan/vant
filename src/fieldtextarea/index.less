@@ -1,0 +1,63 @@
+@import '../style/var';
+
+.van-fieldtextarea {
+  &__control {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0; // for flex-shrink in field__button
+    margin: 0;
+    padding: 0;
+    color: @field-input-text-color;
+    line-height: inherit;
+    text-align: left;
+    background-color: transparent;
+    border: 0;
+    resize: none;
+
+    &::placeholder {
+      color: @field-placeholder-text-color;
+    }
+
+    &:disabled {
+      color: @field-input-disabled-text-color;
+      cursor: not-allowed;
+      opacity: 1;
+      // fix disabled color in mobile safari
+      -webkit-text-fill-color: @field-input-disabled-text-color;
+    }
+
+    &:read-only {
+      cursor: default;
+    }
+
+    &--center {
+      justify-content: center;
+      text-align: center;
+    }
+
+    &--right {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    &--custom {
+      display: flex;
+      align-items: center;
+      min-height: @cell-line-height;
+    }
+
+    // for ios wechat
+    &[type='date'],
+    &[type='time'],
+    &[type='datetime-local'] {
+      min-height: @cell-line-height;
+    }
+
+    // for safari
+    &[type='search'] {
+      -webkit-appearance: none;
+    }
+  }
+}
+

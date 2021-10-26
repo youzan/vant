@@ -61,7 +61,7 @@ export default createComponent({
 
   data() {
     return {
-      code: this.value,
+      code: this.value || '',
       columns: [{ values: [] }, { values: [] }, { values: [] }],
       areaList: {},
       valuepopup: false,
@@ -120,7 +120,6 @@ export default createComponent({
   methods: {
     setTitle() {
       const areaP = this.getValues();
-      console.log(areaP);
       const result = areaP.map((item) => item.name).join('/');
       this.getTitle = result;
     },
@@ -139,6 +138,7 @@ export default createComponent({
     fromValue(value) {
       if (this.converter === 'json') {
         try {
+          if (value === null || value === undefined) return {};
           if(typeof value === 'string') return JSON.parse(value || '{}');
           if(typeof value === 'object') return value;
         } catch (err) {
@@ -237,7 +237,7 @@ export default createComponent({
     onConfirm(values, index) {
       values = this.parseOutputValues(values);
       this.setValues();
-      this.$emit('confirm', values, index);
+      this.$emit('confirm', values, index, this.code);
       this.$emit('update:value', this.code);
       this.setTitle();
       this.togglePopup();

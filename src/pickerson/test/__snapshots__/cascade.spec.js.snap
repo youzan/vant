@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`disabled in cascade 1`] = `
+<li role="button" tabindex="-1" class="van-picker-column__item van-picker-column__item--disabled" style="height: 44px;">
+  <div class="van-ellipsis">A2</div>
+</li>
+`;
+
+exports[`should move to first option when all options are disabled 1`] = `
+<div class="van-picker">
+  <!---->
+  <div class="van-picker__columns" style="height: 264px;">
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;">
+        <li role="button" tabindex="-1" class="van-picker-column__item van-picker-column__item--disabled van-picker-column__item--selected" style="height: 44px;">
+          <div class="van-ellipsis">A1</div>
+        </li>
+        <li role="button" tabindex="-1" class="van-picker-column__item van-picker-column__item--disabled" style="height: 44px;">
+          <div class="van-ellipsis">A2</div>
+        </li>
+      </ul>
+    </div>
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;">
+        <li role="button" tabindex="-1" class="van-picker-column__item van-picker-column__item--disabled van-picker-column__item--selected" style="height: 44px;">
+          <div class="van-ellipsis">B1</div>
+        </li>
+        <li role="button" tabindex="-1" class="van-picker-column__item van-picker-column__item--disabled" style="height: 44px;">
+          <div class="van-ellipsis">B2</div>
+        </li>
+      </ul>
+    </div>
+    <div class="van-picker__mask" style="background-size: 100% 110px;"></div>
+    <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+  <!---->
+</div>
+`;
+
+exports[`should move to next option when default option is disabled 1`] = `
+<div class="van-picker">
+  <!---->
+  <div class="van-picker__columns" style="height: 264px;">
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 66px, 0); transition-duration: 0ms; transition-property: none;">
+        <li role="button" tabindex="-1" class="van-picker-column__item van-picker-column__item--disabled" style="height: 44px;">
+          <div class="van-ellipsis">A1</div>
+        </li>
+        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+          <div class="van-ellipsis">A2</div>
+        </li>
+      </ul>
+    </div>
+    <div class="van-picker-column">
+      <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;">
+        <li role="button" tabindex="0" class="van-picker-column__item van-picker-column__item--selected" style="height: 44px;">
+          <div class="van-ellipsis">B3</div>
+        </li>
+        <li role="button" tabindex="0" class="van-picker-column__item" style="height: 44px;">
+          <div class="van-ellipsis">B4</div>
+        </li>
+      </ul>
+    </div>
+    <div class="van-picker__mask" style="background-size: 100% 110px;"></div>
+    <div class="van-hairline-unset--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+  <!---->
+</div>
+`;

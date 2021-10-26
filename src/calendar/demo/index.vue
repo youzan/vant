@@ -6,6 +6,12 @@
       :default-date.sync="ddateffff"
       type="multiple"
       title="选择日期"
+      readonly
+    ></van-calendar >
+    <van-calendar
+      label-field="日历选择"
+      type="multiple"
+      title="选择日期"
     ></van-calendar >
     </demo-block>
     <demo-block card :title="t('basicUsage')">

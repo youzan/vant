@@ -47,8 +47,8 @@
     </demo-block>
 
     <demo-block :title="t('title3')">
-      <van-checkbox-group v-model="result">
-        <van-checkbox name="a">{{ t('checkbox') }} a</van-checkbox>
+      <van-checkbox-group >
+        <van-checkbox name="a" :value.sync="syncBool">{{ t('checkbox') }} a</van-checkbox>
         <van-checkbox name="b">{{ t('checkbox') }} b</van-checkbox>
       </van-checkbox-group>
     </demo-block>
@@ -149,13 +149,14 @@ export default {
       checkboxLabel: true,
       checboxIcon: true,
       list: ['a', 'b'],
-      result: ['a', 'b'],
+      result: [],
       result2: [],
       result3: [],
       checkAllResult: [],
       horizontalResult: [],
       activeIcon: 'https://img01.yzcdn.cn/vant/user-active.png',
       inactiveIcon: 'https://img01.yzcdn.cn/vant/user-inactive.png',
+      syncBool: true,
     };
   },
 

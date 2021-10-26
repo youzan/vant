@@ -14,10 +14,14 @@ export default createComponent({
   mixins: [FieldMixin],
 
   props: switchProps,
-
+  data() {
+    return {
+      cvalue: this.value || ''
+    }
+  },
   computed: {
     checked() {
-      return this.value === this.activeValue;
+      return this.cvalue === this.activeValue;
     },
 
     style() {
@@ -27,16 +31,20 @@ export default createComponent({
       };
     },
   },
-
+  watch: {
+    cvalue(newValue, oldValue) {
+      this.$emit('input', newValue);
+      this.$emit('change', newValue);
+      this.$emit('update:value', newValue);
+    }
+  },
   methods: {
     onClick(event) {
       this.$emit('click', event);
 
-      if (!this.disabled && !this.loading) {
+      if (!this.disabled && !this.readonly && !this.loading) {
         const newValue = this.checked ? this.inactiveValue : this.activeValue;
-        this.$emit('input', newValue);
-        this.$emit('change', newValue);
-        this.$emit('update:value', newValue);
+        this.cvalue = newValue;
       }
     },
 

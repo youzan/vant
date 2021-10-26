@@ -32,6 +32,7 @@ export default createComponent({
   props: {
     valueKey: String,
     readonly: Boolean,
+    disabled: Boolean,
     allowHtml: Boolean,
     className: String,
     itemHeight: Number,
@@ -100,7 +101,7 @@ export default createComponent({
     },
 
     onTouchStart(event) {
-      if (this.readonly) {
+      if (this.readonly || this.disabled) {
         return;
       }
 
@@ -121,7 +122,7 @@ export default createComponent({
     },
 
     onTouchMove(event) {
-      if (this.readonly) {
+      if (this.readonly || this.disabled) {
         return;
       }
 
@@ -146,7 +147,7 @@ export default createComponent({
     },
 
     onTouchEnd() {
-      if (this.readonly) {
+      if (this.readonly || this.disabled) {
         return;
       }
 
@@ -177,7 +178,7 @@ export default createComponent({
     },
 
     onClickItem(index) {
-      if (this.moving || this.readonly) {
+      if (this.moving || this.readonly || this.disabled) {
         return;
       }
 
@@ -275,7 +276,7 @@ export default createComponent({
 
       return this.options.map((option, index) => {
         const text = this.getOptionText(option);
-        const disabled = isOptionDisabled(option);
+        const disabled = this.disabled || isOptionDisabled(option);
 
         const data = {
           style: optionStyle,

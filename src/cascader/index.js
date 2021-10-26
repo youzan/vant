@@ -55,6 +55,7 @@ export default createComponent({
       activeTab: 0,
       options: [],
       valuepopup: false,
+      curValue: this.value || ''
     };
   },
 
@@ -75,8 +76,10 @@ export default createComponent({
       deep: true,
       handler: 'updateTabs',
     },
-
-    value(value) {
+    value(val) {
+      this.curValue = val;
+    },
+    curValue(value) {
       if (value || value === 0) {
         const values = this.tabs.map(
           (tab) => {
@@ -103,7 +106,7 @@ export default createComponent({
     getTitle() {
       const selectedOptions = this.getSelectedOptionsByValue(
         this.options,
-        this.value
+        this.curValue
       ) || [];
       const result = selectedOptions
         .map((option) => _.get(option, this.textKey))
@@ -132,6 +135,7 @@ export default createComponent({
     fromValue(value) {
       if (this.converter === 'json')
           try {
+            if (value === null || value === undefined) return [];
             if(typeof value === 'string') return JSON.parse(value || '[]');
             if(typeof value === 'object') return value;
           } catch (err) {
@@ -155,10 +159,10 @@ export default createComponent({
       } else {
         this.options = this.fromValue(this.dataSource);
       }
-      if (this.value || this.value === 0) {
+      if (this.curValue || this.curValue === 0) {
         const selectedOptions = this.getSelectedOptionsByValue(
           this.options,
-          this.value
+          this.curValue
         );
 
         if (selectedOptions) {
@@ -236,6 +240,7 @@ export default createComponent({
         tabIndex,
         selectedOptions,
       };
+      this.curValue = _.get(option, this.valueKey);
       this.$emit('input', _.get(option, this.valueKey));
       this.$emit('update:value', _.get(option, this.valueKey));
       this.$emit('change', eventParams);

@@ -45,6 +45,11 @@
       title: 禁用
       type: boolean
       default: false
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: 是否禁用
   slots: false
   events:
     - name: confirm

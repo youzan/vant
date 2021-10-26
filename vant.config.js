@@ -163,6 +163,14 @@ module.exports = {
                 title: 'Field 输入框',
               },
               {
+                path: 'fieldinput',
+                title: 'FieldInput 输入框',
+              },
+              {
+                path: 'fieldtextarea',
+                title: 'fieldtextarea 输入框',
+              },
+              {
                 path: 'form',
                 title: 'Form 表单',
                 className: 'hide-in-weapp',
@@ -180,6 +188,10 @@ module.exports = {
               {
                 path: 'picker',
                 title: 'Picker 选择器',
+              },
+              {
+                path: 'pickerson',
+                title: 'Pickerson 选择器',
               },
               {
                 path: 'radio',
@@ -554,6 +566,14 @@ module.exports = {
               {
                 path: 'field',
                 title: 'Field',
+              },
+              {
+                path: 'fieldinput',
+                title: 'FieldInput',
+              },
+              {
+                path: 'fieldtextarea',
+                title: 'FieldTextarea',
               },
               {
                 path: 'form',

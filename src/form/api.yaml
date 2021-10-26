@@ -37,10 +37,7 @@
       empty-background: add-sub-large
       support:
         - name: van-field
-          title: 输入框
-          snippet: <van-field label="表单项"></van-field>
-        - name: van-field
-          title: 其他
+          title: 表单项
           snippet: '<van-field label="表单项" drole="other"></van-field>'
   events:
     - name: submit
@@ -71,6 +68,7 @@
     - name: type
       title: 输入框类型
       type: string
+      advanced: true
       options:
         - value: text
           title: text
@@ -104,6 +102,7 @@
     - name: placeholder
       title: 输入框占位提示文字
       type: string
+      advanced: true
     - name: required
       title: 必填标记
       type: boolean
