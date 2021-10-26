@@ -18,6 +18,11 @@
       type: boolean
       default: false
       description: 是否禁用
+    - name: readonly
+      title: 只读
+      type: boolean
+      default: false
+      description: 是否只读
   slots: false
   events:
     - name: click

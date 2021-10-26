@@ -42,7 +42,7 @@ export default createComponent({
     onClick(event) {
       this.$emit('click', event);
 
-      if (!this.disabled && !this.loading) {
+      if (!this.disabled && !this.readonly && !this.loading) {
         const newValue = this.checked ? this.inactiveValue : this.activeValue;
         this.cvalue = newValue;
       }
