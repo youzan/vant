@@ -1,7 +1,7 @@
 import { noop } from './basic';
 import { isPromise } from './validate';
 
-export type Interceptor = (...args: any[]) => Promise<boolean> | boolean;
+export type Interceptor = (...args: unknown[]) => Promise<boolean> | boolean;
 
 export function callInterceptor(
   interceptor: Interceptor | undefined,
@@ -10,7 +10,7 @@ export function callInterceptor(
     done,
     canceled,
   }: {
-    args?: any[];
+    args?: unknown[];
     done: () => void;
     canceled?: () => void;
   }

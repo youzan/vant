@@ -139,9 +139,12 @@ Toast.clear = (all?: boolean) => {
 
 function setDefaultOptions(options: ToastOptions): void;
 function setDefaultOptions(type: ToastType, options: ToastOptions): void;
-function setDefaultOptions(type: ToastType | ToastOptions, options?: any) {
+function setDefaultOptions(
+  type: ToastType | ToastOptions,
+  options?: ToastOptions
+) {
   if (typeof type === 'string') {
-    defaultOptionsMap.set(type, options);
+    defaultOptionsMap.set(type, options!);
   } else {
     extend(currentOptions, type);
   }
