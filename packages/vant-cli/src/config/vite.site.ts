@@ -92,7 +92,7 @@ function getHTMLMeta(vantConfig: any) {
 }
 
 export function getViteConfigForSiteDev(): InlineConfig {
-  setBuildTarget('package');
+  setBuildTarget('site');
 
   const vantConfig = getVantConfig();
   const siteConfig = getSiteConfig(vantConfig);
