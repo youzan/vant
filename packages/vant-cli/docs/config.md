@@ -7,6 +7,7 @@
     - [build.site.publicPath](#buildsitepublicpath)
     - [build.srcDir](#buildsrcdir)
     - [build.namedExport](#buildnamedexport)
+    - [build.configureVite](#buildconfigurevite)
     - [site.title](#sitetitle)
     - [site.logo](#sitelogo)
     - [site.description](#sitedescription)
@@ -137,6 +138,47 @@ module.exports = {
 未开启此选项时，会通过 `export default from 'xxx'` 导出组件内部的默认模块。
 
 开启此选项后，会通过 `export * from 'xxx'` 导出组件内部的所有模块、类型定义。
+
+### build.configureVite
+
+- Type: `(config: InlineConfig): InlineConfig`
+- Default: `undefined`
+
+vant-cli 使用 vite 来构建组件库和文档站点，通过 `configureVite` 选项可以自定义 vite 配置（从 4.0.0 版本开始支持）。
+
+```js
+module.exports = {
+  build: {
+    configureVite(config) {
+      // 添加一个自定义插件
+      config.plugins.push(vitePluginXXX);
+      return config;
+    },
+  },
+};
+```
+
+在自定义配置时，可以通过 `process.env.BUILD_TARGET` 对构建目标进行区分：
+
+```js
+module.exports = {
+  build: {
+    configureVite(config) {
+      const { BUILD_TARGET } = process.env;
+
+      if (BUILD_TARGET === 'package') {
+        // 修改组件库构建配置
+      }
+
+      if (BUILD_TARGET === 'site') {
+        // 修改文档站点构建配置
+      }
+
+      return config;
+    },
+  },
+};
+```
 
 ### site.title
 

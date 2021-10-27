@@ -4,7 +4,7 @@ import {
   getViteConfigForSiteDev,
   getViteConfigForSiteProd,
 } from '../config/vite.site';
-import { replaceExt } from '../common';
+import { mergeCustomViteConfig, replaceExt } from '../common';
 import { CSS_LANG } from '../common/css';
 import { genPackageEntry } from './gen-package-entry';
 import { genPackageStyle } from './gen-package-style';
@@ -37,9 +37,11 @@ export async function genSiteEntry(): Promise<void> {
 export async function compileSite(production = false) {
   await genSiteEntry();
   if (production) {
-    await build(getViteConfigForSiteProd());
+    const config = mergeCustomViteConfig(getViteConfigForSiteProd());
+    await build(config);
   } else {
-    const server = await createServer(getViteConfigForSiteDev());
+    const config = mergeCustomViteConfig(getViteConfigForSiteDev());
+    const server = await createServer(config);
     await server.listen();
 
     const { version } = require('vite/package.json');
