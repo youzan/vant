@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render colon when using colon prop 1`] = `
+<form class="van-form">
+  <div class="van-cell van-field">
+    <div class="van-cell__title van-field__label">
+      <label>
+        Label:
+      </label>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control"
+        >
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-field">
+    <div class="van-cell__title van-field__label">
+      Custom Label:
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control"
+        >
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`should render error-message-align prop correctly 1`] = `
+<form class="van-form">
+  <div class="van-cell van-field">
+    <div class="van-cell__value van-cell__value--alone van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control"
+        >
+      </div>
+      <div class="van-field__error-message van-field__error-message--right">
+        Error
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`should render input-align prop correctly 1`] = `
+<form class="van-form">
+  <div class="van-cell van-field">
+    <div class="van-cell__value van-cell__value--alone van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control van-field__control--right"
+        >
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-field">
+    <div class="van-cell__value van-cell__value--alone van-field__value">
+      <div class="van-field__body">
+        <div class="van-field__control van-field__control--right van-field__control--custom">
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`should render label-align prop correctly 1`] = `
+<form class="van-form">
+  <div class="van-cell van-field van-field--label-right">
+    <div class="van-cell__title van-field__label van-field__label--right">
+      <label>
+        Label
+      </label>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control"
+        >
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-field van-field--label-center">
+    <div class="van-cell__title van-field__label van-field__label--center">
+      <label>
+        Label
+      </label>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control"
+        >
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`should render label-width prop correctly 1`] = `
+<form class="van-form">
+  <div class="van-cell van-field">
+    <div class="van-cell__title van-field__label"
+         style="width: 5rem;"
+    >
+      <label>
+        Label
+      </label>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control"
+        >
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-field">
+    <div class="van-cell__title van-field__label"
+         style="width: 10vw;"
+    >
+      <label>
+        Label
+      </label>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               class="van-field__control"
+        >
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`should validate first field when using validate-first prop 1`] = `
+<form class="van-form">
+  <div class="van-cell van-field">
+    <div class="van-cell__value van-cell__value--alone van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               name="A"
+               class="van-field__control"
+        >
+      </div>
+      <div class="van-field__error-message">
+        A failed
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-field">
+    <div class="van-cell__value van-cell__value--alone van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               name="B"
+               class="van-field__control"
+        >
+      </div>
+    </div>
+  </div>
+</form>
+`;
