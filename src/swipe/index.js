@@ -10,7 +10,7 @@ import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 
-import Icont from './icont.vue';
+import Icon from '../icon'
 
 const [createComponent, bem] = createNamespace('swipe');
 
@@ -75,9 +75,6 @@ export default createComponent({
       computedWidth: 0,
       computedHeight: 0,
     };
-  },
-  components: {
-    Icont
   },
   watch: {
     children() {
@@ -396,9 +393,6 @@ export default createComponent({
         }, autoplay);
       }
     },
-    clickIndicator(index) {
-      this.swipeTo(index);
-    },
     genIndicator() {
       const { count, activeIndicator } = this;
       const slot = this.slots('indicator');
@@ -416,7 +410,6 @@ export default createComponent({
                 vusion-scope-id={_scopeId}
                 class={bem('indicator', { active: index === activeIndicator })}
                 style={index === activeIndicator ? this.indicatorStyle : null}
-                onClick={(i) => _this.clickIndicator(i)}
               />
             ))}
           </div>
@@ -426,6 +419,7 @@ export default createComponent({
   },
 
   render() {
+    const designer = this.$env && this.$env.VUE_APP_DESIGNER;
     return (
       <div class={bem()}>
         <div
@@ -436,6 +430,10 @@ export default createComponent({
           {this.slots()}
         </div>
         {this.genIndicator()}
+        {designer ? <Icon name="arrow" class={bem('iconarrow', { right: true })} onClick={this.next} vusion-index="0"
+            findname="realpostionicon"></Icon> : null}
+        {designer ? <Icon name="arrow-left" class={bem('iconarrow', { left: true })} onClick={this.prev} vusion-index="1"
+            findname="realpostionicon"></Icon> : null}
       </div>
     );
   },

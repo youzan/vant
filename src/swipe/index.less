@@ -15,6 +15,22 @@
     }
   }
 
+  &__iconarrow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+
+    &--left {
+      left: 0;
+    }
+    &--right {
+      right: 0;
+    }
+  }
+
   &__indicators {
     position: absolute;
     bottom: @swipe-indicator-margin;
@@ -36,8 +52,8 @@
   }
 
   &__indicator {
-    width: @swipe-indicator-size-new;
-    height: @swipe-indicator-size-new;
+    width: @swipe-indicator-size;
+    height: @swipe-indicator-size;
     background-color: @swipe-indicator-inactive-background-color;
     border-radius: 100%;
     opacity: @swipe-indicator-inactive-opacity;
