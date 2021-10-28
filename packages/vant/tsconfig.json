@@ -11,5 +11,5 @@
     "esModuleInterop": true,
     "moduleResolution": "node"
   },
-  "include": ["src/**/*", "types/**/*", "docs/**/*", "test/**/*"]
+  "include": ["src/**/*", "docs/**/*", "test/**/*"]
 }

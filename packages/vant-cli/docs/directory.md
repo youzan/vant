@@ -15,7 +15,7 @@ project
 │   └─ changelog.md  # 更新日志
 │
 ├─ babel.config.js    # Babel 配置文件
-├─ vant.config.js     # Vant Cli 配置文件
+├─ vant.config.mjs    # Vant Cli 配置文件
 ├─ package.json
 └─ README.md
 ```

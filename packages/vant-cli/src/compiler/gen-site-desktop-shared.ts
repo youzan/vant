@@ -2,11 +2,11 @@ import glob from 'fast-glob';
 import { join, parse } from 'path';
 import { existsSync, readFileSync, readdirSync } from 'fs';
 import {
+  isDev,
   pascalize,
   getVantConfig,
   smartOutputFile,
   normalizePath,
-  isDev,
 } from '../common/index.js';
 import {
   SRC_DIR,
@@ -98,7 +98,7 @@ function genExportDocuments(items: DocumentItem[]) {
 
 function genVantConfigContent() {
   const content = readFileSync(VANT_CONFIG_FILE, 'utf-8');
-  return content.replace('module.exports', 'const config');
+  return content.replace('export default', 'const config =');
 }
 
 function genExportConfig() {

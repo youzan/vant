@@ -1,7 +1,7 @@
 # 配置指南
 
 - [配置指南](#)
-  - [vant.config.js](#vantconfigjs)
+  - [vant.config.mjs](#vantconfigmjs)
     - [name](#name)
     - [build.css](#buildcss)
     - [build.site.publicPath](#buildsitepublicpath)
@@ -25,12 +25,12 @@
     - [默认配置](#-3)
   - [browserslist](#browserslist)
 
-## vant.config.js
+## vant.config.mjs
 
-`vant.config.js`中包含了`vant-cli`的打包配置和文档站点配置，请创建此文件并置于项目根目录下。下面是一份基本配置的示例：
+`vant.config.mjs` 中包含了 `vant-cli` 的打包配置和文档站点配置，请创建此文件并置于项目根目录下。下面是一份基本配置的示例：
 
 ```js
-module.exports = {
+export default {
   // 组件库名称
   name: 'demo-ui',
   // 构建配置

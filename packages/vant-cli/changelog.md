@@ -1,5 +1,23 @@
 # 更新日志
 
+## v4.0.0-rc.3
+
+### 不兼容更新
+
+- 支持的 node 版本范围提升到 `^14.16.0 || >=16.0.0`
+- babel preset 添加了 `cjs` 后缀，现在需要通过 `@vant/cli/preset.cjs` 引入
+- vant.config.js 重命名为 `vant.config.mjs`，由 commonJs 变更为 ESModule 格式
+
+### Features
+
+- 新增 build.configureWebpack 配置项
+
+### 依赖升级
+
+对以下依赖进行了大版本升级：
+
+- eslint v8
+
 ## v4.0.0-beta.6
 
 ### 不兼容更新
