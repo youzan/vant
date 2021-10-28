@@ -60,10 +60,12 @@
       sync: true
       model: true
       default: ""
+      advanced: true
       description: 表单项值
     - name: name
       title: 提交表单的标识符
       type: string
+      advanced: true
       description: 提交表单的标识符
     - name: type
       title: 输入框类型

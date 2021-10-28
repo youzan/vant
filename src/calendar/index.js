@@ -201,7 +201,7 @@ export default createComponent({
     },
     togglePopup() {
       this.valuepopup = !this.valuepopup;
-      this.value = !this.value
+      this.value = !this.value;
       if (this.valuepopup) {
         this.$refs.popforcas.openModal();
       } else {
@@ -589,7 +589,7 @@ export default createComponent({
           // closeable={this.showTitle || this.showSubtitle}
           // getContainer={this.getContainer}
           // closeOnPopstate={this.closeOnPopstate}
-          closeOnClickOverlay={this.disabled || this.readonly}
+          closeOnClickOverlay={true || this.disabled || this.readonly}
           // onInput={this.togglePopup}
           // onOpen={createListener('open')}
           // onOpened={createListener('opened')}
