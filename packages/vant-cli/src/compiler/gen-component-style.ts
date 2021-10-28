@@ -2,19 +2,21 @@
  * Build style entry of all components
  */
 
+import fse from 'fs-extra';
+import { createRequire } from 'module';
 import { sep, join, relative } from 'path';
-import { outputFileSync } from 'fs-extra';
-import { getComponents, replaceExt } from '../common';
-import { CSS_LANG, getCssBaseFile } from '../common/css';
-import { checkStyleExists } from './gen-style-deps-map';
+import { getComponents, replaceExt } from '../common/index.js';
+import { CSS_LANG, getCssBaseFile } from '../common/css.js';
+import { checkStyleExists } from './gen-style-deps-map.js';
 import {
   ES_DIR,
   SRC_DIR,
   LIB_DIR,
   STYLE_DEPS_JSON_FILE,
-} from '../common/constant';
+} from '../common/constant.js';
 
 function getDeps(component: string): string[] {
+  const require = createRequire(import.meta.url);
   const styleDepsJson = require(STYLE_DEPS_JSON_FILE);
 
   if (styleDepsJson.map[component]) {
@@ -73,7 +75,7 @@ function genEntry(params: {
 
     content += depsPath.map(template).join('\n');
     content = content.replace(new RegExp('\\' + sep, 'g'), '/');
-    outputFileSync(outputFile, content);
+    fse.outputFileSync(outputFile, content);
   });
 }
 
@@ -81,6 +83,7 @@ export function genComponentStyle(
   options: { cache: boolean } = { cache: true }
 ) {
   if (!options.cache) {
+    const require = createRequire(import.meta.url);
     delete require.cache[STYLE_DEPS_JSON_FILE];
   }
 

@@ -1,11 +1,4 @@
-import { ConfigAPI } from '@babel/core';
-
-type PresetOption = {
-  loose?: boolean;
-  enableObjectSlots?: boolean;
-};
-
-module.exports = function (api?: ConfigAPI, options: PresetOption = {}) {
+module.exports = function (api, options) {
   if (api) {
     api.cache.never();
   }
@@ -24,7 +17,7 @@ module.exports = function (api?: ConfigAPI, options: PresetOption = {}) {
         },
       ],
       require.resolve('@babel/preset-typescript'),
-      require('../compiler/babel-preset-vue-ts'),
+      require('./babel-preset-vue-ts.cjs'),
     ],
     plugins: [
       [
@@ -36,5 +29,3 @@ module.exports = function (api?: ConfigAPI, options: PresetOption = {}) {
     ],
   };
 };
-
-export default module.exports;

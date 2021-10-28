@@ -1,20 +1,20 @@
 import execa from 'execa';
 import { join, relative } from 'path';
-import { remove, copy, readdir, existsSync } from 'fs-extra';
-import { clean } from './clean';
-import { CSS_LANG } from '../common/css';
-import { ora, consola } from '../common/logger';
-import { installDependencies } from '../common/manager';
-import { compileSfc } from '../compiler/compile-sfc';
-import { compileStyle } from '../compiler/compile-style';
-import { compileScript } from '../compiler/compile-script';
-import { compilePackage } from '../compiler/compile-package';
-import { genPackageEntry } from '../compiler/gen-package-entry';
-import { genStyleDepsMap } from '../compiler/gen-style-deps-map';
-import { genComponentStyle } from '../compiler/gen-component-style';
-import { SRC_DIR, LIB_DIR, ES_DIR } from '../common/constant';
-import { genPackageStyle } from '../compiler/gen-package-style';
-import { genVeturConfig } from '../compiler/gen-vetur-config';
+import fse from 'fs-extra';
+import { clean } from './clean.js';
+import { CSS_LANG } from '../common/css.js';
+import { ora, consola } from '../common/logger.js';
+import { installDependencies } from '../common/manager.js';
+import { compileSfc } from '../compiler/compile-sfc.js';
+import { compileStyle } from '../compiler/compile-style.js';
+import { compileScript } from '../compiler/compile-script.js';
+import { compilePackage } from '../compiler/compile-package.js';
+import { genPackageEntry } from '../compiler/gen-package-entry.js';
+import { genStyleDepsMap } from '../compiler/gen-style-deps-map.js';
+import { genComponentStyle } from '../compiler/gen-component-style.js';
+import { SRC_DIR, LIB_DIR, ES_DIR } from '../common/constant.js';
+import { genPackageStyle } from '../compiler/gen-package-style.js';
+import { genVeturConfig } from '../compiler/gen-vetur-config.js';
 import {
   isDir,
   isSfc,
@@ -26,7 +26,9 @@ import {
   setNodeEnv,
   setModuleEnv,
   setBuildTarget,
-} from '../common';
+} from '../common/index.js';
+
+const { remove, copy, readdir, existsSync } = fse;
 
 async function compileFile(filePath: string) {
   if (isScript(filePath)) {

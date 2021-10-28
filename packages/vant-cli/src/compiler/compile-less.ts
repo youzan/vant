@@ -1,11 +1,11 @@
+import less from 'less';
 import { join } from 'path';
-import { render } from 'less';
-import { readFileSync } from 'fs-extra';
-import { CWD } from '../common/constant';
+import { readFileSync } from 'fs';
+import { CWD } from '../common/constant.js';
 
 export async function compileLess(filePath: string) {
   const source = readFileSync(filePath, 'utf-8');
-  const { css } = await render(source, {
+  const { css } = await less.render(source, {
     filename: filePath,
     paths: [join(CWD, 'node_modules')],
   });

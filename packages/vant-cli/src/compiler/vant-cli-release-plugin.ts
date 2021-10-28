@@ -1,6 +1,6 @@
 import releaseIt from 'release-it';
-import { build } from '../commands/build';
-import { changelog } from '../commands/changelog';
+import { build } from '../commands/build.js';
+import { changelog } from '../commands/changelog.js';
 
 class VantCliReleasePlugin extends releaseIt.Plugin {
   async beforeRelease() {

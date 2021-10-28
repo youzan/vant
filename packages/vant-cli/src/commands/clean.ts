@@ -1,11 +1,13 @@
-import { remove } from 'fs-extra';
+import fse from 'fs-extra';
 import {
   ES_DIR,
   LIB_DIR,
   DIST_DIR,
   VETUR_DIR,
   SITE_DIST_DIR,
-} from '../common/constant';
+} from '../common/constant.js';
+
+const { remove } = fse;
 
 export async function clean() {
   await Promise.all([

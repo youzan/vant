@@ -1,13 +1,14 @@
 {
   "name": "@vant/cli",
   "version": "4.0.0-rc.2",
+  "type": "module",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "bin": {
     "vant-cli": "./bin.js"
   },
   "engines": {
-    "node": ">=12"
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "publishConfig": {
     "access": "public",
@@ -20,10 +21,11 @@
   },
   "files": [
     "lib",
+    "cjs",
     "site",
     "template",
     "bin.js",
-    "preset.js"
+    "preset.cjs"
   ],
   "keywords": [
     "vant"
@@ -33,7 +35,7 @@
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
     "@types/less": "^3.0.3",
-    "@types/lodash": "^4.14.175",
+    "@types/lodash-es": "^4.14.175",
     "@types/markdown-it": "^12.2.3",
     "@types/postcss-load-config": "^3.0.1",
     "@vue/compiler-sfc": "^3.2.19",
@@ -71,7 +73,7 @@
     "jest-serializer-html": "^7.1.0",
     "less": "^4.1.2",
     "lint-staged": "^11.2.0",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.3.1",
     "ora": "^5.4.1",

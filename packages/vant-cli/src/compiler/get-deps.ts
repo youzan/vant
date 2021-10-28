@@ -1,12 +1,13 @@
 import { join } from 'path';
-import { SCRIPT_EXTS } from '../common/constant';
-import { readFileSync, existsSync } from 'fs-extra';
+import { SCRIPT_EXTS } from '../common/constant.js';
+import { readFileSync, existsSync } from 'fs';
 
 let depsMap: Record<string, string[]> = {};
 let existsCache: Record<string, boolean> = {};
 
 // https://regexr.com/47jlq
-const IMPORT_RE = /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from(\s+)?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
+const IMPORT_RE =
+  /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from(\s+)?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
 
 function matchImports(code: string): string[] {
   const imports = code.match(IMPORT_RE) || [];

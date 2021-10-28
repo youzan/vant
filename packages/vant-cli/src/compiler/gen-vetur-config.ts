@@ -1,11 +1,11 @@
 import markdownVetur from '@vant/markdown-vetur';
-import { get } from 'lodash';
+import { get } from 'lodash-es';
 import {
   SRC_DIR,
   VETUR_DIR,
   getVantConfig,
   getPackageJson,
-} from '../common/constant';
+} from '../common/constant.js';
 
 // generate vetur tags & attributes
 export function genVeturConfig() {

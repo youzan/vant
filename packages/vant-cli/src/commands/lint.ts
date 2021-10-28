@@ -1,6 +1,6 @@
 import execa from 'execa';
-import { consola, ora } from '../common/logger';
-import { SCRIPT_EXTS } from '../common/constant';
+import { consola, ora } from '../common/logger.js';
+import { SCRIPT_EXTS } from '../common/constant.js';
 
 type RunCommandMessages = {
   start: string;

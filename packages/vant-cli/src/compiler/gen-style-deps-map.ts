@@ -1,9 +1,9 @@
 import { relative, sep, join } from 'path';
-import { CSS_LANG } from '../common/css';
-import { existsSync } from 'fs-extra';
-import { getDeps, clearDepsCache, fillExt } from './get-deps';
-import { getComponents, smartOutputFile } from '../common';
-import { SRC_DIR, STYLE_DEPS_JSON_FILE } from '../common/constant';
+import { CSS_LANG } from '../common/css.js';
+import { existsSync } from 'fs';
+import { getDeps, clearDepsCache, fillExt } from './get-deps.js';
+import { getComponents, smartOutputFile } from '../common/index.js';
+import { SRC_DIR, STYLE_DEPS_JSON_FILE } from '../common/constant.js';
 
 function matchPath(path: string, component: string): boolean {
   const p = relative(SRC_DIR, path);
