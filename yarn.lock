@@ -7964,12 +7964,13 @@ vite-plugin-html@^2.1.1:
     fs-extra "^10.0.0"
     html-minifier-terser "^5.1.1"
 
-vite-plugin-md@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/vite-plugin-md/-/vite-plugin-md-0.11.1.tgz#bc40455eb56767395e9ccf46ef4a50e8c0d2b748"
-  integrity sha512-nS+VmwFpUv+RiUcHntMPGXb8QxdJupW7q4AtqWpdpkAmTgI/HRilLRFtBIPxt4d+ZVtuMFrG3l1TG/hTUgghUg==
+vite-plugin-md@^0.11.4:
+  version "0.11.4"
+  resolved "https://registry.npmjs.org/vite-plugin-md/-/vite-plugin-md-0.11.4.tgz#65ce8b88ebaf6377cd42389e1699041526432bd3"
+  integrity sha512-t24rdVSB72k8xeLcuMhwl0ku5hvsQkt7NfVNG1LEaTOykbXTgwcGD8OUTmryOsGGhCw2DuCZJvTs+qK07J7Gug==
   dependencies:
     "@rollup/pluginutils" "^4.1.1"
+    "@types/markdown-it" "^12.2.3"
     gray-matter "^4.0.3"
     markdown-it "^12.2.0"
 
