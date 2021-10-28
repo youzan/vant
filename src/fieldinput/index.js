@@ -27,7 +27,7 @@ export default createComponent({
     },
     placeholder: {
       type: String,
-      default: '',
+      default: '请输入',
     },
     disabled: {
       type: Boolean,

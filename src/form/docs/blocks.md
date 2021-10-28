@@ -2,7 +2,10 @@
 
 ``` html
 <van-form>
-  <van-field required placeholder="请输入" label="名称">
+  <van-field required label="名称" drole="other">
+    <template #input>
+      <van-fieldinput  placeholder="请输入" clearable></van-fieldinput>
+    </template>
   </van-field>
   <van-field name="radio" label="单选框" drole="other">
     <template #input>

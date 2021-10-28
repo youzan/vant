@@ -28,6 +28,7 @@
     - name: placeholder
       title: 占位符
       type: string
+      default: 请输入
       description: 原生属性
     - name: readonly
       title: 只读
