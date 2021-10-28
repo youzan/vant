@@ -1,8 +1,10 @@
-import hash from 'hash-sum';
+import fse from 'fs-extra';
 import path from 'path';
+import hash from 'hash-sum';
 import { parse, SFCBlock, compileTemplate } from '@vue/compiler-sfc';
-import { remove, readFileSync, outputFile } from 'fs-extra';
-import { replaceExt } from '../common';
+import { replaceExt } from '../common/index.js';
+
+const { remove, readFileSync, outputFile } = fse;
 
 const RENDER_FN = '__vue_render__';
 const VUEIDS = '__vue_sfc__';

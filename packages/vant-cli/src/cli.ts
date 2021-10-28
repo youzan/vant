@@ -11,7 +11,7 @@ import {
   buildSite,
   commitLint,
   cliVersion,
-} from '.';
+} from './index.js';
 
 const program = new Command();
 

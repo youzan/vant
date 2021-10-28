@@ -1,16 +1,17 @@
 import { join } from 'path';
-import { get } from 'lodash';
+import { get } from 'lodash-es';
+import { createRequire } from 'module';
 import hljs from 'highlight.js';
 import vitePluginMd from 'vite-plugin-md';
 import vitePluginVue from '@vitejs/plugin-vue';
 import vitePluginJsx from '@vitejs/plugin-vue-jsx';
-import { setBuildTarget, getVantConfig, isDev } from '../common';
+import { setBuildTarget, getVantConfig, isDev } from '../common/index.js';
 import {
   SITE_DIST_DIR,
   SITE_MOBILE_SHARED_FILE,
   SITE_DESKTOP_SHARED_FILE,
   SITE_SRC_DIR,
-} from '../common/constant';
+} from '../common/constant.js';
 import { injectHtml } from 'vite-plugin-html';
 import type { InlineConfig } from 'vite';
 import type MarkdownIt from 'markdown-it';
@@ -43,10 +44,7 @@ function markdownCardWrapper(htmlCode: string) {
 
 // add target="_blank" to all links
 function markdownLinkOpen(md: MarkdownIt) {
-  const defaultRender =
-    md.renderer.rules.link_open ||
-    ((tokens, idx, options, env, self) =>
-      self.renderToken(tokens, idx, options));
+  const defaultRender = md.renderer.rules.link_open;
 
   md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
     const aIndex = tokens[idx].attrIndex('target');
@@ -55,7 +53,11 @@ function markdownLinkOpen(md: MarkdownIt) {
       tokens[idx].attrPush(['target', '_blank']); // add new attribute
     }
 
-    return defaultRender(tokens, idx, options, env, self);
+    if (defaultRender) {
+      return defaultRender(tokens, idx, options, env, self);
+    }
+
+    return self.renderToken(tokens, idx, options);
   };
 }
 
@@ -117,6 +119,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
           highlight: markdownHighlight,
         },
         markdownItSetup(md: MarkdownIt) {
+          const require = createRequire(import.meta.url);
           const { slugify } = require('transliteration');
           const markdownItAnchor = require('markdown-it-anchor');
 

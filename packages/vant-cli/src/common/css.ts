@@ -1,8 +1,8 @@
-import { get } from 'lodash';
+import { get } from 'lodash-es';
 import { existsSync } from 'fs';
 import { join, isAbsolute } from 'path';
-import { getVantConfig } from '../common';
-import { STYLE_DIR, SRC_DIR } from './constant';
+import { getVantConfig } from '../common/index.js';
+import { STYLE_DIR, SRC_DIR } from './constant.js';
 
 type CSS_LANG = 'css' | 'less' | 'scss';
 

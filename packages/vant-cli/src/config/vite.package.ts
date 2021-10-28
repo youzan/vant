@@ -1,7 +1,7 @@
 import { join } from 'path';
 import type { InlineConfig } from 'vite';
-import { setBuildTarget } from '../common';
-import { CWD, ES_DIR, getVantConfig, LIB_DIR } from '../common/constant';
+import { setBuildTarget } from '../common/index.js';
+import { CWD, ES_DIR, getVantConfig, LIB_DIR } from '../common/constant.js';
 
 export function getViteConfigForPackage(minify: boolean): InlineConfig {
   setBuildTarget('package');

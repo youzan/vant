@@ -4,13 +4,13 @@
  * see: https://github.com/babel/babel-loader/pull/738
  */
 
-import { readFileSync } from 'fs';
-import { declare } from '@babel/helper-plugin-utils';
+const { readFileSync } = require('fs');
+const { declare } = require('@babel/helper-plugin-utils');
 
 module.exports = declare(() => ({
   overrides: [
     {
-      test: (filePath: string) => {
+      test: (filePath) => {
         if (/\.vue$/.test(filePath)) {
           const template = readFileSync(filePath, { encoding: 'utf8' });
           return (

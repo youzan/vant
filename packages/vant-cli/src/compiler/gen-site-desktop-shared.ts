@@ -1,20 +1,20 @@
 import glob from 'fast-glob';
 import { join, parse } from 'path';
-import { existsSync, readFileSync, readdirSync } from 'fs-extra';
+import { existsSync, readFileSync, readdirSync } from 'fs';
 import {
   pascalize,
   getVantConfig,
   smartOutputFile,
   normalizePath,
   isDev,
-} from '../common';
+} from '../common/index.js';
 import {
   SRC_DIR,
   DOCS_DIR,
   getPackageJson,
   VANT_CONFIG_FILE,
   SITE_DESKTOP_SHARED_FILE,
-} from '../common/constant';
+} from '../common/constant.js';
 
 type DocumentItem = {
   name: string;

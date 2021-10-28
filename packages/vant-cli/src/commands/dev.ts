@@ -1,5 +1,5 @@
-import { setNodeEnv } from '../common';
-import { compileSite } from '../compiler/compile-site';
+import { setNodeEnv } from '../common/index.js';
+import { compileSite } from '../compiler/compile-site.js';
 
 export async function dev() {
   setNodeEnv('development');

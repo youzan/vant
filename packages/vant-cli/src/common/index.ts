@@ -1,14 +1,11 @@
-import { get } from 'lodash';
+import fse from 'fs-extra';
+import { get } from 'lodash-es';
 import { sep, join } from 'path';
-import {
-  lstatSync,
-  existsSync,
-  readdirSync,
-  readFileSync,
-  outputFileSync,
-} from 'fs-extra';
-import { SRC_DIR, getVantConfig } from './constant';
+import { SRC_DIR, getVantConfig } from './constant.js';
 import type { InlineConfig } from 'vite';
+
+const { lstatSync, existsSync, readdirSync, readFileSync, outputFileSync } =
+  fse;
 
 export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;

@@ -1,10 +1,12 @@
-import { join } from 'path';
-import { ROOT } from '../common/constant';
-import { ora, slimPath } from '../common/logger';
-import { createWriteStream, readFileSync } from 'fs-extra';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { ROOT } from '../common/constant.js';
+import { ora, slimPath } from '../common/logger.js';
+import { createWriteStream, readFileSync } from 'fs';
 import conventionalChangelog from 'conventional-changelog';
 
 const DIST_FILE = join(ROOT, './changelog.generated.md');
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const MAIN_TEMPLATE = join(__dirname, '../../template/changelog-main.hbs');
 const HEADER_TEMPLATE = join(__dirname, '../../template/changelog-header.hbs');
 const COMMIT_TEMPLATE = join(__dirname, '../../template/changelog-commit.hbs');

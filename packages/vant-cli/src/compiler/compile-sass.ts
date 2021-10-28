@@ -1,3 +1,5 @@
+import { createRequire } from 'module';
+
 // allow to import from node_modules
 // @import "~package-name/var.scss"
 const tildeImporter = (url: string) => {
@@ -14,6 +16,7 @@ const tildeImporter = (url: string) => {
 };
 
 export async function compileSass(filePath: string) {
+  const require = createRequire(import.meta.url);
   const { renderSync } = require('sass');
   const { css } = renderSync({ file: filePath, importer: tildeImporter });
   return css;

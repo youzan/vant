@@ -1,5 +1,7 @@
-import { get } from 'lodash';
-import { existsSync } from 'fs-extra';
+import { get } from 'lodash-es';
+import { existsSync, readFileSync } from 'fs';
+import { createRequire } from 'module';
+import { fileURLToPath } from 'url';
 import { join, dirname, isAbsolute } from 'path';
 
 function findRootDir(dir: string): string {
@@ -25,12 +27,13 @@ export const VETUR_DIR = join(ROOT, 'vetur');
 export const SITE_DIST_DIR = join(ROOT, 'site-dist');
 export const VANT_CONFIG_FILE = join(ROOT, 'vant.config.js');
 export const PACKAGE_JSON_FILE = join(ROOT, 'package.json');
-export const ROOT_POSTCSS_CONFIG_FILE = join(ROOT, 'postcss.config.js');
 
 // Relative paths
-export const DIST_DIR = join(__dirname, '../../dist');
-export const CONFIG_DIR = join(__dirname, '../config');
-export const SITE_SRC_DIR = join(__dirname, '../../site');
+const __dirname = dirname(fileURLToPath(import.meta.url));
+export const CJS_DIR = join(__dirname, '..', '..', 'cjs');
+export const DIST_DIR = join(__dirname, '..', '..', 'dist');
+export const CONFIG_DIR = join(__dirname, '..', 'config');
+export const SITE_SRC_DIR = join(__dirname, '..', '..', 'site');
 
 // Dist files
 export const PACKAGE_ENTRY_FILE = join(DIST_DIR, 'package-entry.js');
@@ -43,23 +46,19 @@ export const SITE_DESKTOP_SHARED_FILE = join(
 export const STYLE_DEPS_JSON_FILE = join(DIST_DIR, 'style-deps.json');
 
 // Config files
-export const POSTCSS_CONFIG_FILE = join(CONFIG_DIR, 'postcss.config.js');
-export const JEST_SETUP_FILE = join(CONFIG_DIR, 'jest.setup.js');
-export const JEST_CONFIG_FILE = join(CONFIG_DIR, 'jest.config.js');
-export const JEST_TRANSFORM_FILE = join(CONFIG_DIR, 'jest.transform.js');
-export const JEST_FILE_MOCK_FILE = join(CONFIG_DIR, 'jest.file-mock.js');
-export const JEST_STYLE_MOCK_FILE = join(CONFIG_DIR, 'jest.style-mock.js');
+export const POSTCSS_CONFIG_FILE = join(CJS_DIR, 'postcss.config.cjs');
+export const JEST_CONFIG_FILE = join(CJS_DIR, 'jest.config.cjs');
 
 export const SCRIPT_EXTS = ['.js', '.jsx', '.vue', '.ts', '.tsx'];
 export const STYLE_EXTS = ['.css', '.less', '.scss'];
 
 export function getPackageJson() {
-  delete require.cache[PACKAGE_JSON_FILE];
-
-  return require(PACKAGE_JSON_FILE);
+  const rawJson = readFileSync(PACKAGE_JSON_FILE, 'utf-8');
+  return JSON.parse(rawJson);
 }
 
 export function getVantConfig() {
+  const require = createRequire(import.meta.url);
   delete require.cache[VANT_CONFIG_FILE];
 
   try {

@@ -1,6 +1,6 @@
 import { join } from 'path';
-import { existsSync, readdirSync } from 'fs-extra';
-import { SRC_DIR, SITE_MOBILE_SHARED_FILE } from '../common/constant';
+import { existsSync, readdirSync } from 'fs';
+import { SRC_DIR, SITE_MOBILE_SHARED_FILE } from '../common/constant.js';
 import {
   pascalize,
   removeExt,
@@ -8,8 +8,8 @@ import {
   getVantConfig,
   smartOutputFile,
   normalizePath,
-} from '../common';
-import { CSS_LANG } from '../common/css';
+} from '../common/index.js';
+import { CSS_LANG } from '../common/css.js';
 
 type DemoItem = {
   name: string;

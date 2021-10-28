@@ -1,9 +1,11 @@
+import fse from 'fs-extra';
 import { sep } from 'path';
 import { transformAsync } from '@babel/core';
-import { readFileSync, removeSync, outputFileSync } from 'fs-extra';
-import { replaceExt } from '../common';
-import { replaceCSSImportExt } from '../common/css';
-import { replaceScriptImportExt } from './get-deps';
+import { replaceExt } from '../common/index.js';
+import { replaceCSSImportExt } from '../common/css.js';
+import { replaceScriptImportExt } from './get-deps.js';
+
+const { readFileSync, removeSync, outputFileSync } = fse;
 
 export async function compileScript(filePath: string): Promise<void> {
   return new Promise((resolve, reject) => {

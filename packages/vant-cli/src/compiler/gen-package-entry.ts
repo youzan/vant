@@ -1,12 +1,12 @@
-import { get } from 'lodash';
+import { get } from 'lodash-es';
 import { join } from 'path';
 import {
   pascalize,
   getComponents,
   smartOutputFile,
   normalizePath,
-} from '../common';
-import { SRC_DIR, getPackageJson, getVantConfig } from '../common/constant';
+} from '../common/index.js';
+import { SRC_DIR, getPackageJson, getVantConfig } from '../common/constant.js';
 
 type PathResolver = (path: string) => string;
 
