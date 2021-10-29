@@ -29,16 +29,17 @@
 
 ## Features
 
-- 65+ Reusable components
-- 1kb Component average size (min+gzip)
-- 90%+ Unit test coverage
-- Extensive documentation and demos
-- Support Vue 2 & Vue 3
-- Support Tree Shaking
-- Support Custom Theme
-- Support i18n
-- Support TS
-- Support SSR
+- 🚀 1KB Component average size (min+gzip)
+- 🚀 65+ High quality components
+- 💪 90%+ Unit test coverage
+- 💪 Written in TypeScript
+- 📖 Extensive documentation and demos
+- 📖 Provide Sketch and Axure design resources
+- 🍭 Support Vue 2 & Vue 3
+- 🍭 Support Tree Shaking
+- 🍭 Support Custom Theme
+- 🍭 Support i18n
+- 🌍 Support SSR
 
 ## Install
 
