@@ -20,12 +20,12 @@ function mockHTMLElementOffset() {
     },
     offsetHeight: {
       get() {
-        return parseFloat(window.getComputedStyle(this).height) || 0;
+        return parseFloat(window.getComputedStyle(this).height) || 100;
       },
     },
     offsetWidth: {
       get() {
-        return parseFloat(window.getComputedStyle(this).width) || 0;
+        return parseFloat(window.getComputedStyle(this).width) || 100;
       },
     },
   });
@@ -51,3 +51,11 @@ export async function mockScrollTop(value: number) {
 
 mockScrollIntoView();
 mockHTMLElementOffset();
+mockGetBoundingClientRect({
+  width: 100,
+  height: 100,
+  top: 0,
+  left: 0,
+  right: 100,
+  bottom: 100,
+});

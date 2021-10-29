@@ -124,16 +124,22 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-notice-bar__content van-ellipsis"
       >
         <div class="van-swipe notice-swipe">
-          <div style="transition-duration: 0ms; transform: translateY(0px);"
+          <div style="transition-duration: 0ms; transform: translateY(0px); height: 300px;"
                class="van-swipe__track van-swipe__track--vertical"
           >
-            <div class="van-swipe-item">
+            <div class="van-swipe-item"
+                 style="height: 100px;"
+            >
               Content 1
             </div>
-            <div class="van-swipe-item">
+            <div class="van-swipe-item"
+                 style="height: 100px;"
+            >
               Content 2
             </div>
-            <div class="van-swipe-item">
+            <div class="van-swipe-item"
+                 style="height: 100px;"
+            >
               Content 3
             </div>
           </div>

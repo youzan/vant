@@ -36,7 +36,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const active = ref(2);
+    const active = ref(0);
     return { active };
   },
 };

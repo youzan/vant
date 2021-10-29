@@ -57,19 +57,20 @@ exports[`should update tabs when previous tab is clicked 1`] = `
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"
+             style="transform: translateX(50px) translateX(-50%); transition-duration: 0.3s;"
         >
         </div>
       </div>
     </div>
     <div class="van-tabs__content van-tabs__content--animated">
       <div class="van-swipe van-tabs__track">
-        <div style="transition-duration: 0ms; transform: translateX(0px);"
+        <div style="transition-duration: 0ms; transform: translateX(0px); width: 200px;"
              class="van-swipe__track"
         >
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
                role="tabpanel"
                aria-hidden="true"
+               style="width: 100px;"
           >
             <div class="van-tab__pane">
               <ul class="van-cascader__options">
@@ -91,6 +92,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
           <div class="van-swipe-item van-tab__pane-wrapper"
                role="tabpanel"
                aria-hidden="false"
+               style="width: 100px;"
           >
             <div class="van-tab__pane">
               <ul class="van-cascader__options">
