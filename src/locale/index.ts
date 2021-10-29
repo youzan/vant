@@ -2,16 +2,8 @@ import Vue from 'vue';
 import { deepAssign } from '../utils/deep-assign';
 import defaultMessages from './lang/zh-CN';
 
-declare module 'vue' {
-  interface VueConstructor {
-    util: {
-      defineReactive(obj: object, key: string, value: any): void;
-    };
-  }
-}
-
 const proto = Vue.prototype;
-const { defineReactive } = Vue.util;
+const { defineReactive } = (Vue as any).util;
 
 defineReactive(proto, '$vantLang', 'zh-CN');
 defineReactive(proto, '$vantMessages', {
