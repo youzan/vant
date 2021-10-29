@@ -153,7 +153,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-action-bar-background-color | _var(--van-white)_ | - |
+| --van-action-bar-background-color | _var(--van-background-color-light)_ | - |
 | --van-action-bar-height | _50px_ | - |
 | --van-action-bar-icon-width | _48px_ | - |
 | --van-action-bar-icon-height | _100%_ | - |
@@ -162,7 +162,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-action-bar-icon-font-size | _var(--van-font-size-xs)_ | - |
 | --van-action-bar-icon-active-color | _var(--van-active-color)_ | - |
 | --van-action-bar-icon-text-color | _var(--van-gray-7)_ | - |
-| --van-action-bar-icon-background-color | _var(--van-white)_ | - |
+| --van-action-bar-icon-background-color | _var(--van-background-color-light)_ | - |
 | --van-action-bar-button-height | _40px_ | - |
 | --van-action-bar-button-warning-color | _var(--van-gradient-orange)_ | - |
 | --van-action-bar-button-danger-color | _var(--van-gradient-red)_ | - |

@@ -211,19 +211,19 @@ searchRef.value?.focus();
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                  | 默认值                       | 描述 |
-| ------------------------------------- | ---------------------------- | ---- |
-| --van-search-padding                  | _10px var(--van-padding-sm)_ | -    |
-| --van-search-background-color         | _var(--van-white)_           | -    |
-| --van-search-content-background-color | _var(--van-gray-1)_          | -    |
-| --van-search-input-height             | _34px_                       | -    |
-| --van-search-label-padding            | _0 5px_                      | -    |
-| --van-search-label-color              | _var(--van-text-color)_      | -    |
-| --van-search-label-font-size          | _var(--van-font-size-md)_    | -    |
-| --van-search-left-icon-color          | _var(--van-gray-6)_          | -    |
-| --van-search-action-padding           | _0 var(--van-padding-xs)_    | -    |
-| --van-search-action-text-color        | _var(--van-text-color)_      | -    |
-| --van-search-action-font-size         | _var(--van-font-size-md)_    | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-search-padding | _10px var(--van-padding-sm)_ | - |
+| --van-search-background-color | _var(--van-background-color-light)_ | - |
+| --van-search-content-background-color | _var(--van-gray-1)_ | - |
+| --van-search-input-height | _34px_ | - |
+| --van-search-label-padding | _0 5px_ | - |
+| --van-search-label-color | _var(--van-text-color)_ | - |
+| --van-search-label-font-size | _var(--van-font-size-md)_ | - |
+| --van-search-left-icon-color | _var(--van-gray-6)_ | - |
+| --van-search-action-padding | _0 var(--van-padding-xs)_ | - |
+| --van-search-action-text-color | _var(--van-text-color)_ | - |
+| --van-search-action-font-size | _var(--van-font-size-md)_ | - |
 
 ## 常见问题
 

@@ -141,7 +141,7 @@ const inactiveIcon = 'https://img.yzcdn.cn/vant/user-inactive.png';
 
 <style lang="less">
 .demo-radio {
-  background: var(--van-white);
+  background: var(--van-background-color-light);
 
   &-group {
     padding: 0 16px;

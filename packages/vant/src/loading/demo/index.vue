@@ -62,7 +62,7 @@ const t = useTranslate({
 
 <style lang="less">
 .demo-loading {
-  background: var(--van-white);
+  background: var(--van-background-color-light);
 
   .van-loading {
     display: inline-block;

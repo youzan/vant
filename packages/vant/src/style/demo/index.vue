@@ -77,7 +77,7 @@ const animate = (newName: string) => {
 
   .van-hairline--top {
     height: 30px;
-    background-color: var(--van-white);
+    background-color: var(--van-background-color-light);
 
     &::after {
       top: 5px;

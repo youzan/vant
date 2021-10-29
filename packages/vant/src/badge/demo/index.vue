@@ -88,7 +88,7 @@ const t = useTranslate({
 
 <style lang="less">
 .demo-badge {
-  background-color: var(--van-white);
+  background-color: var(--van-background-color-light);
 
   .van-badge__wrapper {
     margin-left: var(--van-padding-md);

@@ -161,4 +161,4 @@ import type { SidebarProps, SidebarItemProps } from 'vant';
 | --van-sidebar-selected-border-width | _4px_ | - |
 | --van-sidebar-selected-border-height | _16px_ | - |
 | --van-sidebar-selected-border-color | _var(--van-danger-color)_ | - |
-| --van-sidebar-selected-background-color | _var(--van-white)_ | - |
+| --van-sidebar-selected-background-color | _var(--van-background-color-light)_ | - |

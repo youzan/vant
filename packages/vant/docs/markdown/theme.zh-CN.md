@@ -47,7 +47,7 @@ Vant 使用了 [Less](http://lesscss.org/) 对样式进行预处理，并内置�
 @active-opacity: 0.7;
 @disabled-opacity: 0.5;
 @background-color: @gray-1;
-@background-color-light: #fafafa;
+@background-color-light: @white;
 @text-link-color: #576b95;
 
 // Padding

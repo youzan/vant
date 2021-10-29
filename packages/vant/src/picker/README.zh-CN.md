@@ -438,22 +438,22 @@ pickerRef.value?.confirm();
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                 | 默认值                       | 描述 |
-| ------------------------------------ | ---------------------------- | ---- |
-| --van-picker-background-color        | _var(--van-white)_           | -    |
-| --van-picker-toolbar-height          | _44px_                       | -    |
-| --van-picker-title-font-size         | _var(--van-font-size-lg)_    | -    |
-| --van-picker-title-line-height       | _var(--van-line-height-md)_  | -    |
-| --van-picker-action-padding          | _0 var(--van-padding-md)_    | -    |
-| --van-picker-action-font-size        | _var(--van-font-size-md)_    | -    |
-| --van-picker-confirm-action-color    | _var(--van-text-link-color)_ | -    |
-| --van-picker-cancel-action-color     | _var(--van-gray-6)_          | -    |
-| --van-picker-option-padding          | _0 var(--van-padding-base)_  | -    |
-| --van-picker-option-font-size        | _var(--van-font-size-lg)_    | -    |
-| --van-picker-option-text-color       | _var(--van-black)_           | -    |
-| --van-picker-option-disabled-opacity | _0.3_                        | -    |
-| --van-picker-loading-icon-color      | _var(--van-primary-color)_   | -    |
-| --van-picker-loading-mask-color      | _rgba(255, 255, 255, 0.9)_   | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-picker-background-color | _var(--van-background-color-light)_ | - |
+| --van-picker-toolbar-height | _44px_ | - |
+| --van-picker-title-font-size | _var(--van-font-size-lg)_ | - |
+| --van-picker-title-line-height | _var(--van-line-height-md)_ | - |
+| --van-picker-action-padding | _0 var(--van-padding-md)_ | - |
+| --van-picker-action-font-size | _var(--van-font-size-md)_ | - |
+| --van-picker-confirm-action-color | _var(--van-text-link-color)_ | - |
+| --van-picker-cancel-action-color | _var(--van-gray-6)_ | - |
+| --van-picker-option-padding | _0 var(--van-padding-base)_ | - |
+| --van-picker-option-font-size | _var(--van-font-size-lg)_ | - |
+| --van-picker-option-text-color | _var(--van-black)_ | - |
+| --van-picker-option-disabled-opacity | _0.3_ | - |
+| --van-picker-loading-icon-color | _var(--van-primary-color)_ | - |
+| --van-picker-loading-mask-color | _rgba(255, 255, 255, 0.9)_ | - |
 
 ## 常见问题
 

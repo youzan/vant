@@ -147,7 +147,7 @@ import type { SubmitBarProps } from 'vant';
 | --- | --- | --- |
 | --van-submit-bar-height | _50px_ | - |
 | --van-submit-bar-z-index | _100_ | - |
-| --van-submit-bar-background-color | _var(--van-white)_ | - |
+| --van-submit-bar-background-color | _var(--van-background-color-light)_ | - |
 | --van-submit-bar-button-width | _110px_ | - |
 | --van-submit-bar-price-color | _var(--van-danger-color)_ | - |
 | --van-submit-bar-price-font-size | _var(--van-font-size-sm)_ | - |
