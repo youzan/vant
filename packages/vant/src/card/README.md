@@ -127,7 +127,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-card-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
 | --van-card-font-size | _var(--van-font-size-sm)_ | - |
 | --van-card-text-color | _var(--van-text-color)_ | - |
-| --van-card-background-color | _var(--van-background-color-light)_ | - |
+| --van-card-background-color | _var(--van-gray-1)_ | - |
 | --van-card-thumb-size | _88px_ | - |
 | --van-card-thumb-border-radius | _var(--van-border-radius-lg)_ | - |
 | --van-card-title-line-height | _16px_ | - |
