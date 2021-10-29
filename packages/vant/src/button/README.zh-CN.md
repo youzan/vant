@@ -112,7 +112,7 @@ app.use(Button);
 可以通过 `url` 属性进行 URL 跳转，或通过 `to` 属性进行路由跳转。
 
 ```html
-<van-button type="primary" url="/vant/mobile.html">URL 跳转</van-button>
+<van-button type="primary" url="https://github.com">URL 跳转</van-button>
 <van-button type="primary" to="index">路由跳转</van-button>
 ```
 

@@ -92,7 +92,7 @@ app.use(Button);
 ### Route
 
 ```html
-<van-button type="primary" url="/vant/mobile.html">URL</van-button>
+<van-button type="primary" url="https://github.com">URL</van-button>
 <van-button type="primary" to="index">Vue Router</van-button>
 ```
 

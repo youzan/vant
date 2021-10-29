@@ -85,7 +85,7 @@ app.use(GridItem);
 ```html
 <van-grid clickable :column-num="2">
   <van-grid-item icon="home-o" text="Vue Router" to="/" />
-  <van-grid-item icon="search" text="URL" url="/vant/mobile.html" />
+  <van-grid-item icon="search" text="URL" url="https://github.com" />
 </van-grid>
 ```
 

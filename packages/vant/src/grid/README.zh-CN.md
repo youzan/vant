@@ -99,7 +99,7 @@ app.use(GridItem);
 ```html
 <van-grid clickable :column-num="2">
   <van-grid-item icon="home-o" text="路由跳转" to="/" />
-  <van-grid-item icon="search" text="URL 跳转" url="/vant/mobile.html" />
+  <van-grid-item icon="search" text="URL 跳转" url="https://github.com" />
 </van-grid>
 ```
 
