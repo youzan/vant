@@ -218,7 +218,7 @@ import type { CellProps, CellGroupProps, CellArrowDirection } from 'vant';
 | --van-cell-vertical-padding | _10px_ | - |
 | --van-cell-horizontal-padding | _var(--van-padding-md)_ | - |
 | --van-cell-text-color | _var(--van-text-color)_ | - |
-| --van-cell-background-color | _var(--van-white)_ | - |
+| --van-cell-background-color | _var(--van-background-color-light)_ | - |
 | --van-cell-border-color | _var(--van-border-color)_ | - |
 | --van-cell-active-color | _var(--van-active-color)_ | - |
 | --van-cell-required-color | _var(--van-danger-color)_ | - |
@@ -232,7 +232,7 @@ import type { CellProps, CellGroupProps, CellArrowDirection } from 'vant';
 | --van-cell-large-vertical-padding | _var(--van-padding-sm)_ | - |
 | --van-cell-large-title-font-size | _var(--van-font-size-lg)_ | - |
 | --van-cell-large-label-font-size | _var(--van-font-size-md)_ | - |
-| --van-cell-group-background-color | _var(--van-white)_ | - |
+| --van-cell-group-background-color | _var(--van-background-color-light)_ | - |
 | --van-cell-group-title-color | _var(--van-gray-6)_ | - |
 | --van-cell-group-title-padding | _var(--van-padding-md) var(--van-padding-md) var(--van-padding-xs)_ | - |
 | --van-cell-group-title-font-size | _var(--van-font-size-md)_ | - |

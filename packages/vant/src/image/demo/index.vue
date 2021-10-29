@@ -93,7 +93,7 @@ const fits = ['contain', 'cover', 'fill', 'none', 'scale-down'] as const;
 <style lang="less">
 .demo-image {
   overflow-x: hidden;
-  background-color: var(--van-white);
+  background-color: var(--van-background-color-light);
 
   .van-row {
     padding: 0 var(--van-padding-md);

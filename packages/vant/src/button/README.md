@@ -184,7 +184,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-button-default-line-height | _1.2_ | - |
 | --van-button-default-font-size | _var(--van-font-size-lg)_ | - |
 | --van-button-default-color | _var(--van-text-color)_ | - |
-| --van-button-default-background-color | _var(--van-white)_ | - |
+| --van-button-default-background-color | _var(--van-background-color-light)_ | - |
 | --van-button-default-border-color | _var(--van-border-color)_ | - |
 | --van-button-primary-color | _var(--van-white)_ | - |
 | --van-button-primary-background-color | _var(--van-primary-color)_ | - |

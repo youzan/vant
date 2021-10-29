@@ -160,7 +160,7 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 --van-active-opacity: 0.7;
 --van-disabled-opacity: 0.5;
 --van-background-color: var(--van-gray-1);
---van-background-color-light: #fafafa;
+--van-background-color-light: var(--van-white);
 --van-text-link-color: #576b95;
 
 // Padding

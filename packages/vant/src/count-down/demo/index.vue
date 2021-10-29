@@ -91,7 +91,7 @@ const onFinish = () => Toast(t('finished'));
 
 <style lang="less">
 .demo-count-down {
-  background-color: var(--van-white);
+  background-color: var(--van-background-color-light);
 
   .van-count-down {
     margin-left: var(--van-padding-md);

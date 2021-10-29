@@ -68,7 +68,7 @@ const active = ref('error');
 
 <style lang="less">
 .demo-empty {
-  background: var(--van-white);
+  background: var(--van-background-color-light);
 
   .custom-image {
     .van-empty__image {

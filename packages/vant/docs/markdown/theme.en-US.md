@@ -41,7 +41,7 @@ There are some [basic variables](<(https://github.com/youzan/vant/blob/dev/packa
 @active-opacity: 0.7;
 @disabled-opacity: 0.5;
 @background-color: @gray-1;
-@background-color-light: #fafafa;
+@background-color-light: @white;
 @text-link-color: #576b95;
 
 // Padding

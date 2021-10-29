@@ -155,18 +155,18 @@ import type {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                   | 默认值                       | 描述 |
-| -------------------------------------- | ---------------------------- | ---- |
-| --van-action-bar-background-color      | _var(--van-white)_           | -    |
-| --van-action-bar-height                | _50px_                       | -    |
-| --van-action-bar-icon-width            | _48px_                       | -    |
-| --van-action-bar-icon-height           | _100%_                       | -    |
-| --van-action-bar-icon-color            | _var(--van-text-color)_      | -    |
-| --van-action-bar-icon-size             | _18px_                       | -    |
-| --van-action-bar-icon-font-size        | _var(--van-font-size-xs)_    | -    |
-| --van-action-bar-icon-active-color     | _var(--van-active-color)_    | -    |
-| --van-action-bar-icon-text-color       | _var(--van-gray-7)_          | -    |
-| --van-action-bar-icon-background-color | _var(--van-white)_           | -    |
-| --van-action-bar-button-height         | _40px_                       | -    |
-| --van-action-bar-button-warning-color  | _var(--van-gradient-orange)_ | -    |
-| --van-action-bar-button-danger-color   | _var(--van-gradient-red)_    | -    |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-action-bar-background-color | _var(--van-background-color-light)_ | - |
+| --van-action-bar-height | _50px_ | - |
+| --van-action-bar-icon-width | _48px_ | - |
+| --van-action-bar-icon-height | _100%_ | - |
+| --van-action-bar-icon-color | _var(--van-text-color)_ | - |
+| --van-action-bar-icon-size | _18px_ | - |
+| --van-action-bar-icon-font-size | _var(--van-font-size-xs)_ | - |
+| --van-action-bar-icon-active-color | _var(--van-active-color)_ | - |
+| --van-action-bar-icon-text-color | _var(--van-gray-7)_ | - |
+| --van-action-bar-icon-background-color | _var(--van-background-color-light)_ | - |
+| --van-action-bar-button-height | _40px_ | - |
+| --van-action-bar-button-warning-color | _var(--van-gradient-orange)_ | - |
+| --van-action-bar-button-danger-color | _var(--van-gradient-red)_ | - |

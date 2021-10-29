@@ -204,5 +204,5 @@ The component provides the following CSS variables, which can be used to customi
 | --van-slider-button-width | _24px_ | - |
 | --van-slider-button-height | _24px_ | - |
 | --van-slider-button-border-radius | _50%_ | - |
-| --van-slider-button-background-color | _var(--van-white)_ | - |
+| --van-slider-button-background-color | _var(--van-background-color-light)_ | - |
 | --van-slider-button-box-shadow | _0 1px 2px rgba(0, 0, 0, 0.5)_ | - |

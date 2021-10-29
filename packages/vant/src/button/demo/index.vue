@@ -144,7 +144,7 @@ const t = useTranslate({
 
 <style lang="less">
 .demo-button {
-  background: var(--van-white);
+  background: var(--van-background-color-light);
 
   .van-button {
     &--large {

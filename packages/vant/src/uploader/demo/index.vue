@@ -180,7 +180,7 @@ const onOversize = (file: UploaderFileListItem, detail: unknown) => {
 
 <style lang="less">
 .demo-uploader {
-  background-color: var(--van-white);
+  background-color: var(--van-background-color-light);
 
   .van-uploader {
     margin-left: var(--van-padding-md);

@@ -184,7 +184,7 @@ const beforeChange = (name: number) => {
 
   .van-tab__pane {
     padding: 24px 20px;
-    background-color: var(--van-white);
+    background-color: var(--van-background-color-light);
   }
 
   .van-tabs--card .van-tab__pane {

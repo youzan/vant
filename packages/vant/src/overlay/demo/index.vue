@@ -47,7 +47,7 @@ const showEmbedded = ref(false);
 
 <style lang="less">
 .demo-overlay {
-  background: var(--van-white);
+  background: var(--van-background-color-light);
 
   .wrapper {
     display: flex;
@@ -59,7 +59,7 @@ const showEmbedded = ref(false);
   .block {
     width: 120px;
     height: 120px;
-    background-color: var(--van-white);
+    background-color: var(--van-background-color-light);
     border-radius: 4px;
   }
 }

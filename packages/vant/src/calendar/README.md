@@ -381,7 +381,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-calendar-background-color | _var(--van-white)_ | - |
+| --van-calendar-background-color | _var(--van-background-color-light)_ | - |
 | --van-calendar-popup-height | _80%_ | - |
 | --van-calendar-header-box-shadow | _0 2px 10px rgba(125, 126, 128, 0.16)_ | - |
 | --van-calendar-header-title-height | _44px_ | - |

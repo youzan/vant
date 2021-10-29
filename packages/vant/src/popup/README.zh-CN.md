@@ -168,7 +168,7 @@ import type { PopupProps, PopupPosition, PopupCloseIconPosition } from 'vant';
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-popup-background-color | _var(--van-white)_ | - |
+| --van-popup-background-color | _var(--van-background-color-light)_ | - |
 | --van-popup-transition | _transform var(--van-animation-duration-base)_ | - |
 | --van-popup-round-border-radius | _16px_ | - |
 | --van-popup-close-icon-size | _22px_ | - |
