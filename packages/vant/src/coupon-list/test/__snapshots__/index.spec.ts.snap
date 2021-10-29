@@ -46,7 +46,7 @@ exports[`should be the sames as the last snapshot when render coupon list 1`] = 
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>
@@ -322,7 +322,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>
@@ -416,7 +416,7 @@ exports[`should render list-footer slot correctly 1`] = `
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"
+             style="transform: translateX(50px) translateX(-50%); transition-duration: 0.3s;"
         >
         </div>
       </div>
@@ -512,7 +512,7 @@ exports[`should use custom src when using empty-image prop 1`] = `
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>

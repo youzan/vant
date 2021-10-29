@@ -24,7 +24,7 @@ exports[`click option 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 0px;"
+  <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -66,7 +66,7 @@ exports[`click option 1`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 0px; display: none;"
+  <div style="top: 100px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -101,7 +101,7 @@ exports[`close-on-click-outside 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 0px;"
+  <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -143,7 +143,7 @@ exports[`close-on-click-outside 1`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 0px; display: none;"
+  <div style="top: 100px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -323,7 +323,7 @@ exports[`disable close-on-click-outside 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 0px;"
+  <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -365,7 +365,7 @@ exports[`disable close-on-click-outside 1`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 0px; display: none;"
+  <div style="top: 100px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -425,7 +425,7 @@ exports[`render option icon 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 0px;"
+  <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -471,7 +471,7 @@ exports[`render option icon 1`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 0px; display: none;"
+  <div style="top: 100px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -506,7 +506,7 @@ exports[`show dropdown item 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 0px;"
+  <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -548,7 +548,7 @@ exports[`show dropdown item 1`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 0px; display: none;"
+  <div style="top: 100px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -583,7 +583,7 @@ exports[`show dropdown item 2`] = `
       </span>
     </div>
   </div>
-  <div style="top: 0px;"
+  <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -625,7 +625,7 @@ exports[`show dropdown item 2`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 0px;"
+  <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -694,7 +694,7 @@ exports[`show dropdown item 3`] = `
       </span>
     </div>
   </div>
-  <div style="top: 0px;"
+  <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>
@@ -736,7 +736,7 @@ exports[`show dropdown item 3`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 0px;"
+  <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
     <transition-stub>

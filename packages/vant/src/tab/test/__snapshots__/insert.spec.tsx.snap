@@ -31,7 +31,7 @@ exports[`should render Tab inside a component correctly 1`] = `
         </span>
       </div>
       <div class="van-tabs__line"
-           style="transform: translateX(0px) translateX(-50%);"
+           style="transform: translateX(50px) translateX(-50%);"
       >
       </div>
     </div>
@@ -88,7 +88,7 @@ exports[`should render correctly after inserting a tab 1`] = `
         </span>
       </div>
       <div class="van-tabs__line"
-           style="transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"
+           style="transform: translateX(50px) translateX(-50%); transition-duration: 0.3s;"
       >
       </div>
     </div>
@@ -139,7 +139,7 @@ exports[`should render correctly after inserting a tab with name 1`] = `
         </span>
       </div>
       <div class="van-tabs__line"
-           style="transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"
+           style="transform: translateX(50px) translateX(-50%); transition-duration: 0.3s;"
       >
       </div>
     </div>

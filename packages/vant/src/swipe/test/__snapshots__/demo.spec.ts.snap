@@ -3,19 +3,27 @@
 exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-swipe">
-    <div style="transition-duration: 0ms; transform: translateX(0px);"
+    <div style="transition-duration: 0ms; transform: translateX(0px); width: 400px;"
          class="van-swipe__track"
     >
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         1
       </div>
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         2
       </div>
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         3
       </div>
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         4
       </div>
     </div>
@@ -35,18 +43,26 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-swipe">
-    <div style="transition-duration: 0ms; transform: translateX(0px);"
+    <div style="transition-duration: 0ms; transform: translateX(0px); width: 400px;"
          class="van-swipe__track"
     >
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         <img src="https://img.yzcdn.cn/vant/apple-1.jpg">
       </div>
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         <img src="https://img.yzcdn.cn/vant/apple-2.jpg">
       </div>
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
       </div>
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         <img src="https://img.yzcdn.cn/vant/apple-4.jpg">
       </div>
     </div>
@@ -64,19 +80,27 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-swipe">
-    <div style="transition-duration: 0ms; transform: translateX(0px);"
+    <div style="transition-duration: 0ms; transform: translateX(0px); width: 400px;"
          class="van-swipe__track"
     >
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         1
       </div>
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         2
       </div>
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         3
       </div>
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         4
       </div>
     </div>
@@ -178,19 +202,27 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-swipe">
-    <div style="transition-duration: 0ms; transform: translateX(0px);"
+    <div style="transition-duration: 0ms; transform: translateX(0px); width: 400px;"
          class="van-swipe__track"
     >
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         1
       </div>
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         2
       </div>
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         3
       </div>
-      <div class="van-swipe-item">
+      <div class="van-swipe-item"
+           style="width: 100px;"
+      >
         4
       </div>
     </div>

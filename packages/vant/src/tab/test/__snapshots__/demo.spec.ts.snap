@@ -8,8 +8,8 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tabs__nav van-tabs__nav--line"
       >
         <div role="tab"
-             class="van-tab"
-             aria-selected="false"
+             class="van-tab van-tab--active"
+             aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
@@ -24,8 +24,8 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
         <div role="tab"
-             class="van-tab van-tab--active"
-             aria-selected="true"
+             class="van-tab"
+             aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -40,7 +40,7 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>
@@ -48,19 +48,19 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__content">
       <div role="tabpanel"
            class="van-tab__pane"
-           style="display: none;"
-      >
-      </div>
-      <div role="tabpanel"
-           class="van-tab__pane"
-           style="display: none;"
-      >
-      </div>
-      <div role="tabpanel"
-           class="van-tab__pane"
            style
       >
-        content of tab 3
+        content of tab 1
+      </div>
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style="display: none;"
+      >
+      </div>
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style="display: none;"
+      >
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
@@ -101,7 +101,7 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>
@@ -197,7 +197,7 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>
@@ -278,7 +278,7 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>
@@ -378,7 +378,7 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>
@@ -407,8 +407,8 @@ exports[`should render demo and match snapshot 1`] = `
                class="van-tabs__nav van-tabs__nav--line"
           >
             <div role="tab"
-                 class="van-tab"
-                 aria-selected="false"
+                 class="van-tab van-tab--active"
+                 aria-selected="true"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Tab 1
@@ -423,8 +423,8 @@ exports[`should render demo and match snapshot 1`] = `
               </span>
             </div>
             <div role="tab"
-                 class="van-tab van-tab--active"
-                 aria-selected="true"
+                 class="van-tab"
+                 aria-selected="false"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Tab 3
@@ -439,7 +439,7 @@ exports[`should render demo and match snapshot 1`] = `
               </span>
             </div>
             <div class="van-tabs__line"
-                 style="transform: translateX(0px) translateX(-50%);"
+                 style="transform: translateX(50px) translateX(-50%);"
             >
             </div>
           </div>
@@ -449,19 +449,19 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__content">
       <div role="tabpanel"
            class="van-tab__pane"
-           style="display: none;"
-      >
-      </div>
-      <div role="tabpanel"
-           class="van-tab__pane"
-           style="display: none;"
-      >
-      </div>
-      <div role="tabpanel"
-           class="van-tab__pane"
            style
       >
-        content of tab 3
+        content of tab 1
+      </div>
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style="display: none;"
+      >
+      </div>
+      <div role="tabpanel"
+           class="van-tab__pane"
+           style="display: none;"
+      >
       </div>
       <div role="tabpanel"
            class="van-tab__pane"
@@ -498,7 +498,7 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>
@@ -557,19 +557,20 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>
     </div>
     <div class="van-tabs__content van-tabs__content--animated">
       <div class="van-swipe van-tabs__track">
-        <div style="transition-duration: 0ms; transform: translateX(0px);"
+        <div style="transition-duration: 0ms; transform: translateX(0px); width: 400px;"
              class="van-swipe__track"
         >
           <div class="van-swipe-item van-tab__pane-wrapper"
                role="tabpanel"
                aria-hidden="false"
+               style="width: 100px;"
           >
             <div class="van-tab__pane">
               content of tab 1
@@ -578,6 +579,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
                role="tabpanel"
                aria-hidden="true"
+               style="width: 100px;"
           >
             <div class="van-tab__pane">
               content of tab 2
@@ -586,11 +588,13 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
                role="tabpanel"
                aria-hidden="true"
+               style="width: 100px;"
           >
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
                role="tabpanel"
                aria-hidden="true"
+               style="width: 100px;"
           >
           </div>
         </div>
@@ -605,8 +609,8 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tabs__nav van-tabs__nav--line"
       >
         <div role="tab"
-             class="van-tab"
-             aria-selected="false"
+             class="van-tab van-tab--active"
+             aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
@@ -621,8 +625,8 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
         <div role="tab"
-             class="van-tab van-tab--active"
-             aria-selected="true"
+             class="van-tab"
+             aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -637,19 +641,20 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>
     </div>
     <div class="van-tabs__content van-tabs__content--animated">
       <div class="van-swipe van-tabs__track">
-        <div style="transition-duration: 0ms; transform: translateX(0px);"
+        <div style="transition-duration: 0ms; transform: translateX(0px); width: 400px;"
              class="van-swipe__track"
         >
-          <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+          <div class="van-swipe-item van-tab__pane-wrapper"
                role="tabpanel"
-               aria-hidden="true"
+               aria-hidden="false"
+               style="width: 100px;"
           >
             <div class="van-tab__pane">
               content of tab 1
@@ -658,19 +663,22 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
                role="tabpanel"
                aria-hidden="true"
+               style="width: 100px;"
           >
             <div class="van-tab__pane">
               content of tab 2
             </div>
           </div>
-          <div class="van-swipe-item van-tab__pane-wrapper"
+          <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
                role="tabpanel"
-               aria-hidden="false"
+               aria-hidden="true"
+               style="width: 100px;"
           >
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
                role="tabpanel"
                aria-hidden="true"
+               style="width: 100px;"
           >
           </div>
         </div>
@@ -751,7 +759,7 @@ exports[`should render demo and match snapshot 1`] = `
               </span>
             </div>
             <div class="van-tabs__line"
-                 style="transform: translateX(0px) translateX(-50%);"
+                 style="transform: translateX(50px) translateX(-50%);"
             >
             </div>
           </div>
@@ -841,7 +849,7 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(0px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>

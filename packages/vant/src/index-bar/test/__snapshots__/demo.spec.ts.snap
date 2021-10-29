@@ -23,7 +23,7 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
       <div class="van-tabs__line"
-           style="transform: translateX(0px) translateX(-50%);"
+           style="transform: translateX(50px) translateX(-50%);"
       >
       </div>
     </div>
@@ -867,8 +867,10 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
         </div>
         <div>
-          <div style="height: 0px;">
-            <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom">
+          <div style="height: 100px;">
+            <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom"
+                 style="width: 100px;"
+            >
               Z
             </div>
           </div>

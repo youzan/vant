@@ -40,7 +40,17 @@ const t = useTranslate({
   },
 });
 
-const active = ref(2);
+const active1 = ref(0);
+const active2 = ref(0);
+const active3 = ref(0);
+const active4 = ref(0);
+const active5 = ref(0);
+const active6 = ref(0);
+const active7 = ref(0);
+const active8 = ref(0);
+const active9 = ref(0);
+const active10 = ref(0);
+const active11 = ref(0);
 const activeName = ref('b');
 
 const tabs = [1, 2, 3, 4];
@@ -61,7 +71,7 @@ const beforeChange = (name: number) => {
 
 <template>
   <demo-block :title="t('basicUsage')">
-    <van-tabs v-model:active="active">
+    <van-tabs v-model:active="active1">
       <van-tab :title="t('tab') + index" v-for="index in tabs" :key="index">
         {{ t('content') }} {{ index }}
       </van-tab>
@@ -77,7 +87,7 @@ const beforeChange = (name: number) => {
   </demo-block>
 
   <demo-block :title="t('title2')">
-    <van-tabs>
+    <van-tabs v-model:active="active2">
       <van-tab v-for="index in 8" :title="t('tab') + index" :key="index">
         {{ t('content') }} {{ index }}
       </van-tab>
@@ -85,7 +95,7 @@ const beforeChange = (name: number) => {
   </demo-block>
 
   <demo-block :title="t('title3')">
-    <van-tabs>
+    <van-tabs v-model:active="active3">
       <van-tab
         v-for="index in 3"
         :title="t('tab') + index"
@@ -98,7 +108,7 @@ const beforeChange = (name: number) => {
   </demo-block>
 
   <demo-block :title="t('title4')">
-    <van-tabs type="card">
+    <van-tabs v-model:active="active4" type="card">
       <van-tab v-for="index in 3" :title="t('tab') + index" :key="index">
         {{ t('content') }} {{ index }}
       </van-tab>
@@ -106,7 +116,7 @@ const beforeChange = (name: number) => {
   </demo-block>
 
   <demo-block :title="t('title5')">
-    <van-tabs @click-tab="onClickTab">
+    <van-tabs v-model:active="active5" @click-tab="onClickTab">
       <van-tab v-for="index in 2" :title="t('tab') + index" :key="index">
         {{ t('content') }} {{ index }}
       </van-tab>
@@ -114,7 +124,7 @@ const beforeChange = (name: number) => {
   </demo-block>
 
   <demo-block :title="t('title6')">
-    <van-tabs :active="active" sticky>
+    <van-tabs v-model:active="active6" sticky>
       <van-tab :title="t('tab') + index" v-for="index in tabs" :key="index">
         {{ t('content') }} {{ index }}
       </van-tab>
@@ -122,7 +132,7 @@ const beforeChange = (name: number) => {
   </demo-block>
 
   <demo-block :title="t('title7')">
-    <van-tabs :active="active">
+    <van-tabs v-model:active="active7">
       <van-tab v-for="index in 2" :key="index">
         <template #title> <van-icon name="more-o" />{{ t('tab') }} </template>
         {{ t('content') }} {{ index }}
@@ -131,7 +141,7 @@ const beforeChange = (name: number) => {
   </demo-block>
 
   <demo-block :title="t('title8')">
-    <van-tabs animated>
+    <van-tabs v-model:active="active8" animated>
       <van-tab :title="t('tab') + index" v-for="index in tabs" :key="index">
         {{ t('content') }} {{ index }}
       </van-tab>
@@ -139,7 +149,7 @@ const beforeChange = (name: number) => {
   </demo-block>
 
   <demo-block :title="t('title9')">
-    <van-tabs :active="active" swipeable>
+    <van-tabs v-model:active="active9" swipeable>
       <van-tab :title="t('tab') + index" v-for="index in tabs" :key="index">
         {{ t('content') }} {{ index }}
       </van-tab>
@@ -147,7 +157,7 @@ const beforeChange = (name: number) => {
   </demo-block>
 
   <demo-block :title="t('title10')">
-    <van-tabs scrollspy sticky>
+    <van-tabs v-model:active="active10" scrollspy sticky>
       <van-tab :title="t('tab') + index" v-for="index in 8" :key="index">
         {{ t('content') }} {{ index }}
       </van-tab>
@@ -155,7 +165,7 @@ const beforeChange = (name: number) => {
   </demo-block>
 
   <demo-block :title="t('beforeChange')">
-    <van-tabs :before-change="beforeChange">
+    <van-tabs v-model:active="active11" :before-change="beforeChange">
       <van-tab :title="t('tab') + index" v-for="index in 4" :key="index">
         {{ t('content') }} {{ index }}
       </van-tab>
