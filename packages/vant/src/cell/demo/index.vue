@@ -84,7 +84,11 @@ const t = useTranslate({
   </demo-block>
 
   <demo-block :title="t('router')">
-    <van-cell :title="t('urlRoute')" is-link url="/vant/mobile.html" />
+    <van-cell
+      :title="t('urlRoute')"
+      is-link
+      url="https://github.com/youzan/vant"
+    />
     <van-cell :title="t('vueRoute')" is-link to="index" />
   </demo-block>
 

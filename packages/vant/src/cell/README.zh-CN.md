@@ -81,7 +81,7 @@ app.use(CellGroup);
 可以通过 `url` 属性进行 URL 跳转，或通过 `to` 属性进行路由跳转。
 
 ```html
-<van-cell title="URL 跳转" is-link url="/vant/mobile.html" />
+<van-cell title="URL 跳转" is-link url="https://github.com" />
 <van-cell title="路由跳转" is-link to="index" />
 ```
 
