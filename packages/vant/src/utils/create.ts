@@ -6,7 +6,7 @@ import locale from '../locale';
 export function createTranslate(name: string) {
   const prefix = camelize(name) + '.';
 
-  return (path: string, ...args: unknown[]): string => {
+  return (path: string, ...args: unknown[]) => {
     const messages = locale.messages();
     const message = get(messages, prefix + path) || get(messages, path);
 

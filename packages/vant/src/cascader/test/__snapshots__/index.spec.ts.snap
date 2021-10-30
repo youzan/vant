@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[` should allow more custom content 1`] = `
+<div class="van-tab__pane">
+  tab index: 1
+  <ul class="van-cascader__options">
+    <li class="van-cascader__option van-cascader__option--selected">
+      <span>
+        Zhejiang
+      </span>
+      <i class="van-badge__wrapper van-icon van-icon-success van-cascader__selected-icon">
+      </i>
+    </li>
+    <li class="van-cascader__option">
+      <span>
+        Jiangsu
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`should change close icon when using close-icon prop 1`] = `
 <i class="van-badge__wrapper van-icon van-icon-success van-cascader__close-icon">
 </i>
