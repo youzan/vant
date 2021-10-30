@@ -197,6 +197,54 @@ export default {
 };
 ```
 
+### Custom Content
+
+```html
+<van-cascader
+  v-model="code"
+  title="Select Area"
+  :options="options"
+  :field-names="fieldNames"
+>
+  <template #options-top="{ activeTab }">
+    <span>Current level {{activeTab}}</span>
+  </template>
+</van-cascader>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const code = ref('');
+    const fieldNames = {
+      text: 'name',
+      value: 'code',
+      children: 'items',
+    };
+    const options = [
+      {
+        name: 'Zhejiang',
+        code: '330000',
+        items: [{ name: 'Hangzhou', code: '330100' }],
+      },
+      {
+        name: 'Jiangsu',
+        code: '320000',
+        items: [{ name: 'Nanjing', code: '320100' }],
+      },
+    ];
+
+    return {
+      code,
+      options,
+      fieldNames,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -232,7 +280,6 @@ export default {
 | finish | Emitted when all options is selected | `{ value, selectedOptions, tabIndex }` |
 | close | Emitted when the close icon is clicked | - |
 | click-tab | Emitted when a tab is clicked | _activeTab: number, title: string_ |
-| change-tab | Emitted when a tab is changed | tabIndex: number |
 
 ### Slots
 
@@ -240,7 +287,7 @@ export default {
 | --- | --- | --- |
 | title | Custom title | - |
 | option `v3.1.4` | Custom option text | _{ option: Option, selected: boolean }_ |
-| optionsTop | Custom additions | - |
+| options-top | Custom the content above options | - |
 
 ### Types
 

@@ -27,7 +27,7 @@ const t = useTranslate({
       { text: '宁波市', value: '330200' },
     ],
     customFieldNames: '自定义字段名',
-    customContent: '自定义增加内容',
+    customContent: '自定义内容',
   },
   'en-US': {
     area: 'Area',
@@ -47,7 +47,7 @@ const t = useTranslate({
       { text: 'Ningbo', value: '330200' },
     ],
     customFieldNames: 'Custom Field Names',
-    customContent: 'Custom additions',
+    customContent: 'Custom Content',
   },
 });
 
@@ -91,7 +91,6 @@ const customContentState = reactive<StateItem>({
   show: false,
   value: null,
   result: '',
-  tabIndex: 0,
 });
 
 const customFieldOptions = computed(() => {
@@ -268,10 +267,9 @@ const onFinish = (
         :field-names="fieldNames"
         @close="customContentState.show = false"
         @finish="onFinish(customContentState, $event)"
-        @change-tab="customContentState.tabIndex = $event"
       >
-        <template #optionsTop>
-          <span>当前为第{{ customContentState.tabIndex }}级</span>
+        <template #options-top="{ activeTab }">
+          <span>当前为第{{ activeTab }}级</span>
         </template>
       </van-cascader>
     </van-popup>

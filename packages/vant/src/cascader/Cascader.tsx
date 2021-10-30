@@ -45,14 +45,7 @@ export default defineComponent({
 
   props: cascaderProps,
 
-  emits: [
-    'close',
-    'change',
-    'finish',
-    'click-tab',
-    'update:modelValue',
-    'change-tab',
-  ],
+  emits: ['close', 'change', 'finish', 'click-tab', 'update:modelValue'],
 
   setup(props, { slots, emit }) {
     const tabs = ref<CascaderTab[]>([]);
@@ -188,9 +181,8 @@ export default defineComponent({
 
     const onClose = () => emit('close');
 
-    const onClickTab = ({ name, title }: TabsClickTabEventParams) => {
+    const onClickTab = ({ name, title }: TabsClickTabEventParams) =>
       emit('click-tab', name, title);
-    };
 
     const renderHeader = () => (
       <div class={bem('header')}>
@@ -266,9 +258,9 @@ export default defineComponent({
             unselected: !selected,
           })}
         >
-          {slots.optionsTop ? (
-            <div class={bem('options-top')}> {slots.optionsTop()} </div>
-          ) : null}
+          {slots['options-top']
+            ? slots['options-top']({ activeTab: activeTab.value })
+            : null}
           {renderOptions(options, selected, tabIndex)}
         </Tab>
       );
@@ -289,10 +281,6 @@ export default defineComponent({
     );
 
     updateTabs();
-    watch(activeTab, () => {
-      emit('change-tab', activeTab.value);
-    });
-
     watch(() => props.options, updateTabs, { deep: true });
     watch(
       () => props.modelValue,

@@ -207,9 +207,7 @@ export default {
 };
 ```
 
-### 自定义内容
-
-通过 `field-names` 属性可以自定义 `options` 里的字段名称。
+### 自定义选项上方内容
 
 ```html
 <van-cascader
@@ -217,53 +215,8 @@ export default {
   title="请选择所在地区"
   :options="options"
   :field-names="fieldNames"
-/>
-```
-
-```js
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    const code = ref('');
-    const fieldNames = {
-      text: 'name',
-      value: 'code',
-      children: 'items',
-    };
-    const options = [
-      {
-        name: '浙江省',
-        code: '330000',
-        items: [{ name: '杭州市', code: '330100' }],
-      },
-      {
-        name: '江苏省',
-        code: '320000',
-        items: [{ name: '南京市', code: '320100' }],
-      },
-    ];
-
-    return {
-      code,
-      options,
-      fieldNames,
-    };
-  },
-};
-```
-
-### 自定义增加内容
-
-```html
-<van-cascader
-  v-model="code"
-  title="请选择所在地区"
-  :options="options"
-  :field-names="fieldNames"
-  @change-tab="tabIndex=$event"
 >
-  <template #optionsTop>
+  <template #options-top="{ activeTab }">
     <span>当前为第{{ tabIndex }}级</span>
   </template>
 </van-cascader>
@@ -275,7 +228,6 @@ import { ref } from 'vue';
 export default {
   setup() {
     const code = ref('');
-    const tabIndex = ref(0);
     const fieldNames = {
       text: 'name',
       value: 'code',
@@ -296,7 +248,6 @@ export default {
 
     return {
       code,
-      tabIndex,
       options,
       fieldNames,
     };
@@ -335,21 +286,20 @@ export default {
 
 ### Events
 
-| 事件       | 说明                   | 回调参数                               |
-| ---------- | ---------------------- | -------------------------------------- |
-| change     | 选中项变化时触发       | `{ value, selectedOptions, tabIndex }` |
-| finish     | 全部选项选择完成后触发 | `{ value, selectedOptions, tabIndex }` |
-| close      | 点击关闭图标时触发     | -                                      |
-| click-tab  | 点击标签时触发         | _tabIndex: number, title: string_      |
-| change-tab | 标签改变时触发         | tabIndex: number                       |
+| 事件      | 说明                   | 回调参数                               |
+| --------- | ---------------------- | -------------------------------------- |
+| change    | 选中项变化时触发       | `{ value, selectedOptions, tabIndex }` |
+| finish    | 全部选项选择完成后触发 | `{ value, selectedOptions, tabIndex }` |
+| close     | 点击关闭图标时触发     | -                                      |
+| click-tab | 点击标签时触发         | _tabIndex: number, title: string_      |
 
 ### Slots
 
-| 名称            | 说明           | 参数                                    |
-| --------------- | -------------- | --------------------------------------- |
-| title           | 自定义顶部标题 | -                                       |
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| title | 自定义顶部标题 | - |
 | option `v3.1.4` | 自定义选项文字 | _{ option: Option, selected: boolean }_ |
-| optionsTop      | 自定义增加内容 | -                                       |
+| options-top | 自定义选项上方的内容 | - |
 
 ### 类型定义
 
