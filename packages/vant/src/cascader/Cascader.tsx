@@ -258,6 +258,9 @@ export default defineComponent({
             unselected: !selected,
           })}
         >
+          {slots['options-top']
+            ? slots['options-top']({ activeTab: activeTab.value })
+            : null}
           {renderOptions(options, selected, tabIndex)}
         </Tab>
       );
@@ -278,7 +281,6 @@ export default defineComponent({
     );
 
     updateTabs();
-
     watch(() => props.options, updateTabs, { deep: true });
     watch(
       () => props.modelValue,

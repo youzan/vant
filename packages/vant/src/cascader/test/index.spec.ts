@@ -241,3 +241,23 @@ test('should allow to custom the color of option', async () => {
   const option = wrapper.find('.van-cascader__option');
   expect(option.style.color).toEqual('red');
 });
+
+test(' should allow more custom content', async () => {
+  const wrapper = mount(Cascader, {
+    slots: {
+      'options-top': ({ activeTab }) => activeTab,
+    },
+    props: {
+      options,
+    },
+  });
+  await later();
+  wrapper
+    .findAll('.van-cascader__options')[0]
+    .find('.van-cascader__option')
+    .trigger('click');
+  wrapper.vm.$nextTick(() => {
+    const top = wrapper.find('.van-tab__pane');
+    expect(top.text()).toBe('1');
+  });
+});

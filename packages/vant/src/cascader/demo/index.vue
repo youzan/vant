@@ -27,6 +27,7 @@ const t = useTranslate({
       { text: '宁波市', value: '330200' },
     ],
     customFieldNames: '自定义字段名',
+    customContent: '自定义内容',
   },
   'en-US': {
     area: 'Area',
@@ -46,6 +47,7 @@ const t = useTranslate({
       { text: 'Ningbo', value: '330200' },
     ],
     customFieldNames: 'Custom Field Names',
+    customContent: 'Custom Content',
   },
 });
 
@@ -54,6 +56,7 @@ type StateItem = {
   value: string | number | null;
   result: string;
   options?: CascaderOption[];
+  tabIndex?: number;
 };
 
 const baseState = reactive<StateItem>({
@@ -83,6 +86,12 @@ const fieldNames = {
   value: 'code',
   children: 'items',
 };
+
+const customContentState = reactive<StateItem>({
+  show: false,
+  value: null,
+  result: '',
+});
 
 const customFieldOptions = computed(() => {
   const options = deepClone(t('options'));
@@ -232,6 +241,37 @@ const onFinish = (
         @close="customFieldState.show = false"
         @finish="onFinish(customFieldState, $event)"
       />
+    </van-popup>
+  </demo-block>
+
+  <demo-block card :title="t('customContent')">
+    <van-field
+      v-model="customContentState.result"
+      is-link
+      readonly
+      :label="t('area')"
+      :placeholder="t('selectArea')"
+      @click="customContentState.show = true"
+    />
+    <van-popup
+      v-model:show="customContentState.show"
+      round
+      teleport="body"
+      position="bottom"
+      safe-area-inset-bottom
+    >
+      <van-cascader
+        v-model="customContentState.value"
+        :title="t('selectArea')"
+        :options="customFieldOptions"
+        :field-names="fieldNames"
+        @close="customContentState.show = false"
+        @finish="onFinish(customContentState, $event)"
+      >
+        <template #options-top="{ activeTab }">
+          <span>当前为第{{ activeTab }}级</span>
+        </template>
+      </van-cascader>
     </van-popup>
   </demo-block>
 </template>

@@ -207,6 +207,54 @@ export default {
 };
 ```
 
+### 自定义选项上方内容
+
+```html
+<van-cascader
+  v-model="code"
+  title="请选择所在地区"
+  :options="options"
+  :field-names="fieldNames"
+>
+  <template #options-top="{ activeTab }">
+    <span>当前为第{{ tabIndex }}级</span>
+  </template>
+</van-cascader>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const code = ref('');
+    const fieldNames = {
+      text: 'name',
+      value: 'code',
+      children: 'items',
+    };
+    const options = [
+      {
+        name: '浙江省',
+        code: '330000',
+        items: [{ name: '杭州市', code: '330100' }],
+      },
+      {
+        name: '江苏省',
+        code: '320000',
+        items: [{ name: '南京市', code: '320100' }],
+      },
+    ];
+
+    return {
+      code,
+      options,
+      fieldNames,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -247,10 +295,11 @@ export default {
 
 ### Slots
 
-| 名称            | 说明           | 参数                                    |
-| --------------- | -------------- | --------------------------------------- |
-| title           | 自定义顶部标题 | -                                       |
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| title | 自定义顶部标题 | - |
 | option `v3.1.4` | 自定义选项文字 | _{ option: Option, selected: boolean }_ |
+| options-top | 自定义选项上方的内容 | - |
 
 ### 类型定义
 
