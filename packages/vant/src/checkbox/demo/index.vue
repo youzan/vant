@@ -184,7 +184,7 @@ const toggleAll = () => {
 
 <style lang="less">
 .demo-checkbox {
-  background: var(--van-white);
+  background: var(--van-background-color-light);
 
   .van-checkbox {
     margin: 0 0 8px 20px;

@@ -34,7 +34,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div style="height: 150px; background-color: rgb(255, 255, 255);">
+  <div style="height: 150px;">
     <div>
       <div class="van-sticky">
         <button type="button"

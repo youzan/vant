@@ -231,7 +231,7 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
   .van-tab__pane {
     width: auto;
     margin: 20px;
-    background-color: #fff;
+    background-color: var(--van-background-color-light);
     border-radius: 12px;
   }
 }

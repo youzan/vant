@@ -38,7 +38,10 @@ const container = ref(null);
   </demo-block>
 
   <demo-block :title="t('setContainer')">
-    <div ref="container" style="height: 150px; background-color: #fff">
+    <div
+      ref="container"
+      style="height: 150px; background-color: var(--van-background-color-light)"
+    >
       <van-sticky :container="container">
         <van-button type="warning" style="margin-left: 215px">
           {{ t('setContainer') }}
