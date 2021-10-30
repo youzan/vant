@@ -210,16 +210,17 @@ export default {
 ### 自定义选项上方内容
 
 ```html
-<van-cascader
-  v-model="code"
-  title="请选择所在地区"
-  :options="options"
-  :field-names="fieldNames"
->
-  <template #options-top="{ activeTab }">
-    <span>当前为第{{ tabIndex }}级</span>
+<van-cascader v-model="code" title="请选择所在地区" :options="options">
+  <template #options-top="{ tabIndex }">
+    <div class="current-level">当前为第 {{ tabIndex }} 级</div>
   </template>
 </van-cascader>
+
+<style>
+  .current-level {
+    padding: 10px 16px 0;
+  }
+</style>
 ```
 
 ```js
@@ -228,11 +229,6 @@ import { ref } from 'vue';
 export default {
   setup() {
     const code = ref('');
-    const fieldNames = {
-      text: 'name',
-      value: 'code',
-      children: 'items',
-    };
     const options = [
       {
         name: '浙江省',
@@ -249,7 +245,6 @@ export default {
     return {
       code,
       options,
-      fieldNames,
     };
   },
 };
@@ -299,7 +294,7 @@ export default {
 | --- | --- | --- |
 | title | 自定义顶部标题 | - |
 | option `v3.1.4` | 自定义选项文字 | _{ option: Option, selected: boolean }_ |
-| options-top | 自定义选项上方的内容 | - |
+| options-top `v3.2.7` | 自定义选项上方的内容 | _{ tabIndex: number }_ |
 
 ### 类型定义
 

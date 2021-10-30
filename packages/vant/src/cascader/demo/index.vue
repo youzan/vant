@@ -26,8 +26,9 @@ const t = useTranslate({
       { text: '杭州市', value: '330100' },
       { text: '宁波市', value: '330200' },
     ],
+    currentLevel: (level: number) => `当前为第 ${level} 级`,
+    customContent: '自定义选项上方内容',
     customFieldNames: '自定义字段名',
-    customContent: '自定义内容',
   },
   'en-US': {
     area: 'Area',
@@ -46,8 +47,9 @@ const t = useTranslate({
       { text: 'Hangzhou', value: '330100' },
       { text: 'Ningbo', value: '330200' },
     ],
-    customFieldNames: 'Custom Field Names',
+    currentLevel: (level: number) => `Current level is ${level}`,
     customContent: 'Custom Content',
+    customFieldNames: 'Custom Field Names',
   },
 });
 
@@ -268,10 +270,16 @@ const onFinish = (
         @close="customContentState.show = false"
         @finish="onFinish(customContentState, $event)"
       >
-        <template #options-top="{ activeTab }">
-          <span>当前为第{{ activeTab }}级</span>
+        <template #options-top="{ tabIndex }">
+          <div class="current-level">{{ t('currentLevel', tabIndex) }}</div>
         </template>
       </van-cascader>
     </van-popup>
   </demo-block>
 </template>
+
+<style lang="less">
+.current-level {
+  padding: 10px 16px 0;
+}
+</style>

@@ -200,16 +200,17 @@ export default {
 ### Custom Content
 
 ```html
-<van-cascader
-  v-model="code"
-  title="Select Area"
-  :options="options"
-  :field-names="fieldNames"
->
-  <template #options-top="{ activeTab }">
-    <span>Current level {{activeTab}}</span>
+<van-cascader v-model="code" title="Select Area" :options="options">
+  <template #options-top="{ tabIndex }">
+    <div class="current-level">Current level is {{ tabIndex }}</div>
   </template>
 </van-cascader>
+
+<style>
+  .current-level {
+    padding: 10px 16px 0;
+  }
+</style>
 ```
 
 ```js
@@ -218,11 +219,6 @@ import { ref } from 'vue';
 export default {
   setup() {
     const code = ref('');
-    const fieldNames = {
-      text: 'name',
-      value: 'code',
-      children: 'items',
-    };
     const options = [
       {
         name: 'Zhejiang',
@@ -239,7 +235,6 @@ export default {
     return {
       code,
       options,
-      fieldNames,
     };
   },
 };
@@ -287,7 +282,7 @@ export default {
 | --- | --- | --- |
 | title | Custom title | - |
 | option `v3.1.4` | Custom option text | _{ option: Option, selected: boolean }_ |
-| options-top | Custom the content above options | - |
+| options-top `v3.2.7` | Custom the content above options | _{ tabIndex: number }_ |
 
 ### Types
 
