@@ -136,7 +136,7 @@ const onSelect = (action: { text: string }) => Toast(action.text);
       v-model:show="showPicker"
       round
       position="bottom"
-      get-container="body"
+      teleport="body"
     >
       <div class="demo-popover-box">
         <van-popover
