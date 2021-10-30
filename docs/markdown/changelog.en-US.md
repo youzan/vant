@@ -16,6 +16,16 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.31](https://github.com/youzan/vant/compare/v2.12.30...v2.12.31)
+
+`2021-10-30`
+
+**Bug Fixes**
+
+- Field: adjust textarea size when focus/blur [#9718](https://github.com/youzan/vant/issues/9718)
+- Progress: should resize when window size changed [#9757](https://github.com/youzan/vant/issues/9757)
+- fix VueConstructor type conflict [#9750](https://github.com/youzan/vant/issues/9750)
+
 ### [v2.12.30](https://github.com/youzan/vant/compare/v2.12.29...v2.12.30)
 
 `2021-10-14`

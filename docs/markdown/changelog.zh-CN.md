@@ -16,6 +16,16 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.31](https://github.com/youzan/vant/compare/v2.12.30...v2.12.31)
+
+`2021-10-30`
+
+**Bug Fixes**
+
+- Field: 修复 textarea 在聚焦和失焦时未重新计算高度的问题 [#9718](https://github.com/youzan/vant/issues/9718)
+- Progress: 修复窗口高度变化时进度条长度错误的问题 [#9757](https://github.com/youzan/vant/issues/9757)
+- 修复 VueConstructor 类型定义冲突的问题 [#9750](https://github.com/youzan/vant/issues/9750)
+
 ### [v2.12.30](https://github.com/youzan/vant/compare/v2.12.29...v2.12.30)
 
 `2021-10-14`
