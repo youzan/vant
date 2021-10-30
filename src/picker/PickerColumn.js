@@ -1,7 +1,7 @@
 import { deepClone } from '../utils/deep-clone';
 import { createNamespace, isObject } from '../utils';
 import { range } from '../utils/format/number';
-import { preventDefault, on, off, getWheelDelta } from '../utils/dom/event';
+import { preventDefault, on, off } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 
 const DEFAULT_DURATION = 200;
@@ -194,13 +194,17 @@ export default createComponent({
       this.momentumOffset = this.startOffset;
       this.transitionEndTrigger = null;
 
-      const { deltaY } = getWheelDelta(event);
-      if (this.startOffset === 0 && deltaY < 0) {
+      // directly use deltaY, see https://caniuse.com/?search=deltaY
+      // use deltaY to detect direction for not special setting device
+      // https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event
+      const { deltaY } = event;
+      if (this.startOffset === 0 && deltaY > 0) {
         return;
       }
 
       // get offset
-      const distance = -deltaY;
+      // if necessary, can adjust distance value to make scrolling smoother
+      const distance = deltaY;
       this.offset = range(
         this.startOffset + distance,
         -(this.count * this.itemHeight),

@@ -1,5 +1,5 @@
 import { isServer } from '..';
-import { EventHandler, CompatibleWheelEvent } from '../types';
+import { EventHandler } from '../types';
 
 // eslint-disable-next-line import/no-mutable-exports
 export let supportsPassive = false;
@@ -16,7 +16,7 @@ if (!isServer) {
     });
     window.addEventListener('test-passive', null as any, opts);
     // eslint-disable-next-line no-empty
-  } catch (e) { }
+  } catch (e) {}
 }
 
 export function on(
@@ -52,36 +52,5 @@ export function preventDefault(event: Event, isStopPropagation?: boolean) {
 
   if (isStopPropagation) {
     stopPropagation(event);
-  }
-}
-
-export function getWheelDelta(event: CompatibleWheelEvent) {
-  let deltaX = 0
-  let deltaY = 0
-
-  switch (true) {
-    case 'deltaX' in event:
-      deltaX = -event.deltaX
-      deltaY = -event.deltaY
-      break
-    case 'wheelDeltaX' in event:
-      deltaX = (event.wheelDeltaX / 120)
-      deltaY = (event.wheelDeltaY / 120)
-      break
-    case 'wheelDelta' in event:
-      deltaX = (event.wheelDelta / 120)
-      deltaY = deltaX
-      break
-    case 'detail' in event:
-      deltaX = (-event.detail / 3)
-      deltaY = deltaX
-      break
-    default:
-      break
-  }
-
-  return {
-    deltaX,
-    deltaY,
   }
 }
