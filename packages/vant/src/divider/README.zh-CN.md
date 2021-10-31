@@ -93,13 +93,13 @@ import type { DividerProps, DividerContentPosition } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                              | 默认值                    | 描述 |
-| --------------------------------- | ------------------------- | ---- |
-| --van-divider-margin              | _var(--van-padding-md) 0_ | -    |
-| --van-divider-text-color          | _var(--van-gray-6)_       | -    |
-| --van-divider-font-size           | _var(--van-font-size-md)_ | -    |
-| --van-divider-line-height         | _24px_                    | -    |
-| --van-divider-border-color        | _var(--van-border-color)_ | -    |
-| --van-divider-content-padding     | _var(--van-padding-md)_   | -    |
-| --van-divider-content-left-width  | _10%_                     | -    |
-| --van-divider-content-right-width | _10%_                     | -    |
+| 名称                              | 默认值                            | 描述 |
+| --------------------------------- | --------------------------------- | ---- |
+| --van-divider-margin              | _var(--van-padding-md) 0_         | -    |
+| --van-divider-text-color          | _var(--van-text-color-secondary)_ | -    |
+| --van-divider-font-size           | _var(--van-font-size-md)_         | -    |
+| --van-divider-line-height         | _24px_                            | -    |
+| --van-divider-border-color        | _var(--van-border-color)_         | -    |
+| --van-divider-content-padding     | _var(--van-padding-md)_           | -    |
+| --van-divider-content-left-width  | _10%_                             | -    |
+| --van-divider-content-right-width | _10%_                             | -    |

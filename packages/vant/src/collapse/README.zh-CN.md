@@ -194,6 +194,6 @@ collapseItemRef.value?.toggle();
 | --van-collapse-item-content-padding | _var(--van-padding-sm) var(--van-padding-md)_ | - |
 | --van-collapse-item-content-font-size | _var(--van-font-size-md)_ | - |
 | --van-collapse-item-content-line-height | _1.5_ | - |
-| --van-collapse-item-content-text-color | _var(--van-gray-6)_ | - |
+| --van-collapse-item-content-text-color | _var(--van-text-color-secondary)_ | - |
 | --van-collapse-item-content-background-color | _var(--van-background-color-light)_ | - |
 | --van-collapse-item-title-disabled-color | _var(--van-gray-5)_ | - |

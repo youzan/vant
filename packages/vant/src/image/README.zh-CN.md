@@ -158,7 +158,7 @@ import type { ImageFit, ImageProps } from 'vant';
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-image-placeholder-text-color | _var(--van-gray-6)_ | - |
+| --van-image-placeholder-text-color | _var(--van-text-color-secondary)_ | - |
 | --van-image-placeholder-font-size | _var(--van-font-size-md)_ | - |
 | --van-image-placeholder-background-color | _var(--van-background-color)_ | - |
 | --van-image-loading-icon-size | _32px_ | - |

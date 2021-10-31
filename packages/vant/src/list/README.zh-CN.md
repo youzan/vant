@@ -240,12 +240,12 @@ listRef.value?.check();
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                         | 默认值                    | 描述 |
-| ---------------------------- | ------------------------- | ---- |
-| --van-list-text-color        | _var(--van-gray-6)_       | -    |
-| --van-list-text-font-size    | _var(--van-font-size-md)_ | -    |
-| --van-list-text-line-height  | _50px_                    | -    |
-| --van-list-loading-icon-size | _16px_                    | -    |
+| 名称                         | 默认值                            | 描述 |
+| ---------------------------- | --------------------------------- | ---- |
+| --van-list-text-color        | _var(--van-text-color-secondary)_ | -    |
+| --van-list-text-font-size    | _var(--van-font-size-md)_         | -    |
+| --van-list-text-line-height  | _50px_                            | -    |
+| --van-list-loading-icon-size | _16px_                            | -    |
 
 ## 常见问题
 

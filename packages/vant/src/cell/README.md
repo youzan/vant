@@ -217,18 +217,18 @@ The component provides the following CSS variables, which can be used to customi
 | --van-cell-border-color | _var(--van-border-color)_ | - |
 | --van-cell-active-color | _var(--van-active-color)_ | - |
 | --van-cell-required-color | _var(--van-danger-color)_ | - |
-| --van-cell-label-color | _var(--van-gray-6)_ | - |
+| --van-cell-label-color | _var(--van-text-color-secondary)_ | - |
 | --van-cell-label-font-size | _var(--van-font-size-sm)_ | - |
 | --van-cell-label-line-height | _var(--van-line-height-sm)_ | - |
 | --van-cell-label-margin-top | _var(--van-padding-base)_ | - |
-| --van-cell-value-color | _var(--van-gray-6)_ | - |
+| --van-cell-value-color | _var(--van-text-color-secondary)_ | - |
 | --van-cell-icon-size | _16px_ | - |
 | --van-cell-right-icon-color | _var(--van-gray-6)_ | - |
 | --van-cell-large-vertical-padding | _var(--van-padding-sm)_ | - |
 | --van-cell-large-title-font-size | _var(--van-font-size-lg)_ | - |
 | --van-cell-large-label-font-size | _var(--van-font-size-md)_ | - |
 | --van-cell-group-background-color | _var(--van-background-color-light)_ | - |
-| --van-cell-group-title-color | _var(--van-gray-6)_ | - |
+| --van-cell-group-title-color | _var(--van-text-color-secondary)_ | - |
 | --van-cell-group-title-padding | _var(--van-padding-md) var(--van-padding-md) var(--van-padding-xs)_ | - |
 | --van-cell-group-title-font-size | _var(--van-font-size-md)_ | - |
 | --van-cell-group-title-line-height | _16px_ | - |

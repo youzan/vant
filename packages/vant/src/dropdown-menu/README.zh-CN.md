@@ -242,7 +242,7 @@ dropdownItemRef.value?.toggle();
 | --van-dropdown-menu-title-font-size | _15px_ | - |
 | --van-dropdown-menu-title-text-color | _var(--van-text-color)_ | - |
 | --van-dropdown-menu-title-active-text-color | _var(--van-danger-color)_ | - |
-| --van-dropdown-menu-title-disabled-text-color | _var(--van-gray-6)_ | - |
+| --van-dropdown-menu-title-disabled-text-color | _var(--van-text-color-secondary)_ | - |
 | --van-dropdown-menu-title-padding | _0 var(--van-padding-xs)_ | - |
 | --van-dropdown-menu-title-line-height | _var(--van-line-height-lg)_ | - |
 | --van-dropdown-menu-option-active-color | _var(--van-danger-color)_ | - |

@@ -73,7 +73,6 @@ const onClickLink = () => Toast(t('clickLink'));
     </van-submit-bar>
   </demo-block>
 </template>
-Ï
 
 <style lang="less">
 .demo-submit-bar {

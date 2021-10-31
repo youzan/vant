@@ -136,8 +136,8 @@ import type { CardProps } from 'vant';
 | --van-card-desc-color | _var(--van-gray-7)_ | - |
 | --van-card-desc-line-height | _var(--van-line-height-md)_ | - |
 | --van-card-price-color | _var(--van-gray-8)_ | - |
-| --van-card-origin-price-color | _var(--van-gray-6)_ | - |
-| --van-card-num-color | _var(--van-gray-6)_ | - |
+| --van-card-origin-price-color | _var(--van-text-color-secondary)_ | - |
+| --van-card-num-color | _var(--van-text-color-secondary)_ | - |
 | --van-card-origin-price-font-size | _var(--van-font-size-xs)_ | - |
 | --van-card-price-font-size | _var(--van-font-size-sm)_ | - |
 | --van-card-price-integer-font-size | _var(--van-font-size-lg)_ | - |

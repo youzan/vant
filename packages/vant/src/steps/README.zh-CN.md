@@ -123,7 +123,7 @@ import type { StepsProps, StepsDirection } from 'vant';
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-step-text-color | _var(--van-gray-6)_ | - |
+| --van-step-text-color | _var(--van-text-color-secondary)_ | - |
 | --van-step-active-color | _var(--van-success-color)_ | - |
 | --van-step-process-text-color | _var(--van-text-color)_ | - |
 | --van-step-font-size | _var(--van-font-size-md)_ | - |
