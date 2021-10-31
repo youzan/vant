@@ -170,6 +170,7 @@ import type { CouponCellProps, CouponListProps } from 'vant';
 | --van-coupon-margin | _0 var(--van-padding-sm) var(--van-padding-sm)_ | - |
 | --van-coupon-content-height | _84px_ | - |
 | --van-coupon-content-padding | _14px 0_ | - |
+| --van-coupon-content-text-color | _var(--van-text-color)_ | - |
 | --van-coupon-background-color | _var(--van-background-color-light)_ | - |
 | --van-coupon-active-background-color | _var(--van-active-color)_ | - |
 | --van-coupon-border-radius | _var(--van-border-radius-lg)_ | - |
