@@ -289,4 +289,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-popover-light-action-disabled-text-color | _var(--van-gray-5)_ | - |
 | --van-popover-dark-text-color | _var(--van-white)_ | - |
 | --van-popover-dark-background-color | _#4a4a4a_ | - |
-| --van-popover-dark-action-disabled-text-color | _var(--van-gray-6)_ | - |
+| --van-popover-dark-action-disabled-text-color | _var(--van-text-color-secondary)_ | - |

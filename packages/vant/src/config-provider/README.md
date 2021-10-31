@@ -156,12 +156,13 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 --van-danger-color: var(--van-red);
 --van-warning-color: var(--van-orange);
 --van-text-color: var(--van-gray-8);
+--van-text-color-secondary: var(--van-gray-6);
+--van-text-link-color: #576b95;
 --van-active-color: var(--van-gray-2);
 --van-active-opacity: 0.7;
 --van-disabled-opacity: 0.5;
 --van-background-color: var(--van-gray-1);
 --van-background-color-light: var(--van-white);
---van-text-link-color: #576b95;
 
 // Padding
 --van-padding-base: 4px;

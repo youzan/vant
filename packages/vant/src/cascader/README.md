@@ -312,4 +312,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-cascader-active-color | _var(--van-danger-color)_ | - |
 | --van-cascader-options-height | _384px_ | - |
 | --van-cascader-tab-color | _var(--van-text-color)_ | - |
-| --van-cascader-unselected-tab-color | _var(--van-gray-6)_ | - |
+| --van-cascader-unselected-tab-color | _var(--van-text-color-secondary)_ | - |

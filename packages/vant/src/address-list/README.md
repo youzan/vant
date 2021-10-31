@@ -138,7 +138,7 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default Value | Description |
 | --- | --- | --- |
 | --van-address-list-padding | _var(--van-padding-sm) var(--van-padding-sm) 80px_ | - |
-| --van-address-list-disabled-text-color | _var(--van-gray-6)_ | - |
+| --van-address-list-disabled-text-color | _var(--van-text-color-secondary)_ | - |
 | --van-address-list-disabled-text-padding | _var(--van-padding-base) \* 5 0 var(--van-padding-md)_ | - |
 | --van-address-list-disabled-text-font-size | _var(--van-font-size-md)_ | - |
 | --van-address-list-disabled-text-line-height | _var(--van-line-height-md)_ | - |

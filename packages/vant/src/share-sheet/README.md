@@ -239,7 +239,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-share-sheet-title-color | _var(--van-text-color)_ | - |
 | --van-share-sheet-title-font-size | _var(--van-font-size-md)_ | - |
 | --van-share-sheet-title-line-height | _var(--van-line-height-md)_ | - |
-| --van-share-sheet-description-color | _var(--van-gray-6)_ | - |
+| --van-share-sheet-description-color | _var(--van-text-color-secondary)_ | - |
 | --van-share-sheet-description-font-size | _var(--van-font-size-sm)_ | - |
 | --van-share-sheet-description-line-height | _16px_ | - |
 | --van-share-sheet-icon-size | _48px_ | - |
