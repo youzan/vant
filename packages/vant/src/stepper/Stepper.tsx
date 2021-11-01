@@ -23,6 +23,7 @@ import {
   createNamespace,
   callInterceptor,
   makeNumericProp,
+  HAPTICS_FEEDBACK,
 } from '../utils';
 
 // Composables
@@ -297,7 +298,10 @@ export default defineComponent({
           v-show={props.showMinus}
           type="button"
           style={buttonStyle.value}
-          class={bem('minus', { disabled: minusDisabled.value })}
+          class={[
+            bem('minus', { disabled: minusDisabled.value }),
+            { [HAPTICS_FEEDBACK]: !minusDisabled.value },
+          ]}
           {...createListeners('minus')}
         />
         <input
@@ -325,7 +329,10 @@ export default defineComponent({
           v-show={props.showPlus}
           type="button"
           style={buttonStyle.value}
-          class={bem('plus', { disabled: plusDisabled.value })}
+          class={[
+            bem('plus', { disabled: plusDisabled.value }),
+            { [HAPTICS_FEEDBACK]: !plusDisabled.value },
+          ]}
           {...createListeners('plus')}
         />
       </div>

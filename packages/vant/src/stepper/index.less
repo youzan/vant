@@ -1,7 +1,6 @@
 @import './var.less';
 
 :root {
-  --van-stepper-active-color: @stepper-active-color;
   --van-stepper-background-color: @stepper-background-color;
   --van-stepper-button-icon-color: @stepper-button-icon-color;
   --van-stepper-button-disabled-color: @stepper-button-disabled-color;
@@ -55,18 +54,10 @@
       content: '';
     }
 
-    &:active {
-      background-color: var(--van-stepper-active-color);
-    }
-
     &--disabled {
       color: var(--van-stepper-button-disabled-icon-color);
       background-color: var(--van-stepper-button-disabled-color);
       cursor: not-allowed;
-
-      &:active {
-        background-color: var(--van-stepper-button-disabled-color);
-      }
     }
   }
 
@@ -123,15 +114,9 @@
     .van-stepper__minus {
       border-radius: 100%;
 
-      &:active {
-        opacity: var(--van-active-opacity);
-      }
-
       &--disabled {
-        &,
-        &:active {
-          opacity: 0.3;
-        }
+        opacity: 0.3;
+        cursor: not-allowed;
       }
     }
 
