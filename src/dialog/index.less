@@ -35,6 +35,23 @@
       align-items: center;
       min-height: 104px;
     }
+
+    & > div {
+      flex: 1;
+      max-height: @dialog-message-max-height;
+      padding: 24px;
+      overflow-y: auto;
+      font-size: @dialog-message-font-size;
+      line-height: @dialog-message-line-height;
+
+      // allow newline charactor
+      white-space: pre-wrap;
+      text-align: center;
+      word-wrap: break-word;
+      -webkit-overflow-scrolling: touch;
+      min-height: 50px !important;
+      color: #333;
+    }
   }
 
   &__message {
