@@ -46,7 +46,7 @@ export default {
   disabled
   :price="3050"
   button-text="提交订单"
-  tip="你的收货地址不支持同城送, 我们已为你推荐快递"
+  tip="你的收货地址不支持配送"
   tip-icon="info-o"
   @submit="onSubmit"
 />
@@ -73,7 +73,7 @@ export default {
 <van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit">
   <van-checkbox v-model="checked">全选</van-checkbox>
   <template #tip>
-    你的收货地址不支持同城送, <span @click="onClickLink">修改地址</span>
+    你的收货地址不支持配送, <span @click="onClickLink">修改地址</span>
   </template>
 </van-submit-bar>
 ```
@@ -158,8 +158,8 @@ import type { SubmitBarProps } from 'vant';
 | --van-submit-bar-tip-padding | _var(--van-padding-xs) var(--van-padding-sm)_ | - |
 | --van-submit-bar-tip-font-size | _var(--van-font-size-sm)_ | - |
 | --van-submit-bar-tip-line-height | _1.5_ | - |
-| --van-submit-bar-tip-color | _#f56723_ | - |
-| --van-submit-bar-tip-background-color | _#fff7cc_ | - |
+| --van-submit-bar-tip-color | _var(--van-orange-dark)_ | - |
+| --van-submit-bar-tip-background-color | _var(--van-orange-light)_ | - |
 | --van-submit-bar-tip-icon-size | _12px_ | - |
 | --van-submit-bar-button-height | _40px_ | - |
 | --van-submit-bar-padding | _0 var(--van-padding-md)_ | - |

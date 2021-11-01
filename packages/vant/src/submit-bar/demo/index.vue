@@ -7,8 +7,8 @@ import { Toast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
-    tip1: '你的收货地址不支持同城送, 我们已为你推荐快递',
-    tip2: '你的收货地址不支持同城送, ',
+    tip1: '你的收货地址不支持配送',
+    tip2: '你的收货地址不支持配送, ',
     tip3: '修改地址',
     check: '全选',
     submit: '提交订单',
