@@ -193,7 +193,6 @@ import type { StepperTheme, StepperProps } from 'vant';
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-stepper-active-color | _#e8e8e8_ | - |
 | --van-stepper-background-color | _var(--van-active-color)_ | - |
 | --van-stepper-button-icon-color | _var(--van-text-color)_ | - |
 | --van-stepper-button-disabled-color | _var(--van-background-color)_ | - |
