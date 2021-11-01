@@ -262,7 +262,7 @@ import type { ActionSheetProps, ActionSheetAction } from 'vant';
 | --van-action-sheet-item-font-size | _var(--van-font-size-lg)_ | - |
 | --van-action-sheet-item-line-height | _var(--van-line-height-lg)_ | - |
 | --van-action-sheet-item-text-color | _var(--van-text-color)_ | - |
-| --van-action-sheet-item-disabled-text-color | _var(--van-gray-5)_ | - |
+| --van-action-sheet-item-disabled-text-color | _var(--van-text-color-tertiary)_ | - |
 | --van-action-sheet-subname-color | _var(--van-text-color-secondary)_ | - |
 | --van-action-sheet-subname-font-size | _var(--van-font-size-sm)_ | - |
 | --van-action-sheet-subname-line-height | _var(--van-line-height-sm)_ | - |

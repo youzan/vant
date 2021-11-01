@@ -322,6 +322,6 @@ import type { CascaderProps, CascaderOption, CascaderFieldNames } from 'vant';
 | --van-cascader-tabs-height | _48px_ | - |
 | --van-cascader-active-color | _var(--van-danger-color)_ | - |
 | --van-cascader-options-height | _384px_ | - |
-| --van-cascader-option-disabled-color | _van(--van-gray-5)_ | - |
+| --van-cascader-option-disabled-color | _var(--van-text-color-tertiary)_ | - |
 | --van-cascader-tab-color | _var(--van-text-color)_ | - |
 | --van-cascader-unselected-tab-color | _var(--van-text-color-secondary)_ | - |

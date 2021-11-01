@@ -204,7 +204,7 @@ import type { StepperTheme, StepperProps } from 'vant';
 | --van-stepper-input-font-size | _var(--van-font-size-md)_ | - |
 | --van-stepper-input-line-height | _normal_ | - |
 | --van-stepper-input-text-color | _var(--van-text-color)_ | - |
-| --van-stepper-input-disabled-text-color | _var(--van-gray-5)_ | - |
+| --van-stepper-input-disabled-text-color | _var(--van-text-color-tertiary)_ | - |
 | --van-stepper-input-disabled-background-color | _var(--van-active-color)_ | - |
 | --van-stepper-border-radius | _var(--van-border-radius-md)_ | - |
 

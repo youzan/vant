@@ -245,7 +245,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-share-sheet-icon-size | _48px_ | - |
 | --van-share-sheet-option-name-color | _var(--van-gray-7)_ | - |
 | --van-share-sheet-option-name-font-size | _var(--van-font-size-sm)_ | - |
-| --van-share-sheet-option-description-color | _var(--van-gray-5)_ | - |
+| --van-share-sheet-option-description-color | _var(--van-text-color-tertiary)_ | - |
 | --van-share-sheet-option-description-font-size | _var(--van-font-size-sm)_ | - |
 | --van-share-sheet-cancel-button-font-size | _var(--van-font-size-lg)_ | - |
 | --van-share-sheet-cancel-button-height | _48px_ | - |
