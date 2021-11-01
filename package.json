@@ -70,7 +70,6 @@
     "@vant/icons": "^1.7.1",
     "@vant/popperjs": "^1.1.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
-    "axios": "^0.24.0",
     "cloud-ui.vusion": "^0.12.1",
     "lodash": "^4.17.21",
     "vconsole": "^3.9.3",

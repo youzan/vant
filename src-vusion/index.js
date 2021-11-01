@@ -1,5 +1,5 @@
 import VConsole from 'vconsole';
-const axios = require('axios');
+// const axios = require('axios');
 
 const vconsole = async () => {
   if (window && /defaulttenant\.dev\.qa-ci\.lcap\.group|vconsolee/.test(window.location.href)) {
@@ -59,7 +59,7 @@ const addCloudUI = async () => {
 (async () => {
   try {
     await vconsole();
-    await addCloudUI();
+    // await addCloudUI();
   } catch (e) {
     console.error(e)
   }
