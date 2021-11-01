@@ -24,7 +24,7 @@ exports[`should render title and close button correctly 1`] = `
     Title
   </h2>
   <button type="button"
-          class="van-number-keyboard__close"
+          class="van-number-keyboard__close van-haptics-feedback"
   >
     Close
   </button>

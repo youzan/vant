@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should allow to custom close icon with closeIcon prop 1`] = `
-<i class="van-badge__wrapper van-icon van-icon-cross van-action-sheet__close">
+<i class="van-badge__wrapper van-icon van-icon-cross van-action-sheet__close van-haptics-feedback">
 </i>
 `;
 
@@ -22,7 +22,7 @@ exports[`should render default slot correctly 1`] = `
   <div class="van-popup van-popup--round van-popup--bottom van-safe-area-bottom van-action-sheet">
     <div class="van-action-sheet__header">
       Title
-      <i class="van-badge__wrapper van-icon van-icon-cross van-action-sheet__close">
+      <i class="van-badge__wrapper van-icon van-icon-cross van-action-sheet__close van-haptics-feedback">
       </i>
     </div>
     <div class="van-action-sheet__content">

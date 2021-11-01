@@ -16,12 +16,12 @@ exports[`should move to first option when all options are disabled 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>
@@ -93,12 +93,12 @@ exports[`should move to next option when default option is disabled 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>

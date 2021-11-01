@@ -7,7 +7,7 @@ exports[`should change icon class prefix when using icon-prefix prop 1`] = `
 </transition-stub>
 <transition-stub>
   <div class="van-popup van-popup--center">
-    <i class="van-badge__wrapper my-icon my-icon-cross van-popup__close-icon van-popup__close-icon--top-right"
+    <i class="van-badge__wrapper my-icon my-icon-cross van-popup__close-icon van-popup__close-icon--top-right van-haptics-feedback"
        role="button"
        tabindex="0"
     >
@@ -17,7 +17,7 @@ exports[`should change icon class prefix when using icon-prefix prop 1`] = `
 `;
 
 exports[`should render correct close icon when using close-icon prop 1`] = `
-<i class="van-badge__wrapper van-icon van-icon-success van-popup__close-icon van-popup__close-icon--top-right"
+<i class="van-badge__wrapper van-icon van-icon-success van-popup__close-icon van-popup__close-icon--top-right van-haptics-feedback"
    role="button"
    tabindex="0"
 >

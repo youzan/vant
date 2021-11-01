@@ -4,12 +4,12 @@ exports[`filter prop 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>
@@ -144,12 +144,12 @@ exports[`format initial value 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>
@@ -221,12 +221,12 @@ exports[`formatter prop 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>
@@ -361,12 +361,12 @@ exports[`max-hour & max-minute 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>

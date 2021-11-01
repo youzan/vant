@@ -5,7 +5,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar">
       <button type="button"
-              class="van-picker__cancel"
+              class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
@@ -13,7 +13,7 @@ exports[`should render demo and match snapshot 1`] = `
         Choose Date
       </div>
       <button type="button"
-              class="van-picker__confirm"
+              class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
@@ -495,7 +495,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar">
       <button type="button"
-              class="van-picker__cancel"
+              class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
@@ -503,7 +503,7 @@ exports[`should render demo and match snapshot 1`] = `
         Choose Year-Month
       </div>
       <button type="button"
-              class="van-picker__confirm"
+              class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
@@ -700,7 +700,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar">
       <button type="button"
-              class="van-picker__cancel"
+              class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
@@ -708,7 +708,7 @@ exports[`should render demo and match snapshot 1`] = `
         Choose Month-Day
       </div>
       <button type="button"
-              class="van-picker__confirm"
+              class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
@@ -1130,7 +1130,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar">
       <button type="button"
-              class="van-picker__cancel"
+              class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
@@ -1138,7 +1138,7 @@ exports[`should render demo and match snapshot 1`] = `
         Choose Time
       </div>
       <button type="button"
-              class="van-picker__confirm"
+              class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
@@ -1812,7 +1812,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar">
       <button type="button"
-              class="van-picker__cancel"
+              class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
@@ -1820,7 +1820,7 @@ exports[`should render demo and match snapshot 1`] = `
         Choose DateTime
       </div>
       <button type="button"
-              class="van-picker__confirm"
+              class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
@@ -3070,7 +3070,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar">
       <button type="button"
-              class="van-picker__cancel"
+              class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
@@ -3078,7 +3078,7 @@ exports[`should render demo and match snapshot 1`] = `
         Choose DateHour
       </div>
       <button type="button"
-              class="van-picker__confirm"
+              class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
@@ -3782,7 +3782,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar">
       <button type="button"
-              class="van-picker__cancel"
+              class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
@@ -3790,7 +3790,7 @@ exports[`should render demo and match snapshot 1`] = `
         Option Filter
       </div>
       <button type="button"
-              class="van-picker__confirm"
+              class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
@@ -4149,7 +4149,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-datetime-picker">
     <div class="van-picker__toolbar">
       <button type="button"
-              class="van-picker__cancel"
+              class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
@@ -4157,7 +4157,7 @@ exports[`should render demo and match snapshot 1`] = `
         Columns Order
       </div>
       <button type="button"
-              class="van-picker__confirm"
+              class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>

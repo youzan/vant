@@ -15,6 +15,7 @@ import {
   makeStringProp,
   makeNumericProp,
   createNamespace,
+  HAPTICS_FEEDBACK,
   ComponentInstance,
 } from '../utils';
 
@@ -115,7 +116,7 @@ export default defineComponent({
         <div
           role="button"
           tabindex={disabled ? -1 : 0}
-          class={bem('item', { disabled })}
+          class={[bem('item', { disabled }), { [HAPTICS_FEEDBACK]: !disabled }]}
           onClick={() => {
             if (!disabled) {
               toggleItem(index);

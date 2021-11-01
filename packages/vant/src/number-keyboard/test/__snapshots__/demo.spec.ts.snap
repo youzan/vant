@@ -341,7 +341,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-number-keyboard__header">
       <button type="button"
-              class="van-number-keyboard__close"
+              class="van-number-keyboard__close van-haptics-feedback"
       >
         Close
       </button>
@@ -464,7 +464,7 @@ exports[`should render demo and match snapshot 1`] = `
         Keyboard Title
       </h2>
       <button type="button"
-              class="van-number-keyboard__close"
+              class="van-number-keyboard__close van-haptics-feedback"
       >
         Close
       </button>

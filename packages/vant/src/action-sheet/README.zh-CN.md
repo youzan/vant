@@ -268,7 +268,6 @@ import type { ActionSheetProps, ActionSheetAction } from 'vant';
 | --van-action-sheet-subname-line-height | _var(--van-line-height-sm)_ | - |
 | --van-action-sheet-close-icon-size | _22px_ | - |
 | --van-action-sheet-close-icon-color | _var(--van-gray-5)_ | - |
-| --van-action-sheet-close-icon-active-color | _var(--van-gray-6)_ | - |
 | --van-action-sheet-close-icon-padding | _0 var(--van-padding-md)_ | - |
 | --van-action-sheet-cancel-text-color | _var(--van-gray-7)_ | - |
 | --van-action-sheet-cancel-padding-top | _var(--van-padding-xs)_ | - |

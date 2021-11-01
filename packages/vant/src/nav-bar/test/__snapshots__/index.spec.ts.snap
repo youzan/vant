@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render left slot correctly 1`] = `
-<div class="van-nav-bar__left">
+<div class="van-nav-bar__left van-haptics-feedback">
   Custom Left
 </div>
 `;
 
 exports[`should render left slot correctly 2`] = `
-<div class="van-nav-bar__right">
+<div class="van-nav-bar__right van-haptics-feedback">
   Custom Right
 </div>
 `;

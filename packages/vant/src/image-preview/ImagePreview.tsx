@@ -21,6 +21,7 @@ import {
   makeNumericProp,
   callInterceptor,
   createNamespace,
+  HAPTICS_FEEDBACK,
 } from '../utils';
 
 // Composables
@@ -165,7 +166,10 @@ export default defineComponent({
           <Icon
             role="button"
             name={props.closeIcon}
-            class={bem('close-icon', props.closeIconPosition)}
+            class={[
+              bem('close-icon', props.closeIconPosition),
+              HAPTICS_FEEDBACK,
+            ]}
             onClick={emitClose}
           />
         );

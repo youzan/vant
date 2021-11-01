@@ -38,15 +38,7 @@
     min-width: 0; // hack for flex ellipsis
     cursor: pointer;
 
-    &:active {
-      opacity: var(--van-active-opacity);
-    }
-
     &--disabled {
-      &:active {
-        opacity: 1;
-      }
-
       .van-dropdown-menu__title {
         color: var(--van-dropdown-menu-title-disabled-text-color);
       }

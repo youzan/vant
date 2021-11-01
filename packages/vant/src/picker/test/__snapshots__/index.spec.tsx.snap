@@ -148,12 +148,12 @@ exports[`columns-top、columns-bottom prop 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>
@@ -185,12 +185,12 @@ exports[`not allow html 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>
@@ -229,12 +229,12 @@ exports[`render option slot with object columns 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>
@@ -282,12 +282,12 @@ exports[`render option slot with simple columns 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>
@@ -331,12 +331,12 @@ exports[`set rem item-height 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>
@@ -384,12 +384,12 @@ exports[`should render confirm/cancel slot correctly 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Custom Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Custom Confirm
     </button>
@@ -419,13 +419,13 @@ exports[`should render title slot correctly 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     Custom title
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>
@@ -499,12 +499,12 @@ exports[`toolbar-position prop 1`] = `
   </div>
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>
