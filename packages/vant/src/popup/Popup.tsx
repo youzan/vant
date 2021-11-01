@@ -21,6 +21,7 @@ import {
   makeStringProp,
   callInterceptor,
   createNamespace,
+  HAPTICS_FEEDBACK,
 } from '../utils';
 
 // Composables
@@ -164,7 +165,10 @@ export default defineComponent({
             role="button"
             tabindex={0}
             name={props.closeIcon}
-            class={bem('close-icon', props.closeIconPosition)}
+            class={[
+              bem('close-icon', props.closeIconPosition),
+              HAPTICS_FEEDBACK,
+            ]}
             classPrefix={props.iconPrefix}
             onClick={onClickCloseIcon}
           />

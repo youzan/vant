@@ -8,6 +8,7 @@ import {
   makeArrayProp,
   makeStringProp,
   createNamespace,
+  HAPTICS_FEEDBACK,
 } from '../utils';
 
 // Components
@@ -73,7 +74,7 @@ export default defineComponent({
             {props.closeable && (
               <Icon
                 name={props.closeIcon}
-                class={bem('close')}
+                class={[bem('close'), HAPTICS_FEEDBACK]}
                 onClick={onCancel}
               />
             )}

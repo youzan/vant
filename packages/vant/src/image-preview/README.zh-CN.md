@@ -297,7 +297,6 @@ imagePreviewRef.value?.swipeTo(1);
 | --van-image-preview-overlay-background-color | _rgba(0, 0, 0, 0.9)_ | - |
 | --van-image-preview-close-icon-size | _22px_ | - |
 | --van-image-preview-close-icon-color | _var(--van-gray-5)_ | - |
-| --van-image-preview-close-icon-active-color | _var(--van-gray-6)_ | - |
 | --van-image-preview-close-icon-margin | _var(--van-padding-md)_ | - |
 | --van-image-preview-close-icon-z-index | _1_ | - |
 

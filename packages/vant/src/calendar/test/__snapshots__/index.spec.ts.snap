@@ -633,7 +633,7 @@ exports[`popup wrapper 2`] = `
         </button>
       </div>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-cross van-popup__close-icon van-popup__close-icon--top-right"
+    <i class="van-badge__wrapper van-icon van-icon-cross van-popup__close-icon van-popup__close-icon--top-right van-haptics-feedback"
        role="button"
        tabindex="0"
     >

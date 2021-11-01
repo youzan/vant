@@ -3,13 +3,13 @@
 exports[`should render title slot correctly 1`] = `
 <div class="van-picker__toolbar">
   <button type="button"
-          class="van-picker__cancel"
+          class="van-picker__cancel van-haptics-feedback"
   >
     Cancel
   </button>
   Custom title
   <button type="button"
-          class="van-picker__confirm"
+          class="van-picker__confirm van-haptics-feedback"
   >
     Confirm
   </button>
@@ -20,12 +20,12 @@ exports[`time type 1`] = `
 <div class="van-picker van-datetime-picker">
   <div class="van-picker__toolbar">
     <button type="button"
-            class="van-picker__cancel"
+            class="van-picker__cancel van-haptics-feedback"
     >
       Cancel
     </button>
     <button type="button"
-            class="van-picker__confirm"
+            class="van-picker__confirm van-haptics-feedback"
     >
       Confirm
     </button>

@@ -7,6 +7,7 @@ import {
   truthProp,
   makeArrayProp,
   createNamespace,
+  HAPTICS_FEEDBACK,
 } from '../utils';
 import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
@@ -103,7 +104,7 @@ export default defineComponent({
         <div
           role="button"
           tabindex={0}
-          class={[bem('option'), className]}
+          class={[bem('option'), className, HAPTICS_FEEDBACK]}
           onClick={() => onSelect(option, index)}
         >
           <img src={getIconURL(icon)} class={bem('icon')} />

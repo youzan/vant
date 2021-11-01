@@ -167,6 +167,5 @@ The component provides the following CSS variables, which can be used to customi
 | --van-popup-round-border-radius | _16px_ | - |
 | --van-popup-close-icon-size | _22px_ | - |
 | --van-popup-close-icon-color | _var(--van-gray-5)_ | - |
-| --van-popup-close-icon-active-color | _var(--van-gray-6)_ | - |
 | --van-popup-close-icon-margin | _16px_ | - |
 | --van-popup-close-icon-z-index | _1_ | - |

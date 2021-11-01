@@ -20,6 +20,7 @@ import {
   makeNumericProp,
   stopPropagation,
   createNamespace,
+  HAPTICS_FEEDBACK,
 } from '../utils';
 
 // Composables
@@ -181,7 +182,11 @@ export default defineComponent({
           {leftSlot && <span class={bem('title-left')}>{leftSlot()}</span>}
           {title && <h2 class={bem('title')}>{title}</h2>}
           {showClose && (
-            <button type="button" class={bem('close')} onClick={onClose}>
+            <button
+              type="button"
+              class={[bem('close'), HAPTICS_FEEDBACK]}
+              onClick={onClose}
+            >
               {closeButtonText}
             </button>
           )}

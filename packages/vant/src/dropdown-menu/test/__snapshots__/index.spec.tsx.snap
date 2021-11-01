@@ -5,7 +5,7 @@ exports[`click option 1`] = `
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -15,7 +15,7 @@ exports[`click option 1`] = `
     </div>
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -82,7 +82,7 @@ exports[`close-on-click-outside 1`] = `
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -92,7 +92,7 @@ exports[`close-on-click-outside 1`] = `
     </div>
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -159,7 +159,7 @@ exports[`destroy one item 1`] = `
   <div class="van-dropdown-menu__bar">
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -184,7 +184,7 @@ exports[`direction up 1`] = `
   <div class="van-dropdown-menu__bar">
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
         <div class="van-ellipsis">
@@ -194,7 +194,7 @@ exports[`direction up 1`] = `
     </div>
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
         <div class="van-ellipsis">
@@ -227,7 +227,7 @@ exports[`direction up 2`] = `
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--active">
         <div class="van-ellipsis">
@@ -237,7 +237,7 @@ exports[`direction up 2`] = `
     </div>
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
         <div class="van-ellipsis">
@@ -304,7 +304,7 @@ exports[`disable close-on-click-outside 1`] = `
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
         <div class="van-ellipsis">
@@ -314,7 +314,7 @@ exports[`disable close-on-click-outside 1`] = `
     </div>
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -406,7 +406,7 @@ exports[`render option icon 1`] = `
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
         <div class="van-ellipsis">
@@ -416,7 +416,7 @@ exports[`render option icon 1`] = `
     </div>
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -487,7 +487,7 @@ exports[`show dropdown item 1`] = `
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
         <div class="van-ellipsis">
@@ -497,7 +497,7 @@ exports[`show dropdown item 1`] = `
     </div>
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -564,7 +564,7 @@ exports[`show dropdown item 2`] = `
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -574,7 +574,7 @@ exports[`show dropdown item 2`] = `
     </div>
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
         <div class="van-ellipsis">
@@ -675,7 +675,7 @@ exports[`show dropdown item 3`] = `
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -685,7 +685,7 @@ exports[`show dropdown item 3`] = `
     </div>
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -786,7 +786,7 @@ exports[`title prop 1`] = `
   <div class="van-dropdown-menu__bar">
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -796,7 +796,7 @@ exports[`title prop 1`] = `
     </div>
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -829,7 +829,7 @@ exports[`title slot 1`] = `
   <div class="van-dropdown-menu__bar">
     <div role="button"
          tabindex="0"
-         class="van-dropdown-menu__item"
+         class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">

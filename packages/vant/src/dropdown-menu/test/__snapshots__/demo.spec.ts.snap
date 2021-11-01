@@ -6,7 +6,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-dropdown-menu__bar">
       <div role="button"
            tabindex="0"
-           class="van-dropdown-menu__item"
+           class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
           <div class="van-ellipsis">
@@ -16,7 +16,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div role="button"
            tabindex="0"
-           class="van-dropdown-menu__item"
+           class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
           <div class="van-ellipsis">
@@ -48,7 +48,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-dropdown-menu__bar">
       <div role="button"
            tabindex="0"
-           class="van-dropdown-menu__item"
+           class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
           <div class="van-ellipsis">
@@ -58,7 +58,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div role="button"
            tabindex="0"
-           class="van-dropdown-menu__item"
+           class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
           <div class="van-ellipsis">
@@ -90,7 +90,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-dropdown-menu__bar">
       <div role="button"
            tabindex="0"
-           class="van-dropdown-menu__item"
+           class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
           <div class="van-ellipsis">
@@ -100,7 +100,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div role="button"
            tabindex="0"
-           class="van-dropdown-menu__item"
+           class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
           <div class="van-ellipsis">
@@ -132,7 +132,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-dropdown-menu__bar">
       <div role="button"
            tabindex="0"
-           class="van-dropdown-menu__item"
+           class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
           <div class="van-ellipsis">
@@ -142,7 +142,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div role="button"
            tabindex="0"
-           class="van-dropdown-menu__item"
+           class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
           <div class="van-ellipsis">

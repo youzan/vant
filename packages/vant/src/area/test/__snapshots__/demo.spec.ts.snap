@@ -5,7 +5,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-area">
     <div class="van-picker__toolbar">
       <button type="button"
-              class="van-picker__cancel"
+              class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
@@ -13,7 +13,7 @@ exports[`should render demo and match snapshot 1`] = `
         Title
       </div>
       <button type="button"
-              class="van-picker__confirm"
+              class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
@@ -180,7 +180,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-area">
     <div class="van-picker__toolbar">
       <button type="button"
-              class="van-picker__cancel"
+              class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
@@ -188,7 +188,7 @@ exports[`should render demo and match snapshot 1`] = `
         Title
       </div>
       <button type="button"
-              class="van-picker__confirm"
+              class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
@@ -346,7 +346,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-area">
     <div class="van-picker__toolbar">
       <button type="button"
-              class="van-picker__cancel"
+              class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
@@ -354,7 +354,7 @@ exports[`should render demo and match snapshot 1`] = `
         Title
       </div>
       <button type="button"
-              class="van-picker__confirm"
+              class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
@@ -425,7 +425,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-area">
     <div class="van-picker__toolbar">
       <button type="button"
-              class="van-picker__cancel"
+              class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
@@ -433,7 +433,7 @@ exports[`should render demo and match snapshot 1`] = `
         Title
       </div>
       <button type="button"
-              class="van-picker__confirm"
+              class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
