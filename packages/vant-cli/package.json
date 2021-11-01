@@ -56,7 +56,7 @@
     "@vitejs/plugin-vue-jsx": "^1.2.0",
     "@vue/babel-plugin-jsx": "^1.1.1",
     "@vue/test-utils": "2.0.0-rc.14",
-    "autoprefixer": "^10.3.7",
+    "autoprefixer": "^10.4.0",
     "babel-jest": "^27.3.1",
     "clean-css": "^5.2.2",
     "commander": "^8.3.0",
