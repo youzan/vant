@@ -9,8 +9,8 @@ const DEFAULT_DURATION = 200;
 // 惯性滑动思路:
 // 在手指离开屏幕时，如果和上一次 move 时的间隔小于 `MOMENTUM_LIMIT_TIME` 且 move
 // 距离大于 `MOMENTUM_LIMIT_DISTANCE` 时，执行惯性滑动
-const MOMENTUM_LIMIT_TIME = 300;
-const MOMENTUM_LIMIT_DISTANCE = 15;
+export const MOMENTUM_LIMIT_TIME = 300;
+export const MOMENTUM_LIMIT_DISTANCE = 15;
 
 const [createComponent, bem] = createNamespace('picker-column');
 
@@ -198,13 +198,13 @@ export default createComponent({
       // use deltaY to detect direction for not special setting device
       // https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event
       const { deltaY } = event;
-      if (this.startOffset === 0 && deltaY > 0) {
+      if (this.startOffset === 0 && deltaY < 0) {
         return;
       }
 
       // get offset
       // if necessary, can adjust distance value to make scrolling smoother
-      const distance = deltaY;
+      const distance = -deltaY;
       this.offset = range(
         this.startOffset + distance,
         -(this.count * this.itemHeight),
