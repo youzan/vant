@@ -40,7 +40,7 @@ exports[`should update input height and button size when using button-size prop 
   >
   <button type="button"
           style="width: 2rem; height: 2rem;"
-          class="van-stepper__plus"
+          class="van-stepper__plus van-haptics-feedback"
   >
   </button>
 </div>
