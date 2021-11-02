@@ -16,6 +16,7 @@ const t = useTranslate({
     digitPlaceholder: '请输入整数',
     phonePlaceholder: '请输入手机号',
     numberPlaceholder: '请输入数字（支持小数）',
+    passwordPlaceholder: '请输入密码',
   },
   'en-US': {
     text: 'Text',
@@ -28,6 +29,7 @@ const t = useTranslate({
     digitPlaceholder: 'Digit',
     phonePlaceholder: 'Phone',
     numberPlaceholder: 'Number',
+    passwordPlaceholder: 'Password',
   },
 });
 
