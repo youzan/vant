@@ -123,7 +123,7 @@ const inactiveIcon = 'https://img.yzcdn.cn/vant/user-inactive.png';
 
   <demo-block :title="t('withCell')">
     <van-radio-group v-model="radio5">
-      <van-cell-group>
+      <van-cell-group inset>
         <van-cell clickable :title="t('radio') + 1" @click="radio5 = '1'">
           <template #right-icon>
             <van-radio name="1" />
@@ -141,8 +141,6 @@ const inactiveIcon = 'https://img.yzcdn.cn/vant/user-inactive.png';
 
 <style lang="less">
 .demo-radio {
-  background: var(--van-background-color-light);
-
   &-group {
     padding: 0 16px;
 

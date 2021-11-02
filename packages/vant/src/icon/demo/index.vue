@@ -212,7 +212,7 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
       height: 36px;
       margin: -4px 0 4px;
       padding: 0 5px;
-      color: var(--van-gray-7);
+      color: var(--van-text-color);
       font-size: 12px;
       line-height: 18px;
     }
