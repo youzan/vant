@@ -11,9 +11,9 @@
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-stylelint-config",
   "dependencies": {
     "stylelint-config-prettier": "^8.0.1",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint-config-standard": "^23.0.0"
   },
   "devDependencies": {
-    "stylelint": "^13.0.0"
+    "stylelint": "^14.0.1"
   }
 }

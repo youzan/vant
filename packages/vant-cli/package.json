@@ -81,7 +81,7 @@
     "postcss-load-config": "^3.1.0",
     "prettier": "^2.4.1",
     "release-it": "^14.11.6",
-    "stylelint": "^13.0.0",
+    "stylelint": "^14.0.1",
     "transliteration": "^2.2.0",
     "ts-jest": "^27.0.7",
     "typescript": "^4.4.4",
