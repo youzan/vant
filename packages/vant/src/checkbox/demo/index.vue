@@ -165,7 +165,7 @@ const toggleAll = () => {
 
   <demo-block :title="t('title5')">
     <van-checkbox-group v-model="state.result3">
-      <van-cell-group>
+      <van-cell-group inset>
         <van-cell
           v-for="(item, index) in state.list"
           clickable
@@ -184,8 +184,6 @@ const toggleAll = () => {
 
 <style lang="less">
 .demo-checkbox {
-  background: var(--van-background-color-light);
-
   .van-checkbox {
     margin: 0 0 8px 20px;
   }

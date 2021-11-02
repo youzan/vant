@@ -214,7 +214,7 @@ export default {
 
 ```html
 <van-checkbox-group v-model="checked">
-  <van-cell-group>
+  <van-cell-group inset>
     <van-cell
       v-for="(item, index) in list"
       clickable

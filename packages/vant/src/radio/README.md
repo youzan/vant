@@ -141,7 +141,7 @@ export default {
 
 ```html
 <van-radio-group v-model="checked">
-  <van-cell-group>
+  <van-cell-group inset>
     <van-cell title="Radio 1" clickable @click="checked = '1'">
       <template #right-icon>
         <van-radio name="1" />
