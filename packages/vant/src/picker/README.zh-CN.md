@@ -450,8 +450,9 @@ pickerRef.value?.confirm();
 | --van-picker-cancel-action-color | _var(--van-text-color-secondary)_ | - |
 | --van-picker-option-padding | _0 var(--van-padding-base)_ | - |
 | --van-picker-option-font-size | _var(--van-font-size-lg)_ | - |
-| --van-picker-option-text-color | _var(--van-black)_ | - |
+| --van-picker-option-text-color | _var(--van-text-color)_ | - |
 | --van-picker-option-disabled-opacity | _0.3_ | - |
+| --van-picker-mask-color | _linear-gradient_ | - |
 | --van-picker-loading-icon-color | _var(--van-primary-color)_ | - |
 | --van-picker-loading-mask-color | _rgba(255, 255, 255, 0.9)_ | - |
 
