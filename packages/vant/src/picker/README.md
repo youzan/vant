@@ -422,7 +422,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-picker-action-padding | _0 var(--van-padding-md)_ | - |
 | --van-picker-action-font-size | _var(--van-font-size-md)_ | - |
 | --van-picker-confirm-action-color | _var(--van-link-color)_ | - |
-| --van-picker-cancel-action-color | _var(--van-text-color-secondary)_ | - |
+| --van-picker-cancel-action-color | _var(--van-text-color-2)_ | - |
 | --van-picker-option-padding | _0 var(--van-padding-base)_ | - |
 | --van-picker-option-font-size | _var(--van-font-size-lg)_ | - |
 | --van-picker-option-text-color | _var(--van-text-color)_ | - |

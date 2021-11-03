@@ -99,10 +99,10 @@ import type { LoadingType, LoadingProps } from 'vant';
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name | Default Value | Description |
-| --- | --- | --- |
-| --van-loading-text-color | _var(--van-text-color-secondary)_ | - |
-| --van-loading-text-font-size | _var(--van-font-size-md)_ | - |
-| --van-loading-spinner-color | _var(--van-gray-5)_ | - |
-| --van-loading-spinner-size | _30px_ | - |
-| --van-loading-spinner-duration | _0.8s_ | - |
+| Name                           | Default Value             | Description |
+| ------------------------------ | ------------------------- | ----------- |
+| --van-loading-text-color       | _var(--van-text-color-2)_ | -           |
+| --van-loading-text-font-size   | _var(--van-font-size-md)_ | -           |
+| --van-loading-spinner-color    | _var(--van-gray-5)_       | -           |
+| --van-loading-spinner-size     | _30px_                    | -           |
+| --van-loading-spinner-duration | _0.8s_                    | -           |

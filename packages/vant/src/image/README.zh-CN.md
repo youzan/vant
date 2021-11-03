@@ -156,15 +156,15 @@ import type { ImageFit, ImageProps } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-image-placeholder-text-color | _var(--van-text-color-secondary)_ | - |
-| --van-image-placeholder-font-size | _var(--van-font-size-md)_ | - |
-| --van-image-placeholder-background | _var(--van-background)_ | - |
-| --van-image-loading-icon-size | _32px_ | - |
-| --van-image-loading-icon-color | _var(--van-gray-4)_ | - |
-| --van-image-error-icon-size | _32px_ | - |
-| --van-image-error-icon-color | _var(--van-gray-4)_ | - |
+| 名称                               | 默认值                    | 描述 |
+| ---------------------------------- | ------------------------- | ---- |
+| --van-image-placeholder-text-color | _var(--van-text-color-2)_ | -    |
+| --van-image-placeholder-font-size  | _var(--van-font-size-md)_ | -    |
+| --van-image-placeholder-background | _var(--van-background)_   | -    |
+| --van-image-loading-icon-size      | _32px_                    | -    |
+| --van-image-loading-icon-color     | _var(--van-gray-4)_       | -    |
+| --van-image-error-icon-size        | _32px_                    | -    |
+| --van-image-error-icon-color       | _var(--van-gray-4)_       | -    |
 
 ## 常见问题
 

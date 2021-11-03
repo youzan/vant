@@ -225,9 +225,9 @@ listRef.value?.check();
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name | Default Value | Description |
-| --- | --- | --- |
-| --van-list-text-color | _var(--van-text-color-secondary)_ | - |
-| --van-list-text-font-size | _var(--van-font-size-md)_ | - |
-| --van-list-text-line-height | _50px_ | - |
-| --van-list-loading-icon-size | _16px_ | - |
+| Name                         | Default Value             | Description |
+| ---------------------------- | ------------------------- | ----------- |
+| --van-list-text-color        | _var(--van-text-color-2)_ | -           |
+| --van-list-text-font-size    | _var(--van-font-size-md)_ | -           |
+| --van-list-text-line-height  | _50px_                    | -           |
+| --van-list-loading-icon-size | _16px_                    | -           |

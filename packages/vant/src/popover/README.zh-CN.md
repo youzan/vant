@@ -298,10 +298,10 @@ import type {
 | --van-popover-action-icon-size | _20px_ | - |
 | --van-popover-light-text-color | _var(--van-text-color)_ | - |
 | --van-popover-light-background | _var(--van-background-light)_ | - |
-| --van-popover-light-action-disabled-text-color | _var(--van-text-color-tertiary)_ | - |
+| --van-popover-light-action-disabled-text-color | _var(--van-text-color-3)_ | - |
 | --van-popover-dark-text-color | _var(--van-white)_ | - |
 | --van-popover-dark-background | _#4a4a4a_ | - |
-| --van-popover-dark-action-disabled-text-color | _var(--van-text-color-secondary)_ | - |
+| --van-popover-dark-action-disabled-text-color | _var(--van-text-color-2)_ | - |
 
 ## 常见问题
 

@@ -310,18 +310,18 @@ import type { CascaderProps, CascaderOption, CascaderFieldNames } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-cascader-header-height | _48px_ | - |
-| --van-cascader-header-padding | _0 var(--van-padding-md)_ | - |
-| --van-cascader-title-font-size | _var(--van-font-size-lg)_ | - |
-| --van-cascader-title-line-height | _20px_ | - |
-| --van-cascader-close-icon-size | _22px_ | - |
-| --van-cascader-close-icon-color | _var(--van-gray-5)_ | - |
-| --van-cascader-selected-icon-size | _18px_ | - |
-| --van-cascader-tabs-height | _48px_ | - |
-| --van-cascader-active-color | _var(--van-danger-color)_ | - |
-| --van-cascader-options-height | _384px_ | - |
-| --van-cascader-option-disabled-color | _var(--van-text-color-tertiary)_ | - |
-| --van-cascader-tab-color | _var(--van-text-color)_ | - |
-| --van-cascader-unselected-tab-color | _var(--van-text-color-secondary)_ | - |
+| 名称                                 | 默认值                    | 描述 |
+| ------------------------------------ | ------------------------- | ---- |
+| --van-cascader-header-height         | _48px_                    | -    |
+| --van-cascader-header-padding        | _0 var(--van-padding-md)_ | -    |
+| --van-cascader-title-font-size       | _var(--van-font-size-lg)_ | -    |
+| --van-cascader-title-line-height     | _20px_                    | -    |
+| --van-cascader-close-icon-size       | _22px_                    | -    |
+| --van-cascader-close-icon-color      | _var(--van-gray-5)_       | -    |
+| --van-cascader-selected-icon-size    | _18px_                    | -    |
+| --van-cascader-tabs-height           | _48px_                    | -    |
+| --van-cascader-active-color          | _var(--van-danger-color)_ | -    |
+| --van-cascader-options-height        | _384px_                   | -    |
+| --van-cascader-option-disabled-color | _var(--van-text-color-3)_ | -    |
+| --van-cascader-tab-color             | _var(--van-text-color)_   | -    |
+| --van-cascader-unselected-tab-color  | _var(--van-text-color-2)_ | -    |

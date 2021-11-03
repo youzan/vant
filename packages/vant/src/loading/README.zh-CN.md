@@ -109,10 +109,10 @@ import type { LoadingType, LoadingProps } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                           | 默认值                            | 描述 |
-| ------------------------------ | --------------------------------- | ---- |
-| --van-loading-text-color       | _var(--van-text-color-secondary)_ | -    |
-| --van-loading-text-font-size   | _var(--van-font-size-md)_         | -    |
-| --van-loading-spinner-color    | _var(--van-gray-5)_               | -    |
-| --van-loading-spinner-size     | _30px_                            | -    |
-| --van-loading-spinner-duration | _0.8s_                            | -    |
+| 名称                           | 默认值                    | 描述 |
+| ------------------------------ | ------------------------- | ---- |
+| --van-loading-text-color       | _var(--van-text-color-2)_ | -    |
+| --van-loading-text-font-size   | _var(--van-font-size-md)_ | -    |
+| --van-loading-spinner-color    | _var(--van-gray-5)_       | -    |
+| --van-loading-spinner-size     | _30px_                    | -    |
+| --van-loading-spinner-duration | _0.8s_                    | -    |

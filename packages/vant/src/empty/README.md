@@ -106,7 +106,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-empty-image-size | _160px_ | - |
 | --van-empty-description-margin-top | _var(--van-padding-md)_ | - |
 | --van-empty-description-padding | _0 60px_ | - |
-| --van-empty-description-color | _var(--van-text-color-secondary)_ | - |
+| --van-empty-description-color | _var(--van-text-color-2)_ | - |
 | --van-empty-description-font-size | _var(--van-font-size-md)_ | - |
 | --van-empty-description-line-height | _var(--van-line-height-md)_ | - |
 | --van-empty-bottom-margin-top | _24px_ | - |

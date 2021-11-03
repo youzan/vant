@@ -138,14 +138,14 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default Value | Description |
 | --- | --- | --- |
 | --van-address-list-padding | _var(--van-padding-sm) var(--van-padding-sm) 80px_ | - |
-| --van-address-list-disabled-text-color | _var(--van-text-color-secondary)_ | - |
+| --van-address-list-disabled-text-color | _var(--van-text-color-2)_ | - |
 | --van-address-list-disabled-text-padding | _var(--van-padding-base) \* 5 0 var(--van-padding-md)_ | - |
 | --van-address-list-disabled-text-font-size | _var(--van-font-size-md)_ | - |
 | --van-address-list-disabled-text-line-height | _var(--van-line-height-md)_ | - |
 | --van-address-list-add-button-z-index | _999_ | - |
 | --van-address-list-item-padding | _var(--van-padding-sm)_ | - |
 | --van-address-list-item-text-color | _var(--van-text-color)_ | - |
-| --van-address-list-item-disabled-text-color | _var(--van-text-color-tertiary)_ | - |
+| --van-address-list-item-disabled-text-color | _var(--van-text-color-3)_ | - |
 | --van-address-list-item-font-size | _13px_ | - |
 | --van-address-list-item-line-height | _var(--van-line-height-sm)_ | - |
 | --van-address-list-item-radio-icon-color | _var(--van-danger-color)_ | - |

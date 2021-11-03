@@ -196,6 +196,6 @@ The component provides the following CSS variables, which can be used to customi
 | --van-collapse-item-content-padding | _var(--van-padding-sm) var(--van-padding-md)_ | - |
 | --van-collapse-item-content-font-size | _var(--van-font-size-md)_ | - |
 | --van-collapse-item-content-line-height | _1.5_ | - |
-| --van-collapse-item-content-text-color | _var(--van-text-color-secondary)_ | - |
+| --van-collapse-item-content-text-color | _var(--van-text-color-2)_ | - |
 | --van-collapse-item-content-background | _var(--van-background-light)_ | - |
-| --van-collapse-item-title-disabled-color | _var(--van-text-color-tertiary)_ | - |
+| --van-collapse-item-title-disabled-color | _var(--van-text-color-3)_ | - |

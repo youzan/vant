@@ -403,6 +403,6 @@ The component provides the following CSS variables, which can be used to customi
 | --van-calendar-info-font-size | _var(--van-font-size-xs)_ | - |
 | --van-calendar-info-line-height | _var(--van-line-height-xs)_ | - |
 | --van-calendar-selected-day-background | _var(--van-danger-color)_ | - |
-| --van-calendar-day-disabled-color | _var(--van-text-color-tertiary)_ | - |
+| --van-calendar-day-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-confirm-button-height | _36px_ | - |
 | --van-calendar-confirm-button-margin | _7px 0_ | - |

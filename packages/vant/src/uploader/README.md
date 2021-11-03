@@ -392,7 +392,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-uploader-size | _80px_ | - |
 | --van-uploader-icon-size | _24px_ | - |
 | --van-uploader-icon-color | _var(--van-gray-4)_ | - |
-| --van-uploader-text-color | _var(--van-text-color-secondary)_ | - |
+| --van-uploader-text-color | _var(--van-text-color-2)_ | - |
 | --van-uploader-text-font-size | _var(--van-font-size-sm)_ | - |
 | --van-uploader-upload-background | _var(--van-gray-1)_ | - |
 | --van-uploader-upload-active-color | _var(--van-active-color)_ | - |

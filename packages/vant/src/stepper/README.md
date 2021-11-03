@@ -183,6 +183,6 @@ The component provides the following CSS variables, which can be used to customi
 | --van-stepper-input-font-size | _var(--van-font-size-md)_ | - |
 | --van-stepper-input-line-height | _normal_ | - |
 | --van-stepper-input-text-color | _var(--van-text-color)_ | - |
-| --van-stepper-input-disabled-text-color | _var(--van-text-color-tertiary)_ | - |
+| --van-stepper-input-disabled-text-color | _var(--van-text-color-3)_ | - |
 | --van-stepper-input-disabled-background | _var(--van-active-color)_ | - |
 | --van-stepper-radius | _var(--van-radius-md)_ | - |

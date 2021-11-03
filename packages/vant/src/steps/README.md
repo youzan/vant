@@ -117,7 +117,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-step-text-color | _var(--van-text-color-secondary)_ | - |
+| --van-step-text-color | _var(--van-text-color-2)_ | - |
 | --van-step-active-color | _var(--van-success-color)_ | - |
 | --van-step-process-text-color | _var(--van-text-color)_ | - |
 | --van-step-font-size | _var(--van-font-size-md)_ | - |

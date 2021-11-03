@@ -239,13 +239,13 @@ The component provides the following CSS variables, which can be used to customi
 | --van-share-sheet-title-color | _var(--van-text-color)_ | - |
 | --van-share-sheet-title-font-size | _var(--van-font-size-md)_ | - |
 | --van-share-sheet-title-line-height | _var(--van-line-height-md)_ | - |
-| --van-share-sheet-description-color | _var(--van-text-color-secondary)_ | - |
+| --van-share-sheet-description-color | _var(--van-text-color-2)_ | - |
 | --van-share-sheet-description-font-size | _var(--van-font-size-sm)_ | - |
 | --van-share-sheet-description-line-height | _16px_ | - |
 | --van-share-sheet-icon-size | _48px_ | - |
 | --van-share-sheet-option-name-color | _var(--van-gray-7)_ | - |
 | --van-share-sheet-option-name-font-size | _var(--van-font-size-sm)_ | - |
-| --van-share-sheet-option-description-color | _var(--van-text-color-tertiary)_ | - |
+| --van-share-sheet-option-description-color | _var(--van-text-color-3)_ | - |
 | --van-share-sheet-option-description-font-size | _var(--van-font-size-sm)_ | - |
 | --van-share-sheet-cancel-button-font-size | _var(--van-font-size-lg)_ | - |
 | --van-share-sheet-cancel-button-height | _48px_ | - |
