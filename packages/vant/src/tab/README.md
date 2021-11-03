@@ -270,8 +270,6 @@ export default {
 | rendered | Emitted when content first rendered in lazy-render mode | _name: string \| number, title: string_ |
 | scroll | Emitted when tab scrolling in sticky mode | _{ scrollTop: number, isFixed: boolean }_ |
 
-> Tips：click and disabled event is deprecated，place use click-tab event instead.
-
 ### Tabs Methods
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Tabs instance and call instance methods.

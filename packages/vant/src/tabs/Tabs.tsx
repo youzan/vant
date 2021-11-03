@@ -10,7 +10,6 @@ import {
   CSSProperties,
   defineComponent,
   ExtractPropTypes,
-  getCurrentInstance,
   ComponentPublicInstance,
 } from 'vue';
 
@@ -90,31 +89,9 @@ export default defineComponent({
 
   props: tabsProps,
 
-  emits: [
-    'click',
-    'change',
-    'scroll',
-    'disabled',
-    'rendered',
-    'click-tab',
-    'update:active',
-  ],
+  emits: ['change', 'scroll', 'rendered', 'click-tab', 'update:active'],
 
   setup(props, { emit, slots }) {
-    if (process.env.NODE_ENV !== 'production') {
-      const props = getCurrentInstance()?.vnode?.props;
-      if (props && 'onClick' in props) {
-        console.warn(
-          '[Vant] Tabs: "click" event is deprecated, using "click-tab" instead.'
-        );
-      }
-      if (props && 'onDisabled' in props) {
-        console.warn(
-          '[Vant] Tabs: "disabled" event is deprecated, using "click-tab" instead.'
-        );
-      }
-    }
-
     let tabHeight: number;
     let lockScroll: boolean;
     let stickyFixed: boolean;
@@ -302,11 +279,7 @@ export default defineComponent({
         disabled,
       });
 
-      if (disabled) {
-        // @deprecated
-        // should be removed in next major version
-        emit('disabled', name, title);
-      } else {
+      if (!disabled) {
         callInterceptor(props.beforeChange, {
           args: [name],
           done: () => {
@@ -314,10 +287,6 @@ export default defineComponent({
             scrollToCurrentContent();
           },
         });
-
-        // @deprecated
-        // should be removed in next major version
-        emit('click', name, title);
 
         route(item as ComponentPublicInstance<RouteProps>);
       }

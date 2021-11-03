@@ -12,3 +12,7 @@
 
 - `default` 插槽重命名为 `toolbar`
 - 移除了 `value-key` 属性，使用 `columnsFieldNames` 属性代替
+
+### Tabs
+
+- 移除了 `click` 和 `disabled` 事件，使用 `click-tab` 事件代替
