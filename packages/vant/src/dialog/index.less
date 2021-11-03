@@ -1,25 +1,23 @@
-@import './var.less';
-
 :root {
-  --van-dialog-width: @dialog-width;
-  --van-dialog-small-screen-width: @dialog-small-screen-width;
-  --van-dialog-font-size: @dialog-font-size;
-  --van-dialog-transition: @dialog-transition;
-  --van-dialog-border-radius: @dialog-border-radius;
-  --van-dialog-background-color: @dialog-background-color;
-  --van-dialog-header-font-weight: @dialog-header-font-weight;
-  --van-dialog-header-line-height: @dialog-header-line-height;
-  --van-dialog-header-padding-top: @dialog-header-padding-top;
-  --van-dialog-header-isolated-padding: @dialog-header-isolated-padding;
-  --van-dialog-message-padding: @dialog-message-padding;
-  --van-dialog-message-font-size: @dialog-message-font-size;
-  --van-dialog-message-line-height: @dialog-message-line-height;
-  --van-dialog-message-max-height: @dialog-message-max-height;
-  --van-dialog-has-title-message-text-color: @dialog-has-title-message-text-color;
-  --van-dialog-has-title-message-padding-top: @dialog-has-title-message-padding-top;
-  --van-dialog-button-height: @dialog-button-height;
-  --van-dialog-round-button-height: @dialog-round-button-height;
-  --van-dialog-confirm-button-text-color: @dialog-confirm-button-text-color;
+  --van-dialog-width: 320px;
+  --van-dialog-small-screen-width: 90%;
+  --van-dialog-font-size: var(--van-font-size-lg);
+  --van-dialog-transition: var(--van-animation-duration-base);
+  --van-dialog-border-radius: 16px;
+  --van-dialog-background-color: var(--van-background-color-light);
+  --van-dialog-header-font-weight: var(--van-font-weight-bold);
+  --van-dialog-header-line-height: 24px;
+  --van-dialog-header-padding-top: 26px;
+  --van-dialog-header-isolated-padding: var(--van-padding-lg) 0;
+  --van-dialog-message-padding: var(--van-padding-lg);
+  --van-dialog-message-font-size: var(--van-font-size-md);
+  --van-dialog-message-line-height: var(--van-line-height-md);
+  --van-dialog-message-max-height: 60vh;
+  --van-dialog-has-title-message-text-color: var(--van-gray-7);
+  --van-dialog-has-title-message-padding-top: var(--van-padding-xs);
+  --van-dialog-button-height: 48px;
+  --van-dialog-round-button-height: 36px;
+  --van-dialog-confirm-button-text-color: var(--van-danger-color);
 }
 
 .van-dialog {

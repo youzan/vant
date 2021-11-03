@@ -1,14 +1,12 @@
-@import './var.less';
-
 :root {
-  --van-tree-select-font-size: @tree-select-font-size;
-  --van-tree-select-nav-background-color: @tree-select-nav-background-color;
-  --van-tree-select-content-background-color: @tree-select-content-background-color;
-  --van-tree-select-nav-item-padding: @tree-select-nav-item-padding;
-  --van-tree-select-item-height: @tree-select-item-height;
-  --van-tree-select-item-active-color: @tree-select-item-active-color;
-  --van-tree-select-item-disabled-color: @tree-select-item-disabled-color;
-  --van-tree-select-item-selected-size: @tree-select-item-selected-size;
+  --van-tree-select-font-size: var(--van-font-size-md);
+  --van-tree-select-nav-background-color: var(--van-background-color);
+  --van-tree-select-content-background-color: var(--van-background-color-light);
+  --van-tree-select-nav-item-padding: 14px var(--van-padding-sm);
+  --van-tree-select-item-height: 48px;
+  --van-tree-select-item-active-color: var(--van-danger-color);
+  --van-tree-select-item-disabled-color: var(--van-gray-5);
+  --van-tree-select-item-selected-size: 16px;
 }
 
 .van-tree-select {

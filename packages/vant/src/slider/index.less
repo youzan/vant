@@ -1,15 +1,13 @@
-@import './var.less';
-
 :root {
-  --van-slider-active-background-color: @slider-active-background-color;
-  --van-slider-inactive-background-color: @slider-inactive-background-color;
-  --van-slider-disabled-opacity: @slider-disabled-opacity;
-  --van-slider-bar-height: @slider-bar-height;
-  --van-slider-button-width: @slider-button-width;
-  --van-slider-button-height: @slider-button-height;
-  --van-slider-button-border-radius: @slider-button-border-radius;
-  --van-slider-button-background-color: @slider-button-background-color;
-  --van-slider-button-box-shadow: @slider-button-box-shadow;
+  --van-slider-active-background-color: var(--van-primary-color);
+  --van-slider-inactive-background-color: var(--van-gray-3);
+  --van-slider-disabled-opacity: var(--van-disabled-opacity);
+  --van-slider-bar-height: 2px;
+  --van-slider-button-width: 24px;
+  --van-slider-button-height: 24px;
+  --van-slider-button-border-radius: 50%;
+  --van-slider-button-background-color: var(--van-white);
+  --van-slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .van-slider {

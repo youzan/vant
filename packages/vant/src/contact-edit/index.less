@@ -1,12 +1,10 @@
-@import './var.less';
-
 :root {
-  --van-contact-edit-padding: @contact-edit-padding;
-  --van-contact-edit-fields-radius: @contact-edit-fields-radius;
-  --van-contact-edit-buttons-padding: @contact-edit-buttons-padding;
-  --van-contact-edit-button-margin-bottom: @contact-edit-button-margin-bottom;
-  --van-contact-edit-button-font-size: @contact-edit-button-font-size;
-  --van-contact-edit-field-label-width: @contact-edit-field-label-width;
+  --van-contact-edit-padding: var(--van-padding-md);
+  --van-contact-edit-fields-radius: var(--van-border-radius-md);
+  --van-contact-edit-buttons-padding: var(--van-padding-xl) 0;
+  --van-contact-edit-button-margin-bottom: var(--van-padding-sm);
+  --van-contact-edit-button-font-size: var(--van-font-size-lg);
+  --van-contact-edit-field-label-width: 4.1em;
 }
 
 .van-contact-edit {

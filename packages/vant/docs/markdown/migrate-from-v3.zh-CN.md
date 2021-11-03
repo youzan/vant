@@ -6,6 +6,10 @@
 
 ## 不兼容更新
 
+### 主题定制方式调整
+
+不再支持基于 Less 变量进行主题定制，请使用 [ConfigProvider 全局配置](#/zh-CN/config-provider) 组件进行主题配置。
+
 ### API 调整
 
 #### Picker

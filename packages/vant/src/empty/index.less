@@ -1,14 +1,12 @@
-@import './var.less';
-
 :root {
-  --van-empty-padding: @empty-padding;
-  --van-empty-image-size: @empty-image-size;
-  --van-empty-description-margin-top: @empty-description-margin-top;
-  --van-empty-description-padding: @empty-description-padding;
-  --van-empty-description-color: @empty-description-color;
-  --van-empty-description-font-size: @empty-description-font-size;
-  --van-empty-description-line-height: @empty-description-line-height;
-  --van-empty-bottom-margin-top: @empty-bottom-margin-top;
+  --van-empty-padding: var(--van-padding-xl) 0;
+  --van-empty-image-size: 160px;
+  --van-empty-description-margin-top: var(--van-padding-md);
+  --van-empty-description-padding: 0 60px;
+  --van-empty-description-color: var(--van-text-color-secondary);
+  --van-empty-description-font-size: var(--van-font-size-md);
+  --van-empty-description-line-height: var(--van-line-height-md);
+  --van-empty-bottom-margin-top: 24px;
 }
 
 .van-empty {

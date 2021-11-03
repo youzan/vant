@@ -461,15 +461,6 @@ export default {
               },
             ],
           },
-          {
-            title: '废弃',
-            items: [
-              {
-                path: 'theme',
-                title: '定制主题',
-              },
-            ],
-          },
         ],
       },
       'en-US': {
@@ -873,15 +864,6 @@ export default {
               //   path: 'use-click-away',
               //   title: 'useClickAway',
               // },
-            ],
-          },
-          {
-            title: 'Deprecated',
-            items: [
-              {
-                path: 'theme',
-                title: 'Custom Theme',
-              },
             ],
           },
         ],

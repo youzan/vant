@@ -1,17 +1,15 @@
-@import './var.less';
-
 :root {
-  --van-step-text-color: @step-text-color;
-  --van-step-active-color: @step-active-color;
-  --van-step-process-text-color: @step-process-text-color;
-  --van-step-font-size: @step-font-size;
-  --van-step-line-color: @step-line-color;
-  --van-step-finish-line-color: @step-finish-line-color;
-  --van-step-finish-text-color: @step-finish-text-color;
-  --van-step-icon-size: @step-icon-size;
-  --van-step-circle-size: @step-circle-size;
-  --van-step-circle-color: @step-circle-color;
-  --van-step-horizontal-title-font-size: @step-horizontal-title-font-size;
+  --van-step-text-color: var(--van-text-color-secondary);
+  --van-step-active-color: var(--van-success-color);
+  --van-step-process-text-color: var(--van-text-color);
+  --van-step-font-size: var(--van-font-size-md);
+  --van-step-line-color: var(--van-border-color);
+  --van-step-finish-line-color: var(--van-success-color);
+  --van-step-finish-text-color: var(--van-text-color);
+  --van-step-icon-size: 12px;
+  --van-step-circle-size: 5px;
+  --van-step-circle-color: var(--van-gray-6);
+  --van-step-horizontal-title-font-size: var(--van-font-size-sm);
 }
 
 .van-step {

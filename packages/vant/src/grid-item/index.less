@@ -1,12 +1,10 @@
-@import './var.less';
-
 :root {
-  --van-grid-item-content-padding: @grid-item-content-padding;
-  --van-grid-item-content-background-color: @grid-item-content-background-color;
-  --van-grid-item-content-active-color: @grid-item-content-active-color;
-  --van-grid-item-icon-size: @grid-item-icon-size;
-  --van-grid-item-text-color: @grid-item-text-color;
-  --van-grid-item-text-font-size: @grid-item-text-font-size;
+  --van-grid-item-content-padding: var(--van-padding-md) var(--van-padding-xs);
+  --van-grid-item-content-background-color: var(--van-background-color-light);
+  --van-grid-item-content-active-color: var(--van-active-color);
+  --van-grid-item-icon-size: 28px;
+  --van-grid-item-text-color: var(--van-gray-7);
+  --van-grid-item-text-font-size: var(--van-font-size-sm);
 }
 
 .van-grid-item {

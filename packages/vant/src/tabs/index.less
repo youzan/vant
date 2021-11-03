@@ -1,18 +1,16 @@
-@import './var.less';
-
 :root {
-  --van-tab-text-color: @tab-text-color;
-  --van-tab-active-text-color: @tab-active-text-color;
-  --van-tab-disabled-text-color: @tab-disabled-text-color;
-  --van-tab-font-size: @tab-font-size;
-  --van-tab-line-height: @tab-line-height;
-  --van-tabs-default-color: @tabs-default-color;
-  --van-tabs-line-height: @tabs-line-height;
-  --van-tabs-card-height: @tabs-card-height;
-  --van-tabs-nav-background-color: @tabs-nav-background-color;
-  --van-tabs-bottom-bar-width: @tabs-bottom-bar-width;
-  --van-tabs-bottom-bar-height: @tabs-bottom-bar-height;
-  --van-tabs-bottom-bar-color: @tabs-bottom-bar-color;
+  --van-tab-text-color: var(--van-gray-7);
+  --van-tab-active-text-color: var(--van-text-color);
+  --van-tab-disabled-text-color: var(--van-text-color-tertiary);
+  --van-tab-font-size: var(--van-font-size-md);
+  --van-tab-line-height: var(--van-line-height-md);
+  --van-tabs-default-color: var(--van-danger-color);
+  --van-tabs-line-height: 44px;
+  --van-tabs-card-height: 30px;
+  --van-tabs-nav-background-color: var(--van-background-color-light);
+  --van-tabs-bottom-bar-width: 40px;
+  --van-tabs-bottom-bar-height: 3px;
+  --van-tabs-bottom-bar-color: var(--van-danger-color);
 }
 
 .van-tab {

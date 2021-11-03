@@ -1,12 +1,10 @@
-@import './var.less';
-
 :root {
-  --van-swipe-indicator-size: @swipe-indicator-size;
-  --van-swipe-indicator-margin: @swipe-indicator-margin;
-  --van-swipe-indicator-active-opacity: @swipe-indicator-active-opacity;
-  --van-swipe-indicator-inactive-opacity: @swipe-indicator-inactive-opacity;
-  --van-swipe-indicator-active-background-color: @swipe-indicator-active-background-color;
-  --van-swipe-indicator-inactive-background-color: @swipe-indicator-inactive-background-color;
+  --van-swipe-indicator-size: 6px;
+  --van-swipe-indicator-margin: var(--van-padding-sm);
+  --van-swipe-indicator-active-opacity: 1;
+  --van-swipe-indicator-inactive-opacity: 0.3;
+  --van-swipe-indicator-active-background-color: var(--van-primary-color);
+  --van-swipe-indicator-inactive-background-color: var(--van-border-color);
 }
 
 .van-swipe {

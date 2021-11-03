@@ -1,19 +1,17 @@
-@import './var.less';
-
 :root {
-  --van-address-list-padding: @address-list-padding;
-  --van-address-list-disabled-text-color: @address-list-disabled-text-color;
-  --van-address-list-disabled-text-padding: @address-list-disabled-text-padding;
-  --van-address-list-disabled-text-font-size: @address-list-disabled-text-font-size;
-  --van-address-list-disabled-text-line-height: @address-list-disabled-text-line-height;
-  --van-address-list-add-button-z-index: @address-list-add-button-z-index;
-  --van-address-list-item-padding: @address-list-item-padding;
-  --van-address-list-item-text-color: @address-list-item-text-color;
-  --van-address-list-item-disabled-text-color: @address-list-item-disabled-text-color;
-  --van-address-list-item-font-size: @address-list-item-font-size;
-  --van-address-list-item-line-height: @address-list-item-line-height;
-  --van-address-list-item-radio-icon-color: @address-list-item-radio-icon-color;
-  --van-address-list-edit-icon-size: @address-list-edit-icon-size;
+  --van-address-list-padding: var(--van-padding-sm) var(--van-padding-sm) 80px;
+  --van-address-list-disabled-text-color: var(--van-text-color-secondary);
+  --van-address-list-disabled-text-padding: calc(var(--van-padding-base) * 5) 0;
+  --van-address-list-disabled-text-font-size: var(--van-font-size-md);
+  --van-address-list-disabled-text-line-height: var(--van-line-height-md);
+  --van-address-list-add-button-z-index: 999;
+  --van-address-list-item-padding: var(--van-padding-sm);
+  --van-address-list-item-text-color: var(--van-text-color);
+  --van-address-list-item-disabled-text-color: var(--van-text-color-tertiary);
+  --van-address-list-item-font-size: 13px;
+  --van-address-list-item-line-height: var(--van-line-height-sm);
+  --van-address-list-item-radio-icon-color: var(--van-danger-color);
+  --van-address-list-edit-icon-size: 20px;
 }
 
 .van-address-list {

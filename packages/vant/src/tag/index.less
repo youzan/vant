@@ -1,22 +1,20 @@
-@import './var.less';
-
 :root {
-  --van-tag-padding: @tag-padding;
-  --van-tag-text-color: @tag-text-color;
-  --van-tag-font-size: @tag-font-size;
-  --van-tag-border-radius: @tag-border-radius;
-  --van-tag-line-height: @tag-line-height;
-  --van-tag-medium-padding: @tag-medium-padding;
-  --van-tag-large-padding: @tag-large-padding;
-  --van-tag-large-border-radius: @tag-large-border-radius;
-  --van-tag-large-font-size: @tag-large-font-size;
-  --van-tag-round-border-radius: @tag-round-border-radius;
-  --van-tag-danger-color: @tag-danger-color;
-  --van-tag-primary-color: @tag-primary-color;
-  --van-tag-success-color: @tag-success-color;
-  --van-tag-warning-color: @tag-warning-color;
-  --van-tag-default-color: @tag-default-color;
-  --van-tag-plain-background-color: @tag-plain-background-color;
+  --van-tag-padding: 0 var(--van-padding-base);
+  --van-tag-text-color: var(--van-white);
+  --van-tag-font-size: var(--van-font-size-sm);
+  --van-tag-border-radius: 2px;
+  --van-tag-line-height: 16px;
+  --van-tag-medium-padding: 2px 6px;
+  --van-tag-large-padding: var(--van-padding-base) var(--van-padding-xs);
+  --van-tag-large-border-radius: var(--van-border-radius-md);
+  --van-tag-large-font-size: var(--van-font-size-md);
+  --van-tag-round-border-radius: var(--van-border-radius-max);
+  --van-tag-danger-color: var(--van-danger-color);
+  --van-tag-primary-color: var(--van-primary-color);
+  --van-tag-success-color: var(--van-success-color);
+  --van-tag-warning-color: var(--van-warning-color);
+  --van-tag-default-color: var(--van-gray-6);
+  --van-tag-plain-background-color: var(--van-background-color-light);
 }
 
 .van-tag {

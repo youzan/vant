@@ -1,15 +1,13 @@
-@import './var.less';
-
 :root {
-  --van-progress-height: @progress-height;
-  --van-progress-color: @progress-color;
-  --van-progress-inactive-color: @progress-inactive-color;
-  --van-progress-background-color: @progress-background-color;
-  --van-progress-pivot-padding: @progress-pivot-padding;
-  --van-progress-pivot-text-color: @progress-pivot-text-color;
-  --van-progress-pivot-font-size: @progress-pivot-font-size;
-  --van-progress-pivot-line-height: @progress-pivot-line-height;
-  --van-progress-pivot-background-color: @progress-pivot-background-color;
+  --van-progress-height: 4px;
+  --van-progress-color: var(--van-primary-color);
+  --van-progress-inactive-color: var(--van-gray-5);
+  --van-progress-background-color: var(--van-gray-3);
+  --van-progress-pivot-padding: 0 5px;
+  --van-progress-pivot-text-color: var(--van-white);
+  --van-progress-pivot-font-size: var(--van-font-size-xs);
+  --van-progress-pivot-line-height: 1.6;
+  --van-progress-pivot-background-color: var(--van-primary-color);
 }
 
 .van-progress {

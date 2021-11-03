@@ -1,14 +1,12 @@
-@import './var.less';
-
 :root {
-  --van-notify-text-color: @notify-text-color;
-  --van-notify-padding: @notify-padding;
-  --van-notify-font-size: @notify-font-size;
-  --van-notify-line-height: @notify-line-height;
-  --van-notify-primary-background-color: @notify-primary-background-color;
-  --van-notify-success-background-color: @notify-success-background-color;
-  --van-notify-danger-background-color: @notify-danger-background-color;
-  --van-notify-warning-background-color: @notify-warning-background-color;
+  --van-notify-text-color: var(--van-white);
+  --van-notify-padding: var(--van-padding-xs) var(--van-padding-md);
+  --van-notify-font-size: var(--van-font-size-md);
+  --van-notify-line-height: var(--van-line-height-md);
+  --van-notify-primary-background-color: var(--van-primary-color);
+  --van-notify-success-background-color: var(--van-success-color);
+  --van-notify-danger-background-color: var(--van-danger-color);
+  --van-notify-warning-background-color: var(--van-warning-color);
 }
 
 .van-notify {

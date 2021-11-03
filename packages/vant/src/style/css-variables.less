@@ -1,75 +1,74 @@
-@import './var.less';
-
 :root {
   // Color Palette
-  --van-black: @black;
-  --van-white: @white;
-  --van-gray-1: @gray-1;
-  --van-gray-2: @gray-2;
-  --van-gray-3: @gray-3;
-  --van-gray-4: @gray-4;
-  --van-gray-5: @gray-5;
-  --van-gray-6: @gray-6;
-  --van-gray-7: @gray-7;
-  --van-gray-8: @gray-8;
-  --van-red: @red;
-  --van-blue: @blue;
-  --van-orange: @orange;
-  --van-orange-dark: @orange-dark;
-  --van-orange-light: @orange-light;
-  --van-green: @green;
+  --van-black: #000;
+  --van-white: #fff;
+  --van-gray-1: #f7f8fa;
+  --van-gray-2: #f2f3f5;
+  --van-gray-3: #ebedf0;
+  --van-gray-4: #dcdee0;
+  --van-gray-5: #c8c9cc;
+  --van-gray-6: #969799;
+  --van-gray-7: #646566;
+  --van-gray-8: #323233;
+  --van-red: #ee0a24;
+  --van-blue: #1989fa;
+  --van-orange: #ff976a;
+  --van-orange-dark: #ed6a0c;
+  --van-orange-light: #fffbe8;
+  --van-green: #07c160;
 
   // Gradient Colors
-  --van-gradient-red: @gradient-red;
-  --van-gradient-orange: @gradient-orange;
+  --van-gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+  --van-gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
 
   // Component Colors
-  --van-primary-color: @primary-color;
-  --van-success-color: @success-color;
-  --van-danger-color: @danger-color;
-  --van-warning-color: @warning-color;
-  --van-text-color: @text-color;
-  --van-text-color-secondary: @text-color-secondary;
-  --van-text-color-tertiary: @text-color-tertiary;
-  --van-text-link-color: @text-link-color;
-  --van-active-color: @active-color;
-  --van-active-opacity: @active-opacity;
-  --van-disabled-opacity: @disabled-opacity;
-  --van-background-color: @background-color;
-  --van-background-color-light: @background-color-light;
+  --van-primary-color: var(--van-blue);
+  --van-success-color: var(--van-green);
+  --van-danger-color: var(--van-red);
+  --van-warning-color: var(--van-orange);
+  --van-text-color: var(--van-gray-8);
+  --van-text-color-secondary: var(--van-gray-6);
+  --van-text-color-tertiary: var(--van-gray-5);
+  --van-text-link-color: #576b95;
+  --van-active-color: var(--van-gray-2);
+  --van-active-opacity: 0.6;
+  --van-disabled-opacity: 0.5;
+  --van-background-color: var(--van-gray-1);
+  --van-background-color-light: var(--van-white);
 
   // Padding
-  --van-padding-base: @padding-base;
-  --van-padding-xs: @padding-xs;
-  --van-padding-sm: @padding-sm;
-  --van-padding-md: @padding-md;
-  --van-padding-lg: @padding-lg;
-  --van-padding-xl: @padding-xl;
+  --van-padding-base: 4px;
+  --van-padding-xs: 8px;
+  --van-padding-sm: 12px;
+  --van-padding-md: 16px;
+  --van-padding-lg: 24px;
+  --van-padding-xl: 32px;
 
   // Font
-  --van-font-size-xs: @font-size-xs;
-  --van-font-size-sm: @font-size-sm;
-  --van-font-size-md: @font-size-md;
-  --van-font-size-lg: @font-size-lg;
-  --van-font-weight-bold: @font-weight-bold;
-  --van-line-height-xs: @line-height-xs;
-  --van-line-height-sm: @line-height-sm;
-  --van-line-height-md: @line-height-md;
-  --van-line-height-lg: @line-height-lg;
-  --van-base-font-family: @base-font-family;
-  --van-price-integer-font-family: @price-integer-font-family;
+  --van-font-size-xs: 10px;
+  --van-font-size-sm: 12px;
+  --van-font-size-md: 14px;
+  --van-font-size-lg: 16px;
+  --van-font-weight-bold: 500;
+  --van-line-height-xs: 14px;
+  --van-line-height-sm: 18px;
+  --van-line-height-md: 20px;
+  --van-line-height-lg: 22px;
+  --van-base-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue';
+  --van-price-integer-font-family: avenir-heavy, pingfang sc, helvetica neue,
+    arial;
 
   // Animation
-  --van-animation-duration-base: @animation-duration-base;
-  --van-animation-duration-fast: @animation-duration-fast;
-  --van-animation-timing-function-enter: @animation-timing-function-enter;
-  --van-animation-timing-function-leave: @animation-timing-function-leave;
+  --van-animation-duration-base: 0.3s;
+  --van-animation-duration-fast: 0.2s;
+  --van-animation-timing-function-enter: ease-out;
+  --van-animation-timing-function-leave: ease-in;
 
   // Border
-  --van-border-color: @border-color;
-  --van-border-width-base: @border-width-base;
-  --van-border-radius-sm: @border-radius-sm;
-  --van-border-radius-md: @border-radius-md;
-  --van-border-radius-lg: @border-radius-lg;
-  --van-border-radius-max: @border-radius-max;
+  --van-border-color: var(--van-gray-3);
+  --van-border-width-base: 1px;
+  --van-border-radius-sm: 2px;
+  --van-border-radius-md: 4px;
+  --van-border-radius-lg: 8px;
+  --van-border-radius-max: 999px;
 }

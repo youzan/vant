@@ -1,11 +1,9 @@
-@import './var.less';
-
 :root {
-  --van-loading-text-color: @loading-text-color;
-  --van-loading-text-font-size: @loading-text-font-size;
-  --van-loading-spinner-color: @loading-spinner-color;
-  --van-loading-spinner-size: @loading-spinner-size;
-  --van-loading-spinner-animation-duration: @loading-spinner-animation-duration;
+  --van-loading-text-color: var(--van-text-color-secondary);
+  --van-loading-text-font-size: var(--van-font-size-md);
+  --van-loading-spinner-color: var(--van-gray-5);
+  --van-loading-spinner-size: 30px;
+  --van-loading-spinner-animation-duration: 0.8s;
 }
 
 .van-loading {

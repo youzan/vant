@@ -1,19 +1,17 @@
-@import './var.less';
-
 :root {
-  --van-stepper-background-color: @stepper-background-color;
-  --van-stepper-button-icon-color: @stepper-button-icon-color;
-  --van-stepper-button-disabled-color: @stepper-button-disabled-color;
-  --van-stepper-button-disabled-icon-color: @stepper-button-disabled-icon-color;
-  --van-stepper-button-round-theme-color: @stepper-button-round-theme-color;
-  --van-stepper-input-width: @stepper-input-width;
-  --van-stepper-input-height: @stepper-input-height;
-  --van-stepper-input-font-size: @stepper-input-font-size;
-  --van-stepper-input-line-height: @stepper-input-line-height;
-  --van-stepper-input-text-color: @stepper-input-text-color;
-  --van-stepper-input-disabled-text-color: @stepper-input-disabled-text-color;
-  --van-stepper-input-disabled-background-color: @stepper-input-disabled-background-color;
-  --van-stepper-border-radius: @stepper-border-radius;
+  --van-stepper-background-color: var(--van-active-color);
+  --van-stepper-button-icon-color: var(--van-text-color);
+  --van-stepper-button-disabled-color: var(--van-background-color);
+  --van-stepper-button-disabled-icon-color: var(--van-gray-5);
+  --van-stepper-button-round-theme-color: var(--van-danger-color);
+  --van-stepper-input-width: 32px;
+  --van-stepper-input-height: 28px;
+  --van-stepper-input-font-size: var(--van-font-size-md);
+  --van-stepper-input-line-height: normal;
+  --van-stepper-input-text-color: var(--van-text-color);
+  --van-stepper-input-disabled-text-color: var(--van-text-color-tertiary);
+  --van-stepper-input-disabled-background-color: var(--van-active-color);
+  --van-stepper-border-radius: var(--van-border-radius-md);
 }
 
 .van-stepper {

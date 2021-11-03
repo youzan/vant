@@ -1,14 +1,16 @@
-@import './var.less';
 @import '../style/mixins/hairline';
 
 :root {
-  --van-collapse-item-transition-duration: @collapse-item-transition-duration;
-  --van-collapse-item-content-padding: @collapse-item-content-padding;
-  --van-collapse-item-content-font-size: @collapse-item-content-font-size;
-  --van-collapse-item-content-line-height: @collapse-item-content-line-height;
-  --van-collapse-item-content-text-color: @collapse-item-content-text-color;
-  --van-collapse-item-content-background-color: @collapse-item-content-background-color;
-  --van-collapse-item-title-disabled-color: @collapse-item-title-disabled-color;
+  --van-collapse-item-transition-duration: var(--van-animation-duration-base);
+  --van-collapse-item-content-padding: var(--van-padding-sm)
+    var(--van-padding-md);
+  --van-collapse-item-content-font-size: var(--van-font-size-md);
+  --van-collapse-item-content-line-height: 1.5;
+  --van-collapse-item-content-text-color: var(--van-text-color-secondary);
+  --van-collapse-item-content-background-color: var(
+    --van-background-color-light
+  );
+  --van-collapse-item-title-disabled-color: var(--van-text-color-tertiary);
 }
 
 .van-collapse-item {

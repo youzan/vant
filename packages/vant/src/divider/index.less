@@ -1,14 +1,12 @@
-@import './var.less';
-
 :root {
-  --van-divider-margin: @divider-margin;
-  --van-divider-text-color: @divider-text-color;
-  --van-divider-font-size: @divider-font-size;
-  --van-divider-line-height: @divider-line-height;
-  --van-divider-border-color: @divider-border-color;
-  --van-divider-content-padding: @divider-content-padding;
-  --van-divider-content-left-width: @divider-content-left-width;
-  --van-divider-content-right-width: @divider-content-right-width;
+  --van-divider-margin: var(--van-padding-md) 0;
+  --van-divider-text-color: var(--van-text-color-secondary);
+  --van-divider-font-size: var(--van-font-size-md);
+  --van-divider-line-height: 24px;
+  --van-divider-border-color: var(--van-border-color);
+  --van-divider-content-padding: var(--van-padding-md);
+  --van-divider-content-left-width: 10%;
+  --van-divider-content-right-width: 10%;
 }
 
 .van-divider {

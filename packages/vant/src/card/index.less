@@ -1,22 +1,20 @@
-@import './var.less';
-
 :root {
-  --van-card-padding: @card-padding;
-  --van-card-font-size: @card-font-size;
-  --van-card-text-color: @card-text-color;
-  --van-card-background-color: @card-background-color;
-  --van-card-thumb-size: @card-thumb-size;
-  --van-card-thumb-border-radius: @card-thumb-border-radius;
-  --van-card-title-line-height: @card-title-line-height;
-  --van-card-desc-color: @card-desc-color;
-  --van-card-desc-line-height: @card-desc-line-height;
-  --van-card-price-color: @card-price-color;
-  --van-card-origin-price-color: @card-origin-price-color;
-  --van-card-num-color: @card-num-color;
-  --van-card-origin-price-font-size: @card-origin-price-font-size;
-  --van-card-price-font-size: @card-price-font-size;
-  --van-card-price-integer-font-size: @card-price-integer-font-size;
-  --van-card-price-font-family: @card-price-font-family;
+  --van-card-padding: var(--van-padding-xs) var(--van-padding-md);
+  --van-card-font-size: var(--van-font-size-sm);
+  --van-card-text-color: var(--van-text-color);
+  --van-card-background-color: var(--van-gray-1);
+  --van-card-thumb-size: 88px;
+  --van-card-thumb-border-radius: var(--van-border-radius-lg);
+  --van-card-title-line-height: 16px;
+  --van-card-desc-color: var(--van-gray-7);
+  --van-card-desc-line-height: var(--van-line-height-md);
+  --van-card-price-color: var(--van-gray-8);
+  --van-card-origin-price-color: var(--van-text-color-secondary);
+  --van-card-num-color: var(--van-text-color-secondary);
+  --van-card-origin-price-font-size: var(--van-font-size-xs);
+  --van-card-price-font-size: var(--van-font-size-sm);
+  --van-card-price-integer-font-size: var(--van-font-size-lg);
+  --van-card-price-font-family: var(--van-price-integer-font-family);
 }
 
 .van-card {
