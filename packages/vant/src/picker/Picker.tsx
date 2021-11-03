@@ -56,9 +56,6 @@ export const pickerSharedProps = {
 
 const pickerProps = extend({}, pickerSharedProps, {
   columns: makeArrayProp<PickerOption | PickerColumn>(),
-  // @deprecated
-  // should be removed in next major version
-  valueKey: String,
   defaultIndex: makeNumericProp(0),
   toolbarPosition: makeStringProp<PickerToolbarPosition>('top'),
   columnsFieldNames: Object as PropType<PickerFieldNames>,
@@ -74,19 +71,6 @@ export default defineComponent({
   emits: ['confirm', 'cancel', 'change'],
 
   setup(props, { emit, slots }) {
-    if (process.env.NODE_ENV !== 'production') {
-      if (slots.default) {
-        console.warn(
-          '[Vant] Picker: "default" slot is deprecated, please use "toolbar" slot instead.'
-        );
-      }
-      if (props.valueKey) {
-        console.warn(
-          '[Vant] Picker: "valueKey" prop is deprecated, please use "columnsFieldNames" prop instead.'
-        );
-      }
-    }
-
     const formattedColumns = ref<PickerObjectColumn[]>([]);
 
     const {
@@ -95,8 +79,7 @@ export default defineComponent({
       children: childrenKey,
     } = extend(
       {
-        // compatible with valueKey prop
-        text: props.valueKey || 'text',
+        text: 'text',
         values: 'values',
         children: 'children',
       },
@@ -324,12 +307,11 @@ export default defineComponent({
 
     const renderToolbar = () => {
       if (props.showToolbar) {
-        // default slot is deprecated
-        // should be removed in next major version
-        const slot = slots.toolbar || slots.default;
         return (
           <div class={bem('toolbar')}>
-            {slot ? slot() : [renderCancel(), renderTitle(), renderConfirm()]}
+            {slots.toolbar
+              ? slots.toolbar()
+              : [renderCancel(), renderTitle(), renderConfirm()]}
           </div>
         );
       }
