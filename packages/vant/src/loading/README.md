@@ -101,7 +101,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-loading-text-color | _var(--van-text-color-secondary)_ | - |
+| --van-loading-text-color | _var(--van-text-color-2)_ | - |
 | --van-loading-text-font-size | _var(--van-font-size-md)_ | - |
 | --van-loading-spinner-color | _var(--van-gray-5)_ | - |
 | --van-loading-spinner-size | _30px_ | - |

@@ -362,8 +362,8 @@ The component provides the following CSS variables, which can be used to customi
 | --van-field-label-margin-right | _var(--van-padding-sm)_ | - |
 | --van-field-input-text-color | _var(--van-text-color)_ | - |
 | --van-field-input-error-text-color | _var(--van-danger-color)_ | - |
-| --van-field-input-disabled-text-color | _var(--van-text-color-tertiary)_ | - |
-| --van-field-placeholder-text-color | _var(--van-text-color-tertiary)_ | - |
+| --van-field-input-disabled-text-color | _var(--van-text-color-3)_ | - |
+| --van-field-placeholder-text-color | _var(--van-text-color-3)_ | - |
 | --van-field-icon-size | _16px_ | - |
 | --van-field-clear-icon-size | _16px_ | - |
 | --van-field-clear-icon-color | _var(--van-gray-5)_ | - |
@@ -374,5 +374,5 @@ The component provides the following CSS variables, which can be used to customi
 | --van-field-word-limit-color | _var(--van-gray-7)_ | - |
 | --van-field-word-limit-font-size | _var(--van-font-size-sm)_ | - |
 | --van-field-word-limit-line-height | _16px_ | - |
-| --van-field-disabled-text-color | _var(--van-text-color-tertiary)_ | - |
+| --van-field-disabled-text-color | _var(--van-text-color-3)_ | - |
 | --van-field-required-mark-color | _var(--van-red)_ | - |

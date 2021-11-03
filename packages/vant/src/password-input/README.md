@@ -161,7 +161,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-password-input-font-size | _20px_ | - |
 | --van-password-input-border-radius | _6px_ | - |
 | --van-password-input-background-color | _var(--van-background-color-light)_ | - |
-| --van-password-input-info-color | _var(--van-text-color-secondary)_ | - |
+| --van-password-input-info-color | _var(--van-text-color-2)_ | - |
 | --van-password-input-info-font-size | _var(--van-font-size-md)_ | - |
 | --van-password-input-error-info-color | _var(--van-danger-color)_ | - |
 | --van-password-input-dot-size | _10px_ | - |

@@ -105,13 +105,13 @@ import type { EmptyProps } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-empty-padding | _var(--van-padding-xl) 0_ | - |
-| --van-empty-image-size | _160px_ | - |
-| --van-empty-description-margin-top | _var(--van-padding-md)_ | - |
-| --van-empty-description-padding | _0 60px_ | - |
-| --van-empty-description-color | _var(--van-text-color-secondary)_ | - |
-| --van-empty-description-font-size | _var(--van-font-size-md)_ | - |
-| --van-empty-description-line-height | _var(--van-line-height-md)_ | - |
-| --van-empty-bottom-margin-top | _24px_ | - |
+| 名称                                | 默认值                      | 描述 |
+| ----------------------------------- | --------------------------- | ---- |
+| --van-empty-padding                 | _var(--van-padding-xl) 0_   | -    |
+| --van-empty-image-size              | _160px_                     | -    |
+| --van-empty-description-margin-top  | _var(--van-padding-md)_     | -    |
+| --van-empty-description-padding     | _0 60px_                    | -    |
+| --van-empty-description-color       | _var(--van-text-color-2)_   | -    |
+| --van-empty-description-font-size   | _var(--van-font-size-md)_   | -    |
+| --van-empty-description-line-height | _var(--van-line-height-md)_ | -    |
+| --van-empty-bottom-margin-top       | _24px_                      | -    |

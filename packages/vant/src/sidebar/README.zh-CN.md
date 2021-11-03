@@ -152,7 +152,7 @@ import type { SidebarProps, SidebarItemProps } from 'vant';
 | --van-sidebar-font-size | _var(--van-font-size-md)_ | - |
 | --van-sidebar-line-height | _var(--van-line-height-md)_ | - |
 | --van-sidebar-text-color | _var(--van-text-color)_ | - |
-| --van-sidebar-disabled-text-color | _var(--van-text-color-tertiary)_ | - |
+| --van-sidebar-disabled-text-color | _var(--van-text-color-3)_ | - |
 | --van-sidebar-padding | _20px var(--van-padding-sm)_ | - |
 | --van-sidebar-active-color | _var(--van-active-color)_ | - |
 | --van-sidebar-background-color | _var(--van-background-color)_ | - |
