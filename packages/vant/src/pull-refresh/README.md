@@ -153,5 +153,5 @@ The component provides the following CSS variables, which can be used to customi
 | --- | --- | --- |
 | --van-pull-refresh-head-height | _50px_ | - |
 | --van-pull-refresh-head-font-size | _var(--van-font-size-md)_ | - |
-| --van-pull-refresh-head-text-color | _var(--van-text-color-secondary)_ | - |
+| --van-pull-refresh-head-text-color | _var(--van-text-color-2)_ | - |
 | --van-pull-refresh-loading-icon-size | _16px_ | - |

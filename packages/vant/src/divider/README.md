@@ -83,13 +83,13 @@ import type { DividerProps, DividerContentPosition } from 'vant';
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name | Default Value | Description |
-| --- | --- | --- |
-| --van-divider-margin | _var(--van-padding-md) 0_ | - |
-| --van-divider-text-color | _var(--van-text-color-secondary)_ | - |
-| --van-divider-font-size | _var(--van-font-size-md)_ | - |
-| --van-divider-line-height | _24px_ | - |
-| --van-divider-border-color | _var(--van-border-color)_ | - |
-| --van-divider-content-padding | _var(--van-padding-md)_ | - |
-| --van-divider-content-left-width | _10%_ | - |
-| --van-divider-content-right-width | _10%_ | - |
+| Name                              | Default Value             | Description |
+| --------------------------------- | ------------------------- | ----------- |
+| --van-divider-margin              | _var(--van-padding-md) 0_ | -           |
+| --van-divider-text-color          | _var(--van-text-color-2)_ | -           |
+| --van-divider-font-size           | _var(--van-font-size-md)_ | -           |
+| --van-divider-line-height         | _24px_                    | -           |
+| --van-divider-border-color        | _var(--van-border-color)_ | -           |
+| --van-divider-content-padding     | _var(--van-padding-md)_   | -           |
+| --van-divider-content-left-width  | _10%_                     | -           |
+| --van-divider-content-right-width | _10%_                     | -           |

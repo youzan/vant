@@ -130,7 +130,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-image-placeholder-text-color | _var(--van-text-color-secondary)_ | - |
+| --van-image-placeholder-text-color | _var(--van-text-color-2)_ | - |
 | --van-image-placeholder-font-size | _var(--van-font-size-md)_ | - |
 | --van-image-placeholder-background-color | _var(--van-background-color)_ | - |
 | --van-image-loading-icon-size | _32px_ | - |
