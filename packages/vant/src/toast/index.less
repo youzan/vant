@@ -4,8 +4,8 @@
   --van-toast-text-color: var(--van-white);
   --van-toast-loading-icon-color: var(--van-white);
   --van-toast-line-height: var(--van-line-height-md);
-  --van-toast-border-radius: var(--van-border-radius-lg);
-  --van-toast-background-color: rgba(0, 0, 0, 0.7);
+  --van-toast-radius: var(--van-radius-lg);
+  --van-toast-background: rgba(0, 0, 0, 0.7);
   --van-toast-icon-size: 36px;
   --van-toast-text-min-width: 96px;
   --van-toast-text-padding: var(--van-padding-xs) var(--van-padding-sm);
@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
   box-sizing: content-box;
-  transition: all var(--van-animation-duration-fast);
+  transition: all var(--van-duration-fast);
 
   // hack for avoid max-width when use left & fixed
   width: var(--van-toast-default-width);
@@ -38,8 +38,8 @@
   text-align: center;
   // https://github.com/youzan/vant/issues/8959
   word-break: break-all;
-  background: var(--van-toast-background-color);
-  border-radius: var(--van-toast-border-radius);
+  background: var(--van-toast-background);
+  border-radius: var(--van-toast-radius);
 
   &--unclickable {
     // lock scroll

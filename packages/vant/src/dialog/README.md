@@ -239,10 +239,10 @@ The component provides the following CSS variables, which can be used to customi
 | --van-dialog-width | _320px_ | - |
 | --van-dialog-small-screen-width | _90%_ | - |
 | --van-dialog-font-size | _var(--van-font-size-lg)_ | - |
-| --van-dialog-transition | _var(--van-animation-duration-base)_ | - |
-| --van-dialog-border-radius | _16px_ | - |
-| --van-dialog-background-color | _var(--van-background-color-light)_ | - |
-| --van-dialog-header-font-weight | _var(--van-font-weight-bold)_ | - |
+| --van-dialog-transition | _var(--van-duration-base)_ | - |
+| --van-dialog-radius | _16px_ | - |
+| --van-dialog-background | _var(--van-background-light)_ | - |
+| --van-dialog-header-font-weight | _var(--van-font-bold)_ | - |
 | --van-dialog-header-line-height | _24px_ | - |
 | --van-dialog-header-padding-top | _26px_ | - |
 | --van-dialog-header-isolated-padding | _var(--van-padding-lg) 0_ | - |

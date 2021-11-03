@@ -3,13 +3,13 @@
   --van-switch-width: 2em;
   --van-switch-height: 1em;
   --van-switch-node-size: 1em;
-  --van-switch-node-background-color: var(--van-white);
-  --van-switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05);
-  --van-switch-background-color: var(--van-background-color-light);
-  --van-switch-on-background-color: var(--van-primary-color);
-  --van-switch-transition-duration: var(--van-animation-duration-base);
+  --van-switch-node-background: var(--van-white);
+  --van-switch-node-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05);
+  --van-switch-background: var(--van-background-light);
+  --van-switch-on-background: var(--van-primary-color);
+  --van-switch-duration: var(--van-duration-base);
   --van-switch-disabled-opacity: var(--van-disabled-opacity);
-  --van-switch-border: var(--van-border-width-base) solid rgba(0, 0, 0, 0.1);
+  --van-switch-border: var(--van-border-width) solid rgba(0, 0, 0, 0.1);
 }
 
 .van-switch {
@@ -19,11 +19,11 @@
   width: var(--van-switch-width);
   height: var(--van-switch-height);
   font-size: var(--van-switch-size);
-  background: var(--van-switch-background-color);
+  background: var(--van-switch-background);
   border: var(--van-switch-border);
   border-radius: var(--van-switch-node-size);
   cursor: pointer;
-  transition: background-color var(--van-switch-transition-duration);
+  transition: background-color var(--van-switch-duration);
 
   &__node {
     position: absolute;
@@ -31,10 +31,10 @@
     left: 0;
     width: var(--van-switch-node-size);
     height: var(--van-switch-node-size);
-    background: var(--van-switch-node-background-color);
+    background: var(--van-switch-node-background);
     border-radius: 100%;
-    box-shadow: var(--van-switch-node-box-shadow);
-    transition: transform var(--van-switch-transition-duration)
+    box-shadow: var(--van-switch-node-shadow);
+    transition: transform var(--van-switch-duration)
       cubic-bezier(0.3, 1.05, 0.4, 1.05);
   }
 
@@ -47,7 +47,7 @@
   }
 
   &--on {
-    background: var(--van-switch-on-background-color);
+    background: var(--van-switch-on-background);
 
     .van-switch__node {
       transform: translateX(
@@ -56,7 +56,7 @@
     }
 
     .van-switch__loading {
-      color: var(--van-switch-on-background-color);
+      color: var(--van-switch-on-background);
     }
   }
 

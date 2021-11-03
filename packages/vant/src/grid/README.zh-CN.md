@@ -175,7 +175,7 @@ import type { GridProps, GridDirection, GridItemProps } from 'vant';
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
 | --van-grid-item-content-padding | _var(--van-padding-md) var(--van-padding-xs)_ | - |
-| --van-grid-item-content-background-color | _var(--van-background-color-light)_ | - |
+| --van-grid-item-content-background | _var(--van-background-light)_ | - |
 | --van-grid-item-content-active-color | _var(--van-active-color)_ | - |
 | --van-grid-item-icon-size | _28px_ | - |
 | --van-grid-item-text-color | _var(--van-gray-7)_ | - |

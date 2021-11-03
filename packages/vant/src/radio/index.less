@@ -1,13 +1,13 @@
 :root {
   --van-radio-size: 20px;
   --van-radio-border-color: var(--van-gray-5);
-  --van-radio-transition-duration: var(--van-animation-duration-fast);
+  --van-radio-duration: var(--van-duration-fast);
   --van-radio-label-margin: var(--van-padding-xs);
   --van-radio-label-color: var(--van-text-color);
   --van-radio-checked-icon-color: var(--van-primary-color);
   --van-radio-disabled-icon-color: var(--van-gray-5);
   --van-radio-disabled-label-color: var(--van-text-color-tertiary);
-  --van-radio-disabled-background-color: var(--van-border-color);
+  --van-radio-disabled-background: var(--van-border-color);
 }
 
 .van-radio {
@@ -46,7 +46,7 @@
       line-height: 1.25;
       text-align: center;
       border: 1px solid var(--van-radio-border-color);
-      transition-duration: var(--van-radio-transition-duration);
+      transition-duration: var(--van-radio-duration);
       transition-property: color, border-color, background-color;
     }
 
@@ -68,7 +68,7 @@
       cursor: not-allowed;
 
       .van-icon {
-        background-color: var(--van-radio-disabled-background-color);
+        background-color: var(--van-radio-disabled-background);
         border-color: var(--van-radio-disabled-icon-color);
       }
     }

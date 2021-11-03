@@ -3,7 +3,7 @@
   --van-loading-text-font-size: var(--van-font-size-md);
   --van-loading-spinner-color: var(--van-gray-5);
   --van-loading-spinner-size: 30px;
-  --van-loading-spinner-animation-duration: 0.8s;
+  --van-loading-spinner-duration: 0.8s;
 }
 
 .van-loading {
@@ -21,8 +21,7 @@
     height: var(--van-loading-spinner-size);
     max-height: 100%;
     vertical-align: middle;
-    animation: van-rotate var(--van-loading-spinner-animation-duration) linear
-      infinite;
+    animation: van-rotate var(--van-loading-spinner-duration) linear infinite;
 
     &--spinner {
       animation-timing-function: steps(12);

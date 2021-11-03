@@ -249,4 +249,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-share-sheet-option-description-font-size | _var(--van-font-size-sm)_ | - |
 | --van-share-sheet-cancel-button-font-size | _var(--van-font-size-lg)_ | - |
 | --van-share-sheet-cancel-button-height | _48px_ | - |
-| --van-share-sheet-cancel-button-background | _var(--van-background-color-light)_ | - |
+| --van-share-sheet-cancel-button-background | _var(--van-background-light)_ | - |

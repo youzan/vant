@@ -139,9 +139,9 @@ The component provides the following CSS variables, which can be used to customi
 | --van-index-anchor-z-index | _1_ | - |
 | --van-index-anchor-padding | _0 var(--van-padding-md)_ | - |
 | --van-index-anchor-text-color | _var(--van-text-color)_ | - |
-| --van-index-anchor-font-weight | _var(--van-font-weight-bold)_ | - |
+| --van-index-anchor-font-weight | _var(--van-font-bold)_ | - |
 | --van-index-anchor-font-size | _var(--van-font-size-md)_ | - |
 | --van-index-anchor-line-height | _32px_ | - |
-| --van-index-anchor-background-color | _transparent_ | - |
+| --van-index-anchor-background | _transparent_ | - |
 | --van-index-anchor-sticky-text-color | _var(--van-danger-color)_ | - |
-| --van-index-anchor-sticky-background-color | _var(--van-background-color-light)_ | - |
+| --van-index-anchor-sticky-background | _var(--van-background-light)_ | - |

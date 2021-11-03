@@ -142,7 +142,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 - Circle: 新增 start-position 属性 [#9305](https://github.com/youzan/vant/issues/9305)
 - Slider: 新增 reverse 属性 [#9308](https://github.com/youzan/vant/issues/9308)
-- NumberKeyboard: 新增 van-number-keyboard-key-background-color CSS 变量 [#9303](https://github.com/youzan/vant/issues/9303)
+- NumberKeyboard: 新增 van-number-keyboard-key-background CSS 变量 [#9303](https://github.com/youzan/vant/issues/9303)
 - PasswordInput: add password-input-text-color CSS 变量 [#9304](https://github.com/youzan/vant/issues/9304)
 
 **Bug Fixes**
@@ -402,7 +402,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Feature**
 
-- ActionBar: 新增 @action-bar-icon-background-color 样式变量 [#8474](https://github.com/youzan/vant/issues/8474)
+- ActionBar: 新增 @action-bar-icon-background 样式变量 [#8474](https://github.com/youzan/vant/issues/8474)
 - Popover: 升级依赖的 @popperjs/core 到 2.9.2 版本 [0d1323](https://github.com/youzan/vant/commit/0d132337d5d263957a7993d60e47a18efec7313e)
 - perf: 优化包体积 [ba3e6d](https://github.com/youzan/vant/commit/ba3e6d56a0bc7ae3acc25b1380f054da3b9b020f)
 
@@ -965,7 +965,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 - Button: 新增 icon-position 属性 [#7174](https://github.com/youzan/vant/issues/7174)
 - slider: 新增 range 属性，支持范围选择 [#7175](https://github.com/youzan/vant/issues/7175)
-- TabbarItem: 新增 @tabbar-item-active-background-color 变量 [#7162](https://github.com/youzan/vant/issues/7162)
+- TabbarItem: 新增 @tabbar-item-active-background 变量 [#7162](https://github.com/youzan/vant/issues/7162)
 
 **Bug Fixes**
 

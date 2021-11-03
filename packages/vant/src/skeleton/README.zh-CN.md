@@ -93,12 +93,12 @@ import type { SkeletonProps, SkeletonAvatarShape } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                   | 默认值                    | 描述 |
-| -------------------------------------- | ------------------------- | ---- |
-| --van-skeleton-row-height              | _16px_                    | -    |
-| --van-skeleton-row-background-color    | _var(--van-active-color)_ | -    |
-| --van-skeleton-row-margin-top          | _var(--van-padding-sm)_   | -    |
-| --van-skeleton-title-width             | _40%_                     | -    |
-| --van-skeleton-avatar-size             | _32px_                    | -    |
-| --van-skeleton-avatar-background-color | _var(--van-active-color)_ | -    |
-| --van-skeleton-animation-duration      | _1.2s_                    | -    |
+| 名称                             | 默认值                    | 描述 |
+| -------------------------------- | ------------------------- | ---- |
+| --van-skeleton-row-height        | _16px_                    | -    |
+| --van-skeleton-row-background    | _var(--van-active-color)_ | -    |
+| --van-skeleton-row-margin-top    | _var(--van-padding-sm)_   | -    |
+| --van-skeleton-title-width       | _40%_                     | -    |
+| --van-skeleton-avatar-size       | _32px_                    | -    |
+| --van-skeleton-avatar-background | _var(--van-active-color)_ | -    |
+| --van-skeleton-duration          | _1.2s_                    | -    |

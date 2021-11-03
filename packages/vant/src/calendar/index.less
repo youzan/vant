@@ -1,7 +1,7 @@
 :root {
-  --van-calendar-background-color: var(--van-background-color-light);
+  --van-calendar-background: var(--van-background-light);
   --van-calendar-popup-height: 80%;
-  --van-calendar-header-box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16);
+  --van-calendar-header-shadow: 0 2px 10px rgba(125, 126, 128, 0.16);
   --van-calendar-header-title-height: 44px;
   --van-calendar-header-title-font-size: var(--van-font-size-lg);
   --van-calendar-header-subtitle-font-size: var(--van-font-size-md);
@@ -13,14 +13,14 @@
   --van-calendar-day-height: 64px;
   --van-calendar-day-font-size: var(--van-font-size-lg);
   --van-calendar-range-edge-color: var(--van-white);
-  --van-calendar-range-edge-background-color: var(--van-danger-color);
+  --van-calendar-range-edge-background: var(--van-danger-color);
   --van-calendar-range-middle-color: var(--van-danger-color);
   --van-calendar-range-middle-background-opacity: 0.1;
   --van-calendar-selected-day-size: 54px;
   --van-calendar-selected-day-color: var(--van-white);
   --van-calendar-info-font-size: var(--van-font-size-xs);
   --van-calendar-info-line-height: var(--van-line-height-xs);
-  --van-calendar-selected-day-background-color: var(--van-danger-color);
+  --van-calendar-selected-day-background: var(--van-danger-color);
   --van-calendar-day-disabled-color: var(--van-text-color-tertiary);
   --van-calendar-confirm-button-height: 36px;
   --van-calendar-confirm-button-margin: 7px 0;
@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: var(--van-calendar-background-color);
+  background: var(--van-calendar-background);
 
   &__popup {
     &.van-popup--top,
@@ -50,14 +50,14 @@
 
   &__header {
     flex-shrink: 0;
-    box-shadow: var(--van-calendar-header-box-shadow);
+    box-shadow: var(--van-calendar-header-shadow);
   }
 
   &__month-title,
   &__header-title,
   &__header-subtitle {
     height: var(--van-calendar-header-title-height);
-    font-weight: var(--van-font-weight-bold);
+    font-weight: var(--van-font-bold);
     line-height: var(--van-calendar-header-title-height);
     text-align: center;
   }
@@ -130,20 +130,20 @@
     &--multiple-middle,
     &--multiple-selected {
       color: var(--van-calendar-range-edge-color);
-      background: var(--van-calendar-range-edge-background-color);
+      background: var(--van-calendar-range-edge-background);
     }
 
     &--start {
-      border-radius: var(--van-border-radius-md) 0 0 var(--van-border-radius-md);
+      border-radius: var(--van-radius-md) 0 0 var(--van-radius-md);
     }
 
     &--end {
-      border-radius: 0 var(--van-border-radius-md) var(--van-border-radius-md) 0;
+      border-radius: 0 var(--van-radius-md) var(--van-radius-md) 0;
     }
 
     &--start-end,
     &--multiple-selected {
-      border-radius: var(--van-border-radius-md);
+      border-radius: var(--van-radius-md);
     }
 
     &--middle {
@@ -192,8 +192,8 @@
     width: var(--van-calendar-selected-day-size);
     height: var(--van-calendar-selected-day-size);
     color: var(--van-calendar-selected-day-color);
-    background: var(--van-calendar-selected-day-background-color);
-    border-radius: var(--van-border-radius-md);
+    background: var(--van-calendar-selected-day-background);
+    border-radius: var(--van-radius-md);
   }
 
   &__footer {

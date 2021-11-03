@@ -29,7 +29,7 @@ Looking at the style of the Button component, you can see that the following var
 ```css
 .van-button--primary {
   color: var(--van-button-primary-color);
-  background-color: var(--van-button-primary-background-color);
+  background-color: var(--van-button-primary-background);
 }
 ```
 
@@ -40,7 +40,7 @@ The default values of these variables are defined on the `root` node:
   --van-white: #fff;
   --van-blue: #1989fa;
   --van-button-primary-color: var(--van-white);
-  --van-button-primary-background-color: var(--van-primary-color);
+  --van-button-primary-background: var(--van-primary-color);
 }
 ```
 
@@ -53,7 +53,7 @@ You can directly override these CSS variables in the code, and the style of the 
 ```css
 /* the Primary Button will turn red */
 :root {
-  --van-button-primary-background-color: red;
+  --van-button-primary-background: red;
 }
 ```
 
@@ -158,12 +158,12 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 --van-text-color: var(--van-gray-8);
 --van-text-color-secondary: var(--van-gray-6);
 --van-text-color-tertiary: var(--van-gray-5);
---van-text-link-color: #576b95;
+--van-link-color: #576b95;
 --van-active-color: var(--van-gray-2);
 --van-active-opacity: 0.6;
 --van-disabled-opacity: 0.5;
---van-background-color: var(--van-gray-1);
---van-background-color-light: var(--van-white);
+--van-background: var(--van-gray-1);
+--van-background-light: var(--van-white);
 
 // Padding
 --van-padding-base: 4px;
@@ -178,30 +178,29 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 --van-font-size-sm: 12px;
 --van-font-size-md: 14px;
 --van-font-size-lg: 16px;
---van-font-weight-bold: 500;
+--van-font-bold: 500;
 --van-line-height-xs: 14px;
 --van-line-height-sm: 18px;
 --van-line-height-md: 20px;
 --van-line-height-lg: 22px;
---van-base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB',
-  'Microsoft Yahei', sans-serif;
---van-price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue,
-  Arial, sans-serif;
+--van-base-font: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+  Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+  sans-serif;
+--van-price-font: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial, sans-serif;
 
 // Animation
---van-animation-duration-base: 0.3s;
---van-animation-duration-fast: 0.2s;
---van-animation-timing-function-enter: ease-out;
---van-animation-timing-function-leave: ease-in;
+--van-duration-base: 0.3s;
+--van-duration-fast: 0.2s;
+--van-ease-out: ease-out;
+--van-ease-in: ease-in;
 
 // Border
 --van-border-color: var(--van-gray-3);
---van-border-width-base: 1px;
---van-border-radius-sm: 2px;
---van-border-radius-md: 4px;
---van-border-radius-lg: 8px;
---van-border-radius-max: 999px;
+--van-border-width: 1px;
+--van-radius-sm: 2px;
+--van-radius-md: 4px;
+--van-radius-lg: 8px;
+--van-radius-max: 999px;
 ```
 
 ## API

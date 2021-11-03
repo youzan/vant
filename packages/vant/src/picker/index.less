@@ -1,11 +1,11 @@
 :root {
-  --van-picker-background-color: var(--van-background-color-light);
+  --van-picker-background: var(--van-background-light);
   --van-picker-toolbar-height: 44px;
   --van-picker-title-font-size: var(--van-font-size-lg);
   --van-picker-title-line-height: var(--van-line-height-md);
   --van-picker-action-padding: 0 var(--van-padding-md);
   --van-picker-action-font-size: var(--van-font-size-md);
-  --van-picker-confirm-action-color: var(--van-text-link-color);
+  --van-picker-confirm-action-color: var(--van-link-color);
   --van-picker-cancel-action-color: var(--van-text-color-secondary);
   --van-picker-option-font-size: var(--van-font-size-lg);
   --van-picker-option-padding: 0 var(--van-padding-base);
@@ -23,7 +23,7 @@
 
 .van-picker {
   position: relative;
-  background: var(--van-picker-background-color);
+  background: var(--van-picker-background);
   user-select: none;
 
   &__toolbar {
@@ -53,7 +53,7 @@
 
   &__title {
     max-width: 50%;
-    font-weight: var(--van-font-weight-bold);
+    font-weight: var(--van-font-bold);
     font-size: var(--van-picker-title-font-size);
     line-height: var(--van-picker-title-line-height);
     text-align: center;

@@ -1,21 +1,21 @@
 :root {
-  --van-slider-active-background-color: var(--van-primary-color);
-  --van-slider-inactive-background-color: var(--van-gray-3);
+  --van-slider-active-background: var(--van-primary-color);
+  --van-slider-inactive-background: var(--van-gray-3);
   --van-slider-disabled-opacity: var(--van-disabled-opacity);
   --van-slider-bar-height: 2px;
   --van-slider-button-width: 24px;
   --van-slider-button-height: 24px;
-  --van-slider-button-border-radius: 50%;
-  --van-slider-button-background-color: var(--van-white);
-  --van-slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --van-slider-button-radius: 50%;
+  --van-slider-button-background: var(--van-white);
+  --van-slider-button-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .van-slider {
   position: relative;
   width: 100%;
   height: var(--van-slider-bar-height);
-  background: var(--van-slider-inactive-background-color);
-  border-radius: var(--van-border-radius-max);
+  background: var(--van-slider-inactive-background);
+  border-radius: var(--van-radius-max);
   cursor: pointer;
 
   // use pseudo element to expand click area
@@ -32,17 +32,17 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: var(--van-slider-active-background-color);
+    background: var(--van-slider-active-background);
     border-radius: inherit;
-    transition: all var(--van-animation-duration-fast);
+    transition: all var(--van-duration-fast);
   }
 
   &__button {
     width: var(--van-slider-button-width);
     height: var(--van-slider-button-height);
-    background: var(--van-slider-button-background-color);
-    border-radius: var(--van-slider-button-border-radius);
-    box-shadow: var(--van-slider-button-box-shadow);
+    background: var(--van-slider-button-background);
+    border-radius: var(--van-slider-button-radius);
+    box-shadow: var(--van-slider-button-shadow);
 
     &-wrapper {
       position: absolute;

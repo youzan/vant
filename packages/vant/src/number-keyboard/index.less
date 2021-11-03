@@ -1,18 +1,18 @@
 :root {
-  --van-number-keyboard-background-color: var(--van-gray-2);
+  --van-number-keyboard-background: var(--van-gray-2);
   --van-number-keyboard-key-height: 48px;
   --van-number-keyboard-key-font-size: 28px;
   --van-number-keyboard-key-active-color: var(--van-gray-3);
-  --van-number-keyboard-key-background-color: var(--van-background-color-light);
+  --van-number-keyboard-key-background: var(--van-background-light);
   --van-number-keyboard-delete-font-size: var(--van-font-size-lg);
   --van-number-keyboard-title-color: var(--van-gray-7);
   --van-number-keyboard-title-height: 34px;
   --van-number-keyboard-title-font-size: var(--van-font-size-lg);
   --van-number-keyboard-close-padding: 0 var(--van-padding-md);
-  --van-number-keyboard-close-color: var(--van-text-link-color);
+  --van-number-keyboard-close-color: var(--van-link-color);
   --van-number-keyboard-close-font-size: var(--van-font-size-md);
   --van-number-keyboard-button-text-color: var(--van-white);
-  --van-number-keyboard-button-background-color: var(--van-primary-color);
+  --van-number-keyboard-button-background: var(--van-primary-color);
   --van-number-keyboard-z-index: 100;
 }
 
@@ -23,7 +23,7 @@
   z-index: var(--van-number-keyboard-z-index);
   width: 100%;
   padding-bottom: 22px;
-  background: var(--van-number-keyboard-background-color);
+  background: var(--van-number-keyboard-background);
   user-select: none;
 
   &--with-title {
@@ -93,8 +93,8 @@
   height: var(--van-number-keyboard-key-height);
   font-size: var(--van-number-keyboard-key-font-size);
   line-height: 1.5;
-  background: var(--van-number-keyboard-key-background-color);
-  border-radius: var(--van-border-radius-lg);
+  background: var(--van-number-keyboard-key-background);
+  border-radius: var(--van-radius-lg);
   cursor: pointer;
 
   &--large {
@@ -119,7 +119,7 @@
 
   &--blue {
     color: var(--van-number-keyboard-button-text-color);
-    background: var(--van-number-keyboard-button-background-color);
+    background: var(--van-number-keyboard-button-background);
 
     &.van-key--active {
       opacity: var(--van-active-opacity);

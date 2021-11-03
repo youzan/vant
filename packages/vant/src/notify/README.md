@@ -138,7 +138,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-notify-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
 | --van-notify-font-size | _var(--van-font-size-md)_ | - |
 | --van-notify-line-height | _var(--van-line-height-md)_ | - |
-| --van-notify-primary-background-color | _var(--van-primary-color)_ | - |
-| --van-notify-success-background-color | _var(--van-success-color)_ | - |
-| --van-notify-danger-background-color | _var(--van-danger-color)_ | - |
-| --van-notify-warning-background-color | _var(--van-warning-color)_ | - |
+| --van-notify-primary-background | _var(--van-primary-color)_ | - |
+| --van-notify-success-background | _var(--van-success-color)_ | - |
+| --van-notify-danger-background | _var(--van-danger-color)_ | - |
+| --van-notify-warning-background | _var(--van-warning-color)_ | - |

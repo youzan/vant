@@ -381,9 +381,9 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-calendar-background-color | _var(--van-background-color-light)_ | - |
+| --van-calendar-background | _var(--van-background-light)_ | - |
 | --van-calendar-popup-height | _80%_ | - |
-| --van-calendar-header-box-shadow | _0 2px 10px rgba(125, 126, 128, 0.16)_ | - |
+| --van-calendar-header-shadow | _0 2px 10px rgba(125, 126, 128, 0.16)_ | - |
 | --van-calendar-header-title-height | _44px_ | - |
 | --van-calendar-header-title-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-header-subtitle-font-size | _var(--van-font-size-md)_ | - |
@@ -395,14 +395,14 @@ The component provides the following CSS variables, which can be used to customi
 | --van-calendar-day-height | _64px_ | - |
 | --van-calendar-day-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-range-edge-color | _var(--van-white)_ | - |
-| --van-calendar-range-edge-background-color | _var(--van-danger-color)_ | - |
+| --van-calendar-range-edge-background | _var(--van-danger-color)_ | - |
 | --van-calendar-range-middle-color | _var(--van-danger-color)_ | - |
 | --van-calendar-range-middle-background-opacity | _0.1_ | - |
 | --van-calendar-selected-day-size | _54px_ | - |
 | --van-calendar-selected-day-color | _var(--van-white)_ | - |
 | --van-calendar-info-font-size | _var(--van-font-size-xs)_ | - |
 | --van-calendar-info-line-height | _var(--van-line-height-xs)_ | - |
-| --van-calendar-selected-day-background-color | _var(--van-danger-color)_ | - |
+| --van-calendar-selected-day-background | _var(--van-danger-color)_ | - |
 | --van-calendar-day-disabled-color | _var(--van-text-color-tertiary)_ | - |
 | --van-calendar-confirm-button-height | _36px_ | - |
 | --van-calendar-confirm-button-margin | _7px 0_ | - |

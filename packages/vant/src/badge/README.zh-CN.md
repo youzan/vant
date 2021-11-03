@@ -161,9 +161,9 @@ import type { BadgeProps } from 'vant';
 | --van-badge-color | _var(--van-white)_ | - |
 | --van-badge-padding | _0 3px_ | - |
 | --van-badge-font-size | _var(--van-font-size-sm)_ | - |
-| --van-badge-font-weight | _var(--van-font-weight-bold)_ | - |
-| --van-badge-border-width | _var(--van-border-width-base)_ | - |
-| --van-badge-background-color | _var(--van-danger-color)_ | - |
+| --van-badge-font-weight | _var(--van-font-bold)_ | - |
+| --van-badge-border-width | _var(--van-border-width)_ | - |
+| --van-badge-background | _var(--van-danger-color)_ | - |
 | --van-badge-dot-color | _var(--van-danger-color)_ | - |
 | --van-badge-dot-size | _8px_ | - |
-| --van-badge-font-family | _-apple-system-font, Helvetica Neue, Arial, sans-serif_ | - |
+| --van-badge-font | _-apple-system-font, Helvetica Neue, Arial, sans-serif_ | - |

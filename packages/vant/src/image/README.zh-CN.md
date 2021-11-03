@@ -160,7 +160,7 @@ import type { ImageFit, ImageProps } from 'vant';
 | --- | --- | --- |
 | --van-image-placeholder-text-color | _var(--van-text-color-secondary)_ | - |
 | --van-image-placeholder-font-size | _var(--van-font-size-md)_ | - |
-| --van-image-placeholder-background-color | _var(--van-background-color)_ | - |
+| --van-image-placeholder-background | _var(--van-background)_ | - |
 | --van-image-loading-icon-size | _32px_ | - |
 | --van-image-loading-icon-color | _var(--van-gray-4)_ | - |
 | --van-image-error-icon-size | _32px_ | - |

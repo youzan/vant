@@ -4,8 +4,8 @@
   --van-pagination-item-width: 36px;
   --van-pagination-item-default-color: var(--van-primary-color);
   --van-pagination-item-disabled-color: var(--van-gray-7);
-  --van-pagination-item-disabled-background-color: var(--van-background-color);
-  --van-pagination-background-color: var(--van-background-color-light);
+  --van-pagination-item-disabled-background: var(--van-background);
+  --van-pagination-background: var(--van-background-light);
   --van-pagination-desc-color: var(--van-gray-7);
   --van-pagination-disabled-opacity: var(--van-disabled-opacity);
 }
@@ -27,7 +27,7 @@
     min-width: var(--van-pagination-item-width);
     height: var(--van-pagination-height);
     color: var(--van-pagination-item-default-color);
-    background: var(--van-pagination-background-color);
+    background: var(--van-pagination-background);
     cursor: pointer;
     user-select: none;
 
@@ -37,12 +37,12 @@
     }
 
     &::after {
-      border-width: var(--van-border-width-base) 0 var(--van-border-width-base)
-        var(--van-border-width-base);
+      border-width: var(--van-border-width) 0 var(--van-border-width)
+        var(--van-border-width);
     }
 
     &:last-child::after {
-      border-right-width: var(--van-border-width-base);
+      border-right-width: var(--van-border-width);
     }
 
     &--active {
@@ -61,7 +61,7 @@
     &,
     &:active {
       color: var(--van-pagination-item-disabled-color);
-      background-color: var(--van-pagination-item-disabled-background-color);
+      background-color: var(--van-pagination-item-disabled-background);
       cursor: not-allowed;
       opacity: var(--van-pagination-disabled-opacity);
     }
@@ -81,7 +81,7 @@
     .van-pagination__prev,
     .van-pagination__next {
       &::after {
-        border-width: var(--van-border-width-base);
+        border-width: var(--van-border-width);
       }
     }
   }

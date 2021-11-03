@@ -134,4 +134,4 @@ import type { StepsProps, StepsDirection } from 'vant';
 | --van-step-circle-size | _5px_ | - |
 | --van-step-circle-color | _var(--van-gray-6)_ | - |
 | --van-step-horizontal-title-font-size | _var(--van-font-size-sm)_ | - |
-| --van-steps-background-color | _var(--van-background-color-light)_ | - |
+| --van-steps-background | _var(--van-background-light)_ | - |

@@ -2,19 +2,19 @@
   --van-tag-padding: 0 var(--van-padding-base);
   --van-tag-text-color: var(--van-white);
   --van-tag-font-size: var(--van-font-size-sm);
-  --van-tag-border-radius: 2px;
+  --van-tag-radius: 2px;
   --van-tag-line-height: 16px;
   --van-tag-medium-padding: 2px 6px;
   --van-tag-large-padding: var(--van-padding-base) var(--van-padding-xs);
-  --van-tag-large-border-radius: var(--van-border-radius-md);
+  --van-tag-large-radius: var(--van-radius-md);
   --van-tag-large-font-size: var(--van-font-size-md);
-  --van-tag-round-border-radius: var(--van-border-radius-max);
+  --van-tag-round-radius: var(--van-radius-max);
   --van-tag-danger-color: var(--van-danger-color);
   --van-tag-primary-color: var(--van-primary-color);
   --van-tag-success-color: var(--van-success-color);
   --van-tag-warning-color: var(--van-warning-color);
   --van-tag-default-color: var(--van-gray-6);
-  --van-tag-plain-background-color: var(--van-background-color-light);
+  --van-tag-plain-background: var(--van-background-light);
 }
 
 .van-tag {
@@ -25,7 +25,7 @@
   color: var(--van-tag-text-color);
   font-size: var(--van-tag-font-size);
   line-height: var(--van-tag-line-height);
-  border-radius: var(--van-tag-border-radius);
+  border-radius: var(--van-tag-radius);
 
   &--default {
     background: var(--van-tag-default-color);
@@ -68,7 +68,7 @@
   }
 
   &--plain {
-    background: var(--van-tag-plain-background-color);
+    background: var(--van-tag-plain-background);
     border-color: currentColor;
 
     &::before {
@@ -92,12 +92,11 @@
   &--large {
     padding: var(--van-tag-large-padding);
     font-size: var(--van-tag-large-font-size);
-    border-radius: var(--van-tag-large-border-radius);
+    border-radius: var(--van-tag-large-radius);
   }
 
   &--mark {
-    border-radius: 0 var(--van-tag-round-border-radius)
-      var(--van-tag-round-border-radius) 0;
+    border-radius: 0 var(--van-tag-round-radius) var(--van-tag-round-radius) 0;
 
     &::after {
       display: block;
@@ -107,7 +106,7 @@
   }
 
   &--round {
-    border-radius: var(--van-tag-round-border-radius);
+    border-radius: var(--van-tag-round-radius);
   }
 
   &__close {

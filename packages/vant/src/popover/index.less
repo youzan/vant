@@ -1,18 +1,18 @@
 :root {
   --van-popover-arrow-size: 6px;
-  --van-popover-border-radius: var(--van-border-radius-lg);
+  --van-popover-radius: var(--van-radius-lg);
   --van-popover-action-width: 128px;
   --van-popover-action-height: 44px;
   --van-popover-action-font-size: var(--van-font-size-md);
   --van-popover-action-line-height: var(--van-line-height-md);
   --van-popover-action-icon-size: 20px;
   --van-popover-light-text-color: var(--van-text-color);
-  --van-popover-light-background-color: var(--van-background-color-light);
+  --van-popover-light-background: var(--van-background-light);
   --van-popover-light-action-disabled-text-color: var(
     --van-text-color-tertiary
   );
   --van-popover-dark-text-color: var(--van-white);
-  --van-popover-dark-background-color: #4a4a4a;
+  --van-popover-dark-background: #4a4a4a;
   --van-popover-dark-action-disabled-text-color: var(
     --van-text-color-secondary
   );
@@ -39,7 +39,7 @@
 
   &__content {
     overflow: hidden;
-    border-radius: var(--van-popover-border-radius);
+    border-radius: var(--van-popover-radius);
   }
 
   &__action {
@@ -216,12 +216,12 @@
     color: var(--van-popover-light-text-color);
 
     .van-popover__content {
-      background: var(--van-popover-light-background-color);
+      background: var(--van-popover-light-background);
       box-shadow: 0 2px 12px rgba(50, 50, 51, 0.12);
     }
 
     .van-popover__arrow {
-      color: var(--van-popover-light-background-color);
+      color: var(--van-popover-light-background);
     }
 
     .van-popover__action {
@@ -244,11 +244,11 @@
     color: var(--van-popover-dark-text-color);
 
     .van-popover__content {
-      background: var(--van-popover-dark-background-color);
+      background: var(--van-popover-dark-background);
     }
 
     .van-popover__arrow {
-      color: var(--van-popover-dark-background-color);
+      color: var(--van-popover-dark-background);
     }
 
     .van-popover__action {
@@ -279,10 +279,10 @@
   }
 
   &-zoom-enter-active {
-    transition-timing-function: var(--van-animation-timing-function-enter);
+    transition-timing-function: var(--van-ease-out);
   }
 
   &-zoom-leave-active {
-    transition-timing-function: var(--van-animation-timing-function-leave);
+    transition-timing-function: var(--van-ease-in);
   }
 }

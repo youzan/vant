@@ -2,9 +2,9 @@
   --van-card-padding: var(--van-padding-xs) var(--van-padding-md);
   --van-card-font-size: var(--van-font-size-sm);
   --van-card-text-color: var(--van-text-color);
-  --van-card-background-color: var(--van-gray-1);
+  --van-card-background: var(--van-gray-1);
   --van-card-thumb-size: 88px;
-  --van-card-thumb-border-radius: var(--van-border-radius-lg);
+  --van-card-thumb-radius: var(--van-radius-lg);
   --van-card-title-line-height: 16px;
   --van-card-desc-color: var(--van-gray-7);
   --van-card-desc-line-height: var(--van-line-height-md);
@@ -14,7 +14,7 @@
   --van-card-origin-price-font-size: var(--van-font-size-xs);
   --van-card-price-font-size: var(--van-font-size-sm);
   --van-card-price-integer-font-size: var(--van-font-size-lg);
-  --van-card-price-font-family: var(--van-price-integer-font-family);
+  --van-card-price-font: var(--van-price-font);
 }
 
 .van-card {
@@ -23,7 +23,7 @@
   padding: var(--van-card-padding);
   color: var(--van-card-text-color);
   font-size: var(--van-card-font-size);
-  background: var(--van-card-background-color);
+  background: var(--van-card-background);
 
   &:not(:first-child) {
     margin-top: var(--van-padding-xs);
@@ -41,7 +41,7 @@
     margin-right: var(--van-padding-xs);
 
     img {
-      border-radius: var(--van-card-thumb-border-radius);
+      border-radius: var(--van-card-thumb-radius);
     }
   }
 
@@ -66,7 +66,7 @@
 
   &__title {
     max-height: 32px;
-    font-weight: var(--van-font-weight-bold);
+    font-weight: var(--van-font-bold);
     line-height: var(--van-card-title-line-height);
   }
 
@@ -83,17 +83,17 @@
   &__price {
     display: inline-block;
     color: var(--van-card-price-color);
-    font-weight: var(--van-font-weight-bold);
+    font-weight: var(--van-font-bold);
     font-size: var(--van-card-price-font-size);
   }
 
   &__price-integer {
     font-size: var(--van-card-price-integer-font-size);
-    font-family: var(--van-card-price-font-family);
+    font-family: var(--van-card-price-font);
   }
 
   &__price-decimal {
-    font-family: var(--van-card-price-font-family);
+    font-family: var(--van-card-price-font);
   }
 
   &__origin-price {

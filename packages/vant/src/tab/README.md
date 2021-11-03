@@ -329,7 +329,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-tabs-default-color | _var(--van-danger-color)_ | - |
 | --van-tabs-line-height | _44px_ | - |
 | --van-tabs-card-height | _30px_ | - |
-| --van-tabs-nav-background-color | _var(--van-background-color-light)_ | - |
+| --van-tabs-nav-background | _var(--van-background-light)_ | - |
 | --van-tabs-bottom-bar-width | _40px_ | - |
 | --van-tabs-bottom-bar-height | _3px_ | - |
 | --van-tabs-bottom-bar-color | _var(--van-danger-color)_ | - |

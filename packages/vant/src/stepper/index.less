@@ -1,7 +1,7 @@
 :root {
-  --van-stepper-background-color: var(--van-active-color);
+  --van-stepper-background: var(--van-active-color);
   --van-stepper-button-icon-color: var(--van-text-color);
-  --van-stepper-button-disabled-color: var(--van-background-color);
+  --van-stepper-button-disabled-color: var(--van-background);
   --van-stepper-button-disabled-icon-color: var(--van-gray-5);
   --van-stepper-button-round-theme-color: var(--van-danger-color);
   --van-stepper-input-width: 32px;
@@ -10,8 +10,8 @@
   --van-stepper-input-line-height: normal;
   --van-stepper-input-text-color: var(--van-text-color);
   --van-stepper-input-disabled-text-color: var(--van-text-color-tertiary);
-  --van-stepper-input-disabled-background-color: var(--van-active-color);
-  --van-stepper-border-radius: var(--van-border-radius-md);
+  --van-stepper-input-disabled-background: var(--van-active-color);
+  --van-stepper-radius: var(--van-radius-md);
 }
 
 .van-stepper {
@@ -28,7 +28,7 @@
     padding: 0;
     color: var(--van-stepper-button-icon-color);
     vertical-align: middle;
-    background: var(--van-stepper-background-color);
+    background: var(--van-stepper-background);
     border: 0;
     cursor: pointer;
 
@@ -60,8 +60,7 @@
   }
 
   &__minus {
-    border-radius: var(--van-stepper-border-radius) 0 0
-      var(--van-stepper-border-radius);
+    border-radius: var(--van-stepper-radius) 0 0 var(--van-stepper-radius);
 
     &::after {
       display: none;
@@ -69,8 +68,7 @@
   }
 
   &__plus {
-    border-radius: 0 var(--van-stepper-border-radius)
-      var(--van-stepper-border-radius) 0;
+    border-radius: 0 var(--van-stepper-radius) var(--van-stepper-radius) 0;
   }
 
   &__input {
@@ -84,7 +82,7 @@
     line-height: var(--van-stepper-input-line-height);
     text-align: center;
     vertical-align: middle;
-    background: var(--van-stepper-background-color);
+    background: var(--van-stepper-background);
     border: 0;
     border-width: 1px 0;
     border-radius: 0;
@@ -92,7 +90,7 @@
 
     &:disabled {
       color: var(--van-stepper-input-disabled-text-color);
-      background-color: var(--van-stepper-input-disabled-background-color);
+      background-color: var(--van-stepper-input-disabled-background);
       // fix disabled color in iOS
       -webkit-text-fill-color: var(--van-stepper-input-disabled-text-color);
       opacity: 1;
@@ -125,7 +123,7 @@
 
     .van-stepper__minus {
       color: var(--van-stepper-button-round-theme-color);
-      background-color: var(--van-background-color-light);
+      background-color: var(--van-background-light);
       border: 1px solid var(--van-stepper-button-round-theme-color);
     }
   }

@@ -142,7 +142,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 - Circle: add start-position prop [#9305](https://github.com/youzan/vant/issues/9305)
 - Slider: add reverse prop [#9308](https://github.com/youzan/vant/issues/9308)
-- NumberKeyboard: add van-number-keyboard-key-background-color css var [#9303](https://github.com/youzan/vant/issues/9303)
+- NumberKeyboard: add van-number-keyboard-key-background css var [#9303](https://github.com/youzan/vant/issues/9303)
 - PasswordInput: add password-input-text-color css var [#9304](https://github.com/youzan/vant/issues/9304)
 
 **Bug Fixes**
@@ -401,7 +401,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **Feature**
 
-- ActionBar: add @action-bar-icon-background-color less var [#8474](https://github.com/youzan/vant/issues/8474)
+- ActionBar: add @action-bar-icon-background less var [#8474](https://github.com/youzan/vant/issues/8474)
 - Popover: bump @popperjs/core@2.9.2 [0d1323](https://github.com/youzan/vant/commit/0d132337d5d263957a7993d60e47a18efec7313e)
 - perf: reduce bundle size [ba3e6d](https://github.com/youzan/vant/commit/ba3e6d56a0bc7ae3acc25b1380f054da3b9b020f)
 

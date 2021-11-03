@@ -105,4 +105,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-loading-text-font-size | _var(--van-font-size-md)_ | - |
 | --van-loading-spinner-color | _var(--van-gray-5)_ | - |
 | --van-loading-spinner-size | _30px_ | - |
-| --van-loading-spinner-animation-duration | _0.8s_ | - |
+| --van-loading-spinner-duration | _0.8s_ | - |

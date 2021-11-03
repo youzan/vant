@@ -3,8 +3,8 @@
   --van-swipe-indicator-margin: var(--van-padding-sm);
   --van-swipe-indicator-active-opacity: 1;
   --van-swipe-indicator-inactive-opacity: 0.3;
-  --van-swipe-indicator-active-background-color: var(--van-primary-color);
-  --van-swipe-indicator-inactive-background-color: var(--van-border-color);
+  --van-swipe-indicator-active-background: var(--van-primary-color);
+  --van-swipe-indicator-inactive-background: var(--van-border-color);
 }
 
 .van-swipe {
@@ -45,18 +45,18 @@
   &__indicator {
     width: var(--van-swipe-indicator-size);
     height: var(--van-swipe-indicator-size);
-    background-color: var(--van-swipe-indicator-inactive-background-color);
+    background-color: var(--van-swipe-indicator-inactive-background);
     border-radius: 100%;
     opacity: var(--van-swipe-indicator-inactive-opacity);
-    transition: opacity var(--van-animation-duration-fast),
-      background-color var(--van-animation-duration-fast);
+    transition: opacity var(--van-duration-fast),
+      background-color var(--van-duration-fast);
 
     &:not(:last-child) {
       margin-right: var(--van-swipe-indicator-size);
     }
 
     &--active {
-      background-color: var(--van-swipe-indicator-active-background-color);
+      background-color: var(--van-swipe-indicator-active-background);
       opacity: var(--van-swipe-indicator-active-opacity);
     }
   }

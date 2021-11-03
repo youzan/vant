@@ -153,10 +153,10 @@ import type { SwitchProps } from 'vant';
 | --van-switch-width | _2em_ | - |
 | --van-switch-height | _1em_ | - |
 | --van-switch-node-size | _1em_ | - |
-| --van-switch-node-background-color | _var(--van-white)_ | - |
-| --van-switch-node-box-shadow | _0 3px 1px 0 rgba(0, 0, 0, 0.05)_ | - |
-| --van-switch-background-color | _var(--van-background-color-light)_ | - |
-| --van-switch-on-background-color | _var(--van-primary-color)_ | - |
-| --van-switch-transition-duration | _var(--van-animation-duration-base)_ | - |
+| --van-switch-node-background | _var(--van-white)_ | - |
+| --van-switch-node-shadow | _0 3px 1px 0 rgba(0, 0, 0, 0.05)_ | - |
+| --van-switch-background | _var(--van-background-light)_ | - |
+| --van-switch-on-background | _var(--van-primary-color)_ | - |
+| --van-switch-duration | _var(--van-duration-base)_ | - |
 | --van-switch-disabled-opacity | _var(--van-disabled-opacity)_ | - |
-| --van-switch-border | _var(--van-border-width-base) solid rgba(0, 0, 0, 0.1)_ | - |
+| --van-switch-border | _var(--van-border-width) solid rgba(0, 0, 0, 0.1)_ | - |

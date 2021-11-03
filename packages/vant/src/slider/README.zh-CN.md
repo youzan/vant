@@ -197,14 +197,14 @@ import type { SliderProps } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-slider-active-background-color | _var(--van-primary-color)_ | - |
-| --van-slider-inactive-background-color | _var(--van-gray-3)_ | - |
-| --van-slider-disabled-opacity | _var(--van-disabled-opacity)_ | - |
-| --van-slider-bar-height | _2px_ | - |
-| --van-slider-button-width | _24px_ | - |
-| --van-slider-button-height | _24px_ | - |
-| --van-slider-button-border-radius | _50%_ | - |
-| --van-slider-button-background-color | _var(--van-white)_ | - |
-| --van-slider-button-box-shadow | _0 1px 2px rgba(0, 0, 0, 0.5)_ | - |
+| 名称                             | 默认值                         | 描述 |
+| -------------------------------- | ------------------------------ | ---- |
+| --van-slider-active-background   | _var(--van-primary-color)_     | -    |
+| --van-slider-inactive-background | _var(--van-gray-3)_            | -    |
+| --van-slider-disabled-opacity    | _var(--van-disabled-opacity)_  | -    |
+| --van-slider-bar-height          | _2px_                          | -    |
+| --van-slider-button-width        | _24px_                         | -    |
+| --van-slider-button-height       | _24px_                         | -    |
+| --van-slider-button-radius       | _50%_                          | -    |
+| --van-slider-button-background   | _var(--van-white)_             | -    |
+| --van-slider-button-shadow       | _0 1px 2px rgba(0, 0, 0, 0.5)_ | -    |

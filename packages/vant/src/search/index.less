@@ -1,7 +1,7 @@
 :root {
   --van-search-padding: 10px var(--van-padding-sm);
-  --van-search-background-color: var(--van-background-color-light);
-  --van-search-content-background-color: var(--van-gray-1);
+  --van-search-background: var(--van-background-light);
+  --van-search-content-background: var(--van-gray-1);
   --van-search-input-height: 34px;
   --van-search-label-padding: 0 5px;
   --van-search-label-color: var(--van-text-color);
@@ -17,17 +17,17 @@
   align-items: center;
   box-sizing: border-box;
   padding: var(--van-search-padding);
-  background: var(--van-search-background-color);
+  background: var(--van-search-background);
 
   &__content {
     display: flex;
     flex: 1;
     padding-left: var(--van-padding-sm);
-    background: var(--van-search-content-background-color);
-    border-radius: var(--van-border-radius-sm);
+    background: var(--van-search-content-background);
+    border-radius: var(--van-radius-sm);
 
     &--round {
-      border-radius: var(--van-border-radius-max);
+      border-radius: var(--van-radius-max);
     }
   }
 

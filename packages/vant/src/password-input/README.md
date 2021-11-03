@@ -159,8 +159,8 @@ The component provides the following CSS variables, which can be used to customi
 | --van-password-input-height | _50px_ | - |
 | --van-password-input-margin | _0 var(--van-padding-md)_ | - |
 | --van-password-input-font-size | _20px_ | - |
-| --van-password-input-border-radius | _6px_ | - |
-| --van-password-input-background-color | _var(--van-background-color-light)_ | - |
+| --van-password-input-radius | _6px_ | - |
+| --van-password-input-background | _var(--van-background-light)_ | - |
 | --van-password-input-info-color | _var(--van-text-color-secondary)_ | - |
 | --van-password-input-info-font-size | _var(--van-font-size-md)_ | - |
 | --van-password-input-error-info-color | _var(--van-danger-color)_ | - |
@@ -170,4 +170,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-password-input-cursor-color | _var(--van-text-color)_ | - |
 | --van-password-input-cursor-width | _1px_ | - |
 | --van-password-input-cursor-height | _40%_ | - |
-| --van-password-input-cursor-animation-duration | _1s_ | - |
+| --van-password-input-cursor-duration | _1s_ | - |

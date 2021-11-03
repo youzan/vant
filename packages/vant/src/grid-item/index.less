@@ -1,6 +1,6 @@
 :root {
   --van-grid-item-content-padding: var(--van-padding-md) var(--van-padding-xs);
-  --van-grid-item-content-background-color: var(--van-background-color-light);
+  --van-grid-item-content-background: var(--van-background-light);
   --van-grid-item-content-active-color: var(--van-active-color);
   --van-grid-item-icon-size: 28px;
   --van-grid-item-text-color: var(--van-gray-7);
@@ -37,12 +37,11 @@
     box-sizing: border-box;
     height: 100%;
     padding: var(--van-grid-item-content-padding);
-    background: var(--van-grid-item-content-background-color);
+    background: var(--van-grid-item-content-background);
 
     &::after {
       z-index: 1;
-      border-width: 0 var(--van-border-width-base) var(--van-border-width-base)
-        0;
+      border-width: 0 var(--van-border-width) var(--van-border-width) 0;
     }
 
     &--square {
@@ -83,7 +82,7 @@
 
     &--surround {
       &::after {
-        border-width: var(--van-border-width-base);
+        border-width: var(--van-border-width);
       }
     }
 

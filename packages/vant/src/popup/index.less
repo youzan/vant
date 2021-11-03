@@ -1,7 +1,7 @@
 :root {
-  --van-popup-background-color: var(--van-background-color-light);
-  --van-popup-transition: transform var(--van-animation-duration-base);
-  --van-popup-round-border-radius: 16px;
+  --van-popup-background: var(--van-background-light);
+  --van-popup-transition: transform var(--van-duration-base);
+  --van-popup-round-radius: 16px;
   --van-popup-close-icon-size: 22px;
   --van-popup-close-icon-color: var(--van-gray-5);
   --van-popup-close-icon-margin: 16px;
@@ -17,7 +17,7 @@
     position: fixed;
     max-height: 100%;
     overflow-y: auto;
-    background: var(--van-popup-background-color);
+    background: var(--van-popup-background);
     transition: var(--van-popup-transition);
     -webkit-overflow-scrolling: touch;
 
@@ -27,7 +27,7 @@
       transform: translate3d(-50%, -50%, 0);
 
       &.van-popup--round {
-        border-radius: var(--van-popup-round-border-radius);
+        border-radius: var(--van-popup-round-radius);
       }
     }
 
@@ -37,8 +37,8 @@
       width: 100%;
 
       &.van-popup--round {
-        border-radius: 0 0 var(--van-popup-round-border-radius)
-          var(--van-popup-round-border-radius);
+        border-radius: 0 0 var(--van-popup-round-radius)
+          var(--van-popup-round-radius);
       }
     }
 
@@ -48,8 +48,8 @@
       transform: translate3d(0, -50%, 0);
 
       &.van-popup--round {
-        border-radius: var(--van-popup-round-border-radius) 0 0
-          var(--van-popup-round-border-radius);
+        border-radius: var(--van-popup-round-radius) 0 0
+          var(--van-popup-round-radius);
       }
     }
 
@@ -59,8 +59,8 @@
       width: 100%;
 
       &.van-popup--round {
-        border-radius: var(--van-popup-round-border-radius)
-          var(--van-popup-round-border-radius) 0 0;
+        border-radius: var(--van-popup-round-radius)
+          var(--van-popup-round-radius) 0 0;
       }
     }
 
@@ -70,8 +70,8 @@
       transform: translate3d(0, -50%, 0);
 
       &.van-popup--round {
-        border-radius: 0 var(--van-popup-round-border-radius)
-          var(--van-popup-round-border-radius) 0;
+        border-radius: 0 var(--van-popup-round-radius)
+          var(--van-popup-round-radius) 0;
       }
     }
 
@@ -79,14 +79,14 @@
     &-slide-left-enter-active,
     &-slide-right-enter-active,
     &-slide-bottom-enter-active {
-      transition-timing-function: var(--van-animation-timing-function-enter);
+      transition-timing-function: var(--van-ease-out);
     }
 
     &-slide-top-leave-active,
     &-slide-left-leave-active,
     &-slide-right-leave-active,
     &-slide-bottom-leave-active {
-      transition-timing-function: var(--van-animation-timing-function-leave);
+      transition-timing-function: var(--van-ease-in);
     }
 
     &-slide-top-enter-from,

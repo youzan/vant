@@ -195,12 +195,12 @@ import type { CircleProps, CircleStartPosition } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                          | 默认值                        | 描述 |
-| ----------------------------- | ----------------------------- | ---- |
-| --van-circle-size             | _100px_                       | -    |
-| --van-circle-color            | _var(--van-primary-color)_    | -    |
-| --van-circle-layer-color      | _var(--van-white)_            | -    |
-| --van-circle-text-color       | _var(--van-text-color)_       | -    |
-| --van-circle-text-font-weight | _var(--van-font-weight-bold)_ | -    |
-| --van-circle-text-font-size   | _var(--van-font-size-md)_     | -    |
-| --van-circle-text-line-height | _var(--van-line-height-md)_   | -    |
+| 名称                          | 默认值                      | 描述 |
+| ----------------------------- | --------------------------- | ---- |
+| --van-circle-size             | _100px_                     | -    |
+| --van-circle-color            | _var(--van-primary-color)_  | -    |
+| --van-circle-layer-color      | _var(--van-white)_          | -    |
+| --van-circle-text-color       | _var(--van-text-color)_     | -    |
+| --van-circle-text-font-weight | _var(--van-font-bold)_      | -    |
+| --van-circle-text-font-size   | _var(--van-font-size-md)_   | -    |
+| --van-circle-text-line-height | _var(--van-line-height-md)_ | -    |

@@ -1,11 +1,11 @@
 :root {
   --van-skeleton-row-height: 16px;
-  --van-skeleton-row-background-color: var(--van-active-color);
+  --van-skeleton-row-background: var(--van-active-color);
   --van-skeleton-row-margin-top: var(--van-padding-sm);
   --van-skeleton-title-width: 40%;
   --van-skeleton-avatar-size: 32px;
-  --van-skeleton-avatar-background-color: var(--van-active-color);
-  --van-skeleton-animation-duration: 1.2s;
+  --van-skeleton-avatar-background: var(--van-active-color);
+  --van-skeleton-duration: 1.2s;
 }
 
 .van-skeleton {
@@ -17,10 +17,10 @@
     width: var(--van-skeleton-avatar-size);
     height: var(--van-skeleton-avatar-size);
     margin-right: var(--van-padding-md);
-    background: var(--van-skeleton-avatar-background-color);
+    background: var(--van-skeleton-avatar-background);
 
     &--round {
-      border-radius: var(--van-border-radius-max);
+      border-radius: var(--van-radius-max);
     }
   }
 
@@ -35,7 +35,7 @@
   &__row,
   &__title {
     height: var(--van-skeleton-row-height);
-    background: var(--van-skeleton-row-background-color);
+    background: var(--van-skeleton-row-background);
   }
 
   &__title {
@@ -54,14 +54,14 @@
   }
 
   &--animate {
-    animation: van-skeleton-blink var(--van-skeleton-animation-duration)
-      ease-in-out infinite;
+    animation: van-skeleton-blink var(--van-skeleton-duration) ease-in-out
+      infinite;
   }
 
   &--round {
     .van-skeleton__row,
     .van-skeleton__title {
-      border-radius: var(--van-border-radius-max);
+      border-radius: var(--van-radius-max);
     }
   }
 }

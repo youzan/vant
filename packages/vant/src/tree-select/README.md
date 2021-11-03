@@ -245,8 +245,8 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default Value | Description |
 | --- | --- | --- |
 | --van-tree-select-font-size | _var(--van-font-size-md)_ | - |
-| --van-tree-select-nav-background-color | _var(--van-background-color)_ | - |
-| --van-tree-select-content-background-color | _var(--van-background-color-light)_ | - |
+| --van-tree-select-nav-background | _var(--van-background)_ | - |
+| --van-tree-select-content-background | _var(--van-background-light)_ | - |
 | --van-tree-select-nav-item-padding | _14px var(--van-padding-sm)_ | - |
 | --van-tree-select-item-height | _48px_ | - |
 | --van-tree-select-item-active-color | _var(--van-danger-color)_ | - |

@@ -127,9 +127,9 @@ The component provides the following CSS variables, which can be used to customi
 | --van-card-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
 | --van-card-font-size | _var(--van-font-size-sm)_ | - |
 | --van-card-text-color | _var(--van-text-color)_ | - |
-| --van-card-background-color | _var(--van-gray-1)_ | - |
+| --van-card-background | _var(--van-gray-1)_ | - |
 | --van-card-thumb-size | _88px_ | - |
-| --van-card-thumb-border-radius | _var(--van-border-radius-lg)_ | - |
+| --van-card-thumb-radius | _var(--van-radius-lg)_ | - |
 | --van-card-title-line-height | _16px_ | - |
 | --van-card-desc-color | _var(--van-gray-7)_ | - |
 | --van-card-desc-line-height | _var(--van-line-height-md)_ | - |
@@ -139,4 +139,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-card-origin-price-font-size | _var(--van-font-size-xs)_ | - |
 | --van-card-price-font-size | _var(--van-font-size-sm)_ | - |
 | --van-card-price-integer-font-size | _var(--van-font-size-lg)_ | - |
-| --van-card-price-font-family | _var(--van-price-integer-font-family)_ | - |
+| --van-card-price-font | _var(--van-price-font)_ | - |

@@ -156,6 +156,6 @@ The component provides the following CSS variables, which can be used to customi
 | --van-notice-bar-text-color | _var(--van-orange-dark)_ | - |
 | --van-notice-bar-font-size | _var(--van-font-size-md)_ | - |
 | --van-notice-bar-line-height | _24px_ | - |
-| --van-notice-bar-background-color | _var(--van-orange-light)_ | - |
+| --van-notice-bar-background | _var(--van-orange-light)_ | - |
 | --van-notice-bar-icon-size | _16px_ | - |
 | --van-notice-bar-icon-min-width | _24px_ | - |

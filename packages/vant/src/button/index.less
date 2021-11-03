@@ -12,24 +12,24 @@
   --van-button-default-line-height: 1.2;
   --van-button-default-font-size: var(--van-font-size-lg);
   --van-button-default-color: var(--van-text-color);
-  --van-button-default-background-color: var(--van-background-color-light);
+  --van-button-default-background: var(--van-background-light);
   --van-button-default-border-color: var(--van-border-color);
   --van-button-primary-color: var(--van-white);
-  --van-button-primary-background-color: var(--van-primary-color);
+  --van-button-primary-background: var(--van-primary-color);
   --van-button-primary-border-color: var(--van-primary-color);
   --van-button-success-color: var(--van-white);
-  --van-button-success-background-color: var(--van-success-color);
+  --van-button-success-background: var(--van-success-color);
   --van-button-success-border-color: var(--van-success-color);
   --van-button-danger-color: var(--van-white);
-  --van-button-danger-background-color: var(--van-danger-color);
+  --van-button-danger-background: var(--van-danger-color);
   --van-button-danger-border-color: var(--van-danger-color);
   --van-button-warning-color: var(--van-white);
-  --van-button-warning-background-color: var(--van-warning-color);
+  --van-button-warning-background: var(--van-warning-color);
   --van-button-warning-border-color: var(--van-warning-color);
-  --van-button-border-width: var(--van-border-width-base);
-  --van-button-border-radius: var(--van-border-radius-sm);
-  --van-button-round-border-radius: var(--van-border-radius-max);
-  --van-button-plain-background-color: var(--van-white);
+  --van-button-border-width: var(--van-border-width);
+  --van-button-radius: var(--van-radius-sm);
+  --van-button-round-radius: var(--van-radius-max);
+  --van-button-plain-background: var(--van-white);
   --van-button-disabled-opacity: var(--van-disabled-opacity);
   --van-button-icon-size: 1.2em;
   --van-button-loading-icon-size: 20px;
@@ -45,9 +45,9 @@
   font-size: var(--van-button-default-font-size);
   line-height: var(--van-button-default-line-height);
   text-align: center;
-  border-radius: var(--van-button-border-radius);
+  border-radius: var(--van-button-radius);
   cursor: pointer;
-  transition: opacity var(--van-animation-duration-fast);
+  transition: opacity var(--van-duration-fast);
   -webkit-appearance: none;
 
   &::before {
@@ -78,56 +78,56 @@
 
   &--default {
     color: var(--van-button-default-color);
-    background: var(--van-button-default-background-color);
+    background: var(--van-button-default-background);
     border: var(--van-button-border-width) solid
       var(--van-button-default-border-color);
   }
 
   &--primary {
     color: var(--van-button-primary-color);
-    background: var(--van-button-primary-background-color);
+    background: var(--van-button-primary-background);
     border: var(--van-button-border-width) solid
       var(--van-button-primary-border-color);
   }
 
   &--success {
     color: var(--van-button-success-color);
-    background: var(--van-button-success-background-color);
+    background: var(--van-button-success-background);
     border: var(--van-button-border-width) solid
       var(--van-button-success-border-color);
   }
 
   &--danger {
     color: var(--van-button-danger-color);
-    background: var(--van-button-danger-background-color);
+    background: var(--van-button-danger-background);
     border: var(--van-button-border-width) solid
       var(--van-button-danger-border-color);
   }
 
   &--warning {
     color: var(--van-button-warning-color);
-    background: var(--van-button-warning-background-color);
+    background: var(--van-button-warning-background);
     border: var(--van-button-border-width) solid
       var(--van-button-warning-border-color);
   }
 
   &--plain {
-    background: var(--van-button-plain-background-color);
+    background: var(--van-button-plain-background);
 
     &.van-button--primary {
-      color: var(--van-button-primary-background-color);
+      color: var(--van-button-primary-background);
     }
 
     &.van-button--success {
-      color: var(--van-button-success-background-color);
+      color: var(--van-button-success-background);
     }
 
     &.van-button--danger {
-      color: var(--van-button-danger-background-color);
+      color: var(--van-button-danger-background);
     }
 
     &.van-button--warning {
-      color: var(--van-button-warning-background-color);
+      color: var(--van-button-warning-background);
     }
   }
 
@@ -183,7 +183,7 @@
   }
 
   &--round {
-    border-radius: var(--van-button-round-border-radius);
+    border-radius: var(--van-button-round-radius);
   }
 
   &--square {
@@ -222,11 +222,11 @@
 
     &::after {
       border-color: inherit;
-      border-radius: calc(var(--van-button-border-radius) * 2);
+      border-radius: calc(var(--van-button-radius) * 2);
     }
 
     &.van-button--round::after {
-      border-radius: var(--van-button-round-border-radius);
+      border-radius: var(--van-button-round-radius);
     }
 
     &.van-button--square::after {

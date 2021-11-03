@@ -1,21 +1,21 @@
 :root {
-  --van-cell-group-background-color: var(--van-background-color-light);
+  --van-cell-group-background: var(--van-background-light);
   --van-cell-group-title-color: var(--van-text-color-secondary);
   --van-cell-group-title-padding: var(--van-padding-md) var(--van-padding-md);
   --van-cell-group-title-font-size: var(--van-font-size-md);
   --van-cell-group-title-line-height: 16px;
   --van-cell-group-inset-padding: 0 var(--van-padding-md);
-  --van-cell-group-inset-border-radius: var(--van-border-radius-lg);
+  --van-cell-group-inset-radius: var(--van-radius-lg);
   --van-cell-group-inset-title-padding: var(--van-padding-md)
     var(--van-padding-md);
 }
 
 .van-cell-group {
-  background: var(--van-cell-group-background-color);
+  background: var(--van-cell-group-background);
 
   &--inset {
     margin: var(--van-cell-group-inset-padding);
-    border-radius: var(--van-cell-group-inset-border-radius);
+    border-radius: var(--van-cell-group-inset-radius);
     overflow: hidden;
   }
 

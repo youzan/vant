@@ -5,10 +5,10 @@
   --van-coupon-content-height: 84px;
   --van-coupon-content-padding: 14px 0;
   --van-coupon-content-text-color: var(--van-text-color);
-  --van-coupon-background-color: var(--van-background-color-light);
-  --van-coupon-active-background-color: var(--van-active-color);
-  --van-coupon-border-radius: var(--van-border-radius-lg);
-  --van-coupon-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  --van-coupon-background: var(--van-background-light);
+  --van-coupon-active-background: var(--van-active-color);
+  --van-coupon-radius: var(--van-radius-lg);
+  --van-coupon-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   --van-coupon-head-width: 96px;
   --van-coupon-amount-color: var(--van-danger-color);
   --van-coupon-amount-font-size: 30px;
@@ -23,12 +23,12 @@
 .van-coupon {
   margin: var(--van-coupon-margin);
   overflow: hidden;
-  background: var(--van-coupon-background-color);
-  border-radius: var(--van-coupon-border-radius);
-  box-shadow: var(--van-coupon-box-shadow);
+  background: var(--van-coupon-background);
+  border-radius: var(--van-coupon-radius);
+  box-shadow: var(--van-coupon-shadow);
 
   &:active {
-    background-color: var(--van-coupon-active-background-color);
+    background-color: var(--van-coupon-active-background);
   }
 
   &__content {
@@ -57,7 +57,7 @@
 
   &__amount {
     margin-bottom: 6px;
-    font-weight: var(--van-font-weight-bold);
+    font-weight: var(--van-font-bold);
     font-size: var(--van-coupon-amount-font-size);
     .ellipsis();
 
@@ -80,8 +80,7 @@
   &__body {
     position: relative;
     flex: 1;
-    border-radius: 0 var(--van-coupon-border-radius)
-      var(--van-coupon-border-radius) 0;
+    border-radius: 0 var(--van-coupon-radius) var(--van-coupon-radius) 0;
   }
 
   &__name {
@@ -115,7 +114,7 @@
 
   &--disabled {
     &:active {
-      background-color: var(--van-coupon-background-color);
+      background-color: var(--van-coupon-background);
     }
 
     .van-coupon-item__content {

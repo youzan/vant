@@ -1,7 +1,7 @@
 :root {
   --van-dropdown-menu-height: 48px;
-  --van-dropdown-menu-background-color: var(--van-background-color-light);
-  --van-dropdown-menu-box-shadow: 0 2px 12px rgba(100, 101, 102, 0.12);
+  --van-dropdown-menu-background: var(--van-background-light);
+  --van-dropdown-menu-shadow: 0 2px 12px rgba(100, 101, 102, 0.12);
   --van-dropdown-menu-title-font-size: 15px;
   --van-dropdown-menu-title-text-color: var(--van-text-color);
   --van-dropdown-menu-title-active-text-color: var(--van-danger-color);
@@ -21,8 +21,8 @@
     position: relative;
     display: flex;
     height: var(--van-dropdown-menu-height);
-    background: var(--van-dropdown-menu-background-color);
-    box-shadow: var(--van-dropdown-menu-box-shadow);
+    background: var(--van-dropdown-menu-background);
+    box-shadow: var(--van-dropdown-menu-shadow);
 
     &--opened {
       z-index: calc(var(--van-dropdown-item-z-index) + 1);

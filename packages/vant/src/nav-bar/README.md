@@ -129,13 +129,13 @@ import type { NavbarProps } from 'vant';
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name | Default Value | Description |
-| --- | --- | --- |
-| --van-nav-bar-height | _46px_ | - |
-| --van-nav-bar-background-color | _var(--van-background-color-light)_ | - |
-| --van-nav-bar-arrow-size | _16px_ | - |
-| --van-nav-bar-icon-color | _var(--van-primary-color)_ | - |
-| --van-nav-bar-text-color | _var(--van-primary-color)_ | - |
-| --van-nav-bar-title-font-size | _var(--van-font-size-lg)_ | - |
-| --van-nav-bar-title-text-color | _var(--van-text-color)_ | - |
-| --van-nav-bar-z-index | _1_ | - |
+| Name                           | Default Value                 | Description |
+| ------------------------------ | ----------------------------- | ----------- |
+| --van-nav-bar-height           | _46px_                        | -           |
+| --van-nav-bar-background       | _var(--van-background-light)_ | -           |
+| --van-nav-bar-arrow-size       | _16px_                        | -           |
+| --van-nav-bar-icon-color       | _var(--van-primary-color)_    | -           |
+| --van-nav-bar-text-color       | _var(--van-primary-color)_    | -           |
+| --van-nav-bar-title-font-size  | _var(--van-font-size-lg)_     | -           |
+| --van-nav-bar-title-text-color | _var(--van-text-color)_       | -           |
+| --van-nav-bar-z-index          | _1_                           | -           |
