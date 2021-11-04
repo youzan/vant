@@ -86,7 +86,11 @@ export default {
               },
               {
                 path: 'migrate-from-v2',
-                title: '从 v2 升级',
+                title: '从 v2 升级到 v3',
+              },
+              {
+                path: 'migrate-from-v3',
+                title: '从 v3 升级到 v4',
               },
               {
                 path: 'contribution',
