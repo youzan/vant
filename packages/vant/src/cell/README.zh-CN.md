@@ -202,7 +202,12 @@ app.use(CellGroup);
 组件导出以下类型定义：
 
 ```ts
-import type { CellProps, CellGroupProps, CellArrowDirection } from 'vant';
+import type {
+  CellSize,
+  CellProps,
+  CellGroupProps,
+  CellArrowDirection,
+} from 'vant';
 ```
 
 ## 主题定制

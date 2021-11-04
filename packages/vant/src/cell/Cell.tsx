@@ -23,11 +23,13 @@ import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('cell');
 
+export type CellSize = 'normal' | 'large';
+
 export type CellArrowDirection = 'up' | 'down' | 'left' | 'right';
 
 export const cellSharedProps = {
   icon: String,
-  size: String as PropType<'large'>,
+  size: String as PropType<CellSize>,
   title: numericProp,
   value: numericProp,
   label: numericProp,
