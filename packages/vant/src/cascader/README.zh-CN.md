@@ -295,6 +295,7 @@ export default {
 | title | 自定义顶部标题 | - |
 | option `v3.1.4` | 自定义选项文字 | _{ option: Option, selected: boolean }_ |
 | options-top `v3.2.7` | 自定义选项上方的内容 | _{ tabIndex: number }_ |
+| options-bottom `v3.2.8` | 自定义选项下方的内容 | _{ tabIndex: number }_ |
 
 ### 类型定义
 

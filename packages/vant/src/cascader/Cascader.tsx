@@ -259,10 +259,9 @@ export default defineComponent({
             unselected: !selected,
           })}
         >
-          {slots['options-top']
-            ? slots['options-top']({ tabIndex: activeTab.value })
-            : null}
+          {slots['options-top']?.({ tabIndex })}
           {renderOptions(options, selected, tabIndex)}
+          {slots['options-bottom']?.({ tabIndex })}
         </Tab>
       );
     };
