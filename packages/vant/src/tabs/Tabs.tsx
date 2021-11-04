@@ -295,13 +295,6 @@ export default defineComponent({
       const { title, disabled } = children[index];
       const name = getTabName(children[index], index);
 
-      emit('click-tab', {
-        name,
-        title,
-        event,
-        disabled,
-      });
-
       if (disabled) {
         // @deprecated
         // should be removed in next major version
@@ -321,6 +314,13 @@ export default defineComponent({
 
         route(item as ComponentPublicInstance<RouteProps>);
       }
+
+      emit('click-tab', {
+        name,
+        title,
+        event,
+        disabled,
+      });
     };
 
     const onStickyScroll = (params: {
