@@ -16,6 +16,24 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.2.7](https://github.com/youzan/vant/compare/v3.2.6...v3.2.7)
+
+`2021-11-04`
+
+**Feature**
+
+- export all props type [#9717](https://github.com/youzan/vant/issues/9717)
+- add --van-text-color-2 CSS var [#9759](https://github.com/youzan/vant/issues/9759)
+- add --van-text-color-3 CSS var [#9776](https://github.com/youzan/vant/issues/9776)
+- Cascader: add options-top slot [#9732](https://github.com/youzan/vant/issues/9732)
+- Coupon: add --van-coupon-content-text-color CSS var [#9760](https://github.com/youzan/vant/issues/9760)
+- Picker: add --van-picker-mask-color CSS var [#9783](https://github.com/youzan/vant/issues/9783)
+
+**Bug Fixes**
+
+- Field: adjust textarea size when focus/blur [#9719](https://github.com/youzan/vant/issues/9719)
+- fix --van-border-color should affect hairline [#9751](https://github.com/youzan/vant/issues/9751)
+
 ### [v3.2.6](https://github.com/youzan/vant/compare/v3.2.5...v3.2.6)
 
 `2021-10-24`
