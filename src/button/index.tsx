@@ -23,7 +23,7 @@ export type ButtonProps = RouteProps & {
   text?: string;
   icon?: string;
   color?: string;
-  block?: boolean;
+  block?: string;
   plain?: boolean;
   round?: boolean;
   square?: boolean;
@@ -180,7 +180,7 @@ function Button(
         loading,
         disabled,
         hairline,
-        block: props.block,
+        block: props.block === 'blockb',
         // round: props.round,
         // square: props.square,
         round: props.squareroud && props.squareroud === 'round' ? true : false,
@@ -271,7 +271,10 @@ Button.props = {
   text: String,
   icon: String,
   color: String,
-  block: Boolean,
+  block: {
+    type: String,
+    default: 'spanb'
+  },
   plain: Boolean,
   // round: Boolean,
   // square: Boolean,

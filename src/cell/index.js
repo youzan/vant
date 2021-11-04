@@ -83,7 +83,7 @@ export default createComponent({
     }
 
     function Value() {
-      const showValue = slots() || (isDef(value) && value && value.length);
+      const showValue = slots() || (isDef(value) && value !== '');
       //@ts-ignore
       const ifDesigner = (parent.$env && parent.$env.VUE_APP_DESIGNER);
       // if(infield) {

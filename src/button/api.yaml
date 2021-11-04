@@ -65,11 +65,11 @@
       title: 展示方式
       type: string
       options:
-        - value: false
+        - value: spanb
           title: 行内展示
-        - value: true
+        - value: blockb
           title: 块级展示
-      default: false
+      default: spanb
       description: 展示方式
     - name: icon
       title: 图标

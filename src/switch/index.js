@@ -32,6 +32,9 @@ export default createComponent({
     },
   },
   watch: {
+    value(newValue, oldValue) {
+      this.cvalue = newValue;
+    },
     cvalue(newValue, oldValue) {
       this.$emit('input', newValue);
       this.$emit('change', newValue);
