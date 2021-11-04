@@ -1,8 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` should allow more custom content 1`] = `
+exports[`should change close icon when using close-icon prop 1`] = `
+<i class="van-badge__wrapper van-icon van-icon-success van-cascader__close-icon van-haptics-feedback">
+</i>
+`;
+
+exports[`should render option slot correctly 1`] = `
+<li class="van-cascader__option">
+  Custom Option foo
+</li>
+`;
+
+exports[`should render options-top、options-bottom slots correctly 1`] = `
 <div class="van-tab__pane">
-  tab index: 1
+  Top, tab index: 0
   <ul class="van-cascader__options">
     <li class="van-cascader__option van-cascader__option--selected">
       <span>
@@ -17,18 +28,8 @@ exports[` should allow more custom content 1`] = `
       </span>
     </li>
   </ul>
+  Bottom, tab index: 0
 </div>
-`;
-
-exports[`should change close icon when using close-icon prop 1`] = `
-<i class="van-badge__wrapper van-icon van-icon-success van-cascader__close-icon van-haptics-feedback">
-</i>
-`;
-
-exports[`should render option slot correctly 1`] = `
-<li class="van-cascader__option">
-  Custom Option foo
-</li>
 `;
 
 exports[`should render title slot correctly 1`] = `

@@ -282,7 +282,8 @@ export default {
 | --- | --- | --- |
 | title | Custom title | - |
 | option `v3.1.4` | Custom option text | _{ option: Option, selected: boolean }_ |
-| options-top `v3.2.7` | Custom the content above options | _{ tabIndex: number }_ |
+| options-top `v3.2.7` | Custom the content above the options | _{ tabIndex: number }_ |
+| options-bottom `v3.2.8` | Custom the content below the options | _{ tabIndex: number }_ |
 
 ### Types
 
