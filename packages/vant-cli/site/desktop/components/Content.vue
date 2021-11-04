@@ -98,6 +98,10 @@ export default {
     font-size: 16px;
   }
 
+  > p {
+    margin-top: 8px;
+  }
+
   > p,
   > blockquote p {
     color: @van-doc-text-color;
