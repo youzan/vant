@@ -57,14 +57,6 @@ export default defineComponent({
   props: cellProps,
 
   setup(props, { slots }) {
-    if (process.env.NODE_ENV !== 'production') {
-      if (slots.default) {
-        console.warn(
-          '[Vant] Cell: "default" slot is deprecated, please use "value" slot instead.'
-        );
-      }
-    }
-
     const route = useRoute();
 
     const renderLabel = () => {
@@ -94,8 +86,7 @@ export default defineComponent({
     };
 
     const renderValue = () => {
-      // default slot is deprecated
-      // should be removed in next major version
+      // slots.default is an alias of slots.value
       const slot = slots.value || slots.default;
       const hasValue = slot || isDef(props.value);
 
