@@ -16,6 +16,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.2.7](https://github.com/youzan/vant/compare/v3.2.6...v3.2.7)
+
+`2021-11-04`
+
+**Feature**
+
+- 导出所有组件的 Props 类型 [#9717](https://github.com/youzan/vant/issues/9717)
+- 新增 --van-text-color-2 CSS 变量 [#9759](https://github.com/youzan/vant/issues/9759)
+- 新增 --van-text-color-3 CSS 变量 [#9776](https://github.com/youzan/vant/issues/9776)
+- Cascader: 新增 options-top 插槽 [#9732](https://github.com/youzan/vant/issues/9732)
+- Coupon: 新增 --van-coupon-content-text-color CSS 变量 [#9760](https://github.com/youzan/vant/issues/9760)
+- Picker: 新增 --van-picker-mask-color CSS 变量 [#9783](https://github.com/youzan/vant/issues/9783)
+
+**Bug Fixes**
+
+- Field: 修复 textarea 在聚焦和失焦时未重新计算高度的问题 [#9719](https://github.com/youzan/vant/issues/9719)
+- 修复 --van-border-color 变量不生效的问题 [#9751](https://github.com/youzan/vant/issues/9751)
+
 ### [v3.2.6](https://github.com/youzan/vant/compare/v3.2.5...v3.2.6)
 
 `2021-10-24`
