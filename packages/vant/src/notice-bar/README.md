@@ -91,8 +91,8 @@ app.use(NoticeBar);
 | --- | --- | --- | --- |
 | mode | Mode, can be set to `closeable` `link` | _string_ | `''` |
 | text | Notice text content | _string_ | `''` |
-| color | Text color | _string_ | `#f60` |
-| background | Background color | _string_ | `#fff7cc` |
+| color | Text color | _string_ | `#ed6a0c` |
+| background | Background color | _string_ | `#fffbe8` |
 | left-icon | Left Icon | _string_ | - |
 | delay | Animation delay (s) | _number \| string_ | `1` |
 | speed | Scroll speed (px/s) | _number \| string_ | `60` |
