@@ -10,8 +10,6 @@ import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 
-import Icon from '../icon'
-
 const [createComponent, bem] = createNamespace('swipe');
 
 export default createComponent({
@@ -393,7 +391,11 @@ export default createComponent({
         }, autoplay);
       }
     },
+    clickIndicator(index) {console.log(index);
+      this.swipeTo(index);
+    },
     genIndicator() {
+      const designer = this.$env && this.$env.VUE_APP_DESIGNER;
       const { count, activeIndicator } = this;
       const slot = this.slots('indicator');
       const _this = this;
@@ -402,14 +404,30 @@ export default createComponent({
       }
       const _scopeId = this.$vnode.context.$options._scopeId;
       if (this.showIndicators && count > 1) {
+        if (designer) {
+          return (
+            <div class={bem('indicators', { vertical: this.vertical })}>
+              {Array(...Array(count)).map((empty, index) => (
+                <i
+                  vusion-index={index}
+                  findname="realpostionswipe"
+                  index={index}
+                  class={bem('indicator', { active: index === activeIndicator })}
+                  style={index === activeIndicator ? this.indicatorStyle : null}
+                  onClick={() => _this.clickIndicator(index)}
+                />
+              ))}
+            </div>
+          );
+        }
         return (
           <div class={bem('indicators', { vertical: this.vertical })}>
             {Array(...Array(count)).map((empty, index) => (
-              <Icont
+              <i
                 index={index}
-                vusion-scope-id={_scopeId}
                 class={bem('indicator', { active: index === activeIndicator })}
                 style={index === activeIndicator ? this.indicatorStyle : null}
+                onClick={() => _this.clickIndicator(index)}
               />
             ))}
           </div>
@@ -430,10 +448,10 @@ export default createComponent({
           {this.slots()}
         </div>
         {this.genIndicator()}
-        {designer ? <Icon name="arrow" class={bem('iconarrow', { right: true })} onClick={this.next} vusion-index="0"
+        {/* {designer ? <Icon name="arrow" class={bem('iconarrow', { right: true })} onClick={this.next} vusion-index="0"
             findname="realpostionicon"></Icon> : null}
         {designer ? <Icon name="arrow-left" class={bem('iconarrow', { left: true })} onClick={this.prev} vusion-index="1"
-            findname="realpostionicon"></Icon> : null}
+            findname="realpostionicon"></Icon> : null} */}
       </div>
     );
   },
