@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
+import VanEmptyCol from '../emptycol/index';
 
 const [createComponent, bem] = createNamespace('swipe-item');
 
@@ -13,7 +14,9 @@ export default createComponent({
       mounted: false,
     };
   },
-
+  components: {
+    VanEmptyCol,
+  },
   mounted() {
     this.$nextTick(() => {
       this.mounted = true;
@@ -64,8 +67,10 @@ export default createComponent({
   },
 
   render() {
+    const designer = this.$env && this.$env.VUE_APP_DESIGNER;
     return (
       <div class={bem()} style={this.style} {...{ on: this.$listeners }}>
+        {designer && !this.slots() ? <van-empty-col style="height: 100%;"></van-empty-col> : null}
         {this.shouldRender && this.slots()}
       </div>
     );

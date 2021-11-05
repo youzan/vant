@@ -65,7 +65,6 @@ function Button(
   ctx: RenderContext<ButtonProps>
 ) {
   const {
-    tag,
     icon,
     type,
     color,
@@ -76,6 +75,8 @@ function Button(
     loadingText,
     iconPosition,
   } = props;
+
+  let {tag} = props;
 
   const style: Record<string, string | number> = {};
 
@@ -251,6 +252,8 @@ function Button(
 
     return content;
   }
+  tag = disabled ? 'span' : tag;
+
   return (
     <tag
       style={style}

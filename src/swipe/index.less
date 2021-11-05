@@ -53,9 +53,10 @@
   }
 
   &__indicator {
-    width: @swipe-indicator-size*2;
-    height: @swipe-indicator-size*2;
-    background-color: @swipe-indicator-inactive-background-color;
+    width: @swipe-indicator-size;
+    height: @swipe-indicator-size;
+    // background-color: @swipe-indicator-inactive-background-color;
+    background-color: #337EFF;
     border-radius: 100%;
     opacity: @swipe-indicator-inactive-opacity;
     transition: opacity @animation-duration-fast,
@@ -66,7 +67,8 @@
     }
 
     &--active {
-      background-color: @swipe-indicator-active-background-color;
+      // background-color: @swipe-indicator-active-background-color;
+      background-color: #337EFF;
       opacity: @swipe-indicator-active-opacity;
     }
   }

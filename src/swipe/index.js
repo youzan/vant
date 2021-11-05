@@ -140,7 +140,7 @@ export default createComponent({
 
     indicatorStyle() {
       return {
-        backgroundColor: this.indicatorColor,
+        backgroundColor: '#337EFF' || this.indicatorColor,
       };
     },
 
