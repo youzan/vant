@@ -303,9 +303,9 @@ export default createComponent({
     deleteFile(file, index) {
       const fileList = this.fileList.slice(0);
       fileList.splice(index, 1);
-
-      this.$emit('input', this.toValue(fileList));
-      this.$emit('update:fileListProp', this.toValue(fileList));
+      this.fileList = fileList;
+      this.$emit('input', this.toValue(this.fileList));
+      this.$emit('update:fileListProp', this.toValue(this.fileList));
       this.$emit('delete', file, this.getDetail(index));
     },
 
