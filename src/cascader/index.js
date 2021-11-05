@@ -362,6 +362,7 @@ export default createComponent({
           ref="popforcas"
           class={bem('popup')}
           position={'bottom'}
+          closeOnClickOverlay={true}
           onClickOverlay={this.togglePopup}
         >
           <div class={bem()}>

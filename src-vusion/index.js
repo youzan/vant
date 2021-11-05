@@ -58,7 +58,7 @@ const addCloudUI = async () => {
 }
 (async () => {
   try {
-    await vconsole();
+    // await vconsole();
     // await addCloudUI();
   } catch (e) {
     console.error(e)

@@ -190,11 +190,11 @@ export default createComponent({
 
   methods: {
     getTitle() {
-      if (this.currentDate) {
-        if (Array.isArray(this.currentDate)) {
-          return this.currentDate.reduce((p, c) => p + (isDate(c) ? c.formath("yyyy/MM/dd") : c)+'-', '');
+      if (this.defaultDate) {
+        if (Array.isArray(this.defaultDate)) {
+          return this.defaultDate.reduce((p, c) => p + (isDate(c) ? c.formath("yyyy/MM/dd") : c)+'-', '');
         } else {
-          return isDate(this.currentDate) ? this.currentDate.formath("yyyy/MM/dd") : this.currentDate;
+          return isDate(this.defaultDate) ? this.defaultDate.formath("yyyy/MM/dd") : this.defaultDate;
         }
       }
       return '';
@@ -522,7 +522,7 @@ export default createComponent({
         return (
           <Button
             round
-            block
+            block="blockb"
             type="info"
             color={this.color}
             class={bem('confirm')}
