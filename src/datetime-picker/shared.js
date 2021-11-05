@@ -80,10 +80,14 @@ export const TimePickerMixin = {
     },
 
     onConfirm() {
-      this.$emit('input', this.innerValue)
-      this.$emit('update:value', this.type==="datetime" ? this.innerValue.formath("yyyy/MM/dd HH:mm:ss") : this.innerValue);
-      this.$emit('update:cvalue', this.type==="datetime" ? this.innerValue.formath("yyyy/MM/dd HH:mm:ss") : this.innerValue);
-      this.$emit('confirm', this.innerValue);
+      if (this.readonly || this.disabled) {
+
+      } else {
+        this.$emit('input', this.innerValue)
+        this.$emit('update:value', this.type==="datetime" ? this.innerValue.formath("yyyy/MM/dd HH:mm:ss") : this.innerValue);
+        this.$emit('update:cvalue', this.type==="datetime" ? this.innerValue.formath("yyyy/MM/dd HH:mm:ss") : this.innerValue);
+        this.$emit('confirm', this.innerValue);
+      }
       try {
         this.$parent.$parent.togglePopup();
       } catch (error) {
