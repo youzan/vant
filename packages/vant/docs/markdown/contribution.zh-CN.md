@@ -15,6 +15,8 @@
 
 ### 本地开发
 
+在进行本地开发前，请先确保你的开发环境中安装了 [Node.js >= 14](https://nodejs.org) 和 [pnpm](https://pnpm.io).
+
 按照下面的步骤操作，即可在本地开发 Vant 组件。
 
 ```bash
@@ -24,10 +26,10 @@
 git clone git@github.com:youzan/vant.git
 
 # 安装依赖
-yarn
+pnpm i
 
 # 进入开发模式，浏览器访问 localhost
-yarn dev
+pnpm dev
 ```
 
 ### 目录结构
