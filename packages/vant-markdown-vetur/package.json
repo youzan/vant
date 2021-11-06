@@ -16,7 +16,8 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc",
-    "release": "npm run build && npm publish"
+    "release": "pnpm build && npm publish",
+    "prepare": "pnpm build"
   },
   "dependencies": {
     "fast-glob": "^3.2.2",

@@ -21,7 +21,7 @@
     "build": "vant-cli build",
     "build:site": "vant-cli build-site",
     "release": "vant-cli release --tag next",
-    "release:site": "yarn build:site && gh-pages -d site-dist --add --dest v3",
+    "release:site": "pnpm build:site && gh-pages -d site-dist --add --dest v3",
     "test:watch": "vant-cli test --watch",
     "test:coverage": "open test/coverage/index.html"
   },

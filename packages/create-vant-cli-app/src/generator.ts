@@ -65,10 +65,16 @@ export class VanGenerator extends Generator {
     /**
     @see {@link https://github.com/mrmlnc/fast-glob#how-to-write-patterns-on-windows}
     */
-    const templatePath = join(GENERATOR_DIR, this.inputs.vueVersion).replace(/\\/g, '/');
-    const templateFiles = glob.sync(join(templatePath, '**', '*').replace(/\\/g, '/'), {
-      dot: true,
-    });
+    const templatePath = join(GENERATOR_DIR, this.inputs.vueVersion).replace(
+      /\\/g,
+      '/'
+    );
+    const templateFiles = glob.sync(
+      join(templatePath, '**', '*').replace(/\\/g, '/'),
+      {
+        dot: true,
+      }
+    );
     const destinationRoot = this.destinationRoot();
 
     templateFiles.forEach((filePath) => {
@@ -99,7 +105,7 @@ export class VanGenerator extends Generator {
     console.log();
     consola.success(`Successfully created ${chalk.yellow(name)}.`);
     consola.success(
-      `Run ${chalk.yellow(`cd ${name} && yarn dev`)} to start development!`
+      `Run ${chalk.yellow(`cd ${name} && npm run dev`)} to start development!`
     );
   }
 }

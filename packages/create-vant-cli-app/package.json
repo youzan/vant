@@ -8,7 +8,9 @@
   },
   "scripts": {
     "dev": "tsc --watch",
-    "release": "tsc & release-it"
+    "build": "tsc",
+    "release": "pnpm build & release-it",
+    "prepare": "pnpm build"
   },
   "repository": {
     "type": "git",
