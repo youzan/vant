@@ -128,7 +128,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { NavbarProps } from 'vant';
+import type { NavBarProps } from 'vant';
 ```
 
 ## 主题定制
