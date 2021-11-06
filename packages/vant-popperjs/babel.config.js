@@ -1,3 +1,3 @@
 module.exports = {
-  presets: [['@vant/cli/preset', { loose: true }]],
+  presets: [['@vant/cli/preset.cjs', { loose: true }]],
 };

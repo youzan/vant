@@ -17,7 +17,8 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc",
-    "release": "yarn build & release-it"
+    "release": "pnpm build & release-it",
+    "prepare": "pnpm build"
   },
   "files": [
     "lib",
@@ -37,12 +38,12 @@
     "@types/less": "^3.0.3",
     "@types/lodash-es": "^4.17.5",
     "@types/markdown-it": "^12.2.3",
-    "@types/postcss-load-config": "^3.0.1",
     "@vue/compiler-sfc": "^3.2.20",
     "vue": "^3.2.20"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@babel/helper-plugin-utils": "^7.14.5",
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@docsearch/css": "3.0.0-alpha.41",
@@ -58,12 +59,15 @@
     "@vue/test-utils": "2.0.0-rc.14",
     "autoprefixer": "^10.4.0",
     "babel-jest": "^27.3.1",
+    "chalk": "^4.1.2",
     "clean-css": "^5.2.2",
     "commander": "^8.3.0",
     "consola": "^2.15.3",
     "conventional-changelog": "^3.1.24",
     "eslint": "^8.1.0",
+    "execa": "^5.1.1",
     "fast-glob": "^3.2.7",
+    "fs-extra": "^10.0.0",
     "gh-pages": "^3.2.3",
     "hash-sum": "^2.0.0",
     "highlight.js": "^11.3.1",

@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "release": "yarn build && npm publish"
+    "release": "pnpm build && npm publish",
+    "prepare": "pnpm build"
   },
   "license": "MIT",
   "repository": "https://github.com/youzan/vant"
