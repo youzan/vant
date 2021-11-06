@@ -7,16 +7,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-        cache: 'pnpm'
 
-    - name: Install dependencies
+    - name: Install pnpm
       uses: pnpm/action-setup@v2.0.1
       with:
         version: 6.20.3
-        run_install: true
+
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install
 
     - name: Run linter
       run: npm run lint
@@ -25,16 +28,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-        cache: 'pnpm'
 
-    - name: Install dependencies
+    - name: Install pnpm
       uses: pnpm/action-setup@v2.0.1
       with:
         version: 6.20.3
-        run_install: true
+
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install
 
     - name: Run test cases
       run: npm test
@@ -48,16 +54,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-        cache: 'pnpm'
 
-    - name: Install dependencies
+    - name: Install pnpm
       uses: pnpm/action-setup@v2.0.1
       with:
         version: 6.20.3
-        run_install: true
+
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install
 
     - name: Build
       run: npm run build
