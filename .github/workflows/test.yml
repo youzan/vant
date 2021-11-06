@@ -6,10 +6,11 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
       with:
-        node-version: '14.x'
+        node-version: '14'
+        cache: 'pnpm'
 
     - name: Install dependencies
       uses: pnpm/action-setup@v2.0.1
@@ -23,10 +24,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
       with:
-        node-version: '14.x'
+        node-version: '14'
+        cache: 'pnpm'
 
     - name: Install dependencies
       uses: pnpm/action-setup@v2.0.1
@@ -45,10 +47,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
       with:
-        node-version: '14.x'
+        node-version: '14'
+        cache: 'pnpm'
 
     - name: Install dependencies
       uses: pnpm/action-setup@v2.0.1
