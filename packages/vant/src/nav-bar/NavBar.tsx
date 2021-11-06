@@ -30,7 +30,7 @@ const navBarProps = {
   safeAreaInsetTop: Boolean,
 };
 
-export type NavbarProps = ExtractPropTypes<typeof navBarProps>;
+export type NavBarProps = ExtractPropTypes<typeof navBarProps>;
 
 export default defineComponent({
   name,
