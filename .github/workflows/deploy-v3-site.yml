@@ -16,7 +16,10 @@ jobs:
           ref: 'dev'
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.20.3
+          run_install: true
 
       - name: Build Site
         run: npm run build:site

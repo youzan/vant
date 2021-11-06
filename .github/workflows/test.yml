@@ -12,7 +12,10 @@ jobs:
         node-version: '14.x'
 
     - name: Install dependencies
-      uses: bahmutov/npm-install@v1
+      uses: pnpm/action-setup@v2.0.1
+      with:
+        version: 6.20.3
+        run_install: true
 
     - name: Run linter
       run: npm run lint
@@ -26,7 +29,10 @@ jobs:
         node-version: '14.x'
 
     - name: Install dependencies
-      uses: bahmutov/npm-install@v1
+      uses: pnpm/action-setup@v2.0.1
+      with:
+        version: 6.20.3
+        run_install: true
 
     - name: Run test cases
       run: npm test
@@ -45,7 +51,10 @@ jobs:
         node-version: '14.x'
 
     - name: Install dependencies
-      uses: bahmutov/npm-install@v1
+      uses: pnpm/action-setup@v2.0.1
+      with:
+        version: 6.20.3
+        run_install: true
 
     - name: Build
       run: npm run build
