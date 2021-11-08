@@ -4,6 +4,9 @@
   font-size: 0;
   user-select: none;
 
+  display: flex;
+  flex: 1;
+
   &__minus,
   &__plus {
     position: relative;
@@ -66,6 +69,7 @@
   }
 
   &__input {
+    flex: 1;
     box-sizing: border-box;
     width: @stepper-input-width;
     height: @stepper-input-height;
