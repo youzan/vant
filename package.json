@@ -17,11 +17,11 @@
   "packageManager": "pnpm",
   "devDependencies": {
     "@vant/cli": "workspace:*",
-    "@vant/eslint-config": "^3.3.2",
-    "prettier": "^2.4.1",
-    "eslint": "^8.1.0",
-    "stylelint": "^13.0.0",
+    "@vant/eslint-config": "workspace:*",
+    "eslint": "^8.2.0",
     "husky": "^7.0.4",
-    "lint-staged": "^11.2.6"
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.4.1",
+    "stylelint": "^13.13.1"
   }
 }
