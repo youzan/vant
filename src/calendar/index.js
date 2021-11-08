@@ -133,6 +133,16 @@ export default createComponent({
   },
 
   computed: {
+    getTitle() {
+      if (this.defaultDate) {
+        if (Array.isArray(this.defaultDate)) {
+          return this.defaultDate.reduce((p, c) => p + (isDate(c) ? c.formath("yyyy/MM/dd") : c)+'-', '');
+        } else {
+          return isDate(this.defaultDate) ? this.defaultDate.formath("yyyy/MM/dd") : this.defaultDate;
+        }
+      }
+      return '';
+    },
     months() {
       const months = [];
       const cursor = transErrorDate(this.minDate, 'min');
@@ -189,16 +199,6 @@ export default createComponent({
   },
 
   methods: {
-    getTitle() {
-      if (this.defaultDate) {
-        if (Array.isArray(this.defaultDate)) {
-          return this.defaultDate.reduce((p, c) => p + (isDate(c) ? c.formath("yyyy/MM/dd") : c)+'-', '');
-        } else {
-          return isDate(this.defaultDate) ? this.defaultDate.formath("yyyy/MM/dd") : this.defaultDate;
-        }
-      }
-      return '';
-    },
     togglePopup() {
       this.valuepopup = !this.valuepopup;
       this.value = !this.value;
@@ -572,7 +572,7 @@ export default createComponent({
       return <div class={bem('wrapppcalendar')}>
         <Field
           label={this.labelField}
-          value={this.getTitle()}
+          value={this.getTitle}
           readonly
           isLink
           input-align="right"
