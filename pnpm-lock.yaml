@@ -3900,7 +3900,7 @@ packages:
   /debug/3.2.7:
     resolution: {integrity: sha1-clgLfpFF+zm2Z2+cXl+xALk0F5o=, tarball: debug/download/debug-3.2.7.tgz?cache=0&sync_timestamp=1636334198444&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fdebug%2Fdownload%2Fdebug-3.2.7.tgz}
     dependencies:
-      ms: 2.1.2
+      ms: 2.1.3
     dev: false
 
   /debug/4.3.2:
@@ -4799,7 +4799,6 @@ packages:
       onetime: 5.1.2
       signal-exit: 3.0.5
       strip-final-newline: 2.0.0
-    dev: true
 
   /execa/4.1.0:
     resolution: {integrity: sha1-TlSRrRVy8vF6d9OIxshXE1sihHo=, tarball: execa/download/execa-4.1.0.tgz}
@@ -4814,6 +4813,7 @@ packages:
       onetime: 5.1.2
       signal-exit: 3.0.5
       strip-final-newline: 2.0.0
+    dev: false
 
   /execa/5.1.1:
     resolution: {integrity: sha1-+ArZy/Qpj3vR1MlVXCHpN0HEEd0=, tarball: execa/download/execa-5.1.1.tgz}
@@ -7563,6 +7563,10 @@ packages:
   /ms/2.1.2:
     resolution: {integrity: sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=, tarball: ms/download/ms-2.1.2.tgz?cache=0&sync_timestamp=1632822734970&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fms%2Fdownload%2Fms-2.1.2.tgz}
 
+  /ms/2.1.3:
+    resolution: {integrity: sha1-V0yBOM4dK1hh8LRFedut1gxmFbI=, tarball: ms/download/ms-2.1.3.tgz?cache=0&sync_timestamp=1632822734970&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fms%2Fdownload%2Fms-2.1.3.tgz}
+    dev: false
+
   /multimatch/4.0.0:
     resolution: {integrity: sha1-jDwPbj6ESa2grz3SnvtJGjdRkbM=, tarball: multimatch/download/multimatch-4.0.0.tgz}
     engines: {node: '>=8'}
@@ -10106,7 +10110,7 @@ packages:
     resolution: {integrity: sha1-RyXscCF9G/bgLHdyQTspzd6ew3c=, tarball: windows-release/download/windows-release-4.0.0.tgz}
     engines: {node: '>=10'}
     dependencies:
-      execa: 4.1.0
+      execa: 4.0.3
 
   /with-open-file/0.1.7:
     resolution: {integrity: sha1-4t6Nl06KiubliIa+T+jnRltYpyk=, tarball: with-open-file/download/with-open-file-0.1.7.tgz}
