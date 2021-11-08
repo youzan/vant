@@ -1,0 +1,40 @@
+name: Bug Report
+description: Use issue template to report a bug.
+title: "[Bug Report] Title"
+labels: ["bug"]
+body:
+  - type: input
+    id: reproduce
+    attributes:
+      label: Reproduction Link
+      description: Please provide a simple [codesandbox](https://codesandbox.io/s/m5v3f) or GitHub repository link. Do not fill in invalid links, this will cause your issue to be closed directly.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Vant Version
+      description: Please fill in the version actually installed in node_modules/vant/package.json
+      placeholder: E.g. 3.2.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the Bug
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce-steps
+    attributes:
+      label: Reproduce Steps
+    validations:
+      required: true
+
+  - type: input
+    id: browsers
+    attributes:
+      label: Device / Browser
