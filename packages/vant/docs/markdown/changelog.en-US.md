@@ -16,6 +16,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.2.8](https://github.com/compare/v3.2.7...v3.2.8)
+
+`2021-11-09`
+
+**Feature**
+
+- Cascader: add options-bottom slot [#9804](https://github.com/issues/9804)
+- SubmitBar: add SubmitBarTextAlign type [f95567](https://github.com/commit/f95567ade758d453f4acad8a40d8ae717035476a)
+- PasswordInput: add PasswordInputProps type [#9820](https://github.com/issues/9820)
+
+**Bug Fixes**
+
+- NavBar: fix NavBarProps spelling [#9818](https://github.com/issues/9818)
+- Progress: incorrect border-radius [#9826](https://github.com/issues/9826)
+- SubmitBar: fix missing SubmitBarProps export [#9819](https://github.com/issues/9819)
+- Tabs: should emit click-tab after before-change [#9805](https://github.com/issues/9805)
+
 ### [v3.2.7](https://github.com/youzan/vant/compare/v3.2.6...v3.2.7)
 
 `2021-11-04`

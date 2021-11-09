@@ -16,6 +16,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.2.8](https://github.com/compare/v3.2.7...v3.2.8)
+
+`2021-11-09`
+
+**Feature**
+
+- Cascader: 新增 options-bottom 插槽 [#9804](https://github.com/issues/9804)
+- SubmitBar: 新增 SubmitBarTextAlign 类型 [f95567](https://github.com/commit/f95567ade758d453f4acad8a40d8ae717035476a)
+- PasswordInput: 新增 PasswordInputProps 类型 [#9820](https://github.com/issues/9820)
+
+**Bug Fixes**
+
+- NavBar: 修复 NavBarProps 拼写错误的问题 [#9818](https://github.com/issues/9818)
+- Progress: 修复圆角大小错误的问题 [#9826](https://github.com/issues/9826)
+- SubmitBar: 修复未导出 SubmitBarProps 的问题 [#9819](https://github.com/issues/9819)
+- Tabs: 修复 click-tab 触发顺序早于 before-change 的问题 [#9805](https://github.com/issues/9805)
+
 ### [v3.2.7](https://github.com/youzan/vant/compare/v3.2.6...v3.2.7)
 
 `2021-11-04`
