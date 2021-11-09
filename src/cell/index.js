@@ -128,10 +128,9 @@ export default createComponent({
     }
 
     function RightIcon() {
-      const rightIconSlot = slots['right-icon'];
-
+      const rightIconSlot = slots('right-icon');
       if (rightIconSlot) {
-        return rightIconSlot();
+        return rightIconSlot;
       }
 
       if (isLink) {

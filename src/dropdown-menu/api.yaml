@@ -1,0 +1,68 @@
+- name: van-dropdown-menu
+  title: 下拉菜单
+  icon: dropdown-menu
+  labels:
+    - Navigation
+  description: 向下弹出的菜单列表。
+  attrs:
+    - name: direction
+      title: 菜单展开方向
+      type: string
+      options:
+        - value: up
+          title: 上
+        - value: down
+          title: 下
+      default: down
+      description: 菜单展开方向
+    - name: overlay
+      title: 是否显示遮罩层
+      type: boolean
+      default: true
+      description: 是否显示遮罩层
+    - name: close-on-click-overlay
+      title: 是否在点击遮罩层后关闭菜单
+      type: boolean
+      default: true
+      description: 是否在点击遮罩层后关闭菜单
+  slots:
+    - name: default
+      description: 插入`<van-dropdown-menu>`子组件。
+      empty-background: add-sub-large
+      support:
+        - name: van-dropdown-menu
+          title: 菜单项
+          snippet: '<van-dropdown-item></van-dropdown-item>'
+  events:
+    - name: submit
+      title: 验证通过
+      description: 提交表单且验证通过后触发
+    - name: failed
+      title: 验证不通过
+      description: 提交表单且验证不通过后触发
+  methods:
+    - name: validate
+      description: 验证表单，支持传入 name 来验证单个或部分表单项
+- name: van-dropdown-item
+  title: 菜单项
+  attrs:
+    - name: value
+      title: 菜单项值
+      type: number,string
+      sync: true
+      model: true
+      description: 菜单项值
+    - name: options
+      title: 数据源
+      type: array,string
+      default: [{'text':'菜单项一','value':0},{'text':'菜单项二','value':1},{'text':'菜单项三','value':2}]
+      description: 包含text和value属性的列表
+    - name: title
+      title: 标题
+      type: string
+      description: 标题
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: 禁用

@@ -23,11 +23,11 @@ export default createComponent({
     titleClass: String,
     options: {
       type: Array,
-      default: () => [],
+      default: () => [{'text':'菜单项一','value':0},{'text':'菜单项二','value':1},{'text':'菜单项三','value':2}],
     },
     lazyRender: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
 
@@ -143,9 +143,10 @@ export default createComponent({
     } else {
       style.bottom = `${offset}px`;
     }
-
+console.group(this, 888)
     return (
-      <div>
+      <div
+      >
         <div
           vShow={this.showWrapper}
           ref="wrapper"

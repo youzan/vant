@@ -95,8 +95,9 @@ export default createComponent({
   },
 
   render() {
-    const Titles = this.children.map((item, index) => (
-      <div
+    const Titles = this.children.map((item, index) => {
+      const aId = item.$vnode.context.$options._scopeId;
+      return <div
         role="button"
         tabindex={item.disabled ? -1 : 0}
         class={bem('item', { disabled: item.disabled })}
@@ -105,6 +106,9 @@ export default createComponent({
             this.toggleItem(index);
           }
         }}
+        vusion-scope-id={aId}
+        vusion-node-path={item.$attrs['vusion-node-path']}
+        vusion-node-tag={item.$attrs['vusion-node-tag']}
       >
         <span
           class={[
@@ -121,7 +125,7 @@ export default createComponent({
           </div>
         </span>
       </div>
-    ));
+    });
 
     return (
       <div class={bem()}>
