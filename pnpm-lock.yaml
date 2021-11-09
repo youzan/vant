@@ -238,6 +238,7 @@ importers:
       '@vue/runtime-core': 3.x
       release-it: ^14.2.2
       rollup: ^2.33.3
+      vue: 3.x
     dependencies:
       '@vant/use': link:../vant-use
     devDependencies:
@@ -247,6 +248,7 @@ importers:
       '@vue/runtime-core': 3.2.21
       release-it: 14.11.6
       rollup: 2.59.0
+      vue: 3.2.21
 
   packages/vant-markdown-loader:
     specifiers:
