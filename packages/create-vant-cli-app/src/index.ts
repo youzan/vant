@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import inquirer from 'inquirer';
 import consola from 'consola';
+import { prompt } from 'inquirer';
 import { ensureDir } from 'fs-extra';
 import { VanGenerator } from './generator';
 
@@ -13,14 +13,13 @@ const PROMPTS = [
   },
 ];
 
-export default async function run() {
-  const { name } = await inquirer.prompt(PROMPTS);
+async function run() {
+  const { name } = await prompt(PROMPTS);
 
   try {
     await ensureDir(name);
-
     const generator = new VanGenerator(name);
-    generator.run();
+    await generator.run();
   } catch (e) {
     consola.error(e);
   }
