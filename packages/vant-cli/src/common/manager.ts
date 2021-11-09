@@ -1,9 +1,7 @@
-import fs from 'fs-extra';
 import execa from 'execa';
-import { join } from 'path';
 import { consola } from './logger.js';
 import { execSync } from 'child_process';
-import { ROOT } from './constant.js';
+import { getVantConfig } from './constant.js';
 
 let hasYarnCache: boolean;
 
@@ -20,16 +18,21 @@ export function hasYarn() {
   return hasYarnCache;
 }
 
-function isUsingPnpm() {
-  const pnpmLock = join(ROOT, 'pnpm-lock.yaml');
-  return fs.existsSync(pnpmLock);
+function getPackageManager() {
+  const { build } = getVantConfig();
+
+  if (build?.packageManager) {
+    return build?.packageManager;
+  }
+
+  return hasYarn() ? 'yarn' : 'npm';
 }
 
 export async function installDependencies() {
   consola.info('Install Dependencies\n');
 
   try {
-    const manager = isUsingPnpm() ? 'pnpm' : hasYarn() ? 'yarn' : 'npm';
+    const manager = getPackageManager();
 
     await execa(manager, ['install', '--prod=false'], {
       stdio: 'inherit',
