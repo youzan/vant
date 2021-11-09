@@ -1,7 +1,7 @@
 name: 我想要一个 Vant Cli 的新功能
 description: 通过标准模板描述一下你的功能需求。
 title: "[Feature Request] 在此填写标题"
-labels: ["feature", "cli"]
+labels: ["💡 feature", "cli"]
 body:
   - type: markdown
     attributes:

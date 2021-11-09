@@ -1,7 +1,7 @@
 name: 我要反馈 Vant Cli 的 Bug
 description: 通过标准模板进行 Bug 反馈。
 title: "[Bug Report] 在此填写标题"
-labels: ["bug", "cli"]
+labels: ["🐞 bug", "cli"]
 body:
   - type: markdown
     attributes:
