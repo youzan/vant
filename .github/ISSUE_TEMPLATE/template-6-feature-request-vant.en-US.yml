@@ -1,0 +1,23 @@
+name: Feature Request
+description: Use issue template to request a new feature.
+title: "[Feature Request] Title"
+labels: ["💡 feature"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What problem does this feature solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: api
+    attributes:
+      label: What does the proposed API look like?
+      description: Describe the new API, provide some code examples.
+      placeholder: |
+        ```xml
+        <van-button some-prop="xxx" />
+        ```
+    validations:
+      required: true

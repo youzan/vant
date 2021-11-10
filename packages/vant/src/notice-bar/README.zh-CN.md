@@ -112,8 +112,8 @@ app.use(NoticeBar);
 | --- | --- | --- | --- |
 | mode | 通知栏模式，可选值为 `closeable` `link` | _string_ | `''` |
 | text | 通知文本内容 | _string_ | `''` |
-| color | 通知文本颜色 | _string_ | `#f60` |
-| background | 滚动条背景 | _string_ | `#fff7cc` |
+| color | 通知文本颜色 | _string_ | `#ed6a0c` |
+| background | 滚动条背景 | _string_ | `#fffbe8` |
 | left-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | delay | 动画延迟时间 (s) | _number \| string_ | `1` |
 | speed | 滚动速率 (px/s) | _number \| string_ | `60` |

@@ -17,7 +17,6 @@ module.exports = function (api, options) {
         },
       ],
       require.resolve('@babel/preset-typescript'),
-      require('./babel-preset-vue-ts.cjs'),
     ],
     plugins: [
       [

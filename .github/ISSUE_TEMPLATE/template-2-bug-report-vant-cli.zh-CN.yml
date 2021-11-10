@@ -1,0 +1,51 @@
+name: 我要反馈 Vant Cli 的 Bug
+description: 通过标准模板进行 Bug 反馈。
+title: "[Bug Report] 在此填写标题"
+labels: ["🐞 bug", "cli"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        在提交 Bug 报告前，请注意：
+
+        - 确认你的问题无法通过官方文档得到解决。
+        - 确认你搜索过 [历史 issue](https://github.com/youzan/vant/issues)，并且没有发现同样的问题。
+        - 如果不是反馈 Bug，请到 [Discussions 讨论区](https://github.com/youzan/vant/discussions) 发帖。
+
+  - type: input
+    id: reproduce
+    attributes:
+      label: 重现链接
+      description: 请提供一个尽可能简单的 [codesandbox](https://codesandbox.io/s/m5v3f) 或 GitHub 仓库链接。不要填写无效的链接，这会导致你的 issue 被直接关闭。
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Vant Cli 版本
+      description: 你正在使用的 Vant Cli 版本是多少？（请填写 node_modules/@vant/cli/package.json 里实际安装的版本）
+      placeholder: 比如 3.2.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 描述一下你遇到的问题。
+      placeholder: 比如：组件构建失败
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce-steps
+    attributes:
+      label: 重现步骤
+      description: 请提供一个最简单的操作步骤，方便我们快速重现问题。
+      placeholder: |
+        比如：
+        1. 克隆仓库
+        2. 运行 yarn build
+        3. 组件构建失败
+    validations:
+      required: true

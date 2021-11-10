@@ -158,6 +158,14 @@ export default {
 | ------ | ---------------- | -------- |
 | focus  | 输入框聚焦时触发 | -        |
 
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { PasswordInputProps } from 'vant';
+```
+
 ## 主题定制
 
 ### 样式变量

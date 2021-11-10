@@ -2,7 +2,7 @@
 
 ### Intro
 
-The passwordinput component is usually used with [NumberKeyboard](#/en-US/number-keyboard) Component.
+The PasswordInput component is usually used with [NumberKeyboard](#/en-US/number-keyboard) Component.
 
 ### Install
 
@@ -147,6 +147,14 @@ export default {
 | Event | Description                   | Arguments |
 | ----- | ----------------------------- | --------- |
 | focus | Emitted when input is focused | -         |
+
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { PasswordInputProps } from 'vant';
+```
 
 ## Theming
 

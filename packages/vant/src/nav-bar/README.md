@@ -120,7 +120,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { NavbarProps } from 'vant';
+import type { NavBarProps } from 'vant';
 ```
 
 ## Theming

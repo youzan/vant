@@ -16,7 +16,8 @@
   "scripts": {
     "dev": "rollup --config rollup.config.js --watch",
     "build": "rollup --config rollup.config.js",
-    "release": "npm run build && release-it"
+    "release": "pnpm build && release-it",
+    "prepare": "pnpm build"
   },
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-lazyload",
@@ -24,6 +25,9 @@
     "@vant/use": "^1.3.2"
   },
   "devDependencies": {
+    "vue": "3.x",
+    "@vue/runtime-core": "3.x",
+    "@vant/cli": "workspace:*",
     "@rollup/plugin-babel": "^5.2.1",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "release-it": "^14.2.2",

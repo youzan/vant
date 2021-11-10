@@ -1,9 +1,4 @@
-import {
-  PropType,
-  CSSProperties,
-  defineComponent,
-  ExtractPropTypes,
-} from 'vue';
+import { PropType, defineComponent, ExtractPropTypes } from 'vue';
 import {
   truthProp,
   makeStringProp,
@@ -17,6 +12,8 @@ import { Button, ButtonType } from '../button';
 
 const [name, bem, t] = createNamespace('submit-bar');
 
+export type SubmitBarTextAlign = 'left' | 'right';
+
 const submitBarProps = {
   tip: String,
   label: String,
@@ -25,7 +22,7 @@ const submitBarProps = {
   loading: Boolean,
   currency: makeStringProp('¥'),
   disabled: Boolean,
-  textAlign: String as PropType<CSSProperties['textAlign']>,
+  textAlign: String as PropType<SubmitBarTextAlign>,
   buttonText: String,
   buttonType: makeStringProp<ButtonType>('danger'),
   buttonColor: String,

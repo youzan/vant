@@ -17,7 +17,7 @@
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-icons",
   "devDependencies": {
-    "release-it": "^13.6.2"
+    "release-it": "^14.11.6"
   },
   "release-it": {
     "git": {

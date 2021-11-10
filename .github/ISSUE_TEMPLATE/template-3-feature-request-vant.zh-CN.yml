@@ -1,0 +1,33 @@
+name: 我想要一个 Vant 的新功能
+description: 通过标准模板描述一下你的功能需求。
+title: "[Feature Request] 在此填写标题"
+labels: ["💡 feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        在提交功能需求前，请注意：
+
+        - 确认这是一个通用功能，并且无法通过现有的 API 或 Slot 实现。
+        - 确认你搜索过 [历史 issue](https://github.com/youzan/vant/issues)，并且没有发现同样的需求。
+        - 可以先到 [Discussions 讨论区](https://github.com/youzan/vant/discussions) 发帖，讨论一下需求是否合理。
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 这个功能解决了什么问题？
+      description: 请尽可能详细地说明这个功能的使用场景。
+    validations:
+      required: true
+
+  - type: textarea
+    id: api
+    attributes:
+      label: 你期望的 API 是什么样子的？
+      description: 描述一下这个新功能的 API，并提供一些代码示例。
+      placeholder: |
+        ```xml
+        <van-button some-prop="xxx" />
+        ```
+    validations:
+      required: true

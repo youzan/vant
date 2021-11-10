@@ -4,6 +4,7 @@ export default {
     srcDir: 'src',
     namedExport: true,
     skipInstall: ['lazyload'],
+    packageManager: 'pnpm',
     site: {
       publicPath:
         (typeof window === 'undefined' && process.env.PUBLIC_PATH) ||

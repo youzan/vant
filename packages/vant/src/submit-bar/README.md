@@ -127,7 +127,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { SubmitBarProps } from 'vant';
+import type { SubmitBarProps, SubmitBarTextAlign } from 'vant';
 ```
 
 ## Theming

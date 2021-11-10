@@ -3,7 +3,7 @@
 exports[`should re-calc width if showing pivot dynamically 1`] = `
 <div class="van-progress">
   <span class="van-progress__portion"
-        style="transform: scaleX(1);"
+        style="width: 100%;"
   >
   </span>
 </div>
@@ -12,7 +12,7 @@ exports[`should re-calc width if showing pivot dynamically 1`] = `
 exports[`should re-calc width if showing pivot dynamically 2`] = `
 <div class="van-progress">
   <span class="van-progress__portion"
-        style="transform: scaleX(1);"
+        style="width: 100%;"
   >
   </span>
   <span style="left: 100%; transform: translate(-100%,-50%);"

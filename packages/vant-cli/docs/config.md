@@ -180,6 +180,13 @@ module.exports = {
 };
 ```
 
+### build.packageManager
+
+- Type: `'npm' | 'yarn' | 'pnpm'`
+- Default: `undefined`
+
+指定使用的包管理器。
+
 ### site.title
 
 - Type: `string`

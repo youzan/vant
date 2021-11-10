@@ -242,10 +242,11 @@ test('should allow to custom the color of option', async () => {
   expect(option.style.color).toEqual('red');
 });
 
-test(' should allow more custom content', async () => {
+test('should render options-top、options-bottom slots correctly', async () => {
   const wrapper = mount(Cascader, {
     slots: {
-      'options-top': ({ tabIndex }) => `tab index: ${tabIndex}`,
+      'options-top': ({ tabIndex }) => `Top, tab index: ${tabIndex}`,
+      'options-bottom': ({ tabIndex }) => `Bottom, tab index: ${tabIndex}`,
     },
     props: {
       options,

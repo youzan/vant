@@ -13,8 +13,9 @@
     "clean": "rm -rf ./dist",
     "build:lib": "node ./scripts/build.js",
     "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
-    "build": "yarn build:lib && yarn build:types",
-    "release": "yarn build && release-it"
+    "build": "pnpm build:lib && pnpm build:types",
+    "release": "pnpm build && release-it",
+    "prepare": "pnpm build"
   },
   "publishConfig": {
     "access": "public",
@@ -24,8 +25,12 @@
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-use",
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@vant/cli": "workspace:*",
+    "fast-glob": "^3.2.7",
+    "fs-extra": "^10.0.0",
     "release-it": "^14.0.2",
-    "typescript": "^4.0.2"
+    "typescript": "4.x",
+    "vue": "^3.2.20"
   },
   "release-it": {
     "git": {

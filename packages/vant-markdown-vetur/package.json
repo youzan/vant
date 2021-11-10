@@ -16,13 +16,14 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc",
-    "release": "npm run build && npm publish"
+    "release": "pnpm build && npm publish",
+    "prepare": "pnpm build"
   },
   "dependencies": {
     "fast-glob": "^3.2.2",
-    "fs-extra": "^9.0.0"
+    "fs-extra": "^10.0.0"
   },
   "devDependencies": {
-    "@types/fs-extra": "^8.1.0"
+    "@types/fs-extra": "^9.0.13"
   }
 }

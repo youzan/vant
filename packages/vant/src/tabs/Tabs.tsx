@@ -272,13 +272,6 @@ export default defineComponent({
       const { title, disabled } = children[index];
       const name = getTabName(children[index], index);
 
-      emit('click-tab', {
-        name,
-        title,
-        event,
-        disabled,
-      });
-
       if (!disabled) {
         callInterceptor(props.beforeChange, {
           args: [name],
@@ -290,6 +283,13 @@ export default defineComponent({
 
         route(item as ComponentPublicInstance<RouteProps>);
       }
+
+      emit('click-tab', {
+        name,
+        title,
+        event,
+        disabled,
+      });
     };
 
     const onStickyScroll = (params: {

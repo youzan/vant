@@ -4,7 +4,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-progress">
     <span class="van-progress__portion"
-          style="transform: scaleX(0.5);"
+          style="width: 50%;"
     >
     </span>
     <span style="left: 50%; transform: translate(-50%,-50%);"
@@ -19,7 +19,7 @@ exports[`should render demo and match snapshot 1`] = `
        style="height: 8px;"
   >
     <span class="van-progress__portion"
-          style="transform: scaleX(0.5);"
+          style="width: 50%;"
     >
     </span>
     <span style="left: 50%; transform: translate(-50%,-50%);"
@@ -32,7 +32,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-progress">
     <span class="van-progress__portion van-progress__portion--inactive"
-          style="transform: scaleX(0.5);"
+          style="width: 50%;"
     >
     </span>
     <span style="left: 50%; transform: translate(-50%,-50%);"
@@ -45,7 +45,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-progress">
     <span class="van-progress__portion"
-          style="background: rgb(242, 130, 106); transform: scaleX(0.25);"
+          style="width: 25%; background: rgb(242, 130, 106);"
     >
     </span>
     <span style="left: 25%; transform: translate(-25%,-50%); background: rgb(242, 130, 106);"
@@ -56,7 +56,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
   <div class="van-progress">
     <span class="van-progress__portion"
-          style="background: rgb(238, 10, 36); transform: scaleX(0.5);"
+          style="width: 50%; background: rgb(238, 10, 36);"
     >
     </span>
     <span style="left: 50%; transform: translate(-50%,-50%); background: rgb(238, 10, 36);"
@@ -67,7 +67,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
   <div class="van-progress">
     <span class="van-progress__portion"
-          style="transform: scaleX(0.75);"
+          style="width: 75%;"
     >
     </span>
     <span style="left: 75%; transform: translate(-75%,-50%); background: rgb(114, 50, 221);"
@@ -80,7 +80,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-progress">
     <span class="van-progress__portion"
-          style="transform: scaleX(0.5);"
+          style="width: 50%;"
     >
     </span>
     <span style="left: 50%; transform: translate(-50%,-50%);"

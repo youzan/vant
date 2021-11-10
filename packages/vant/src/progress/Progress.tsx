@@ -61,8 +61,8 @@ export default defineComponent({
         height: addUnit(strokeWidth),
       };
       const portionStyle = {
+        width: `${percentage}%`,
         background: background.value,
-        transform: `scaleX(${+percentage / 100})`,
       };
 
       return (
