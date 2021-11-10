@@ -35,7 +35,7 @@ function runCommand(
 function eslint() {
   return runCommand(
     'eslint',
-    ['./src', '--fix', '--ext', [SCRIPT_EXTS, '.md'].join(',')],
+    ['./src', '--fix', '--ext', SCRIPT_EXTS.join(',')],
     {
       start: 'Running eslint...',
       succeed: 'ESLint Passed.',

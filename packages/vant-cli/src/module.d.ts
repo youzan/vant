@@ -5,4 +5,3 @@ declare module 'clean-css';
 declare module 'release-it';
 declare module 'conventional-changelog';
 declare module '@vant/markdown-vetur';
-declare module '@babel/helper-plugin-utils';
