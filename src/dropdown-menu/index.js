@@ -69,7 +69,7 @@ export default createComponent({
       }
 
       const rect = this.$refs.bar.getBoundingClientRect();
-
+console.log(rect)
       if (this.direction === 'down') {
         this.offset = rect.bottom;
       } else {
@@ -106,6 +106,7 @@ export default createComponent({
             this.toggleItem(index);
           }
         }}
+        vusion-slot-name="title"
         vusion-scope-id={aId}
         vusion-node-path={item.$attrs['vusion-node-path']}
         vusion-node-tag={item.$attrs['vusion-node-tag']}
@@ -120,7 +121,7 @@ export default createComponent({
           ]}
           style={{ color: item.showPopup ? this.activeColor : '' }}
         >
-          <div class="van-ellipsis">
+          <div class="van-ellipsis" vusion-slot-name="title">
             {item.slots('title') || item.displayTitle}
           </div>
         </span>

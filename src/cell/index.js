@@ -26,6 +26,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    novalue: {
+      type: Boolean,
+      default: false,
+    },
     ...routeProps,
   },
 
@@ -56,7 +60,7 @@ export default createComponent({
     const props = this._props;
     const parent = this.$parent;
     const that = this;
-    const { icon, size, title, label, value, isLink, infield } = this._props;
+    const { icon, size, title, label, value, isLink, infield, novalue } = this._props;
     const showTitle = slots('title') || isDef(title);
 
     function Labelb() {
@@ -94,6 +98,7 @@ export default createComponent({
       //   );
       // }
       if (ifDesigner) {
+        if (novalue) return null;
         return (
           <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default" vusion-scope-id={that.$vnode.context.$options._scopeId}>
             {slots() ? slots()  : (isDef(value) && value !== '' ? <span>{value}</span>  : null)}

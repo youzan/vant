@@ -18,13 +18,10 @@ export default createComponent({
 
   props: {
     value: null,
-    title: {
-      type: String,
-      default: '标题'
-    },
+    title: String,
     disabled: Boolean,
     titleClass: String,
-    optionsprop: {
+    options: {
       type: Array,
       default: () => [{'text':'菜单项一','value':0},{'text':'菜单项二','value':1},{'text':'菜单项三','value':2}],
     },
@@ -43,11 +40,6 @@ export default createComponent({
   },
 
   computed: {
-    options() {
-      if (this.optionsprop === null || this.optionsprop === undefined) return [];
-      if(typeof this.optionsprop === 'string') return JSON.parse(this.optionsprop || '[]');
-      if(typeof this.optionsprop === 'object') return this.optionsprop;
-    },
     displayTitle() {
       if (this.title) {
         return this.title;
@@ -129,13 +121,11 @@ export default createComponent({
           title={option.text}
           class={bem('option', { active })}
           style={{ color: active ? activeColor : '' }}
-          novalue={true}
           onClick={() => {
             this.showPopup = false;
 
             if (option.value !== this.value) {
               this.$emit('input', option.value);
-              this.$emit('update:value', option.value);
               this.$emit('change', option.value);
             }
           }}

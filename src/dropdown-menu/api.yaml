@@ -32,17 +32,7 @@
       support:
         - name: van-dropdown-menu
           title: 菜单项
-          snippet: '<van-dropdown-item></van-dropdown-item>'
-  events:
-    - name: submit
-      title: 验证通过
-      description: 提交表单且验证通过后触发
-    - name: failed
-      title: 验证不通过
-      description: 提交表单且验证不通过后触发
-  methods:
-    - name: validate
-      description: 验证表单，支持传入 name 来验证单个或部分表单项
+          snippet: '<van-dropdown-item title="标题"></van-dropdown-item>'
 - name: van-dropdown-item
   title: 菜单项
   attrs:
@@ -52,17 +42,34 @@
       sync: true
       model: true
       description: 菜单项值
-    - name: options
+    - name: optionsprop
       title: 数据源
       type: array,string
-      default: [{'text':'菜单项一','value':0},{'text':'菜单项二','value':1},{'text':'菜单项三','value':2}]
+      default: "[{'text':'菜单项一','value':0},{'text':'菜单项二','value':1},{'text':'菜单项三','value':2}]"
       description: 包含text和value属性的列表
     - name: title
       title: 标题
       type: string
+      default: 标题
       description: 标题
     - name: disabled
       title: 禁用
       type: boolean
       default: false
       description: 禁用
+  events:
+    - name: change
+      title: 点击选项导致 value 变化时触发
+      description: 点击选项导致 value 变化时触发
+      params: []
+    - name: open
+      title: 打开菜单栏时触发
+      description: 打开菜单栏时触发
+      params: []
+    - name: close
+      title: 关闭菜单栏时触发
+      description: 关闭菜单栏时触发
+      params: []
+  methods:
+    - name: toggle
+      description: 切换菜单展示状态
