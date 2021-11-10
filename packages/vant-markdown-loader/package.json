@@ -14,7 +14,7 @@
     "highlight.js": "^10.7.1",
     "loader-utils": "^2.0.0",
     "markdown-it": "^12.0.4",
-    "markdown-it-anchor": "^7.1.0",
+    "markdown-it-anchor": "^8.0.0",
     "transliteration": "^2.2.0"
   }
 }

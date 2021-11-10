@@ -43,7 +43,6 @@
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
-    "@babel/helper-plugin-utils": "^7.14.5",
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@docsearch/css": "3.0.0-alpha.41",
