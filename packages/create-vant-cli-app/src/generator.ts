@@ -1,10 +1,10 @@
+import fs from 'fs-extra';
 import glob from 'fast-glob';
 import chalk from 'chalk';
 import consola from 'consola';
-import { join } from 'path';
+import { prompt } from 'inquirer';
+import { sep, join } from 'path';
 import { CWD, GENERATOR_DIR } from './constant';
-import Yeoman from 'yeoman-environment';
-import Generator from 'yeoman-generator';
 
 const PROMPTS = [
   {
@@ -30,7 +30,9 @@ const PROMPTS = [
   },
 ];
 
-export class VanGenerator extends Generator {
+export class VanGenerator {
+  outputDir = '';
+
   inputs = {
     name: '',
     cssLang: '',
@@ -39,18 +41,18 @@ export class VanGenerator extends Generator {
   };
 
   constructor(name: string) {
-    super([], {
-      env: Yeoman.createEnv([], {
-        cwd: join(CWD, name),
-      }),
-      resolved: GENERATOR_DIR,
-    });
-
     this.inputs.name = name;
+    this.outputDir = join(CWD, name);
+  }
+
+  async run() {
+    await this.prompting();
+    this.writing();
+    this.end();
   }
 
   async prompting() {
-    return this.prompt<Record<string, string>>(PROMPTS).then((inputs) => {
+    return prompt<Record<string, string>>(PROMPTS).then((inputs) => {
       const preprocessor = inputs.preprocessor.toLowerCase();
       const cssLang = preprocessor === 'sass' ? 'scss' : preprocessor;
 
@@ -61,42 +63,43 @@ export class VanGenerator extends Generator {
   }
 
   writing() {
-    consola.info(`Creating project in ${join(CWD, this.inputs.name)}\n`);
-    /**
-    @see {@link https://github.com/mrmlnc/fast-glob#how-to-write-patterns-on-windows}
-    */
+    console.log();
+    consola.info(`Creating project in ${chalk.green(this.outputDir)}\n`);
+
+    // see https://github.com/mrmlnc/fast-glob#how-to-write-patterns-on-windows
     const templatePath = join(GENERATOR_DIR, this.inputs.vueVersion).replace(
       /\\/g,
       '/'
     );
+
     const templateFiles = glob.sync(
       join(templatePath, '**', '*').replace(/\\/g, '/'),
       {
         dot: true,
       }
     );
-    const destinationRoot = this.destinationRoot();
 
     templateFiles.forEach((filePath) => {
       const outputPath = filePath
         .replace('.tpl', '')
-        .replace(templatePath, destinationRoot);
-      this.fs.copyTpl(filePath, outputPath, this.inputs);
+        .replace(templatePath, this.outputDir);
+      this.copyTpl(filePath, outputPath, this.inputs);
     });
   }
 
-  install() {
-    console.log();
-    consola.info('Install dependencies...\n');
+  copyTpl(from: string, to: string, args: Record<string, any>) {
+    fs.copySync(from, to);
+    let content = fs.readFileSync(to, 'utf-8');
 
-    process.chdir(this.inputs.name);
-
-    this.installDependencies({
-      npm: false,
-      bower: false,
-      yarn: true,
-      skipMessage: true,
+    Object.keys(args).forEach((key) => {
+      const regexp = new RegExp(`<%= ${key} %>`, 'g');
+      content = content.replace(regexp, args[key]);
     });
+
+    fs.writeFileSync(to, content);
+
+    const name = to.replace(this.outputDir + sep, '');
+    consola.success(`${chalk.green('create')} ${name}`);
   }
 
   end() {
@@ -105,7 +108,9 @@ export class VanGenerator extends Generator {
     console.log();
     consola.success(`Successfully created ${chalk.yellow(name)}.`);
     consola.success(
-      `Run ${chalk.yellow(`cd ${name} && npm run dev`)} to start development!`
+      `Run ${chalk.yellow(
+        `cd ${name} && git init && yarn && yarn dev`
+      )} to start development!`
     );
   }
 }
