@@ -18,6 +18,7 @@
   "devDependencies": {
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
+    "@vant/stylelint-config": "workspace:*",
     "eslint": "^8.2.0",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
