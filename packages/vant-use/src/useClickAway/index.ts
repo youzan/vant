@@ -1,5 +1,4 @@
 import { Ref, unref } from 'vue';
-import { inBrowser } from '../utils';
 import { useEventListener } from '../useEventListener';
 
 export type UseClickAwayOptions = {
@@ -11,10 +10,6 @@ export function useClickAway(
   listener: EventListener,
   options: UseClickAwayOptions = {}
 ) {
-  if (!inBrowser) {
-    return;
-  }
-
   const { eventName = 'click' } = options;
 
   const onClick = (event: Event) => {
