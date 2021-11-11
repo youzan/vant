@@ -8,11 +8,11 @@ import {
   supportWebp,
   getDPR,
   getBestSelectionFromSrcset,
-  isObject,
   hasIntersectionObserver,
   modeType,
   ImageCache,
 } from './util';
+import { isObject } from '../../utils';
 import ReactiveListener from './listener';
 
 const DEFAULT_URL =
@@ -64,7 +64,6 @@ export default function () {
         attempt: attempt || 3,
         scale: scale || getDPR(scale),
         ListenEvents: listenEvents || DEFAULT_EVENTS,
-        hasbind: false,
         supportWebp: supportWebp(),
         filter: filter || {},
         adapter: adapter || {},

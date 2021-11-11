@@ -158,12 +158,6 @@ export const loadImageAsync = (item, resolve, reject) => {
   image.onerror = (e) => reject(e);
 };
 
-export function isObject(obj) {
-  return obj !== null && typeof obj === 'object';
-}
-
-export function noop() {}
-
 export class ImageCache {
   constructor({ max }) {
     this.options = {
