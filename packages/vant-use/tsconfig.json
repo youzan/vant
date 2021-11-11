@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2015",
-    "outDir": "./dist/types",
-    "module": "ES2015",
+    "outDir": "./dist",
+    "module": "ESNext",
     "strict": true,
     "declaration": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
   },
   "include": ["src/**/*"]
 }

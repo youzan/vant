@@ -247,19 +247,19 @@ importers:
   packages/vant-popperjs:
     specifiers:
       '@popperjs/core': ^2.9.2
-      '@rollup/plugin-babel': ^5.2.1
-      '@rollup/plugin-node-resolve': ^10.0.0
-      '@vant/cli': workspace:*
+      '@rollup/plugin-node-resolve': ^13.0.0
       release-it: ^14.2.2
       rollup: ^2.33.3
+      rollup-plugin-esbuild: ^4.6.0
+      typescript: 4.x
     dependencies:
       '@popperjs/core': 2.10.2
     devDependencies:
-      '@rollup/plugin-babel': 5.3.0_rollup@2.59.0
-      '@rollup/plugin-node-resolve': 10.0.0_rollup@2.59.0
-      '@vant/cli': link:../vant-cli
+      '@rollup/plugin-node-resolve': 13.0.6_rollup@2.59.0
       release-it: 14.11.6
       rollup: 2.59.0
+      rollup-plugin-esbuild: 4.6.0_rollup@2.59.0
+      typescript: 4.4.4
 
   packages/vant-stylelint-config:
     specifiers:
@@ -277,19 +277,15 @@ importers:
 
   packages/vant-use:
     specifiers:
-      '@babel/core': ^7.12.9
-      '@vant/cli': workspace:*
-      fast-glob: ^3.2.7
-      fs-extra: ^10.0.0
       release-it: ^14.0.2
+      rollup: ^2.33.3
+      rollup-plugin-esbuild: ^4.6.0
       typescript: 4.x
       vue: ^3.2.20
     devDependencies:
-      '@babel/core': 7.16.0
-      '@vant/cli': link:../vant-cli
-      fast-glob: 3.2.7
-      fs-extra: 10.0.0
       release-it: 14.11.6
+      rollup: 2.59.0
+      rollup-plugin-esbuild: 4.6.0_rollup@2.59.0
       typescript: 4.4.4
       vue: 3.2.21
 
@@ -1949,27 +1945,11 @@ packages:
     resolution: {integrity: sha1-B5jAM1Hw3qGlpMq93yalWny+5ZA=, tarball: '@popperjs/core/download/@popperjs/core-2.10.2.tgz'}
     dev: false
 
-  /@rollup/plugin-babel/5.3.0_rollup@2.59.0:
-    resolution: {integrity: sha1-nLHFFG3daklorZbyCcUMYvkvmHk=, tarball: '@rollup/plugin-babel/download/@rollup/plugin-babel-5.3.0.tgz'}
+  /@rollup/plugin-node-resolve/13.0.6_rollup@2.59.0:
+    resolution: {integrity: sha1-KWKQcLt2dWe+gVf1dc+o8rjp73c=, tarball: '@rollup/plugin-node-resolve/download/@rollup/plugin-node-resolve-13.0.6.tgz'}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
-      '@babel/core': ^7.0.0
-      '@types/babel__core': ^7.1.9
-      rollup: ^1.20.0||^2.0.0
-    peerDependenciesMeta:
-      '@types/babel__core':
-        optional: true
-    dependencies:
-      '@babel/helper-module-imports': 7.16.0
-      '@rollup/pluginutils': 3.1.0_rollup@2.59.0
-      rollup: 2.59.0
-    dev: true
-
-  /@rollup/plugin-node-resolve/10.0.0_rollup@2.59.0:
-    resolution: {integrity: sha1-RAZKK5jfdTDmas+JQf8mL8m06tg=, tarball: '@rollup/plugin-node-resolve/download/@rollup/plugin-node-resolve-10.0.0.tgz'}
-    engines: {node: '>= 10.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0
+      rollup: ^2.42.0
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.59.0
       '@types/resolve': 1.17.1
@@ -1998,7 +1978,6 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.0
-    dev: false
 
   /@sindresorhus/is/0.14.0:
     resolution: {integrity: sha1-n7OjzzEyMoFR81PeRjLgHlIQK+o=, tarball: '@sindresorhus/is/download/@sindresorhus/is-0.14.0.tgz'}
@@ -3571,7 +3550,7 @@ packages:
     resolution: {integrity: sha1-pvLc5hL63S7x9Rm3NVHxfoUZmDE=, tarball: deep-is/download/deep-is-0.1.4.tgz}
 
   /deepmerge/4.2.2:
-    resolution: {integrity: sha1-RNLqNnm49NT/ujPwPYZfwee/SVU=, tarball: deepmerge/download/deepmerge-4.2.2.tgz?cache=0&sync_timestamp=1632822781299&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fdeepmerge%2Fdownload%2Fdeepmerge-4.2.2.tgz}
+    resolution: {integrity: sha1-RNLqNnm49NT/ujPwPYZfwee/SVU=, tarball: deepmerge/download/deepmerge-4.2.2.tgz}
     engines: {node: '>=0.10.0'}
 
   /defaults/1.0.3:
@@ -4432,6 +4411,7 @@ packages:
       graceful-fs: 4.2.8
       jsonfile: 6.1.0
       universalify: 2.0.0
+    dev: false
 
   /fs-extra/8.1.0:
     resolution: {integrity: sha1-SdQ8RaiM2Wd2aMt74bRu/bjS4cA=, tarball: fs-extra/download/fs-extra-8.1.0.tgz?cache=0&sync_timestamp=1632822706452&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ffs-extra%2Fdownload%2Ffs-extra-8.1.0.tgz}
@@ -5789,6 +5769,11 @@ packages:
       - utf-8-validate
     dev: false
 
+  /joycon/3.0.1:
+    resolution: {integrity: sha1-kHTJsIzPN6Zyb/dKGEhfhe/K3a8=, tarball: joycon/download/joycon-3.0.1.tgz}
+    engines: {node: '>=10'}
+    dev: true
+
   /js-tokens/4.0.0:
     resolution: {integrity: sha1-GSA/tZmR35jjoocFDUZHzerzJJk=, tarball: js-tokens/download/js-tokens-4.0.0.tgz}
 
@@ -5898,6 +5883,10 @@ packages:
     dependencies:
       minimist: 1.2.5
 
+  /jsonc-parser/3.0.0:
+    resolution: {integrity: sha1-q914VwHH5+rKip7IzwcMpRp0WiI=, tarball: jsonc-parser/download/jsonc-parser-3.0.0.tgz}
+    dev: true
+
   /jsonfile/4.0.0:
     resolution: {integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=, tarball: jsonfile/download/jsonfile-4.0.0.tgz}
     optionalDependencies:
@@ -5910,6 +5899,7 @@ packages:
       universalify: 2.0.0
     optionalDependencies:
       graceful-fs: 4.2.8
+    dev: false
 
   /jsonparse/1.3.1:
     resolution: {integrity: sha1-P02uSpH6wxX3EGL4UhzCOfE2YoA=, tarball: jsonparse/download/jsonparse-1.3.1.tgz}
@@ -7315,6 +7305,19 @@ packages:
     dependencies:
       glob: 7.2.0
 
+  /rollup-plugin-esbuild/4.6.0_rollup@2.59.0:
+    resolution: {integrity: sha1-KTsMjS5kt1ORjzAjwfuH3ErN7zs=, tarball: rollup-plugin-esbuild/download/rollup-plugin-esbuild-4.6.0.tgz}
+    engines: {node: '>=12'}
+    peerDependencies:
+      esbuild: '>=0.10.1'
+      rollup: ^1.20.0 || ^2.0.0
+    dependencies:
+      '@rollup/pluginutils': 4.1.1
+      joycon: 3.0.1
+      jsonc-parser: 3.0.0
+      rollup: 2.59.0
+    dev: true
+
   /rollup/2.59.0:
     resolution: {integrity: sha1-EIxhsPoKN+vI0fFk8oFiIFbw21k=, tarball: rollup/download/rollup-2.59.0.tgz}
     engines: {node: '>=10.0.0'}
@@ -8115,6 +8118,7 @@ packages:
   /universalify/2.0.0:
     resolution: {integrity: sha1-daSYTv7cSwiXXFrrc/Uw0C3yVxc=, tarball: universalify/download/universalify-2.0.0.tgz}
     engines: {node: '>= 10.0.0'}
+    dev: false
 
   /update-notifier/5.1.0:
     resolution: {integrity: sha1-SrDXx/NqIx3XMWz3cpMT8CFNmtk=, tarball: update-notifier/download/update-notifier-5.1.0.tgz}
