@@ -238,9 +238,13 @@ export default createComponent({
       classes[size] = size;
     }
 
-
+    const ado = {
+      ...this.$attrs,
+      [infield ? 'is-sub': 'noallow']: ''
+    }
     return (
       <div
+        {...{attrs: {...ado}}}
         class={bem(classes)}
         role={clickable ? 'button' : null}
         tabindex={clickable ? 0 : null}

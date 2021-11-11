@@ -729,6 +729,7 @@ export default createComponent({
     }
     return (
       <Cell
+        infield={true}
         icon={this.leftIcon}
         size={this.size}
         center={this.center}

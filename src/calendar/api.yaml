@@ -42,7 +42,7 @@
       type: string
       default: 选择日期
     - name: readonly
-      title: 禁用
+      title: 只读
       type: boolean
       default: false
     - name: disabled
