@@ -3,6 +3,7 @@ import { createNamespace, isDef, isDef2 } from '../utils';
 import { emit } from '../utils/functional';
 import { routeProps, functionalRoute } from '../utils/router';
 import { cellProps } from './shared';
+import { ChildrenMixin } from '../mixins/relation';
 
 // Components
 import Icon from '../icon';
@@ -15,6 +16,7 @@ const [createComponent, bem] = createNamespace('cell');
 
 
 export default createComponent({
+  mixins: [ChildrenMixin('vanDropdownMenuItem')],
   inheritAttrs: false,
   components: {
     VanEmptyCol,
@@ -162,6 +164,16 @@ export default createComponent({
     }
 
     function onClick(event) {
+      if (that.vanDropdownMenuItem) {
+        that.vanDropdownMenuItem.showPopup = false;
+        if (that.value !== that.vanDropdownMenuItem.value) {
+          that.vanDropdownMenuItem.$emit('input', that.vanDropdownMenuItem.value);
+          that.vanDropdownMenuItem.$emit('update:value', that.vanDropdownMenuItem.value);
+          that.vanDropdownMenuItem.$emit('change', that.vanDropdownMenuItem.value);
+        }
+      }
+
+
       // emit(that, 'click', event);
       const hrefR = currentHref();
       if (!hrefR && !that.$listeners.click) {
@@ -237,7 +249,18 @@ export default createComponent({
     if (size) {
       classes[size] = size;
     }
+    let classesnew = bem(classes);
+    const inVanDropdownItem = that.vanDropdownMenuItem && isDef(that.vanDropdownMenuItem.value);
+    if (inVanDropdownItem) {
+      console.log(that.vanDropdownMenuItem.value,  that.value);
+      if (that.vanDropdownMenuItem.value === that.value) {
+        classesnew += that.vanDropdownMenuItem.bem('option', { active: true });
+      } else {
+        classesnew += that.vanDropdownMenuItem.bem('option', { active: false });
+      }
+    }
 
+    console.log(classesnew, 555)
     const ado = {
       ...this.$attrs,
       [infield ? 'is-sub': 'noallow']: ''
@@ -245,7 +268,7 @@ export default createComponent({
     return (
       <div
         {...{attrs: {...ado}}}
-        class={bem(classes)}
+        class={classesnew}
         role={clickable ? 'button' : null}
         tabindex={clickable ? 0 : null}
         onClick={onClick}
@@ -259,6 +282,7 @@ export default createComponent({
         {Value()}
         {RightIcon()}
         {slots('extra')}
+        {inVanDropdownItem && that.vanDropdownMenuItem.value === that.value ? <Icon class={that.vanDropdownMenuItem.bem('icon')} color={that.vanDropdownMenuItem.parent.activeColor} name="success" /> : null}
       </div>
     );
   },

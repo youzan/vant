@@ -2,6 +2,15 @@
   <demo-section>
     <demo-block :title="t('basicUsage')">
       <van-dropdown-menu>
+        <van-dropdown-item value="1">
+          <van-cell clickable title="标题1" novalue value="1"></van-cell>
+          <van-cell clickable title="标题2" novalue value="12"></van-cell>
+          <van-cell clickable title="标题3" novalue value="123"></van-cell>
+        </van-dropdown-item>
+      </van-dropdown-menu>
+    </demo-block>
+    <demo-block :title="t('basicUsage')">
+      <van-dropdown-menu>
         <van-dropdown-item  :options="option1" />
         <van-dropdown-item v-model="value2" :options="option2" />
       </van-dropdown-menu>

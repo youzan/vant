@@ -42,11 +42,6 @@
       sync: true
       model: true
       description: 菜单项值
-    - name: optionsprop
-      title: 数据源
-      type: array,string
-      default: "[{'text':'菜单项一','value':0},{'text':'菜单项二','value':1},{'text':'菜单项三','value':2}]"
-      description: 包含text和value属性的列表
     - name: title
       title: 标题
       type: string
@@ -57,6 +52,14 @@
       type: boolean
       default: false
       description: 禁用
+  slots:
+    - name: default
+      description: 插入`<van-cell>`子组件。
+      empty-background: add-sub-large
+      support:
+        - name: van-cell
+          title: 菜单项
+          snippet: '<van-cell clickable title="标题n" novalue></van-cell>'
   events:
     - name: change
       title: 点击选项导致 value 变化时触发

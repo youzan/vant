@@ -1,5 +1,10 @@
 <template>
   <demo-section>
+    <van-sidebar>
+          <van-sidebar-item :title="t('title')" />
+          <van-sidebar-item :title="t('title')" />
+          <van-sidebar-item :title="t('title')" />
+        </van-sidebar>
     <van-grid :column-num="2" :border="false">
       <van-grid-item>
         <h3 class="demo-sidebar-title">{{ t('basicUsage') }}</h3>

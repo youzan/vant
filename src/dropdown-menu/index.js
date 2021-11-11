@@ -69,7 +69,6 @@ export default createComponent({
       }
 
       const rect = this.$refs.bar.getBoundingClientRect();
-console.log(rect)
       if (this.direction === 'down') {
         this.offset = rect.bottom;
       } else {
@@ -121,7 +120,7 @@ console.log(rect)
           ]}
           style={{ color: item.showPopup ? this.activeColor : '' }}
         >
-          <div class="van-ellipsis" vusion-slot-name="title">
+          <div class="van-ellipsis" vusion-slot-name="title" vusion-click-enabled>
             {item.slots('title') || item.displayTitle}
           </div>
         </span>

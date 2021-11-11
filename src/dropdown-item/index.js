@@ -4,7 +4,7 @@ import { on, off } from '../utils/dom/event';
 
 // Mixins
 import { PortalMixin } from '../mixins/portal';
-import { ChildrenMixin } from '../mixins/relation';
+import { ChildrenMixin, ParentMixin } from '../mixins/relation';
 
 // Components
 import Cell from '../cell';
@@ -14,7 +14,7 @@ import Popup from '../popup';
 const [createComponent, bem] = createNamespace('dropdown-item');
 
 export default createComponent({
-  mixins: [PortalMixin({ ref: 'wrapper' }), ChildrenMixin('vanDropdownMenu')],
+  mixins: [PortalMixin({ ref: 'wrapper' }), ChildrenMixin('vanDropdownMenu'), ParentMixin('vanDropdownMenuItem')],
 
   props: {
     value: null,
@@ -26,7 +26,7 @@ export default createComponent({
     titleClass: String,
     optionsprop: {
       type: Array,
-      default: () => [{'text':'菜单项一','value':0},{'text':'菜单项二','value':1},{'text':'菜单项三','value':2}],
+      default: () => [],
     },
     lazyRender: {
       type: Boolean,
@@ -39,6 +39,7 @@ export default createComponent({
       transition: true,
       showPopup: false,
       showWrapper: false,
+      bem,
     };
   },
 
@@ -119,10 +120,15 @@ export default createComponent({
       closeOnClickOverlay,
     } = this.parent;
 
+    const aId = this.$vnode.context.$options._scopeId;
+
+
     const Options = this.options.map((option) => {
       const active = option.value === this.value;
       return (
         <Cell
+          vusion-scope-id={aId}
+          vusion-node-tag="van-cell"
           clickable
           key={option.value}
           icon={option.icon}
@@ -153,7 +159,6 @@ export default createComponent({
     } else {
       style.bottom = `${offset}px`;
     }
-console.group(this, 888)
     return (
       <div
       >
