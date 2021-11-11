@@ -1,13 +1,17 @@
 # Vant Use
 
-Vant Use 是从 Vant 实际应用场景中沉淀的 Vue 组合式 API 库。
+Built-in composition APIs of Vant.
 
-## 安装
+## Install
 
-```bash
-# 通过 npm 安装
+#### NPM
+
+```shell
 npm i @vant/use -S
+```
 
-# 通过 yarn 安装
+#### YARN
+
+```shell
 yarn add @vant/use
 ```
