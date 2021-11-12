@@ -67,7 +67,6 @@ export default createComponent({
 
   watch: {
     showPopup(val) {
-      this.togglePopup();
       this.bindScroll(val);
     },
   },
@@ -110,13 +109,6 @@ export default createComponent({
       // prevent being identified as clicking outside and closed when use get-contaienr
       if (this.getContainer) {
         event.stopPropagation();
-      }
-    },
-    togglePopup() {
-      if (this.showPopup) {
-        this.$refs.popfordropdown.openModal();
-      } else {
-        this.$refs.popfordropdown.closeModal();
       }
     },
   },
@@ -181,7 +173,7 @@ export default createComponent({
           onClick={this.onClickWrapper}
         >
           <Popup
-            // vModel={this.showPopup}
+            vModel={this.showPopup}
             ref="popfordropdown"
             overlay={overlay}
             class={bem('content')}
@@ -197,7 +189,6 @@ export default createComponent({
               this.showWrapper = false;
               this.$emit('closed');
             }}
-            onClickOverlay={this.togglePopup}
           >
             {Options}
             {this.slots('default')}
