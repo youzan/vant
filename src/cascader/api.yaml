@@ -32,13 +32,10 @@
       type: string
       default: 请选择
       description: 未选中时的提示文案
-    - name: field-names
+    - name: field-namesp
       title: 自定义 options 结构中的字段
-      type: object
-      default:
-        text: text
-        value: value
-        children: children
+      type: string, object
+      default: "{'text':'text','value':'value','children':'children'}"
       description: 自定义 options 结构中的字段
   slots: false
   events:

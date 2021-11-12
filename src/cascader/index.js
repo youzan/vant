@@ -18,7 +18,7 @@ export default createComponent({
   props: {
     title: String,
     value: [Number, String],
-    fieldNames: Object,
+    fieldNamesp: [Object, String],
     placeholder: String,
     activeColor: String,
     dataSource: {
@@ -60,6 +60,11 @@ export default createComponent({
   },
 
   computed: {
+    fieldNames() {
+      if (this.fieldNamesp === null || this.fieldNamesp === undefined) return {};
+      if(typeof this.fieldNamesp === 'string') return JSON.parse(this.fieldNamesp || '{}');
+      if(typeof this.fieldNamesp === 'object') return this.fieldNamesp;
+    },
     textKey() {
       return this.textField || this.fieldNames?.text || 'text';
     },
