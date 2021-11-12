@@ -80,14 +80,15 @@ export default defineComponent({
       width: 0,
       height: 0,
       offset: 0,
-      active: 0,
-      swiping: false,
+      active: 0, // item位置
+      swiping: false, // 是否滚动
     });
 
     const touch = useTouch();
     const windowSize = useWindowSize();
     const { children, linkChildren } = useChildren(SWIPE_KEY);
 
+    // item 的个数
     const count = computed(() => children.length);
 
     const size = computed(() => state[props.vertical ? 'height' : 'width']);
@@ -134,7 +135,7 @@ export default defineComponent({
 
       return style;
     });
-
+    // 获取当前为第几页
     const getTargetActive = (pace: number) => {
       const { active } = state;
 
@@ -146,7 +147,7 @@ export default defineComponent({
       }
       return active;
     };
-
+    // 获取当前offset的值
     const getTargetOffset = (targetActive: number, offset = 0) => {
       let currentPosition = targetActive * size.value;
       if (!props.loop) {
@@ -161,6 +162,7 @@ export default defineComponent({
       return targetOffset;
     };
 
+    // 移动每个选项
     const move = ({
       pace = 0,
       offset = 0,
@@ -175,16 +177,17 @@ export default defineComponent({
       }
 
       const { active } = state;
-      const targetActive = getTargetActive(pace);
-      const targetOffset = getTargetOffset(targetActive, offset);
+      const targetActive = getTargetActive(pace); // 获取当前为第几页
+      const targetOffset = getTargetOffset(targetActive, offset); // 获取当前offset的值
 
       // auto move first and last swipe in loop mode
       if (props.loop) {
+        // 向右移动
         if (children[0] && targetOffset !== minOffset.value) {
           const outRightBound = targetOffset < minOffset.value;
           children[0].setOffset(outRightBound ? trackSize.value : 0);
         }
-
+        // 向左移动
         if (children[count.value - 1] && targetOffset !== 0) {
           const outLeftBound = targetOffset > 0;
           children[count.value - 1].setOffset(
@@ -197,25 +200,29 @@ export default defineComponent({
       state.offset = targetOffset;
 
       if (emitChange && targetActive !== active) {
-        emit('change', activeIndicator.value);
+        emit('change', activeIndicator.value); // 定义移动后的change事件
       }
     };
 
+    // 修正初始位置索引值
     const correctPosition = () => {
       state.swiping = true;
 
       if (state.active <= -1) {
+        // 位置为负数时，直接走到后面
         move({ pace: count.value });
       } else if (state.active >= count.value) {
+        // ？？？
         move({ pace: -count.value });
       }
     };
 
-    // swipe to prev item
+    // swipe to prev item 切换到上一轮播
     const prev = () => {
       correctPosition();
-      touch.reset();
+      touch.reset(); // 重置offset delta属性
 
+      // 调用requestAnimationFrame 执行动画，在下次执行前执行回调函数更新动画
       doubleRaf(() => {
         state.swiping = false;
         move({
@@ -225,13 +232,14 @@ export default defineComponent({
       });
     };
 
-    // swipe to next item
+    // swipe to next item 切换到下一轮播
     const next = () => {
       correctPosition();
       touch.reset();
 
       doubleRaf(() => {
         state.swiping = false;
+        // 进行播放操作
         move({
           pace: 1,
           emitChange: true,
@@ -243,17 +251,19 @@ export default defineComponent({
 
     const stopAutoplay = () => clearTimeout(autoplayTimer);
 
+    // 自动播放
     const autoplay = () => {
+      // 在自动播放之前先重置时间戳
       stopAutoplay();
       if (props.autoplay > 0 && count.value > 1) {
         autoplayTimer = setTimeout(() => {
-          next();
+          next(); // 开始播放
           autoplay();
         }, +props.autoplay);
       }
     };
 
-    // initialize swipe position
+    // 初始化滚动的位置 cinitialize swipe position
     const initialize = (active = +props.initialSwipe) => {
       if (!root.value) {
         return;
@@ -273,14 +283,14 @@ export default defineComponent({
         active = Math.min(count.value - 1, active);
       }
 
-      state.active = active;
-      state.swiping = true;
+      state.active = active; // item 位置
+      state.swiping = true; // 是否滚动
       state.offset = getTargetOffset(active);
       children.forEach((swipe) => {
         swipe.setOffset(0);
       });
     };
-
+    // 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘
     const resize = () => initialize(state.active);
 
     let touchStartTime: number;
@@ -342,7 +352,7 @@ export default defineComponent({
       state.swiping = false;
       autoplay();
     };
-
+    // 切换到指定位置
     const swipeTo = (index: number, options: SwipeToOptions = {}) => {
       correctPosition();
       touch.reset();
@@ -427,7 +437,7 @@ export default defineComponent({
       }
     });
 
-    onMounted(initialize);
+    onMounted(initialize); // 挂载页面
     onActivated(() => initialize(state.active));
     onPopupReopen(() => initialize(state.active));
     onDeactivated(stopAutoplay);
