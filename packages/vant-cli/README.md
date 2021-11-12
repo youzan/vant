@@ -20,11 +20,14 @@ yarn create vant-cli-app
 ### 手动安装
 
 ```shell
-# 通过 npm 安装
+# 通过 npm
 npm i @vant/cli -D
 
-# 通过 yarn 安装
-yarn add @vant/cli --dev
+# 通过 yarn
+yarn add @vant/cli -D
+
+# 通过 pnpm
+pnpm add @vant/cli -D
 ```
 
 安装完成后，请将以下配置添加到 package.json 文件中

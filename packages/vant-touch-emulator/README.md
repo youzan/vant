@@ -4,16 +4,15 @@
 
 ## Install
 
-#### NPM
-
 ```shell
-npm i @vant/touch-emulator -S
-```
+# with npm
+npm i @vant/touch-emulator
 
-#### YARN
-
-```shell
+# with yarn
 yarn add @vant/touch-emulator
+
+# with pnpm
+pnpm add @vant/touch-emulator
 ```
 
 ## 使用指南

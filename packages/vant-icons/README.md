@@ -2,16 +2,15 @@
 
 ## Install
 
-#### NPM
-
 ```shell
-npm i @vant/icons -S
-```
+# with npm
+npm i @vant/icons
 
-#### YARN
-
-```shell
+# with yarn
 yarn add @vant/icons
+
+# with pnpm
+pnpm add @vant/icons
 ```
 
 ## Document

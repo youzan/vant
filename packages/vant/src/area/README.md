@@ -55,7 +55,14 @@ export default {
 Vant officially provides a default area data, which can be imported through [@vant/area-data](https://github.com/youzan/vant/tree/dev/packages/vant-area-data):
 
 ```bash
+# with npm
+npm i @vant/area-data
+
+# with yarn
 yarn add @vant/area-data
+
+# with pnpm
+pnpm add @vant/area-data
 ```
 
 ```ts
