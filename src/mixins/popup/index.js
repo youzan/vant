@@ -83,14 +83,15 @@ export function PopupMixin(options = {}) {
 
     watch: {
       value(val) {
-        const type = val ? 'open' : 'close';
-        this.inited = this.inited || this.value;
-        this.realValue = this.value;
-        this[type]();
+        this.realValue = val;
+        // const type = val ? 'open' : 'close';
+        // this.inited = this.inited || this.value;
+        // this.realValue = this.value;
+        // this[type]();
 
-        if (!options.skipToggleEvent) {
-          this.$emit(type);
-        }
+        // if (!options.skipToggleEvent) {
+        //   this.$emit(type);
+        // }
       },
       realValue(val) {
         const type = val ? 'open' : 'close';
