@@ -4,16 +4,15 @@
 
 ## Install
 
-#### NPM
-
 ```shell
+# with npm
 npm i @vant/markdown-vetur -D
-```
 
-#### YARN
+# with yarn
+yarn add @vant/markdown-vetur -D
 
-```shell
-yarn add @vant/markdown-vetur --dev
+# with pnpm
+pnpm add @vant/markdown-vetur -D
 ```
 
 ## API

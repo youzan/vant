@@ -42,11 +42,17 @@
 ## Install
 
 ```bash
-# Install Vant 2 for Vue 2 project
-npm i vant -S
+# install Vant 2 for Vue 2 project
+npm i vant@2
 
-# Install Vant 3 for Vue 3 project
-npm i vant@next -S
+# install Vant 3 for Vue 3 project
+npm i vant@3
+
+# with yarn
+yarn add vant@3
+
+# with pnpm
+pnpm add vant@3
 ```
 
 ## Quickstart

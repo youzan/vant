@@ -46,11 +46,17 @@ Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源�
 ## 安装
 
 ```bash
-# Vue 2 项目，安装 Vant 2：
-npm i vant -S
+# Vue 2 项目，安装 Vant 2
+npm i vant@2
 
-# Vue 3 项目，安装 Vant 3：
-npm i vant@next -S
+# Vue 3 项目，安装 Vant 3
+npm i vant@3
+
+# 通过 yarn 安装
+yarn add vant@3
+
+# 通过 pnpm 安装
+pnpm add vant@3
 ```
 
 ## 快速上手

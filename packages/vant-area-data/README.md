@@ -4,16 +4,15 @@
 
 ## 安装
 
-#### NPM
-
 ```shell
-npm i @vant/area-data -D
-```
+# 通过 npm
+npm i @vant/area-data
 
-#### YARN
+# 通过 yarn
+yarn add @vant/area-data
 
-```shell
-yarn add @vant/area-data --dev
+# 通过 pnpm
+pnpm add @vant/area-data
 ```
 
 ## 使用

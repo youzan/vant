@@ -4,14 +4,13 @@ Built-in composition APIs of Vant.
 
 ## Install
 
-#### NPM
-
 ```shell
-npm i @vant/use -S
-```
+# with npm
+npm i @vant/use
 
-#### YARN
-
-```shell
+# with yarn
 yarn add @vant/use
+
+# with pnpm
+pnpm add @vant/use
 ```
