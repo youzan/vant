@@ -59,7 +59,7 @@
       support:
         - name: van-cell
           title: 菜单项
-          snippet: '<van-cell clickable title="标题n" novalue></van-cell>'
+          snippet: '<van-cell clickable title="标题n" novalue :isLink="false"></van-cell>'
   events:
     - name: change
       title: 点击选项导致 value 变化时触发

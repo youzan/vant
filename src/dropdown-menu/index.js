@@ -87,9 +87,9 @@ export default createComponent({
     },
 
     onClickOutside() {
-      this.children.forEach((item) => {
-        item.toggle(false);
-      });
+      // this.children.forEach((item) => {
+      //   item.toggle(false);
+      // });
     },
   },
 
@@ -100,11 +100,6 @@ export default createComponent({
         role="button"
         tabindex={item.disabled ? -1 : 0}
         class={bem('item', { disabled: item.disabled })}
-        onClick={() => {
-          if (!item.disabled) {
-            this.toggleItem(index);
-          }
-        }}
         vusion-slot-name="title"
         vusion-scope-id={aId}
         vusion-node-path={item.$attrs['vusion-node-path']}
@@ -120,7 +115,11 @@ export default createComponent({
           ]}
           style={{ color: item.showPopup ? this.activeColor : '' }}
         >
-          <div class="van-ellipsis" vusion-slot-name="title" vusion-click-enabled>
+          <div class="van-ellipsis" vusion-slot-name="title" vusion-click-enabled onClick={() => {
+            if (!item.disabled) {
+              this.toggleItem(index);
+            }
+          }}>
             {item.slots('title') || item.displayTitle}
           </div>
         </span>

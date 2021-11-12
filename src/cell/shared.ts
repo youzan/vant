@@ -36,7 +36,10 @@ export const cellProps = {
     type: Boolean,
     default: true,
   },
-  isLink: Boolean,
+  isLink: {
+    type: Boolean,
+    default: true,
+  },
   required: Boolean,
   iconPrefix: String,
   titleStyle: null as any,

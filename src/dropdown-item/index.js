@@ -28,6 +28,10 @@ export default createComponent({
       type: Array,
       default: () => [],
     },
+    options: {
+      type: Array,
+      default: () => [],
+    },
     lazyRender: {
       type: Boolean,
       default: false,
@@ -44,11 +48,11 @@ export default createComponent({
   },
 
   computed: {
-    options() {
-      if (this.optionsprop === null || this.optionsprop === undefined) return [];
-      if(typeof this.optionsprop === 'string') return JSON.parse(this.optionsprop || '[]');
-      if(typeof this.optionsprop === 'object') return this.optionsprop;
-    },
+    // options() {
+    //   if (this.optionsprop === null || this.optionsprop === undefined) return [];
+    //   if(typeof this.optionsprop === 'string') return JSON.parse(this.optionsprop || '[]');
+    //   if(typeof this.optionsprop === 'object') return this.optionsprop;
+    // },
     displayTitle() {
       if (this.title) {
         return this.title;
@@ -63,6 +67,7 @@ export default createComponent({
 
   watch: {
     showPopup(val) {
+      this.togglePopup();
       this.bindScroll(val);
     },
   },
@@ -107,6 +112,13 @@ export default createComponent({
         event.stopPropagation();
       }
     },
+    togglePopup() {
+      if (this.showPopup) {
+        this.$refs.popfordropdown.openModal();
+      } else {
+        this.$refs.popfordropdown.closeModal();
+      }
+    },
   },
 
   render() {
@@ -138,7 +150,6 @@ export default createComponent({
           novalue={true}
           onClick={() => {
             this.showPopup = false;
-
             if (option.value !== this.value) {
               this.$emit('input', option.value);
               this.$emit('update:value', option.value);
@@ -170,7 +181,8 @@ export default createComponent({
           onClick={this.onClickWrapper}
         >
           <Popup
-            vModel={this.showPopup}
+            // vModel={this.showPopup}
+            ref="popfordropdown"
             overlay={overlay}
             class={bem('content')}
             position={direction === 'down' ? 'top' : 'bottom'}
@@ -185,6 +197,7 @@ export default createComponent({
               this.showWrapper = false;
               this.$emit('closed');
             }}
+            onClickOverlay={this.togglePopup}
           >
             {Options}
             {this.slots('default')}

@@ -99,8 +99,8 @@ export default createComponent({
       //     </div>
       //   );
       // }
+      if (novalue) return null;
       if (ifDesigner) {
-        if (novalue) return null;
         return (
           <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default" vusion-scope-id={that.$vnode.context.$options._scopeId}>
             {slots() ? slots()  : (isDef(value) && value !== '' ? <span>{value}</span>  : null)}
