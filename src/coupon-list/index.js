@@ -70,7 +70,6 @@ export default createComponent({
   data() {
     return {
       tab: 0,
-      winHeight: window.innerHeight,
       currentCode: this.code || '',
     };
   },
@@ -83,12 +82,6 @@ export default createComponent({
           !this.currentCode ||
           this.currentCode.length < this.exchangeMinLength)
       );
-    },
-
-    listStyle() {
-      return {
-        height: this.winHeight - (this.showExchangeBar ? 140 : 94) + 'px',
-      };
     },
   },
 
@@ -186,8 +179,10 @@ export default createComponent({
     const CouponTab = (
       <Tab title={title}>
         <div
-          class={bem('list', { 'with-bottom': this.showCloseButton })}
-          style={this.listStyle}
+          class={bem('list', {
+            'with-bar': this.showExchangeBar,
+            'with-bottom': this.showCloseButton,
+          })}
         >
           {coupons.map((coupon, index) => (
             <Coupon
@@ -208,8 +203,10 @@ export default createComponent({
     const DisabledCouponTab = (
       <Tab title={disabledTitle}>
         <div
-          class={bem('list', { 'with-bottom': this.showCloseButton })}
-          style={this.listStyle}
+          class={bem('list', {
+            'with-bar': this.showExchangeBar,
+            'with-bottom': this.showCloseButton,
+          })}
         >
           {disabledCoupons.map((coupon) => (
             <Coupon

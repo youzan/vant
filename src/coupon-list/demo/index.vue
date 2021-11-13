@@ -57,7 +57,21 @@ export default {
 
   computed: {
     coupons() {
-      return [this.coupon, this.discountCoupon, ...this.exchangedCoupons];
+      return [
+        this.coupon,
+        this.coupon,
+        this.coupon,
+        this.coupon,
+        this.coupon,
+        this.coupon,
+        this.coupon,
+        this.coupon,
+        this.coupon,
+        this.coupon,
+        this.coupon,
+        this.discountCoupon,
+        ...this.exchangedCoupons,
+      ];
     },
 
     disabledCoupons() {
