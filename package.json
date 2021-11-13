@@ -5,6 +5,7 @@
     "dev": "pnpm dev --dir ./packages/vant",
     "lint": "pnpm lint --dir ./packages/vant",
     "test": "pnpm test --dir ./packages/vant",
+    "test:watch": "pnpm test:watch --dir ./packages/vant",
     "build": "pnpm build --dir ./packages/vant",
     "build:site": "pnpm build:site --dir ./packages/vant"
   },

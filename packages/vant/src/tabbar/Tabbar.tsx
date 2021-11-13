@@ -84,16 +84,14 @@ export default defineComponent({
     };
 
     const setActive = (active: number | string, afterChange: () => void) => {
-      if (active !== props.modelValue) {
-        callInterceptor(props.beforeChange, {
-          args: [active],
-          done() {
-            emit('update:modelValue', active);
-            emit('change', active);
-            afterChange();
-          },
-        });
-      }
+      callInterceptor(props.beforeChange, {
+        args: [active],
+        done() {
+          emit('update:modelValue', active);
+          emit('change', active);
+          afterChange();
+        },
+      });
     };
 
     linkChildren({ props, setActive });
