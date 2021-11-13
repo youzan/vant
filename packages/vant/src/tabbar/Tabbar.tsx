@@ -44,7 +44,7 @@ export type TabbarProps = ExtractPropTypes<typeof tabbarProps>;
 
 export type TabbarProvide = {
   props: TabbarProps;
-  setActive: (active: number | string) => void;
+  setActive: (active: number | string, afterChange: () => void) => void;
 };
 
 export const TABBAR_KEY: InjectionKey<TabbarProvide> = Symbol(name);
@@ -83,16 +83,15 @@ export default defineComponent({
       );
     };
 
-    const setActive = (active: number | string) => {
-      if (active !== props.modelValue) {
-        callInterceptor(props.beforeChange, {
-          args: [active],
-          done() {
-            emit('update:modelValue', active);
-            emit('change', active);
-          },
-        });
-      }
+    const setActive = (active: number | string, afterChange: () => void) => {
+      callInterceptor(props.beforeChange, {
+        args: [active],
+        done() {
+          emit('update:modelValue', active);
+          emit('change', active);
+          afterChange();
+        },
+      });
     };
 
     linkChildren({ props, setActive });
