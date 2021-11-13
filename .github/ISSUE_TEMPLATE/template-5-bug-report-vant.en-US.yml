@@ -1,7 +1,7 @@
 name: Bug Report
 description: Use issue template to report a bug.
 title: "[Bug Report] Title"
-labels: ["🐞 bug"]
+labels: ["bug: need confirm"]
 body:
   - type: input
     id: reproduce

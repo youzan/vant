@@ -1,7 +1,7 @@
 name: Feature Request
 description: Use issue template to request a new feature.
 title: "[Feature Request] Title"
-labels: ["💡 feature"]
+labels: ["feature: need confirm"]
 body:
   - type: textarea
     id: description
