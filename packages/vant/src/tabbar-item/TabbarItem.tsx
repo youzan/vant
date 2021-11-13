@@ -67,9 +67,8 @@ export default defineComponent({
     });
 
     const onClick = (event: MouseEvent) => {
-      parent.setActive(props.name ?? index.value);
+      parent.setActive(props.name ?? index.value, route);
       emit('click', event);
-      route();
     };
 
     const renderIcon = () => {
