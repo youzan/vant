@@ -1,13 +1,13 @@
 import { CSSProperties } from 'vue';
+import { useWindowSize } from '@vant/use';
 import { inBrowser } from './basic';
 import { isDef, isNumeric } from './validate';
 
 export function addUnit(value?: string | number): string | undefined {
-  if (!isDef(value)) {
-    return undefined;
+  if (isDef(value)) {
+    return isNumeric(value) ? `${value}px` : String(value);
   }
-
-  return isNumeric(value) ? `${value}px` : String(value);
+  return undefined;
 }
 
 export function getSizeStyle(
@@ -51,13 +51,15 @@ function convertRem(value: string) {
 }
 
 function convertVw(value: string) {
+  const { width } = useWindowSize();
   value = value.replace(/vw/g, '');
-  return (+value * window.innerWidth) / 100;
+  return (+value * width.value) / 100;
 }
 
 function convertVh(value: string) {
+  const { height } = useWindowSize();
   value = value.replace(/vh/g, '');
-  return (+value * window.innerHeight) / 100;
+  return (+value * height.value) / 100;
 }
 
 export function unitToPx(value: string | number): number {

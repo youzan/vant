@@ -63,15 +63,10 @@ export default defineComponent({
     const { $Lazyload } = getCurrentInstance()!.proxy!;
 
     const style = computed(() => {
-      const style: CSSProperties = {};
-
-      if (isDef(props.width)) {
-        style.width = addUnit(props.width);
-      }
-
-      if (isDef(props.height)) {
-        style.height = addUnit(props.height);
-      }
+      const style: CSSProperties = {
+        width: addUnit(props.width),
+        height: addUnit(props.height),
+      };
 
       if (isDef(props.radius)) {
         style.overflow = 'hidden';

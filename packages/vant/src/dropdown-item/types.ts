@@ -14,17 +14,13 @@ export type DropdownItemExpose = {
       immediate?: boolean;
     }
   ) => void;
-  /**
-   * @private
-   */
+  /** @private */
   state: {
     showPopup: boolean;
     transition: boolean;
     showWrapper: boolean;
   };
-  /**
-   * @private
-   */
+  /** @private */
   renderTitle: () => string | VNode[];
 };
 
