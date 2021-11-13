@@ -23,6 +23,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
     "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
     "stylelint": "^13.13.1"
   }
 }

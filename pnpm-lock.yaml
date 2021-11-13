@@ -11,6 +11,7 @@ importers:
       husky: ^7.0.4
       lint-staged: ^11.2.6
       prettier: ^2.4.1
+      rimraf: ^3.0.2
       stylelint: ^13.13.1
     devDependencies:
       '@vant/cli': link:packages/vant-cli
@@ -20,6 +21,7 @@ importers:
       husky: 7.0.4
       lint-staged: 11.2.6
       prettier: 2.4.1
+      rimraf: 3.0.2
       stylelint: 13.13.1
 
   packages/create-vant-cli-app:
@@ -7302,7 +7304,7 @@ packages:
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
   /rimraf/3.0.2:
-    resolution: {integrity: sha1-8aVAK6YiCtUswSgrrBrjqkn9Bho=, tarball: rimraf/download/rimraf-3.0.2.tgz?cache=0&sync_timestamp=1632822764504&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Frimraf%2Fdownload%2Frimraf-3.0.2.tgz}
+    resolution: {integrity: sha1-8aVAK6YiCtUswSgrrBrjqkn9Bho=, tarball: rimraf/download/rimraf-3.0.2.tgz}
     hasBin: true
     dependencies:
       glob: 7.2.0
