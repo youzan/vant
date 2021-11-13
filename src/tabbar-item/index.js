@@ -27,12 +27,12 @@ export default createComponent({
 
   data() {
     return {
-      active: false,
+      nameMatched: false,
     };
   },
 
   computed: {
-    routeActive() {
+    routeMatched() {
       const { to, $route } = this;
       if (to && $route) {
         const config = isObject(to) ? to : { path: to };
@@ -42,17 +42,23 @@ export default createComponent({
         return pathMatched || nameMatched;
       }
     },
+    active() {
+      return this.parent.route ? this.routeMatched : this.nameMatched;
+    },
   },
 
   methods: {
     onClick(event) {
-      this.parent.onChange(this.name || this.index);
+      if (!this.active) {
+        this.parent.triggerChange(this.name || this.index, () => {
+          route(this.$router, this);
+        });
+      }
       this.$emit('click', event);
-      route(this.$router, this);
     },
 
-    genIcon(active) {
-      const slot = this.slots('icon', { active });
+    genIcon() {
+      const slot = this.slots('icon', { active: this.active });
 
       if (slot) {
         return slot;
@@ -65,7 +71,7 @@ export default createComponent({
   },
 
   render() {
-    const active = this.parent.route ? this.routeActive : this.active;
+    const { active } = this;
     const color = this.parent[active ? 'activeColor' : 'inactiveColor'];
 
     if (process.env.NODE_ENV === 'development' && this.info) {
@@ -77,7 +83,7 @@ export default createComponent({
     return (
       <div class={bem({ active })} style={{ color }} onClick={this.onClick}>
         <div class={bem('icon')}>
-          {this.genIcon(active)}
+          {this.genIcon()}
           <Info dot={this.dot} info={this.badge ?? this.info} />
         </div>
         <div class={bem('text')}>{this.slots('default', { active })}</div>
