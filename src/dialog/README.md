@@ -68,7 +68,7 @@ Dialog.alert({
 });
 ```
 
-### Asnyc Close
+### Async Close
 
 ```js
 function beforeClose(action, done) {
@@ -128,7 +128,7 @@ export default {
 | --- | --- | --- | --- |
 | Dialog | Show dialog | `options` | `Promise` |
 | Dialog.alert | Show alert dialog | `options` | `Promise` |
-| Dialog.confirm | Show confim dialog | `options` | `Promise` |
+| Dialog.confirm | Show confirm dialog | `options` | `Promise` |
 | Dialog.setDefaultOptions | Set default options of all dialogs | `options` | `void` |
 | Dialog.resetDefaultOptions | Reset default options of all dialogs | - | `void` |
 | Dialog.close | Close dialog | - | `void` |
@@ -157,7 +157,7 @@ export default {
 | lockScroll | Whether to lock body scroll | _boolean_ | `true` |
 | allowHtml `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `true` |
 | beforeClose | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
-| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
+| transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/v2/api/#transition) | _string_ | - |
 | getContainer | Return the mount node for Dialog | _string \| () => Element_ | `body` |
 
 ### Props
@@ -185,7 +185,7 @@ export default {
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | allow-html `v2.8.7` | Whether to allow HTML rendering in message | _boolean_ | `true` |
 | before-close | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: Function) => void | - |
-| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | - |
+| transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/v2/api/#transition) | _string_ | - |
 | get-container | Return the mount node for Dialog | _string \| () => Element_ | - |
 
 ### Events
