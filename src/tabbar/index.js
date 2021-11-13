@@ -67,7 +67,7 @@ export default createComponent({
       });
     },
 
-    onChange(active) {
+    triggerChange(active, afterChange) {
       if (active !== this.value) {
         callInterceptor({
           interceptor: this.beforeChange,
@@ -75,6 +75,7 @@ export default createComponent({
           done: () => {
             this.$emit('input', active);
             this.$emit('change', active);
+            afterChange();
           },
         });
       }

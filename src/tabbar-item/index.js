@@ -46,9 +46,10 @@ export default createComponent({
 
   methods: {
     onClick(event) {
-      this.parent.onChange(this.name || this.index);
+      this.parent.triggerChange(this.name || this.index, () => {
+        route(this.$router, this);
+      });
       this.$emit('click', event);
-      route(this.$router, this);
     },
 
     genIcon(active) {
