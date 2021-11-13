@@ -63,22 +63,20 @@ export default createComponent({
   methods: {
     setActiveItem() {
       this.children.forEach((item, index) => {
-        item.active = (item.name || index) === this.value;
+        item.nameMatched = (item.name || index) === this.value;
       });
     },
 
     triggerChange(active, afterChange) {
-      if (active !== this.value) {
-        callInterceptor({
-          interceptor: this.beforeChange,
-          args: [active],
-          done: () => {
-            this.$emit('input', active);
-            this.$emit('change', active);
-            afterChange();
-          },
-        });
-      }
+      callInterceptor({
+        interceptor: this.beforeChange,
+        args: [active],
+        done: () => {
+          this.$emit('input', active);
+          this.$emit('change', active);
+          afterChange();
+        },
+      });
     },
 
     genTabbar() {
