@@ -10,7 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "clean": "rm -rf ./dist",
+    "clean": "rimraf ./dist",
     "dev": "rollup --config rollup.config.js --watch",
     "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
     "build:bundle": "rollup --config rollup.config.js",
