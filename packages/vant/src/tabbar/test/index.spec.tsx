@@ -69,6 +69,34 @@ test('should match active tab by route path in route mode', async () => {
   expect(items[3].classes()).not.toContain(activeClass);
 });
 
+test('should allow to use before-change prop in route mode', async () => {
+  const wrapper = mount(
+    {
+      render: () => (
+        <Tabbar route beforeChange={() => false}>
+          <TabbarItem replace to="/">
+            Tab
+          </TabbarItem>
+          <TabbarItem replace to="/search">
+            Tab
+          </TabbarItem>
+        </Tabbar>
+      ),
+    },
+    {
+      global: {
+        mocks: getMockRouter(),
+      },
+    }
+  );
+
+  const items = wrapper.findAll('.van-tabbar-item');
+  expect(items[0].classes()).toContain(activeClass);
+
+  await items[1].trigger('click');
+  expect(items[1].classes()).not.toContain(activeClass);
+});
+
 test('should match active tab by route name in route mode', async () => {
   const wrapper = mount(
     {
