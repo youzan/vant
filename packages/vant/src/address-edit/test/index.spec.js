@@ -1,6 +1,7 @@
 import { AddressEdit } from '..';
 import { areaList } from '../../area/demo/area-simple';
 import { mount, later, trigger } from '../../../test';
+import { submitForm } from '../../form/test/shared';
 
 const defaultAddressInfo = {
   name: '测试',
@@ -27,12 +28,10 @@ const createComponent = (addressInfo = {}) => {
     },
   });
 
-  const button = wrapper.find('.van-button');
   const fields = wrapper.findAll('.van-field');
   return {
     vm: wrapper.vm,
     fields,
-    button,
     wrapper,
   };
 };
@@ -55,13 +54,6 @@ test('should render AddressEdit with props correctly', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-// test('set-default', () => {
-//   const { wrapper } = createComponent();
-//   wrapper.find('.van-switch').trigger('click');
-
-//   expect(wrapper.html()).toMatchSnapshot();
-// });
-
 test('should allow to custom validator with validator prop', async () => {
   const wrapper = mount(AddressEdit, {
     props: {
@@ -70,63 +62,53 @@ test('should allow to custom validator with validator prop', async () => {
     },
   });
 
-  const button = wrapper.find('.van-button');
-  await button.trigger('click');
+  await submitForm(wrapper);
   expect(wrapper.find('.van-field__error-message').html()).toMatchSnapshot();
 });
 
 test('should valid name and render error message correctly', async () => {
-  const { fields, button } = createComponent({
+  const { fields, wrapper } = createComponent({
     name: '',
   });
 
-  await button.trigger('click');
-  expect(fields[0].html()).toMatchSnapshot();
-  await fields[0].find('input').trigger('focus');
+  await submitForm(wrapper);
   expect(fields[0].html()).toMatchSnapshot();
 });
 
 test('should valid tel and render error message correctly', async () => {
-  const { fields, button } = createComponent({
+  const { fields, wrapper } = createComponent({
     tel: '',
   });
 
-  await button.trigger('click');
-  expect(fields[1].html()).toMatchSnapshot();
-  await fields[1].find('input').trigger('focus');
+  await submitForm(wrapper);
   expect(fields[1].html()).toMatchSnapshot();
 });
 
 test('should valid area code and render error message correctly', async () => {
-  const { fields, button } = createComponent({
+  const { fields, wrapper } = createComponent({
     areaCode: '',
   });
 
-  await button.trigger('click');
-  expect(fields[2].html()).toMatchSnapshot();
-  await fields[2].find('input').trigger('focus');
+  await submitForm(wrapper);
   expect(fields[2].html()).toMatchSnapshot();
 });
 
 test('should valid address detail and render error message correctly', async () => {
-  const { fields, button } = createComponent({
+  const { fields, wrapper } = createComponent({
     addressDetail: '',
   });
 
-  await button.trigger('click');
-  expect(fields[3].html()).toMatchSnapshot();
-  await fields[3].find('textarea').trigger('focus');
+  await submitForm(wrapper);
+  await later();
   expect(fields[3].html()).toMatchSnapshot();
 });
 
 test('should valid postal code and render error message correctly', async () => {
-  const { fields, button } = createComponent({
+  const { fields, wrapper } = createComponent({
     postalCode: '123',
   });
 
-  await button.trigger('click');
-  expect(fields[4].html()).toMatchSnapshot();
-  await fields[4].find('input').trigger('focus');
+  await submitForm(wrapper);
   expect(fields[4].html()).toMatchSnapshot();
 });
 

@@ -56,6 +56,7 @@ importers:
       '@vant/use': ^1.3.3
       '@vue/compiler-sfc': ^3.2.20
       '@vue/runtime-core': ^3.2.20
+      '@vue/test-utils': ^2.0.0-rc.16
       typescript: 4.x
       vue: ^3.2.20
       vue-router: ^4.0.12
@@ -68,6 +69,7 @@ importers:
       '@vant/cli': link:../vant-cli
       '@vue/compiler-sfc': 3.2.21
       '@vue/runtime-core': 3.2.21
+      '@vue/test-utils': 2.0.0-rc.16_vue@3.2.21
       typescript: 4.4.4
       vue: 3.2.21
       vue-router: 4.0.12_vue@3.2.21
@@ -2476,6 +2478,14 @@ packages:
     dependencies:
       vue: 3.2.21
     dev: false
+
+  /@vue/test-utils/2.0.0-rc.16_vue@3.2.21:
+    resolution: {integrity: sha1-WTgPAocPhWrAAqKcAmgdPz/Lr+s=, tarball: '@vue/test-utils/download/@vue/test-utils-2.0.0-rc.16.tgz'}
+    peerDependencies:
+      vue: ^3.0.1
+    dependencies:
+      vue: 3.2.21
+    dev: true
 
   /JSONStream/1.3.5:
     resolution: {integrity: sha1-MgjB8I06TZkmGrZPkjArwV4RHKA=, tarball: JSONStream/download/JSONStream-1.3.5.tgz}
