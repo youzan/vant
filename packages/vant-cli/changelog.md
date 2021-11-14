@@ -36,6 +36,8 @@
 yarn add sass
 ```
 
+- 为了避免 Phantom dependency，不再默认依赖 `@vue/test-utils`，使用时需要手动安装
+
 ### Features
 
 - 新增 site.htmlMeta 配置项

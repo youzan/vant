@@ -50,7 +50,7 @@ importers:
   packages/vant:
     specifiers:
       '@vant/area-data': ^1.1.3
-      '@vant/cli': ^4.0.0-beta.5
+      '@vant/cli': workspace:*
       '@vant/icons': ^1.7.1
       '@vant/popperjs': ^1.1.0
       '@vant/use': ^1.3.3
@@ -97,7 +97,6 @@ importers:
       '@vitejs/plugin-vue-jsx': ^1.2.0
       '@vue/babel-plugin-jsx': ^1.1.1
       '@vue/compiler-sfc': ^3.2.20
-      '@vue/test-utils': 2.0.0-rc.14
       autoprefixer: ^10.4.0
       babel-jest: ^27.3.1
       chalk: ^4.1.2
@@ -150,7 +149,6 @@ importers:
       '@vitejs/plugin-vue': 1.9.4_vite@2.6.13
       '@vitejs/plugin-vue-jsx': 1.2.0
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.16.0
-      '@vue/test-utils': 2.0.0-rc.14_vue@3.2.21
       autoprefixer: 10.4.0_postcss@8.3.11
       babel-jest: 27.3.1_@babel+core@7.16.0
       chalk: 4.1.2
@@ -2470,14 +2468,6 @@ packages:
   /@vue/shared/3.2.21:
     resolution: {integrity: sha1-TNgMDmLPZaetqyRJ6GtvDLM6Ews=, tarball: '@vue/shared/download/@vue/shared-3.2.21.tgz'}
     dev: true
-
-  /@vue/test-utils/2.0.0-rc.14_vue@3.2.21:
-    resolution: {integrity: sha1-naG+ew42X/X5RWd9oXv2yKeoOr0=, tarball: '@vue/test-utils/download/@vue/test-utils-2.0.0-rc.14.tgz'}
-    peerDependencies:
-      vue: ^3.0.1
-    dependencies:
-      vue: 3.2.21
-    dev: false
 
   /@vue/test-utils/2.0.0-rc.16_vue@3.2.21:
     resolution: {integrity: sha1-WTgPAocPhWrAAqKcAmgdPz/Lr+s=, tarball: '@vue/test-utils/download/@vue/test-utils-2.0.0-rc.16.tgz'}
