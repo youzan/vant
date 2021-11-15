@@ -108,6 +108,14 @@ Vue.use(NoticeBar);
 | left-icon  | Custom left icon    |
 | right-icon | Custom right icon   |
 
+### Methods
+
+Use [ref](https://vuejs.org/v2/api/#ref) to get Field instance and call instance methods.
+
+| Name             | Description     | Attribute | Return value |
+| ---------------- | --------------- | --------- | ------------ |
+| reset `v2.12.32` | Reset NoticeBar | -         | -            |
+
 ### Less Variables
 
 How to use: [Custom Theme](#/en-US/theme).

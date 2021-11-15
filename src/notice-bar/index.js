@@ -10,7 +10,7 @@ export default createComponent({
     BindEventMixin(function (bind) {
       // fix cache issues with forwards and back history in safari
       // see: https://guwii.com/cache-issues-with-forwards-and-back-history-in-safari/
-      bind(window, 'pageshow', this.start);
+      bind(window, 'pageshow', this.reset);
     }),
   ],
 
@@ -52,9 +52,9 @@ export default createComponent({
   },
 
   watch: {
-    scrollable: 'start',
+    scrollable: 'reset',
     text: {
-      handler: 'start',
+      handler: 'reset',
       immediate: true,
     },
   },
@@ -62,14 +62,12 @@ export default createComponent({
   created() {
     // https://github.com/youzan/vant/issues/8634
     if (this.vanPopup) {
-      this.vanPopup.onReopen(() => {
-        this.start();
-      });
+      this.vanPopup.onReopen(this.reset);
     }
   },
 
   activated() {
-    this.start();
+    this.reset();
   },
 
   methods: {
@@ -96,17 +94,19 @@ export default createComponent({
       });
     },
 
+    // not an exposed-api, but may used by some users
+    start() {
+      this.reset();
+    },
+
+    // @exposed-api
     reset() {
+      const delay = isDef(this.delay) ? this.delay * 1000 : 0;
+
       this.offset = 0;
       this.duration = 0;
       this.wrapWidth = 0;
       this.contentWidth = 0;
-    },
-
-    start() {
-      const delay = isDef(this.delay) ? this.delay * 1000 : 0;
-
-      this.reset();
 
       clearTimeout(this.startTimer);
       this.startTimer = setTimeout(() => {
