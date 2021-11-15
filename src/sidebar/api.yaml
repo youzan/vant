@@ -48,9 +48,9 @@
       default: ''
       description: 徽章值
     - name: badgemax
-      title: 徽章值
+      title: 徽章最大值
       type: number
-      description: 徽章值
+      description: 徽章最大值
     - name: disabled
       title: 禁用
       type: boolean
