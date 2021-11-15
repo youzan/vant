@@ -17,7 +17,7 @@ export default createComponent({
   mixins: [PortalMixin({ ref: 'wrapper' }), ChildrenMixin('vanDropdownMenu'), ParentMixin('vanDropdownMenuItem')],
 
   props: {
-    value: null,
+    valueprop: null,
     title: {
       type: String,
       default: '标题'
@@ -44,6 +44,7 @@ export default createComponent({
       showPopup: false,
       showWrapper: false,
       bem,
+      value: this.valueprop || '',
     };
   },
 
@@ -54,14 +55,13 @@ export default createComponent({
     //   if(typeof this.optionsprop === 'object') return this.optionsprop;
     // },
     displayTitle() {
-      if (this.title) {
-        return this.title;
-      }
-
+      const match1 = this.children.filter(
+        (option) => option.value === this.value
+      );
       const match = this.options.filter(
         (option) => option.value === this.value
       );
-      return match.length ? match[0].text : '';
+      return match1.length ? match1[0].title : (match.length ? match[0].text : (this.title ? this.title : ''));
     },
   },
 
@@ -69,6 +69,16 @@ export default createComponent({
     showPopup(val) {
       this.bindScroll(val);
     },
+    valueprop(val) {
+      this.value = val;
+    },
+    value(val) {
+      this.$emit('input', val);
+      this.$emit('change', val);
+      this.$emit('update:valueprop', val);
+      this.parent.$emit('input', val);
+      this.parent.$emit('update:value', val);
+    }
   },
 
   beforeCreate() {

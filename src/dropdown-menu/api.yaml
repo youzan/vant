@@ -5,6 +5,13 @@
     - Navigation
   description: 向下弹出的菜单列表。
   attrs:
+    - name: value
+      title: 菜单值
+      type: number,string
+      sync: true
+      model: true
+      advanced: true
+      description: 菜单值
     - name: direction
       title: 菜单展开方向
       type: string
@@ -36,7 +43,7 @@
 - name: van-dropdown-item
   title: 菜单项
   attrs:
-    - name: value
+    - name: valueprop
       title: 菜单项值
       type: number,string
       sync: true

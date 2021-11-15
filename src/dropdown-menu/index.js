@@ -18,6 +18,7 @@ export default createComponent({
   ],
 
   props: {
+    value: [Number, String],
     zIndex: [Number, String],
     activeColor: String,
     overlay: {
@@ -114,12 +115,13 @@ export default createComponent({
             item.titleClass,
           ]}
           style={{ color: item.showPopup ? this.activeColor : '' }}
-        >
-          <div class="van-ellipsis" vusion-slot-name="title" vusion-click-enabled onClick={() => {
+          vusion-click-enabled onClick={() => {
             if (!item.disabled) {
               this.toggleItem(index);
             }
-          }}>
+          }}
+        >
+          <div class="van-ellipsis" vusion-slot-name="title">
             {item.slots('title') || item.displayTitle}
           </div>
         </span>

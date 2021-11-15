@@ -167,9 +167,9 @@ export default createComponent({
       if (that.vanDropdownMenuItem) {
         that.vanDropdownMenuItem.showPopup = false;
         if (that.value !== that.vanDropdownMenuItem.value) {
-          that.vanDropdownMenuItem.$emit('input', that.vanDropdownMenuItem.value);
-          that.vanDropdownMenuItem.$emit('update:value', that.vanDropdownMenuItem.value);
-          that.vanDropdownMenuItem.$emit('change', that.vanDropdownMenuItem.value);
+          that.vanDropdownMenuItem.value = that.value;
+          that.vanDropdownMenuItem.$emit('input', that.value);
+          that.vanDropdownMenuItem.$emit('update:valueprop', that.value);
         }
       }
 
@@ -252,7 +252,6 @@ export default createComponent({
     let classesnew = bem(classes);
     const inVanDropdownItem = that.vanDropdownMenuItem && isDef(that.vanDropdownMenuItem.value);
     if (inVanDropdownItem) {
-      console.log(that.vanDropdownMenuItem.value,  that.value);
       if (that.vanDropdownMenuItem.value === that.value) {
         classesnew += that.vanDropdownMenuItem.bem('option', { active: true });
       } else {
@@ -260,7 +259,6 @@ export default createComponent({
       }
     }
 
-    console.log(classesnew, 555)
     const ado = {
       ...this.$attrs,
       [infield ? 'is-sub': 'noallow']: ''
