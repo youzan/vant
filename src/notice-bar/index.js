@@ -94,6 +94,10 @@ export default createComponent({
       });
     },
 
+    start() {
+      this.reset();
+    },
+
     reset() {
       const delay = isDef(this.delay) ? this.delay * 1000 : 0;
 
