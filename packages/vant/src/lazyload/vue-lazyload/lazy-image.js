@@ -59,7 +59,7 @@ export default (lazyManager) => ({
   },
   methods: {
     init() {
-      const { src, loading, error } = lazyManager._valueFormatter(this.src);
+      const { src, loading, error } = lazyManager.valueFormatter(this.src);
       this.state.loaded = false;
       this.options.src = src;
       this.options.error = error;

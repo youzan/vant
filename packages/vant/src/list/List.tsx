@@ -139,10 +139,7 @@ export default defineComponent({
       }
     };
 
-    watch(
-      [() => props.loading, () => props.finished, () => props.error],
-      check
-    );
+    watch(() => [props.loading, props.finished, props.error], check);
 
     if (tabStatus) {
       watch(tabStatus, (tabActive) => {

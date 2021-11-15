@@ -24,6 +24,7 @@ import {
   truthProp,
   numericProp,
   Interceptor,
+  windowWidth,
   getElementTop,
   makeStringProp,
   callInterceptor,
@@ -39,7 +40,6 @@ import { scrollLeftTo, scrollTopTo } from './utils';
 import {
   useRect,
   useChildren,
-  useWindowSize,
   useScrollParent,
   useEventListener,
   onMountedOrActivated,
@@ -123,7 +123,6 @@ export default defineComponent({
     const navRef = ref<HTMLElement>();
     const wrapRef = ref<HTMLElement>();
 
-    const windowSize = useWindowSize();
     const scroller = useScrollParent(root);
     const [titleRefs, setTitleRefs] = useRefs<ComponentInstance>();
     const { children, linkChildren } = useChildren(TABS_KEY);
@@ -408,7 +407,7 @@ export default defineComponent({
       );
     };
 
-    watch([() => props.color, windowSize.width], setLine);
+    watch([() => props.color, windowWidth], setLine);
 
     watch(
       () => props.active,

@@ -30,7 +30,7 @@ export default class ReactiveListener {
 
     this.$parent = $parent;
     this.elRenderer = elRenderer;
-    this._imageCache = imageCache;
+    this.imageCache = imageCache;
     this.performanceData = {
       loadStart: 0,
       loadEnd: 0,
@@ -156,7 +156,7 @@ export default class ReactiveListener {
       return;
     }
     if (this.state.rendered && this.state.loaded) return;
-    if (this._imageCache.has(this.src)) {
+    if (this.imageCache.has(this.src)) {
       this.state.loaded = true;
       this.render('loaded', true);
       this.state.rendered = true;
@@ -182,7 +182,7 @@ export default class ReactiveListener {
           this.record('loadEnd');
           this.render('loaded', false);
           this.state.rendered = true;
-          this._imageCache.add(this.src);
+          this.imageCache.add(this.src);
           onFinish();
         },
         (err) => {

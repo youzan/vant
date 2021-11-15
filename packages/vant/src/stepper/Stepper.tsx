@@ -247,14 +247,14 @@ export default defineComponent({
       // fix mobile safari page scroll down issue
       // see: https://github.com/youzan/vant/issues/7690
       if (props.disableInput) {
-        event.preventDefault();
+        preventDefault(event);
       }
     };
 
-    const createListeners = (type: 'plus' | 'minus') => ({
+    const createListeners = (type: typeof actionType) => ({
       onClick: (event: MouseEvent) => {
         // disable double tap scrolling on mobile safari
-        event.preventDefault();
+        preventDefault(event);
         actionType = type;
         onChange();
       },
@@ -267,12 +267,7 @@ export default defineComponent({
     });
 
     watch(
-      [
-        () => props.max,
-        () => props.min,
-        () => props.integer,
-        () => props.decimalLength,
-      ],
+      () => [props.max, props.min, props.integer, props.decimalLength],
       check
     );
 

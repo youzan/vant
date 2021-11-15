@@ -1,5 +1,5 @@
 import { ref, PropType, defineComponent } from 'vue';
-import { numericProp, createNamespace } from '../utils';
+import { numericProp, createNamespace, preventDefault } from '../utils';
 import { useTouch } from '../composables/use-touch';
 import { Loading } from '../loading';
 
@@ -61,7 +61,7 @@ export default defineComponent({
         // eliminate tap delay on safari
         // see: https://github.com/youzan/vant/issues/6836
         if (!slots.default) {
-          event.preventDefault();
+          preventDefault(event);
         }
         active.value = false;
         emit('press', props.text, props.type);

@@ -19,18 +19,15 @@ import {
   isHidden,
   truthProp,
   numericProp,
+  windowWidth,
+  windowHeight,
   preventDefault,
   createNamespace,
   makeNumericProp,
 } from '../utils';
 
 // Composables
-import {
-  doubleRaf,
-  useChildren,
-  useWindowSize,
-  usePageVisibility,
-} from '@vant/use';
+import { doubleRaf, useChildren, usePageVisibility } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 import { onPopupReopen } from '../composables/on-popup-reopen';
@@ -78,7 +75,6 @@ export default defineComponent({
     });
 
     const touch = useTouch();
-    const windowSize = useWindowSize();
     const { children, linkChildren } = useChildren(SWIPE_KEY);
 
     const count = computed(() => children.length);
@@ -413,7 +409,7 @@ export default defineComponent({
 
     watch(count, () => initialize(state.active));
     watch(() => props.autoplay, autoplay);
-    watch([windowSize.width, windowSize.height], resize);
+    watch([windowWidth, windowHeight], resize);
     watch(usePageVisibility(), (visible) => {
       if (visible === 'visible') {
         autoplay();

@@ -12,6 +12,7 @@ import {
   isDef,
   truthProp,
   numericProp,
+  windowHeight,
   makeStringProp,
   makeNumericProp,
   createNamespace,
@@ -86,7 +87,7 @@ export default defineComponent({
         if (props.direction === 'down') {
           offset.value = rect.bottom;
         } else {
-          offset.value = window.innerHeight - rect.top;
+          offset.value = windowHeight.value - rect.top;
         }
       }
     };
