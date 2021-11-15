@@ -5,6 +5,11 @@
           <van-sidebar-item :title="t('title')" />
           <van-sidebar-item :title="t('title')" />
         </van-sidebar>
+    <van-sidebar :value.sync="sidevalue">
+          <van-sidebar-item :value.sync="itemvalue" :title="t('title')" />
+          <van-sidebar-item :value.sync="itemvalue2" :title="t('title')" />
+          <van-sidebar-item :value.sync="itemvalue3" :title="t('title')" />
+        </van-sidebar>
     <van-grid :column-num="2" :border="false">
       <van-grid-item>
         <h3 class="demo-sidebar-title">{{ t('basicUsage') }}</h3>
@@ -65,6 +70,10 @@ export default {
 
   data() {
     return {
+      sidevalue: 1,
+      itemvalue: 1,
+      itemvalue2: 2,
+      itemvalue3: 3,
       activeKey1: 0,
       activeKey2: 0,
       activeKey3: 0,

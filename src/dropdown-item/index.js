@@ -44,7 +44,7 @@ export default createComponent({
       showPopup: false,
       showWrapper: false,
       bem,
-      value: this.valueprop || '',
+      value: this.valueprop || 0,
     };
   },
 
@@ -56,7 +56,7 @@ export default createComponent({
     // },
     displayTitle() {
       const match1 = this.children.filter(
-        (option) => option.value === this.value
+        (option) => option.value ?? option.index === this.value
       );
       const match = this.options.filter(
         (option) => option.value === this.value
@@ -73,11 +73,7 @@ export default createComponent({
       this.value = val;
     },
     value(val) {
-      this.$emit('input', val);
       this.$emit('change', val);
-      this.$emit('update:valueprop', val);
-      this.parent.$emit('input', val);
-      this.parent.$emit('update:value', val);
     }
   },
 

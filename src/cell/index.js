@@ -166,8 +166,8 @@ export default createComponent({
     function onClick(event) {
       if (that.vanDropdownMenuItem) {
         that.vanDropdownMenuItem.showPopup = false;
-        if (that.value !== that.vanDropdownMenuItem.value) {
-          that.vanDropdownMenuItem.value = that.value;
+        if ((that.value ?? that.index) !== that.vanDropdownMenuItem.value) {
+          that.vanDropdownMenuItem.value = that.value ?? that.index;
           that.vanDropdownMenuItem.$emit('input', that.value);
           that.vanDropdownMenuItem.$emit('update:valueprop', that.value);
         }
@@ -252,7 +252,7 @@ export default createComponent({
     let classesnew = bem(classes);
     const inVanDropdownItem = that.vanDropdownMenuItem && isDef(that.vanDropdownMenuItem.value);
     if (inVanDropdownItem) {
-      if (that.vanDropdownMenuItem.value === that.value) {
+      if (that.vanDropdownMenuItem.value === (that.value ?? that.index)) {
         classesnew += that.vanDropdownMenuItem.bem('option', { active: true });
       } else {
         classesnew += that.vanDropdownMenuItem.bem('option', { active: false });
@@ -280,7 +280,7 @@ export default createComponent({
         {Value()}
         {RightIcon()}
         {slots('extra')}
-        {inVanDropdownItem && that.vanDropdownMenuItem.value === that.value ? <Icon class={that.vanDropdownMenuItem.bem('icon')} color={that.vanDropdownMenuItem.parent.activeColor} name="success" /> : null}
+        {(inVanDropdownItem && (that.vanDropdownMenuItem.value === (that.value ?? that.index))) ? <Icon class={that.vanDropdownMenuItem.bem('icon')} color={that.vanDropdownMenuItem.parent.activeColor} name="success" /> : null}
       </div>
     );
   },

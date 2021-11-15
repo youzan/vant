@@ -1,0 +1,96 @@
+- name: van-sidebar
+  title: 侧边导航
+  icon: sidebar
+  labels:
+    - Navigation
+  description: 侧边导航
+  attrs:
+    - name: value
+      title: 菜单值
+      type: number,string
+      sync: true
+      model: true
+      description: 菜单值
+  slots:
+    - name: default
+      description: 插入`<van-sidebar-item>`子组件。
+      empty-background: add-sub-large
+      support:
+        - name: van-sidebar-item
+          title: 菜单项
+          snippet: '<van-sidebar-item title="标签名称n"></van-sidebar-item>'
+  events:
+    - name: change
+      title: 切换导航时
+      description: 切换导航时
+- name: van-sidebar-item
+  title: 菜单项
+  attrs:
+    - name: value
+      title: 菜单项值
+      type: number,string
+      sync: true
+      model: true
+      description: 菜单项值
+    - name: title
+      title: 标题
+      type: string
+      default: 标题
+      description: 标题
+    - name: showbaget
+      title: 是否显示徽章
+      type: boolean
+      default: true
+      description: 是否显示徽章
+    - name: badge
+      title: 徽章值
+      type: string, number
+      default: ''
+      description: 徽章值
+    - name: badgemax
+      title: 徽章值
+      type: number
+      description: 徽章值
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: 禁用
+    - name: linkType
+      title: 链接类型
+      type: string
+      options:
+        - value: destination
+          title: 页面跳转
+        - value: href
+          title: 普通链接
+        - value: download
+          title: 下载链接
+      default: href
+      description: 链接类型
+      compType: linkTypeSelect
+    - name: hrefAndTo
+      title: 链接
+      type: string
+      description: 链接地址
+      compType: linkHrefInput
+    - name: target
+      title: 打开方式
+      type: string
+      options:
+        - value: _blank
+          title: 新标签页
+        - value: _self
+          title: 当前窗口
+        - value: _parent
+          title: 父级窗口
+          advanced: true
+        - value: _top
+          title: 顶级窗口
+          advanced: true
+      default: _self
+      description: 链接打开方式
+  events:
+    - name: click
+      title: 点击菜单项
+      description: 点击选项导致 value 变化时触发

@@ -6,24 +6,29 @@ const [createComponent, bem] = createNamespace('sidebar');
 export default createComponent({
   mixins: [ParentMixin('vanSidebar')],
 
-  model: {
-    prop: 'activeKey',
-  },
+  // model: {
+  //   prop: 'activeKey',
+  // },
 
   props: {
     activeKey: {
       type: [Number, String],
       default: 0,
     },
+    value: [Number, String],
   },
 
   data() {
     return {
       index: +this.activeKey,
+      curvalue: this.value || 0
     };
   },
 
   watch: {
+    value(val) {
+      this.curvalue = val;
+    },
     activeKey() {
       this.setIndex(+this.activeKey);
     },

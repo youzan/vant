@@ -50,6 +50,7 @@ module.exports = {
             { group: 'Selector', show: true, name: 'datetime-picker', alias: '时间选择器' },
             { group: 'Selector', show: true, name: 'calendar', alias: '日期选择器' },
             { group: 'Navigation', show: true, name: 'dropdown-menu', alias: '下拉菜单' },
+            { group: 'Navigation', show: true, name: 'sidebar', alias: '侧边导航' },
             { group: 'Feedback', show: true, name: 'dialog', alias: '弹出框' },
         ],
         blocks: [],
