@@ -1,0 +1,21 @@
+- name: van-badge
+  title: 徽标
+  icon: badge
+  labels:
+    - Display
+  description: 在右上角展示徽标数字或小红点。
+  attrs:
+    - name: content
+      title: 徽章值
+      type: string, number
+      default: ''
+      description: 徽章值
+    - name: dot
+      title: 是否展示为小红点
+      type: boolean
+      default: false
+      description: 是否展示为小红点
+    - name: max
+      title: 徽章最大值
+      type: number
+      description: 徽章最大值

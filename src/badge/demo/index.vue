@@ -1,6 +1,8 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
+      <van-badge dot>
+      </van-badge>
       <van-badge content="5">
         <div class="child" />
       </van-badge>
