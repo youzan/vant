@@ -69,7 +69,7 @@ Use the image prop to display different placeholder images.
 | --- | --- | --- | --- |
 | image | Image type，can be set to `error` `network` `search` or image URL | _string_ | `default` |
 | image-size `v2.10.11` | Image size | _number \| string_ | - |
-| description | Desciption | _string_ | - |
+| description | Description | _string_ | - |
 
 ### Slots
 

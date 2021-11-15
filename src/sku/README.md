@@ -328,7 +328,7 @@ customStepperConfig: {
   handleStepperChange: currentValue => {},
   // stock
   stockNum: 1999,
-  // stock fomatter
+  // stock formatter
   stockFormatter: stockNum => {},
 }
 ```

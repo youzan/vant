@@ -187,7 +187,7 @@ export default {
 | input | Emitted when keydown | key: Content of the key |
 | delete | Emitted when the delete key is pressed | - |
 | close | Emitted when the close button is clicked | - |
-| blur | Emitted when the close button is clicked or the keyboard is blured | - |
+| blur | Emitted when the close button is clicked or the keyboard is blurred | - |
 | show | Emitted when keyboard is fully displayed | - |
 | hide | Emitted when keyboard is fully hidden | - |
 

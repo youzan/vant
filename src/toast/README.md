@@ -144,7 +144,7 @@ Toast.resetDefaultOptions('loading');
 | Toast.success | `options | message` | toast instance | Show success toast |
 | Toast.fail | `options | message` | toast instance | Show fail toast |
 | Toast.clear | `clearAll: boolean` | `void` | Close toast |
-| Toast.allowMultiple | - | `void` | Allow multlple toast at the same time |
+| Toast.allowMultiple | - | `void` | Allow multiple toast at the same time |
 | Toast.setDefaultOptions | `type | options` | `void` | Set default options of all toasts |
 | Toast.resetDefaultOptions | `type` | `void` | Reset default options of all toasts |
 
@@ -166,7 +166,7 @@ Toast.resetDefaultOptions('loading');
 | className | Custom className | _any_ | - |
 | onOpened | Callback function after opened | _Function_ | - |
 | onClose | Callback function after close | _Function_ | - |
-| transition | Transition, equivalent to `name` prop of [transtion](https://vuejs.org/v2/api/#transition) | _string_ | `van-fade` |
+| transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/v2/api/#transition) | _string_ | `van-fade` |
 | getContainer | Return the mount node for Toast | _string \| () => Element_ | `body` |
 
 ### Less Variables

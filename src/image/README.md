@@ -85,7 +85,7 @@ Vue.use(Lazyload);
 
 ### fit optional value
 
-| name | desctription |
+| name | description |
 | --- | --- |
 | contain | Keep aspect ratio, fully display the long side of the image |
 | cover | Keep aspect ratio, fully display the short side of the image, cutting the long side |

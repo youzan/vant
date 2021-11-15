@@ -105,12 +105,12 @@ export default {
 
 ### Slots
 
-| Name                 | Description                       | SlotProps |
-| -------------------- | --------------------------------- | --------- |
-| default              | Custom content after list         | -         |
-| top                  | Custom content before list        | -         |
-| item-bottom `v2.5.0` | Custom content after list item    | item      |
-| tag `v2.12.9`        | Custom tag conetent for list item | item      |
+| Name                 | Description                      | SlotProps |
+| -------------------- | -------------------------------- | --------- |
+| default              | Custom content after list        | -         |
+| top                  | Custom content before list       | -         |
+| item-bottom `v2.5.0` | Custom content after list item   | item      |
+| tag `v2.12.9`        | Custom tag content for list item | item      |
 
 ### Less Variables
 
