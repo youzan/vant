@@ -1,4 +1,4 @@
-import { useRect } from '@vant/use';
+import { useRect, useWindowSize } from '@vant/use';
 import { unref, Ref } from 'vue';
 import { isIOS as checkIsIOS } from './validate';
 
@@ -84,3 +84,5 @@ export function isHidden(
 
   return hidden || parentHidden;
 }
+
+export const { width: windowWidth, height: windowHeight } = useWindowSize();

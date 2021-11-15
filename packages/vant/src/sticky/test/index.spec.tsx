@@ -1,6 +1,6 @@
 import { nextTick, ref } from 'vue';
 import { VueWrapper } from '@vue/test-utils';
-import { mockScrollTop, mount } from '../../../test';
+import { mockScrollTop, trigger, mount } from '../../../test';
 import { Sticky } from '..';
 import { ComponentInstance } from '../../utils';
 
@@ -130,6 +130,7 @@ test('should allow to using offset-top prop with rem unit', async () => {
 
 test('should allow to using offset-top prop with vw unit', async () => {
   Object.defineProperty(window, 'innerWidth', { value: 300 });
+  trigger(window, 'resize');
 
   const wrapper = mount({
     render() {

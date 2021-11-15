@@ -5,6 +5,7 @@ import {
   FORM_KEY,
   truthProp,
   numericProp,
+  preventDefault,
   makeStringProp,
   createNamespace,
 } from '../utils';
@@ -170,7 +171,7 @@ export default defineComponent({
     };
 
     const onSubmit = (event: Event) => {
-      event.preventDefault();
+      preventDefault(event);
       submit();
     };
 

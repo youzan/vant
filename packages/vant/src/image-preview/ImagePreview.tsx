@@ -16,6 +16,8 @@ import {
   truthProp,
   unknownProp,
   Interceptor,
+  windowWidth,
+  windowHeight,
   makeArrayProp,
   makeStringProp,
   makeNumericProp,
@@ -25,7 +27,7 @@ import {
 } from '../utils';
 
 // Composables
-import { useRect, useWindowSize } from '@vant/use';
+import { useRect } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
@@ -78,7 +80,6 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const swipeRef = ref<SwipeInstance>();
-    const windowSize = useWindowSize();
 
     const state = reactive({
       active: 0,
@@ -185,7 +186,7 @@ export default defineComponent({
 
     onMounted(resize);
 
-    watch([windowSize.width, windowSize.height], resize);
+    watch([windowWidth, windowHeight], resize);
 
     watch(
       () => props.startPosition,
