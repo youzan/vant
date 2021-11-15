@@ -133,7 +133,7 @@ export default createComponent({
       );
     }
     const realbaget = this.badge ?? this.info;
-    const comBaget = typeof (realbaget) === 'string' ? realbaget : (this.badgemax && realbaget>this.badgemax ? this.badgemax : realbaget);
+    const comBaget = typeof (realbaget) === 'string' ? realbaget : (this.badgemax && realbaget>this.badgemax ? `${this.badgemax}+` : realbaget);
     return (
       <a
         class={bem({ select: this.select, disabled: this.disabled })}
