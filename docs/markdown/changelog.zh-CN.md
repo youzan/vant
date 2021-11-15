@@ -16,6 +16,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.32](https://github.com/youzan/vant/compare/v2.12.31...v2.12.32)
+
+`2021-11-15`
+
+**Feature**
+
+- NoticeBar: 新增 reset 方法 [#9864](https://github.com/youzan/vant/issues/9864)
+- Picker: 支持在桌面端通过鼠标滚轮进行滚动 [#9713](https://github.com/youzan/vant/issues/9713)
+
+**Bug Fixes**
+
+- Field: 修复点击 readonly 的输入框后会触发表单验证的问题 [#9863](https://github.com/youzan/vant/issues/9863)
+- Switch: 修复全局设置 font-size 时样式错误的问题 [#9841](https://github.com/youzan/vant/issues/9841)
+- Tabbar: 修复 before-change 属性在路由模式下不生效的问题 [#9855](https://github.com/youzan/vant/issues/9855)
+
 ### [v2.12.31](https://github.com/youzan/vant/compare/v2.12.30...v2.12.31)
 
 `2021-10-30`

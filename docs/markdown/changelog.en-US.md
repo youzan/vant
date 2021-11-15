@@ -16,6 +16,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.32](https://github.com/youzan/vant/compare/v2.12.31...v2.12.32)
+
+`2021-11-15`
+
+**Feature**
+
+- NoticeBar: add reset method [#9864](https://github.com/youzan/vant/issues/9864)
+- Picker: support mouse wheel on desktop browser [#9713](https://github.com/youzan/vant/issues/9713)
+
+**Bug Fixes**
+
+- Field: should not trigger validation after blurring readonly input [#9863](https://github.com/youzan/vant/issues/9863)
+- Switch: switch node inherit font-size [#9841](https://github.com/youzan/vant/issues/9841)
+- Tabbar: before-change not work in route mode [#9855](https://github.com/youzan/vant/issues/9855)
+
 ### [v2.12.31](https://github.com/youzan/vant/compare/v2.12.30...v2.12.31)
 
 `2021-10-30`
