@@ -438,6 +438,9 @@ export default createComponent({
       this.focused = true;
       this.$emit('focus', event);
 
+      // https://github.com/youzan/vant/issues/9715
+      this.$nextTick(this.adjustSize);
+
       // readonly not work in legacy mobile safari
       /* istanbul ignore if */
       const readonly = this.getProp('readonly');
@@ -452,6 +455,7 @@ export default createComponent({
       this.$emit('blur', event);
       // this.validateWithTrigger('onBlur');
       this.validateWithTriggerVusion('blur');
+      this.$nextTick(this.adjustSize);
       resetScroll();
     },
 
