@@ -247,7 +247,7 @@ Use `input-align` prop to align the input value.
 | label-align | Label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Input align, can be set to `center` `right` | _string_ | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
-| autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| object_ | `false` |
+| autosize | Textarea auto resize，can accept an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| object_ | `false` |
 | left-icon | Left side icon name | _string_ | - |
 | right-icon | Right side icon name | _string_ | - |
 | icon-prefix `v2.5.3` | Icon className prefix | _string_ | `van-icon` |
@@ -262,7 +262,7 @@ Field support all native events of input tag
 | --- | --- | --- |
 | input | Emitted when input value changed | _value: string_ |
 | focus | Emitted when input is focused | _event: Event_ |
-| blur | Emitted when input is blured | _event: Event_ |
+| blur | Emitted when input is blurred | _event: Event_ |
 | clear | Emitted when the clear icon is clicked | _event: Event_ |
 | click | Emitted when component is clicked | _event: Event_ |
 | click-input `v2.8.1` | Emitted when the input is clicked | _event: Event_ |
