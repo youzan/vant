@@ -117,17 +117,17 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Emitted when SwipeCell is clicked | Click positon (`left` `right` `cell` `outside`) |
+| click | Emitted when SwipeCell is clicked | Click position (`left` `right` `cell` `outside`) |
 | open | Emitted when SwipeCell is opened | { position: 'left' \| 'right' , name: string } |
 | close | Emitted when SwipeCell is closed | { position: string , name: string } |
 
 ### beforeClose Params
 
-| Attribute | Description                                     | Type        |
-| --------- | ----------------------------------------------- | ----------- |
-| name      | Name                                            | _string_    |
-| position  | Click positon (`left` `right` `cell` `outside`) | _string_    |
-| instance  | SwipeCell instance                              | _SwipeCell_ |
+| Attribute | Description                                      | Type        |
+| --------- | ------------------------------------------------ | ----------- |
+| name      | Name                                             | _string_    |
+| position  | Click position (`left` `right` `cell` `outside`) | _string_    |
+| instance  | SwipeCell instance                               | _SwipeCell_ |
 
 ### Methods
 

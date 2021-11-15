@@ -266,7 +266,7 @@ Following props are supported when the type is range
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| max-range | Number of selectable days | _number \| string_ | Unlimitied |
+| max-range | Number of selectable days | _number \| string_ | Unlimited |
 | range-prompt | Error message when exceeded max range | _string_ | `Choose no more than xx days` |
 | allow-same-day `v2.5.6` | Whether the start and end time of the range is allowed on the same day | _boolean_ | `false` |
 
@@ -276,7 +276,7 @@ Following props are supported when the type is multiple
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| max-range `v2.7.2` | Max count of selectable days | _number \| string_ | Unlimitied |
+| max-range `v2.7.2` | Max count of selectable days | _number \| string_ | Unlimited |
 | range-prompt | Error message when exceeded max count | _string_ | `Choose no more than xx days` |
 
 ### Data Structure of Day

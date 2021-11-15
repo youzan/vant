@@ -165,7 +165,7 @@ export default {
 | closeable `v2.5.0` | 是否显示关闭图标 | _boolean_ | `false` |
 | closeIcon `v2.5.0` | 关闭图标名称或图片链接 | _string_ | `clear` |
 | closeIconPosition `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition `v2.12.8` | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
+| transition `v2.12.8` | 动画类名，等价于 [transition](https://cn.vuejs.org/v2/api/index.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
 | getContainer | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### Props
@@ -188,7 +188,7 @@ export default {
 | closeable `v2.5.0` | 是否显示关闭图标 | _boolean_ | `false` |
 | close-icon `v2.5.0` | 关闭图标名称或图片链接 | _string_ | `clear` |
 | close-icon-position `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition `v2.12.8` | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
+| transition `v2.12.8` | 动画类名，等价于 [transition](https://cn.vuejs.org/v2/api/index.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
 | get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### Events

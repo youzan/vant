@@ -58,7 +58,7 @@ export default {
 
 ### Disabled
 
-Use the `disabled` prop to disable CollaseItem.
+Use the `disabled` prop to disable CollapseItem.
 
 ```html
 <van-collapse v-model="activeNames">

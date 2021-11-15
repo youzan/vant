@@ -61,7 +61,7 @@ export default {
 | left-arrow | Whether to show left arrow | _boolean_ | `false` |
 | border | Whether to show bottom border | _boolean_ | `true` |
 | fixed | Whether to fixed top | _boolean_ | `false` |
-| placeholder `v2.5.9` | Whether to generage a placeholder element when fixed | _boolean_ | `false` |
+| placeholder `v2.5.9` | Whether to generate a placeholder element when fixed | _boolean_ | `false` |
 | z-index | Z-index | _number \| string_ | `1` |
 | safe-area-inset-top `v2.10.13` | Whether to enable top safe area adaptation | _boolean_ | `false` |
 

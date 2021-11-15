@@ -19,7 +19,7 @@ Vue.use(SubmitBar);
 
 ### Disabled
 
-`submit` event will not triggerd when disabled.
+`submit` event will not triggered when disabled.
 
 ```html
 <van-submit-bar
@@ -34,7 +34,7 @@ Vue.use(SubmitBar);
 
 ### Loading
 
-`submit` event will not triggerd when loading.
+`submit` event will not triggered when loading.
 
 ```html
 <van-submit-bar loading :price="3050" button-text="Submit" @submit="onSubmit" />

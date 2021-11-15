@@ -38,8 +38,8 @@ Vue.use(Button);
 ### Disabled
 
 ```html
-<van-button disabled type="primary">Diabled</van-button>
-<van-button disabled type="info">Diabled</van-button>
+<van-button disabled type="primary">Disabled</van-button>
+<van-button disabled type="info">Disabled</van-button>
 ```
 
 ### Loading

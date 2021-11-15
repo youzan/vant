@@ -50,7 +50,7 @@ test('click close button', () => {
   expect(wrapper.emitted('close')).toBeTruthy();
 });
 
-test('listen to show/hide event when has transtion', () => {
+test('listen to show/hide event when has transition', () => {
   const wrapper = mount(NumberKeyboard);
   wrapper.vm.show = true;
   wrapper.trigger('animationend');
@@ -60,7 +60,7 @@ test('listen to show/hide event when has transtion', () => {
   expect(wrapper.emitted('hide')).toBeTruthy();
 });
 
-test('listen to show event when no transtion', () => {
+test('listen to show event when no transition', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
       transition: false,

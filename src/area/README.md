@@ -17,7 +17,7 @@ Vue.use(Area);
 
 ### Basic Usage
 
-To initailize `Area` component, `area-list` property is required.
+To initialize `Area` component, `area-list` property is required.
 
 ```html
 <van-area title="Title" :area-list="areaList" />

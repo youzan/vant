@@ -142,7 +142,7 @@ export default {
 | plus | Emitted when the plus button is clicked | - |
 | minus | Emitted when the minus button is clicked | - |
 | focus | Emitted when the input is focused | _event: Event_ |
-| blur | Emitted when the input is blured | _event: Event_ |
+| blur | Emitted when the input is blurred | _event: Event_ |
 
 ### Less Variables
 
