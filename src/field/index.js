@@ -352,13 +352,16 @@ export default createComponent({
 
       // readonly not work in legacy mobile safari
       /* istanbul ignore if */
-      const readonly = this.getProp('readonly');
-      if (readonly) {
+      if (this.getProp('readonly')) {
         this.blur();
       }
     },
 
     onBlur(event) {
+      if (this.getProp('readonly')) {
+        return;
+      }
+
       this.focused = false;
       this.updateValue(this.value, 'onBlur');
       this.$emit('blur', event);
