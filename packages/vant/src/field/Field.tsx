@@ -310,13 +310,16 @@ export default defineComponent({
       nextTick(adjustTextareaSize);
 
       // readonly not work in legacy mobile safari
-      const readonly = getProp('readonly');
-      if (readonly) {
+      if (getProp('readonly')) {
         blur();
       }
     };
 
     const onBlur = (event: Event) => {
+      if (getProp('readonly')) {
+        return;
+      }
+
       state.focused = false;
       updateValue(getModelValue(), 'onBlur');
       emit('blur', event);
