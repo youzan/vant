@@ -1,19 +1,20 @@
 {
   "name": "@vant/use",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Vant Composition API",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "typings": "dist/types/index.d.ts",
+  "typings": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
     "dist"
   ],
   "scripts": {
-    "clean": "rm -rf ./dist",
-    "build:lib": "node ./scripts/build.js",
+    "clean": "rimraf ./dist",
+    "dev": "rollup --config rollup.config.js --watch",
     "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
-    "build": "pnpm build:lib && pnpm build:types",
+    "build:bundle": "rollup --config rollup.config.js",
+    "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
     "release": "pnpm build && release-it",
     "prepare": "pnpm build"
   },
@@ -24,12 +25,10 @@
   "license": "MIT",
   "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-use",
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@vant/cli": "workspace:*",
-    "fast-glob": "^3.2.7",
-    "fs-extra": "^10.0.0",
     "release-it": "^14.0.2",
     "typescript": "4.x",
+    "rollup": "^2.33.3",
+    "rollup-plugin-esbuild": "^4.6.0",
     "vue": "^3.2.20"
   },
   "release-it": {

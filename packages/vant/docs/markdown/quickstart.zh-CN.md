@@ -8,14 +8,24 @@
 
 ### 通过 npm 安装
 
-在现有项目中使用 Vant 时，可以通过 `npm` 或 `yarn` 进行安装：
+在现有项目中使用 Vant 时，可以通过 `npm` 进行安装：
 
 ```bash
-# Vue 2 项目，安装 Vant 2：
-npm i vant -S
+# Vue 2 项目，安装 Vant 2
+npm i vant@2
 
-# Vue 3 项目，安装 Vant 3：
-npm i vant@next -S
+# Vue 3 项目，安装 Vant 3
+npm i vant@3
+```
+
+当然，你也可以通过 `yarn` 或 `pnpm` 进行安装：
+
+```bash
+# 通过 yarn 安装
+yarn add vant@3
+
+# 通过 pnpm 安装
+pnpm add vant@3
 ```
 
 ### 通过 CDN 安装

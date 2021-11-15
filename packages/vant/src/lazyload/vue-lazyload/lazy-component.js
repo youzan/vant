@@ -1,5 +1,5 @@
 import { h } from 'vue';
-import { inBrowser } from '@vant/use';
+import { inBrowser, useRect } from '@vant/use';
 
 export default (lazy) => ({
   props: {
@@ -24,7 +24,6 @@ export default (lazy) => ({
       state: {
         loaded: false,
       },
-      rect: {},
       show: false,
     };
   },
@@ -40,18 +39,14 @@ export default (lazy) => ({
   },
 
   methods: {
-    getRect() {
-      this.rect = this.$el.getBoundingClientRect();
-    },
-
     checkInView() {
-      this.getRect();
+      const rect = useRect(this.$el);
       return (
         inBrowser &&
-        this.rect.top < window.innerHeight * lazy.options.preLoad &&
-        this.rect.bottom > 0 &&
-        this.rect.left < window.innerWidth * lazy.options.preLoad &&
-        this.rect.right > 0
+        rect.top < window.innerHeight * lazy.options.preLoad &&
+        rect.bottom > 0 &&
+        rect.left < window.innerWidth * lazy.options.preLoad &&
+        rect.right > 0
       );
     },
 

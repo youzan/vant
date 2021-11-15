@@ -4,12 +4,24 @@
 
 ### npm
 
-```bash
-# Install Vant 2 for Vue 2 project
-npm i vant -S
+Using `npm` to install:
 
-# Install Vant 3 for Vue 3 project
-npm i vant@next -S
+```bash
+# install Vant 2 for Vue 2 project
+npm i vant@2
+
+# install Vant 3 for Vue 3 project
+npm i vant@3
+```
+
+Using `yarn` or `pnpm`:
+
+```bash
+# with yarn
+yarn add vant@3
+
+# with pnpm
+pnpm add vant@3
 ```
 
 ### CDN

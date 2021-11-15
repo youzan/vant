@@ -1,6 +1,5 @@
 import path from 'path';
 import esbuild from 'rollup-plugin-esbuild';
-import nodeResolve from '@rollup/plugin-node-resolve';
 
 export default {
   input: path.join(__dirname, 'src', 'index.ts'),
@@ -14,5 +13,6 @@ export default {
       format: 'esm',
     },
   ],
-  plugins: [esbuild(), nodeResolve()],
+  external: ['vue'],
+  plugins: [esbuild()],
 };

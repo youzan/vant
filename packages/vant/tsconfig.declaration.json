@@ -6,5 +6,10 @@
     "emitDeclarationOnly": true
   },
   "include": ["es/**/*", "lib/**/*"],
-  "exclude": ["node_modules", "**/test/**/*", "**/demo/**/*"]
+  "exclude": [
+    "node_modules",
+    "**/test/**/*",
+    "**/demo/**/*",
+    "**/vue-lazyload/*"
+  ]
 }

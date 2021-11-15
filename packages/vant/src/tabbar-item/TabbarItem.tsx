@@ -63,13 +63,14 @@ export default defineComponent({
         return pathMatched || nameMatched;
       }
 
-      return (props.name || index.value) === modelValue;
+      return (props.name ?? index.value) === modelValue;
     });
 
     const onClick = (event: MouseEvent) => {
-      parent.setActive(props.name ?? index.value);
+      if (!active.value) {
+        parent.setActive(props.name ?? index.value, route);
+      }
       emit('click', event);
-      route();
     };
 
     const renderIcon = () => {

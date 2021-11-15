@@ -1,5 +1,6 @@
-import { inBrowser } from '@vant/use';
-import { loadImageAsync, noop } from './util';
+import { useRect } from '@vant/use';
+import { loadImageAsync } from './util';
+import { noop } from '../../utils';
 
 export default (lazyManager) => ({
   props: {
@@ -34,7 +35,6 @@ export default (lazyManager) => ({
         error: false,
         attempt: 0,
       },
-      rect: {},
       renderSrc: '',
     };
   },
@@ -66,17 +66,13 @@ export default (lazyManager) => ({
       this.options.loading = loading;
       this.renderSrc = this.options.loading;
     },
-    getRect() {
-      this.rect = this.$el.getBoundingClientRect();
-    },
     checkInView() {
-      this.getRect();
+      const rect = useRect(this.$el);
       return (
-        inBrowser &&
-        this.rect.top < window.innerHeight * lazyManager.options.preLoad &&
-        this.rect.bottom > 0 &&
-        this.rect.left < window.innerWidth * lazyManager.options.preLoad &&
-        this.rect.right > 0
+        rect.top < window.innerHeight * lazyManager.options.preLoad &&
+        rect.bottom > 0 &&
+        rect.left < window.innerWidth * lazyManager.options.preLoad &&
+        rect.right > 0
       );
     },
     load(onFinish = noop) {

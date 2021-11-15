@@ -5,6 +5,7 @@
     "dev": "pnpm dev --dir ./packages/vant",
     "lint": "pnpm lint --dir ./packages/vant",
     "test": "pnpm test --dir ./packages/vant",
+    "test:watch": "pnpm test:watch --dir ./packages/vant",
     "build": "pnpm build --dir ./packages/vant",
     "build:site": "pnpm build:site --dir ./packages/vant"
   },
@@ -18,10 +19,12 @@
   "devDependencies": {
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
+    "@vant/stylelint-config": "workspace:*",
     "eslint": "^8.2.0",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
     "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
     "stylelint": "^13.13.1"
   }
 }

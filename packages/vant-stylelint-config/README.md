@@ -2,16 +2,15 @@
 
 ## Install
 
-#### NPM
-
 ```shell
+# with npm
 npm i @vant/stylelint-config -D
-```
 
-#### YARN
+# with yarn
+yarn add @vant/stylelint-config -D
 
-```shell
-yarn add @vant/stylelint-config --dev
+# with pnpm
+pnpm add @vant/stylelint-config -D
 ```
 
 ## Usage

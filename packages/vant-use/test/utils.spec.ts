@@ -1,4 +1,4 @@
-import { raf, cancelRaf } from '../utils';
+import { raf, cancelRaf } from '../src/utils';
 
 test('raf', async () => {
   const spy = jest.fn();

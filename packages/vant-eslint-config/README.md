@@ -2,16 +2,15 @@
 
 ## Install
 
-#### NPM
-
 ```shell
+# with npm
 npm i @vant/eslint-config -D
-```
 
-#### YARN
+# with yarn
+yarn add @vant/eslint-config -D
 
-```shell
-yarn add @vant/eslint-config --dev
+# with pnpm
+pnpm add @vant/eslint-config -D
 ```
 
 ## Usage

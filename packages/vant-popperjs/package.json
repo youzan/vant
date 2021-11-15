@@ -1,10 +1,11 @@
 {
   "name": "@vant/popperjs",
   "version": "1.1.0",
-  "description": "Precompiled popperjs core",
+  "description": "Pre-compiled popperjs core",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "files": [
     "dist"
   ],
@@ -13,8 +14,11 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
+    "clean": "rimraf ./dist",
     "dev": "rollup --config rollup.config.js --watch",
-    "build": "rollup --config rollup.config.js && tsc -p ./tsconfig.json --emitDeclarationOnly",
+    "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
+    "build:bundle": "rollup --config rollup.config.js",
+    "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
     "release": "pnpm build && release-it",
     "prepare": "pnpm build"
   },
@@ -24,11 +28,11 @@
     "@popperjs/core": "^2.9.2"
   },
   "devDependencies": {
-    "@vant/cli": "workspace:*",
-    "@rollup/plugin-babel": "^5.2.1",
-    "@rollup/plugin-node-resolve": "^10.0.0",
-    "release-it": "^14.2.2",
-    "rollup": "^2.33.3"
+    "typescript": "4.x",
+    "rollup": "^2.33.3",
+    "rollup-plugin-esbuild": "^4.6.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "release-it": "^14.2.2"
   },
   "release-it": {
     "git": {

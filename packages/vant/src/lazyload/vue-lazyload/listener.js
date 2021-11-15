@@ -1,4 +1,6 @@
-import { loadImageAsync, noop } from './util';
+import { useRect } from '@vant/use';
+import { loadImageAsync } from './util';
+import { noop } from '../../utils';
 
 export default class ReactiveListener {
   constructor({
@@ -25,8 +27,6 @@ export default class ReactiveListener {
     this.naturalWidth = 0;
 
     this.options = options;
-
-    this.rect = null;
 
     this.$parent = $parent;
     this.elRenderer = elRenderer;
@@ -88,24 +88,16 @@ export default class ReactiveListener {
   }
 
   /*
-   * get el node rect
-   * @return
-   */
-  getRect() {
-    this.rect = this.el.getBoundingClientRect();
-  }
-
-  /*
    *  check el is in view
    * @return {Boolean} el is in view
    */
   checkInView() {
-    this.getRect();
+    const rect = useRect(this.el);
     return (
-      this.rect.top < window.innerHeight * this.options.preLoad &&
-      this.rect.bottom > this.options.preLoadTop &&
-      this.rect.left < window.innerWidth * this.options.preLoad &&
-      this.rect.right > 0
+      rect.top < window.innerHeight * this.options.preLoad &&
+      rect.bottom > this.options.preLoadTop &&
+      rect.left < window.innerWidth * this.options.preLoad &&
+      rect.right > 0
     );
   }
 

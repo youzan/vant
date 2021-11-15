@@ -1,144 +1,149 @@
-# 更新日志
+# Changelog
+
+### v1.3.3
+
+- Allow to call useWindowSize outside setup
+- Improve usePageVisibility event bindings performance
 
 ### v1.3.2
 
-- 移除 passive event 的 polyfill
+-Remove passive event polyfill
 
 ### v1.3.1
 
-- 移除 requestAnimationFrame 的 polyfill
+- Remove requestAnimationFrame polyfill
 
 ### v1.3.0
 
-- 新增 `useCustomFieldValue` 方法
+- Added `useCustomFieldValue` method
 
 ### v1.2.2
 
 `2021-07-22`
 
-- `useEventListener`: 修复 `invalid watch source` 问题
+- `useEventListener`: fix `invalid watch source` issue
 
 ### v1.2.1
 
 `2021-07-21`
 
-- `useEventListener` 现在会监听 target 的变化，并重新监听事件
+- `useEventListener` will now watch the target changes and re-listen the events
 
 ### v1.2.0
 
 `2021-07-12`
 
-- 调整 `useParent` 和 `useChildren` 的类型定义
+- Adjust type definition of `useParent` and `useChildren`
 
 ### v1.1.2
 
 `2021-04-22`
 
-- 修复 `useScrollParent` 在 SSR 下报错的问题
+- Fix the issue of `useScrollParent` reporting errors under SSR
 
 ### v1.1.1
 
 `2021-04-16`
 
-- 移除 `@babel/runtime` 依赖
+- Remove `@babel/runtime` dependency
 
 ### v1.1.0
 
 `2021-04-06`
 
-- 构建结果由 ES5 调整为 ES6
+- Compile to ES6 instead of ES5
 
 ### v1.0.5
 
 `2021-02-13`
 
-- 优化 `useRect` 的返回值类型，始终返回 `DOMRect`
+- Optimize the return value type of `useRect`, always return `DOMRect`
 
 ### v1.0.4
 
 `2021-02-12`
 
-- `useChildren` 支持通过泛型定义 Children 的类型
+- `useChildren` supports defining the type of Children through generics
 
 ### v1.0.3
 
 `2021-02-10`
 
-- 当 parent 不存在时，`useParent` 现在返回的 index 为 -1 而不是 undefined
+- When parent does not exist, `useParent` now returns index -1 instead of undefined
 
 ### v1.0.2
 
 `2021-01-01`
 
-- 修复 useToggle 类型定义错误的问题
+- Fix the problem of incorrect useToggle type definition
 
 ### v1.0.1
 
 `2020-12-27`
 
-- 导出个别内部方法供 Vant 使用
+- Export individual internal methods for use by Vant
 
 ### v1.0.0
 
 `2020-12-15`
 
-- 优化构建产物体积
+- Optimize the volume of the build product
 
 ### v0.1.0
 
 `2020-11-11`
 
-- 新增 `onMountedOrActivated` 方法
+- Added `onMountedOrActivated` method
 
 ### v0.0.8
 
 `2020-10-09`
 
-- 改进类型定义
+- Improve type definition
 
 ### v0.0.7
 
 `2020-10-06`
 
-- 修复 `useCountDown` 未被导出的问题
+- Fix the problem that `useCountDown` is not exported
 
 ### v0.0.6
 
 `2020-10-06`
 
-- 导出所有类型定义
+- Export all type definitions
 
 ### v0.0.5
 
 `2020-10-06`
 
-- 新增 `useCountDown` 方法
+- Added `useCountDown` method
 
 ### v0.0.4
 
 `2020-10-05`
 
-- 新增 `useRect` 方法
+- Added `useRect` method
 
 ### v0.0.3
 
 `2020-09-27`
 
-- 新增 `useParent` 方法
-- 新增 `useChildren` 方法
+- Added `useParent` method
+- Added `useChildren` method
 
 ### v0.0.2
 
 `2020-09-15`
 
-- 新增 `useWindowSize` 方法
+- Added `useWindowSize` method
 
 ### v0.0.1
 
 `2020-09-15`
 
-- 新增 `useClickAway` 方法
-- 新增 `useEventListener` 方法
-- 新增 `usePageVisibility` 方法
-- 新增 `useScrollParent` 方法
-- 新增 `useToggle` 方法
+- Added `useClickAway` method
+- Added `useEventListener` method
+- Added `usePageVisibility` method
+- Added `useScrollParent` method
+- Added `useToggle` method

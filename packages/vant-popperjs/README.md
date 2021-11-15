@@ -5,7 +5,14 @@
 ## Install
 
 ```shell
+# with npm
+npm i @vant/popperjs
+
+# with yarn
 yarn add @vant/popperjs
+
+# with pnpm
+pnpm add @vant/popperjs
 ```
 
 ## Usage

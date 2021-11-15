@@ -57,7 +57,14 @@ const areaList = {
 Vant 官方提供了一份默认的省市区数据，可以通过 [@vant/area-data](https://github.com/youzan/vant/tree/dev/packages/vant-area-data) 引入：
 
 ```bash
+# 通过 npm
+npm i @vant/area-data
+
+# 通过 yarn
 yarn add @vant/area-data
+
+# 通过 pnpm
+pnpm add @vant/area-data
 ```
 
 ```ts
