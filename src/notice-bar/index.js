@@ -94,10 +94,12 @@ export default createComponent({
       });
     },
 
+    // not an exposed-api, but may used by some users
     start() {
       this.reset();
     },
 
+    // @exposed-api
     reset() {
       const delay = isDef(this.delay) ? this.delay * 1000 : 0;
 
