@@ -7,6 +7,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-tabs__wrap">
         <div role="tablist"
              class="van-tabs__nav van-tabs__nav--line"
+             aria-orientation="horizontal"
         >
           <div role="tab"
                class="van-tab van-tab--active"

@@ -37,6 +37,7 @@ exports[`should allow to set name prop 1`] = `
   <div class="van-tabs__wrap">
     <div role="tablist"
          class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
     >
       <div role="tab"
            class="van-tab van-tab--active"
@@ -134,6 +135,7 @@ exports[`should render nav-left、nav-right slot correctly 1`] = `
 <div class="van-tabs__wrap">
   <div role="tablist"
        class="van-tabs__nav van-tabs__nav--line"
+       aria-orientation="horizontal"
   >
     Custom nav left
     <div role="tab"
@@ -158,6 +160,7 @@ exports[`should switch tab after click the tab title 1`] = `
   <div class="van-tabs__wrap">
     <div role="tablist"
          class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
     >
       <div role="tab"
            class="van-tab van-tab--active"
@@ -215,6 +218,7 @@ exports[`should switch tab after click the tab title 2`] = `
   <div class="van-tabs__wrap">
     <div role="tablist"
          class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
     >
       <div role="tab"
            class="van-tab"
@@ -273,6 +277,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
   <div class="van-tabs__wrap">
     <div role="tablist"
          class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
     >
       <div role="tab"
            class="van-tab van-tab--active"
@@ -344,6 +349,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
   <div class="van-tabs__wrap">
     <div role="tablist"
          class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
     >
       <div role="tab"
            class="van-tab"
@@ -418,6 +424,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
   <div class="van-tabs__wrap">
     <div role="tablist"
          class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
     >
       <div role="tab"
            class="van-tab"

@@ -60,6 +60,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
     <div class="van-tabs__wrap van-tabs__wrap--scrollable">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line van-tabs__nav--complete"
+           aria-orientation="horizontal"
       >
         <div role="tab"
              class="van-tab van-cascader__tab"
