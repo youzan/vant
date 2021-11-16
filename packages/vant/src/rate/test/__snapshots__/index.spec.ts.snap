@@ -4,6 +4,8 @@ exports[`should render gutter when using gutter prop 1`] = `
 <div role="radiogroup"
      class="van-rate"
      tabindex="0"
+     aria-disabled="false"
+     aria-readonly="false"
 >
   <div role="radio"
        style="padding-right: 10px;"
