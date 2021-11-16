@@ -6,32 +6,40 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell-group van-cell-group--inset">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Username
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="text"
+                   id="van-field-input"
                    name="username"
                    class="van-field__control"
                    placeholder="Username"
+                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Password
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="password"
+                   id="van-field-input"
                    name="password"
                    class="van-field__control"
                    placeholder="Password"
+                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
@@ -55,64 +63,80 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell-group van-cell-group--inset">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Label
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="text"
+                   id="van-field-input"
                    name="pattern"
                    class="van-field__control"
                    placeholder="Use pattern"
+                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Label
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="text"
+                   id="van-field-input"
                    name="validator"
                    class="van-field__control"
                    placeholder="Use validator"
+                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Label
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="text"
+                   id="van-field-input"
                    name="validatorMessage"
                    class="van-field__control"
                    placeholder="Use validator to return message"
+                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Label
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="text"
+                   id="van-field-input"
                    name="asyncValidator"
                    class="van-field__control"
                    placeholder="Use async validator"
+                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
@@ -136,7 +160,9 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell-group van-cell-group--inset">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Switch
           </label>
         </div>
@@ -157,7 +183,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Checkbox
           </label>
         </div>
@@ -180,7 +208,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Checkbox Group
           </label>
         </div>
@@ -221,7 +251,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Radio
           </label>
         </div>
@@ -264,7 +296,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Stepper
           </label>
         </div>
@@ -298,7 +332,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Rate
           </label>
         </div>
@@ -368,7 +404,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Slider
           </label>
         </div>
@@ -398,7 +436,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Uploader
           </label>
         </div>
@@ -442,17 +482,21 @@ exports[`should render demo and match snapshot 1`] = `
            tabindex="0"
       >
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Picker
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="text"
+                   id="van-field-input"
                    name="picker"
                    class="van-field__control"
                    readonly
                    placeholder="Select city"
+                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
@@ -464,17 +508,21 @@ exports[`should render demo and match snapshot 1`] = `
            tabindex="0"
       >
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Datetime Picker
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="text"
+                   id="van-field-input"
                    name="datetimePicker"
                    class="van-field__control"
                    readonly
                    placeholder="Select time"
+                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
@@ -486,17 +534,21 @@ exports[`should render demo and match snapshot 1`] = `
            tabindex="0"
       >
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Area Picker
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="text"
+                   id="van-field-input"
                    name="area"
                    class="van-field__control"
                    readonly
                    placeholder="Select area"
+                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
@@ -508,17 +560,21 @@ exports[`should render demo and match snapshot 1`] = `
            tabindex="0"
       >
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Calendar
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="text"
+                   id="van-field-input"
                    name="calendar"
                    class="van-field__control"
                    readonly
                    placeholder="Select date"
+                   aria-labelledby="van-field-label"
             >
           </div>
         </div>

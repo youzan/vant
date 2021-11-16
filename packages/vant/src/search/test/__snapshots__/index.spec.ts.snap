@@ -34,6 +34,7 @@ exports[`should render left slot correctly 1`] = `
       <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body">
           <input type="search"
+                 id="van-field-input"
                  class="van-field__control"
           >
         </div>

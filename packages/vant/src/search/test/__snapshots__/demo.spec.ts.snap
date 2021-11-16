@@ -12,6 +12,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-cell__value--alone van-field__value">
           <div class="van-field__body">
             <input type="search"
+                   id="van-field-input"
                    class="van-field__control"
                    placeholder="Placeholder"
             >
@@ -33,6 +34,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-cell__value van-cell__value--alone van-field__value">
             <div class="van-field__body">
               <input type="search"
+                     id="van-field-input"
                      class="van-field__control"
                      placeholder="Placeholder"
               >
@@ -60,6 +62,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-cell__value--alone van-field__value">
           <div class="van-field__body">
             <input type="search"
+                   id="van-field-input"
                    class="van-field__control van-field__control--center"
                    placeholder="Placeholder"
             >
@@ -80,6 +83,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-cell__value--alone van-field__value">
           <div class="van-field__body">
             <input type="search"
+                   id="van-field-input"
                    class="van-field__control"
                    disabled
                    placeholder="Placeholder"
@@ -103,6 +107,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-cell__value--alone van-field__value">
           <div class="van-field__body">
             <input type="search"
+                   id="van-field-input"
                    class="van-field__control"
                    placeholder="Placeholder"
             >
@@ -126,6 +131,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-cell__value--alone van-field__value">
           <div class="van-field__body">
             <input type="search"
+                   id="van-field-input"
                    class="van-field__control"
                    placeholder="Placeholder"
             >
