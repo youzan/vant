@@ -35,7 +35,7 @@
     - name: field-namesp
       title: 自定义 options 结构中的字段
       type: string, object
-      default: "{'text':'text','value':'value','children':'children'}"
+      default: "{'text':'','value':'','children':'children'}"
       description: 自定义 options 结构中的字段
   slots: false
   events:

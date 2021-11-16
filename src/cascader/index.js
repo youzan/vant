@@ -66,10 +66,10 @@ export default createComponent({
       if(typeof this.fieldNamesp === 'object') return this.fieldNamesp;
     },
     textKey() {
-      return this.textField || this.fieldNames?.text || 'text';
+      return this.fieldNames?.text || this.textField ||  'text';
     },
     valueKey() {
-      return this.valueField || this.fieldNames?.value || 'value';
+      return this.fieldNames?.value || this.valueField || 'value';
     },
     childrenKey() {
       return this.fieldNames?.children || 'children';
@@ -357,7 +357,7 @@ export default createComponent({
           label={this.labelField}
           value={this.getTitle()}
           readonly
-          isLink
+          isLink={false}
           input-align="right"
           onClick={this.togglePopup}
         />
