@@ -18,7 +18,7 @@
         - value: horizontal
           title: 横向
         - value: vertical
-          title: 链垂直接
+          title: 垂直
       default: horizontal
       description: 通知栏模式
   slots:

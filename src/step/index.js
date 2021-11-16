@@ -11,12 +11,15 @@ export default createComponent({
   components: {
     VanEmptyCol,
   },
+  props: {
+    value: [Number, String]
+  },
   computed: {
     status() {
-      if (this.index < this.parent.value) {
+      if ((this.value ?? this.index) < this.parent.value) {
         return 'finish';
       }
-      if (this.index === +this.parent.value) {
+      if ((this.value ?? this.index) === +this.parent.value) {
         return 'process';
       }
     },
@@ -101,7 +104,19 @@ export default createComponent({
 
     onClickStep() {
       this.parent.$emit('click-step', this.index);
+      this.$emit('clicktitle', this.index);
+      this.parent.value = this.value ?? this.index;
+      this.parent.$emit('update:active', this.value ?? this.index);
     },
+    onClickStepIcon() {
+      this.$emit('clickticon', this.index);
+      this.parent.value = this.value ?? this.index;
+      this.parent.$emit('update:active', this.value ?? this.index);
+    },
+    designerControl() {
+      this.parent.value = this.value ?? this.index;
+      this.parent.$emit('update:active', this.value ?? this.index);
+    }
   },
 
   render() {
@@ -119,7 +134,7 @@ export default createComponent({
           {this.slots()}
           {!this.slots && this.ifDesigner() ? <van-empty-col></van-empty-col> : null}
         </div>
-        <div class={bem('circle-container')} onClick={this.onClickStep}>
+        <div class={bem('circle-container')} onClick={this.onClickStepIcon}>
           {this.genCircle()}
         </div>
         <div class={bem('line')} style={this.lineStyle} />

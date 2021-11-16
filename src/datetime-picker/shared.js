@@ -84,7 +84,8 @@ export const TimePickerMixin = {
 
       } else {
         this.$emit('input', this.innerValue)
-        this.$emit('update:value', this.type==="datetime" ? this.innerValue.formath("yyyy/MM/dd HH:mm:ss") : this.innerValue);
+        // this.$emit('update:value', this.type==="datetime" ? this.innerValue.formath("yyyy/MM/dd HH:mm:ss") : this.innerValue);
+        this.$emit('update:value', this.type==="datetime" ? this.innerValue.toJSON() : this.innerValue);
         this.$emit('update:cvalue', this.type==="datetime" ? this.innerValue.formath("yyyy/MM/dd HH:mm:ss") : this.innerValue);
         this.$emit('confirm', this.innerValue);
       }

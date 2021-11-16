@@ -35,6 +35,7 @@ export default createComponent({
   watch: {
     active(val) {
       this.value = val;
+      this.$emit('changestep');
     }
   },
 

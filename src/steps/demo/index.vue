@@ -1,7 +1,14 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
-      <van-steps :active="active">
+      <van-steps>
+        <van-step>{{ t('step1') }}</van-step>
+        <van-step>{{ t('step2') }}</van-step>
+        <van-step>{{ t('step3') }}</van-step>
+        <van-step>{{ t('step4') }}</van-step>
+      </van-steps>
+
+      <van-steps :active.sync="active">
         <van-step>{{ t('step1') }}</van-step>
         <van-step>{{ t('step2') }}</van-step>
         <van-step>{{ t('step3') }}</van-step>
