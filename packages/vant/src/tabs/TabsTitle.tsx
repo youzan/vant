@@ -83,6 +83,7 @@ export default defineComponent({
           }),
         ]}
         style={style.value}
+        tabindex={props.disabled ? undefined : props.isActive ? 0 : -1}
         aria-selected={props.isActive}
       >
         {renderText()}

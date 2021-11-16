@@ -64,6 +64,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
       >
         <div role="tab"
              class="van-tab van-cascader__tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text">
@@ -72,6 +73,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
         </div>
         <div role="tab"
              class="van-tab van-tab--active van-cascader__tab van-cascader__tab--unselected"
+             tabindex="0"
              aria-selected="true"
         >
           <span class="van-tab__text">

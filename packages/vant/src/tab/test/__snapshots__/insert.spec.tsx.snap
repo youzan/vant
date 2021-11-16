@@ -5,9 +5,11 @@ exports[`should render Tab inside a component correctly 1`] = `
   <div class="van-tabs__wrap">
     <div role="tablist"
          class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
     >
       <div role="tab"
            class="van-tab"
+           tabindex="-1"
            aria-selected="false"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
@@ -16,6 +18,7 @@ exports[`should render Tab inside a component correctly 1`] = `
       </div>
       <div role="tab"
            class="van-tab van-tab--active"
+           tabindex="0"
            aria-selected="true"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
@@ -24,6 +27,7 @@ exports[`should render Tab inside a component correctly 1`] = `
       </div>
       <div role="tab"
            class="van-tab"
+           tabindex="-1"
            aria-selected="false"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
@@ -62,9 +66,11 @@ exports[`should render correctly after inserting a tab 1`] = `
   <div class="van-tabs__wrap">
     <div role="tablist"
          class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
     >
       <div role="tab"
            class="van-tab"
+           tabindex="-1"
            aria-selected="false"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
@@ -73,6 +79,7 @@ exports[`should render correctly after inserting a tab 1`] = `
       </div>
       <div role="tab"
            class="van-tab van-tab--active"
+           tabindex="0"
            aria-selected="true"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
@@ -81,6 +88,7 @@ exports[`should render correctly after inserting a tab 1`] = `
       </div>
       <div role="tab"
            class="van-tab"
+           tabindex="-1"
            aria-selected="false"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
@@ -121,9 +129,11 @@ exports[`should render correctly after inserting a tab with name 1`] = `
   <div class="van-tabs__wrap">
     <div role="tablist"
          class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
     >
       <div role="tab"
            class="van-tab"
+           tabindex="-1"
            aria-selected="false"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
@@ -132,6 +142,7 @@ exports[`should render correctly after inserting a tab with name 1`] = `
       </div>
       <div role="tab"
            class="van-tab van-tab--active"
+           tabindex="0"
            aria-selected="true"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
@@ -166,6 +177,7 @@ exports[`should render nav-bottom slot correctly 1`] = `
   <div class="van-tabs__wrap">
     <div role="tablist"
          class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
     >
       <div class="van-tabs__line">
       </div>

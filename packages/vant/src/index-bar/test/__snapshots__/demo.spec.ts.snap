@@ -9,6 +9,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div role="tab"
            class="van-tab van-tab--active"
+           tabindex="0"
            aria-selected="true"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
@@ -17,6 +18,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div role="tab"
            class="van-tab"
+           tabindex="-1"
            aria-selected="false"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
