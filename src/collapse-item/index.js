@@ -7,6 +7,7 @@ import { ChildrenMixin } from '../mixins/relation';
 
 // Components
 import Cell from '../cell';
+import VanEmptyCol from '../emptycol';
 import { cellProps } from '../cell/shared';
 
 const [createComponent, bem] = createNamespace('collapse-item');
@@ -31,6 +32,9 @@ export default createComponent({
       show: null,
       inited: null,
     };
+  },
+  components: {
+    VanEmptyCol,
   },
 
   computed: {
@@ -74,6 +78,9 @@ export default createComponent({
       if (expanded) {
         this.show = true;
         this.inited = true;
+        this.$emit('open');
+      } else {
+        this.$emit('close');
       }
 
       // Use raf: flick when opened in safari
@@ -153,7 +160,9 @@ export default createComponent({
         />
       );
     },
-
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     genContent() {
       if (this.inited) {
         return (
@@ -163,18 +172,27 @@ export default createComponent({
             class={bem('wrapper')}
             onTransitionend={this.onTransitionEnd}
           >
-            <div ref="content" class={bem('content')}>
+            <div ref="content" class={bem('content')} vusion-slot-name="default">
               {this.slots()}
+              {!this.slots() && this.ifDesigner() ? <van-empty-col></van-empty-col> : null}
             </div>
           </div>
         );
       }
     },
+    designerControl() {
+      this.toggle();
+    }
   },
 
   render() {
+    const aId = this.$vnode.context.$options._scopeId;
+    const aIdo = {
+      ...this.$attrs,
+      [aId] : ''
+    }
     return (
-      <div class={[bem({ border: this.index && this.border })]}>
+      <div class={[bem({ border: this.index && this.border })]} {...{attrs: {...aIdo}}}>
         {this.genTitle()}
         {this.genContent()}
       </div>

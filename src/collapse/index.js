@@ -9,13 +9,17 @@ export default createComponent({
 
   props: {
     accordion: Boolean,
-    value: [String, Number, Array],
+    valueprop: [String, Number, Array],
     border: {
       type: Boolean,
       default: true,
     },
   },
-
+  data() {
+    return {
+      value: this.valueprop ?? (this.accordion ? 0 : [0])
+    }
+  },
   methods: {
     switch(name, expanded) {
       if (!this.accordion) {
@@ -25,6 +29,8 @@ export default createComponent({
       }
       this.$emit('change', name);
       this.$emit('input', name);
+      this.$emit('update:valueprop', name);
+      this.value = name;
     },
   },
 
