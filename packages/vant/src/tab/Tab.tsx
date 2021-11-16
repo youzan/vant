@@ -114,7 +114,7 @@ export default defineComponent({
             aria-hidden={!active.value}
             aria-labelledby={label}
           >
-            <div class={bem('pane')}>{slots.default?.()}</div>
+            <div class={bem('panel')}>{slots.default?.()}</div>
           </SwipeItem>
         );
       }
@@ -129,7 +129,7 @@ export default defineComponent({
           v-show={show}
           id={id}
           role="tabpanel"
-          class={bem('pane')}
+          class={bem('panel')}
           tabindex={show ? 0 : -1}
           aria-labelledby={label}
         >

@@ -12,7 +12,7 @@ exports[`should render option slot correctly 1`] = `
 `;
 
 exports[`should render options-top、options-bottom slots correctly 1`] = `
-<div class="van-tab__pane">
+<div class="van-tab__panel">
   Top, tab index: 0
   <ul class="van-cascader__options">
     <li class="van-cascader__option van-cascader__option--selected">
@@ -101,7 +101,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
                aria-labelledby="van-tabs-0"
                style="width: 100px;"
           >
-            <div class="van-tab__pane">
+            <div class="van-tab__panel">
               <ul class="van-cascader__options">
                 <li class="van-cascader__option">
                   <span>
@@ -126,7 +126,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
                aria-labelledby="van-tabs-1"
                style="width: 100px;"
           >
-            <div class="van-tab__pane">
+            <div class="van-tab__panel">
               <ul class="van-cascader__options">
                 <li class="van-cascader__option">
                   <span>
