@@ -26,6 +26,18 @@ export default createComponent({
     },
   },
 
+  data() {
+    return {
+      value: this.active
+    }
+  },
+
+  watch: {
+    active(val) {
+      this.value = val;
+    }
+  },
+
   render() {
     return (
       <div class={bem([this.direction])}>

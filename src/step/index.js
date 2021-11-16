@@ -2,18 +2,21 @@ import { createNamespace } from '../utils';
 import { BORDER } from '../utils/constant';
 import { ChildrenMixin } from '../mixins/relation';
 import Icon from '../icon';
+import VanEmptyCol from '../emptycol';
 
 const [createComponent, bem] = createNamespace('step');
 
 export default createComponent({
   mixins: [ChildrenMixin('vanSteps')],
-
+  components: {
+    VanEmptyCol,
+  },
   computed: {
     status() {
-      if (this.index < this.parent.active) {
+      if (this.index < this.parent.value) {
         return 'finish';
       }
-      if (this.index === +this.parent.active) {
+      if (this.index === +this.parent.value) {
         return 'process';
       }
     },
@@ -40,6 +43,9 @@ export default createComponent({
   },
 
   methods: {
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     genCircle() {
       const {
         activeIcon,
@@ -108,8 +114,10 @@ export default createComponent({
           class={bem('title', { active })}
           style={this.titleStyle}
           onClick={this.onClickStep}
+          vusion-slot-name="default"
         >
           {this.slots()}
+          {!this.slots && this.ifDesigner() ? <van-empty-col></van-empty-col> : null}
         </div>
         <div class={bem('circle-container')} onClick={this.onClickStep}>
           {this.genCircle()}
