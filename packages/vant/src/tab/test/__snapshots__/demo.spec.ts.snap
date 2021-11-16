@@ -284,6 +284,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div role="tab"
              class="van-tab van-tab--disabled"
              aria-selected="false"
+             aria-disabled="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2

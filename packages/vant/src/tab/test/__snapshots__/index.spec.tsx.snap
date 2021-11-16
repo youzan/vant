@@ -60,6 +60,7 @@ exports[`should allow to set name prop 1`] = `
       <div role="tab"
            class="van-tab van-tab--disabled"
            aria-selected="false"
+           aria-disabled="true"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -187,6 +188,7 @@ exports[`should switch tab after click the tab title 1`] = `
       <div role="tab"
            class="van-tab van-tab--disabled"
            aria-selected="false"
+           aria-disabled="true"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -247,6 +249,7 @@ exports[`should switch tab after click the tab title 2`] = `
       <div role="tab"
            class="van-tab van-tab--disabled"
            aria-selected="false"
+           aria-disabled="true"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -308,6 +311,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
       <div role="tab"
            class="van-tab van-tab--disabled"
            aria-selected="false"
+           aria-disabled="true"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -382,6 +386,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
       <div role="tab"
            class="van-tab van-tab--disabled"
            aria-selected="false"
+           aria-disabled="true"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -459,6 +464,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
       <div role="tab"
            class="van-tab van-tab--disabled"
            aria-selected="false"
+           aria-disabled="true"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
