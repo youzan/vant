@@ -1,5 +1,5 @@
 import { deepClone } from '../utils/deep-clone';
-import { createNamespace, isObject } from '../utils';
+import { createNamespace, inBrowser, isObject } from '../utils';
 import { range } from '../utils/format/number';
 import { preventDefault, on, off } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
@@ -27,7 +27,7 @@ function isOptionDisabled(option) {
 }
 // use standard WheelEvent:
 // https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent
-const supportMousewheel = 'onwheel' in window;
+const supportMousewheel = inBrowser && 'onwheel' in window;
 let mousewheelTimer = null;
 
 export default createComponent({
