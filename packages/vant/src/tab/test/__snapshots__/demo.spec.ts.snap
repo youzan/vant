@@ -6,9 +6,11 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"
+           aria-orientation="horizontal"
       >
         <div role="tab"
              class="van-tab van-tab--active"
+             tabindex="0"
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -17,6 +19,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -25,6 +28,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -33,6 +37,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -75,9 +80,11 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"
+           aria-orientation="horizontal"
       >
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -86,6 +93,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab van-tab--active"
+             tabindex="0"
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -94,6 +102,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -131,9 +140,11 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__wrap van-tabs__wrap--scrollable">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line van-tabs__nav--complete"
+           aria-orientation="horizontal"
       >
         <div role="tab"
              class="van-tab van-tab--active"
+             tabindex="0"
              aria-selected="true"
         >
           <span class="van-tab__text">
@@ -142,6 +153,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text">
@@ -150,6 +162,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text">
@@ -158,6 +171,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text">
@@ -166,6 +180,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text">
@@ -174,6 +189,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text">
@@ -182,6 +198,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text">
@@ -190,6 +207,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text">
@@ -252,9 +270,11 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"
+           aria-orientation="horizontal"
       >
         <div role="tab"
              class="van-tab van-tab--active"
+             tabindex="0"
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -271,6 +291,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -308,9 +329,11 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--card"
+           aria-orientation="horizontal"
       >
         <div role="tab"
              class="van-tab van-tab--active"
+             tabindex="0"
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -319,6 +342,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -327,6 +351,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -360,9 +385,11 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"
+           aria-orientation="horizontal"
       >
         <div role="tab"
              class="van-tab van-tab--active"
+             tabindex="0"
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -371,6 +398,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -405,9 +433,11 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-tabs__wrap">
           <div role="tablist"
                class="van-tabs__nav van-tabs__nav--line"
+               aria-orientation="horizontal"
           >
             <div role="tab"
                  class="van-tab van-tab--active"
+                 tabindex="0"
                  aria-selected="true"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
@@ -416,6 +446,7 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
             <div role="tab"
                  class="van-tab"
+                 tabindex="-1"
                  aria-selected="false"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
@@ -424,6 +455,7 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
             <div role="tab"
                  class="van-tab"
+                 tabindex="-1"
                  aria-selected="false"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
@@ -432,6 +464,7 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
             <div role="tab"
                  class="van-tab"
+                 tabindex="-1"
                  aria-selected="false"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
@@ -476,9 +509,11 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"
+           aria-orientation="horizontal"
       >
         <div role="tab"
              class="van-tab van-tab--active"
+             tabindex="0"
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -489,6 +524,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -523,9 +559,11 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"
+           aria-orientation="horizontal"
       >
         <div role="tab"
              class="van-tab van-tab--active"
+             tabindex="0"
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -534,6 +572,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -542,6 +581,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -550,6 +590,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -607,9 +648,11 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"
+           aria-orientation="horizontal"
       >
         <div role="tab"
              class="van-tab van-tab--active"
+             tabindex="0"
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -618,6 +661,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -626,6 +670,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -634,6 +679,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -693,9 +739,11 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-tabs__wrap van-tabs__wrap--scrollable">
           <div role="tablist"
                class="van-tabs__nav van-tabs__nav--line van-tabs__nav--complete"
+               aria-orientation="horizontal"
           >
             <div role="tab"
                  class="van-tab van-tab--active"
+                 tabindex="0"
                  aria-selected="true"
             >
               <span class="van-tab__text">
@@ -704,6 +752,7 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
             <div role="tab"
                  class="van-tab"
+                 tabindex="-1"
                  aria-selected="false"
             >
               <span class="van-tab__text">
@@ -712,6 +761,7 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
             <div role="tab"
                  class="van-tab"
+                 tabindex="-1"
                  aria-selected="false"
             >
               <span class="van-tab__text">
@@ -720,6 +770,7 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
             <div role="tab"
                  class="van-tab"
+                 tabindex="-1"
                  aria-selected="false"
             >
               <span class="van-tab__text">
@@ -728,6 +779,7 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
             <div role="tab"
                  class="van-tab"
+                 tabindex="-1"
                  aria-selected="false"
             >
               <span class="van-tab__text">
@@ -736,6 +788,7 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
             <div role="tab"
                  class="van-tab"
+                 tabindex="-1"
                  aria-selected="false"
             >
               <span class="van-tab__text">
@@ -744,6 +797,7 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
             <div role="tab"
                  class="van-tab"
+                 tabindex="-1"
                  aria-selected="false"
             >
               <span class="van-tab__text">
@@ -752,6 +806,7 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
             <div role="tab"
                  class="van-tab"
+                 tabindex="-1"
                  aria-selected="false"
             >
               <span class="van-tab__text">
@@ -815,9 +870,11 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__wrap">
       <div role="tablist"
            class="van-tabs__nav van-tabs__nav--line"
+           aria-orientation="horizontal"
       >
         <div role="tab"
              class="van-tab van-tab--active"
+             tabindex="0"
              aria-selected="true"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -826,6 +883,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -834,6 +892,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
@@ -842,6 +901,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div role="tab"
              class="van-tab"
+             tabindex="-1"
              aria-selected="false"
         >
           <span class="van-tab__text van-tab__text--ellipsis">

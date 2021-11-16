@@ -395,6 +395,7 @@ export default defineComponent({
             role="tablist"
             class={bem('nav', [type, { complete: scrollable.value }])}
             style={navStyle.value}
+            aria-orientation="horizontal"
           >
             {slots['nav-left']?.()}
             {renderNav()}
