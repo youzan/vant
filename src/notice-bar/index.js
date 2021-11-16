@@ -39,6 +39,14 @@ export default createComponent({
       type: [Number, String],
       default: 60,
     },
+    href: String,
+    target: { type: String, default: '_self' },
+    to: [String, Object],
+    replace: { type: Boolean, default: false },
+    append: { type: Boolean, default: false },
+    decoration: { type: Boolean, default: true },
+    download: { type: Boolean, default: false },
+    destination: String,
   },
 
   data() {
@@ -128,6 +136,76 @@ export default createComponent({
         }
       }, delay);
     },
+    clickHandler(event) {
+      this.$emit('click', event);
+      if (this.mode === 'link') {
+        this.$emit('rout', event);
+        const props = this._props;
+        const parent = this.$parent;
+        function currentHref() {
+          if (props.href !== undefined)
+              return props.href;
+          if (props.destination !== undefined && props.destination !== "")
+              return props.destination;
+          else if (parent?.$router && props.to !== undefined)
+              return parent?.$router.resolve(props.to, parent?.$route, props.append).href;
+          else
+              return undefined;
+        }
+
+        const hrefR = currentHref();
+console.log(hrefR);
+        if (hrefR === undefined) {
+          let to;
+          if (props.destination) {
+              // 只处理/a/b形式的链接
+              const origin = window.location.origin;
+              const path = window.location.href.replace(origin, '').split('/');
+              const destination = props.destination.replace(origin, '').split('/');
+              if (path[1] === destination[1]) {
+                  to = '/' + destination.slice(2).join('/');
+              } else {
+                  return;
+              }
+          }
+
+
+          const currentTo = to || props.to;
+          if (currentTo === undefined)
+              return;
+          let cancel = false;
+          this.$emit(this, 'before-navigate',  {
+            to: currentTo,
+            replace: props.replace,
+            append: props.append,
+            preventDefault: () => (cancel = true),
+          });
+          if (cancel)
+              return;
+          const $router = parent?.$router;
+          const $route = parent?.$route;
+          const { location } = $router.resolve(
+              currentTo,
+              $route,
+              props.append,
+          );
+          props.replace ? $router.replace(location) : $router.push(location);
+
+          this.$emit(this, 'navigate',  { to: currentTo, replace: props.replace, append: props.append });
+        } else {
+          function downloadClick() {
+            const a = document.createElement("a");
+            a.setAttribute("href", hrefR);
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => {
+              document.body.removeChild(a);
+            }, 500);
+          }
+          downloadClick();
+        }
+      }
+    }
   },
 
   render() {
@@ -187,7 +265,7 @@ export default createComponent({
         class={bem({ wrapable: this.wrapable })}
         style={barStyle}
         onClick={(event) => {
-          this.$emit('click', event);
+          this.clickHandler(event);
         }}
       >
         {LeftIcon()}

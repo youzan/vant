@@ -30,6 +30,7 @@ module.exports = {
             { group: 'Display', show: true, name: 'tabs', alias: '选项卡' },
             { group: 'Display', show: true, name: 'text', alias: '文本' },
             { group: 'Display', show: true, name: 'badge', alias: '徽标' },
+            { group: 'Display', show: true, name: 'notice-bar', alias: '通知栏' },
             { group: 'Display', show: true, name: 'count-down', alias: '倒计时' },
             { group: 'Data', show: true, name: 'list-view', alias: '数据列表' },
             { group: 'Form', show: true, name: 'form', alias: '表单' },
