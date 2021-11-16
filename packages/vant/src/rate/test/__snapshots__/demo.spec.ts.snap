@@ -313,11 +313,9 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div role="radiogroup"
        class="van-rate van-rate--disabled"
-       tabindex="0"
   >
     <div role="radio"
          class="van-rate__item"
-         tabindex="0"
          aria-setsize="5"
          aria-posinset="1"
          aria-checked="true"
@@ -327,7 +325,6 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div role="radio"
          class="van-rate__item"
-         tabindex="0"
          aria-setsize="5"
          aria-posinset="2"
          aria-checked="true"
@@ -337,7 +334,6 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div role="radio"
          class="van-rate__item"
-         tabindex="0"
          aria-setsize="5"
          aria-posinset="3"
          aria-checked="true"
@@ -347,7 +343,6 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div role="radio"
          class="van-rate__item"
-         tabindex="0"
          aria-setsize="5"
          aria-posinset="4"
          aria-checked="false"
@@ -357,7 +352,6 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div role="radio"
          class="van-rate__item"
-         tabindex="0"
          aria-setsize="5"
          aria-posinset="5"
          aria-checked="false"

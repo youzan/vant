@@ -19,7 +19,6 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div role="checkbox"
        class="van-checkbox van-checkbox--disabled"
-       tabindex="-1"
        aria-checked="false"
   >
     <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled">
@@ -32,7 +31,6 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
   <div role="checkbox"
        class="van-checkbox van-checkbox--disabled"
-       tabindex="-1"
        aria-checked="true"
   >
     <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled van-checkbox__icon--checked">

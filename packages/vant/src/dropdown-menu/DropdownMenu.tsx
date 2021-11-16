@@ -116,7 +116,7 @@ export default defineComponent({
       return (
         <div
           role="button"
-          tabindex={disabled ? -1 : 0}
+          tabindex={disabled ? undefined : 0}
           class={[bem('item', { disabled }), { [HAPTICS_FEEDBACK]: !disabled }]}
           onClick={() => {
             if (!disabled) {

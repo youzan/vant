@@ -71,7 +71,6 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div role="radio"
          class="van-radio van-radio--disabled"
-         tabindex="-1"
          aria-checked="false"
     >
       <div class="van-radio__icon van-radio__icon--round van-radio__icon--disabled">
@@ -84,7 +83,6 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div role="radio"
          class="van-radio van-radio--disabled"
-         tabindex="-1"
          aria-checked="true"
     >
       <div class="van-radio__icon van-radio__icon--round van-radio__icon--disabled van-radio__icon--checked">

@@ -131,7 +131,7 @@ export default defineComponent({
             },
             direction.value,
           ])}
-          tabindex={disabled.value ? -1 : 0}
+          tabindex={disabled.value ? undefined : 0}
           aria-checked={props.checked}
           onClick={onClick}
         >
