@@ -14,6 +14,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -43,6 +44,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -72,6 +74,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -101,6 +104,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="tel"
@@ -130,6 +134,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -143,6 +148,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
         <button type="button"
                 class="van-stepper__plus van-stepper__plus--disabled"
+                aria-disabled="true"
         >
         </button>
       </div>
@@ -160,6 +166,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -190,6 +197,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -220,6 +228,7 @@ exports[`should render demo and match snapshot 1`] = `
         <button type="button"
                 style="width: 32px; height: 32px;"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -251,6 +260,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -281,6 +291,7 @@ exports[`should render demo and match snapshot 1`] = `
         <button type="button"
                 style="width: 22px; height: 22px;"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"

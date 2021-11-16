@@ -297,6 +297,7 @@ export default defineComponent({
             bem('minus', { disabled: minusDisabled.value }),
             { [HAPTICS_FEEDBACK]: !minusDisabled.value },
           ]}
+          aria-disabled={minusDisabled.value || undefined}
           {...createListeners('minus')}
         />
         <input
@@ -328,6 +329,7 @@ export default defineComponent({
             bem('plus', { disabled: plusDisabled.value }),
             { [HAPTICS_FEEDBACK]: !plusDisabled.value },
           ]}
+          aria-disabled={plusDisabled.value || undefined}
           {...createListeners('plus')}
         />
       </div>

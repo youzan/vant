@@ -276,6 +276,7 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <button type="button"
                         class="van-stepper__minus van-stepper__minus--disabled"
+                        aria-disabled="true"
                 >
                 </button>
                 <input type="text"
