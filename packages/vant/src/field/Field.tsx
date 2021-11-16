@@ -39,6 +39,7 @@ import { cellSharedProps } from '../cell/Cell';
 
 // Composables
 import { CUSTOM_FIELD_INJECTION_KEY, useParent } from '@vant/use';
+import { useId } from '../composables/use-id';
 import { useExpose } from '../composables/use-expose';
 
 // Components
@@ -128,6 +129,7 @@ export default defineComponent({
   ],
 
   setup(props, { emit, slots }) {
+    const id = useId();
     const state = reactive({
       focused: false,
       validateFailed: false,
@@ -376,6 +378,8 @@ export default defineComponent({
       emit('keypress', event);
     };
 
+    const getInputId = () => props.id || `${id}-input`;
+
     const renderInput = () => {
       const controlClass = bem('control', [
         getProp('inputAlign'),
@@ -395,7 +399,7 @@ export default defineComponent({
       }
 
       const inputAttrs = {
-        id: props.id,
+        id: getInputId(),
         ref: inputRef,
         name: props.name,
         rows: props.rows !== undefined ? +props.rows : undefined,
@@ -406,6 +410,7 @@ export default defineComponent({
         autofocus: props.autofocus,
         placeholder: props.placeholder,
         autocomplete: props.autocomplete,
+        'aria-labelledby': `${id}-label`,
         onBlur,
         onFocus,
         onInput,
@@ -491,7 +496,11 @@ export default defineComponent({
         return [slots.label(), colon];
       }
       if (props.label) {
-        return <label for={props.id}>{props.label + colon}</label>;
+        return (
+          <label id={`${id}-label`} for={getInputId()}>
+            {props.label + colon}
+          </label>
+        );
       }
     };
 

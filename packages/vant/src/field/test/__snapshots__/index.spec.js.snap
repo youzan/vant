@@ -7,7 +7,9 @@ exports[`should change clear icon when using clear-icon prop 1`] = `
 
 exports[`should render colon when using colon prop 1`] = `
 <div class="van-cell__title van-field__label">
-  <label>
+  <label id="van-field-label"
+         for="van-field-input"
+  >
     foo:
   </label>
 </div>
@@ -24,7 +26,9 @@ exports[`should render extra slot correctly 1`] = `
   <div class="van-cell__value van-cell__value--alone van-field__value">
     <div class="van-field__body">
       <input type="text"
+             id="van-field-input"
              class="van-field__control"
+             aria-labelledby="van-field-label"
       >
     </div>
   </div>
@@ -48,7 +52,9 @@ exports[`should render textarea when type is textarea 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__value van-cell__value--alone van-field__value">
     <div class="van-field__body">
-      <textarea class="van-field__control"
+      <textarea id="van-field-input"
+                class="van-field__control"
+                aria-labelledby="van-field-label"
                 style="height: auto;"
       >
       </textarea>
@@ -62,7 +68,9 @@ exports[`should render word limit correctly 1`] = `
   <div class="van-cell__value van-cell__value--alone van-field__value">
     <div class="van-field__body">
       <input type="text"
+             id="van-field-input"
              class="van-field__control"
+             aria-labelledby="van-field-label"
       >
     </div>
     <div class="van-field__word-limit">
@@ -80,7 +88,9 @@ exports[`should render word limit correctly when modelValue is null 1`] = `
   <div class="van-cell__value van-cell__value--alone van-field__value">
     <div class="van-field__body">
       <input type="text"
+             id="van-field-input"
              class="van-field__control"
+             aria-labelledby="van-field-label"
       >
     </div>
     <div class="van-field__word-limit">
@@ -98,7 +108,9 @@ exports[`should render word limit correctly when modelValue is undefined 1`] = `
   <div class="van-cell__value van-cell__value--alone van-field__value">
     <div class="van-field__body">
       <input type="text"
+             id="van-field-input"
              class="van-field__control"
+             aria-labelledby="van-field-label"
       >
     </div>
     <div class="van-field__word-limit">

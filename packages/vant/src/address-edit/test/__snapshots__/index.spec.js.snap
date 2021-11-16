@@ -11,30 +11,38 @@ exports[`should render AddressEdit correctly 1`] = `
   <div class="van-address-edit__fields">
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <label>
+        <label id="van-field-label"
+               for="van-field-input"
+        >
           Name
         </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
           <input type="text"
+                 id="van-field-input"
                  class="van-field__control"
                  placeholder="Name"
+                 aria-labelledby="van-field-label"
           >
         </div>
       </div>
     </div>
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <label>
+        <label id="van-field-label"
+               for="van-field-input"
+        >
           Phone
         </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
           <input type="tel"
+                 id="van-field-input"
                  class="van-field__control"
                  placeholder="Phone"
+                 aria-labelledby="van-field-label"
           >
         </div>
       </div>
@@ -44,16 +52,20 @@ exports[`should render AddressEdit correctly 1`] = `
          tabindex="0"
     >
       <div class="van-cell__title van-field__label">
-        <label>
+        <label id="van-field-label"
+               for="van-field-input"
+        >
           Area
         </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
           <input type="text"
+                 id="van-field-input"
                  class="van-field__control"
                  readonly
                  placeholder="Area"
+                 aria-labelledby="van-field-label"
           >
         </div>
       </div>
@@ -62,15 +74,19 @@ exports[`should render AddressEdit correctly 1`] = `
     </div>
     <div class="van-cell van-field van-address-edit-detail">
       <div class="van-cell__title van-field__label">
-        <label>
+        <label id="van-field-label"
+               for="van-field-input"
+        >
           Address
         </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
-          <textarea rows="1"
+          <textarea id="van-field-input"
+                    rows="1"
                     class="van-field__control"
                     placeholder="Address"
+                    aria-labelledby="van-field-label"
           >
           </textarea>
         </div>
@@ -96,30 +112,38 @@ exports[`should render AddressEdit with props correctly 1`] = `
   <div class="van-address-edit__fields">
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <label>
+        <label id="van-field-label"
+               for="van-field-input"
+        >
           Name
         </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
           <input type="text"
+                 id="van-field-input"
                  class="van-field__control"
                  placeholder="Name"
+                 aria-labelledby="van-field-label"
           >
         </div>
       </div>
     </div>
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <label>
+        <label id="van-field-label"
+               for="van-field-input"
+        >
           Phone
         </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
           <input type="tel"
+                 id="van-field-input"
                  class="van-field__control"
                  placeholder="Phone"
+                 aria-labelledby="van-field-label"
           >
         </div>
       </div>
@@ -129,16 +153,20 @@ exports[`should render AddressEdit with props correctly 1`] = `
          tabindex="0"
     >
       <div class="van-cell__title van-field__label">
-        <label>
+        <label id="van-field-label"
+               for="van-field-input"
+        >
           Area
         </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
           <input type="text"
+                 id="van-field-input"
                  class="van-field__control"
                  readonly
                  placeholder="Area"
+                 aria-labelledby="van-field-label"
           >
         </div>
       </div>
@@ -147,15 +175,19 @@ exports[`should render AddressEdit with props correctly 1`] = `
     </div>
     <div class="van-cell van-field van-address-edit-detail">
       <div class="van-cell__title van-field__label">
-        <label>
+        <label id="van-field-label"
+               for="van-field-input"
+        >
           Address
         </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
-          <textarea rows="1"
+          <textarea id="van-field-input"
+                    rows="1"
                     class="van-field__control"
                     placeholder="Address"
+                    aria-labelledby="van-field-label"
           >
           </textarea>
         </div>
@@ -163,15 +195,19 @@ exports[`should render AddressEdit with props correctly 1`] = `
     </div>
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <label>
+        <label id="van-field-label"
+               for="van-field-input"
+        >
           Postal
         </label>
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
           <input type="tel"
+                 id="van-field-input"
                  class="van-field__control"
                  placeholder="Postal"
+                 aria-labelledby="van-field-label"
           >
         </div>
       </div>
@@ -209,15 +245,19 @@ exports[`should render AddressEdit with props correctly 1`] = `
 exports[`should valid address detail and render error message correctly 1`] = `
 <div class="van-cell van-field van-address-edit-detail">
   <div class="van-cell__title van-field__label">
-    <label>
+    <label id="van-field-label"
+           for="van-field-input"
+    >
       Address
     </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
-      <textarea rows="1"
+      <textarea id="van-field-input"
+                rows="1"
                 class="van-field__control"
                 placeholder="Address"
+                aria-labelledby="van-field-label"
                 style="height: auto;"
       >
       </textarea>
@@ -235,16 +275,20 @@ exports[`should valid area code and render error message correctly 1`] = `
      tabindex="0"
 >
   <div class="van-cell__title van-field__label">
-    <label>
+    <label id="van-field-label"
+           for="van-field-input"
+    >
       Area
     </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
       <input type="text"
+             id="van-field-input"
              class="van-field__control"
              readonly
              placeholder="Area"
+             aria-labelledby="van-field-label"
       >
     </div>
     <div class="van-field__error-message">
@@ -259,15 +303,19 @@ exports[`should valid area code and render error message correctly 1`] = `
 exports[`should valid name and render error message correctly 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__title van-field__label">
-    <label>
+    <label id="van-field-label"
+           for="van-field-input"
+    >
       Name
     </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
       <input type="text"
+             id="van-field-input"
              class="van-field__control"
              placeholder="Name"
+             aria-labelledby="van-field-label"
       >
     </div>
     <div class="van-field__error-message">
@@ -280,15 +328,19 @@ exports[`should valid name and render error message correctly 1`] = `
 exports[`should valid postal code and render error message correctly 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__title van-field__label">
-    <label>
+    <label id="van-field-label"
+           for="van-field-input"
+    >
       Postal
     </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
       <input type="tel"
+             id="van-field-input"
              class="van-field__control"
              placeholder="Postal"
+             aria-labelledby="van-field-label"
       >
     </div>
     <div class="van-field__error-message">
@@ -301,15 +353,19 @@ exports[`should valid postal code and render error message correctly 1`] = `
 exports[`should valid tel and render error message correctly 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__title van-field__label">
-    <label>
+    <label id="van-field-label"
+           for="van-field-input"
+    >
       Phone
     </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
       <input type="tel"
+             id="van-field-input"
              class="van-field__control"
              placeholder="Phone"
+             aria-labelledby="van-field-label"
       >
     </div>
     <div class="van-field__error-message">

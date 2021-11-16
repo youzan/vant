@@ -7,8 +7,10 @@ exports[`should be the sames as the last snapshot when render coupon list 1`] = 
       <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body">
           <input type="text"
+                 id="van-field-input"
                  class="van-field__control"
                  placeholder="Coupon code"
+                 aria-labelledby="van-field-label"
           >
         </div>
       </div>
@@ -298,8 +300,10 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
       <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body">
           <input type="text"
+                 id="van-field-input"
                  class="van-field__control"
                  placeholder="Coupon code"
+                 aria-labelledby="van-field-label"
           >
         </div>
       </div>
@@ -409,8 +413,10 @@ exports[`should render list-footer slot correctly 1`] = `
       <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body">
           <input type="text"
+                 id="van-field-input"
                  class="van-field__control"
                  placeholder="Coupon code"
+                 aria-labelledby="van-field-label"
           >
         </div>
       </div>
@@ -522,8 +528,10 @@ exports[`should use custom src when using empty-image prop 1`] = `
       <div class="van-cell__value van-cell__value--alone van-field__value">
         <div class="van-field__body">
           <input type="text"
+                 id="van-field-input"
                  class="van-field__control"
                  placeholder="Coupon code"
+                 aria-labelledby="van-field-label"
           >
         </div>
       </div>
