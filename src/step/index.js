@@ -132,7 +132,7 @@ export default createComponent({
           vusion-slot-name="default"
         >
           {this.slots()}
-          {!this.slots && this.ifDesigner() ? <van-empty-col></van-empty-col> : null}
+          {!this.slots() && this.ifDesigner() ? <van-empty-col></van-empty-col> : null}
         </div>
         <div class={bem('circle-container')} onClick={this.onClickStepIcon}>
           {this.genCircle()}
