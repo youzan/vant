@@ -12,6 +12,7 @@ import {
 import { fieldSharedProps } from '../field/Field';
 
 // Composables
+import { useId } from '../composables/use-id';
 import { useExpose } from '../composables/use-expose';
 
 // Components
@@ -42,6 +43,7 @@ export default defineComponent({
   emits: ['search', 'cancel', 'update:modelValue'],
 
   setup(props, { emit, slots, attrs }) {
+    const id = useId();
     const filedRef = ref<FieldInstance>();
 
     const onCancel = () => {
@@ -59,10 +61,12 @@ export default defineComponent({
       }
     };
 
+    const getInputId = () => props.id || `${id}-input`;
+
     const renderLabel = () => {
       if (slots.label || props.label) {
         return (
-          <label class={bem('label')} for={props.id}>
+          <label class={bem('label')} for={getInputId()}>
             {slots.label ? slots.label() : props.label}
           </label>
         );
@@ -93,7 +97,9 @@ export default defineComponent({
     >;
 
     const renderField = () => {
-      const fieldAttrs = extend({}, attrs, pick(props, fieldPropNames));
+      const fieldAttrs = extend({}, attrs, pick(props, fieldPropNames), {
+        id: getInputId(),
+      });
 
       const onInput = (value: string) => emit('update:modelValue', value);
 
