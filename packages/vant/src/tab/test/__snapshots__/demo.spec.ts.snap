@@ -8,37 +8,45 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tabs__nav van-tabs__nav--line"
            aria-orientation="horizontal"
       >
-        <div role="tab"
+        <div id="van-tabs-0"
+             role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-1"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-2"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-3"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 4
@@ -51,24 +59,36 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-0"
            style
       >
         content of tab 1
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-3"
            style="display: none;"
       >
       </div>
@@ -82,28 +102,34 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tabs__nav van-tabs__nav--line"
            aria-orientation="horizontal"
       >
-        <div role="tab"
+        <div id="van-tabs-0"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-1"
+             role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-2"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -116,19 +142,28 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-0"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-1"
            style
       >
         content of tab 2
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
            style="display: none;"
       >
       </div>
@@ -142,73 +177,89 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tabs__nav van-tabs__nav--line van-tabs__nav--complete"
            aria-orientation="horizontal"
       >
-        <div role="tab"
+        <div id="van-tabs-0"
+             role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text">
             Tab 1
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-1"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text">
             Tab 2
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-2"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text">
             Tab 3
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-3"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text">
             Tab 4
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-4"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text">
             Tab 5
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-5"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text">
             Tab 6
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-6"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text">
             Tab 7
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-7"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text">
             Tab 8
@@ -221,44 +272,68 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-0"
            style
       >
         content of tab 1
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-3"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-4"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-5"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-6"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-7"
            style="display: none;"
       >
       </div>
@@ -272,28 +347,34 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tabs__nav van-tabs__nav--line"
            aria-orientation="horizontal"
       >
-        <div role="tab"
+        <div id="van-tabs-0"
+             role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-1"
+             role="tab"
              class="van-tab van-tab--disabled"
              aria-selected="false"
              aria-disabled="true"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-2"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -306,19 +387,28 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-0"
            style
       >
         content of tab 1
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
            style="display: none;"
       >
       </div>
@@ -332,28 +422,34 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tabs__nav van-tabs__nav--card"
            aria-orientation="horizontal"
       >
-        <div role="tab"
+        <div id="van-tabs-0"
+             role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-1"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-2"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -362,19 +458,28 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-0"
            style
       >
         content of tab 1
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
            style="display: none;"
       >
       </div>
@@ -388,19 +493,23 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tabs__nav van-tabs__nav--line"
            aria-orientation="horizontal"
       >
-        <div role="tab"
+        <div id="van-tabs-0"
+             role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-1"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
@@ -413,14 +522,20 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-0"
            style
       >
         content of tab 1
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
            style="display: none;"
       >
       </div>
@@ -436,37 +551,45 @@ exports[`should render demo and match snapshot 1`] = `
                class="van-tabs__nav van-tabs__nav--line"
                aria-orientation="horizontal"
           >
-            <div role="tab"
+            <div id="van-tabs-0"
+                 role="tab"
                  class="van-tab van-tab--active"
                  tabindex="0"
                  aria-selected="true"
+                 aria-controls="van-tab"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Tab 1
               </span>
             </div>
-            <div role="tab"
+            <div id="van-tabs-1"
+                 role="tab"
                  class="van-tab"
                  tabindex="-1"
                  aria-selected="false"
+                 aria-controls="van-tab"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Tab 2
               </span>
             </div>
-            <div role="tab"
+            <div id="van-tabs-2"
+                 role="tab"
                  class="van-tab"
                  tabindex="-1"
                  aria-selected="false"
+                 aria-controls="van-tab"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Tab 3
               </span>
             </div>
-            <div role="tab"
+            <div id="van-tabs-3"
+                 role="tab"
                  class="van-tab"
                  tabindex="-1"
                  aria-selected="false"
+                 aria-controls="van-tab"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Tab 4
@@ -481,24 +604,36 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-0"
            style
       >
         content of tab 1
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-3"
            style="display: none;"
       >
       </div>
@@ -512,10 +647,12 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tabs__nav van-tabs__nav--line"
            aria-orientation="horizontal"
       >
-        <div role="tab"
+        <div id="van-tabs-0"
+             role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             <i class="van-badge__wrapper van-icon van-icon-more-o">
@@ -523,10 +660,12 @@ exports[`should render demo and match snapshot 1`] = `
             Tab
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-1"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             <i class="van-badge__wrapper van-icon van-icon-more-o">
@@ -541,14 +680,20 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-0"
            style
       >
         content of tab 1
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
            style="display: none;"
       >
       </div>
@@ -562,7 +707,8 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tabs__nav van-tabs__nav--line"
            aria-orientation="horizontal"
       >
-        <div role="tab"
+        <div id="van-tabs-0"
+             role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
@@ -571,7 +717,8 @@ exports[`should render demo and match snapshot 1`] = `
             Tab 1
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-1"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
@@ -580,7 +727,8 @@ exports[`should render demo and match snapshot 1`] = `
             Tab 2
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-2"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
@@ -589,7 +737,8 @@ exports[`should render demo and match snapshot 1`] = `
             Tab 3
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-3"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
@@ -610,8 +759,11 @@ exports[`should render demo and match snapshot 1`] = `
              class="van-swipe__track"
         >
           <div class="van-swipe-item van-tab__pane-wrapper"
+               id="van-tab"
                role="tabpanel"
+               tabindex="0"
                aria-hidden="false"
+               aria-labelledby="van-tabs-0"
                style="width: 100px;"
           >
             <div class="van-tab__pane">
@@ -619,8 +771,11 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+               id="van-tab"
                role="tabpanel"
+               tabindex="-1"
                aria-hidden="true"
+               aria-labelledby="van-tabs-1"
                style="width: 100px;"
           >
             <div class="van-tab__pane">
@@ -628,14 +783,20 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+               id="van-tab"
                role="tabpanel"
+               tabindex="-1"
                aria-hidden="true"
+               aria-labelledby="van-tabs-2"
                style="width: 100px;"
           >
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+               id="van-tab"
                role="tabpanel"
+               tabindex="-1"
                aria-hidden="true"
+               aria-labelledby="van-tabs-3"
                style="width: 100px;"
           >
           </div>
@@ -651,7 +812,8 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tabs__nav van-tabs__nav--line"
            aria-orientation="horizontal"
       >
-        <div role="tab"
+        <div id="van-tabs-0"
+             role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
@@ -660,7 +822,8 @@ exports[`should render demo and match snapshot 1`] = `
             Tab 1
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-1"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
@@ -669,7 +832,8 @@ exports[`should render demo and match snapshot 1`] = `
             Tab 2
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-2"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
@@ -678,7 +842,8 @@ exports[`should render demo and match snapshot 1`] = `
             Tab 3
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-3"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
@@ -699,8 +864,11 @@ exports[`should render demo and match snapshot 1`] = `
              class="van-swipe__track"
         >
           <div class="van-swipe-item van-tab__pane-wrapper"
+               id="van-tab"
                role="tabpanel"
+               tabindex="0"
                aria-hidden="false"
+               aria-labelledby="van-tabs-0"
                style="width: 100px;"
           >
             <div class="van-tab__pane">
@@ -708,8 +876,11 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+               id="van-tab"
                role="tabpanel"
+               tabindex="-1"
                aria-hidden="true"
+               aria-labelledby="van-tabs-1"
                style="width: 100px;"
           >
             <div class="van-tab__pane">
@@ -717,14 +888,20 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+               id="van-tab"
                role="tabpanel"
+               tabindex="-1"
                aria-hidden="true"
+               aria-labelledby="van-tabs-2"
                style="width: 100px;"
           >
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+               id="van-tab"
                role="tabpanel"
+               tabindex="-1"
                aria-hidden="true"
+               aria-labelledby="van-tabs-3"
                style="width: 100px;"
           >
           </div>
@@ -742,73 +919,89 @@ exports[`should render demo and match snapshot 1`] = `
                class="van-tabs__nav van-tabs__nav--line van-tabs__nav--complete"
                aria-orientation="horizontal"
           >
-            <div role="tab"
+            <div id="van-tabs-0"
+                 role="tab"
                  class="van-tab van-tab--active"
                  tabindex="0"
                  aria-selected="true"
+                 aria-controls="van-tab"
             >
               <span class="van-tab__text">
                 Tab 1
               </span>
             </div>
-            <div role="tab"
+            <div id="van-tabs-1"
+                 role="tab"
                  class="van-tab"
                  tabindex="-1"
                  aria-selected="false"
+                 aria-controls="van-tab"
             >
               <span class="van-tab__text">
                 Tab 2
               </span>
             </div>
-            <div role="tab"
+            <div id="van-tabs-2"
+                 role="tab"
                  class="van-tab"
                  tabindex="-1"
                  aria-selected="false"
+                 aria-controls="van-tab"
             >
               <span class="van-tab__text">
                 Tab 3
               </span>
             </div>
-            <div role="tab"
+            <div id="van-tabs-3"
+                 role="tab"
                  class="van-tab"
                  tabindex="-1"
                  aria-selected="false"
+                 aria-controls="van-tab"
             >
               <span class="van-tab__text">
                 Tab 4
               </span>
             </div>
-            <div role="tab"
+            <div id="van-tabs-4"
+                 role="tab"
                  class="van-tab"
                  tabindex="-1"
                  aria-selected="false"
+                 aria-controls="van-tab"
             >
               <span class="van-tab__text">
                 Tab 5
               </span>
             </div>
-            <div role="tab"
+            <div id="van-tabs-5"
+                 role="tab"
                  class="van-tab"
                  tabindex="-1"
                  aria-selected="false"
+                 aria-controls="van-tab"
             >
               <span class="van-tab__text">
                 Tab 6
               </span>
             </div>
-            <div role="tab"
+            <div id="van-tabs-6"
+                 role="tab"
                  class="van-tab"
                  tabindex="-1"
                  aria-selected="false"
+                 aria-controls="van-tab"
             >
               <span class="van-tab__text">
                 Tab 7
               </span>
             </div>
-            <div role="tab"
+            <div id="van-tabs-7"
+                 role="tab"
                  class="van-tab"
                  tabindex="-1"
                  aria-selected="false"
+                 aria-controls="van-tab"
             >
               <span class="van-tab__text">
                 Tab 8
@@ -823,43 +1016,67 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-0"
       >
         content of tab 1
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-1"
       >
         content of tab 2
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-2"
       >
         content of tab 3
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-3"
       >
         content of tab 4
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-4"
       >
         content of tab 5
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-5"
       >
         content of tab 6
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-6"
       >
         content of tab 7
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-7"
       >
         content of tab 8
       </div>
@@ -873,37 +1090,45 @@ exports[`should render demo and match snapshot 1`] = `
            class="van-tabs__nav van-tabs__nav--line"
            aria-orientation="horizontal"
       >
-        <div role="tab"
+        <div id="van-tabs-0"
+             role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-1"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-2"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-3"
+             role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 4
@@ -916,24 +1141,36 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="0"
+           aria-labelledby="van-tabs-0"
            style
       >
         content of tab 1
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
            style="display: none;"
       >
       </div>
-      <div role="tabpanel"
+      <div id="van-tab"
+           role="tabpanel"
            class="van-tab__pane"
+           tabindex="-1"
+           aria-labelledby="van-tabs-3"
            style="display: none;"
       >
       </div>
