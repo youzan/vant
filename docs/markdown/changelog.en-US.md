@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.33](https://github.com/youzan/vant/compare/v2.12.32...v2.12.33)
+
+`2021-11-16`
+
+**Bug Fixes**
+
+- Picker: SSR broken [#9875](https://github.com/youzan/vant/issues/9875)
+
 ### [v2.12.32](https://github.com/youzan/vant/compare/v2.12.31...v2.12.32)
 
 `2021-11-15`

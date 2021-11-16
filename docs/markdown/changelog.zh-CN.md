@@ -16,6 +16,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.33](https://github.com/youzan/vant/compare/v2.12.32...v2.12.33)
+
+`2021-11-16`
+
+**Bug Fixes**
+
+- Picker: 修复 SSR 报错的问题 [#9875](https://github.com/youzan/vant/issues/9875)
+
 ### [v2.12.32](https://github.com/youzan/vant/compare/v2.12.31...v2.12.32)
 
 `2021-11-15`
