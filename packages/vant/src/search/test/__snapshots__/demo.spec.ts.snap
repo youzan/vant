@@ -12,7 +12,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-cell__value--alone van-field__value">
           <div class="van-field__body">
             <input type="search"
-                   id="van-field-input"
+                   id="van-search-input"
                    class="van-field__control"
                    placeholder="Placeholder"
             >
@@ -34,7 +34,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-cell__value van-cell__value--alone van-field__value">
             <div class="van-field__body">
               <input type="search"
-                     id="van-field-input"
+                     id="van-search-input"
                      class="van-field__control"
                      placeholder="Placeholder"
               >
@@ -62,7 +62,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-cell__value--alone van-field__value">
           <div class="van-field__body">
             <input type="search"
-                   id="van-field-input"
+                   id="van-search-input"
                    class="van-field__control van-field__control--center"
                    placeholder="Placeholder"
             >
@@ -83,7 +83,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-cell__value--alone van-field__value">
           <div class="van-field__body">
             <input type="search"
-                   id="van-field-input"
+                   id="van-search-input"
                    class="van-field__control"
                    disabled
                    placeholder="Placeholder"
@@ -107,7 +107,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-cell__value--alone van-field__value">
           <div class="van-field__body">
             <input type="search"
-                   id="van-field-input"
+                   id="van-search-input"
                    class="van-field__control"
                    placeholder="Placeholder"
             >
@@ -120,7 +120,9 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-search van-search--show-action">
     <div class="van-search__content van-search__content--square">
-      <label class="van-search__label">
+      <label class="van-search__label"
+             for="van-search-input"
+      >
         Address
       </label>
       <div class="van-cell van-cell--borderless van-field van-search__field">
@@ -131,7 +133,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-cell__value--alone van-field__value">
           <div class="van-field__body">
             <input type="search"
-                   id="van-field-input"
+                   id="van-search-input"
                    class="van-field__control"
                    placeholder="Placeholder"
             >
