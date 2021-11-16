@@ -738,7 +738,7 @@ export default createComponent({
         size={this.size}
         center={this.center}
         border={this.border}
-        isLink={this.isLink}
+        isLink={false && this.isLink}
         required={this.required}
         clickable={this.clickable}
         titleStyle={this.labelStyle}
