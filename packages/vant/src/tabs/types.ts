@@ -11,6 +11,7 @@ export type TabsClickTabEventParams = {
 };
 
 export type TabsProvide = {
+  id: string;
   props: TabsProps;
   setLine: () => void;
   onRendered: (name: string | number, title?: string) => void;

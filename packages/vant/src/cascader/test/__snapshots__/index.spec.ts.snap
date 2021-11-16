@@ -62,7 +62,8 @@ exports[`should update tabs when previous tab is clicked 1`] = `
            class="van-tabs__nav van-tabs__nav--line van-tabs__nav--complete"
            aria-orientation="horizontal"
       >
-        <div role="tab"
+        <div id="van-tabs-25-0"
+             role="tab"
              class="van-tab van-cascader__tab"
              tabindex="-1"
              aria-selected="false"
@@ -71,7 +72,8 @@ exports[`should update tabs when previous tab is clicked 1`] = `
             Jiangsu
           </span>
         </div>
-        <div role="tab"
+        <div id="van-tabs-25-1"
+             role="tab"
              class="van-tab van-tab--active van-cascader__tab van-cascader__tab--unselected"
              tabindex="0"
              aria-selected="true"
@@ -92,8 +94,11 @@ exports[`should update tabs when previous tab is clicked 1`] = `
              class="van-swipe__track"
         >
           <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+               id="van-tab-26"
                role="tabpanel"
+               tabindex="-1"
                aria-hidden="true"
+               aria-labelledby="van-tabs-25-0"
                style="width: 100px;"
           >
             <div class="van-tab__pane">
@@ -114,8 +119,11 @@ exports[`should update tabs when previous tab is clicked 1`] = `
             </div>
           </div>
           <div class="van-swipe-item van-tab__pane-wrapper"
+               id="van-tab-27"
                role="tabpanel"
+               tabindex="0"
                aria-hidden="false"
+               aria-labelledby="van-tabs-25-1"
                style="width: 100px;"
           >
             <div class="van-tab__pane">

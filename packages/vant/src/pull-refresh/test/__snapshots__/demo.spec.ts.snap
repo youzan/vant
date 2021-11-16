@@ -7,28 +7,34 @@ exports[`should render demo and match snapshot 1`] = `
          class="van-tabs__nav van-tabs__nav--line"
          aria-orientation="horizontal"
     >
-      <div role="tab"
+      <div id="van-tabs-1-0"
+           role="tab"
            class="van-tab van-tab--active"
            tabindex="0"
            aria-selected="true"
+           aria-controls="van-tab-2"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           Basic Usage
         </span>
       </div>
-      <div role="tab"
+      <div id="van-tabs-1-1"
+           role="tab"
            class="van-tab"
            tabindex="-1"
            aria-selected="false"
+           aria-controls="van-tab-3"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           Success Tip
         </span>
       </div>
-      <div role="tab"
+      <div id="van-tabs-1-2"
+           role="tab"
            class="van-tab"
            tabindex="-1"
            aria-selected="false"
+           aria-controls="van-tab-4"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           Custom Tips
@@ -41,8 +47,11 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div role="tabpanel"
+    <div id="van-tab-2"
+         role="tabpanel"
          class="van-tab__pane"
+         tabindex="0"
+         aria-labelledby="van-tabs-1-0"
          style
     >
       <div class="van-pull-refresh">
@@ -57,13 +66,19 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
     </div>
-    <div role="tabpanel"
+    <div id="van-tab-3"
+         role="tabpanel"
          class="van-tab__pane"
+         tabindex="-1"
+         aria-labelledby="van-tabs-1-1"
          style="display: none;"
     >
     </div>
-    <div role="tabpanel"
+    <div id="van-tab-4"
+         role="tabpanel"
          class="van-tab__pane"
+         tabindex="-1"
+         aria-labelledby="van-tabs-1-2"
          style="display: none;"
     >
     </div>

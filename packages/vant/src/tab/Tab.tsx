@@ -22,6 +22,8 @@ import { TABS_KEY } from '../tabs/Tabs';
 
 // Composables
 import { useParent } from '@vant/use';
+import { useId } from '../composables/use-id';
+import { useExpose } from '../composables/use-expose';
 import { routeProps } from '../composables/use-route';
 import { TAB_STATUS_KEY } from '../composables/use-tab-status';
 
@@ -49,6 +51,7 @@ export default defineComponent({
   props: tabProps,
 
   setup(props, { slots }) {
+    const id = useId();
     const inited = ref(false);
     const { parent, index } = useParent(TABS_KEY);
 
@@ -92,6 +95,7 @@ export default defineComponent({
     provide(TAB_STATUS_KEY, active);
 
     return () => {
+      const label = `${parent.id}-${index.value}`;
       const { animated, swipeable, scrollspy, lazyRender } = parent.props;
 
       if (!slots.default && !animated) {
@@ -103,9 +107,12 @@ export default defineComponent({
       if (animated || swipeable) {
         return (
           <SwipeItem
+            id={id}
             role="tabpanel"
-            aria-hidden={!active.value}
             class={bem('pane-wrapper', { inactive: !active.value })}
+            tabindex={active.value ? 0 : -1}
+            aria-hidden={!active.value}
+            aria-labelledby={label}
           >
             <div class={bem('pane')}>{slots.default?.()}</div>
           </SwipeItem>
@@ -115,8 +122,17 @@ export default defineComponent({
       const shouldRender = inited.value || scrollspy || !lazyRender;
       const Content = shouldRender ? slots.default?.() : null;
 
+      useExpose({ id });
+
       return (
-        <div v-show={show} role="tabpanel" class={bem('pane')}>
+        <div
+          v-show={show}
+          id={id}
+          role="tabpanel"
+          class={bem('pane')}
+          tabindex={show ? 0 : -1}
+          aria-labelledby={label}
+        >
           {Content}
         </div>
       );
