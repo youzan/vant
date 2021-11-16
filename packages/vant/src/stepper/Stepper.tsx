@@ -288,7 +288,7 @@ export default defineComponent({
     useCustomFieldValue(() => props.modelValue);
 
     return () => (
-      <div class={bem([props.theme])}>
+      <div role="group" class={bem([props.theme])}>
         <button
           v-show={props.showMinus}
           type="button"

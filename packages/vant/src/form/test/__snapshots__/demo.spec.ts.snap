@@ -271,7 +271,9 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
-              <div class="van-stepper">
+              <div role="group"
+                   class="van-stepper"
+              >
                 <button type="button"
                         class="van-stepper__minus van-stepper__minus--disabled"
                 >

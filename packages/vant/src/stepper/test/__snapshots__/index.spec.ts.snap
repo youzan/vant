@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should disable buttons and input when using disabled prop 1`] = `
-<div class="van-stepper">
+<div role="group"
+     class="van-stepper"
+>
   <button type="button"
           class="van-stepper__minus van-stepper__minus--disabled"
   >
@@ -23,7 +25,9 @@ exports[`should disable buttons and input when using disabled prop 1`] = `
 `;
 
 exports[`should update input height and button size when using button-size prop 1`] = `
-<div class="van-stepper">
+<div role="group"
+     class="van-stepper"
+>
   <button type="button"
           style="width: 2rem; height: 2rem;"
           class="van-stepper__minus van-stepper__minus--disabled"
