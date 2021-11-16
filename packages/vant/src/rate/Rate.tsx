@@ -232,6 +232,8 @@ export default defineComponent({
           disabled: props.disabled,
         })}
         tabindex={props.disabled ? undefined : 0}
+        aria-disabled={props.disabled}
+        aria-readonly={props.readonly}
         onTouchstart={onTouchStart}
         onTouchmove={onTouchMove}
       >
