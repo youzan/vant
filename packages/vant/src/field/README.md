@@ -250,7 +250,7 @@ Use `input-align` prop to align the input value.
 | v-model | Input value | _number \| string_ | - |
 | label | Left side label | _string_ | - |
 | name | As the identifier when submitting the form | _string_ | - |
-| id `v3.2.2` | Input id, the for attribute of the label also will be set | _string_ | - |
+| id `v3.2.2` | Input id, the for attribute of the label also will be set | _string_ | `van-field-n-input` |
 | type | Input type, can be set to `tel` `digit`<br>`number` `textarea` `password` | _string_ | `text` |
 | size | Size，can be set to `large` | _string_ | - |
 | maxlength | Max length of value | _number \| string_ | - |

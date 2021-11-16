@@ -269,7 +269,7 @@ export default {
 | v-model | 当前输入的值 | _number \| string_ | - |
 | label | 输入框左侧文本 | _string_ | - |
 | name | 名称，作为提交表单时的标识符 | _string_ | - |
-| id `v3.2.2` | 输入框 id，同时会设置 label 的 for 属性 | _string_ | - |
+| id `v3.2.2` | 输入框 id，同时会设置 label 的 for 属性 | _string_ | `van-field-n-input` |
 | type | 输入框类型, 可选值为 `tel` `digit`<br>`number` `textarea` `password` 等 | _string_ | `text` |
 | size | 大小，可选值为 `large` | _string_ | - |
 | maxlength | 输入的最大字符数 | _number \| string_ | - |
