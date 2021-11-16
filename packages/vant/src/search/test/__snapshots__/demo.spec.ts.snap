@@ -15,7 +15,6 @@ exports[`should render demo and match snapshot 1`] = `
                    id="van-field-input"
                    class="van-field__control"
                    placeholder="Placeholder"
-                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
@@ -38,7 +37,6 @@ exports[`should render demo and match snapshot 1`] = `
                      id="van-field-input"
                      class="van-field__control"
                      placeholder="Placeholder"
-                     aria-labelledby="van-field-label"
               >
             </div>
           </div>
@@ -67,7 +65,6 @@ exports[`should render demo and match snapshot 1`] = `
                    id="van-field-input"
                    class="van-field__control van-field__control--center"
                    placeholder="Placeholder"
-                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
@@ -90,7 +87,6 @@ exports[`should render demo and match snapshot 1`] = `
                    class="van-field__control"
                    disabled
                    placeholder="Placeholder"
-                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
@@ -114,7 +110,6 @@ exports[`should render demo and match snapshot 1`] = `
                    id="van-field-input"
                    class="van-field__control"
                    placeholder="Placeholder"
-                   aria-labelledby="van-field-label"
             >
           </div>
         </div>
@@ -139,7 +134,6 @@ exports[`should render demo and match snapshot 1`] = `
                    id="van-field-input"
                    class="van-field__control"
                    placeholder="Placeholder"
-                   aria-labelledby="van-field-label"
             >
           </div>
         </div>

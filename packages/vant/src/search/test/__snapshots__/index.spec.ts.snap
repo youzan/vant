@@ -36,7 +36,6 @@ exports[`should render left slot correctly 1`] = `
           <input type="search"
                  id="van-field-input"
                  class="van-field__control"
-                 aria-labelledby="van-field-label"
           >
         </div>
       </div>

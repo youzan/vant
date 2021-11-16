@@ -410,7 +410,7 @@ export default defineComponent({
         autofocus: props.autofocus,
         placeholder: props.placeholder,
         autocomplete: props.autocomplete,
-        'aria-labelledby': `${id}-label`,
+        'aria-labelledby': props.label ? `${id}-label` : undefined,
         onBlur,
         onFocus,
         onInput,

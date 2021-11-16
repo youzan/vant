@@ -28,7 +28,6 @@ exports[`should render extra slot correctly 1`] = `
       <input type="text"
              id="van-field-input"
              class="van-field__control"
-             aria-labelledby="van-field-label"
       >
     </div>
   </div>
@@ -54,7 +53,6 @@ exports[`should render textarea when type is textarea 1`] = `
     <div class="van-field__body">
       <textarea id="van-field-input"
                 class="van-field__control"
-                aria-labelledby="van-field-label"
                 style="height: auto;"
       >
       </textarea>
@@ -70,7 +68,6 @@ exports[`should render word limit correctly 1`] = `
       <input type="text"
              id="van-field-input"
              class="van-field__control"
-             aria-labelledby="van-field-label"
       >
     </div>
     <div class="van-field__word-limit">
@@ -90,7 +87,6 @@ exports[`should render word limit correctly when modelValue is null 1`] = `
       <input type="text"
              id="van-field-input"
              class="van-field__control"
-             aria-labelledby="van-field-label"
       >
     </div>
     <div class="van-field__word-limit">
@@ -110,7 +106,6 @@ exports[`should render word limit correctly when modelValue is undefined 1`] = `
       <input type="text"
              id="van-field-input"
              class="van-field__control"
-             aria-labelledby="van-field-label"
       >
     </div>
     <div class="van-field__word-limit">

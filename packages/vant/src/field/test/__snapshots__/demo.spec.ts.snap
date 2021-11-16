@@ -351,7 +351,6 @@ exports[`should render demo and match snapshot 1`] = `
                     rows="1"
                     class="van-field__control"
                     placeholder="Message"
-                    aria-labelledby="van-field-label"
                     style="height: auto;"
           >
           </textarea>

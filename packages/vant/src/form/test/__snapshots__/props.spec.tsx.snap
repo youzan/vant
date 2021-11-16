@@ -29,7 +29,6 @@ exports[`should render colon when using colon prop 1`] = `
         <input type="text"
                id="van-field-input"
                class="van-field__control"
-               aria-labelledby="van-field-label"
         >
       </div>
     </div>
@@ -45,7 +44,6 @@ exports[`should render error-message-align prop correctly 1`] = `
         <input type="text"
                id="van-field-input"
                class="van-field__control"
-               aria-labelledby="van-field-label"
         >
       </div>
       <div class="van-field__error-message van-field__error-message--right">
@@ -64,7 +62,6 @@ exports[`should render input-align prop correctly 1`] = `
         <input type="text"
                id="van-field-input"
                class="van-field__control van-field__control--right"
-               aria-labelledby="van-field-label"
         >
       </div>
     </div>
@@ -177,7 +174,6 @@ exports[`should validate first field when using validate-first prop 1`] = `
                id="van-field-input"
                name="A"
                class="van-field__control"
-               aria-labelledby="van-field-label"
         >
       </div>
       <div class="van-field__error-message">
@@ -192,7 +188,6 @@ exports[`should validate first field when using validate-first prop 1`] = `
                id="van-field-input"
                name="B"
                class="van-field__control"
-               aria-labelledby="van-field-label"
         >
       </div>
     </div>
