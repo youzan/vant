@@ -59,7 +59,9 @@ exports[`should be the sames as the last snapshot when render coupon list 1`] = 
            class="van-tab__pane"
            style
       >
-        <div class="van-coupon-list__list van-coupon-list__list--with-bar van-coupon-list__list--with-bottom">
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
+             style="height: 624px;"
+        >
           <div class="van-coupon">
             <div class="van-coupon__content">
               <div class="van-coupon__head">
@@ -338,7 +340,9 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
            class="van-tab__pane"
            style="display: none;"
       >
-        <div class="van-coupon-list__list van-coupon-list__list--with-bar van-coupon-list__list--with-bottom">
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
+             style="height: 624px;"
+        >
           <div class="van-coupon-list__empty">
             <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
             <p>
@@ -351,7 +355,9 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
            class="van-tab__pane"
            style
       >
-        <div class="van-coupon-list__list van-coupon-list__list--with-bar van-coupon-list__list--with-bottom">
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
+             style="height: 624px;"
+        >
           <div class="van-coupon-list__empty">
             <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
             <p>
@@ -435,7 +441,9 @@ exports[`should render list-footer slot correctly 1`] = `
            class="van-tab__pane"
            style="display: none;"
       >
-        <div class="van-coupon-list__list van-coupon-list__list--with-bar van-coupon-list__list--with-bottom">
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
+             style="height: 624px;"
+        >
           <div class="van-coupon-list__empty">
             <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
             <p>
@@ -449,7 +457,9 @@ exports[`should render list-footer slot correctly 1`] = `
            class="van-tab__pane"
            style
       >
-        <div class="van-coupon-list__list van-coupon-list__list--with-bar van-coupon-list__list--with-bottom">
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
+             style="height: 624px;"
+        >
           <div class="van-coupon-list__empty">
             <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
             <p>
@@ -534,7 +544,9 @@ exports[`should use custom src when using empty-image prop 1`] = `
            class="van-tab__pane"
            style
       >
-        <div class="van-coupon-list__list van-coupon-list__list--with-bar van-coupon-list__list--with-bottom">
+        <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
+             style="height: 624px;"
+        >
           <div class="van-coupon-list__empty">
             <img src="https://img.yzcdn.com/xxx.png">
             <p>

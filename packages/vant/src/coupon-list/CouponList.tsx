@@ -1,8 +1,8 @@
 import {
+  ref,
   watch,
   computed,
   nextTick,
-  reactive,
   onMounted,
   defineComponent,
   ExtractPropTypes,
@@ -11,6 +11,7 @@ import {
 // Utils
 import {
   truthProp,
+  windowHeight,
   makeArrayProp,
   makeStringProp,
   makeNumberProp,
@@ -26,6 +27,7 @@ import { Tabs } from '../tabs';
 import { Field } from '../field';
 import { Button } from '../button';
 import { Coupon, CouponInfo } from '../coupon';
+import { useRect } from '@vant/use';
 
 const [name, bem, t] = createNamespace('coupon-list');
 const EMPTY_IMAGE = 'https://img.yzcdn.cn/vant/coupon-empty.png';
@@ -62,34 +64,40 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const [couponRefs, setCouponRefs] = useRefs();
 
-    const state = reactive({
-      tab: 0,
-      code: props.code,
-    });
+    const root = ref<HTMLElement>();
+    const barRef = ref<HTMLElement>();
+    const activeTab = ref(0);
+    const listHeight = ref(0);
+    const currentCode = ref(props.code);
 
     const buttonDisabled = computed(
       () =>
         !props.exchangeButtonLoading &&
         (props.exchangeButtonDisabled ||
-          !state.code ||
-          state.code.length < props.exchangeMinLength)
+          !currentCode.value ||
+          currentCode.value.length < props.exchangeMinLength)
     );
 
+    const updateListHeight = () => {
+      const TABS_HEIGHT = 44;
+      const rootHeight = useRect(root).height;
+      const headerHeight = useRect(barRef).height + TABS_HEIGHT;
+      listHeight.value =
+        (rootHeight > headerHeight ? rootHeight : windowHeight.value) -
+        headerHeight;
+    };
+
     const onExchange = () => {
-      emit('exchange', state.code);
+      emit('exchange', currentCode.value);
 
       // auto clear currentCode when not use v-model
       if (!props.code) {
-        state.code = '';
+        currentCode.value = '';
       }
     };
 
     const scrollToCoupon = (index: number) => {
-      nextTick(() => {
-        if (couponRefs.value[index]) {
-          couponRefs.value[index].scrollIntoView();
-        }
-      });
+      nextTick(() => couponRefs.value[index]?.scrollIntoView());
     };
 
     const renderEmpty = () => (
@@ -102,9 +110,9 @@ export default defineComponent({
     const renderExchangeBar = () => {
       if (props.showExchangeBar) {
         return (
-          <div class={bem('exchange-bar')}>
+          <div ref={barRef} class={bem('exchange-bar')}>
             <Field
-              v-model={state.code}
+              v-model={currentCode.value}
               clearable
               border={false}
               class={bem('field')}
@@ -133,10 +141,8 @@ export default defineComponent({
       return (
         <Tab title={title}>
           <div
-            class={bem('list', {
-              'with-bar': props.showExchangeBar,
-              'with-bottom': props.showCloseButton,
-            })}
+            class={bem('list', { 'with-bottom': props.showCloseButton })}
+            style={{ height: `${listHeight.value}px` }}
           >
             {coupons.map((coupon, index) => (
               <Coupon
@@ -163,10 +169,8 @@ export default defineComponent({
       return (
         <Tab title={title}>
           <div
-            class={bem('list', {
-              'with-bar': props.showExchangeBar,
-              'with-bottom': props.showCloseButton,
-            })}
+            class={bem('list', { 'with-bottom': props.showCloseButton })}
+            style={{ height: `${listHeight.value}px` }}
           >
             {disabledCoupons.map((coupon) => (
               <Coupon
@@ -186,25 +190,23 @@ export default defineComponent({
     watch(
       () => props.code,
       (value) => {
-        state.code = value;
+        currentCode.value = value;
       }
     );
 
-    watch(
-      () => state.code,
-      (value) => emit('update:code', value)
-    );
-
+    watch(windowHeight, updateListHeight);
+    watch(currentCode, (value) => emit('update:code', value));
     watch(() => props.displayedCouponIndex, scrollToCoupon);
 
     onMounted(() => {
+      updateListHeight();
       scrollToCoupon(props.displayedCouponIndex);
     });
 
     return () => (
-      <div class={bem()}>
+      <div ref={root} class={bem()}>
         {renderExchangeBar()}
-        <Tabs v-model:active={state.tab} class={bem('tab')} border={false}>
+        <Tabs v-model:active={activeTab.value} class={bem('tab')}>
           {renderCouponTab()}
           {renderDisabledTab()}
         </Tabs>
