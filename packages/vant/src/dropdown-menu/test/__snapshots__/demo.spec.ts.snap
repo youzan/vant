@@ -173,7 +173,6 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-dropdown-menu">
     <div class="van-dropdown-menu__bar">
       <div role="button"
-           tabindex="-1"
            class="van-dropdown-menu__item van-dropdown-menu__item--disabled"
       >
         <span class="van-dropdown-menu__title">
@@ -183,7 +182,6 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
       <div role="button"
-           tabindex="-1"
            class="van-dropdown-menu__item van-dropdown-menu__item--disabled"
       >
         <span class="van-dropdown-menu__title">

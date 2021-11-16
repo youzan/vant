@@ -294,7 +294,7 @@ export default defineComponent({
         <div
           role="slider"
           class={getButtonClassName(index)}
-          tabindex={props.disabled || props.readonly ? -1 : 0}
+          tabindex={props.disabled || props.readonly ? undefined : 0}
           aria-valuemin={+props.min}
           aria-valuenow={current}
           aria-valuemax={+props.max}
