@@ -2,19 +2,19 @@
 
 exports[`should allow to disable lazy-render prop 1`] = `
 <div class="van-tabs__content">
-  <div id="van-tab-16"
+  <div id="van-tab"
        role="tabpanel"
        class="van-tab__pane"
        tabindex="-1"
-       aria-labelledby="van-tabs-15-0"
+       aria-labelledby="van-tabs-0"
        style="display: none;"
   >
   </div>
-  <div id="van-tab-17"
+  <div id="van-tab"
        role="tabpanel"
        class="van-tab__pane"
        tabindex="-1"
-       aria-labelledby="van-tabs-15-1"
+       aria-labelledby="van-tabs-1"
        style="display: none;"
   >
   </div>
@@ -23,20 +23,20 @@ exports[`should allow to disable lazy-render prop 1`] = `
 
 exports[`should allow to disable lazy-render prop 2`] = `
 <div class="van-tabs__content">
-  <div id="van-tab-16"
+  <div id="van-tab"
        role="tabpanel"
        class="van-tab__pane"
        tabindex="0"
-       aria-labelledby="van-tabs-15-0"
+       aria-labelledby="van-tabs-0"
        style
   >
     Text
   </div>
-  <div id="van-tab-17"
+  <div id="van-tab"
        role="tabpanel"
        class="van-tab__pane"
        tabindex="-1"
-       aria-labelledby="van-tabs-15-1"
+       aria-labelledby="van-tabs-1"
        style="display: none;"
   >
     Text
@@ -51,34 +51,34 @@ exports[`should allow to set name prop 1`] = `
          class="van-tabs__nav van-tabs__nav--line"
          aria-orientation="horizontal"
     >
-      <div id="van-tabs-36-0"
+      <div id="van-tabs-0"
            role="tab"
            class="van-tab van-tab--active"
            tabindex="0"
            aria-selected="true"
-           aria-controls="van-tab-37"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title1
         </span>
       </div>
-      <div id="van-tabs-36-1"
+      <div id="van-tabs-1"
            role="tab"
            class="van-tab"
            tabindex="-1"
            aria-selected="false"
-           aria-controls="van-tab-38"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title2
         </span>
       </div>
-      <div id="van-tabs-36-2"
+      <div id="van-tabs-2"
            role="tab"
            class="van-tab van-tab--disabled"
            aria-selected="false"
            aria-disabled="true"
-           aria-controls="van-tab-39"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -91,28 +91,28 @@ exports[`should allow to set name prop 1`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div id="van-tab-37"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="0"
-         aria-labelledby="van-tabs-36-0"
+         aria-labelledby="van-tabs-0"
          style
     >
       Text
     </div>
-    <div id="van-tab-38"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="-1"
-         aria-labelledby="van-tabs-36-1"
+         aria-labelledby="van-tabs-1"
          style="display: none;"
     >
     </div>
-    <div id="van-tab-39"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="-1"
-         aria-labelledby="van-tabs-36-2"
+         aria-labelledby="van-tabs-2"
          style="display: none;"
     >
     </div>
@@ -130,9 +130,9 @@ DOMWrapper {
     "_values": Object {},
   },
   "wrapperElement": <div
-    aria-labelledby="van-tabs-30-0"
+    aria-labelledby="van-tabs-0"
     class="van-tab__pane"
-    id="van-tab-31"
+    id="van-tab"
     role="tabpanel"
     style=""
     tabindex="0"
@@ -150,12 +150,12 @@ exports[`should not render empty tab 1`] = `
 `;
 
 exports[`should render badge prop correctly 1`] = `
-<div id="van-tabs-23-0"
+<div id="van-tabs-0"
      role="tab"
      class="van-tab van-tab--active"
      tabindex="0"
      aria-selected="true"
-     aria-controls="van-tab-24"
+     aria-controls="van-tab"
 >
   <div class="van-badge__wrapper">
     <span class="van-tab__text van-tab__text--ellipsis">
@@ -174,12 +174,12 @@ exports[`should render nav-left、nav-right slot correctly 1`] = `
        aria-orientation="horizontal"
   >
     Custom nav left
-    <div id="van-tabs-28-0"
+    <div id="van-tabs-0"
          role="tab"
          class="van-tab van-tab--active"
          tabindex="0"
          aria-selected="true"
-         aria-controls="van-tab-29"
+         aria-controls="van-tab"
     >
       <span class="van-tab__text van-tab__text--ellipsis">
         Title
@@ -201,34 +201,34 @@ exports[`should switch tab after click the tab title 1`] = `
          class="van-tabs__nav van-tabs__nav--line"
          aria-orientation="horizontal"
     >
-      <div id="van-tabs-7-0"
+      <div id="van-tabs-0"
            role="tab"
            class="van-tab van-tab--active"
            tabindex="0"
            aria-selected="true"
-           aria-controls="van-tab-8"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title1
         </span>
       </div>
-      <div id="van-tabs-7-1"
+      <div id="van-tabs-1"
            role="tab"
            class="van-tab"
            tabindex="-1"
            aria-selected="false"
-           aria-controls="van-tab-9"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title2
         </span>
       </div>
-      <div id="van-tabs-7-2"
+      <div id="van-tabs-2"
            role="tab"
            class="van-tab van-tab--disabled"
            aria-selected="false"
            aria-disabled="true"
-           aria-controls="van-tab-10"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -241,28 +241,28 @@ exports[`should switch tab after click the tab title 1`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div id="van-tab-8"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="0"
-         aria-labelledby="van-tabs-7-0"
+         aria-labelledby="van-tabs-0"
          style
     >
       Text
     </div>
-    <div id="van-tab-9"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="-1"
-         aria-labelledby="van-tabs-7-1"
+         aria-labelledby="van-tabs-1"
          style="display: none;"
     >
     </div>
-    <div id="van-tab-10"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="-1"
-         aria-labelledby="van-tabs-7-2"
+         aria-labelledby="van-tabs-2"
          style="display: none;"
     >
     </div>
@@ -277,34 +277,34 @@ exports[`should switch tab after click the tab title 2`] = `
          class="van-tabs__nav van-tabs__nav--line"
          aria-orientation="horizontal"
     >
-      <div id="van-tabs-7-0"
+      <div id="van-tabs-0"
            role="tab"
            class="van-tab"
            tabindex="-1"
            aria-selected="false"
-           aria-controls="van-tab-8"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title1
         </span>
       </div>
-      <div id="van-tabs-7-1"
+      <div id="van-tabs-1"
            role="tab"
            class="van-tab van-tab--active"
            tabindex="0"
            aria-selected="true"
-           aria-controls="van-tab-9"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title2
         </span>
       </div>
-      <div id="van-tabs-7-2"
+      <div id="van-tabs-2"
            role="tab"
            class="van-tab van-tab--disabled"
            aria-selected="false"
            aria-disabled="true"
-           aria-controls="van-tab-10"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -317,29 +317,29 @@ exports[`should switch tab after click the tab title 2`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div id="van-tab-8"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="-1"
-         aria-labelledby="van-tabs-7-0"
+         aria-labelledby="van-tabs-0"
          style="display: none;"
     >
       Text
     </div>
-    <div id="van-tab-9"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="0"
-         aria-labelledby="van-tabs-7-1"
+         aria-labelledby="van-tabs-1"
          style
     >
       Text
     </div>
-    <div id="van-tab-10"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="-1"
-         aria-labelledby="van-tabs-7-2"
+         aria-labelledby="van-tabs-2"
          style="display: none;"
     >
     </div>
@@ -354,7 +354,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
          class="van-tabs__nav van-tabs__nav--line"
          aria-orientation="horizontal"
     >
-      <div id="van-tabs-11-0"
+      <div id="van-tabs-0"
            role="tab"
            class="van-tab van-tab--active"
            tabindex="0"
@@ -364,7 +364,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
           title1
         </span>
       </div>
-      <div id="van-tabs-11-1"
+      <div id="van-tabs-1"
            role="tab"
            class="van-tab"
            tabindex="-1"
@@ -374,7 +374,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
           title2
         </span>
       </div>
-      <div id="van-tabs-11-2"
+      <div id="van-tabs-2"
            role="tab"
            class="van-tab van-tab--disabled"
            aria-selected="false"
@@ -396,11 +396,11 @@ exports[`swipe switch tab after swiping tab content 1`] = `
            class="van-swipe__track"
       >
         <div class="van-swipe-item van-tab__pane-wrapper"
-             id="van-tab-12"
+             id="van-tab"
              role="tabpanel"
              tabindex="0"
              aria-hidden="false"
-             aria-labelledby="van-tabs-11-0"
+             aria-labelledby="van-tabs-0"
              style="width: 100px;"
         >
           <div class="van-tab__pane">
@@ -408,11 +408,11 @@ exports[`swipe switch tab after swiping tab content 1`] = `
           </div>
         </div>
         <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
-             id="van-tab-13"
+             id="van-tab"
              role="tabpanel"
              tabindex="-1"
              aria-hidden="true"
-             aria-labelledby="van-tabs-11-1"
+             aria-labelledby="van-tabs-1"
              style="width: 100px;"
         >
           <div class="van-tab__pane">
@@ -420,11 +420,11 @@ exports[`swipe switch tab after swiping tab content 1`] = `
           </div>
         </div>
         <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
-             id="van-tab-14"
+             id="van-tab"
              role="tabpanel"
              tabindex="-1"
              aria-hidden="true"
-             aria-labelledby="van-tabs-11-2"
+             aria-labelledby="van-tabs-2"
              style="width: 100px;"
         >
         </div>
@@ -441,7 +441,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
          class="van-tabs__nav van-tabs__nav--line"
          aria-orientation="horizontal"
     >
-      <div id="van-tabs-11-0"
+      <div id="van-tabs-0"
            role="tab"
            class="van-tab"
            tabindex="-1"
@@ -451,7 +451,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
           title1
         </span>
       </div>
-      <div id="van-tabs-11-1"
+      <div id="van-tabs-1"
            role="tab"
            class="van-tab van-tab--active"
            tabindex="0"
@@ -461,7 +461,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
           title2
         </span>
       </div>
-      <div id="van-tabs-11-2"
+      <div id="van-tabs-2"
            role="tab"
            class="van-tab van-tab--disabled"
            aria-selected="false"
@@ -483,11 +483,11 @@ exports[`swipe switch tab after swiping tab content 2`] = `
            class="van-swipe__track"
       >
         <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
-             id="van-tab-12"
+             id="van-tab"
              role="tabpanel"
              tabindex="-1"
              aria-hidden="true"
-             aria-labelledby="van-tabs-11-0"
+             aria-labelledby="van-tabs-0"
              style="width: 100px;"
         >
           <div class="van-tab__pane">
@@ -495,11 +495,11 @@ exports[`swipe switch tab after swiping tab content 2`] = `
           </div>
         </div>
         <div class="van-swipe-item van-tab__pane-wrapper"
-             id="van-tab-13"
+             id="van-tab"
              role="tabpanel"
              tabindex="0"
              aria-hidden="false"
-             aria-labelledby="van-tabs-11-1"
+             aria-labelledby="van-tabs-1"
              style="width: 100px;"
         >
           <div class="van-tab__pane">
@@ -507,11 +507,11 @@ exports[`swipe switch tab after swiping tab content 2`] = `
           </div>
         </div>
         <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
-             id="van-tab-14"
+             id="van-tab"
              role="tabpanel"
              tabindex="-1"
              aria-hidden="true"
-             aria-labelledby="van-tabs-11-2"
+             aria-labelledby="van-tabs-2"
              style="width: 100px;"
         >
           <div class="van-tab__pane">
@@ -531,7 +531,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
          class="van-tabs__nav van-tabs__nav--line"
          aria-orientation="horizontal"
     >
-      <div id="van-tabs-11-0"
+      <div id="van-tabs-0"
            role="tab"
            class="van-tab"
            tabindex="-1"
@@ -541,7 +541,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
           title1
         </span>
       </div>
-      <div id="van-tabs-11-1"
+      <div id="van-tabs-1"
            role="tab"
            class="van-tab van-tab--active"
            tabindex="0"
@@ -551,7 +551,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
           title2
         </span>
       </div>
-      <div id="van-tabs-11-2"
+      <div id="van-tabs-2"
            role="tab"
            class="van-tab van-tab--disabled"
            aria-selected="false"
@@ -573,11 +573,11 @@ exports[`swipe switch tab after swiping tab content 3`] = `
            class="van-swipe__track"
       >
         <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
-             id="van-tab-12"
+             id="van-tab"
              role="tabpanel"
              tabindex="-1"
              aria-hidden="true"
-             aria-labelledby="van-tabs-11-0"
+             aria-labelledby="van-tabs-0"
              style="width: 100px;"
         >
           <div class="van-tab__pane">
@@ -585,11 +585,11 @@ exports[`swipe switch tab after swiping tab content 3`] = `
           </div>
         </div>
         <div class="van-swipe-item van-tab__pane-wrapper"
-             id="van-tab-13"
+             id="van-tab"
              role="tabpanel"
              tabindex="0"
              aria-hidden="false"
-             aria-labelledby="van-tabs-11-1"
+             aria-labelledby="van-tabs-1"
              style="width: 100px;"
         >
           <div class="van-tab__pane">
@@ -597,11 +597,11 @@ exports[`swipe switch tab after swiping tab content 3`] = `
           </div>
         </div>
         <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
-             id="van-tab-14"
+             id="van-tab"
              role="tabpanel"
              tabindex="-1"
              aria-hidden="true"
-             aria-labelledby="van-tabs-11-2"
+             aria-labelledby="van-tabs-2"
              style="width: 100px;"
         >
           <div class="van-tab__pane">

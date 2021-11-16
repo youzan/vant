@@ -7,34 +7,34 @@ exports[`should render Tab inside a component correctly 1`] = `
          class="van-tabs__nav van-tabs__nav--line"
          aria-orientation="horizontal"
     >
-      <div id="van-tabs-8-0"
+      <div id="van-tabs-0"
            role="tab"
            class="van-tab"
            tabindex="-1"
            aria-selected="false"
-           aria-controls="van-tab-10"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           2
         </span>
       </div>
-      <div id="van-tabs-8-1"
+      <div id="van-tabs-1"
            role="tab"
            class="van-tab van-tab--active"
            tabindex="0"
            aria-selected="true"
-           aria-controls="van-tab-9"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           1
         </span>
       </div>
-      <div id="van-tabs-8-2"
+      <div id="van-tabs-2"
            role="tab"
            class="van-tab"
            tabindex="-1"
            aria-selected="false"
-           aria-controls="van-tab-11"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           3
@@ -47,28 +47,28 @@ exports[`should render Tab inside a component correctly 1`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div id="van-tab-9"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="0"
-         aria-labelledby="van-tabs-8-1"
+         aria-labelledby="van-tabs-1"
          style
     >
       1
     </div>
-    <div id="van-tab-10"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="-1"
-         aria-labelledby="van-tabs-8-0"
+         aria-labelledby="van-tabs-0"
          style="display: none;"
     >
     </div>
-    <div id="van-tab-11"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="-1"
-         aria-labelledby="van-tabs-8-2"
+         aria-labelledby="van-tabs-2"
          style="display: none;"
     >
     </div>
@@ -83,34 +83,34 @@ exports[`should render correctly after inserting a tab 1`] = `
          class="van-tabs__nav van-tabs__nav--line"
          aria-orientation="horizontal"
     >
-      <div id="van-tabs-1-0"
+      <div id="van-tabs-0"
            role="tab"
            class="van-tab"
            tabindex="-1"
            aria-selected="false"
-           aria-controls="van-tab-2"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           1
         </span>
       </div>
-      <div id="van-tabs-1-1"
+      <div id="van-tabs-1"
            role="tab"
            class="van-tab van-tab--active"
            tabindex="0"
            aria-selected="true"
-           aria-controls="van-tab-4"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           2
         </span>
       </div>
-      <div id="van-tabs-1-2"
+      <div id="van-tabs-2"
            role="tab"
            class="van-tab"
            tabindex="-1"
            aria-selected="false"
-           aria-controls="van-tab-3"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           3
@@ -123,29 +123,29 @@ exports[`should render correctly after inserting a tab 1`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div id="van-tab-2"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="-1"
-         aria-labelledby="van-tabs-1-0"
+         aria-labelledby="van-tabs-0"
          style="display: none;"
     >
     </div>
     <div>
-      <div id="van-tab-4"
+      <div id="van-tab"
            role="tabpanel"
            class="van-tab__pane"
            tabindex="0"
-           aria-labelledby="van-tabs-1-1"
+           aria-labelledby="van-tabs-1"
       >
         2
       </div>
     </div>
-    <div id="van-tab-3"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="-1"
-         aria-labelledby="van-tabs-1-2"
+         aria-labelledby="van-tabs-2"
          style="display: none;"
     >
       3
@@ -161,23 +161,23 @@ exports[`should render correctly after inserting a tab with name 1`] = `
          class="van-tabs__nav van-tabs__nav--line"
          aria-orientation="horizontal"
     >
-      <div id="van-tabs-5-0"
+      <div id="van-tabs-0"
            role="tab"
            class="van-tab"
            tabindex="-1"
            aria-selected="false"
-           aria-controls="van-tab-7"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           bar
         </span>
       </div>
-      <div id="van-tabs-5-1"
+      <div id="van-tabs-1"
            role="tab"
            class="van-tab van-tab--active"
            tabindex="0"
            aria-selected="true"
-           aria-controls="van-tab-6"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           foo
@@ -190,20 +190,20 @@ exports[`should render correctly after inserting a tab with name 1`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div id="van-tab-7"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="-1"
-         aria-labelledby="van-tabs-5-0"
+         aria-labelledby="van-tabs-0"
          style="display: none;"
     >
       bar
     </div>
-    <div id="van-tab-6"
+    <div id="van-tab"
          role="tabpanel"
          class="van-tab__pane"
          tabindex="0"
-         aria-labelledby="van-tabs-5-1"
+         aria-labelledby="van-tabs-1"
          style
     >
       foo

@@ -30,23 +30,23 @@ exports[`should be the sames as the last snapshot when render coupon list 1`] = 
            class="van-tabs__nav van-tabs__nav--line"
            aria-orientation="horizontal"
       >
-        <div id="van-tabs-1-0"
+        <div id="van-tabs-0"
              role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
-             aria-controls="van-tab-2"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Available (6)
           </span>
         </div>
-        <div id="van-tabs-1-1"
+        <div id="van-tabs-1"
              role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
-             aria-controls="van-tab-3"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Unavailable (2)
@@ -59,11 +59,11 @@ exports[`should be the sames as the last snapshot when render coupon list 1`] = 
       </div>
     </div>
     <div class="van-tabs__content">
-      <div id="van-tab-2"
+      <div id="van-tab"
            role="tabpanel"
            class="van-tab__pane"
            tabindex="0"
-           aria-labelledby="van-tabs-1-0"
+           aria-labelledby="van-tabs-0"
            style
       >
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
@@ -267,11 +267,11 @@ exports[`should be the sames as the last snapshot when render coupon list 1`] = 
           </div>
         </div>
       </div>
-      <div id="van-tab-3"
+      <div id="van-tab"
            role="tabpanel"
            class="van-tab__pane"
            tabindex="-1"
-           aria-labelledby="van-tabs-1-1"
+           aria-labelledby="van-tabs-1"
            style="display: none;"
       >
       </div>
@@ -321,23 +321,23 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
            class="van-tabs__nav van-tabs__nav--line"
            aria-orientation="horizontal"
       >
-        <div id="van-tabs-4-0"
+        <div id="van-tabs-0"
              role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
-             aria-controls="van-tab-5"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Available (0)
           </span>
         </div>
-        <div id="van-tabs-4-1"
+        <div id="van-tabs-1"
              role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
-             aria-controls="van-tab-6"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Unavailable (0)
@@ -350,11 +350,11 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
       </div>
     </div>
     <div class="van-tabs__content">
-      <div id="van-tab-5"
+      <div id="van-tab"
            role="tabpanel"
            class="van-tab__pane"
            tabindex="-1"
-           aria-labelledby="van-tabs-4-0"
+           aria-labelledby="van-tabs-0"
            style="display: none;"
       >
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
@@ -368,11 +368,11 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
           </div>
         </div>
       </div>
-      <div id="van-tab-6"
+      <div id="van-tab"
            role="tabpanel"
            class="van-tab__pane"
            tabindex="0"
-           aria-labelledby="van-tabs-4-1"
+           aria-labelledby="van-tabs-1"
            style
       >
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
@@ -432,23 +432,23 @@ exports[`should render list-footer slot correctly 1`] = `
            class="van-tabs__nav van-tabs__nav--line"
            aria-orientation="horizontal"
       >
-        <div id="van-tabs-16-0"
+        <div id="van-tabs-0"
              role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
-             aria-controls="van-tab-17"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Available (0)
           </span>
         </div>
-        <div id="van-tabs-16-1"
+        <div id="van-tabs-1"
              role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
-             aria-controls="van-tab-18"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Unavailable (0)
@@ -461,11 +461,11 @@ exports[`should render list-footer slot correctly 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div id="van-tab-17"
+      <div id="van-tab"
            role="tabpanel"
            class="van-tab__pane"
            tabindex="-1"
-           aria-labelledby="van-tabs-16-0"
+           aria-labelledby="van-tabs-0"
            style="display: none;"
       >
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
@@ -480,11 +480,11 @@ exports[`should render list-footer slot correctly 1`] = `
           List Footer
         </div>
       </div>
-      <div id="van-tab-18"
+      <div id="van-tab"
            role="tabpanel"
            class="van-tab__pane"
            tabindex="0"
-           aria-labelledby="van-tabs-16-1"
+           aria-labelledby="van-tabs-1"
            style
       >
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
@@ -545,23 +545,23 @@ exports[`should use custom src when using empty-image prop 1`] = `
            class="van-tabs__nav van-tabs__nav--line"
            aria-orientation="horizontal"
       >
-        <div id="van-tabs-7-0"
+        <div id="van-tabs-0"
              role="tab"
              class="van-tab van-tab--active"
              tabindex="0"
              aria-selected="true"
-             aria-controls="van-tab-8"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Available (0)
           </span>
         </div>
-        <div id="van-tabs-7-1"
+        <div id="van-tabs-1"
              role="tab"
              class="van-tab"
              tabindex="-1"
              aria-selected="false"
-             aria-controls="van-tab-9"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Unavailable (0)
@@ -574,11 +574,11 @@ exports[`should use custom src when using empty-image prop 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div id="van-tab-8"
+      <div id="van-tab"
            role="tabpanel"
            class="van-tab__pane"
            tabindex="0"
-           aria-labelledby="van-tabs-7-0"
+           aria-labelledby="van-tabs-0"
            style
       >
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
@@ -592,11 +592,11 @@ exports[`should use custom src when using empty-image prop 1`] = `
           </div>
         </div>
       </div>
-      <div id="van-tab-9"
+      <div id="van-tab"
            role="tabpanel"
            class="van-tab__pane"
            tabindex="-1"
-           aria-labelledby="van-tabs-7-1"
+           aria-labelledby="van-tabs-1"
            style="display: none;"
       >
       </div>
