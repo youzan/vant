@@ -6,6 +6,7 @@ exports[`should disable buttons and input when using disabled prop 1`] = `
 >
   <button type="button"
           class="van-stepper__minus van-stepper__minus--disabled"
+          aria-disabled="true"
   >
   </button>
   <input type="text"
@@ -19,6 +20,7 @@ exports[`should disable buttons and input when using disabled prop 1`] = `
   >
   <button type="button"
           class="van-stepper__plus van-stepper__plus--disabled"
+          aria-disabled="true"
   >
   </button>
 </div>
@@ -31,6 +33,7 @@ exports[`should update input height and button size when using button-size prop 
   <button type="button"
           style="width: 2rem; height: 2rem;"
           class="van-stepper__minus van-stepper__minus--disabled"
+          aria-disabled="true"
   >
   </button>
   <input type="text"
