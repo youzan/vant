@@ -206,8 +206,9 @@ export default defineComponent({
       tabIndex: number
     ) => {
       const { disabled } = option;
-      const selected =
-        selectedOption && option[valueKey] === selectedOption[valueKey];
+      const selected = !!(
+        selectedOption && option[valueKey] === selectedOption[valueKey]
+      );
       const color = option.color || (selected ? props.activeColor : undefined);
 
       const Text = slots.option ? (
