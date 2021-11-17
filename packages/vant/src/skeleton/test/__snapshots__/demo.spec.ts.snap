@@ -47,6 +47,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div role="switch"
        class="van-switch"
        style="font-size: 24px;"
+       tabindex="0"
        aria-checked="false"
   >
     <div class="van-switch__node">

@@ -68,6 +68,7 @@ export default defineComponent({
             disabled,
           })}
           style={style}
+          tabindex={disabled ? undefined : 0}
           aria-checked={checked}
           onClick={onClick}
         >

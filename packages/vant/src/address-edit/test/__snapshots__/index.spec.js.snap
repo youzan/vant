@@ -222,6 +222,7 @@ exports[`should render AddressEdit with props correctly 1`] = `
     <div role="switch"
          class="van-switch van-switch--on"
          style="font-size: 24px;"
+         tabindex="0"
          aria-checked="true"
     >
       <div class="van-switch__node">
