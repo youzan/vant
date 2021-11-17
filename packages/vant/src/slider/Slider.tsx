@@ -295,9 +295,9 @@ export default defineComponent({
           role="slider"
           class={getButtonClassName(index)}
           tabindex={props.disabled ? undefined : 0}
-          aria-valuemin={+props.min}
+          aria-valuemin={props.min}
           aria-valuenow={current}
-          aria-valuemax={+props.max}
+          aria-valuemax={props.max}
           aria-disabled={props.disabled || undefined}
           aria-readonly={props.readonly || undefined}
           aria-orientation={props.vertical ? 'vertical' : 'horizontal'}
