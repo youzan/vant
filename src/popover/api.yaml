@@ -8,6 +8,7 @@
     - name: value
       title: 是否展示气泡弹出层
       type: boolean
+      sync: true
       default: false
       description: 是否展示气泡弹出层
     - name: overlay

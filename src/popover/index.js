@@ -58,10 +58,17 @@ export default createComponent({
     }
   },
   watch: {
-    value(val) {
-      this.valued = val;
+    value: {
+      handler (val) {
+        this.valued = val;
+	    },
+	    immediate: true,
     },
-    valued: 'updateLocation',
+    valued: {
+      handler (val) {
+	      this.updateLocation(val)
+	    },
+    },
     placement: 'updateLocation',
   },
 
@@ -126,7 +133,6 @@ export default createComponent({
     },
 
     updateLocation(val) {
-      this.valued = val;
       this.$nextTick(() => {
         if (!this.valued) {
           return;
