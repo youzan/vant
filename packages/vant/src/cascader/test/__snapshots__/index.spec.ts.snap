@@ -9,6 +9,7 @@ exports[`should render option slot correctly 1`] = `
 <li role="menuitemradio"
     class="van-cascader__option"
     tabindex="-1"
+    aria-checked="false"
 >
   Custom Option foo
 </li>
@@ -160,6 +161,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
                 <li role="menuitemradio"
                     class="van-cascader__option"
                     tabindex="-1"
+                    aria-checked="false"
                 >
                   <span>
                     Nanjing
@@ -168,6 +170,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
                 <li role="menuitemradio"
                     class="van-cascader__option"
                     tabindex="-1"
+                    aria-checked="false"
                 >
                   <span>
                     Wuxi
@@ -176,6 +179,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
                 <li role="menuitemradio"
                     class="van-cascader__option"
                     tabindex="-1"
+                    aria-checked="false"
                 >
                   <span>
                     Xuzhou
