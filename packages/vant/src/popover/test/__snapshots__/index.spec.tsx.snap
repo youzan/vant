@@ -3,6 +3,7 @@
 exports[`should allow to custom the className of action 1`] = `
 <div role="menuitem"
      class="van-popover__action foo"
+     tabindex="0"
 >
   <div class="van-popover__action-text van-hairline--bottom">
     Option
@@ -22,6 +23,7 @@ exports[`should change icon class prefix when using icon-prefix prop 1`] = `
     >
       <div role="menuitem"
            class="van-popover__action van-popover__action--with-icon"
+           tabindex="0"
       >
         <i class="van-badge__wrapper my-icon my-icon-success van-popover__action-icon">
         </i>

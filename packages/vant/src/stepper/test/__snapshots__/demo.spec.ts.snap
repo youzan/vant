@@ -206,7 +206,7 @@ exports[`should render demo and match snapshot 1`] = `
                inputmode="decimal"
                aria-valuemax="Infinity"
                aria-valuemin="1"
-               aria-valuenow="1"
+               aria-valuenow="1.0"
         >
         <button type="button"
                 class="van-stepper__plus van-haptics-feedback"

@@ -313,9 +313,9 @@ export default defineComponent({
           // set keyboard in modern browsers
           inputmode={props.integer ? 'numeric' : 'decimal'}
           placeholder={props.placeholder}
-          aria-valuemax={+props.max}
-          aria-valuemin={+props.min}
-          aria-valuenow={+current.value}
+          aria-valuemax={props.max}
+          aria-valuemin={props.min}
+          aria-valuenow={current.value}
           onBlur={onBlur}
           onInput={onInput}
           onFocus={onFocus}

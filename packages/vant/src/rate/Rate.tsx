@@ -196,7 +196,7 @@ export default defineComponent({
           style={style}
           class={bem('item')}
           tabindex={disabled ? undefined : 0}
-          aria-setsize={+count}
+          aria-setsize={count}
           aria-posinset={score}
           aria-checked={!isVoid}
           onClick={onClickItem}
