@@ -205,8 +205,10 @@ export default defineComponent({
       selectedOption: CascaderOption | null,
       tabIndex: number
     ) => {
-      const selected =
-        selectedOption && option[valueKey] === selectedOption[valueKey];
+      const { disabled } = option;
+      const selected = !!(
+        selectedOption && option[valueKey] === selectedOption[valueKey]
+      );
       const color = option.color || (selected ? props.activeColor : undefined);
 
       const Text = slots.option ? (
@@ -217,14 +219,12 @@ export default defineComponent({
 
       return (
         <li
-          class={[
-            bem('option', {
-              selected,
-              disabled: option.disabled,
-            }),
-            option.className,
-          ]}
+          role="menuitemradio"
+          class={[bem('option', { selected, disabled }), option.className]}
           style={{ color }}
+          tabindex={disabled ? undefined : selected ? 0 : -1}
+          aria-checked={selected}
+          aria-disabled={disabled || undefined}
           onClick={() => onSelect(option, tabIndex)}
         >
           {Text}
@@ -240,7 +240,7 @@ export default defineComponent({
       selectedOption: CascaderOption | null,
       tabIndex: number
     ) => (
-      <ul class={bem('options')}>
+      <ul role="menu" class={bem('options')}>
         {options.map((option) =>
           renderOption(option, selectedOption, tabIndex)
         )}

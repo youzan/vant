@@ -6,7 +6,11 @@ exports[`should change close icon when using close-icon prop 1`] = `
 `;
 
 exports[`should render option slot correctly 1`] = `
-<li class="van-cascader__option">
+<li role="menuitemradio"
+    class="van-cascader__option"
+    tabindex="-1"
+    aria-checked="false"
+>
   Custom Option foo
 </li>
 `;
@@ -14,15 +18,25 @@ exports[`should render option slot correctly 1`] = `
 exports[`should render options-top、options-bottom slots correctly 1`] = `
 <div class="van-tab__panel">
   Top, tab index: 0
-  <ul class="van-cascader__options">
-    <li class="van-cascader__option van-cascader__option--selected">
+  <ul role="menu"
+      class="van-cascader__options"
+  >
+    <li role="menuitemradio"
+        class="van-cascader__option van-cascader__option--selected"
+        tabindex="0"
+        aria-checked="true"
+    >
       <span>
         Zhejiang
       </span>
       <i class="van-badge__wrapper van-icon van-icon-success van-cascader__selected-icon">
       </i>
     </li>
-    <li class="van-cascader__option">
+    <li role="menuitemradio"
+        class="van-cascader__option"
+        tabindex="-1"
+        aria-checked="false"
+    >
       <span>
         Jiangsu
       </span>
@@ -39,7 +53,11 @@ exports[`should render title slot correctly 1`] = `
 `;
 
 exports[`should select correct option when value changed 1`] = `
-<li class="van-cascader__option van-cascader__option--selected">
+<li role="menuitemradio"
+    class="van-cascader__option van-cascader__option--selected"
+    tabindex="0"
+    aria-checked="true"
+>
   <span>
     Wenzhou
   </span>
@@ -102,13 +120,23 @@ exports[`should update tabs when previous tab is clicked 1`] = `
                style="width: 100px;"
           >
             <div class="van-tab__panel">
-              <ul class="van-cascader__options">
-                <li class="van-cascader__option">
+              <ul role="menu"
+                  class="van-cascader__options"
+              >
+                <li role="menuitemradio"
+                    class="van-cascader__option"
+                    tabindex="-1"
+                    aria-checked="false"
+                >
                   <span>
                     Zhejiang
                   </span>
                 </li>
-                <li class="van-cascader__option van-cascader__option--selected">
+                <li role="menuitemradio"
+                    class="van-cascader__option van-cascader__option--selected"
+                    tabindex="0"
+                    aria-checked="true"
+                >
                   <span>
                     Jiangsu
                   </span>
@@ -127,18 +155,32 @@ exports[`should update tabs when previous tab is clicked 1`] = `
                style="width: 100px;"
           >
             <div class="van-tab__panel">
-              <ul class="van-cascader__options">
-                <li class="van-cascader__option">
+              <ul role="menu"
+                  class="van-cascader__options"
+              >
+                <li role="menuitemradio"
+                    class="van-cascader__option"
+                    tabindex="-1"
+                    aria-checked="false"
+                >
                   <span>
                     Nanjing
                   </span>
                 </li>
-                <li class="van-cascader__option">
+                <li role="menuitemradio"
+                    class="van-cascader__option"
+                    tabindex="-1"
+                    aria-checked="false"
+                >
                   <span>
                     Wuxi
                   </span>
                 </li>
-                <li class="van-cascader__option">
+                <li role="menuitemradio"
+                    class="van-cascader__option"
+                    tabindex="-1"
+                    aria-checked="false"
+                >
                   <span>
                     Xuzhou
                   </span>
