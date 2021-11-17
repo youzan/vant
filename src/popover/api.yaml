@@ -68,7 +68,7 @@
       support:
         - name: van-popover-item
           title: 菜单项
-          snippet: '<van-popover-item title="标签名称n"></van-popover-item>'
+          snippet: '<van-popover-item text="标签名称n"></van-popover-item>'
   events:
     - name: select
       title: 点击选项时触发

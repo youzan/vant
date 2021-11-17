@@ -88,6 +88,9 @@ export default createComponent({
       if (this.slots('reference')) {
         return this.$refs.wrapper;
       }
+      if (this.ifDesigner() && /l-root-h5/.test(this.$el.parentNode.className)) {
+        return this.$refs.wrappertemp;
+      }
       // 求上下文中的 parent
       if (this.$parent === this.$vnode.context)
           return this.$el.parentElement; // Vue 的 vnode.parent 没有连接起来，需要自己找，不知道有没有更好的方法
@@ -111,7 +114,7 @@ export default createComponent({
     },
 
     createPopper() {
-      const referEl = this.getReferEl();console.log(referEl);
+      const referEl = this.getReferEl();
       return createPopper(referEl, this.$refs.popover.$el, {
         placement: this.placement,
         modifiers: [
@@ -137,7 +140,6 @@ export default createComponent({
         if (!this.valued) {
           return;
         }
-
         if (!this.popper) {
           this.popper = this.createPopper();
         } else {
@@ -218,15 +220,64 @@ export default createComponent({
     onClosed() {
       this.$emit('closed');
     },
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     openModal() {
       this.valued = true;
     },
     closeModal() {
       this.valued = false;
-    }
+    },
+    designerDbControl() {
+      if (this.ifDesigner()) {
+        this.valued = !this.valued;
+      }
+    },
   },
 
   render() {
+    const styletemp = {
+      background: '#FAFAFA',
+      border: '1px dashed #CCCCCC',
+      height: '14.93333vw',
+      alignItems: 'center',
+      justifyContent: 'center',
+      display: 'flex',
+      fontSize: '4.26667vw',
+      color: '#666666',
+    }
+    if (this.ifDesigner()) {
+      return (
+        <div style={styletemp} ref="wrappertemp">
+          <span ref="wrapper" class={bem('wrapper')} onClick={this.onClickWrapper}>
+            <Popup
+              ref="popover"
+              value={this.valued}
+              class={bem([this.theme])}
+              overlay={this.overlay}
+              position={null}
+              transition="van-popover-zoom"
+              lockScroll={false}
+              // getContainer={this.getContainer}
+              onOpen={this.onOpen}
+              onClose={this.onClose}
+              onInput={this.onToggle}
+              onOpened={this.onOpened}
+              onClosed={this.onClosed}
+              nativeOnTouchstart={this.onTouchstart}
+            >
+              <div class={bem('arrow')} />
+              <div class={bem('content')} role="menu">
+                {this.slots('default') || this.actions.map(this.renderAction)}
+              </div>
+            </Popup>
+          </span>
+          <div>双击打开/关闭气泡框</div>
+        </div>
+      )
+    }
+
     return (
       <span ref="wrapper" class={bem('wrapper')} onClick={this.onClickWrapper}>
         <Popup
