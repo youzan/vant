@@ -318,6 +318,11 @@ module.exports = {
                 className: 'hide-in-weapp',
               },
               {
+                path: 'popover-item',
+                title: 'Popover item',
+                className: 'hide-in-weapp',
+              },
+              {
                 path: 'progress',
                 title: 'Progress 进度条',
               },
@@ -712,6 +717,10 @@ module.exports = {
               {
                 path: 'popover',
                 title: 'Popover',
+              },
+              {
+                path: 'popover-item',
+                title: 'Popoveritem',
               },
               {
                 path: 'progress',

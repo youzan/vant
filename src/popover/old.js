@@ -52,16 +52,9 @@ export default createComponent({
       default: true,
     },
   },
-  data() {
-    return {
-      valued: this.value || false,
-    }
-  },
+
   watch: {
-    value(val) {
-      this.valued = val;
-    },
-    valued: 'updateLocation',
+    value: 'updateLocation',
     placement: 'updateLocation',
   },
 
@@ -77,35 +70,8 @@ export default createComponent({
   },
 
   methods: {
-    getReferEl() {
-      if (this.slots('reference')) {
-        return this.$refs.wrapper;
-      }
-      // 求上下文中的 parent
-      if (this.$parent === this.$vnode.context)
-          return this.$el.parentElement; // Vue 的 vnode.parent 没有连接起来，需要自己找，不知道有没有更好的方法
-      let parentVNode = this.$parent._vnode;
-      while (
-          parentVNode
-          && !parentVNode.children.includes(this.$vnode)
-      )
-          parentVNode = parentVNode.children.find((child) =>
-              child.elm.contains(this.$el),
-          ); // if (!parentVNode)
-      if (parentVNode && parentVNode.context === this.$vnode.context)
-          return parentVNode.elm; // 否则，找第一个上下文一致的组件
-      let parentVM = this.$parent;
-      while (
-          parentVM
-          && parentVM.$vnode.context !== this.$vnode.context
-      )
-          parentVM = parentVM.$parent;
-      return parentVM.$el;
-    },
-
     createPopper() {
-      const referEl = this.getReferEl();console.log(referEl);
-      return createPopper(referEl, this.$refs.popover.$el, {
+      return createPopper(this.$refs.wrapper, this.$refs.popover.$el, {
         placement: this.placement,
         modifiers: [
           {
@@ -125,10 +91,9 @@ export default createComponent({
       });
     },
 
-    updateLocation(val) {
-      this.valued = val;
+    updateLocation() {
       this.$nextTick(() => {
-        if (!this.valued) {
+        if (!this.value) {
           return;
         }
 
@@ -161,12 +126,11 @@ export default createComponent({
 
     onToggle(value) {
       this.$emit('input', value);
-      this.$emit('update:value', value);
     },
 
     onClickWrapper() {
       if (this.trigger === 'click') {
-        this.onToggle(!this.valued);
+        this.onToggle(!this.value);
       }
     },
 
@@ -183,16 +147,12 @@ export default createComponent({
       this.$emit('select', action, index);
 
       if (this.closeOnClickAction) {
-        this.valued = false;
         this.$emit('input', false);
-        this.$emit('update:value', false);
       }
     },
 
     onClickOutside() {
-      this.valued = false;
       this.$emit('input', false);
-      this.$emit('update:value', false);
     },
 
     onOpen() {
@@ -212,12 +172,6 @@ export default createComponent({
     onClosed() {
       this.$emit('closed');
     },
-    openModal() {
-      this.valued = true;
-    },
-    closeModal() {
-      this.valued = false;
-    }
   },
 
   render() {
@@ -225,13 +179,13 @@ export default createComponent({
       <span ref="wrapper" class={bem('wrapper')} onClick={this.onClickWrapper}>
         <Popup
           ref="popover"
-          value={this.valued}
+          value={this.value}
           class={bem([this.theme])}
           overlay={this.overlay}
           position={null}
           transition="van-popover-zoom"
           lockScroll={false}
-          // getContainer={this.getContainer}
+          getContainer={this.getContainer}
           onOpen={this.onOpen}
           onClose={this.onClose}
           onInput={this.onToggle}

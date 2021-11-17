@@ -9,6 +9,19 @@
         style="margin-left: 16px;"
         @select="onSelect"
       >
+
+        <van-popover-item text="标签名称1"></van-popover-item>
+  <van-popover-item text="标签名称2"></van-popover-item>
+  <van-popover-item text="标签名称3"></van-popover-item>
+      </van-popover>
+      <van-popover
+        v-model="show.lightTheme"
+        trigger="click"
+        :actions="t('actions')"
+        placement="bottom-start"
+        style="margin-left: 16px;"
+        @select="onSelect"
+      >
         <template #reference>
           <van-button type="primary">
             {{ t('lightTheme') }}
