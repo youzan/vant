@@ -150,6 +150,7 @@ export default createComponent({
 
       return (
         <Cell
+          novalue={true}
           role="button"
           class={bem('title', { disabled, expanded, borderless: !border })}
           onClick={this.onClick}
@@ -164,6 +165,7 @@ export default createComponent({
       return this.$env && this.$env.VUE_APP_DESIGNER;
     },
     genContent() {
+      const _scopeId = this.$vnode.context.$options._scopeId;
       if (this.inited) {
         return (
           <div
@@ -172,7 +174,7 @@ export default createComponent({
             class={bem('wrapper')}
             onTransitionend={this.onTransitionEnd}
           >
-            <div ref="content" class={bem('content')} vusion-slot-name="default">
+            <div ref="content" class={bem('content')} vusion-slot-name="default" vusion-scope-id={_scopeId}>
               {this.slots()}
               {!this.slots() && this.ifDesigner() ? <van-empty-col></van-empty-col> : null}
             </div>
@@ -181,18 +183,16 @@ export default createComponent({
       }
     },
     designerControl() {
-      this.toggle();
+      if (!this.disabled) {
+        this.toggle();
+      }
     }
   },
 
   render() {
-    const aId = this.$vnode.context.$options._scopeId;
-    const aIdo = {
-      ...this.$attrs,
-      [aId] : ''
-    }
+    const { vusionCut, vusionMove, vusionNodePath, vusionNodeTag } = this._props;
     return (
-      <div class={[bem({ border: this.index && this.border })]} {...{attrs: {...aIdo}}}>
+      <div class={[bem({ border: this.index && this.border })]} vusion-cut={vusionCut} vusion-move={vusionMove} vusion-node-path={vusionNodePath} vusion-node-tag={vusionNodeTag}>
         {this.genTitle()}
         {this.genContent()}
       </div>
