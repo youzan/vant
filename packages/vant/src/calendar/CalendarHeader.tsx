@@ -26,9 +26,8 @@ export default defineComponent({
       }
     };
 
-    const onClickSubtitle = (event: MouseEvent) => {
+    const onClickSubtitle = (event: MouseEvent) =>
       emit('click-subtitle', event);
-    };
 
     const renderSubtitle = () => {
       if (props.showSubtitle) {
