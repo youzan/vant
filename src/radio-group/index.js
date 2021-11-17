@@ -10,6 +10,7 @@ export default createComponent({
   props: {
     value: null,
     disabled: Boolean,
+    readonly: Boolean,
     direction: String,
     checkedColor: String,
     iconSize: [Number, String],

@@ -30,6 +30,7 @@ export default createComponent({
   watch: {
     value(val) {
       this.$emit('change', val);
+      this.datatemp = this.fromValue(this.value);
     },
     datatemp(val) {
       this.$emit('change', this.toValue(val));
@@ -39,7 +40,7 @@ export default createComponent({
   },
 
   methods: {
-    fromValue(value) {
+    fromValue(value) {console.log(typeof value, value, 9999)
       try {
         if(value === null || value === '') return [];
         if(typeof value === 'string') return JSON.parse(value || '[]');
