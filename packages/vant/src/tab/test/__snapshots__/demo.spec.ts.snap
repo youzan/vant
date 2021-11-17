@@ -61,7 +61,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__content">
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-0"
            style
@@ -70,7 +70,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-1"
            style="display: none;"
@@ -78,7 +78,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-2"
            style="display: none;"
@@ -86,7 +86,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-3"
            style="display: none;"
@@ -144,7 +144,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__content">
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-0"
            style="display: none;"
@@ -152,7 +152,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-1"
            style
@@ -161,7 +161,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-2"
            style="display: none;"
@@ -274,7 +274,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__content">
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-0"
            style
@@ -283,7 +283,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-1"
            style="display: none;"
@@ -291,7 +291,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-2"
            style="display: none;"
@@ -299,7 +299,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-3"
            style="display: none;"
@@ -307,7 +307,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-4"
            style="display: none;"
@@ -315,7 +315,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-5"
            style="display: none;"
@@ -323,7 +323,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-6"
            style="display: none;"
@@ -331,7 +331,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-7"
            style="display: none;"
@@ -389,7 +389,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__content">
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-0"
            style
@@ -398,7 +398,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-1"
            style="display: none;"
@@ -406,7 +406,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-2"
            style="display: none;"
@@ -460,7 +460,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__content">
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-0"
            style
@@ -469,7 +469,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-1"
            style="display: none;"
@@ -477,7 +477,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-2"
            style="display: none;"
@@ -524,7 +524,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__content">
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-0"
            style
@@ -533,7 +533,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-1"
            style="display: none;"
@@ -606,7 +606,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__content">
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-0"
            style
@@ -615,7 +615,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-1"
            style="display: none;"
@@ -623,7 +623,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-2"
            style="display: none;"
@@ -631,7 +631,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-3"
            style="display: none;"
@@ -682,7 +682,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__content">
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-0"
            style
@@ -691,7 +691,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-1"
            style="display: none;"
@@ -766,7 +766,7 @@ exports[`should render demo and match snapshot 1`] = `
                aria-labelledby="van-tabs-0"
                style="width: 100px;"
           >
-            <div class="van-tab__pane">
+            <div class="van-tab__panel">
               content of tab 1
             </div>
           </div>
@@ -778,7 +778,7 @@ exports[`should render demo and match snapshot 1`] = `
                aria-labelledby="van-tabs-1"
                style="width: 100px;"
           >
-            <div class="van-tab__pane">
+            <div class="van-tab__panel">
               content of tab 2
             </div>
           </div>
@@ -871,7 +871,7 @@ exports[`should render demo and match snapshot 1`] = `
                aria-labelledby="van-tabs-0"
                style="width: 100px;"
           >
-            <div class="van-tab__pane">
+            <div class="van-tab__panel">
               content of tab 1
             </div>
           </div>
@@ -883,7 +883,7 @@ exports[`should render demo and match snapshot 1`] = `
                aria-labelledby="van-tabs-1"
                style="width: 100px;"
           >
-            <div class="van-tab__pane">
+            <div class="van-tab__panel">
               content of tab 2
             </div>
           </div>
@@ -1018,7 +1018,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__content">
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-0"
       >
@@ -1026,7 +1026,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-1"
       >
@@ -1034,7 +1034,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-2"
       >
@@ -1042,7 +1042,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-3"
       >
@@ -1050,7 +1050,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-4"
       >
@@ -1058,7 +1058,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-5"
       >
@@ -1066,7 +1066,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-6"
       >
@@ -1074,7 +1074,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-7"
       >
@@ -1143,7 +1143,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-tabs__content">
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="0"
            aria-labelledby="van-tabs-0"
            style
@@ -1152,7 +1152,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-1"
            style="display: none;"
@@ -1160,7 +1160,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-2"
            style="display: none;"
@@ -1168,7 +1168,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div id="van-tab"
            role="tabpanel"
-           class="van-tab__pane"
+           class="van-tab__panel"
            tabindex="-1"
            aria-labelledby="van-tabs-3"
            style="display: none;"
