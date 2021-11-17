@@ -4,6 +4,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div role="switch"
        class="van-switch van-switch--on"
+       tabindex="0"
        aria-checked="true"
   >
     <div class="van-switch__node">
@@ -22,6 +23,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div role="switch"
        class="van-switch van-switch--on van-switch--loading"
+       tabindex="0"
        aria-checked="true"
   >
     <div class="van-switch__node">
@@ -46,6 +48,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div role="switch"
        class="van-switch van-switch--on"
        style="font-size: 24px;"
+       tabindex="0"
        aria-checked="true"
   >
     <div class="van-switch__node">
@@ -56,6 +59,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div role="switch"
        class="van-switch van-switch--on"
        style="background-color: rgb(238, 10, 36);"
+       tabindex="0"
        aria-checked="true"
   >
     <div class="van-switch__node">
@@ -65,6 +69,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div role="switch"
        class="van-switch van-switch--on"
+       tabindex="0"
        aria-checked="true"
   >
     <div class="van-switch__node">
@@ -81,6 +86,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div role="switch"
          class="van-switch van-switch--on"
          style="font-size: 24px;"
+         tabindex="0"
          aria-checked="true"
     >
       <div class="van-switch__node">
