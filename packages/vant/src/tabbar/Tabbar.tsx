@@ -69,6 +69,7 @@ export default defineComponent({
       return (
         <div
           ref={root}
+          role="tablist"
           style={getZIndexStyle(zIndex)}
           class={[
             bem({ fixed }),
