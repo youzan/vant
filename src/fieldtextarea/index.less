@@ -7,7 +7,7 @@
     align-items: center;
     &--clearwrap {
       position: relative;
-      padding-right: 20px;
+      padding-right: 5px;
     }
   }
   &__control {
@@ -82,6 +82,17 @@
     color: @field-clear-icon-color;
     font-size: @field-clear-icon-size;
     cursor: pointer;
+  }
+
+  &__word-limit {
+    margin-top: @padding-base;
+    color: @field-word-limit-color;
+    font-size: @field-word-limit-font-size;
+    line-height: @field-word-limit-line-height;
+    text-align: right;
+    position: absolute;
+    bottom: -6px;
+    right: 0;
   }
 }
 

@@ -161,7 +161,18 @@ export default createComponent({
       this.$emit('update:value', '');
       this.currentValue = '';
       this.$emit('clear', event);
-    }
+    },
+    genWordLimit() {
+      if ((this.showWordLimit && this.maxlength)) {
+        const count = (this.currentValue || '').length;
+
+        return (
+          <div class={bem('word-limit')}>
+            <span class={bem('word-num')}>{count}</span>/{this.maxlength}
+          </div>
+        );
+      }
+    },
   },
   watch: {
     value: {
@@ -210,6 +221,7 @@ export default createComponent({
               onTouchstart={this.onClear}
             />
         )}
+        {this.genWordLimit()}
       </div>
     );
   }
