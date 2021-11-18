@@ -42,7 +42,6 @@ export const popupMixinProps = {
     type: Boolean,
     default: true,
   },
-  onClickOverlay: Function
 };
 
 export function PopupMixin(options = {}) {

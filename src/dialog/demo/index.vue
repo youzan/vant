@@ -22,6 +22,7 @@
         :title="'退下' || t('title')"
         show-cancel-button
         :lazy-render="false"
+        :close-on-click-overlay="wagover"
       >
         <img :src="image" />
         <!-- <template #footer>77777</template> -->
@@ -77,13 +78,18 @@ export default {
 
   data() {
     return {
+      wagover: false,
       show: false,
       show2: false,
       currentRate: 0,
       image: 'https://img01.yzcdn.cn/vant/apple-3.jpg',
     };
   },
-
+  mounted(){
+    setTimeout(() => {
+      this.wagover = true;
+    }, 10000)
+  },
   methods: {
     onClickAlert() {
       this.$dialog.alert({

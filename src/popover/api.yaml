@@ -1,6 +1,6 @@
 - name: van-popover
   title: 气泡弹出框
-  icon: popper
+  icon: popup
   labels:
     - Navigation
   description: 将弹出式的气泡菜单.

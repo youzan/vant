@@ -77,7 +77,7 @@ export default createComponent({
       this.$emit(action);
 
       // show not trigger close event when hidden
-      if (!this.value) {
+      if (!this.realValue) {
         return;
       }
 
