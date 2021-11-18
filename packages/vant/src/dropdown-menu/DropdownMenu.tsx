@@ -21,6 +21,7 @@ import {
 } from '../utils';
 
 // Composables
+import { useId } from '../composables/use-id';
 import {
   useRect,
   useChildren,
@@ -54,6 +55,7 @@ export default defineComponent({
   props: dropdownMenuProps,
 
   setup(props, { slots }) {
+    const id = useId();
     const root = ref<HTMLElement>();
     const barRef = ref<HTMLElement>();
     const offset = ref(0);
@@ -115,6 +117,7 @@ export default defineComponent({
 
       return (
         <div
+          id={`${id}-${index}`}
           role="button"
           tabindex={disabled ? undefined : 0}
           class={[bem('item', { disabled }), { [HAPTICS_FEEDBACK]: !disabled }]}
@@ -140,7 +143,7 @@ export default defineComponent({
       );
     };
 
-    linkChildren({ props, offset });
+    linkChildren({ id, props, offset });
     useClickAway(root, onClickAway);
     useEventListener('scroll', onScroll, { target: scrollParent });
 

@@ -58,7 +58,7 @@ export default defineComponent({
       showWrapper: false,
     });
 
-    const { parent } = useParent(DROPDOWN_KEY);
+    const { parent, index } = useParent(DROPDOWN_KEY);
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
@@ -142,14 +142,16 @@ export default defineComponent({
       return (
         <Cell
           v-slots={{ value: renderIcon }}
-          clickable
+          role="menuitem"
           key={option.value}
           icon={option.icon}
           title={option.text}
           class={bem('option', { active })}
           style={{ color: active ? activeColor : '' }}
+          tabindex={active ? 0 : -1}
+          clickable
           onClick={onClick}
-        ></Cell>
+        />
       );
     };
 
@@ -175,12 +177,14 @@ export default defineComponent({
         >
           <Popup
             v-model:show={state.showPopup}
+            role="menu"
             class={bem('content')}
             overlay={overlay}
             position={direction === 'down' ? 'top' : 'bottom'}
             duration={state.transition ? duration : 0}
             lazyRender={props.lazyRender}
             overlayStyle={{ position: 'absolute' }}
+            aria-labelledby={`${parent.id}-${index.value}`}
             closeOnClickOverlay={closeOnClickOverlay}
             onOpen={onOpen}
             onClose={onClose}
