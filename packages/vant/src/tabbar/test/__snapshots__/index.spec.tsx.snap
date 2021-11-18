@@ -4,7 +4,9 @@ exports[`should render placeholder element when using placeholder prop 1`] = `
 <div class="van-tabbar__placeholder"
      style="height: 50px;"
 >
-  <div class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom">
+  <div role="tablist"
+       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  >
   </div>
 </div>
 `;

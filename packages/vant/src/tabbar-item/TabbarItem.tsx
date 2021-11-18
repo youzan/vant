@@ -89,8 +89,11 @@ export default defineComponent({
 
       return (
         <div
+          role="tab"
           class={bem({ active: active.value })}
           style={{ color }}
+          tabindex={0}
+          aria-selected={active.value}
           onClick={onClick}
         >
           <Badge
