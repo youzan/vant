@@ -1,7 +1,6 @@
 import { get } from 'lodash-es';
 import { existsSync, readFileSync } from 'fs';
-import { createRequire } from 'module';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { join, dirname, isAbsolute } from 'path';
 
 function findRootDir(dir: string): string {
@@ -58,11 +57,10 @@ export function getPackageJson() {
 }
 
 async function getVantConfigAsync() {
-  const require = createRequire(import.meta.url);
-  delete require.cache[VANT_CONFIG_FILE];
-
   try {
-    return (await import(VANT_CONFIG_FILE)).default;
+    // https://github.com/nodejs/node/issues/31710
+    // absolute file paths don't work on Windows
+    return (await import(pathToFileURL(VANT_CONFIG_FILE).href)).default;
   } catch (err) {
     return {};
   }
