@@ -3,8 +3,11 @@ import {
   createNamespace,
 } from '../utils';
 import { resetScroll } from '../utils/dom/reset-scroll';
+import { preventDefault } from '../utils/dom/event';
+
 
 import { FieldMixin } from '../mixins/field';
+import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('fieldinput');
 function equal(value1, value2) {
@@ -41,8 +44,12 @@ export default createComponent({
       type: Boolean,
       default: null,
     },
+    clearTrigger: {
+      type: String,
+      default: 'focus',
+    },
   },
-  data() {console.log(this.value)
+  data() {
     const defaultValue = this.value ?? this.defaultValue;
 
     return {
@@ -104,7 +111,7 @@ export default createComponent({
     },
 
     onFocus(event) {
-      // this.focused = true;
+      this.focused = true;
       this.$emit('focus', event);
       this.vanField && this.vanField.onFocus();
       // readonly not work in legacy mobile safari
@@ -116,6 +123,7 @@ export default createComponent({
     },
 
     onBlur(event) {
+      this.focused = false;
       this.updateValue(this.currentValue, 'onBlur');
       this.$emit('blur', event);
       // this.validateWithTrigger('onBlur');
@@ -123,6 +131,23 @@ export default createComponent({
       resetScroll();
       this.vanField && this.vanField.onBlur();
     },
+    showClear() {
+      const readonly = this.getProp('readonly');
+      if ((this.clearable && !readonly)) {
+        const hasValue = isDef(this.currentValue) && this.currentValue !== '';
+        const trigger =
+          this.clearTrigger === 'always' ||
+          (this.clearTrigger === 'focus' && this.focused);
+
+        return hasValue && trigger;
+      }
+    },
+    onClear(event) {
+      preventDefault(event);
+      this.$emit('input', '');
+      this.currentValue = '';
+      this.$emit('clear', event);
+    }
   },
   watch: {
     value: {
@@ -142,7 +167,8 @@ export default createComponent({
   render() {
     const inputAlign = this.vanField?.getProp('inputAlign');
     return (
-      <input
+      <div class={bem('newwrap', {'clearwrap': this.clearable})}>
+        <input
         // vShow={this.showInput}
         ref="input"
         type={this.type}
@@ -162,7 +188,15 @@ export default createComponent({
         onFocus={this.onFocus}
         onBlur={this.onBlur}
         // onMousedown={this.onMousedown}
-      />
+        />
+        {this.showClear() && (
+            <Icon
+              name="clear"
+              class={bem('clear')}
+              onTouchstart={this.onClear}
+            />
+        )}
+      </div>
     );
   }
 });

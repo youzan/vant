@@ -1,6 +1,15 @@
 @import '../style/var';
 
 .van-fieldinput {
+  &__newwrap {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    &--clearwrap {
+      position: relative;
+      padding-right: 20px;
+    }
+  }
   &__control {
     display: block;
     box-sizing: border-box;
@@ -59,5 +68,22 @@
       -webkit-appearance: none;
     }
   }
+
+  &__clear {
+    flex-shrink: 0;
+  }
+
+  &__clear {
+    margin-right: -@padding-xs;
+    padding: 0 @padding-xs;
+    line-height: inherit;
+  }
+
+  &__clear {
+    color: @field-clear-icon-color;
+    font-size: @field-clear-icon-size;
+    cursor: pointer;
+  }
+
 }
 

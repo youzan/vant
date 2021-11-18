@@ -192,15 +192,7 @@ export default createComponent({
 
   methods: {
     showClear() {
-      let child = null;
-      if (this.children && (this.children.$options._componentTag === 'van-fieldinput' || this.children.$options._componentTag === 'van-fieldtextarea')) {
-        child = this.children;
-      }
-
       const readonly = this.getProp('readonly');
-      if ((child && child.clearable && !child.readonly)) {
-        return true;
-      }
       if ((this.clearable && !readonly)) {
         const hasValue = isDef(this.value) && this.value !== '';
         const trigger =
@@ -479,9 +471,6 @@ export default createComponent({
       preventDefault(event);
       this.$emit('input', '');
       this.$emit('clear', event);
-      if (this.children && (this.children.$options._componentTag === 'van-fieldinput' || this.children.$options._componentTag === 'van-fieldtextarea')) {
-        this.children.currentValue = '';
-      }
     },
 
     onKeypress(event) {
@@ -657,13 +646,12 @@ export default createComponent({
     },
 
     genWordLimit() {
-      const childlmit = this.children;
-      if ((this.showWordLimit && this.maxlength) || (childlmit && comSet.has(this.children.$options._componentTag) && childlmit.showWordLimit && childlmit.maxlength)) {
+      if ((this.showWordLimit && this.maxlength)) {
         const count = (this.value || '').length;
 
         return (
           <div class={bem('word-limit')}>
-            <span class={bem('word-num')}>{count}</span>/{this.maxlength || childlmit.maxlength}
+            <span class={bem('word-num')}>{count}</span>/{this.maxlength}
           </div>
         );
       }
