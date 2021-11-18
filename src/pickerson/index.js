@@ -14,6 +14,7 @@ export default createComponent({
       type: String,
       default: '左侧标题'
     },
+    closeOnClickOverlay: Boolean
   },
 
   data() {
@@ -63,7 +64,8 @@ export default createComponent({
           ref="popforpison"
           class={bem('popup')}
           position={'bottom'}
-          onClickOverlay={this.togglePopup}
+          closeOnClickOverlay={this.closeOnClickOverlay}
+          // onClickOverlay={this.togglePopup}
         >
           <Picker
             {...{attrs: {...this.$attrs}}}

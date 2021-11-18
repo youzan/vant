@@ -45,7 +45,7 @@ export default createComponent({
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
 
@@ -367,8 +367,8 @@ export default createComponent({
           ref="popforcas"
           class={bem('popup')}
           position={'bottom'}
-          closeOnClickOverlay={true}
-          onClickOverlay={this.togglePopup}
+          closeOnClickOverlay={this.closeOnClickOverlay}
+          // onClickOverlay={this.togglePopup}
         >
           <div class={bem()}>
             {this.renderHeader()}

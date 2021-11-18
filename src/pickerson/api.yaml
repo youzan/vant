@@ -53,6 +53,11 @@
       type: number
       default: 6
       description: 可见选项个数
+    - name: close-on-click-overlay
+      title: 点击遮罩层后关闭
+      type: boolean
+      default: false
+      description: 是否在点击遮罩层后关闭
   slots: false
   events:
     - name: confirm

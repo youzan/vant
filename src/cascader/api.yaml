@@ -37,6 +37,11 @@
       type: string, object
       default: "{'text':'','value':'','children':'children'}"
       description: 自定义 options 结构中的字段
+    - name: close-on-click-overlay
+      title: 点击遮罩层后关闭
+      type: boolean
+      default: false
+      description: 是否在点击遮罩层后关闭
   slots: false
   events:
     - name: finish

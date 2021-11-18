@@ -47,6 +47,11 @@
       type: number
       default: 3
       description: 显示列数，3-省市区，2-省市，1-省
+    - name: close-on-click-overlay
+      title: 点击遮罩层后关闭
+      type: boolean
+      default: false
+      description: 是否在点击遮罩层后关闭
   slots: false
   events:
     - name: confirm

@@ -97,7 +97,7 @@ export default createComponent({
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     safeAreaInsetBottom: {
       type: Boolean,
@@ -129,20 +129,11 @@ export default createComponent({
       currentDate: this.getInitialDate(),
       valuepopup: false,
       value: false,
+      getTitle: '',
     };
   },
 
   computed: {
-    getTitle() {
-      if (this.defaultDate) {
-        if (Array.isArray(this.defaultDate)) {
-          return this.defaultDate.reduce((p, c) => p + (isDate(c) ? c.formath("yyyy/MM/dd") : c)+'-', '');
-        } else {
-          return isDate(this.defaultDate) ? this.defaultDate.formath("yyyy/MM/dd") : this.defaultDate;
-        }
-      }
-      return '';
-    },
     months() {
       const months = [];
       const cursor = transErrorDate(this.minDate, 'min');
@@ -475,8 +466,19 @@ export default createComponent({
       this.$emit('confirm', copyDates(this.currentDate));
       this.$emit('update:default-date', copyDates(this.currentDate));
       this.togglePopup();
+      this.setTitle();
     },
-
+    setTitle() {
+      if (this.currentDate) {
+        if (Array.isArray(this.currentDate)) {
+          this.getTitle = this.currentDate.reduce((p, c) => p + (isDate(c) ? c.formath("yyyy/MM/dd") : c)+'-', '');
+        } else {
+          this.getTitle =  isDate(this.currentDate) ? this.currentDate.formath("yyyy/MM/dd") : this.currentDate;
+        }
+      } else {
+        this.getTitle = '';
+      }
+    },
     genMonth(date, index) {
       const showMonthTitle = index !== 0 || !this.showSubtitle;
       return (
@@ -585,11 +587,11 @@ export default createComponent({
           round={this.round}
           position={this.position}
           ref="popforcas"
-          onClickOverlay={this.togglePopup}
+          // onClickOverlay={this.togglePopup}
           // closeable={this.showTitle || this.showSubtitle}
           // getContainer={this.getContainer}
           // closeOnPopstate={this.closeOnPopstate}
-          closeOnClickOverlay={true || this.disabled || this.readonly}
+          closeOnClickOverlay={this.closeOnClickOverlay}
           // onInput={this.togglePopup}
           // onOpen={createListener('open')}
           // onOpened={createListener('opened')}
