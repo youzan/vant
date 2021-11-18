@@ -1,5 +1,5 @@
 import { Ref, unref } from 'vue';
-import { inBrowser } from '..';
+import { inBrowser } from '../utils';
 import { useEventListener } from '../useEventListener';
 
 export type UseClickAwayOptions = {
