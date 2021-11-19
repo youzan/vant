@@ -41,6 +41,6 @@ export default defineComponent({
       setActive,
     });
 
-    return () => <div class={bem()}>{slots.default?.()}</div>;
+    return () => <div role="tablist" class={bem()}>{slots.default?.()}</div>;
   },
 });

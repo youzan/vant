@@ -9,22 +9,36 @@ exports[`should render demo and match snapshot 1`] = `
       <h3 class="demo-sidebar-title">
         Basic Usage
       </h3>
-      <div class="van-sidebar">
-        <a class="van-sidebar-item van-sidebar-item--select">
+      <div role="tablist"
+           class="van-sidebar"
+      >
+        <div role="tab"
+             class="van-sidebar-item van-sidebar-item--select"
+             tabindex="0"
+             aria-selected="true"
+        >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title
           </div>
-        </a>
-        <a class="van-sidebar-item">
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title
           </div>
-        </a>
-        <a class="van-sidebar-item">
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>
@@ -35,30 +49,44 @@ exports[`should render demo and match snapshot 1`] = `
       <h3 class="demo-sidebar-title">
         Show Badge
       </h3>
-      <div class="van-sidebar">
-        <a class="van-sidebar-item van-sidebar-item--select">
+      <div role="tablist"
+           class="van-sidebar"
+      >
+        <div role="tab"
+             class="van-sidebar-item van-sidebar-item--select"
+             tabindex="0"
+             aria-selected="true"
+        >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title
             <div class="van-badge van-badge--dot van-badge--fixed">
             </div>
           </div>
-        </a>
-        <a class="van-sidebar-item">
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title
             <div class="van-badge van-badge--fixed">
               5
             </div>
           </div>
-        </a>
-        <a class="van-sidebar-item">
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title
             <div class="van-badge van-badge--fixed">
               20
             </div>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>
@@ -69,22 +97,35 @@ exports[`should render demo and match snapshot 1`] = `
       <h3 class="demo-sidebar-title">
         Disabled
       </h3>
-      <div class="van-sidebar">
-        <a class="van-sidebar-item van-sidebar-item--select">
+      <div role="tablist"
+           class="van-sidebar"
+      >
+        <div role="tab"
+             class="van-sidebar-item van-sidebar-item--select"
+             tabindex="0"
+             aria-selected="true"
+        >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title
           </div>
-        </a>
-        <a class="van-sidebar-item van-sidebar-item--disabled">
+        </div>
+        <div role="tab"
+             class="van-sidebar-item van-sidebar-item--disabled"
+             aria-selected="false"
+        >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title
           </div>
-        </a>
-        <a class="van-sidebar-item">
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>
@@ -95,22 +136,36 @@ exports[`should render demo and match snapshot 1`] = `
       <h3 class="demo-sidebar-title">
         Change Event
       </h3>
-      <div class="van-sidebar">
-        <a class="van-sidebar-item van-sidebar-item--select">
+      <div role="tablist"
+           class="van-sidebar"
+      >
+        <div role="tab"
+             class="van-sidebar-item van-sidebar-item--select"
+             tabindex="0"
+             aria-selected="true"
+        >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title 1
           </div>
-        </a>
-        <a class="van-sidebar-item">
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title 2
           </div>
-        </a>
-        <a class="van-sidebar-item">
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title 3
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>
