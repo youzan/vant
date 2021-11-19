@@ -5,9 +5,9 @@ import type {
   UploaderFileListItem,
 } from './types';
 
-const [name, bem] = createNamespace('uploader');
+const [name, bem, t] = createNamespace('uploader');
 
-export { name, bem };
+export { name, bem, t };
 
 export const toArray = <T>(item: T | T[]): T[] =>
   Array.isArray(item) ? item : [item];

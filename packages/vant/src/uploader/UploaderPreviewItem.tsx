@@ -1,7 +1,7 @@
 import { PropType, defineComponent } from 'vue';
 
 // Utils
-import { bem, isImageFile } from './utils';
+import { t, bem, isImageFile } from './utils';
 import {
   isDef,
   extend,
@@ -71,7 +71,13 @@ export default defineComponent({
     const renderDeleteIcon = () => {
       if (props.deletable && props.item.status !== 'uploading') {
         return (
-          <div class={bem('preview-delete')} onClick={onDelete}>
+          <div
+            role="button"
+            class={bem('preview-delete')}
+            tabindex={0}
+            aria-label={t('delete')}
+            onClick={onDelete}
+          >
             <Icon name="cross" class={bem('preview-delete-icon')} />
           </div>
         );
