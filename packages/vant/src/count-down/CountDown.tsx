@@ -58,7 +58,7 @@ export default defineComponent({
     });
 
     return () => (
-      <div class={bem()}>
+      <div role="timer" class={bem()}>
         {slots.default ? slots.default(current.value) : timeText.value}
       </div>
     );
