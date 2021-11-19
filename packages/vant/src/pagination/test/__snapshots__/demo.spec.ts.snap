@@ -7,37 +7,41 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <ul class="van-pagination__items">
       <li class="van-pagination__item van-pagination__item--disabled van-pagination__item--prev van-hairline--surround">
-        <button disabled>
+        <button type="button"
+                disabled
+        >
           Prev
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--active van-pagination__item--page van-hairline--surround">
-        <button aria-current="true">
+        <button type="button"
+                aria-current="true"
+        >
           1
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-        <button>
+        <button type="button">
           2
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-        <button>
+        <button type="button">
           3
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-        <button>
+        <button type="button">
           4
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-        <button>
+        <button type="button">
           5
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--next van-hairline--surround">
-        <button>
+        <button type="button">
           Next
         </button>
       </li>
@@ -51,7 +55,9 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <ul class="van-pagination__items">
       <li class="van-pagination__item van-pagination__item--disabled van-pagination__item--border van-pagination__item--prev van-hairline--surround">
-        <button disabled>
+        <button type="button"
+                disabled
+        >
           Prev
         </button>
       </li>
@@ -59,7 +65,7 @@ exports[`should render demo and match snapshot 1`] = `
         1/12
       </li>
       <li class="van-pagination__item van-pagination__item--border van-pagination__item--next van-hairline--surround">
-        <button>
+        <button type="button">
           Next
         </button>
       </li>
@@ -72,32 +78,36 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <ul class="van-pagination__items">
       <li class="van-pagination__item van-pagination__item--disabled van-pagination__item--prev van-hairline--surround">
-        <button disabled>
+        <button type="button"
+                disabled
+        >
           Prev
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--active van-pagination__item--page van-hairline--surround">
-        <button aria-current="true">
+        <button type="button"
+                aria-current="true"
+        >
           1
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-        <button>
+        <button type="button">
           2
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-        <button>
+        <button type="button">
           3
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-        <button>
+        <button type="button">
           ...
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--next van-hairline--surround">
-        <button>
+        <button type="button">
           Next
         </button>
       </li>
@@ -110,38 +120,42 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <ul class="van-pagination__items">
       <li class="van-pagination__item van-pagination__item--disabled van-pagination__item--prev van-hairline--surround">
-        <button disabled>
+        <button type="button"
+                disabled
+        >
           <i class="van-badge__wrapper van-icon van-icon-arrow-left">
           </i>
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--active van-pagination__item--page van-hairline--surround">
-        <button aria-current="true">
+        <button type="button"
+                aria-current="true"
+        >
           1
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-        <button>
+        <button type="button">
           2
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-        <button>
+        <button type="button">
           3
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-        <button>
+        <button type="button">
           4
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-        <button>
+        <button type="button">
           5
         </button>
       </li>
       <li class="van-pagination__item van-pagination__item--next van-hairline--surround">
-        <button>
+        <button type="button">
           <i class="van-badge__wrapper van-icon van-icon-arrow">
           </i>
         </button>

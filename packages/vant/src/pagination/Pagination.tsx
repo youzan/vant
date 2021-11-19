@@ -133,6 +133,7 @@ export default defineComponent({
           ]}
         >
           <button
+            type="button"
             disabled={disabled}
             onClick={() => updateModelValue(modelValue - 1)}
           >
@@ -154,6 +155,7 @@ export default defineComponent({
           ]}
         >
           <button
+            type="button"
             disabled={disabled}
             onClick={() => updateModelValue(modelValue + 1)}
           >
@@ -172,6 +174,7 @@ export default defineComponent({
           ]}
         >
           <button
+            type="button"
             aria-current={page.active || undefined}
             onClick={() => updateModelValue(page.number)}
           >

@@ -6,37 +6,37 @@ exports[`should render page slot correctly 1`] = `
 >
   <ul class="van-pagination__items">
     <li class="van-pagination__item van-pagination__item--prev van-hairline--surround">
-      <button>
+      <button type="button">
         Previous
       </button>
     </li>
     <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-      <button>
+      <button type="button">
         foo 1
       </button>
     </li>
     <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-      <button>
+      <button type="button">
         foo 2
       </button>
     </li>
     <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-      <button>
+      <button type="button">
         foo 3
       </button>
     </li>
     <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-      <button>
+      <button type="button">
         foo 4
       </button>
     </li>
     <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-      <button>
+      <button type="button">
         foo 5
       </button>
     </li>
     <li class="van-pagination__item van-pagination__item--next van-hairline--surround">
-      <button>
+      <button type="button">
         Next
       </button>
     </li>
@@ -50,37 +50,37 @@ exports[`should render prev-text、next-text slot correctly 1`] = `
 >
   <ul class="van-pagination__items">
     <li class="van-pagination__item van-pagination__item--prev van-hairline--surround">
-      <button>
+      <button type="button">
         Custom PrevText
       </button>
     </li>
     <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-      <button>
+      <button type="button">
         1
       </button>
     </li>
     <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-      <button>
+      <button type="button">
         2
       </button>
     </li>
     <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-      <button>
+      <button type="button">
         3
       </button>
     </li>
     <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-      <button>
+      <button type="button">
         4
       </button>
     </li>
     <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
-      <button>
+      <button type="button">
         5
       </button>
     </li>
     <li class="van-pagination__item van-pagination__item--next van-hairline--surround">
-      <button>
+      <button type="button">
         Custom NextText
       </button>
     </li>
