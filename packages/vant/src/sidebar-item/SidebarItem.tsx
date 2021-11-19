@@ -57,11 +57,17 @@ export default defineComponent({
       const selected = index.value === parent.getActive();
 
       return (
-        <a class={bem({ select: selected, disabled })} onClick={onClick}>
+        <div
+          role="tab"
+          class={bem({ select: selected, disabled })}
+          tabindex={disabled ? undefined : 0}
+          aria-selected={selected}
+          onClick={onClick}
+        >
           <Badge dot={dot} content={badge} class={bem('text')}>
             {slots.title ? slots.title() : title}
           </Badge>
-        </a>
+        </div>
       );
     };
   },
