@@ -1,53 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render page slot correctly 1`] = `
-<ul class="van-pagination">
-  <li class="van-pagination__item van-pagination__prev van-hairline">
-    Previous
-  </li>
-  <li class="van-pagination__item van-pagination__page van-hairline">
-    foo 1
-  </li>
-  <li class="van-pagination__item van-pagination__page van-hairline">
-    foo 2
-  </li>
-  <li class="van-pagination__item van-pagination__page van-hairline">
-    foo 3
-  </li>
-  <li class="van-pagination__item van-pagination__page van-hairline">
-    foo 4
-  </li>
-  <li class="van-pagination__item van-pagination__page van-hairline">
-    foo 5
-  </li>
-  <li class="van-pagination__item van-pagination__next van-hairline">
-    Next
-  </li>
-</ul>
+<nav role="navigation"
+     class="van-pagination"
+>
+  <ul class="van-pagination__items">
+    <li class="van-pagination__item van-pagination__item--prev van-hairline--surround">
+      <button>
+        Previous
+      </button>
+    </li>
+    <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+      <button>
+        foo 1
+      </button>
+    </li>
+    <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+      <button>
+        foo 2
+      </button>
+    </li>
+    <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+      <button>
+        foo 3
+      </button>
+    </li>
+    <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+      <button>
+        foo 4
+      </button>
+    </li>
+    <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+      <button>
+        foo 5
+      </button>
+    </li>
+    <li class="van-pagination__item van-pagination__item--next van-hairline--surround">
+      <button>
+        Next
+      </button>
+    </li>
+  </ul>
+</nav>
 `;
 
 exports[`should render prev-text、next-text slot correctly 1`] = `
-<ul class="van-pagination">
-  <li class="van-pagination__item van-pagination__prev van-hairline">
-    Custom PrevText
-  </li>
-  <li class="van-pagination__item van-pagination__page van-hairline">
-    1
-  </li>
-  <li class="van-pagination__item van-pagination__page van-hairline">
-    2
-  </li>
-  <li class="van-pagination__item van-pagination__page van-hairline">
-    3
-  </li>
-  <li class="van-pagination__item van-pagination__page van-hairline">
-    4
-  </li>
-  <li class="van-pagination__item van-pagination__page van-hairline">
-    5
-  </li>
-  <li class="van-pagination__item van-pagination__next van-hairline">
-    Custom NextText
-  </li>
-</ul>
+<nav role="navigation"
+     class="van-pagination"
+>
+  <ul class="van-pagination__items">
+    <li class="van-pagination__item van-pagination__item--prev van-hairline--surround">
+      <button>
+        Custom PrevText
+      </button>
+    </li>
+    <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+      <button>
+        1
+      </button>
+    </li>
+    <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+      <button>
+        2
+      </button>
+    </li>
+    <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+      <button>
+        3
+      </button>
+    </li>
+    <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+      <button>
+        4
+      </button>
+    </li>
+    <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+      <button>
+        5
+      </button>
+    </li>
+    <li class="van-pagination__item van-pagination__item--next van-hairline--surround">
+      <button>
+        Custom NextText
+      </button>
+    </li>
+  </ul>
+</nav>
 `;
