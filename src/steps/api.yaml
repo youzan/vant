@@ -5,11 +5,12 @@
     - Display
   description: 用于展示操作流程的各个环节，让用户了解当前的操作在整体流程中的位置。
   attrs:
-    - name: value
+    - name: active
       title: 值
       type: number,string
       sync: true
       model: true
+      default: 0
       description: 值
     - name: direction
       title: 显示方向

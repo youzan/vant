@@ -5,6 +5,12 @@
     - Display
   description: 将一组内容放置在多个折叠面板中，点击面板的标题可以展开或收缩其内容。
   attrs:
+    - name: valueprop
+      title: 值
+      type: number,string
+      sync: true
+      model: true
+      description: 值
     - name: accordion
       title: 是否开启手风琴模式
       type: boolean

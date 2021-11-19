@@ -39,7 +39,7 @@
       support:
         - name: van-dropdown-menu
           title: 菜单项
-          snippet: '<van-dropdown-item title="标题"></van-dropdown-item>'
+          snippet: '<van-dropdown-item title="标题"><van-cell clickable title="标题1" novalue :isLink="false"></van-cell></van-dropdown-item>'
 - name: van-dropdown-item
   title: 菜单项
   attrs:

@@ -44,7 +44,7 @@ export default createComponent({
       showPopup: false,
       showWrapper: false,
       bem,
-      value: this.valueprop || 0,
+      value: this.valueprop,
     };
   },
 
@@ -56,7 +56,7 @@ export default createComponent({
     // },
     displayTitle() {
       const match1 = this.children.filter(
-        (option) => option.value ?? option.index === this.value
+        (option) => option.value ?? option.value === this.value
       );
       const match = this.options.filter(
         (option) => option.value === this.value

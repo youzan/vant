@@ -20,6 +20,11 @@ export default createComponent({
       value: this.valueprop ?? (this.accordion ? 0 : [0])
     }
   },
+  watch: {
+    valueprop(val) {
+      this.value = val;
+    }
+  },
   methods: {
     switch(name, expanded) {
       if (!this.accordion) {
