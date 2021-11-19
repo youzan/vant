@@ -247,14 +247,14 @@ export default defineComponent({
       // fix mobile safari page scroll down issue
       // see: https://github.com/youzan/vant/issues/7690
       if (props.disableInput) {
-        event.preventDefault();
+        preventDefault(event);
       }
     };
 
-    const createListeners = (type: 'plus' | 'minus') => ({
+    const createListeners = (type: typeof actionType) => ({
       onClick: (event: MouseEvent) => {
         // disable double tap scrolling on mobile safari
-        event.preventDefault();
+        preventDefault(event);
         actionType = type;
         onChange();
       },
@@ -267,12 +267,7 @@ export default defineComponent({
     });
 
     watch(
-      [
-        () => props.max,
-        () => props.min,
-        () => props.integer,
-        () => props.decimalLength,
-      ],
+      () => [props.max, props.min, props.integer, props.decimalLength],
       check
     );
 
@@ -293,7 +288,7 @@ export default defineComponent({
     useCustomFieldValue(() => props.modelValue);
 
     return () => (
-      <div class={bem([props.theme])}>
+      <div role="group" class={bem([props.theme])}>
         <button
           v-show={props.showMinus}
           type="button"
@@ -302,6 +297,7 @@ export default defineComponent({
             bem('minus', { disabled: minusDisabled.value }),
             { [HAPTICS_FEEDBACK]: !minusDisabled.value },
           ]}
+          aria-disabled={minusDisabled.value || undefined}
           {...createListeners('minus')}
         />
         <input
@@ -317,9 +313,9 @@ export default defineComponent({
           // set keyboard in modern browsers
           inputmode={props.integer ? 'numeric' : 'decimal'}
           placeholder={props.placeholder}
-          aria-valuemax={+props.max}
-          aria-valuemin={+props.min}
-          aria-valuenow={+current.value}
+          aria-valuemax={props.max}
+          aria-valuemin={props.min}
+          aria-valuenow={current.value}
           onBlur={onBlur}
           onInput={onInput}
           onFocus={onFocus}
@@ -333,6 +329,7 @@ export default defineComponent({
             bem('plus', { disabled: plusDisabled.value }),
             { [HAPTICS_FEEDBACK]: !plusDisabled.value },
           ]}
+          aria-disabled={plusDisabled.value || undefined}
           {...createListeners('plus')}
         />
       </div>

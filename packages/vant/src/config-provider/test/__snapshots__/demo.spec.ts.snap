@@ -5,7 +5,9 @@ exports[`should render demo and match snapshot 1`] = `
   <form class="van-form">
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <label>
+        <label id="van-field-label"
+               for="van-field-input"
+        >
           Rate
         </label>
       </div>
@@ -15,6 +17,8 @@ exports[`should render demo and match snapshot 1`] = `
             <div role="radiogroup"
                  class="van-rate"
                  tabindex="0"
+                 aria-disabled="false"
+                 aria-readonly="false"
             >
               <div role="radio"
                    class="van-rate__item"
@@ -73,7 +77,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell van-field">
       <div class="van-cell__title van-field__label">
-        <label>
+        <label id="van-field-label"
+               for="van-field-input"
+        >
           Slider
         </label>
       </div>
@@ -121,7 +127,9 @@ exports[`should render demo and match snapshot 1`] = `
     <form class="van-form">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Rate
           </label>
         </div>
@@ -131,6 +139,8 @@ exports[`should render demo and match snapshot 1`] = `
               <div role="radiogroup"
                    class="van-rate"
                    tabindex="0"
+                   aria-disabled="false"
+                   aria-readonly="false"
               >
                 <div role="radio"
                      class="van-rate__item"
@@ -189,7 +199,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label>
+          <label id="van-field-label"
+                 for="van-field-input"
+          >
             Slider
           </label>
         </div>

@@ -115,7 +115,12 @@ export default defineComponent({
         const text = slots.error ? slots.error() : props.errorText;
         if (text) {
           return (
-            <div class={bem('error-text')} onClick={clickErrorText}>
+            <div
+              role="button"
+              class={bem('error-text')}
+              tabindex={0}
+              onClick={clickErrorText}
+            >
               {text}
             </div>
           );
@@ -139,10 +144,7 @@ export default defineComponent({
       }
     };
 
-    watch(
-      [() => props.loading, () => props.finished, () => props.error],
-      check
-    );
+    watch(() => [props.loading, props.finished, props.error], check);
 
     if (tabStatus) {
       watch(tabStatus, (tabActive) => {

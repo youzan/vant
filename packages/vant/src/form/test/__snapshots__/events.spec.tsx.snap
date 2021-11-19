@@ -6,6 +6,7 @@ exports[`should emit failed event when validating failed 1`] = `
     <div class="van-cell__value van-cell__value--alone van-field__value">
       <div class="van-field__body">
         <input type="text"
+               id="van-field-input"
                name="A"
                class="van-field__control"
         >
@@ -19,6 +20,7 @@ exports[`should emit failed event when validating failed 1`] = `
     <div class="van-cell__value van-cell__value--alone van-field__value">
       <div class="van-field__body">
         <input type="text"
+               id="van-field-input"
                name="B"
                class="van-field__control"
         >

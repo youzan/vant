@@ -8,6 +8,7 @@ export default defineComponent({
   name,
 
   props: {
+    id: String,
     dot: Boolean,
     type: String,
     color: String,
@@ -15,6 +16,7 @@ export default defineComponent({
     badge: numericProp,
     isActive: Boolean,
     disabled: Boolean,
+    controls: String,
     scrollable: Boolean,
     activeColor: String,
     renderTitle: Function,
@@ -75,6 +77,7 @@ export default defineComponent({
 
     return () => (
       <div
+        id={props.id}
         role="tab"
         class={[
           bem({
@@ -83,7 +86,10 @@ export default defineComponent({
           }),
         ]}
         style={style.value}
+        tabindex={props.disabled ? undefined : props.isActive ? 0 : -1}
         aria-selected={props.isActive}
+        aria-disabled={props.disabled || undefined}
+        aria-controls={props.controls}
       >
         {renderText()}
       </div>

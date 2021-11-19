@@ -173,6 +173,8 @@ export default defineComponent({
           role="menuitem"
           class={[bem('action', { disabled, 'with-icon': icon }), className]}
           style={{ color }}
+          tabindex={disabled ? undefined : 0}
+          aria-disabled={disabled || undefined}
           onClick={() => onClickAction(action, index)}
         >
           {icon && (

@@ -11,8 +11,11 @@
 }
 
 .van-pagination {
-  display: flex;
   font-size: var(--van-pagination-font-size);
+
+  &__items {
+    display: flex;
+  }
 
   &__item,
   &__page-desc {
@@ -31,58 +34,56 @@
     cursor: pointer;
     user-select: none;
 
+    button {
+      flex: 1;
+      height: 100%;
+      border: none;
+      padding: 0;
+      background: transparent;
+
+      &[disabled] {
+        cursor: not-allowed;
+      }
+    }
+
     &:active {
       color: var(--van-white);
       background-color: var(--van-pagination-item-default-color);
     }
 
-    &::after {
-      border-width: var(--van-border-width) 0 var(--van-border-width)
-        var(--van-border-width);
-    }
-
-    &:last-child::after {
-      border-right-width: var(--van-border-width);
+    &:not(:last-child)::after {
+      border-right-width: 0;
     }
 
     &--active {
       color: var(--van-white);
       background-color: var(--van-pagination-item-default-color);
     }
-  }
 
-  &__prev,
-  &__next {
-    padding: 0 var(--van-padding-base);
-    cursor: pointer;
-  }
+    &--page {
+      flex-grow: 0;
+    }
 
-  &__item--disabled {
-    &,
-    &:active {
+    &--prev,
+    &--next {
+      padding: 0 var(--van-padding-base);
+      cursor: pointer;
+    }
+
+    &--border::after {
+      border-width: var(--van-border-width);
+    }
+
+    &--disabled {
       color: var(--van-pagination-item-disabled-color);
       background-color: var(--van-pagination-item-disabled-background);
-      cursor: not-allowed;
       opacity: var(--van-pagination-disabled-opacity);
     }
-  }
-
-  &__page {
-    flex-grow: 0;
   }
 
   &__page-desc {
     flex: 1;
     height: var(--van-pagination-height);
     color: var(--van-pagination-desc-color);
-  }
-
-  &--simple {
-    .van-pagination__prev,
-    .van-pagination__next {
-      &::after {
-        border-width: var(--van-border-width);
-      }
-    }
   }
 }

@@ -259,5 +259,5 @@ test('should render options-top、options-bottom slots correctly', async () => {
     .find('.van-cascader__option')
     .trigger('click');
 
-  expect(wrapper.find('.van-tab__pane').html()).toMatchSnapshot();
+  expect(wrapper.find('.van-tab__panel').html()).toMatchSnapshot();
 });

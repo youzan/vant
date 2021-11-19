@@ -12,6 +12,7 @@ import {
   isDef,
   truthProp,
   numericProp,
+  windowHeight,
   makeStringProp,
   makeNumericProp,
   createNamespace,
@@ -20,6 +21,7 @@ import {
 } from '../utils';
 
 // Composables
+import { useId } from '../composables/use-id';
 import {
   useRect,
   useChildren,
@@ -53,6 +55,7 @@ export default defineComponent({
   props: dropdownMenuProps,
 
   setup(props, { slots }) {
+    const id = useId();
     const root = ref<HTMLElement>();
     const barRef = ref<HTMLElement>();
     const offset = ref(0);
@@ -86,7 +89,7 @@ export default defineComponent({
         if (props.direction === 'down') {
           offset.value = rect.bottom;
         } else {
-          offset.value = window.innerHeight - rect.top;
+          offset.value = windowHeight.value - rect.top;
         }
       }
     };
@@ -114,8 +117,9 @@ export default defineComponent({
 
       return (
         <div
+          id={`${id}-${index}`}
           role="button"
-          tabindex={disabled ? -1 : 0}
+          tabindex={disabled ? undefined : 0}
           class={[bem('item', { disabled }), { [HAPTICS_FEEDBACK]: !disabled }]}
           onClick={() => {
             if (!disabled) {
@@ -139,7 +143,7 @@ export default defineComponent({
       );
     };
 
-    linkChildren({ props, offset });
+    linkChildren({ id, props, offset });
     useClickAway(root, onClickAway);
     useEventListener('scroll', onScroll, { target: scrollParent });
 

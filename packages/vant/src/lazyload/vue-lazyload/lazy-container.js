@@ -14,7 +14,7 @@ class LazyContainer {
     this.options = {};
     this.lazy = lazy;
 
-    this._queue = [];
+    this.queue = [];
     this.update({ el, binding });
   }
 
@@ -61,7 +61,7 @@ class LazyContainer {
 export default class LazyContainerManager {
   constructor({ lazy }) {
     this.lazy = lazy;
-    this._queue = [];
+    this.queue = [];
   }
 
   bind(el, binding, vnode) {
@@ -71,19 +71,19 @@ export default class LazyContainerManager {
       vnode,
       lazy: this.lazy,
     });
-    this._queue.push(container);
+    this.queue.push(container);
   }
 
   update(el, binding, vnode) {
-    const container = this._queue.find((item) => item.el === el);
+    const container = this.queue.find((item) => item.el === el);
     if (!container) return;
     container.update({ el, binding, vnode });
   }
 
   unbind(el) {
-    const container = this._queue.find((item) => item.el === el);
+    const container = this.queue.find((item) => item.el === el);
     if (!container) return;
     container.clear();
-    remove(this._queue, container);
+    remove(this.queue, container);
   }
 }

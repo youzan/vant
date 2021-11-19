@@ -9,9 +9,12 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div class="van-stepper">
+      <div role="group"
+           class="van-stepper"
+      >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -36,9 +39,12 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div class="van-stepper">
+      <div role="group"
+           class="van-stepper"
+      >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -63,9 +69,12 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div class="van-stepper">
+      <div role="group"
+           class="van-stepper"
+      >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -90,9 +99,12 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div class="van-stepper">
+      <div role="group"
+           class="van-stepper"
+      >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="tel"
@@ -117,9 +129,12 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div class="van-stepper">
+      <div role="group"
+           class="van-stepper"
+      >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -133,6 +148,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
         <button type="button"
                 class="van-stepper__plus van-stepper__plus--disabled"
+                aria-disabled="true"
         >
         </button>
       </div>
@@ -145,9 +161,12 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div class="van-stepper">
+      <div role="group"
+           class="van-stepper"
+      >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -173,9 +192,12 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div class="van-stepper">
+      <div role="group"
+           class="van-stepper"
+      >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -184,7 +206,7 @@ exports[`should render demo and match snapshot 1`] = `
                inputmode="decimal"
                aria-valuemax="Infinity"
                aria-valuemin="1"
-               aria-valuenow="1"
+               aria-valuenow="1.0"
         >
         <button type="button"
                 class="van-stepper__plus van-haptics-feedback"
@@ -200,10 +222,13 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div class="van-stepper">
+      <div role="group"
+           class="van-stepper"
+      >
         <button type="button"
                 style="width: 32px; height: 32px;"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -230,9 +255,12 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div class="van-stepper">
+      <div role="group"
+           class="van-stepper"
+      >
         <button type="button"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"
@@ -257,10 +285,13 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div class="van-stepper van-stepper--round">
+      <div role="group"
+           class="van-stepper van-stepper--round"
+      >
         <button type="button"
                 style="width: 22px; height: 22px;"
                 class="van-stepper__minus van-stepper__minus--disabled"
+                aria-disabled="true"
         >
         </button>
         <input type="text"

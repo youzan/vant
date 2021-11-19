@@ -5,18 +5,25 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-tabs__wrap">
     <div role="tablist"
          class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
     >
-      <div role="tab"
+      <div id="van-tabs-0"
+           role="tab"
            class="van-tab van-tab--active"
+           tabindex="0"
            aria-selected="true"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           Basic Usage
         </span>
       </div>
-      <div role="tab"
+      <div id="van-tabs-1"
+           role="tab"
            class="van-tab"
+           tabindex="-1"
            aria-selected="false"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           Custom Index List
@@ -29,8 +36,11 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div role="tabpanel"
-         class="van-tab__pane"
+    <div id="van-tab"
+         role="tabpanel"
+         class="van-tab__panel"
+         tabindex="0"
+         aria-labelledby="van-tabs-0"
          style
     >
       <div class="van-index-bar">
@@ -898,8 +908,11 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
     </div>
-    <div role="tabpanel"
-         class="van-tab__pane"
+    <div id="van-tab"
+         role="tabpanel"
+         class="van-tab__panel"
+         tabindex="-1"
+         aria-labelledby="van-tabs-1"
          style="display: none;"
     >
     </div>

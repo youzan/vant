@@ -29,6 +29,27 @@ exports[`should render left-button、right-button slot correctly 1`] = `
 </div>
 `;
 
+exports[`should render readonly Slider correctly 1`] = `
+<div class="van-slider">
+  <div class="van-slider__bar"
+       style="width: 50%; left: 0%;"
+  >
+    <div role="slider"
+         class="van-slider__button-wrapper van-slider__button-wrapper--right"
+         tabindex="0"
+         aria-valuemin="0"
+         aria-valuenow="50"
+         aria-valuemax="100"
+         aria-readonly="true"
+         aria-orientation="horizontal"
+    >
+      <div class="van-slider__button">
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`should render reversed range slider correctly 1`] = `
 <div class="van-slider">
   <div class="van-slider__bar"

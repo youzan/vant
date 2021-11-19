@@ -117,6 +117,17 @@ test('should not allow to click slider when readonly', async () => {
   expect(wrapper.emitted('update:modelValue')).toBeFalsy();
 });
 
+test('should render readonly Slider correctly', async () => {
+  const wrapper = mount(Slider, {
+    props: {
+      modelValue: 50,
+      readonly: true,
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
 test('should allow to drag vertical slider', () => {
   const restoreMock = mockRect(true);
 

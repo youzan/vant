@@ -139,8 +139,7 @@ export const loadImageAsync = (item, resolve, reject) => {
   const image = new Image();
 
   if (!item || !item.src) {
-    const err = new Error('image src is required');
-    return reject(err);
+    return reject(new Error('image src is required'));
   }
 
   image.src = item.src;
@@ -163,22 +162,22 @@ export class ImageCache {
     this.options = {
       max: max || 100,
     };
-    this._caches = [];
+    this.caches = [];
   }
 
   has(key) {
-    return this._caches.indexOf(key) > -1;
+    return this.caches.indexOf(key) > -1;
   }
 
   add(key) {
     if (this.has(key)) return;
-    this._caches.push(key);
-    if (this._caches.length > this.options.max) {
+    this.caches.push(key);
+    if (this.caches.length > this.options.max) {
       this.free();
     }
   }
 
   free() {
-    this._caches.shift();
+    this.caches.shift();
   }
 }

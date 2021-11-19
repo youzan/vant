@@ -71,7 +71,6 @@ export default defineComponent({
   emits: [
     'open',
     'close',
-    'click',
     'opened',
     'closed',
     'update:show',
@@ -176,7 +175,6 @@ export default defineComponent({
       }
     };
 
-    const onClick = (event: MouseEvent) => emit('click', event);
     const onOpened = () => emit('opened');
     const onClosed = () => emit('closed');
 
@@ -194,7 +192,6 @@ export default defineComponent({
             }),
             { 'van-safe-area-bottom': safeAreaInsetBottom },
           ]}
-          onClick={onClick}
           {...attrs}
         >
           {slots.default?.()}

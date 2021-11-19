@@ -195,8 +195,8 @@ export default defineComponent({
           role="radio"
           style={style}
           class={bem('item')}
-          tabindex={0}
-          aria-setsize={+count}
+          tabindex={disabled ? undefined : 0}
+          aria-setsize={count}
           aria-posinset={score}
           aria-checked={!isVoid}
           onClick={onClickItem}
@@ -231,7 +231,9 @@ export default defineComponent({
           readonly: props.readonly,
           disabled: props.disabled,
         })}
-        tabindex={0}
+        tabindex={props.disabled ? undefined : 0}
+        aria-disabled={props.disabled}
+        aria-readonly={props.readonly}
         onTouchstart={onTouchStart}
         onTouchmove={onTouchMove}
       >

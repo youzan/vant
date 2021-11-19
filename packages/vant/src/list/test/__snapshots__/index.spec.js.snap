@@ -5,7 +5,10 @@ exports[`should render error slot correctly 1`] = `
      class="van-list"
      aria-busy="false"
 >
-  <div class="van-list__error-text">
+  <div role="button"
+       class="van-list__error-text"
+       tabindex="0"
+  >
     Custom Error
   </div>
   <div class="van-list__placeholder">

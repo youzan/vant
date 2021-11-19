@@ -23,6 +23,7 @@ import {
   truthProp,
   numericProp,
   Interceptor,
+  windowWidth,
   getElementTop,
   makeStringProp,
   callInterceptor,
@@ -38,11 +39,11 @@ import { scrollLeftTo, scrollTopTo } from './utils';
 import {
   useRect,
   useChildren,
-  useWindowSize,
   useScrollParent,
   useEventListener,
   onMountedOrActivated,
 } from '@vant/use';
+import { useId } from '../composables/use-id';
 import { route, RouteProps } from '../composables/use-route';
 import { useRefs } from '../composables/use-refs';
 import { useExpose } from '../composables/use-expose';
@@ -100,7 +101,7 @@ export default defineComponent({
     const navRef = ref<HTMLElement>();
     const wrapRef = ref<HTMLElement>();
 
-    const windowSize = useWindowSize();
+    const id = useId();
     const scroller = useScrollParent(root);
     const [titleRefs, setTitleRefs] = useRefs<ComponentInstance>();
     const { children, linkChildren } = useChildren(TABS_KEY);
@@ -329,12 +330,14 @@ export default defineComponent({
     const renderNav = () =>
       children.map((item, index) => (
         <TabsTitle
+          id={`${id}-${index}`}
           ref={setTitleRefs(index)}
           type={props.type}
           color={props.color}
           style={item.titleStyle}
           class={item.titleClass}
           isActive={index === state.currentIndex}
+          controls={item.id}
           scrollable={scrollable.value}
           renderTitle={item.$slots.title}
           activeColor={props.titleActiveColor}
@@ -365,6 +368,7 @@ export default defineComponent({
             role="tablist"
             class={bem('nav', [type, { complete: scrollable.value }])}
             style={navStyle.value}
+            aria-orientation="horizontal"
           >
             {slots['nav-left']?.()}
             {renderNav()}
@@ -377,7 +381,7 @@ export default defineComponent({
       );
     };
 
-    watch([() => props.color, windowSize.width], setLine);
+    watch([() => props.color, windowWidth], setLine);
 
     watch(
       () => props.active,
@@ -441,6 +445,7 @@ export default defineComponent({
     useEventListener('scroll', onScroll, { target: scroller });
 
     linkChildren({
+      id,
       props,
       setLine,
       onRendered,
