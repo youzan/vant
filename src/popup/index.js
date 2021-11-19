@@ -59,6 +59,9 @@ export default createComponent({
     },
     closeModal() {
       this.realValue = false;
+    },
+    togglePModal() {
+      this.realValue = !this.realValue;
     }
   },
 

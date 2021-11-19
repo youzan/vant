@@ -126,14 +126,11 @@ export default createComponent({
     },
     togglePopup() {
       this.valuepopup = !this.valuepopup;
+      this.$refs.popforcas.togglePModal();
       if (this.valuepopup) {
-        this.$refs.popforcas.openModal();
         this.$nextTick(function () {
           this.setValues();
         });
-
-      } else {
-        this.$refs.popforcas.closeModal();
       }
     },
     fromValue(value) {

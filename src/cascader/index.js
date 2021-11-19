@@ -265,11 +265,7 @@ export default createComponent({
     },
     togglePopup() {
       this.valuepopup = !this.valuepopup;
-      if (this.valuepopup) {
-        this.$refs.popforcas.openModal();
-      } else {
-        this.$refs.popforcas.closeModal();
-      }
+      this.$refs.popforcas.togglePModal();
     },
 
     renderHeader() {

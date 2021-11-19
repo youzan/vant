@@ -38,12 +38,7 @@ export default createComponent({
       return this.psonvalue;
     },
     togglePopup() {
-      this.valuepopup = !this.valuepopup;
-      if (this.valuepopup) {
-        this.$refs.popforpison.openModal();
-      } else {
-        this.$refs.popforpison.closeModal();
-      }
+      this.$refs.popforpison.togglePModal();
     },
   },
 
