@@ -421,8 +421,8 @@ export default {
                 title: '介绍',
               },
               {
-                path: 'use-toggle',
-                title: 'useToggle',
+                path: 'use-click-away',
+                title: 'useClickAway',
               },
               {
                 path: 'use-count-down',
@@ -433,10 +433,6 @@ export default {
                 title: 'useCustomFieldValue',
               },
               {
-                path: 'use-rect',
-                title: 'useRect',
-              },
-              {
                 path: 'use-event-listener',
                 title: 'useEventListener',
               },
@@ -445,20 +441,24 @@ export default {
                 title: 'usePageVisibility',
               },
               {
-                path: 'use-scroll-parent',
-                title: 'useScrollParent',
-              },
-              {
-                path: 'use-window-size',
-                title: 'useWindowSize',
+                path: 'use-rect',
+                title: 'useRect',
               },
               {
                 path: 'use-relation',
                 title: 'useRelation',
               },
               {
-                path: 'use-click-away',
-                title: 'useClickAway',
+                path: 'use-scroll-parent',
+                title: 'useScrollParent',
+              },
+              {
+                path: 'use-toggle',
+                title: 'useToggle',
+              },
+              {
+                path: 'use-window-size',
+                title: 'useWindowSize',
               },
             ],
           },
@@ -835,8 +835,8 @@ export default {
                 title: 'Intro',
               },
               {
-                path: 'use-toggle',
-                title: 'useToggle',
+                path: 'use-click-away',
+                title: 'useClickAway',
               },
               {
                 path: 'use-count-down',
@@ -846,33 +846,33 @@ export default {
                 path: 'use-custom-field-value',
                 title: 'useCustomFieldValue',
               },
-              // {
-              //   path: 'use-rect',
-              //   title: 'useRect',
-              // },
-              // {
-              //   path: 'use-event-listener',
-              //   title: 'useEventListener',
-              // },
+              {
+                path: 'use-event-listener',
+                title: 'useEventListener',
+              },
               // {
               //   path: 'use-page-visibility',
               //   title: 'usePageVisibility',
               // },
               // {
-              //   path: 'use-scroll-parent',
-              //   title: 'useScrollParent',
-              // },
-              // {
-              //   path: 'use-window-size',
-              //   title: 'useWindowSize',
+              //   path: 'use-rect',
+              //   title: 'useRect',
               // },
               // {
               //   path: 'use-relation',
               //   title: 'useRelation',
               // },
               // {
-              //   path: 'use-click-away',
-              //   title: 'useClickAway',
+              //   path: 'use-scroll-parent',
+              //   title: 'useScrollParent',
+              // },
+              {
+                path: 'use-toggle',
+                title: 'useToggle',
+              },
+              // {
+              //   path: 'use-window-size',
+              //   title: 'useWindowSize',
               // },
             ],
           },
