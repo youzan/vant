@@ -32,6 +32,8 @@ export default {
 };
 ```
 
+## API
+
 ### 类型定义
 
 ```ts
@@ -48,15 +50,13 @@ function useEventListener(
 ): void;
 ```
 
-## API
-
 ### 参数
 
-| 参数     | 说明                     | 类型            | 默认值 |
-| -------- | ------------------------ | --------------- | ------ |
-| type     | 监听的事件类型           | _string_        | -      |
-| listener | 点击外部时触发的回调函数 | _EventListener_ | -      |
-| options  | 可选的配置项             | _Options_       | -      |
+| 参数     | 说明           | 类型            | 默认值 |
+| -------- | -------------- | --------------- | ------ |
+| type     | 监听的事件类型 | _string_        | -      |
+| listener | 事件回调函数   | _EventListener_ | -      |
+| options  | 可选的配置项   | _Options_       | -      |
 
 ### Options
 
