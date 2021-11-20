@@ -35,17 +35,13 @@ Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源�
 
 请阅读[快速上手](#/zh-CN/quickstart)章节，通过该章节你可以了解到 Vant 的安装方法和基本使用姿势。
 
-### 贡献代码
-
-贡献代码请阅读我们的[贡献指南](#/zh-CN/contribution)。
-
-使用过程中发现任何问题都可以提 [Issue](https://github.com/youzan/vant/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/youzan/vant/pulls)。
-
 ### 浏览器支持
 
 Vant 2 支持现代浏览器以及 Android >= 4.0、iOS >= 8.0。
 
 Vant 3 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一致）。
+
+## 链接
 
 ### 官方生态
 
@@ -72,12 +68,36 @@ Vant 3 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一致
 | [vant-theme](https://github.com/Aisen60/vant-theme) | Vant 在线主题预览工具 |
 | [@antmjs/vantui](https://github.com/antmjs/vantui) | 基于 Vant Weapp 开发的多端组件库，同时支持 Taro 和 React |
 
-### 链接
+### 其他链接
 
 - [意见反馈](https://github.com/youzan/vant/issues)
 - [更新日志](#/zh-CN/changelog)
 - [码云镜像](https://gitee.com/vant-contrib/vant)
 - [Gitter 讨论组](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+
+## 贡献
+
+### 核心团队
+
+以下是 Vant 和 Vant Weapp 的核心贡献者们：
+
+| [![chenjiahan](https://avatars.githubusercontent.com/u/7237365?s=80&v=4)](https://github.com/chenjiahan/) | [![cookfront](https://avatars.githubusercontent.com/u/4829465?s=80&v=4)](https://github.com/cookfront/) | [![w91](https://avatars.githubusercontent.com/u/2599455?s=80&v=4)](https://github.com/w91/) | [![pangxie1991](https://avatars.githubusercontent.com/u/5961240?s=80&v=4)](https://github.com/pangxie1991/) | [![rex-zsd](https://avatars.githubusercontent.com/u/8767877?s=80&v=4)](https://github.com/rex-zsd/) | [![nemo-shen](https://avatars.githubusercontent.com/u/13480805?s=80&v=4)](https://github.com/nemo-shen/) | [![Lindysen](https://avatars.githubusercontent.com/u/33708359?s=80&v=4)](https://github.com/Lindysen/) | [![nemo-shen](https://avatars.githubusercontent.com/u/16181940?s=80&v=4)](https://github.com/JakeLaoyu/) |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| [chenjiahan](https://github.com/chenjiahan/) | [cookfront](https://github.com/cookfront/) | [wangnaiyi](https://github.com/w91/) | [pangxie](https://github.com/pangxie1991/) | [rex-zsd](https://github.com/rex-zsd/) | [nemo-shen](https://github.com/nemo-shen/) | [Lindysen](https://github.com/Lindysen/) | [JakeLaoyu](https://github.com/JakeLaoyu/) |
+
+### 贡献者们
+
+感谢以下小伙伴们为 Vant 发展做出的贡献：
+
+<a href="https://github.com/youzan/vant/graphs/contributors" target="_black">
+  <img src="https://opencollective.com/vant/contributors.svg?width=890&button=false" alt="contributors" style="width: 100%; margin: 16px 0">
+</a>
+
+### 贡献指南
+
+贡献代码请阅读我们的[贡献指南](#/zh-CN/contribution)。
+
+使用过程中发现任何问题都可以提 [Issue](https://github.com/youzan/vant/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/youzan/vant/pulls)。
 
 ### 开源协议
 
