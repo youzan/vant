@@ -17,6 +17,7 @@
 - 🍭 Support Vue 2 & Vue 3
 - 🍭 Support Tree Shaking
 - 🍭 Support Custom Theme
+- 🍭 Support Accessibility (still improving)
 - 🍭 Support i18n
 - 🌍 Support SSR
 
