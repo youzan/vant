@@ -2,7 +2,7 @@
   <demo-section>
   <demo-block :title="t('')">
     <van-collapse>
-        <van-collapse-item :title="t('title') + 1">
+        <van-collapse-item :title="t('title') + 1" disabled>
           {{ t('text') }}
         </van-collapse-item>
         <van-collapse-item :title="t('title') + 2">

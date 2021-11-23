@@ -57,7 +57,7 @@ export default createComponent({
         console.error('[Vant] Collapse: type of prop "value" should be Array');
         return;
       }
-
+      if(this.disabled) return null;
       return accordion
         ? value === this.currentName
         : value.some((name) => name === this.currentName);
@@ -78,9 +78,9 @@ export default createComponent({
       if (expanded) {
         this.show = true;
         this.inited = true;
-        this.$emit('open');
+        this.$emit('open', this.currentName);
       } else {
-        this.$emit('close');
+        this.$emit('close', this.currentName);
       }
 
       // Use raf: flick when opened in safari
