@@ -1,15 +1,8 @@
 {
+  "extends": "../../tsconfig",
   "compilerOptions": {
-    "baseUrl": ".",
-    "jsx": "preserve",
-    "target": "ES2015",
-    "module": "ES2015",
-    "strict": true,
     "allowJs": true,
-    "skipLibCheck": true,
-    "noImplicitThis": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node"
+    "noImplicitThis": true
   },
   "include": ["src/**/*", "docs/**/*", "test/**/*"]
 }
