@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.3.1](https://github.com/compare/v3.3.0...v3.3.1)
+
+`2021-11-23`
+
+**Bug Fixes**
+
+- AddressEdit: should not emit save event when validation failed [#9917](https://github.com/issues/9917)
+
 ### [v3.3.0](https://github.com/compare/v3.2.8...v3.3.0)
 
 `2021-11-19`

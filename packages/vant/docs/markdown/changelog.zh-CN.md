@@ -16,6 +16,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.3.1](https://github.com/compare/v3.3.0...v3.3.1)
+
+`2021-11-23`
+
+**Bug Fixes**
+
+- AddressEdit: 修复表单校验不通过时也会触发 save 事件的问题 [#9917](https://github.com/issues/9917)
+
 ### [v3.3.0](https://github.com/compare/v3.2.8...v3.3.0)
 
 `2021-11-19`
