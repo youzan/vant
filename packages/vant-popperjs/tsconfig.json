@@ -1,12 +1,8 @@
 {
+  "extends": "../../tsconfig",
   "compilerOptions": {
-    "target": "ES2015",
     "outDir": "./dist",
-    "module": "ESNext",
-    "strict": true,
-    "declaration": true,
-    "skipLibCheck": true,
-    "moduleResolution": "Node",
+    "declaration": true
   },
   "include": ["src/**/*"]
 }
