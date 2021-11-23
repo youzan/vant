@@ -124,6 +124,10 @@ export default createComponent({
         downloadClick();
       }
     },
+    judgeshow(attr) {
+      if (typeof this[attr] === 'boolean') return this[attr] === true;
+      if (typeof this[attr] === 'string') return this[attr] === '{{ true }}';
+    },
   },
 
   render() {

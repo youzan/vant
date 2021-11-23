@@ -48,7 +48,6 @@ export default createComponent({
       }
 
       const { value, accordion } = this.parent;
-
       if (
         process.env.NODE_ENV === 'development' &&
         !accordion &&
@@ -58,9 +57,14 @@ export default createComponent({
         return;
       }
       if(this.disabled) return null;
-      return accordion
+      try {
+        return accordion
         ? value === this.currentName
         : value.some((name) => name === this.currentName);
+      } catch (e) {
+        console.log(e)
+      }
+
     },
   },
 

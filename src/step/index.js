@@ -109,7 +109,7 @@ export default createComponent({
       this.parent.$emit('update:active', this.value ?? this.index);
     },
     onClickStepIcon() {
-      this.$emit('clickticon', this.index);
+      this.$emit('clickicon', this.index);
       this.parent.value = this.value ?? this.index;
       this.parent.$emit('update:active', this.value ?? this.index);
     },

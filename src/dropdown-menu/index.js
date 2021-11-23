@@ -62,7 +62,6 @@ export default createComponent({
       }
     },
   },
-
   methods: {
     updateOffset() {
       if (!this.$refs.bar) {
@@ -94,7 +93,7 @@ export default createComponent({
     },
   },
 
-  render() {
+  render() {console.log(this.children, 77)
     const Titles = this.children.map((item, index) => {
       const aId = item.$vnode.context.$options._scopeId;
       return <div
@@ -122,7 +121,7 @@ export default createComponent({
           }}
         >
           <div class="van-ellipsis" vusion-slot-name="title">
-            {item.slots('title') || item.displayTitle}
+            {item.slots('title') || item.displayTitle()}
           </div>
         </span>
       </div>

@@ -17,15 +17,24 @@ export default createComponent({
   },
   data() {
     return {
-      value: this.valueprop ?? (this.accordion ? 0 : [0])
+      value: this.fromValue(this.valueprop) ?? (this.accordion ? 0 : [0])
     }
   },
   watch: {
     valueprop(val) {
-      this.value = val;
+      this.value = this.fromValue(val) ?? (this.accordion ? 0 : [0])
     }
   },
   methods: {
+    fromValue(value) {
+      try {
+          if (value === null || value === undefined) return null;
+          if(typeof value === 'string') return JSON.parse(value);
+          if(typeof value === 'object') return value;
+      } catch (err) {
+          return null;
+      }
+    },
     switch(name, expanded) {
       if (!this.accordion) {
         name = expanded

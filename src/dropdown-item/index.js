@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, isDef} from '../utils';
 import { on, off } from '../utils/dom/event';
 
 // Mixins
@@ -54,15 +54,17 @@ export default createComponent({
     //   if(typeof this.optionsprop === 'string') return JSON.parse(this.optionsprop || '[]');
     //   if(typeof this.optionsprop === 'object') return this.optionsprop;
     // },
-    displayTitle() {
-      const match1 = this.children.filter(
-        (option) => option.value ?? option.value === this.value
-      );
-      const match = this.options.filter(
-        (option) => option.value === this.value
-      );
-      return match1.length ? match1[0].title : (match.length ? match[0].text : (this.title ? this.title : ''));
-    },
+    // displayTitle() {
+    //   console.log(1111)
+    //   const match1 = this.children.filter(
+    //     (option) => isDef(option.value) && option.value === this.value
+    //   );
+    //   console.log(match1)
+    //   const match = this.options.filter(
+    //     (option) => isDef(option.value) && option.value === this.value
+    //   );
+    //   return match1.length ? match1[0].title : (match.length ? match[0].text : (this.title ? this.title : ''));
+    // },
   },
 
   watch: {
@@ -86,6 +88,16 @@ export default createComponent({
   },
 
   methods: {
+    displayTitle() {
+      console.log(this.children, 99, this.value)
+      const match1 = this.children.filter(
+        (option) => isDef(option.value) && option.value === this.value
+      );
+      const match = this.options.filter(
+        (option) => isDef(option.value) && option.value === this.value
+      );
+      return match1.length ? match1[0].title : (match.length ? match[0].text : (this.title ? this.title : ''));
+    },
     // @exposed-api
     toggle(show = !this.showPopup, options = {}) {
       if (show === this.showPopup) {

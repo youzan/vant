@@ -130,7 +130,7 @@ export default {
   data() {
     return {
       menuvalue: '',
-      itemvalue: '',
+      itemvalue: '12',
       RED,
       switch1: true,
       switch2: false,
