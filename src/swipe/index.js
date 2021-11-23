@@ -210,8 +210,16 @@ export default createComponent({
 
       this.touchMove(event);
 
-      if (this.isCorrectDirection) {
+      // if user starting to touchmove, prevent the event bubbling to
+      // avoid affecting the parent components
+      const shouldPrevent =
+        this.isCorrectDirection ||
+        this.offsetY > this.offsetX === this.vertical;
+      if (shouldPrevent) {
         preventDefault(event, this.stopPropagation);
+      }
+
+      if (this.isCorrectDirection) {
         this.move({ offset: this.delta });
       }
     },
