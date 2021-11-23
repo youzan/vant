@@ -351,7 +351,6 @@ export default defineComponent({
               class={bem('button')}
               loading={props.isSaving}
               nativeType="submit"
-              onClick={onSave}
             />
             {props.showDelete && (
               <Button
