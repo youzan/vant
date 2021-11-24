@@ -16,6 +16,19 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.34](https://github.com/youzan/vant/compare/v2.12.33...v2.12.34)
+
+`2021-11-24`
+
+**Feature**
+
+- Tabbar: support highlight with child route [#9173](https://github.com/youzan/vant/issues/9173) [#9921](https://github.com/youzan/vant/issues/9921)
+
+**Bug Fixes**
+
+- DatetimePicker: fix incorrect confirm value when v-model is not used [#9913](https://github.com/youzan/vant/issues/9913)
+- Swipe: should prevent touchmove event when swiping [#9918](https://github.com/youzan/vant/issues/9918)
+
 ### [v2.12.33](https://github.com/youzan/vant/compare/v2.12.32...v2.12.33)
 
 `2021-11-16`

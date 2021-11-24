@@ -16,6 +16,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.34](https://github.com/youzan/vant/compare/v2.12.33...v2.12.34)
+
+`2021-11-24`
+
+**Feature**
+
+- Tabbar: route 模式支持匹配子路由 [#9173](https://github.com/youzan/vant/issues/9173) [#9921](https://github.com/youzan/vant/issues/9921)
+
+**Bug Fixes**
+
+- DatetimePicker: 修复未使用 v-model 时 confirm 抛出的值可能出错的问题 [#9913](https://github.com/youzan/vant/issues/9913)
+- Swipe: 修复开始滑动时未阻止 touchmove 事件行为的问题 [#9918](https://github.com/youzan/vant/issues/9918)
+
 ### [v2.12.33](https://github.com/youzan/vant/compare/v2.12.32...v2.12.33)
 
 `2021-11-16`
