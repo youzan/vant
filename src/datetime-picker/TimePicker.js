@@ -108,6 +108,8 @@ export default createComponent({
 
       this.$nextTick(() => {
         this.$nextTick(() => {
+          // https://github.com/youzan/vant/issues/9775
+          this.updateInnerValue();
           this.$emit('change', picker);
         });
       });
