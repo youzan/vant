@@ -10,6 +10,7 @@ function getMockRouter() {
   const $route = reactive({
     name: '/',
     path: '/',
+    matched: [{ name: '/', path: '/' }],
   });
   const push = (val: unknown) => {
     if (typeof val === 'string') {
@@ -18,6 +19,7 @@ function getMockRouter() {
     } else {
       Object.assign($route, val);
     }
+    $route.matched = [{ name: $route.name, path: $route.path }];
   };
   const $router = {
     push,
