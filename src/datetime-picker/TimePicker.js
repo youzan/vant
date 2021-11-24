@@ -109,6 +109,7 @@ export default createComponent({
       this.$nextTick(() => {
         this.$nextTick(() => {
           this.$emit('change', picker);
+          this.updateInnerValue();
         });
       });
     },
