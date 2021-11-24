@@ -57,10 +57,11 @@ export default defineComponent({
         const { $route } = vm;
         const { to } = props;
         const config = isObject(to) ? to : { path: to };
-        const pathMatched = 'path' in config && config.path === $route.path;
-        const nameMatched = 'name' in config && config.name === $route.name;
-
-        return pathMatched || nameMatched;
+        return !!$route.matched.find((val) => {
+          const pathMatched = 'path' in config && config.path === val.path;
+          const nameMatched = 'name' in config && config.name === val.name;
+          return pathMatched || nameMatched;
+        });
       }
 
       return (props.name ?? index.value) === modelValue;
