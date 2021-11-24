@@ -31,7 +31,7 @@ export default createComponent({
     },
 
     checked() {
-      return this.currentValue === this.name;
+      return this.currentValue == this.name;
     },
   },
 
