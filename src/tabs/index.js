@@ -439,9 +439,11 @@ export default createComponent({
         )}
         <Content
           count={this.children.length}
+          inited={this.inited}
           animated={animated}
           duration={this.duration}
           swipeable={this.swipeable}
+          lazyRender={this.lazyRender}
           currentIndex={this.currentIndex}
           onChange={this.setCurrentIndex}
         >
