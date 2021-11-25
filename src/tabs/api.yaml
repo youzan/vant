@@ -5,7 +5,7 @@
     - Selector
   description: 选项卡切换组件，常用于平级区域大块内容的收纳和展现
   attrs:
-    - name: value
+    - name: active
       title: 值
       type: any
       sync: true
