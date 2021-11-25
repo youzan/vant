@@ -1,6 +1,6 @@
 - name: van-sidebar
   title: 侧边导航
-  icon: sidebar
+  icon: sidebarh5
   labels:
     - Navigation
   description: 侧边导航
