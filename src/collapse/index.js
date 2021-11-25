@@ -29,8 +29,7 @@ export default createComponent({
     fromValue(value) {
       try {
           if (value === null || value === undefined) return null;
-          if(typeof value === 'string') return JSON.parse(value);
-          if(typeof value === 'object') return value;
+          return value;
       } catch (err) {
           return null;
       }
