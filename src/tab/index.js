@@ -2,6 +2,9 @@ import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 import { routeProps } from '../utils/router';
 
+// Components
+import SwipeItem from '../swipe-item';
+
 const [createComponent, bem] = createNamespace('tab');
 
 export default createComponent({
@@ -74,15 +77,15 @@ export default createComponent({
     const shouldRender = this.inited || parent.scrollspy || !parent.lazyRender;
     const Content = shouldRender ? slotContent : h();
 
-    if (parent.animated) {
+    if (parent.animated || parent.swipeable) {
       return (
-        <div
+        <SwipeItem
           role="tabpanel"
           aria-hidden={!isActive}
           class={bem('pane-wrapper', { inactive: !isActive })}
         >
-          <div class={bem('pane')}>{Content}</div>
-        </div>
+          <div class={bem('pane')}>{slotContent}</div>
+        </SwipeItem>
       );
     }
 
