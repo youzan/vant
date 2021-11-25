@@ -61,15 +61,24 @@ pnpm add vant@3
 </script>
 ```
 
+#### 免费 CDN
+
 你可以通过以下免费 CDN 服务来使用 Vant:
 
 - [jsdelivr](https://www.jsdelivr.com/package/npm/vant)
 - [cdnjs](https://cdnjs.com/libraries/vant)
 - [unpkg](https://unpkg.com/)
 
+注意：免费 CDN 一般用于制作原型或个人小型项目，不推荐在企业生产环境中使用免费 CDN。
+
+对于企业开发者，建议使用以下方式：
+
+- 通过 npm 引入，并通过构建工具进行打包
+- 下载对应文件，并托管在你自己的服务器或 CDN 上
+
 ### 通过脚手架安装
 
-在新项目中使用 Vant 时，推荐使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目并安装 Vant。
+在新项目中使用 Vant 时，可以使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目并安装 Vant。
 
 ```bash
 # 安装 Vue Cli
