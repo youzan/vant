@@ -8,7 +8,7 @@ import { installDependencies } from '../common/manager.js';
 import { compileSfc } from '../compiler/compile-sfc.js';
 import { compileStyle } from '../compiler/compile-style.js';
 import { compileScript } from '../compiler/compile-script.js';
-import { compilePackage } from '../compiler/compile-package.js';
+import { compileBundles } from '../compiler/compile-bundles.js';
 import { genPackageEntry } from '../compiler/gen-package-entry.js';
 import { genStyleDepsMap } from '../compiler/gen-style-deps-map.js';
 import { genComponentStyle } from '../compiler/gen-component-style.js';
@@ -133,8 +133,7 @@ async function buildPackageStyleEntry() {
 
 async function buildBundledOutputs() {
   setModuleEnv('esmodule');
-  await compilePackage(false);
-  await compilePackage(true);
+  await compileBundles();
   genVeturConfig();
 }
 
