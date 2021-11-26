@@ -89,6 +89,9 @@ export default createComponent({
   },
 
   methods: {
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     onLoad(event) {
       this.loading = false;
       this.$emit('load', event);
@@ -116,7 +119,9 @@ export default createComponent({
       if (this.$listeners.click) {
         this.$emit('click', event);
       } else {
-        ImagePreview([this.src]);
+        if (!this.ifDesigner()) {
+          ImagePreview([this.src]);
+        }
       }
     },
 
