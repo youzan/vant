@@ -13,8 +13,9 @@
           title: 可关闭
         - value: link
           title: 链接
-        - value: ''
+        - value: normal
           title: 普通
+      default: normal
       description: 通知栏模式
     - name: text
       title: 通知文本内容
