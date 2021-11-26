@@ -17,6 +17,7 @@ export function getViteConfigForPackage(minify: boolean): InlineConfig {
       lib: {
         name,
         entry: join(ES_DIR, 'index.js'),
+        formats: ['es', 'cjs', 'umd'],
         fileName: (format: string) => {
           const suffix = format === 'umd' ? '' : `.${format}`;
           return minify ? `${name}${suffix}.min.js` : `${name}${suffix}.js`;
