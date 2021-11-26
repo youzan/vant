@@ -1,5 +1,11 @@
 # 更新日志
 
+## v4.0.0-rc.4
+
+- 新增 CommonJS 格式的构建产物，分别为 `lib/[name].cjs.js` 和 `lib/[name].cjs.min.js`
+- 现在 ESModule 和 CommonJS 格式的产物会自动对外部依赖进行 external 处理
+- 修复 Windows 路径兼容问题
+
 ## v4.0.0-rc.3
 
 ### 不兼容更新
