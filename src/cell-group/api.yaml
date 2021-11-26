@@ -58,7 +58,7 @@
       default: 单元格
       description: 左侧标题
     - name: value
-      title: 值(右侧内容)
+      title: 值
       type: string, number
       default2: 内容
       description: 右侧内容
