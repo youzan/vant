@@ -9,7 +9,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf ./lib && tsc",
     "release": "pnpm build && npm publish",
     "prepare": "pnpm build"
   },

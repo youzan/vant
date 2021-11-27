@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsc",
+    "build": "rimraf ./lib && tsc",
     "release": "pnpm build & release-it",
     "prepare": "pnpm build"
   },
