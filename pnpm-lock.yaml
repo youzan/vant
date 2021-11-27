@@ -51,6 +51,7 @@ importers:
     specifiers:
       '@vant/area-data': ^1.1.3
       '@vant/cli': workspace:*
+      '@vant/eslint-config': workspace:*
       '@vant/icons': ^1.7.1
       '@vant/popperjs': ^1.1.0
       '@vant/use': ^1.3.4
@@ -67,6 +68,7 @@ importers:
     devDependencies:
       '@vant/area-data': link:../vant-area-data
       '@vant/cli': link:../vant-cli
+      '@vant/eslint-config': link:../vant-eslint-config
       '@vue/compiler-sfc': 3.2.21
       '@vue/runtime-core': 3.2.21
       '@vue/test-utils': 2.0.0-rc.16_vue@3.2.21
@@ -6312,7 +6314,7 @@ packages:
       mime-db: 1.50.0
 
   /mime/1.6.0:
-    resolution: {integrity: sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=, tarball: mime/download/mime-1.6.0.tgz}
+    resolution: {integrity: sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=, tarball: mime/download/mime-1.6.0.tgz?cache=0&sync_timestamp=1636738461596&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fmime%2Fdownload%2Fmime-1.6.0.tgz}
     engines: {node: '>=4'}
     hasBin: true
     requiresBuild: true
