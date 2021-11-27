@@ -2,36 +2,7 @@ import { Calendar } from '..';
 import { mount, later } from '../../../test';
 import { minDate, maxDate } from './utils';
 
-test('max-range prop when type is range and showConfirm is false', async () => {
-  const wrapper = mount(Calendar, {
-    props: {
-      type: 'range',
-      minDate,
-      maxDate,
-      maxRange: 3,
-      poppable: false,
-      showConfirm: false,
-      lazyRender: false,
-    },
-  });
-
-  await later();
-
-  const days = wrapper.findAll('.van-calendar__day');
-  days[12].trigger('click');
-  days[18].trigger('click');
-
-  expect(wrapper.emitted<[Date]>('select')![0][0]).toEqual([
-    new Date(2010, 0, 13),
-  ]);
-  expect(wrapper.emitted<[Date]>('select')![1][0]).toEqual([
-    new Date(2010, 0, 13),
-    new Date(2010, 0, 19),
-  ]);
-  expect(wrapper.emitted('confirm')).toBeFalsy();
-});
-
-test('max-range prop when type is range and showConfirm is true', async () => {
+test('should limit max range when using max-range prop and type is range', async () => {
   const wrapper = mount(Calendar, {
     props: {
       type: 'range',
@@ -59,7 +30,7 @@ test('max-range prop when type is range and showConfirm is true', async () => {
   expect(wrapper.emitted('confirm')).toBeFalsy();
 });
 
-test('max-range prop when type is multiple', async () => {
+test('should limit max range when using max-range prop and type is multiple', async () => {
   const wrapper = mount(Calendar, {
     props: {
       type: 'multiple',
