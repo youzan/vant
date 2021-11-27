@@ -103,10 +103,7 @@ export default createComponent({
 
   methods: {
     getHeight() {
-      if (!this.height) {
-        this.height = this.$el.getBoundingClientRect().height;
-      }
-      return this.height;
+      return this.$el?.getBoundingClientRect().height || 0;
     },
 
     scrollIntoView(body) {
