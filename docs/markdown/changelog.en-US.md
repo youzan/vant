@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.35](https://github.com/youzan/vant/compare/v2.12.34...v2.12.35)
+
+`2021-11-27`
+
+**Bug Fixes**
+
+- DatetimePicker: fix incorrect confirm value when v-model is not used [#9938](https://github.com/youzan/vant/issues/9938)
+- Swipe: incorrect border radius in iOS safari [#9933](https://github.com/youzan/vant/issues/9933) [#9931](https://github.com/youzan/vant/issues/9931)
+
 ### [v2.12.34](https://github.com/youzan/vant/compare/v2.12.33...v2.12.34)
 
 `2021-11-24`

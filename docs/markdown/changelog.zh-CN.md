@@ -16,6 +16,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.35](https://github.com/youzan/vant/compare/v2.12.34...v2.12.35)
+
+`2021-11-27`
+
+**Bug Fixes**
+
+- DatetimePicker: 修复未使用 v-model 时 confirm 抛出的值可能出错的问题 [#9938](https://github.com/youzan/vant/issues/9938)
+- Swipe: 修复 iOS 系统下圆角失效的问题 [#9933](https://github.com/youzan/vant/issues/9933) [#9931](https://github.com/youzan/vant/issues/9931)
+
 ### [v2.12.34](https://github.com/youzan/vant/compare/v2.12.33...v2.12.34)
 
 `2021-11-24`
@@ -26,7 +35,6 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Bug Fixes**
 
-- DatetimePicker: 修复未使用 v-model 时 confirm 抛出的值可能出错的问题 [#9913](https://github.com/youzan/vant/issues/9913)
 - Swipe: 修复开始滑动时未阻止 touchmove 事件行为的问题 [#9918](https://github.com/youzan/vant/issues/9918)
 
 ### [v2.12.33](https://github.com/youzan/vant/compare/v2.12.32...v2.12.33)
