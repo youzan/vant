@@ -2,10 +2,22 @@
   "name": "vant",
   "version": "3.3.1",
   "description": "Mobile UI Components built on Vue",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "lib/vant.cjs.js",
+  "module": "lib/vant.es.js",
   "style": "lib/index.css",
   "typings": "lib/index.d.ts",
+  "unpkg": "lib/vant.min.js",
+  "jsdelivr": "lib/vant.min.js",
+  "exports": {
+    ".": {
+      "import": "./lib/vant.es.js",
+      "require": "./lib/vant.cjs.js",
+      "types": "./lib/index.d.ts"
+    },
+    "./es/*": "./es/*",
+    "./lib/*": "./lib/*",
+    "./package.json": "./package.json"
+  },
   "files": [
     "es",
     "lib",
@@ -54,6 +66,7 @@
   "devDependencies": {
     "@vant/area-data": "^1.1.3",
     "@vant/cli": "workspace:*",
+    "@vant/eslint-config": "workspace:*",
     "@vue/compiler-sfc": "^3.2.20",
     "@vue/runtime-core": "^3.2.20",
     "@vue/test-utils": "^2.0.0-rc.16",
@@ -67,11 +80,9 @@
     "*.css",
     "*.less"
   ],
+  "web-types": "vetur/web-types.json",
   "vetur": {
     "tags": "vetur/tags.json",
     "attributes": "vetur/attributes.json"
-  },
-  "web-types": "vetur/web-types.json",
-  "unpkg": "lib/vant.min.js",
-  "jsdelivr": "lib/vant.min.js"
+  }
 }
