@@ -344,15 +344,11 @@ export default defineComponent({
         const valid = checkRange(date as [Date, Date]);
 
         if (!valid) {
-          // auto selected to max range if showConfirm
-          if (props.showConfirm) {
-            setCurrentDate([
-              (date as Date[])[0],
-              getDayByOffset((date as Date[])[0], +props.maxRange - 1),
-            ]);
-          } else {
-            setCurrentDate(date);
-          }
+          // auto selected to max range
+          setCurrentDate([
+            (date as Date[])[0],
+            getDayByOffset((date as Date[])[0], +props.maxRange - 1),
+          ]);
           return;
         }
       }
