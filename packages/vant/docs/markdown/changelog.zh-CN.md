@@ -16,6 +16,22 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.3.2](https://github.com/compare/v3.3.1...v3.3.2)
+
+`2021-11-28`
+
+**Feature**
+
+- 新增 `package.json` 中的 `exports` 字段 [#9952](https://github.com/issues/9952)
+- Tabbar: 支持在 route 模式下匹配子路由 [#9926](https://github.com/issues/9926)
+- Tabs: 将 `van-tab__pane-wrapper` 类重命名为 `van-tab__panel-wrapper` [#9951](https://github.com/issues/9951)
+
+**Bug Fixes**
+
+- Calendar: 修复 show-confirm 为 false 时不会限制最大日期范围的问题 [#9948](https://github.com/issues/9948)
+- Calendar: 修复 `scrollToDate` 方法无法精确滚动到对应日期的问题 [#9949](https://github.com/issues/9949)
+- Swipe: 修复开始滑动时未阻止 touchmove 事件行为的问题 [#9920](https://github.com/issues/9920)
+
 ### [v3.3.1](https://github.com/compare/v3.3.0...v3.3.1)
 
 `2021-11-23`
