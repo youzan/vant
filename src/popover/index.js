@@ -88,7 +88,7 @@ export default createComponent({
       if (this.slots('reference')) {
         return this.$refs.wrapper;
       }
-      if (this.ifDesigner() && /l-root-h5/.test(this.$el.parentNode.className)) {
+      if (this.ifDesigner() && (/l-root-h5|h5template-|/).test(this.$el.parentNode.className)) {
         return this.$refs.wrappertemp;
       }
       // 求上下文中的 parent
