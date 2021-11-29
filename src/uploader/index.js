@@ -93,6 +93,14 @@ export default createComponent({
     },
   },
 
+  created() {
+    this.urls = [];
+  },
+
+  beforeDestroy() {
+    this.urls.forEach((url) => URL.revokeObjectURL(url));
+  },
+
   methods: {
     getDetail(index = this.fileList.length) {
       return {
@@ -259,7 +267,13 @@ export default createComponent({
       }
 
       const imageFiles = this.fileList.filter((item) => isImageFile(item));
-      const imageContents = imageFiles.map((item) => item.content || item.url);
+      const imageContents = imageFiles.map((item) => {
+        if (item.file && !item.url) {
+          item.url = URL.createObjectURL(item.file);
+          this.urls.push(item.url);
+        }
+        return item.url;
+      });
 
       this.imagePreview = ImagePreview({
         images: imageContents,
