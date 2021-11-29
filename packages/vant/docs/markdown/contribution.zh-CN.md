@@ -34,29 +34,36 @@ pnpm dev
 
 ### 目录结构
 
-项目的主要目录结构如下所示：
+Vant 采用 monorepo 进行代码管理，所有的子包在 `packages` 目录下进行管理:
+
+```
+root
+└─ packages
+   ├─ vant        # 组件库
+   ├─ vant-cli    # 脚手架
+   ├─ vant-icons  # 图标库
+   ├─ vant-use    # Composition API
+   └─ ....        # 其他周边 npm 包
+```
+
+其中 `vant` 目录下包含了所有组件的代码，目录结构如下所示：
 
 ```
 vant
-├─ docs            # 文档
-├─ packages        # 基础包
-├─ src             # 组件源代码
-├─ test            # 单测工具类
-└─ vant.config.mjs # 文档网站配置
+├─ docs             # 文档
+├─ src              # 组件源代码
+├─ test             # 单测工具类
+└─ vant.config.mjs  # 文档网站配置
 ```
 
-组件代码位于 src 目录下，每个组件一个独立的文件夹。
-
-### 组件目录结构
-
-添加新组件时，请按照下面的目录结构组织文件，并在 `vant.config.mjs` 中配置组件名称。
+`src` 目录包含了组件的代码，每个组件一个独立的文件夹:
 
 ```
 src
 └─ button
    ├─ demo             # 示例代码
    ├─ test             # 单元测试
-   ├─ Component.ts     # 组件
+   ├─ Component.tsx    # 组件
    ├─ index.ts         # 组件入口
    ├─ index.less       # 样式
    ├─ var.less         # 样式变量
