@@ -50,6 +50,7 @@ Current supported languages:
 | Spanish (Spain)          | es-ES        |
 | Japanese                 | ja-JP        |
 | Norwegian                | nb-NO        |
+| Portuguese (Brazil)      | pt-BR        |
 | Romanian                 | ro-RO        |
 | Russian                  | ru-RU        |
 | Turkish                  | tr-TR        |
