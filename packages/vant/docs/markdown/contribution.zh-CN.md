@@ -34,7 +34,7 @@ pnpm dev
 
 ### 目录结构
 
-Vant 采用 monorepo 进行代码管理，所有的子包在 `packages` 目录下进行管理:
+Vant 采用 monorepo 进行代码管理，所有子包在 `packages` 目录下:
 
 ```
 root
