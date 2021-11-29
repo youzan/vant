@@ -28,6 +28,7 @@ export default createComponent({
     closeable: Boolean,
     asyncClose: Boolean,
     showIndicators: Boolean,
+    fitHeight: Boolean,
     images: {
       type: Array,
       default: () => [],
@@ -181,6 +182,7 @@ export default createComponent({
               minZoom={this.minZoom}
               rootWidth={this.rootWidth}
               rootHeight={this.rootHeight}
+              fitHeight={this.fitHeight}
               onScale={this.emitScale}
               onClose={this.emitClose}
             />

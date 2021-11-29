@@ -29,6 +29,7 @@ export default {
     maxZoom: [Number, String],
     rootWidth: Number,
     rootHeight: Number,
+    fitHeight: Boolean,
   },
 
   data() {
@@ -57,7 +58,7 @@ export default {
         transitionDuration: this.zooming || this.moving ? '0s' : '.3s',
       };
 
-      if (scale !== 1) {
+      if (scale !== 1 || (this.vertical && this.fitHeight)) {
         const offsetX = this.moveX / scale;
         const offsetY = this.moveY / scale;
         style.transform = `scale(${scale}, ${scale}) translate(${offsetX}px, ${offsetY}px)`;
@@ -68,18 +69,38 @@ export default {
 
     maxMoveX() {
       if (this.imageRatio) {
+        if (this.vertical && this.fitHeight) {
+          return Math.max(0, ((this.scale - 1) * this.rootWidth) / 2);
+        }
         const displayWidth = this.vertical
           ? this.rootHeight / this.imageRatio
           : this.rootWidth;
-
         return Math.max(0, (this.scale * displayWidth - this.rootWidth) / 2);
       }
 
       return 0;
     },
 
+    minMoveY() {
+      if (this.vertical && this.fitHeight) {
+        return -Math.max(
+          0,
+          this.rootWidth * this.imageRatio * this.scale -
+            this.maxMoveY -
+            this.rootHeight
+        );
+      }
+      return -this.maxMoveY;
+    },
+
     maxMoveY() {
       if (this.imageRatio) {
+        if (this.vertical && this.fitHeight) {
+          return Math.max(
+            0,
+            (this.rootWidth * this.imageRatio * (this.scale - 1)) / 2
+          );
+        }
         const displayHeight = this.vertical
           ? this.rootHeight
           : this.rootWidth * this.imageRatio;
@@ -142,7 +163,9 @@ export default {
       this.startMoveX = this.moveX;
       this.startMoveY = this.moveY;
 
-      this.moving = touches.length === 1 && this.scale !== 1;
+      this.moving =
+        touches.length === 1 &&
+        (this.scale !== 1 || (this.fitHeight && this.vertical));
       this.zooming = touches.length === 2 && !offsetX;
 
       if (this.zooming) {
@@ -155,8 +178,7 @@ export default {
       const { touches } = event;
 
       this.touchMove(event);
-
-      if (this.moving || this.zooming) {
+      if (this.scale !== 1 || this.zooming) {
         preventDefault(event, true);
       }
 
@@ -164,7 +186,7 @@ export default {
         const moveX = this.deltaX + this.startMoveX;
         const moveY = this.deltaY + this.startMoveY;
         this.moveX = range(moveX, -this.maxMoveX, this.maxMoveX);
-        this.moveY = range(moveY, -this.maxMoveY, this.maxMoveY);
+        this.moveY = range(moveY, this.minMoveY, this.maxMoveY);
       }
 
       if (this.zooming && touches.length === 2) {
@@ -179,7 +201,7 @@ export default {
       let stopPropagation = false;
 
       /* istanbul ignore else */
-      if (this.moving || this.zooming) {
+      if (this.scale !== 1 || this.zooming) {
         stopPropagation = true;
 
         if (
@@ -193,7 +215,7 @@ export default {
         if (!event.touches.length) {
           if (this.zooming) {
             this.moveX = range(this.moveX, -this.maxMoveX, this.maxMoveX);
-            this.moveY = range(this.moveY, -this.maxMoveY, this.maxMoveY);
+            this.moveY = range(this.moveY, this.minMoveY, this.maxMoveY);
             this.zooming = false;
           }
 
@@ -255,7 +277,10 @@ export default {
         <Image
           src={this.src}
           fit="contain"
-          class={bem('image', { vertical: this.vertical })}
+          class={bem('image', {
+            vertical: this.vertical,
+            'fit-height': this.fitHeight,
+          })}
           style={this.imageStyle}
           scopedSlots={imageSlots}
           onLoad={this.onLoad}

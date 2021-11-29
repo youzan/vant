@@ -33,6 +33,18 @@
       height: 100%;
     }
 
+    &--vertical&--fit-height {
+      align-self: flex-start;
+    }
+
+    &--fit-height {
+      height: auto;
+      overflow-y: auto;
+      img {
+        height: auto;
+      }
+    }
+
     img {
       // disable desktop browser image drag
       -webkit-user-drag: none;
