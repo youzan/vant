@@ -268,11 +268,9 @@ export default createComponent({
 
       const imageFiles = this.fileList.filter((item) => isImageFile(item));
       const imageContents = imageFiles.map((item) => {
-        if (item.file) {
-          if (!item.url) {
-            item.url = URL.createObjectURL(item.file);
-            this.urls.push(item.url);
-          }
+        if (item.file && !item.url) {
+          item.url = URL.createObjectURL(item.file);
+          this.urls.push(item.url);
         }
         return item.url;
       });
