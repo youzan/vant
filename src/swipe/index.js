@@ -409,8 +409,7 @@ export default createComponent({
             <div class={bem('indicators', { vertical: this.vertical })}>
               {Array(...Array(count)).map((empty, index) => (
                 <i
-                  vusion-index={index}
-                  findname="realpostionswipe"
+                  vusion-click-enabled
                   index={index}
                   class={bem('indicator', { active: index === activeIndicator })}
                   style={index === activeIndicator ? this.indicatorStyle : null}
