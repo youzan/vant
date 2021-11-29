@@ -15,7 +15,6 @@
     - name: label-field
       title: 左侧标题
       type: string
-      default: 左侧标题
       description: 左侧标题
     - name: data-source
       title: 数据源

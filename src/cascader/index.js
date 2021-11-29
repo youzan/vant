@@ -19,7 +19,7 @@ export default createComponent({
     title: String,
     value: [Number, String],
     fieldNamesp: [Object, String],
-    placeholder: String,
+    placeholder: {type: String, default: '请选择'},
     activeColor: String,
     dataSource: {
       type: Array,
@@ -35,7 +35,6 @@ export default createComponent({
     },
     labelField: {
       type: String,
-      default: '左侧标题'
     },
     textField: String,
     valueField: String,
