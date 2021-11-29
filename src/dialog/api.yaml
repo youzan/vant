@@ -33,16 +33,6 @@
     - name: default
       description: 内容自定义
   events:
-    - name: confirm
-      title: 点击确认按钮时触发
-      description: 点击确认按钮时触发
-      advanced: true
-      params: []
-    - name: cancel
-      title: 点击取消按钮时触发
-      description: 点击取消按钮时触发
-      advanced: true
-      params: []
     - name: open
       title: 打开弹出层后
       description: 打开弹出层时触发
