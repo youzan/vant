@@ -36,10 +36,11 @@ export default createComponent({
       const { to, $route } = this;
       if (to && $route) {
         const config = isObject(to) ? to : { path: to };
-        const pathMatched = config.path === $route.path;
-        const nameMatched = isDef(config.name) && config.name === $route.name;
-
-        return pathMatched || nameMatched;
+        return !!$route.matched.find(r =>{
+          const pathMatched = config.path === r.path;
+          const nameMatched = isDef(config.name) && config.name === r.name;
+          return pathMatched || nameMatched;
+        })
       }
     },
   },
