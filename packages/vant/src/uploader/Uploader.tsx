@@ -4,6 +4,7 @@ import {
   PropType,
   defineComponent,
   ExtractPropTypes,
+  onBeforeUnmount,
 } from 'vue';
 
 // Utils
@@ -97,6 +98,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const inputRef = ref();
+    const urls: string[] = [];
 
     const getDetail = (index = props.modelValue.length) => ({
       name: props.name,
@@ -225,7 +227,13 @@ export default defineComponent({
       if (props.previewFullImage) {
         const imageFiles = props.modelValue.filter(isImageFile);
         const images = imageFiles
-          .map((item) => item.content || item.url)
+          .map((item) => {
+            if (item.file && !item.url) {
+              item.url = URL.createObjectURL(item.file);
+              urls.push(item.url);
+            }
+            return item.url;
+          })
           .filter(Boolean) as string[];
 
         imagePreview = ImagePreview(
@@ -337,6 +345,10 @@ export default defineComponent({
         inputRef.value.click();
       }
     };
+
+    onBeforeUnmount(() => {
+      urls.forEach((url) => URL.revokeObjectURL(url));
+    });
 
     useExpose<UploaderExpose>({
       chooseFile,
