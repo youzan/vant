@@ -28,7 +28,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div style="transition-duration: 0s;"
            class="van-notice-bar__content"
       >
-        Some short text.
+        Short Content
       </div>
     </div>
   </div>
@@ -71,7 +71,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div style="transition-duration: 0s;"
            class="van-notice-bar__content"
       >
-        Some short text.
+        Short Content
       </div>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-cross van-notice-bar__right-icon">
@@ -86,7 +86,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div style="transition-duration: 0s;"
            class="van-notice-bar__content"
       >
-        Some short text.
+        Short Content
       </div>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-notice-bar__right-icon">
@@ -106,7 +106,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div style="transition-duration: 0s;"
            class="van-notice-bar__content"
       >
-        Some short text.
+        Short Content
       </div>
     </div>
   </div>
