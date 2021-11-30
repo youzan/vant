@@ -417,6 +417,7 @@ export default createComponent({
               {Array(...Array(count)).map((empty, index) => (
                 <i
                   vusion-click-enabled
+                  can-nodeinfo
                   index={index}
                   class={bem('indicator', { active: index === activeIndicator })}
                   style={index === activeIndicator ? this.indicatorStyle : null}
