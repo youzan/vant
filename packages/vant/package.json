@@ -10,6 +10,10 @@
   "jsdelivr": "lib/vant.min.js",
   "exports": {
     ".": {
+      "node": {
+        "import": "./lib/ssr.mjs",
+        "require": "./lib/ssr.js"
+      },
       "import": "./lib/vant.es.js",
       "require": "./lib/vant.cjs.js",
       "types": "./lib/index.d.ts"
