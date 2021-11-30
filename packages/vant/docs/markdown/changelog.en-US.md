@@ -16,21 +16,35 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.3.3](https://github.com/compare/v3.3.2...v3.3.3)
+
+`2021-11-30`
+
+**Feature**
+
+- Support nuxt3 [#9970](https://github.com/youzan/vant/issues/9970)
+- Locale: add pt-BR locale [#9959](https://github.com/youzan/vant/issues/9959)
+
+**Bug Fixes**
+
+- Swipe: fix incorrect border radius in iOS safari [#9958](https://github.com/youzan/vant/issues/9958)
+- Uploader: fix preview is slow when sum of images size be bigger [#9961](https://github.com/youzan/vant/issues/9961)
+
 ### [v3.3.2](https://github.com/compare/v3.3.1...v3.3.2)
 
 `2021-11-28`
 
 **Feature**
 
-- add exports field and use bundled output by default [#9952](https://github.com/issues/9952)
-- Tabbar: support highlighted with child route [#9926](https://github.com/issues/9926)
+- add exports field and use bundled output by default [#9952](https://github.com/youzan/vant/issues/9952)
+- Tabbar: support highlighted with child route [#9926](https://github.com/youzan/vant/issues/9926)
 
 **Bug Fixes**
 
-- Calendar: auto selected to max range when show-confirm is false [#9948](https://github.com/issues/9948)
-- Calendar: should scroll to current date instead of current month [#9949](https://github.com/issues/9949)
-- Swipe: should prevent touchmove event when swiping [#9920](https://github.com/issues/9920)
-- Tabs: rename wrapper class to `van-tab__panel-wrapper` [#9951](https://github.com/issues/9951)
+- Calendar: auto selected to max range when show-confirm is false [#9948](https://github.com/youzan/vant/issues/9948)
+- Calendar: should scroll to current date instead of current month [#9949](https://github.com/youzan/vant/issues/9949)
+- Swipe: should prevent touchmove event when swiping [#9920](https://github.com/youzan/vant/issues/9920)
+- Tabs: rename wrapper class to `van-tab__panel-wrapper` [#9951](https://github.com/youzan/vant/issues/9951)
 
 ### [v3.3.1](https://github.com/compare/v3.3.0...v3.3.1)
 
@@ -38,7 +52,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **Bug Fixes**
 
-- AddressEdit: should not emit save event when validation failed [#9917](https://github.com/issues/9917)
+- AddressEdit: should not emit save event when validation failed [#9917](https://github.com/youzan/vant/issues/9917)
 
 ### [v3.3.0](https://github.com/compare/v3.2.8...v3.3.0)
 

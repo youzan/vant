@@ -16,6 +16,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.3.3](https://github.com/compare/v3.3.2...v3.3.3)
+
+`2021-11-30`
+
+**Feature**
+
+- 支持在 nuxt3 中使用 [#9970](https://github.com/youzan/vant/issues/9970)
+- Locale: 新增 pt-BR 葡萄牙语 (巴西) [#9959](https://github.com/youzan/vant/issues/9959)
+
+**Bug Fixes**
+
+- Swipe: 修复 iOS 系统下圆角失效的问题 [#9958](https://github.com/youzan/vant/issues/9958)
+- Uploader: 修复图片预览卡顿的问题 [#9961](https://github.com/youzan/vant/issues/9961)
+
 ### [v3.3.2](https://github.com/compare/v3.3.1...v3.3.2)
 
 `2021-11-28`
