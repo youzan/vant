@@ -25,9 +25,9 @@ Use `v-model` to control the name of active panels.
 
 ```html
 <van-collapse v-model="activeNames">
-  <van-collapse-item title="Title1" name="1">Content</van-collapse-item>
-  <van-collapse-item title="Title2" name="2">Content</van-collapse-item>
-  <van-collapse-item title="Title3" name="3">Content</van-collapse-item>
+  <van-collapse-item title="Title1" name="1">Content 1</van-collapse-item>
+  <van-collapse-item title="Title2" name="2">Content 2</van-collapse-item>
+  <van-collapse-item title="Title3" name="3">Content 3</van-collapse-item>
 </van-collapse>
 ```
 
@@ -48,9 +48,9 @@ In accordion mode, only one panel can be expanded at the same time.
 
 ```html
 <van-collapse v-model="activeName" accordion>
-  <van-collapse-item title="Title1" name="1">Content</van-collapse-item>
-  <van-collapse-item title="Title2" name="2">Content</van-collapse-item>
-  <van-collapse-item title="Title3" name="3">Content</van-collapse-item>
+  <van-collapse-item title="Title1" name="1">Content 1</van-collapse-item>
+  <van-collapse-item title="Title2" name="2">Content 2</van-collapse-item>
+  <van-collapse-item title="Title3" name="3">Content 3</van-collapse-item>
 </van-collapse>
 ```
 
@@ -71,12 +71,12 @@ Use the `disabled` prop to disable CollapseItem.
 
 ```html
 <van-collapse v-model="activeNames">
-  <van-collapse-item title="Title1" name="1">Content</van-collapse-item>
+  <van-collapse-item title="Title1" name="1">Content 1</van-collapse-item>
   <van-collapse-item title="Title2" name="2" disabled>
-    Content
+    Content 2
   </van-collapse-item>
   <van-collapse-item title="Title3" name="3" disabled>
-    Content
+    Content 3
   </van-collapse-item>
 </van-collapse>
 ```
@@ -89,10 +89,10 @@ Use the `disabled` prop to disable CollapseItem.
     <template #title>
       <div>Title1 <van-icon name="question-o" /></div>
     </template>
-    Content
+    Content 1
   </van-collapse-item>
   <van-collapse-item title="Title2" name="2" icon="shop-o">
-    Content
+    Content 2
   </van-collapse-item>
 </van-collapse>
 ```
