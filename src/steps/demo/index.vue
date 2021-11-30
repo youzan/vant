@@ -6,6 +6,7 @@
         <van-step>{{ t('step2') }}</van-step>
         <van-step>{{ t('step3') }}</van-step>
         <van-step>{{ t('step4') }}</van-step>
+        <van-step>{{ t('step4') }}</van-step>
       </van-steps>
 
       <van-steps :active.sync="active">
