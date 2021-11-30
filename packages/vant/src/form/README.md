@@ -431,9 +431,9 @@ export default {
   setup() {
     const result = ref('');
     const showArea = ref(false);
-    const onConfirm = (value) => {
+    const onConfirm = (areaValues) => {
       showArea.value = false;
-      result.value = values
+      result.value = areaValues
         .filter((item) => !!item)
         .map((item) => item.name)
         .join('/');

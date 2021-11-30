@@ -23,8 +23,8 @@ const t = useTranslate({
 const areaCode = ref('');
 const showArea = ref(false);
 
-const onConfirm = (values: AreaColumnOption[]) => {
-  areaCode.value = values
+const onConfirm = (areaValues: AreaColumnOption[]) => {
+  areaCode.value = areaValues
     .filter((item) => !!item)
     .map((item) => item.name)
     .join('/');
