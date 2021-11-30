@@ -2,7 +2,7 @@
   title: 气泡弹出框
   icon: popup
   labels:
-    - Navigation
+    - Feedback
   description: 将弹出式的气泡菜单.
   attrs:
     - name: value
