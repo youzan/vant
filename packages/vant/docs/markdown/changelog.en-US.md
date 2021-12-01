@@ -16,6 +16,12 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.3.4](https://github.com/compare/v3.3.3...v3.3.4)
+
+`2021-12-01`
+
+- fix `lib/ssr.js` not exist
+
 ### [v3.3.3](https://github.com/compare/v3.3.2...v3.3.3)
 
 `2021-11-30`

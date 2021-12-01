@@ -16,6 +16,12 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.3.4](https://github.com/compare/v3.3.3...v3.3.4)
+
+`2021-12-01`
+
+- 修复 `lib/ssr.js` 文件不存在导致 SSR 失败的问题
+
 ### [v3.3.3](https://github.com/compare/v3.3.2...v3.3.3)
 
 `2021-11-30`
