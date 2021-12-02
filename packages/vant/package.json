@@ -18,6 +18,8 @@
       "require": "./lib/vant.cjs.js",
       "types": "./lib/index.d.ts"
     },
+    "./es": "./lib/vant.es.js",
+    "./lib": "./lib/vant.cjs.js",
     "./es/*": "./es/*",
     "./lib/*": "./lib/*",
     "./package.json": "./package.json"
