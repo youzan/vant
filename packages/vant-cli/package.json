@@ -74,7 +74,7 @@
     "jest-canvas-mock": "^2.3.1",
     "jest-serializer-html": "^7.1.0",
     "less": "^4.1.2",
-    "lint-staged": "^11.2.6",
+    "lint-staged": "^12.1.2",
     "lodash-es": "^4.17.21",
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.4.1",
