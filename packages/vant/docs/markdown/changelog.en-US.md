@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.3.5](https://github.com/compare/v3.3.4...v3.3.5)
+
+`2021-12-02`
+
+**Bug Fixes**
+
+- fix exports field break SSR [#9988](https://github.com/youzan/vant/issues/9988)
+- fix exports field break unplugin-vue-components [#9985](https://github.com/youzan/vant/issues/9985)
+
 ### [v3.3.4](https://github.com/compare/v3.3.3...v3.3.4)
 
 `2021-12-01`

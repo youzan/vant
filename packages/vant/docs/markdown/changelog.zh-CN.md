@@ -16,6 +16,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.3.5](https://github.com/compare/v3.3.4...v3.3.5)
+
+`2021-12-02`
+
+**Bug Fixes**
+
+- 修复 exports field 导致 SSR 无法正确引入的问题 [#9988](https://github.com/youzan/vant/issues/9988)
+- 修复 exports field 导致 unplugin-vue-components 引用报错的问题 [#9985](https://github.com/youzan/vant/issues/9985)
+
 ### [v3.3.4](https://github.com/compare/v3.3.3...v3.3.4)
 
 `2021-12-01`
