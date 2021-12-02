@@ -24,6 +24,14 @@ export default createComponent({
     title: String,
     disabled: Boolean,
     value: [Number, String],
+    href: String,
+    target: { type: String, default: '_self' },
+    to: [String, Object],
+    replace: { type: Boolean, default: false },
+    append: { type: Boolean, default: false },
+    decoration: { type: Boolean, default: true },
+    download: { type: Boolean, default: false },
+    destination: String,
   },
   data() {
     return {
