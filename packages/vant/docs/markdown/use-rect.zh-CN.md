@@ -13,16 +13,18 @@
 ```
 
 ```js
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRect } from '@vant/use';
 
 export default {
   setup() {
     const root = ref();
-    const rect = useRect(root);
 
-    console.log(rect); // -> 元素的大小及其相对于视口的位置
-
+    onMounted(()=>{
+      const rect = useRect(root);
+      console.log(rect); // -> 元素的大小及其相对于视口的位置
+    })
+    
     return { root };
   },
 };
