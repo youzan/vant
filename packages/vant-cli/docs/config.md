@@ -1,13 +1,15 @@
 # 配置指南
 
-- [配置指南](#)
+- [配置指南](#----)
   - [vant.config.mjs](#vantconfigmjs)
     - [name](#name)
-    - [build.css](#buildcss)
+    - [build.css.base](#buildcssbase)
+    - [build.css.preprocessor](#buildcsspreprocessor)
     - [build.site.publicPath](#buildsitepublicpath)
     - [build.srcDir](#buildsrcdir)
     - [build.namedExport](#buildnamedexport)
     - [build.configureVite](#buildconfigurevite)
+    - [build.packageManager](#buildpackagemanager)
     - [site.title](#sitetitle)
     - [site.logo](#sitelogo)
     - [site.description](#sitedescription)
@@ -18,11 +20,11 @@
     - [site.hideSimulator](#sitehidesimulator)
     - [site.simulator.url](#sitesimulatorurl)
     - [site.htmlMeta](#sitehtmlmeta)
+    - [site.enableVConsole](#siteenablevconsole)
   - [Babel](#babel)
-    - [默认配置](#-1)
-    - [依赖](#-2)
+    - [默认配置](#----)
   - [Postcss](#postcss)
-    - [默认配置](#-3)
+    - [默认配置](#-----1)
   - [browserslist](#browserslist)
 
 ## vant.config.mjs
@@ -77,14 +79,33 @@ export default {
 - Type: `string`
 - Default: `''`
 
-组件库名称，建议使用中划线分割，如`demo-ui`。
+组件库名称，建议使用中划线分割，如 `demo-ui`。
 
-### build.css
+### build.css.base
 
-- Type: `object`
-- Default: `{ preprocessor: 'less' }`
+- Type: `string`
+- Default: `'style/base.less'`
 
-CSS 预处理器配置，目前支持`less`和`sass`两种预处理器，默认使用`less`。
+全局样式文件的路径，可以为相对路径或绝对路径。
+
+相对路径基于 `src` 目录计算。
+
+```js
+module.exports = {
+  build: {
+    css: {
+      base: 'style/global.scss',
+    },
+  },
+};
+```
+
+### build.css.preprocessor
+
+- Type: `string`
+- Default: `'less'`
+
+CSS 预处理器配置，目前支持 `less` 和 `sass` 两种预处理器，默认使用 `less`。
 
 ```js
 module.exports = {
