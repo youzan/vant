@@ -14,9 +14,9 @@ async function genEntryForSSR() {
   const cjsContent = `'use strict';
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./dist/${name}.cjs.min.js');
+  module.exports = require('./${name}.cjs.min.js');
 } else {
-  module.exports = require('./dist/${name}.cjs.js');
+  module.exports = require('./${name}.cjs.js');
 };
 `;
 
