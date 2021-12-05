@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.36](https://github.com/youzan/vant/compare/v2.12.35...v2.12.36)
+
+`2021-12-05`
+
+**Bug Fixes**
+
+- Calendar: date is empty when `poppable = fasle` in dialog [#9845](https://github.com/youzan/vant/issues/9845) [#9939](https://github.com/youzan/vant/issues/9939)
+- Uploader: preview is slow when sum of images size be bigger [#7307](https://github.com/youzan/vant/issues/7307) [#9953](https://github.com/youzan/vant/issues/9953)
+
 ### [v2.12.35](https://github.com/youzan/vant/compare/v2.12.34...v2.12.35)
 
 `2021-11-27`

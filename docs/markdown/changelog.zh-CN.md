@@ -16,6 +16,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.36](https://github.com/youzan/vant/compare/v2.12.35...v2.12.36)
+
+`2021-12-05`
+
+**Bug Fixes**
+
+- Calendar: 修复在 Dialog 内使用时出现日期空白的问题 [#9845](https://github.com/youzan/vant/issues/9845) [#9939](https://github.com/youzan/vant/issues/9939)
+- Uploader: 修复图片预览卡顿的问题 [#7307](https://github.com/youzan/vant/issues/7307) [#9953](https://github.com/youzan/vant/issues/9953)
+
 ### [v2.12.35](https://github.com/youzan/vant/compare/v2.12.34...v2.12.35)
 
 `2021-11-27`
