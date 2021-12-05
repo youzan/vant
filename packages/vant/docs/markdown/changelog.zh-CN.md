@@ -16,6 +16,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.3.6](https://github.com/compare/v3.3.5...v3.3.6)
+
+`2021-12-05`
+
+**Bug Fixes**
+
+- 修复 ssr.js 文件引用路径错误的问题 [#9999](https://github.com/youzan/vant/issues/9999)
+
 ### [v3.3.5](https://github.com/compare/v3.3.4...v3.3.5)
 
 `2021-12-02`
