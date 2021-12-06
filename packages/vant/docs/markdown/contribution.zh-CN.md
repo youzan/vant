@@ -100,7 +100,7 @@ src
 
 ```bash
 # 添加主仓库到 remote，作为 fork 后仓库的上游仓库
-git remote add upstream https://github.com/youzan/vant.git
+git remote add upstream git@github.com:youzan/vant.git
 
 # 拉取主仓库最新代码
 git fetch upstream

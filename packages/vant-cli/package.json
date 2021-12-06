@@ -10,10 +10,6 @@
   "engines": {
     "node": "^14.16.0 || >=16.0.0"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
     "dev": "tsc --watch",
     "build": "rimraf ./lib && tsc",
@@ -31,6 +27,16 @@
   "keywords": [
     "vant"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youzan/vant.git",
+    "directory": "packages/vant-cli"
+  },
+  "bugs": "https://github.com/youzan/vant/issues",
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {

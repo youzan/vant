@@ -7,15 +7,21 @@
   "files": [
     "src"
   ],
+  "scripts": {
+    "release": "release-it"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "scripts": {
-    "release": "release-it"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youzan/vant.git",
+    "directory": "packages/vant-icons"
   },
+  "bugs": "https://github.com/youzan/vant/issues",
+  "author": "chenjiahan",
   "license": "MIT",
-  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-icons",
   "devDependencies": {
     "release-it": "^14.11.6"
   },

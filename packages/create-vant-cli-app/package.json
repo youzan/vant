@@ -12,10 +12,6 @@
     "release": "pnpm build & release-it",
     "prepare": "pnpm build"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/youzan/vant/tree/dev/packages/create-vant-cli-app"
-  },
   "files": [
     "lib",
     "generators"
@@ -26,6 +22,12 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youzan/vant.git",
+    "directory": "packages/create-vant-cli-app"
+  },
+  "bugs": "https://github.com/youzan/vant/issues",
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
