@@ -29,9 +29,6 @@
     "lib",
     "vetur"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
     "dev": "vant-cli dev",
     "lint": "vant-cli lint",
@@ -43,12 +40,19 @@
     "test:watch": "vant-cli test --watch",
     "test:coverage": "open test/coverage/index.html"
   },
-  "npm": {
-    "tag": "next"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:youzan/vant.git"
+    "url": "https://github.com/youzan/vant.git",
+    "directory": "packages/vant"
+  },
+  "bugs": "https://github.com/youzan/vant/issues",
+  "author": "chenjiahan",
+  "license": "MIT",
+  "npm": {
+    "tag": "next"
   },
   "keywords": [
     "ui",
@@ -59,8 +63,6 @@
     "component",
     "components"
   ],
-  "author": "youzanfe",
-  "license": "MIT",
   "dependencies": {
     "@vant/icons": "^1.7.1",
     "@vant/popperjs": "^1.1.0",

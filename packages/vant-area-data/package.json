@@ -4,15 +4,21 @@
   "description": "Vant 省市区数据",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
     "build": "rimraf ./lib && tsc",
     "release": "pnpm build && npm publish",
     "prepare": "pnpm build"
   },
-  "license": "MIT",
-  "repository": "https://github.com/youzan/vant"
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youzan/vant.git",
+    "directory": "packages/vant-area-data"
+  },
+  "bugs": "https://github.com/youzan/vant/issues",
+  "author": "chenjiahan",
+  "license": "MIT"
 }
