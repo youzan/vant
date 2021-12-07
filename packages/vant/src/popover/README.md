@@ -241,7 +241,7 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| select | Emitted when an action is clicked | _action: Action, index: number_ |
+| select | Emitted when an action is clicked | _action: PopoverAction, index: number_ |
 | open | Emitted when opening Popover | - |
 | close | Emitted when closing Popover | - |
 | opened | Emitted when Popover is opened | - |

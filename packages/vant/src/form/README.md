@@ -492,7 +492,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | label-width | Field label width | _number \| string_ | `6.2em` |
-| label-align | Field label align, can be set to `center` `right` | _string_ | `left` |
+| label-align | Field label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Field input align, can be set to `center` `right` | _string_ | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
 | validate-trigger | When to validate the form，can be set to `onChange`、`onSubmit` | _string_ | `onBlur` |
