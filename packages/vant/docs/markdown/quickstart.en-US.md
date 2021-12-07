@@ -152,7 +152,7 @@ export default {
         {
           libraryName: 'vant',
           esModule: true,
-          resolveStyle: (name) => `vant/es/${name}/style`,
+          resolveStyle: (name) => `vant/es/${name}/style/index`,
         },
       ],
     }),
@@ -163,8 +163,8 @@ export default {
 ### 3. Manually import
 
 ```js
-import Button from 'vant/es/button';
-import 'vant/es/button/style';
+import Button from 'vant/es/button/index';
+import 'vant/es/button/style/index';
 ```
 
 ### 4. Import all components

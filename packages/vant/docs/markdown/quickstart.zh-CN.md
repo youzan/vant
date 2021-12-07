@@ -172,7 +172,7 @@ export default {
         {
           libraryName: 'vant',
           esModule: true,
-          resolveStyle: (name) => `vant/es/${name}/style`,
+          resolveStyle: (name) => `vant/es/${name}/style/index`,
         },
       ],
     }),
@@ -186,9 +186,9 @@ export default {
 
 ```js
 // 引入组件
-import Button from 'vant/es/button';
+import Button from 'vant/es/button/index';
 // 引入组件对应的样式，若组件没有样式文件，则无须引入
-import 'vant/es/button/style';
+import 'vant/es/button/style/index';
 ```
 
 ### 方式四. 导入所有组件
