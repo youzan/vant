@@ -128,7 +128,7 @@ export default {
 
 #### 3. Import Components
 
-After the above two steps, you can use Vant components directly:
+Then you can import components from Vant:
 
 ```js
 import { createApp } from 'vue';
@@ -171,7 +171,7 @@ Set babel config in `.babelrc` or `babel.config.js`:
 
 #### 3. Import Components
 
-Then you can import components from vant:
+Then you can import components from Vant:
 
 ```js
 // Input
