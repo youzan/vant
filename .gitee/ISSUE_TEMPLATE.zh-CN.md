@@ -1,3 +1,5 @@
-你好，请使用下面的链接创建 issue 以帮助我们更快的排查问题，不规范的 issue 会被关闭，感谢配合。
+注意：gitee 中为 vant 的镜像仓库，不进行 issue 处理。
 
-http://vant-contrib.gitee.io/vant-issue-generater
+请移步 GitHub issues 进行反馈：
+
+https://github.com/youzan/vant/issues
