@@ -51,23 +51,19 @@ const imageURL = 'https://img.yzcdn.cn/vant/ipad.jpeg';
       :thumb="imageURL"
     >
       <template #tags>
-        <div>
-          <van-tag plain type="danger" style="margin-right: 5px">
-            {{ t('tag') }}
-          </van-tag>
-          <van-tag plain type="danger">{{ t('tag') }}</van-tag>
-        </div>
+        <van-tag plain type="danger" style="margin-right: 5px">
+          {{ t('tag') }}
+        </van-tag>
+        <van-tag plain type="danger">{{ t('tag') }}</van-tag>
       </template>
 
       <template #footer>
-        <div>
-          <van-button round size="mini">
-            {{ t('button') }}
-          </van-button>
-          <van-button round size="mini">
-            {{ t('button') }}
-          </van-button>
-        </div>
+        <van-button round size="mini">
+          {{ t('button') }}
+        </van-button>
+        <van-button round size="mini">
+          {{ t('button') }}
+        </van-button>
       </template>
     </van-card>
   </demo-block>
