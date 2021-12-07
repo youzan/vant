@@ -92,55 +92,21 @@ In the GUI, click on 'Dependencies' -> `Install Dependencies` and add `vant` to 
 
 ## Usage
 
-### 1. Import on demand
+### Import on demand in vite projects (recommended)
 
-Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) to import components on demand.
+If you are using vite, please use [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import).
 
-```bash
-# Install plugin
-npm i babel-plugin-import -D
-```
-
-Set babel config in .babelrc or babel.config.js:
-
-```json
-{
-  "plugins": [
-    [
-      "import",
-      {
-        "libraryName": "vant",
-        "libraryDirectory": "es",
-        "style": true
-      }
-    ]
-  ]
-}
-```
-
-Then you can import components from vant:
-
-```js
-// Input
-import { Button } from 'vant';
-
-// Output
-import Button from 'vant/es/button';
-import 'vant/es/button/style';
-```
-
-> If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead.
-
-### 2. Vite Plugin
-
-If you are using Vite, please use [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import).
+#### 1. Install Plugin
 
 ```bash
 npm i vite-plugin-style-import -D
 ```
 
+#### 2. Configure Plugin
+
+Configure the plugin in the `vite.config.js` file:
+
 ```js
-// vite.config.js
 import vue from '@vitejs/plugin-vue';
 import styleImport from 'vite-plugin-style-import';
 
@@ -160,14 +126,67 @@ export default {
 };
 ```
 
-### 3. Manually import
+#### 3. Import Components
+
+Then you can import components from Vant:
 
 ```js
-import Button from 'vant/es/button/index';
-import 'vant/es/button/style/index';
+import { createApp } from 'vue';
+import { Button } from 'vant';
+
+const app = createApp();
+app.use(Button);
 ```
 
-### 4. Import all components
+> Vant supports Tree Shaking by default.
+
+### Import on demand in non-vite projects (recommended)
+
+In non-vite projects, use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) to import components on demand.
+
+#### 1. Install Plugin
+
+```bash
+npm i babel-plugin-import -D
+```
+
+#### 2. Configure Plugin
+
+Set babel config in `.babelrc` or `babel.config.js`:
+
+```json
+{
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "vant",
+        "libraryDirectory": "es",
+        "style": true
+      }
+    ]
+  ]
+}
+```
+
+#### 3. Import Components
+
+Then you can import components from Vant:
+
+```js
+// Input
+import { Button } from 'vant';
+
+// Output
+import Button from 'vant/es/button';
+import 'vant/es/button/style';
+```
+
+> If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead.
+
+### Import all components (not recommended)
+
+Import all components will **increase the bundle size**, so this is not recommended.
 
 ```js
 import { createApp } from 'vue';
@@ -179,3 +198,13 @@ app.use(Vant);
 ```
 
 > If you configured babel-plugin-import, you won't be allowed to import all components.
+
+### Manually import (not recommended)
+
+```js
+// import script
+import Button from 'vant/es/button/index';
+// import style
+// if the component does not have a style file, there is no need to import
+import 'vant/es/button/style/index';
+```

@@ -134,18 +134,16 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-card__desc van-ellipsis">
             Description
           </div>
-          <div>
-            <transition-stub style="margin-right: 5px;">
-              <span class="van-tag van-tag--plain van-tag--danger">
-                Tag
-              </span>
-            </transition-stub>
-            <transition-stub>
-              <span class="van-tag van-tag--plain van-tag--danger">
-                Tag
-              </span>
-            </transition-stub>
-          </div>
+          <transition-stub style="margin-right: 5px;">
+            <span class="van-tag van-tag--plain van-tag--danger">
+              Tag
+            </span>
+          </transition-stub>
+          <transition-stub>
+            <span class="van-tag van-tag--plain van-tag--danger">
+              Tag
+            </span>
+          </transition-stub>
         </div>
         <div class="van-card__bottom">
           <div class="van-card__price">
@@ -169,26 +167,24 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-card__footer">
-      <div>
-        <button type="button"
-                class="van-button van-button--default van-button--mini van-button--round"
-        >
-          <div class="van-button__content">
-            <span class="van-button__text">
-              Button
-            </span>
-          </div>
-        </button>
-        <button type="button"
-                class="van-button van-button--default van-button--mini van-button--round"
-        >
-          <div class="van-button__content">
-            <span class="van-button__text">
-              Button
-            </span>
-          </div>
-        </button>
-      </div>
+      <button type="button"
+              class="van-button van-button--default van-button--mini van-button--round"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+      <button type="button"
+              class="van-button van-button--default van-button--mini van-button--round"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
     </div>
   </div>
 </div>

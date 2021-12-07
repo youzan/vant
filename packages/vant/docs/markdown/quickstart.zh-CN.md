@@ -76,25 +76,6 @@ pnpm add vant@3
 - 通过 npm 引入，并通过构建工具进行打包
 - 下载对应文件，并托管在你自己的服务器或 CDN 上
 
-### 通过脚手架安装
-
-在新项目中使用 Vant 时，可以使用 Vue 官方提供的脚手架 [Vue Cli](https://cli.vuejs.org/zh/) 创建项目并安装 Vant。
-
-```bash
-# 安装 Vue Cli
-npm install -g @vue/cli
-
-# 创建一个项目
-vue create hello-world
-
-# 创建完成后，可以通过命令打开图形化界面，如下图所示
-vue ui
-```
-
-![](https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png)
-
-在图形化界面中，点击 `依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
-
 ## 示例
 
 ### 示例工程
@@ -112,56 +93,21 @@ vue ui
 
 ## 引入组件
 
-### 方式一. 通过 babel 插件按需引入组件
+### 在 vite 项目中按需引入组件（推荐）
 
-[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一款 babel 插件，它会在编译过程中将 import 语句自动转换为按需引入的方式。
+在 vite 项目中使用 Vant 时，推荐安装 [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) 插件，它可以自动按需引入组件的样式。
 
-```bash
-# 安装插件
-npm i babel-plugin-import -D
-```
-
-在.babelrc 或 babel.config.js 中添加配置：
-
-```json
-{
-  "plugins": [
-    [
-      "import",
-      {
-        "libraryName": "vant",
-        "libraryDirectory": "es",
-        "style": true
-      }
-    ]
-  ]
-}
-```
-
-接着你可以在代码中直接引入 Vant 组件，插件会自动将代码转化为按需引入的形式。
-
-```js
-// 原始代码
-import { Button } from 'vant';
-
-// 编译后代码
-import Button from 'vant/es/button';
-import 'vant/es/button/style';
-```
-
-> 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入。
-
-### 方式二. 在 Vite 项目中按需引入组件
-
-对于 vite 项目，可以使用 [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) 实现按需引入, 原理和 `babel-plugin-import` 类似。
+#### 1. 安装插件
 
 ```bash
-# 安装插件
 npm i vite-plugin-style-import -D
 ```
 
+#### 2. 配置插件
+
+安装完成后，在 `vite.config.js` 文件中配置插件：
+
 ```js
-// vite.config.js
 import vue from '@vitejs/plugin-vue';
 import styleImport from 'vite-plugin-style-import';
 
@@ -181,20 +127,67 @@ export default {
 };
 ```
 
-### 方式三. 手动按需引入组件
+#### 3. 引入组件
 
-在不使用插件的情况下，可以手动引入需要使用的组件和样式。
+完成以上两步，就可以直接使用 Vant 组件了：
 
 ```js
-// 引入组件
-import Button from 'vant/es/button/index';
-// 引入组件对应的样式，若组件没有样式文件，则无须引入
-import 'vant/es/button/style/index';
+import { createApp } from 'vue';
+import { Button } from 'vant';
+
+const app = createApp();
+app.use(Button);
 ```
 
-### 方式四. 导入所有组件
+> Vant 默认支持通过 Tree Shaking 实现 script 的按需引入。
 
-Vant 支持一次性导入所有组件，引入所有组件会增加代码包体积，因此不推荐这种做法。
+### 在非 vite 项目中按需引入组件（推荐）
+
+在非 vite 的项目中，可以通过 babel 插件来实现按需引入组件。我们需要安装 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 插件，它会在编译过程中将 import 语句自动转换为按需引入的方式。
+
+#### 1. 安装插件
+
+```bash
+npm i babel-plugin-import -D
+```
+
+#### 2. 配置插件
+
+在.babelrc 或 babel.config.js 中添加配置：
+
+```json
+{
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "vant",
+        "libraryDirectory": "es",
+        "style": true
+      }
+    ]
+  ]
+}
+```
+
+#### 3. 引入组件
+
+接着你可以在代码中直接引入 Vant 组件，插件会自动将代码转化为按需引入的形式。
+
+```js
+// 原始代码
+import { Button } from 'vant';
+
+// 编译后代码
+import Button from 'vant/es/button';
+import 'vant/es/button/style';
+```
+
+> 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入。
+
+### 导入所有组件（不推荐）
+
+Vant 支持一次性导入所有组件，引入所有组件会**增加代码包体积**，因此不推荐这种做法。
 
 ```js
 import { createApp } from 'vue';
@@ -205,4 +198,16 @@ const app = createApp();
 app.use(Vant);
 ```
 
-> Tips: 配置按需引入后，将不允许直接导入所有组件。
+> Tips: 配置按需引入插件后，将不允许直接导入所有组件。
+
+### 手动按需引入组件（不推荐）
+
+在不使用任何构建插件的情况下，可以手动引入需要使用的组件和样式。
+
+```js
+// 引入组件脚本
+import Button from 'vant/es/button/index';
+// 引入组件样式
+// 若组件没有样式文件，则无须引入
+import 'vant/es/button/style/index';
+```

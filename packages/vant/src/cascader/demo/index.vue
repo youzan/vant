@@ -55,7 +55,7 @@ const t = useTranslate({
 
 type StateItem = {
   show: boolean;
-  value: string | number | null;
+  value: string | number | undefined;
   result: string;
   options?: CascaderOption[];
   tabIndex?: number;
@@ -68,18 +68,18 @@ const baseState = reactive<StateItem>({
 });
 const customColorState = reactive<StateItem>({
   show: false,
-  value: null,
+  value: undefined,
   result: '',
 });
 const asyncState = reactive<StateItem>({
   show: false,
-  value: null,
+  value: undefined,
   result: '',
   options: t('asyncOptions1'),
 });
 const customFieldState = reactive<StateItem>({
   show: false,
-  value: null,
+  value: undefined,
   result: '',
 });
 
@@ -91,7 +91,7 @@ const fieldNames = {
 
 const customContentState = reactive<StateItem>({
   show: false,
-  value: null,
+  value: undefined,
   result: '',
 });
 
