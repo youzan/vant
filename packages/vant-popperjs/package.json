@@ -2,8 +2,8 @@
   "name": "@vant/popperjs",
   "version": "1.1.0",
   "description": "Pre-compiled popperjs core",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
@@ -15,9 +15,9 @@
   },
   "scripts": {
     "clean": "rimraf ./dist",
-    "dev": "rollup --config rollup.config.js --watch",
+    "dev": "node ./build.js -w",
     "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
-    "build:bundle": "rollup --config rollup.config.js",
+    "build:bundle": "node ./build.js",
     "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
     "release": "pnpm build && release-it",
     "prepare": "pnpm build"
@@ -34,10 +34,8 @@
     "@popperjs/core": "^2.9.2"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^13.0.0",
+    "esbuild": "^0.13.15",
     "release-it": "^14.2.2",
-    "rollup": "^2.33.3",
-    "rollup-plugin-esbuild": "^4.6.0",
     "typescript": "~4.5.2"
   },
   "release-it": {
