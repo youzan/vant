@@ -248,7 +248,7 @@ export default {
 | --- | --- | --- | --- |
 | title | Title | _string_ | - |
 | value | Value of selected option | _string \| number_ | - |
-| options | Options | _Option[]_ | `[]` |
+| options | Options | _CascaderOption[]_ | `[]` |
 | placeholder | Placeholder of unselected tab | _string_ | `Select` |
 | active-color | Active color | _string_ | `#ee0a24` |
 | swipeable `v3.0.11` | Whether to enable gestures to slide left and right | _boolean_ | `false` |
@@ -256,14 +256,14 @@ export default {
 | close-icon `v3.0.10` | Close icon name | _string_ | `cross` |
 | field-names `v3.0.4` | Custom the fields of options | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
-### Data Structure of Option
+### Data Structure of CascaderOption
 
 | Key                | Description               | Type                        |
 | ------------------ | ------------------------- | --------------------------- |
 | text               | Option text               | _string_                    |
 | value              | Option value              | _string \| number_          |
 | color `v3.1.0`     | Text color                | _string_                    |
-| children           | Cascade children          | _Option[]_                  |
+| children           | Cascade children          | _CascaderOption[]_          |
 | disabled `v3.1.2`  | Whether to disable option | _boolean_                   |
 | className `v3.1.0` | className for the option  | _string \| Array \| object_ |
 
@@ -271,8 +271,8 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| change | Emitted when active option changed | `{ value, selectedOptions, tabIndex }` |
-| finish | Emitted when all options is selected | `{ value, selectedOptions, tabIndex }` |
+| change | Emitted when active option changed | _{ value: string \| number, selectedOptions: CascaderOption[], tabIndex: number }_ |
+| finish | Emitted when all options is selected | _{ value: string \| number, selectedOptions: CascaderOption[], tabIndex: number }_ |
 | close | Emitted when the close icon is clicked | - |
 | click-tab | Emitted when a tab is clicked | _activeTab: number, title: string_ |
 
@@ -281,7 +281,7 @@ export default {
 | Name | Description | SlotProps |
 | --- | --- | --- |
 | title | Custom title | - |
-| option `v3.1.4` | Custom option text | _{ option: Option, selected: boolean }_ |
+| option `v3.1.4` | Custom option text | _{ option: CascaderOption, selected: boolean }_ |
 | options-top `v3.2.7` | Custom the content above the options | _{ tabIndex: number }_ |
 | options-bottom `v3.2.8` | Custom the content below the options | _{ tabIndex: number }_ |
 

@@ -39,7 +39,7 @@ export default {
 
 ### 简单模式
 
- 将 `mode` 设置为 `simple` 来切换到简单模式，此时分页器不会展示具体的页码按钮。
+将 `mode` 设置为 `simple` 来切换到简单模式，此时分页器不会展示具体的页码按钮。
 
 ```html
 <van-pagination v-model="currentPage" :page-count="12" mode="simple" />

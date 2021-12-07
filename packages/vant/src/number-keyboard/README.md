@@ -190,7 +190,7 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| input | Emitted when a key is pressed | key: Content of the key |
+| input | Emitted when a key is pressed | _key: string_ |
 | delete | Emitted when the delete key is pressed | - |
 | close | Emitted when the close button is clicked | - |
 | blur | Emitted when the close button is clicked or the keyboard is blurred | - |

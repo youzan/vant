@@ -101,8 +101,9 @@ vue ui
 
 我们提供了丰富的[示例工程](https://github.com/youzan/vant-demo)，通过示例工程你可以了解如下内容：
 
-- 基于 Vue Cli 和 Vant 搭建应用
+- 基于 Vite 和 Vant 搭建应用
 - 基于 Nuxt 和 Vant 搭建应用
+- 基于 Vue Cli 和 Vant 搭建应用
 - 配置按需引入组件
 - 配置基于 Rem 的适配方案
 - 配置基于 Viewport 的适配方案

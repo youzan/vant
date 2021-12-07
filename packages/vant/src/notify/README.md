@@ -107,7 +107,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| type | Can be set to `primary` `success` `warning` | _string_ | `danger` |
+| type | Can be set to `primary` `success` `warning` | _NotifyType_ | `danger` |
 | message | Message | _string_ | - |
 | duration | Duration(ms), won't disappear if value is 0 | _number \| string_ | `3000` |
 | color | Message color | _string_ | `white` |

@@ -524,7 +524,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | label-width | 表单项 label 宽度，默认单位为`px` | _number \| string_ | `6.2em` |
-| label-align |  表单项 label 对齐方式，可选值为 `center` `right` | _string_ | `left` |
+| label-align | 表单项 label 对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | validate-trigger | 表单校验触发时机，可选值为 `onChange`、`onSubmit`，详见下表 | _string_ | `onBlur` |
@@ -552,7 +552,7 @@ export default {
 | trigger | 本项规则的触发时机，可选值为 `onChange`、`onBlur` | _string_ |
 | formatter | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |
 
-### validate-trigger  可选值
+### validate-trigger 可选值
 
 通过 `validate-trigger` 属性可以自定义表单校验的触发时机。
 
