@@ -22,6 +22,8 @@
     "./lib": "./lib/vant.cjs.js",
     "./es/": "./es/",
     "./lib/": "./lib/",
+    "./lib/*": "./lib/*/vant.cjs.js",
+    "./es/*": "./es/*/vant.es.js",
     "./package.json": "./package.json"
   },
   "files": [
