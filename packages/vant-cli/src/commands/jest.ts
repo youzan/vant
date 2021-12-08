@@ -6,8 +6,9 @@ import {
   JEST_CONFIG_FILE,
   PACKAGE_ENTRY_FILE,
 } from '../common/constant.js';
+import type { Config } from '@jest/types';
 
-export function test(command: any) {
+export function test(command: Config.Argv) {
   setNodeEnv('test');
 
   genPackageEntry({
@@ -26,7 +27,7 @@ export function test(command: any) {
     // make jest tests faster
     // see: https://ivantanev.com/make-jest-faster/
     maxWorkers: '50%',
-  } as any;
+  } as Config.Argv;
 
   jest
     .runCLI(config, [ROOT])
