@@ -143,6 +143,7 @@ importers:
       '@babel/preset-typescript': 7.16.0_@babel+core@7.16.0
       '@docsearch/css': 3.0.0-alpha.41
       '@docsearch/js': 3.0.0-alpha.41
+      '@types/jest': 27.0.3
       '@vant/eslint-config': link:../vant-eslint-config
       '@vant/markdown-vetur': link:../vant-markdown-vetur
       '@vant/stylelint-config': link:../vant-stylelint-config
@@ -189,7 +190,6 @@ importers:
       vue3-jest: 27.0.0-alpha.2_ac2f17b3c0c7baa3be42e28e69a86f5b
     devDependencies:
       '@types/fs-extra': 9.0.13
-      '@types/jest': 27.0.3
       '@types/less': 3.0.3
       '@types/lodash-es': 4.17.5
       '@types/markdown-it': 12.2.3
@@ -1834,6 +1834,7 @@ packages:
       '@types/node': 16.11.6
       '@types/yargs': 16.0.4
       chalk: 4.1.2
+    dev: false
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha1-dhnC6yGyVIP20WdUi0z9WnSIw9U=, tarball: '@nodelib/fs.scandir/download/@nodelib/fs.scandir-2.1.5.tgz'}
@@ -2075,23 +2076,26 @@ packages:
 
   /@types/istanbul-lib-coverage/2.0.3:
     resolution: {integrity: sha1-S6jdtyAiH0MuRDvV+RF/0iz9R2I=, tarball: '@types/istanbul-lib-coverage/download/@types/istanbul-lib-coverage-2.0.3.tgz'}
+    dev: false
 
   /@types/istanbul-lib-report/3.0.0:
     resolution: {integrity: sha1-wUwk8Y6oGQwRjudWK3/5mjZVJoY=, tarball: '@types/istanbul-lib-report/download/@types/istanbul-lib-report-3.0.0.tgz'}
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.3
+    dev: false
 
   /@types/istanbul-reports/3.0.1:
     resolution: {integrity: sha1-kVP+mLuivVZaY63ZQ21vDX+EaP8=, tarball: '@types/istanbul-reports/download/@types/istanbul-reports-3.0.1.tgz'}
     dependencies:
       '@types/istanbul-lib-report': 3.0.0
+    dev: false
 
   /@types/jest/27.0.3:
     resolution: {integrity: sha512-cmmwv9t7gBYt7hNKH5Spu7Kuu/DotGa+Ff+JGRKZ4db5eh8PnKS4LuebJ3YLUoyOyIHraTGyULn23YtEAm0VSg==, tarball: '@types/jest/download/@types/jest-27.0.3.tgz'}
     dependencies:
       jest-diff: 27.3.1
       pretty-format: 27.3.1
-    dev: true
+    dev: false
 
   /@types/json-schema/7.0.9:
     resolution: {integrity: sha1-l+3JA36gw4WFMgsolk3eOznkZg0=, tarball: '@types/json-schema/download/@types/json-schema-7.0.9.tgz'}
@@ -2181,11 +2185,13 @@ packages:
 
   /@types/yargs-parser/20.2.1:
     resolution: {integrity: sha1-O5ziSJkZ2eT+pDm3aRarw0st8Sk=, tarball: '@types/yargs-parser/download/@types/yargs-parser-20.2.1.tgz'}
+    dev: false
 
   /@types/yargs/16.0.4:
     resolution: {integrity: sha1-JqrZjdLCo45CEIbqmtQrnlFkKXc=, tarball: '@types/yargs/download/@types/yargs-16.0.4.tgz'}
     dependencies:
       '@types/yargs-parser': 20.2.1
+    dev: false
 
   /@typescript-eslint/eslint-plugin/5.3.1_0b03015ac9d0c5d1a285585c9a5df9b9:
     resolution: {integrity: sha512-cFImaoIr5Ojj358xI/SDhjog57OK2NqlpxwdcgyxDA3bJlZcJq5CPzUXtpD7CxI2Hm6ATU7w5fQnnkVnmwpHqw==, tarball: '@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-5.3.1.tgz'}
@@ -2574,6 +2580,7 @@ packages:
   /ansi-styles/5.2.0:
     resolution: {integrity: sha1-B0SWkK1Fd30ZJKwquy/IiV26g2s=, tarball: ansi-styles/download/ansi-styles-5.2.0.tgz}
     engines: {node: '>=10'}
+    dev: false
 
   /ansi-styles/6.1.0:
     resolution: {integrity: sha1-hzE8ECuBGKvVc3GvqzRhi/c1DtM=, tarball: ansi-styles/download/ansi-styles-6.1.0.tgz}
@@ -3554,6 +3561,7 @@ packages:
   /diff-sequences/27.0.6:
     resolution: {integrity: sha1-MwXLLlWgM5JAVGlcxmAZ/X+OVyM=, tarball: diff-sequences/download/diff-sequences-27.0.6.tgz}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
+    dev: false
 
   /diffable-html/4.1.0:
     resolution: {integrity: sha1-56LR3hh8TiOll1G05MF0g6BYxpY=, tarball: diffable-html/download/diffable-html-4.1.0.tgz}
@@ -5493,6 +5501,7 @@ packages:
       diff-sequences: 27.0.6
       jest-get-type: 27.3.1
       pretty-format: 27.3.1
+    dev: false
 
   /jest-docblock/27.0.6:
     resolution: {integrity: sha1-zHgmas9/5pPKRiy72g6k5jnk5fM=, tarball: jest-docblock/download/jest-docblock-27.0.6.tgz}
@@ -5545,6 +5554,7 @@ packages:
   /jest-get-type/27.3.1:
     resolution: {integrity: sha1-qKKwoStQFpdzCZ7uYKDm3RFCPv8=, tarball: jest-get-type/download/jest-get-type-27.3.1.tgz}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
+    dev: false
 
   /jest-haste-map/27.3.1:
     resolution: {integrity: sha1-dlb71kv0i9qQTnWfydk+LIBzU+4=, tarball: jest-haste-map/download/jest-haste-map-27.3.1.tgz}
@@ -7013,6 +7023,7 @@ packages:
       ansi-regex: 5.0.1
       ansi-styles: 5.2.0
       react-is: 17.0.2
+    dev: false
 
   /process-nextick-args/2.0.1:
     resolution: {integrity: sha1-eCDZsWEgzFXKmud5JoCufbptf+I=, tarball: process-nextick-args/download/process-nextick-args-2.0.1.tgz}
@@ -7100,6 +7111,7 @@ packages:
 
   /react-is/17.0.2:
     resolution: {integrity: sha1-5pHUqOnHiTZWVVOas3J2Kw77VPA=, tarball: react-is/download/react-is-17.0.2.tgz}
+    dev: false
 
   /read-pkg-up/3.0.0:
     resolution: {integrity: sha1-PtSWaF26D4/hGNBpHcUfSh/5bwc=, tarball: read-pkg-up/download/read-pkg-up-3.0.0.tgz}
