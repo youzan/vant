@@ -160,7 +160,7 @@ exports[`should render badge prop correctly 1`] = `
   <div class="van-badge__wrapper">
     <span class="van-tab__text van-tab__text--ellipsis">
     </span>
-    <div class="van-badge van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--fixed">
       10
     </div>
   </div>

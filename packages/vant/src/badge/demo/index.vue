@@ -9,12 +9,14 @@ const t = useTranslate({
     standalone: '独立展示',
     customColor: '自定义颜色',
     customContent: '自定义徽标内容',
+    customPosition: '自定义徽标位置',
   },
   'en-US': {
     max: 'Max',
     standalone: 'Standalone',
     customColor: 'Custom Color',
     customContent: 'Custom Content',
+    customPosition: 'Custom Position',
   },
 });
 </script>
@@ -77,6 +79,18 @@ const t = useTranslate({
       <template #content>
         <van-icon name="down" class="badge-icon" />
       </template>
+    </van-badge>
+  </demo-block>
+
+  <demo-block :title="t('customPosition')">
+    <van-badge content="10" position="top-left">
+      <div class="child" />
+    </van-badge>
+    <van-badge content="10" position="bottom-left">
+      <div class="child" />
+    </van-badge>
+    <van-badge content="10" position="bottom-right">
+      <div class="child" />
     </van-badge>
   </demo-block>
 
