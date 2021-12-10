@@ -156,7 +156,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-badge__wrapper van-sidebar-item__text">
           Group 1
-          <div class="van-badge van-badge--dot van-badge--fixed">
+          <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed">
           </div>
         </div>
       </div>
@@ -167,7 +167,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-badge__wrapper van-sidebar-item__text">
           Group 2
-          <div class="van-badge van-badge--fixed">
+          <div class="van-badge van-badge--top-right van-badge--fixed">
             5
           </div>
         </div>

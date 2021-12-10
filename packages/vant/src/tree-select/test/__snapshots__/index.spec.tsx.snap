@@ -58,7 +58,7 @@ exports[`should render nav badge correctly 1`] = `
     >
       <div class="van-badge__wrapper van-sidebar-item__text">
         group1
-        <div class="van-badge van-badge--fixed">
+        <div class="van-badge van-badge--top-right van-badge--fixed">
           3
         </div>
       </div>

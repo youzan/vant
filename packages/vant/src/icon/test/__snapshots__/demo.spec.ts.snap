@@ -88,20 +88,20 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-row">
           <div class="van-col van-col--6">
             <i class="van-badge__wrapper van-icon van-icon-chat-o">
-              <div class="van-badge van-badge--dot van-badge--fixed">
+              <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed">
               </div>
             </i>
           </div>
           <div class="van-col van-col--6">
             <i class="van-badge__wrapper van-icon van-icon-chat-o">
-              <div class="van-badge van-badge--fixed">
+              <div class="van-badge van-badge--top-right van-badge--fixed">
                 9
               </div>
             </i>
           </div>
           <div class="van-col van-col--6">
             <i class="van-badge__wrapper van-icon van-icon-chat-o">
-              <div class="van-badge van-badge--fixed">
+              <div class="van-badge van-badge--top-right van-badge--fixed">
                 99+
               </div>
             </i>

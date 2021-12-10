@@ -433,7 +433,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-home-o van-grid-item__icon">
-          <div class="van-badge van-badge--dot van-badge--fixed">
+          <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed">
           </div>
         </i>
         <span class="van-grid-item__text">
@@ -446,7 +446,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-search van-grid-item__icon">
-          <div class="van-badge van-badge--fixed">
+          <div class="van-badge van-badge--top-right van-badge--fixed">
             99+
           </div>
         </i>

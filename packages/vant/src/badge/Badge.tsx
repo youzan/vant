@@ -17,6 +17,12 @@ import {
 
 const [name, bem] = createNamespace('badge');
 
+export type BadgePosition =
+  | 'top-left'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-right';
+
 const badgeProps = {
   dot: Boolean,
   max: numericProp,
@@ -25,6 +31,7 @@ const badgeProps = {
   offset: Array as unknown as PropType<[string | number, string | number]>,
   content: numericProp,
   showZero: truthProp,
+  position: makeStringProp<BadgePosition>('top-right'),
 };
 
 export type BadgeProps = ExtractPropTypes<typeof badgeProps>;
@@ -87,7 +94,10 @@ export default defineComponent({
       if (hasContent() || props.dot) {
         return (
           <div
-            class={bem({ dot: props.dot, fixed: !!slots.default })}
+            class={bem([
+              props.position,
+              { dot: props.dot, fixed: !!slots.default },
+            ])}
             style={style.value}
           >
             {renderContent()}

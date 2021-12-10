@@ -142,7 +142,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-search">
         </i>
-        <div class="van-badge van-badge--dot van-badge--fixed">
+        <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed">
         </div>
       </div>
       <div class="van-tabbar-item__text">
@@ -157,7 +157,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-friends-o">
         </i>
-        <div class="van-badge van-badge--fixed">
+        <div class="van-badge van-badge--top-right van-badge--fixed">
           5
         </div>
       </div>
@@ -173,7 +173,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-setting-o">
         </i>
-        <div class="van-badge van-badge--fixed">
+        <div class="van-badge van-badge--top-right van-badge--fixed">
           20
         </div>
       </div>
@@ -194,7 +194,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <img src="https://img.yzcdn.cn/vant/user-active.png">
-        <div class="van-badge van-badge--fixed">
+        <div class="van-badge van-badge--top-right van-badge--fixed">
           3
         </div>
       </div>
