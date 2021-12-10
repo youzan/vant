@@ -33,6 +33,10 @@ export default createComponent({
       type: String,
       default: 'photo',
     },
+    sr: {
+      type: String,
+      default: 's',
+    },
   },
 
   data() {
@@ -188,7 +192,7 @@ export default createComponent({
   render() {
     return (
       <div
-        class={bem({ round: this.round })}
+        class={bem({ round: this.sr === 'r' || this.round })}
         style={this.style}
         onClick={this.onClick}
       >

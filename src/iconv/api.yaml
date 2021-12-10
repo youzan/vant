@@ -1,0 +1,13 @@
+- name: van-iconv
+  icon: iconv
+  title: 图标
+  labels:
+    - Display
+  description: 图标
+  attrs: []
+  slots: false
+  events:
+    - name: click
+      title: 点击后
+      description: 点击此项时触发
+      params: []

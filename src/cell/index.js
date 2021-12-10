@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isDef, isDef2 } from '../utils';
+import { createNamespace, isDef, isDefB } from '../utils';
 import { emit } from '../utils/functional';
 import { routeProps, functionalRoute } from '../utils/router';
 import { cellProps } from './shared';
@@ -63,7 +63,7 @@ export default createComponent({
     const parent = this.$parent;
     const that = this;
     const { icon, size, title, label, value, isLink, infield, novalue } = this._props;
-    const showTitle = slots('title') || isDef(title);
+    const showTitle = slots('title') || isDefB(title);
 
     function Labelb() {
       const showLabel = slots('lable') || isDef(label);

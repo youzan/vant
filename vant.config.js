@@ -117,6 +117,10 @@ module.exports = {
                 title: 'Icon 图标',
               },
               {
+                path: 'iconv',
+                title: 'Iconv 图标',
+              },
+              {
                 path: 'image',
                 title: 'Image 图片',
               },
@@ -526,6 +530,10 @@ module.exports = {
               {
                 path: 'icon',
                 title: 'Icon',
+              },
+              {
+                path: 'iconv',
+                title: 'Iconv',
               },
               {
                 path: 'image',

@@ -29,6 +29,16 @@
           title: 取 contain、none 中较小的
       default: contain
       description: 图片地址
+    - name: sr
+      title: 图片风格
+      type: string
+      options:
+        - value: s
+          title: 方形
+        - value: r
+          title: 圆形
+      default: s
+      description: 图片风格
   slots: false
   events:
     - name: click

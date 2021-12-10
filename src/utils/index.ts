@@ -13,6 +13,10 @@ export function isDef<T>(val: T): val is NonNullable<T> {
   return val !== undefined && val !== null;
 }
 
+export function isDefB(val: unknown): val is unknown {
+  return val !== undefined && val !== null && val !== '';
+}
+
 export function isFunction(val: unknown): val is Function {
   return typeof val === 'function';
 }
