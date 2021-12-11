@@ -545,7 +545,7 @@ export default {
 
 | 键名 | 说明 | 类型 |
 | --- | --- | --- |
-| required | 是否为必选字段 | _boolean_ |
+| required | 是否为必选字段，当值为空字符串、空数组、`undefined`、`null` 时，校验不通过 | _boolean_ |
 | message | 错误提示文案 | _string \| (value, rule) => string_ |
 | validator | 通过函数进行校验 | _(value, rule) => boolean \| string \| Promise_ |
 | pattern | 通过正则表达式进行校验 | _RegExp_ |
