@@ -60,27 +60,43 @@ export const TimePickerMixin = {
       if (!oldVal) {
         this.$emit('input', null);
       } else {
-        this.$emit('input', val)
+        this.$emit('input', val);
       }
     },
   },
 
   mounted() {
     this.updateColumnValue();
-
     this.$nextTick(() => {
       this.updateInnerValue();
     });
   },
 
   methods: {
-    // @exposed-api
     getPicker() {
       return this.$refs.picker;
     },
 
+    // https://github.com/youzan/vant/issues/10013
+    getProxiedPicker() {
+      const { picker } = this.$refs;
+      if (picker) {
+        const proxy = (fn) => (...args) => {
+          picker[fn](...args);
+          this.updateInnerValue();
+        };
+        return {
+          ...picker,
+          setValues: proxy('setValues'),
+          setIndexes: proxy('setIndexes'),
+          setColumnIndex: proxy('setColumnIndex'),
+          setColumnValue: proxy('setColumnValue'),
+        };
+      }
+    },
+
     onConfirm() {
-      this.$emit('input', this.innerValue)
+      this.$emit('input', this.innerValue);
       this.$emit('confirm', this.innerValue);
     },
 
