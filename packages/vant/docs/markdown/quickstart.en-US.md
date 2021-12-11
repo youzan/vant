@@ -99,7 +99,7 @@ If you are using vite, please use [vite-plugin-style-import](https://github.com/
 #### 1. Install Plugin
 
 ```bash
-npm i vite-plugin-style-import -D
+npm i vite-plugin-style-import@1.2.0 -D
 ```
 
 #### 2. Configure Plugin
