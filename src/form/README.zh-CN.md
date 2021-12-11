@@ -478,18 +478,18 @@ export default {
 
 ### Rule 数据结构
 
-使用 Field 的`rules`属性可以定义校验规则，可选属性如下:
+使用 Field 的 `rules` 属性可以定义校验规则，可选属性如下:
 
 | 键名 | 说明 | 类型 |
 | --- | --- | --- |
-| required | 是否为必选字段 | _boolean_ |
+| required | 是否为必选字段，当值为空字符串、空数组、`undefined`、`null` 时，校验不通过 | _boolean_ |
 | message `v2.5.3` | 错误提示文案 | _string \| (value, rule) => string_ |
 | validator `v2.5.3` | 通过函数进行校验 | _(value, rule) => boolean \| Promise_ |
 | pattern `v2.5.3` | 通过正则表达式进行校验 | _RegExp_ |
 | trigger `v2.5.2` | 本项规则的触发时机，可选值为 `onChange`、`onBlur` | _string_ |
 | formatter `v2.5.3` | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |
 
-### validate-trigger  可选值
+### validate-trigger 可选值
 
 通过 `validate-trigger` 属性可以自定义表单校验的触发时机。
 
