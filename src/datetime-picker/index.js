@@ -13,7 +13,7 @@ export default createComponent({
   methods: {
     // @exposed-api
     getPicker() {
-      return this.$refs.root.getPicker();
+      return this.$refs.root.getProxiedPicker();
     },
   },
 
