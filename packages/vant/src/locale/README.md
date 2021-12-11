@@ -41,20 +41,21 @@ Current supported languages:
 
 | Language                 | Filename     |
 | ------------------------ | ------------ |
-| Chinese                  | zh-CN        |
-| Traditional Chinese (HK) | zh-HK        |
-| Traditional Chinese (TW) | zh-TW        |
 | German                   | de-DE        |
 | German (formal)          | de-DE-formal |
 | English                  | en-US        |
 | Spanish (Spain)          | es-ES        |
+| French                   | fr-FR        |
 | Japanese                 | ja-JP        |
 | Norwegian                | nb-NO        |
+| Portuguese (Brazil)      | pt-BR        |
 | Romanian                 | ro-RO        |
 | Russian                  | ru-RU        |
 | Turkish                  | tr-TR        |
 | Thai                     | th-TH        |
-| French                   | fr-FR        |
+| Chinese                  | zh-CN        |
+| Traditional Chinese (HK) | zh-HK        |
+| Traditional Chinese (TW) | zh-TW        |
 
 > View all language configs [Here](https://github.com/youzan/vant/tree/dev/packages/vant/src/locale/lang).
 

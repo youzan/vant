@@ -25,9 +25,15 @@ app.use(CollapseItem);
 
 ```html
 <van-collapse v-model="activeNames">
-  <van-collapse-item title="标题1" name="1">内容</van-collapse-item>
-  <van-collapse-item title="标题2" name="2">内容</van-collapse-item>
-  <van-collapse-item title="标题3" name="3">内容</van-collapse-item>
+  <van-collapse-item title="标题1" name="1">
+    代码是写出来给人看的，附带能在机器上运行。
+  </van-collapse-item>
+  <van-collapse-item title="标题2" name="2">
+    技术无非就是那些开发它的人的共同灵魂。
+  </van-collapse-item>
+  <van-collapse-item title="标题3" name="3">
+    在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+  </van-collapse-item>
 </van-collapse>
 ```
 
@@ -48,9 +54,15 @@ export default {
 
 ```html
 <van-collapse v-model="activeName" accordion>
-  <van-collapse-item title="标题1" name="1">内容</van-collapse-item>
-  <van-collapse-item title="标题2" name="2">内容</van-collapse-item>
-  <van-collapse-item title="标题3" name="3">内容</van-collapse-item>
+  <van-collapse-item title="标题1" name="1">
+    代码是写出来给人看的，附带能在机器上运行。
+  </van-collapse-item>
+  <van-collapse-item title="标题2" name="2">
+    技术无非就是那些开发它的人的共同灵魂。
+  </van-collapse-item>
+  <van-collapse-item title="标题3" name="3">
+    在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+  </van-collapse-item>
 </van-collapse>
 ```
 
@@ -71,9 +83,15 @@ export default {
 
 ```html
 <van-collapse v-model="activeNames">
-  <van-collapse-item title="标题1" name="1">内容</van-collapse-item>
-  <van-collapse-item title="标题2" name="2" disabled>内容</van-collapse-item>
-  <van-collapse-item title="标题3" name="3" disabled>内容</van-collapse-item>
+  <van-collapse-item title="标题1" name="1">
+    代码是写出来给人看的，附带能在机器上运行。
+  </van-collapse-item>
+  <van-collapse-item title="标题2" name="2" disabled>
+    技术无非就是那些开发它的人的共同灵魂。
+  </van-collapse-item>
+  <van-collapse-item title="标题3" name="3" disabled>
+    在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+  </van-collapse-item>
 </van-collapse>
 ```
 
@@ -87,10 +105,10 @@ export default {
     <template #title>
       <div>标题1 <van-icon name="question-o" /></div>
     </template>
-    内容
+    代码是写出来给人看的，附带能在机器上运行。
   </van-collapse-item>
   <van-collapse-item title="标题2" name="2" icon="shop-o">
-    内容
+    技术无非就是那些开发它的人的共同灵魂。
   </van-collapse-item>
 </van-collapse>
 ```

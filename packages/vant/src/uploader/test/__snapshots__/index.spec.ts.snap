@@ -16,7 +16,11 @@ exports[`delete preview image 1`] = `
           </i>
         </div>
       </div>
-      <div class="van-uploader__preview-delete">
+      <div role="button"
+           class="van-uploader__preview-delete"
+           tabindex="0"
+           aria-label="Delete"
+      >
         <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
         </i>
       </div>
@@ -61,7 +65,11 @@ exports[`disable preview image 2`] = `
           test.jpg
         </div>
       </div>
-      <div class="van-uploader__preview-delete">
+      <div role="button"
+           class="van-uploader__preview-delete"
+           tabindex="0"
+           aria-label="Delete"
+      >
         <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
         </i>
       </div>
@@ -107,7 +115,11 @@ exports[`image-fit prop 1`] = `
           </i>
         </div>
       </div>
-      <div class="van-uploader__preview-delete">
+      <div role="button"
+           class="van-uploader__preview-delete"
+           tabindex="0"
+           aria-label="Delete"
+      >
         <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
         </i>
       </div>
@@ -141,7 +153,11 @@ exports[`preview-cover slot 1`] = `
           Custom Preview Cover
         </div>
       </div>
-      <div class="van-uploader__preview-delete">
+      <div role="button"
+           class="van-uploader__preview-delete"
+           tabindex="0"
+           aria-label="Delete"
+      >
         <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
         </i>
       </div>
@@ -160,7 +176,11 @@ exports[`preview-cover slot 1`] = `
           Custom Preview Cover
         </div>
       </div>
-      <div class="van-uploader__preview-delete">
+      <div role="button"
+           class="van-uploader__preview-delete"
+           tabindex="0"
+           aria-label="Delete"
+      >
         <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
         </i>
       </div>
@@ -190,7 +210,11 @@ exports[`preview-size prop 1`] = `
           test.jpg
         </div>
       </div>
-      <div class="van-uploader__preview-delete">
+      <div role="button"
+           class="van-uploader__preview-delete"
+           tabindex="0"
+           aria-label="Delete"
+      >
         <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
         </i>
       </div>
@@ -223,7 +247,11 @@ exports[`render preview image 1`] = `
           </i>
         </div>
       </div>
-      <div class="van-uploader__preview-delete">
+      <div role="button"
+           class="van-uploader__preview-delete"
+           tabindex="0"
+           aria-label="Delete"
+      >
         <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
         </i>
       </div>
@@ -236,7 +264,11 @@ exports[`render preview image 1`] = `
           https://img.yzcdn.cn/vant/test.pdf
         </div>
       </div>
-      <div class="van-uploader__preview-delete">
+      <div role="button"
+           class="van-uploader__preview-delete"
+           tabindex="0"
+           aria-label="Delete"
+      >
         <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
         </i>
       </div>
@@ -249,7 +281,11 @@ exports[`render preview image 1`] = `
           test.jpg
         </div>
       </div>
-      <div class="van-uploader__preview-delete">
+      <div role="button"
+           class="van-uploader__preview-delete"
+           tabindex="0"
+           aria-label="Delete"
+      >
         <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
         </i>
       </div>

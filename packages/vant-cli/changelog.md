@@ -1,5 +1,11 @@
 # 更新日志
 
+## v4.0.0-rc.4
+
+- 新增 CommonJS 格式的构建产物，分别为 `lib/[name].cjs.js` 和 `lib/[name].cjs.min.js`
+- 现在 ESModule 和 CommonJS 格式的产物会自动对外部依赖进行 external 处理
+- 修复 Windows 路径兼容问题
+
 ## v4.0.0-rc.3
 
 ### 不兼容更新
@@ -286,7 +292,7 @@ yarn add sass
 
 `2020-12-01`
 
--  升级 docsearch 3，优化搜索框样式
+- 升级 docsearch 3，优化搜索框样式
 
 ## v3.0.0
 
@@ -469,7 +475,7 @@ yarn add sass
 
 `2020-01-15`
 
-- 优化 help 命令 
+- 优化 help 命令
 - 优化控制台输出信息
 
 ### v2.1.6

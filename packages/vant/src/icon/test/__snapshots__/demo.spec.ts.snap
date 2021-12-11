@@ -64,7 +64,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-tabs__content">
     <div id="van-tab"
          role="tabpanel"
-         class="van-tab__panel"
+         class="van-tab__panel demo-icon-tab-panel"
          tabindex="0"
          aria-labelledby="van-tabs-0"
          style
@@ -88,20 +88,20 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-row">
           <div class="van-col van-col--6">
             <i class="van-badge__wrapper van-icon van-icon-chat-o">
-              <div class="van-badge van-badge--dot van-badge--fixed">
+              <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed">
               </div>
             </i>
           </div>
           <div class="van-col van-col--6">
             <i class="van-badge__wrapper van-icon van-icon-chat-o">
-              <div class="van-badge van-badge--fixed">
+              <div class="van-badge van-badge--top-right van-badge--fixed">
                 9
               </div>
             </i>
           </div>
           <div class="van-col van-col--6">
             <i class="van-badge__wrapper van-icon van-icon-chat-o">
-              <div class="van-badge van-badge--fixed">
+              <div class="van-badge van-badge--top-right van-badge--fixed">
                 99+
               </div>
             </i>
@@ -143,7 +143,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div id="van-tab"
          role="tabpanel"
-         class="van-tab__panel"
+         class="van-tab__panel demo-icon-tab-panel"
          tabindex="-1"
          aria-labelledby="van-tabs-1"
          style="display: none;"
@@ -151,7 +151,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div id="van-tab"
          role="tabpanel"
-         class="van-tab__panel"
+         class="van-tab__panel demo-icon-tab-panel"
          tabindex="-1"
          aria-labelledby="van-tabs-2"
          style="display: none;"
@@ -159,7 +159,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div id="van-tab"
          role="tabpanel"
-         class="van-tab__panel"
+         class="van-tab__panel demo-icon-tab-panel"
          tabindex="-1"
          aria-labelledby="van-tabs-3"
          style="display: none;"

@@ -431,9 +431,9 @@ export default {
   setup() {
     const result = ref('');
     const showArea = ref(false);
-    const onConfirm = (value) => {
+    const onConfirm = (areaValues) => {
       showArea.value = false;
-      result.value = values
+      result.value = areaValues
         .filter((item) => !!item)
         .map((item) => item.name)
         .join('/');
@@ -492,7 +492,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | label-width | Field label width | _number \| string_ | `6.2em` |
-| label-align | Field label align, can be set to `center` `right` | _string_ | `left` |
+| label-align | Field label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Field input align, can be set to `center` `right` | _string_ | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
 | validate-trigger | When to validate the form，can be set to `onChange`、`onSubmit` | _string_ | `onBlur` |
@@ -509,7 +509,7 @@ export default {
 
 | Key | Description | Type |
 | --- | --- | --- |
-| required | Whether to be a required field | _boolean_ |
+| required | Whether to be a required field, the value is not allowed to be empty string, empty array, `undefined`, `null` | _boolean_ |
 | message | Error message | _string \| (value, rule) => string_ |
 | validator | Custom validator | _(value, rule) => boolean \| string \| Promise_ |
 | pattern | Regex pattern | _RegExp_ |

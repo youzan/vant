@@ -1,14 +1,20 @@
 {
   "name": "@vant/eslint-config",
-  "version": "3.3.2",
+  "version": "3.4.0",
   "description": "eslint config of vant",
   "main": "index.js",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youzan/vant.git",
+    "directory": "packages/vant-eslint-config"
+  },
+  "bugs": "https://github.com/youzan/vant/issues",
+  "author": "chenjiahan",
   "license": "MIT",
-  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-eslint-config",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "5.3.1",
@@ -19,6 +25,6 @@
   },
   "devDependencies": {
     "eslint": "^8.0.0",
-    "typescript": "4.x"
+    "typescript": "~4.5.2"
   }
 }

@@ -251,14 +251,14 @@ export default {
 
 ### Events
 
-| 事件名        | 说明                     | 回调参数                        |
-| ------------- | ------------------------ | ------------------------------- |
-| select        | 点击选项时触发           | _action: Action, index: number_ |
-| open          | 打开菜单时触发           | -                               |
-| close         | 关闭菜单时触发           | -                               |
-| opened        | 打开菜单且动画结束后触发 | -                               |
-| closed        | 关闭菜单且动画结束后触发 | -                               |
-| click-overlay | 点击遮罩层时触发         | _event: MouseEvent_             |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| select | 点击选项时触发 | _action: PopoverAction, index: number_ |
+| open | 打开菜单时触发 | - |
+| close | 关闭菜单时触发 | - |
+| opened | 打开菜单且动画结束后触发 | - |
+| closed | 关闭菜单且动画结束后触发 | - |
+| click-overlay | 点击遮罩层时触发 | _event: MouseEvent_ |
 
 ### Slots
 

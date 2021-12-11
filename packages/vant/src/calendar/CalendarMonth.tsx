@@ -89,15 +89,6 @@ export default defineComponent({
 
     const getTitle = () => title.value;
 
-    const scrollIntoView = (body: Element) => {
-      const el = props.showSubtitle ? daysRef.value : monthRef.value;
-
-      if (el) {
-        const scrollTop = useRect(el).top - useRect(body).top + body.scrollTop;
-        setScrollTop(body, scrollTop);
-      }
-    };
-
     const getMultipleDayType = (day: Date) => {
       const isSelected = (date: Date) =>
         (props.currentDate as Date[]).some(
@@ -239,6 +230,20 @@ export default defineComponent({
       days.value.filter((day) => day.type === 'disabled')
     );
 
+    const scrollToDate = (body: Element, targetDate: Date) => {
+      if (daysRef.value) {
+        const daysRect = useRect(daysRef.value);
+        const totalRows = placeholders.value.length;
+        const currentRow = Math.ceil((targetDate.getDate() + offset.value) / 7);
+        const rowOffset = ((currentRow - 1) * daysRect.height) / totalRows;
+
+        setScrollTop(
+          body,
+          daysRect.top + rowOffset + body.scrollTop - useRect(body).top
+        );
+      }
+    };
+
     const renderDay = (item: CalendarDayItem, index: number) => (
       <CalendarDay
         v-slots={pick(slots, ['top-info', 'bottom-info'])}
@@ -262,7 +267,7 @@ export default defineComponent({
       getTitle,
       getHeight: () => height.value,
       setVisible,
-      scrollIntoView,
+      scrollToDate,
       disabledDays,
     });
 

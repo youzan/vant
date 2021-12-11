@@ -1,6 +1,6 @@
 {
   "name": "@vant/cli",
-  "version": "4.0.0-rc.3",
+  "version": "4.0.0-rc.4",
   "type": "module",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -10,13 +10,9 @@
   "engines": {
     "node": "^14.16.0 || >=16.0.0"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsc",
+    "build": "rimraf ./lib && tsc",
     "release": "pnpm build & release-it",
     "prepare": "pnpm build"
   },
@@ -31,6 +27,16 @@
   "keywords": [
     "vant"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youzan/vant.git",
+    "directory": "packages/vant-cli"
+  },
+  "bugs": "https://github.com/youzan/vant/issues",
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
@@ -42,12 +48,12 @@
     "vue": "^3.2.20"
   },
   "dependencies": {
+    "@types/jest": "^27.0.3",
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@docsearch/css": "3.0.0-alpha.41",
     "@docsearch/js": "3.0.0-alpha.41",
-    "@types/jest": "^27.0.2",
     "@vant/eslint-config": "^3.3.2",
     "@vant/markdown-vetur": "^2.2.0",
     "@vant/stylelint-config": "^1.4.2",
@@ -74,19 +80,19 @@
     "jest-canvas-mock": "^2.3.1",
     "jest-serializer-html": "^7.1.0",
     "less": "^4.1.2",
-    "lint-staged": "^11.2.6",
+    "lint-staged": "^12.1.2",
     "lodash-es": "^4.17.21",
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.4.1",
     "ora": "^6.0.1",
     "postcss": "^8.3.11",
     "postcss-load-config": "^3.1.0",
-    "prettier": "^2.4.1",
+    "prettier": "^2.5.0",
     "release-it": "^14.11.6",
     "stylelint": "^13.0.0",
     "transliteration": "^2.2.0",
     "ts-jest": "^27.0.7",
-    "typescript": "^4.4.4",
+    "typescript": "^4.5.2",
     "vite": "^2.6.13",
     "vite-plugin-html": "^2.1.1",
     "vite-plugin-md": "^0.11.4",

@@ -133,8 +133,9 @@ export default defineComponent({
           ]}
         >
           <button
+            type="button"
             disabled={disabled}
-            onClick={() => updateModelValue(modelValue - 1)}
+            onClick={() => updateModelValue(modelValue - 1, true)}
           >
             {slot ? slot() : props.prevText || t('prev')}
           </button>
@@ -154,8 +155,9 @@ export default defineComponent({
           ]}
         >
           <button
+            type="button"
             disabled={disabled}
-            onClick={() => updateModelValue(modelValue + 1)}
+            onClick={() => updateModelValue(modelValue + 1, true)}
           >
             {slot ? slot() : props.nextText || t('next')}
           </button>
@@ -172,8 +174,9 @@ export default defineComponent({
           ]}
         >
           <button
+            type="button"
             aria-current={page.active || undefined}
-            onClick={() => updateModelValue(page.number)}
+            onClick={() => updateModelValue(page.number, true)}
           >
             {slots.page ? slots.page(page) : page.text}
           </button>

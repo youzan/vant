@@ -1,19 +1,34 @@
 {
   "name": "vant",
-  "version": "3.2.8",
+  "version": "3.3.6",
   "description": "Mobile UI Components built on Vue",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "lib/vant.cjs.js",
+  "module": "lib/vant.es.js",
   "style": "lib/index.css",
   "typings": "lib/index.d.ts",
+  "unpkg": "lib/vant.min.js",
+  "jsdelivr": "lib/vant.min.js",
+  "exports": {
+    ".": {
+      "node": {
+        "import": "./lib/ssr.mjs",
+        "require": "./lib/ssr.js"
+      },
+      "import": "./lib/vant.es.js",
+      "require": "./lib/vant.cjs.js",
+      "types": "./lib/index.d.ts"
+    },
+    "./es": "./lib/vant.es.js",
+    "./lib": "./lib/vant.cjs.js",
+    "./es/": "./es/",
+    "./lib/": "./lib/",
+    "./package.json": "./package.json"
+  },
   "files": [
     "es",
     "lib",
     "vetur"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
     "dev": "vant-cli dev",
     "lint": "vant-cli lint",
@@ -25,12 +40,19 @@
     "test:watch": "vant-cli test --watch",
     "test:coverage": "open test/coverage/index.html"
   },
-  "npm": {
-    "tag": "next"
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:youzan/vant.git"
+    "url": "https://github.com/youzan/vant.git",
+    "directory": "packages/vant"
+  },
+  "bugs": "https://github.com/youzan/vant/issues",
+  "author": "chenjiahan",
+  "license": "MIT",
+  "npm": {
+    "tag": "next"
   },
   "keywords": [
     "ui",
@@ -41,8 +63,6 @@
     "component",
     "components"
   ],
-  "author": "youzanfe",
-  "license": "MIT",
   "dependencies": {
     "@vant/icons": "^1.7.1",
     "@vant/popperjs": "^1.1.0",
@@ -54,10 +74,11 @@
   "devDependencies": {
     "@vant/area-data": "^1.1.3",
     "@vant/cli": "workspace:*",
+    "@vant/eslint-config": "workspace:*",
     "@vue/compiler-sfc": "^3.2.20",
     "@vue/runtime-core": "^3.2.20",
     "@vue/test-utils": "^2.0.0-rc.16",
-    "typescript": "4.x",
+    "typescript": "~4.5.2",
     "vue": "^3.2.20",
     "vue-router": "^4.0.12"
   },
@@ -67,11 +88,9 @@
     "*.css",
     "*.less"
   ],
+  "web-types": "vetur/web-types.json",
   "vetur": {
     "tags": "vetur/tags.json",
     "attributes": "vetur/attributes.json"
-  },
-  "web-types": "vetur/web-types.json",
-  "unpkg": "lib/vant.min.js",
-  "jsdelivr": "lib/vant.min.js"
+  }
 }

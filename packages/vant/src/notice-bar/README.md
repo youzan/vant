@@ -21,14 +21,17 @@ app.use(NoticeBar);
 ### Basic Usage
 
 ```html
-<van-notice-bar text="Notice Content" left-icon="volume-o" />
+<van-notice-bar
+  text="Technology is the common soul of the people who developed it."
+  left-icon="volume-o"
+/>
 ```
 
 ### Scrollable
 
 ```html
 <!-- Enable scroll when text is short -->
-<van-notice-bar scrollable text="Notice Content" />
+<van-notice-bar scrollable text="Short Content" />
 
 <!-- Disable scroll when text is long -->
 <van-notice-bar
@@ -40,22 +43,24 @@ app.use(NoticeBar);
 ### Wrapable
 
 ```html
-<van-notice-bar wrapable :scrollable="false">Notice Content</van-notice-bar>
+<van-notice-bar wrapable :scrollable="false">
+  Technology is the common soul of the people who developed it.
+</van-notice-bar>
 ```
 
 ### Mode
 
 ```html
-<van-notice-bar mode="closeable">Notice Content</van-notice-bar>
+<van-notice-bar mode="closeable">Short Content</van-notice-bar>
 
-<van-notice-bar mode="link">Notice Content</van-notice-bar>
+<van-notice-bar mode="link">Short Content</van-notice-bar>
 ```
 
 ### Custom Style
 
 ```html
 <van-notice-bar color="#1989fa" background="#ecf9ff" left-icon="info-o">
-  Notice Content
+  Short Content
 </van-notice-bar>
 ```
 

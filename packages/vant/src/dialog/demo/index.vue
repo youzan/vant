@@ -3,7 +3,7 @@ import VanCell from '../../cell';
 import { Dialog } from '..';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
-import type { DialogAction } from '../Dialog';
+import type { DialogAction } from '../types';
 
 const VanDialog = Dialog.Component;
 
@@ -13,16 +13,22 @@ const t = useTranslate({
     alert1: '提示弹窗',
     alert2: '提示弹窗（无标题）',
     confirm: '确认弹窗',
+    content1: '代码是写出来给人看的，附带能在机器上运行。',
+    content2: '生命远不止连轴转和忙到极限，人类的体验远比这辽阔、丰富得多。',
+    content3:
+      '如果解决方法是丑陋的，那就肯定还有更好的解决方法，只是还没有发现而已。',
     beforeClose: '异步关闭',
     roundButton: '圆角按钮样式',
     componentCall: '组件调用',
-    content: '代码是写出来给人看的，附带能在机器上运行',
   },
   'en-US': {
     title: 'Title',
     alert1: 'Alert',
     alert2: 'Alert without title',
     confirm: 'Confirm dialog',
+    content1: 'Content',
+    content2: 'Content',
+    content3: 'Content',
     beforeClose: 'Before Close',
     roundButton: 'Round Button Style',
     componentCall: 'Component Call',
@@ -35,13 +41,13 @@ const image = 'https://img.yzcdn.cn/vant/apple-3.jpg';
 const onClickAlert = () => {
   Dialog.alert({
     title: t('title'),
-    message: t('content'),
+    message: t('content1'),
   });
 };
 
 const onClickAlert2 = () => {
   Dialog.alert({
-    message: t('content'),
+    message: t('content2'),
   });
 };
 
@@ -49,21 +55,21 @@ const onClickRound = () => {
   Dialog.alert({
     theme: 'round-button',
     title: t('title'),
-    message: t('content'),
+    message: t('content1'),
   });
 };
 
 const onClickRound2 = () => {
   Dialog.alert({
     theme: 'round-button',
-    message: t('content'),
+    message: t('content2'),
   });
 };
 
 const onClickConfirm = () => {
   Dialog.confirm({
     title: t('title'),
-    message: t('content'),
+    message: t('content3'),
   });
 };
 
@@ -75,7 +81,7 @@ const onClickBeforeClose = () => {
 
   Dialog.confirm({
     title: t('title'),
-    message: t('content'),
+    message: t('content3'),
     beforeClose,
   });
 };

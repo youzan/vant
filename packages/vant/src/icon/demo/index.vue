@@ -93,7 +93,7 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
 
 <template>
   <van-tabs v-model:active="tab" sticky>
-    <van-tab :title="t('demo')">
+    <van-tab class="demo-icon-tab-panel" :title="t('demo')">
       <demo-block :title="t('basicUsage')">
         <van-row>
           <van-col span="6" @click="copy(demoIcon)">
@@ -142,7 +142,7 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
       </demo-block>
     </van-tab>
 
-    <van-tab :title="t('basic')">
+    <van-tab class="demo-icon-tab-panel" :title="t('basic')">
       <van-row>
         <van-col
           v-for="icon in icons.basic"
@@ -156,7 +156,7 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
       </van-row>
     </van-tab>
 
-    <van-tab :title="t('outline')">
+    <van-tab class="demo-icon-tab-panel" :title="t('outline')">
       <van-row>
         <van-col
           v-for="icon in icons.outline"
@@ -170,7 +170,7 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
       </van-row>
     </van-tab>
 
-    <van-tab :title="t('filled')">
+    <van-tab class="demo-icon-tab-panel" :title="t('filled')">
       <van-row>
         <van-col
           v-for="icon in icons.filled"
@@ -190,14 +190,15 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
 .demo-icon {
   font-size: 0;
 
-  &-list {
-    box-sizing: border-box;
-    min-height: calc(100vh - 65px);
-    padding-top: 10px;
-  }
-
   &-notify {
     font-size: 13px;
+  }
+
+  &-tab-panel {
+    width: auto;
+    margin: 20px;
+    background-color: var(--van-background-color-light);
+    border-radius: 12px;
   }
 
   .van-col {
@@ -226,13 +227,6 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
     margin: 16px 0 16px;
     color: var(--van-text-color);
     font-size: 32px;
-  }
-
-  .van-tab__pane {
-    width: auto;
-    margin: 20px;
-    background-color: var(--van-background-color-light);
-    border-radius: 12px;
   }
 }
 </style>

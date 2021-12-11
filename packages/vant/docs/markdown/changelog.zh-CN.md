@@ -16,22 +16,128 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.3.6](https://github.com/compare/v3.3.5...v3.3.6)
+
+`2021-12-05`
+
+**Bug Fixes**
+
+- 修复 ssr.js 文件引用路径错误的问题 [#9999](https://github.com/youzan/vant/issues/9999)
+
+### [v3.3.5](https://github.com/compare/v3.3.4...v3.3.5)
+
+`2021-12-02`
+
+**Bug Fixes**
+
+- 修复 exports field 导致 SSR 无法正确引入的问题 [#9988](https://github.com/youzan/vant/issues/9988)
+- 修复 exports field 导致 unplugin-vue-components 引用报错的问题 [#9985](https://github.com/youzan/vant/issues/9985)
+
+### [v3.3.4](https://github.com/compare/v3.3.3...v3.3.4)
+
+`2021-12-01`
+
+- 修复 `lib/ssr.js` 文件不存在导致 SSR 失败的问题
+
+### [v3.3.3](https://github.com/compare/v3.3.2...v3.3.3)
+
+`2021-11-30`
+
+**Feature**
+
+- 支持在 nuxt3 中使用 [#9970](https://github.com/youzan/vant/issues/9970)
+- Locale: 新增 pt-BR 葡萄牙语 (巴西) [#9959](https://github.com/youzan/vant/issues/9959)
+
+**Bug Fixes**
+
+- Swipe: 修复 iOS 系统下圆角失效的问题 [#9958](https://github.com/youzan/vant/issues/9958)
+- Uploader: 修复图片预览卡顿的问题 [#9961](https://github.com/youzan/vant/issues/9961)
+
+### [v3.3.2](https://github.com/compare/v3.3.1...v3.3.2)
+
+`2021-11-28`
+
+**Feature**
+
+- 新增 `package.json` 中的 `exports` 字段 [#9952](https://github.com/issues/9952)
+- Tabbar: 支持在 route 模式下匹配子路由 [#9926](https://github.com/issues/9926)
+- Tabs: 将 `van-tab__pane-wrapper` 类重命名为 `van-tab__panel-wrapper` [#9951](https://github.com/issues/9951)
+
+**Bug Fixes**
+
+- Calendar: 修复 show-confirm 为 false 时不会限制最大日期范围的问题 [#9948](https://github.com/issues/9948)
+- Calendar: 修复 `scrollToDate` 方法无法精确滚动到对应日期的问题 [#9949](https://github.com/issues/9949)
+- Swipe: 修复开始滑动时未阻止 touchmove 事件行为的问题 [#9920](https://github.com/issues/9920)
+
+### [v3.3.1](https://github.com/compare/v3.3.0...v3.3.1)
+
+`2021-11-23`
+
+**Bug Fixes**
+
+- AddressEdit: 修复表单校验不通过时也会触发 save 事件的问题 [#9917](https://github.com/issues/9917)
+
+### [v3.3.0](https://github.com/compare/v3.2.8...v3.3.0)
+
+`2021-11-19`
+
+**Accessibility**
+
+改善以下组件的无障碍访问体验：
+
+- Cascader: 增加 role="menu", tabindex, aria-checked, aria-disabled 属性 [#9886](https://github.com/youzan/vant/issues/9886)
+- CountDown: 增加 role="timer" 属性 [#9906](https://github.com/youzan/vant/issues/9906)
+- DropdownMenu: 增加 role="menu", tabindex, aria-labelledby 属性 [#9893](https://github.com/youzan/vant/issues/9893)
+- Field: 增加 aria-labelledby 属性 [#9883](https://github.com/youzan/vant/issues/9883)
+- List: 增加 role="button", tabindex 属性 [#9888](https://github.com/youzan/vant/issues/9888)
+- Pagination: 增加 role="navigation" 和 button 标签 [#9901](https://github.com/youzan/vant/issues/9901)
+- Popover: 增加 tabindex, aria-disabled 属性 [#9889](https://github.com/youzan/vant/issues/9889)
+- Rate: 增加 aria-disabled, aria-readonly 属性 [#9881](https://github.com/youzan/vant/issues/9881)
+- Search: 提供默认的 id 属性 属性 [#9884](https://github.com/youzan/vant/issues/9884)
+- Sidebar: 增加 role="tab", tabindex, aria-selected 属性 [#9903](https://github.com/youzan/vant/issues/9903)
+- Slider: 增加 aria-disabled, aria-readonly 属性 [#9880](https://github.com/youzan/vant/issues/9880)
+- Stepper: 增加 aria-disabled 属性 [#9877](https://github.com/youzan/vant/issues/9877)
+- Stepper: 增加 role="group" 属性 [#9876](https://github.com/youzan/vant/issues/9876)
+- Switch: 增加 tabindex 属性 [#9887](https://github.com/youzan/vant/issues/9887)
+- Tabbar: 增加 role="tab", tabindex, aria-selected 属性 [#9895](https://github.com/youzan/vant/issues/9895)
+- Tabs: 增加 aria-controls 属性 [#9882](https://github.com/youzan/vant/issues/9882)
+- Tabs: 增加 aria-disabled 属性 [#9878](https://github.com/youzan/vant/issues/9878)
+- Tabs: 增加 tabindex, aria-orientation 属性 [#9872](https://github.com/youzan/vant/issues/9872)
+- Uploader: 删除按钮增加 role="button", tabindex, aria-label 属性 [#9905](https://github.com/youzan/vant/issues/9905)
+- 移除禁用元素的 tabindex 属性 [#9879](https://github.com/youzan/vant/issues/9879)
+
+**Feature**
+
+- Popup: 移除多余的 click 事件监听 [#9896](https://github.com/youzan/vant/issues/9896)
+- Field: 导出 `FieldRuleValidator` 等多个类型定义 [#9843](https://github.com/youzan/vant/issues/9843)
+- Empty: 压缩 svg 图标 [#9869](https://github.com/youzan/vant/issues/9869)
+- NumberKeyboard: 压缩 svg 图标 [#9869](https://github.com/youzan/vant/issues/9869)
+- Tabs: 将 `van-tab__pane` 类重命名为 `van-tab__panel` [#9885](https://github.com/youzan/vant/issues/9885)
+
+**Bug Fixes**
+
+- Popover: 修复 useClickAway 方法在 SSR 时报错的问题 [#9899](https://github.com/youzan/vant/issues/9899)
+- CouponList: 修复列表高度不正确的问题 [#9874](https://github.com/youzan/vant/issues/9874)
+- Field: 修复点击只读输入框会触发表单验证的问题 [#9862](https://github.com/youzan/vant/issues/9862)
+- Switch: 修复全局设置 font-size 时样式错误的问题 [#9842](https://github.com/youzan/vant/issues/9842)
+- Tabbar: 修复 route 模式下无法触发 before-change 属性的问题 [#9856](https://github.com/youzan/vant/issues/9856)
+
 ### [v3.2.8](https://github.com/compare/v3.2.7...v3.2.8)
 
 `2021-11-09`
 
 **Feature**
 
-- Cascader: 新增 options-bottom 插槽 [#9804](https://github.com/issues/9804)
+- Cascader: 新增 options-bottom 插槽 [#9804](https://github.com/youzan/vant/issues/9804)
 - SubmitBar: 新增 SubmitBarTextAlign 类型 [f95567](https://github.com/commit/f95567ade758d453f4acad8a40d8ae717035476a)
-- PasswordInput: 新增 PasswordInputProps 类型 [#9820](https://github.com/issues/9820)
+- PasswordInput: 新增 PasswordInputProps 类型 [#9820](https://github.com/youzan/vant/issues/9820)
 
 **Bug Fixes**
 
-- NavBar: 修复 NavBarProps 拼写错误的问题 [#9818](https://github.com/issues/9818)
-- Progress: 修复圆角大小错误的问题 [#9826](https://github.com/issues/9826)
-- SubmitBar: 修复未导出 SubmitBarProps 的问题 [#9819](https://github.com/issues/9819)
-- Tabs: 修复 click-tab 触发顺序早于 before-change 的问题 [#9805](https://github.com/issues/9805)
+- NavBar: 修复 NavBarProps 拼写错误的问题 [#9818](https://github.com/youzan/vant/issues/9818)
+- Progress: 修复圆角大小错误的问题 [#9826](https://github.com/youzan/vant/issues/9826)
+- SubmitBar: 修复未导出 SubmitBarProps 的问题 [#9819](https://github.com/youzan/vant/issues/9819)
+- Tabs: 修复 click-tab 触发顺序早于 before-change 的问题 [#9805](https://github.com/youzan/vant/issues/9805)
 
 ### [v3.2.7](https://github.com/youzan/vant/compare/v3.2.6...v3.2.7)
 

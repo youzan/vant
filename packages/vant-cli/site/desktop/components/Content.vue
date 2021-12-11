@@ -170,6 +170,10 @@ export default {
     }
   }
 
+  > ul {
+    margin: 12px 0;
+  }
+
   > ul li,
   > ol li {
     position: relative;

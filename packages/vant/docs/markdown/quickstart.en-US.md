@@ -56,11 +56,20 @@ The easiest way to use Vant is to include a CDN link in the html file, after whi
 </script>
 ```
 
+#### Free CDN
+
 You can use Vant through these free CDN services:
 
 - [jsdelivr](https://www.jsdelivr.com/package/npm/vant)
 - [cdnjs](https://cdnjs.com/libraries/vant)
 - [unpkg](https://unpkg.com/)
+
+Note: Free CDN is generally used for making prototypes or personal projects. It is not recommended to use free CDN in production environment.
+
+For enterprise developers, we recommend:
+
+- install with npm, use build tools to bundle it
+- download the scripts, host it on your own server
 
 ### CLI
 
@@ -83,16 +92,67 @@ In the GUI, click on 'Dependencies' -> `Install Dependencies` and add `vant` to 
 
 ## Usage
 
-### 1. Import on demand
+### Import on demand in vite projects (recommended)
 
-Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) to import components on demand.
+If you are using vite, please use [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import).
+
+#### 1. Install Plugin
 
 ```bash
-# Install plugin
+npm i vite-plugin-style-import@1.2.0 -D
+```
+
+#### 2. Configure Plugin
+
+Configure the plugin in the `vite.config.js` file:
+
+```js
+import vue from '@vitejs/plugin-vue';
+import styleImport from 'vite-plugin-style-import';
+
+export default {
+  plugins: [
+    vue(),
+    styleImport({
+      libs: [
+        {
+          libraryName: 'vant',
+          esModule: true,
+          resolveStyle: (name) => `vant/es/${name}/style/index`,
+        },
+      ],
+    }),
+  ],
+};
+```
+
+#### 3. Import Components
+
+Then you can import components from Vant:
+
+```js
+import { createApp } from 'vue';
+import { Button } from 'vant';
+
+const app = createApp();
+app.use(Button);
+```
+
+> Vant supports Tree Shaking by default.
+
+### Import on demand in non-vite projects (recommended)
+
+In non-vite projects, use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) to import components on demand.
+
+#### 1. Install Plugin
+
+```bash
 npm i babel-plugin-import -D
 ```
 
-Set babel config in .babelrc or babel.config.js:
+#### 2. Configure Plugin
+
+Set babel config in `.babelrc` or `babel.config.js`:
 
 ```json
 {
@@ -109,7 +169,9 @@ Set babel config in .babelrc or babel.config.js:
 }
 ```
 
-Then you can import components from vant:
+#### 3. Import Components
+
+Then you can import components from Vant:
 
 ```js
 // Input
@@ -122,43 +184,9 @@ import 'vant/es/button/style';
 
 > If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead.
 
-### 2. Vite Plugin
+### Import all components (not recommended)
 
-If you are using Vite, please use [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import).
-
-```bash
-npm i vite-plugin-style-import -D
-```
-
-```js
-// vite.config.js
-import vue from '@vitejs/plugin-vue';
-import styleImport from 'vite-plugin-style-import';
-
-export default {
-  plugins: [
-    vue(),
-    styleImport({
-      libs: [
-        {
-          libraryName: 'vant',
-          esModule: true,
-          resolveStyle: (name) => `vant/es/${name}/style`,
-        },
-      ],
-    }),
-  ],
-};
-```
-
-### 3. Manually import
-
-```js
-import Button from 'vant/es/button';
-import 'vant/es/button/style';
-```
-
-### 4. Import all components
+Import all components will **increase the bundle size**, so this is not recommended.
 
 ```js
 import { createApp } from 'vue';
@@ -170,3 +198,13 @@ app.use(Vant);
 ```
 
 > If you configured babel-plugin-import, you won't be allowed to import all components.
+
+### Manually import (not recommended)
+
+```js
+// import script
+import Button from 'vant/es/button/index';
+// import style
+// if the component does not have a style file, there is no need to import
+import 'vant/es/button/style/index';
+```

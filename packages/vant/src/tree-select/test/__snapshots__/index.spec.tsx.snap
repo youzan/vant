@@ -12,12 +12,18 @@ exports[`should render content slot correctly 1`] = `
 <div class="van-tree-select"
      style="height: 300px;"
 >
-  <div class="van-sidebar van-tree-select__nav">
-    <a class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item">
+  <div role="tablist"
+       class="van-sidebar van-tree-select__nav"
+  >
+    <div role="tab"
+         class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item"
+         tabindex="0"
+         aria-selected="true"
+    >
       <div class="van-badge__wrapper van-sidebar-item__text">
         group1
       </div>
-    </a>
+    </div>
   </div>
   <div class="van-tree-select__content">
     Custom Content
@@ -29,7 +35,9 @@ exports[`should render empty TreeSelect correctly 1`] = `
 <div class="van-tree-select"
      style="height: 300px;"
 >
-  <div class="van-sidebar van-tree-select__nav">
+  <div role="tablist"
+       class="van-sidebar van-tree-select__nav"
+  >
   </div>
   <div class="van-tree-select__content">
   </div>
@@ -40,15 +48,21 @@ exports[`should render nav badge correctly 1`] = `
 <div class="van-tree-select"
      style="height: 300px;"
 >
-  <div class="van-sidebar van-tree-select__nav">
-    <a class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item">
+  <div role="tablist"
+       class="van-sidebar van-tree-select__nav"
+  >
+    <div role="tab"
+         class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item"
+         tabindex="0"
+         aria-selected="true"
+    >
       <div class="van-badge__wrapper van-sidebar-item__text">
         group1
-        <div class="van-badge van-badge--fixed">
+        <div class="van-badge van-badge--top-right van-badge--fixed">
           3
         </div>
       </div>
-    </a>
+    </div>
   </div>
   <div class="van-tree-select__content">
   </div>

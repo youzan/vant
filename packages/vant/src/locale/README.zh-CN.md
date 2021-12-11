@@ -40,22 +40,23 @@ Locale.add(messages);
 
 目前支持的语言:
 
-| 语言           | 文件名       |
-| -------------- | ------------ |
-| 简体中文       | zh-CN        |
-| 繁體中文（港） | zh-HK        |
-| 繁體中文（台） | zh-TW        |
-| 德语           | de-DE        |
-| 德语 (正式)    | de-DE-formal |
-| 英语           | en-US        |
-| 西班牙语       | es-ES        |
-| 日语           | ja-JP        |
-| 挪威语         | nb-NO        |
-| 罗马尼亚语     | ro-RO        |
-| 俄罗斯语       | ru-RU        |
-| 土耳其语       | tr-TR        |
-| 泰语           | th-TH        |
-| 法语           | fr-FR        |
+| 语言            | 文件名       |
+| --------------- | ------------ |
+| 德语            | de-DE        |
+| 德语 (正式)     | de-DE-formal |
+| 英语            | en-US        |
+| 西班牙语        | es-ES        |
+| 法语            | fr-FR        |
+| 日语            | ja-JP        |
+| 挪威语          | nb-NO        |
+| 葡萄牙语 (巴西) | pt-BR        |
+| 罗马尼亚语      | ro-RO        |
+| 俄罗斯语        | ru-RU        |
+| 土耳其语        | tr-TR        |
+| 泰语            | th-TH        |
+| 简体中文        | zh-CN        |
+| 繁體中文（港）  | zh-HK        |
+| 繁體中文（台）  | zh-TW        |
 
 > 在 [这里](https://github.com/youzan/vant/tree/dev/packages/vant/src/locale/lang) 查看所有的语言包源文件。
 

@@ -758,7 +758,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div style="transition-duration: 0ms; transform: translateX(0px); width: 400px;"
              class="van-swipe__track"
         >
-          <div class="van-swipe-item van-tab__pane-wrapper"
+          <div class="van-swipe-item van-tab__panel-wrapper"
                id="van-tab"
                role="tabpanel"
                tabindex="0"
@@ -770,7 +770,7 @@ exports[`should render demo and match snapshot 1`] = `
               content of tab 1
             </div>
           </div>
-          <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
                id="van-tab"
                role="tabpanel"
                tabindex="-1"
@@ -782,7 +782,7 @@ exports[`should render demo and match snapshot 1`] = `
               content of tab 2
             </div>
           </div>
-          <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
                id="van-tab"
                role="tabpanel"
                tabindex="-1"
@@ -791,7 +791,7 @@ exports[`should render demo and match snapshot 1`] = `
                style="width: 100px;"
           >
           </div>
-          <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
                id="van-tab"
                role="tabpanel"
                tabindex="-1"
@@ -863,7 +863,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div style="transition-duration: 0ms; transform: translateX(0px); width: 400px;"
              class="van-swipe__track"
         >
-          <div class="van-swipe-item van-tab__pane-wrapper"
+          <div class="van-swipe-item van-tab__panel-wrapper"
                id="van-tab"
                role="tabpanel"
                tabindex="0"
@@ -875,7 +875,7 @@ exports[`should render demo and match snapshot 1`] = `
               content of tab 1
             </div>
           </div>
-          <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
                id="van-tab"
                role="tabpanel"
                tabindex="-1"
@@ -887,7 +887,7 @@ exports[`should render demo and match snapshot 1`] = `
               content of tab 2
             </div>
           </div>
-          <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
                id="van-tab"
                role="tabpanel"
                tabindex="-1"
@@ -896,7 +896,7 @@ exports[`should render demo and match snapshot 1`] = `
                style="width: 100px;"
           >
           </div>
-          <div class="van-swipe-item van-tab__pane-wrapper van-tab__pane-wrapper--inactive"
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
                id="van-tab"
                role="tabpanel"
                tabindex="-1"

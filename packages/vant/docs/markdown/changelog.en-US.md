@@ -16,22 +16,125 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.3.6](https://github.com/compare/v3.3.5...v3.3.6)
+
+`2021-12-05`
+
+**Bug Fixes**
+
+- fix ssr.js require path [#9999](https://github.com/youzan/vant/issues/9999)
+
+### [v3.3.5](https://github.com/compare/v3.3.4...v3.3.5)
+
+`2021-12-02`
+
+**Bug Fixes**
+
+- fix exports field break SSR [#9988](https://github.com/youzan/vant/issues/9988)
+- fix exports field break unplugin-vue-components [#9985](https://github.com/youzan/vant/issues/9985)
+
+### [v3.3.4](https://github.com/compare/v3.3.3...v3.3.4)
+
+`2021-12-01`
+
+- fix `lib/ssr.js` not exist
+
+### [v3.3.3](https://github.com/compare/v3.3.2...v3.3.3)
+
+`2021-11-30`
+
+**Feature**
+
+- Support nuxt3 [#9970](https://github.com/youzan/vant/issues/9970)
+- Locale: add pt-BR locale [#9959](https://github.com/youzan/vant/issues/9959)
+
+**Bug Fixes**
+
+- Swipe: fix incorrect border radius in iOS safari [#9958](https://github.com/youzan/vant/issues/9958)
+- Uploader: fix preview is slow when sum of images size be bigger [#9961](https://github.com/youzan/vant/issues/9961)
+
+### [v3.3.2](https://github.com/compare/v3.3.1...v3.3.2)
+
+`2021-11-28`
+
+**Feature**
+
+- add exports field and use bundled output by default [#9952](https://github.com/youzan/vant/issues/9952)
+- Tabbar: support highlighted with child route [#9926](https://github.com/youzan/vant/issues/9926)
+
+**Bug Fixes**
+
+- Calendar: auto selected to max range when show-confirm is false [#9948](https://github.com/youzan/vant/issues/9948)
+- Calendar: should scroll to current date instead of current month [#9949](https://github.com/youzan/vant/issues/9949)
+- Swipe: should prevent touchmove event when swiping [#9920](https://github.com/youzan/vant/issues/9920)
+- Tabs: rename wrapper class to `van-tab__panel-wrapper` [#9951](https://github.com/youzan/vant/issues/9951)
+
+### [v3.3.1](https://github.com/compare/v3.3.0...v3.3.1)
+
+`2021-11-23`
+
+**Bug Fixes**
+
+- AddressEdit: should not emit save event when validation failed [#9917](https://github.com/youzan/vant/issues/9917)
+
+### [v3.3.0](https://github.com/compare/v3.2.8...v3.3.0)
+
+`2021-11-19`
+
+**Accessibility**
+
+- Cascader: add role, aria and tabindex [#9886](https://github.com/youzan/vant/issues/9886)
+- CountDown: add timer role [#9906](https://github.com/youzan/vant/issues/9906)
+- DropdownMenu: add role, aria and tabindex [#9893](https://github.com/youzan/vant/issues/9893)
+- Field: add aria-labelledby [#9883](https://github.com/youzan/vant/issues/9883)
+- List: add role and tabindex [#9888](https://github.com/youzan/vant/issues/9888)
+- Pagination: refactor DOM to improve a11y [#9901](https://github.com/youzan/vant/issues/9901)
+- Popover: add tabindex and aria-disabled [#9889](https://github.com/youzan/vant/issues/9889)
+- Rate: improve a11y when disabled or readonly [#9881](https://github.com/youzan/vant/issues/9881)
+- Search: id prop add default value [#9884](https://github.com/youzan/vant/issues/9884)
+- Sidebar: add role, aria and tabindex [#9903](https://github.com/youzan/vant/issues/9903)
+- Slider: improve a11y when disabled or readonly [#9880](https://github.com/youzan/vant/issues/9880)
+- Stepper: add aria-disabled [#9877](https://github.com/youzan/vant/issues/9877)
+- Stepper: add group role [#9876](https://github.com/youzan/vant/issues/9876)
+- Switch: add tabindex [#9887](https://github.com/youzan/vant/issues/9887)
+- Tabbar: add role, aria and tabindex [#9895](https://github.com/youzan/vant/issues/9895)
+- Tabs: add aria-controls [#9882](https://github.com/youzan/vant/issues/9882)
+- Tabs: add aria-disabled [#9878](https://github.com/youzan/vant/issues/9878)
+- Tabs: add aria-orientation and tabindex [#9872](https://github.com/youzan/vant/issues/9872)
+- Uploader: add role, aria and tabindex [#9905](https://github.com/youzan/vant/issues/9905)
+- remove tabindex from disabled elements [#9879](https://github.com/youzan/vant/issues/9879)
+
+**Feature**
+
+- Popup: reduce unused listener [#9896](https://github.com/youzan/vant/issues/9896)
+- Field: expose sub-types of FieldRule [#9843](https://github.com/youzan/vant/issues/9843)
+- minify svg icons [#9869](https://github.com/youzan/vant/issues/9869)
+
+**Bug Fixes**
+
+- Popover: useClickAway failed in SSR [#9899](https://github.com/youzan/vant/issues/9899)
+- CouponList: incorrect list height [#9874](https://github.com/youzan/vant/issues/9874)
+- Field: should not trigger validation after blurring readonly input [#9862](https://github.com/youzan/vant/issues/9862)
+- Switch: switch node inherit font-size [#9842](https://github.com/youzan/vant/issues/9842)
+- Tabbar: before-change not work in route mode [#9856](https://github.com/youzan/vant/issues/9856)
+- Tabs: rename panel class to `van-tab__panel` [#9885](https://github.com/youzan/vant/issues/9885)
+
 ### [v3.2.8](https://github.com/compare/v3.2.7...v3.2.8)
 
 `2021-11-09`
 
 **Feature**
 
-- Cascader: add options-bottom slot [#9804](https://github.com/issues/9804)
+- Cascader: add options-bottom slot [#9804](https://github.com/youzan/vant/issues/9804)
 - SubmitBar: add SubmitBarTextAlign type [f95567](https://github.com/commit/f95567ade758d453f4acad8a40d8ae717035476a)
-- PasswordInput: add PasswordInputProps type [#9820](https://github.com/issues/9820)
+- PasswordInput: add PasswordInputProps type [#9820](https://github.com/youzan/vant/issues/9820)
 
 **Bug Fixes**
 
-- NavBar: fix NavBarProps spelling [#9818](https://github.com/issues/9818)
-- Progress: incorrect border-radius [#9826](https://github.com/issues/9826)
-- SubmitBar: fix missing SubmitBarProps export [#9819](https://github.com/issues/9819)
-- Tabs: should emit click-tab after before-change [#9805](https://github.com/issues/9805)
+- NavBar: fix NavBarProps spelling [#9818](https://github.com/youzan/vant/issues/9818)
+- Progress: incorrect border-radius [#9826](https://github.com/youzan/vant/issues/9826)
+- SubmitBar: fix missing SubmitBarProps export [#9819](https://github.com/youzan/vant/issues/9819)
+- Tabs: should emit click-tab after before-change [#9805](https://github.com/youzan/vant/issues/9805)
 
 ### [v3.2.7](https://github.com/youzan/vant/compare/v3.2.6...v3.2.7)
 

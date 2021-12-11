@@ -258,7 +258,7 @@ export default {
 | --- | --- | --- | --- |
 | title | 顶部标题 | _string_ | - |
 | value | 选中项的值 | _string \| number_ | - |
-| options | 可选项数据源 | _Option[]_ | `[]` |
+| options | 可选项数据源 | _CascaderOption[]_ | `[]` |
 | placeholder | 未选中时的提示文案 | _string_ | `请选择` |
 | active-color | 选中状态的高亮颜色 | _string_ | `#ee0a24` |
 | swipeable `v3.0.11` | 是否开启手势左右滑动切换 | _boolean_ | `false` |
@@ -266,7 +266,7 @@ export default {
 | close-icon `v3.0.10` | 关闭[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `cross` |
 | field-names `v3.0.4` | 自定义 `options` 结构中的字段 | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
-### Option 数据结构
+### CascaderOption 数据结构
 
 `options` 属性是一个由对象构成的数组，数组中的每个对象配置一个可选项，对象可以包含以下值：
 
@@ -275,25 +275,25 @@ export default {
 | text               | 选项文字（必填）         | _string_                    |
 | value              | 选项对应的值（必填）     | _string \| number_          |
 | color `v3.1.0`     | 选项文字颜色             | _string_                    |
-| children           | 子选项列表               | _Option[]_                  |
+| children           | 子选项列表               | _CascaderOption[]_          |
 | disabled `v3.1.2`  | 是否禁用选项             | _boolean_                   |
 | className `v3.1.0` | 为对应列添加额外的 class | _string \| Array \| object_ |
 
 ### Events
 
-| 事件      | 说明                   | 回调参数                               |
-| --------- | ---------------------- | -------------------------------------- |
-| change    | 选中项变化时触发       | `{ value, selectedOptions, tabIndex }` |
-| finish    | 全部选项选择完成后触发 | `{ value, selectedOptions, tabIndex }` |
-| close     | 点击关闭图标时触发     | -                                      |
-| click-tab | 点击标签时触发         | _tabIndex: number, title: string_      |
+| 事件 | 说明 | 回调参数 |
+| --- | --- | --- |
+| change | 选中项变化时触发 | _{ value: string \| number, selectedOptions: CascaderOption[], tabIndex: number }_ |
+| finish | 全部选项选择完成后触发 | _{ value: string \| number, selectedOptions: CascaderOption[], tabIndex: number }_ |
+| close | 点击关闭图标时触发 | - |
+| click-tab | 点击标签时触发 | _tabIndex: number, title: string_ |
 
 ### Slots
 
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |
 | title | 自定义顶部标题 | - |
-| option `v3.1.4` | 自定义选项文字 | _{ option: Option, selected: boolean }_ |
+| option `v3.1.4` | 自定义选项文字 | _{ option: CascaderOption, selected: boolean }_ |
 | options-top `v3.2.7` | 自定义选项上方的内容 | _{ tabIndex: number }_ |
 | options-bottom `v3.2.8` | 自定义选项下方的内容 | _{ tabIndex: number }_ |
 

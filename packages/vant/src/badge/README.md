@@ -74,7 +74,7 @@ app.use(Badge);
 
 ### Custom Content
 
-Use `content` slot to custom :content of badge.
+Use `content` slot to custom the content of badge.
 
 ```html
 <van-badge>
@@ -105,6 +105,22 @@ Use `content` slot to custom :content of badge.
 }
 ```
 
+### Custom Position
+
+Use `position` prop to set the position of badge.
+
+```html
+<van-badge :content="10" position="top-left">
+  <div class="child" />
+</van-badge>
+<van-badge :content="10" position="bottom-left">
+  <div class="child" />
+</van-badge>
+<van-badge :content="10" position="bottom-right">
+  <div class="child" />
+</van-badge>
+```
+
 ### Standalone
 
 ```html
@@ -125,6 +141,7 @@ Use `content` slot to custom :content of badge.
 | max | Max value，show `{max}+` when exceed，only works when content is number | _number \| string_ | - |
 | offset `v3.0.5` | Offset of badge dot | _[number \| string, number \| string]_ | - |
 | show-zero `v3.0.10` | Whether to show badge when content is zero | _boolean_ | `true` |
+| position `v3.2.7` | Badge position, can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 
 ### Slots
 
@@ -138,7 +155,7 @@ Use `content` slot to custom :content of badge.
 The component exports the following type definitions:
 
 ```ts
-import type { BadgeProps } from 'vant';
+import type { BadgeProps, BadgePosition } from 'vant';
 ```
 
 ## Theming

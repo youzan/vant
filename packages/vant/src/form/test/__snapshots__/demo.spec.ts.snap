@@ -459,7 +459,11 @@ exports[`should render demo and match snapshot 1`] = `
                         </i>
                       </div>
                     </div>
-                    <div class="van-uploader__preview-delete">
+                    <div role="button"
+                         class="van-uploader__preview-delete"
+                         tabindex="0"
+                         aria-label="Delete"
+                    >
                       <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
                       </i>
                     </div>

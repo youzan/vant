@@ -109,7 +109,7 @@ export default defineComponent({
           <SwipeItem
             id={id}
             role="tabpanel"
-            class={bem('pane-wrapper', { inactive: !active.value })}
+            class={bem('panel-wrapper', { inactive: !active.value })}
             tabindex={active.value ? 0 : -1}
             aria-hidden={!active.value}
             aria-labelledby={label}

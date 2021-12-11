@@ -461,9 +461,9 @@ export default {
   setup() {
     const result = ref('');
     const showArea = ref(false);
-    const onConfirm = (value) => {
+    const onConfirm = (areaValues) => {
       showArea.value = false;
-      result.value = values
+      result.value = areaValues
         .filter((item) => !!item)
         .map((item) => item.name)
         .join('/');
@@ -524,7 +524,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | label-width | 表单项 label 宽度，默认单位为`px` | _number \| string_ | `6.2em` |
-| label-align |  表单项 label 对齐方式，可选值为 `center` `right` | _string_ | `left` |
+| label-align | 表单项 label 对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | validate-trigger | 表单校验触发时机，可选值为 `onChange`、`onSubmit`，详见下表 | _string_ | `onBlur` |
@@ -545,14 +545,14 @@ export default {
 
 | 键名 | 说明 | 类型 |
 | --- | --- | --- |
-| required | 是否为必选字段 | _boolean_ |
+| required | 是否为必选字段，当值为空字符串、空数组、`undefined`、`null` 时，校验不通过 | _boolean_ |
 | message | 错误提示文案 | _string \| (value, rule) => string_ |
 | validator | 通过函数进行校验 | _(value, rule) => boolean \| string \| Promise_ |
 | pattern | 通过正则表达式进行校验 | _RegExp_ |
 | trigger | 本项规则的触发时机，可选值为 `onChange`、`onBlur` | _string_ |
 | formatter | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |
 
-### validate-trigger  可选值
+### validate-trigger 可选值
 
 通过 `validate-trigger` 属性可以自定义表单校验的触发时机。
 

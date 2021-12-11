@@ -182,12 +182,12 @@ const beforeChange = (name: number) => {
     vertical-align: -2px;
   }
 
-  .van-tab__pane {
+  .van-tab__panel {
     padding: 24px 20px;
     background-color: var(--van-background-color-light);
   }
 
-  .van-tabs--card .van-tab__pane {
+  .van-tabs--card .van-tab__panel {
     background-color: transparent;
   }
 }

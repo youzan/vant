@@ -2,8 +2,8 @@
   "name": "@vant/use",
   "version": "1.3.4",
   "description": "Vant Composition API",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
@@ -11,9 +11,9 @@
   ],
   "scripts": {
     "clean": "rimraf ./dist",
-    "dev": "rollup --config rollup.config.js --watch",
+    "dev": "node ./build.js -w",
     "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
-    "build:bundle": "rollup --config rollup.config.js",
+    "build:bundle": "node ./build.js",
     "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
     "release": "pnpm build && release-it",
     "prepare": "pnpm build"
@@ -22,13 +22,18 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youzan/vant.git",
+    "directory": "packages/vant-use"
+  },
+  "bugs": "https://github.com/youzan/vant/issues",
+  "author": "chenjiahan",
   "license": "MIT",
-  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-use",
   "devDependencies": {
+    "esbuild": "^0.13.15",
     "release-it": "^14.0.2",
-    "typescript": "4.x",
-    "rollup": "^2.33.3",
-    "rollup-plugin-esbuild": "^4.6.0",
+    "typescript": "~4.5.2",
     "vue": "^3.2.20"
   },
   "release-it": {

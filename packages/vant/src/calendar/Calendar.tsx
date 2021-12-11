@@ -270,7 +270,7 @@ export default defineComponent({
         months.value.some((month, index) => {
           if (compareMonth(month, targetDate) === 0) {
             if (bodyRef.value) {
-              monthRefs.value[index].scrollIntoView(bodyRef.value);
+              monthRefs.value[index].scrollToDate(bodyRef.value, targetDate);
             }
             return true;
           }
@@ -282,8 +282,7 @@ export default defineComponent({
       });
     };
 
-    // scroll to current month
-    const scrollIntoView = () => {
+    const scrollToCurrentDate = () => {
       if (props.poppable && !props.show) {
         return;
       }
@@ -308,13 +307,13 @@ export default defineComponent({
         // add Math.floor to avoid decimal height issues
         // https://github.com/youzan/vant/issues/5640
         bodyHeight = Math.floor(useRect(bodyRef).height);
-        scrollIntoView();
+        scrollToCurrentDate();
       });
     };
 
     const reset = (date = getInitialDate()) => {
       currentDate.value = date;
-      scrollIntoView();
+      scrollToCurrentDate();
     };
 
     const checkRange = (date: [Date, Date]) => {
@@ -344,15 +343,11 @@ export default defineComponent({
         const valid = checkRange(date as [Date, Date]);
 
         if (!valid) {
-          // auto selected to max range if showConfirm
-          if (props.showConfirm) {
-            setCurrentDate([
-              (date as Date[])[0],
-              getDayByOffset((date as Date[])[0], +props.maxRange - 1),
-            ]);
-          } else {
-            setCurrentDate(date);
-          }
+          // auto selected to max range
+          setCurrentDate([
+            (date as Date[])[0],
+            getDayByOffset((date as Date[])[0], +props.maxRange - 1),
+          ]);
           return;
         }
       }
@@ -542,7 +537,7 @@ export default defineComponent({
       () => props.defaultDate,
       (value = null) => {
         currentDate.value = value;
-        scrollIntoView();
+        scrollToCurrentDate();
       }
     );
 

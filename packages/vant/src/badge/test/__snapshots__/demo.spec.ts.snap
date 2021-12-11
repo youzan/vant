@@ -5,28 +5,28 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--fixed">
       5
     </div>
   </div>
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--fixed">
       10
     </div>
   </div>
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--fixed">
       Hot
     </div>
   </div>
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--dot van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed">
     </div>
   </div>
 </div>
@@ -34,21 +34,21 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--fixed">
       9+
     </div>
   </div>
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--fixed">
       20+
     </div>
   </div>
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--fixed">
       99+
     </div>
   </div>
@@ -57,7 +57,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--fixed"
+    <div class="van-badge van-badge--top-right van-badge--fixed"
          style="background: rgb(25, 137, 250);"
     >
       5
@@ -66,7 +66,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--fixed"
+    <div class="van-badge van-badge--top-right van-badge--fixed"
          style="background: rgb(25, 137, 250);"
     >
       10
@@ -75,7 +75,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--dot van-badge--fixed"
+    <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed"
          style="background: rgb(25, 137, 250);"
     >
     </div>
@@ -85,7 +85,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--fixed">
       <i class="van-badge__wrapper van-icon van-icon-success badge-icon">
       </i>
     </div>
@@ -93,7 +93,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--fixed">
       <i class="van-badge__wrapper van-icon van-icon-cross badge-icon">
       </i>
     </div>
@@ -101,19 +101,42 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--fixed">
       <i class="van-badge__wrapper van-icon van-icon-down badge-icon">
       </i>
     </div>
   </div>
 </div>
 <div>
-  <div class="van-badge"
+  <div class="van-badge__wrapper">
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-left van-badge--fixed">
+      10
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--bottom-left van-badge--fixed">
+      10
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--bottom-right van-badge--fixed">
+      10
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-badge van-badge--top-right"
        style="margin-left: 16px;"
   >
     20
   </div>
-  <div class="van-badge"
+  <div class="van-badge van-badge--top-right"
        style="margin-left: 16px;"
   >
     99+

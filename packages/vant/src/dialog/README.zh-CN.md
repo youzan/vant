@@ -58,13 +58,13 @@ export default {
 ```js
 Dialog.alert({
   title: '标题',
-  message: '弹窗内容',
+  message: '代码是写出来给人看的，附带能在机器上运行。',
 }).then(() => {
   // on close
 });
 
 Dialog.alert({
-  message: '弹窗内容',
+  message: '生命远不止连轴转和忙到极限，人类的体验远比这辽阔、丰富得多。',
 }).then(() => {
   // on close
 });
@@ -77,7 +77,8 @@ Dialog.alert({
 ```js
 Dialog.confirm({
   title: '标题',
-  message: '弹窗内容',
+  message:
+    '如果解决方法是丑陋的，那就肯定还有更好的解决方法，只是还没有发现而已。',
 })
   .then(() => {
     // on confirm
@@ -94,14 +95,14 @@ Dialog.confirm({
 ```js
 Dialog.alert({
   title: '标题',
-  message: '弹窗内容',
+  message: '代码是写出来给人看的，附带能在机器上运行。',
   theme: 'round-button',
 }).then(() => {
   // on close
 });
 
 Dialog.alert({
-  message: '弹窗内容',
+  message: '生命远不止连轴转和忙到极限，人类的体验远比这辽阔、丰富得多。',
   theme: 'round-button',
 }).then(() => {
   // on close
@@ -127,7 +128,8 @@ const beforeClose = (action) =>
 
 Dialog.confirm({
   title: '标题',
-  message: '弹窗内容',
+  message:
+    '如果解决方法是丑陋的，那就肯定还有更好的解决方法，只是还没有发现而已。',
   beforeClose,
 });
 ```

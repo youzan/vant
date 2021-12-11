@@ -30,7 +30,7 @@ exports[`should render icon slot with badge correctly 1`] = `
 >
   <div class="van-badge__wrapper van-action-bar-icon__icon">
     Custom Icon
-    <div class="van-badge van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--fixed">
       1
     </div>
   </div>
@@ -45,7 +45,7 @@ exports[`should render icon slot with dot correctly 1`] = `
 >
   <div class="van-badge__wrapper van-action-bar-icon__icon">
     Custom Icon
-    <div class="van-badge van-badge--dot van-badge--fixed">
+    <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed">
     </div>
   </div>
   Content
