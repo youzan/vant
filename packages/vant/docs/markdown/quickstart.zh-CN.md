@@ -100,7 +100,7 @@ pnpm add vant@3
 #### 1. 安装插件
 
 ```bash
-npm i vite-plugin-style-import -D
+npm i vite-plugin-style-import@1.2.0 -D
 ```
 
 #### 2. 配置插件
