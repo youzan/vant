@@ -23,6 +23,7 @@ import {
   getTrueValue,
   getMonthEndDay,
   pickerInheritKeys,
+  proxyPickerMethods,
 } from './utils';
 
 // Composables
@@ -316,7 +317,8 @@ export default defineComponent({
     );
 
     useExpose({
-      getPicker: () => picker.value,
+      getPicker: () =>
+        picker.value && proxyPickerMethods(picker.value, updateInnerValue),
     });
 
     return () => (

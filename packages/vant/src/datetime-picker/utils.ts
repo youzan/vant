@@ -1,6 +1,7 @@
 import { PropType } from 'vue';
 import { extend } from '../utils';
 import { pickerSharedProps } from '../picker/Picker';
+import type { PickerInstance } from '../picker';
 import type { DatetimePickerColumnType } from './types';
 
 export const sharedProps = extend({}, pickerSharedProps, {
@@ -45,3 +46,27 @@ export function getTrueValue(value: string | undefined): number {
 
 export const getMonthEndDay = (year: number, month: number): number =>
   32 - new Date(year, month - 1, 32).getDate();
+
+// https://github.com/youzan/vant/issues/10013
+export const proxyPickerMethods = (
+  picker: PickerInstance,
+  callback: () => void
+) => {
+  const methods = [
+    'setValues',
+    'setIndexes',
+    'setColumnIndex',
+    'setColumnValue',
+  ];
+  return new Proxy(picker, {
+    get: (target, prop: keyof PickerInstance) => {
+      if (methods.includes(prop)) {
+        return (...args: unknown[]) => {
+          target[prop](...args);
+          callback();
+        };
+      }
+      return target[prop];
+    },
+  });
+};
