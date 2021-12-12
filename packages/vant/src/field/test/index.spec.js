@@ -343,7 +343,7 @@ test('should render word limit correctly', () => {
       showWordLimit: true,
     },
   });
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper.find('.van-field__word-limit').html()).toMatchSnapshot();
 });
 
 test('should render word limit correctly when modelValue is undefined', () => {
@@ -474,4 +474,27 @@ test('should render error-message slot correctly', async () => {
   });
 
   expect(wrapper.find('.van-field__error-message').html()).toMatchSnapshot();
+});
+
+test('should limit maxlength with emoji correctly', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      maxlength: 3,
+      modelValue: '😀😀😀😀',
+    },
+  });
+
+  const input = wrapper.find('input');
+  expect(input.element.value).toEqual('😀😀😀');
+});
+
+test('should render word limit with emoji correctly', () => {
+  const wrapper = mount(Field, {
+    props: {
+      modelValue: '😀😀',
+      maxlength: 3,
+      showWordLimit: true,
+    },
+  });
+  expect(wrapper.find('.van-field__word-limit').html()).toMatchSnapshot();
 });
