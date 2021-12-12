@@ -16,6 +16,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.3.7](https://github.com/compare/v3.3.6...v3.3.7)
+
+`2021-12-12`
+
+**Feature**
+
+- Badge: 新增 position 属性 [#10024](https://github.com/issues/10024)
+
+**Bug Fixes**
+
+- DatetimePicker: 修复调用 Picker 实例方法后日期未正确更新的问题 [#10029](https://github.com/issues/10029)
+- Field: 修复输入内容包含 emoji 时，长度计算错误的问题 [#10033](https://github.com/issues/10033)
+- Pagination: 修复 change 事件不触发的问题 [#10018](https://github.com/issues/10018)
+- 修复 tree shaking 不生效的问题 [#10034](https://github.com/issues/10034)
+
 ### [v3.3.6](https://github.com/compare/v3.3.5...v3.3.6)
 
 `2021-12-05`

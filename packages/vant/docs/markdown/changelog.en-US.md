@@ -16,6 +16,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.3.7](https://github.com/compare/v3.3.6...v3.3.7)
+
+`2021-12-12`
+
+**Feature**
+
+- Badge: add position prop [#10024](https://github.com/issues/10024)
+
+**Bug Fixes**
+
+- DatetimePicker: should update value after calling picker methods [#10029](https://github.com/issues/10029)
+- Field: fix the length of emoji [#10033](https://github.com/issues/10033)
+- Pagination: change event not work [#10018](https://github.com/issues/10018)
+- fix tree shaking is broken [#10034](https://github.com/issues/10034)
+
 ### [v3.3.6](https://github.com/compare/v3.3.5...v3.3.6)
 
 `2021-12-05`
