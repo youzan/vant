@@ -41,6 +41,7 @@ export { default as VanGoodsActionIcon } from '../../src/goods-action-icon';
 export { default as VanGrid } from '../../src/grid';
 export { default as VanGridItem } from '../../src/grid-item';
 export { default as VanIcon } from '../../src/icon';
+export { default as VanIconv } from '../../src/iconv';
 export { default as VanImage } from '../../src/image';
 export { default as VanImagePreview } from '../../src/image-preview';
 export { default as VanIndexAnchor } from '../../src/index-anchor';

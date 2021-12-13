@@ -4,40 +4,40 @@
       <van-tab :title="t('demo')">
         <demo-block :title="t('basicUsage')">
           <van-col span="6" @click="copy(demoIcon)">
-            <van-icon :name="demoIcon" />
+            <van-iconv :name="demoIcon" />
           </van-col>
           <van-col span="6" @click="copy(demoImage)">
-            <van-icon :name="demoImage" />
+            <van-iconv :name="demoImage" />
           </van-col>
         </demo-block>
 
         <demo-block :title="t('badge')">
           <van-col span="6" @click="copy(demoIcon, { dot: true })">
-            <van-icon :name="demoIcon" dot />
+            <van-iconv :name="demoIcon" dot />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { badge: '9' })">
-            <van-icon :name="demoIcon" badge="9" />
+            <van-iconv :name="demoIcon" badge="9" />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { badge: '99+' })">
-            <van-icon :name="demoIcon" badge="99+" />
+            <van-iconv :name="demoIcon" badge="99+" />
           </van-col>
         </demo-block>
 
         <demo-block :title="t('color')">
           <van-col span="6" @click="copy(demoIcon, { color: '#1989fa' })">
-            <van-icon name="cart-o" color="#1989fa" />
+            <van-iconv name="cart-o" color="#1989fa" />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { color: RED })">
-            <van-icon name="fire-o" :color="RED" />
+            <van-iconv name="fire-o" :color="RED" />
           </van-col>
         </demo-block>
 
         <demo-block :title="t('size')">
           <van-col span="6" @click="copy(demoIcon, { size: '40' })">
-            <van-icon :name="demoIcon" size="40" />
+            <van-iconv :name="demoIcon" size="40" />
           </van-col>
           <van-col span="6" @click="copy(demoIcon, { size: '3rem' })">
-            <van-icon :name="demoIcon" size="3rem" />
+            <van-iconv :name="demoIcon" size="3rem" />
           </van-col>
         </demo-block>
       </van-tab>
@@ -49,7 +49,7 @@
           span="6"
           @click="copy(icon)"
         >
-          <van-icon :name="icon" />
+          <van-iconv :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
       </van-tab>
@@ -61,7 +61,7 @@
           span="6"
           @click="copy(icon)"
         >
-          <van-icon :name="icon" />
+          <van-iconv :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
       </van-tab>
@@ -73,7 +73,7 @@
           span="6"
           @click="copy(icon)"
         >
-          <van-icon :name="icon" />
+          <van-iconv :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
       </van-tab>
@@ -82,7 +82,7 @@
 </template>
 
 <script>
-import icons from '@vant/icons';
+import icons from '../config';
 import { RED } from '../../utils/constant';
 
 // from https://30secondsofcode.org
@@ -147,7 +147,7 @@ export default {
 
   methods: {
     copy(icon, option = {}) {
-      let tag = `<van-icon name="${icon}"`;
+      let tag = `<van-iconv name="${icon}"`;
       if ('dot' in option) {
         tag = `${tag} ${option.dot ? 'dot' : ''}`;
       }
@@ -177,7 +177,7 @@ export default {
 <style lang="less">
 @import '../../style/var';
 
-.demo-icon {
+.demo-iconv {
   font-size: 0;
 
   &-notify {
@@ -206,7 +206,7 @@ export default {
     }
   }
 
-  .van-icon {
+  .van-iconv {
     margin: 16px 0 16px;
     color: @text-color;
     font-size: 32px;
