@@ -146,7 +146,7 @@ console.log(ctx, props, 999)
       {slots.default && slots.default()}
       {imageIcon && <img class={bem('image')} src={name} />}
       <Info dot={props.dot} info={props.badge ?? props.info} />
-      {isDefB(props.text) ? <Text text={props.text}  class={['noforvant', bem('text')]}/> : null}
+      {isDefB(props.text) ? <span vusion-slot-name='text' class={['van-shoud-pa', bem('text')]}>{props.text}</span> : null}
     </props.tag>
   );
 }

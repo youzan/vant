@@ -12,7 +12,7 @@
       description: 文本
     - name: name
       title: 图标
-      type: string
+      type: iconv
       default: ''
       description: 图标
       compType: iconInput
