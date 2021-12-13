@@ -153,36 +153,36 @@ export default createComponent({
         </div>
       }
 
-      return (
-        <div class={[BORDER_TOP, bem('footer')]}>
-          {this.showCancelButton && (
-            <Button
-              vusionnodetag="aaa"
-              size="large"
-              class={bem('cancel')}
-              loading={this.loading.cancel}
-              text={this.cancelButtonText || t('cancel')}
-              style={{ color: this.cancelButtonColor }}
-              onClick={() => {
-                this.handleAction('cancel');
-              }}
-            />
-          )}
-          {this.showConfirmButton && (
-            <Button
-              {...{attrs:{vusionnodeyytag: 'bbb'}}}
-              size="large"
-              class={[bem('confirm'), { [BORDER_LEFT]: multiple }]}
-              loading={this.loading.confirm}
-              text={this.confirmButtonText || t('confirm')}
-              style={{ color: this.confirmButtonColor }}
-              onClick={() => {
-                this.handleAction('confirm');
-              }}
-            />
-          )}
-        </div>
-      );
+      // return (
+      //   <div class={[BORDER_TOP, bem('footer')]}>
+      //     {this.showCancelButton && (
+      //       <Button
+      //         vusionnodetag="aaa"
+      //         size="large"
+      //         class={bem('cancel')}
+      //         loading={this.loading.cancel}
+      //         text={this.cancelButtonText || t('cancel')}
+      //         style={{ color: this.cancelButtonColor }}
+      //         onClick={() => {
+      //           this.handleAction('cancel');
+      //         }}
+      //       />
+      //     )}
+      //     {this.showConfirmButton && (
+      //       <Button
+      //         {...{attrs:{vusionnodeyytag: 'bbb'}}}
+      //         size="large"
+      //         class={[bem('confirm'), { [BORDER_LEFT]: multiple }]}
+      //         loading={this.loading.confirm}
+      //         text={this.confirmButtonText || t('confirm')}
+      //         style={{ color: this.confirmButtonColor }}
+      //         onClick={() => {
+      //           this.handleAction('confirm');
+      //         }}
+      //       />
+      //     )}
+      //   </div>
+      // );
     },
 
     genContent(hasTitle, messageSlot) {
