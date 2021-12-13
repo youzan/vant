@@ -10,6 +10,8 @@ export default {
     props: {
         text: String,
     },
+    mounted() {
+    }
 };
 </script>
 

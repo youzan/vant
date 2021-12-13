@@ -129,8 +129,7 @@ function Iconv(
       }
 
   }
-
-
+console.log(ctx, props, 999)
   return (
     <props.tag
       class={[
@@ -139,7 +138,7 @@ function Iconv(
       ]}
       style={{
         color: props.color,
-        fontSize: addUnit(props.size),
+        // fontSize: addUnit(props.size),
       }}
       {...inherit(ctx, true)}
       onClick={onClick}
@@ -147,7 +146,7 @@ function Iconv(
       {slots.default && slots.default()}
       {imageIcon && <img class={bem('image')} src={name} />}
       <Info dot={props.dot} info={props.badge ?? props.info} />
-      {isDefB(props.text) ? <Text text={props.text}/> : null}
+      {isDefB(props.text) ? <Text text={props.text}  class={['noforvant', bem('text')]}/> : null}
     </props.tag>
   );
 }

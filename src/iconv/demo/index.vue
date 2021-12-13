@@ -4,7 +4,7 @@
       <van-tab :title="t('demo')">
         <demo-block :title="t('basicUsage')">
           <van-col span="6" @click="copy(demoIcon)">
-            <van-iconv :name="demoIcon" />
+            <van-iconv :name="demoIcon"></van-iconv>
           </van-col>
           <van-col span="6" @click="copy(demoImage)">
             <van-iconv :name="demoImage" />
