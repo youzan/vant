@@ -270,7 +270,7 @@ export default {
 | label | 输入框左侧文本 | _string_ | - |
 | name | 名称，作为提交表单时的标识符 | _string_ | - |
 | id `v3.2.2` | 输入框 id，同时会设置 label 的 for 属性 | _string_ | `van-field-n-input` |
-| type | 输入框类型, 可选值为 `tel` `digit`<br>`number` `textarea` `password` 等 | _string_ | `text` |
+| type | 输入框类型, 支持原生 input 标签的所有 [type 属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input#%3Cinput%3E_types)，额外支持了 `digit` 类型 | _FieldType_ | `text` |
 | size | 大小，可选值为 `large` | _string_ | - |
 | maxlength | 输入的最大字符数 | _number \| string_ | - |
 | placeholder | 输入框占位提示文字 | _string_ | - |
@@ -282,26 +282,26 @@ export default {
 | center | 是否使内容垂直居中 | _boolean_ | `false` |
 | clearable | 是否启用清除图标，点击清除图标后会清空输入框 | _boolean_ | `false` |
 | clear-icon `v3.0.12` | 清除[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `clear` |
-| clear-trigger | 显示清除图标的时机，`always` 表示输入框不为空时展示，<br>`focus` 表示输入框聚焦且不为空时展示 | _string_ | `focus` |
+| clear-trigger | 显示清除图标的时机，`always` 表示输入框不为空时展示，<br>`focus` 表示输入框聚焦且不为空时展示 | _FieldClearTrigger_ | `focus` |
 | clickable | 是否开启点击反馈 | _boolean_ | `false` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` |
 | autofocus | 是否自动聚焦，iOS 系统不支持该属性 | _boolean_ | `false` |
 | show-word-limit | 是否显示字数统计，需要设置 `maxlength` 属性 | _boolean_ | `false` |
 | error | 是否将输入内容标红 | _boolean_ | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | _string_ | - |
-| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `left` |
+| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _FieldTextAlign_ | `left` |
 | formatter | 输入内容格式化函数 | _(val: string) => string_ | - |
-| format-trigger | 格式化函数触发的时机，可选值为 `onBlur` | _string_ | `onChange` |
+| format-trigger | 格式化函数触发的时机，可选值为 `onBlur` | _FieldFormatTrigger_ | `onChange` |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
 | label-class | 左侧文本额外类名 | _string \| Array \| object_ | - |
 | label-width | 左侧文本宽度，默认单位为 `px` | _number \| string_ | `6.2em` |
-| label-align | 左侧文本对齐方式，可选值为 `center` `right` | _string_ | `left` |
-| input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |
-| autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | _boolean \| object_ | `false` |
+| label-align | 左侧文本对齐方式，可选值为 `center` `right` | _FieldTextAlign_ | `left` |
+| input-align | 输入框对齐方式，可选值为 `center` `right` | _FieldTextAlign_ | `left` |
+| autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | _boolean \| FieldAutosizeConfig_ | `false` |
 | left-icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | right-icon | 右侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
-| rules | 表单校验规则，详见 [Form 组件](#/zh-CN/form#rule-shu-ju-jie-gou) | _Rule[]_ | - |
+| rules | 表单校验规则，详见 [Form 组件](#/zh-CN/form#rule-shu-ju-jie-gou) | _FieldRule[]_ | - |
 | autocomplete `v3.0.3` | input 标签原生的[自动完成属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) | _string_ | - |
 
 ### Events
