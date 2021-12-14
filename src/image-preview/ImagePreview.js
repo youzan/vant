@@ -27,6 +27,7 @@ export default createComponent({
     className: null,
     closeable: Boolean,
     asyncClose: Boolean,
+    overlayStyle: Object,
     showIndicators: Boolean,
     images: {
       type: Array,

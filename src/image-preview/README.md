@@ -130,6 +130,7 @@ export default {
 | closeIcon `v2.5.0` | Close icon name | _string_ | `clear` |
 | closeIconPosition `v2.5.0` | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition `v2.12.8` | Transition, equivalent to `name` prop of [transition](https://vuejs.org/v2/api/#transition) | _string_ | `van-fade` |
+| overlayStyle `v2.12.37` | Custom overlay style | _object_ | - |
 | getContainer | Return the mount node for ImagePreview | _string \| () => Element_ | - |
 
 ### Props
@@ -151,6 +152,7 @@ export default {
 | close-icon `v2.5.0` | Close icon name | _string_ | `clear` |
 | close-icon-position `v2.5.0` | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition `v2.12.8` | Transition, equivalent to `name` prop of [transition](https://vuejs.org/v2/api/#transition) | _string_ | `van-fade` |
+| overlay-style `v2.12.37` | Custom overlay style | _object_ | - |
 | get-container | Return the mount node for ImagePreview | _string \| () => Element_ | - |
 
 ### Events

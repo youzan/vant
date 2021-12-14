@@ -15,6 +15,7 @@ export type ImagePreviewOptions =
       closeIcon?: string;
       asyncClose?: boolean;
       transition?: string;
+      overlayStyle?: object;
       swipeDuration?: number;
       startPosition?: number;
       showIndicators?: boolean;
