@@ -74,6 +74,7 @@ export default createComponent({
     onChange(active) {
       if (active !== this.curvalue) {
         this.curvalue = active;
+        this.setActiveItem();
         callInterceptor({
           interceptor: this.beforeChange,
           args: [active],
@@ -102,7 +103,7 @@ export default createComponent({
           {this.slots()}
         </div>
       );
-    },
+    }
   },
 
   render() {

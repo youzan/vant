@@ -57,7 +57,7 @@ function Iconv(
   slots: DefaultSlots,
   ctx: RenderContext<IconProps>
 ) {
-  const name = correctName(props.name);
+  const name = correctName(props.name);console.log(name, 888)
   const imageIcon = isImage(name);
 
   if (process.env.NODE_ENV === 'development' && props.info) {

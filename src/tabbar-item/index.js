@@ -146,6 +146,9 @@ export default createComponent({
         return <Iconv name={this.icon} classPrefix={this.iconPrefix} />;
       }
     },
+    designerControl() {
+      this.parent.onChange(this.name || this.index);
+    }
   },
 
   render() {

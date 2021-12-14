@@ -1,6 +1,14 @@
 <template>
   <demo-section>
     <demo-block :title="t('basicUsage')">
+      <van-tabbar>
+        <van-tabbar-item icon="home-o"></van-tabbar-item>
+        <van-tabbar-item icon="search"></van-tabbar-item>
+        <van-tabbar-item icon="friends-o"></van-tabbar-item>
+        <van-tabbar-item icon="setting-o"></van-tabbar-item>
+      </van-tabbar>
+    </demo-block>
+    <demo-block :title="t('basicUsage')">
       <van-tabbar v-model="active">
         <van-tabbar-item icon="home-o"></van-tabbar-item>
         <van-tabbar-item icon="search"></van-tabbar-item>
