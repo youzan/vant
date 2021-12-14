@@ -4,12 +4,29 @@ import type { FieldProps } from './Field';
 
 export type FieldType =
   | 'tel'
+  | 'url'
+  | 'date'
+  | 'file'
   | 'text'
+  | 'time'
+  | 'week'
+  | 'color'
   | 'digit'
+  | 'email'
+  | 'image'
+  | 'month'
+  | 'radio'
+  | 'range'
+  | 'reset'
+  | 'button'
+  | 'hidden'
   | 'number'
   | 'search'
+  | 'submit'
+  | 'checkbox'
   | 'password'
-  | 'textarea';
+  | 'textarea'
+  | 'datetime-local';
 
 export type FieldTextAlign = 'left' | 'center' | 'right';
 
