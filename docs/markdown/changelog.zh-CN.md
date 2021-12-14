@@ -16,6 +16,18 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.37](https://github.com/youzan/vant/compare/v2.12.36...v2.12.37)
+
+`2021-12-14`
+
+**Feature**
+
+- ImagePreview: 新增 overlayStyle 选项 [#10043](https://github.com/youzan/vant/issues/10043)
+
+**Bug Fixes**
+
+- DatetimePicker: 修复调用 Picker 实例方法后日期未正确更新的问题 [#10028](https://github.com/youzan/vant/issues/10028)
+
 ### [v2.12.36](https://github.com/youzan/vant/compare/v2.12.35...v2.12.36)
 
 `2021-12-05`

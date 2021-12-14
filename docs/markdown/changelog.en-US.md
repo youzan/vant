@@ -16,6 +16,18 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.37](https://github.com/youzan/vant/compare/v2.12.36...v2.12.37)
+
+`2021-12-14`
+
+**Feature**
+
+- ImagePreview: add overlayStyle option [#10043](https://github.com/youzan/vant/issues/10043)
+
+**Bug Fixes**
+
+- DatetimePicker: should update value after calling picker methods [#10028](https://github.com/youzan/vant/issues/10028)
+
 ### [v2.12.36](https://github.com/youzan/vant/compare/v2.12.35...v2.12.36)
 
 `2021-12-05`
