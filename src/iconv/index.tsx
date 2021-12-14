@@ -129,7 +129,6 @@ function Iconv(
       }
 
   }
-console.log(ctx, props, 999)
   return (
     <props.tag
       class={[

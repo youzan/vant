@@ -27,6 +27,7 @@ module.exports = {
             { group: 'Layout', show: true, name: 'row', alias: '栅格' },
             { group: 'Navigation', show: true, name: 'dropdown-menu', alias: '下拉菜单' },
             { group: 'Navigation', show: true, name: 'sidebar', alias: '侧边导航' },
+            { group: 'Navigation', show: true, name: 'tabbar', alias: '标签栏' },
             { group: 'Display', show: true, name: 'button', alias: '按钮' },
             { group: 'Display', show: true, name: 'image', alias: '图片' },
             { group: 'Display', show: true, name: 'swipe', alias: '轮播' },

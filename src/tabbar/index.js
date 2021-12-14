@@ -36,6 +36,7 @@ export default createComponent({
   data() {
     return {
       height: null,
+      curvalue: this.value
     };
   },
 
@@ -50,7 +51,10 @@ export default createComponent({
   },
 
   watch: {
-    value: 'setActiveItem',
+    value: function(newValue) {
+      this.curvalue = newValue;
+      this.setActiveItem();
+    },
     children: 'setActiveItem',
   },
 
@@ -63,17 +67,19 @@ export default createComponent({
   methods: {
     setActiveItem() {
       this.children.forEach((item, index) => {
-        item.active = (item.name || index) === this.value;
+        item.active = (item.name || index) === this.curvalue;
       });
     },
 
     onChange(active) {
-      if (active !== this.value) {
+      if (active !== this.curvalue) {
+        this.curvalue = active;
         callInterceptor({
           interceptor: this.beforeChange,
           args: [active],
           done: () => {
             this.$emit('input', active);
+            this.$emit('update:value', active);
             this.$emit('change', active);
           },
         });

@@ -2,39 +2,39 @@
   <demo-section>
     <demo-block :title="t('basicUsage')">
       <van-tabbar v-model="active">
-        <van-tabbar-item icon="home-o">{{ t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="search">{{ t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="friends-o">{{ t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="setting-o">{{ t('tab') }}</van-tabbar-item>
+        <van-tabbar-item icon="home-o"></van-tabbar-item>
+        <van-tabbar-item icon="search"></van-tabbar-item>
+        <van-tabbar-item icon="friends-o"></van-tabbar-item>
+        <van-tabbar-item icon="setting-o"></van-tabbar-item>
       </van-tabbar>
     </demo-block>
 
     <demo-block :title="t('matchByName')">
       <van-tabbar v-model="activeName">
         <van-tabbar-item name="home" icon="home-o">
-          {{ t('tab') }}
+
         </van-tabbar-item>
         <van-tabbar-item name="search" icon="search">
-          {{ t('tab') }}
+
         </van-tabbar-item>
         <van-tabbar-item name="friends" icon="friends-o">
-          {{ t('tab') }}
+
         </van-tabbar-item>
         <van-tabbar-item name="setting" icon="setting-o">
-          {{ t('tab') }}
+
         </van-tabbar-item>
       </van-tabbar>
     </demo-block>
 
     <demo-block :title="t('badge')">
       <van-tabbar v-model="active2">
-        <van-tabbar-item icon="home-o">{{ t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="search" dot>{{ t('tab') }}</van-tabbar-item>
+        <van-tabbar-item icon="home-o"></van-tabbar-item>
+        <van-tabbar-item icon="search" dot></van-tabbar-item>
         <van-tabbar-item icon="friends-o" badge="5">
-          {{ t('tab') }}
+
         </van-tabbar-item>
         <van-tabbar-item icon="setting-o" badge="20">
-          {{ t('tab') }}
+
         </van-tabbar-item>
       </van-tabbar>
     </demo-block>
@@ -47,8 +47,8 @@
             <img :src="props.active ? icon.active : icon.inactive" />
           </template>
         </van-tabbar-item>
-        <van-tabbar-item icon="search">{{ t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="setting-o">{{ t('tab') }}</van-tabbar-item>
+        <van-tabbar-item icon="search"></van-tabbar-item>
+        <van-tabbar-item icon="setting-o"></van-tabbar-item>
       </van-tabbar>
     </demo-block>
 
@@ -58,10 +58,10 @@
         active-color="#ee0a24"
         inactive-color="#000"
       >
-        <van-tabbar-item icon="home-o">{{ t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="search">{{ t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="friends-o">{{ t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="setting-o">{{ t('tab') }}</van-tabbar-item>
+        <van-tabbar-item icon="home-o"></van-tabbar-item>
+        <van-tabbar-item icon="search"></van-tabbar-item>
+        <van-tabbar-item icon="friends-o"></van-tabbar-item>
+        <van-tabbar-item icon="setting-o"></van-tabbar-item>
       </van-tabbar>
     </demo-block>
 

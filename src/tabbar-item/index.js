@@ -6,7 +6,7 @@ import { route, routeProps } from '../utils/router';
 import { ChildrenMixin } from '../mixins/relation';
 
 // Components
-import Icon from '../icon';
+import Iconv from '../iconv';
 import Info from '../info';
 
 const [createComponent, bem] = createNamespace('tabbar-item');
@@ -18,11 +18,27 @@ export default createComponent({
     ...routeProps,
     dot: Boolean,
     icon: String,
+    title: String,
     name: [Number, String],
     // @deprecated
     info: [Number, String],
     badge: [Number, String],
+    showbaget: {
+      type: Boolean,
+      default: true
+    },
+    badgemax: {
+      type: Number,
+    },
     iconPrefix: String,
+    href: String,
+    target: { type: String, default: '_self' },
+    to: [String, Object],
+    replace: { type: Boolean, default: false },
+    append: { type: Boolean, default: false },
+    decoration: { type: Boolean, default: true },
+    download: { type: Boolean, default: false },
+    destination: String,
   },
 
   data() {
@@ -49,7 +65,74 @@ export default createComponent({
     onClick(event) {
       this.parent.onChange(this.name || this.index);
       this.$emit('click', event);
-      route(this.$router, this);
+      // route(this.$router, this);
+      const props = this._props;
+      const parent = this.$parent;
+      function currentHref() {
+        if (props.href !== undefined)
+            return props.href;
+        if (props.destination !== undefined && props.destination !== "")
+            return props.destination;
+        else if (parent?.$router && props.to !== undefined)
+            return parent?.$router.resolve(props.to, parent?.$route, props.append).href;
+        else
+            return undefined;
+      }
+
+      const hrefR = currentHref();
+      if (!hrefR) {
+        return
+      }
+
+      if (hrefR === undefined) {
+        let to;
+        if (props.destination) {
+            // 只处理/a/b形式的链接
+            const origin = window.location.origin;
+            const path = window.location.href.replace(origin, '').split('/');
+            const destination = props.destination.replace(origin, '').split('/');
+            if (path[1] === destination[1]) {
+                to = '/' + destination.slice(2).join('/');
+            } else {
+                return;
+            }
+        }
+
+
+        const currentTo = to || props.to;
+        if (currentTo === undefined)
+            return;
+        let cancel = false;
+        this.$emit(that, 'before-navigate',  {
+          to: currentTo,
+          replace: props.replace,
+          append: props.append,
+          preventDefault: () => (cancel = true),
+        });
+        if (cancel)
+            return;
+        const $router = parent?.$router;
+        const $route = parent?.$route;
+        const { location } = $router.resolve(
+            currentTo,
+            $route,
+            props.append,
+        );
+        props.replace ? $router.replace(location) : $router.push(location);
+
+        this.$emit(that, 'navigate',  { to: currentTo, replace: props.replace, append: props.append });
+      } else {
+        function downloadClick() {
+          const a = document.createElement("a");
+          a.setAttribute("href", hrefR);
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(() => {
+            document.body.removeChild(a);
+          }, 500);
+        }
+        downloadClick();
+      }
     },
 
     genIcon(active) {
@@ -60,12 +143,14 @@ export default createComponent({
       }
 
       if (this.icon) {
-        return <Icon name={this.icon} classPrefix={this.iconPrefix} />;
+        return <Iconv name={this.icon} classPrefix={this.iconPrefix} />;
       }
     },
   },
 
   render() {
+    const realbaget = this.badge ?? this.info;
+    const comBaget = typeof (realbaget) === 'string' ? realbaget : (this.badgemax && realbaget>this.badgemax ? `${this.badgemax}+` : realbaget);
     const active = this.parent.route ? this.routeActive : this.active;
     const color = this.parent[active ? 'activeColor' : 'inactiveColor'];
 
@@ -79,7 +164,7 @@ export default createComponent({
       <div class={bem({ active })} style={{ color }} onClick={this.onClick}>
         <div class={bem('icon')}>
           {this.genIcon(active)}
-          <Info dot={this.dot} info={this.badge ?? this.info} />
+          <Info dot={this.dot} info={this.showbaget && comBaget} />
         </div>
         <div class={bem('text')}>{this.slots('default', { active })}</div>
       </div>
