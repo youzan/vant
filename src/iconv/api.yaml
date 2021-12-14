@@ -1,5 +1,5 @@
 - name: van-iconv
-  icon: iconv
+  icon: icon
   title: 图标
   labels:
     - Display
