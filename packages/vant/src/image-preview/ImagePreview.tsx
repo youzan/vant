@@ -216,8 +216,8 @@ export default defineComponent({
     return () => (
       <Popup
         class={[bem(), props.className]}
-        onClosed={onClosed}
         overlayClass={[bem('overlay'), props.overlayClass]}
+        onClosed={onClosed}
         onUpdate:show={updateShow}
         {...pick(props, popupProps)}
       >
