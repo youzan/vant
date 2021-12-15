@@ -18,7 +18,7 @@ export default createComponent({
     ...routeProps,
     dot: Boolean,
     icon: String,
-    title: String,
+    text: String,
     name: [Number, String],
     // @deprecated
     info: [Number, String],
@@ -143,7 +143,7 @@ export default createComponent({
       }
 
       if (this.icon) {
-        return <Iconv name={this.icon} classPrefix={this.iconPrefix} />;
+        return <Iconv name={this.icon} text={this.text} classPrefix={this.iconPrefix} />;
       }
     },
     designerControl() {

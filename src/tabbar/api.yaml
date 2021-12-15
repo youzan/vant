@@ -40,7 +40,7 @@
       title: 标签项值
       type: number,string
       description: 标签项值
-    - name: title
+    - name: text
       title: 标签
       type: string
       default: 标签
