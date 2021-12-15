@@ -22,6 +22,7 @@ const defaultConfig: ImagePreviewOptions = {
   transition: undefined,
   beforeClose: undefined,
   overlayStyle: undefined,
+  overlayClass: undefined,
   startPosition: 0,
   swipeDuration: 300,
   showIndicators: false,

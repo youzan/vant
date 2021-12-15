@@ -61,6 +61,7 @@ const imagePreviewProps = {
   closeIcon: makeStringProp('clear'),
   transition: String,
   beforeClose: Function as PropType<Interceptor>,
+  overlayClass: unknownProp,
   overlayStyle: Object as PropType<CSSProperties>,
   swipeDuration: makeNumericProp(300),
   startPosition: makeNumericProp(0),
@@ -215,7 +216,7 @@ export default defineComponent({
     return () => (
       <Popup
         class={[bem(), props.className]}
-        overlayClass={bem('overlay')}
+        overlayClass={[bem('overlay'), props.overlayClass]}
         onClosed={onClosed}
         onUpdate:show={updateShow}
         {...pick(props, popupProps)}
