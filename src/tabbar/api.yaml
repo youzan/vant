@@ -28,7 +28,7 @@
       support:
         - name: van-tabbar-item
           title: 菜单项
-          snippet: '<van-tabbar-item title="标签n"></van-tabbar-item>'
+          snippet: '<van-tabbar-item icon="h5_gengduo_weizhi_16px" title="标签n"></van-tabbar-item>'
   events:
     - name: change
       title: 切换后

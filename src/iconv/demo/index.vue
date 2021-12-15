@@ -44,37 +44,12 @@
 
       <van-tab :title="t('basic')">
         <van-col
-          v-for="icon in icons.basic"
-          :key="icon"
+          v-for="icon in icons.glyphs"
+          :key="icon.font_class"
           span="6"
           @click="copy(icon)"
         >
-          <van-iconv :name="icon" />
-          <span>{{ icon }}</span>
-        </van-col>
-      </van-tab>
-
-      <van-tab :title="t('outline')">
-        <van-col
-          v-for="icon in icons.outline"
-          :key="icon"
-          span="6"
-          @click="copy(icon)"
-        >
-          <van-iconv :name="icon" />
-          <span>{{ icon }}</span>
-        </van-col>
-      </van-tab>
-
-      <van-tab :title="t('filled')">
-        <van-col
-          v-for="icon in icons.filled"
-          :key="icon"
-          span="6"
-          @click="copy(icon)"
-        >
-          <van-iconv :name="icon" />
-          <span>{{ icon }}</span>
+          <van-iconv :name="icon.font_class" />
         </van-col>
       </van-tab>
     </van-tabs>

@@ -1,5 +1,5 @@
 ### 基本用法
 
 ``` html
-<van-iconv name="chat-o" text="图标"></van-iconv>
+<van-iconv name="h5_wifi_xianxing_16px" text="图标"></van-iconv>
 ```
