@@ -168,9 +168,11 @@ export default {
 
 ### Slots
 
-| Name   | Description   |
-| ------ | ------------- |
-| button | Custom button |
+| Name         | Description                    | Arguments         |
+| ------------ | ------------------------------ | ----------------- |
+| button       | Custom button                  | -                 |
+| left-button  | Custom left button (in range)  | { value: number } |
+| right-button | Custom right button (in range) | { value: number } |
 
 ### Less Variables
 
