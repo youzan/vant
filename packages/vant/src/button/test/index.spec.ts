@@ -5,7 +5,7 @@ test('should emit click event', () => {
   const wrapper = mount(Button);
 
   wrapper.trigger('click');
-  expect(wrapper.emitted('click')!.length).toEqual(1);
+  expect(wrapper.emitted('click')).toHaveLength(1);
 });
 
 test('should not emit click event when disabled', () => {

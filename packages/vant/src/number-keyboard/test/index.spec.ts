@@ -187,7 +187,7 @@ test('should limit max length of modelValue when using maxlength prop', async ()
 
   clickKey(keys[1]);
   expect(onInput).toHaveBeenCalledTimes(1);
-  expect(wrapper.emitted('update:modelValue')!.length).toEqual(1);
+  expect(wrapper.emitted('update:modelValue')).toHaveLength(1);
 });
 
 test('should not render delete key when show-delete-key prop is false', async () => {

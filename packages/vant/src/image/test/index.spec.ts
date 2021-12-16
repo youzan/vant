@@ -190,7 +190,7 @@ test('should render default slot correctly', () => {
 //               setTimeout(() => {
 //                 hanlder({ el: null });
 //                 hanlder({ el: wrapper.find('img').element });
-//                 expect(wrapper.emitted('load').length).toEqual(1);
+//                 expect(wrapper.emitted('load')).toHaveLength(1);
 //                 expect(wrapper.html()).toMatchSnapshot();
 //                 wrapper.unmount();
 //               });
@@ -217,7 +217,7 @@ test('should render default slot correctly', () => {
 //             setTimeout(() => {
 //               hanlder({ el: null });
 //               hanlder({ el: wrapper.find('img').element });
-//               expect(wrapper.emitted('error').length).toEqual(1);
+//               expect(wrapper.emitted('error')).toHaveLength(1);
 //               expect(wrapper.html()).toMatchSnapshot();
 //               wrapper.unmount();
 //             });

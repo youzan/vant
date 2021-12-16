@@ -58,7 +58,7 @@ test('set picker values', () => {
   const vm = wrapper.vm as Record<string, any>;
 
   expect(vm.getColumnValues(-1)).toEqual(undefined);
-  expect(vm.getColumnValues(1).length).toEqual(6);
+  expect(vm.getColumnValues(1)).toHaveLength(6);
   expect(vm.getColumnValue(1)).toEqual('1990');
 
   vm.setColumnValue(0, 'normal');
@@ -71,11 +71,11 @@ test('set picker values', () => {
   expect(vm.getColumnValue(1)).toEqual('1991');
 
   vm.setColumnValues(0, ['vip', 'normal', 'other']);
-  expect(vm.getColumnValues(0).length).toEqual(3);
-  expect(vm.getValues().length).toEqual(2);
+  expect(vm.getColumnValues(0)).toHaveLength(3);
+  expect(vm.getValues()).toHaveLength(2);
 
   vm.setColumnValues(-1, []);
-  expect(vm.getValues().length).toEqual(2);
+  expect(vm.getValues()).toHaveLength(2);
 
   vm.setValues(['vip', '1992']);
   expect(vm.getColumnIndex(1)).toEqual(2);

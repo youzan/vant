@@ -44,7 +44,7 @@ test('should not render zero badge when show-zero-badge prop is false', async ()
     },
   });
   await later();
-  expect(wrapper.findAll('.van-badge').length).toEqual(1);
+  expect(wrapper.findAll('.van-badge')).toHaveLength(1);
 });
 
 test('should switch tab after click the tab title', async () => {

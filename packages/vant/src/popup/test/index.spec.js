@@ -101,7 +101,7 @@ test('should emit click-overlay event when overlay is clicked', async () => {
   });
   const overlay = wrapper.find('.van-overlay');
   overlay.trigger('click');
-  expect(wrapper.emitted('click-overlay').length).toEqual(1);
+  expect(wrapper.emitted('click-overlay')).toHaveLength(1);
 });
 
 test('should emit open event when show prop is set to true', async () => {
@@ -175,7 +175,7 @@ test('should emit click-close-icon event when close icon is clicked', () => {
   });
 
   wrapper.find('.van-popup__close-icon').trigger('click');
-  expect(wrapper.emitted('click-close-icon').length).toEqual(1);
+  expect(wrapper.emitted('click-close-icon')).toHaveLength(1);
 });
 
 test('should render correct close icon when using close-icon prop', () => {

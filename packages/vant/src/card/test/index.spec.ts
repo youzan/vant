@@ -20,7 +20,7 @@ test('should emit click-thumb event after clicking thumb', () => {
   });
 
   wrapper.find('.van-card__thumb').trigger('click');
-  expect(wrapper.emitted('click-thumb')!.length).toEqual(1);
+  expect(wrapper.emitted('click-thumb')!).toHaveLength(1);
 });
 
 test('should render price and num slot correctly', () => {

@@ -5,7 +5,7 @@ test('should emit submit event when submit button is clicked', () => {
   const wrapper = mount(SubmitBar);
   const button = wrapper.find('.van-submit-bar__button');
   button.trigger('click');
-  expect(wrapper.emitted('submit')!.length).toEqual(1);
+  expect(wrapper.emitted('submit')).toHaveLength(1);
 });
 
 test('should render disabled submit button correctly', () => {

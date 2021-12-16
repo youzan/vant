@@ -67,7 +67,7 @@ test('should close popover when clicking the action', async () => {
 
   await wrapper.setProps({ closeOnClickAction: false });
   await wrapper.find('.van-popover__action').trigger('click');
-  expect(wrapper.emitted('update:show')!.length).toEqual(1);
+  expect(wrapper.emitted('update:show')).toHaveLength(1);
 });
 
 test('should allow to custom the className of action', () => {
