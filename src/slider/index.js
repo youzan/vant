@@ -236,33 +236,38 @@ export default createComponent({
     const renderButton = (i) => {
       const map = ['left', 'right'];
       const isNumber = typeof i === 'number';
-      const current = isNumber ? this.value[i] : this.value
+      const current = isNumber ? this.value[i] : this.value;
+
       const getClassName = () => {
         if (isNumber) {
           return `button-wrapper-${map[i]}`;
         }
         return `button-wrapper`;
       };
+
       const getRefName = () => {
         if (isNumber) {
           return `wrapper${i}`;
         }
         return `wrapper`;
       };
+
       const renderButtonContent = () => {
         if (isNumber) {
-          const slot = this.slots(i === 0 ? 'left-button' : 'right-button', {value: current})
+          const slot = this.slots(i === 0 ? 'left-button' : 'right-button', {
+            value: current,
+          });
           if (slot) {
-            return slot
+            return slot;
           }
         }
+
         if (this.slots('button')) {
-          return this.slots('button')
+          return this.slots('button');
         }
-        return (
-          <div class={bem('button')} style={this.buttonStyle} />
-        )
-      }
+
+        return <div class={bem('button')} style={this.buttonStyle} />;
+      };
 
       return (
         <div
