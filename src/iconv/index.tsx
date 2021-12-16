@@ -5,6 +5,8 @@ import { emit, inherit } from '../utils/functional';
 // Components
 import Info from '../info';
 import Text from '../text'
+import VanEmptyCol from '../emptycol'
+
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -129,8 +131,15 @@ function Iconv(
       }
 
   }
+  function ifDesigner() {
+    console.log(ctx.parent.$options._scopeId, 98989);
+    return ctx?.parent?.$env && ctx.parent?.$env.VUE_APP_DESIGNER;
+  }
+  const sd = slots.default && slots.default();
+  const sid = ctx.parent.$options._scopeId;
   return (
     <props.tag
+      vusion-slot-name="default"
       class={[
         props.classPrefix,
         imageIcon ? '' : `${props.classPrefix}-${name}`,
@@ -142,10 +151,10 @@ function Iconv(
       {...inherit(ctx, true)}
       onClick={onClick}
     >
-      {slots.default && slots.default()}
+      {ifDesigner() && !sd ? <VanEmptyCol class="van-shoud-pa" vusion-scope-id={sid}></VanEmptyCol> : null}
+      {sd}
       {imageIcon && <img class={bem('image')} src={name} />}
       <Info dot={props.dot} info={props.badge ?? props.info} />
-      {isDefB(props.text) ? <span vusion-slot-name='text' class={['van-shoud-pa', bem('text')]}>{props.text}</span> : null}
     </props.tag>
   );
 }

@@ -5,11 +5,6 @@
     - Display
   description: 图标
   attrs:
-    - name: text
-      title: 文本
-      type: string
-      default: 图标
-      description: 文本
     - name: name
       title: 图标
       type: iconv

@@ -1,6 +1,6 @@
 - name: van-cell-group
   icon: cell-group
-  title: 单元格group
+  title: 单元格组
   description: 单元格为列表中的单个展示项
   labels:
     - Display
