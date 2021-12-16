@@ -31,7 +31,9 @@ exports[`should change inactive color when using inactive-color prop 1`] = `
       </div>
     </div>
     <div class="van-hairline van-step van-step--horizontal van-step--waiting">
-      <div class="van-step__title">
+      <div class="van-step__title"
+           style="color: red;"
+      >
         B
       </div>
       <div class="van-step__circle-container">
