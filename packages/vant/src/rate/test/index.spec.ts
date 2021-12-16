@@ -18,15 +18,15 @@ test('should emit change and update:modelValue event when rate icon is clicked',
   const item4 = wrapper.findAll('.van-rate__icon')[3];
 
   item4.trigger('click');
-  expect(wrapper.emitted('change')!.length).toEqual(1);
+  expect(wrapper.emitted('change')).toHaveLength(1);
   expect(wrapper.emitted('change')![0]).toEqual([4]);
-  expect(wrapper.emitted('update:modelValue')!.length).toEqual(1);
+  expect(wrapper.emitted('update:modelValue')).toHaveLength(1);
   expect(wrapper.emitted('update:modelValue')![0]).toEqual([4]);
 
   await wrapper.setProps({ modelValue: 4 });
   item4.trigger('click');
-  expect(wrapper.emitted('change')!.length).toEqual(1);
-  expect(wrapper.emitted('update:modelValue')!.length).toEqual(1);
+  expect(wrapper.emitted('change')).toHaveLength(1);
+  expect(wrapper.emitted('update:modelValue')).toHaveLength(1);
 });
 
 test('should not emit change and update:modelValue event when rate is not changed', () => {

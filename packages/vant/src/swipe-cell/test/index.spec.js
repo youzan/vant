@@ -188,8 +188,8 @@ test('should not trigger close event again if already closed', () => {
 
   wrapper.vm.open('left');
   wrapper.vm.close();
-  expect(wrapper.emitted('close').length).toEqual(1);
+  expect(wrapper.emitted('close')).toHaveLength(1);
 
   wrapper.vm.close();
-  expect(wrapper.emitted('close').length).toEqual(1);
+  expect(wrapper.emitted('close')).toHaveLength(1);
 });
