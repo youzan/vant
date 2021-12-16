@@ -44,7 +44,7 @@
           v-model="value9"
           range
           vertical
-          style="margin-left: 100px;"
+          style="margin-left: 100px"
           @change="onChange"
         />
       </div>
