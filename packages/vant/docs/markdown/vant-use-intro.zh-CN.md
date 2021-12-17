@@ -2,7 +2,22 @@
 
 ### 介绍
 
-Vant 内置了一系列的组合式 API，对于安装了 `vant` 的项目，可以直接使用这些 API 进行开发。
+Vant 底层依赖了 `@vant/use` 包，其中内置了一系列的组合式 API。对于使用了 Vant 的项目，可以复用这些 API 进行开发。
+
+### 安装
+
+虽然 Vant 的依赖中已经包含了 `@vant/use`，但我们仍然推荐显式地安装它：
+
+```shell
+# with npm
+npm i @vant/use
+
+# with yarn
+yarn add @vant/use
+
+# with pnpm
+pnpm add @vant/use
+```
 
 ### 示例
 
