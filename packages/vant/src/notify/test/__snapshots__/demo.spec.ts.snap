@@ -84,7 +84,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        Custom Duration
+        Custom Position
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
@@ -96,7 +96,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        Custom Position
+        Custom Duration
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">

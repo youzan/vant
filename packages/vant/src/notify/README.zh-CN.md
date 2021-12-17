@@ -77,13 +77,18 @@ Notify({ type: 'warning', message: '通知内容' });
 
 ### 自定义通知
 
-自定义消息通知的颜色和展示时长。
+自定义消息通知的颜色、位置和展示时长。
 
 ```js
 Notify({
   message: '自定义颜色',
   color: '#ad0000',
   background: '#ffe1e1',
+});
+
+Notify({
+  message: '自定义位置',
+  position: 'bottom',
 });
 
 Notify({

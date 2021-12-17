@@ -43,6 +43,11 @@ Notify({
 });
 
 Notify({
+  message: 'Custom Position',
+  position: 'bottom',
+});
+
+Notify({
   message: 'Custom Duration',
   duration: 1000,
 });

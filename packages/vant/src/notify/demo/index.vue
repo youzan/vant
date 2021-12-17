@@ -96,13 +96,13 @@ const showComponentCall = () => {
     <van-cell is-link :title="t('customColor')" @click="showCustomColor" />
     <van-cell
       is-link
-      :title="t('customDuration')"
-      @click="showCustomDuration"
+      :title="t('customPosition')"
+      @click="showCustomPosition"
     />
     <van-cell
       is-link
-      :title="t('customPosition')"
-      @click="showCustomPosition"
+      :title="t('customDuration')"
+      @click="showCustomDuration"
     />
   </demo-block>
 
