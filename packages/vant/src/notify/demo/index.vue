@@ -20,6 +20,7 @@ const t = useTranslate({
     customNotify: '自定义配置',
     componentCall: '组件调用',
     customDuration: '自定义时长',
+    customPosition: '自定义位置',
   },
   'en-US': {
     primary: 'Primary',
@@ -32,6 +33,7 @@ const t = useTranslate({
     customNotify: 'Custom Notify',
     componentCall: 'Component Call',
     customDuration: 'Custom Duration',
+    customPosition: 'Custom Position',
   },
 });
 
@@ -53,6 +55,13 @@ const showCustomDuration = () => {
   Notify({
     message: t('customDuration'),
     duration: 1000,
+  });
+};
+
+const showCustomPosition = () => {
+  Notify({
+    message: t('customPosition'),
+    position: 'bottom',
   });
 };
 
@@ -89,6 +98,11 @@ const showComponentCall = () => {
       is-link
       :title="t('customDuration')"
       @click="showCustomDuration"
+    />
+    <van-cell
+      is-link
+      :title="t('customPosition')"
+      @click="showCustomPosition"
     />
   </demo-block>
 
