@@ -54,6 +54,7 @@ const getDefaultOptions = (): NotifyOptions => ({
   onClick: undefined,
   onOpened: undefined,
   duration: 3000,
+  position: undefined,
   className: '',
   lockScroll: false,
   background: undefined,
