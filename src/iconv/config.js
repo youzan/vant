@@ -7,6 +7,13 @@ export default {
   "description": "H5图标、web图标",
   "glyphs": [
     {
+      "icon_id": "26558426",
+      "name": "默认",
+      "font_class": "moren",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
       "icon_id": "26507951",
       "name": "左箭头",
       "font_class": "zuojiantou",

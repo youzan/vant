@@ -49,7 +49,7 @@
           span="6"
           @click="copy(icon)"
         >
-          <van-iconv :name="icon.font_class" />
+          <van-iconv :name="icon.name" />
         </van-col>
       </van-tab>
     </van-tabs>

@@ -1,7 +1,12 @@
 @import '../style/var';
-@import './icon.less';
 
 .van-iconv {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  font-style: normal;
+  text-align: center;
+
   &__image {
     width: 1em;
     height: 1em;
@@ -13,7 +18,19 @@
     font-size: 0.5em;
     margin-top: @tabbar-item-margin-bottom;
   }
+  &__slot {
+    line-height: 1;
+    font-size: 12px;
+  }
   &:before {
+    padding: 8px;
     display: block;
   }
+}
+
+.vant-iconv-svg {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
