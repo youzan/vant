@@ -151,7 +151,12 @@ Use `teleport` prop to specify mount location.
 The component exports the following type definitions:
 
 ```ts
-import type { PopupProps, PopupPosition, PopupCloseIconPosition } from 'vant';
+import type {
+  PopupProps,
+  PopupPosition,
+  PopupInstance,
+  PopupCloseIconPosition,
+} from 'vant';
 ```
 
 ## Theming
