@@ -76,6 +76,28 @@ exports[`should render dynamic SwipeItem correctly 2`] = `
 </div>
 `;
 
+exports[`should render indicator slot correctly 1`] = `
+<div class="van-swipe"
+     style="width: 100px; height: 100px;"
+>
+  <div style="transition-duration: 0ms; transform: translateX(0px); width: 200px;"
+       class="van-swipe__track"
+  >
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      1
+    </div>
+    <div class="van-swipe-item"
+         style="width: 100px;"
+    >
+      2
+    </div>
+  </div>
+  active: 0, total: 2
+</div>
+`;
+
 exports[`should render initial swipe correctly 1`] = `
 <div class="van-swipe"
      style="width: 100px; height: 100px;"
