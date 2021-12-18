@@ -384,6 +384,7 @@ export default defineComponent({
       if (slots.indicator) {
         return slots.indicator({
           active: activeIndicator.value,
+          total: count.value,
         });
       }
       if (props.showIndicators && count.value > 1) {
