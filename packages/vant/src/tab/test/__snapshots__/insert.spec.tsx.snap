@@ -219,8 +219,6 @@ exports[`should render nav-bottom slot correctly 1`] = `
          class="van-tabs__nav van-tabs__nav--line"
          aria-orientation="horizontal"
     >
-      <div class="van-tabs__line">
-      </div>
     </div>
   </div>
   Nav Bottom

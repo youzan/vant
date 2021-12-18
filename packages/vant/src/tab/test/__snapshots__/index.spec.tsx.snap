@@ -121,27 +121,15 @@ exports[`should allow to set name prop 1`] = `
 `;
 
 exports[`should emit rendered event after tab is rendered 1`] = `
-DOMWrapper {
-  "isDisabled": [Function],
-  "style": CSSStyleDeclaration {
-    "_importants": Object {},
-    "_length": 0,
-    "_onChange": [Function],
-    "_values": Object {},
-  },
-  "wrapperElement": <div
-    aria-labelledby="van-tabs-0"
-    class="van-tab__panel"
-    id="van-tab"
-    role="tabpanel"
-    style=""
-    tabindex="0"
-  >
-    
-    Text
-    
-  </div>,
-}
+<div id="van-tab"
+     role="tabpanel"
+     class="van-tab__panel"
+     tabindex="0"
+     aria-labelledby="van-tabs-0"
+     style
+>
+  Text
+</div>
 `;
 
 exports[`should not render empty tab 1`] = `
