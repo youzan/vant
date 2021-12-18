@@ -157,7 +157,12 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { PopupProps, PopupPosition, PopupCloseIconPosition } from 'vant';
+import type {
+  PopupProps,
+  PopupPosition,
+  PopupInstance,
+  PopupCloseIconPosition,
+} from 'vant';
 ```
 
 ## 主题定制

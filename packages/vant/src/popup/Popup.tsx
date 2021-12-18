@@ -35,13 +35,8 @@ import { POPUP_TOGGLE_KEY } from '../composables/on-popup-reopen';
 import { Icon } from '../icon';
 import { Overlay } from '../overlay';
 
-export type PopupPosition = 'top' | 'left' | 'bottom' | 'right' | 'center' | '';
-
-export type PopupCloseIconPosition =
-  | 'top-left'
-  | 'top-right'
-  | 'bottom-left'
-  | 'bottom-right';
+// Types
+import type { PopupPosition, PopupCloseIconPosition } from './types';
 
 const popupProps = extend({}, popupSharedProps, {
   round: Boolean,

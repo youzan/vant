@@ -3,8 +3,9 @@ import _Popup from './Popup';
 
 export const Popup = withInstall(_Popup);
 export default Popup;
+export type { PopupProps } from './Popup';
 export type {
-  PopupProps,
   PopupPosition,
+  PopupInstance,
   PopupCloseIconPosition,
-} from './Popup';
+} from './types';
