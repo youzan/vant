@@ -120,8 +120,8 @@ export default {
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
-  <template #indicator="{ active }">
-    <div class="custom-indicator">{{ active + 1 }}/4</div>
+  <template #indicator="{ active, total }">
+    <div class="custom-indicator">{{ active + 1 }}/{{ total }}</div>
   </template>
 </van-swipe>
 
