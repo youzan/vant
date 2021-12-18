@@ -384,6 +384,12 @@ export default defineComponent({
         />
       ));
 
+    const renderLine = () => {
+      if (props.type === 'line' && children.length) {
+        return <div class={bem('line')} style={state.lineStyle} />;
+      }
+    };
+
     const renderHeader = () => {
       const { type, border } = props;
       return (
@@ -403,9 +409,7 @@ export default defineComponent({
           >
             {slots['nav-left']?.()}
             {renderNav()}
-            {type === 'line' && (
-              <div class={bem('line')} style={state.lineStyle} />
-            )}
+            {renderLine()}
             {slots['nav-right']?.()}
           </div>
         </div>
