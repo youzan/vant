@@ -230,11 +230,12 @@ export default {
 
 ### Slots
 
-| 名称             | 说明                 |
-| ---------------- | -------------------- |
-| default          | 自定义面板的展示内容 |
-| description      | 自定义描述文案       |
-| cancel `v3.0.10` | 自定义取消按钮内容   |
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| default | 自定义面板的展示内容 | - |
+| description | 自定义描述文案 | - |
+| cancel `v3.0.10` | 自定义取消按钮内容 | - |
+| option `v3.3.8` | 自定义选项内容 | _{ action: Action, index: number }_ |
 
 ### 类型定义
 

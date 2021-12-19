@@ -44,6 +44,14 @@ exports[`should render description slot when match snapshot 1`] = `
 </div>
 `;
 
+exports[`should render option slot correctly 1`] = `
+<button type="button"
+        class="van-action-sheet__item"
+>
+  name: Option, index: 0
+</button>
+`;
+
 exports[`should render subname correctly 1`] = `
 <button type="button"
         class="van-action-sheet__item"

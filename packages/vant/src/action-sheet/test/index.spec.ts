@@ -261,3 +261,17 @@ test('should allow to control safe-area with safe-area-inset-bottom prop', async
     'van-safe-area-bottom'
   );
 });
+
+test('should render option slot correctly', () => {
+  const wrapper = mount(ActionSheet, {
+    props: {
+      show: true,
+      actions: [{ name: 'Option' }],
+    },
+    slots: {
+      option: ({ action, index }) => `name: ${action.name}, index: ${index}`,
+    },
+  });
+
+  expect(wrapper.find('.van-action-sheet__item').html()).toMatchSnapshot();
+});
