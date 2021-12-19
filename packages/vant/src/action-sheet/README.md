@@ -218,11 +218,12 @@ export default {
 
 ### Slots
 
-| Name             | Description                          |
-| ---------------- | ------------------------------------ |
-| default          | Custom content                       |
-| description      | Custom description above the options |
-| cancel `v3.0.10` | Custom the content of cancel button  |
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| default | Custom content |
+| description | Custom description above the options |
+| cancel `v3.0.10` | Custom the content of cancel button |
+| option `v3.3.8` | Custom the content of option | _{ action: Action, index: number }_ |
 
 ### Types
 

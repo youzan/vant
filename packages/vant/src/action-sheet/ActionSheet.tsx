@@ -94,18 +94,23 @@ export default defineComponent({
       }
     };
 
-    const renderOption = (item: ActionSheetAction, index: number) => {
-      const { name, color, subname, loading, callback, disabled, className } =
-        item;
+    const renderOptionContent = (action: ActionSheetAction, index: number) => {
+      if (action.loading) {
+        return <Loading class={bem('loading-icon')} />;
+      }
 
-      const Content = loading ? (
-        <Loading class={bem('loading-icon')} />
-      ) : (
-        [
-          <span class={bem('name')}>{name}</span>,
-          subname && <div class={bem('subname')}>{subname}</div>,
-        ]
-      );
+      if (slots.option) {
+        return slots.option({ action, index });
+      }
+
+      return [
+        <span class={bem('name')}>{action.name}</span>,
+        action.subname && <div class={bem('subname')}>{action.subname}</div>,
+      ];
+    };
+
+    const renderOption = (action: ActionSheetAction, index: number) => {
+      const { color, loading, callback, disabled, className } = action;
 
       const onClick = () => {
         if (disabled || loading) {
@@ -113,14 +118,14 @@ export default defineComponent({
         }
 
         if (callback) {
-          callback(item);
+          callback(action);
         }
 
         if (props.closeOnClickAction) {
           updateShow(false);
         }
 
-        nextTick(() => emit('select', item, index));
+        nextTick(() => emit('select', action, index));
       };
 
       return (
@@ -130,7 +135,7 @@ export default defineComponent({
           class={[bem('item', { loading, disabled }), className]}
           onClick={onClick}
         >
-          {Content}
+          {renderOptionContent(action, index)}
         </button>
       );
     };
