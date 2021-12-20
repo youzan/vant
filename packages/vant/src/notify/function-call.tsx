@@ -4,7 +4,7 @@ import {
   isObject,
   inBrowser,
   withInstall,
-  ComponentInstance,
+  type ComponentInstance,
 } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanNotify from './Notify';

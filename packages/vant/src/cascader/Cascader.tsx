@@ -2,9 +2,9 @@ import {
   ref,
   watch,
   nextTick,
-  PropType,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type ExtractPropTypes,
 } from 'vue';
 import {
   extend,

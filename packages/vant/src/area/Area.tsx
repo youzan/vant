@@ -4,10 +4,10 @@ import {
   computed,
   reactive,
   nextTick,
-  PropType,
   onMounted,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

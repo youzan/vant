@@ -5,12 +5,12 @@ import {
   computed,
   onMounted,
   onActivated,
-  InjectionKey,
-  CSSProperties,
   onDeactivated,
   onBeforeUnmount,
   defineComponent,
-  ExtractPropTypes,
+  type InjectionKey,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

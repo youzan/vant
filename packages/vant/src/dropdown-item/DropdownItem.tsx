@@ -1,11 +1,11 @@
 import {
   reactive,
   Teleport,
-  PropType,
-  TeleportProps,
-  CSSProperties,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type TeleportProps,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

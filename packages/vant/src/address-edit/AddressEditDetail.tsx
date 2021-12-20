@@ -1,4 +1,4 @@
-import { PropType, ref, defineComponent } from 'vue';
+import { ref, defineComponent, type PropType } from 'vue';
 
 // Utils
 import { createNamespace, numericProp } from '../utils';

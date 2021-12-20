@@ -5,7 +5,7 @@ import {
   onUpdated,
   onMounted,
   defineComponent,
-  ExtractPropTypes,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

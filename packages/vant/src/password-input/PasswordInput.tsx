@@ -1,4 +1,4 @@
-import { defineComponent, ExtractPropTypes } from 'vue';
+import { defineComponent, type ExtractPropTypes } from 'vue';
 import {
   addUnit,
   truthProp,

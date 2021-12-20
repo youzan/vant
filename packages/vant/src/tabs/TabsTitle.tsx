@@ -1,4 +1,4 @@
-import { computed, CSSProperties, defineComponent } from 'vue';
+import { computed, defineComponent, type CSSProperties } from 'vue';
 import { isDef, truthProp, numericProp, createNamespace } from '../utils';
 import { Badge } from '../badge';
 

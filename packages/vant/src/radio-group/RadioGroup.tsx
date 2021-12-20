@@ -1,9 +1,9 @@
 import {
   watch,
-  PropType,
-  InjectionKey,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type InjectionKey,
+  type ExtractPropTypes,
 } from 'vue';
 import { unknownProp, numericProp, createNamespace } from '../utils';
 import { useChildren, useCustomFieldValue } from '@vant/use';

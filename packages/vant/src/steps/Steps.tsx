@@ -1,4 +1,4 @@
-import { defineComponent, ExtractPropTypes, InjectionKey } from 'vue';
+import { defineComponent, type ExtractPropTypes, type InjectionKey } from 'vue';
 import { makeStringProp, makeNumericProp, createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 

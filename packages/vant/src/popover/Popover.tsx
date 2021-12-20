@@ -2,13 +2,13 @@ import {
   ref,
   watch,
   nextTick,
-  PropType,
   onMounted,
-  CSSProperties,
-  TeleportProps,
   onBeforeUnmount,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type CSSProperties,
+  type TeleportProps,
+  type ExtractPropTypes,
 } from 'vue';
 import { Instance, createPopper, offsetModifier } from '@vant/popperjs';
 
@@ -20,10 +20,10 @@ import {
   numericProp,
   unknownProp,
   BORDER_BOTTOM,
+  makeArrayProp,
   makeStringProp,
   createNamespace,
-  ComponentInstance,
-  makeArrayProp,
+  type ComponentInstance,
 } from '../utils';
 
 // Composables

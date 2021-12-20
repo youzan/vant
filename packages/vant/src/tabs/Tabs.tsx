@@ -4,14 +4,14 @@ import {
   computed,
   reactive,
   nextTick,
-  PropType,
   onActivated,
-  InjectionKey,
-  CSSProperties,
   defineComponent,
-  ExtractPropTypes,
   getCurrentInstance,
-  ComponentPublicInstance,
+  type PropType,
+  type InjectionKey,
+  type CSSProperties,
+  type ExtractPropTypes,
+  type ComponentPublicInstance,
 } from 'vue';
 
 // Utils
@@ -31,8 +31,8 @@ import {
   createNamespace,
   makeNumericProp,
   setRootScrollTop,
-  ComponentInstance,
   BORDER_TOP_BOTTOM,
+  type ComponentInstance,
 } from '../utils';
 import { scrollLeftTo, scrollTopTo } from './utils';
 

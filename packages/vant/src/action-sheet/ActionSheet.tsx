@@ -1,4 +1,4 @@
-import { nextTick, defineComponent, ExtractPropTypes } from 'vue';
+import { nextTick, defineComponent, type ExtractPropTypes } from 'vue';
 
 // Utils
 import {

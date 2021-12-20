@@ -1,4 +1,4 @@
-import { ref, PropType, defineComponent } from 'vue';
+import { ref, defineComponent, type PropType } from 'vue';
 import { numericProp, createNamespace, preventDefault } from '../utils';
 import { useTouch } from '../composables/use-touch';
 import { Loading } from '../loading';

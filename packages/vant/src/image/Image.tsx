@@ -1,14 +1,14 @@
 import {
   ref,
-  Slot,
   watch,
   computed,
-  PropType,
-  CSSProperties,
   onBeforeUnmount,
   defineComponent,
-  ExtractPropTypes,
   getCurrentInstance,
+  type Slot,
+  type PropType,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

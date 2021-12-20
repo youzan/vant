@@ -1,9 +1,9 @@
 import {
   ref,
-  PropType,
-  InjectionKey,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type InjectionKey,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

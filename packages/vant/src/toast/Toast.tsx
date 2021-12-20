@@ -1,11 +1,11 @@
 import {
   watch,
-  PropType,
   onMounted,
   onUnmounted,
-  CSSProperties,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

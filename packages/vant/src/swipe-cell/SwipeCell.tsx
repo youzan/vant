@@ -3,9 +3,9 @@ import {
   Ref,
   reactive,
   computed,
-  PropType,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

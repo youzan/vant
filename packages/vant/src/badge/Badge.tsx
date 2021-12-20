@@ -1,9 +1,9 @@
 import {
   computed,
-  PropType,
-  CSSProperties,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 import {
   isDef,

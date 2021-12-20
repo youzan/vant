@@ -1,4 +1,10 @@
-import { watch, computed, reactive, CSSProperties, defineComponent } from 'vue';
+import {
+  watch,
+  computed,
+  reactive,
+  defineComponent,
+  type CSSProperties,
+} from 'vue';
 
 // Utils
 import {
