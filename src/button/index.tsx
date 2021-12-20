@@ -5,7 +5,7 @@ import { BORDER_SURROUND } from '../utils/constant';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
 
 // Components
-import Icon from '../icon';
+import Iconv from '../iconv';
 import Loading, { LoadingType } from '../loading';
 
 // Types
@@ -211,7 +211,7 @@ function Button(
 
     if (icon) {
       return (
-        <Icon name={icon} class={bem('icon')} classPrefix={props.iconPrefix} />
+        <Iconv name={icon} class={[bem('icon'), {'van-shoud-pa': true}]} notext classPrefix={props.iconPrefix} />
       );
     }
   }

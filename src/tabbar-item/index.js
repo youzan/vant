@@ -8,6 +8,7 @@ import { ChildrenMixin } from '../mixins/relation';
 // Components
 import Iconv from '../iconv';
 import Info from '../info';
+import Text from '../text';
 
 const [createComponent, bem] = createNamespace('tabbar-item');
 
@@ -143,7 +144,8 @@ export default createComponent({
       }
 
       if (this.icon) {
-        return <Iconv name={this.icon} text={this.text} classPrefix={this.iconPrefix} />;
+        return <Iconv name={this.icon} notext classPrefix={this.iconPrefix}>
+        </Iconv>;
       }
     },
     designerControl() {
@@ -169,7 +171,7 @@ export default createComponent({
           {this.genIcon(active)}
           <Info dot={this.dot} info={this.showbaget && comBaget} />
         </div>
-        <div class={bem('text')}>{this.slots('default', { active })}</div>
+        <div class={bem('text')} vusion-slot-name="text">{this.text || this.slots('default', { active })}</div>
       </div>
     );
   },

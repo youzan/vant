@@ -67,6 +67,7 @@ export default createComponent({
   methods: {
     setActiveItem() {
       this.children.forEach((item, index) => {
+        console.log(item.name, 7878);
         item.active = (item.name || index) === this.curvalue;
       });
     },

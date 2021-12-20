@@ -15,6 +15,8 @@
     position: relative;
     // margin-bottom: @tabbar-item-margin-bottom;
     font-size: @tabbar-item-icon-size;
+    display: inline-flex;
+
 
     .van-icon {
       display: block;
@@ -29,6 +31,10 @@
   &--active {
     color: @tabbar-item-active-color;
     background-color: @tabbar-item-active-background-color;
+  }
+
+  &__text {
+    margin-top: 4px;
   }
 
   .van-info {

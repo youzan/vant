@@ -73,10 +73,10 @@
       description: 展示方式
     - name: icon
       title: 图标
-      type: image
-      default: ""
-      description: 设置图标。
-      compType: linkInput
+      type: iconv
+      default: ''
+      description: 图标
+      compType: iconInput
     - name: loading
       title: 加载中
       type: boolean

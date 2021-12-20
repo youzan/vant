@@ -6,7 +6,7 @@ import { cellProps } from './shared';
 import { ChildrenMixin } from '../mixins/relation';
 
 // Components
-import Icon from '../icon';
+import Iconv from '../iconv';
 
 
 import VanEmptyCol from '../emptycol/index';
@@ -20,7 +20,7 @@ export default createComponent({
   inheritAttrs: false,
   components: {
     VanEmptyCol,
-    Icon
+    Iconv
   },
   props: {
     ...cellProps,
@@ -125,10 +125,11 @@ export default createComponent({
 
       if (icon) {
         return (
-          <van-icon
+          <van-iconv
             class={bem('left-icon')}
             name={icon}
             classPrefix={props.iconPrefix}
+            notext
           />
         );
       }

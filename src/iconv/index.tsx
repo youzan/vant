@@ -24,6 +24,7 @@ export type IconProps = {
   badge?: string | number;
   color?: string;
   classPrefix: string;
+  notext?:boolean;
   href?: String,
   target?: { type: String, default: '_self' },
   to?: [String, Object],
@@ -145,6 +146,7 @@ function Iconv(
   const sd = slots.default && slots.default();
   const sid = ctx.parent.$options._scopeId;
   const href = {attrs: {'xlink:href': `#${props.classPrefix}-${name}`}};
+  const ifNotext = props.notext;
   return (
     <props.tag
       class={[
@@ -161,7 +163,7 @@ function Iconv(
       <svg class="vant-iconv-svg van-shoud-pa" aria-hidden="true">
         <use {...href} class="van-shoud-pa"></use>
       </svg>
-      {ifDesigner() && !sd ? <VanEmptyCol vusion-slot-name="default" class="van-shoud-pa" vusion-scope-id={sid}></VanEmptyCol> : null}
+      {ifDesigner() && !sd && !ifNotext ? <VanEmptyCol vusion-slot-name="default" class="van-shoud-pa" vusion-scope-id={sid}></VanEmptyCol> : null}
       <div class={bem('slot')}>{sd}</div>
       {/* {imageIcon && <img class={bem('image')} src={name} />} */}
       <Info dot={props.dot} info={props.badge ?? props.info} />
@@ -190,6 +192,7 @@ Iconv.props = {
     type: String,
     default: bem(),
   },
+  notext: Boolean,
   href: String,
   target: { type: String, default: '_self' },
   to: [String, Object],
