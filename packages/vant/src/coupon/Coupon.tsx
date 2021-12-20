@@ -1,4 +1,4 @@
-import { computed, PropType, defineComponent } from 'vue';
+import { computed, defineComponent, type PropType } from 'vue';
 import { makeStringProp, createNamespace, makeRequiredProp } from '../utils';
 import { getDate, formatAmount, formatDiscount } from './utils';
 import { Checkbox } from '../checkbox';

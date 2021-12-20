@@ -1,6 +1,6 @@
-import { PropType } from 'vue';
 import { extend } from '../utils';
 import { pickerSharedProps } from '../picker/Picker';
+import type { PropType } from 'vue';
 import type { PickerInstance } from '../picker';
 import type { DatetimePickerColumnType } from './types';
 

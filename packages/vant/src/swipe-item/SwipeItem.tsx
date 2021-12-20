@@ -3,8 +3,8 @@ import {
   nextTick,
   reactive,
   onMounted,
-  CSSProperties,
   defineComponent,
+  type CSSProperties,
 } from 'vue';
 
 // Utils

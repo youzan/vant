@@ -1,4 +1,4 @@
-import { defineComponent, ExtractPropTypes } from 'vue';
+import { defineComponent, type ExtractPropTypes } from 'vue';
 
 // Utils
 import { extend, numericProp, createNamespace } from '../utils';

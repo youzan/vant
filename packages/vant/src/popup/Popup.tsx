@@ -7,10 +7,10 @@ import {
   onMounted,
   Transition,
   onActivated,
-  CSSProperties,
   onDeactivated,
   defineComponent,
-  ExtractPropTypes,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

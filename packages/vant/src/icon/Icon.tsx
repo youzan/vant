@@ -1,4 +1,4 @@
-import { defineComponent, inject, computed, ExtractPropTypes } from 'vue';
+import { inject, computed, defineComponent, type ExtractPropTypes } from 'vue';
 import {
   addUnit,
   numericProp,

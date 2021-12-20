@@ -1,10 +1,10 @@
 import {
   computed,
-  PropType,
-  ComputedRef,
-  InjectionKey,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type ComputedRef,
+  type InjectionKey,
+  type ExtractPropTypes,
 } from 'vue';
 import {
   truthProp,

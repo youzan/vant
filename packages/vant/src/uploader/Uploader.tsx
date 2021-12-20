@@ -1,10 +1,10 @@
 import {
   ref,
   reactive,
-  PropType,
   defineComponent,
-  ExtractPropTypes,
   onBeforeUnmount,
+  type PropType,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -19,7 +19,7 @@ import {
   makeArrayProp,
   makeStringProp,
   makeNumericProp,
-  ComponentInstance,
+  type ComponentInstance,
 } from '../utils';
 import {
   bem,
@@ -37,7 +37,7 @@ import { useExpose } from '../composables/use-expose';
 
 // Components
 import { Icon } from '../icon';
-import { ImagePreview, ImagePreviewOptions } from '../image-preview';
+import { ImagePreview, type ImagePreviewOptions } from '../image-preview';
 import UploaderPreviewItem from './UploaderPreviewItem';
 
 // Types

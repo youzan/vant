@@ -1,4 +1,4 @@
-import { ref, defineComponent, ExtractPropTypes } from 'vue';
+import { ref, defineComponent, type ExtractPropTypes } from 'vue';
 import { pick, extend, createNamespace } from '../utils';
 import { useExpose } from '../composables/use-expose';
 import TimePicker from './TimePicker';

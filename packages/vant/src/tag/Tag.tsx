@@ -1,9 +1,9 @@
 import {
-  PropType,
   Transition,
-  CSSProperties,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 import { truthProp, makeStringProp, createNamespace } from '../utils';
 import { Icon } from '../icon';

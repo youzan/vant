@@ -4,7 +4,7 @@ import {
   reactive,
   nextTick,
   defineComponent,
-  ExtractPropTypes,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

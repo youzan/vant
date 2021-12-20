@@ -2,12 +2,12 @@ import {
   ref,
   watch,
   nextTick,
-  PropType,
   reactive,
   onMounted,
-  CSSProperties,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

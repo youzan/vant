@@ -1,4 +1,9 @@
-import { computed, CSSProperties, PropType, defineComponent } from 'vue';
+import {
+  computed,
+  defineComponent,
+  type PropType,
+  type CSSProperties,
+} from 'vue';
 import { makeNumberProp, createNamespace, makeRequiredProp } from '../utils';
 import { bem } from './utils';
 import type { CalendarDayItem } from './types';

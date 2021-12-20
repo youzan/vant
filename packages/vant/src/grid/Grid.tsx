@@ -1,4 +1,9 @@
-import { PropType, defineComponent, ExtractPropTypes, InjectionKey } from 'vue';
+import {
+  defineComponent,
+  type PropType,
+  type InjectionKey,
+  type ExtractPropTypes,
+} from 'vue';
 import {
   createNamespace,
   addUnit,

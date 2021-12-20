@@ -1,4 +1,4 @@
-import { PropType, defineComponent } from 'vue';
+import { defineComponent, type PropType } from 'vue';
 
 // Utils
 import { t, bem, isImageFile } from './utils';

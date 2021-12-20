@@ -1,4 +1,4 @@
-import { ref, computed, PropType, defineComponent } from 'vue';
+import { ref, computed, defineComponent, type PropType } from 'vue';
 import {
   extend,
   addUnit,

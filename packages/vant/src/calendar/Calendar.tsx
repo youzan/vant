@@ -2,10 +2,10 @@ import {
   ref,
   watch,
   computed,
-  PropType,
-  TeleportProps,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type TeleportProps,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

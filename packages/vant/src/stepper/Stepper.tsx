@@ -2,10 +2,10 @@ import {
   ref,
   watch,
   computed,
-  PropType,
   nextTick,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

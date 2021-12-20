@@ -2,9 +2,9 @@ import {
   ref,
   reactive,
   computed,
-  CSSProperties,
   defineComponent,
-  ExtractPropTypes,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

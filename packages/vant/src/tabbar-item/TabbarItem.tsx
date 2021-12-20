@@ -1,8 +1,8 @@
 import {
   computed,
   defineComponent,
-  ExtractPropTypes,
   getCurrentInstance,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils
