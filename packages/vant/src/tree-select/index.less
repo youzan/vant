@@ -15,7 +15,6 @@
   position: relative;
   display: flex;
   font-size: var(--van-tree-select-font-size);
-  user-select: none;
 
   &__nav {
     flex: 1;
@@ -24,6 +23,7 @@
     -webkit-overflow-scrolling: touch;
 
     &-item {
+      user-select: none;
       padding: var(--van-tree-select-nav-item-padding);
     }
   }
@@ -40,6 +40,7 @@
     padding: 0 32px 0 var(--van-padding-md);
     font-weight: var(--van-font-weight-bold);
     line-height: var(--van-tree-select-item-height);
+    user-select: none;
     cursor: pointer;
 
     &--active {
