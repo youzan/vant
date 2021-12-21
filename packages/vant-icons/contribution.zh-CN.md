@@ -4,7 +4,7 @@
 
 Vant 图标库托管在 [iconfont.cn](https://iconfont.cn) 上，同时仓库中保留了一份完整的 Sketch 设计稿。
 
-在线预览链接：https://iconfont.cn/collections/detail?cid=31945。
+[在线预览链接](https://iconfont.cn/collections/detail?cid=31945)
 
 ## 更新流程
 
@@ -18,11 +18,11 @@ Vant 图标库托管在 [iconfont.cn](https://iconfont.cn) 上，同时仓库中
 
 ### 2. 上传图标
 
-从 Sketch 中导出图标对应的 SVG 文件，并上传到 [iconfont 项目](https://www.iconfont.cn/manage/index?manage_type=myprojects&projectId=2553510) 中。
+从 Sketch 中导出图标对应的 SVG 文件，并上传到 [iconfont 项目](https://www.iconfont.cn/manage/index?manage_type=myprojects&projectId=2553510)中。
 
 <img src="https://img.yzcdn.cn/upload_files/2021/12/21/Fi0XXEorB1SVr_BT-Dz6txHOKNlB.png" style="width: 800px;">
 
-> 此步骤需要图标库管理员权限，请通过联系 Vant 维护者进行添加。
+> 此步骤需要图标库管理员权限，请联系 Vant 维护者进行添加。
 
 ### 3. 更新代码
 
