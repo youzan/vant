@@ -290,16 +290,8 @@ export default defineComponent({
       if (props.touchable && state.swiping) {
         touch.move(event);
 
-        // if user starting to touchmove, prevent the event bubbling to
-        // avoid affecting the parent components
-        const shouldPrevent =
-          isCorrectDirection.value ||
-          touch.offsetY.value > touch.offsetX.value === props.vertical;
-        if (shouldPrevent) {
-          preventDefault(event, props.stopPropagation);
-        }
-
         if (isCorrectDirection.value) {
+          preventDefault(event, props.stopPropagation);
           move({ offset: delta.value });
         }
       }
