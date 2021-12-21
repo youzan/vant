@@ -1,14 +1,12 @@
 import { ref } from 'vue';
 
-const MIN_DISTANCE = 10;
-
 type Direction = '' | 'vertical' | 'horizontal';
 
 function getDirection(x: number, y: number) {
-  if (x > y && x > MIN_DISTANCE) {
+  if (x > y) {
     return 'horizontal';
   }
-  if (y > x && y > MIN_DISTANCE) {
+  if (y > x) {
     return 'vertical';
   }
   return '';
@@ -42,13 +40,19 @@ export function useTouch() {
 
   const move = ((event: TouchEvent) => {
     const touch = event.touches[0];
-    // Fix: Safari back will set clientX to negative number
+    // safari back will set clientX to negative number
     deltaX.value = touch.clientX < 0 ? 0 : touch.clientX - startX.value;
     deltaY.value = touch.clientY - startY.value;
     offsetX.value = Math.abs(deltaX.value);
     offsetY.value = Math.abs(deltaY.value);
 
-    if (!direction.value) {
+    // lock direction when distance is greater than a certain value
+    const LOCK_DIRECTION_DISTANCE = 10;
+    if (
+      !direction.value ||
+      (offsetX.value < LOCK_DIRECTION_DISTANCE &&
+        offsetY.value < LOCK_DIRECTION_DISTANCE)
+    ) {
       direction.value = getDirection(offsetX.value, offsetY.value);
     }
   }) as EventListener;
