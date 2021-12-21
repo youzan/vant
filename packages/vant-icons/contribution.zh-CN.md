@@ -20,7 +20,7 @@ Vant 图标库托管在 [iconfont.cn](https://iconfont.cn) 上，同时仓库中
 
 从 Sketch 中导出图标对应的 SVG 文件，并上传到 [iconfont 项目](https://www.iconfont.cn/manage/index?manage_type=myprojects&projectId=2553510) 中。
 
-<img src="https://img.yzcdn.cn/upload_files/2021/12/21/Fi0XXEorB1SVr_BT-Dz6txHOKNlB.png">
+<img src="https://img.yzcdn.cn/upload_files/2021/12/21/Fi0XXEorB1SVr_BT-Dz6txHOKNlB.png" style="width: 800px;">
 
 > 此步骤需要图标库管理员权限，请通过联系 Vant 维护者进行添加。
 
@@ -38,7 +38,7 @@ Vant 图标库托管在 [iconfont.cn](https://iconfont.cn) 上，同时仓库中
 
 字体文件的 base64 URL 通过 [transfonter](https://transfonter.org/) 生成，步骤如下图所示：
 
-<img src="https://img01.yzcdn.cn/upload_files/2021/12/21/FlMHanQNhDV1XWaw8spnAtHKumjW.png">
+<img src="https://img01.yzcdn.cn/upload_files/2021/12/21/FlMHanQNhDV1XWaw8spnAtHKumjW.png" style="width: 800px;">
 
 ### 4. 发布图标库
 

@@ -1,5 +1,9 @@
 ## Changelog
 
+## 1.7.2
+
+- add cash-o icon
+
 ## 1.7.1
 
 - add guide-o icon
