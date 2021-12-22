@@ -58,7 +58,6 @@ function correctName(name?: string) {
 
 function getName(name='默认') {
   const item = config.glyphs.find((v) => v.name === name) || {font_class: 'moren'};
-  console.log(item, 888)
   return item.font_class;
 }
 
