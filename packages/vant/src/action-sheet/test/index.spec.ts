@@ -262,14 +262,14 @@ test('should allow to control safe-area with safe-area-inset-bottom prop', async
   );
 });
 
-test('should render option slot correctly', () => {
+test('should render action slot correctly', () => {
   const wrapper = mount(ActionSheet, {
     props: {
       show: true,
       actions: [{ name: 'Option' }],
     },
     slots: {
-      option: ({ action, index }) => `name: ${action.name}, index: ${index}`,
+      action: ({ action, index }) => `name: ${action.name}, index: ${index}`,
     },
   });
 

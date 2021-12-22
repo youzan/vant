@@ -94,13 +94,13 @@ export default defineComponent({
       }
     };
 
-    const renderOptionContent = (action: ActionSheetAction, index: number) => {
+    const renderActionContent = (action: ActionSheetAction, index: number) => {
       if (action.loading) {
         return <Loading class={bem('loading-icon')} />;
       }
 
-      if (slots.option) {
-        return slots.option({ action, index });
+      if (slots.action) {
+        return slots.action({ action, index });
       }
 
       return [
@@ -109,7 +109,7 @@ export default defineComponent({
       ];
     };
 
-    const renderOption = (action: ActionSheetAction, index: number) => {
+    const renderAction = (action: ActionSheetAction, index: number) => {
       const { color, loading, callback, disabled, className } = action;
 
       const onClick = () => {
@@ -135,7 +135,7 @@ export default defineComponent({
           class={[bem('item', { loading, disabled }), className]}
           onClick={onClick}
         >
-          {renderOptionContent(action, index)}
+          {renderActionContent(action, index)}
         </button>
       );
     };
@@ -159,7 +159,7 @@ export default defineComponent({
         {renderHeader()}
         {renderDescription()}
         <div class={bem('content')}>
-          {props.actions.map(renderOption)}
+          {props.actions.map(renderAction)}
           {slots.default?.()}
         </div>
         {renderCancel()}
