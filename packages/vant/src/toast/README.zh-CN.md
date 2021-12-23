@@ -46,7 +46,7 @@ Toast.fail('失败文案');
 
 ### 自定义图标
 
-通过 `icon` 选项可以自定义图标，支持传入图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props)，通过`loadingType` 属性可以自定义加载图标类型。
+通过 `icon` 选项可以自定义图标，支持传入图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props)。
 
 ```js
 Toast({
@@ -58,7 +58,11 @@ Toast({
   message: '自定义图片',
   icon: 'https://img.yzcdn.cn/vant/logo.png',
 });
+```
 
+通过`loadingType` 属性可以自定义加载图标类型。
+
+```js
 Toast.loading({
   message: '加载中...',
   forbidClick: true,
