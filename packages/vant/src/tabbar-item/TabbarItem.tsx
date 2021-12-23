@@ -2,6 +2,7 @@ import {
   computed,
   defineComponent,
   getCurrentInstance,
+  type PropType,
   type ExtractPropTypes,
 } from 'vue';
 
@@ -15,7 +16,7 @@ import { routeProps, useRoute } from '../composables/use-route';
 
 // Components
 import { Icon } from '../icon';
-import { Badge } from '../badge';
+import { Badge, type BadgeProps } from '../badge';
 
 const [name, bem] = createNamespace('tabbar-item');
 
@@ -24,6 +25,7 @@ const tabbarItemProps = extend({}, routeProps, {
   icon: String,
   name: numericProp,
   badge: numericProp,
+  badgeProps: Object as PropType<Partial<BadgeProps>>,
   iconPrefix: String,
 });
 
@@ -100,8 +102,9 @@ export default defineComponent({
           <Badge
             v-slots={{ default: renderIcon }}
             dot={dot}
-            content={badge}
             class={bem('icon')}
+            content={badge}
+            {...props.badgeProps}
           />
           <div class={bem('text')}>
             {slots.default?.({ active: active.value })}
