@@ -199,3 +199,21 @@ test('should render placeholder element when using placeholder prop', async () =
   expect(wrapper.html()).toMatchSnapshot();
   restore();
 });
+
+test('should render badge-props prop correctly', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Tabbar>
+          <TabbarItem badge={0} badgeProps={{ color: 'blue' }}>
+            Tab
+          </TabbarItem>
+        </Tabbar>
+      );
+    },
+  });
+
+  await nextTick();
+  const badge = wrapper.find('.van-badge');
+  expect(badge.style.backgroundColor).toEqual('blue');
+});
