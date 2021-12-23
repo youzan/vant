@@ -84,12 +84,12 @@ module.exports = {
             { group: 'Layout', name: 'l-root', alias: '界面根节点' },
         ],
     },
-    postcss: process.env.scene == 'desktop' ? [] : [
+    prepostcss: process.env.scene == 'desktop' ? [] : [
       require('postcss-px-to-viewport')({
         viewportWidth: 375,
         // propList: ["*", "!font-size", "!line-height"],
         propList: ["*"],
-        selectorBlackList: ["nov"]
+        selectorBlackList: ["nov", /^m401$/, /^m404$/]
       }),
     ]
 };
