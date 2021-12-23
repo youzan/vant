@@ -124,7 +124,7 @@ export default {
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |
-| close-icon | 关闭[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `cross` |
+| close-icon | 关闭图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `cross` |
 | close-icon-position | 关闭图标位置，可选值为 `top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
 | before-close `v3.1.4` | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 | icon-prefix `v3.0.18` | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
