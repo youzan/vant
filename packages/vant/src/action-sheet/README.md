@@ -223,7 +223,7 @@ export default {
 | default | Custom content |
 | description | Custom description above the options |
 | cancel `v3.0.10` | Custom the content of cancel button |
-| action `v3.3.8` | Custom the content of option | _{ action: Action, index: number }_ |
+| action `v3.3.8` | Custom the content of action | _{ action: ActionSheetAction, index: number }_ |
 
 ### Types
 
