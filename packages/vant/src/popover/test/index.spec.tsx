@@ -212,3 +212,18 @@ test('should allow to hide arrow', () => {
 
   expect(wrapper.find('.van-popover__arrow').exists()).toBeFalsy();
 });
+
+test('should render action slot correctly', () => {
+  const wrapper = mount(Popover, {
+    props: {
+      show: true,
+      actions: [{ text: 'Text' }],
+      teleport: null,
+    },
+    slots: {
+      action: ({ action, index }) => `name: ${action.text}, index: ${index}`,
+    },
+  });
+
+  expect(wrapper.find('.van-popover__action').html()).toMatchSnapshot();
+});

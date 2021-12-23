@@ -262,10 +262,11 @@ export default {
 
 ### Slots
 
-| 名称      | 说明                        |
-| --------- | --------------------------- |
-| default   | 自定义菜单内容              |
-| reference | 触发 Popover 显示的元素内容 |
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| default | 自定义菜单内容 | - |
+| reference | 触发 Popover 显示的元素内容 | - |
+| action `v3.3.8` | 自定义选项内容 | _{ action: PopoverAction, index: number }_ |
 
 ### 类型定义
 
