@@ -102,7 +102,8 @@ Use `badge` prop to show badge in icon.
 | icon-prefix `v3.0.17` | Icon className prefix | _string_ | `van-icon` |
 | dot | Whether to show red dot | _boolean_ | - |
 | badge | Content of the badge | _number \| string_ | - |
-| url | Link | _string_ | - |
+| badge-props `v3.2.8` | Props of Badge，see [Badge - props](#/en-US/badge#props) | _BadgeProps_ | - |
+| url | Link URL | _string_ | - |
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 
