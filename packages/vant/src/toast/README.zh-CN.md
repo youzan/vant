@@ -46,7 +46,7 @@ Toast.fail('失败文案');
 
 ### 自定义图标
 
-通过 `icon` 选项可以自定义图标，支持传入[图标名称](#/zh-CN/icon)或图片链接，通过`loadingType` 属性可以自定义加载图标类型。
+通过 `icon` 选项可以自定义图标，支持传入图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props)。
 
 ```js
 Toast({
@@ -58,7 +58,11 @@ Toast({
   message: '自定义图片',
   icon: 'https://img.yzcdn.cn/vant/logo.png',
 });
+```
 
+通过`loadingType` 属性可以自定义加载图标类型。
+
+```js
 Toast.loading({
   message: '加载中...',
   forbidClick: true,
@@ -169,7 +173,7 @@ Toast.resetDefaultOptions('loading');
 | type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | _ToastType_ | `text` |
 | position | 位置，可选值为 `top` `bottom` | _ToastPosition_ | `middle` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | `''` |
-| icon | 自定义图标，支持传入[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
+| icon | 自定义图标，支持传入图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
 | iconSize | 图标大小，如 `20px` `2em`，默认单位为 `px` | _number \| string_ | `36px` |
 | iconPrefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | overlay | 是否显示背景遮罩层 | _boolean_ | `false` |

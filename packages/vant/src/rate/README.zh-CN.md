@@ -158,8 +158,8 @@ export default {
 | color | 选中时的颜色 | _string_ | `#ee0a24` |
 | void-color | 未选中时的颜色 | _string_ | `#c8c9cc` |
 | disabled-color | 禁用时的颜色 | _string_ | `#c8c9cc` |
-| icon | 选中时的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `star` |
-| void-icon | 未选中时的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `star-o` |
+| icon | 选中时的图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `star` |
+| void-icon | 未选中时的图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `star-o` |
 | icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | allow-half | 是否允许半选 | _boolean_ | `false` |
 | readonly | 是否为只读状态，只读状态下无法修改评分 | _boolean_ | `false` |

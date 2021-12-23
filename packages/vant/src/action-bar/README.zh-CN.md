@@ -117,7 +117,7 @@ export default {
 | text | 按钮文字 | _string_ | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | _string_ | `default` |
 | color | 按钮颜色，支持传入 `linear-gradient` 渐变色 | _string_ | - |
-| icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
+| icon | 左侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
 | disabled | 是否禁用按钮 | _boolean_ | `false` |
 | loading | 是否显示为加载状态 | _boolean_ | `false` |
 | url | 点击后跳转的链接地址 | _string_ | - |
