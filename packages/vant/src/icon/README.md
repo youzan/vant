@@ -91,15 +91,16 @@ Use `size` prop to set icon size.
 
 ### Props
 
-| Attribute    | Description              | Type               | Default    |
-| ------------ | ------------------------ | ------------------ | ---------- |
-| name         | Icon name or URL         | _string_           | `''`       |
-| dot          | Whether to show red dot  | _boolean_          | `false`    |
-| badge        | Content of the badge     | _number \| string_ | `''`       |
-| color        | Icon color               | _string_           | `inherit`  |
-| size         | Icon size                | _number \| string_ | `inherit`  |
-| class-prefix | ClassName prefix         | _string_           | `van-icon` |
-| tag          | HTML Tag of root element | _string_           | `i`        |
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| name | Icon name or URL | _string_ | `''` |
+| dot | Whether to show red dot | _boolean_ | `false` |
+| badge | Content of the badge | _number \| string_ | `''` |
+| badge-props `v3.2.8` | Props of Badge，see [Badge - props](#/en-US/badge#props) | _BadgeProps_ | - |
+| color | Icon color | _string_ | `inherit` |
+| size | Icon size | _number \| string_ | `inherit` |
+| class-prefix | ClassName prefix | _string_ | `van-icon` |
+| tag | HTML Tag of root element | _string_ | `i` |
 
 ### Events
 

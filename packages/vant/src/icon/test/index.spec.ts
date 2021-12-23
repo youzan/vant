@@ -75,3 +75,17 @@ test('should change icon size when using size prop', () => {
   });
   expect(wrapper.style.fontSize).toEqual('20px');
 });
+
+test('should render badge-props prop correctly', async () => {
+  const wrapper = mount(Icon, {
+    props: {
+      badge: 1,
+      badgeProps: {
+        color: 'blue',
+      },
+    },
+  });
+
+  const badge = wrapper.find('.van-badge');
+  expect(badge.style.backgroundColor).toEqual('blue');
+});
