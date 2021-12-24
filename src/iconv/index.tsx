@@ -92,7 +92,6 @@ function Iconv(
       emit(ctx, 'click', event);
       const hrefR = currentHref();
       console.log(hrefR, ctx, event)
-      event.stopPropagation();
       // @ts-ignore：没办法
       // if (props.target !== '_self')
       //   return;
@@ -157,9 +156,10 @@ function Iconv(
       //   color: props.color,
       //   // fontSize: addUnit(props.size),
       // }}
-      {...inherit(ctx, true)}
+      {...inherit(ctx, false)}
+      onClick={onClick}
     >
-      <svg class="vant-iconv-svg van-shoud-pa" aria-hidden="true" onClick={onClick}>
+      <svg class="vant-iconv-svg van-shoud-pa" aria-hidden="true">
         <use {...href} class="van-shoud-pa"></use>
       </svg>
       {ifDesigner() && !sd && !ifNotext ? <VanEmptyCol vusion-slot-name="default" class="van-shoud-pa" vusion-scope-id={sid}></VanEmptyCol> : null}
