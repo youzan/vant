@@ -28,7 +28,7 @@
       support:
         - name: van-tabbar-item
           title: 菜单项
-          snippet: '<van-tabbar-item icon="h5_gengduo_weizhi_16px" title="标签n"></van-tabbar-item>'
+          snippet: '<van-tabbar-item icon="默认" text="标签"></van-tabbar-item>'
   events:
     - name: change
       title: 切换后
@@ -54,7 +54,7 @@
     - name: showbaget
       title: 是否显示徽章
       type: boolean
-      default: true
+      default: false
       description: 是否显示徽章
     - name: badge
       title: 徽章值

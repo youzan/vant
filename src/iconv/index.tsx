@@ -152,10 +152,10 @@ function Iconv(
         props.classPrefix,
         // imageIcon ? '' : `${props.classPrefix}-${name}`,
       ]}
-      style={{
-        color: props.color,
-        // fontSize: addUnit(props.size),
-      }}
+      // style={{
+      //   color: props.color,
+      //   // fontSize: addUnit(props.size),
+      // }}
       {...inherit(ctx, true)}
       onClick={onClick}
     >
