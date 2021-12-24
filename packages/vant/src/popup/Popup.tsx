@@ -264,10 +264,12 @@ export default defineComponent({
     return () => {
       if (props.teleport) {
         return (
-          <Teleport to={props.teleport}>
-            {renderOverlay()}
-            {renderTransition()}
-          </Teleport>
+          <div>
+            <Teleport to={props.teleport}>
+              {renderOverlay()}
+              {renderTransition()}
+            </Teleport>
+          </div>
         );
       }
 
