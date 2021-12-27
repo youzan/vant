@@ -104,3 +104,18 @@ test('should render title slot correctly', () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should render badge-props correctly', () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Sidebar>
+          <SidebarItem badge={1} badgeProps={{ color: 'blue' }} />
+        </Sidebar>
+      );
+    },
+  });
+
+  const badge = wrapper.find('.van-badge');
+  expect(badge.style.backgroundColor).toEqual('blue');
+});
