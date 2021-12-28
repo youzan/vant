@@ -23,6 +23,9 @@ export default createComponent({
   watch: {
     valueprop(val) {
       this.value = this.fromValue(val) ?? (this.accordion ? 0 : [0])
+    },
+    accordion(val) {
+      this.value = this.fromValue(this.value) ?? (val ? 0 : [0])
     }
   },
   methods: {
