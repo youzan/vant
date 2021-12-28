@@ -8,9 +8,10 @@ import {
   onDeactivated,
   onBeforeUnmount,
   defineComponent,
-  type InjectionKey,
-  type CSSProperties,
+  nextTick,
   type ExtractPropTypes,
+  type CSSProperties,
+  type InjectionKey,
 } from 'vue';
 
 // Utils
@@ -248,28 +249,37 @@ export default defineComponent({
         return;
       }
 
-      if (!isHidden(root)) {
-        const rect = {
-          width: root.value.offsetWidth,
-          height: root.value.offsetHeight,
-        };
-        state.rect = rect;
-        state.width = +(props.width ?? rect.width);
-        state.height = +(props.height ?? rect.height);
+      const cb = () => {
+        if (!isHidden(root)) {
+          const rect = {
+            width: root.value!.offsetWidth,
+            height: root.value!.offsetHeight,
+          };
+          state.rect = rect;
+          state.width = +(props.width ?? rect.width);
+          state.height = +(props.height ?? rect.height);
+        }
+
+        if (count.value) {
+          active = Math.min(count.value - 1, active);
+        }
+
+        state.active = active;
+        state.swiping = true;
+        state.offset = getTargetOffset(active);
+        children.forEach((swipe) => {
+          swipe.setOffset(0);
+        });
+
+        autoplay();
+      };
+
+      // issue: https://github.com/youzan/vant/issues/10052
+      if (isHidden(root)) {
+        nextTick().then(cb);
+      } else {
+        cb();
       }
-
-      if (count.value) {
-        active = Math.min(count.value - 1, active);
-      }
-
-      state.active = active;
-      state.swiping = true;
-      state.offset = getTargetOffset(active);
-      children.forEach((swipe) => {
-        swipe.setOffset(0);
-      });
-
-      autoplay();
     };
 
     const resize = () => initialize(state.active);
