@@ -11,6 +11,8 @@ function bundleBundle(format) {
     bundle: true,
     target: ['chrome53'],
     outfile,
+    // preserve Chinese character
+    charset: 'utf8',
     external: ['vue'],
     entryPoints: ['./src/index.ts'],
   }).then(finish);

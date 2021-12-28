@@ -1,8 +1,7 @@
 {
   "extends": "../../tsconfig",
   "compilerOptions": {
-    "target": "ES2019",
-    "outDir": "./lib",
+    "outDir": "./dist",
     "declaration": true
   },
   "include": ["src/**/*"]

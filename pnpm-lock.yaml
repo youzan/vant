@@ -77,7 +77,14 @@ importers:
       vue-router: 4.0.12_vue@3.2.21
 
   packages/vant-area-data:
-    specifiers: {}
+    specifiers:
+      esbuild: ^0.13.15
+      release-it: ^14.2.2
+      typescript: ~4.5.2
+    devDependencies:
+      esbuild: 0.13.15
+      release-it: 14.11.6
+      typescript: 4.5.2
 
   packages/vant-cli:
     specifiers:
