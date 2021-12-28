@@ -40,7 +40,7 @@
       title: 点击遮罩层后关闭
       type: boolean
       default: false
-      description: 是否在点击遮罩层后关闭
+      description: 是否点击遮罩层后关闭
   slots: false
   events:
     - name: finish
