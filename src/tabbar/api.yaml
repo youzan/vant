@@ -14,7 +14,7 @@
     - name: fixed
       title: 是否固定在底部
       type: boolean
-      default: true
+      default: false
       description: 是否固定在底部
     - name: border
       title: 是否显示外边框

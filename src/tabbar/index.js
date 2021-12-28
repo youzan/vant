@@ -25,7 +25,7 @@ export default createComponent({
     },
     fixed: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     safeAreaInsetBottom: {
       type: Boolean,
