@@ -107,9 +107,27 @@ Use `action` slot to custom right button, `cancel` event will no longer be Emitt
   @search="onSearch"
 >
   <template #action>
-    <div @click="onSearch">Search</div>
+    <div @click="onClickButton">Search</div>
   </template>
 </van-search>
+```
+
+```js
+import { ref } from 'vue';
+import { Toast } from 'vant';
+
+export default {
+  setup() {
+    const value = ref('');
+    const onSearch = (val) => Toast(val);
+    const onClickButton = () => Toast(value.value);
+    return {
+      value,
+      onSearch,
+      onClickButton,
+    };
+  },
+};
 ```
 
 ## API
