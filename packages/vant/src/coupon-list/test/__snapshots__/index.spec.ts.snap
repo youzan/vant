@@ -33,7 +33,7 @@ exports[`should be the sames as the last snapshot when render coupon list 1`] = 
       >
         <div id="van-tabs-0"
              role="tab"
-             class="van-tab van-tab--active"
+             class="van-tab van-tab--line van-tab--active"
              tabindex="0"
              aria-selected="true"
              aria-controls="van-tab"
@@ -44,7 +44,7 @@ exports[`should be the sames as the last snapshot when render coupon list 1`] = 
         </div>
         <div id="van-tabs-1"
              role="tab"
-             class="van-tab"
+             class="van-tab van-tab--line"
              tabindex="-1"
              aria-selected="false"
              aria-controls="van-tab"
@@ -325,7 +325,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
       >
         <div id="van-tabs-0"
              role="tab"
-             class="van-tab"
+             class="van-tab van-tab--line"
              tabindex="-1"
              aria-selected="false"
              aria-controls="van-tab"
@@ -336,7 +336,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
         </div>
         <div id="van-tabs-1"
              role="tab"
-             class="van-tab van-tab--active"
+             class="van-tab van-tab--line van-tab--active"
              tabindex="0"
              aria-selected="true"
              aria-controls="van-tab"
@@ -437,7 +437,7 @@ exports[`should render list-footer slot correctly 1`] = `
       >
         <div id="van-tabs-0"
              role="tab"
-             class="van-tab"
+             class="van-tab van-tab--line"
              tabindex="-1"
              aria-selected="false"
              aria-controls="van-tab"
@@ -448,7 +448,7 @@ exports[`should render list-footer slot correctly 1`] = `
         </div>
         <div id="van-tabs-1"
              role="tab"
-             class="van-tab van-tab--active"
+             class="van-tab van-tab--line van-tab--active"
              tabindex="0"
              aria-selected="true"
              aria-controls="van-tab"
@@ -551,7 +551,7 @@ exports[`should use custom src when using empty-image prop 1`] = `
       >
         <div id="van-tabs-0"
              role="tab"
-             class="van-tab van-tab--active"
+             class="van-tab van-tab--line van-tab--active"
              tabindex="0"
              aria-selected="true"
              aria-controls="van-tab"
@@ -562,7 +562,7 @@ exports[`should use custom src when using empty-image prop 1`] = `
         </div>
         <div id="van-tabs-1"
              role="tab"
-             class="van-tab"
+             class="van-tab van-tab--line"
              tabindex="-1"
              aria-selected="false"
              aria-controls="van-tab"

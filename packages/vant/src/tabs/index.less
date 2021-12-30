@@ -38,6 +38,30 @@
     cursor: not-allowed;
   }
 
+  &--shrink {
+    flex: none;
+    padding: 0 var(--van-padding-xs);
+  }
+
+  &--card {
+    color: var(--van-tabs-default-color);
+    border-right: var(--van-border-width-base) solid
+      var(--van-tabs-default-color);
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &.van-tab--active {
+      color: var(--van-white);
+      background-color: var(--van-tabs-default-color);
+    }
+
+    &--disabled {
+      color: var(--van-tab-disabled-text-color);
+    }
+  }
+
   &__text {
     &--ellipsis {
       display: -webkit-box;
@@ -93,6 +117,7 @@
       padding-bottom: 15px; /* 15px padding to hide scrollbar in mobile safari */
     }
 
+    &--line&--shrink,
     &--line&--complete {
       padding-right: var(--van-padding-xs);
       padding-left: var(--van-padding-xs);
@@ -104,25 +129,10 @@
       margin: 0 var(--van-padding-md);
       border: var(--van-border-width-base) solid var(--van-tabs-default-color);
       border-radius: var(--van-border-radius-sm);
+    }
 
-      .van-tab {
-        color: var(--van-tabs-default-color);
-        border-right: var(--van-border-width-base) solid
-          var(--van-tabs-default-color);
-
-        &:last-child {
-          border-right: none;
-        }
-
-        &.van-tab--active {
-          color: var(--van-white);
-          background-color: var(--van-tabs-default-color);
-        }
-
-        &--disabled {
-          color: var(--van-tab-disabled-text-color);
-        }
-      }
+    &--card&--shrink {
+      display: inline-flex;
     }
   }
 

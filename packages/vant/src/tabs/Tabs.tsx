@@ -65,6 +65,7 @@ const tabsProps = {
   color: String,
   border: Boolean,
   sticky: Boolean,
+  shrink: Boolean,
   active: makeNumericProp(0),
   duration: makeNumericProp(0.3),
   animated: Boolean,
@@ -368,6 +369,7 @@ export default defineComponent({
           color={props.color}
           style={item.titleStyle}
           class={item.titleClass}
+          shrink={props.shrink}
           isActive={index === state.currentIndex}
           controls={item.id}
           scrollable={scrollable.value}
@@ -403,7 +405,10 @@ export default defineComponent({
           <div
             ref={navRef}
             role="tablist"
-            class={bem('nav', [type, { complete: scrollable.value }])}
+            class={bem('nav', [
+              type,
+              { shrink: props.shrink, complete: scrollable.value },
+            ])}
             style={navStyle.value}
             aria-orientation="horizontal"
           >

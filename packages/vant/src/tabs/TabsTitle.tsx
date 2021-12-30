@@ -14,6 +14,7 @@ export default defineComponent({
     color: String,
     title: String,
     badge: numericProp,
+    shrink: Boolean,
     isActive: Boolean,
     disabled: Boolean,
     controls: String,
@@ -79,10 +80,14 @@ export default defineComponent({
         id={props.id}
         role="tab"
         class={[
-          bem({
-            active: props.isActive,
-            disabled: props.disabled,
-          }),
+          bem([
+            props.type,
+            {
+              shrink: props.shrink,
+              active: props.isActive,
+              disabled: props.disabled,
+            },
+          ]),
         ]}
         style={style.value}
         tabindex={props.disabled ? undefined : props.isActive ? 0 : -1}

@@ -53,7 +53,7 @@ exports[`should allow to set name prop 1`] = `
     >
       <div id="van-tabs-0"
            role="tab"
-           class="van-tab van-tab--active"
+           class="van-tab van-tab--line van-tab--active"
            tabindex="0"
            aria-selected="true"
            aria-controls="van-tab"
@@ -64,7 +64,7 @@ exports[`should allow to set name prop 1`] = `
       </div>
       <div id="van-tabs-1"
            role="tab"
-           class="van-tab"
+           class="van-tab van-tab--line"
            tabindex="-1"
            aria-selected="false"
            aria-controls="van-tab"
@@ -75,7 +75,7 @@ exports[`should allow to set name prop 1`] = `
       </div>
       <div id="van-tabs-2"
            role="tab"
-           class="van-tab van-tab--disabled"
+           class="van-tab van-tab--line van-tab--disabled"
            aria-selected="false"
            aria-disabled="true"
            aria-controls="van-tab"
@@ -140,7 +140,7 @@ exports[`should not render empty tab 1`] = `
 exports[`should render badge prop correctly 1`] = `
 <div id="van-tabs-0"
      role="tab"
-     class="van-tab van-tab--active"
+     class="van-tab van-tab--line van-tab--active"
      tabindex="0"
      aria-selected="true"
      aria-controls="van-tab"
@@ -164,7 +164,7 @@ exports[`should render nav-left、nav-right slot correctly 1`] = `
     Custom nav left
     <div id="van-tabs-0"
          role="tab"
-         class="van-tab van-tab--active"
+         class="van-tab van-tab--line van-tab--active"
          tabindex="0"
          aria-selected="true"
          aria-controls="van-tab"
@@ -191,7 +191,7 @@ exports[`should switch tab after click the tab title 1`] = `
     >
       <div id="van-tabs-0"
            role="tab"
-           class="van-tab van-tab--active"
+           class="van-tab van-tab--line van-tab--active"
            tabindex="0"
            aria-selected="true"
            aria-controls="van-tab"
@@ -202,7 +202,7 @@ exports[`should switch tab after click the tab title 1`] = `
       </div>
       <div id="van-tabs-1"
            role="tab"
-           class="van-tab"
+           class="van-tab van-tab--line"
            tabindex="-1"
            aria-selected="false"
            aria-controls="van-tab"
@@ -213,7 +213,7 @@ exports[`should switch tab after click the tab title 1`] = `
       </div>
       <div id="van-tabs-2"
            role="tab"
-           class="van-tab van-tab--disabled"
+           class="van-tab van-tab--line van-tab--disabled"
            aria-selected="false"
            aria-disabled="true"
            aria-controls="van-tab"
@@ -267,7 +267,7 @@ exports[`should switch tab after click the tab title 2`] = `
     >
       <div id="van-tabs-0"
            role="tab"
-           class="van-tab"
+           class="van-tab van-tab--line"
            tabindex="-1"
            aria-selected="false"
            aria-controls="van-tab"
@@ -278,7 +278,7 @@ exports[`should switch tab after click the tab title 2`] = `
       </div>
       <div id="van-tabs-1"
            role="tab"
-           class="van-tab van-tab--active"
+           class="van-tab van-tab--line van-tab--active"
            tabindex="0"
            aria-selected="true"
            aria-controls="van-tab"
@@ -289,7 +289,7 @@ exports[`should switch tab after click the tab title 2`] = `
       </div>
       <div id="van-tabs-2"
            role="tab"
-           class="van-tab van-tab--disabled"
+           class="van-tab van-tab--line van-tab--disabled"
            aria-selected="false"
            aria-disabled="true"
            aria-controls="van-tab"
@@ -344,7 +344,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
     >
       <div id="van-tabs-0"
            role="tab"
-           class="van-tab van-tab--active"
+           class="van-tab van-tab--line van-tab--active"
            tabindex="0"
            aria-selected="true"
       >
@@ -354,7 +354,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
       </div>
       <div id="van-tabs-1"
            role="tab"
-           class="van-tab"
+           class="van-tab van-tab--line"
            tabindex="-1"
            aria-selected="false"
       >
@@ -364,7 +364,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
       </div>
       <div id="van-tabs-2"
            role="tab"
-           class="van-tab van-tab--disabled"
+           class="van-tab van-tab--line van-tab--disabled"
            aria-selected="false"
            aria-disabled="true"
       >
@@ -431,7 +431,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
     >
       <div id="van-tabs-0"
            role="tab"
-           class="van-tab"
+           class="van-tab van-tab--line"
            tabindex="-1"
            aria-selected="false"
       >
@@ -441,7 +441,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
       </div>
       <div id="van-tabs-1"
            role="tab"
-           class="van-tab van-tab--active"
+           class="van-tab van-tab--line van-tab--active"
            tabindex="0"
            aria-selected="true"
       >
@@ -451,7 +451,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
       </div>
       <div id="van-tabs-2"
            role="tab"
-           class="van-tab van-tab--disabled"
+           class="van-tab van-tab--line van-tab--disabled"
            aria-selected="false"
            aria-disabled="true"
       >
@@ -521,7 +521,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
     >
       <div id="van-tabs-0"
            role="tab"
-           class="van-tab"
+           class="van-tab van-tab--line"
            tabindex="-1"
            aria-selected="false"
       >
@@ -531,7 +531,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
       </div>
       <div id="van-tabs-1"
            role="tab"
-           class="van-tab van-tab--active"
+           class="van-tab van-tab--line van-tab--active"
            tabindex="0"
            aria-selected="true"
       >
@@ -541,7 +541,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
       </div>
       <div id="van-tabs-2"
            role="tab"
-           class="van-tab van-tab--disabled"
+           class="van-tab van-tab--line van-tab--disabled"
            aria-selected="false"
            aria-disabled="true"
       >

@@ -82,7 +82,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
       >
         <div id="van-tabs-0"
              role="tab"
-             class="van-tab van-cascader__tab"
+             class="van-tab van-tab--line van-cascader__tab"
              tabindex="-1"
              aria-selected="false"
         >
@@ -92,7 +92,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
         </div>
         <div id="van-tabs-1"
              role="tab"
-             class="van-tab van-tab--active van-cascader__tab van-cascader__tab--unselected"
+             class="van-tab van-tab--line van-tab--active van-cascader__tab van-cascader__tab--unselected"
              tabindex="0"
              aria-selected="true"
         >
