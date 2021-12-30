@@ -57,7 +57,7 @@ function correctName(name?: string) {
 }
 
 function getName(name='默认') {
-  const item = config.glyphs.find((v) => v.name === name) || {font_class: 'moren'};
+  const item = config.glyphs.find((v) => v.font_class === name) || {font_class: 'moren'};
   return item.font_class;
 }
 
@@ -67,7 +67,7 @@ function Iconv(
   slots: DefaultSlots,
   ctx: RenderContext<IconProps>
 ) {
-  const name = getName(correctName(props.name));
+  const name = getName((props.name));
   const imageIcon = isImage(name);
 
   if (process.env.NODE_ENV === 'development' && props.info) {
