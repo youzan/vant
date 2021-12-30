@@ -40,7 +40,15 @@ export default defineComponent({
 
   props: searchProps,
 
-  emits: ['search', 'cancel', 'update:modelValue'],
+  emits: [
+    'blur',
+    'focus',
+    'clear',
+    'search',
+    'cancel',
+    'click-input',
+    'update:modelValue',
+  ],
 
   setup(props, { emit, slots, attrs }) {
     const id = useId();
@@ -91,6 +99,10 @@ export default defineComponent({
 
     const blur = () => filedRef.value?.blur();
     const focus = () => filedRef.value?.focus();
+    const onBlur = (event: Event) => emit('blur', event);
+    const onFocus = (event: Event) => emit('focus', event);
+    const onClear = (event: MouseEvent) => emit('clear', event);
+    const onClickInput = (event: MouseEvent) => emit('click-input', event);
 
     const fieldPropNames = Object.keys(fieldSharedProps) as Array<
       keyof typeof fieldSharedProps
@@ -110,7 +122,11 @@ export default defineComponent({
           type="search"
           class={bem('field')}
           border={false}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          onClear={onClear}
           onKeypress={onKeypress}
+          onClick-input={onClickInput}
           onUpdate:modelValue={onInput}
           {...fieldAttrs}
         />
