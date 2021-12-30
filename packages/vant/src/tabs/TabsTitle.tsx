@@ -19,12 +19,11 @@ export default defineComponent({
     controls: String,
     scrollable: Boolean,
     activeColor: String,
-    renderTitle: Function,
     inactiveColor: String,
     showZeroBadge: truthProp,
   },
 
-  setup(props) {
+  setup(props, { slots }) {
     const style = computed(() => {
       const style: CSSProperties = {};
       const { type, color, disabled, isActive, activeColor, inactiveColor } =
@@ -56,7 +55,7 @@ export default defineComponent({
     const renderText = () => {
       const Text = (
         <span class={bem('text', { ellipsis: !props.scrollable })}>
-          {props.renderTitle ? props.renderTitle() : props.title}
+          {slots.title ? slots.title() : props.title}
         </span>
       );
 

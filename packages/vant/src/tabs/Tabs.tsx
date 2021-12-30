@@ -361,6 +361,7 @@ export default defineComponent({
     const renderNav = () =>
       children.map((item, index) => (
         <TabsTitle
+          v-slots={{ title: item.$slots.title }}
           id={`${id}-${index}`}
           ref={setTitleRefs(index)}
           type={props.type}
@@ -370,7 +371,6 @@ export default defineComponent({
           isActive={index === state.currentIndex}
           controls={item.id}
           scrollable={scrollable.value}
-          renderTitle={item.$slots.title}
           activeColor={props.titleActiveColor}
           inactiveColor={props.titleInactiveColor}
           onClick={(event: MouseEvent) => onClickTab(item, index, event)}
