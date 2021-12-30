@@ -73,10 +73,9 @@
       description: 展示方式
     - name: icon
       title: 图标
-      type: iconv
+      type: icon
       default: ''
       description: 图标
-      compType: iconInput
     - name: loading
       title: 加载中
       type: boolean

@@ -47,10 +47,9 @@
       description: 标签
     - name: icon
       title: 图标
-      type: iconv
+      type: icon
       default: ''
       description: 图标
-      compType: iconInput
     - name: showbaget
       title: 是否显示徽章
       type: boolean
