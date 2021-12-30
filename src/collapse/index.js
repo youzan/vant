@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { ParentMixin } from '../mixins/relation';
 import { BORDER_TOP_BOTTOM } from '../utils/constant';
 
@@ -25,7 +25,10 @@ export default createComponent({
       this.value = this.fromValue(val) ?? (this.accordion ? 0 : [0])
     },
     accordion(val) {
-      this.value = this.fromValue(this.value) ?? (val ? 0 : [0])
+      if ((this.fromValue(this.valueprop))) {
+      } else {
+        this.value = (val ? 0 : [0])
+      }
     }
   },
   methods: {
@@ -38,7 +41,7 @@ export default createComponent({
       }
     },
     switch(name, expanded) {
-      if (!this.accordion) {
+      if (!this.accordion) {console.log(this.value, 777);
         name = expanded
           ? this.value.concat(name)
           : this.value.filter((activeName) => activeName !== name);
