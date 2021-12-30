@@ -38,6 +38,11 @@
     cursor: not-allowed;
   }
 
+  &--grow {
+    flex: 1 0 auto;
+    padding: 0 var(--van-padding-sm);
+  }
+
   &--shrink {
     flex: none;
     padding: 0 var(--van-padding-xs);
@@ -86,23 +91,6 @@
       top: auto;
       bottom: 0;
     }
-
-    &--scrollable {
-      .van-tab {
-        flex: 1 0 auto;
-        padding: 0 var(--van-padding-sm);
-      }
-
-      .van-tabs__nav {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-      }
-    }
   }
 
   &__nav {
@@ -110,6 +98,16 @@
     display: flex;
     background: var(--van-tabs-nav-background-color);
     user-select: none;
+
+    &--complete {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
 
     &--line {
       box-sizing: content-box;
