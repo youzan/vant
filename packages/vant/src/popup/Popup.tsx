@@ -213,10 +213,11 @@ export default defineComponent({
 
     watch(
       () => props.show,
-      (value) => {
-        if (value) {
+      (show) => {
+        if (show && !opened) {
           open();
-        } else {
+        }
+        if (!show && opened) {
           opened = false;
           emit('close');
         }
