@@ -119,9 +119,27 @@ export default {
   @search="onSearch"
 >
   <template #action>
-    <div @click="onSearch">搜索</div>
+    <div @click="onClickButton">搜索</div>
   </template>
 </van-search>
+```
+
+```js
+import { ref } from 'vue';
+import { Toast } from 'vant';
+
+export default {
+  setup() {
+    const value = ref('');
+    const onSearch = (val) => Toast(val);
+    const onClickButton = () => Toast(value.value);
+    return {
+      value,
+      onSearch,
+      onClickButton,
+    };
+  },
+};
 ```
 
 ## API
