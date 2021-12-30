@@ -129,6 +129,22 @@ test('should emit close event when show prop is set to false', async () => {
   expect(onClose).toHaveBeenCalledTimes(1);
 });
 
+test('should emit close event after clicking the overlay', async () => {
+  const onClose = jest.fn();
+  wrapper = mount(Popup, {
+    props: {
+      show: true,
+      onClose,
+      'onUpdate:show': (show) => {
+        wrapper.setProps({ show });
+      },
+    },
+  });
+
+  await wrapper.find('.van-overlay').trigger('click');
+  expect(onClose).toHaveBeenCalledTimes(1);
+});
+
 test('should change duration when using duration prop', () => {
   wrapper = mount(Popup, {
     props: {
