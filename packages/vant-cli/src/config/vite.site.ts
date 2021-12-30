@@ -136,6 +136,9 @@ export function getViteConfigForSiteDev(): InlineConfig {
         data: {
           ...siteConfig,
           title,
+          // `description` is used by the HTML ejs template,
+          // so it needs to be written explicitly here to avoid error: description is not defined
+          description: siteConfig.description,
           baiduAnalytics,
           enableVConsole,
           meta: getHTMLMeta(vantConfig),
