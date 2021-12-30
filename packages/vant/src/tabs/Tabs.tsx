@@ -139,7 +139,10 @@ export default defineComponent({
 
     // whether the nav is scrollable
     const scrollable = computed(
-      () => children.length > props.swipeThreshold || !props.ellipsis
+      () =>
+        children.length > props.swipeThreshold ||
+        !props.ellipsis ||
+        props.shrink
     );
 
     const navStyle = computed(() => ({
@@ -398,7 +401,7 @@ export default defineComponent({
         <div
           ref={wrapRef}
           class={[
-            bem('wrap', { scrollable: scrollable.value }),
+            bem('wrap'),
             { [BORDER_TOP_BOTTOM]: type === 'line' && border },
           ]}
         >

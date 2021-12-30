@@ -83,6 +83,7 @@ export default defineComponent({
           bem([
             props.type,
             {
+              grow: props.scrollable && !props.shrink,
               shrink: props.shrink,
               active: props.isActive,
               disabled: props.disabled,
