@@ -113,7 +113,7 @@ export default {
     {
       "icon_id": "26507839",
       "name": "我的",
-      "font_class": "my",
+      "font_class": "avatar",
       "unicode": "e675",
       "unicode_decimal": 58997
     },
@@ -134,7 +134,7 @@ export default {
     {
       "icon_id": "26507750",
       "name": "客服",
-      "font_class": "customer",
+      "font_class": "customer-service",
       "unicode": "e672",
       "unicode_decimal": 58994
     },
@@ -162,7 +162,7 @@ export default {
     {
       "icon_id": "26507366",
       "name": "收藏",
-      "font_class": "collet",
+      "font_class": "star",
       "unicode": "e66e",
       "unicode_decimal": 58990
     },
@@ -190,7 +190,7 @@ export default {
     {
       "icon_id": "26507264",
       "name": "提醒",
-      "font_class": "remind",
+      "font_class": "info",
       "unicode": "e66a",
       "unicode_decimal": 58986
     },
@@ -225,7 +225,7 @@ export default {
     {
       "icon_id": "26507104",
       "name": "减少",
-      "font_class": "reduce",
+      "font_class": "decrease",
       "unicode": "e664",
       "unicode_decimal": 58980
     },
@@ -246,21 +246,21 @@ export default {
     {
       "icon_id": "26507085",
       "name": "密码",
-      "font_class": "pwd",
+      "font_class": "password",
       "unicode": "e661",
       "unicode_decimal": 58977
     },
     {
       "icon_id": "26507079",
       "name": "隐藏密码",
-      "font_class": "hide-pwd",
+      "font_class": "hidden",
       "unicode": "e660",
       "unicode_decimal": 58976
     },
     {
       "icon_id": "26507078",
       "name": "显示密码",
-      "font_class": "show-pwd",
+      "font_class": "visible",
       "unicode": "e65f",
       "unicode_decimal": 58975
     },
@@ -288,7 +288,7 @@ export default {
     {
       "icon_id": "26507063",
       "name": "照片",
-      "font_class": "picture",
+      "font_class": "photo",
       "unicode": "e65b",
       "unicode_decimal": 58971
     },
@@ -316,7 +316,7 @@ export default {
     {
       "icon_id": "26506822",
       "name": "消息",
-      "font_class": "msg",
+      "font_class": "message",
       "unicode": "e657",
       "unicode_decimal": 58967
     },
@@ -337,7 +337,7 @@ export default {
     {
       "icon_id": "26506718",
       "name": "二维码",
-      "font_class": "qrcdoe",
+      "font_class": "qrcode",
       "unicode": "e654",
       "unicode_decimal": 58964
     }
