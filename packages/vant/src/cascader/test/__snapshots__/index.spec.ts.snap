@@ -75,14 +75,14 @@ exports[`should update tabs when previous tab is clicked 1`] = `
     </i>
   </div>
   <div class="van-tabs van-tabs--line van-cascader__tabs">
-    <div class="van-tabs__wrap van-tabs__wrap--scrollable">
+    <div class="van-tabs__wrap">
       <div role="tablist"
-           class="van-tabs__nav van-tabs__nav--line van-tabs__nav--complete"
+           class="van-tabs__nav van-tabs__nav--line van-tabs__nav--shrink van-tabs__nav--complete"
            aria-orientation="horizontal"
       >
         <div id="van-tabs-0"
              role="tab"
-             class="van-tab van-tab--line van-cascader__tab"
+             class="van-tab van-tab--line van-tab--shrink van-cascader__tab"
              tabindex="-1"
              aria-selected="false"
         >
@@ -92,7 +92,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
         </div>
         <div id="van-tabs-1"
              role="tab"
-             class="van-tab van-tab--line van-tab--active van-cascader__tab van-cascader__tab--unselected"
+             class="van-tab van-tab--line van-tab--shrink van-tab--active van-cascader__tab van-cascader__tab--unselected"
              tabindex="0"
              aria-selected="true"
         >

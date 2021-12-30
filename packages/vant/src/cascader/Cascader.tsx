@@ -269,10 +269,10 @@ export default defineComponent({
     const renderTabs = () => (
       <Tabs
         v-model:active={activeTab.value}
+        shrink
         animated
         class={bem('tabs')}
         color={props.activeColor}
-        swipeThreshold={0}
         swipeable={props.swipeable}
         onClick-tab={onClickTab}
       >
