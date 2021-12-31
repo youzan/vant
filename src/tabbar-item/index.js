@@ -26,7 +26,7 @@ export default createComponent({
     badge: [Number, String],
     showbaget: {
       type: Boolean,
-      default: true
+      default: false
     },
     badgemax: {
       type: Number,

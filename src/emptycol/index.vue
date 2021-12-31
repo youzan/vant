@@ -10,9 +10,10 @@ export default {
 
 <style module>
 .empty {
-  background: #F7F8FA;
+  background: #f7f8fa;
+  border: 1px dashed #c3c3c3;
   text-align: center;
-  color: #ccc;
+  color: #999;
   min-height: 32px;
   min-width: 90px;
   width: 100%;

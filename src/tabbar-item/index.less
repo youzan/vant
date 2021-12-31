@@ -7,14 +7,18 @@
   align-items: center;
   justify-content: center;
   color: @tabbar-item-text-color;
-  font-size: @tabbar-item-font-size;
-  line-height: @tabbar-item-line-height;
+  // font-size: @tabbar-item-font-size;
+  font: normal normal normal @tabbar-item-icon-size/1 'vant-icon';
+  font-size: inherit;
+  // line-height: @tabbar-item-icon-size;
   cursor: pointer;
 
   &__icon {
     position: relative;
     // margin-bottom: @tabbar-item-margin-bottom;
-    font-size: @tabbar-item-icon-size;
+    font: normal normal normal @tabbar-item-icon-size/1 'vant-icon';
+    font-size: inherit;
+    // font-size: @tabbar-item-icon-size;
     display: inline-flex;
 
 
@@ -29,16 +33,23 @@
   }
 
   &--active {
-    color: @tabbar-item-active-color;
+    color: #337EFF;
     background-color: @tabbar-item-active-background-color;
   }
 
   &__text {
     margin-top: 4px;
+    font: normal normal normal 10px/1 'vant-icon';
+    font-size: inherit;
   }
 
   .van-info {
     // margin-top: @padding-base;
-    right: -10px;
+    right: -12px;
+  }
+
+  .van-iconv {
+    font: normal normal normal 24px/1 'vant-icon';
+    font-size: inherit;
   }
 }

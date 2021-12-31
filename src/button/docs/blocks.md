@@ -15,11 +15,6 @@
 ``` html
 <van-button type="default" text="默认按钮"></van-button>
 ```
-### 图标按钮
-
-``` html
-<van-button icon="plus" type="primary" text="图标按钮"></van-button>
-```
 ### 细边框
 
 ``` html

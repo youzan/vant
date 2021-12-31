@@ -28,10 +28,10 @@
       default: true
       description: 是否显示遮罩层
     - name: close-on-click-overlay
-      title: 是否在点击遮罩层后关闭菜单
+      title: 是否点击遮罩层后关闭菜单
       type: boolean
       default: true
-      description: 是否在点击遮罩层后关闭菜单
+      description: 是否点击遮罩层后关闭菜单
   slots:
     - name: default
       description: 插入`<van-dropdown-menu>`子组件。
