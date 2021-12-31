@@ -345,3 +345,17 @@ test('readonly prop', () => {
 
   expect(wrapper.emitted('change')).toBeFalsy();
 });
+
+test('should not render mask and frame when options is empty', async () => {
+  const wrapper = mount(Picker, {
+    props: {
+      columns: [{ values: [] }],
+    },
+  });
+  expect(wrapper.find('.van-picker__mask').exists()).toBeFalsy();
+  expect(wrapper.find('.van-picker__frame').exists()).toBeFalsy();
+
+  await wrapper.setProps({ columns: [{ values: ['foo'] }] });
+  expect(wrapper.find('.van-picker__mask').exists()).toBeTruthy();
+  expect(wrapper.find('.van-picker__frame').exists()).toBeTruthy();
+});

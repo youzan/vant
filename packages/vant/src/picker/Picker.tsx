@@ -352,14 +352,29 @@ export default defineComponent({
         />
       ));
 
+    const renderMask = (wrapHeight: number) => {
+      const hasOptions = formattedColumns.value.some(
+        (item) => item[valuesKey] && item[valuesKey].length !== 0
+      );
+
+      if (hasOptions) {
+        const frameStyle = { height: `${itemHeight.value}px` };
+        const maskStyle = {
+          backgroundSize: `100% ${(wrapHeight - itemHeight.value) / 2}px`,
+        };
+        return [
+          <div class={bem('mask')} style={maskStyle} />,
+          <div
+            class={[BORDER_UNSET_TOP_BOTTOM, bem('frame')]}
+            style={frameStyle}
+          />,
+        ];
+      }
+    };
+
     const renderColumns = () => {
       const wrapHeight = itemHeight.value * +props.visibleItemCount;
-      const frameStyle = { height: `${itemHeight.value}px` };
       const columnsStyle = { height: `${wrapHeight}px` };
-      const maskStyle = {
-        backgroundSize: `100% ${(wrapHeight - itemHeight.value) / 2}px`,
-      };
-
       return (
         <div
           class={bem('columns')}
@@ -367,11 +382,7 @@ export default defineComponent({
           onTouchmove={preventDefault}
         >
           {renderColumnItems()}
-          <div class={bem('mask')} style={maskStyle} />
-          <div
-            class={[BORDER_UNSET_TOP_BOTTOM, bem('frame')]}
-            style={frameStyle}
-          />
+          {renderMask(wrapHeight)}
         </div>
       );
     };
