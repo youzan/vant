@@ -168,14 +168,6 @@ exports[`columns-top、columns-bottom prop 1`] = `
       >
       </ul>
     </div>
-    <div class="van-picker__mask"
-         style="background-size: 100% 110px;"
-    >
-    </div>
-    <div class="van-hairline-unset--top-bottom van-picker__frame"
-         style="height: 44px;"
-    >
-    </div>
   </div>
   Custom Columns Bottom
 </div>
@@ -403,14 +395,6 @@ exports[`should render confirm/cancel slot correctly 1`] = `
       >
       </ul>
     </div>
-    <div class="van-picker__mask"
-         style="background-size: 100% 110px;"
-    >
-    </div>
-    <div class="van-hairline-unset--top-bottom van-picker__frame"
-         style="height: 44px;"
-    >
-    </div>
   </div>
 </div>
 `;
@@ -439,14 +423,6 @@ exports[`should render title slot correctly 1`] = `
       >
       </ul>
     </div>
-    <div class="van-picker__mask"
-         style="background-size: 100% 110px;"
-    >
-    </div>
-    <div class="van-hairline-unset--top-bottom van-picker__frame"
-         style="height: 44px;"
-    >
-    </div>
   </div>
 </div>
 `;
@@ -465,14 +441,6 @@ exports[`should render toolbar slot correctly 1`] = `
       >
       </ul>
     </div>
-    <div class="van-picker__mask"
-         style="background-size: 100% 110px;"
-    >
-    </div>
-    <div class="van-hairline-unset--top-bottom van-picker__frame"
-         style="height: 44px;"
-    >
-    </div>
   </div>
 </div>
 `;
@@ -487,14 +455,6 @@ exports[`toolbar-position prop 1`] = `
           class="van-picker-column__wrapper"
       >
       </ul>
-    </div>
-    <div class="van-picker__mask"
-         style="background-size: 100% 110px;"
-    >
-    </div>
-    <div class="van-hairline-unset--top-bottom van-picker__frame"
-         style="height: 44px;"
-    >
     </div>
   </div>
   <div class="van-picker__toolbar">
