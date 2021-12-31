@@ -4,3 +4,10 @@ import _SubmitBar from './SubmitBar';
 export const SubmitBar = withInstall(_SubmitBar);
 export default SubmitBar;
 export type { SubmitBarProps, SubmitBarTextAlign } from './SubmitBar';
+
+// define global components for volar
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanSubmitBar: typeof SubmitBar;
+  }
+}

@@ -9,3 +9,10 @@ export type {
   CheckboxGroupDirection,
   CheckboxGroupToggleAllOptions,
 } from './types';
+
+// define global components for volar
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanCheckboxGroup: typeof CheckboxGroup;
+  }
+}

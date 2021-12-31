@@ -5,3 +5,10 @@ export const NoticeBar = withInstall(_NoticeBar);
 export default NoticeBar;
 export type { NoticeBarProps };
 export type { NoticeBarMode, NoticeBarInstance } from './types';
+
+// define global components for volar
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanNoticeBar: typeof NoticeBar;
+  }
+}

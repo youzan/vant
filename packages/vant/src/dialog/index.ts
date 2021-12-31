@@ -9,3 +9,10 @@ export type {
   DialogOptions,
   DialogMessageAlign,
 } from './types';
+
+// define global components for volar
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanDialog: typeof Dialog.Component;
+  }
+}

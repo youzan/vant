@@ -8,3 +8,10 @@ export type {
   ShareSheetOption,
   ShareSheetOptions,
 } from './ShareSheet';
+
+// define global components for volar
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanShareSheet: typeof ShareSheet;
+  }
+}

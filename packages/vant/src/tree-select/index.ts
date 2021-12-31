@@ -8,3 +8,10 @@ export type {
   TreeSelectChild,
   TreeSelectProps,
 } from './TreeSelect';
+
+// define global components for volar
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanTreeSelect: typeof TreeSelect;
+  }
+}

@@ -13,3 +13,10 @@ export type {
   PickerObjectOption,
   PickerToolbarPosition,
 } from './types';
+
+// define global components for volar
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanPicker: typeof Picker;
+  }
+}
