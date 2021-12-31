@@ -9,3 +9,9 @@ export type {
   DialogOptions,
   DialogMessageAlign,
 } from './types';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanDialog: typeof Dialog.Component;
+  }
+}

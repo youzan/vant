@@ -5,3 +5,9 @@ export const DatetimePicker = withInstall(_DatetimePicker);
 export default DatetimePicker;
 export type { DatetimePickerProps };
 export type { DatetimePickerType, DatetimePickerInstance } from './types';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanDatetimePicker: typeof DatetimePicker;
+  }
+}

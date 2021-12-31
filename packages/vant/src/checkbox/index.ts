@@ -9,3 +9,9 @@ export type {
   CheckboxInstance,
   CheckboxLabelPosition,
 } from './types';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanCheckbox: typeof Checkbox;
+  }
+}

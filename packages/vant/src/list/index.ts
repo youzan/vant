@@ -5,3 +5,9 @@ export const List = withInstall(_List);
 export default List;
 export type { ListProps };
 export type { ListInstance, ListDirection } from './types';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanList: typeof List;
+  }
+}

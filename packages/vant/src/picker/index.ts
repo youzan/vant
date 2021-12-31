@@ -13,3 +13,9 @@ export type {
   PickerObjectOption,
   PickerToolbarPosition,
 } from './types';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanPicker: typeof Picker;
+  }
+}

@@ -10,3 +10,9 @@ export type {
   CalendarDayType,
   CalendarInstance,
 } from './types';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanCalendar: typeof Calendar;
+  }
+}

@@ -9,3 +9,9 @@ export type {
   PopupInstance,
   PopupCloseIconPosition,
 } from './types';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanPopup: typeof Popup;
+  }
+}

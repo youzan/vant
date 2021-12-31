@@ -8,3 +8,9 @@ export type {
   ShareSheetOption,
   ShareSheetOptions,
 } from './ShareSheet';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanShareSheet: typeof ShareSheet;
+  }
+}

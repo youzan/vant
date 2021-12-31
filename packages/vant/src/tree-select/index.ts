@@ -8,3 +8,9 @@ export type {
   TreeSelectChild,
   TreeSelectProps,
 } from './TreeSelect';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanTreeSelect: typeof TreeSelect;
+  }
+}

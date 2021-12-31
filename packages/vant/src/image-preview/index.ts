@@ -9,3 +9,9 @@ export type {
   ImagePreviewInstance,
   ImagePreviewScaleEventParams,
 } from './types';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanImagePreview: typeof ImagePreview.Component;
+  }
+}
