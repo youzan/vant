@@ -6,7 +6,6 @@ export default Progress;
 export type { ProgressProps };
 export type { ProgressInstance } from './types';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanProgress: typeof Progress;

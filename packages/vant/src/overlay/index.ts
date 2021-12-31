@@ -5,7 +5,6 @@ export const Overlay = withInstall(_Overlay);
 export default Overlay;
 export type { OverlayProps } from './Overlay';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanOverlay: typeof Overlay;

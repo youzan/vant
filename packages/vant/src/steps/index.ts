@@ -5,7 +5,6 @@ export const Steps = withInstall(_Steps);
 export default Steps;
 export type { StepsProps, StepsDirection } from './Steps';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanSteps: typeof Steps;

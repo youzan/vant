@@ -5,7 +5,6 @@ export const TabbarItem = withInstall(_TabbarItem);
 export default TabbarItem;
 export type { TabbarItemProps } from './TabbarItem';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanTabbarItem: typeof TabbarItem;

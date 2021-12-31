@@ -5,7 +5,6 @@ export const Circle = withInstall(_Circle);
 export default Circle;
 export type { CircleProps, CircleStartPosition } from './Circle';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanCircle: typeof Circle;

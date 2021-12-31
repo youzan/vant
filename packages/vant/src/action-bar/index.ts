@@ -5,7 +5,6 @@ export const ActionBar = withInstall(_ActionBar);
 export default ActionBar;
 export type { ActionBarProps } from './ActionBar';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanActionBar: typeof ActionBar;

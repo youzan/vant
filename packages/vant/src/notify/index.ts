@@ -5,7 +5,6 @@ export { Notify };
 export type { NotifyProps } from './Notify';
 export type { NotifyType, NotifyOptions } from './types';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanNotify: typeof Notify.Component;

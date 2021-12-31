@@ -10,7 +10,6 @@ export type {
   CheckboxLabelPosition,
 } from './types';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanCheckbox: typeof Checkbox;

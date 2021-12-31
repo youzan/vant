@@ -10,7 +10,6 @@ export type {
   SwipeCellInstance,
 } from './types';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanSwipeCell: typeof SwipeCell;

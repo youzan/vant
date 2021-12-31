@@ -5,7 +5,6 @@ export const Switch = withInstall(_Switch);
 export default Switch;
 export type { SwitchProps } from './Switch';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanSwitch: typeof Switch;

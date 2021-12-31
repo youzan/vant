@@ -11,7 +11,6 @@ export type {
   PopoverPlacement,
 } from './types';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanPopover: typeof Popover;

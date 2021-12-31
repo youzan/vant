@@ -5,7 +5,6 @@ export const IndexAnchor = withInstall(_IndexAnchor);
 export default IndexAnchor;
 export type { IndexAnchorProps } from './IndexAnchor';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanIndexAnchor: typeof IndexAnchor;

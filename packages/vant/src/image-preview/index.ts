@@ -10,7 +10,6 @@ export type {
   ImagePreviewScaleEventParams,
 } from './types';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanImagePreview: typeof ImagePreview.Component;

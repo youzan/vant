@@ -19,7 +19,6 @@ export type {
   FieldValidateTrigger,
 } from './types';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanField: typeof Field;

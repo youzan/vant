@@ -10,7 +10,6 @@ export type {
   PopupCloseIconPosition,
 } from './types';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanPopup: typeof Popup;

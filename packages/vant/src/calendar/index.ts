@@ -11,7 +11,6 @@ export type {
   CalendarInstance,
 } from './types';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanCalendar: typeof Calendar;

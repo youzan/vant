@@ -6,7 +6,6 @@ export default DatetimePicker;
 export type { DatetimePickerProps };
 export type { DatetimePickerType, DatetimePickerInstance } from './types';
 
-// define global components for volar
 declare module 'vue' {
   export interface GlobalComponents {
     VanDatetimePicker: typeof DatetimePicker;
