@@ -29,10 +29,13 @@ const [name, bem] = createNamespace('image');
 
 export type ImageFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
 
+export type ImagePosition = 'center' | 'top' | 'right' | 'bottom' | 'left';
+
 const imageProps = {
   src: String,
   alt: String,
   fit: String as PropType<ImageFit>,
+  position: String as PropType<ImagePosition>,
   round: Boolean,
   width: numericProp,
   height: numericProp,
@@ -136,6 +139,7 @@ export default defineComponent({
         class: bem('img'),
         style: {
           objectFit: props.fit,
+          objectPosition: props.position,
         },
       };
 

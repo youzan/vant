@@ -35,6 +35,18 @@ app.use(VanImage);
 />
 ```
 
+### Position
+
+```html
+<van-image
+  width="10rem"
+  height="10rem"
+  fit="cover"
+  position="left"
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/>
+```
+
 ### Round
 
 Show round image, it may not works at `fit=contain` and `fit=scale-down`.
@@ -75,6 +87,7 @@ app.use(Lazyload);
 | --- | --- | --- | --- |
 | src | Src | _string_ | - |
 | fit | Fit mode | _string_ | `fill` |
+| position `v3.4.1` | Position, can be set to `center` `top` `right` `bottom` `left` | _string_ | `center` |
 | alt | Alt | _string_ | - |
 | width | Width | _number \| string_ | - |
 | height | Height | _number \| string_ | - |
@@ -119,7 +132,7 @@ app.use(Lazyload);
 The component exports the following type definitions:
 
 ```ts
-import type { ImageFit, ImageProps } from 'vant';
+import type { ImageFit, ImagePosition, ImageProps } from 'vant';
 ```
 
 ## Theming
