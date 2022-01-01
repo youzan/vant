@@ -170,6 +170,8 @@ export default {
 | focus | Emitted when input is focused | _event: Event_ |
 | blur | Emitted when input is blurred | _event: Event_ |
 | click-input | Emitted when the input is clicked | _event: MouseEvent_ |
+| click-left-icon `v3.4.0` | Emitted when the left icon is clicked | _event: MouseEvent_ |
+| click-right-icon `v3.4.0` | Emitted when the right icon is clicked | _event: MouseEvent_ |
 | clear | Emitted when the clear icon is clicked | _event: MouseEvent_ |
 | cancel | Emitted when the cancel button is clicked | - |
 
