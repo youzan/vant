@@ -254,7 +254,7 @@ export default {
 | --- | --- | --- |
 | default | Custom content | - |
 | reference | Reference Element | - |
-| action `v3.3.8` | Custom the content of option | _{ action: PopoverAction, index: number }_ |
+| action `v3.4.0` | Custom the content of option | _{ action: PopoverAction, index: number }_ |
 
 ### Types
 

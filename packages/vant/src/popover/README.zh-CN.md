@@ -266,7 +266,7 @@ export default {
 | --- | --- | --- |
 | default | 自定义菜单内容 | - |
 | reference | 触发 Popover 显示的元素内容 | - |
-| action `v3.3.8` | 自定义选项内容 | _{ action: PopoverAction, index: number }_ |
+| action `v3.4.0` | 自定义选项内容 | _{ action: PopoverAction, index: number }_ |
 
 ### 类型定义
 
