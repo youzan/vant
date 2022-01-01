@@ -18,9 +18,13 @@ export const pickerInheritKeys = Object.keys(pickerSharedProps) as Array<
 >;
 
 export function times<T>(n: number, iteratee: (index: number) => T) {
-  let index = -1;
+  if (n < 0) {
+    return [];
+  }
+
   const result: T[] = Array(n);
 
+  let index = -1;
   while (++index < n) {
     result[index] = iteratee(index);
   }
