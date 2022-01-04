@@ -209,7 +209,7 @@ swipeRef.value?.next();
 | Name               | Description      | SlotProps                           |
 | ------------------ | ---------------- | ----------------------------------- |
 | default            | Content          | -                                   |
-| indicator `v3.3.8` | Custom indicator | _{ active: number, total: number }_ |
+| indicator `v3.4.0` | Custom indicator | _{ active: number, total: number }_ |
 
 ## Theming
 

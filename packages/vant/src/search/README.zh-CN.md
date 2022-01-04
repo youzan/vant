@@ -175,15 +175,17 @@ export default {
 
 ### Events
 
-| 事件名             | 说明                 | 回调参数                       |
-| ------------------ | -------------------- | ------------------------------ |
-| search             | 确定搜索时触发       | _value: string (当前输入的值)_ |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| search | 确定搜索时触发 | _value: string (当前输入的值)_ |
 | update:model-value | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
-| focus              | 输入框获得焦点时触发 | _event: Event_                 |
-| blur               | 输入框失去焦点时触发 | _event: Event_                 |
-| click-input        | 点击输入区域时触发   | _event: MouseEvent_            |
-| clear              | 点击清除按钮后触发   | _event: MouseEvent_            |
-| cancel             | 点击取消按钮时触发   | -                              |
+| focus | 输入框获得焦点时触发 | _event: Event_ |
+| blur | 输入框失去焦点时触发 | _event: Event_ |
+| click-input | 点击输入区域时触发 | _event: MouseEvent_ |
+| click-left-icon `v3.4.0` | 点击左侧图标时触发 | _event: MouseEvent_ |
+| click-right-icon `3.4.0` | 点击右侧图标时触发 | _event: MouseEvent_ |
+| clear | 点击清除按钮后触发 | _event: MouseEvent_ |
+| cancel | 点击取消按钮时触发 | - |
 
 ### 方法
 

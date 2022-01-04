@@ -163,7 +163,7 @@ export default {
 | type | 类型，可选值为 `primary` `success` `warning` | _NotifyType_ | `danger` |
 | message | 展示文案，支持通过`\n`换行 | _string_ | - |
 | duration | 展示时长(ms)，值为 0 时，notify 不会消失 | _number \| string_ | `3000` |
-| position `v3.3.8` | 弹出位置，可选值为 `bottom` | _NotifyPosition_ | `top` |
+| position `v3.4.0` | 弹出位置，可选值为 `bottom` | _NotifyPosition_ | `top` |
 | color | 字体颜色 | _string_ | `white` |
 | background | 背景颜色 | _string_ | - |
 | className | 自定义类名 | _string \| Array \| object_ | - |

@@ -16,20 +16,63 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.4.0](https://github.com/compare/v3.3.7...v3.4.0)
+
+`2022-01-01`
+
+**Bug Fixes**
+
+- Icons: complete https protocol [#10079](https://github.com/youzan/vant/issues/10079)
+- Picker: should not render mask and frame when options is empty [#10135](https://github.com/youzan/vant/issues/10135)
+- Popup: close event emitted twice [#10132](https://github.com/youzan/vant/issues/10132)
+- PullRefresh: may trigger browser bounce in some cases [#10080](https://github.com/youzan/vant/issues/10080)
+- Step: fix inactive title style [#10049](https://github.com/youzan/vant/issues/10049)
+- SwipeCell: should not trigger open event when opened [#10059](https://github.com/youzan/vant/issues/10059)
+- swipe: delay load cause swipe error [#10052](https://github.com/youzan/vant/issues/10052) [#10069](https://github.com/youzan/vant/issues/10069)
+- Tabs: should not render line when have no tab [#10063](https://github.com/youzan/vant/issues/10063)
+
+**Feature**
+
+- ActionBarIcon: add badge-props prop [#10096](https://github.com/youzan/vant/issues/10096)
+- ActionSheet: add option slot [#10065](https://github.com/youzan/vant/issues/10065)
+- Badge: add badge-props prop [#10095](https://github.com/youzan/vant/issues/10095)
+- GridItem: add badge-props prop [#10097](https://github.com/youzan/vant/issues/10097)
+- Icons: add cash-o icon [#10076](https://github.com/youzan/vant/issues/10076)
+- ImagePreview: add overlayClass option [#10044](https://github.com/youzan/vant/issues/10044)
+- Notify: add position prop [#10056](https://github.com/youzan/vant/issues/10056)
+- Popover: add action slot [#10091](https://github.com/youzan/vant/issues/10091)
+- Search: add click-left-icon、click-right-icon event [#10139](https://github.com/youzan/vant/issues/10139)
+- SidebarItem: add badge-props prop [#10106](https://github.com/youzan/vant/issues/10106)
+- Swipe: indicator slot add total param [#10060](https://github.com/youzan/vant/issues/10060)
+- TabbarItem: add badge-props prop [#10092](https://github.com/youzan/vant/issues/10092)
+- Tabs: add shrink prop [#10125](https://github.com/youzan/vant/issues/10125)
+
+**style**
+
+- PullRefresh: remove user-select: none [#10078](https://github.com/youzan/vant/issues/10078)
+- TreeSelect: allow select text in content slot [#10081](https://github.com/youzan/vant/issues/10081)
+
+**Types**
+
+- define global components for volar [#10136](https://github.com/youzan/vant/issues/10136)
+- Field: type prop allow all native types [#10042](https://github.com/youzan/vant/issues/10042)
+- Popup: add PopupInstance type [#10062](https://github.com/youzan/vant/issues/10062)
+- Search: fix missing event typing [#10134](https://github.com/youzan/vant/issues/10134)
+
 ### [v3.3.7](https://github.com/compare/v3.3.6...v3.3.7)
 
 `2021-12-12`
 
 **Feature**
 
-- Badge: add position prop [#10024](https://github.com/issues/10024)
+- Badge: add position prop [#10024](https://github.com/youzan/vant/issues/10024)
 
 **Bug Fixes**
 
-- DatetimePicker: should update value after calling picker methods [#10029](https://github.com/issues/10029)
-- Field: fix the length of emoji [#10033](https://github.com/issues/10033)
-- Pagination: change event not work [#10018](https://github.com/issues/10018)
-- fix tree shaking is broken [#10034](https://github.com/issues/10034)
+- DatetimePicker: should update value after calling picker methods [#10029](https://github.com/youzan/vant/issues/10029)
+- Field: fix the length of emoji [#10033](https://github.com/youzan/vant/issues/10033)
+- Pagination: change event not work [#10018](https://github.com/youzan/vant/issues/10018)
+- fix tree shaking is broken [#10034](https://github.com/youzan/vant/issues/10034)
 
 ### [v3.3.6](https://github.com/compare/v3.3.5...v3.3.6)
 

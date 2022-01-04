@@ -217,7 +217,7 @@ swipeRef.value?.next();
 | 名称               | 说明         | 参数                                |
 | ------------------ | ------------ | ----------------------------------- |
 | default            | 轮播内容     | -                                   |
-| indicator `v3.3.8` | 自定义指示器 | _{ active: number, total: number }_ |
+| indicator `v3.4.0` | 自定义指示器 | _{ active: number, total: number }_ |
 
 ## 主题定制
 

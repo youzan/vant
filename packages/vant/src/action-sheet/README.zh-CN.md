@@ -235,7 +235,7 @@ export default {
 | default | 自定义面板的展示内容 | - |
 | description | 自定义描述文案 | - |
 | cancel `v3.0.10` | 自定义取消按钮内容 | - |
-| action `v3.3.8` | 自定义选项内容 | _{ action: ActionSheetAction, index: number }_ |
+| action `v3.4.0` | 自定义选项内容 | _{ action: ActionSheetAction, index: number }_ |
 
 ### 类型定义
 
