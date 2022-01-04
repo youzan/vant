@@ -50,7 +50,6 @@
   "dependencies": {
     "@types/jest": "^27.0.3",
     "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@docsearch/css": "3.0.0-alpha.41",
     "@docsearch/js": "3.0.0-alpha.41",
@@ -69,6 +68,7 @@
     "consola": "^2.15.3",
     "conventional-changelog": "^3.1.24",
     "eslint": "^8.1.0",
+    "esbuild": "^0.14.0",
     "execa": "^5.1.1",
     "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
