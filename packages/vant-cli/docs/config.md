@@ -21,8 +21,6 @@
     - [site.simulator.url](#sitesimulatorurl)
     - [site.htmlMeta](#sitehtmlmeta)
     - [site.enableVConsole](#siteenablevconsole)
-  - [Babel](#babel)
-    - [默认配置](#----)
   - [Postcss](#postcss)
     - [默认配置](#-----1)
   - [browserslist](#browserslist)

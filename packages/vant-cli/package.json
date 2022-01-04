@@ -21,8 +21,7 @@
     "cjs",
     "site",
     "template",
-    "bin.js",
-    "preset.cjs"
+    "bin.js"
   ],
   "keywords": [
     "vant"
