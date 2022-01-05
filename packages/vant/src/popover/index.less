@@ -2,7 +2,6 @@
 
 :root {
   --van-popover-arrow-size: @popover-arrow-size;
-  --van-popover-arrow-offset-size: @popover-arrow-offset-size;
   --van-popover-border-radius: @popover-border-radius;
   --van-popover-action-width: @popover-action-width;
   --van-popover-action-height: @popover-action-height;
@@ -85,7 +84,7 @@
       border-top-color: currentColor;
       border-bottom-width: 0;
       transform: translate(-50%, 0%);
-      margin-bottom: var(--van-popover-arrow-offset-size);
+      margin-bottom: calc(0px - var(--van-popover-arrow-size));
     }
   }
 
@@ -119,7 +118,7 @@
       border-right-width: 0;
       border-left-color: currentColor;
       transform: translate(0%, -50%);
-      margin-right: var(--van-popover-arrow-offset-size);
+      margin-right: calc(0px - var(--van-popover-arrow-size));
     }
   }
 
@@ -153,7 +152,7 @@
       border-right-color: currentColor;
       border-left-width: 0;
       transform: translate(0%, -50%);
-      margin-left: var(--van-popover-arrow-offset-size);
+      margin-left: calc(0px - var(--van-popover-arrow-size));
     }
   }
 
@@ -187,7 +186,7 @@
       border-top-width: 0;
       border-bottom-color: currentColor;
       transform: translate(-50%, 0%);
-      margin-top: var(--van-popover-arrow-offset-size);
+      margin-top: calc(0px - var(--van-popover-arrow-size));
     }
   }
 
