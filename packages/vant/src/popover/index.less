@@ -2,6 +2,7 @@
 
 :root {
   --van-popover-arrow-size: @popover-arrow-size;
+  --van-popover-arrow-offset-size: @popover-arrow-offset-size;
   --van-popover-border-radius: @popover-border-radius;
   --van-popover-action-width: @popover-action-width;
   --van-popover-action-height: @popover-action-height;
@@ -83,7 +84,8 @@
       bottom: 0;
       border-top-color: currentColor;
       border-bottom-width: 0;
-      transform: translate(-50%, 100%);
+      transform: translate(-50%, 0%);
+      margin-bottom: var(--van-popover-arrow-offset-size);
     }
   }
 
@@ -116,7 +118,8 @@
       right: 0;
       border-right-width: 0;
       border-left-color: currentColor;
-      transform: translate(100%, -50%);
+      transform: translate(0%, -50%);
+      margin-right: var(--van-popover-arrow-offset-size);
     }
   }
 
@@ -149,7 +152,8 @@
       left: 0;
       border-right-color: currentColor;
       border-left-width: 0;
-      transform: translate(-100%, -50%);
+      transform: translate(0%, -50%);
+      margin-left: var(--van-popover-arrow-offset-size);
     }
   }
 
@@ -182,7 +186,8 @@
       top: 0;
       border-top-width: 0;
       border-bottom-color: currentColor;
-      transform: translate(-50%, -100%);
+      transform: translate(-50%, 0%);
+      margin-top: var(--van-popover-arrow-offset-size);
     }
   }
 
