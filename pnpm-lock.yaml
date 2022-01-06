@@ -135,14 +135,12 @@ importers:
       release-it: ^14.11.6
       stylelint: ^13.0.0
       transliteration: ^2.2.0
-      ts-jest: ^27.0.7
       typescript: ^4.5.2
       vite: ^2.6.13
       vite-plugin-html: ^2.1.1
       vite-plugin-md: ^0.11.4
       vue: ^3.2.20
       vue-router: ^4.0.12
-      vue3-jest: ^27.0.0-alpha.2
     dependencies:
       '@babel/core': 7.16.0
       '@babel/preset-typescript': 7.16.0_@babel+core@7.16.0
@@ -186,13 +184,11 @@ importers:
       release-it: 14.11.6
       stylelint: 13.13.1
       transliteration: 2.2.0
-      ts-jest: 27.1.0_5619a073460806379c4b17463ac6a519
       typescript: 4.5.2
       vite: 2.6.13_less@4.1.2
       vite-plugin-html: 2.1.1_vite@2.6.13
       vite-plugin-md: 0.11.4_vite@2.6.13
       vue-router: 4.0.12_vue@3.2.21
-      vue3-jest: 27.0.0-alpha.2_bd2bc343ae82dbc2949ed4bb15ec35da
     devDependencies:
       '@types/fs-extra': 9.0.13
       '@types/less': 3.0.3
@@ -1406,14 +1402,6 @@ packages:
     resolution: {integrity: sha1-IPGClPeX8iCbX2XI47XI6CYdEnw=, tarball: '@types/stack-utils/download/@types/stack-utils-2.0.1.tgz'}
     dev: false
 
-  /@types/strip-bom/3.0.0:
-    resolution: {integrity: sha1-FKjsOVbC6B7bdSB5CuzyHCkK69I=, tarball: '@types/strip-bom/download/@types/strip-bom-3.0.0.tgz'}
-    dev: false
-
-  /@types/strip-json-comments/0.0.30:
-    resolution: {integrity: sha1-mqMMBNshKpoGSdaub9UKzMQHSKE=, tarball: '@types/strip-json-comments/download/@types/strip-json-comments-0.0.30.tgz'}
-    dev: false
-
   /@types/through/0.0.30:
     resolution: {integrity: sha1-4OQs536Je9aurW9upirrE1uKOJU=, tarball: '@types/through/download/@types/through-0.0.30.tgz'}
     dependencies:
@@ -1909,12 +1897,6 @@ packages:
   /asynckit/0.4.0:
     resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=, tarball: asynckit/download/asynckit-0.4.0.tgz}
 
-  /atob/2.1.2:
-    resolution: {integrity: sha1-bZUX654DDSQ2ZmZR6GvZ9vE1M8k=, tarball: atob/download/atob-2.1.2.tgz}
-    engines: {node: '>= 4.5.0'}
-    hasBin: true
-    dev: false
-
   /autoprefixer/10.4.0_postcss@8.3.11:
     resolution: {integrity: sha1-w1d+syoQeaRA7CU+QE6vHrITiMg=, tarball: autoprefixer/download/autoprefixer-10.4.0.tgz}
     engines: {node: ^10 || ^12 || >=14}
@@ -2095,13 +2077,6 @@ packages:
       escalade: 3.1.1
       node-releases: 2.0.1
       picocolors: 1.0.0
-
-  /bs-logger/0.2.6:
-    resolution: {integrity: sha1-6302UwenLPl0zGzadraDVK0za9g=, tarball: bs-logger/download/bs-logger-0.2.6.tgz}
-    engines: {node: '>= 6'}
-    dependencies:
-      fast-json-stable-stringify: 2.1.0
-    dev: false
 
   /bser/2.1.1:
     resolution: {integrity: sha1-5nh9og7OnQeZhTPP2d5vXDj0vAU=, tarball: bser/download/bser-2.1.1.tgz}
@@ -2579,15 +2554,6 @@ packages:
   /crypto-random-string/2.0.0:
     resolution: {integrity: sha1-7yp6lm7BEIM4g2m6oC6+rSKbMNU=, tarball: crypto-random-string/download/crypto-random-string-2.0.0.tgz}
     engines: {node: '>=8'}
-
-  /css/2.2.4:
-    resolution: {integrity: sha1-xkZ1XHOXHyu6amAeLPL9cbEpiSk=, tarball: css/download/css-2.2.4.tgz}
-    dependencies:
-      inherits: 2.0.4
-      source-map: 0.6.1
-      source-map-resolve: 0.5.3
-      urix: 0.1.0
-    dev: false
 
   /cssesc/3.0.0:
     resolution: {integrity: sha1-N3QZGZA7hoVl4cCep0dEXNGJg+4=, tarball: cssesc/download/cssesc-3.0.0.tgz}
@@ -3562,13 +3528,6 @@ packages:
       chardet: 0.7.0
       iconv-lite: 0.4.24
       tmp: 0.0.33
-
-  /extract-from-css/0.4.4:
-    resolution: {integrity: sha1-HqffLnx8brmSL6COitrqSG9vj5I=, tarball: extract-from-css/download/extract-from-css-0.4.4.tgz}
-    engines: {node: '>=0.10.0', npm: '>=2.0.0'}
-    dependencies:
-      css: 2.2.4
-    dev: false
 
   /fast-deep-equal/3.1.3:
     resolution: {integrity: sha1-On1WtVnWy8PrUSMlJE5hmmXGxSU=, tarball: fast-deep-equal/download/fast-deep-equal-3.1.3.tgz}
@@ -5343,10 +5302,6 @@ packages:
     resolution: {integrity: sha1-dWy1FQyjum8RCFp4hJZF8Yj4Xzc=, tarball: lodash.ismatch/download/lodash.ismatch-4.4.0.tgz}
     dev: false
 
-  /lodash.memoize/4.1.2:
-    resolution: {integrity: sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=, tarball: lodash.memoize/download/lodash.memoize-4.1.2.tgz}
-    dev: false
-
   /lodash.merge/4.6.2:
     resolution: {integrity: sha1-VYqlO0O2YeGSWgr9+japoQhf5Xo=, tarball: lodash.merge/download/lodash.merge-4.6.2.tgz}
 
@@ -5428,10 +5383,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       semver: 6.3.0
-
-  /make-error/1.3.6:
-    resolution: {integrity: sha1-LrLjfqm2fEiR9oShOUeZr0hM96I=, tarball: make-error/download/make-error-1.3.6.tgz}
-    dev: false
 
   /makeerror/1.0.12:
     resolution: {integrity: sha1-Pl3SB5qC6BLpg8xmEMSiyw6qgBo=, tarball: makeerror/download/makeerror-1.0.12.tgz}
@@ -6478,11 +6429,6 @@ packages:
     resolution: {integrity: sha1-w1IlhD3493bfIcV1V7wIfp39/Gk=, tarball: resolve-from/download/resolve-from-5.0.0.tgz?cache=0&sync_timestamp=1632822736359&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fresolve-from%2Fdownload%2Fresolve-from-5.0.0.tgz}
     engines: {node: '>=8'}
 
-  /resolve-url/0.2.1:
-    resolution: {integrity: sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=, tarball: resolve-url/download/resolve-url-0.2.1.tgz}
-    deprecated: https://github.com/lydell/resolve-url#deprecated
-    dev: false
-
   /resolve.exports/1.1.0:
     resolution: {integrity: sha1-XOhCuUsFFGwOAwdphdHQ5+SMkMk=, tarball: resolve.exports/download/resolve.exports-1.1.0.tgz}
     engines: {node: '>=10'}
@@ -6669,30 +6615,11 @@ packages:
     resolution: {integrity: sha1-C7XeYxtBz72mz7qL0FqA79/SOF4=, tarball: source-map-js/download/source-map-js-0.6.2.tgz}
     engines: {node: '>=0.10.0'}
 
-  /source-map-resolve/0.5.3:
-    resolution: {integrity: sha1-GQhmvs51U+H48mei7oLGBrVQmho=, tarball: source-map-resolve/download/source-map-resolve-0.5.3.tgz}
-    dependencies:
-      atob: 2.1.2
-      decode-uri-component: 0.2.0
-      resolve-url: 0.2.1
-      source-map-url: 0.4.1
-      urix: 0.1.0
-    dev: false
-
   /source-map-support/0.5.20:
     resolution: {integrity: sha1-EhZgifj15ejFaSazd2Mzkt0stsk=, tarball: source-map-support/download/source-map-support-0.5.20.tgz}
     dependencies:
       buffer-from: 1.1.2
       source-map: 0.6.1
-    dev: false
-
-  /source-map-url/0.4.1:
-    resolution: {integrity: sha1-CvZmBadFpaL5HPG7+KevvCg97FY=, tarball: source-map-url/download/source-map-url-0.4.1.tgz}
-    dev: false
-
-  /source-map/0.5.6:
-    resolution: {integrity: sha1-dc449SvwczxafwwRjYEzSiu19BI=, tarball: source-map/download/source-map-0.5.6.tgz?cache=0&sync_timestamp=1632822727980&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fsource-map%2Fdownload%2Fsource-map-0.5.6.tgz}
-    engines: {node: '>=0.10.0'}
     dev: false
 
   /source-map/0.5.7:
@@ -7129,39 +7056,6 @@ packages:
   /trough/1.0.5:
     resolution: {integrity: sha1-uLY5zvrX0LsqvTfUM/+Ck++l9AY=, tarball: trough/download/trough-1.0.5.tgz}
 
-  /ts-jest/27.1.0_5619a073460806379c4b17463ac6a519:
-    resolution: {integrity: sha512-ZouWlP03JMtzfNHg0ZeDrxAESYGmVhWyHtIl2/01kBbXaMbTr4Vhv6/GeMxUed6GFg/4ycMo+yU6Eo9gI16xTQ==, tarball: ts-jest/download/ts-jest-27.1.0.tgz}
-    engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
-    hasBin: true
-    peerDependencies:
-      '@babel/core': '>=7.0.0-beta.0 <8'
-      '@types/jest': ^27.0.0
-      babel-jest: '>=27.0.0 <28'
-      jest: ^27.0.0
-      typescript: '>=3.8 <5.0'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@types/jest':
-        optional: true
-      babel-jest:
-        optional: true
-    dependencies:
-      '@babel/core': 7.16.0
-      '@types/jest': 27.0.3
-      bs-logger: 0.2.6
-      esbuild: 0.14.2
-      fast-json-stable-stringify: 2.1.0
-      jest: 27.3.1
-      jest-util: 27.3.1
-      json5: 2.2.0
-      lodash.memoize: 4.1.2
-      make-error: 1.3.6
-      semver: 7.3.5
-      typescript: 4.5.2
-      yargs-parser: 20.2.9
-    dev: false
-
   /tsconfig-paths/3.11.0:
     resolution: {integrity: sha1-lUwf6XPaYznHjgawPOLkiBC2XzY=, tarball: tsconfig-paths/download/tsconfig-paths-3.11.0.tgz}
     dependencies:
@@ -7169,15 +7063,6 @@ packages:
       json5: 1.0.1
       minimist: 1.2.5
       strip-bom: 3.0.0
-    dev: false
-
-  /tsconfig/7.0.0:
-    resolution: {integrity: sha1-hFOIdaTcIW5cSlQys6Tew9VOkbc=, tarball: tsconfig/download/tsconfig-7.0.0.tgz}
-    dependencies:
-      '@types/strip-bom': 3.0.0
-      '@types/strip-json-comments': 0.0.30
-      strip-bom: 3.0.0
-      strip-json-comments: 2.0.1
     dev: false
 
   /tslib/1.14.1:
@@ -7340,11 +7225,6 @@ packages:
     dependencies:
       punycode: 2.1.1
 
-  /urix/0.1.0:
-    resolution: {integrity: sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=, tarball: urix/download/urix-0.1.0.tgz}
-    deprecated: Please see https://github.com/lydell/urix#deprecated
-    dev: false
-
   /url-join/4.0.1:
     resolution: {integrity: sha1-tkLiGiZGgI/6F4xMX9o5hE4Szec=, tarball: url-join/download/url-join-4.0.1.tgz}
 
@@ -7479,36 +7359,6 @@ packages:
       '@vue/server-renderer': 3.2.21_vue@3.2.21
       '@vue/shared': 3.2.21
     dev: true
-
-  /vue3-jest/27.0.0-alpha.2_bd2bc343ae82dbc2949ed4bb15ec35da:
-    resolution: {integrity: sha1-yZNbz4FGRDJl0W5xuO6NPTE+FHg=, tarball: vue3-jest/download/vue3-jest-27.0.0-alpha.2.tgz}
-    peerDependencies:
-      '@babel/core': 7.x
-      babel-jest: 27.x
-      jest: 27.x
-      ts-jest: 27.x
-      typescript: '>= 3.x'
-      vue: ^3.0.0-0
-    peerDependenciesMeta:
-      ts-jest:
-        optional: true
-      typescript:
-        optional: true
-    dependencies:
-      '@babel/core': 7.16.0
-      '@babel/plugin-transform-modules-commonjs': 7.16.0_@babel+core@7.16.0
-      chalk: 2.4.2
-      convert-source-map: 1.8.0
-      extract-from-css: 0.4.4
-      jest: 27.3.1
-      source-map: 0.5.6
-      ts-jest: 27.1.0_5619a073460806379c4b17463ac6a519
-      tsconfig: 7.0.0
-      typescript: 4.5.2
-      vue: 3.2.21
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
 
   /w3c-hr-time/1.0.2:
     resolution: {integrity: sha1-ConN9cwVgi35w2BUNnaWPgzDCM0=, tarball: w3c-hr-time/download/w3c-hr-time-1.0.2.tgz}
