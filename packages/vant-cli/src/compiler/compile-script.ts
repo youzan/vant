@@ -1,6 +1,6 @@
 import fse from 'fs-extra';
 import babel from '@babel/core';
-import esbuild from 'esbuild';
+import esbuild, { type Format } from 'esbuild';
 import { sep } from 'path';
 import { isJsx, replaceExt } from '../common/index.js';
 import { replaceCSSImportExt } from '../common/css.js';
@@ -8,7 +8,10 @@ import { replaceScriptImportExt } from './get-deps.js';
 
 const { readFileSync, removeSync, outputFileSync } = fse;
 
-export async function compileScript(filePath: string): Promise<void> {
+export async function compileScript(
+  filePath: string,
+  format: Format
+): Promise<void> {
   if (filePath.includes('.d.ts')) {
     return;
   }
@@ -42,6 +45,7 @@ export async function compileScript(filePath: string): Promise<void> {
   const esbuildResult = await esbuild.transform(code, {
     loader: 'ts',
     target: 'es2016',
+    format,
   });
 
   ({ code } = esbuildResult);
