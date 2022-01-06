@@ -719,21 +719,6 @@ packages:
       '@babel/helper-plugin-utils': 7.14.5
     dev: false
 
-  /@babel/plugin-transform-modules-commonjs/7.16.0_@babel+core@7.16.0:
-    resolution: {integrity: sha1-rdWOY4yN3Eh1vZqey1xZRhP2ySI=, tarball: '@babel/plugin-transform-modules-commonjs/download/@babel/plugin-transform-modules-commonjs-7.16.0.tgz'}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.16.0
-      '@babel/helper-module-transforms': 7.16.0
-      '@babel/helper-plugin-utils': 7.14.5
-      '@babel/helper-simple-access': 7.16.0
-      babel-plugin-dynamic-import-node: 2.3.3
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /@babel/plugin-transform-typescript/7.16.1_@babel+core@7.16.0:
     resolution: {integrity: sha1-zAZwsoIrAzg1W8Gz0iRqQrgWZAk=, tarball: '@babel/plugin-transform-typescript/download/@babel/plugin-transform-typescript-7.16.1.tgz'}
     engines: {node: '>=6.9.0'}
@@ -1942,12 +1927,6 @@ packages:
       slash: 3.0.0
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /babel-plugin-dynamic-import-node/2.3.3:
-    resolution: {integrity: sha1-hP2hnJduxcbe/vV/lCez3vZuF6M=, tarball: babel-plugin-dynamic-import-node/download/babel-plugin-dynamic-import-node-2.3.3.tgz?cache=0&sync_timestamp=1632822778823&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fbabel-plugin-dynamic-import-node%2Fdownload%2Fbabel-plugin-dynamic-import-node-2.3.3.tgz}
-    dependencies:
-      object.assign: 4.1.2
     dev: false
 
   /babel-plugin-istanbul/6.1.1:
