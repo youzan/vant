@@ -21,8 +21,6 @@
     - [site.simulator.url](#sitesimulatorurl)
     - [site.htmlMeta](#sitehtmlmeta)
     - [site.enableVConsole](#siteenablevconsole)
-  - [Babel](#babel)
-    - [默认配置](#----)
   - [Postcss](#postcss)
     - [默认配置](#-----1)
   - [browserslist](#browserslist)
@@ -337,36 +335,13 @@ module.exports = {
 
 是否在 dev 时开启 [vConsole](https://github.com/Tencent/vConsole) 调试，用于移动端 debug。
 
-## Babel
-
-通过根目录下的`babel.config.js`文件可以对 Babel 进行配置。
-
-### 默认配置
-
-推荐使用`vant-cli`内置的 preset，配置如下：
-
-```js
-module.exports = {
-  presets: ['@vant/cli/preset'],
-};
-```
-
-`@vant/cli/preset`中默认包含了以下插件：
-
-- @babel/preset-env（不含 core-js）
-- @babel/preset-typescript
-- @babel/plugin-transform-object-assign
-- @babel/plugin-proposal-optional-chaining
-- @babel/plugin-proposal-nullish-coalescing-operator
-- @vue/babel-preset-jsx
-
 ## Postcss
 
 通过根目录下的`postcss.config.js`文件可以对 Postcss 进行配置。
 
 ### 默认配置
 
-`vant-cli`中默认的 Postcss 配置如下：
+`vant-cli` 中默认的 Postcss 配置如下：
 
 ```js
 module.exports = {
@@ -378,7 +353,7 @@ module.exports = {
 
 ## browserslist
 
-推荐在`package.json`文件里添加 browserslist 字段，这个值会被`@babel/preset-env`和`autoprefixer`用来确定目标浏览器的版本，保证编译后代码的兼容性。
+推荐在 `package.json` 文件里添加 browserslist 字段，这个值会被 `autoprefixer` 用来确定目标浏览器的版本，保证编译后代码的兼容性。
 
 在移动端浏览器中使用，可以添加如下配置：
 
