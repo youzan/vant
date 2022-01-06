@@ -107,12 +107,12 @@ importers:
       '@vue/babel-plugin-jsx': ^1.1.1
       '@vue/compiler-sfc': ^3.2.20
       autoprefixer: ^10.4.0
-      babel-jest: ^27.3.1
       chalk: ^4.1.2
       clean-css: ^5.2.2
       commander: ^8.3.0
       consola: ^2.15.3
       conventional-changelog: ^3.1.24
+      esbuild: ^0.14.2
       eslint: ^8.1.0
       execa: ^5.1.1
       fast-glob: ^3.2.7
@@ -159,12 +159,12 @@ importers:
       '@vitejs/plugin-vue-jsx': 1.2.0
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.16.0
       autoprefixer: 10.4.0_postcss@8.3.11
-      babel-jest: 27.3.1_@babel+core@7.16.0
       chalk: 4.1.2
       clean-css: 5.2.2
       commander: 8.3.0
       consola: 2.15.3
       conventional-changelog: 3.1.24
+      esbuild: 0.14.2
       eslint: 8.2.0
       execa: 5.1.1
       fast-glob: 3.2.7
@@ -188,13 +188,13 @@ importers:
       release-it: 14.11.6
       stylelint: 13.13.1
       transliteration: 2.2.0
-      ts-jest: 27.1.0_30b6fcff5d98ca4c7c41e0929500ff50
+      ts-jest: 27.1.0_5619a073460806379c4b17463ac6a519
       typescript: 4.5.2
       vite: 2.6.13_less@4.1.2
       vite-plugin-html: 2.1.1_vite@2.6.13
       vite-plugin-md: 0.11.4_vite@2.6.13
       vue-router: 4.0.12_vue@3.2.21
-      vue3-jest: 27.0.0-alpha.2_ac2f17b3c0c7baa3be42e28e69a86f5b
+      vue3-jest: 27.0.0-alpha.2_bd2bc343ae82dbc2949ed4bb15ec35da
     devDependencies:
       '@types/fs-extra': 9.0.13
       '@types/less': 3.0.3
@@ -6404,7 +6404,7 @@ packages:
       mime-db: 1.50.0
 
   /mime/1.6.0:
-    resolution: {integrity: sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=, tarball: mime/download/mime-1.6.0.tgz?cache=0&sync_timestamp=1636370946189&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fmime%2Fdownload%2Fmime-1.6.0.tgz}
+    resolution: {integrity: sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=, tarball: mime/download/mime-1.6.0.tgz}
     engines: {node: '>=4'}
     hasBin: true
     requiresBuild: true
@@ -7568,7 +7568,7 @@ packages:
     engines: {node: '>=0.10.0'}
 
   /source-map/0.6.1:
-    resolution: {integrity: sha1-dHIq8y6WFOnCh6jQu95IteLxomM=, tarball: source-map/download/source-map-0.6.1.tgz?cache=0&sync_timestamp=1632822727980&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fsource-map%2Fdownload%2Fsource-map-0.6.1.tgz}
+    resolution: {integrity: sha1-dHIq8y6WFOnCh6jQu95IteLxomM=, tarball: source-map/download/source-map-0.6.1.tgz?cache=0&sync_timestamp=1635071609610&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fsource-map%2Fdownload%2Fsource-map-0.6.1.tgz}
     engines: {node: '>=0.10.0'}
 
   /source-map/0.7.3:
@@ -7997,7 +7997,7 @@ packages:
   /trough/1.0.5:
     resolution: {integrity: sha1-uLY5zvrX0LsqvTfUM/+Ck++l9AY=, tarball: trough/download/trough-1.0.5.tgz}
 
-  /ts-jest/27.1.0_30b6fcff5d98ca4c7c41e0929500ff50:
+  /ts-jest/27.1.0_5619a073460806379c4b17463ac6a519:
     resolution: {integrity: sha512-ZouWlP03JMtzfNHg0ZeDrxAESYGmVhWyHtIl2/01kBbXaMbTr4Vhv6/GeMxUed6GFg/4ycMo+yU6Eo9gI16xTQ==, tarball: ts-jest/download/ts-jest-27.1.0.tgz}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
@@ -8017,7 +8017,6 @@ packages:
     dependencies:
       '@babel/core': 7.16.0
       '@types/jest': 27.0.3
-      babel-jest: 27.3.1_@babel+core@7.16.0
       bs-logger: 0.2.6
       esbuild: 0.14.2
       fast-json-stable-stringify: 2.1.0
@@ -8372,7 +8371,7 @@ packages:
       '@vue/shared': 3.2.21
     dev: true
 
-  /vue3-jest/27.0.0-alpha.2_ac2f17b3c0c7baa3be42e28e69a86f5b:
+  /vue3-jest/27.0.0-alpha.2_bd2bc343ae82dbc2949ed4bb15ec35da:
     resolution: {integrity: sha1-yZNbz4FGRDJl0W5xuO6NPTE+FHg=, tarball: vue3-jest/download/vue3-jest-27.0.0-alpha.2.tgz}
     peerDependencies:
       '@babel/core': 7.x
@@ -8389,13 +8388,12 @@ packages:
     dependencies:
       '@babel/core': 7.16.0
       '@babel/plugin-transform-modules-commonjs': 7.16.0_@babel+core@7.16.0
-      babel-jest: 27.3.1_@babel+core@7.16.0
       chalk: 2.4.2
       convert-source-map: 1.8.0
       extract-from-css: 0.4.4
       jest: 27.3.1
       source-map: 0.5.6
-      ts-jest: 27.1.0_30b6fcff5d98ca4c7c41e0929500ff50
+      ts-jest: 27.1.0_5619a073460806379c4b17463ac6a519
       tsconfig: 7.0.0
       typescript: 4.5.2
       vue: 3.2.21

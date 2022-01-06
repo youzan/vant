@@ -17,7 +17,7 @@ const DEFAULT_CONFIG = {
   moduleFileExtensions: ['js', 'jsx', 'vue', 'ts', 'tsx'],
   transform: {
     '\\.(vue)$': 'vue3-jest',
-    '\\.(js|jsx|ts|tsx)$': 'babel-jest',
+    '\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/@vant/cli/cjs/jest.transformer.cjs',
   },
   transformIgnorePatterns: ['/node_modules/(?!(@vant/cli))/'],
   snapshotSerializers: ['jest-serializer-html'],
