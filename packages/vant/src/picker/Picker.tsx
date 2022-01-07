@@ -87,6 +87,7 @@ export default defineComponent({
       }
     }
 
+    const hasOptions = ref(false);
     const formattedColumns = ref<PickerObjectColumn[]>([]);
 
     const {
@@ -164,6 +165,10 @@ export default defineComponent({
       } else {
         formattedColumns.value = columns as PickerObjectColumn[];
       }
+
+      hasOptions.value = formattedColumns.value.some(
+        (item) => item[valuesKey] && item[valuesKey].length !== 0
+      );
     };
 
     // get indexes of all columns
@@ -174,6 +179,7 @@ export default defineComponent({
       const column = children[index];
       if (column) {
         column.setOptions(options);
+        hasOptions.value = true;
       }
     };
 
@@ -353,11 +359,7 @@ export default defineComponent({
       ));
 
     const renderMask = (wrapHeight: number) => {
-      const hasOptions = formattedColumns.value.some(
-        (item) => item[valuesKey] && item[valuesKey].length !== 0
-      );
-
-      if (hasOptions) {
+      if (hasOptions.value) {
         const frameStyle = { height: `${itemHeight.value}px` };
         const maskStyle = {
           backgroundSize: `100% ${(wrapHeight - itemHeight.value) / 2}px`,
