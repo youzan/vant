@@ -188,15 +188,15 @@ export default defineComponent({
     };
 
     const setValues = () => {
-      let code = state.code || getDefaultCode();
       const picker = pickerRef.value;
-      const province = getColumnValues('province');
-      const city = getColumnValues('city', code.slice(0, 2));
 
       if (!picker) {
         return;
       }
 
+      let code = state.code || getDefaultCode();
+      const province = getColumnValues('province');
+      const city = getColumnValues('city', code.slice(0, 2));
       picker.setColumnValues(0, province);
       picker.setColumnValues(1, city);
 
