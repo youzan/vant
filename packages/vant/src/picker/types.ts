@@ -44,4 +44,18 @@ export type PickerExpose = {
   setColumnValues: (index: number, options: PickerOption[]) => void;
 };
 
+export type PickerColumnProvide = {
+  state: {
+    index: number;
+    offset: number;
+    duration: number;
+    options: PickerOption[];
+  };
+  setIndex: (index: number, emitChange?: boolean | undefined) => void;
+  getValue: () => PickerOption;
+  setValue: (value: string) => void;
+  setOptions: (options: PickerOption[]) => void;
+  stopMomentum: () => void;
+};
+
 export type PickerInstance = ComponentPublicInstance<PickerProps, PickerExpose>;

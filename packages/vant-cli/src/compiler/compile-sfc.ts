@@ -1,7 +1,7 @@
 import fse from 'fs-extra';
 import path from 'path';
 import hash from 'hash-sum';
-import { parse, SFCBlock, compileTemplate } from '@vue/compiler-sfc';
+import { parse, SFCBlock, compileTemplate } from 'vue/compiler-sfc';
 import { replaceExt } from '../common/index.js';
 
 const { remove, readFileSync, outputFile } = fse;
