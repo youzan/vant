@@ -16,6 +16,18 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.38](https://github.com/youzan/vant/compare/v2.12.37...v2.12.38)
+
+`2022-01-10`
+
+**Feature**
+
+- Slider: 新增 left-button、right-button 插槽 [#10053](https://github.com/youzan/vant/issues/10053)
+
+**Bug Fixes**
+
+- PullRefresh: 修复在个别浏览器上会触发原生回弹效果的问题 [#10090](https://github.com/youzan/vant/issues/10090)
+
 ### [v2.12.37](https://github.com/youzan/vant/compare/v2.12.36...v2.12.37)
 
 `2021-12-14`

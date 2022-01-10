@@ -16,6 +16,18 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.38](https://github.com/youzan/vant/compare/v2.12.37...v2.12.38)
+
+`2022-01-10`
+
+**Feature**
+
+- Slider: add left-button and right-button slots [#10053](https://github.com/youzan/vant/issues/10053)
+
+**Bug Fixes**
+
+- PullRefresh: may trigger browser bounce in some cases [#10090](https://github.com/youzan/vant/issues/10090)
+
 ### [v2.12.37](https://github.com/youzan/vant/compare/v2.12.36...v2.12.37)
 
 `2021-12-14`
