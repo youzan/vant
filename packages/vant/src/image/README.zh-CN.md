@@ -41,7 +41,7 @@ app.use(VanImage);
 
 ### 位置
 
-通过 `position` 属性可以设置图片位置，结合`fit`属性使用，可选值见下方表格。
+通过 `position` 属性可以设置图片位置，结合`fit`属性使用，可选值见下方表格，同[`object-position`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position)属性。
 
 ```html
 <van-image
@@ -117,7 +117,7 @@ app.use(Lazyload);
 | --- | --- | --- | --- |
 | src | 图片链接 | _string_ | - |
 | fit | 图片填充模式 | _string_ | `fill` |
-| position `v3.4.1` | 图片位置，可选值为 `center` `top` `right` `bottom` `left` | _string_ | `center` |
+| position `v3.4.2` | 图片位置，可选值为 `center` `top` `right` `bottom` `left` 或 `string`( 同`object-position` ) | _string_ | `center` |
 | alt | 替代文本 | _string_ | - |
 | width | 宽度，默认单位为 `px` | _number \| string_ | - |
 | height | 高度，默认单位为 `px` | _number \| string_ | - |

@@ -29,7 +29,13 @@ const [name, bem] = createNamespace('image');
 
 export type ImageFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
 
-export type ImagePosition = 'center' | 'top' | 'right' | 'bottom' | 'left';
+export type ImagePosition =
+  | 'center'
+  | 'top'
+  | 'right'
+  | 'bottom'
+  | 'left'
+  | string;
 
 const imageProps = {
   src: String,
