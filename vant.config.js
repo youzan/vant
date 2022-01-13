@@ -351,6 +351,10 @@ module.exports = {
                 path: 'tag',
                 title: 'Tag 标签',
               },
+              {
+                path: 'for-components',
+                title: '组件列表',
+              },
             ],
           },
           {
@@ -753,6 +757,10 @@ module.exports = {
               {
                 path: 'tag',
                 title: 'Tag',
+              },
+              {
+                path: 'for-components',
+                title: '组件列表',
               },
             ],
           },
