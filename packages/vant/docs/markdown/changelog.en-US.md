@@ -16,6 +16,16 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.4.1](https://github.com/compare/v3.4.0...v3.4.1)
+
+`2022-01-10`
+
+**Bug Fixes**
+
+- Area: missing picker mask [#10164](https://github.com/issues/10164)
+- DatetimePicker: error in some edge cases [#10140](https://github.com/issues/10140)
+- Popover: fix gap under the triangle [#10148](https://github.com/issues/10148)
+
 ### [v3.4.0](https://github.com/compare/v3.3.7...v3.4.0)
 
 `2022-01-01`
