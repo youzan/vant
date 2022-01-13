@@ -16,6 +16,16 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.4.1](https://github.com/compare/v3.4.0...v3.4.1)
+
+`2022-01-10`
+
+**Bug Fixes**
+
+- Area: 修复缺少遮罩层的问题 [#10164](https://github.com/issues/10164)
+- DatetimePicker: 修复边界场景下出现报错的问题 [#10140](https://github.com/issues/10140)
+- Popover: 修复箭头和弹出框之间存在缝隙的问题 [#10148](https://github.com/issues/10148)
+
 ### [v3.4.0](https://github.com/compare/v3.3.7...v3.4.0)
 
 `2022-01-01`

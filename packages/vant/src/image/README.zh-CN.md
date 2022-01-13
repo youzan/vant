@@ -39,6 +39,20 @@ app.use(VanImage);
 />
 ```
 
+### 位置
+
+通过 `position` 属性可以设置图片位置，结合`fit`属性使用，可选值见下方表格，同[`object-position`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position)属性。
+
+```html
+<van-image
+  width="10rem"
+  height="10rem"
+  fit="cover"
+  position="left"
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/>
+```
+
 ### 圆形图片
 
 通过 `round` 属性可以设置图片变圆，注意当图片宽高不相等且 `fit` 为 `contain` 或 `scale-down` 时，将无法填充一个完整的圆形。
@@ -103,6 +117,7 @@ app.use(Lazyload);
 | --- | --- | --- | --- |
 | src | 图片链接 | _string_ | - |
 | fit | 图片填充模式 | _string_ | `fill` |
+| position `v3.4.2` | 图片位置，可选值为 `center` `top` `right` `bottom` `left` 或 `string`( 同`object-position` ) | _string_ | `center` |
 | alt | 替代文本 | _string_ | - |
 | width | 宽度，默认单位为 `px` | _number \| string_ | - |
 | height | 高度，默认单位为 `px` | _number \| string_ | - |
@@ -147,7 +162,7 @@ app.use(Lazyload);
 组件导出以下类型定义：
 
 ```ts
-import type { ImageFit, ImageProps } from 'vant';
+import type { ImageFit, ImagePosition, ImageProps } from 'vant';
 ```
 
 ## 主题定制

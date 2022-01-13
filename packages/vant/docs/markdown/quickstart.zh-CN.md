@@ -100,7 +100,14 @@ pnpm add vant@3
 #### 1. 安装插件
 
 ```bash
-npm i vite-plugin-style-import@1.2.0 -D
+# 通过 npm 安装
+npm i vite-plugin-style-import -D
+
+# 通过 yarn 安装
+yarn add vite-plugin-style-import -D
+
+# 通过 pnpm 安装
+pnpm add vite-plugin-style-import -D
 ```
 
 #### 2. 配置插件
@@ -109,19 +116,13 @@ npm i vite-plugin-style-import@1.2.0 -D
 
 ```js
 import vue from '@vitejs/plugin-vue';
-import styleImport from 'vite-plugin-style-import';
+import styleImport, { VantResolve } from 'vite-plugin-style-import';
 
 export default {
   plugins: [
     vue(),
     styleImport({
-      libs: [
-        {
-          libraryName: 'vant',
-          esModule: true,
-          resolveStyle: (name) => `vant/es/${name}/style/index`,
-        },
-      ],
+      resolves: [VantResolve()],
     }),
   ],
 };

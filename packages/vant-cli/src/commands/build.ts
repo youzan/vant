@@ -1,6 +1,6 @@
+import fse from 'fs-extra';
 import execa from 'execa';
 import { join, relative } from 'path';
-import fse from 'fs-extra';
 import { clean } from './clean.js';
 import { CSS_LANG } from '../common/css.js';
 import { ora, consola } from '../common/logger.js';
@@ -27,12 +27,13 @@ import {
   setModuleEnv,
   setBuildTarget,
 } from '../common/index.js';
+import type { Format } from 'esbuild';
 
 const { remove, copy, readdir, existsSync } = fse;
 
-async function compileFile(filePath: string) {
+async function compileFile(filePath: string, format: Format) {
   if (isScript(filePath)) {
-    return compileScript(filePath);
+    return compileScript(filePath, format);
   }
   if (isStyle(filePath)) {
     return compileStyle(filePath);
@@ -69,12 +70,14 @@ async function preCompileDir(dir: string) {
   );
 }
 
-async function compileDir(dir: string) {
+async function compileDir(dir: string, format: Format) {
   const files = await readdir(dir);
   await Promise.all(
     files.map((filename) => {
       const filePath = join(dir, filename);
-      return isDir(filePath) ? compileDir(filePath) : compileFile(filePath);
+      return isDir(filePath)
+        ? compileDir(filePath, format)
+        : compileFile(filePath, format);
     })
   );
 }
@@ -86,13 +89,13 @@ async function copySourceCode() {
 async function buildESMOutputs() {
   setModuleEnv('esmodule');
   setBuildTarget('package');
-  await compileDir(ES_DIR);
+  await compileDir(ES_DIR, 'esm');
 }
 
 async function buildCJSOutputs() {
   setModuleEnv('commonjs');
   setBuildTarget('package');
-  await compileDir(LIB_DIR);
+  await compileDir(LIB_DIR, 'cjs');
 }
 
 async function buildTypeDeclarations() {

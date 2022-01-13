@@ -99,7 +99,14 @@ If you are using vite, please use [vite-plugin-style-import](https://github.com/
 #### 1. Install Plugin
 
 ```bash
-npm i vite-plugin-style-import@1.2.0 -D
+# with npm
+npm i vite-plugin-style-import -D
+
+# with yarn
+yarn add vite-plugin-style-import -D
+
+# with pnpm
+pnpm add vite-plugin-style-import -D
 ```
 
 #### 2. Configure Plugin
@@ -108,19 +115,13 @@ Configure the plugin in the `vite.config.js` file:
 
 ```js
 import vue from '@vitejs/plugin-vue';
-import styleImport from 'vite-plugin-style-import';
+import styleImport, { VantResolve } from 'vite-plugin-style-import';
 
 export default {
   plugins: [
     vue(),
     styleImport({
-      libs: [
-        {
-          libraryName: 'vant',
-          esModule: true,
-          resolveStyle: (name) => `vant/es/${name}/style/index`,
-        },
-      ],
+      resolves: [VantResolve()],
     }),
   ],
 };

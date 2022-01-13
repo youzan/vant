@@ -34,7 +34,7 @@
     "esbuild": "^0.13.15",
     "release-it": "^14.0.2",
     "typescript": "~4.5.2",
-    "vue": "^3.2.20"
+    "vue": "^3.2.26"
   },
   "release-it": {
     "git": {

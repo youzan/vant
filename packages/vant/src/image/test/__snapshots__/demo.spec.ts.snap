@@ -120,6 +120,208 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-col van-col--8"
          style="padding-right: 13.333333333333334px;"
     >
+      <div class="van-image"
+           style="width: 100%; height: 27vw;"
+      >
+        <img src="https://img.yzcdn.cn/vant/cat.jpeg"
+             class="van-image__img"
+             style="object-fit: cover; object-position: left;"
+        >
+        <div class="van-image__loading">
+          <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+          </i>
+        </div>
+      </div>
+      <div class="text">
+        cover
+      </div>
+      <div class="text">
+        left
+      </div>
+    </div>
+    <div style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
+         class="van-col van-col--8"
+    >
+      <div class="van-image"
+           style="width: 100%; height: 27vw;"
+      >
+        <img src="https://img.yzcdn.cn/vant/cat.jpeg"
+             class="van-image__img"
+             style="object-fit: cover; object-position: center;"
+        >
+        <div class="van-image__loading">
+          <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+          </i>
+        </div>
+      </div>
+      <div class="text">
+        cover
+      </div>
+      <div class="text">
+        center
+      </div>
+    </div>
+    <div style="padding-left: 13.333333333333332px;"
+         class="van-col van-col--8"
+    >
+      <div class="van-image"
+           style="width: 100%; height: 27vw;"
+      >
+        <img src="https://img.yzcdn.cn/vant/cat.jpeg"
+             class="van-image__img"
+             style="object-fit: cover; object-position: right;"
+        >
+        <div class="van-image__loading">
+          <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+          </i>
+        </div>
+      </div>
+      <div class="text">
+        cover
+      </div>
+      <div class="text">
+        right
+      </div>
+    </div>
+    <div class="van-col van-col--8"
+         style="padding-right: 13.333333333333334px;"
+    >
+      <div class="van-image"
+           style="width: 100%; height: 27vw;"
+      >
+        <img src="https://img.yzcdn.cn/vant/cat.jpeg"
+             class="van-image__img"
+             style="object-fit: contain; object-position: top;"
+        >
+        <div class="van-image__loading">
+          <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+          </i>
+        </div>
+      </div>
+      <div class="text">
+        contain
+      </div>
+      <div class="text">
+        top
+      </div>
+    </div>
+    <div style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
+         class="van-col van-col--8"
+    >
+      <div class="van-image"
+           style="width: 100%; height: 27vw;"
+      >
+        <img src="https://img.yzcdn.cn/vant/cat.jpeg"
+             class="van-image__img"
+             style="object-fit: contain; object-position: center;"
+        >
+        <div class="van-image__loading">
+          <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+          </i>
+        </div>
+      </div>
+      <div class="text">
+        contain
+      </div>
+      <div class="text">
+        center
+      </div>
+    </div>
+    <div style="padding-left: 13.333333333333332px;"
+         class="van-col van-col--8"
+    >
+      <div class="van-image"
+           style="width: 100%; height: 27vw;"
+      >
+        <img src="https://img.yzcdn.cn/vant/cat.jpeg"
+             class="van-image__img"
+             style="object-fit: contain; object-position: bottom;"
+        >
+        <div class="van-image__loading">
+          <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+          </i>
+        </div>
+      </div>
+      <div class="text">
+        contain
+      </div>
+      <div class="text">
+        bottom
+      </div>
+    </div>
+    <div class="van-col van-col--8"
+         style="padding-right: 13.333333333333334px;"
+    >
+      <div class="van-image"
+           style="width: 100%; height: 27vw;"
+      >
+        <img src="https://img.yzcdn.cn/vant/cat.jpeg"
+             class="van-image__img"
+             style="object-fit: contain; object-position: 10px;"
+        >
+        <div class="van-image__loading">
+          <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+          </i>
+        </div>
+      </div>
+      <div class="text">
+        contain
+      </div>
+      <div class="text">
+        10px
+      </div>
+    </div>
+    <div style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
+         class="van-col van-col--8"
+    >
+      <div class="van-image"
+           style="width: 100%; height: 27vw;"
+      >
+        <img src="https://img.yzcdn.cn/vant/cat.jpeg"
+             class="van-image__img"
+             style="object-fit: contain; object-position: 10px 80%;"
+        >
+        <div class="van-image__loading">
+          <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+          </i>
+        </div>
+      </div>
+      <div class="text">
+        contain
+      </div>
+      <div class="text">
+        10px 80%
+      </div>
+    </div>
+    <div style="padding-left: 13.333333333333332px;"
+         class="van-col van-col--8"
+    >
+      <div class="van-image"
+           style="width: 100%; height: 27vw;"
+      >
+        <img src="https://img.yzcdn.cn/vant/cat.jpeg"
+             class="van-image__img"
+             style="object-fit: contain; object-position: center -1em;"
+        >
+        <div class="van-image__loading">
+          <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
+          </i>
+        </div>
+      </div>
+      <div class="text">
+        contain
+      </div>
+      <div class="text">
+        center -1em
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-row">
+    <div class="van-col van-col--8"
+         style="padding-right: 13.333333333333334px;"
+    >
       <div class="van-image van-image--round"
            style="width: 100%; height: 27vw;"
       >
