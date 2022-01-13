@@ -26,6 +26,7 @@ const overlayProps = {
   duration: numericProp,
   className: unknownProp,
   lockScroll: truthProp,
+  lazyRender: truthProp,
   customStyle: Object as PropType<CSSProperties>,
 };
 
@@ -37,7 +38,7 @@ export default defineComponent({
   props: overlayProps,
 
   setup(props, { slots }) {
-    const lazyRender = useLazyRender(() => props.show);
+    const lazyRender = useLazyRender(() => props.show || !props.lazyRender);
 
     const preventTouchMove = (event: TouchEvent) => {
       preventDefault(event, true);
