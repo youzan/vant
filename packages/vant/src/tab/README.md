@@ -340,7 +340,6 @@ The component provides the following CSS variables, which can be used to customi
 | --van-tab-active-text-color | _var(--van-text-color)_ | - |
 | --van-tab-disabled-text-color | _var(--van-text-color-3)_ | - |
 | --van-tab-font-size | _var(--van-font-size-md)_ | - |
-| --van-tab-line-height | _var(--van-line-height-md)_ | - |
 | --van-tabs-default-color | _var(--van-danger-color)_ | - |
 | --van-tabs-line-height | _44px_ | - |
 | --van-tabs-card-height | _30px_ | - |
