@@ -95,7 +95,7 @@ export default defineComponent({
                 {renderLeft()}
               </div>
             )}
-            <div class={[bem('title'), 'van-ellipsis']}>
+            <div class={[bem('title'), 'van-nav-ellipsis']}>
               {slots.title ? slots.title() : title}
             </div>
             {hasRight && (
