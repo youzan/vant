@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <van-for-components>
+    <van-for-components data-source="[2,4,5,6,7,8,1,2,3,4,6,6,6,6,6,6,6,6]" :colnum="10">
       <template #default="scope">
         <van-row gutter="0">
           <van-col span="24">

@@ -8,7 +8,6 @@
     - name: data-source
       title: 数据源
       type: array
-      default: ['1','2','3','4','5']
       description: 一个包含字符串或对象的数组
     - name: data-schema
       title: 数据类型

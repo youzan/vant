@@ -3,8 +3,8 @@
 ``` html
 <van-for-components>
   <template #default="scope">
-    <van-row gutter="0" class="noforvant" vusion-node-tag="temp-van">
-      <van-col span="24" class="noforvant" vusion-node-tag="temp-van">
+    <van-row gutter="0"  vusion-disabled-copy vusion-disabled-addslot vusion-disabled-cut>
+      <van-col span="24" vusion-disabled-copy vusion-disabled-cut>
       </van-col>
     </van-row>
   </template>

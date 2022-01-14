@@ -1,12 +1,17 @@
 <template>
-  <div class="for-com">
-    <div v-for="(item, index) in options" :key="index" class="for-com-frag">
-      <van-for-components-item v-for="(item2, index2) in item" :key="index2" :item="item2">
-        <template v-slot="item2">
-          <slot :item="item2.item"></slot>
-        </template>
-      </van-for-components-item>
-    </div>
+  <div class="van-for-com">
+    <template v-if="options.length > 0">
+      <div v-for="(item, index) in options" :key="index" class="van-for-com-frag">
+        <van-for-components-item v-for="(item2, index2) in item" :key="index2" :item="item2">
+          <template v-slot="item2">
+            <slot :item="item2.item"></slot>
+          </template>
+        </van-for-components-item>
+      </div>
+    </template>
+    <template v-else>
+      <slot></slot>
+    </template>
   </div>
 </template>
 
@@ -22,7 +27,7 @@ export default {
     props: {
       dataSource: {
         type: Array,
-        default: () => [1,2,3,4,52,3,4,5,4,52,3,4,],
+        default: () => [],
       },
       colnum: {
         type: Number,
@@ -35,17 +40,19 @@ export default {
       }
     },
     computed: {
-      style() {
-        const percent = `${100 / this.colnum}%`;
-        return {
-          flexBasis: percent,
-        }
-      },
-      stylewrap() {
-        return {
-          'grid-template-columns': `repeat(${this.colnum ? this.colnum : 'auto-fill'}, minmax(300px, 1fr))`
-        }
-      }
+      // style() {
+      //   const percent = `${100 / this.colnum}%`;
+      //   return {
+      //     flexBasis: percent,
+      //   }
+      // },
+      // stylewrap() {
+      //   return {
+      //     'grid-template-columns': `repeat(${this.colnum ? this.colnum : 'auto-fill'}, minmax(300px, 1fr))`
+      //   }
+      // }
+    },
+    mounted() {
     },
     watch: {
       dataSource: {
@@ -55,6 +62,9 @@ export default {
       },
     },
     methods: {
+      ifDesigner() {
+        return this.$env && this.$env.VUE_APP_DESIGNER;
+      },
       divide(arr) {
         if (!this.colnum) return [...arr];
         const num = this.colnum;
@@ -95,15 +105,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less">
+@import './for.less';
 .for-com {
-  /* display: flex;
-  flex-wrap: wrap; */
-  /* display: grid;
-  overflow-x: auto; */
 }
-.for-com-frag {
-  display: flex;
-  flex-wrap: wrap;
-}
+// .van-for-com-frag {
+//   display: flex;
+//   overflow-x: auto;
+// }
 </style>

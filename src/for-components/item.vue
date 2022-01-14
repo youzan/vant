@@ -1,5 +1,5 @@
 <template>
-  <div class="for-com-item">
+  <div class="van-for-com-item">
     <slot :item="item"></slot>
   </div>
 </template>
@@ -28,8 +28,10 @@ export default {
 };
 </script>
 
-<style scoped>
-  .for-com-item {
-    margin-right: 10px;
-  }
+<style lang="less">
+@import './item.less';
+  // .van-for-com-item {
+  //   margin-right: 10px;
+  //   margin-bottom: 10px;
+  // }
 </style>
