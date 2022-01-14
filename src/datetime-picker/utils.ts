@@ -1,6 +1,10 @@
 import { isNaN } from '../utils/validate/number';
 
 export function times(n: number, iteratee: (index: number) => any[]) {
+  if (n < 0) {
+    return [];
+  }
+
   let index = -1;
   const result = Array(n);
 
