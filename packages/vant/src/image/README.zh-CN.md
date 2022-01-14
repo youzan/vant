@@ -28,7 +28,7 @@ app.use(VanImage);
 
 ### 填充模式
 
-通过 `fit` 属性可以设置图片填充模式，可选值见下方表格。
+通过 `fit` 属性可以设置图片填充模式，等同于原生的 [object-fit](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit) 属性，可选值见下方表格。
 
 ```html
 <van-image
@@ -39,9 +39,9 @@ app.use(VanImage);
 />
 ```
 
-### 位置
+### 图片位置
 
-通过 `position` 属性可以设置图片位置，结合`fit`属性使用，可选值见下方表格，同[`object-position`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position)属性。
+通过 `position` 属性可以设置图片位置，结合 `fit` 属性使用，等同于原生的 [object-position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position) 属性。
 
 ```html
 <van-image
@@ -116,8 +116,8 @@ app.use(Lazyload);
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | src | 图片链接 | _string_ | - |
-| fit | 图片填充模式 | _string_ | `fill` |
-| position `v3.4.2` | 图片位置，可选值为 `center` `top` `right` `bottom` `left` 或 `string`( 同`object-position` ) | _string_ | `center` |
+| fit | 图片填充模式，等同于原生的 [object-fit](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit) 属性 | _string_ | `fill` |
+| position `v3.4.2` | 图片位置，等同于原生的 [object-position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position) 属性，可选值为 `top` `right` `bottom` `left` 或 `string` | _string_ | `center` |
 | alt | 替代文本 | _string_ | - |
 | width | 宽度，默认单位为 `px` | _number \| string_ | - |
 | height | 高度，默认单位为 `px` | _number \| string_ | - |

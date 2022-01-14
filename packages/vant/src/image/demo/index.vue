@@ -8,7 +8,7 @@ import { useTranslate } from '../../../docs/site/use-translate';
 const t = useTranslate({
   'zh-CN': {
     fitMode: '填充模式',
-    position: '位置',
+    position: '图片位置',
     round: '圆形图片',
     loading: '加载中提示',
     error: '加载失败提示',
@@ -32,7 +32,6 @@ const image = 'https://img.yzcdn.cn/vant/cat.jpeg';
 const fits = ['contain', 'cover', 'fill', 'none', 'scale-down'] as const;
 const positions1 = ['left', 'center', 'right'] as const;
 const positions2 = ['top', 'center', 'bottom'] as const;
-const positions3 = ['10px', '10px 80%', 'center -1em'] as const;
 </script>
 
 <template>
@@ -65,17 +64,6 @@ const positions3 = ['10px', '10px 80%', 'center -1em'] as const;
         <div class="text">{{ pos }}</div>
       </van-col>
       <van-col v-for="pos in positions2" span="8" :key="pos">
-        <van-image
-          :position="pos"
-          width="100%"
-          height="27vw"
-          fit="contain"
-          :src="image"
-        />
-        <div class="text">contain</div>
-        <div class="text">{{ pos }}</div>
-      </van-col>
-      <van-col v-for="pos in positions3" span="8" :key="pos">
         <van-image
           :position="pos"
           width="100%"
