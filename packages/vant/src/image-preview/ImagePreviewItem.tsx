@@ -106,7 +106,7 @@ export default defineComponent({
     });
 
     const setScale = (scale: number) => {
-      scale = clamp(scale, +props.minZoom, +props.maxZoom);
+      scale = clamp(scale, +props.minZoom, +props.maxZoom + 1);
 
       if (scale !== state.scale) {
         state.scale = scale;
@@ -235,6 +235,10 @@ export default defineComponent({
 
           if (state.scale < 1) {
             resetScale();
+          }
+
+          if (state.scale > props.maxZoom) {
+            state.scale = +props.maxZoom;
           }
         }
       }
