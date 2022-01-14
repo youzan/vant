@@ -26,7 +26,7 @@ app.use(VanImage);
 
 ### Fit Mode
 
-Same as [`object-position`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position)
+Same as [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
 
 ```html
 <van-image
@@ -38,6 +38,8 @@ Same as [`object-position`](https://developer.mozilla.org/en-US/docs/Web/CSS/obj
 ```
 
 ### Position
+
+Same as [object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position).
 
 ```html
 <van-image
@@ -88,8 +90,8 @@ app.use(Lazyload);
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | src | Src | _string_ | - |
-| fit | Fit mode | _string_ | `fill` |
-| position `v3.4.2` | Position, can be set to `center` `top` `right` `bottom` `left` or `string`( same as values of `object-position` ) | _string_ | `center` |
+| fit | Fit mode, same as [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) | _string_ | `fill` |
+| position `v3.4.2` | Position, same as [object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position), can be set to `top` `right` `bottom` `left` or `string` | _string_ | `center` |
 | alt | Alt | _string_ | - |
 | width | Width | _number \| string_ | - |
 | height | Height | _number \| string_ | - |
