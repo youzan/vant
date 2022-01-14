@@ -131,6 +131,7 @@ export default defineComponent({
       state.moveY = 0;
     };
 
+    let fingerNum: number;
     let startMoveX: number;
     let startMoveY: number;
     let startScale: number;
@@ -144,12 +145,13 @@ export default defineComponent({
 
       touch.start(event);
 
+      fingerNum = touches.length;
       startMoveX = state.moveX;
       startMoveY = state.moveY;
       touchStartTime = Date.now();
 
-      state.moving = touches.length === 1 && state.scale !== 1;
-      state.zooming = touches.length === 2 && !offsetX.value;
+      state.moving = fingerNum === 1 && state.scale !== 1;
+      state.zooming = fingerNum === 2 && !offsetX.value;
 
       if (state.zooming) {
         startScale = state.scale;
@@ -183,6 +185,10 @@ export default defineComponent({
     };
 
     const checkTap = () => {
+      if (fingerNum > 1) {
+        return;
+      }
+
       const { offsetX, offsetY } = touch;
       const deltaTime = Date.now() - touchStartTime;
       const TAP_TIME = 250;
