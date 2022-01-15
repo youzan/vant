@@ -16,6 +16,17 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.39](https://github.com/youzan/vant/compare/v2.12.38...v2.12.39)
+
+`2022-01-15`
+
+**Bug Fixes**
+
+- DatetimePicker: 修复边界情况下可能报错的问题 [#10186](https://github.com/youzan/vant/issues/10186)
+- ImagePreview: 修复快速缩放导致预览关闭的问题 [#10191](https://github.com/youzan/vant/issues/10191)
+- NavBar: 修复在 safari 上占位元素高度错误的问题 [#10190](https://github.com/youzan/vant/issues/10190)
+- Tabbar: 修复在 safari 上占位元素高度错误的问题 [#10185](https://github.com/youzan/vant/issues/10185)
+
 ### [v2.12.38](https://github.com/youzan/vant/compare/v2.12.37...v2.12.38)
 
 `2022-01-10`

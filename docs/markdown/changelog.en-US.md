@@ -16,6 +16,17 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.39](https://github.com/youzan/vant/compare/v2.12.38...v2.12.39)
+
+`2022-01-15`
+
+**Bug Fixes**
+
+- DatetimePicker: error in some edge cases [#10186](https://github.com/youzan/vant/issues/10186)
+- ImagePreview: incorrectly closed after zooming [#10191](https://github.com/youzan/vant/issues/10191)
+- NavBar: get correct height in mobile safari [#10190](https://github.com/youzan/vant/issues/10190)
+- Tabbar: get correct height in mobile safari [#10185](https://github.com/youzan/vant/issues/10185)
+
 ### [v2.12.38](https://github.com/youzan/vant/compare/v2.12.37...v2.12.38)
 
 `2022-01-10`
