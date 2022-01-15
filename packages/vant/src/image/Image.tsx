@@ -2,6 +2,7 @@ import {
   ref,
   watch,
   computed,
+  nextTick,
   onBeforeUnmount,
   defineComponent,
   getCurrentInstance,
@@ -159,8 +160,17 @@ export default defineComponent({
     };
 
     const onLazyLoaded = ({ el }: { el: HTMLElement }) => {
-      if (el === imageRef.value && loading.value) {
-        onLoad();
+      const check = () => {
+        if (el === imageRef.value && loading.value) {
+          onLoad();
+        }
+      };
+      if (imageRef.value) {
+        check();
+      } else {
+        // LazyLoad may trigger loaded event before Image mounted
+        // https://github.com/youzan/vant/issues/10046
+        nextTick(check);
       }
     };
 
