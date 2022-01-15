@@ -192,7 +192,7 @@ export default defineComponent({
       const { offsetX, offsetY } = touch;
       const deltaTime = Date.now() - touchStartTime;
       const TAP_TIME = 250;
-      const TAP_OFFSET = 10;
+      const TAP_OFFSET = 5;
 
       if (
         offsetX.value < TAP_OFFSET &&
