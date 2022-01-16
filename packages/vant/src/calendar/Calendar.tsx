@@ -406,10 +406,11 @@ export default defineComponent({
             );
 
             if (disabledDay) {
-              if(startDay.getTime() >= getPrevDay(disabledDay).getTime()) {
+              const endDay = getPrevDay(disabledDay);
+              if (compareDay(startDay, endDay) === -1) {
+                select([startDay, endDay]);
+              } else {
                 select([date]);
-              }else {
-                select([startDay, getPrevDay(disabledDay)]);
               }
             } else {
               select([startDay, date], true);
