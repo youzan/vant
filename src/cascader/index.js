@@ -20,6 +20,10 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    showHeader: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -180,18 +184,20 @@ export default createComponent({
     },
 
     renderHeader() {
-      return (
-        <div class={bem('header')}>
-          <h2 class={bem('title')}>{this.slots('title') || this.title}</h2>
-          {this.closeable ? (
-            <Icon
-              name="cross"
-              class={bem('close-icon')}
-              onClick={this.onClose}
-            />
-          ) : null}
-        </div>
-      );
+      if (this.showHeader) {
+        return (
+          <div class={bem('header')}>
+            <h2 class={bem('title')}>{this.slots('title') || this.title}</h2>
+            {this.closeable ? (
+              <Icon
+                name="cross"
+                class={bem('close-icon')}
+                onClick={this.onClose}
+              />
+            ) : null}
+          </div>
+        );
+      }
     },
 
     renderOptions(options, selectedOption, tabIndex) {
