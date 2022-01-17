@@ -16,7 +16,7 @@ export function genVeturConfig() {
     markdownVetur.parseAndWrite({
       name: vantConfig.name,
       path: SRC_DIR,
-      test: /zh-CN\.md/,
+      test: /README\.md/,
       version: pkgJson.version,
       outputDir: VETUR_DIR,
       ...options,
