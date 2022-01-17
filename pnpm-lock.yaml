@@ -104,7 +104,6 @@ importers:
       '@vue/babel-plugin-jsx': ^1.1.1
       autoprefixer: ^10.4.0
       chalk: ^4.1.2
-      clean-css: ^5.2.2
       commander: ^8.3.0
       consola: ^2.15.3
       conventional-changelog: ^3.1.24
@@ -153,7 +152,6 @@ importers:
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.16.0
       autoprefixer: 10.4.0_postcss@8.3.11
       chalk: 4.1.2
-      clean-css: 5.2.2
       commander: 8.3.0
       consola: 2.15.3
       conventional-changelog: 3.1.24
@@ -2473,13 +2471,6 @@ packages:
   /clean-css/4.2.4:
     resolution: {integrity: sha1-czv0brpOYHxokepXwkqYk1aDEXg=, tarball: clean-css/download/clean-css-4.2.4.tgz}
     engines: {node: '>= 4.0'}
-    dependencies:
-      source-map: 0.6.1
-    dev: false
-
-  /clean-css/5.2.2:
-    resolution: {integrity: sha1-06fG7iURAR4FFxmDi9z4MU3EVI0=, tarball: clean-css/download/clean-css-5.2.2.tgz}
-    engines: {node: '>= 10.0'}
     dependencies:
       source-map: 0.6.1
     dev: false

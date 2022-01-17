@@ -1,15 +1,17 @@
 import postcss from 'postcss';
 import postcssrc from 'postcss-load-config';
-import CleanCss from 'clean-css';
+import { transform } from 'esbuild';
 import { POSTCSS_CONFIG_FILE } from '../common/constant.js';
-
-const cleanCss = new CleanCss();
 
 export async function compileCss(source: string | Buffer) {
   const config = await postcssrc({}, POSTCSS_CONFIG_FILE);
   const { css } = await postcss(config.plugins as any).process(source, {
     from: undefined,
   });
-
-  return cleanCss.minify(css).styles;
+  const result = await transform(css, {
+    loader: 'css',
+    minify: true,
+    target: ['chrome53', 'safari10'],
+  });
+  return result.code;
 }
