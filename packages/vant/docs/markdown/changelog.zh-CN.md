@@ -16,15 +16,36 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.4.2](https://github.com/compare/v3.4.1...v3.4.2)
+
+`2022-01-17`
+
+**Feature**
+
+- Cascader: 新增 show-header 属性 [#10202](https://github.com/youzan/vant/issues/10202)
+- Image: 新增 position 属性 [#10142](https://github.com/youzan/vant/issues/10142)
+- ImagePreview: 优化缩放手势的流畅度 [#10187](https://github.com/youzan/vant/issues/10187)
+- Overlay: 新增 lazy-render 属性 [#10180](https://github.com/youzan/vant/issues/10180)
+- web-types.json 现在默认使用英文描述 [#10207](https://github.com/youzan/vant/issues/10207)
+
+**Bug Fixes**
+
+- Calendar: 修复范围选择包括被禁用的日期时可能选择错误的问题 [#10196](https://github.com/youzan/vant/issues/10196)
+- Image: 修复使用 lazy-load 时可能无法正常加载的问题 [#10193](https://github.com/youzan/vant/issues/10193)
+- ImagePreview: 修复快速缩放手势导致预览关闭的问题 [#10188](https://github.com/youzan/vant/issues/10188)
+- Skeleton: 修复 row 属性为字符串类型时不生效的问题 [#10172](https://github.com/youzan/vant/issues/10172)
+- NavBar: 修复在 safari 上占位元素高度错误的问题 [#10195](https://github.com/youzan/vant/issues/10195)
+- Tabbar: 修复在 safari 上占位元素高度错误的问题 [#10195](https://github.com/youzan/vant/issues/10195)
+
 ### [v3.4.1](https://github.com/compare/v3.4.0...v3.4.1)
 
 `2022-01-10`
 
 **Bug Fixes**
 
-- Area: 修复缺少遮罩层的问题 [#10164](https://github.com/issues/10164)
-- DatetimePicker: 修复边界场景下出现报错的问题 [#10140](https://github.com/issues/10140)
-- Popover: 修复箭头和弹出框之间存在缝隙的问题 [#10148](https://github.com/issues/10148)
+- Area: 修复缺少遮罩层的问题 [#10164](https://github.com/youzan/vant/issues/10164)
+- DatetimePicker: 修复边界场景下出现报错的问题 [#10140](https://github.com/youzan/vant/issues/10140)
+- Popover: 修复箭头和弹出框之间存在缝隙的问题 [#10148](https://github.com/youzan/vant/issues/10148)
 
 ### [v3.4.0](https://github.com/compare/v3.3.7...v3.4.0)
 

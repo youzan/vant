@@ -16,15 +16,35 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.4.2](https://github.com/compare/v3.4.1...v3.4.2)
+
+`2022-01-17`
+
+**Feature**
+
+- Cascader: add show-header prop [#10202](https://github.com/youzan/vant/issues/10202)
+- Image: add position prop [#10142](https://github.com/youzan/vant/issues/10142)
+- ImagePreview: improve zoom fluency [#10187](https://github.com/youzan/vant/issues/10187)
+- Overlay: add lazy-render prop [#10180](https://github.com/youzan/vant/issues/10180)
+- provide english version of web-types [#10207](https://github.com/youzan/vant/issues/10207)
+
+**Bug Fixes**
+
+- Calendar: incorrectly selected when a date is disabled [#10196](https://github.com/youzan/vant/issues/10196)
+- Image: failed to hide loading when using lazy-load [#10193](https://github.com/youzan/vant/issues/10193)
+- ImagePreview: incorrectly closed after zooming [#10188](https://github.com/youzan/vant/issues/10188)
+- Skeleton: row prop can't be string type [#10172](https://github.com/youzan/vant/issues/10172)
+- useHeight may get the wrong height [#10195](https://github.com/youzan/vant/issues/10195)
+
 ### [v3.4.1](https://github.com/compare/v3.4.0...v3.4.1)
 
 `2022-01-10`
 
 **Bug Fixes**
 
-- Area: missing picker mask [#10164](https://github.com/issues/10164)
-- DatetimePicker: error in some edge cases [#10140](https://github.com/issues/10140)
-- Popover: fix gap under the triangle [#10148](https://github.com/issues/10148)
+- Area: missing picker mask [#10164](https://github.com/youzan/vant/issues/10164)
+- DatetimePicker: error in some edge cases [#10140](https://github.com/youzan/vant/issues/10140)
+- Popover: fix gap under the triangle [#10148](https://github.com/youzan/vant/issues/10148)
 
 ### [v3.4.0](https://github.com/compare/v3.3.7...v3.4.0)
 
