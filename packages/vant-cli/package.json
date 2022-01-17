@@ -60,7 +60,6 @@
     "@vue/babel-plugin-jsx": "^1.1.1",
     "autoprefixer": "^10.4.0",
     "chalk": "^4.1.2",
-    "clean-css": "^5.2.2",
     "commander": "^8.3.0",
     "consola": "^2.15.3",
     "conventional-changelog": "^3.1.24",
