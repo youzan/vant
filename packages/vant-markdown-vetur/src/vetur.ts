@@ -3,9 +3,9 @@ import { VueTag, VeturTags, VeturAttributes, VeturAttribute } from './type';
 export function genVeturTags(tags: VueTag[]) {
   const veturTags: VeturTags = {};
 
-  tags.forEach(tag => {
+  tags.forEach((tag) => {
     veturTags[tag.name] = {
-      attributes: tag.attributes ? tag.attributes.map(item => item.name) : [],
+      attributes: tag.attributes ? tag.attributes.map((item) => item.name) : [],
     };
   });
 
@@ -15,16 +15,16 @@ export function genVeturTags(tags: VueTag[]) {
 export function genVeturAttributes(tags: VueTag[]) {
   const veturAttributes: VeturAttributes = {};
 
-  tags.forEach(tag => {
+  tags.forEach((tag) => {
     if (tag.attributes) {
-      tag.attributes.forEach(attr => {
-        let attribute: VeturAttribute = {
+      tag.attributes.forEach((attr) => {
+        const attribute: VeturAttribute = {
           type: attr.value.type,
-          description: `${attr.description}, 默认值: ${attr.default}`
-        }
+          description: `${attr.description}, Default: ${attr.default}`,
+        };
 
         if (attr.options.length > 0) {
-          attribute.options = attr.options
+          attribute.options = attr.options;
         }
 
         veturAttributes[`${tag.name}/${attr.name}`] = attribute;

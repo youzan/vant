@@ -146,8 +146,8 @@ export default {
 | autoplay | Autoplay interval (ms) | _number \| string_ | - |
 | duration | Animation duration (ms) | _number \| string_ | `500` |
 | initial-swipe | Index of initial swipe, start from 0 | _number \| string_ | `0` |
-| width | Set Swiper Item Width | _number \| string_ | `0` |
-| height | Set Swiper Item Height | _number \| string_ | `0` |
+| width | Width of swipe item | _number \| string_ | `0` |
+| height | Height of swipe item | _number \| string_ | `0` |
 | loop | Whether to enable loop | _boolean_ | `true` |
 | show-indicators | Whether to show indicators | _boolean_ | `true` |
 | vertical | Whether to be vertical Scrolling | _boolean_ | `false` |
