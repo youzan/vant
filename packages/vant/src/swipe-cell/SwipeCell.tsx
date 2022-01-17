@@ -3,9 +3,9 @@ import {
   Ref,
   reactive,
   computed,
-  PropType,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -80,13 +80,15 @@ export default defineComponent({
     );
 
     const open = (side: SwipeCellSide) => {
-      opened = true;
       state.offset = side === 'left' ? leftWidth.value : -rightWidth.value;
 
-      emit('open', {
-        name: props.name,
-        position: side,
-      });
+      if (!opened) {
+        opened = true;
+        emit('open', {
+          name: props.name,
+          position: side,
+        });
+      }
     };
 
     const close = (position: SwipeCellPosition) => {

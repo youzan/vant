@@ -106,6 +106,7 @@ export default {
 | icon-prefix `v3.0.17` | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | dot | 是否显示图标右上角小红点 | _boolean_ | `false` |
 | badge | 图标右上角徽标的内容 | _number \| string_ | - |
+| badge-props `v3.2.8` | 自定义徽标的属性，传入的对象会被透传给 [Badge 组件的 props](#/zh-CN/badge#props) | _BadgeProps_ | - |
 | url | 点击后跳转的链接地址 | _string_ | - |
 | to | 点击后跳转的目标路由对象，等同于 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
@@ -117,7 +118,7 @@ export default {
 | text | 按钮文字 | _string_ | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | _string_ | `default` |
 | color | 按钮颜色，支持传入 `linear-gradient` 渐变色 | _string_ | - |
-| icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
+| icon | 左侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
 | disabled | 是否禁用按钮 | _boolean_ | `false` |
 | loading | 是否显示为加载状态 | _boolean_ | `false` |
 | url | 点击后跳转的链接地址 | _string_ | - |

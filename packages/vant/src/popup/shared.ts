@@ -1,5 +1,5 @@
-import { PropType, CSSProperties, TeleportProps } from 'vue';
 import { truthProp, unknownProp, Interceptor, numericProp } from '../utils';
+import type { PropType, CSSProperties, TeleportProps } from 'vue';
 
 export const popupSharedProps = {
   // whether to show popup

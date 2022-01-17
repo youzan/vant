@@ -1,4 +1,4 @@
-import { defineComponent, ExtractPropTypes } from 'vue';
+import { defineComponent, type ExtractPropTypes } from 'vue';
 import { truthProp, createNamespace, BORDER_TOP_BOTTOM } from '../utils';
 
 const [name, bem] = createNamespace('cell-group');

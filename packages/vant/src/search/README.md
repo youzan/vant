@@ -107,9 +107,27 @@ Use `action` slot to custom right button, `cancel` event will no longer be Emitt
   @search="onSearch"
 >
   <template #action>
-    <div @click="onSearch">Search</div>
+    <div @click="onClickButton">Search</div>
   </template>
 </van-search>
+```
+
+```js
+import { ref } from 'vue';
+import { Toast } from 'vant';
+
+export default {
+  setup() {
+    const value = ref('');
+    const onSearch = (val) => Toast(val);
+    const onClickButton = () => Toast(value.value);
+    return {
+      value,
+      onSearch,
+      onClickButton,
+    };
+  },
+};
 ```
 
 ## API
@@ -152,6 +170,8 @@ Use `action` slot to custom right button, `cancel` event will no longer be Emitt
 | focus | Emitted when input is focused | _event: Event_ |
 | blur | Emitted when input is blurred | _event: Event_ |
 | click-input | Emitted when the input is clicked | _event: MouseEvent_ |
+| click-left-icon `v3.4.0` | Emitted when the left icon is clicked | _event: MouseEvent_ |
+| click-right-icon `v3.4.0` | Emitted when the right icon is clicked | _event: MouseEvent_ |
 | clear | Emitted when the clear icon is clicked | _event: MouseEvent_ |
 | cancel | Emitted when the cancel button is clicked | - |
 

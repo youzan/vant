@@ -16,6 +16,95 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.4.2](https://github.com/compare/v3.4.1...v3.4.2)
+
+`2022-01-17`
+
+**Feature**
+
+- Cascader: 新增 show-header 属性 [#10202](https://github.com/youzan/vant/issues/10202)
+- Image: 新增 position 属性 [#10142](https://github.com/youzan/vant/issues/10142)
+- ImagePreview: 优化缩放手势的流畅度 [#10187](https://github.com/youzan/vant/issues/10187)
+- Overlay: 新增 lazy-render 属性 [#10180](https://github.com/youzan/vant/issues/10180)
+- web-types.json 现在默认使用英文描述 [#10207](https://github.com/youzan/vant/issues/10207)
+
+**Bug Fixes**
+
+- Calendar: 修复范围选择包括被禁用的日期时可能选择错误的问题 [#10196](https://github.com/youzan/vant/issues/10196)
+- Image: 修复使用 lazy-load 时可能无法正常加载的问题 [#10193](https://github.com/youzan/vant/issues/10193)
+- ImagePreview: 修复快速缩放手势导致预览关闭的问题 [#10188](https://github.com/youzan/vant/issues/10188)
+- Skeleton: 修复 row 属性为字符串类型时不生效的问题 [#10172](https://github.com/youzan/vant/issues/10172)
+- NavBar: 修复在 safari 上占位元素高度错误的问题 [#10195](https://github.com/youzan/vant/issues/10195)
+- Tabbar: 修复在 safari 上占位元素高度错误的问题 [#10195](https://github.com/youzan/vant/issues/10195)
+
+### [v3.4.1](https://github.com/compare/v3.4.0...v3.4.1)
+
+`2022-01-10`
+
+**Bug Fixes**
+
+- Area: 修复缺少遮罩层的问题 [#10164](https://github.com/youzan/vant/issues/10164)
+- DatetimePicker: 修复边界场景下出现报错的问题 [#10140](https://github.com/youzan/vant/issues/10140)
+- Popover: 修复箭头和弹出框之间存在缝隙的问题 [#10148](https://github.com/youzan/vant/issues/10148)
+
+### [v3.4.0](https://github.com/compare/v3.3.7...v3.4.0)
+
+`2022-01-01`
+
+**Bug Fixes**
+
+- Icons: 修复 URL 缺少协议导致个别浏览器出现异常的问题 [#10079](https://github.com/youzan/vant/issues/10079)
+- Picker: 修复选项为空时也会渲染选择框的问题 [#10135](https://github.com/youzan/vant/issues/10135)
+- Popup: 修复 close 事件触发两次的问题 [#10132](https://github.com/youzan/vant/issues/10132)
+- PullRefresh: 修复在个别浏览器上会触发原生回弹效果的问题 [#10080](https://github.com/youzan/vant/issues/10080)
+- Step: 修复 inactive-color 属性未正确生效的问题 [#10049](https://github.com/youzan/vant/issues/10049)
+- SwipeCell: 修复打开状态下也会触发 open 事件的问题 [#10059](https://github.com/youzan/vant/issues/10059)
+- swipe: 修复个别情况下无法正确滚动的问题 [#10052](https://github.com/youzan/vant/issues/10052) [#10069](https://github.com/youzan/vant/issues/10069)
+- Tabs: 修复标签页为空时会渲染一个错误的底部条的问题 [#10063](https://github.com/youzan/vant/issues/10063)
+
+**Feature**
+
+- ActionBarIcon: 新增 badge-props 属性 [#10096](https://github.com/youzan/vant/issues/10096)
+- ActionSheet: 新增 option 插槽 [#10065](https://github.com/youzan/vant/issues/10065)
+- Badge: 新增 badge-props 属性 [#10095](https://github.com/youzan/vant/issues/10095)
+- GridItem: 新增 badge-props 属性 [#10097](https://github.com/youzan/vant/issues/10097)
+- Icons: 新增 cash-o 图标 [#10076](https://github.com/youzan/vant/issues/10076)
+- ImagePreview: 新增 overlayClass 选项 [#10044](https://github.com/youzan/vant/issues/10044)
+- Notify: 新增 position 属性 [#10056](https://github.com/youzan/vant/issues/10056)
+- Popover: 新增 action 插槽 [#10091](https://github.com/youzan/vant/issues/10091)
+- Search: 新增 click-left-icon、click-right-icon 事件 [#10139](https://github.com/youzan/vant/issues/10139)
+- SidebarItem: 新增 badge-props 属性 [#10106](https://github.com/youzan/vant/issues/10106)
+- Swipe: indicator 插槽新增 total 参数 [#10060](https://github.com/youzan/vant/issues/10060)
+- TabbarItem: 新增 badge-props 属性 [#10092](https://github.com/youzan/vant/issues/10092)
+- Tabs: 新增 shrink 属性 [#10125](https://github.com/youzan/vant/issues/10125)
+
+**style**
+
+- PullRefresh: 移除 `user-select: none` 样式 [#10078](https://github.com/youzan/vant/issues/10078)
+- TreeSelect: 允许选中 content 插槽中的文字 [#10081](https://github.com/youzan/vant/issues/10081)
+
+**Types**
+
+- 增加所有组件的全局类型，在 volar 中提供默认提示 [#10136](https://github.com/youzan/vant/issues/10136)
+- Field: 修复 type 属性定义不全的问题 [#10042](https://github.com/youzan/vant/issues/10042)
+- Popup: 导出 PopupInstance 类型 [#10062](https://github.com/youzan/vant/issues/10062)
+- Search: 修复事件类型定义不全的问题 [#10134](https://github.com/youzan/vant/issues/10134)
+
+### [v3.3.7](https://github.com/compare/v3.3.6...v3.3.7)
+
+`2021-12-12`
+
+**Feature**
+
+- Badge: 新增 position 属性 [#10024](https://github.com/youzan/vant/issues/10024)
+
+**Bug Fixes**
+
+- DatetimePicker: 修复调用 Picker 实例方法后日期未正确更新的问题 [#10029](https://github.com/youzan/vant/issues/10029)
+- Field: 修复输入内容包含 emoji 时，长度计算错误的问题 [#10033](https://github.com/youzan/vant/issues/10033)
+- Pagination: 修复 change 事件不触发的问题 [#10018](https://github.com/youzan/vant/issues/10018)
+- 修复 tree shaking 不生效的问题 [#10034](https://github.com/youzan/vant/issues/10034)
+
 ### [v3.3.6](https://github.com/compare/v3.3.5...v3.3.6)
 
 `2021-12-05`
@@ -59,15 +148,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Feature**
 
-- 新增 `package.json` 中的 `exports` 字段 [#9952](https://github.com/issues/9952)
-- Tabbar: 支持在 route 模式下匹配子路由 [#9926](https://github.com/issues/9926)
-- Tabs: 将 `van-tab__pane-wrapper` 类重命名为 `van-tab__panel-wrapper` [#9951](https://github.com/issues/9951)
+- 新增 `package.json` 中的 `exports` 字段 [#9952](https://github.com/youzan/vant/issues/9952)
+- Tabbar: 支持在 route 模式下匹配子路由 [#9926](https://github.com/youzan/vant/issues/9926)
+- Tabs: 将 `van-tab__pane-wrapper` 类重命名为 `van-tab__panel-wrapper` [#9951](https://github.com/youzan/vant/issues/9951)
 
 **Bug Fixes**
 
-- Calendar: 修复 show-confirm 为 false 时不会限制最大日期范围的问题 [#9948](https://github.com/issues/9948)
-- Calendar: 修复 `scrollToDate` 方法无法精确滚动到对应日期的问题 [#9949](https://github.com/issues/9949)
-- Swipe: 修复开始滑动时未阻止 touchmove 事件行为的问题 [#9920](https://github.com/issues/9920)
+- Calendar: 修复 show-confirm 为 false 时不会限制最大日期范围的问题 [#9948](https://github.com/youzan/vant/issues/9948)
+- Calendar: 修复 `scrollToDate` 方法无法精确滚动到对应日期的问题 [#9949](https://github.com/youzan/vant/issues/9949)
+- Swipe: 修复开始滑动时未阻止 touchmove 事件行为的问题 [#9920](https://github.com/youzan/vant/issues/9920)
 
 ### [v3.3.1](https://github.com/compare/v3.3.0...v3.3.1)
 
@@ -75,7 +164,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Bug Fixes**
 
-- AddressEdit: 修复表单校验不通过时也会触发 save 事件的问题 [#9917](https://github.com/issues/9917)
+- AddressEdit: 修复表单校验不通过时也会触发 save 事件的问题 [#9917](https://github.com/youzan/vant/issues/9917)
 
 ### [v3.3.0](https://github.com/compare/v3.2.8...v3.3.0)
 

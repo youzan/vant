@@ -1,22 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render title slot correctly 1`] = `
-<div class="van-picker__toolbar">
-  <button type="button"
-          class="van-picker__cancel van-haptics-feedback"
-  >
-    Cancel
-  </button>
-  Custom title
-  <button type="button"
-          class="van-picker__confirm van-haptics-feedback"
-  >
-    Confirm
-  </button>
-</div>
-`;
-
-exports[`time type 1`] = `
+exports[`should render time type correctly 1`] = `
 <div class="van-picker van-datetime-picker">
   <div class="van-picker__toolbar">
     <button type="button"
@@ -90,5 +74,21 @@ exports[`time type 1`] = `
     >
     </div>
   </div>
+</div>
+`;
+
+exports[`should render title slot correctly 1`] = `
+<div class="van-picker__toolbar">
+  <button type="button"
+          class="van-picker__cancel van-haptics-feedback"
+  >
+    Cancel
+  </button>
+  Custom title
+  <button type="button"
+          class="van-picker__confirm van-haptics-feedback"
+  >
+    Confirm
+  </button>
 </div>
 `;

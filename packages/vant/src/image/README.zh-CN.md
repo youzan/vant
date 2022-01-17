@@ -28,13 +28,27 @@ app.use(VanImage);
 
 ### 填充模式
 
-通过 `fit` 属性可以设置图片填充模式，可选值见下方表格。
+通过 `fit` 属性可以设置图片填充模式，等同于原生的 [object-fit](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit) 属性，可选值见下方表格。
 
 ```html
 <van-image
   width="10rem"
   height="10rem"
   fit="contain"
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/>
+```
+
+### 图片位置
+
+通过 `position` 属性可以设置图片位置，结合 `fit` 属性使用，等同于原生的 [object-position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position) 属性。
+
+```html
+<van-image
+  width="10rem"
+  height="10rem"
+  fit="cover"
+  position="left"
   src="https://img.yzcdn.cn/vant/cat.jpeg"
 />
 ```
@@ -102,7 +116,8 @@ app.use(Lazyload);
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | src | 图片链接 | _string_ | - |
-| fit | 图片填充模式 | _string_ | `fill` |
+| fit | 图片填充模式，等同于原生的 [object-fit](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-fit) 属性 | _string_ | `fill` |
+| position `v3.4.2` | 图片位置，等同于原生的 [object-position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position) 属性，可选值为 `top` `right` `bottom` `left` 或 `string` | _string_ | `center` |
 | alt | 替代文本 | _string_ | - |
 | width | 宽度，默认单位为 `px` | _number \| string_ | - |
 | height | 高度，默认单位为 `px` | _number \| string_ | - |
@@ -111,8 +126,8 @@ app.use(Lazyload);
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
 | show-error | 是否展示图片加载失败提示 | _boolean_ | `true` |
 | show-loading | 是否展示图片加载中提示 | _boolean_ | `true` |
-| error-icon | 失败时提示的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photo-fail` |
-| loading-icon | 加载时提示的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `photo` |
+| error-icon | 失败时提示的图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `photo-fail` |
+| loading-icon | 加载时提示的图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `photo` |
 | icon-size `v3.0.11` | 加载图标和失败图标的大小 | _number \| string_ | `32px` |
 | icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 
@@ -147,7 +162,7 @@ app.use(Lazyload);
 组件导出以下类型定义：
 
 ```ts
-import type { ImageFit, ImageProps } from 'vant';
+import type { ImageFit, ImagePosition, ImageProps } from 'vant';
 ```
 
 ## 主题定制

@@ -251,7 +251,7 @@ Use `input-align` prop to align the input value.
 | label | Left side label | _string_ | - |
 | name | As the identifier when submitting the form | _string_ | - |
 | id `v3.2.2` | Input id, the for attribute of the label also will be set | _string_ | `van-field-n-input` |
-| type | Input type, can be set to `tel` `digit`<br>`number` `textarea` `password` | _string_ | `text` |
+| type | Input type, support all [native types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types) and `digit` type | _FieldType_ | `text` |
 | size | Size，can be set to `large` | _string_ | - |
 | maxlength | Max length of value | _number \| string_ | - |
 | placeholder | Input placeholder | _string_ | - |
@@ -263,26 +263,26 @@ Use `input-align` prop to align the input value.
 | center | Whether to center content vertically | _boolean_ | `true` |
 | clearable | Whether to be clearable | _boolean_ | `false` |
 | clear-icon `v3.0.12` | Clear icon name | _string_ | `clear` |
-| clear-trigger | When to display the clear icon, `always` means to display the icon when value is not empty, `focus` means to display the icon when input is focused | _string_ | `focus` |
+| clear-trigger | When to display the clear icon, `always` means to display the icon when value is not empty, `focus` means to display the icon when input is focused | _FieldClearTrigger_ | `focus` |
 | clickable | Whether to show click feedback when clicked | _boolean_ | `false` |
 | is-link | Whether to show link icon | _boolean_ | `false` |
 | autofocus | Whether to auto focus, unsupported in iOS | _boolean_ | `false` |
 | show-word-limit | Whether to show word limit, need to set the `maxlength` prop | _boolean_ | `false` |
 | error | Whether to mark the input content in red | _boolean_ | `false` |
 | error-message | Error message | _string_ | - |
-| error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
+| error-message-align | Error message align, can be set to `center` `right` | _FieldTextAlign_ | `left` |
 | formatter | Input value formatter | _(val: string) => string_ | - |
-| format-trigger | When to format value，can be set to `onBlur` | _string_ | `onChange` |
+| format-trigger | When to format value，can be set to `onBlur` | _FieldFormatTrigger_ | `onChange` |
 | arrow-direction | Can be set to `left` `up` `down` | _string_ | `right` |
 | label-class | Label className | _string \| Array \| object_ | - |
 | label-width | Label width | _number \| string_ | `6.2em` |
-| label-align | Label align, can be set to `center` `right` | _string_ | `left` |
-| input-align | Input align, can be set to `center` `right` | _string_ | `left` |
-| autosize | Textarea auto resize，can accept an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| object_ | `false` |
+| label-align | Label align, can be set to `center` `right` | _FieldTextAlign_ | `left` |
+| input-align | Input align, can be set to `center` `right` | _FieldTextAlign_ | `left` |
+| autosize | Textarea auto resize，can accept an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| FieldAutosizeConfig_ | `false` |
 | left-icon | Left side icon name | _string_ | - |
 | right-icon | Right side icon name | _string_ | - |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
-| rules | Form validation rules | _Rule[]_ | - |
+| rules | Form validation rules | _FieldRule[]_ | - |
 | autocomplete `v3.0.3` | [autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) attribute of native input element | _string_ | - |
 
 ### Events

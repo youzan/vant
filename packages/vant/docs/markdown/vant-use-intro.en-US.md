@@ -4,6 +4,21 @@
 
 Vant provide some built-in composition APIs, you can directly use these APIs for development.
 
+### Install
+
+Although `@vant/use` is already included in Vant's dependencies, it is still recommended to install this package explicitly:
+
+```shell
+# with npm
+npm i @vant/use
+
+# with yarn
+yarn add @vant/use
+
+# with pnpm
+pnpm add @vant/use
+```
+
 ### Demo
 
 ```js

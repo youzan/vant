@@ -120,8 +120,8 @@ export default {
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
-  <template #indicator="{ active }">
-    <div class="custom-indicator">{{ active + 1 }}/4</div>
+  <template #indicator="{ active, total }">
+    <div class="custom-indicator">{{ active + 1 }}/{{ total }}</div>
   </template>
 </van-swipe>
 
@@ -146,8 +146,8 @@ export default {
 | autoplay | Autoplay interval (ms) | _number \| string_ | - |
 | duration | Animation duration (ms) | _number \| string_ | `500` |
 | initial-swipe | Index of initial swipe, start from 0 | _number \| string_ | `0` |
-| width | Set Swiper Item Width | _number \| string_ | `0` |
-| height | Set Swiper Item Height | _number \| string_ | `0` |
+| width | Width of swipe item | _number \| string_ | `0` |
+| height | Height of swipe item | _number \| string_ | `0` |
 | loop | Whether to enable loop | _boolean_ | `true` |
 | show-indicators | Whether to show indicators | _boolean_ | `true` |
 | vertical | Whether to be vertical Scrolling | _boolean_ | `false` |
@@ -206,10 +206,10 @@ swipeRef.value?.next();
 
 ### Swipe Slots
 
-| Name                | Description      | SlotProps            |
-| ------------------- | ---------------- | -------------------- |
-| default             | Content          | -                    |
-| indicator `v3.0.16` | Custom indicator | _{ active: number }_ |
+| Name               | Description      | SlotProps                           |
+| ------------------ | ---------------- | ----------------------------------- |
+| default            | Content          | -                                   |
+| indicator `v3.4.0` | Custom indicator | _{ active: number, total: number }_ |
 
 ## Theming
 

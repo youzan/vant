@@ -1,11 +1,11 @@
 import {
   provide,
   computed,
-  PropType,
-  InjectionKey,
-  CSSProperties,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type InjectionKey,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 import { kebabCase, makeStringProp, createNamespace } from '../utils';
 

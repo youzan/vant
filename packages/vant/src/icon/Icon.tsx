@@ -1,11 +1,17 @@
-import { defineComponent, inject, computed, ExtractPropTypes } from 'vue';
+import {
+  inject,
+  computed,
+  defineComponent,
+  type PropType,
+  type ExtractPropTypes,
+} from 'vue';
 import {
   addUnit,
   numericProp,
   makeStringProp,
   createNamespace,
 } from '../utils';
-import { Badge } from '../badge';
+import { Badge, type BadgeProps } from '../badge';
 import { CONFIG_PROVIDER_KEY } from '../config-provider/ConfigProvider';
 
 const [name, bem] = createNamespace('icon');
@@ -19,6 +25,7 @@ const iconProps = {
   size: numericProp,
   badge: numericProp,
   color: String,
+  badgeProps: Object as PropType<Partial<BadgeProps>>,
   classPrefix: String,
 };
 
@@ -44,7 +51,6 @@ export default defineComponent({
         <Badge
           dot={dot}
           tag={tag}
-          content={badge}
           class={[
             classPrefix.value,
             isImageIcon ? '' : `${classPrefix.value}-${name}`,
@@ -53,6 +59,8 @@ export default defineComponent({
             color,
             fontSize: addUnit(size),
           }}
+          content={badge}
+          {...props.badgeProps}
         >
           {slots.default?.()}
           {isImageIcon && <img class={bem('image')} src={name} />}

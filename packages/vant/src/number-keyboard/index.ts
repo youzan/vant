@@ -7,3 +7,9 @@ export type {
   NumberKeyboardProps,
   NumberKeyboardTheme,
 } from './NumberKeyboard';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanNumberKeyboard: typeof NumberKeyboard;
+  }
+}

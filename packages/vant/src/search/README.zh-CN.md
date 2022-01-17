@@ -119,9 +119,27 @@ export default {
   @search="onSearch"
 >
   <template #action>
-    <div @click="onSearch">搜索</div>
+    <div @click="onClickButton">搜索</div>
   </template>
 </van-search>
+```
+
+```js
+import { ref } from 'vue';
+import { Toast } from 'vant';
+
+export default {
+  setup() {
+    const value = ref('');
+    const onSearch = (val) => Toast(val);
+    const onClickButton = () => Toast(value.value);
+    return {
+      value,
+      onSearch,
+      onClickButton,
+    };
+  },
+};
 ```
 
 ## API
@@ -139,7 +157,7 @@ export default {
 | maxlength | 输入的最大字符数 | _number \| string_ | - |
 | placeholder | 占位提示文字 | _string_ | - |
 | clearable | 是否启用清除图标，点击清除图标后会清空输入框 | _boolean_ | `true` |
-| clear-icon `v3.0.12` | 清除[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `clear` |
+| clear-icon `v3.0.12` | 清除图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `clear` |
 | clear-trigger | 显示清除图标的时机，`always` 表示输入框不为空时展示，<br>`focus` 表示输入框聚焦且不为空时展示 | _string_ | `focus` |
 | autofocus | 是否自动聚焦，iOS 系统不支持该属性 | _boolean_ | `false` |
 | show-action | 是否在搜索框右侧显示取消按钮 | _boolean_ | `false` |
@@ -151,21 +169,23 @@ export default {
 | formatter `v3.0.12` | 输入内容格式化函数 | _(val: string) => string_ | - |
 | format-trigger `v3.0.12` | 格式化函数触发的时机，可选值为 `onBlur` | _string_ | `onChange` |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | _string_ | `left` |
-| left-icon | 输入框左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `search` |
-| right-icon | 输入框右侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
+| left-icon | 输入框左侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `search` |
+| right-icon | 输入框右侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
 | autocomplete `v3.2.3` | input 标签原生的[自动完成属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) | _string_ | - |
 
 ### Events
 
-| 事件名             | 说明                 | 回调参数                       |
-| ------------------ | -------------------- | ------------------------------ |
-| search             | 确定搜索时触发       | _value: string (当前输入的值)_ |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| search | 确定搜索时触发 | _value: string (当前输入的值)_ |
 | update:model-value | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
-| focus              | 输入框获得焦点时触发 | _event: Event_                 |
-| blur               | 输入框失去焦点时触发 | _event: Event_                 |
-| click-input        | 点击输入区域时触发   | _event: MouseEvent_            |
-| clear              | 点击清除按钮后触发   | _event: MouseEvent_            |
-| cancel             | 点击取消按钮时触发   | -                              |
+| focus | 输入框获得焦点时触发 | _event: Event_ |
+| blur | 输入框失去焦点时触发 | _event: Event_ |
+| click-input | 点击输入区域时触发 | _event: MouseEvent_ |
+| click-left-icon `v3.4.0` | 点击左侧图标时触发 | _event: MouseEvent_ |
+| click-right-icon `3.4.0` | 点击右侧图标时触发 | _event: MouseEvent_ |
+| clear | 点击清除按钮后触发 | _event: MouseEvent_ |
+| cancel | 点击取消按钮时触发 | - |
 
 ### 方法
 

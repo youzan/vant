@@ -94,3 +94,13 @@ test('should not allow to touchmove when lock-scroll is true', async () => {
   overlay.trigger('touchmove');
   expect(onTouchMove).toHaveBeenCalledTimes(0);
 });
+
+test('should allow to disable lazy-render', async () => {
+  const wrapper = mount({
+    render() {
+      return <Overlay lazyRender={false} />;
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});

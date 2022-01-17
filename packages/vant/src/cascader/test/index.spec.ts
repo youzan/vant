@@ -261,3 +261,15 @@ test('should render options-top、options-bottom slots correctly', async () => {
 
   expect(wrapper.find('.van-tab__panel').html()).toMatchSnapshot();
 });
+
+test('should not render header when show-header prop is false', async () => {
+  const wrapper = mount(Cascader, {
+    props: {
+      options,
+      showHeader: false,
+    },
+  });
+
+  const header = wrapper.find('.van-cascader__header');
+  expect(header.exists()).toBeFalsy();
+});

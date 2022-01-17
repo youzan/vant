@@ -1,4 +1,9 @@
-import { ref, CSSProperties, defineComponent, ExtractPropTypes } from 'vue';
+import {
+  ref,
+  defineComponent,
+  type CSSProperties,
+  type ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import {

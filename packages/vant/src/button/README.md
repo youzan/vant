@@ -126,7 +126,7 @@ app.use(Button);
 | round | Whether to be round button | _boolean_ | `false` |
 | square | Whether to be square button | _boolean_ | `false` |
 | disabled | Whether to disable button | _boolean_ | `false` |
-| loading | Whether show loading status | _boolean_ | `false` |
+| loading | Whether to show loading status | _boolean_ | `false` |
 | loading-text | Loading text | _string_ | - |
 | loading-type | Loading type, can be set to `spinner` | _string_ | `circular` |
 | loading-size | Loading icon size | _number \| string_ | `20px` |

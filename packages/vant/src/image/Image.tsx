@@ -1,14 +1,15 @@
 import {
   ref,
-  Slot,
   watch,
   computed,
-  PropType,
-  CSSProperties,
+  nextTick,
   onBeforeUnmount,
   defineComponent,
-  ExtractPropTypes,
   getCurrentInstance,
+  type Slot,
+  type PropType,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -29,10 +30,19 @@ const [name, bem] = createNamespace('image');
 
 export type ImageFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
 
+export type ImagePosition =
+  | 'center'
+  | 'top'
+  | 'right'
+  | 'bottom'
+  | 'left'
+  | string;
+
 const imageProps = {
   src: String,
   alt: String,
   fit: String as PropType<ImageFit>,
+  position: String as PropType<ImagePosition>,
   round: Boolean,
   width: numericProp,
   height: numericProp,
@@ -136,6 +146,7 @@ export default defineComponent({
         class: bem('img'),
         style: {
           objectFit: props.fit,
+          objectPosition: props.position,
         },
       };
 
@@ -149,8 +160,17 @@ export default defineComponent({
     };
 
     const onLazyLoaded = ({ el }: { el: HTMLElement }) => {
-      if (el === imageRef.value && loading.value) {
-        onLoad();
+      const check = () => {
+        if (el === imageRef.value && loading.value) {
+          onLoad();
+        }
+      };
+      if (imageRef.value) {
+        check();
+      } else {
+        // LazyLoad may trigger loaded event before Image mounted
+        // https://github.com/youzan/vant/issues/10046
+        nextTick(check);
       }
     };
 

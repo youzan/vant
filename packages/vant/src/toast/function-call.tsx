@@ -1,10 +1,10 @@
-import { ref, App, getCurrentInstance, watch } from 'vue';
+import { ref, watch, getCurrentInstance, type App } from 'vue';
 import {
   extend,
   isObject,
   inBrowser,
   withInstall,
-  ComponentInstance,
+  type ComponentInstance,
 } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanToast from './Toast';

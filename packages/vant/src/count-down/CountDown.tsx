@@ -1,4 +1,4 @@
-import { watch, computed, defineComponent, ExtractPropTypes } from 'vue';
+import { watch, computed, defineComponent, type ExtractPropTypes } from 'vue';
 
 // Utils
 import {

@@ -1,4 +1,4 @@
-import { defineComponent, ExtractPropTypes } from 'vue';
+import { defineComponent, type PropType, type ExtractPropTypes } from 'vue';
 
 // Utils
 import { extend, numericProp, createNamespace } from '../utils';
@@ -9,7 +9,7 @@ import { useParent } from '@vant/use';
 import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
-import { Badge } from '../badge';
+import { Badge, type BadgeProps } from '../badge';
 
 const [name, bem] = createNamespace('sidebar-item');
 
@@ -18,6 +18,7 @@ const sidebarItemProps = extend({}, routeProps, {
   title: String,
   badge: numericProp,
   disabled: Boolean,
+  badgeProps: Object as PropType<Partial<BadgeProps>>,
 });
 
 export type SidebarItemProps = ExtractPropTypes<typeof sidebarItemProps>;
@@ -64,7 +65,12 @@ export default defineComponent({
           aria-selected={selected}
           onClick={onClick}
         >
-          <Badge dot={dot} content={badge} class={bem('text')}>
+          <Badge
+            dot={dot}
+            class={bem('text')}
+            content={badge}
+            {...props.badgeProps}
+          >
             {slots.title ? slots.title() : title}
           </Badge>
         </div>

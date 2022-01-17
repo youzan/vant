@@ -5,6 +5,7 @@ import VanIcon from '../../icon';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
+import Shrink from './Shrink.vue';
 
 const t = useTranslate({
   'zh-CN': {
@@ -130,6 +131,8 @@ const beforeChange = (name: number) => {
       </van-tab>
     </van-tabs>
   </demo-block>
+
+  <shrink />
 
   <demo-block :title="t('title7')">
     <van-tabs v-model:active="active7">

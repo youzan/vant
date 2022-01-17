@@ -9,7 +9,7 @@ test('should emit close event when clicking the close icon', () => {
   });
 
   wrapper.find('.van-tag__close').trigger('click');
-  expect(wrapper.emitted('close')!.length).toEqual(1);
+  expect(wrapper.emitted('close')).toHaveLength(1);
 });
 
 test('should hide tag when the show prop is false', () => {

@@ -34,6 +34,7 @@ const value6 = ref('');
 
 const onSearch = (val: string) => Toast(val);
 const onCancel = () => Toast(t('cancel'));
+const onClickButton = () => Toast(value6.value);
 </script>
 
 <template>
@@ -83,7 +84,7 @@ const onCancel = () => Toast(t('cancel'));
       @search="onSearch"
     >
       <template #action>
-        <div @click="onSearch">{{ t('search') }}</div>
+        <div @click="onClickButton">{{ t('search') }}</div>
       </template>
     </van-search>
   </demo-block>

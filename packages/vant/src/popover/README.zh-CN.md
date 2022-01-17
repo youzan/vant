@@ -114,7 +114,7 @@ bottom-end    # 底部右侧位置
 
 ### 展示图标
 
-在 `actions` 数组中，可以通过 `icon` 字段来定义选项的图标，支持传入[图标名称](#/zh-CN/icon)或图片链接。
+在 `actions` 数组中，可以通过 `icon` 字段来定义选项的图标，支持传入图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props)。
 
 ```html
 <van-popover v-model:show="showPopover" :actions="actions">
@@ -244,7 +244,7 @@ export default {
 | 键名 | 说明 | 类型 |
 | --- | --- | --- |
 | text | 选项文字 | _string_ |
-| icon | 文字左侧的图标，支持传入[图标名称](#/zh-CN/icon)或图片链接 | _string_ |
+| icon | 文字左侧的图标，支持传入图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ |
 | color | 选项文字颜色 | _string_ |
 | disabled | 是否为禁用状态 | _boolean_ |
 | className | 为对应选项添加额外的类名 | _string \| Array \| object_ |
@@ -262,10 +262,11 @@ export default {
 
 ### Slots
 
-| 名称      | 说明                        |
-| --------- | --------------------------- |
-| default   | 自定义菜单内容              |
-| reference | 触发 Popover 显示的元素内容 |
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| default | 自定义菜单内容 | - |
+| reference | 触发 Popover 显示的元素内容 | - |
+| action `v3.4.0` | 自定义选项内容 | _{ action: PopoverAction, index: number }_ |
 
 ### 类型定义
 

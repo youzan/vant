@@ -10,3 +10,9 @@ export type {
   PopoverTrigger,
   PopoverPlacement,
 } from './types';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanPopover: typeof Popover;
+  }
+}

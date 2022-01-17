@@ -2,13 +2,13 @@ import {
   ref,
   watch,
   nextTick,
-  PropType,
   onMounted,
-  CSSProperties,
-  TeleportProps,
   onBeforeUnmount,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type CSSProperties,
+  type TeleportProps,
+  type ExtractPropTypes,
 } from 'vue';
 import { Instance, createPopper, offsetModifier } from '@vant/popperjs';
 
@@ -20,10 +20,10 @@ import {
   numericProp,
   unknownProp,
   BORDER_BOTTOM,
+  makeArrayProp,
   makeStringProp,
   createNamespace,
-  ComponentInstance,
-  makeArrayProp,
+  type ComponentInstance,
 } from '../utils';
 
 // Composables
@@ -166,8 +166,25 @@ export default defineComponent({
       }
     };
 
+    const renderActionContent = (action: PopoverAction, index: number) => {
+      if (slots.action) {
+        return slots.action({ action, index });
+      }
+
+      return [
+        action.icon && (
+          <Icon
+            name={action.icon}
+            classPrefix={props.iconPrefix}
+            class={bem('action-icon')}
+          />
+        ),
+        <div class={[bem('action-text'), BORDER_BOTTOM]}>{action.text}</div>,
+      ];
+    };
+
     const renderAction = (action: PopoverAction, index: number) => {
-      const { icon, text, color, disabled, className } = action;
+      const { icon, color, disabled, className } = action;
       return (
         <div
           role="menuitem"
@@ -177,14 +194,7 @@ export default defineComponent({
           aria-disabled={disabled || undefined}
           onClick={() => onClickAction(action, index)}
         >
-          {icon && (
-            <Icon
-              name={icon}
-              classPrefix={props.iconPrefix}
-              class={bem('action-icon')}
-            />
-          )}
-          <div class={[bem('action-text'), BORDER_BOTTOM]}>{text}</div>
+          {renderActionContent(action, index)}
         </div>
       );
     };

@@ -48,7 +48,7 @@ export default defineComponent({
       if (isActive()) {
         return { color: parentProps.activeColor };
       }
-      if (!getStatus()) {
+      if (getStatus() === 'waiting') {
         return { color: parentProps.inactiveColor };
       }
     });

@@ -1,4 +1,4 @@
-import { PropType, defineComponent, ExtractPropTypes } from 'vue';
+import { defineComponent, type PropType, type ExtractPropTypes } from 'vue';
 import {
   addUnit,
   truthProp,
@@ -78,7 +78,7 @@ export default defineComponent({
     };
 
     const renderRows = () =>
-      Array(props.row)
+      Array(+props.row)
         .fill('')
         .map((_, i) => (
           <div class={bem('row')} style={{ width: addUnit(getRowWidth(i)) }} />

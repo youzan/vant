@@ -145,7 +145,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | name | 唯一标识符，默认为索引值 | _number \| string_ | `index` |
-| icon | 标题栏左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
+| icon | 标题栏左侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
 | size | 标题栏大小，可选值为 `large` | _string_ | - |
 | title | 标题栏左侧内容 | _number \| string_ | - |
 | value | 标题栏右侧内容 | _number \| string_ | - |

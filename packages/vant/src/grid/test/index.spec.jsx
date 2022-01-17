@@ -74,3 +74,18 @@ test('should render ".van-grid-item__content--reverse" class when using reverse 
     'van-grid-item__content--reverse'
   );
 });
+
+test('should render badge-props prop correctly', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Grid>
+          <GridItem icon="foo" badge={1} badgeProps={{ color: 'blue' }} />
+        </Grid>
+      );
+    },
+  });
+
+  const badge = wrapper.find('.van-badge');
+  expect(badge.style.backgroundColor).toEqual('blue');
+});

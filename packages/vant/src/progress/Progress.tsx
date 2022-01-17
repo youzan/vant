@@ -1,4 +1,4 @@
-import { computed, defineComponent, ExtractPropTypes } from 'vue';
+import { computed, defineComponent, type ExtractPropTypes } from 'vue';
 import { addUnit, truthProp, numericProp, createNamespace } from '../utils';
 
 const [name, bem] = createNamespace('progress');

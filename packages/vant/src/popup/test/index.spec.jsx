@@ -101,7 +101,7 @@ test('should emit click-overlay event when overlay is clicked', async () => {
   });
   const overlay = wrapper.find('.van-overlay');
   overlay.trigger('click');
-  expect(wrapper.emitted('click-overlay').length).toEqual(1);
+  expect(wrapper.emitted('click-overlay')).toHaveLength(1);
 });
 
 test('should emit open event when show prop is set to true', async () => {
@@ -126,6 +126,22 @@ test('should emit close event when show prop is set to false', async () => {
   });
 
   await wrapper.setProps({ show: false });
+  expect(onClose).toHaveBeenCalledTimes(1);
+});
+
+test('should emit close event after clicking the overlay', async () => {
+  const onClose = jest.fn();
+  wrapper = mount(Popup, {
+    props: {
+      show: true,
+      onClose,
+      'onUpdate:show': (show) => {
+        wrapper.setProps({ show });
+      },
+    },
+  });
+
+  await wrapper.find('.van-overlay').trigger('click');
   expect(onClose).toHaveBeenCalledTimes(1);
 });
 
@@ -175,7 +191,7 @@ test('should emit click-close-icon event when close icon is clicked', () => {
   });
 
   wrapper.find('.van-popup__close-icon').trigger('click');
-  expect(wrapper.emitted('click-close-icon').length).toEqual(1);
+  expect(wrapper.emitted('click-close-icon')).toHaveLength(1);
 });
 
 test('should render correct close icon when using close-icon prop', () => {

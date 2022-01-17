@@ -94,7 +94,7 @@ test('resetValidation method - reset all fields', async () => {
     formRef.value?.resetValidation();
     await later();
     const errors = form.findAll('.van-field__error-message');
-    expect(errors.length).toEqual(0);
+    expect(errors).toHaveLength(0);
   }
 });
 
@@ -107,7 +107,7 @@ test('resetValidation method - reset two fields', async () => {
     formRef.value?.resetValidation(['A', 'B']);
     await later();
     const errors = form.findAll('.van-field__error-message');
-    expect(errors.length).toEqual(0);
+    expect(errors).toHaveLength(0);
   }
 });
 
@@ -119,11 +119,11 @@ test('resetValidation method - reset one field', async () => {
   } catch (err) {
     formRef.value?.resetValidation('A');
     await later();
-    expect(form.findAll('.van-field__error-message').length).toEqual(1);
+    expect(form.findAll('.van-field__error-message')).toHaveLength(1);
 
     formRef.value?.resetValidation('B');
     await later();
-    expect(form.findAll('.van-field__error-message').length).toEqual(0);
+    expect(form.findAll('.van-field__error-message')).toHaveLength(0);
   }
 });
 

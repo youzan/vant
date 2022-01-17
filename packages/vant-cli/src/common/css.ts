@@ -1,4 +1,3 @@
-import { get } from 'lodash-es';
 import { existsSync } from 'fs';
 import { join, isAbsolute } from 'path';
 import { getVantConfig } from '../common/index.js';
@@ -8,7 +7,7 @@ type CSS_LANG = 'css' | 'less' | 'scss';
 
 function getCssLang(): CSS_LANG {
   const vantConfig = getVantConfig();
-  const preprocessor = get(vantConfig, 'build.css.preprocessor', 'less');
+  const preprocessor = vantConfig.build?.css?.preprocessor || 'less';
 
   if (preprocessor === 'sass') {
     return 'scss';
@@ -23,7 +22,7 @@ export function getCssBaseFile() {
   const vantConfig = getVantConfig();
   let path = join(STYLE_DIR, `base.${CSS_LANG}`);
 
-  const baseFile = get(vantConfig, 'build.css.base', '');
+  const baseFile = vantConfig.build?.css?.base || '';
   if (baseFile) {
     path = isAbsolute(baseFile) ? baseFile : join(SRC_DIR, baseFile);
   }

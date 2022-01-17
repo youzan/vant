@@ -1,4 +1,9 @@
-import { computed, watchEffect, defineComponent, ExtractPropTypes } from 'vue';
+import {
+  computed,
+  watchEffect,
+  defineComponent,
+  type ExtractPropTypes,
+} from 'vue';
 import {
   clamp,
   makeStringProp,

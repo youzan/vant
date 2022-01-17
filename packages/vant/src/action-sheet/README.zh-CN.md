@@ -187,7 +187,7 @@ export default {
 | cancel-text | 取消按钮文字 | _string_ | - |
 | description | 选项上方的描述信息 | _string_ | - |
 | closeable | 是否显示关闭图标 | _boolean_ | `true` |
-| close-icon | 关闭[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `cross` |
+| close-icon | 关闭图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `cross` |
 | duration | 动画时长，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.3` |
 | round | 是否显示圆角 | _boolean_ | `true` |
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
@@ -230,11 +230,12 @@ export default {
 
 ### Slots
 
-| 名称             | 说明                 |
-| ---------------- | -------------------- |
-| default          | 自定义面板的展示内容 |
-| description      | 自定义描述文案       |
-| cancel `v3.0.10` | 自定义取消按钮内容   |
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| default | 自定义面板的展示内容 | - |
+| description | 自定义描述文案 | - |
+| cancel `v3.0.10` | 自定义取消按钮内容 | - |
+| action `v3.4.0` | 自定义选项内容 | _{ action: ActionSheetAction, index: number }_ |
 
 ### 类型定义
 

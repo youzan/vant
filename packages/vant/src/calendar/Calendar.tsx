@@ -2,10 +2,10 @@ import {
   ref,
   watch,
   computed,
-  PropType,
-  TeleportProps,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type TeleportProps,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -406,7 +406,12 @@ export default defineComponent({
             );
 
             if (disabledDay) {
-              select([startDay, getPrevDay(disabledDay)]);
+              const endDay = getPrevDay(disabledDay);
+              if (compareDay(startDay, endDay) === -1) {
+                select([startDay, endDay]);
+              } else {
+                select([date]);
+              }
             } else {
               select([startDay, date], true);
             }

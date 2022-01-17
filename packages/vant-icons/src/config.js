@@ -149,6 +149,7 @@ export default {
     'shrink',
     'shield-o',
     'guide-o',
+    'cash-o',
   ],
   filled: [
     // has corresponding outline icon

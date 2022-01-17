@@ -1,14 +1,14 @@
 import {
   ref,
-  Slot,
   watch,
   computed,
   Teleport,
-  PropType,
   Transition,
-  TeleportProps,
   defineComponent,
-  ExtractPropTypes,
+  type Slot,
+  type PropType,
+  type TeleportProps,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

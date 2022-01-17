@@ -20,12 +20,12 @@ test('should add "van-notify--success" class when type is success', async () => 
   });
 
   await later();
-  const notify = document.querySelector('.van-notify');
+  const notify = document.querySelector('.van-notify') as HTMLElement;
   expect(notify.classList.contains('van-notify--success')).toBeTruthy();
 });
 
 test('should register component to app', () => {
-  const app = createApp();
+  const app = createApp({});
   app.use(Notify);
   expect(app.component(NotifyComponent.name)).toBeTruthy();
 });
@@ -63,7 +63,18 @@ test('should call onClick option when clicked', async () => {
   });
 
   await later();
-  const notify = document.querySelector('.van-notify');
+  const notify = document.querySelector('.van-notify') as HTMLElement;
   notify.click();
   expect(onClick).toHaveBeenCalledTimes(1);
+});
+
+test('should align to bottom when position option is bottom', async () => {
+  Notify({
+    message: 'test',
+    position: 'bottom',
+  });
+
+  await later();
+  const notify = document.querySelector('.van-notify') as HTMLElement;
+  expect(notify.classList.contains('van-popup--bottom')).toBeTruthy();
 });

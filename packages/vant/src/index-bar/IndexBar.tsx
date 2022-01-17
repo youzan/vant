@@ -3,14 +3,14 @@ import {
   watch,
   computed,
   nextTick,
-  PropType,
   Teleport,
   onMounted,
-  InjectionKey,
-  CSSProperties,
-  TeleportProps,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type InjectionKey,
+  type CSSProperties,
+  type TeleportProps,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

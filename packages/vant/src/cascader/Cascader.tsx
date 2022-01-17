@@ -2,9 +2,9 @@ import {
   ref,
   watch,
   nextTick,
-  PropType,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type ExtractPropTypes,
 } from 'vue';
 import {
   extend,
@@ -33,6 +33,7 @@ const cascaderProps = {
   closeable: truthProp,
   swipeable: truthProp,
   closeIcon: makeStringProp('cross'),
+  showHeader: truthProp,
   modelValue: numericProp,
   fieldNames: Object as PropType<CascaderFieldNames>,
   placeholder: String,
@@ -185,20 +186,21 @@ export default defineComponent({
     const onClickTab = ({ name, title }: TabsClickTabEventParams) =>
       emit('click-tab', name, title);
 
-    const renderHeader = () => (
-      <div class={bem('header')}>
-        <h2 class={bem('title')}>
-          {slots.title ? slots.title() : props.title}
-        </h2>
-        {props.closeable ? (
-          <Icon
-            name={props.closeIcon}
-            class={[bem('close-icon'), HAPTICS_FEEDBACK]}
-            onClick={onClose}
-          />
-        ) : null}
-      </div>
-    );
+    const renderHeader = () =>
+      props.showHeader ? (
+        <div class={bem('header')}>
+          <h2 class={bem('title')}>
+            {slots.title ? slots.title() : props.title}
+          </h2>
+          {props.closeable ? (
+            <Icon
+              name={props.closeIcon}
+              class={[bem('close-icon'), HAPTICS_FEEDBACK]}
+              onClick={onClose}
+            />
+          ) : null}
+        </div>
+      ) : null;
 
     const renderOption = (
       option: CascaderOption,
@@ -269,10 +271,10 @@ export default defineComponent({
     const renderTabs = () => (
       <Tabs
         v-model:active={activeTab.value}
+        shrink
         animated
         class={bem('tabs')}
         color={props.activeColor}
-        swipeThreshold={0}
         swipeable={props.swipeable}
         onClick-tab={onClickTab}
       >

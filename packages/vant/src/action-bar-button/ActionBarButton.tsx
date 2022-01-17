@@ -1,4 +1,9 @@
-import { computed, PropType, defineComponent, ExtractPropTypes } from 'vue';
+import {
+  computed,
+  defineComponent,
+  type PropType,
+  type ExtractPropTypes,
+} from 'vue';
 import { extend, createNamespace } from '../utils';
 import { ACTION_BAR_KEY } from '../action-bar/ActionBar';
 

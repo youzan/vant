@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <title><%= title %></title>
+    <% if (description) { %>
     <meta name="description" content="<%= description %>" />
+    <% } %>
     <link rel="icon" type="image/png" href="<%= logo %>" />
     <meta
       name="viewport"

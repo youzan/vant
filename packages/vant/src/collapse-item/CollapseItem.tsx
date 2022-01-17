@@ -4,7 +4,7 @@ import {
   computed,
   nextTick,
   defineComponent,
-  ExtractPropTypes,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils

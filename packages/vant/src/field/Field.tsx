@@ -5,10 +5,10 @@ import {
   computed,
   nextTick,
   reactive,
-  PropType,
   onMounted,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -27,12 +27,14 @@ import {
   createNamespace,
 } from '../utils';
 import {
+  cutString,
   runSyncRule,
   endComposing,
   mapInputType,
   startComposing,
   getRuleMessage,
   resizeTextarea,
+  getStringLength,
   runRuleValidator,
 } from './utils';
 import { cellSharedProps } from '../cell/Cell';
@@ -255,12 +257,12 @@ export default defineComponent({
     // see: https://github.com/youzan/vant/issues/5033
     const limitValueLength = (value: string) => {
       const { maxlength } = props;
-      if (isDef(maxlength) && value.length > maxlength) {
+      if (isDef(maxlength) && getStringLength(value) > maxlength) {
         const modelValue = getModelValue();
-        if (modelValue && modelValue.length === +maxlength) {
+        if (modelValue && getStringLength(modelValue) === +maxlength) {
           return modelValue;
         }
-        return value.slice(0, +maxlength);
+        return cutString(value, +maxlength);
       }
       return value;
     };
@@ -462,7 +464,7 @@ export default defineComponent({
 
     const renderWordLimit = () => {
       if (props.showWordLimit && props.maxlength) {
-        const count = getModelValue().length;
+        const count = getStringLength(getModelValue());
         return (
           <div class={bem('word-limit')}>
             <span class={bem('word-num')}>{count}</span>/{props.maxlength}

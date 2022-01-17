@@ -309,3 +309,25 @@ test('should render dynamic SwipeItem correctly', async () => {
   await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should render indicator slot correctly', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Swipe
+          v-slots={{
+            indicator: ({ active, total }) =>
+              `active: ${active}, total: ${total}`,
+          }}
+          style={swipeStyle}
+        >
+          <SwipeItem>1</SwipeItem>
+          <SwipeItem>2</SwipeItem>
+        </Swipe>
+      );
+    },
+  });
+
+  await later();
+  expect(wrapper.html()).toMatchSnapshot();
+});

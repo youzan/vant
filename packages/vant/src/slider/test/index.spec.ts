@@ -191,13 +191,13 @@ test('should not emit change event when value not changed', async () => {
   const button = wrapper.find('.van-slider__button');
   trigger(button, 'touchstart');
   trigger(wrapper, 'click', 100, 0);
-  expect(wrapper.emitted('change')!.length).toEqual(1);
+  expect(wrapper.emitted('change')).toHaveLength(1);
 
   await wrapper.setProps({ modelValue: 100 });
   trigger(button, 'touchstart');
   trigger(wrapper, 'click', 100, 0);
 
-  expect(wrapper.emitted('change')!.length).toEqual(1);
+  expect(wrapper.emitted('change')).toHaveLength(1);
 });
 
 // https://github.com/youzan/vant/issues/8889

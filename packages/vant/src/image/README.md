@@ -26,11 +26,27 @@ app.use(VanImage);
 
 ### Fit Mode
 
+Same as [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit).
+
 ```html
 <van-image
   width="10rem"
   height="10rem"
   fit="contain"
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/>
+```
+
+### Position
+
+Same as [object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position).
+
+```html
+<van-image
+  width="10rem"
+  height="10rem"
+  fit="cover"
+  position="left"
   src="https://img.yzcdn.cn/vant/cat.jpeg"
 />
 ```
@@ -74,7 +90,8 @@ app.use(Lazyload);
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | src | Src | _string_ | - |
-| fit | Fit mode | _string_ | `fill` |
+| fit | Fit mode, same as [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) | _string_ | `fill` |
+| position `v3.4.2` | Position, same as [object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position), can be set to `top` `right` `bottom` `left` or `string` | _string_ | `center` |
 | alt | Alt | _string_ | - |
 | width | Width | _number \| string_ | - |
 | height | Height | _number \| string_ | - |
@@ -119,7 +136,7 @@ app.use(Lazyload);
 The component exports the following type definitions:
 
 ```ts
-import type { ImageFit, ImageProps } from 'vant';
+import type { ImageFit, ImagePosition, ImageProps } from 'vant';
 ```
 
 ## Theming

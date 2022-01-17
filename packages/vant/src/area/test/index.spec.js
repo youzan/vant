@@ -116,10 +116,10 @@ test('should render two columns when columns-num prop is two', async () => {
     },
   });
 
-  expect(wrapper.findAll('.van-picker-column').length).toEqual(3);
+  expect(wrapper.findAll('.van-picker-column')).toHaveLength(3);
 
   await wrapper.setProps({ columnsNum: 2 });
-  expect(wrapper.findAll('.van-picker-column').length).toEqual(2);
+  expect(wrapper.findAll('.van-picker-column')).toHaveLength(2);
   expect(wrapper.html()).toMatchSnapshot();
 });
 

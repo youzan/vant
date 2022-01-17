@@ -1,10 +1,10 @@
 import {
   watch,
   computed,
-  PropType,
-  CSSProperties,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 import { raf, cancelRaf } from '@vant/use';
 import {

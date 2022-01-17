@@ -9,3 +9,9 @@ export type {
   AddressEditInstance,
   AddressEditSearchItem,
 } from './types';
+
+declare module 'vue' {
+  export interface GlobalComponents {
+    VanAddressEdit: typeof AddressEdit;
+  }
+}

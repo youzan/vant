@@ -138,7 +138,7 @@ app.use(Button);
 | size | 尺寸，可选值为 `large` `small` `mini` | _string_ | `normal` |
 | text | 按钮文字 | _string_ | - |
 | color | 按钮颜色，支持传入 `linear-gradient` 渐变色 | _string_ | - |
-| icon | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
+| icon | 左侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
 | icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | icon-position | 图标展示位置，可选值为 `right` | _string_ | `left` |
 | tag | 按钮根节点的 HTML 标签 | _string_ | `button` |

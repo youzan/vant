@@ -44,7 +44,7 @@ test('should not render zero badge when show-zero-badge prop is false', async ()
     },
   });
   await later();
-  expect(wrapper.findAll('.van-badge').length).toEqual(1);
+  expect(wrapper.findAll('.van-badge')).toHaveLength(1);
 });
 
 test('should switch tab after click the tab title', async () => {
@@ -256,7 +256,7 @@ test('should emit rendered event after tab is rendered', async () => {
 
   await later();
   expect(onRendered).toHaveBeenCalledWith('a', 'title1');
-  expect(wrapper.find('.van-tab__panel')).toMatchSnapshot();
+  expect(wrapper.find('.van-tab__panel').html()).toMatchSnapshot();
 
   const tabs = wrapper.findAll('.van-tab');
   await tabs[1].trigger('click');

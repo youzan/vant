@@ -107,3 +107,14 @@ export function mapInputType(type: FieldType): {
 
   return { type };
 }
+
+// get correct length of emoji
+// https://github.com/youzan/vant/issues/10032
+export function getStringLength(str: string) {
+  return [...str].length;
+}
+
+// cut string with emoji
+export function cutString(str: string, maxlength: number) {
+  return [...str].slice(0, maxlength).join('');
+}

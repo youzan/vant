@@ -1,4 +1,4 @@
-import { ref, watch, reactive, defineComponent } from 'vue';
+import { ref, watch, reactive, defineComponent, type InjectionKey } from 'vue';
 
 // Utils
 import { deepClone } from '../utils/deep-clone';
@@ -20,7 +20,7 @@ import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
 // Types
-import type { PickerOption } from './types';
+import type { PickerOption, PickerColumnProvide } from './types';
 
 const DEFAULT_DURATION = 200;
 
@@ -38,7 +38,7 @@ function getElementTranslateY(element: Element) {
   return Number(translateY);
 }
 
-export const PICKER_KEY = Symbol(name);
+export const PICKER_KEY: InjectionKey<PickerColumnProvide> = Symbol(name);
 
 const isOptionDisabled = (option: PickerOption) =>
   isObject(option) && option.disabled;

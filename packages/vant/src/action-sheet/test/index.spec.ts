@@ -13,7 +13,7 @@ test('should emit select event after clicking option', async () => {
   wrapper.find('.van-action-sheet__item').trigger('click');
 
   await nextTick();
-  expect(wrapper.emitted('select')!.length).toEqual(1);
+  expect(wrapper.emitted('select')).toHaveLength(1);
   expect(wrapper.emitted('select')![0]).toEqual([
     {
       name: 'Option',
@@ -71,7 +71,7 @@ test('should emit cancel event after clicking cancel button', () => {
   });
 
   wrapper.find('.van-action-sheet__cancel').trigger('click');
-  expect(wrapper.emitted('cancel')!.length).toEqual(1);
+  expect(wrapper.emitted('cancel')).toHaveLength(1);
 });
 
 test('should render subname correctly', () => {
@@ -225,7 +225,7 @@ test('should close after clicking option if close-on-click-action prop is true',
   const option = wrapper.find('.van-action-sheet__item');
   option.trigger('click');
 
-  expect(wrapper.emitted('update:show')!.length).toEqual(1);
+  expect(wrapper.emitted('update:show')).toHaveLength(1);
   expect(wrapper.emitted('update:show')![0]).toEqual([false]);
 });
 
@@ -260,4 +260,18 @@ test('should allow to control safe-area with safe-area-inset-bottom prop', async
   expect(wrapper.find('.van-action-sheet').classes()).not.toContain(
     'van-safe-area-bottom'
   );
+});
+
+test('should render action slot correctly', () => {
+  const wrapper = mount(ActionSheet, {
+    props: {
+      show: true,
+      actions: [{ name: 'Option' }],
+    },
+    slots: {
+      action: ({ action, index }) => `name: ${action.name}, index: ${index}`,
+    },
+  });
+
+  expect(wrapper.find('.van-action-sheet__item').html()).toMatchSnapshot();
 });

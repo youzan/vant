@@ -5,6 +5,14 @@ exports[`should allow to custom close icon with closeIcon prop 1`] = `
 </i>
 `;
 
+exports[`should render action slot correctly 1`] = `
+<button type="button"
+        class="van-action-sheet__item"
+>
+  name: Option, index: 0
+</button>
+`;
+
 exports[`should render cancel slot correctly 1`] = `
 <button type="button"
         class="van-action-sheet__cancel"

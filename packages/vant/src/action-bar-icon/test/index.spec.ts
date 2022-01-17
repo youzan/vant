@@ -59,3 +59,17 @@ test('should render icon slot with dot correctly', () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should render badge-props prop correctly', async () => {
+  const wrapper = mount(ActionBarIcon, {
+    props: {
+      badge: 1,
+      badgeProps: {
+        color: 'blue',
+      },
+    },
+  });
+
+  const badge = wrapper.find('.van-badge');
+  expect(badge.style.backgroundColor).toEqual('blue');
+});

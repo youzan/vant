@@ -36,6 +36,34 @@
     cursor: not-allowed;
   }
 
+  &--grow {
+    flex: 1 0 auto;
+    padding: 0 var(--van-padding-sm);
+  }
+
+  &--shrink {
+    flex: none;
+    padding: 0 var(--van-padding-xs);
+  }
+
+  &--card {
+    color: var(--van-tabs-default-color);
+    border-right: var(--van-border-width) solid var(--van-tabs-default-color);
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &.van-tab--active {
+      color: var(--van-white);
+      background-color: var(--van-tabs-default-color);
+    }
+
+    &--disabled {
+      color: var(--van-tab-disabled-text-color);
+    }
+  }
+
   &__text {
     &--ellipsis {
       display: -webkit-box;
@@ -60,23 +88,6 @@
       top: auto;
       bottom: 0;
     }
-
-    &--scrollable {
-      .van-tab {
-        flex: 1 0 auto;
-        padding: 0 var(--van-padding-sm);
-      }
-
-      .van-tabs__nav {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-      }
-    }
   }
 
   &__nav {
@@ -85,12 +96,23 @@
     background: var(--van-tabs-nav-background);
     user-select: none;
 
+    &--complete {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
     &--line {
       box-sizing: content-box;
       height: 100%;
       padding-bottom: 15px; /* 15px padding to hide scrollbar in mobile safari */
     }
 
+    &--line&--shrink,
     &--line&--complete {
       padding-right: var(--van-padding-xs);
       padding-left: var(--van-padding-xs);
@@ -101,26 +123,11 @@
       height: var(--van-tabs-card-height);
       margin: 0 var(--van-padding-md);
       border: var(--van-border-width) solid var(--van-tabs-default-color);
-      border-radius: var(--van-radius-sm);
+      border-radius: var(--van-border-radius-sm);
+    }
 
-      .van-tab {
-        color: var(--van-tabs-default-color);
-        border-right: var(--van-border-width) solid
-          var(--van-tabs-default-color);
-
-        &:last-child {
-          border-right: none;
-        }
-
-        &.van-tab--active {
-          color: var(--van-white);
-          background-color: var(--van-tabs-default-color);
-        }
-
-        &--disabled {
-          color: var(--van-tab-disabled-text-color);
-        }
-      }
+    &--card&--shrink {
+      display: inline-flex;
     }
   }
 

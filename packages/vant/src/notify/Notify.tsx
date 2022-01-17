@@ -1,4 +1,4 @@
-import { defineComponent, ExtractPropTypes } from 'vue';
+import { defineComponent, type ExtractPropTypes } from 'vue';
 import {
   extend,
   numericProp,
@@ -8,7 +8,7 @@ import {
 } from '../utils';
 import { Popup } from '../popup';
 import { popupSharedProps } from '../popup/shared';
-import type { NotifyType } from './types';
+import type { NotifyType, NotifyPosition } from './types';
 
 const [name, bem] = createNamespace('notify');
 
@@ -16,6 +16,7 @@ const notifyProps = extend({}, popupSharedProps, {
   type: makeStringProp<NotifyType>('danger'),
   color: String,
   message: numericProp,
+  position: makeStringProp<NotifyPosition>('top'),
   className: unknownProp,
   background: String,
   lockScroll: Boolean,
@@ -42,7 +43,7 @@ export default defineComponent({
           background: props.background,
         }}
         overlay={false}
-        position="top"
+        position={props.position}
         duration={0.2}
         lockScroll={props.lockScroll}
         onUpdate:show={updateShow}

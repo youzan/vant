@@ -1,8 +1,9 @@
 import {
   computed,
-  CSSProperties,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -21,7 +22,7 @@ import { useRoute, routeProps } from '../composables/use-route';
 
 // Components
 import { Icon } from '../icon';
-import { Badge } from '../badge';
+import { Badge, type BadgeProps } from '../badge';
 
 const [name, bem] = createNamespace('grid-item');
 
@@ -32,6 +33,7 @@ const gridItemProps = extend({}, routeProps, {
   badge: numericProp,
   iconColor: String,
   iconPrefix: String,
+  badgeProps: Object as PropType<Partial<BadgeProps>>,
 });
 
 export type GridItemProps = ExtractPropTypes<typeof gridItemProps>;
@@ -93,6 +95,7 @@ export default defineComponent({
             v-slots={{ default: slots.icon }}
             dot={props.dot}
             content={props.badge}
+            {...props.badgeProps}
           />
         );
       }
@@ -105,8 +108,9 @@ export default defineComponent({
             size={parent.props.iconSize}
             badge={props.badge}
             class={bem('icon')}
-            classPrefix={props.iconPrefix}
             color={props.iconColor}
+            badgeProps={props.badgeProps}
+            classPrefix={props.iconPrefix}
           />
         );
       }

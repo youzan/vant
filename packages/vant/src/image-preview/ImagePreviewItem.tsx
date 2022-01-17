@@ -1,4 +1,10 @@
-import { watch, computed, reactive, CSSProperties, defineComponent } from 'vue';
+import {
+  watch,
+  computed,
+  reactive,
+  defineComponent,
+  type CSSProperties,
+} from 'vue';
 
 // Utils
 import {
@@ -100,7 +106,7 @@ export default defineComponent({
     });
 
     const setScale = (scale: number) => {
-      scale = clamp(scale, +props.minZoom, +props.maxZoom);
+      scale = clamp(scale, +props.minZoom, +props.maxZoom + 1);
 
       if (scale !== state.scale) {
         state.scale = scale;
@@ -125,6 +131,7 @@ export default defineComponent({
       state.moveY = 0;
     };
 
+    let fingerNum: number;
     let startMoveX: number;
     let startMoveY: number;
     let startScale: number;
@@ -138,12 +145,13 @@ export default defineComponent({
 
       touch.start(event);
 
+      fingerNum = touches.length;
       startMoveX = state.moveX;
       startMoveY = state.moveY;
       touchStartTime = Date.now();
 
-      state.moving = touches.length === 1 && state.scale !== 1;
-      state.zooming = touches.length === 2 && !offsetX.value;
+      state.moving = fingerNum === 1 && state.scale !== 1;
+      state.zooming = fingerNum === 2 && !offsetX.value;
 
       if (state.zooming) {
         startScale = state.scale;
@@ -177,10 +185,14 @@ export default defineComponent({
     };
 
     const checkTap = () => {
+      if (fingerNum > 1) {
+        return;
+      }
+
       const { offsetX, offsetY } = touch;
       const deltaTime = Date.now() - touchStartTime;
       const TAP_TIME = 250;
-      const TAP_OFFSET = 10;
+      const TAP_OFFSET = 5;
 
       if (
         offsetX.value < TAP_OFFSET &&
@@ -229,6 +241,10 @@ export default defineComponent({
 
           if (state.scale < 1) {
             resetScale();
+          }
+
+          if (state.scale > props.maxZoom) {
+            state.scale = +props.maxZoom;
           }
         }
       }

@@ -16,7 +16,12 @@ import {
   createNamespace,
   makeNumericProp,
 } from '../utils';
-import { times, sharedProps, pickerInheritKeys } from './utils';
+import {
+  times,
+  sharedProps,
+  pickerInheritKeys,
+  proxyPickerMethods,
+} from './utils';
 
 // Composables
 import { useExpose } from '../composables/use-expose';
@@ -160,7 +165,8 @@ export default defineComponent({
     );
 
     useExpose({
-      getPicker: () => picker.value,
+      getPicker: () =>
+        picker.value && proxyPickerMethods(picker.value, updateInnerValue),
     });
 
     return () => (

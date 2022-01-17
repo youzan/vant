@@ -2,9 +2,9 @@ import {
   ref,
   watch,
   computed,
-  PropType,
   defineComponent,
-  ExtractPropTypes,
+  type PropType,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -71,6 +71,7 @@ export default defineComponent({
   emits: ['confirm', 'cancel', 'change'],
 
   setup(props, { emit, slots }) {
+    const hasOptions = ref(false);
     const formattedColumns = ref<PickerObjectColumn[]>([]);
 
     const {
@@ -147,6 +148,10 @@ export default defineComponent({
       } else {
         formattedColumns.value = columns as PickerObjectColumn[];
       }
+
+      hasOptions.value = formattedColumns.value.some(
+        (item) => item[valuesKey] && item[valuesKey].length !== 0
+      );
     };
 
     // get indexes of all columns
@@ -157,6 +162,7 @@ export default defineComponent({
       const column = children[index];
       if (column) {
         column.setOptions(options);
+        hasOptions.value = true;
       }
     };
 
@@ -334,14 +340,25 @@ export default defineComponent({
         />
       ));
 
+    const renderMask = (wrapHeight: number) => {
+      if (hasOptions.value) {
+        const frameStyle = { height: `${itemHeight.value}px` };
+        const maskStyle = {
+          backgroundSize: `100% ${(wrapHeight - itemHeight.value) / 2}px`,
+        };
+        return [
+          <div class={bem('mask')} style={maskStyle} />,
+          <div
+            class={[BORDER_UNSET_TOP_BOTTOM, bem('frame')]}
+            style={frameStyle}
+          />,
+        ];
+      }
+    };
+
     const renderColumns = () => {
       const wrapHeight = itemHeight.value * +props.visibleItemCount;
-      const frameStyle = { height: `${itemHeight.value}px` };
       const columnsStyle = { height: `${wrapHeight}px` };
-      const maskStyle = {
-        backgroundSize: `100% ${(wrapHeight - itemHeight.value) / 2}px`,
-      };
-
       return (
         <div
           class={bem('columns')}
@@ -349,11 +366,7 @@ export default defineComponent({
           onTouchmove={preventDefault}
         >
           {renderColumnItems()}
-          <div class={bem('mask')} style={maskStyle} />
-          <div
-            class={[BORDER_UNSET_TOP_BOTTOM, bem('frame')]}
-            style={frameStyle}
-          />
+          {renderMask(wrapHeight)}
         </div>
       );
     };

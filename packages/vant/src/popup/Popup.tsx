@@ -7,10 +7,10 @@ import {
   onMounted,
   Transition,
   onActivated,
-  CSSProperties,
   onDeactivated,
   defineComponent,
-  ExtractPropTypes,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -35,13 +35,8 @@ import { POPUP_TOGGLE_KEY } from '../composables/on-popup-reopen';
 import { Icon } from '../icon';
 import { Overlay } from '../overlay';
 
-export type PopupPosition = 'top' | 'left' | 'bottom' | 'right' | 'center' | '';
-
-export type PopupCloseIconPosition =
-  | 'top-left'
-  | 'top-right'
-  | 'bottom-left'
-  | 'bottom-right';
+// Types
+import type { PopupPosition, PopupCloseIconPosition } from './types';
 
 const popupProps = extend({}, popupSharedProps, {
   round: Boolean,
@@ -218,10 +213,11 @@ export default defineComponent({
 
     watch(
       () => props.show,
-      (value) => {
-        if (value) {
+      (show) => {
+        if (show && !opened) {
           open();
-        } else {
+        }
+        if (!show && opened) {
           opened = false;
           emit('close');
         }

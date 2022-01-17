@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "@vant/cli": "^3.9.0",
-    "@vue/compiler-sfc": "^3.0.0",
     "vue": "^3.0.0"
   },
   "eslintConfig": {

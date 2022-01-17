@@ -4,7 +4,7 @@ import {
   isObject,
   inBrowser,
   withInstall,
-  ComponentInstance,
+  type ComponentInstance,
 } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanNotify from './Notify';
@@ -54,6 +54,7 @@ const getDefaultOptions = (): NotifyOptions => ({
   onClick: undefined,
   onOpened: undefined,
   duration: 3000,
+  position: undefined,
   className: '',
   lockScroll: false,
   background: undefined,

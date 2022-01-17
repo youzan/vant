@@ -222,11 +222,11 @@ dropdownItemRef.value?.toggle();
 
 ### Option 数据结构
 
-| 键名  | 说明                                   | 类型               |
-| ----- | -------------------------------------- | ------------------ |
-| text  | 文字                                   | _string_           |
-| value | 标识符                                 | _number \| string_ |
-| icon  | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_           |
+| 键名 | 说明 | 类型 |
+| --- | --- | --- |
+| text | 文字 | _string_ |
+| value | 标识符 | _number \| string_ |
+| icon | 左侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ |
 
 ## 主题定制
 

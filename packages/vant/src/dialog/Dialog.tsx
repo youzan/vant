@@ -1,4 +1,9 @@
-import { PropType, reactive, defineComponent, ExtractPropTypes } from 'vue';
+import {
+  reactive,
+  defineComponent,
+  type PropType,
+  type ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import {

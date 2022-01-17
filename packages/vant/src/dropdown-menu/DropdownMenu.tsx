@@ -1,10 +1,10 @@
 import {
   ref,
   computed,
-  InjectionKey,
-  CSSProperties,
   defineComponent,
-  ExtractPropTypes,
+  type InjectionKey,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -17,7 +17,7 @@ import {
   makeNumericProp,
   createNamespace,
   HAPTICS_FEEDBACK,
-  ComponentInstance,
+  type ComponentInstance,
 } from '../utils';
 
 // Composables

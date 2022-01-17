@@ -4,13 +4,13 @@ import {
   computed,
   reactive,
   nextTick,
-  PropType,
   onActivated,
-  InjectionKey,
-  CSSProperties,
   defineComponent,
-  ExtractPropTypes,
-  ComponentPublicInstance,
+  type PropType,
+  type InjectionKey,
+  type CSSProperties,
+  type ExtractPropTypes,
+  type ComponentPublicInstance,
 } from 'vue';
 
 // Utils
@@ -30,8 +30,8 @@ import {
   createNamespace,
   makeNumericProp,
   setRootScrollTop,
-  ComponentInstance,
   BORDER_TOP_BOTTOM,
+  type ComponentInstance,
 } from '../utils';
 import { scrollLeftTo, scrollTopTo } from './utils';
 
@@ -64,6 +64,7 @@ const tabsProps = {
   color: String,
   border: Boolean,
   sticky: Boolean,
+  shrink: Boolean,
   active: makeNumericProp(0),
   duration: makeNumericProp(0.3),
   animated: Boolean,
@@ -115,7 +116,10 @@ export default defineComponent({
 
     // whether the nav is scrollable
     const scrollable = computed(
-      () => children.length > props.swipeThreshold || !props.ellipsis
+      () =>
+        children.length > props.swipeThreshold ||
+        !props.ellipsis ||
+        props.shrink
     );
 
     const navStyle = computed(() => ({
@@ -330,16 +334,17 @@ export default defineComponent({
     const renderNav = () =>
       children.map((item, index) => (
         <TabsTitle
+          v-slots={{ title: item.$slots.title }}
           id={`${id}-${index}`}
           ref={setTitleRefs(index)}
           type={props.type}
           color={props.color}
           style={item.titleStyle}
           class={item.titleClass}
+          shrink={props.shrink}
           isActive={index === state.currentIndex}
           controls={item.id}
           scrollable={scrollable.value}
-          renderTitle={item.$slots.title}
           activeColor={props.titleActiveColor}
           inactiveColor={props.titleInactiveColor}
           onClick={(event: MouseEvent) => onClickTab(item, index, event)}
@@ -353,28 +358,35 @@ export default defineComponent({
         />
       ));
 
+    const renderLine = () => {
+      if (props.type === 'line' && children.length) {
+        return <div class={bem('line')} style={state.lineStyle} />;
+      }
+    };
+
     const renderHeader = () => {
       const { type, border } = props;
       return (
         <div
           ref={wrapRef}
           class={[
-            bem('wrap', { scrollable: scrollable.value }),
+            bem('wrap'),
             { [BORDER_TOP_BOTTOM]: type === 'line' && border },
           ]}
         >
           <div
             ref={navRef}
             role="tablist"
-            class={bem('nav', [type, { complete: scrollable.value }])}
+            class={bem('nav', [
+              type,
+              { shrink: props.shrink, complete: scrollable.value },
+            ])}
             style={navStyle.value}
             aria-orientation="horizontal"
           >
             {slots['nav-left']?.()}
             {renderNav()}
-            {type === 'line' && (
-              <div class={bem('line')} style={state.lineStyle} />
-            )}
+            {renderLine()}
             {slots['nav-right']?.()}
           </div>
         </div>

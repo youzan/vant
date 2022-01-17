@@ -1,5 +1,4 @@
 import { join } from 'path';
-import { get } from 'lodash-es';
 import { createRequire } from 'module';
 import hljs from 'highlight.js';
 import vitePluginMd from 'vite-plugin-md';
@@ -82,7 +81,7 @@ function getTitle(config: { title: string; description?: string }) {
 }
 
 function getHTMLMeta(vantConfig: any) {
-  const meta = get(vantConfig, 'site.htmlMeta');
+  const meta = vantConfig.site?.htmlMeta;
 
   if (meta) {
     return Object.keys(meta)
@@ -99,8 +98,8 @@ export function getViteConfigForSiteDev(): InlineConfig {
   const vantConfig = getVantConfig();
   const siteConfig = getSiteConfig(vantConfig);
   const title = getTitle(siteConfig);
-  const baiduAnalytics = get(vantConfig, 'site.baiduAnalytics');
-  const enableVConsole = isDev() && get(vantConfig, 'site.enableVConsole');
+  const baiduAnalytics = vantConfig.site?.baiduAnalytics;
+  const enableVConsole = isDev() && vantConfig.site?.enableVConsole;
 
   return {
     root: SITE_SRC_DIR,
@@ -136,6 +135,9 @@ export function getViteConfigForSiteDev(): InlineConfig {
         data: {
           ...siteConfig,
           title,
+          // `description` is used by the HTML ejs template,
+          // so it needs to be written explicitly here to avoid error: description is not defined
+          description: siteConfig.description,
           baiduAnalytics,
           enableVConsole,
           meta: getHTMLMeta(vantConfig),
@@ -159,8 +161,8 @@ export function getViteConfigForSiteDev(): InlineConfig {
 export function getViteConfigForSiteProd(): InlineConfig {
   const devConfig = getViteConfigForSiteDev();
   const vantConfig = getVantConfig();
-  const outDir = get(vantConfig, 'build.site.outputDir', SITE_DIST_DIR);
-  const publicPath = get(vantConfig, 'build.site.publicPath', '/');
+  const outDir = vantConfig.build?.site?.outputDir || SITE_DIST_DIR;
+  const publicPath = vantConfig.build?.site?.publicPath || '/';
 
   return {
     ...devConfig,

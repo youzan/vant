@@ -250,10 +250,11 @@ export default {
 
 ### Slots
 
-| Name      | Description       |
-| --------- | ----------------- |
-| default   | Custom content    |
-| reference | Reference Element |
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| default | Custom content | - |
+| reference | Reference Element | - |
+| action `v3.4.0` | Custom the content of option | _{ action: PopoverAction, index: number }_ |
 
 ### Types
 

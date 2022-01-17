@@ -81,7 +81,8 @@
       bottom: 0;
       border-top-color: currentColor;
       border-bottom-width: 0;
-      transform: translate(-50%, 100%);
+      transform: translate(-50%, 0%);
+      margin-bottom: calc(var(--van-popover-arrow-size) * -1);
     }
   }
 
@@ -114,7 +115,8 @@
       right: 0;
       border-right-width: 0;
       border-left-color: currentColor;
-      transform: translate(100%, -50%);
+      transform: translate(0%, -50%);
+      margin-right: calc(var(--van-popover-arrow-size) * -1);
     }
   }
 
@@ -147,7 +149,8 @@
       left: 0;
       border-right-color: currentColor;
       border-left-width: 0;
-      transform: translate(-100%, -50%);
+      transform: translate(0%, -50%);
+      margin-left: calc(var(--van-popover-arrow-size) * -1);
     }
   }
 
@@ -180,7 +183,8 @@
       top: 0;
       border-top-width: 0;
       border-bottom-color: currentColor;
-      transform: translate(-50%, -100%);
+      transform: translate(-50%, 0%);
+      margin-top: calc(var(--van-popover-arrow-size) * -1);
     }
   }
 
