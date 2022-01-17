@@ -93,7 +93,6 @@ importers:
       '@types/fs-extra': ^9.0.13
       '@types/jest': ^27.0.3
       '@types/less': ^3.0.3
-      '@types/lodash-es': ^4.17.5
       '@types/markdown-it': ^12.2.3
       '@vant/eslint-config': ^3.3.2
       '@vant/markdown-vetur': ^2.2.0
@@ -121,7 +120,6 @@ importers:
       jest-serializer-html: ^7.1.0
       less: ^4.1.2
       lint-staged: ^12.1.2
-      lodash-es: ^4.17.21
       markdown-it: ^12.2.0
       markdown-it-anchor: ^8.4.1
       ora: ^6.0.1
@@ -169,7 +167,6 @@ importers:
       jest-serializer-html: 7.1.0
       less: 4.1.2
       lint-staged: 12.1.2
-      lodash-es: 4.17.21
       markdown-it: 12.2.0
       markdown-it-anchor: 8.4.1_b5b6ac618dbcb305e9dd9bd86fa4e841
       ora: 6.0.1
@@ -187,7 +184,6 @@ importers:
     devDependencies:
       '@types/fs-extra': 9.0.13
       '@types/less': 3.0.3
-      '@types/lodash-es': 4.17.5
       '@types/markdown-it': 12.2.3
       vue: 3.2.27
 
@@ -1584,16 +1580,6 @@ packages:
 
   /@types/linkify-it/3.0.2:
     resolution: {integrity: sha1-/SzS7bqn6qx+fzwXSLUqGRQ4Rsk=, tarball: '@types/linkify-it/download/@types/linkify-it-3.0.2.tgz'}
-
-  /@types/lodash-es/4.17.5:
-    resolution: {integrity: sha1-HD/dFoSdhK6kOJCxxg2jeftQE1M=, tarball: '@types/lodash-es/download/@types/lodash-es-4.17.5.tgz'}
-    dependencies:
-      '@types/lodash': 4.14.176
-    dev: true
-
-  /@types/lodash/4.14.176:
-    resolution: {integrity: sha1-ZBFQ/BzaNvv6Mp3mA7uxddfuIMA=, tarball: '@types/lodash/download/@types/lodash-4.14.176.tgz'}
-    dev: true
 
   /@types/markdown-it/12.2.3:
     resolution: {integrity: sha1-DW9uXkE/jaqiZSKQRZe+PWzZO1E=, tarball: '@types/markdown-it/download/@types/markdown-it-12.2.3.tgz'}
@@ -5507,10 +5493,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       p-locate: 4.1.0
-
-  /lodash-es/4.17.21:
-    resolution: {integrity: sha1-Q+YmxG5lkbd1C+srUBFzkMYJ4+4=, tarball: lodash-es/download/lodash-es-4.17.21.tgz?cache=0&sync_timestamp=1632822762695&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Flodash-es%2Fdownload%2Flodash-es-4.17.21.tgz}
-    dev: false
 
   /lodash.ismatch/4.4.0:
     resolution: {integrity: sha1-dWy1FQyjum8RCFp4hJZF8Yj4Xzc=, tarball: lodash.ismatch/download/lodash.ismatch-4.4.0.tgz}

@@ -1,5 +1,4 @@
 import fse from 'fs-extra';
-import { get } from 'lodash-es';
 import { sep, join } from 'path';
 import { SRC_DIR, getVantConfig } from './constant.js';
 import type { InlineConfig } from 'vite';
@@ -117,7 +116,7 @@ export function smartOutputFile(filePath: string, content: string) {
 
 export function mergeCustomViteConfig(config: InlineConfig) {
   const vantConfig = getVantConfig();
-  const configureVite = get(vantConfig, 'build.configureVite');
+  const configureVite = vantConfig.build?.configureVite;
 
   if (configureVite) {
     return configureVite(config);
