@@ -41,7 +41,6 @@
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
     "@types/less": "^3.0.3",
-    "@types/lodash-es": "^4.17.5",
     "@types/markdown-it": "^12.2.3",
     "vue": "^3.2.27"
   },
@@ -77,7 +76,6 @@
     "jest-serializer-html": "^7.1.0",
     "less": "^4.1.2",
     "lint-staged": "^12.1.2",
-    "lodash-es": "^4.17.21",
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.4.1",
     "ora": "^6.0.1",

@@ -1,4 +1,3 @@
-import { get } from 'lodash-es';
 import { join } from 'path';
 import {
   pascalize,
@@ -72,8 +71,8 @@ export function genPackageEntry({
   const names = getComponents();
   const vantConfig = getVantConfig();
 
-  const namedExport = get(vantConfig, 'build.namedExport', false);
-  const skipInstall = get(vantConfig, 'build.skipInstall', []).map(pascalize);
+  const namedExport = vantConfig.build?.namedExport || false;
+  const skipInstall = (vantConfig.build?.skipInstall || []).map(pascalize);
 
   const version = process.env.PACKAGE_VERSION || getPackageJson().version;
 

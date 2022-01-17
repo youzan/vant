@@ -1,4 +1,3 @@
-import { get } from 'lodash-es';
 import { existsSync, readFileSync } from 'fs';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { join, dirname, isAbsolute } from 'path';
@@ -74,7 +73,7 @@ export function getVantConfig() {
 
 function getSrcDir() {
   const vantConfig = getVantConfig();
-  const srcDir = get(vantConfig, 'build.srcDir');
+  const srcDir = vantConfig.build?.srcDir;
 
   if (srcDir) {
     if (isAbsolute(srcDir)) {

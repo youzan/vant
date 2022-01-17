@@ -1,5 +1,4 @@
 import markdownVetur from '@vant/markdown-vetur';
-import { get } from 'lodash-es';
 import {
   SRC_DIR,
   VETUR_DIR,
@@ -11,7 +10,7 @@ import {
 export function genVeturConfig() {
   const pkgJson = getPackageJson();
   const vantConfig = getVantConfig();
-  const options = get(vantConfig, 'build.vetur');
+  const options = vantConfig.build?.vetur;
 
   if (options) {
     markdownVetur.parseAndWrite({
