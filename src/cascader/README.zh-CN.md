@@ -198,6 +198,7 @@ export default {
 | placeholder | 未选中时的提示文案 | _string_ | `请选择` |
 | active-color | 选中状态的高亮颜色 | _string_ | `#ee0a24` |
 | closeable | 是否显示关闭图标 | _boolean_ | `true` |
+| show-header `v2.12.40` | 是否展示标题栏 | _boolean_ | `true` |
 | field-names `v2.12.4` | 自定义 `options` 结构中的字段 | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
 ### Events
