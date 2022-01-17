@@ -218,22 +218,6 @@ importers:
     devDependencies:
       release-it: 14.11.6
 
-  packages/vant-markdown-loader:
-    specifiers:
-      front-matter: ^4.0.2
-      highlight.js: ^10.7.1
-      loader-utils: ^2.0.0
-      markdown-it: ^12.0.4
-      markdown-it-anchor: ^8.0.0
-      transliteration: ^2.2.0
-    dependencies:
-      front-matter: 4.0.2
-      highlight.js: 10.7.3
-      loader-utils: 2.0.2
-      markdown-it: 12.2.0
-      markdown-it-anchor: 8.4.1_markdown-it@12.2.0
-      transliteration: 2.2.0
-
   packages/vant-markdown-vetur:
     specifiers:
       '@types/fs-extra': ^9.0.13
@@ -2280,10 +2264,6 @@ packages:
   /before-after-hook/2.2.2:
     resolution: {integrity: sha1-pujKQQKNkO4sJCIvIByQlWCRYT4=, tarball: before-after-hook/download/before-after-hook-2.2.2.tgz}
 
-  /big.js/5.2.2:
-    resolution: {integrity: sha1-ZfCvOC9Xi83HQr2cKB6cstd2gyg=, tarball: big.js/download/big.js-5.2.2.tgz}
-    dev: false
-
   /bl/4.1.0:
     resolution: {integrity: sha1-RRU1JkGCvsL7vIOmKrmM8R2fezo=, tarball: bl/download/bl-4.1.0.tgz}
     dependencies:
@@ -3085,11 +3065,6 @@ packages:
 
   /emoji-regex/9.2.2:
     resolution: {integrity: sha1-hAyIA7DYBH9P8M+WMXazLU7z7XI=, tarball: emoji-regex/download/emoji-regex-9.2.2.tgz}
-
-  /emojis-list/3.0.0:
-    resolution: {integrity: sha1-VXBmIEatKeLpFucariYKvf9Pang=, tarball: emojis-list/download/emojis-list-3.0.0.tgz}
-    engines: {node: '>= 4'}
-    dev: false
 
   /end-of-stream/1.4.4:
     resolution: {integrity: sha1-WuZKX0UFe682JuwU2gyl5LJDHrA=, tarball: end-of-stream/download/end-of-stream-1.4.4.tgz}
@@ -3916,12 +3891,6 @@ packages:
     resolution: {integrity: sha1-rE5SBHPa5nAS1hiquR7aCby0AP8=, tarball: fraction.js/download/fraction.js-4.1.1.tgz}
     dev: false
 
-  /front-matter/4.0.2:
-    resolution: {integrity: sha1-sU5U3HRc/XKTSE8yENFepO3X9NU=, tarball: front-matter/download/front-matter-4.0.2.tgz}
-    dependencies:
-      js-yaml: 3.14.1
-    dev: false
-
   /fs-extra/10.0.0:
     resolution: {integrity: sha1-n/YbZV3eU/s0qC34S7IUzoAuF8E=, tarball: fs-extra/download/fs-extra-10.0.0.tgz?cache=0&sync_timestamp=1632822706452&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ffs-extra%2Fdownload%2Ffs-extra-10.0.0.tgz}
     engines: {node: '>=12'}
@@ -4267,10 +4236,6 @@ packages:
   /he/1.2.0:
     resolution: {integrity: sha1-hK5l+n6vsWX922FWauFLrwVmTw8=, tarball: he/download/he-1.2.0.tgz?cache=0&sync_timestamp=1632822734781&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fhe%2Fdownload%2Fhe-1.2.0.tgz}
     hasBin: true
-    dev: false
-
-  /highlight.js/10.7.3:
-    resolution: {integrity: sha1-aXJy45kTVuQMPKxWanTu9oF1ZTE=, tarball: highlight.js/download/highlight.js-10.7.3.tgz}
     dev: false
 
   /highlight.js/11.3.1:
@@ -5529,15 +5494,6 @@ packages:
       strip-bom: 3.0.0
     dev: false
 
-  /loader-utils/2.0.2:
-    resolution: {integrity: sha1-1uO0+4GHByGuTghoqxHdY4NowSk=, tarball: loader-utils/download/loader-utils-2.0.2.tgz}
-    engines: {node: '>=8.9.0'}
-    dependencies:
-      big.js: 5.2.2
-      emojis-list: 3.0.0
-      json5: 2.2.0
-    dev: false
-
   /locate-path/2.0.0:
     resolution: {integrity: sha1-K1aLJl7slExtnA3pw9u7ygNUzY4=, tarball: locate-path/download/locate-path-2.0.0.tgz}
     engines: {node: '>=4'}
@@ -5663,15 +5619,6 @@ packages:
       markdown-it: '*'
     dependencies:
       '@types/markdown-it': 12.2.3
-      markdown-it: 12.2.0
-    dev: false
-
-  /markdown-it-anchor/8.4.1_markdown-it@12.2.0:
-    resolution: {integrity: sha1-KeVgWT9e24CyX9q4sj+T74qRsx4=, tarball: markdown-it-anchor/download/markdown-it-anchor-8.4.1.tgz}
-    peerDependencies:
-      '@types/markdown-it': '*'
-      markdown-it: '*'
-    dependencies:
       markdown-it: 12.2.0
     dev: false
 
