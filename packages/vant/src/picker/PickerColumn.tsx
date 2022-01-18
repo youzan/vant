@@ -1,14 +1,10 @@
-import { ref, watch, reactive, defineComponent, type InjectionKey } from 'vue';
+import { ref, reactive, defineComponent, type InjectionKey, watch } from 'vue';
 
 // Utils
-import { deepClone } from '../utils/deep-clone';
 import {
   clamp,
-  isObject,
-  unknownProp,
   numericProp,
   makeArrayProp,
-  makeNumberProp,
   preventDefault,
   createNamespace,
   makeRequiredProp,
@@ -40,21 +36,18 @@ function getElementTranslateY(element: Element) {
 
 export const PICKER_KEY: InjectionKey<PickerColumnProvide> = Symbol(name);
 
-const isOptionDisabled = (option: PickerOption) =>
-  isObject(option) && option.disabled;
-
 export default defineComponent({
   name,
 
   props: {
+    value: numericProp,
     textKey: makeRequiredProp(String),
+    options: makeArrayProp<PickerOption>(),
     readonly: Boolean,
+    valueKey: makeRequiredProp(String),
     allowHtml: Boolean,
-    className: unknownProp,
     itemHeight: makeRequiredProp(Number),
-    defaultIndex: makeNumberProp(0),
     swipeDuration: makeRequiredProp(numericProp),
-    initialOptions: makeArrayProp<PickerOption>(),
     visibleItemCount: makeRequiredProp(numericProp),
   },
 
@@ -70,15 +63,13 @@ export default defineComponent({
     const wrapper = ref<HTMLElement>();
 
     const state = reactive({
-      index: props.defaultIndex,
       offset: 0,
       duration: 0,
-      options: deepClone(props.initialOptions),
     });
 
     const touch = useTouch();
 
-    const count = () => state.options.length;
+    const count = () => props.options.length;
 
     const baseOffset = () =>
       (props.itemHeight * (+props.visibleItemCount - 1)) / 2;
@@ -87,24 +78,22 @@ export default defineComponent({
       index = clamp(index, 0, count());
 
       for (let i = index; i < count(); i++) {
-        if (!isOptionDisabled(state.options[i])) return i;
+        if (!props.options[i].disabled) return i;
       }
       for (let i = index - 1; i >= 0; i--) {
-        if (!isOptionDisabled(state.options[i])) return i;
+        if (!props.options[i].disabled) return i;
       }
+      return 0;
     };
 
-    const setIndex = (index: number, emitChange?: boolean) => {
-      index = adjustIndex(index) || 0;
+    const updateValueByIndex = (index: number) => {
+      index = adjustIndex(index);
 
       const offset = -index * props.itemHeight;
       const trigger = () => {
-        if (index !== state.index) {
-          state.index = index;
-
-          if (emitChange) {
-            emit('change', index);
-          }
+        const { value } = props.options[index];
+        if (value !== props.value) {
+          emit('change', value);
         }
       };
 
@@ -118,13 +107,6 @@ export default defineComponent({
       state.offset = offset;
     };
 
-    const setOptions = (options: PickerOption[]) => {
-      if (JSON.stringify(options) !== JSON.stringify(state.options)) {
-        state.options = deepClone(options);
-        setIndex(props.defaultIndex);
-      }
-    };
-
     const onClickItem = (index: number) => {
       if (moving || props.readonly) {
         return;
@@ -132,14 +114,7 @@ export default defineComponent({
 
       transitionEndTrigger = null;
       state.duration = DEFAULT_DURATION;
-      setIndex(index, true);
-    };
-
-    const getOptionText = (option: PickerOption) => {
-      if (isObject(option) && props.textKey in option) {
-        return option[props.textKey];
-      }
-      return option;
+      updateValueByIndex(index);
     };
 
     const getIndexByOffset = (offset: number) =>
@@ -153,7 +128,7 @@ export default defineComponent({
       const index = getIndexByOffset(distance);
 
       state.duration = +props.swipeDuration;
-      setIndex(index, true);
+      updateValueByIndex(index);
     };
 
     const stopMomentum = () => {
@@ -230,10 +205,10 @@ export default defineComponent({
 
       const index = getIndexByOffset(state.offset);
       state.duration = DEFAULT_DURATION;
-      setIndex(index, true);
+      updateValueByIndex(index);
 
       // compatible with desktop scenario
-      // use setTimeout to skip the click event Emitted after touchstart
+      // use setTimeout to skip the click event emitted after touchstart
       setTimeout(() => {
         moving = false;
       }, 0);
@@ -244,17 +219,17 @@ export default defineComponent({
         height: `${props.itemHeight}px`,
       };
 
-      return state.options.map((option, index: number) => {
-        const text = getOptionText(option);
-        const disabled = isOptionDisabled(option);
-
+      return props.options.map((option, index) => {
+        const text = option[props.textKey];
+        const { disabled } = option;
+        const value: string | number = option[props.valueKey];
         const data = {
           role: 'button',
           style: optionStyle,
           tabindex: disabled ? -1 : 0,
           class: bem('item', {
             disabled,
-            selected: index === state.index,
+            selected: value === props.value,
           }),
           onClick: () => onClickItem(index),
         };
@@ -272,39 +247,23 @@ export default defineComponent({
       });
     };
 
-    const setValue = (value: string) => {
-      const { options } = state;
-      for (let i = 0; i < options.length; i++) {
-        if (getOptionText(options[i]) === value) {
-          return setIndex(i);
-        }
-      }
-    };
-
-    const getValue = (): PickerOption => state.options[state.index];
-
-    setIndex(state.index);
-
     useParent(PICKER_KEY);
-    useExpose({
-      state,
-      setIndex,
-      getValue,
-      setValue,
-      setOptions,
-      stopMomentum,
-    });
-
-    watch(() => props.initialOptions, setOptions);
+    useExpose({ stopMomentum });
 
     watch(
-      () => props.defaultIndex,
-      (value) => setIndex(value)
+      () => props.value,
+      (value) => {
+        const index = props.options.findIndex(
+          (option) => option[props.valueKey] === value
+        );
+        const offset = -adjustIndex(index) * props.itemHeight;
+        state.offset = offset;
+      }
     );
 
     return () => (
       <div
-        class={[bem(), props.className]}
+        class={bem()}
         onTouchstart={onTouchStart}
         onTouchmove={onTouchMove}
         onTouchend={onTouchEnd}

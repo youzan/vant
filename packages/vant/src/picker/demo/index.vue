@@ -1,11 +1,17 @@
 <script setup lang="ts">
-import VanPicker from '..';
+import VanPicker, { PickerOption, PickerChangeEventParams } from '..';
 import VanField from '../../field';
 import VanPopup from '../../popup';
 import { ref, computed } from 'vue';
-import { dateColumns, cascadeColumns, cascadeColumnsCustomKey } from './data';
+import {
+  dateColumns,
+  cascadeColumns,
+  cascadeColumnsCustomKey,
+  basicColumns,
+} from './data';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
+import { PickerConfirmEventParams } from '../types';
 
 const t = useTranslate({
   'zh-CN': {
@@ -15,6 +21,7 @@ const t = useTranslate({
     chooseCity: '选择城市',
     showToolbar: '展示顶部栏',
     dateColumns: dateColumns['zh-CN'],
+    basicColumns: basicColumns['zh-CN'],
     defaultIndex: '默认选中项',
     disableOption: '禁用选项',
     cascadeColumns: cascadeColumns['zh-CN'],
@@ -22,16 +29,6 @@ const t = useTranslate({
     setColumnValues: '动态设置选项',
     customChildrenKey: '自定义 Columns 结构',
     customChildrenColumns: cascadeColumnsCustomKey['zh-CN'],
-    textColumns: [
-      '杭州',
-      '宁波',
-      '温州',
-      '绍兴',
-      '湖州',
-      '嘉兴',
-      '金华',
-      '衢州',
-    ],
     disabledColumns: [
       { text: '杭州', disabled: true },
       { text: '宁波' },
@@ -41,8 +38,7 @@ const t = useTranslate({
       浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
       福建: ['福州', '厦门', '莆田', '三明', '泉州'],
     },
-    toastContent: (value: string, index: number) =>
-      `当前值：${value}, 当前索引：${index}`,
+    toastContent: (value: string) => `当前值：${value}`,
   },
   'en-US': {
     city: 'City',
@@ -51,6 +47,7 @@ const t = useTranslate({
     chooseCity: 'Choose City',
     showToolbar: 'Show Toolbar',
     dateColumns: dateColumns['en-US'],
+    basicColumns: basicColumns['en-US'],
     defaultIndex: 'Default Index',
     disableOption: 'Disable Option',
     cascadeColumns: cascadeColumns['en-US'],
@@ -58,7 +55,6 @@ const t = useTranslate({
     setColumnValues: 'Set Column Values',
     customChildrenKey: 'Custom Columns Fields',
     customChildrenColumns: cascadeColumnsCustomKey['en-US'],
-    textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
     disabledColumns: [
       { text: 'Delaware', disabled: true },
       { text: 'Florida' },
@@ -96,16 +92,16 @@ const columns = computed(() => {
   ];
 });
 
-const onChange1 = (value: string, index: number) => {
-  Toast(t('toastContent', value, index));
+const onChange1 = ({ selectedValues }: PickerChangeEventParams) => {
+  Toast(t('toastContent', selectedValues.join(',')));
 };
 
 const onChange2 = (values: string[]) => {
   picker.value.setColumnValues(1, t('column3')[values[0]]);
 };
 
-const onConfirm = (value: string, index: number) => {
-  Toast(t('toastContent', value, index));
+const onConfirm = ({ selectedValues }: PickerConfirmEventParams) => {
+  Toast(t('toastContent', selectedValues.join(',')));
 };
 
 const onCancel = () => Toast(t('cancel'));
@@ -128,17 +124,9 @@ const onConfirm2 = (value: string) => {
   <demo-block card :title="t('basicUsage')">
     <van-picker
       :title="t('title')"
-      :columns="t('textColumns')"
+      :columns="t('basicColumns')"
       @change="onChange1"
-    />
-  </demo-block>
-
-  <demo-block card :title="t('defaultIndex')">
-    <van-picker
-      :title="t('title')"
-      :columns="t('textColumns')"
-      :default-index="2"
-      @change="onChange1"
+      @confirm="onConfirm"
     />
   </demo-block>
 
@@ -155,6 +143,8 @@ const onConfirm2 = (value: string) => {
     <van-picker :title="t('title')" :columns="t('cascadeColumns')" />
   </demo-block>
 
+  <!-- 
+ 
   <demo-block card :title="t('disableOption')">
     <van-picker :title="t('title')" :columns="t('disabledColumns')" />
   </demo-block>
@@ -196,5 +186,5 @@ const onConfirm2 = (value: string) => {
       :columns="t('customChildrenColumns')"
       :columns-field-names="customFieldName"
     />
-  </demo-block>
+  </demo-block> -->
 </template>
