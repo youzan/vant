@@ -40,6 +40,7 @@ module.exports = {
             { group: 'Display', show: true, name: 'iconv', alias: '图标' },
             { group: 'Data', show: true, name: 'list-view', alias: '数据列表' },
             { group: 'Data', show: true, name: 'for-components', alias: '组件列表' },
+            { group: 'Data', show: true, name: 'gallery', alias: '画廊' },
             { group: 'Form', show: true, name: 'form', alias: '表单' },
             { group: 'Form', show: true, name: 'fieldinput', alias: '单行输入' },
             // { group: 'Form', show: true, name: 'u-number-input', alias: '数字输入' },

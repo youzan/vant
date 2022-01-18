@@ -355,6 +355,10 @@ module.exports = {
                 path: 'for-components',
                 title: '组件列表',
               },
+              {
+                path: 'gallery',
+                title: 'gallery 画廊',
+              },
             ],
           },
           {
@@ -761,6 +765,10 @@ module.exports = {
               {
                 path: 'for-components',
                 title: '组件列表',
+              },
+              {
+                path: 'gallery',
+                title: 'gallery 画廊',
               },
             ],
           },

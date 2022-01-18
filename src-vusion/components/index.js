@@ -101,6 +101,6 @@ export { default as VanToast } from '../../src/toast';
 export { default as VanTreeSelect } from '../../src/tree-select';
 export { default as VanUploader } from '../../src/uploader';
 export { default as VanForComponents } from '../../src/for-components';
-
+export { default as VanGallery } from '../../src/gallery';
 
 export * from './list-view';

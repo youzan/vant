@@ -1,0 +1,14 @@
+- name: u-gallery
+  title: 画廊
+  icon: gallery
+  labels:
+    - Display
+  description: 画廊
+  attrs:
+  - name: data-source
+    title: 数据源
+    type: Array<Item> | Function | object
+    default: '["https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg", "https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg", "https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg", "https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg", "https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg"]'
+    description: 数据源
+  slots: false
+  events:
