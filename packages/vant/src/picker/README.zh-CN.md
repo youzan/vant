@@ -43,13 +43,21 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const columns = ['杭州', '宁波', '温州', '绍兴', '湖州', '嘉兴', '金华'];
-
-    const onConfirm = (value, index) => {
-      Toast(`当前值: ${value}, 当前索引: ${index}`);
+    const columns = [
+      { text: '杭州', value: 'Hangzhou' },
+      { text: '宁波', value: 'Ningbo' },
+      { text: '温州', value: 'Wenzhou' },
+      { text: '绍兴', value: 'Shaoxing' },
+      { text: '湖州', value: 'Huzhou' },
+      { text: '嘉兴', value: 'Jiaxing' },
+      { text: '金华', value: 'Jinhua' },
+      { text: '衢州', value: 'Quzhou' },
+    ];
+    const onConfirm = (option, index) => {
+      Toast(`当前值: ${option.value}, 当前索引: ${index}`);
     };
-    const onChange = (value, index) => {
-      Toast(`当前值: ${value}, 当前索引: ${index}`);
+    const onChange = (option, index) => {
+      Toast(`当前值: ${option.value}, 当前索引: ${index}`);
     };
     const onCancel = () => Toast('取消');
 
@@ -63,17 +71,9 @@ export default {
 };
 ```
 
-### 默认选中项
-
-单列选择时，可以通过 `default-index` 属性设置初始选中项的索引。
-
-```html
-<van-picker title="标题" :columns="columns" :default-index="2" />
-```
-
 ### 多列选择
 
-`columns` 属性可以通过对象数组的形式配置多列选择，对象中可以配置选项数据、初始选中项等，详细格式见[下方表格](#/zh-CN/picker#column-shu-ju-jie-gou)。
+`columns` 属性可以通过二维数组的形式配置多列选择。
 
 ```html
 <van-picker title="标题" :columns="columns" />
@@ -84,15 +84,19 @@ export default {
   setup() {
     const columns = [
       // 第一列
-      {
-        values: ['周一', '周二', '周三', '周四', '周五'],
-        defaultIndex: 2,
-      },
+      [
+        { text: '周一', value: 'Monday' },
+        { text: '周二', value: 'Tuesday' },
+        { text: '周三', value: 'Wednesday' },
+        { text: '周四', value: 'Thursday' },
+        { text: '周五', value: 'Friday' },
+      ],
       // 第二列
-      {
-        values: ['上午', '下午', '晚上'],
-        defaultIndex: 1,
-      },
+      [
+        { text: '上午', value: 'Morning' },
+        { text: '下午', value: 'Afternoon' },
+        { text: '晚上', value: 'Evening' },
+      ],
     ];
 
     return { columns };

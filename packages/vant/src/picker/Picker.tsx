@@ -9,6 +9,7 @@ import {
 
 // Utils
 import {
+  isDef,
   extend,
   unitToPx,
   truthProp,
@@ -32,12 +33,11 @@ import Column, { PICKER_KEY } from './PickerColumn';
 // Types
 import type {
   PickerColumn,
-  PickerOption,
   PickerExpose,
   PickerFieldNames,
-  PickerObjectColumn,
   PickerToolbarPosition,
 } from './types';
+import { PickerOption } from '.';
 
 const [name, bem, t] = createNamespace('picker');
 
@@ -55,7 +55,8 @@ export const pickerSharedProps = {
 };
 
 const pickerProps = extend({}, pickerSharedProps, {
-  columns: makeArrayProp<PickerOption | PickerColumn>(),
+  columns: makeArrayProp<PickerColumn | PickerColumn[]>(),
+  modelValue: makeArrayProp<number | string>(),
   defaultIndex: makeNumericProp(0),
   toolbarPosition: makeStringProp<PickerToolbarPosition>('top'),
   columnsFieldNames: Object as PropType<PickerFieldNames>,
@@ -68,20 +69,21 @@ export default defineComponent({
 
   props: pickerProps,
 
-  emits: ['confirm', 'cancel', 'change'],
+  emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
     const hasOptions = ref(false);
-    const formattedColumns = ref<PickerObjectColumn[]>([]);
+    const selectedValues = ref(props.modelValue);
+    const currentColumns = ref<PickerColumn[]>([]);
 
     const {
       text: textKey,
-      values: valuesKey,
+      value: valueKey,
       children: childrenKey,
     } = extend(
       {
         text: 'text',
-        values: 'values',
+        value: 'value',
         children: 'children',
       },
       props.columnsFieldNames
@@ -95,186 +97,78 @@ export default defineComponent({
 
     const dataType = computed(() => {
       const firstColumn = props.columns[0];
-      if (typeof firstColumn === 'object') {
-        if (childrenKey in firstColumn) {
-          return 'cascade';
-        }
-        if (valuesKey in firstColumn) {
-          return 'object';
-        }
+      if (Array.isArray(firstColumn)) {
+        return 'multiple';
       }
-      return 'plain';
+      if (childrenKey in firstColumn) {
+        return 'cascade';
+      }
+      return 'default';
     });
 
+    const findOption = (options: PickerOption[], value: number | string) =>
+      options.find((option) => option[valueKey] === value);
+
     const formatCascade = () => {
-      const formatted: PickerObjectColumn[] = [];
+      const formatted: PickerColumn[] = [];
 
-      let cursor: PickerObjectColumn = {
+      let cursor: PickerOption | undefined = {
         [childrenKey]: props.columns,
       };
+      let columnIndex = 0;
 
       while (cursor && cursor[childrenKey]) {
-        const children = cursor[childrenKey];
-        let defaultIndex = cursor.defaultIndex ?? +props.defaultIndex;
+        const options: PickerOption[] = cursor[childrenKey];
+        const value = selectedValues.value[columnIndex];
 
-        while (children[defaultIndex] && children[defaultIndex].disabled) {
-          if (defaultIndex < children.length - 1) {
-            defaultIndex++;
-          } else {
-            defaultIndex = 0;
-            break;
-          }
+        cursor = isDef(value) ? findOption(options, value) : undefined;
+
+        if (!cursor && options.length) {
+          const firstValue = options[0][valueKey];
+          selectedValues.value[columnIndex] = firstValue;
+          cursor = findOption(options, firstValue);
         }
 
-        formatted.push({
-          [valuesKey]: cursor[childrenKey],
-          className: cursor.className,
-          defaultIndex,
-        });
-
-        cursor = children[defaultIndex];
-      }
-
-      formattedColumns.value = formatted;
-    };
-
-    const format = () => {
-      const { columns } = props;
-
-      if (dataType.value === 'plain') {
-        formattedColumns.value = [{ [valuesKey]: columns }];
-      } else if (dataType.value === 'cascade') {
-        formatCascade();
-      } else {
-        formattedColumns.value = columns as PickerObjectColumn[];
-      }
-
-      hasOptions.value = formattedColumns.value.some(
-        (item) => item[valuesKey] && item[valuesKey].length !== 0
-      );
-    };
-
-    // get indexes of all columns
-    const getIndexes = () => children.map((child) => child.state.index);
-
-    // set options of column by index
-    const setColumnValues = (index: number, options: PickerOption[]) => {
-      const column = children[index];
-      if (column) {
-        column.setOptions(options);
-        hasOptions.value = true;
-      }
-    };
-
-    const onCascadeChange = (columnIndex: number) => {
-      let cursor: PickerObjectColumn = {
-        [childrenKey]: props.columns,
-      };
-      const indexes = getIndexes();
-
-      for (let i = 0; i <= columnIndex; i++) {
-        cursor = cursor[childrenKey][indexes[i]];
-      }
-
-      while (cursor && cursor[childrenKey]) {
         columnIndex++;
-        setColumnValues(columnIndex, cursor[childrenKey]);
-        cursor = cursor[childrenKey][cursor.defaultIndex || 0];
+        formatted.push(options);
       }
+
+      return formatted;
     };
 
-    // get column instance by index
-    const getChild = (index: number) => children[index];
+    const selectedOptions = computed(() =>
+      currentColumns.value.map((options, index) =>
+        findOption(options, selectedValues.value[index])
+      )
+    );
 
-    // get column value by index
-    const getColumnValue = (index: number) => {
-      const column = getChild(index);
-      if (column) {
-        return column.getValue();
-      }
-    };
+    const onChange = (value: number | string, columnIndex: number) => {
+      selectedValues.value[columnIndex] = value;
 
-    // set column value by index
-    const setColumnValue = (index: number, value: string) => {
-      const column = getChild(index);
-      if (column) {
-        column.setValue(value);
-        if (dataType.value === 'cascade') {
-          onCascadeChange(index);
-        }
-      }
-    };
-
-    // get column option index by column index
-    const getColumnIndex = (index: number) => {
-      const column = getChild(index);
-      if (column) {
-        return column.state.index;
-      }
-    };
-
-    // set column option index by column index
-    const setColumnIndex = (columnIndex: number, optionIndex: number) => {
-      const column = getChild(columnIndex);
-      if (column) {
-        column.setIndex(optionIndex);
-        if (dataType.value === 'cascade') {
-          onCascadeChange(columnIndex);
-        }
-      }
-    };
-
-    // get options of column by index
-    const getColumnValues = (index: number) => {
-      const column = getChild(index);
-      if (column) {
-        return column.state.options;
-      }
-    };
-
-    // get values of all columns
-    const getValues = () => children.map((child) => child.getValue());
-
-    // set values of all columns
-    const setValues = (values: string[]) => {
-      values.forEach((value, index) => {
-        setColumnValue(index, value);
-      });
-    };
-
-    // set indexes of all columns
-    const setIndexes = (indexes: number[]) => {
-      indexes.forEach((optionIndex, columnIndex) => {
-        setColumnIndex(columnIndex, optionIndex);
-      });
-    };
-
-    const emitAction = (event: 'confirm' | 'cancel') => {
-      if (dataType.value === 'plain') {
-        emit(event, getColumnValue(0), getColumnIndex(0));
-      } else {
-        emit(event, getValues(), getIndexes());
-      }
-    };
-
-    const onChange = (columnIndex: number) => {
       if (dataType.value === 'cascade') {
-        onCascadeChange(columnIndex);
+        currentColumns.value = formatCascade();
       }
 
-      if (dataType.value === 'plain') {
-        emit('change', getColumnValue(0), getColumnIndex(0));
-      } else {
-        emit('change', getValues(), columnIndex);
-      }
+      emit('change', {
+        columnIndex,
+        selectedValues: selectedValues.value,
+        selectedOptions: selectedOptions.value,
+      });
     };
 
     const confirm = () => {
       children.forEach((child) => child.stopMomentum());
-      emitAction('confirm');
+      emit('confirm', {
+        selectedValues: selectedValues.value,
+        selectedOptions: selectedOptions.value,
+      });
     };
 
-    const cancel = () => emitAction('cancel');
+    const cancel = () =>
+      emit('cancel', {
+        selectedValues: selectedValues.value,
+        selectedOptions: selectedOptions.value,
+      });
 
     const renderTitle = () => {
       if (slots.title) {
@@ -324,19 +218,19 @@ export default defineComponent({
     };
 
     const renderColumnItems = () =>
-      formattedColumns.value.map((item, columnIndex) => (
+      currentColumns.value.map((options, columnIndex) => (
         <Column
           v-slots={{ option: slots.option }}
+          value={selectedValues.value[columnIndex]}
           textKey={textKey}
+          options={options}
           readonly={props.readonly}
+          valueKey={valueKey}
           allowHtml={props.allowHtml}
-          className={item.className}
           itemHeight={itemHeight.value}
-          defaultIndex={item.defaultIndex ?? +props.defaultIndex}
           swipeDuration={props.swipeDuration}
-          initialOptions={item[valuesKey]}
           visibleItemCount={props.visibleItemCount}
-          onChange={() => onChange(columnIndex)}
+          onChange={(value: number | string) => onChange(value, columnIndex)}
         />
       ));
 
@@ -371,21 +265,50 @@ export default defineComponent({
       );
     };
 
-    watch(() => props.columns, format, { immediate: true });
+    watch(
+      () => props.columns,
+      () => {
+        const { columns } = props;
 
-    useExpose<PickerExpose>({
-      confirm,
-      getValues,
-      setValues,
-      getIndexes,
-      setIndexes,
-      getColumnIndex,
-      setColumnIndex,
-      getColumnValue,
-      setColumnValue,
-      getColumnValues,
-      setColumnValues,
+        switch (dataType.value) {
+          case 'multiple':
+            currentColumns.value = columns;
+            break;
+          case 'cascade':
+            currentColumns.value = formatCascade();
+            break;
+          default:
+            currentColumns.value = [columns];
+            break;
+        }
+
+        currentColumns.value.forEach((options, index) => {
+          if (selectedValues.value[index] === undefined && options.length) {
+            selectedValues.value[index] = options[0][valueKey];
+          }
+        });
+
+        hasOptions.value = currentColumns.value.some(
+          (options) => !!options.length
+        );
+      },
+      { immediate: true }
+    );
+
+    watch(
+      () => props.modelValue,
+      (value) => {
+        selectedValues.value = value;
+      }
+    );
+
+    watch(selectedValues, () => {
+      if (selectedValues.value !== props.modelValue) {
+        emit('update:modelValue', selectedValues.value);
+      }
     });
+
+    useExpose<PickerExpose>({ confirm });
 
     return () => (
       <div class={bem()}>

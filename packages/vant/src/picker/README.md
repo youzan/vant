@@ -35,13 +35,18 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const columns = ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'];
-
-    const onConfirm = (value, index) => {
-      Toast(`Value: ${value}, Index: ${index}`);
+    const columns = [
+      { text: 'Delaware', value: 'Delaware' },
+      { text: 'Florida', value: 'Florida' },
+      { text: 'Georqia', value: 'Georqia' },
+      { text: 'Indiana', value: 'Indiana' },
+      { text: 'Maine', value: 'Maine' },
+    ];
+    const onConfirm = (option, index) => {
+      Toast(`Value: ${option.value}, Index: ${index}`);
     };
-    const onChange = (value, index) => {
-      Toast(`Value: ${value}, Index: ${index}`);
+    const onChange = (option, index) => {
+      Toast(`Value: ${option.value}, Index: ${index}`);
     };
     const onCancel = () => Toast('Cancel');
 
@@ -55,12 +60,6 @@ export default {
 };
 ```
 
-### Default Index
-
-```html
-<van-picker title="Title" :columns="columns" :default-index="2" />
-```
-
 ### Multiple Columns
 
 ```html
@@ -71,14 +70,18 @@ export default {
 export default {
   setup() {
     const columns = [
-      {
-        values: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        defaultIndex: 2,
-      },
-      {
-        values: ['Morning', 'Afternoon', 'Evening'],
-        defaultIndex: 1,
-      },
+      [
+        { text: 'Monday', value: 'Monday' },
+        { text: 'Tuesday', value: 'Tuesday' },
+        { text: 'Wednesday', value: 'Wednesday' },
+        { text: 'Thursday', value: 'Thursday' },
+        { text: 'Friday', value: 'Friday' },
+      ],
+      [
+        { text: 'Morning', value: 'Morning' },
+        { text: 'Afternoon', value: 'Afternoon' },
+        { text: 'Evening', value: 'Evening' },
+      ],
     ];
 
     return { columns };
