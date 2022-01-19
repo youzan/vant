@@ -45,9 +45,9 @@ const INHERIT_PROPS = [
   'title',
   'loading',
   'readonly',
-  'itemHeight',
+  'optionHeight',
   'swipeDuration',
-  'visibleItemCount',
+  'visibleOptionNum',
   'cancelButtonText',
   'confirmButtonText',
 ] as const;

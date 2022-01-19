@@ -319,7 +319,7 @@ exports[`render option slot with simple columns 1`] = `
 </div>
 `;
 
-exports[`set rem item-height 1`] = `
+exports[`set rem option-height 1`] = `
 <div class="van-picker">
   <div class="van-picker__toolbar">
     <button type="button"

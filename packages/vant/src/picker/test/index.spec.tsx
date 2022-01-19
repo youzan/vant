@@ -126,8 +126,8 @@ test('column watch default index', async () => {
     props: {
       initialOptions: [disabled, ...simpleColumn],
       textKey: 'text',
-      itemHeight: 50,
-      visibleItemCount: 5,
+      optionHeight: 50,
+      visibleOptionNum: 5,
       swipeDuration: 1000,
     },
   } as any);
@@ -313,7 +313,7 @@ test('should not reset index when columns unchanged', async () => {
   expect(wrapper.emitted<[string, number]>('confirm')![0]).toEqual(['2', 1]);
 });
 
-test('set rem item-height', async () => {
+test('set rem option-height', async () => {
   const originGetComputedStyle = window.getComputedStyle;
 
   window.getComputedStyle = () => ({ fontSize: '16px' } as CSSStyleDeclaration);
@@ -321,7 +321,7 @@ test('set rem item-height', async () => {
   const wrapper = mount(Picker, {
     props: {
       columns: simpleColumn.slice(0, 2),
-      itemHeight: '10rem',
+      optionHeight: '10rem',
     },
   });
 

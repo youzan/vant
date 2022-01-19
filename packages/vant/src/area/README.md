@@ -117,9 +117,9 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 | columns-placeholder | Placeholder of columns | _string[]_ | `[]` |
 | loading | Whether to show loading prompt | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
-| item-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
+| option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | columns-num | Level of picker | _number \| string_ | `3` |
-| visible-item-count | Count of visible columns | _number \| string_ | `6` |
+| visible-option-num | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
 | is-oversea-code | The method to validate oversea code | _() => boolean_ | - |
 

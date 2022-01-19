@@ -1,4 +1,4 @@
-import { ref, reactive, defineComponent, type InjectionKey, watch } from 'vue';
+import { ref, watch, defineComponent, type InjectionKey } from 'vue';
 
 // Utils
 import {
@@ -21,10 +21,10 @@ import type { PickerOption, PickerColumnProvide } from './types';
 const DEFAULT_DURATION = 200;
 
 // 惯性滑动思路:
-// 在手指离开屏幕时，如果和上一次 move 时的间隔小于 `MOMENTUM_LIMIT_TIME` 且 move
-// 距离大于 `MOMENTUM_LIMIT_DISTANCE` 时，执行惯性滑动
-const MOMENTUM_LIMIT_TIME = 300;
-const MOMENTUM_LIMIT_DISTANCE = 15;
+// 在手指离开屏幕时，如果和上一次 move 时的间隔小于 `MOMENTUM_TIME` 且 move
+// 距离大于 `MOMENTUM_DISTANCE` 时，执行惯性滑动
+const MOMENTUM_TIME = 300;
+const MOMENTUM_DISTANCE = 15;
 
 const [name, bem] = createNamespace('picker-column');
 
@@ -46,9 +46,9 @@ export default defineComponent({
     readonly: Boolean,
     valueKey: makeRequiredProp(String),
     allowHtml: Boolean,
-    itemHeight: makeRequiredProp(Number),
+    optionHeight: makeRequiredProp(Number),
     swipeDuration: makeRequiredProp(numericProp),
-    visibleItemCount: makeRequiredProp(numericProp),
+    visibleOptionNum: makeRequiredProp(numericProp),
   },
 
   emits: ['change'],
@@ -61,18 +61,14 @@ export default defineComponent({
     let transitionEndTrigger: null | (() => void);
 
     const wrapper = ref<HTMLElement>();
-
-    const state = reactive({
-      offset: 0,
-      duration: 0,
-    });
-
+    const currentOffset = ref(0);
+    const currentDuration = ref(0);
     const touch = useTouch();
 
     const count = () => props.options.length;
 
     const baseOffset = () =>
-      (props.itemHeight * (+props.visibleItemCount - 1)) / 2;
+      (props.optionHeight * (+props.visibleOptionNum - 1)) / 2;
 
     const adjustIndex = (index: number) => {
       index = clamp(index, 0, count());
@@ -89,7 +85,7 @@ export default defineComponent({
     const updateValueByIndex = (index: number) => {
       index = adjustIndex(index);
 
-      const offset = -index * props.itemHeight;
+      const offset = -index * props.optionHeight;
       const trigger = () => {
         const { value } = props.options[index];
         if (value !== props.value) {
@@ -98,13 +94,13 @@ export default defineComponent({
       };
 
       // trigger the change event after transitionend when moving
-      if (moving && offset !== state.offset) {
+      if (moving && offset !== currentOffset.value) {
         transitionEndTrigger = trigger;
       } else {
         trigger();
       }
 
-      state.offset = offset;
+      currentOffset.value = offset;
     };
 
     const onClickItem = (index: number) => {
@@ -113,27 +109,28 @@ export default defineComponent({
       }
 
       transitionEndTrigger = null;
-      state.duration = DEFAULT_DURATION;
+      currentDuration.value = DEFAULT_DURATION;
       updateValueByIndex(index);
     };
 
     const getIndexByOffset = (offset: number) =>
-      clamp(Math.round(-offset / props.itemHeight), 0, count() - 1);
+      clamp(Math.round(-offset / props.optionHeight), 0, count() - 1);
 
     const momentum = (distance: number, duration: number) => {
       const speed = Math.abs(distance / duration);
 
-      distance = state.offset + (speed / 0.003) * (distance < 0 ? -1 : 1);
+      distance =
+        currentOffset.value + (speed / 0.003) * (distance < 0 ? -1 : 1);
 
       const index = getIndexByOffset(distance);
 
-      state.duration = +props.swipeDuration;
+      currentDuration.value = +props.swipeDuration;
       updateValueByIndex(index);
     };
 
     const stopMomentum = () => {
       moving = false;
-      state.duration = 0;
+      currentDuration.value = 0;
 
       if (transitionEndTrigger) {
         transitionEndTrigger();
@@ -150,13 +147,11 @@ export default defineComponent({
 
       if (moving) {
         const translateY = getElementTranslateY(wrapper.value!);
-        state.offset = Math.min(0, translateY - baseOffset());
-        startOffset = state.offset;
-      } else {
-        startOffset = state.offset;
+        currentOffset.value = Math.min(0, translateY - baseOffset());
       }
 
-      state.duration = 0;
+      currentDuration.value = 0;
+      startOffset = currentOffset.value;
       touchStartTime = Date.now();
       momentumOffset = startOffset;
       transitionEndTrigger = null;
@@ -174,16 +169,16 @@ export default defineComponent({
         preventDefault(event, true);
       }
 
-      state.offset = clamp(
+      currentOffset.value = clamp(
         startOffset + touch.deltaY.value,
-        -(count() * props.itemHeight),
-        props.itemHeight
+        -(count() * props.optionHeight),
+        props.optionHeight
       );
 
       const now = Date.now();
-      if (now - touchStartTime > MOMENTUM_LIMIT_TIME) {
+      if (now - touchStartTime > MOMENTUM_TIME) {
         touchStartTime = now;
-        momentumOffset = state.offset;
+        momentumOffset = currentOffset.value;
       }
     };
 
@@ -192,19 +187,18 @@ export default defineComponent({
         return;
       }
 
-      const distance = state.offset - momentumOffset;
+      const distance = currentOffset.value - momentumOffset;
       const duration = Date.now() - touchStartTime;
-      const allowMomentum =
-        duration < MOMENTUM_LIMIT_TIME &&
-        Math.abs(distance) > MOMENTUM_LIMIT_DISTANCE;
+      const startMomentum =
+        duration < MOMENTUM_TIME && Math.abs(distance) > MOMENTUM_DISTANCE;
 
-      if (allowMomentum) {
+      if (startMomentum) {
         momentum(distance, duration);
         return;
       }
 
-      const index = getIndexByOffset(state.offset);
-      state.duration = DEFAULT_DURATION;
+      const index = getIndexByOffset(currentOffset.value);
+      currentDuration.value = DEFAULT_DURATION;
       updateValueByIndex(index);
 
       // compatible with desktop scenario
@@ -216,7 +210,7 @@ export default defineComponent({
 
     const renderOptions = () => {
       const optionStyle = {
-        height: `${props.itemHeight}px`,
+        height: `${props.optionHeight}px`,
       };
 
       return props.options.map((option, index) => {
@@ -256,8 +250,8 @@ export default defineComponent({
         const index = props.options.findIndex(
           (option) => option[props.valueKey] === value
         );
-        const offset = -adjustIndex(index) * props.itemHeight;
-        state.offset = offset;
+        const offset = -adjustIndex(index) * props.optionHeight;
+        currentOffset.value = offset;
       }
     );
 
@@ -272,9 +266,11 @@ export default defineComponent({
         <ul
           ref={wrapper}
           style={{
-            transform: `translate3d(0, ${state.offset + baseOffset()}px, 0)`,
-            transitionDuration: `${state.duration}ms`,
-            transitionProperty: state.duration ? 'all' : 'none',
+            transform: `translate3d(0, ${
+              currentOffset.value + baseOffset()
+            }px, 0)`,
+            transitionDuration: `${currentDuration.value}ms`,
+            transitionProperty: currentDuration.value ? 'all' : 'none',
           }}
           class={bem('wrapper')}
           onTransitionend={stopMomentum}
