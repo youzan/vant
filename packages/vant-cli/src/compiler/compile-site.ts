@@ -5,27 +5,18 @@ import {
   getViteConfigForSiteDev,
   getViteConfigForSiteProd,
 } from '../config/vite.site.js';
-import { mergeCustomViteConfig, replaceExt } from '../common/index.js';
-import { CSS_LANG } from '../common/css.js';
+import { mergeCustomViteConfig } from '../common/index.js';
 import { genPackageEntry } from './gen-package-entry.js';
-import { genPackageStyle } from './gen-package-style.js';
-import { genSiteMobileShared } from './gen-site-mobile-shared.js';
-import { genSiteDesktopShared } from './gen-site-desktop-shared.js';
 import { genStyleDepsMap } from './gen-style-deps-map.js';
-import { PACKAGE_ENTRY_FILE, PACKAGE_STYLE_FILE } from '../common/constant.js';
+import { PACKAGE_ENTRY_FILE } from '../common/constant.js';
 
-export async function genSiteEntry(): Promise<void> {
+export function genSiteEntry(): Promise<void> {
   return new Promise((resolve, reject) => {
     genStyleDepsMap()
       .then(() => {
         genPackageEntry({
           outputPath: PACKAGE_ENTRY_FILE,
         });
-        genPackageStyle({
-          outputPath: replaceExt(PACKAGE_STYLE_FILE, `.${CSS_LANG}`),
-        });
-        genSiteMobileShared();
-        genSiteDesktopShared();
         resolve();
       })
       .catch((err) => {
