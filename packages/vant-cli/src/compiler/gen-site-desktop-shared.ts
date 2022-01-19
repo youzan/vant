@@ -5,7 +5,6 @@ import {
   isDev,
   pascalize,
   getVantConfig,
-  smartOutputFile,
   normalizePath,
 } from '../common/index.js';
 import {
@@ -13,7 +12,6 @@ import {
   DOCS_DIR,
   getPackageJson,
   VANT_CONFIG_FILE,
-  SITE_DESKTOP_SHARED_FILE,
 } from '../common/constant.js';
 
 type DocumentItem = {
@@ -122,5 +120,5 @@ ${genExportDocuments(documents)}
 ${genExportVersion()}
 `;
 
-  smartOutputFile(SITE_DESKTOP_SHARED_FILE, code);
+  return code;
 }
