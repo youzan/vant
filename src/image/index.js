@@ -93,6 +93,15 @@ export default createComponent({
   },
 
   methods: {
+    getSrc(src) {
+      try {
+          const tempSrc = JSON.parse(src);
+          const tempItem = tempSrc[0];
+          return tempItem.url;
+      } catch (e) {
+          return src;
+      }
+    },
     ifDesigner() {
       return this.$env && this.$env.VUE_APP_DESIGNER;
     },
@@ -124,7 +133,7 @@ export default createComponent({
         this.$emit('click', event);
       } else {
         if (!this.ifDesigner()) {
-          ImagePreview([this.src]);
+          ImagePreview([this.getSrc(this.src)]);
         }
       }
     },
@@ -175,12 +184,12 @@ export default createComponent({
       }
 
       if (this.lazyLoad) {
-        return <img ref="image" vLazy={this.src} {...imgData} />;
+        return <img ref="image" vLazy={this.getSrc(this.src)} {...imgData} />;
       }
 
       return (
         <img
-          src={this.src}
+          src={this.getSrc(this.src)}
           onLoad={this.onLoad}
           onError={this.onError}
           {...imgData}

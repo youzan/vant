@@ -3,7 +3,7 @@
   icon: forcom
   labels:
     - Table
-  description: 弹出框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。
+  description: 组件列表
   attrs:
     - name: data-source
       title: 数据源

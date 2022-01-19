@@ -28,6 +28,8 @@
       options:
         - title: JSON
           value: json
+        - title: Simple
+          value: simple
       default: json
       description: 转换器
     - name: result-type

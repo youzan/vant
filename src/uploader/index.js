@@ -128,7 +128,7 @@ export default createComponent({
   },
   methods: {
     fromValue(value) {
-      if (this.converter === 'json')
+      if (this.converter === 'json' || this.converter === 'simple')
           try {
             if(value === null || value === '') return [];
             if(typeof value === 'string') return JSON.parse(value || '[]');
@@ -143,8 +143,13 @@ export default createComponent({
         if (this.converter === 'json')
             // fix for u-validator rules="required"
             return Array.isArray(value) && value.length === 0 ? '[]' : JSON.stringify(value);
+        if (this.converter === 'simple')
+            return Array.isArray(value) && value.length === 0 ? '[]' : JSON.stringify(this.simpleConvert(value));
         else
             return value;
+    },
+    simpleConvert(value) {
+      return value.map((x) => ({ url: x.url }));
     },
     getDetail(index = this.fileList.length) {
       return {
@@ -550,7 +555,8 @@ export default createComponent({
 
                 if (this.canUp) {
                   const value = this.fileList.map(file => {
-                    return {url: file.url}
+                    // return {url: file.url}
+                    return file;
                   })
                   this.$emit('input', this.toValue(value));
                   this.$emit('update:fileListProp', this.toValue(value));
