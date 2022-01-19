@@ -92,7 +92,7 @@ function getHTMLMeta(vantConfig: any) {
   return '';
 }
 
-function genCode(): PluginOption {
+function vitePluginGenVantBaseCode(): PluginOption {
   const virtualMobileModuleId = 'site-mobile-shared';
   const resolvedMobileVirtualModuleId = `vant-cli:${virtualMobileModuleId}`;
 
@@ -103,7 +103,7 @@ function genCode(): PluginOption {
   const resolvedPackageStyleVirtualModuleId = `vant-cli${virtualPackageStyleModuleId}index.${CSS_LANG}`;
 
   return {
-    name: 'gen-site-code',
+    name: 'vite-plugin(vant-cli):gen-site-base-code',
     resolveId(id) {
       if (id === virtualMobileModuleId) {
         return resolvedMobileVirtualModuleId;
@@ -145,7 +145,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
     root: SITE_SRC_DIR,
 
     plugins: [
-      genCode(),
+      vitePluginGenVantBaseCode(),
       vitePluginVue({
         include: [/\.vue$/, /\.md$/],
       }),
