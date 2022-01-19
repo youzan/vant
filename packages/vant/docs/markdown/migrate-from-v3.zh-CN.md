@@ -4,22 +4,28 @@
 
 本文档提供了从 Vant 3 到 Vant 4 的升级指南。
 
-### 为什么会有 Vant 4.0 ？
+## API 调整
 
-为了支持 **暗色模式**，我们对 Vant 中的 **样式变量** 进行了一些不兼容更新，因此发布了新的大版本。
+### Picker 组件重构
 
-如果你的项目没有使用主题定制，那样式变量的调整对你没有任何影响，只需要花几分钟去适配 API 调整，即可完成升级。
+在之前的版本中，Picker 组件的 API 设计存在较大问题，比如：
 
-如果你的项目使用了主题定制，请完整阅读此文档，并进行迁移。
+- columns 数据格式定义不合理，容易产生误解
+- 数据流不清晰，暴露了过多的实例方法来对数据进行操作
 
-### API 调整
+为了解决上述问题，我们在 v4 版本中对 Picker 组件进行了重构（同时也影响 Area 和 DatetimePicker 组件）。
 
-4.0 版本对少量 API 进行了不兼容调整：
+#### 主要变更
 
-#### Picker
+- 重新定义了 `columns` 属性的结构
+- 移除了所有操作内部数据的实例方法
+- 调整了 `confirm`、`cancel`、`change` 事件的参数
+- 重命名 `item-height` 属性为 `option-height`
+- 重命名 `visible-item-count` 属性为 `visible-option-num`
 
-- `default` 插槽重命名为 `toolbar`
-- 移除了 `value-key` 属性，使用 `columnsFieldNames` 属性代替
+### 其他 API 调整
+
+4.0 版本中，以下 API 进行了不兼容更新：
 
 #### Tabs
 
