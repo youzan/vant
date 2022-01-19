@@ -39,6 +39,7 @@ import Column, { PICKER_KEY } from './PickerColumn';
 import type {
   PickerColumn,
   PickerExpose,
+  PickerOption,
   PickerFieldNames,
   PickerToolbarPosition,
 } from './types';
@@ -59,7 +60,7 @@ export const pickerSharedProps = {
 };
 
 const pickerProps = extend({}, pickerSharedProps, {
-  columns: makeArrayProp<PickerColumn | PickerColumn[]>(),
+  columns: makeArrayProp<PickerOption | PickerColumn>(),
   modelValue: makeArrayProp<number | string>(),
   toolbarPosition: makeStringProp<PickerToolbarPosition>('top'),
   columnsFieldNames: Object as PropType<PickerFieldNames>,
