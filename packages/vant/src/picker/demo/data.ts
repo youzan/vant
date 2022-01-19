@@ -144,7 +144,7 @@ export const cascadeColumns = {
   ],
 };
 
-export const cascadeColumnsCustomKey = {
+export const customKeyColumns = {
   'zh-CN': [
     {
       cityName: '浙江',
@@ -200,5 +200,18 @@ export const cascadeColumnsCustomKey = {
         },
       ],
     },
+  ],
+};
+
+export const disabledColumns = {
+  'zh-CN': [
+    { text: '杭州', value: 'Hangzhou', disabled: true },
+    { text: '宁波', value: 'Ningbo' },
+    { text: '温州', value: 'Wenzhou' },
+  ],
+  'en-US': [
+    { text: 'Delaware', value: 'Delaware', disabled: true },
+    { text: 'Florida', value: 'Florida' },
+    { text: 'Georqia', value: 'Georqia' },
   ],
 };

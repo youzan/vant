@@ -10,7 +10,9 @@ export type {
   PickerInstance,
   PickerFieldNames,
   PickerToolbarPosition,
+  PickerCancelEventParams,
   PickerChangeEventParams,
+  PickerConfirmEventParams,
 } from './types';
 
 declare module 'vue' {

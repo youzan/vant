@@ -1,4 +1,10 @@
-import { ref, watch, defineComponent, type InjectionKey } from 'vue';
+import {
+  ref,
+  watchEffect,
+  defineComponent,
+  type PropType,
+  type InjectionKey,
+} from 'vue';
 
 // Utils
 import {
@@ -9,6 +15,7 @@ import {
   createNamespace,
   makeRequiredProp,
 } from '../utils';
+import { getElementTranslateY, findIndexOfEnabledOption } from './utils';
 
 // Composables
 import { useParent } from '@vant/use';
@@ -16,7 +23,11 @@ import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
 // Types
-import type { PickerOption, PickerColumnProvide } from './types';
+import type {
+  PickerOption,
+  PickerFieldNames,
+  PickerColumnProvide,
+} from './types';
 
 const DEFAULT_DURATION = 200;
 
@@ -28,12 +39,6 @@ const MOMENTUM_DISTANCE = 15;
 
 const [name, bem] = createNamespace('picker-column');
 
-function getElementTranslateY(element: Element) {
-  const { transform } = window.getComputedStyle(element);
-  const translateY = transform.slice(7, transform.length - 1).split(', ')[5];
-  return Number(translateY);
-}
-
 export const PICKER_KEY: InjectionKey<PickerColumnProvide> = Symbol(name);
 
 export default defineComponent({
@@ -41,10 +46,9 @@ export default defineComponent({
 
   props: {
     value: numericProp,
-    textKey: makeRequiredProp(String),
+    fields: makeRequiredProp(Object as PropType<Required<PickerFieldNames>>),
     options: makeArrayProp<PickerOption>(),
     readonly: Boolean,
-    valueKey: makeRequiredProp(String),
     allowHtml: Boolean,
     optionHeight: makeRequiredProp(Number),
     swipeDuration: makeRequiredProp(numericProp),
@@ -70,24 +74,12 @@ export default defineComponent({
     const baseOffset = () =>
       (props.optionHeight * (+props.visibleOptionNum - 1)) / 2;
 
-    const adjustIndex = (index: number) => {
-      index = clamp(index, 0, count());
-
-      for (let i = index; i < count(); i++) {
-        if (!props.options[i].disabled) return i;
-      }
-      for (let i = index - 1; i >= 0; i--) {
-        if (!props.options[i].disabled) return i;
-      }
-      return 0;
-    };
-
     const updateValueByIndex = (index: number) => {
-      index = adjustIndex(index);
+      const enabledIndex = findIndexOfEnabledOption(props.options, index);
+      const offset = -enabledIndex * props.optionHeight;
 
-      const offset = -index * props.optionHeight;
       const trigger = () => {
-        const { value } = props.options[index];
+        const value = props.options[enabledIndex][props.fields.value];
         if (value !== props.value) {
           emit('change', value);
         }
@@ -214,9 +206,9 @@ export default defineComponent({
       };
 
       return props.options.map((option, index) => {
-        const text = option[props.textKey];
+        const text = option[props.fields.text];
         const { disabled } = option;
-        const value: string | number = option[props.valueKey];
+        const value: string | number = option[props.fields.value];
         const data = {
           role: 'button',
           style: optionStyle,
@@ -244,16 +236,14 @@ export default defineComponent({
     useParent(PICKER_KEY);
     useExpose({ stopMomentum });
 
-    watch(
-      () => props.value,
-      (value) => {
-        const index = props.options.findIndex(
-          (option) => option[props.valueKey] === value
-        );
-        const offset = -adjustIndex(index) * props.optionHeight;
-        currentOffset.value = offset;
-      }
-    );
+    watchEffect(() => {
+      const index = props.options.findIndex(
+        (option) => option[props.fields.value] === props.value
+      );
+      const enabledIndex = findIndexOfEnabledOption(props.options, index);
+      const offset = -enabledIndex * props.optionHeight;
+      currentOffset.value = offset;
+    });
 
     return () => (
       <div
