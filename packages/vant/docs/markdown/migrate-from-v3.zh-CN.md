@@ -17,6 +17,7 @@
 
 #### 主要变更
 
+- 支持通过 `v-model` 绑定当前选中的值，移除 `default-index` 属性
 - 重新定义了 `columns` 属性的结构
 - 移除了所有操作内部数据的实例方法
 - 调整了 `confirm`、`cancel`、`change` 事件的参数
