@@ -9,7 +9,6 @@ import {
 
 // Utils
 import {
-  isDef,
   extend,
   unitToPx,
   truthProp,
@@ -21,6 +20,12 @@ import {
   HAPTICS_FEEDBACK,
   BORDER_UNSET_TOP_BOTTOM,
 } from '../utils';
+import {
+  getColumnsType,
+  findOptionByValue,
+  formatCascadeColumns,
+  getFirstEnabledOption,
+} from './utils';
 
 // Composables
 import { useChildren } from '@vant/use';
@@ -34,7 +39,6 @@ import Column, { PICKER_KEY } from './PickerColumn';
 import type {
   PickerColumn,
   PickerExpose,
-  PickerOption,
   PickerFieldNames,
   PickerToolbarPosition,
 } from './types';
@@ -76,77 +80,41 @@ export default defineComponent({
     const selectedValues = ref(props.modelValue);
     const currentColumns = ref<PickerColumn[]>([]);
 
-    const {
-      text: textKey,
-      value: valueKey,
-      children: childrenKey,
-    } = extend(
-      {
-        text: 'text',
-        value: 'value',
-        children: 'children',
-      },
-      props.columnsFieldNames
-    );
-
     const { children, linkChildren } = useChildren(PICKER_KEY);
 
     linkChildren();
 
+    const fields = computed(
+      (): Required<PickerFieldNames> =>
+        extend(
+          {
+            text: 'text',
+            value: 'value',
+            children: 'children',
+          },
+          props.columnsFieldNames
+        )
+    );
     const optionHeight = computed(() => unitToPx(props.optionHeight));
-
-    const dataType = computed(() => {
-      const firstColumn = props.columns[0];
-      if (Array.isArray(firstColumn)) {
-        return 'multiple';
-      }
-      if (childrenKey in firstColumn) {
-        return 'cascade';
-      }
-      return 'default';
-    });
-
-    const findOption = (options: PickerOption[], value: number | string) =>
-      options.find((option) => option[valueKey] === value);
-
-    const formatCascade = () => {
-      const formatted: PickerColumn[] = [];
-
-      let cursor: PickerOption | undefined = {
-        [childrenKey]: props.columns,
-      };
-      let columnIndex = 0;
-
-      while (cursor && cursor[childrenKey]) {
-        const options: PickerOption[] = cursor[childrenKey];
-        const value = selectedValues.value[columnIndex];
-
-        cursor = isDef(value) ? findOption(options, value) : undefined;
-
-        if (!cursor && options.length) {
-          const firstValue = options[0][valueKey];
-          selectedValues.value[columnIndex] = firstValue;
-          cursor = findOption(options, firstValue);
-        }
-
-        columnIndex++;
-        formatted.push(options);
-      }
-
-      return formatted;
-    };
+    const columnsType = computed(() =>
+      getColumnsType(props.columns, fields.value)
+    );
 
     const selectedOptions = computed(() =>
       currentColumns.value.map((options, index) =>
-        findOption(options, selectedValues.value[index])
+        findOptionByValue(options, selectedValues.value[index], fields.value)
       )
     );
 
     const onChange = (value: number | string, columnIndex: number) => {
       selectedValues.value[columnIndex] = value;
 
-      if (dataType.value === 'cascade') {
-        currentColumns.value = formatCascade();
+      if (columnsType.value === 'cascade') {
+        currentColumns.value = formatCascadeColumns(
+          props.columns,
+          fields.value,
+          selectedValues
+        );
       }
 
       emit('change', {
@@ -222,10 +190,9 @@ export default defineComponent({
         <Column
           v-slots={{ option: slots.option }}
           value={selectedValues.value[columnIndex]}
-          textKey={textKey}
+          fields={fields.value}
           options={options}
           readonly={props.readonly}
-          valueKey={valueKey}
           allowHtml={props.allowHtml}
           optionHeight={optionHeight.value}
           swipeDuration={props.swipeDuration}
@@ -265,26 +232,27 @@ export default defineComponent({
       );
     };
 
+    const formatColumns = (
+      columns: PickerColumn | PickerColumn[]
+    ): PickerColumn[] => {
+      switch (columnsType.value) {
+        case 'multiple':
+          return columns as PickerColumn[];
+        case 'cascade':
+          return formatCascadeColumns(columns, fields.value, selectedValues);
+        default:
+          return [columns];
+      }
+    };
+
     watch(
       () => props.columns,
-      () => {
-        const { columns } = props;
-
-        switch (dataType.value) {
-          case 'multiple':
-            currentColumns.value = columns;
-            break;
-          case 'cascade':
-            currentColumns.value = formatCascade();
-            break;
-          default:
-            currentColumns.value = [columns];
-            break;
-        }
-
+      (columns) => {
+        currentColumns.value = formatColumns(columns);
         currentColumns.value.forEach((options, index) => {
           if (selectedValues.value[index] === undefined && options.length) {
-            selectedValues.value[index] = options[0][valueKey];
+            selectedValues.value[index] =
+              getFirstEnabledOption(options)[fields.value.value];
           }
         });
 
