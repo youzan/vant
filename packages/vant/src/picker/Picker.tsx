@@ -34,10 +34,10 @@ import Column, { PICKER_KEY } from './PickerColumn';
 import type {
   PickerColumn,
   PickerExpose,
+  PickerOption,
   PickerFieldNames,
   PickerToolbarPosition,
 } from './types';
-import { PickerOption } from '.';
 
 const [name, bem, t] = createNamespace('picker');
 
@@ -46,10 +46,10 @@ export const pickerSharedProps = {
   loading: Boolean,
   readonly: Boolean,
   allowHtml: Boolean,
-  itemHeight: makeNumericProp(44),
+  optionHeight: makeNumericProp(44),
   showToolbar: truthProp,
   swipeDuration: makeNumericProp(1000),
-  visibleItemCount: makeNumericProp(6),
+  visibleOptionNum: makeNumericProp(6),
   cancelButtonText: String,
   confirmButtonText: String,
 };
@@ -93,7 +93,7 @@ export default defineComponent({
 
     linkChildren();
 
-    const itemHeight = computed(() => unitToPx(props.itemHeight));
+    const optionHeight = computed(() => unitToPx(props.optionHeight));
 
     const dataType = computed(() => {
       const firstColumn = props.columns[0];
@@ -227,18 +227,18 @@ export default defineComponent({
           readonly={props.readonly}
           valueKey={valueKey}
           allowHtml={props.allowHtml}
-          itemHeight={itemHeight.value}
+          optionHeight={optionHeight.value}
           swipeDuration={props.swipeDuration}
-          visibleItemCount={props.visibleItemCount}
+          visibleOptionNum={props.visibleOptionNum}
           onChange={(value: number | string) => onChange(value, columnIndex)}
         />
       ));
 
     const renderMask = (wrapHeight: number) => {
       if (hasOptions.value) {
-        const frameStyle = { height: `${itemHeight.value}px` };
+        const frameStyle = { height: `${optionHeight.value}px` };
         const maskStyle = {
-          backgroundSize: `100% ${(wrapHeight - itemHeight.value) / 2}px`,
+          backgroundSize: `100% ${(wrapHeight - optionHeight.value) / 2}px`,
         };
         return [
           <div class={bem('mask')} style={maskStyle} />,
@@ -251,7 +251,7 @@ export default defineComponent({
     };
 
     const renderColumns = () => {
-      const wrapHeight = itemHeight.value * +props.visibleItemCount;
+      const wrapHeight = optionHeight.value * +props.visibleOptionNum;
       const columnsStyle = { height: `${wrapHeight}px` };
       return (
         <div

@@ -119,9 +119,9 @@ export default {
 | columns-placeholder | 列占位提示文字 | _string[]_ | `[]` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
 | readonly | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
-| item-height | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
+| option-height | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | columns-num | 显示列数，3-省市区，2-省市，1-省 | _number \| string_ | `3` |
-| visible-item-count | 可见的选项个数 | _number \| string_ | `6` |
+| visible-option-num | 可见的选项个数 | _number \| string_ | `6` |
 | swipe-duration | 快速滑动时惯性滚动的时长，单位 `ms` | _number \| string_ | `1000` |
 | is-oversea-code | 根据地区码校验海外地址，海外地址会划分至单独的分类 | _() => boolean_ | - |
 

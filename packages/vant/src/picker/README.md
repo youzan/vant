@@ -329,8 +329,8 @@ export default {
 | show-toolbar | Whether to show toolbar | _boolean_ | `true` |
 | allow-html | Whether to allow HTML in option text | _boolean_ | `false` |
 | default-index | Default value index of single column picker | _number \| string_ | `0` |
-| item-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
-| visible-item-count | Count of visible columns | _number \| string_ | `6` |
+| option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
+| visible-option-num | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
 
 ### Events
