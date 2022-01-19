@@ -42,11 +42,11 @@ export default {
       { text: 'Indiana', value: 'Indiana' },
       { text: 'Maine', value: 'Maine' },
     ];
-    const onConfirm = (option, index) => {
-      Toast(`Value: ${option.value}, Index: ${index}`);
+    const onConfirm = ({ selectedValues }) => {
+      Toast(`Value: ${selectedValues.join(',')}`);
     };
-    const onChange = (option, index) => {
-      Toast(`Value: ${option.value}, Index: ${index}`);
+    const onChange = ({ selectedValues }) => {
+      Toast(`Value: ${selectedValues.join(',')}`);
     };
     const onCancel = () => Toast('Cancel');
 
@@ -55,6 +55,57 @@ export default {
       onChange,
       onCancel,
       onConfirm,
+    };
+  },
+};
+```
+
+### With Popup
+
+```html
+<van-field
+  v-model="result"
+  is-link
+  readonly
+  label="City"
+  placeholder="Choose City"
+  @click="showPicker = true"
+/>
+<van-popup v-model:show="showPicker" round position="bottom">
+  <van-picker
+    title="Title"
+    :columns="columns"
+    @cancel="showPicker = false"
+    @confirm="onConfirm"
+  />
+</van-popup>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const columns = [
+      { text: 'Delaware', value: 'Delaware' },
+      { text: 'Florida', value: 'Florida' },
+      { text: 'Georqia', value: 'Georqia' },
+      { text: 'Indiana', value: 'Indiana' },
+      { text: 'Maine', value: 'Maine' },
+    ];
+    const result = ref('');
+    const showPicker = ref(false);
+
+    const onConfirm = ({ selectedOptions }) => {
+      showPicker.value = false;
+      fieldValue.value = selectedOptions[0].text;
+    };
+
+    return {
+      result,
+      columns,
+      onConfirm,
+      showPicker,
     };
   },
 };
@@ -101,27 +152,45 @@ export default {
     const columns = [
       {
         text: 'Zhejiang',
+        value: 'Zhejiang',
         children: [
           {
             text: 'Hangzhou',
-            children: [{ text: 'Xihu' }, { text: 'Yuhang' }],
+            value: 'Hangzhou',
+            children: [
+              { text: 'Xihu', value: 'Xihu' },
+              { text: 'Yuhang', value: 'Yuhang' },
+            ],
           },
           {
             text: 'Wenzhou',
-            children: [{ text: 'Lucheng' }, { text: 'Ouhai' }],
+            value: 'Wenzhou',
+            children: [
+              { text: 'Lucheng', value: 'Lucheng' },
+              { text: 'Ouhai', value: 'Ouhai' },
+            ],
           },
         ],
       },
       {
         text: 'Fujian',
+        value: 'Fujian',
         children: [
           {
             text: 'Fuzhou',
-            children: [{ text: 'Gulou' }, { text: 'Taijiang' }],
+            value: 'Fuzhou',
+            children: [
+              { text: 'Gulou', value: 'Gulou' },
+              { text: 'Taijiang', value: 'Taijiang' },
+            ],
           },
           {
             text: 'Xiamen',
-            children: [{ text: 'Siming' }, { text: 'Haicang' }],
+            value: 'Xiamen',
+            children: [
+              { text: 'Siming', value: 'Siming' },
+              { text: 'Haicang', value: 'Haicang' },
+            ],
           },
         ],
       },
@@ -142,47 +211,11 @@ export default {
 export default {
   setup() {
     const columns = [
-      { text: 'Delaware', disabled: true },
-      { text: 'Florida' },
-      { text: 'Georqia' },
+      { text: 'Delaware', value: 'Delaware', disabled: true },
+      { text: 'Florida', value: 'Florida' },
+      { text: 'Georqia', value: 'Georqia' },
     ];
-
     return { columns };
-  },
-};
-```
-
-### Set Column Values
-
-```html
-<van-picker ref="picker" title="Title" :columns="columns" @change="onChange" />
-```
-
-```js
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    const picker = ref(null);
-
-    const states = {
-      Group1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-      Group2: ['Alabama', 'Kansas', 'Louisiana', 'Texas'],
-    };
-    const columns = [
-      { values: Object.keys(states) },
-      { values: states.Group1 },
-    ];
-
-    const onChange = (values) => {
-      picker.value.setColumnValues(1, states[values[0]]);
-    };
-
-    return {
-      picker,
-      columns,
-      onChange,
-    };
   },
 };
 ```
@@ -204,56 +237,11 @@ export default {
     const loading = ref(true);
 
     setTimeout(() => {
-      columns.value = ['Option'];
+      columns.value = [{ text: 'Option', value: 'option' }];
       loading.value = false;
     }, 1000);
 
     return { columns, loading };
-  },
-};
-```
-
-### With Popup
-
-```html
-<van-field
-  v-model="result"
-  is-link
-  readonly
-  label="City"
-  placeholder="Choose City"
-  @click="showPicker = true"
-/>
-<van-popup v-model:show="showPicker" round position="bottom">
-  <van-picker
-    title="Title"
-    :columns="columns"
-    @cancel="showPicker = false"
-    @confirm="onConfirm"
-  />
-</van-popup>
-```
-
-```js
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    const columns = ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'];
-    const result = ref('');
-    const showPicker = ref(false);
-
-    const onConfirm = (value) => {
-      result.value = value;
-      showPicker.value = false;
-    };
-
-    return {
-      result,
-      columns,
-      onConfirm,
-      showPicker,
-    };
   },
 };
 ```
@@ -302,6 +290,7 @@ export default {
 
     const customFieldName = {
       text: 'cityName',
+      value: 'cityName',
       children: 'cities',
     };
 
@@ -319,8 +308,8 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| columns | Columns data | _Column[]_ | `[]` |
-| columns-field-names | custom columns field | _object_ | `{ text: 'text', values: 'values', children: 'children' }` |
+| columns | Columns data | _PickerOption[] \| PickerOption[][]_ | `[]` |
+| columns-field-names | custom columns field | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 | title | Toolbar title | _string_ | - |
 | confirm-button-text | Text of confirm button | _string_ | `Confirm` |
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |
@@ -328,59 +317,47 @@ export default {
 | loading | Whether to show loading prompt | _boolean_ | `false` |
 | show-toolbar | Whether to show toolbar | _boolean_ | `true` |
 | allow-html | Whether to allow HTML in option text | _boolean_ | `false` |
-| default-index | Default value index of single column picker | _number \| string_ | `0` |
 | option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-option-num | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
 
 ### Events
 
-Picker events will pass different parameters according to the columns are single or multiple
-
 | Event | Description | Arguments |
 | --- | --- | --- |
-| confirm | Emitted when click confirm button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
-| cancel | Emitted when click cancel button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
-| change | Emitted when current option changed | Single column：Picker instance, current value，current index<br>Multiple columns：Picker instance, current values，column index |
+| confirm | Emitted when click confirm button | _{ selectedValues, selectedOptions }_ |
+| cancel | Emitted when click cancel button | _{ selectedValues, selectedOptions }_ |
+| change | Emitted when current option changed | _{ selectedValues, selectedOptions, columnIndex }_ |
 
 ### Slots
 
-| Name            | Description                  | SlotProps                  |
-| --------------- | ---------------------------- | -------------------------- |
-| toolbar `3.1.2` | Custom toolbar content       | -                          |
-| title           | Custom title                 | -                          |
-| confirm         | Custom confirm button text   | -                          |
-| cancel          | Custom cancel button text    | -                          |
-| option          | Custom option content        | _option: string \| object_ |
-| columns-top     | Custom content above columns | -                          |
-| columns-bottom  | Custom content below columns | -                          |
+| Name            | Description                  | SlotProps              |
+| --------------- | ---------------------------- | ---------------------- |
+| toolbar `3.1.2` | Custom toolbar content       | -                      |
+| title           | Custom title                 | -                      |
+| confirm         | Custom confirm button text   | -                      |
+| cancel          | Custom cancel button text    | -                      |
+| option          | Custom option content        | _option: PickerOption_ |
+| columns-top     | Custom content above columns | -                      |
+| columns-bottom  | Custom content below columns | -                      |
 
-### Data Structure of Column
+### Data Structure of PickerOption
 
-| Key          | Description               | Type                        |
-| ------------ | ------------------------- | --------------------------- |
-| values       | Value of column           | _Array<string \| number>_   |
-| defaultIndex | Default value index       | _number_                    |
-| className    | ClassName for this column | _string \| Array \| object_ |
-| children     | Cascade children          | _Column_                    |
+| Key       | Description               | Type                        |
+| --------- | ------------------------- | --------------------------- |
+| text      | Text                      | _string \| number_          |
+| value     | Value of option           | _string \| number_          |
+| disabled  | Whether to disable option | _boolean_                   |
+| children  | Cascade children options  | _PickerOption[]_            |
+| className | ClassName for this option | _string \| Array \| object_ |
 
 ### Methods
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Picker instance and call instance methods.
 
-| Name | Description | Attribute | Return value |
-| --- | --- | --- | --- |
-| getValues | Get current values of all columns | - | values |
-| setValues | Set current values of all columns | values | - |
-| getIndexes | Get current indexes of all columns | - | indexes |
-| setIndexes | Set current indexes of all columns | indexes | - |
-| getColumnValue | Get current value of the column | columnIndex | value |
-| setColumnValue | Set current value of the column | columnIndex, value | - |
-| getColumnIndex | Get current index of the column | columnIndex | optionIndex |
-| setColumnIndex | Set current index of the column | columnIndex, optionIndex | - |
-| getColumnValues | Get columns data of the column | columnIndex | values |
-| setColumnValues | Set columns data of the column | columnIndex, values | - |
-| confirm | Stop scrolling and emit confirm event | - | - |
+| Name    | Description                           | Attribute | Return value |
+| ------- | ------------------------------------- | --------- | ------------ |
+| confirm | Stop scrolling and emit confirm event | -         | -            |
 
 ### Types
 
@@ -393,9 +370,10 @@ import type {
   PickerOption,
   PickerInstance,
   PickerFieldNames,
-  PickerObjectColumn,
-  PickerObjectOption,
   PickerToolbarPosition,
+  PickerCancelEventParams,
+  PickerChangeEventParams,
+  PickerConfirmEventParams,
 } from 'vant';
 ```
 

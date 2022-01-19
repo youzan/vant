@@ -5,9 +5,6 @@ export const basicColumns = {
     { text: '温州', value: 'Wenzhou' },
     { text: '绍兴', value: 'Shaoxing' },
     { text: '湖州', value: 'Huzhou' },
-    { text: '嘉兴', value: 'Jiaxing' },
-    { text: '金华', value: 'Jinhua' },
-    { text: '衢州', value: 'Quzhou' },
   ],
   'en-US': [
     { text: 'Delaware', value: 'Delaware' },

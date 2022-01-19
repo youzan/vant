@@ -61,7 +61,6 @@ export const pickerSharedProps = {
 const pickerProps = extend({}, pickerSharedProps, {
   columns: makeArrayProp<PickerColumn | PickerColumn[]>(),
   modelValue: makeArrayProp<number | string>(),
-  defaultIndex: makeNumericProp(0),
   toolbarPosition: makeStringProp<PickerToolbarPosition>('top'),
   columnsFieldNames: Object as PropType<PickerFieldNames>,
 });
