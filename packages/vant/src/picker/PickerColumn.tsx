@@ -213,10 +213,13 @@ export default defineComponent({
           role: 'button',
           style: optionStyle,
           tabindex: disabled ? -1 : 0,
-          class: bem('item', {
-            disabled,
-            selected: value === props.value,
-          }),
+          class: [
+            bem('item', {
+              disabled,
+              selected: value === props.value,
+            }),
+            option.className,
+          ],
           onClick: () => onClickItem(index),
         };
 
