@@ -77,10 +77,7 @@ export default defineComponent({
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const hasOptions = ref(false);
     const selectedValues = ref(props.modelValue);
-    const currentColumns = ref<PickerColumn[]>([]);
-
     const { children, linkChildren } = useChildren(PICKER_KEY);
 
     linkChildren();
@@ -101,6 +98,22 @@ export default defineComponent({
       getColumnsType(props.columns, fields.value)
     );
 
+    const currentColumns = computed<PickerColumn[]>(() => {
+      const { columns } = props;
+      switch (columnsType.value) {
+        case 'multiple':
+          return columns as PickerColumn[];
+        case 'cascade':
+          return formatCascadeColumns(columns, fields.value, selectedValues);
+        default:
+          return [columns];
+      }
+    });
+
+    const hasOptions = computed(() =>
+      currentColumns.value.some((options) => options.length)
+    );
+
     const selectedOptions = computed(() =>
       currentColumns.value.map((options, index) =>
         findOptionByValue(options, selectedValues.value[index], fields.value)
@@ -111,12 +124,6 @@ export default defineComponent({
       selectedValues.value[columnIndex] = value;
 
       if (columnsType.value === 'cascade') {
-        currentColumns.value = formatCascadeColumns(
-          props.columns,
-          fields.value,
-          selectedValues
-        );
-
         // reset values after cascading
         selectedValues.value.forEach((value, index) => {
           const options = currentColumns.value[index];
@@ -241,33 +248,15 @@ export default defineComponent({
       );
     };
 
-    const formatColumns = (
-      columns: PickerColumn | PickerColumn[]
-    ): PickerColumn[] => {
-      switch (columnsType.value) {
-        case 'multiple':
-          return columns as PickerColumn[];
-        case 'cascade':
-          return formatCascadeColumns(columns, fields.value, selectedValues);
-        default:
-          return [columns];
-      }
-    };
-
     watch(
-      () => props.columns,
+      currentColumns,
       (columns) => {
-        currentColumns.value = formatColumns(columns);
-        currentColumns.value.forEach((options, index) => {
+        columns.forEach((options, index) => {
           if (selectedValues.value[index] === undefined && options.length) {
             selectedValues.value[index] =
               getFirstEnabledOption(options)[fields.value.value];
           }
         });
-
-        hasOptions.value = currentColumns.value.some(
-          (options) => !!options.length
-        );
       },
       { immediate: true }
     );
