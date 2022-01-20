@@ -325,9 +325,9 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| confirm | Emitted when click confirm button | _{ selectedValues, selectedOptions }_ |
-| cancel | Emitted when click cancel button | _{ selectedValues, selectedOptions }_ |
-| change | Emitted when current option changed | _{ selectedValues, selectedOptions, columnIndex }_ |
+| confirm | Emitted when the confirm button is clicked | _{ selectedValues, selectedOptions }_ |
+| cancel | Emitted when the cancel button is clicked | _{ selectedValues, selectedOptions }_ |
+| change | Emitted when current option is changed | _{ selectedValues, selectedOptions, columnIndex }_ |
 
 ### Slots
 
