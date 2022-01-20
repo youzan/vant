@@ -70,7 +70,6 @@ export function formatCascadeColumns(
 
     if (!cursor && options.length) {
       const firstValue = getFirstEnabledOption(options)[fields.value];
-      selectedValues.value[columnIndex] = firstValue;
       cursor = findOptionByValue(options, firstValue, fields);
     }
 
@@ -85,4 +84,14 @@ export function getElementTranslateY(element: Element) {
   const { transform } = window.getComputedStyle(element);
   const translateY = transform.slice(7, transform.length - 1).split(', ')[5];
   return Number(translateY);
+}
+
+export function isValuesEqual(
+  valuesA: Array<string | number>,
+  valuesB: Array<string | number>
+) {
+  return (
+    valuesA.length === valuesB.length &&
+    valuesA.every((value, index) => value === valuesB[index])
+  );
 }

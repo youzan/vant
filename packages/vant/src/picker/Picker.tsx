@@ -21,6 +21,7 @@ import {
   BORDER_UNSET_TOP_BOTTOM,
 } from '../utils';
 import {
+  isValuesEqual,
   getColumnsType,
   findOptionByValue,
   formatCascadeColumns,
@@ -115,6 +116,14 @@ export default defineComponent({
           fields.value,
           selectedValues
         );
+
+        // reset values after cascading
+        selectedValues.value.forEach((value, index) => {
+          const options = currentColumns.value[index];
+          if (!options.find((option) => option[fields.value.value] === value)) {
+            selectedValues.value[index] = options[0][fields.value.value];
+          }
+        });
       }
 
       emit('change', {
@@ -265,16 +274,22 @@ export default defineComponent({
 
     watch(
       () => props.modelValue,
-      (value) => {
-        selectedValues.value = value;
-      }
+      (newValues) => {
+        if (!isValuesEqual(newValues, selectedValues.value)) {
+          selectedValues.value = newValues;
+        }
+      },
+      { deep: true }
     );
-
-    watch(selectedValues, () => {
-      if (selectedValues.value !== props.modelValue) {
-        emit('update:modelValue', selectedValues.value);
-      }
-    });
+    watch(
+      selectedValues,
+      (newValues) => {
+        if (!isValuesEqual(newValues, props.modelValue)) {
+          emit('update:modelValue', selectedValues.value);
+        }
+      },
+      { deep: true }
+    );
 
     useExpose<PickerExpose>({ confirm });
 
