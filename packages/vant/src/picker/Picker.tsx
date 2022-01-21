@@ -20,6 +20,14 @@ import {
   HAPTICS_FEEDBACK,
   BORDER_UNSET_TOP_BOTTOM,
 } from '../utils';
+import {
+  isValuesEqual,
+  getColumnsType,
+  findOptionByValue,
+  formatCascadeColumns,
+  getFirstEnabledOption,
+  assignDefaultFields,
+} from './utils';
 
 // Composables
 import { useChildren } from '@vant/use';
@@ -32,10 +40,9 @@ import Column, { PICKER_KEY } from './PickerColumn';
 // Types
 import type {
   PickerColumn,
-  PickerOption,
   PickerExpose,
+  PickerOption,
   PickerFieldNames,
-  PickerObjectColumn,
   PickerToolbarPosition,
 } from './types';
 
@@ -46,17 +53,17 @@ export const pickerSharedProps = {
   loading: Boolean,
   readonly: Boolean,
   allowHtml: Boolean,
-  itemHeight: makeNumericProp(44),
+  optionHeight: makeNumericProp(44),
   showToolbar: truthProp,
   swipeDuration: makeNumericProp(1000),
-  visibleItemCount: makeNumericProp(6),
+  visibleOptionNum: makeNumericProp(6),
   cancelButtonText: String,
   confirmButtonText: String,
 };
 
 const pickerProps = extend({}, pickerSharedProps, {
   columns: makeArrayProp<PickerOption | PickerColumn>(),
-  defaultIndex: makeNumericProp(0),
+  modelValue: makeArrayProp<number | string>(),
   toolbarPosition: makeStringProp<PickerToolbarPosition>('top'),
   columnsFieldNames: Object as PropType<PickerFieldNames>,
 });
@@ -68,213 +75,77 @@ export default defineComponent({
 
   props: pickerProps,
 
-  emits: ['confirm', 'cancel', 'change'],
+  emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const hasOptions = ref(false);
-    const formattedColumns = ref<PickerObjectColumn[]>([]);
-
-    const {
-      text: textKey,
-      values: valuesKey,
-      children: childrenKey,
-    } = extend(
-      {
-        text: 'text',
-        values: 'values',
-        children: 'children',
-      },
-      props.columnsFieldNames
-    );
-
+    const selectedValues = ref(props.modelValue);
     const { children, linkChildren } = useChildren(PICKER_KEY);
 
     linkChildren();
 
-    const itemHeight = computed(() => unitToPx(props.itemHeight));
+    const fields = computed(() => assignDefaultFields(props.columnsFieldNames));
+    const optionHeight = computed(() => unitToPx(props.optionHeight));
+    const columnsType = computed(() =>
+      getColumnsType(props.columns, fields.value)
+    );
 
-    const dataType = computed(() => {
-      const firstColumn = props.columns[0];
-      if (typeof firstColumn === 'object') {
-        if (childrenKey in firstColumn) {
-          return 'cascade';
-        }
-        if (valuesKey in firstColumn) {
-          return 'object';
-        }
+    const currentColumns = computed<PickerColumn[]>(() => {
+      const { columns } = props;
+      switch (columnsType.value) {
+        case 'multiple':
+          return columns as PickerColumn[];
+        case 'cascade':
+          return formatCascadeColumns(columns, fields.value, selectedValues);
+        default:
+          return [columns];
       }
-      return 'plain';
     });
 
-    const formatCascade = () => {
-      const formatted: PickerObjectColumn[] = [];
+    const hasOptions = computed(() =>
+      currentColumns.value.some((options) => options.length)
+    );
 
-      let cursor: PickerObjectColumn = {
-        [childrenKey]: props.columns,
-      };
+    const selectedOptions = computed(() =>
+      currentColumns.value.map((options, index) =>
+        findOptionByValue(options, selectedValues.value[index], fields.value)
+      )
+    );
 
-      while (cursor && cursor[childrenKey]) {
-        const children = cursor[childrenKey];
-        let defaultIndex = cursor.defaultIndex ?? +props.defaultIndex;
+    const onChange = (value: number | string, columnIndex: number) => {
+      selectedValues.value[columnIndex] = value;
 
-        while (children[defaultIndex] && children[defaultIndex].disabled) {
-          if (defaultIndex < children.length - 1) {
-            defaultIndex++;
-          } else {
-            defaultIndex = 0;
-            break;
+      if (columnsType.value === 'cascade') {
+        // reset values after cascading
+        selectedValues.value.forEach((value, index) => {
+          const options = currentColumns.value[index];
+          if (!options.find((option) => option[fields.value.value] === value)) {
+            selectedValues.value[index] = options.length
+              ? options[0][fields.value.value]
+              : undefined;
           }
-        }
-
-        formatted.push({
-          [valuesKey]: cursor[childrenKey],
-          className: cursor.className,
-          defaultIndex,
         });
-
-        cursor = children[defaultIndex];
       }
 
-      formattedColumns.value = formatted;
-    };
-
-    const format = () => {
-      const { columns } = props;
-
-      if (dataType.value === 'plain') {
-        formattedColumns.value = [{ [valuesKey]: columns }];
-      } else if (dataType.value === 'cascade') {
-        formatCascade();
-      } else {
-        formattedColumns.value = columns as PickerObjectColumn[];
-      }
-
-      hasOptions.value = formattedColumns.value.some(
-        (item) => item[valuesKey] && item[valuesKey].length !== 0
-      );
-    };
-
-    // get indexes of all columns
-    const getIndexes = () => children.map((child) => child.state.index);
-
-    // set options of column by index
-    const setColumnValues = (index: number, options: PickerOption[]) => {
-      const column = children[index];
-      if (column) {
-        column.setOptions(options);
-        hasOptions.value = true;
-      }
-    };
-
-    const onCascadeChange = (columnIndex: number) => {
-      let cursor: PickerObjectColumn = {
-        [childrenKey]: props.columns,
-      };
-      const indexes = getIndexes();
-
-      for (let i = 0; i <= columnIndex; i++) {
-        cursor = cursor[childrenKey][indexes[i]];
-      }
-
-      while (cursor && cursor[childrenKey]) {
-        columnIndex++;
-        setColumnValues(columnIndex, cursor[childrenKey]);
-        cursor = cursor[childrenKey][cursor.defaultIndex || 0];
-      }
-    };
-
-    // get column instance by index
-    const getChild = (index: number) => children[index];
-
-    // get column value by index
-    const getColumnValue = (index: number) => {
-      const column = getChild(index);
-      if (column) {
-        return column.getValue();
-      }
-    };
-
-    // set column value by index
-    const setColumnValue = (index: number, value: string) => {
-      const column = getChild(index);
-      if (column) {
-        column.setValue(value);
-        if (dataType.value === 'cascade') {
-          onCascadeChange(index);
-        }
-      }
-    };
-
-    // get column option index by column index
-    const getColumnIndex = (index: number) => {
-      const column = getChild(index);
-      if (column) {
-        return column.state.index;
-      }
-    };
-
-    // set column option index by column index
-    const setColumnIndex = (columnIndex: number, optionIndex: number) => {
-      const column = getChild(columnIndex);
-      if (column) {
-        column.setIndex(optionIndex);
-        if (dataType.value === 'cascade') {
-          onCascadeChange(columnIndex);
-        }
-      }
-    };
-
-    // get options of column by index
-    const getColumnValues = (index: number) => {
-      const column = getChild(index);
-      if (column) {
-        return column.state.options;
-      }
-    };
-
-    // get values of all columns
-    const getValues = () => children.map((child) => child.getValue());
-
-    // set values of all columns
-    const setValues = (values: string[]) => {
-      values.forEach((value, index) => {
-        setColumnValue(index, value);
+      emit('change', {
+        columnIndex,
+        selectedValues: selectedValues.value,
+        selectedOptions: selectedOptions.value,
       });
-    };
-
-    // set indexes of all columns
-    const setIndexes = (indexes: number[]) => {
-      indexes.forEach((optionIndex, columnIndex) => {
-        setColumnIndex(columnIndex, optionIndex);
-      });
-    };
-
-    const emitAction = (event: 'confirm' | 'cancel') => {
-      if (dataType.value === 'plain') {
-        emit(event, getColumnValue(0), getColumnIndex(0));
-      } else {
-        emit(event, getValues(), getIndexes());
-      }
-    };
-
-    const onChange = (columnIndex: number) => {
-      if (dataType.value === 'cascade') {
-        onCascadeChange(columnIndex);
-      }
-
-      if (dataType.value === 'plain') {
-        emit('change', getColumnValue(0), getColumnIndex(0));
-      } else {
-        emit('change', getValues(), columnIndex);
-      }
     };
 
     const confirm = () => {
       children.forEach((child) => child.stopMomentum());
-      emitAction('confirm');
+      emit('confirm', {
+        selectedValues: selectedValues.value,
+        selectedOptions: selectedOptions.value,
+      });
     };
 
-    const cancel = () => emitAction('cancel');
+    const cancel = () =>
+      emit('cancel', {
+        selectedValues: selectedValues.value,
+        selectedOptions: selectedOptions.value,
+      });
 
     const renderTitle = () => {
       if (slots.title) {
@@ -324,27 +195,26 @@ export default defineComponent({
     };
 
     const renderColumnItems = () =>
-      formattedColumns.value.map((item, columnIndex) => (
+      currentColumns.value.map((options, columnIndex) => (
         <Column
           v-slots={{ option: slots.option }}
-          textKey={textKey}
+          value={selectedValues.value[columnIndex]}
+          fields={fields.value}
+          options={options}
           readonly={props.readonly}
           allowHtml={props.allowHtml}
-          className={item.className}
-          itemHeight={itemHeight.value}
-          defaultIndex={item.defaultIndex ?? +props.defaultIndex}
+          optionHeight={optionHeight.value}
           swipeDuration={props.swipeDuration}
-          initialOptions={item[valuesKey]}
-          visibleItemCount={props.visibleItemCount}
-          onChange={() => onChange(columnIndex)}
+          visibleOptionNum={props.visibleOptionNum}
+          onChange={(value: number | string) => onChange(value, columnIndex)}
         />
       ));
 
     const renderMask = (wrapHeight: number) => {
       if (hasOptions.value) {
-        const frameStyle = { height: `${itemHeight.value}px` };
+        const frameStyle = { height: `${optionHeight.value}px` };
         const maskStyle = {
-          backgroundSize: `100% ${(wrapHeight - itemHeight.value) / 2}px`,
+          backgroundSize: `100% ${(wrapHeight - optionHeight.value) / 2}px`,
         };
         return [
           <div class={bem('mask')} style={maskStyle} />,
@@ -357,7 +227,7 @@ export default defineComponent({
     };
 
     const renderColumns = () => {
-      const wrapHeight = itemHeight.value * +props.visibleItemCount;
+      const wrapHeight = optionHeight.value * +props.visibleOptionNum;
       const columnsStyle = { height: `${wrapHeight}px` };
       return (
         <div
@@ -371,21 +241,39 @@ export default defineComponent({
       );
     };
 
-    watch(() => props.columns, format, { immediate: true });
+    watch(
+      currentColumns,
+      (columns) => {
+        columns.forEach((options, index) => {
+          if (selectedValues.value[index] === undefined && options.length) {
+            selectedValues.value[index] =
+              getFirstEnabledOption(options)[fields.value.value];
+          }
+        });
+      },
+      { immediate: true }
+    );
 
-    useExpose<PickerExpose>({
-      confirm,
-      getValues,
-      setValues,
-      getIndexes,
-      setIndexes,
-      getColumnIndex,
-      setColumnIndex,
-      getColumnValue,
-      setColumnValue,
-      getColumnValues,
-      setColumnValues,
-    });
+    watch(
+      () => props.modelValue,
+      (newValues) => {
+        if (!isValuesEqual(newValues, selectedValues.value)) {
+          selectedValues.value = newValues;
+        }
+      },
+      { deep: true }
+    );
+    watch(
+      selectedValues,
+      (newValues) => {
+        if (!isValuesEqual(newValues, props.modelValue)) {
+          emit('update:modelValue', selectedValues.value);
+        }
+      },
+      { deep: true }
+    );
+
+    useExpose<PickerExpose>({ confirm });
 
     return () => (
       <div class={bem()}>
