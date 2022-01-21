@@ -7,6 +7,10 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "scripts": {
+    "update:deps": "pnpm update --latest --interactive",
+    "test": "jest"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/youzan/vant.git",
@@ -16,15 +20,19 @@
   "author": "chenjiahan",
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.3.1",
-    "@typescript-eslint/parser": "5.3.1",
-    "eslint-config-airbnb-base": "^14.2.1",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.0",
-    "eslint-plugin-vue": "^7.18.0"
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-vue": "^8.3.0"
   },
   "devDependencies": {
-    "eslint": "^8.0.0",
-    "typescript": "~4.5.2"
+    "enhanced-resolve": "^5.8.3",
+    "eslint": "^8.7.0",
+    "typescript": "~4.5.5"
+  },
+  "peerDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0"
   }
 }

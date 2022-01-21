@@ -162,7 +162,7 @@ export default defineComponent({
       }
     };
 
-    const init = () => nextTick(onScroll);
+    const init = () => nextTick().then(onScroll);
 
     useEventListener('scroll', onScroll, { target: scrollParent });
 

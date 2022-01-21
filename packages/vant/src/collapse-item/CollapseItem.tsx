@@ -81,11 +81,7 @@ export default defineComponent({
         show.value = true;
       }
 
-      // Use raf: flick when opened in safari
-      // Use nextTick: closing animation failed when set `user-select: none`
-      const tick = value ? nextTick : raf;
-
-      tick(() => {
+      const tick = () => {
         if (!contentRef.value || !wrapperRef.value) {
           return;
         }
@@ -104,7 +100,11 @@ export default defineComponent({
         } else {
           onTransitionEnd();
         }
-      });
+      };
+
+      // Use raf: flick when opened in safari
+      // Use nextTick: closing animation failed when set `user-select: none`
+      value ? nextTick().then(tick) : raf(tick);
     });
 
     const toggle = (newValue = !expanded.value) => {
