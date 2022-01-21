@@ -27,7 +27,7 @@ const value = ref('330302');
 
 <template>
   <demo-block card :title="t('basicUsage')">
-    <van-area :title="t('title')" :area-list="t('areaList')" />
+    <van-area v-model="value" :title="t('title')" :area-list="t('areaList')" />
   </demo-block>
 
   <demo-block card :title="t('title2')">
