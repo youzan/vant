@@ -16,7 +16,7 @@ import {
   createNamespace,
 } from '../utils';
 import { pickerSharedProps } from '../picker/Picker';
-import { formatDataForCascade } from './utils';
+import { INHERIT_PROPS, INHERIT_SLOTS, formatDataForCascade } from './utils';
 
 // Components
 import { Picker } from '../picker';
@@ -25,25 +25,6 @@ import { Picker } from '../picker';
 import type { AreaList } from './types';
 
 const [name, bem] = createNamespace('area');
-
-const INHERIT_SLOTS = [
-  'title',
-  'cancel',
-  'confirm',
-  'toolbar',
-  'columns-top',
-  'columns-bottom',
-] as const;
-const INHERIT_PROPS = [
-  'title',
-  'loading',
-  'readonly',
-  'optionHeight',
-  'swipeDuration',
-  'visibleOptionNum',
-  'cancelButtonText',
-  'confirmButtonText',
-] as const;
 
 const areaProps = extend({}, pickerSharedProps, {
   modelValue: String,
@@ -66,15 +47,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const codes = ref<string[]>([]);
-
-    const columns = computed(() =>
-      formatDataForCascade(
-        props.areaList,
-        props.columnsNum,
-        props.columnsPlaceholder
-      )
-    );
-
+    const columns = computed(() => formatDataForCascade(props));
     const onChange = (...args: unknown[]) => emit('change', ...args);
     const onCancel = (...args: unknown[]) => emit('cancel', ...args);
     const onConfirm = (...args: unknown[]) => emit('confirm', ...args);
