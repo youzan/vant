@@ -84,86 +84,35 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-picker">
-    <div class="van-picker__toolbar">
-      <button type="button"
-              class="van-picker__cancel van-haptics-feedback"
+  <div class="van-cell van-cell--clickable van-field"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title van-field__label">
+      <label id="van-field-label"
+             for="van-field-input"
       >
-        Cancel
-      </button>
-      <div class="van-picker__title van-ellipsis">
-        Title
-      </div>
-      <button type="button"
-              class="van-picker__confirm van-haptics-feedback"
-      >
-        Confirm
-      </button>
+        City
+      </label>
     </div>
-    <div class="van-picker__columns"
-         style="height: 264px;"
-    >
-      <div class="van-picker-column">
-        <ul style="transform: translate3d(0, 22px, 0); transition-duration: 0ms; transition-property: none;"
-            class="van-picker-column__wrapper"
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               id="van-field-input"
+               class="van-field__control"
+               readonly
+               placeholder="Choose City"
+               aria-labelledby="van-field-label"
         >
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Delaware
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Florida
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
-          >
-            <div class="van-ellipsis">
-              Georqia
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Indiana
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Maine
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="van-picker__mask"
-           style="background-size: 100% 110px;"
-      >
-      </div>
-      <div class="van-hairline-unset--top-bottom van-picker__frame"
-           style="height: 44px;"
-      >
       </div>
     </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
   </div>
+  <transition-stub>
+  </transition-stub>
+  <transition-stub>
+  </transition-stub>
 </div>
 <div>
   <div class="van-picker">
@@ -186,13 +135,13 @@ exports[`should render demo and match snapshot 1`] = `
          style="height: 264px;"
     >
       <div class="van-picker-column">
-        <ul style="transform: translate3d(0, 22px, 0); transition-duration: 0ms; transition-property: none;"
+        <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
             class="van-picker-column__wrapper"
         >
           <li role="button"
               style="height: 44px;"
               tabindex="0"
-              class="van-picker-column__item"
+              class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Monday
@@ -210,7 +159,7 @@ exports[`should render demo and match snapshot 1`] = `
           <li role="button"
               style="height: 44px;"
               tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+              class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Wednesday
@@ -237,13 +186,13 @@ exports[`should render demo and match snapshot 1`] = `
         </ul>
       </div>
       <div class="van-picker-column">
-        <ul style="transform: translate3d(0, 66px, 0); transition-duration: 0ms; transition-property: none;"
+        <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
             class="van-picker-column__wrapper"
         >
           <li role="button"
               style="height: 44px;"
               tabindex="0"
-              class="van-picker-column__item"
+              class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Morning
@@ -252,7 +201,7 @@ exports[`should render demo and match snapshot 1`] = `
           <li role="button"
               style="height: 44px;"
               tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+              class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Afternoon
@@ -464,112 +413,6 @@ exports[`should render demo and match snapshot 1`] = `
         Confirm
       </button>
     </div>
-    <div class="van-picker__columns"
-         style="height: 264px;"
-    >
-      <div class="van-picker-column column1">
-        <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
-            class="van-picker-column__wrapper"
-        >
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
-          >
-            <div class="van-ellipsis">
-              Group1
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Group2
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="van-picker-column column2">
-        <ul style="transform: translate3d(0, 22px, 0); transition-duration: 0ms; transition-property: none;"
-            class="van-picker-column__wrapper"
-        >
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Delaware
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Florida
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
-          >
-            <div class="van-ellipsis">
-              Georqia
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Indiana
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Maine
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="van-picker__mask"
-           style="background-size: 100% 110px;"
-      >
-      </div>
-      <div class="van-hairline-unset--top-bottom van-picker__frame"
-           style="height: 44px;"
-      >
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <div class="van-picker">
-    <div class="van-picker__toolbar">
-      <button type="button"
-              class="van-picker__cancel van-haptics-feedback"
-      >
-        Cancel
-      </button>
-      <div class="van-picker__title van-ellipsis">
-        Title
-      </div>
-      <button type="button"
-              class="van-picker__confirm van-haptics-feedback"
-      >
-        Confirm
-      </button>
-    </div>
     <div class="van-loading van-loading--circular van-picker__loading">
       <span class="van-loading__spinner van-loading__spinner--circular">
         <svg class="van-loading__circular"
@@ -587,122 +430,14 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-picker__columns"
          style="height: 264px;"
     >
-      <div class="van-picker-column column1">
+      <div class="van-picker-column">
         <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
             class="van-picker-column__wrapper"
         >
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
-          >
-            <div class="van-ellipsis">
-              Group1
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Group2
-            </div>
-          </li>
         </ul>
-      </div>
-      <div class="van-picker-column column2">
-        <ul style="transform: translate3d(0, 22px, 0); transition-duration: 0ms; transition-property: none;"
-            class="van-picker-column__wrapper"
-        >
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Delaware
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Florida
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
-          >
-            <div class="van-ellipsis">
-              Georqia
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Indiana
-            </div>
-          </li>
-          <li role="button"
-              style="height: 44px;"
-              tabindex="0"
-              class="van-picker-column__item"
-          >
-            <div class="van-ellipsis">
-              Maine
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="van-picker__mask"
-           style="background-size: 100% 110px;"
-      >
-      </div>
-      <div class="van-hairline-unset--top-bottom van-picker__frame"
-           style="height: 44px;"
-      >
       </div>
     </div>
   </div>
-</div>
-<div>
-  <div class="van-cell van-cell--clickable van-field"
-       role="button"
-       tabindex="0"
-  >
-    <div class="van-cell__title van-field__label">
-      <label id="van-field-label"
-             for="van-field-input"
-      >
-        City
-      </label>
-    </div>
-    <div class="van-cell__value van-field__value">
-      <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
-               readonly
-               placeholder="Choose City"
-               aria-labelledby="van-field-label"
-        >
-      </div>
-    </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
-    </i>
-  </div>
-  <transition-stub>
-  </transition-stub>
-  <transition-stub>
-  </transition-stub>
 </div>
 <div>
   <div class="van-picker">
