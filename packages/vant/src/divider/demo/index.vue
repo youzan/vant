@@ -58,7 +58,7 @@ const t = useTranslate({
 
 <style lang="less">
 .demo-divider {
-  background-color: var(--van-background-color-light);
+  background-color: var(--van-background-light);
 
   .van-doc-demo-block__title {
     padding-top: var(--van-padding-md);

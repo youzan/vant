@@ -72,7 +72,7 @@ const reduce = () => {
 
 <style lang="less">
 .demo-progress {
-  background: var(--van-background-color-light);
+  background: var(--van-background-light);
 
   .van-progress {
     margin: 20px 16px;

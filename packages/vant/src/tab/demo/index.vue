@@ -187,11 +187,11 @@ const beforeChange = (name: number) => {
 
   .van-tab__panel {
     padding: 24px 20px;
-    background-color: var(--van-background-color-light);
+    background: var(--van-background-light);
   }
 
   .van-tabs--card .van-tab__panel {
-    background-color: transparent;
+    background: transparent;
   }
 }
 </style>

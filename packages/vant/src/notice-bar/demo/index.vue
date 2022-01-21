@@ -81,7 +81,7 @@ const t = useTranslate({
 
 <style lang="less">
 .demo-notice-bar {
-  background: var(--van-background-color-light);
+  background: var(--van-background-light);
 
   .van-notice-bar:not(:first-of-type) {
     margin-top: 4px;

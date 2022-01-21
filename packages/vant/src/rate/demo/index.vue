@@ -88,7 +88,7 @@ const onChange = (value: number) => Toast(t('toastContent', value));
 <style lang="less">
 .demo-rate {
   padding-bottom: 20px;
-  background-color: var(--van-background-color-light);
+  background-color: var(--van-background-light);
 
   .van-rate {
     margin-left: var(--van-padding-md);
