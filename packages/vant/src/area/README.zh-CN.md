@@ -77,12 +77,23 @@ export default {
 };
 ```
 
-### 选中省市区
+### 控制选中项
 
-如果想选中某个省市区，需要传入一个 `value` 属性，绑定对应的地区码。
+通过 `v-model` 绑定当前选中的地区码。
 
 ```html
-<van-area title="标题" :area-list="areaList" value="110101" />
+<van-area v-model="value" title="标题" :area-list="areaList" />
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const value = ref('330302');
+    return { value };
+  },
+};
 ```
 
 ### 配置显示列
@@ -111,7 +122,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| value | 当前选中项对应的地区码 | _string_ | - |
+| v-model | 当前选中项对应的地区码 | _string_ | - |
 | title | 顶部栏标题 | _string_ | - |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |
@@ -123,36 +134,14 @@ export default {
 | columns-num | 显示列数，3-省市区，2-省市，1-省 | _number \| string_ | `3` |
 | visible-option-num | 可见的选项个数 | _number \| string_ | `6` |
 | swipe-duration | 快速滑动时惯性滚动的时长，单位 `ms` | _number \| string_ | `1000` |
-| is-oversea-code | 根据地区码校验海外地址，海外地址会划分至单独的分类 | _() => boolean_ | - |
 
 ### Events
 
-| 事件    | 说明               | 回调参数                       |
-| ------- | ------------------ | ------------------------------ |
-| confirm | 点击完成按钮时触发 | _result: ConfirmResult_        |
-| cancel  | 点击取消按钮时触发 | -                              |
-| change  | 选项改变时触发     | 所有列选中值，当前列对应的索引 |
-
-### ConfirmResult 格式
-
-confirm 事件返回的数据整体为一个数组，数组每一项对应一列选项中被选中的数据。
-
-```js
-[
-  {
-    code: '110000',
-    name: '北京市',
-  },
-  {
-    code: '110100',
-    name: '北京市',
-  },
-  {
-    code: '110101',
-    name: '东城区',
-  },
-];
-```
+| 事件 | 说明 | 回调参数 |
+| --- | --- | --- |
+| confirm | 点击完成按钮时触发 | _{ selectedValues, selectedOptions }_ |
+| cancel | 点击取消按钮时触发 | _{ selectedValues, selectedOptions }_ |
+| change | 选项改变时触发 | _{ selectedValues, selectedOptions, columnIndex }_ |
 
 ### Slots
 
@@ -165,20 +154,12 @@ confirm 事件返回的数据整体为一个数组，数组每一项对应一列
 | columns-top      | 自定义选项上方内容     | -    |
 | columns-bottom   | 自定义选项下方内容     | -    |
 
-### 方法
-
-通过 ref 可以获取到 Area 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
-
-| 方法名 | 说明 | 参数 | 返回值 |
-| --- | --- | --- | --- |
-| reset | 根据地区码重置所有选项，若不传地区码，则重置到第一项 | _code?: string_ | - |
-
 ### 类型定义
 
 组件导出以下类型定义：
 
 ```ts
-import type { AreaProps, AreaList, AreaInstance, AreaColumnOption } from 'vant';
+import type { AreaProps, AreaList, AreaInstance } from 'vant';
 ```
 
 `AreaInstance` 是组件实例的类型，用法如下：
