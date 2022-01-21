@@ -26,6 +26,7 @@ import {
   findOptionByValue,
   formatCascadeColumns,
   getFirstEnabledOption,
+  assignDefaultFields,
 } from './utils';
 
 // Composables
@@ -82,17 +83,7 @@ export default defineComponent({
 
     linkChildren();
 
-    const fields = computed(
-      (): Required<PickerFieldNames> =>
-        extend(
-          {
-            text: 'text',
-            value: 'value',
-            children: 'children',
-          },
-          props.columnsFieldNames
-        )
-    );
+    const fields = computed(() => assignDefaultFields(props.columnsFieldNames));
     const optionHeight = computed(() => unitToPx(props.optionHeight));
     const columnsType = computed(() =>
       getColumnsType(props.columns, fields.value)
@@ -128,7 +119,9 @@ export default defineComponent({
         selectedValues.value.forEach((value, index) => {
           const options = currentColumns.value[index];
           if (!options.find((option) => option[fields.value.value] === value)) {
-            selectedValues.value[index] = options[0][fields.value.value];
+            selectedValues.value[index] = options.length
+              ? options[0][fields.value.value]
+              : undefined;
           }
         });
       }

@@ -1,4 +1,4 @@
-import { isDef, clamp } from '../utils';
+import { isDef, clamp, extend } from '../utils';
 import type { Ref } from 'vue';
 import type { PickerOption, PickerColumn, PickerFieldNames } from './types';
 
@@ -93,5 +93,18 @@ export function isValuesEqual(
   return (
     valuesA.length === valuesB.length &&
     valuesA.every((value, index) => value === valuesB[index])
+  );
+}
+
+export function assignDefaultFields(
+  fields: PickerFieldNames | undefined
+): Required<PickerFieldNames> {
+  return extend(
+    {
+      text: 'text',
+      value: 'value',
+      children: 'children',
+    },
+    fields
   );
 }
