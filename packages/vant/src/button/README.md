@@ -199,7 +199,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-button-warning-background | _var(--van-warning-color)_ | - |
 | --van-button-warning-border-color | _var(--van-warning-color)_ | - |
 | --van-button-border-width | _var(--van-border-width)_ | - |
-| --van-button-radius | _var(--van-radius-sm)_ | - |
+| --van-button-radius | _var(--van-radius-md)_ | - |
 | --van-button-round-radius | _var(--van-radius-max)_ | - |
 | --van-button-plain-background | _var(--van-white)_ | - |
 | --van-button-disabled-opacity | _var(--van-disabled-opacity)_ | - |
