@@ -104,7 +104,7 @@ export default defineComponent({
 
       // Use raf: flick when opened in safari
       // Use nextTick: closing animation failed when set `user-select: none`
-      value ? nextTick().then(tick) : raf(tick);
+      value ? nextTick(tick) : raf(tick);
     });
 
     const toggle = (newValue = !expanded.value) => {

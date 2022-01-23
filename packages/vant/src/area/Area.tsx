@@ -310,7 +310,9 @@ export default defineComponent({
 
     watch(
       () => props.columnsNum,
-      () => nextTick().then(setValues)
+      () => {
+        nextTick(setValues);
+      }
     );
 
     useExpose({ reset, getArea, getValues });
