@@ -24,18 +24,6 @@ exports[`should render columns-top、columns-bottom slot correctly 1`] = `
       >
       </ul>
     </div>
-    <div class="van-picker-column">
-      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
-          class="van-picker-column__wrapper"
-      >
-      </ul>
-    </div>
-    <div class="van-picker-column">
-      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
-          class="van-picker-column__wrapper"
-      >
-      </ul>
-    </div>
   </div>
   Bottom
 </div>
@@ -122,23 +110,19 @@ exports[`should render two columns when columns-num prop is two 1`] = `
         </li>
       </ul>
     </div>
+    <div class="van-picker__mask"
+         style="background-size: 100% 110px;"
+    >
+    </div>
+    <div class="van-hairline-unset--top-bottom van-picker__frame"
+         style="height: 44px;"
+    >
+    </div>
   </div>
 </div>
 `;
 
-exports[`should reset selected option after calling the reset method 1`] = `
-<li role="button"
-    style="height: 44px;"
-    tabindex="0"
-    class="van-picker-column__item van-picker-column__item--selected"
->
-  <div class="van-ellipsis">
-    天津市
-  </div>
-</li>
-`;
-
-exports[`should reset selected option after calling the reset method 2`] = `
+exports[`should watch modelValue prop and render correctly 1`] = `
 <li role="button"
     style="height: 44px;"
     tabindex="0"
@@ -150,19 +134,7 @@ exports[`should reset selected option after calling the reset method 2`] = `
 </li>
 `;
 
-exports[`should watch value prop and render correctly 1`] = `
-<li role="button"
-    style="height: 44px;"
-    tabindex="0"
-    class="van-picker-column__item van-picker-column__item--selected"
->
-  <div class="van-ellipsis">
-    北京市
-  </div>
-</li>
-`;
-
-exports[`should watch value prop and render correctly 2`] = `
+exports[`should watch modelValue prop and render correctly 2`] = `
 <li role="button"
     style="height: 44px;"
     tabindex="0"
@@ -174,7 +146,7 @@ exports[`should watch value prop and render correctly 2`] = `
 </li>
 `;
 
-exports[`should watch value prop and render correctly 3`] = `
+exports[`should watch modelValue prop and render correctly 3`] = `
 <li role="button"
     style="height: 44px;"
     tabindex="0"

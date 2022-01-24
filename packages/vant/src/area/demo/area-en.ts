@@ -41,7 +41,7 @@ export const areaListEn = {
     330226: 'Ninghai',
     330281: 'Yuyao',
     330282: 'Cixi',
-    330327: 'Cangnan',
+    330302: 'Lucheng',
     330328: 'Wencheng',
     330329: 'Shuntai',
     330381: 'Ruian',
