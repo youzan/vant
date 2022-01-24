@@ -3,7 +3,7 @@
   icon: forcom
   labels:
     - Table
-  description: 组件列表
+  description: 为空时自适应宽度，自动换行
   attrs:
     - name: data-source
       title: 数据源

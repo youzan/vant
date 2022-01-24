@@ -235,8 +235,8 @@ export default createComponent({
     onConfirm(values, index) {
       values = this.parseOutputValues(values);
       this.setValues();
-      this.$emit('confirm', values, index, this.code);
-      this.$emit('update:value', this.code);
+      this.$emit('confirm', values, index, values[2].code);
+      this.$emit('update:value', values[2].code);
       this.setTitle();
       this.togglePopup();
     },
@@ -272,6 +272,17 @@ export default createComponent({
       const province = this.getList('province');
       const city = this.getList('city', code.slice(0, 2));
       if (!picker) {
+        if (code != this.getDefaultCode()) {
+          try {
+            const tcode = code;
+            const provincet = this.getListTemp('province', tcode.slice(0, 2) + '0000');
+            const cityt = this.getListTemp('city', tcode.slice(0, 4) + '00');
+            const countyt = this.getListTemp('county', tcode.slice(0, 6));
+            this.getTitle = `${provincet}/${cityt}/${countyt}`;
+          } catch (error) {
+            console.log(error)
+          }
+        }
         return;
       }
 
@@ -293,7 +304,9 @@ export default createComponent({
         this.getIndex('county', code),
       ]);
     },
-
+    getListTemp(type, code) {
+      return this[type][code];
+    },
     getValues() {
       const { picker } = this.$refs;
       let getValues = picker
@@ -302,7 +315,6 @@ export default createComponent({
       getValues = this.parseOutputValues(getValues);
       return getValues;
     },
-
     getArea() {
       const values = this.getValues();
       const area = {
