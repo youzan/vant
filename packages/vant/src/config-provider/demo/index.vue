@@ -34,9 +34,9 @@ const themeVars = {
   sliderBarHeight: '4px',
   sliderButtonWidth: '20px',
   sliderButtonHeight: '20px',
-  sliderActiveBackgroundColor: '#07c160',
+  sliderActiveBackground: '#07c160',
+  buttonPrimaryBackground: '#07c160',
   buttonPrimaryBorderColor: '#07c160',
-  buttonPrimaryBackgroundColor: '#07c160',
 };
 </script>
 
