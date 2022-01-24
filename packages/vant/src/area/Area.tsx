@@ -66,15 +66,19 @@ export default defineComponent({
     watch(
       () => props.modelValue,
       (newCode) => {
-        const lastCode = codes.value.length
-          ? codes.value[codes.value.length - 1]
-          : '';
-        if (newCode && newCode !== lastCode) {
-          codes.value = [
-            `${newCode.slice(0, 2)}0000`,
-            `${newCode.slice(0, 4)}00`,
-            newCode,
-          ].slice(0, +props.columnsNum);
+        if (newCode) {
+          const lastCode = codes.value.length
+            ? codes.value[codes.value.length - 1]
+            : '';
+          if (newCode !== lastCode) {
+            codes.value = [
+              `${newCode.slice(0, 2)}0000`,
+              `${newCode.slice(0, 4)}00`,
+              newCode,
+            ].slice(0, +props.columnsNum);
+          }
+        } else {
+          codes.value = [];
         }
       },
       { immediate: true }

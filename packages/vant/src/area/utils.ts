@@ -38,9 +38,9 @@ export function formatDataForCascade({
   columnsPlaceholder: placeholder,
 }: AreaProps) {
   const {
-    city_list: city,
-    county_list: county,
-    province_list: province,
+    city_list: city = {},
+    county_list: county = {},
+    province_list: province = {},
   } = areaList;
   const showCity = columnsNum > 1;
   const showCounty = columnsNum > 2;
