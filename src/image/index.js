@@ -48,7 +48,7 @@ export default createComponent({
 
   watch: {
     src() {
-      this.loading = true;
+      // this.loading = true;
       this.error = false;
     },
   },
@@ -99,6 +99,7 @@ export default createComponent({
           const tempItem = tempSrc[0];
           return tempItem.url;
       } catch (e) {
+          console.log(e);
           return src;
       }
     },
@@ -186,7 +187,6 @@ export default createComponent({
       if (this.lazyLoad) {
         return <img ref="image" vLazy={this.getSrc(this.src)} {...imgData} />;
       }
-
       return (
         <img
           src={this.getSrc(this.src)}
