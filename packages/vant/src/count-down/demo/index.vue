@@ -5,7 +5,7 @@ import VanGridItem from '../../grid-item';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
-import type { CountDownInstance } from '../CountDown';
+import type { CountDownInstance } from '..';
 
 const t = useTranslate({
   'zh-CN': {
@@ -100,7 +100,7 @@ const onFinish = () => Toast(t('finished'));
   .colon {
     display: inline-block;
     margin: 0 4px;
-    color: var(--van-red);
+    color: var(--van-primary-color);
   }
 
   .block {
@@ -109,7 +109,7 @@ const onFinish = () => Toast(t('finished'));
     color: #fff;
     font-size: 12px;
     text-align: center;
-    background-color: var(--van-red);
+    background-color: var(--van-primary-color);
     border-radius: 4px;
   }
 
