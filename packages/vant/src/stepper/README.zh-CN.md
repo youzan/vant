@@ -191,21 +191,21 @@ import type { StepperTheme, StepperProps } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                     | 默认值                    | 描述 |
-| ---------------------------------------- | ------------------------- | ---- |
-| --van-stepper-background                 | _var(--van-active-color)_ | -    |
-| --van-stepper-button-icon-color          | _var(--van-text-color)_   | -    |
-| --van-stepper-button-disabled-color      | _var(--van-background)_   | -    |
-| --van-stepper-button-disabled-icon-color | _var(--van-gray-5)_       | -    |
-| --van-stepper-button-round-theme-color   | _var(--van-danger-color)_ | -    |
-| --van-stepper-input-width                | _32px_                    | -    |
-| --van-stepper-input-height               | _28px_                    | -    |
-| --van-stepper-input-font-size            | _var(--van-font-size-md)_ | -    |
-| --van-stepper-input-line-height          | _normal_                  | -    |
-| --van-stepper-input-text-color           | _var(--van-text-color)_   | -    |
-| --van-stepper-input-disabled-text-color  | _var(--van-text-color-3)_ | -    |
-| --van-stepper-input-disabled-background  | _var(--van-active-color)_ | -    |
-| --van-stepper-radius                     | _var(--van-radius-md)_    | -    |
+| 名称                                     | 默认值                     | 描述 |
+| ---------------------------------------- | -------------------------- | ---- |
+| --van-stepper-background                 | _var(--van-active-color)_  | -    |
+| --van-stepper-button-icon-color          | _var(--van-text-color)_    | -    |
+| --van-stepper-button-disabled-color      | _var(--van-background)_    | -    |
+| --van-stepper-button-disabled-icon-color | _var(--van-gray-5)_        | -    |
+| --van-stepper-button-round-theme-color   | _var(--van-primary-color)_ | -    |
+| --van-stepper-input-width                | _32px_                     | -    |
+| --van-stepper-input-height               | _28px_                     | -    |
+| --van-stepper-input-font-size            | _var(--van-font-size-md)_  | -    |
+| --van-stepper-input-line-height          | _normal_                   | -    |
+| --van-stepper-input-text-color           | _var(--van-text-color)_    | -    |
+| --van-stepper-input-disabled-text-color  | _var(--van-text-color-3)_  | -    |
+| --van-stepper-input-disabled-background  | _var(--van-active-color)_  | -    |
+| --van-stepper-radius                     | _var(--van-radius-md)_     | -    |
 
 ## 常见问题
 

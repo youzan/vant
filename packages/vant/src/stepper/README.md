@@ -177,7 +177,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-stepper-button-icon-color | _var(--van-text-color)_ | - |
 | --van-stepper-button-disabled-color | _var(--van-background)_ | - |
 | --van-stepper-button-disabled-icon-color | _var(--van-gray-5)_ | - |
-| --van-stepper-button-round-theme-color | _var(--van-danger-color)_ | - |
+| --van-stepper-button-round-theme-color | _var(--van-primary-color)_ | - |
 | --van-stepper-input-width | _32px_ | - |
 | --van-stepper-input-height | _28px_ | - |
 | --van-stepper-input-font-size | _var(--van-font-size-md)_ | - |
