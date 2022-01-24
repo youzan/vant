@@ -45,7 +45,7 @@ const onChange = (index: number) => Toast(`${t('title')} ${index + 1}`);
       <van-sidebar v-model="active2">
         <van-sidebar-item :title="t('title')" dot />
         <van-sidebar-item :title="t('title')" badge="5" />
-        <van-sidebar-item :title="t('title')" badge="20" />
+        <van-sidebar-item :title="t('title')" />
       </van-sidebar>
     </van-grid-item>
 

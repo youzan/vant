@@ -92,7 +92,7 @@ export default {
 ### Custom button
 
 ```html
-<van-slider v-model="value" active-color="#ee0a24">
+<van-slider v-model="value">
   <template #button>
     <div class="custom-button">{{ value }}</div>
   </template>
@@ -105,7 +105,7 @@ export default {
     font-size: 10px;
     line-height: 18px;
     text-align: center;
-    background-color: #ee0a24;
+    background-color: var(--van-primary-color);
     border-radius: 100px;
   }
 </style>

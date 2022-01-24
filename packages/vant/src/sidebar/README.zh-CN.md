@@ -50,7 +50,7 @@ export default {
 <van-sidebar v-model="active">
   <van-sidebar-item title="标签名称" dot />
   <van-sidebar-item title="标签名称" badge="5" />
-  <van-sidebar-item title="标签名称" badge="20" />
+  <van-sidebar-item title="标签名称" />
 </van-sidebar>
 ```
 
@@ -161,5 +161,5 @@ import type { SidebarProps, SidebarItemProps } from 'vant';
 | --van-sidebar-selected-text-color    | _var(--van-text-color)_       | -    |
 | --van-sidebar-selected-border-width  | _4px_                         | -    |
 | --van-sidebar-selected-border-height | _16px_                        | -    |
-| --van-sidebar-selected-border-color  | _var(--van-danger-color)_     | -    |
+| --van-sidebar-selected-border-color  | _var(--van-primary-color)_    | -    |
 | --van-sidebar-selected-background    | _var(--van-background-light)_ | -    |

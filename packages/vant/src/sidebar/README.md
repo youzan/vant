@@ -46,7 +46,7 @@ export default {
 <van-sidebar v-model="active">
   <van-sidebar-item title="Title" dot />
   <van-sidebar-item title="Title" badge="5" />
-  <van-sidebar-item title="Title" badge="20" />
+  <van-sidebar-item title="Title" />
 </van-sidebar>
 ```
 
@@ -153,5 +153,5 @@ The component provides the following CSS variables, which can be used to customi
 | --van-sidebar-selected-text-color | _var(--van-text-color)_ | - |
 | --van-sidebar-selected-border-width | _4px_ | - |
 | --van-sidebar-selected-border-height | _16px_ | - |
-| --van-sidebar-selected-border-color | _var(--van-danger-color)_ | - |
+| --van-sidebar-selected-border-color | _var(--van-primary-color)_ | - |
 | --van-sidebar-selected-background | _var(--van-background-light)_ | - |
