@@ -79,7 +79,7 @@ export default {
 | z-index | z-index 层级 | _number \| string_ | `1` |
 | sticky | 是否开启锚点自动吸顶 | _boolean_ | `true` |
 | sticky-offset-top | 锚点自动吸顶时与顶部的距离 | _number_ | `0` |
-| highlight-color | 索引字符高亮颜色 | _string_ | `#ee0a24` |
+| highlight-color | 索引字符高亮颜色 | _string_ | `#1989fa` |
 | teleport `v3.0.19` | 指定索引栏挂载的节点 | _string \| Element_ | - |
 
 ### IndexAnchor Props
@@ -139,7 +139,7 @@ indexBarRef.value?.scrollTo('B');
 | --van-index-bar-sidebar-z-index      | _2_                           | -    |
 | --van-index-bar-index-font-size      | _var(--van-font-size-xs)_     | -    |
 | --van-index-bar-index-line-height    | _var(--van-line-height-xs)_   | -    |
-| --van-index-bar-index-active-color   | _var(--van-danger-color)_     | -    |
+| --van-index-bar-index-active-color   | _var(--van-primary-color)_    | -    |
 | --van-index-anchor-z-index           | _1_                           | -    |
 | --van-index-anchor-padding           | _0 var(--van-padding-md)_     | -    |
 | --van-index-anchor-text-color        | _var(--van-text-color)_       | -    |
@@ -147,5 +147,5 @@ indexBarRef.value?.scrollTo('B');
 | --van-index-anchor-font-size         | _var(--van-font-size-md)_     | -    |
 | --van-index-anchor-line-height       | _32px_                        | -    |
 | --van-index-anchor-background        | _transparent_                 | -    |
-| --van-index-anchor-sticky-text-color | _var(--van-danger-color)_     | -    |
+| --van-index-anchor-sticky-text-color | _var(--van-primary-color)_    | -    |
 | --van-index-anchor-sticky-background | _var(--van-background-light)_ | -    |

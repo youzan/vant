@@ -75,7 +75,7 @@ export default {
 | z-index | z-index | _number \| string_ | `1` |
 | sticky | Whether to enable anchor sticky top | _boolean_ | `true` |
 | sticky-offset-top | Anchor offset top when sticky | _number_ | `0` |
-| highlight-color | Index character highlight color | _string_ | `#ee0a24` |
+| highlight-color | Index character highlight color | _string_ | `#1989fa` |
 | teleport `v3.0.19` | Specifies a target element where IndexBar will be mounted | _string \| Element_ | - |
 
 ### IndexAnchor Props
@@ -135,7 +135,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-index-bar-sidebar-z-index | _2_ | - |
 | --van-index-bar-index-font-size | _var(--van-font-size-xs)_ | - |
 | --van-index-bar-index-line-height | _var(--van-line-height-xs)_ | - |
-| --van-index-bar-index-active-color | _var(--van-danger-color)_ | - |
+| --van-index-bar-index-active-color | _var(--van-primary-color)_ | - |
 | --van-index-anchor-z-index | _1_ | - |
 | --van-index-anchor-padding | _0 var(--van-padding-md)_ | - |
 | --van-index-anchor-text-color | _var(--van-text-color)_ | - |
@@ -143,5 +143,5 @@ The component provides the following CSS variables, which can be used to customi
 | --van-index-anchor-font-size | _var(--van-font-size-md)_ | - |
 | --van-index-anchor-line-height | _32px_ | - |
 | --van-index-anchor-background | _transparent_ | - |
-| --van-index-anchor-sticky-text-color | _var(--van-danger-color)_ | - |
+| --van-index-anchor-sticky-text-color | _var(--van-primary-color)_ | - |
 | --van-index-anchor-sticky-background | _var(--van-background-light)_ | - |
