@@ -16,10 +16,11 @@
 - DropdownMenu
 - IndexBar
 - Sidebar
+- Steps
 - Tabs
 
 其他：
 
 - Button: 默认圆角大小从 `2px` 调整为 `4px`
-- Button: 默认按钮的边框颜色调整为 `--van-gray-6`
+- Button: 默认按钮的边框颜色调整为 `--van-gray-4`
 - Button: 调整 font-smoothing，默认使用粗体文字
