@@ -489,7 +489,7 @@ export default defineComponent({
           <Button
             round
             block
-            type="danger"
+            type="primary"
             color={props.color}
             class={bem('confirm')}
             disabled={disabled}

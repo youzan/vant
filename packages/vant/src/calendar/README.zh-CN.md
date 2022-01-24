@@ -129,7 +129,7 @@ export default {
 通过 `color` 属性可以自定义日历的颜色，对选中日期和底部按钮生效。
 
 ```html
-<van-calendar v-model:show="show" color="#1989fa" />
+<van-calendar v-model:show="show" color="#ee0a24" />
 ```
 
 ### 自定义日期范围
@@ -255,7 +255,7 @@ export default {
 | --- | --- | --- | --- |
 | type | 选择类型:<br>`single` 表示选择单个日期，<br>`multiple` 表示选择多个日期，<br>`range` 表示选择日期区间 | _string_ | `single` |
 | title | 日历标题 | _string_ | `日期选择` |
-| color | 主题色，对底部按钮和选中日期生效 | _string_ | `#ee0a24` |
+| color | 主题色，对底部按钮和选中日期生效 | _string_ | `#1989fa` |
 | min-date | 可选择的最小日期 | _Date_ | 当前日期 |
 | max-date | 可选择的最大日期 | _Date_ | 当前日期的六个月后 |
 | default-date | 默认选中的日期，`type` 为 `multiple` 或 `range` 时为数组，传入 `null` 表示默认不选择 | _Date \| Date[] \| null_ | 今天 |
@@ -401,14 +401,14 @@ calendarRef.value?.reset();
 | --van-calendar-day-height | _64px_ | - |
 | --van-calendar-day-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-range-edge-color | _var(--van-white)_ | - |
-| --van-calendar-range-edge-background | _var(--van-danger-color)_ | - |
-| --van-calendar-range-middle-color | _var(--van-danger-color)_ | - |
+| --van-calendar-range-edge-background | _var(--van-primary-color)_ | - |
+| --van-calendar-range-middle-color | _var(--van-primary-color)_ | - |
 | --van-calendar-range-middle-background-opacity | _0.1_ | - |
 | --van-calendar-selected-day-size | _54px_ | - |
 | --van-calendar-selected-day-color | _var(--van-white)_ | - |
 | --van-calendar-info-font-size | _var(--van-font-size-xs)_ | - |
 | --van-calendar-info-line-height | _var(--van-line-height-xs)_ | - |
-| --van-calendar-selected-day-background | _var(--van-danger-color)_ | - |
+| --van-calendar-selected-day-background | _var(--van-primary-color)_ | - |
 | --van-calendar-day-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-confirm-button-height | _36px_ | - |
 | --van-calendar-confirm-button-margin | _7px 0_ | - |

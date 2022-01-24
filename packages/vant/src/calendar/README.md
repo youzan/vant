@@ -125,7 +125,7 @@ Set `show-confirm` to `false` to hide the confirm button. In this case, the `con
 Use `color` prop to custom calendar color.
 
 ```html
-<van-calendar v-model:show="show" color="#1989fa" />
+<van-calendar v-model:show="show" color="#ee0a24" />
 ```
 
 ### Custom Date Range
@@ -251,7 +251,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | --- | --- | --- | --- |
 | type | Type，can be set to `range` `multiple` | _string_ | `single` |
 | title | Title of calendar | _string_ | `Calendar` |
-| color | Color for the bottom button and selected date | _string_ | `#ee0a24` |
+| color | Color for the bottom button and selected date | _string_ | `#1989fa` |
 | min-date | Min date | _Date_ | Today |
 | max-date | Max date | _Date_ | Six months after the today |
 | default-date | Default selected date | _Date \| Date[] \| null_ | Today |
@@ -395,14 +395,14 @@ The component provides the following CSS variables, which can be used to customi
 | --van-calendar-day-height | _64px_ | - |
 | --van-calendar-day-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-range-edge-color | _var(--van-white)_ | - |
-| --van-calendar-range-edge-background | _var(--van-danger-color)_ | - |
-| --van-calendar-range-middle-color | _var(--van-danger-color)_ | - |
+| --van-calendar-range-edge-background | _var(--van-primary-color)_ | - |
+| --van-calendar-range-middle-color | _var(--van-primary-color)_ | - |
 | --van-calendar-range-middle-background-opacity | _0.1_ | - |
 | --van-calendar-selected-day-size | _54px_ | - |
 | --van-calendar-selected-day-color | _var(--van-white)_ | - |
 | --van-calendar-info-font-size | _var(--van-font-size-xs)_ | - |
 | --van-calendar-info-line-height | _var(--van-line-height-xs)_ | - |
-| --van-calendar-selected-day-background | _var(--van-danger-color)_ | - |
+| --van-calendar-selected-day-background | _var(--van-primary-color)_ | - |
 | --van-calendar-day-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-confirm-button-height | _36px_ | - |
 | --van-calendar-confirm-button-margin | _7px 0_ | - |
