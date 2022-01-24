@@ -5,7 +5,12 @@ import {
   type CSSProperties,
   type ExtractPropTypes,
 } from 'vue';
-import { truthProp, makeStringProp, createNamespace } from '../utils';
+import {
+  truthProp,
+  makeStringProp,
+  createNamespace,
+  HAPTICS_FEEDBACK,
+} from '../utils';
 import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('tag');
@@ -66,7 +71,11 @@ export default defineComponent({
       }
 
       const CloseIcon = closeable && (
-        <Icon name="cross" class={bem('close')} onClick={onClose} />
+        <Icon
+          name="cross"
+          class={[bem('close'), HAPTICS_FEEDBACK]}
+          onClick={onClose}
+        />
       );
 
       return (

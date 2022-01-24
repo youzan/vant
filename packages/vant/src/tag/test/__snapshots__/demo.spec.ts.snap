@@ -112,7 +112,7 @@ exports[`should render demo and match snapshot 1`] = `
       <transition-stub>
         <span class="van-tag van-tag--medium van-tag--primary">
           Tag
-          <i class="van-badge__wrapper van-icon van-icon-cross van-tag__close">
+          <i class="van-badge__wrapper van-icon van-icon-cross van-tag__close van-haptics-feedback">
           </i>
         </span>
       </transition-stub>

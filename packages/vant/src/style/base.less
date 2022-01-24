@@ -31,8 +31,12 @@
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-.van-haptics-feedback:active {
-  opacity: var(--van-active-opacity);
+.van-haptics-feedback {
+  cursor: pointer;
+
+  &:active {
+    opacity: var(--van-active-opacity);
+  }
 }
 
 [class*='van-hairline'] {
