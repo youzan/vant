@@ -213,7 +213,8 @@ Vant 中的 CSS 变量分为 **基础变量** 和 **组件变量**。组件变�
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| theme-vars | 自定义主题变量 | _object_ | - |
+| theme | 主题风格，设置为 `dark` 来开启暗色模式，局部生效 | _ConfigProviderTheme_ | `light` |
+| theme-vars | 自定义主题变量，局部生效 | _object_ | - |
 | tag `v3.1.2` | 根节点对应的 HTML 标签名 | _string_ | `div` |
 | icon-prefix `v3.1.3` | 所有图标的类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 
@@ -222,5 +223,5 @@ Vant 中的 CSS 变量分为 **基础变量** 和 **组件变量**。组件变�
 组件导出以下类型定义：
 
 ```ts
-import type { ConfigProviderProps } from 'vant';
+import type { ConfigProviderProps, ConfigProviderTheme } from 'vant';
 ```

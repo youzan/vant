@@ -11,6 +11,8 @@ import { kebabCase, makeStringProp, createNamespace } from '../utils';
 
 const [name, bem] = createNamespace('config-provider');
 
+export type ConfigProviderTheme = 'light' | 'dark';
+
 export type ConfigProviderProvide = {
   iconPrefix?: string;
 };
@@ -20,6 +22,7 @@ export const CONFIG_PROVIDER_KEY: InjectionKey<ConfigProviderProvide> =
 
 const configProviderProps = {
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
+  theme: makeStringProp<ConfigProviderTheme>('light'),
   themeVars: Object as PropType<Record<string, string | number>>,
   iconPrefix: String,
 };
@@ -49,7 +52,10 @@ export default defineComponent({
     provide(CONFIG_PROVIDER_KEY, props);
 
     return () => (
-      <props.tag class={bem()} style={style.value}>
+      <props.tag
+        class={[bem(), `van-theme-${props.theme}`]}
+        style={style.value}
+      >
         {slots.default?.()}
       </props.tag>
     );
