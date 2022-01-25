@@ -1,6 +1,6 @@
 {
   "name": "@vant/use",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Vant Composition API",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
