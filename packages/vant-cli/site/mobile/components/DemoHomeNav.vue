@@ -43,8 +43,6 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/var';
-
 .demo-home-nav {
   &__title {
     margin: 24px 0 8px 16px;

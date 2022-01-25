@@ -18,18 +18,18 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/var';
-
 .van-doc-container {
   box-sizing: border-box;
-  padding-left: @van-doc-nav-width;
+  padding-left: var(--van-doc-nav-width);
   overflow: hidden;
 
   &--with-simulator {
-    padding-right: @van-doc-simulator-width + @van-doc-padding;
+    padding-right: calc(
+      var(--van-doc-simulator-width) + var(--van-doc-padding)
+    );
 
     @media (max-width: 1100px) {
-      padding-right: @van-doc-simulator-width - 8px;
+      padding-right: calc(var(--van-doc-simulator-width) - 8px);
     }
   }
 }

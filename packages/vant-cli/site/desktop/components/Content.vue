@@ -41,29 +41,27 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/var';
-
 .van-doc-card {
   margin-bottom: 24px;
   padding: 24px;
-  background-color: #fff;
-  border-radius: @van-doc-border-radius;
-  box-shadow: 0 8px 12px #ebedf0;
+  background-color: var(--van-doc-background-light);
+  border-radius: var(--van-doc-border-radius);
+  box-shadow: 0 8px 12px var(--van-doc-shadow-color);
 
   > p a,
   > ul a,
   > table a,
   > blockquote a {
     margin: 0 1px;
-    color: @van-doc-blue;
+    color: var(--van-doc-link-color);
     -webkit-font-smoothing: auto;
 
     &:hover {
-      color: darken(@van-doc-blue, 10%);
+      opacity: 0.8;
     }
 
     &:active {
-      color: darken(@van-doc-blue, 20%);
+      opacity: 0.6;
     }
   }
 
@@ -71,7 +69,6 @@ export default {
   > h4,
   > h5,
   > h6 {
-    color: @van-doc-black;
     font-weight: normal;
     line-height: 1.6;
 
@@ -100,23 +97,19 @@ export default {
 
   > p {
     margin-top: 8px;
-  }
-
-  > p,
-  > blockquote p {
-    color: @van-doc-text-color;
+    color: var(--van-doc-text-color-3);
     font-size: 15px;
     line-height: 26px;
 
     strong {
-      color: black;
+      color: var(--van-doc-text-color-1);
     }
   }
 
   > table {
     width: 100%;
     margin-top: 12px;
-    color: @van-doc-text-color;
+    color: var(--van-doc-text-color-3);
     font-size: 14px;
     line-height: 1.5;
     border-collapse: collapse;
@@ -137,7 +130,7 @@ export default {
 
     td {
       padding: 8px;
-      border-top: 1px solid @van-doc-code-background-color;
+      border-top: 1px solid var(--van-doc-border-color);
 
       &:first-child {
         padding-left: 0;
@@ -146,10 +139,10 @@ export default {
         code {
           margin: 0;
           padding: 2px 6px;
-          color: @van-doc-blue;
+          color: var(--van-doc-blue);
           font-weight: 600;
           font-size: 11px;
-          background-color: fade(@van-doc-blue, 10%);
+          background-color: rgba(25, 137, 250, 0.15);
           border-radius: 20px;
         }
       }
@@ -161,9 +154,9 @@ export default {
 
     em {
       display: inline-block;
-      color: @van-doc-green;
+      color: var(--van-doc-green);
       font-size: 14px;
-      font-family: @van-doc-code-font-family;
+      font-family: 'Source Code Pro', 'Monaco', 'Inconsolata', monospace;
       font-style: normal;
       max-width: 300px;
       -webkit-font-smoothing: auto;
@@ -179,7 +172,7 @@ export default {
     position: relative;
     margin: 5px 0 5px 10px;
     padding-left: 15px;
-    color: @van-doc-text-color;
+    color: var(--van-doc-text-color-3);
     font-size: 15px;
     line-height: 26px;
 
@@ -191,7 +184,7 @@ export default {
       width: 6px;
       height: 6px;
       margin-top: 10px;
-      border: 1px solid @van-doc-dark-grey;
+      border: 1px solid currentColor;
       border-radius: 50%;
       content: '';
     }
@@ -221,15 +214,17 @@ export default {
   > blockquote {
     margin: 16px 0 0;
     padding: 16px;
-    background-color: #ecf9ff;
-    border-radius: @van-doc-border-radius;
+    font-size: 14px;
+    color: var(--van-doc-blockquote-color);
+    background-color: var(--van-doc-blockquote-background);
+    border-radius: var(--van-doc-border-radius);
   }
 
   > img,
   > p img {
     width: 100%;
     margin: 16px 0;
-    border-radius: @van-doc-border-radius;
+    border-radius: var(--van-doc-border-radius);
   }
 }
 
@@ -244,7 +239,6 @@ export default {
 
     h1,
     h2 {
-      color: @van-doc-black;
       font-weight: normal;
       line-height: 1.5;
 

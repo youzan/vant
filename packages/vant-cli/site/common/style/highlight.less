@@ -1,20 +1,18 @@
-@import './var';
-
 code {
   position: relative;
   display: block;
   padding: 16px 20px;
   overflow-x: auto;
-  color: @van-doc-code-color;
+  color: var(--van-doc-code-color);
   font-weight: 400;
   font-size: 14px;
-  font-family: @van-doc-code-font-family;
+  font-family: 'Source Code Pro', 'Monaco', 'Inconsolata', monospace;
   line-height: 26px;
   white-space: pre-wrap;
   word-wrap: break-word;
   -webkit-font-smoothing: auto;
-  background-color: #f8f8f8;
-  border-radius: @van-doc-border-radius;
+  background-color: var(--van-doc-code-background);
+  border-radius: var(--van-doc-border-radius);
 }
 
 pre {
@@ -33,7 +31,7 @@ pre {
 }
 
 .hljs-subst {
-  color: @van-doc-code-color;
+  color: var(--van-doc-code-color);
 }
 
 .hljs-string,
@@ -42,18 +40,18 @@ pre {
 .hljs-template-tag,
 .hljs-template-variable,
 .hljs-addition {
-  color: @van-doc-green;
+  color: var(--van-doc-green);
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #999;
+  color: var(--van-doc-code-comment-color);
 }
 
 .hljs-params,
 .hljs-keyword,
 .hljs-attribute {
-  color: @van-doc-purple;
+  color: var(--van-doc-purple);
 }
 
 .hljs-deletion,

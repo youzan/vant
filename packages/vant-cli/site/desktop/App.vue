@@ -8,6 +8,7 @@
       :simulator="simulator"
       :has-simulator="hasSimulator"
       :lang-configs="langConfigs"
+      :support-dark-mode="supportDarkMode"
     >
       <router-view />
     </van-doc>
@@ -27,6 +28,7 @@ export default {
   data() {
     return {
       hasSimulator: true,
+      supportDarkMode: config.site.supportDarkMode,
     };
   },
 

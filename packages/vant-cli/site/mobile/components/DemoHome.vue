@@ -52,8 +52,6 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/var';
-
 .demo-home {
   box-sizing: border-box;
   width: 100%;

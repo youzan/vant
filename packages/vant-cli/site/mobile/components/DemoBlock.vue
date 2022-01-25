@@ -20,13 +20,11 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/var';
-
 .van-doc-demo-block {
   &__title {
     margin: 0;
     padding: 32px 16px 16px;
-    color: @van-doc-text-light-blue;
+    color: rgba(69, 90, 100, 0.6);
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;

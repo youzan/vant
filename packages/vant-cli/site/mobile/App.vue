@@ -18,7 +18,6 @@ export default {
 </script>
 
 <style lang="less">
-@import '../common/style/var';
 @import '../common/style/base';
 
 body {

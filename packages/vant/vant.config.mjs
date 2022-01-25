@@ -16,6 +16,7 @@ export default {
   },
   site: {
     defaultLang: 'en-US',
+    supportDarkMode: true,
     versions: [
       { label: 'v1', link: '/vant/v1/' },
       { label: 'v2', link: '/vant/' },
