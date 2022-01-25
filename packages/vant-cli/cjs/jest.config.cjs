@@ -16,7 +16,8 @@ const DEFAULT_CONFIG = {
   setupFilesAfterEnv: [JEST_SETUP_FILE],
   moduleFileExtensions: ['js', 'jsx', 'vue', 'ts', 'tsx'],
   transform: {
-    '\\.(js|jsx|ts|tsx|vue)$': '<rootDir>/node_modules/@vant/cli/cjs/jest.transformer.cjs',
+    '\\.(js|jsx|ts|tsx|vue)$':
+      '<rootDir>/node_modules/@vant/cli/cjs/jest.transformer.cjs',
   },
   transformIgnorePatterns: ['/node_modules/(?!(@vant/cli))/'],
   snapshotSerializers: ['jest-serializer-html'],

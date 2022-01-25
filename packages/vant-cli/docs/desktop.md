@@ -27,12 +27,12 @@ button
 | transform | boolean | 防止预览区内 fixed 定位的元素飞出预览区 |
 | inline    | boolean | 只显示组件本身，不显示预览区边框和代码  |
 
-
 ### `compact`
 
 ```html
 <demo-code compact>./demo/MyDemo.vue</demo-code>
 ```
+
 ![image](https://user-images.githubusercontent.com/5093611/111076728-77cc5d00-8528-11eb-85f1-e7217344ab14.png)
 
 ### `transform`
@@ -40,6 +40,7 @@ button
 ```html
 <demo-code transform>./demo/MyDemo.vue</demo-code>
 ```
+
 ![image](https://user-images.githubusercontent.com/5093611/111076799-d5f94000-8528-11eb-973f-c9d69f91d2a7.png)
 
 ### `inline`
@@ -47,6 +48,7 @@ button
 ```html
 <demo-code inline>./demo/MyDemo.vue</demo-code>
 ```
+
 ![image](https://user-images.githubusercontent.com/5093611/111076845-15c02780-8529-11eb-9cfb-76c9b25dc2a2.png)
 
 ### 去除手机模拟器
@@ -79,5 +81,4 @@ module.exports = {
     },
   },
 };
-
 ```

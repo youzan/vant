@@ -5,15 +5,15 @@
 </template>
 
 <script>
-const a = 1
-a = 1
+const a = 1;
+a = 1;
 export default {
   data() {
     return {
-      arr: [1, 2, 3]
-    }
-  }
-}
+      arr: [1, 2, 3],
+    };
+  },
+};
 </script>
 
 <style></style>
