@@ -18,10 +18,9 @@
     <% if (baiduAnalytics) { %>
     <script>
       var _hmt = _hmt || [];
-      (function() {
+      (function () {
         var hm = document.createElement('script');
-        hm.src =
-          'https://hm.baidu.com/hm.js?<%= baiduAnalytics.seed %>';
+        hm.src = 'https://hm.baidu.com/hm.js?<%= baiduAnalytics.seed %>';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(hm, s);
       })();

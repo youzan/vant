@@ -20,6 +20,7 @@ export function flattenVNodes(children: VNodeNormalizedChildren) {
           result.push(child);
 
           if (child.component?.subTree) {
+            result.push(child.component.subTree);
             traverse(child.component.subTree.children);
           }
 

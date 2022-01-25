@@ -15,7 +15,7 @@ exports[`should render Tab inside a component correctly 1`] = `
            aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
-          2
+          1
         </span>
       </div>
       <div id="van-tabs-1"
@@ -26,7 +26,7 @@ exports[`should render Tab inside a component correctly 1`] = `
            aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
-          1
+          2
         </span>
       </div>
       <div id="van-tabs-2"
@@ -50,19 +50,19 @@ exports[`should render Tab inside a component correctly 1`] = `
     <div id="van-tab"
          role="tabpanel"
          class="van-tab__panel"
-         tabindex="0"
-         aria-labelledby="van-tabs-1"
-         style
-    >
-      1
-    </div>
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel"
          tabindex="-1"
          aria-labelledby="van-tabs-0"
          style="display: none;"
     >
+    </div>
+    <div id="van-tab"
+         role="tabpanel"
+         class="van-tab__panel"
+         tabindex="0"
+         aria-labelledby="van-tabs-1"
+         style
+    >
+      2
     </div>
     <div id="van-tab"
          role="tabpanel"
