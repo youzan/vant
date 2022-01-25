@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'App',
@@ -7,6 +7,6 @@ export default defineComponent({
       <>
         <h1>App</h1>
       </>
-    )
-  }
-})
+    );
+  },
+});
