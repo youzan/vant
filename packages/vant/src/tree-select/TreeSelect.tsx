@@ -112,8 +112,9 @@ export default defineComponent({
 
     const onSidebarChange = (index: number) => {
       emit('update:mainActiveIndex', index);
-      emit('click-nav', index);
     };
+
+    const onClickSidebarItem = (index: number) => emit('click-nav', index);
 
     const renderSidebar = () => {
       const Items = props.items.map((item) => (
@@ -123,6 +124,7 @@ export default defineComponent({
           badge={item.badge}
           class={[bem('nav-item'), item.className]}
           disabled={item.disabled}
+          onClick={onClickSidebarItem}
         />
       ));
 
