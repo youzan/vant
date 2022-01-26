@@ -35,7 +35,7 @@ const exchangedCoupons = ref<CouponInfo[]>([]);
 
 const coupon = computed(() => ({
   id: 1,
-  condition: '无使用门槛\n最多优惠12元',
+  condition: '无门槛\n最多优惠12元',
   reason: '',
   value: 150,
   name: t('coupon.name'),

@@ -35,7 +35,7 @@ export default {
     label: 'รวม：',
   },
   vanCoupon: {
-    unlimited: 'ไม่มีเกณฑ์การใช้งาน',
+    unlimited: 'ไม่ จำกัด',
     discount: (discount: number) => `ลด${discount}`,
     condition: (condition: number) => `มีจำหน่ายในราคา ${condition} กว่าหยวน`,
   },
@@ -45,7 +45,7 @@ export default {
   },
   vanCouponList: {
     exchange: 'แลกเปลี่ยน',
-    close: 'ห้ามใช้คูปอง',
+    close: 'ไม่ได้ใช้',
     enable: 'พร้อมใช้งาน',
     disabled: 'ไม่พร้อมใช้งาน',
     placeholder: 'กรุณากรอกรหัสคูปอง',
