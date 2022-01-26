@@ -24,7 +24,7 @@ export default {
   &__title {
     margin: 0;
     padding: 32px 16px 16px;
-    color: rgba(69, 90, 100, 0.6);
+    color: var(--van-doc-text-color-4);
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
