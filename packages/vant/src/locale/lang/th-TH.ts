@@ -14,7 +14,6 @@ export default {
     start: 'เริ่ม',
     title: 'การเลือกวันที่',
     confirm: 'ตกลง',
-    startEnd: 'เริ่ม/เริ่ม',
     weekdays: ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'],
     monthTitle: (year: number, month: number) => `${year}ปี${month}เดือน`,
     rangePrompt: (maxRange: number) =>

@@ -13,7 +13,6 @@ export default {
     end: 'Конец',
     start: 'Начало',
     title: 'Каленарь',
-    startEnd: 'Начало/Конец',
     weekdays: ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `Укажите более ${maxRange} дней`,

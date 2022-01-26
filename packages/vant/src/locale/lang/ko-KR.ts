@@ -13,7 +13,6 @@ export default {
     end: '끝',
     start: '시작',
     title: '달력',
-    startEnd: '시작/끝',
     weekdays: [
       '일요일',
       '월요일',
