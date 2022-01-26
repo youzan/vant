@@ -8,6 +8,7 @@ export default {
   loading: 'Загрузка...',
   noCoupon: 'Нет купонов',
   nameEmpty: 'Пожалуйста укажите имя',
+  addContact: 'Создать контакт',
   telInvalid: 'Некорректный номер телефона',
   vanCalendar: {
     end: 'Конец',
@@ -19,12 +20,6 @@ export default {
   },
   vanCascader: {
     select: 'Выбрать',
-  },
-  vanContactCard: {
-    addText: 'Добавить информацию',
-  },
-  vanContactList: {
-    addText: 'Создать контакт',
   },
   vanPagination: {
     prev: 'Назад',

@@ -8,6 +8,7 @@ export default {
   loading: 'Laster...',
   noCoupon: 'Ingen kuponger',
   nameEmpty: 'Vennligst fyll inn navn',
+  addContact: 'Legg til ny kontakt',
   telInvalid: 'Ugyldig telefonnummer',
   vanCalendar: {
     end: 'Slutt',
@@ -19,12 +20,6 @@ export default {
   },
   vanCascader: {
     select: 'Plukke ut',
-  },
-  vanContactCard: {
-    addText: 'Legg til kontakt info',
-  },
-  vanContactList: {
-    addText: 'Legg til ny kontakt',
   },
   vanPagination: {
     prev: 'Forrige',

@@ -8,6 +8,7 @@ export default {
   loading: 'กำลังโหลด...',
   noCoupon: 'ไม่มีคูปอง',
   nameEmpty: 'กรุณากรอกชื่อของคุณ',
+  addContact: 'เพิ่มผู้ติดต่อ',
   telInvalid: 'กรุณากรอกหมายเลขโทรศัพท์ที่ถูกต้อง',
   vanCalendar: {
     end: 'จบ',
@@ -21,12 +22,6 @@ export default {
   },
   vanCascader: {
     select: 'โปรดเลือก',
-  },
-  vanContactCard: {
-    addText: 'เพิ่มผู้ติดต่อ',
-  },
-  vanContactList: {
-    addText: 'รายชื่อติดต่อใหม่',
   },
   vanPagination: {
     prev: 'หน้าที่แล้ว',

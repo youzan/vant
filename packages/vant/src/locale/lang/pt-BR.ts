@@ -8,6 +8,7 @@ export default {
   loading: 'Carregando...',
   noCoupon: 'Nenhum cupom',
   nameEmpty: 'Por favor, preencha o nome',
+  addContact: 'Adicionar novo contato',
   telInvalid: 'Telefone em formato inválido',
   vanCalendar: {
     end: 'Fim',
@@ -19,12 +20,6 @@ export default {
   },
   vanCascader: {
     select: 'Selecione',
-  },
-  vanContactCard: {
-    addText: 'Adicionar informações de contato',
-  },
-  vanContactList: {
-    addText: 'Adicionar novo contato',
   },
   vanPagination: {
     prev: 'Anterior',

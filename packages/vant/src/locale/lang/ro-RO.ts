@@ -8,6 +8,7 @@ export default {
   loading: 'Încărcare...',
   noCoupon: 'Fără cupoane',
   nameEmpty: 'Te rugăm să completezi numele',
+  addContact: 'Adaugă contact nou',
   telInvalid: 'Număr de telefon invalid',
   vanCalendar: {
     end: 'Sfârșit',
@@ -19,12 +20,6 @@ export default {
   },
   vanCascader: {
     select: 'Selectați',
-  },
-  vanContactCard: {
-    addText: 'Adaugă informațiile de contact',
-  },
-  vanContactList: {
-    addText: 'Adaugă contact nou',
   },
   vanPagination: {
     prev: 'Precedenta',

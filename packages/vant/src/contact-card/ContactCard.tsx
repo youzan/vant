@@ -32,7 +32,7 @@ export default defineComponent({
 
     const renderContent = () => {
       if (props.type === 'add') {
-        return props.addText || t('addText');
+        return props.addText || t('addContact');
       }
 
       return [

@@ -100,7 +100,7 @@ export default defineComponent({
             block
             type="danger"
             class={bem('add')}
-            text={props.addText || t('addText')}
+            text={props.addText || t('addContact')}
             onClick={() => emit('add')}
           />
         </div>
