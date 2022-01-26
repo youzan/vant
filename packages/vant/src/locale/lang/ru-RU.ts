@@ -54,11 +54,8 @@ export default {
     areaEmpty: 'Укажите зону доставки',
     addressEmpty: 'Адрес не может быть пустым',
     postalEmpty: 'Некорректный индекс',
+    addressDetail: 'Адрес',
     defaultAddress: 'Сделать адресом по умолчанию',
-  },
-  vanAddressEditDetail: {
-    label: 'Адрес',
-    placeholder: 'Адрес',
   },
   vanAddressList: {
     add: 'Новый адрес',

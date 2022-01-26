@@ -11,7 +11,8 @@ import { Field } from '../field';
 import type { AddressEditSearchItem } from './types';
 import type { FieldRule, FieldInstance } from '../field/types';
 
-const [name, bem, t] = createNamespace('address-edit-detail');
+const [name, bem] = createNamespace('address-edit-detail');
+const t = createNamespace('address-edit')[2];
 
 export default defineComponent({
   name,
@@ -89,11 +90,11 @@ export default defineComponent({
               rows={props.rows}
               type="textarea"
               rules={props.rules}
-              label={t('label')}
+              label={t('addressDetail')}
               border={!showSearchResult()}
               maxlength={props.maxlength}
               modelValue={props.value}
-              placeholder={t('placeholder')}
+              placeholder={t('addressDetail')}
               onBlur={onBlur}
               onFocus={onFocus}
               onUpdate:modelValue={onInput}

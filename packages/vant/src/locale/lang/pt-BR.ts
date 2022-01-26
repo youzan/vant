@@ -54,11 +54,8 @@ export default {
     areaEmpty: 'Por favor, selecione uma área de recebimento',
     addressEmpty: 'Endereço não pode ser vazio',
     postalEmpty: 'CEP inválido',
+    addressDetail: 'Endereço',
     defaultAddress: 'Usar como endereço padrão',
-  },
-  vanAddressEditDetail: {
-    label: 'Endereço',
-    placeholder: 'Endereço',
   },
   vanAddressList: {
     add: 'Adicionar novo endereço',

@@ -62,11 +62,8 @@ export default {
     areaEmpty: '접수지역을 선택해주세요',
     addressEmpty: '주소는 비워둘 수 없습니다',
     postalEmpty: '잘못된 우편번호',
+    addressDetail: '주소',
     defaultAddress: '기본 주소로 설정',
-  },
-  vanAddressEditDetail: {
-    label: '주소',
-    placeholder: '주소',
   },
   vanAddressList: {
     add: '새 주소 추가',

@@ -14,7 +14,6 @@ export default {
     end: '終了',
     start: '開始',
     title: '日付選択',
-    confirm: '確認',
     weekdays: ['日', '月', '火', '水', '木', '金', '土'],
     monthTitle: (year: number, month: number) => `${year}年${month}月`,
     rangePrompt: (maxRange: number) => `${maxRange}日まで選択`,
@@ -55,11 +54,8 @@ export default {
     areaEmpty: '地域を選択してください',
     addressEmpty: '詳しい住所を入力してください',
     postalEmpty: '間違った郵便番号',
+    addressDetail: '詳しい住所',
     defaultAddress: 'デフォルトの住所に設定',
-  },
-  vanAddressEditDetail: {
-    label: '詳しい住所',
-    placeholder: '番地、階の部屋番号など',
   },
   vanAddressList: {
     add: '住所を追加',

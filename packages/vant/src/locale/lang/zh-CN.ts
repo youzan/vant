@@ -14,7 +14,6 @@ export default {
     end: '结束',
     start: '开始',
     title: '日期选择',
-    confirm: '确定',
     weekdays: ['日', '一', '二', '三', '四', '五', '六'],
     monthTitle: (year: number, month: number) => `${year}年${month}月`,
     rangePrompt: (maxRange: number) => `最多选择 ${maxRange} 天`,
@@ -47,7 +46,7 @@ export default {
     close: '不使用',
     enable: '可用',
     disabled: '不可用',
-    placeholder: '请输入优惠码',
+    placeholder: '输入优惠码',
   },
   vanAddressEdit: {
     area: '地区',
@@ -55,11 +54,8 @@ export default {
     areaEmpty: '请选择地区',
     addressEmpty: '请填写详细地址',
     postalEmpty: '邮政编码不正确',
+    addressDetail: '详细地址',
     defaultAddress: '设为默认收货地址',
-  },
-  vanAddressEditDetail: {
-    label: '详细地址',
-    placeholder: '街道门牌信息',
   },
   vanAddressList: {
     add: '新增地址',

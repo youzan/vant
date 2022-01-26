@@ -54,11 +54,8 @@ export default {
     areaEmpty: 'Lütfen alıcı alanını seçin',
     addressEmpty: 'Adres boş olamaz!',
     postalEmpty: 'Yanlış posta kodu',
+    addressDetail: 'Adres',
     defaultAddress: 'Varsayılan adres olarak ayarla',
-  },
-  vanAddressEditDetail: {
-    label: 'Adres',
-    placeholder: 'Adres',
   },
   vanAddressList: {
     add: 'Yeni adres ekle',

@@ -54,11 +54,8 @@ export default {
     areaEmpty: 'Bitte deinen Ort angeben',
     addressEmpty: 'Adresse darf nicht leer sein',
     postalEmpty: 'Falsche Postleitzahl',
+    addressDetail: 'Adresse',
     defaultAddress: 'Als Standardadresse festgelegen',
-  },
-  vanAddressEditDetail: {
-    label: 'Adresse',
-    placeholder: 'Adresse',
   },
   vanAddressList: {
     add: 'Neue Adresse hinzufügen',

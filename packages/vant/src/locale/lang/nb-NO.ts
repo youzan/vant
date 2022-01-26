@@ -54,11 +54,8 @@ export default {
     areaEmpty: 'Vennligst fyll inn område',
     addressEmpty: 'Addresse kan ikke være tomt',
     postalEmpty: 'Feil postkode',
+    addressDetail: 'Adresse',
     defaultAddress: 'Sett som standard adresse',
-  },
-  vanAddressEditDetail: {
-    label: 'Adresse',
-    placeholder: 'Adresse',
   },
   vanAddressList: {
     add: 'Legg til ny adresse',
