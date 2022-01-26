@@ -54,11 +54,8 @@ export default {
     areaEmpty: 'Por favor selecciona una área de recogida',
     addressEmpty: 'La dirección no puede estar vacia',
     postalEmpty: 'Código postal inválido',
+    addressDetail: 'Dirección',
     defaultAddress: 'Establecer como dirección por defecto',
-  },
-  vanAddressEditDetail: {
-    label: 'Dirección',
-    placeholder: 'Dirección',
   },
   vanAddressList: {
     add: 'Anadir dirección',

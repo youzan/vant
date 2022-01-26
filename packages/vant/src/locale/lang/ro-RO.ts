@@ -54,11 +54,8 @@ export default {
     areaEmpty: 'Te rugăm sa selectezi o zona de primire',
     addressEmpty: 'Adresa nu poate fi goală',
     postalEmpty: 'Cod postal invalid',
+    addressDetail: 'Adresă',
     defaultAddress: 'Setează ca adresă de pornire',
-  },
-  vanAddressEditDetail: {
-    label: 'Adresă',
-    placeholder: 'Adresă',
   },
   vanAddressList: {
     add: 'Adaugă adresă nouă',

@@ -14,7 +14,6 @@ export default {
     end: 'จบ',
     start: 'เริ่ม',
     title: 'การเลือกวันที่',
-    confirm: 'ตกลง',
     weekdays: ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'],
     monthTitle: (year: number, month: number) => `${year}ปี${month}เดือน`,
     rangePrompt: (maxRange: number) =>
@@ -56,11 +55,8 @@ export default {
     areaEmpty: 'โปรดเลือกภูมิภาค',
     addressEmpty: 'กรุณากรอกที่อยู่โดยละเอียด',
     postalEmpty: 'รูปแบบรหัสไปรษณีย์ไม่ถูกต้อง',
+    addressDetail: 'ที่อยู่',
     defaultAddress: 'ตั้งเป็นที่อยู่จัดส่งเริ่มต้น',
-  },
-  vanAddressEditDetail: {
-    label: 'ที่อยู่',
-    placeholder: 'เลขที่บ้านเลขที่ห้องชั้นและข้อมูลอื่น ๆ',
   },
   vanAddressList: {
     add: 'เพิ่มที่อยู่',
