@@ -34,7 +34,7 @@ export default {
     label: '合計：',
   },
   vanCoupon: {
-    unlimited: '入場ありません',
+    unlimited: '無制限',
     discount: (discount: number) => `${10 - discount}割引`,
     condition: (condition: number) => `${condition}円以上で利用可能`,
   },
@@ -44,7 +44,7 @@ export default {
   },
   vanCouponList: {
     exchange: '両替',
-    close: 'クーポンを使用しません',
+    close: '使用禁止',
     enable: '利用可能',
     disabled: '利用できません',
     placeholder: '割引コードを入力してください',

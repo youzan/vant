@@ -34,7 +34,7 @@ export default {
     label: '合計：',
   },
   vanCoupon: {
-    unlimited: '無使用門檻',
+    unlimited: '無門檻',
     discount: (discount: number) => `${discount}折`,
     condition: (condition: number) => `滿${condition}元可用`,
   },
@@ -44,7 +44,7 @@ export default {
   },
   vanCouponList: {
     exchange: '兌換',
-    close: '不使用優惠',
+    close: '不使用',
     enable: '可使用優惠券',
     disabled: '不可使用優惠券',
     placeholder: '請輸入優惠代碼',
