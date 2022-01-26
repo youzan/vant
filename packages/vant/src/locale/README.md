@@ -46,6 +46,7 @@ Current supported languages:
 | English                  | en-US        |
 | Spanish (Spain)          | es-ES        |
 | French                   | fr-FR        |
+| Hindi                    | hi-IN        |
 | Japanese                 | ja-JP        |
 | Korean                   | ko-KR        |
 | Norwegian                | nb-NO        |
