@@ -1,7 +1,4 @@
-/**
- * 同步父窗口和 iframe 的 vue-router 状态
- */
-
+import { ref } from 'vue';
 import { config } from 'site-desktop-shared';
 
 let queue = [];
@@ -60,6 +57,40 @@ export function syncPathToChild() {
       );
     });
   }
+}
+
+export function syncThemeToChild(theme) {
+  const iframe = document.querySelector('iframe');
+  if (iframe) {
+    iframeReady(() => {
+      iframe.contentWindow.postMessage(
+        {
+          type: 'updateTheme',
+          value: theme,
+        },
+        '*'
+      );
+    });
+  }
+}
+
+export function getDefaultTheme() {
+  return window.localStorage.getItem('vantTheme') || 'light';
+}
+
+export function useCurrentTheme() {
+  const theme = ref(getDefaultTheme());
+
+  window.addEventListener('message', (event) => {
+    if (event.data?.type !== 'updateTheme') {
+      return;
+    }
+
+    const newTheme = event.data?.value || '';
+    theme.value = newTheme;
+  });
+
+  return theme;
 }
 
 export function listenToSyncPath(router) {

@@ -8,7 +8,7 @@
       :simulator="simulator"
       :has-simulator="hasSimulator"
       :lang-configs="langConfigs"
-      :support-dark-mode="supportDarkMode"
+      :dark-mode-class="darkModeClass"
     >
       <router-view />
     </van-doc>
@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       hasSimulator: true,
-      supportDarkMode: config.site.supportDarkMode,
+      darkModeClass: config.site.darkModeClass,
     };
   },
 
@@ -72,18 +72,18 @@ export default {
   watch: {
     // eslint-disable-next-line
     '$route.path'() {
-      this.setTitleAndToogleSimulator();
+      this.setTitleAndToggleSimulator();
     },
 
     lang(val) {
       setLang(val);
-      this.setTitleAndToogleSimulator();
+      this.setTitleAndToggleSimulator();
     },
 
     config: {
       handler(val) {
         if (val) {
-          this.setTitleAndToogleSimulator();
+          this.setTitleAndToggleSimulator();
         }
       },
       immediate: true,
@@ -102,7 +102,7 @@ export default {
   },
 
   methods: {
-    setTitleAndToogleSimulator() {
+    setTitleAndToggleSimulator() {
       let { title } = this.config;
 
       const navItems = this.config.nav.reduce(

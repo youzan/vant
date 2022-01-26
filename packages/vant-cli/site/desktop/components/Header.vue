@@ -21,7 +21,7 @@
             </a>
           </li>
 
-          <li v-if="supportDarkMode" class="van-doc-header__top-nav-item">
+          <li v-if="darkModeClass" class="van-doc-header__top-nav-item">
             <a
               class="van-doc-header__link"
               target="_blank"
@@ -76,6 +76,7 @@
 <script>
 import SearchInput from './SearchInput.vue';
 import { packageVersion } from 'site-desktop-shared';
+import { getDefaultTheme, syncThemeToChild } from '../../common/iframe-sync';
 
 export default {
   name: 'VanDocHeader',
@@ -89,12 +90,12 @@ export default {
     config: Object,
     versions: Array,
     langConfigs: Array,
-    supportDarkMode: Boolean,
+    darkModeClass: String,
   },
 
   data() {
     return {
-      currentTheme: this.getDefaultTheme(),
+      currentTheme: getDefaultTheme(),
       packageVersion,
       showVersionPop: false,
     };
@@ -136,16 +137,13 @@ export default {
         window.localStorage.setItem('vantTheme', newVal);
         document.body.classList.remove(`van-doc-theme-${oldVal}`);
         document.body.classList.add(`van-doc-theme-${newVal}`);
+        syncThemeToChild(newVal);
       },
       immediate: true,
     },
   },
 
   methods: {
-    getDefaultTheme() {
-      return window.localStorage.getItem('vantTheme') || 'light';
-    },
-
     toggleTheme() {
       this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
     },
