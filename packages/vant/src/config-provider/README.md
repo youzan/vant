@@ -33,10 +33,10 @@ Looking at the style of the Button component, you can see that the following var
 }
 ```
 
-The default values of these variables are defined on the `root` node:
+The default values of these variables are defined on the `body` node:
 
 ```css
-:root {
+body {
   --van-white: #fff;
   --van-blue: #1989fa;
   --van-button-primary-color: var(--van-white);
@@ -52,7 +52,7 @@ You can directly override these CSS variables in the code, and the style of the 
 
 ```css
 /* the Primary Button will turn red */
-:root {
+body {
   --van-button-primary-background: red;
 }
 ```
@@ -120,8 +120,8 @@ CSS variables in Vant are divided into **basic variables** and **component varia
 
 #### Modify Basic Variables
 
-- The basic variables can only be modified through the `root` selector.
-- The component variables can be modified through the `root` selector and `ConfigProvider` component.
+- The basic variables can only be modified through the `body` selector.
+- The component variables can be modified through the `body` selector and `ConfigProvider` component.
 
 #### Variable List
 

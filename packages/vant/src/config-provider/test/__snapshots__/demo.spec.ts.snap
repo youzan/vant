@@ -122,7 +122,7 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-config-provider"
-       style="--van-rate-icon-full-color: #07c160; --van-slider-bar-height: 4px; --van-slider-button-width: 20px; --van-slider-button-height: 20px; --van-slider-active-background-color: #07c160; --van-button-primary-border-color: #07c160; --van-button-primary-background-color: #07c160;"
+       style="--van-rate-icon-full-color: #07c160; --van-slider-bar-height: 4px; --van-slider-button-width: 20px; --van-slider-button-height: 20px; --van-slider-active-background: #07c160; --van-button-primary-border-color: #07c160; --van-button-primary-background: #07c160;"
   >
     <form class="van-form">
       <div class="van-cell van-field">

@@ -75,7 +75,7 @@ const onSelect = (contact: { id: string }) => {
 .demo-contact-card {
   .van-popup {
     height: 100%;
-    background-color: var(--van-background-color);
+    background-color: var(--van-background);
   }
 }
 </style>

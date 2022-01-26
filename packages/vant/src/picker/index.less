@@ -1,4 +1,4 @@
-:root {
+body {
   --van-picker-background: var(--van-background-light);
   --van-picker-toolbar-height: 44px;
   --van-picker-title-font-size: var(--van-font-size-lg);
@@ -19,6 +19,15 @@
       rgba(255, 255, 255, 0.4)
     ),
     linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+}
+
+.van-theme-dark {
+  --van-picker-mask-color: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
 }
 
 .van-picker {
