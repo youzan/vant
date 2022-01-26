@@ -13,7 +13,6 @@ export default {
     end: 'Sfârșit',
     start: 'Început',
     title: 'Calendar',
-    startEnd: 'Început/Sfârsit',
     weekdays: ['Dum', 'Lun', 'Mar', 'Mie', 'Joi', 'Vin', 'Sâm'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `Alege maxim ${maxRange} zile`,

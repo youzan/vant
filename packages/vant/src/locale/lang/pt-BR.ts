@@ -13,7 +13,6 @@ export default {
     end: 'Fim',
     start: 'Início',
     title: 'Calendário',
-    startEnd: 'Início/Fim',
     weekdays: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
     monthTitle: (year: number, month: number) => `${month}/${year}`,
     rangePrompt: (maxRange: number) => `Escolha no máximo ${maxRange} dias`,

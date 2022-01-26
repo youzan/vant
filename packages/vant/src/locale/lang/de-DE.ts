@@ -13,7 +13,6 @@ export default {
     end: 'Ende',
     start: 'Start',
     title: 'Kalender',
-    startEnd: 'Start/Ende',
     weekdays: ['So', 'Mo', 'Di', 'Mo', 'Do', 'Fr', 'Sa'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `Wähle nicht mehr als ${maxRange} Tage`,

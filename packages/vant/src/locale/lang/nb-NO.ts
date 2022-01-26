@@ -13,7 +13,6 @@ export default {
     end: 'Slutt',
     start: 'Start',
     title: 'Kalendar',
-    startEnd: 'Start/Slutt',
     weekdays: ['Søn', 'Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `Maks. ${maxRange} dager`,

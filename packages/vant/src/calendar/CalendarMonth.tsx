@@ -178,7 +178,7 @@ export default defineComponent({
           return t(dayType);
         }
         if (dayType === 'start-end') {
-          return t('startEnd');
+          return `${t('start')}/${t('end')}`;
         }
       }
     };

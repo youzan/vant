@@ -14,7 +14,6 @@ export default {
     start: '開始',
     title: '日付選択',
     confirm: '確認',
-    startEnd: '開始/終了',
     weekdays: ['日', '月', '火', '水', '木', '金', '土'],
     monthTitle: (year: number, month: number) => `${year}年${month}月`,
     rangePrompt: (maxRange: number) => `${maxRange}日まで選択`,
