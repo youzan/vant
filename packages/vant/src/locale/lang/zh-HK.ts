@@ -8,6 +8,7 @@ export default {
   loading: '加載中...',
   noCoupon: '暫無優惠券',
   nameEmpty: '請填寫姓名',
+  addContact: '添加聯系人',
   telInvalid: '請填寫正確的電話',
   vanCalendar: {
     end: '結束',
@@ -20,12 +21,6 @@ export default {
   },
   vanCascader: {
     select: '請選擇',
-  },
-  vanContactCard: {
-    addText: '添加聯系人',
-  },
-  vanContactList: {
-    addText: '新建聯系人',
   },
   vanPagination: {
     prev: '上一頁',

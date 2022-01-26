@@ -8,6 +8,7 @@ export default {
   loading: 'Yükleniyor...',
   noCoupon: 'Kupon yok',
   nameEmpty: 'Lütfen isim giriniz',
+  addContact: 'Yeni kişi ekle',
   telInvalid: 'Geçersiz tel. numarası',
   vanCalendar: {
     end: 'Son',
@@ -19,12 +20,6 @@ export default {
   },
   vanCascader: {
     select: 'Seçiniz',
-  },
-  vanContactCard: {
-    addText: 'Kişi bilgisi ekle',
-  },
-  vanContactList: {
-    addText: 'Yeni kişi ekle',
   },
   vanPagination: {
     prev: 'Önceki',

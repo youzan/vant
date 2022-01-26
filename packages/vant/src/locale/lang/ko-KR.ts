@@ -8,6 +8,7 @@ export default {
   loading: '로딩 중...',
   noCoupon: '쿠폰 없음',
   nameEmpty: '이름을 기입해주세요',
+  addContact: '새 연락처 추가',
   telInvalid: '잘못된 전화번호',
   vanCalendar: {
     end: '끝',
@@ -27,12 +28,6 @@ export default {
   },
   vanCascader: {
     select: '선택하다',
-  },
-  vanContactCard: {
-    addText: '연락처 정보 추가',
-  },
-  vanContactList: {
-    addText: '새 연락처 추가',
   },
   vanPagination: {
     prev: '이전의',

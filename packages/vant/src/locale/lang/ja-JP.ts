@@ -8,6 +8,7 @@ export default {
   loading: '読み込み中...',
   noCoupon: 'クーポンはありません',
   nameEmpty: '名前を入力してください',
+  addContact: '連絡先を追加',
   telInvalid: '正しい電話番号を入力してください',
   vanCalendar: {
     end: '終了',
@@ -20,12 +21,6 @@ export default {
   },
   vanCascader: {
     select: '選択する',
-  },
-  vanContactCard: {
-    addText: '連絡先を追加',
-  },
-  vanContactList: {
-    addText: '新しい連絡先を追加',
   },
   vanPagination: {
     prev: '前のページ',

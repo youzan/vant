@@ -8,6 +8,7 @@ export default {
   loading: '加载中...',
   noCoupon: '暂无优惠券',
   nameEmpty: '请填写姓名',
+  addContact: '添加联系人',
   telInvalid: '请填写正确的电话',
   vanCalendar: {
     end: '结束',
@@ -20,12 +21,6 @@ export default {
   },
   vanCascader: {
     select: '请选择',
-  },
-  vanContactCard: {
-    addText: '添加联系人',
-  },
-  vanContactList: {
-    addText: '新建联系人',
   },
   vanPagination: {
     prev: '上一页',
