@@ -54,7 +54,7 @@ importers:
       '@vant/eslint-config': workspace:*
       '@vant/icons': ^1.7.1
       '@vant/popperjs': ^1.1.0
-      '@vant/use': ^1.3.4
+      '@vant/use': ^1.3.5
       '@vue/runtime-core': ^3.2.27
       '@vue/test-utils': ^2.0.0-rc.16
       typescript: ~4.5.2

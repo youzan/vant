@@ -8,24 +8,18 @@ export default {
   loading: 'Laden...',
   noCoupon: 'Keine Coupons',
   nameEmpty: 'Bitte den Name angeben',
+  addContact: 'Neuen Kontakt hinzufügen',
   telInvalid: 'Ungültige Telefonnummer',
   vanCalendar: {
     end: 'Ende',
     start: 'Start',
     title: 'Kalender',
-    startEnd: 'Start/Ende',
     weekdays: ['So', 'Mo', 'Di', 'Mo', 'Do', 'Fr', 'Sa'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `Wähle nicht mehr als ${maxRange} Tage`,
   },
   vanCascader: {
     select: 'Wählen',
-  },
-  vanContactCard: {
-    addText: 'Kontaktinformationen hinzufügen',
-  },
-  vanContactList: {
-    addText: 'Neuen Kontakt hinzufügen',
   },
   vanPagination: {
     prev: 'Vorherige',
@@ -60,11 +54,8 @@ export default {
     areaEmpty: 'Bitte deinen Ort angeben',
     addressEmpty: 'Adresse darf nicht leer sein',
     postalEmpty: 'Falsche Postleitzahl',
+    addressDetail: 'Adresse',
     defaultAddress: 'Als Standardadresse festgelegen',
-  },
-  vanAddressEditDetail: {
-    label: 'Adresse',
-    placeholder: 'Adresse',
   },
   vanAddressList: {
     add: 'Neue Adresse hinzufügen',

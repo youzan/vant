@@ -9,7 +9,7 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-add-square van-cell__left-icon">
     </i>
     <div class="van-cell__value van-cell__value--alone van-contact-card__value">
-      Add contact info
+      Add contact
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>

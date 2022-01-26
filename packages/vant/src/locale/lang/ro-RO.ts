@@ -8,24 +8,18 @@ export default {
   loading: 'Încărcare...',
   noCoupon: 'Fără cupoane',
   nameEmpty: 'Te rugăm să completezi numele',
+  addContact: 'Adaugă contact nou',
   telInvalid: 'Număr de telefon invalid',
   vanCalendar: {
     end: 'Sfârșit',
     start: 'Început',
     title: 'Calendar',
-    startEnd: 'Început/Sfârsit',
     weekdays: ['Dum', 'Lun', 'Mar', 'Mie', 'Joi', 'Vin', 'Sâm'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `Alege maxim ${maxRange} zile`,
   },
   vanCascader: {
     select: 'Selectați',
-  },
-  vanContactCard: {
-    addText: 'Adaugă informațiile de contact',
-  },
-  vanContactList: {
-    addText: 'Adaugă contact nou',
   },
   vanPagination: {
     prev: 'Precedenta',
@@ -60,11 +54,8 @@ export default {
     areaEmpty: 'Te rugăm sa selectezi o zona de primire',
     addressEmpty: 'Adresa nu poate fi goală',
     postalEmpty: 'Cod postal invalid',
+    addressDetail: 'Adresă',
     defaultAddress: 'Setează ca adresă de pornire',
-  },
-  vanAddressEditDetail: {
-    label: 'Adresă',
-    placeholder: 'Adresă',
   },
   vanAddressList: {
     add: 'Adaugă adresă nouă',

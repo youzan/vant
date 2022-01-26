@@ -8,13 +8,12 @@ export default {
   loading: 'กำลังโหลด...',
   noCoupon: 'ไม่มีคูปอง',
   nameEmpty: 'กรุณากรอกชื่อของคุณ',
+  addContact: 'เพิ่มผู้ติดต่อ',
   telInvalid: 'กรุณากรอกหมายเลขโทรศัพท์ที่ถูกต้อง',
   vanCalendar: {
     end: 'จบ',
     start: 'เริ่ม',
     title: 'การเลือกวันที่',
-    confirm: 'ตกลง',
-    startEnd: 'เริ่ม/เริ่ม',
     weekdays: ['อา', 'จ', 'อ', 'พ', 'พฤ', 'ศ', 'ส'],
     monthTitle: (year: number, month: number) => `${year}ปี${month}เดือน`,
     rangePrompt: (maxRange: number) =>
@@ -22,12 +21,6 @@ export default {
   },
   vanCascader: {
     select: 'โปรดเลือก',
-  },
-  vanContactCard: {
-    addText: 'เพิ่มผู้ติดต่อ',
-  },
-  vanContactList: {
-    addText: 'รายชื่อติดต่อใหม่',
   },
   vanPagination: {
     prev: 'หน้าที่แล้ว',
@@ -41,7 +34,7 @@ export default {
     label: 'รวม：',
   },
   vanCoupon: {
-    unlimited: 'ไม่มีเกณฑ์การใช้งาน',
+    unlimited: 'ไม่ จำกัด',
     discount: (discount: number) => `ลด${discount}`,
     condition: (condition: number) => `มีจำหน่ายในราคา ${condition} กว่าหยวน`,
   },
@@ -51,7 +44,7 @@ export default {
   },
   vanCouponList: {
     exchange: 'แลกเปลี่ยน',
-    close: 'ห้ามใช้คูปอง',
+    close: 'ไม่ได้ใช้',
     enable: 'พร้อมใช้งาน',
     disabled: 'ไม่พร้อมใช้งาน',
     placeholder: 'กรุณากรอกรหัสคูปอง',
@@ -62,11 +55,8 @@ export default {
     areaEmpty: 'โปรดเลือกภูมิภาค',
     addressEmpty: 'กรุณากรอกที่อยู่โดยละเอียด',
     postalEmpty: 'รูปแบบรหัสไปรษณีย์ไม่ถูกต้อง',
+    addressDetail: 'ที่อยู่',
     defaultAddress: 'ตั้งเป็นที่อยู่จัดส่งเริ่มต้น',
-  },
-  vanAddressEditDetail: {
-    label: 'ที่อยู่',
-    placeholder: 'เลขที่บ้านเลขที่ห้องชั้นและข้อมูลอื่น ๆ',
   },
   vanAddressList: {
     add: 'เพิ่มที่อยู่',

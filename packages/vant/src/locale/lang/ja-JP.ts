@@ -8,25 +8,18 @@ export default {
   loading: '読み込み中...',
   noCoupon: 'クーポンはありません',
   nameEmpty: '名前を入力してください',
+  addContact: '連絡先を追加',
   telInvalid: '正しい電話番号を入力してください',
   vanCalendar: {
     end: '終了',
     start: '開始',
     title: '日付選択',
-    confirm: '確認',
-    startEnd: '開始/終了',
     weekdays: ['日', '月', '火', '水', '木', '金', '土'],
     monthTitle: (year: number, month: number) => `${year}年${month}月`,
     rangePrompt: (maxRange: number) => `${maxRange}日まで選択`,
   },
   vanCascader: {
     select: '選択する',
-  },
-  vanContactCard: {
-    addText: '連絡先を追加',
-  },
-  vanContactList: {
-    addText: '新しい連絡先を追加',
   },
   vanPagination: {
     prev: '前のページ',
@@ -40,7 +33,7 @@ export default {
     label: '合計：',
   },
   vanCoupon: {
-    unlimited: '入場ありません',
+    unlimited: '無制限',
     discount: (discount: number) => `${10 - discount}割引`,
     condition: (condition: number) => `${condition}円以上で利用可能`,
   },
@@ -50,7 +43,7 @@ export default {
   },
   vanCouponList: {
     exchange: '両替',
-    close: 'クーポンを使用しません',
+    close: '使用禁止',
     enable: '利用可能',
     disabled: '利用できません',
     placeholder: '割引コードを入力してください',
@@ -61,11 +54,8 @@ export default {
     areaEmpty: '地域を選択してください',
     addressEmpty: '詳しい住所を入力してください',
     postalEmpty: '間違った郵便番号',
+    addressDetail: '詳しい住所',
     defaultAddress: 'デフォルトの住所に設定',
-  },
-  vanAddressEditDetail: {
-    label: '詳しい住所',
-    placeholder: '番地、階の部屋番号など',
   },
   vanAddressList: {
     add: '住所を追加',

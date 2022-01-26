@@ -47,7 +47,9 @@ Locale.add(messages);
 | 英语            | en-US        |
 | 西班牙语        | es-ES        |
 | 法语            | fr-FR        |
+| 印地语          | hi-IN        |
 | 日语            | ja-JP        |
+| 韩语/朝鲜语     | ko-KR.ts     |
 | 挪威语          | nb-NO        |
 | 葡萄牙语 (巴西) | pt-BR        |
 | 罗马尼亚语      | ro-RO        |
