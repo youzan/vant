@@ -1,4 +1,5 @@
 import {
+  watch,
   provide,
   computed,
   defineComponent,
@@ -7,7 +8,12 @@ import {
   type CSSProperties,
   type ExtractPropTypes,
 } from 'vue';
-import { kebabCase, makeStringProp, createNamespace } from '../utils';
+import {
+  inBrowser,
+  kebabCase,
+  makeStringProp,
+  createNamespace,
+} from '../utils';
 
 const [name, bem] = createNamespace('config-provider');
 
@@ -49,13 +55,20 @@ export default defineComponent({
       }
     });
 
+    if (inBrowser) {
+      watch(
+        () => props.theme,
+        (newVal, oldVal) => {
+          document.body.classList.remove(`van-theme-${oldVal}`);
+          document.body.classList.add(`van-theme-${newVal}`);
+        }
+      );
+    }
+
     provide(CONFIG_PROVIDER_KEY, props);
 
     return () => (
-      <props.tag
-        class={[bem(), `van-theme-${props.theme}`]}
-        style={style.value}
-      >
+      <props.tag class={bem()} style={style.value}>
         {slots.default?.()}
       </props.tag>
     );
