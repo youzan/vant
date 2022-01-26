@@ -47,6 +47,7 @@ Current supported languages:
 | Spanish (Spain)          | es-ES        |
 | French                   | fr-FR        |
 | Japanese                 | ja-JP        |
+| Korean                   | ko-KR        |
 | Norwegian                | nb-NO        |
 | Portuguese (Brazil)      | pt-BR        |
 | Romanian                 | ro-RO        |
