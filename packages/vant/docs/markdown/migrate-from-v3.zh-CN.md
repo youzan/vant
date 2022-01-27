@@ -67,6 +67,7 @@ animation-duration               ->  duration
 animation-timing-function-enter  ->  ease-out
 animation-timing-function-leave  ->  ease-in
 background-color                 ->  background
+background-color-light           ->  background-2
 border-radius                    ->  radius
 border-width-base                ->  border-width
 box-shadow                       ->  shadow

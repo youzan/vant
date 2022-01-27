@@ -100,7 +100,7 @@ const beforeClose = ({ position }: { position: string }) => {
 
   .van-card {
     margin: 0;
-    background-color: var(--van-background-light);
+    background-color: var(--van-background-2);
   }
 
   .delete-button {

@@ -247,7 +247,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-action-sheet-description-color | _var(--van-text-color-2)_ | - |
 | --van-action-sheet-description-font-size | _var(--van-font-size-md)_ | - |
 | --van-action-sheet-description-line-height | _var(--van-line-height-md)_ | - |
-| --van-action-sheet-item-background | _var(--van-background-light)_ | - |
+| --van-action-sheet-item-background | _var(--van-background-2)_ | - |
 | --van-action-sheet-item-font-size | _var(--van-font-size-lg)_ | - |
 | --van-action-sheet-item-line-height | _var(--van-line-height-lg)_ | - |
 | --van-action-sheet-item-text-color | _var(--van-text-color)_ | - |

@@ -71,6 +71,6 @@ const imageURL = 'https://img.yzcdn.cn/vant/ipad.jpeg';
 
 <style lang="less">
 .demo-card {
-  background-color: var(--van-background-light);
+  background-color: var(--van-background-2);
 }
 </style>

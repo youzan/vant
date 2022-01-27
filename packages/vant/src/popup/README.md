@@ -167,7 +167,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-popup-background | _var(--van-background-light)_ | - |
+| --van-popup-background | _var(--van-background-2)_ | - |
 | --van-popup-transition | _transform var(--van-duration-base)_ | - |
 | --van-popup-round-radius | _16px_ | - |
 | --van-popup-close-icon-size | _22px_ | - |

@@ -332,17 +332,17 @@ tabsRef.value?.scrollTo(0);
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                          | Default Value                 | Description |
-| ----------------------------- | ----------------------------- | ----------- |
-| --van-tab-text-color          | _var(--van-gray-7)_           | -           |
-| --van-tab-active-text-color   | _var(--van-text-color)_       | -           |
-| --van-tab-disabled-text-color | _var(--van-text-color-3)_     | -           |
-| --van-tab-font-size           | _var(--van-font-size-md)_     | -           |
-| --van-tab-line-height         | _var(--van-line-height-md)_   | -           |
-| --van-tabs-default-color      | _var(--van-primary-color)_    | -           |
-| --van-tabs-line-height        | _44px_                        | -           |
-| --van-tabs-card-height        | _30px_                        | -           |
-| --van-tabs-nav-background     | _var(--van-background-light)_ | -           |
-| --van-tabs-bottom-bar-width   | _40px_                        | -           |
-| --van-tabs-bottom-bar-height  | _3px_                         | -           |
-| --van-tabs-bottom-bar-color   | _var(--van-primary-color)_    | -           |
+| Name                          | Default Value               | Description |
+| ----------------------------- | --------------------------- | ----------- |
+| --van-tab-text-color          | _var(--van-gray-7)_         | -           |
+| --van-tab-active-text-color   | _var(--van-text-color)_     | -           |
+| --van-tab-disabled-text-color | _var(--van-text-color-3)_   | -           |
+| --van-tab-font-size           | _var(--van-font-size-md)_   | -           |
+| --van-tab-line-height         | _var(--van-line-height-md)_ | -           |
+| --van-tabs-default-color      | _var(--van-primary-color)_  | -           |
+| --van-tabs-line-height        | _44px_                      | -           |
+| --van-tabs-card-height        | _30px_                      | -           |
+| --van-tabs-nav-background     | _var(--van-background-2)_   | -           |
+| --van-tabs-bottom-bar-width   | _40px_                      | -           |
+| --van-tabs-bottom-bar-height  | _3px_                       | -           |
+| --van-tabs-bottom-bar-color   | _var(--van-primary-color)_  | -           |

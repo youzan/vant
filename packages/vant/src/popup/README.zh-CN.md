@@ -173,7 +173,7 @@ import type {
 
 | 名称                           | 默认值                               | 描述 |
 | ------------------------------ | ------------------------------------ | ---- |
-| --van-popup-background         | _var(--van-background-light)_        | -    |
+| --van-popup-background         | _var(--van-background-2)_            | -    |
 | --van-popup-transition         | _transform var(--van-duration-base)_ | -    |
 | --van-popup-round-radius       | _16px_                               | -    |
 | --van-popup-close-icon-size    | _22px_                               | -    |

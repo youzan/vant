@@ -197,7 +197,7 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
   &-tab-panel {
     width: auto;
     margin: 20px;
-    background-color: var(--van-background-light);
+    background-color: var(--van-background-2);
     border-radius: 12px;
   }
 

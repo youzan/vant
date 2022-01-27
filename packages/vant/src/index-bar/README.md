@@ -144,4 +144,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-index-anchor-line-height | _32px_ | - |
 | --van-index-anchor-background | _transparent_ | - |
 | --van-index-anchor-sticky-text-color | _var(--van-primary-color)_ | - |
-| --van-index-anchor-sticky-background | _var(--van-background-light)_ | - |
+| --van-index-anchor-sticky-background | _var(--van-background-2)_ | - |

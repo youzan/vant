@@ -147,4 +147,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-tag-success-color | _var(--van-success-color)_ | - |
 | --van-tag-warning-color | _var(--van-warning-color)_ | - |
 | --van-tag-default-color | _var(--van-gray-6)_ | - |
-| --van-tag-plain-background | _var(--van-background-light)_ | - |
+| --van-tag-plain-background | _var(--van-background-2)_ | - |

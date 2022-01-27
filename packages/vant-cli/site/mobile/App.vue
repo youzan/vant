@@ -46,7 +46,7 @@ body {
 }
 
 .van-doc-theme-dark {
-  background-color: var(--van-doc-black);
+  background-color: #000;
 }
 
 ::-webkit-scrollbar {

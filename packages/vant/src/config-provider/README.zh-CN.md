@@ -165,7 +165,7 @@ Vant 中的 CSS 变量分为 **基础变量** 和 **组件变量**。组件变�
 --van-active-opacity: 0.6;
 --van-disabled-opacity: 0.5;
 --van-background: var(--van-gray-1);
---van-background-light: var(--van-white);
+--van-background-2: var(--van-white);
 
 // Padding
 --van-padding-base: 4px;

@@ -286,7 +286,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-popover-action-line-height | _var(--van-line-height-md)_ | - |
 | --van-popover-action-icon-size | _20px_ | - |
 | --van-popover-light-text-color | _var(--van-text-color)_ | - |
-| --van-popover-light-background | _var(--van-background-light)_ | - |
+| --van-popover-light-background | _var(--van-background-2)_ | - |
 | --van-popover-light-action-disabled-text-color | _var(--van-text-color-3)_ | - |
 | --van-popover-dark-text-color | _var(--van-white)_ | - |
 | --van-popover-dark-background | _#4a4a4a_ | - |

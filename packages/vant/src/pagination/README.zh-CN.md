@@ -126,6 +126,6 @@ import type { PaginationMode, PaginationProps } from 'vant';
 | --van-pagination-item-default-color | _var(--van-primary-color)_ | - |
 | --van-pagination-item-disabled-color | _var(--van-gray-7)_ | - |
 | --van-pagination-item-disabled-background | _var(--van-background)_ | - |
-| --van-pagination-background | _var(--van-background-light)_ | - |
+| --van-pagination-background | _var(--van-background-2)_ | - |
 | --van-pagination-desc-color | _var(--van-gray-7)_ | - |
 | --van-pagination-disabled-opacity | _var(--van-disabled-opacity)_ | - |

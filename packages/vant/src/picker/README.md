@@ -396,7 +396,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-picker-background | _var(--van-background-light)_ | - |
+| --van-picker-background | _var(--van-background-2)_ | - |
 | --van-picker-toolbar-height | _44px_ | - |
 | --van-picker-title-font-size | _var(--van-font-size-lg)_ | - |
 | --van-picker-title-line-height | _var(--van-line-height-md)_ | - |

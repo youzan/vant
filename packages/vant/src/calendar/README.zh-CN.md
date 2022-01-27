@@ -387,7 +387,7 @@ calendarRef.value?.reset();
 
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
-| --van-calendar-background | _var(--van-background-light)_ | - |
+| --van-calendar-background | _var(--van-background-2)_ | - |
 | --van-calendar-popup-height | _80%_ | - |
 | --van-calendar-header-shadow | _0 2px 10px rgba(125, 126, 128, 0.16)_ | - |
 | --van-calendar-header-title-height | _44px_ | - |

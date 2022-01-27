@@ -47,7 +47,7 @@ const show = ref(false);
 
 <style lang="less">
 .demo-skeleton {
-  background-color: var(--van-background-light);
+  background-color: var(--van-background-2);
 
   .van-switch {
     margin: 0 var(--van-padding-md) var(--van-padding-xs);

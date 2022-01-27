@@ -134,18 +134,18 @@ indexBarRef.value?.scrollTo('B');
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                 | 默认值                        | 描述 |
-| ------------------------------------ | ----------------------------- | ---- |
-| --van-index-bar-sidebar-z-index      | _2_                           | -    |
-| --van-index-bar-index-font-size      | _var(--van-font-size-xs)_     | -    |
-| --van-index-bar-index-line-height    | _var(--van-line-height-xs)_   | -    |
-| --van-index-bar-index-active-color   | _var(--van-primary-color)_    | -    |
-| --van-index-anchor-z-index           | _1_                           | -    |
-| --van-index-anchor-padding           | _0 var(--van-padding-md)_     | -    |
-| --van-index-anchor-text-color        | _var(--van-text-color)_       | -    |
-| --van-index-anchor-font-weight       | _var(--van-font-bold)_        | -    |
-| --van-index-anchor-font-size         | _var(--van-font-size-md)_     | -    |
-| --van-index-anchor-line-height       | _32px_                        | -    |
-| --van-index-anchor-background        | _transparent_                 | -    |
-| --van-index-anchor-sticky-text-color | _var(--van-primary-color)_    | -    |
-| --van-index-anchor-sticky-background | _var(--van-background-light)_ | -    |
+| 名称                                 | 默认值                      | 描述 |
+| ------------------------------------ | --------------------------- | ---- |
+| --van-index-bar-sidebar-z-index      | _2_                         | -    |
+| --van-index-bar-index-font-size      | _var(--van-font-size-xs)_   | -    |
+| --van-index-bar-index-line-height    | _var(--van-line-height-xs)_ | -    |
+| --van-index-bar-index-active-color   | _var(--van-primary-color)_  | -    |
+| --van-index-anchor-z-index           | _1_                         | -    |
+| --van-index-anchor-padding           | _0 var(--van-padding-md)_   | -    |
+| --van-index-anchor-text-color        | _var(--van-text-color)_     | -    |
+| --van-index-anchor-font-weight       | _var(--van-font-bold)_      | -    |
+| --van-index-anchor-font-size         | _var(--van-font-size-md)_   | -    |
+| --van-index-anchor-line-height       | _32px_                      | -    |
+| --van-index-anchor-background        | _transparent_               | -    |
+| --van-index-anchor-sticky-text-color | _var(--van-primary-color)_  | -    |
+| --van-index-anchor-sticky-background | _var(--van-background-2)_   | -    |

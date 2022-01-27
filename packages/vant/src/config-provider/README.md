@@ -163,7 +163,7 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 --van-active-opacity: 0.6;
 --van-disabled-opacity: 0.5;
 --van-background: var(--van-gray-1);
---van-background-light: var(--van-white);
+--van-background-2: var(--van-white);
 
 // Padding
 --van-padding-base: 4px;

@@ -100,7 +100,7 @@ onMounted(preloadImage);
 
 <style lang="less">
 .demo-pull-refresh {
-  background-color: var(--van-background-light);
+  background-color: var(--van-background-2);
 
   .van-pull-refresh {
     height: calc(100vh - 50px);

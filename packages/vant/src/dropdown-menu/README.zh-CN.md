@@ -237,7 +237,7 @@ dropdownItemRef.value?.toggle();
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
 | --van-dropdown-menu-height | _48px_ | - |
-| --van-dropdown-menu-background | _var(--van-background-light)_ | - |
+| --van-dropdown-menu-background | _var(--van-background-2)_ | - |
 | --van-dropdown-menu-shadow | _0 2px 12px fade(var(--van-gray-7), 12)_ | - |
 | --van-dropdown-menu-title-font-size | _15px_ | - |
 | --van-dropdown-menu-title-text-color | _var(--van-text-color)_ | - |

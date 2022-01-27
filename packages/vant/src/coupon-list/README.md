@@ -169,7 +169,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-coupon-content-height | _84px_ | - |
 | --van-coupon-content-padding | _14px 0_ | - |
 | --van-coupon-content-text-color | _var(--van-text-color)_ | - |
-| --van-coupon-background | _var(--van-background-light)_ | - |
+| --van-coupon-background | _var(--van-background-2)_ | - |
 | --van-coupon-active-background | _var(--van-active-color)_ | - |
 | --van-coupon-radius | _var(--van-radius-lg)_ | - |
 | --van-coupon-shadow | _0 0 4px rgba(0, 0, 0, 0.1)_ | - |

@@ -197,5 +197,5 @@ The component provides the following CSS variables, which can be used to customi
 | --van-collapse-item-content-font-size | _var(--van-font-size-md)_ | - |
 | --van-collapse-item-content-line-height | _1.5_ | - |
 | --van-collapse-item-content-text-color | _var(--van-text-color-2)_ | - |
-| --van-collapse-item-content-background | _var(--van-background-light)_ | - |
+| --van-collapse-item-content-background | _var(--van-background-2)_ | - |
 | --van-collapse-item-title-disabled-color | _var(--van-text-color-3)_ | - |

@@ -154,4 +154,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-sidebar-selected-border-width | _4px_ | - |
 | --van-sidebar-selected-border-height | _16px_ | - |
 | --van-sidebar-selected-border-color | _var(--van-primary-color)_ | - |
-| --van-sidebar-selected-background | _var(--van-background-light)_ | - |
+| --van-sidebar-selected-background | _var(--van-background-2)_ | - |
