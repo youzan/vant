@@ -75,7 +75,16 @@ export function syncThemeToChild(theme) {
 }
 
 export function getDefaultTheme() {
-  return window.localStorage.getItem('vantTheme') || 'light';
+  const cache = window.localStorage.getItem('vantTheme');
+
+  if (cache) {
+    return cache;
+  }
+
+  const useDark =
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return useDark ? 'dark' : 'light';
 }
 
 export function useCurrentTheme() {

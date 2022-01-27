@@ -120,7 +120,7 @@ export default {
 通过 `active-color` 属性设置选中标签的颜色，通过 `inactive-color` 属性设置未选中标签的颜色。
 
 ```html
-<van-tabbar v-model="active" active-color="#ee0a24" inactive-color="#000">
+<van-tabbar v-model="active" active-color="#ee0a24">
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
   <van-tabbar-item icon="search">标签</van-tabbar-item>
   <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
@@ -233,7 +233,7 @@ import type { TabbarProps, TabbarItemProps } from 'vant';
 | --van-tabbar-z-index                 | _1_                        | -    |
 | --van-tabbar-background              | _var(--van-background-2)_  | -    |
 | --van-tabbar-item-font-size          | _var(--van-font-size-sm)_  | -    |
-| --van-tabbar-item-text-color         | _var(--van-gray-7)_        | -    |
+| --van-tabbar-item-text-color         | _var(--van-text-color)_    | -    |
 | --van-tabbar-item-active-color       | _var(--van-primary-color)_ | -    |
 | --van-tabbar-item-active-background  | _var(--van-background-2)_  | -    |
 | --van-tabbar-item-line-height        | _1_                        | -    |

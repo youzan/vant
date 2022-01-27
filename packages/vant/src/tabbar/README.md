@@ -112,7 +112,7 @@ export default {
 ### Custom Color
 
 ```html
-<van-tabbar v-model="active" active-color="#ee0a24" inactive-color="#000">
+<van-tabbar v-model="active" active-color="#ee0a24">
   <van-tabbar-item icon="home-o">Tab</van-tabbar-item>
   <van-tabbar-item icon="search">Tab</van-tabbar-item>
   <van-tabbar-item icon="friends-o">Tab</van-tabbar-item>
@@ -221,7 +221,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-tabbar-z-index | _1_ | - |
 | --van-tabbar-background | _var(--van-background-2)_ | - |
 | --van-tabbar-item-font-size | _var(--van-font-size-sm)_ | - |
-| --van-tabbar-item-text-color | _var(--van-gray-7)_ | - |
+| --van-tabbar-item-text-color | _var(--van-text-color)_ | - |
 | --van-tabbar-item-active-color | _var(--van-primary-color)_ | - |
 | --van-tabbar-item-active-background | _var(--van-background-2)_ | - |
 | --van-tabbar-item-line-height | _1_ | - |
