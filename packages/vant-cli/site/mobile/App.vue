@@ -45,8 +45,12 @@ body {
   min-width: 100vw;
 }
 
+.van-doc-theme-light {
+  background-color: var(--van-doc-gray-1);
+}
+
 .van-doc-theme-dark {
-  background-color: #000;
+  background-color: var(--van-doc-black);
 }
 
 ::-webkit-scrollbar {

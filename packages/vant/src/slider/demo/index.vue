@@ -96,7 +96,6 @@ const onChange = (value: string) => Toast(t('text') + value);
 
 <style lang="less">
 .demo-slider {
-  background: var(--van-background-2);
   user-select: none;
 
   .van-doc-demo-block {

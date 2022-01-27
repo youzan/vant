@@ -53,9 +53,8 @@ export default {
   width: var(--van-doc-simulator-width);
   min-width: var(--van-doc-simulator-width);
   overflow: hidden;
-  background: var(--van-doc-background-light);
+  background: var(--van-doc-background-2);
   border-radius: var(--van-doc-border-radius);
-  box-shadow: 0 8px 12px var(--van-doc-shadow-color);
 
   @media (max-width: 1100px) {
     right: auto;

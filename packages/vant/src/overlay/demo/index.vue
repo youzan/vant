@@ -47,8 +47,6 @@ const showEmbedded = ref(false);
 
 <style lang="less">
 .demo-overlay {
-  background: var(--van-background-2);
-
   .wrapper {
     display: flex;
     align-items: center;

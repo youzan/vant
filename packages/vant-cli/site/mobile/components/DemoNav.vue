@@ -42,7 +42,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 56px;
-  background-color: var(--van-doc-background-light);
+  background-color: var(--van-doc-background-2);
 
   &__title {
     font-weight: 600;

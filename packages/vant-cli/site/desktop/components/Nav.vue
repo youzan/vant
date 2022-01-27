@@ -79,8 +79,7 @@ export default {
   max-width: var(--van-doc-nav-width);
   padding: 8px 0;
   overflow-y: scroll;
-  background-color: var(--van-doc-background-light);
-  box-shadow: 0 8px 12px var(--van-doc-shadow-color);
+  background-color: var(--van-doc-background-2);
 
   @media (min-width: var(--van-doc-row-max-width)) {
     left: 50%;

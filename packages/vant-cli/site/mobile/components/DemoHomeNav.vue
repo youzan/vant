@@ -59,7 +59,7 @@ export default {
     font-weight: 600;
     font-size: 14px;
     line-height: 40px;
-    background-color: var(--van-doc-background-light);
+    background-color: var(--van-doc-background-3);
     border-radius: 99px;
     transition: opacity 0.3s;
 

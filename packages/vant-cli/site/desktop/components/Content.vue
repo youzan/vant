@@ -44,9 +44,8 @@ export default {
 .van-doc-card {
   margin-bottom: 24px;
   padding: 24px;
-  background-color: var(--van-doc-background-light);
+  background-color: var(--van-doc-background-2);
   border-radius: var(--van-doc-border-radius);
-  box-shadow: 0 8px 12px var(--van-doc-shadow-color);
 
   > p a,
   > ul a,
