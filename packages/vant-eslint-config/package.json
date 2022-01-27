@@ -25,7 +25,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-vue": "^8.3.0"
+    "eslint-plugin-vue": "^8.4.0"
   },
   "devDependencies": {
     "enhanced-resolve": "^5.8.3",
