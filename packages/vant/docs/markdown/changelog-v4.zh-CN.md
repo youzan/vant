@@ -31,3 +31,4 @@
 - Button: 调整 `font-smoothing`，默认使用粗体文字
 - Field: 调整 `--van-field-label-color` 变量的默认值为 `--van-text-color`
 - Tabbar: 调整 `--van-tabbar-item-text-color` 变量的默认值为 `--van-text-color`
+- GridItem: 调整 `--van-grid-item-text-color` 变量的默认值为 `--van-text-color`
