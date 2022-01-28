@@ -162,7 +162,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-action-bar-icon-size | _18px_ | - |
 | --van-action-bar-icon-font-size | _var(--van-font-size-xs)_ | - |
 | --van-action-bar-icon-active-color | _var(--van-active-color)_ | - |
-| --van-action-bar-icon-text-color | _var(--van-gray-7)_ | - |
+| --van-action-bar-icon-text-color | _var(--van-text-color)_ | - |
 | --van-action-bar-icon-background | _var(--van-background-2)_ | - |
 | --van-action-bar-button-height | _40px_ | - |
 | --van-action-bar-button-warning-color | _var(--van-gradient-orange)_ | - |
