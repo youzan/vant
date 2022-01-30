@@ -33,7 +33,8 @@ export function runRuleValidator(value: unknown, rule: FieldRule) {
     const returnVal = rule.validator!(value, rule);
 
     if (isPromise(returnVal)) {
-      return returnVal.then(resolve);
+      returnVal.then(resolve);
+      return;
     }
 
     resolve(returnVal);

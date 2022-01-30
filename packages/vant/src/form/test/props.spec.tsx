@@ -107,12 +107,17 @@ test('should support async validator in rules prop', async () => {
       validator: (value, rule) => {
         expect(value).toEqual('123');
         expect(typeof rule).toEqual('object');
-        return new Promise((resolve) => resolve(true));
+        return new Promise((resolve) => {
+          resolve(true);
+        });
       },
       message: 'should pass',
     },
     {
-      validator: () => new Promise((resolve) => resolve(false)),
+      validator: () =>
+        new Promise((resolve) => {
+          resolve(false);
+        }),
       message: 'should fail',
     },
   ];
