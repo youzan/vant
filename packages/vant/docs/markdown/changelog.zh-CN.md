@@ -2,7 +2,7 @@
 
 ### 提示
 
-当前文档为 Vant 3 的更新日志，如需查询 Vant 2 的更新内容，请访问 [Vant 2 更新日志](https://youzan.github.io/vant/#/zh-CN/changelog)。
+当前文档为 Vant 3 的更新日志，如需查询 Vant 2 的更新内容，请访问 [Vant 2 更新日志](https://youzan.github.io/vant/v2/#/zh-CN/changelog)。
 
 ### 介绍
 
