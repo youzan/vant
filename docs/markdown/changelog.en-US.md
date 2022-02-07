@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.42](https://github.com/youzan/vant/compare/v2.12.41...v2.12.42)
+
+`2022-02-07`
+
+**Feature**
+
+- switch npm tag to `latest-v2` [d84d2d](https://github.com/youzan/vant/commit/d84d2d68345bb619ab2544136ca3c763611c729d)
+
 ### [v2.12.39](https://github.com/youzan/vant/compare/v2.12.38...v2.12.39)
 
 `2022-01-15`
