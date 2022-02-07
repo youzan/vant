@@ -117,8 +117,8 @@ export default defineComponent({
     const onKeydown = withKeys(
       (event: KeyboardEvent) => {
         const onEventType: Record<string, () => void> = {
-          Enter: onConfirm,
-          Escape: onCancel,
+          Enter: props.showConfirmButton ? onConfirm : () => {},
+          Escape: props.showCancelButton ? onCancel : () => {},
         };
 
         onEventType[event.key]?.();
