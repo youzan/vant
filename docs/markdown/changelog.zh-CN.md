@@ -22,7 +22,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Feature**
 
-- npm tag 切换为 `latest-v2` [d84d2d](https://github.com/youzan/vant/commit/d84d2d68345bb619ab2544136ca3c763611c729d)
+- Vant 2 对应的 npm tag 切换为 `latest-v2` [d84d2d](https://github.com/youzan/vant/commit/d84d2d68345bb619ab2544136ca3c763611c729d)
 
 ### [v2.12.39](https://github.com/youzan/vant/compare/v2.12.38...v2.12.39)
 
