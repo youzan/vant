@@ -1684,10 +1684,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.10.3":
-  version "2.10.3"
-  resolved "https://registry.npmjs.org/@vant/cli/-/cli-2.10.3.tgz#ec29a3991bfbb770233470222b2455361c7341a0"
-  integrity sha512-IQlARN272JTn4HRpDRQ7wlhkl/8D2eWZZ+QkBqXnvlpuYC3pswwcT+bxwFzR7VnyiHymeEYDn02mRNdx6Elg1A==
+"@vant/cli@^2.11.5":
+  version "2.11.5"
+  resolved "https://registry.npmmirror.com/@vant/cli/-/cli-2.11.5.tgz#87d5b2354c45335eef8e4cb5ba3ea1a0624bd44d"
+  integrity sha512-de+RQCepCbBngrubJceyn3Jg3uEThcwwCLvHR8KLZ/8ADtVNsa7ELDNEhJQ2QlucWX6Tfy8C5E/3lQ/fkdS/Hw==
   dependencies:
     "@babel/core" "^7.10.1"
     "@babel/plugin-syntax-jsx" "^7.10.1"
@@ -1752,7 +1752,7 @@
     vue-router "^3.3.1"
     webpack "^4.43.0"
     webpack-dev-server "3.11.0"
-    webpack-merge "^4.2.2"
+    webpack-merge "^5.8.0"
     webpackbar "^4.0.0"
 
 "@vant/eslint-config@^2.2.2":
@@ -12067,12 +12067,13 @@ webpack-log@^2.0.0:
     ansi-colors "^3.0.0"
     uuid "^3.3.2"
 
-webpack-merge@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-4.2.2.tgz#a27c52ea783d1398afd2087f547d7b9d2f43634d"
-  integrity sha512-TUE1UGoTX2Cd42j3krGYqObZbOD+xF7u28WB7tfUordytSjbWTIjK/8V0amkBfTYN4/pB/GIDlJZZ657BGG19g==
+webpack-merge@^5.8.0:
+  version "5.8.0"
+  resolved "https://registry.npmmirror.com/webpack-merge/-/webpack-merge-5.8.0.tgz#2b39dbf22af87776ad744c390223731d30a68f61"
+  integrity sha512-/SaI7xY0831XwP6kzuwhKWVKDP9t1QY1h65lAFLbZqMPIuYcD9QAW4u9STIbU9kaJbPBB/geU/gLr1wDjOhQ+Q==
   dependencies:
-    lodash "^4.17.15"
+    clone-deep "^4.0.1"
+    wildcard "^2.0.0"
 
 webpack-sources@^1.4.0, webpack-sources@^1.4.1:
   version "1.4.3"
@@ -12205,6 +12206,11 @@ widest-line@^3.1.0:
   integrity sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8ObalXpwyeUiyDD6QFgg==
   dependencies:
     string-width "^4.0.0"
+
+wildcard@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmmirror.com/wildcard/-/wildcard-2.0.0.tgz#a77d20e5200c6faaac979e4b3aadc7b3dd7f8fec"
+  integrity sha512-JcKqAHLPxcdb9KM49dufGXn2x3ssnfjbcaQdLlfZsL9rH9wgDQjUtDxbo8NE0F6SFvydeu1VhZe7hZuHsB2/pw==
 
 window-size@1.1.1:
   version "1.1.1"
