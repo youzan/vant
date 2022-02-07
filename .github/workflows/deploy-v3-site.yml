@@ -36,4 +36,4 @@ jobs:
         with:
           branch: gh-pages
           folder: packages/vant/site-dist
-          target-folder: v3
+          clean: false
