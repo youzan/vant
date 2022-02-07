@@ -84,10 +84,9 @@ export default {
       if (!codeBoxs || !codeBoxs.length) return;
       for (let i = 0; i < codeBoxs.length; i++) {
         const item = codeBoxs[i];
-        console.info('item', item.onclick);
-
         let timer = null;
-        item.onclick = function () {
+
+        item.addEventListener('click', () => {
           if (timer) return;
           const content = item.innerText;
           copyToClipboard(content);
@@ -96,7 +95,7 @@ export default {
             item.classList.remove('code-copy-success');
             timer = null;
           }, 1400);
-        };
+        });
       }
     },
   },
@@ -123,6 +122,7 @@ export default {
   > pre:hover {
     code::before {
       position: absolute;
+      z-index: 9;
       right: 14px;
       top: 11px;
       width: 20px;
@@ -143,14 +143,14 @@ export default {
     position: absolute;
     z-index: 9;
     right: -4px;
-    top: 0px;
+    top: 0;
     animation: CODE_COPY_ANITION 0.8s;
     animation-fill-mode: forwards;
   }
 
   @keyframes CODE_COPY_ANITION {
     0% {
-      top: 0px;
+      top: 0;
     }
 
     100% {
