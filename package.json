@@ -12,6 +12,9 @@
     "types",
     "vetur"
   ],
+  "npm": {
+    "tag": "latest-v2"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
