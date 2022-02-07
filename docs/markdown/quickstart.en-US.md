@@ -5,11 +5,11 @@
 ### npm
 
 ```bash
-# Install Vant 2 for Vue 2 project
+# Install latest Vant for Vue 3 project
 npm i vant -S
 
-# Install Vant 3 for Vue 3 project
-npm i vant@next -S
+# Install Vant 2 for Vue 2 project
+npm i vant@latest-v2 -S
 ```
 
 ### CDN
