@@ -3,6 +3,7 @@ import {
   defineComponent,
   type PropType,
   type ExtractPropTypes,
+  withKeys,
 } from 'vue';
 
 // Utils
@@ -71,7 +72,7 @@ export default defineComponent({
 
   props: dialogProps,
 
-  emits: ['confirm', 'cancel', 'update:show'],
+  emits: ['confirm', 'cancel', 'update:show', 'keydown'],
 
   setup(props, { emit, slots }) {
     const loading = reactive({
@@ -113,6 +114,19 @@ export default defineComponent({
 
     const onCancel = getActionHandler('cancel');
     const onConfirm = getActionHandler('confirm');
+    const onKeydown = withKeys(
+      (event: KeyboardEvent) => {
+        const onEventType: Record<string, () => void> = {
+          Enter: onConfirm,
+          Escape: onCancel,
+        };
+
+        onEventType[event.key]?.();
+
+        emit('keydown', event);
+      },
+      ['enter', 'esc']
+    );
 
     const renderTitle = () => {
       const title = slots.title ? slots.title() : props.title;
@@ -229,6 +243,8 @@ export default defineComponent({
       const { width, title, theme, message, className } = props;
       return (
         <Popup
+          keyboard
+          onKeydown={onKeydown}
           role="dialog"
           class={[bem([theme]), className]}
           style={{ width: addUnit(width) }}

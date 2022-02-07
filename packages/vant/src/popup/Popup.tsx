@@ -3,6 +3,7 @@ import {
   watch,
   provide,
   Teleport,
+  nextTick,
   computed,
   onMounted,
   Transition,
@@ -45,6 +46,7 @@ const popupProps = extend({}, popupSharedProps, {
   closeable: Boolean,
   transition: String,
   iconPrefix: String,
+  keyboard: Boolean,
   closeOnPopstate: Boolean,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
   safeAreaInsetBottom: Boolean,
@@ -68,6 +70,7 @@ export default defineComponent({
     'close',
     'opened',
     'closed',
+    'keydown',
     'update:show',
     'click-overlay',
     'click-close-icon',
@@ -172,9 +175,12 @@ export default defineComponent({
 
     const onOpened = () => emit('opened');
     const onClosed = () => emit('closed');
+    const onKeydown = (event: KeyboardEvent) => emit('keydown', event);
 
     const renderPopup = lazyRender(() => {
-      const { round, position, safeAreaInsetBottom } = props;
+      const { round, position, safeAreaInsetBottom, keyboard } = props;
+      const keyboardAttr = keyboard ? { onKeydown, tabindex: 0 } : {};
+
       return (
         <div
           v-show={props.show}
@@ -188,6 +194,7 @@ export default defineComponent({
             { 'van-safe-area-bottom': safeAreaInsetBottom },
           ]}
           {...attrs}
+          {...keyboardAttr}
         >
           {slots.default?.()}
           {renderCloseIcon()}
@@ -216,6 +223,11 @@ export default defineComponent({
       (show) => {
         if (show && !opened) {
           open();
+
+          props.keyboard &&
+            nextTick(() => {
+              popupRef.value?.focus();
+            });
         }
         if (!show && opened) {
           opened = false;
