@@ -1,71 +1,56 @@
 # 更新日志
 
-## v4.0.0-rc.6
+## v4.0.0
 
-- 修复通过 pnpm 安装使用时报错的问题
-
-## v4.0.0-rc.4
-
-- 新增 CommonJS 格式的构建产物，分别为 `lib/[name].cjs.js` 和 `lib/[name].cjs.min.js`
-- 现在 ESModule 和 CommonJS 格式的产物会自动对外部依赖进行 external 处理
-- 修复 Windows 路径兼容问题
-
-## v4.0.0-rc.3
+`2022-02-07`
 
 ### 不兼容更新
 
 - 支持的 node 版本范围提升到 `^14.16.0 || >=16.0.0`
+- 使用 vite 代替 webpack 进行构建，移除了所有 webpack 相关依赖
+- 使用 esbuild 进行代码转义和压缩
 - babel preset 添加了 `cjs` 后缀，现在需要通过 `@vant/cli/preset.cjs` 引入
 - vant.config.js 重命名为 `vant.config.mjs`，由 commonJs 变更为 ESModule 格式
-
-### Features
-
-- 新增 build.configureWebpack 配置项
-
-### 依赖升级
-
-对以下依赖进行了大版本升级：
-
-- eslint v8
-
-## v4.0.0-beta.6
-
-### 不兼容更新
-
-- 使用 vite 代替 webpack 进行构建，移除了所有 webpack 相关依赖
 - 站点构建产物的目录由 `site` 调整为 `site-dist`
 - 不再支持 webpack.config.js 配置文件
 - 不再支持 less import 语法中使用波浪号
 - 不再在 demo 文件中自动注册组件
+- 暂时不支持预览桌面端组件
 - 移除 build 命令的 --watch 参数
 - 移除内置的 babel-plugin-import 插件
 - 由于不再使用 html-webpack-plugin, 因此移除了 site.htmlPluginOptions 配置项
+- 为了避免幽灵依赖，不再默认依赖 `@vue/test-utils`，使用时需要手动安装
 - 为了减少依赖数量，移除了默认安装的 sass 依赖，使用 sass 时需要手动安装：
 
 ```bash
 yarn add sass
 ```
 
-- 为了避免 Phantom dependency，不再默认依赖 `@vue/test-utils`，使用时需要手动安装
-
-### Features
-
-- 新增 site.htmlMeta 配置项
-- 新增 ESModule 格式的构建产物，分别为 `lib/[name].es.js` 和 `lib/[name].es.min.js`
-
 ### 依赖升级
 
 对以下依赖进行了大版本升级：
 
+- eslint v8
 - jest v27
 - husky v7
 - ts-jest v27
 - postcss v8
-- clean-css v5
 - commander v8
-- babel-jest v27
 - lint-staged v11
 - autoprefixer v10
+
+### Features
+
+- 新增 site.htmlMeta 配置项
+- 新增 build.configureWebpack 配置项
+- 新增 ESModule 格式的构建产物，分别为 `lib/[name].es.js` 和 `lib/[name].es.min.js`
+- 新增 CommonJS 格式的构建产物，分别为 `lib/[name].cjs.js` 和 `lib/[name].cjs.min.js`
+- 现在 ESModule 和 CommonJS 格式的产物会自动对外部依赖进行 external 处理
+
+### BugFixes
+
+- 修复 Windows 路径兼容问题
+- 修复通过 pnpm 安装使用时报错的问题
 
 ## v3.11.2
 
