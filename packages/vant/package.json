@@ -35,8 +35,8 @@
     "test": "vant-cli test",
     "build": "vant-cli build",
     "build:site": "vant-cli build-site",
-    "release": "vant-cli release --tag next",
-    "release:site": "pnpm build:site && gh-pages -d site-dist --add --dest v3",
+    "release": "vant-cli release",
+    "release:site": "pnpm build:site && gh-pages -d site-dist --add",
     "test:watch": "vant-cli test --watch",
     "test:coverage": "open test/coverage/index.html"
   },
@@ -51,9 +51,6 @@
   "bugs": "https://github.com/youzan/vant/issues",
   "author": "chenjiahan",
   "license": "MIT",
-  "npm": {
-    "tag": "next"
-  },
   "keywords": [
     "ui",
     "vue",
