@@ -2,7 +2,7 @@
 
 ### Tips
 
-The current document is the changelog of Vant 3. If you want to view the changelog of Vant 2, please visit [Vant 2 Changelog](https://youzan.github.io/vant/#/en-US/changelog).
+The current document is the changelog of Vant 3. If you want to view the changelog of Vant 2, please visit [Vant 2 Changelog](https://youzan.github.io/vant/v2/#/en-US/changelog).
 
 ### Intro
 
@@ -16,20 +16,26 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.4.4](https://github.com/youzan/vant/compare/v3.4.4...v3.4.3)
+
+`2022-02-07`
+
+- Vant 3 对应的 npm tag 切换为 `latest`
+
 ### [v3.4.3](https://github.com/compare/v3.4.2...v3.4.3)
 
 `2022-01-26`
 
 **Feature**
 
-- Locale: add Hindi translation [#10248](https://github.com/issues/10248)
-- Locale: add Korean translations [#10243](https://github.com/issues/10243)
-- improve cursor of haptics elements [#10232](https://github.com/issues/10232)
+- Locale: add Hindi translation [#10248](https://github.com/youzan/vant/issues/10248)
+- Locale: add Korean translations [#10243](https://github.com/youzan/vant/issues/10243)
+- improve cursor of haptics elements [#10232](https://github.com/youzan/vant/issues/10232)
 
 **Bug Fixes**
 
-- Icon: remove white space under image when using image URL [#10220](https://github.com/issues/10220)
-- TreeSelect: click-nav event not work when clicking active item [#10239](https://github.com/issues/10239)
+- Icon: remove white space under image when using image URL [#10220](https://github.com/youzan/vant/issues/10220)
+- TreeSelect: click-nav event not work when clicking active item [#10239](https://github.com/youzan/vant/issues/10239)
 
 ### [v3.4.2](https://github.com/compare/v3.4.1...v3.4.2)
 

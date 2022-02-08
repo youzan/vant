@@ -27,7 +27,7 @@
 
 Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源。Vant 对内承载了有赞所有核心业务，对外服务十多万开发者，是业界主流的移动端组件库之一。
 
-目前 Vant 官方提供了 [Vue 2 版本](https://vant-contrib.gitee.io/vant)、[Vue 3 版本](https://vant-contrib.gitee.io/vant/v3)和[微信小程序版本](http://vant-contrib.gitee.io/vant-weapp)，并由社区团队维护 [React 版本](https://github.com/mxdi9i7/vant-react)和[支付宝小程序版本](https://github.com/ant-move/Vant-Aliapp)。
+目前 Vant 官方提供了 [Vue 2 版本](https://vant-contrib.gitee.io/vant/v2)、[Vue 3 版本](https://vant-contrib.gitee.io/vant)和[微信小程序版本](http://vant-contrib.gitee.io/vant-weapp)，并由社区团队维护 [React 版本](https://github.com/mxdi9i7/vant-react)和[支付宝小程序版本](https://github.com/ant-move/Vant-Aliapp)。
 
 ## 特性
 
@@ -49,21 +49,21 @@ Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源�
 在现有项目中使用 Vant 时，可以通过 `npm` 进行安装：
 
 ```bash
-# Vue 2 项目，安装 Vant 2
-npm i vant@2
+# Vue 3 项目，安装最新版 Vant
+npm i vant
 
-# Vue 3 项目，安装 Vant 3
-npm i vant@3
+# Vue 2 项目，安装 Vant 2
+npm i vant@latest-v2
 ```
 
 当然，你也可以通过 `yarn` 或 `pnpm` 进行安装：
 
 ```bash
 # 通过 yarn 安装
-yarn add vant@3
+yarn add vant
 
 # 通过 pnpm 安装
-pnpm add vant@3
+pnpm add vant
 ```
 
 ## 快速上手

@@ -11,21 +11,21 @@
 在现有项目中使用 Vant 时，可以通过 `npm` 进行安装：
 
 ```bash
-# Vue 2 项目，安装 Vant 2
-npm i vant@2
+# Vue 3 项目，安装最新版 Vant
+npm i vant
 
-# Vue 3 项目，安装 Vant 3
-npm i vant@3
+# Vue 2 项目，安装 Vant 2
+npm i vant@latest-v2
 ```
 
 当然，你也可以通过 `yarn` 或 `pnpm` 进行安装：
 
 ```bash
 # 通过 yarn 安装
-yarn add vant@3
+yarn add vant
 
 # 通过 pnpm 安装
-pnpm add vant@3
+pnpm add vant
 ```
 
 ### 通过 CDN 安装
@@ -36,12 +36,12 @@ pnpm add vant@3
 <!-- 引入样式文件 -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/vant@next/lib/index.css"
+  href="https://cdn.jsdelivr.net/npm/vant@3/lib/index.css"
 />
 
 <!-- 引入 Vue 和 Vant 的 JS 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@next/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@3/lib/vant.min.js"></script>
 
 <script>
   // 在 #app 标签下渲染一个按钮组件

@@ -25,7 +25,7 @@ npx vant-cli dev
 
 运行本地开发环境。
 
-运行 dev 命令时，Vant Cli 会通过 [webpack-dev-server](https://github.com/webpack/webpack-dev-server) 启动一个本地服务器，用于在开发过程中对文档和示例进行预览。
+运行 dev 命令时，Vant Cli 会通过启动一个本地服务器，用于在开发过程中对文档和示例进行预览。
 
 ### build
 

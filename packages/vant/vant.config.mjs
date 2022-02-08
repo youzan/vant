@@ -7,8 +7,7 @@ export default {
     packageManager: 'pnpm',
     site: {
       publicPath:
-        (typeof window === 'undefined' && process.env.PUBLIC_PATH) ||
-        '/vant/v3/',
+        (typeof window === 'undefined' && process.env.PUBLIC_PATH) || '/vant/',
     },
     vetur: {
       tagPrefix: 'van-',
@@ -19,7 +18,7 @@ export default {
     darkModeClass: 'van-theme-dark',
     versions: [
       { label: 'v1', link: '/vant/v1/' },
-      { label: 'v2', link: '/vant/' },
+      { label: 'v2', link: '/vant/v2/' },
     ],
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',

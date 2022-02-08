@@ -68,5 +68,4 @@ pnpm add @vant/cli -D
 - [命令](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/commands.md)
 - [配置指南](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config.md)
 - [目录结构](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/directory.md)
-- [桌面端组件](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/desktop.md)
 - [更新日志](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)

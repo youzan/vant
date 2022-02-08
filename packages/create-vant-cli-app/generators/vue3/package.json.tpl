@@ -3,20 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/<%= name %>.js",
+  "module": "es/index.js",
   "style": "lib/index.css",
+  "typings": "lib/index.d.ts",
   "files": [
     "lib",
     "es"
   ],
   "scripts": {
     "dev": "vant-cli dev",
-    "test": "vant-cli test",
     "lint": "vant-cli lint",
+    "test": "vant-cli test",
     "build": "vant-cli build",
-    "prepare": "husky install",
-    "release": "vant-cli release",
-    "test:coverage": "open test/coverage/index.html",
-    "build-site": "vant-cli build-site && gh-pages -d site-dist"
+    "build:site": "vant-cli build-site",
+    "release": "vant-cli release --tag next",
+    "release:site": "pnpm build:site && gh-pages -d site-dist",
+    "test:watch": "vant-cli test --watch",
+    "test:coverage": "open test/coverage/index.html"
   },
   "author": "",
   "license": "MIT",
@@ -30,8 +33,9 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@vant/cli": "^3.9.0",
-    "vue": "^3.0.0"
+    "@vant/cli": "^4.0.0",
+    "vue": "^3.0.0",
+    "sass": "^1.49.7"
   },
   "eslintConfig": {
     "root": true,

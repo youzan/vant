@@ -7,21 +7,21 @@
 Using `npm` to install:
 
 ```bash
-# install Vant 2 for Vue 2 project
-npm i vant@2
+# install latest Vant for Vue 3 project
+npm i vant
 
-# install Vant 3 for Vue 3 project
-npm i vant@3
+# install Vant 2 for Vue 2 project
+npm i vant@latest-v2
 ```
 
 Using `yarn` or `pnpm`:
 
 ```bash
 # with yarn
-yarn add vant@3
+yarn add vant
 
 # with pnpm
-pnpm add vant@3
+pnpm add vant
 ```
 
 ### CDN
@@ -32,12 +32,12 @@ The easiest way to use Vant is to include a CDN link in the html file, after whi
 <!-- import style -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/vant@next/lib/index.css"
+  href="https://cdn.jsdelivr.net/npm/vant@3/lib/index.css"
 />
 
 <!-- import script -->
-<script src="https://cdn.jsdelivr.net/npm/vue@next"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@next/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@3/lib/vant.min.js"></script>
 
 <script>
   // Render the Button component

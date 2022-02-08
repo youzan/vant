@@ -426,7 +426,10 @@ test('before-delete prop resolved', async () => {
   const wrapper = mount(Uploader, {
     props: {
       modelValue: [{ url: IMAGE }],
-      beforeDelete: () => new Promise<boolean>((resolve) => resolve(true)),
+      beforeDelete: () =>
+        new Promise<boolean>((resolve) => {
+          resolve(true);
+        }),
     },
   });
 
@@ -439,7 +442,10 @@ test('before-delete prop rejected', async () => {
   const wrapper = mount(Uploader, {
     props: {
       modelValue: [{ url: IMAGE }],
-      beforeDelete: () => new Promise<boolean>((resolve, reject) => reject()),
+      beforeDelete: () =>
+        new Promise<boolean>((resolve, reject) => {
+          reject();
+        }),
     },
   });
 

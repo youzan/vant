@@ -45,21 +45,21 @@
 Using `npm` to install:
 
 ```bash
-# install Vant 2 for Vue 2 project
-npm i vant@2
+# install latest Vant for Vue 3 project
+npm i vant
 
-# install Vant 3 for Vue 3 project
-npm i vant@3
+# install Vant 2 for Vue 2 project
+npm i vant@latest-v2
 ```
 
 Using `yarn` or `pnpm`:
 
 ```bash
 # with yarn
-yarn add vant@3
+yarn add vant
 
 # with pnpm
-pnpm add vant@3
+pnpm add vant
 ```
 
 ## Quickstart
