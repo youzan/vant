@@ -46,7 +46,6 @@ const popupProps = extend({}, popupSharedProps, {
   closeable: Boolean,
   transition: String,
   iconPrefix: String,
-  keyboard: Boolean,
   closeOnPopstate: Boolean,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
   safeAreaInsetBottom: Boolean,
@@ -178,11 +177,11 @@ export default defineComponent({
     const onKeydown = (event: KeyboardEvent) => emit('keydown', event);
 
     const renderPopup = lazyRender(() => {
-      const { round, position, safeAreaInsetBottom, keyboard } = props;
-      const keyboardAttr = keyboard ? { onKeydown, tabindex: 0 } : {};
+      const { round, position, safeAreaInsetBottom } = props;
 
       return (
         <div
+          onKeydown={onKeydown}
           v-show={props.show}
           ref={popupRef}
           style={style.value}
@@ -194,7 +193,6 @@ export default defineComponent({
             { 'van-safe-area-bottom': safeAreaInsetBottom },
           ]}
           {...attrs}
-          {...keyboardAttr}
         >
           {slots.default?.()}
           {renderCloseIcon()}
@@ -224,7 +222,7 @@ export default defineComponent({
         if (show && !opened) {
           open();
 
-          props.keyboard &&
+          !attrs.tabindex &&
             nextTick(() => {
               popupRef.value?.focus();
             });

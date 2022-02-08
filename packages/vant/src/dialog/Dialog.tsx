@@ -121,7 +121,7 @@ export default defineComponent({
           Escape: props.showCancelButton ? onCancel : () => {},
         };
 
-        onEventType[event.key]?.();
+        onEventType[event.key]();
 
         emit('keydown', event);
       },
@@ -243,7 +243,7 @@ export default defineComponent({
       const { width, title, theme, message, className } = props;
       return (
         <Popup
-          keyboard
+          tabindex={0}
           onKeydown={onKeydown}
           role="dialog"
           class={[bem([theme]), className]}
