@@ -28,14 +28,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Feature**
 
-- Locale: 新增 Hindi 印地语 [#10248](https://github.com/issues/10248)
-- Locale: 新增 Korean 韩语 [#10243](https://github.com/issues/10243)
-- 优化 cursor 样式 [#10232](https://github.com/issues/10232)
+- Locale: 新增 Hindi 印地语 [#10248](https://github.com/youzan/vant/issues/10248)
+- Locale: 新增 Korean 韩语 [#10243](https://github.com/youzan/vant/issues/10243)
+- 优化 cursor 样式 [#10232](https://github.com/youzan/vant/issues/10232)
 
 **Bug Fixes**
 
-- Icon: 修复使用图片作为图标时水平未对齐的问题 [#10220](https://github.com/issues/10220)
-- TreeSelect: 修复重复点击时无法触发 click-nav 事件的问题 [#10239](https://github.com/issues/10239)
+- Icon: 修复使用图片作为图标时水平未对齐的问题 [#10220](https://github.com/youzan/vant/issues/10220)
+- TreeSelect: 修复重复点击时无法触发 click-nav 事件的问题 [#10239](https://github.com/youzan/vant/issues/10239)
 
 ### [v3.4.2](https://github.com/compare/v3.4.1...v3.4.2)
 
