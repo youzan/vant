@@ -1,6 +1,6 @@
 <template>
   <div class="van-gallery">
-     <div class="swiper mySwiper swiperbig">
+     <div class="swiper mySwiper swiperbig" ref="swiperbig">
         <div class="swiper-wrapper swiper-wrapper-big">
             <div class="swiper-slide swiper-slide-big" v-for="(item, index) in options" :key="index">
                 <img :src="getUrl(item)" class="swiper-slide-big-image">
@@ -99,8 +99,9 @@ export default {
       },
       renderSwiper() {
             const that = this;
+            this.swiperbig && this.swiperbig.destroy();
             this.$nextTick(() => {
-                this[`swiper${this.pattern}`] = new Swiper(`.swiper${this.pattern}`, this[`${this.pattern}Option`]);
+                this[`swiper${this.pattern}`] = new Swiper(this.$refs[`swiper${this.pattern}`], this[`${this.pattern}Option`]);
                 that.index = that[`swiper${this.pattern}`].activeIndex + 1;
                 that.total = that.options.length;
                 this[`swiper${this.pattern}`].on('slideChange', function (swiper) {

@@ -18,7 +18,7 @@
       title: 每行排列项数
       type: number
       default: 5
-      description: 每行排列项数
+      description: 为空时自适应宽度，自动换行
   slots:
     - name: default
       description: 内容自定义
