@@ -27,7 +27,8 @@ export default {
     },
     locales: {
       'zh-CN': {
-        title: 'Vant',
+        title: 'Vant 3',
+        subtitle: '（适用于 Vue 3）',
         description: '轻量、可靠的移动端组件库',
         logo: 'https://img.yzcdn.cn/vant/logo.png',
         langLabel: '中',
@@ -473,7 +474,8 @@ export default {
         ],
       },
       'en-US': {
-        title: 'Vant',
+        title: 'Vant 3',
+        subtitle: ' (for Vue 3)',
         description: 'Mobile UI Components built on Vue',
         logo: 'https://img.yzcdn.cn/vant/logo.png',
         langLabel: 'EN',
