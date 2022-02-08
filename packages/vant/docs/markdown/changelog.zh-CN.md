@@ -16,6 +16,12 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.4.4](https://github.com/youzan/vant/compare/v3.4.4...v3.4.3)
+
+`2022-02-07`
+
+- switch npm tag to `latest`
+
 ### [v3.4.3](https://github.com/compare/v3.4.2...v3.4.3)
 
 `2022-01-26`
