@@ -8,32 +8,7 @@
 </template>
 
 <script>
-// from https://30secondsofcode.org
-function copyToClipboard(str) {
-  const el = document.createElement('textarea');
-  el.value = str;
-  el.setAttribute('readonly', '');
-  el.style.position = 'absolute';
-  el.style.left = '-9999px';
-  document.body.appendChild(el);
-
-  const selection = document.getSelection();
-
-  if (!selection) {
-    return;
-  }
-
-  const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
-
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
-
-  if (selected) {
-    selection.removeAllRanges();
-    selection.addRange(selected);
-  }
-}
+import { copyToClipboard } from '../../common';
 
 export default {
   name: 'VanDocContent',
@@ -79,11 +54,14 @@ export default {
     },
 
     copyAction() {
-      const codeBoxs = document.querySelectorAll('.van-doc-card pre code');
+      const codeBoxes = document.querySelectorAll('.van-doc-card pre code');
 
-      if (!codeBoxs || !codeBoxs.length) return;
-      for (let i = 0; i < codeBoxs.length; i++) {
-        const item = codeBoxs[i];
+      if (!codeBoxes || !codeBoxes.length) {
+        return;
+      }
+
+      for (let i = 0; i < codeBoxes.length; i++) {
+        const item = codeBoxes[i];
         let timer = null;
 
         item.addEventListener('click', () => {
@@ -91,6 +69,7 @@ export default {
           const content = item.innerText;
           copyToClipboard(content);
           item.classList.add('code-copy-success');
+
           timer = setTimeout(() => {
             item.classList.remove('code-copy-success');
             timer = null;
@@ -144,11 +123,11 @@ export default {
     z-index: 9;
     right: -4px;
     top: 0;
-    animation: CODE_COPY_ANITION 0.8s;
+    animation: code-copy-animation 0.4s;
     animation-fill-mode: forwards;
   }
 
-  @keyframes CODE_COPY_ANITION {
+  @keyframes code-copy-animation {
     0% {
       top: 0;
     }

@@ -19,7 +19,7 @@
             title="Toggle source code panel"
             class="action-icon"
             role="source"
-            @click="toogleSource"
+            @click="toggleSource"
           />
         </div>
         <div
@@ -33,32 +33,7 @@
 </template>
 
 <script>
-// from https://30secondsofcode.org
-function copyToClipboard(str) {
-  const el = document.createElement('textarea');
-  el.value = str;
-  el.setAttribute('readonly', '');
-  el.style.position = 'absolute';
-  el.style.left = '-9999px';
-  document.body.appendChild(el);
-
-  const selection = document.getSelection();
-
-  if (!selection) {
-    return;
-  }
-
-  const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
-
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
-
-  if (selected) {
-    selection.removeAllRanges();
-    selection.addRange(selected);
-  }
-}
+import { copyToClipboard } from '../../common';
 
 export default {
   name: 'DemoPlayground',
@@ -77,7 +52,7 @@ export default {
   },
   methods: {
     unescape,
-    toogleSource() {
+    toggleSource() {
       this.showSource = !this.showSource;
     },
     copySourceCode() {
