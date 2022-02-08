@@ -123,17 +123,19 @@ export default {
     z-index: 9;
     right: -4px;
     top: 0;
-    animation: code-copy-animation 0.4s;
+    animation: ease-out code-copy-animation 0.2s;
     animation-fill-mode: forwards;
   }
 
   @keyframes code-copy-animation {
     0% {
       top: 0;
+      opacity: 0;
     }
 
     100% {
       top: -20px;
+      opacity: 1;
     }
   }
 
