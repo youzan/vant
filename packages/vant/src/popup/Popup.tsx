@@ -222,7 +222,7 @@ export default defineComponent({
         if (show && !opened) {
           open();
 
-          !attrs.tabindex &&
+          attrs.tabindex === 0 &&
             nextTick(() => {
               popupRef.value?.focus();
             });
