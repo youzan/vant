@@ -58,7 +58,7 @@ const indexBarProps = {
   highlightColor: String,
   stickyOffsetTop: makeNumberProp(0),
   indexList: {
-    type: Array as PropType<string[]>,
+    type: Array as PropType<Array<string | number>>,
     default: genAlphabet,
   },
 };
@@ -76,7 +76,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const root = ref<HTMLElement>();
-    const activeAnchor = ref('');
+    const activeAnchor = ref<string | number>('');
 
     const touch = useTouch();
     const scrollParent = useScrollParent(root);
