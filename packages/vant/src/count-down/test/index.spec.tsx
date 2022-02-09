@@ -1,7 +1,10 @@
-import { KeepAlive, nextTick } from 'vue';
-import { CountDown } from '..';
+import { nextTick, KeepAlive } from 'vue';
+import {
+  CountDown,
+  type CountDownInstance,
+  type CountDownCurrentTime,
+} from '..';
 import { mount, later } from '../../../test';
-import type { CountDownCurrentTime, CountDownInstance } from '../CountDown';
 
 test('should emit finish event when finished', async () => {
   const wrapper = mount(CountDown, {

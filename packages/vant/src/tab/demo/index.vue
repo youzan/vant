@@ -64,7 +64,7 @@ const beforeChange = (name: number) => {
   if (name === 1) {
     return false;
   }
-  return new Promise((resolve) => {
+  return new Promise<boolean>((resolve) => {
     resolve(name !== 3);
   });
 };

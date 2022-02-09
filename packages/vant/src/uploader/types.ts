@@ -20,15 +20,13 @@ export type UploaderFileListItem = {
 
 export type UploaderMaxSize = number | string | ((file: File) => boolean);
 
-type PromiseOrNot<T> = T | Promise<T>;
-
 export type UploaderBeforeRead = (
   file: File | File[],
   detail: {
     name: string | number;
     index: number;
   }
-) => PromiseOrNot<File | File[] | undefined>;
+) => boolean | undefined | Promise<File | File[] | undefined>;
 
 export type UploaderAfterRead = (
   items: UploaderFileListItem | UploaderFileListItem[],

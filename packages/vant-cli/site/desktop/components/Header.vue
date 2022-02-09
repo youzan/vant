@@ -296,7 +296,7 @@ export default {
   &__subtitle {
     display: inline-block;
     color: #999;
-    margin-left: 8px;
+    margin-left: 4px;
     vertical-align: -4px;
     font-size: 13px;
   }

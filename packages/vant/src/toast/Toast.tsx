@@ -4,6 +4,7 @@ import {
   onUnmounted,
   defineComponent,
   type PropType,
+  type TeleportProps,
   type CSSProperties,
   type ExtractPropTypes,
 } from 'vue';
@@ -49,6 +50,7 @@ const toastProps = {
   iconSize: numericProp,
   duration: makeNumberProp(2000),
   position: makeStringProp<ToastPosition>('middle'),
+  teleport: [String, Object] as PropType<TeleportProps['to']>,
   className: unknownProp,
   iconPrefix: String,
   transition: makeStringProp('van-fade'),

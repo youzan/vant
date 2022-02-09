@@ -37,7 +37,10 @@ import { Toast } from 'vant';
 
 export default {
   setup() {
-    const editingContact = ref({});
+    const editingContact = ref({
+      tel: '',
+      name: '',
+    });
     const onSave = (contactInfo) => Toast('Save');
     const onDelete = (contactInfo) => Toast('Delete');
     return {
