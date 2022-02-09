@@ -8,7 +8,7 @@
 
 **Feature**
 
-- ConfigProvider: 新增 `theme` 属性，用于开启暗色模式
+- ConfigProvider: 新增 `theme` 属性，用于开启深色模式
 - ConfigProvider: 新增 `ConfigProviderTheme` 类型
 
 **Style**

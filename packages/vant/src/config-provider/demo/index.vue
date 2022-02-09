@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import { ref, computed } from 'vue';
+import VanCell from '../../cell';
 import VanForm from '../../form';
 import VanField from '../../field';
 import VanRate from '../../rate';
+import VanSwitch from '../../switch';
 import VanSlider from '../../slider';
 import VanButton from '../../button';
 import VanConfigProvider from '..';
-import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
@@ -16,6 +18,8 @@ const t = useTranslate({
     submit: '提交',
     customTheme: '定制主题',
     defaultTheme: '默认主题',
+    darkMode: '深色模式',
+    switchDarkMode: '切换深色模式',
   },
   'en-US': {
     rate: 'Rate',
@@ -24,9 +28,13 @@ const t = useTranslate({
     submit: 'Submit',
     customTheme: 'Custom Theme',
     defaultTheme: 'DefaultTheme',
+    darkMode: 'Dark Mode',
+    switchDarkMode: 'Switch Dark Mode',
   },
 });
 
+const darkMode = ref(false);
+const theme = computed(() => (darkMode.value ? 'dark' : 'light'));
 const rate = ref(4);
 const slider = ref(50);
 const themeVars = {
@@ -41,51 +49,63 @@ const themeVars = {
 </script>
 
 <template>
-  <demo-block :title="t('defaultTheme')">
-    <van-form>
-      <van-field name="rate" :label="t('rate')">
-        <template #input>
-          <van-rate v-model="rate" />
+  <div :style="{ background: darkMode ? 'black' : '', minHeight: '100vh' }">
+    <demo-block :title="t('darkMode')">
+      <van-cell center :title="t('switchDarkMode')">
+        <template #right-icon>
+          <van-switch v-model="darkMode" size="24" />
         </template>
-      </van-field>
+      </van-cell>
+    </demo-block>
 
-      <van-field name="slider" :label="t('slider')">
-        <template #input>
-          <van-slider v-model="slider" />
-        </template>
-      </van-field>
+    <demo-block :title="t('defaultTheme')">
+      <van-config-provider :theme="theme">
+        <van-form>
+          <van-field name="rate" :label="t('rate')">
+            <template #input>
+              <van-rate v-model="rate" />
+            </template>
+          </van-field>
 
-      <div style="margin: 16px">
-        <van-button round block type="primary" native-type="submit">
-          {{ t('submit') }}
-        </van-button>
-      </div>
-    </van-form>
-  </demo-block>
+          <van-field name="slider" :label="t('slider')">
+            <template #input>
+              <van-slider v-model="slider" />
+            </template>
+          </van-field>
 
-  <demo-block :title="t('customTheme')">
-    <van-config-provider :theme-vars="themeVars">
-      <van-form>
-        <van-field name="rate" :label="t('rate')">
-          <template #input>
-            <van-rate v-model="rate" />
-          </template>
-        </van-field>
+          <div style="margin: 16px">
+            <van-button round block type="primary" native-type="submit">
+              {{ t('submit') }}
+            </van-button>
+          </div>
+        </van-form>
+      </van-config-provider>
+    </demo-block>
 
-        <van-field name="slider" :label="t('slider')">
-          <template #input>
-            <van-slider v-model="slider" />
-          </template>
-        </van-field>
+    <demo-block :title="t('customTheme')">
+      <van-config-provider :theme="theme" :theme-vars="themeVars">
+        <van-form>
+          <van-field name="rate" :label="t('rate')">
+            <template #input>
+              <van-rate v-model="rate" />
+            </template>
+          </van-field>
 
-        <div style="margin: 16px">
-          <van-button round block type="primary" native-type="submit">
-            {{ t('submit') }}
-          </van-button>
-        </div>
-      </van-form>
-    </van-config-provider>
-  </demo-block>
+          <van-field name="slider" :label="t('slider')">
+            <template #input>
+              <van-slider v-model="slider" />
+            </template>
+          </van-field>
+
+          <div style="margin: 16px">
+            <van-button round block type="primary" native-type="submit">
+              {{ t('submit') }}
+            </van-button>
+          </div>
+        </van-form>
+      </van-config-provider>
+    </demo-block>
+  </div>
 </template>
 
 <style lang="less">

@@ -2,7 +2,7 @@
 
 ### Intro
 
-Used to config the theme of Vant components.
+Used to configure Vant components globally, providing dark mode, theme customization and other capabilities.
 
 ### Install
 
@@ -14,6 +14,42 @@ import { ConfigProvider } from 'vant';
 
 const app = createApp();
 app.use(ConfigProvider);
+```
+
+## Dark Mode
+
+### Enable Dark Mode
+
+Enabling dark mode by setting the `theme` prop of the ConfigProvider component to `dark`.
+
+In takes effect globally, making all Vant components on the page dark.
+
+```html
+<van-config-provider theme="dark">...</van-config-provider>
+```
+
+> Tips: The theme prop will not change the background color of the page, you need to set it manually.
+
+### Switch Theme
+
+Switching between light and dark theme by dynamically setting the `theme` property.
+
+```html
+<van-config-provider :theme="theme">...</van-config-provider>
+```
+
+```js
+export default {
+  setup() {
+    const theme = ref('light');
+
+    setTimeout(() => {
+      theme.value = 'dark';
+    }, 1000);
+
+    return { theme };
+  },
+};
 ```
 
 ## Custom Theme
@@ -114,6 +150,8 @@ export default {
 
 > Tips：ConfigProvider only affects its child components.
 
+## Variables
+
 ### Basic Variables
 
 CSS variables in Vant are divided into **basic variables** and **component variables**. Component variables will inherit the basic variables. After modifying the basic variables, all related components will be affected.
@@ -123,7 +161,7 @@ CSS variables in Vant are divided into **basic variables** and **component varia
 - The basic variables can only be modified through the `body` selector.
 - The component variables can be modified through the `body` selector and `ConfigProvider` component.
 
-#### Variable List
+#### Variables List
 
 There are all **Basic Variables** below, for component CSS Variables, please refer to the documentation of each component.
 

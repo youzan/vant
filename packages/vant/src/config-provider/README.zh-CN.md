@@ -2,7 +2,7 @@
 
 ### 介绍
 
-用于配置 Vant 组件的主题样式，从 3.1.0 版本开始支持。
+用于全局配置 Vant 组件，提供深色模式、主题定制等能力。
 
 ### 引入
 
@@ -14,6 +14,42 @@ import { ConfigProvider } from 'vant';
 
 const app = createApp();
 app.use(ConfigProvider);
+```
+
+## 深色模式
+
+### 开启深色模式
+
+将 ConfigProvider 组件的 `theme` 属性设置为 `dark`，可以开启深色模式。
+
+深色模式会全局生效，使页面上的所有 Vant 组件变为深色风格。
+
+```html
+<van-config-provider theme="dark">...</van-config-provider>
+```
+
+> Tips: 开启深色模式不会改变页面的背景色，需要手动进行设置。
+
+### 动态切换
+
+通过动态设置 `theme` 属性，可以在浅色风格和深色风格之间进行切换。
+
+```html
+<van-config-provider :theme="theme">...</van-config-provider>
+```
+
+```js
+export default {
+  setup() {
+    const theme = ref('light');
+
+    setTimeout(() => {
+      theme.value = 'dark';
+    }, 1000);
+
+    return { theme };
+  },
+};
 ```
 
 ## 定制主题
@@ -114,6 +150,8 @@ export default {
 
 > 注意：ConfigProvider 仅影响它的子组件的样式，不影响全局 body 节点。
 
+## 主题变量
+
 ### 基础变量
 
 Vant 中的 CSS 变量分为 **基础变量** 和 **组件变量**。组件变量会继承基础变量，因此在修改基础变量后，会影响所有相关的组件。
@@ -213,7 +251,7 @@ Vant 中的 CSS 变量分为 **基础变量** 和 **组件变量**。组件变�
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| theme | 主题风格，设置为 `dark` 来开启暗色模式，全局生效 | _ConfigProviderTheme_ | `light` |
+| theme | 主题风格，设置为 `dark` 来开启深色模式，全局生效 | _ConfigProviderTheme_ | `light` |
 | theme-vars | 自定义主题变量，局部生效 | _object_ | - |
 | tag `v3.1.2` | 根节点对应的 HTML 标签名 | _string_ | `div` |
 | icon-prefix `v3.1.3` | 所有图标的类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |

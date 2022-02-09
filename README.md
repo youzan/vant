@@ -38,6 +38,7 @@
 - 🍭 Support Custom Theme
 - 🍭 Support Accessibility (still improving)
 - 🍭 Support i18n
+- 🍭 Support Dark Mode
 - 🌍 Support SSR
 
 ## Install
