@@ -20,7 +20,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 `2022-02-07`
 
-- Vant 3 对应的 npm tag 切换为 `latest`
+- switch default npm tag to `latest`
 
 ### [v3.4.3](https://github.com/compare/v3.4.2...v3.4.3)
 

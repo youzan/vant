@@ -33,6 +33,7 @@ const [name, bem] = createNamespace('toast');
 const popupInheritProps = [
   'show',
   'overlay',
+  'teleport',
   'transition',
   'overlayClass',
   'overlayStyle',

@@ -7,7 +7,7 @@
 <p align="center">轻量、可靠的移动端 Vue 组件库</p>
 
 <p align="center">
-    <img src="https://img.shields.io/npm/v/vant/next?style=flat-square" alt="npm version" />
+    <img src="https://img.shields.io/npm/v/vant?style=flat-square" alt="npm version" />
     <img src="https://img.shields.io/github/workflow/status/youzan/vant/CI/dev?style=flat-square" alt="CI Status" />
     <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg?style=flat-square&color=#4fc08d" alt="Coverage Status" />
     <img src="https://img.shields.io/npm/dm/vant.svg?style=flat-square&color=#4fc08d" alt="downloads" />

@@ -4,7 +4,10 @@
       <div class="van-doc-header__top">
         <a class="van-doc-header__logo">
           <img :src="config.logo" />
-          <span>{{ config.title }}</span>
+          <span class="van-doc-header__title">{{ config.title }}</span>
+          <span v-if="config.subtitle" class="van-doc-header__subtitle">
+            {{ config.subtitle }}
+          </span>
         </a>
 
         <ul class="van-doc-header__top-nav">
@@ -275,21 +278,27 @@ export default {
   &__logo {
     display: block;
 
-    img,
-    span {
-      display: inline-block;
-      vertical-align: middle;
-    }
-
     img {
+      display: inline-block;
       width: 28px;
       margin-right: 12px;
+      vertical-align: middle;
     }
+  }
 
-    span {
-      color: #fff;
-      font-size: 22px;
-    }
+  &__title {
+    display: inline-block;
+    color: #fff;
+    font-size: 22px;
+    vertical-align: middle;
+  }
+
+  &__subtitle {
+    display: inline-block;
+    color: #999;
+    margin-left: 8px;
+    vertical-align: -4px;
+    font-size: 13px;
   }
 
   &__link {
