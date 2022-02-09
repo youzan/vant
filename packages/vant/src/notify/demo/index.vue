@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import VanCell from '../../cell';
 import VanIcon from '../../icon';
-import { Notify } from '..';
 import { ref } from 'vue';
+import { Notify, type NotifyType } from '..';
 import { useTranslate } from '../../../docs/site/use-translate';
-import { NotifyType } from '../Notify';
 
 const VanNotify = Notify.Component;
 

@@ -42,7 +42,7 @@ const disabledInput = ref(1);
 const beforeChange = () => {
   Toast.loading({ forbidClick: true });
 
-  return new Promise((resolve) => {
+  return new Promise<boolean>((resolve) => {
     setTimeout(() => {
       Toast.clear();
       resolve(true);

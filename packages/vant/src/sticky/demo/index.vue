@@ -17,7 +17,7 @@ const t = useTranslate({
   },
 });
 
-const container = ref(null);
+const container = ref<Element>();
 </script>
 
 <template>

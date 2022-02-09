@@ -26,7 +26,7 @@ export type UploaderBeforeRead = (
     name: string | number;
     index: number;
   }
-) => boolean | Promise<File | File[] | undefined>;
+) => boolean | undefined | Promise<File | File[] | undefined>;
 
 export type UploaderAfterRead = (
   items: UploaderFileListItem | UploaderFileListItem[],

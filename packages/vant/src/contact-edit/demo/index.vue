@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import VanContactEdit from '..';
 import { ref } from 'vue';
+import VanContactEdit, { type ContactEditInfo } from '..';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
 
@@ -13,7 +13,10 @@ const t = useTranslate({
   },
 });
 
-const editingContact = ref({});
+const editingContact = ref<ContactEditInfo>({
+  tel: '',
+  name: '',
+});
 
 const onSave = () => Toast(t('save'));
 const onDelete = () => Toast(t('delete'));

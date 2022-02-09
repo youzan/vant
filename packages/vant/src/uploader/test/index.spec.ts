@@ -99,7 +99,7 @@ test('set input name', (done) => {
         detail: { name: string | number; index: number }
       ) => {
         expect(detail.name).toEqual('uploader');
-        return file;
+        return true;
       },
       afterRead: (
         readFile: UploaderFileListItem | UploaderFileListItem[],
