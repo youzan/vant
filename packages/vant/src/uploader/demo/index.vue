@@ -56,7 +56,7 @@ const fileList3 = ref([]);
 
 const fileList4 = ref([{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }]);
 
-const fileList5 = ref([
+const fileList5 = ref<UploaderFileListItem[]>([
   { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
   {
     url: 'https://img.yzcdn.cn/vant/sand.jpg',
@@ -73,7 +73,7 @@ const fileList5 = ref([
   },
 ]);
 
-const statusFileList = ref([
+const statusFileList = ref<UploaderFileListItem[]>([
   {
     url: 'https://img.yzcdn.cn/vant/leaf.jpg',
     status: 'uploading',
@@ -86,16 +86,19 @@ const statusFileList = ref([
   },
 ]);
 
-const previewCoverFiles = ref([
+const previewCoverFiles = ref<UploaderFileListItem[]>([
   {
     url: 'https://img.yzcdn.cn/vant/leaf.jpg',
     file: {
       name: t('imageName'),
-    },
+    } as File,
   },
 ]);
 
-const beforeRead = (file: File) => {
+const beforeRead = (file: File | File[]) => {
+  if (Array.isArray(file)) {
+    return true;
+  }
   if (file.type !== 'image/jpeg') {
     Toast(t('invalidType'));
     return false;
@@ -103,11 +106,14 @@ const beforeRead = (file: File) => {
   return true;
 };
 
-const afterRead = (file: UploaderFileListItem, detail: unknown) => {
+const afterRead = (
+  file: UploaderFileListItem | UploaderFileListItem[],
+  detail: unknown
+) => {
   console.log(file, detail);
 };
 
-const afterReadFailed = (item: UploaderFileListItem) => {
+const setItemLoading = (item: UploaderFileListItem) => {
   item.status = 'uploading';
   item.message = t('uploading');
 
@@ -115,6 +121,16 @@ const afterReadFailed = (item: UploaderFileListItem) => {
     item.status = 'failed';
     item.message = t('failed');
   }, 1000);
+};
+
+const afterReadFailed = (
+  item: UploaderFileListItem | UploaderFileListItem[]
+) => {
+  if (Array.isArray(item)) {
+    item.forEach(setItemLoading);
+  } else {
+    setItemLoading(item);
+  }
 };
 
 const onOversize = (file: UploaderFileListItem, detail: unknown) => {
