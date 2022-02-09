@@ -24,7 +24,7 @@ export default {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
     },
     htmlMeta: {
-      'docsearch:version': 'v3',
+      'docsearch:version': 'v4',
     },
     locales: {
       'zh-CN': {
@@ -47,7 +47,7 @@ export default {
           apiKey: '90067aecdaa2c85220e2783cd305caac',
           indexName: 'vant',
           searchParameters: {
-            facetFilters: ['lang:zh-CN', 'version:v3'],
+            facetFilters: ['lang:zh-CN', 'version:v4'],
           },
           transformItems(items) {
             if (location.hostname !== 'youzan.github.io') {
@@ -485,7 +485,7 @@ export default {
           apiKey: '90067aecdaa2c85220e2783cd305caac',
           indexName: 'vant',
           searchParameters: {
-            facetFilters: ['lang:en-US', 'version:v3'],
+            facetFilters: ['lang:en-US', 'version:v4'],
           },
         },
         nav: [
