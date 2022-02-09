@@ -3,7 +3,7 @@ import { isPromise } from './validate';
 
 export type Interceptor = (
   ...args: any[]
-) => Promise<boolean> | boolean | undefined;
+) => Promise<boolean> | boolean | undefined | void;
 
 export function callInterceptor(
   interceptor: Interceptor | undefined,
