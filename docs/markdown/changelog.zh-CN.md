@@ -14,6 +14,12 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
 - 主版本号：无固定发布时间，包含不兼容更新。
 
+**维护提示**
+
+- Vant 2 版本已经不再主动迭代新 Feature，如果你仍在使用 Vue 2 & Vant 2，建议尽快进行升级。
+
+- 考虑到仍然有较多用户在使用 Vue 2，我们会对 Vant 2 中影响面较大的 Bug 进行修复，也接受来自社区的 Pull Request，欢迎贡献代码 ^\_^
+
 ## 更新内容
 
 ### [v2.12.43](https://github.com/youzan/vant/compare/v2.12.39...v2.12.43)
