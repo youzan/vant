@@ -170,7 +170,7 @@ export default {
               },
               {
                 path: 'datetime-picker',
-                title: 'DatetimePicker 时间选择',
+                title: 'DatetimePicker 日期选择',
               },
               {
                 path: 'field',
@@ -215,6 +215,10 @@ export default {
               {
                 path: 'switch',
                 title: 'Switch 开关',
+              },
+              {
+                path: 'time-picker',
+                title: 'timePicker 时间选择',
               },
               {
                 path: 'uploader',
@@ -621,6 +625,10 @@ export default {
               {
                 path: 'switch',
                 title: 'Switch',
+              },
+              {
+                path: 'time-picker',
+                title: 'timePicker',
               },
               {
                 path: 'uploader',
