@@ -25,18 +25,6 @@ test('should emit cancel event after clicking the confirm button', () => {
   expect(onCancel).toHaveBeenCalledTimes(1);
 });
 
-test('should render time type correctly', () => {
-  const wrapper = mount(DatetimePicker, {
-    props: {
-      type: 'time',
-      minHour: 22,
-      minMinute: 58,
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
 test('should allow to call getPicker method', () => {
   const wrapper = mount(DatetimePicker);
 

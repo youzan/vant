@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should filter options when using filter prop 1`] = `
+<div class="van-picker">
+  <div class="van-picker__toolbar">
+    <button type="button"
+            class="van-picker__cancel van-haptics-feedback"
+    >
+      Cancel
+    </button>
+    <button type="button"
+            class="van-picker__confirm van-haptics-feedback"
+    >
+      Confirm
+    </button>
+  </div>
+  <div class="van-picker__columns"
+       style="height: 264px;"
+  >
+    <div class="van-picker-column">
+      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+          class="van-picker-column__wrapper"
+      >
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
+        >
+          <div class="van-ellipsis">
+            00
+          </div>
+        </li>
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item"
+        >
+          <div class="van-ellipsis">
+            10
+          </div>
+        </li>
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item"
+        >
+          <div class="van-ellipsis">
+            20
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="van-picker-column">
+      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+          class="van-picker-column__wrapper"
+      >
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
+        >
+          <div class="van-ellipsis">
+            00
+          </div>
+        </li>
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item"
+        >
+          <div class="van-ellipsis">
+            20
+          </div>
+        </li>
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item"
+        >
+          <div class="van-ellipsis">
+            40
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="van-picker__mask"
+         style="background-size: 100% 110px;"
+    >
+    </div>
+    <div class="van-hairline-unset--top-bottom van-picker__frame"
+         style="height: 44px;"
+    >
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should format options correctly when using formatter prop 1`] = `
+<div class="van-picker">
+  <div class="van-picker__toolbar">
+    <button type="button"
+            class="van-picker__cancel van-haptics-feedback"
+    >
+      Cancel
+    </button>
+    <button type="button"
+            class="van-picker__confirm van-haptics-feedback"
+    >
+      Confirm
+    </button>
+  </div>
+  <div class="van-picker__columns"
+       style="height: 264px;"
+  >
+    <div class="van-picker-column">
+      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+          class="van-picker-column__wrapper"
+      >
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
+        >
+          <div class="van-ellipsis">
+            00 hour
+          </div>
+        </li>
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item"
+        >
+          <div class="van-ellipsis">
+            10 hour
+          </div>
+        </li>
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item"
+        >
+          <div class="van-ellipsis">
+            20 hour
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="van-picker-column">
+      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+          class="van-picker-column__wrapper"
+      >
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
+        >
+          <div class="van-ellipsis">
+            00 minute
+          </div>
+        </li>
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item"
+        >
+          <div class="van-ellipsis">
+            20 minute
+          </div>
+        </li>
+        <li role="button"
+            style="height: 44px;"
+            tabindex="0"
+            class="van-picker-column__item"
+        >
+          <div class="van-ellipsis">
+            40 minute
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="van-picker__mask"
+         style="background-size: 100% 110px;"
+    >
+    </div>
+    <div class="van-hairline-unset--top-bottom van-picker__frame"
+         style="height: 44px;"
+    >
+    </div>
+  </div>
+</div>
+`;
