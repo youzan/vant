@@ -16,6 +16,19 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.43](https://github.com/youzan/vant/compare/v2.12.39...v2.12.43)
+
+`2022-02-10`
+
+**Feature**
+
+- Cascader: add show-header prop [#10201](https://github.com/youzan/vant/issues/10201)
+- CollapseItem: add lazy-render prop [#10279](https://github.com/youzan/vant/issues/10279)
+
+**Bug Fixes**
+
+- Icon: remove white space under image when using image URL [#10224](https://github.com/youzan/vant/issues/10224)
+
 ### [v2.12.42](https://github.com/youzan/vant/compare/v2.12.41...v2.12.42)
 
 `2022-02-07`

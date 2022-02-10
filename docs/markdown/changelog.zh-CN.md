@@ -16,6 +16,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.43](https://github.com/youzan/vant/compare/v2.12.39...v2.12.43)
+
+`2022-02-10`
+
+**Feature**
+
+- Cascader: 新增 show-header 属性 [#10201](https://github.com/youzan/vant/issues/10201)
+- CollapseItem: 新增 lazy-render 属性 [#10279](https://github.com/youzan/vant/issues/10279)
+
+**Bug Fixes**
+
+- Icon: 修复使用图片作为图标时水平未对齐的问题 [#10224](https://github.com/youzan/vant/issues/10224)
+
 ### [v2.12.42](https://github.com/youzan/vant/compare/v2.12.41...v2.12.42)
 
 `2022-02-07`
