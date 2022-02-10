@@ -86,7 +86,7 @@ test('should render title and description slot correctly', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should emit click-overlay event when overlay is clicked', async () => {
+test('should emit clickOverlay event when overlay is clicked', async () => {
   const root = document.createElement('div');
   const onClickOverlay = jest.fn();
   const wrapper = mount(ShareSheet, {

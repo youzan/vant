@@ -46,9 +46,9 @@ export default defineComponent({
     'clear',
     'search',
     'cancel',
-    'click-input',
-    'click-left-icon',
-    'click-right-icon',
+    'clickInput',
+    'clickLeftIcon',
+    'clickRightIcon',
     'update:modelValue',
   ],
 
@@ -104,11 +104,10 @@ export default defineComponent({
     const onBlur = (event: Event) => emit('blur', event);
     const onFocus = (event: Event) => emit('focus', event);
     const onClear = (event: MouseEvent) => emit('clear', event);
-    const onClickInput = (event: MouseEvent) => emit('click-input', event);
-    const onClickLeftIcon = (event: MouseEvent) =>
-      emit('click-left-icon', event);
+    const onClickInput = (event: MouseEvent) => emit('clickInput', event);
+    const onClickLeftIcon = (event: MouseEvent) => emit('clickLeftIcon', event);
     const onClickRightIcon = (event: MouseEvent) =>
-      emit('click-right-icon', event);
+      emit('clickRightIcon', event);
 
     const fieldPropNames = Object.keys(fieldSharedProps) as Array<
       keyof typeof fieldSharedProps
@@ -132,9 +131,9 @@ export default defineComponent({
           onFocus={onFocus}
           onClear={onClear}
           onKeypress={onKeypress}
-          onClick-input={onClickInput}
-          onClick-left-icon={onClickLeftIcon}
-          onClick-right-icon={onClickRightIcon}
+          onClickInput={onClickInput}
+          onClickLeftIcon={onClickLeftIcon}
+          onClickRightIcon={onClickRightIcon}
           onUpdate:modelValue={onInput}
           {...fieldAttrs}
         />

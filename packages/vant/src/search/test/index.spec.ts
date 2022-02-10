@@ -171,7 +171,7 @@ test('should render input name when using name prop', () => {
   expect(wrapper.find('input').element.getAttribute('name')).toEqual('foo');
 });
 
-test('should emit click-left-icon event after clicking the left icon', async () => {
+test('should emit clickLeftIcon event after clicking the left icon', async () => {
   const wrapper = mount(Search, {
     props: {
       leftIcon: 'foo',
@@ -179,10 +179,10 @@ test('should emit click-left-icon event after clicking the left icon', async () 
   });
 
   await wrapper.find('.van-field__left-icon').trigger('click');
-  expect(wrapper.emitted('click-left-icon')).toHaveLength(1);
+  expect(wrapper.emitted('clickLeftIcon')).toHaveLength(1);
 });
 
-test('should emit click-right-icon event after clicking the right icon', async () => {
+test('should emit clickRightIcon event after clicking the right icon', async () => {
   const wrapper = mount(Search, {
     props: {
       rightIcon: 'foo',
@@ -190,5 +190,5 @@ test('should emit click-right-icon event after clicking the right icon', async (
   });
 
   await wrapper.find('.van-field__right-icon').trigger('click');
-  expect(wrapper.emitted('click-right-icon')).toHaveLength(1);
+  expect(wrapper.emitted('clickRightIcon')).toHaveLength(1);
 });

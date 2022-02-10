@@ -56,7 +56,7 @@ export default defineComponent({
 
   props: sliderProps,
 
-  emits: ['change', 'drag-end', 'drag-start', 'update:modelValue'],
+  emits: ['change', 'dragEnd', 'dragStart', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
     let buttonIndex: 0 | 1;
@@ -221,7 +221,7 @@ export default defineComponent({
       }
 
       if (dragStatus.value === 'start') {
-        emit('drag-start', event);
+        emit('dragStart', event);
       }
 
       preventDefault(event, true);
@@ -253,7 +253,7 @@ export default defineComponent({
 
       if (dragStatus.value === 'dragging') {
         updateValue(current, true);
-        emit('drag-end', event);
+        emit('dragEnd', event);
       }
 
       dragStatus.value = '';

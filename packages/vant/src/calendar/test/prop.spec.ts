@@ -167,7 +167,7 @@ test('lazy-render prop', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('month-show event', async () => {
+test('monthShow event', async () => {
   const wrapper = mount(Calendar, {
     props: {
       show: true,
@@ -175,7 +175,7 @@ test('month-show event', async () => {
   });
   await later(200);
 
-  expect(wrapper.emitted('month-show')).toBeTruthy();
+  expect(wrapper.emitted('monthShow')).toBeTruthy();
 });
 
 test('first day of week', async () => {
@@ -248,7 +248,7 @@ test('should disabled prompt when using show-range-prompt prop', async () => {
   expect(document.querySelector('.van-toast')).toBeFalsy();
 });
 
-test('should emit over-range when exceeded max range', async () => {
+test('should emit overRange when exceeded max range', async () => {
   const onOverRange = jest.fn();
   const wrapper = mount(Calendar, {
     props: {

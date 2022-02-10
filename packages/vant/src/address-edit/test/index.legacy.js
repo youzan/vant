@@ -112,13 +112,13 @@ test('should valid postal code and render error message correctly', async () => 
   expect(fields[4].html()).toMatchSnapshot();
 });
 
-test('should emit change-detail event after changing address detail', () => {
+test('should emit changeDetail event after changing address detail', () => {
   const wrapper = mount(AddressEdit);
   const field = wrapper.findAll('.van-field__control')[3];
 
   field.element.value = '123';
   field.trigger('input');
-  expect(wrapper.emitted('change-detail')[0][0]).toEqual('123');
+  expect(wrapper.emitted('changeDetail')[0][0]).toEqual('123');
 });
 
 test('should return current areas after calling getArea method', () => {
@@ -204,7 +204,7 @@ test('should update address detail after calling the setAddressDetail method', a
   expect(textarea.element.value).toEqual('test');
 });
 
-test('should emit click-area event after clicking the area field', () => {
+test('should emit clickArea event after clicking the area field', () => {
   const wrapper = mount(AddressEdit, {
     props: {
       disableArea: true,
@@ -213,7 +213,7 @@ test('should emit click-area event after clicking the area field', () => {
 
   const field = wrapper.findAll('.van-field')[2];
   field.trigger('click');
-  expect(wrapper.emitted('click-area')[0]).toBeTruthy();
+  expect(wrapper.emitted('clickArea')[0]).toBeTruthy();
 });
 
 test('should limit tel maxlength when using tel-maxlength prop', () => {

@@ -62,7 +62,7 @@ export default defineComponent({
 
   props: calendarMonthProps,
 
-  emits: ['click', 'update-height'],
+  emits: ['click'],
 
   setup(props, { emit, slots }) {
     const [visible, setVisible] = useToggle();

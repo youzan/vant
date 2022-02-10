@@ -47,7 +47,7 @@ export default defineComponent({
 
   props: cascaderProps,
 
-  emits: ['close', 'change', 'finish', 'click-tab', 'update:modelValue'],
+  emits: ['close', 'change', 'finish', 'clickTab', 'update:modelValue'],
 
   setup(props, { slots, emit }) {
     const tabs = ref<CascaderTab[]>([]);
@@ -184,7 +184,7 @@ export default defineComponent({
     const onClose = () => emit('close');
 
     const onClickTab = ({ name, title }: TabsClickTabEventParams) =>
-      emit('click-tab', name, title);
+      emit('clickTab', name, title);
 
     const renderHeader = () =>
       props.showHeader ? (
@@ -276,7 +276,7 @@ export default defineComponent({
         class={bem('tabs')}
         color={props.activeColor}
         swipeable={props.swipeable}
-        onClick-tab={onClickTab}
+        onClickTab={onClickTab}
       >
         {tabs.value.map(renderTab)}
       </Tabs>

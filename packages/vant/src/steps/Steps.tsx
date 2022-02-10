@@ -31,12 +31,12 @@ export default defineComponent({
 
   props: stepsProps,
 
-  emits: ['click-step'],
+  emits: ['clickStep'],
 
   setup(props, { emit, slots }) {
     const { linkChildren } = useChildren(STEPS_KEY);
 
-    const onClickStep = (index: number) => emit('click-step', index);
+    const onClickStep = (index: number) => emit('clickStep', index);
 
     linkChildren({
       props,

@@ -102,11 +102,11 @@ export default defineComponent({
     'save',
     'focus',
     'delete',
-    'click-area',
-    'change-area',
-    'change-detail',
-    'select-search',
-    'change-default',
+    'clickArea',
+    'changeArea',
+    'changeDetail',
+    'selectSearch',
+    'changeDefault',
   ],
 
   setup(props, { emit, slots }) {
@@ -188,7 +188,7 @@ export default defineComponent({
 
     const onChangeDetail = (val: string) => {
       data.addressDetail = val;
-      emit('change-detail', val);
+      emit('changeDetail', val);
     };
 
     const onAreaConfirm = (values: AreaColumnOption[]) => {
@@ -199,7 +199,7 @@ export default defineComponent({
       } else {
         showAreaPopup.value = false;
         assignAreaValues();
-        emit('change-area', values);
+        emit('changeArea', values);
       }
     };
 
@@ -235,7 +235,7 @@ export default defineComponent({
             <Switch
               v-model={data.isDefault}
               size="24"
-              onChange={(event) => emit('change-default', event)}
+              onChange={(event) => emit('changeDefault', event)}
             />
           ),
         };
@@ -309,7 +309,7 @@ export default defineComponent({
               placeholder={props.areaPlaceholder || t('area')}
               onFocus={() => onFocus('areaCode')}
               onClick={() => {
-                emit('click-area');
+                emit('clickArea');
                 showAreaPopup.value = !disableArea;
               }}
             />
@@ -325,7 +325,7 @@ export default defineComponent({
               onBlur={onDetailBlur}
               onFocus={() => onFocus('addressDetail')}
               onInput={onChangeDetail}
-              onSelect-search={(event: Event) => emit('select-search', event)}
+              onSelectSearch={(event: Event) => emit('selectSearch', event)}
             />
             {props.showPostal && (
               <Field

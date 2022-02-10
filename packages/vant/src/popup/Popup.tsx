@@ -69,8 +69,8 @@ export default defineComponent({
     'opened',
     'closed',
     'update:show',
-    'click-overlay',
-    'click-close-icon',
+    'clickOverlay',
+    'clickCloseIcon',
   ],
 
   setup(props, { emit, attrs, slots }) {
@@ -124,7 +124,7 @@ export default defineComponent({
     };
 
     const onClickOverlay = (event: MouseEvent) => {
-      emit('click-overlay', event);
+      emit('clickOverlay', event);
 
       if (props.closeOnClickOverlay) {
         close();
@@ -148,7 +148,7 @@ export default defineComponent({
     };
 
     const onClickCloseIcon = (event: MouseEvent) => {
-      emit('click-close-icon', event);
+      emit('clickCloseIcon', event);
       close();
     };
 

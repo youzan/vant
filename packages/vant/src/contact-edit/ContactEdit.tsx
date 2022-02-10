@@ -52,7 +52,7 @@ export default defineComponent({
 
   props: contactEditProps,
 
-  emits: ['save', 'delete', 'change-default'],
+  emits: ['save', 'delete', 'changeDefault'],
 
   setup(props, { emit }) {
     const contact = reactive(extend({}, DEFAULT_CONTACT, props.contactInfo));
@@ -93,7 +93,7 @@ export default defineComponent({
       <Switch
         v-model={contact.isDefault}
         size={24}
-        onChange={(checked: boolean) => emit('change-default', checked)}
+        onChange={(checked: boolean) => emit('changeDefault', checked)}
       />
     );
 

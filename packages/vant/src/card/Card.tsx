@@ -30,7 +30,7 @@ export default defineComponent({
 
   props: cardProps,
 
-  emits: ['click-thumb'],
+  emits: ['clickThumb'],
 
   setup(props, { slots, emit }) {
     const renderTitle = () => {
@@ -85,7 +85,7 @@ export default defineComponent({
           <a
             href={props.thumbLink}
             class={bem('thumb')}
-            onClick={(event: MouseEvent) => emit('click-thumb', event)}
+            onClick={(event: MouseEvent) => emit('clickThumb', event)}
           >
             {renderThumbImage()}
             {renderThumbTag()}

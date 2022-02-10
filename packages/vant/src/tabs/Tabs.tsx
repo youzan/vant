@@ -91,7 +91,7 @@ export default defineComponent({
 
   props: tabsProps,
 
-  emits: ['change', 'scroll', 'rendered', 'click-tab', 'update:active'],
+  emits: ['change', 'scroll', 'rendered', 'clickTab', 'update:active'],
 
   setup(props, { emit, slots }) {
     let tabHeight: number;
@@ -289,7 +289,7 @@ export default defineComponent({
         route(item as ComponentPublicInstance<RouteProps>);
       }
 
-      emit('click-tab', {
+      emit('clickTab', {
         name,
         title,
         event,

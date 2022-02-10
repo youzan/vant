@@ -124,9 +124,9 @@ export default defineComponent({
     'focus',
     'clear',
     'keypress',
-    'click-input',
-    'click-left-icon',
-    'click-right-icon',
+    'clickInput',
+    'clickLeftIcon',
+    'clickRightIcon',
     'update:modelValue',
   ],
 
@@ -332,13 +332,12 @@ export default defineComponent({
       resetScroll();
     };
 
-    const onClickInput = (event: MouseEvent) => emit('click-input', event);
+    const onClickInput = (event: MouseEvent) => emit('clickInput', event);
 
-    const onClickLeftIcon = (event: MouseEvent) =>
-      emit('click-left-icon', event);
+    const onClickLeftIcon = (event: MouseEvent) => emit('clickLeftIcon', event);
 
     const onClickRightIcon = (event: MouseEvent) =>
-      emit('click-right-icon', event);
+      emit('clickRightIcon', event);
 
     const onClear = (event: MouseEvent) => {
       preventDefault(event);

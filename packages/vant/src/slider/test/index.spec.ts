@@ -39,7 +39,7 @@ test('should emit "update:modelValue" event after clicking slider', () => {
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
 });
 
-test('should emit drag-start event when start dragging', () => {
+test('should emit dragStart event when start dragging', () => {
   const wrapper = mount(Slider, {
     props: {
       modelValue: 50,
@@ -49,10 +49,10 @@ test('should emit drag-start event when start dragging', () => {
   const button = wrapper.find('.van-slider__button');
   trigger(button, 'touchstart');
   trigger(button, 'touchmove');
-  expect(wrapper.emitted('drag-start')).toBeTruthy();
+  expect(wrapper.emitted('dragStart')).toBeTruthy();
 });
 
-test('should emit drag-end event when end dragging', () => {
+test('should emit dragEnd event when end dragging', () => {
   const wrapper = mount(Slider, {
     props: {
       modelValue: 50,
@@ -62,9 +62,9 @@ test('should emit drag-end event when end dragging', () => {
   const button = wrapper.find('.van-slider__button');
   trigger(button, 'touchstart');
   trigger(button, 'touchmove');
-  expect(wrapper.emitted('drag-end')).toBeFalsy();
+  expect(wrapper.emitted('dragEnd')).toBeFalsy();
   trigger(button, 'touchend');
-  expect(wrapper.emitted('drag-end')).toBeTruthy();
+  expect(wrapper.emitted('dragEnd')).toBeTruthy();
 });
 
 test('should not allow to drag slider when disabled', async () => {

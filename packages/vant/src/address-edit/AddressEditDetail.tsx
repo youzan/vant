@@ -28,7 +28,7 @@ export default defineComponent({
     showSearchResult: Boolean,
   },
 
-  emits: ['blur', 'focus', 'input', 'select-search'],
+  emits: ['blur', 'focus', 'input', 'selectSearch'],
 
   setup(props, { emit }) {
     const field = ref<FieldInstance>();
@@ -37,7 +37,7 @@ export default defineComponent({
       props.focused && props.searchResult && props.showSearchResult;
 
     const onSelect = (express: AddressEditSearchItem) => {
-      emit('select-search', express);
+      emit('selectSearch', express);
       emit('input', `${express.address || ''} ${express.name || ''}`.trim());
     };
 
