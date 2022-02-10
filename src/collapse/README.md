@@ -127,6 +127,7 @@ export default {
 | border | Whether to show inner border | _boolean_ | `true` |
 | disabled | Whether to disabled collapse | _boolean_ | `false` |
 | is-link | Whether to show link icon | _boolean_ | `true` |
+| lazy-render `v2.12.43` | Whether to lazy render util opened | _boolean_ | `true` |
 | title-class | Title className | _string_ | - |
 | value-class | Value className | _string_ | - |
 | label-class | Label className | _string_ | - |

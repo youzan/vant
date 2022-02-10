@@ -20,6 +20,10 @@ export default createComponent({
     ...cellProps,
     name: [Number, String],
     disabled: Boolean,
+    lazyRender: {
+      type: Boolean,
+      default: true,
+    },
     isLink: {
       type: Boolean,
       default: true,
@@ -155,7 +159,7 @@ export default createComponent({
     },
 
     genContent() {
-      if (this.inited) {
+      if (this.inited || !this.lazyRender) {
         return (
           <div
             vShow={this.show}
