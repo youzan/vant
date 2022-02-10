@@ -48,7 +48,11 @@ const formatter = (type: string, option: PickerOption) => {
 
 <template>
   <demo-block card :title="t('basicUsage')">
-    <van-time-picker v-model="baseTime" :title="t('chooseTime')" />
+    <van-time-picker
+      v-model="baseTime"
+      :title="t('chooseTime')"
+      :columns-order="['minute', 'hour']"
+    />
   </demo-block>
 
   <demo-block card :title="t('timeRange')">

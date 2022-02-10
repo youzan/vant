@@ -5,6 +5,7 @@ import {
   nextTick,
   onMounted,
   defineComponent,
+  type PropType,
 } from 'vue';
 
 // Utils
@@ -44,6 +45,7 @@ export default defineComponent({
   props: extend({}, sharedProps, {
     type: makeStringProp<DatetimePickerType>('datetime'),
     modelValue: Date,
+    columnsOrder: Array as PropType<DatetimePickerColumnType[]>,
     minDate: {
       type: Date,
       default: () => new Date(currentYear - 10, 0, 1),

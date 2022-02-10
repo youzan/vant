@@ -139,7 +139,6 @@ export default {
 | readonly | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
 | filter | 选项过滤函数 | _(type: string, options: PickerOption[]) => PickerOption[]_ | - |
 | formatter | 选项格式化函数 | _(type: string, option: PickerOption) => PickerOption_ | - |
-| columns-order | 自定义列排序数组, 子项可选值为<br> `hour`、`minute` | _string[]_ | - |
 | option-height | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | visible-option-num | 可见的选项个数 | _number \| string_ | `6` |
 | swipe-duration | 快速滑动时惯性滚动的时长，单位 `ms` | _number \| string_ | `1000` |

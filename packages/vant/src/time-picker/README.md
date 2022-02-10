@@ -140,7 +140,6 @@ export default {
 | readonly | Whether to be readonly | _boolean_ | `false` |
 | filter | Option filter | _(type: string, options: PickerOption[]) => PickerOption[]_ | - |
 | formatter | Option text formatter | _(type: string, option: PickerOption) => PickerOption_ | - |
-| columns-order | Array for ordering columns, where item can be set to<br> `hour`、`minute` | _string[]_ | - |
 | option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-option-num | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |

@@ -218,7 +218,7 @@ export default {
               },
               {
                 path: 'time-picker',
-                title: 'timePicker 时间选择',
+                title: 'TimePicker 时间选择',
               },
               {
                 path: 'uploader',
@@ -628,7 +628,7 @@ export default {
               },
               {
                 path: 'time-picker',
-                title: 'timePicker',
+                title: 'TimePicker',
               },
               {
                 path: 'uploader',

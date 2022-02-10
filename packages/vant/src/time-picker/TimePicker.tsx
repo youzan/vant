@@ -62,11 +62,11 @@ export default defineComponent({
 
     const ranges = computed(() => [
       {
-        type: 'hour',
+        type: 'hour' as const,
         range: [+props.minHour, +props.maxHour],
       },
       {
-        type: 'minute',
+        type: 'minute' as const,
         range: [+props.minMinute, +props.maxMinute],
       },
     ]);
