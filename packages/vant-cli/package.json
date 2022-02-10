@@ -47,8 +47,8 @@
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
-    "@docsearch/css": "3.0.0-alpha.41",
-    "@docsearch/js": "3.0.0-alpha.41",
+    "@docsearch/css": "3.0.0-alpha.50",
+    "@docsearch/js": "3.0.0-alpha.50",
     "@types/jest": "^27.0.3",
     "@vant/eslint-config": "^3.3.2",
     "@vant/markdown-vetur": "^2.2.0",
