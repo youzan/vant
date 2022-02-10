@@ -38,6 +38,14 @@ export function findIndexOfEnabledOption(
   return 0;
 }
 
+export const isOptionExist = (
+  options: PickerOption[],
+  value: number | string | undefined,
+  fields: Required<PickerFieldNames>
+) =>
+  value !== undefined &&
+  !!options.find((option) => option[fields.value] === value);
+
 export function findOptionByValue(
   options: PickerOption[],
   value: number | string,

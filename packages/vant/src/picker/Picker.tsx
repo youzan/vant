@@ -21,6 +21,7 @@ import {
   BORDER_UNSET_TOP_BOTTOM,
 } from '../utils';
 import {
+  isOptionExist,
   isValuesEqual,
   getColumnsType,
   findOptionByValue,
@@ -118,7 +119,7 @@ export default defineComponent({
         // reset values after cascading
         selectedValues.value.forEach((value, index) => {
           const options = currentColumns.value[index];
-          if (!options.find((option) => option[fields.value.value] === value)) {
+          if (!isOptionExist(options, value, fields.value)) {
             selectedValues.value[index] = options.length
               ? options[0][fields.value.value]
               : undefined;
@@ -245,7 +246,10 @@ export default defineComponent({
       currentColumns,
       (columns) => {
         columns.forEach((options, index) => {
-          if (selectedValues.value[index] === undefined && options.length) {
+          if (
+            options.length &&
+            !isOptionExist(options, selectedValues.value[index], fields.value)
+          ) {
             selectedValues.value[index] =
               getFirstEnabledOption(options)[fields.value.value];
           }
