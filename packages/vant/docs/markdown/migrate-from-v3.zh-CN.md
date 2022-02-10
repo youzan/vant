@@ -64,14 +64,14 @@ emit('click-input');
 emit('clickInput');
 ```
 
-由于 Vue 会自动在模板中对事件名进行格式转换，因此这项改动不影响原有的模板代码。
+这项改动**不影响原有的模板代码**，Vue 会自动在模板中对事件名进行格式转换：
 
 ```html
-<!-- 以下代码可以照常运行 -->
+<!-- 以下代码可以照常运行，无须做任何更改 -->
 <van-field @click-input="onClick" />
 ```
 
-此改动会影响 JSX 代码，需要将事件名调整为驼峰格式：
+如果你在 JSX 中使用 Vant 组件，需要将监听的事件名调整为驼峰格式，新的监听方式更加符合 JSX 本身的规范：
 
 ```jsx
 // Vant 3
@@ -83,7 +83,7 @@ emit('clickInput');
 
 ### 其他 API 调整
 
-4.0 版本中，以下 API 进行了不兼容更新：
+在 Vant 4.0 版本中，以下 API 进行了不兼容更新：
 
 #### Tabs
 
@@ -93,9 +93,9 @@ emit('clickInput');
 
 ### 移除 Less 变量
 
-目前 Vant 已经支持了基于 CSS 变量的主题定制能力，因此后续将不再提供 Less 变量。
+目前 Vant 已经支持了基于 CSS 变量的主题定制能力，因此后续将不再提供基于 Less 的主题定制方式。
 
-如果你的项目正在使用 Less 变量进行主题定制，请使用 [ConfigProvider 全局配置](#/zh-CN/config-provider) 组件进行替换。
+如果你的项目正在使用旧版的 Less 主题定制，请使用 [ConfigProvider 全局配置](#/zh-CN/config-provider) 组件进行替换。
 
 ### 简化 CSS 变量名
 
@@ -116,3 +116,5 @@ price-integer-font               ->  price-font
 text-link                        ->  link
 transition-duration              ->  duration
 ```
+
+由于涉及的 CSS 变量较多，建议在代码仓库中进行全局匹配和替换。

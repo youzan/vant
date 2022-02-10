@@ -100,7 +100,7 @@ export default defineComponent({
           emit('update:modelValue', newValue);
         }
       },
-      { deep: true }
+      { deep: true, immediate: true }
     );
 
     watch(
