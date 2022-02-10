@@ -82,9 +82,6 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-badge__wrapper van-sidebar-item__text">
             Title
-            <div class="van-badge van-badge--top-right van-badge--fixed">
-              20
-            </div>
           </div>
         </div>
       </div>

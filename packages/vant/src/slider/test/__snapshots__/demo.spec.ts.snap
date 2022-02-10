@@ -131,7 +131,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-slider">
     <div class="van-slider__bar"
-         style="width: 50%; background: rgb(238, 10, 36); left: 0%;"
+         style="width: 50%; left: 0%;"
     >
       <div role="slider"
            class="van-slider__button-wrapper van-slider__button-wrapper--right"
