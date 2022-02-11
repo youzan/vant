@@ -181,7 +181,6 @@ export default defineComponent({
 
       return (
         <div
-          onKeydown={onKeydown}
           v-show={props.show}
           ref={popupRef}
           style={style.value}
@@ -192,6 +191,7 @@ export default defineComponent({
             }),
             { 'van-safe-area-bottom': safeAreaInsetBottom },
           ]}
+          onKeydown={onKeydown}
           {...attrs}
         >
           {slots.default?.()}
@@ -222,10 +222,11 @@ export default defineComponent({
         if (show && !opened) {
           open();
 
-          attrs.tabindex === 0 &&
+          if (attrs.tabindex === 0) {
             nextTick(() => {
               popupRef.value?.focus();
             });
+          }
         }
         if (!show && opened) {
           opened = false;
