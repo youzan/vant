@@ -1,13 +1,15 @@
 import {
+  ref,
   reactive,
+  withKeys,
   defineComponent,
   type PropType,
   type ExtractPropTypes,
-  withKeys,
 } from 'vue';
 
 // Utils
 import {
+  noop,
   pick,
   extend,
   addUnit,
@@ -20,6 +22,7 @@ import {
   makeStringProp,
   callInterceptor,
   createNamespace,
+  type ComponentInstance,
 } from '../utils';
 import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
@@ -72,9 +75,10 @@ export default defineComponent({
 
   props: dialogProps,
 
-  emits: ['confirm', 'cancel', 'update:show', 'keydown'],
+  emits: ['confirm', 'cancel', 'keydown', 'update:show'],
 
   setup(props, { emit, slots }) {
+    const root = ref<ComponentInstance>();
     const loading = reactive({
       confirm: false,
       cancel: false,
@@ -116,13 +120,17 @@ export default defineComponent({
     const onConfirm = getActionHandler('confirm');
     const onKeydown = withKeys(
       (event: KeyboardEvent) => {
+        // skip keyboard events of child elements
+        if (event.target !== root.value?.popupRef?.value) {
+          return;
+        }
+
         const onEventType: Record<string, () => void> = {
-          Enter: props.showConfirmButton ? onConfirm : () => {},
-          Escape: props.showCancelButton ? onCancel : () => {},
+          Enter: props.showConfirmButton ? onConfirm : noop,
+          Escape: props.showCancelButton ? onCancel : noop,
         };
 
         onEventType[event.key]();
-
         emit('keydown', event);
       },
       ['enter', 'esc']
@@ -243,12 +251,13 @@ export default defineComponent({
       const { width, title, theme, message, className } = props;
       return (
         <Popup
-          tabindex={0}
-          onKeydown={onKeydown}
+          ref={root}
           role="dialog"
           class={[bem([theme]), className]}
           style={{ width: addUnit(width) }}
+          tabindex={0}
           aria-labelledby={title || message}
+          onKeydown={onKeydown}
           onUpdate:show={updateShow}
           {...pick(props, popupInheritKeys)}
         >
