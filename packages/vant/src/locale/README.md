@@ -58,6 +58,7 @@ Current supported languages:
 | Russian                  | ru-RU        | `v3.1.5` |
 | Turkish                  | tr-TR        | -        |
 | Thai                     | th-TH        | -        |
+| Ukrainian                | uk-UA        | `v3.4.5` |
 | Chinese                  | zh-CN        | -        |
 | Traditional Chinese (HK) | zh-HK        | -        |
 | Traditional Chinese (TW) | zh-TW        | -        |
