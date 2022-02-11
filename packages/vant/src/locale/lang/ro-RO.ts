@@ -30,7 +30,7 @@ export default {
     loosing: 'Eliberează pentru a împrospăta...',
   },
   vanSubmitBar: {
-    label: 'Total：',
+    label: 'Total:',
   },
   vanCoupon: {
     unlimited: 'Nelimitat',

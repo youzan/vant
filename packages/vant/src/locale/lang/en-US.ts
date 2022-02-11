@@ -30,7 +30,7 @@ export default {
     loosing: 'Loose to refresh...',
   },
   vanSubmitBar: {
-    label: 'Total：',
+    label: 'Total:',
   },
   vanCoupon: {
     unlimited: 'Unlimited',
