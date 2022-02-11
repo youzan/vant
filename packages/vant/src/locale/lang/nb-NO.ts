@@ -30,7 +30,7 @@ export default {
     loosing: 'Mist for oppdatering...',
   },
   vanSubmitBar: {
-    label: 'Totalt：',
+    label: 'Totalt:',
   },
   vanCoupon: {
     unlimited: 'Uendelig',

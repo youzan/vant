@@ -30,7 +30,7 @@ export default {
     loosing: '釋放即可刷新...',
   },
   vanSubmitBar: {
-    label: '合計：',
+    label: '合計:',
   },
   vanCoupon: {
     unlimited: '無門檻',

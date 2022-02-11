@@ -38,7 +38,7 @@ export default {
     loosing: '새로 고침...',
   },
   vanSubmitBar: {
-    label: '총：',
+    label: '총:',
   },
   vanCoupon: {
     unlimited: '제한 없는',

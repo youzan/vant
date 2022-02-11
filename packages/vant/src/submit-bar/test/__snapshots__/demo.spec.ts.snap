@@ -6,7 +6,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-submit-bar__bar">
       <div class="van-submit-bar__text">
         <span>
-          Total：
+          Total:
         </span>
         <span class="van-submit-bar__price">
           ¥
@@ -40,7 +40,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-submit-bar__bar">
       <div class="van-submit-bar__text">
         <span>
-          Total：
+          Total:
         </span>
         <span class="van-submit-bar__price">
           ¥
@@ -68,7 +68,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-submit-bar__bar">
       <div class="van-submit-bar__text">
         <span>
-          Total：
+          Total:
         </span>
         <span class="van-submit-bar__price">
           ¥
@@ -125,7 +125,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-submit-bar__text">
         <span>
-          Total：
+          Total:
         </span>
         <span class="van-submit-bar__price">
           ¥

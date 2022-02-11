@@ -30,7 +30,7 @@ export default {
     loosing: 'Отпустите для обновления...',
   },
   vanSubmitBar: {
-    label: 'Всего：',
+    label: 'Всего:',
   },
   vanCoupon: {
     unlimited: 'Безлимитный',
