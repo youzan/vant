@@ -3,6 +3,7 @@ import {
   watch,
   provide,
   Teleport,
+  nextTick,
   computed,
   onMounted,
   Transition,
@@ -68,6 +69,7 @@ export default defineComponent({
     'close',
     'opened',
     'closed',
+    'keydown',
     'update:show',
     'click-overlay',
     'click-close-icon',
@@ -172,11 +174,14 @@ export default defineComponent({
 
     const onOpened = () => emit('opened');
     const onClosed = () => emit('closed');
+    const onKeydown = (event: KeyboardEvent) => emit('keydown', event);
 
     const renderPopup = lazyRender(() => {
       const { round, position, safeAreaInsetBottom } = props;
+
       return (
         <div
+          onKeydown={onKeydown}
           v-show={props.show}
           ref={popupRef}
           style={style.value}
@@ -216,6 +221,11 @@ export default defineComponent({
       (show) => {
         if (show && !opened) {
           open();
+
+          attrs.tabindex === 0 &&
+            nextTick(() => {
+              popupRef.value?.focus();
+            });
         }
         if (!show && opened) {
           opened = false;
