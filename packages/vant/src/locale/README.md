@@ -48,6 +48,7 @@ Current supported languages:
 | Spanish (Spain)          | es-ES        | -        |
 | French                   | fr-FR        | -        |
 | Hindi                    | hi-IN        | `v3.4.3` |
+| Italian                  | it-IT        | `v3.4.5` |
 | Japanese                 | ja-JP        | -        |
 | Korean                   | ko-KR        | `v3.4.3` |
 | Norwegian                | nb-NO        | -        |
