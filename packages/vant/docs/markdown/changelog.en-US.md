@@ -16,6 +16,30 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.4.5](https://github.com/compare/v3.4.3...v3.4.5)
+
+`2022-02-14`
+
+**Feature**
+
+- CollapseItem: add lazy-render prop [#10270](https://github.com/issues/10270)
+- Dialog: support enter/esc keyboard event [#10261](https://github.com/issues/10261)
+- Locale: add Bangla (Bangladesh) [#10287](https://github.com/issues/10287)
+- Locale: add Indonesian translation [#10289](https://github.com/issues/10289)
+- Locale: add Italian translation [#10288](https://github.com/issues/10288)
+- Locale: add Ukrainian translation [#10291](https://github.com/issues/10291)
+- Locale: add Vietnamese translation [#10294](https://github.com/issues/10294)
+
+**style**
+
+- SubmitBar: using english colon [#10286](https://github.com/issues/10286)
+
+**Types**
+
+- IndexBar: index-list prop can includes number [#10273](https://github.com/issues/10273)
+- Toast: fix missing teleport prop [#10272](https://github.com/issues/10272)
+- Uploader: fix UploaderBeforeRead type [#10274](https://github.com/issues/10274)
+
 ### [v3.4.4](https://github.com/youzan/vant/compare/v3.4.4...v3.4.3)
 
 `2022-02-07`

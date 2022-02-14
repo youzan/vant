@@ -16,6 +16,30 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.4.5](https://github.com/compare/v3.4.3...v3.4.5)
+
+`2022-02-14`
+
+**Feature**
+
+- CollapseItem: 新增 lazy-render 属性 [#10270](https://github.com/issues/10270)
+- Dialog: 支持通过 enter/esc 进行键盘操作 [#10261](https://github.com/issues/10261)
+- Locale: 新增 Bangla 孟加拉语 [#10287](https://github.com/issues/10287)
+- Locale: 新增 Indonesian 印度尼西亚语 [#10289](https://github.com/issues/10289)
+- Locale: 新增 Italian 意大利语 [#10288](https://github.com/issues/10288)
+- Locale: 新增 Ukrainian 乌克兰语 [#10291](https://github.com/issues/10291)
+- Locale: 新增 Vietnamese 越南语 [#10294](https://github.com/issues/10294)
+
+**style**
+
+- SubmitBar: 将冒号调整为英文冒号 [#10286](https://github.com/issues/10286)
+
+**Types**
+
+- IndexBar: 修复 index-list 属性无法传入 number 类型的问题 [#10273](https://github.com/issues/10273)
+- Toast: 修复缺少 teleport 属性定义的问题 [#10272](https://github.com/issues/10272)
+- Uploader: 修复 UploaderBeforeRead 类型定义不准确的问题 [#10274](https://github.com/issues/10274)
+
 ### [v3.4.4](https://github.com/youzan/vant/compare/v3.4.4...v3.4.3)
 
 `2022-02-07`
