@@ -60,6 +60,7 @@ Locale.add(messages);
 | 土耳其语             | tr-TR        | -        |
 | 泰语                 | th-TH        | -        |
 | 乌克兰语             | uk-UA        | `v3.4.5` |
+| 越南语               | vi-VN        | `v3.4.5` |
 | 简体中文             | zh-CN        | -        |
 | 繁體中文（港）       | zh-HK        | -        |
 | 繁體中文（台）       | zh-TW        | -        |

@@ -59,6 +59,7 @@ Current supported languages:
 | Turkish                  | tr-TR        | -        |
 | Thai                     | th-TH        | -        |
 | Ukrainian                | uk-UA        | `v3.4.5` |
+| Vietnamese               | vi-VN        | `v3.4.5` |
 | Chinese                  | zh-CN        | -        |
 | Traditional Chinese (HK) | zh-HK        | -        |
 | Traditional Chinese (TW) | zh-TW        | -        |
