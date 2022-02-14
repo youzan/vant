@@ -169,8 +169,8 @@ export default {
                 title: 'Checkbox 复选框',
               },
               {
-                path: 'datetime-picker',
-                title: 'DatetimePicker 日期选择',
+                path: 'date-picker',
+                title: 'DatePicker 日期选择',
               },
               {
                 path: 'field',
@@ -579,8 +579,8 @@ export default {
                 title: 'Checkbox',
               },
               {
-                path: 'datetime-picker',
-                title: 'DatetimePicker',
+                path: 'date-picker',
+                title: 'DatePicker',
               },
               {
                 path: 'field',

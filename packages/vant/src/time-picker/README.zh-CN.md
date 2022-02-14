@@ -131,6 +131,10 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | v-model | 当前选中的时间 | _string_ | - |
+| min-hour | 可选的最小小时 | _number \| string_ | `0` |
+| max-hour | 可选的最大小时 | _number \| string_ | `23` |
+| min-minute | 可选的最小分钟 | _number \| string_ | `0` |
+| max-minute | 可选的最大分钟 | _number \| string_ | `59` |
 | title | 顶部栏标题 | _string_ | `''` |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |
@@ -142,10 +146,6 @@ export default {
 | option-height | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | visible-option-num | 可见的选项个数 | _number \| string_ | `6` |
 | swipe-duration | 快速滑动时惯性滚动的时长，单位 `ms` | _number \| string_ | `1000` |
-| min-hour | 可选的最小小时 | _number \| string_ | `0` |
-| max-hour | 可选的最大小时 | _number \| string_ | `23` |
-| min-minute | 可选的最小分钟 | _number \| string_ | `0` |
-| max-minute | 可选的最大分钟 | _number \| string_ | `59` |
 
 ### Events
 

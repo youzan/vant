@@ -1,8 +1,8 @@
-# TimePicker
+# DatePicker
 
 ### Intro
 
-Used to select time, usually used with the [Popup](#/en-US/popup) component.
+Used to select date, usually used with the [Popup](#/en-US/popup) component.
 
 ### Install
 
@@ -10,10 +10,10 @@ Register component globally via `app.use`, refer to [Component Registration](#/e
 
 ```js
 import { createApp } from 'vue';
-import { TimePicker } from 'vant';
+import { DatePicker } from 'vant';
 
 const app = createApp();
-app.use(TimePicker);
+app.use(DatePicker);
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ app.use(TimePicker);
 ### Basic Usage
 
 ```html
-<van-time-picker v-model="currentTime" title="Choose Time" />
+<van-date-picker v-model="currentDate" title="Choose Date" />
 ```
 
 ```js
@@ -29,22 +29,34 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref('12:00');
-    return { currentTime };
+    const currentDate = ref(new Date(2021, 0, 1));
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      currentDate,
+    };
   },
 };
 ```
 
-### Time Range
+### Columns Type
+
+Using `columns-type` prop to control the type of columns.
+
+For example:
+
+- Pass in `['year']` to select year.
+- Pass in `['month']` to select month.
+- Pass in `['year', 'month']` to select year and month.
+- Pass in `['month', 'day']` to select month and day.
 
 ```html
-<van-time-picker
-  v-model="currentTime"
-  title="Choose Time"
-  :min-hour="10"
-  :max-hour="20"
-  :min-minute="30"
-  :max-minute="40"
+<van-date-picker
+  v-model="currentDate"
+  title="Choose Year-Month"
+  :min-date="minDate"
+  :max-date="maxDate"
+  :columns-type="['year', 'month']"
 />
 ```
 
@@ -53,21 +65,26 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref('12:35');
-    return { currentTime };
+    const currentDate = ref(new Date(2021, 0, 1));
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      currentDate,
+    };
   },
 };
 ```
 
 ### Options Formatter
 
-Using `formatter` prop to format option text.
-
 ```html
-<van-time-picker
-  v-model="currentTime"
-  title="Choose Time"
+<van-date-picker
+  v-model="currentDate"
+  title="Choose Year-Month"
+  :min-date="minDate"
+  :max-date="maxDate"
   :formatter="formatter"
+  :columns-type="['year', 'month']"
 />
 ```
 
@@ -76,20 +93,23 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref('12:00');
-    const formatter = (type, option) => {
-      if (type === 'hour') {
-        option.text += 'h';
+    const currentDate = ref(new Date(2021, 0, 1));
+
+    const formatter = (type, val) => {
+      if (type === 'year') {
+        return `${val} Year`;
       }
-      if (type === 'minute') {
-        option.text += 'm';
+      if (type === 'month') {
+        return `${val} Month`;
       }
-      return option;
+      return val;
     };
 
     return {
-      filter,
-      currentTime,
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
+      formatter,
+      currentDate,
     };
   },
 };
@@ -97,10 +117,15 @@ export default {
 
 ### Options Filter
 
-Using `filter` prop to filter options.
-
 ```html
-<van-time-picker v-model="currentTime" title="Choose Time" :filter="filter" />
+<van-date-picker
+  v-model="currentDate"
+  title="Choose Year-Month"
+  :filter="filter"
+  :min-date="minDate"
+  :max-date="maxDate"
+  :columns-type="['year', 'month']"
+/>
 ```
 
 ```js
@@ -108,17 +133,18 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref('12:00');
-
+    const currentDate = ref(new Date(2021, 0, 1));
     const filter = (type, options) => {
-      if (type === 'minute') {
-        return options.filter((option) => Number(option) % 10 === 0);
+      if (type === 'month') {
+        return options.filter((option) => Number(option.value) % 6 === 0);
       }
       return options;
     };
 
     return {
       filter,
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 10, 1),
       currentTime,
     };
   },
@@ -131,11 +157,9 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Current time | _string_ | - |
-| min-hour | Min hour for `time` type | _number \| string_ | `0` |
-| max-hour | Max hour for `time` type | _number \| string_ | `23` |
-| min-minute | Max minute for `time` type | _number \| string_ | `0` |
-| max-minute | Max minute for `time` type | _number \| string_ | `59` |
+| columns-type | Columns type | _string[]_ | `['year', 'month', 'day']` |
+| min-date | Min date | _Date_ | Ten years ago on January 1 |
+| max-date | Max date | _Date_ | Ten years later on December 31 |
 | title | Toolbar title | _string_ | `''` |
 | confirm-button-text | Text of confirm button | _string_ | `Confirm` |
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |
@@ -143,7 +167,7 @@ export default {
 | loading | Whether to show loading prompt | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
 | filter | Option filter | _(type: string, options: PickerOption[]) => PickerOption[]_ | - |
-| formatter | Option text formatter | _(type: string, option: PickerOption) => PickerOption_ | - |
+| formatter | Option formatter | _(type: string, option: PickerOption) => PickerOption_ | - |
 | option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-option-num | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
@@ -173,5 +197,5 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { TimePickerProps } from 'vant';
+import type { DatePickerProps } from 'vant';
 ```
