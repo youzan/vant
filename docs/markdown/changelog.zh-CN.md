@@ -22,6 +22,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.44](https://github.com/youzan/vant/compare/v2.12.43...v2.12.44)
+
+`2022-02-14`
+
+**Bug Fixes**
+
+- Sku: 修复 Email 正则表达式导致的潜在安全问题 [#10295](https://github.com/youzan/vant/issues/10295)
+
 ### [v2.12.43](https://github.com/youzan/vant/compare/v2.12.39...v2.12.43)
 
 `2022-02-10`

@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.44](https://github.com/youzan/vant/compare/v2.12.43...v2.12.44)
+
+`2022-02-14`
+
+**Bug Fixes**
+
+- utils: isEmail ReDoS [#10295](https://github.com/youzan/vant/issues/10295)
+
 ### [v2.12.43](https://github.com/youzan/vant/compare/v2.12.39...v2.12.43)
 
 `2022-02-10`
