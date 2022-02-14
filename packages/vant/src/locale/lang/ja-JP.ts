@@ -30,7 +30,7 @@ export default {
     loosing: 'リリース時に更新...',
   },
   vanSubmitBar: {
-    label: '合計：',
+    label: '合計:',
   },
   vanCoupon: {
     unlimited: '無制限',

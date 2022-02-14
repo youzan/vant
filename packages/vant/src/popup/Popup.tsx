@@ -3,6 +3,7 @@ import {
   watch,
   provide,
   Teleport,
+  nextTick,
   computed,
   onMounted,
   Transition,
@@ -68,6 +69,7 @@ export default defineComponent({
     'close',
     'opened',
     'closed',
+    'keydown',
     'update:show',
     'clickOverlay',
     'clickCloseIcon',
@@ -172,9 +174,11 @@ export default defineComponent({
 
     const onOpened = () => emit('opened');
     const onClosed = () => emit('closed');
+    const onKeydown = (event: KeyboardEvent) => emit('keydown', event);
 
     const renderPopup = lazyRender(() => {
       const { round, position, safeAreaInsetBottom } = props;
+
       return (
         <div
           v-show={props.show}
@@ -187,6 +191,7 @@ export default defineComponent({
             }),
             { 'van-safe-area-bottom': safeAreaInsetBottom },
           ]}
+          onKeydown={onKeydown}
           {...attrs}
         >
           {slots.default?.()}
@@ -216,6 +221,12 @@ export default defineComponent({
       (show) => {
         if (show && !opened) {
           open();
+
+          if (attrs.tabindex === 0) {
+            nextTick(() => {
+              popupRef.value?.focus();
+            });
+          }
         }
         if (!show && opened) {
           opened = false;

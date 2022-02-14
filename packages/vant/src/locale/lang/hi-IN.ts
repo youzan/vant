@@ -38,7 +38,7 @@ export default {
     loosing: 'ताज़ा करने के लिए ढीला...',
   },
   vanSubmitBar: {
-    label: 'कुल：',
+    label: 'कुल:',
   },
   vanCoupon: {
     unlimited: 'असीमित',

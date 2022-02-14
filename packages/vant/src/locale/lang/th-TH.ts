@@ -31,7 +31,7 @@ export default {
     loosing: 'ปล่อยเพื่อรีเฟรช...',
   },
   vanSubmitBar: {
-    label: 'รวม：',
+    label: 'รวม:',
   },
   vanCoupon: {
     unlimited: 'ไม่ จำกัด',
