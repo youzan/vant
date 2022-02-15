@@ -1,5 +1,6 @@
 import {
   ref,
+  watch,
   computed,
   defineComponent,
   type PropType,
@@ -9,10 +10,11 @@ import {
 // Utils
 import {
   pick,
-  clamp,
   extend,
   isDate,
   padZero,
+  isSameValue,
+  makeArrayProp,
   createNamespace,
 } from '../utils';
 import {
@@ -31,7 +33,7 @@ const [name] = createNamespace('date-picker');
 export type DatePickerColumnType = 'year' | 'month' | 'day';
 
 const datePickerProps = extend({}, sharedProps, {
-  modelValue: Date,
+  modelValue: makeArrayProp<string>(),
   columnsType: {
     type: Array as PropType<DatePickerColumnType[]>,
     default: () => ['year', 'month', 'day'],
@@ -58,42 +60,7 @@ export default defineComponent({
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const currentValues = ref<string[]>([]);
-
-    // const setValue = (type: DatePickerColumnType, newValue: string) => {
-    //   const index = props.columnsType.indexOf(type);
-    //   currentValues.value[index] = newValue;
-    // };
-
-    const getValue = (type: DatePickerColumnType) => {
-      const index = props.columnsType.indexOf(type);
-      return +currentValues.value[index];
-    };
-
-    const formatValue = (value: Date) => {
-      const timestamp = clamp(
-        value.getTime(),
-        props.minDate.getTime(),
-        props.maxDate.getTime()
-      );
-
-      const date = new Date(timestamp);
-      return props.columnsType.map((type) => {
-        switch (type) {
-          case 'year':
-            return String(date.getFullYear());
-          case 'month':
-            return padZero(date.getMonth() + 1);
-          case 'day':
-          default:
-            return padZero(date.getDate());
-        }
-      });
-    };
-
-    if (props.modelValue) {
-      currentValues.value = formatValue(props.modelValue);
-    }
+    const currentValues = ref<string[]>(props.modelValue);
 
     const genOptions = (
       min: number,
@@ -119,6 +86,11 @@ export default defineComponent({
     const isMaxYear = (year: number) => year === props.maxDate.getFullYear();
     const isMaxMonth = (month: number) =>
       month === props.maxDate.getMonth() + 1;
+
+    const getValue = (type: DatePickerColumnType) => {
+      const index = props.columnsType.indexOf(type);
+      return +currentValues.value[index];
+    };
 
     const genMonthOptions = () => {
       if (isMaxYear(getValue('year'))) {
@@ -156,20 +128,26 @@ export default defineComponent({
       })
     );
 
-    // watch(currentValues, (value, oldValue) =>
-    //   emit('update:modelValue', oldValue ? value : null)
-    // );
+    watch(
+      currentValues,
+      (newValues) => {
+        if (isSameValue(newValues, props.modelValue)) {
+          emit('update:modelValue', newValues);
+        }
+      },
+      {
+        deep: true,
+      }
+    );
 
-    // watch(
-    //   () => props.modelValue,
-    //   (value) => {
-    //     value = formatValue(value);
-
-    //     if (value && value.valueOf() !== currentValues.value?.valueOf()) {
-    //       currentValues.value = value;
-    //     }
-    //   }
-    // );
+    watch(
+      () => props.modelValue,
+      (newValues) => {
+        if (isSameValue(newValues, currentValues.value)) {
+          currentValues.value = newValues;
+        }
+      }
+    );
 
     const onChange = (...args: unknown[]) => emit('change', ...args);
     const onCancel = (...args: unknown[]) => emit('cancel', ...args);

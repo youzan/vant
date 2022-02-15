@@ -29,7 +29,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date(2021, 0, 1));
+    const currentDate = ref(['2021', '01', '01']);
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 5, 1),
@@ -65,7 +65,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date(2021, 0, 1));
+    const currentDate = ref(['2021', '01', '01']);
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 5, 1),
@@ -93,7 +93,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date(2021, 0, 1));
+    const currentDate = ref(['2021', '01', '01']);
 
     const formatter = (type, val) => {
       if (type === 'year') {
@@ -133,7 +133,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date(2021, 0, 1));
+    const currentDate = ref(['2021', '01', '01']);
     const filter = (type, options) => {
       if (type === 'month') {
         return options.filter((option) => Number(option.value) % 6 === 0);
@@ -157,6 +157,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
+| v-model | Current date | _string[]_ | `[]` |
 | columns-type | Columns type | _string[]_ | `['year', 'month', 'day']` |
 | min-date | Min date | _Date_ | Ten years ago on January 1 |
 | max-date | Max date | _Date_ | Ten years later on December 31 |

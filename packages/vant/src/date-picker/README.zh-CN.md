@@ -31,7 +31,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date(2021, 0, 1));
+    const currentDate = ref(['2021', '01', '01']);
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 5, 1),
@@ -67,7 +67,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date(2021, 0, 1));
+    const currentDate = ref(['2021', '01', '01']);
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 5, 1),
@@ -97,7 +97,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date(2021, 0, 1));
+    const currentDate = ref(['2021', '01', '01']);
 
     const formatter = (type, val) => {
       if (type === 'year') {
@@ -139,7 +139,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date(2021, 0, 1));
+    const currentDate = ref(['2021', '01', '01']);
     const filter = (type, options) => {
       if (type === 'month') {
         return options.filter((option) => Number(option.value) % 6 === 0);
@@ -163,6 +163,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| v-model | 当前选中的日期 | _string[]_ | `[]` |
 | columns-type | 选项类型，由 `year`、`month` 和 `day` 组成的数组 | _string[]_ | `['year', 'month', 'day']` |
 | min-date | 可选的最小时间，精确到日 | _Date_ | 十年前 |
 | max-date | 可选的最大时间，精确到日 | _Date_ | 十年后 |

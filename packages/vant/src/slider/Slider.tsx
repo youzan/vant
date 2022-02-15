@@ -13,6 +13,7 @@ import {
   addUnit,
   addNumber,
   numericProp,
+  isSameValue,
   getSizeStyle,
   preventDefault,
   stopPropagation,
@@ -130,9 +131,6 @@ export default defineComponent({
       const diff = Math.round((value - min) / step) * step;
       return addNumber(min, diff);
     };
-
-    const isSameValue = (newValue: SliderValue, oldValue: SliderValue) =>
-      JSON.stringify(newValue) === JSON.stringify(oldValue);
 
     const handleRangeValue = (value: NumberRange) => {
       // 设置默认值
