@@ -12,6 +12,7 @@ import {
   extend,
   unitToPx,
   truthProp,
+  isSameValue,
   makeArrayProp,
   preventDefault,
   makeStringProp,
@@ -22,7 +23,6 @@ import {
 } from '../utils';
 import {
   isOptionExist,
-  isValuesEqual,
   getColumnsType,
   findOptionByValue,
   formatCascadeColumns,
@@ -112,17 +112,24 @@ export default defineComponent({
       )
     );
 
+    const setValue = (index: number, value: string | number) => {
+      const newValues = selectedValues.value.slice(0);
+      newValues[index] = value;
+      selectedValues.value = newValues;
+    };
+
     const onChange = (value: number | string, columnIndex: number) => {
-      selectedValues.value[columnIndex] = value;
+      setValue(columnIndex, value);
 
       if (columnsType.value === 'cascade') {
         // reset values after cascading
         selectedValues.value.forEach((value, index) => {
           const options = currentColumns.value[index];
           if (!isOptionExist(options, value, fields.value)) {
-            selectedValues.value[index] = options.length
-              ? options[0][fields.value.value]
-              : undefined;
+            setValue(
+              index,
+              options.length ? options[0][fields.value.value] : undefined
+            );
           }
         });
       }
@@ -250,8 +257,7 @@ export default defineComponent({
             options.length &&
             !isOptionExist(options, selectedValues.value[index], fields.value)
           ) {
-            selectedValues.value[index] =
-              getFirstEnabledOption(options)[fields.value.value];
+            setValue(index, getFirstEnabledOption(options)[fields.value.value]);
           }
         });
       },
@@ -261,7 +267,7 @@ export default defineComponent({
     watch(
       () => props.modelValue,
       (newValues) => {
-        if (!isValuesEqual(newValues, selectedValues.value)) {
+        if (!isSameValue(newValues, selectedValues.value)) {
           selectedValues.value = newValues;
         }
       },
@@ -270,11 +276,11 @@ export default defineComponent({
     watch(
       selectedValues,
       (newValues) => {
-        if (!isValuesEqual(newValues, props.modelValue)) {
+        if (!isSameValue(newValues, props.modelValue)) {
           emit('update:modelValue', selectedValues.value);
         }
       },
-      { deep: true }
+      { immediate: true }
     );
 
     useExpose<PickerExpose>({ confirm });
