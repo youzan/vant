@@ -34,7 +34,7 @@ export default {
     const currentDate = ref(new Date(2021, 0, 1));
     return {
       minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1),
+      maxDate: new Date(2025, 5, 1),
       currentDate,
     };
   },
@@ -70,7 +70,7 @@ export default {
     const currentDate = ref(new Date(2021, 0, 1));
     return {
       minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1),
+      maxDate: new Date(2025, 5, 1),
       currentDate,
     };
   },
@@ -111,7 +111,7 @@ export default {
 
     return {
       minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1),
+      maxDate: new Date(2025, 5, 1),
       formatter,
       currentDate,
     };
@@ -150,7 +150,7 @@ export default {
     return {
       filter,
       minDate: new Date(2020, 0, 1),
-      maxDate: new Date(2025, 10, 1),
+      maxDate: new Date(2025, 5, 1),
       currentTime,
     };
   },

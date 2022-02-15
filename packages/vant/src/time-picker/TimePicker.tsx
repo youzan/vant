@@ -22,7 +22,7 @@ import {
 } from '../datetime-picker/utils';
 
 // Components
-import { Picker, PickerOption } from '../picker';
+import { Picker } from '../picker';
 
 const [name] = createNamespace('time-picker');
 
@@ -73,16 +73,13 @@ export default defineComponent({
 
     const columns = computed(() =>
       ranges.value.map(({ type, range }) => {
-        const options = times(
-          range[1] - range[0] + 1,
-          (index): PickerOption => {
-            const value = padZero(range[0] + index);
-            return props.formatter(type, {
-              text: value,
-              value,
-            });
-          }
-        );
+        const options = times(range[1] - range[0] + 1, (index) => {
+          const value = padZero(range[0] + index);
+          return props.formatter(type, {
+            text: value,
+            value,
+          });
+        });
 
         if (props.filter) {
           return props.filter(type, options);

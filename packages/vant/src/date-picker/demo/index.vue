@@ -28,7 +28,7 @@ const t = useTranslate({
 });
 
 const minDate = new Date(2020, 0, 1);
-const maxDate = new Date(2025, 10, 1);
+const maxDate = new Date(2025, 5, 1);
 const basicDate = ref(new Date(2021, 0, 1));
 const yearMonthDate = ref(new Date(2021, 0, 1));
 const formatterDate = ref(new Date(2021, 0, 1));

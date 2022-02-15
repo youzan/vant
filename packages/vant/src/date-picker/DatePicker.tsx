@@ -1,11 +1,9 @@
 import {
   ref,
-  watch,
   computed,
-  nextTick,
   defineComponent,
   type PropType,
-  ExtractPropTypes,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -20,13 +18,12 @@ import {
 import {
   times,
   sharedProps,
-  getTrueValue,
   getMonthEndDay,
   pickerInheritKeys,
 } from '../datetime-picker/utils';
 
 // Components
-import { Picker, PickerOption } from '../picker';
+import { Picker } from '../picker';
 
 const currentYear = new Date().getFullYear();
 const [name] = createNamespace('date-picker');
@@ -61,104 +58,105 @@ export default defineComponent({
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const formatValue = (value?: Date) => {
-      if (isDate(value)) {
-        const timestamp = clamp(
-          value.getTime(),
-          props.minDate.getTime(),
-          props.maxDate.getTime()
-        );
-        return new Date(timestamp);
-      }
+    const currentValues = ref<string[]>([]);
 
-      return undefined;
+    // const setValue = (type: DatePickerColumnType, newValue: string) => {
+    //   const index = props.columnsType.indexOf(type);
+    //   currentValues.value[index] = newValue;
+    // };
+
+    const getValue = (type: DatePickerColumnType) => {
+      const index = props.columnsType.indexOf(type);
+      return +currentValues.value[index];
     };
 
-    const currentDate = ref(formatValue(props.modelValue));
-
-    const getBoundary = (type: 'max' | 'min', value: Date) => {
-      const boundary = props[`${type}Date` as const];
-      const year = boundary.getFullYear();
-      let month = 1;
-      let date = 1;
-
-      if (type === 'max') {
-        month = 12;
-        date = getMonthEndDay(value.getFullYear(), value.getMonth() + 1);
-      }
-
-      if (value.getFullYear() === year) {
-        month = boundary.getMonth() + 1;
-
-        if (value.getMonth() + 1 === month) {
-          date = boundary.getDate();
-        }
-      }
-
-      return {
-        [`${type}Year`]: year,
-        [`${type}Month`]: month,
-        [`${type}Date`]: date,
-      };
-    };
-
-    const ranges = computed(() => {
-      const { maxYear, maxDate, maxMonth } = getBoundary(
-        'max',
-        currentDate.value || props.minDate
-      );
-      const { minYear, minDate, minMonth } = getBoundary(
-        'min',
-        currentDate.value || props.minDate
+    const formatValue = (value: Date) => {
+      const timestamp = clamp(
+        value.getTime(),
+        props.minDate.getTime(),
+        props.maxDate.getTime()
       );
 
+      const date = new Date(timestamp);
       return props.columnsType.map((type) => {
         switch (type) {
           case 'year':
-            return {
-              type: 'year',
-              range: [minYear, maxYear],
-            };
+            return String(date.getFullYear());
           case 'month':
-            return {
-              type: 'month',
-              range: [minMonth, maxMonth],
-            };
+            return padZero(date.getMonth() + 1);
           case 'day':
-            return {
-              type: 'day',
-              range: [minDate, maxDate],
-            };
+          default:
+            return padZero(date.getDate());
+        }
+      });
+    };
+
+    if (props.modelValue) {
+      currentValues.value = formatValue(props.modelValue);
+    }
+
+    const genOptions = (
+      min: number,
+      max: number,
+      type: DatePickerColumnType
+    ) => {
+      const options = times(max - min + 1, (index) => {
+        const value = padZero(min + index);
+        return props.formatter(type, {
+          text: value,
+          value,
+        });
+      });
+      return props.filter ? props.filter(type, options) : options;
+    };
+
+    const genYearOptions = () => {
+      const minYear = props.minDate.getFullYear();
+      const maxYear = props.maxDate.getFullYear();
+      return genOptions(minYear, maxYear, 'year');
+    };
+
+    const isMaxYear = (year: number) => year === props.maxDate.getFullYear();
+    const isMaxMonth = (month: number) =>
+      month === props.maxDate.getMonth() + 1;
+
+    const genMonthOptions = () => {
+      if (isMaxYear(getValue('year'))) {
+        return genOptions(1, props.maxDate.getMonth() + 1, 'month');
+      }
+      return genOptions(1, 12, 'month');
+    };
+
+    const genDayOptions = () => {
+      const year = getValue('year');
+      const month = getValue('month');
+
+      let maxDate = getMonthEndDay(year, month);
+      if (isMaxYear(year) && isMaxMonth(month)) {
+        maxDate = props.maxDate.getDate();
+      }
+
+      return genOptions(1, maxDate, 'day');
+    };
+
+    const columns = computed(() =>
+      props.columnsType.map((type) => {
+        switch (type) {
+          case 'year':
+            return genYearOptions();
+          case 'month':
+            return genMonthOptions();
+          case 'day':
+            return genDayOptions();
           default:
             throw new Error(
               `[Vant] DatePicker: unsupported columns type: ${type}`
             );
         }
-      });
-    });
-
-    const columns = computed(() =>
-      ranges.value.map(({ type, range }) => {
-        const options = times(
-          range[1] - range[0] + 1,
-          (index): PickerOption => {
-            const value = padZero(range[0] + index);
-            return props.formatter(type, {
-              text: value,
-              value,
-            });
-          }
-        );
-
-        if (props.filter) {
-          return props.filter(type, options);
-        }
-
-        return options;
       })
     );
 
-    // watch(currentDate, (value, oldValue) =>
+    // watch(currentValues, (value, oldValue) =>
     //   emit('update:modelValue', oldValue ? value : null)
     // );
 
@@ -167,8 +165,8 @@ export default defineComponent({
     //   (value) => {
     //     value = formatValue(value);
 
-    //     if (value && value.valueOf() !== currentDate.value?.valueOf()) {
-    //       currentDate.value = value;
+    //     if (value && value.valueOf() !== currentValues.value?.valueOf()) {
+    //       currentValues.value = value;
     //     }
     //   }
     // );
@@ -180,6 +178,7 @@ export default defineComponent({
     return () => (
       <Picker
         v-slots={slots}
+        v-model={currentValues.value}
         columns={columns.value}
         onChange={onChange}
         onCancel={onCancel}
