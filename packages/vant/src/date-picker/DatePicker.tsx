@@ -14,7 +14,6 @@ import {
   isDate,
   padZero,
   isSameValue,
-  makeArrayProp,
   createNamespace,
 } from '../utils';
 import { times, sharedProps, getMonthEndDay, pickerInheritKeys } from './utils';
@@ -28,7 +27,6 @@ const [name] = createNamespace('date-picker');
 export type DatePickerColumnType = 'year' | 'month' | 'day';
 
 const datePickerProps = extend({}, sharedProps, {
-  modelValue: makeArrayProp<string>(),
   columnsType: {
     type: Array as PropType<DatePickerColumnType[]>,
     default: () => ['year', 'month', 'day'],
@@ -136,17 +134,11 @@ export default defineComponent({
       })
     );
 
-    watch(
-      currentValues,
-      (newValues) => {
-        if (isSameValue(newValues, props.modelValue)) {
-          emit('update:modelValue', newValues);
-        }
-      },
-      {
-        deep: true,
+    watch(currentValues, (newValues) => {
+      if (isSameValue(newValues, props.modelValue)) {
+        emit('update:modelValue', newValues);
       }
-    );
+    });
 
     watch(
       () => props.modelValue,

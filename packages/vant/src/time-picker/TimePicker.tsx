@@ -3,17 +3,18 @@ import {
   watch,
   computed,
   defineComponent,
+  type PropType,
   type ExtractPropTypes,
 } from 'vue';
 
 // Utils
 import {
   pick,
-  clamp,
   extend,
   padZero,
   createNamespace,
   makeNumericProp,
+  isSameValue,
 } from '../utils';
 import { times, sharedProps, pickerInheritKeys } from '../date-picker/utils';
 
@@ -22,12 +23,17 @@ import { Picker } from '../picker';
 
 const [name] = createNamespace('time-picker');
 
+export type TimePickerColumnType = 'hour' | 'minute';
+
 const timePickerProps = extend({}, sharedProps, {
   minHour: makeNumericProp(0),
   maxHour: makeNumericProp(23),
   minMinute: makeNumericProp(0),
   maxMinute: makeNumericProp(59),
-  modelValue: String,
+  columnsType: {
+    type: Array as PropType<TimePickerColumnType[]>,
+    default: () => ['hour', 'minute'],
+  },
 });
 
 export type TimePickerProps = ExtractPropTypes<typeof timePickerProps>;
@@ -40,66 +46,54 @@ export default defineComponent({
   emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const formatValues = (value?: string) => {
-      const { minHour, maxHour, maxMinute, minMinute } = props;
+    const currentValues = ref<string[]>(props.modelValue);
 
-      if (value) {
-        const [hour, minute] = value.split(':');
-        return [
-          padZero(clamp(+hour, +minHour, +maxHour)),
-          padZero(clamp(+minute, +minMinute, +maxMinute)),
-        ];
-      }
-
-      return [padZero(minHour), padZero(minMinute)];
+    const genOptions = (
+      min: number,
+      max: number,
+      type: TimePickerColumnType
+    ) => {
+      const options = times(max - min + 1, (index) => {
+        const value = padZero(min + index);
+        return props.formatter(type, {
+          text: value,
+          value,
+        });
+      });
+      return props.filter ? props.filter(type, options) : options;
     };
 
-    const currentValues = ref<string[]>(formatValues(props.modelValue));
-
-    const ranges = computed(() => [
-      {
-        type: 'hour' as const,
-        range: [+props.minHour, +props.maxHour],
-      },
-      {
-        type: 'minute' as const,
-        range: [+props.minMinute, +props.maxMinute],
-      },
-    ]);
-
     const columns = computed(() =>
-      ranges.value.map(({ type, range }) => {
-        const options = times(range[1] - range[0] + 1, (index) => {
-          const value = padZero(range[0] + index);
-          return props.formatter(type, {
-            text: value,
-            value,
-          });
-        });
-
-        if (props.filter) {
-          return props.filter(type, options);
+      props.columnsType.map((type) => {
+        switch (type) {
+          case 'hour':
+            return genOptions(+props.minHour, +props.maxHour, 'hour');
+          case 'minute':
+            return genOptions(+props.minMinute, +props.maxMinute, 'minute');
+          default:
+            throw new Error(
+              `[Vant] DatePicker: unsupported columns type: ${type}`
+            );
         }
-
-        return options;
       })
     );
 
     watch(
       currentValues,
-      (values) => {
-        const newValue = values.join(':');
-        if (newValue !== props.modelValue) {
-          emit('update:modelValue', newValue);
+      (newValues) => {
+        if (!isSameValue(newValues, props.modelValue)) {
+          emit('update:modelValue', newValues);
         }
       },
-      { deep: true, immediate: true }
+      { immediate: true }
     );
 
     watch(
       () => props.modelValue,
-      (newValue) => {
-        currentValues.value = formatValues(newValue);
+      (newValues) => {
+        if (!isSameValue(newValues, currentValues.value)) {
+          currentValues.value = newValues;
+        }
       }
     );
 

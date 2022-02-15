@@ -1,9 +1,10 @@
-import { extend } from '../utils';
+import { extend, makeArrayProp } from '../utils';
 import { pickerSharedProps } from '../picker/Picker';
 import type { PropType } from 'vue';
 import type { PickerOption } from '../picker';
 
 export const sharedProps = extend({}, pickerSharedProps, {
+  modelValue: makeArrayProp<string>(),
   filter: Function as PropType<
     (columnType: string, options: PickerOption[]) => PickerOption[]
   >,

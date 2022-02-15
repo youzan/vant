@@ -94,16 +94,6 @@ export function getElementTranslateY(element: Element) {
   return Number(translateY);
 }
 
-export function isValuesEqual(
-  valuesA: Array<string | number>,
-  valuesB: Array<string | number>
-) {
-  return (
-    valuesA.length === valuesB.length &&
-    valuesA.every((value, index) => value === valuesB[index])
-  );
-}
-
 export function assignDefaultFields(
   fields: PickerFieldNames | undefined
 ): Required<PickerFieldNames> {

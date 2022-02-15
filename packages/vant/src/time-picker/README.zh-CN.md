@@ -29,7 +29,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref('12:00');
+    const currentTime = ref(['12', '00']);
     return { currentTime };
   },
 };
@@ -53,7 +53,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref('12:35');
+    const currentTime = ref(['12', '35']);
     return { currentTime };
   },
 };
@@ -76,7 +76,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref('12:00');
+    const currentTime = ref(['12', '00']);
     const formatter = (type, option) => {
       if (type === 'hour') {
         option.text += '时';
@@ -108,7 +108,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref('12:00');
+    const currentTime = ref(['12', '00']);
     const filter = (type, options) => {
       if (type === 'minute') {
         return options.filter((option) => Number(option) % 10 === 0);
@@ -130,7 +130,8 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model | 当前选中的时间 | _string_ | - |
+| v-model | 当前选中的时间 | _string[]_ | - |
+| columns-type | 选项类型，由 `hour`、`minute` 和 `second` 组成的数组 | _string[]_ | `['hour', 'minute']` |
 | min-hour | 可选的最小小时 | _number \| string_ | `0` |
 | max-hour | 可选的最大小时 | _number \| string_ | `23` |
 | min-minute | 可选的最小分钟 | _number \| string_ | `0` |

@@ -17,28 +17,28 @@ test('should format initial value correctly', () => {
     },
   });
 
-  expect(onUpdate.mock.calls[0]).toEqual(['22:58']);
+  expect(onUpdate.mock.calls[0]).toEqual([['22', '58']]);
 });
 
 test('should update modelValue correctly when using max-hour and max-minute prop', () => {
   const onUpdate = jest.fn();
   mount(TimePicker, {
     props: {
-      modelValue: '23:59',
+      modelValue: ['23', '59'],
       maxHour: 2,
       maxMinute: 2,
       'onUpdate:modelValue': onUpdate,
     },
   });
 
-  expect(onUpdate.mock.calls[0]).toEqual(['02:02']);
+  expect(onUpdate.mock.calls[0]).toEqual([['00', '00']]);
 });
 
 test('should filter options when using filter prop', () => {
   const wrapper = mount(TimePicker, {
     props: {
       filter,
-      modelValue: '12:00',
+      modelValue: ['12', '00'],
     },
   });
 
@@ -54,7 +54,7 @@ test('should format options correctly when using formatter prop', async () => {
     props: {
       filter,
       formatter,
-      modelValue: '12:00',
+      modelValue: ['12', '00'],
     },
   });
 
@@ -64,7 +64,7 @@ test('should format options correctly when using formatter prop', async () => {
 test('should emit confirm event after clicking the confirm button', () => {
   const wrapper = mount(TimePicker, {
     props: {
-      modelValue: '12:00',
+      modelValue: ['12', '00'],
     },
   });
 
@@ -92,9 +92,9 @@ test('should emit cancel event after clicking the cancel button', () => {
 test('should emit confirm event correctly after setting values', async () => {
   const wrapper = mount(TimePicker);
 
-  await wrapper.setProps({ modelValue: '00:00' });
+  await wrapper.setProps({ modelValue: ['00', '00'] });
   await wrapper.find('.van-picker__confirm').trigger('click');
-  await wrapper.setProps({ modelValue: '22:30' });
+  await wrapper.setProps({ modelValue: ['22', '30'] });
   await wrapper.find('.van-picker__confirm').trigger('click');
 
   expect(wrapper.emitted('confirm')).toEqual([
@@ -125,14 +125,14 @@ test('should emit confirm event correctly after setting range', async () => {
     props: {
       minHour: 0,
       minMinute: 0,
-      modelValue: '12:00',
+      modelValue: ['12', '00'],
       'onUpdate:modelValue': onUpdate,
     },
   });
 
   await wrapper.setProps({ minHour: 20, minMinute: 30 });
   await wrapper.find('.van-picker__confirm').trigger('click');
-  expect(onUpdate.mock.calls[0]).toEqual(['20:30']);
+  expect(onUpdate.mock.calls[0]).toEqual([['20', '30']]);
   expect(wrapper.emitted('confirm')).toEqual([
     [
       {
@@ -149,7 +149,7 @@ test('should emit confirm event correctly after setting range', async () => {
 test('should emit confirm event correctly after setting smaller max-hour and max-minute', async () => {
   const wrapper = mount(TimePicker, {
     props: {
-      modelValue: '23:59',
+      modelValue: ['23', '59'],
     },
   });
 

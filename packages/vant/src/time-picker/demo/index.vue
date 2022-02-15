@@ -23,10 +23,10 @@ const t = useTranslate({
   },
 });
 
-const baseTime = ref('12:00');
-const rangeTime = ref('12:35');
-const filterTime = ref('12:00');
-const formatterTime = ref('12:00');
+const baseTime = ref(['12', '00']);
+const rangeTime = ref(['12', '35']);
+const filterTime = ref(['12', ' 00']);
+const formatterTime = ref(['12', '00']);
 
 const filter = (type: string, options: PickerOption[]) => {
   if (type === 'minute') {

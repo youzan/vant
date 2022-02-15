@@ -29,7 +29,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref('12:00');
+    const currentTime = ref(['12', '00']);
     return { currentTime };
   },
 };
@@ -53,7 +53,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref('12:35');
+    const currentTime = ref(['12', '35']);
     return { currentTime };
   },
 };
@@ -76,7 +76,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref('12:00');
+    const currentTime = ref(['12', '00']);
     const formatter = (type, option) => {
       if (type === 'hour') {
         option.text += 'h';
@@ -108,7 +108,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref('12:00');
+    const currentTime = ref(['12', '00']);
 
     const filter = (type, options) => {
       if (type === 'minute') {
@@ -131,7 +131,8 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Current time | _string_ | - |
+| v-model | Current time | _string[]_ | - |
+| columns-type | Columns type | _string[]_ | `['hour', 'minute']` |
 | min-hour | Min hour for `time` type | _number \| string_ | `0` |
 | max-hour | Max hour for `time` type | _number \| string_ | `23` |
 | min-minute | Max minute for `time` type | _number \| string_ | `0` |

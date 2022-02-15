@@ -113,9 +113,11 @@ export default defineComponent({
     );
 
     const setValue = (index: number, value: string | number) => {
-      const newValues = selectedValues.value.slice(0);
-      newValues[index] = value;
-      selectedValues.value = newValues;
+      if (selectedValues.value[index] !== value) {
+        const newValues = selectedValues.value.slice(0);
+        newValues[index] = value;
+        selectedValues.value = newValues;
+      }
     };
 
     const onChange = (value: number | string, columnIndex: number) => {
@@ -277,7 +279,7 @@ export default defineComponent({
       selectedValues,
       (newValues) => {
         if (!isSameValue(newValues, props.modelValue)) {
-          emit('update:modelValue', selectedValues.value);
+          emit('update:modelValue', newValues);
         }
       },
       { immediate: true }
