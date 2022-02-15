@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import VanArea, { AreaColumnOption } from '../../area';
+import VanArea from '../../area';
 import VanField from '../../field';
 import VanPopup from '../../popup';
 import { ref } from 'vue';
 import { areaList } from '@vant/area-data';
 import { useTranslate } from '../../../docs/site/use-translate';
 import { areaListEn } from '../../area/demo/area-en';
+import type { PickerConfirmEventParams } from '../../picker';
 
 const t = useTranslate({
   'zh-CN': {
@@ -23,11 +24,8 @@ const t = useTranslate({
 const areaCode = ref('');
 const showArea = ref(false);
 
-const onConfirm = (areaValues: AreaColumnOption[]) => {
-  areaCode.value = areaValues
-    .filter((item) => !!item)
-    .map((item) => item.name)
-    .join('/');
+const onConfirm = ({ selectedOptions }: PickerConfirmEventParams) => {
+  areaCode.value = selectedOptions.map((item) => item.text).join('/');
   showArea.value = false;
 };
 

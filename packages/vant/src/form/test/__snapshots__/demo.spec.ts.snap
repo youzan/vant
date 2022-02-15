@@ -523,7 +523,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-field__body">
             <input type="text"
                    id="van-field-input"
-                   name="datetimePicker"
+                   name="datePicker"
                    class="van-field__control"
                    readonly
                    placeholder="Select time"

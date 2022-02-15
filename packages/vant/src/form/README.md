@@ -359,24 +359,20 @@ export default {
 };
 ```
 
-### Field Type - DatetimePicker
+### Field Type - DatePicker
 
 ```html
 <van-field
   v-model="result"
   is-link
   readonly
-  name="datetimePicker"
-  label="Datetime Picker"
-  placeholder="Select time"
+  name="datePicker"
+  label="Date Picker"
+  placeholder="Select date"
   @click="showPicker = true"
 />
 <van-popup v-model:show="showPicker" position="bottom">
-  <van-datetime-picker
-    type="time"
-    @confirm="onConfirm"
-    @cancel="showPicker = false"
-  />
+  <van-date-picker @confirm="onConfirm" @cancel="showPicker = false" />
 </van-popup>
 ```
 
@@ -387,9 +383,8 @@ export default {
   setup() {
     const result = ref('');
     const showPicker = ref(false);
-
-    const onConfirm = (value) => {
-      result.value = value;
+    const onConfirm = ({ selectedValues }) => {
+      result.value = selectedValues.join('/');
       showPicker.value = false;
     };
 
@@ -431,12 +426,9 @@ export default {
   setup() {
     const result = ref('');
     const showArea = ref(false);
-    const onConfirm = (areaValues) => {
+    const onConfirm = ({ selectedOptions }) => {
       showArea.value = false;
-      result.value = areaValues
-        .filter((item) => !!item)
-        .map((item) => item.name)
-        .join('/');
+      areaCode.value = selectedOptions.map((item) => item.text).join('/');
     };
 
     return {

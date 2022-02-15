@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import VanField from '../../field';
 import VanPopup from '../../popup';
-import VanDatetimePicker from '../../datetime-picker';
+import VanDatePicker from '../../date-picker';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
+import type { PickerConfirmEventParams } from '../../picker';
 
 const t = useTranslate({
   'zh-CN': {
@@ -19,8 +20,8 @@ const t = useTranslate({
 const result = ref('');
 const showPicker = ref(false);
 
-const onConfirm = (time: string) => {
-  result.value = time;
+const onConfirm = ({ selectedValues }: PickerConfirmEventParams) => {
+  result.value = selectedValues.join('/');
   showPicker.value = false;
 };
 
@@ -34,12 +35,12 @@ const onCancel = () => {
     v-model="result"
     is-link
     readonly
-    name="datetimePicker"
+    name="datePicker"
     :label="t('label')"
     :placeholder="t('placeholder')"
     @click="showPicker = true"
   />
   <van-popup v-model:show="showPicker" round position="bottom" teleport="body">
-    <van-datetime-picker type="time" @confirm="onConfirm" @cancel="onCancel" />
+    <van-date-picker @confirm="onConfirm" @cancel="onCancel" />
   </van-popup>
 </template>

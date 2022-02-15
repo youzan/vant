@@ -17,7 +17,7 @@ import VanCheckboxGroup from '../../checkbox-group';
 import FieldTypeArea from './FieldTypeArea.vue';
 import FieldTypePicker from './FieldTypePicker.vue';
 import FieldTypeCalendar from './FieldTypeCalendar.vue';
-import FieldTypeDatetimePicker from './FieldTypeDatetimePicker.vue';
+import FieldTypeDatePicker from './FieldTypeDatePicker.vue';
 
 const t = useTranslate({
   'zh-CN': {
@@ -127,7 +127,7 @@ const onSubmit = (values: Record<string, string>) => {
         </van-field>
 
         <field-type-picker />
-        <field-type-datetime-picker />
+        <field-type-date-picker />
         <field-type-area />
         <field-type-calendar />
       </van-cell-group>

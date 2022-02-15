@@ -385,26 +385,22 @@ export default {
 };
 ```
 
-### 表单项类型 - 时间选择器
+### 表单项类型 - 日期选择器
 
-在表单中使用 [DatetimePicker 组件](#/zh-CN/datetime-picker)。
+在表单中使用 [DatePicker 组件](#/zh-CN/date-picker)。
 
 ```html
 <van-field
   v-model="result"
   is-link
   readonly
-  name="datetimePicker"
+  name="datePicker"
   label="时间选择"
   placeholder="点击选择时间"
   @click="showPicker = true"
 />
 <van-popup v-model:show="showPicker" position="bottom">
-  <van-datetime-picker
-    type="time"
-    @confirm="onConfirm"
-    @cancel="showPicker = false"
-  />
+  <van-date-picker @confirm="onConfirm" @cancel="showPicker = false" />
 </van-popup>
 ```
 
@@ -415,9 +411,8 @@ export default {
   setup() {
     const result = ref('');
     const showPicker = ref(false);
-
     const onConfirm = (value) => {
-      result.value = value;
+      result.value = selectedValues.join('/');
       showPicker.value = false;
     };
 
@@ -461,12 +456,9 @@ export default {
   setup() {
     const result = ref('');
     const showArea = ref(false);
-    const onConfirm = (areaValues) => {
+    const onConfirm = ({ selectedOptions }) => {
       showArea.value = false;
-      result.value = areaValues
-        .filter((item) => !!item)
-        .map((item) => item.name)
-        .join('/');
+      areaCode.value = selectedOptions.map((item) => item.text).join('/');
     };
 
     return {
