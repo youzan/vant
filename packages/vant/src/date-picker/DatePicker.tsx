@@ -17,12 +17,7 @@ import {
   makeArrayProp,
   createNamespace,
 } from '../utils';
-import {
-  times,
-  sharedProps,
-  getMonthEndDay,
-  pickerInheritKeys,
-} from '../datetime-picker/utils';
+import { times, sharedProps, getMonthEndDay, pickerInheritKeys } from './utils';
 
 // Components
 import { Picker } from '../picker';
@@ -88,8 +83,21 @@ export default defineComponent({
       month === props.maxDate.getMonth() + 1;
 
     const getValue = (type: DatePickerColumnType) => {
-      const index = props.columnsType.indexOf(type);
-      return +currentValues.value[index];
+      const { minDate, columnsType } = props;
+      const index = columnsType.indexOf(type);
+      const value = currentValues.value[index];
+      if (value) {
+        return +value;
+      }
+
+      switch (type) {
+        case 'year':
+          return minDate.getFullYear();
+        case 'month':
+          return minDate.getMonth() + 1;
+        case 'day':
+          return minDate.getDate();
+      }
     };
 
     const genMonthOptions = () => {

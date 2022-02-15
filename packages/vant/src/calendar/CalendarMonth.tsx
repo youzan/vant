@@ -15,7 +15,7 @@ import {
   createNamespace,
   makeRequiredProp,
 } from '../utils';
-import { getMonthEndDay } from '../datetime-picker/utils';
+import { getMonthEndDay } from '../date-picker/utils';
 import {
   t,
   bem,

@@ -15,11 +15,7 @@ import {
   createNamespace,
   makeNumericProp,
 } from '../utils';
-import {
-  times,
-  sharedProps,
-  pickerInheritKeys,
-} from '../datetime-picker/utils';
+import { times, sharedProps, pickerInheritKeys } from '../date-picker/utils';
 
 // Components
 import { Picker } from '../picker';
