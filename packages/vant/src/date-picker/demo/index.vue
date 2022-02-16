@@ -3,6 +3,7 @@ import VanDatePicker from '..';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 import type { PickerOption } from '../../picker';
+import { DatePickerColumnType } from '../DatePicker';
 
 const t = useTranslate({
   'zh-CN': {
@@ -30,9 +31,11 @@ const t = useTranslate({
 const minDate = new Date(2020, 0, 1);
 const maxDate = new Date(2025, 5, 1);
 const basicDate = ref(['2021', '01', '01']);
-const yearMonthDate = ref(['2021', '01', '01']);
-const formatterDate = ref(['2021', '01', '01']);
-const filterDate = ref(['2021', '01', '01']);
+const yearMonthDate = ref(['2021', '01']);
+const formatterDate = ref(['2021', '01']);
+const filterDate = ref(['2021', '01']);
+
+const columnsType: DatePickerColumnType[] = ['year', 'month'];
 
 const filter = (type: string, options: PickerOption[]) => {
   if (type === 'month') {
@@ -71,7 +74,7 @@ const formatter = (type: string, option: PickerOption) => {
       :title="t('chooseYearMonth')"
       :min-date="minDate"
       :max-date="maxDate"
-      :columns-type="['year', 'month']"
+      :columns-type="columnsType"
     />
   </demo-block>
 
@@ -82,7 +85,7 @@ const formatter = (type: string, option: PickerOption) => {
       :min-date="minDate"
       :max-date="maxDate"
       :formatter="formatter"
-      :columns-type="['year', 'month']"
+      :columns-type="columnsType"
     />
   </demo-block>
 
@@ -93,7 +96,7 @@ const formatter = (type: string, option: PickerOption) => {
       :filter="filter"
       :min-date="minDate"
       :max-date="maxDate"
-      :columns-type="['year', 'month']"
+      :columns-type="columnsType"
     />
   </demo-block>
 </template>

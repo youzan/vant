@@ -58,7 +58,7 @@ export default {
   title="选择年月"
   :min-date="minDate"
   :max-date="maxDate"
-  :columns-type="['year', 'month']"
+  :columns-type="columnsType"
 />
 ```
 
@@ -67,11 +67,13 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(['2021', '01', '01']);
+    const currentDate = ref(['2021', '01']);
+    const columnsType = ['year', 'month'];
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 5, 1),
       currentDate,
+      columnsType,
     };
   },
 };
@@ -88,7 +90,7 @@ export default {
   :min-date="minDate"
   :max-date="maxDate"
   :formatter="formatter"
-  :columns-type="['year', 'month']"
+  :columns-type="columnsType"
 />
 ```
 
@@ -97,7 +99,8 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(['2021', '01', '01']);
+    const currentDate = ref(['2021', '01']);
+    const columnsType = ['year', 'month'];
 
     const formatter = (type, val) => {
       if (type === 'year') {
@@ -114,6 +117,7 @@ export default {
       maxDate: new Date(2025, 5, 1),
       formatter,
       currentDate,
+      columnsType,
     };
   },
 };
@@ -130,7 +134,7 @@ export default {
   :filter="filter"
   :min-date="minDate"
   :max-date="maxDate"
-  :columns-type="['year', 'month']"
+  :columns-type="columnsType"
 />
 ```
 
@@ -139,7 +143,8 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(['2021', '01', '01']);
+    const currentDate = ref(['2021', '01']);
+    const columnsType = ['year', 'month'];
     const filter = (type, options) => {
       if (type === 'month') {
         return options.filter((option) => Number(option.value) % 6 === 0);
@@ -152,6 +157,7 @@ export default {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 5, 1),
       currentTime,
+      columnsType,
     };
   },
 };
