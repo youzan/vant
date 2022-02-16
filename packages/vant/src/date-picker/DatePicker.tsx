@@ -8,15 +8,13 @@ import {
 } from 'vue';
 
 // Utils
+import { pick, extend, isDate, isSameValue, createNamespace } from '../utils';
 import {
-  pick,
-  extend,
-  isDate,
-  padZero,
-  isSameValue,
-  createNamespace,
-} from '../utils';
-import { times, sharedProps, getMonthEndDay, pickerInheritKeys } from './utils';
+  genOptions,
+  sharedProps,
+  getMonthEndDay,
+  pickerInheritKeys,
+} from './utils';
 
 // Components
 import { Picker } from '../picker';
@@ -55,25 +53,16 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const currentValues = ref<string[]>(props.modelValue);
 
-    const genOptions = (
-      min: number,
-      max: number,
-      type: DatePickerColumnType
-    ) => {
-      const options = times(max - min + 1, (index) => {
-        const value = padZero(min + index);
-        return props.formatter(type, {
-          text: value,
-          value,
-        });
-      });
-      return props.filter ? props.filter(type, options) : options;
-    };
-
     const genYearOptions = () => {
       const minYear = props.minDate.getFullYear();
       const maxYear = props.maxDate.getFullYear();
-      return genOptions(minYear, maxYear, 'year');
+      return genOptions(
+        minYear,
+        maxYear,
+        'year',
+        props.formatter,
+        props.filter
+      );
     };
 
     const isMaxYear = (year: number) => year === props.maxDate.getFullYear();
@@ -100,9 +89,15 @@ export default defineComponent({
 
     const genMonthOptions = () => {
       if (isMaxYear(getValue('year'))) {
-        return genOptions(1, props.maxDate.getMonth() + 1, 'month');
+        return genOptions(
+          1,
+          props.maxDate.getMonth() + 1,
+          'month',
+          props.formatter,
+          props.filter
+        );
       }
-      return genOptions(1, 12, 'month');
+      return genOptions(1, 12, 'month', props.formatter, props.filter);
     };
 
     const genDayOptions = () => {
@@ -114,7 +109,7 @@ export default defineComponent({
         maxDate = props.maxDate.getDate();
       }
 
-      return genOptions(1, maxDate, 'day');
+      return genOptions(1, maxDate, 'day', props.formatter, props.filter);
     };
 
     const columns = computed(() =>

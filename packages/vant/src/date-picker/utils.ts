@@ -1,17 +1,16 @@
-import { extend, makeArrayProp } from '../utils';
+import { extend, padZero, makeArrayProp } from '../utils';
 import { pickerSharedProps } from '../picker/Picker';
 import type { PropType } from 'vue';
 import type { PickerOption } from '../picker';
 
+type Filter = (columnType: string, options: PickerOption[]) => PickerOption[];
+type Formatter = (type: string, option: PickerOption) => PickerOption;
+
 export const sharedProps = extend({}, pickerSharedProps, {
   modelValue: makeArrayProp<string>(),
-  filter: Function as PropType<
-    (columnType: string, options: PickerOption[]) => PickerOption[]
-  >,
+  filter: Function as PropType<Filter>,
   formatter: {
-    type: Function as PropType<
-      (type: string, option: PickerOption) => PickerOption
-    >,
+    type: Function as PropType<Formatter>,
     default: (type: string, option: PickerOption) => option,
   },
 });
@@ -37,3 +36,20 @@ export function times<T>(n: number, iteratee: (index: number) => T) {
 
 export const getMonthEndDay = (year: number, month: number): number =>
   32 - new Date(year, month - 1, 32).getDate();
+
+export const genOptions = <T extends string>(
+  min: number,
+  max: number,
+  type: T,
+  formatter: Formatter,
+  filter?: Filter
+) => {
+  const options = times(max - min + 1, (index) => {
+    const value = padZero(min + index);
+    return formatter(type, {
+      text: value,
+      value,
+    });
+  });
+  return filter ? filter(type, options) : options;
+};

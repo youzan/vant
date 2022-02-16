@@ -11,12 +11,15 @@ import {
 import {
   pick,
   extend,
-  padZero,
   createNamespace,
   makeNumericProp,
   isSameValue,
 } from '../utils';
-import { times, sharedProps, pickerInheritKeys } from '../date-picker/utils';
+import {
+  genOptions,
+  sharedProps,
+  pickerInheritKeys,
+} from '../date-picker/utils';
 
 // Components
 import { Picker } from '../picker';
@@ -50,30 +53,34 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const currentValues = ref<string[]>(props.modelValue);
 
-    const genOptions = (
-      min: number,
-      max: number,
-      type: TimePickerColumnType
-    ) => {
-      const options = times(max - min + 1, (index) => {
-        const value = padZero(min + index);
-        return props.formatter(type, {
-          text: value,
-          value,
-        });
-      });
-      return props.filter ? props.filter(type, options) : options;
-    };
-
     const columns = computed(() =>
       props.columnsType.map((type) => {
+        const { filter, formatter } = props;
         switch (type) {
           case 'hour':
-            return genOptions(+props.minHour, +props.maxHour, 'hour');
+            return genOptions(
+              +props.minHour,
+              +props.maxHour,
+              type,
+              formatter,
+              filter
+            );
           case 'minute':
-            return genOptions(+props.minMinute, +props.maxMinute, 'minute');
+            return genOptions(
+              +props.minMinute,
+              +props.maxMinute,
+              type,
+              formatter,
+              filter
+            );
           case 'second':
-            return genOptions(+props.minSecond, +props.maxSecond, 'second');
+            return genOptions(
+              +props.minSecond,
+              +props.maxSecond,
+              type,
+              formatter,
+              filter
+            );
           default:
             throw new Error(
               `[Vant] DatePicker: unsupported columns type: ${type}`
