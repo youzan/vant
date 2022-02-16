@@ -211,7 +211,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { TimePickerProps } from 'vant';
+import type { TimePickerProps, TimePickerColumnType } from 'vant';
 ```
 
 ## 常见问题

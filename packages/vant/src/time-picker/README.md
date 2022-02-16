@@ -210,5 +210,5 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { TimePickerProps } from 'vant';
+import type { TimePickerProps, TimePickerColumnType } from 'vant';
 ```
