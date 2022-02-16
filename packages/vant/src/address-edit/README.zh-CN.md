@@ -100,16 +100,16 @@ export default {
 
 ### Events
 
-| 事件名         | 说明                       | 回调参数                    |
-| -------------- | -------------------------- | --------------------------- |
-| save           | 点击保存按钮时触发         | content：表单内容           |
-| focus          | 输入框聚焦时触发           | key: 聚焦的输入框对应的 key |
-| delete         | 确认删除地址时触发         | content：表单内容           |
-| select-search  | 选中搜索结果时触发         | value: 搜索结果             |
-| click-area     | 点击收件地区时触发         | -                           |
-| change-area    | 修改收件地区时触发         | values: 地区信息            |
-| change-detail  | 修改详细地址时触发         | value: 详细地址内容         |
-| change-default | 切换是否使用默认地址时触发 | value: 是否选中             |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| save | 点击保存按钮时触发 | _info: AddressEditInfo_ |
+| focus | 输入框聚焦时触发 | _key: string_ |
+| delete | 确认删除地址时触发 | _info: AddressEditInfo_ |
+| select-search | 选中搜索结果时触发 | _value: string_ |
+| click-area | 点击收件地区时触发 | - |
+| change-area | 修改收件地区时触发 | _selectedOptions: PickerOption[]_ |
+| change-detail | 修改详细地址时触发 | _value: string_ |
+| change-default | 切换是否使用默认地址时触发 | _checked: boolean_ |
 
 ### Slots
 

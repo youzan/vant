@@ -25,7 +25,7 @@ import {
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import { Area, AreaList, AreaColumnOption, AreaInstance } from '../area';
+import { Area, AreaList, AreaInstance } from '../area';
 import { Cell } from '../cell';
 import { Form } from '../form';
 import { Field, FieldRule } from '../field';
@@ -37,6 +37,8 @@ import AddressEditDetail from './AddressEditDetail';
 
 // Types
 import type { AddressEditInfo, AddressEditSearchItem } from './types';
+import { PickerConfirmEventParams, PickerOption } from '../picker';
+import { AREA_EMPTY_CODE } from '../area/utils';
 
 const [name, bem, t] = createNamespace('address-edit');
 
@@ -121,9 +123,9 @@ export default defineComponent({
     );
 
     const areaText = computed(() => {
-      const { country, province, city, county, areaCode } = data;
+      const { province, city, county, areaCode } = data;
       if (areaCode) {
-        const arr = [country, province, city, county];
+        const arr = [province, city, county];
         if (province && province === city) {
           arr.splice(1, 1);
         }
@@ -136,15 +138,6 @@ export default defineComponent({
     const hideBottomFields = computed(
       () => props.searchResult?.length && detailFocused.value
     );
-
-    const assignAreaValues = () => {
-      if (areaRef.value) {
-        const detail: Record<string, string> = areaRef.value.getArea();
-        detail.areaCode = detail.code;
-        delete detail.code;
-        extend(data, detail);
-      }
-    };
 
     const onFocus = (key: string) => {
       detailFocused.value = key === 'addressDetail';
@@ -191,30 +184,30 @@ export default defineComponent({
       emit('changeDetail', val);
     };
 
-    const onAreaConfirm = (values: AreaColumnOption[]) => {
-      values = values.filter(Boolean);
+    const assignAreaText = (options: PickerOption[]) => {
+      data.province = options[0].text as string;
+      data.city = options[1].text as string;
+      data.county = options[2].text as string;
+    };
 
-      if (values.some((value) => !value.code)) {
+    const onAreaConfirm = ({
+      selectedValues,
+      selectedOptions,
+    }: PickerConfirmEventParams) => {
+      if (selectedValues.some((value) => value === AREA_EMPTY_CODE)) {
         Toast(t('areaEmpty'));
       } else {
         showAreaPopup.value = false;
-        assignAreaValues();
-        emit('changeArea', values);
+        assignAreaText(selectedOptions);
+        emit('changeArea', selectedOptions);
       }
     };
 
     const onDelete = () => emit('delete', data);
 
-    // get values of area component
-    const getArea = () => areaRef.value?.getValues() || [];
-
     // set area code to area component
     const setAreaCode = (code?: string) => {
       data.areaCode = code || '';
-
-      if (code) {
-        nextTick(assignAreaValues);
-      }
     };
 
     const onDetailBlur = () => {
@@ -253,21 +246,23 @@ export default defineComponent({
     };
 
     useExpose({
-      getArea,
       setAreaCode,
       setAddressDetail,
     });
 
     watch(
-      () => props.areaList,
-      () => setAreaCode(data.areaCode)
-    );
-
-    watch(
       () => props.addressInfo,
       (value) => {
         extend(data, DEFAULT_DATA, value);
-        setAreaCode(value.areaCode);
+        nextTick(() => {
+          const options = areaRef.value?.getSelectedOptions();
+          if (
+            options &&
+            options.every((option) => option.value !== AREA_EMPTY_CODE)
+          ) {
+            assignAreaText(options);
+          }
+        });
       },
       {
         deep: true,
@@ -371,8 +366,8 @@ export default defineComponent({
             lazyRender={false}
           >
             <Area
+              v-model={data.areaCode}
               ref={areaRef}
-              value={data.areaCode}
               loading={!areaListLoaded.value}
               areaList={props.areaList}
               columnsPlaceholder={props.areaColumnsPlaceholder}

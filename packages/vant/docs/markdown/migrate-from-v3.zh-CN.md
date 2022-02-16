@@ -20,6 +20,7 @@
 - 支持通过 `v-model` 绑定当前选中的值，移除 `default-index` 属性
 - 重新定义了 `columns` 属性的结构
 - 移除了操作内部数据的实例方法，仅保留 `confirm` 方法
+- 新增 `getSelectedOptions` 实例方法
 - 调整了 `confirm`、`cancel`、`change` 事件的参数
 - 重命名 `item-height` 属性为 `option-height`
 - 重命名 `visible-item-count` 属性为 `visible-option-num`
@@ -88,6 +89,11 @@ emit('clickInput');
 #### Tabs
 
 - 移除了 `click` 和 `disabled` 事件，请使用 `click-tab` 事件代替
+
+#### AddressEdit
+
+- `change-area` 事件的参数调整为 `PickerOption[]` 类型
+- 移除未在文档中标注的 `getArea` 实例方法
 
 ## 样式变量调整
 

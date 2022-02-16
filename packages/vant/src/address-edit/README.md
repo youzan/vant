@@ -102,14 +102,14 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| save | Emitted when the save button is clicked | content：form content |
-| focus | Emitted when field is focused | key: field name |
-| delete | Emitted when confirming delete | content：form content |
-| select-search | Emitted when a search result is selected | value: search content |
+| save | Emitted when the save button is clicked | _info: AddressEditInfo_ |
+| focus | Emitted when field is focused | _key: string_ |
+| delete | Emitted when confirming delete | _info: AddressEditInfo_ |
+| select-search | Emitted when a search result is selected | _value: string_ |
 | click-area | Emitted when the area field is clicked | - |
-| change-area | Emitted when area changed | values: area values |
-| change-detail | Emitted when address detail changed | value: address detail |
-| change-default | Emitted when switching default address | value: checked |
+| change-area | Emitted when area changed | _selectedOptions: PickerOption[]_ |
+| change-detail | Emitted when address detail changed | _value: string_ |
+| change-default | Emitted when switching default address | _checked: boolean_ |
 
 ### Slots
 
