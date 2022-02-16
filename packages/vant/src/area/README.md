@@ -152,6 +152,15 @@ export default {
 | columns-top     | Custom content above columns | -         |
 | columns-bottom  | Custom content below columns | -         |
 
+### Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Area instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| confirm | Stop scrolling and emit confirm event | - | - |
+| getSelectedOptions | Get current selected options | - | _PickerOption[]_ |
+
 ### Types
 
 The component exports the following type definitions:
@@ -168,5 +177,5 @@ import type { AreaInstance } from 'vant';
 
 const areaRef = ref<AreaInstance>();
 
-areaRef.value?.reset();
+areaRef.value?.confirm();
 ```

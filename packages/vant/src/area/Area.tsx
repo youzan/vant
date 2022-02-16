@@ -18,11 +18,15 @@ import {
 import { pickerSharedProps } from '../picker/Picker';
 import { INHERIT_PROPS, INHERIT_SLOTS, formatDataForCascade } from './utils';
 
+// Composables
+import { useExpose } from '../composables/use-expose';
+
 // Components
-import { Picker } from '../picker';
+import { Picker, type PickerInstance } from '../picker';
 
 // Types
 import type { AreaList } from './types';
+import type { PickerExpose } from '../picker/types';
 
 const [name, bem] = createNamespace('area');
 
@@ -47,6 +51,8 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const codes = ref<string[]>([]);
+    const picker = ref<PickerInstance>();
+
     const columns = computed(() => formatDataForCascade(props));
     const onChange = (...args: unknown[]) => emit('change', ...args);
     const onCancel = (...args: unknown[]) => emit('cancel', ...args);
@@ -84,8 +90,14 @@ export default defineComponent({
       { immediate: true }
     );
 
+    useExpose<PickerExpose>({
+      confirm: () => picker.value?.confirm(),
+      getSelectedOptions: () => picker.value?.getSelectedOptions() || [],
+    });
+
     return () => (
       <Picker
+        ref={picker}
         v-model={codes.value}
         v-slots={pick(slots, INHERIT_SLOTS)}
         class={bem()}

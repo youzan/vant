@@ -1,7 +1,7 @@
 import type { AreaProps } from '.';
 import type { PickerOption } from '../picker';
 
-const EMPTY_CODE = '000000';
+export const AREA_EMPTY_CODE = '000000';
 
 export const INHERIT_SLOTS = [
   'title',
@@ -24,8 +24,8 @@ export const INHERIT_PROPS = [
 
 const makeOption = (
   text = '',
-  value = EMPTY_CODE,
-  children?: PickerOption[]
+  value = AREA_EMPTY_CODE,
+  children: PickerOption[] | undefined = undefined
 ): PickerOption => ({
   text,
   value,
@@ -48,7 +48,13 @@ export function formatDataForCascade({
   const getProvinceChildren = () => {
     if (showCity) {
       return placeholder.length
-        ? [makeOption(placeholder[0], EMPTY_CODE, showCounty ? [] : undefined)]
+        ? [
+            makeOption(
+              placeholder[0],
+              AREA_EMPTY_CODE,
+              showCounty ? [] : undefined
+            ),
+          ]
         : [];
     }
   };
@@ -94,9 +100,9 @@ export function formatDataForCascade({
   if (placeholder.length) {
     const county = showCounty ? [makeOption(placeholder[2])] : undefined;
     const city = showCity
-      ? [makeOption(placeholder[1], EMPTY_CODE, county)]
+      ? [makeOption(placeholder[1], AREA_EMPTY_CODE, county)]
       : undefined;
-    options.unshift(makeOption(placeholder[0], EMPTY_CODE, city));
+    options.unshift(makeOption(placeholder[0], AREA_EMPTY_CODE, city));
   }
 
   return options;
