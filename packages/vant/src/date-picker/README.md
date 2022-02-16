@@ -204,5 +204,5 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { DatePickerProps } from 'vant';
+import type { DatePickerProps, DatePickerColumnType } from 'vant';
 ```
