@@ -24,6 +24,7 @@ export type PickerColumn = PickerOption[];
 
 export type PickerExpose = {
   confirm: () => void;
+  getSelectedOptions: () => PickerOption[];
 };
 
 export type PickerColumnProvide = {

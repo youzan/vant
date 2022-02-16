@@ -285,7 +285,9 @@ export default defineComponent({
       { immediate: true }
     );
 
-    useExpose<PickerExpose>({ confirm });
+    const getSelectedOptions = () => selectedOptions.value;
+
+    useExpose<PickerExpose>({ confirm, getSelectedOptions });
 
     return () => (
       <div class={bem()}>

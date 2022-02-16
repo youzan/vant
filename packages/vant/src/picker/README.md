@@ -355,9 +355,10 @@ export default {
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Picker instance and call instance methods.
 
-| Name    | Description                           | Attribute | Return value |
-| ------- | ------------------------------------- | --------- | ------------ |
-| confirm | Stop scrolling and emit confirm event | -         | -            |
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| confirm | Stop scrolling and emit confirm event | - | - |
+| getSelectedOptions | Get current selected options | - | _PickerOption[]_ |
 
 ### Types
 
