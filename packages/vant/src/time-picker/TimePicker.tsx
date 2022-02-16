@@ -23,13 +23,15 @@ import { Picker } from '../picker';
 
 const [name] = createNamespace('time-picker');
 
-export type TimePickerColumnType = 'hour' | 'minute';
+export type TimePickerColumnType = 'hour' | 'minute' | 'second';
 
 const timePickerProps = extend({}, sharedProps, {
   minHour: makeNumericProp(0),
   maxHour: makeNumericProp(23),
   minMinute: makeNumericProp(0),
   maxMinute: makeNumericProp(59),
+  minSecond: makeNumericProp(0),
+  maxSecond: makeNumericProp(59),
   columnsType: {
     type: Array as PropType<TimePickerColumnType[]>,
     default: () => ['hour', 'minute'],
@@ -70,6 +72,8 @@ export default defineComponent({
             return genOptions(+props.minHour, +props.maxHour, 'hour');
           case 'minute':
             return genOptions(+props.minMinute, +props.maxMinute, 'minute');
+          case 'second':
+            return genOptions(+props.minSecond, +props.maxSecond, 'second');
           default:
             throw new Error(
               `[Vant] DatePicker: unsupported columns type: ${type}`

@@ -35,6 +35,40 @@ export default {
 };
 ```
 
+### Columns Type
+
+Using `columns-type` prop to control the type of columns.
+
+For example:
+
+- Pass in `['hour']` to select hour.
+- Pass in `['minute']` to select minute.
+- Pass in `['minute', 'second']` to select minute and second.
+- Pass in `['hour', 'minute', 'second']` to select hour, minute and second.
+
+```html
+<van-time-picker
+  v-model="currentTime"
+  title="Choose Time"
+  :columns-type="columnsType"
+/>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const currentTime = ref(['12', '00', '00']);
+    const columnsType = ['hour', 'minute', 'second'];
+    return {
+      currentTime,
+      columnsType,
+    };
+  },
+};
+```
+
 ### Time Range
 
 ```html
@@ -133,10 +167,12 @@ export default {
 | --- | --- | --- | --- |
 | v-model | Current time | _string[]_ | - |
 | columns-type | Columns type | _string[]_ | `['hour', 'minute']` |
-| min-hour | Min hour for `time` type | _number \| string_ | `0` |
-| max-hour | Max hour for `time` type | _number \| string_ | `23` |
-| min-minute | Max minute for `time` type | _number \| string_ | `0` |
-| max-minute | Max minute for `time` type | _number \| string_ | `59` |
+| min-hour | Min hour | _number \| string_ | `0` |
+| max-hour | Max hour | _number \| string_ | `23` |
+| min-minute | Min minute | _number \| string_ | `0` |
+| max-minute | Max minute | _number \| string_ | `59` |
+| min-second | Min second | _number \| string_ | `0` |
+| max-second | Max second | _number \| string_ | `59` |
 | title | Toolbar title | _string_ | `''` |
 | confirm-button-text | Text of confirm button | _string_ | `Confirm` |
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |

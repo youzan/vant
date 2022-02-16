@@ -20,6 +20,8 @@ app.use(TimePicker);
 
 ### 基础用法
 
+通过 `v-model` 绑定当前选中的时间。
+
 ```html
 <van-time-picker v-model="currentTime" title="选择时间" />
 ```
@@ -31,6 +33,40 @@ export default {
   setup() {
     const currentTime = ref(['12', '00']);
     return { currentTime };
+  },
+};
+```
+
+### 选项类型
+
+通过 `columns-type` 属性可以控制选项的类型，支持以任意顺序对 `hour`、`minute` 和 `second` 进行排列组合。
+
+比如：
+
+- 传入 `['hour']` 来单独选择小时。
+- 传入 `['minute']` 来单独选择分钟。
+- 传入 `['minute', 'second']` 来选择分钟和秒。
+- 传入 `['hour', 'minute', 'second']` 来选择小时、分钟和秒。
+
+```html
+<van-time-picker
+  v-model="currentTime"
+  title="选择时间"
+  :columns-type="columnsType"
+/>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const currentTime = ref(['12', '00', '00']);
+    const columnsType = ['hour', 'minute', 'second'];
+    return {
+      currentTime,
+      columnsType,
+    };
   },
 };
 ```
@@ -136,6 +172,8 @@ export default {
 | max-hour | 可选的最大小时 | _number \| string_ | `23` |
 | min-minute | 可选的最小分钟 | _number \| string_ | `0` |
 | max-minute | 可选的最大分钟 | _number \| string_ | `59` |
+| min-second | 可选的最小秒数 | _number \| string_ | `0` |
+| max-second | 可选的最大秒数 | _number \| string_ | `59` |
 | title | 顶部栏标题 | _string_ | `''` |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |

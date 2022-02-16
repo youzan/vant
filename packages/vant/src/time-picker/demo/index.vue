@@ -3,6 +3,7 @@ import VanTimePicker from '..';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
 import type { PickerOption } from '../../picker';
+import { TimePickerColumnType } from '../TimePicker';
 
 const t = useTranslate({
   'zh-CN': {
@@ -10,6 +11,7 @@ const t = useTranslate({
     minute: '分',
     timeRange: '时间范围',
     chooseTime: '选择时间',
+    columnsType: '选项类型',
     optionsFilter: '过滤选项',
     optionsFormatter: '格式化选项',
   },
@@ -18,15 +20,19 @@ const t = useTranslate({
     minute: 'm',
     timeRange: 'Time Range',
     chooseTime: 'Choose Time',
+    columnsType: 'Columns Type',
     optionsFilter: 'Options Filter',
     optionsFormatter: 'Options Formatter',
   },
 });
 
 const baseTime = ref(['12', '00']);
+const secondTime = ref(['12', '00', '00']);
 const rangeTime = ref(['12', '35']);
 const filterTime = ref(['12', ' 00']);
 const formatterTime = ref(['12', '00']);
+
+const columnsType: TimePickerColumnType[] = ['hour', 'minute', 'second'];
 
 const filter = (type: string, options: PickerOption[]) => {
   if (type === 'minute') {
@@ -48,10 +54,14 @@ const formatter = (type: string, option: PickerOption) => {
 
 <template>
   <demo-block card :title="t('basicUsage')">
+    <van-time-picker v-model="baseTime" :title="t('chooseTime')" />
+  </demo-block>
+
+  <demo-block card :title="t('columnsType')">
     <van-time-picker
-      v-model="baseTime"
+      v-model="secondTime"
       :title="t('chooseTime')"
-      :columns-order="['minute', 'hour']"
+      :columns-type="columnsType"
     />
   </demo-block>
 
