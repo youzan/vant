@@ -198,7 +198,7 @@ export default defineComponent({
         Toast(t('areaEmpty'));
       } else {
         showAreaPopup.value = false;
-        assignAreaText(selectedOptions);
+        assignAreaText(selectedOptions as PickerOption[]);
         emit('changeArea', selectedOptions);
       }
     };
@@ -257,9 +257,11 @@ export default defineComponent({
           const options = areaRef.value?.getSelectedOptions();
           if (
             options &&
-            options.every((option) => option.value !== AREA_EMPTY_CODE)
+            options.every(
+              (option) => option && option.value !== AREA_EMPTY_CODE
+            )
           ) {
-            assignAreaText(options);
+            assignAreaText(options as PickerOption[]);
           }
         });
       },

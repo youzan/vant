@@ -121,32 +121,6 @@ test('should emit changeDetail event after changing address detail', () => {
   expect(wrapper.emitted('changeDetail')[0][0]).toEqual('123');
 });
 
-test('should return current areas after calling getArea method', () => {
-  const wrapper = mount(AddressEdit, {
-    props: { areaList },
-  });
-
-  expect(wrapper.vm.getArea()).toEqual([
-    { code: '110000', name: '北京市' },
-    { code: '110100', name: '北京市' },
-    { code: '110101', name: '东城区' },
-  ]);
-});
-
-test('should update current areas after calling setAreaCode method', async () => {
-  const wrapper = mount(AddressEdit, {
-    props: { areaList },
-  });
-
-  wrapper.vm.setAreaCode('110102');
-  await later();
-  expect(wrapper.vm.getArea()).toEqual([
-    { code: '110000', name: '北京市' },
-    { code: '110100', name: '北京市' },
-    { code: '110102', name: '西城区' },
-  ]);
-});
-
 test('should show search result after focusing to address detail', async () => {
   const wrapper = mount(AddressEdit, {
     props: {
