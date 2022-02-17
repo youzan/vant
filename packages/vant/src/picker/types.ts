@@ -24,7 +24,7 @@ export type PickerColumn = PickerOption[];
 
 export type PickerExpose = {
   confirm: () => void;
-  getSelectedOptions: () => PickerOption[];
+  getSelectedOptions: () => Array<PickerOption | undefined>;
 };
 
 export type PickerColumnProvide = {
@@ -45,7 +45,7 @@ export type PickerInstance = ComponentPublicInstance<PickerProps, PickerExpose>;
 
 export type PickerConfirmEventParams = {
   selectedValues: Array<number | string>;
-  selectedOptions: PickerOption[];
+  selectedOptions: Array<PickerOption | undefined>;
 };
 
 export type PickerCancelEventParams = PickerConfirmEventParams;

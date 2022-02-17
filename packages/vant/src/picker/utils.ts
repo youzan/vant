@@ -2,9 +2,10 @@ import { isDef, clamp, extend } from '../utils';
 import type { Ref } from 'vue';
 import type { PickerOption, PickerColumn, PickerFieldNames } from './types';
 
-export function getFirstEnabledOption(options: PickerOption[]) {
-  return options.find((option) => !option.disabled) || options[0];
-}
+export const getFirstEnabledOption = (
+  options: PickerOption[]
+): PickerOption | undefined =>
+  options.find((option) => !option.disabled) || options[0];
 
 export function getColumnsType(
   columns: PickerColumn | PickerColumn[],
@@ -50,7 +51,7 @@ export function findOptionByValue(
   options: PickerOption[],
   value: number | string,
   fields: Required<PickerFieldNames>
-) {
+): PickerOption | undefined {
   const index = options.findIndex((option) => option[fields.value] === value);
   const enabledIndex = findIndexOfEnabledOption(options, index);
   return options[enabledIndex];
@@ -77,7 +78,7 @@ export function formatCascadeColumns(
       : undefined;
 
     if (!cursor && options.length) {
-      const firstValue = getFirstEnabledOption(options)[fields.value];
+      const firstValue = getFirstEnabledOption(options)![fields.value];
       cursor = findOptionByValue(options, firstValue, fields);
     }
 

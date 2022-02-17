@@ -358,7 +358,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Picker
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | confirm | Stop scrolling and emit confirm event | - | - |
-| getSelectedOptions | Get current selected options | - | _PickerOption[]_ |
+| getSelectedOptions | Get current selected options | - | _(PickerOption \| undefined)[]_ |
 
 ### Types
 

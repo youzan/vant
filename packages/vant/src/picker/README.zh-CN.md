@@ -377,7 +377,7 @@ export default {
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | confirm | 停止惯性滚动并触发 `confirm` 事件 | - | - |
-| getSelectedOptions | 获取当前选中的选项 | - | _PickerOption[]_ |
+| getSelectedOptions | 获取当前选中的选项 | - | _(PickerOption \| undefined)[]_ |
 
 ### 类型定义
 

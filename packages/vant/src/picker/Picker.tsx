@@ -259,7 +259,10 @@ export default defineComponent({
             options.length &&
             !isOptionExist(options, selectedValues.value[index], fields.value)
           ) {
-            setValue(index, getFirstEnabledOption(options)[fields.value.value]);
+            setValue(
+              index,
+              getFirstEnabledOption(options)![fields.value.value]
+            );
           }
         });
       },
