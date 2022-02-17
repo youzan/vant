@@ -47,7 +47,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div role="switch"
        class="van-switch van-switch--on"
-       style="font-size: 24px;"
+       style="font-size: 22px;"
        tabindex="0"
        aria-checked="true"
   >
@@ -85,7 +85,6 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div role="switch"
          class="van-switch van-switch--on"
-         style="font-size: 24px;"
          tabindex="0"
          aria-checked="true"
     >

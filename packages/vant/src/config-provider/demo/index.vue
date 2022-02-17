@@ -53,7 +53,7 @@ const themeVars = {
     <demo-block :title="t('darkMode')">
       <van-cell center :title="t('switchDarkMode')">
         <template #right-icon>
-          <van-switch v-model="darkMode" size="24" />
+          <van-switch v-model="darkMode" />
         </template>
       </van-cell>
     </demo-block>

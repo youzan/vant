@@ -70,7 +70,7 @@ const onSubmit = (values: Record<string, string>) => {
       <van-cell-group inset>
         <van-field name="switch" :label="t('switch')">
           <template #input>
-            <van-switch v-model="switchChecked" size="20" />
+            <van-switch v-model="switchChecked" />
           </template>
         </van-field>
 

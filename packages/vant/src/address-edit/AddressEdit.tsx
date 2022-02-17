@@ -227,7 +227,6 @@ export default defineComponent({
           'right-icon': () => (
             <Switch
               v-model={data.isDefault}
-              size="24"
               onChange={(event) => emit('changeDefault', event)}
             />
           ),

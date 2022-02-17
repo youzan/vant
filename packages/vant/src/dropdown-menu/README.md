@@ -64,12 +64,12 @@ export default {
   <van-dropdown-item title="Title" ref="item">
     <van-cell center title="Title">
       <template #right-icon>
-        <van-switch v-model="switch1" size="24" />
+        <van-switch v-model="switch1" />
       </template>
     </van-cell>
     <van-cell center title="Title">
       <template #right-icon>
-        <van-switch v-model="switch2" size="24" />
+        <van-switch v-model="switch2" />
       </template>
     </van-cell>
     <div style="padding: 5px 16px;">

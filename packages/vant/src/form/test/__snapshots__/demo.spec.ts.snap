@@ -171,7 +171,6 @@ exports[`should render demo and match snapshot 1`] = `
             <div class="van-field__control van-field__control--custom">
               <div role="switch"
                    class="van-switch"
-                   style="font-size: 20px;"
                    tabindex="0"
                    aria-checked="false"
               >

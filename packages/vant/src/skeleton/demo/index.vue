@@ -32,7 +32,7 @@ const show = ref(false);
   </demo-block>
 
   <demo-block :title="t('showChildren')">
-    <van-switch v-model="show" size="24px" />
+    <van-switch v-model="show" />
     <van-skeleton title avatar :row="3" :loading="!show">
       <div class="demo-preview">
         <img src="https://img.yzcdn.cn/vant/logo.png" />

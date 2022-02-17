@@ -92,7 +92,6 @@ export default defineComponent({
     const renderSwitch = () => (
       <Switch
         v-model={contact.isDefault}
-        size={24}
         onChange={(checked: boolean) => emit('changeDefault', checked)}
       />
     );

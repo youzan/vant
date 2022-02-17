@@ -78,12 +78,12 @@ const onConfirm = () => {
       <van-dropdown-item :title="t('itemTitle')" ref="item">
         <van-cell center :title="t('switchTitle1')">
           <template #right-icon>
-            <van-switch v-model="switch1" size="24" />
+            <van-switch v-model="switch1" />
           </template>
         </van-cell>
         <van-cell center :title="t('switchTitle2')">
           <template #right-icon>
-            <van-switch v-model="switch2" size="24" />
+            <van-switch v-model="switch2" />
           </template>
         </van-cell>
         <div style="padding: 5px 16px">

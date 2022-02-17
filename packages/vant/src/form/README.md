@@ -157,7 +157,7 @@ export default {
 ```html
 <van-field name="switch" label="Switch">
   <template #input>
-    <van-switch v-model="checked" size="20" />
+    <van-switch v-model="checked" />
   </template>
 </van-field>
 ```

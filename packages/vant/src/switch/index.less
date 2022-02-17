@@ -1,15 +1,18 @@
 body {
-  --van-switch-size: 30px;
-  --van-switch-width: 2em;
-  --van-switch-height: 1em;
+  --van-switch-size: 26px;
+  --van-switch-width: calc(2em + 4px);
+  --van-switch-height: calc(1em + 4px);
   --van-switch-node-size: 1em;
   --van-switch-node-background: var(--van-white);
   --van-switch-node-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05);
-  --van-switch-background: var(--van-background-3);
+  --van-switch-background: rgba(120, 120, 128, 0.16);
   --van-switch-on-background: var(--van-primary-color);
   --van-switch-duration: var(--van-duration-base);
   --van-switch-disabled-opacity: var(--van-disabled-opacity);
-  --van-switch-border: var(--van-border-width) solid rgba(0, 0, 0, 0.1);
+}
+
+.van-theme-dark {
+  --van-switch-background: rgba(120, 120, 128, 0.32);
 }
 
 .van-switch {
@@ -20,15 +23,14 @@ body {
   height: var(--van-switch-height);
   font-size: var(--van-switch-size);
   background: var(--van-switch-background);
-  border: var(--van-switch-border);
   border-radius: var(--van-switch-node-size);
   cursor: pointer;
   transition: background-color var(--van-switch-duration);
 
   &__node {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 2px;
+    left: 2px;
     width: var(--van-switch-node-size);
     height: var(--van-switch-node-size);
     // https://github.com/youzan/vant/issues/9839
@@ -53,7 +55,7 @@ body {
 
     .van-switch__node {
       transform: translateX(
-        calc(var(--van-switch-width) - var(--van-switch-node-size))
+        calc(var(--van-switch-width) - var(--van-switch-node-size) - 4px)
       );
     }
 

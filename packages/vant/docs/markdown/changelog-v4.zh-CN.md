@@ -34,5 +34,8 @@
 - Card: 调整 `--van-card-price-color` 变量的默认值为 `--van-text-color`
 - Card: 调整 `--van-card-desc-color` 变量的默认值为 `--van-text-color-2`
 - Field: 调整 `--van-field-label-color` 变量的默认值为 `--van-text-color`
+- Switch: 移除 `--van-switch-border` 变量
+- Switch: 调整 `--van-switch-size` 变量的默认值为 `26px`
+- Switch: 调整 `--van-switch-background` 变量的默认值为 `rgba(120, 120, 128, 0.16)`
 - Tabbar: 调整 `--van-tabbar-item-text-color` 变量的默认值为 `--van-text-color`
 - GridItem: 调整 `--van-grid-item-text-color` 变量的默认值为 `--van-text-color`

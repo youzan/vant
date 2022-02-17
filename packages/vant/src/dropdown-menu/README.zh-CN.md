@@ -66,12 +66,12 @@ export default {
   <van-dropdown-item title="筛选" ref="item">
     <van-cell center title="包邮">
       <template #right-icon>
-        <van-switch v-model="switch1" size="24" />
+        <van-switch v-model="switch1" />
       </template>
     </van-cell>
     <van-cell center title="团购">
       <template #right-icon>
-        <van-switch v-model="switch2" size="24" />
+        <van-switch v-model="switch2" />
       </template>
     </van-cell>
     <div style="padding: 5px 16px;">
