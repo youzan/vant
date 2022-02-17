@@ -100,13 +100,13 @@ If you are using vite, please use [vite-plugin-style-import](https://github.com/
 
 ```bash
 # with npm
-npm i vite-plugin-style-import -D
+npm i vite-plugin-style-import@1.4.1 -D
 
 # with yarn
-yarn add vite-plugin-style-import -D
+yarn add vite-plugin-style-import@1.4.1 -D
 
 # with pnpm
-pnpm add vite-plugin-style-import -D
+pnpm add vite-plugin-style-import@1.4.1 -D
 ```
 
 #### 2. Configure Plugin
