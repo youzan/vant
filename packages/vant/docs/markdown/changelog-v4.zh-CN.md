@@ -27,6 +27,7 @@
 其他：
 
 - ActionBar: 调整 `--van-action-bar-icon-text-color` 变量的默认值为 `--van-text-color`
+- AddressEdit: 提交按钮调整为 `primary` 类型
 - Button: 默认圆角大小从 `2px` 调整为 `4px`
 - Button: 默认按钮的边框颜色调整为 `--van-gray-4`
 - Button: 调整 `font-smoothing`，默认使用粗体文字

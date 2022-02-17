@@ -340,7 +340,7 @@ export default defineComponent({
             <Button
               block
               round
-              type="danger"
+              type="primary"
               text={props.saveButtonText || t('save')}
               class={bem('button')}
               loading={props.isSaving}
