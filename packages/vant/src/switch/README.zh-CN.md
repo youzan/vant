@@ -150,7 +150,7 @@ import type { SwitchProps } from 'vant';
 | 名称                          | 默认值                            | 描述 |
 | ----------------------------- | --------------------------------- | ---- |
 | --van-switch-size             | _26px_                            | -    |
-| --van-switch-width            | _calc(2em + 4px)_                 | -    |
+| --van-switch-width            | _calc(1.8em + 4px)_               | -    |
 | --van-switch-height           | _calc(1em + 4px)_                 | -    |
 | --van-switch-node-size        | _1em_                             | -    |
 | --van-switch-node-background  | _var(--van-white)_                | -    |
