@@ -101,13 +101,13 @@ pnpm add vant
 
 ```bash
 # 通过 npm 安装
-npm i vite-plugin-style-import -D
+npm i vite-plugin-style-import@1.4.1 -D
 
 # 通过 yarn 安装
-yarn add vite-plugin-style-import -D
+yarn add vite-plugin-style-import@1.4.1 -D
 
 # 通过 pnpm 安装
-pnpm add vite-plugin-style-import -D
+pnpm add vite-plugin-style-import@1.4.1 -D
 ```
 
 #### 2. 配置插件
