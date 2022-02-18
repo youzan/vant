@@ -1,4 +1,4 @@
-import { AddressEdit } from '..';
+import { AddressEdit, AddressEditInstance } from '..';
 import { areaList } from '../../area/demo/area-simple';
 import { mount, later, trigger } from '../../../test';
 import { submitForm } from '../../form/test/shared';
@@ -58,7 +58,7 @@ test('should allow to custom validator with validator prop', async () => {
   const wrapper = mount(AddressEdit, {
     props: {
       areaList,
-      validator: (key, value) => `foo ${key}${value}`,
+      validator: (key: string, value: string) => `foo ${key}${value}`,
     },
   });
 
@@ -116,9 +116,9 @@ test('should emit changeDetail event after changing address detail', () => {
   const wrapper = mount(AddressEdit);
   const field = wrapper.findAll('.van-field__control')[3];
 
-  field.element.value = '123';
+  (field.element as HTMLInputElement).value = '123';
   field.trigger('input');
-  expect(wrapper.emitted('changeDetail')[0][0]).toEqual('123');
+  expect(wrapper.emitted('changeDetail')).toEqual([['123']]);
 });
 
 test('should show search result after focusing to address detail', async () => {
@@ -134,25 +134,21 @@ test('should show search result after focusing to address detail', async () => {
   });
 
   const field = wrapper.findAll('.van-field__control')[3];
-  const input = field.element;
+  const input = field.element as HTMLInputElement;
   await field.trigger('focus');
 
   const items = wrapper.findAll('.van-icon-location-o');
-  items[0].element.parentNode.click();
+  (items[0].element.parentNode as HTMLElement).click();
   await later();
   expect(input.value).toEqual('address1 name1');
 
-  items[1].element.parentNode.click();
+  (items[1].element.parentNode as HTMLElement).click();
   await later();
   expect(input.value).toEqual('name2');
 
-  items[2].element.parentNode.click();
+  (items[2].element.parentNode as HTMLElement).click();
   await later();
   expect(input.value).toEqual('address2');
-
-  await field.trigger('blur');
-  await later(150);
-  expect(wrapper.vm.detailFocused).toBeFalsy();
 });
 
 test('should emit delete event after clicking the delete button', async () => {
@@ -173,7 +169,7 @@ test('should update address detail after calling the setAddressDetail method', a
 
   expect(textarea.element.value).toEqual('address detail');
 
-  vm.setAddressDetail('test');
+  (vm as AddressEditInstance).setAddressDetail('test');
   await later();
   expect(textarea.element.value).toEqual('test');
 });
@@ -187,7 +183,7 @@ test('should emit clickArea event after clicking the area field', () => {
 
   const field = wrapper.findAll('.van-field')[2];
   field.trigger('click');
-  expect(wrapper.emitted('clickArea')[0]).toBeTruthy();
+  expect(wrapper.emitted('clickArea')).toHaveLength(1);
 });
 
 test('should limit tel maxlength when using tel-maxlength prop', () => {
@@ -198,8 +194,9 @@ test('should limit tel maxlength when using tel-maxlength prop', () => {
   });
 
   const telInput = wrapper.find('input[type="tel"]');
-  telInput.element.value = '123456';
+  const inputEl = telInput.element as HTMLInputElement;
+  inputEl.value = '123456';
   trigger(telInput, 'input');
 
-  expect(telInput.element.value).toEqual('1234');
+  expect(inputEl.value).toEqual('1234');
 });

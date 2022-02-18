@@ -2,8 +2,8 @@ import type { ComponentPublicInstance } from 'vue';
 import type { AddressEditProps } from './AddressEdit';
 
 export type AddressEditSearchItem = {
-  name: string;
-  address: string;
+  name?: string;
+  address?: string;
 };
 
 export type AddressEditInfo = {
