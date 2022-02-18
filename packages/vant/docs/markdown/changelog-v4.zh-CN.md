@@ -34,6 +34,7 @@
 - Card: 调整 `--van-card-background` 变量的默认值为 `--van-background`
 - Card: 调整 `--van-card-price-color` 变量的默认值为 `--van-text-color`
 - Card: 调整 `--van-card-desc-color` 变量的默认值为 `--van-text-color-2`
+- ContactEdit: 提交按钮调整为 `primary` 类型
 - Field: 调整 `--van-field-label-color` 变量的默认值为 `--van-text-color`
 - Switch: 移除 `--van-switch-border` 变量
 - Switch: 调整 `--van-switch-size` 变量的默认值为 `26px`
