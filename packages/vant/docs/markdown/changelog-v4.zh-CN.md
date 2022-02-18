@@ -13,10 +13,13 @@
 
 **Style**
 
-以下组件的默认色值调整为 `--van-primary-color`：
+在之前的版本中，Vant 组件有两种色彩风格，一部分采用红色作为主色调，另一部分采用蓝色。为了保持色彩规范的统一，我们在 Vant 4 中对组件的主色调进行了统一，所有组件均采用蓝色作为主色调。
+
+以下组件的默认色值风格由红色调整为蓝色：
 
 - Calendar
 - Cascader
+- ContactList
 - Dialog
 - DropdownMenu
 - IndexBar
@@ -35,6 +38,8 @@
 - Card: 调整 `--van-card-price-color` 变量的默认值为 `--van-text-color`
 - Card: 调整 `--van-card-desc-color` 变量的默认值为 `--van-text-color-2`
 - ContactEdit: 提交按钮调整为 `primary` 类型
+- ContactList: 提交按钮调整为 `primary` 类型
+- ContactList: 重命名 `--van-contact-list-item-radio-icon-color` 为 `--van-contact-list-radio-color`
 - Field: 调整 `--van-field-label-color` 变量的默认值为 `--van-text-color`
 - Switch: 移除 `--van-switch-border` 变量
 - Switch: 调整 `--van-switch-size` 变量的默认值为 `26px`

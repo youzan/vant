@@ -109,9 +109,9 @@ import type { ContactListItem, ContactListProps } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                     | 默认值                    | 描述 |
-| ---------------------------------------- | ------------------------- | ---- |
-| --van-contact-list-edit-icon-size        | _16px_                    | -    |
-| --van-contact-list-add-button-z-index    | _999_                     | -    |
-| --van-contact-list-item-padding          | _var(--van-padding-md)_   | -    |
-| --van-contact-list-item-radio-icon-color | _var(--van-danger-color)_ | -    |
+| 名称                                  | 默认值                     | 描述 |
+| ------------------------------------- | -------------------------- | ---- |
+| --van-contact-list-edit-icon-size     | _16px_                     | -    |
+| --van-contact-list-add-button-z-index | _999_                      | -    |
+| --van-contact-list-radio-color        | _var(--van-primary-color)_ | -    |
+| --van-contact-list-item-padding       | _var(--van-padding-md)_    | -    |
