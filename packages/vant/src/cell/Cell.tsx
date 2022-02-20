@@ -93,9 +93,8 @@ export default defineComponent({
       const hasValue = slot || isDef(props.value);
 
       if (hasValue) {
-        const hasTitle = slots.title || isDef(props.title);
         return (
-          <div class={[bem('value', { alone: !hasTitle }), props.valueClass]}>
+          <div class={[bem('value'), props.valueClass]}>
             {slot ? slot() : <span>{props.value}</span>}
           </div>
         );

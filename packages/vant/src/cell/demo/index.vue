@@ -16,7 +16,6 @@ const t = useTranslate({
     showIcon: '展示图标',
     showArrow: '展示箭头',
     largeSize: '单元格大小',
-    valueOnly: '只设置 value',
     groupTitle: '分组标题',
     insetGrouped: '卡片风格',
     verticalCenter: '垂直居中',
@@ -31,7 +30,6 @@ const t = useTranslate({
     showIcon: 'Left Icon',
     showArrow: 'Link',
     largeSize: 'Size',
-    valueOnly: 'Value only',
     groupTitle: 'Group Title',
     insetGrouped: 'Inset Grouped',
     verticalCenter: 'Vertical center',
@@ -66,10 +64,6 @@ const t = useTranslate({
 
   <demo-block :title="t('showIcon')">
     <van-cell :title="t('cell')" :value="t('content')" icon="location-o" />
-  </demo-block>
-
-  <demo-block :title="t('valueOnly')">
-    <van-cell :value="t('content')" />
   </demo-block>
 
   <demo-block :title="t('showArrow')">
