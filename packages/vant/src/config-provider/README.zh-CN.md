@@ -218,7 +218,7 @@ Vant 中的 CSS 变量分为 **基础变量** 和 **组件变量**。组件变�
 --van-font-size-sm: 12px;
 --van-font-size-md: 14px;
 --van-font-size-lg: 16px;
---van-font-bold: 500;
+--van-font-bold: 600;
 --van-line-height-xs: 14px;
 --van-line-height-sm: 18px;
 --van-line-height-md: 20px;

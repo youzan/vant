@@ -29,6 +29,7 @@
 
 其他：
 
+- `--van-font-bold` 的默认值由 `500` 调整为 `600`
 - ActionBar: 调整 `--van-action-bar-icon-text-color` 变量的默认值为 `--van-text-color`
 - AddressEdit: 提交按钮调整为 `primary` 类型
 - Button: 默认圆角大小从 `2px` 调整为 `4px`

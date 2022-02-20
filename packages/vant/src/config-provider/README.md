@@ -216,7 +216,7 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 --van-font-size-sm: 12px;
 --van-font-size-md: 14px;
 --van-font-size-lg: 16px;
---van-font-bold: 500;
+--van-font-bold: 600;
 --van-line-height-xs: 14px;
 --van-line-height-sm: 18px;
 --van-line-height-md: 20px;
