@@ -57,7 +57,7 @@ export default defineComponent({
       }
       if (props.address.isDefault && props.defaultTagText) {
         return (
-          <Tag type="danger" round class={bem('tag')}>
+          <Tag type="primary" round class={bem('tag')}>
             {props.defaultTagText}
           </Tag>
         );

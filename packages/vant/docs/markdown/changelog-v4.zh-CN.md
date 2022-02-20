@@ -17,9 +17,14 @@
 
 以下组件的默认色值风格由红色调整为蓝色：
 
+- AddressEdit
+- AddressList
+- Card
 - Calendar
 - Cascader
 - ContactList
+- ContactEdit
+- CouponList
 - Dialog
 - DropdownMenu
 - IndexBar
@@ -31,20 +36,15 @@
 
 - `--van-font-bold` 的默认值由 `500` 调整为 `600`
 - ActionBar: 调整 `--van-action-bar-icon-text-color` 变量的默认值为 `--van-text-color`
-- AddressEdit: 提交按钮调整为 `primary` 类型
+- AddressList: 重命名 `--van-address-list-item-radio-icon-color` 为 `--van-address-list-radio-color`
 - Button: 默认圆角大小从 `2px` 调整为 `4px`
 - Button: 默认按钮的边框颜色调整为 `--van-gray-4`
 - Button: 调整 `font-smoothing`，默认使用粗体文字
-- Card: 调整标签颜色为蓝色
 - Card: 调整 `--van-card-background` 变量的默认值为 `--van-background`
 - Card: 调整 `--van-card-price-color` 变量的默认值为 `--van-text-color`
 - Card: 调整 `--van-card-desc-color` 变量的默认值为 `--van-text-color-2`
-- ContactEdit: 提交按钮调整为 `primary` 类型
-- ContactList: 提交按钮调整为 `primary` 类型
 - ContactList: 重命名 `--van-contact-list-item-radio-icon-color` 为 `--van-contact-list-radio-color`
 - CouponList: 重命名 `--van-coupon-corner-checkbox-icon-color` 为 `--van-coupon-checkbox-color`
-- CouponList: 调整 `--van-coupon-amount-color` 变量的默认值为 `--van-primary-color`
-- CouponList: 提交按钮调整为 `primary` 类型
 - Field: 调整 `--van-field-label-color` 变量的默认值为 `--van-text-color`
 - Switch: 移除 `--van-switch-border` 变量
 - Switch: 调整 `--van-switch-size` 变量的默认值为 `26px`

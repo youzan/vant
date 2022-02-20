@@ -148,5 +148,5 @@ import type { AddressListProps, AddressListAddress } from 'vant';
 | --van-address-list-item-disabled-text-color | _var(--van-text-color-3)_ | - |
 | --van-address-list-item-font-size | _13px_ | - |
 | --van-address-list-item-line-height | _var(--van-line-height-sm)_ | - |
-| --van-address-list-item-radio-icon-color | _var(--van-danger-color)_ | - |
+| --van-address-list-radio-color | _var(--van-primary-color)_ | - |
 | --van-address-list-edit-icon-size | _20px_ | - |

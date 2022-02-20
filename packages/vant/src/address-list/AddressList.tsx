@@ -90,7 +90,7 @@ export default defineComponent({
         <Button
           round
           block
-          type="danger"
+          type="primary"
           text={props.addButtonText || t('add')}
           class={bem('add')}
           onClick={() => emit('add')}
