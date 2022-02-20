@@ -342,10 +342,16 @@ export default {
   setup() {
     const result = ref('');
     const showPicker = ref(false);
-    const columns = ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'];
+    const columns = [
+      { text: 'Delaware', value: 'Delaware' },
+      { text: 'Florida', value: 'Florida' },
+      { text: 'Georqia', value: 'Georqia' },
+      { text: 'Indiana', value: 'Indiana' },
+      { text: 'Maine', value: 'Maine' },
+    ];
 
     const onConfirm = (value) => {
-      result.value = value;
+      result.value = selectedOptions[0]?.text;
       showPicker.value = false;
     };
 

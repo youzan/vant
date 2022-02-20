@@ -1,28 +1,29 @@
 <script setup lang="ts">
 import VanField from '../../field';
 import VanPopup from '../../popup';
-import VanPicker from '../../picker';
+import VanPicker, { PickerConfirmEventParams } from '../../picker';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site/use-translate';
+import { basicColumns } from '../../picker/demo/data';
 
 const t = useTranslate({
   'zh-CN': {
     picker: '选择器',
     placeholder: '点击选择城市',
-    textColumns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+    textColumns: basicColumns['zh-CN'],
   },
   'en-US': {
     picker: 'Picker',
     placeholder: 'Select city',
-    textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+    textColumns: basicColumns['en-US'],
   },
 });
 
-const result = ref('');
+const result = ref<string | number>('');
 const showPicker = ref(false);
 
-const onConfirm = (value: string) => {
-  result.value = value;
+const onConfirm = ({ selectedOptions }: PickerConfirmEventParams) => {
+  result.value = selectedOptions[0]?.text || '';
   showPicker.value = false;
 };
 
