@@ -59,8 +59,8 @@ app.use(Card);
   thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 >
   <template #tags>
-    <van-tag plain type="danger">标签</van-tag>
-    <van-tag plain type="danger">标签</van-tag>
+    <van-tag plain type="primary">标签</van-tag>
+    <van-tag plain type="primary">标签</van-tag>
   </template>
   <template #footer>
     <van-button size="mini">按钮</van-button>

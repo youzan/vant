@@ -51,10 +51,10 @@ const imageURL = 'https://img.yzcdn.cn/vant/ipad.jpeg';
       :thumb="imageURL"
     >
       <template #tags>
-        <van-tag plain type="danger" style="margin-right: 5px">
+        <van-tag plain type="primary" style="margin-right: 5px">
           {{ t('tag') }}
         </van-tag>
-        <van-tag plain type="danger">{{ t('tag') }}</van-tag>
+        <van-tag plain type="primary">{{ t('tag') }}</van-tag>
       </template>
 
       <template #footer>

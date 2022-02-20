@@ -35,6 +35,7 @@
 - Button: 默认圆角大小从 `2px` 调整为 `4px`
 - Button: 默认按钮的边框颜色调整为 `--van-gray-4`
 - Button: 调整 `font-smoothing`，默认使用粗体文字
+- Card: 调整标签颜色为蓝色
 - Card: 调整 `--van-card-background` 变量的默认值为 `--van-background`
 - Card: 调整 `--van-card-price-color` 变量的默认值为 `--van-text-color`
 - Card: 调整 `--van-card-desc-color` 变量的默认值为 `--van-text-color-2`

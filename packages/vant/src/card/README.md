@@ -57,8 +57,8 @@ Use slot to custom content.
   thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
 >
   <template #tags>
-    <van-tag plain type="danger">Tag</van-tag>
-    <van-tag plain type="danger">Tag</van-tag>
+    <van-tag plain type="primary">Tag</van-tag>
+    <van-tag plain type="primary">Tag</van-tag>
   </template>
   <template #footer>
     <van-button size="mini">Button</van-button>

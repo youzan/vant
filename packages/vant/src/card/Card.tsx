@@ -54,7 +54,7 @@ export default defineComponent({
             {slots.tag ? (
               slots.tag()
             ) : (
-              <Tag mark type="danger">
+              <Tag mark type="primary">
                 {props.tag}
               </Tag>
             )}
