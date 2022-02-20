@@ -30,7 +30,7 @@ See in [Quickstart](#/en-US/quickstart).
 
 Vant 2 supports modern browsers and Android >= 4.0、iOS >= 8.0.
 
-Vant 3 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3).
+Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3).
 
 ## Links
 
