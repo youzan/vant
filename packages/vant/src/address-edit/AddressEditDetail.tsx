@@ -41,17 +41,6 @@ export default defineComponent({
       emit('input', `${express.address || ''} ${express.name || ''}`.trim());
     };
 
-    const renderSearchTitle = (express: AddressEditSearchItem) => {
-      if (express.name) {
-        const text = express.name.replace(
-          props.value!,
-          `<span class=${bem('keyword')}>${props.value}</span>`
-        );
-
-        return <div innerHTML={text} />;
-      }
-    };
-
     const renderSearchResult = () => {
       if (!showSearchResult()) {
         return;
@@ -60,12 +49,10 @@ export default defineComponent({
       const { searchResult } = props;
       return searchResult!.map((express) => (
         <Cell
-          v-slots={{
-            title: () => renderSearchTitle(express),
-          }}
           clickable
-          key={express.name + express.address}
+          key={(express.name || '') + (express.address || '')}
           icon="location-o"
+          title={express.name}
           label={express.address}
           class={bem('search-item')}
           border={false}

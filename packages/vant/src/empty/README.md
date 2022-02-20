@@ -57,7 +57,7 @@ Use the image prop to display different placeholder images.
 
 ```html
 <van-empty description="Description">
-  <van-button round type="danger" class="bottom-button">Button</van-button>
+  <van-button round type="primary" class="bottom-button">Button</van-button>
 </van-empty>
 
 <style>

@@ -104,7 +104,7 @@ app.use(CellGroup);
   <!-- Use the title slot to customize the title -->
   <template #title>
     <span class="custom-title">Title</span>
-    <van-tag type="danger">Tag</van-tag>
+    <van-tag type="primary">Tag</van-tag>
   </template>
 </van-cell>
 

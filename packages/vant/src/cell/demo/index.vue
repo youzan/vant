@@ -105,7 +105,7 @@ const t = useTranslate({
     <van-cell :value="t('content')" is-link>
       <template #title>
         <span class="custom-title">{{ t('cell') }}</span>
-        <van-tag type="danger">{{ t('tag') }}</van-tag>
+        <van-tag type="primary">{{ t('tag') }}</van-tag>
       </template>
     </van-cell>
 
