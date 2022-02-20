@@ -8,7 +8,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-address-item">
         <div class="van-cell van-cell--borderless">
-          <div class="van-cell__value van-cell__value--alone van-address-item__value">
+          <div class="van-cell__value van-address-item__value">
             <div role="radio"
                  class="van-radio"
                  tabindex="0"
@@ -41,7 +41,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-address-item">
         <div class="van-cell van-cell--borderless">
-          <div class="van-cell__value van-cell__value--alone van-address-item__value">
+          <div class="van-cell__value van-address-item__value">
             <div role="radio"
                  class="van-radio"
                  tabindex="0"
@@ -73,7 +73,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-address-item van-address-item--disabled">
       <div class="van-cell van-cell--borderless">
-        <div class="van-cell__value van-cell__value--alone van-address-item__value">
+        <div class="van-cell__value van-address-item__value">
           <div class="van-address-item__name">
             Tywin 1320000000
           </div>

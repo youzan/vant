@@ -109,4 +109,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-contact-card-padding | _var(--van-padding-md)_ | - |
 | --van-contact-card-add-icon-size | _40px_ | - |
 | --van-contact-card-add-icon-color | _var(--van-primary-color)_ | - |
-| --van-contact-card-value-line-height | _var(--van-line-height-md)_ | - |
+| --van-contact-card-title-line-height | _var(--van-line-height-md)_ | - |

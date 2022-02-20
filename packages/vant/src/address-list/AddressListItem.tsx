@@ -93,11 +93,11 @@ export default defineComponent({
         <div class={bem({ disabled })} onClick={onClick}>
           <Cell
             v-slots={{
-              value: renderContent,
+              title: renderContent,
               'right-icon': renderRightIcon,
             }}
             border={false}
-            valueClass={bem('value')}
+            titleClass={bem('title')}
           />
           {slots.bottom?.(extend({}, props.address, { disabled }))}
         </div>

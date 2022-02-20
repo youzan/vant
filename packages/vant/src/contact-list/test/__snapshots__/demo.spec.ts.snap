@@ -12,7 +12,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <i class="van-badge__wrapper van-icon van-icon-edit van-contact-list__edit">
         </i>
-        <div class="van-cell__value van-cell__value--alone van-contact-list__item-value">
+        <div class="van-cell__value van-contact-list__item-value">
           John Snow，13000000000
           <transition-stub class="van-contact-list__item-tag">
             <span class="van-tag van-tag--round van-tag--primary">
@@ -39,7 +39,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <i class="van-badge__wrapper van-icon van-icon-edit van-contact-list__edit">
         </i>
-        <div class="van-cell__value van-cell__value--alone van-contact-list__item-value">
+        <div class="van-cell__value van-contact-list__item-value">
           Ned Stark，1310000000
         </div>
         <div role="radio"

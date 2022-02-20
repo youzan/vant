@@ -3,7 +3,7 @@
 exports[`should emit failed event when validating failed 1`] = `
 <form class="van-form">
   <div class="van-cell van-field">
-    <div class="van-cell__value van-cell__value--alone van-field__value">
+    <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                id="van-field-input"
@@ -17,7 +17,7 @@ exports[`should emit failed event when validating failed 1`] = `
     </div>
   </div>
   <div class="van-cell van-field">
-    <div class="van-cell__value van-cell__value--alone van-field__value">
+    <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                id="van-field-input"

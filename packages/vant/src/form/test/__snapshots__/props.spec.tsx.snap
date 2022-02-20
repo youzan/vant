@@ -39,7 +39,7 @@ exports[`should render colon when using colon prop 1`] = `
 exports[`should render error-message-align prop correctly 1`] = `
 <form class="van-form">
   <div class="van-cell van-field">
-    <div class="van-cell__value van-cell__value--alone van-field__value">
+    <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                id="van-field-input"
@@ -57,7 +57,7 @@ exports[`should render error-message-align prop correctly 1`] = `
 exports[`should render input-align prop correctly 1`] = `
 <form class="van-form">
   <div class="van-cell van-field">
-    <div class="van-cell__value van-cell__value--alone van-field__value">
+    <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                id="van-field-input"
@@ -67,7 +67,7 @@ exports[`should render input-align prop correctly 1`] = `
     </div>
   </div>
   <div class="van-cell van-field">
-    <div class="van-cell__value van-cell__value--alone van-field__value">
+    <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <div class="van-field__control van-field__control--right van-field__control--custom">
           <div>
@@ -168,7 +168,7 @@ exports[`should render label-width prop correctly 1`] = `
 exports[`should validate first field when using validate-first prop 1`] = `
 <form class="van-form">
   <div class="van-cell van-field">
-    <div class="van-cell__value van-cell__value--alone van-field__value">
+    <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                id="van-field-input"
@@ -182,7 +182,7 @@ exports[`should validate first field when using validate-first prop 1`] = `
     </div>
   </div>
   <div class="van-cell van-field">
-    <div class="van-cell__value van-cell__value--alone van-field__value">
+    <div class="van-cell__value van-field__value">
       <div class="van-field__body">
         <input type="text"
                id="van-field-input"

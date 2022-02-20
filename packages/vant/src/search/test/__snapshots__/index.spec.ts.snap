@@ -33,7 +33,7 @@ exports[`should render left slot correctly 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-search">
         </i>
       </div>
-      <div class="van-cell__value van-cell__value--alone van-field__value">
+      <div class="van-cell__value van-field__value">
         <div class="van-field__body">
           <input type="search"
                  id="van-search-input"

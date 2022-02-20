@@ -76,14 +76,14 @@ export default defineComponent({
         <Cell
           v-slots={{
             icon: renderEditIcon,
-            value: renderContent,
+            title: renderContent,
             'right-icon': renderRightIcon,
           }}
           key={item.id}
           isLink
           center
           class={bem('item')}
-          valueClass={bem('item-value')}
+          titleClass={bem('item-title')}
           onClick={onClick}
         />
       );

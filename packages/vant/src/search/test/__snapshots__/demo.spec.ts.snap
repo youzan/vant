@@ -9,7 +9,7 @@ exports[`should render demo and match snapshot 1`] = `
           <i class="van-badge__wrapper van-icon van-icon-search">
           </i>
         </div>
-        <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="search"
                    id="van-search-input"
@@ -31,7 +31,7 @@ exports[`should render demo and match snapshot 1`] = `
             <i class="van-badge__wrapper van-icon van-icon-search">
             </i>
           </div>
-          <div class="van-cell__value van-cell__value--alone van-field__value">
+          <div class="van-cell__value van-field__value">
             <div class="van-field__body">
               <input type="search"
                      id="van-search-input"
@@ -59,7 +59,7 @@ exports[`should render demo and match snapshot 1`] = `
           <i class="van-badge__wrapper van-icon van-icon-search">
           </i>
         </div>
-        <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="search"
                    id="van-search-input"
@@ -80,7 +80,7 @@ exports[`should render demo and match snapshot 1`] = `
           <i class="van-badge__wrapper van-icon van-icon-search">
           </i>
         </div>
-        <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="search"
                    id="van-search-input"
@@ -104,7 +104,7 @@ exports[`should render demo and match snapshot 1`] = `
           <i class="van-badge__wrapper van-icon van-icon-search">
           </i>
         </div>
-        <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="search"
                    id="van-search-input"
@@ -130,7 +130,7 @@ exports[`should render demo and match snapshot 1`] = `
           <i class="van-badge__wrapper van-icon van-icon-search">
           </i>
         </div>
-        <div class="van-cell__value van-cell__value--alone van-field__value">
+        <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <input type="search"
                    id="van-search-input"
