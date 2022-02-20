@@ -181,7 +181,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-coupon-disabled-text-color | _var(--van-text-color-2)_ | - |
 | --van-coupon-description-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
 | --van-coupon-description-border-color | _var(--van-border-color)_ | - |
-| --van-coupon-corner-checkbox-icon-color | _var(--van-danger-color)_ | - |
+| --van-coupon-checkbox-color | _var(--van-danger-color)_ | - |
 | --van-coupon-list-background | _var(--van-background)_ | - |
 | --van-coupon-list-field-padding | _5px 0 5px var(--van-padding-md)_ | - |
 | --van-coupon-list-exchange-button-height | _32px_ | - |

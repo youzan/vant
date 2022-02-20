@@ -121,7 +121,7 @@ export default defineComponent({
             />
             <Button
               plain
-              type="danger"
+              type="primary"
               class={bem('exchange')}
               text={props.exchangeButtonText || t('exchange')}
               loading={props.exchangeButtonLoading}
@@ -215,7 +215,7 @@ export default defineComponent({
             v-show={props.showCloseButton}
             round
             block
-            type="danger"
+            type="primary"
             class={bem('close')}
             text={props.closeButtonText || t('close')}
             onClick={() => emit('change', -1)}

@@ -10,14 +10,14 @@ body {
   --van-coupon-radius: var(--van-radius-lg);
   --van-coupon-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   --van-coupon-head-width: 96px;
-  --van-coupon-amount-color: var(--van-danger-color);
+  --van-coupon-amount-color: var(--van-primary-color);
   --van-coupon-amount-font-size: 30px;
   --van-coupon-currency-font-size: 40%;
   --van-coupon-name-font-size: var(--van-font-size-md);
   --van-coupon-disabled-text-color: var(--van-text-color-2);
   --van-coupon-description-padding: var(--van-padding-xs) var(--van-padding-md);
   --van-coupon-description-border-color: var(--van-border-color);
-  --van-coupon-corner-checkbox-icon-color: var(--van-danger-color);
+  --van-coupon-checkbox-color: var(--van-primary-color);
 }
 
 .van-coupon {
@@ -62,7 +62,6 @@ body {
     .ellipsis();
 
     span {
-      font-weight: normal;
       font-size: var(--van-coupon-currency-font-size);
 
       &:not(:empty) {
@@ -85,7 +84,7 @@ body {
 
   &__name {
     margin-bottom: 10px;
-    font-weight: bold;
+    font-weight: var(--van-font-bold);
     font-size: var(--van-coupon-name-font-size);
     line-height: var(--van-line-height-md);
   }
@@ -101,8 +100,8 @@ body {
     bottom: 0;
 
     .van-checkbox__icon--checked .van-icon {
-      background-color: var(--van-coupon-corner-checkbox-icon-color);
-      border-color: var(--van-coupon-corner-checkbox-icon-color);
+      background-color: var(--van-coupon-checkbox-color);
+      border-color: var(--van-coupon-checkbox-color);
     }
   }
 

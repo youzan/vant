@@ -41,6 +41,9 @@
 - ContactEdit: 提交按钮调整为 `primary` 类型
 - ContactList: 提交按钮调整为 `primary` 类型
 - ContactList: 重命名 `--van-contact-list-item-radio-icon-color` 为 `--van-contact-list-radio-color`
+- CouponList: 重命名 `--van-coupon-corner-checkbox-icon-color` 为 `--van-coupon-checkbox-color`
+- CouponList: 调整 `--van-coupon-amount-color` 变量的默认值为 `--van-primary-color`
+- CouponList: 提交按钮调整为 `primary` 类型
 - Field: 调整 `--van-field-label-color` 变量的默认值为 `--van-text-color`
 - Switch: 移除 `--van-switch-border` 变量
 - Switch: 调整 `--van-switch-size` 变量的默认值为 `26px`
