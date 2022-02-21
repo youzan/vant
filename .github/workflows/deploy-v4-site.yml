@@ -1,4 +1,4 @@
-name: Deploy V3 Site
+name: Deploy V4 Site
 
 on:
   push:
