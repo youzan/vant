@@ -19,9 +19,9 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
-### unreleased
+### 4.0.0-alpha.0
 
-`2022-01-17`
+`2022-02-21`
 
 **Feature**
 

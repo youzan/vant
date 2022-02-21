@@ -7,7 +7,7 @@ export default {
     packageManager: 'pnpm',
     site: {
       publicPath:
-        (typeof window === 'undefined' && process.env.PUBLIC_PATH) || '/vant/',
+        (typeof window === 'undefined' && process.env.PUBLIC_PATH) || '/vant/v4',
     },
     vetur: {
       tagPrefix: 'van-',
