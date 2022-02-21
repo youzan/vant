@@ -24,6 +24,9 @@
     "./lib/": "./lib/",
     "./package.json": "./package.json"
   },
+  "npm": {
+    "tag": "next"
+  },
   "files": [
     "es",
     "lib",
