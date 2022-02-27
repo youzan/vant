@@ -29,11 +29,20 @@
 
 ### DatetimePicker 组件重构
 
-DatetimePicker 组件被拆分为了三个组件：
+DatetimePicker 组件被拆分为：
 
 - TimePicker: 用于时间选择。
 - DatePicker: 用于日期选择。
-- DatetimePicker: 用于同时选择日期和时间。
+
+同时，这两个组件也基于新版 Picker 组件进行重构，并优化了部分 API 设计。
+
+#### 主要变更
+
+- `v-model` 绑定的值调整为数组格式
+- 新增 `columns-type` 属性，用于控制选项类型和顺序
+- 移除 `type` 属性和 `columns-order` 属性
+- 移除 `getPicker` 方法
+- 调整 `confirm`、`cancel`、`change` 事件的参数，与 Picker 组件保持一致
 
 ### Area 组件重构
 
@@ -44,8 +53,8 @@ Area 组件是基于 Picker 组件进行封装的，因此本次升级也对 Are
 - 支持通过 `v-model` 绑定当前选中的值
 - 移除 `reset` 方法，现在可以通过修改 `v-model` 来进行重置
 - 移除 `is-oversea-code` 属性
-- 调整所有事件的参数，与 Picker 组件保持一致
-- 重命名 `value` 属性我 `modelValue`
+- 调整 `confirm`、`cancel`、`change` 事件的参数，与 Picker 组件保持一致
+- 重命名 `value` 属性为 `modelValue`
 - 重命名 `item-height` 属性为 `option-height`
 - 重命名 `visible-item-count` 属性为 `visible-option-num`
 
