@@ -18,6 +18,7 @@ export default {
     versions: [
       { label: 'v1', link: '/vant/v1/' },
       { label: 'v2', link: '/vant/v2/' },
+      { label: 'v4', link: '/vant/v4/' },
     ],
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
