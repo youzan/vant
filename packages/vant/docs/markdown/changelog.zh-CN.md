@@ -23,6 +23,10 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 `2022-02-21`
 
+**不兼容更新**
+
+参见 [从 v3 升级到 v4](#/zh-CN/migrate-from-v3)。
+
 **Feature**
 
 - ConfigProvider: 新增 `theme` 属性，用于开启深色模式
