@@ -20,8 +20,10 @@
     },
     "./es": "./es/index.js",
     "./lib": "./lib/vant.cjs.js",
-    "./es/": "./es/",
-    "./lib/": "./lib/",
+    "./es/": "./es/*.js",
+    "./es/*.js": "./es/*.js",
+    "./lib/": "./lib/*.js",
+    "./lib/*.js": "./lib/*.js",
     "./package.json": "./package.json"
   },
   "files": [
