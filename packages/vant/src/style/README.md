@@ -49,11 +49,15 @@ Add 1px border under the Retina screen for the element, based on a pseudo elemen
 <div class="van-hairline--surround"></div>
 ```
 
-### Safe Area Bottom
+### Safe Area
 
-Enable safe area inset bottom.
+Enable safe area.
 
 ```html
+<!-- top -->
+<div class="van-safe-area-top"></div>
+
+<!-- bottom -->
 <div class="van-safe-area-bottom"></div>
 ```
 
