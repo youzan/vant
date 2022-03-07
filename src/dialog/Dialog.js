@@ -99,7 +99,7 @@ export default createComponent({
       this.$emit('opened');
 
       this.$nextTick(() => {
-        this.$refs.dialog.focus();
+        this.$refs.dialog?.focus();
       });
     },
 
