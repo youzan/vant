@@ -1,4 +1,4 @@
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, noop } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 import { PopupMixin } from '../mixins/popup';
 import Button from '../button';
@@ -109,6 +109,21 @@ export default createComponent({
 
     onKeydown(event) {
       if (event.key === 'Escape' || event.key === 'Enter') {
+        // skip keyboard events of child elements
+        if (event.target !== this.$refs.dialog) {
+          return;
+        }
+
+        const onEventType = {
+          Enter: this.showConfirmButton
+            ? () => this.handleAction('confirm')
+            : noop,
+          Escape: this.showCancelButton
+            ? () => this.handleAction('cancel')
+            : noop,
+        };
+
+        onEventType[event.key]();
         this.$emit('keydown', event);
       }
     },
