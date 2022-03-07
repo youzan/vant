@@ -97,10 +97,20 @@ export default createComponent({
 
     onOpened() {
       this.$emit('opened');
+
+      this.$nextTick(() => {
+        this.$refs.dialog.focus();
+      });
     },
 
     onClosed() {
       this.$emit('closed');
+    },
+
+    onKeydown(event) {
+      if (event.key === 'Escape' || event.key === 'Enter') {
+        this.$emit('keydown', event);
+      }
     },
 
     genRoundButtons() {
@@ -221,6 +231,9 @@ export default createComponent({
           aria-labelledby={this.title || message}
           class={[bem([this.theme]), this.className]}
           style={{ width: addUnit(this.width) }}
+          ref="dialog"
+          tabIndex={0}
+          onKeydown={this.onKeydown}
         >
           {Title}
           {this.genContent(title, messageSlot)}
