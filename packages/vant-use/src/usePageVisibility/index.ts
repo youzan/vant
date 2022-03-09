@@ -1,6 +1,8 @@
 import { ref, Ref } from 'vue';
 import { inBrowser } from '../utils';
 
+type VisibilityState = "hidden" | "visible";
+
 let visibility: Ref<VisibilityState>;
 
 export function usePageVisibility() {
