@@ -2,7 +2,7 @@
   title: 时间选择器
   labels:
     - Selector
-  icon: date-time-picker
+  icon: time-picker
   attrs:
     - name: label-field
       title: 左侧标题

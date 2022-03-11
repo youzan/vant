@@ -83,6 +83,11 @@ export default {
         successDuration: 500,
         pullDistance: 50,
     },
+    data() {
+      return {
+        refreshing: false,
+      }
+    },
     getDataSourceOptions() {
         return {
             viewMode: 'more',
@@ -97,11 +102,23 @@ export default {
     methods: {
         async refresh() {
             this.refreshing = true;
-            this.currentDataSource.page({
+            const paging = {
                 size: this.currentDataSource.paging.size,
+                oldSize: this.currentDataSource.paging.size,
                 number: 1,
-            });
-            await this.reload();
+                oldNumber: this.currentDataSource.paging.number,
+            };
+            // eslint-disable-next-line no-console
+            console.log(JSON.stringify(paging));
+            try {
+                this.currentDataSource.page(paging);
+                await this.load();
+                this.$emit('page', paging, this);
+                this.$emit('update:page-number', 1, this);
+            } catch (error) {
+                // eslint-disable-next-line no-console
+                console.log(error);
+            }
             this.refreshing = false;
         },
     },
