@@ -219,7 +219,7 @@ export default defineComponent({
         <div
           ref={root}
           class={bem()}
-          onClick={getClickHandler('cell')}
+          onClick={getClickHandler('cell', lockClick)}
           onTouchstart={onTouchStart}
           onTouchmove={onTouchMove}
           onTouchend={onTouchEnd}

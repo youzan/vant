@@ -405,6 +405,16 @@ fieldRef.value?.focus();
 
 HTML 原生的 `type="number"` 属性在 iOS 和 Android 系统上都存在一定问题，比如 maxlength 属性不生效、无法获取到完整的输入内容等。因此设置 type 为 `number` 时，Field 不会使用原生的 `type="number"` 属性，而是用现代浏览器支持的 [inputmode 属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/inputmode)来控制输入键盘的类型。
 
+### 为什么 v-model 绑定的值被更新为 string 类型？
+
+Field 组件内部会将传入的 v-model 格式化为 string 类型，便于组件内部进行处理。
+
+如果你希望在 v-model 上绑定 number 类型，可以使用 Vue 提供的 [.number 修饰符](https://vuejs.org/guide/essentials/forms.html#lazy)。
+
+```html
+<van-field v-model.number="value" type="tel" />
+```
+
 ### 在桌面端点击清除按钮无效？
 
 清除按钮监听是的移动端 Touch 事件，参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。

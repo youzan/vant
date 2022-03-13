@@ -125,6 +125,7 @@ Use `teleport` prop to specify mount location.
 | transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | transition-appear | Whether to apply transition on initial render | _boolean_ | `false` |
 | teleport | Specifies a target element where Popup will be mounted | _string \| Element_ | - |
+| safe-area-inset-top | Whether to enable top safe area adaptation | _boolean_ | `false` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
 
 ### Events

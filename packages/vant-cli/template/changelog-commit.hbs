@@ -5,7 +5,31 @@
   {{~header}}
 {{~/if}}
 {{#if references~}}
-  {{~#each references}} [{{~this.repository}}#{{this.issue}}]({{~@root.repoUrl}}/{{~@root.issue}}/{{this.issue}}){{/each}}
-{{~else}} [{{shortHash}}]({{~@root.repoUrl}}/{{~@root.commit}}/{{hash}})
+  {{~#each references}} [{{~this.repository}}#{{this.issue}}](
+  {{~#if @root.repository}}
+    {{~#if @root.host}}
+      {{~@root.host}}/
+    {{~/if}}
+    {{~#if @root.owner}}
+      {{~@root.owner}}/
+    {{~/if}}
+    {{~@root.repository}}
+  {{~else}}
+    {{~@root.repoUrl}}
+  {{~/if}}
+/{{~@root.issue}}/{{this.issue}}){{/each}}
+{{~else}} [{{shortHash}}](
+{{~#if @root.repository}}
+  {{~#if @root.host}}
+    {{~@root.host}}/
+  {{~/if}}
+  {{~#if @root.owner}}
+    {{~@root.owner}}/
+  {{~/if}}
+  {{~@root.repository}}
+{{~else}}
+  {{~@root.repoUrl}}
+{{~/if}}
+/{{~@root.commit}}/{{hash}})
 {{~/if}}
 

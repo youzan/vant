@@ -120,7 +120,7 @@ export default defineComponent({
 
       if (isDef(message) && message !== '') {
         return type === 'html' ? (
-          <div class={bem('text')} innerHTML={String(message)} />
+          <div key={0} class={bem('text')} innerHTML={String(message)} />
         ) : (
           <div class={bem('text')}>{message}</div>
         );

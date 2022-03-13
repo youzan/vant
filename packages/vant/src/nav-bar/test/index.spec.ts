@@ -74,7 +74,7 @@ test('should have safe-area-inset-top class when using safe-area-inset-top prop'
     },
   });
 
-  expect(wrapper.classes()).toContain('van-nav-bar--safe-area-inset-top');
+  expect(wrapper.classes()).toContain('van-safe-area-top');
 });
 
 test('should change z-index when using z-index prop', () => {

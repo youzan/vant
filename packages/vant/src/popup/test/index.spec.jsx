@@ -259,3 +259,27 @@ test('should not call before-close when show prop becomes false', async () => {
   await wrapper.setProps({ show: false });
   expect(beforeClose).toHaveBeenCalledTimes(0);
 });
+
+test('should have safe-area-inset-top class when using safe-area-inset-top prop', () => {
+  const wrapper = mount(Popup, {
+    props: {
+      show: true,
+      safeAreaInsetTop: true,
+    },
+  });
+
+  expect(wrapper.find('.van-popup').classes()).toContain('van-safe-area-top');
+});
+
+test('should have safe-area-inset-bottom class when using safe-area-inset-bottom prop', () => {
+  const wrapper = mount(Popup, {
+    props: {
+      show: true,
+      safeAreaInsetBottom: true,
+    },
+  });
+
+  expect(wrapper.find('.van-popup').classes()).toContain(
+    'van-safe-area-bottom'
+  );
+});

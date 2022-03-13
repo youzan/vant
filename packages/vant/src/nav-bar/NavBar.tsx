@@ -82,8 +82,11 @@ export default defineComponent({
           ref={navBarRef}
           style={style}
           class={[
-            bem({ fixed, 'safe-area-inset-top': props.safeAreaInsetTop }),
-            { [BORDER_BOTTOM]: border },
+            bem({ fixed }),
+            {
+              [BORDER_BOTTOM]: border,
+              'van-safe-area-top': props.safeAreaInsetTop,
+            },
           ]}
         >
           <div class={bem('content')}>

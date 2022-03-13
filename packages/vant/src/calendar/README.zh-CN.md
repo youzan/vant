@@ -283,6 +283,7 @@ export default {
 | round | 是否显示圆角弹窗 | _boolean_ | `true` |
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
+| safe-area-inset-top | 是否开启[顶部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `false` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
 
@@ -414,6 +415,28 @@ calendarRef.value?.reset();
 | --van-calendar-confirm-button-margin | _7px 0_ | - |
 
 ## 常见问题
+
+### 如何在 formatter 中使用异步返回的数据？
+
+如果需要在 formatter 中使用异步返回的数据，可以使用计算属性动态创建 formatter 函数，示例如下：
+
+```js
+const asyncData = ref();
+
+const formatter = computed(() => {
+  if (!asyncData.value) {
+    return (day) => day;
+  }
+  return (day) => {
+    day.bottomInfo = asyncData.value;
+    return day;
+  };
+});
+
+setTimeout(() => {
+  asyncData.value = '后端文案';
+}, 3000);
+```
 
 ### 在 iOS 系统上初始化组件失败？
 

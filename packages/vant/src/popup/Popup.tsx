@@ -48,6 +48,7 @@ const popupProps = extend({}, popupSharedProps, {
   iconPrefix: String,
   closeOnPopstate: Boolean,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
+  safeAreaInsetTop: Boolean,
   safeAreaInsetBottom: Boolean,
 });
 
@@ -177,7 +178,7 @@ export default defineComponent({
     const onKeydown = (event: KeyboardEvent) => emit('keydown', event);
 
     const renderPopup = lazyRender(() => {
-      const { round, position, safeAreaInsetBottom } = props;
+      const { round, position, safeAreaInsetTop, safeAreaInsetBottom } = props;
 
       return (
         <div
@@ -189,7 +190,10 @@ export default defineComponent({
               round,
               [position]: position,
             }),
-            { 'van-safe-area-bottom': safeAreaInsetBottom },
+            {
+              'van-safe-area-top': safeAreaInsetTop,
+              'van-safe-area-bottom': safeAreaInsetBottom,
+            },
           ]}
           onKeydown={onKeydown}
           {...attrs}

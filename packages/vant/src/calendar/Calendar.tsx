@@ -79,6 +79,7 @@ const calendarProps = {
   showRangePrompt: truthProp,
   confirmDisabledText: String,
   closeOnClickOverlay: truthProp,
+  safeAreaInsetTop: Boolean,
   safeAreaInsetBottom: truthProp,
   minDate: {
     type: Date,
@@ -563,6 +564,7 @@ export default defineComponent({
             closeable={props.showTitle || props.showSubtitle}
             teleport={props.teleport}
             closeOnPopstate={props.closeOnPopstate}
+            safeAreaInsetTop={props.safeAreaInsetTop}
             closeOnClickOverlay={props.closeOnClickOverlay}
             onUpdate:show={updateShow}
           />

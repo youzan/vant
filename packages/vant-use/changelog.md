@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.6
+
+- Fix missing VisibilityState type
+
 ## v1.3.5
 
 - Fix useChildren missing subTree when flattening vnodes
