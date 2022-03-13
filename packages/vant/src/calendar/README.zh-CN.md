@@ -416,6 +416,28 @@ calendarRef.value?.reset();
 
 ## 常见问题
 
+### 如何在 formatter 中使用异步返回的数据？
+
+如果需要在 formatter 中使用异步返回的数据，可以使用计算属性动态创建 formatter 函数，示例如下：
+
+```js
+const asyncData = ref();
+
+const formatter = computed(() => {
+  if (!asyncData.value) {
+    return (day) => day;
+  }
+  return (day) => {
+    day.bottomInfo = asyncData.value;
+    return day;
+  };
+});
+
+setTimeout(() => {
+  asyncData.value = '后端文案';
+}, 3000);
+```
+
 ### 在 iOS 系统上初始化组件失败？
 
 如果你遇到了在 iOS 上无法渲染组件的问题，请确认在创建 Date 对象时没有使用`new Date('2020-01-01')`这样的写法，iOS 不支持以中划线分隔的日期格式，正确写法是`new Date('2020/01/01')`。
