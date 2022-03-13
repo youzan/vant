@@ -19,6 +19,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.4.6](https://github.com/youzan/vant/compare/v3.4.5...v3.4.6)
+
+`2022-03-13`
+
+**Feature**
+
+- Style: 新增 van-safe-area-top 样式类 [#10356](https://github.com/youzan/vant/issues/10356)
+- Calendar: 新增 safe-area-inset-top 属性 [#10358](https://github.com/youzan/vant/issues/10358)
+- Popup: 新增 safe-area-inset-top 属性 [#10357](https://github.com/youzan/vant/issues/10357)
+
+**Bug Fixes**
+
+- Skeleton: 修复个别情况下出现 non-props attributes warning 的问题 [#10384](https://github.com/youzan/vant/issues/10384)
+- SwipeCell: 修复阻止滑动事件冒泡无效的问题 [#10319](https://github.com/youzan/vant/issues/10319)
+- Toast: 修复切换 type 时 message 不显示的问题 [#10311](https://github.com/youzan/vant/issues/10311)
+- 修复提示 VisibilityState 类型不存在的问题 [#10370](https://github.com/youzan/vant/issues/10370)
+
 ### [v3.4.5](https://github.com/compare/v3.4.3...v3.4.5)
 
 `2022-02-14`

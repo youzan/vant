@@ -19,6 +19,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.4.6](https://github.com/youzan/vant/compare/v3.4.5...v3.4.6)
+
+`2022-03-13`
+
+**Feature**
+
+- Style: add van-safe-area-top class [#10356](https://github.com/youzan/vant/issues/10356)
+- Calendar: add safe-area-inset-top prop [#10358](https://github.com/youzan/vant/issues/10358)
+- Popup: add safe-area-inset-top prop [#10357](https://github.com/youzan/vant/issues/10357)
+
+**Bug Fixes**
+
+- Skeleton: fix non-props attributes warning [#10384](https://github.com/youzan/vant/issues/10384)
+- SwipeCell: cell should stopPropagation when lockClick is true [#10319](https://github.com/youzan/vant/issues/10319)
+- Toast: failed to render message after changing type [#10311](https://github.com/youzan/vant/issues/10311)
+- fix missing VisibilityState after typescript 4.6.0 [#10370](https://github.com/youzan/vant/issues/10370)
+
 ### [v3.4.5](https://github.com/compare/v3.4.3...v3.4.5)
 
 `2022-02-14`
