@@ -38,9 +38,11 @@ export type SkeletonProps = ExtractPropTypes<typeof skeletonProps>;
 export default defineComponent({
   name,
 
+  inheritAttrs: false,
+
   props: skeletonProps,
 
-  setup(props, { slots }) {
+  setup(props, { slots, attrs }) {
     const renderAvatar = () => {
       if (props.avatar) {
         return (
@@ -90,7 +92,10 @@ export default defineComponent({
       }
 
       return (
-        <div class={bem({ animate: props.animate, round: props.round })}>
+        <div
+          class={bem({ animate: props.animate, round: props.round })}
+          {...attrs}
+        >
           {renderAvatar()}
           <div class={bem('content')}>
             {renderTitle()}
