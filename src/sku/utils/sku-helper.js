@@ -77,10 +77,10 @@ export const getSkuComb = (skuList, selectedSku) => {
 export const getSelectedSkuValues = (skuTree, selectedSku) => {
   const normalizedTree = normalizeSkuTree(skuTree);
   return Object.keys(selectedSku).reduce((selectedValues, skuKeyStr) => {
-    const skuValues = normalizedTree[skuKeyStr];
+    const skuValues = normalizedTree[skuKeyStr] || [];
     const skuValueId = selectedSku[skuKeyStr];
 
-    if (skuValueId !== UNSELECTED_SKU_VALUE_ID) {
+    if (skuValueId !== UNSELECTED_SKU_VALUE_ID && skuValues.length > 0) {
       const skuValue = skuValues.filter((value) => value.id === skuValueId)[0];
       skuValue && selectedValues.push(skuValue);
     }
