@@ -395,4 +395,12 @@ datetimePickerRef.value?.getPicker();
 
 ### 是否有年份或月份选择器？
 
-如果仅需要选择年份或者月份，建议直接使用 [Picker](#/zh-CN/picker) 组件。
+如果仅需要选择年份或者月份，建议直接使用 [Picker 选择器](#/zh-CN/picker) 组件。
+
+你也可以升级到 Vant 4，并使用 [DatePicker 日期选择](https://vant-contrib.gitee.io/vant/v4/#/zh-CN/date-picker) 组件。
+
+### 是否支持选择秒？
+
+Vant 3 中的 DatetimePicker 组件不支持选择秒。
+
+请升级到 Vant 4，并使用 [TimePicker 时间选择](https://vant-contrib.gitee.io/vant/v4/#/zh-CN/time-picker) 组件。
