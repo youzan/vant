@@ -7,7 +7,10 @@ export default createComponent({
   mixins: [ParentMixin('vanRow')],
 
   props: {
-    type: String,
+    type: {
+      type: String,
+      default: 'flex',
+    },
     align: String,
     justify: String,
     tag: {
