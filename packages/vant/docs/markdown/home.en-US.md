@@ -18,6 +18,7 @@
 - 🍭 Support Tree Shaking
 - 🍭 Support Custom Theme
 - 🍭 Support Accessibility (still improving)
+- 🍭 Support Dark Mode (Requires upgrade to [Vant 4](https://vant-contrib.gitee.io/vant/v4/#/en-US/config-provider))
 - 🍭 Support i18n
 - 🌍 Support SSR
 
@@ -29,7 +30,7 @@ See in [Quickstart](#/en-US/quickstart).
 
 Vant 2 supports modern browsers and Android >= 4.0、iOS >= 8.0.
 
-Vant 3 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3).
+Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3).
 
 ## Links
 
