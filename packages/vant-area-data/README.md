@@ -1,6 +1,6 @@
 # Vant Area Data
 
-省市区数据，适用于 Vant Area 组件。
+中国省市区数据，适用于 Vant Area 组件。
 
 ## 安装
 
@@ -20,3 +20,7 @@ pnpm add @vant/area-data
 ```ts
 import { areaList } from '@vant/area-data';
 ```
+
+## 数据更新
+
+中国的行政区划每年都会有变动，如果发现省市区数据未及时更新，欢迎提 Pull Request 帮助我们更新。
