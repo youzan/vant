@@ -38,6 +38,7 @@ export default createComponent({
     },
     textField: String,
     valueField: String,
+    childrenField: String,
     closeOnPopstate: {
       type: Boolean,
       default: true,
@@ -65,13 +66,13 @@ export default createComponent({
       if(typeof this.fieldNamesp === 'object') return this.fieldNamesp;
     },
     textKey() {
-      return this.fieldNames?.text || this.textField ||  'text';
+      return this.textField || this.fieldNames?.text ||  'text';
     },
     valueKey() {
-      return this.fieldNames?.value || this.valueField || 'value';
+      return this.valueField || this.fieldNames?.value ||  'value';
     },
     childrenKey() {
-      return this.fieldNames?.children || 'children';
+      return this.childrenField || this.fieldNames?.children || 'children';
     },
   },
 

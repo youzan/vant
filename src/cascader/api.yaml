@@ -31,11 +31,27 @@
       type: string
       default: 请选择
       description: 未选中时的提示文案
+    - name: text-field
+      title: 文本字段
+      type: string
+      default: text
+      description: 文本字段
+    - name: value-field
+      title: 值字段
+      type: string
+      default: value
+      description: 值字段
+    - name: children-field
+      title: 子级字段
+      type: string
+      default: children
+      description: 子级字段
     - name: field-namesp
       title: 自定义 options 结构中的字段
       type: string, object
       default: "{'text':'','value':'','children':'children'}"
       description: 自定义 options 结构中的字段
+      advanced: true
     - name: close-on-click-overlay
       title: 点击遮罩层后关闭
       type: boolean
