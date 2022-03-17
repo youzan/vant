@@ -219,9 +219,9 @@ export default defineComponent({
         if (scrollTop === offsetHeight - scrollParentRect.height) {
           onScroll();
           return;
-        } 
-          match.$el.scrollIntoView();
-        
+        }
+
+        match.$el.scrollIntoView();
 
         if (props.sticky && props.stickyOffsetTop) {
           setRootScrollTop(getRootScrollTop() - props.stickyOffsetTop);
