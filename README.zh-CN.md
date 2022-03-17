@@ -41,6 +41,7 @@ Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源�
 - 🍭 支持主题定制，内置 700+ 个主题变量
 - 🍭 支持按需引入和 Tree Shaking
 - 🍭 支持无障碍访问（持续改进中）
+- 🍭 支持深色模式（需要升级至 [Vant 4](https://vant-contrib.gitee.io/vant/v4/#/zh-CN/config-provider)）
 - 🍭 支持服务器端渲染
 - 🌍 支持国际化和语言包定制
 
@@ -83,7 +84,7 @@ vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手
 
 Vant 2 支持现代浏览器以及 Android >= 4.0、iOS >= 8.0。
 
-Vant 3 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一致）。
+Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一致）。
 
 ## 官方生态
 
