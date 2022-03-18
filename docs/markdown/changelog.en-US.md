@@ -16,6 +16,18 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.45](https://github.com/youzan/vant/compare/v2.12.44...v2.12.45)
+
+`2022-03-18`
+
+**Bug Fixes**
+
+- Sku: Fixed a syntax error when skuTree is an empty array in special cases [#10390](https://github.com/youzan/vant/issues/10390)
+
+**Feature**
+
+- Dialog: support keyboard events [#10359](https://github.com/youzan/vant/issues/10359)
+
 ### [v2.12.44](https://github.com/youzan/vant/compare/v2.12.43...v2.12.44)
 
 `2022-02-14`

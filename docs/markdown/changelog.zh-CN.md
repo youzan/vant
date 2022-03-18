@@ -22,6 +22,18 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.45](https://github.com/youzan/vant/compare/v2.12.44...v2.12.45)
+
+`2022-03-18`
+
+**Bug Fixes**
+
+- Sku: 修复特殊情况下 skuTree 为空数组时导致的语法报错问题 [#10390](https://github.com/youzan/vant/issues/10390)
+
+**Feature**
+
+- Dialog: 添加 entry/esc 键盘事件 [#10359](https://github.com/youzan/vant/issues/10359)
+
 ### [v2.12.44](https://github.com/youzan/vant/compare/v2.12.43...v2.12.44)
 
 `2022-02-14`
