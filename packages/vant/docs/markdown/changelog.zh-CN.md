@@ -19,6 +19,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-alpha.1](https://github.com/youzan/vant/compare/v3.4.6...v4.0.0-alpha.1)
+
+`2022-03-19`
+
+**Feature**
+
+- @vant/area-data: 新增南京市江北新区 [#10410](https://github.com/youzan/vant/issues/10410)
+- Locale: 新增老挝语 [#10388](https://github.com/youzan/vant/issues/10388)
+
+**Bug Fixes**
+
+- Calendar: 修复暗色模式下标题颜色 [#10403](https://github.com/youzan/vant/issues/10403)
+- Picker: 修复暗色模式下标题颜色 [#10403](https://github.com/youzan/vant/issues/10403)
+- ConfigProvider: 修复默认设置暗色模式不生效的问题 [#10413](https://github.com/youzan/vant/issues/10413)
+- DatePicker: 修复更新 v-model 不生效的问题 [#10415](https://github.com/youzan/vant/issues/10415)
+- Dialog: 修复暗色模式下标题和文本颜色 [#10379](https://github.com/youzan/vant/issues/10379)
+- IndexBar: 修复底部索引无法高亮的问题 [#10404](https://github.com/youzan/vant/issues/10404)
+
 ### 4.0.0-alpha.0
 
 `2022-02-21`

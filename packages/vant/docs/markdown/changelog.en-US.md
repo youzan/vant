@@ -19,4 +19,20 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
-TODO
+### [v4.0.0-alpha.1](https://github.com/youzan/vant/compare/v3.4.6...v4.0.0-alpha.1)
+
+`2022-03-19`
+
+**Feature**
+
+- @vant/area-data: update counties of NanJing [#10410](https://github.com/youzan/vant/issues/10410)
+- Locale: add la-LA.ts [#10388](https://github.com/youzan/vant/issues/10388)
+
+**Bug Fixes**
+
+- Calendar: fix title color in dark mode [#10403](https://github.com/youzan/vant/issues/10403)
+- Picker: fix title color in dark mode [#10403](https://github.com/youzan/vant/issues/10403)
+- ConfigProvider: dark mode not work as default value [#10413](https://github.com/youzan/vant/issues/10413)
+- DatePicker: failed to update model value [#10415](https://github.com/youzan/vant/issues/10415)
+- Dialog: fix title and message color in dark mode [#10379](https://github.com/youzan/vant/issues/10379)
+- IndexBar: allow active bottom anchor [#10404](https://github.com/youzan/vant/issues/10404)
