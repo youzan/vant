@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import WithPopup from './WithPopup.vue';
 import VanPicker, {
   PickerChangeEventParams,
@@ -17,6 +18,7 @@ import { useTranslate } from '../../../docs/site/use-translate';
 const t = useTranslate({
   'zh-CN': {
     cascade: '级联选择',
+    modelValue: '双向绑定',
     showToolbar: '展示顶部栏',
     dateColumns: dateColumns['zh-CN'],
     basicColumns: basicColumns['zh-CN'],
@@ -31,6 +33,7 @@ const t = useTranslate({
   },
   'en-US': {
     cascade: 'Cascade',
+    modelValue: 'v-model',
     showToolbar: 'Show Toolbar',
     dateColumns: dateColumns['en-US'],
     basicColumns: basicColumns['en-US'],
@@ -52,6 +55,8 @@ const customFieldName = {
   children: 'cities',
 };
 
+const selectedValues = ref(['Wenzhou']);
+
 const onChange1 = ({ selectedValues }: PickerChangeEventParams) => {
   Toast(t('toastContent', selectedValues.join(',')));
 };
@@ -69,11 +74,20 @@ const onCancel = () => Toast(t('cancel'));
       :title="t('title')"
       :columns="t('basicColumns')"
       @change="onChange1"
+      @cancel="onCancel"
       @confirm="onConfirm"
     />
   </demo-block>
 
   <WithPopup />
+
+  <demo-block card :title="t('modelValue')">
+    <van-picker
+      v-model="selectedValues"
+      :title="t('title')"
+      :columns="t('basicColumns')"
+    />
+  </demo-block>
 
   <demo-block card :title="t('multipleColumns')">
     <van-picker
