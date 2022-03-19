@@ -102,14 +102,14 @@ export default {
     const currentDate = ref(['2021', '01']);
     const columnsType = ['year', 'month'];
 
-    const formatter = (type, val) => {
+    const formatter = (type, option) => {
       if (type === 'year') {
-        return `${val}年`;
+        option.text += '年';
       }
       if (type === 'month') {
-        return `${val}月`;
+        option.text += '月';
       }
-      return val;
+      return option;
     };
 
     return {
