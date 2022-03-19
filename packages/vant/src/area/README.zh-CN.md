@@ -54,7 +54,7 @@ const areaList = {
 
 ### @vant/area-data
 
-Vant 官方提供了一份默认的省市区数据，可以通过 [@vant/area-data](https://github.com/youzan/vant/tree/dev/packages/vant-area-data) 引入：
+Vant 官方提供了一份默认的中国省市区数据，可以通过 [@vant/area-data](https://github.com/youzan/vant/tree/dev/packages/vant-area-data) 引入：
 
 ```bash
 # 通过 npm
@@ -76,6 +76,8 @@ export default {
   },
 };
 ```
+
+> Tips: 中国的行政区划每年都会有变动，如果发现省市区数据未及时更新，欢迎提 Pull Request 帮助我们更新。
 
 ### 控制选中项
 

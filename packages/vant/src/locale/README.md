@@ -52,6 +52,7 @@ Current supported languages:
 | Italian                  | it-IT        | `v3.4.5` |
 | Japanese                 | ja-JP        | -        |
 | Korean                   | ko-KR        | `v3.4.3` |
+| Lao                      | la-LA        | `v3.4.7` |
 | Norwegian                | nb-NO        | -        |
 | Portuguese (Brazil)      | pt-BR        | `v3.3.3` |
 | Romanian                 | ro-RO        | -        |

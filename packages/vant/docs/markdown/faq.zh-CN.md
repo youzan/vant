@@ -62,6 +62,12 @@ Vant 基于 CSS 变量提供了主题定制的能力，可以对组件样式进�
 
 参考链接：[stackoverflow - :active pseudo-class doesn't work in mobile safari](https://stackoverflow.com/questions/3885018/active-pseudo-class-doesnt-work-in-mobile-safari/33681490#33681490)
 
+### 为什么没有 Select 组件？
+
+Select 是桌面端常用的组件，但它的交互形式不适合移动端。
+
+在移动端，我们推荐使用 [Picker 选择器组件](#/zh-CN/picker) 作为代替。
+
 ### 部分组件无法在桌面端进行操作？
 
 参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。
