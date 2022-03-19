@@ -9,7 +9,7 @@ export const basicColumns = {
   'en-US': [
     { text: 'Delaware', value: 'Delaware' },
     { text: 'Florida', value: 'Florida' },
-    { text: 'Georqia', value: 'Georqia' },
+    { text: 'Wenzhou', value: 'Wenzhou' },
     { text: 'Indiana', value: 'Indiana' },
     { text: 'Maine', value: 'Maine' },
   ],
@@ -209,6 +209,6 @@ export const disabledColumns = {
   'en-US': [
     { text: 'Delaware', value: 'Delaware', disabled: true },
     { text: 'Florida', value: 'Florida' },
-    { text: 'Georqia', value: 'Georqia' },
+    { text: 'Wenzhou', value: 'Wenzhou' },
   ],
 };

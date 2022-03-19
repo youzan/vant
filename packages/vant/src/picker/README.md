@@ -38,7 +38,7 @@ export default {
     const columns = [
       { text: 'Delaware', value: 'Delaware' },
       { text: 'Florida', value: 'Florida' },
-      { text: 'Georqia', value: 'Georqia' },
+      { text: 'Wenzhou', value: 'Wenzhou' },
       { text: 'Indiana', value: 'Indiana' },
       { text: 'Maine', value: 'Maine' },
     ];
@@ -89,7 +89,7 @@ export default {
     const columns = [
       { text: 'Delaware', value: 'Delaware' },
       { text: 'Florida', value: 'Florida' },
-      { text: 'Georqia', value: 'Georqia' },
+      { text: 'Wenzhou', value: 'Wenzhou' },
       { text: 'Indiana', value: 'Indiana' },
       { text: 'Maine', value: 'Maine' },
     ];
@@ -106,6 +106,36 @@ export default {
       columns,
       onConfirm,
       showPicker,
+    };
+  },
+};
+```
+
+### v-model
+
+Using `v-model` to bind selected values.
+
+```html
+<van-picker v-model="selectedValues" title="Title" :columns="columns" />
+```
+
+```js
+import { Toast } from 'vant';
+
+export default {
+  setup() {
+    const columns = [
+      { text: 'Delaware', value: 'Delaware' },
+      { text: 'Florida', value: 'Florida' },
+      { text: 'Wenzhou', value: 'Wenzhou' },
+      { text: 'Indiana', value: 'Indiana' },
+      { text: 'Maine', value: 'Maine' },
+    ];
+    const selectedValues = ref(['Wenzhou']);
+
+    return {
+      columns,
+      selectedValues,
     };
   },
 };
@@ -213,7 +243,7 @@ export default {
     const columns = [
       { text: 'Delaware', value: 'Delaware', disabled: true },
       { text: 'Florida', value: 'Florida' },
-      { text: 'Georqia', value: 'Georqia' },
+      { text: 'Wenzhou', value: 'Wenzhou' },
     ];
     return { columns };
   },

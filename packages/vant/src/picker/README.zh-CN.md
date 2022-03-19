@@ -120,6 +120,38 @@ export default {
 };
 ```
 
+### 双向绑定
+
+通过 `v-model` 可以绑定当前选中项的 `values`，修改 `v-model` 绑定的值时，Picker 的选中状态也会随之改变。
+
+`v-model` 的值是一个数组，数组的第一位对应第一列选中项的 `value`，第二位对应第二列选中项的 `value`，以此类推。
+
+```html
+<van-picker v-model="selectedValues" title="标题" :columns="columns" />
+```
+
+```js
+import { Toast } from 'vant';
+
+export default {
+  setup() {
+    const columns = [
+      { text: '杭州', value: 'Hangzhou' },
+      { text: '宁波', value: 'Ningbo' },
+      { text: '温州', value: 'Wenzhou' },
+      { text: '绍兴', value: 'Shaoxing' },
+      { text: '湖州', value: 'Huzhou' },
+    ];
+    const selectedValues = ref(['Wenzhou']);
+
+    return {
+      columns,
+      selectedValues,
+    };
+  },
+};
+```
+
 ### 多列选择
 
 `columns` 属性可以通过二维数组的形式配置多列选择。
