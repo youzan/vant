@@ -61,7 +61,8 @@ export default defineComponent({
         (newVal, oldVal) => {
           document.body.classList.remove(`van-theme-${oldVal}`);
           document.body.classList.add(`van-theme-${newVal}`);
-        }
+        },
+        { immediate: true }
       );
     }
 
