@@ -58,6 +58,7 @@ Current supported languages:
 | Portuguese (Brazil)      | pt-BR        | `v3.3.3` |
 | Romanian                 | ro-RO        | -        |
 | Russian                  | ru-RU        | `v3.1.5` |
+| Swedish                  | sv-SE        | `v3.4.7` |
 | Turkish                  | tr-TR        | -        |
 | Thai                     | th-TH        | -        |
 | Ukrainian                | uk-UA        | `v3.4.5` |
