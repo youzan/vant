@@ -49,6 +49,7 @@ Current supported languages:
 | French                   | fr-FR        | -        |
 | Hindi                    | hi-IN        | `v3.4.3` |
 | Indonesian               | id-ID        | `v3.4.5` |
+| Icelandic                | is-IS        | `v3.4.7` |
 | Italian                  | it-IT        | `v3.4.5` |
 | Japanese                 | ja-JP        | -        |
 | Korean                   | ko-KR        | `v3.4.3` |
