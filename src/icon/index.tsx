@@ -27,7 +27,7 @@ export type IconEvents = {
 const [createComponent, bem] = createNamespace('icon');
 
 function isImage(name?: string): boolean {
-  return name ? name.indexOf('/') !== -1 : false;
+  return name ? (name.indexOf('/') !== -1 || name.indexOf('base64') !== -1) : false;
 }
 
 // compatible with legacy usage, should be removed in next major version
