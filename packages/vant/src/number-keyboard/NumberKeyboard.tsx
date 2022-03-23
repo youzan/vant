@@ -65,6 +65,16 @@ const numberKeyboardProps = {
 
 export type NumberKeyboardProps = ExtractPropTypes<typeof numberKeyboardProps>;
 
+function shuffle(array: unknown[]) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
 export default defineComponent({
   name,
 
@@ -89,7 +99,7 @@ export default defineComponent({
         .map((_, i) => ({ text: i + 1 }));
 
       if (props.randomKeyOrder) {
-        keys.sort(() => (Math.random() > 0.5 ? 1 : -1));
+        shuffle(keys);
       }
 
       return keys;
