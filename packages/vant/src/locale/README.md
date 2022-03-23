@@ -49,6 +49,7 @@ Current supported languages:
 | French                   | fr-FR        | -        |
 | Hindi                    | hi-IN        | `v3.4.3` |
 | Indonesian               | id-ID        | `v3.4.5` |
+| Icelandic                | is-IS        | `v3.4.7` |
 | Italian                  | it-IT        | `v3.4.5` |
 | Japanese                 | ja-JP        | -        |
 | Korean                   | ko-KR        | `v3.4.3` |
@@ -57,6 +58,7 @@ Current supported languages:
 | Portuguese (Brazil)      | pt-BR        | `v3.3.3` |
 | Romanian                 | ro-RO        | -        |
 | Russian                  | ru-RU        | `v3.1.5` |
+| Swedish                  | sv-SE        | `v3.4.7` |
 | Turkish                  | tr-TR        | -        |
 | Thai                     | th-TH        | -        |
 | Ukrainian                | uk-UA        | `v3.4.5` |
