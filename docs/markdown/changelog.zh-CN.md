@@ -618,7 +618,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Feature**
 
-- Icon: 现在会默认使用 base64 图标，而不是有赞 CDN 上的 iconfont [e0ad65](https://github.com/youzan/vant/commit/e0ad65e69fbcfb9ef69b25d2c1bce322577aad11)
+- Icon: 现在会默认使用 base64 图标，而不是 CDN 上的 iconfont [e0ad65](https://github.com/youzan/vant/commit/e0ad65e69fbcfb9ef69b25d2c1bce322577aad11)
 - NavBar: 新增 safe-area-inset-top 属性，用于开启 iOS 顶部安全区适配 [be25a4](https://github.com/youzan/vant/commit/be25a478dfbc599cdb27ba09d2d72858037c1700)
 - Sticky: offset-top 属性支持使用 vh 单位 [#7498](https://github.com/youzan/vant/issues/7498)
 
