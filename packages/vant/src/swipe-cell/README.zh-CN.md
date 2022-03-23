@@ -179,19 +179,6 @@ const swipeCellRef = ref<SwipeCellInstance>();
 swipeCellRef.value?.close();
 ```
 
-## 主题定制
-
-### 样式变量
-
-组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
-
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-switch-cell-padding-top | _var(--van-cell-vertical-padding) - 1px_ | - |
-| --van-switch-cell-padding-bottom | _var(--van-cell-vertical-padding) - 1px_ | - |
-| --van-switch-cell-large-padding-top | _var(--van-cell-large-vertical-padding) - 1px_ | - |
-| --van-switch-cell-large-padding-bottom | _var(--van-cell-large-vertical-padding) - 1px_ | - |
-
 ## 常见问题
 
 ### 在桌面端无法操作组件？

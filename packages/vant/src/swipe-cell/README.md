@@ -169,16 +169,3 @@ const swipeCellRef = ref<SwipeCellInstance>();
 
 swipeCellRef.value?.close();
 ```
-
-## Theming
-
-### CSS Variables
-
-The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
-
-| Name | Default Value | Description |
-| --- | --- | --- |
-| --van-switch-cell-padding-top | _var(--van-cell-vertical-padding) - 1px_ | - |
-| --van-switch-cell-padding-bottom | _var(--van-cell-vertical-padding) - 1px_ | - |
-| --van-switch-cell-large-padding-top | _var(--van-cell-large-vertical-padding) - 1px_ | - |
-| --van-switch-cell-large-padding-bottom | _var(--van-cell-large-vertical-padding) - 1px_ | - |
