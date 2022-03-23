@@ -9,7 +9,7 @@
 ### Features
 
 - 🚀 1KB Component average size (min+gzip)
-- 🚀 65+ High quality components
+- 🚀 70+ High quality components
 - 💪 90%+ Unit test coverage
 - 💪 Written in TypeScript
 - 📖 Extensive documentation and demos
@@ -19,8 +19,8 @@
 - 🍭 Support Custom Theme
 - 🍭 Support Accessibility (still improving)
 - 🍭 Support Dark Mode (Requires upgrade to [Vant 4](https://vant-contrib.gitee.io/vant/v4/#/en-US/config-provider))
-- 🍭 Support i18n
-- 🌍 Support SSR
+- 🍭 Support SSR
+- 🌍 Support i18n, built-in 20+ languages
 
 ### Quickstart
 
