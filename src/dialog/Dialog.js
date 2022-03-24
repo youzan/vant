@@ -191,9 +191,14 @@ export default createComponent({
       }
     },
 
-    genContent(hasTitle, messageSlot) {
+    genContent(hasTitle, messageSlot, empty) {
       if (messageSlot) {
-        return <div class={bem('content')}>{messageSlot}</div>;
+        if(messageSlot[0]?.data?.attrs?.env==='alone' && !messageSlot[0]?.children && this.$env && this.$env.VUE_APP_DESIGNER) {
+          messageSlot[0].children = empty;
+        }
+        return <div class={bem('content')}>
+          {messageSlot}
+        </div>;
       }
 
       // if (!messageSlot && this.$env && this.$env.VUE_APP_DESIGNER) {
@@ -233,7 +238,7 @@ export default createComponent({
     }
 
     const { message } = this;
-    const messageSlot = this.slots();
+    const messageSlot = this.slots('default');
     const footerSlot = this.slots('footer');
     const title = this.slots('title') || this.title;
     console.log(this);
@@ -245,7 +250,7 @@ export default createComponent({
         {title}
       </Text>
     );
-
+    const empty = [h('van-empty-col', {}, [])];
     return (
       <transition
         name={this.transition}
@@ -260,7 +265,7 @@ export default createComponent({
           style={{ width: addUnit(this.width) }}
         >
           {Title}
-          {this.genContent(title, messageSlot)}
+          {this.genContent(title, messageSlot, empty)}
           {this.slots('inject')}
           {/* {this.genButtons(footerSlot)} */}
           {this.theme === 'round-button'
