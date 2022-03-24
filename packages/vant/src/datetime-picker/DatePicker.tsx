@@ -296,7 +296,10 @@ export default defineComponent({
       emit('update:modelValue', oldValue ? value : null)
     );
 
-    watch(() => [props.filter, props.minDate, props.maxDate], () => nextTick(updateInnerValue));
+    watch(
+      () => [props.filter, props.minDate, props.maxDate],
+      () => nextTick(updateInnerValue)
+    );
 
     watch(
       () => props.modelValue,
