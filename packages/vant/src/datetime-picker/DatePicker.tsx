@@ -298,7 +298,9 @@ export default defineComponent({
 
     watch(
       () => [props.filter, props.minDate, props.maxDate],
-      () => nextTick(updateInnerValue)
+      () => {
+        nextTick(updateInnerValue);
+      }
     );
 
     watch(
