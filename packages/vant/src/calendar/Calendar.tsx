@@ -308,8 +308,8 @@ export default defineComponent({
         // add Math.floor to avoid decimal height issues
         // https://github.com/youzan/vant/issues/5640
         bodyHeight = Math.floor(useRect(bodyRef).height);
-        scrollToCurrentDate();
       });
+      scrollToCurrentDate();
     };
 
     const reset = (date = getInitialDate()) => {
