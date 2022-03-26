@@ -6,8 +6,8 @@ const mockFileDataUrl = 'data:image/test';
 const mockFile = new File([new ArrayBuffer(10000)], 'test.jpg', {
   type: 'test',
 });
-const IMAGE = 'https://img.yzcdn.cn/vant/cat.jpeg';
-const PDF = 'https://img.yzcdn.cn/vant/test.pdf';
+const IMAGE = 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg';
+const PDF = 'https://cdn.jsdelivr.net/npm/@vant/assets/test.pdf';
 
 function mockFileReader() {
   function mockReadAsText(this: FileReader) {
@@ -293,8 +293,8 @@ test('render preview image', async () => {
   const wrapper = mount(Uploader, {
     props: {
       modelValue: [
-        { url: 'https://img.yzcdn.cn/vant/cat.jpeg' },
-        { url: 'https://img.yzcdn.cn/vant/test.pdf' },
+        { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg' },
+        { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/test.pdf' },
         { file: mockFile },
       ],
     },
@@ -307,7 +307,9 @@ test('image-fit prop', () => {
   const wrapper = mount(Uploader, {
     props: {
       imageFit: 'contain',
-      modelValue: [{ url: 'https://img.yzcdn.cn/vant/cat.jpeg' }],
+      modelValue: [
+        { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg' },
+      ],
     },
   });
 

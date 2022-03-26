@@ -31,7 +31,7 @@ Use `name` prop to set icon name or icon URL.
 You can directly passing an image URL to the `name` props.
 
 ```html
-<van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
+<van-icon name="https://cdn.jsdelivr.net/npm/@vant/assets/icon-demo.png" />
 ```
 
 ### Show Badge

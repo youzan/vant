@@ -49,13 +49,13 @@ app.use(GridItem);
 ```html
 <van-grid :border="false" :column-num="3">
   <van-grid-item>
-    <van-image src="https://img.yzcdn.cn/vant/apple-1.jpg" />
+    <van-image src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg" />
   </van-grid-item>
   <van-grid-item>
-    <van-image src="https://img.yzcdn.cn/vant/apple-2.jpg" />
+    <van-image src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg" />
   </van-grid-item>
   <van-grid-item>
-    <van-image src="https://img.yzcdn.cn/vant/apple-3.jpg" />
+    <van-image src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-3.jpeg" />
   </van-grid-item>
 </van-grid>
 ```
@@ -128,6 +128,7 @@ app.use(GridItem);
 | square | 是否将格子固定为正方形 | _boolean_ | `false` |
 | clickable | 是否开启格子点击反馈 | _boolean_ | `false` |
 | direction | 格子内容排列的方向，可选值为 `horizontal` | _string_ | `vertical` |
+| reverse `v3.1.0` | 是否调换图标和文本的位置 | _boolean_ | `false` |
 
 ### GridItem Props
 
@@ -137,7 +138,6 @@ app.use(GridItem);
 | icon | 图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
 | icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | icon-color | 图标颜色，等同于 Icon 组件的 [color 属性](#/zh-CN/icon#props) | _string_ | - |
-| reverse `v3.1.0` | 是否调换图标和文本的位置 | _boolean_ | `false` |
 | dot | 是否显示图标右上角小红点 | _boolean_ | `false` |
 | badge | 图标右上角徽标的内容 | _number \| string_ | - |
 | badge-props `v3.2.8` | 自定义徽标的属性，传入的对象会被透传给 [Badge 组件的 props](#/zh-CN/badge#props) | _BadgeProps_ | - |

@@ -3,7 +3,6 @@ body {
   --van-coupon-list-field-padding: 5px 0 5px var(--van-padding-md);
   --van-coupon-list-exchange-button-height: 32px;
   --van-coupon-list-close-button-height: 40px;
-  --van-coupon-list-empty-image-size: 200px;
   --van-coupon-list-empty-tip-color: var(--van-text-color-2);
   --van-coupon-list-empty-tip-font-size: var(--van-font-size-md);
   --van-coupon-list-empty-tip-line-height: var(--van-line-height-md);
@@ -79,20 +78,9 @@ body {
     height: var(--van-coupon-list-close-button-height);
   }
 
-  &__empty {
-    padding-top: 60px;
-    text-align: center;
-
-    p {
-      margin: var(--van-padding-md) 0;
-      color: var(--van-coupon-list-empty-tip-color);
-      font-size: var(--van-coupon-list-empty-tip-font-size);
-      line-height: var(--van-coupon-list-empty-tip-line-height);
-    }
-
-    img {
-      width: var(--van-coupon-list-empty-image-size);
-      height: var(--van-coupon-list-empty-image-size);
-    }
+  &__empty-tip {
+    color: var(--van-coupon-list-empty-tip-color);
+    font-size: var(--van-coupon-list-empty-tip-font-size);
+    line-height: var(--van-coupon-list-empty-tip-line-height);
   }
 }

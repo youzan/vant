@@ -28,7 +28,7 @@ const t = useTranslate({
   },
 });
 
-const image = 'https://img.yzcdn.cn/vant/cat.jpeg';
+const image = 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg';
 const fits = ['contain', 'cover', 'fill', 'none', 'scale-down'] as const;
 const positions1 = ['left', 'center', 'right'] as const;
 const positions2 = ['top', 'center', 'bottom'] as const;

@@ -18,18 +18,18 @@ const t = useTranslate({
 });
 
 const imageList = [
-  'https://img.yzcdn.cn/vant/apple-1.jpg',
-  'https://img.yzcdn.cn/vant/apple-2.jpg',
-  'https://img.yzcdn.cn/vant/apple-3.jpg',
-  'https://img.yzcdn.cn/vant/apple-4.jpg',
+  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-3.jpeg',
+  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-4.jpeg',
 ];
 const backgroundImageList = [
-  'https://img.yzcdn.cn/vant/apple-5.jpg',
-  'https://img.yzcdn.cn/vant/apple-6.jpg',
+  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-5.jpeg',
+  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-6.jpeg',
 ];
 const componentImageList = [
-  'https://img.yzcdn.cn/vant/apple-8.jpg',
-  'https://img.yzcdn.cn/vant/apple-7.jpg',
+  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-8.jpeg',
+  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-7.jpeg',
 ];
 </script>
 

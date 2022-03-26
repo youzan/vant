@@ -117,7 +117,7 @@ export default {
 | close-button-text | Close button text | _string_ | `Close` |
 | input-placeholder | Input placeholder | _string_ | `Coupon code` |
 | currency | Currency symbol | _string_ | `¥` |
-| empty-image | Placeholder image when list is empty | _string_ | `https://img.yzcdn.cn/vant/coupon-empty.png` |
+| empty-image | Placeholder image when list is empty | _string_ | - |
 | show-count | Whether to show coupon count in tab title | _boolean_ | `true` |
 
 ### CouponList Events
@@ -186,7 +186,6 @@ The component provides the following CSS variables, which can be used to customi
 | --van-coupon-list-field-padding | _5px 0 5px var(--van-padding-md)_ | - |
 | --van-coupon-list-exchange-button-height | _32px_ | - |
 | --van-coupon-list-close-button-height | _40px_ | - |
-| --van-coupon-list-empty-image-size | _200px_ | - |
 | --van-coupon-list-empty-tip-color | _var(--van-text-color-2)_ | - |
 | --van-coupon-list-empty-tip-font-size | _var(--van-font-size-md)_ | - |
 | --van-coupon-list-empty-tip-line-height | _var(--van-line-height-md)_ | - |

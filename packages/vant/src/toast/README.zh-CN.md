@@ -56,7 +56,7 @@ Toast({
 
 Toast({
   message: '自定义图片',
-  icon: 'https://img.yzcdn.cn/vant/logo.png',
+  icon: 'https://cdn.jsdelivr.net/npm/@vant/assets/logo.png',
 });
 ```
 

@@ -30,8 +30,8 @@ const active5 = ref(0);
 const activeName = ref('home');
 
 const icon = {
-  active: 'https://img.yzcdn.cn/vant/user-active.png',
-  inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+  active: 'https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png',
+  inactive: 'https://cdn.jsdelivr.net/npm/@vant/assets/user-inactive.png',
 };
 
 const onChange = (index: number) => {

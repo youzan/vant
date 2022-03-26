@@ -20,7 +20,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-uploader__wrapper">
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://img.yzcdn.cn/vant/leaf.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -40,7 +40,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://img.yzcdn.cn/vant/tree.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -75,7 +75,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-uploader__wrapper">
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://img.yzcdn.cn/vant/leaf.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -106,7 +106,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://img.yzcdn.cn/vant/tree.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -147,7 +147,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-uploader__wrapper">
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://img.yzcdn.cn/vant/sand.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -182,7 +182,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-uploader__wrapper">
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://img.yzcdn.cn/vant/sand.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -240,7 +240,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-uploader__wrapper">
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://img.yzcdn.cn/vant/leaf.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -308,7 +308,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-uploader__wrapper">
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://img.yzcdn.cn/vant/leaf.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -320,7 +320,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://img.yzcdn.cn/vant/sand.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -342,7 +342,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-image van-uploader__preview-image"
              style="width: 120px; height: 120px;"
         >
-          <img src="https://img.yzcdn.cn/vant/tree.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg"
                class="van-image__img"
                style="object-fit: contain;"
           >

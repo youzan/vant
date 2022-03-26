@@ -49,12 +49,12 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-swipe-item"
            style="width: 100px;"
       >
-        <img src="https://img.yzcdn.cn/vant/apple-1.jpg">
+        <img src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg">
       </div>
       <div class="van-swipe-item"
            style="width: 100px;"
       >
-        <img src="https://img.yzcdn.cn/vant/apple-2.jpg">
+        <img src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg">
       </div>
       <div class="van-swipe-item"
            style="width: 100px;"
@@ -63,7 +63,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-swipe-item"
            style="width: 100px;"
       >
-        <img src="https://img.yzcdn.cn/vant/apple-4.jpg">
+        <img src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-4.jpeg">
       </div>
     </div>
     <div class="van-swipe__indicators">

@@ -362,11 +362,15 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
              style="height: 624px;"
         >
-          <div class="van-coupon-list__empty">
-            <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
-            <p>
-              No coupons
-            </p>
+          <div class="van-empty">
+            <div class="van-empty__image">
+              <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
+            </div>
+            <div class="van-empty__bottom">
+              <p class="van-coupon-list__empty-tip">
+                No coupons
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -380,11 +384,15 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
              style="height: 624px;"
         >
-          <div class="van-coupon-list__empty">
-            <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
-            <p>
-              No coupons
-            </p>
+          <div class="van-empty">
+            <div class="van-empty__image">
+              <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
+            </div>
+            <div class="van-empty__bottom">
+              <p class="van-coupon-list__empty-tip">
+                No coupons
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -474,11 +482,15 @@ exports[`should render list-footer slot correctly 1`] = `
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
              style="height: 624px;"
         >
-          <div class="van-coupon-list__empty">
-            <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
-            <p>
-              No coupons
-            </p>
+          <div class="van-empty">
+            <div class="van-empty__image">
+              <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
+            </div>
+            <div class="van-empty__bottom">
+              <p class="van-coupon-list__empty-tip">
+                No coupons
+              </p>
+            </div>
           </div>
           List Footer
         </div>
@@ -493,11 +505,15 @@ exports[`should render list-footer slot correctly 1`] = `
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
              style="height: 624px;"
         >
-          <div class="van-coupon-list__empty">
-            <img src="https://img.yzcdn.cn/vant/coupon-empty.png">
-            <p>
-              No coupons
-            </p>
+          <div class="van-empty">
+            <div class="van-empty__image">
+              <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
+            </div>
+            <div class="van-empty__bottom">
+              <p class="van-coupon-list__empty-tip">
+                No coupons
+              </p>
+            </div>
           </div>
           Disabled List Footer
         </div>
@@ -588,11 +604,15 @@ exports[`should use custom src when using empty-image prop 1`] = `
         <div class="van-coupon-list__list van-coupon-list__list--with-bottom"
              style="height: 624px;"
         >
-          <div class="van-coupon-list__empty">
-            <img src="https://img.yzcdn.com/xxx.png">
-            <p>
-              No coupons
-            </p>
+          <div class="van-empty">
+            <div class="van-empty__image">
+              <img src="https://cdn.jsdelivr.net/npm/@vant/assets/xxx.jpeg">
+            </div>
+            <div class="van-empty__bottom">
+              <p class="van-coupon-list__empty-tip">
+                No coupons
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -106,7 +106,7 @@ test('should have two "van-coupon-list__empty" classes when render coupon list i
 test('should use custom src when using empty-image prop', async () => {
   const wrapper = mount(CouponList, {
     props: {
-      emptyImage: 'https://img.yzcdn.com/xxx.png',
+      emptyImage: 'https://cdn.jsdelivr.net/npm/@vant/assets/xxx.jpeg',
     },
   });
 

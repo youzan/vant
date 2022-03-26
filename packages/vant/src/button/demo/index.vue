@@ -107,7 +107,7 @@ const t = useTranslate({
     <van-button
       plain
       type="primary"
-      icon="https://img.yzcdn.cn/vant/user-active.png"
+      icon="https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png"
       :text="t('button')"
     />
   </demo-block>

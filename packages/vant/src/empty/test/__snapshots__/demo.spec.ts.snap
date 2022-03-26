@@ -96,7 +96,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-empty custom-image">
     <div class="van-empty__image">
-      <img src="https://img.yzcdn.cn/vant/custom-empty-image.png">
+      <img src="https://cdn.jsdelivr.net/npm/@vant/assets/custom-empty-image.png">
     </div>
     <p class="van-empty__description">
       Description

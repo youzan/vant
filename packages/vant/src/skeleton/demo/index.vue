@@ -35,7 +35,7 @@ const show = ref(false);
     <van-switch v-model="show" />
     <van-skeleton title avatar :row="3" :loading="!show">
       <div class="demo-preview">
-        <img src="https://img.yzcdn.cn/vant/logo.png" />
+        <img src="https://cdn.jsdelivr.net/npm/@vant/assets/logo.png" />
         <div class="demo-content">
           <h3>{{ t('title') }}</h3>
           <p>{{ t('desc') }}</p>

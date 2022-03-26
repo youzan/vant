@@ -42,7 +42,7 @@ Use the image prop to display different placeholder images.
 ```html
 <van-empty
   class="custom-image"
-  image="https://img.yzcdn.cn/vant/leaf.jpg"
+  image="https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
   description="Description"
 />
 

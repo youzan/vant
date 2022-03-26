@@ -44,7 +44,7 @@ Empty 组件内置了多种占位图片类型，可以在不同业务场景下�
 ```html
 <van-empty
   class="custom-image"
-  image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+  image="https://cdn.jsdelivr.net/npm/@vant/assets/custom-empty-image.png"
   description="描述文字"
 />
 

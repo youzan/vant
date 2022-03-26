@@ -48,8 +48,8 @@ const preloadImage = () => {
   const doge = new Image();
   const dogeFire = new Image();
 
-  doge.src = 'https://b.yzcdn.cn/vant/doge.png';
-  dogeFire.src = 'https://b.yzcdn.cn/vant/doge-fire.jpg';
+  doge.src = 'https://cdn.jsdelivr.net/npm/@vant/assets/doge.png';
+  dogeFire.src = 'https://cdn.jsdelivr.net/npm/@vant/assets/doge-fire.jpeg';
 };
 
 onMounted(preloadImage);
@@ -82,15 +82,21 @@ onMounted(preloadImage);
         <template #pulling="{ distance }">
           <img
             class="doge"
-            src="https://b.yzcdn.cn/vant/doge.png"
+            src="https://cdn.jsdelivr.net/npm/@vant/assets/doge.png"
             :style="{ transform: `scale(${distance / 80})` }"
           />
         </template>
         <template #loosing>
-          <img src="https://b.yzcdn.cn/vant/doge.png" class="doge" />
+          <img
+            src="https://cdn.jsdelivr.net/npm/@vant/assets/doge.png"
+            class="doge"
+          />
         </template>
         <template #loading>
-          <img src="https://b.yzcdn.cn/vant/doge-fire.jpg" class="doge" />
+          <img
+            src="https://cdn.jsdelivr.net/npm/@vant/assets/doge-fire.jpeg"
+            class="doge"
+          />
         </template>
         <p>{{ tips }}</p>
       </van-pull-refresh>

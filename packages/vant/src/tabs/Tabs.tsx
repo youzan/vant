@@ -334,6 +334,7 @@ export default defineComponent({
     const renderNav = () =>
       children.map((item, index) => (
         <TabsTitle
+          key={item.id}
           v-slots={{ title: item.$slots.title }}
           id={`${id}-${index}`}
           ref={setTitleRefs(index)}

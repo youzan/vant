@@ -13,7 +13,7 @@ test('should render icon with builtin icon name correctly', () => {
 test('should render icon with url name correctly', () => {
   const wrapper = mount(Icon, {
     props: {
-      name: 'https://img.yzcdn.com/icon.jpg',
+      name: 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg',
     },
   });
   expect(wrapper.html()).toMatchSnapshot();
