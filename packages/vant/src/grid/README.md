@@ -112,6 +112,7 @@ app.use(GridItem);
 | square | Whether to be square shape | _boolean_ | `false` |
 | clickable | Whether to show click feedback when clicked | _boolean_ | `false` |
 | direction | Content arrangement direction, can be set to `horizontal` | _string_ | `vertical` |
+| reverse `v3.1.0` | Whether to reverse the position of icon and text | _boolean_ | `false` |
 
 ### GridItem Props
 
@@ -121,7 +122,6 @@ app.use(GridItem);
 | icon | Icon name or URL | _string_ | - |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
 | icon-color | Icon color | _string_ | - |
-| reverse `v3.1.0` | Whether to reverse the position of icon and text | _boolean_ | `false` |
 | dot | Whether to show red dot | _boolean_ | `false` |
 | badge | Content of the badge | _number \| string_ | - |
 | badge-props `v3.2.8` | Props of Badge，see [Badge - props](#/en-US/badge#props) | _BadgeProps_ | - |
