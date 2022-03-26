@@ -131,8 +131,9 @@ export default {
     const checked = ref('1');
     return {
       checked,
-      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
+      activeIcon: 'https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png',
+      inactiveIcon:
+        'https://cdn.jsdelivr.net/npm/@vant/assets/user-inactive.png',
     };
   },
 };

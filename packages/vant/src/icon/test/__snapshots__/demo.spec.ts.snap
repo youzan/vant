@@ -78,7 +78,7 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-col van-col--6">
             <i class="van-badge__wrapper van-icon">
               <img class="van-icon__image"
-                   src="https://b.yzcdn.cn/vant/icon-demo-1126.png"
+                   src="https://cdn.jsdelivr.net/npm/@vant/assets/icon-demo.png"
               >
             </i>
           </div>

@@ -73,12 +73,12 @@ const badgeItems = computed(() => {
         <van-image
           v-if="activeIndex3 === 0"
           :show-loading="false"
-          src="https://img.yzcdn.cn/vant/apple-1.jpg"
+          src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
         />
         <van-image
           v-if="activeIndex3 === 1"
           :show-loading="false"
-          src="https://img.yzcdn.cn/vant/apple-2.jpg"
+          src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg"
         />
       </template>
     </van-tree-select>

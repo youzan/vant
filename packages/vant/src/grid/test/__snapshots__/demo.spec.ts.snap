@@ -126,7 +126,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-grid-item__content van-grid-item__content--center">
         <div class="van-image">
-          <img src="https://img.yzcdn.cn/vant/apple-1.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
                class="van-image__img"
                style="object-fit: contain;"
           >
@@ -142,7 +142,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-grid-item__content van-grid-item__content--center">
         <div class="van-image">
-          <img src="https://img.yzcdn.cn/vant/apple-2.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg"
                class="van-image__img"
                style="object-fit: contain;"
           >
@@ -158,7 +158,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-grid-item__content van-grid-item__content--center">
         <div class="van-image">
-          <img src="https://img.yzcdn.cn/vant/apple-3.jpg"
+          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-3.jpeg"
                class="van-image__img"
                style="object-fit: contain;"
           >

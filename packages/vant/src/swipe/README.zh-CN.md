@@ -58,8 +58,8 @@ app.use(SwipeItem);
 export default {
   setup() {
     const images = [
-      'https://img.yzcdn.cn/vant/apple-1.jpg',
-      'https://img.yzcdn.cn/vant/apple-2.jpg',
+      'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+      'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
     ];
     return { images };
   },

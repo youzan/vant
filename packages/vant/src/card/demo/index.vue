@@ -16,7 +16,7 @@ const t = useTranslate({
   },
 });
 
-const imageURL = 'https://img.yzcdn.cn/vant/ipad.jpeg';
+const imageURL = 'https://cdn.jsdelivr.net/npm/@vant/assets/ipad.jpeg';
 </script>
 
 <template>

@@ -981,7 +981,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 - 新增 Cascader 级联选择组件 [#7771](https://github.com/youzan/vant/pull/7771)
 
-<img src="https://b.yzcdn.cn/vant/cascader_1221.png">
+<img src="https://cdn.jsdelivr.net/npm/@vant/assets/cascader_1221.png">
 
 **Feature**
 
@@ -1069,7 +1069,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 - 新增 [Popover 气泡弹出框](#/zh-CN/popover)组件 [#7579](https://github.com/youzan/vant/issues/7579)
 
-![](https://img.yzcdn.cn/vant/component-preview-1122.png)
+![](https://cdn.jsdelivr.net/npm/@vant/assets/component-preview-1122.png)
 
 **Feature**
 

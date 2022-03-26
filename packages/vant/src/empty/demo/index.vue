@@ -52,7 +52,7 @@ const active = ref('error');
   <demo-block :title="t('customImage')">
     <van-empty
       class="custom-image"
-      image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+      image="https://cdn.jsdelivr.net/npm/@vant/assets/custom-empty-image.png"
       :description="t('description')"
     />
   </demo-block>

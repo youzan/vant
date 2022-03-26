@@ -44,7 +44,7 @@ export default {
     // 标题
     title: 'Demo UI',
     // 图标
-    logo: 'https://img.yzcdn.cn/vant/logo.png',
+    logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/logo.png',
     // 描述
     description: '示例组件库',
     // 左侧导航

@@ -98,8 +98,8 @@ export default {
   setup() {
     const active = ref(0);
     const icon = {
-      active: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+      active: 'https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png',
+      inactive: 'https://cdn.jsdelivr.net/npm/@vant/assets/user-inactive.png',
     };
     return {
       icon,

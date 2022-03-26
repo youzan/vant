@@ -58,8 +58,9 @@ const state = reactive({
   horizontalResult: [],
 });
 
-const activeIcon = 'https://img.yzcdn.cn/vant/user-active.png';
-const inactiveIcon = 'https://img.yzcdn.cn/vant/user-inactive.png';
+const activeIcon = 'https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png';
+const inactiveIcon =
+  'https://cdn.jsdelivr.net/npm/@vant/assets/user-inactive.png';
 
 const group = ref<CheckboxGroupInstance>();
 const [refs, setRefs] = useRefs<CheckboxInstance>();
