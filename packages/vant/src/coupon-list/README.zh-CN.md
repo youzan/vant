@@ -119,7 +119,7 @@ export default {
 | input-placeholder | 输入框文字提示 | _string_ | `请输入优惠码` |
 | show-exchange-bar | 是否展示兑换栏 | _boolean_ | `true` |
 | currency | 货币符号 | _string_ | `¥` |
-| empty-image | 列表为空时的占位图 | _string_ | `https://img.yzcdn.cn/vant/coupon-empty.png` |
+| empty-image | 列表为空时的占位图 | _string_ | - |
 | show-count | 是否展示可用 / 不可用数量 | _boolean_ | `true` |
 
 ### CouponList Events
@@ -188,7 +188,6 @@ import type { CouponCellProps, CouponListProps } from 'vant';
 | --van-coupon-list-field-padding | _5px 0 5px var(--van-padding-md)_ | - |
 | --van-coupon-list-exchange-button-height | _32px_ | - |
 | --van-coupon-list-close-button-height | _40px_ | - |
-| --van-coupon-list-empty-image-size | _200px_ | - |
 | --van-coupon-list-empty-tip-color | _var(--van-text-color-2)_ | - |
 | --van-coupon-list-empty-tip-font-size | _var(--van-font-size-md)_ | - |
 | --van-coupon-list-empty-tip-line-height | _var(--van-line-height-md)_ | - |
