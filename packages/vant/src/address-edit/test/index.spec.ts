@@ -11,7 +11,6 @@ const defaultAddressInfo = {
   county: '朝阳区',
   addressDetail: 'address detail',
   areaCode: '110101',
-  postalCode: '10000',
   isDefault: true,
 };
 
@@ -23,7 +22,6 @@ const createComponent = (addressInfo = {}) => {
         ...defaultAddressInfo,
         ...addressInfo,
       },
-      showPostal: true,
       showSetDefault: true,
     },
   });
@@ -45,7 +43,6 @@ test('should render AddressEdit with props correctly', () => {
     props: {
       areaList,
       addressInfo: defaultAddressInfo,
-      showPostal: true,
       showSetDefault: true,
       showSearchResult: true,
     },
@@ -101,15 +98,6 @@ test('should valid address detail and render error message correctly', async () 
   await submitForm(wrapper);
   await later();
   expect(fields[3].html()).toMatchSnapshot();
-});
-
-test('should valid postal code and render error message correctly', async () => {
-  const { fields, wrapper } = createComponent({
-    postalCode: '123',
-  });
-
-  await submitForm(wrapper);
-  expect(fields[4].html()).toMatchSnapshot();
 });
 
 test('should emit changeDetail event after changing address detail', () => {

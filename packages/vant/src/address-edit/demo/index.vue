@@ -52,7 +52,6 @@ const onChangeDetail = (val: string) => {
   <demo-block :title="t('basicUsage')">
     <van-address-edit
       :area-list="areaList"
-      show-postal
       show-delete
       show-set-default
       show-search-result

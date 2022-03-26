@@ -50,10 +50,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Área',
-    postal: 'Código Postal',
     areaEmpty: 'Por favor selecciona una área de recogida',
     addressEmpty: 'La dirección no puede estar vacia',
-    postalEmpty: 'Código postal inválido',
     addressDetail: 'Dirección',
     defaultAddress: 'Establecer como dirección por defecto',
   },

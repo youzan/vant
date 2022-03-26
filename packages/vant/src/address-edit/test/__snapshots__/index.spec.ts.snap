@@ -193,25 +193,6 @@ exports[`should render AddressEdit with props correctly 1`] = `
         </div>
       </div>
     </div>
-    <div class="van-cell van-field">
-      <div class="van-cell__title van-field__label">
-        <label id="van-field-label"
-               for="van-field-input"
-        >
-          Postal
-        </label>
-      </div>
-      <div class="van-cell__value van-field__value">
-        <div class="van-field__body">
-          <input type="tel"
-                 id="van-field-input"
-                 class="van-field__control"
-                 placeholder="Postal"
-                 aria-labelledby="van-field-label"
-          >
-        </div>
-      </div>
-    </div>
   </div>
   <div class="van-cell van-cell--center van-address-edit__default">
     <div class="van-cell__title">
@@ -317,31 +298,6 @@ exports[`should valid name and render error message correctly 1`] = `
     </div>
     <div class="van-field__error-message">
       Please fill in the name
-    </div>
-  </div>
-</div>
-`;
-
-exports[`should valid postal code and render error message correctly 1`] = `
-<div class="van-cell van-field">
-  <div class="van-cell__title van-field__label">
-    <label id="van-field-label"
-           for="van-field-input"
-    >
-      Postal
-    </label>
-  </div>
-  <div class="van-cell__value van-field__value">
-    <div class="van-field__body">
-      <input type="tel"
-             id="van-field-input"
-             class="van-field__control"
-             placeholder="Postal"
-             aria-labelledby="van-field-label"
-      >
-    </div>
-    <div class="van-field__error-message">
-      Wrong postal code
     </div>
   </div>
 </div>

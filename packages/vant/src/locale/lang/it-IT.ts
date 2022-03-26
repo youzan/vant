@@ -58,10 +58,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Area',
-    postal: 'Postale',
     areaEmpty: "Seleziona un'area di ricezione",
     addressEmpty: "L'indirizzo non può essere vuoto",
-    postalEmpty: 'Codice postale errato',
     addressDetail: 'Indirizzo',
     defaultAddress: 'Imposta come indirizzo predefinito',
   },

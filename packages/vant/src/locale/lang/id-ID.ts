@@ -51,10 +51,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Daerah',
-    postal: 'pos',
     areaEmpty: 'Silakan pilih area penerima',
     addressEmpty: 'Alamat tidak boleh kosong',
-    postalEmpty: 'Kode pos salah',
     addressDetail: 'Alamat',
     defaultAddress: 'Tetapkan sebagai alamat default',
   },

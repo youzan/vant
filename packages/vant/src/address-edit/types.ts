@@ -15,7 +15,6 @@ export type AddressEditInfo = {
   province: string;
   areaCode: string;
   isDefault?: boolean;
-  postalCode?: string;
   addressDetail: string;
 };
 

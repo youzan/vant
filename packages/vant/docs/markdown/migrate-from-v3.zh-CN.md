@@ -101,6 +101,8 @@ emit('clickInput');
 
 #### AddressEdit
 
+- 移除 `show-postal` 属性
+- 移除 `postal-validator` 属性
 - `change-area` 事件的参数调整为 `PickerOption[]` 类型
 - 移除未在文档中标注的 `getArea` 实例方法
 

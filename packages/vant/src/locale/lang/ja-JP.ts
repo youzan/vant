@@ -50,10 +50,8 @@ export default {
   },
   vanAddressEdit: {
     area: '地域',
-    postal: '郵便番号',
     areaEmpty: '地域を選択してください',
     addressEmpty: '詳しい住所を入力してください',
-    postalEmpty: '間違った郵便番号',
     addressDetail: '詳しい住所',
     defaultAddress: 'デフォルトの住所に設定',
   },

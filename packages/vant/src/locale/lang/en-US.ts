@@ -50,10 +50,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Area',
-    postal: 'Postal',
     areaEmpty: 'Please select a receiving area',
     addressEmpty: 'Address can not be empty',
-    postalEmpty: 'Wrong postal code',
     addressDetail: 'Address',
     defaultAddress: 'Set as the default address',
   },

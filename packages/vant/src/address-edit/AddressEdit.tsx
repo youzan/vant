@@ -51,11 +51,8 @@ const DEFAULT_DATA: AddressEditInfo = {
   province: '',
   areaCode: '',
   isDefault: false,
-  postalCode: '',
   addressDetail: '',
 };
-
-const isPostal = (value: string) => /^\d{6}$/.test(value);
 
 const addressEditProps = {
   areaList: Object as PropType<AreaList>,
@@ -67,7 +64,6 @@ const addressEditProps = {
   showArea: truthProp,
   showDetail: truthProp,
   showDelete: Boolean,
-  showPostal: Boolean,
   disableArea: Boolean,
   searchResult: Array as PropType<AddressEditSearchItem[]>,
   telMaxlength: numericProp,
@@ -86,10 +82,6 @@ const addressEditProps = {
   telValidator: {
     type: Function as PropType<(val: string) => boolean>,
     default: isMobile,
-  },
-  postalValidator: {
-    type: Function as PropType<(val: string) => boolean>,
-    default: isPostal,
   },
 };
 
@@ -145,7 +137,7 @@ export default defineComponent({
     };
 
     const rules = computed<Record<string, FieldRule[]>>(() => {
-      const { validator, telValidator, postalValidator } = props;
+      const { validator, telValidator } = props;
 
       const makeRule = (name: string, emptyMessage: string): FieldRule => ({
         validator: (value) => {
@@ -170,10 +162,6 @@ export default defineComponent({
         ],
         areaCode: [makeRule('areaCode', t('areaEmpty'))],
         addressDetail: [makeRule('addressDetail', t('addressEmpty'))],
-        postalCode: [
-          makeRule('addressDetail', t('postalEmpty')),
-          { validator: postalValidator, message: t('postalEmpty') },
-        ],
       };
     });
 
@@ -323,18 +311,6 @@ export default defineComponent({
               onInput={onChangeDetail}
               onSelectSearch={(event: Event) => emit('selectSearch', event)}
             />
-            {props.showPostal && (
-              <Field
-                v-show={!hideBottomFields.value}
-                v-model={data.postalCode}
-                type="tel"
-                rules={rules.value.postalCode}
-                label={t('postal')}
-                maxlength="6"
-                placeholder={t('postal')}
-                onFocus={() => onFocus('postalCode')}
-              />
-            )}
             {slots.default?.()}
           </div>
           {renderSetDefaultCell()}

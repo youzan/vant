@@ -58,10 +58,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Svæði',
-    postal: 'póstur',
     areaEmpty: 'Vinsamlega veldu móttökusvæði',
     addressEmpty: 'Heimilisfang má ekki vera tómt',
-    postalEmpty: 'Rangt póstnúmer',
     addressDetail: 'Heimilisfang',
     defaultAddress: 'Setja sem sjálfgefið heimilisfang',
   },

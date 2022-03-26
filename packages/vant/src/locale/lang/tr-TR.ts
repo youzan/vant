@@ -50,10 +50,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Alan',
-    postal: 'Posta',
     areaEmpty: 'Lütfen alıcı alanını seçin',
     addressEmpty: 'Adres boş olamaz!',
-    postalEmpty: 'Yanlış posta kodu',
     addressDetail: 'Adres',
     defaultAddress: 'Varsayılan adres olarak ayarla',
   },

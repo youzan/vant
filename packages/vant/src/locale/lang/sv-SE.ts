@@ -50,10 +50,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Område',
-    postal: 'Post',
     areaEmpty: 'Välj ett mottagningsområde',
     addressEmpty: 'Adressen får inte vara tom',
-    postalEmpty: 'Fel postnummer',
     addressDetail: 'Adress',
     defaultAddress: 'Ange som standardadress',
   },
