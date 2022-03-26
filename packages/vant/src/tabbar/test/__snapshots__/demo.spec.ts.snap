@@ -193,7 +193,7 @@ exports[`should render demo and match snapshot 1`] = `
          aria-selected="true"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
-        <img src="https://img.yzcdn.cn/vant/user-active.png">
+        <img src="https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png">
         <div class="van-badge van-badge--top-right van-badge--fixed">
           3
         </div>

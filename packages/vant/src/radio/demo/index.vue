@@ -42,8 +42,9 @@ const radioLabel = ref('1');
 const radioShape = ref('1');
 const radioIconSize = ref('1');
 const radioHorizontal = ref('1');
-const activeIcon = 'https://img.yzcdn.cn/vant/user-active.png';
-const inactiveIcon = 'https://img.yzcdn.cn/vant/user-inactive.png';
+const activeIcon = 'https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png';
+const inactiveIcon =
+  'https://cdn.jsdelivr.net/npm/@vant/assets/user-inactive.png';
 </script>
 
 <template>

@@ -54,7 +54,9 @@ const rate = ref(3);
 const radio = ref('1');
 const slider = ref(50);
 const stepper = ref(1);
-const uploader = ref([{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }]);
+const uploader = ref([
+  { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg' },
+]);
 const checkbox = ref(false);
 const checkboxGroup = ref([]);
 const switchChecked = ref(false);

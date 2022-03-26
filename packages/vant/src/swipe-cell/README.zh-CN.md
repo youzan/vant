@@ -47,7 +47,7 @@ app.use(SwipeCell);
     desc="描述信息"
     title="商品标题"
     class="goods-card"
-    thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+    thumb="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
   />
   <template #right>
     <van-button square text="删除" type="danger" class="delete-button" />
@@ -178,7 +178,6 @@ const swipeCellRef = ref<SwipeCellInstance>();
 
 swipeCellRef.value?.close();
 ```
-
 
 ## 常见问题
 

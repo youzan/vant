@@ -109,15 +109,15 @@ export default {
     const options = [
       {
         name: 'Name',
-        icon: 'https://img.yzcdn.cn/vant/custom-icon-fire.png',
+        icon: 'https://cdn.jsdelivr.net/npm/@vant/assets/custom-icon-fire.png',
       },
       {
         name: 'Name',
-        icon: 'https://img.yzcdn.cn/vant/custom-icon-light.png',
+        icon: 'https://cdn.jsdelivr.net/npm/@vant/assets/custom-icon-light.png',
       },
       {
         name: 'Name',
-        icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png',
+        icon: 'https://cdn.jsdelivr.net/npm/@vant/assets/custom-icon-water.png',
       },
     ];
 

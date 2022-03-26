@@ -79,7 +79,7 @@ exports[`zoom in and drag image to move 1`] = `
 <div class="van-image van-image-preview__image"
      style="transition-duration: .3s;"
 >
-  <img src="https://img.yzcdn.cn/1.png"
+  <img src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
        class="van-image__img"
        style="object-fit: contain;"
   >
@@ -120,7 +120,7 @@ exports[`zoom in and drag image to move 2`] = `
 <div class="van-image van-image-preview__image"
      style="transition-duration: .3s;"
 >
-  <img src="https://img.yzcdn.cn/1.png"
+  <img src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
        class="van-image__img"
        style="object-fit: contain;"
   >

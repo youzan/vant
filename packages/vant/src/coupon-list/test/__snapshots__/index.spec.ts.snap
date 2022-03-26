@@ -589,7 +589,7 @@ exports[`should use custom src when using empty-image prop 1`] = `
              style="height: 624px;"
         >
           <div class="van-coupon-list__empty">
-            <img src="https://img.yzcdn.com/xxx.png">
+            <img src="https://cdn.jsdelivr.net/npm/@vant/assets/xxx.jpeg">
             <p>
               No coupons
             </p>

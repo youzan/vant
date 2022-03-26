@@ -31,15 +31,15 @@ export default {
         title: 'Vant 3',
         subtitle: '（适用于 Vue 3）',
         description: '轻量、可靠的移动端组件库',
-        logo: 'https://img.yzcdn.cn/vant/logo.png',
+        logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/logo.png',
         langLabel: '中',
         links: [
           {
-            logo: 'https://b.yzcdn.cn/vant/logo/weapp.svg',
+            logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/weapp.svg',
             url: 'https://vant-contrib.gitee.io/vant-weapp/',
           },
           {
-            logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
+            logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/github.svg',
             url: 'https://github.com/youzan/vant',
           },
         ],
@@ -478,11 +478,11 @@ export default {
         title: 'Vant 3',
         subtitle: ' (for Vue 3)',
         description: 'Mobile UI Components built on Vue',
-        logo: 'https://img.yzcdn.cn/vant/logo.png',
+        logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/logo.png',
         langLabel: 'EN',
         links: [
           {
-            logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
+            logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/github.svg',
             url: 'https://github.com/youzan/vant',
           },
         ],

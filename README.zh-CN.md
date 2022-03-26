@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" style="margin-bottom: 10px;">
+    <img alt="logo" src="https://cdn.jsdelivr.net/npm/@vant/assets/logo.png" width="120" style="margin-bottom: 10px;">
 </p>
 
 <h1 align="center">Vant</h1>
@@ -121,7 +121,7 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 
 可以手机扫码以下二维码访问手机端 demo：
 
-<img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="220" height="220" >
+<img src="https://cdn.jsdelivr.net/npm/@vant/assets/preview-qrcode.png" width="220" height="220" >
 
 ## 核心团队
 

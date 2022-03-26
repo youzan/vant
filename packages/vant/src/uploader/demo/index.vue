@@ -46,27 +46,31 @@ const t = useTranslate({
 });
 
 const fileList = ref([
-  { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
-  { url: 'https://img.yzcdn.cn/vant/tree.jpg' },
+  { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg' },
+  { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg' },
 ]);
 
-const fileList2 = ref([{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }]);
+const fileList2 = ref([
+  { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg' },
+]);
 
 const fileList3 = ref([]);
 
-const fileList4 = ref([{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }]);
+const fileList4 = ref([
+  { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg' },
+]);
 
 const fileList5 = ref<UploaderFileListItem[]>([
-  { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+  { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg' },
   {
-    url: 'https://img.yzcdn.cn/vant/sand.jpg',
+    url: 'https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg',
     deletable: true,
     beforeDelete: () => {
       Toast(t('deleteMessage'));
     },
   },
   {
-    url: 'https://img.yzcdn.cn/vant/tree.jpg',
+    url: 'https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg',
     deletable: true,
     imageFit: 'contain',
     previewSize: 120,
@@ -75,12 +79,12 @@ const fileList5 = ref<UploaderFileListItem[]>([
 
 const statusFileList = ref<UploaderFileListItem[]>([
   {
-    url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+    url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg',
     status: 'uploading',
     message: t('uploading'),
   },
   {
-    url: 'https://img.yzcdn.cn/vant/tree.jpg',
+    url: 'https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg',
     status: 'failed',
     message: t('failed'),
   },
@@ -88,7 +92,7 @@ const statusFileList = ref<UploaderFileListItem[]>([
 
 const previewCoverFiles = ref<UploaderFileListItem[]>([
   {
-    url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+    url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg',
     file: {
       name: t('imageName'),
     } as File,

@@ -76,17 +76,23 @@ Use slots to custom tips.
   <template #pulling="props">
     <img
       class="doge"
-      src="https://img.yzcdn.cn/vant/doge.png"
+      src="https://cdn.jsdelivr.net/npm/@vant/assets/doge.png"
       :style="{ transform: `scale(${props.distance / 80})` }"
     />
   </template>
 
   <template #loosing>
-    <img class="doge" src="https://img.yzcdn.cn/vant/doge.png" />
+    <img
+      class="doge"
+      src="https://cdn.jsdelivr.net/npm/@vant/assets/doge.png"
+    />
   </template>
 
   <template #loading>
-    <img class="doge" src="https://img.yzcdn.cn/vant/doge-fire.jpg" />
+    <img
+      class="doge"
+      src="https://cdn.jsdelivr.net/npm/@vant/assets/doge-fire.jpeg"
+    />
   </template>
   <p>Refresh Count: {{ count }}</p>
 </van-pull-refresh>

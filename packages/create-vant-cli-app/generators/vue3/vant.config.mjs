@@ -10,7 +10,7 @@ export default {
   },
   site: {
     title: '<%= name %>',
-    logo: 'https://img.yzcdn.cn/vant/logo.png',
+    logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/logo.png',
     nav: [
       {
         title: '开发指南',

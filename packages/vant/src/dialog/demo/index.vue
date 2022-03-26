@@ -36,7 +36,7 @@ const t = useTranslate({
 });
 
 const show = ref(false);
-const image = 'https://img.yzcdn.cn/vant/apple-3.jpg';
+const image = 'https://cdn.jsdelivr.net/npm/@vant/assets/apple-3.jpeg';
 
 const onClickAlert = () => {
   Dialog.alert({

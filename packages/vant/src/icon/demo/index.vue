@@ -63,7 +63,7 @@ const t = useTranslate({
 
 const tab = ref(0);
 const demoIcon = 'chat-o';
-const demoImage = 'https://b.yzcdn.cn/vant/icon-demo-1126.png';
+const demoImage = 'https://cdn.jsdelivr.net/npm/@vant/assets/icon-demo.png';
 
 const copy = (icon: string, option: Record<string, unknown> = {}) => {
   let tag = `<van-icon name="${icon}"`;
