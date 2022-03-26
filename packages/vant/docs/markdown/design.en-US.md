@@ -36,7 +36,7 @@ Contains icon library resources.
 
 <img src="https://cdn.jsdelivr.net/npm/@vant/assets/vant-axure-0905.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
-<a class="design-download" href="https://b.yzcdn.cn/vant/vant-axure-20200905.zip">Download</a>
+<a class="design-download" href="https://github.com/vant-ui/vant-assets/blob/main/design/axure-20200905.zip?raw=true">Download</a>
 
 <style>
 a.design-download {
