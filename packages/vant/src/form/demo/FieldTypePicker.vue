@@ -3,7 +3,7 @@ import VanField from '../../field';
 import VanPopup from '../../popup';
 import VanPicker, { PickerConfirmEventParams } from '../../picker';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import { basicColumns } from '../../picker/demo/data';
 
 const t = useTranslate({

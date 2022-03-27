@@ -22,7 +22,6 @@ import {
   unitToPx,
   truthProp,
   numericProp,
-  Interceptor,
   windowWidth,
   getElementTop,
   makeStringProp,
@@ -31,6 +30,8 @@ import {
   makeNumericProp,
   setRootScrollTop,
   BORDER_TOP_BOTTOM,
+  type Numeric,
+  type Interceptor,
   type ComponentInstance,
 } from '../utils';
 import { scrollLeftTo, scrollTopTo } from './utils';
@@ -127,10 +128,8 @@ export default defineComponent({
       background: props.background,
     }));
 
-    const getTabName = (
-      tab: ComponentInstance,
-      index: number
-    ): number | string => tab.name ?? index;
+    const getTabName = (tab: ComponentInstance, index: number): Numeric =>
+      tab.name ?? index;
 
     const currentName = computed(() => {
       const activeTab = children[state.currentIndex];
@@ -239,7 +238,7 @@ export default defineComponent({
     };
 
     // correct the index of active tab
-    const setCurrentIndexByName = (name: number | string) => {
+    const setCurrentIndexByName = (name: Numeric) => {
       const matched = children.find(
         (tab, index) => getTabName(tab, index) === name
       );
@@ -305,7 +304,7 @@ export default defineComponent({
       emit('scroll', params);
     };
 
-    const scrollTo = (name: number | string) => {
+    const scrollTo = (name: Numeric) => {
       nextTick(() => {
         setCurrentIndexByName(name);
         scrollToCurrentContent(true);
@@ -444,7 +443,7 @@ export default defineComponent({
       });
     };
 
-    const onRendered = (name: string | number, title?: string) =>
+    const onRendered = (name: Numeric, title?: string) =>
       emit('rendered', name, title);
 
     useExpose({

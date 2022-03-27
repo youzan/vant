@@ -24,6 +24,7 @@ import {
   callInterceptor,
   makeNumericProp,
   HAPTICS_FEEDBACK,
+  type Numeric,
 } from '../utils';
 
 // Composables
@@ -34,7 +35,7 @@ const [name, bem] = createNamespace('stepper');
 const LONG_PRESS_INTERVAL = 200;
 const LONG_PRESS_START_TIME = 600;
 
-const isEqual = (value1?: string | number, value2?: string | number) =>
+const isEqual = (value1?: Numeric, value2?: Numeric) =>
   String(value1) === String(value2);
 
 export type StepperTheme = 'default' | 'round';
@@ -82,7 +83,7 @@ export default defineComponent({
   ],
 
   setup(props, { emit }) {
-    const format = (value: string | number) => {
+    const format = (value: Numeric) => {
       const { min, max, allowEmpty, decimalLength } = props;
 
       if (allowEmpty && value === '') {
@@ -139,7 +140,7 @@ export default defineComponent({
       }
     };
 
-    const setValue = (value: string | number) => {
+    const setValue = (value: Numeric) => {
       if (props.beforeChange) {
         callInterceptor(props.beforeChange, {
           args: [value],

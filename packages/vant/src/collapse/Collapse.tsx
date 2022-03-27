@@ -4,14 +4,19 @@ import {
   type InjectionKey,
   type ExtractPropTypes,
 } from 'vue';
-import { truthProp, createNamespace, BORDER_TOP_BOTTOM } from '../utils';
+import {
+  truthProp,
+  createNamespace,
+  BORDER_TOP_BOTTOM,
+  type Numeric,
+} from '../utils';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('collapse');
 
 export type CollapseProvide = {
-  toggle: (name: number | string, expanded: boolean) => void;
-  isExpanded: (name: number | string) => boolean;
+  toggle: (name: Numeric, expanded: boolean) => void;
+  isExpanded: (name: Numeric) => boolean;
 };
 
 export const COLLAPSE_KEY: InjectionKey<CollapseProvide> = Symbol(name);
@@ -20,9 +25,7 @@ const collapseProps = {
   border: truthProp,
   accordion: Boolean,
   modelValue: {
-    type: [String, Number, Array] as PropType<
-      string | number | Array<string | number>
-    >,
+    type: [String, Number, Array] as PropType<Numeric | Numeric[]>,
     default: '',
   },
 };
@@ -30,7 +33,7 @@ const collapseProps = {
 export type CollapseProps = ExtractPropTypes<typeof collapseProps>;
 
 function validateModelValue(
-  modelValue: string | number | Array<string | number>,
+  modelValue: Numeric | Numeric[],
   accordion: boolean
 ) {
   if (accordion && Array.isArray(modelValue)) {
@@ -58,28 +61,26 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const { linkChildren } = useChildren(COLLAPSE_KEY);
 
-    const updateName = (name: number | string | Array<number | string>) => {
+    const updateName = (name: Numeric | Numeric[]) => {
       emit('change', name);
       emit('update:modelValue', name);
     };
 
-    const toggle = (name: number | string, expanded: boolean) => {
+    const toggle = (name: Numeric, expanded: boolean) => {
       const { accordion, modelValue } = props;
 
       if (accordion) {
         updateName(name === modelValue ? '' : name);
       } else if (expanded) {
-        updateName((modelValue as Array<number | string>).concat(name));
+        updateName((modelValue as Numeric[]).concat(name));
       } else {
         updateName(
-          (modelValue as Array<number | string>).filter(
-            (activeName) => activeName !== name
-          )
+          (modelValue as Numeric[]).filter((activeName) => activeName !== name)
         );
       }
     };
 
-    const isExpanded = (name: number | string) => {
+    const isExpanded = (name: Numeric) => {
       const { accordion, modelValue } = props;
 
       if (
@@ -91,7 +92,7 @@ export default defineComponent({
 
       return accordion
         ? modelValue === name
-        : (modelValue as Array<number | string>).includes(name);
+        : (modelValue as Numeric[]).includes(name);
     };
 
     linkChildren({ toggle, isExpanded });

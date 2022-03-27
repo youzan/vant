@@ -1,9 +1,9 @@
-import { CSSProperties } from 'vue';
-import { inBrowser } from './basic';
+import type { CSSProperties } from 'vue';
+import { inBrowser, type Numeric } from './basic';
 import { windowWidth, windowHeight } from './dom';
 import { isDef, isNumeric } from './validate';
 
-export function addUnit(value?: string | number): string | undefined {
+export function addUnit(value?: Numeric): string | undefined {
   if (isDef(value)) {
     return isNumeric(value) ? `${value}px` : String(value);
   }
@@ -11,9 +11,15 @@ export function addUnit(value?: string | number): string | undefined {
 }
 
 export function getSizeStyle(
-  originSize?: string | number
+  originSize?: Numeric | Numeric[]
 ): CSSProperties | undefined {
   if (isDef(originSize)) {
+    if (Array.isArray(originSize)) {
+      return {
+        width: addUnit(originSize[0]),
+        height: addUnit(originSize[1]),
+      };
+    }
     const size = addUnit(originSize);
     return {
       width: size,
@@ -22,7 +28,7 @@ export function getSizeStyle(
   }
 }
 
-export function getZIndexStyle(zIndex?: string | number) {
+export function getZIndexStyle(zIndex?: Numeric) {
   const style: CSSProperties = {};
   if (zIndex !== undefined) {
     style.zIndex = +zIndex;
@@ -60,7 +66,7 @@ function convertVh(value: string) {
   return (+value * windowHeight.value) / 100;
 }
 
-export function unitToPx(value: string | number): number {
+export function unitToPx(value: Numeric): number {
   if (typeof value === 'number') {
     return value;
   }
@@ -91,7 +97,7 @@ export const kebabCase = (str: string) =>
     .toLowerCase()
     .replace(/^-/, '');
 
-export function padZero(num: number | string, targetLength = 2): string {
+export function padZero(num: Numeric, targetLength = 2): string {
   let str = num + '';
 
   while (str.length < targetLength) {

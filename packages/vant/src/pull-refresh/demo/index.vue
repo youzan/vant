@@ -3,7 +3,7 @@ import VanTabs from '../../tabs';
 import VanTab from '../../tab';
 import VanPullRefresh from '..';
 import { computed, onMounted, ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import { Toast } from '../../toast';
 
 const t = useTranslate({
@@ -48,8 +48,8 @@ const preloadImage = () => {
   const doge = new Image();
   const dogeFire = new Image();
 
-  doge.src = 'https://cdn.jsdelivr.net/npm/@vant/assets/doge.png';
-  dogeFire.src = 'https://cdn.jsdelivr.net/npm/@vant/assets/doge-fire.jpeg';
+  doge.src = cdnURL('doge.png');
+  dogeFire.src = cdnURL('doge-fire.jpeg');
 };
 
 onMounted(preloadImage);
@@ -82,21 +82,15 @@ onMounted(preloadImage);
         <template #pulling="{ distance }">
           <img
             class="doge"
-            src="https://cdn.jsdelivr.net/npm/@vant/assets/doge.png"
+            :src="cdnURL('doge.png')"
             :style="{ transform: `scale(${distance / 80})` }"
           />
         </template>
         <template #loosing>
-          <img
-            src="https://cdn.jsdelivr.net/npm/@vant/assets/doge.png"
-            class="doge"
-          />
+          <img :src="cdnURL('doge.png')" class="doge" />
         </template>
         <template #loading>
-          <img
-            src="https://cdn.jsdelivr.net/npm/@vant/assets/doge-fire.jpeg"
-            class="doge"
-          />
+          <img :src="cdnURL('doge-fire.jpeg')" class="doge" />
         </template>
         <p>{{ tips }}</p>
       </van-pull-refresh>

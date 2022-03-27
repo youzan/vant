@@ -1,5 +1,6 @@
 /* eslint-disable no-use-before-define */
 import type { ComponentPublicInstance } from 'vue';
+import type { Numeric } from '../utils';
 import type { PickerProps } from './Picker';
 
 export type PickerToolbarPosition = 'top' | 'bottom';
@@ -11,8 +12,8 @@ export type PickerFieldNames = {
 };
 
 export type PickerOption = {
-  text?: string | number;
-  value?: string | number;
+  text?: Numeric;
+  value?: Numeric;
   disabled?: boolean;
   children?: PickerColumn;
   className?: unknown;

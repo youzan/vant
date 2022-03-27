@@ -2,7 +2,7 @@
 import VanSwitch from '..';
 import VanCell from '../../cell';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import { Dialog } from '../../dialog';
 
 const t = useTranslate({

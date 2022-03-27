@@ -197,42 +197,6 @@ exports[`preview-cover slot 1`] = `
 </div>
 `;
 
-exports[`preview-size prop 1`] = `
-<div class="van-uploader">
-  <div class="van-uploader__wrapper">
-    <div class="van-uploader__preview">
-      <div class="van-uploader__file"
-           style="width: 30px; height: 30px;"
-      >
-        <i class="van-badge__wrapper van-icon van-icon-description van-uploader__file-icon">
-        </i>
-        <div class="van-uploader__file-name van-ellipsis">
-          test.jpg
-        </div>
-      </div>
-      <div role="button"
-           class="van-uploader__preview-delete"
-           tabindex="0"
-           aria-label="Delete"
-      >
-        <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
-        </i>
-      </div>
-    </div>
-    <div class="van-uploader__upload"
-         style="width: 30px; height: 30px;"
-    >
-      <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
-      </i>
-      <input type="file"
-             class="van-uploader__input"
-             accept="image/*"
-      >
-    </div>
-  </div>
-</div>
-`;
-
 exports[`render preview image 1`] = `
 <div class="van-uploader">
   <div class="van-uploader__wrapper">

@@ -1,4 +1,5 @@
 import type { ComponentPublicInstance } from 'vue';
+import type { Numeric } from '../utils';
 import type { IndexBarProps } from './IndexBar';
 
 export type IndexBarProvide = {
@@ -6,7 +7,7 @@ export type IndexBarProvide = {
 };
 
 export type IndexBarExpose = {
-  scrollTo: (index: string | number) => void;
+  scrollTo: (index: Numeric) => void;
 };
 
 export type IndexBarInstance = ComponentPublicInstance<

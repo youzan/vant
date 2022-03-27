@@ -217,6 +217,23 @@ export default {
 </style>
 ```
 
+### 自定义预览大小
+
+通过 `preview-size` 属性定义预览图和上传区域的大小。
+
+```html
+<!-- 不指定单位，默认为 px -->
+<van-uploader v-model="fileList" preview-size="60" />
+<!-- 指定单位，支持 rem, vh, vw -->
+<van-uploader v-model="fileList" preview-size="5rem" />
+```
+
+将 `preview-size` 设置为数组格式，可以分别设置宽高。数组第一项对应宽度，数组第二项对应高度。
+
+```html
+<van-uploader v-model="fileList" :preview-size="[60, 40]" />
+```
+
 ### 上传前置处理
 
 通过传入 `beforeRead` 函数可以在上传前进行校验和处理，返回 `true` 表示校验通过，返回 `false` 表示校验失败。支持返回 `Promise` 对 file 对象进行自定义处理，例如压缩图片。
@@ -284,19 +301,16 @@ import { Toast } from 'vant';
 export default {
   setup() {
     const fileList = ref([
-      { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg' },
       {
         url: 'https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg',
         deletable: true,
         beforeDelete: () => {
-          Toast('自定义单个预览图片的事件和样式');
+          Toast('删除前置处理');
         },
       },
       {
         url: 'https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg',
-        deletable: true,
         imageFit: 'contain',
-        previewSize: 120,
       },
     ]);
 
@@ -314,7 +328,7 @@ export default {
 | v-model | 已上传的文件列表 | _FileListItem[]_ | - |
 | accept | 允许上传的文件类型，[详细说明](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/file#%E9%99%90%E5%88%B6%E5%85%81%E8%AE%B8%E7%9A%84%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B) | _string_ | `image/*` |
 | name | 标识符，可以在回调函数的第二项参数中获取 | _number \| string_ | - |
-| preview-size | 预览图和上传区域的尺寸，默认单位为 `px` | _number \| string_ | `80px` |
+| preview-size | 预览图和上传区域的尺寸，默认单位为 `px` | _number \| string \| Array_ | `80px` |
 | preview-image | 是否在上传完成后展示预览图 | _boolean_ | `true` |
 | preview-full-image | 是否在点击预览图后展示全屏图片预览 | _boolean_ | `true` |
 | preview-options | 全屏图片预览的配置项，可选值见 [ImagePreview](#/zh-CN/image-preview) | _object_ | - |

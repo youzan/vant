@@ -3,7 +3,7 @@ import VanField from '../../field';
 import VanPopup from '../../popup';
 import VanDatePicker from '../../date-picker';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import type { PickerConfirmEventParams } from '../../picker';
 
 const t = useTranslate({

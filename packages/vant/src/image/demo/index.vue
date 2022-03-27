@@ -3,7 +3,7 @@ import VanRow from '../../row';
 import VanImage from '..';
 import VanCol from '../../col';
 import VanLoading from '../../loading';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {
@@ -28,7 +28,7 @@ const t = useTranslate({
   },
 });
 
-const image = 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg';
+const image = cdnURL('cat.jpeg');
 const fits = ['contain', 'cover', 'fill', 'none', 'scale-down'] as const;
 const positions1 = ['left', 'center', 'right'] as const;
 const positions2 = ['top', 'center', 'bottom'] as const;

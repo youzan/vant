@@ -2,7 +2,7 @@
 import VanCell from '../../cell';
 import VanShareSheet, { ShareSheetOption, ShareSheetOptions } from '..';
 import { ref, computed } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import { Toast } from '../../toast';
 
 const t = useTranslate({
@@ -73,15 +73,15 @@ const multiLineOptions = computed(() => [
 const customIconOptions = computed(() => [
   {
     name: t('name'),
-    icon: 'https://cdn.jsdelivr.net/npm/@vant/assets/custom-icon-fire.png',
+    icon: cdnURL('custom-icon-fire.png'),
   },
   {
     name: t('name'),
-    icon: 'https://cdn.jsdelivr.net/npm/@vant/assets/custom-icon-light.png',
+    icon: cdnURL('custom-icon-light.png'),
   },
   {
     name: t('name'),
-    icon: 'https://cdn.jsdelivr.net/npm/@vant/assets/custom-icon-water.png',
+    icon: cdnURL('custom-icon-water.png'),
   },
 ]);
 

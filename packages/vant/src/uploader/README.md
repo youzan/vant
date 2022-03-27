@@ -200,6 +200,23 @@ export default {
 </style>
 ```
 
+### Preview Size
+
+Using `preview-size` prop to custom the size of preview image.
+
+```html
+<!-- The default unit is px -->
+<van-uploader v-model="fileList" preview-size="60" />
+<!-- Support other units, such as rem, vh, vw -->
+<van-uploader v-model="fileList" preview-size="5rem" />
+```
+
+You can set the width and height separately.
+
+```html
+<van-uploader v-model="fileList" :preview-size="[60, 40]" />
+```
+
 ### Before Read
 
 ```html
@@ -263,7 +280,6 @@ import { Toast } from 'vant';
 export default {
   setup() {
     const fileList = ref([
-      { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg' },
       {
         url: 'https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg',
         deletable: true,
@@ -273,9 +289,7 @@ export default {
       },
       {
         url: 'https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg',
-        deletable: true,
         imageFit: 'contain',
-        previewSize: 120,
       },
     ]);
 
@@ -293,7 +307,7 @@ export default {
 | v-model | List of uploaded files | _FileListItem[]_ | - |
 | accept | Accepted [file type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Unique_file_type_specifiers) | _string_ | `image/*` |
 | name | Input name | _number \| string_ | - |
-| preview-size | Size of preview image | _number \| string_ | `80px` |
+| preview-size | Size of preview image | _number \| string \| Array_ | `80px` |
 | preview-image | Whether to show image preview | _boolean_ | `true` |
 | preview-full-image | Whether to show full screen image preview when image is clicked | _boolean_ | `true` |
 | preview-options | Options of full screen image preview，see [ImagePreview](#/en-US/image-preview) | _object_ | - |

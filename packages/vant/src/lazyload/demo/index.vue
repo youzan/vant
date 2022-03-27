@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Lazyload from '..';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 
 if (window.app) {
   window.app.use(Lazyload, { lazyComponent: true });
@@ -18,19 +18,13 @@ const t = useTranslate({
 });
 
 const imageList = [
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-3.jpeg',
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-4.jpeg',
+  cdnURL('apple-1.jpeg'),
+  cdnURL('apple-2.jpeg'),
+  cdnURL('apple-3.jpeg'),
+  cdnURL('apple-4.jpeg'),
 ];
-const backgroundImageList = [
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-5.jpeg',
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-6.jpeg',
-];
-const componentImageList = [
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-8.jpeg',
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-7.jpeg',
-];
+const backgroundImageList = [cdnURL('apple-5.jpeg'), cdnURL('apple-6.jpeg')];
+const componentImageList = [cdnURL('apple-8.jpeg'), cdnURL('apple-7.jpeg')];
 </script>
 
 <template>

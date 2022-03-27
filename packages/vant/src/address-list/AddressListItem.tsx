@@ -1,7 +1,12 @@
 import { defineComponent, type PropType } from 'vue';
 
 // Utils
-import { createNamespace, extend, makeRequiredProp } from '../utils';
+import {
+  extend,
+  createNamespace,
+  makeRequiredProp,
+  type Numeric,
+} from '../utils';
 
 // Components
 import { Tag } from '../tag';
@@ -12,8 +17,8 @@ import { Radio } from '../radio';
 const [name, bem] = createNamespace('address-item');
 
 export type AddressListAddress = {
-  id: number | string;
-  tel: number | string;
+  id: Numeric;
+  tel: Numeric;
   name: string;
   address: string;
   isDefault?: boolean;

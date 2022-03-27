@@ -1,5 +1,6 @@
 import { later, mount } from '../../../test';
 import { CouponList } from '..';
+import { cdnURL } from '../../../docs/site';
 
 const coupon = {
   id: 1,
@@ -106,7 +107,7 @@ test('should have two "van-coupon-list__empty" classes when render coupon list i
 test('should use custom src when using empty-image prop', async () => {
   const wrapper = mount(CouponList, {
     props: {
-      emptyImage: 'https://cdn.jsdelivr.net/npm/@vant/assets/xxx.jpeg',
+      emptyImage: cdnURL('xxx.jpeg'),
     },
   });
 

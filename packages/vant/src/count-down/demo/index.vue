@@ -3,7 +3,7 @@ import VanGrid from '../../grid';
 import VanGridItem from '../../grid-item';
 import VanCountDown, { type CountDownInstance } from '..';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

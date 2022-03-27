@@ -21,6 +21,7 @@ import {
   stopPropagation,
   createNamespace,
   HAPTICS_FEEDBACK,
+  type Numeric,
 } from '../utils';
 
 // Composables
@@ -34,7 +35,7 @@ const [name, bem] = createNamespace('number-keyboard');
 export type NumberKeyboardTheme = 'default' | 'custom';
 
 type KeyConfig = {
-  text?: number | string;
+  text?: Numeric;
   type?: KeyType;
   color?: string;
   wider?: boolean;

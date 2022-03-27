@@ -2,7 +2,7 @@
 import VanCard from '..';
 import VanTag from '../../tag';
 import VanButton from '../../button';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {
@@ -16,7 +16,7 @@ const t = useTranslate({
   },
 });
 
-const imageURL = 'https://cdn.jsdelivr.net/npm/@vant/assets/ipad.jpeg';
+const imageURL = cdnURL('ipad.jpeg');
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VanBadge from '..';
 import VanIcon from '../../icon';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

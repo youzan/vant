@@ -1,13 +1,15 @@
 import { nextTick } from 'vue';
-import Uploader, { UploaderFileListItem } from '..';
+import { cdnURL } from '../../../docs/site';
+import Uploader, { type UploaderFileListItem } from '..';
 import { mount, later, triggerDrag } from '../../../test';
+import type { Numeric } from '../../utils';
 
 const mockFileDataUrl = 'data:image/test';
 const mockFile = new File([new ArrayBuffer(10000)], 'test.jpg', {
   type: 'test',
 });
-const IMAGE = 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg';
-const PDF = 'https://cdn.jsdelivr.net/npm/@vant/assets/test.pdf';
+const IMAGE = cdnURL('cat.jpeg');
+const PDF = cdnURL('test.pdf');
 
 function mockFileReader() {
   function mockReadAsText(this: FileReader) {
@@ -96,14 +98,14 @@ test('set input name', (done) => {
       name: 'uploader',
       beforeRead: (
         file: File | File[],
-        detail: { name: string | number; index: number }
+        detail: { name: Numeric; index: number }
       ) => {
         expect(detail.name).toEqual('uploader');
         return true;
       },
       afterRead: (
         readFile: UploaderFileListItem | UploaderFileListItem[],
-        detail: { name: string | number; index: number }
+        detail: { name: Numeric; index: number }
       ) => {
         expect(detail.name).toEqual('uploader');
         done();
@@ -293,8 +295,8 @@ test('render preview image', async () => {
   const wrapper = mount(Uploader, {
     props: {
       modelValue: [
-        { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg' },
-        { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/test.pdf' },
+        { url: cdnURL('cat.jpeg') },
+        { url: cdnURL('test.pdf') },
         { file: mockFile },
       ],
     },
@@ -307,9 +309,7 @@ test('image-fit prop', () => {
   const wrapper = mount(Uploader, {
     props: {
       imageFit: 'contain',
-      modelValue: [
-        { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg' },
-      ],
+      modelValue: [{ url: cdnURL('cat.jpeg') }],
     },
   });
 
@@ -360,16 +360,38 @@ test('max-count prop', async () => {
   ).toHaveLength(1);
 });
 
-test('preview-size prop', async () => {
+test('should allow to custom size by preview-size prop', async () => {
   const wrapper = mount(Uploader, {
     props: {
-      modelValue: [],
+      modelValue: [{ file: mockFile }],
       previewSize: 30,
     },
   });
 
-  await wrapper.setProps({ modelValue: [{ file: mockFile }] });
-  expect(wrapper.html()).toMatchSnapshot();
+  const image = wrapper.find('.van-uploader__file');
+  expect(image.style.width).toEqual('30px');
+  expect(image.style.height).toEqual('30px');
+
+  const upload = wrapper.find('.van-uploader__upload');
+  expect(upload.style.width).toEqual('30px');
+  expect(upload.style.height).toEqual('30px');
+});
+
+test('should allow to set width and height separately by preview-size prop', async () => {
+  const wrapper = mount(Uploader, {
+    props: {
+      modelValue: [{ file: mockFile }],
+      previewSize: [20, 10],
+    },
+  });
+
+  const image = wrapper.find('.van-uploader__file');
+  expect(image.style.width).toEqual('20px');
+  expect(image.style.height).toEqual('10px');
+
+  const upload = wrapper.find('.van-uploader__upload');
+  expect(upload.style.width).toEqual('20px');
+  expect(upload.style.height).toEqual('10px');
 });
 
 test('deletable prop', async () => {

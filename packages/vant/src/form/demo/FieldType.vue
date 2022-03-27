@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import VanForm from '..';
 import VanRate from '../../rate';
 import VanRadio from '../../radio';
@@ -54,9 +54,7 @@ const rate = ref(3);
 const radio = ref('1');
 const slider = ref(50);
 const stepper = ref(1);
-const uploader = ref([
-  { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg' },
-]);
+const uploader = ref([{ url: cdnURL('leaf.jpeg') }]);
 const checkbox = ref(false);
 const checkboxGroup = ref([]);
 const switchChecked = ref(false);

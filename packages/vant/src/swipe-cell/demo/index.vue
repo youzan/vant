@@ -3,7 +3,7 @@ import VanSwipeCell from '..';
 import VanButton from '../../button';
 import VanCell from '../../cell';
 import VanCard from '../../card';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import { Dialog } from '../../dialog';
 
 const t = useTranslate({
@@ -29,7 +29,7 @@ const t = useTranslate({
   },
 });
 
-const imageURL = 'https://cdn.jsdelivr.net/npm/@vant/assets/ipad.jpeg';
+const imageURL = cdnURL('ipad.jpeg');
 
 const beforeClose = ({ position }: { position: string }) => {
   switch (position) {

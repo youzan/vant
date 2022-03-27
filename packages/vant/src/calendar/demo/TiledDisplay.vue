@@ -1,6 +1,6 @@
 <script setup>
 import VanCalendar from '..';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const minDate = new Date(2012, 0, 10);
 const maxDate = new Date(2012, 2, 20);

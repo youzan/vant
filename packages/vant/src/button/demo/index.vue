@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import VanButton from '..';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {
@@ -107,7 +107,7 @@ const t = useTranslate({
     <van-button
       plain
       type="primary"
-      icon="https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png"
+      :icon="cdnURL('user-active.png')"
       :text="t('button')"
     />
   </demo-block>

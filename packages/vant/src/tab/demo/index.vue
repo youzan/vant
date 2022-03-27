@@ -3,7 +3,7 @@ import VanTabs from '../../tabs';
 import VanTab from '..';
 import VanIcon from '../../icon';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import { Toast } from '../../toast';
 import Shrink from './Shrink.vue';
 

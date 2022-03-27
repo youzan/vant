@@ -8,7 +8,7 @@ import VanSwitch from '../../switch';
 import VanSlider from '../../slider';
 import VanButton from '../../button';
 import VanConfigProvider from '..';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

@@ -7,6 +7,7 @@ import {
   makeStringProp,
   makeNumericProp,
   createNamespace,
+  type Numeric,
 } from '../utils';
 
 // Components
@@ -17,7 +18,7 @@ import { SidebarItem } from '../sidebar-item';
 const [name, bem] = createNamespace('tree-select');
 
 export type TreeSelectChild = {
-  id: number | string;
+  id: Numeric;
   text: string;
   disabled?: boolean;
 };
@@ -25,7 +26,7 @@ export type TreeSelectChild = {
 export type TreeSelectItem = {
   dot?: boolean;
   text: string;
-  badge?: number | string;
+  badge?: Numeric;
   children?: TreeSelectChild[];
   disabled?: boolean;
   className?: unknown;
@@ -38,9 +39,7 @@ const treeSelectProps = {
   selectedIcon: makeStringProp('success'),
   mainActiveIndex: makeNumericProp(0),
   activeId: {
-    type: [Number, String, Array] as PropType<
-      number | string | Array<number | string>
-    >,
+    type: [Number, String, Array] as PropType<Numeric | Numeric[]>,
     default: 0,
   },
 };
@@ -55,7 +54,7 @@ export default defineComponent({
   emits: ['clickNav', 'clickItem', 'update:activeId', 'update:mainActiveIndex'],
 
   setup(props, { emit, slots }) {
-    const isActiveItem = (id: number | string) =>
+    const isActiveItem = (id: Numeric) =>
       Array.isArray(props.activeId)
         ? props.activeId.includes(id)
         : props.activeId === id;

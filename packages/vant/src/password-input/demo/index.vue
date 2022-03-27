@@ -3,7 +3,7 @@ import VanPasswordInput from '..';
 import VanNumberKeyboard from '../../number-keyboard';
 import { ref, watch } from 'vue';
 import { ComponentInstance } from '../../utils';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

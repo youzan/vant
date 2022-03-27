@@ -1,10 +1,15 @@
 import { computed, defineComponent, type PropType } from 'vue';
-import { makeStringProp, createNamespace, makeRequiredProp } from '../utils';
+import {
+  makeStringProp,
+  createNamespace,
+  makeRequiredProp,
+  type Numeric,
+} from '../utils';
 import { getDate, formatAmount, formatDiscount } from './utils';
 import { Checkbox } from '../checkbox';
 
 export type CouponInfo = {
-  id: string | number;
+  id: Numeric;
   name: string;
   endAt: number;
   value: number;

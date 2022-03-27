@@ -4,7 +4,7 @@ import VanField from '../../field';
 import VanPopup from '../../popup';
 import { ref } from 'vue';
 import { areaList } from '@vant/area-data';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import { areaListEn } from '../../area/demo/area-en';
 import type { PickerConfirmEventParams } from '../../picker';
 

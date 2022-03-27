@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import VanDivider from '..';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

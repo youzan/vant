@@ -13,6 +13,7 @@ import {
   numericProp,
   makeStringProp,
   createNamespace,
+  type Numeric,
 } from '../utils';
 
 const [name, bem] = createNamespace('badge');
@@ -28,7 +29,7 @@ const badgeProps = {
   max: numericProp,
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
   color: String,
-  offset: Array as unknown as PropType<[string | number, string | number]>,
+  offset: Array as unknown as PropType<[Numeric, Numeric]>,
   content: numericProp,
   showZero: truthProp,
   position: makeStringProp<BadgePosition>('top-right'),
