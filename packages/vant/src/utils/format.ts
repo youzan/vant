@@ -11,9 +11,15 @@ export function addUnit(value?: string | number): string | undefined {
 }
 
 export function getSizeStyle(
-  originSize?: string | number
+  originSize?: string | number | Array<string | number>
 ): CSSProperties | undefined {
   if (isDef(originSize)) {
+    if (Array.isArray(originSize)) {
+      return {
+        width: addUnit(originSize[0]),
+        height: addUnit(originSize[1]),
+      };
+    }
     const size = addUnit(originSize);
     return {
       width: size,

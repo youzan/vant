@@ -13,7 +13,6 @@ import {
   extend,
   isPromise,
   truthProp,
-  numericProp,
   Interceptor,
   getSizeStyle,
   makeArrayProp,
@@ -70,7 +69,9 @@ const uploaderProps = {
   modelValue: makeArrayProp<UploaderFileListItem>(),
   beforeRead: Function as PropType<UploaderBeforeRead>,
   beforeDelete: Function as PropType<Interceptor>,
-  previewSize: numericProp,
+  previewSize: [Number, String, Array] as PropType<
+    number | string | Array<number | string>
+  >,
   previewImage: truthProp,
   previewOptions: Object as PropType<ImagePreviewOptions>,
   previewFullImage: truthProp,
