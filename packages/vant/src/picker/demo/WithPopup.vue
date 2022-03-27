@@ -4,7 +4,7 @@ import VanPicker from '..';
 import VanField from '../../field';
 import VanPopup from '../../popup';
 import { basicColumns } from './data';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import type { PickerConfirmEventParams } from '../types';
 
 const t = useTranslate({
@@ -33,7 +33,7 @@ const onCancel = () => {
 };
 const onConfirm = ({ selectedOptions }: PickerConfirmEventParams) => {
   showPicker.value = false;
-  fieldValue.value = selectedOptions[0].text as string;
+  fieldValue.value = selectedOptions[0]!.text as string;
 };
 </script>
 

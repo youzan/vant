@@ -20,6 +20,7 @@ import {
   createNamespace,
   HAPTICS_FEEDBACK,
   BORDER_UNSET_TOP_BOTTOM,
+  type Numeric,
 } from '../utils';
 import {
   isOptionExist,
@@ -64,7 +65,7 @@ export const pickerSharedProps = {
 
 const pickerProps = extend({}, pickerSharedProps, {
   columns: makeArrayProp<PickerOption | PickerColumn>(),
-  modelValue: makeArrayProp<number | string>(),
+  modelValue: makeArrayProp<Numeric>(),
   toolbarPosition: makeStringProp<PickerToolbarPosition>('top'),
   columnsFieldNames: Object as PropType<PickerFieldNames>,
 });
@@ -112,7 +113,7 @@ export default defineComponent({
       )
     );
 
-    const setValue = (index: number, value: string | number) => {
+    const setValue = (index: number, value: Numeric) => {
       if (selectedValues.value[index] !== value) {
         const newValues = selectedValues.value.slice(0);
         newValues[index] = value;
@@ -120,7 +121,7 @@ export default defineComponent({
       }
     };
 
-    const onChange = (value: number | string, columnIndex: number) => {
+    const onChange = (value: Numeric, columnIndex: number) => {
       setValue(columnIndex, value);
 
       if (columnsType.value === 'cascade') {
@@ -216,7 +217,7 @@ export default defineComponent({
           optionHeight={optionHeight.value}
           swipeDuration={props.swipeDuration}
           visibleOptionNum={props.visibleOptionNum}
-          onChange={(value: number | string) => onChange(value, columnIndex)}
+          onChange={(value: Numeric) => onChange(value, columnIndex)}
         />
       ));
 

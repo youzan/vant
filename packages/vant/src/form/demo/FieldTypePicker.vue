@@ -5,6 +5,7 @@ import VanPicker, { PickerConfirmEventParams } from '../../picker';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
 import { basicColumns } from '../../picker/demo/data';
+import type { Numeric } from '../../utils';
 
 const t = useTranslate({
   'zh-CN': {
@@ -19,7 +20,7 @@ const t = useTranslate({
   },
 });
 
-const result = ref<string | number>('');
+const result = ref<Numeric>('');
 const showPicker = ref(false);
 
 const onConfirm = ({ selectedOptions }: PickerConfirmEventParams) => {

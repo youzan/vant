@@ -1,4 +1,4 @@
-import { isDef, clamp, extend } from '../utils';
+import { isDef, clamp, extend, type Numeric } from '../utils';
 import type { Ref } from 'vue';
 import type { PickerOption, PickerColumn, PickerFieldNames } from './types';
 
@@ -41,7 +41,7 @@ export function findIndexOfEnabledOption(
 
 export const isOptionExist = (
   options: PickerOption[],
-  value: number | string | undefined,
+  value: Numeric | undefined,
   fields: Required<PickerFieldNames>
 ) =>
   value !== undefined &&
@@ -49,7 +49,7 @@ export const isOptionExist = (
 
 export function findOptionByValue(
   options: PickerOption[],
-  value: number | string,
+  value: Numeric,
   fields: Required<PickerFieldNames>
 ): PickerOption | undefined {
   const index = options.findIndex((option) => option[fields.value] === value);
@@ -60,7 +60,7 @@ export function findOptionByValue(
 export function formatCascadeColumns(
   columns: PickerColumn | PickerColumn[],
   fields: Required<PickerFieldNames>,
-  selectedValues: Ref<Array<number | string>>
+  selectedValues: Ref<Numeric[]>
 ) {
   const formatted: PickerColumn[] = [];
 

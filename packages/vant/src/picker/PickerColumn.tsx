@@ -14,6 +14,7 @@ import {
   preventDefault,
   createNamespace,
   makeRequiredProp,
+  type Numeric,
 } from '../utils';
 import { getElementTranslateY, findIndexOfEnabledOption } from './utils';
 
@@ -208,7 +209,7 @@ export default defineComponent({
       return props.options.map((option, index) => {
         const text = option[props.fields.text];
         const { disabled } = option;
-        const value: string | number = option[props.fields.value];
+        const value: Numeric = option[props.fields.value];
         const data = {
           role: 'button',
           style: optionStyle,

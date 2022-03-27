@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import VanTimePicker from '..';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import type { PickerOption } from '../../picker';
-import { TimePickerColumnType } from '../TimePicker';
+import type { TimePickerColumnType } from '../TimePicker';
 
 const t = useTranslate({
   'zh-CN': {
