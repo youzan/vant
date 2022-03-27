@@ -2,7 +2,7 @@
 import VanSkeleton from '..';
 import VanSwitch from '../../switch';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
   'zh-CN': {
@@ -35,7 +35,7 @@ const show = ref(false);
     <van-switch v-model="show" size="24px" />
     <van-skeleton title avatar :row="3" :loading="!show">
       <div class="demo-preview">
-        <img src="https://cdn.jsdelivr.net/npm/@vant/assets/logo.png" />
+        <img :src="cdnURL('logo.png')" />
         <div class="demo-content">
           <h3>{{ t('title') }}</h3>
           <p>{{ t('desc') }}</p>

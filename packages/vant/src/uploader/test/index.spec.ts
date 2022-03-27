@@ -1,3 +1,4 @@
+import { cdnURL } from '../../../docs/site/use-translate';
 import { nextTick } from 'vue';
 import Uploader, { UploaderFileListItem } from '..';
 import { mount, later, triggerDrag } from '../../../test';
@@ -6,8 +7,8 @@ const mockFileDataUrl = 'data:image/test';
 const mockFile = new File([new ArrayBuffer(10000)], 'test.jpg', {
   type: 'test',
 });
-const IMAGE = 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg';
-const PDF = 'https://cdn.jsdelivr.net/npm/@vant/assets/test.pdf';
+const IMAGE = cdnURL('cat.jpeg');
+const PDF = cdnURL('test.pdf');
 
 function mockFileReader() {
   function mockReadAsText(this: FileReader) {
@@ -293,8 +294,8 @@ test('render preview image', async () => {
   const wrapper = mount(Uploader, {
     props: {
       modelValue: [
-        { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg' },
-        { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/test.pdf' },
+        { url: cdnURL('cat.jpeg') },
+        { url: cdnURL('test.pdf') },
         { file: mockFile },
       ],
     },
@@ -307,9 +308,7 @@ test('image-fit prop', () => {
   const wrapper = mount(Uploader, {
     props: {
       imageFit: 'contain',
-      modelValue: [
-        { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg' },
-      ],
+      modelValue: [{ url: cdnURL('cat.jpeg') }],
     },
   });
 
@@ -368,7 +367,6 @@ test('should allow to custom size by preview-size prop', async () => {
     },
   });
 
-  console.log(wrapper.html());
   const image = wrapper.find('.van-uploader__file');
   expect(image.style.width).toEqual('30px');
   expect(image.style.height).toEqual('30px');

@@ -1,5 +1,6 @@
 import { Icon } from '..';
 import { mount } from '../../../test';
+import { cdnURL } from '../../../docs/site/use-translate';
 
 test('should render icon with builtin icon name correctly', () => {
   const wrapper = mount(Icon, {
@@ -13,7 +14,7 @@ test('should render icon with builtin icon name correctly', () => {
 test('should render icon with url name correctly', () => {
   const wrapper = mount(Icon, {
     props: {
-      name: 'https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg',
+      name: cdnURL('cat.jpeg'),
     },
   });
   expect(wrapper.html()).toMatchSnapshot();

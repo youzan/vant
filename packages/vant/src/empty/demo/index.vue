@@ -4,7 +4,7 @@ import VanTabs from '../../tabs';
 import VanTab from '../../tab';
 import VanButton from '../../button';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
   'zh-CN': {
@@ -52,7 +52,7 @@ const active = ref('error');
   <demo-block :title="t('customImage')">
     <van-empty
       class="custom-image"
-      image="https://cdn.jsdelivr.net/npm/@vant/assets/custom-empty-image.png"
+      :image="cdnURL('custom-empty-image.png')"
       :description="t('description')"
     />
   </demo-block>

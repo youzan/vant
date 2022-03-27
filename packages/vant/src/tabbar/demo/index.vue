@@ -2,7 +2,7 @@
 import VanTabbar from '..';
 import VanTabbarItem from '../../tabbar-item';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
 
 const t = useTranslate({
@@ -30,8 +30,8 @@ const active5 = ref(0);
 const activeName = ref('home');
 
 const icon = {
-  active: 'https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png',
-  inactive: 'https://cdn.jsdelivr.net/npm/@vant/assets/user-inactive.png',
+  active: cdnURL('user-active.png'),
+  inactive: cdnURL('user-inactive.png'),
 };
 
 const onChange = (index: number) => {

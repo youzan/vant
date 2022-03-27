@@ -2,7 +2,7 @@
 import VanGrid from '..';
 import VanGridItem from '../../grid-item';
 import VanImage from '../../image';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
 
 const t = useTranslate({
   'zh-CN': {
@@ -48,22 +48,13 @@ const t = useTranslate({
   <demo-block :title="t('customContent')">
     <van-grid :border="false" :column-num="3">
       <van-grid-item>
-        <van-image
-          fit="contain"
-          src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
-        />
+        <van-image fit="contain" :src="cdnURL('apple-1.jpeg')" />
       </van-grid-item>
       <van-grid-item>
-        <van-image
-          fit="contain"
-          src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg"
-        />
+        <van-image fit="contain" :src="cdnURL('apple-2.jpeg')" />
       </van-grid-item>
       <van-grid-item>
-        <van-image
-          fit="contain"
-          src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-3.jpeg"
-        />
+        <van-image fit="contain" :src="cdnURL('apple-3.jpeg')" />
       </van-grid-item>
     </van-grid>
   </demo-block>

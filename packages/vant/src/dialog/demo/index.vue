@@ -2,7 +2,7 @@
 import VanCell from '../../cell';
 import { Dialog } from '..';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
 import type { DialogAction } from '../types';
 
 const VanDialog = Dialog.Component;
@@ -36,7 +36,7 @@ const t = useTranslate({
 });
 
 const show = ref(false);
-const image = 'https://cdn.jsdelivr.net/npm/@vant/assets/apple-3.jpeg';
+const image = cdnURL('apple-3.jpeg');
 
 const onClickAlert = () => {
   Dialog.alert({
