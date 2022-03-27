@@ -1,4 +1,4 @@
-import { inBrowser } from './basic';
+import { inBrowser, type Numeric } from './basic';
 
 export const isDef = <T>(val: T): val is NonNullable<T> =>
   val !== undefined && val !== null;
@@ -24,7 +24,7 @@ export function isMobile(value: string): boolean {
   );
 }
 
-export const isNumeric = (val: string | number): val is string =>
+export const isNumeric = (val: Numeric): val is string =>
   typeof val === 'number' || /^\d+(\.\d+)?$/.test(val);
 
 export const isIOS = (): boolean =>

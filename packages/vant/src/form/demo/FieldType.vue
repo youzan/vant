@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import VanForm from '..';
 import VanRate from '../../rate';
 import VanRadio from '../../radio';

@@ -7,7 +7,12 @@ import {
   type CSSProperties,
   type ExtractPropTypes,
 } from 'vue';
-import { kebabCase, makeStringProp, createNamespace } from '../utils';
+import {
+  kebabCase,
+  makeStringProp,
+  createNamespace,
+  type Numeric,
+} from '../utils';
 
 const [name, bem] = createNamespace('config-provider');
 
@@ -20,14 +25,14 @@ export const CONFIG_PROVIDER_KEY: InjectionKey<ConfigProviderProvide> =
 
 const configProviderProps = {
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
-  themeVars: Object as PropType<Record<string, string | number>>,
+  themeVars: Object as PropType<Record<string, Numeric>>,
   iconPrefix: String,
 };
 
 export type ConfigProviderProps = ExtractPropTypes<typeof configProviderProps>;
 
-function mapThemeVarsToCSSVars(themeVars: Record<string, string | number>) {
-  const cssVars: Record<string, string | number> = {};
+function mapThemeVarsToCSSVars(themeVars: Record<string, Numeric>) {
+  const cssVars: Record<string, Numeric> = {};
   Object.keys(themeVars).forEach((key) => {
     cssVars[`--van-${kebabCase(key)}`] = themeVars[key];
   });

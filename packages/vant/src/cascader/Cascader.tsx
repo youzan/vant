@@ -14,6 +14,7 @@ import {
   makeStringProp,
   createNamespace,
   HAPTICS_FEEDBACK,
+  type Numeric,
 } from '../utils';
 
 // Components
@@ -68,7 +69,7 @@ export default defineComponent({
 
     const getSelectedOptionsByValue = (
       options: CascaderOption[],
-      value: string | number
+      value: Numeric
     ): CascaderOption[] | undefined => {
       for (const option of options) {
         if (option[valueKey] === value) {

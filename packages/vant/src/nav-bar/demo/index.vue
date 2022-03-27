@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VanNavBar from '..';
 import VanIcon from '../../icon';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

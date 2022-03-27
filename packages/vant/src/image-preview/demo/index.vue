@@ -2,7 +2,7 @@
 import VanCell from '../../cell';
 import { ImagePreview, ImagePreviewOptions } from '..';
 import { ref } from 'vue';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import { Toast } from '../../toast';
 
 const VanImagePreview = ImagePreview.Component;

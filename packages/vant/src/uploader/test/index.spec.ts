@@ -1,7 +1,8 @@
-import { cdnURL } from '../../../docs/site/use-translate';
 import { nextTick } from 'vue';
-import Uploader, { UploaderFileListItem } from '..';
+import { cdnURL } from '../../../docs/site';
+import Uploader, { type UploaderFileListItem } from '..';
 import { mount, later, triggerDrag } from '../../../test';
+import type { Numeric } from '../../utils';
 
 const mockFileDataUrl = 'data:image/test';
 const mockFile = new File([new ArrayBuffer(10000)], 'test.jpg', {
@@ -97,14 +98,14 @@ test('set input name', (done) => {
       name: 'uploader',
       beforeRead: (
         file: File | File[],
-        detail: { name: string | number; index: number }
+        detail: { name: Numeric; index: number }
       ) => {
         expect(detail.name).toEqual('uploader');
         return true;
       },
       afterRead: (
         readFile: UploaderFileListItem | UploaderFileListItem[],
-        detail: { name: string | number; index: number }
+        detail: { name: Numeric; index: number }
       ) => {
         expect(detail.name).toEqual('uploader');
         done();

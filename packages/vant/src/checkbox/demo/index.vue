@@ -5,7 +5,7 @@ import VanButton from '../../button';
 import VanCellGroup from '../../cell-group';
 import VanCell from '../../cell';
 import { ref, reactive } from 'vue';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import { useRefs } from '../../composables/use-refs';
 import type { CheckboxInstance } from '../types';
 import type { CheckboxGroupInstance } from '../../checkbox-group';

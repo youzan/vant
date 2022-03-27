@@ -3,7 +3,7 @@ import VanArea from '..';
 import { ref } from 'vue';
 import { areaList } from '@vant/area-data';
 import { areaListEn } from './area-en';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

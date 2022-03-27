@@ -3,7 +3,7 @@ import VanTabs from '../../tabs';
 import VanTab from '../../tab';
 import VanPullRefresh from '..';
 import { computed, onMounted, ref } from 'vue';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

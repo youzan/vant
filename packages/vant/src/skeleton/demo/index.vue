@@ -2,7 +2,7 @@
 import VanSkeleton from '..';
 import VanSwitch from '../../switch';
 import { ref } from 'vue';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

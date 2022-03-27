@@ -2,7 +2,7 @@
 import VanCell from '../../cell';
 import VanTag from '..';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

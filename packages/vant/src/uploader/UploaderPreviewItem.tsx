@@ -5,11 +5,12 @@ import { t, bem, isImageFile } from './utils';
 import {
   isDef,
   extend,
-  Interceptor,
   numericProp,
   getSizeStyle,
   callInterceptor,
   makeRequiredProp,
+  type Numeric,
+  type Interceptor,
 } from '../utils';
 
 // Components
@@ -29,7 +30,7 @@ export default defineComponent({
     lazyLoad: Boolean,
     deletable: Boolean,
     previewSize: [Number, String, Array] as PropType<
-      number | string | Array<number | string>
+      Numeric | [Numeric, Numeric]
     >,
     beforeDelete: Function as PropType<Interceptor>,
   },

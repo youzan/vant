@@ -1,6 +1,6 @@
 import { Icon } from '..';
 import { mount } from '../../../test';
-import { cdnURL } from '../../../docs/site/use-translate';
+import { cdnURL } from '../../../docs/site';
 
 test('should render icon with builtin icon name correctly', () => {
   const wrapper = mount(Icon, {

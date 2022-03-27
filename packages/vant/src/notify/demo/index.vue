@@ -3,7 +3,7 @@ import VanCell from '../../cell';
 import VanIcon from '../../icon';
 import { ref } from 'vue';
 import { Notify, type NotifyType } from '..';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const VanNotify = Notify.Component;
 

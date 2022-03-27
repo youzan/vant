@@ -3,7 +3,7 @@ import VanRow from '../../row';
 import VanImage from '..';
 import VanCol from '../../col';
 import VanLoading from '../../loading';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

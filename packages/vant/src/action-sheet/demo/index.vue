@@ -2,7 +2,7 @@
 import VanCell from '../../cell';
 import VanActionSheet, { ActionSheetAction } from '..';
 import { ref, computed } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

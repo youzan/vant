@@ -5,7 +5,7 @@ import VanCell from '../../cell';
 import VanSwitch from '../../switch';
 import VanButton from '../../button';
 import { computed, ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import type { DropdownItemInstance } from '../../dropdown-item';
 
 const t = useTranslate({

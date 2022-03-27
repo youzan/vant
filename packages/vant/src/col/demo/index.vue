@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VanRow from '../../row';
 import VanCol from '..';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

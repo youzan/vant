@@ -6,7 +6,7 @@ import VanRow from '../../row';
 import VanCol from '../../col';
 import icons from '@vant/icons';
 import { ref } from 'vue';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import { Notify } from '../../notify';
 
 // from https://30secondsofcode.org

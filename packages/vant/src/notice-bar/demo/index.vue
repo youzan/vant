@@ -2,7 +2,7 @@
 import VanNoticeBar from '..';
 import VanSwipe from '../../swipe';
 import VanSwipeItem from '../../swipe-item';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

@@ -1,10 +1,11 @@
 import type { DropdownItemProps } from './DropdownItem';
 import type { VNode, ComponentPublicInstance } from 'vue';
+import type { Numeric } from '../utils';
 
 export type DropdownItemOption = {
   text: string;
   icon?: string;
-  value: number | string;
+  value: Numeric;
 };
 
 export type DropdownItemExpose = {

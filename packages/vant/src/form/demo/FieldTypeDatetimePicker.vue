@@ -3,7 +3,7 @@ import VanField from '../../field';
 import VanPopup from '../../popup';
 import VanDatetimePicker from '../../datetime-picker';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

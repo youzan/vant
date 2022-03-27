@@ -6,7 +6,7 @@ import VanSlider from '../../slider';
 import VanButton from '../../button';
 import VanConfigProvider from '..';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

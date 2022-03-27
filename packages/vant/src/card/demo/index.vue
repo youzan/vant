@@ -2,7 +2,7 @@
 import VanCard from '..';
 import VanTag from '../../tag';
 import VanButton from '../../button';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

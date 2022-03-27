@@ -2,7 +2,7 @@
 import VanCell from '../../cell';
 import VanShareSheet, { ShareSheetOption, ShareSheetOptions } from '..';
 import { ref, computed } from 'vue';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

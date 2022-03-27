@@ -1,6 +1,6 @@
 import { later, mount } from '../../../test';
 import { CouponList } from '..';
-import { cdnURL } from '../../../docs/site/use-translate';
+import { cdnURL } from '../../../docs/site';
 
 const coupon = {
   id: 1,

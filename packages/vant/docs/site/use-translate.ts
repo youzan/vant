@@ -104,7 +104,3 @@ export function useTranslate(i18n: Record<string, any>) {
 
   return createTranslate(demoName);
 }
-
-/** Generate the CDN URL of assets. */
-export const cdnURL = (path: string) =>
-  `https://cdn.jsdelivr.net/npm/@vant/assets/${path}`;

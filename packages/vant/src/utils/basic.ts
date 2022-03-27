@@ -6,6 +6,8 @@ export const extend = Object.assign;
 
 export const inBrowser = typeof window !== 'undefined';
 
+export type Numeric = number | string;
+
 // eslint-disable-next-line
 export type ComponentInstance = ComponentPublicInstance<{}, any>;
 

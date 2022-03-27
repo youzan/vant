@@ -4,7 +4,7 @@ import VanTabs from '../../tabs';
 import VanTab from '../../tab';
 import VanButton from '../../button';
 import { ref } from 'vue';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

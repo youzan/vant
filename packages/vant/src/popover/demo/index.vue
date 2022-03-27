@@ -8,7 +8,7 @@ import VanPicker from '../../picker';
 import VanGrid from '../../grid';
 import VanGridItem from '../../grid-item';
 import { Toast } from '../../toast';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {
