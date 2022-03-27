@@ -360,16 +360,39 @@ test('max-count prop', async () => {
   ).toHaveLength(1);
 });
 
-test('preview-size prop', async () => {
+test('should allow to custom size by preview-size prop', async () => {
   const wrapper = mount(Uploader, {
     props: {
-      modelValue: [],
+      modelValue: [{ file: mockFile }],
       previewSize: 30,
     },
   });
 
-  await wrapper.setProps({ modelValue: [{ file: mockFile }] });
-  expect(wrapper.html()).toMatchSnapshot();
+  console.log(wrapper.html());
+  const image = wrapper.find('.van-uploader__file');
+  expect(image.style.width).toEqual('30px');
+  expect(image.style.height).toEqual('30px');
+
+  const upload = wrapper.find('.van-uploader__upload');
+  expect(upload.style.width).toEqual('30px');
+  expect(upload.style.height).toEqual('30px');
+});
+
+test('should allow to set width and height separately by preview-size prop', async () => {
+  const wrapper = mount(Uploader, {
+    props: {
+      modelValue: [{ file: mockFile }],
+      previewSize: [20, 10],
+    },
+  });
+
+  const image = wrapper.find('.van-uploader__file');
+  expect(image.style.width).toEqual('20px');
+  expect(image.style.height).toEqual('10px');
+
+  const upload = wrapper.find('.van-uploader__upload');
+  expect(upload.style.width).toEqual('20px');
+  expect(upload.style.height).toEqual('10px');
 });
 
 test('deletable prop', async () => {

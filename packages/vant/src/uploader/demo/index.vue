@@ -21,9 +21,10 @@ const t = useTranslate({
     overSizeTip: '文件大小不能超过 500kb',
     invalidType: '请上传 jpg 格式图片',
     customUpload: '自定义上传样式',
+    previewSize: '自定义预览大小',
     previewCover: '自定义预览样式',
-    customPreviewImage: '自定义单个图片预览',
     deleteMessage: '删除前置处理',
+    customPreviewImage: '自定义单个图片预览',
   },
   'en-US': {
     status: 'Upload Status',
@@ -39,9 +40,10 @@ const t = useTranslate({
     overSizeTip: 'File size cannot exceed 500kb',
     invalidType: 'Please upload an image in jpg format',
     customUpload: 'Custom Upload Area',
+    previewSize: 'Preview Size',
     previewCover: 'Preview Cover',
-    customPreviewImage: 'Custom single prevew image',
     deleteMessage: 'Before Delete',
+    customPreviewImage: 'Custom single preview image',
   },
 });
 
@@ -61,7 +63,6 @@ const fileList4 = ref([
 ]);
 
 const fileList5 = ref<UploaderFileListItem[]>([
-  { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg' },
   {
     url: 'https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg',
     deletable: true,
@@ -71,9 +72,7 @@ const fileList5 = ref<UploaderFileListItem[]>([
   },
   {
     url: 'https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg',
-    deletable: true,
     imageFit: 'contain',
-    previewSize: 120,
   },
 ]);
 
@@ -96,6 +95,12 @@ const previewCoverFiles = ref<UploaderFileListItem[]>([
     file: {
       name: t('imageName'),
     } as File,
+  },
+]);
+
+const previewSizeFiles = ref<UploaderFileListItem[]>([
+  {
+    url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg',
   },
 ]);
 
@@ -183,6 +188,10 @@ const onOversize = (file: UploaderFileListItem, detail: unknown) => {
         <div class="preview-cover van-ellipsis">{{ file.name }}</div>
       </template>
     </van-uploader>
+  </demo-block>
+
+  <demo-block :title="t('previewSize')">
+    <van-uploader v-model="previewSizeFiles" preview-size="60" />
   </demo-block>
 
   <demo-block :title="t('beforeRead')">

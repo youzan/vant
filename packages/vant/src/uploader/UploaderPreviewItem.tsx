@@ -28,7 +28,9 @@ export default defineComponent({
     imageFit: String as PropType<ImageFit>,
     lazyLoad: Boolean,
     deletable: Boolean,
-    previewSize: numericProp,
+    previewSize: [Number, String, Array] as PropType<
+      number | string | Array<number | string>
+    >,
     beforeDelete: Function as PropType<Interceptor>,
   },
 
@@ -96,18 +98,18 @@ export default defineComponent({
     };
 
     const renderPreview = () => {
-      const { item } = props;
+      const { item, lazyLoad, imageFit, previewSize } = props;
 
       if (isImageFile(item)) {
         return (
           <Image
             v-slots={{ default: renderCover }}
-            fit={props.imageFit}
+            fit={imageFit}
             src={item.content || item.url}
             class={bem('preview-image')}
-            width={props.previewSize}
-            height={props.previewSize}
-            lazyLoad={props.lazyLoad}
+            width={Array.isArray(previewSize) ? previewSize[0] : previewSize}
+            height={Array.isArray(previewSize) ? previewSize[1] : previewSize}
+            lazyLoad={lazyLoad}
             onClick={onPreview}
           />
         );
