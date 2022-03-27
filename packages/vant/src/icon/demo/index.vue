@@ -6,7 +6,7 @@ import VanRow from '../../row';
 import VanCol from '../../col';
 import icons from '@vant/icons';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
 import { Notify } from '../../notify';
 
 // from https://30secondsofcode.org
@@ -63,7 +63,7 @@ const t = useTranslate({
 
 const tab = ref(0);
 const demoIcon = 'chat-o';
-const demoImage = 'https://cdn.jsdelivr.net/npm/@vant/assets/icon-demo.png';
+const demoImage = cdnURL('icon-demo.png');
 
 const copy = (icon: string, option: Record<string, unknown> = {}) => {
   let tag = `<van-icon name="${icon}"`;

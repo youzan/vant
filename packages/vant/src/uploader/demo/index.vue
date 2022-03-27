@@ -2,7 +2,7 @@
 import VanUploader from '..';
 import VanButton from '../../button';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
 import { UploaderFileListItem } from '../types';
 import { Toast } from '../../toast';
 
@@ -48,42 +48,38 @@ const t = useTranslate({
 });
 
 const fileList = ref([
-  { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg' },
-  { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg' },
+  { url: cdnURL('leaf.jpeg') },
+  { url: cdnURL('tree.jpeg') },
 ]);
 
-const fileList2 = ref([
-  { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg' },
-]);
+const fileList2 = ref([{ url: cdnURL('sand.jpeg') }]);
 
 const fileList3 = ref([]);
 
-const fileList4 = ref([
-  { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg' },
-]);
+const fileList4 = ref([{ url: cdnURL('sand.jpeg') }]);
 
 const fileList5 = ref<UploaderFileListItem[]>([
   {
-    url: 'https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg',
+    url: cdnURL('sand.jpeg'),
     deletable: true,
     beforeDelete: () => {
       Toast(t('deleteMessage'));
     },
   },
   {
-    url: 'https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg',
+    url: cdnURL('tree.jpeg'),
     imageFit: 'contain',
   },
 ]);
 
 const statusFileList = ref<UploaderFileListItem[]>([
   {
-    url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg',
+    url: cdnURL('leaf.jpeg'),
     status: 'uploading',
     message: t('uploading'),
   },
   {
-    url: 'https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg',
+    url: cdnURL('tree.jpeg'),
     status: 'failed',
     message: t('failed'),
   },
@@ -91,7 +87,7 @@ const statusFileList = ref<UploaderFileListItem[]>([
 
 const previewCoverFiles = ref<UploaderFileListItem[]>([
   {
-    url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg',
+    url: cdnURL('leaf.jpeg'),
     file: {
       name: t('imageName'),
     } as File,
@@ -100,7 +96,7 @@ const previewCoverFiles = ref<UploaderFileListItem[]>([
 
 const previewSizeFiles = ref<UploaderFileListItem[]>([
   {
-    url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg',
+    url: cdnURL('leaf.jpeg'),
   },
 ]);
 

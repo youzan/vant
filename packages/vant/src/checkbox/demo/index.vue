@@ -5,7 +5,7 @@ import VanButton from '../../button';
 import VanCellGroup from '../../cell-group';
 import VanCell from '../../cell';
 import { ref, reactive } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
 import { useRefs } from '../../composables/use-refs';
 import type { CheckboxInstance } from '../types';
 import type { CheckboxGroupInstance } from '../../checkbox-group';
@@ -49,7 +49,7 @@ const state = reactive({
   checkbox3: true,
   checkboxShape: true,
   checkboxLabel: true,
-  checboxIcon: true,
+  checkboxIcon: true,
   list: ['a', 'b'],
   result: ['a', 'b'],
   result2: [],
@@ -58,9 +58,8 @@ const state = reactive({
   horizontalResult: [],
 });
 
-const activeIcon = 'https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png';
-const inactiveIcon =
-  'https://cdn.jsdelivr.net/npm/@vant/assets/user-inactive.png';
+const activeIcon = cdnURL('user-active.png');
+const inactiveIcon = cdnURL('user-inactive.png');
 
 const group = ref<CheckboxGroupInstance>();
 const [refs, setRefs] = useRefs<CheckboxInstance>();
@@ -105,7 +104,7 @@ const toggleAll = () => {
   </demo-block>
 
   <demo-block :title="t('customIconSize')">
-    <van-checkbox v-model="state.checboxIcon" icon-size="24px">
+    <van-checkbox v-model="state.checkboxIcon" icon-size="24px">
       {{ t('customIconSize') }}
     </van-checkbox>
   </demo-block>

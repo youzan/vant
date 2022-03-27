@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VanSwipe from '..';
 import VanSwipeItem from '../../swipe-item';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '../../toast';
 
 const t = useTranslate({
@@ -24,10 +24,10 @@ const t = useTranslate({
 });
 
 const images = [
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-3.jpeg',
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-4.jpeg',
+  cdnURL('apple-1.jpeg'),
+  cdnURL('apple-2.jpeg'),
+  cdnURL('apple-3.jpeg'),
+  cdnURL('apple-4.jpeg'),
 ];
 
 const onChange = (index: number) => Toast(t('message') + index);

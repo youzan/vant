@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import VanCell from '../../cell';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
 import { Toast } from '..';
 import type { LoadingType } from '../../loading';
 
@@ -83,7 +83,7 @@ const showIconToast = () => {
 const showImageToast = () => {
   Toast({
     message: t('customImage'),
-    icon: 'https://cdn.jsdelivr.net/npm/@vant/assets/logo.png',
+    icon: cdnURL('logo.png'),
   });
 };
 
