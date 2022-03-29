@@ -19,6 +19,28 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.4.7](https://github.com/youzan/vant/compare/v3.4.6...v3.4.7)
+
+`2022-03-29`
+
+**Feature**
+
+- @vant/area-data: update counties of NanJing [#10410](https://github.com/youzan/vant/issues/10410)
+- CouponList: update empty image [#10436](https://github.com/youzan/vant/issues/10436)
+- Locale: add Icelandic lang [#10418](https://github.com/youzan/vant/issues/10418)
+- Locale: add Lao lang [#10388](https://github.com/youzan/vant/issues/10388)
+- Locale: add Swedish lang [#10419](https://github.com/youzan/vant/issues/10419)
+- NumberKeyboard: improve shuffle algorithm [#10428](https://github.com/youzan/vant/issues/10428)
+- Uploader: support set the preview size separately [#10438](https://github.com/youzan/vant/issues/10438)
+
+**Bug Fixes**
+
+- Calendar: scrollToDate method is invalid [#10432](https://github.com/youzan/vant/issues/10432)
+- DatetimePicker: fix minDate && maxDate wacher [#10431](https://github.com/youzan/vant/issues/10431)
+- IndexBar: allow active bottom anchor [#10404](https://github.com/youzan/vant/issues/10404)
+- Tab: add key when render TabsTitle [#10392](https://github.com/youzan/vant/issues/10392)
+- fix wrong ternary expression [#10426](https://github.com/youzan/vant/issues/10426)
+
 ### [v3.4.6](https://github.com/youzan/vant/compare/v3.4.5...v3.4.6)
 
 `2022-03-13`
