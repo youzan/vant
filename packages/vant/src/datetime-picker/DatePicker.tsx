@@ -281,6 +281,7 @@ export default defineComponent({
     const onChange = () => {
       updateInnerValue();
       nextTick(() => {
+        updateInnerValue();
         nextTick(() => emit('change', currentDate.value));
       });
     };
