@@ -69,7 +69,7 @@ export default createComponent({
   methods: {
     setActiveItem() {
       this.children.forEach((item, index) => {
-        item.nameMatched = (item.name || index) === this.value;
+        item.nameMatched = item.name === this.value || index === this.value;
       });
     },
 

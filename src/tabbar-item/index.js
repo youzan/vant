@@ -32,19 +32,22 @@ export default createComponent({
   },
 
   computed: {
-    routeMatched() {
-      const { to, $route } = this;
-      if (to && $route) {
+    active() {
+      const routeMode = this.parent.route;
+
+      if (routeMode && '$route' in this) {
+        const { to, $route } = this;
         const config = isObject(to) ? to : { path: to };
-        return !!$route.matched.find(r =>{
-          const pathMatched = config.path === r.path;
+        return !!$route.matched.find((r) => {
+          // vue-router 3.x $route.matched[0].path is empty in / and its children paths
+          const path = r.path === '' ? '/' : r.path;
+          const pathMatched = config.path === path;
           const nameMatched = isDef(config.name) && config.name === r.name;
           return pathMatched || nameMatched;
-        })
+        });
       }
-    },
-    active() {
-      return this.parent.route ? this.routeMatched : this.nameMatched;
+
+      return this.nameMatched;
     },
   },
 
