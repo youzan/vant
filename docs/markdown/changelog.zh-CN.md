@@ -22,6 +22,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.46](https://github.com/youzan/vant/compare/v2.12.45...v2.12.46)
+
+`2022-03-30`
+
+**Bug Fixes**
+
+- TabBar: 修复个别情况下路由匹配不正确的问题 [#10447](https://github.com/youzan/vant/issues/10447)
+
 ### [v2.12.45](https://github.com/youzan/vant/compare/v2.12.44...v2.12.45)
 
 `2022-03-18`

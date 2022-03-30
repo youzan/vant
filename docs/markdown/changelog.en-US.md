@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.46](https://github.com/youzan/vant/compare/v2.12.45...v2.12.46)
+
+`2022-03-30`
+
+**Bug Fixes**
+
+- TabBar: fix route matching in special cases [#10447](https://github.com/youzan/vant/issues/10447)
+
 ### [v2.12.45](https://github.com/youzan/vant/compare/v2.12.44...v2.12.45)
 
 `2022-03-18`
