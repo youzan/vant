@@ -41,7 +41,22 @@
         :max-hour="20"
       />
     </demo-block> -->
-
+    <demo-block card :title="t('timeType')">
+      <van-datetime-picker
+        :value.sync="value.time"
+        type="time"
+        :title="t('timeType')"
+        :min-hour="10"
+        :max-hour="20"
+      />
+    </demo-block>
+    <demo-block card :title="t('datetimeType')">
+      <van-datetime-picker
+        :value.sync="value.datetime"
+        type="datetime"
+        :title="t('datetimeType')"
+      />
+    </demo-block>
     <demo-block card :title="t('datetimeType')">
       <van-datetime-picker
         :value.sync="value.datetime"
@@ -131,7 +146,7 @@ export default {
       value: {
         date: "2021-01-13 00:00:00" || new Date(2021, 0, 17),
         time: '12:00',
-        datetime: '',
+        datetime: '2022-03-31T07:21:52.066Z',
         datehour: new Date(2020, 0, 1),
         monthDay: new Date(2020, 0, 1),
         yearMonth: new Date(2020, 0, 1),
