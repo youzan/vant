@@ -1,10 +1,14 @@
-<script setup lang="ts">
+<script lang="ts">
 import Lazyload from '..';
-import { cdnURL, useTranslate } from '../../../docs/site';
 
 if (window.app) {
   window.app.use(Lazyload, { lazyComponent: true });
 }
+</script>
+
+<script setup lang="ts">
+// eslint-disable-next-line import/first
+import { cdnURL, useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {
