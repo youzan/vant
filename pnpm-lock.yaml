@@ -88,8 +88,8 @@ importers:
     specifiers:
       '@babel/core': ^7.16.0
       '@babel/preset-typescript': ^7.16.0
-      '@docsearch/css': 3.0.0-alpha.50
-      '@docsearch/js': 3.0.0-alpha.50
+      '@docsearch/css': ^3.0.0
+      '@docsearch/js': ^3.0.0
       '@types/fs-extra': ^9.0.13
       '@types/jest': ^27.0.3
       '@types/less': ^3.0.3
@@ -138,8 +138,8 @@ importers:
     dependencies:
       '@babel/core': 7.16.0
       '@babel/preset-typescript': 7.16.0_@babel+core@7.16.0
-      '@docsearch/css': 3.0.0-alpha.50
-      '@docsearch/js': 3.0.0-alpha.50
+      '@docsearch/css': 3.0.0
+      '@docsearch/js': 3.0.0
       '@types/jest': 27.0.3
       '@vant/eslint-config': link:../vant-eslint-config
       '@vant/markdown-vetur': link:../vant-markdown-vetur
@@ -1019,14 +1019,14 @@ packages:
     resolution: {integrity: sha1-daLotRy3WKdVPWgEpZMteqznXDk=, tarball: '@bcoe/v8-coverage/download/@bcoe/v8-coverage-0.2.3.tgz'}
     dev: false
 
-  /@docsearch/css/3.0.0-alpha.50:
-    resolution: {integrity: sha512-QeWFCQOtS9D+Fi20liKsPXF2j/xWKh52e+P2Z1UATIdPMqmH6zoB2lcUz+cgv6PPVgWUtECeR6VSSUm71LT94w==}
+  /@docsearch/css/3.0.0:
+    resolution: {integrity: sha512-1kkV7tkAsiuEd0shunYRByKJe3xQDG2q7wYg24SOw1nV9/2lwEd4WrUYRJC/ukGTl2/kHeFxsaUvtiOy0y6fFA==}
     dev: false
 
-  /@docsearch/js/3.0.0-alpha.50:
-    resolution: {integrity: sha512-1ap9Wz5oR/Z8yybaCZhsptXU43es3H52eEQUZtmzb8dUWyCW+3iXaKVB/qeMJOQWtggZ/WvZV3YknVIbCMR2dQ==}
+  /@docsearch/js/3.0.0:
+    resolution: {integrity: sha512-j3tUJWlgW3slYqzGB8fm7y05kh2qqrIK1dZOXHeMUm/5gdKE85fiz/ltfCPMDFb/MXF+bLZChJXSMzqY0Ck30Q==}
     dependencies:
-      '@docsearch/react': 3.0.0-alpha.50
+      '@docsearch/react': 3.0.0
       preact: 10.5.15
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -1035,8 +1035,8 @@ packages:
       - react-dom
     dev: false
 
-  /@docsearch/react/3.0.0-alpha.50:
-    resolution: {integrity: sha512-oDGV1zZCRYv7MWsh6CyQVthYTRc3b4q+6kKwNYb1/g/Wf/4nJHutpxolFLHdEUDhrJ4Xi8wxwQG+lEwAVBTHPg==}
+  /@docsearch/react/3.0.0:
+    resolution: {integrity: sha512-yhMacqS6TVQYoBh/o603zszIb5Bl8MIXuOc6Vy617I74pirisDzzcNh0NEaYQt50fVVR3khUbeEhUEWEWipESg==}
     peerDependencies:
       '@types/react': '>= 16.8.0 < 18.0.0'
       react: '>= 16.8.0 < 18.0.0'
@@ -1044,7 +1044,7 @@ packages:
     dependencies:
       '@algolia/autocomplete-core': 1.5.2
       '@algolia/autocomplete-preset-algolia': 1.5.2_algoliasearch@4.11.0
-      '@docsearch/css': 3.0.0-alpha.50
+      '@docsearch/css': 3.0.0
       algoliasearch: 4.11.0
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -1238,7 +1238,7 @@ packages:
       collect-v8-coverage: 1.0.1
       exit: 0.1.2
       glob: 7.2.0
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       istanbul-lib-coverage: 3.2.0
       istanbul-lib-instrument: 4.0.3
       istanbul-lib-report: 3.0.0
@@ -1262,7 +1262,7 @@ packages:
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
       callsites: 3.1.0
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       source-map: 0.6.1
     dev: false
 
@@ -1281,7 +1281,7 @@ packages:
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
       '@jest/test-result': 27.3.1
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       jest-haste-map: 27.3.1
       jest-runtime: 27.3.1
     transitivePeerDependencies:
@@ -1298,7 +1298,7 @@ packages:
       chalk: 4.1.2
       convert-source-map: 1.8.0
       fast-json-stable-stringify: 2.1.0
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       jest-haste-map: 27.3.1
       jest-regex-util: 27.0.6
       jest-util: 27.3.1
@@ -2235,7 +2235,7 @@ packages:
       babel-plugin-istanbul: 6.1.1
       babel-preset-jest: 27.2.0_@babel+core@7.16.0
       chalk: 4.1.2
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       slash: 3.0.0
     transitivePeerDependencies:
       - supports-color
@@ -4845,7 +4845,7 @@ packages:
       ci-info: 3.2.0
       deepmerge: 4.2.2
       glob: 7.2.0
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       jest-circus: 27.3.1
       jest-environment-jsdom: 27.3.1
       jest-environment-node: 27.3.1
@@ -4937,7 +4937,7 @@ packages:
       '@types/node': 16.11.6
       anymatch: 3.1.2
       fb-watchman: 2.0.1
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       jest-regex-util: 27.0.6
       jest-serializer: 27.0.6
       jest-util: 27.3.1
@@ -5000,7 +5000,7 @@ packages:
       '@jest/types': 27.2.5
       '@types/stack-utils': 2.0.1
       chalk: 4.1.2
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       micromatch: 4.0.4
       pretty-format: 27.3.1
       slash: 3.0.0
@@ -5049,7 +5049,7 @@ packages:
     dependencies:
       '@jest/types': 27.2.5
       chalk: 4.1.2
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       jest-haste-map: 27.3.1
       jest-pnp-resolver: 1.2.2_jest-resolve@27.3.1
       jest-util: 27.3.1
@@ -5072,7 +5072,7 @@ packages:
       chalk: 4.1.2
       emittery: 0.8.1
       exit: 0.1.2
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       jest-docblock: 27.0.6
       jest-environment-jsdom: 27.3.1
       jest-environment-node: 27.3.1
@@ -5110,7 +5110,7 @@ packages:
       execa: 5.1.1
       exit: 0.1.2
       glob: 7.2.0
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       jest-haste-map: 27.3.1
       jest-message-util: 27.3.1
       jest-mock: 27.3.0
@@ -5137,7 +5137,7 @@ packages:
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
       '@types/node': 16.11.6
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
     dev: false
 
   /jest-snapshot/27.3.1:
@@ -5157,7 +5157,7 @@ packages:
       babel-preset-current-node-syntax: 1.0.1_@babel+core@7.16.0
       chalk: 4.1.2
       expect: 27.3.1
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       jest-diff: 27.3.1
       jest-get-type: 27.3.1
       jest-haste-map: 27.3.1
@@ -5180,7 +5180,7 @@ packages:
       '@types/node': 16.11.6
       chalk: 4.1.2
       ci-info: 3.2.0
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       picomatch: 2.3.0
     dev: false
 
@@ -5346,7 +5346,7 @@ packages:
   /jsonfile/4.0.0:
     resolution: {integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=, tarball: jsonfile/download/jsonfile-4.0.0.tgz}
     optionalDependencies:
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
     dev: false
 
   /jsonfile/6.1.0:
