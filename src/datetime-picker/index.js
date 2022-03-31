@@ -28,6 +28,9 @@ export default createComponent({
   },
   methods: {
     getTitle() {
+      if (this?.$env?.VUE_APP_DESIGNER) {
+        return this.value;
+      }
       if (this.value && !this.cvalue) {
         if (this.type==="datetime") {
           return new Date(this.value).formath("yyyy/MM/dd HH:mm:ss");
