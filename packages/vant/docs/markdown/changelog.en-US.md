@@ -36,7 +36,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 **Bug Fixes**
 
 - Calendar: scrollToDate method is invalid [#10432](https://github.com/youzan/vant/issues/10432)
-- DatetimePicker: fix minDate && maxDate wacher [#10431](https://github.com/youzan/vant/issues/10431)
+- DatetimePicker: fix minDate && maxDate watcher [#10431](https://github.com/youzan/vant/issues/10431)
 - IndexBar: allow active bottom anchor [#10404](https://github.com/youzan/vant/issues/10404)
 - Tab: add key when render TabsTitle [#10392](https://github.com/youzan/vant/issues/10392)
 - fix wrong ternary expression [#10426](https://github.com/youzan/vant/issues/10426)
