@@ -34,7 +34,7 @@
     "@popperjs/core": "^2.9.2"
   },
   "devDependencies": {
-    "esbuild": "^0.14.21",
+    "esbuild": "^0.14.29",
     "release-it": "^14.2.2",
     "typescript": "~4.5.2"
   },
