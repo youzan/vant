@@ -54,6 +54,10 @@ export default defineComponent({
         }
       }
 
+      if (offset + (item.date?.getDate() || 1) > 28) {
+        style.marginBottom = 0;
+      }
+
       return style;
     });
 
