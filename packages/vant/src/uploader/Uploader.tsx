@@ -18,6 +18,7 @@ import {
   makeArrayProp,
   makeStringProp,
   makeNumericProp,
+  type Numeric,
   type ComponentInstance,
 } from '../utils';
 import {
@@ -70,7 +71,7 @@ const uploaderProps = {
   beforeRead: Function as PropType<UploaderBeforeRead>,
   beforeDelete: Function as PropType<Interceptor>,
   previewSize: [Number, String, Array] as PropType<
-    number | string | Array<number | string>
+    Numeric | [Numeric, Numeric]
   >,
   previewImage: truthProp,
   previewOptions: Object as PropType<ImagePreviewOptions>,

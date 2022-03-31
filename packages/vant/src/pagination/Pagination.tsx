@@ -11,19 +11,20 @@ import {
   makeNumericProp,
   createNamespace,
   BORDER_SURROUND,
+  type Numeric,
 } from '../utils';
 
 const [name, bem, t] = createNamespace('pagination');
 
 type PageItem = {
-  text: string | number;
+  text: Numeric;
   number: number;
   active?: boolean;
 };
 
 const makePage = (
   number: number,
-  text: string | number,
+  text: Numeric,
   active?: boolean
 ): PageItem => ({ number, text, active });
 

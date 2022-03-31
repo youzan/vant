@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import VanTabs from '../../tabs';
 import VanTab from '..';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

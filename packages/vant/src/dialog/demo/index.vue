@@ -2,7 +2,7 @@
 import VanCell from '../../cell';
 import { Dialog } from '..';
 import { ref } from 'vue';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import type { DialogAction } from '../types';
 
 const VanDialog = Dialog.Component;

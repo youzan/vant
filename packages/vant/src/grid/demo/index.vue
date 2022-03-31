@@ -2,7 +2,7 @@
 import VanGrid from '..';
 import VanGridItem from '../../grid-item';
 import VanImage from '../../image';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

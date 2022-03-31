@@ -1,7 +1,7 @@
 import { defineComponent, type PropType, type ExtractPropTypes } from 'vue';
 
 // Utils
-import { createNamespace, unknownProp } from '../utils';
+import { createNamespace, unknownProp, type Numeric } from '../utils';
 
 // Components
 import { Tag } from '../tag';
@@ -14,8 +14,8 @@ import { RadioGroup } from '../radio-group';
 const [name, bem, t] = createNamespace('contact-list');
 
 export type ContactListItem = {
-  id?: number | string;
-  tel: number | string;
+  id?: Numeric;
+  tel: Numeric;
   name: string;
   isDefault?: boolean;
 };

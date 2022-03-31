@@ -7,6 +7,7 @@ import {
   makeStringProp,
   makeNumericProp,
   createNamespace,
+  type Numeric,
 } from '../utils';
 
 const [name, bem] = createNamespace('skeleton');
@@ -26,9 +27,7 @@ const skeletonProps = {
   titleWidth: numericProp,
   avatarShape: makeStringProp<SkeletonAvatarShape>('round'),
   rowWidth: {
-    type: [Number, String, Array] as PropType<
-      number | string | (number | string)[]
-    >,
+    type: [Number, String, Array] as PropType<Numeric | Numeric[]>,
     default: DEFAULT_ROW_WIDTH,
   },
 };

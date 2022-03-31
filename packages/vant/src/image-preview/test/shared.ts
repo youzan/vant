@@ -1,5 +1,5 @@
 import { DOMWrapper } from '@vue/test-utils/dist/domWrapper';
-import { cdnURL } from '../../../docs/site/use-translate';
+import { cdnURL } from '../../../docs/site';
 import { trigger } from '../../../test';
 
 export const images = [

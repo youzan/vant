@@ -4,7 +4,7 @@ import VanField from '../../field';
 import VanButton from '../../button';
 import VanCellGroup from '../../cell-group';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import { FieldValidateError } from '../../field/types';
 
 const t = useTranslate({

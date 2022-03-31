@@ -2,7 +2,7 @@
 import VanUploader from '..';
 import VanButton from '../../button';
 import { ref } from 'vue';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import { UploaderFileListItem } from '../types';
 import { Toast } from '../../toast';
 

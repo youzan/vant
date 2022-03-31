@@ -3,7 +3,7 @@ import VanField from '..';
 import VanButton from '../../button';
 import VanCellGroup from '../../cell-group';
 import { ref } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {

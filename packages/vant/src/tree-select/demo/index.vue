@@ -2,7 +2,7 @@
 import VanTreeSelect from '..';
 import VanImage from '../../image';
 import { ref, computed } from 'vue';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import { zhCNData } from './data-zh';
 import { enUSData } from './data-en';
 import { deepClone } from '../../utils/deep-clone';

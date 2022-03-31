@@ -7,6 +7,7 @@ import {
   unknownProp,
   makeStringProp,
   makeRequiredProp,
+  type Numeric,
 } from '../utils';
 import { Icon } from '../icon';
 
@@ -16,7 +17,7 @@ export type CheckerLabelPosition = 'left' | 'right';
 export type CheckerParent = {
   props: {
     disabled?: boolean;
-    iconSize?: number | string;
+    iconSize?: Numeric;
     direction?: CheckerDirection;
     checkedColor?: string;
   };

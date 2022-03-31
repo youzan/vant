@@ -1,6 +1,7 @@
 import { Notify } from './function-call';
+import type { Numeric } from '../utils';
 
-export type NotifyMessage = string | number;
+export type NotifyMessage = Numeric;
 
 export type NotifyType = 'primary' | 'success' | 'danger' | 'warning';
 

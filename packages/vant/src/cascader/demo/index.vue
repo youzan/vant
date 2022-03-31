@@ -3,10 +3,11 @@ import VanField from '../../field';
 import VanPopup from '../../popup';
 import VanCascader, { CascaderOption } from '..';
 import { computed, reactive } from 'vue';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import { deepClone } from '../../utils/deep-clone';
 import zhCNOptions from './area-zh-CN';
 import enUSOptions from './area-en-US';
+import type { Numeric } from '../../utils';
 
 const t = useTranslate({
   'zh-CN': {
@@ -55,7 +56,7 @@ const t = useTranslate({
 
 type StateItem = {
   show: boolean;
-  value: string | number | undefined;
+  value: Numeric | undefined;
   result: string;
   options?: CascaderOption[];
   tabIndex?: number;
@@ -129,7 +130,7 @@ const onFinish = (
   {
     value,
     selectedOptions,
-  }: { value: number | string; selectedOptions: CascaderOption[] }
+  }: { value: Numeric; selectedOptions: CascaderOption[] }
 ) => {
   const result = selectedOptions
     .map((option) => option.text || option.name)

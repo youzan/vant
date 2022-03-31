@@ -1,6 +1,7 @@
 import { Toast } from './function-call';
 import type { TeleportProps } from 'vue';
 import type { LoadingType } from '../loading';
+import type { Numeric } from '../utils';
 
 export type ToastType = 'text' | 'loading' | 'success' | 'fail' | 'html';
 export type ToastPosition = 'top' | 'middle' | 'bottom';
@@ -9,13 +10,13 @@ export type ToastOptions = {
   icon?: string;
   type?: ToastType;
   mask?: boolean;
-  message?: string | number;
+  message?: Numeric;
   onClose?: () => void;
   onOpened?: () => void;
   overlay?: boolean;
   duration?: number;
   teleport?: TeleportProps['to'];
-  iconSize?: number | string;
+  iconSize?: Numeric;
   position?: ToastPosition;
   className?: unknown;
   transition?: string;

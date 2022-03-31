@@ -2,7 +2,7 @@
 import VanActionBar from '..';
 import VanActionBarIcon from '../../action-bar-icon';
 import VanActionBarButton from '../../action-bar-button';
-import { useTranslate } from '../../../docs/site/use-translate';
+import { useTranslate } from '../../../docs/site';
 import { Toast } from '../../toast';
 
 const t = useTranslate({

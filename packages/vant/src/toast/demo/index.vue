@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import VanCell from '../../cell';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import { Toast } from '..';
 import type { LoadingType } from '../../loading';
 

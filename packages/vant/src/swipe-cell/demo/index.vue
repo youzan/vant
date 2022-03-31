@@ -3,7 +3,7 @@ import VanSwipeCell from '..';
 import VanButton from '../../button';
 import VanCell from '../../cell';
 import VanCard from '../../card';
-import { cdnURL, useTranslate } from '../../../docs/site/use-translate';
+import { cdnURL, useTranslate } from '../../../docs/site';
 import { Dialog } from '../../dialog';
 
 const t = useTranslate({

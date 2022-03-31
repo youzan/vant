@@ -19,6 +19,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.4.7](https://github.com/youzan/vant/compare/v3.4.6...v3.4.7)
+
+`2022-03-29`
+
+**Feature**
+
+- @vant/area-data: 新增南京市江北新区 [#10410](https://github.com/youzan/vant/issues/10410)
+- CouponList: 更新优惠券为空时的占位图 [#10436](https://github.com/youzan/vant/issues/10436)
+- Locale: 新增 Icelandic 冰岛语 [#10418](https://github.com/youzan/vant/issues/10418)
+- Locale: 新增 Lao 老挝语 [#10388](https://github.com/youzan/vant/issues/10388)
+- Locale: 新增 Swedish 瑞典语 [#10419](https://github.com/youzan/vant/issues/10419)
+- NumberKeyboard: 优化随机排序算法 [#10428](https://github.com/youzan/vant/issues/10428)
+- Uploader: preview-size 属性支持单独设置宽度和高度 [#10438](https://github.com/youzan/vant/issues/10438)
+
+**Bug Fixes**
+
+- Calendar: 修复 scrollToDate 方法在个别情况下不生效的问题 [#10432](https://github.com/youzan/vant/issues/10432)
+- DatetimePicker: 修复动态改变最大值或最小值时，currentDate 不准确的问题 [#10431](https://github.com/youzan/vant/issues/10431)
+- IndexBar: 修复底部索引高亮状态不正确的问题 [#10404](https://github.com/youzan/vant/issues/10404)
+- Tab: 修复使用 v-if 延迟渲染更新不正确的问题 [#10392](https://github.com/youzan/vant/issues/10392)
+
 ### [v3.4.6](https://github.com/youzan/vant/compare/v3.4.5...v3.4.6)
 
 `2022-03-13`

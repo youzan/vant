@@ -1,4 +1,5 @@
 import type { ComponentPublicInstance, ComputedRef, Ref } from 'vue';
+import type { Numeric } from '../utils';
 import type { CalendarProps } from './Calendar';
 import type { CalendarMonthProps } from './CalendarMonth';
 
@@ -18,7 +19,7 @@ export type CalendarDayType =
 
 export type CalendarDayItem = {
   date?: Date;
-  text?: string | number;
+  text?: Numeric;
   type?: CalendarDayType;
   topInfo?: string;
   className?: unknown;
