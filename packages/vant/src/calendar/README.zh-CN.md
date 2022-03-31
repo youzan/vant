@@ -401,6 +401,7 @@ calendarRef.value?.reset();
 | --van-calendar-month-mark-font-size | _160px_ | - |
 | --van-calendar-day-height | _64px_ | - |
 | --van-calendar-day-font-size | _var(--van-font-size-lg)_ | - |
+| --van-calendar-day-margin-bottom | 4px\_ | - |
 | --van-calendar-range-edge-color | _var(--van-white)_ | - |
 | --van-calendar-range-edge-background-color | _var(--van-danger-color)_ | - |
 | --van-calendar-range-middle-color | _var(--van-danger-color)_ | - |
