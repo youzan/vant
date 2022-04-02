@@ -222,7 +222,7 @@ imagePreviewRef.value?.swipeTo(1);
 
 | Attribute | Description            | Type     |
 | --------- | ---------------------- | -------- |
-| url       | Url of current image   | _number_ |
+| url       | URL of current image   | _number_ |
 | index     | Index of current image | _number_ |
 
 ### onScale Parameters

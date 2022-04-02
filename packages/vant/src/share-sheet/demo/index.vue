@@ -29,7 +29,7 @@ const t = useTranslate({
     link: 'Link',
     title: 'Share',
     weibo: 'Weibo',
-    wechat: 'Wechat',
+    wechat: 'WeChat',
     poster: 'Poster',
     qrcode: 'Qrcode',
     multiLine: 'Multi Line',
@@ -38,7 +38,7 @@ const t = useTranslate({
     customIcon: 'Custom Icon',
     description: 'Description',
     weappQrcode: 'Weapp Qrcode',
-    wechatMoments: 'Wechat Moments',
+    wechatMoments: 'WeChat Moments',
   },
 });
 

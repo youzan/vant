@@ -10,7 +10,7 @@ Vant 提供了一套默认主题，CSS 命名采用 BEM 的风格，方便使用
 
 ### 示例工程
 
-我们提供了一个基于 Vue Cli 3 的示例工程，仓库地址为 [Vant Demo](https://github.com/youzan/vant-demo)，其中包含了定制主题的基本配置，可以作为参考。
+我们提供了一个基于 Vue CLI 3 的示例工程，仓库地址为 [Vant Demo](https://github.com/youzan/vant-demo)，其中包含了定制主题的基本配置，可以作为参考。
 
 ### 样式变量
 
