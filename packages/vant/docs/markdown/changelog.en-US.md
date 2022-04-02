@@ -742,7 +742,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **Bug Fixes**
 
-- fix incorrect tag prompts under Webstorm [#8450](https://github.com/youzan/vant/issues/8450)
+- fix incorrect tag prompts under WebStorm [#8450](https://github.com/youzan/vant/issues/8450)
 
 ### [v3.0.11](https://github.com/youzan/vant/compare/v3.0.10...v3.0.11)
 

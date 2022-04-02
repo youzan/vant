@@ -746,7 +746,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Bug Fixes**
 
-- 修复 Webstorm 下组件标签提示不正确的问题 [#8450](https://github.com/youzan/vant/issues/8450)
+- 修复 WebStorm 下组件标签提示不正确的问题 [#8450](https://github.com/youzan/vant/issues/8450)
 
 ### [v3.0.11](https://github.com/youzan/vant/compare/v3.0.10...v3.0.11)
 

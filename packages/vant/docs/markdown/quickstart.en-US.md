@@ -73,10 +73,10 @@ For enterprise developers, we recommend:
 
 ### CLI
 
-We recommend to use [Vue Cli](https://cli.vuejs.org/) to create a new project.
+We recommend to use [Vue CLI](https://cli.vuejs.org/) to create a new project.
 
 ```bash
-# Install Vue Cli
+# Install Vue CLI
 npm install -g @vue/cli
 
 # Create a project

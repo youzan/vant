@@ -21,7 +21,7 @@
     - [site.simulator.url](#sitesimulatorurl)
     - [site.htmlMeta](#sitehtmlmeta)
     - [site.enableVConsole](#siteenablevconsole)
-  - [Postcss](#postcss)
+  - [PostCSS](#postcss)
     - [默认配置](#-----1)
   - [browserslist](#browserslist)
 
@@ -335,13 +335,13 @@ module.exports = {
 
 是否在 dev 时开启 [vConsole](https://github.com/Tencent/vConsole) 调试，用于移动端 debug。
 
-## Postcss
+## PostCSS
 
-通过根目录下的`postcss.config.js`文件可以对 Postcss 进行配置。
+通过根目录下的`postcss.config.js`文件可以对 PostCSS 进行配置。
 
 ### 默认配置
 
-`vant-cli` 中默认的 Postcss 配置如下：
+`vant-cli` 中默认的 PostCSS 配置如下：
 
 ```js
 module.exports = {

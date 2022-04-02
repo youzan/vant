@@ -2,7 +2,7 @@
 
 ## 源代码目录
 
-基于 Vant Cli 搭建的组件库的基本目录结构如下所示：
+基于 Vant CLI 搭建的组件库的基本目录结构如下所示：
 
 ```
 project
@@ -14,7 +14,7 @@ project
 │   ├─ home.md       # 文档首页
 │   └─ changelog.md  # 更新日志
 │
-├─ vant.config.mjs    # Vant Cli 配置文件
+├─ vant.config.mjs    # Vant CLI 配置文件
 ├─ package.json
 └─ README.md
 ```
@@ -83,7 +83,7 @@ button
 
 ### 生成类型声明
 
-当组件库使用 TS 编写，且根目录下存在 `tsconfig.declaration.json` 文件，Vant Cli 会自动生成 `.d.ts` 类型声明文件。
+当组件库使用 TS 编写，且根目录下存在 `tsconfig.declaration.json` 文件，Vant CLI 会自动生成 `.d.ts` 类型声明文件。
 
 `tsconfig.declaration.json` 的参考格式如下：
 
