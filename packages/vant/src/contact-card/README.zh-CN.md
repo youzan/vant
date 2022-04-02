@@ -55,7 +55,7 @@ export default {
     return {
       tel,
       name,
-      currentContact,
+      onEdit,
     };
   },
 };
