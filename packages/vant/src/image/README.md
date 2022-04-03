@@ -10,10 +10,10 @@ Register component globally via `app.use`, refer to [Component Registration](#/e
 
 ```js
 import { createApp } from 'vue';
-import { Image as VanImage } from 'vant';
+import { Image } from 'vant';
 
 const app = createApp();
-app.use(VanImage);
+app.use(Image);
 ```
 
 ## Usage
