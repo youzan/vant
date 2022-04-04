@@ -37,20 +37,31 @@ Use the image prop to display different placeholder images.
 <van-empty image="search" description="Description" />
 ```
 
+### Custom Size
+
+Using `image-size` prop to custom the size of image.
+
+```html
+<!-- The default unit is px -->
+<van-empty image-size="100" description="Description" />
+<!-- Support other units, such as rem, vh, vw -->
+<van-empty image-size="10rem" description="Description" />
+```
+
+You can set the width and height separately.
+
+```html
+<van-empty :image-size="[60, 40]" description="Description" />
+```
+
 ### Custom Image
 
 ```html
 <van-empty
-  class="custom-image"
   image="https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
+  image-size="80"
   description="Description"
 />
-
-<style>
-  .custom-image img {
-    border-radius: 100%;
-  }
-</style>
 ```
 
 ### Bottom Content

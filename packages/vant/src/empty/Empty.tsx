@@ -1,6 +1,6 @@
-import { defineComponent, type ExtractPropTypes } from 'vue';
+import { defineComponent, PropType, type ExtractPropTypes } from 'vue';
 import {
-  numericProp,
+  Numeric,
   getSizeStyle,
   makeStringProp,
   createNamespace,
@@ -13,7 +13,7 @@ const PRESET_IMAGES = ['error', 'search', 'default'];
 
 const emptyProps = {
   image: makeStringProp('default'),
-  imageSize: numericProp,
+  imageSize: [Number, String, Array] as PropType<Numeric | [Numeric, Numeric]>,
   description: String,
 };
 
