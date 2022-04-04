@@ -84,9 +84,9 @@ You can set the width and height separately.
 ### Props
 
 | Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | image | Image type，can be set to `error` `network` `search` or image URL | _string_ | `default` |
-| image-size | Image size | _number \| string_ | - |
+| image-size | Image size |  | _number \| string \| Array_ | - |
 | description | Description | _string_ | - |
 
 ### Slots
