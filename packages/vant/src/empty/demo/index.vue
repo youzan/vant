@@ -12,6 +12,7 @@ const t = useTranslate({
     search: '搜索提示',
     network: '网络错误',
     imageType: '图片类型',
+    customSize: '自定义大小',
     description: '描述文字',
     customImage: '自定义图片',
     bottomContent: '底部内容',
@@ -21,6 +22,7 @@ const t = useTranslate({
     search: 'Search',
     network: 'Network',
     imageType: 'Image Type',
+    customSize: 'Custom Size',
     description: 'Description',
     customImage: 'Custom Image',
     bottomContent: 'Bottom Content',
@@ -49,10 +51,14 @@ const active = ref('error');
     </van-tabs>
   </demo-block>
 
+  <demo-block :title="t('customSize')">
+    <van-empty image-size="100" :description="t('description')" />
+  </demo-block>
+
   <demo-block :title="t('customImage')">
     <van-empty
-      class="custom-image"
       :image="cdnURL('custom-empty-image.png')"
+      :image-size="80"
       :description="t('description')"
     />
   </demo-block>
@@ -69,13 +75,6 @@ const active = ref('error');
 <style lang="less">
 .demo-empty {
   background: var(--van-background-color-light);
-
-  .custom-image {
-    .van-empty__image {
-      width: 90px;
-      height: 90px;
-    }
-  }
 
   .bottom-button {
     width: 160px;
