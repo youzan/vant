@@ -150,6 +150,8 @@ export default {
     'shield-o',
     'guide-o',
     'cash-o',
+    'link-o',
+    'miniprogram-o',
   ],
   filled: [
     // has corresponding outline icon
@@ -224,7 +226,10 @@ export default {
     // without corresponding outline icon
     'wechat',
     'wechat-pay',
+    'wechat-moments',
+    'qq',
     'alipay',
+    'weibo',
     'photograph',
     'youzan-shield',
     'umbrella-circle',
