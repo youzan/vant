@@ -83,7 +83,7 @@ Use slot to custom content.
 | centered | Whether content vertical centered | _boolean_ | `false` |
 | currency | Currency symbol | _string_ | `¥` |
 | thumb-link | Thumb link URL | _string_ | - |
-| lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
+| lazy-load | Whether to enable thumb lazy load, should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 
 ### Events
 

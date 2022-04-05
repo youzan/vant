@@ -310,14 +310,14 @@ export default {
 | preview-size | Size of preview image | _number \| string \| Array_ | `80px` |
 | preview-image | Whether to show image preview | _boolean_ | `true` |
 | preview-full-image | Whether to show full screen image preview when image is clicked | _boolean_ | `true` |
-| preview-options | Options of full screen image preview，see [ImagePreview](#/en-US/image-preview) | _object_ | - |
+| preview-options | Options of full screen image preview, see [ImagePreview](#/en-US/image-preview) | _object_ | - |
 | multiple | Whether to enable multiple selection pictures | _boolean_ | `false` |
 | disabled | Whether to disabled the upload | _boolean_ | `false` |
 | readonly `v3.1.5` | Whether to make upload area readonly | _boolean_ | `false` |
 | deletable | Whether to show delete icon | _boolean_ | `true` |
 | show-upload | Whether to show upload area | _boolean_ | `true` |
-| lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
-| capture | Capture，can be set to `camera` | _string_ | - |
+| lazy-load | Whether to enable lazy load, should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
+| capture | Capture, can be set to `camera` | _string_ | - |
 | after-read | Hook after reading the file | _Function_ | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | _Function_ | - |
 | before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | _Function_ | - |

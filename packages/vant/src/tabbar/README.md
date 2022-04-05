@@ -173,7 +173,7 @@ export default {
 | route | Whether to enable route mode | _boolean_ | `false` |
 | placeholder | Whether to generate a placeholder element when fixed | _boolean_ | `false` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
-| before-change | Callback function before changing tab，return `false` to prevent change，support return Promise | _(name: number \| string) => boolean \| Promise\<boolean\>_ | - |
+| before-change | Callback function before changing tab, return `false` to prevent change, support return Promise | _(name: number \| string) => boolean \| Promise\<boolean\>_ | - |
 
 ### Tabbar Events
 
@@ -190,7 +190,7 @@ export default {
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
 | dot | Whether to show red dot | _boolean_ | - |
 | badge | Content of the badge | _number \| string_ | `''` |
-| badge-props `v3.2.8` | Props of Badge，see [Badge - props](#/en-US/badge#props) | _BadgeProps_ | - |
+| badge-props `v3.2.8` | Props of Badge, see [Badge - props](#/en-US/badge#props) | _BadgeProps_ | - |
 | url | Link | _string_ | - |
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |

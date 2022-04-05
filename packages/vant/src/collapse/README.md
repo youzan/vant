@@ -120,9 +120,9 @@ export default {
 
 ### Collapse Events
 
-| Event  | Description                  | Arguments   |
-| ------ | ---------------------------- | ----------- |
-| change | Emitted when switching panel | activeNames |
+| Event  | Description                  | Arguments           |
+| ------ | ---------------------------- | ------------------- | ------ | ------------ | ------- |
+| change | Emitted when switching panel | activeNames: string | number | Array<string | number> |
 
 ### CollapseItem Props
 
@@ -130,7 +130,7 @@ export default {
 | --- | --- | --- | --- |
 | name | Name | _number \| string_ | `index` |
 | icon | Left Icon | _string_ | - |
-| size | Title size，can be set to `large` | _string_ | - |
+| size | Title size, can be set to `large` | _string_ | - |
 | title | Title | _number \| string_ | - |
 | value | Right text | _number \| string_ | - |
 | label | Description below the title | _string_ | - |

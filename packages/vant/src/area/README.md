@@ -77,7 +77,7 @@ export default {
 
 ### Initial Value
 
-To have a selected value，simply pass the `code` of target area to `value` property.
+To have a selected value, simply pass the `code` of target area to `value` property.
 
 ```html
 <van-area title="Title" :area-list="areaList" value="110101" />
@@ -120,7 +120,7 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 | item-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | columns-num | Level of picker | _number \| string_ | `3` |
 | visible-item-count | Count of visible columns | _number \| string_ | `6` |
-| swipe-duration | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
+| swipe-duration | Duration of the momentum animation, unit `ms` | _number \| string_ | `1000` |
 | is-oversea-code | The method to validate oversea code | _() => boolean_ | - |
 
 ### Events
@@ -129,7 +129,7 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 | --- | --- | --- |
 | confirm | Emitted when the confirm button is clicked | _result: ConfirmResult_ |
 | cancel | Emitted when the cancel button is clicked | - |
-| change | Emitted when current option changed | current: values，column: index |
+| change | Emitted when current option changed | current: values, column: index |
 
 ### ConfirmResult
 

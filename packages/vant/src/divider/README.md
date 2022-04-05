@@ -61,7 +61,7 @@ app.use(Divider);
 | --- | --- | --- | --- |
 | dashed | Whether to use dashed border | _boolean_ | `false` |
 | hairline | Whether to use hairline | _boolean_ | `true` |
-| content-position | Content position，can be set to `left` `right` | _string_ | `center` |
+| content-position | Content position, can be set to `left` `right` | _string_ | `center` |
 
 ### Slots
 

@@ -252,7 +252,7 @@ Use `input-align` prop to align the input value.
 | name | As the identifier when submitting the form | _string_ | - |
 | id `v3.2.2` | Input id, the for attribute of the label also will be set | _string_ | `van-field-n-input` |
 | type | Input type, support all [native types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types) and `digit` type | _FieldType_ | `text` |
-| size | Size，can be set to `large` | _string_ | - |
+| size | Size, can be set to `large` | _string_ | - |
 | maxlength | Max length of value | _number \| string_ | - |
 | placeholder | Input placeholder | _string_ | - |
 | border | Whether to show inner border | _boolean_ | `true` |
@@ -272,13 +272,13 @@ Use `input-align` prop to align the input value.
 | error-message | Error message | _string_ | - |
 | error-message-align | Error message align, can be set to `center` `right` | _FieldTextAlign_ | `left` |
 | formatter | Input value formatter | _(val: string) => string_ | - |
-| format-trigger | When to format value，can be set to `onBlur` | _FieldFormatTrigger_ | `onChange` |
+| format-trigger | When to format value, can be set to `onBlur` | _FieldFormatTrigger_ | `onChange` |
 | arrow-direction | Can be set to `left` `up` `down` | _string_ | `right` |
 | label-class | Label className | _string \| Array \| object_ | - |
 | label-width | Label width | _number \| string_ | `6.2em` |
 | label-align | Label align, can be set to `center` `right` | _FieldTextAlign_ | `left` |
 | input-align | Input align, can be set to `center` `right` | _FieldTextAlign_ | `left` |
-| autosize | Textarea auto resize，can accept an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| FieldAutosizeConfig_ | `false` |
+| autosize | Textarea auto resize, can accept an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| FieldAutosizeConfig_ | `false` |
 | left-icon | Left side icon name | _string_ | - |
 | right-icon | Right side icon name | _string_ | - |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
@@ -287,7 +287,7 @@ Use `input-align` prop to align the input value.
 
 ### Events
 
-| Event | Description | Parameters |
+| Event | Description | Arguments |
 | --- | --- | --- |
 | update:model-value | Emitted when input value changed | _value: string_ |
 | focus | Emitted when input is focused | _event: Event_ |

@@ -89,7 +89,7 @@ Set grid spacing using `gutter` attribute. The default value is 0.
 | --- | --- | --- | --- |
 | gutter | Grid spacing（px） | _number \| string_ | - |
 | tag | Custom element tag | _string_ | `div` |
-| justify | Flex main axis，can be set to end/center/space-around/space-between | _string_ | `start` |
+| justify | Flex main axis, can be set to end/center/space-around/space-between | _string_ | `start` |
 | align | Flex cross axis, be set to center/bottom | _string_ | `top` |
 | wrap `v3.0.11` | Whether to wrap | _boolean_ | `true` |
 
