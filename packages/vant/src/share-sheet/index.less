@@ -65,10 +65,54 @@
     user-select: none;
   }
 
-  &__icon {
+  &__icon,
+  &__image-icon {
     width: var(--van-share-sheet-icon-size);
     height: var(--van-share-sheet-icon-size);
     margin: 0 var(--van-padding-md);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--van-gray-7);
+    border-radius: 100%;
+    background-color: var(--van-gray-2);
+
+    &--link,
+    &--poster,
+    &--qrcode {
+      font-size: 26px;
+    }
+
+    &--weapp-qrcode {
+      font-size: 28px;
+    }
+
+    &--qq,
+    &--weibo,
+    &--wechat,
+    &--wechat-moments {
+      font-size: 30px;
+      color: var(--van-white);
+    }
+
+    &--qq {
+      background-color: #38b9fa;
+    }
+
+    &--wechat {
+      background-color: #0bc15f;
+    }
+
+    &--weibo {
+      background-color: #ee575e;
+    }
+
+    &--wechat-moments {
+      background-color: #7bc845;
+    }
   }
 
   &__name {
