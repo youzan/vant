@@ -93,14 +93,7 @@ export default {
 
 ### Events
 
-| Event | Description | Arguments |
-| --- | --- | --- |
-| add | Emitted when the add button is clicked | - |
-| edit | Emitted when the edit icon of address is clicked | _item: Address, index: number_ |
-| select | Emitted when an address is selected | _item: Address, index: number_ |
-| edit-disabled | Emitted when the edit icon of disabled address is clicked | _item: Address, index: number_ |
-| select-disabled | Emitted when a disabled address is selected | _item: Address, index: number_ |
-| click-item | Emitted when an address item is clicked | _item: Address, index: number_ |
+| Event | Description | Arguments | | --- | ``--- | --- | | add | Emitted when the add button is clicked | - | | edit | Emitted when the edit icon of address is clicked | _item: Address, index: number_ | | select | Emitted when an address is selected | _item: Address, index: number_ | | edit-disabled | Emitted when the edit icon of disabled address is clicked | _item: Address, index: number_ | | select-disabled | Emitted when a disabled address is selected | _item: Address, index: number_ | | click-item | Emitted when an address item is clicked | _item: Address, index: number_ |
 
 ### Data Structure of Address
 

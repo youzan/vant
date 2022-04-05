@@ -70,8 +70,8 @@ export default {
 
 | Event  | Description                               | Arguments             |
 | ------ | ----------------------------------------- | --------------------- |
-| save   | Emitted when the save button is clicked   | content：contact info |
-| delete | Emitted when the delete button is clicked | content：contact info |
+| save   | Emitted when the save button is clicked   | content: contact info |
+| delete | Emitted when the delete button is clicked | content: contact info |
 
 ### Data Structure of Contact
 

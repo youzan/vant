@@ -129,7 +129,7 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 | --- | --- | --- |
 | confirm | Emitted when the confirm button is clicked | _result: ConfirmResult_ |
 | cancel | Emitted when the cancel button is clicked | - |
-| change | Emitted when current option changed | current values，column index |
+| change | Emitted when current option changed | current: values，column: index |
 
 ### ConfirmResult
 

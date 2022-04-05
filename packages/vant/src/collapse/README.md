@@ -114,7 +114,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Names of current active panels | accordion mode： _number \| string_<br>non-accordion mode：_(number \| string)[]_ | - |
+| v-model | Names of current active panels | accordion mode: _number \| string_<br>non-accordion mode: _(number \| string)[]_ | - |
 | accordion | Whether to be accordion mode | _boolean_ | `false` |
 | border | Whether to show outer border | _boolean_ | `true` |
 
