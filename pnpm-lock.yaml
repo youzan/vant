@@ -52,7 +52,7 @@ importers:
       '@vant/area-data': ^1.1.3
       '@vant/cli': workspace:*
       '@vant/eslint-config': workspace:*
-      '@vant/icons': ^1.7.1
+      '@vant/icons': ^1.8.0
       '@vant/popperjs': ^1.1.0
       '@vant/use': ^1.3.6
       '@vue/runtime-core': ^3.2.27
