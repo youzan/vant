@@ -38,7 +38,7 @@
     "test": "vant-cli test",
     "build": "vant-cli build",
     "build:site": "vant-cli build-site",
-    "release": "vant-cli release",
+    "release": "cp ../../README.md ./ && vant-cli release && rm ./README.md",
     "release:site": "pnpm build:site && gh-pages -d site-dist --add",
     "test:watch": "vant-cli test --watch",
     "test:coverage": "open test/coverage/index.html"
@@ -64,7 +64,7 @@
     "components"
   ],
   "dependencies": {
-    "@vant/icons": "^1.7.1",
+    "@vant/icons": "^1.8.0",
     "@vant/popperjs": "^1.1.0",
     "@vant/use": "^1.3.6"
   },

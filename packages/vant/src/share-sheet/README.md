@@ -38,7 +38,7 @@ export default {
   setup() {
     const showShare = ref(false);
     const options = [
-      { name: 'Wechat', icon: 'wechat' },
+      { name: 'WeChat', icon: 'wechat' },
       { name: 'Weibo', icon: 'weibo' },
       { name: 'Link', icon: 'link' },
       { name: 'Poster', icon: 'poster' },
@@ -73,8 +73,8 @@ export default {
     const showShare = ref(false);
     const options = [
       [
-        { name: 'Wechat', icon: 'wechat' },
-        { name: 'Wechat Moments', icon: 'wechat-moments' },
+        { name: 'WeChat', icon: 'wechat' },
+        { name: 'WeChat Moments', icon: 'wechat-moments' },
         { name: 'Weibo', icon: 'weibo' },
         { name: 'QQ', icon: 'qq' },
       ],
@@ -147,7 +147,7 @@ export default {
   setup() {
     const showShare = ref(false);
     const options = [
-      { name: 'Wechat', icon: 'wechat' },
+      { name: 'WeChat', icon: 'wechat' },
       { name: 'Weibo', icon: 'weibo' },
       { name: 'Link', icon: 'link', description: 'Description' },
       { name: 'Poster', icon: 'poster' },

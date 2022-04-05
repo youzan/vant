@@ -57,3 +57,15 @@ test('should change image size when using image-size prop', async () => {
   expect(image.style.width).toEqual('1vw');
   expect(image.style.height).toEqual('1vw');
 });
+
+test('should allow to set image width and height separately by image-size prop', async () => {
+  const wrapper = mount(Empty, {
+    props: {
+      imageSize: [20, 10],
+    },
+  });
+
+  const image = wrapper.find('.van-empty__image');
+  expect(image.style.width).toEqual('20px');
+  expect(image.style.height).toEqual('10px');
+});

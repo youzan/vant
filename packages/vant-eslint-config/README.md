@@ -1,4 +1,4 @@
-# Eslint Config of Vant
+# ESLint Config of Vant
 
 ## Install
 

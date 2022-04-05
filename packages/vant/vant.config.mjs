@@ -45,7 +45,8 @@ export default {
           },
         ],
         searchConfig: {
-          apiKey: '90067aecdaa2c85220e2783cd305caac',
+          appId: 'BLI2GGOUL8',
+          apiKey: '07cb725cd26aa496996de6cb8ab9b5cc',
           indexName: 'vant',
           searchParameters: {
             facetFilters: ['lang:zh-CN', 'version:v4'],
@@ -487,7 +488,8 @@ export default {
           },
         ],
         searchConfig: {
-          apiKey: '90067aecdaa2c85220e2783cd305caac',
+          appId: 'BLI2GGOUL8',
+          apiKey: '07cb725cd26aa496996de6cb8ab9b5cc',
           indexName: 'vant',
           searchParameters: {
             facetFilters: ['lang:en-US', 'version:v4'],

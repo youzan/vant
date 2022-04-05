@@ -170,41 +170,49 @@ exports[`lazy-render prop 1`] = `
           23
         </div>
         <div role="gridcell"
+             style="margin-bottom: 0px;"
              class="van-calendar__day van-calendar__day--disabled"
         >
           24
         </div>
         <div role="gridcell"
+             style="margin-bottom: 0px;"
              class="van-calendar__day van-calendar__day--disabled"
         >
           25
         </div>
         <div role="gridcell"
+             style="margin-bottom: 0px;"
              class="van-calendar__day van-calendar__day--disabled"
         >
           26
         </div>
         <div role="gridcell"
+             style="margin-bottom: 0px;"
              class="van-calendar__day van-calendar__day--disabled"
         >
           27
         </div>
         <div role="gridcell"
+             style="margin-bottom: 0px;"
              class="van-calendar__day van-calendar__day--disabled"
         >
           28
         </div>
         <div role="gridcell"
+             style="margin-bottom: 0px;"
              class="van-calendar__day van-calendar__day--disabled"
         >
           29
         </div>
         <div role="gridcell"
+             style="margin-bottom: 0px;"
              class="van-calendar__day van-calendar__day--disabled"
         >
           30
         </div>
         <div role="gridcell"
+             style="margin-bottom: 0px;"
              class="van-calendar__day van-calendar__day--disabled"
         >
           31

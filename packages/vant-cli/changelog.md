@@ -1,5 +1,13 @@
 # 更新日志
 
+## v4.0.1
+
+`2022-03-03`
+
+- 支持复制示例代码到剪贴板
+- 修复官网更新日志的版本链接及 issue 链接异常的问题
+- 修复 ReDoS 安全问题
+
 ## v4.0.0
 
 `2022-02-07`
@@ -10,7 +18,7 @@
 - 使用 vite 代替 webpack 进行构建，移除了所有 webpack 相关依赖
 - 使用 esbuild 进行代码转义和压缩
 - babel preset 添加了 `cjs` 后缀，现在需要通过 `@vant/cli/preset.cjs` 引入
-- vant.config.js 重命名为 `vant.config.mjs`，由 commonJs 变更为 ESModule 格式
+- vant.config.js 重命名为 `vant.config.mjs`，由 CommonJS 变更为 ESModule 格式
 - 站点构建产物的目录由 `site` 调整为 `site-dist`
 - 不再支持 webpack.config.js 配置文件
 - 不再支持 less import 语法中使用波浪号
@@ -471,7 +479,7 @@ yarn add sass
 
 `2020-01-12`
 
-- 支持自定义 Postcss 配置
+- 支持自定义 PostCSS 配置
 - 支持自定义 devServer 端口
 - 优化文档站点的 meta 字段
 - 新增 API 文档中的版本标签样式
