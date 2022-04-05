@@ -1,10 +1,25 @@
 /* eslint-disable no-continue */
 import { Articals } from './parser';
 import { formatOptions, formatType, removeVersion, toKebabCase } from './utils';
-import { VueTag } from './type';
+import { VueEventArgument, VueTag } from './type';
 
 function formatComponentName(name: string, tagPrefix: string) {
   return tagPrefix + toKebabCase(name);
+}
+
+function formatArguments(input: string): VueEventArgument[] {
+  if (input === '-') return [];
+  const args: VueEventArgument[] = [];
+  formatType(input)
+    .split(',')
+    .forEach((item) => {
+      const arg = item.split(':');
+      args.push({
+        name: arg[0].trim(),
+        type: arg[1].trim(),
+      });
+    });
+  return args;
 }
 
 function getNameFromTableTitle(tableTitle: string, tagPrefix: string) {
@@ -84,10 +99,11 @@ export function formatter(
       const tag = findTag(vueTags, name);
 
       table.body.forEach((line) => {
-        const [name, desc] = line;
+        const [name, desc, args] = line;
         tag.events!.push({
           name: removeVersion(name),
           description: desc,
+          arguments: formatArguments(args),
         });
       });
       return;
