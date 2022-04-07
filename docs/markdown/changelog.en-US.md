@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.47](https://github.com/youzan/vant/compare/v2.12.46...v2.12.47)
+
+`2022-04-07`
+
+**Feature**
+
+- Locale: add vi-VN lang [#10477](https://github.com/youzan/vant/issues/10477)
+
 ### [v2.12.46](https://github.com/youzan/vant/compare/v2.12.45...v2.12.46)
 
 `2022-03-30`

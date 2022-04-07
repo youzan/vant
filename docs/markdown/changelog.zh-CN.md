@@ -22,6 +22,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.47](https://github.com/youzan/vant/compare/v2.12.46...v2.12.47)
+
+`2022-04-07`
+
+**Feature**
+
+- Locale: 新增 vi-VN 越南语 [#10477](https://github.com/youzan/vant/issues/10477)
+
 ### [v2.12.46](https://github.com/youzan/vant/compare/v2.12.45...v2.12.46)
 
 `2022-03-30`
