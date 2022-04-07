@@ -55,6 +55,7 @@ Locale.add(messages);
 | 挪威语         | nb-NO        |
 | 泰语           | th-TH        |
 | 法语           | fr-FR        |
+| 越南语     | vi-VN        |
 
 > 在 [这里](https://github.com/youzan/vant/tree/2.x/src/locale/lang) 查看所有的语言包源文件。
 

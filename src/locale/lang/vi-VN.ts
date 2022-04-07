@@ -1,0 +1,81 @@
+export default {
+  name: 'Tên',
+  tel: 'điện thoại',
+  save: 'tiết kiệm',
+  confirm: 'xác nhận',
+  cancel: 'Hủy bỏ',
+  delete: 'xóa bỏ',
+  complete: 'Hoàn thành',
+  loading: 'Đang tải...',
+  telEmpty: 'Vui lòng điền số điện thoại',
+  nameEmpty: 'vui lòng điền tên',
+  nameInvalid: 'Vui lòng nhập tên chính xác',
+  confirmDelete: 'Bạn có chắc chắn muốn xóa',
+  telInvalid: 'Vui lòng nhập số điện thoại chính xác',
+  vanCalendar: {
+    end: 'chấm dứt',
+    start: 'Bắt đầu',
+    title: 'chọn ngày',
+    confirm: 'Đảm bảo',
+    startEnd: 'bắt đầu / kết thúc',
+    weekdays: ['Chủ nhật','Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy'],
+    monthTitle: (year: number, month: number) => `${year} năm ${month} tháng`,
+    rangePrompt: (maxRange: number) => `Các ngày được chọn không được vượt quá ${maxRange} ngày`,
+  },
+  vanCascader: {
+    select: 'Xin hãy lựa chọn',
+  },
+  vanContactCard: {
+    addText: 'Thêm địa chỉ liên hệ',
+  },
+  vanContactList: {
+    addText: 'Địa chỉ liên lạc mới',
+  },
+  vanPagination: {
+    prev: 'trang trước',
+    next: 'trang sau',
+  },
+  vanPullRefresh: {
+    pulling: 'Kéo xuống để làm mới...',
+    loosing: 'Phát hành để làm mới...',
+  },
+  vanSubmitBar: {
+    label: 'toàn bộ:',
+  },
+  vanCoupon: {
+    unlimited: 'Không có ngưỡng sử dụng',
+    discount: (discount: number) => `${discount} Chiết khấu`,
+    condition: (condition: number) => `Có sẵn sau khi chi tiêu ${condition} nhân dân tệ`,
+  },
+  vanCouponCell: {
+    title: 'phiếu giảm giá',
+    tips: 'Chưa có',
+    count: (count: number) => `${count} trang tính khả dụng`,
+  },
+  vanCouponList: {
+    empty: 'Chưa có phiếu giảm giá',
+    exchange: 'trao đổi',
+    close: 'Không sử dụng phiếu giảm giá',
+    enable: 'Có sẵn',
+    disabled: 'không có sẵn',
+    placeholder: 'Vui lòng nhập mã khuyến mãi',
+  },
+  vanAddressEdit: {
+    area: 'vùng',
+    postal: 'mã bưu điện',
+    areaEmpty: 'vui lòng chọn khu vực',
+    addressEmpty: 'Vui lòng điền vào địa chỉ chi tiết',
+    postalEmpty: 'Định dạng mã zip không chính xác',
+    defaultAddress: 'đặt làm địa chỉ giao hàng mặc định',
+    telPlaceholder: 'Số điện thoại của người nhận hàng',
+    namePlaceholder: 'Tên người nhận hàng',
+    areaPlaceholder: 'Chọn Tỉnh / Thành phố / Quận / Huyện',
+  },
+  vanAddressEditDetail: {
+    label: 'Địa chỉ chi tiết',
+    placeholder: 'Số đường phố, số phòng tầng, v.v.',
+  },
+  vanAddressList: {
+    add: 'Thêm địa chỉ',
+  },
+};
