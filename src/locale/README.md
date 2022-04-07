@@ -54,6 +54,7 @@ Current supported languages:
 | Turkish                  | tr-TR        |
 | Thai                     | th-TH        |
 | French                   | fr-FR        |
+| Vietnamese               | vi-VN        |
 
 > View all language configs [Here](https://github.com/youzan/vant/tree/2.x/src/locale/lang).
 
