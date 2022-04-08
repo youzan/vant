@@ -120,9 +120,9 @@ export default {
 
 ### Collapse Events
 
-| Event  | Description                  | Arguments           |
-| ------ | ---------------------------- | ------------------- | ------ | ------------ | ------- |
-| change | Emitted when switching panel | activeNames: string | number | Array<string | number> |
+| Event | Description | Arguments |
+| --- | --- | --- |
+| change | Emitted when switching panel | _activeNames: string \| number \| Array<string \| number>_ |
 
 ### CollapseItem Props
 
