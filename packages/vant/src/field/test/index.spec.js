@@ -426,6 +426,17 @@ test('should allow to set autocomplete attribute', () => {
   );
 });
 
+test('should allow to set enterkeyhint attribute', () => {
+  const wrapper = mount(Field, {
+    props: {
+      enterkeyhint: 'done',
+    },
+  });
+  expect(wrapper.find('input').element.getAttribute('enterkeyhint')).toEqual(
+    'done'
+  );
+});
+
 test('should change clear icon when using clear-icon prop', async () => {
   const wrapper = mount(Field, {
     props: {
