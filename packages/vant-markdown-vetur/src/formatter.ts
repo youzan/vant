@@ -19,7 +19,7 @@ function formatArguments(input: string): VueEventArgument[] {
   input = formatType(input);
   while (input.length > 0) {
     if (/(?!_)\w/.test(input[0])) {
-      const val = str.match(/(\w|\s|\p{P}|\||\[|\]|>|<)+/)[0] || '';
+      const val = input.match(/(\w|\s|\p{P}|\||\[|\]|>|<)+/)![0] || '';
       input = input.substring(val.length);
       items.push(val);
     } else if (input[0] === '{') {
