@@ -168,13 +168,13 @@ Use `active-color` prop to custom active color of the title and options.
 
 ### DropdownItem Events
 
-| Event  | Description                             | Arguments     |
-| ------ | --------------------------------------- | ------------- | ------ |
-| change | Emitted select option and value changed | value: number | string |
-| open   | Emitted when opening menu               | -             |
-| close  | Emitted when closing menu               | -             |
-| opened | Emitted when menu is opened             | -             |
-| closed | Emitted when menu is closed             | -             |
+| Event  | Description                             | Arguments                 |
+| ------ | --------------------------------------- | ------------------------- |
+| change | Emitted select option and value changed | _value: number \| string_ |
+| open   | Emitted when opening menu               | -                         |
+| close  | Emitted when closing menu               | -                         |
+| opened | Emitted when menu is opened             | -                         |
+| closed | Emitted when menu is closed             | -                         |
 
 ### DropdownItem Slots
 
