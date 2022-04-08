@@ -80,6 +80,7 @@ export const fieldSharedProps = {
   placeholder: String,
   autocomplete: String,
   errorMessage: String,
+  enterkeyhint: String,
   clearTrigger: makeStringProp<FieldClearTrigger>('focus'),
   formatTrigger: makeStringProp<FieldFormatTrigger>('onChange'),
   error: {
@@ -412,6 +413,7 @@ export default defineComponent({
         autofocus: props.autofocus,
         placeholder: props.placeholder,
         autocomplete: props.autocomplete,
+        enterkeyhint: props.enterkeyhint,
         'aria-labelledby': props.label ? `${id}-label` : undefined,
         onBlur,
         onFocus,
