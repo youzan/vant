@@ -336,9 +336,9 @@ Picker events will pass different parameters according to the columns are single
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| confirm | Emitted when click confirm button | Single column: current value, current index<br>Multiple columns: current values, current indexes |
-| cancel | Emitted when click cancel button | Single column: current value, current index<br>Multiple columns: current values, current indexes |
-| change | Emitted when current option changed | Single column: Picker instance, current value, current index<br>Multiple columns: Picker instance, current values, column index |
+| confirm | Emitted when click confirm button.<br>**Notice: the arguments return an array when the multiple columns mode.** | _currentValue: PickerOption \| PickerOption[], currentIndex: number \| number[]_ |
+| cancel | Emitted when click cancel button.<br>**Notice: the arguments return an array when the multiple columns mode.** | _currentValue: PickerOption \| PickerOption[], currentIndex: number \| number[]_ |
+| change | Emitted when current option changed.<br>**Notice: the arguments return an array when the multiple columns mode.** | _currentValue: PickerOption \| PickerOption[], currentIndex: number \| number[]_ |
 
 ### Slots
 

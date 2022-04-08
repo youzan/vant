@@ -7,18 +7,41 @@ function formatComponentName(name: string, tagPrefix: string) {
   return tagPrefix + toKebabCase(name);
 }
 
+/**
+ * format arugments of events
+ * input  = value: { foo: foo or 1, bar: bar or 2 }, value2: { one: 1 and 1, two: 2 and 2 }, foo: bar
+ * output = [{ name: 'value', type: '{ foo: foo or 1, bar: bar or 2 }' }, { name: 'value2', type: '{ one: 1 and 1, two: 2 and 2 }'}, { name: 'foo', type: 'bar' }]
+ */
 function formatArguments(input: string): VueEventArgument[] {
   if (input === '-') return [];
   const args: VueEventArgument[] = [];
-  formatType(input)
-    .split(',')
-    .forEach((item) => {
-      const arg = item.split(':');
-      args.push({
-        name: arg[0].trim(),
-        type: arg[1].trim(),
-      });
+  const items = [];
+  input = formatType(input);
+  while (input.length > 0) {
+    if (/(?!_)\w/.test(input[0])) {
+      const val = input.match(/(\w|\s|\p{P}|\||\[|\])+/)![0] || '';
+      input = input.substring(val.length);
+      items.push(val);
+    } else if (input[0] === '{') {
+      const val = input.match(/\{[^}]+\}/)![0] || '';
+      input = input.substring(val.length);
+      items.push(val);
+    } else if ([':', ',', '_', ' '].includes(input[0])) {
+      input = input.substring(1);
+    } else {
+      const val = input.match(/( |'|\||\w)+/)![0] || '';
+      input = input.substring(val.length);
+      items.push(val);
+    }
+  }
+
+  for (let i = 0; i < items.length; i += 2) {
+    args.push({
+      name: items[i],
+      type: items[i + 1],
     });
+  }
+
   return args;
 }
 
