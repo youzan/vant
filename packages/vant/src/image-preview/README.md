@@ -174,7 +174,7 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| close | Emitted when closing ImagePreview | value: { index, url } |
+| close | Emitted when closing ImagePreview | _value: { index, url }_ |
 | closed | Emitted when ImagePreview is closed | - |
 | change | Emitted when current image changed | _index: number_ |
 | scale | Emitted when scaling current image | _value: ImagePreviewScaleEventParams_ |
