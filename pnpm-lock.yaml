@@ -95,7 +95,7 @@ importers:
       '@types/less': ^3.0.3
       '@types/markdown-it': ^12.2.3
       '@vant/eslint-config': ^3.3.2
-      '@vant/markdown-vetur': ^2.2.0
+      '@vant/markdown-vetur': ^2.3.0
       '@vant/stylelint-config': ^1.4.2
       '@vant/touch-emulator': ^1.3.2
       '@vitejs/plugin-vue': ^2.0.0
