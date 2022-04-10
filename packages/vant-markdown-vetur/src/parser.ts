@@ -25,9 +25,11 @@ function readLine(input: string) {
 }
 
 function splitTableLine(line: string) {
-  line = line.replace('\\|', 'JOIN');
+  line = line.replace(/\\\|/g, 'JOIN');
 
-  const items = line.split('|').map((item) => item.trim().replace('JOIN', '|'));
+  const items = line
+    .split('|')
+    .map((item) => item.trim().replace(/JOIN/g, '|'));
 
   // remove pipe character on both sides
   items.pop();

@@ -94,7 +94,7 @@ export default {
 | --- | --- | --- | --- |
 | price | Price | _number_ | - |
 | decimal-length | Price decimal length | _number \| string_ | `2` |
-| label | Price left label | _string_ | `Total：` |
+| label | Price left label | _string_ | `Total: ` |
 | suffix-label | Price right label | _string_ | - |
 | text-align | Price label text align can be set to `left` | _string_ | `right` |
 | button-text | Button text | _string_ | - |

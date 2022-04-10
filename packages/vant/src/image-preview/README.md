@@ -140,7 +140,7 @@ export default {
 | minZoom | Min zoom | _number \| string_ | `1/3` |
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | closeIcon | Close icon name | _string_ | `clear` |
-| closeIconPosition | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
+| closeIconPosition | Close icon position, can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition `v3.0.8` | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | overlayClass `v3.2.8` | Custom overlay class | _string \| Array \| object_ | - |
 | overlayStyle `v3.0.8` | Custom overlay style | _object_ | - |
@@ -164,7 +164,7 @@ export default {
 | min-zoom | Min zoom | _number \| string_ | `1/3` |
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | close-icon | Close icon name | _string_ | `clear` |
-| close-icon-position | Close icon position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
+| close-icon-position | Close icon position, can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 | transition `v3.0.8` | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | overlay-class `v3.2.8` | Custom overlay class | _string \| Array \| object_ | - |
 | overlay-style `v3.0.8` | Custom overlay style | _object_ | - |
@@ -172,12 +172,13 @@ export default {
 
 ### Events
 
-| Event | Description | Parameters |
+| Event | Description | Arguments |
 | --- | --- | --- |
-| close | Emitted when closing ImagePreview | { index, url } |
+| close | Emitted when closing ImagePreview | _value: { index, url }_ |
 | closed | Emitted when ImagePreview is closed | - |
-| change | Emitted when current image changed | index: index of current image |
-| scale | Emitted when scaling current image | { index: index of current image, scale: scale of current image} |
+| change | Emitted when current image changed | _index: number_ |
+| scale | Emitted when scaling current image | _value: ImagePreviewScaleEventParams_ |
+| scale | Emitted when scaling current image | _value: ImagePreviewScaleEventParams_ |
 
 ### Methods
 

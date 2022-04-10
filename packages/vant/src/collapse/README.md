@@ -114,15 +114,15 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Names of current active panels | accordion mode： _number \| string_<br>non-accordion mode：_(number \| string)[]_ | - |
+| v-model | Names of current active panels | accordion mode: _number \| string_<br>non-accordion mode: _(number \| string)[]_ | - |
 | accordion | Whether to be accordion mode | _boolean_ | `false` |
 | border | Whether to show outer border | _boolean_ | `true` |
 
 ### Collapse Events
 
-| Event  | Description                  | Arguments   |
-| ------ | ---------------------------- | ----------- |
-| change | Emitted when switching panel | activeNames |
+| Event | Description | Arguments |
+| --- | --- | --- |
+| change | Emitted when switching panel | _activeNames: string \| number \| Array<string \| number>_ |
 
 ### CollapseItem Props
 
@@ -130,7 +130,7 @@ export default {
 | --- | --- | --- | --- |
 | name | Name | _number \| string_ | `index` |
 | icon | Left Icon | _string_ | - |
-| size | Title size，can be set to `large` | _string_ | - |
+| size | Title size, can be set to `large` | _string_ | - |
 | title | Title | _number \| string_ | - |
 | value | Right text | _number \| string_ | - |
 | label | Description below the title | _string_ | - |

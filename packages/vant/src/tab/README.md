@@ -256,7 +256,7 @@ export default {
 | swipe-threshold | Set swipe tabs threshold | _number \| string_ | `5` |
 | title-active-color | Title active color | _string_ | - |
 | title-inactive-color | Title inactive color | _string_ | - |
-| before-change | Callback function before changing tabs，return `false` to prevent change，support return Promise | _(name: number \| string) => boolean \| Promise\<boolean\>_ | - |
+| before-change | Callback function before changing tabs, return `false` to prevent change, support return Promise | _(name: number \| string) => boolean \| Promise\<boolean\>_ | - |
 
 ### Tab Props
 
@@ -283,7 +283,7 @@ export default {
 | rendered | Emitted when content first rendered in lazy-render mode | _name: string \| number, title: string_ |
 | scroll | Emitted when tab scrolling in sticky mode | _{ scrollTop: number, isFixed: boolean }_ |
 
-> Tips：click and disabled event is deprecated，place use click-tab event instead.
+> Tips: click and disabled event is deprecated, place use click-tab event instead.
 
 ### Tabs Methods
 

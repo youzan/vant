@@ -293,7 +293,7 @@ export default {
 | columns-order | Array for ordering columns, where item can be set to<br> `year`, `month`, `day`, `hour` and `minute` | _string[]_ | - |
 | item-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-item-count | Count of visible columns | _number \| string_ | `6` |
-| swipe-duration | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
+| swipe-duration | Duration of the momentum animation, unit `ms` | _number \| string_ | `1000` |
 
 ### DatePicker Props
 

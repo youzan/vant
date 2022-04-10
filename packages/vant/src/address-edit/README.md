@@ -102,9 +102,9 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| save | Emitted when the save button is clicked | content：form content |
+| save | Emitted when the save button is clicked | content: form content |
 | focus | Emitted when field is focused | key: field name |
-| delete | Emitted when confirming delete | content：form content |
+| delete | Emitted when confirming delete | content: form content |
 | select-search | Emitted when a search result is selected | value: search content |
 | click-area | Emitted when the area field is clicked | - |
 | change-area | Emitted when area changed | values: area values |

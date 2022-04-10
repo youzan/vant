@@ -328,7 +328,7 @@ export default {
 | default-index | Default value index of single column picker | _number \| string_ | `0` |
 | item-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-item-count | Count of visible columns | _number \| string_ | `6` |
-| swipe-duration | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
+| swipe-duration | Duration of the momentum animation, unit `ms` | _number \| string_ | `1000` |
 
 ### Events
 
@@ -336,9 +336,9 @@ Picker events will pass different parameters according to the columns are single
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| confirm | Emitted when click confirm button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
-| cancel | Emitted when click cancel button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
-| change | Emitted when current option changed | Single column：Picker instance, current value，current index<br>Multiple columns：Picker instance, current values，column index |
+| confirm | Emitted when click confirm button.<br>**Notice: the arguments return an array when the multiple columns mode.** | _currentValue: PickerOption \| PickerOption[], currentIndex: number \| number[]_ |
+| cancel | Emitted when click cancel button.<br>**Notice: the arguments return an array when the multiple columns mode.** | _currentValue: PickerOption \| PickerOption[], currentIndex: number \| number[]_ |
+| change | Emitted when current option changed.<br>**Notice: the arguments return an array when the multiple columns mode.** | _currentValue: PickerOption \| PickerOption[], currentIndex: number \| number[]_ |
 
 ### Slots
 
