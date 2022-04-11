@@ -30,7 +30,7 @@ export { default as VanDivider } from '../../src/divider';
 export { default as VanDropdownItem } from '../../src/dropdown-item';
 export { default as VanDropdownMenu } from '../../src/dropdown-menu';
 export { default as VanEmpty } from '../../src/empty';
-export { default as VanEmptycol } from '../../src/emptycol';
+export { default as VanEmptyCol } from '../../src/emptycol';
 export { default as VanField } from '../../src/field';
 export { default as VanFieldinput } from '../../src/fieldinput';
 export { default as VanFieldtextarea } from '../../src/fieldtextarea';

@@ -623,12 +623,14 @@ export default createComponent({
       const ifEye = this.eye === 'yes';
       const { slots } = this;
       const showRightIcon = slots('right-icon') || this.rightIcon;
+      const openEye = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANwSURBVHgB7VfJURtBFP0S4sBykCPwOAMcAeMIgGI7IkUgEQFDBEYRSD6xVokMGCJAZDDOQAeWA5vfk3rkrtZ0z2ixL/Srmpqll/nv7y3i4eHh4eHh4fF5UZI54eLiYh23NV4fHx9hqVSq4rmqhvv4luCelMvlHp7jvb29W5kDZiLQbrery8vLDTzWIHAwyVoSwpp4YWEh2t7e/i1TYioCqeAQoCl/tTwLOtMSmZjA2dnZBtygI4bgINPHdf3+/k7X6D0+Pib1er3PMRJeWVkJsC7A+AY+hbgCY2u62cn+/v6x/AsCSutHSuu64DFuJw8PD7epwEVweXkZQmC636b+Hd+uK5VKs6g1ChFQwt9A2DXtM324vru7G8sMUETaolmE8QESYRESuQROT09p+hs9SGnqp6en4yyNa/ERytBVOL+HG93jl9iJHGFeJBOSyCVwfn5+Z2i+iRTYypqbRVZHnlD41wHWn2BeNZ0PRX13uWZZ3MIf6cJj85pNeDV+40qnHHt9fY1ppaxxWghCb+rzGXfigJUAtYkNIm2zaGdnx+oC1J4uPOcjE33hBWJNXajV1dWGbR8WOGN+UxXJTFRsA8jLOvMOgtWZ3ozs1MR83VIt+Hg19XFWatys+0FRLQjNOak1uO5H1tyyQ6CRKVlkJB8jV4PWxywF39cJhZKP46y9TThjIMXb21sg/xn4Z6GaYiWgUl+KSPIRpw9ZPv7y8nKgvfYkB4YLX9vmWWNAhkLH6jlkRnKVeVZk5dskH6Hl6D8/Pw9cSTV8UTqXqVIc4L9wq6XvLhd21gEE3k8IMwpOPNdsxajb7Vah5TsZ73FMJMg032yDKpt1RgIim7kSiDMGsPBQNHNzY6WdMWxtbfXht8wUiWPLBNoMbYPIPA1deP47N/tJDrI062oliKurqwNaDtcge6iGL0bD13K0H2ajOCA7cytBsKhhs65o6UydsCJXf1MELFLYq2NU8B7+tzmXZk6HGRPEtERUdY1kvCZ0UEcOi7bmEx9o6B44lERiBGt6ROR5F/cEQtzrB5qlpaWv7KtUl8oiOXYgYvZy9VpzIUDQpVBZG6Y1pkVeTLkw06GeRBYXFzdgERIJJllLjcvwJNeaRvDRPjInwKfXUKDWQSZUARmkfb1yDwrZwxy62f2sJzkPDw8PDw8PDw+RP5uQ0RzrnQ+WAAAAAElFTkSuQmCC';
+      const closeEye = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKNSURBVHgB7ZbdbRpBEMeHAx5AQiEV5FKBSQXBFSQRAsSTQwV2B+AOoALwEwIkSCoIqQBcgS8VhCBAQnzlP+QWLeju9mIwfpmfdNqbvb2dmd2Z2SUSBEEQBEEQBEEQXoeI34dut/t7u92mXTFbKBR+0gVptVp2NBp9csUx9L/1Gmf5TQDjR5pYpQsD4yua+M1vnK8DdGh0tt1uV+hCuLq+KhnOVP3G+jrAIROJRGpKxnsVE9/QC8M6WJeuN5fL/fIbHyEDnU5niCajZIRWtVgs3tMLAF23aGpa1wgL+SHonxgZiMfj18vlkp2wWXZ3Ij2fz+/L5fKYzkCj0Ugnk0kOmzut20HofDb9a9wBxq0IfTrcCQcN78YDnQBW/SPmamJhbK17xMYHhY7CohCUSiUHSg4qASvE08RuPD0nN9hwPD/wOjgynheHJpPJnzDzhNoBrgpHiTXWzgil1EH/AC0b5Mxms0cVYhwiiUTiHfozeLLo4tA4+P94Ti7jCNNrU5gaHfAwvrparR5isdgtlNzRGcA8Nc6pVCp1s9ls9CRuIonLQf8GOuBlfD6f31cgzg0k+ScoZUds+g94xdHUptNpXV9l3AAqXOkopBOBVciyrF08ehnPcG6gqSOW+Zox1AzjfluFhBseY7Rp1Ye5M15JyjrgBCknOBwpgEAH1GTq3W8clF1B0e4duzFAZfriNQ6ONsg9YdfrNedB/RS9RgfCTMDA+H29Rvnzv7dY1ggOKjFDJ+rdzUlnADuwN2axWDz6jcOB+F0TjYdUGEKV0SAQFmz80BUdJNz7oPH6NR27ZYc5rII4xw68oX9Je3wF90Q7EJ3jA+xV4ZLKj2lcr9e76vf7xnGCIAiCIAiCmb/8EzBWv90CKwAAAABJRU5ErkJggg==';
 
       if(ifEye) {
         return (
           <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
             {(
-              <Icon name={!ifPwd ? '//static-vusion.nos-eastchina1.126.net/h5-template/eye-open-icon.png' : '//static-vusion.nos-eastchina1.126.net/h5-template/eye-close-icon.png'} classPrefix={this.iconPrefix} />
+              <Icon name={!ifPwd ? openEye : closeEye} classPrefix={this.iconPrefix} />
             )}
           </div>
         );
