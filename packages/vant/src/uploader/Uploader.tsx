@@ -280,6 +280,7 @@ export default defineComponent({
 
       return (
         <UploaderPreviewItem
+          key={item.url || index}
           v-slots={{ 'preview-cover': slots['preview-cover'] }}
           item={item}
           index={index}
