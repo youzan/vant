@@ -1,4 +1,4 @@
-import { computed, defineComponent, type ExtractPropTypes } from 'vue';
+import { computed, defineComponent, ref, type ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -83,6 +83,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const touch = useTouch();
     const [itemRefs, setItemRefs] = useRefs();
+    const groupRef = ref<Element>();
 
     const untouchable = () =>
       props.readonly || props.disabled || !props.touchable;
@@ -100,28 +101,69 @@ export default defineComponent({
         )
     );
 
-    let ranges: Array<{ left: number; score: number }>;
+    let ranges: Array<{
+      left: number;
+      top: number;
+      height: number;
+      score: number;
+    }>;
+
+    let groupRefRect: DOMRect;
+    let minRectTop = Number.MAX_SAFE_INTEGER;
+    let maxRectTop = Number.MIN_SAFE_INTEGER;
 
     const updateRanges = () => {
+      groupRefRect = useRect(groupRef);
+
       const rects = itemRefs.value.map(useRect);
 
       ranges = [];
       rects.forEach((rect, index) => {
+        minRectTop = Math.min(rect.top, minRectTop);
+        maxRectTop = Math.max(rect.top, maxRectTop);
+
         if (props.allowHalf) {
           ranges.push(
-            { score: index + 0.5, left: rect.left },
-            { score: index + 1, left: rect.left + rect.width / 2 }
+            {
+              score: index + 0.5,
+              left: rect.left,
+              top: rect.top,
+              height: rect.height,
+            },
+            {
+              score: index + 1,
+              left: rect.left + rect.width / 2,
+              top: rect.top,
+              height: rect.height,
+            }
           );
         } else {
-          ranges.push({ score: index + 1, left: rect.left });
+          ranges.push({
+            score: index + 1,
+            left: rect.left,
+            top: rect.top,
+            height: rect.height,
+          });
         }
       });
     };
 
-    const getScoreByPosition = (x: number) => {
+    const getScoreByPosition = (x: number, y: number) => {
       for (let i = ranges.length - 1; i > 0; i--) {
-        if (x > ranges[i].left) {
-          return ranges[i].score;
+        if (y >= groupRefRect.top && y <= groupRefRect.bottom) {
+          if (
+            x > ranges[i].left &&
+            y >= ranges[i].top &&
+            y <= ranges[i].top + ranges[i].height
+          ) {
+            return ranges[i].score;
+          }
+        } else {
+          const curTop = y < groupRefRect.top ? minRectTop : maxRectTop;
+
+          if (x > ranges[i].left && ranges[i].top === curTop) {
+            return ranges[i].score;
+          }
         }
       }
       return props.allowHalf ? 0.5 : 1;
@@ -151,9 +193,9 @@ export default defineComponent({
       touch.move(event);
 
       if (touch.isHorizontal()) {
-        const { clientX } = event.touches[0];
+        const { clientX, clientY } = event.touches[0];
         preventDefault(event);
-        select(getScoreByPosition(clientX));
+        select(getScoreByPosition(clientX, clientY));
       }
     };
 
@@ -185,7 +227,9 @@ export default defineComponent({
 
       const onClickItem = (event: MouseEvent) => {
         updateRanges();
-        select(allowHalf ? getScoreByPosition(event.clientX) : score);
+        select(
+          allowHalf ? getScoreByPosition(event.clientX, event.clientY) : score
+        );
       };
 
       return (
@@ -226,6 +270,7 @@ export default defineComponent({
 
     return () => (
       <div
+        ref={groupRef}
         role="radiogroup"
         class={bem({
           readonly: props.readonly,
