@@ -160,8 +160,8 @@ export default defineComponent({
           // touchmove in radiogroup
           if (
             x > ranges[i].left &&
-            y > ranges[i].top &&
-            y < ranges[i].top + ranges[i].height
+            y >= ranges[i].top &&
+            y <= ranges[i].top + ranges[i].height
           ) {
             return ranges[i].score;
           }
