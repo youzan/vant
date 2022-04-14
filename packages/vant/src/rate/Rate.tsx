@@ -151,7 +151,6 @@ export default defineComponent({
     const getScoreByPosition = (x: number, y: number) => {
       for (let i = ranges.length - 1; i > 0; i--) {
         if (y >= groupRefRect.top && y <= groupRefRect.bottom) {
-          // touchmove in radiogroup
           if (
             x > ranges[i].left &&
             y >= ranges[i].top &&
