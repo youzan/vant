@@ -1,10 +1,4 @@
-import {
-  computed,
-  defineComponent,
-  ref,
-  Ref,
-  type ExtractPropTypes,
-} from 'vue';
+import { computed, defineComponent, ref, type ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -89,7 +83,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const touch = useTouch();
     const [itemRefs, setItemRefs] = useRefs();
-    const groupRef = ref() as Ref<Element>;
+    const groupRef = ref<Element>();
 
     const untouchable = () =>
       props.readonly || props.disabled || !props.touchable;
@@ -119,7 +113,7 @@ export default defineComponent({
     let maxRectTop = Number.MIN_SAFE_INTEGER;
 
     const updateRanges = () => {
-      groupRefRect = useRect(groupRef.value);
+      groupRefRect = useRect(groupRef);
 
       const rects = itemRefs.value.map(useRect);
 
