@@ -19,6 +19,26 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-alpha.2](https://github.com/youzan/vant/compare/v3.4.8...v4.0.0-alpha.2)
+
+`2022-04-16`
+
+**Feature**
+
+- CalendarDay: 增加日期行间距 [#10441](https://github.com/youzan/vant/issues/10441)
+- Empty: 支持单独设置 image 的宽高 [#10465](https://github.com/youzan/vant/issues/10465)
+- Field: 新增 enterkeyhint 属性 [#10478](https://github.com/youzan/vant/issues/10478)
+- Form: 新增 getValues 方法 [#10511](https://github.com/youzan/vant/issues/10511)
+- Icon: 新增 qq、weibo 等图标 [#10468](https://github.com/youzan/vant/issues/10468)
+- Locale: 新增 Danish 丹麦语 [#10513](https://github.com/youzan/vant/issues/10513)
+- ShareSheet: 不再依赖 CDN 上的图片资源，使用 iconfont 代替 [#10469](https://github.com/youzan/vant/issues/10469)
+- web-types.json 文件增加 event arguments 信息 [#10474](https://github.com/youzan/vant/issues/10474)
+
+**Bug Fixes**
+
+- DatetimePicker: 修复 modeValue 与选中的数据不一致的问题 [#10448](https://github.com/youzan/vant/issues/10448)
+- Rate: 修复多行时滑动选中不正确的问题 [#10500](https://github.com/youzan/vant/issues/10500)
+
 ### [v4.0.0-alpha.1](https://github.com/youzan/vant/compare/v3.4.6...v4.0.0-alpha.1)
 
 `2022-03-19`
