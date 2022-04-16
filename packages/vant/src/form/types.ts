@@ -4,6 +4,7 @@ import type { FormProps } from './Form';
 export type FormExpose = {
   submit: () => void;
   validate: (name?: string | string[] | undefined) => Promise<void>;
+  getValues: () => Record<string, unknown>;
   scrollToField: (
     name: string,
     options?: boolean | ScrollIntoViewOptions | undefined

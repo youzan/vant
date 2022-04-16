@@ -541,6 +541,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Form i
 | --- | --- | --- | --- |
 | submit | Submit form | - | - |
 | validate | Validate form | _name?: string \| string[]_ | _Promise_ |
+| getValues `v3.4.8` | Get current form values | - | _Record<string, unknown>_ |
 | resetValidation | Reset validation | _name?: string \| string[]_ | - |
 | scrollToField | Scroll to field | _name: string, alignToTop: boolean_ | - |
 
