@@ -77,12 +77,13 @@ export default {
 
 ### Props
 
-| Attribute | Description          | Type     | Default            |
-| --------- | -------------------- | -------- | ------------------ |
-| type      | Can be set to `edit` | _string_ | `add`              |
-| name      | Name                 | _string_ | -                  |
-| tel       | Phone                | _string_ | -                  |
-| add-text  | Add card text        | _string_ | `Add contact info` |
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| type | Can be set to `edit` | _string_ | `add` |
+| name | Name | _string_ | - |
+| tel | Phone | _string_ | - |
+| add-text | Add card text | _string_ | `Add contact info` |
+| editable | Whether to allow editing of contacts | _boolean_ | `true` |
 
 ### Events
 

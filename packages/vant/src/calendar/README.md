@@ -208,7 +208,7 @@ export default {
 
 ### Custom Position
 
-Use `position` to custom popup position，can be set to `top`、`left`、`right`.
+Use `position` to custom popup position, can be set to `top`、`left`、`right`.
 
 ```html
 <van-calendar v-model:show="show" :round="false" position="right" />
@@ -249,7 +249,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| type | Type，can be set to `range` `multiple` | _string_ | `single` |
+| type | Type, can be set to `range` `multiple` | _string_ | `single` |
 | title | Title of calendar | _string_ | `Calendar` |
 | color | Color for the bottom button and selected date | _string_ | `#1989fa` |
 | min-date | Min date | _Date_ | Today |
@@ -319,13 +319,13 @@ Following props are supported when the type is multiple
 | Event | Description | Arguments |
 | --- | --- | --- |
 | select | Emitted when date is selected | _value: Date \| Date[]_ |
-| confirm | Emitted after date selection is complete，if `show-confirm` is `true`, it is Emitted after clicking the confirm button | _value: Date \| Date[]_ |
+| confirm | Emitted after date selection is complete, if `show-confirm` is `true`, it is Emitted after clicking the confirm button | _value: Date \| Date[]_ |
 | open | Emitted when opening Popup | - |
 | close | Emitted when closing Popup | - |
 | opened | Emitted when Popup is opened | - |
 | closed | Emitted when Popup is closed | - |
 | unselect | Emitted when unselect date when type is multiple | _value: Date_ |
-| month-show | Emitted when a month enters the visible area | _{ date: Date, title: string }_ |
+| month-show | Emitted when a month enters the visible area | _value: { date: Date, title: string }_ |
 | over-range | Emitted when exceeded max range | - |
 | click-subtitle `v3.1.3` | Emitted when clicking the subtitle | _event: MouseEvent_ |
 

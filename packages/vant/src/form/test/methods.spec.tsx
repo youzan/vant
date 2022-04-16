@@ -137,3 +137,19 @@ test('scrollToField method', () => {
   formRef.value?.scrollToField('A');
   expect(fn).toHaveBeenCalledTimes(1);
 });
+
+test('getValues method should return all current values', () => {
+  const formRef = ref<FormInstance>();
+  mount({
+    render() {
+      return (
+        <Form ref={formRef}>
+          <Field name="A" modelValue="123" />
+          <Field name="B" modelValue="456" />
+        </Form>
+      );
+    },
+  });
+
+  expect(formRef.value?.getValues()).toEqual({ A: '123', B: '456' });
+});

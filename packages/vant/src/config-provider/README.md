@@ -148,7 +148,7 @@ export default {
 };
 ```
 
-> Tips：ConfigProvider only affects its child components.
+> Tips: ConfigProvider only affects its child components.
 
 ## Variables
 

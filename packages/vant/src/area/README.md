@@ -131,7 +131,7 @@ export default {
 | option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | columns-num | Level of picker | _number \| string_ | `3` |
 | visible-option-num | Count of visible columns | _number \| string_ | `6` |
-| swipe-duration | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
+| swipe-duration | Duration of the momentum animation, unit `ms` | _number \| string_ | `1000` |
 
 ### Events
 

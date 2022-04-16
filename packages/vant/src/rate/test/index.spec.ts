@@ -8,6 +8,8 @@ function mockGetBoundingClientRect(items: DOMWrapper<Element>[]) {
       ({
         left: index * 25,
         width: 25,
+        top: 0,
+        height: 25,
       } as DOMRect);
     return true;
   });

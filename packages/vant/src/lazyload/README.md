@@ -80,4 +80,4 @@ app.use(Lazyload, {
 | filter | The image's listener filter | _object_ | - |
 | lazyComponent | Lazyload component | _boolean_ | `false` |
 
-> See more：[ vue-lazyload ](https://github.com/hilongjw/vue-lazyload)
+> See more: [ vue-lazyload ](https://github.com/hilongjw/vue-lazyload)

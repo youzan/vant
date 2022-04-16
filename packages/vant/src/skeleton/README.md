@@ -66,12 +66,12 @@ export default {
 | row-width | Row width, can be array | _number \| string \|<br>(number \| string)[]_ | `100%` |
 | title | Whether to show title placeholder | _boolean_ | `false` |
 | avatar | Whether to show avatar placeholder | _boolean_ | `false` |
-| loading | Whether to show skeleton，pass `false` to show child component | _boolean_ | `true` |
+| loading | Whether to show skeleton, pass `false` to show child component | _boolean_ | `true` |
 | animate | Whether to enable animation | _boolean_ | `true` |
 | round | Whether to show round title and row | _boolean_ | `false` |
 | title-width | Title width | _number \| string_ | `40%` |
 | avatar-size | Size of avatar placeholder | _number \| string_ | `32px` |
-| avatar-shape | Shape of avatar placeholder，can be set to `square` | _string_ | `round` |
+| avatar-shape | Shape of avatar placeholder, can be set to `square` | _string_ | `round` |
 
 ### Types
 

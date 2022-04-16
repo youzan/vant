@@ -256,7 +256,7 @@ export default {
 | swipe-threshold | Set swipe tabs threshold | _number \| string_ | `5` |
 | title-active-color | Title active color | _string_ | - |
 | title-inactive-color | Title inactive color | _string_ | - |
-| before-change | Callback function before changing tabs，return `false` to prevent change，support return Promise | _(name: number \| string) => boolean \| Promise\<boolean\>_ | - |
+| before-change | Callback function before changing tabs, return `false` to prevent change, support return Promise | _(name: number \| string) => boolean \| Promise\<boolean\>_ | - |
 
 ### Tab Props
 

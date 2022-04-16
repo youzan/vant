@@ -83,7 +83,7 @@ export default {
 | Event | Description | Arguments |
 | --- | --- | --- |
 | add | Emitted when the add button is clicked | - |
-| edit | Emitted when the edit button is clicked | _contact: Contact，index: number_ |
+| edit | Emitted when the edit button is clicked | _contact: Contact, index: number_ |
 | select | Emitted when a contact is selected | _contact: Contact, index: number_ |
 
 ### Data Structure of Contact

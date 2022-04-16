@@ -184,3 +184,17 @@ import type { BadgeProps, BadgePosition } from 'vant';
 | --van-badge-dot-color | _var(--van-danger-color)_ | - |
 | --van-badge-dot-size | _8px_ | - |
 | --van-badge-font | _-apple-system-font, Helvetica Neue, Arial, sans-serif_ | - |
+
+## 常见问题
+
+### 设置 show-zero 属性为 false 不生效？
+
+注意 `show-zero` 属性仅对数字类型的 `0` 有效，对字符串类型的 `'0'` 无效。
+
+```html
+<!-- 正确写法，不显示 0 -->
+<van-badge :content="0" :show-zero="false" />
+
+<!-- 错误写法，显示 0 -->
+<van-badge content="0" :show-zero="false" />
+```

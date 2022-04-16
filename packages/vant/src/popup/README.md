@@ -119,7 +119,7 @@ Use `teleport` prop to specify mount location.
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | close-icon | Close icon name | _string_ | `cross` |
-| close-icon-position | Close Icon Position，can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
+| close-icon-position | Close Icon Position, can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 | before-close `v3.1.4` | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 | icon-prefix `v3.0.18` | Icon className prefix | _string_ | `van-icon` |
 | transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
