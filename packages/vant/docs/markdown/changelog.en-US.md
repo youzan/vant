@@ -19,6 +19,26 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.4.8](https://github.com/youzan/vant/compare/v3.4.7...v3.4.8)
+
+`2022-04-16`
+
+**Feature**
+
+- CalendarDay: add default margin-bottom [#10441](https://github.com/youzan/vant/issues/10441)
+- Empty: support set the image size separately [#10465](https://github.com/youzan/vant/issues/10465)
+- Field: add enterkeyhint prop [#10478](https://github.com/youzan/vant/issues/10478)
+- Form: add getValues method [#10511](https://github.com/youzan/vant/issues/10511)
+- Icon: add some icons for ShareSheet [#10468](https://github.com/youzan/vant/issues/10468)
+- Locale: add Danish lang [#10513](https://github.com/youzan/vant/issues/10513)
+- ShareSheet: no longer rely on CDN images [#10469](https://github.com/youzan/vant/issues/10469)
+- Add event arguments in web-types.json [#10474](https://github.com/youzan/vant/issues/10474)
+
+**Bug Fixes**
+
+- DatetimePicker: modeValue is inconsistent with the selected data [#10448](https://github.com/youzan/vant/issues/10448)
+- Rate: support precisely selected [#10500](https://github.com/youzan/vant/issues/10500)
+
 ### [v3.4.7](https://github.com/youzan/vant/compare/v3.4.6...v3.4.7)
 
 `2022-03-29`
