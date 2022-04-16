@@ -151,10 +151,10 @@ export default defineComponent({
     };
 
     const getValues = () =>
-      children.reduce((form, field) => {
+      children.reduce<Record<string, unknown>>((form, field) => {
         form[field.name] = field.formValue.value;
         return form;
-      }, {} as Record<string, unknown>);
+      }, {});
 
     const submit = () => {
       const values = getValues();
@@ -179,6 +179,7 @@ export default defineComponent({
     useExpose<FormExpose>({
       submit,
       validate,
+      getValues,
       scrollToField,
       resetValidation,
     });
