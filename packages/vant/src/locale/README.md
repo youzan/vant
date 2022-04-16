@@ -42,6 +42,7 @@ Current supported languages:
 | Language                 | Filename     | Version  |
 | ------------------------ | ------------ | -------- |
 | Bangla (Bangladesh)      | bn-BD        | `v3.4.5` |
+| Danish                   | da-DK        | `v3.4.8` |
 | German                   | de-DE        | -        |
 | German (formal)          | de-DE-formal | -        |
 | English                  | en-US        | -        |
