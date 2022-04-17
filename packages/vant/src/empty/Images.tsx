@@ -12,16 +12,12 @@ const renderBuildingDef = () => (
   </linearGradient>
 );
 
-const renderCloudDef = () => [
+const renderCloudDef = () => (
   <linearGradient id={getId('b')} x1="64%" y1="97%" x2="64%" y2="0%">
-    <stop stop-color="#F2F3F5" stop-opacity=".3" offset="0%" />
-    <stop stop-color="#F2F3F5" offset="100%" />
-  </linearGradient>,
-  <linearGradient id={getId('c')} x1="64%" y1="97%" x2="64%" y2="0%">
-    <stop stop-color="#F2F3F5" stop-opacity=".3" offset="0%" />
-    <stop stop-color="#F2F3F5" offset="100%" />
-  </linearGradient>,
-];
+    {renderStop('#F2F3F5', 0, 0.3)}
+    {renderStop('#F2F3F5', 100)}
+  </linearGradient>
+);
 
 const renderBuilding = () => (
   <g opacity=".8">
@@ -38,7 +34,7 @@ const renderCloud = () => (
     />
     <path
       d="M19 23c2 0 3 1 4 3 2 0 4 2 4 4a4 4 0 0 1-4 3v1h-7v-1l-1 1c-2 0-3-2-3-4 0-1 1-3 3-3 0-2 2-4 4-4Z"
-      fill={useId('c')}
+      fill={useId('b')}
     />
   </g>
 );
