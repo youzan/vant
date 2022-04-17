@@ -19,6 +19,21 @@ const renderCloudDef = () => (
   </linearGradient>
 );
 
+const renderShadowRef = () => (
+  <radialGradient
+    cx="50%"
+    cy="54%"
+    fx="50%"
+    fy="54%"
+    r="297%"
+    gradientTransform="matrix(-.16 0 0 -.33 .58 .72)"
+    id={getId('c')}
+  >
+    <stop stop-color="#EBEDF0" offset="0%" />
+    <stop stop-color="#F2F3F5" stop-opacity=".3" offset="100%" />
+  </radialGradient>
+);
+
 const renderBuilding = () => (
   <g opacity=".8">
     <path d="M36 131V53H16v20H2v58h34z" fill={useId('a')} />
@@ -37,6 +52,10 @@ const renderCloud = () => (
       fill={useId('b')}
     />
   </g>
+);
+
+const renderShadow = () => (
+  <ellipse fill={useId('c')} opacity=".8" cx="80" cy="140" rx="46" ry="8" />
 );
 
 export const renderNetwork = () => (
@@ -132,5 +151,26 @@ export const renderMaterial = () => (
       <rect fill={useId(7)} y="61" width="88" height="28" rx="1" />
       <rect fill="#F7F8FA" x="29" y="72" width="30" height="6" rx="1" />
     </g>
+  </svg>
+);
+
+export const renderError = () => (
+  <svg viewBox="0 0 160 160">
+    <defs>
+      {renderBuildingDef()}
+      {renderCloudDef()}
+      {renderShadowRef()}
+      <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id={getId(8)}>
+        {renderStop('#F2F3F5', 0)}
+        {renderStop('#DCDEE0', 100)}
+      </linearGradient>
+    </defs>
+    {renderBuilding()}
+    {renderCloud()}
+    {renderShadow()}
+    <path
+      d="m59 60 21 21 21-21h3l9 9v3L92 93l21 21v3l-9 9h-3l-21-21-21 21h-3l-9-9v-3l21-21-21-21v-3l9-9h3Z"
+      fill={useId(8)}
+    />
   </svg>
 );
