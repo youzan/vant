@@ -5,11 +5,21 @@ import {
   makeStringProp,
   createNamespace,
 } from '../utils';
-import { renderNetwork, renderMaterial, renderError } from './Images';
+import {
+  renderError,
+  renderSearch,
+  renderNetwork,
+  renderMaterial,
+} from './Images';
 
 const [name, bem] = createNamespace('empty');
 
-const PRESET_IMAGES = ['error', 'search', 'default'];
+const PRESET_IMAGES: Record<string, () => JSX.Element> = {
+  error: renderError,
+  search: renderSearch,
+  network: renderNetwork,
+  default: renderMaterial,
+};
 
 const emptyProps = {
   image: makeStringProp('default'),
@@ -29,24 +39,7 @@ export default defineComponent({
       if (slots.image) {
         return slots.image();
       }
-
-      let { image } = props;
-
-      if (image === 'network') {
-        return renderNetwork();
-      }
-      if (image === 'default') {
-        return renderMaterial();
-      }
-      if (image === 'error') {
-        return renderError();
-      }
-
-      if (PRESET_IMAGES.includes(image)) {
-        image = `https://img.yzcdn.cn/vant/empty-image-${image}.png`;
-      }
-
-      return <img src={image} />;
+      return PRESET_IMAGES[props.image]?.() || <img src={props.image} />;
     };
 
     const renderDescription = () => {
