@@ -5,7 +5,7 @@ import {
   makeStringProp,
   createNamespace,
 } from '../utils';
-import { renderNetwork, renderMaterial } from './Images';
+import { renderNetwork, renderMaterial, renderError } from './Images';
 
 const [name, bem] = createNamespace('empty');
 
@@ -37,6 +37,9 @@ export default defineComponent({
       }
       if (image === 'default') {
         return renderMaterial();
+      }
+      if (image === 'error') {
+        return renderError();
       }
 
       if (PRESET_IMAGES.includes(image)) {
