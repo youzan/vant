@@ -5,7 +5,7 @@ import {
   makeStringProp,
   createNamespace,
 } from '../utils';
-import { Network } from './Network';
+import { renderNetwork, renderMaterial } from './Images';
 
 const [name, bem] = createNamespace('empty');
 
@@ -33,7 +33,10 @@ export default defineComponent({
       let { image } = props;
 
       if (image === 'network') {
-        return Network;
+        return renderNetwork();
+      }
+      if (image === 'default') {
+        return renderMaterial();
       }
 
       if (PRESET_IMAGES.includes(image)) {
