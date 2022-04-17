@@ -6,39 +6,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-empty__image">
       <svg viewbox="0 0 160 160">
         <defs>
-          <linearGradient id="van-empty-a"
-                          x1="64%"
-                          y1="100%"
-                          x2="64%"
-          >
-            <stop stop-color="#FFF"
-                  offset="0%"
-                  stop-opacity="0.5"
-            >
-            </stop>
-            <stop stop-color="#F2F3F5"
-                  offset="100%"
-            >
-            </stop>
-          </linearGradient>
-          <linearGradient id="van-empty-b"
-                          x1="64%"
-                          y1="97%"
-                          x2="64%"
-                          y2="0%"
-          >
-            <stop stop-color="#F2F3F5"
-                  offset="0%"
-                  stop-opacity="0.3"
-            >
-            </stop>
-            <stop stop-color="#F2F3F5"
-                  offset="100%"
-            >
-            </stop>
-          </linearGradient>
           <linearGradient x1="50%"
-                          y1="0%"
                           x2="50%"
                           y2="100%"
                           id="van-empty-5"
@@ -67,8 +35,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
             </stop>
           </linearGradient>
-          <linearGradient x1="0%"
-                          y1="45%"
+          <linearGradient y1="45%"
                           x2="100%"
                           y2="54%"
                           id="van-empty-7"
@@ -78,6 +45,23 @@ exports[`should render demo and match snapshot 1`] = `
             >
             </stop>
             <stop stop-color="#DCDEE0"
+                  offset="100%"
+            >
+            </stop>
+          </linearGradient>
+        </defs>
+        <defs>
+          <linearGradient id="van-empty-a"
+                          x1="64%"
+                          y1="100%"
+                          x2="64%"
+          >
+            <stop stop-color="#FFF"
+                  offset="0%"
+                  stop-opacity="0.5"
+            >
+            </stop>
+            <stop stop-color="#F2F3F5"
                   offset="100%"
             >
             </stop>
@@ -93,6 +77,24 @@ exports[`should render demo and match snapshot 1`] = `
           >
           </path>
         </g>
+        <defs>
+          <linearGradient id="van-empty-b"
+                          x1="64%"
+                          y1="97%"
+                          x2="64%"
+                          y2="0%"
+          >
+            <stop stop-color="#F2F3F5"
+                  offset="0%"
+                  stop-opacity="0.3"
+            >
+            </stop>
+            <stop stop-color="#F2F3F5"
+                  offset="100%"
+            >
+            </stop>
+          </linearGradient>
+        </defs>
         <g opacity=".8">
           <path d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
                 fill="url(#van-empty-b)"
@@ -229,6 +231,22 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-empty__image">
             <svg viewbox="0 0 160 160">
               <defs>
+                <linearGradient x1="50%"
+                                x2="50%"
+                                y2="100%"
+                                id="van-empty-8"
+                >
+                  <stop stop-color="#EAEDF1"
+                        offset="0%"
+                  >
+                  </stop>
+                  <stop stop-color="#DCDEE0"
+                        offset="100%"
+                  >
+                  </stop>
+                </linearGradient>
+              </defs>
+              <defs>
                 <linearGradient id="van-empty-a"
                                 x1="64%"
                                 y1="100%"
@@ -244,6 +262,18 @@ exports[`should render demo and match snapshot 1`] = `
                   >
                   </stop>
                 </linearGradient>
+              </defs>
+              <g opacity=".8">
+                <path d="M36 131V53H16v20H2v58h34z"
+                      fill="url(#van-empty-a)"
+                >
+                </path>
+                <path d="M123 15h22v14h9v77h-31V15z"
+                      fill="url(#van-empty-a)"
+                >
+                </path>
+              </g>
+              <defs>
                 <linearGradient id="van-empty-b"
                                 x1="64%"
                                 y1="97%"
@@ -260,50 +290,7 @@ exports[`should render demo and match snapshot 1`] = `
                   >
                   </stop>
                 </linearGradient>
-                <radialGradient cx="50%"
-                                cy="54%"
-                                fx="50%"
-                                fy="54%"
-                                r="297%"
-                                gradienttransform="matrix(-.16 0 0 -.33 .58 .72)"
-                                id="van-empty-c"
-                >
-                  <stop stop-color="#EBEDF0"
-                        offset="0%"
-                  >
-                  </stop>
-                  <stop stop-color="#F2F3F5"
-                        stop-opacity=".3"
-                        offset="100%"
-                  >
-                  </stop>
-                </radialGradient>
-                <linearGradient x1="50%"
-                                y1="0%"
-                                x2="50%"
-                                y2="100%"
-                                id="van-empty-8"
-                >
-                  <stop stop-color="#F2F3F5"
-                        offset="0%"
-                  >
-                  </stop>
-                  <stop stop-color="#DCDEE0"
-                        offset="100%"
-                  >
-                  </stop>
-                </linearGradient>
               </defs>
-              <g opacity=".8">
-                <path d="M36 131V53H16v20H2v58h34z"
-                      fill="url(#van-empty-a)"
-                >
-                </path>
-                <path d="M123 15h22v14h9v77h-31V15z"
-                      fill="url(#van-empty-a)"
-                >
-                </path>
-              </g>
               <g opacity=".8">
                 <path d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
                       fill="url(#van-empty-b)"
@@ -314,6 +301,26 @@ exports[`should render demo and match snapshot 1`] = `
                 >
                 </path>
               </g>
+              <defs>
+                <radialGradient id="van-empty-c"
+                                cx="50%"
+                                cy="54%"
+                                fx="50%"
+                                fy="54%"
+                                r="297%"
+                                gradienttransform="matrix(-.16 0 0 -.33 .58 .72)"
+                >
+                  <stop stop-color="#EBEDF0"
+                        offset="0%"
+                  >
+                  </stop>
+                  <stop stop-color="#F2F3F5"
+                        offset="100%"
+                        stop-opacity="0.3"
+                  >
+                  </stop>
+                </radialGradient>
+              </defs>
               <ellipse fill="url(#van-empty-c)"
                        opacity=".8"
                        cx="80"
@@ -359,39 +366,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <svg viewbox="0 0 160 160">
         <defs>
-          <linearGradient id="van-empty-a"
-                          x1="64%"
-                          y1="100%"
-                          x2="64%"
-          >
-            <stop stop-color="#FFF"
-                  offset="0%"
-                  stop-opacity="0.5"
-            >
-            </stop>
-            <stop stop-color="#F2F3F5"
-                  offset="100%"
-            >
-            </stop>
-          </linearGradient>
-          <linearGradient id="van-empty-b"
-                          x1="64%"
-                          y1="97%"
-                          x2="64%"
-                          y2="0%"
-          >
-            <stop stop-color="#F2F3F5"
-                  offset="0%"
-                  stop-opacity="0.3"
-            >
-            </stop>
-            <stop stop-color="#F2F3F5"
-                  offset="100%"
-            >
-            </stop>
-          </linearGradient>
           <linearGradient x1="50%"
-                          y1="0%"
                           x2="50%"
                           y2="100%"
                           id="van-empty-5"
@@ -420,8 +395,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
             </stop>
           </linearGradient>
-          <linearGradient x1="0%"
-                          y1="45%"
+          <linearGradient y1="45%"
                           x2="100%"
                           y2="54%"
                           id="van-empty-7"
@@ -431,6 +405,23 @@ exports[`should render demo and match snapshot 1`] = `
             >
             </stop>
             <stop stop-color="#DCDEE0"
+                  offset="100%"
+            >
+            </stop>
+          </linearGradient>
+        </defs>
+        <defs>
+          <linearGradient id="van-empty-a"
+                          x1="64%"
+                          y1="100%"
+                          x2="64%"
+          >
+            <stop stop-color="#FFF"
+                  offset="0%"
+                  stop-opacity="0.5"
+            >
+            </stop>
+            <stop stop-color="#F2F3F5"
                   offset="100%"
             >
             </stop>
@@ -446,6 +437,24 @@ exports[`should render demo and match snapshot 1`] = `
           >
           </path>
         </g>
+        <defs>
+          <linearGradient id="van-empty-b"
+                          x1="64%"
+                          y1="97%"
+                          x2="64%"
+                          y2="0%"
+          >
+            <stop stop-color="#F2F3F5"
+                  offset="0%"
+                  stop-opacity="0.3"
+            >
+            </stop>
+            <stop stop-color="#F2F3F5"
+                  offset="100%"
+            >
+            </stop>
+          </linearGradient>
+        </defs>
         <g opacity=".8">
           <path d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
                 fill="url(#van-empty-b)"
@@ -541,39 +550,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-empty__image">
       <svg viewbox="0 0 160 160">
         <defs>
-          <linearGradient id="van-empty-a"
-                          x1="64%"
-                          y1="100%"
-                          x2="64%"
-          >
-            <stop stop-color="#FFF"
-                  offset="0%"
-                  stop-opacity="0.5"
-            >
-            </stop>
-            <stop stop-color="#F2F3F5"
-                  offset="100%"
-            >
-            </stop>
-          </linearGradient>
-          <linearGradient id="van-empty-b"
-                          x1="64%"
-                          y1="97%"
-                          x2="64%"
-                          y2="0%"
-          >
-            <stop stop-color="#F2F3F5"
-                  offset="0%"
-                  stop-opacity="0.3"
-            >
-            </stop>
-            <stop stop-color="#F2F3F5"
-                  offset="100%"
-            >
-            </stop>
-          </linearGradient>
           <linearGradient x1="50%"
-                          y1="0%"
                           x2="50%"
                           y2="100%"
                           id="van-empty-5"
@@ -602,8 +579,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
             </stop>
           </linearGradient>
-          <linearGradient x1="0%"
-                          y1="45%"
+          <linearGradient y1="45%"
                           x2="100%"
                           y2="54%"
                           id="van-empty-7"
@@ -613,6 +589,23 @@ exports[`should render demo and match snapshot 1`] = `
             >
             </stop>
             <stop stop-color="#DCDEE0"
+                  offset="100%"
+            >
+            </stop>
+          </linearGradient>
+        </defs>
+        <defs>
+          <linearGradient id="van-empty-a"
+                          x1="64%"
+                          y1="100%"
+                          x2="64%"
+          >
+            <stop stop-color="#FFF"
+                  offset="0%"
+                  stop-opacity="0.5"
+            >
+            </stop>
+            <stop stop-color="#F2F3F5"
                   offset="100%"
             >
             </stop>
@@ -628,6 +621,24 @@ exports[`should render demo and match snapshot 1`] = `
           >
           </path>
         </g>
+        <defs>
+          <linearGradient id="van-empty-b"
+                          x1="64%"
+                          y1="97%"
+                          x2="64%"
+                          y2="0%"
+          >
+            <stop stop-color="#F2F3F5"
+                  offset="0%"
+                  stop-opacity="0.3"
+            >
+            </stop>
+            <stop stop-color="#F2F3F5"
+                  offset="100%"
+            >
+            </stop>
+          </linearGradient>
+        </defs>
         <g opacity=".8">
           <path d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
                 fill="url(#van-empty-b)"

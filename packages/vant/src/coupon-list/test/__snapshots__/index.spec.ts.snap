@@ -366,39 +366,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
             <div class="van-empty__image">
               <svg viewbox="0 0 160 160">
                 <defs>
-                  <linearGradient id="van-empty-a"
-                                  x1="64%"
-                                  y1="100%"
-                                  x2="64%"
-                  >
-                    <stop stop-color="#FFF"
-                          offset="0%"
-                          stop-opacity="0.5"
-                    >
-                    </stop>
-                    <stop stop-color="#F2F3F5"
-                          offset="100%"
-                    >
-                    </stop>
-                  </linearGradient>
-                  <linearGradient id="van-empty-b"
-                                  x1="64%"
-                                  y1="97%"
-                                  x2="64%"
-                                  y2="0%"
-                  >
-                    <stop stop-color="#F2F3F5"
-                          offset="0%"
-                          stop-opacity="0.3"
-                    >
-                    </stop>
-                    <stop stop-color="#F2F3F5"
-                          offset="100%"
-                    >
-                    </stop>
-                  </linearGradient>
                   <linearGradient x1="50%"
-                                  y1="0%"
                                   x2="50%"
                                   y2="100%"
                                   id="van-empty-5"
@@ -427,8 +395,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
                     >
                     </stop>
                   </linearGradient>
-                  <linearGradient x1="0%"
-                                  y1="45%"
+                  <linearGradient y1="45%"
                                   x2="100%"
                                   y2="54%"
                                   id="van-empty-7"
@@ -438,6 +405,23 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
                     >
                     </stop>
                     <stop stop-color="#DCDEE0"
+                          offset="100%"
+                    >
+                    </stop>
+                  </linearGradient>
+                </defs>
+                <defs>
+                  <linearGradient id="van-empty-a"
+                                  x1="64%"
+                                  y1="100%"
+                                  x2="64%"
+                  >
+                    <stop stop-color="#FFF"
+                          offset="0%"
+                          stop-opacity="0.5"
+                    >
+                    </stop>
+                    <stop stop-color="#F2F3F5"
                           offset="100%"
                     >
                     </stop>
@@ -453,6 +437,24 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
                   >
                   </path>
                 </g>
+                <defs>
+                  <linearGradient id="van-empty-b"
+                                  x1="64%"
+                                  y1="97%"
+                                  x2="64%"
+                                  y2="0%"
+                  >
+                    <stop stop-color="#F2F3F5"
+                          offset="0%"
+                          stop-opacity="0.3"
+                    >
+                    </stop>
+                    <stop stop-color="#F2F3F5"
+                          offset="100%"
+                    >
+                    </stop>
+                  </linearGradient>
+                </defs>
                 <g opacity=".8">
                   <path d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
                         fill="url(#van-empty-b)"
@@ -548,39 +550,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
             <div class="van-empty__image">
               <svg viewbox="0 0 160 160">
                 <defs>
-                  <linearGradient id="van-empty-a"
-                                  x1="64%"
-                                  y1="100%"
-                                  x2="64%"
-                  >
-                    <stop stop-color="#FFF"
-                          offset="0%"
-                          stop-opacity="0.5"
-                    >
-                    </stop>
-                    <stop stop-color="#F2F3F5"
-                          offset="100%"
-                    >
-                    </stop>
-                  </linearGradient>
-                  <linearGradient id="van-empty-b"
-                                  x1="64%"
-                                  y1="97%"
-                                  x2="64%"
-                                  y2="0%"
-                  >
-                    <stop stop-color="#F2F3F5"
-                          offset="0%"
-                          stop-opacity="0.3"
-                    >
-                    </stop>
-                    <stop stop-color="#F2F3F5"
-                          offset="100%"
-                    >
-                    </stop>
-                  </linearGradient>
                   <linearGradient x1="50%"
-                                  y1="0%"
                                   x2="50%"
                                   y2="100%"
                                   id="van-empty-5"
@@ -609,8 +579,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
                     >
                     </stop>
                   </linearGradient>
-                  <linearGradient x1="0%"
-                                  y1="45%"
+                  <linearGradient y1="45%"
                                   x2="100%"
                                   y2="54%"
                                   id="van-empty-7"
@@ -620,6 +589,23 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
                     >
                     </stop>
                     <stop stop-color="#DCDEE0"
+                          offset="100%"
+                    >
+                    </stop>
+                  </linearGradient>
+                </defs>
+                <defs>
+                  <linearGradient id="van-empty-a"
+                                  x1="64%"
+                                  y1="100%"
+                                  x2="64%"
+                  >
+                    <stop stop-color="#FFF"
+                          offset="0%"
+                          stop-opacity="0.5"
+                    >
+                    </stop>
+                    <stop stop-color="#F2F3F5"
                           offset="100%"
                     >
                     </stop>
@@ -635,6 +621,24 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
                   >
                   </path>
                 </g>
+                <defs>
+                  <linearGradient id="van-empty-b"
+                                  x1="64%"
+                                  y1="97%"
+                                  x2="64%"
+                                  y2="0%"
+                  >
+                    <stop stop-color="#F2F3F5"
+                          offset="0%"
+                          stop-opacity="0.3"
+                    >
+                    </stop>
+                    <stop stop-color="#F2F3F5"
+                          offset="100%"
+                    >
+                    </stop>
+                  </linearGradient>
+                </defs>
                 <g opacity=".8">
                   <path d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
                         fill="url(#van-empty-b)"
@@ -806,39 +810,7 @@ exports[`should render list-footer slot correctly 1`] = `
             <div class="van-empty__image">
               <svg viewbox="0 0 160 160">
                 <defs>
-                  <linearGradient id="van-empty-a"
-                                  x1="64%"
-                                  y1="100%"
-                                  x2="64%"
-                  >
-                    <stop stop-color="#FFF"
-                          offset="0%"
-                          stop-opacity="0.5"
-                    >
-                    </stop>
-                    <stop stop-color="#F2F3F5"
-                          offset="100%"
-                    >
-                    </stop>
-                  </linearGradient>
-                  <linearGradient id="van-empty-b"
-                                  x1="64%"
-                                  y1="97%"
-                                  x2="64%"
-                                  y2="0%"
-                  >
-                    <stop stop-color="#F2F3F5"
-                          offset="0%"
-                          stop-opacity="0.3"
-                    >
-                    </stop>
-                    <stop stop-color="#F2F3F5"
-                          offset="100%"
-                    >
-                    </stop>
-                  </linearGradient>
                   <linearGradient x1="50%"
-                                  y1="0%"
                                   x2="50%"
                                   y2="100%"
                                   id="van-empty-5"
@@ -867,8 +839,7 @@ exports[`should render list-footer slot correctly 1`] = `
                     >
                     </stop>
                   </linearGradient>
-                  <linearGradient x1="0%"
-                                  y1="45%"
+                  <linearGradient y1="45%"
                                   x2="100%"
                                   y2="54%"
                                   id="van-empty-7"
@@ -878,6 +849,23 @@ exports[`should render list-footer slot correctly 1`] = `
                     >
                     </stop>
                     <stop stop-color="#DCDEE0"
+                          offset="100%"
+                    >
+                    </stop>
+                  </linearGradient>
+                </defs>
+                <defs>
+                  <linearGradient id="van-empty-a"
+                                  x1="64%"
+                                  y1="100%"
+                                  x2="64%"
+                  >
+                    <stop stop-color="#FFF"
+                          offset="0%"
+                          stop-opacity="0.5"
+                    >
+                    </stop>
+                    <stop stop-color="#F2F3F5"
                           offset="100%"
                     >
                     </stop>
@@ -893,6 +881,24 @@ exports[`should render list-footer slot correctly 1`] = `
                   >
                   </path>
                 </g>
+                <defs>
+                  <linearGradient id="van-empty-b"
+                                  x1="64%"
+                                  y1="97%"
+                                  x2="64%"
+                                  y2="0%"
+                  >
+                    <stop stop-color="#F2F3F5"
+                          offset="0%"
+                          stop-opacity="0.3"
+                    >
+                    </stop>
+                    <stop stop-color="#F2F3F5"
+                          offset="100%"
+                    >
+                    </stop>
+                  </linearGradient>
+                </defs>
                 <g opacity=".8">
                   <path d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
                         fill="url(#van-empty-b)"
@@ -989,39 +995,7 @@ exports[`should render list-footer slot correctly 1`] = `
             <div class="van-empty__image">
               <svg viewbox="0 0 160 160">
                 <defs>
-                  <linearGradient id="van-empty-a"
-                                  x1="64%"
-                                  y1="100%"
-                                  x2="64%"
-                  >
-                    <stop stop-color="#FFF"
-                          offset="0%"
-                          stop-opacity="0.5"
-                    >
-                    </stop>
-                    <stop stop-color="#F2F3F5"
-                          offset="100%"
-                    >
-                    </stop>
-                  </linearGradient>
-                  <linearGradient id="van-empty-b"
-                                  x1="64%"
-                                  y1="97%"
-                                  x2="64%"
-                                  y2="0%"
-                  >
-                    <stop stop-color="#F2F3F5"
-                          offset="0%"
-                          stop-opacity="0.3"
-                    >
-                    </stop>
-                    <stop stop-color="#F2F3F5"
-                          offset="100%"
-                    >
-                    </stop>
-                  </linearGradient>
                   <linearGradient x1="50%"
-                                  y1="0%"
                                   x2="50%"
                                   y2="100%"
                                   id="van-empty-5"
@@ -1050,8 +1024,7 @@ exports[`should render list-footer slot correctly 1`] = `
                     >
                     </stop>
                   </linearGradient>
-                  <linearGradient x1="0%"
-                                  y1="45%"
+                  <linearGradient y1="45%"
                                   x2="100%"
                                   y2="54%"
                                   id="van-empty-7"
@@ -1061,6 +1034,23 @@ exports[`should render list-footer slot correctly 1`] = `
                     >
                     </stop>
                     <stop stop-color="#DCDEE0"
+                          offset="100%"
+                    >
+                    </stop>
+                  </linearGradient>
+                </defs>
+                <defs>
+                  <linearGradient id="van-empty-a"
+                                  x1="64%"
+                                  y1="100%"
+                                  x2="64%"
+                  >
+                    <stop stop-color="#FFF"
+                          offset="0%"
+                          stop-opacity="0.5"
+                    >
+                    </stop>
+                    <stop stop-color="#F2F3F5"
                           offset="100%"
                     >
                     </stop>
@@ -1076,6 +1066,24 @@ exports[`should render list-footer slot correctly 1`] = `
                   >
                   </path>
                 </g>
+                <defs>
+                  <linearGradient id="van-empty-b"
+                                  x1="64%"
+                                  y1="97%"
+                                  x2="64%"
+                                  y2="0%"
+                  >
+                    <stop stop-color="#F2F3F5"
+                          offset="0%"
+                          stop-opacity="0.3"
+                    >
+                    </stop>
+                    <stop stop-color="#F2F3F5"
+                          offset="100%"
+                    >
+                    </stop>
+                  </linearGradient>
+                </defs>
                 <g opacity=".8">
                   <path d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
                         fill="url(#van-empty-b)"
