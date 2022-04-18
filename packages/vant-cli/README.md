@@ -1,36 +1,39 @@
 # Vant CLI
 
-Vant CLI 是一个 Vue 组件库构建工具，通过 Vant CLI 可以快速搭建一套功能完备的 Vue 组件库。
+Vant CLI is a tool for building vue component library. You can quickly build a full-featured Vue component library with vant-cli.
 
-### 特性
+### Features
 
-- 提供丰富的命令，涵盖从开发测试到构建发布的完整流程
-- 基于约定的目录结构，自动生成优雅的文档站点和组件示例
-- 内置 ESLint、Stylelint 校验规则，提交代码时自动执行校验
-- 构建后的组件库默认支持按需引入、主题定制、Tree Shaking
+- Provides rich commands covering the complete process from development to deploy
 
-### 快速上手
+- Based on conventional directory structure. Generate elegant document website and component examples automatically.
 
-执行以下命令可以快速创建一个基于 Vant CLI 的项目：
+- ESlint Stylelint built-in.
+
+- Support Tree Shaking/Theme Customization/Import on Demand
+
+### Quickstart
+
+To create a Vant CLI project, run:
 
 ```bash
 yarn create vant-cli-app
 ```
 
-### 手动安装
+### Install Manually
 
 ```shell
-# 通过 npm
+# via npm
 npm i @vant/cli -D
 
-# 通过 yarn
+# via yarn
 yarn add @vant/cli -D
 
-# 通过 pnpm
+# via pnpm
 pnpm add @vant/cli -D
 ```
 
-安装完成后，请将以下配置添加到 package.json 文件中
+Please add the followed config to `package.json` file.
 
 ```json
 {
@@ -63,9 +66,9 @@ pnpm add @vant/cli -D
 }
 ```
 
-## 详细文档
+## More Details
 
-- [命令](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/commands.md)
-- [配置指南](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config.md)
-- [目录结构](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/directory.md)
-- [更新日志](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)
+- [cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/commands.md)
+- [config](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config.md)
+- [directory structure](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/directory.md)
+- [CHANGLOG](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)
