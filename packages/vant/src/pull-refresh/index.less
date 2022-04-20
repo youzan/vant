@@ -6,7 +6,12 @@ body {
 }
 
 .van-pull-refresh {
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &__track {
     position: relative;

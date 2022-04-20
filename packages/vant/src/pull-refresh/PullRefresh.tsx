@@ -154,7 +154,9 @@ export default defineComponent({
     };
 
     const checkPosition = (event: TouchEvent) => {
-      reachTop = getScrollTop(scrollParent.value!) === 0;
+      reachTop =
+        getScrollTop(scrollParent.value!) === 0 &&
+        getScrollTop(root.value!) === 0;
 
       if (reachTop) {
         state.duration = 0;
