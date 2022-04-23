@@ -11,6 +11,7 @@ import {
 import {
   pick,
   extend,
+  toArray,
   isPromise,
   truthProp,
   Interceptor,
@@ -24,7 +25,6 @@ import {
 import {
   bem,
   name,
-  toArray,
   isOversize,
   filterFiles,
   isImageFile,

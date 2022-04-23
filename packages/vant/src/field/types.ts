@@ -59,7 +59,7 @@ export type FiledRuleFormatter = (value: any, rule: FieldRule) => string;
 
 export type FieldRule = {
   pattern?: RegExp;
-  trigger?: FieldValidateTrigger;
+  trigger?: FieldValidateTrigger | FieldValidateTrigger[];
   message?: FieldRuleMessage;
   required?: boolean;
   validator?: FieldRuleValidator;
