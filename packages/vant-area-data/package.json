@@ -5,6 +5,9 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "rimraf ./dist",
     "dev": "node ./build.js -w",
