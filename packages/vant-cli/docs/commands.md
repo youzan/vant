@@ -48,7 +48,7 @@ Build documentation website. Files will be output to `site` directory.
 
 ### release
 
-Publish to npm. `build` and `changlog` will be automatically execute when run `release`.
+Publish to npm. `build` and `changelog` will be automatically execute when run `release`.
 
 ## changelog
 

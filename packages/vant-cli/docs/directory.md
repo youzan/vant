@@ -25,7 +25,7 @@ The directories for individual components are as follows:
 button
 ├─ demo             # component demo directory
 │   └─ index.vue   # component demo
-├─ index.vue        # componet source code
+├─ index.vue        # component source code
 └─ README.md        # component doc
 ```
 
