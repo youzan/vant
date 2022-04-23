@@ -122,7 +122,7 @@ module.exports = {
 
 Equivalent to vite `build.outDir`.
 
-Genrally, documentation site will be deployed to subpath of domain. For examle: `https://my.github.io/demo-ui/`, `publicPath` should be `/demo-ui/`.
+Generally, documentation site will be deployed to subpath of domain. For example: `https://my.github.io/demo-ui/`, `publicPath` should be `/demo-ui/`.
 
 ```js
 module.exports = {
@@ -279,7 +279,7 @@ module.exports = {
 ### site.baiduAnalytics
 
 - Type: `object`
-- Default: `undefied`
+- Default: `undefined`
 
 Documentation site baidu analysis config. The script of Baidu Statistic will be automatically loaded when build documentation website.
 

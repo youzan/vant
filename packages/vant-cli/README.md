@@ -2,14 +2,15 @@
 
 Vant CLI is a tool for building vue component library. You can quickly build a full-featured Vue component library with vant-cli.
 
+🇨🇳 <a href="./README.zh-CN.md">查看中文版介绍</a>
+
+---
+
 ### Features
 
 - Provides rich commands covering the complete process from development to deploy
-
 - Based on conventional directory structure. Generate elegant document website and component examples automatically.
-
 - ESlint Stylelint built-in.
-
 - Support Tree Shaking/Theme Customization/Import on Demand
 
 ### Quickstart
@@ -71,4 +72,4 @@ Please add the followed config to `package.json` file.
 - [cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/commands.md)
 - [config](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config.md)
 - [directory structure](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/directory.md)
-- [CHANGLOG](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)
+- [CHANGELOG](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)
