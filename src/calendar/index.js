@@ -45,7 +45,7 @@ export default createComponent({
       default: '左侧标题'
     },
     defaultDate: {
-      type: [Date, Array],
+      type: [Date, Array, String],
       default: null
     },
     getContainer: [String, Function],
@@ -175,8 +175,9 @@ export default createComponent({
     },
 
     defaultDate(val) {
-      this.currentDate = val;
+      this.currentDate = typeof val === 'string' ? new Date(val) : val;
       this.scrollIntoView();
+      this.setTitle();
     },
   },
 
@@ -256,7 +257,7 @@ export default createComponent({
       const { type, minDate, maxDate, defaultDate } = this;
 
       if (defaultDate === null) {
-        return defaultDate;
+        return typeof defaultDate === 'string' ? new Date(defaultDate) : defaultDate;
       }
 
 
@@ -301,10 +302,10 @@ export default createComponent({
       }
 
       if (type === 'multiple') {
-        return defaultDate || [defaultVal];
+        return (typeof defaultDate === 'string' ? new Date(defaultDate) : defaultDate) || [defaultVal];
       }
 
-      return defaultDate || defaultVal;
+      return (typeof defaultDate === 'string' ? new Date(defaultDate) : defaultDate) || defaultVal;
     },
 
     // calculate the position of the elements
@@ -459,8 +460,8 @@ export default createComponent({
     },
 
     onConfirm() {
-      this.$emit('confirm', copyDates(this.currentDate));
-      this.$emit('update:default-date', copyDates(this.currentDate));
+      this.$emit('confirm', (copyDates(this.currentDate)).formath("yyyy/MM/dd"));
+      this.$emit('update:default-date', (copyDates(this.currentDate)).formath("yyyy/MM/dd"));
       this.togglePopup();
       this.setTitle();
     },
