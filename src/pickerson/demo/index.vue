@@ -8,6 +8,13 @@
         :columnsprop="t('textColumns')"
         @change="onChange1"
       />
+      <van-pickerson
+        :pvalue.sync="son"
+        show-toolbar
+        :title="t('title')"
+        :columnsprop="t('textColumns')"
+        @change="onChange1"
+      />
     </demo-block>
     <demo-block card :title="t('defaultIndex')">
       <van-picker

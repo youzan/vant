@@ -30,11 +30,18 @@ export default createComponent({
   watch: {
     psonvalue(val, old) {
       this.$emit('update:pvalue', val);
-    }
+    },
+    pvalue(val, old) {
+      this.psonvalue = val;
+    },
   },
 
   methods: {
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     getTitle() {
+      if(this.ifDesigner()) return this.pvalue;
       return this.psonvalue;
     },
     togglePopup() {

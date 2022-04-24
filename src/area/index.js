@@ -99,6 +99,7 @@ export default createComponent({
   watch: {
     value(val) {
       this.code = val;
+      console.log(this.code, this, 666);
       this.setValues();
     },
 
@@ -119,6 +120,9 @@ export default createComponent({
   },
 
   methods: {
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     setTitle() {
       const areaP = this.getValues();
       const result = areaP.map((item) => item.name).join('/');
@@ -264,7 +268,7 @@ export default createComponent({
     setValues() {
       this.areaList = this.areaListprop ? this.fromValue(this.areaListprop) : areaList;
       let { code } = this;
-
+      if(this.ifDesigner()) return;
       if (!code) {
         code = this.getDefaultCode();
       }
@@ -303,6 +307,8 @@ export default createComponent({
         this.getIndex('city', code),
         this.getIndex('county', code),
       ]);
+
+      this.setTitle();
     },
     getListTemp(type, code) {
       return this[type][code];
@@ -366,7 +372,7 @@ export default createComponent({
       <div class={bem('wrappparea')}>
         <Field
           label={this.labelField}
-          value={this.getTitle}
+          value={this.ifDesigner() ? this.value : this.getTitle}
           readonly
           isLink
           input-align="right"
