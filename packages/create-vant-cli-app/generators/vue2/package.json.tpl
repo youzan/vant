@@ -18,7 +18,6 @@
     "build-site": "vant-cli build-site && gh-pages -d site-dist"
   },
   "author": "",
-  "license": "MIT",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",

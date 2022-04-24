@@ -22,7 +22,6 @@
     "test:coverage": "open test/coverage/index.html"
   },
   "author": "",
-  "license": "MIT",
   "lint-staged": {
     "*.md": "prettier --write",
     "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
