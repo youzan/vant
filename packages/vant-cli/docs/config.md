@@ -335,7 +335,7 @@ Should use [vConsole](https://github.com/Tencent/vConsole) to debug when dev. Fo
 
 PostCSS can be configured through the `postcss.config.js` file in the root directory.
 
-### 默认配置
+### Default Config
 
 PostCSS default config:
 

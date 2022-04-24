@@ -50,11 +50,11 @@ Build documentation website. Files will be output to `site` directory.
 
 Publish to npm. `build` and `changelog` will be automatically execute when run `release`.
 
-## changelog
+### changelog
 
 Generate changelog based on commit records.
 
-## commit-lint
+### commit-lint
 
 Validate the format of commit message. Need `husky` to do this.
 
