@@ -191,6 +191,9 @@ export default createComponent({
   },
 
   methods: {
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     togglePopup() {
       this.valuepopup = !this.valuepopup;
       this.value = !this.value;
@@ -571,7 +574,7 @@ export default createComponent({
       return <div class={bem('wrapppcalendar')}>
         <Field
           label={this.labelField}
-          value={this.getTitle}
+          value={this.ifDesigner() ? this.defaultDate : this.getTitle}
           readonly
           isLink
           input-align="right"
