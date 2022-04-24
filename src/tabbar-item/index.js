@@ -44,25 +44,37 @@ export default createComponent({
 
   data() {
     return {
-      active: false,
+      nameMatched: false,
     };
   },
 
   computed: {
-    routeActive() {
-      const { to, $route } = this;
-      if (to && $route) {
-        const config = isObject(to) ? to : { path: to };
-        return !!$route.matched.find(r =>{
-          const pathMatched = config.path === r.path;
+    active() {
+      const routeMode = this.parent.route;
+
+      if (routeMode && '$route' in this) {
+        const { to, destination, $route } = this;
+        // const config = isObject(to) ? to : { path: to };
+        const config = isObject(destination) ? destination : { path: this.newdest(destination) };
+
+        return !!$route.matched.find((r) => {
+          // vue-router 3.x $route.matched[0].path is empty in / and its children paths
+          const path = r.path === '' ? '/' : r.path;
+          if (config.path === '/') return false;
+          const pathMatched = config.path === path;
           const nameMatched = isDef(config.name) && config.name === r.name;
           return pathMatched || nameMatched;
-        })
+        });
       }
+
+      return this.nameMatched;
     },
   },
 
   methods: {
+    newdest(destination) {
+      return destination ? '/' + destination.split('/').slice(2).join('/') : destination;
+    },
     onClick(event) {
       this.parent.onChange(this.name || this.index);
       this.$emit('click', event);
@@ -156,7 +168,7 @@ export default createComponent({
   render() {
     const realbaget = this.badge ?? this.info;
     const comBaget = typeof (realbaget) === 'string' ? realbaget : (this.badgemax && realbaget>this.badgemax ? `${this.badgemax}+` : realbaget);
-    const active = this.parent.route ? this.routeActive : this.active;
+    const { active } = this;
     const color = this.parent[active ? 'activeColor' : 'inactiveColor'];
 
     if (process.env.NODE_ENV === 'development' && this.info) {

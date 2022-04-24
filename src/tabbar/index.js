@@ -9,7 +9,10 @@ export default createComponent({
   mixins: [ParentMixin('vanTabbar')],
 
   props: {
-    route: Boolean,
+    route: {
+      type: Boolean,
+      default: true,
+    },
     zIndex: [Number, String],
     placeholder: Boolean,
     activeColor: String,
@@ -60,14 +63,21 @@ export default createComponent({
 
   mounted() {
     if (this.placeholder && this.fixed) {
-      this.height = this.$refs.tabbar.getBoundingClientRect().height;
+      // this.height = this.$refs.tabbar.getBoundingClientRect().height;
+      const setHeight = () => {
+        this.height = this.$refs.tabbar.getBoundingClientRect().height;
+      };
+
+      setHeight();
+      // https://github.com/youzan/vant/issues/10131
+      setTimeout(setHeight, 100);
     }
   },
 
   methods: {
     setActiveItem() {
       this.children.forEach((item, index) => {
-        item.active = (item.name || index) === this.curvalue;
+        item.nameMatched = item.name === this.curvalue || index === this.curvalue;
       });
     },
 

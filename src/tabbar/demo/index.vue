@@ -2,8 +2,8 @@
   <demo-section>
     <demo-block :title="t('basicUsage')">
       <van-tabbar>
-        <van-tabbar-item icon="home-o" :badge="77" text="标签"></van-tabbar-item>
-        <van-tabbar-item icon="search" text="标签"></van-tabbar-item>
+        <van-tabbar-item icon="home-o" :badge="77" text="标签" destination="/zh-CN/tabbar"></van-tabbar-item>
+        <van-tabbar-item icon="search" text="标签" destination="/tabbar"></van-tabbar-item>
         <van-tabbar-item icon="friends-o" text="标签"></van-tabbar-item>
         <van-tabbar-item icon="setting-o" text="标签"></van-tabbar-item>
       </van-tabbar>

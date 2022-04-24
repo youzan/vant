@@ -21,6 +21,11 @@
       type: boolean
       default: true
       description: 是否显示外边框
+    - name: route
+      title: 是否开启路由模式
+      type: boolean
+      default: true
+      description: 是否开启路由模式
   slots:
     - name: default
       description: 插入`<van-tabbar-item>`子组件。
