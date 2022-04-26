@@ -123,7 +123,7 @@ export default {
   setup() {
     const value1 = ref('');
     const value2 = ref('');
-    const value3 = ref('');
+    const value3 = ref('abc');
     const value4 = ref('');
     const pattern = /\d{6}/;
 
@@ -140,7 +140,7 @@ export default {
 
         setTimeout(() => {
           Toast.clear();
-          resolve(/\d{6}/.test(val));
+          resolve(val === '1234');
         }, 1000);
       });
 
