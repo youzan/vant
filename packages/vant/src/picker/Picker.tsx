@@ -3,6 +3,8 @@ import {
   watch,
   computed,
   defineComponent,
+  reactive,
+  toRefs,
   type PropType,
   type ExtractPropTypes,
 } from 'vue';
@@ -90,20 +92,29 @@ export default defineComponent({
     const hasOptions = ref(false);
     const formattedColumns = ref<PickerObjectColumn[]>([]);
 
+    // Make columnsFieldNames reactive
+    const columnsFieldNames = reactive({
+      // compatible with valueKey prop
+      text: props.valueKey || 'text',
+      values: 'values',
+      children: 'children',
+    });
+
+    extend(columnsFieldNames, props.columnsFieldNames);
+    watch(
+      () => props.columnsFieldNames,
+      (value) => {
+        if (value) extend(columnsFieldNames, value);
+      },
+      {
+        deep: true,
+      }
+    );
     const {
       text: textKey,
       values: valuesKey,
       children: childrenKey,
-    } = extend(
-      {
-        // compatible with valueKey prop
-        text: props.valueKey || 'text',
-        values: 'values',
-        children: 'children',
-      },
-      props.columnsFieldNames
-    );
-
+    } = toRefs(columnsFieldNames);
     const { children, linkChildren } = useChildren(PICKER_KEY);
 
     linkChildren();
@@ -113,10 +124,10 @@ export default defineComponent({
     const dataType = computed(() => {
       const firstColumn = props.columns[0];
       if (typeof firstColumn === 'object') {
-        if (childrenKey in firstColumn) {
+        if (childrenKey.value in firstColumn) {
           return 'cascade';
         }
-        if (valuesKey in firstColumn) {
+        if (valuesKey.value in firstColumn) {
           return 'object';
         }
       }
@@ -127,11 +138,11 @@ export default defineComponent({
       const formatted: PickerObjectColumn[] = [];
 
       let cursor: PickerObjectColumn = {
-        [childrenKey]: props.columns,
+        [childrenKey.value]: props.columns,
       };
 
-      while (cursor && cursor[childrenKey]) {
-        const children = cursor[childrenKey];
+      while (cursor && cursor[childrenKey.value]) {
+        const children = cursor[childrenKey.value];
         let defaultIndex = cursor.defaultIndex ?? +props.defaultIndex;
 
         while (children[defaultIndex] && children[defaultIndex].disabled) {
@@ -144,7 +155,7 @@ export default defineComponent({
         }
 
         formatted.push({
-          [valuesKey]: cursor[childrenKey],
+          [valuesKey.value]: cursor[childrenKey.value],
           className: cursor.className,
           defaultIndex,
         });
@@ -159,7 +170,7 @@ export default defineComponent({
       const { columns } = props;
 
       if (dataType.value === 'plain') {
-        formattedColumns.value = [{ [valuesKey]: columns }];
+        formattedColumns.value = [{ [valuesKey.value]: columns }];
       } else if (dataType.value === 'cascade') {
         formatCascade();
       } else {
@@ -167,7 +178,7 @@ export default defineComponent({
       }
 
       hasOptions.value = formattedColumns.value.some(
-        (item) => item[valuesKey] && item[valuesKey].length !== 0
+        (item) => item[valuesKey.value] && item[valuesKey.value].length !== 0
       );
     };
 
@@ -185,18 +196,18 @@ export default defineComponent({
 
     const onCascadeChange = (columnIndex: number) => {
       let cursor: PickerObjectColumn = {
-        [childrenKey]: props.columns,
+        [childrenKey.value]: props.columns,
       };
       const indexes = getIndexes();
 
       for (let i = 0; i <= columnIndex; i++) {
-        cursor = cursor[childrenKey][indexes[i]];
+        cursor = cursor[childrenKey.value][indexes[i]];
       }
 
-      while (cursor && cursor[childrenKey]) {
+      while (cursor && cursor[childrenKey.value]) {
         columnIndex++;
-        setColumnValues(columnIndex, cursor[childrenKey]);
-        cursor = cursor[childrenKey][cursor.defaultIndex || 0];
+        setColumnValues(columnIndex, cursor[childrenKey.value]);
+        cursor = cursor[childrenKey.value][cursor.defaultIndex || 0];
       }
     };
 
@@ -345,14 +356,14 @@ export default defineComponent({
       formattedColumns.value.map((item, columnIndex) => (
         <Column
           v-slots={{ option: slots.option }}
-          textKey={textKey}
+          textKey={textKey.value}
           readonly={props.readonly}
           allowHtml={props.allowHtml}
           className={item.className}
           itemHeight={itemHeight.value}
           defaultIndex={item.defaultIndex ?? +props.defaultIndex}
           swipeDuration={props.swipeDuration}
-          initialOptions={item[valuesKey]}
+          initialOptions={item[valuesKey.value]}
           visibleItemCount={props.visibleItemCount}
           onChange={() => onChange(columnIndex)}
         />

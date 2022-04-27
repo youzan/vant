@@ -28,7 +28,6 @@ test('simple columns confirm & cancel event', () => {
   expect(wrapper.emitted('cancel')![0]).toEqual(['1990', 0]);
   wrapper.unmount();
 });
-
 test('multiple columns confirm & cancel event', () => {
   const wrapper = mount(Picker, {
     props: {
@@ -358,4 +357,29 @@ test('should not render mask and frame when options is empty', async () => {
   await wrapper.setProps({ columns: [{ values: ['foo'] }] });
   expect(wrapper.find('.van-picker__mask').exists()).toBeTruthy();
   expect(wrapper.find('.van-picker__frame').exists()).toBeTruthy();
+});
+
+test('columns-field-names responsiveness', async () => {
+  const columnsOne = [
+    { type: 1, name: 'Ios' },
+    { type: 2, name: 'Android' },
+  ];
+  const columnsTwo = [
+    { type: 1, serverName: 'server1' },
+    { type: 2, serverName: 'server2' },
+  ];
+  const wrapper = mount(Picker, {
+    props: {
+      columns: columnsOne,
+      columnsFieldNames: {
+        text: 'name',
+      },
+    },
+  });
+  expect(wrapper.findAll('.van-ellipsis')[0].text()).toEqual('Ios');
+  await wrapper.setProps({
+    columns: columnsTwo,
+    columnsFieldNames: { text: 'serverName' },
+  });
+  expect(wrapper.findAll('.van-ellipsis')[0].text()).toEqual('server1');
 });
