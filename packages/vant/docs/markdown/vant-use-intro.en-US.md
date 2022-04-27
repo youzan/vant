@@ -38,4 +38,9 @@ console.log(height.value); // -> window height
 | [useCountDown](#/en-US/use-count-down) | Used to manage the countdown |
 | [useCustomFieldValue](#/en-US/use-custom-field-value) | Used to custom Field value |
 | [useEventListener](#/en-US/use-event-listener) | Used to attach event |
+| [usePageVisibility](#/en-US/use-page-visibility) | Get the visible state of the page |
+| [useRect](#/en-US/use-rect) | Get the size of an element and its position relative to the viewport |
+| [useRelation](#/en-US/use-relation) | Establish the association relationship between parent and child components |
+| [useScrollParent](#/en-US/use-scroll-parent) | Get the closest parent element that is scrollable |
 | [useToggle](#/en-US/use-toggle) | Used to switch between `true` and `false` |
+| [useWindowSize](#/en-US/use-window-size) | Get the viewport width and height of the browser window |
