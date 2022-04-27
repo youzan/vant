@@ -1,6 +1,8 @@
 <template>
   <demo-section>
     <demo-block card :title="t('basicUsage')">
+      <van-area :title="t('title')" :area-list="t('areaList')"  converter="json" label-field="地区选择" :value.sync="sarea"/>
+      <van-area :title="t('title')" :area-list="t('areaList')"  converter="json" label-field="地区选择" :value.sync="sarea"/>
       <van-area :title="t('title')" :area-list="t('areaList')"  converter="json" label-field="地区选择" :value.sync="sarea2"/>
       <!-- <van-area :title="t('title')" :area-list="t('areaList')"  areaListprop='{"province_list":{"110000":"北京市"},"city_list":{"110100":"北京市"},"county_list":{"110101":"东城区","110102":"西城区","110105":"朝阳区","110106":"丰台区","110107":"石景山区","110108":"海淀区","110109":"门头沟区","110111":"房山区","110112":"通州区","110113":"顺义区","110114":"昌平区","110115":"大兴区","110116":"怀柔区","110117":"平谷区","110118":"密云区","110119":"延庆区"}}' converter="json" label-field="地区选择" :value.sync="sarea"/> -->
        <van-area :title="t('title')" :area-list="t('areaList')" converter="json" label-field="地区选择" :value.sync="sarea2"/>

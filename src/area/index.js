@@ -64,13 +64,15 @@ export default createComponent({
     return {
       code: this.value || '',
       columns: [{ values: [] }, { values: [] }, { values: [] }],
-      areaList: {},
+      // areaList: {},
       valuepopup: false,
-      getTitle: ''
     };
   },
 
   computed: {
+    areaList() {
+      return this.areaListprop ? this.fromValue(this.areaListprop) : areaList;
+    },
     province() {
       return this.areaList.province_list || {};
     },
@@ -94,12 +96,22 @@ export default createComponent({
         county: this.columnsPlaceholder[2] || '',
       };
     },
+    getTitle() {
+      if (this.ifDesigner()) {
+        return this.value;
+      }
+      if (!this.value) return '';
+      const tcode = this.value;
+      const provincet = this.getListTempNew('province', tcode.slice(0, 2) + '0000');
+      const cityt = this.getListTempNew('city', tcode.slice(0, 4) + '00');
+      const countyt = this.getListTempNew('county', tcode.slice(0, 6));
+      return `${provincet}/${cityt}/${countyt}`;
+    },
   },
 
   watch: {
     value(val) {
       this.code = val;
-      console.log(this.code, this, 666);
       this.setValues();
     },
 
@@ -241,7 +253,6 @@ export default createComponent({
       this.setValues();
       this.$emit('confirm', values, index, values[2].code);
       this.$emit('update:value', values[2].code);
-      this.setTitle();
       this.togglePopup();
     },
     onCancel() {
@@ -266,7 +277,6 @@ export default createComponent({
     },
 
     setValues() {
-      this.areaList = this.areaListprop ? this.fromValue(this.areaListprop) : areaList;
       let { code } = this;
       if(this.ifDesigner()) return;
       if (!code) {
@@ -276,17 +286,6 @@ export default createComponent({
       const province = this.getList('province');
       const city = this.getList('city', code.slice(0, 2));
       if (!picker) {
-        if (code != this.getDefaultCode()) {
-          try {
-            const tcode = code;
-            const provincet = this.getListTemp('province', tcode.slice(0, 2) + '0000');
-            const cityt = this.getListTemp('city', tcode.slice(0, 4) + '00');
-            const countyt = this.getListTemp('county', tcode.slice(0, 6));
-            this.getTitle = `${provincet}/${cityt}/${countyt}`;
-          } catch (error) {
-            console.log(error)
-          }
-        }
         return;
       }
 
@@ -307,8 +306,6 @@ export default createComponent({
         this.getIndex('city', code),
         this.getIndex('county', code),
       ]);
-
-      this.setTitle();
     },
     getListTemp(type, code) {
       return this[type][code];
@@ -359,6 +356,9 @@ export default createComponent({
       this.code = code || '';
       this.setValues();
     },
+    getListTempNew(type, code) {
+      return (this.areaList[`${type}_list`][code]);
+    },
   },
 
   render() {
@@ -372,7 +372,7 @@ export default createComponent({
       <div class={bem('wrappparea')}>
         <Field
           label={this.labelField}
-          value={this.ifDesigner() ? this.value : this.getTitle}
+          value={this.getTitle}
           readonly
           isLink
           input-align="right"
