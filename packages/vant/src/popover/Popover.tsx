@@ -57,6 +57,7 @@ const popoverProps = {
   show: Boolean,
   theme: makeStringProp<PopoverTheme>('light'),
   overlay: Boolean,
+  delay: Number,
   actions: makeArrayProp<PopoverAction>(),
   trigger: makeStringProp<PopoverTrigger>('click'),
   duration: numericProp,
@@ -116,8 +117,8 @@ export default defineComponent({
       return null;
     };
 
-    const updateLocation = () => {
-      nextTick(() => {
+    const updateLocation = () =>
+      nextTick().then(() => {
         if (!props.show) {
           return;
         }
@@ -130,7 +131,6 @@ export default defineComponent({
           });
         }
       });
-    };
 
     const updateShow = (value: boolean) => emit('update:show', value);
 
@@ -199,7 +199,17 @@ export default defineComponent({
       );
     };
 
-    onMounted(updateLocation);
+    onMounted(() => {
+      if (props.delay) {
+        const delay = setTimeout(() => {
+          updateLocation().then(() => {
+            clearTimeout(delay);
+          });
+        }, props.delay);
+      } else {
+        updateLocation();
+      }
+    });
     onBeforeUnmount(() => {
       if (popper) {
         popper.destroy();
