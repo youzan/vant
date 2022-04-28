@@ -15,7 +15,7 @@ export default createComponent({
   props: {
     pvalue: [Number, String],
     ...pickerProps,
-    defaultIndex: {
+    defaultIndexprop: {
       type: [Number, String],
       default: 0,
     },
@@ -39,6 +39,7 @@ export default createComponent({
       children: [],
       formattedColumns: [],
       columns: [],
+      defaultIndex: this.defaultIndexprop,
     };
   },
 
@@ -68,9 +69,18 @@ export default createComponent({
       handler: 'format',
       immediate: true,
     },
+    pvalue: {
+      handler: 'setDefaultForText',
+    },
   },
 
   methods: {
+    setDefaultForText() {
+      if (this.dataType === 'text') {
+        const index = this.columns.findIndex((x) => x === this.pvalue);
+        this.defaultIndex = index;
+      }
+    },
     format() {
       this.columns = this.fromValue(this.columnsprop);
       console.log(this.columns)
@@ -83,6 +93,7 @@ export default createComponent({
       } else {
         this.formattedColumns = columns;
       }
+      this.setDefaultForText();
     },
     fromValue(value) {
       if (this.converter === 'json')
