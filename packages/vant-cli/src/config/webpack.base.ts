@@ -84,7 +84,7 @@ export const baseConfig: WebpackConfig = {
       },
       {
         test: /\.(js|ts|jsx|tsx)$/,
-        exclude: /node_modules(\/.pnpm){?}\/(?!(@vant\+cli))/,
+        exclude: /^node_modules(\/\.pnpm)?\/(?!(@vant\/cli))/,
         use: [CACHE_LOADER, 'babel-loader'],
       },
       {
