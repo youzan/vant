@@ -16,10 +16,11 @@
     <u-input v-if="filterable" :class="$style.filter" :disabled="disabled" :placeholder="placeholder" size="small" suffix="search" :clearable="clearable"
         :value="filterText" @input="onInput">
     </u-input>
-    <van-pull-refresh :value="$env.VUE_APP_DESIGNER ? false : refreshing" :disabled="!pullRefresh"
+    <div :class="$style.scrollwrap" @scroll="onScroll">
+      <van-pull-refresh :value="$env.VUE_APP_DESIGNER ? false : refreshing" :disabled="!pullRefresh"
         :pullingText="pullingText" :loosingText="loosingText" :loadingText="loadingText" :successText="successText" :successDuration="successDuration" :pullDistance="pullDistance"
         @refresh="refresh">
-        <div ref="body" :class="$style.body" @scroll.stop="onScroll">
+        <div ref="body" :class="$style.body">
             <slot></slot>
             <div ref="virtual" v-if="(!currentLoading && !currentError || pageable === 'auto-more' || pageable === 'load-more') && currentData && currentData.length"
                 :style="{ paddingTop: virtualTop + 'px', paddingBottom: virtualBottom + 'px' }">
@@ -58,6 +59,7 @@
             @change="page($event.page)">
         </u-pagination>
     </div>
+  </div>
 </div>
 </template>
 
@@ -120,7 +122,7 @@ export default {
                 console.log(error);
             }
             this.refreshing = false;
-        },
+        }
     },
 }
 </script>
@@ -164,10 +166,10 @@ export default {
 }
 
 .body {
-    height: 100%;
+    /* height: 100%; */
     flex: auto;
     user-select: none;
-    overflow: auto;
+    /* overflow: auto; */
     position: relative;
 }
 
@@ -207,10 +209,13 @@ export default {
 .root[size$="auto"] { width: auto; }
 
 
-.root {
+/* .root {
     height: 100vh;
+} */
+.scrollwrap {
+  height: 100%;
+  overflow-y: auto;
 }
-
 .root[vusion-designer] {
     height: auto;
 }
