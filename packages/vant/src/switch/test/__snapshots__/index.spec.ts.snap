@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should apply active color to loading icon 1`] = `
-<div class="van-loading van-loading--circular van-switch__loading">
+<div class="van-loading van-loading--circular van-switch__loading"
+     aria-live="polite"
+     aria-busy="true"
+>
   <span class="van-loading__spinner van-loading__spinner--circular"
         style="color: red;"
   >
@@ -20,7 +23,10 @@ exports[`should apply active color to loading icon 1`] = `
 `;
 
 exports[`should apply inactive color to loading icon 1`] = `
-<div class="van-loading van-loading--circular van-switch__loading">
+<div class="van-loading van-loading--circular van-switch__loading"
+     aria-live="polite"
+     aria-busy="true"
+>
   <span class="van-loading__spinner van-loading__spinner--circular"
         style="color: black;"
   >

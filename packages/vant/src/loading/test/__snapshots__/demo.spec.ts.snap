@@ -2,7 +2,10 @@
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-loading van-loading--circular">
+  <div class="van-loading van-loading--circular"
+       aria-live="polite"
+       aria-busy="true"
+  >
     <span class="van-loading__spinner van-loading__spinner--circular">
       <svg class="van-loading__circular"
            viewbox="25 25 50 50"
@@ -16,7 +19,10 @@ exports[`should render demo and match snapshot 1`] = `
       </svg>
     </span>
   </div>
-  <div class="van-loading van-loading--spinner">
+  <div class="van-loading van-loading--spinner"
+       aria-live="polite"
+       aria-busy="true"
+  >
     <span class="van-loading__spinner van-loading__spinner--spinner">
       <i class="van-loading__line van-loading__line--1">
       </i>
@@ -46,7 +52,10 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-loading van-loading--circular">
+  <div class="van-loading van-loading--circular"
+       aria-live="polite"
+       aria-busy="true"
+  >
     <span class="van-loading__spinner van-loading__spinner--circular"
           style="color: rgb(25, 137, 250);"
     >
@@ -62,7 +71,10 @@ exports[`should render demo and match snapshot 1`] = `
       </svg>
     </span>
   </div>
-  <div class="van-loading van-loading--spinner">
+  <div class="van-loading van-loading--spinner"
+       aria-live="polite"
+       aria-busy="true"
+  >
     <span class="van-loading__spinner van-loading__spinner--spinner"
           style="color: rgb(25, 137, 250);"
     >
@@ -94,7 +106,10 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-loading van-loading--circular">
+  <div class="van-loading van-loading--circular"
+       aria-live="polite"
+       aria-busy="true"
+  >
     <span class="van-loading__spinner van-loading__spinner--circular"
           style="width: 24px; height: 24px;"
     >
@@ -110,7 +125,10 @@ exports[`should render demo and match snapshot 1`] = `
       </svg>
     </span>
   </div>
-  <div class="van-loading van-loading--spinner">
+  <div class="van-loading van-loading--spinner"
+       aria-live="polite"
+       aria-busy="true"
+  >
     <span class="van-loading__spinner van-loading__spinner--spinner"
           style="width: 24px; height: 24px;"
     >
@@ -142,7 +160,10 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-loading van-loading--circular">
+  <div class="van-loading van-loading--circular"
+       aria-live="polite"
+       aria-busy="true"
+  >
     <span class="van-loading__spinner van-loading__spinner--circular"
           style="width: 24px; height: 24px;"
     >
@@ -163,7 +184,10 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-loading van-loading--circular van-loading--vertical">
+  <div class="van-loading van-loading--circular van-loading--vertical"
+       aria-live="polite"
+       aria-busy="true"
+  >
     <span class="van-loading__spinner van-loading__spinner--circular"
           style="width: 24px; height: 24px;"
     >
@@ -184,7 +208,10 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-loading van-loading--circular van-loading--vertical">
+  <div class="van-loading van-loading--circular van-loading--vertical"
+       aria-live="polite"
+       aria-busy="true"
+  >
     <span class="van-loading__spinner van-loading__spinner--circular"
           style="color: rgb(0, 148, 255); width: 24px; height: 24px;"
     >
@@ -205,7 +232,10 @@ exports[`should render demo and match snapshot 1`] = `
       Loading...
     </span>
   </div>
-  <div class="van-loading van-loading--circular van-loading--vertical">
+  <div class="van-loading van-loading--circular van-loading--vertical"
+       aria-live="polite"
+       aria-busy="true"
+  >
     <span class="van-loading__spinner van-loading__spinner--circular"
           style="width: 24px; height: 24px;"
     >

@@ -117,7 +117,10 @@ exports[`should render demo and match snapshot 1`] = `
           class="van-button van-button--primary van-button--normal van-button--loading"
   >
     <div class="van-button__content">
-      <div class="van-loading van-loading--circular van-button__loading">
+      <div class="van-loading van-loading--circular van-button__loading"
+           aria-live="polite"
+           aria-busy="true"
+      >
         <span class="van-loading__spinner van-loading__spinner--circular">
           <svg class="van-loading__circular"
                viewbox="25 25 50 50"
@@ -137,7 +140,10 @@ exports[`should render demo and match snapshot 1`] = `
           class="van-button van-button--primary van-button--normal van-button--loading"
   >
     <div class="van-button__content">
-      <div class="van-loading van-loading--spinner van-button__loading">
+      <div class="van-loading van-loading--spinner van-button__loading"
+           aria-live="polite"
+           aria-busy="true"
+      >
         <span class="van-loading__spinner van-loading__spinner--spinner">
           <i class="van-loading__line van-loading__line--1">
           </i>
@@ -171,7 +177,10 @@ exports[`should render demo and match snapshot 1`] = `
           class="van-button van-button--success van-button--normal van-button--loading"
   >
     <div class="van-button__content">
-      <div class="van-loading van-loading--circular van-button__loading">
+      <div class="van-loading van-loading--circular van-button__loading"
+           aria-live="polite"
+           aria-busy="true"
+      >
         <span class="van-loading__spinner van-loading__spinner--circular">
           <svg class="van-loading__circular"
                viewbox="25 25 50 50"
