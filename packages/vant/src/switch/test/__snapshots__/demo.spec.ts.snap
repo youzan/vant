@@ -27,7 +27,10 @@ exports[`should render demo and match snapshot 1`] = `
        aria-checked="true"
   >
     <div class="van-switch__node">
-      <div class="van-loading van-loading--circular van-switch__loading">
+      <div class="van-loading van-loading--circular van-switch__loading"
+           aria-live="polite"
+           aria-busy="true"
+      >
         <span class="van-loading__spinner van-loading__spinner--circular">
           <svg class="van-loading__circular"
                viewbox="25 25 50 50"

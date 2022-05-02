@@ -6,7 +6,6 @@ import {
   truthProp,
   numericProp,
   preventDefault,
-  makeStringProp,
   createNamespace,
 } from '../utils';
 
@@ -35,9 +34,14 @@ const formProps = {
   scrollToError: Boolean,
   validateFirst: Boolean,
   submitOnEnter: truthProp,
-  validateTrigger: makeStringProp<FieldValidateTrigger>('onBlur'),
   showErrorMessage: truthProp,
   errorMessageAlign: String as PropType<FieldTextAlign>,
+  validateTrigger: {
+    type: [String, Array] as PropType<
+      FieldValidateTrigger | FieldValidateTrigger[]
+    >,
+    default: 'onBlur',
+  },
 };
 
 export type FormProps = ExtractPropTypes<typeof formProps>;

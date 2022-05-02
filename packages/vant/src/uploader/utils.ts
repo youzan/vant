@@ -1,4 +1,4 @@
-import { createNamespace, isFunction } from '../utils';
+import { toArray, createNamespace, isFunction } from '../utils';
 import type {
   UploaderMaxSize,
   UploaderResultType,
@@ -8,9 +8,6 @@ import type {
 const [name, bem, t] = createNamespace('uploader');
 
 export { name, bem, t };
-
-export const toArray = <T>(item: T | T[]): T[] =>
-  Array.isArray(item) ? item : [item];
 
 export function readFileContent(file: File, resultType: UploaderResultType) {
   return new Promise<string | void>((resolve) => {

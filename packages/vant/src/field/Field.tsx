@@ -16,6 +16,7 @@ import {
   isDef,
   extend,
   addUnit,
+  toArray,
   FORM_KEY,
   numericProp,
   unknownProp,
@@ -239,12 +240,12 @@ export default defineComponent({
 
     const validateWithTrigger = (trigger: FieldValidateTrigger) => {
       if (form && props.rules) {
-        const defaultTrigger = form.props.validateTrigger === trigger;
+        const { validateTrigger } = form.props;
+        const defaultTrigger = toArray(validateTrigger).includes(trigger);
         const rules = props.rules.filter((rule) => {
           if (rule.trigger) {
-            return rule.trigger === trigger;
+            return toArray(rule.trigger).includes(trigger);
           }
-
           return defaultTrigger;
         });
 

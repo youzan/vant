@@ -858,30 +858,30 @@ export default {
                 path: 'use-event-listener',
                 title: 'useEventListener',
               },
-              // {
-              //   path: 'use-page-visibility',
-              //   title: 'usePageVisibility',
-              // },
-              // {
-              //   path: 'use-rect',
-              //   title: 'useRect',
-              // },
-              // {
-              //   path: 'use-relation',
-              //   title: 'useRelation',
-              // },
-              // {
-              //   path: 'use-scroll-parent',
-              //   title: 'useScrollParent',
-              // },
+              {
+                path: 'use-page-visibility',
+                title: 'usePageVisibility',
+              },
+              {
+                path: 'use-rect',
+                title: 'useRect',
+              },
+              {
+                path: 'use-relation',
+                title: 'useRelation',
+              },
+              {
+                path: 'use-scroll-parent',
+                title: 'useScrollParent',
+              },
               {
                 path: 'use-toggle',
                 title: 'useToggle',
               },
-              // {
-              //   path: 'use-window-size',
-              //   title: 'useWindowSize',
-              // },
+              {
+                path: 'use-window-size',
+                title: 'useWindowSize',
+              },
             ],
           },
         ],

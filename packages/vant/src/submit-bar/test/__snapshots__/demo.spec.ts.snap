@@ -82,7 +82,10 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-button van-button--danger van-button--normal van-button--round van-button--loading van-submit-bar__button van-submit-bar__button--danger"
       >
         <div class="van-button__content">
-          <div class="van-loading van-loading--circular van-button__loading">
+          <div class="van-loading van-loading--circular van-button__loading"
+               aria-live="polite"
+               aria-busy="true"
+          >
             <span class="van-loading__spinner van-loading__spinner--circular">
               <svg class="van-loading__circular"
                    viewbox="25 25 50 50"

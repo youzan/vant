@@ -495,7 +495,10 @@ exports[`should render demo and match snapshot 1`] = `
         Confirm
       </button>
     </div>
-    <div class="van-loading van-loading--circular van-picker__loading">
+    <div class="van-loading van-loading--circular van-picker__loading"
+         aria-live="polite"
+         aria-busy="true"
+    >
       <span class="van-loading__spinner van-loading__spinner--circular">
         <svg class="van-loading__circular"
              viewbox="25 25 50 50"

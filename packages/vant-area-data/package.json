@@ -1,10 +1,13 @@
 {
   "name": "@vant/area-data",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Vant 省市区数据",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "rimraf ./dist",
     "dev": "node ./build.js -w",

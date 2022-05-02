@@ -84,7 +84,10 @@ exports[`zoom in and drag image to move 1`] = `
        style="object-fit: contain;"
   >
   <div class="van-image__loading">
-    <div class="van-loading van-loading--spinner">
+    <div class="van-loading van-loading--spinner"
+         aria-live="polite"
+         aria-busy="true"
+    >
       <span class="van-loading__spinner van-loading__spinner--spinner">
         <i class="van-loading__line van-loading__line--1">
         </i>
@@ -125,7 +128,10 @@ exports[`zoom in and drag image to move 2`] = `
        style="object-fit: contain;"
   >
   <div class="van-image__loading">
-    <div class="van-loading van-loading--spinner">
+    <div class="van-loading van-loading--spinner"
+         aria-live="polite"
+         aria-busy="true"
+    >
       <span class="van-loading__spinner van-loading__spinner--spinner">
         <i class="van-loading__line van-loading__line--1">
         </i>

@@ -374,7 +374,10 @@ exports[`should render demo and match snapshot 1`] = `
            style="width: 100%; height: 27vw;"
       >
         <div class="van-image__loading">
-          <div class="van-loading van-loading--spinner">
+          <div class="van-loading van-loading--spinner"
+               aria-live="polite"
+               aria-busy="true"
+          >
             <span class="van-loading__spinner van-loading__spinner--spinner"
                   style="width: 20px; height: 20px;"
             >
