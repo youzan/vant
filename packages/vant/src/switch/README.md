@@ -152,6 +152,12 @@ export default {
 | change | Emitted when check status changed | _value: any_        |
 | click  | Emitted when component is clicked | _event: MouseEvent_ |
 
+### Slots
+
+| Name          | Description                | SlotProps |
+| ------------- | -------------------------- | --------- |
+| node `v3.5.0` | Custom the content of node | -         |
+
 ### Types
 
 The component exports the following type definitions:
