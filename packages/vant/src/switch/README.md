@@ -59,6 +59,37 @@ export default {
 <van-switch v-model="checked" active-color="#ee0a24" inactive-color="#dcdee0" />
 ```
 
+### Custom Node
+
+Using `node` slot to custom the content of the node.
+
+```html
+<van-switch v-model="checked">
+  <div class="icon-wrapper">
+    <van-icon :name="checked ? 'success' : 'cross'" />
+  </div>
+</van-switch>
+
+<style>
+  .icon-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .icon-wrapper .van-icon-success {
+    line-height: 32px;
+    color: var(--van-blue);
+  }
+
+  .icon-wrapper .van-icon-cross {
+    line-height: 32px;
+    color: var(--van-gray-5);
+  }
+</style>
+```
+
 ### Async Control
 
 ```html
@@ -120,6 +151,12 @@ export default {
 | ------ | --------------------------------- | ------------------- |
 | change | Emitted when check status changed | _value: any_        |
 | click  | Emitted when component is clicked | _event: MouseEvent_ |
+
+### Slots
+
+| Name          | Description                | SlotProps |
+| ------------- | -------------------------- | --------- |
+| node `v3.5.0` | Custom the content of node | -         |
 
 ### Types
 

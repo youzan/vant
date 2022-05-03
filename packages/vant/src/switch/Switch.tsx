@@ -31,7 +31,7 @@ export default defineComponent({
 
   emits: ['change', 'update:modelValue'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const isChecked = () => props.modelValue === props.activeValue;
 
     const onClick = () => {
@@ -46,6 +46,9 @@ export default defineComponent({
       if (props.loading) {
         const color = isChecked() ? props.activeColor : props.inactiveColor;
         return <Loading class={bem('loading')} color={color} />;
+      }
+      if (slots.node) {
+        return slots.node();
       }
     };
 
