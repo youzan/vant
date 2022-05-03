@@ -14,6 +14,7 @@ module.exports = {
     versions: [
       { label: 'v1', link: '/vant/v1/' },
       { label: 'v3', link: '/vant/v3/' },
+      { label: 'v4', link: '/vant/v4/' },
     ],
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
