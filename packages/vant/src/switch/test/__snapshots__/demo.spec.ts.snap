@@ -76,6 +76,20 @@ exports[`should render demo and match snapshot 1`] = `
        aria-checked="true"
   >
     <div class="van-switch__node">
+      <div class="icon-wrapper">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div role="switch"
+       class="van-switch van-switch--on"
+       tabindex="0"
+       aria-checked="true"
+  >
+    <div class="van-switch__node">
     </div>
   </div>
 </div>
