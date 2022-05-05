@@ -109,7 +109,7 @@ export default createComponent({
         <div
           role="menuitem"
           class={[bem('action', { disabled, 'with-icon': icon }), className]}
-          onClick={() => this.onClickAction(action, index)}
+          onClick={(e) => this.onClickAction(e, action, index)}
         >
           {icon && <Icon name={icon} class={bem('action-icon')} />}
           <div class={[bem('action-text'), BORDER_BOTTOM]}>{text}</div>
@@ -132,7 +132,8 @@ export default createComponent({
       this.$emit('touchstart', event);
     },
 
-    onClickAction(action, index) {
+    onClickAction(e, action, index) {
+      e.stopPropagation(); // 当挂载节点为插槽内的元素，冒泡会导致关闭失败
       if (action.disabled) {
         return;
       }
