@@ -48,7 +48,10 @@ exports[`should render different head content in different pulling status 3`] = 
        style="transition-duration: 300ms; transform: translate3d(0,50px, 0);"
   >
     <div class="van-pull-refresh__head">
-      <div class="van-loading van-loading--circular van-pull-refresh__loading">
+      <div class="van-loading van-loading--circular van-pull-refresh__loading"
+           aria-live="polite"
+           aria-busy="true"
+      >
         <span class="van-loading__spinner van-loading__spinner--circular">
           <svg class="van-loading__circular"
                viewbox="25 25 50 50"
@@ -76,7 +79,10 @@ exports[`should render different head content in different pulling status 4`] = 
        style="transition-duration: 300ms; transform: translate3d(0,50px, 0);"
   >
     <div class="van-pull-refresh__head">
-      <div class="van-loading van-loading--circular van-pull-refresh__loading">
+      <div class="van-loading van-loading--circular van-pull-refresh__loading"
+           aria-live="polite"
+           aria-busy="true"
+      >
         <span class="van-loading__spinner van-loading__spinner--circular">
           <svg class="van-loading__circular"
                viewbox="25 25 50 50"

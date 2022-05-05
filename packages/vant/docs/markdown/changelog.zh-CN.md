@@ -19,6 +19,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.4.9](https://github.com/youzan/vant/compare/v3.4.8...v3.4.9)
+
+`2022-05-02`
+
+**Feature**
+
+- Form: 支持同时设置多个 validate-trigger 值 [#10544](https://github.com/youzan/vant/issues/10544)
+- Empty: 支持在无网络的环境下离线使用，图片从 CDN 调整为内联的 SVG 图片 [#10514](https://github.com/youzan/vant/issues/10514) [#10515](https://github.com/youzan/vant/issues/10515) [#10516](https://github.com/youzan/vant/issues/10516)
+- Loading: 优化无障碍访问 [#10568](https://github.com/youzan/vant/issues/10568)
+
+**Bug Fixes**
+
+- @vant/area-data: 修复发布到 npm 时包含 tsconfig.json 文件导致编译错误的问题 [f927f6](https://github.com/youzan/vant/commit/f927f6a7518cf7d08ec8abc5dd35019685c19e3a)
+
 ### [v3.4.8](https://github.com/youzan/vant/compare/v3.4.7...v3.4.8)
 
 `2022-04-16`
