@@ -281,7 +281,10 @@ Button.props = {
   plain: Boolean,
   // round: Boolean,
   // square: Boolean,
-  squareroud: String,
+  squareroud: {
+    type: String,
+    default: 'square',
+  },
   loading: Boolean,
   hairline: Boolean,
   disabled: Boolean,

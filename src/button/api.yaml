@@ -54,7 +54,7 @@
           title: 方形
         - value: round
           title: 圆形
-      default: ""
+      default: square
       description: 设置方形形状
     - name: disabled
       title: 禁用
