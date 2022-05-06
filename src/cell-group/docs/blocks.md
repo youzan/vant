@@ -3,8 +3,11 @@
 ``` html
 <van-cell-group>
   <van-cell isLink center>
+    <template #title>
+      左侧文本
+    </template>
     <template>
-      内容
+      右侧文本
     </template>
   </van-cell>
 </van-cell-group>
@@ -15,8 +18,11 @@
 ``` html
 <van-cell-group inset>
   <van-cell isLink center>
+    <template #title>
+      左侧文本
+    </template>
     <template>
-      内容
+      右侧文本
     </template>
   </van-cell>
 </van-cell-group>
@@ -27,8 +33,11 @@
 ``` html
 <van-cell-group>
   <van-cell isLink center>
+    <template #title>
+      左侧文本
+    </template>
     <template>
-      内容
+      右侧文本
     </template>
   </van-cell>
 </van-cell-group>

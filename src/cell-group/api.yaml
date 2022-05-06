@@ -24,7 +24,7 @@
       support:
         - name: van-cell
           title: 单元格
-          snippet: <van-cell title="单元格" isLink vusion-slot-name="default" center>内容</van-cell>
+          snippet: '<van-cell isLink center><template #title>左侧文本</template><template>右侧文本</template></van-cell>'
 - name: van-cell
   title: 单元格
   attrs:
@@ -53,15 +53,18 @@
       default: true
       description: 是否垂直居中
     - name: title
-      title: 左侧标题
+      title: 左侧文本
       type: string
-      default: 单元格
-      description: 左侧标题
+      description: 左侧文本
     - name: value
       title: 值
       type: string, number
       default2: 内容
       description: 右侧内容
+    - name: rtitle
+      title: 右侧文本
+      type: string
+      description: 右侧文本
     - name: label
       title: 标题下方的描述信息
       type: string

@@ -33,6 +33,10 @@ export default createComponent({
       default: false,
     },
     ...routeProps,
+    rtitle: {
+      type: String,
+      default: '',
+    }
   },
 
   data() {
@@ -62,8 +66,8 @@ export default createComponent({
     const props = this._props;
     const parent = this.$parent;
     const that = this;
-    const { icon, size, title, label, value, isLink, infield, novalue } = this._props;
-    const showTitle = slots('title') || isDefB(title);
+    const { icon, size, title, label, value, isLink, infield, novalue, rtitle } = this._props;
+    const showTitle = true || slots('title') || isDefB(title);
 
     function Labelb() {
       const showLabel = slots('lable') || isDef(label);
@@ -80,38 +84,31 @@ export default createComponent({
     function Title() {
       if (showTitle) {
         return (
-          <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title">
+          <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-scope-id={that.$vnode.context.$options._scopeId} vusion-slot-name="title">
             {slots('title') ? slots('title') : title}
-            {/* {Labelb()} */}
+            {((!isDef(title) || title === '') && !slots('title')) ? <van-empty-col></van-empty-col> : null}
           </div>
         );
       }
     }
 
     function Value() {
-      const showValue = slots() || (isDef(value) && value !== '');
+      const showValue = true || slots() || (isDef(rtitle) && value !== '');
       //@ts-ignore
       const ifDesigner = (parent.$env && parent.$env.VUE_APP_DESIGNER);
-      // if(infield) {
-      //   return (
-      //     <div class={[bem('value', { alone: !showTitle }), props.valueClass]}>
-      //       {slots() ? slots()  : (isDef(value) ? <span>{value}</span>  : null)}
-      //     </div>
-      //   );
-      // }
       if (novalue) return null;
       if (ifDesigner) {
         return (
           <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default" vusion-scope-id={that.$vnode.context.$options._scopeId}>
-            {slots() ? slots()  : (isDef(value) && value !== '' ? <span>{value}</span>  : null)}
-            {((!isDef(value) || value === '') && !slots()) ? <van-empty-col></van-empty-col> : null}
+            {slots() ? slots()  : (isDef(rtitle) && rtitle !== '' ? <span>{rtitle}</span>  : null)}
+            {((!isDef(rtitle) || rtitle === '') && !slots()) ? <van-empty-col></van-empty-col> : null}
           </div>
         );
       } else {
         if (showValue) {
           return (
             <div class={[bem('value', { alone: !showTitle }), props.valueClass]}>
-              {slots() ? slots() : <span>{value}</span>}
+              {slots() ? slots() : <span>{rtitle}</span>}
             </div>
           );
         }

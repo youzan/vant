@@ -39,7 +39,7 @@
       support:
         - name: van-dropdown-menu
           title: 菜单项
-          snippet: '<van-dropdown-item title="标题"><van-cell clickable title="标题1" novalue :isLink="false"></van-cell></van-dropdown-item>'
+          snippet: '<van-dropdown-item title="标题"><van-cell clickable :isLink="false"><template #title>标题1</template></van-cell></van-dropdown-item>'
 - name: van-dropdown-item
   title: 菜单项
   attrs:
@@ -66,7 +66,7 @@
       support:
         - name: van-cell
           title: 菜单项
-          snippet: '<van-cell clickable title="标题n" novalue :isLink="false"></van-cell>'
+          snippet: '<van-cell clickable :isLink="false"><template #title>标题n</template></van-cell>'
   events:
     - name: change
       title: 点击选项导致 value 变化时触发
