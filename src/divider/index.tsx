@@ -34,9 +34,10 @@ function Divider(
         [`content-${props.contentPosition}`]: props.title || slots.default,
       })}
       {...inherit(ctx, true)}
+      vusion-slot-name="title"
     >
       {/* {slots.default && slots.default()} */}
-      {props.title ? <span vusion-slot-name="text">{props.title}</span> : ''}
+      {props.title ? <span>{props.title}</span> : ''}
     </div>
   );
 }
@@ -54,7 +55,10 @@ Divider.props = {
     type: String,
     default: 'center',
   },
-  title: String,
+  title: {
+    type: String,
+    default: '文本',
+  },
 };
 
 export default createComponent<DividerProps>(Divider);
