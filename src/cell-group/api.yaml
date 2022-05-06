@@ -60,7 +60,7 @@
       title: 值
       type: string, number
       default2: 内容
-      description: 右侧内容
+      description: 值
     - name: rtitle
       title: 右侧文本
       type: string

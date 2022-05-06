@@ -50,10 +50,11 @@
   slots:
     - name: default
       description: 插入`<van-col>`子组件。
+      empty-background: add-sub-large
       support:
         - name: van-col
           title: 插入一列
-          snippet: <van-col span="8">span:8</van-col>
+          snippet: <van-col span="8"></van-col>
 - name: van-col
   title: 栅格列
   description: 内部元素行内列布局
