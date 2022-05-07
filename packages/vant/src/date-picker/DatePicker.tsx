@@ -68,6 +68,9 @@ export default defineComponent({
     const isMaxYear = (year: number) => year === props.maxDate.getFullYear();
     const isMaxMonth = (month: number) =>
       month === props.maxDate.getMonth() + 1;
+    const isMinYear = (year: number) => year === props.minDate.getFullYear();
+    const isMinMonth = (month: number) =>
+      month === props.minDate.getMonth() + 1;
 
     const getValue = (type: DatePickerColumnType) => {
       const { minDate, columnsType } = props;
@@ -88,28 +91,40 @@ export default defineComponent({
     };
 
     const genMonthOptions = () => {
-      if (isMaxYear(getValue('year'))) {
-        return genOptions(
-          1,
-          props.maxDate.getMonth() + 1,
-          'month',
-          props.formatter,
-          props.filter
-        );
+      const year = getValue('year');
+
+      let minMonth = 1;
+      let maxMonth = 12;
+      if (isMinYear(year)) {
+        minMonth = props.minDate.getMonth() + 1;
       }
-      return genOptions(1, 12, 'month', props.formatter, props.filter);
+      if (isMaxYear(year)) {
+        maxMonth = props.maxDate.getMonth() + 1;
+      }
+
+      return genOptions(
+        minMonth,
+        maxMonth,
+        'month',
+        props.formatter,
+        props.filter
+      );
     };
 
     const genDayOptions = () => {
       const year = getValue('year');
       const month = getValue('month');
 
+      let minDate = 1;
       let maxDate = getMonthEndDay(year, month);
+      if (isMinYear(year) && isMinMonth(month)) {
+        minDate = props.minDate.getDate();
+      }
       if (isMaxYear(year) && isMaxMonth(month)) {
         maxDate = props.maxDate.getDate();
       }
 
-      return genOptions(1, maxDate, 'day', props.formatter, props.filter);
+      return genOptions(minDate, maxDate, 'day', props.formatter, props.filter);
     };
 
     const columns = computed(() =>
