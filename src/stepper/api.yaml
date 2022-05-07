@@ -36,11 +36,11 @@
       title: 样式风格
       type: string
       options:
-        - value: ""
+        - value: fang
           title: 默认
         - value: round
           title: 圆角
-      default: round
+      default: fang
       description: 样式风格
     - name: disableInput
       title: 只读
