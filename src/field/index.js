@@ -105,6 +105,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    novalue: {
+      type: Boolean,
+      default: false,
+    },
     drole: String
   },
 
@@ -753,6 +757,7 @@ export default createComponent({
         vusionNodeTag={vusionNodeTag}
         infield={this.drole === 'other'}
         notitle={this.notitle}
+        novalue={this.novalue}
       >
         <div class={bem('body')}>
           {this.genInput()}

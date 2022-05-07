@@ -47,6 +47,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    novalue: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -357,6 +361,7 @@ export default createComponent({
           input-align="right"
           onClick={this.togglePopup}
           notitle={true}
+          novalue={this.novalue}
         />
         <Popup
           safe-area-inset-bottom
