@@ -101,6 +101,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    notitle: {
+      type: Boolean,
+      default: false,
+    },
     drole: String
   },
 
@@ -714,7 +718,7 @@ export default createComponent({
 
     const Label = this.genLabel();
     if (Label) {
-      scopedSlots.title = () => Label;
+      // scopedSlots.title = () => Label;
     }
 
     const extra = this.slots('extra');
@@ -723,7 +727,6 @@ export default createComponent({
     }
     return (
       <Cell
-        infield={true}
         icon={this.leftIcon}
         size={this.size}
         center={this.center}
@@ -736,6 +739,7 @@ export default createComponent({
         titleClass={[bem('label', labelAlign), this.labelClass]}
         scopedSlots={scopedSlots}
         arrowDirection={this.arrowDirection}
+        title={Label}
         class={bem({
           error: this.showError,
           disabled,
@@ -748,6 +752,7 @@ export default createComponent({
         vusionNodePath={vusionNodePath}
         vusionNodeTag={vusionNodeTag}
         infield={this.drole === 'other'}
+        notitle={this.notitle}
       >
         <div class={bem('body')}>
           {this.genInput()}

@@ -4,10 +4,10 @@
     - Selector
   icon: date-time-picker
   attrs:
-    - name: label-field
+    - name: labelField
       title: 左侧标题
       type: string
-      default: 左侧标题
+      default: 日历选择
       description: 左侧标题
     - name: default-date
       title: 值

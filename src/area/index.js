@@ -55,7 +55,7 @@ export default createComponent({
     },
     labelField: {
       type: String,
-      default: '左侧标题'
+      default: ''
     },
     closeOnClickOverlay: Boolean
   },
@@ -377,6 +377,7 @@ export default createComponent({
           isLink
           input-align="right"
           onClick={this.togglePopup}
+          notitle={true}
         />
         <Popup
           safe-area-inset-bottom

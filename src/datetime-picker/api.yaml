@@ -4,10 +4,10 @@
     - Selector
   icon: time-picker
   attrs:
-    - name: label-field
+    - name: labelField
       title: 左侧标题
       type: string
-      default: 左侧标题
+      default: 选择时间
       description: 左侧标题
     - name: type
       title: 时间类型

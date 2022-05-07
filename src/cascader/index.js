@@ -356,6 +356,7 @@ export default createComponent({
           isLink={false}
           input-align="right"
           onClick={this.togglePopup}
+          notitle={true}
         />
         <Popup
           safe-area-inset-bottom

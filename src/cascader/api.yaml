@@ -12,7 +12,7 @@
       model: true
       default: ""
       description: 选中的值
-    - name: label-field
+    - name: labelField
       title: 左侧标题
       type: string
       description: 左侧标题

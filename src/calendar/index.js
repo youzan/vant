@@ -42,7 +42,7 @@ export default createComponent({
     rangePrompt: String,
     labelField: {
       type: String,
-      default: '左侧标题'
+      default: ''
     },
     defaultDate: {
       type: [Date, Array, String],
@@ -579,6 +579,7 @@ export default createComponent({
           isLink
           input-align="right"
           onClick={this.togglePopup}
+          notitle={true}
         />
         <Popup
           safe-area-inset-bottom
