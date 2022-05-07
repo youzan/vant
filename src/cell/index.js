@@ -41,6 +41,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    notitleblock: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -70,7 +74,7 @@ export default createComponent({
     const props = this._props;
     const parent = this.$parent;
     const that = this;
-    const { icon, size, title, label, value, isLink, infield, novalue, rtitle, notitle } = this._props;
+    const { icon, size, title, label, value, isLink, infield, novalue, rtitle, notitle, notitleblock } = this._props;
     const showTitle = true || slots('title') || isDefB(title);
 
     function Labelb() {
@@ -88,6 +92,7 @@ export default createComponent({
     function Title() {
       const ifDesigner = (parent.$env && parent.$env.VUE_APP_DESIGNER);
       if (showTitle) {
+        if (notitleblock && !title) return null;
         if (notitle) {
           return (
             <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title">

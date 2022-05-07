@@ -51,6 +51,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    notitleblock: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -113,6 +117,10 @@ export default createComponent({
 
   methods: {
     getTitle() {
+      const ifDesigner = (this.$env && this.$env.VUE_APP_DESIGNER);
+      if (ifDesigner) {
+        return this.value;
+      }
       const selectedOptions = this.getSelectedOptionsByValue(
         this.options,
         this.curValue
@@ -361,6 +369,7 @@ export default createComponent({
           input-align="right"
           onClick={this.togglePopup}
           notitle={true}
+          notitleblock={this.notitleblock}
           novalue={this.novalue}
         />
         <Popup

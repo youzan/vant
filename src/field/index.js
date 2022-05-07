@@ -105,6 +105,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    notitleblock: {
+      type: Boolean,
+      default: false,
+    },
     novalue: {
       type: Boolean,
       default: false,
@@ -757,6 +761,7 @@ export default createComponent({
         vusionNodeTag={vusionNodeTag}
         infield={this.drole === 'other'}
         notitle={this.notitle}
+        notitleblock={this.notitleblock}
         novalue={this.novalue}
       >
         <div class={bem('body')}>
