@@ -15,7 +15,6 @@
     - name: labelField
       title: 左侧标题
       type: string
-      default: 地区选择
       description: 左侧标题
     - name: areaListprop
       title: 数据源(默认全部)

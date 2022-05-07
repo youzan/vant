@@ -7,7 +7,6 @@
     - name: labelField
       title: 左侧标题
       type: string
-      default: 日历选择
       description: 左侧标题
     - name: default-date
       title: 值
