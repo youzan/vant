@@ -91,7 +91,7 @@ export default defineComponent({
     };
 
     const genMonthOptions = () => {
-      if (isMinYear(getValue('year') && isMaxYear(getValue('year'))) {
+      if (isMinYear(getValue('year')) && isMaxYear(getValue('year'))) {
         return genOptions(
           props.minDate.getMonth() + 1,
           props.maxDate.getMonth() + 1,
