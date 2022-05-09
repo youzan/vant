@@ -37,6 +37,7 @@
       type: any
       sync: true
       model: true
+      advanced: true
       description: 当前选择的值
     - name: text-field
       title: 文本字段名
@@ -47,16 +48,18 @@
       title: 值字段名
       type: string
       default: value
-      description: 选项值的字段名    
+      description: 选项值的字段名
     - name: cancelable
       title: 可取消
       type: boolean
       default: false
+      advanced: true
       description: 是否可以取消选择
     - name: multiple
       title: 可多选
       type: boolean
       default: false
+      advanced: true
       description: 是否可以多选
     - name: show-head
       title: 显示头部
@@ -67,6 +70,7 @@
       title: 列表标题
       type: string
       default: 列表
+      advanced: true
       description: 列表标题
     - name: show-foot
       title: 显示底部
@@ -183,10 +187,12 @@
       maxSelect: 2
   slots:
     - name: default
-      title: 默认
-      description: 插入文本或 HTML
+      description: 插入<van-cell>
       empty-background: drag-entity-here
-      advanced: true
+      support:
+        - name: van-cell
+          title: 单元格
+          snippet: '<template #item="scope"><van-cell isLink><template #title>文本</template></van-cell></template>'
     - name: item
       description: 自定义选项的结构和样式
   events:
@@ -194,7 +200,7 @@
       description: 选择某一项前触发
       advanced: true
       params:
-        - name: $event 
+        - name: $event
           type: object
           description: 自定义事件对象
           schema:
@@ -220,6 +226,7 @@
     - name: input
       title: 选择时
       description: 选择某一项时触发
+      advanced: true
       params:
         - name: $event
           type: any
@@ -232,6 +239,7 @@
     - name: select
       title: 选择后
       description: 选择某一项时触发。单选模式中：
+      advanced: true
       params:
         - name: $event
           type: object
