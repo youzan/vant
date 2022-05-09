@@ -107,7 +107,7 @@ export default createComponent({
     },
     notitleblock: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     novalue: {
       type: Boolean,

@@ -55,6 +55,7 @@
     - name: title
       title: 左侧文本
       type: string
+      advanced: true
       description: 左侧文本
     - name: value
       title: 值
@@ -64,6 +65,7 @@
     - name: rtitle
       title: 右侧文本
       type: string
+      advanced: true
       description: 右侧文本
     - name: label
       title: 标题下方的描述信息
