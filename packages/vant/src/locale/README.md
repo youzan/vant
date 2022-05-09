@@ -40,7 +40,7 @@ Locale.add(messages);
 Current supported languages:
 
 | Language                 | Filename     | Version  |
-|--------------------------|--------------| -------- |
+| ------------------------ | ------------ | -------- |
 | Bangla (Bangladesh)      | bn-BD        | `v3.4.5` |
 | Danish                   | da-DK        | `v3.4.8` |
 | German                   | de-DE        | -        |
@@ -48,7 +48,7 @@ Current supported languages:
 | English                  | en-US        | -        |
 | Spanish (Spain)          | es-ES        | -        |
 | French                   | fr-FR        | -        |
-| Hebrew                   | he-IL        |          |
+| Hebrew                   | he-IL        | `v3.5.0` |
 | Hindi                    | hi-IN        | `v3.4.3` |
 | Indonesian               | id-ID        | `v3.4.5` |
 | Icelandic                | is-IS        | `v3.4.7` |
