@@ -1,5 +1,10 @@
 @import '../style/var';
 
+.mixinForVanCellGroup(){
+  margin-left: @padding-md;
+  margin-right: @padding-md;
+}
+
 .van-cell-group {
   background-color: @cell-group-background-color;
 
@@ -7,6 +12,7 @@
     margin: @cell-group-inset-padding;
     overflow: hidden;
     border-radius: @cell-group-inset-border-radius;
+    .mixinForVanCellGroup() !important;
   }
 
   &__title {
