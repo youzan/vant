@@ -57,7 +57,6 @@ Divider.props = {
   },
   title: {
     type: String,
-    default: '文本',
   },
 };
 

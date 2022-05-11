@@ -32,7 +32,6 @@
     - name: title
       title: 文本
       type: string
-      default: 文本
       description: 文本
   slots:
     - name: default
