@@ -89,7 +89,7 @@ export default createComponent({
 
   methods: {
     displayTitle() {
-      console.log(this.children, 99, this.value)
+      // console.log(this.children, 99, this.value)
       const match1 = this.children.filter(
         (option) => isDef(option.value) && option.value === this.value
       );

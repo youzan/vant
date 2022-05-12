@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isDef, isDefB } from '../utils';
+import { createNamespace, isDef, isDefB, isObject } from '../utils';
 import { emit } from '../utils/functional';
 import { routeProps, functionalRoute } from '../utils/router';
 import { cellProps } from './shared';
@@ -63,9 +63,36 @@ export default createComponent({
   },
 
   computed: {
+    routeMode() {
+      return !!this.parent?.parent?.route;
+    },
+    activeDropdownItem() {
+      const inVanDropdownItem = this.vanDropdownMenuItem;
+      if (!inVanDropdownItem) return false;
+      const routeMode = this.routeMode;
+      if (routeMode && '$route' in this) {
+        const { to, destination, $route } = this;
+        // const config = isObject(to) ? to : { path: to };
+        const config = isObject(destination) ? destination : { path: this.newdest(destination) };
+
+        return !!$route.matched.find((r) => {
+          // vue-router 3.x $route.matched[0].path is empty in / and its children paths
+          const path = r.path === '' ? '/' : r.path;
+          if (config.path === '/') return false;
+          const pathMatched = config.path === path;
+          const nameMatched = isDef(config.name) && config.name === r.name;
+          return pathMatched || nameMatched;
+        });
+      }
+
+      return false;
+    }
   },
 
   methods: {
+    newdest(destination) {
+      return destination ? '/' + destination.split('/').slice(2).join('/') : destination;
+    },
   },
 
   render() {
@@ -265,12 +292,20 @@ export default createComponent({
       classes[size] = size;
     }
     let classesnew = bem(classes);
-    const inVanDropdownItem = that.vanDropdownMenuItem && isDef(that.vanDropdownMenuItem.value);
+    const inVanDropdownItem = that.vanDropdownMenuItem;
     if (inVanDropdownItem) {
-      if (that.vanDropdownMenuItem.value === (that.value ?? that.index)) {
-        classesnew += that.vanDropdownMenuItem.bem('option', { active: true });
-      } else {
-        classesnew += that.vanDropdownMenuItem.bem('option', { active: false });
+      if (that.routeMode) {
+        if (that.activeDropdownItem) {
+          classesnew += that.vanDropdownMenuItem.bem('option', { active: true });
+        } else {
+          classesnew += that.vanDropdownMenuItem.bem('option', { active: false });
+        }
+      } else if (isDef(that.vanDropdownMenuItem.value)) {
+        if (that.vanDropdownMenuItem.value === (that.value ?? that.index)) {
+          classesnew += that.vanDropdownMenuItem.bem('option', { active: true });
+        } else {
+          classesnew += that.vanDropdownMenuItem.bem('option', { active: false });
+        }
       }
     }
 
@@ -278,6 +313,15 @@ export default createComponent({
       ...this.$attrs,
       [infield ? 'is-sub': 'noallow']: ''
     }
+
+    const canActivateItem = () => {
+      if (that.routeMode) {
+        // console.log(that.activeDropdownItem, 99999);
+        return that.activeDropdownItem;
+      }
+      return (inVanDropdownItem && (that.vanDropdownMenuItem?.value === (that.value ?? that.index)));
+    }
+
     return (
       <div
         {...{attrs: {...ado}}}
@@ -295,7 +339,7 @@ export default createComponent({
         {Value()}
         {RightIcon()}
         {slots('extra')}
-        {(inVanDropdownItem && (that.vanDropdownMenuItem.value === (that.value ?? that.index))) ? <Icon class={that.vanDropdownMenuItem.bem('icon')} color={that.vanDropdownMenuItem.parent.activeColor} name="success" /> : null}
+        {canActivateItem() ? <Iconv class={that.vanDropdownMenuItem.bem('icon')} color={that.vanDropdownMenuItem.parent.activeColor} name="success" /> : null}
       </div>
     );
   },

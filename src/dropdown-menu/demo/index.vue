@@ -3,14 +3,14 @@
     <demo-block :title="t('basicUsage')">
       <van-dropdown-menu :value.sync="menuvalue">
         <van-dropdown-item :valueprop.sync="itemvalue">
-          <van-cell clickable title="标题1" novalue value="1"></van-cell>
+          <van-cell clickable title="标题1" novalue value="1" destination="/a/zh-CN/dropdown-menu"></van-cell>
           <van-cell clickable title="标题2" novalue value="12"></van-cell>
           <van-cell clickable title="标题3" novalue value="123"></van-cell>
         </van-dropdown-item>
       </van-dropdown-menu>
       <van-dropdown-menu>
         <van-dropdown-item >
-          <van-cell clickable title="标题1" novalue value="1"></van-cell>
+          <van-cell clickable title="标题1" novalue value="1" destination="/a/zh-CN/dropdown-menu"></van-cell>
           <van-cell clickable title="标题2" novalue value="12"></van-cell>
           <van-cell clickable title="标题3" novalue value="123"></van-cell>
         </van-dropdown-item>

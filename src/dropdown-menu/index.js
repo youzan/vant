@@ -18,6 +18,10 @@ export default createComponent({
   ],
 
   props: {
+    route: {
+      type: Boolean,
+      default: true,
+    },
     value: [Number, String],
     zIndex: [Number, String],
     activeColor: String,
@@ -93,7 +97,7 @@ export default createComponent({
     },
   },
 
-  render() {console.log(this.children, 77)
+  render() {
     const Titles = this.children.map((item, index) => {
       const aId = item.$vnode.context.$options._scopeId;
       return <div
