@@ -16,6 +16,10 @@ export default createComponent({
       default: 0,
     },
     value: [Number, String],
+    route: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {

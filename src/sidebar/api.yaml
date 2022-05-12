@@ -11,6 +11,11 @@
       sync: true
       model: true
       description: 菜单值
+    - name: route
+      title: 是否开启路由模式
+      type: boolean
+      default: true
+      description: 是否开启路由模式
   slots:
     - name: default
       description: 插入`<van-sidebar-item>`子组件。

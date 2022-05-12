@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <van-sidebar>
-          <van-sidebar-item :title="t('title')" />
+          <van-sidebar-item :title="t('title')" destination="/a/zh-CN/sidebar" />
           <van-sidebar-item :title="t('title')" />
           <van-sidebar-item :title="t('title')" />
         </van-sidebar>

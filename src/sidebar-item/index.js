@@ -1,4 +1,4 @@
-import { createNamespace, isDef } from '../utils';
+import { createNamespace, isObject, isDef } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 import { route, routeProps } from '../utils/router';
 import Info from '../info';
@@ -40,7 +40,22 @@ export default createComponent({
   },
   computed: {
     select() {
-      if (isDef(this.value)) {
+      const routeMode = this.parent.route;
+
+      if (routeMode && '$route' in this) {
+        const { to, destination, $route } = this;
+        // const config = isObject(to) ? to : { path: to };
+        const config = isObject(destination) ? destination : { path: this.newdest(destination) };
+
+        return !!$route.matched.find((r) => {
+          // vue-router 3.x $route.matched[0].path is empty in / and its children paths
+          const path = r.path === '' ? '/' : r.path;
+          if (config.path === '/') return false;
+          const pathMatched = config.path === path;
+          const nameMatched = isDef(config.name) && config.name === r.name;
+          return pathMatched || nameMatched;
+        });
+      } else if (isDef(this.value)) {
         return this.curvalue === this.parent.curvalue;
       }
       return this.index === +this.parent.curvalue;
@@ -52,6 +67,9 @@ export default createComponent({
     }
   },
   methods: {
+    newdest(destination) {
+      return destination ? '/' + destination.split('/').slice(2).join('/') : destination;
+    },
     onClick() {
       if (this.disabled) {
         return;
