@@ -1,7 +1,12 @@
 import fse from 'fs-extra';
 import path from 'path';
 import hash from 'hash-sum';
-import { parse, SFCBlock, compileTemplate } from 'vue/compiler-sfc';
+import {
+  parse,
+  SFCBlock,
+  compileTemplate,
+  compileScript,
+} from 'vue/compiler-sfc';
 import { replaceExt } from '../common/index.js';
 
 const { remove, readFileSync, outputFile } = fse;
@@ -73,8 +78,9 @@ export async function compileSfc(filePath: string): Promise<any> {
   const scopeId = hasScoped ? `data-v-${hash(source)}` : '';
 
   // compile js part
-  if (descriptor.script) {
-    const lang = descriptor.script.lang || 'js';
+  if (descriptor.script || descriptor.scriptSetup) {
+    const lang =
+      descriptor.script?.lang || descriptor.scriptSetup?.lang || 'js';
     const scriptFilePath = replaceExt(filePath, `.${lang}`);
 
     tasks.push(
@@ -86,7 +92,14 @@ export async function compileSfc(filePath: string): Promise<any> {
           script += '// @ts-nocheck\n';
         }
 
-        script += descriptor.script!.content;
+        if (descriptor.scriptSetup) {
+          script += compileScript(descriptor, {
+            id: scopeId,
+          }).content;
+        } else {
+          script += descriptor.script!.content;
+        }
+
         script = injectStyle(script, styles, filePath);
         script = script.replace(EXPORT, `const ${VUEIDS} =`);
 
