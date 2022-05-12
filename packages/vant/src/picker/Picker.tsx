@@ -90,19 +90,14 @@ export default defineComponent({
     const hasOptions = ref(false);
     const formattedColumns = ref<PickerObjectColumn[]>([]);
 
-    const {
-      text: textKey,
-      values: valuesKey,
-      children: childrenKey,
-    } = extend(
-      {
-        // compatible with valueKey prop
-        text: props.valueKey || 'text',
-        values: 'values',
-        children: 'children',
-      },
-      props.columnsFieldNames
-    );
+    const columnsFieldNames = computed(() => {
+      const { columnsFieldNames } = props;
+      return {
+        text: columnsFieldNames?.text || props.valueKey || 'text',
+        values: columnsFieldNames?.values || 'values',
+        children: columnsFieldNames?.children || 'children',
+      };
+    });
 
     const { children, linkChildren } = useChildren(PICKER_KEY);
 
@@ -113,10 +108,10 @@ export default defineComponent({
     const dataType = computed(() => {
       const firstColumn = props.columns[0];
       if (typeof firstColumn === 'object') {
-        if (childrenKey in firstColumn) {
+        if (columnsFieldNames.value.children in firstColumn) {
           return 'cascade';
         }
-        if (valuesKey in firstColumn) {
+        if (columnsFieldNames.value.values in firstColumn) {
           return 'object';
         }
       }
@@ -127,11 +122,11 @@ export default defineComponent({
       const formatted: PickerObjectColumn[] = [];
 
       let cursor: PickerObjectColumn = {
-        [childrenKey]: props.columns,
+        [columnsFieldNames.value.children]: props.columns,
       };
 
-      while (cursor && cursor[childrenKey]) {
-        const children = cursor[childrenKey];
+      while (cursor && cursor[columnsFieldNames.value.children]) {
+        const children = cursor[columnsFieldNames.value.children];
         let defaultIndex = cursor.defaultIndex ?? +props.defaultIndex;
 
         while (children[defaultIndex] && children[defaultIndex].disabled) {
@@ -144,7 +139,8 @@ export default defineComponent({
         }
 
         formatted.push({
-          [valuesKey]: cursor[childrenKey],
+          [columnsFieldNames.value.values]:
+            cursor[columnsFieldNames.value.children],
           className: cursor.className,
           defaultIndex,
         });
@@ -159,7 +155,9 @@ export default defineComponent({
       const { columns } = props;
 
       if (dataType.value === 'plain') {
-        formattedColumns.value = [{ [valuesKey]: columns }];
+        formattedColumns.value = [
+          { [columnsFieldNames.value.values]: columns },
+        ];
       } else if (dataType.value === 'cascade') {
         formatCascade();
       } else {
@@ -167,7 +165,9 @@ export default defineComponent({
       }
 
       hasOptions.value = formattedColumns.value.some(
-        (item) => item[valuesKey] && item[valuesKey].length !== 0
+        (item) =>
+          item[columnsFieldNames.value.values] &&
+          item[columnsFieldNames.value.values].length !== 0
       );
     };
 
@@ -185,18 +185,19 @@ export default defineComponent({
 
     const onCascadeChange = (columnIndex: number) => {
       let cursor: PickerObjectColumn = {
-        [childrenKey]: props.columns,
+        [columnsFieldNames.value.children]: props.columns,
       };
       const indexes = getIndexes();
 
       for (let i = 0; i <= columnIndex; i++) {
-        cursor = cursor[childrenKey][indexes[i]];
+        cursor = cursor[columnsFieldNames.value.children][indexes[i]];
       }
 
-      while (cursor && cursor[childrenKey]) {
+      while (cursor && cursor[columnsFieldNames.value.children]) {
         columnIndex++;
-        setColumnValues(columnIndex, cursor[childrenKey]);
-        cursor = cursor[childrenKey][cursor.defaultIndex || 0];
+        setColumnValues(columnIndex, cursor[columnsFieldNames.value.children]);
+        cursor =
+          cursor[columnsFieldNames.value.children][cursor.defaultIndex || 0];
       }
     };
 
@@ -345,14 +346,14 @@ export default defineComponent({
       formattedColumns.value.map((item, columnIndex) => (
         <Column
           v-slots={{ option: slots.option }}
-          textKey={textKey}
+          textKey={columnsFieldNames.value.text}
           readonly={props.readonly}
           allowHtml={props.allowHtml}
           className={item.className}
           itemHeight={itemHeight.value}
           defaultIndex={item.defaultIndex ?? +props.defaultIndex}
           swipeDuration={props.swipeDuration}
-          initialOptions={item[valuesKey]}
+          initialOptions={item[columnsFieldNames.value.values]}
           visibleItemCount={props.visibleItemCount}
           onChange={() => onChange(columnIndex)}
         />
