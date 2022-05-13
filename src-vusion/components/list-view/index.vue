@@ -1,8 +1,6 @@
 <template>
 <div :class="$style.root" :readonly="readonly" :readonly-mode="readonlyMode" :disabled="disabled"
     :tabindex="readonly || disabled ? '' : 0"
-    @keydown.prevent.up="shift(-1)"
-    @keydown.prevent.down="shift(+1)"
     :vusion-designer="$env.VUE_APP_DESIGNER">
     <div v-show="showHead" :class="$style.head">
         <slot name="head">
