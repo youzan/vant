@@ -408,7 +408,6 @@ export default defineComponent({
         name: props.name,
         rows: props.rows !== undefined ? +props.rows : undefined,
         class: controlClass,
-        value: props.modelValue,
         disabled: getProp('disabled'),
         readonly: getProp('readonly'),
         autofocus: props.autofocus,
