@@ -280,7 +280,7 @@ export default defineComponent({
 
       return (
         <UploaderPreviewItem
-          v-slots={{ 'preview-cover': slots['preview-cover'] }}
+          v-slots={pick(slots, ['preview-cover', 'preview-delete'])}
           item={item}
           index={index}
           onClick={() => emit('click-preview', item, getDetail(index))}
