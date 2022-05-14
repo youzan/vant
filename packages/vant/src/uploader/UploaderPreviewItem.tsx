@@ -73,15 +73,20 @@ export default defineComponent({
 
     const renderDeleteIcon = () => {
       if (props.deletable && props.item.status !== 'uploading') {
+        const slot = slots['preview-delete'];
         return (
           <div
             role="button"
-            class={bem('preview-delete')}
+            class={bem('preview-delete', { shadow: !slot })}
             tabindex={0}
             aria-label={t('delete')}
             onClick={onDelete}
           >
-            <Icon name="cross" class={bem('preview-delete-icon')} />
+            {slot ? (
+              slot()
+            ) : (
+              <Icon name="cross" class={bem('preview-delete-icon')} />
+            )}
           </div>
         );
       }
