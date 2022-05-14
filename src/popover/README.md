@@ -155,6 +155,8 @@ export default {
 };
 ```
 
+> Tips: When use get-container, the mount location cannot be the reference slot node of popover
+
 ## API
 
 ### Props

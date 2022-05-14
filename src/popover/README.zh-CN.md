@@ -195,6 +195,8 @@ export default {
 };
 ```
 
+> 注意：使用 get-container 时，挂载的父节点不可以是 popover 的 reference slot 节点
+
 ## API
 
 ### Props
