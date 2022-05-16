@@ -1,5 +1,5 @@
 <template>
-  <div class="van-for-com-item">
+  <div class="van-for-com-item" :style="comStyle">
     <slot :item="item"></slot>
   </div>
 </template>
@@ -12,13 +12,30 @@ export default {
     props: {
       item: {
         type: [Object,String, Number],
-      }
+      },
+      colnum: {
+        type: Number
+      },
+      equalWidth: {
+        type: Boolean,
+        default: true,
+      },
     },
     data() {
       return {
       }
     },
     computed: {
+      comStyle() {
+        if (this.colnum && this.equalWidth) {
+          const num = this.colnum;
+          const width = 100 / num;
+          return {
+            width: width + '%'
+          }
+        }
+        return {};
+      }
     },
     watch: {
     },

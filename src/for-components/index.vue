@@ -32,7 +32,11 @@ export default {
       colnum: {
         type: Number,
         default: 5
-      }
+      },
+      equalWidth: {
+        type: Boolean,
+        default: true,
+      },
     },
     data() {
       return {
