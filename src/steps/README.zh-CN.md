@@ -82,6 +82,7 @@ export default {
 | active | 当前步骤 | _number \| string_ | `0` |
 | direction | 显示方向，可选值为 `vertical` | _string_ | `horizontal` |
 | active-color | 激活状态颜色 | _string_ | `#07c160` |
+| align-center | 进行居中对齐 |  _boolean_ | `false` |
 | inactive-color `v2.9.1` | 未激活状态颜色 | _string_ | `#969799` |
 | active-icon | 激活状态底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | `checked` |
 | inactive-icon | 未激活状态底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | - |
