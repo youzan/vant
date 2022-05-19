@@ -103,7 +103,7 @@ export default createComponent({
     const that = this;
     const { icon, size, title, label, value, isLink, infield, novalue, rtitle, notitle, notitleblock } = this._props;
     const showTitle = true || slots('title') || isDefB(title);
-
+    const ifDesigner = (parent.$env && parent.$env.VUE_APP_DESIGNER);
     function Labelb() {
       const showLabel = slots('lable') || isDef(label);
 
@@ -293,6 +293,12 @@ export default createComponent({
     if (size) {
       classes[size] = size;
     }
+    const nocontentforlink = !ifDesigner && ((!isDef(rtitle) || rtitle === '') && !slots()) && ((!isDef(title) || title === '') && !slots('title'));
+
+    if (nocontentforlink) {
+      classes['nocontentforlink'] = nocontentforlink;
+    }
+
     let classesnew = bem(classes);
     const inVanDropdownItem = that.vanDropdownMenuItem;
     if (inVanDropdownItem) {
