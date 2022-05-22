@@ -46,6 +46,7 @@ Current supported languages:
 | Danish                   | da-DK        | `v3.4.8` |
 | German                   | de-DE        | -        |
 | German (formal)          | de-DE-formal | -        |
+| Greek                    | el-GR        | `v3.5.0` |
 | English                  | en-US        | -        |
 | Spanish (Spain)          | es-ES        | -        |
 | French                   | fr-FR        | -        |
