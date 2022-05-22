@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "Pre-compiled popperjs core",
   "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.esm.mjs",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "files": [

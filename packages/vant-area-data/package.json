@@ -3,7 +3,7 @@
   "version": "1.2.4",
   "description": "Vant 省市区数据",
   "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.esm.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
