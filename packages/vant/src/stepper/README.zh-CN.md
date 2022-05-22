@@ -163,8 +163,8 @@ export default {
 | show-plus | 是否显示增加按钮 | _boolean_ | `true` |
 | show-minus | 是否显示减少按钮 | _boolean_ | `true` |
 | show-input | 是否显示输入框 | _boolean_ | `true` |
-| long-press | 是否开启长按手势 | _boolean_ | `true` |
-| allow-empty | 是否允许输入的值为空 | _boolean_ | `false` |
+| long-press | 是否开启长按手势，开启后可以长按增加和减少按钮 | _boolean_ | `true` |
+| allow-empty | 是否允许输入的值为空，设置为 `true` 后允许传入空字符串 | _boolean_ | `false` |
 
 ### Events
 

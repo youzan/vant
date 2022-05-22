@@ -459,7 +459,7 @@ exports[`should render demo and match snapshot 1`] = `
                       </div>
                     </div>
                     <div role="button"
-                         class="van-uploader__preview-delete"
+                         class="van-uploader__preview-delete van-uploader__preview-delete--shadow"
                          tabindex="0"
                          aria-label="Delete"
                     >

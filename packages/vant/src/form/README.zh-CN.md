@@ -576,9 +576,10 @@ export default {
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | submit | 提交表单，与点击提交按钮的效果等价 | - | - |
-| validate | 验证表单，支持传入 `name` 来验证单个或部分表单项 | _name?: string \| string[]_ | _Promise_ |
 | getValues `v3.4.8` | 获取所有表单项当前的值 | - | _Record<string, unknown>_ |
-| resetValidation | 重置表单项的验证提示，支持传入 `name` 来重置单个或部分表单项 | _name?: string \| string[]_ | - |
+| validate | 验证表单，支持传入一个或多个 `name` 来验证单个或部分表单项，不传入 `name` 时，会验证所有表单项 | _name?: string \| string[]_ | _Promise\<void\>_ |
+| resetValidation | 重置表单项的验证提示，支持传入一个或多个 `name` 来重置单个或部分表单项，不传入 `name` 时，会重置所有表单项 | _name?: string \| string[]_ | - |
+| getValidationStatus `v3.5.0` | 获取所有表单项的校验状态，状态包括 `passed`、`failed`、`unvalidated` | - | _Record\<string, FieldValidationStatus\>_ |
 | scrollToField | 滚动到对应表单项的位置，默认滚动到顶部，第二个参数传 false 可滚动至底部 | _name: string, alignToTop: boolean_ | - |
 
 ### 类型定义

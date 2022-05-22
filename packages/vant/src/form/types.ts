@@ -1,5 +1,6 @@
 import type { ComponentPublicInstance } from 'vue';
 import type { FormProps } from './Form';
+import type { FieldValidationStatus } from '../field';
 
 export type FormExpose = {
   submit: () => void;
@@ -10,6 +11,7 @@ export type FormExpose = {
     options?: boolean | ScrollIntoViewOptions | undefined
   ) => void;
   resetValidation: (name?: string | string[] | undefined) => void;
+  getValidationStatus: () => Record<string, FieldValidationStatus>;
 };
 
 export type FormProvide = {

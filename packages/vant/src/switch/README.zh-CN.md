@@ -69,6 +69,37 @@ export default {
 <van-switch v-model="checked" active-color="#ee0a24" inactive-color="#dcdee0" />
 ```
 
+### 自定义按钮
+
+通过 `node` 插槽自定义按钮的内容。
+
+```html
+<van-switch v-model="checked">
+  <div class="icon-wrapper">
+    <van-icon :name="checked ? 'success' : 'cross'" />
+  </div>
+</van-switch>
+
+<style>
+  .icon-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .icon-wrapper .van-icon-success {
+    line-height: 32px;
+    color: var(--van-blue);
+  }
+
+  .icon-wrapper .van-icon-cross {
+    line-height: 32px;
+    color: var(--van-gray-5);
+  }
+</style>
+```
+
 ### 异步控制
 
 需要异步控制开关时，可以使用 `modelValue` 属性和 `update:model-value` 事件代替 `v-model`，并在事件回调函数中手动处理开关状态。
@@ -132,6 +163,12 @@ export default {
 | ------ | ------------------ | ------------------- |
 | change | 开关状态切换时触发 | _value: any_        |
 | click  | 点击时触发         | _event: MouseEvent_ |
+
+### Slots
+
+| 名称          | 说明             | 参数 |
+| ------------- | ---------------- | ---- |
+| node `v3.5.0` | 自定义按钮的内容 | -    |
 
 ### 类型定义
 

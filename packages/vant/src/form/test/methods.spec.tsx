@@ -153,3 +153,37 @@ test('getValues method should return all current values', () => {
 
   expect(formRef.value?.getValues()).toEqual({ A: '123', B: '456' });
 });
+
+test('getValidationStatus method should the status of all fields', async () => {
+  const formRef = ref<FormInstance>();
+  const rules = getSimpleRules();
+  mount({
+    render() {
+      return (
+        <Form ref={formRef}>
+          <Field name="A" rules={rules.rulesA} modelValue="123" />
+          <Field name="B" rules={rules.rulesB} modelValue="456" />
+        </Form>
+      );
+    },
+  });
+
+  expect(formRef.value?.getValidationStatus()).toEqual({
+    A: 'unvalidated',
+    B: 'unvalidated',
+  });
+
+  await formRef.value?.validate();
+
+  expect(formRef.value?.getValidationStatus()).toEqual({
+    A: 'passed',
+    B: 'passed',
+  });
+
+  formRef.value?.resetValidation();
+
+  expect(formRef.value?.getValidationStatus()).toEqual({
+    A: 'unvalidated',
+    B: 'unvalidated',
+  });
+});

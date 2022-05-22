@@ -21,7 +21,7 @@
     "@vant/eslint-config": "workspace:*",
     "@vant/stylelint-config": "workspace:*",
     "eslint": "^8.2.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "lint-staged": "^12.1.2",
     "prettier": "^2.5.0",
     "rimraf": "^3.0.2",

@@ -17,7 +17,7 @@ exports[`delete preview image 1`] = `
         </div>
       </div>
       <div role="button"
-           class="van-uploader__preview-delete"
+           class="van-uploader__preview-delete van-uploader__preview-delete--shadow"
            tabindex="0"
            aria-label="Delete"
       >
@@ -66,7 +66,7 @@ exports[`disable preview image 2`] = `
         </div>
       </div>
       <div role="button"
-           class="van-uploader__preview-delete"
+           class="van-uploader__preview-delete van-uploader__preview-delete--shadow"
            tabindex="0"
            aria-label="Delete"
       >
@@ -116,68 +116,7 @@ exports[`image-fit prop 1`] = `
         </div>
       </div>
       <div role="button"
-           class="van-uploader__preview-delete"
-           tabindex="0"
-           aria-label="Delete"
-      >
-        <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
-        </i>
-      </div>
-    </div>
-    <div class="van-uploader__upload">
-      <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
-      </i>
-      <input type="file"
-             class="van-uploader__input"
-             accept="image/*"
-      >
-    </div>
-  </div>
-</div>
-`;
-
-exports[`preview-cover slot 1`] = `
-<div class="van-uploader">
-  <div class="van-uploader__wrapper">
-    <div class="van-uploader__preview">
-      <div class="van-image van-uploader__preview-image">
-        <img src="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: cover;"
-        >
-        <div class="van-image__loading">
-          <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
-          </i>
-        </div>
-        <div class="van-uploader__preview-cover">
-          Custom Preview Cover
-        </div>
-      </div>
-      <div role="button"
-           class="van-uploader__preview-delete"
-           tabindex="0"
-           aria-label="Delete"
-      >
-        <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
-        </i>
-      </div>
-    </div>
-    <div class="van-uploader__preview">
-      <div class="van-image van-uploader__preview-image">
-        <img src="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: cover;"
-        >
-        <div class="van-image__loading">
-          <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
-          </i>
-        </div>
-        <div class="van-uploader__preview-cover">
-          Custom Preview Cover
-        </div>
-      </div>
-      <div role="button"
-           class="van-uploader__preview-delete"
+           class="van-uploader__preview-delete van-uploader__preview-delete--shadow"
            tabindex="0"
            aria-label="Delete"
       >
@@ -212,7 +151,7 @@ exports[`render preview image 1`] = `
         </div>
       </div>
       <div role="button"
-           class="van-uploader__preview-delete"
+           class="van-uploader__preview-delete van-uploader__preview-delete--shadow"
            tabindex="0"
            aria-label="Delete"
       >
@@ -229,7 +168,7 @@ exports[`render preview image 1`] = `
         </div>
       </div>
       <div role="button"
-           class="van-uploader__preview-delete"
+           class="van-uploader__preview-delete van-uploader__preview-delete--shadow"
            tabindex="0"
            aria-label="Delete"
       >
@@ -246,7 +185,7 @@ exports[`render preview image 1`] = `
         </div>
       </div>
       <div role="button"
-           class="van-uploader__preview-delete"
+           class="van-uploader__preview-delete van-uploader__preview-delete--shadow"
            tabindex="0"
            aria-label="Delete"
       >
@@ -274,6 +213,22 @@ exports[`should not render upload input when using readonly prop 1`] = `
       </i>
     </div>
   </div>
+</div>
+`;
+
+exports[`should render preview-cover slot correctly 1`] = `
+<div class="van-uploader__preview-cover">
+  Custom Preview Cover
+</div>
+`;
+
+exports[`should render preview-delete slot correctly 1`] = `
+<div role="button"
+     class="van-uploader__preview-delete"
+     tabindex="0"
+     aria-label="Delete"
+>
+  Custom Preview Delete
 </div>
 `;
 

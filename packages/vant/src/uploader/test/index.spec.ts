@@ -565,7 +565,7 @@ test('closePreview event', async () => {
   });
 
   await later();
-  wrapper.find('.van-image').trigger('click');
+  await wrapper.find('.van-image').trigger('click');
 
   const preview = document.querySelector<HTMLDivElement>('.van-image-preview');
   const swipe = preview?.querySelector<HTMLDivElement>(
@@ -627,17 +627,32 @@ test('multiFile upload filter max-size file', async () => {
   expect(wrapper.emitted<[File]>('oversize')![0]).toBeTruthy();
 });
 
-test('preview-cover slot', async () => {
+test('should render preview-cover slot correctly', async () => {
   const wrapper = mount(Uploader, {
     props: {
-      modelValue: [{ url: IMAGE }, { url: IMAGE }],
+      modelValue: [{ url: IMAGE }],
     },
     slots: {
       'preview-cover': 'Custom Preview Cover',
     },
   });
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper.find('.van-uploader__preview-cover').html()).toMatchSnapshot();
+});
+
+test('should render preview-delete slot correctly', async () => {
+  const wrapper = mount(Uploader, {
+    props: {
+      modelValue: [{ url: IMAGE }],
+    },
+    slots: {
+      'preview-delete': 'Custom Preview Delete',
+    },
+  });
+
+  expect(
+    wrapper.find('.van-uploader__preview-delete').html()
+  ).toMatchSnapshot();
 });
 
 test('should not render upload input when using readonly prop', async () => {

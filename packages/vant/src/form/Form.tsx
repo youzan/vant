@@ -18,6 +18,7 @@ import type {
   FieldTextAlign,
   FieldValidateError,
   FieldValidateTrigger,
+  FieldValidationStatus,
 } from '../field/types';
 import type { FormExpose } from './types';
 
@@ -141,6 +142,12 @@ export default defineComponent({
       });
     };
 
+    const getValidationStatus = () =>
+      children.reduce<Record<string, FieldValidationStatus>>((form, field) => {
+        form[field.name] = field.getValidationStatus();
+        return form;
+      }, {});
+
     const scrollToField = (
       name: string,
       options?: boolean | ScrollIntoViewOptions
@@ -186,6 +193,7 @@ export default defineComponent({
       getValues,
       scrollToField,
       resetValidation,
+      getValidationStatus,
     });
 
     return () => (

@@ -6,9 +6,9 @@ exports[`should render content slot correctly 1`] = `
 </div>
 `;
 
-exports[`should render nothing when content is empty string 1`] = ``;
+exports[`should render nothing when content is empty string 1`] = `""`;
 
-exports[`should render nothing when content is undefined 1`] = ``;
+exports[`should render nothing when content is undefined 1`] = `""`;
 
 exports[`should render nothing when content is zero 1`] = `
 <div class="van-badge van-badge--top-right">
