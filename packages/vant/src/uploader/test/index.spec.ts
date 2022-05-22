@@ -565,7 +565,7 @@ test('close-preview event', async () => {
   });
 
   await later();
-  wrapper.find('.van-image').trigger('click');
+  await wrapper.find('.van-image').trigger('click');
 
   const preview = document.querySelector<HTMLDivElement>('.van-image-preview');
   const swipe = preview?.querySelector<HTMLDivElement>(
