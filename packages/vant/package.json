@@ -3,27 +3,11 @@
   "version": "3.4.9",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/vant.cjs.js",
-  "module": "es/index.js",
+  "module": "es/index.mjs",
   "style": "lib/index.css",
   "typings": "lib/index.d.ts",
   "unpkg": "lib/vant.min.js",
   "jsdelivr": "lib/vant.min.js",
-  "exports": {
-    ".": {
-      "node": {
-        "import": "./lib/ssr.mjs",
-        "require": "./lib/ssr.js"
-      },
-      "import": "./es/index.js",
-      "require": "./lib/vant.cjs.js",
-      "types": "./lib/index.d.ts"
-    },
-    "./es": "./es/index.js",
-    "./lib": "./lib/vant.cjs.js",
-    "./es/": "./es/",
-    "./lib/": "./lib/",
-    "./package.json": "./package.json"
-  },
   "files": [
     "es",
     "lib",

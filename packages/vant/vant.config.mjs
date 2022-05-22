@@ -5,6 +5,9 @@ export default {
     namedExport: true,
     skipInstall: ['lazyload'],
     packageManager: 'pnpm',
+    extensions: {
+      esm: '.mjs'
+    },
     site: {
       publicPath:
         (typeof window === 'undefined' && process.env.PUBLIC_PATH) || '/vant/',
