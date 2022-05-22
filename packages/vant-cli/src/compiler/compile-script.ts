@@ -51,7 +51,7 @@ export async function compileScript(
   ({ code } = esbuildResult);
 
   const extensionMap = getVantConfig().build?.extensions;
-  const extension = extensionMap[format] || '.js';
+  const extension = extensionMap?.[format] || '.js';
   const jsFilePath = replaceExt(filePath, extension);
   removeSync(filePath);
   outputFileSync(jsFilePath, code);
