@@ -3,7 +3,7 @@
   "version": "1.3.6",
   "description": "Vant Composition API",
   "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.esm.mjs",
   "typings": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
