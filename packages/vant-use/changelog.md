@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.4.0
+
+- Using `.mjs` extension, `dist/index.esm.js` -> `dist/index.esm.mjs`
+
 ## v1.3.6
 
 - Fix missing VisibilityState type
