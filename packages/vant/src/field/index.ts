@@ -17,6 +17,7 @@ export type {
   FieldValidateError,
   FieldAutosizeConfig,
   FieldValidateTrigger,
+  FieldValidationStatus,
 } from './types';
 
 declare module 'vue' {

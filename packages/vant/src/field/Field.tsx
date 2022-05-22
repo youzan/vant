@@ -59,6 +59,7 @@ import type {
   FieldFormatTrigger,
   FieldValidateError,
   FieldAutosizeConfig,
+  FieldValidationStatus,
   FieldValidateTrigger,
   FieldFormSharedProps,
 } from './types';
@@ -135,8 +136,8 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const id = useId();
     const state = reactive({
+      status: 'unvalidated' as FieldValidationStatus,
       focused: false,
-      validateFailed: false,
       validateMessage: '',
     });
 
@@ -181,7 +182,7 @@ export default defineComponent({
       rules.reduce(
         (promise, rule) =>
           promise.then(() => {
-            if (state.validateFailed) {
+            if (state.status === 'failed') {
               return;
             }
 
@@ -192,7 +193,7 @@ export default defineComponent({
             }
 
             if (!runSyncRule(value, rule)) {
-              state.validateFailed = true;
+              state.status = 'failed';
               state.validateMessage = getRuleMessage(value, rule);
               return;
             }
@@ -200,10 +201,10 @@ export default defineComponent({
             if (rule.validator) {
               return runRuleValidator(value, rule).then((result) => {
                 if (result && typeof result === 'string') {
-                  state.validateFailed = true;
+                  state.status = 'failed';
                   state.validateMessage = result;
                 } else if (result === false) {
-                  state.validateFailed = true;
+                  state.status = 'failed';
                   state.validateMessage = getRuleMessage(value, rule);
                 }
               });
@@ -213,10 +214,8 @@ export default defineComponent({
       );
 
     const resetValidation = () => {
-      if (state.validateFailed) {
-        state.validateFailed = false;
-        state.validateMessage = '';
-      }
+      state.status = 'unvalidated';
+      state.validateMessage = '';
     };
 
     const validate = (rules = props.rules) =>
@@ -224,12 +223,13 @@ export default defineComponent({
         resetValidation();
         if (rules) {
           runRules(rules).then(() => {
-            if (state.validateFailed) {
+            if (state.status === 'failed') {
               resolve({
                 name: props.name,
                 message: state.validateMessage,
               });
             } else {
+              state.status = 'passed';
               resolve();
             }
           });
@@ -352,7 +352,7 @@ export default defineComponent({
       if (typeof props.error === 'boolean') {
         return props.error;
       }
-      if (form && form.props.showError && state.validateFailed) {
+      if (form && form.props.showError && state.status === 'failed') {
         return true;
       }
     });
@@ -383,6 +383,8 @@ export default defineComponent({
     };
 
     const getInputId = () => props.id || `${id}-input`;
+
+    const getValidationStatus = () => state.status;
 
     const renderInput = () => {
       const controlClass = bem('control', [
@@ -531,6 +533,7 @@ export default defineComponent({
       validate,
       formValue,
       resetValidation,
+      getValidationStatus,
     });
 
     provide(CUSTOM_FIELD_INJECTION_KEY, {

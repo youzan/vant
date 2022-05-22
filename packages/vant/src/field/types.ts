@@ -66,6 +66,8 @@ export type FieldRule = {
   formatter?: FiledRuleFormatter;
 };
 
+export type FieldValidationStatus = 'passed' | 'failed' | 'unvalidated';
+
 // Shared props of Field and Form
 export type FieldFormSharedProps =
   | 'colon'
@@ -83,6 +85,7 @@ export type FieldExpose = {
     rules?: FieldRule[] | undefined
   ) => Promise<void | FieldValidateError>;
   resetValidation: () => void;
+  getValidationStatus: () => FieldValidationStatus;
   /** @private */
   formValue: ComputedRef<unknown>;
 };
