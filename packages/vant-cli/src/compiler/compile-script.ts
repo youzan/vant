@@ -2,7 +2,7 @@ import fse from 'fs-extra';
 import babel from '@babel/core';
 import esbuild, { type Format } from 'esbuild';
 import { sep } from 'path';
-import { isJsx, replaceExt } from '../common/index.js';
+import { isJsx, replaceExt, getVantConfig } from '../common/index.js';
 import { replaceCSSImportExt } from '../common/css.js';
 import { replaceScriptImportExt } from './get-deps.js';
 
@@ -50,7 +50,9 @@ export async function compileScript(
 
   ({ code } = esbuildResult);
 
-  const jsFilePath = replaceExt(filePath, '.js');
+  const extensionMap = getVantConfig().build?.extensions;
+  const extension = extensionMap[format] || '.js';
+  const jsFilePath = replaceExt(filePath, extension);
   removeSync(filePath);
   outputFileSync(jsFilePath, code);
 }

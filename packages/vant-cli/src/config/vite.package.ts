@@ -14,7 +14,9 @@ export function getViteConfigForPackage({
 }): InlineConfig {
   setBuildTarget('package');
 
-  const { name } = getVantConfig();
+  const { name, build } = getVantConfig();
+  const entryExtension = build?.extensions?.esm || '.js';
+  const entry = join(ES_DIR, `index${entryExtension}`);
 
   return {
     root: CWD,
@@ -24,7 +26,7 @@ export function getViteConfigForPackage({
     build: {
       lib: {
         name,
-        entry: join(ES_DIR, 'index.js'),
+        entry,
         formats,
         fileName: (format: string) => {
           const suffix = format === 'umd' ? '' : `.${format}`;
