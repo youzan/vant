@@ -540,9 +540,10 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Form i
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | submit | Submit form | - | - |
-| validate | Validate form | _name?: string \| string[]_ | _Promise_ |
 | getValues `v3.4.8` | Get current form values | - | _Record<string, unknown>_ |
+| validate | Validate form | _name?: string \| string[]_ | _Promise\<void\>_ |
 | resetValidation | Reset validation | _name?: string \| string[]_ | - |
+| getValidationStatus `v3.5.0` | Get validation status of all fields，status can be `passed`、`failed`、`unvalidated` | - | _Record\<string, FieldValidationStatus\>_ |
 | scrollToField | Scroll to field | _name: string, alignToTop: boolean_ | - |
 
 ### Types

@@ -346,6 +346,7 @@ import type {
   FieldValidateError,
   FieldAutosizeConfig,
   FieldValidateTrigger,
+  FieldValidationStatus,
 } from 'vant';
 ```
 
