@@ -63,7 +63,7 @@ export function isImageUrl(url: string): boolean {
   return IMAGE_REGEXP.test(url);
 }
 
-export function isImageFile(item: FileListItem): boolean {
+export function isImageFile(item: any): boolean {
   // some special urls cannot be recognized
   // user can add `isImage` flag to mark it as an image url
   if (item.isImage) {
@@ -80,6 +80,10 @@ export function isImageFile(item: FileListItem): boolean {
 
   if (item.content) {
     return item.content.indexOf('data:image') === 0;
+  }
+
+  if (item) {
+    return isImageUrl(item);
   }
 
   return false;

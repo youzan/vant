@@ -339,7 +339,7 @@ export default createComponent({
       }
 
       const imageFiles = this.fileList.filter((item) => isImageFile(item));
-      const imageContents = imageFiles.map((item) => item.content || item.url);
+      const imageContents = imageFiles.map((item) => item.content || item.url || item);
 
       this.imagePreview = ImagePreview({
         images: imageContents,
