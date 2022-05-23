@@ -128,7 +128,7 @@ export default createComponent({
   },
   methods: {
     fromValue(value) {
-      if (this.converter === 'json' || this.converter === 'simple')
+      if (this.converter === 'json')
           try {
             if(value === null || value === '') return [];
             if(typeof value === 'string') return JSON.parse(value || '[]');
@@ -136,20 +136,27 @@ export default createComponent({
           } catch (err) {
             return [];
           }
-        else
-            return value || [];
+      else if (this.converter === 'simple')
+          try {
+              if(!value) return [];
+              return value.split(",");
+          } catch (err) {
+              return [];
+          }
+      else
+          return value || [];
     },
     toValue(value) {
         if (this.converter === 'json')
             // fix for u-validator rules="required"
             return Array.isArray(value) && value.length === 0 ? '[]' : JSON.stringify(value);
         if (this.converter === 'simple')
-            return Array.isArray(value) && value.length === 0 ? '[]' : JSON.stringify(this.simpleConvert(value));
+            return Array.isArray(value) && value.length === 0 ? '[]' : (this.simpleConvert(value));
         else
             return value;
     },
     simpleConvert(value) {
-      return value.map((x) => ({ url: x.url }));
+      return value.map((x) => ({ url: x.url })).join(",");
     },
     getDetail(index = this.fileList.length) {
       return {
@@ -415,7 +422,7 @@ export default createComponent({
       const Preview = isImageFile(item) ? (
         <Image
           fit={imageFit}
-          src={item.content || item.url}
+          src={item.content || item.url || item}
           class={bem('preview-image')}
           width={previewSize}
           height={previewSize}

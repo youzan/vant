@@ -94,6 +94,11 @@ export default createComponent({
 
   methods: {
     getSrc(src) {
+      const reg = /^([^\[\]]+)(\,([^\[\]]+)){0,}$/g;
+      if (typeof src === 'string' && reg.test(src)) {
+          return src.split(',')[0];
+      }
+
       try {
           const tempSrc = JSON.parse(src);
           const tempItem = tempSrc[0];
