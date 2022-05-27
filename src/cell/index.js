@@ -45,6 +45,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    singleslot: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -101,7 +105,7 @@ export default createComponent({
     const props = this._props;
     const parent = this.$parent;
     const that = this;
-    const { icon, size, title, label, value, isLink, infield, novalue, rtitle, notitle, notitleblock } = this._props;
+    const { icon, size, title, label, value, isLink, infield, novalue, rtitle, notitle, notitleblock, singleslot } = this._props;
     const showTitle = true || slots('title') || isDefB(title);
     const ifDesigner = (parent.$env && parent.$env.VUE_APP_DESIGNER);
     function Labelb() {
@@ -129,6 +133,7 @@ export default createComponent({
             </div>
           );
         }
+        if(ifDesigner && singleslot) return null;
         return (
           <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-scope-id={that.$vnode.context.$options._scopeId} vusion-slot-name="title">
             {slots('title') ? slots('title') : title}
@@ -146,7 +151,7 @@ export default createComponent({
       if (novalue) return null;
       if (ifDesigner) {
         return (
-          <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default" vusion-scope-id={that.$vnode.context.$options._scopeId}>
+          <div class={[bem('value', { alone: singleslot }), props.valueClass]} vusion-slot-name="default" vusion-scope-id={that.$vnode.context.$options._scopeId}>
             {slots() ? slots()  : (isDef(rtitle) && rtitle !== '' ? <span>{rtitle}</span>  : null)}
             {((!isDef(rtitle) || rtitle === '') && !slots()) ? <van-empty-col></van-empty-col> : null}
           </div>
@@ -154,7 +159,7 @@ export default createComponent({
       } else {
         if (showValue) {
           return (
-            <div class={[bem('value', { alone: !showTitle }), props.valueClass]}>
+            <div class={[bem('value', { alone: singleslot }), props.valueClass]}>
               {slots() ? slots() : <span>{rtitle}</span>}
             </div>
           );
