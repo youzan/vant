@@ -122,6 +122,7 @@ export default createComponent({
         if (!ifDesigner && (!isDef(title) || title === '') && !slots('title')) return null;
         if (notitleblock && !title) return null;
         if (notitle) {
+          if ((!isDef(title) || title === '') && !slots('title')) return null;
           return (
             <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title">
               {slots('title') ? slots('title') : title}
