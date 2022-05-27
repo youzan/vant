@@ -62,6 +62,7 @@
       type: string, number
       default2: 内容
       description: 值
+      advanced: true
     - name: rtitle
       title: 右侧文本
       type: string
