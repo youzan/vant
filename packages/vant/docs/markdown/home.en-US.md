@@ -39,7 +39,7 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 | Project | Description |
 | --- | --- |
 | [vant-weapp](https://github.com/youzan/vant-weapp) | WeChat MiniProgram UI |
-| [vant-demo](https://github.com/youzan/vant-demo) | Collection of Vant demos |
+| [vant-demo](https://github.com/vant-ui/vant-demo) | Collection of Vant demos |
 | [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | Scaffold for UI library |
 | [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant icons |
 | [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | Using vant in desktop browsers |
