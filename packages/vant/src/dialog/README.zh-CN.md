@@ -156,7 +156,7 @@ export default {
 
 ```html
 <van-dialog v-model:show="show" title="标题" show-cancel-button>
-  <img src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-3.jpeg" />
+  <img src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-3.jpeg" />
 </van-dialog>
 ```
 

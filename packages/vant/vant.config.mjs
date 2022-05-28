@@ -34,15 +34,15 @@ export default {
         title: 'Vant 3',
         subtitle: '（适用于 Vue 3）',
         description: '轻量、可靠的移动端组件库',
-        logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/logo.png',
+        logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
         langLabel: '中',
         links: [
           {
-            logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/weapp.svg',
+            logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/weapp.svg',
             url: 'https://vant-contrib.gitee.io/vant-weapp/',
           },
           {
-            logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/github.svg',
+            logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/github.svg',
             url: 'https://github.com/youzan/vant',
           },
         ],
@@ -482,11 +482,11 @@ export default {
         title: 'Vant 3',
         subtitle: ' (for Vue 3)',
         description: 'Mobile UI Components built on Vue',
-        logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/logo.png',
+        logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
         langLabel: 'EN',
         links: [
           {
-            logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/github.svg',
+            logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/github.svg',
             url: 'https://github.com/youzan/vant',
           },
         ],

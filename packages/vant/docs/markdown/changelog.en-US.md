@@ -1034,7 +1034,7 @@ Reference: [Vant 3.0 正式发布：全面拥抱 Vue 3](https://github.com/youza
 
 - add Cascader component [#7771](https://github.com/youzan/vant/pull/7771)
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/cascader_1221.png">
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/cascader_1221.png">
 
 **Feature**
 

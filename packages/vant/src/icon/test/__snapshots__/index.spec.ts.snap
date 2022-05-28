@@ -33,7 +33,7 @@ exports[`should render icon with local image correctly 1`] = `
 exports[`should render icon with url name correctly 1`] = `
 <i class="van-badge__wrapper van-icon">
   <img class="van-icon__image"
-       src="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+       src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
   >
 </i>
 `;

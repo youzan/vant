@@ -1254,7 +1254,7 @@ exports[`should use custom src when using empty-image prop 1`] = `
         >
           <div class="van-empty">
             <div class="van-empty__image">
-              <img src="https://cdn.jsdelivr.net/npm/@vant/assets/xxx.jpeg">
+              <img src="https://fastly.jsdelivr.net/npm/@vant/assets/xxx.jpeg">
             </div>
             <div class="van-empty__bottom">
               <p class="van-coupon-list__empty-tip">

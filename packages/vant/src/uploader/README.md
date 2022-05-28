@@ -50,7 +50,7 @@ import { ref } from 'vue';
 export default {
   setup() {
     const fileList = ref([
-      { url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg' },
+      { url: 'https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg' },
       { url: 'https://cloud-image', isImage: true },
     ]);
 
@@ -74,12 +74,12 @@ export default {
   setup() {
     const fileList = ref([
       {
-        url: 'https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg',
+        url: 'https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg',
         status: 'uploading',
         message: 'Uploading...',
       },
       {
-        url: 'https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg',
+        url: 'https://fastly.jsdelivr.net/npm/@vant/assets/tree.jpeg',
         status: 'failed',
         message: 'Failed',
       },
@@ -281,14 +281,14 @@ export default {
   setup() {
     const fileList = ref([
       {
-        url: 'https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg',
+        url: 'https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg',
         deletable: true,
         beforeDelete: () => {
           Toast('Customize the events and styles of a single preview image');
         },
       },
       {
-        url: 'https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg',
+        url: 'https://fastly.jsdelivr.net/npm/@vant/assets/tree.jpeg',
         imageFit: 'contain',
       },
     ]);

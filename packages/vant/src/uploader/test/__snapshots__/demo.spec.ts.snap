@@ -20,7 +20,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-uploader__wrapper">
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
+          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -40,7 +40,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg"
+          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/tree.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -75,7 +75,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-uploader__wrapper">
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
+          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -109,7 +109,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg"
+          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/tree.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -150,7 +150,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-uploader__wrapper">
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg"
+          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -185,7 +185,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-uploader__wrapper">
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg"
+          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -243,7 +243,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-uploader__wrapper">
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
+          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -284,7 +284,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-image van-uploader__preview-image"
              style="width: 60px; height: 60px;"
         >
-          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
+          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -349,7 +349,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-uploader__wrapper">
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/sand.jpeg"
+          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg"
                class="van-image__img"
                style="object-fit: cover;"
           >
@@ -369,7 +369,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-uploader__preview">
         <div class="van-image van-uploader__preview-image">
-          <img src="https://cdn.jsdelivr.net/npm/@vant/assets/tree.jpeg"
+          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/tree.jpeg"
                class="van-image__img"
                style="object-fit: contain;"
           >

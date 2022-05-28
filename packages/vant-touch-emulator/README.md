@@ -26,7 +26,7 @@ import '@vant/touch-emulator';
 ## CDN 引入
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@vant/touch-emulator"></script>
+<script src="https://fastly.jsdelivr.net/npm/@vant/touch-emulator"></script>
 ```
 
 ## 禁用 touch 模拟

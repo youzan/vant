@@ -43,7 +43,7 @@ app.use(SwipeCell);
     desc="Description"
     title="Title"
     class="goods-card"
-    thumb="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+    thumb="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
   />
   <template #right>
     <van-button square text="Delete" type="danger" class="delete-button" />
