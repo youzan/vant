@@ -9,9 +9,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Install pnpm
-      uses: pnpm/action-setup@v2.0.1
-      with:
-        version: 6.20.3
+      run: npm i pnpm@7 -g
 
     - uses: actions/setup-node@v2
       with:
@@ -30,9 +28,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Install pnpm
-      uses: pnpm/action-setup@v2.0.1
-      with:
-        version: 6.20.3
+      run: npm i pnpm@7 -g
 
     - uses: actions/setup-node@v2
       with:
@@ -56,9 +52,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Install pnpm
-      uses: pnpm/action-setup@v2.0.1
-      with:
-        version: 6.20.3
+      run: npm i pnpm@7 -g
 
     - uses: actions/setup-node@v2
       with:

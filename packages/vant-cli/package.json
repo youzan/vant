@@ -42,6 +42,7 @@
     "@types/fs-extra": "^9.0.13",
     "@types/less": "^3.0.3",
     "@types/markdown-it": "^12.2.3",
+    "@jest/types": "^27",
     "vue": "^3.2.27"
   },
   "dependencies": {
