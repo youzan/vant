@@ -80,7 +80,7 @@ pnpm add vant
 
 ### 示例工程
 
-我们提供了丰富的[示例工程](https://github.com/youzan/vant-demo)，通过示例工程你可以了解如下内容：
+我们提供了丰富的[示例工程](https://github.com/vant-ui/vant-demo)，通过示例工程你可以了解如下内容：
 
 - 基于 Vite 和 Vant 搭建应用
 - 基于 Nuxt 和 Vant 搭建应用
