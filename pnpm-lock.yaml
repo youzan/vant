@@ -49,6 +49,7 @@ importers:
 
   packages/vant:
     specifiers:
+      '@types/node': ^16
       '@vant/area-data': workspace:*
       '@vant/cli': workspace:*
       '@vant/eslint-config': workspace:*
@@ -65,6 +66,7 @@ importers:
       '@vant/popperjs': link:../vant-popperjs
       '@vant/use': link:../vant-use
     devDependencies:
+      '@types/node': 16.11.36
       '@vant/area-data': link:../vant-area-data
       '@vant/cli': link:../vant-cli
       '@vant/eslint-config': link:../vant-eslint-config
@@ -1351,6 +1353,10 @@ packages:
 
   /@types/minimist/1.2.2:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
+
+  /@types/node/16.11.36:
+    resolution: {integrity: sha512-FR5QJe+TaoZ2GsMHkjuwoNabr+UrJNRr2HNOo+r/7vhcuntM6Ee/pRPOnRhhL2XE9OOvX9VLEq+BcXl3VjNoWA==}
+    dev: true
 
   /@types/node/17.0.35:
     resolution: {integrity: sha512-vu1SrqBjbbZ3J6vwY17jBs8Sr/BKA+/a/WtjRG+whKg1iuLFOosq872EXS0eXWILdO36DHQQeku/ZcL6hz2fpg==}
