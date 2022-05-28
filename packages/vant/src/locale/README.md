@@ -49,7 +49,7 @@ Current supported languages:
 | Greek                    | el-GR        | `v3.5.0` |
 | English                  | en-US        | -        |
 | Spanish (Spain)          | es-ES        | -        |
-| Farsi                    | fa-IR        | `v3.4.9` |
+| Farsi                    | fa-IR        | `v3.5.0` |
 | French                   | fr-FR        | -        |
 | Hebrew                   | he-IL        | `v3.5.0` |
 | Hindi                    | hi-IN        | `v3.4.3` |
