@@ -19,10 +19,12 @@
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
+    <% if (htmlWebpackPlugin.options.usingSearch) { %>
     <link
-      href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css"
+      href="https://fastly.jsdelivr.net/docsearch.js/2/docsearch.min.css"
       rel="stylesheet"
     />
+    <% } %>
     <% if (htmlWebpackPlugin.options.baiduAnalytics) { %>
     <script>
       var _hmt = _hmt || [];
@@ -38,6 +40,8 @@
   </head>
   <body ontouchstart>
     <div id="app"></div>
-    <script src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+    <% if (htmlWebpackPlugin.options.usingSearch) { %>
+    <script src="https://fastly.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+    <% } %>
   </body>
 </html>
