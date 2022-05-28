@@ -207,7 +207,7 @@ exports[`should render demo and match snapshot 1`] = `
          aria-checked="true"
     >
       <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
-        <img src="https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png">
+        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png">
       </div>
       <span class="van-radio__label">
         Radio 1
@@ -219,7 +219,7 @@ exports[`should render demo and match snapshot 1`] = `
          aria-checked="false"
     >
       <div class="van-radio__icon van-radio__icon--round">
-        <img src="https://cdn.jsdelivr.net/npm/@vant/assets/user-inactive.png">
+        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/user-inactive.png">
       </div>
       <span class="van-radio__label">
         Radio 2

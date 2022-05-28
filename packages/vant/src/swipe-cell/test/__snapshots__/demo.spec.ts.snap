@@ -63,7 +63,7 @@ exports[`should render demo and match snapshot 1`] = `
             <div class="van-image"
                  style="width: 100%; height: 100%;"
             >
-              <img src="https://cdn.jsdelivr.net/npm/@vant/assets/ipad.jpeg"
+              <img src="https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg"
                    class="van-image__img"
                    style="object-fit: cover;"
               >

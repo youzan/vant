@@ -44,7 +44,7 @@ export default {
     // title
     title: 'Demo UI',
     // logo
-    logo: 'https://cdn.jsdelivr.net/npm/@vant/assets/logo.png',
+    logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
     // description
     description: '示例组件库',
     // left nav

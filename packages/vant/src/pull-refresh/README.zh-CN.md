@@ -77,7 +77,7 @@ export default {
   <template #pulling="props">
     <img
       class="doge"
-      src="https://cdn.jsdelivr.net/npm/@vant/assets/doge.png"
+      src="https://fastly.jsdelivr.net/npm/@vant/assets/doge.png"
       :style="{ transform: `scale(${props.distance / 80})` }"
     />
   </template>
@@ -86,7 +86,7 @@ export default {
   <template #loosing>
     <img
       class="doge"
-      src="https://cdn.jsdelivr.net/npm/@vant/assets/doge.png"
+      src="https://fastly.jsdelivr.net/npm/@vant/assets/doge.png"
     />
   </template>
 
@@ -94,7 +94,7 @@ export default {
   <template #loading>
     <img
       class="doge"
-      src="https://cdn.jsdelivr.net/npm/@vant/assets/doge-fire.jpeg"
+      src="https://fastly.jsdelivr.net/npm/@vant/assets/doge-fire.jpeg"
     />
   </template>
   <p>刷新次数: {{ count }}</p>

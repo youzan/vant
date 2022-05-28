@@ -92,9 +92,10 @@ export default {
   data() {
     return {
       checked: true,
-      activeIcon: 'https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png',
+      activeIcon:
+        'https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png',
       inactiveIcon:
-        'https://cdn.jsdelivr.net/npm/@vant/assets/user-inactive.png',
+        'https://fastly.jsdelivr.net/npm/@vant/assets/user-inactive.png',
     };
   },
 };
@@ -224,4 +225,4 @@ iPhone X 等机型底部存在底部指示条，指示条的操作区域与页�
 <van-number-keyboard safe-area-inset-bottom />
 ```
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/safearea.png">
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/safearea.png">

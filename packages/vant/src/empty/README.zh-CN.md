@@ -60,7 +60,7 @@ Empty 组件内置了多种占位图片类型，可以在不同业务场景下�
 
 ```html
 <van-empty
-  image="https://cdn.jsdelivr.net/npm/@vant/assets/custom-empty-image.png"
+  image="https://fastly.jsdelivr.net/npm/@vant/assets/custom-empty-image.png"
   image-size="80"
   description="描述文字"
 />

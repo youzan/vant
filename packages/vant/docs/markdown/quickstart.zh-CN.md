@@ -36,12 +36,12 @@ pnpm add vant
 <!-- 引入样式文件 -->
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/vant@3/lib/index.css"
+  href="https://fastly.jsdelivr.net/npm/vant@3/lib/index.css"
 />
 
 <!-- 引入 Vue 和 Vant 的 JS 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@3/lib/vant.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/vue@3"></script>
+<script src="https://fastly.jsdelivr.net/npm/vant@3/lib/vant.min.js"></script>
 
 <script>
   // 在 #app 标签下渲染一个按钮组件

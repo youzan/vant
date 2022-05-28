@@ -58,7 +58,7 @@ You can set the width and height separately.
 
 ```html
 <van-empty
-  image="https://cdn.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
+  image="https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
   image-size="80"
   description="Description"
 />

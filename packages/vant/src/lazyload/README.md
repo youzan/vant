@@ -34,8 +34,8 @@ export default {
   setup() {
     return {
       imageList: [
-        'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-        'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+        'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+        'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
       ],
     };
   },

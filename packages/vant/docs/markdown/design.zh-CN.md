@@ -12,15 +12,15 @@
 
 #### 色彩规范
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/color_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/color_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
 #### 字体规范
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/words_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/words_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
 #### 组件规范
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/tab_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/tab_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
 <a class="design-download" href="https://github.com/youzan/vant/blob/dev/packages/vant/docs/assets/design.sketch?raw=true">下载</a>
 
@@ -28,7 +28,7 @@
 
 包含 Sketch 格式的图标库资源。
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/design-icons-0321.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/design-icons-0321.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
 <a class="design-download" href="https://github.com/youzan/vant/blob/dev/packages/vant-icons/assets/icons.sketch?raw=true">下载</a>
 
@@ -40,7 +40,7 @@ Vant 的所有图标都托管在 **iconfont.cn** 上，点此查看：[Vant 图�
 
 Axure 元件库，由社区的 [@axure-tczy](https://github.com/axure-tczy) 同学贡献。
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/vant-axure-0905.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/vant-axure-0905.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
 <a class="design-download" href="https://github.com/vant-ui/vant-assets/blob/main/design/axure-20200905.zip?raw=true">下载</a>
 
