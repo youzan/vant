@@ -16,12 +16,15 @@ export async function compileScript(
     return;
   }
 
+  const extensionMap = getVantConfig().build?.extensions;
+  const extension = extensionMap?.[format] || '.js';
+
   let code = readFileSync(filePath, 'utf-8');
 
   if (!filePath.includes(`${sep}style${sep}`)) {
     code = replaceCSSImportExt(code);
   }
-  code = replaceScriptImportExt(code, '.vue', '');
+  code = replaceScriptImportExt(code, filePath, extension);
 
   if (isJsx(filePath)) {
     const babelResult = await babel.transformAsync(code, {
@@ -50,9 +53,8 @@ export async function compileScript(
 
   ({ code } = esbuildResult);
 
-  const extensionMap = getVantConfig().build?.extensions;
-  const extension = extensionMap?.[format] || '.js';
   const jsFilePath = replaceExt(filePath, extension);
+
   removeSync(filePath);
   outputFileSync(jsFilePath, code);
 }
