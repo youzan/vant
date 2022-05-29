@@ -46,26 +46,6 @@ export default {
             url: 'https://github.com/youzan/vant',
           },
         ],
-        searchConfig: {
-          appId: 'BLI2GGOUL8',
-          apiKey: '07cb725cd26aa496996de6cb8ab9b5cc',
-          indexName: 'vant',
-          searchParameters: {
-            facetFilters: ['lang:zh-CN', 'version:v3'],
-          },
-          transformItems(items) {
-            if (location.hostname !== 'youzan.github.io') {
-              items.forEach((item) => {
-                if (item.url) {
-                  item.url =
-                    item.url &&
-                    item.url.replace('youzan.github.io', location.hostname);
-                }
-              });
-            }
-            return items;
-          },
-        },
         nav: [
           {
             title: '开发指南',
@@ -490,14 +470,6 @@ export default {
             url: 'https://github.com/youzan/vant',
           },
         ],
-        searchConfig: {
-          appId: 'BLI2GGOUL8',
-          apiKey: '07cb725cd26aa496996de6cb8ab9b5cc',
-          indexName: 'vant',
-          searchParameters: {
-            facetFilters: ['lang:en-US', 'version:v3'],
-          },
-        },
         nav: [
           {
             title: 'Essentials',
