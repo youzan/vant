@@ -738,7 +738,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Field: incorrect disabled color in iOS 14 [#7206](https://github.com/youzan/vant/issues/7206)
 - List: scoped style not applied to first child [#7202](https://github.com/youzan/vant/issues/7202)
 - Swipe: can't disable loop in some cases [#7208](https://github.com/youzan/vant/issues/7208)
-- Swipe: incorrect indicator color trantision [#7207](https://github.com/youzan/vant/issues/7207)
+- Swipe: incorrect indicator color transition [#7207](https://github.com/youzan/vant/issues/7207)
 
 ### [v2.10.7](https://github.com/youzan/vant/compare/v2.10.6...v2.10.7)
 
