@@ -5,6 +5,12 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.mjs",
   "typings": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.mjs",
+      "require": "./dist/index.cjs.js"
+    }
+  },
   "sideEffects": false,
   "files": [
     "dist"
