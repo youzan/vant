@@ -3,9 +3,6 @@
 </template>
 
 <script>
-import '@docsearch/css';
-import docsearch from '@docsearch/js';
-
 export default {
   name: 'VanDocSearch',
 
@@ -27,9 +24,12 @@ export default {
   methods: {
     initDocsearch() {
       if (this.searchConfig) {
-        docsearch({
-          ...this.searchConfig,
-          container: '#docsearch',
+        import('@docsearch/css');
+        import('@docsearch/js').then((docsearch) => {
+          docsearch.default({
+            ...this.searchConfig,
+            container: '#docsearch',
+          });
         });
       }
     },
