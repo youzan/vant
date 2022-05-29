@@ -42,8 +42,11 @@
     "@types/fs-extra": "^9.0.13",
     "@types/less": "^3.0.3",
     "@types/markdown-it": "^12.2.3",
+    "@types/react": "^18",
     "@jest/types": "^27",
-    "vue": "^3.2.27"
+    "vue": "^3.2.27",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
