@@ -257,8 +257,10 @@ export default createComponent({
     },
 
     getInitialDate() {
-      const { type, minDate, maxDate, defaultDate } = this;
-
+      let { type, minDate, maxDate, defaultDate } = this;
+      if (defaultDate) {
+        defaultDate = defaultDate.replace(/-/g, "/");
+      }
       if (defaultDate === null) {
         return typeof defaultDate === 'string' ? new Date(defaultDate) : defaultDate;
       }
@@ -463,8 +465,8 @@ export default createComponent({
     },
 
     onConfirm() {
-      this.$emit('confirm', (copyDates(this.currentDate)).formath("yyyy/MM/dd"));
-      this.$emit('update:default-date', (copyDates(this.currentDate)).formath("yyyy/MM/dd"));
+      this.$emit('confirm', (copyDates(this.currentDate)).formath("yyyy-MM-dd"));
+      this.$emit('update:default-date', (copyDates(this.currentDate)).formath("yyyy-MM-dd"));
       this.togglePopup();
       this.setTitle();
     },
