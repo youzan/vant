@@ -26,7 +26,7 @@ app.use(VanImage);
 <van-image
   width="100"
   height="100"
-  src="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
 />
 ```
 
@@ -39,7 +39,7 @@ app.use(VanImage);
   width="10rem"
   height="10rem"
   fit="contain"
-  src="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
 />
 ```
 
@@ -53,7 +53,7 @@ app.use(VanImage);
   height="10rem"
   fit="cover"
   position="left"
-  src="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
 />
 ```
 
@@ -66,7 +66,7 @@ app.use(VanImage);
   round
   width="10rem"
   height="10rem"
-  src="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
 />
 ```
 
@@ -79,7 +79,7 @@ app.use(VanImage);
   width="100"
   height="100"
   lazy-load
-  src="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
 />
 ```
 
@@ -96,7 +96,7 @@ app.use(Lazyload);
 `Image` 组件提供了默认的加载中提示，支持通过 `loading` 插槽自定义内容。
 
 ```html
-<van-image src="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg">
+<van-image src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg">
   <template v-slot:loading>
     <van-loading type="spinner" size="20" />
   </template>
@@ -108,7 +108,7 @@ app.use(Lazyload);
 `Image` 组件提供了默认的加载失败提示，支持通过 `error` 插槽自定义内容。
 
 ```html
-<van-image src="https://cdn.jsdelivr.net/npm/@vant/assets/cat.jpeg">
+<van-image src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg">
   <template v-slot:error>加载失败</template>
 </van-image>
 ```

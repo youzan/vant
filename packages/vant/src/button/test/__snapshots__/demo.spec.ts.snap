@@ -246,7 +246,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-button__content">
       <i class="van-badge__wrapper van-icon van-button__icon">
         <img class="van-icon__image"
-             src="https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png"
+             src="https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png"
         >
       </i>
       <span class="van-button__text">

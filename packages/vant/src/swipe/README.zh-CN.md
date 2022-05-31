@@ -58,8 +58,8 @@ app.use(SwipeItem);
 export default {
   setup() {
     const images = [
-      'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-      'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+      'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+      'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
     ];
     return { images };
   },

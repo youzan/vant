@@ -1,7 +1,8 @@
 const { build } = require('esbuild');
 
 function bundleBundle(format) {
-  const outfile = `dist/index.${format}.js`;
+  const ext = format === 'esm' ? '.mjs' : '.js';
+  const outfile = `dist/index.${format}${ext}`;
   const finish = () => console.log('Build finished:', outfile);
   const onRebuild = (error) => (error ? console.log(error) : finish());
 

@@ -12,15 +12,15 @@ Contains color specifications, font specifications, and component design specifi
 
 #### Colors
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/color_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/color_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
 #### Fonts
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/words_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/words_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
 #### Components
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/tab_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/tab_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
 <a class="design-download" href="https://github.com/youzan/vant/blob/dev/packages/vant/docs/assets/design.sketch?raw=true">Download</a>
 
@@ -28,13 +28,13 @@ Contains color specifications, font specifications, and component design specifi
 
 Contains icon library resources.
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/design-icons-0321.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/design-icons-0321.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
 <a class="design-download" href="https://github.com/youzan/vant/blob/dev/packages/vant-icons/assets/icons.sketch?raw=true">Download</a>
 
 ### Axure
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/vant-axure-0905.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/vant-axure-0905.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
 <a class="design-download" href="https://github.com/vant-ui/vant-assets/blob/main/design/axure-20200905.zip?raw=true">Download</a>
 

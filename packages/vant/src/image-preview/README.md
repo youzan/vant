@@ -22,8 +22,8 @@ app.use(ImagePreview);
 
 ```js
 ImagePreview([
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+  'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+  'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
 ]);
 ```
 
@@ -32,8 +32,8 @@ ImagePreview([
 ```js
 ImagePreview({
   images: [
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
   ],
   startPosition: 1,
 });
@@ -46,8 +46,8 @@ After setting the `closeable` attribute, the close icon will be displayed in the
 ```js
 ImagePreview({
   images: [
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
   ],
   closeable: true,
 });
@@ -60,8 +60,8 @@ import { Toast } from 'vant';
 
 ImagePreview({
   images: [
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
   ],
   onClose() {
     Toast('closed');
@@ -74,8 +74,8 @@ ImagePreview({
 ```js
 const instance = ImagePreview({
   images: [
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
   ],
   beforeClose: () => false,
 });
@@ -101,8 +101,8 @@ export default {
     const show = ref(false);
     const index = ref(0);
     const images = [
-      'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-      'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+      'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+      'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
     ];
     const onChange = (newIndex) => {
       index.value = newIndex;

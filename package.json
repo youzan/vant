@@ -2,12 +2,12 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "dev": "pnpm dev --dir ./packages/vant",
-    "lint": "pnpm lint --dir ./packages/vant",
-    "test": "pnpm test --dir ./packages/vant",
-    "test:watch": "pnpm test:watch --dir ./packages/vant",
-    "build": "pnpm build --dir ./packages/vant",
-    "build:site": "pnpm build:site --dir ./packages/vant"
+    "dev": "pnpm --dir ./packages/vant dev",
+    "lint": "pnpm --dir ./packages/vant lint",
+    "test": "pnpm --dir ./packages/vant test",
+    "test:watch": "pnpm --dir ./packages/vant test:watch",
+    "build": "pnpm --dir ./packages/vant build",
+    "build:site": "pnpm --dir ./packages/vant build:site"
   },
   "lint-staged": {
     "*.md": "prettier --write",
@@ -15,7 +15,7 @@
     "*.{ts,tsx,js,vue}": "eslint --fix",
     "*.{vue,css,less}": "stylelint --fix"
   },
-  "packageManager": "pnpm",
+  "packageManager": "pnpm@7.1.6",
   "devDependencies": {
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",

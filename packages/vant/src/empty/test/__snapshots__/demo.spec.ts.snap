@@ -538,7 +538,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-empty__image"
          style="width: 80px; height: 80px;"
     >
-      <img src="https://cdn.jsdelivr.net/npm/@vant/assets/custom-empty-image.png">
+      <img src="https://fastly.jsdelivr.net/npm/@vant/assets/custom-empty-image.png">
     </div>
     <p class="van-empty__description">
       Description

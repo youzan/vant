@@ -22,7 +22,7 @@ export function checkStyleExists(component: string) {
 // analyze component dependencies
 function analyzeComponentDeps(components: string[], component: string) {
   const checkList: string[] = [];
-  const componentEntry = fillExt(join(SRC_DIR, component, 'index'));
+  const componentEntry = fillExt(join(SRC_DIR, component, 'index')).path;
   const record = new Set();
 
   function search(filePath: string) {

@@ -98,7 +98,7 @@ exports[`should render demo and match snapshot 1`] = `
        aria-checked="true"
   >
     <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
-      <img src="https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png">
+      <img src="https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png">
     </div>
     <span class="van-checkbox__label">
       Custom Icon

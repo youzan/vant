@@ -89,9 +89,10 @@ export default {
     const checked = ref(true);
     return {
       checked,
-      activeIcon: 'https://cdn.jsdelivr.net/npm/@vant/assets/user-active.png',
+      activeIcon:
+        'https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png',
       inactiveIcon:
-        'https://cdn.jsdelivr.net/npm/@vant/assets/user-inactive.png',
+        'https://fastly.jsdelivr.net/npm/@vant/assets/user-inactive.png',
     };
   },
 };

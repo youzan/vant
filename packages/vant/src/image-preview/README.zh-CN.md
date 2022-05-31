@@ -11,7 +11,7 @@
 ```js
 import { ImagePreview } from 'vant';
 
-ImagePreview(['https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg']);
+ImagePreview(['https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg']);
 ```
 
 ### 组件调用
@@ -57,8 +57,8 @@ export default {
 
 ```js
 ImagePreview([
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-  'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+  'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+  'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
 ]);
 ```
 
@@ -69,8 +69,8 @@ ImagePreview([
 ```js
 ImagePreview({
   images: [
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
   ],
   startPosition: 1,
 });
@@ -83,8 +83,8 @@ ImagePreview({
 ```js
 ImagePreview({
   images: [
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
   ],
   closeable: true,
 });
@@ -99,8 +99,8 @@ import { Toast } from 'vant';
 
 ImagePreview({
   images: [
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
   ],
   onClose() {
     Toast('关闭');
@@ -115,8 +115,8 @@ ImagePreview({
 ```js
 const instance = ImagePreview({
   images: [
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-    'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+    'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
   ],
   beforeClose: () => false,
 });
@@ -145,8 +145,8 @@ export default {
     const show = ref(false);
     const index = ref(0);
     const images = [
-      'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
-      'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
+      'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
+      'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
     ];
     const onChange = (newIndex) => {
       index.value = newIndex;

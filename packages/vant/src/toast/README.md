@@ -50,7 +50,7 @@ Toast({
 
 Toast({
   message: 'Custom Image',
-  icon: 'https://cdn.jsdelivr.net/npm/@vant/assets/logo.png',
+  icon: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
 });
 
 Toast.loading({

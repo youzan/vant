@@ -50,6 +50,7 @@ Locale.add(messages);
 | 希腊语               | el-GR        | `v3.5.0` |
 | 英语                 | en-US        | -        |
 | 西班牙语             | es-ES        | -        |
+| 波斯语               | fa-IR        | `v3.5.0` |
 | 法语                 | fr-FR        | -        |
 | 希伯来语             | he-IL        | `v3.5.0` |
 | 印地语               | hi-IN        | `v3.4.3` |

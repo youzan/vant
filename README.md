@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="logo" src="https://cdn.jsdelivr.net/npm/@vant/assets/logo.png" width="120" height="120" style="margin-bottom: 10px;">
+    <img alt="logo" src="https://fastly.jsdelivr.net/npm/@vant/assets/logo.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 
 <h1 align="center">Vant</h1>
@@ -87,7 +87,7 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 | Project | Description |
 | --- | --- |
 | [vant-weapp](https://github.com/youzan/vant-weapp) | WeChat MiniProgram UI |
-| [vant-demo](https://github.com/youzan/vant-demo) | Collection of Vant demos |
+| [vant-demo](https://github.com/vant-ui/vant-demo) | Collection of Vant demos |
 | [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | Scaffold for UI library |
 | [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant icons |
 | [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | Using vant in desktop browsers |
@@ -114,7 +114,7 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 
 You can scan the following QR code to access the demo：
 
-<img src="https://cdn.jsdelivr.net/npm/@vant/assets/preview-qrcode.png" width="220" height="220" >
+<img src="https://fastly.jsdelivr.net/npm/@vant/assets/preview-qrcode.png" width="220" height="220" >
 
 ## Core Team
 

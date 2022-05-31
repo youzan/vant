@@ -121,11 +121,11 @@ export default {
   <template #content>
     <van-image
       v-if="activeIndex === 0"
-      src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
+      src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
     />
     <van-image
       v-if="activeIndex === 1"
-      src="https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg"
+      src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg"
     />
   </template>
 </van-tree-select>
