@@ -196,6 +196,9 @@ export default createComponent({
 
     formValue() {
       if (this.children && (this.$scopedSlots.input || this.$slots.input)) {
+        if (this.children?.$options?._componentTag === 'van-calendar') {
+          return this.children.defaultDate;
+        }
         return this.children.value;
       }
       return (this.type === 'number' || this.type === 'digit') ? Number(this.value) : this.value;

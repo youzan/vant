@@ -12,7 +12,7 @@ export const FieldMixin = {
         field.$emit('input', (this.type === 'number' || this.type === 'digit') ? Number(value) : value);
         field.$emit('update:value', (this.type === 'number' || this.type === 'digit') ? Number(value) : value);
         field.resetValidation();
-        field.validateWithTrigger('onChange');
+        field.validateWithTriggerVusion('onChange');
       }
     },
     defaultDate() {
@@ -20,7 +20,7 @@ export const FieldMixin = {
 
       if (field) {
         field.resetValidation();
-        field.validateWithTrigger('onChange');
+        field.validateWithTriggerVusion('onChange');
       }
     },
   },
