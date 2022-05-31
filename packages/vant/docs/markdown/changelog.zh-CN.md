@@ -19,6 +19,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-alpha.4](https://github.com/youzan/vant/compare/v3.5.0-beta.0...v4.0.0-alpha.4)
+
+`2022-05-31`
+
+**Feature**
+
+- 适配 nuxt 3，现在 dist 目录下所有 esmodule 文件将使用 `.mjs` 文件后缀 [#10625](https://github.com/youzan/vant/issues/10625)
+
 ### [v4.0.0-alpha.3](https://github.com/youzan/vant/compare/v3.4.9...v4.0.0-alpha.3)
 
 `2022-05-02`

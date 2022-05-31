@@ -19,6 +19,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0-alpha.4](https://github.com/youzan/vant/compare/v3.5.0-beta.0...v4.0.0-alpha.4)
+
+`2022-05-31`
+
+**Feature**
+
+- using mjs extension for esmodule [#10625](https://github.com/youzan/vant/issues/10625)
+
 ### [v4.0.0-alpha.3](https://github.com/youzan/vant/compare/v3.4.9...v4.0.0-alpha.3)
 
 `2022-05-02`
