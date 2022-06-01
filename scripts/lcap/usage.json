@@ -3210,7 +3210,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-gallery>\\n</van-gallery>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-gallery :data-source=\\\"'https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg'\\\">\\n</van-gallery>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-gallery",
             "title": "画廊",
@@ -3222,7 +3222,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-gallery>\n</van-gallery>\n</template>\n"
+                    "code": "<template>\n<van-gallery :data-source=\"'https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg'\">\n</van-gallery>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -3230,7 +3230,7 @@
                     "name": "data-source",
                     "title": "数据源",
                     "type": "Array<Item> | Function | object",
-                    "default": "[\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\", \"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\", \"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\", \"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\", \"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\"]",
+                    "value": "https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg",
                     "description": "数据源"
                 }
             ],
