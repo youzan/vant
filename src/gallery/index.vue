@@ -73,6 +73,10 @@ export default {
           return item;
       },
       fromValue(value) {
+        const reg = /^([^\[\]]+)(\,([^\[\]]+)){0,}$/g;
+        if (typeof value === 'string' && reg.test(value)) {
+            return value.split(',');
+        }
         try {
           if (value === null || value === undefined) return [];
           if(typeof value === 'string') return JSON.parse(value || '[]');
