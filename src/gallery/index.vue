@@ -24,7 +24,7 @@ export default {
     props: {
       dataSource: {
             type: [Array, Object, Function],
-            default: () => '["https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg", "https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg", "https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg", "https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg", "https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg"]',
+            default: () => [],
         },
         num: {
             type: Number,
