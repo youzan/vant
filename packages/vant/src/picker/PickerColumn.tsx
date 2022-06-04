@@ -283,6 +283,8 @@ export default defineComponent({
 
     const getValue = (): PickerOption => state.options[state.index];
 
+    const hasOptions = () => state.options.length;
+
     setIndex(state.index);
 
     useParent(PICKER_KEY);
@@ -292,6 +294,7 @@ export default defineComponent({
       getValue,
       setValue,
       setOptions,
+      hasOptions,
       stopMomentum,
     });
 

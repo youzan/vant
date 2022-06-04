@@ -164,11 +164,12 @@ export default defineComponent({
         formattedColumns.value = columns as PickerObjectColumn[];
       }
 
-      hasOptions.value = formattedColumns.value.some(
-        (item) =>
-          item[columnsFieldNames.value.values] &&
-          item[columnsFieldNames.value.values].length !== 0
-      );
+      hasOptions.value =
+        formattedColumns.value.some(
+          (item) =>
+            item[columnsFieldNames.value.values] &&
+            item[columnsFieldNames.value.values].length !== 0
+        ) || children.some((item) => item.hasOptions);
     };
 
     // get indexes of all columns
