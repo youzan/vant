@@ -142,3 +142,30 @@ test('should render footer slot correctly', () => {
   });
   expect(wrapper.find('.van-dialog').html()).toMatchSnapshot();
 });
+
+test('should allow to disable confirm button', () => {
+  const wrapper = mount(Dialog, {
+    props: {
+      show: true,
+      message: 'message',
+      confirmButtonDisabled: true,
+    },
+  });
+  expect(wrapper.find('.van-dialog__confirm').classes()).toContain(
+    'van-button--disabled'
+  );
+});
+
+test('should allow to disable cancel button', () => {
+  const wrapper = mount(Dialog, {
+    props: {
+      show: true,
+      showCancelButton: true,
+      message: 'message',
+      cancelButtonDisabled: true,
+    },
+  });
+  expect(wrapper.find('.van-dialog__cancel').classes()).toContain(
+    'van-button--disabled'
+  );
+});
