@@ -76,6 +76,7 @@ export default defineComponent({
           onClick={onClick}
         >
           <div class={bem('node')}>{renderLoading()}</div>
+          {slots.background?.()}
         </div>
       );
     };

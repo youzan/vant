@@ -43,3 +43,27 @@ exports[`should apply inactive color to loading icon 1`] = `
   </span>
 </div>
 `;
+
+exports[`should render background slot correctly 1`] = `
+<div role="switch"
+     class="van-switch"
+     tabindex="0"
+     aria-checked="false"
+>
+  <div class="van-switch__node">
+  </div>
+  Custom background
+</div>
+`;
+
+exports[`should render node slot correctly 1`] = `
+<div role="switch"
+     class="van-switch"
+     tabindex="0"
+     aria-checked="false"
+>
+  <div class="van-switch__node">
+    Custom node
+  </div>
+</div>
+`;
