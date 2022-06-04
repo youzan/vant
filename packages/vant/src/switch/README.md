@@ -154,9 +154,10 @@ export default {
 
 ### Slots
 
-| Name          | Description                | SlotProps |
-| ------------- | -------------------------- | --------- |
-| node `v3.5.0` | Custom the content of node | -         |
+| Name                | Description                     | SlotProps |
+| ------------------- | ------------------------------- | --------- |
+| node `v3.5.0`       | Custom the content of node      | -         |
+| background `v3.5.0` | Custom the background of switch | -         |
 
 ### Types
 

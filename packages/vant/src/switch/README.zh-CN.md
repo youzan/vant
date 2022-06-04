@@ -146,16 +146,16 @@ export default {
 
 ### Props
 
-| 参数           | 说明                     | 类型               | 默认值    |
-| -------------- | ------------------------ | ------------------ | --------- |
-| v-model        | 开关选中状态             | _any_              | `false`   |
-| loading        | 是否为加载状态           | _boolean_          | `false`   |
-| disabled       | 是否为禁用状态           | _boolean_          | `false`   |
-| size           | 开关尺寸，默认单位为`px` | _number \| string_ | `30px`    |
-| active-color   | 打开时的背景色           | _string_           | `#1989fa` |
-| inactive-color | 关闭时的背景色           | _string_           | `white`   |
-| active-value   | 打开时对应的值           | _any_              | `true`    |
-| inactive-value | 关闭时对应的值           | _any_              | `false`   |
+| 参数           | 说明                      | 类型               | 默认值    |
+| -------------- | ------------------------- | ------------------ | --------- |
+| v-model        | 开关选中状态              | _any_              | `false`   |
+| loading        | 是否为加载状态            | _boolean_          | `false`   |
+| disabled       | 是否为禁用状态            | _boolean_          | `false`   |
+| size           | 开关尺寸，默认单位为 `px` | _number \| string_ | `30px`    |
+| active-color   | 打开时的背景色            | _string_           | `#1989fa` |
+| inactive-color | 关闭时的背景色            | _string_           | `white`   |
+| active-value   | 打开时对应的值            | _any_              | `true`    |
+| inactive-value | 关闭时对应的值            | _any_              | `false`   |
 
 ### Events
 
@@ -166,9 +166,10 @@ export default {
 
 ### Slots
 
-| 名称          | 说明             | 参数 |
-| ------------- | ---------------- | ---- |
-| node `v3.5.0` | 自定义按钮的内容 | -    |
+| 名称                | 说明                 | 参数 |
+| ------------------- | -------------------- | ---- |
+| node `v3.5.0`       | 自定义按钮的内容     | -    |
+| background `v3.5.0` | 自定义开关的背景内容 | -    |
 
 ### 类型定义
 
