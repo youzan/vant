@@ -56,8 +56,10 @@ const dialogProps = extend({}, popupSharedProps, {
   showCancelButton: Boolean,
   cancelButtonText: String,
   cancelButtonColor: String,
+  cancelButtonDisabled: Boolean,
   confirmButtonText: String,
   confirmButtonColor: String,
+  confirmButtonDisabled: Boolean,
   showConfirmButton: truthProp,
   closeOnClickOverlay: Boolean,
 });
@@ -197,6 +199,7 @@ export default defineComponent({
             class={bem('cancel')}
             style={{ color: props.cancelButtonColor }}
             loading={loading.cancel}
+            disabled={props.cancelButtonDisabled}
             onClick={onCancel}
           />
         )}
@@ -207,6 +210,7 @@ export default defineComponent({
             class={[bem('confirm'), { [BORDER_LEFT]: props.showCancelButton }]}
             style={{ color: props.confirmButtonColor }}
             loading={loading.confirm}
+            disabled={props.confirmButtonDisabled}
             onClick={onConfirm}
           />
         )}
@@ -222,6 +226,7 @@ export default defineComponent({
             class={bem('cancel')}
             color={props.cancelButtonColor}
             loading={loading.cancel}
+            disabled={props.cancelButtonDisabled}
             onClick={onCancel}
           />
         )}
@@ -232,6 +237,7 @@ export default defineComponent({
             class={bem('confirm')}
             color={props.confirmButtonColor}
             loading={loading.confirm}
+            disabled={props.confirmButtonDisabled}
             onClick={onConfirm}
           />
         )}

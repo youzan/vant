@@ -154,8 +154,10 @@ export default {
 | showCancelButton | Whether to show cancel button | _boolean_ | `false` |
 | cancelButtonText | Cancel button text | _string_ | `Cancel` |
 | cancelButtonColor | Cancel button color | _string_ | `black` |
+| confirmButtonDisabled `v3.5.0` | Whether to disable cancel button | _boolean_ | `false` |
 | confirmButtonText | Confirm button text | _string_ | `Confirm` |
 | confirmButtonColor | Confirm button color | _string_ | `#ee0a24` |
+| confirmButtonDisabled `v3.5.0` | Whether to disable confirm button | _boolean_ | `false` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | overlayClass | Custom overlay class | _string \| Array \| object_ | - |
 | overlayStyle | Custom overlay style | _object_ | - |
@@ -181,8 +183,10 @@ export default {
 | show-cancel-button | Whether to show cancel button | _boolean_ | `false` |
 | cancel-button-text | Cancel button text | _string_ | `Cancel` |
 | cancel-button-color | Cancel button color | _string_ | `black` |
+| cancel-button-disabled `v3.5.0` | Whether to disable cancel button | _boolean_ | `false` |
 | confirm-button-text | Confirm button text | _string_ | `Confirm` |
 | confirm-button-color | Confirm button color | _string_ | `#ee0a24` |
+| confirm-button-disabled `v3.5.0` | Whether to disable confirm button | _boolean_ | `false` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | overlay-class | Custom overlay class | _string_ | - |
 | overlay-style | Custom overlay style | _object_ | - |
