@@ -19,6 +19,40 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.5.0](https://github.com/youzan/vant/compare/v3.4.9...v3.5.0)
+
+`2022-06-05`
+
+**支持 Nuxt 3**
+
+为了支持 Nuxt 3，我们调整了部分 ESModule 文件的后缀名，从 `.js` 调整为 `.mjs`：
+
+- `vant/es/**/*.js` --> `vant/es/**/*.mjs`
+- `@vant/use/dist/index.esm.js` --> `@vant/use/dist/index.esm.mjs`
+- `@vant/popperjs/dist/index.esm.js` --> `@vant/popperjs/dist/index.esm.mjs`
+- `@vant/area-data/dist/index.esm.js` --> `@vant/area-data/dist/index.esm.mjs`
+
+webpack、vite 等构建工具默认支持 `.mjs` 后缀，因此不需要额外配置。对于 uni-app 等工具，可能需要添加配置来解析 `.mjs` 文件。
+
+**Feature**
+
+- `@vant/use` `@vant/popperjs` 等 npm 包添加 exports 字段 [#10650](https://github.com/youzan/vant/issues/10650)
+- Dialog: 支持禁用按钮 [#10665](https://github.com/youzan/vant/issues/10665)
+- Locale: 新增 Bulgarian 保加利亚语 [#10609](https://github.com/youzan/vant/issues/10609)
+- Locale: 新增 Farsi 波斯语 [#10637](https://github.com/youzan/vant/issues/10637)
+- Locale: 新增 Greek 希腊语 [#10621](https://github.com/youzan/vant/issues/10621)
+- Locale: 新增 Hebrew 希伯来语 [#10591](https://github.com/youzan/vant/issues/10591)
+- Switch: 新增 node 插槽 [#10573](https://github.com/youzan/vant/issues/10573)
+- Switch: 新增 background 插槽 [#10666](https://github.com/youzan/vant/issues/10666)
+- Form: 新增 getValidationStatus 方法 [#10620](https://github.com/youzan/vant/issues/10620)
+- Uploader: 新增 preview-delete 插槽 [#10606](https://github.com/youzan/vant/issues/10606)
+
+**Bug Fixes**
+
+- Area: 修复二次打开时未正确渲染遮罩层的问题 [#10664](https://github.com/youzan/vant/issues/10664)
+- field: 修复动态渲染插槽时可能导致输入框拼音被清空的问题 [#10582](https://github.com/youzan/vant/issues/10582)
+- Picker: 修复动态设置 columns-field-names 不生效的问题 [#10562](https://github.com/youzan/vant/issues/10562)
+
 ### [v3.4.9](https://github.com/youzan/vant/compare/v3.4.8...v3.4.9)
 
 `2022-05-02`

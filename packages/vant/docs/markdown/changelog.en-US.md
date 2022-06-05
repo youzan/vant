@@ -19,6 +19,40 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.5.0](https://github.com/youzan/vant/compare/v3.4.9...v3.5.0)
+
+`2022-06-05`
+
+**Support Nuxt 3**
+
+In order to support Nuxt 3, we adjusted the file extension of ESModules from `.js` to `.mjs`:
+
+- `vant/es/**/*.js` --> `vant/es/**/*.mjs`
+- `@vant/use/dist/index.esm.js` --> `@vant/use/dist/index.esm.mjs`
+- `@vant/popperjs/dist/index.esm.js` --> `@vant/popperjs/dist/index.esm.mjs`
+- `@vant/area-data/dist/index.esm.js` --> `@vant/area-data/dist/index.esm.mjs`
+
+webpack, vite and other build tools support the `.mjs` by default, so no additional configuration is needed. For tools like uni-app, you may need to add configuration to resolve the `.mjs` files.
+
+**Feature**
+
+- Add exports fields to sub-packages [#10650](https://github.com/youzan/vant/issues/10650)
+- Dialog: allow to disable confirm or cancel button [#10665](https://github.com/youzan/vant/issues/10665)
+- Locale: add Bulgarian lang [#10609](https://github.com/youzan/vant/issues/10609)
+- Locale: add Farsi lang [#10637](https://github.com/youzan/vant/issues/10637)
+- Locale: add Greek lang [#10621](https://github.com/youzan/vant/issues/10621)
+- Locale: add Hebrew lang [#10591](https://github.com/youzan/vant/issues/10591)
+- Switch: add node slot [#10573](https://github.com/youzan/vant/issues/10573)
+- Switch: add background slot [#10666](https://github.com/youzan/vant/issues/10666)
+- Form: add getValidationStatus method [#10620](https://github.com/youzan/vant/issues/10620)
+- Uploader: add preview-delete slot [#10606](https://github.com/youzan/vant/issues/10606)
+
+**Bug Fixes**
+
+- Area: failed to render picker mask after reopened [#10664](https://github.com/youzan/vant/issues/10664)
+- field: dynamic data causes the input to be emptied [#10582](https://github.com/youzan/vant/issues/10582)
+- Picker: picker columns-field-names responsiveness [#10562](https://github.com/youzan/vant/issues/10562)
+
 ### [v3.4.9](https://github.com/youzan/vant/compare/v3.4.8...v3.4.9)
 
 `2022-05-02`
