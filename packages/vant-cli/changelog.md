@@ -1,5 +1,12 @@
 # 更新日志
 
+## v2.11.7
+
+`2022-05-28`
+
+- 替换 `cdn.jsdelivr.net` 域名为 `fastly.jsdelivr.net`，修复无法访问的问题
+- 未使用 `searchConfig` 时，不加载 docsearch 相关文件
+
 ## v2.11.6
 
 `2022-04-28`

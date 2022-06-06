@@ -85,6 +85,7 @@ export function getSiteDevBaseConfig(): WebpackConfig {
         title,
         logo: siteConfig.logo,
         description: siteConfig.description,
+        usingSearch: !!siteConfig.searchConfig,
         chunks: ['chunks', 'site-desktop'],
         template: join(__dirname, '../../site/desktop/index.html'),
         filename: 'index.html',
