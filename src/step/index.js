@@ -23,18 +23,14 @@ export default createComponent({
     },
 
     lineStyle() {
-      const {activeColor,inactiveColor,alignCenter,direction} = this.parent
+      const { activeColor, inactiveColor, alignCenter, direction } = this.parent
       return {
         background: this.status === 'finish' ? activeColor : inactiveColor,
         top: (alignCenter && direction === 'vertical') && '50%'
       }
-      // if (this.status === 'finish') {
-      //   return { background: this.parent.activeColor,top: this.parent.alignCenter && '50%'};
-      // }
-      // return { background: this.parent.inactiveColor,top: this.parent.alignCenter && '50%'};
     },
-    circleContainerStyle(){
-      return { top: (this.parent.alignCenter && this.parent.direction === 'vertical') && '50%'};
+    circleContainerStyle() {
+      return { top: (this.parent.alignCenter && this.parent.direction === 'vertical') && '50%' };
     },
     titleStyle() {
       if (this.active) {
