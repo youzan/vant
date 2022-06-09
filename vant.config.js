@@ -359,6 +359,10 @@ module.exports = {
                 path: 'gallery',
                 title: 'gallery 画廊',
               },
+              {
+                path: 'cardu',
+                title: 'cardu 卡片',
+              },
             ],
           },
           {
@@ -769,6 +773,10 @@ module.exports = {
               {
                 path: 'gallery',
                 title: 'gallery 画廊',
+              },
+              {
+                path: 'cardu',
+                title: 'cardu 卡片',
               },
             ],
           },

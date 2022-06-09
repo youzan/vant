@@ -135,6 +135,7 @@ export default createComponent({
     },
 
     onClick(event) {
+      if (this.$parent.$options._componentTag === 'van-cardu') return;
       if (this.$listeners.click) {
         this.$emit('click', event);
       } else {

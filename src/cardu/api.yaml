@@ -1,0 +1,81 @@
+- name: van-cardu
+  title: 卡片
+  icon: card
+  labels:
+    - Container
+  description: 用于快速布局
+  next: false
+  nested: false
+  slots:
+    - name: default
+      description: 插入默认的元素
+    - name: cover
+      description: 插入图片
+  attrs:
+    - name: title
+      title: 标题
+      type: string
+      advanced: true
+      description: 卡片标题
+    - name: width
+      title: 宽度
+      type: string
+      advanced: true
+      description: 卡片宽度：像素或百分比
+      group: 样式属性
+    - name: sr
+      title: 风格
+      type: string
+      options:
+        - value: s
+          title: 方角
+        - value: r
+          title: 圆角
+      default: r
+      description: 图片风格
+    - name: shadow
+      title: 阴影
+      type: string
+      description: 卡片阴影显示时机
+      default: always
+      options:
+        - value: always
+          title: 一直显示
+        - value: hover
+          title: hover时显示
+        - value: never
+          title: 不显示
+      group: 样式属性
+    - name: border
+      title: 显示边框
+      type: boolean
+      default: true
+      description: 是否显示卡片边框
+      group: 样式属性
+    - name: split
+      title: 分割线
+      type: boolean
+      default: false
+      description: 是否显示分割线
+      group: 样式属性
+  events:
+    - name: $listeners
+      kind: trigger
+      description: 监听所有事件。
+      params: []
+- name: van-cardu-group
+  advanced: true
+  title: 卡片组
+  next: false
+  nexted: false
+  attrs:
+    - name: title
+      title: 标题
+      type: string
+      description: 卡片组的标题
+  description: 卡片组
+  slots:
+    - name: default
+      description: 插入默认的元素
+    - name: cover
+      description: 插入图片
