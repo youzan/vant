@@ -169,6 +169,7 @@ export default {
 | lazy-render | 是否在首次展开时才渲染菜单内容 | _boolean_ | `true` |
 | title-class | 标题额外类名 | _string \| Array \| object_ | - |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
+| class-name | 自定义类名 | _string_ | - |
 
 ### DropdownItem Events
 

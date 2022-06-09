@@ -40,6 +40,7 @@ const dropdownItemProps = {
   lazyRender: truthProp,
   modelValue: unknownProp,
   titleClass: unknownProp,
+  className: String,
 };
 
 export type DropdownItemProps = ExtractPropTypes<typeof dropdownItemProps>;
@@ -172,7 +173,7 @@ export default defineComponent({
         <div
           v-show={state.showWrapper}
           style={style}
-          class={bem([direction])}
+          class={[bem([direction]), props.className]}
           onClick={onClickWrapper}
         >
           <Popup
