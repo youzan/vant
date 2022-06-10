@@ -3,17 +3,22 @@
     <demo-section>
       <van-cardu>
         <template #head>
-          77<van-text text="标题"></van-text>
+          <van-text text="标题"></van-text>
         </template>
         卡片内容
       </van-cardu>
       <van-cardu split>
         <template #head>
-          77<van-text text="标题"></van-text>
+          <van-text text="标题"></van-text>
         </template>
         卡片内容
       </van-cardu>
-      <van-cardu title="卡片">
+      <van-cardu title="卡片" cover-slot @click="close" destination="http://www.baidu.com">
+        <template #cover>
+          <van-image src="https://static-vusion.163yun.com/assets/cloud-ui/1.jpg"></van-image>
+        </template>卡片内容
+      </van-cardu>
+      <van-cardu title="卡片" cover-slot @click="close" href="http://www.baidu.com">
         <template #cover>
           <van-image src="https://static-vusion.163yun.com/assets/cloud-ui/1.jpg"></van-image>
         </template>卡片内容
@@ -65,7 +70,7 @@ export default {
   },
 
   methods: {
-    close() {
+    close() {console.log(8888);
       this.show = false;
     },
   },

@@ -41,8 +41,6 @@
       options:
         - value: always
           title: 一直显示
-        - value: hover
-          title: hover时显示
         - value: never
           title: 不显示
       group: 样式属性
@@ -58,6 +56,40 @@
       default: false
       description: 是否显示分割线
       group: 样式属性
+    - name: linkType
+      title: 链接类型
+      type: string
+      options:
+        - value: destination
+          title: 页面跳转
+        - value: href
+          title: 普通链接
+        - value: download
+          title: 下载链接
+      default: href
+      description: 链接类型
+      compType: linkTypeSelect
+    - name: hrefAndTo
+      title: 链接
+      type: string
+      description: 链接地址
+      compType: linkHrefInput
+    - name: target
+      title: 打开方式
+      type: string
+      options:
+        - value: _blank
+          title: 新标签页
+        - value: _self
+          title: 当前窗口
+        - value: _parent
+          title: 父级窗口
+          advanced: true
+        - value: _top
+          title: 顶级窗口
+          advanced: true
+      default: _self
+      description: 链接打开方式
   events:
     - name: $listeners
       kind: trigger
