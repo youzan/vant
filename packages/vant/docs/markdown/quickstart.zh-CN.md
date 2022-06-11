@@ -95,19 +95,19 @@ pnpm add vant
 
 ### 在 vite 项目中按需引入组件（推荐）
 
-在 vite 项目中使用 Vant 时，推荐安装 [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import) 插件，它可以自动按需引入组件的样式。
+在 vite 项目中使用 Vant 时，推荐安装 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件，它可以自动按需引入组件。
 
 #### 1. 安装插件
 
 ```bash
 # 通过 npm 安装
-npm i vite-plugin-style-import@1.4.1 -D
+npm i unplugin-vue-components -D
 
 # 通过 yarn 安装
-yarn add vite-plugin-style-import@1.4.1 -D
+yarn add unplugin-vue-components -D
 
 # 通过 pnpm 安装
-pnpm add vite-plugin-style-import@1.4.1 -D
+pnpm add unplugin-vue-components -D
 ```
 
 #### 2. 配置插件
@@ -116,13 +116,14 @@ pnpm add vite-plugin-style-import@1.4.1 -D
 
 ```js
 import vue from '@vitejs/plugin-vue';
-import styleImport, { VantResolve } from 'vite-plugin-style-import';
+import Components from 'unplugin-vue-components/vite';
+import { VantResolver } from 'unplugin-vue-components/resolvers';
 
 export default {
   plugins: [
     vue(),
-    styleImport({
-      resolves: [VantResolve()],
+    Components({
+      resolvers: [VantResolver()],
     }),
   ],
 };

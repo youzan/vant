@@ -94,19 +94,19 @@ In the GUI, click on 'Dependencies' -> `Install Dependencies` and add `vant` to 
 
 ### Import on demand in vite projects (recommended)
 
-If you are using vite, please use [vite-plugin-style-import](https://github.com/anncwb/vite-plugin-style-import).
+If you are using vite, please use [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components).
 
 #### 1. Install Plugin
 
 ```bash
 # with npm
-npm i vite-plugin-style-import@1.4.1 -D
+npm i unplugin-vue-components -D
 
 # with yarn
-yarn add vite-plugin-style-import@1.4.1 -D
+yarn add unplugin-vue-components -D
 
 # with pnpm
-pnpm add vite-plugin-style-import@1.4.1 -D
+pnpm add unplugin-vue-components -D
 ```
 
 #### 2. Configure Plugin
@@ -115,13 +115,14 @@ Configure the plugin in the `vite.config.js` file:
 
 ```js
 import vue from '@vitejs/plugin-vue';
-import styleImport, { VantResolve } from 'vite-plugin-style-import';
+import Components from 'unplugin-vue-components/vite';
+import { VantResolver } from 'unplugin-vue-components/resolvers';
 
 export default {
   plugins: [
     vue(),
-    styleImport({
-      resolves: [VantResolve()],
+    Components({
+      resolvers: [VantResolver()],
     }),
   ],
 };
