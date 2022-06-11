@@ -164,3 +164,14 @@ test('should allow to custom pull distance', async () => {
   await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should emit change event when status changed', async () => {
+  const wrapper = mount(PullRefresh);
+  const track = wrapper.find('.van-pull-refresh__track');
+  trigger(track, 'touchstart', 0, 0);
+  trigger(track, 'touchmove', 0, 20);
+  await later();
+  expect(wrapper.emitted('change')).toEqual([
+    [{ distance: 20, status: 'pulling' }],
+  ]);
+});

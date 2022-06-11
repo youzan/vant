@@ -109,3 +109,23 @@ test('should allow to custom active-value and inactive-value', () => {
   wrapper.trigger('click');
   expect(wrapper.emitted('update:modelValue')![0]).toEqual(['off']);
 });
+
+test('should render node slot correctly', () => {
+  const wrapper = mount(Switch, {
+    slots: {
+      node: () => 'Custom node',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should render background slot correctly', () => {
+  const wrapper = mount(Switch, {
+    slots: {
+      background: () => 'Custom background',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});

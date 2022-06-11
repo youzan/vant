@@ -200,8 +200,10 @@ export default {
 | showCancelButton | 是否展示取消按钮 | _boolean_ | `false` |
 | confirmButtonText | 确认按钮文案 | _string_ | `确认` |
 | confirmButtonColor | 确认按钮颜色 | _string_ | `#ee0a24` |
+| confirmButtonDisabled `v3.5.0` | 是否禁用确认按钮 | _boolean_ | `false` |
 | cancelButtonText | 取消按钮文案 | _string_ | `取消` |
 | cancelButtonColor | 取消按钮颜色 | _string_ | `black` |
+| cancelButtonDisabled `v3.5.0` | 是否禁用取消按钮 | _boolean_ | `false` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
 | overlayClass | 自定义遮罩层类名 | _string \| Array \| object_ | - |
 | overlayStyle | 自定义遮罩层样式 | _object_ | - |
@@ -229,8 +231,10 @@ export default {
 | show-cancel-button | 是否展示取消按钮 | _boolean_ | `false` |
 | confirm-button-text | 确认按钮文案 | _string_ | `确认` |
 | confirm-button-color | 确认按钮颜色 | _string_ | `#ee0a24` |
+| confirm-button-disabled `v3.5.0` | 是否禁用确认按钮 | _boolean_ | `false` |
 | cancel-button-text | 取消按钮文案 | _string_ | `取消` |
 | cancel-button-color | 取消按钮颜色 | _string_ | `black` |
+| cancel-button-disabled `v3.5.0` | 是否禁用取消按钮 | _boolean_ | `false` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
 | overlay-class | 自定义遮罩层类名 | _string_ | - |
 | overlay-style | 自定义遮罩层样式 | _object_ | - |

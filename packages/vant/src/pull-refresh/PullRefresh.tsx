@@ -55,7 +55,7 @@ export default defineComponent({
 
   props: pullRefreshProps,
 
-  emits: ['refresh', 'update:modelValue'],
+  emits: ['change', 'refresh', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
     let reachTop: boolean;
@@ -111,6 +111,11 @@ export default defineComponent({
       } else {
         state.status = 'loosing';
       }
+
+      emit('change', {
+        status: state.status,
+        distance,
+      });
     };
 
     const getStatusText = () => {

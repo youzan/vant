@@ -23,12 +23,14 @@ export type DialogOptions = {
   overlayClass?: string;
   overlayStyle?: CSSProperties;
   closeOnPopstate?: boolean;
-  cancelButtonText?: string;
   showCancelButton?: boolean;
   showConfirmButton?: boolean;
+  cancelButtonText?: string;
   cancelButtonColor?: string;
+  cancelButtonDisabled?: boolean;
   confirmButtonText?: string;
   confirmButtonColor?: string;
+  confirmButtonDisabled?: boolean;
   closeOnClickOverlay?: boolean;
 };
 

@@ -42,7 +42,7 @@ button
 └─ README.md        # component doc
 ```
 
-When using this directory structure, the developer of the component library needs to import the JS and CSS files respectively, and the styles can also be imported automatically through babel-plugin-import.
+When using this directory structure, the developer of the component library needs to import the JS and CSS files respectively.
 
 Theme customization can be achieved by importing style source files (less or scss) and modifying style variables.
 

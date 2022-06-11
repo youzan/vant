@@ -74,7 +74,7 @@ const uploaderProps = {
     Numeric | [Numeric, Numeric]
   >,
   previewImage: truthProp,
-  previewOptions: Object as PropType<ImagePreviewOptions>,
+  previewOptions: Object as PropType<Partial<ImagePreviewOptions>>,
   previewFullImage: truthProp,
   maxSize: {
     type: [Number, String, Function] as PropType<UploaderMaxSize>,

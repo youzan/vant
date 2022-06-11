@@ -1,5 +1,5 @@
 import { Toast } from './function-call';
-import type { TeleportProps } from 'vue';
+import type { ComponentPublicInstance, TeleportProps } from 'vue';
 import type { LoadingType } from '../loading';
 import type { Numeric } from '../utils';
 
@@ -34,3 +34,14 @@ declare module '@vue/runtime-core' {
     $toast: typeof Toast;
   }
 }
+
+export type ToastWrapperInstance = ComponentPublicInstance<
+  { message: Numeric },
+  {
+    clear: () => void;
+    /**
+     * @private
+     */
+    open: (props: Record<string, any>) => void;
+  }
+>;
