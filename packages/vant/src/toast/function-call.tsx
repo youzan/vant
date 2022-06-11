@@ -1,14 +1,8 @@
 import { ref, watch, getCurrentInstance, type App } from 'vue';
-import {
-  extend,
-  isObject,
-  inBrowser,
-  withInstall,
-  type ComponentInstance,
-} from '../utils';
+import { extend, isObject, inBrowser, withInstall } from '../utils';
 import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanToast from './Toast';
-import type { ToastType, ToastOptions } from './types';
+import type { ToastType, ToastOptions, ToastWrapperInstance } from './types';
 
 const defaultOptions: ToastOptions = {
   icon: '',
@@ -32,7 +26,7 @@ const defaultOptions: ToastOptions = {
   closeOnClickOverlay: false,
 };
 
-let queue: ComponentInstance[] = [];
+let queue: ToastWrapperInstance[] = [];
 let allowMultiple = false;
 let currentOptions = extend({}, defaultOptions);
 
@@ -83,7 +77,7 @@ function createInstance() {
     },
   });
 
-  return instance;
+  return instance as ToastWrapperInstance;
 }
 
 function getInstance() {
@@ -97,7 +91,7 @@ function getInstance() {
 
 function Toast(options: string | ToastOptions = {}) {
   if (!inBrowser) {
-    return {} as ComponentInstance;
+    return {} as ToastWrapperInstance;
   }
 
   const toast = getInstance();
