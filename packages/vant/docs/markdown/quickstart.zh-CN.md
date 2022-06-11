@@ -93,9 +93,9 @@ pnpm add vant
 
 ## 引入组件
 
-### 在 vite 项目中按需引入组件（推荐）
+### 按需引入组件（推荐）
 
-在 vite 项目中使用 Vant 时，推荐安装 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件，它可以自动按需引入组件。
+在基于 `vite`、`webpack` 或 `vue-cli` 的项目中使用 Vant 时，推荐安装 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件，它可以自动按需引入组件。
 
 #### 1. 安装插件
 
@@ -112,7 +112,7 @@ pnpm add unplugin-vue-components -D
 
 #### 2. 配置插件
 
-安装完成后，在 `vite.config.js` 文件中配置插件：
+如果是基于 `vite` 的项目，在 `vite.config.js` 文件中配置插件：
 
 ```js
 import vue from '@vitejs/plugin-vue';
@@ -123,6 +123,38 @@ export default {
   plugins: [
     vue(),
     Components({
+      resolvers: [VantResolver()],
+    }),
+  ],
+};
+```
+
+如果是基于 `vue-cli` 的项目，在 `vue.config.js` 文件中配置插件：
+
+```js
+const { VantResolver } = require('unplugin-vue-components/resolvers');
+const ComponentsPlugin = require('unplugin-vue-components/webpack');
+
+module.exports = {
+  configureWebpack: {
+    plugins: [
+      ComponentsPlugin({
+        resolvers: [VantResolver()],
+      }),
+    ],
+  },
+};
+```
+
+如果是基于 `webpack` 的项目，在 `webpack.config.js` 文件中配置插件：
+
+```js
+const { VantResolver } = require('unplugin-vue-components/resolvers');
+const ComponentsPlugin = require('unplugin-vue-components/webpack');
+
+module.exports = {
+  plugins: [
+    ComponentsPlugin({
       resolvers: [VantResolver()],
     }),
   ],
@@ -141,51 +173,7 @@ const app = createApp();
 app.use(Button);
 ```
 
-> Vant 默认支持通过 Tree Shaking 实现 script 的按需引入。
-
-### 在非 vite 项目中按需引入组件（推荐）
-
-在非 vite 的项目中，可以通过 babel 插件来实现按需引入组件。我们需要安装 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 插件，它会在编译过程中将 import 语句自动转换为按需引入的方式。
-
-#### 1. 安装插件
-
-```bash
-npm i babel-plugin-import -D
-```
-
-#### 2. 配置插件
-
-在.babelrc 或 babel.config.js 中添加配置：
-
-```json
-{
-  "plugins": [
-    [
-      "import",
-      {
-        "libraryName": "vant",
-        "libraryDirectory": "es",
-        "style": true
-      }
-    ]
-  ]
-}
-```
-
-#### 3. 引入组件
-
-接着你可以在代码中直接引入 Vant 组件，插件会自动将代码转化为按需引入的形式。
-
-```js
-// 原始代码
-import { Button } from 'vant';
-
-// 编译后代码
-import Button from 'vant/es/button';
-import 'vant/es/button/style';
-```
-
-> 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入。
+> 注意：Vant 默认支持通过 Tree Shaking，因此你也可以不配置任何插件，直接通过 Tree Shaking 来移除不需要的 JS 代码，但 CSS 无法通过这种方式优化。
 
 ### 导入所有组件（不推荐）
 
@@ -199,8 +187,6 @@ import 'vant/lib/index.css';
 const app = createApp();
 app.use(Vant);
 ```
-
-> Tips: 配置按需引入插件后，将不允许直接导入所有组件。
 
 ### 手动按需引入组件（不推荐）
 
