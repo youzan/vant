@@ -126,9 +126,10 @@ Use slots to custom tips.
 
 ### Events
 
-| Event   | Description                   | Parameters |
-| ------- | ----------------------------- | ---------- |
-| refresh | Emitted after pulling refresh | -          |
+| Event | Description | Parameters |
+| --- | --- | --- |
+| refresh | Emitted after pulling refresh | - |
+| change `v3.5.1` | Emitted when draging or status changed | _{ status: string, distance: number }_ |
 
 ### Slots
 

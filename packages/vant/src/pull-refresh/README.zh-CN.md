@@ -129,9 +129,10 @@ export default {
 
 ### Events
 
-| 事件名  | 说明           | 回调参数 |
-| ------- | -------------- | -------- |
-| refresh | 下拉刷新时触发 | -        |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| refresh | 下拉刷新时触发 | - |
+| change `v3.5.1` | 拖动时或状态改变时触发 | _{ status: string, distance: number }_ |
 
 ### Slots
 
