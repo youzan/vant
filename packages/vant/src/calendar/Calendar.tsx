@@ -185,6 +185,10 @@ export default defineComponent({
       const months: Date[] = [];
       const cursor = new Date(props.minDate);
 
+      if (props.lazyRender && !props.show) {
+        return months;
+      }
+
       cursor.setDate(1);
 
       do {
