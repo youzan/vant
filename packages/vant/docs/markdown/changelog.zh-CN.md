@@ -19,6 +19,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.5.1](https://github.com/youzan/vant/compare/v3.5.0...v3.5.1)
+
+`2022-06-12`
+
+**Feature**
+
+- PullRefresh: 新增 change 事件 [#10702](https://github.com/youzan/vant/issues/10702)
+
+**Bug Fixes**
+
+- Calender: 修复动态设置 maxDate 或 minDate 可能导致月份渲染失败的问题 [#10668](https://github.com/youzan/vant/issues/10668)
+- Popup: 修复未使用 teleport 时 deactivated 后会自动关闭的问题 [#10706](https://github.com/youzan/vant/issues/10706)
+- Toast: 修复 toast.clear 缺少类型定义的问题 [#10699](https://github.com/youzan/vant/issues/10699)
+- Uploader: 修复 preview-options 属性中 images 为必填字段的问题 [#10698](https://github.com/youzan/vant/issues/10698)
+
 ### [v3.5.0](https://github.com/youzan/vant/compare/v3.4.9...v3.5.0)
 
 `2022-06-05`

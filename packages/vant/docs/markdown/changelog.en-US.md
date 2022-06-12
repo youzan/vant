@@ -19,6 +19,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.5.1](https://github.com/youzan/vant/compare/v3.5.0...v3.5.1)
+
+`2022-06-12`
+
+**Feature**
+
+- PullRefresh: add change event [#10702](https://github.com/youzan/vant/issues/10702)
+
+**Bug Fixes**
+
+- Calender: failed to render months after changing maxDate or minDate [#10668](https://github.com/youzan/vant/issues/10668)
+- Popup: should not auto close on deactivated if not using teleport [#10706](https://github.com/youzan/vant/issues/10706)
+- Toast: fix Toast.clear typing [#10699](https://github.com/youzan/vant/issues/10699)
+- Uploader: preview-options images should be optional [#10698](https://github.com/youzan/vant/issues/10698)
+
 ### [v3.5.0](https://github.com/youzan/vant/compare/v3.4.9...v3.5.0)
 
 `2022-06-05`
