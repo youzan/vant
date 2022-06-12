@@ -264,7 +264,8 @@ export default defineComponent({
     });
 
     onDeactivated(() => {
-      if (props.show) {
+      // teleported popup should be closed when deactivated
+      if (props.show && props.teleport) {
         close();
         shouldReopen = true;
       }
