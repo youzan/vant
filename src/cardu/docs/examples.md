@@ -1,13 +1,13 @@
 ### 基本样式
 
 ``` html
-<van-cardu title="卡片">卡片内容</van-cardu>
+<van-cardu>卡片内容</van-cardu>
 ```
 
 ### 带分割线样式
 
 ``` html
-<van-cardu title="卡片" split>卡片内容</van-cardu>
+<van-cardu split>卡片内容</van-cardu>
 ```
 
 ### 带图片样式

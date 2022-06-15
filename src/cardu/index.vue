@@ -97,7 +97,7 @@ export default {
       const ifDesigner = true;
       // const ifDesigner = this.$env && this.$env.VUE_APP_DESIGNER;
       return (
-        <div class={bem('wrap', {border, shadow, sr: sr === 'r'})} onClick={this.onClick}>
+        <div class={bem('wrap', {border, shadow: shadow === 'always', sr: sr === 'r'})} onClick={this.onClick}>
           <div class="van-cardu-cover" vusion-slot-name="cover">
             {this.slots('cover')}
             {(ifDesigner && coverSlot && !this.slots('cover')) ? <VanEmptyCol /> : null}

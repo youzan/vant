@@ -12,11 +12,6 @@
     - name: cover
       description: 插入图片
   attrs:
-    - name: title
-      title: 标题
-      type: string
-      advanced: true
-      description: 卡片标题
     - name: width
       title: 宽度
       type: string
