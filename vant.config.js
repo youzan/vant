@@ -363,6 +363,10 @@ module.exports = {
                 path: 'cardu',
                 title: 'cardu 卡片',
               },
+              {
+                path: 'grid-view',
+                title: 'grid-view 网格',
+              },
             ],
           },
           {
@@ -777,6 +781,10 @@ module.exports = {
               {
                 path: 'cardu',
                 title: 'cardu 卡片',
+              },
+              {
+                path: 'grid-view',
+                title: 'grid-view 网格',
               },
             ],
           },

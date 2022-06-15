@@ -103,6 +103,7 @@ export { default as VanUploader } from '../../src/uploader';
 export { default as VanForComponents } from '../../src/for-components';
 export { default as VanGallery } from '../../src/gallery';
 export { default as VanCardu } from '../../src/cardu';
+export { default as VanGridView } from '../../src/grid-view';
 
 
 export * from './list-view';
