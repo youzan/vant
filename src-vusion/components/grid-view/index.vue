@@ -66,6 +66,7 @@
               paddingTop: virtualTop + 'px',
               paddingBottom: virtualBottom + 'px',
             }"
+            :class="$style.bodychild"
           >
             <component
               :is="ChildComponent"
@@ -75,10 +76,28 @@
               :value="$at(item, valueField)"
               :disabled="item.disabled || disabled"
               :item="item"
+              :style="styleArr[i]"
+              :ref="'item'+i"
+              :class="[$style.item, !iffall ? $style.floatitem : '', $style[moveMode], styleArr[i] && styleArr[i].showClass]"
               >
               <slot
+                v-if="iffall"
                 name="item"
                 :item="item"
+                :state="(styleArr[i] && styleArr[i].state) || 'loading'"
+                :data="item"
+                :index="i"
+                :text="$at(item, field || textField)"
+                :value="$at(item, valueField)"
+                :disabled="item.disabled || disabled"
+                >{{ $at(item, field || textField) }}
+              </slot>
+              <slot
+                v-if="!iffall"
+                name="item"
+                :item="item"
+                :data="item"
+                :index="i"
                 :text="$at(item, field || textField)"
                 :value="$at(item, valueField)"
                 :disabled="item.disabled || disabled"
@@ -176,10 +195,10 @@ export default {
     successText: { type: String, default: '已刷新' },
     successDuration: 500,
     pullDistance: 50,
-    list: {
-      type: Array,
-      default: () => [],
-    },
+    // list: {
+    //   type: Array,
+    //   default: () => [],
+    // },
     iffall: {
       type: Boolean,
       default: false,
@@ -235,8 +254,8 @@ export default {
     },
   },
   watch: {
-    ['list.length']: {
-      deep: false,
+    ['virtualList']: {
+      deep: true,
       async handler(newV, oldV) {
         if (this.iffall && newV > oldV) {
           await this.$nextTick();
@@ -588,6 +607,38 @@ export default {
   user-select: none;
   /* overflow: auto; */
   position: relative;
+}
+
+.bodychild {
+  width: 100%;
+  height: 100%;
+}
+
+.item {
+  position: absolute;
+    z-index: 1;
+    opacity: 0;
+    box-sizing: border-box;
+    transform: translate3d(0,0,0);
+    padding: 10px;
+}
+
+.floatitem {
+  position: relative;
+    z-index: 1;
+    opacity: 1;
+    box-sizing: border-box;
+    transform: translate3d(0,0,0);
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+}
+
+.convention{
+    transition-property: top,left;
+}
+.transform{
+    transition-property: transform;
 }
 
 .root[readonly-mode='initial'] .body {
