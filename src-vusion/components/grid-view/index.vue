@@ -70,12 +70,13 @@
           >
             <component
               :is="ChildComponent"
-              v-for="item in virtualList"
+              v-for="(item,i) in virtualList"
               v-if="item"
               :key="$at(item, valueField)"
               :value="$at(item, valueField)"
               :disabled="item.disabled || disabled"
               :item="item"
+              c="ccc"
               :style="styleArr[i]"
               :ref="'item'+i"
               :class="[$style.item, !iffall ? $style.floatitem : '', $style[moveMode], styleArr[i] && styleArr[i].showClass]"
@@ -209,7 +210,7 @@ export default {
     },
     col: {
       type: Number,
-      default: 0,
+      default: 2,
     },
     colWidth: {
       type: Number,
@@ -280,6 +281,14 @@ export default {
     iffall(newv) {
       this.styleArr = [];
       if (newv) {
+        this.batchCB = this.initItem();
+      } else {
+        this.initFloat();
+      }
+    },
+    col(newv) {
+      this.styleArr = [];
+      if (this.iffall) {
         this.batchCB = this.initItem();
       } else {
         this.initFloat();
@@ -368,7 +377,7 @@ export default {
       }
     },
     calcCol() {
-      let col = 3;
+      let col = 2;
       if (this.col) {
         col = this.col;
         this.colW = this.mainW / col;
@@ -419,7 +428,7 @@ export default {
             if (loadNum != list.length) return;
             this.waitRender(start);
           },
-          this.getColDom(_i).getElementsByTagName('img')[0],
+          this.getColDom(_i).getElementsByTagName && this.getColDom(_i).getElementsByTagName('img')?.[0],
           i
         );
       });

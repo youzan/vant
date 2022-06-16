@@ -17,6 +17,12 @@
       description: 表格每一行的数据类型
       group: 数据属性
       compType: dataTypeSelect
+    - name: iffall
+      title: 瀑布模式
+      type: boolean
+      default: false
+      description: 瀑布模式
+      group: 样式属性
     - name: initial-load
       title: 初始加载
       type: boolean
@@ -75,7 +81,7 @@
       description: 过滤时是否区分大小写
       advanced: true
       group: 数据属性
-    - name: repeat
+    - name: col
       title: 网格数
       type: number
       default: 2
