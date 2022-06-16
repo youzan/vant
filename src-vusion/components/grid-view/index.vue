@@ -342,7 +342,7 @@ export default {
       this.mainW = this.getWidth();
       this.calcCol();
       console.log(this.colW, 888);
-      let list = [...this.list];
+      let list = [...this.virtualList];
       list.forEach((e, i) => {
         let _i = i;
         if (!this.styleArr[_i]) {
@@ -401,7 +401,7 @@ export default {
       }, 300);
     },
     initItem(start = 0) {
-      let list = this.list.slice(start);
+      let list = this.virtualList.slice(start);
       let loadNum = 0;
       list.forEach((e, i) => {
         let _i = i + start;
