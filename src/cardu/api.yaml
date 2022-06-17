@@ -28,16 +28,12 @@
           title: 圆角
       default: r
       description: 图片风格
+      group: 样式属性
     - name: shadow
       title: 阴影
-      type: string
-      description: 卡片阴影显示时机
-      default: always
-      options:
-        - value: always
-          title: 一直显示
-        - value: never
-          title: 不显示
+      type: boolean
+      description: 卡片阴影
+      default: true
       group: 样式属性
     - name: border
       title: 显示边框
@@ -64,11 +60,13 @@
       default: href
       description: 链接类型
       compType: linkTypeSelect
+      group: 主要属性
     - name: hrefAndTo
       title: 链接
       type: string
       description: 链接地址
       compType: linkHrefInput
+      group: 主要属性
     - name: target
       title: 打开方式
       type: string
@@ -85,6 +83,7 @@
           advanced: true
       default: _self
       description: 链接打开方式
+      group: 主要属性
   events:
     - name: $listeners
       kind: trigger

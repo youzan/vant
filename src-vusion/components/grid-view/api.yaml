@@ -96,6 +96,7 @@
     - name: error
       title: 是否加载失败
       type: boolean
+      advanced: true
       description: 手动设置是否加载失败。
       group: 状态属性
     - name: error-text

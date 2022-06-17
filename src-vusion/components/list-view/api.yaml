@@ -27,11 +27,13 @@
       type: boolean
       default: false
       description: 是否只读
+      advanced: true
     - name: disabled
       title: 禁用
       type: boolean
       default: false
       description: 是否禁用
+      advanced: true
     - name: value
       title: 值
       type: any
@@ -44,11 +46,13 @@
       type: string
       default: text
       description: 选项文本的字段名
+      advanced: true
     - name: value-field
       title: 值字段名
       type: string
       default: value
       description: 选项值的字段名
+      advanced: true
     - name: cancelable
       title: 可取消
       type: boolean
@@ -65,6 +69,7 @@
       title: 显示头部
       type: boolean
       default: false
+      advanced: true
       description: 是否显示头部
     - name: title
       title: 列表标题
@@ -77,6 +82,7 @@
       type: boolean
       default: false
       description: 是否显示底部
+      advanced: true
     - name: loading-text
       title: 加载中提示文字
       type: string
