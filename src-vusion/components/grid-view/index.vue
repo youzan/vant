@@ -79,7 +79,7 @@
               c="ccc"
               :style="styleArr[i]"
               :ref="'item'+i"
-              :class="[$style.item, !iffall ? $style.floatitem : '', $style[moveMode], styleArr[i] && styleArr[i].showClass]"
+              :class="[$style.opitem, $style.item, !iffall ? $style.floatitem : '', $style[moveMode], styleArr[i] && styleArr[i].showClass && $style[styleArr[i].showClass]]"
               >
               <slot
                 v-if="iffall"
@@ -244,6 +244,7 @@ export default {
       __col: 0,
       batchCB: null,
       onRender: null,
+      observerwh: null,
     };
   },
   computed: {
@@ -296,11 +297,21 @@ export default {
     },
   },
   mounted() {
+    if (this.$env && this.$env.VUE_APP_DESIGNER) {
+      this.observerwh = new MutationObserver(this.pwd);
+      this.observerwh.observe(this.$refs.body, {
+          attributes: true, childList: true, subtree: true
+      });
+    }
+
     if (this.iffall) {
       this.init();
     } else {
       this.initFloat();
     }
+  },
+  destroyed() {
+    this.observerwh && this.observerwh.disconnect();
   },
   getDataSourceOptions() {
     return {
@@ -314,6 +325,12 @@ export default {
     };
   },
   methods: {
+    pwd() {
+      if (this.iffall) {
+        console.log(6666666)
+        this.init();
+      }
+    },
     async refresh() {
       this.refreshing = true;
       const paging = {
@@ -455,10 +472,10 @@ export default {
       await this.$nextTick();
       for (let i = idx; i < this.styleArr.length; i++) {
         if (!this.styleArr[i] || !this.styleArr[i].complete) return;
-        const e = this.getColDom(i);
+        const e = this.getColDom(i);console.log(e, 11111)
         if (!e) return;
         // 获取当前元素高度
-        this.styleArr[i].height = e.offsetHeight;
+        this.styleArr[i].height = e.$el.offsetHeight;
         let xy = this.getMinCol(i);
         const curTop = xy.curTop,
           curCol = xy.curCol,
@@ -643,11 +660,27 @@ export default {
     padding: 10px;
 }
 
+.opitem[designer] + .opitem[designer]:after{
+    content: '';
+    position: absolute;
+    display: block;
+    background: rgba(255,255,255,0.8);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
 .convention{
     transition-property: top,left;
 }
 .transform{
     transition-property: transform;
+}
+
+.show{
+    opacity: 1!important;
 }
 
 .root[readonly-mode='initial'] .body {
