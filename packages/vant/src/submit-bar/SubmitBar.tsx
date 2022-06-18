@@ -1,4 +1,9 @@
-import { defineComponent, type PropType, type ExtractPropTypes } from 'vue';
+import {
+  ref,
+  defineComponent,
+  type PropType,
+  type ExtractPropTypes,
+} from 'vue';
 import {
   truthProp,
   makeStringProp,
@@ -9,6 +14,7 @@ import {
 // Components
 import { Icon } from '../icon';
 import { Button, ButtonType } from '../button';
+import { usePlaceholder } from '../composables/use-placeholder';
 
 const [name, bem, t] = createNamespace('submit-bar');
 
@@ -27,6 +33,7 @@ const submitBarProps = {
   buttonType: makeStringProp<ButtonType>('danger'),
   buttonColor: String,
   suffixLabel: String,
+  placeholder: Boolean,
   decimalLength: makeNumericProp(2),
   safeAreaInsetBottom: truthProp,
 };
@@ -41,6 +48,9 @@ export default defineComponent({
   emits: ['submit'],
 
   setup(props, { emit, slots }) {
+    const root = ref<HTMLElement>();
+    const renderPlaceholder = usePlaceholder(root, bem);
+
     const renderText = () => {
       const { price, label, currency, textAlign, suffixLabel, decimalLength } =
         props;
@@ -99,8 +109,9 @@ export default defineComponent({
       );
     };
 
-    return () => (
+    const renderSubmitBar = () => (
       <div
+        ref={root}
         class={[bem(), { 'van-safe-area-bottom': props.safeAreaInsetBottom }]}
       >
         {slots.top?.()}
@@ -112,5 +123,12 @@ export default defineComponent({
         </div>
       </div>
     );
+
+    return () => {
+      if (props.placeholder) {
+        return renderPlaceholder(renderSubmitBar);
+      }
+      return renderSubmitBar();
+    };
   },
 });
