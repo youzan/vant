@@ -4,3 +4,12 @@ exports[`should allow to disable safe-area-inset-bottom prop 1`] = `
 <div class="van-action-bar">
 </div>
 `;
+
+exports[`should render placeholder element when using placeholder prop 1`] = `
+<div class="van-action-bar__placeholder"
+     style="height: 50px;"
+>
+  <div class="van-action-bar van-safe-area-bottom">
+  </div>
+</div>
+`;
