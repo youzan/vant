@@ -128,6 +128,8 @@ export default defineComponent({
     'clear',
     'keypress',
     'click-input',
+    'end-validate',
+    'start-validate',
     'click-left-icon',
     'click-right-icon',
     'update:modelValue',
@@ -218,19 +220,24 @@ export default defineComponent({
       state.validateMessage = '';
     };
 
+    const endValidate = () => emit('end-validate', { status: state.status });
+
     const validate = (rules = props.rules) =>
       new Promise<FieldValidateError | void>((resolve) => {
         resetValidation();
         if (rules) {
+          emit('start-validate');
           runRules(rules).then(() => {
             if (state.status === 'failed') {
               resolve({
                 name: props.name,
                 message: state.validateMessage,
               });
+              endValidate();
             } else {
               state.status = 'passed';
               resolve();
+              endValidate();
             }
           });
         } else {
