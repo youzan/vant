@@ -307,16 +307,18 @@ export default {
 
 ### Events
 
-| 事件               | 说明                 | 回调参数                       |
-| ------------------ | -------------------- | ------------------------------ |
+| 事件 | 说明 | 回调参数 |
+| --- | --- | --- |
 | update:model-value | 输入框内容变化时触发 | _value: string (当前输入的值)_ |
-| focus              | 输入框获得焦点时触发 | _event: Event_                 |
-| blur               | 输入框失去焦点时触发 | _event: Event_                 |
-| clear              | 点击清除按钮时触发   | _event: MouseEvent_            |
-| click              | 点击组件时触发       | _event: MouseEvent_            |
-| click-input        | 点击输入区域时触发   | _event: MouseEvent_            |
-| click-left-icon    | 点击左侧图标时触发   | _event: MouseEvent_            |
-| click-right-icon   | 点击右侧图标时触发   | _event: MouseEvent_            |
+| focus | 输入框获得焦点时触发 | _event: Event_ |
+| blur | 输入框失去焦点时触发 | _event: Event_ |
+| clear | 点击清除按钮时触发 | _event: MouseEvent_ |
+| click | 点击组件时触发 | _event: MouseEvent_ |
+| click-input | 点击输入区域时触发 | _event: MouseEvent_ |
+| click-left-icon | 点击左侧图标时触发 | _event: MouseEvent_ |
+| click-right-icon | 点击右侧图标时触发 | _event: MouseEvent_ |
+| start-validate `v3.5.1` | 开始表单校验时触发 | - |
+| end-validate `v3.5.1` | 结束表单校验时触发 | _{ status: string }_ |
 
 ### 方法
 

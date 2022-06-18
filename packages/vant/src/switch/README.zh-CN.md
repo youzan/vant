@@ -75,9 +75,11 @@ export default {
 
 ```html
 <van-switch v-model="checked">
-  <div class="icon-wrapper">
-    <van-icon :name="checked ? 'success' : 'cross'" />
-  </div>
+  <template #node>
+    <div class="icon-wrapper">
+      <van-icon :name="checked ? 'success' : 'cross'" />
+    </div>
+  </template>
 </van-switch>
 
 <style>

@@ -298,6 +298,8 @@ Use `input-align` prop to align the input value.
 | click-input | Emitted when the input is clicked | _event: MouseEvent_ |
 | click-left-icon | Emitted when the left icon is clicked | _event: MouseEvent_ |
 | click-right-icon | Emitted when the right icon is clicked | _event: MouseEvent_ |
+| start-validate `v3.5.1` | Emitted when start validation | - |
+| end-validate `v3.5.1` | Emitted when end validation | _{ status: string }_ |
 
 ### Methods
 
