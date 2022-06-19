@@ -23,15 +23,24 @@ export default createComponent({
     },
 
     lineStyle() {
-      const { activeColor, inactiveColor, alignCenter, direction } = this.parent
-      return {
+      const { activeColor, inactiveColor, center, direction } = this.parent;
+      const style = {
         background: this.status === 'finish' ? activeColor : inactiveColor,
-        top: (alignCenter && direction === 'vertical') && '50%'
+      };
+      if (center && direction === 'vertical') {
+        style.top = '50%';
+      }
+      return style;
+    },
+
+    circleContainerStyle() {
+      if (this.parent.center && this.parent.direction === 'vertical') {
+        return {
+          top: '50%',
+        };
       }
     },
-    circleContainerStyle() {
-      return { top: (this.parent.alignCenter && this.parent.direction === 'vertical') && '50%' };
-    },
+
     titleStyle() {
       if (this.active) {
         return { color: this.parent.activeColor };
@@ -114,7 +123,11 @@ export default createComponent({
         >
           {this.slots()}
         </div>
-        <div class={bem('circle-container')} onClick={this.onClickStep} style={this.circleContainerStyle} >
+        <div
+          class={bem('circle-container')}
+          onClick={this.onClickStep}
+          style={this.circleContainerStyle}
+        >
           {this.genCircle()}
         </div>
         <div class={bem('line')} style={this.lineStyle} />
