@@ -1,32 +1,7 @@
-import fse from 'fs-extra';
-import { join } from 'path';
 import { build } from 'vite';
-import { getPackageJson, getVantConfig, LIB_DIR } from '../common/constant.js';
+import { getPackageJson } from '../common/constant.js';
 import { mergeCustomViteConfig } from '../common/index.js';
 import { getViteConfigForPackage } from '../config/vite.package.js';
-
-// generate entry file for nuxt
-async function genEntryForSSR() {
-  const { name } = getVantConfig();
-  const cjsPath = join(LIB_DIR, 'ssr.js');
-  const mjsPath = join(LIB_DIR, 'ssr.mjs');
-
-  const cjsContent = `'use strict';
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./${name}.cjs.min.js');
-} else {
-  module.exports = require('./${name}.cjs.js');
-};
-`;
-
-  const mjsContent = `export * from './index.js';\n`;
-
-  return Promise.all([
-    fse.outputFile(cjsPath, cjsContent),
-    fse.outputFile(mjsPath, mjsContent),
-  ]);
-}
 
 export async function compileBundles() {
   const dependencies = getPackageJson().dependencies || {};
@@ -64,5 +39,4 @@ export async function compileBundles() {
   await Promise.all(
     configs.map((config) => build(mergeCustomViteConfig(config)))
   );
-  await genEntryForSSR();
 }
