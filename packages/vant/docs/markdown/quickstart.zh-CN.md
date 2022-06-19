@@ -173,7 +173,29 @@ const app = createApp();
 app.use(Button);
 ```
 
-> 注意：Vant 默认支持通过 Tree Shaking，因此你也可以不配置任何插件，直接通过 Tree Shaking 来移除不需要的 JS 代码，但 CSS 无法通过这种方式优化。
+#### 4. 引入函数组件的样式
+
+Vant 中有个别组件是以函数的形式提供的，包括 `Toast`，`Dialog`，`Notify` 和 `ImagePreview` 组件。在使用函数组件时，`unplugin-vue-components` 无法自动引入对应的样式，因此需要手动引入样式。
+
+```js
+// Toast
+import { Toast } from 'vant';
+import 'vant/es/toast/style';
+
+// Dialog
+import { Dialog } from 'vant';
+import 'vant/es/dialog/style';
+
+// Notify
+import { Notify } from 'vant';
+import 'vant/es/notify/style';
+
+// ImagePreview
+import { ImagePreview } from 'vant';
+import 'vant/es/image-preview/style';
+```
+
+> 注意：Vant 支持 Tree Shaking，因此你也可以不配置任何插件，通过 Tree Shaking 即可移除不需要的 JS 代码，但 CSS 无法通过这种方式优化。
 
 ### 导入所有组件（不推荐）
 
