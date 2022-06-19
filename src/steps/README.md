@@ -72,6 +72,7 @@ export default {
 | active | Active step | _number \| string_ | `0` |
 | direction | Can be set to `vertical` | _string_ | `horizontal` |
 | active-color | Active step color | _string_ | `#07c160` |
+| align-center | Center title and description(Only active by `direction: vertical` )  | _boolean_ | `false` |
 | inactive-color `v2.9.1` | Inactive step color | _string_ | `#969799` |
 | active-icon | Active icon name | _string_ | `checked` |
 | inactive-icon | Inactive icon name | _string_ | - |

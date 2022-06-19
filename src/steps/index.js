@@ -24,6 +24,10 @@ export default createComponent({
       type: String,
       default: 'checked',
     },
+    alignCenter: {
+      type: Boolean,
+      default: false,
+    }
   },
 
   render() {
