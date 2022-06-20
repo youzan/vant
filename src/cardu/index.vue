@@ -14,6 +14,7 @@ export default {
         border: { type: Boolean, default: true },
         split: { type: Boolean, default: false },
         coverSlot: { type: Boolean, default: false },
+        noTitle: { type: Boolean, default: false },
         href: String,
         target: { type: String, default: '_self' },
         to: [String, Object],
@@ -93,7 +94,7 @@ export default {
         }
     },
     render() {
-      const { sr, split, border, shadow, coverSlot} = this;
+      const { sr, split, border, shadow, coverSlot, noTitle} = this;
       const ifDesigner = true;
       // const ifDesigner = this.$env && this.$env.VUE_APP_DESIGNER;
       return (
@@ -104,7 +105,7 @@ export default {
           </div>
           <div class={bem('head')} vusion-slot-name="head">
             {this.slots('head')}
-            {(ifDesigner && !this.slots('head')) ? <VanEmptyCol /> : null}
+            {(ifDesigner && !noTitle &&!this.slots('head')) ? <VanEmptyCol /> : null}
           </div>
           { split ? <van-divider></van-divider> : null }
           <div class={bem('content')} vusion-slot-name="default">

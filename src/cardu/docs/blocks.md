@@ -26,6 +26,10 @@
 <van-cardu title="卡片" cover-slot>
   <template #cover>
     <van-image src="https://static-vusion.163yun.com/assets/cloud-ui/1.jpg"></van-image>
-  </template>卡片内容
+  </template>
+  <template #head>
+    <van-text text="标题"></van-text>
+  </template>
+  卡片内容
 </van-cardu>
 ```

@@ -259,9 +259,9 @@ export default {
     ['virtualList']: {
       deep: true,
       async handler(newV, oldV) {
-        if (this.iffall && newV > oldV) {
+        if (this.iffall && newV.length > oldV.length) {
           await this.$nextTick();
-          this.batchCB = this.initItem(oldV);
+          this.batchCB = this.initItem(oldV.length);
         } else {
           await this.$nextTick();
           this.initFloat();
