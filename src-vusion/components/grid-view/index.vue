@@ -445,7 +445,7 @@ export default {
             if (loadNum != list.length) return;
             this.waitRender(start);
           },
-          this.getColDom(_i).getElementsByTagName && this.getColDom(_i).getElementsByTagName('img')?.[0],
+          this.getColDom(_i)?.$el?.getElementsByTagName && this.getColDom(_i)?.$el?.getElementsByTagName('img')?.[0],
           i
         );
       });
