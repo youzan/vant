@@ -156,7 +156,7 @@ export default createComponent({
             return value;
     },
     simpleConvert(value) {
-      return value.map((x) => ({ url: x.url })).join(",");
+      return value.map((x) => (x.url)).join(",");
     },
     getDetail(index = this.fileList.length) {
       return {
