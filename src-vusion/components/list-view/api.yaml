@@ -167,11 +167,13 @@
       title: 匹配方法
       type: string, Function
       default: includes
+      advanced: true
       description: 过滤时的匹配方法
     - name: case-sensitive
       title: 大小写敏感
       type: boolean
       default: false
+      advanced: true
       description: 过滤时大小写是否敏感
     - name: size
       title: 尺寸
@@ -191,6 +193,7 @@
       description: 大小扩展，支持一个值或两个值的组合，前者表示高度，后者表示宽度
       multi: true
       maxSelect: 2
+      advanced: true
   slots:
     - name: default
       description: 插入<van-cell>

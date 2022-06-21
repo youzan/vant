@@ -90,7 +90,6 @@
       type: boolean
       default: false
       description: ""
-      advanced: true
       group: 数据属性
     - name: match-method
       title: 匹配方法
@@ -141,7 +140,6 @@
       type: string
       default: 请输入
       description: 搜索框为空时提示文本
-      advanced: true
     - name: value
       title: 值
       type: any
@@ -192,12 +190,14 @@
       type: boolean
       default: false
       description: ""
+      advanced: true
       group: 选择属性
     - name: disabled
       title: 禁用
       type: boolean
       default: false
       description: ""
+      advanced: true
       group: 选择属性
   slots:
     - name: default
