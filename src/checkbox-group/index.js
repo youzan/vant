@@ -33,7 +33,6 @@ export default createComponent({
       this.datatemp = this.fromValue(this.value);
     },
     datatemp(val) {
-      this.$emit('change', this.toValue(val));
       this.$emit('input', this.toValue(val));
       this.$emit('update:value', this.toValue(val));
     },
