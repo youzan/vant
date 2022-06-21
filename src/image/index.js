@@ -105,6 +105,9 @@ export default createComponent({
           return tempItem.url;
       } catch (e) {
           console.log(e);
+          if (this.ifDesigner() && this.$parent.$options._componentTag === 'van-cardu') {
+            return 'x';
+          }
           return src;
       }
     },

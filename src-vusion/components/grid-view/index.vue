@@ -646,7 +646,7 @@ export default {
     opacity: 0;
     box-sizing: border-box;
     transform: translate3d(0,0,0);
-    padding: 10px;
+    padding: 5px;
 }
 
 .floatitem {
@@ -657,7 +657,7 @@ export default {
     transform: translate3d(0,0,0);
     display: inline-block;
     vertical-align: top;
-    padding: 10px;
+    padding: 5px;
 }
 
 .opitem[designer] + .opitem[designer]:after{

@@ -85,9 +85,9 @@
       description: 链接打开方式
       group: 主要属性
   events:
-    - name: $listeners
-      kind: trigger
-      description: 监听所有事件。
+    - name: click
+      title: 点击后
+      description: 点击事件
       params: []
 - name: van-cardu-group
   advanced: true
