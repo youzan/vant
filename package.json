@@ -35,9 +35,9 @@
     "move-yaml": "node bin/move-yaml",
     "move-docs": "node bin/move-docs",
     "screenshot": "node bin/screenshot",
-    "deploy:dev": "node ./scripts/lcap && lcap deploy dist-theme --platform http://lcp.vusion.top && node bin/deploy-lcp-images --platform=http://lcp.vusion.top",
-    "deploy:dev2": "node ./scripts/lcap && node ./bin/upload.js",
-    "deploy:test": "node ./scripts/lcap && lcap deploy dist-theme --platform http://defaulttenant.low-code-fe.qa-ci-lowcode.service.163.org && node bin/deploy-lcp-images --platform=http://defaulttenant.low-code-fe.qa-ci-lowcode.service.163.org",
+    "deploy:dev": "node ./scripts/lcap && lcap deploy dist-theme --platform http://defaulttenant.lcap.ha.dt.com && node bin/deploy-lcp-images --platform=http://defaulttenant.lcap.ha.dt.com",
+    "deploy:test": "node ./scripts/lcap && lcap deploy dist-theme --platform http://defaulttenant.lcap.qa-ci.lcap.group && node bin/deploy-lcp-images --platform=http://defaulttenant.lcap.qa-ci.lcap.group",
+    "deploy:pre": "node ./scripts/lcap && lcap deploy dist-theme --platform http://defaulttenant.lcap.ha.dri.com && node bin/deploy-lcp-images --platform=http://defaulttenant.lcap.ha.dri.com",
     "deploy:online": "node ./scripts/lcap && vusion deploy --framework @lcap/mobile-ui dist-theme && node bin/deploy-screenshots && node bin/deploy-lcp-images --platform=http://netease-template.lcap.163yun.com",
     "prepublishOnly": "npm run build:vusion && git add .",
     "postpublish": "npm run deploy:online"
