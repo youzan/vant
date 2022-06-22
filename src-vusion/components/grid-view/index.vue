@@ -352,6 +352,16 @@ export default {
       }
       this.refreshing = false;
     },
+    onScroll(e) {
+      this.throttledVirtualScroll(e);
+      if (!(this.pageable === 'auto-more' || (this.pageable === true && this.$options.isSelect)))
+          return;
+      if (this.currentLoading)
+          return;
+      const el = e.target;
+      if (el.scrollHeight <= el.scrollTop + el.clientHeight+30 && this.currentDataSource && this.currentDataSource.hasMore())
+          this.debouncedLoad(true);
+  },
     async repaints(start = 0, duration) {
       await this.$nextTick();
       this.mainW = this.getWidth();
