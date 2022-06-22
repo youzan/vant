@@ -139,7 +139,7 @@ export default createComponent({
       else if (this.converter === 'simple')
           try {
               if(!value) return [];
-              return value.split(",");
+              return value.split(",").map(x => ({url: x}));
           } catch (err) {
               return [];
           }
@@ -151,7 +151,7 @@ export default createComponent({
             // fix for u-validator rules="required"
             return Array.isArray(value) && value.length === 0 ? '[]' : JSON.stringify(value);
         if (this.converter === 'simple')
-            return Array.isArray(value) && value.length === 0 ? '[]' : (this.simpleConvert(value));
+            return Array.isArray(value) && value.length === 0 ? '' : (this.simpleConvert(value));
         else
             return value;
     },
