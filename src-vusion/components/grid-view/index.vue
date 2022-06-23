@@ -345,6 +345,9 @@ export default {
         await this.load();
         this.$emit('page', paging, this);
         this.$emit('update:page-number', 1, this);
+        if (this.iffall) {
+          this.repaints();
+        }
       } catch (error) {
         // eslint-disable-next-line no-console
         console.log(error);
@@ -358,8 +361,16 @@ export default {
       if (this.currentLoading)
           return;
       const el = e.target;
-      if (el.scrollHeight <= el.scrollTop + el.clientHeight+30 && this.currentDataSource && this.currentDataSource.hasMore())
-          this.debouncedLoad(true);
+      if (el.scrollHeight <= el.scrollTop + el.clientHeight+30 && this.currentDataSource && this.currentDataSource.hasMore()) {
+        if (this.iffall) {
+          if (!window.cusloading) {
+              window.cusloading = window.vant.VanToast.loading({duration: 0,forbidClick: true, message: '加载中',});
+          } else {
+              window.cusloading.value = true;
+          }
+        }
+        this.debouncedLoad(true);
+      }
   },
     async repaints(start = 0, duration) {
       await this.$nextTick();
@@ -506,7 +517,9 @@ export default {
       }
       this.$forceUpdate();
       await this.$nextTick();
-
+      if (this.iffall) {
+        window.cusloading && window.cusloading.clear();
+      }
       this.onRender &&
         this.onRender({
           cause: cause,
