@@ -327,7 +327,6 @@ export default {
   methods: {
     pwd() {
       if (this.iffall) {
-        console.log(6666666)
         this.init();
       }
     },
@@ -372,7 +371,7 @@ export default {
       this.mainW = this.getWidth();
       this.calcCol();
       this.batchCB = this.initItem(start);
-      this.polling();
+      // this.polling();
     },
     initFloat() {
       this.mainW = this.getWidth();
@@ -482,7 +481,7 @@ export default {
       await this.$nextTick();
       for (let i = idx; i < this.styleArr.length; i++) {
         if (!this.styleArr[i] || !this.styleArr[i].complete) return;
-        const e = this.getColDom(i);console.log(e, 11111)
+        const e = this.getColDom(i);
         if (!e) return;
         // 获取当前元素高度
         this.styleArr[i].height = e.$el.offsetHeight;
@@ -507,6 +506,7 @@ export default {
       }
       this.$forceUpdate();
       await this.$nextTick();
+
       this.onRender &&
         this.onRender({
           cause: cause,
@@ -547,6 +547,40 @@ export default {
         maxH: order[order.length - 1].bottomTop,
       };
     },
+    // loader(src, cb, imgDom = {}, i) {
+    //   if (imgDom.height > 0) {
+    //     return cb(imgDom);
+    //   }
+    //   if (!src && !imgDom.src) return cb();
+    //   if (imgDom.src) {
+    //     src = imgDom.src;
+    //   }
+    //   let img = loaderCache[src] && loaderCache[src].img;
+    //   if (img) {
+    //     if (img.complete || img.height > 0) return cb(img);
+    //   } else {
+    //     if (imgDom.src) {
+    //       img = imgDom;
+    //     } else {
+    //       img = new Image();
+    //       img.src = src;
+    //     }
+    //     if (img.complete || img.height > 0) return cb(img);
+    //     loaderCache[src] = {
+    //       img: img,
+    //       cbs: [],
+    //       i,
+    //     };
+    //     loaderImg.set(img.src, {
+    //       img,
+    //       cb: () => {
+    //         loaderCache[src].cbs.forEach((cb) => cb());
+    //         loaderCache[src].cbs.length = 0;
+    //       },
+    //     });
+    //   }
+    //   loaderCache[src].cbs.push(cb);
+    // },
     loader(src, cb, imgDom = {}, i) {
       if (imgDom.height > 0) {
         return cb(imgDom);
@@ -555,31 +589,15 @@ export default {
       if (imgDom.src) {
         src = imgDom.src;
       }
-      let img = loaderCache[src] && loaderCache[src].img;
-      if (img) {
-        if (img.complete || img.height > 0) return cb(img);
-      } else {
-        if (imgDom.src) {
-          img = imgDom;
-        } else {
-          img = new Image();
-          img.src = src;
-        }
-        if (img.complete || img.height > 0) return cb(img);
-        loaderCache[src] = {
-          img: img,
-          cbs: [],
-          i,
-        };
-        loaderImg.set(img.src, {
-          img,
-          cb: () => {
-            loaderCache[src].cbs.forEach((cb) => cb());
-            loaderCache[src].cbs.length = 0;
-          },
-        });
+      let img;
+      img = new Image();
+      img.onerror = () => {
+        cb(img);
       }
-      loaderCache[src].cbs.push(cb);
+      img.onload = () => {
+        cb(img);
+      }
+      img.src = src;
     },
     getColDom(i) {
       return this.$refs['item' + i][0];
