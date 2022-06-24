@@ -6,7 +6,7 @@ function isWindow(val: unknown): val is Window {
 
 // get nearest scroll element
 // https://github.com/youzan/vant/issues/3823
-const overflowScrollReg = /scroll|auto/i;
+const overflowScrollReg = /scroll|auto|overlay/i;
 export function getScroller(el: HTMLElement, root: ScrollElement = window) {
   let node = el;
 
