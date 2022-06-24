@@ -356,6 +356,7 @@ export default {
       this.refreshing = false;
     },
     onScroll(e) {
+      if (this?.$env.VUE_APP_DESIGNER) return;
       this.throttledVirtualScroll(e);
       if (!(this.pageable === 'auto-more' || (this.pageable === true && this.$options.isSelect)))
           return;
