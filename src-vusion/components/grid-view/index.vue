@@ -6,6 +6,7 @@
     :disabled="disabled"
     :tabindex="readonly || disabled ? '' : 0"
     :vusion-designer="$env.VUE_APP_DESIGNER"
+    ref="root"
   >
     <div v-show="showHead" :class="$style.head">
       <slot name="head">
@@ -399,7 +400,7 @@ export default {
       this.$forceUpdate();
     },
     getWidth() {
-      return (this.$refs.body.getBoundingClientRect() || {}).width || 0;
+      return ((this.$refs.root.getBoundingClientRect() || {}).width-6) || 0;
     },
     async resize(start = 0) {
       if (!this.$refs.body) return;
