@@ -94,6 +94,9 @@ export default createComponent({
 
   methods: {
     getSrc(src) {
+      if (src.indexOf && src.indexOf('base64') !== -1) {
+        return src;
+      }
       const reg = /^([^\[\]]+)(\,([^\[\]]+)){0,}$/g;
       if (typeof src === 'string' && reg.test(src)) {
           return src.split(',')[0];
