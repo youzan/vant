@@ -3,7 +3,7 @@ import { inBrowser } from '../utils';
 
 type ScrollElement = HTMLElement | Window;
 
-const overflowScrollReg = /scroll|auto/i;
+const overflowScrollReg = /scroll|auto|overlay/i;
 const defaultRoot = inBrowser ? window : undefined;
 
 function isElement(node: Element) {
