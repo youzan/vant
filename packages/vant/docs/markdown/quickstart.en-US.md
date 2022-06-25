@@ -172,6 +172,28 @@ const app = createApp();
 app.use(Button);
 ```
 
+#### 4. Style of Function Components
+
+Some components of Vant are provided as function, including `Toast`, `Dialog`, `Notify` and `ImagePreview`. When using function components, `unplugin-vue-components` can not auto import the component style, so we need to import style manually.
+
+```js
+// Toast
+import { Toast } from 'vant';
+import 'vant/es/toast/style';
+
+// Dialog
+import { Dialog } from 'vant';
+import 'vant/es/dialog/style';
+
+// Notify
+import { Notify } from 'vant';
+import 'vant/es/notify/style';
+
+// ImagePreview
+import { ImagePreview } from 'vant';
+import 'vant/es/image-preview/style';
+```
+
 > Vant supports tree shaking by default, so you don't necessarily need the webpack plugin, if you can't accept the full import of css.
 
 ### Import all components (not recommended)
