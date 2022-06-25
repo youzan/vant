@@ -25,6 +25,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.48](https://github.com/youzan/vant/compare/v2.12.47...v2.12.48)
+
+`2022-06-25`
+
+**Feature**
+
+- Steps: 新增 center 属性 [#10617](https://github.com/youzan/vant/issues/10617)
+
+**Bug Fixes**
+
+- Dialog: 修复点击按钮后会导致表单提交的问题 [#10570](https://github.com/youzan/vant/issues/10570)
+- List: 修复检测滚动容器时忽略了 `overflow: overlay` 样式的问题 [#10743](https://github.com/youzan/vant/issues/10743)
+
 ### [v2.12.47](https://github.com/youzan/vant/compare/v2.12.46...v2.12.47)
 
 `2022-04-07`
