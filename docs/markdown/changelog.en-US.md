@@ -16,6 +16,19 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.48](https://github.com/youzan/vant/compare/v2.12.47...v2.12.48)
+
+`2022-06-25`
+
+**Feature**
+
+- Steps: add center prop [#10617](https://github.com/youzan/vant/issues/10617)
+
+**Bug Fixes**
+
+- Dialog: should not submit form after clicking button [#10570](https://github.com/youzan/vant/issues/10570)
+- List: element with `overflow: overlay` style should be considered a scroll container [#10743](https://github.com/youzan/vant/issues/10743)
+
 ### [v2.12.47](https://github.com/youzan/vant/compare/v2.12.46...v2.12.47)
 
 `2022-04-07`
