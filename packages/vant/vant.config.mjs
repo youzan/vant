@@ -6,14 +6,18 @@ export default {
     skipInstall: ['lazyload'],
     packageManager: 'pnpm',
     extensions: {
-      esm: '.mjs'
+      esm: '.mjs',
     },
     site: {
       publicPath:
-        (typeof window === 'undefined' && process.env.PUBLIC_PATH) || '/vant/v4',
+        (typeof window === 'undefined' && process.env.PUBLIC_PATH) ||
+        '/vant/v4',
     },
     vetur: {
       tagPrefix: 'van-',
+    },
+    css: {
+      removeSourceFile: true,
     },
   },
   site: {
