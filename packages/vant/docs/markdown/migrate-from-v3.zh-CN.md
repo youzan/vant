@@ -112,6 +112,8 @@ emit('clickInput');
 
 目前 Vant 已经支持了基于 CSS 变量的主题定制能力，因此后续将不再提供基于 Less 的主题定制方式。
 
+这意味着 Vant 的 npm 包中将不再会包含 `.less` 样式源文件，只会提供编译后的 `.css` 样式文件。
+
 如果你的项目正在使用旧版的 Less 主题定制，请使用 [ConfigProvider 全局配置](#/zh-CN/config-provider) 组件进行替换。
 
 ### 简化 CSS 变量名
