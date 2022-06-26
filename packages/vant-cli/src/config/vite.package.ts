@@ -1,17 +1,14 @@
 import { join } from 'path';
 import { setBuildTarget } from '../common/index.js';
 import { CWD, ES_DIR, getVantConfig, LIB_DIR } from '../common/constant.js';
-import type { InlineConfig, LibraryFormats } from 'vite';
+import type { InlineConfig } from 'vite';
+import type { BundleOption } from '../compiler/compile-bundles.js';
 
 export function getViteConfigForPackage({
   minify,
   formats,
-  external,
-}: {
-  minify: boolean;
-  formats: LibraryFormats[];
-  external: string[];
-}): InlineConfig {
+  external = [],
+}: BundleOption): InlineConfig {
   setBuildTarget('package');
 
   const { name, build } = getVantConfig();
@@ -36,7 +33,7 @@ export function getViteConfigForPackage({
       // terser has better compression than esbuild
       minify: minify ? 'terser' : false,
       rollupOptions: {
-        external,
+        external: [...external, 'vue'],
         output: {
           dir: LIB_DIR,
           exports: 'named',

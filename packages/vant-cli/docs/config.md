@@ -103,13 +103,30 @@ module.exports = {
 - Type: `string`
 - Default: `'less'`
 
-CSS preprocess Config, support `less` and `sass`. Use `less` by default.
+CSS preprocessor config, support `less` and `sass`. Use `less` by default.
 
 ```js
 module.exports = {
   build: {
     css: {
       preprocessor: 'sass',
+    },
+  },
+};
+```
+
+### build.css.removeSourceFile
+
+- Type: `boolean`
+- Default: `'false'`
+
+Whether to remove the source style files after build.
+
+```js
+module.exports = {
+  build: {
+    css: {
+      removeSourceFile: true,
     },
   },
 };
@@ -203,6 +220,45 @@ module.exports = {
 - Default: `undefined`
 
 `npm` package manager.
+
+### build.bundleOptions
+
+- Type: `BundleOptions[]`
+
+Specify the format of the bundled output.
+
+The type of `BundleOptions`:
+
+```ts
+type BundleOption = {
+  // Whether to minify code (Tips: es format output can't be minified by vite)
+  minify?: boolean;
+  // Formats, can be set to 'es' | 'cjs' | 'umd' | 'iife'
+  formats: LibraryFormats[];
+  // Dependencies to external (Vue is externaled by default)
+  external?: string[];
+};
+```
+
+Default value：
+
+```ts
+const DEFAULT_OPTIONS: BundleOption[] = [
+  {
+    minify: false,
+    formats: ['umd'],
+  },
+  {
+    minify: true,
+    formats: ['umd'],
+  },
+  {
+    minify: false,
+    formats: ['es', 'cjs'],
+    external: allDependencies,
+  },
+];
+```
 
 ### site.title
 
