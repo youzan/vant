@@ -12,6 +12,7 @@ import {
   ES_DIR,
   SRC_DIR,
   LIB_DIR,
+  getVantConfig,
   STYLE_DEPS_JSON_FILE,
 } from '../common/constant.js';
 
@@ -87,8 +88,10 @@ export function genComponentStyle(
     delete require.cache[STYLE_DEPS_JSON_FILE];
   }
 
+  const vantConfig = getVantConfig();
   const components = getComponents();
   const baseFile = getCssBaseFile();
+  const hasSourceFile = vantConfig.build?.css?.removeSourceFile !== true;
 
   components.forEach((component) => {
     genEntry({
@@ -98,7 +101,7 @@ export function genComponentStyle(
       ext: '.css',
     });
 
-    if (CSS_LANG !== 'css') {
+    if (CSS_LANG !== 'css' && hasSourceFile) {
       genEntry({
         baseFile,
         component,
