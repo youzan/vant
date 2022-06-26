@@ -115,6 +115,23 @@ module.exports = {
 };
 ```
 
+### build.css.removeSourceFile
+
+- Type: `boolean`
+- Default: `'false'`
+
+是否在构建后移除样式文件的源代码。
+
+```js
+module.exports = {
+  build: {
+    css: {
+      removeSourceFile: true,
+    },
+  },
+};
+```
+
 ### build.site.publicPath
 
 - Type: `string`
