@@ -223,6 +223,45 @@ module.exports = {
 
 指定使用的包管理器。
 
+### build.bundleOptions
+
+- Type: `BundleOptions[]`
+
+指定打包后产物的格式。
+
+产物格式由三个配置项控制：
+
+```ts
+type BundleOption = {
+  // 是否压缩代码（注意 es 产物无法被 vite 压缩）
+  minify?: boolean;
+  // 产物类型，可选值为 'es' | 'cjs' | 'umd' | 'iife'
+  formats: LibraryFormats[];
+  // 需要 external 的依赖（Vue 默认会被 external）
+  external?: string[];
+};
+```
+
+该选项的默认值为：
+
+```ts
+const DEFAULT_OPTIONS: BundleOption[] = [
+  {
+    minify: false,
+    formats: ['umd'],
+  },
+  {
+    minify: true,
+    formats: ['umd'],
+  },
+  {
+    minify: false,
+    formats: ['es', 'cjs'],
+    external: allDependencies,
+  },
+];
+```
+
 ### site.title
 
 - Type: `string`

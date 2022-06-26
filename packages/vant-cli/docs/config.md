@@ -221,6 +221,45 @@ module.exports = {
 
 `npm` package manager.
 
+### build.bundleOptions
+
+- Type: `BundleOptions[]`
+
+Specify the format of the bundled output.
+
+The type of `BundleOptions`:
+
+```ts
+type BundleOption = {
+  // Whether to minify code (Tips: es format output can't be minified by vite)
+  minify?: boolean;
+  // Formats, can be set to 'es' | 'cjs' | 'umd' | 'iife'
+  formats: LibraryFormats[];
+  // Dependencies to external (Vue is externaled by default)
+  external?: string[];
+};
+```
+
+Default value：
+
+```ts
+const DEFAULT_OPTIONS: BundleOption[] = [
+  {
+    minify: false,
+    formats: ['umd'],
+  },
+  {
+    minify: true,
+    formats: ['umd'],
+  },
+  {
+    minify: false,
+    formats: ['es', 'cjs'],
+    external: allDependencies,
+  },
+];
+```
+
 ### site.title
 
 - Type: `string`
