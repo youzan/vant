@@ -19,6 +19,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.5.2](https://github.com/youzan/vant/compare/v3.5.1...v3.5.2)
+
+`2022-06-26`
+
+**Feature**
+
+- ActionBar: 新增 placeholder 属性 [#10724](https://github.com/youzan/vant/issues/10724)
+- Field: 新增 start-validate 和 end-validate 事件 [#10726](https://github.com/youzan/vant/issues/10726)
+- SubmitBar: 新增 placeholder 属性 [#10725](https://github.com/youzan/vant/issues/10725)
+
+**Bug Fixes**
+
+- List: 修复父节点样式包含 `overflow: overlay` 时未被判定为滚动容器的问题 [#10743](https://github.com/youzan/vant/issues/10743)
+
 ### [v3.5.1](https://github.com/youzan/vant/compare/v3.5.0...v3.5.1)
 
 `2022-06-12`

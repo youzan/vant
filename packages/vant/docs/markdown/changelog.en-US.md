@@ -19,6 +19,20 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.5.2](https://github.com/youzan/vant/compare/v3.5.1...v3.5.2)
+
+`2022-06-26`
+
+**Feature**
+
+- ActionBar: add placeholder prop [#10724](https://github.com/youzan/vant/issues/10724)
+- Field: add start-validate and end-validate event [#10726](https://github.com/youzan/vant/issues/10726)
+- SubmitBar: add placeholder prop [#10725](https://github.com/youzan/vant/issues/10725)
+
+**Bug Fixes**
+
+- List: element with `overflow: overlay` style should be considered a scroll container [#10743](https://github.com/youzan/vant/issues/10743)
+
 ### [v3.5.1](https://github.com/youzan/vant/compare/v3.5.0...v3.5.1)
 
 `2022-06-12`
