@@ -1,42 +1,41 @@
 import { build } from 'vite';
-import { getPackageJson } from '../common/constant.js';
+import { getPackageJson, getVantConfig } from '../common/constant.js';
 import { mergeCustomViteConfig } from '../common/index.js';
 import { getViteConfigForPackage } from '../config/vite.package.js';
+import type { LibraryFormats } from 'vite';
+
+export type BundleOption = {
+  minify?: boolean;
+  formats: LibraryFormats[];
+  external?: string[];
+};
 
 export async function compileBundles() {
   const dependencies = getPackageJson().dependencies || {};
-  const externals = Object.keys(dependencies);
+  const external = Object.keys(dependencies);
 
-  const configs = [
-    // umd bundle
-    getViteConfigForPackage({
+  const DEFAULT_OPTIONS: BundleOption[] = [
+    {
       minify: false,
       formats: ['umd'],
-      external: ['vue'],
-    }),
-    // umd bundle (minified)
-    getViteConfigForPackage({
+    },
+    {
       minify: true,
       formats: ['umd'],
-      external: ['vue'],
-    }),
-    // esm/cjs bundle
-    getViteConfigForPackage({
+    },
+    {
       minify: false,
       formats: ['es', 'cjs'],
-      external: ['vue', ...externals],
-    }),
-    // esm/cjs bundle (minified)
-    // vite will not minify es bundle
-    // see: https://github.com/vuejs/vue-next/issues/2860
-    getViteConfigForPackage({
-      minify: true,
-      formats: ['es', 'cjs'],
-      external: ['vue', ...externals],
-    }),
+      external,
+    },
   ];
 
+  const bundleOptions: BundleOption[] =
+    getVantConfig().build?.bundleOptions || DEFAULT_OPTIONS;
+
   await Promise.all(
-    configs.map((config) => build(mergeCustomViteConfig(config)))
+    bundleOptions.map((config) =>
+      build(mergeCustomViteConfig(getViteConfigForPackage(config)))
+    )
   );
 }
