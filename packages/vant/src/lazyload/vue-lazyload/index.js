@@ -1,5 +1,6 @@
 /**
  * This is a fork of [vue-lazyload](https://github.com/hilongjw/vue-lazyload) with Vue 3 support.
+ * license at https://github.com/hilongjw/vue-lazyload/blob/master/LICENSE
  */
 
 import Lazy from './lazy';
