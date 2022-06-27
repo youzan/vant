@@ -71,7 +71,7 @@
       support:
         - name: van-dropdown-item-son
           title: 菜单项
-          snippet: '<van-dropdown-item-son clickable :isLink="false"><template #title>标题n</template></van-dropdown-item-son>'
+          snippet: '<van-dropdown-item-son clickable :isLink="false" notitle title="标题n"></van-dropdown-item-son>'
   events:
     - name: change
       title: 点击选项导致 value 变化时触发
@@ -118,7 +118,6 @@
     - name: title
       title: 左侧文本
       type: string
-      advanced: true
       description: 左侧文本
     - name: value
       title: 值
