@@ -7,7 +7,7 @@ import { PortalMixin } from '../mixins/portal';
 import { ChildrenMixin, ParentMixin } from '../mixins/relation';
 
 // Components
-import Cell from '../cell';
+import DropdownItemSon from '../dropdown-menu/son';
 import Icon from '../icon';
 import Popup from '../popup';
 
@@ -148,9 +148,9 @@ export default createComponent({
     const Options = this.options.map((option) => {
       const active = option.value === this.value;
       return (
-        <Cell
+        <DropdownItemSon
           vusion-scope-id={aId}
-          vusion-node-tag="van-cell"
+          vusion-node-tag="van-dropdown-item-son"
           clickable
           key={option.value}
           icon={option.icon}
@@ -170,7 +170,7 @@ export default createComponent({
           {active && (
             <Icon class={bem('icon')} color={activeColor} name="success" />
           )}
-        </Cell>
+        </DropdownItemSon>
       );
     });
 

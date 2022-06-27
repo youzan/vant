@@ -28,7 +28,7 @@ export { default as VanNotify } from '../../src/notify';
 
 export { default as VanDivider } from '../../src/divider';
 export { default as VanDropdownItem } from '../../src/dropdown-item';
-export { default as VanDropdownMenu } from '../../src/dropdown-menu';
+export { default as VanDropdownMenu, son as VanDropdownItemSon } from '../../src/dropdown-menu';
 export { default as VanEmpty } from '../../src/empty';
 export { default as VanEmptyCol } from '../../src/emptycol';
 export { default as VanField } from '../../src/field';
