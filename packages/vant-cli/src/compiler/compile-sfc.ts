@@ -92,10 +92,13 @@ export async function compileSfc(filePath: string): Promise<any> {
           script += '// @ts-nocheck\n';
         }
 
+        let bindingMetadata;
         if (descriptor.scriptSetup) {
-          script += compileScript(descriptor, {
+          const { bindings, content } = compileScript(descriptor, {
             id: scopeId,
-          }).content;
+          });
+          script += content;
+          bindingMetadata = bindings;
         } else {
           script += descriptor.script!.content;
         }
@@ -108,6 +111,9 @@ export async function compileSfc(filePath: string): Promise<any> {
             id: scopeId,
             source: template.content,
             filename: filePath,
+            compilerOptions: {
+              bindingMetadata,
+            },
           }).code;
 
           script = injectRender(script, render);
