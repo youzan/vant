@@ -83,7 +83,7 @@
               :class="[$style.opitem, $style.item, !iffall ? $style.floatitem : '', $style[moveMode], styleArr[i] && styleArr[i].showClass && $style[styleArr[i].showClass]]"
               >
               <slot
-                v-if="iffall"
+                v-if="iffall && slots('item')"
                 name="item"
                 :item="item"
                 :state="(styleArr[i] && styleArr[i].state) || 'loading'"
@@ -92,10 +92,11 @@
                 :text="$at(item, field || textField)"
                 :value="$at(item, valueField)"
                 :disabled="item.disabled || disabled"
+                vusion-slot-name="item"
                 >{{ $at(item, field || textField) }}
               </slot>
               <slot
-                v-if="!iffall"
+                v-if="!iffall && slots('item')"
                 name="item"
                 :item="item"
                 :data="item"
@@ -103,8 +104,10 @@
                 :text="$at(item, field || textField)"
                 :value="$at(item, valueField)"
                 :disabled="item.disabled || disabled"
+                vusion-slot-name="item"
                 >{{ $at(item, field || textField) }}
               </slot>
+              <van-empty-col v-if="(!slots('item')) && $env.VUE_APP_DESIGNER"></van-empty-col>
             </component>
           </div>
           <div :class="$style.status" status="loading" v-if="currentLoading">
@@ -176,6 +179,7 @@
 <script>
 import UListView from 'cloud-ui.vusion/src/components/u-list-view.vue/index.vue';
 import VanPullRefresh from '../../../src/pull-refresh';
+import VanEmptyCol from '../../../src/emptycol';
 let loaderCache = {};
 let loaderImg = new Map();
 let time = null;
@@ -185,7 +189,7 @@ export default {
   groupName: 'van-grid-view-group',
   childName: 'van-grid-view-item',
   extends: UListView,
-  components: { VanPullRefresh },
+  components: { VanPullRefresh, VanEmptyCol },
   props: {
     border: { type: Boolean, default: false },
     readonly: { type: Boolean, default: true },
@@ -616,6 +620,16 @@ export default {
     },
     getColDom(i) {
       return this.$refs['item' + i][0];
+    },
+    slots(name = 'default', props) {
+      const { $slots, $scopedSlots } = this;
+      const scopedSlot = $scopedSlots[name];
+
+      if (scopedSlot) {
+        return scopedSlot(props);
+      }
+
+      return $slots[name];
     },
     debounce(func, wait) {
       let timer;
