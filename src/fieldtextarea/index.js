@@ -173,16 +173,20 @@ export default createComponent({
         );
       }
     },
+    afterValueChange() {
+      console.log(666);
+      this.currentValue = this.value;
+    },
   },
   watch: {
-    value: {
-      handler: function (val, oldVal) {
-        if (isDef(val) && !equal(val, this.currentValue)) {
-          this.currentValue = val;
-        }
-      },
-      immediate: true
-    },
+    // value: {
+    //   handler: function (val, oldVal) {
+    //     if (isDef(val) && !equal(val, this.currentValue)) {
+    //       this.currentValue = val;
+    //     }
+    //   },
+    //   immediate: true
+    // },
     currentValue(val) {
       this.$emit('input', val);
       this.$emit('change', val, this);

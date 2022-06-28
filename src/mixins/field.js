@@ -14,6 +14,7 @@ export const FieldMixin = {
         field.resetValidation();
         field.validateWithTriggerVusion('onChange');
       }
+      this.afterValueChange?.();
     },
     defaultDate() {
       const field = this.vanField;
