@@ -94,7 +94,7 @@ export default createComponent({
 
   methods: {
     getSrc(src) {
-      if (src.indexOf && src.indexOf('base64') !== -1) {
+      if (src?.indexOf?.('base64') !== -1) {
         return src;
       }
       const reg = /^([^\[\]]+)(\,([^\[\]]+)){0,}$/g;
