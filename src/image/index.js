@@ -167,6 +167,9 @@ export default createComponent({
       }
 
       if (this.error && this.showError) {
+        if(!this.ifDesigner() && this.$parent.$options._componentTag === 'van-cardu') {
+          return null;
+        }
         return (
           <div class={bem('error')}>
             {this.slots('error') || (
