@@ -1,101 +1,34 @@
-- name: van-list-view
-  title: 数据列表
-  icon: list-view
+- name: van-grid-view
+  title: 数据网格
+  icon: grid-view
+  description: 数据网格
   labels:
     - Table
-  description: 用于列举大量数据的列表框，支持单选、多选、过滤（搜索）、分页等功能。
-  next: true
-  nested: false
   attrs:
     - name: data-source
       title: 数据源
       type: Array<Item> | Function | object | DataSource
-      designer-value: '[{}, {}, {}]'
-      description: 列表的数据源。数组方式表示直接的数据，函数需要返回一个 Promise。
+      designer-value: "[{}, {}, {}, {}, {}, {}, {}, {}]"
+      description: 数据网格的数据源，数据集对象或者返回数据集的逻辑
+      group: 数据属性
     - name: data-schema
       title: 数据类型
       type: schema
       description: 表格每一行的数据类型
+      group: 数据属性
       compType: dataTypeSelect
-    - name: initial-load
+    - name: iffall
+      title: 瀑布模式
       type: boolean
+      default: false
+      description: 瀑布模式
+      group: 样式属性
+    - name: initial-load
       title: 初始加载
+      type: boolean
       default: true
       description: 是否在初始时立即加载
-    - name: readonly
-      title: 只读
-      type: boolean
-      default: false
-      description: 是否只读
-      advanced: true
-    - name: disabled
-      title: 禁用
-      type: boolean
-      default: false
-      description: 是否禁用
-      advanced: true
-    - name: value
-      title: 值
-      type: any
-      sync: true
-      model: true
-      advanced: true
-      description: 当前选择的值
-    - name: text-field
-      title: 文本字段名
-      type: string
-      default: text
-      description: 选项文本的字段名
-      advanced: true
-    - name: value-field
-      title: 值字段名
-      type: string
-      default: value
-      description: 选项值的字段名
-      advanced: true
-    - name: cancelable
-      title: 可取消
-      type: boolean
-      default: false
-      advanced: true
-      description: 是否可以取消选择
-    - name: multiple
-      title: 可多选
-      type: boolean
-      default: false
-      advanced: true
-      description: 是否可以多选
-    - name: show-head
-      title: 显示头部
-      type: boolean
-      default: false
-      advanced: true
-      description: 是否显示头部
-    - name: title
-      title: 列表标题
-      type: string
-      default: 列表
-      advanced: true
-      description: 列表标题
-    - name: show-foot
-      title: 显示底部
-      type: boolean
-      default: false
-      description: 是否显示底部
-      advanced: true
-    - name: loading-text
-      title: 加载中提示文字
-      type: string
-      default: 加载中...
-      description: 加载时的文字。使用分页加载时才会出现
-    - name: error-text
-      title: 加载失败提示文字
-      type: string
-      default: 加载失败，请重试
-    - name: empty-text
-      title: 无数据提示文字
-      type: string
-      default: 暂无数据
+      group: 数据属性
     - name: pageable
       title: 分页加载更多
       type: string
@@ -108,16 +41,13 @@
         - value: load-more
           title: 点击加载更多
       description: 是否需要分页
+      group: 数据属性
     - name: page-size
       title: 分页大小
       type: number
       default: 20
-      description: 分页大小
-    - name: remote-paging
-      title: 是否需要后端分页
-      type: boolean
-      default: false
-      description: 是否使用后端分页
+      description: ""
+      group: 数据属性
     - name: pull-refresh
       title: 下拉刷新
       type: boolean
@@ -148,60 +78,135 @@
       type: boolean
       default: false
       description: 是否可以过滤（搜索），开启将会显示搜索框。
+      group: 数据属性
+    - name: remote-paging
+      title: 后端分页
+      type: boolean
+      default: false
+      description: ""
+      group: 数据属性
     - name: remote-filtering
       title: 后端筛选
       type: boolean
       default: false
-      description: 是否使用后端过滤
+      description: ""
+      group: 数据属性
+    - name: match-method
+      title: 匹配方法
+      type: string, Function
+      default: includes
+      description: 过滤时的匹配方法
+      advanced: true
+      group: 数据属性
+    - name: case-sensitive
+      title: 大小写敏感
+      type: string, Function
+      default: includes
+      description: 过滤时是否区分大小写
+      advanced: true
+      group: 数据属性
+    - name: col
+      title: 网格数
+      type: number
+      default: 2
+      description: 每行排列几项
+      group: 样式属性
+    - name: loading-text
+      title: 加载中文字
+      type: string
+      default: 加载中...
+      description: 加载时的文字。使用分页加载时才会出现
+      group: 状态属性
+    - name: error
+      title: 是否加载失败
+      type: boolean
+      advanced: true
+      description: 手动设置是否加载失败。
+      group: 状态属性
+    - name: error-text
+      title: 加载失败文字
+      type: string
+      default: 加载失败，请重试
+      description: 加载失败时的文字。
+      group: 状态属性
+    - name: empty-text
+      title: 暂无数据文字
+      type: string
+      default: 暂无数据
+      description: 暂无数据时的文字。
+      group: 状态属性
     - name: placeholder
-      title: 筛选输入框的占位符
+      title: 搜索框占位符
       type: string
       default: 请输入
-      description: 搜索框的占位符
+      description: 搜索框为空时提示文本
+    - name: value
+      title: 值
+      type: any
+      sync: true
+      model: true
+      default: null
+      description: 当前选择的值
+      advanced: true
+    - name: field
+      title: 文本字段名
+      type: string
+      default: text
+      description: 选项文本的字段名
+      deprecated: true
+      advanced: true
+    - name: text-field
+      title: 文本字段名
+      type: string
+      default: text
+      description: 选项文本的字段名
+      advanced: true
+    - name: value-field
+      title: 值字段名
+      type: string
+      default: value
+      description: 选项值的字段名
+      advanced: true
+    - name: cancelable
+      title: 可取消
+      type: boolean
+      default: false
+      description: ""
+      advanced: true
+    - name: multiple
+      title: 可多选
+      type: boolean
+      default: false
+      description: ""
+      advanced: true
     - name: clearable
       title: 筛选清除按钮
       type: boolean
       default: false
       description: 搜索框是否有清除按钮
-    - name: match-method
-      title: 匹配方法
-      type: string, Function
-      default: includes
       advanced: true
-      description: 过滤时的匹配方法
-    - name: case-sensitive
-      title: 大小写敏感
+    - name: readonly
+      title: 只读
       type: boolean
       default: false
+      description: ""
       advanced: true
-      description: 过滤时大小写是否敏感
-    - name: size
-      title: 尺寸
-      type: string
-      options:
-        - value: full
-          title: 占满
-        - value: huge
-          title: 巨大
-        - value: large
-          title: 大
-        - value: normal
-          title: 正常
-        - value: auto
-          title: 自适应
-      default: normal
-      description: 大小扩展，支持一个值或两个值的组合，前者表示高度，后者表示宽度
-      multi: true
-      maxSelect: 2
+      group: 选择属性
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: ""
       advanced: true
+      group: 选择属性
   slots:
     - name: default
-      description: 插入<van-cell>
+      description: 插入<van-cardu>
       empty-background: drag-entity-here
       support:
-        - name: van-cell
-          title: 单元格
-          snippet: '<template #item="scope"><van-cell isLink><template #title>文本</template></van-cell></template>'
+        - name: van-cardu
+          title: 卡片
+          snippet: '<template #item="scope"><van-cardu><template #head><van-text text="标题"></van-text></template><van-text  text="卡片内容"></van-text></van-cardu></template>'
     - name: item
       description: 自定义选项的结构和样式
   events:
@@ -209,11 +214,6 @@
       description: 选择某一项前触发
       advanced: true
       params:
-        - name: $event
-          type: object
-          description: 自定义事件对象
-          schema:
-            $ref: "#/systemTypes/ChangeItemEvent"
         - name: $event.value
           type: any
           description: 选择项的值
@@ -233,28 +233,18 @@
           type: UListView
           description: 发送事件实例
     - name: input
-      title: 选择时
       description: 选择某一项时触发
-      advanced: true
       params:
         - name: $event
           type: any
           description: 选择项的值
-          schema:
-            $ref: "#/basicTypes/String"
         - name: senderVM
           type: UListView
           description: 发送事件实例
     - name: select
-      title: 选择后
       description: 选择某一项时触发。单选模式中：
       advanced: true
       params:
-        - name: $event
-          type: object
-          description: 自定义事件对象
-          schema:
-            $ref: "#/systemTypes/ChangeItemEvent"
         - name: $event.value
           type: any
           description: 改变后的值
@@ -277,14 +267,9 @@
           type: UListView
           description: 发送事件实例
     - name: change
-      title: 改变后
-      description: 选择值改变时触发。
+      description: 选择值改变时触发。单选模式中：
+      advanced: true
       params:
-        - name: $event
-          type: object
-          description: 自定义事件对象
-          schema:
-            $ref: "#/systemTypes/ChangeItemEvent"
         - name: $event.value
           type: any
           description: 选择项的值
@@ -307,15 +292,9 @@
           type: UListView
           description: 发送事件实例
     - name: before-load
-      title: 加载前
       description: 加载前触发
       advanced: true
       params:
-        - name: $event
-          type: object
-          description: 自定义事件对象
-          schema:
-            $ref: "#/systemTypes/EventTarget"
         - name: $event.preventDefault
           type: Function
           description: 阻止加载流程
@@ -323,7 +302,6 @@
           type: UTableView
           description: 发送事件实例
     - name: load
-      title: 加载后
       description: 加载时触发
       params:
         - name: $event

@@ -94,6 +94,12 @@ export default createComponent({
 
   methods: {
     getSrc(src) {
+      if (this.ifDesigner() && !src && this.$parent.$options._componentTag === 'van-cardu') {
+        return 'https://static-vusion.nos-eastchina1.126.net/h5-template/lietu.png';
+      }
+      if (src?.indexOf?.('base64') !== -1) {
+        return src;
+      }
       const reg = /^([^\[\]]+)(\,([^\[\]]+)){0,}$/g;
       if (typeof src === 'string' && reg.test(src)) {
           return src.split(',')[0];
@@ -135,6 +141,7 @@ export default createComponent({
     },
 
     onClick(event) {
+      if (this.$parent.$options._componentTag === 'van-cardu') return;
       if (this.$listeners.click) {
         this.$emit('click', event);
       } else {
@@ -204,6 +211,7 @@ export default createComponent({
   },
 
   render() {
+    if (!this.src && !this.ifDesigner()) return null;
     return (
       <div
         class={bem({ round: this.sr === 'r' || this.round })}

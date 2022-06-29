@@ -11,8 +11,9 @@
 ### 列元素间距
 
 ``` html
-<van-row>
+<van-row gutter="10">
   <van-col span="8"></van-col>
-  <van-col span="8" offset="8"></van-col>
+  <van-col span="8"></van-col>
+  <van-col span="8"></van-col>
 </van-row>
 ```

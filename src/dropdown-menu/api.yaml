@@ -66,12 +66,12 @@
       description: 禁用
   slots:
     - name: default
-      description: 插入`<van-cell>`子组件。
+      description: 插入`<van-dropdown-item-son>`子组件。
       empty-background: add-sub-large
       support:
-        - name: van-cell
+        - name: van-dropdown-item-son
           title: 菜单项
-          snippet: '<van-cell clickable :isLink="false"><template #title>标题n</template></van-cell>'
+          snippet: '<van-dropdown-item-son clickable :isLink="false" notitle title="标题n"></van-dropdown-item-son>'
   events:
     - name: change
       title: 点击选项导致 value 变化时触发
@@ -88,3 +88,100 @@
   methods:
     - name: toggle
       description: 切换菜单展示状态
+- name: van-dropdown-item-son
+  title: 菜单子项
+  attrs:
+    - name: isLink
+      title: 箭头
+      type: boolean
+      default: true
+      description: 是否展示箭头
+    - name: arrow-direction
+      title: 箭头方向
+      type: string
+      options:
+        - value: left
+          title: 左
+        - value: up
+          title: 上
+        - value: down
+          title: 下
+        - value: right
+          title: 右
+      default: right
+      description: 箭头得方向
+    - name: center
+      title: 垂直居中
+      type: boolean
+      default: true
+      description: 是否垂直居中
+    - name: title
+      title: 左侧文本
+      type: string
+      description: 左侧文本
+    - name: value
+      title: 值
+      type: string, number
+      default2: 内容
+      description: 值
+    - name: rtitle
+      title: 右侧文本
+      type: string
+      advanced: true
+      description: 右侧文本
+    - name: label
+      title: 标题下方的描述信息
+      type: string
+      default: 这是单元格
+      advanced: true
+      description: 标题下方的描述信息
+    - name: icon
+      title: 图标
+      type: icon
+      default: ''
+      description: 图标
+    - name: linkType
+      title: 链接类型
+      type: string
+      options:
+        - value: destination
+          title: 页面跳转
+        - value: href
+          title: 普通链接
+        - value: download
+          title: 下载链接
+      default: href
+      description: 链接类型
+      compType: linkTypeSelect
+    - name: hrefAndTo
+      title: 链接
+      type: string
+      description: 链接地址
+      compType: linkHrefInput
+    - name: target
+      title: 打开方式
+      type: string
+      options:
+        - value: _blank
+          title: 新标签页
+        - value: _self
+          title: 当前窗口
+        - value: _parent
+          title: 父级窗口
+          advanced: true
+        - value: _top
+          title: 顶级窗口
+          advanced: true
+      default: _self
+      description: 链接打开方式
+  slots:
+    - name: default
+      description: 插入文本或 HTML。
+    - name: right-icon
+      description: 右侧图标。
+      advanced: true
+  events:
+    - name: click
+      title: 点击后
+      description: 点击某一项后触发
+      params: []

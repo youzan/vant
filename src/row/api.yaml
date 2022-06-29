@@ -21,15 +21,15 @@
       title: 列间距
       type: string
       options:
-        - value: 0
+        - value: '0'
           title: 无
-        - value: 10
+        - value: '10'
           title: 小
-        - value: 20
+        - value: '20'
           title: 正常
-        - value: 30
+        - value: '30'
           title: 大
-      default: 0
+      default: '0'
       description: 列元素之间的间距（单位为 px）
     - name: justify
       title: 对齐方式

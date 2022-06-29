@@ -305,6 +305,7 @@ export default createComponent({
           e.preventDefault();
           this.type = type;
           this.onChange();
+          this.$emit('click', e);
         },
         touchstart: () => {
           this.type = type;

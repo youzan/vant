@@ -1,0 +1,107 @@
+- name: van-cardu
+  title: 卡片
+  icon: card
+  labels:
+    - Container
+  description: 用于快速布局
+  next: false
+  nested: false
+  slots:
+    - name: default
+      description: 插入默认的元素
+    - name: cover
+      description: 插入图片
+  attrs:
+    - name: width
+      title: 宽度
+      type: string
+      advanced: true
+      description: 卡片宽度：像素或百分比
+      group: 样式属性
+    - name: sr
+      title: 风格
+      type: string
+      options:
+        - value: s
+          title: 方角
+        - value: r
+          title: 圆角
+      default: r
+      description: 图片风格
+      group: 样式属性
+    - name: shadow
+      title: 阴影
+      type: boolean
+      description: 卡片阴影
+      default: true
+      group: 样式属性
+    - name: border
+      title: 显示边框
+      type: boolean
+      default: true
+      description: 是否显示卡片边框
+      group: 样式属性
+    - name: split
+      title: 分割线
+      type: boolean
+      default: false
+      description: 是否显示分割线
+      group: 样式属性
+    - name: linkType
+      title: 链接类型
+      type: string
+      options:
+        - value: destination
+          title: 页面跳转
+        - value: href
+          title: 普通链接
+        - value: download
+          title: 下载链接
+      default: href
+      description: 链接类型
+      compType: linkTypeSelect
+      group: 主要属性
+    - name: hrefAndTo
+      title: 链接
+      type: string
+      description: 链接地址
+      compType: linkHrefInput
+      group: 主要属性
+    - name: target
+      title: 打开方式
+      type: string
+      options:
+        - value: _blank
+          title: 新标签页
+        - value: _self
+          title: 当前窗口
+        - value: _parent
+          title: 父级窗口
+          advanced: true
+        - value: _top
+          title: 顶级窗口
+          advanced: true
+      default: _self
+      description: 链接打开方式
+      group: 主要属性
+  events:
+    - name: click
+      title: 点击后
+      description: 点击事件
+      params: []
+- name: van-cardu-group
+  advanced: true
+  title: 卡片组
+  next: false
+  nexted: false
+  attrs:
+    - name: title
+      title: 标题
+      type: string
+      description: 卡片组的标题
+  description: 卡片组
+  slots:
+    - name: default
+      description: 插入默认的元素
+    - name: cover
+      description: 插入图片

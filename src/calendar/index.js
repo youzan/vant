@@ -183,6 +183,7 @@ export default createComponent({
 
   mounted() {
     this.init();
+    this.setTitle();
   },
 
   /* istanbul ignore next */
@@ -465,8 +466,8 @@ export default createComponent({
     },
 
     onConfirm() {
-      this.$emit('confirm', (copyDates(this.currentDate)).formath("yyyy-MM-dd"));
       this.$emit('update:default-date', (copyDates(this.currentDate)).formath("yyyy-MM-dd"));
+      this.$emit('confirm', (copyDates(this.currentDate)).formath("yyyy-MM-dd"));
       this.togglePopup();
       this.setTitle();
     },

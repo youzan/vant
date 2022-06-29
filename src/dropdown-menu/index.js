@@ -8,6 +8,9 @@ import { ClickOutsideMixin } from '../mixins/click-outside';
 
 const [createComponent, bem] = createNamespace('dropdown-menu');
 
+import son from './son';
+export { son };
+
 export default createComponent({
   mixins: [
     ParentMixin('vanDropdownMenu'),

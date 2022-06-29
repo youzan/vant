@@ -359,6 +359,14 @@ module.exports = {
                 path: 'gallery',
                 title: 'gallery 画廊',
               },
+              {
+                path: 'cardu',
+                title: 'cardu 卡片',
+              },
+              {
+                path: 'grid-view',
+                title: 'grid-view 网格',
+              },
             ],
           },
           {
@@ -769,6 +777,14 @@ module.exports = {
               {
                 path: 'gallery',
                 title: 'gallery 画廊',
+              },
+              {
+                path: 'cardu',
+                title: 'cardu 卡片',
+              },
+              {
+                path: 'grid-view',
+                title: 'grid-view 网格',
               },
             ],
           },

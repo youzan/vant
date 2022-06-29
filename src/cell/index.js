@@ -310,15 +310,15 @@ export default createComponent({
     if (inVanDropdownItem) {
       if (that.routeMode) {
         if (that.activeDropdownItem) {
-          classesnew += that.vanDropdownMenuItem.bem('option', { active: true });
+          classesnew += ' ' + that.vanDropdownMenuItem.bem('option', { active: true });
         } else {
-          classesnew += that.vanDropdownMenuItem.bem('option', { active: false });
+          classesnew += ' ' + that.vanDropdownMenuItem.bem('option', { active: false });
         }
       } else if (isDef(that.vanDropdownMenuItem.value)) {
         if (that.vanDropdownMenuItem.value === (that.value ?? that.index)) {
-          classesnew += that.vanDropdownMenuItem.bem('option', { active: true });
+          classesnew += ' ' + that.vanDropdownMenuItem.bem('option', { active: true });
         } else {
-          classesnew += that.vanDropdownMenuItem.bem('option', { active: false });
+          classesnew += ' ' + that.vanDropdownMenuItem.bem('option', { active: false });
         }
       }
     }

@@ -28,7 +28,7 @@ export { default as VanNotify } from '../../src/notify';
 
 export { default as VanDivider } from '../../src/divider';
 export { default as VanDropdownItem } from '../../src/dropdown-item';
-export { default as VanDropdownMenu } from '../../src/dropdown-menu';
+export { default as VanDropdownMenu, son as VanDropdownItemSon } from '../../src/dropdown-menu';
 export { default as VanEmpty } from '../../src/empty';
 export { default as VanEmptyCol } from '../../src/emptycol';
 export { default as VanField } from '../../src/field';
@@ -102,5 +102,8 @@ export { default as VanTreeSelect } from '../../src/tree-select';
 export { default as VanUploader } from '../../src/uploader';
 export { default as VanForComponents } from '../../src/for-components';
 export { default as VanGallery } from '../../src/gallery';
+export { default as VanCardu } from '../../src/cardu';
+
 
 export * from './list-view';
+export * from './grid-view';
