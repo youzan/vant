@@ -43,7 +43,7 @@ pnpm add @vant/cli -D
     "release": "vant-cli release",
     "build-site": "vant-cli build-site"
   },
-  "lint-staged": {
+  "nano-staged": {
     "*.md": "prettier --write",
     "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
     "*.{ts,tsx,js,vue}": "eslint --fix",
