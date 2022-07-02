@@ -1,6 +1,6 @@
 {
   "name": "@vant/eslint-config",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "eslint config of vant",
   "main": "index.js",
   "publishConfig": {
