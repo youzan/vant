@@ -37,11 +37,11 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "chalk": "^4.1.2",
     "consola": "^2.11.3",
     "fast-glob": "^3.2.4",
     "fs-extra": "^10.0.0",
-    "inquirer": "^8.0.0"
+    "inquirer": "^8.0.0",
+    "picocolors": "^1.0.0"
   },
   "release-it": {
     "git": {

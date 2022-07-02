@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import color from 'picocolors';
 import { createRequire } from 'module';
 import { createServer, build } from 'vite';
 import {
@@ -38,8 +38,8 @@ export async function compileSite(production = false) {
 
     const require = createRequire(import.meta.url);
     const { version } = require('vite/package.json');
-    const viteInfo = chalk.cyan(`vite v${version}`);
-    console.log(`\n  ${viteInfo}` + chalk.green(` dev server running at:\n`));
+    const viteInfo = color.cyan(`vite v${version}`);
+    console.log(`\n  ${viteInfo}` + color.green(` dev server running at:\n`));
     server.printUrls();
   }
 }
