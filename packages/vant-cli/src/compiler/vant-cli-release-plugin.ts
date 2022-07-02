@@ -1,7 +1,7 @@
-const releaseIt = require('release-it');
-const { execSync } = require('child_process');
+import { Plugin } from 'release-it';
+import { execSync } from 'child_process';
 
-class VantCliReleasePlugin extends releaseIt.Plugin {
+class VantCliReleasePlugin extends Plugin {
   async beforeRelease() {
     // log an empty line
     console.log('');
@@ -11,4 +11,4 @@ class VantCliReleasePlugin extends releaseIt.Plugin {
   }
 }
 
-module.exports = VantCliReleasePlugin;
+export default VantCliReleasePlugin;
