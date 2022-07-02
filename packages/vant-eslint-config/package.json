@@ -30,7 +30,7 @@
   "devDependencies": {
     "enhanced-resolve": "^5.8.3",
     "eslint": "^8.7.0",
-    "typescript": "~4.5.5"
+    "typescript": "^4.7.4"
   },
   "peerDependencies": {
     "eslint": "^7.32.0 || ^8.2.0"
