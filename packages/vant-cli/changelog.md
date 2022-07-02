@@ -1,5 +1,15 @@
 # 更新日志
 
+## v4.0.3
+
+`2022-07-02`
+
+- 新增 `build.bundleOptions` 配置项
+- 新增 `css.removeSourceFile` 配置项
+- 修复编译后的 script setup 中，引用的组件不生效的问题
+- 移除未使用的 esm bundle
+- 移除未使用的 ssr.js 文件
+
 ## v4.0.2
 
 `2022-05-14`
