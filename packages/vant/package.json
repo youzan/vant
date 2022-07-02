@@ -58,7 +58,7 @@
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
     "@vue/runtime-core": "^3.2.27",
-    "@vue/test-utils": "^2.0.0-rc.16",
+    "@vue/test-utils": "^2.0.1",
     "typescript": "^4.7.4",
     "vue": "^3.2.27",
     "vue-router": "^4.0.12"

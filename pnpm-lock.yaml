@@ -57,7 +57,7 @@ importers:
       '@vant/popperjs': ^1.2.1
       '@vant/use': ^1.4.1
       '@vue/runtime-core': ^3.2.27
-      '@vue/test-utils': ^2.0.0-rc.16
+      '@vue/test-utils': ^2.0.1
       typescript: ^4.7.4
       vue: ^3.2.27
       vue-router: ^4.0.12
@@ -71,7 +71,7 @@ importers:
       '@vant/cli': link:../vant-cli
       '@vant/eslint-config': link:../vant-eslint-config
       '@vue/runtime-core': 3.2.37
-      '@vue/test-utils': 2.0.0_vue@3.2.37
+      '@vue/test-utils': 2.0.1_vue@3.2.37
       typescript: 4.7.4
       vue: 3.2.37
       vue-router: 4.0.16_vue@3.2.37
@@ -1697,8 +1697,8 @@ packages:
   /@vue/shared/3.2.37:
     resolution: {integrity: sha512-4rSJemR2NQIo9Klm1vabqWjD8rs/ZaJSzMxkMNeJS6lHiUjjUeYFbooN19NgFjztubEKh3WlZUeOLVdbbUWHsw==}
 
-  /@vue/test-utils/2.0.0_vue@3.2.37:
-    resolution: {integrity: sha512-zL5kygNq7hONrO1CzaUGprEAklAX+pH8J1MPMCU3Rd2xtSYkZ+PmKU3oEDRg8VAGdL5lNJHzDgrud5amFPtirw==}
+  /@vue/test-utils/2.0.1_vue@3.2.37:
+    resolution: {integrity: sha512-4kt7Sw1gzXeQOsMqrwrQbmEiG8El4MP8P4hfxkmfXdUHf7yHa3xC5CQc0x2YyuhT41w2d4K4O0ZdRvZhGdZlow==}
     peerDependencies:
       vue: ^3.0.1
     dependencies:
