@@ -3,7 +3,7 @@ import execa from 'execa';
 import { join, relative } from 'path';
 import { clean } from './clean.js';
 import { CSS_LANG } from '../common/css.js';
-import { ora, consola } from '../common/logger.js';
+import { createSpinner, consola } from '../common/logger.js';
 import { installDependencies } from '../common/manager.js';
 import { compileSfc } from '../compiler/compile-sfc.js';
 import { compileStyle } from '../compiler/compile-style.js';
@@ -178,14 +178,14 @@ const tasks = [
 async function runBuildTasks() {
   for (let i = 0; i < tasks.length; i++) {
     const { task, text } = tasks[i];
-    const spinner = ora(text).start();
+    const spinner = createSpinner(text).start();
 
     try {
       /* eslint-disable no-await-in-loop */
       await task();
-      spinner.succeed(text);
+      spinner.success({ text });
     } catch (err) {
-      spinner.fail(text);
+      spinner.error({ text });
       console.log(err);
       throw err;
     }
