@@ -9,7 +9,7 @@
     "build": "pnpm --dir ./packages/vant build",
     "build:site": "pnpm --dir ./packages/vant build:site"
   },
-  "lint-staged": {
+  "nano-staged": {
     "*.md": "prettier --write",
     "*.{ts,tsx,js,vue,less}": "prettier --write",
     "*.{ts,tsx,js,vue}": "eslint --fix",
@@ -22,7 +22,7 @@
     "@vant/stylelint-config": "workspace:*",
     "eslint": "^8.2.0",
     "husky": "^8.0.1",
-    "lint-staged": "^12.1.2",
+    "nano-staged": "^0.8.0",
     "prettier": "^2.5.0",
     "rimraf": "^3.0.2",
     "stylelint": "^13.13.1"
