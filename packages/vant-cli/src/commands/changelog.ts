@@ -1,7 +1,7 @@
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { ROOT } from '../common/constant.js';
-import { ora, slimPath } from '../common/logger.js';
+import { createSpinner, slimPath } from '../common/logger.js';
 import { createWriteStream, readFileSync } from 'fs';
 import conventionalChangelog from 'conventional-changelog';
 
@@ -48,7 +48,7 @@ function transform(item: any) {
 }
 
 export async function changelog(): Promise<void> {
-  const spinner = ora('Generating changelog...').start();
+  const spinner = createSpinner('Generating changelog...').start();
 
   return new Promise((resolve) => {
     conventionalChangelog(
@@ -68,7 +68,9 @@ export async function changelog(): Promise<void> {
     )
       .pipe(createWriteStream(DIST_FILE))
       .on('close', () => {
-        spinner.succeed(`Changelog generated at ${slimPath(DIST_FILE)}`);
+        spinner.success({
+          text: `Changelog generated at ${slimPath(DIST_FILE)}`,
+        });
         resolve();
       });
   });
