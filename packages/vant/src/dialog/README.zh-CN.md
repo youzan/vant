@@ -2,51 +2,30 @@
 
 ### 介绍
 
-弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作，支持函数调用和组件调用两种方式。
+弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。支持组件调用和函数调用两种方式。
 
-### 函数调用
+### 引入
 
-`Dialog` 是一个函数，调用后会直接在页面中弹出相应的模态框。
-
-```js
-import { Dialog } from 'vant';
-
-Dialog({ message: '提示' });
-```
-
-### 组件调用
-
-通过组件调用 Dialog 时，可以通过下面的方式进行注册：
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
 
 ```js
 import { createApp } from 'vue';
 import { Dialog } from 'vant';
 
-// 全局注册
 const app = createApp();
 app.use(Dialog);
-
-// 局部注册
-export default {
-  components: {
-    [Dialog.Component.name]: Dialog.Component,
-  },
-};
 ```
 
-在 `script setup` 中，可以通过以下方式使用：
+### 函数调用
 
-```html
-<script setup>
-  const VanDialog = Dialog.Component;
-</script>
+为了便于使用 `Dialog`，Vant 提供了一系列辅助函数，通过辅助函数可以快速唤起全局的弹窗组件。
 
-<template>
-  <!-- 中划线命名 -->
-  <van-dialog />
-  <!-- 也支持大驼峰命名 -->
-  <VanDialog>
-</template>
+比如使用 `openDialog` 函数，调用后会直接在页面中渲染对应的弹出框。
+
+```js
+import { openDialog } from 'vant';
+
+openDialog({ message: '提示' });
 ```
 
 ## 代码演示
@@ -56,14 +35,16 @@ export default {
 用于提示一些消息，只包含一个确认按钮。
 
 ```js
-Dialog.alert({
+import { openDialog } from 'vant';
+
+openDialog({
   title: '标题',
   message: '代码是写出来给人看的，附带能在机器上运行。',
 }).then(() => {
   // on close
 });
 
-Dialog.alert({
+openDialog({
   message: '生命远不止连轴转和忙到极限，人类的体验远比这辽阔、丰富得多。',
 }).then(() => {
   // on close
@@ -75,7 +56,9 @@ Dialog.alert({
 用于确认消息，包含取消和确认按钮。
 
 ```js
-Dialog.confirm({
+import { openConfirmDialog } from 'vant';
+
+openConfirmDialog({
   title: '标题',
   message:
     '如果解决方法是丑陋的，那就肯定还有更好的解决方法，只是还没有发现而已。',
@@ -93,7 +76,9 @@ Dialog.confirm({
 将 theme 选项设置为 `round-button` 可以展示圆角按钮风格的弹窗。
 
 ```js
-Dialog.alert({
+import { openDialog } from 'vant';
+
+openDialog({
   title: '标题',
   message: '代码是写出来给人看的，附带能在机器上运行。',
   theme: 'round-button',
@@ -101,7 +86,7 @@ Dialog.alert({
   // on close
 });
 
-Dialog.alert({
+openDialog({
   message: '生命远不止连轴转和忙到极限，人类的体验远比这辽阔、丰富得多。',
   theme: 'round-button',
 }).then(() => {
@@ -114,6 +99,8 @@ Dialog.alert({
 通过 `beforeClose` 属性可以传入一个回调函数，在弹窗关闭前进行特定操作。
 
 ```js
+import { openConfirmDialog } from 'vant';
+
 const beforeClose = (action) =>
   new Promise((resolve) => {
     setTimeout(() => {
@@ -126,29 +113,13 @@ const beforeClose = (action) =>
     }, 1000);
   });
 
-Dialog.confirm({
+openConfirmDialog({
   title: '标题',
   message:
     '如果解决方法是丑陋的，那就肯定还有更好的解决方法，只是还没有发现而已。',
   beforeClose,
 });
 ```
-
-### 全局方法
-
-通过 `app.use` 全局注册 Dialog 组件后，会自动在 app 的所有子组件上挂载 `$dialog` 方法，在所有组件内部都可以直接调用此方法。
-
-```js
-export default {
-  mounted() {
-    this.$dialog.alert({
-      message: '弹窗内容',
-    });
-  },
-};
-```
-
-> Tips: 由于 setup 选项中无法访问 this，因此不能使用上述方式，请通过 import 引入。
 
 ### 组件调用
 
@@ -177,12 +148,11 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| Dialog | 展示弹窗 | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.alert | 展示消息提示弹窗 | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.confirm | 展示消息确认弹窗 | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.setDefaultOptions | 修改默认配置，对所有 Dialog 生效 | _options: DialogOptions_ | `void` |
-| Dialog.resetDefaultOptions | 重置默认配置，对所有 Dialog 生效 | - | `void` |
-| Dialog.close | 关闭弹窗 | - | `void` |
+| openDialog | 展示弹窗 | _options: DialogOptions_ | `Promise<void>` |
+| openConfirmDialog | 展示消息确认弹窗 | _options: DialogOptions_ | `Promise<void>` |
+| closeDialog | 关闭弹窗 | - | `void` |
+| setDialogDefaultOptions | 修改默认配置，影响所有的 `openDialog` 调用 | _options: DialogOptions_ | `void` |
+| resetDialogDefaultOptions | 重置默认配置，影响所有的 `openDialog` 调用 | - | `void` |
 
 ### DialogOptions
 

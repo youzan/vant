@@ -1,7 +1,16 @@
-import { Dialog } from './function-call';
+import { withInstall } from '../utils';
+import _Dialog from './Dialog';
 
+export const Dialog = withInstall(_Dialog);
 export default Dialog;
-export { Dialog };
+export {
+  openDialog,
+  closeDialog,
+  openConfirmDialog,
+  setDialogDefaultOptions,
+  resetDialogDefaultOptions,
+} from './function-call';
+
 export type { DialogProps } from './Dialog';
 export type {
   DialogTheme,
@@ -12,6 +21,6 @@ export type {
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanDialog: typeof Dialog.Component;
+    VanDialog: typeof Dialog;
   }
 }

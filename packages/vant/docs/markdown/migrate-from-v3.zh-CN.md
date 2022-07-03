@@ -62,6 +62,64 @@ Area 组件是基于 Picker 组件进行封装的，因此本次升级也对 Are
 
 ## API 调整
 
+### Dialog 调用方式调整
+
+在 Vant 3 中，`Dialog` 是一个函数，调用函数可以快速唤起全局的弹窗组件，而 `Dialog.Component` 才是 `Dialog` 组件对象，这与大部分组件的用法存在差异，容易导致使用错误。
+
+为了更符合直觉，我们在 Vant 4 中调整了 `Dialog` 的调用方式，将 `Dialog()` 函数重命名为 `openDialog()`。
+
+```js
+// Vant 3
+Dialog(); // 函数调用
+Dialog.Component; // 组件对象
+
+// Vant 4
+openDialog(); // 函数调用
+Dialog; // 组件对象
+```
+
+`Dialog` 上挂载的其他方法也进行了重命名，新旧 API 的映射关系如下：
+
+```js
+Dialog(); // -> openDialog()
+Dialog.alert(); // -> openDialog()
+Dialog.confirm(); // -> openConfirmDialog()
+Dialog.close(); // -> closeDialog();
+Dialog.setDefaultOptions(); // -> setDialogDefaultOptions()
+Dialog.resetDefaultOptions(); // -> resetDialogDefaultOptions()
+```
+
+同时，Vant 4 将不再在 `this` 对象上全局注册 `$dialog` 方法，这意味着 `this` 对象上将无法访问到 `$dialog`。
+
+```js
+export default {
+  mounted() {
+    // 无效代码
+    this.$dialog.alert({
+      message: '弹窗内容',
+    });
+  },
+};
+```
+
+大多数场景下，推荐通过 `import` 引入对应的函数进行使用。
+
+如果需要全局方法，可以手动在 `app` 对象上注册：
+
+```js
+import { openDialog } from 'vant';
+
+// 注册 $dialog 方法
+app.config.globalProperties.$dialog = openDialog;
+
+// 添加 TS 类型定义
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $dialog: typeof openDialog;
+  }
+}
+```
+
 ### 事件命名调整
 
 从 Vant 4 开始，所有的事件均采用 Vue 官方推荐的**驼峰格式**进行命名。

@@ -1,4 +1,3 @@
-import { Dialog } from './function-call';
 import type { CSSProperties, TeleportProps } from 'vue';
 import type { Interceptor, Numeric } from '../utils';
 
@@ -33,9 +32,3 @@ export type DialogOptions = {
   confirmButtonDisabled?: boolean;
   closeOnClickOverlay?: boolean;
 };
-
-declare module '@vue/runtime-core' {
-  interface ComponentCustomProperties {
-    $dialog: typeof Dialog;
-  }
-}
