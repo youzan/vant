@@ -122,9 +122,7 @@ declare module '@vue/runtime-core' {
 
 ### Notify 调用方式调整
 
-`Notify` 组件与 `Dialog` 的调整方式类似。
-
-首先，将 `Notify()` 函数重命名为 `showNotify()`。
+Vant 4 中，`Notify` 组件的调用方式也进行了调整，与 `Dialog` 组件的改动一致：
 
 ```js
 // Vant 3
