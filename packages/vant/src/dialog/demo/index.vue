@@ -84,7 +84,7 @@ const onClickBeforeClose = () => {
   });
 };
 </script>
-a
+
 <template>
   <demo-block card :title="t('basicUsage')">
     <van-cell is-link :title="t('alert1')" @click="onClickAlert" />
