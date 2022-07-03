@@ -1,7 +1,15 @@
-import { Notify } from './function-call';
+import { withInstall } from '../utils';
+import _Notify from './Notify';
 
+export const Notify = withInstall(_Notify);
 export default Notify;
-export { Notify };
+export {
+  showNotify,
+  hideNotify,
+  setNotifyDefaultOptions,
+  resetNotifyDefaultOptions,
+} from './function-call';
+
 export type { NotifyProps } from './Notify';
 export type { NotifyType, NotifyOptions } from './types';
 
