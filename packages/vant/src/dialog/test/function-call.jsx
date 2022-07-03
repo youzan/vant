@@ -1,7 +1,7 @@
 import { later } from '../../../test';
 import {
-  openDialog,
-  closeDialog,
+  showDialog,
+  hideDialog,
   setDialogDefaultOptions,
   resetDialogDefaultOptions,
 } from '../function-call';
@@ -10,21 +10,21 @@ test('should update default options when calling setDefaultOptions method', () =
   const wrapper = document.createElement('div');
 
   setDialogDefaultOptions({ message: 'foo', teleport: wrapper, });
-  openDialog();
+  showDialog();
   await later();
   const dialog = wrapper.querySelector('.van-dialog');
   expect(dialog.innerHTML.includes('foo')).toBeTruthy();
 
   resetDialogDefaultOptions();
-  openDialog({ teleport: wrapper });
+  showDialog({ teleport: wrapper });
   await later();
   const dialog2 = wrapper.querySelector('.van-dialog');
   expect(dialog2.innerHTML.includes('foo')).toBeFalsy();
 });
 
-test('should render dialog after calling openDialog', async () => {
+test('should render dialog after calling showDialog', async () => {
   const wrapper = document.createElement('div');
-  openDialog({
+  showDialog({
     message: '1',
     teleport: wrapper,
   });
@@ -34,9 +34,9 @@ test('should render dialog after calling openDialog', async () => {
   expect(dialog).toBeTruthy();
 });
 
-test('should close dialog after calling closeDialog', async () => {
+test('should close dialog after calling hideDialog', async () => {
   const wrapper = document.createElement('div');
-  openDialog({
+  showDialog({
     message: '1',
     teleport: wrapper,
   });
@@ -45,7 +45,7 @@ test('should close dialog after calling closeDialog', async () => {
   const dialog = wrapper.querySelector('.van-dialog');
   expect(dialog.style.display).toEqual('');
 
-  closeDialog();
+  hideDialog();
   await later();
   expect(dialog.className.split(' ')).toContain(
     'van-dialog-bounce-leave-active'
@@ -54,7 +54,7 @@ test('should close dialog after calling closeDialog', async () => {
 
 test('should allow to render JSX message', async () => {
   const wrapper = document.createElement('div');
-  openDialog({
+  showDialog({
     message: () => <div>foo</div>,
     teleport: wrapper,
   });

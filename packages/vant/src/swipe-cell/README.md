@@ -77,7 +77,7 @@ app.use(SwipeCell);
 ```
 
 ```js
-import { openConfirmDialog } from 'vant';
+import { showConfirmDialog } from 'vant';
 
 export default {
   setup() {
@@ -89,7 +89,7 @@ export default {
           return true;
         case 'right':
           return new Promise((resolve) => {
-            openConfirmDialog({
+            showConfirmDialog({
               title: 'Are you sure to delete?',
             }).then(resolve);
           });

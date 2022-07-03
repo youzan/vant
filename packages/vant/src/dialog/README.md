@@ -20,12 +20,12 @@ app.use(Dialog);
 
 Vant provides some utility functions that can quickly evoke global `Dialog` components.
 
-For example, calling the `openDialog` function will render a Dialog directly in the page.
+For example, calling the `showDialog` function will render a Dialog directly in the page.
 
 ```js
-import { openDialog } from 'vant';
+import { showDialog } from 'vant';
 
-openDialog({ message: 'Content' });
+showDialog({ message: 'Content' });
 ```
 
 ## Usage
@@ -35,14 +35,14 @@ openDialog({ message: 'Content' });
 Used to prompt for some messages, only including one confirm button.
 
 ```js
-openDialog({
+showDialog({
   title: 'Title',
   message: 'Content',
 }).then(() => {
   // on close
 });
 
-openDialog({
+showDialog({
   message: 'Content',
 }).then(() => {
   // on close
@@ -54,7 +54,7 @@ openDialog({
 Used to confirm some messages, including a confirm button and a cancel button.
 
 ```js
-openConfirmDialog({
+showConfirmDialog({
   title: 'Title',
   message: 'Content',
 })
@@ -71,7 +71,7 @@ openConfirmDialog({
 Use round button style.
 
 ```js
-openDialog({
+showDialog({
   title: 'Title',
   message: 'Content',
   theme: 'round-button',
@@ -79,7 +79,7 @@ openDialog({
   // on close
 });
 
-openDialog({
+showDialog({
   message: 'Content',
   theme: 'round-button',
 }).then(() => {
@@ -97,7 +97,7 @@ const beforeClose = (action) =>
     }, 1000);
   });
 
-openConfirmDialog({
+showConfirmDialog({
   title: 'Title',
   message: 'Content',
   beforeClose,
@@ -131,9 +131,9 @@ export default {
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| openDialog | Show dialog | _options: DialogOptions_ | `Promise<void>` |
-| openConfirmDialog | Show confirm dialog | _options: DialogOptions_ | `Promise<void>` |
-| closeDialog | Close dialog | - | `void` |
+| showDialog | Show dialog | _options: DialogOptions_ | `Promise<void>` |
+| showConfirmDialog | Show confirm dialog | _options: DialogOptions_ | `Promise<void>` |
+| hideDialog | Close dialog | - | `void` |
 | setDialogDefaultOptions | Set default options of all dialogs | _options: DialogOptions_ | `void` |
 | resetDialogDefaultOptions | Reset default options of all dialogs | - | `void` |
 

@@ -46,7 +46,7 @@ function initInstance() {
   ({ instance } = mountComponent(Wrapper));
 }
 
-export function openDialog(options: DialogOptions) {
+export function showDialog(options: DialogOptions) {
   /* istanbul ignore if */
   if (!inBrowser) {
     return Promise.resolve();
@@ -75,10 +75,10 @@ export const resetDialogDefaultOptions = () => {
   currentOptions = extend({}, DEFAULT_OPTIONS);
 };
 
-export const openConfirmDialog = (options: DialogOptions) =>
-  openDialog(extend({ showCancelButton: true }, options));
+export const showConfirmDialog = (options: DialogOptions) =>
+  showDialog(extend({ showCancelButton: true }, options));
 
-export const closeDialog = () => {
+export const hideDialog = () => {
   if (instance) {
     instance.toggle(false);
   }

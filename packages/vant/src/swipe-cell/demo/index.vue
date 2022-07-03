@@ -4,7 +4,7 @@ import VanButton from '../../button';
 import VanCell from '../../cell';
 import VanCard from '../../card';
 import { cdnURL, useTranslate } from '../../../docs/site';
-import { openConfirmDialog } from '../../dialog';
+import { showConfirmDialog } from '../../dialog';
 
 const t = useTranslate({
   'zh-CN': {
@@ -39,7 +39,7 @@ const beforeClose = ({ position }: { position: string }) => {
       return true;
     case 'right':
       return new Promise<boolean>((resolve) => {
-        openConfirmDialog({
+        showConfirmDialog({
           title: t('confirm'),
         }).then(() => {
           resolve(true);
