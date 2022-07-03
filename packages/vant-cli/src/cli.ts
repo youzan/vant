@@ -7,9 +7,7 @@ import {
   clean,
   build,
   release,
-  changelog,
   buildSite,
-  commitLint,
   cliVersion,
 } from './index.js';
 
@@ -68,11 +66,19 @@ program
 program
   .command('changelog')
   .description('Generate changelog')
-  .action(changelog);
+  .action(async () => {
+    const { changelog } = await import('./commands/changelog');
+    return changelog();
+  });
 
 program
   .command('commit-lint <gitParams>')
   .description('Lint commit message')
-  .action(commitLint);
+  .action(async (gitParams) => {
+    const { commitLint } = await import('./commands/commit-lint');
+    console.log('gitParams', gitParams);
+    process.exit(1);
+    return commitLint(gitParams);
+  });
 
 program.parse();
