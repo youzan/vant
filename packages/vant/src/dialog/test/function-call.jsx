@@ -1,28 +1,30 @@
-import { createApp } from 'vue';
 import { later } from '../../../test';
-import { Dialog } from '../function-call';
-import DialogComponent from '../Dialog';
+import {
+  openDialog,
+  closeDialog,
+  setDialogDefaultOptions,
+  resetDialogDefaultOptions,
+} from '../function-call';
 
 test('should update default options when calling setDefaultOptions method', () => {
-  Dialog.setDefaultOptions({ lockScroll: false });
-  expect(Dialog.currentOptions.lockScroll).toBeFalsy();
-  Dialog.resetDefaultOptions();
-  expect(Dialog.currentOptions.lockScroll).toBeTruthy();
-});
-
-test('should expose Dialog component', () => {
-  expect(Dialog.Component.name).toEqual('van-dialog');
-});
-
-test('should register component to app', () => {
-  const app = createApp();
-  app.use(Dialog);
-  expect(app.component(DialogComponent.name)).toBeTruthy();
-});
-
-test('should render dialog after calling Dialog', async () => {
   const wrapper = document.createElement('div');
-  Dialog.alert({
+
+  setDialogDefaultOptions({ message: 'foo', teleport: wrapper, });
+  openDialog();
+  await later();
+  const dialog = wrapper.querySelector('.van-dialog');
+  expect(dialog.innerHTML.includes('foo')).toBeTruthy();
+
+  resetDialogDefaultOptions();
+  openDialog({ teleport: wrapper });
+  await later();
+  const dialog2 = wrapper.querySelector('.van-dialog');
+  expect(dialog2.innerHTML.includes('foo')).toBeFalsy();
+});
+
+test('should render dialog after calling openDialog', async () => {
+  const wrapper = document.createElement('div');
+  openDialog({
     message: '1',
     teleport: wrapper,
   });
@@ -32,9 +34,9 @@ test('should render dialog after calling Dialog', async () => {
   expect(dialog).toBeTruthy();
 });
 
-test('should close dialog after calling Dialog.call', async () => {
+test('should close dialog after calling closeDialog', async () => {
   const wrapper = document.createElement('div');
-  Dialog.alert({
+  openDialog({
     message: '1',
     teleport: wrapper,
   });
@@ -43,7 +45,7 @@ test('should close dialog after calling Dialog.call', async () => {
   const dialog = wrapper.querySelector('.van-dialog');
   expect(dialog.style.display).toEqual('');
 
-  Dialog.close();
+  closeDialog();
   await later();
   expect(dialog.className.split(' ')).toContain(
     'van-dialog-bounce-leave-active'
@@ -52,7 +54,7 @@ test('should close dialog after calling Dialog.call', async () => {
 
 test('should allow to render JSX message', async () => {
   const wrapper = document.createElement('div');
-  Dialog.alert({
+  openDialog({
     message: () => <div>foo</div>,
     teleport: wrapper,
   });

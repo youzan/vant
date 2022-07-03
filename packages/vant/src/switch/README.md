@@ -100,13 +100,13 @@ Using `node` slot to custom the content of the node.
 
 ```js
 import { ref } from 'vue';
-import { Dialog } from 'vant';
+import { openConfirmDialog } from 'vant';
 
 export default {
   setup() {
     const checked = ref(true);
     const onUpdateValue = (newValue) => {
-      Dialog.confirm({
+      openConfirmDialog({
         title: 'Confirm',
         message: 'Are you sure to toggle switch?',
       }).then(() => {

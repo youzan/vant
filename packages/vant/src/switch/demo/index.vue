@@ -4,7 +4,7 @@ import VanCell from '../../cell';
 import VanIcon from '../../icon';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import { Dialog } from '../../dialog';
+import { openConfirmDialog } from '../../dialog';
 
 const t = useTranslate({
   'zh-CN': {
@@ -36,7 +36,7 @@ const checked4 = ref(true);
 const checked5 = ref(true);
 
 const onUpdateValue = (checked: boolean) => {
-  Dialog.confirm({
+  openConfirmDialog({
     title: t('title'),
     message: t('message'),
   }).then(() => {

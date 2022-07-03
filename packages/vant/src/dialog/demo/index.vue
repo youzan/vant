@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import VanCell from '../../cell';
-import { Dialog } from '..';
+import { openDialog, openConfirmDialog, Dialog as VanDialog } from '..';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
 import type { DialogAction } from '../types';
-
-const VanDialog = Dialog.Component;
 
 const t = useTranslate({
   'zh-CN': {
@@ -39,20 +37,20 @@ const show = ref(false);
 const image = cdnURL('apple-3.jpeg');
 
 const onClickAlert = () => {
-  Dialog.alert({
+  openDialog({
     title: t('title'),
     message: t('content1'),
   });
 };
 
 const onClickAlert2 = () => {
-  Dialog.alert({
+  openDialog({
     message: t('content2'),
   });
 };
 
 const onClickRound = () => {
-  Dialog.alert({
+  openDialog({
     theme: 'round-button',
     title: t('title'),
     message: t('content1'),
@@ -60,14 +58,14 @@ const onClickRound = () => {
 };
 
 const onClickRound2 = () => {
-  Dialog.alert({
+  openDialog({
     theme: 'round-button',
     message: t('content2'),
   });
 };
 
 const onClickConfirm = () => {
-  Dialog.confirm({
+  openConfirmDialog({
     title: t('title'),
     message: t('content3'),
   });
@@ -79,14 +77,14 @@ const onClickBeforeClose = () => {
       setTimeout(() => resolve(action === 'confirm'), 1000);
     });
 
-  Dialog.confirm({
+  openConfirmDialog({
     title: t('title'),
     message: t('content3'),
     beforeClose,
   });
 };
 </script>
-
+a
 <template>
   <demo-block card :title="t('basicUsage')">
     <van-cell is-link :title="t('alert1')" @click="onClickAlert" />

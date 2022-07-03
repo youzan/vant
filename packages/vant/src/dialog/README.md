@@ -2,7 +2,7 @@
 
 ### Intro
 
-A modal box pops up on the page, which is often used for message prompts, message confirmation, or to complete specific interactive operations in the current page. It supports two methods: function call and component call.
+A modal box pops up on the page, which is often used for message prompts, message confirmation, or to complete specific interactive operations in the current page. It supports two methods: component call and function call.
 
 ### Install
 
@@ -16,6 +16,18 @@ const app = createApp();
 app.use(Dialog);
 ```
 
+### Function Call
+
+Vant provides some utility functions that can quickly evoke global `Dialog` components.
+
+For example, calling the `openDialog` function will render a Dialog directly in the page.
+
+```js
+import { openDialog } from 'vant';
+
+openDialog({ message: 'Content' });
+```
+
 ## Usage
 
 ### Alert dialog
@@ -23,14 +35,14 @@ app.use(Dialog);
 Used to prompt for some messages, only including one confirm button.
 
 ```js
-Dialog.alert({
+openDialog({
   title: 'Title',
   message: 'Content',
 }).then(() => {
   // on close
 });
 
-Dialog.alert({
+openDialog({
   message: 'Content',
 }).then(() => {
   // on close
@@ -42,7 +54,7 @@ Dialog.alert({
 Used to confirm some messages, including a confirm button and a cancel button.
 
 ```js
-Dialog.confirm({
+openConfirmDialog({
   title: 'Title',
   message: 'Content',
 })
@@ -59,7 +71,7 @@ Dialog.confirm({
 Use round button style.
 
 ```js
-Dialog.alert({
+openDialog({
   title: 'Title',
   message: 'Content',
   theme: 'round-button',
@@ -67,7 +79,7 @@ Dialog.alert({
   // on close
 });
 
-Dialog.alert({
+openDialog({
   message: 'Content',
   theme: 'round-button',
 }).then(() => {
@@ -85,25 +97,11 @@ const beforeClose = (action) =>
     }, 1000);
   });
 
-Dialog.confirm({
+openConfirmDialog({
   title: 'Title',
   message: 'Content',
   beforeClose,
 });
-```
-
-### Global Method
-
-After registering the Dialog component through `app.use`, the `$dialog` method will be automatically mounted on all subComponents of the app.
-
-```js
-export default {
-  mounted() {
-    this.$dialog.alert({
-      message: 'Content',
-    });
-  },
-};
 ```
 
 ### Advanced Usage
@@ -133,12 +131,11 @@ export default {
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| Dialog | Show dialog | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.alert | Show alert dialog | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.confirm | Show confirm dialog | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.setDefaultOptions | Set default options of all dialogs | _options: DialogOptions_ | `void` |
-| Dialog.resetDefaultOptions | Reset default options of all dialogs | - | `void` |
-| Dialog.close | Close dialog | - | `void` |
+| openDialog | Show dialog | _options: DialogOptions_ | `Promise<void>` |
+| openConfirmDialog | Show confirm dialog | _options: DialogOptions_ | `Promise<void>` |
+| setDialogDefaultOptions | Set default options of all dialogs | _options: DialogOptions_ | `void` |
+| resetDialogDefaultOptions | Reset default options of all dialogs | - | `void` |
+| closeDialog | Close dialog | - | `void` |
 
 ### DialogOptions
 
