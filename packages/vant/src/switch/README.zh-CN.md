@@ -112,13 +112,13 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { openConfirmDialog } from 'vant';
+import { showConfirmDialog } from 'vant';
 
 export default {
   setup() {
     const checked = ref(true);
     const onUpdateValue = (newValue) => {
-      openConfirmDialog({
+      showConfirmDialog({
         title: '提醒',
         message: '是否切换开关？',
       }).then(() => {

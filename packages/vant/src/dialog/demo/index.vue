@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import VanCell from '../../cell';
-import { openDialog, openConfirmDialog, Dialog as VanDialog } from '..';
+import { showDialog, showConfirmDialog, Dialog as VanDialog } from '..';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
 import type { DialogAction } from '../types';
@@ -37,20 +37,20 @@ const show = ref(false);
 const image = cdnURL('apple-3.jpeg');
 
 const onClickAlert = () => {
-  openDialog({
+  showDialog({
     title: t('title'),
     message: t('content1'),
   });
 };
 
 const onClickAlert2 = () => {
-  openDialog({
+  showDialog({
     message: t('content2'),
   });
 };
 
 const onClickRound = () => {
-  openDialog({
+  showDialog({
     theme: 'round-button',
     title: t('title'),
     message: t('content1'),
@@ -58,14 +58,14 @@ const onClickRound = () => {
 };
 
 const onClickRound2 = () => {
-  openDialog({
+  showDialog({
     theme: 'round-button',
     message: t('content2'),
   });
 };
 
 const onClickConfirm = () => {
-  openConfirmDialog({
+  showConfirmDialog({
     title: t('title'),
     message: t('content3'),
   });
@@ -77,7 +77,7 @@ const onClickBeforeClose = () => {
       setTimeout(() => resolve(action === 'confirm'), 1000);
     });
 
-  openConfirmDialog({
+  showConfirmDialog({
     title: t('title'),
     message: t('content3'),
     beforeClose,

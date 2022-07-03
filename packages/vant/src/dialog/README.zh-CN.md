@@ -20,12 +20,12 @@ app.use(Dialog);
 
 为了便于使用 `Dialog`，Vant 提供了一系列辅助函数，通过辅助函数可以快速唤起全局的弹窗组件。
 
-比如使用 `openDialog` 函数，调用后会直接在页面中渲染对应的弹出框。
+比如使用 `showDialog` 函数，调用后会直接在页面中渲染对应的弹出框。
 
 ```js
-import { openDialog } from 'vant';
+import { showDialog } from 'vant';
 
-openDialog({ message: '提示' });
+showDialog({ message: '提示' });
 ```
 
 ## 代码演示
@@ -35,16 +35,16 @@ openDialog({ message: '提示' });
 用于提示一些消息，只包含一个确认按钮。
 
 ```js
-import { openDialog } from 'vant';
+import { showDialog } from 'vant';
 
-openDialog({
+showDialog({
   title: '标题',
   message: '代码是写出来给人看的，附带能在机器上运行。',
 }).then(() => {
   // on close
 });
 
-openDialog({
+showDialog({
   message: '生命远不止连轴转和忙到极限，人类的体验远比这辽阔、丰富得多。',
 }).then(() => {
   // on close
@@ -56,9 +56,9 @@ openDialog({
 用于确认消息，包含取消和确认按钮。
 
 ```js
-import { openConfirmDialog } from 'vant';
+import { showConfirmDialog } from 'vant';
 
-openConfirmDialog({
+showConfirmDialog({
   title: '标题',
   message:
     '如果解决方法是丑陋的，那就肯定还有更好的解决方法，只是还没有发现而已。',
@@ -76,9 +76,9 @@ openConfirmDialog({
 将 theme 选项设置为 `round-button` 可以展示圆角按钮风格的弹窗。
 
 ```js
-import { openDialog } from 'vant';
+import { showDialog } from 'vant';
 
-openDialog({
+showDialog({
   title: '标题',
   message: '代码是写出来给人看的，附带能在机器上运行。',
   theme: 'round-button',
@@ -86,7 +86,7 @@ openDialog({
   // on close
 });
 
-openDialog({
+showDialog({
   message: '生命远不止连轴转和忙到极限，人类的体验远比这辽阔、丰富得多。',
   theme: 'round-button',
 }).then(() => {
@@ -99,7 +99,7 @@ openDialog({
 通过 `beforeClose` 属性可以传入一个回调函数，在弹窗关闭前进行特定操作。
 
 ```js
-import { openConfirmDialog } from 'vant';
+import { showConfirmDialog } from 'vant';
 
 const beforeClose = (action) =>
   new Promise((resolve) => {
@@ -113,7 +113,7 @@ const beforeClose = (action) =>
     }, 1000);
   });
 
-openConfirmDialog({
+showConfirmDialog({
   title: '标题',
   message:
     '如果解决方法是丑陋的，那就肯定还有更好的解决方法，只是还没有发现而已。',
@@ -148,11 +148,11 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| openDialog | 展示弹窗 | _options: DialogOptions_ | `Promise<void>` |
-| openConfirmDialog | 展示消息确认弹窗 | _options: DialogOptions_ | `Promise<void>` |
-| closeDialog | 关闭弹窗 | - | `void` |
-| setDialogDefaultOptions | 修改默认配置，影响所有的 `openDialog` 调用 | _options: DialogOptions_ | `void` |
-| resetDialogDefaultOptions | 重置默认配置，影响所有的 `openDialog` 调用 | - | `void` |
+| showDialog | 展示弹窗 | _options: DialogOptions_ | `Promise<void>` |
+| showConfirmDialog | 展示消息确认弹窗 | _options: DialogOptions_ | `Promise<void>` |
+| hideDialog | 关闭弹窗 | - | `void` |
+| setDialogDefaultOptions | 修改默认配置，影响所有的 `showDialog` 调用 | _options: DialogOptions_ | `void` |
+| resetDialogDefaultOptions | 重置默认配置，影响所有的 `showDialog` 调用 | - | `void` |
 
 ### DialogOptions
 
