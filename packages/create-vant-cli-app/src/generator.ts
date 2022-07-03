@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import glob from 'fast-glob';
-import chalk from 'chalk';
+import color from 'picocolors';
 import consola from 'consola';
 import { prompt } from 'inquirer';
 import { sep, join } from 'path';
@@ -64,7 +64,7 @@ export class VanGenerator {
 
   writing() {
     console.log();
-    consola.info(`Creating project in ${chalk.green(this.outputDir)}\n`);
+    consola.info(`Creating project in ${color.green(this.outputDir)}\n`);
 
     // see https://github.com/mrmlnc/fast-glob#how-to-write-patterns-on-windows
     const templatePath = join(GENERATOR_DIR, this.inputs.vueVersion).replace(
@@ -99,16 +99,16 @@ export class VanGenerator {
     fs.writeFileSync(to, content);
 
     const name = to.replace(this.outputDir + sep, '');
-    consola.success(`${chalk.green('create')} ${name}`);
+    consola.success(`${color.green('create')} ${name}`);
   }
 
   end() {
     const { name } = this.inputs;
 
     console.log();
-    consola.success(`Successfully created ${chalk.yellow(name)}.`);
+    consola.success(`Successfully created ${color.yellow(name)}.`);
     consola.success(
-      `Run ${chalk.yellow(
+      `Run ${color.yellow(
         `cd ${name} && git init && yarn && yarn dev`
       )} to start development!`
     );

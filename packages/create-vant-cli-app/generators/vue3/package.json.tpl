@@ -22,7 +22,7 @@
     "test:coverage": "open test/coverage/index.html"
   },
   "author": "",
-  "lint-staged": {
+  "nano-staged": {
     "*.md": "prettier --write",
     "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
     "*.{ts,tsx,js,vue}": "eslint --fix",
