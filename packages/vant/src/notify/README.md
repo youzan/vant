@@ -2,7 +2,7 @@
 
 ### Intro
 
-The display message prompt is at the top of the page, and supports two methods: function call and component call.
+The display message prompt is at the top of the page, and supports two methods: component call and function call.
 
 ### Install
 
@@ -16,53 +16,63 @@ const app = createApp();
 app.use(Notify);
 ```
 
+### Function Call
+
+Vant provides some utility functions that can quickly evoke global `Notify` components.
+
+For example, calling the `showNotify` function will render a Dialog directly in the page.
+
+```js
+import { showNotify } from 'vant';
+
+showNotify('Notify Message');
+```
+
 ## Usage
 
 ### Basic Usage
 
 ```js
-Notify('Notify Message');
+import { showNotify, hideNotify } from 'vant';
+
+// auto close after 3s
+showNotify('Message');
+
+// manually close
+hideNotify();
 ```
 
 ### Notify Type
 
 ```js
-Notify({ type: 'primary', message: 'Notify Message' });
-Notify({ type: 'success', message: 'Notify Message' });
-Notify({ type: 'danger', message: 'Notify Message' });
-Notify({ type: 'warning', message: 'Notify Message' });
+import { showNotify } from 'vant';
+
+showNotify({ type: 'primary', message: 'Notify Message' });
+showNotify({ type: 'success', message: 'Notify Message' });
+showNotify({ type: 'danger', message: 'Notify Message' });
+showNotify({ type: 'warning', message: 'Notify Message' });
 ```
 
 ### Custom Notify
 
 ```js
-Notify({
+import { showNotify } from 'vant';
+
+showNotify({
   message: 'Custom Color',
   color: '#ad0000',
   background: '#ffe1e1',
 });
 
-Notify({
+showNotify({
   message: 'Custom Position',
   position: 'bottom',
 });
 
-Notify({
+showNotify({
   message: 'Custom Duration',
   duration: 1000,
 });
-```
-
-### Global Method
-
-After registering the Notify component through `app.use`, the `$notify` method will be automatically mounted on all subcomponents of the app.
-
-```js
-export default {
-  mounted() {
-    this.$notify('Notify Message');
-  },
-};
 ```
 
 ### Component Call
@@ -103,10 +113,10 @@ export default {
 
 | Methods | Attribute | Return value | Description |
 | --- | --- | --- | --- |
-| Notify | `options \| message` | notify instance | Show notify |
-| Notify.clear | - | `void` | Close notify |
-| Notify.setDefaultOptions | `options` | `void` | Set default options of all notifies |
-| Notify.resetDefaultOptions | - | `void` | Reset default options of all notifies |
+| showNotify | `options \| message` | notify instance | Show notify |
+| hideNotify | - | `void` | Close notify |
+| setNotifyDefaultOptions | `options` | `void` | Set default options of all notifies |
+| resetNotifyDefaultOptions | - | `void` | Reset default options of all notifies |
 
 ### Options
 

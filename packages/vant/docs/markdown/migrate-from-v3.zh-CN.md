@@ -120,6 +120,58 @@ declare module '@vue/runtime-core' {
 }
 ```
 
+### Notify 调用方式调整
+
+Vant 4 中，`Notify` 组件的调用方式也进行了调整，与 `Dialog` 组件的改动一致：
+
+```js
+// Vant 3
+Notify(); // 函数调用
+Notify.Component; // 组件对象
+
+// Vant 4
+showNotify(); // 函数调用
+Notify; // 组件对象
+```
+
+`Notify` 上挂载的其他方法也进行了重命名，新旧 API 的映射关系如下：
+
+```js
+Notify(); // -> showNotify()
+Notify.clear(); // -> hideNotify()
+Notify.setDefaultOptions(); // -> setNotifyDefaultOptions()
+Notify.resetDefaultOptions(); // -> resetNotifyDefaultOptions()
+```
+
+同时，Vant 4 将不再在 `this` 对象上全局注册 `$notify` 方法，这意味着 `this` 对象上将无法访问到 `$notify`。
+
+```js
+export default {
+  mounted() {
+    // 无效代码
+    this.$notify({
+      message: '内容',
+    });
+  },
+};
+```
+
+如果需要全局方法，可以手动在 `app` 对象上注册：
+
+```js
+import { showNotify } from 'vant';
+
+// 注册 $notify 方法
+app.config.globalProperties.$notify = showNotify;
+
+// 添加 TS 类型定义
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $notify: typeof showNotify;
+  }
+}
+```
+
 ### 事件命名调整
 
 从 Vant 4 开始，所有的事件均采用 Vue 官方推荐的**驼峰格式**进行命名。
