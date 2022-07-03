@@ -133,9 +133,9 @@ export default {
 | --- | --- | --- | --- |
 | openDialog | Show dialog | _options: DialogOptions_ | `Promise<void>` |
 | openConfirmDialog | Show confirm dialog | _options: DialogOptions_ | `Promise<void>` |
+| closeDialog | Close dialog | - | `void` |
 | setDialogDefaultOptions | Set default options of all dialogs | _options: DialogOptions_ | `void` |
 | resetDialogDefaultOptions | Reset default options of all dialogs | - | `void` |
-| closeDialog | Close dialog | - | `void` |
 
 ### DialogOptions
 
