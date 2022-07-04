@@ -214,6 +214,8 @@ export default defineComponent({
       return !currentDate.value;
     });
 
+    const getSelectedDate = () => currentDate.value;
+
     // calculate the position of the elements
     // and find the elements that needs to be rendered
     const onScroll = () => {
@@ -554,6 +556,7 @@ export default defineComponent({
     useExpose<CalendarExpose>({
       reset,
       scrollToDate,
+      getSelectedDate,
     });
 
     onMountedOrActivated(init);
