@@ -20,6 +20,7 @@ module.exports = {
         ],
         components: [
             { group: 'Container', show: true, name: 'router-view', alias: '子页面' },
+            { group: 'Container', show: true, name: 'iframe', alias: 'Iframe' },
             { group: 'Container', show: true, name: 'popup', alias: '弹出层' },
             { group: 'Container', show: true, name: 'collapse', alias: '折叠面板' },
             { group: 'Container', show: true, name: 'cardu', alias: '卡片' },

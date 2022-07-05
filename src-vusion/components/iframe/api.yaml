@@ -1,0 +1,17 @@
+- name: van-iframe
+  title: Iframe
+  icon: iframe
+  labels:
+    - Container
+  description: 用于嵌入其他网页的容器。
+  attrs:
+    - name: src
+      title: 地址
+      type: string
+      description: 需要嵌入的网页地址
+  slots: false
+  events:
+    - name: load
+      title: 加载完成
+      description: 网页加载完成时触发。
+      params: []

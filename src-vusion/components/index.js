@@ -107,3 +107,4 @@ export { default as VanCardu } from '../../src/cardu';
 
 export * from './list-view';
 export * from './grid-view';
+export * from './iframe';
