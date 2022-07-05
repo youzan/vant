@@ -29,6 +29,7 @@ export type CalendarDayItem = {
 export type CalendarExpose = {
   reset: (date?: Date | Date[]) => void;
   scrollToDate: (targetDate: Date) => void;
+  getSelectedDate: () => Date | Date[] | null;
 };
 
 export type CalendarInstance = ComponentPublicInstance<
