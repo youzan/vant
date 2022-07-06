@@ -145,15 +145,15 @@ export default createComponent({
         const parent = this.$parent;
         function currentHref() {
           if (props.href !== undefined)
-            return props.href;
+            return encodeUrl(props.href);
           if (props.destination !== undefined && props.destination !== "")
-            return props.destination;
+            return encodeUrl(props.destination);
           if (parent?.$router && props.to !== undefined)
-            return parent?.$router.resolve(props.to, parent?.$route, props.append).href;
+            return encodeUrl(parent?.$router.resolve(props.to, parent?.$route, props.append).href);
           return undefined;
         }
 
-        const hrefR = encodeUrl(currentHref());
+        const hrefR = currentHref();
         console.log(hrefR);
         if (hrefR === undefined) {
           let to;

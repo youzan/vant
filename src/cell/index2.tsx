@@ -116,18 +116,18 @@ function Cell(
 
   function currentHref() {
     if (props.href !== undefined)
-      return props.href;
+      return encodeUrl(props.href);
     if (props.destination !== undefined)
-      return props.destination;
+      return encodeUrl(props.destination);
     if (ctx.parent?.$router && props.to !== undefined)
-      return ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href;
+      return encodeUrl(ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href);
     return undefined;
   }
 
   function onClick(event: Event) {
     emit(ctx, 'click', event);
     console.log(ctx);
-    const hrefR = encodeUrl(currentHref());
+    const hrefR = currentHref();
     if (!hrefR && !ctx.listeners.click) {
       event.preventDefault();
     }

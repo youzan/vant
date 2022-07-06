@@ -88,6 +88,9 @@ function stringifyQuery(obj) {
 
 
 const encodeUrl = function (url) {
+    if (!url) {
+        return url;
+    }
     const parsedPath = parsePath(url || '');
     const { path } = parsedPath;
     const { hash } = parsedPath;

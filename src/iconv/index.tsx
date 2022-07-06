@@ -79,18 +79,18 @@ function Iconv(
 
   function currentHref() {
     if (props.href !== undefined)
-      return props.href;
+      return encodeUrl(props.href);
     if (props.destination !== undefined && props.destination !== "")
-      return props.destination;
+      return encodeUrl(props.destination);
     if (ctx.parent?.$router && props.to !== undefined)
       // @ts-ignore：没办法
-      return ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href;
+      return encodeUrl(ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href);
     return undefined;
   }
 
   function onClick(event: Event) {
     emit(ctx, 'click', event);
-    const hrefR = encodeUrl(currentHref());
+    const hrefR = currentHref();
     console.log(hrefR, ctx, event)
     // @ts-ignore：没办法
     // if (props.target !== '_self')
