@@ -3,7 +3,7 @@ import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { BORDER_SURROUND } from '../utils/constant';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
-
+import encodeUrl from '../utils/encodeUrl';
 // Components
 import Iconv from '../iconv';
 import Loading, { LoadingType } from '../loading';
@@ -36,15 +36,15 @@ export type ButtonProps = RouteProps & {
   loadingType?: LoadingType;
   loadingText?: string;
   iconPosition: 'left' | 'right';
-  href: String,
-  target: { type: String, default: '_self' },
-  to: [String, Object],
-  replace: { type: Boolean, default: false },
-  append: { type: Boolean, default: false },
-  decoration: { type: Boolean, default: true },
-  download: { type: Boolean, default: false },
-  destination: String,
-  squareroud?: String
+  href: string,
+  target: { type: string, default: '_self' },
+  to: [string, Object],
+  replace: { type: boolean, default: false },
+  append: { type: boolean, default: false },
+  decoration: { type: boolean, default: true },
+  download: { type: boolean, default: false },
+  destination: string,
+  squareroud?: string
 };
 
 export type ButtonEvents = {
@@ -76,7 +76,7 @@ function Button(
     iconPosition,
   } = props;
 
-  let {tag} = props;
+  let { tag } = props;
 
   const style: Record<string, string | number> = {};
 
@@ -105,7 +105,7 @@ function Button(
       // console.log(ctx.parent.$router);
       // console.log(ctx.parent.$route);
       emit(ctx, 'click', event);
-      const hrefR = currentHref();
+      const hrefR = encodeUrl(currentHref());
       console.log(hrefR, ctx.props)
       if (!ctx.props.nativeType && !hrefR && !ctx.listeners.click) {
         event.preventDefault();
@@ -117,41 +117,41 @@ function Button(
       if (hrefR === undefined) {
         let to;
         if (props.destination) {
-            // 只处理/a/b形式的链接
-            const origin = window.location.origin;
-            const path = window.location.href.replace(origin, '').split('/');
-            const destination = props.destination.replace(origin, '').split('/');
-            if (path[1] === destination[1]) {
-                to = '/' + destination.slice(2).join('/');
-            } else {
-                return;
-            }
+          // 只处理/a/b形式的链接
+          const { origin } = window.location;
+          const path = window.location.href.replace(origin, '').split('/');
+          const destination = props.destination.replace(origin, '').split('/');
+          if (path[1] === destination[1]) {
+            to = encodeUrl('/' + destination.slice(2).join('/'));
+          } else {
+            return;
+          }
         }
 
         const currentTo = to || props.to;
         if (currentTo === undefined)
-            return;
+          return;
         let cancel = false;
-        emit(ctx, 'before-navigate',  {
+        emit(ctx, 'before-navigate', {
           to: currentTo,
           replace: props.replace,
           append: props.append,
           preventDefault: () => (cancel = true),
         });
-      if (cancel)
+        if (cancel)
           return;
-      const $router = ctx.parent?.$router;
-      const $route = ctx.parent?.$route;
-      const { location } = $router.resolve(
+        const $router = ctx.parent?.$router;
+        const $route = ctx.parent?.$route;
+        const { location } = $router.resolve(
           currentTo,
           $route,
           // @ts-ignore：没办法
           props.append,
-      );
-      props.replace ? $router.replace(location) : $router.push(location);
+        );
+        props.replace ? $router.replace(location) : $router.push(location);
 
-      emit(ctx, 'navigate',  { to: currentTo, replace: props.replace, append: props.append });
-      }  else {
+        emit(ctx, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
+      } else {
         function downloadClick() {
           const a = document.createElement("a");
           a.setAttribute("href", hrefR as string);
@@ -164,7 +164,7 @@ function Button(
         downloadClick();
       }
 
-    // functionalRoute(ctx);
+      // functionalRoute(ctx);
     }
   }
 
@@ -184,8 +184,8 @@ function Button(
         block: props.block === 'blockb',
         // round: props.round,
         // square: props.square,
-        round: props.squareroud && props.squareroud === 'round' ? true : false,
-        square: props.squareroud && props.squareroud === 'square' ? true : false,
+        round: !!(props.squareroud && props.squareroud === 'round'),
+        square: !!(props.squareroud && props.squareroud === 'square'),
       },
     ]),
     { [BORDER_SURROUND]: hairline },
@@ -211,21 +211,20 @@ function Button(
 
     if (icon) {
       return (
-        <Iconv name={icon} class={[bem('icon'), {'van-shoud-pa': true}]} notext classPrefix={props.iconPrefix} />
+        <Iconv name={icon} class={[bem('icon'), { 'van-shoud-pa': true }]} notext classPrefix={props.iconPrefix} />
       );
     }
   }
 
   function currentHref() {
     if (props.href !== undefined)
-        return props.href;
+      return props.href;
     if (props.destination !== undefined && props.destination !== "")
-        return props.destination;
-    else if (ctx.parent?.$router && props.to !== undefined)
-    // @ts-ignore：没办法
-        return ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href;
-    else
-        return undefined;
+      return props.destination;
+    if (ctx.parent?.$router && props.to !== undefined)
+      // @ts-ignore：没办法
+      return ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href;
+    return undefined;
   }
 
   function renderContent() {

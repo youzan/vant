@@ -2,6 +2,7 @@
 import { createNamespace } from '../utils';
 import { SlotsMixin } from '../mixins/slots';
 import VanEmptyCol from '../emptycol';
+import encodeUrl from '../utils/encodeUrl';
 const [, bem] = createNamespace('cardu');
 export default {
     name: 'van-cardu',
@@ -38,7 +39,7 @@ export default {
             else
                 return undefined;
           }
-          const hrefR = currentHref();
+          const hrefR = encodeUrl(currentHref());
           if (!hrefR && !this.$listeners.click) {
             return
           }
@@ -51,7 +52,7 @@ export default {
               const path = window.location.href.replace(origin, '').split('/');
               const destination = props.destination.replace(origin, '').split('/');
               if (path[1] === destination[1]) {
-                  to = '/' + destination.slice(2).join('/');
+                  to = encodeUrl('/' + destination.slice(2).join('/'));
               } else {
                   return;
               }

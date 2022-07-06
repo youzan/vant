@@ -2,6 +2,7 @@ import { createNamespace, isDef } from '../utils';
 import { doubleRaf, raf } from '../utils/dom/raf';
 import { BindEventMixin } from '../mixins/bind-event';
 import Icon from '../icon';
+import encodeUrl from '../utils/encodeUrl';
 
 const [createComponent, bem] = createNamespace('notice-bar');
 
@@ -144,54 +145,53 @@ export default createComponent({
         const parent = this.$parent;
         function currentHref() {
           if (props.href !== undefined)
-              return props.href;
+            return props.href;
           if (props.destination !== undefined && props.destination !== "")
-              return props.destination;
-          else if (parent?.$router && props.to !== undefined)
-              return parent?.$router.resolve(props.to, parent?.$route, props.append).href;
-          else
-              return undefined;
+            return props.destination;
+          if (parent?.$router && props.to !== undefined)
+            return parent?.$router.resolve(props.to, parent?.$route, props.append).href;
+          return undefined;
         }
 
-        const hrefR = currentHref();
-console.log(hrefR);
+        const hrefR = encodeUrl(currentHref());
+        console.log(hrefR);
         if (hrefR === undefined) {
           let to;
           if (props.destination) {
-              // 只处理/a/b形式的链接
-              const origin = window.location.origin;
-              const path = window.location.href.replace(origin, '').split('/');
-              const destination = props.destination.replace(origin, '').split('/');
-              if (path[1] === destination[1]) {
-                  to = '/' + destination.slice(2).join('/');
-              } else {
-                  return;
-              }
+            // 只处理/a/b形式的链接
+            const { origin } = window.location;
+            const path = window.location.href.replace(origin, '').split('/');
+            const destination = props.destination.replace(origin, '').split('/');
+            if (path[1] === destination[1]) {
+              to = encodeUrl('/' + destination.slice(2).join('/'));
+            } else {
+              return;
+            }
           }
 
 
           const currentTo = to || props.to;
           if (currentTo === undefined)
-              return;
+            return;
           let cancel = false;
-          this.$emit(this, 'before-navigate',  {
+          this.$emit(this, 'before-navigate', {
             to: currentTo,
             replace: props.replace,
             append: props.append,
             preventDefault: () => (cancel = true),
           });
           if (cancel)
-              return;
+            return;
           const $router = parent?.$router;
           const $route = parent?.$route;
           const { location } = $router.resolve(
-              currentTo,
-              $route,
-              props.append,
+            currentTo,
+            $route,
+            props.append,
           );
           props.replace ? $router.replace(location) : $router.push(location);
 
-          this.$emit(this, 'navigate',  { to: currentTo, replace: props.replace, append: props.append });
+          this.$emit(this, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
         } else {
           function downloadClick() {
             const a = document.createElement("a");
