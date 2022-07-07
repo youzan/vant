@@ -4,8 +4,8 @@
 
 当前文档为 Vant 3 的更新日志，其他版本请参考：
 
-- [Vant 2 更新日志](https://youzan.github.io/vant/v2/#/zh-CN/changelog)
-- [Vant 4 更新日志](https://youzan.github.io/vant/v4/#/zh-CN/changelog)
+- [Vant 2 更新日志](https://vant-ui.github.io/vant/v2/#/zh-CN/changelog)
+- [Vant 4 更新日志](https://vant-ui.github.io/vant/v4/#/zh-CN/changelog)
 
 ### 介绍
 
@@ -1493,4 +1493,4 @@ webpack、vite 等构建工具默认支持 `.mjs` 后缀，因此不需要额外
 
 - Lazyload、Panel 和 Sku 组件暂未完成 Vue 3 适配
 
-> 详细改动请参考 [从 v2 升级](https://youzan.github.io/vant/v3/#/zh-CN/migrate-from-v2)。
+> 详细改动请参考 [从 v2 升级](https://vant-ui.github.io/vant/v3/#/zh-CN/migrate-from-v2)。

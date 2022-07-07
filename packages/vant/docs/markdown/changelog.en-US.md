@@ -4,8 +4,8 @@
 
 The current document is the changelog of Vant 3, other versions:
 
-- [Vant 2 Changelog](https://youzan.github.io/vant/v2/#/en-US/changelog)
-- [Vant 4 Changelog](https://youzan.github.io/vant/v4/#/en-US/changelog)
+- [Vant 2 Changelog](https://vant-ui.github.io/vant/v2/#/en-US/changelog)
+- [Vant 4 Changelog](https://vant-ui.github.io/vant/v4/#/en-US/changelog)
 
 ### Intro
 
