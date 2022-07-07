@@ -576,7 +576,6 @@ export default createComponent({
             class={bem('control', [inputAlign, 'custom'])}
             onClick={this.onClickInput}
             vusion-slot-name="input"
-            vusion-scope-id={this.$parent.$parent.$options._scopeId}
           >
             <van-empty-col></van-empty-col>
           </div>
