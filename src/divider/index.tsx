@@ -34,10 +34,9 @@ function Divider(
         [`content-${props.contentPosition}`]: props.title || slots.default,
       })}
       {...inherit(ctx, true)}
-      vusion-slot-name-edit="title"
     >
       {/* {slots.default && slots.default()} */}
-      {props.title ? <span>{props.title}</span> : ''}
+      {props.title ? <span vusion-slot-name-edit="title">{props.title}</span> : ''}
     </div>
   );
 }
