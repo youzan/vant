@@ -5,7 +5,7 @@
     <div v-show="showHead" :class="$style.head">
         <slot name="head">
             <u-checkbox v-if="multiple" :value="allChecked" @check="checkAll($event.value)"></u-checkbox>
-            <span :class="$style.title" vusion-slot-name="title">{{ title }}</span>
+            <span :class="$style.title" vusion-slot-name-edit="title">{{ title }}</span>
             <div :class="$style.extra">
                 <span v-if="multiple">{{ selectedVMs.length }}{{ currentDataSource && currentDataSource.originTotal !== Infinity ? ' / ' + currentDataSource.originTotal : '' }}</span>
             </div>

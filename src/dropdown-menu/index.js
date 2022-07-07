@@ -108,6 +108,7 @@ export default createComponent({
         tabindex={item.disabled ? -1 : 0}
         class={bem('item', { disabled: item.disabled })}
         vusion-slot-name="title"
+        vusion-slot-name-edit="title"
         vusion-scope-id={aId}
         vusion-node-path={item.$attrs['vusion-node-path']}
         vusion-node-tag={item.$attrs['vusion-node-tag']}
@@ -127,7 +128,7 @@ export default createComponent({
             }
           }}
         >
-          <div class="van-ellipsis" vusion-slot-name="title">
+          <div class="van-ellipsis" vusion-slot-name="title" vusion-slot-name-edit="title">
             {item.slots('title') || item.displayTitle()}
           </div>
         </span>

@@ -118,7 +118,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
               this.labelPosition,
               { disabled: this.isDisabled },
             ])}
-            vusion-slot-name="title"
+            vusion-slot-name-edit="title"
           >
             {slot ? slot : title}
           </span>

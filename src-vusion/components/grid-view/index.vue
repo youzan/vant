@@ -16,7 +16,7 @@
           :value="allChecked"
           @check="checkAll($event.value)"
         ></u-checkbox>
-        <span :class="$style.title" vusion-slot-name="title">{{ title }}</span>
+        <span :class="$style.title" vusion-slot-name-edit="title">{{ title }}</span>
         <div :class="$style.extra">
           <span v-if="multiple"
             >{{ selectedVMs.length

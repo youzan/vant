@@ -46,7 +46,7 @@ function Cell(
 
     if (showLabel) {
       return (
-        <div class={[bem('label'), props.labelClass]} vusion-slot-name="label">
+        <div class={[bem('label'), props.labelClass]} vusion-slot-name="label" vusion-slot-name-edit="label">
           {slots.label ? slots.label() : label}
         </div>
       );
@@ -56,7 +56,7 @@ function Cell(
   function Title() {
     if (showTitle) {
       return (
-        <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title">
+        <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title" vusion-slot-name-edit="title">
           {slots.title ? slots.title() : title}
           {/* {Label()} */}
         </div>
