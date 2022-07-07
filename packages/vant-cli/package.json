@@ -69,7 +69,6 @@
     "execa": "^5.1.1",
     "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
-    "gh-pages": "^3.2.3",
     "hash-sum": "^2.0.0",
     "highlight.js": "^11.3.1",
     "husky": "^8.0.1",
