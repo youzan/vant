@@ -35,7 +35,7 @@ function CellGroup(
       ]}
       {...inherit(ctx, true)}
     >
-      {slots.default ? slots.default?.() : <VanEmptyCol></VanEmptyCol> }
+      { slots.default?.() }
     </div>
   );
 
