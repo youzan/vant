@@ -20,7 +20,7 @@
     "build": "vant-cli build",
     "build:site": "vant-cli build-site",
     "release": "cp ../../README.md ./ && vant-cli release && rm ./README.md",
-    "release:site": "pnpm build:site && gh-pages -d site-dist --add",
+    "release:site": "pnpm build:site && npx gh-pages -d site-dist --add",
     "test:watch": "vant-cli test --watch",
     "test:coverage": "open test/coverage/index.html"
   },
