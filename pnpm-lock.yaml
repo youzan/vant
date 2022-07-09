@@ -227,11 +227,13 @@ importers:
       '@types/fs-extra': ^9.0.13
       fast-glob: ^3.2.2
       fs-extra: ^10.0.0
+      typescript: ^4.7.4
     dependencies:
       fast-glob: 3.2.11
       fs-extra: 10.1.0
     devDependencies:
       '@types/fs-extra': 9.0.13
+      typescript: 4.7.4
 
   packages/vant-popperjs:
     specifiers:
