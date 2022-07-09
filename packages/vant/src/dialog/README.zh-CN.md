@@ -297,16 +297,3 @@ Dialog.alert({
   // on close
 });
 ```
-
-### 在 JSX 中渲染 Dialog 组件无法展示？
-
-请注意 `Dialog` 是一个函数，`Dialog.Component` 才是 Dialog 对应的组件。JSX 调用弹窗的正确姿势如下：
-
-```jsx
-export default {
-  setup() {
-    const show = ref(false);
-    return () => <Dialog.Component v-model={[show, 'show']} />;
-  },
-};
-```

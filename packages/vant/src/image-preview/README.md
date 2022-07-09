@@ -16,12 +16,26 @@ const app = createApp();
 app.use(ImagePreview);
 ```
 
+### Function Call
+
+Vant provides some utility functions that can quickly evoke global `ImagePreview` components.
+
+For example, calling the `showImagePreview` function will render a Dialog directly in the page.
+
+```js
+import { showImagePreview } from 'vant';
+
+showImagePreview(['https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg']);
+```
+
 ## Usage
 
 ### Basic Usage
 
 ```js
-ImagePreview([
+import { showImagePreview } from 'vant';
+
+showImagePreview([
   'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
   'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
 ]);
@@ -30,7 +44,9 @@ ImagePreview([
 ### Set Start Position
 
 ```js
-ImagePreview({
+import { showImagePreview } from 'vant';
+
+showImagePreview({
   images: [
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
@@ -44,7 +60,9 @@ ImagePreview({
 After setting the `closeable` attribute, the close icon will be displayed in the upper right corner of the pop-up layer, and the icon can be customized through the `close-icon` attribute, and the icon location can be customized by using the `close-icon-position` attribute.
 
 ```js
-ImagePreview({
+import { showImagePreview } from 'vant';
+
+showImagePreview({
   images: [
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
@@ -56,9 +74,9 @@ ImagePreview({
 ### Close Event
 
 ```js
-import { Toast } from 'vant';
+import { Toast, showImagePreview } from 'vant';
 
-ImagePreview({
+showImagePreview({
   images: [
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
@@ -72,7 +90,9 @@ ImagePreview({
 ### Before Close
 
 ```js
-const instance = ImagePreview({
+import { showImagePreview } from 'vant';
+
+const instance = showImagePreview({
   images: [
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',

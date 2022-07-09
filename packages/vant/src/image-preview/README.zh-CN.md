@@ -2,61 +2,42 @@
 
 ### 介绍
 
-图片放大预览，支持函数调用和组件调用两种方式。
+图片放大预览，支持组件调用和函数调用两种方式。
 
-### 函数调用
+### 引入
 
-`ImagePreview` 是一个函数，调用函数后会直接在页面中展示图片预览界面。
-
-```js
-import { ImagePreview } from 'vant';
-
-ImagePreview(['https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg']);
-```
-
-### 组件调用
-
-通过组件调用 `ImagePreview` 时，可以通过下面的方式进行注册。
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
 
 ```js
 import { createApp } from 'vue';
 import { ImagePreview } from 'vant';
 
-// 全局注册
 const app = createApp();
 app.use(ImagePreview);
-
-// 局部注册
-export default {
-  components: {
-    [ImagePreview.Component.name]: ImagePreview.Component,
-  },
-};
 ```
 
-在 `script setup` 中，可以通过以下方式使用：
+### 函数调用
 
-```html
-<script setup>
-  const VanImagePreview = ImagePreview.Component;
-</script>
+为了便于使用 `ImagePreview`，Vant 提供了一系列辅助函数，通过辅助函数可以快速唤起全局的弹窗组件。
 
-<template>
-  <!-- 中划线命名 -->
-  <van-image-preview />
-  <!-- 也支持大驼峰命名 -->
-  <VanImagePreview>
-</template>
+比如使用 `showImagePreview` 函数，调用后会直接在页面中渲染对应的图片预览组件。
+
+```js
+import { showImagePreview } from 'vant';
+
+showImagePreview(['https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg']);
 ```
 
 ## 代码演示
 
 ### 基础用法
 
-直接传入图片数组，即可展示图片预览。
+在调用 `showImagePreview` 时，直接传入图片数组，即可展示图片预览。
 
 ```js
-ImagePreview([
+import { showImagePreview } from 'vant';
+
+showImagePreview([
   'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
   'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
 ]);
@@ -64,10 +45,12 @@ ImagePreview([
 
 ### 指定初始位置
 
-`ImagePreview` 支持传入配置对象，并通过 `startPosition` 选项指定图片的初始位置（索引值）。
+`showImagePreview` 支持传入配置对象，并通过 `startPosition` 选项指定图片的初始位置（索引值）。
 
 ```js
-ImagePreview({
+import { showImagePreview } from 'vant';
+
+showImagePreview({
   images: [
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
@@ -81,7 +64,9 @@ ImagePreview({
 设置 `closeable` 属性后，会在弹出层的右上角显示关闭图标，并且可以通过 `close-icon` 属性自定义图标，使用`close-icon-position` 属性可以自定义图标位置。
 
 ```js
-ImagePreview({
+import { showImagePreview } from 'vant';
+
+showImagePreview({
   images: [
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
@@ -95,9 +80,9 @@ ImagePreview({
 通过 `onClose` 选项监听图片预览的关闭事件。
 
 ```js
-import { Toast } from 'vant';
+import { Toast, showImagePreview } from 'vant';
 
-ImagePreview({
+showImagePreview({
   images: [
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
@@ -113,7 +98,9 @@ ImagePreview({
 通过 `beforeClose` 属性可以拦截关闭行为。
 
 ```js
-const instance = ImagePreview({
+import { showImagePreview } from 'vant';
+
+const instance = showImagePreview({
   images: [
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
@@ -166,7 +153,7 @@ export default {
 
 ### Options
 
-通过函数调用 `ImagePreview` 时，支持传入以下选项：
+通过函数调用 `showImagePreview` 时，支持传入以下选项：
 
 | 参数名 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -307,16 +294,3 @@ imagePreviewRef.value?.swipeTo(1);
 ### 在桌面端无法操作组件？
 
 参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。
-
-### 在 JSX 中渲染 ImagePreview 组件无法展示？
-
-请注意 `ImagePreview` 是一个函数，`ImagePreview.Component` 才是 ImagePreview 对应的组件。JSX 调用图片预览的正确姿势如下：
-
-```jsx
-export default {
-  setup() {
-    const show = ref(false);
-    return () => <ImagePreview.Component v-model={[show, 'show']} />;
-  },
-};
-```

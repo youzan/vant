@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import VanCell from '../../cell';
-import { ImagePreview, ImagePreviewOptions } from '..';
+import {
+  showImagePreview,
+  ImagePreviewOptions,
+  ImagePreview as VanImagePreview,
+} from '..';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
 import { Toast } from '../../toast';
-
-const VanImagePreview = ImagePreview.Component;
 
 const t = useTranslate({
   'zh-CN': {
@@ -51,16 +53,16 @@ const beforeClose = () =>
     }, 1000);
   });
 
-const showComponentCall = () => {
-  show.value = true;
-};
-
 const onChange = (newIndex: number) => {
   index.value = newIndex;
 };
 
-const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
-  const instance = ImagePreview({
+const showComponentCall = () => {
+  show.value = true;
+};
+
+const showFunctionCall = (options: Partial<ImagePreviewOptions> = {}) => {
+  const instance = showImagePreview({
     images,
     ...options,
   });
@@ -75,24 +77,24 @@ const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
 
 <template>
   <demo-block card :title="t('basicUsage')">
-    <van-cell is-link :value="t('showImages')" @click="showImagePreview()" />
+    <van-cell is-link :value="t('showImages')" @click="showFunctionCall()" />
   </demo-block>
 
   <demo-block card :title="t('customConfig')">
     <van-cell
       is-link
       :value="t('startPosition')"
-      @click="showImagePreview({ startPosition: 1 })"
+      @click="showFunctionCall({ startPosition: 1 })"
     />
     <van-cell
       is-link
       :value="t('showClose')"
-      @click="showImagePreview({ closeable: true })"
+      @click="showFunctionCall({ closeable: true })"
     />
     <van-cell
       is-link
       :value="t('closeEvent')"
-      @click="showImagePreview({ onClose })"
+      @click="showFunctionCall({ onClose })"
     />
   </demo-block>
 
@@ -100,7 +102,7 @@ const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
     <van-cell
       is-link
       :value="t('beforeClose')"
-      @click="showImagePreview({ beforeClose })"
+      @click="showFunctionCall({ beforeClose })"
     />
   </demo-block>
 
