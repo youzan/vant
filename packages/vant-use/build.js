@@ -14,7 +14,7 @@ function bundleBundle(format) {
     outfile,
     // preserve Chinese character
     charset: 'utf8',
-    external: ['vue'],
+    external: ['vue', 'vant'],
     entryPoints: ['./src/index.ts'],
   }).then(finish);
 }

@@ -89,36 +89,16 @@ Dialog.setDefaultOptions(); // -> setDialogDefaultOptions()
 Dialog.resetDefaultOptions(); // -> resetDialogDefaultOptions()
 ```
 
-同时，Vant 4 将不再在 `this` 对象上全局注册 `$dialog` 方法，这意味着 `this` 对象上将无法访问到 `$dialog`。
+为了便于代码迁移，你可以使用 `@vant/compat` 中导出的 `Dialog` 对象：
 
 ```js
-export default {
-  mounted() {
-    // 无效代码
-    this.$dialog.alert({
-      message: '弹窗内容',
-    });
-  },
-};
+import { Dialog } from '@vant/compat';
+
+Dialog();
+Dialog.close();
 ```
 
-大多数场景下，推荐通过 `import` 引入对应的函数进行使用。
-
-如果需要全局方法，可以手动在 `app` 对象上注册：
-
-```js
-import { showDialog } from 'vant';
-
-// 注册 $dialog 方法
-app.config.globalProperties.$dialog = showDialog;
-
-// 添加 TS 类型定义
-declare module '@vue/runtime-core' {
-  interface ComponentCustomProperties {
-    $dialog: typeof showDialog;
-  }
-}
-```
+`@vant/compat` 中导出的 `Dialog` 与 Vant 3 中的 `Dialog` 拥有完全一致的 API 和行为。
 
 ### Toast 调用方式调整
 
@@ -147,30 +127,16 @@ Toast.resetDefaultOptions(); // -> resetToastDefaultOptions()
 
 同时，Vant 4 将不再在 `this` 对象上全局注册 `$toast` 方法，这意味着 `this` 对象上将无法访问到 `$toast`。
 
-```js
-export default {
-  mounted() {
-    // 无效代码
-    this.$toast('内容');
-  },
-};
-```
-
-如果需要全局方法，可以手动在 `app` 对象上注册：
+为了便于代码迁移，你可以使用 `@vant/compat` 中导出的 `Toast` 对象：
 
 ```js
-import { showNotify } from 'vant';
+import { Toast } from '@vant/compat';
 
-// 注册 $notify 方法
-app.config.globalProperties.$toast = showNotify;
-
-// 添加 TS 类型定义
-declare module '@vue/runtime-core' {
-  interface ComponentCustomProperties {
-    $toast: typeof showToast;
-  }
-}
+Toast();
+Toast.clear();
 ```
+
+`@vant/compat` 中导出的 `Toast` 与 Vant 3 中的 `Toast` 拥有完全一致的 API 和行为。
 
 ### Notify 调用方式调整
 
@@ -197,32 +163,16 @@ Notify.resetDefaultOptions(); // -> resetNotifyDefaultOptions()
 
 同时，Vant 4 将不再在 `this` 对象上全局注册 `$notify` 方法，这意味着 `this` 对象上将无法访问到 `$notify`。
 
-```js
-export default {
-  mounted() {
-    // 无效代码
-    this.$notify({
-      message: '内容',
-    });
-  },
-};
-```
-
-如果需要全局方法，可以手动在 `app` 对象上注册：
+为了便于代码迁移，你可以使用 `@vant/compat` 中导出的 `Notify` 对象：
 
 ```js
-import { showNotify } from 'vant';
+import { Notify } from '@vant/compat';
 
-// 注册 $notify 方法
-app.config.globalProperties.$notify = showNotify;
-
-// 添加 TS 类型定义
-declare module '@vue/runtime-core' {
-  interface ComponentCustomProperties {
-    $notify: typeof showNotify;
-  }
-}
+Notify();
+Notify.clear();
 ```
+
+`@vant/compat` 中导出的 `Notify` 与 Vant 3 中的 `Notify` 拥有完全一致的 API 和行为。
 
 ### ImagePreview 调用方式调整
 
@@ -237,6 +187,16 @@ ImagePreview.Component; // 组件对象
 showImagePreview(); // 函数调用
 ImagePreview; // 组件对象
 ```
+
+为了便于代码迁移，你可以使用 `@vant/compat` 中导出的 `ImagePreview` 对象：
+
+```js
+import { ImagePreview } from '@vant/compat';
+
+ImagePreview();
+```
+
+`@vant/compat` 中导出的 `ImagePreview` 与 Vant 3 中的 `ImagePreview` 拥有完全一致的 API 和行为。
 
 ### 事件命名调整
 

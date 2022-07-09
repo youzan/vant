@@ -195,6 +195,22 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       vue: 3.2.37
 
+  packages/vant-compat:
+    specifiers:
+      '@vue/runtime-core': ^3.2.27
+      esbuild: ^0.14.29
+      release-it: ^15.1.1
+      typescript: ^4.7.4
+      vant: workspace:*
+      vue: ^3.2.27
+    devDependencies:
+      '@vue/runtime-core': 3.2.37
+      esbuild: 0.14.48
+      release-it: 15.1.1
+      typescript: 4.7.4
+      vant: link:../vant
+      vue: 3.2.37
+
   packages/vant-eslint-config:
     specifiers:
       '@typescript-eslint/eslint-plugin': ^5.30.3
