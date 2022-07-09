@@ -78,7 +78,7 @@ export const resetDialogDefaultOptions = () => {
 export const showConfirmDialog = (options: DialogOptions) =>
   showDialog(extend({ showCancelButton: true }, options));
 
-export const hideDialog = () => {
+export const closeDialog = () => {
   if (instance) {
     instance.toggle(false);
   }

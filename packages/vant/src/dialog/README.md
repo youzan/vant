@@ -133,7 +133,7 @@ export default {
 | --- | --- | --- | --- |
 | showDialog | Show dialog | _options: DialogOptions_ | `Promise<void>` |
 | showConfirmDialog | Show confirm dialog | _options: DialogOptions_ | `Promise<void>` |
-| hideDialog | Close dialog | - | `void` |
+| closeDialog | Close dialog | - | `void` |
 | setDialogDefaultOptions | Set default options of all dialogs | _options: DialogOptions_ | `void` |
 | resetDialogDefaultOptions | Reset default options of all dialogs | - | `void` |
 

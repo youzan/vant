@@ -33,13 +33,13 @@ showNotify({ message: '提示' });
 ### 基础用法
 
 ```js
-import { showNotify, hideNotify } from 'vant';
+import { showNotify, closeNotify } from 'vant';
 
 // 3 秒后自动关闭
 showNotify('通知内容');
 
 // 主动关闭
-hideNotify();
+closeNotify();
 ```
 
 ### 通知类型
@@ -127,7 +127,7 @@ export default {
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | showNotify | 展示提示 | `options \| message` | notify 实例 |
-| hideNotify | 关闭提示 | - | `void` |
+| closeNotify | 关闭提示 | - | `void` |
 | setNotifyDefaultOptions | 修改默认配置，影响所有的 `showNotify` 调用 | `options` | `void` |
 | resetNotifyDefaultOptions | 重置默认配置，影响所有的 `showNotify` 调用 | - | `void` |
 

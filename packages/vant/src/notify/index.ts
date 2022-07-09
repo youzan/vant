@@ -5,7 +5,7 @@ export const Notify = withInstall(_Notify);
 export default Notify;
 export {
   showNotify,
-  hideNotify,
+  closeNotify,
   setNotifyDefaultOptions,
   resetNotifyDefaultOptions,
 } from './function-call';

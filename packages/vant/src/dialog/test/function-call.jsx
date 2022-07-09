@@ -1,7 +1,7 @@
 import { later } from '../../../test';
 import {
   showDialog,
-  hideDialog,
+  closeDialog,
   setDialogDefaultOptions,
   resetDialogDefaultOptions,
 } from '../function-call';
@@ -34,7 +34,7 @@ test('should render dialog after calling showDialog', async () => {
   expect(dialog).toBeTruthy();
 });
 
-test('should close dialog after calling hideDialog', async () => {
+test('should close dialog after calling closeDialog', async () => {
   const wrapper = document.createElement('div');
   showDialog({
     message: '1',
@@ -45,7 +45,7 @@ test('should close dialog after calling hideDialog', async () => {
   const dialog = wrapper.querySelector('.van-dialog');
   expect(dialog.style.display).toEqual('');
 
-  hideDialog();
+  closeDialog();
   await later();
   expect(dialog.className.split(' ')).toContain(
     'van-dialog-bounce-leave-active'

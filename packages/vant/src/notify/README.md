@@ -33,13 +33,13 @@ showNotify('Notify Message');
 ### Basic Usage
 
 ```js
-import { showNotify, hideNotify } from 'vant';
+import { showNotify, closeNotify } from 'vant';
 
 // auto close after 3s
 showNotify('Message');
 
 // manually close
-hideNotify();
+closeNotify();
 ```
 
 ### Notify Type
@@ -114,7 +114,7 @@ export default {
 | Methods | Attribute | Return value | Description |
 | --- | --- | --- | --- |
 | showNotify | `options \| message` | notify instance | Show notify |
-| hideNotify | - | `void` | Close notify |
+| closeNotify | - | `void` | Close notify |
 | setNotifyDefaultOptions | `options` | `void` | Set default options of all notifies |
 | resetNotifyDefaultOptions | - | `void` | Reset default options of all notifies |
 

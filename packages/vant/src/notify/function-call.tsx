@@ -34,7 +34,7 @@ const getDefaultOptions = (): NotifyOptions => ({
 
 let currentOptions = getDefaultOptions();
 
-export const hideNotify = () => {
+export const closeNotify = () => {
   if (instance) {
     instance.toggle(false);
   }
@@ -55,7 +55,7 @@ export function showNotify(options: NotifyMessage | NotifyOptions) {
   clearTimeout(timer);
 
   if (options.duration! > 0) {
-    timer = window.setTimeout(hideNotify, options.duration);
+    timer = window.setTimeout(closeNotify, options.duration);
   }
 
   return instance;
