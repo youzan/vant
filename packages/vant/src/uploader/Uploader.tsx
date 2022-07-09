@@ -37,7 +37,7 @@ import { useExpose } from '../composables/use-expose';
 
 // Components
 import { Icon } from '../icon';
-import { ImagePreview, type ImagePreviewOptions } from '../image-preview';
+import { showImagePreview, type ImagePreviewOptions } from '../image-preview';
 import UploaderPreviewItem from './UploaderPreviewItem';
 
 // Types
@@ -238,7 +238,7 @@ export default defineComponent({
           })
           .filter(Boolean) as string[];
 
-        imagePreview = ImagePreview(
+        imagePreview = showImagePreview(
           extend(
             {
               images,

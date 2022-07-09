@@ -172,6 +172,20 @@ declare module '@vue/runtime-core' {
 }
 ```
 
+### ImagePreview 调用方式调整
+
+Vant 4 中，`ImagePreview` 组件的调用方式也进行了调整，与 `ImagePreview` 组件的改动一致：
+
+```js
+// Vant 3
+ImagePreview(); // 函数调用
+ImagePreview.Component; // 组件对象
+
+// Vant 4
+showImagePreview(); // 函数调用
+ImagePreview; // 组件对象
+```
+
 ### 事件命名调整
 
 从 Vant 4 开始，所有的事件均采用 Vue 官方推荐的**驼峰格式**进行命名。
