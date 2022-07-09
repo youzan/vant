@@ -1,7 +1,7 @@
 {
-  "name": "@vant/popperjs",
-  "version": "1.2.1",
-  "description": "Pre-compiled popperjs core",
+  "name": "@vant/compat",
+  "version": "1.0.0",
+  "description": "Provide Vant 3 compatible behavior for Vant 4",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.mjs",
   "types": "dist/index.d.ts",
@@ -31,15 +31,15 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/youzan/vant.git",
-    "directory": "packages/vant-popperjs"
+    "directory": "packages/vant-compat"
   },
   "bugs": "https://github.com/youzan/vant/issues",
   "author": "chenjiahan",
   "license": "MIT",
-  "dependencies": {
-    "@popperjs/core": "^2.9.2"
-  },
   "devDependencies": {
+    "@vue/runtime-core": "^3.2.27",
+    "vant": "workspace:*",
+    "vue": "^3.2.27",
     "esbuild": "^0.14.29",
     "release-it": "^15.1.1",
     "typescript": "^4.7.4"
@@ -47,7 +47,7 @@
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "release: @vant/popperjs ${version}"
+      "commitMessage": "release: @vant/compat ${version}"
     }
   }
 }
