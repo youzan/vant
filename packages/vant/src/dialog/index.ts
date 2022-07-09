@@ -5,7 +5,7 @@ export const Dialog = withInstall(_Dialog);
 export default Dialog;
 export {
   showDialog,
-  hideDialog,
+  closeDialog,
   showConfirmDialog,
   setDialogDefaultOptions,
   resetDialogDefaultOptions,

@@ -84,7 +84,7 @@ Dialog; // 组件对象
 Dialog(); // -> showDialog()
 Dialog.alert(); // -> showDialog()
 Dialog.confirm(); // -> showConfirmDialog()
-Dialog.close(); // -> hideDialog();
+Dialog.close(); // -> closeDialog();
 Dialog.setDefaultOptions(); // -> setDialogDefaultOptions()
 Dialog.resetDefaultOptions(); // -> resetDialogDefaultOptions()
 ```
@@ -138,7 +138,7 @@ Notify; // 组件对象
 
 ```js
 Notify(); // -> showNotify()
-Notify.clear(); // -> hideNotify()
+Notify.clear(); // -> closeNotify()
 Notify.setDefaultOptions(); // -> setNotifyDefaultOptions()
 Notify.resetDefaultOptions(); // -> resetNotifyDefaultOptions()
 ```

@@ -150,7 +150,7 @@ export default {
 | --- | --- | --- | --- |
 | showDialog | 展示弹窗 | _options: DialogOptions_ | `Promise<void>` |
 | showConfirmDialog | 展示消息确认弹窗 | _options: DialogOptions_ | `Promise<void>` |
-| hideDialog | 关闭弹窗 | - | `void` |
+| closeDialog | 关闭弹窗 | - | `void` |
 | setDialogDefaultOptions | 修改默认配置，影响所有的 `showDialog` 调用 | _options: DialogOptions_ | `void` |
 | resetDialogDefaultOptions | 重置默认配置，影响所有的 `showDialog` 调用 | - | `void` |
 

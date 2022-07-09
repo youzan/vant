@@ -1,13 +1,13 @@
 import { later } from '../../../test';
 import {
   showNotify,
-  hideNotify,
+  closeNotify,
   setNotifyDefaultOptions,
   resetNotifyDefaultOptions,
 } from '../function-call';
 
 test('should not throw error if calling clear method before render notify', () => {
-  hideNotify();
+  closeNotify();
 });
 
 test('should render Notify correctly', async () => {
