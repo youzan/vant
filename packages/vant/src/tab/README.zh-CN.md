@@ -115,12 +115,12 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const active = ref(0);
-    const onClickTab = ({ title }) => Toast(title);
+    const onClickTab = ({ title }) => showToast(title);
     return {
       active,
       onClickTab,

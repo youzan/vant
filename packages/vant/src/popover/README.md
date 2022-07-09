@@ -30,7 +30,7 @@ app.use(Popover);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -40,7 +40,7 @@ export default {
       { text: 'Option 2' },
       { text: 'Option 3' },
     ];
-    const onSelect = (action) => Toast(action.text);
+    const onSelect = (action) => showToast(action.text);
 
     return {
       actions,

@@ -29,7 +29,7 @@ Use `actions` prop to set options of action-sheet.
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -41,7 +41,7 @@ export default {
     ];
     const onSelect = (item) => {
       show.value = false;
-      Toast(item.name);
+      showToast(item.name);
     };
 
     return {
@@ -67,7 +67,7 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -77,7 +77,7 @@ export default {
       { name: 'Option 2' },
       { name: 'Option 3' },
     ];
-    const onCancel = () => Toast('cancel');
+    const onCancel = () => showToast('cancel');
 
     return {
       show,

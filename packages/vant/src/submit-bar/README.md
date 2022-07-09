@@ -25,11 +25,11 @@ app.use(SubmitBar);
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onSubmit = () => Toast('Submit');
+    const onSubmit = () => showToast('Submit');
     return {
       onSubmit,
     };
@@ -72,12 +72,12 @@ Use slot to add custom contents.
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onSubmit = () => Toast('Submit');
-    const onClickLink = () => Toast('Click Link');
+    const onSubmit = () => showToast('Submit');
+    const onClickLink = () => showToast('Click Link');
     return {
       onSubmit,
       onClickLink,

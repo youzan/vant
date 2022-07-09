@@ -31,7 +31,7 @@ app.use(Picker);
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -43,12 +43,12 @@ export default {
       { text: 'Maine', value: 'Maine' },
     ];
     const onConfirm = ({ selectedValues }) => {
-      Toast(`Value: ${selectedValues.join(',')}`);
+      showToast(`Value: ${selectedValues.join(',')}`);
     };
     const onChange = ({ selectedValues }) => {
-      Toast(`Value: ${selectedValues.join(',')}`);
+      showToast(`Value: ${selectedValues.join(',')}`);
     };
-    const onCancel = () => Toast('Cancel');
+    const onCancel = () => showToast('Cancel');
 
     return {
       columns,
@@ -120,7 +120,7 @@ Using `v-model` to bind selected values.
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {

@@ -30,7 +30,7 @@ import { Cell } from '../cell';
 import { Form } from '../form';
 import { Field, FieldRule } from '../field';
 import { Popup } from '../popup';
-import { Toast } from '../toast';
+import { showToast } from '../toast';
 import { Button } from '../button';
 import { Switch } from '../switch';
 import AddressEditDetail from './AddressEditDetail';
@@ -183,7 +183,7 @@ export default defineComponent({
       selectedOptions,
     }: PickerConfirmEventParams) => {
       if (selectedValues.some((value) => value === AREA_EMPTY_CODE)) {
-        Toast(t('areaEmpty'));
+        showToast(t('areaEmpty'));
       } else {
         showAreaPopup.value = false;
         assignAreaText(selectedOptions as PickerOption[]);

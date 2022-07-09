@@ -4,7 +4,7 @@ import VanGridItem from '../../grid-item';
 import VanCountDown, { type CountDownInstance } from '..';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -43,7 +43,7 @@ const pause = () => {
 const reset = () => {
   countDown.value?.reset();
 };
-const onFinish = () => Toast(t('finished'));
+const onFinish = () => showToast(t('finished'));
 </script>
 
 <template>

@@ -3,7 +3,7 @@ import VanActionBar from '..';
 import VanActionBarIcon from '../../action-bar-icon';
 import VanActionBarButton from '../../action-bar-button';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -33,8 +33,8 @@ const t = useTranslate({
     customButtonColor: 'Custom Button Color',
   },
 });
-const onClickIcon = () => Toast(t('clickIcon'));
-const onClickButton = () => Toast(t('clickButton'));
+const onClickIcon = () => showToast(t('clickIcon'));
+const onClickButton = () => showToast(t('clickButton'));
 </script>
 
 <template>

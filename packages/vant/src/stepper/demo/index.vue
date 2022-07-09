@@ -3,7 +3,7 @@ import VanCell from '../../cell';
 import VanStepper from '..';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { closeToast, showLoadingToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -40,11 +40,11 @@ const stepperRound = ref(1);
 const disabledInput = ref(1);
 
 const beforeChange = () => {
-  Toast.loading({ forbidClick: true });
+  showLoadingToast({ forbidClick: true });
 
   return new Promise<boolean>((resolve) => {
     setTimeout(() => {
-      Toast.clear();
+      closeToast();
       resolve(true);
     }, 500);
   });

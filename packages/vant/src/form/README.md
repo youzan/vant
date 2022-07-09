@@ -109,7 +109,7 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { closeToast, showLoadingToast } from 'vant';
 
 export default {
   setup() {
@@ -125,10 +125,10 @@ export default {
 
     const asyncValidator = (val) =>
       new Promise((resolve) => {
-        Toast.loading('Validating...');
+        showLoadingToast('Validating...');
 
         setTimeout(() => {
-          Toast.clear();
+          closeToast();
           resolve(val === '1234');
         }, 1000);
       });

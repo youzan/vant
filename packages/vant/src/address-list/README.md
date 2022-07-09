@@ -34,7 +34,7 @@ app.use(AddressList);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -63,8 +63,8 @@ export default {
       },
     ];
 
-    const onAdd = () => Toast('Add');
-    const onEdit = (item, index) => Toast('Edit:' + index);
+    const onAdd = () => showToast('Add');
+    const onEdit = (item, index) => showToast('Edit:' + index);
 
     return {
       list,

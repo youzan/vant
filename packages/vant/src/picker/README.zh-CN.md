@@ -39,7 +39,7 @@ Picker 组件通过 `columns` 属性配置选项数据，`columns` 是一个包�
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -51,12 +51,12 @@ export default {
       { text: '湖州', value: 'Huzhou' },
     ];
     const onConfirm = ({ selectedValues }) => {
-      Toast(`当前值: ${selectedValues.join(',')}`);
+      showToast(`当前值: ${selectedValues.join(',')}`);
     };
     const onChange = ({ selectedValues }) => {
-      Toast(`当前值: ${selectedValues.join(',')}`);
+      showToast(`当前值: ${selectedValues.join(',')}`);
     };
-    const onCancel = () => Toast('取消');
+    const onCancel = () => showToast('取消');
 
     return {
       columns,
@@ -131,7 +131,7 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {

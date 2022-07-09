@@ -80,11 +80,11 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onChange = (index) => Toast('当前 Swipe 索引：' + index);
+    const onChange = (index) => showToast('当前 Swipe 索引：' + index);
     return { onChange };
   },
 };

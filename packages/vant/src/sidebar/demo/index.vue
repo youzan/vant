@@ -5,7 +5,7 @@ import VanSidebar from '..';
 import VanSidebarItem from '../../sidebar-item';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -26,7 +26,7 @@ const active2 = ref(0);
 const active3 = ref(0);
 const active4 = ref(0);
 
-const onChange = (index: number) => Toast(`${t('title')} ${index + 1}`);
+const onChange = (index: number) => showToast(`${t('title')} ${index + 1}`);
 </script>
 
 <template>

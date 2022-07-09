@@ -55,13 +55,13 @@ Search 组件提供了 `search` 和 `cancel` 事件，`search` 事件在点击�
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref('');
-    const onSearch = (val) => Toast(val);
-    const onCancel = () => Toast('取消');
+    const onSearch = (val) => showToast(val);
+    const onCancel = () => showToast('取消');
     return {
       value,
       onSearch,
@@ -126,13 +126,13 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref('');
-    const onSearch = (val) => Toast(val);
-    const onClickButton = () => Toast(value.value);
+    const onSearch = (val) => showToast(val);
+    const onClickButton = () => showToast(value.value);
     return {
       value,
       onSearch,

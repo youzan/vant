@@ -32,7 +32,7 @@ app.use(ShareSheet);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -46,7 +46,7 @@ export default {
     ];
 
     const onSelect = (option) => {
-      Toast(option.name);
+      showToast(option.name);
       showShare.value = false;
     };
 

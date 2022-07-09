@@ -80,12 +80,12 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const active = ref(0);
-    const onChange = (index) => Toast(`标签名 ${index + 1}`);
+    const onChange = (index) => showToast(`标签名 ${index + 1}`);
     return {
       active,
       onChange,

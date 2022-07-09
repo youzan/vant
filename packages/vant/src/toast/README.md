@@ -16,18 +16,34 @@ const app = createApp();
 app.use(Toast);
 ```
 
+### Function Call
+
+Vant provides some utility functions that can quickly evoke global `Toast` components.
+
+For example, calling the `showToast` function will render a Toast directly in the page.
+
+```js
+import { showToast } from 'vant';
+
+showToast('Some messages');
+```
+
 ## Usage
 
 ### Text
 
 ```js
-Toast('Some messages');
+import { showToast } from 'vant';
+
+showToast('Some messages');
 ```
 
 ### Loading
 
 ```js
-Toast.loading({
+import { showLoadingToast } from 'vant';
+
+showLoadingToast({
   message: 'Loading...',
   forbidClick: true,
 });
@@ -36,24 +52,28 @@ Toast.loading({
 ### Success/Fail
 
 ```js
-Toast.success('Success');
-Toast.fail('Fail');
+import { showSuccessToast, showFailToast } from 'vant';
+
+showSuccessToast('Success');
+showFailToast('Fail');
 ```
 
 ### Custom Icon
 
 ```js
-Toast({
+import { showToast, showLoadingToast } from 'vant';
+
+showToast({
   message: 'Custom Icon',
   icon: 'like-o',
 });
 
-Toast({
+showToast({
   message: 'Custom Image',
   icon: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
 });
 
-Toast.loading({
+showLoadingToast({
   message: 'Loading...',
   forbidClick: true,
   loadingType: 'spinner',
@@ -63,12 +83,14 @@ Toast.loading({
 ### Custom Position
 
 ```js
-Toast({
+import { showToast } from 'vant';
+
+showToast({
   message: 'Top',
   position: 'top',
 });
 
-Toast({
+showToast({
   message: 'Bottom',
   position: 'bottom',
 });
@@ -77,7 +99,9 @@ Toast({
 ### Update Message
 
 ```js
-const toast = Toast.loading({
+import { showLoadingToast, closeToast } from 'vant';
+
+const toast = showLoadingToast({
   duration: 0,
   forbidClick: true,
   loadingType: 'spinner',
@@ -91,21 +115,9 @@ const timer = setInterval(() => {
     toast.message = `${second} seconds`;
   } else {
     clearInterval(timer);
-    Toast.clear();
+    closeToast();
   }
 }, 1000);
-```
-
-### Global Method
-
-After registering the Toast component through `app.use`, the `$toast` method will be automatically mounted on all subcomponents of the app.
-
-```js
-export default {
-  mounted() {
-    this.$toast('Some messages');
-  },
-};
 ```
 
 ### Singleton
@@ -113,27 +125,31 @@ export default {
 Toast use singleton mode by default, if you need to pop multiple Toast at the same time, you can refer to the following example:
 
 ```js
-Toast.allowMultiple();
+import { showToast, showSuccessToast, allowMultipleToast } from 'vant';
 
-const toast1 = Toast('First Toast');
-const toast2 = Toast.success('Second Toast');
+allowMultipleToast();
 
-toast1.clear();
-toast2.clear();
+const toast1 = showToast('First Toast');
+const toast2 = showSuccessToast('Second Toast');
+
+toast1.close();
+toast2.close();
 ```
 
 ### Set Default Options
 
-The Toast default configuration can be globally modified with the `Toast.setDefaultOptions` function.
+The Toast default configuration can be globally modified with the `setToastDefaultOptions` function.
 
 ```js
-Toast.setDefaultOptions({ duration: 2000 });
+import { setToastDefaultOptions, resetToastDefaultOptions } from 'vant';
 
-Toast.setDefaultOptions('loading', { forbidClick: true });
+setToastDefaultOptions({ duration: 2000 });
 
-Toast.resetDefaultOptions();
+setToastDefaultOptions('loading', { forbidClick: true });
 
-Toast.resetDefaultOptions('loading');
+resetToastDefaultOptions();
+
+resetToastDefaultOptions('loading');
 ```
 
 ## API
@@ -142,14 +158,14 @@ Toast.resetDefaultOptions('loading');
 
 | Methods | Attribute | Return value | Description |
 | --- | --- | --- | --- |
-| Toast | `options \| message` | toast instance | Show toast |
-| Toast.loading | `options \| message` | toast instance | Show loading toast |
-| Toast.success | `options \| message` | toast instance | Show success toast |
-| Toast.fail | `options \| message` | toast instance | Show fail toast |
-| Toast.clear | `clearAll: boolean` | `void` | Close toast |
-| Toast.allowMultiple | - | `void` | Allow multiple toast at the same time |
-| Toast.setDefaultOptions | `type \| options` | `void` | Set default options of all toasts |
-| Toast.resetDefaultOptions | `type` | `void` | Reset default options of all toasts |
+| showToast | `options \| message` | toast instance | Show toast |
+| showLoadingToast | `options \| message` | toast instance | Show loading toast |
+| showSuccessToast | `options \| message` | toast instance | Show success toast |
+| showFailToast | `options \| message` | toast instance | Show fail toast |
+| closeToast | `closeAll: boolean` | `void` | Close toast |
+| allowMultipleToast | - | `void` | Allow multiple toast at the same time |
+| setToastDefaultOptions | `type \| options` | `void` | Set default options of all toasts |
+| resetToastDefaultOptions | `type` | `void` | Reset default options of all toasts |
 
 ### Options
 

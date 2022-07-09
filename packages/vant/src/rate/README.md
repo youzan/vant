@@ -113,12 +113,12 @@ export default {
 
 ```javascript
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref(3);
-    const onChange = (value) => Toast('current value:' + value);
+    const onChange = (value) => showToast('current value:' + value);
     return {
       value,
       onChange,

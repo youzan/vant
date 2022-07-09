@@ -12,7 +12,7 @@ import {
   disabledColumns,
   customKeyColumns,
 } from './data';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
@@ -58,14 +58,14 @@ const customFieldName = {
 const selectedValues = ref(['Wenzhou']);
 
 const onChange1 = ({ selectedValues }: PickerChangeEventParams) => {
-  Toast(t('toastContent', selectedValues.join(',')));
+  showToast(t('toastContent', selectedValues.join(',')));
 };
 
 const onConfirm = ({ selectedValues }: PickerConfirmEventParams) => {
-  Toast(t('toastContent', selectedValues.join(',')));
+  showToast(t('toastContent', selectedValues.join(',')));
 };
 
-const onCancel = () => Toast(t('cancel'));
+const onCancel = () => showToast(t('cancel'));
 </script>
 
 <template>

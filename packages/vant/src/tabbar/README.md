@@ -134,12 +134,12 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const active = ref(0);
-    const onChange = (index) => Toast(`Tab ${index}`);
+    const onChange = (index) => showToast(`Tab ${index}`);
     return {
       icon,
       onChange,

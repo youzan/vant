@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import VanCell from '../../cell';
 import { cdnURL, useTranslate } from '../../../docs/site';
-import { Toast } from '..';
+import {
+  showToast,
+  closeToast,
+  showFailToast,
+  showSuccessToast,
+  showLoadingToast,
+} from '..';
 import type { LoadingType } from '../../loading';
 
 const t = useTranslate({
@@ -43,52 +49,44 @@ const t = useTranslate({
   },
 });
 
-const showLoadingToast = (loadingType?: LoadingType) => {
-  Toast.loading({
+const showLoadingToastWithType = (loadingType?: LoadingType) => {
+  showLoadingToast({
     forbidClick: true,
     message: t('loading'),
     loadingType,
   });
 };
 
-const showSuccessToast = () => {
-  Toast.success(t('text2'));
-};
-
-const showFailToast = () => {
-  Toast.fail(t('text3'));
-};
-
 const showTopToast = () => {
-  Toast({
+  showToast({
     message: t('positionTop'),
     position: 'top',
   });
 };
 
 const showBottomToast = () => {
-  Toast({
+  showToast({
     message: t('positionBottom'),
     position: 'bottom',
   });
 };
 
 const showIconToast = () => {
-  Toast({
+  showToast({
     message: t('customIcon'),
     icon: 'like-o',
   });
 };
 
 const showImageToast = () => {
-  Toast({
+  showToast({
     message: t('customImage'),
     icon: cdnURL('logo.png'),
   });
 };
 
-const showCustomizedToast = () => {
-  const toast = Toast.loading({
+const showCustomToast = () => {
+  const toast = showLoadingToast({
     duration: 0,
     forbidClick: true,
     message: t('text4', 3),
@@ -101,7 +99,7 @@ const showCustomizedToast = () => {
       toast.message = t('text4', second);
     } else {
       clearInterval(timer);
-      Toast.clear();
+      closeToast();
     }
   }, 1000);
 };
@@ -109,10 +107,18 @@ const showCustomizedToast = () => {
 
 <template>
   <demo-block card :title="t('basicUsage')">
-    <van-cell is-link :title="t('title1')" @click="Toast(t('text'))" />
-    <van-cell is-link :title="t('title2')" @click="showLoadingToast()" />
-    <van-cell is-link :title="t('success')" @click="showSuccessToast" />
-    <van-cell is-link :title="t('fail')" @click="showFailToast" />
+    <van-cell is-link :title="t('title1')" @click="showToast(t('text'))" />
+    <van-cell
+      is-link
+      :title="t('title2')"
+      @click="showLoadingToastWithType()"
+    />
+    <van-cell
+      is-link
+      :title="t('success')"
+      @click="showSuccessToast(t('text2'))"
+    />
+    <van-cell is-link :title="t('fail')" @click="showFailToast(t('text3'))" />
   </demo-block>
 
   <demo-block card :title="t('customIcon')">
@@ -121,7 +127,7 @@ const showCustomizedToast = () => {
     <van-cell
       is-link
       :title="t('loadingType')"
-      @click="showLoadingToast('spinner')"
+      @click="showLoadingToastWithType('spinner')"
     />
   </demo-block>
 
@@ -131,10 +137,6 @@ const showCustomizedToast = () => {
   </demo-block>
 
   <demo-block card :title="t('updateMessage')">
-    <van-cell
-      is-link
-      :title="t('updateMessage')"
-      @click="showCustomizedToast"
-    />
+    <van-cell is-link :title="t('updateMessage')" @click="showCustomToast" />
   </demo-block>
 </template>

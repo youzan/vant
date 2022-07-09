@@ -32,13 +32,13 @@ app.use(NumberKeyboard);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const show = ref(true);
-    const onInput = (value) => Toast(value);
-    const onDelete = () => Toast('delete');
+    const onInput = (value) => showToast(value);
+    const onDelete = () => showToast('delete');
 
     return {
       show,

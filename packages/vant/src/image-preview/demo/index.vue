@@ -7,7 +7,7 @@ import {
 } from '..';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -44,7 +44,7 @@ const images = [
 const show = ref(false);
 const index = ref(0);
 
-const onClose = () => Toast(t('closed'));
+const onClose = () => showToast(t('closed'));
 
 const beforeClose = () =>
   new Promise<boolean>((resolve) => {

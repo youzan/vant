@@ -110,11 +110,11 @@ Tabs styled as cards.
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onClickTab = ({ title }) => Toast(title);
+    const onClickTab = ({ title }) => showToast(title);
     return {
       onClickTab,
     };

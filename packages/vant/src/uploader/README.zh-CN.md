@@ -143,13 +143,13 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const onOversize = (file) => {
       console.log(file);
-      Toast('文件大小不能超过 500kb');
+      showToast('文件大小不能超过 500kb');
     };
 
     return {
@@ -166,7 +166,7 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -243,14 +243,14 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     // 返回布尔值
     const beforeRead = (file) => {
       if (file.type !== 'image/jpeg') {
-        Toast('请上传 jpg 格式图片');
+        showToast('请上传 jpg 格式图片');
         return false;
       }
       return true;
@@ -260,7 +260,7 @@ export default {
     const asyncBeforeRead = (file) =>
       new Promise((resolve, reject) => {
         if (file.type !== 'image/jpeg') {
-          Toast('请上传 jpg 格式图片');
+          showToast('请上传 jpg 格式图片');
           reject();
         } else {
           const img = new File(['foo'], 'bar.jpg', {
@@ -296,7 +296,7 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -305,7 +305,7 @@ export default {
         url: 'https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg',
         deletable: true,
         beforeDelete: () => {
-          Toast('删除前置处理');
+          showToast('删除前置处理');
         },
       },
       {

@@ -54,8 +54,8 @@ pnpm add vant
   // 可以通过下面的方式手动注册
   app.use(vant.Lazyload);
 
-  // 调用函数组件，弹出一个 Toast
-  vant.Toast('提示');
+  // 调用工具函数，弹出一个 Toast
+  vant.showToast('提示');
 
   app.mount('#app');
 </script>
@@ -179,19 +179,19 @@ Vant 中有个别组件是以函数的形式提供的，包括 `Toast`，`Dialog
 
 ```js
 // Toast
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 import 'vant/es/toast/style';
 
 // Dialog
-import { Dialog } from 'vant';
+import { showDialog } from 'vant';
 import 'vant/es/dialog/style';
 
 // Notify
-import { Notify } from 'vant';
+import { showNotify } from 'vant';
 import 'vant/es/notify/style';
 
 // ImagePreview
-import { ImagePreview } from 'vant';
+import { showImagePreview } from 'vant';
 import 'vant/es/image-preview/style';
 ```
 

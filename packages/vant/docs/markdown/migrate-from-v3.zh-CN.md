@@ -120,6 +120,58 @@ declare module '@vue/runtime-core' {
 }
 ```
 
+### Toast 调用方式调整
+
+Vant 4 中，`Toast` 组件的调用方式也进行了调整，与 `Dialog` 组件的改动一致：
+
+```js
+// Vant 3
+Toast(); // 函数调用
+
+// Vant 4
+showToast(); // 函数调用
+Toast; // 组件对象
+```
+
+`Toast` 上挂载的其他方法也进行了重命名，新旧 API 的映射关系如下：
+
+```js
+Toast(); // -> showToast()
+Toast.fail(); // -> showFailToast()
+Toast.success(); // -> showSuccessToast()
+Toast.loading(); // -> showLoadingToast()
+Toast.clear(); // -> closeToast()
+Toast.setDefaultOptions(); // -> setToastDefaultOptions()
+Toast.resetDefaultOptions(); // -> resetToastDefaultOptions()
+```
+
+同时，Vant 4 将不再在 `this` 对象上全局注册 `$toast` 方法，这意味着 `this` 对象上将无法访问到 `$toast`。
+
+```js
+export default {
+  mounted() {
+    // 无效代码
+    this.$toast('内容');
+  },
+};
+```
+
+如果需要全局方法，可以手动在 `app` 对象上注册：
+
+```js
+import { showNotify } from 'vant';
+
+// 注册 $notify 方法
+app.config.globalProperties.$toast = showNotify;
+
+// 添加 TS 类型定义
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $toast: typeof showToast;
+  }
+}
+```
+
 ### Notify 调用方式调整
 
 Vant 4 中，`Notify` 组件的调用方式也进行了调整，与 `Dialog` 组件的改动一致：
