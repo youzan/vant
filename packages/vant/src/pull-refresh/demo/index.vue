@@ -4,7 +4,7 @@ import VanTab from '../../tab';
 import VanPullRefresh from '..';
 import { computed, onMounted, ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -33,10 +33,10 @@ const tips = computed(() => {
   return t('try');
 });
 
-const onRefresh = (showToast: boolean) => {
+const onRefresh = (isShowToast: boolean) => {
   setTimeout(() => {
-    if (showToast) {
-      Toast(t('success'));
+    if (isShowToast) {
+      showToast(t('success'));
     }
     loading.value = false;
     count.value++;

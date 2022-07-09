@@ -60,12 +60,12 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const onClickLeft = () => history.back();
-    const onClickRight = () => Toast('Button');
+    const onClickRight = () => showToast('Button');
     return {
       onClickLeft,
       onClickRight,

@@ -6,7 +6,7 @@ import VanCellGroup from '../../cell-group';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
 import { FieldValidateError } from '../../field/types';
-import { Toast } from '../../toast';
+import { closeToast, showLoadingToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -47,10 +47,10 @@ const validatorMessage = (val: string) => t('invalid', val);
 
 const asyncValidator = (val: string) =>
   new Promise<boolean>((resolve) => {
-    Toast.loading(t('validating'));
+    showLoadingToast(t('validating'));
 
     setTimeout(() => {
-      Toast.clear();
+      closeToast();
       resolve(val === '1234');
     }, 1000);
   });

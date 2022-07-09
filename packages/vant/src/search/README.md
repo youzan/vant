@@ -53,13 +53,13 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref('');
-    const onSearch = (val) => Toast(val);
-    const onCancel = () => Toast('Cancel');
+    const onSearch = (val) => showToast(val);
+    const onCancel = () => showToast('Cancel');
     return {
       value,
       onSearch,
@@ -114,13 +114,13 @@ Use `action` slot to custom right button, `cancel` event will no longer be Emitt
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref('');
-    const onSearch = (val) => Toast(val);
-    const onClickButton = () => Toast(value.value);
+    const onSearch = (val) => showToast(val);
+    const onClickButton = () => showToast(value.value);
     return {
       value,
       onSearch,

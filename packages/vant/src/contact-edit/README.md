@@ -33,7 +33,7 @@ app.use(ContactEdit);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -41,8 +41,8 @@ export default {
       tel: '',
       name: '',
     });
-    const onSave = (contactInfo) => Toast('Save');
-    const onDelete = (contactInfo) => Toast('Delete');
+    const onSave = (contactInfo) => showToast('Save');
+    const onDelete = (contactInfo) => showToast('Delete');
     return {
       onSave,
       onDelete,

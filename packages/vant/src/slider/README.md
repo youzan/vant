@@ -26,12 +26,12 @@ app.use(Slider);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref(50);
-    const onChange = (value) => Toast('Current value: ' + value);
+    const onChange = (value) => showToast('Current value: ' + value);
     return {
       value,
       onChange,
@@ -50,13 +50,13 @@ Add `range` attribute to open dual thumb mode.
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     // value must be an Array
     const value = ref([10, 50]);
-    const onChange = (value) => Toast('Current value: ' + value);
+    const onChange = (value) => showToast('Current value: ' + value);
     return {
       value,
       onChange,
@@ -128,13 +128,13 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref(50);
     const value2 = ref([10, 50]);
-    const onChange = (value) => Toast('Current value: ' + value);
+    const onChange = (value) => showToast('Current value: ' + value);
     return {
       value,
       value2,

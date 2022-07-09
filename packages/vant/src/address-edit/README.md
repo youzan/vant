@@ -36,14 +36,14 @@ app.use(AddressEdit);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const searchResult = ref([]);
 
-    const onSave = () => Toast('save');
-    const onDelete = () => Toast('delete');
+    const onSave = () => showToast('save');
+    const onDelete = () => showToast('delete');
     const onChangeDetail = (val) => {
       if (val) {
         searchResult.value = [

@@ -74,7 +74,7 @@ showImagePreview({
 ### Close Event
 
 ```js
-import { Toast, showImagePreview } from 'vant';
+import { showToast, showImagePreview } from 'vant';
 
 showImagePreview({
   images: [
@@ -82,7 +82,7 @@ showImagePreview({
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
   ],
   onClose() {
-    Toast('closed');
+    showToast('closed');
   },
 });
 ```

@@ -117,7 +117,7 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { closeToast, showLoadingToast } from 'vant';
 
 export default {
   setup() {
@@ -136,10 +136,10 @@ export default {
     // 校验函数可以返回 Promise，实现异步校验
     const asyncValidator = (val) =>
       new Promise((resolve) => {
-        Toast.loading('验证中...');
+        showLoadingToast('验证中...');
 
         setTimeout(() => {
-          Toast.clear();
+          closeToast();
           resolve(val === '1234');
         }, 1000);
       });

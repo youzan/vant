@@ -130,13 +130,13 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const onOversize = (file) => {
       console.log(file);
-      Toast('File size cannot exceed 500kb');
+      showToast('File size cannot exceed 500kb');
     };
 
     return {
@@ -153,7 +153,7 @@ If you need to make different size limits for different types of files, you can 
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -224,14 +224,14 @@ You can set the width and height separately.
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     // 返回布尔值
     const beforeRead = (file) => {
       if (file.type !== 'image/jpeg') {
-        Toast('Please upload an image in jpg format');
+        showToast('Please upload an image in jpg format');
         return false;
       }
       return true;
@@ -241,7 +241,7 @@ export default {
     const asyncBeforeRead = (file) =>
       new Promise((resolve, reject) => {
         if (file.type !== 'image/jpeg') {
-          Toast('Please upload an image in jpg format');
+          showToast('Please upload an image in jpg format');
           reject();
         } else {
           const img = new File(['foo'], 'bar.jpg', {
@@ -275,7 +275,7 @@ Use `disabled` prop to disable uploader.
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -284,7 +284,9 @@ export default {
         url: 'https://fastly.jsdelivr.net/npm/@vant/assets/sand.jpeg',
         deletable: true,
         beforeDelete: () => {
-          Toast('Customize the events and styles of a single preview image');
+          showToast(
+            'Customize the events and styles of a single preview image'
+          );
         },
       },
       {

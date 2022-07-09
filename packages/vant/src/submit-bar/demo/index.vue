@@ -3,7 +3,7 @@ import VanSubmitBar from '..';
 import VanCheckbox from '../../checkbox';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -28,8 +28,8 @@ const t = useTranslate({
 
 const checked = ref(true);
 
-const onSubmit = () => Toast(t('clickButton'));
-const onClickLink = () => Toast(t('clickLink'));
+const onSubmit = () => showToast(t('clickButton'));
+const onClickLink = () => showToast(t('clickLink'));
 </script>
 
 <template>

@@ -33,7 +33,7 @@ app.use(ContactList);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -52,9 +52,9 @@ export default {
       },
     ]);
 
-    const onAdd = () => Toast('新增');
-    const onEdit = (contact) => Toast('编辑' + contact.id);
-    const onSelect = (contact) => Toast('选择' + contact.id);
+    const onAdd = () => showToast('新增');
+    const onEdit = (contact) => showToast('编辑' + contact.id);
+    const onSelect = (contact) => showToast('选择' + contact.id);
 
     return {
       list,

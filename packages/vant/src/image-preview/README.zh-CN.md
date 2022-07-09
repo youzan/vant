@@ -18,7 +18,7 @@ app.use(ImagePreview);
 
 ### 函数调用
 
-为了便于使用 `ImagePreview`，Vant 提供了一系列辅助函数，通过辅助函数可以快速唤起全局的弹窗组件。
+为了便于使用 `ImagePreview`，Vant 提供了一系列辅助函数，通过辅助函数可以快速唤起全局的图片预览组件。
 
 比如使用 `showImagePreview` 函数，调用后会直接在页面中渲染对应的图片预览组件。
 
@@ -80,7 +80,7 @@ showImagePreview({
 通过 `onClose` 选项监听图片预览的关闭事件。
 
 ```js
-import { Toast, showImagePreview } from 'vant';
+import { showToast, showImagePreview } from 'vant';
 
 showImagePreview({
   images: [
@@ -88,7 +88,7 @@ showImagePreview({
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
   ],
   onClose() {
-    Toast('关闭');
+    showToast('关闭');
   },
 });
 ```

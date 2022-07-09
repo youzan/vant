@@ -32,12 +32,12 @@ app.use(ActionBarButton);
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onClickIcon = () => Toast('Click Icon');
-    const onClickButton = () => Toast('Click Button');
+    const onClickIcon = () => showToast('Click Icon');
+    const onClickButton = () => showToast('Click Button');
     return {
       onClickIcon,
       onClickButton,

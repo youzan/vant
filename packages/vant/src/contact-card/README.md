@@ -25,11 +25,11 @@ app.use(ContactCard);
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onAdd = () => Toast('add');
+    const onAdd = () => showToast('add');
     return {
       onAdd,
     };
@@ -45,13 +45,13 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const tel = ref('13000000000');
     const name = ref('John Snow');
-    const onEdit = () => Toast('edit');
+    const onEdit = () => showToast('edit');
 
     return {
       tel,

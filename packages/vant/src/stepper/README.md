@@ -85,18 +85,18 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { closeToast, showLoadingToast } from 'vant';
 
 export default {
   setup() {
     const value = ref(1);
 
     const beforeChange = (value) => {
-      Toast.loading({ forbidClick: true });
+      showLoadingToast({ forbidClick: true });
 
       return new Promise((resolve) => {
         setTimeout(() => {
-          Toast.clear();
+          closeToast();
           // resolve 'true' or 'false'
           resolve(true);
         }, 500);

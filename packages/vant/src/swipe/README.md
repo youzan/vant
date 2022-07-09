@@ -78,11 +78,11 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onChange = (index) => Toast('Current Swipe index:' + index);
+    const onChange = (index) => showToast('Current Swipe index:' + index);
     return { onChange };
   },
 };

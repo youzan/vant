@@ -106,7 +106,7 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -121,7 +121,7 @@ export default {
     const reset = () => {
       countDown.value.reset();
     };
-    const onFinish = () => Toast('倒计时结束');
+    const onFinish = () => showToast('倒计时结束');
 
     return {
       start,

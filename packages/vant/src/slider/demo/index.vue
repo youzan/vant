@@ -2,7 +2,7 @@
 import VanSlider from '..';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -39,7 +39,7 @@ const value7 = ref(50);
 const value8 = ref(50);
 const value9 = ref<[number, number]>([20, 60]);
 
-const onChange = (value: string) => Toast(t('text') + value);
+const onChange = (value: string) => showToast(t('text') + value);
 </script>
 
 <template>

@@ -4,7 +4,7 @@ import VanButton from '../../button';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
 import { UploaderFileListItem } from '../types';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -63,7 +63,7 @@ const fileList5 = ref<UploaderFileListItem[]>([
     url: cdnURL('sand.jpeg'),
     deletable: true,
     beforeDelete: () => {
-      Toast(t('deleteMessage'));
+      showToast(t('deleteMessage'));
     },
   },
   {
@@ -105,7 +105,7 @@ const beforeRead = (file: File | File[]) => {
     return true;
   }
   if (file.type !== 'image/jpeg') {
-    Toast(t('invalidType'));
+    showToast(t('invalidType'));
     return false;
   }
   return true;
@@ -140,7 +140,7 @@ const afterReadFailed = (
 
 const onOversize = (file: UploaderFileListItem, detail: unknown) => {
   console.log(file, detail);
-  Toast(t('overSizeTip'));
+  showToast(t('overSizeTip'));
 };
 </script>
 

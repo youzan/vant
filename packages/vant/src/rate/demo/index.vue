@@ -2,7 +2,7 @@
 import VanRate from '..';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -38,7 +38,7 @@ const value6 = ref(3);
 const value7 = ref(3.3);
 const value8 = ref(2);
 
-const onChange = (value: number) => Toast(t('toastContent', value));
+const onChange = (value: number) => showToast(t('toastContent', value));
 </script>
 
 <template>
