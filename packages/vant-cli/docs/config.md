@@ -392,7 +392,7 @@ Insert a custom HTML content in the `<head>` tag.
 - Type: `boolean`
 - Default: `false`
 
-Should use [vConsole](https://github.com/Tencent/vConsole) to debug when dev. For mobile.
+Whether to enable [vConsole](https://github.com/Tencent/vConsole) debugging in dev, usually used for mobile debugging.
 
 ## PostCSS
 
