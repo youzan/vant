@@ -380,6 +380,13 @@ Customize iframe URL.
 
 Customize HTML meta tag, key means name, value means content.
 
+### site.headHtml
+
+- Type: `string`
+- Default: `undefined`
+
+Insert a custom HTML content in the `<head>` tag.
+
 ### site.enableVConsole
 
 - Type: `boolean`
