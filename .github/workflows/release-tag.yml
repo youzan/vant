@@ -20,6 +20,6 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           body: |
-            更新内容参见 [CHANGELOG](https://youzan.github.io/vant/#/zh-CN/changelog)。
+            更新内容参见 [CHANGELOG](https://vant-ui.github.io/vant/#/zh-CN/changelog)。
 
-            Please refer to [CHANGELOG](https://youzan.github.io/vant/#/en-US/changelog) for details.
+            Please refer to [CHANGELOG](https://vant-ui.github.io/vant/#/en-US/changelog) for details.

@@ -61,7 +61,7 @@ import 'vant/lib/index.css';
 Vue.use(Button);
 ```
 
-See more in [Quickstart](https://youzan.github.io/vant#/en-US/quickstart).
+See more in [Quickstart](https://vant-ui.github.io/vant#/en-US/quickstart).
 
 ## Contribution
 
@@ -97,8 +97,8 @@ Vant 3 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3).
 
 ## Links
 
-- [Documentation](https://youzan.github.io/vant)
-- [Changelog](https://youzan.github.io/vant#/en-US/changelog)
+- [Documentation](https://vant-ui.github.io/vant)
+- [Changelog](https://vant-ui.github.io/vant#/en-US/changelog)
 - [Gitter](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 ## Preview

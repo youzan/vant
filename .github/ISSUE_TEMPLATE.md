@@ -6,4 +6,4 @@ http://vant-contrib.gitee.io/vant-issue-generater
 
 Please use the link below to create a new issue, the non-standard issue will be closed.
 
-https://youzan.github.io/vant-issue-generater
+https://vant-ui.github.io/vant-issue-generater

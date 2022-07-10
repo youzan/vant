@@ -32,7 +32,7 @@ function SwitchCell(
 ) {
   if (process.env.NODE_ENV === 'development') {
     console.warn(
-      '[Vant] "SwitchCell" component is deprecated, see: https://youzan.github.io/vant/#/zh-CN/switch-cell.'
+      '[Vant] "SwitchCell" component is deprecated, see: https://vant-ui.github.io/vant/v2/#/zh-CN/switch-cell.'
     );
   }
 
