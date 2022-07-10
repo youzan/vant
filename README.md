@@ -18,7 +18,7 @@
 <p align="center">
   🔥 <a href="https://vant-contrib.gitee.io/vant">文档网站（国内）</a>
   &nbsp;
-  🌈 <a href="https://youzan.github.io/vant">文档网站（GitHub）</a>
+  🌈 <a href="https://vant-ui.github.io/vant">文档网站（GitHub）</a>
   &nbsp;
   🇨🇳 <a href="./README.zh-CN.md">中文版介绍</a>
 </p>
@@ -74,7 +74,7 @@ const app = createApp();
 app.use(Button);
 ```
 
-See more in [Quickstart](https://youzan.github.io/vant#/en-US/quickstart).
+See more in [Quickstart](https://vant-ui.github.io/vant#/en-US/quickstart).
 
 ## Browser Support
 
@@ -106,8 +106,8 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 
 ## Links
 
-- [Documentation](https://youzan.github.io/vant)
-- [Changelog](https://youzan.github.io/vant#/en-US/changelog)
+- [Documentation](https://vant-ui.github.io/vant)
+- [Changelog](https://vant-ui.github.io/vant#/en-US/changelog)
 - [Gitter](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 ## Preview

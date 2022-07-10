@@ -230,7 +230,7 @@ export default defineComponent({
         const imageFiles = props.modelValue.filter(isImageFile);
         const images = imageFiles
           .map((item) => {
-            if (item.file && !item.url) {
+            if (item.file && !item.url && item.status !== 'failed') {
               item.url = URL.createObjectURL(item.file);
               urls.push(item.url);
             }

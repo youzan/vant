@@ -18,7 +18,7 @@
 <p align="center">
   🔥 <a href="https://vant-contrib.gitee.io/vant">文档网站（国内）</a>
   &nbsp;
-  🌈 <a href="https://youzan.github.io/vant">文档网站（GitHub）</a>
+  🌈 <a href="https://vant-ui.github.io/vant">文档网站（GitHub）</a>
 </p>
 
 ---

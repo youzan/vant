@@ -325,7 +325,7 @@ module.exports = {
     versions: [
       {
         label: 'v1',
-        link: 'https://youzan.github.io/vant/v1/',
+        link: 'https://vant-ui.github.io/vant/v1/',
       },
     ],
   },
@@ -380,12 +380,19 @@ Customize iframe URL.
 
 Customize HTML meta tag, key means name, value means content.
 
+### site.headHtml
+
+- Type: `string`
+- Default: `undefined`
+
+Insert a custom HTML content in the `<head>` tag.
+
 ### site.enableVConsole
 
 - Type: `boolean`
 - Default: `false`
 
-Should use [vConsole](https://github.com/Tencent/vConsole) to debug when dev. For mobile.
+Whether to enable [vConsole](https://github.com/Tencent/vConsole) debugging in dev, usually used for mobile debugging.
 
 ## PostCSS
 

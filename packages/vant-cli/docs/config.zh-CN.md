@@ -327,7 +327,7 @@ module.exports = {
     versions: [
       {
         label: 'v1',
-        link: 'https://youzan.github.io/vant/v1/',
+        link: 'https://vant-ui.github.io/vant/v1/',
       },
     ],
   },
@@ -337,7 +337,7 @@ module.exports = {
 ### site.baiduAnalytics
 
 - Type: `object`
-- Default: `undefied`
+- Default: `undefined`
 
 文档网站的百度统计配置，添加这项配置后，会自动在构建文档网站时加载百度统计的脚本。
 
@@ -383,6 +383,13 @@ module.exports = {
 - Default: `undefined`
 
 配置 HTML 中的 meta 标签，对象的 key 为 name，value 为 content。
+
+### site.headHtml
+
+- Type: `string`
+- Default: `undefined`
+
+在 `<head>` 标签中插入一段自定义的 HTML 内容。
 
 ### site.enableVConsole
 

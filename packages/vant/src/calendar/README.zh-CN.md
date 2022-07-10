@@ -354,6 +354,7 @@ export default {
 | --- | --- | --- | --- |
 | reset | 将选中的日期重置到指定日期，未传参时会重置到默认日期 | _date?: Date \| Date[]_ | - |
 | scrollToDate | 滚动到某个日期 | _date: Date_ | - |
+| getSelectedDate | 获取选中的日期 | - | _Date \| Date[] \| null_ |
 
 ### 类型定义
 

@@ -15,6 +15,9 @@
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
+    <% if (headHtml) { %>
+      <%- headHtml %>
+    <% } %>
     <% if (baiduAnalytics) { %>
     <script>
       var _hmt = _hmt || [];

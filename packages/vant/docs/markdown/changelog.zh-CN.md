@@ -4,8 +4,8 @@
 
 当前文档为 Vant 4 的更新日志，其他版本请参考：
 
-- [Vant 2 更新日志](https://youzan.github.io/vant/v2/#/zh-CN/changelog)
-- [Vant 3 更新日志](https://youzan.github.io/vant/v3/#/zh-CN/changelog)
+- [Vant 2 更新日志](https://vant-ui.github.io/vant/v2/#/zh-CN/changelog)
+- [Vant 3 更新日志](https://vant-ui.github.io/vant/v3/#/zh-CN/changelog)
 
 ### 介绍
 
