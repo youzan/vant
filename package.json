@@ -26,5 +26,15 @@
     "prettier": "^2.5.0",
     "rimraf": "^3.0.2",
     "stylelint": "^13.13.1"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "@types/react",
+        "react",
+        "react-dom"
+      ]
+    }
   }
 }
