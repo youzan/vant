@@ -2669,6 +2669,14 @@
     "schema-utils" "^1.0.0"
     "webpack-sources" "^1.1.0"
 
+"@vusion/popper.js@^1.14.1":
+  "integrity" "sha512-53+JAoX7q2OhCn3zKwjScLZB5ZPg67XsiLoU3qKUxBnU/5hImUsCWL+iC5zrHfD1ztucIIkaAGqK2A6y79HW4Q=="
+  "resolved" "https://registry.npmjs.org/@vusion/popper.js/-/popper.js-1.14.1.tgz"
+  "version" "1.14.1"
+  dependencies:
+    "raf" "^3.4.0"
+    "typescript" "^2.7.1"
+
 "@vusion/postcss-calc@^7.0.3":
   "integrity" "sha512-icDNrI0NW+5jAEwnOkIjrs6uS9o+cNVVXsThbmgdORqPkKl9Cgy3amGxDlk8QvmiDy+qisvPsDhRehDdY/iW9Q=="
   "resolved" "https://registry.npmjs.org/@vusion/postcss-calc/-/postcss-calc-7.0.3.tgz"
@@ -2713,19 +2721,22 @@
     "xpath" "^0.0.27"
     "yargs" "^12.0.2"
 
-"@vusion/utils@^0.4.10":
-  "integrity" "sha512-nLiVZ0J5d+sJxRjpspL2QrSnAfBkUXlxhWEST/EKYrYaAcD76UEcwStzZv0E2VRuXC2CF4r1oAvozg8SXGGBow=="
-  "resolved" "https://registry.npmjs.org/@vusion/utils/-/utils-0.4.10.tgz"
-  "version" "0.4.10"
+"@vusion/utils@^0.4.9", "@vusion/utils@0.4.11":
+  "integrity" "sha512-3n+fFmHEkgnMFZ+XwDmNMXHsyKTsFoyjYiH335rPipTbeJIO4bEAvedNMFdGPykt7FsMH8toMXgg3wVUjkIL+w=="
+  "resolved" "https://registry.npmjs.org/@vusion/utils/-/utils-0.4.11.tgz"
+  "version" "0.4.11"
   dependencies:
     "lodash" "^4.17.20"
 
-"@vusion/utils@^0.4.9":
-  "integrity" "sha512-k+9D05jEShLJ1scW7T4NovSfI4Zjp17IBh0kmnjfok2Ex6xMdguqFZuTHTK5+wJ8/xFLH/jLFRsOF+cZh6vJ2w=="
-  "resolved" "https://registry.npmjs.org/@vusion/utils/-/utils-0.4.9.tgz"
-  "version" "0.4.9"
+"@vusion/validator@^0.2.4":
+  "integrity" "sha512-uEow9s5niULsXK98ou9hyf3Zl41bLw35INBQBSXEuXk4f4qLInxUBYYwTKNObPu3Qxkym6sf2ECi+JQlTSi3cw=="
+  "resolved" "https://registry.npmjs.org/@vusion/validator/-/validator-0.2.4.tgz"
+  "version" "0.2.4"
   dependencies:
-    "lodash" "^4.17.20"
+    "@types/lodash" "^4.14.136"
+    "@types/validator" "^10.11.3"
+    "lodash" "^4.17.11"
+    "validator" "^11.0.0"
 
 "@vusion/validator@^0.3.0":
   "integrity" "sha512-7Lv31dQbos7D1NRJxMlIbtoIgmTY7MzKjZ4LMTYPDYOJkm7YzACvUpow/7CrcUWweUxyLBKvdJ+5jumBOazTig=="
@@ -3662,6 +3673,14 @@
   dependencies:
     "babel-plugin-jest-hoist" "^26.6.2"
     "babel-preset-current-node-syntax" "^1.0.0"
+
+"babel-runtime@6.x":
+  "integrity" "sha512-ITKNuq2wKlW1fJg9sSW52eepoYgZBggvOAHC0u/CYu/qxQ9EVzThCgR69BnSXLHjy2f7SY5zaQ4yt7H9ZVxY2g=="
+  "resolved" "https://registry.npmjs.org/babel-runtime/-/babel-runtime-6.26.0.tgz"
+  "version" "6.26.0"
+  dependencies:
+    "core-js" "^2.4.0"
+    "regenerator-runtime" "^0.11.0"
 
 "bail@^1.0.0":
   "integrity" "sha512-xFbRxM1tahm08yHBP16MMjVUAvDaBMD38zsM9EMAUN61omwLmKlOpB/Zku5QkjZ8TZ4vn53pj+t518cH0S03RQ=="
@@ -4814,13 +4833,13 @@
   "resolved" "https://registry.npmjs.org/clones/-/clones-1.2.0.tgz"
   "version" "1.2.0"
 
-"cloud-ui.vusion@^0.14.1", "cloud-ui.vusion@^0.9.0", "cloud-ui.vusion@>=0.6.18":
-  "integrity" "sha512-iG4Q66YEEKzuDcl1fvsy6xVFFiL9QnvA7ElI/s/RW3dlqzm6ToPOnFiUFr3pQ23WWOWSyIG3UctEZkcErknVjg=="
-  "resolved" "https://registry.npmjs.org/cloud-ui.vusion/-/cloud-ui.vusion-0.14.1.tgz"
-  "version" "0.14.1"
+"cloud-ui.vusion@^0.14.13", "cloud-ui.vusion@>=0.6.18":
+  "integrity" "sha512-aGp+UqQCIod+PznWLYme/LpOacj5buRLK+Bfg+phTcEe7yam6jlg3g/QPscPgM/BFZWse4w8VC5LLOV+jEdGAw=="
+  "resolved" "https://registry.npmjs.org/cloud-ui.vusion/-/cloud-ui.vusion-0.14.13.tgz"
+  "version" "0.14.13"
   dependencies:
     "@popperjs/core" "^2.10.2"
-    "@vusion/utils" "^0.4.10"
+    "@vusion/utils" "0.4.11"
     "@vusion/validator" "^0.4.1"
     "animate.css" "^4.1.1"
     "countup.js" "^1.9.3"
@@ -4837,6 +4856,20 @@
     "vusion-api" "^0.6.30"
     "xlsx" "^0.17.3"
     "yargs" "^16.2.0"
+
+"cloud-ui.vusion@^0.9.0":
+  "integrity" "sha512-FR3YIwpfF6ETLaDaJeVxnHilXrJw5tBtFnOKyZID6KHnKLiSNt8D6vG4Ue10G6O2Iqpox0t8dP0bODUIY/VE9g=="
+  "resolved" "https://registry.npmjs.org/cloud-ui.vusion/-/cloud-ui.vusion-0.9.29.tgz"
+  "version" "0.9.29"
+  dependencies:
+    "@vusion/popper.js" "^1.14.1"
+    "@vusion/utils" "^0.4.9"
+    "@vusion/validator" "^0.2.4"
+    "countup.js" "^1.9.3"
+    "i-material-design.vue" "^5.1.0"
+    "lodash" "^4.17.5"
+    "normalize.css" "^7.0.0"
+    "vusion-async-validator" "^1.8.8"
 
 "co@^4.6.0":
   "integrity" "sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ="
@@ -5499,6 +5532,11 @@
   dependencies:
     "browserslist" "^4.16.7"
     "semver" "7.0.0"
+
+"core-js@^2.4.0":
+  "integrity" "sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ=="
+  "resolved" "https://registry.npmjs.org/core-js/-/core-js-2.6.12.tgz"
+  "version" "2.6.12"
 
 "core-js@^3.11.0", "core-js@^3.6.5":
   "integrity" "sha512-vJlUi/7YdlCZeL6fXvWNaLUPh/id12WXj3MbkMw5uOyF0PfWPBNOCNbs53YqgrvtujLNlt9JQpruyIKkUZ+PKA=="
@@ -9365,7 +9403,7 @@
   "resolved" "https://registry.npmjs.org/i-material-design.vue/-/i-material-design.vue-5.1.1.tgz"
   "version" "5.1.1"
 
-"icon-font-loader@^3.0.2":
+"icon-font-loader@^3.0.0", "icon-font-loader@^3.0.2":
   "integrity" "sha512-Allt2swli1JMWvbkb72/fEbhvnkoShLd/6oAukZi/XtildZUAD5wxuCMul0szFxYpJ7UNS1GAww4UFeZm5rVUw=="
   "resolved" "https://registry.npmjs.org/icon-font-loader/-/icon-font-loader-3.0.2.tgz"
   "version" "3.0.2"
@@ -9502,7 +9540,7 @@
     "import-from" "^3.0.0"
 
 "import-fresh@^2.0.0":
-  "integrity" "sha1-2BNVwVYS04bGH53dOSLUMEgipUY="
+  "integrity" "sha512-eZ5H8rcgYazHbKC3PG4ClHNykCSxtAhxSSEM+2mb+7evD2CKF5V7c0dNum7AdpDh0ZdICwZY9sRSn8f+KH96sg=="
   "resolved" "https://registry.npmjs.org/import-fresh/-/import-fresh-2.0.0.tgz"
   "version" "2.0.0"
   dependencies:
@@ -13685,13 +13723,18 @@
   "resolved" "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz"
   "version" "2.1.0"
 
+"picocolors@^0.2.1":
+  "integrity" "sha512-cMlDqaLEqfSaW8Z7N5Jw+lyIW869EzT73/F5lhtY9cLGoVxSXznfgfXMO0Z5K0o0Q2TkTXq+0KFsdnSe3jDViA=="
+  "resolved" "https://registry.npmjs.org/picocolors/-/picocolors-0.2.1.tgz"
+  "version" "0.2.1"
+
 "picomatch@^2.0.4", "picomatch@^2.2.1", "picomatch@^2.2.3":
   "integrity" "sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw=="
   "resolved" "https://registry.npmjs.org/picomatch/-/picomatch-2.3.0.tgz"
   "version" "2.3.0"
 
 "pify@^2.0.0":
-  "integrity" "sha1-7RQaasBDqEnqWISY59yosVMw6Qw="
+  "integrity" "sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog=="
   "resolved" "https://registry.npmjs.org/pify/-/pify-2.3.0.tgz"
   "version" "2.3.0"
 
@@ -15019,6 +15062,13 @@
   "resolved" "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   "version" "5.1.1"
 
+"raf@^3.4.0":
+  "integrity" "sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA=="
+  "resolved" "https://registry.npmjs.org/raf/-/raf-3.4.1.tgz"
+  "version" "3.4.1"
+  dependencies:
+    "performance-now" "^2.1.0"
+
 "ramda-adjunct@^2.9.0":
   "integrity" "sha512-TwNW9uTDyuOHF8stDLcD+rg9evY4/D7poF/CZZ3ZSI1wIk56jqvwFL7xYbHyvd/wQpRzPbT2oiwsot2VoFmodA=="
   "resolved" "https://registry.npmjs.org/ramda-adjunct/-/ramda-adjunct-2.33.0.tgz"
@@ -15412,6 +15462,11 @@
   "resolved" "https://registry.npmjs.org/regenerate/-/regenerate-1.4.2.tgz"
   "version" "1.4.2"
 
+"regenerator-runtime@^0.11.0":
+  "integrity" "sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg=="
+  "resolved" "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz"
+  "version" "0.11.1"
+
 "regenerator-runtime@^0.13.4", "regenerator-runtime@^0.13.9":
   "integrity" "sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA=="
   "resolved" "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz"
@@ -15725,7 +15780,7 @@
     "global-modules" "^0.2.3"
 
 "resolve-from@^3.0.0":
-  "integrity" "sha1-six699nWiBvItuZTM17rywoYh0g="
+  "integrity" "sha512-GnlH6vxLymXJNMBo7XP1fJIzBFbdYt49CuTwmB/6N53t+kMPRMFKz783LlQ4tv28XoQfMWinAJX6WCGf2IlaIw=="
   "resolved" "https://registry.npmjs.org/resolve-from/-/resolve-from-3.0.0.tgz"
   "version" "3.0.0"
 
@@ -17985,6 +18040,11 @@
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-3.9.10.tgz"
   "version" "3.9.10"
 
+"typescript@^2.7.1":
+  "integrity" "sha512-Gr4p6nFNaoufRIY4NMdpQRNmgxVIGMs4Fcu/ujdYk3nAZqk7supzBE9idmvfZIlH/Cuj//dvi+019qEue9lV0w=="
+  "resolved" "https://registry.npmjs.org/typescript/-/typescript-2.9.2.tgz"
+  "version" "2.9.2"
+
 "typescript@^4.0.3":
   "integrity" "sha512-4xfscpisVgqqDfPaJo5vkd+Qd/ItkoagnHpufr+i2QCHBsNYp+G7UAoyFl8aPtx879u38wPV65rZ8qbGZijalA=="
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.4.3.tgz"
@@ -18536,7 +18596,57 @@
   "resolved" "https://registry.npmjs.org/vm-browserify/-/vm-browserify-1.1.2.tgz"
   "version" "1.1.2"
 
-"vue-cli-plugin-vusion@^0.10.6", "vue-cli-plugin-vusion@^0.14.0":
+"vue-cli-plugin-vusion@^0.10.6":
+  "integrity" "sha512-/1Xlw2KdLeDX69U3gPFJ6SNSF88A/FS7U9jdkFvdHnjjNDG7eDRtwgXiuX/YtEmW2ssKy6xS27WSUQfvP6YlZg=="
+  "resolved" "https://registry.npmjs.org/vue-cli-plugin-vusion/-/vue-cli-plugin-vusion-0.10.13.tgz"
+  "version" "0.10.13"
+  dependencies:
+    "@babel/core" "^7.5.4"
+    "@babel/plugin-syntax-dynamic-import" "^7.2.0"
+    "@babel/preset-env" "^7.5.5"
+    "@vusion/md-vue-loader" "^1.4.0"
+    "@vusion/mini-css-extract-plugin" "^0.8.5"
+    "@vusion/postcss-calc" "^7.0.3"
+    "@vusion/routes-loader" "^0.3.0"
+    "babel-loader" "^8.0.6"
+    "codesandbox" "^2.1.12"
+    "color" "^3.1.2"
+    "copy-webpack-plugin" "^5.0.4"
+    "css-sprite-loader" "^0.3.4"
+    "file-loader" "^4.2.0"
+    "globby" "^6.1.0"
+    "html-webpack-plugin" "^3.2.0"
+    "html-webpack-tags-plugin" "^2.0.17"
+    "http-proxy-middleware" "^0.19.1"
+    "husky" "^3.0.4"
+    "icon-font-loader" "^3.0.0"
+    "loader-utils" "^1.2.3"
+    "markdown-it-abbr" "^1.0.4"
+    "markdown-it-anchor" "^5.2.4"
+    "markdown-it-deflist" "^2.0.3"
+    "markdown-it-for-inline" "^0.1.1"
+    "markdown-it-ins" "^2.0.0"
+    "markdown-it-mark" "^2.0.0"
+    "minimist" "^1.2.0"
+    "postcss" "^7.0.18"
+    "postcss-functions" "^3.0.0"
+    "postcss-import" "^12.0.1"
+    "postcss-import-resolver" "^1.2.3"
+    "postcss-preset-env" "^6.7.0"
+    "postcss-url" "^8.0.0"
+    "postcss-values-parser" "^3.1.1"
+    "postcss-variables" "^1.1.1"
+    "safer-eval" "^1.2.3"
+    "semver" "^7.1.3"
+    "svg-classic-sprite-loader" "^0.2.5"
+    "uslug" "^1.0.4"
+    "vue-component-analyzer" "^0.2.0"
+    "vue-router" "^3.0.1"
+    "vusion-api" "^0.6.21"
+    "vusion-loader" "^0.5.1"
+    "vusion-utils" "^0.4.8"
+
+"vue-cli-plugin-vusion@^0.14.0":
   "integrity" "sha512-s8edzwEy87V5OolBbV+GG1UA/XGVVmtUiqUhNRjytGZVxNcEYzMOt8R5pXGcgxl1JVmhsvPYyz9fw+bRNpoY/w=="
   "resolved" "https://registry.npmjs.org/vue-cli-plugin-vusion/-/vue-cli-plugin-vusion-0.14.0.tgz"
   "version" "0.14.0"
@@ -18700,7 +18810,7 @@
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz"
   "version" "2.6.14"
 
-"vusion-api@^0.6.25":
+"vusion-api@^0.6.21", "vusion-api@^0.6.30":
   "integrity" "sha512-o718qRdIOt6rDLOeiJbcoN6wtnINwZFH42BptDjOCMCqZMNNV0ZoZvHdGX5JkgK5qtsKtxBTPGqXWAijYq5Y6w=="
   "resolved" "https://registry.npmjs.org/vusion-api/-/vusion-api-0.6.30.tgz"
   "version" "0.6.30"
@@ -18745,7 +18855,7 @@
     "vue-template-compiler" "^2.6.10"
     "yaml" "^1.7.2"
 
-"vusion-api@^0.6.30":
+"vusion-api@^0.6.25":
   "integrity" "sha512-o718qRdIOt6rDLOeiJbcoN6wtnINwZFH42BptDjOCMCqZMNNV0ZoZvHdGX5JkgK5qtsKtxBTPGqXWAijYq5Y6w=="
   "resolved" "https://registry.npmjs.org/vusion-api/-/vusion-api-0.6.30.tgz"
   "version" "0.6.30"
@@ -18837,12 +18947,24 @@
     "vue-template-compiler" "^2.6.10"
     "yaml" "^1.7.2"
 
+"vusion-async-validator@^1.8.8":
+  "integrity" "sha512-qOsd4/TCqkPvfeUJ5JAL/eiit5BI05JSe8Rzwo/3Kre7G0qwNOEfDA8BI1niiKBvQJqj7kj9Xiyhccg4rmyFTg=="
+  "resolved" "https://registry.npmjs.org/vusion-async-validator/-/vusion-async-validator-1.8.8.tgz"
+  "version" "1.8.8"
+  dependencies:
+    "babel-runtime" "6.x"
+
 "vusion-loader@^0.5.1":
   "integrity" "sha512-DoLG5gayqq5jyZ6hhOxoEjsZwMC9+D8Agh3UFoVTB2ibbWbxVckZFv0EYjpgcdN+P8O5DTG9PxMOUwWTZ6GwaA=="
   "resolved" "https://registry.npmjs.org/vusion-loader/-/vusion-loader-0.5.1.tgz"
   "version" "0.5.1"
   dependencies:
     "vue-multifile-loader" "^15.0.1"
+
+"vusion-utils@^0.4.8":
+  "integrity" "sha512-uVZjuuJGBStHiuO3GBDyvwaWm/qGBvxphfsVCoLKfhhUxjA5jgM0PY8QnZwvPlIgW6uNA2Fgqhke8QPGMDF30A=="
+  "resolved" "https://registry.npmjs.org/vusion-utils/-/vusion-utils-0.4.8.tgz"
+  "version" "0.4.8"
 
 "vusion@^0.12.18":
   "integrity" "sha512-vzsRLrnRNr8pxwQdo6PKY35E20vxXw41XrIGgbsxkAI9Qk7xx/d6lpJ9Q1DCrXjuammtZr+4xAX4tf8iXNckoQ=="
