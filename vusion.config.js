@@ -40,6 +40,7 @@ module.exports = {
             { group: 'Display', show: true, name: 'steps', alias: '步骤条' },
             { group: 'Display', show: true, name: 'count-down', alias: '倒计时' },
             { group: 'Display', show: true, name: 'iconv', alias: '图标' },
+            { group: 'Display', show: true, name: 'link', alias: '链接' },
             { group: 'Data', show: true, name: 'list-view', alias: '数据列表' },
             { group: 'Data', show: true, name: 'for-components', alias: '组件列表' },
             { group: 'Data', show: true, name: 'grid-view', alias: '数据网格' },
