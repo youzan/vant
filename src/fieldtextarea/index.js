@@ -31,7 +31,7 @@ export default createComponent({
     },
     placeholder: {
       type: String,
-      default: '请输入',
+      default: '',
     },
     disabled: {
       type: Boolean,
