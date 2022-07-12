@@ -2,7 +2,10 @@
 
 ``` html
 <van-radio-group direction="horizontal">
-  <van-radio name="1" title="单选框 1"></van-radio>
-  <van-radio name="2" title="单选框 2"></van-radio>
+  <template #default="scope">
+    <van-linear-layout direction="horizontal">
+      <van-radio name="n" title="单选框 n"></van-radio>
+    </van-linear-layout>
+  </template>
 </van-radio-group>
 ```

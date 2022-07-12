@@ -10,6 +10,9 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
   mixins: [ChildrenMixin(parent), FieldMixin],
 
   props: {
+    item: {
+      type: [Object,String, Number],
+    },
     name: null,
     value: null,
     title: String,
@@ -124,7 +127,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
     },
   },
 
-  render() {
+  render() {console.log(this.scope, 66666)
     const Children = [this.genIcon()];
 
     if (this.labelPosition === 'left') {

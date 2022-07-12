@@ -5,6 +5,15 @@
   icon: radios
   description: 多项中选择一个时使用
   attrs:
+    - name: data-source
+      title: 数据源
+      type: array, function
+      description: 一个包含字符串或对象的数组或者函数
+    - name: data-schema
+      title: 数据类型
+      type: schema
+      description: 组件列表每一项的结构
+      compType: dataTypeRadioItem
     - name: value
       title: 值
       type: any
@@ -24,6 +33,7 @@
     - name: direction
       title: 排列方向
       type: string
+      advanced: true
       options:
         - value: horizontal
           title: 水平
