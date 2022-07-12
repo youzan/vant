@@ -37,7 +37,6 @@
     - name: direction
       title: 排列方向
       type: string
-      advanced: true
       options:
         - value: horizontal
           title: 水平
@@ -52,7 +51,7 @@
       support:
         - name: van-checkbox
           title: 复选项
-          snippet: <van-linear-layout direction="horizontal"><van-checkbox name="n" title="选框 n"></van-checkbox></van-linear-layout>
+          snippet: <van-checkbox name="n" title="选框 n"></van-checkbox>
   events:
     - name: change
       title: 值改变

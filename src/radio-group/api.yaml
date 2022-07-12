@@ -33,7 +33,6 @@
     - name: direction
       title: 排列方向
       type: string
-      advanced: true
       options:
         - value: horizontal
           title: 水平

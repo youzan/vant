@@ -68,7 +68,7 @@ export default createComponent({
   render() {
     if (this.options?.length > 0) {
       return <div class={bem([this.direction])}>
-        <van-linear-layout direction="horizontal" layout="inline">
+        {/* <van-linear-layout direction="horizontal" layout="inline"> */}
         {
           this.options.map((item, index) => {
             const data = {
@@ -87,14 +87,15 @@ export default createComponent({
             return this.slots('default', {item: {item, index}});
           })
         }
-        </van-linear-layout>
+        {/* </van-linear-layout> */}
       </div>
     }
     return (
       <div class={bem([this.direction])} role="radiogroup">
-        <van-linear-layout direction="horizontal" layout="inline">
+        {this.slots()}
+        {/* <van-linear-layout direction="horizontal" layout="inline">
           {this.slots()}
-        </van-linear-layout>
+        </van-linear-layout> */}
       </div>
     );
   },

@@ -3,9 +3,7 @@
 ``` html
 <van-radio-group direction="horizontal">
   <template #default="scope">
-    <van-linear-layout direction="horizontal">
-      <van-radio name="n" title="单选框 n"></van-radio>
-    </van-linear-layout>
+    <van-radio name="n" title="单选框 n"></van-radio>
   </template>
 </van-radio-group>
 ```

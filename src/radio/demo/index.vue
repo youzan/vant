@@ -3,9 +3,7 @@
     <demo-block>
       <van-radio-group class="demo-radio-group" :data-source="[1,2,3]">
         <template #default="scope">
-          <van-linear-layout direction="horizontal">
-            <van-radio :name="scope.item.item" :title="'选框'+scope.item.item"></van-radio>
-          </van-linear-layout>
+          <van-radio :name="scope.item.item" :title="'选框'+scope.item.item"></van-radio>
         </template>
       </van-radio-group>
     </demo-block>

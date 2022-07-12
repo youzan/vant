@@ -3,9 +3,7 @@
     <demo-block>
       <van-checkbox-group :data-source="[1,2,3]">
         <template #default="scope">
-          <van-linear-layout direction="horizontal">
-            <van-checkbox :name="scope.item.item" :title="'选框'+scope.item.item"></van-checkbox>
-          </van-linear-layout>
+          <van-checkbox :name="scope.item.item" :title="'选框'+scope.item.item"></van-checkbox>
         </template>
       </van-checkbox-group>
     </demo-block>
