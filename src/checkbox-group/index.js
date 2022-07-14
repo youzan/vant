@@ -46,7 +46,7 @@ export default createComponent({
   },
 
   methods: {
-    fromValue(value) {console.log(typeof value, value, 9999)
+    fromValue(value) {
       try {
         if(value === null || value === '') return [];
         if(typeof value === 'string') return JSON.parse(value || '[]');
@@ -113,7 +113,7 @@ export default createComponent({
               //   },
               // },
             };
-            return this.slots('default', {item: {item, index}});
+            return this.slots('default', {item, index});
           })
         }
         {/* </van-linear-layout> */}

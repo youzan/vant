@@ -127,7 +127,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
     },
   },
 
-  render() {console.log(this.scope, 66666)
+  render() {
     const Children = [this.genIcon()];
 
     if (this.labelPosition === 'left') {

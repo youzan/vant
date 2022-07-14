@@ -84,7 +84,7 @@ export default createComponent({
               //   },
               // },
             };
-            return this.slots('default', {item: {item, index}});
+            return this.slots('default', {item, index});
           })
         }
         {/* </van-linear-layout> */}
