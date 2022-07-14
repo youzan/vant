@@ -15,7 +15,7 @@ function isEmptyValue(value: unknown) {
   if (value === 0) {
     return false;
   }
-  return !value;
+  return !(value === null || value === undefined);
 }
 
 export function runSyncRule(value: unknown, rule: FieldRule) {
