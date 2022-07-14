@@ -181,7 +181,7 @@ export default createComponent({
       <div class={bem({ active })} style={{ color }} onClick={this.onClick}>
         <div class={bem('icon')}>
           {this.genIcon(active)}
-          <Info dot={this.dot} info={this.showbaget && comBaget} />
+          {(this.showbaget && comBaget) ? <Info dot={this.dot} info={comBaget} /> : null}
         </div>
         <div class={bem('text')} vusion-slot-name="text">{this.text || this.slots('default', { active })}</div>
       </div>
