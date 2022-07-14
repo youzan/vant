@@ -59,6 +59,7 @@ module.exports = {
             // { group: 'Form', show: true, name: 'u-rate', alias: '评分' },
             // { group: 'Form', show: true, name: 'u-combo-slider', alias: '滑块' },
             { group: 'Form', show: true, name: 'uploader', alias: '文件上传' },
+            { group: 'Form', show: true, name: 'search', alias: '搜索框' },
             { group: 'Selector', show: true, name: 'pickerson', alias: 'picker选择器' },
             { group: 'Selector', show: true, name: 'area', alias: '地区选择器' },
             { group: 'Selector', show: true, name: 'cascader', alias: '级联选择器' },
