@@ -39,7 +39,7 @@
         - value: vertical
           title: 垂直
       default: horizontal
-      description: 是否禁用
+      description: 排列方向
   slots:
     - name: default
       description: 插入`<van-radio>`子组件。
