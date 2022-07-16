@@ -127,7 +127,7 @@ import { Toast } from 'vant';
 
 export default {
   methods: {
-    isOverSize() {
+    isOverSize(file) {
       const maxSize = file.type === 'image/jpeg' ? 500 * 1024 : 1000 * 1024;
       return file.size >= maxSize;
     },
