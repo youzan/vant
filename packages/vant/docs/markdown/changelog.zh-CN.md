@@ -19,6 +19,29 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-beta.0](https://github.com/youzan/vant/compare/v3.5.2...v4.0.0-beta.0)
+
+`2022-07-16`
+
+**Breaking Changes**
+
+- Toast: 重新设计函数调用 API [#10804](https://github.com/youzan/vant/issues/10804)
+- Dialog: 重新设计函数调用 API [#10781](https://github.com/youzan/vant/issues/10781)
+- Notify: 重新设计函数调用 API[#10782](https://github.com/youzan/vant/issues/10782)
+- ImagePreview: 重新设计函数调用 API [#10802](https://github.com/youzan/vant/issues/10802)
+
+关于以上改动的详细描述和迁移方法，请参考 [从 v3 升级到 v4](/vant/v4/#/zh-CN/migrate-from-v3) 的 「API 调整」部分。
+
+**Feature**
+
+- 新增 @vant/compat 包，用于辅助代码迁移 [#10806](https://github.com/youzan/vant/issues/10806)
+- Calendar: 新增 getSelectedDate 方法 [419a8e](https://github.com/youzan/vant/commit/419a8e4f0e6454b9aac30d5800318deabec099cb)
+- 由于主题定制方式调整，发布到 npm 的代码中将不再包含 .less 样式源文件，从而减少 npm 包体积 [#10752](https://github.com/youzan/vant/issues/10752)
+
+**Bug Fixes**
+
+- Uploader: 修复预览图片时会展示上传失败的图片的问题 [#10790](https://github.com/youzan/vant/issues/10790)
+
 ### [v4.0.0-alpha.4](https://github.com/youzan/vant/compare/v3.5.0-beta.0...v4.0.0-alpha.4)
 
 `2022-05-31`

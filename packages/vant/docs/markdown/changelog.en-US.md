@@ -19,6 +19,27 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0-beta.0](https://github.com/youzan/vant/compare/v3.5.2...v4.0.0-beta.0)
+
+`2022-07-16`
+
+**Breaking Changes**
+
+- Toast: redesign function-call API [#10804](https://github.com/youzan/vant/issues/10804)
+- Dialog: redesign function-call API [#10781](https://github.com/youzan/vant/issues/10781)
+- Notify: redesign function-call API [#10782](https://github.com/youzan/vant/issues/10782)
+- ImagePreview: redesign function-call API [#10802](https://github.com/youzan/vant/issues/10802)
+
+**Feature**
+
+- add @vant/compat package [#10806](https://github.com/youzan/vant/issues/10806)
+- Calendar: expose getSelectedDate method [419a8e](https://github.com/youzan/vant/commit/419a8e4f0e6454b9aac30d5800318deabec099cb)
+- remove less source file to remove bundle size [#10752](https://github.com/youzan/vant/issues/10752)
+
+**Bug Fixes**
+
+- Uploader: should not preview failed images [#10790](https://github.com/youzan/vant/issues/10790)
+
 ### [v4.0.0-alpha.4](https://github.com/youzan/vant/compare/v3.5.0-beta.0...v4.0.0-alpha.4)
 
 `2022-05-31`
