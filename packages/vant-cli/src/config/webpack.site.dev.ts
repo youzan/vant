@@ -15,6 +15,7 @@ import {
 
 export function getSiteDevBaseConfig(): WebpackConfig {
   const vantConfig = getVantConfig();
+  const headHtml = get(vantConfig, 'site.headHtml');
   const baiduAnalytics = get(vantConfig, 'site.baiduAnalytics');
 
   function getSiteConfig() {
@@ -89,6 +90,7 @@ export function getSiteDevBaseConfig(): WebpackConfig {
         chunks: ['chunks', 'site-desktop'],
         template: join(__dirname, '../../site/desktop/index.html'),
         filename: 'index.html',
+        headHtml,
         baiduAnalytics,
         ...htmlPluginOptions,
       }),
@@ -99,6 +101,7 @@ export function getSiteDevBaseConfig(): WebpackConfig {
         chunks: ['chunks', 'site-mobile'],
         template: join(__dirname, '../../site/mobile/index.html'),
         filename: 'mobile.html',
+        headHtml,
         baiduAnalytics,
         ...htmlPluginOptions,
       }),

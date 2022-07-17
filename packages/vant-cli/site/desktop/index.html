@@ -19,6 +19,9 @@
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
+    <% if (headHtml) { %>
+      <%- headHtml %>
+    <% } %>
     <% if (htmlWebpackPlugin.options.usingSearch) { %>
     <link
       href="https://fastly.jsdelivr.net/docsearch.js/2/docsearch.min.css"

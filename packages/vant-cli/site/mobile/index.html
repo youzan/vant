@@ -19,6 +19,9 @@
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
+    <% if (headHtml) { %>
+      <%- headHtml %>
+    <% } %>
     <% if (htmlWebpackPlugin.options.baiduAnalytics) { %>
     <script>
       // avoid to load analytics in iframe
