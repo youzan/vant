@@ -1,7 +1,10 @@
 import { useRect } from '@vant/use';
 import { Ref, ref, onMounted, nextTick } from 'vue';
 
-export const useHeight = (element: Element | Ref<Element | undefined>) => {
+export const useHeight = (
+  element: Element | Ref<Element | undefined>,
+  withSafeArea?: boolean
+) => {
   const height = ref<number>();
 
   const setHeight = () => {
@@ -10,8 +13,16 @@ export const useHeight = (element: Element | Ref<Element | undefined>) => {
 
   onMounted(() => {
     nextTick(setHeight);
+
+    // If element is using safe area, the system will not return the correct height on page load.
+    // So we need to wait for the height to be set.
     // https://github.com/youzan/vant/issues/10131
-    setTimeout(setHeight, 100);
+    // https://stackoverflow.com/questions/64891541
+    if (withSafeArea) {
+      for (let i = 1; i <= 3; i++) {
+        setTimeout(setHeight, 100 * i);
+      }
+    }
   });
 
   return height;
