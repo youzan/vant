@@ -1684,10 +1684,10 @@
     semver "^6.3.0"
     tsutils "^3.17.1"
 
-"@vant/cli@^2.11.8":
-  version "2.11.8"
-  resolved "https://registry.npmmirror.com/@vant/cli/-/cli-2.11.8.tgz#5bb79a87d266d183dbbae6948132f6b64b232252"
-  integrity sha512-TNt0e3L1xMrEtR2tTSrBNnp9Fy+XVee376IbWWIwIL1Xj5y3xg6ECf1iOerXLkshLimRrYLz1Rl9vdSmeoEjfg==
+"@vant/cli@^2.11.9":
+  version "2.11.9"
+  resolved "https://registry.npmmirror.com/@vant/cli/-/cli-2.11.9.tgz#c138b4d53f20f9e593051d4148e22d816b24a597"
+  integrity sha512-f6P43s7eGuACkJP12Tv9sJmxVHueghj0gKJQW7zvCxEak77BkX4701Cp97DL+Kfcg+4XAx6dcQl3nO3nVP3T7A==
   dependencies:
     "@babel/core" "^7.10.1"
     "@babel/plugin-syntax-jsx" "^7.10.1"
