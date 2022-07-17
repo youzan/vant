@@ -14,7 +14,7 @@ export const useHeight = (
   onMounted(() => {
     nextTick(setHeight);
 
-    // If element is using safe area, the system will not return the correct height on page load.
+    // If the element is using safe area, the system will not return the correct height on page load.
     // So we need to wait for the height to be set.
     // https://github.com/youzan/vant/issues/10131
     // https://stackoverflow.com/questions/64891541
