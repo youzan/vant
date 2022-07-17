@@ -19,6 +19,12 @@ module.exports = {
     baiduAnalytics: {
       seed: 'ad6b5732c36321f2dafed737ac2da92f',
     },
+    headHtml: `<script>
+if (location.host === 'youzan.github.io') {
+location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
+}
+</script>
+`,
     htmlPluginOptions: {
       meta: {
         'docsearch:version': 'v2',

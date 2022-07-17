@@ -66,7 +66,7 @@
     "vue": ">= 2.6.0"
   },
   "devDependencies": {
-    "@vant/cli": "^2.11.7",
+    "@vant/cli": "^2.11.8",
     "prettier": "2.1.0",
     "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
