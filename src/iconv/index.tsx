@@ -8,6 +8,9 @@ import Info from '../info';
 import VanEmptyCol from '../emptycol'
 import config from './config'
 
+import {onlineSvgIcon} from 'online-svg-icon-vue2'
+console.log(onlineSvgIcon)
+
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
@@ -44,6 +47,11 @@ const [createComponent, bem] = createNamespace('iconv');
 
 function isImage(name?: string): boolean {
   return name ? name.indexOf('/') !== -1 : false;
+}
+
+function isSvgUrl(url: string | undefined): boolean {
+  if (!url) return false;
+  return isImage(url) && /\.svg/i.test(url);
 }
 
 // compatible with legacy usage, should be removed in next major version
@@ -159,9 +167,9 @@ function Iconv(
       {...inherit(ctx, false)}
       onClick={onClick}
     >
-      <svg class="vant-iconv-svg van-shoud-pa" aria-hidden="true">
+      {isSvgUrl(props.name) ? <onlineSvgIcon purecss={true} url={props.name} /> : <svg class="vant-iconv-svg van-shoud-pa" aria-hidden="true">
         <use {...href} class="van-shoud-pa"></use>
-      </svg>
+      </svg>}
       {ifDesigner() && !sd && !ifNotext ? <VanEmptyCol vusion-slot-name="default" class="van-shoud-pa" vusion-scope-id={sid}></VanEmptyCol> : null}
       <div class={bem('slot')}>{sd}</div>
       {/* {imageIcon && <img class={bem('image')} src={name} />} */}
