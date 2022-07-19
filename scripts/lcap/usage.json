@@ -31,6 +31,51 @@
         }
     },
     {
+        "symbol": "van-iframe",
+        "name": "Iframe",
+        "icon": "iframe",
+        "depDescription": {},
+        "description": "用于嵌入其他网页的容器。",
+        "labels": [
+            "Container"
+        ],
+        "screenShot": "",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-iframe src=\\\"https://sf.163.com\\\" style=\\\"width: 100%; height: 400px;\\\"></van-iframe>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "van-iframe",
+            "title": "Iframe",
+            "description": "用于嵌入其他网页的容器。",
+            "category": "Container",
+            "screenShot": "",
+            "drawings": "",
+            "blocks": [
+                {
+                    "title": "基本用法",
+                    "description": "",
+                    "code": "<template>\n<van-iframe src=\"https://sf.163.com\" style=\"width: 100%; height: 400px;\"></van-iframe>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "src",
+                    "title": "地址",
+                    "type": "string",
+                    "description": "需要嵌入的网页地址"
+                }
+            ],
+            "slots": false,
+            "events": [
+                {
+                    "name": "load",
+                    "title": "加载完成",
+                    "description": "网页加载完成时触发。",
+                    "params": []
+                }
+            ],
+            "children": []
+        }
+    },
+    {
         "symbol": "van-popup",
         "name": "弹出层",
         "icon": "popuph5",
@@ -925,6 +970,12 @@
                             "type": "number, string",
                             "default": 0,
                             "description": "列偏移宽度（计算方式与 span 相同）"
+                        }
+                    ],
+                    "slots": [
+                        {
+                            "name": "default",
+                            "description": "插入需要布局的元素。"
                         }
                     ],
                     "next": false,

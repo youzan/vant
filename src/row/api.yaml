@@ -71,3 +71,6 @@
       type: number, string
       default: 0
       description: 列偏移宽度（计算方式与 span 相同）
+  slots:
+    - name: default
+      description: 插入需要布局的元素。
