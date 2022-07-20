@@ -99,6 +99,11 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
           <van-col span="6" @click="copy(demoIcon)">
             <van-icon :name="demoIcon" />
           </van-col>
+        </van-row>
+      </demo-block>
+
+      <demo-block :title="t('usingUrl')">
+        <van-row>
           <van-col span="6" @click="copy(demoImage)">
             <van-icon :name="demoImage" />
           </van-col>
