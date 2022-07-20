@@ -1,0 +1,32 @@
+- name: van-count-down-new
+  title: 计时器
+  labels:
+     - Display
+  icon: countdown
+  description: 用于计时
+  next: true
+  nested: false
+  attrs:
+    - name: minute
+      type: number
+      default: 1
+      description: 设置定时时间
+    - name: reverse
+      title: 是否正计时
+      type: boolean
+      default: false
+      description: 转为正计时
+  events:
+    - name: start
+      title: 倒计时开始
+      description: 倒计时开始时触发
+    - name: stop
+      title: 倒计时结束
+      description: 倒计时结束时触发
+  methods:
+    - name: start
+      description: 开始倒计时
+      params: [ ]
+    - name: stop
+      description: 停止倒计时
+      params: []
