@@ -1,5 +1,5 @@
 <template>
-<a vusion-slot-name="text" :class="[$style.root]"
+<a vusion-slot-name-edit="text" :class="[$style.root]"
     :href="currentHref" :target="target"
     :noDecoration="!decoration"
     :disabled="currentDisabled" :tabindex="currentDisabled ? -1 : 0"

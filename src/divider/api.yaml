@@ -37,4 +37,5 @@
     - name: default
       title: 默认
       description: 显示的文本
+      advanced: true
   events: []

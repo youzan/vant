@@ -547,7 +547,8 @@
                 {
                     "name": "default",
                     "title": "默认",
-                    "description": "显示的文本"
+                    "description": "显示的文本",
+                    "advanced": true
                 }
             ],
             "events": [],
@@ -2072,6 +2073,12 @@
                     "title": "幻灯片选项",
                     "description": "幻灯片选项",
                     "attrs": [],
+                    "slots": [
+                        {
+                            "name": "default",
+                            "description": "插入幻灯片内容，如图片"
+                        }
+                    ],
                     "next": false,
                     "nested": false,
                     "events": [
@@ -2722,6 +2729,12 @@
                     "description": "徽章最大值"
                 }
             ],
+            "slots": [
+                {
+                    "name": "default",
+                    "description": "插入徽章内容"
+                }
+            ],
             "children": []
         }
     },
@@ -3132,7 +3145,12 @@
                     "description": "链接打开方式"
                 }
             ],
-            "slots": false,
+            "slots": [
+                {
+                    "name": "default",
+                    "description": "插入文本或HTML"
+                }
+            ],
             "events": [
                 {
                     "name": "click",

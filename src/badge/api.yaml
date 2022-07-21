@@ -19,3 +19,6 @@
       title: 徽章最大值
       type: number
       description: 徽章最大值
+  slots:
+    - name: default
+      description: 插入徽章内容

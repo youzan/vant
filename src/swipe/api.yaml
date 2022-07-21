@@ -44,6 +44,9 @@
   nested: false
   attrs: []
   description: 幻灯片选项
+  slots:
+    - name: default
+      description: 插入幻灯片内容，如图片
   events:
     - name: click
       title: 点击后
