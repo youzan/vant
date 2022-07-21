@@ -3,6 +3,7 @@ import {
   type PropType,
   type InjectionKey,
   type ExtractPropTypes,
+  ComponentPublicInstance,
 } from 'vue';
 import {
   truthProp,
@@ -11,6 +12,7 @@ import {
   type Numeric,
 } from '../utils';
 import { useChildren } from '@vant/use';
+import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('collapse');
 
@@ -18,6 +20,13 @@ export type CollapseProvide = {
   toggle: (name: Numeric, expanded: boolean) => void;
   isExpanded: (name: Numeric) => boolean;
 };
+
+export type CollapseToggleAllOptions =
+  | boolean
+  | {
+      expanded?: boolean;
+      skipDisabled?: boolean;
+    };
 
 export const COLLAPSE_KEY: InjectionKey<CollapseProvide> = Symbol(name);
 
@@ -31,6 +40,10 @@ const collapseProps = {
 };
 
 export type CollapseProps = ExtractPropTypes<typeof collapseProps>;
+
+export type CollapseInstance = ComponentPublicInstance<{
+  toggleAll: (options?: boolean | CollapseToggleAllOptions) => void;
+}>;
 
 function validateModelValue(
   modelValue: Numeric | Numeric[],
@@ -59,7 +72,7 @@ export default defineComponent({
   emits: ['change', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    const { linkChildren } = useChildren(COLLAPSE_KEY);
+    const { linkChildren, children } = useChildren(COLLAPSE_KEY);
 
     const updateName = (name: Numeric | Numeric[]) => {
       emit('change', name);
@@ -68,7 +81,6 @@ export default defineComponent({
 
     const toggle = (name: Numeric, expanded: boolean) => {
       const { accordion, modelValue } = props;
-
       if (accordion) {
         updateName(name === modelValue ? '' : name);
       } else if (expanded) {
@@ -78,6 +90,24 @@ export default defineComponent({
           (modelValue as Numeric[]).filter((activeName) => activeName !== name)
         );
       }
+    };
+
+    const toggleAll = (options: boolean | CollapseToggleAllOptions = {}) => {
+      if (props.accordion) {
+        return;
+      }
+      if (typeof options === 'boolean') {
+        options = { expanded: options };
+      }
+      const { expanded, skipDisabled } = options!;
+      const expandedChildren = children.filter((item: any) => {
+        if (item.disabled && skipDisabled) {
+          return item.expanded.value;
+        }
+        return expanded ?? !item.expanded.value;
+      });
+      const names = expandedChildren.map((item) => item.itemName.value);
+      updateName(names);
     };
 
     const isExpanded = (name: Numeric) => {
@@ -94,7 +124,7 @@ export default defineComponent({
         ? modelValue === name
         : (modelValue as Numeric[]).includes(name);
     };
-
+    useExpose({ toggleAll });
     linkChildren({ toggle, isExpanded });
 
     return () => (

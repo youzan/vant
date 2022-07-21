@@ -193,6 +193,7 @@ export default {
     const checked = ref([]);
     const checkboxGroup = ref(null);
 
+
     const checkAll = () => {
       checkboxGroup.value.toggleAll(true);
     }

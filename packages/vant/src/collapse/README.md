@@ -108,6 +108,52 @@ export default {
 };
 ```
 
+### Toggle All
+
+通过 `Collapse` 实例上的 `toggleAll` 方法可以实现全选与反选。
+
+```html
+<van-collapse v-model="activeNames">
+  <van-collapse-item title="标题1" name="1">
+    代码是写出来给人看的，附带能在机器上运行。
+  </van-collapse-item>
+  <van-collapse-item title="标题2" name="2">
+    技术无非就是那些开发它的人的共同灵魂。
+  </van-collapse-item>
+  <van-collapse-item title="标题3" name="3">
+    在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+  </van-collapse-item>
+</van-collapse>
+
+<van-button type="primary" @click="checkAll">全选</van-button>
+<van-button type="primary" @click="toggleAll">反选</van-button>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const activeNames = ref(['1']);
+    const collapse = ref(null);
+
+    const checkAll = () => {
+      collapse.value.toggleAll(true);
+    }
+    const toggleAll = () => {
+      collapse.value.toggleAll();
+    },
+
+    return {
+      activeNames,
+      checkAll,
+      toggleAll,
+      collapse,
+    };
+  },
+};
+```
+
 ## API
 
 ### Collapse Props
@@ -142,6 +188,37 @@ export default {
 | title-class | Title className | _string_ | - |
 | value-class | Value className | _string_ | - |
 | label-class | Label className | _string_ | - |
+
+### Collapse Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Collapse instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| toggleAll | Toggle expanded status of all collapses | _options?: boolean \| object_ | - |
+
+### toggleAll Usage
+
+```js
+const { collapse } = this.$refs;
+
+// Toggle all
+collapse.toggleAll();
+// Select all
+collapse.toggleAll(true);
+// Unselect all
+collapse.toggleAll(false);
+
+// Toggle all, skip disabled
+collapse.toggleAll({
+  skipDisabled: true,
+});
+// Select all, skip disabled
+collapse.toggleAll({
+  checked: true,
+  skipDisabled: true,
+});
+```
 
 ### CollapseItem Methods
 

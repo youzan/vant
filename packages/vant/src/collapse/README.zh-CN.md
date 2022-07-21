@@ -124,6 +124,52 @@ export default {
 };
 ```
 
+### 全选与反选
+
+通过 `Collapse` 实例上的 `toggleAll` 方法可以实现全选与反选。
+
+```html
+<van-collapse v-model="activeNames">
+  <van-collapse-item title="标题1" name="1">
+    代码是写出来给人看的，附带能在机器上运行。
+  </van-collapse-item>
+  <van-collapse-item title="标题2" name="2">
+    技术无非就是那些开发它的人的共同灵魂。
+  </van-collapse-item>
+  <van-collapse-item title="标题3" name="3">
+    在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+  </van-collapse-item>
+</van-collapse>
+
+<van-button type="primary" @click="checkAll">全选</van-button>
+<van-button type="primary" @click="toggleAll">反选</van-button>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const activeNames = ref(['1']);
+    const collapse = ref(null);
+
+    const checkAll = () => {
+      collapse.value.toggleAll(true);
+    }
+    const toggleAll = () => {
+      collapse.value.toggleAll();
+    },
+
+    return {
+      activeNames,
+      checkAll,
+      toggleAll,
+      collapse,
+    };
+  },
+};
+```
+
 ## API
 
 ### Collapse Props
@@ -158,6 +204,37 @@ export default {
 | title-class | 左侧标题额外类名 | _string_ | - |
 | value-class | 右侧内容额外类名 | _string_ | - |
 | label-class | 描述信息额外类名 | _string_ | - |
+
+### Collapse 方法
+
+通过 ref 可以获取到 CollapseItem 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名 | 说明 | 参数 | 返回值 |
+| --- | --- | --- | --- |
+| toggleAll | 切换所有面板展开状态，传 `true` 为选中，`false` 为取消选中，不传参为取反 | _options?: boolean \| object_ | - |
+
+### toggleAll 方法示例
+
+```js
+const { collapse } = this.$refs;
+
+// 全部反选
+collapse.toggleAll();
+// 全部选中
+collapse.toggleAll(true);
+// 全部取消
+collapse.toggleAll(false);
+
+// 全部反选，并跳过禁用的复选框
+collapse.toggleAll({
+  skipDisabled: true,
+});
+// 全部选中，并跳过禁用的复选框
+collapse.toggleAll({
+  checked: true,
+  skipDisabled: true,
+});
+```
 
 ### CollapseItem 方法
 

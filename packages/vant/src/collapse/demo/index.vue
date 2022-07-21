@@ -2,8 +2,10 @@
 import VanCollapse from '..';
 import VanCollapseItem from '../../collapse-item';
 import VanIcon from '../../icon';
+import VanButton from '../../button';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
+import type { CollapseInstance } from '../Collapse';
 
 const t = useTranslate({
   'zh-CN': {
@@ -12,6 +14,9 @@ const t = useTranslate({
     text3: '在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。',
     accordion: '手风琴',
     titleSlot: '自定义标题内容',
+    toggleAll: '全选与反选',
+    checkAll: '全选',
+    inverse: '反选',
   },
   'en-US': {
     text1: 'Content 1',
@@ -19,6 +24,9 @@ const t = useTranslate({
     text3: 'Content 3',
     accordion: 'Accordion',
     titleSlot: 'Custom title',
+    toggleAll: 'Toggle All',
+    checkAll: 'Check All',
+    inverse: 'inverse',
   },
 });
 
@@ -26,6 +34,16 @@ const active1 = ref([0]);
 const active2 = ref(0);
 const active3 = ref([]);
 const active4 = ref([]);
+const active5 = ref(['1']);
+
+const collapse = ref<CollapseInstance>();
+
+const checkAll = () => {
+  collapse.value?.toggleAll?.(true);
+};
+const toggleAll = () => {
+  collapse.value?.toggleAll?.();
+};
 </script>
 
 <template>
@@ -88,6 +106,29 @@ const active4 = ref([]);
       </van-collapse-item>
     </van-collapse>
   </demo-block>
+
+  <demo-block :title="t('toggleAll')">
+    <van-collapse v-model="active5" ref="collapse">
+      <van-collapse-item :title="t('title') + 1" name="1">
+        {{ t('text1') }}
+      </van-collapse-item>
+      <van-collapse-item :title="t('title') + 2" name="2">
+        {{ t('text2') }}
+      </van-collapse-item>
+      <van-collapse-item :title="t('title') + 3" name="3">
+        {{ t('text3') }}
+      </van-collapse-item>
+    </van-collapse>
+
+    <div class="demo-collapse-buttons">
+      <van-button type="primary" @click="checkAll">
+        {{ t('checkAll') }}
+      </van-button>
+      <van-button type="primary" @click="toggleAll">
+        {{ t('inverse') }}
+      </van-button>
+    </div>
+  </demo-block>
 </template>
 
 <style lang="less">
@@ -97,6 +138,14 @@ const active4 = ref([]);
     color: var(--van-blue);
     font-size: 15px;
     vertical-align: -3px;
+  }
+
+  &-buttons {
+    margin-top: var(--van-padding-md);
+
+    .van-button {
+      margin-left: var(--van-padding-md);
+    }
   }
 }
 </style>

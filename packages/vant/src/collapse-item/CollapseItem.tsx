@@ -161,7 +161,7 @@ export default defineComponent({
       </div>
     ));
 
-    useExpose({ toggle });
+    useExpose({ toggle, expanded, itemName: name });
 
     return () => (
       <div class={[bem({ border: index.value && props.border })]}>
