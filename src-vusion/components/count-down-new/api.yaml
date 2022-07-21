@@ -1,7 +1,7 @@
 - name: van-count-down-new
   title: 计时器
   labels:
-     - Display
+    - Display
   icon: countdown
   description: 用于计时
   next: true
@@ -18,15 +18,21 @@
       description: 转为正计时
   events:
     - name: start
-      title: 倒计时开始
-      description: 倒计时开始时触发
+      title: 计时器开始
+      description: 计时器开始时触发
+    - name: pause
+      title: 计时器暂停
+      description: 计时器暂停时触发
     - name: stop
-      title: 倒计时结束
-      description: 倒计时结束时触发
+      title: 计时器结束
+      description: 计时器结束时触发
   methods:
     - name: start
-      description: 开始倒计时
+      description: 开始计时器
+      params: [ ]
+    - name: pause
+      description: 暂停计时器
       params: [ ]
     - name: stop
-      description: 停止倒计时
+      description: 停止计时器
       params: []
