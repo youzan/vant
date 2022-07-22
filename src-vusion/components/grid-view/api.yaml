@@ -16,6 +16,7 @@
       type: schema
       description: 表格每一行的数据类型
       group: 数据属性
+      advanced: true
       compType: dataTypeSelect
     - name: iffall
       title: 瀑布模式
