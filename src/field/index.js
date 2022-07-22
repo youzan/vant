@@ -113,7 +113,8 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
-    drole: String
+    drole: String,
+    frompara: String,
   },
 
   data() {
@@ -208,12 +209,16 @@ export default createComponent({
   methods: {
     showClear() {
       const readonly = this.getProp('readonly');
+      const frompara = this.getProp('frompara');
       if ((this.clearable && !readonly)) {
         const hasValue = isDef(this.value) && this.value !== '';
         const trigger =
           this.clearTrigger === 'always' ||
           (this.clearTrigger === 'focus' && this.focused);
 
+        if (frompara === 'vansearch') {
+          return trigger;
+        }
         return hasValue && trigger;
       }
     },

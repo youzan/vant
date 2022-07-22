@@ -14,9 +14,9 @@
       model: true
       description: 值
     - name: placeholder
-      title: 占位提示稳字
+      title: 占位提示文字
       type: string
-      description: 占位提示稳字
+      description: 占位提示文字
     - name: shape
       title: 搜索框形状
       type: string
@@ -35,7 +35,7 @@
       title: 是否启用清除图标
       type: boolean
       description: 是否启用清除图标，点击清除图标后会清空输入框
-    - name: clear-trigger
+    - name: cleartrigger
       title: 显示清除图标
       type: string
       options:
@@ -44,7 +44,7 @@
         - value: focus
           title: 输入框获取焦点且不为空时展示
       description: 显示清除图标
-    - name: action-text
+    - name: actiontext
       title: 按钮文字
       type: string
       description: 按钮文字
@@ -67,7 +67,7 @@
         - value: right
           title: 右对齐
       description: 搜索框形状
-    - name: icon-align
+    - name: iconalign
       title: 搜索图标位置
       type: string
       options:

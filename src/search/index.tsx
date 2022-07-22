@@ -20,10 +20,10 @@ export type SearchProps = {
   rightIcon?: string;
   clearable: boolean;
   background: string;
-  actionText?: string;
+  actiontext?: string;
   showAction?: boolean;
-  clearTrigger?: string;
-  iconAlign?: string;
+  cleartrigger?: string;
+  iconalign?: string;
 };
 
 export type SearchSlots = DefaultSlots & {
@@ -75,7 +75,7 @@ function Search(
 
     return (
       <div class={bem('action')} role="button" tabindex="0" onClick={onCancel}>
-        {slots.action ? slots.action() : props.actionText || t('cancel')}
+        {slots.action ? slots.action() : props.actiontext}
       </div>
     );
   }
@@ -101,6 +101,7 @@ function Search(
       fieldData.attrs && fieldData.attrs[key] && delete fieldData?.attrs[key]
     }
   })
+  console.log(ctx, props, 777)
   return (
     <div
       class={bem({ 'show-action': props.showAction })}
@@ -114,14 +115,15 @@ function Search(
           type="search"
           border={false}
           value={props.value}
-          leftIcon={props.iconAlign === 'left' ? props.leftIcon : ''}
-          rightIcon={props.iconAlign === 'right' ? props.leftIcon : ''}
+          leftIcon={props.iconalign === 'left' ? props.leftIcon : ''}
+          rightIcon={props.iconalign === 'right' ? props.leftIcon : ''}
           clearable={props.clearable}
-          clearTrigger={props.clearTrigger}
+          clearTrigger={props.cleartrigger}
           scopedSlots={{
             'left-icon': slots['left-icon'],
             'right-icon': slots['right-icon'],
           }}
+          frompara="vansearch"
           {...fieldData}
         />
       </div>
@@ -134,10 +136,10 @@ Search.props = {
   value: String,
   label: String,
   rightIcon: String,
-  actionText: String,
+  actiontext: String,
   background: String,
   showAction: Boolean,
-  clearTrigger: String,
+  cleartrigger: String,
   shape: {
     type: String,
     default: 'square',
@@ -150,7 +152,7 @@ Search.props = {
     type: String,
     default: 'search',
   },
-  iconAlign: {
+  iconalign: {
     type: String,
     default: 'left',
   },
