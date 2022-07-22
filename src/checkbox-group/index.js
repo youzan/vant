@@ -46,6 +46,9 @@ export default createComponent({
   },
 
   methods: {
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     fromValue(value) {
       try {
         if(value === null || value === '') return [];
@@ -77,6 +80,9 @@ export default createComponent({
       this.datatemp = names;
     },
     async update() {
+      if(this.ifDesigner()) {
+        return
+      }
       if (isFunction(this.dataSource)) {
         try {
           const res = await this.dataSource({

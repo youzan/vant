@@ -47,7 +47,7 @@
       support:
         - name: van-radio
           title: 单选项
-          snippet: <van-radio title="第N个"></van-radio>
+          snippet: <van-radio title="单选框 n" name="n"></van-radio>
   events:
     - name: change
       title: 值改变时

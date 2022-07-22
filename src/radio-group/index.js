@@ -39,6 +39,9 @@ export default createComponent({
     },
   },
   methods: {
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     fromValue(value) {console.log(typeof value, value, 9999)
       try {
         if(value === null || value === '') return [];
@@ -49,6 +52,9 @@ export default createComponent({
       }
     },
     async update() {
+      if(this.ifDesigner()) {
+        return
+      }
       if (isFunction(this.dataSource)) {
         try {
           const res = await this.dataSource({
