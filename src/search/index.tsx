@@ -4,8 +4,7 @@ import { inherit, emit } from '../utils/functional';
 import { preventDefault } from '../utils/dom/event';
 
 // Components
-import Field from '../field';
-
+import Fieldsonforsearch from '../fieldsonforsearch';
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots, ScopedSlot } from '../utils/types';
@@ -101,7 +100,6 @@ function Search(
       fieldData.attrs && fieldData.attrs[key] && delete fieldData?.attrs[key]
     }
   })
-  console.log(ctx, props, 777)
   return (
     <div
       class={bem({ 'show-action': props.showAction })}
@@ -111,7 +109,7 @@ function Search(
       {slots.left?.()}
       <div class={bem('content', props.shape)}>
         {Label()}
-        <Field
+        <Fieldsonforsearch
           type="search"
           border={false}
           value={props.value}

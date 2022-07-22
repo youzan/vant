@@ -102,6 +102,7 @@ export { default as VanUploader } from '../../src/uploader';
 export { default as VanForComponents } from '../../src/for-components';
 export { default as VanGallery } from '../../src/gallery';
 export { default as VanCardu } from '../../src/cardu';
+export { default as VanFieldsonforsearch } from '../../src/fieldsonforsearch';
 
 
 export * from './list-view';
