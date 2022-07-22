@@ -72,7 +72,7 @@ export default createComponent({
     }
   },
   render() {
-    if (this.options?.length > 0) {
+    if (this.options?.length >= 0) {
       return <div class={bem([this.direction])}>
         {/* <van-linear-layout direction="horizontal" layout="inline"> */}
         {
