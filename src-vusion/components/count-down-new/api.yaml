@@ -8,14 +8,24 @@
   nested: false
   attrs:
     - name: minute
+      title: 计时器时长（min）
       type: number
       default: 1
       description: 设置定时时间
     - name: reverse
-      title: 是否正计时
-      type: boolean
+      title: 计时方式
+      options:
+        - value: true
+          title: 正计时
+        - value: false
+          title: 倒计时
       default: false
-      description: 转为正计时
+      description: 设置计时器计时方式
+    - name: autostart
+      title: 是否自动开始计时
+      type: boolean
+      default: true
+      description: 设置是否自动开始计时器
   events:
     - name: start
       title: 计时器开始
@@ -23,16 +33,22 @@
     - name: pause
       title: 计时器暂停
       description: 计时器暂停时触发
+    - name: continue
+      title: 计时器继续
+      description: 计时器继续时触发
     - name: stop
       title: 计时器结束
       description: 计时器结束时触发
   methods:
     - name: start
       description: 开始计时器
-      params: [ ]
+      params: []
     - name: pause
       description: 暂停计时器
-      params: [ ]
+      params: []
+    - name: continue
+      description: 继续计时器
+      params: []
     - name: stop
       description: 停止计时器
       params: []

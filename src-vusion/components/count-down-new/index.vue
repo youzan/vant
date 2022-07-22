@@ -36,7 +36,9 @@ function work() {
         clearInterval(timer);
         this.postMessage(--second);
         this.lastPauseTime = second;
-      } else {
+      }
+    } else if (state === 'continue') {
+      if (this.lastPauseTime) {
         timer = setInterval(() => {
           this.postMessage(--second);
         }, 1000);
@@ -51,6 +53,7 @@ export default {
   props: {
     minute: { type: Number, default: 1 },
     reverse: { type: Boolean, default: false },
+    autostart: { type: Boolean, default: true },
   },
   data() {
     return {
@@ -100,14 +103,14 @@ export default {
   },
   created() {
     const worker = new WebWorker(work);
+    if (this.autostart) {
+      worker.postMessage({
+        state: "start",
+        second: this.second,
+      });
+      this.$emit("start");
 
-    worker.postMessage({
-      state: "start",
-      second: this.second,
-    });
-    this.$emit("start");
-    // console.log('begin');
-
+    }
     worker.onmessage = (e) => {
       if (e.data < 0) {
         worker.postMessage({ state: "stop" });
@@ -145,6 +148,13 @@ export default {
         second: this.second,
       });
     },
+    continue() {
+      this.$emit("continue");
+      this.worker.postMessage({
+        state: "continue",
+        second: this.second,
+      });
+    }
   },
 };
 </script>
