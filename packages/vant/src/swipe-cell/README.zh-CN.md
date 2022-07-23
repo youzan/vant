@@ -114,7 +114,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| name | 标识符，可以在事件参数中获取到 | _number \| string_ | `''` |
+| name | 标识符，通常为一个唯一的字符串或数字，可以在事件参数中获取到 | _number \| string_ | `''` |
 | left-width | 指定左侧滑动区域宽度，单位为 `px` | _number \| string_ | `auto` |
 | right-width | 指定右侧滑动区域宽度，单位为 `px` | _number \| string_ | `auto` |
 | before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(args) => boolean \| Promise\<boolean\>_ | - |
