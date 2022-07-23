@@ -2,8 +2,22 @@
 
 ## v5.0.0 (未发布)
 
-- 升级 `vite` 3.0.0
-- 不再默认安装 `gh-pages` 依赖，请将 `package.json` 中的 `gh-pages -d site-dist` 替换为 `npx gh-pages -d site-dist`
+### 依赖升级
+
+对以下依赖进行了大版本升级：
+
+- vite v3
+- @vitejs/plugin-vue v3
+- @vitejs/plugin-vue-jsx v2
+
+### 依赖精简
+
+- 不再默认安装 `gh-pages` 依赖，请按照如下方式更新 `package.json`：
+
+```diff
+- "release:site": "pnpm build:site && gh-pages -d site-dist",
++ "release:site": "pnpm build:site && npx gh-pages -d site-dist",
+```
 
 ## v4.0.3
 
