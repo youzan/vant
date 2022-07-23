@@ -25,8 +25,7 @@
   "nano-staged": {
     "*.md": "prettier --write",
     "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
-    "*.{ts,tsx,js,vue}": "eslint --fix",
-    "*.{vue,css,less,scss}": "stylelint --fix"
+    "*.{ts,tsx,js,vue}": "eslint --fix"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -40,11 +39,6 @@
     "root": true,
     "extends": [
       "@vant"
-    ]
-  },
-  "stylelint": {
-    "extends": [
-      "@vant/stylelint-config"
     ]
   },
   "prettier": {

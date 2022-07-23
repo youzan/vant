@@ -89,7 +89,7 @@ src
 
 在编写代码时，请注意：
 
-- 确保代码可以通过仓库的 ESLint 和 Stylelint 校验。
+- 确保代码可以通过仓库的 ESLint 校验。
 - 确保代码格式是规范的，使用 prettier 进行代码格式化。
 - 确保没有使用超出兼容性范围的 API，比如 `async/await`。
 
