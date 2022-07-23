@@ -308,7 +308,7 @@ export default {
 | --- | --- | --- | --- |
 | v-model | List of uploaded files | _FileListItem[]_ | - |
 | accept | Accepted [file type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Unique_file_type_specifiers) | _string_ | `image/*` |
-| name | Input name | _number \| string_ | - |
+| name | Input name, usually a unique string or number | _number \| string_ | - |
 | preview-size | Size of preview image | _number \| string \| Array_ | `80px` |
 | preview-image | Whether to show image preview | _boolean_ | `true` |
 | preview-full-image | Whether to show full screen image preview when image is clicked | _boolean_ | `true` |

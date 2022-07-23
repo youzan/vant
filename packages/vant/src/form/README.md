@@ -509,7 +509,7 @@ export default {
 
 | Key | Description | Type |
 | --- | --- | --- |
-| required | Whether to be a required field, the value is not allowed to be empty string, empty array, `undefined`, `null` | _boolean_ |
+| required | Whether to be a required field, the value is not allowed to be empty string, empty array, `false`, `undefined`, `null` | _boolean_ |
 | message | Error message | _string \| (value, rule) => string_ |
 | validator | Custom validator | _(value, rule) => boolean \| string \| Promise_ |
 | pattern | Regex pattern | _RegExp_ |

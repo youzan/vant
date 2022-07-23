@@ -107,7 +107,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| name | Identifier of SwipeCell | _number \| string_ | - |
+| name | Identifier of SwipeCell, usually a unique string or number | _number \| string_ | - |
 | left-width | Width of the left swipe area | _number \| string_ | `auto` |
 | right-width | Width of the right swipe area | _number \| string_ | `auto` |
 | before-close | Callback function before close | _(args) => boolean \| Promise\<boolean\>_ | - |

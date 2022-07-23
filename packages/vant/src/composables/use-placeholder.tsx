@@ -3,7 +3,7 @@ import { useHeight } from './use-height';
 import type { BEM } from '../utils/create';
 
 export function usePlaceholder(contentRef: Ref<Element | undefined>, bem: BEM) {
-  const height = useHeight(contentRef);
+  const height = useHeight(contentRef, true);
 
   return (renderContent: () => JSX.Element) => (
     <div

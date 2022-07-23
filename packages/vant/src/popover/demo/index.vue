@@ -85,6 +85,17 @@ const show = ref({
 const showPicker = ref(false);
 const currentPlacement = ref<PopoverPlacement>('top');
 
+const onClickChoosePlacement = () => {
+  showPicker.value = true;
+
+  setTimeout(() => {
+    show.value = {
+      ...show.value,
+      placement: true,
+    };
+  }, 300);
+};
+
 const onPickerChange = (value: PopoverPlacement) => {
   setTimeout(() => {
     show.value.placement = true;
@@ -129,7 +140,7 @@ const onSelect = (action: { text: string }) => showToast(action.text);
       readonly
       name="picker"
       :label="t('choosePlacement')"
-      @click="showPicker = true"
+      @click="onClickChoosePlacement"
     />
 
     <van-popup

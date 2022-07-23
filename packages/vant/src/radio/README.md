@@ -178,7 +178,7 @@ import type {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| name | Radio name | _any_ | - |
+| name | Radio name, usually a unique string or number | _any_ | - |
 | shape | Can be set to `square` | _string_ | `round` |
 | disabled | Whether to disable radio | _boolean_ | `false` |
 | label-disabled | Whether to disable label click | _boolean_ | `false` |
