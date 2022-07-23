@@ -52,7 +52,7 @@ export const TouchMixin = {
     },
 
     // avoid Vue 2.6 event bubble issues by manually binding events
-    // https://github.com/youzan/vant/issues/3015
+    // https://github.com/vant-ui/vant/issues/3015
     bindTouchEvent(el) {
       const { onTouchStart, onTouchMove, onTouchEnd } = this;
 

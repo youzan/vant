@@ -60,7 +60,7 @@ export default createComponent({
   },
 
   created() {
-    // https://github.com/youzan/vant/issues/8634
+    // https://github.com/vant-ui/vant/issues/8634
     if (this.vanPopup) {
       this.vanPopup.onReopen(this.reset);
     }

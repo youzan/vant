@@ -61,7 +61,7 @@ export default createComponent({
       };
 
       setHeight();
-      // https://github.com/youzan/vant/issues/10131
+      // https://github.com/vant-ui/vant/issues/10131
       setTimeout(setHeight, 100);
     }
   },

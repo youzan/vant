@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/youzan/vant/tree/dev/packages/create-vant-cli-app"
+    "url": "https://github.com/vant-ui/vant/tree/dev/packages/create-vant-cli-app"
   },
   "files": [
     "lib",

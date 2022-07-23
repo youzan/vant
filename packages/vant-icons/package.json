@@ -16,7 +16,7 @@
     "release": "npm run build && release-it"
   },
   "license": "MIT",
-  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-icons",
+  "repository": "https://github.com/vant-ui/vant/tree/dev/packages/vant-icons",
   "devDependencies": {
     "fast-glob": "^3.2.2",
     "fs-extra": "^9.0.1",

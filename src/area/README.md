@@ -49,7 +49,7 @@ export default {
 
 ### @vant/area-data
 
-Vant officially provides a default area data, which can be imported through [@vant/area-data](https://github.com/youzan/vant/tree/dev/packages/vant-area-data):
+Vant officially provides a default area data, which can be imported through [@vant/area-data](https://github.com/vant-ui/vant/tree/dev/packages/vant-area-data):
 
 ```bash
 yarn add @vant/area-data

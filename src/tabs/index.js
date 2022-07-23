@@ -178,7 +178,7 @@ export default createComponent({
   mounted() {
     this.init();
 
-    // https://github.com/youzan/vant/issues/7959
+    // https://github.com/vant-ui/vant/issues/7959
     if (this.vanPopup) {
       this.vanPopup.onReopen(() => {
         this.setLine();

@@ -43,7 +43,7 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
           },
           {
             logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
-            url: 'https://github.com/youzan/vant',
+            url: 'https://github.com/vant-ui/vant',
           },
         ],
         nav: [
@@ -441,7 +441,7 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
           },
           {
             logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
-            url: 'https://github.com/youzan/vant',
+            url: 'https://github.com/vant-ui/vant',
           },
         ],
         nav: [

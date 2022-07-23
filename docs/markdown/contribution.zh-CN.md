@@ -21,7 +21,7 @@
 # 克隆仓库
 # 默认为 dev 分支，包含 Vant 3 的代码
 # 如果需要在 Vant 2 上进行更改，请基于 2.x 分支进行开发
-git clone git@github.com:youzan/vant.git
+git clone git@github.com:vant-ui/vant.git
 
 # 安装依赖
 cd vant && yarn
@@ -84,7 +84,7 @@ src
 
 ```bash
 # 添加主仓库到 remote，作为 fork 后仓库的上游仓库
-git remote add upstream https://github.com/youzan/vant.git
+git remote add upstream https://github.com/vant-ui/vant.git
 
 # 拉取主仓库最新代码
 git fetch upstream

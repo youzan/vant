@@ -274,7 +274,7 @@ export default createComponent({
 
     onMousedown(event) {
       // fix mobile safari page scroll down issue
-      // see: https://github.com/youzan/vant/issues/7690
+      // see: https://github.com/vant-ui/vant/issues/7690
       if (this.disableInput) {
         event.preventDefault();
       }

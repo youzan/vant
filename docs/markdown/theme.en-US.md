@@ -6,7 +6,7 @@ Vant use [Less](http://lesscss.org/) as css preprocessor，you can override the 
 
 ### Less variables
 
-There are some basic variables below, all available variables could be found in [var.less](https://github.com/youzan/vant/blob/2.x/src/style/var.less)。
+There are some basic variables below, all available variables could be found in [var.less](https://github.com/vant-ui/vant/blob/2.x/src/style/var.less)。
 
 ```less
 // Color Palette

@@ -108,7 +108,7 @@ export default createComponent({
 
       this.$nextTick(() => {
         this.$nextTick(() => {
-          // https://github.com/youzan/vant/issues/9775
+          // https://github.com/vant-ui/vant/issues/9775
           this.updateInnerValue();
           this.$emit('change', picker);
         });

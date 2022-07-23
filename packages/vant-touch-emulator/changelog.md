@@ -3,7 +3,7 @@
 ### [v1.2.0]
 `2019-11-22`
 
-- fix incorrect touchmove behaviour in Firefox [\#5118](https://github.com/youzan/vant/pull/5118)
+- fix incorrect touchmove behaviour in Firefox [\#5118](https://github.com/vant-ui/vant/pull/5118)
 
 ### [v1.1.0]
 `2019-06-03`

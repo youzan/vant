@@ -27,7 +27,7 @@ It's welcomed to pull request, And there are some tips about that:
 ## Getting started
 
 ```bash
-git clone git@github.com:youzan/vant.git
+git clone git@github.com:vant-ui/vant.git
 
 cd vant
 

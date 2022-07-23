@@ -4,7 +4,7 @@
   "description": "simple parse markdown to vue component description for vetur auto-completion",
   "main": "lib/index.js",
   "license": "MIT",
-  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-markdown-vetur",
+  "repository": "https://github.com/vant-ui/vant/tree/dev/packages/vant-markdown-vetur",
   "author": "zhangshuai",
   "publishConfig": {
     "access": "public",

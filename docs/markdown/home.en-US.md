@@ -26,7 +26,7 @@ See in [Quickstart](#/en-US/quickstart).
 
 ### Contribution
 
-Please make sure to read the [Contributing Guide](https://github.com/youzan/vant/blob/dev/.github/CONTRIBUTING.md) before making a pull request.
+Please make sure to read the [Contributing Guide](https://github.com/vant-ui/vant/blob/dev/.github/CONTRIBUTING.md) before making a pull request.
 
 ### Browser Support
 
@@ -38,11 +38,11 @@ Vant 3 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3).
 
 | Project | Description |
 | --- | --- |
-| [vant-weapp](https://github.com/youzan/vant-weapp) | WeChat MiniProgram UI |
-| [vant-demo](https://github.com/youzan/vant-demo) | Collection of Vant demos |
-| [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | Scaffold for UI library |
-| [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant icons |
-| [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | Using vant in desktop browsers |
+| [vant-weapp](https://github.com/vant-ui/vant-weapp) | WeChat MiniProgram UI |
+| [vant-demo](https://github.com/vant-ui/vant-demo) | Collection of Vant demos |
+| [vant-cli](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli) | Scaffold for UI library |
+| [vant-icons](https://github.com/vant-ui/vant/tree/dev/packages/vant-icons) | Vant icons |
+| [vant-touch-emulator](https://github.com/vant-ui/vant/tree/dev/packages/vant-touch-emulator) | Using vant in desktop browsers |
 
 ### Community Ecosystem
 
@@ -58,7 +58,7 @@ Vant 3 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3).
 
 ### Links
 
-- [Feedback](https://github.com/youzan/vant/issues)
+- [Feedback](https://github.com/vant-ui/vant/issues)
 - [Changelog](#/en-US/changelog)
 - [Gitter](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 

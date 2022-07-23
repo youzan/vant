@@ -8,8 +8,8 @@
 
 <p align="center">
     <img src="https://img.shields.io/npm/v/vant.svg?style=flat-square" alt="npm version" />
-    <img src="https://img.shields.io/github/workflow/status/youzan/vant/CI/dev?style=flat-square" alt="npm version" />
-    <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg?style=flat-square&color=#4fc08d" alt="Coverage Status" />
+    <img src="https://img.shields.io/github/workflow/status/vant-ui/vant/CI/dev?style=flat-square" alt="npm version" />
+    <img src="https://img.shields.io/codecov/c/github/vant-ui/vant/dev.svg?style=flat-square&color=#4fc08d" alt="Coverage Status" />
     <img src="https://img.shields.io/npm/dm/vant.svg?style=flat-square&color=#4fc08d" alt="downloads" />
     <img src="https://img.shields.io/jsdelivr/npm/hm/vant?style=flat-square" alt="Jsdelivr Hits">
     <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=gzip%20size&color=#4fc08d" alt="Gzip Size" />
@@ -19,7 +19,7 @@
   🔥 <a href="https://vant-contrib.gitee.io/vant">文档网站</a>
   &nbsp;
   &nbsp;
-  🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">小程序版</a>
+  🚀 <a href="https://github.com/vant-ui/vant-weapp" target="_blank">小程序版</a>
 </p>
 
 ---
@@ -70,7 +70,7 @@ vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手
 
 修改代码请阅读我们的 [开发指南](https://vant-contrib.gitee.io/vant/#/zh-CN/contribution)。
 
-使用过程中发现任何问题都可以提 [Issue](https://github.com/youzan/vant/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/youzan/vant/pulls)。
+使用过程中发现任何问题都可以提 [Issue](https://github.com/vant-ui/vant/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/vant-ui/vant/pulls)。
 
 ## 浏览器支持
 
@@ -84,11 +84,11 @@ Vant 3 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一致
 
 | 项目 | 描述 |
 | --- | --- |
-| [vant-weapp](https://github.com/youzan/vant-weapp) | Vant 微信小程序版 |
-| [vant-demo](https://github.com/youzan/vant-demo) | Vant 官方示例合集 |
-| [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | 开箱即用的组件库搭建工具 |
-| [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant 图标库 |
-| [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | 在桌面端使用 Vant 的辅助库 |
+| [vant-weapp](https://github.com/vant-ui/vant-weapp) | Vant 微信小程序版 |
+| [vant-demo](https://github.com/vant-ui/vant-demo) | Vant 官方示例合集 |
+| [vant-cli](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli) | 开箱即用的组件库搭建工具 |
+| [vant-icons](https://github.com/vant-ui/vant/tree/dev/packages/vant-icons) | Vant 图标库 |
+| [vant-touch-emulator](https://github.com/vant-ui/vant/tree/dev/packages/vant-touch-emulator) | 在桌面端使用 Vant 的辅助库 |
 
 ## 社区生态
 

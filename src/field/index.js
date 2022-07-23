@@ -306,7 +306,7 @@ export default createComponent({
       value = isDef(value) ? String(value) : '';
 
       // native maxlength have incorrect line-break counting
-      // see: https://github.com/youzan/vant/issues/5033
+      // see: https://github.com/vant-ui/vant/issues/5033
       const { maxlength } = this;
       if (isDef(maxlength) && value.length > maxlength) {
         if (this.value && this.value.length === +maxlength) {
@@ -347,7 +347,7 @@ export default createComponent({
     onFocus(event) {
       this.focused = true;
       this.$emit('focus', event);
-      // https://github.com/youzan/vant/issues/9715
+      // https://github.com/vant-ui/vant/issues/9715
       this.$nextTick(this.adjustSize);
 
       // readonly not work in legacy mobile safari
@@ -432,7 +432,7 @@ export default createComponent({
 
       if (height) {
         input.style.height = height + 'px';
-        // https://github.com/youzan/vant/issues/9178
+        // https://github.com/vant-ui/vant/issues/9178
         setRootScrollTop(scrollTop);
       }
     },

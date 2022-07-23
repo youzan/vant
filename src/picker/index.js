@@ -118,7 +118,7 @@ export default createComponent({
 
         // compatible with old version of wrong parameters
         // should be removed in next major version
-        // see: https://github.com/youzan/vant/issues/5905
+        // see: https://github.com/vant-ui/vant/issues/5905
         if (this.dataType === 'cascade') {
           values = values.map((item) => item[this.valueKey]);
         }
@@ -159,7 +159,7 @@ export default createComponent({
 
         // compatible with old version of wrong parameters
         // should be removed in next major version
-        // see: https://github.com/youzan/vant/issues/5905
+        // see: https://github.com/vant-ui/vant/issues/5905
         if (this.dataType === 'cascade') {
           values = values.map((item) => item[this.valueKey]);
         }

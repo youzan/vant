@@ -77,7 +77,7 @@ export const TimePickerMixin = {
       return this.$refs.picker;
     },
 
-    // https://github.com/youzan/vant/issues/10013
+    // https://github.com/vant-ui/vant/issues/10013
     getProxiedPicker() {
       const { picker } = this.$refs;
       if (picker) {

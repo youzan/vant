@@ -171,7 +171,7 @@ export default createComponent({
 
   mounted() {
     this.init();
-    // https://github.com/youzan/vant/issues/9845
+    // https://github.com/vant-ui/vant/issues/9845
     this.vanPopup?.$on('opened', this.onScroll);
   },
 
@@ -194,7 +194,7 @@ export default createComponent({
 
       this.$nextTick(() => {
         // add Math.floor to avoid decimal height issues
-        // https://github.com/youzan/vant/issues/5640
+        // https://github.com/vant-ui/vant/issues/5640
         this.bodyHeight = Math.floor(
           this.$refs.body.getBoundingClientRect().height
         );

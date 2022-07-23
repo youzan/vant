@@ -7,7 +7,7 @@
     "access": "public"
   },
   "license": "MIT",
-  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-eslint-config",
+  "repository": "https://github.com/vant-ui/vant/tree/dev/packages/vant-eslint-config",
   "peerDependencies": {
     "eslint": "^6.0.0"
   },

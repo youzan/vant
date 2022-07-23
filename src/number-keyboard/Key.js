@@ -48,7 +48,7 @@ export default createComponent({
     onTouchEnd(event) {
       if (this.active) {
         // eliminate tap delay on safari
-        // see: https://github.com/youzan/vant/issues/6836
+        // see: https://github.com/vant-ui/vant/issues/6836
         if (!this.slots('default')) {
           event.preventDefault();
         }
