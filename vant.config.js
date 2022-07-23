@@ -17,7 +17,7 @@ module.exports = {
       { label: 'v4', link: '/vant/v4/' },
     ],
     baiduAnalytics: {
-      seed: 'ad6b5732c36321f2dafed737ac2da92f',
+      seed: 'af5d41bc4e446e76665dbe3ec18d55c3',
     },
     htmlPluginOptions: {
       meta: {
