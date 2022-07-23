@@ -312,7 +312,7 @@ export default defineComponent({
 
       raf(() => {
         // add Math.floor to avoid decimal height issues
-        // https://github.com/youzan/vant/issues/5640
+        // https://github.com/vant-ui/vant/issues/5640
         bodyHeight = Math.floor(useRect(bodyRef).height);
       });
       scrollToCurrentDate();

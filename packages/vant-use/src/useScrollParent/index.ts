@@ -15,7 +15,7 @@ function isElement(node: Element) {
   );
 }
 
-// https://github.com/youzan/vant/issues/3823
+// https://github.com/vant-ui/vant/issues/3823
 export function getScrollParent(
   el: Element,
   root: ScrollElement | undefined = defaultRoot

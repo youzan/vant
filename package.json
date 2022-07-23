@@ -12,20 +12,17 @@
   "nano-staged": {
     "*.md": "prettier --write",
     "*.{ts,tsx,js,vue,less}": "prettier --write",
-    "*.{ts,tsx,js,vue}": "eslint --fix",
-    "*.{vue,css,less}": "stylelint --fix"
+    "*.{ts,tsx,js,vue}": "eslint --fix"
   },
   "packageManager": "pnpm@7.1.6",
   "devDependencies": {
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
-    "@vant/stylelint-config": "workspace:*",
     "eslint": "^8.2.0",
     "husky": "^8.0.1",
     "nano-staged": "^0.8.0",
     "prettier": "^2.5.0",
-    "rimraf": "^3.0.2",
-    "stylelint": "^13.13.1"
+    "rimraf": "^3.0.2"
   },
   "pnpm": {
     "peerDependencyRules": {

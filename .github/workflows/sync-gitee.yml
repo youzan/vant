@@ -15,6 +15,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
         with:
           # GitHub 源仓库地址
-          source-repo: git@github.com:youzan/vant.git
+          source-repo: git@github.com:vant-ui/vant.git
           # Gitee 目标仓库地址
           destination-repo: git@gitee.com:vant-contrib/vant.git

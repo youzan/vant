@@ -72,8 +72,8 @@ Current supported languages:
 | Traditional Chinese (HK) | zh-HK        | -        |
 | Traditional Chinese (TW) | zh-TW        | -        |
 
-> View all language configs [Here](https://github.com/youzan/vant/tree/dev/packages/vant/src/locale/lang).
+> View all language configs [Here](https://github.com/vant-ui/vant/tree/dev/packages/vant/src/locale/lang).
 
 ### Add new language
 
-If you can’t find the language you need, please send us a Pull Request to add the new language pack, you can refer to [Add German language pack](https://github.com/youzan/vant/pull/7245) PR.
+If you can’t find the language you need, please send us a Pull Request to add the new language pack, you can refer to [Add German language pack](https://github.com/vant-ui/vant/pull/7245) PR.

@@ -81,7 +81,7 @@ const t = useTranslate({
     <van-cell
       :title="t('urlRoute')"
       is-link
-      url="https://github.com/youzan/vant"
+      url="https://github.com/vant-ui/vant"
     />
     <van-cell :title="t('vueRoute')" is-link to="index" />
   </demo-block>

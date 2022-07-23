@@ -85,7 +85,7 @@ const t = useTranslate({
       <van-grid-item
         icon="search"
         :text="t('urlRoute')"
-        url="https://github.com/youzan/vant"
+        url="https://github.com/vant-ui/vant"
       />
     </van-grid>
   </demo-block>

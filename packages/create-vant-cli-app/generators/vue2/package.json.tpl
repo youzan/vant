@@ -25,8 +25,7 @@
     }
   },
   "nano-staged": {
-    "*.{ts,tsx,js,jsx,vue}": "eslint --fix",
-    "*.{vue,css,less,scss}": "stylelint --fix"
+    "*.{ts,tsx,js,jsx,vue}": "eslint --fix"
   },
   "peerDependencies": {
     "vue": "^2.6.11",
@@ -41,11 +40,6 @@
     "root": true,
     "extends": [
       "@vant"
-    ]
-  },
-  "stylelint": {
-    "extends": [
-      "@vant/stylelint-config"
     ]
   },
   "prettier": {

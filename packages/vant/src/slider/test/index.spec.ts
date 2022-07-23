@@ -200,7 +200,7 @@ test('should not emit change event when value not changed', async () => {
   expect(wrapper.emitted('change')).toHaveLength(1);
 });
 
-// https://github.com/youzan/vant/issues/8889
+// https://github.com/vant-ui/vant/issues/8889
 test('should format v-model with step correctly', async () => {
   const wrapper = mount(Slider, {
     props: {

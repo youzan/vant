@@ -16,7 +16,7 @@ export const useHeight = (
 
     // If the element is using safe area, the system will not return the correct height on page load.
     // So we need to wait for the height to be set.
-    // https://github.com/youzan/vant/issues/10131
+    // https://github.com/vant-ui/vant/issues/10131
     // https://stackoverflow.com/questions/64891541
     if (withSafeArea) {
       for (let i = 1; i <= 3; i++) {

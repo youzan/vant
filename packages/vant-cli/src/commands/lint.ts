@@ -44,23 +44,10 @@ function eslint() {
   );
 }
 
-function stylelint() {
-  return runCommand(
-    'stylelint',
-    ['src/**/*.css', 'src/**/*.vue', 'src/**/*.less', 'src/**/*.sass', '--fix'],
-    {
-      start: 'Running stylelint...',
-      succeed: 'Stylelint Passed.',
-      failed: 'Stylelint failed!',
-    }
-  );
-}
-
 export async function lint() {
   const eslintPassed = await eslint();
-  const stylelintPassed = await stylelint();
 
-  if (!eslintPassed || !stylelintPassed) {
+  if (!eslintPassed) {
     process.exit(1);
   }
 }

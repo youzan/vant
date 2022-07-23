@@ -177,7 +177,7 @@ test('should limit maxlength of input value when using maxlength prop', async ()
   expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('123');
   await wrapper.setProps({ modelValue: '123' });
 
-  // see: https://github.com/youzan/vant/issues/7265
+  // see: https://github.com/vant-ui/vant/issues/7265
   input.element.value = 1423;
   input.trigger('input');
   expect(input.element.value).toEqual('123');

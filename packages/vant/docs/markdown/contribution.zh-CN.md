@@ -21,7 +21,7 @@
 
 ```bash
 # 克隆仓库
-git clone git@github.com:youzan/vant.git
+git clone git@github.com:vant-ui/vant.git
 
 # 安装依赖
 pnpm i
@@ -89,7 +89,7 @@ src
 
 在编写代码时，请注意：
 
-- 确保代码可以通过仓库的 ESLint 和 Stylelint 校验。
+- 确保代码可以通过仓库的 ESLint 校验。
 - 确保代码格式是规范的，使用 prettier 进行代码格式化。
 - 确保没有使用超出兼容性范围的 API，比如 `async/await`。
 
@@ -124,7 +124,7 @@ src
 
 ```bash
 # 添加主仓库到 remote，作为 fork 后仓库的上游仓库
-git remote add upstream git@github.com:youzan/vant.git
+git remote add upstream git@github.com:vant-ui/vant.git
 
 # 拉取主仓库最新代码
 git fetch upstream

@@ -127,7 +127,7 @@ const t = useTranslate({
     <van-button
       :text="t('urlRoute')"
       type="primary"
-      url="https://github.com/youzan/vant"
+      url="https://github.com/vant-ui/vant"
     />
     <van-button :text="t('vueRoute')" type="primary" to="index" />
   </demo-block>

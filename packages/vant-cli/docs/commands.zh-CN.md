@@ -31,7 +31,7 @@ npx vant-cli dev
 
 构建组件库。
 
-运行 build 命令会在 `es` 和 `lib` 目录下生成可用于生产环境的组件代码，详见 [目录结构](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/directory.zh-CN.md)。
+运行 build 命令会在 `es` 和 `lib` 目录下生成可用于生产环境的组件代码，详见 [目录结构](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/docs/directory.zh-CN.md)。
 
 发布 npm 时，请将以下配置加入到 `package.json` 中，使 npm 包能被正确识别:
 

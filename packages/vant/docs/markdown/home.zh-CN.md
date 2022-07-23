@@ -50,11 +50,11 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 
 | 项目 | 描述 |
 | --- | --- |
-| [vant-weapp](https://github.com/youzan/vant-weapp) | Vant 微信小程序版 |
+| [vant-weapp](https://github.com/vant-ui/vant-weapp) | Vant 微信小程序版 |
 | [vant-demo](https://github.com/vant-ui/vant-demo) | Vant 官方示例合集 |
-| [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | 开箱即用的组件库搭建工具 |
-| [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant 图标库 |
-| [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | 在桌面端使用 Vant 的辅助库 |
+| [vant-cli](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli) | 开箱即用的组件库搭建工具 |
+| [vant-icons](https://github.com/vant-ui/vant/tree/dev/packages/vant-icons) | Vant 图标库 |
+| [vant-touch-emulator](https://github.com/vant-ui/vant/tree/dev/packages/vant-touch-emulator) | 在桌面端使用 Vant 的辅助库 |
 
 ### 社区生态
 
@@ -72,7 +72,7 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 
 ### 其他链接
 
-- [意见反馈](https://github.com/youzan/vant/issues)
+- [意见反馈](https://github.com/vant-ui/vant/issues)
 - [更新日志](#/zh-CN/changelog)
 - [码云镜像](https://gitee.com/vant-contrib/vant)
 - [Gitter 讨论组](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
@@ -91,7 +91,7 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 
 感谢以下小伙伴们为 Vant 发展做出的贡献：
 
-<a href="https://github.com/youzan/vant/graphs/contributors" target="_black">
+<a href="https://github.com/vant-ui/vant/graphs/contributors" target="_black">
   <img src="https://opencollective.com/vant/contributors.svg?width=890&button=false" alt="contributors" style="width: 100%; margin: 16px 0">
 </a>
 
@@ -99,7 +99,7 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 
 贡献代码请阅读我们的[贡献指南](#/zh-CN/contribution)。
 
-使用过程中发现任何问题都可以提 [Issue](https://github.com/youzan/vant/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/youzan/vant/pulls)。
+使用过程中发现任何问题都可以提 [Issue](https://github.com/vant-ui/vant/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/vant-ui/vant/pulls)。
 
 ### 开源协议
 

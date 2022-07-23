@@ -2,4 +2,4 @@
 
 请移步 GitHub issues 进行反馈：
 
-https://github.com/youzan/vant/issues
+https://github.com/vant-ui/vant/issues
