@@ -1,5 +1,10 @@
 # 更新日志
 
+## v5.0.0 (未发布)
+
+- 升级 `vite` 3.0.0
+- 不再默认安装 `gh-pages` 依赖，请将 `package.json` 中的 `gh-pages -d site-dist` 替换为 `npx gh-pages -d site-dist`
+
 ## v4.0.3
 
 `2022-07-02`

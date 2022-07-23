@@ -204,7 +204,7 @@ export function getViteConfigForSiteProd(): InlineConfig {
     base: publicPath,
     build: {
       outDir,
-      brotliSize: false,
+      reportCompressedSize: false,
       emptyOutDir: true,
       // https://github.com/youzan/vant/issues/9703
       cssTarget: ['chrome53'],
