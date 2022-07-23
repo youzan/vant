@@ -10,7 +10,7 @@ Vant CLI is a tool for building vue component library. You can quickly build a f
 
 - Provides rich commands covering the complete process from development to deploy
 - Based on conventional directory structure. Generate elegant document website and component examples automatically.
-- ESlint Stylelint built-in.
+- ESlint built-in.
 - Support Tree Shaking/Theme Customization/Import on Demand
 
 ### Quickstart
@@ -50,15 +50,11 @@ Please add the followed config to `package.json` file.
   "nano-staged": {
     "*.md": "prettier --write",
     "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
-    "*.{ts,tsx,js,vue}": "eslint --fix",
-    "*.{vue,css,less,scss}": "stylelint --fix"
+    "*.{ts,tsx,js,vue}": "eslint --fix"
   },
   "eslintConfig": {
     "root": true,
     "extends": ["@vant"]
-  },
-  "stylelint": {
-    "extends": ["@vant/stylelint-config"]
   },
   "prettier": {
     "singleQuote": true

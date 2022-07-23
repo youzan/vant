@@ -16,7 +16,7 @@ program
 
 program
   .command('lint')
-  .description('Run eslint and stylelint')
+  .description('Run ESLint')
   .action(async () => {
     const { lint } = await import('./commands/lint.js');
     return lint();

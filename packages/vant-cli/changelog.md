@@ -19,6 +19,12 @@
 + "release:site": "pnpm build:site && npx gh-pages -d site-dist",
 ```
 
+- 不再默认内置 `stylelint`，需要的话可以自行安装：
+
+```bash
+yarn add stylelint@13 @vant/stylelint-config
+```
+
 ## v4.0.3
 
 `2022-07-02`
