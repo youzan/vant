@@ -16,7 +16,7 @@ Vant 提供了一套默认主题，CSS 命名采用 BEM 的风格，方便使用
 
 Vant 使用了 [Less](http://lesscss.org/) 对样式进行预处理，并内置了一些样式变量，通过替换样式变量即可定制你自己需要的主题。
 
-下面是所有的[基础样式变量](https://github.com/youzan/vant/blob/dev/packages/vant/src/style/var.less)，组件的样式变量请参考各个组件的文档，或查看组件源码目录下的 `var.less` 文件。
+下面是所有的[基础样式变量](https://github.com/vant-ui/vant/blob/dev/packages/vant/src/style/var.less)，组件的样式变量请参考各个组件的文档，或查看组件源码目录下的 `var.less` 文件。
 
 ```less
 // Color Palette

@@ -1,7 +1,7 @@
 import { App } from 'vue';
 import { camelize } from './format';
 
-// https://github.com/youzan/vant/issues/8302
+// https://github.com/vant-ui/vant/issues/8302
 type EventShim = {
   new (...args: any[]): {
     $props: {

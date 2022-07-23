@@ -159,7 +159,7 @@ test('should not emit load event when inside an inactive tab', async () => {
   expect(onLoad2).toHaveBeenCalledTimes(0);
 });
 
-// https://github.com/youzan/vant/issues/9017
+// https://github.com/vant-ui/vant/issues/9017
 test('should emit load event when parent tab is activated', async () => {
   const onLoad1 = jest.fn();
   const onLoad2 = jest.fn();

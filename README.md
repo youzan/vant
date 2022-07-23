@@ -8,8 +8,8 @@
 
 <p align="center">
     <img src="https://img.shields.io/npm/v/vant?style=flat-square" alt="npm version" />
-    <img src="https://img.shields.io/github/workflow/status/youzan/vant/CI/dev?style=flat-square" alt="CI Status" />
-    <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg?style=flat-square&color=#4fc08d" alt="Coverage Status" />
+    <img src="https://img.shields.io/github/workflow/status/vant-ui/vant/CI/dev?style=flat-square" alt="CI Status" />
+    <img src="https://img.shields.io/codecov/c/github/vant-ui/vant/dev.svg?style=flat-square&color=#4fc08d" alt="Coverage Status" />
     <img src="https://img.shields.io/npm/dm/vant.svg?style=flat-square&color=#4fc08d" alt="downloads" />
     <img src="https://img.shields.io/jsdelivr/npm/hm/vant?style=flat-square" alt="Jsdelivr Hits">
     <img src="https://img.badgesize.io/https://unpkg.com/vant@3/lib/vant.min.js?compression=gzip&style=flat-square&label=gzip%20size&color=#4fc08d" alt="Gzip Size" />
@@ -86,11 +86,11 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 
 | Project | Description |
 | --- | --- |
-| [vant-weapp](https://github.com/youzan/vant-weapp) | WeChat MiniProgram UI |
+| [vant-weapp](https://github.com/vant-ui/vant-weapp) | WeChat MiniProgram UI |
 | [vant-demo](https://github.com/vant-ui/vant-demo) | Collection of Vant demos |
-| [vant-cli](https://github.com/youzan/vant/tree/dev/packages/vant-cli) | Scaffold for UI library |
-| [vant-icons](https://github.com/youzan/vant/tree/dev/packages/vant-icons) | Vant icons |
-| [vant-touch-emulator](https://github.com/youzan/vant/tree/dev/packages/vant-touch-emulator) | Using vant in desktop browsers |
+| [vant-cli](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli) | Scaffold for UI library |
+| [vant-icons](https://github.com/vant-ui/vant/tree/dev/packages/vant-icons) | Vant icons |
+| [vant-touch-emulator](https://github.com/vant-ui/vant/tree/dev/packages/vant-touch-emulator) | Using vant in desktop browsers |
 
 ## Community Ecosystem
 
@@ -128,7 +128,7 @@ Core contributors of Vant and Vant Weapp:
 
 Thanks to the following friends for their contributions to Vant:
 
-<a href="https://github.com/youzan/vant/graphs/contributors">
+<a href="https://github.com/vant-ui/vant/graphs/contributors">
   <img src="https://opencollective.com/vant/contributors.svg?width=890&button=false" alt="contributors">
 </a>
 

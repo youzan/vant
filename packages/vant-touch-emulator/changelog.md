@@ -10,7 +10,7 @@
 
 `2021-05-26`
 
-- add SSR support [\#8767](https://github.com/youzan/vant/pull/8767)
+- add SSR support [\#8767](https://github.com/vant-ui/vant/pull/8767)
 
 ### [v1.2.0]
 

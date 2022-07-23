@@ -180,7 +180,7 @@ export default defineComponent({
         return (
           <div
             // add key to force re-render
-            // see: https://github.com/youzan/vant/issues/7963
+            // see: https://github.com/vant-ui/vant/issues/7963
             key={allowHtml ? 1 : 0}
             class={bem('content', { isolated: !hasTitle })}
           >

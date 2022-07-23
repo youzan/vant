@@ -431,15 +431,15 @@ yarn add sass
 
 `2020-03-29`
 
-- 优化网站导航栏在大屏上的适配 ([#5928](https://github.com/youzan/vant/pull/5928))
+- 优化网站导航栏在大屏上的适配 ([#5928](https://github.com/vant-ui/vant/pull/5928))
 
 ### v2.3.0
 
 `2020-03-25`
 
-- build 命令支持编译 scoped 样式 ([#5910](https://github.com/youzan/vant/pull/5910))
-- build 命令支持生成 WebStorm 组件定义文件 ([#5899](https://github.com/youzan/vant/issues/5899))
-- clean 命令现在会移除而不是清空文件夹 ([#5895](https://github.com/youzan/vant/issues/5895))
+- build 命令支持编译 scoped 样式 ([#5910](https://github.com/vant-ui/vant/pull/5910))
+- build 命令支持生成 WebStorm 组件定义文件 ([#5899](https://github.com/vant-ui/vant/issues/5899))
+- clean 命令现在会移除而不是清空文件夹 ([#5895](https://github.com/vant-ui/vant/issues/5895))
 - 升级 @vant/markdown-vetur 2.0.0
 
 ### v2.2.8
@@ -473,7 +473,7 @@ yarn add sass
 
 `2020-02-14`
 
-- 修复在 windows 上构建出的样式入口文件路径错误的问题 ([#5655](https://github.com/youzan/vant/pull/5655)
+- 修复在 windows 上构建出的样式入口文件路径错误的问题 ([#5655](https://github.com/vant-ui/vant/pull/5655)
 
 ### v2.2.3
 
@@ -485,14 +485,14 @@ yarn add sass
 
 `2020-02-05`
 
-- 修复在 windows 上获取 markdown 路径错误的问题 ([#5626](https://github.com/youzan/vant/pull/5626))
+- 修复在 windows 上获取 markdown 路径错误的问题 ([#5626](https://github.com/vant-ui/vant/pull/5626))
 
 ### v2.2.1
 
 `2020-02-04`
 
 - 升级 babel@7.8
-- 修复切换版本时跳转 undefined 的问题 ([#5620](https://github.com/youzan/vant/pull/5620))
+- 修复切换版本时跳转 undefined 的问题 ([#5620](https://github.com/vant-ui/vant/pull/5620))
 
 ### v2.2.0
 

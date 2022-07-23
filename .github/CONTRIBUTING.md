@@ -29,7 +29,7 @@ It's welcomed to pull request, And there are some tips about that:
 You will need [Node.js >= 14](https://nodejs.org) and [pnpm](https://pnpm.io).
 
 ```bash
-git clone git@github.com:youzan/vant.git
+git clone git@github.com:vant-ui/vant.git
 
 # Install dependencies
 pnpm i

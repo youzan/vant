@@ -51,7 +51,7 @@ export function getTrueValue(value: string | undefined): number {
 export const getMonthEndDay = (year: number, month: number): number =>
   32 - new Date(year, month - 1, 32).getDate();
 
-// https://github.com/youzan/vant/issues/10013
+// https://github.com/vant-ui/vant/issues/10013
 export const proxyPickerMethods = (
   picker: PickerInstance,
   callback: () => void

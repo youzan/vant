@@ -206,7 +206,7 @@ export function getViteConfigForSiteProd(): InlineConfig {
       outDir,
       reportCompressedSize: false,
       emptyOutDir: true,
-      // https://github.com/youzan/vant/issues/9703
+      // https://github.com/vant-ui/vant/issues/9703
       cssTarget: ['chrome53'],
       rollupOptions: {
         input: {

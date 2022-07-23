@@ -9,8 +9,8 @@ body:
         在提交 Bug 报告前，请注意：
 
         - 确认你的问题无法通过官方文档得到解决。
-        - 确认你搜索过 [历史 issue](https://github.com/youzan/vant/issues)，并且没有发现同样的问题。
-        - 如果不是反馈 Bug，请到 [Discussions 讨论区](https://github.com/youzan/vant/discussions) 发帖。
+        - 确认你搜索过 [历史 issue](https://github.com/vant-ui/vant/issues)，并且没有发现同样的问题。
+        - 如果不是反馈 Bug，请到 [Discussions 讨论区](https://github.com/vant-ui/vant/discussions) 发帖。
 
   - type: input
     id: reproduce

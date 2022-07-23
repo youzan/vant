@@ -16,10 +16,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/youzan/vant.git",
+    "url": "https://github.com/vant-ui/vant.git",
     "directory": "packages/vant-icons"
   },
-  "bugs": "https://github.com/youzan/vant/issues",
+  "bugs": "https://github.com/vant-ui/vant/issues",
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
