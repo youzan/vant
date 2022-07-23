@@ -7,3 +7,7 @@
     <demo-button color="#03a9f4" style="margin-left: 15px">按钮</demo-button>
   </demo-block>
 </template>
+
+<script setup>
+import DemoButton from '../index.vue';
+</script>
