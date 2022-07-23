@@ -250,7 +250,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | v-model | Check status | _boolean_ | `false` |
-| name | Checkbox name | _any_ | - |
+| name | Checkbox name, usually a unique string or number | _any_ | - |
 | shape | Can be set to `square` | _string_ | `round` |
 | disabled | Disable checkbox | _boolean_ | `false` |
 | label-disabled | Whether to disable label click | _boolean_ | `false` |

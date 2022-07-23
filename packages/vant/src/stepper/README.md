@@ -128,7 +128,7 @@ export default {
 | max | Max value | _number \| string_ | - |
 | default-value | Default value, valid when v-model is empty | _number \| string_ | `1` |
 | step | Value change step | _number \| string_ | `1` |
-| name | Stepper name | _number \| string_ | - |
+| name | Stepper name, usually a unique string or number | _number \| string_ | - |
 | input-width | Input width | _number \| string_ | `32px` |
 | button-size | Button size | _number \| string_ | `28px` |
 | decimal-length | Decimal length | _number \| string_ | - |
