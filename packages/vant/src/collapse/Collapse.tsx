@@ -96,9 +96,11 @@ export default defineComponent({
       if (props.accordion) {
         return;
       }
+
       if (typeof options === 'boolean') {
         options = { expanded: options };
       }
+
       const { expanded, skipDisabled } = options!;
       const expandedChildren = children.filter((item: any) => {
         if (item.disabled && skipDisabled) {
@@ -106,6 +108,7 @@ export default defineComponent({
         }
         return expanded ?? !item.expanded.value;
       });
+
       const names = expandedChildren.map((item) => item.itemName.value);
       updateName(names);
     };

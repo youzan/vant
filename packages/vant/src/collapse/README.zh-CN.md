@@ -170,6 +170,8 @@ export default {
 };
 ```
 
+> Tips: 手风琴模式下无法使用 toggleAll 方法。
+
 ## API
 
 ### Collapse Props
@@ -211,26 +213,29 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| toggleAll | 切换所有面板展开状态，传 `true` 为选中，`false` 为取消选中，不传参为取反 | _options?: boolean \| object_ | - |
+| toggleAll `v3.5.3` | 切换所有面板展开状态，传 `true` 为全部展开，`false` 为全部收起，不传参为全部切换 | _options?: boolean \| object_ | - |
 
 ### toggleAll 方法示例
 
 ```js
-const { collapse } = this.$refs;
+import { ref } from 'vue';
+import type { CollapseInstance } from 'vant';
+
+const collapseRef = ref<CollapseInstance>();
 
 // 全部切换
-collapse.toggleAll();
+collapseRef.value?.toggleAll();
 // 全部展开
-collapse.toggleAll(true);
+collapseRef.value?.toggleAll(true);
 // 全部收起
-collapse.toggleAll(false);
+collapseRef.value?.toggleAll(false);
 
 // 全部全部切换，并跳过禁用的复选框
-collapse.toggleAll({
+collapseRef.value?.toggleAll({
   skipDisabled: true,
 });
 // 全部选中，并跳过禁用的复选框
-collapse.toggleAll({
+collapseRef.value?.toggleAll({
   expanded: true,
   skipDisabled: true,
 });
