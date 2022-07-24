@@ -108,6 +108,46 @@ export default {
 };
 ```
 
+### Toggle All
+
+通过 `Collapse` 实例上的 `toggleAll` 方法可以实现全选与反选。
+
+```html
+<van-collapse v-model="activeNames">
+  <van-collapse-item title="Title1" name="1">Content 1</van-collapse-item>
+  <van-collapse-item title="Title2" name="2">Content 2</van-collapse-item>
+  <van-collapse-item title="Title3" name="3">Content 3</van-collapse-item>
+</van-collapse>
+
+<van-button type="primary" @click="openAll">openAll</van-button>
+<van-button type="primary" @click="toggleAll">toggleAll</van-button>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const activeNames = ref(['1']);
+    const collapse = ref(null);
+
+    const openAll = () => {
+      collapse.value.toggleAll(true);
+    }
+    const toggleAll = () => {
+      collapse.value.toggleAll();
+    },
+
+    return {
+      activeNames,
+      openAll,
+      toggleAll,
+      collapse,
+    };
+  },
+};
+```
+
 ## API
 
 ### Collapse Props
@@ -143,6 +183,37 @@ export default {
 | value-class | Value className | _string_ | - |
 | label-class | Label className | _string_ | - |
 
+### Collapse Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Collapse instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| toggleAll | Toggle expanded status of all collapses | _options?: boolean \| object_ | - |
+
+### toggleAll Usage
+
+```js
+const { collapse } = this.$refs;
+
+// Toggle all
+collapse.toggleAll();
+// Expand all
+collapse.toggleAll(true);
+// UnExpand all
+collapse.toggleAll(false);
+
+// Toggle all, skip disabled
+collapse.toggleAll({
+  skipDisabled: true,
+});
+// Expand all, skip disabled
+collapse.toggleAll({
+  expanded: true,
+  skipDisabled: true,
+});
+```
+
 ### CollapseItem Methods
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get CollapseItem instance and call instance methods.
@@ -160,6 +231,7 @@ import type {
   CollapseProps,
   CollapseItemProps,
   CollapseItemInstance,
+  CollapseToggleAllOptions,
 } from 'vant';
 ```
 
