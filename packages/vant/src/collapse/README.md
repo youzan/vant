@@ -110,7 +110,7 @@ export default {
 
 ### Toggle All
 
-通过 `Collapse` 实例上的 `toggleAll` 方法可以实现全选与反选。
+Using `toggleAll` method to toggle all items.
 
 ```html
 <van-collapse v-model="activeNames">
@@ -119,8 +119,8 @@ export default {
   <van-collapse-item title="Title3" name="3">Content 3</van-collapse-item>
 </van-collapse>
 
-<van-button type="primary" @click="openAll">openAll</van-button>
-<van-button type="primary" @click="toggleAll">toggleAll</van-button>
+<van-button type="primary" @click="openAll">Open All</van-button>
+<van-button type="primary" @click="toggleAll">Toggle All</van-button>
 ```
 
 ```js
@@ -147,6 +147,8 @@ export default {
   },
 };
 ```
+
+> Tips: The toggleAll method cannot be used in accordion mode.
 
 ## API
 
@@ -189,26 +191,29 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Collap
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| toggleAll | Toggle expanded status of all collapses | _options?: boolean \| object_ | - |
+| toggleAll `v3.5.3` | Toggle the expanded status of all collapses | _options?: boolean \| object_ | - |
 
 ### toggleAll Usage
 
 ```js
-const { collapse } = this.$refs;
+import { ref } from 'vue';
+import type { CollapseInstance } from 'vant';
+
+const collapseRef = ref<CollapseInstance>();
 
 // Toggle all
-collapse.toggleAll();
+collapseRef.value?.toggleAll();
 // Expand all
-collapse.toggleAll(true);
+collapseRef.value?.toggleAll(true);
 // UnExpand all
-collapse.toggleAll(false);
+collapseRef.value?.toggleAll(false);
 
 // Toggle all, skip disabled
-collapse.toggleAll({
+collapseRef.value?.toggleAll({
   skipDisabled: true,
 });
 // Expand all, skip disabled
-collapse.toggleAll({
+collapseRef.value?.toggleAll({
   expanded: true,
   skipDisabled: true,
 });

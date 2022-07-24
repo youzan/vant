@@ -318,21 +318,24 @@ export default {
 ### toggleAll 方法示例
 
 ```js
-const { checkboxGroup } = this.$refs;
+import { ref } from 'vue';
+import type { CheckboxGroupInstance } from 'vant';
+
+const checkboxGroupRef = ref<CheckboxGroupInstance>();
 
 // 全部反选
-checkboxGroup.toggleAll();
+checkboxGroupRef?.value.toggleAll();
 // 全部选中
-checkboxGroup.toggleAll(true);
+checkboxGroupRef?.value.toggleAll(true);
 // 全部取消
-checkboxGroup.toggleAll(false);
+checkboxGroupRef?.value.toggleAll(false);
 
 // 全部反选，并跳过禁用的复选框
-checkboxGroup.toggleAll({
+checkboxGroupRef?.value.toggleAll({
   skipDisabled: true,
 });
 // 全部选中，并跳过禁用的复选框
-checkboxGroup.toggleAll({
+checkboxGroupRef?.value.toggleAll({
   checked: true,
   skipDisabled: true,
 });
