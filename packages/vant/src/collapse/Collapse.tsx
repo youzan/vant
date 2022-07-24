@@ -3,7 +3,7 @@ import {
   type PropType,
   type InjectionKey,
   type ExtractPropTypes,
-  ComponentPublicInstance,
+  type ComponentPublicInstance,
 } from 'vue';
 import {
   truthProp,

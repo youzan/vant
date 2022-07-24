@@ -124,9 +124,9 @@ export default {
 };
 ```
 
-### 全选与反选
+### 全部展开与全部切换
 
-通过 `Collapse` 实例上的 `toggleAll` 方法可以实现全选与反选。
+通过 `Collapse` 实例上的 `toggleAll` 方法可以实现全部展开与全部切换。
 
 ```html
 <van-collapse v-model="activeNames">
@@ -141,8 +141,8 @@ export default {
   </van-collapse-item>
 </van-collapse>
 
-<van-button type="primary" @click="checkAll">全选</van-button>
-<van-button type="primary" @click="toggleAll">反选</van-button>
+<van-button type="primary" @click="openAll">全部展开</van-button>
+<van-button type="primary" @click="toggleAll">全部切换</van-button>
 ```
 
 ```js
@@ -153,7 +153,7 @@ export default {
     const activeNames = ref(['1']);
     const collapse = ref(null);
 
-    const checkAll = () => {
+    const openAll = () => {
       collapse.value.toggleAll(true);
     }
     const toggleAll = () => {
@@ -162,7 +162,7 @@ export default {
 
     return {
       activeNames,
-      checkAll,
+      openAll,
       toggleAll,
       collapse,
     };
@@ -218,20 +218,20 @@ export default {
 ```js
 const { collapse } = this.$refs;
 
-// 全部反选
+// 全部切换
 collapse.toggleAll();
-// 全部选中
+// 全部展开
 collapse.toggleAll(true);
-// 全部取消
+// 全部收起
 collapse.toggleAll(false);
 
-// 全部反选，并跳过禁用的复选框
+// 全部全部切换，并跳过禁用的复选框
 collapse.toggleAll({
   skipDisabled: true,
 });
 // 全部选中，并跳过禁用的复选框
 collapse.toggleAll({
-  checked: true,
+  expanded: true,
   skipDisabled: true,
 });
 ```
@@ -253,6 +253,7 @@ import type {
   CollapseProps,
   CollapseItemProps,
   CollapseItemInstance,
+  CollapseToggleAllOptions,
 } from 'vant';
 ```
 

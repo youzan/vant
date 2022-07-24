@@ -114,19 +114,13 @@ export default {
 
 ```html
 <van-collapse v-model="activeNames">
-  <van-collapse-item title="标题1" name="1">
-    代码是写出来给人看的，附带能在机器上运行。
-  </van-collapse-item>
-  <van-collapse-item title="标题2" name="2">
-    技术无非就是那些开发它的人的共同灵魂。
-  </van-collapse-item>
-  <van-collapse-item title="标题3" name="3">
-    在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
-  </van-collapse-item>
+  <van-collapse-item title="Title1" name="1">Content 1</van-collapse-item>
+  <van-collapse-item title="Title2" name="2">Content 2</van-collapse-item>
+  <van-collapse-item title="Title3" name="3">Content 3</van-collapse-item>
 </van-collapse>
 
-<van-button type="primary" @click="checkAll">全选</van-button>
-<van-button type="primary" @click="toggleAll">反选</van-button>
+<van-button type="primary" @click="openAll">openAll</van-button>
+<van-button type="primary" @click="toggleAll">toggleAll</van-button>
 ```
 
 ```js
@@ -137,7 +131,7 @@ export default {
     const activeNames = ref(['1']);
     const collapse = ref(null);
 
-    const checkAll = () => {
+    const openAll = () => {
       collapse.value.toggleAll(true);
     }
     const toggleAll = () => {
@@ -146,7 +140,7 @@ export default {
 
     return {
       activeNames,
-      checkAll,
+      openAll,
       toggleAll,
       collapse,
     };
@@ -204,18 +198,18 @@ const { collapse } = this.$refs;
 
 // Toggle all
 collapse.toggleAll();
-// Select all
+// Expand all
 collapse.toggleAll(true);
-// Unselect all
+// UnExpand all
 collapse.toggleAll(false);
 
 // Toggle all, skip disabled
 collapse.toggleAll({
   skipDisabled: true,
 });
-// Select all, skip disabled
+// Expand all, skip disabled
 collapse.toggleAll({
-  checked: true,
+  expanded: true,
   skipDisabled: true,
 });
 ```
@@ -237,6 +231,7 @@ import type {
   CollapseProps,
   CollapseItemProps,
   CollapseItemInstance,
+  CollapseToggleAllOptions,
 } from 'vant';
 ```
 

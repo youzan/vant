@@ -14,9 +14,9 @@ const t = useTranslate({
     text3: '在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。',
     accordion: '手风琴',
     titleSlot: '自定义标题内容',
-    toggleAll: '全选与反选',
-    checkAll: '全选',
-    inverse: '反选',
+    toggleAll: '全部展开与全部切换',
+    openAll: '全部展开',
+    inverse: '全部切换',
   },
   'en-US': {
     text1: 'Content 1',
@@ -25,8 +25,8 @@ const t = useTranslate({
     accordion: 'Accordion',
     titleSlot: 'Custom title',
     toggleAll: 'Toggle All',
-    checkAll: 'Check All',
-    inverse: 'inverse',
+    openAll: 'Open All',
+    inverse: 'Toggle All',
   },
 });
 
@@ -38,7 +38,7 @@ const active5 = ref(['1']);
 
 const collapse = ref<CollapseInstance>();
 
-const checkAll = () => {
+const openAll = () => {
   collapse.value?.toggleAll?.(true);
 };
 const toggleAll = () => {
@@ -121,8 +121,8 @@ const toggleAll = () => {
     </van-collapse>
 
     <div class="demo-collapse-buttons">
-      <van-button type="primary" @click="checkAll">
-        {{ t('checkAll') }}
+      <van-button type="primary" @click="openAll">
+        {{ t('openAll') }}
       </van-button>
       <van-button type="primary" @click="toggleAll">
         {{ t('inverse') }}
