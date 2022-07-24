@@ -19,8 +19,9 @@ import {
 import { DROPDOWN_KEY } from '../dropdown-menu/DropdownMenu';
 
 // Composables
-import { useParent } from '@vant/use';
+import { useParent, useRect } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
+import { usePopupRef } from '../composables/use-popup-ref';
 
 // Components
 import { Cell } from '../cell';
@@ -59,6 +60,8 @@ export default defineComponent({
     });
 
     const { parent, index } = useParent(DROPDOWN_KEY);
+
+    const popupParentRef = usePopupRef();
 
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
@@ -157,13 +160,19 @@ export default defineComponent({
 
     const renderContent = () => {
       const { offset } = parent;
+      let popupParentTop = 0;
+
       const { zIndex, overlay, duration, direction, closeOnClickOverlay } =
         parent.props;
 
       const style: CSSProperties = getZIndexStyle(zIndex);
 
+      if (popupParentRef) {
+        popupParentTop = useRect(popupParentRef).top;
+      }
+
       if (direction === 'down') {
-        style.top = `${offset.value}px`;
+        style.top = `${offset.value - popupParentTop}px`;
       } else {
         style.bottom = `${offset.value}px`;
       }
