@@ -48,9 +48,7 @@ function renderWrapper(
 
       return () =>
         options.insidePopup ? (
-          <Popup show={true} style="padding-top: 20px;">
-            {rederContainer()}
-          </Popup>
+          <Popup show={true}>{rederContainer()}</Popup>
         ) : (
           rederContainer()
         );
