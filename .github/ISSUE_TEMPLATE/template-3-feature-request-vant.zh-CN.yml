@@ -9,8 +9,8 @@ body:
         在提交功能需求前，请注意：
 
         - 确认这是一个通用功能，并且无法通过现有的 API 或 Slot 实现。
-        - 确认你搜索过 [历史 issue](https://github.com/youzan/vant/issues)，并且没有发现同样的需求。
-        - 可以先到 [Discussions 讨论区](https://github.com/youzan/vant/discussions) 发帖，讨论一下需求是否合理。
+        - 确认你搜索过 [历史 issue](https://github.com/vant-ui/vant/issues)，并且没有发现同样的需求。
+        - 可以先到 [Discussions 讨论区](https://github.com/vant-ui/vant/discussions) 发帖，讨论一下需求是否合理。
 
   - type: textarea
     id: description

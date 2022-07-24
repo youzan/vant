@@ -1,6 +1,6 @@
 {
   "name": "create-vant-cli-app",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Create Vant CLI App",
   "main": "lib/index.js",
   "bin": {
@@ -24,10 +24,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/youzan/vant.git",
+    "url": "https://github.com/vant-ui/vant.git",
     "directory": "packages/create-vant-cli-app"
   },
-  "bugs": "https://github.com/youzan/vant/issues",
+  "bugs": "https://github.com/vant-ui/vant/issues",
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {

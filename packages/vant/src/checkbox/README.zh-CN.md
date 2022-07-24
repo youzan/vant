@@ -264,17 +264,17 @@ export default {
 
 ### Checkbox Props
 
-| 参数           | 说明                      | 类型               | 默认值    |
-| -------------- | ------------------------- | ------------------ | --------- |
-| v-model        | 是否为选中状态            | _boolean_          | `false`   |
-| name           | 标识符                    | _any_              | -         |
-| shape          | 形状，可选值为 `square`   | _string_           | `round`   |
-| disabled       | 是否禁用复选框            | _boolean_          | `false`   |
-| label-disabled | 是否禁用复选框文本点击    | _boolean_          | `false`   |
-| label-position | 文本位置，可选值为 `left` | _string_           | `right`   |
-| icon-size      | 图标大小，默认单位为 `px` | _number \| string_ | `20px`    |
-| checked-color  | 选中状态颜色              | _string_           | `#1989fa` |
-| bind-group     | 是否与复选框组绑定        | _boolean_          | `true`    |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| v-model | 是否为选中状态 | _boolean_ | `false` |
+| name | 标识符，通常为一个唯一的字符串或数字 | _any_ | - |
+| shape | 形状，可选值为 `square` | _string_ | `round` |
+| disabled | 是否禁用复选框 | _boolean_ | `false` |
+| label-disabled | 是否禁用复选框文本点击 | _boolean_ | `false` |
+| label-position | 文本位置，可选值为 `left` | _string_ | `right` |
+| icon-size | 图标大小，默认单位为 `px` | _number \| string_ | `20px` |
+| checked-color | 选中状态颜色 | _string_ | `#1989fa` |
+| bind-group | 是否与复选框组绑定 | _boolean_ | `true` |
 
 ### CheckboxGroup Props
 

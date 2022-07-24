@@ -21,4 +21,4 @@ see: https://popper.js.org/
 
 ## Refer
 
-issue: https://github.com/youzan/vant/issues/7626
+issue: https://github.com/vant-ui/vant/issues/7626

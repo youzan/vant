@@ -274,7 +274,7 @@ export default defineComponent({
         autoplay();
       };
 
-      // issue: https://github.com/youzan/vant/issues/10052
+      // issue: https://github.com/vant-ui/vant/issues/10052
       if (isHidden(root)) {
         nextTick().then(cb);
       } else {

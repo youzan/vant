@@ -24,17 +24,11 @@ export default {
       { label: 'v4', link: '/vant/v4/' },
     ],
     baiduAnalytics: {
-      seed: 'ad6b5732c36321f2dafed737ac2da92f',
+      seed: 'af5d41bc4e446e76665dbe3ec18d55c3',
     },
     htmlMeta: {
       'docsearch:version': 'v3',
     },
-    headHtml: `<script>
-if (location.host === 'youzan.github.io') {
-location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
-}
-</script>
-`,
     locales: {
       'zh-CN': {
         title: 'Vant 3',
@@ -49,7 +43,7 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
           },
           {
             logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/github.svg',
-            url: 'https://github.com/youzan/vant',
+            url: 'https://github.com/vant-ui/vant',
           },
         ],
         nav: [
@@ -473,7 +467,7 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
         links: [
           {
             logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/github.svg',
-            url: 'https://github.com/youzan/vant',
+            url: 'https://github.com/vant-ui/vant',
           },
         ],
         nav: [
