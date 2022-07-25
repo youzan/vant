@@ -15,11 +15,11 @@
     - name: reverse
       title: 计时方式
       options:
-        - value: true
+        - value: positive
           title: 正计时
-        - value: false
+        - value: negative
           title: 倒计时
-      default: false
+      default: positive
       description: 设置计时器计时方式
     - name: autostart
       title: 是否自动开始计时
