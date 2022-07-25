@@ -1,8 +1,8 @@
 - name: van-stepper
-  title: 步进器
+  title: 数字输入
   labels:
     - Form
-  icon: stepper
+  icon: number
   next: true
   nested: false
   attrs:

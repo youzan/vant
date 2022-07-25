@@ -24,7 +24,7 @@ module.exports = {
             { group: 'Container', show: true, name: 'popup', alias: '弹出层' },
             { group: 'Container', show: true, name: 'collapse', alias: '折叠面板' },
             { group: 'Container', show: true, name: 'cardu', alias: '卡片' },
-            { group: 'Layout', show: false, name: 'linear-layout', alias: '线性布局', vusion: true },
+            { group: 'Layout', show: true, name: 'linear-layout', alias: '线性布局', vusion: true },
             { group: 'Layout', show: true, name: 'divider', alias: '分割线' },
             { group: 'Layout', show: true, name: 'cell-group', alias: '单元格' },
             { group: 'Layout', show: true, name: 'row', alias: '栅格' },
