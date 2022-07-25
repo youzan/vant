@@ -158,6 +158,7 @@ function Iconv(
     <props.tag
       class={[
         props.classPrefix,
+        isSvgUrl(props.name) ? bem('cus') : ''
         // imageIcon ? '' : `${props.classPrefix}-${name}`,
       ]}
       // style={{
