@@ -22,7 +22,7 @@ import VanFieldinput from '../fieldinput/index';
 
 import VusionValidator from '@vusion/validator';
 
-const [createComponent, bem] = createNamespace('field');
+const [createComponent, bem] = createNamespace('fieldsonforsearch');
 const comSet = new Set(['van-fieldinput','van-fieldtextarea','van-fieldnumber']);
 
 export default createComponent({
@@ -122,60 +122,31 @@ export default createComponent({
       focused: false,
       validateFailed: false,
       validateMessage: '',
+      currentValue: this.value || '',
     };
   },
 
   watch: {
     value() {
-      this.updateValue(this.value);
-      this.resetValidation();
-      // this.validateWithTrigger('onChange');
-      this.validateWithTriggerVusion('change');
+      this.currentValue = this.value || '';
       this.$nextTick(this.adjustSize);
+    },
+    currentValue(val) {
+      this.$emit('input', val);
+      this.$emit('change', val, this);
+      this.$emit('update:value', val);
     },
   },
   created() {
-    try {
-      this.validatorVuF = new VusionValidator(
-        this.$options.validators,
-        this.$options.rules,
-        this.rules || [],
-        this,
-      );
-    } catch (e) {
-      console.log(e);
-    }
   },
   mounted() {
-    this.updateValue(this.value, this.formatTrigger);
     this.$nextTick(this.adjustSize);
-
-    if (this.vanForm) {
-      this.vanForm.addField(this);
-    }
   },
 
   beforeDestroy() {
-    if (this.vanForm) {
-      this.vanForm.removeField(this);
-    }
   },
 
   computed: {
-    currentRules() {
-      // return (this.rules || (this.rootVM && this.rootVM.rules && this.rootVM.rules[this.name]));
-      return this.rules;
-    },
-
-    showError() {
-      if (this.error !== null) {
-        return this.error;
-      }
-      if (this.vanForm && this.vanForm.showError && this.validateFailed) {
-        return true;
-      }
-    },
-
     listeners() {
       return {
         ...this.$listeners,
@@ -194,16 +165,6 @@ export default createComponent({
         return { width: addUnit(labelWidth) };
       }
     },
-
-    formValue() {
-      if (this.children && (this.$scopedSlots.input || this.$slots.input)) {
-        if (this.children?.$options?._componentTag === 'van-calendar') {
-          return this.children.defaultDate;
-        }
-        return this.children.value;
-      }
-      return (this.type === 'number' || this.type === 'digit') ? Number(this.value) : this.value;
-    },
   },
 
   methods: {
@@ -211,7 +172,7 @@ export default createComponent({
       const readonly = this.getProp('readonly');
       const frompara = this.getProp('frompara');
       if ((this.clearable && !readonly)) {
-        const hasValue = isDef(this.value) && this.value !== '';
+        const hasValue = isDef(this.currentValue) && this.currentValue !== '';
         const trigger =
           this.clearTrigger === 'always' ||
           (this.clearTrigger === 'focus' && this.focused);
@@ -408,32 +369,13 @@ export default createComponent({
 
       // native maxlength have incorrect line-break counting
       // see: https://github.com/youzan/vant/issues/5033
-      const { maxlength } = this;
-      if (isDef(maxlength) && value.length > maxlength) {
-        if (this.value && this.value.length === +maxlength) {
-          ({ value } = this);
-        } else {
-          value = value.slice(0, maxlength);
-        }
-      }
-
-      if (this.type === 'number' || this.type === 'digit') {
-        const isNumber = this.type === 'number';
-        value = formatNumber(value, isNumber, isNumber);
-      }
-
-      if (this.formatter && trigger === this.formatTrigger) {
-        value = this.formatter(value);
-      }
 
       const { input } = this.$refs;
       if (input && value !== input.value) {
         input.value = value;
       }
-
-      if (value !== this.value) {
-        this.$emit('input', (this.type === 'number' || this.type === 'digit') ? Number(value) : value);
-        this.$emit('update:value', (this.type === 'number' || this.type === 'digit') ? Number(value) : value);
+      if (value !== this.currentValue) {
+        this.currentValue = value;
       }
     },
 
@@ -466,7 +408,7 @@ export default createComponent({
 
     onBlur(event) {
       this.focused = false;
-      this.updateValue(this.value, 'onBlur');
+      this.updateValue(this.currentValue, 'onBlur');
       this.$emit('blur', event);
       // this.validateWithTrigger('onBlur');
       this.validateWithTriggerVusion('blur');
@@ -496,8 +438,7 @@ export default createComponent({
 
     onClear(event) {
       preventDefault(event);
-      this.$emit('input', '');
-      this.$emit('update:value', '');
+      this.currentValue = '';
       this.$emit('clear', event);
     },
 
@@ -591,7 +532,7 @@ export default createComponent({
         ref: 'input',
         class: bem('control', inputAlign),
         domProps: {
-          value: this.value,
+          value: this.currentValue,
         },
         attrs: {
           ...this.$attrs,
@@ -605,7 +546,7 @@ export default createComponent({
         directives: [
           {
             name: 'model',
-            value: this.value,
+            value: this.currentValue,
           },
         ],
       };
@@ -673,35 +614,6 @@ export default createComponent({
         );
       }
     },
-
-    genWordLimit() {
-      if ((this.showWordLimit && this.maxlength)) {
-        const count = (this.value || '').length;
-
-        return (
-          <div class={bem('word-limit')}>
-            <span class={bem('word-num')}>{count}</span>/{this.maxlength}
-          </div>
-        );
-      }
-    },
-
-    genMessage() {
-      if (this.vanForm && this.vanForm.showErrorMessage === false) {
-        return;
-      }
-
-      const message = this.errorMessage || this.validateMessage;
-
-      if (message) {
-        const errorMessageAlign = this.getProp('errorMessageAlign');
-
-        return (
-          <div class={bem('error-message', errorMessageAlign)}>{message}</div>
-        );
-      }
-    },
-
     getProp(key) {
       if (isDef(this[key])) {
         return this[key];
@@ -793,8 +705,6 @@ export default createComponent({
             <div class={bem('button')}>{slots('button')}</div>
           )}
         </div>
-        {this.genWordLimit()}
-        {this.genMessage()}
       </Cell>
     );
   },
