@@ -22,12 +22,16 @@
       title: 最大值
       type: string, number
       description: 最大值
-    - name: disable-plus
+    - name: decimalLength
+      title: 精度
+      type: string, number
+      description: 固定显示的小数位数
+    - name: disablePlus
       title: 是否禁用增加按钮
       type: boolean
       default: false
       description: 是否禁用增加按钮
-    - name: disable-minus
+    - name: disableMinus
       title: 是否禁用减少按钮
       type: boolean
       default: false
@@ -42,6 +46,11 @@
           title: 圆角
       default: fang
       description: 样式风格
+    - name: min
+      title: 步长
+      type: string, number
+      default: 1
+      description: 每次点击时改变的值
     - name: disableInput
       title: 只读
       type: boolean
