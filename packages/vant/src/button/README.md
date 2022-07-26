@@ -31,22 +31,22 @@ app.use(Button);
 ### Plain
 
 ```html
-<van-button plain type="primary">Primary</van-button>
-<van-button plain type="primary">Danger</van-button>
+<van-button plain type="primary">Plain</van-button>
+<van-button plain type="success">Plain</van-button>
 ```
 
 ### Hairline
 
 ```html
 <van-button plain hairline type="primary">Hairline</van-button>
-<van-button plain hairline type="primary">Hairline</van-button>
+<van-button plain hairline type="success">Hairline</van-button>
 ```
 
 ### Disabled
 
 ```html
 <van-button disabled type="primary">Disabled</van-button>
-<van-button disabled type="primary">Disabled</van-button>
+<van-button disabled type="success">Disabled</van-button>
 ```
 
 ### Loading
@@ -54,14 +54,14 @@ app.use(Button);
 ```html
 <van-button loading type="primary" />
 <van-button loading type="primary" loading-type="spinner" />
-<van-button loading type="primary" loading-text="Loading..." />
+<van-button loading type="success" loading-text="Loading..." />
 ```
 
 ### Shape
 
 ```html
 <van-button square type="primary">Square</van-button>
-<van-button round type="primary">Round</van-button>
+<van-button round type="success">Round</van-button>
 ```
 
 ### Icon
