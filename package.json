@@ -78,7 +78,8 @@
     "online-svg-icon-vue2": "^1.2.3",
     "swiper": "^7.4.1",
     "vconsole": "^3.9.3",
-    "vue-lazyload": "1.2.3"
+    "vue-lazyload": "1.2.3",
+    "vue-month-picker": "^1.6.0"
   },
   "peerDependencies": {
     "vue": ">= 2.6.0"

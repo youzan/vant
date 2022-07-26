@@ -7,12 +7,12 @@
     ></van-calendar >
       <van-calendar
       label-field="日历选择"
-      :default-date.sync="ddateffff"
+      :defaultDate.sync="ddateffff"
       title="选择日期"
     ></van-calendar >
     <van-calendar
       label-field="日历选择"
-      :default-date.sync="ddateffff"
+      :defaultDate.sync="ddateffff"
       title="选择日期"
     ></van-calendar >
     <van-calendar
