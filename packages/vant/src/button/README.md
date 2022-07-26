@@ -31,8 +31,8 @@ app.use(Button);
 ### Plain
 
 ```html
-<van-button plain type="primary">Primary</van-button>
-<van-button plain type="success">Danger</van-button>
+<van-button plain type="primary">Plain</van-button>
+<van-button plain type="success">Plain</van-button>
 ```
 
 ### Hairline
