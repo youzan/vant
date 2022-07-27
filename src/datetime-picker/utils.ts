@@ -1,7 +1,6 @@
 import { isNaN } from '../utils/validate/number';
 import { isDate } from '../utils/validate/date'
 
-
 export function times(n: number, iteratee: (index: number) => any[]) {
   let index = -1;
   const result = Array(n);
@@ -92,4 +91,23 @@ export function transErrorDate(date: any, type: any) {
     }
   }
   return fDate;
+}
+
+export function formatFu(date: string | number | Date, type: string, gmt: boolean) {
+  const tempDate = date;
+  // @ts-ignore
+  const tmpDate = isDate(tempDate) ? tempDate : new Date(tempDate);
+  if (type === 'datetime') {
+    if (gmt) return tmpDate.toJSON();
+    // @ts-ignore
+    return tmpDate.formath("yyyy/MM/dd HH:mm:ss")
+  }
+  if (type === 'date') {
+    // @ts-ignore
+    return tmpDate.formath("yyyy/MM/dd")
+  }
+  if (type === 'time') {
+    // @ts-ignore
+    return tempDate
+  }
 }

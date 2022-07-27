@@ -50,6 +50,13 @@
         :max-hour="20"
       />
     </demo-block>
+    <demo-block card :title="t('dateType')">
+      <van-datetime-picker
+        :value.sync="value.date"
+        type="date"
+        :title="t('dateType')"
+      />
+    </demo-block>
     <demo-block card :title="t('datetimeType')">
       <van-datetime-picker
         :value.sync="value.datetime"

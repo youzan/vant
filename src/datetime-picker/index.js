@@ -1,5 +1,6 @@
 import { createNamespace } from '../utils';
 import { isDate } from '../utils/validate/date';
+import { formatFu } from './utils';
 import TimePicker from './TimePicker';
 import DatePicker from './DatePicker';
 import Popup from '../popup';
@@ -32,12 +33,9 @@ export default createComponent({
         return this.value;
       }
       if (this.value && !this.cvalue) {
-        if (this.type==="datetime") {
-          return new Date(this.value).formath("yyyy/MM/dd HH:mm:ss");
-        }
-        return this.value;
+        return formatFu(this.value, this.type);
       }
-      return isDate(this.cvalue) ? this.cvalue.formath("yyyy/MM/dd HH:mm:ss") : this.cvalue;
+      return formatFu(this.cvalue, this.type);
     },
     togglePopup() {
       this.valuepopup = !this.valuepopup;

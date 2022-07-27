@@ -2,6 +2,8 @@ import { times } from './utils';
 import { padZero } from '../utils/format/string';
 import { pickerProps } from '../picker/shared';
 import Picker from '../picker';
+import { formatFu } from './utils';
+
 
 export const sharedProps = {
   ...pickerProps,
@@ -85,8 +87,8 @@ export const TimePickerMixin = {
       } else {
         this.$emit('input', this.innerValue)
         // this.$emit('update:value', this.type==="datetime" ? this.innerValue.formath("yyyy/MM/dd HH:mm:ss") : this.innerValue);
-        this.$emit('update:value', this.type==="datetime" ? this.innerValue.toJSON() : this.innerValue);
-        this.$emit('update:cvalue', this.type==="datetime" ? this.innerValue.formath("yyyy/MM/dd HH:mm:ss") : this.innerValue);
+        this.$emit('update:value', formatFu(this.innerValue, this.type, true));
+        this.$emit('update:cvalue', formatFu(this.innerValue, this.type));
         this.$emit('confirm', this.innerValue);
       }
       try {

@@ -10,6 +10,10 @@ export default createComponent({
 
   props: {
     ...sharedProps,
+    type: {
+      type: String,
+      default: 'time',
+    },
     minHour: {
       type: [Number, String],
       default: 0,
