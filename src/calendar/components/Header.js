@@ -15,10 +15,11 @@ export default createComponent({
     showSubtitle: Boolean,
     firstDayOfWeek: Number,
     setCurrentDate: Function,
-    reset: Function,
+    scrollToDate: Function,
     minDate: Date,
     maxDate: Date,
     currentDate: null,
+    defaultMonthForSelect: null
   },
   data() {
     return {
@@ -27,10 +28,20 @@ export default createComponent({
   },
   computed: {
     currentYear() {
-      return this.currentDate?.getFullYear()
+      if (this.currentDate) {
+        return this.currentDate.getFullYear()
+      }
+      if (this.defaultMonthForSelect) {
+        return this.defaultMonthForSelect.getFullYear()
+      }
     },
     currentMonth() {
-      return this.currentDate?.getMonth() + 1
+      if (this.currentDate) {
+        return this.currentDate.getMonth() + 1
+      }
+      if (this.defaultMonthForSelect) {
+        return this.defaultMonthForSelect.getMonth() + 1
+      }
     }
   },
   methods: {
@@ -88,7 +99,7 @@ export default createComponent({
             lang="zh"
             clearable
             show-year
-            editable-year
+            editableYear={false}
             class={bem('yearmonth')}
             maxDate={this.maxDate}
             minDate={this.minDate}
@@ -106,7 +117,7 @@ export default createComponent({
               text={'确定'}
               onClick={() => {
                 this.$refs.popforCalendarHead.togglePModal();
-                this.reset(new Date(this.pickDate));
+                this.scrollToDate(new Date(this.pickDate));
               }}
             />
           </div>

@@ -133,6 +133,7 @@ export default createComponent({
       valuepopup: false,
       value: false,
       getTitle: '',
+      defaultMonthForSelect: null,
     };
   },
 
@@ -171,6 +172,9 @@ export default createComponent({
 
     currentDateCom() {
       return this.currentDate;
+    },
+    defaultMonthForSelectCom() {
+      return this.defaultMonthForSelect;
     }
   },
 
@@ -372,6 +376,7 @@ export default createComponent({
 
       /* istanbul ignore else */
       if (currentMonth) {
+        this.defaultMonthForSelect = currentMonth.getDate;
         this.subtitle = currentMonth.title;
       }
     },
@@ -572,6 +577,7 @@ export default createComponent({
             subtitle={this.subtitle}
             showSubtitle={this.showSubtitle}
             currentDate={this.currentDateCom}
+            defaultMonthForSelect={this.defaultMonthForSelectCom}
             scopedSlots={{
               title: () => this.slots('title'),
             }}
@@ -579,7 +585,7 @@ export default createComponent({
             setCurrentDate={this.setCurrentDate}
             minDate={this.minDate}
             maxDate={this.maxDate}
-            reset={this.reset}
+            scrollToDate={this.scrollToDate}
           />
           <div ref="body" class={bem('body')} onScroll={this.onScroll}>
             {this.months.map(this.genMonth)}

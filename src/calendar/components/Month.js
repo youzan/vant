@@ -39,6 +39,9 @@ export default createComponent({
   },
 
   computed: {
+    getDate() {
+      return this.date;
+    },
     title() {
       return formatMonthTitle(this.date);
     },
