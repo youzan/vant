@@ -16,7 +16,6 @@
       title: 数据类型
       type: schema
       description: 表格每一行的数据类型
-      advanced: true
       compType: dataTypeSelect
     - name: initial-load
       type: boolean
