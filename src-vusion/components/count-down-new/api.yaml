@@ -14,6 +14,7 @@
       description: 设置定时时间
     - name: reverse
       title: 计时方式
+      type: string
       options:
         - value: positive
           title: 正计时
