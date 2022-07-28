@@ -57,15 +57,15 @@ export default createComponent({
     border: Boolean,
     sticky: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     animated: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     swipeable: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     scrollspystr: String,
     background: String,
