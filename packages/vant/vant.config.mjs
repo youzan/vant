@@ -130,6 +130,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'Popup 弹出层',
               },
               {
+                path: 'space',
+                title: 'Space 间距',
+              },
+              {
                 path: 'style',
                 title: 'Style 内置样式',
               },
@@ -536,6 +540,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'popup',
                 title: 'Popup',
+              },
+              {
+                path: 'space',
+                title: 'Space',
               },
               {
                 path: 'style',
