@@ -30,12 +30,12 @@
     - name: sticky
       title: 自动吸顶
       type: boolean
-      default: true
+      default: false
       description: 是否自动吸顶
     - name: swipeable
       title: 滑动切换
       type: boolean
-      default: true
+      default: false
       description: 是否滑动切换
     - name: scrollspystr
       title: 导航模式
@@ -50,7 +50,7 @@
     - name: animated
       title: 切换动画
       type: boolean
-      default: true
+      default: false
       description: 是否开启转场动画
   slots:
     - name: default
