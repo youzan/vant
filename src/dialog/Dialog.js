@@ -59,6 +59,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    nomattershowfoot: {
+      type: Boolean,
+      default: false,
+    },
   },
   components: {
     VanEmptyCol,
@@ -157,7 +161,7 @@ export default createComponent({
         </div>
       }
 
-      if (/user/.test(location.href)) {
+      if (/user/.test(location.href) || this.nomattershowfoot) {
         return (
           <div class={[BORDER_TOP, bem('footer')]}>
             {this.showCancelButton && (
