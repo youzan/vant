@@ -379,6 +379,7 @@ export default {
 | confirm | 点击完成按钮时触发 | _{ selectedValues, selectedOptions }_ |
 | cancel | 点击取消按钮时触发 | _{ selectedValues, selectedOptions }_ |
 | change | 选项改变时触发 | _{ selectedValues, selectedOptions, columnIndex }_ |
+| click-option | 点击选项时触发 | _{ currentOption, selectedValues, selectedOptions, columnIndex }_ |
 
 ### Slots
 

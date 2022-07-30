@@ -77,7 +77,7 @@ export default defineComponent({
 
   props: pickerProps,
 
-  emits: ['confirm', 'cancel', 'change', 'update:modelValue'],
+  emits: ['confirm', 'cancel', 'change', 'clickOption', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
     const selectedValues = ref(props.modelValue);
@@ -143,6 +143,14 @@ export default defineComponent({
         selectedOptions: selectedOptions.value,
       });
     };
+
+    const onClickOption = (currentOption: PickerOption, columnIndex: number) =>
+      emit('clickOption', {
+        columnIndex,
+        currentOption,
+        selectedValues: selectedValues.value,
+        selectedOptions: selectedOptions.value,
+      });
 
     const confirm = () => {
       children.forEach((child) => child.stopMomentum());
@@ -218,6 +226,9 @@ export default defineComponent({
           swipeDuration={props.swipeDuration}
           visibleOptionNum={props.visibleOptionNum}
           onChange={(value: Numeric) => onChange(value, columnIndex)}
+          onClickOption={(option: PickerOption) =>
+            onClickOption(option, columnIndex)
+          }
         />
       ));
 

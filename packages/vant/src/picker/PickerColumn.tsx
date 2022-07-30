@@ -56,7 +56,7 @@ export default defineComponent({
     visibleOptionNum: makeRequiredProp(numericProp),
   },
 
-  emits: ['change'],
+  emits: ['change', 'clickOption'],
 
   setup(props, { emit, slots }) {
     let moving: boolean;
@@ -96,7 +96,7 @@ export default defineComponent({
       currentOffset.value = offset;
     };
 
-    const onClickItem = (index: number) => {
+    const onClickOption = (index: number) => {
       if (moving || props.readonly) {
         return;
       }
@@ -104,6 +104,7 @@ export default defineComponent({
       transitionEndTrigger = null;
       currentDuration.value = DEFAULT_DURATION;
       updateValueByIndex(index);
+      emit('clickOption', props.options[index]);
     };
 
     const getIndexByOffset = (offset: number) =>
@@ -221,7 +222,7 @@ export default defineComponent({
             }),
             option.className,
           ],
-          onClick: () => onClickItem(index),
+          onClick: () => onClickOption(index),
         };
 
         const childData = {
