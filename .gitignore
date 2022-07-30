@@ -15,6 +15,5 @@ package-lock.json
 es
 lib
 dist
-vetur
 **/site-dist
 changelog.generated.md

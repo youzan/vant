@@ -35,26 +35,6 @@ export type VueTag = {
   description?: string;
 };
 
-export type VeturTag = {
-  description?: string;
-  attributes: string[];
-};
-
-export type VeturTags = Record<string, VeturTag>;
-
-export type VeturAttribute = {
-  type: string;
-  description: string;
-  options?: string[];
-};
-
-export type VeturAttributes = Record<string, VeturAttribute>;
-
-export type VeturResult = {
-  tags: VeturTags;
-  attributes: VeturAttributes;
-};
-
 export type Options = {
   name: string;
   path: PathLike;

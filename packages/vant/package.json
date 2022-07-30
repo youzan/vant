@@ -10,8 +10,7 @@
   "jsdelivr": "lib/vant.min.js",
   "files": [
     "es",
-    "lib",
-    "vetur"
+    "lib"
   ],
   "scripts": {
     "dev": "vant-cli dev",
@@ -69,9 +68,5 @@
     "*.css",
     "*.less"
   ],
-  "web-types": "vetur/web-types.json",
-  "vetur": {
-    "tags": "vetur/tags.json",
-    "attributes": "vetur/attributes.json"
-  }
+  "web-types": "lib/web-types.json"
 }

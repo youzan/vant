@@ -1,14 +1,19 @@
 /* eslint-disable no-continue */
-import { Articals } from './parser';
-import { formatOptions, formatType, removeVersion, toKebabCase } from './utils';
-import { VueEventArgument, VueTag } from './type';
+import { Articles } from './parser.js';
+import {
+  formatOptions,
+  formatType,
+  removeVersion,
+  toKebabCase,
+} from './utils.js';
+import { VueEventArgument, VueTag } from './type.js';
 
 function formatComponentName(name: string, tagPrefix: string) {
   return tagPrefix + toKebabCase(name);
 }
 
 /**
- * format arugments of events
+ * format arguments of events
  * input  = value: { foo: foo or 1, bar: bar or 2 }, value2: { one: 1 and 1, two: 2 and 2 }, foo: bar
  * output = [{ name: 'value', type: '{ foo: foo or 1, bar: bar or 2 }' }, { name: 'value2', type: '{ one: 1 and 1, two: 2 and 2 }'}, { name: 'foo', type: 'bar' }]
  */
@@ -73,29 +78,29 @@ function findTag(vueTags: VueTag[], name: string) {
 
 export function formatter(
   vueTags: VueTag[],
-  articals: Articals,
+  articles: Articles,
   tagPrefix = ''
 ) {
-  if (!articals.length) {
+  if (!articles.length) {
     return;
   }
 
-  const mainTitle = articals[0].content;
+  const mainTitle = articles[0].content;
   const defaultName = mainTitle
     ? formatComponentName(mainTitle.split(' ')[0], tagPrefix)
     : '';
-  const tables = articals.filter((artical) => artical.type === 'table');
+  const tables = articles.filter((article) => article.type === 'table');
 
   tables.forEach((item) => {
     const { table } = item;
-    const prevIndex = articals.indexOf(item) - 1;
-    const prevArtical = articals[prevIndex];
+    const prevIndex = articles.indexOf(item) - 1;
+    const prevArticle = articles[prevIndex];
 
-    if (!prevArtical || !prevArtical.content || !table || !table.body) {
+    if (!prevArticle || !prevArticle.content || !table || !table.body) {
       return;
     }
 
-    const tableTitle = prevArtical.content;
+    const tableTitle = prevArticle.content;
 
     if (tableTitle.includes('Props')) {
       const name = getNameFromTableTitle(tableTitle, tagPrefix) || defaultName;
