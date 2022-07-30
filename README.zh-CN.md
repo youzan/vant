@@ -11,7 +11,6 @@
     <img src="https://img.shields.io/github/workflow/status/vant-ui/vant/CI/dev?style=flat-square" alt="CI Status" />
     <img src="https://img.shields.io/codecov/c/github/vant-ui/vant/dev.svg?style=flat-square&color=#4fc08d" alt="Coverage Status" />
     <img src="https://img.shields.io/npm/dm/vant.svg?style=flat-square&color=#4fc08d" alt="downloads" />
-    <img src="https://img.shields.io/jsdelivr/npm/hm/vant?style=flat-square" alt="Jsdelivr Hits">
     <img src="https://img.badgesize.io/https://unpkg.com/vant@3/lib/vant.min.js?compression=gzip&style=flat-square&label=gzip%20size&color=#4fc08d" alt="Gzip Size" />
 </p>
 
@@ -33,6 +32,7 @@ Vant 是一个**轻量、可靠的移动端组件库**，于 2017 年开源。
 
 - 🚀 性能极佳，组件平均体积小于 1KB（min+gzip）
 - 🚀 70+ 个高质量组件，覆盖移动端主流场景
+- 🚀 零外部依赖，不依赖三方 npm 包
 - 💪 使用 TypeScript 编写，提供完整的类型定义
 - 💪 单元测试覆盖率超过 90%，提供稳定性保障
 - 📖 提供丰富的中英文文档和组件示例
