@@ -4,16 +4,68 @@
 
 本文档提供了从 Vant 3 到 Vant 4 的升级指南。
 
+## 按需引入方式调整
+
+### 移除 babel-plugin-import
+
+Vant 4 不再支持 `babel-plugin-import`，请移除项目中依赖的 `babel-plugin-import` 插件。
+
+只需要删除 `babel.config.js` 中的以下代码即可：
+
+```diff
+module.exports = {
+  plugins: [
+-    ['import', {
+-      libraryName: 'vant',
+-      libraryDirectory: 'es',
+-      style: true
+-    }, 'vant']
+  ]
+};
+```
+
+#### 收益
+
+移除 `babel-plugin-import` 有以下收益：
+
+- 可以不再依赖 babel，从而使用 esbuild、swc 等更高效的编译工具，提升项目编译效率。
+- 不再受到 `babel-plugin-import` 的 import 写法限制，可以从 vant 中导入组件以外的内容，比如 Vant 4 中新增的 `showToast` 等方法：
+
+```ts
+import { showToast, showDialog } from 'vant';
+```
+
+#### 样式引入方案
+
+移除 `babel-plugin-import` 对项目的 JS 体积不会有影响，因为 Vant 默认支持通过 Tree Shaking 优化来移除不需要的 JS 代码。
+
+而 CSS 代码的引入方式可以从以下两种方式中进行选择：
+
+- 通过 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件实现按需引入样式，详细用法参见 [快速上手](/#/zh-CN/quickstart)。
+- 在项目中全量引入 Vant 的样式文件：
+
+```js
+import 'vant/lib/index.css';
+```
+
 ## 组件重构
 
-### Picker 组件重构
+### 介绍
 
-在之前的版本中，Picker 组件的 API 设计存在一些不合理的设计，比如：
+在 Vant 4 中，一共有三个组件被完全重构，它们是：
+
+- `Area`
+- `Picker`
+- `DatetimePicker`
+
+之所以重构这三个组件，是因为在之前的版本中，`Picker` 组件的 API 设计存在一些不合理的设计，导致大家在使用时经常遇到问题，比如：
 
 - columns 数据格式定义不合理，容易产生误解
 - 数据流不清晰，暴露了过多的实例方法来对数据进行操作
 
-为了解决上述问题，我们在 v4 版本中对 Picker 组件进行了重构。
+为了解决上述问题，我们在 v4 版本中对 `Picker` 组件进行了重构，同时也重构了基于 `Picker` 派生出的 `Area` 和 `DatetimePicker` 组件。
+
+### Picker 组件重构
 
 #### 主要变更
 
@@ -25,7 +77,7 @@
 - 重命名 `item-height` 属性为 `option-height`
 - 重命名 `visible-item-count` 属性为 `visible-option-num`
 
-详细用法请参见 [Picker 组件文档](#/zh-CN/picker)。
+> 详细用法请参见 [Picker 组件文档](#/zh-CN/picker)。
 
 ### DatetimePicker 组件重构
 
@@ -44,6 +96,8 @@ DatetimePicker 组件被拆分为：
 - 移除 `getPicker` 方法
 - 调整 `confirm`、`cancel`、`change` 事件的参数，与 Picker 组件保持一致
 
+> 详细用法请参见 [TimePicker 组件](#/zh-CN/time-picker) 和 [DatePicker 组件](#/zh-CN/date-picker) 文档。
+
 ### Area 组件重构
 
 Area 组件是基于 Picker 组件进行封装的，因此本次升级也对 Area 组件进行了内部逻辑的重构，并优化了部分 API 设计。
@@ -58,7 +112,7 @@ Area 组件是基于 Picker 组件进行封装的，因此本次升级也对 Are
 - 重命名 `item-height` 属性为 `option-height`
 - 重命名 `visible-item-count` 属性为 `visible-option-num`
 
-详细用法请参见 [Area 组件文档](#/zh-CN/area)。
+> 详细用法请参见 [Area 组件文档](#/zh-CN/area)。
 
 ## API 调整
 
@@ -89,7 +143,9 @@ Dialog.setDefaultOptions(); // -> setDialogDefaultOptions()
 Dialog.resetDefaultOptions(); // -> resetDialogDefaultOptions()
 ```
 
-为了便于代码迁移，你可以使用 `@vant/compat` 中导出的 `Dialog` 对象：
+#### 兼容方案
+
+为了便于代码迁移，我们提供了兼容方案，你可以使用 `@vant/compat` 中导出的 `Dialog` 对象来兼容原有代码。
 
 ```js
 import { Dialog } from '@vant/compat';
@@ -98,7 +154,7 @@ Dialog();
 Dialog.close();
 ```
 
-`@vant/compat` 中导出的 `Dialog` 与 Vant 3 中的 `Dialog` 拥有完全一致的 API 和行为。
+`@vant/compat` 中导出的 `Dialog` 与 Vant 3 中的 `Dialog` 拥有完全一致的 API 和行为，因此你只需要修改 `Dialog` 的引用路径，其他代码可以保持不变。
 
 ### Toast 调用方式调整
 
@@ -127,7 +183,9 @@ Toast.resetDefaultOptions(); // -> resetToastDefaultOptions()
 
 同时，Vant 4 将不再在 `this` 对象上全局注册 `$toast` 方法，这意味着 `this` 对象上将无法访问到 `$toast`。
 
-为了便于代码迁移，你可以使用 `@vant/compat` 中导出的 `Toast` 对象：
+#### 兼容方案
+
+为了便于代码迁移，我们提供了兼容方案，你可以使用 `@vant/compat` 中导出的 `Toast` 对象来兼容原有代码。
 
 ```js
 import { Toast } from '@vant/compat';
@@ -136,7 +194,7 @@ Toast();
 Toast.clear();
 ```
 
-`@vant/compat` 中导出的 `Toast` 与 Vant 3 中的 `Toast` 拥有完全一致的 API 和行为。
+`@vant/compat` 中导出的 `Toast` 与 Vant 3 中的 `Toast` 拥有完全一致的 API 和行为，因此你只需要修改 `Toast` 的引用路径，其他代码可以保持不变。
 
 ### Notify 调用方式调整
 
@@ -163,7 +221,9 @@ Notify.resetDefaultOptions(); // -> resetNotifyDefaultOptions()
 
 同时，Vant 4 将不再在 `this` 对象上全局注册 `$notify` 方法，这意味着 `this` 对象上将无法访问到 `$notify`。
 
-为了便于代码迁移，你可以使用 `@vant/compat` 中导出的 `Notify` 对象：
+#### 兼容方案
+
+为了便于代码迁移，我们提供了兼容方案，你可以使用 `@vant/compat` 中导出的 `Notify` 对象来兼容原有代码。
 
 ```js
 import { Notify } from '@vant/compat';
@@ -172,7 +232,7 @@ Notify();
 Notify.clear();
 ```
 
-`@vant/compat` 中导出的 `Notify` 与 Vant 3 中的 `Notify` 拥有完全一致的 API 和行为。
+`@vant/compat` 中导出的 `Notify` 与 Vant 3 中的 `Notify` 拥有完全一致的 API 和行为，因此你只需要修改 `Notify` 的引用路径，其他代码可以保持不变。
 
 ### ImagePreview 调用方式调整
 
@@ -188,7 +248,9 @@ showImagePreview(); // 函数调用
 ImagePreview; // 组件对象
 ```
 
-为了便于代码迁移，你可以使用 `@vant/compat` 中导出的 `ImagePreview` 对象：
+#### 兼容方案
+
+为了便于代码迁移，我们提供了兼容方案，你可以使用 `@vant/compat` 中导出的 `ImagePreview` 对象来兼容原有代码。
 
 ```js
 import { ImagePreview } from '@vant/compat';
@@ -196,7 +258,7 @@ import { ImagePreview } from '@vant/compat';
 ImagePreview();
 ```
 
-`@vant/compat` 中导出的 `ImagePreview` 与 Vant 3 中的 `ImagePreview` 拥有完全一致的 API 和行为。
+`@vant/compat` 中导出的 `ImagePreview` 与 Vant 3 中的 `ImagePreview` 拥有完全一致的 API 和行为，因此你只需要修改 `ImagePreview` 的引用路径，其他代码可以保持不变。
 
 ### 事件命名调整
 
