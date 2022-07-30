@@ -2,7 +2,7 @@
   <div class="van-doc-intro">
     <img class="van-doc-intro__logo" style="width: 120px; height: 120px;" src="https://fastly.jsdelivr.net/npm/@vant/assets/logo.png">
     <h2 style="margin: 0; font-size: 36px; line-height: 60px;">Vant</h2>
-    <p>Mobile UI Components built on Vue</p>
+    <p>Lightweight Mobile UI Components built on Vue</p>
   </div>
 </div>
 
@@ -10,6 +10,7 @@
 
 - 🚀 1KB Component average size (min+gzip)
 - 🚀 70+ High quality components
+- 🚀 Zero third-party dependencies
 - 💪 90%+ Unit test coverage
 - 💪 Written in TypeScript
 - 📖 Extensive documentation and demos

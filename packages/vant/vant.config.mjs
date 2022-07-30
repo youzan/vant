@@ -458,7 +458,7 @@ export default {
       'en-US': {
         title: 'Vant 3',
         subtitle: ' (for Vue 3)',
-        description: 'Mobile UI Components built on Vue',
+        description: 'Lightweight Mobile UI Components built on Vue',
         logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
         langLabel: 'EN',
         links: [
