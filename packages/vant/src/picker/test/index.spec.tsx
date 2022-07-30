@@ -119,6 +119,25 @@ test('should not emit change event when after clicking a disabled option', async
   expect(wrapper.emitted<[string, number]>('change')).toBeFalsy();
 });
 
+test('should emit click-option event after clicking an option', async () => {
+  const wrapper = mount(Picker, {
+    props: {
+      showToolbar: true,
+      columns: simpleColumn,
+    },
+  });
+
+  await wrapper.find('.van-picker-column__item').trigger('click');
+  expect(wrapper.emitted('clickOption')![0]).toEqual([
+    {
+      columnIndex: 0,
+      currentOption: { text: '1990', value: '1990' },
+      selectedOptions: [{ text: '1990', value: '1990' }],
+      selectedValues: ['1990'],
+    },
+  ]);
+});
+
 test('should render bottom toolbar when toolbar-position is bottom', () => {
   const wrapper = mount(Picker, {
     props: {

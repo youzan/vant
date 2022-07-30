@@ -358,6 +358,7 @@ export default {
 | confirm | Emitted when the confirm button is clicked | _{ selectedValues, selectedOptions }_ |
 | cancel | Emitted when the cancel button is clicked | _{ selectedValues, selectedOptions }_ |
 | change | Emitted when current option is changed | _{ selectedValues, selectedOptions, columnIndex }_ |
+| click-option | Emitted when an option is clicked | _{ currentOption, selectedValues, selectedOptions, columnIndex }_ |
 
 ### Slots
 
