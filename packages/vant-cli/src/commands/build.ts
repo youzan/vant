@@ -14,7 +14,7 @@ import { genStyleDepsMap } from '../compiler/gen-style-deps-map.js';
 import { genComponentStyle } from '../compiler/gen-component-style.js';
 import { SRC_DIR, LIB_DIR, ES_DIR } from '../common/constant.js';
 import { genPackageStyle } from '../compiler/gen-package-style.js';
-import { genVeturConfig } from '../compiler/gen-vetur-config.js';
+import { genWebStormTypes } from '../compiler/web-types/index.js';
 import {
   isDir,
   isSfc,
@@ -137,7 +137,7 @@ async function buildPackageStyleEntry() {
 async function buildBundledOutputs() {
   setModuleEnv('esmodule');
   await compileBundles();
-  genVeturConfig();
+  genWebStormTypes();
 }
 
 const tasks = [

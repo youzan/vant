@@ -15,6 +15,5 @@ test/coverage
 es
 lib
 dist
-vetur
 site
 changelog.generated.md

@@ -9,14 +9,14 @@ type TableContent = {
   body: string[][];
 };
 
-export type Artical = {
+export type Article = {
   type: string;
   content?: string;
   table?: TableContent;
   level?: number;
 };
 
-export type Articals = Artical[];
+export type Articles = Article[];
 
 function readLine(input: string) {
   const end = input.indexOf('\n');
@@ -75,8 +75,8 @@ function tableParse(input: string) {
   };
 }
 
-export function mdParser(input: string): Articals {
-  const artical = [];
+export function mdParser(input: string): Articles {
+  const article = [];
   let start = 0;
   const end = input.length;
 
@@ -85,7 +85,7 @@ export function mdParser(input: string): Articals {
 
     let match;
     if ((match = TITLE_REG.exec(target))) {
-      artical.push({
+      article.push({
         type: 'title',
         content: match[2],
         level: match[1].length,
@@ -94,7 +94,7 @@ export function mdParser(input: string): Articals {
       start += match.index + match[0].length;
     } else if ((match = TABLE_REG.exec(target))) {
       const { table, usedLength } = tableParse(target.substr(match.index));
-      artical.push({
+      article.push({
         type: 'table',
         table,
       });
@@ -105,5 +105,5 @@ export function mdParser(input: string): Articals {
     }
   }
 
-  return artical;
+  return article;
 }

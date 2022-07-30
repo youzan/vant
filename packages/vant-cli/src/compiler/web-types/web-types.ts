@@ -1,4 +1,4 @@
-import { VueTag, Options } from './type';
+import type { VueTag, Options } from './type.js';
 
 // create web-types.json to provide autocomplete in JetBrains IDEs
 export function genWebTypes(tags: VueTag[], options: Options) {

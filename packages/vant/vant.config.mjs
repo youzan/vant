@@ -12,9 +12,6 @@ export default {
       publicPath:
         (typeof window === 'undefined' && process.env.PUBLIC_PATH) || '/vant/',
     },
-    vetur: {
-      tagPrefix: 'van-',
-    },
   },
   site: {
     defaultLang: 'en-US',
