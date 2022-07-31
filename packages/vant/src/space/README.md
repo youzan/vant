@@ -111,11 +111,11 @@ const align = ref < SpaceAlign > 'center';
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| direction | Spacing direction | vertical \| horizontal | horizontal |
-| align | Spacing alignment | start \| end \| center \| baseline | - |
-| size | Spacing size, support to formulate horizontal and vertical spacing respectively | number \| small \| large \| [SpaceSize, SpaceSize] | - |
-| wrap | Whether to wrap lines automatically is only applicable to horizontal arrangement | boolean | false |
-| fill | Whether to fill the whole line | boolean | false |
+| direction | Spacing direction | _vertical \| horizontal_ | `horizontal` |
+| align | Spacing alignment | _start \| end \| center \| baseline_ | - |
+| size | Spacing size, For example, 20px 2em, the default unit is px, supports array form, and sets horizontal and vertical spacing | _number \| string \| number[] \| string[]_ | `8px` |
+| wrap | Whether to wrap lines automatically is only applicable to horizontal arrangement | boolean | `false` |
+| fill | Whether to fill the whole line | boolean | `false` |
 
 ### Slots
 

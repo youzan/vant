@@ -1,11 +1,10 @@
-<script setup lang="ts">
+<script setup>
 import VanSpace from '..';
 import VanButton from '../../button';
 import VanRadio from '../../radio';
 import VanRadioGroup from '../../radio-group';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import { SpaceSize, SpaceAlign } from '../Space';
 
 const t = useTranslate({
   'zh-CN': {
@@ -24,8 +23,8 @@ const t = useTranslate({
   },
 });
 
-const size = ref<SpaceSize>('');
-const align = ref<SpaceAlign>('center');
+const size = ref('8px');
+const align = ref('center');
 </script>
 
 <template>
@@ -49,9 +48,10 @@ const align = ref<SpaceAlign>('center');
 
   <demo-block :title="t('size')">
     <van-radio-group v-model="size" direction="horizontal">
-      <van-radio name="small">small</van-radio>
-      <van-radio name="">默认</van-radio>
-      <van-radio name="large">large</van-radio>
+      <van-radio name="8px">default</van-radio>
+      <van-radio name="20px">20px</van-radio>
+      <van-radio name="2rem">2rem</van-radio>
+      <van-radio name="5vw">5vw</van-radio>
     </van-radio-group>
     <br />
     <van-space :size="size">

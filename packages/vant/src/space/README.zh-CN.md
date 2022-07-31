@@ -122,11 +122,11 @@ const align = ref < SpaceAlign > 'center';
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| direction | 间距方向 | vertical \| horizontal | horizontal |
-| align | 对齐方式 | start \| end \| center \| baseline | - |
-| size | 间距大小，支持分别制定横向和竖向的间距 | number \| small \| large \| [SpaceSize, SpaceSize] | - |
-| wrap | 是否自动换行，仅适用于水平方向排列 | boolean | false |
-| fill | 是否充满整行 | boolean | false |
+| direction | 间距方向 | _vertical \| horizontal_ | `horizontal` |
+| align | 对齐方式 | _start \| end \| center \| baseline_ | - |
+| size | 间距大小，如 20px 2em，默认单位为 px，支持数组形式，设置横向和纵向间距 | _number \| string \| number[] \| string[]_ | `8px` |
+| wrap | 是否自动换行，仅适用于水平方向排列 | boolean | `false` |
+| fill | 是否充满整行 | boolean | `false` |
 
 ### Slots
 

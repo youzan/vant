@@ -5,13 +5,13 @@ import {
   ExtractPropTypes,
   Fragment,
   PropType,
-  VNode,
+  type VNode,
 } from 'vue';
 import { createNamespace } from '../utils';
 
 const [name, bem] = createNamespace('space');
 
-export type SpaceSize = number | 'small' | '' | 'large';
+export type SpaceSize = number | string;
 export type SpaceAlign = 'start' | 'end' | 'center' | 'baseline';
 
 const spaceProps = {
@@ -22,9 +22,9 @@ const spaceProps = {
   },
   size: {
     type: [Number, String, Array] as PropType<
-      number | 'small' | '' | 'large' | [SpaceSize, SpaceSize]
+      number | string | [SpaceSize, SpaceSize]
     >,
-    default: '',
+    default: 8,
   },
   wrap: Boolean,
   fill: Boolean,
@@ -58,35 +58,25 @@ export default defineComponent({
   name,
   props: spaceProps,
   setup(props, { slots }) {
-    const children = filterEmpty(slots.default?.());
     const mergedAlign = computed(
       () => props.align ?? (props.direction === 'horizontal' ? 'center' : '')
     );
 
     const getMargin = (size: SpaceSize) => {
       if (typeof size === 'number') {
-        return size;
+        return size + 'px';
       }
-      switch (size) {
-        case 'small':
-          return 8;
-        case '':
-          return 12;
-        case 'large':
-          return 16;
-        default:
-          return 12;
-      }
+      return size;
     };
     const getMarginStyle = (isLast: boolean): CSSProperties => {
       const style: CSSProperties = {};
 
       const marginRight = `${getMargin(
         Array.isArray(props.size) ? props.size[0] : props.size
-      )}px`;
+      )}`;
       const marginBottom = `${getMargin(
         Array.isArray(props.size) ? props.size[1] : props.size
-      )}px`;
+      )}`;
 
       if (isLast) {
         return props.wrap ? { marginBottom } : {};
@@ -102,27 +92,30 @@ export default defineComponent({
       return style;
     };
 
-    return () => (
-      <div
-        class={[
-          bem({
-            [props.direction]: props.direction,
-            [`align-${mergedAlign.value}`]: mergedAlign.value,
-            wrap: props.wrap,
-            fill: props.fill,
-          }),
-        ]}
-      >
-        {children.map((c, i) => (
-          <div
-            key={`item-${i}`}
-            class={`${name}-item`}
-            style={getMarginStyle(i === children.length - 1)}
-          >
-            {c}
-          </div>
-        ))}
-      </div>
-    );
+    return () => {
+      const children = filterEmpty(slots.default?.());
+      return (
+        <div
+          class={[
+            bem({
+              [props.direction]: props.direction,
+              [`align-${mergedAlign.value}`]: mergedAlign.value,
+              wrap: props.wrap,
+              fill: props.fill,
+            }),
+          ]}
+        >
+          {children.map((c, i) => (
+            <div
+              key={`item-${i}`}
+              class={`${name}-item`}
+              style={getMarginStyle(i === children.length - 1)}
+            >
+              {c}
+            </div>
+          ))}
+        </div>
+      );
+    };
   },
 });
