@@ -19,6 +19,22 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.5.3](https://github.com/vant-ui/vant/compare/v3.5.2...v3.5.3)
+
+`2022-07-31`
+
+**Feature**
+
+- Calendar: 新增 getSelectedDate 方法 [419a8e](https://github.com/vant-ui/vant/commit/419a8e4f0e6454b9aac30d5800318deabec099cb)
+- Collapse: 新增 toggleAll 方法 [#10818](https://github.com/vant-ui/vant/issues/10818) [#10837](https://github.com/vant-ui/vant/issues/10837)
+
+**Bug Fixes**
+
+- Tabbar: 修复使用 placeholder 属性时可能无法获取底部安全区高度的问题 [#10827](https://github.com/vant-ui/vant/issues/10827)
+- NavBar: 修复使用 placeholder 属性时可能无法获取底部安全区高度的问题 [#10827](https://github.com/vant-ui/vant/issues/10827)
+- Popover: 修复动态设置 offset 属性不生效的问题 [#10840](https://github.com/vant-ui/vant/issues/10840)
+- Uploader: 修复点击预览大图时会展示上传失败的图片的问题 [#10790](https://github.com/vant-ui/vant/issues/10790)
+
 ### [v3.5.2](https://github.com/vant-ui/vant/compare/v3.5.1...v3.5.2)
 
 `2022-06-26`
