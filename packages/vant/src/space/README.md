@@ -22,86 +22,84 @@ app.use(Space);
 
 ```html
 <van-space>
-  <van-button type="primary">按钮</van-button>
-  <van-button type="primary">按钮</van-button>
-  <van-button type="primary">按钮</van-button>
-  <van-button type="primary">按钮</van-button>
-  <van-button type="primary">按钮</van-button>
+  <van-button type="primary">Button</van-button>
+  <van-button type="primary">Button</van-button>
+  <van-button type="primary">Button</van-button>
+  <van-button type="primary">Button</van-button>
 </van-space>
 ```
 
-### Vertical Arrangement
+### Vertical
 
 ```html
 <van-space direction="vertical" fill>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
+  <van-button type="primary" block>Button</van-button>
+  <van-button type="primary" block>Button</van-button>
+  <van-button type="primary" block>Button</van-button>
 </van-space>
 ```
 
-### Size
+### Custom Size
 
 ```html
-<van-radio-group v-model="size" direction="horizontal">
-  <van-radio name="small">small</van-radio>
-  <van-radio name="">默认</van-radio>
-  <van-radio name="large">large</van-radio>
-</van-radio-group>
-<van-space>
-  <van-button type="primary">按钮</van-button>
-  <van-button type="primary">按钮</van-button>
-  <van-button type="primary">按钮</van-button>
+<!-- 20px -->
+<van-space :size="20">
+  <van-button type="primary">Button</van-button>
+  <van-button type="primary">Button</van-button>
+  <van-button type="primary">Button</van-button>
 </van-space>
-```
 
-```js
-import { SpaceSize } from '../Space';
-const size = ref < SpaceSize > '';
+<!-- 2rem -->
+<van-space size="2rem">
+  <van-button type="primary">Button</van-button>
+  <van-button type="primary">Button</van-button>
+  <van-button type="primary">Button</van-button>
+</van-space>
 ```
 
 ### Alignment
 
 ```html
-<van-radio-group v-model="align" direction="horizontal">
+<van-radio-group
+  v-model="align"
+  direction="horizontal"
+  style="margin-bottom: 16px"
+>
   <van-radio name="start">start</van-radio>
   <van-radio name="center">center</van-radio>
   <van-radio name="end">end</van-radio>
   <van-radio name="baseline">baseline</van-radio>
 </van-radio-group>
-<br />
-<van-space :align="align" style="padding: 10px;background: #f3f2f5;">
-  <div>Space</div>
-  <van-button type="primary">按钮</van-button>
-  <div style="padding: 20px;border: 1px solid #eee">
-    <div>标题</div>
-    <div>内容</div>
-  </div>
+
+<van-space :align="align" style="padding: 16px; background: #f3f2f5">
+  <van-button type="primary">{{ align }}</van-button>
+  <div style="padding: 40px 20px; background: #fff">Block</div>
 </van-space>
 ```
 
 ```js
-import { SpaceAlign } from '../Space';
-const align = ref < SpaceAlign > 'center';
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const align = ref('center');
+    return { align };
+  },
+};
 ```
 
-### Wrap
+### Auto Wrap
 
 ```html
 <van-space wrap>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
-  <van-button type="primary" block>按钮</van-button>
+  <van-button type="primary" block>Button</van-button>
+  <van-button type="primary" block>Button</van-button>
+  <van-button type="primary" block>Button</van-button>
+  <van-button type="primary" block>Button</van-button>
+  <van-button type="primary" block>Button</van-button>
+  <van-button type="primary" block>Button</van-button>
+  <van-button type="primary" block>Button</van-button>
+  <van-button type="primary" block>Button</van-button>
 </van-space>
 ```
 
@@ -112,10 +110,10 @@ const align = ref < SpaceAlign > 'center';
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | direction | Spacing direction | _vertical \| horizontal_ | `horizontal` |
+| size | Spacing size, such as `20px` `2em`. The default unit is px, supports using array to set horizontal and vertical spacing | _number \| string \| number[] \| string[]_ | `8px` |
 | align | Spacing alignment | _start \| end \| center \| baseline_ | - |
-| size | Spacing size, For example, 20px 2em, the default unit is px, supports array form, and sets horizontal and vertical spacing | _number \| string \| number[] \| string[]_ | `8px` |
-| wrap | Whether to wrap lines automatically is only applicable to horizontal arrangement | boolean | `false` |
-| fill | Whether to fill the whole line | boolean | `false` |
+| wrap | Whether to wrap automatically, only for horizontal alignment | _boolean_ | `false` |
+| fill | Whether to render Space as a block element and fill the parent element | _boolean_ | `false` |
 
 ### Slots
 
