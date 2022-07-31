@@ -121,6 +121,10 @@ export default {
                 title: 'Popup 弹出层',
               },
               {
+                path: 'space',
+                title: 'Space 间距',
+              },
+              {
                 path: 'style',
                 title: 'Style 内置样式',
               },
@@ -527,6 +531,10 @@ export default {
               {
                 path: 'popup',
                 title: 'Popup',
+              },
+              {
+                path: 'space',
+                title: 'Space',
               },
               {
                 path: 'style',
