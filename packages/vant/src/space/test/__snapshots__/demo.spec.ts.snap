@@ -1,0 +1,370 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-space van-space--horizontal van-space--align-center">
+    <div class="van-space-item"
+         style="margin-right: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item"
+         style="margin-right: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item"
+         style="margin-right: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item">
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-space van-space--vertical van-space--fill">
+    <div class="van-space-item"
+         style="margin-bottom: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal van-button--block"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item"
+         style="margin-bottom: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal van-button--block"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item">
+      <button type="button"
+              class="van-button van-button--primary van-button--normal van-button--block"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-space van-space--horizontal van-space--align-center"
+       style="margin-bottom: 16px;"
+  >
+    <div class="van-space-item"
+         style="margin-right: 20px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item"
+         style="margin-right: 20px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item">
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div class="van-space van-space--horizontal van-space--align-center">
+    <div class="van-space-item"
+         style="margin-right: 3rem;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item"
+         style="margin-right: 3rem;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item">
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-radio-group van-radio-group--horizontal"
+       role="radiogroup"
+       style="margin-bottom: 16px;"
+  >
+    <div role="radio"
+         class="van-radio van-radio--horizontal"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-radio__icon van-radio__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        start
+      </span>
+    </div>
+    <div role="radio"
+         class="van-radio van-radio--horizontal"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        center
+      </span>
+    </div>
+    <div role="radio"
+         class="van-radio van-radio--horizontal"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-radio__icon van-radio__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        end
+      </span>
+    </div>
+    <div role="radio"
+         class="van-radio van-radio--horizontal"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <div class="van-radio__icon van-radio__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-radio__label">
+        baseline
+      </span>
+    </div>
+  </div>
+  <div class="van-space van-space--horizontal van-space--align-center"
+       style="padding: 16px; background: rgb(243, 242, 245);"
+  >
+    <div class="van-space-item"
+         style="margin-right: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            center
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item">
+      <div style="padding: 40px 20px; background: rgb(255, 255, 255);">
+        Block
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-space van-space--horizontal van-space--align-center van-space--wrap">
+    <div class="van-space-item"
+         style="margin-right: 8px; margin-bottom: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal van-button--block"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item"
+         style="margin-right: 8px; margin-bottom: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal van-button--block"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item"
+         style="margin-right: 8px; margin-bottom: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal van-button--block"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item"
+         style="margin-right: 8px; margin-bottom: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal van-button--block"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item"
+         style="margin-right: 8px; margin-bottom: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal van-button--block"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item"
+         style="margin-right: 8px; margin-bottom: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal van-button--block"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item"
+         style="margin-right: 8px; margin-bottom: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal van-button--block"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item"
+         style="margin-bottom: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--normal van-button--block"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Button
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
