@@ -19,6 +19,22 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.5.3](https://github.com/vant-ui/vant/compare/v3.5.2...v3.5.3)
+
+`2022-07-31`
+
+**Feature**
+
+- Calendar: add getSelectedDate method [419a8e](https://github.com/vant-ui/vant/commit/419a8e4f0e6454b9aac30d5800318deabec099cb)
+- Collapse: add toggleAll method [#10818](https://github.com/vant-ui/vant/issues/10818) [#10837](https://github.com/vant-ui/vant/issues/10837)
+
+**Bug Fixes**
+
+- Tabbar: fix failed to get correct height of safe area element [#10827](https://github.com/vant-ui/vant/issues/10827)
+- NavBar: fix failed to get correct height of safe area element [#10827](https://github.com/vant-ui/vant/issues/10827)
+- Popover: allow to dynamically set offset prop [#10840](https://github.com/vant-ui/vant/issues/10840)
+- Uploader: should not preview failed images [#10790](https://github.com/vant-ui/vant/issues/10790)
+
 ### [v3.5.2](https://github.com/vant-ui/vant/compare/v3.5.1...v3.5.2)
 
 `2022-06-26`
