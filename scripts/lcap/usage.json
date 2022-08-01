@@ -683,8 +683,7 @@
                             "title": "值",
                             "type": "string, number",
                             "default2": "内容",
-                            "description": "值",
-                            "advanced": true
+                            "description": "值"
                         },
                         {
                             "name": "rtitle",
@@ -3013,10 +3012,10 @@
             ],
             "attrs": [
                 {
-                    "name": "minute",
-                    "title": "计时器时长（min）",
+                    "name": "timer",
+                    "title": "计时器时长（秒）",
                     "type": "number",
-                    "default": 1,
+                    "default": 60,
                     "description": "设置定时时间"
                 },
                 {
@@ -4343,7 +4342,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-form>\\n  <van-field required label=\\\"名称\\\" drole=\\\"other\\\">\\n    <template #input>\\n      <van-fieldinput  placeholder=\\\"请输入\\\" clearable></van-fieldinput>\\n    </template>\\n  </van-field>\\n  <van-field name=\\\"radio\\\" label=\\\"单选框\\\" drole=\\\"other\\\">\\n    <template #input>\\n      <van-radio-group direction=\\\"horizontal\\\">\\n        <van-radio name=\\\"1\\\" title=\\\"单选框 1\\\"></van-radio>\\n        <van-radio name=\\\"2\\\" title=\\\"单选框 2\\\"></van-radio>\\n      </van-radio-group>\\n    </template>\\n  </van-field>\\n  <div style=\\\"margin: 16px 16px 0\\\">\\n    <van-button round block=\\\"blockb\\\" type=\\\"info\\\" native-type=\\\"submit\\\" text=\\\"提交\\\">\\n    </van-button>\\n  </div>\\n</van-form>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-form>\\n  <van-field required label=\\\"名称\\\" drole=\\\"other\\\">\\n    <template #input>\\n      <van-fieldinput  placeholder=\\\"请输入\\\" clearable></van-fieldinput>\\n    </template>\\n  </van-field>\\n  <van-field name=\\\"radio\\\" label=\\\"单选框\\\" drole=\\\"other\\\">\\n    <template #input>\\n      <van-radio-group direction=\\\"horizontal\\\">\\n        <template #default=\\\"scope\\\">\\n          <van-radio name=\\\"1\\\" title=\\\"单选框 1\\\"></van-radio>\\n          <van-radio name=\\\"2\\\" title=\\\"单选框 2\\\"></van-radio>\\n        </template>\\n      </van-radio-group>\\n    </template>\\n  </van-field>\\n  <div style=\\\"margin: 16px 16px 0\\\">\\n    <van-button round block=\\\"blockb\\\" type=\\\"info\\\" native-type=\\\"submit\\\" text=\\\"提交\\\">\\n    </van-button>\\n  </div>\\n</van-form>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-form",
             "title": "表单",
@@ -4355,7 +4354,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-form>\n  <van-field required label=\"名称\" drole=\"other\">\n    <template #input>\n      <van-fieldinput  placeholder=\"请输入\" clearable></van-fieldinput>\n    </template>\n  </van-field>\n  <van-field name=\"radio\" label=\"单选框\" drole=\"other\">\n    <template #input>\n      <van-radio-group direction=\"horizontal\">\n        <van-radio name=\"1\" title=\"单选框 1\"></van-radio>\n        <van-radio name=\"2\" title=\"单选框 2\"></van-radio>\n      </van-radio-group>\n    </template>\n  </van-field>\n  <div style=\"margin: 16px 16px 0\">\n    <van-button round block=\"blockb\" type=\"info\" native-type=\"submit\" text=\"提交\">\n    </van-button>\n  </div>\n</van-form>\n</template>\n"
+                    "code": "<template>\n<van-form>\n  <van-field required label=\"名称\" drole=\"other\">\n    <template #input>\n      <van-fieldinput  placeholder=\"请输入\" clearable></van-fieldinput>\n    </template>\n  </van-field>\n  <van-field name=\"radio\" label=\"单选框\" drole=\"other\">\n    <template #input>\n      <van-radio-group direction=\"horizontal\">\n        <template #default=\"scope\">\n          <van-radio name=\"1\" title=\"单选框 1\"></van-radio>\n          <van-radio name=\"2\" title=\"单选框 2\"></van-radio>\n        </template>\n      </van-radio-group>\n    </template>\n  </van-field>\n  <div style=\"margin: 16px 16px 0\">\n    <van-button round block=\"blockb\" type=\"info\" native-type=\"submit\" text=\"提交\">\n    </van-button>\n  </div>\n</van-form>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -5086,7 +5085,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-radio-group direction=\\\"horizontal\\\">\\n  <template #default=\\\"scope\\\">\\n    <van-radio name=\\\"n\\\" title=\\\"单选框 n\\\"></van-radio>\\n  </template>\\n</van-radio-group>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-radio-group direction=\\\"horizontal\\\">\\n  <template #default=\\\"scope\\\">\\n    <van-radio name=\\\"n\\\" title=\\\"单选框 n\\\" vusion-disabled-cut vusion-disabled-copy></van-radio>\\n  </template>\\n</van-radio-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-radio-group",
             "title": "单选组",
@@ -5098,7 +5097,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-radio-group direction=\"horizontal\">\n  <template #default=\"scope\">\n    <van-radio name=\"n\" title=\"单选框 n\"></van-radio>\n  </template>\n</van-radio-group>\n</template>\n"
+                    "code": "<template>\n<van-radio-group direction=\"horizontal\">\n  <template #default=\"scope\">\n    <van-radio name=\"n\" title=\"单选框 n\" vusion-disabled-cut vusion-disabled-copy></van-radio>\n  </template>\n</van-radio-group>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -5312,7 +5311,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-checkbox-group direction=\\\"horizontal\\\">\\n  <template #default=\\\"scope\\\">\\n    <van-checkbox name=\\\"n\\\" title=\\\"选框 n\\\"></van-checkbox>\\n  </template>\\n</van-checkbox-group>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-checkbox-group direction=\\\"horizontal\\\">\\n  <template #default=\\\"scope\\\">\\n    <van-checkbox name=\\\"n\\\" title=\\\"选框 n\\\" vusion-disabled-cut vusion-disabled-copy></van-checkbox>\\n  </template>\\n</van-checkbox-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-checkbox-group",
             "title": "多选组",
@@ -5324,7 +5323,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-checkbox-group direction=\"horizontal\">\n  <template #default=\"scope\">\n    <van-checkbox name=\"n\" title=\"选框 n\"></van-checkbox>\n  </template>\n</van-checkbox-group>\n</template>\n"
+                    "code": "<template>\n<van-checkbox-group direction=\"horizontal\">\n  <template #default=\"scope\">\n    <van-checkbox name=\"n\" title=\"选框 n\" vusion-disabled-cut vusion-disabled-copy></van-checkbox>\n  </template>\n</van-checkbox-group>\n</template>\n"
                 }
             ],
             "attrs": [
