@@ -7,10 +7,10 @@
   next: true
   nested: false
   attrs:
-    - name: minute
-      title: 计时器时长（min）
+    - name: timer
+      title: 计时器时长（秒）
       type: number
-      default: 1
+      default: 60
       description: 设置定时时间
     - name: reverse
       title: 计时方式
