@@ -51,13 +51,13 @@ function work() {
 export default {
   name: "van-count-down-new",
   props: {
-    minute: { type: Number, default: 1 },
+    timer: { type: Number, default: 60 },
     reverse: { type: String, default: 'positive' },
     autostart: { type: Boolean, default: true },
   },
   data() {
     return {
-      second: 60 * this.minute,
+      second: this.timer,
       worker: undefined,
       lastPauseTime: undefined,
     };
@@ -68,7 +68,7 @@ export default {
     },
     crtTime() {
       const { second } = this;
-      const totalSecond = this.minute * 60;
+      const totalSecond = this.timer;
       if (this.reverse === 'negative') {
         const min = String(Math.floor(second / 60)).padStart(2, "0");
         const sec = String(second % 60).padStart(2, "0");
@@ -81,7 +81,7 @@ export default {
 
     },
     initialTime() {
-      const totalSecond = this.minute * 60;
+      const totalSecond = this.timer;
       if (this.reverse === 'negative') {
         const min = String(Math.floor(totalSecond / 60)).padStart(2, "0");
         const sec = String(totalSecond % 60).padStart(2, "0");
@@ -132,7 +132,7 @@ export default {
       this.$emit("start");
       this.worker.postMessage({
         state: "start",
-        second: this.minute * 60,
+        second: this.timer,
       });
     },
     stop() {

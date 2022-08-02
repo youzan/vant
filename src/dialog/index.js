@@ -79,6 +79,7 @@ Dialog.confirm = (options) =>
   Dialog({
     showCancelButton: true,
     ...options,
+    nomattershowfoot: true,
   });
 
 Dialog.close = () => {

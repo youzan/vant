@@ -369,8 +369,16 @@ export default createComponent({
 
       // native maxlength have incorrect line-break counting
       // see: https://github.com/youzan/vant/issues/5033
-
+      const { maxlength } = this;
       const { input } = this.$refs;
+
+      if (isDef(maxlength) && value.length > maxlength) {
+        if (this.value && this.value.length === +maxlength) {
+          ({ value } = this);
+        } else {
+          value = value.slice(0, maxlength);
+        }
+      }
       if (input && value !== input.value) {
         input.value = value;
       }

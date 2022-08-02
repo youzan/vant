@@ -13,7 +13,6 @@
       title: 数据类型
       type: schema
       description: 组件列表每一项的结构
-      advanced: true
       compType: dataTypeCheckBoxItem
     - name: value
       title: 值

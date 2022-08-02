@@ -683,8 +683,7 @@
                             "title": "值",
                             "type": "string, number",
                             "default2": "内容",
-                            "description": "值",
-                            "advanced": true
+                            "description": "值"
                         },
                         {
                             "name": "rtitle",
@@ -2161,14 +2160,14 @@
                     "name": "sticky",
                     "title": "自动吸顶",
                     "type": "boolean",
-                    "default": true,
+                    "default": false,
                     "description": "是否自动吸顶"
                 },
                 {
                     "name": "swipeable",
                     "title": "滑动切换",
                     "type": "boolean",
-                    "default": true,
+                    "default": false,
                     "description": "是否滑动切换"
                 },
                 {
@@ -2192,7 +2191,7 @@
                     "name": "animated",
                     "title": "切换动画",
                     "type": "boolean",
-                    "default": true,
+                    "default": false,
                     "description": "是否开启转场动画"
                 }
             ],
@@ -3013,41 +3012,79 @@
             ],
             "attrs": [
                 {
-                    "name": "minute",
+                    "name": "timer",
+                    "title": "计时器时长（秒）",
                     "type": "number",
-                    "default": 1,
+                    "default": 60,
                     "description": "设置定时时间"
                 },
                 {
                     "name": "reverse",
-                    "title": "是否正计时",
+                    "title": "计时方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "positive",
+                            "title": "正计时"
+                        },
+                        {
+                            "value": "negative",
+                            "title": "倒计时"
+                        }
+                    ],
+                    "default": "positive",
+                    "description": "设置计时器计时方式"
+                },
+                {
+                    "name": "autostart",
+                    "title": "是否自动开始计时",
                     "type": "boolean",
-                    "default": false,
-                    "description": "转为正计时"
+                    "default": true,
+                    "description": "设置是否自动开始计时器"
                 }
             ],
             "methods": [
                 {
                     "name": "start",
-                    "description": "开始倒计时",
+                    "description": "开始计时器",
+                    "params": []
+                },
+                {
+                    "name": "pause",
+                    "description": "暂停计时器",
+                    "params": []
+                },
+                {
+                    "name": "continue",
+                    "description": "继续计时器",
                     "params": []
                 },
                 {
                     "name": "stop",
-                    "description": "停止倒计时",
+                    "description": "停止计时器",
                     "params": []
                 }
             ],
             "events": [
                 {
                     "name": "start",
-                    "title": "倒计时开始",
-                    "description": "倒计时开始时触发"
+                    "title": "计时器开始",
+                    "description": "计时器开始时触发"
+                },
+                {
+                    "name": "pause",
+                    "title": "计时器暂停",
+                    "description": "计时器暂停时触发"
+                },
+                {
+                    "name": "continue",
+                    "title": "计时器继续",
+                    "description": "计时器继续时触发"
                 },
                 {
                     "name": "stop",
-                    "title": "倒计时结束",
-                    "description": "倒计时结束时触发"
+                    "title": "计时器结束",
+                    "description": "计时器结束时触发"
                 }
             ],
             "next": true,
@@ -4305,7 +4342,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-form>\\n  <van-field required label=\\\"名称\\\" drole=\\\"other\\\">\\n    <template #input>\\n      <van-fieldinput  placeholder=\\\"请输入\\\" clearable></van-fieldinput>\\n    </template>\\n  </van-field>\\n  <van-field name=\\\"radio\\\" label=\\\"单选框\\\" drole=\\\"other\\\">\\n    <template #input>\\n      <van-radio-group direction=\\\"horizontal\\\">\\n        <van-radio name=\\\"1\\\" title=\\\"单选框 1\\\"></van-radio>\\n        <van-radio name=\\\"2\\\" title=\\\"单选框 2\\\"></van-radio>\\n      </van-radio-group>\\n    </template>\\n  </van-field>\\n  <div style=\\\"margin: 16px 16px 0\\\">\\n    <van-button round block=\\\"blockb\\\" type=\\\"info\\\" native-type=\\\"submit\\\" text=\\\"提交\\\">\\n    </van-button>\\n  </div>\\n</van-form>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-form>\\n  <van-field required label=\\\"名称\\\" drole=\\\"other\\\">\\n    <template #input>\\n      <van-fieldinput  placeholder=\\\"请输入\\\" clearable></van-fieldinput>\\n    </template>\\n  </van-field>\\n  <van-field name=\\\"radio\\\" label=\\\"单选框\\\" drole=\\\"other\\\">\\n    <template #input>\\n      <van-radio-group direction=\\\"horizontal\\\">\\n        <template #default=\\\"scope\\\">\\n          <van-radio name=\\\"1\\\" title=\\\"单选框 1\\\"></van-radio>\\n          <van-radio name=\\\"2\\\" title=\\\"单选框 2\\\"></van-radio>\\n        </template>\\n      </van-radio-group>\\n    </template>\\n  </van-field>\\n  <div style=\\\"margin: 16px 16px 0\\\">\\n    <van-button round block=\\\"blockb\\\" type=\\\"info\\\" native-type=\\\"submit\\\" text=\\\"提交\\\">\\n    </van-button>\\n  </div>\\n</van-form>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-form",
             "title": "表单",
@@ -4317,7 +4354,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-form>\n  <van-field required label=\"名称\" drole=\"other\">\n    <template #input>\n      <van-fieldinput  placeholder=\"请输入\" clearable></van-fieldinput>\n    </template>\n  </van-field>\n  <van-field name=\"radio\" label=\"单选框\" drole=\"other\">\n    <template #input>\n      <van-radio-group direction=\"horizontal\">\n        <van-radio name=\"1\" title=\"单选框 1\"></van-radio>\n        <van-radio name=\"2\" title=\"单选框 2\"></van-radio>\n      </van-radio-group>\n    </template>\n  </van-field>\n  <div style=\"margin: 16px 16px 0\">\n    <van-button round block=\"blockb\" type=\"info\" native-type=\"submit\" text=\"提交\">\n    </van-button>\n  </div>\n</van-form>\n</template>\n"
+                    "code": "<template>\n<van-form>\n  <van-field required label=\"名称\" drole=\"other\">\n    <template #input>\n      <van-fieldinput  placeholder=\"请输入\" clearable></van-fieldinput>\n    </template>\n  </van-field>\n  <van-field name=\"radio\" label=\"单选框\" drole=\"other\">\n    <template #input>\n      <van-radio-group direction=\"horizontal\">\n        <template #default=\"scope\">\n          <van-radio name=\"1\" title=\"单选框 1\"></van-radio>\n          <van-radio name=\"2\" title=\"单选框 2\"></van-radio>\n        </template>\n      </van-radio-group>\n    </template>\n  </van-field>\n  <div style=\"margin: 16px 16px 0\">\n    <van-button round block=\"blockb\" type=\"info\" native-type=\"submit\" text=\"提交\">\n    </van-button>\n  </div>\n</van-form>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -4855,7 +4892,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-search placeholder=\\\"请输入搜索关键词\\\" clearable show-action action-text=\\\"搜索\\\" clear-trigger=\\\"focus\\\" icon-align=\\\"left\\\"/>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-search placeholder=\\\"请输入搜索关键词\\\" clearable show-action actiontext=\\\"搜索\\\" cleartrigger=\\\"focus\\\" iconalign=\\\"left\\\" input-align=\\\"left\\\"/>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-search",
             "title": "搜索框",
@@ -4867,7 +4904,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-search placeholder=\"请输入搜索关键词\" clearable show-action action-text=\"搜索\" clear-trigger=\"focus\" icon-align=\"left\"/>\n</template>\n"
+                    "code": "<template>\n<van-search placeholder=\"请输入搜索关键词\" clearable show-action actiontext=\"搜索\" cleartrigger=\"focus\" iconalign=\"left\" input-align=\"left\"/>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -4881,9 +4918,9 @@
                 },
                 {
                     "name": "placeholder",
-                    "title": "占位提示稳字",
+                    "title": "占位提示文字",
                     "type": "string",
-                    "description": "占位提示稳字"
+                    "description": "占位提示文字"
                 },
                 {
                     "name": "shape",
@@ -4915,7 +4952,7 @@
                     "description": "是否启用清除图标，点击清除图标后会清空输入框"
                 },
                 {
-                    "name": "clear-trigger",
+                    "name": "cleartrigger",
                     "title": "显示清除图标",
                     "type": "string",
                     "options": [
@@ -4931,7 +4968,7 @@
                     "description": "显示清除图标"
                 },
                 {
-                    "name": "action-text",
+                    "name": "actiontext",
                     "title": "按钮文字",
                     "type": "string",
                     "description": "按钮文字"
@@ -4969,7 +5006,7 @@
                     "description": "搜索框形状"
                 },
                 {
-                    "name": "icon-align",
+                    "name": "iconalign",
                     "title": "搜索图标位置",
                     "type": "string",
                     "options": [
@@ -5048,7 +5085,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-radio-group direction=\\\"horizontal\\\">\\n  <template #default=\\\"scope\\\">\\n    <van-radio name=\\\"n\\\" title=\\\"单选框 n\\\"></van-radio>\\n  </template>\\n</van-radio-group>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-radio-group direction=\\\"horizontal\\\">\\n  <template #default=\\\"scope\\\">\\n    <van-radio name=\\\"n\\\" title=\\\"单选框 n\\\" vusion-disabled-cut vusion-disabled-copy></van-radio>\\n  </template>\\n</van-radio-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-radio-group",
             "title": "单选组",
@@ -5060,7 +5097,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-radio-group direction=\"horizontal\">\n  <template #default=\"scope\">\n    <van-radio name=\"n\" title=\"单选框 n\"></van-radio>\n  </template>\n</van-radio-group>\n</template>\n"
+                    "code": "<template>\n<van-radio-group direction=\"horizontal\">\n  <template #default=\"scope\">\n    <van-radio name=\"n\" title=\"单选框 n\" vusion-disabled-cut vusion-disabled-copy></van-radio>\n  </template>\n</van-radio-group>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -5126,7 +5163,7 @@
                         {
                             "name": "van-radio",
                             "title": "单选项",
-                            "snippet": "<van-radio title=\"第N个\"></van-radio>"
+                            "snippet": "<van-radio title=\"单选框 n\" name=\"n\"></van-radio>"
                         }
                     ]
                 }
@@ -5274,7 +5311,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-checkbox-group direction=\\\"horizontal\\\">\\n  <template #default=\\\"scope\\\">\\n    <van-checkbox name=\\\"n\\\" title=\\\"选框 n\\\"></van-checkbox>\\n  </template>\\n</van-checkbox-group>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-checkbox-group direction=\\\"horizontal\\\">\\n  <template #default=\\\"scope\\\">\\n    <van-checkbox name=\\\"n\\\" title=\\\"选框 n\\\" vusion-disabled-cut vusion-disabled-copy></van-checkbox>\\n  </template>\\n</van-checkbox-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-checkbox-group",
             "title": "多选组",
@@ -5286,7 +5323,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-checkbox-group direction=\"horizontal\">\n  <template #default=\"scope\">\n    <van-checkbox name=\"n\" title=\"选框 n\"></van-checkbox>\n  </template>\n</van-checkbox-group>\n</template>\n"
+                    "code": "<template>\n<van-checkbox-group direction=\"horizontal\">\n  <template #default=\"scope\">\n    <van-checkbox name=\"n\" title=\"选框 n\" vusion-disabled-cut vusion-disabled-copy></van-checkbox>\n  </template>\n</van-checkbox-group>\n</template>\n"
                 }
             ],
             "attrs": [
