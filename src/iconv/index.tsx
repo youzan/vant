@@ -9,7 +9,6 @@ import VanEmptyCol from '../emptycol'
 import config from './config'
 
 import {onlineSvgIcon} from 'online-svg-icon-vue2'
-console.log(onlineSvgIcon)
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
