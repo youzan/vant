@@ -97,7 +97,7 @@ export default {
               size: 1000
             });
             console.log(res);
-            this.options = this.divide(res.content);
+            this.options = this.divide(Array.isArray(res) ? res : res.content);
           } catch (error) {
             console.error(error);
           }
