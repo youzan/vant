@@ -40,11 +40,11 @@
   slots:
     - name: default
       description: 插入`<van-dropdown-menu>`子组件。
-      empty-background: add-sub-large
+      empty-background: add-sub
       support:
         - name: van-dropdown-menu
           title: 菜单项
-          snippet: '<van-dropdown-item title="标题"><van-cell clickable :isLink="false"><template #title>标题1</template></van-cell></van-dropdown-item>'
+          snippet: '<van-dropdown-item title="标题"><van-dropdown-item-son clickable :isLink="false"><template #title>标题1</template></van-dropdown-item-son></van-dropdown-item>'
 - name: van-dropdown-item
   title: 菜单项
   attrs:
@@ -67,7 +67,7 @@
   slots:
     - name: default
       description: 插入`<van-dropdown-item-son>`子组件。
-      empty-background: add-sub-large
+      empty-background: add-sub
       support:
         - name: van-dropdown-item-son
           title: 菜单项
