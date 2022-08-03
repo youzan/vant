@@ -26,6 +26,21 @@
       title: 精度
       type: string, number
       description: 固定显示的小数位数
+    - name: placeholder
+      title: 占位符
+      type: string
+      default: 请输入
+      description: 为空时的占位文本
+    - name: showPlus
+      title: 是否显示增加按钮
+      type: boolean
+      default: true
+      description: 是否显示增加按钮
+    - name: showMinus
+      title: 是否显示减少按钮
+      type: boolean
+      default: true
+      description: 是否显示减少按钮
     - name: disablePlus
       title: 是否禁用增加按钮
       type: boolean
@@ -61,6 +76,18 @@
       type: boolean
       default: false
       description: 是否禁用
+    - name: align
+      title: 对齐方式
+      type: string
+      options:
+        - value: left
+          title: 左对齐
+        - value: center
+          title: 居中对齐
+        - value: right
+          title: 右对齐
+      default: center
+      description: 样式风格
   slots: false
   events:
     - name: click

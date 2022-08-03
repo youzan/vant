@@ -1,10 +1,10 @@
 ### 基本用法
 
 ``` html
-<van-stepper :showPlus="false" :showMinus="false"></van-stepper>
+<van-stepper :showPlus="false" :showMinus="false" placeholder="请输入" align="left"></van-stepper>
 ```
 ### 步进模式
 
 ``` html
-<van-stepper></van-stepper>
+<van-stepper placeholder="请输入"></van-stepper>
 ```

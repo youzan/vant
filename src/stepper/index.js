@@ -72,12 +72,17 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    align: String,
   },
 
   data() {
-    const defaultValue = this.value ?? this.defaultValue;
+    const defaultValue = this.value;
     const value = this.format(defaultValue);
-
+    if (this.ifDesigner()) {
+      return {
+        currentValue: this.value,
+      };
+    }
     if (!equal(value, this.value)) {
       this.$emit('input', value);
       this.$emit('update:value', value);
@@ -111,7 +116,9 @@ export default createComponent({
       if (this.buttonSize) {
         style.height = addUnit(this.buttonSize);
       }
-
+      if (this.align) {
+        style.textAlign = (this.align);
+      }
       return style;
     },
 
@@ -154,6 +161,9 @@ export default createComponent({
   },
 
   methods: {
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     check() {
       const val = this.format(this.currentValue);
       if (!equal(val, this.currentValue)) {
