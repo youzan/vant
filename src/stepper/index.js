@@ -42,7 +42,7 @@ export default createComponent({
     },
     min: {
       type: [Number, String],
-      default: 1,
+      default: -Infinity,
     },
     max: {
       type: [Number, String],
@@ -177,7 +177,7 @@ export default createComponent({
     },
 
     format(value) {
-      if (this.allowEmpty && value === '') {
+      if (this.allowEmpty && (value === '' || value === undefined)) {
         return value;
       }
 

@@ -11,12 +11,10 @@
       type: number
       sync: true
       model: true
-      default: 1
       description: 值
     - name: min
       title: 最小值
       type: string, number
-      default: 1
       description: 最小值
     - name: max
       title: 最大值
