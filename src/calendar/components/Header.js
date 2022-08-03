@@ -61,7 +61,7 @@ export default createComponent({
 
     genSubtitle() {
       if (this.showSubtitle) {
-        return <div class={bem('header-subtitle')} onClick={this.togglePick}>{this.subtitle}</div>;
+        return <div class={bem('header-subtitle')}>{this.subtitle}</div>;
       }
     },
 
