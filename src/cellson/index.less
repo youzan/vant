@@ -1,0 +1,116 @@
+@import '../style/var';
+@import '../style/mixins/hairline';
+
+.van-cellson {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  // padding: 14px 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0 16px;
+  overflow: hidden;
+  color: @cell-text-color;
+  font-size: @cell-font-size;
+  line-height: 22px;
+  // min-height: 50px;
+  background-color: @cell-background-color;
+
+  &::after {
+    // .hairline-bottom(@cell-border-color, @padding-md, @padding-md);
+    .hairline-bottom(@cell-border-color, @padding-md, 0);
+  }
+
+  &:last-child::after,
+  &--borderless::after {
+    display: none;
+  }
+
+  &__label {
+    margin-top: @cell-label-margin-top;
+    color: @cell-label-color;
+    font-size: @cell-label-font-size;
+    line-height: @cell-label-line-height;
+  }
+
+  &__title,
+  &__value {
+    flex: 1;
+  }
+
+  &__title {
+    // padding-left: 16px;
+  }
+
+  &__value {
+    position: relative;
+    overflow: hidden;
+    color: @cell-value-color;
+    text-align: right;
+    vertical-align: middle;
+    word-wrap: break-word;
+
+    &--alone {
+      color: @text-color;
+      text-align: left;
+    }
+  }
+
+  &__left-icon[class],
+  &__right-icon[class] {
+    height: @cell-line-height;
+    font-size: @cell-icon-size;
+    line-height: @cell-line-height;
+  }
+
+  &__left-icon {
+    margin-right: @padding-base;
+  }
+
+  &__right-icon {
+    margin-left: @padding-base;
+    color: @cell-right-icon-color;
+  }
+
+  &--clickable {
+    cursor: pointer;
+
+    &:active {
+      background-color: @cell-active-color;
+    }
+  }
+
+  &--required {
+    overflow: visible;
+
+    &::before {
+      position: absolute;
+      left: @padding-xs;
+      color: @cell-required-color;
+      font-size: @cell-font-size;
+      content: '*';
+    }
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--large {
+    padding-top: @cell-large-vertical-padding;
+    padding-bottom: @cell-large-vertical-padding;
+
+    .van-cell__title {
+      font-size: @cell-large-title-font-size;
+    }
+
+    .van-cell__label {
+      font-size: @cell-large-label-font-size;
+    }
+  }
+
+  &--nocontentforlink {
+    flex-direction: row-reverse;
+  }
+}
