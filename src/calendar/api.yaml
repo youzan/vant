@@ -8,9 +8,9 @@
       title: 左侧标题
       type: string
       description: 左侧标题
-    - name: defaultDate
+    - name: default-date
       title: 值
-      type: Date, Array
+      type: string, Date, Array
       sync: true
       model: true
       default: null
