@@ -12,7 +12,7 @@
       type: string
       options:
         - value: flex
-          title: flex
+          title: 弹性布局
         - value: "-"
           title: 正常
       default: flex
