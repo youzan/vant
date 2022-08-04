@@ -14,7 +14,8 @@ import {
 
 // Components
 import Icon from '../icon';
-import Cell from '../cell';
+// import Cell from '../cell';
+import Cellson from '../cellson';
 import { cellProps } from '../cell/shared';
 
 import VanEmptyCol from '../emptycol/index';
@@ -748,8 +749,9 @@ export default createComponent({
     if (extra) {
       scopedSlots.extra = () => extra;
     }
+
     return (
-      <Cell
+      <Cellson
         icon={this.leftIcon}
         size={this.size}
         center={this.center}
@@ -795,7 +797,7 @@ export default createComponent({
         </div>
         {this.genWordLimit()}
         {this.genMessage()}
-      </Cell>
+      </Cellson>
     );
   },
 });
