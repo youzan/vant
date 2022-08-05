@@ -3372,7 +3372,7 @@
                     "title": "分页大小",
                     "type": "number",
                     "default": 20,
-                    "description": "分页大小"
+                    "description": "分页过小可能会导致滚动加载更多失效"
                 },
                 {
                     "name": "remote-paging",
