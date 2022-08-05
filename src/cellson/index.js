@@ -49,6 +49,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    insel: {
+      type: Boolean,
+      default: false,
+    }
   },
 
   data() {
@@ -294,6 +298,7 @@ export default createComponent({
       center: props.center,
       required: props.required,
       borderless: !props.border,
+      insel: props.insel
     };
 
     if (size) {
@@ -325,7 +330,7 @@ export default createComponent({
 
     const ado = {
       ...this.$attrs,
-      [infield ? 'is-sub': 'noallow']: ''
+      [infield ? 'is-sub': 'noallow']: '',
     }
 
     const canActivateItem = () => {

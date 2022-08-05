@@ -116,6 +116,10 @@ export default createComponent({
     },
     drole: String,
     frompara: String,
+    insel: {
+      type: Boolean,
+      default: false,
+    }
   },
 
   data() {
@@ -780,6 +784,7 @@ export default createComponent({
         notitle={this.notitle}
         notitleblock={this.notitleblock}
         novalue={this.novalue}
+        insel={this.insel}
       >
         <div class={bem('body')}>
           {this.genInput()}
