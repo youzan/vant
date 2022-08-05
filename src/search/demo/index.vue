@@ -1,5 +1,8 @@
 <template>
   <demo-section>
+    <demo-block>
+      <van-search placeholder="请输入搜索关键词" show-action action-text="搜索" :value.sync="hello" icon-align="right"/>
+    </demo-block>
     <demo-block :title="t('basicUsage')">
       <van-search v-model="value1" :placeholder="t('placeholder')" />
     </demo-block>
@@ -84,6 +87,7 @@ export default {
       value4: '',
       value5: '',
       value6: '',
+      hello: 'q',
     };
   },
 

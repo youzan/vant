@@ -5,6 +5,15 @@
   icon: checkboxes
   description: 多项中选择一个或多个时使用
   attrs:
+    - name: data-source
+      title: 数据源
+      type: array, function
+      description: 一个包含字符串或对象的数组或者函数
+    - name: data-schema
+      title: 数据类型
+      type: schema
+      description: 组件列表每一项的结构
+      compType: dataTypeCheckBoxItem
     - name: value
       title: 值
       type: any
@@ -42,7 +51,7 @@
       support:
         - name: van-checkbox
           title: 复选项
-          snippet: <van-checkbox title="第N个"></van-checkbox>
+          snippet: <van-checkbox name="n" title="选框 n"></van-checkbox>
   events:
     - name: change
       title: 值改变

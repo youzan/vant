@@ -9,6 +9,7 @@ import { ChildrenMixin } from '../mixins/relation';
 import Iconv from '../iconv';
 import Info from '../info';
 import Text from '../text';
+import encodeUrl from '../utils/encodeUrl';
 
 const [createComponent, bem] = createNamespace('tabbar-item');
 
@@ -73,7 +74,7 @@ export default createComponent({
 
   methods: {
     newdest(destination) {
-      return destination ? '/' + destination.split('/').slice(2).join('/') : destination;
+      return encodeUrl(destination ? '/' + destination.split('/').slice(2).join('/') : destination);
     },
     onClick(event) {
       this.parent.onChange(this.name || this.index);
@@ -83,13 +84,12 @@ export default createComponent({
       const parent = this.$parent;
       function currentHref() {
         if (props.href !== undefined)
-            return props.href;
+          return encodeUrl(props.href);
         if (props.destination !== undefined && props.destination !== "")
-            return props.destination;
-        else if (parent?.$router && props.to !== undefined)
-            return parent?.$router.resolve(props.to, parent?.$route, props.append).href;
-        else
-            return undefined;
+          return encodeUrl(props.destination);
+        if (parent?.$router && props.to !== undefined)
+          return encodeUrl(parent?.$router.resolve(props.to, parent?.$route, props.append).href);
+        return undefined;
       }
 
       const hrefR = currentHref();
@@ -100,22 +100,22 @@ export default createComponent({
       if (hrefR === undefined || props.destination) {
         let to;
         if (props.destination) {
-            // 只处理/a/b形式的链接
-            const origin = window.location.origin;
-            const path = window.location.href.replace(origin, '').split('/');
-            const destination = props.destination.replace(origin, '').split('/');
-            if (path[1] === destination[1]) {
-                to = '/' + destination.slice(2).join('/');
-            } else {
-                return;
-            }
+          // 只处理/a/b形式的链接
+          const { origin } = window.location;
+          const path = window.location.href.replace(origin, '').split('/');
+          const destination = props.destination.replace(origin, '').split('/');
+          if (path[1] === destination[1]) {
+            to = encodeUrl('/' + destination.slice(2).join('/'));
+          } else {
+            return;
+          }
         }
 
 
         const currentTo = to || props.to;
         if (currentTo === undefined)
-            return;
-        let cancel = false;
+          return;
+        const cancel = false;
         // this.$emit(that, 'before-navigate',  {
         //   to: currentTo,
         //   replace: props.replace,
@@ -123,13 +123,13 @@ export default createComponent({
         //   preventDefault: () => (cancel = true),
         // });
         if (cancel)
-            return;
+          return;
         const $router = parent?.$router;
         const $route = parent?.$route;
         const { location } = $router.resolve(
-            currentTo,
-            $route,
-            props.append,
+          currentTo,
+          $route,
+          props.append,
         );
         props.replace ? $router.replace(location) : $router.push(location);
 
@@ -167,7 +167,7 @@ export default createComponent({
 
   render() {
     const realbaget = this.badge ?? this.info;
-    const comBaget = typeof (realbaget) === 'string' ? realbaget : (this.badgemax && realbaget>this.badgemax ? `${this.badgemax}+` : realbaget);
+    const comBaget = typeof (realbaget) === 'string' ? realbaget : (this.badgemax && realbaget > this.badgemax ? `${this.badgemax}+` : realbaget);
     const { active } = this;
     const color = this.parent[active ? 'activeColor' : 'inactiveColor'];
 
@@ -181,9 +181,9 @@ export default createComponent({
       <div class={bem({ active })} style={{ color }} onClick={this.onClick}>
         <div class={bem('icon')}>
           {this.genIcon(active)}
-          <Info dot={this.dot} info={this.showbaget && comBaget} />
+          {(this.showbaget && comBaget) ? <Info dot={this.dot} info={comBaget} /> : null}
         </div>
-        <div class={bem('text')} vusion-slot-name="text">{this.text || this.slots('default', { active })}</div>
+        <div class={bem('text')} vusion-slot-name-edit="text">{this.text || this.slots('default', { active })}</div>
       </div>
     );
   },

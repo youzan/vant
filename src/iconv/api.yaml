@@ -44,7 +44,9 @@
           advanced: true
       default: _self
       description: 链接打开方式
-  slots: false
+  slots:
+    - name: default
+      description: 插入文本或HTML
   events:
     - name: click
       title: 点击后

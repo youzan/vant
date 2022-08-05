@@ -54,7 +54,7 @@ export default createComponent({
 
     genText() {
       const Text = (
-        <span class={bem('text', { ellipsis: !this.scrollable })} vusion-slot-name="title">
+        <span class={bem('text', { ellipsis: !this.scrollable })} vusion-slot-name-edit="title">
           {this.slots() || this.title}
         </span>
       );

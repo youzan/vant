@@ -3,6 +3,7 @@ import { createNamespace, isDef } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
 import { cellProps, SharedCellProps } from './shared';
+import encodeUrl from '../utils/encodeUrl';
 
 // Components
 import Icon from '../icon';
@@ -45,7 +46,7 @@ function Cell(
 
     if (showLabel) {
       return (
-        <div class={[bem('label'), props.labelClass]} vusion-slot-name="label">
+        <div class={[bem('label'), props.labelClass]} vusion-slot-name="label" vusion-slot-name-edit="label">
           {slots.label ? slots.label() : label}
         </div>
       );
@@ -55,7 +56,7 @@ function Cell(
   function Title() {
     if (showTitle) {
       return (
-        <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title">
+        <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title" vusion-slot-name-edit="title">
           {slots.title ? slots.title() : title}
           {/* {Label()} */}
         </div>
@@ -65,16 +66,16 @@ function Cell(
 
   function Value() {
     const showValue = slots.default || isDef(value);
-    //@ts-ignore
+    // @ts-ignore
     const ifDesigner = (ctx.parent.$env && ctx.parent.$env.VUE_APP_DESIGNER);
 
     // if (showValue) {
-      return (
-        <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default">
-          {slots.default ? slots.default() : (isDef(value) ? <span>{value}</span>  : null)}
-          {(ifDesigner && !isDef(value) && !slots.default) ? <VanEmptyCol></VanEmptyCol> : null}
-        </div>
-      );
+    return (
+      <div class={[bem('value', { alone: !showTitle }), props.valueClass]} vusion-slot-name="default">
+        {slots.default ? slots.default() : (isDef(value) ? <span>{value}</span> : null)}
+        {(ifDesigner && !isDef(value) && !slots.default) ? <VanEmptyCol></VanEmptyCol> : null}
+      </div>
+    );
     // }
   }
 
@@ -115,13 +116,12 @@ function Cell(
 
   function currentHref() {
     if (props.href !== undefined)
-        return props.href;
+      return encodeUrl(props.href);
     if (props.destination !== undefined)
-        return props.destination;
-    else if (ctx.parent?.$router && props.to !== undefined)
-        return ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href;
-    else
-        return undefined;
+      return encodeUrl(props.destination);
+    if (ctx.parent?.$router && props.to !== undefined)
+      return encodeUrl(ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href);
+    return undefined;
   }
 
   function onClick(event: Event) {
@@ -138,40 +138,40 @@ function Cell(
     if (hrefR === undefined) {
       let to;
       if (props.destination) {
-          // 只处理/a/b形式的链接
-          const origin = window.location.origin;
-          const path = window.location.href.replace(origin, '').split('/');
-          const destination = props.destination.replace(origin, '').split('/');
-          if (path[1] === destination[1]) {
-              to = '/' + destination.slice(2).join('/');
-          } else {
-              return;
-          }
+        // 只处理/a/b形式的链接
+        const { origin } = window.location;
+        const path = window.location.href.replace(origin, '').split('/');
+        const destination = props.destination.replace(origin, '').split('/');
+        if (path[1] === destination[1]) {
+          to = encodeUrl('/' + destination.slice(2).join('/'));
+        } else {
+          return;
+        }
       }
 
 
       const currentTo = to || props.to;
       if (currentTo === undefined)
-          return;
+        return;
       let cancel = false;
-      emit(ctx, 'before-navigate',  {
+      emit(ctx, 'before-navigate', {
         to: currentTo,
         replace: props.replace,
         append: props.append,
         preventDefault: () => (cancel = true),
       });
       if (cancel)
-          return;
+        return;
       const $router = ctx.parent?.$router;
       const $route = ctx.parent?.$route;
       const { location } = $router.resolve(
-          currentTo,
-          $route,
-          props.append,
+        currentTo,
+        $route,
+        props.append,
       );
       props.replace ? $router.replace(location) : $router.push(location);
 
-      emit(ctx, 'navigate',  { to: currentTo, replace: props.replace, append: props.append });
+      emit(ctx, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
     } else {
       function downloadClick() {
         const a = document.createElement("a");
@@ -185,7 +185,7 @@ function Cell(
       downloadClick();
     }
 
-      // functionalRoute(ctx);
+    // functionalRoute(ctx);
   }
 
   const clickable = props.clickable ?? isLink;

@@ -1,5 +1,18 @@
 <template>
   <demo-section>
+    <demo-block>
+      <van-radio-group class="demo-radio-group" :data-source="[1,2,3]">
+        <template #default="scope">
+          <van-radio :name="scope.item.item" :title="'选框'+scope.item.item"></van-radio>
+        </template>
+      </van-radio-group>
+    </demo-block>
+    <demo-block>
+      <van-radio-group class="demo-radio-group">
+        <van-radio name="1" >{{ t('radio') }} 1</van-radio>
+        <van-radio name="23" >{{ t('radio') }} 2</van-radio>
+      </van-radio-group>
+    </demo-block>
     <demo-block :title="t('basicUsage')">
       <van-radio-group class="demo-radio-group">
         <van-radio name="1" >{{ t('radio') }} 1</van-radio>

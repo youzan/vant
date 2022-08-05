@@ -113,7 +113,7 @@ export default createComponent({
 
       if (showLabel) {
         return (
-          <div class={[bem('label'), props.labelClass]} vusion-slot-name="label">
+          <div class={[bem('label'), props.labelClass]} vusion-slot-name="label" vusion-slot-name-edit="label">
             {slots('lable') ? slots('lable') : label}
           </div>
         );
@@ -128,14 +128,14 @@ export default createComponent({
         if (notitle) {
           if ((!isDef(title) || title === '') && !slots('title')) return null;
           return (
-            <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title">
+            <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title" vusion-slot-name-edit="title">
               {slots('title') ? slots('title') : title}
             </div>
           );
         }
         if(ifDesigner && singleslot) return null;
         return (
-          <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-scope-id={that.$vnode.context.$options._scopeId} vusion-slot-name="title">
+          <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-scope-id={that.$vnode.context.$options._scopeId} vusion-slot-name="title" vusion-slot-name-edit="title">
             {slots('title') ? slots('title') : title}
             {(ifDesigner && (!isDef(title) || title === '') && !slots('title')) ? <van-empty-col></van-empty-col> : null}
           </div>

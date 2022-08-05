@@ -113,7 +113,8 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
-    drole: String
+    drole: String,
+    frompara: String,
   },
 
   data() {
@@ -208,12 +209,16 @@ export default createComponent({
   methods: {
     showClear() {
       const readonly = this.getProp('readonly');
+      const frompara = this.getProp('frompara');
       if ((this.clearable && !readonly)) {
         const hasValue = isDef(this.value) && this.value !== '';
         const trigger =
           this.clearTrigger === 'always' ||
           (this.clearTrigger === 'focus' && this.focused);
 
+        if (frompara === 'vansearch') {
+          return trigger;
+        }
         return hasValue && trigger;
       }
     },
@@ -445,6 +450,9 @@ export default createComponent({
       this.focused = true;
       this.$emit('focus', event);
 
+
+      this.$emit('clickinput', event);//点击搜索框输入区域追加事件
+
       // https://github.com/youzan/vant/issues/9715
       this.$nextTick(this.adjustSize);
 
@@ -476,15 +484,20 @@ export default createComponent({
 
     onClickLeftIcon(event) {
       this.$emit('click-left-icon', event);
+
+      this.$emit('iconsearch', event);//点击搜索框搜索按钮时触发
     },
 
     onClickRightIcon(event) {
       this.$emit('click-right-icon', event);
+
+      this.$emit('iconsearch', event);//点击搜索框搜索按钮时触发
     },
 
     onClear(event) {
       preventDefault(event);
       this.$emit('input', '');
+      this.$emit('update:value', '');
       this.$emit('clear', event);
     },
 
@@ -568,7 +581,6 @@ export default createComponent({
             class={bem('control', [inputAlign, 'custom'])}
             onClick={this.onClickInput}
             vusion-slot-name="input"
-            vusion-scope-id={this.$parent.$parent.$options._scopeId}
           >
             <van-empty-col></van-empty-col>
           </div>

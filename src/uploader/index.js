@@ -549,12 +549,6 @@ export default createComponent({
                 file.url = res[this.urlField];
               }
               file.response = res;
-              this.$emit('success', {
-                  res,
-                  file,
-                  file,
-                  xhr,
-              }, this);
               setTimeout(() => {
                 // const value = [...this.fileList].filter(file => file.url && file.url.length > 0).map(file => {
                 //   return {url: file.url}
@@ -567,6 +561,13 @@ export default createComponent({
                   })
                   this.$emit('input', this.toValue(value));
                   this.$emit('update:fileListProp', this.toValue(value));
+
+                  this.$emit('success', {
+                      res,
+                      file,
+                      file,
+                      xhr,
+                  }, this);
                 }
               }, 100)
 

@@ -5,6 +5,15 @@
   icon: radios
   description: 多项中选择一个时使用
   attrs:
+    - name: data-source
+      title: 数据源
+      type: array, function
+      description: 一个包含字符串或对象的数组或者函数
+    - name: data-schema
+      title: 数据类型
+      type: schema
+      description: 组件列表每一项的结构
+      compType: dataTypeRadioItem
     - name: value
       title: 值
       type: any
@@ -30,7 +39,7 @@
         - value: vertical
           title: 垂直
       default: horizontal
-      description: 是否禁用
+      description: 排列方向
   slots:
     - name: default
       description: 插入`<van-radio>`子组件。
@@ -38,7 +47,7 @@
       support:
         - name: van-radio
           title: 单选项
-          snippet: <van-radio title="第N个"></van-radio>
+          snippet: <van-radio title="单选框 n" name="n"></van-radio>
   events:
     - name: change
       title: 值改变时

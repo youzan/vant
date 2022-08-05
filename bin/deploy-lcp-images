@@ -10,6 +10,9 @@ const components = config.docs.components.filter((component) => !component.href 
 
 components.forEach((component) => {
     let command = `lcap deploy src/${component.name}/screenshots`;
+    if (component.vusion) {
+      command = `lcap deploy src-vusion/components/${component.name}/screenshots`;
+    }
     // let commandDrawings = `lcap deploy src/${component.name}/drawings`;
     if (argv.platform) {
         command = `${command} --platform ${argv.platform}`;

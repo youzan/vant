@@ -1,0 +1,106 @@
+- name: van-search
+  title: 搜索框
+  description: 内部元素按照一定的规则布局
+  icon: search
+  labels:
+    - Form
+  next: true
+  nested: true
+  attrs:
+    - name: value
+      title: 值
+      type: any
+      sync: true
+      model: true
+      description: 值
+    - name: placeholder
+      title: 占位提示文字
+      type: string
+      description: 占位提示文字
+    - name: shape
+      title: 搜索框形状
+      type: string
+      options:
+        - value: square
+          title: 方形
+        - value: round
+          title: 圆形
+      default: square
+      description: 搜索框形状
+    - name: maxlength
+      title: 输入的最大字符数
+      type: string | number
+      description: 输入的最大字符数
+    - name: clearable
+      title: 是否启用清除图标
+      type: boolean
+      description: 是否启用清除图标，点击清除图标后会清空输入框
+    - name: cleartrigger
+      title: 显示清除图标
+      type: string
+      options:
+        - value: always
+          title: 一直显示
+        - value: focus
+          title: 输入框获取焦点且不为空时展示
+      description: 显示清除图标
+    - name: actiontext
+      title: 按钮文字
+      type: string
+      description: 按钮文字
+    - name: readonly
+      title: 只读
+      type: boolean
+      description: 只读
+    - name: disabled
+      title: 禁用
+      type: boolean
+      description: 禁用
+    - name: input-align
+      title: 内容对齐方式
+      type: string
+      options:
+        - value: left
+          title: 左对齐
+        - value: center
+          title: 居中对齐
+        - value: right
+          title: 右对齐
+      description: 搜索框形状
+    - name: iconalign
+      title: 搜索图标位置
+      type: string
+      options:
+        - value: left
+          title: 左
+        - value: right
+          title: 右
+      description: 搜索图标位置
+  slots:
+    - name: default
+      description: 内容
+  events:
+    - name: search
+      title: 确定搜索时触发
+      description: 确定搜索时触发
+    - name: cancel
+      title: 点击右侧按钮时触发
+      description: 点击右侧按钮时触发
+    - name: iconsearch
+      title: 点击搜索图标时触发
+      description: 点击搜索图标时触发
+    - name: input
+      title: 输入框内容变化时触发
+      description: 输入框内容变化时触发
+    - name: focus
+      title: 输入框获得焦点时触发
+      description: 输入框获得焦点时触发
+    - name: blur
+      title: 输入框失去焦点时触发
+      description: 输入框失去焦点时触发
+    - name: clickinput
+      title: 点击输入区域时触发
+      description: 点击输入区域时触发
+    - name: clear
+      title: 点击清除图标时触发
+      description: 点击清除图标时触发

@@ -4,8 +4,7 @@ import { inherit, emit } from '../utils/functional';
 import { preventDefault } from '../utils/dom/event';
 
 // Components
-import Field from '../field';
-
+import Fieldsonforsearch from '../fieldsonforsearch';
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots, ScopedSlot } from '../utils/types';
@@ -20,9 +19,10 @@ export type SearchProps = {
   rightIcon?: string;
   clearable: boolean;
   background: string;
-  actionText?: string;
+  actiontext?: string;
   showAction?: boolean;
-  clearTrigger?: string;
+  cleartrigger?: string;
+  iconalign?: string;
 };
 
 export type SearchSlots = DefaultSlots & {
@@ -65,20 +65,22 @@ function Search(
       if (slots.action) {
         return;
       }
+      // 平台这里 定义为按钮 不是清空操作
+      // emit(ctx, 'input', '');
+      // emit(ctx, 'cancel');
 
-      emit(ctx, 'input', '');
       emit(ctx, 'cancel');
     }
 
     return (
       <div class={bem('action')} role="button" tabindex="0" onClick={onCancel}>
-        {slots.action ? slots.action() : props.actionText || t('cancel')}
+        {slots.action ? slots.action() : props.actiontext}
       </div>
     );
   }
 
   const fieldData = {
-    attrs: ctx.data.attrs,
+    attrs: {...ctx.data.attrs},
     on: {
       ...ctx.listeners,
       keypress(event: KeyboardEvent) {
@@ -91,10 +93,13 @@ function Search(
       },
     },
   };
-
   const inheritData = inherit(ctx);
-  inheritData.attrs = undefined;
-
+  // inheritData.attrs = undefined;
+  Object.keys(fieldData?.attrs || {}).forEach((key) => {
+    if(/vusion/.test(key)) {
+      fieldData.attrs && fieldData.attrs[key] && delete fieldData?.attrs[key]
+    }
+  })
   return (
     <div
       class={bem({ 'show-action': props.showAction })}
@@ -104,18 +109,19 @@ function Search(
       {slots.left?.()}
       <div class={bem('content', props.shape)}>
         {Label()}
-        <Field
+        <Fieldsonforsearch
           type="search"
           border={false}
           value={props.value}
-          leftIcon={props.leftIcon}
-          rightIcon={props.rightIcon}
+          leftIcon={props.iconalign === 'left' ? props.leftIcon : ''}
+          rightIcon={props.iconalign === 'right' ? props.leftIcon : ''}
           clearable={props.clearable}
-          clearTrigger={props.clearTrigger}
+          clearTrigger={props.cleartrigger}
           scopedSlots={{
             'left-icon': slots['left-icon'],
             'right-icon': slots['right-icon'],
           }}
+          frompara="vansearch"
           {...fieldData}
         />
       </div>
@@ -128,10 +134,10 @@ Search.props = {
   value: String,
   label: String,
   rightIcon: String,
-  actionText: String,
+  actiontext: String,
   background: String,
   showAction: Boolean,
-  clearTrigger: String,
+  cleartrigger: String,
   shape: {
     type: String,
     default: 'square',
@@ -143,6 +149,10 @@ Search.props = {
   leftIcon: {
     type: String,
     default: 'search',
+  },
+  iconalign: {
+    type: String,
+    default: 'left',
   },
 };
 

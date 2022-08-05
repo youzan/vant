@@ -1,5 +1,18 @@
 <template>
   <demo-section>
+    <demo-block>
+      <van-checkbox-group :data-source="[1,2,3]">
+        <template #default="scope">
+          <van-checkbox :name="scope.item.item" :title="'选框'+scope.item.item"></van-checkbox>
+        </template>
+      </van-checkbox-group>
+    </demo-block>
+    <demo-block style="margin-top: 20px">
+      <van-checkbox-group>
+        <div class="fwfwwfwf"><van-checkbox name="b">{{ t('checkbox') }} b</van-checkbox></div>
+        <div class="fwfwwfwf"><van-checkbox name="b">{{ t('checkbox') }} b</van-checkbox></div>
+      </van-checkbox-group>
+    </demo-block>
     <demo-block :title="t('basicUsage')">
       <van-checkbox v-model="checkbox1">{{ t('checkbox') }}</van-checkbox>
     </demo-block>
@@ -48,8 +61,8 @@
 
     <demo-block :title="t('title3')">
       <van-checkbox-group >
-        <van-checkbox name="a" :value.sync="syncBool">{{ t('checkbox') }} a</van-checkbox>
-        <van-checkbox name="b">{{ t('checkbox') }} b</van-checkbox>
+        <div><van-checkbox name="a" :value.sync="syncBool">{{ t('checkbox') }} a</van-checkbox></div>
+        <div><van-checkbox name="b">{{ t('checkbox') }} b</van-checkbox></div>
       </van-checkbox-group>
     </demo-block>
 

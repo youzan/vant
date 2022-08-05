@@ -48,7 +48,6 @@ export { default as VanIndexAnchor } from '../../src/index-anchor';
 export { default as VanIndexBar } from '../../src/index-bar';
 export { default as VanInfo } from '../../src/info';
 export { default as VanLazyload } from '../../src/lazyload';
-export { default as VanLinearLayout } from '../../src/linear-layout';
 export { default as VanList } from '../../src/list';
 export { default as VanLoading } from '../../src/loading';
 
@@ -103,7 +102,12 @@ export { default as VanUploader } from '../../src/uploader';
 export { default as VanForComponents } from '../../src/for-components';
 export { default as VanGallery } from '../../src/gallery';
 export { default as VanCardu } from '../../src/cardu';
+export { default as VanFieldsonforsearch } from '../../src/fieldsonforsearch';
 
 
 export * from './list-view';
 export * from './grid-view';
+export * from './iframe';
+export * from './link';
+export * from './linear-layout';
+export * from './count-down-new';

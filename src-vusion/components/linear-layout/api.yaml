@@ -1,0 +1,104 @@
+- name: van-linear-layout
+  title: 线性布局
+  description: 内部元素按照一定的规则布局
+  icon: linear-layout
+  labels:
+    - Layout
+  next: true
+  nested: true
+  attrs:
+    - name: direction
+      title: 排列方向
+      type: string
+      options:
+        - value: horizontal
+          title: 横向排列
+        - value: vertical
+          title: 纵向排列
+      default: horizontal
+      description: 可更改布局的排列方向
+    - name: gap
+      title: 间隙
+      type: string
+      options:
+        - value: shrink
+          title: 收缩
+          advanced: true
+        - value: none
+          title: 无
+        - value: small
+          title: 小
+        - value: normal
+          title: 正常
+        - value: large
+          title: 大
+      default: normal
+      description: 内容块间隙大小
+    - name: display
+      title: 展示方式
+      type: string
+      options:
+        - value: inline
+          title: 行内
+        - value: block
+          title: 块级
+      default: block
+      description: 行内展示，或块级换行展示
+    - name: layout
+      title: 子元素展示方式
+      type: string
+      options:
+        - value: none
+          title: 子元素默认布局
+        - value: inline
+          title: 子元素行内布局
+        - value: block
+          title: 子元素块级布局
+      default: none
+      description: 子元素行内展示或块级换行展示
+    - name: type
+      title: 布局模式
+      type: string
+      options:
+        - value: flex
+          title: flex 布局模式
+      description: 布局模式
+      advanced: true
+    - name: justify
+      title: 主轴分布方式
+      type: string
+      options:
+        - value: start
+          title: 左对齐
+        - value: center
+          title: 居中对齐
+        - value: end
+          title: 右对齐
+        - value: space-between
+          title: 各行之间留有空
+          advanced: true
+        - value: space-around
+          title: 之前、之间、之后都留有空白
+          advanced: true
+      default: start
+      description: 内容对齐方式
+    - name: alignment
+      title: 纵轴对齐方式
+      type: string
+      options:
+        - value: start
+          title: 头对齐
+        - value: center
+          title: 居中对齐
+        - value: end
+          title: 尾对齐
+        - value: baseline
+          title: 基线对齐
+        - value: stretch
+          title: 拉伸子元素充满整个父元素空间
+      default: stretch
+      description: flex布局模式下的交叉轴对齐方式
+      advanced: true
+  slots:
+    - name: default
+      description: 内容

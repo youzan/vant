@@ -5,7 +5,7 @@
     <div v-show="showHead" :class="$style.head">
         <slot name="head">
             <u-checkbox v-if="multiple" :value="allChecked" @check="checkAll($event.value)"></u-checkbox>
-            <span :class="$style.title" vusion-slot-name="title">{{ title }}</span>
+            <span :class="$style.title" vusion-slot-name-edit="title">{{ title }}</span>
             <div :class="$style.extra">
                 <span v-if="multiple">{{ selectedVMs.length }}{{ currentDataSource && currentDataSource.originTotal !== Infinity ? ' / ' + currentDataSource.originTotal : '' }}</span>
             </div>
@@ -120,6 +120,18 @@ export default {
                 console.log(error);
             }
             this.refreshing = false;
+        },
+        onScroll(e) {
+          if (this?.$env.VUE_APP_DESIGNER) return;
+          this.throttledVirtualScroll(e);
+          if (!(this.pageable === 'auto-more' || (this.pageable === true && this.$options.isSelect)))
+              return;
+          if (this.currentLoading)
+              return;
+          const el = e.target;
+          if (el.scrollHeight <= el.scrollTop + el.clientHeight+30 && this.currentDataSource && this.currentDataSource.hasMore()) {
+            this.debouncedLoad(true);
+          }
         }
     },
 }

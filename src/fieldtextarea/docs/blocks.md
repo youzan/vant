@@ -1,5 +1,5 @@
 ### 基础用法
 
 ``` html
-<van-fieldtextarea></van-fieldtextarea>
+<van-fieldtextarea placeholder="请输入"></van-fieldtextarea>
 ```

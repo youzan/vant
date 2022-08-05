@@ -2,6 +2,7 @@
 import { createNamespace } from '../utils';
 import { SlotsMixin } from '../mixins/slots';
 import VanEmptyCol from '../emptycol';
+import encodeUrl from '../utils/encodeUrl';
 const [, bem] = createNamespace('cardu');
 export default {
     name: 'van-cardu',
@@ -30,11 +31,11 @@ export default {
           const parent = this.$parent;
           function currentHref() {
             if (props.href !== undefined)
-                return props.href;
+                return encodeUrl(props.href);
             if (props.destination !== undefined && props.destination !== "")
-                return props.destination;
+                return encodeUrl(props.destination);
             else if (parent?.$router && props.to !== undefined)
-                return parent?.$router.resolve(props.to, parent?.$route, props.append).href;
+                return encodeUrl(parent?.$router.resolve(props.to, parent?.$route, props.append).href);
             else
                 return undefined;
           }
@@ -51,7 +52,7 @@ export default {
               const path = window.location.href.replace(origin, '').split('/');
               const destination = props.destination.replace(origin, '').split('/');
               if (path[1] === destination[1]) {
-                  to = '/' + destination.slice(2).join('/');
+                  to = encodeUrl('/' + destination.slice(2).join('/'));
               } else {
                   return;
               }
@@ -95,8 +96,7 @@ export default {
     },
     render() {
       const { sr, split, border, shadow, coverSlot, noTitle} = this;
-      const ifDesigner = true;
-      // const ifDesigner = this.$env && this.$env.VUE_APP_DESIGNER;
+      const ifDesigner = this.$env && this.$env.VUE_APP_DESIGNER;
       return (
         <div class={bem('wrap', {border, shadow: shadow, sr: sr === 'r', image: coverSlot})} onClick={this.onClick}>
           <div class="van-cardu-cover" vusion-slot-name="cover">

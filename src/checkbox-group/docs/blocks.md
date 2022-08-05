@@ -2,7 +2,8 @@
 
 ``` html
 <van-checkbox-group direction="horizontal">
-  <van-checkbox name="1" title="选框 1"></van-checkbox>
-  <van-checkbox name="2" title="选框 2"></van-checkbox>
+  <template #default="scope">
+    <van-checkbox name="n" title="选框 n" vusion-disabled-cut vusion-disabled-copy></van-checkbox>
+  </template>
 </van-checkbox-group>
 ```

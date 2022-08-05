@@ -10,6 +10,9 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
   mixins: [ChildrenMixin(parent), FieldMixin],
 
   props: {
+    item: {
+      type: [Object,String, Number],
+    },
     name: null,
     value: null,
     title: String,
@@ -115,7 +118,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
               this.labelPosition,
               { disabled: this.isDisabled },
             ])}
-            vusion-slot-name="title"
+            vusion-slot-name-edit="title"
           >
             {slot ? slot : title}
           </span>
