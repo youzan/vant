@@ -128,14 +128,14 @@ export default createComponent({
         if (notitle) {
           if ((!isDef(title) || title === '') && !slots('title')) return null;
           return (
-            <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title" vusion-slot-name-edit="title">
+            <div class={[bem('title'), props.titleClass]} style={props.titleStyle}>
               {slots('title') ? slots('title') : title}
             </div>
           );
         }
         if(ifDesigner && singleslot) return null;
         return (
-          <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-scope-id={that.$vnode.context.$options._scopeId} vusion-slot-name="title" vusion-slot-name-edit="title">
+          <div class={[bem('title'), props.titleClass]} style={props.titleStyle}>
             {slots('title') ? slots('title') : title}
             {(ifDesigner && (!isDef(title) || title === '') && !slots('title')) ? <van-empty-col></van-empty-col> : null}
           </div>
@@ -151,7 +151,7 @@ export default createComponent({
       if (novalue) return null;
       if (ifDesigner) {
         return (
-          <div class={[bem('value', { alone: singleslot }), props.valueClass]} vusion-slot-name="default" vusion-scope-id={that.$vnode.context.$options._scopeId}>
+          <div class={[bem('value', { alone: singleslot }), props.valueClass]}>
             {slots() ? slots()  : (isDef(rtitle) && rtitle !== '' ? <span>{rtitle}</span>  : null)}
             {((!isDef(rtitle) || rtitle === '') && !slots()) ? <van-empty-col></van-empty-col> : null}
           </div>
@@ -347,6 +347,7 @@ export default createComponent({
         vusion-move={that.vusionMove}
         vusion-node-path={that.vusionNodePath}
         vusion-node-tag={that.vusionNodeTag}
+        vusion-template-input-node-path={that.vusionTemplateInputNodePath}
       >
         {LeftIcon()}
         {Title()}

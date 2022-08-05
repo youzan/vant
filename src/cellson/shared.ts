@@ -27,6 +27,7 @@ export type SharedCellProps = {
   vusionMove?: boolean,
   vusionNodePath?: string,
   vusionNodeTag?: string,
+  vusionTemplateInputNodePath?: string,
 };
 
 export const cellProps = {
@@ -70,4 +71,5 @@ export const cellProps = {
   vusionMove: Boolean,
   vusionNodePath: String,
   vusionNodeTag: String,
+  vusionTemplateInputNodePath: String,
 };

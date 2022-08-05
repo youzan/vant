@@ -566,7 +566,7 @@ export default createComponent({
       // const hasInputSlot = this.$slots.hasOwnProperty('input');
       const ifDesigner = (this.$env && this.$env.VUE_APP_DESIGNER);
       if (inputSlot) {
-        const ifInput = comSet.has(inputSlot[0].componentOptions.tag);
+        const ifInput = comSet.has(inputSlot[0]?.componentOptions?.tag);
         return ifInput ? (inputSlot) : (
           <div
             class={bem(!ifInput ? 'control' : '', [inputAlign, 'custom'])}
@@ -735,7 +735,7 @@ export default createComponent({
     const vusionMove = this.getProp('vusionMove');
     const vusionNodePath = this.getProp('vusionNodePath');
     const vusionNodeTag = this.getProp('vusionNodeTag');
-
+    const vusionNodeInputPath = this.$attrs['vusion-template-input-node-path'];
     const scopedSlots = {
       icon: this.genLeftIcon,
     };
@@ -776,6 +776,7 @@ export default createComponent({
         vusionMove={vusionMove}
         vusionNodePath={vusionNodePath}
         vusionNodeTag={vusionNodeTag}
+        vusionTemplateInputNodePath={vusionNodeInputPath}
         infield={this.drole === 'other'}
         notitle={this.notitle}
         notitleblock={this.notitleblock}
