@@ -19,6 +19,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.5.4](https://github.com/vant-ui/vant/compare/v3.5.3...v3.5.4)
+
+`2022-08-06`
+
+**Bug Fixes**
+
+- should replace NODE_ENV in CDN build [#10887](https://github.com/vant-ui/vant/issues/10887)
+
 ### [v3.5.3](https://github.com/vant-ui/vant/compare/v3.5.2...v3.5.3)
 
 `2022-07-31`

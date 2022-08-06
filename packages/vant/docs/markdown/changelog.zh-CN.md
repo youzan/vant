@@ -19,6 +19,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.5.4](https://github.com/vant-ui/vant/compare/v3.5.3...v3.5.4)
+
+`2022-08-06`
+
+**Bug Fixes**
+
+- 修复 CDN 资源中包含 `process.env.NODE_ENV` 导致报错的问题 [#10887](https://github.com/vant-ui/vant/issues/10887)
+
 ### [v3.5.3](https://github.com/vant-ui/vant/compare/v3.5.2...v3.5.3)
 
 `2022-07-31`
