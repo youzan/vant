@@ -14,11 +14,18 @@ export function getViteConfigForPackage({
   const { name, build } = getVantConfig();
   const entryExtension = build?.extensions?.esm || '.js';
   const entry = join(ES_DIR, `index${entryExtension}`);
+  const shouldReplaceEnv = minify || formats?.includes('umd');
 
   return {
     root: CWD,
 
     logLevel: 'silent',
+
+    define: shouldReplaceEnv
+      ? {
+          'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        }
+      : undefined,
 
     build: {
       lib: {
@@ -30,6 +37,7 @@ export function getViteConfigForPackage({
           return minify ? `${name}${suffix}.min.js` : `${name}${suffix}.js`;
         },
       },
+
       // terser has better compression than esbuild
       minify: minify ? 'terser' : false,
       rollupOptions: {
