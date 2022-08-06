@@ -1,10 +1,10 @@
 export default {
   name: 'Tên',
-  tel: 'điện thoại',
-  save: 'tiết kiệm',
-  confirm: 'xác nhận',
+  tel: 'Điện thoại',
+  save: 'Đồng ý',
+  confirm: 'Xác nhận',
   cancel: 'Hủy bỏ',
-  delete: 'xóa bỏ',
+  delete: 'Xóa bỏ',
   complete: 'Hoàn thành',
   loading: 'Đang tải...',
   telEmpty: 'Vui lòng điền số điện thoại',
@@ -13,69 +13,69 @@ export default {
   confirmDelete: 'Bạn có chắc chắn muốn xóa',
   telInvalid: 'Vui lòng nhập số điện thoại chính xác',
   vanCalendar: {
-    end: 'chấm dứt',
+    end: 'Chấm dứt',
     start: 'Bắt đầu',
-    title: 'chọn ngày',
+    title: 'Chọn ngày',
     confirm: 'Đảm bảo',
-    startEnd: 'bắt đầu / kết thúc',
-    weekdays: ['Chủ nhật','Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy'],
+    startEnd: 'Bắt đầu / Kết thúc',
+    weekdays: ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'],
     monthTitle: (year: number, month: number) => `${year} năm ${month} tháng`,
     rangePrompt: (maxRange: number) => `Các ngày được chọn không được vượt quá ${maxRange} ngày`,
   },
   vanCascader: {
-    select: 'Xin hãy lựa chọn',
+    select: 'Xin hãy lựa chọn'
   },
   vanContactCard: {
-    addText: 'Thêm địa chỉ liên hệ',
+    addText: 'Thêm địa chỉ liên hệ'
   },
   vanContactList: {
-    addText: 'Địa chỉ liên lạc mới',
+    addText: 'Địa chỉ liên lạc mới'
   },
   vanPagination: {
-    prev: 'trang trước',
-    next: 'trang sau',
+    prev: 'Trang trước',
+    next: 'Trang sau'
   },
   vanPullRefresh: {
     pulling: 'Kéo xuống để làm mới...',
-    loosing: 'Phát hành để làm mới...',
+    loosing: 'Phát hành để làm mới...'
   },
   vanSubmitBar: {
-    label: 'toàn bộ:',
+    label: 'Toàn bộ:'
   },
   vanCoupon: {
     unlimited: 'Không có ngưỡng sử dụng',
     discount: (discount: number) => `${discount} Chiết khấu`,
-    condition: (condition: number) => `Có sẵn sau khi chi tiêu ${condition} nhân dân tệ`,
+    condition: (condition: number) => `Có sẵn sau khi chi tiêu ${condition} Việt Nam Đồng`,
   },
   vanCouponCell: {
-    title: 'phiếu giảm giá',
+    title: 'Phiếu giảm giá',
     tips: 'Chưa có',
     count: (count: number) => `${count} trang tính khả dụng`,
   },
   vanCouponList: {
     empty: 'Chưa có phiếu giảm giá',
-    exchange: 'trao đổi',
+    exchange: 'Trao đổi',
     close: 'Không sử dụng phiếu giảm giá',
     enable: 'Có sẵn',
     disabled: 'không có sẵn',
-    placeholder: 'Vui lòng nhập mã khuyến mãi',
+    placeholder: 'Vui lòng nhập mã khuyến mãi'
   },
   vanAddressEdit: {
-    area: 'vùng',
-    postal: 'mã bưu điện',
-    areaEmpty: 'vui lòng chọn khu vực',
+    area: 'Khu vực',
+    postal: 'Mã bưu điện',
+    areaEmpty: 'Vui lòng chọn khu vực',
     addressEmpty: 'Vui lòng điền vào địa chỉ chi tiết',
     postalEmpty: 'Định dạng mã zip không chính xác',
-    defaultAddress: 'đặt làm địa chỉ giao hàng mặc định',
+    defaultAddress: 'Đặt làm địa chỉ giao hàng mặc định',
     telPlaceholder: 'Số điện thoại của người nhận hàng',
     namePlaceholder: 'Tên người nhận hàng',
-    areaPlaceholder: 'Chọn Tỉnh / Thành phố / Quận / Huyện',
+    areaPlaceholder: 'Chọn Tỉnh / Thành phố / Quận / Huyện'
   },
   vanAddressEditDetail: {
     label: 'Địa chỉ chi tiết',
-    placeholder: 'Số đường phố, số phòng tầng, v.v.',
+    placeholder: 'Số đường phố, số phòng tầng, v.v.'
   },
   vanAddressList: {
-    add: 'Thêm địa chỉ',
-  },
+    add: 'Thêm địa chỉ'
+  }
 };
