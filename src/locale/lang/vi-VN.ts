@@ -19,12 +19,8 @@ export default {
     confirm: 'Đảm bảo',
     startEnd: 'Bắt đầu / Kết thúc',
     weekdays: ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'],
-    monthTitle: function monthTitle(year, month) {
-      return year + " n\u0103m " + month + " th\xE1ng";
-    },
-    rangePrompt: function rangePrompt(maxRange) {
-      return "C\xE1c ng\xE0y \u0111\u01B0\u1EE3c ch\u1ECDn kh\xF4ng \u0111\u01B0\u1EE3c v\u01B0\u1EE3t qu\xE1 " + maxRange + " ng\xE0y";
-    }
+    monthTitle: (year: number, month: number) => `${year} năm ${month} tháng`,
+    rangePrompt: (maxRange: number) => `Các ngày được chọn không được vượt quá ${maxRange} ngày`,
   },
   vanCascader: {
     select: 'Xin hãy lựa chọn'
@@ -48,19 +44,13 @@ export default {
   },
   vanCoupon: {
     unlimited: 'Không có ngưỡng sử dụng',
-    discount: function discount(_discount) {
-      return _discount + " Chi\u1EBFt kh\u1EA5u";
-    },
-    condition: function condition(_condition) {
-      return "C\xF3 s\u1EB5n sau khi chi ti\xEAu " + _condition + " nh\xE2n d\xE2n t\u1EC7";
-    }
+    discount: (discount: number) => `${discount} Chiết khấu`,
+    condition: (condition: number) => `Có sẵn sau khi chi tiêu ${condition} Việt Nam Đồng`,
   },
   vanCouponCell: {
     title: 'Phiếu giảm giá',
     tips: 'Chưa có',
-    count: function count(_count) {
-      return _count + " trang t\xEDnh kh\u1EA3 d\u1EE5ng";
-    }
+    count: (count: number) => `${count} trang tính khả dụng`,
   },
   vanCouponList: {
     empty: 'Chưa có phiếu giảm giá',
