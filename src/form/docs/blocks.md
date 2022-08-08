@@ -4,7 +4,7 @@
 <van-form>
   <van-field required drole="other">
     <template #title>
-      <van-text>名称</van-text>
+      <van-text text="名称"></van-text>
     </template>
     <template #input>
       <van-fieldinput  placeholder="请输入" clearable></van-fieldinput>
@@ -12,7 +12,7 @@
   </van-field>
   <van-field name="radio" drole="other">
     <template #title>
-      <van-text>单选框</van-text>
+      <van-text text="单选框"></van-text>
     </template>
     <template #input>
       <van-radio-group direction="horizontal">
