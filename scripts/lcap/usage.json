@@ -3372,7 +3372,7 @@
                     "title": "分页大小",
                     "type": "number",
                     "default": 20,
-                    "description": "分页大小"
+                    "description": "分页过小可能会导致滚动加载更多失效"
                 },
                 {
                     "name": "remote-paging",
@@ -4410,7 +4410,7 @@
                         {
                             "name": "van-field",
                             "title": "表单项",
-                            "snippet": "<van-field label=\"表单项\" drole=\"other\"></van-field>"
+                            "snippet": "<van-field label=\"表单项\" drole=\"other\"><template #input></template></van-field>"
                         }
                     ]
                 }
