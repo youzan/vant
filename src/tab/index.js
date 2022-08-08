@@ -65,23 +65,22 @@ export default createComponent({
   render(h) {
     const { slots, parent, isActive } = this;
     const slotContent = slots();
-
+    let tempContent = slotContent;
     if (process.env.NODE_ENV === 'development' && this.info) {
       console.warn(
         '[Vant] Tab: "info" prop is deprecated, use "badge" prop instead.'
       );
     }
-
-    if (!slotContent && !parent.animated) {
+    if (!tempContent && this.$env && this.$env.VUE_APP_DESIGNER) {
+      tempContent = <van-empty-col></van-empty-col>;
+    }
+    if (!tempContent && !parent.animated) {
       return;
     }
 
     const show = parent.scrollspy || isActive;
     const shouldRender = this.inited || parent.scrollspy || !parent.lazyRender;
-    let Content = shouldRender ? slotContent : h();
-    if (!slotContent && this.$env && this.$env.VUE_APP_DESIGNER) {
-      Content = <van-empty-col></van-empty-col>;
-    }
+    let Content = shouldRender ? tempContent : h();
 
     if (parent.animated) {
       return (
@@ -96,7 +95,7 @@ export default createComponent({
     }
 
     return (
-      <div vShow={show} role="tabpanel" class={bem('pane')}>
+      <div vShow={show} role="tabpanel" class={bem('pane')} vusion-slot-name="default">
         {Content}
       </div>
     );
