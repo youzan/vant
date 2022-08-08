@@ -145,6 +145,8 @@ export default defineComponent({
             duration={props.duration}
             customStyle={props.overlayStyle}
             onClick={onClickOverlay}
+            role={props.closeOnClickOverlay ? 'button' : undefined}
+            tabindex={props.closeOnClickOverlay ? 0 : undefined}
           />
         );
       }
@@ -185,6 +187,8 @@ export default defineComponent({
           v-show={props.show}
           ref={popupRef}
           style={style.value}
+          role="dialog"
+          tabindex={0}
           class={[
             bem({
               round,
