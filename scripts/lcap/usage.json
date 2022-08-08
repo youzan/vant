@@ -468,6 +468,227 @@
         }
     },
     {
+        "symbol": "van-linear-layout",
+        "name": "线性布局",
+        "icon": "linear-layout",
+        "depDescription": {},
+        "description": "内部元素按照一定的规则布局",
+        "labels": [
+            "Layout"
+        ],
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src-vusion/components/linear-layout/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src-vusion/components/linear-layout/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src-vusion/components/linear-layout/screenshots/2.png",
+        "blocks": "[{\"title\":\"水平排布\",\"description\":\"\",\"code\":\"<template>\\n<van-linear-layout direction=\\\"horizontal\\\">\\n</van-linear-layout>\\n</template>\\n\"},{\"title\":\"竖直排布\",\"description\":\"\",\"code\":\"<template>\\n<van-linear-layout direction=\\\"vertical\\\">\\n    <van-linear-layout>\\n    </van-linear-layout>\\n    <van-linear-layout>\\n    </van-linear-layout>\\n</van-linear-layout>\\n</template>\\n\"},{\"title\":\"两端对齐\",\"description\":\"\",\"code\":\"<template>\\n<van-linear-layout justify=\\\"space-between\\\">\\n    <van-linear-layout>\\n    </van-linear-layout>\\n    <van-linear-layout>\\n    </van-linear-layout>\\n</van-linear-layout>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "van-linear-layout",
+            "title": "线性布局",
+            "description": "内部元素按照一定的规则布局",
+            "category": "Layout",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src-vusion/components/linear-layout/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src-vusion/components/linear-layout/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src-vusion/components/linear-layout/screenshots/2.png",
+            "drawings": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src-vusion/components/linear-layout/drawings/0.svg,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src-vusion/components/linear-layout/drawings/1.svg,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src-vusion/components/linear-layout/drawings/2.svg",
+            "blocks": [
+                {
+                    "title": "水平排布",
+                    "description": "",
+                    "code": "<template>\n<van-linear-layout direction=\"horizontal\">\n</van-linear-layout>\n</template>\n"
+                },
+                {
+                    "title": "竖直排布",
+                    "description": "",
+                    "code": "<template>\n<van-linear-layout direction=\"vertical\">\n    <van-linear-layout>\n    </van-linear-layout>\n    <van-linear-layout>\n    </van-linear-layout>\n</van-linear-layout>\n</template>\n"
+                },
+                {
+                    "title": "两端对齐",
+                    "description": "",
+                    "code": "<template>\n<van-linear-layout justify=\"space-between\">\n    <van-linear-layout>\n    </van-linear-layout>\n    <van-linear-layout>\n    </van-linear-layout>\n</van-linear-layout>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "direction",
+                    "title": "排列方向",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "horizontal",
+                            "title": "横向排列"
+                        },
+                        {
+                            "value": "vertical",
+                            "title": "纵向排列"
+                        }
+                    ],
+                    "default": "horizontal",
+                    "description": "可更改布局的排列方向"
+                },
+                {
+                    "name": "gap",
+                    "title": "间隙",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "shrink",
+                            "title": "收缩",
+                            "advanced": true
+                        },
+                        {
+                            "value": "none",
+                            "title": "无"
+                        },
+                        {
+                            "value": "small",
+                            "title": "小"
+                        },
+                        {
+                            "value": "normal",
+                            "title": "正常"
+                        },
+                        {
+                            "value": "large",
+                            "title": "大"
+                        }
+                    ],
+                    "default": "normal",
+                    "description": "内容块间隙大小"
+                },
+                {
+                    "name": "display",
+                    "title": "展示方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "inline",
+                            "title": "行内"
+                        },
+                        {
+                            "value": "block",
+                            "title": "块级"
+                        }
+                    ],
+                    "default": "block",
+                    "description": "行内展示，或块级换行展示"
+                },
+                {
+                    "name": "layout",
+                    "title": "子元素展示方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "none",
+                            "title": "子元素默认布局"
+                        },
+                        {
+                            "value": "inline",
+                            "title": "子元素行内布局"
+                        },
+                        {
+                            "value": "block",
+                            "title": "子元素块级布局"
+                        }
+                    ],
+                    "default": "none",
+                    "description": "子元素行内展示或块级换行展示"
+                },
+                {
+                    "name": "type",
+                    "title": "布局模式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "flex",
+                            "title": "flex 布局模式"
+                        }
+                    ],
+                    "description": "布局模式",
+                    "advanced": true
+                },
+                {
+                    "name": "justify",
+                    "title": "主轴分布方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "start",
+                            "title": "左对齐"
+                        },
+                        {
+                            "value": "center",
+                            "title": "居中对齐"
+                        },
+                        {
+                            "value": "end",
+                            "title": "右对齐"
+                        },
+                        {
+                            "value": "space-between",
+                            "title": "各行之间留有空",
+                            "advanced": true
+                        },
+                        {
+                            "value": "space-around",
+                            "title": "之前、之间、之后都留有空白",
+                            "advanced": true
+                        }
+                    ],
+                    "default": "start",
+                    "description": "内容对齐方式"
+                },
+                {
+                    "name": "alignment",
+                    "title": "纵轴对齐方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "start",
+                            "title": "头对齐"
+                        },
+                        {
+                            "value": "center",
+                            "title": "居中对齐"
+                        },
+                        {
+                            "value": "end",
+                            "title": "尾对齐"
+                        },
+                        {
+                            "value": "baseline",
+                            "title": "基线对齐"
+                        },
+                        {
+                            "value": "stretch",
+                            "title": "拉伸子元素充满整个父元素空间"
+                        }
+                    ],
+                    "default": "stretch",
+                    "description": "flex布局模式下的交叉轴对齐方式",
+                    "advanced": true
+                }
+            ],
+            "slots": [
+                {
+                    "name": "default",
+                    "description": "内容"
+                }
+            ],
+            "events": [
+                {
+                    "name": "click",
+                    "title": "点击后",
+                    "description": "点击此项时触发",
+                    "params": []
+                },
+                {
+                    "name": "dblclick",
+                    "title": "双击",
+                    "description": "双击此项时触发",
+                    "params": []
+                }
+            ],
+            "next": true,
+            "nested": true,
+            "children": []
+        }
+    },
+    {
         "symbol": "van-divider",
         "name": "分隔线",
         "icon": "divider",
@@ -825,7 +1046,7 @@
                     "options": [
                         {
                             "value": "flex",
-                            "title": "flex"
+                            "title": "弹性布局"
                         },
                         {
                             "value": "-",
@@ -894,7 +1115,7 @@
                 {
                     "name": "default",
                     "description": "插入`<van-col>`子组件。",
-                    "empty-background": "add-sub-large",
+                    "empty-background": "add-sub",
                     "support": [
                         {
                             "name": "van-col",
@@ -917,14 +1138,14 @@
                             "title": "占据列数",
                             "type": "number",
                             "default": 8,
-                            "description": "列元素宽度"
+                            "description": "栅格列宽度，栅格行最大为24列"
                         },
                         {
                             "name": "offset",
                             "title": "偏移",
                             "type": "number, string",
                             "default": 0,
-                            "description": "列偏移宽度（计算方式与 span 相同）"
+                            "description": "栅格列向右偏移列数"
                         }
                     ],
                     "slots": [
@@ -1017,12 +1238,12 @@
                 {
                     "name": "default",
                     "description": "插入`<van-dropdown-menu>`子组件。",
-                    "empty-background": "add-sub-large",
+                    "empty-background": "add-sub",
                     "support": [
                         {
                             "name": "van-dropdown-menu",
                             "title": "菜单项",
-                            "snippet": "<van-dropdown-item title=\"标题\"><van-cell clickable :isLink=\"false\"><template #title>标题1</template></van-cell></van-dropdown-item>"
+                            "snippet": "<van-dropdown-item title=\"标题\"><van-dropdown-item-son clickable :isLink=\"false\"><template #title>标题1</template></van-dropdown-item-son></van-dropdown-item>"
                         }
                     ]
                 }
@@ -1059,7 +1280,7 @@
                         {
                             "name": "default",
                             "description": "插入`<van-dropdown-item-son>`子组件。",
-                            "empty-background": "add-sub-large",
+                            "empty-background": "add-sub",
                             "support": [
                                 {
                                     "name": "van-dropdown-item-son",
@@ -1294,7 +1515,7 @@
                 {
                     "name": "default",
                     "description": "插入`<van-sidebar-item>`子组件。",
-                    "empty-background": "add-sub-large",
+                    "empty-background": "add-sub",
                     "support": [
                         {
                             "name": "van-sidebar-item",
@@ -1486,7 +1707,7 @@
                 {
                     "name": "default",
                     "description": "插入`<van-tabbar-item>`子组件。",
-                    "empty-background": "add-sub-large",
+                    "empty-background": "add-sub",
                     "support": [
                         {
                             "name": "van-tabbar-item",
@@ -2938,7 +3159,7 @@
                 {
                     "name": "default",
                     "description": "插入`<van-step>`子组件。",
-                    "empty-background": "add-sub-large",
+                    "empty-background": "add-sub",
                     "support": [
                         {
                             "name": "van-step",
@@ -4342,7 +4563,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-form>\\n  <van-field required label=\\\"名称\\\" drole=\\\"other\\\">\\n    <template #input>\\n      <van-fieldinput  placeholder=\\\"请输入\\\" clearable></van-fieldinput>\\n    </template>\\n  </van-field>\\n  <van-field name=\\\"radio\\\" label=\\\"单选框\\\" drole=\\\"other\\\">\\n    <template #input>\\n      <van-radio-group direction=\\\"horizontal\\\">\\n        <template #default=\\\"scope\\\">\\n          <van-radio name=\\\"1\\\" title=\\\"单选框 1\\\"></van-radio>\\n          <van-radio name=\\\"2\\\" title=\\\"单选框 2\\\"></van-radio>\\n        </template>\\n      </van-radio-group>\\n    </template>\\n  </van-field>\\n  <div style=\\\"margin: 16px 16px 0\\\">\\n    <van-button round block=\\\"blockb\\\" type=\\\"info\\\" native-type=\\\"submit\\\" text=\\\"提交\\\">\\n    </van-button>\\n  </div>\\n</van-form>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-form>\\n  <van-field required drole=\\\"other\\\">\\n    <template #title>\\n      <van-text>名称</van-text>\\n    </template>\\n    <template #input>\\n      <van-fieldinput  placeholder=\\\"请输入\\\" clearable></van-fieldinput>\\n    </template>\\n  </van-field>\\n  <van-field name=\\\"radio\\\" drole=\\\"other\\\">\\n    <template #title>\\n      <van-text>单选框</van-text>\\n    </template>\\n    <template #input>\\n      <van-radio-group direction=\\\"horizontal\\\">\\n        <template #default=\\\"scope\\\">\\n          <van-radio name=\\\"1\\\" title=\\\"单选框 1\\\"></van-radio>\\n          <van-radio name=\\\"2\\\" title=\\\"单选框 2\\\"></van-radio>\\n        </template>\\n      </van-radio-group>\\n    </template>\\n  </van-field>\\n  <div style=\\\"margin: 16px 16px 0\\\">\\n    <van-button round block=\\\"blockb\\\" type=\\\"info\\\" native-type=\\\"submit\\\" text=\\\"提交\\\">\\n    </van-button>\\n  </div>\\n</van-form>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-form",
             "title": "表单",
@@ -4354,7 +4575,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-form>\n  <van-field required label=\"名称\" drole=\"other\">\n    <template #input>\n      <van-fieldinput  placeholder=\"请输入\" clearable></van-fieldinput>\n    </template>\n  </van-field>\n  <van-field name=\"radio\" label=\"单选框\" drole=\"other\">\n    <template #input>\n      <van-radio-group direction=\"horizontal\">\n        <template #default=\"scope\">\n          <van-radio name=\"1\" title=\"单选框 1\"></van-radio>\n          <van-radio name=\"2\" title=\"单选框 2\"></van-radio>\n        </template>\n      </van-radio-group>\n    </template>\n  </van-field>\n  <div style=\"margin: 16px 16px 0\">\n    <van-button round block=\"blockb\" type=\"info\" native-type=\"submit\" text=\"提交\">\n    </van-button>\n  </div>\n</van-form>\n</template>\n"
+                    "code": "<template>\n<van-form>\n  <van-field required drole=\"other\">\n    <template #title>\n      <van-text>名称</van-text>\n    </template>\n    <template #input>\n      <van-fieldinput  placeholder=\"请输入\" clearable></van-fieldinput>\n    </template>\n  </van-field>\n  <van-field name=\"radio\" drole=\"other\">\n    <template #title>\n      <van-text>单选框</van-text>\n    </template>\n    <template #input>\n      <van-radio-group direction=\"horizontal\">\n        <template #default=\"scope\">\n          <van-radio name=\"1\" title=\"单选框 1\"></van-radio>\n          <van-radio name=\"2\" title=\"单选框 2\"></van-radio>\n        </template>\n      </van-radio-group>\n    </template>\n  </van-field>\n  <div style=\"margin: 16px 16px 0\">\n    <van-button round block=\"blockb\" type=\"info\" native-type=\"submit\" text=\"提交\">\n    </van-button>\n  </div>\n</van-form>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -4410,7 +4631,7 @@
                         {
                             "name": "van-field",
                             "title": "表单项",
-                            "snippet": "<van-field label=\"表单项\" drole=\"other\"><template #input></template></van-field>"
+                            "snippet": "<van-field drole=\"other\"><template #title><van-text text=\"表单项\"><van-text></template><template #input></template></van-field>"
                         }
                     ]
                 }
@@ -4496,12 +4717,14 @@
                             "title": "标签名称",
                             "type": "string",
                             "default": "表单项",
+                            "advanced": true,
                             "description": "输入框左侧文本"
                         },
                         {
                             "name": "size",
                             "title": "标签大小",
                             "type": "string",
+                            "advanced": true,
                             "options": [
                                 {
                                     "value": "-",
@@ -5481,27 +5704,32 @@
     },
     {
         "symbol": "van-stepper",
-        "name": "步进器",
-        "icon": "stepper",
+        "name": "数字输入",
+        "icon": "number",
         "depDescription": {},
         "description": "开关",
         "labels": [
             "Form"
         ],
-        "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-stepper></van-stepper>\\n</template>\\n\"}]",
+        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src/stepper/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src/stepper/screenshots/1.png",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-stepper :showPlus=\\\"false\\\" :showMinus=\\\"false\\\" placeholder=\\\"请输入\\\" align=\\\"left\\\"></van-stepper>\\n</template>\\n\"},{\"title\":\"步进模式\",\"description\":\"\",\"code\":\"<template>\\n<van-stepper placeholder=\\\"请输入\\\"></van-stepper>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-stepper",
-            "title": "步进器",
+            "title": "数字输入",
             "description": "开关",
             "category": "Form",
-            "screenShot": "",
+            "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src/stepper/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.12/src/stepper/screenshots/1.png",
             "drawings": "",
             "blocks": [
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-stepper></van-stepper>\n</template>\n"
+                    "code": "<template>\n<van-stepper :showPlus=\"false\" :showMinus=\"false\" placeholder=\"请输入\" align=\"left\"></van-stepper>\n</template>\n"
+                },
+                {
+                    "title": "步进模式",
+                    "description": "",
+                    "code": "<template>\n<van-stepper placeholder=\"请输入\"></van-stepper>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -5511,14 +5739,12 @@
                     "type": "number",
                     "sync": true,
                     "model": true,
-                    "default": 1,
                     "description": "值"
                 },
                 {
                     "name": "min",
                     "title": "最小值",
                     "type": "string, number",
-                    "default": 1,
                     "description": "最小值"
                 },
                 {
@@ -5528,14 +5754,41 @@
                     "description": "最大值"
                 },
                 {
-                    "name": "disable-plus",
+                    "name": "decimalLength",
+                    "title": "精度",
+                    "type": "string, number",
+                    "description": "固定显示的小数位数"
+                },
+                {
+                    "name": "placeholder",
+                    "title": "占位符",
+                    "type": "string",
+                    "default": "请输入",
+                    "description": "为空时的占位文本"
+                },
+                {
+                    "name": "showPlus",
+                    "title": "是否显示增加按钮",
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否显示增加按钮"
+                },
+                {
+                    "name": "showMinus",
+                    "title": "是否显示减少按钮",
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否显示减少按钮"
+                },
+                {
+                    "name": "disablePlus",
                     "title": "是否禁用增加按钮",
                     "type": "boolean",
                     "default": false,
                     "description": "是否禁用增加按钮"
                 },
                 {
-                    "name": "disable-minus",
+                    "name": "disableMinus",
                     "title": "是否禁用减少按钮",
                     "type": "boolean",
                     "default": false,
@@ -5559,6 +5812,13 @@
                     "description": "样式风格"
                 },
                 {
+                    "name": "min",
+                    "title": "步长",
+                    "type": "string, number",
+                    "default": 1,
+                    "description": "每次点击时改变的值"
+                },
+                {
                     "name": "disableInput",
                     "title": "只读",
                     "type": "boolean",
@@ -5571,6 +5831,27 @@
                     "type": "boolean",
                     "default": false,
                     "description": "是否禁用"
+                },
+                {
+                    "name": "align",
+                    "title": "对齐方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "left",
+                            "title": "左对齐"
+                        },
+                        {
+                            "value": "center",
+                            "title": "居中对齐"
+                        },
+                        {
+                            "value": "right",
+                            "title": "右对齐"
+                        }
+                    ],
+                    "default": "center",
+                    "description": "样式风格"
                 }
             ],
             "slots": false,
@@ -6220,8 +6501,12 @@
                             "title": "时间选择器"
                         },
                         {
+                            "value": "date",
+                            "title": "日期选择器"
+                        },
+                        {
                             "value": "datetime",
-                            "title": "完整时间选择器"
+                            "title": "日期时间选择器"
                         }
                     ],
                     "default": "datetime"
@@ -6325,7 +6610,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-calendar title=\\\"选择日期\\\" labelField=\\\"日历选择\\\"></van-calendar>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-calendar title=\\\"选择日期\\\" labelField=\\\"选择日期\\\"></van-calendar>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-calendar",
             "title": "日期选择器",
@@ -6337,7 +6622,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-calendar title=\"选择日期\" labelField=\"日历选择\"></van-calendar>\n</template>\n"
+                    "code": "<template>\n<van-calendar title=\"选择日期\" labelField=\"选择日期\"></van-calendar>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -6350,7 +6635,7 @@
                 {
                     "name": "default-date",
                     "title": "值",
-                    "type": "Date, Array",
+                    "type": "string, Date, Array",
                     "sync": true,
                     "model": true,
                     "default": null,
@@ -6379,16 +6664,16 @@
                     "description": "选择类型"
                 },
                 {
-                    "name": "min-date",
+                    "name": "minDate",
                     "title": "最小日期",
                     "type": "Date,String",
-                    "description": "最小日期,默认为今天"
+                    "description": "最小日期,默认为一年前"
                 },
                 {
-                    "name": "max-date",
+                    "name": "maxDate",
                     "title": "最大日期",
                     "type": "Date,String",
-                    "description": "最大日期,默认当前日期的六个月后"
+                    "description": "最大日期,默认为一年后"
                 },
                 {
                     "name": "title",
