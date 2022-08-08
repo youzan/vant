@@ -9,6 +9,7 @@ export { default as VanCard } from '../../src/card';
 export { default as VanCascader } from '../../src/cascader';
 export { default as VanCell } from '../../src/cell';
 export { default as VanCellGroup } from '../../src/cell-group';
+export { default as VanCellson } from '../../src/cellson';
 export { default as VanCheckbox } from '../../src/checkbox';
 export { default as VanCheckboxGroup } from '../../src/checkbox-group';
 export { default as VanCircle } from '../../src/circle';

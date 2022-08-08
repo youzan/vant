@@ -4410,7 +4410,7 @@
                         {
                             "name": "van-field",
                             "title": "表单项",
-                            "snippet": "<van-field label=\"表单项\" drole=\"other\"></van-field>"
+                            "snippet": "<van-field label=\"表单项\" drole=\"other\"><template #input></template></van-field>"
                         }
                     ]
                 }
