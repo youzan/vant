@@ -139,7 +139,7 @@ export default createComponent({
         }
         if(ifDesigner && singleslot) return null;
         return (
-          <div class={[bem('title'), props.titleClass]} style={props.titleStyle}>
+          <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title">
             {slots('title') ? slots('title') : title}
             {(ifDesigner && (!isDef(title) || title === '') && !slots('title')) ? <van-empty-col></van-empty-col> : null}
           </div>
@@ -353,6 +353,7 @@ export default createComponent({
         vusion-node-path={that.vusionNodePath}
         vusion-node-tag={that.vusionNodeTag}
         vusion-template-input-node-path={that.vusionTemplateInputNodePath}
+        vusion-template-title-node-path={that.vusionTemplateTitleNodePath}
       >
         {LeftIcon()}
         {Title()}

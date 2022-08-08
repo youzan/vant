@@ -2,12 +2,18 @@
 
 ``` html
 <van-form>
-  <van-field required label="名称" drole="other">
+  <van-field required drole="other">
+    <template #title>
+      <van-text>名称</van-text>
+    </template>
     <template #input>
       <van-fieldinput  placeholder="请输入" clearable></van-fieldinput>
     </template>
   </van-field>
-  <van-field name="radio" label="单选框" drole="other">
+  <van-field name="radio" drole="other">
+    <template #title>
+      <van-text>单选框</van-text>
+    </template>
     <template #input>
       <van-radio-group direction="horizontal">
         <template #default="scope">

@@ -108,7 +108,7 @@ export default createComponent({
     },
     notitleblock: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     novalue: {
       type: Boolean,
@@ -740,10 +740,14 @@ export default createComponent({
     const vusionNodePath = this.getProp('vusionNodePath');
     const vusionNodeTag = this.getProp('vusionNodeTag');
     const vusionNodeInputPath = this.$attrs['vusion-template-input-node-path'];
+    const vusionNodeTitlePath = this.$attrs['vusion-template-title-node-path'];
     const scopedSlots = {
       icon: this.genLeftIcon,
     };
-
+    const stitle = this.slots('title');
+    if (stitle) {
+      scopedSlots.title = () => stitle;
+    }
     const Label = this.genLabel();
     if (Label) {
       // scopedSlots.title = () => Label;
@@ -765,7 +769,7 @@ export default createComponent({
         clickable={this.clickable}
         titleStyle={this.labelStyle}
         valueClass={bem('value')}
-        titleClass={[bem('label', labelAlign), this.labelClass]}
+        titleClass={[bem('label', labelAlign), this.labelClass, stitle ? bem('labelhasslots') : '']}
         scopedSlots={scopedSlots}
         arrowDirection={this.arrowDirection}
         title={Label}
@@ -781,6 +785,7 @@ export default createComponent({
         vusionNodePath={vusionNodePath}
         vusionNodeTag={vusionNodeTag}
         vusionTemplateInputNodePath={vusionNodeInputPath}
+        vusionTemplateTitleNodePath={vusionNodeTitlePath}
         infield={this.drole === 'other'}
         notitle={this.notitle}
         notitleblock={this.notitleblock}
