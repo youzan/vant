@@ -378,6 +378,7 @@ export default createComponent({
           input-align="right"
           onClick={this.togglePopup}
           notitle={true}
+          insel={true}
         />
         <Popup
           safe-area-inset-bottom
