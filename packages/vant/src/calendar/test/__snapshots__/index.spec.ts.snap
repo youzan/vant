@@ -557,14 +557,18 @@ exports[`formatter prop 1`] = `
 `;
 
 exports[`popup wrapper 1`] = `
-<transition-stub>
+<transition-stub role="button"
+                 tabindex="0"
+>
 </transition-stub>
 <transition-stub>
 </transition-stub>
 `;
 
 exports[`popup wrapper 2`] = `
-<transition-stub>
+<transition-stub role="button"
+                 tabindex="0"
+>
   <div style="z-index: 2001;"
        class="van-overlay"
   >
@@ -572,6 +576,8 @@ exports[`popup wrapper 2`] = `
 </transition-stub>
 <transition-stub>
   <div style="z-index: 2001;"
+       role="dialog"
+       tabindex="0"
        class="van-popup van-popup--round van-popup--bottom van-calendar__popup"
   >
     <div class="van-calendar">

@@ -15,7 +15,10 @@ exports[`should change icon class prefix when using icon-prefix prop 1`] = `
 <span class="van-popover__wrapper">
 </span>
 <transition-stub>
-  <div class="van-popup van-popover van-popover--light">
+  <div role="dialog"
+       tabindex="0"
+       class="van-popup van-popover van-popover--light"
+  >
     <div class="van-popover__arrow">
     </div>
     <div role="menu"
@@ -44,6 +47,8 @@ exports[`should locate to reference element when showed 1`] = `
 exports[`should locate to reference element when showed 2`] = `
 <transition-stub>
   <div style="z-index: 2007; position: absolute; left: 0px; top: 108px; margin: 0px;"
+       role="dialog"
+       tabindex="0"
        class="van-popup van-popover van-popover--light"
        data-popper-placement="bottom"
   >
@@ -60,6 +65,8 @@ exports[`should locate to reference element when showed 2`] = `
 exports[`should locate to reference element when showed 3`] = `
 <transition-stub>
   <div style="z-index: 2007; display: none;"
+       role="dialog"
+       tabindex="0"
        class="van-popup van-popover van-popover--light"
   >
     <div class="van-popover__arrow">
@@ -84,6 +91,8 @@ exports[`should render action slot correctly 1`] = `
 exports[`should watch placement prop and update location 1`] = `
 <transition-stub>
   <div style="z-index: 2008; position: absolute; left: 0px; top: -108px; margin: 0px;"
+       role="dialog"
+       tabindex="0"
        class="van-popup van-popover van-popover--light"
        data-popper-placement="top"
   >

@@ -2,7 +2,9 @@
 
 exports[`create a forbidClick toast 1`] = `
 <transition-stub>
-  <div class="van-popup van-popup--center van-toast van-toast--middle van-toast--success"
+  <div role="dialog"
+       tabindex="0"
+       class="van-popup van-popup--center van-toast van-toast--middle van-toast--success"
        style="z-index: 2004;"
   >
     <i class="van-badge__wrapper van-icon van-icon-success van-toast__icon">
