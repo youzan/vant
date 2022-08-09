@@ -3,7 +3,9 @@
 exports[`should render Notify correctly 1`] = `
 <div
   class="van-popup van-popup--top van-notify van-notify--danger van-popup-slide-top-enter-from van-popup-slide-top-enter-active"
+  role="dialog"
   style="z-index: 2001; transition-duration: 0.2s;"
+  tabindex="0"
 >
   
   test

@@ -23,12 +23,17 @@ exports[`should render description when using description prop 1`] = `
 `;
 
 exports[`should render title and description slot correctly 1`] = `
-<transition-stub>
+<transition-stub role="button"
+                 tabindex="0"
+>
   <div class="van-overlay">
   </div>
 </transition-stub>
 <transition-stub>
-  <div class="van-popup van-popup--round van-popup--bottom van-safe-area-bottom van-share-sheet">
+  <div role="dialog"
+       tabindex="0"
+       class="van-popup van-popup--round van-popup--bottom van-safe-area-bottom van-share-sheet"
+  >
     <div class="van-share-sheet__header">
       <h2 class="van-share-sheet__title">
         Custom Title

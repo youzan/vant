@@ -94,7 +94,6 @@ importers:
       '@types/less': ^3.0.3
       '@types/markdown-it': ^12.2.3
       '@vant/eslint-config': ^3.3.2
-      '@vant/markdown-vetur': ^2.3.0
       '@vant/touch-emulator': ^1.3.2
       '@vitejs/plugin-vue': ^3.0.1
       '@vitejs/plugin-vue-jsx': ^2.0.0
@@ -140,7 +139,6 @@ importers:
       '@docsearch/js': 3.1.1_react-dom@18.2.0+react@18.2.0
       '@types/jest': 27.5.2
       '@vant/eslint-config': link:../vant-eslint-config
-      '@vant/markdown-vetur': link:../vant-markdown-vetur
       '@vant/touch-emulator': link:../vant-touch-emulator
       '@vitejs/plugin-vue': 3.0.1_vite@3.0.2+vue@3.2.37
       '@vitejs/plugin-vue-jsx': 2.0.0_vite@3.0.2+vue@3.2.37
@@ -229,19 +227,6 @@ importers:
       release-it: ^15.1.1
     devDependencies:
       release-it: 15.1.1
-
-  packages/vant-markdown-vetur:
-    specifiers:
-      '@types/fs-extra': ^9.0.13
-      fast-glob: ^3.2.2
-      fs-extra: ^10.0.0
-      typescript: ^4.7.4
-    dependencies:
-      fast-glob: 3.2.11
-      fs-extra: 10.1.0
-    devDependencies:
-      '@types/fs-extra': 9.0.13
-      typescript: 4.7.4
 
   packages/vant-popperjs:
     specifiers:

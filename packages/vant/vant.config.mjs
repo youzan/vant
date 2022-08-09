@@ -133,6 +133,10 @@ export default {
                 title: 'Popup 弹出层',
               },
               {
+                path: 'space',
+                title: 'Space 间距',
+              },
+              {
                 path: 'style',
                 title: 'Style 内置样式',
               },
@@ -465,7 +469,7 @@ export default {
       'en-US': {
         title: 'Vant 4',
         subtitle: ' (for Vue 3)',
-        description: 'Mobile UI Components built on Vue',
+        description: 'Lightweight Mobile UI Components built on Vue',
         logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
         langLabel: 'EN',
         links: [
@@ -534,6 +538,10 @@ export default {
               {
                 path: 'popup',
                 title: 'Popup',
+              },
+              {
+                path: 'space',
+                title: 'Space',
               },
               {
                 path: 'style',

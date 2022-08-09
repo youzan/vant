@@ -25,6 +25,12 @@
 yarn add stylelint@13 @vant/stylelint-config
 ```
 
+### 移除 vetur 相关配置
+
+由于 Vue 3 推荐使用 volar 而不是 vetur，因此移除了 vetur 相关的配置文件。
+
+现在会默认生成 WebStorm 所需的 web-types.json 文件到 `lib/web-types.json` 目录下。
+
 ## v4.0.3
 
 `2022-07-02`

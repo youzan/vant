@@ -95,9 +95,9 @@ exports[`should render demo and match snapshot 1`] = `
   <transition-stub>
   </transition-stub>
   <transition-stub>
-    <div class="van-popup van-popup--center van-dialog"
-         role="dialog"
+    <div role="dialog"
          tabindex="0"
+         class="van-popup van-popup--center van-dialog"
          aria-labelledby="Title"
          style="display: none;"
     >

@@ -14,7 +14,9 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub>
+  <transition-stub role="button"
+                   tabindex="0"
+  >
   </transition-stub>
   <transition-stub>
   </transition-stub>
@@ -32,7 +34,9 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub>
+  <transition-stub role="button"
+                   tabindex="0"
+  >
   </transition-stub>
   <transition-stub>
   </transition-stub>
@@ -50,7 +54,9 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub>
+  <transition-stub role="button"
+                   tabindex="0"
+  >
   </transition-stub>
   <transition-stub>
   </transition-stub>
@@ -68,7 +74,9 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub>
+  <transition-stub role="button"
+                   tabindex="0"
+  >
   </transition-stub>
   <transition-stub>
   </transition-stub>

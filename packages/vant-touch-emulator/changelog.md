@@ -1,5 +1,11 @@
 # Changelog
 
+### [v1.4.0]
+
+`2022-08-06`
+
+- support `.mjs` extension
+
 ### [v1.3.1]
 
 `2021-07-06`

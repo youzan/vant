@@ -301,21 +301,24 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Checkb
 ### toggleAll Usage
 
 ```js
-const { checkboxGroup } = this.$refs;
+import { ref } from 'vue';
+import type { CheckboxGroupInstance } from 'vant';
+
+const checkboxGroupRef = ref<CheckboxGroupInstance>();
 
 // Toggle all
-checkboxGroup.toggleAll();
+checkboxGroup.value?.toggleAll();
 // Select all
-checkboxGroup.toggleAll(true);
+checkboxGroup.value?.toggleAll(true);
 // Unselect all
-checkboxGroup.toggleAll(false);
+checkboxGroup.value?.toggleAll(false);
 
 // Toggle all, skip disabled
-checkboxGroup.toggleAll({
+checkboxGroup.value?.toggleAll({
   skipDisabled: true,
 });
 // Select all, skip disabled
-checkboxGroup.toggleAll({
+checkboxGroup.value?.toggleAll({
   checked: true,
   skipDisabled: true,
 });

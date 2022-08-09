@@ -108,6 +108,48 @@ export default {
 };
 ```
 
+### Toggle All
+
+Using `toggleAll` method to toggle all items.
+
+```html
+<van-collapse v-model="activeNames">
+  <van-collapse-item title="Title1" name="1">Content 1</van-collapse-item>
+  <van-collapse-item title="Title2" name="2">Content 2</van-collapse-item>
+  <van-collapse-item title="Title3" name="3">Content 3</van-collapse-item>
+</van-collapse>
+
+<van-button type="primary" @click="openAll">Open All</van-button>
+<van-button type="primary" @click="toggleAll">Toggle All</van-button>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const activeNames = ref(['1']);
+    const collapse = ref(null);
+
+    const openAll = () => {
+      collapse.value.toggleAll(true);
+    }
+    const toggleAll = () => {
+      collapse.value.toggleAll();
+    },
+
+    return {
+      activeNames,
+      openAll,
+      toggleAll,
+      collapse,
+    };
+  },
+};
+```
+
+> Tips: The toggleAll method cannot be used in accordion mode.
+
 ## API
 
 ### Collapse Props
@@ -143,6 +185,40 @@ export default {
 | value-class | Value className | _string_ | - |
 | label-class | Label className | _string_ | - |
 
+### Collapse Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Collapse instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| toggleAll `v3.5.3` | Toggle the expanded status of all collapses | _options?: boolean \| object_ | - |
+
+### toggleAll Usage
+
+```js
+import { ref } from 'vue';
+import type { CollapseInstance } from 'vant';
+
+const collapseRef = ref<CollapseInstance>();
+
+// Toggle all
+collapseRef.value?.toggleAll();
+// Expand all
+collapseRef.value?.toggleAll(true);
+// UnExpand all
+collapseRef.value?.toggleAll(false);
+
+// Toggle all, skip disabled
+collapseRef.value?.toggleAll({
+  skipDisabled: true,
+});
+// Expand all, skip disabled
+collapseRef.value?.toggleAll({
+  expanded: true,
+  skipDisabled: true,
+});
+```
+
 ### CollapseItem Methods
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get CollapseItem instance and call instance methods.
@@ -160,6 +236,7 @@ import type {
   CollapseProps,
   CollapseItemProps,
   CollapseItemInstance,
+  CollapseToggleAllOptions,
 } from 'vant';
 ```
 

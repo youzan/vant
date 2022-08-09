@@ -1,12 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render image 1`] = `
-<transition-stub class="van-image-preview__overlay">
+<transition-stub class="van-image-preview__overlay"
+                 role="button"
+                 tabindex="0"
+>
   <div class="van-overlay">
   </div>
 </transition-stub>
 <transition-stub>
-  <div class="van-popup van-popup--center van-image-preview">
+  <div role="dialog"
+       tabindex="0"
+       class="van-popup van-popup--center van-image-preview"
+  >
     <div class="van-swipe van-image-preview__swipe">
       <div style="transition-duration: 300ms; transform: translateX(0px);"
            class="van-swipe__track"
@@ -41,12 +47,18 @@ exports[`should change close icon when using close-icon prop 1`] = `
 `;
 
 exports[`should render cover slot correctly 1`] = `
-<transition-stub class="van-image-preview__overlay">
+<transition-stub class="van-image-preview__overlay"
+                 role="button"
+                 tabindex="0"
+>
   <div class="van-overlay">
   </div>
 </transition-stub>
 <transition-stub>
-  <div class="van-popup van-popup--center van-image-preview">
+  <div role="dialog"
+       tabindex="0"
+       class="van-popup van-popup--center van-image-preview"
+  >
     <div class="van-swipe van-image-preview__swipe">
       <div style="transition-duration: 300ms; transform: translateX(0px);"
            class="van-swipe__track"

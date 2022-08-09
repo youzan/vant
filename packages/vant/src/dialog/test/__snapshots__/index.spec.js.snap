@@ -30,9 +30,9 @@ exports[`should render default slot correctly 1`] = `
 `;
 
 exports[`should render footer slot correctly 1`] = `
-<div class="van-popup van-popup--center van-dialog"
-     role="dialog"
+<div role="dialog"
      tabindex="0"
+     class="van-popup van-popup--center van-dialog"
      aria-labelledby="message"
 >
   <div class="van-dialog__content van-dialog__content--isolated">
