@@ -7,12 +7,14 @@
     ></van-calendar >
       <van-calendar
       label-field="日历选择"
-      :default-date.sync="ddateffff"
+      :defaultDate.sync="ddateffff"
+      :min-date="'1990-10-15'"
+      :max-date="'2040-10-15'"
       title="选择日期"
     ></van-calendar >
     <van-calendar
       label-field="日历选择"
-      :default-date.sync="ddateffff"
+      :defaultDate.sync="ddateffff"
       title="选择日期"
     ></van-calendar >
     <van-calendar

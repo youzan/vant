@@ -172,6 +172,7 @@ export default createComponent({
                 loading={this.loading.cancel}
                 text={this.cancelButtonText || t('cancel')}
                 style={{ color: this.cancelButtonColor }}
+                nativeType="button"
                 onClick={() => {
                   this.handleAction('cancel');
                 }}
@@ -185,6 +186,7 @@ export default createComponent({
                 loading={this.loading.confirm}
                 text={this.confirmButtonText || t('confirm')}
                 style={{ color: this.confirmButtonColor }}
+                nativeType="button"
                 onClick={() => {
                   this.handleAction('confirm');
                 }}

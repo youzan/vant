@@ -13,13 +13,16 @@ components.forEach((component) => {
     if (component.vusion) {
       command = `lcap deploy src-vusion/components/${component.name}/screenshots`;
     }
-    // let commandDrawings = `lcap deploy src/${component.name}/drawings`;
+    let commandDrawings = `lcap deploy src/${component.name}/drawings`;
+    if (component.vusion) {
+      commandDrawings = `lcap deploy src-vusion/components/${component.name}/drawings`;
+    }
     if (argv.platform) {
         command = `${command} --platform ${argv.platform}`;
-        // commandDrawings = `${commandDrawings} --platform ${argv.platform}`;
+        commandDrawings = `${commandDrawings} --platform ${argv.platform}`;
     }
     console.log(command);
     vusion.cli.execSync(command);
-    // vusion.cli.execSync(commandDrawings);
+    vusion.cli.execSync(commandDrawings);
     vusion.cli.done(component.name);
 });

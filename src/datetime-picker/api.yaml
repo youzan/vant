@@ -14,8 +14,10 @@
       options:
         - value: time
           title: 时间选择器
+        - value: date
+          title: 日期选择器
         - value: datetime
-          title: 完整时间选择器
+          title: 日期时间选择器
       default: datetime
     - name: value
       title: 值

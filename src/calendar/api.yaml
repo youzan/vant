@@ -10,7 +10,7 @@
       description: 左侧标题
     - name: default-date
       title: 值
-      type: Date, Array
+      type: string, Date, Array
       sync: true
       model: true
       default: null
@@ -28,14 +28,14 @@
       default: single
       advanced: true
       description: 选择类型
-    - name: min-date
+    - name: minDate
       title: 最小日期
       type: Date,String
-      description: 最小日期,默认为今天
-    - name: max-date
+      description: 最小日期,默认为一年前
+    - name: maxDate
       title: 最大日期
       type: Date,String
-      description: 最大日期,默认当前日期的六个月后
+      description: 最大日期,默认为一年后
     - name: title
       title: 日历标题
       type: string

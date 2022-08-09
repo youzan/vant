@@ -25,7 +25,7 @@
   slots:
     - name: default
       description: 插入`<van-step>`子组件。
-      empty-background: add-sub-large
+      empty-background: add-sub
       support:
         - name: van-step
           title: 步骤条项

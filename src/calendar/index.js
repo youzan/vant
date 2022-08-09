@@ -106,14 +106,17 @@ export default createComponent({
     minDate: {
       type: Date,
       validator: isDate,
-      default: () => new Date(),
+      default: () => {
+        const now = new Date();
+        return new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
+      },
     },
     maxDate: {
       type: Date,
       validator: isDate,
       default() {
         const now = new Date();
-        return new Date(now.getFullYear(), now.getMonth() + 6, now.getDate());
+        return new Date(now.getFullYear(), now.getMonth() + 12, now.getDate());
       },
     },
     firstDayOfWeek: {
@@ -130,6 +133,7 @@ export default createComponent({
       valuepopup: false,
       value: false,
       getTitle: '',
+      defaultMonthForSelect: null,
     };
   },
 
@@ -165,6 +169,13 @@ export default createComponent({
     dayOffset() {
       return this.firstDayOfWeek ? this.firstDayOfWeek % 7 : 0;
     },
+
+    currentDateCom() {
+      return this.currentDate;
+    },
+    defaultMonthForSelectCom() {
+      return this.defaultMonthForSelect;
+    }
   },
 
   watch: {
@@ -192,6 +203,9 @@ export default createComponent({
   },
 
   methods: {
+    setCurrentDate(data) {
+      this.currentDate = data;
+    },
     ifDesigner() {
       return this.$env && this.$env.VUE_APP_DESIGNER;
     },
@@ -362,6 +376,7 @@ export default createComponent({
 
       /* istanbul ignore else */
       if (currentMonth) {
+        this.defaultMonthForSelect = currentMonth.getDate;
         this.subtitle = currentMonth.title;
       }
     },
@@ -472,6 +487,10 @@ export default createComponent({
       this.setTitle();
     },
     setTitle() {
+      if (this.ifDesigner()) {
+        this.getTitle = this.defaultDate;
+        return
+      }
       if (this.currentDate) {
         if (Array.isArray(this.currentDate)) {
           this.getTitle = this.currentDate.reduce((p, c) => p + (isDate(c) ? c.formath("yyyy/MM/dd") : c)+'-', '');
@@ -557,10 +576,16 @@ export default createComponent({
             showTitle={this.showTitle}
             subtitle={this.subtitle}
             showSubtitle={this.showSubtitle}
+            currentDate={this.currentDateCom}
+            defaultMonthForSelect={this.defaultMonthForSelectCom}
             scopedSlots={{
               title: () => this.slots('title'),
             }}
             firstDayOfWeek={this.dayOffset}
+            setCurrentDate={this.setCurrentDate}
+            minDate={this.minDate}
+            maxDate={this.maxDate}
+            scrollToDate={this.scrollToDate}
           />
           <div ref="body" class={bem('body')} onScroll={this.onScroll}>
             {this.months.map(this.genMonth)}
