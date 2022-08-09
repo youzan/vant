@@ -144,9 +144,9 @@ export default defineComponent({
             zIndex={zIndex.value}
             duration={props.duration}
             customStyle={props.overlayStyle}
-            onClick={onClickOverlay}
             role={props.closeOnClickOverlay ? 'button' : undefined}
             tabindex={props.closeOnClickOverlay ? 0 : undefined}
+            onClick={onClickOverlay}
           />
         );
       }
