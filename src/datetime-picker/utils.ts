@@ -96,7 +96,7 @@ export function transErrorDate(date: any, type: any) {
 export function formatFu(date: string | number | Date, type: string, gmt: boolean) {
   const tempDate = date;
   // @ts-ignore
-  const tmpDate = isDate(tempDate) ? tempDate : new Date(tempDate);
+  const tmpDate = isDate(tempDate) ? tempDate : (tempDate ? new Date(tempDate) : new Date());
   if (type === 'datetime') {
     if (gmt) return tmpDate.toJSON();
     // @ts-ignore
@@ -109,5 +109,9 @@ export function formatFu(date: string | number | Date, type: string, gmt: boolea
   if (type === 'time') {
     // @ts-ignore
     return tempDate
+  }
+  if (type === 'year-month') {
+    // @ts-ignore
+    return tmpDate.formath("yyyy/MM")
   }
 }

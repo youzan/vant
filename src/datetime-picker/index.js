@@ -35,6 +35,7 @@ export default createComponent({
       if (this.value && !this.cvalue) {
         return formatFu(this.value, this.type);
       }
+      if (!this.cvalue) return '';
       return formatFu(this.cvalue, this.type);
     },
     togglePopup() {
