@@ -162,6 +162,9 @@ export default createComponent({
     //   },
     //   immediate: true
     // },
+    value(val) {
+      this.updateValue(val);
+    },
     currentValue(val) {
       this.$emit('input', val);
       this.$emit('change', val, this);
