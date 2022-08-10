@@ -10,7 +10,6 @@
       type: any
       sync: true
       model: true
-      default: "a"
       description: 选中标签页的值。
     - name: disabled
       title: 禁用
