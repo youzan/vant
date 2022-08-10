@@ -16,6 +16,8 @@
           title: 时间选择器
         - value: date
           title: 日期选择器
+        - value: year-month
+          title: 年月选择器
         - value: datetime
           title: 日期时间选择器
       default: datetime
