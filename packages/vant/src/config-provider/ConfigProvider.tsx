@@ -2,6 +2,9 @@ import {
   watch,
   provide,
   computed,
+  onActivated,
+  onDeactivated,
+  onBeforeUnmount,
   defineComponent,
   type PropType,
   type InjectionKey,
@@ -57,14 +60,27 @@ export default defineComponent({
     });
 
     if (inBrowser) {
+      const addTheme = () => {
+        document.body.classList.add(`van-theme-${props.theme}`);
+      };
+      const removeTheme = (theme = props.theme) => {
+        document.body.classList.remove(`van-theme-${theme}`);
+      };
+
       watch(
         () => props.theme,
         (newVal, oldVal) => {
-          document.body.classList.remove(`van-theme-${oldVal}`);
-          document.body.classList.add(`van-theme-${newVal}`);
+          if (oldVal) {
+            removeTheme(oldVal);
+          }
+          addTheme();
         },
         { immediate: true }
       );
+
+      onActivated(addTheme);
+      onDeactivated(removeTheme);
+      onBeforeUnmount(removeTheme);
     }
 
     provide(CONFIG_PROVIDER_KEY, props);
