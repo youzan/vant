@@ -55,6 +55,7 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    inputAlign: String,
   },
 
   data() {
@@ -366,7 +367,7 @@ export default createComponent({
           value={this.getTitle()}
           readonly
           isLink={false}
-          input-align="right"
+          input-align={this.inputAlign || "right"}
           onClick={this.togglePopup}
           notitle={true}
           notitleblock={this.notitleblock}

@@ -57,6 +57,7 @@ export default createComponent({
       type: String,
       default: ''
     },
+    inputAlign: String,
     closeOnClickOverlay: Boolean
   },
 
@@ -375,7 +376,7 @@ export default createComponent({
           value={this.getTitle}
           readonly
           isLink
-          input-align="right"
+          input-align={this.inputAlign || "right"}
           onClick={this.togglePopup}
           notitle={true}
           insel={true}
