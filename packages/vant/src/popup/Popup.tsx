@@ -58,6 +58,17 @@ const [name, bem] = createNamespace('popup');
 
 let globalZIndex = 2000;
 
+export function setGlobalZIndex(i: number) {
+  if (typeof i === 'number') {
+    globalZIndex = i;
+  }
+  return globalZIndex;
+}
+
+export function getGlobalZIndex() {
+  return globalZIndex;  
+}
+
 export default defineComponent({
   name,
 
