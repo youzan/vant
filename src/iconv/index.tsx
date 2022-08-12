@@ -23,6 +23,7 @@ export type IconProps = {
   dot?: boolean;
   tag: keyof HTMLElementTagNameMap | string;
   name?: string;
+  icotype?: string;
   size?: string | number;
   info?: string | number;
   badge?: string | number;
@@ -154,11 +155,15 @@ function Iconv(
   const sid = ctx.parent.$options._scopeId;
   const href = { attrs: { 'xlink:href': `#h5-${name}` } };
   const ifNotext = props.notext;
+  const icotype = props.icotype;
+  const endNotext = icotype === 'only';
+
   return (
     <props.tag
       class={[
         props.classPrefix,
-        isSvgUrl(props.name) ? bem('cus') : ''
+        isSvgUrl(props.name) ? bem('cus') : '',
+        props.icotype === 'left' ? bem('flex') : ''
         // imageIcon ? '' : `${props.classPrefix}-${name}`,
       ]}
       // style={{
@@ -171,8 +176,8 @@ function Iconv(
       {isSvgUrl(props.name) ? <onlineSvgIcon purecss={true} url={props.name} /> : <svg class="vant-iconv-svg van-shoud-pa" aria-hidden="true">
         <use {...href} class="van-shoud-pa"></use>
       </svg>}
-      {ifDesigner() && !sd && !ifNotext ? <VanEmptyCol vusion-slot-name="default" class="van-shoud-pa" vusion-scope-id={sid}></VanEmptyCol> : null}
-      <div class={bem('slot')}>{sd}</div>
+      {ifDesigner() && !sd && !ifNotext && !endNotext ? <VanEmptyCol vusion-slot-name="default" class="van-shoud-pa" vusion-scope-id={sid}></VanEmptyCol> : null}
+      {!endNotext ? <div class={bem('slot', {inline: icotype==='left'})}>{sd}</div> : null}
       {/* {imageIcon && <img class={bem('image')} src={name} />} */}
       <Info dot={props.dot} info={props.badge ?? props.info} />
     </props.tag>
@@ -186,6 +191,7 @@ Iconv.props = {
   },
   dot: Boolean,
   name: String,
+  icotype: String,
   size: [Number, String],
   // @deprecated
   // should be removed in next major version

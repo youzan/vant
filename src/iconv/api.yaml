@@ -10,6 +10,18 @@
       type: icon
       default: ''
       description: 图标
+    - name: icotype
+      title: 图标类型
+      type: string
+      options:
+        - value: only
+          title: 仅图标
+        - value: top
+          title: 组合图标-上下
+        - value: left
+          title: 组合图标-左右
+      default: top
+      description: 图标类型
     - name: linkType
       title: 链接类型
       type: string
