@@ -59,7 +59,6 @@
           name: 右上
         - value: right-end
           name: 右下
-      default: light
       description: 弹出位置
   slots:
     - name: default
@@ -86,7 +85,7 @@
     - name: closeModal
       title: 关闭
       description: 关闭
-- name: van-popover-item
+- name: van-popover-combination-item
   title: 面板项
   attrs:
     - name: text

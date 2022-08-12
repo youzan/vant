@@ -10,7 +10,8 @@ import { ParentMixin } from '../mixins/relation';
 // Components
 import Icon from '../icon';
 import Popup from '../popup';
-import PopoverItem from '../popover-combination-item'
+import PopoverCombinationItem from '../popover-combination-item'
+import VanEmptyCol from '../emptycol'
 
 const [createComponent, bem] = createNamespace('popover-combination');
 
@@ -25,7 +26,10 @@ export default createComponent({
 
   props: {
     value: Boolean,
-    trigger: String,
+    trigger: {
+      type: String,
+      default: 'click'
+    },
     overlay: Boolean,
     offset: {
       type: Array,
@@ -41,7 +45,6 @@ export default createComponent({
     },
     placement: {
       type: String,
-      default: 'bottom',
     },
     getContainer: {
       type: [String, Function],
@@ -87,9 +90,6 @@ export default createComponent({
     getReferEl() {
       if (this.slots('reference')) {
         return this.$refs.wrapper;
-      }
-      if (this.ifDesigner() && (/l-root-h5|h5template-|/).test(this.$el.parentNode.className)) {
-        return this.$refs.wrappertemp;
       }
       // 求上下文中的 parent
       if (this.$parent === this.$vnode.context)
@@ -153,17 +153,7 @@ export default createComponent({
     renderAction(action, index) {
       const { icon, text, disabled, className } = action;
       return (
-        <PopoverItem icon={icon} text={text} disabled={disabled} className={className}/>
-      );
-      return (
-        <div
-          role="menuitem"
-          class={[bem('action', { disabled, 'with-icon': icon }), className]}
-          onClick={() => this.onClickAction(action, index)}
-        >
-          {icon && <Icon name={icon} class={bem('action-icon')} />}
-          <div class={[bem('action-text'), BORDER_BOTTOM]}>{text}</div>
-        </div>
+        <PopoverCombinationItem icon={icon} text={text} disabled={disabled} className={className}/>
       );
     },
 
@@ -174,7 +164,8 @@ export default createComponent({
 
     onClickWrapper() {
       if (this.trigger === 'click') {
-        this.onToggle(!this.valued);
+        this.valued = !this.valued;
+        this.onToggle(this.valued);
       }
     },
 
@@ -234,52 +225,16 @@ export default createComponent({
         this.valued = !this.valued;
       }
     },
+    designerControl() {
+      if (this.ifDesigner()) {
+        this.valued = !this.valued;
+      }
+  },
   },
 
   render() {
-    const styletemp = {
-      background: '#FAFAFA',
-      border: '1px dashed #CCCCCC',
-      height: '14.93333vw',
-      alignItems: 'center',
-      justifyContent: 'center',
-      display: 'flex',
-      fontSize: '4.26667vw',
-      color: '#666666',
-    }
-    if (this.ifDesigner()) {
-      return (
-        <div style={styletemp} ref="wrappertemp">
-          <span ref="wrapper" class={bem('wrapper')} onClick={this.onClickWrapper}>
-            <Popup
-              ref="popover"
-              value={this.valued}
-              class={bem([this.theme])}
-              overlay={this.overlay}
-              position={null}
-              transition="van-popover-zoom"
-              lockScroll={false}
-              // getContainer={this.getContainer}
-              onOpen={this.onOpen}
-              onClose={this.onClose}
-              onInput={this.onToggle}
-              onOpened={this.onOpened}
-              onClosed={this.onClosed}
-              nativeOnTouchstart={this.onTouchstart}
-            >
-              <div class={bem('arrow')} />
-              <div class={bem('content')} role="menu">
-                {this.slots('default') || this.actions.map(this.renderAction)}
-              </div>
-            </Popup>
-          </span>
-          <div>双击打开/关闭气泡框</div>
-        </div>
-      )
-    }
-
     return (
-      <span ref="wrapper" class={bem('wrapper')} onClick={this.onClickWrapper}>
+      <span ref="wrapper" class={bem('wrapper')} onClick={this.onClickWrapper} vusion-click-enabled>
         <Popup
           ref="popover"
           value={this.valued}
@@ -297,11 +252,13 @@ export default createComponent({
           nativeOnTouchstart={this.onTouchstart}
         >
           <div class={bem('arrow')} />
-          <div class={bem('content')} role="menu">
+          <div class={bem('content')} role="menu" vusion-slot-name="default">
+            {!this.slots('default') && this.ifDesigner() ? <van-empty-col></van-empty-col> : null}
             {this.slots('default') || this.actions.map(this.renderAction)}
           </div>
         </Popup>
         {this.slots('reference')}
+        {!this.slots('reference') && this.ifDesigner() ? <div vusion-slot-name="reference"><van-empty-col></van-empty-col></div> : null}
       </span>
     );
   },
