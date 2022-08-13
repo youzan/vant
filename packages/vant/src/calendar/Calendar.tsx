@@ -185,10 +185,6 @@ export default defineComponent({
       const months: Date[] = [];
       const cursor = new Date(props.minDate);
 
-      if (props.lazyRender && !props.show && props.poppable) {
-        return months;
-      }
-
       cursor.setDate(1);
 
       do {

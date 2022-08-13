@@ -1,5 +1,6 @@
 import { useRect } from '@vant/use';
 import { Ref, ref, onMounted, nextTick } from 'vue';
+import { onPopupReopen } from './on-popup-reopen';
 
 export const useHeight = (
   element: Element | Ref<Element | undefined>,
@@ -24,6 +25,8 @@ export const useHeight = (
       }
     }
   });
+
+  onPopupReopen(() => nextTick(setHeight));
 
   return height;
 };
