@@ -299,7 +299,9 @@ export default defineComponent({
           props.type === 'single'
             ? (currentDate.value as Date)
             : (currentDate.value as Date[])[0];
-        scrollToDate(targetDate);
+        if (targetDate) {
+          scrollToDate(targetDate);
+        }
       } else {
         raf(onScroll);
       }
