@@ -26,6 +26,9 @@ export const useHeight = (
     }
   });
 
+  // The result of useHeight might be 0 when the popup is hidden,
+  // so we need to reset the height when the popup is reopened.
+  // https://github.com/vant-ui/vant/issues/10628
   onPopupReopen(() => nextTick(setHeight));
 
   return height;
