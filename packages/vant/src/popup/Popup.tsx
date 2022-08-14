@@ -31,6 +31,7 @@ import { useExpose } from '../composables/use-expose';
 import { useLockScroll } from '../composables/use-lock-scroll';
 import { useLazyRender } from '../composables/use-lazy-render';
 import { POPUP_TOGGLE_KEY } from '../composables/on-popup-reopen';
+import { useGlobalZIndex } from '../composables/use-global-z-index';
 
 // Components
 import { Icon } from '../icon';
@@ -55,8 +56,6 @@ const popupProps = extend({}, popupSharedProps, {
 export type PopupProps = ExtractPropTypes<typeof popupProps>;
 
 const [name, bem] = createNamespace('popup');
-
-let globalZIndex = 2000;
 
 export default defineComponent({
   name,
@@ -103,12 +102,10 @@ export default defineComponent({
 
     const open = () => {
       if (!opened) {
-        if (props.zIndex !== undefined) {
-          globalZIndex = +props.zIndex;
-        }
-
         opened = true;
-        zIndex.value = ++globalZIndex;
+
+        zIndex.value =
+          props.zIndex !== undefined ? +props.zIndex : useGlobalZIndex();
 
         emit('open');
       }

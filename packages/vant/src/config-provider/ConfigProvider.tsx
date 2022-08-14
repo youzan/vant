@@ -1,6 +1,7 @@
 import {
   provide,
   computed,
+  watchEffect,
   defineComponent,
   type PropType,
   type InjectionKey,
@@ -13,6 +14,7 @@ import {
   createNamespace,
   type Numeric,
 } from '../utils';
+import { setGlobalZIndex } from '../composables/use-global-z-index';
 
 const [name, bem] = createNamespace('config-provider');
 
@@ -25,6 +27,7 @@ export const CONFIG_PROVIDER_KEY: InjectionKey<ConfigProviderProvide> =
 
 const configProviderProps = {
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
+  zIndex: Number,
   themeVars: Object as PropType<Record<string, Numeric>>,
   iconPrefix: String,
 };
@@ -52,6 +55,12 @@ export default defineComponent({
     });
 
     provide(CONFIG_PROVIDER_KEY, props);
+
+    watchEffect(() => {
+      if (props.zIndex !== undefined) {
+        setGlobalZIndex(props.zIndex);
+      }
+    });
 
     return () => (
       <props.tag class={bem()} style={style.value}>

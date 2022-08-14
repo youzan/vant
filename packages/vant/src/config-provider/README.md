@@ -2,7 +2,7 @@
 
 ### Intro
 
-Used to config the theme of Vant components.
+Used to config the theme and global properties of Vant components.
 
 ### Install
 
@@ -208,11 +208,12 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 
 ### Props
 
-| Attribute            | Description              | Type     | Default    |
-| -------------------- | ------------------------ | -------- | ---------- |
-| theme-vars           | Theme variables          | _object_ | -          |
-| tag `v3.1.2`         | HTML Tag of root element | _string_ | `div`      |
-| icon-prefix `v3.1.3` | Icon className prefix    | _string_ | `van-icon` |
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| theme-vars | Theme variables | _object_ | - |
+| tag `v3.1.2` | HTML Tag of root element | _string_ | `div` |
+| z-index `v3.6.0` | Set the z-index of all popup components, this property takes effect globally | _number_ | `2000` |
+| icon-prefix `v3.1.3` | Icon className prefix | _string_ | `van-icon` |
 
 ### Types
 
