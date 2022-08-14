@@ -70,6 +70,40 @@ test('should support message function in rules prop', async () => {
   });
 });
 
+test('should skip pattern if validateEmpty is false in rules prop', async () => {
+  const onFailed = jest.fn();
+  const rules: FieldRule[] = [{ pattern: /\d{6}/, validateEmpty: false }];
+  const wrapper = mount({
+    render() {
+      return (
+        <Form onFailed={onFailed}>
+          <Field name="A" rules={rules} modelValue="" />
+        </Form>
+      );
+    },
+  });
+
+  await submitForm(wrapper);
+  expect(onFailed).toHaveBeenCalledTimes(0);
+});
+
+test('should skip validator if validateEmpty is false in rules prop', async () => {
+  const onFailed = jest.fn();
+  const rules: FieldRule[] = [{ validator: () => false, validateEmpty: false }];
+  const wrapper = mount({
+    render() {
+      return (
+        <Form onFailed={onFailed}>
+          <Field name="A" rules={rules} modelValue="" />
+        </Form>
+      );
+    },
+  });
+
+  await submitForm(wrapper);
+  expect(onFailed).toHaveBeenCalledTimes(0);
+});
+
 test('should support formatter in rules prop', async () => {
   const onFailed = jest.fn();
   const rules: FieldRule[] = [
