@@ -554,8 +554,6 @@ export default {
 | trigger | 设置本项规则的触发时机，优先级高于 Form 组件设置的 `validate-trigger` 属性，可选值为 `onChange`、`onBlur`、`onSubmit` | _string \| string[]_ |
 | formatter | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |
 
-|
-
 ### validate-trigger 可选值
 
 通过 `validate-trigger` 属性可以自定义表单校验的触发时机。
