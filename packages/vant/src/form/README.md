@@ -515,7 +515,7 @@ export default {
 | message | Error message | _string \| (value, rule) => string_ |
 | validator | Custom validator | _(value, rule) => boolean \| string \| Promise_ |
 | pattern | Regex pattern | _RegExp_ |
-| trigger | When to validate the form, can be set to `onChange`、`onBlur` | _string_ |
+| trigger | When to validate the form, priority is higher than the `validate-trigger` of the Form component, can be set to `onChange`, `onBlur`, `onSubmit` | _string \| string[]_ |
 | formatter | Format value before validate | _(value, rule) => any_ |
 
 ### validate-trigger
