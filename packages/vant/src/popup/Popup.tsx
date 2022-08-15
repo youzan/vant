@@ -31,6 +31,7 @@ import { useExpose } from '../composables/use-expose';
 import { useLockScroll } from '../composables/use-lock-scroll';
 import { useLazyRender } from '../composables/use-lazy-render';
 import { POPUP_TOGGLE_KEY } from '../composables/on-popup-reopen';
+import { POPUP_REF_KEY } from '../composables/use-popup-ref';
 
 // Components
 import { Icon } from '../icon';
@@ -82,6 +83,8 @@ export default defineComponent({
 
     const zIndex = ref<number>();
     const popupRef = ref<HTMLElement>();
+
+    provide(POPUP_REF_KEY, popupRef);
 
     const lazyRender = useLazyRender(() => props.show || !props.lazyRender);
 

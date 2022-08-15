@@ -2,6 +2,8 @@ import { later, mount } from '../../../test';
 import { reactive, ref, onMounted } from 'vue';
 import DropdownItem from '../../dropdown-item';
 import DropdownMenu, { DropdownMenuDirection } from '..';
+import Popup from '../../popup';
+import { DOMWrapper } from '@vue/test-utils';
 
 function renderWrapper(
   options: {
@@ -10,6 +12,7 @@ function renderWrapper(
     direction?: DropdownMenuDirection | undefined;
     closeOnClickOutside?: boolean;
     icon?: string;
+    insidePopup?: boolean;
   } = {}
 ) {
   return mount({
@@ -25,7 +28,7 @@ function renderWrapper(
         ],
       });
 
-      return () => (
+      const rederContainer = () => (
         <DropdownMenu
           direction={state.direction}
           closeOnClickOutside={state.closeOnClickOutside}
@@ -42,7 +45,28 @@ function renderWrapper(
           />
         </DropdownMenu>
       );
+
+      return () =>
+        options.insidePopup ? (
+          <Popup show={true}>{rederContainer()}</Popup>
+        ) : (
+          rederContainer()
+        );
     },
+  });
+}
+
+function mockGetBoundingClientRect(items: DOMWrapper<Element>[]) {
+  items.filter((item, index) => {
+    item.element.getBoundingClientRect = () =>
+      ({
+        left: index * 100,
+        width: 100,
+        top: 100,
+        height: 100,
+        bottom: 150,
+      } as DOMRect);
+    return true;
   });
 }
 
@@ -277,4 +301,27 @@ test('title slot', async () => {
 
   await later();
   expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('test offset when inside popup', async () => {
+  const wrapper = renderWrapper({
+    insidePopup: true,
+  });
+
+  await later();
+
+  const popups = wrapper.findAll('.van-popup');
+  const bar = wrapper.find('.van-dropdown-menu__bar');
+  const items = wrapper.findAll('.van-dropdown-item');
+
+  mockGetBoundingClientRect(popups);
+  mockGetBoundingClientRect([bar]);
+
+  const titles = wrapper.findAll('.van-dropdown-menu__title');
+
+  await titles[0].trigger('click');
+
+  await later();
+
+  expect(items[0].element.style.top).toEqual('50px');
 });
