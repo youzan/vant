@@ -41,7 +41,7 @@ import { showToast, showDialog } from 'vant';
 
 而 CSS 代码的引入方式可以从以下两种方式中进行选择：
 
-- 通过 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件实现按需引入样式，详细用法参见 [快速上手](/#/zh-CN/quickstart)。
+- 通过 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件实现按需引入样式，详细用法参见 [快速上手](#/zh-CN/quickstart)。
 - 在项目中全量引入 Vant 的样式文件：
 
 ```js
