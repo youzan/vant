@@ -4,6 +4,8 @@ on:
   push:
     branches: [dev, 2.x, gh-pages]
 
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
