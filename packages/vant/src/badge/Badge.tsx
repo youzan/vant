@@ -48,7 +48,7 @@ export default defineComponent({
         return true;
       }
       const { content, showZero } = props;
-      return isDef(content) && content !== '' && (showZero || content !== 0);
+      return isDef(content) && content !== '' && (showZero || (content !== 0 && content !== '0'));
     };
 
     const renderContent = () => {
