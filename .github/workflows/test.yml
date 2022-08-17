@@ -1,6 +1,15 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - '**'
+
+  pull_request:
+    branches:
+      - dev
+
+  workflow_dispatch:
 
 jobs:
   lint:
