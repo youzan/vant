@@ -172,6 +172,8 @@ module.exports = {
 };
 ```
 
+> Tips: 在配置 postcss-pxtorem 时，同样应避免 ignore node_modules 目录，否则同样会导致 Vant 样式无法被编译。
+
 #### 其他设计稿尺寸
 
 如果设计稿的尺寸不是 375，而是 750 或其他大小，可以将 `rootValue` 配置调整为:
