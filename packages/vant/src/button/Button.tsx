@@ -112,7 +112,7 @@ export default defineComponent({
       }
     });
 
-    const getStyle = () => {
+    const getStyle = computed(() => {
       const { color, plain } = props;
       if (color) {
         const style: CSSProperties = {
@@ -133,7 +133,7 @@ export default defineComponent({
 
         return style;
       }
-    };
+    });
 
     const onClick = (event: MouseEvent) => {
       if (props.loading) {
@@ -181,7 +181,7 @@ export default defineComponent({
         <tag
           type={nativeType}
           class={classes}
-          style={getStyle()}
+          style={getStyle.value}
           disabled={disabled}
           onClick={onClick}
         >
