@@ -8,7 +8,6 @@ import {
 import {
   isDef,
   addUnit,
-  isNumeric,
   truthProp,
   numericProp,
   makeStringProp,
@@ -43,38 +42,39 @@ export default defineComponent({
   props: badgeProps,
 
   setup(props, { slots }) {
-    const hasContent = () => {
-      if (slots.content) {
-        return true;
+    const { content, dot, max, color, position, tag } = props;
+    const { content: slotContent, default: slotDefault } = slots;
+
+    const shouldSkipBadge = computed(() => {
+      if (slotContent) {
+        return false;
       }
-      const { content, showZero } = props;
-      return isDef(content) && content !== '' && (showZero || (content !== 0 && content !== '0'));
-    };
 
-    const renderContent = () => {
-      const { dot, max, content } = props;
+      const isVerify = isDef(content) && content !== '';
+      const isZero = !props.showZero && (content === 0 || content === '0');
+      return (!isVerify || isZero) && !dot;
+    });
 
-      if (!dot && hasContent()) {
-        if (slots.content) {
-          return slots.content();
-        }
-
-        if (isDef(max) && isNumeric(content!) && +content > max) {
-          return `${max}+`;
-        }
-
-        return content;
+    const renderedContent = (() => {
+      if (slotContent) {
+        return slotContent();
       }
-    };
+      if (isDef(max) && Number(content) > max) {
+        return `${max}+`;
+      }
+      return content;
+    })();
 
     const style = computed(() => {
       const style: CSSProperties = {
-        background: props.color,
+        background: color,
       };
 
-      if (props.offset) {
-        const [x, y] = props.offset;
-        if (slots.default) {
+      const { offset } = props;
+
+      if (offset) {
+        const [x, y] = offset;
+        if (slotDefault) {
           style.top = addUnit(y);
 
           if (typeof x === 'number') {
@@ -92,27 +92,23 @@ export default defineComponent({
     });
 
     const renderBadge = () => {
-      if (hasContent() || props.dot) {
-        return (
-          <div
-            class={bem([
-              props.position,
-              { dot: props.dot, fixed: !!slots.default },
-            ])}
-            style={style.value}
-          >
-            {renderContent()}
-          </div>
-        );
-      }
+      if (shouldSkipBadge.value) return;
+
+      return (
+        <div
+          class={bem([position, { dot, fixed: !!slotDefault }])}
+          style={style.value}
+        >
+          {renderedContent}
+        </div>
+      );
     };
 
     return () => {
-      if (slots.default) {
-        const { tag } = props;
+      if (slotDefault) {
         return (
           <tag class={bem('wrapper')}>
-            {slots.default()}
+            {slotDefault()}
             {renderBadge()}
           </tag>
         );
