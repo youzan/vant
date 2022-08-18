@@ -82,6 +82,7 @@
               :style="styleArr[i]"
               :ref="'item'+i"
               :class="[$style.opitem, $style.item, !iffall ? $style.floatitem : '', $style[moveMode], styleArr[i] && styleArr[i].showClass && $style[styleArr[i].showClass]]"
+              vusion-slot-name="item"
               >
               <slot
                 v-if="iffall && slots('item')"
