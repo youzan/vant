@@ -172,7 +172,7 @@ module.exports = {
 };
 ```
 
-> Tips: 在配置 postcss-pxtorem 时，同样应避免 ignore node_modules 目录，否则同样会导致 Vant 样式无法被编译。
+> Tips: 在配置 postcss-pxtorem 时，同样应避免 ignore node_modules 目录，否则会导致 Vant 样式无法被编译。
 
 #### 其他设计稿尺寸
 
