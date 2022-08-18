@@ -3,6 +3,7 @@ import {
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
+  computed,
 } from 'vue';
 
 // Utils
@@ -78,7 +79,7 @@ export default defineComponent({
       );
     };
 
-    const renderIcon = () => {
+    const renderIcon = computed(() => {
       if (props.loading) {
         return renderLoadingIcon();
       }
@@ -96,9 +97,9 @@ export default defineComponent({
           />
         );
       }
-    };
+    });
 
-    const renderText = () => {
+    const renderText = computed(() => {
       let text;
       if (props.loading) {
         text = props.loadingText;
@@ -109,7 +110,7 @@ export default defineComponent({
       if (text) {
         return <span class={bem('text')}>{text}</span>;
       }
-    };
+    });
 
     const getStyle = () => {
       const { color, plain } = props;
@@ -185,9 +186,9 @@ export default defineComponent({
           onClick={onClick}
         >
           <div class={bem('content')}>
-            {iconPosition === 'left' && renderIcon()}
-            {renderText()}
-            {iconPosition === 'right' && renderIcon()}
+            {iconPosition === 'left' && renderIcon.value}
+            {renderText.value}
+            {iconPosition === 'right' && renderIcon.value}
           </div>
         </tag>
       );
