@@ -82,7 +82,7 @@ export { default as VanSku } from '../../src/sku';
 export { default as VanSlider } from '../../src/slider';
 export { default as VanStep } from '../../src/step';
 export { default as VanStepper } from '../../src/stepper';
-export { default as VanStepperNew } from '../../src/stepper';
+export { default as VanStepperNew } from '../../src/stepper-new';
 export { default as VanSteps } from '../../src/steps';
 export { default as VanSticky } from '../../src/sticky';
 
