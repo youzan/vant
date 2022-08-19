@@ -1,0 +1,134 @@
+@import '../style/var';
+
+.van-stepper-new {
+  font-size: 0;
+  user-select: none;
+
+  display: flex;
+  flex: 1;
+
+  &__minus,
+  &__plus {
+    position: relative;
+    box-sizing: border-box;
+    width: @stepper-input-height;
+    height: @stepper-input-height;
+    margin: 0;
+    padding: 0;
+    color: @stepper-button-icon-color;
+    vertical-align: middle;
+    background-color: @stepper-background-color;
+    border: 0;
+    cursor: pointer;
+
+    &::before {
+      width: 50%;
+      height: 1px;
+    }
+
+    &::after {
+      width: 1px;
+      height: 50%;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: currentColor;
+      transform: translate(-50%, -50%);
+      content: '';
+    }
+
+    &:active {
+      background-color: @stepper-active-color;
+    }
+
+    &--disabled {
+      color: @stepper-button-disabled-icon-color;
+      background-color: @stepper-button-disabled-color;
+      cursor: not-allowed;
+
+      &:active {
+        background-color: @stepper-button-disabled-color;
+      }
+    }
+  }
+
+  &__minus {
+    border-radius: @stepper-border-radius 0 0 @stepper-border-radius;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__plus {
+    border-radius: 0 @stepper-border-radius @stepper-border-radius 0;
+  }
+
+  &__input {
+    flex: 1;
+    box-sizing: border-box;
+    width: @stepper-input-width;
+    height: @stepper-input-height;
+    margin: 0 2px !important;
+    padding: 0;
+    color: @stepper-input-text-color;
+    font-size: @stepper-input-font-size;
+    line-height: @stepper-input-line-height;
+    text-align: center;
+    vertical-align: middle;
+    background-color: @stepper-background-color;
+    border: 0;
+    border-width: 1px 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+
+    &:disabled {
+      color: @stepper-input-disabled-text-color;
+      background-color: @stepper-input-disabled-background-color;
+      // fix disabled color in iOSF
+      -webkit-text-fill-color: @stepper-input-disabled-text-color;
+      opacity: 1;
+    }
+
+    &:read-only {
+      cursor: default;
+    }
+  }
+
+  &--round {
+    .van-stepper__input {
+      background-color: transparent;
+    }
+
+    .van-stepper__plus,
+    .van-stepper__minus {
+      border-radius: 100%;
+
+      &:active {
+        opacity: @active-opacity;
+      }
+
+      &--disabled {
+        &,
+        &:active {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    .van-stepper__plus {
+      color: @white;
+      background-color: @stepper-button-round-theme-color;
+    }
+
+    .van-stepper__minus {
+      color: @stepper-button-round-theme-color;
+      background-color: @white;
+      border: 1px solid @stepper-button-round-theme-color;
+    }
+  }
+}
