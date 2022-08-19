@@ -1,5 +1,5 @@
 <template>
-<div :class="$style.fake" v-if="$env.VUE_APP_DESIGNER">
+<div :class="$style.fake" v-if="$env.VUE_APP_DESIGNER" router-view-symbol>
     <router-view></router-view>
 </div>
 <router-view v-else></router-view>

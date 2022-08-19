@@ -29,7 +29,10 @@
                     :value="$at(item, valueField)"
                     :disabled="item.disabled || disabled"
                     :item="item"
-                ><slot name="item" :item="item" :text="$at(item, field || textField)" :value="$at(item, valueField)" :disabled="item.disabled || disabled">{{ $at(item, field || textField) }}</slot>
+                    vusion-slot-name="item"
+                >
+                  <van-empty-col v-if="(!slots('item')) && $env.VUE_APP_DESIGNER"></van-empty-col>
+                  <slot v-if="slots('item')" name="item" :item="item" :text="$at(item, field || textField)" :value="$at(item, valueField)" :disabled="item.disabled || disabled">{{ $at(item, field || textField) }}</slot>
                 </component>
             </div>
             <div :class="$style.status" status="loading" v-if="currentLoading">
@@ -64,13 +67,15 @@
 <script>
 import UListView from 'cloud-ui.vusion/src/components/u-list-view.vue/index.vue';
 import VanPullRefresh from '../../../src/pull-refresh';
+import VanEmptyCol from '../../../src/emptycol';
+
 
 export default {
     name: 'van-list-view',
     groupName: 'van-list-view-group',
     childName: 'van-list-view-item',
     extends: UListView,
-    components: { VanPullRefresh },
+    components: { VanPullRefresh, VanEmptyCol },
     props: {
         border: { type: Boolean, default: false },
         readonly: { type: Boolean, default: true },
@@ -132,7 +137,17 @@ export default {
           if (el.scrollHeight <= el.scrollTop + el.clientHeight+30 && this.currentDataSource && this.currentDataSource.hasMore()) {
             this.debouncedLoad(true);
           }
-        }
+        },
+        slots(name = 'default', props) {
+          const { $slots, $scopedSlots } = this;
+          const scopedSlot = $scopedSlots[name];
+
+          if (scopedSlot) {
+            return scopedSlot(props);
+          }
+
+          return $slots[name];
+        },
     },
 }
 </script>

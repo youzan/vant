@@ -5,7 +5,7 @@ import { addNumber, formatNumber } from '../utils/format/number';
 import { isNaN } from '../utils/validate/number';
 import { FieldMixin } from '../mixins/field';
 
-const [createComponent, bem] = createNamespace('stepper');
+const [createComponent, bem] = createNamespace('stepper-new');
 
 const LONG_PRESS_START_TIME = 600;
 const LONG_PRESS_INTERVAL = 200;
@@ -42,7 +42,7 @@ export default createComponent({
     },
     min: {
       type: [Number, String],
-      default: 1,
+      default: -Infinity,
     },
     max: {
       type: [Number, String],
@@ -72,12 +72,17 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    align: String,
   },
 
   data() {
-    const defaultValue = this.value ?? this.defaultValue;
+    const defaultValue = this.value;
     const value = this.format(defaultValue);
-
+    if (this.ifDesigner()) {
+      return {
+        currentValue: this.value,
+      };
+    }
     if (!equal(value, this.value)) {
       this.$emit('input', value);
       this.$emit('update:value', value);
@@ -111,7 +116,9 @@ export default createComponent({
       if (this.buttonSize) {
         style.height = addUnit(this.buttonSize);
       }
-
+      if (this.align) {
+        style.textAlign = (this.align);
+      }
       return style;
     },
 
@@ -154,6 +161,9 @@ export default createComponent({
   },
 
   methods: {
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     check() {
       const val = this.format(this.currentValue);
       if (!equal(val, this.currentValue)) {
@@ -167,7 +177,7 @@ export default createComponent({
     },
 
     format(value) {
-      if (this.allowEmpty && value === '') {
+      if (this.allowEmpty && (value === '' || value === undefined)) {
         return value;
       }
 

@@ -1,8 +1,8 @@
-- name: van-stepper
-  title: 步进器
+- name: van-stepper-new
+  title: 数字输入
   labels:
     - Form
-  icon: stepper
+  icon: numberh5
   next: true
   nested: false
   attrs:
@@ -11,23 +11,40 @@
       type: number
       sync: true
       model: true
-      default: 1
       description: 值
     - name: min
       title: 最小值
       type: string, number
-      default: 1
       description: 最小值
     - name: max
       title: 最大值
       type: string, number
       description: 最大值
-    - name: disable-plus
+    - name: decimalLength
+      title: 精度
+      type: string, number
+      description: 固定显示的小数位数
+    - name: placeholder
+      title: 占位符
+      type: string
+      default: 请输入
+      description: 为空时的占位文本
+    - name: showPlus
+      title: 是否显示增加按钮
+      type: boolean
+      default: true
+      description: 是否显示增加按钮
+    - name: showMinus
+      title: 是否显示减少按钮
+      type: boolean
+      default: true
+      description: 是否显示减少按钮
+    - name: disablePlus
       title: 是否禁用增加按钮
       type: boolean
       default: false
       description: 是否禁用增加按钮
-    - name: disable-minus
+    - name: disableMinus
       title: 是否禁用减少按钮
       type: boolean
       default: false
@@ -42,6 +59,11 @@
           title: 圆角
       default: fang
       description: 样式风格
+    - name: min
+      title: 步长
+      type: string, number
+      default: 1
+      description: 每次点击时改变的值
     - name: disableInput
       title: 只读
       type: boolean
@@ -52,6 +74,18 @@
       type: boolean
       default: false
       description: 是否禁用
+    - name: align
+      title: 对齐方式
+      type: string
+      options:
+        - value: left
+          title: 左对齐
+        - value: center
+          title: 居中对齐
+        - value: right
+          title: 右对齐
+      default: center
+      description: 样式风格
   slots: false
   events:
     - name: click
