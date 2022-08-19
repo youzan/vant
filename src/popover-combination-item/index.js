@@ -30,21 +30,28 @@ export default createComponent({
   },
 
   methods: {
-    onClickAction(context, index) {
+    onClickAction(context, index, e) {
+      if (this.$env?.VUE_APP_DESIGNER) {
+        e.stopPropagation();
+        return;
+      }
       this.parent.onClickAction(context, index);
     }
   },
 
   render() {
-    const { icon, text, disabled, className } = this;
+    const { icon, text, disabled, className, slots } = this;
       return (
       <div
         role="menuitem"
         class={[bem('action', { disabled, 'with-icon': icon }), className]}
-        onClick={() => this.onClickAction(this, this.index)}
+        onClick={(e) => this.onClickAction(this, this.index,e)}
+        vusion-slot-name="default"
       >
         {icon && <Icon name={icon} class={bem('action-icon')} />}
-        <div class={[bem('action-text'), BORDER_BOTTOM]}>{text}</div>
+        {/* <div class={[bem('action-text'), BORDER_BOTTOM]}>{text}</div> */}
+        {slots() ? <div class={[bem('action-text'), BORDER_BOTTOM]}>{slots()}</div> : null}
+        {!slots() ? <van-empty-col></van-empty-col> : null}
       </div>
     );
   },

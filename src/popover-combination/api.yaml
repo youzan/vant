@@ -92,6 +92,7 @@
       title: 标题
       type: string
       default: 标题
+      advanced: true
       description: 标题
     - name: disabled
       title: 是否禁用
