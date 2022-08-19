@@ -17,7 +17,7 @@ import {
 } from '../utils';
 
 // Composables
-import { useScrollParent } from '@vant/use';
+import { useEventListener, useScrollParent } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 
 // Components
@@ -61,6 +61,7 @@ export default defineComponent({
     let reachTop: boolean;
 
     const root = ref<HTMLElement>();
+    const track = ref<HTMLElement>();
     const scrollParent = useScrollParent(root);
 
     const state = reactive({
@@ -220,6 +221,15 @@ export default defineComponent({
       }
     );
 
+    // add passive option to avoid Chrome warning
+    useEventListener('touchstart', onTouchStart as EventListener, {
+      target: track,
+      passive: true,
+    });
+    useEventListener('touchmove', onTouchMove as EventListener, {
+      target: track,
+    });
+
     return () => {
       const trackStyle = {
         transitionDuration: `${state.duration}ms`,
@@ -231,10 +241,9 @@ export default defineComponent({
       return (
         <div ref={root} class={bem()}>
           <div
+            ref={track}
             class={bem('track')}
             style={trackStyle}
-            onTouchstart={onTouchStart}
-            onTouchmove={onTouchMove}
             onTouchend={onTouchEnd}
             onTouchcancel={onTouchEnd}
           >
