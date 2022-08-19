@@ -32,6 +32,7 @@ import {
   runSyncRule,
   endComposing,
   mapInputType,
+  isEmptyValue,
   startComposing,
   getRuleMessage,
   resizeTextarea,
@@ -201,6 +202,10 @@ export default defineComponent({
             }
 
             if (rule.validator) {
+              if (isEmptyValue(value) && rule.validateEmpty === false) {
+                return;
+              }
+
               return runRuleValidator(value, rule).then((result) => {
                 if (result && typeof result === 'string') {
                   state.status = 'failed';

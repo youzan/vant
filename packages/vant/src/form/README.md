@@ -509,12 +509,13 @@ export default {
 
 | Key | Description | Type |
 | --- | --- | --- |
-| required | Whether to be a required field, the value is not allowed to be empty string, empty array, `false`, `undefined`, `null` | _boolean_ |
-| message | Error message | _string \| (value, rule) => string_ |
-| validator | Custom validator | _(value, rule) => boolean \| string \| Promise_ |
-| pattern | Regex pattern | _RegExp_ |
-| trigger | When to validate the form, can be set to `onChange`、`onBlur` | _string_ |
+| required | Whether to be a required field, the value is not allowed to be empty (empty string, empty array, `false`, `undefined`, `null`) | _boolean_ |
+| message | Error message, can be a function to dynamically return message content | _string \| (value, rule) => string_ |
+| validator | Custom validator, can return a Promise to validate dynamically | _(value, rule) => boolean \| string \| Promise_ |
+| pattern | Regexp pattern, if the regexp cannot match, means that the validation fails | _RegExp_ |
+| trigger | When to validate the form, priority is higher than the `validate-trigger` of the Form component, can be set to `onChange`, `onBlur`, `onSubmit` | _string \| string[]_ |
 | formatter | Format value before validate | _(value, rule) => any_ |
+| validateEmpty `v3.6.0` | Controls whether the `validator` and `pattern` options to verify empty values, the default value is `true`, you can set to `false` to disable this behavior | _boolean_ |
 
 ### validate-trigger
 

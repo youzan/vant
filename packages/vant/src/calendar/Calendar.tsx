@@ -185,10 +185,6 @@ export default defineComponent({
       const months: Date[] = [];
       const cursor = new Date(props.minDate);
 
-      if (props.lazyRender && !props.show && props.poppable) {
-        return months;
-      }
-
       cursor.setDate(1);
 
       do {
@@ -299,7 +295,9 @@ export default defineComponent({
           props.type === 'single'
             ? (currentDate.value as Date)
             : (currentDate.value as Date[])[0];
-        scrollToDate(targetDate);
+        if (isDate(targetDate)) {
+          scrollToDate(targetDate);
+        }
       } else {
         raf(onScroll);
       }

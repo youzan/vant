@@ -148,7 +148,7 @@ app.use(Badge);
 | dot | 是否展示为小红点 | _boolean_ | `false` |
 | max | 最大值，超过最大值会显示 `{max}+`，仅当 content 为数字时有效 | _number \| string_ | - |
 | offset `v3.0.5` | 设置徽标的偏移量，数组的两项分别对应水平和垂直方向的偏移量，默认单位为 `px` | _[number \| string, number \| string]_ | - |
-| show-zero `v3.0.10` | 当 content 为数字 0 时，是否展示徽标 | _boolean_ | `true` |
+| show-zero `v3.0.10` | 当 content 为数字 0 或字符串 '0' 时，是否展示徽标 | _boolean_ | `true` |
 | position `v3.2.7` | 徽标位置，可选值为 `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 
 ### Slots
@@ -184,17 +184,3 @@ import type { BadgeProps, BadgePosition } from 'vant';
 | --van-badge-dot-color | _var(--van-danger-color)_ | - |
 | --van-badge-dot-size | _8px_ | - |
 | --van-badge-font | _-apple-system-font, Helvetica Neue, Arial, sans-serif_ | - |
-
-## 常见问题
-
-### 设置 show-zero 属性为 false 不生效？
-
-注意 `show-zero` 属性仅对数字类型的 `0` 有效，对字符串类型的 `'0'` 无效。
-
-```html
-<!-- 正确写法，不显示 0 -->
-<van-badge :content="0" :show-zero="false" />
-
-<!-- 错误写法，显示 0 -->
-<van-badge content="0" :show-zero="false" />
-```

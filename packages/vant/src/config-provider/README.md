@@ -249,6 +249,7 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 | --- | --- | --- | --- |
 | theme | Theme mode, can be set to `dark` | _ConfigProviderTheme_ | `light` |
 | theme-vars | Theme variables | _object_ | - |
+| z-index `v3.6.0` | Set the z-index of all popup components, this property takes effect globally | _number_ | `2000` |
 | tag `v3.1.2` | HTML Tag of root element | _string_ | `div` |
 | icon-prefix `v3.1.3` | Icon className prefix | _string_ | `van-icon` |
 

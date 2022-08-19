@@ -541,16 +541,17 @@ export default {
 
 ### Rule 数据结构
 
-使用 Field 的`rules`属性可以定义校验规则，可选属性如下:
+使用 Field 的 `rules` 属性可以定义校验规则，可选属性如下:
 
 | 键名 | 说明 | 类型 |
 | --- | --- | --- |
-| required | 是否为必选字段，当值为空字符串、空数组、`false`、`undefined`、`null` 时，校验不通过 | _boolean_ |
-| message | 错误提示文案 | _string \| (value, rule) => string_ |
-| validator | 通过函数进行校验 | _(value, rule) => boolean \| string \| Promise_ |
-| pattern | 通过正则表达式进行校验 | _RegExp_ |
-| trigger | 本项规则的触发时机，可选值为 `onChange`、`onBlur` | _string_ |
+| required | 是否为必选字段，当值为空值时（空字符串、空数组、`false`、`undefined`、`null` ），校验不通过 | _boolean_ |
+| message | 错误提示文案，可以设置为一个函数来返回动态的文案内容 | _string \| (value, rule) => string_ |
+| validator | 通过函数进行校验，可以返回一个 Promise 来进行异步校验 | _(value, rule) => boolean \| string \| Promise_ |
+| pattern | 通过正则表达式进行校验，正则无法匹配表示校验不通过 | _RegExp_ |
+| trigger | 设置本项规则的触发时机，优先级高于 Form 组件设置的 `validate-trigger` 属性，可选值为 `onChange`、`onBlur`、`onSubmit` | _string \| string[]_ |
 | formatter | 格式化函数，将表单项的值转换后进行校验 | _(value, rule) => any_ |
+| validateEmpty `v3.6.0` | 设置 `validator` 和 `pattern` 是否要对空值进行校验，默认值为 `true`，可以设置为 `false` 来禁用该行为 | _boolean_ |
 
 ### validate-trigger 可选值
 

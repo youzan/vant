@@ -1,5 +1,6 @@
 import { useRect } from '@vant/use';
 import { Ref, ref, onMounted, nextTick } from 'vue';
+import { onPopupReopen } from './on-popup-reopen';
 
 export const useHeight = (
   element: Element | Ref<Element | undefined>,
@@ -24,6 +25,12 @@ export const useHeight = (
       }
     }
   });
+
+  // The result of useHeight might be 0 when the popup is hidden,
+  // so we need to reset the height when the popup is reopened.
+  // IntersectionObserver is a better solution, but it is not supported by legacy browsers.
+  // https://github.com/vant-ui/vant/issues/10628
+  onPopupReopen(() => nextTick(setHeight));
 
   return height;
 };

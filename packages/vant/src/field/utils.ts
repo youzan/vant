@@ -8,7 +8,7 @@ import {
 } from '../utils';
 import type { FieldRule, FieldType, FieldAutosizeConfig } from './types';
 
-function isEmptyValue(value: unknown) {
+export function isEmptyValue(value: unknown) {
   if (Array.isArray(value)) {
     return !value.length;
   }
@@ -19,8 +19,13 @@ function isEmptyValue(value: unknown) {
 }
 
 export function runSyncRule(value: unknown, rule: FieldRule) {
-  if (rule.required && isEmptyValue(value)) {
-    return false;
+  if (isEmptyValue(value)) {
+    if (rule.required) {
+      return false;
+    }
+    if (rule.validateEmpty === false) {
+      return true;
+    }
   }
   if (rule.pattern && !rule.pattern.test(String(value))) {
     return false;

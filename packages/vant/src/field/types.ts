@@ -64,6 +64,7 @@ export type FieldRule = {
   required?: boolean;
   validator?: FieldRuleValidator;
   formatter?: FiledRuleFormatter;
+  validateEmpty?: boolean;
 };
 
 export type FieldValidationStatus = 'passed' | 'failed' | 'unvalidated';
