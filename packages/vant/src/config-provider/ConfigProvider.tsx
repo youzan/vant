@@ -2,6 +2,7 @@ import {
   watch,
   provide,
   computed,
+  watchEffect,
   onActivated,
   onDeactivated,
   onBeforeUnmount,
@@ -12,6 +13,7 @@ import {
   type ExtractPropTypes,
 } from 'vue';
 import {
+  extend,
   inBrowser,
   kebabCase,
   makeStringProp,
@@ -31,11 +33,15 @@ export type ConfigProviderProvide = {
 export const CONFIG_PROVIDER_KEY: InjectionKey<ConfigProviderProvide> =
   Symbol(name);
 
+export type ThemeVars = PropType<Record<string, Numeric>>;
+
 const configProviderProps = {
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
   theme: makeStringProp<ConfigProviderTheme>('light'),
   zIndex: Number,
-  themeVars: Object as PropType<Record<string, Numeric>>,
+  themeVars: Object as ThemeVars,
+  themeVarsDark: Object as ThemeVars,
+  themeVarsLight: Object as ThemeVars,
   iconPrefix: String,
 };
 
@@ -55,11 +61,15 @@ export default defineComponent({
   props: configProviderProps,
 
   setup(props, { slots }) {
-    const style = computed<CSSProperties | undefined>(() => {
-      if (props.themeVars) {
-        return mapThemeVarsToCSSVars(props.themeVars);
-      }
-    });
+    const style = computed<CSSProperties | undefined>(() =>
+      mapThemeVarsToCSSVars(
+        extend(
+          {},
+          props.themeVars,
+          props.theme === 'dark' ? props.themeVarsDark : props.themeVarsLight
+        )
+      )
+    );
 
     if (inBrowser) {
       const addTheme = () => {

@@ -150,6 +150,45 @@ export default {
 
 > Tips: ConfigProvider only affects its child components.
 
+### Combining dark mode with CSS variables
+
+If you need to define CSS variables for dark mode or light mode separately, you can use the `theme-vars-dark` and `theme-vars-light` props.
+
+- `theme-vars-dark`: define CSS variables that only take effect in dark mode, will override the variables defined in `theme-vars`.
+- `theme-vars-light`: define CSS variables that only take effect in light mode, will override the variables defined in `theme-vars`.
+
+#### Example
+
+Take the `buttonPrimaryBackground` variable below as an example, the value will be `blue` in dark mode, and `green` in light mode.
+
+```html
+<van-config-provider
+  :theme-vars="themeVars"
+  :theme-vars-dark="themeVarsDark"
+  :theme-vars-light="themeVarsLight"
+>
+  ...
+</van-config-provider>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const themeVars = { buttonPrimaryBackground: 'red' };
+    const themeVarsDark = { buttonPrimaryBackground: 'blue' };
+    const themeVarsLight = { buttonPrimaryBackground: 'green' };
+
+    return {
+      themeVars,
+      themeVarsDark,
+      themeVarsLight,
+    };
+  },
+};
+```
+
 ## Variables
 
 ### Basic Variables
@@ -249,6 +288,8 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 | --- | --- | --- | --- |
 | theme | Theme mode, can be set to `dark` | _ConfigProviderTheme_ | `light` |
 | theme-vars | Theme variables | _object_ | - |
+| theme-vars-dark | Theme variables that work in dark mode，will override `theme-vars` | _object_ | - |
+| theme-vars-light | Theme variables that work in light mode, will override `theme-vars` | _object_ | - |
 | z-index `v3.6.0` | Set the z-index of all popup components, this property takes effect globally | _number_ | `2000` |
 | tag `v3.1.2` | HTML Tag of root element | _string_ | `div` |
 | icon-prefix `v3.1.3` | Icon className prefix | _string_ | `van-icon` |

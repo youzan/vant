@@ -150,6 +150,45 @@ export default {
 
 > 注意：ConfigProvider 仅影响它的子组件的样式，不影响全局 body 节点。
 
+### 结合深色模式与 CSS 变量
+
+如果需要单独定义深色模式或浅色模式下的 CSS 变量，可以使用 `theme-vars-dark` 和 `theme-vars-light` 属性。
+
+- `theme-vars-dark`: 仅在深色模式下生效的 CSS 变量，优先级高于 `theme-vars` 中定义的变量。
+- `theme-vars-light`: 仅在浅色模式下生效的 CSS 变量，优先级高于 `theme-vars` 中定义的变量。
+
+#### 示例
+
+以下方的 `buttonPrimaryBackground` 变量为例, 在深色模式下的值为 `blue`，在浅色模式下的值为 `green`。
+
+```html
+<van-config-provider
+  :theme-vars="themeVars"
+  :theme-vars-dark="themeVarsDark"
+  :theme-vars-light="themeVarsLight"
+>
+  ...
+</van-config-provider>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const themeVars = { buttonPrimaryBackground: 'red' };
+    const themeVarsDark = { buttonPrimaryBackground: 'blue' };
+    const themeVarsLight = { buttonPrimaryBackground: 'green' };
+
+    return {
+      themeVars,
+      themeVarsDark,
+      themeVarsLight,
+    };
+  },
+};
+```
+
 ## 主题变量
 
 ### 基础变量
@@ -253,6 +292,8 @@ Vant 中的 CSS 变量分为 **基础变量** 和 **组件变量**。组件变�
 | --- | --- | --- | --- |
 | theme | 主题风格，设置为 `dark` 来开启深色模式，全局生效 | _ConfigProviderTheme_ | `light` |
 | theme-vars | 自定义主题变量，局部生效 | _object_ | - |
+| theme-vars-dark | 仅在深色模式下生效的主题变量，优先级高于 `theme-vars` | _object_ | - |
+| theme-vars-light | 仅在浅色模式下生效的主题变量，优先级高于 `theme-vars` | _object_ | - |
 | tag `v3.1.2` | 根节点对应的 HTML 标签名 | _string_ | `div` |
 | z-index `v3.6.0` | 设置所有弹窗类组件的 z-index，该属性对全局生效 | _number_ | `2000` |
 | icon-prefix `v3.1.3` | 所有图标的类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
