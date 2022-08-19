@@ -2,7 +2,7 @@
   title: 数字输入
   labels:
     - Form
-  icon: number
+  icon: numberh5
   next: true
   nested: false
   attrs:

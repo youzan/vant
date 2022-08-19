@@ -4,7 +4,8 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  padding: @search-padding;
+  // padding: @search-padding;
+  padding: 6px 16px;
   background-color: @search-background-color;
 
   &__content {
@@ -12,7 +13,8 @@
     flex: 1;
     padding-left: @padding-sm;
     background-color: @search-content-background-color;
-    border-radius: @border-radius-sm;
+    // border-radius: @border-radius-sm;
+    border-radius: 16px;
 
     &--round {
       border-radius: @border-radius-max;
@@ -30,6 +32,8 @@
     flex: 1;
     padding: 5px @padding-xs 5px 0;
     background-color: transparent;
+    height: 32px;
+    min-height: unset;
 
     &__left-icon {
       color: @search-left-icon-color;
