@@ -239,3 +239,18 @@ import type { ToastType, ToastProps, ToastOptions, ToastPosition } from 'vant';
 | --van-toast-default-min-height | _88px_ | - |
 | --van-toast-position-top-distance | _20%_ | - |
 | --van-toast-position-bottom-distance | _20%_ | - |
+
+## 常见问题
+
+### 引用 showToast 时出现编译报错？
+
+如果引用 `showToast` 方法时出现以下报错，说明项目中使用了 `babel-plugin-import` 插件，导致代码被错误编译。
+
+```bash
+These dependencies were not found:
+
+* vant/es/show-toast in ./src/xxx.js
+* vant/es/show-toast/style in ./src/xxx.js
+```
+
+Vant 从 4.0 版本开始不再需要 `babel-plugin-import` 插件，请参考 [迁移指南](#/zh-CN/migrate-from-v3#yi-chu-babel-plugin-import) 移除该插件。
