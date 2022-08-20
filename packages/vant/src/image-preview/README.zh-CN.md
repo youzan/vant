@@ -306,4 +306,4 @@ These dependencies were not found:
 * vant/es/show-image-preview/style in ./src/xxx.js
 ```
 
-Vant 从 4.0 版本开始不再需要 `babel-plugin-import` 插件，请参考 [迁移指南](#/zh-CN/migrate-from-v3#yi-chu-babel-plugin-import) 移除该插件。
+Vant 从 4.0 版本开始不再支持 `babel-plugin-import` 插件，请参考 [迁移指南](#/zh-CN/migrate-from-v3#yi-chu-babel-plugin-import) 移除该插件。
