@@ -284,6 +284,19 @@ import type {
 
 ## 常见问题
 
+### 引用 showDialog 时出现编译报错？
+
+如果引用 `showDialog` 方法时出现以下报错，说明项目中使用了 `babel-plugin-import` 插件，导致代码被错误编译。
+
+```bash
+These dependencies were not found:
+
+* vant/es/show-dialog in ./src/xxx.js
+* vant/es/show-dialog/style in ./src/xxx.js
+```
+
+Vant 从 4.0 版本开始不再支持 `babel-plugin-import` 插件，请参考 [迁移指南](#/zh-CN/migrate-from-v3#yi-chu-babel-plugin-import) 移除该插件。
+
 ### 在 beforeRouteLeave 里调用 Dialog 无法展示？
 
 将 `closeOnPopstate` 属性设置为 false 即可。

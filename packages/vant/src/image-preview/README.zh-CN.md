@@ -294,3 +294,16 @@ imagePreviewRef.value?.swipeTo(1);
 ### 在桌面端无法操作组件？
 
 参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。
+
+### 引用 showImagePreview 时出现编译报错？
+
+如果引用 `showImagePreview` 方法时出现以下报错，说明项目中使用了 `babel-plugin-import` 插件，导致代码被错误编译。
+
+```bash
+These dependencies were not found:
+
+* vant/es/show-image-preview in ./src/xxx.js
+* vant/es/show-image-preview/style in ./src/xxx.js
+```
+
+Vant 从 4.0 版本开始不再支持 `babel-plugin-import` 插件，请参考 [迁移指南](#/zh-CN/migrate-from-v3#yi-chu-babel-plugin-import) 移除该插件。
