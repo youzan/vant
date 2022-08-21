@@ -440,7 +440,7 @@ export default defineComponent({
         <div
           style={trackStyle.value}
           class={bem('track', { vertical: props.vertical })}
-          onTouchstart={onTouchStart}
+          onTouchstartPassive={onTouchStart}
           onTouchmove={onTouchMove}
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}
