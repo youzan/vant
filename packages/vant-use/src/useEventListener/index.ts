@@ -10,6 +10,16 @@ export type UseEventListenerOptions = {
   passive?: boolean;
 };
 
+export function useEventListener<K extends keyof DocumentEventMap>(
+  type: K,
+  listener: (event: DocumentEventMap[K]) => void,
+  options?: UseEventListenerOptions
+): void;
+export function useEventListener(
+  type: string,
+  listener: EventListener,
+  options?: UseEventListenerOptions
+): void;
 export function useEventListener(
   type: string,
   listener: EventListener,
@@ -27,7 +37,10 @@ export function useEventListener(
     const element = unref(target);
 
     if (element && !attached) {
-      element.addEventListener(type, listener, { capture, passive });
+      element.addEventListener(type, listener, {
+        capture,
+        passive,
+      });
       attached = true;
     }
   };

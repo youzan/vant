@@ -222,11 +222,11 @@ export default defineComponent({
     );
 
     // add passive option to avoid Chrome warning
-    useEventListener('touchstart', onTouchStart as EventListener, {
+    useEventListener('touchstart', onTouchStart, {
       target: track,
       passive: true,
     });
-    useEventListener('touchmove', onTouchMove as EventListener, {
+    useEventListener('touchmove', onTouchMove, {
       target: track,
     });
 
