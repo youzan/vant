@@ -3,6 +3,7 @@ import {
   watch,
   nextTick,
   onMounted,
+  watchEffect,
   onBeforeUnmount,
   defineComponent,
   type PropType,
@@ -202,8 +203,8 @@ export default defineComponent({
 
     onMounted(() => {
       updateLocation();
-      watch(popoverRef.value?.popupRef, (val: HTMLElement) => {
-        popupRef.value = val;
+      watchEffect(() => {
+        popupRef.value = popoverRef.value?.popupRef.value;
       });
     });
 
