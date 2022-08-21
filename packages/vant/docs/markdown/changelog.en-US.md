@@ -19,6 +19,32 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.6.0](https://github.com/vant-ui/vant/compare/v3.5.3...v3.6.0)
+
+`2022-08-21`
+
+**New Component**
+
+- Add new component [Space](#/en-US/space), contributed by [@LadyChatterleyLover](https://github.com/LadyChatterleyLover) [#10857](https://github.com/vant-ui/vant/issues/10857)
+
+**Feature**
+
+- ConfigProvider: add z-index prop [#10915](https://github.com/vant-ui/vant/issues/10915)
+- Form: add validateEmpty option of rule [#10913](https://github.com/vant-ui/vant/issues/10913)
+- Popup: add role and tabindex for a11y [#10894](https://github.com/vant-ui/vant/issues/10894)
+- TouchEmulator: support .mjs extension [#10888](https://github.com/vant-ui/vant/issues/10888)
+
+**Bug Fixes**
+
+- Fix incorrect tag name in WebStorm [#10946](https://github.com/vant-ui/vant/issues/10946)
+- Badge: should hide string zero when using show-zero prop [#10921](https://github.com/vant-ui/vant/issues/10921)
+- Calendar: content disappeared when hiding [#10910](https://github.com/vant-ui/vant/issues/10910)
+- Calendar: reading getFullYear error in some cases [#10909](https://github.com/vant-ui/vant/issues/10909)
+- Empty: generate unique id to avoid render issue [#10943](https://github.com/vant-ui/vant/issues/10943)
+- Popover: can not scroll inside popup [#10949](https://github.com/vant-ui/vant/issues/10949)
+- PullRefresh: fix passive event warning [#10938](https://github.com/vant-ui/vant/issues/10938)
+- Search: --van-search-input-height var not work [#10911](https://github.com/vant-ui/vant/issues/10911)
+
 ### [v3.5.4](https://github.com/vant-ui/vant/compare/v3.5.3...v3.5.4)
 
 `2022-08-06`
