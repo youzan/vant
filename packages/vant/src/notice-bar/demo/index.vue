@@ -69,6 +69,7 @@ const t = useTranslate({
         vertical
         class="notice-swipe"
         :autoplay="3000"
+        :touchable="false"
         :show-indicators="false"
       >
         <van-swipe-item>{{ t('poetry1') }}</van-swipe-item>
