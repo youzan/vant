@@ -46,7 +46,7 @@
   "dependencies": {
     "@vant/icons": "^1.8.0",
     "@vant/popperjs": "^1.2.1",
-    "@vant/use": "^1.4.1"
+    "@vant/use": "^1.4.2"
   },
   "peerDependencies": {
     "vue": "^3.0.0"

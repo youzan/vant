@@ -90,6 +90,7 @@ export default defineComponent({
   setup(props, { emit, slots, attrs }) {
     let popper: Instance | null;
 
+    const popupRef = ref<HTMLElement>();
     const wrapperRef = ref<HTMLElement>();
     const popoverRef = ref<ComponentInstance>();
 
@@ -144,11 +145,6 @@ export default defineComponent({
       }
     };
 
-    const onTouchstart = (event: TouchEvent) => {
-      event.stopPropagation();
-      emit('touchstart', event);
-    };
-
     const onClickAction = (action: PopoverAction, index: number) => {
       if (action.disabled) {
         return;
@@ -163,6 +159,7 @@ export default defineComponent({
 
     const onClickAway = () => {
       if (
+        props.show &&
         props.closeOnClickOutside &&
         (!props.overlay || props.closeOnClickOverlay)
       ) {
@@ -203,7 +200,13 @@ export default defineComponent({
       );
     };
 
-    onMounted(updateLocation);
+    onMounted(() => {
+      updateLocation();
+      watch(popoverRef.value?.popupRef, (val: HTMLElement) => {
+        popupRef.value = val;
+      });
+    });
+
     onBeforeUnmount(() => {
       if (popper) {
         popper.destroy();
@@ -213,7 +216,9 @@ export default defineComponent({
 
     watch(() => [props.show, props.offset, props.placement], updateLocation);
 
-    useClickAway(wrapperRef, onClickAway, { eventName: 'touchstart' });
+    useClickAway([wrapperRef, popupRef], onClickAway, {
+      eventName: 'touchstart',
+    });
 
     return () => (
       <>
@@ -226,7 +231,6 @@ export default defineComponent({
           position={''}
           transition="van-popover-zoom"
           lockScroll={false}
-          onTouchstart={onTouchstart}
           onUpdate:show={updateShow}
           {...attrs}
           {...pick(props, popupProps)}
