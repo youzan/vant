@@ -140,7 +140,10 @@ export default defineComponent({
       (value) => emit('change', value)
     );
 
-    useEventListener('scroll', onScroll, { target: scrollParent });
+    useEventListener('scroll', onScroll, {
+      target: scrollParent,
+      passive: true,
+    });
     useVisibilityChange(root, onScroll);
 
     return () => (

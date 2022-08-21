@@ -182,7 +182,10 @@ export default defineComponent({
       nextTick(onScroll);
     };
 
-    useEventListener('scroll', onScroll, { target: scrollParent });
+    useEventListener('scroll', onScroll, {
+      target: scrollParent,
+      passive: true,
+    });
 
     onMounted(init);
 

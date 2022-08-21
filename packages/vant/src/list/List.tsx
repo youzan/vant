@@ -166,7 +166,10 @@ export default defineComponent({
 
     useExpose<ListExpose>({ check });
 
-    useEventListener('scroll', check, { target: scrollParent });
+    useEventListener('scroll', check, {
+      target: scrollParent,
+      passive: true,
+    });
 
     return () => {
       const Content = slots.default?.();

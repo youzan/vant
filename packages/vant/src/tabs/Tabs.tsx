@@ -485,7 +485,10 @@ export default defineComponent({
     onActivated(setLine);
     onPopupReopen(setLine);
     onMountedOrActivated(init);
-    useEventListener('scroll', onScroll, { target: scroller });
+    useEventListener('scroll', onScroll, {
+      target: scroller,
+      passive: true,
+    });
 
     linkChildren({
       id,
