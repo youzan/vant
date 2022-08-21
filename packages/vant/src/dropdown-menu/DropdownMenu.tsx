@@ -145,7 +145,10 @@ export default defineComponent({
 
     linkChildren({ id, props, offset });
     useClickAway(root, onClickAway);
-    useEventListener('scroll', onScroll, { target: scrollParent });
+    useEventListener('scroll', onScroll, {
+      target: scrollParent,
+      passive: true,
+    });
 
     return () => (
       <div ref={root} class={bem()}>
