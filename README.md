@@ -67,10 +67,14 @@ pnpm add vant
 
 ```js
 import { createApp } from 'vue';
+// 1. Import the components you need
 import { Button } from 'vant';
+// 2. Import the components style
 import 'vant/lib/index.css';
 
 const app = createApp();
+
+// 3. Register the components you need
 app.use(Button);
 ```
 
