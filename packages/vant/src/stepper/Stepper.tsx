@@ -259,7 +259,7 @@ export default defineComponent({
         actionType = type;
         onChange();
       },
-      onTouchstart: () => {
+      onTouchstartPassive: () => {
         actionType = type;
         onTouchStart();
       },

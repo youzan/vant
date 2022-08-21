@@ -279,7 +279,7 @@ export default defineComponent({
         tabindex={props.disabled ? undefined : 0}
         aria-disabled={props.disabled}
         aria-readonly={props.readonly}
-        onTouchstart={onTouchStart}
+        onTouchstartPassive={onTouchStart}
         onTouchmove={onTouchMove}
       >
         {list.value.map(renderStar)}

@@ -308,7 +308,7 @@ export default defineComponent({
     return () => (
       <div
         class={[bem(), props.className]}
-        onTouchstart={onTouchStart}
+        onTouchstartPassive={onTouchStart}
         onTouchmove={onTouchMove}
         onTouchend={onTouchEnd}
         onTouchcancel={onTouchEnd}

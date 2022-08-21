@@ -279,7 +279,7 @@ export default defineComponent({
       return (
         <SwipeItem
           class={bem('swipe-item')}
-          onTouchstart={onTouchStart}
+          onTouchstartPassive={onTouchStart}
           onTouchmove={onTouchMove}
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}

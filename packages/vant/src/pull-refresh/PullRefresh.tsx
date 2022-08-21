@@ -221,11 +221,7 @@ export default defineComponent({
       }
     );
 
-    // add passive option to avoid Chrome warning
-    useEventListener('touchstart', onTouchStart, {
-      target: track,
-      passive: true,
-    });
+    // useEventListener will set passive to `false` to eliminate the warning of Chrome
     useEventListener('touchmove', onTouchMove, {
       target: track,
     });
@@ -244,6 +240,7 @@ export default defineComponent({
             ref={track}
             class={bem('track')}
             style={trackStyle}
+            onTouchstartPassive={onTouchStart}
             onTouchend={onTouchEnd}
             onTouchcancel={onTouchEnd}
           >

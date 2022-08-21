@@ -275,7 +275,7 @@ export default defineComponent({
         class={bem('sidebar')}
         style={sidebarStyle.value}
         onClick={onClickSidebar}
-        onTouchstart={touch.start}
+        onTouchstartPassive={touch.start}
         onTouchmove={onTouchMove}
       >
         {renderIndexes()}

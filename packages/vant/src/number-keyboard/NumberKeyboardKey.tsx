@@ -88,8 +88,8 @@ export default defineComponent({
     return () => (
       <div
         class={bem('wrapper', { wider: props.wider })}
-        onTouchstart={onTouchStart}
-        onTouchmove={onTouchMove}
+        onTouchstartPassive={onTouchStart}
+        onTouchmovePassive={onTouchMove}
         onTouchend={onTouchEnd}
         onTouchcancel={onTouchEnd}
       >
