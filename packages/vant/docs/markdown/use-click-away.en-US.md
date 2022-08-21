@@ -74,7 +74,7 @@ function useClickAway(
 
 | Name | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| target | Target element | _Element \| Ref\<Element>_ | - |
+| target | Target element, support multiple elements | _Element \| Ref\<Element> \| Array\<Element \| Ref\<Element>>_ | - |
 | listener | Callback function when the outside is clicked | _EventListener_ | - |
 | options | Options | _Options_ | `{ eventName: 'click' }` |
 
