@@ -12,11 +12,13 @@ export function useLockScroll(
   shouldLock: () => boolean
 ) {
   const touch = useTouch();
+  const DIRECTION_UP = '01';
+  const DIRECTION_DOWN = '10';
 
   const onTouchMove = (event: TouchEvent) => {
     touch.move(event);
 
-    const direction = touch.deltaY.value > 0 ? '10' : '01';
+    const direction = touch.deltaY.value > 0 ? DIRECTION_DOWN : DIRECTION_UP;
     const el = getScrollParent(
       event.target as Element,
       rootRef.value
