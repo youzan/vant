@@ -72,6 +72,7 @@ app.use(NoticeBar);
     vertical
     class="notice-swipe"
     :autoplay="3000"
+    :touchable="false"
     :show-indicators="false"
   >
     <van-swipe-item>Content 1</van-swipe-item>
