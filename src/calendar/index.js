@@ -277,7 +277,7 @@ export default createComponent({
         defaultDate = defaultDate.replace(/-/g, "/");
       }
       if (defaultDate === null) {
-        return typeof defaultDate === 'string' ? new Date(defaultDate) : defaultDate;
+        // return typeof defaultDate === 'string' ? new Date(defaultDate) : defaultDate;
       }
 
 
