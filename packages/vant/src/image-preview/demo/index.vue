@@ -77,23 +77,23 @@ const showFunctionCall = (options: Partial<ImagePreviewOptions> = {}) => {
 
 <template>
   <demo-block card :title="t('basicUsage')">
-    <van-cell is-link :value="t('showImages')" @click="showFunctionCall()" />
+    <van-cell is-link :title="t('showImages')" @click="showFunctionCall()" />
   </demo-block>
 
   <demo-block card :title="t('customConfig')">
     <van-cell
       is-link
-      :value="t('startPosition')"
+      :title="t('startPosition')"
       @click="showFunctionCall({ startPosition: 1 })"
     />
     <van-cell
       is-link
-      :value="t('showClose')"
+      :title="t('showClose')"
       @click="showFunctionCall({ closeable: true })"
     />
     <van-cell
       is-link
-      :value="t('closeEvent')"
+      :title="t('closeEvent')"
       @click="showFunctionCall({ onClose })"
     />
   </demo-block>
@@ -101,13 +101,13 @@ const showFunctionCall = (options: Partial<ImagePreviewOptions> = {}) => {
   <demo-block card :title="t('beforeClose')">
     <van-cell
       is-link
-      :value="t('beforeClose')"
+      :title="t('beforeClose')"
       @click="showFunctionCall({ beforeClose })"
     />
   </demo-block>
 
   <demo-block card :title="t('componentCall')">
-    <van-cell is-link :value="t('componentCall')" @click="showComponentCall" />
+    <van-cell is-link :title="t('componentCall')" @click="showComponentCall" />
     <van-image-preview v-model:show="show" :images="images" @change="onChange">
       <template #index>{{ t('index', index) }}</template>
     </van-image-preview>
