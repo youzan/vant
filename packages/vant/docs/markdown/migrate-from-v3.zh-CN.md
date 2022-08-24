@@ -293,16 +293,41 @@ emit('clickInput');
 
 在 Vant 4.0 版本中，以下 API 进行了不兼容更新：
 
-#### Tabs
-
-- 移除了 `click` 和 `disabled` 事件，请使用 `click-tab` 事件代替
-
 #### AddressEdit
 
 - 移除 `show-postal` 属性
 - 移除 `postal-validator` 属性
 - `change-area` 事件的参数调整为 `PickerOption[]` 类型
 - 移除未在文档中标注的 `getArea` 实例方法
+
+#### Popup
+
+Popup 的 CSS 样式进行了一定调整，请确认是否对项目中的 UI 产生影响。
+
+- 默认添加了 `box-sizing: border-box` 样式
+- 调整了 `position="center"` 时的水平居中方式，以解决弹窗宽度无法正确自适应的问题：
+
+```less
+// Vant 3
+.van-popup--center {
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+// Vant 4
+.van-popup--center {
+  left: 0;
+  right: 0;
+  width: fit-content;
+  max-width: calc(100vw - var(--van-padding-md) * 2);
+  margin: 0 auto;
+  transform: translateY(-50%);
+}
+```
+
+#### Tabs
+
+- 移除了 `click` 和 `disabled` 事件，请使用 `click-tab` 事件代替
 
 ## 样式变量调整
 
