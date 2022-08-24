@@ -197,9 +197,10 @@ export default createComponent({
     },
   },
   render() {
+    const ifLimit = (this.showWordLimit && this.maxlength);
     const inputAlign = this.vanField?.getProp('inputAlign');
     return (
-      <div class={bem('newwrap', {'clearwrap': this.clearable})}>
+      <div class={bem('newwrap', {'clearwrap': this.clearable, 'limit': ifLimit})}>
         <textarea
         // vShow={this.showInput}
         ref="input"

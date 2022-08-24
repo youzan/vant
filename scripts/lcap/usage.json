@@ -2685,9 +2685,9 @@
             ],
             "events": [
                 {
-                    "name": "$listeners",
-                    "title": "监听事件",
-                    "description": "监听所有`<span>`元素的事件。",
+                    "name": "click",
+                    "title": "点击后",
+                    "description": "点击此项时触发",
                     "params": []
                 }
             ],
@@ -4562,7 +4562,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-form>\\n  <van-field required label=\\\"名称\\\" drole=\\\"other\\\">\\n    <template #input>\\n      <van-fieldinput  placeholder=\\\"请输入\\\" clearable></van-fieldinput>\\n    </template>\\n  </van-field>\\n  <van-field name=\\\"radio\\\" label=\\\"单选框\\\" drole=\\\"other\\\">\\n    <template #input>\\n      <van-radio-group direction=\\\"horizontal\\\">\\n        <template #default=\\\"scope\\\">\\n          <van-radio name=\\\"1\\\" title=\\\"单选框 1\\\"></van-radio>\\n          <van-radio name=\\\"2\\\" title=\\\"单选框 2\\\"></van-radio>\\n        </template>\\n      </van-radio-group>\\n    </template>\\n  </van-field>\\n  <div style=\\\"margin: 16px 16px 0\\\">\\n    <van-button round block=\\\"blockb\\\" type=\\\"info\\\" native-type=\\\"submit\\\" text=\\\"提交\\\">\\n    </van-button>\\n  </div>\\n</van-form>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-form>\\n  <van-field required drole=\\\"other\\\">\\n    <template #title>\\n      <van-text text=\\\"名称\\\"></van-text>\\n    </template>\\n    <template #input>\\n      <van-fieldinput  placeholder=\\\"请输入\\\" clearable></van-fieldinput>\\n    </template>\\n  </van-field>\\n  <van-field name=\\\"radio\\\" drole=\\\"other\\\">\\n    <template #title>\\n      <van-text text=\\\"单选框\\\"></van-text>\\n    </template>\\n    <template #input>\\n      <van-radio-group direction=\\\"horizontal\\\">\\n        <template #default=\\\"scope\\\">\\n          <van-radio name=\\\"1\\\" title=\\\"单选框 1\\\"></van-radio>\\n          <van-radio name=\\\"2\\\" title=\\\"单选框 2\\\"></van-radio>\\n        </template>\\n      </van-radio-group>\\n    </template>\\n  </van-field>\\n  <div style=\\\"margin: 16px 16px 0\\\">\\n    <van-button round block=\\\"blockb\\\" type=\\\"info\\\" native-type=\\\"submit\\\" text=\\\"提交\\\">\\n    </van-button>\\n  </div>\\n</van-form>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-form",
             "title": "表单",
@@ -4574,7 +4574,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-form>\n  <van-field required label=\"名称\" drole=\"other\">\n    <template #input>\n      <van-fieldinput  placeholder=\"请输入\" clearable></van-fieldinput>\n    </template>\n  </van-field>\n  <van-field name=\"radio\" label=\"单选框\" drole=\"other\">\n    <template #input>\n      <van-radio-group direction=\"horizontal\">\n        <template #default=\"scope\">\n          <van-radio name=\"1\" title=\"单选框 1\"></van-radio>\n          <van-radio name=\"2\" title=\"单选框 2\"></van-radio>\n        </template>\n      </van-radio-group>\n    </template>\n  </van-field>\n  <div style=\"margin: 16px 16px 0\">\n    <van-button round block=\"blockb\" type=\"info\" native-type=\"submit\" text=\"提交\">\n    </van-button>\n  </div>\n</van-form>\n</template>\n"
+                    "code": "<template>\n<van-form>\n  <van-field required drole=\"other\">\n    <template #title>\n      <van-text text=\"名称\"></van-text>\n    </template>\n    <template #input>\n      <van-fieldinput  placeholder=\"请输入\" clearable></van-fieldinput>\n    </template>\n  </van-field>\n  <van-field name=\"radio\" drole=\"other\">\n    <template #title>\n      <van-text text=\"单选框\"></van-text>\n    </template>\n    <template #input>\n      <van-radio-group direction=\"horizontal\">\n        <template #default=\"scope\">\n          <van-radio name=\"1\" title=\"单选框 1\"></van-radio>\n          <van-radio name=\"2\" title=\"单选框 2\"></van-radio>\n        </template>\n      </van-radio-group>\n    </template>\n  </van-field>\n  <div style=\"margin: 16px 16px 0\">\n    <van-button round block=\"blockb\" type=\"info\" native-type=\"submit\" text=\"提交\">\n    </van-button>\n  </div>\n</van-form>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -4630,7 +4630,7 @@
                         {
                             "name": "van-field",
                             "title": "表单项",
-                            "snippet": "<van-field label=\"表单项\" drole=\"other\"><template #input></template></van-field>"
+                            "snippet": "<van-field drole=\"other\"><template #title><van-text text=\"表单项\"><van-text></template><template #input></template></van-field>"
                         }
                     ]
                 }
@@ -4716,12 +4716,14 @@
                             "title": "标签名称",
                             "type": "string",
                             "default": "表单项",
+                            "advanced": true,
                             "description": "输入框左侧文本"
                         },
                         {
                             "name": "size",
                             "title": "标签大小",
                             "type": "string",
+                            "advanced": true,
                             "options": [
                                 {
                                     "value": "-",
@@ -6303,6 +6305,27 @@
                     "description": "可见选项个数"
                 },
                 {
+                    "name": "input-align",
+                    "title": "右侧内容对齐方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "left",
+                            "title": "左"
+                        },
+                        {
+                            "value": "center",
+                            "title": "中"
+                        },
+                        {
+                            "value": "right",
+                            "title": "右"
+                        }
+                    ],
+                    "default": "right",
+                    "description": "右侧内容对齐方式"
+                },
+                {
                     "name": "close-on-click-overlay",
                     "title": "点击遮罩层后关闭",
                     "type": "boolean",
@@ -6427,6 +6450,27 @@
                     "description": "显示列数，3-省市区，2-省市，1-省"
                 },
                 {
+                    "name": "input-align",
+                    "title": "右侧内容对齐方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "left",
+                            "title": "左"
+                        },
+                        {
+                            "value": "center",
+                            "title": "中"
+                        },
+                        {
+                            "value": "right",
+                            "title": "右"
+                        }
+                    ],
+                    "default": "right",
+                    "description": "右侧内容对齐方式"
+                },
+                {
                     "name": "close-on-click-overlay",
                     "title": "点击遮罩层后关闭",
                     "type": "boolean",
@@ -6545,6 +6589,27 @@
                     "default": "{'text':'','value':'','children':'children'}",
                     "description": "自定义 options 结构中的字段",
                     "advanced": true
+                },
+                {
+                    "name": "input-align",
+                    "title": "右侧内容对齐方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "left",
+                            "title": "左"
+                        },
+                        {
+                            "value": "center",
+                            "title": "中"
+                        },
+                        {
+                            "value": "right",
+                            "title": "右"
+                        }
+                    ],
+                    "default": "right",
+                    "description": "右侧内容对齐方式"
                 },
                 {
                     "name": "close-on-click-overlay",
@@ -6696,6 +6761,27 @@
                     "description": "是否禁用"
                 },
                 {
+                    "name": "input-align",
+                    "title": "右侧内容对齐方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "left",
+                            "title": "左"
+                        },
+                        {
+                            "value": "center",
+                            "title": "中"
+                        },
+                        {
+                            "value": "right",
+                            "title": "右"
+                        }
+                    ],
+                    "default": "right",
+                    "description": "右侧内容对齐方式"
+                },
+                {
                     "name": "close-on-click-overlay",
                     "title": "点击遮罩层后关闭",
                     "type": "boolean",
@@ -6810,6 +6896,27 @@
                     "description": "是否禁用"
                 },
                 {
+                    "name": "input-align",
+                    "title": "右侧内容对齐方式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "left",
+                            "title": "左"
+                        },
+                        {
+                            "value": "center",
+                            "title": "中"
+                        },
+                        {
+                            "value": "right",
+                            "title": "右"
+                        }
+                    ],
+                    "default": "right",
+                    "description": "右侧内容对齐方式"
+                },
+                {
                     "name": "close-on-click-overlay",
                     "title": "点击遮罩层后关闭",
                     "type": "boolean",
@@ -6844,7 +6951,7 @@
         }
     },
     {
-        "symbol": "van-popover",
+        "symbol": "van-popover-combination",
         "name": "气泡弹出框",
         "icon": "popup",
         "depDescription": {},
@@ -6853,9 +6960,9 @@
             "Feedback"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-popover>\\n  <van-popover-item text=\\\"标签名称1\\\"></van-popover-item>\\n  <van-popover-item text=\\\"标签名称2\\\"></van-popover-item>\\n  <van-popover-item text=\\\"标签名称3\\\"></van-popover-item>\\n</van-popover>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-popover-combination placement=\\\"bottom\\\" :value.sync=\\\"false\\\">\\n  <template #reference>\\n         <van-button type=\\\"primary\\\" text=\\\"触发弹出框组件，可删除替换\\\"></van-button>\\n  </template>\\n  <van-popover-combination-item><van-text text=\\\"内容\\\"></van-text></van-popover-combination-item>\\n</van-popover-combination>\\n</template>\\n\"}]",
         "jsonSchema": {
-            "name": "van-popover",
+            "name": "van-popover-combination",
             "title": "气泡弹出框",
             "description": "将弹出式的气泡菜单.",
             "category": "Feedback",
@@ -6865,7 +6972,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-popover>\n  <van-popover-item text=\"标签名称1\"></van-popover-item>\n  <van-popover-item text=\"标签名称2\"></van-popover-item>\n  <van-popover-item text=\"标签名称3\"></van-popover-item>\n</van-popover>\n</template>\n"
+                    "code": "<template>\n<van-popover-combination placement=\"bottom\" :value.sync=\"false\">\n  <template #reference>\n         <van-button type=\"primary\" text=\"触发弹出框组件，可删除替换\"></van-button>\n  </template>\n  <van-popover-combination-item><van-text text=\"内容\"></van-text></van-popover-combination-item>\n</van-popover-combination>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -6962,20 +7069,19 @@
                             "name": "右下"
                         }
                     ],
-                    "default": "light",
                     "description": "弹出位置"
                 }
             ],
             "slots": [
                 {
                     "name": "default",
-                    "description": "插入`<van-popover-item>`子组件。",
+                    "description": "插入`<van-popover-combination-item>`子组件。",
                     "empty-background": "add-sub-large",
                     "support": [
                         {
                             "name": "van-popover-item",
                             "title": "菜单项",
-                            "snippet": "<van-popover-item text=\"标签名称n\"></van-popover-item>"
+                            "snippet": "<van-popover-combination-item text=\"标签名称n\"></van-popover-combination-item>"
                         }
                     ]
                 }
@@ -7011,7 +7117,7 @@
             ],
             "children": [
                 {
-                    "name": "van-popover-item",
+                    "name": "van-popover-combination-item",
                     "title": "面板项",
                     "attrs": [
                         {
@@ -7019,6 +7125,7 @@
                             "title": "标题",
                             "type": "string",
                             "default": "标题",
+                            "advanced": true,
                             "description": "标题"
                         },
                         {

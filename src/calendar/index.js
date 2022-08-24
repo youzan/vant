@@ -124,6 +124,7 @@ export default createComponent({
       default: 0,
       validator: (val) => val >= 0 && val <= 6,
     },
+    inputAlign: String,
   },
 
   data() {
@@ -605,9 +606,10 @@ export default createComponent({
           value={this.ifDesigner() ? this.defaultDate : this.getTitle}
           readonly
           isLink
-          input-align="right"
+          input-align={this.inputAlign || "right"}
           onClick={this.togglePopup}
           notitle={true}
+          insel={true}
         />
         <Popup
           safe-area-inset-bottom

@@ -38,7 +38,7 @@
       support:
         - name: van-field
           title: 表单项
-          snippet: '<van-field label="表单项" drole="other"><template #input></template></van-field>'
+          snippet: '<van-field drole="other"><template #title><van-text text="表单项"><van-text></template><template #input></template></van-field>'
   events:
     - name: submit
       title: 验证通过
@@ -90,10 +90,12 @@
       title: 标签名称
       type: string
       default: 表单项
+      advanced: true
       description: 输入框左侧文本
     - name: size
       title: 标签大小
       type: string
+      advanced: true
       options:
         - value: "-"
           title: 正常

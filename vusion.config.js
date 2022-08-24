@@ -67,7 +67,7 @@ module.exports = {
             { group: 'Selector', show: true, name: 'cascader', alias: '级联选择器' },
             { group: 'Selector', show: true, name: 'datetime-picker', alias: '时间选择器' },
             { group: 'Selector', show: true, name: 'calendar', alias: '日期选择器' },
-            { group: 'Feedback', show: true, name: 'popover', alias: '气泡弹出框' },
+            { group: 'Feedback', show: true, name: 'popover-combination', alias: '气泡弹出框' },
             { group: 'Feedback', show: true, name: 'dialog', alias: '弹出框' },
         ],
         blocks: [],

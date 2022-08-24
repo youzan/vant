@@ -49,6 +49,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    insel: {
+      type: Boolean,
+      default: false,
+    }
   },
 
   data() {
@@ -135,7 +139,7 @@ export default createComponent({
         }
         if(ifDesigner && singleslot) return null;
         return (
-          <div class={[bem('title'), props.titleClass]} style={props.titleStyle}>
+          <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title">
             {slots('title') ? slots('title') : title}
             {(ifDesigner && (!isDef(title) || title === '') && !slots('title')) ? <van-empty-col></van-empty-col> : null}
           </div>
@@ -294,6 +298,7 @@ export default createComponent({
       center: props.center,
       required: props.required,
       borderless: !props.border,
+      insel: props.insel
     };
 
     if (size) {
@@ -325,7 +330,7 @@ export default createComponent({
 
     const ado = {
       ...this.$attrs,
-      [infield ? 'is-sub': 'noallow']: ''
+      [infield ? 'is-sub': 'noallow']: '',
     }
 
     const canActivateItem = () => {
@@ -348,6 +353,7 @@ export default createComponent({
         vusion-node-path={that.vusionNodePath}
         vusion-node-tag={that.vusionNodeTag}
         vusion-template-input-node-path={that.vusionTemplateInputNodePath}
+        vusion-template-title-node-path={that.vusionTemplateTitleNodePath}
       >
         {LeftIcon()}
         {Title()}

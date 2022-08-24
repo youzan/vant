@@ -46,6 +46,18 @@
       type: number
       default: 3
       description: 显示列数，3-省市区，2-省市，1-省
+    - name: input-align
+      title: 右侧内容对齐方式
+      type: string
+      options:
+        - value: left
+          title: 左
+        - value: center
+          title: 中
+        - value: right
+          title: 右
+      default: right
+      description: 右侧内容对齐方式
     - name: close-on-click-overlay
       title: 点击遮罩层后关闭
       type: boolean

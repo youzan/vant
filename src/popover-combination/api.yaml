@@ -1,0 +1,105 @@
+- name: van-popover-combination
+  title: 气泡弹出框
+  icon: popup
+  labels:
+    - Feedback
+  description: 将弹出式的气泡菜单.
+  attrs:
+    - name: value
+      title: 是否展示气泡弹出层
+      type: boolean
+      sync: true
+      default: false
+      description: 是否展示气泡弹出层
+    - name: overlay
+      title: 是否显示遮罩层
+      type: boolean
+      default: false
+      description: 是否显示遮罩层
+    - name: close-on-click-action
+      title: 是否在点击选项后关闭
+      type: boolean
+      default: false
+      description: 是否在点击选项后关闭
+    - name: theme
+      title: 风格
+      type: string
+      options:
+        - value: dark
+          title: 深色
+        - value: light
+          title: 浅色
+      default: light
+      description: 风格
+    - name: placement
+      title: 弹出位置
+      type: string
+      options:
+        - value: top
+          name: 上
+        - value: bottom
+          name: 下
+        - value: left
+          name: 左
+        - value: right
+          name: 右
+        - value: top-start
+          name: 上左
+        - value: top-end
+          name: 上右
+        - value: bottom-start
+          name: 下左
+        - value: bottom-end
+          name: 下右
+        - value: left-start
+          name: 左上
+        - value: left-end
+          name: 左下
+        - value: right-start
+          name: 右上
+        - value: right-end
+          name: 右下
+      description: 弹出位置
+  slots:
+    - name: default
+      description: 插入`<van-popover-combination-item>`子组件。
+      empty-background: add-sub-large
+      support:
+        - name: van-popover-item
+          title: 菜单项
+          snippet: '<van-popover-combination-item text="标签名称n"></van-popover-combination-item>'
+  events:
+    - name: select
+      title: 点击选项时触发
+      description: 点击选项时触发
+    - name: open
+      title: 展开
+      description: 展开
+    - name: close
+      title: 收起
+      description: 收起
+  methods:
+    - name: openModal
+      title: 展开
+      description: 展开
+    - name: closeModal
+      title: 关闭
+      description: 关闭
+- name: van-popover-combination-item
+  title: 面板项
+  attrs:
+    - name: text
+      title: 标题
+      type: string
+      default: 标题
+      advanced: true
+      description: 标题
+    - name: disabled
+      title: 是否禁用
+      type: boolean
+      default: false
+      description: 是否禁用
+  events:
+    - name: click
+      title: 点击选项时触发
+      description: 点击选项时触发
