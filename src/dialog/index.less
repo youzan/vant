@@ -5,14 +5,18 @@
   top: 45%;
   left: 50%;
   width: @dialog-width;
-  overflow: hidden;
   font-size: @dialog-font-size;
-  background-color: @dialog-background-color;
-  border-radius: @dialog-border-radius;
+ 
   transform: translate3d(-50%, -50%, 0);
   backface-visibility: hidden; // avoid blurry text after scale animation
   transition: @dialog-transition;
   transition-property: transform, opacity;
+
+  &__wrap {
+    background-color: @dialog-background-color;
+    border-radius: @dialog-border-radius;
+    overflow: hidden;
+  }
 
   @media (max-width: 321px) {
     width: @dialog-small-screen-width;

@@ -270,13 +270,15 @@ export default createComponent({
           class={[bem([this.theme]), this.className, 'noforvant']}
           style={{ width: addUnit(this.width) }}
         >
-          {Title}
-          {this.genContent(title, messageSlot, empty)}
           {this.slots('inject')}
-          {/* {this.genButtons(footerSlot)} */}
-          {this.theme === 'round-button'
-            ? this.genRoundButtons()
-            : this.genButtons(footerSlot)}
+          <div class={bem('wrap')}>
+            {Title}
+            {this.genContent(title, messageSlot, empty)}
+            {/* {this.genButtons(footerSlot)} */}
+            {this.theme === 'round-button'
+              ? this.genRoundButtons()
+              : this.genButtons(footerSlot)}
+          </div>
         </div>
       </transition>
     );
