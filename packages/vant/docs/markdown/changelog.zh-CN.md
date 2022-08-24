@@ -19,6 +19,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.6.1](https://github.com/vant-ui/vant/compare/v3.6.0...v3.6.1)
+
+`2022-08-24`
+
+**Feature**
+
+- 为 scroll 事件添加了正确的 passive 标记来提升滚动性能 [#10951](https://github.com/vant-ui/vant/issues/10951)
+- @vant/use: 优化 useEventListener 类型定义 [#10952](https://github.com/vant-ui/vant/issues/10952)
+
+**Bug Fixes**
+
+- 修复 touchstart 导致控制台出现 passive event warning 的问题 [#10954](https://github.com/vant-ui/vant/issues/10954)
+- Tabs: 修复开启 swipeable 时，resize 方法无法正确生效的问题 [#10964](https://github.com/vant-ui/vant/issues/10964)
+
 ### [v3.6.0](https://github.com/vant-ui/vant/compare/v3.5.3...v3.6.0)
 
 `2022-08-21`

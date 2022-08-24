@@ -19,6 +19,20 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.6.1](https://github.com/vant-ui/vant/compare/v3.6.0...v3.6.1)
+
+`2022-08-24`
+
+**Feature**
+
+- add correct passive flag to improve scroll performance [#10951](https://github.com/vant-ui/vant/issues/10951)
+- @vant/use: improve useEventListener typing [#10952](https://github.com/vant-ui/vant/issues/10952)
+
+**Bug Fixes**
+
+- reduce passive event warning of touchstart event [#10954](https://github.com/vant-ui/vant/issues/10954)
+- Tabs: resize not work for swipeable tabs [#10964](https://github.com/vant-ui/vant/issues/10964)
+
 ### [v3.6.0](https://github.com/vant-ui/vant/compare/v3.5.3...v3.6.0)
 
 `2022-08-21`
