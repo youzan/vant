@@ -17,6 +17,7 @@ body {
     position: fixed;
     max-height: 100%;
     overflow-y: auto;
+    box-sizing: border-box;
     background: var(--van-popup-background);
     transition: var(--van-popup-transition);
     -webkit-overflow-scrolling: touch;
@@ -25,6 +26,8 @@ body {
       top: 50%;
       left: 0;
       right: 0;
+      width: fit-content;
+      max-width: calc(100vw - var(--van-padding-md) * 2);
       margin: 0 auto;
       transform: translateY(-50%);
 
