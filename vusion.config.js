@@ -55,7 +55,7 @@ module.exports = {
             { group: 'Form', show: true, name: 'radio-group', alias: '单选组' },
             { group: 'Form', show: true, name: 'switch', alias: '开关' },
             { group: 'Form', show: true, name: 'checkbox-group', alias: '多选组' },
-            { group: 'Form', show: false, name: 'stepper', alias: '步进器' },
+            { group: 'Form', show: true, name: 'stepper', alias: '步进器' },
             { group: 'Form', show: true, name: 'stepper-new', alias: '数字输入' },
             // { group: 'Form', show: true, name: 'u-capsules', alias: '胶囊' },
             // { group: 'Form', show: true, name: 'u-select', alias: '选择框' },
