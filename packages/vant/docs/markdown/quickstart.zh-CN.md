@@ -30,7 +30,7 @@ pnpm add vant
 
 ### 通过 CDN 安装
 
-使用 Vant 最简单的方法是直接在 html 文件中引入 CDN 链接，之后你可以通过全局变量 `vant` 访问到所有组件。
+使用 Vant 最简单的方法是直接在 HTML 文件中引入 CDN 链接，之后你可以通过全局变量 `vant` 访问到所有组件。
 
 ```html
 <!-- 引入样式文件 -->
@@ -93,9 +93,32 @@ pnpm add vant
 
 ## 引入组件
 
-### 按需引入组件（推荐）
+### 方法一. 基础用法
 
-在基于 `vite`、`webpack` 或 `vue-cli` 的项目中使用 Vant 时，推荐安装 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件，它可以自动按需引入组件。
+下面是使用 Vant 组件的基础用法示例：
+
+```js
+import { createApp } from 'vue';
+// 1. 引入你需要的组件
+import { Button } from 'vant';
+// 2. 引入组件样式
+import 'vant/lib/index.css';
+
+const app = createApp();
+
+// 3. 注册你需要的组件
+app.use(Button);
+```
+
+Vant 支持多种组件注册方式，除了在 app 上全局注册组件，你也可以选择其他的方式，详见 [组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce) 章节。
+
+> 提示：Vant 默认支持 Tree Shaking，因此你不需要配置任何插件，通过 Tree Shaking 即可移除不需要的 JS 代码，但 CSS 样式无法通过这种方式优化，如果需要按需引入 CSS 样式，请参考下面的方法二。
+
+### 方法二. 按需引入组件
+
+在基于 `vite`、`webpack` 或 `vue-cli` 的项目中使用 Vant 时，可以使用 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件，它可以自动引入组件，并按需引入组件的样式。
+
+相比于基础用法，这种方式可以按需引入组件的 CSS 样式，从而减少一部分代码体积。
 
 #### 1. 安装插件
 
@@ -161,16 +184,14 @@ module.exports = {
 };
 ```
 
-#### 3. 引入组件
+#### 3. 使用组件
 
-完成以上两步，就可以直接使用 Vant 组件了：
+完成以上两步，就可以直接在模板中使用 Vant 组件了，`unplugin-vue-components` 会解析模板并自动注册对应的组件。
 
-```js
-import { createApp } from 'vue';
-import { Button } from 'vant';
-
-const app = createApp();
-app.use(Button);
+```html
+<template>
+  <van-button type="primary" />
+</template>
 ```
 
 #### 4. 引入函数组件的样式
@@ -195,29 +216,4 @@ import { showImagePreview } from 'vant';
 import 'vant/es/image-preview/style';
 ```
 
-> 注意：Vant 支持 Tree Shaking，因此你也可以不配置任何插件，通过 Tree Shaking 即可移除不需要的 JS 代码，但 CSS 无法通过这种方式优化。
-
-### 导入所有组件（不推荐）
-
-Vant 支持一次性导入所有组件，引入所有组件会**增加代码包体积**，因此不推荐这种做法。
-
-```js
-import { createApp } from 'vue';
-import Vant from 'vant';
-import 'vant/lib/index.css';
-
-const app = createApp();
-app.use(Vant);
-```
-
-### 手动按需引入组件（不推荐）
-
-在不使用任何构建插件的情况下，可以手动引入需要使用的组件和样式。
-
-```js
-// 引入组件脚本
-import Button from 'vant/es/button/index';
-// 引入组件样式
-// 若组件没有样式文件，则无须引入
-import 'vant/es/button/style/index';
-```
+> 提示：在单个项目中不应该同时使用「全量引入」和「按需引入」，否则会导致代码重复、样式错乱等问题。

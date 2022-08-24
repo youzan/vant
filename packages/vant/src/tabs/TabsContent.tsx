@@ -1,6 +1,7 @@
 import { ref, watch, onMounted, defineComponent } from 'vue';
 import { numericProp, makeRequiredProp, createNamespace } from '../utils';
 import { Swipe, SwipeInstance } from '../swipe';
+import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('tabs');
 
@@ -59,6 +60,8 @@ export default defineComponent({
     onMounted(() => {
       swipeToCurrentTab(props.currentIndex);
     });
+
+    useExpose({ swipeRef });
 
     return () => (
       <div

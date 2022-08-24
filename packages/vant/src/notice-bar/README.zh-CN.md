@@ -88,6 +88,7 @@ app.use(NoticeBar);
     vertical
     class="notice-swipe"
     :autoplay="3000"
+    :touchable="false"
     :show-indicators="false"
   >
     <van-swipe-item>明月直入，无心可猜。</van-swipe-item>

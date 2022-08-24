@@ -12,5 +12,12 @@ declare module 'vue' {
     onTouchmove?: EventHandler;
     onTouchstart?: EventHandler;
     onTouchcancel?: EventHandler;
+    onTouchmovePassive?: EventHandler;
+    onTouchstartPassive?: EventHandler;
+  }
+
+  interface HTMLAttributes {
+    onTouchmovePassive?: EventHandler;
+    onTouchstartPassive?: EventHandler;
   }
 }

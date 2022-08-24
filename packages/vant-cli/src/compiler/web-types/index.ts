@@ -40,7 +40,7 @@ export async function parseAndWrite(options: Options) {
   );
 }
 
-export function genWebStormTypes() {
+export function genWebStormTypes(tagPrefix?: string) {
   const pkgJson = getPackageJson();
   const vantConfig = getVantConfig();
 
@@ -50,5 +50,6 @@ export function genWebStormTypes() {
     test: /README\.md/,
     version: pkgJson.version,
     outputDir: LIB_DIR,
+    tagPrefix,
   });
 }

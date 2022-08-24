@@ -220,7 +220,7 @@ export default defineComponent({
           ref={root}
           class={bem()}
           onClick={getClickHandler('cell', lockClick)}
-          onTouchstart={onTouchStart}
+          onTouchstartPassive={onTouchStart}
           onTouchmove={onTouchMove}
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}

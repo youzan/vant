@@ -299,7 +299,7 @@ export default defineComponent({
           aria-disabled={props.disabled || undefined}
           aria-readonly={props.readonly || undefined}
           aria-orientation={props.vertical ? 'vertical' : 'horizontal'}
-          onTouchstart={(event) => {
+          onTouchstartPassive={(event) => {
             if (typeof index === 'number') {
               // save index of current button
               buttonIndex = index;

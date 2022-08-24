@@ -2,6 +2,7 @@ export default {
   name: 'vant',
   build: {
     srcDir: 'src',
+    tagPrefix: 'van-',
     namedExport: true,
     skipInstall: ['lazyload'],
     packageManager: 'pnpm',

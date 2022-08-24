@@ -78,7 +78,7 @@ export default defineComponent({
         <div class={bem()}>
           <ul
             class={[bem('security'), { [BORDER_SURROUND]: !props.gutter }]}
-            onTouchstart={onTouchStart}
+            onTouchstartPassive={onTouchStart}
           >
             {renderPoints()}
           </ul>

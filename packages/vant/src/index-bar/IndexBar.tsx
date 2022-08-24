@@ -182,7 +182,10 @@ export default defineComponent({
       nextTick(onScroll);
     };
 
-    useEventListener('scroll', onScroll, { target: scrollParent });
+    useEventListener('scroll', onScroll, {
+      target: scrollParent,
+      passive: true,
+    });
 
     onMounted(init);
 
@@ -272,7 +275,7 @@ export default defineComponent({
         class={bem('sidebar')}
         style={sidebarStyle.value}
         onClick={onClickSidebar}
-        onTouchstart={touch.start}
+        onTouchstartPassive={touch.start}
         onTouchmove={onTouchMove}
       >
         {renderIndexes()}

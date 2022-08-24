@@ -7,7 +7,10 @@ export type UseClickAwayOptions = {
 };
 
 export function useClickAway(
-  target: Element | Ref<Element | undefined>,
+  target:
+    | Element
+    | Ref<Element | undefined>
+    | Array<Element | Ref<Element | undefined>>,
   listener: EventListener,
   options: UseClickAwayOptions = {}
 ) {
@@ -18,8 +21,13 @@ export function useClickAway(
   const { eventName = 'click' } = options;
 
   const onClick = (event: Event) => {
-    const element = unref(target);
-    if (element && !element.contains(event.target as Node)) {
+    const targets = Array.isArray(target) ? target : [target];
+    const isClickAway = targets.every((item) => {
+      const element = unref(item);
+      return element && !element.contains(event.target as Node);
+    });
+
+    if (isClickAway) {
       listener(event);
     }
   };

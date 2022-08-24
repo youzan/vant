@@ -102,6 +102,7 @@ export default defineComponent({
     const root = ref<HTMLElement>();
     const navRef = ref<HTMLElement>();
     const wrapRef = ref<HTMLElement>();
+    const contentRef = ref<ComponentInstance>();
 
     const id = useId();
     const scroller = useScrollParent(root);
@@ -446,15 +447,23 @@ export default defineComponent({
     const onRendered = (name: Numeric, title?: string) =>
       emit('rendered', name, title);
 
+    const resize = () => {
+      setLine();
+      nextTick(() => contentRef.value?.swipeRef.value?.resize());
+    };
+
     useExpose({
-      resize: setLine,
+      resize,
       scrollTo,
     });
 
     onActivated(setLine);
     onPopupReopen(setLine);
     onMountedOrActivated(init);
-    useEventListener('scroll', onScroll, { target: scroller });
+    useEventListener('scroll', onScroll, {
+      target: scroller,
+      passive: true,
+    });
 
     linkChildren({
       id,
@@ -480,6 +489,7 @@ export default defineComponent({
           [renderHeader(), slots['nav-bottom']?.()]
         )}
         <TabsContent
+          ref={contentRef}
           count={children.length}
           inited={state.inited}
           animated={props.animated}
