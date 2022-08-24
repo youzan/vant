@@ -19,6 +19,64 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0-beta.1](https://github.com/vant-ui/vant/compare/v3.6.0...v4.0.0-beta.1)
+
+`2022-08-24`
+
+**Breaking Changes**
+
+- Popup: improve style when position is center [#10965](https://github.com/vant-ui/vant/issues/10965)
+
+```less
+// Vant 3
+.van-popup--center {
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+// Vant 4
+.van-popup--center {
+  left: 0;
+  right: 0;
+  width: fit-content;
+  max-width: calc(100vw - var(--van-padding-md) * 2);
+  margin: 0 auto;
+  transform: translateY(-50%);
+}
+```
+
+**New Component**
+
+- Add new component [Space](#/en-US/space), contributed by [@LadyChatterleyLover](https://github.com/LadyChatterleyLover) [#10857](https://github.com/vant-ui/vant/issues/10857)
+
+**Feature**
+
+- ConfigProvider: add z-index prop [#10915](https://github.com/vant-ui/vant/issues/10915)
+- Form: add validateEmpty option of rule [#10913](https://github.com/vant-ui/vant/issues/10913)
+- Popup: add role and tabindex for a11y [#10894](https://github.com/vant-ui/vant/issues/10894)
+- TouchEmulator: support .mjs extension [#10888](https://github.com/vant-ui/vant/issues/10888)
+
+**Feature**
+
+- ConfigProvider: add theme-vars-dark and theme-vars-light props [#10939](https://github.com/vant-ui/vant/issues/10939)
+- Picker: add clickOption event [#10865](https://github.com/vant-ui/vant/issues/10865)
+- add correct passive flag to improve scroll performance [#10951](https://github.com/vant-ui/vant/issues/10951)
+- @vant/use: improve useEventListener typing [#10952](https://github.com/vant-ui/vant/issues/10952)
+
+**Bug Fixes**
+
+- ConfigProvider: should remove theme class on unmount [#10898](https://github.com/vant-ui/vant/issues/10898)
+- reduce passive event warning of touchstart event [#10954](https://github.com/vant-ui/vant/issues/10954)
+- Tabs: resize not work for swipeable tabs [#10964](https://github.com/vant-ui/vant/issues/10964)
+- Fix incorrect tag name in WebStorm [#10946](https://github.com/vant-ui/vant/issues/10946)
+- Badge: should hide string zero when using show-zero prop [#10921](https://github.com/vant-ui/vant/issues/10921)
+- Calendar: content disappeared when hiding [#10910](https://github.com/vant-ui/vant/issues/10910)
+- Calendar: reading getFullYear error in some cases [#10909](https://github.com/vant-ui/vant/issues/10909)
+- Empty: generate unique id to avoid render issue [#10943](https://github.com/vant-ui/vant/issues/10943)
+- Popover: can not scroll inside popup [#10949](https://github.com/vant-ui/vant/issues/10949)
+- PullRefresh: fix passive event warning [#10938](https://github.com/vant-ui/vant/issues/10938)
+- Search: --van-search-input-height var not work [#10911](https://github.com/vant-ui/vant/issues/10911)
+
 ### [v4.0.0-beta.0](https://github.com/vant-ui/vant/compare/v3.5.2...v4.0.0-beta.0)
 
 `2022-07-16`

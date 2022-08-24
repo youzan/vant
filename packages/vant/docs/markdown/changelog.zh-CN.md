@@ -19,6 +19,65 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-beta.1](https://github.com/vant-ui/vant/compare/v3.6.0...v4.0.0-beta.1)
+
+`2022-08-24`
+
+**Breaking Changes**
+
+- Popup: 默认添加了 `box-sizing: border-box` 样式。
+- Popup: 调整了 `position="center"` 时的水平居中方式，以解决弹窗宽度无法正确自适应的问题。
+
+```less
+// Vant 3
+.van-popup--center {
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+// Vant 4
+.van-popup--center {
+  left: 0;
+  right: 0;
+  width: fit-content;
+  max-width: calc(100vw - var(--van-padding-md) * 2);
+  margin: 0 auto;
+  transform: translateY(-50%);
+}
+```
+
+**New Component**
+
+- 新增 [Space 间距](#/zh-CN/space) 组件, 由 [@LadyChatterleyLover](https://github.com/LadyChatterleyLover) 贡献 [#10857](https://github.com/vant-ui/vant/issues/10857)
+
+**Feature**
+
+- ConfigProvider: 新增 z-index 属性，用于设置弹窗组件的 z-index [#10915](https://github.com/vant-ui/vant/issues/10915)
+- Form: 新增 rule 的 validateEmpty 选项 [#10913](https://github.com/vant-ui/vant/issues/10913)
+- Popup: 新增 role 和 tabindex，优化无障碍访问 [#10894](https://github.com/vant-ui/vant/issues/10894)
+- TouchEmulator: 支持 .mjs 后缀 [#10888](https://github.com/vant-ui/vant/issues/10888)
+
+**Feature**
+
+- ConfigProvider: 新增 theme-vars-dark 和 theme-vars-light 属性 [#10939](https://github.com/vant-ui/vant/issues/10939)
+- Picker: 新增 clickOption 事件 [#10865](https://github.com/vant-ui/vant/issues/10865)
+- 为 scroll 事件添加了正确的 passive 标记来提升滚动性能 [#10951](https://github.com/vant-ui/vant/issues/10951)
+- @vant/use: 优化 useEventListener 类型定义 [#10952](https://github.com/vant-ui/vant/issues/10952)
+
+**Bug Fixes**
+
+- ConfigProvider: 修复销毁时没有回收全局样式类的问题 [#10898](https://github.com/vant-ui/vant/issues/10898)
+- 修复 touchstart 导致控制台出现 passive event warning 的问题 [#10954](https://github.com/vant-ui/vant/issues/10954)
+- Tabs: 修复开启 swipeable 时，resize 方法无法正确生效的问题 [#10964](https://github.com/vant-ui/vant/issues/10964)
+- 修复在 WebStorm 下标签无法自动补全的问题 [#10946](https://github.com/vant-ui/vant/issues/10946)
+- Badge: 修复使用 show-zero 时字符串 `'0'` 不生效的问题 [#10921](https://github.com/vant-ui/vant/issues/10921)
+- Calendar: 修复关闭弹窗过程中内容白屏的问题 [#10910](https://github.com/vant-ui/vant/issues/10910)
+- Calendar: 修复控制台出现读取 getFullYear 异常的问题 [#10909](https://github.com/vant-ui/vant/issues/10909)
+- Empty: 修复在 Tab 下嵌套使用时渲染异常的问题 [#10943](https://github.com/vant-ui/vant/issues/10943)
+- Popover: 修复在 Popup 下嵌套使用时无法滚动的问题 [#10949](https://github.com/vant-ui/vant/issues/10949)
+- PullRefresh: 修复 Chrome 控制台出现 passive event warning 的问题 [#10938](https://github.com/vant-ui/vant/issues/10938)
+- Search: 修复 --van-search-input-height 样式变量不生效的问题 [#10911](https://github.com/vant-ui/vant/issues/10911)
+
 ### [v4.0.0-beta.0](https://github.com/vant-ui/vant/compare/v3.5.2...v4.0.0-beta.0)
 
 `2022-07-16`
