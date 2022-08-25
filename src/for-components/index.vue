@@ -2,7 +2,7 @@
   <div class="van-for-com">
     <template v-if="options.length > 0">
       <div v-for="(item, index) in options" :key="index" class="van-for-com-frag">
-        <van-for-components-item v-for="(item2, index2) in item" :key="index2" :item="item2">
+        <van-for-components-item v-for="(item2, index2) in item" :key="index2" :item="item2" :equalWidth="equalWidth" :colnum="colnum">
           <template v-slot="item2">
             <slot :item="item2.item"></slot>
           </template>
