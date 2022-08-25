@@ -97,7 +97,13 @@ export default createComponent({
         return
       }
 
-      if (hrefR === undefined || props.destination) {
+      function ifCanGoWithHref(destination) {
+          if (destination) {
+            return destination?.split('/')?.length >2;
+          }
+      }
+
+      if (hrefR === undefined || ifCanGoWithHref(props.destination)) {
         let to;
         if (props.destination) {
           // 只处理/a/b形式的链接
