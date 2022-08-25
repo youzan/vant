@@ -23,16 +23,16 @@
             <div ref="virtual" v-if="(!currentLoading && !currentError || pageable === 'auto-more' || pageable === 'load-more') && currentData && currentData.length"
                 :style="{ paddingTop: virtualTop + 'px', paddingBottom: virtualBottom + 'px' }">
                 <component :is="ChildComponent"
-                    v-for="item in virtualList"
+                    v-for="(item, index) in virtualList"
                     v-if="item"
                     :key="$at(item, valueField)"
                     :value="$at(item, valueField)"
                     :disabled="item.disabled || disabled"
                     :item="item"
-                    vusion-slot-name="item"
-                >
+                    :index="index"
+                    vusion-slot-name="item">
                   <van-empty-col v-if="(!slots('item')) && $env.VUE_APP_DESIGNER"></van-empty-col>
-                  <slot v-if="slots('item')" name="item" :item="item" :text="$at(item, field || textField)" :value="$at(item, valueField)" :disabled="item.disabled || disabled">{{ $at(item, field || textField) }}</slot>
+                  <slot v-if="slots('item')" name="item" :item="item" :index="index" :text="$at(item, field || textField)" :value="$at(item, valueField)" :disabled="item.disabled || disabled">{{ $at(item, field || textField) }}</slot>
                 </component>
             </div>
             <div :class="$style.status" status="loading" v-if="currentLoading">
