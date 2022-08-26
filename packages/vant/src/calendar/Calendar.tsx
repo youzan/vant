@@ -134,7 +134,7 @@ export default defineComponent({
     };
 
     const getInitialDate = (defaultDate = props.defaultDate) => {
-      const { type, minDate, maxDate } = props;
+      const { type, minDate, maxDate, allowSameDay } = props;
 
       if (defaultDate === null) {
         return defaultDate;
@@ -151,7 +151,10 @@ export default defineComponent({
           minDate,
           getPrevDay(maxDate)
         );
-        const end = limitDateRange(defaultDate[1] || now, getNextDay(minDate));
+        const end = limitDateRange(
+          defaultDate[1] || now,
+          allowSameDay ? minDate : getNextDay(minDate)
+        );
         return [start, end];
       }
 
