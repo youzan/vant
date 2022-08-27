@@ -307,8 +307,15 @@ export default defineComponent({
         touch.move(event);
 
         if (isCorrectDirection.value) {
-          preventDefault(event, props.stopPropagation);
-          move({ offset: delta.value });
+          const isEdgeTouch =
+            !props.loop &&
+            ((state.active === 0 && delta.value > 0) ||
+              (state.active === count.value - 1 && delta.value < 0));
+
+          if (!isEdgeTouch) {
+            preventDefault(event, props.stopPropagation);
+            move({ offset: delta.value });
+          }
         }
       }
     };
