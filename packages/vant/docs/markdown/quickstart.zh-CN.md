@@ -217,3 +217,24 @@ import 'vant/es/image-preview/style';
 ```
 
 > 提示：在单个项目中不应该同时使用「全量引入」和「按需引入」，否则会导致代码重复、样式错乱等问题。
+
+## 在框架中使用
+
+### 在 Nuxt 3 中使用
+
+在 Nuxt 3 中使用 Vant 时，由于 Nuxt 3 框架本身的限制，需要在 `nuxt.config.ts` 中添加以下配置：
+
+```ts
+import { defineNuxtConfig } from 'nuxt';
+
+export default defineNuxtConfig({
+  build: {
+    transpile: [/vant/],
+  },
+});
+```
+
+关于该问题的背景，可以参考以下 issue：
+
+- [nuxt/framework#6761](https://github.com/nuxt/framework/issues/6761)
+- [nuxt/framework#4084](https://github.com/nuxt/framework/issues/4084)
