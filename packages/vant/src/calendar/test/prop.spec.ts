@@ -270,3 +270,41 @@ test('should emit over-range when exceeded max range', async () => {
 
   expect(onOverRange).toHaveBeenCalledTimes(1);
 });
+
+test('should allow default date to be minDate when using allowSameDay prop', () => {
+  const minDate = new Date(1800, 0, 1);
+  const maxDate = new Date(1800, 0, 29);
+  const wrapper = mount(Calendar, {
+    props: {
+      type: 'range',
+      poppable: false,
+      minDate,
+      maxDate,
+      defaultDate: [minDate, minDate],
+      lazyRender: false,
+      allowSameDay: true,
+    },
+  });
+
+  wrapper.find('.van-calendar__confirm').trigger('click');
+  expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual([minDate, minDate]);
+});
+
+test('should allow default date to be maxDate when using allowSameDay prop', () => {
+  const minDate = new Date(1800, 0, 1);
+  const maxDate = new Date(1800, 0, 29);
+  const wrapper = mount(Calendar, {
+    props: {
+      type: 'range',
+      poppable: false,
+      minDate,
+      maxDate,
+      defaultDate: [maxDate, maxDate],
+      lazyRender: false,
+      allowSameDay: true,
+    },
+  });
+
+  wrapper.find('.van-calendar__confirm').trigger('click');
+  expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual([maxDate, maxDate]);
+});
