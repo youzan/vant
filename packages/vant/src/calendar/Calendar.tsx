@@ -149,7 +149,7 @@ export default defineComponent({
         const start = limitDateRange(
           defaultDate[0] || now,
           minDate,
-          getPrevDay(maxDate)
+          allowSameDay ? maxDate : getPrevDay(maxDate)
         );
         const end = limitDateRange(
           defaultDate[1] || now,
