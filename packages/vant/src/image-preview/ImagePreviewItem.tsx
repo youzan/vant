@@ -1,4 +1,5 @@
 import {
+  ref,
   watch,
   computed,
   reactive,
@@ -13,10 +14,12 @@ import {
   preventDefault,
   createNamespace,
   makeRequiredProp,
+  type ComponentInstance,
 } from '../utils';
 
 // Composables
 import { useTouch } from '../composables/use-touch';
+import { useEventListener } from '@vant/use';
 
 // Components
 import { Image } from '../image';
@@ -57,6 +60,7 @@ export default defineComponent({
     });
 
     const touch = useTouch();
+    const swipeItem = ref<ComponentInstance>();
 
     const vertical = computed(() => {
       const { rootWidth, rootHeight } = props;
@@ -271,6 +275,11 @@ export default defineComponent({
       }
     );
 
+    // useEventListener will set passive to `false` to eliminate the warning of Chrome
+    useEventListener('touchmove', onTouchMove, {
+      target: computed(() => swipeItem.value?.$el),
+    });
+
     return () => {
       const imageSlots = {
         loading: () => <Loading type="spinner" />,
@@ -278,9 +287,9 @@ export default defineComponent({
 
       return (
         <SwipeItem
+          ref={swipeItem}
           class={bem('swipe-item')}
           onTouchstartPassive={onTouchStart}
-          onTouchmove={onTouchMove}
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}
         >

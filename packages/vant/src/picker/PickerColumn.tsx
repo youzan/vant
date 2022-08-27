@@ -15,7 +15,7 @@ import {
 } from '../utils';
 
 // Composables
-import { useParent } from '@vant/use';
+import { useEventListener, useParent } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
@@ -67,6 +67,7 @@ export default defineComponent({
     let momentumOffset: number;
     let transitionEndTrigger: null | (() => void);
 
+    const root = ref<HTMLElement>();
     const wrapper = ref<HTMLElement>();
 
     const state = reactive({
@@ -305,11 +306,16 @@ export default defineComponent({
       (value) => setIndex(value)
     );
 
+    // useEventListener will set passive to `false` to eliminate the warning of Chrome
+    useEventListener('touchmove', onTouchMove, {
+      target: root,
+    });
+
     return () => (
       <div
+        ref={root}
         class={[bem(), props.className]}
         onTouchstartPassive={onTouchStart}
-        onTouchmove={onTouchMove}
         onTouchend={onTouchEnd}
         onTouchcancel={onTouchEnd}
       >

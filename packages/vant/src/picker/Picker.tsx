@@ -22,7 +22,7 @@ import {
 } from '../utils';
 
 // Composables
-import { useChildren } from '@vant/use';
+import { useChildren, useEventListener } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
@@ -88,6 +88,7 @@ export default defineComponent({
     }
 
     const hasOptions = ref(false);
+    const columnsRef = ref<HTMLElement>();
     const formattedColumns = ref<PickerObjectColumn[]>([]);
 
     const columnsFieldNames = computed(() => {
@@ -380,11 +381,7 @@ export default defineComponent({
       const wrapHeight = itemHeight.value * +props.visibleItemCount;
       const columnsStyle = { height: `${wrapHeight}px` };
       return (
-        <div
-          class={bem('columns')}
-          style={columnsStyle}
-          onTouchmove={preventDefault}
-        >
+        <div ref={columnsRef} class={bem('columns')} style={columnsStyle}>
           {renderColumnItems()}
           {renderMask(wrapHeight)}
         </div>
@@ -392,6 +389,11 @@ export default defineComponent({
     };
 
     watch(() => props.columns, format, { immediate: true });
+
+    // useEventListener will set passive to `false` to eliminate the warning of Chrome
+    useEventListener('touchmove', preventDefault, {
+      target: columnsRef,
+    });
 
     useExpose<PickerExpose>({
       confirm,
