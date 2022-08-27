@@ -228,8 +228,8 @@ import 'vant/es/image-preview/style';
 import { defineNuxtConfig } from 'nuxt';
 
 export default defineNuxtConfig({
-  build: {
-    transpile: [/vant/],
+  experimental: {
+    externalVue: true,
   },
 });
 ```

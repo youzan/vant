@@ -223,8 +223,8 @@ When using Vant in Nuxt 3, you should add `/vant/` to the `build.transpile`:
 import { defineNuxtConfig } from 'nuxt';
 
 export default defineNuxtConfig({
-  build: {
-    transpile: [/vant/],
+  experimental: {
+    externalVue: true,
   },
 });
 ```
