@@ -130,7 +130,7 @@ export default defineComponent({
     );
 
     watch(currentValues, (newValues) => {
-      if (isSameValue(newValues, props.modelValue)) {
+      if (!isSameValue(newValues, props.modelValue)) {
         emit('update:modelValue', newValues);
       }
     });
