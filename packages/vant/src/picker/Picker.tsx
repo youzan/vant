@@ -126,6 +126,11 @@ export default defineComponent({
       }
     };
 
+    const getEventParams = () => ({
+      selectedValues: selectedValues.value,
+      selectedOptions: selectedOptions.value,
+    });
+
     const onChange = (value: Numeric, columnIndex: number) => {
       setValue(columnIndex, value);
 
@@ -142,34 +147,21 @@ export default defineComponent({
         });
       }
 
-      emit('change', {
-        columnIndex,
-        selectedValues: selectedValues.value,
-        selectedOptions: selectedOptions.value,
-      });
+      emit('change', extend({ columnIndex }, getEventParams()));
     };
 
     const onClickOption = (currentOption: PickerOption, columnIndex: number) =>
-      emit('clickOption', {
-        columnIndex,
-        currentOption,
-        selectedValues: selectedValues.value,
-        selectedOptions: selectedOptions.value,
-      });
+      emit(
+        'clickOption',
+        extend({ columnIndex, currentOption }, getEventParams())
+      );
 
     const confirm = () => {
       children.forEach((child) => child.stopMomentum());
-      emit('confirm', {
-        selectedValues: selectedValues.value,
-        selectedOptions: selectedOptions.value,
-      });
+      emit('confirm', getEventParams());
     };
 
-    const cancel = () =>
-      emit('cancel', {
-        selectedValues: selectedValues.value,
-        selectedOptions: selectedOptions.value,
-      });
+    const cancel = () => emit('cancel', getEventParams());
 
     const renderColumnItems = () =>
       currentColumns.value.map((options, columnIndex) => (
