@@ -23,7 +23,12 @@ app.use(DatePicker);
 通过 `v-model` 绑定当前选中的日期，通过 `min-date` 和 `max-date` 属性来设定可选的时间范围。
 
 ```html
-<van-date-picker v-model="currentDate" title="选择日期" />
+<van-date-picker
+  v-model="currentDate"
+  title="选择日期"
+  :min-date="minDate"
+  :max-date="maxDate"
+/>
 ```
 
 ```js

@@ -21,7 +21,12 @@ app.use(DatePicker);
 ### Basic Usage
 
 ```html
-<van-date-picker v-model="currentDate" title="Choose Date" />
+<van-date-picker
+  v-model="currentDate"
+  title="Choose Date"
+  :min-date="minDate"
+  :max-date="maxDate"
+/>
 ```
 
 ```js
