@@ -32,7 +32,7 @@ import {
 } from './utils';
 
 // Composables
-import { useChildren } from '@vant/use';
+import { useChildren, useEventListener } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
@@ -80,6 +80,7 @@ export default defineComponent({
   emits: ['confirm', 'cancel', 'change', 'clickOption', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
+    const columnsRef = ref<HTMLElement>();
     const selectedValues = ref(props.modelValue);
     const { children, linkChildren } = useChildren(PICKER_KEY);
 
@@ -252,11 +253,7 @@ export default defineComponent({
       const wrapHeight = optionHeight.value * +props.visibleOptionNum;
       const columnsStyle = { height: `${wrapHeight}px` };
       return (
-        <div
-          class={bem('columns')}
-          style={columnsStyle}
-          onTouchmove={preventDefault}
-        >
+        <div ref={columnsRef} class={bem('columns')} style={columnsStyle}>
           {renderColumnItems()}
           {renderMask(wrapHeight)}
         </div>
@@ -299,6 +296,11 @@ export default defineComponent({
       },
       { immediate: true }
     );
+
+    // useEventListener will set passive to `false` to eliminate the warning of Chrome
+    useEventListener('touchmove', preventDefault, {
+      target: columnsRef,
+    });
 
     const getSelectedOptions = () => selectedOptions.value;
 

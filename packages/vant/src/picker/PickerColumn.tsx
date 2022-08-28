@@ -19,7 +19,7 @@ import {
 import { getElementTranslateY, findIndexOfEnabledOption } from './utils';
 
 // Composables
-import { useParent } from '@vant/use';
+import { useEventListener, useParent } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
@@ -65,6 +65,7 @@ export default defineComponent({
     let momentumOffset: number;
     let transitionEndTrigger: null | (() => void);
 
+    const root = ref<HTMLElement>();
     const wrapper = ref<HTMLElement>();
     const currentOffset = ref(0);
     const currentDuration = ref(0);
@@ -250,11 +251,16 @@ export default defineComponent({
       currentOffset.value = offset;
     });
 
+    // useEventListener will set passive to `false` to eliminate the warning of Chrome
+    useEventListener('touchmove', onTouchMove, {
+      target: root,
+    });
+
     return () => (
       <div
+        ref={root}
         class={bem()}
         onTouchstartPassive={onTouchStart}
-        onTouchmove={onTouchMove}
         onTouchend={onTouchEnd}
         onTouchcancel={onTouchEnd}
       >
