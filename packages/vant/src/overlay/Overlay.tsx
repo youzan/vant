@@ -1,12 +1,14 @@
 import {
+  ref,
   Transition,
   defineComponent,
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
 } from 'vue';
+
+// Utils
 import {
-  noop,
   isDef,
   extend,
   truthProp,
@@ -16,6 +18,9 @@ import {
   createNamespace,
   getZIndexStyle,
 } from '../utils';
+
+// Composables
+import { useEventListener } from '@vant/use';
 import { useLazyRender } from '../composables/use-lazy-render';
 
 const [name, bem] = createNamespace('overlay');
@@ -38,10 +43,13 @@ export default defineComponent({
   props: overlayProps,
 
   setup(props, { slots }) {
+    const root = ref<HTMLElement>();
     const lazyRender = useLazyRender(() => props.show || !props.lazyRender);
 
-    const preventTouchMove = (event: TouchEvent) => {
-      preventDefault(event, true);
+    const onTouchMove = (event: TouchEvent) => {
+      if (props.lockScroll) {
+        preventDefault(event, true);
+      }
     };
 
     const renderOverlay = lazyRender(() => {
@@ -57,13 +65,18 @@ export default defineComponent({
       return (
         <div
           v-show={props.show}
+          ref={root}
           style={style}
           class={[bem(), props.className]}
-          onTouchmove={props.lockScroll ? preventTouchMove : noop}
         >
           {slots.default?.()}
         </div>
       );
+    });
+
+    // useEventListener will set passive to `false` to eliminate the warning of Chrome
+    useEventListener('touchmove', onTouchMove, {
+      target: root,
     });
 
     return () => (

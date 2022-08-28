@@ -26,6 +26,7 @@ import {
   makeStringProp,
   makeNumericProp,
   createNamespace,
+  type ComponentInstance,
 } from '../utils';
 import {
   cutString,
@@ -42,7 +43,11 @@ import {
 import { cellSharedProps } from '../cell/Cell';
 
 // Composables
-import { CUSTOM_FIELD_INJECTION_KEY, useParent } from '@vant/use';
+import {
+  useParent,
+  useEventListener,
+  CUSTOM_FIELD_INJECTION_KEY,
+} from '@vant/use';
 import { useId } from '../composables/use-id';
 import { useExpose } from '../composables/use-expose';
 
@@ -145,6 +150,7 @@ export default defineComponent({
     });
 
     const inputRef = ref<HTMLInputElement>();
+    const clearIconRef = ref<ComponentInstance>();
     const customValue = ref<() => unknown>();
 
     const { parent: form } = useParent(FORM_KEY);
@@ -353,7 +359,7 @@ export default defineComponent({
     const onClickRightIcon = (event: MouseEvent) =>
       emit('clickRightIcon', event);
 
-    const onClear = (event: MouseEvent) => {
+    const onClear = (event: TouchEvent) => {
       preventDefault(event);
       emit('update:modelValue', '');
       emit('clear', event);
@@ -526,9 +532,9 @@ export default defineComponent({
         {renderInput()}
         {showClear.value && (
           <Icon
+            ref={clearIconRef}
             name={props.clearIcon}
             class={bem('clear')}
-            onTouchstart={onClear}
           />
         )}
         {renderRightIcon()}
@@ -566,6 +572,11 @@ export default defineComponent({
     onMounted(() => {
       updateValue(getModelValue(), props.formatTrigger);
       nextTick(adjustTextareaSize);
+    });
+
+    // useEventListener will set passive to `false` to eliminate the warning of Chrome
+    useEventListener('touchstart', onClear, {
+      target: computed(() => clearIconRef.value?.$el),
     });
 
     return () => {

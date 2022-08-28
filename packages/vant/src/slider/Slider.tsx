@@ -22,7 +22,7 @@ import {
 } from '../utils';
 
 // Composables
-import { useRect, useCustomFieldValue } from '@vant/use';
+import { useRect, useCustomFieldValue, useEventListener } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 
 const [name, bem] = createNamespace('slider');
@@ -65,6 +65,7 @@ export default defineComponent({
     let startValue: SliderValue;
 
     const root = ref<HTMLElement>();
+    const slider = ref<HTMLElement>();
     const dragStatus = ref<'start' | 'dragging' | ''>();
     const touch = useTouch();
 
@@ -290,6 +291,7 @@ export default defineComponent({
 
       return (
         <div
+          ref={slider}
           role="slider"
           class={getButtonClassName(index)}
           tabindex={props.disabled ? undefined : 0}
@@ -306,7 +308,6 @@ export default defineComponent({
             }
             onTouchStart(event);
           }}
-          onTouchmove={onTouchMove}
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}
           onClick={stopPropagation}
@@ -319,6 +320,11 @@ export default defineComponent({
     // format initial value
     updateValue(props.modelValue);
     useCustomFieldValue(() => props.modelValue);
+
+    // useEventListener will set passive to `false` to eliminate the warning of Chrome
+    useEventListener('touchmove', onTouchMove, {
+      target: slider,
+    });
 
     return () => (
       <div

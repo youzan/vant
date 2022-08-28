@@ -77,6 +77,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const root = ref<HTMLElement>();
+    const sidebar = ref<HTMLElement>();
     const activeAnchor = ref<Numeric>('');
 
     const touch = useTouch();
@@ -272,17 +273,22 @@ export default defineComponent({
 
     const renderSidebar = () => (
       <div
+        ref={sidebar}
         class={bem('sidebar')}
         style={sidebarStyle.value}
         onClick={onClickSidebar}
         onTouchstartPassive={touch.start}
-        onTouchmove={onTouchMove}
       >
         {renderIndexes()}
       </div>
     );
 
     useExpose({ scrollTo });
+
+    // useEventListener will set passive to `false` to eliminate the warning of Chrome
+    useEventListener('touchmove', onTouchMove, {
+      target: sidebar,
+    });
 
     return () => (
       <div ref={root} class={bem()}>

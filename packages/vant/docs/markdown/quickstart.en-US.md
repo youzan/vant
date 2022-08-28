@@ -212,3 +212,24 @@ import 'vant/es/image-preview/style';
 ```
 
 > Tip: "Full Import" and "On-demand Import" should not be used at the same time, otherwise it will lead to problems such as code duplication and style overrides.
+
+## With Frameworks
+
+### Use Vant in Nuxt 3
+
+When using Vant in Nuxt 3, you should add `/vant/` to the `build.transpile`:
+
+```ts
+import { defineNuxtConfig } from 'nuxt';
+
+export default defineNuxtConfig({
+  experimental: {
+    externalVue: true,
+  },
+});
+```
+
+Reference:
+
+- [nuxt/framework#6761](https://github.com/nuxt/framework/issues/6761)
+- [nuxt/framework#4084](https://github.com/nuxt/framework/issues/4084)

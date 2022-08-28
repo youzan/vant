@@ -26,103 +26,107 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-cell-group van-cell-group--inset">
-    <div class="van-cell van-field">
-      <div class="van-cell__title van-field__label">
-        <label id="van-field-label"
-               for="van-field-input"
-        >
-          Text
-        </label>
-      </div>
-      <div class="van-cell__value van-field__value">
-        <div class="van-field__body">
-          <input type="text"
-                 id="van-field-input"
-                 class="van-field__control"
-                 placeholder="Text"
-                 aria-labelledby="van-field-label"
+    <form class="van-form">
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label">
+          <label id="van-field-label"
+                 for="van-field-input"
           >
+            Text
+          </label>
+        </div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <input type="text"
+                   id="van-field-input"
+                   class="van-field__control"
+                   placeholder="Text"
+                   autocomplete="off"
+                   aria-labelledby="van-field-label"
+            >
+          </div>
         </div>
       </div>
-    </div>
-    <div class="van-cell van-field">
-      <div class="van-cell__title van-field__label">
-        <label id="van-field-label"
-               for="van-field-input"
-        >
-          Phone
-        </label>
-      </div>
-      <div class="van-cell__value van-field__value">
-        <div class="van-field__body">
-          <input type="tel"
-                 id="van-field-input"
-                 class="van-field__control"
-                 placeholder="Phone"
-                 aria-labelledby="van-field-label"
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label">
+          <label id="van-field-label"
+                 for="van-field-input"
           >
+            Phone
+          </label>
+        </div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <input type="tel"
+                   id="van-field-input"
+                   class="van-field__control"
+                   placeholder="Phone"
+                   aria-labelledby="van-field-label"
+            >
+          </div>
         </div>
       </div>
-    </div>
-    <div class="van-cell van-field">
-      <div class="van-cell__title van-field__label">
-        <label id="van-field-label"
-               for="van-field-input"
-        >
-          Digit
-        </label>
-      </div>
-      <div class="van-cell__value van-field__value">
-        <div class="van-field__body">
-          <input type="tel"
-                 inputmode="numeric"
-                 id="van-field-input"
-                 class="van-field__control"
-                 placeholder="Digit"
-                 aria-labelledby="van-field-label"
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label">
+          <label id="van-field-label"
+                 for="van-field-input"
           >
+            Digit
+          </label>
+        </div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <input type="tel"
+                   inputmode="numeric"
+                   id="van-field-input"
+                   class="van-field__control"
+                   placeholder="Digit"
+                   aria-labelledby="van-field-label"
+            >
+          </div>
         </div>
       </div>
-    </div>
-    <div class="van-cell van-field">
-      <div class="van-cell__title van-field__label">
-        <label id="van-field-label"
-               for="van-field-input"
-        >
-          Number
-        </label>
-      </div>
-      <div class="van-cell__value van-field__value">
-        <div class="van-field__body">
-          <input type="text"
-                 inputmode="decimal"
-                 id="van-field-input"
-                 class="van-field__control"
-                 placeholder="Number"
-                 aria-labelledby="van-field-label"
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label">
+          <label id="van-field-label"
+                 for="van-field-input"
           >
+            Number
+          </label>
+        </div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <input type="text"
+                   inputmode="decimal"
+                   id="van-field-input"
+                   class="van-field__control"
+                   placeholder="Number"
+                   aria-labelledby="van-field-label"
+            >
+          </div>
         </div>
       </div>
-    </div>
-    <div class="van-cell van-field">
-      <div class="van-cell__title van-field__label">
-        <label id="van-field-label"
-               for="van-field-input"
-        >
-          Password
-        </label>
-      </div>
-      <div class="van-cell__value van-field__value">
-        <div class="van-field__body">
-          <input type="password"
-                 id="van-field-input"
-                 class="van-field__control"
-                 placeholder="Password"
-                 aria-labelledby="van-field-label"
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label">
+          <label id="van-field-label"
+                 for="van-field-input"
           >
+            Password
+          </label>
+        </div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <input type="password"
+                   id="van-field-input"
+                   class="van-field__control"
+                   placeholder="Password"
+                   autocomplete="off"
+                   aria-labelledby="van-field-label"
+            >
+          </div>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 <div>
