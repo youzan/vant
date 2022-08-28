@@ -9,6 +9,7 @@ import {
 
 // Utils
 import {
+  pick,
   extend,
   unitToPx,
   truthProp,
@@ -17,18 +18,18 @@ import {
   preventDefault,
   makeStringProp,
   makeNumericProp,
-  createNamespace,
-  HAPTICS_FEEDBACK,
   BORDER_UNSET_TOP_BOTTOM,
   type Numeric,
 } from '../utils';
 import {
+  bem,
+  name,
   isOptionExist,
   getColumnsType,
   findOptionByValue,
+  assignDefaultFields,
   formatCascadeColumns,
   getFirstEnabledOption,
-  assignDefaultFields,
 } from './utils';
 
 // Composables
@@ -38,6 +39,11 @@ import { useExpose } from '../composables/use-expose';
 // Components
 import { Loading } from '../loading';
 import Column, { PICKER_KEY } from './PickerColumn';
+import Toolbar, {
+  pickerToolbarPropKeys,
+  pickerToolbarProps,
+  pickerToolbarSlots,
+} from './PickerToolbar';
 
 // Types
 import type {
@@ -48,20 +54,18 @@ import type {
   PickerToolbarPosition,
 } from './types';
 
-const [name, bem, t] = createNamespace('picker');
-
-export const pickerSharedProps = {
-  title: String,
-  loading: Boolean,
-  readonly: Boolean,
-  allowHtml: Boolean,
-  optionHeight: makeNumericProp(44),
-  showToolbar: truthProp,
-  swipeDuration: makeNumericProp(1000),
-  visibleOptionNum: makeNumericProp(6),
-  cancelButtonText: String,
-  confirmButtonText: String,
-};
+export const pickerSharedProps = extend(
+  {
+    loading: Boolean,
+    readonly: Boolean,
+    allowHtml: Boolean,
+    optionHeight: makeNumericProp(44),
+    showToolbar: truthProp,
+    swipeDuration: makeNumericProp(1000),
+    visibleOptionNum: makeNumericProp(6),
+  },
+  pickerToolbarProps
+);
 
 const pickerProps = extend({}, pickerSharedProps, {
   columns: makeArrayProp<PickerOption | PickerColumn>(),
@@ -167,53 +171,6 @@ export default defineComponent({
         selectedOptions: selectedOptions.value,
       });
 
-    const renderTitle = () => {
-      if (slots.title) {
-        return slots.title();
-      }
-      if (props.title) {
-        return <div class={[bem('title'), 'van-ellipsis']}>{props.title}</div>;
-      }
-    };
-
-    const renderCancel = () => {
-      const text = props.cancelButtonText || t('cancel');
-      return (
-        <button
-          type="button"
-          class={[bem('cancel'), HAPTICS_FEEDBACK]}
-          onClick={cancel}
-        >
-          {slots.cancel ? slots.cancel() : text}
-        </button>
-      );
-    };
-
-    const renderConfirm = () => {
-      const text = props.confirmButtonText || t('confirm');
-      return (
-        <button
-          type="button"
-          class={[bem('confirm'), HAPTICS_FEEDBACK]}
-          onClick={confirm}
-        >
-          {slots.confirm ? slots.confirm() : text}
-        </button>
-      );
-    };
-
-    const renderToolbar = () => {
-      if (props.showToolbar) {
-        return (
-          <div class={bem('toolbar')}>
-            {slots.toolbar
-              ? slots.toolbar()
-              : [renderCancel(), renderTitle(), renderConfirm()]}
-          </div>
-        );
-      }
-    };
-
     const renderColumnItems = () =>
       currentColumns.value.map((options, columnIndex) => (
         <Column
@@ -258,6 +215,19 @@ export default defineComponent({
           {renderMask(wrapHeight)}
         </div>
       );
+    };
+
+    const renderToolbar = () => {
+      if (props.showToolbar) {
+        return (
+          <Toolbar
+            v-slots={pick(slots, pickerToolbarSlots)}
+            {...pick(props, pickerToolbarPropKeys)}
+            onConfirm={confirm}
+            onCancel={cancel}
+          />
+        );
+      }
     };
 
     watch(

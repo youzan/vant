@@ -1,6 +1,10 @@
-import { isDef, clamp, extend, type Numeric } from '../utils';
+import { isDef, clamp, extend, createNamespace, type Numeric } from '../utils';
 import type { Ref } from 'vue';
 import type { PickerOption, PickerColumn, PickerFieldNames } from './types';
+
+const [name, bem, t] = createNamespace('picker');
+
+export { name, bem, t };
 
 export const getFirstEnabledOption = (
   options: PickerOption[]
