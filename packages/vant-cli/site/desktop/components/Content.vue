@@ -90,6 +90,7 @@ export default {
   background-color: #fff;
   border-radius: @van-doc-border-radius;
   box-shadow: 0 8px 12px #ebedf0;
+  overflow: auto;
 
   > pre code {
     position: relative;
