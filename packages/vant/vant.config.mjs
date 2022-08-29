@@ -187,6 +187,10 @@ export default {
                 title: 'Picker 选择器',
               },
               {
+                path: 'picker-group',
+                title: 'PickerGroup 选择器组',
+              },
+              {
                 path: 'radio',
                 title: 'Radio 单选框',
               },
@@ -592,6 +596,10 @@ export default {
               {
                 path: 'picker',
                 title: 'Picker',
+              },
+              {
+                path: 'picker-group',
+                title: 'PickerGroup',
               },
               {
                 path: 'radio',

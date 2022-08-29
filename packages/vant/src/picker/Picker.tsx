@@ -33,7 +33,7 @@ import {
 } from './utils';
 
 // Composables
-import { useChildren, useEventListener } from '@vant/use';
+import { useChildren, useEventListener, useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
@@ -53,6 +53,7 @@ import type {
   PickerFieldNames,
   PickerToolbarPosition,
 } from './types';
+import { PICKER_GROUP_KEY } from '../picker-group/PickerGroup';
 
 export const pickerSharedProps = extend(
   {
@@ -85,7 +86,9 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const columnsRef = ref<HTMLElement>();
-    const selectedValues = ref(props.modelValue);
+    const selectedValues = ref(props.modelValue.slice(0));
+
+    const { parent } = useParent(PICKER_GROUP_KEY);
     const { children, linkChildren } = useChildren(PICKER_KEY);
 
     linkChildren();
@@ -119,15 +122,18 @@ export default defineComponent({
     );
 
     const setValue = (index: number, value: Numeric) => {
+      console.log(' set value 1', selectedValues.value[index], value);
       if (selectedValues.value[index] !== value) {
         const newValues = selectedValues.value.slice(0);
         newValues[index] = value;
+        console.log('before', selectedValues.value, newValues);
         selectedValues.value = newValues;
+        console.log('after', selectedValues.value);
       }
     };
 
     const getEventParams = () => ({
-      selectedValues: selectedValues.value,
+      selectedValues: selectedValues.value.slice(0),
       selectedOptions: selectedOptions.value,
     });
 
@@ -158,7 +164,9 @@ export default defineComponent({
 
     const confirm = () => {
       children.forEach((child) => child.stopMomentum());
-      emit('confirm', getEventParams());
+      const params = getEventParams();
+      emit('confirm', params);
+      return params;
     };
 
     const cancel = () => emit('cancel', getEventParams());
@@ -210,7 +218,7 @@ export default defineComponent({
     };
 
     const renderToolbar = () => {
-      if (props.showToolbar) {
+      if (props.showToolbar && !parent) {
         return (
           <Toolbar
             v-slots={pick(slots, pickerToolbarSlots)}
@@ -230,6 +238,11 @@ export default defineComponent({
             options.length &&
             !isOptionExist(options, selectedValues.value[index], fields.value)
           ) {
+            console.log(
+              'set value',
+              index,
+              getFirstEnabledOption(options)![fields.value.value]
+            );
             setValue(
               index,
               getFirstEnabledOption(options)![fields.value.value]
@@ -243,8 +256,14 @@ export default defineComponent({
     watch(
       () => props.modelValue,
       (newValues) => {
+        console.log(
+          'watch props.modelValue',
+          newValues,
+          selectedValues.value,
+          props.modelValue
+        );
         if (!isSameValue(newValues, selectedValues.value)) {
-          selectedValues.value = newValues;
+          selectedValues.value = newValues.slice(0);
         }
       },
       { deep: true }
@@ -252,8 +271,14 @@ export default defineComponent({
     watch(
       selectedValues,
       (newValues) => {
+        console.log(
+          'watch selectedValues',
+          newValues,
+          selectedValues.value,
+          props.modelValue
+        );
         if (!isSameValue(newValues, props.modelValue)) {
-          emit('update:modelValue', newValues);
+          emit('update:modelValue', newValues.slice(0));
         }
       },
       { immediate: true }
