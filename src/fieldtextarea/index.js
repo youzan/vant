@@ -119,8 +119,9 @@ export default createComponent({
       if (event.target.composing) {
         return;
       }
-      this.$emit('input', event);
       this.updateValue(event.target.value);
+
+      this.$emit('input', event);
     },
 
     onFocus(event) {
@@ -192,8 +193,9 @@ export default createComponent({
     },
     currentValue(val) {
       this.$emit('input', val);
-      this.$emit('change', val, this);
       this.$emit('update:value', val);
+      this.$emit('change', val, this);
+
     },
   },
   render() {

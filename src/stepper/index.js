@@ -212,8 +212,9 @@ export default createComponent({
     emitChange(value) {
       if (this.asyncChange) {
         this.$emit('input', value);
-        this.$emit('change', value, { name: this.name });
         this.$emit('update:value', value);
+        this.$emit('change', value, { name: this.name });
+
 
       } else {
         this.currentValue = value;

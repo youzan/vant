@@ -46,9 +46,9 @@ export default createComponent({
           ? this.value.concat(name)
           : this.value.filter((activeName) => activeName !== name);
       }
-      this.$emit('change', name);
       this.$emit('input', name);
       this.$emit('update:valueprop', name);
+      this.$emit('change', name);
       this.value = name;
     },
   },

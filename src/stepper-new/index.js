@@ -155,8 +155,9 @@ export default createComponent({
     },
     currentValue(val) {
       this.$emit('input', val);
-      this.$emit('change', val, { name: this.name });
       this.$emit('update:value', val);
+      this.$emit('change', val, { name: this.name });
+
     },
   },
 

@@ -35,8 +35,8 @@ export default createComponent({
   watch: {
     value: {
       handler: function (val, oldVal) {
-        this.$emit('change', val);
         this.$emit('update:value', val);
+        this.$emit('change', val);
         if (val === true && typeof oldVal === 'undefined') {
           if (this.parent) {
             this.setParentValue(val);

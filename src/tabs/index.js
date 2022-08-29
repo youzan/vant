@@ -286,8 +286,9 @@ export default createComponent({
         this.$emit('update:active', newName);
 
         if (shouldEmitChange) {
-          this.$emit('change', newName, newTab.title);
           this.$emit('update:active', newName, newTab.title);
+          this.$emit('change', newName, newTab.title);
+
         }
       }
     },

@@ -252,8 +252,8 @@ export default createComponent({
     onConfirm(values, index) {
       values = this.parseOutputValues(values);
       this.setValues();
-      this.$emit('confirm', values, index, values[2].code);
       this.$emit('update:value', values[2].code);
+      this.$emit('confirm', values, index, values[2].code);
       this.togglePopup();
     },
     onCancel() {

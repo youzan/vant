@@ -75,11 +75,13 @@ export default createComponent({
         return;
       }
 
-      this.$emit('click', this.index);
       this.parent.curvalue = this.value ?? this.index;
       this.parent.$emit('input', this.value ?? this.index);
       this.parent.$emit('update:value', this.value ?? this.index);
+
       this.parent.setIndex(this.index);
+      this.$emit('click', this.index);
+
 
       // route(this.$router, this);
       const props = this._props;

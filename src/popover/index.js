@@ -187,14 +187,15 @@ export default createComponent({
       if (action.disabled) {
         return;
       }
-
-      this.$emit('select', action, index);
-
       if (this.closeOnClickAction) {
         this.valued = false;
         this.$emit('input', false);
         this.$emit('update:value', false);
       }
+
+      this.$emit('select', action, index);
+
+
     },
 
     onClickOutside() {
