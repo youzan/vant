@@ -81,7 +81,7 @@
     line-height: @stepper-input-line-height;
     text-align: center;
     vertical-align: middle;
-    background-color: @stepper-background-color;
+    // background-color: @stepper-background-color;
     border: 0;
     border-width: 1px 0;
     border-radius: 0;
@@ -97,6 +97,10 @@
 
     &:read-only {
       cursor: default;
+    }
+
+    &::placeholder {
+      color: @field-placeholder-text-color;
     }
   }
 
