@@ -2,9 +2,9 @@
   <div class="van-for-com">
     <template v-if="options.length > 0">
       <div v-for="(item, index) in options" :key="index" class="van-for-com-frag">
-        <van-for-components-item v-for="(item2, index2) in item" :key="index2" :item="item2" :equalWidth="equalWidth" :colnum="colnum">
+        <van-for-components-item v-for="(item2, index2) in item" :key="index2" :item="item2" :equalWidth="equalWidth" :colnum="colnum" :index="comIndex(index, index2)">
           <template v-slot="item2">
-            <slot :item="item2.item"></slot>
+            <slot :item="item2.item" :index="comIndex(index, index2)"></slot>
           </template>
         </van-for-components-item>
       </div>
@@ -104,7 +104,10 @@ export default {
         } else {
           this.options = this.divide(this.fromValue(this.dataSource));
         }
-      }
+      },
+      comIndex(index1, index2) {
+        return index1 * this.colnum + index2;
+      },
     }
 };
 </script>
