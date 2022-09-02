@@ -3,8 +3,7 @@ import { raf } from '../utils/dom/raf';
 import { isDate } from '../utils/validate/date';
 import { isNaN } from '../utils/validate/number';
 import { getScrollTop } from '../utils/dom/scroll';
-import { transErrorDate } from './utils'
-import {
+import { transErrorDate ,
   t,
   bem,
   copyDate,
@@ -15,7 +14,7 @@ import {
   compareMonth,
   createComponent,
   getDayByOffset,
-} from './utils';
+} from './utils'
 
 // Components
 import Popup from '../popup';
@@ -492,7 +491,7 @@ export default createComponent({
         this.getTitle = this.defaultDate;
         return
       }
-      if (this.currentDate) {
+      if (this.defaultDate && this.currentDate) {
         if (Array.isArray(this.currentDate)) {
           this.getTitle = this.currentDate.reduce((p, c) => p + (isDate(c) ? c.formath("yyyy/MM/dd") : c)+'-', '');
         } else {
