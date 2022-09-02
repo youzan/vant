@@ -1,0 +1,199 @@
+- name: van-popup-combination
+  title: 气泡弹出框
+  icon: popup
+  labels:
+    - Feedback
+  description: 点击，弹出气泡式的卡片浮层。
+  next: true
+  nested: false
+  attrs:
+    - name: title
+      title: 标题
+      type: string
+      default: 标题
+      description: 弹出框标题
+    - name: opened
+      title: 弹出关闭状态
+      type: boolean
+      sync: true
+      default: false
+      description: 弹出/关闭状态
+    - name: trigger
+      title: 触发方式
+      type: string
+      advanced: true
+      options:
+        - value: click
+          title: 点击
+        - value: hover
+          title: 悬浮
+        - value: right-click
+          title: 右击
+        - value: double-click
+          title: 双击
+        - value: manual
+          title: 手动
+      default: click
+      description: 弹出框的触发方式
+    - name: placement
+      title: 弹出方向
+      type: string
+      options:
+        - value: top
+          title: 上
+        - value: bottom
+          title: 下
+        - value: left
+          title: 左
+        - value: right
+          title: 右
+        - value: top-start
+          title: 上左
+        - value: top-end
+          title: 上右
+        - value: bottom-start
+          title: 下左
+        - value: bottom-end
+          title: 下右
+        - value: left-start
+          title: 左上
+        - value: left-end
+          title: 左下
+        - value: right-start
+          title: 右上
+        - value: right-end
+          title: 右下
+      default: bottom-start
+      description: 弹出框的弹出方向。
+    - name: hide-delay
+      title: 消失延迟时间
+      type: number
+      default: 200
+      description: 当触发方式为'悬浮'时，提示内容消失延迟时间，单位是`'ms'`
+    - name: offset
+      title: 弹出层偏移
+      type: string
+      default: "0"
+      description: 弹出层偏移，如：'10', '10px 10px', '10% 10%', 第一个值表示水平偏移，第二个值表示垂直位移, 默认单位是`px`
+      advanced: true
+    - name: follow-cursor
+      title: 跟随鼠标
+      type: boolean
+      advanced: true
+      default: false
+      description: 是否跟随鼠标
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: 是否禁用
+    - name: merge-borders
+      title: 合并边框
+      type: boolean
+      default: true
+      description: 是否自动合并内外边框
+      advanced: true
+    - name: display
+      title: 展示方式
+      type: string
+      options:
+        - value: inline
+          title: 行内展示
+        - value: block
+          title: 块级展示，宽度会充满父元素
+      default: inline
+      description: 展示方式
+    - name: ellipsis
+      title: 省略显示
+      type: boolean
+      default: false
+      description: 文字过长是否省略显示。
+  slots:
+    - name: default
+      description: 自定义弹出的内容。
+    - name: reference
+      description: 弹出层触发节点。
+  events:
+    - name: before-open
+      title: 弹出前
+      description: 弹出前触发。
+      advanced: true
+      params:
+        - name: $event
+          type: object
+          description: 自定义事件对象
+          schema:
+            $ref: "#/systemTypes/EventTarget"
+        - name: $event.preventDefault
+          type: Function
+          description: 阻止弹出流程
+        - name: senderVM
+          type: UPopup
+          description: 发送事件实例
+    - name: open
+      title: 弹出时
+      description: 弹出时触发。
+      params:
+        - name: $event
+          type: ""
+          description: 空
+        - name: senderVM
+          type: UPopup
+          description: 发送事件实例
+    - name: before-close
+      title: 隐藏前
+      description: 隐藏前触发。
+      advanced: true
+      params:
+        - name: $event
+          type: object
+          description: 自定义事件对象
+          schema:
+            $ref: "#/systemTypes/EventTarget"
+        - name: $event.preventDefault
+          type: Function
+          description: 阻止隐藏流程
+        - name: senderVM
+          type: UPopup
+          description: 发送事件实例
+    - name: close
+      title: 隐藏后
+      description: 隐藏时触发。
+      params:
+        - name: $event
+          type: ""
+          description: 空
+        - name: senderVM
+          type: UPopup
+          description: 发送事件实例
+    - name: before-toggle
+      title: 展开折叠前
+      description: "@deprecated"
+      advanced: true
+      params: []
+    - name: toggle
+      title: 展开折叠后
+      advanced: true
+      description: "@deprecated"
+      params: []
+  methods:
+    - name: open
+      description: 弹出实例。
+      params: []
+    - name: close
+      description: 关闭实例。
+      params: []
+    - name: toggle
+      description: 切换弹出/关闭状态。
+      params:
+        - name: opened?
+          type: boolean
+          description: 可选。弹出/关闭状态
+    - name: update
+      description: 更新 popper 实例。参考
+        [Popper.update()](https://popper.js.org/popper-documentation.html#Popper.update)。
+      params: []
+    - name: scheduleUpdate
+      description: 在下次 UI 渲染时一块更新 popper 实例，比`update()`性能要好。参考
+        [Popper.scheduleUpdate()](https://popper.js.org/popper-documentation.html#Popper.scheduleUpdate)。
+      params: []

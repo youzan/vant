@@ -65,8 +65,9 @@ export { default as VanPicker } from '../../src/picker';
 export { default as VanPickerson } from '../../src/pickerson';
 export { default as VanPopover } from '../../src/popover';
 export { default as VanPopoverItem } from '../../src/popover-item';
-export { default as VanPopoverCombination } from '../../src/popover-combination';
-export { default as VanPopoverCombinationItem } from '../../src/popover-combination-item';
+// export { default as VanPopoverCombination } from '../../src/popover-combination';
+// export { default as VanPopoverCombinationItem } from '../../src/popover-combination-item';
+
 export { default as VanPopup } from '../../src/popup';
 export { default as VanProgress } from '../../src/progress';
 export { default as VanPullRefresh } from '../../src/pull-refresh';
@@ -115,3 +116,4 @@ export * from './iframe';
 export * from './link';
 export * from './linear-layout';
 export * from './count-down-new';
+export * from './popup-combination';

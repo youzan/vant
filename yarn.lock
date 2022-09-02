@@ -18786,10 +18786,10 @@
     "hash-sum" "^1.0.2"
     "loader-utils" "^1.0.2"
 
-"vue-template-compiler@^2.0.0", "vue-template-compiler@^2.5.22", "vue-template-compiler@^2.6.10", "vue-template-compiler@^2.6.12", "vue-template-compiler@^2.x":
-  "integrity" "sha512-ODQS1SyMbjKoO1JBJZojSw6FE4qnh9rIpUZn2EUT86FKizx9uH5z6uXiIrm4/Nb/gwxTi/o17ZDEGWAXHvtC7g=="
-  "resolved" "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.6.14.tgz"
-  "version" "2.6.14"
+"vue-template-compiler@^2.0.0", "vue-template-compiler@^2.5.22", "vue-template-compiler@^2.6.10", "vue-template-compiler@^2.x", "vue-template-compiler@2.6.12":
+  "integrity" "sha512-OzzZ52zS41YUbkCBfdXShQTe69j1gQDZ9HIX8miuC9C3rBCk9wIRjLiZZLrmX9V+Ftq/YEyv1JaVr5Y/hNtByg=="
+  "resolved" "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.6.12.tgz"
+  "version" "2.6.12"
   dependencies:
     "de-indent" "^1.0.2"
     "he" "^1.1.0"
@@ -18799,10 +18799,10 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@^2 || ^3.0.0-0", "vue@^2.5.22", "vue@^2.6.10", "vue@^2.6.11", "vue@^2.6.12", "vue@^2.x", "vue@2.x":
-  "integrity" "sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ=="
-  "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.14.tgz"
-  "version" "2.6.14"
+"vue@^2 || ^3.0.0-0", "vue@^2.5.22", "vue@^2.6.10", "vue@^2.6.11", "vue@^2.x", "vue@2.6.12", "vue@2.x":
+  "integrity" "sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg=="
+  "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.12.tgz"
+  "version" "2.6.12"
 
 "vusion-api@^0.6.21", "vusion-api@^0.6.30":
   "integrity" "sha512-o718qRdIOt6rDLOeiJbcoN6wtnINwZFH42BptDjOCMCqZMNNV0ZoZvHdGX5JkgK5qtsKtxBTPGqXWAijYq5Y6w=="
