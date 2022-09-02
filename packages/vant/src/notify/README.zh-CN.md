@@ -14,6 +14,16 @@ import { Notify } from 'vant';
 Notify('通知内容');
 ```
 
+#### 手动引入样式
+
+Notify 组件是以函数形式提供的，如果项目中使用 `unplugin-vue-components` 插件来自动引入组件样式，则无法正确识别 Notify 组件，因此需要手动引入 Notify 组件的样式：
+
+```js
+import 'vant/es/notify/style';
+```
+
+你可以在项目的入口文件或公共模块中引入 Notify 组件的样式，这样在业务代码中使用 Notify 时，便不再需要重复引入样式了。
+
 ### 组件调用
 
 通过组件调用 Notify 时，可以通过下面的方式进行注册：

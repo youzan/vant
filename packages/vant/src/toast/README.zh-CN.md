@@ -16,6 +16,16 @@ const app = createApp();
 app.use(Toast);
 ```
 
+#### 手动引入样式
+
+Toast 组件是以函数形式提供的，如果项目中使用 `unplugin-vue-components` 插件来自动引入组件样式，则无法正确识别 Toast 组件，因此需要手动引入 Toast 组件的样式：
+
+```js
+import 'vant/es/toast/style';
+```
+
+你可以在项目的入口文件或公共模块中引入 Toast 组件的样式，这样在业务代码中使用 Toast 时，便不再需要重复引入样式了。
+
 ## 代码演示
 
 ### 文字提示
