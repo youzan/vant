@@ -59,7 +59,7 @@
           title: 中
         - value: right
           title: 右
-      default: right
+      default: left
       description: 右侧内容对齐方式
     - name: close-on-click-overlay
       title: 点击遮罩层后关闭

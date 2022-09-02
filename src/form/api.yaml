@@ -10,6 +10,7 @@
     - name: label-align
       title: 标签对齐方式
       type: string
+      advanced: true
       options:
         - value: left
           title: 左
@@ -22,6 +23,7 @@
     - name: input-align
       title: 输入框对齐方式
       type: string
+      advanced: true
       options:
         - value: left
           title: 左
