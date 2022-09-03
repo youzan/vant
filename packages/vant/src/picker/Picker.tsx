@@ -122,13 +122,10 @@ export default defineComponent({
     );
 
     const setValue = (index: number, value: Numeric) => {
-      console.log(' set value 1', selectedValues.value[index], value);
       if (selectedValues.value[index] !== value) {
         const newValues = selectedValues.value.slice(0);
         newValues[index] = value;
-        console.log('before', selectedValues.value, newValues);
         selectedValues.value = newValues;
-        console.log('after', selectedValues.value);
       }
     };
 
@@ -238,11 +235,6 @@ export default defineComponent({
             options.length &&
             !isOptionExist(options, selectedValues.value[index], fields.value)
           ) {
-            console.log(
-              'set value',
-              index,
-              getFirstEnabledOption(options)![fields.value.value]
-            );
             setValue(
               index,
               getFirstEnabledOption(options)![fields.value.value]
@@ -256,12 +248,6 @@ export default defineComponent({
     watch(
       () => props.modelValue,
       (newValues) => {
-        console.log(
-          'watch props.modelValue',
-          newValues,
-          selectedValues.value,
-          props.modelValue
-        );
         if (!isSameValue(newValues, selectedValues.value)) {
           selectedValues.value = newValues.slice(0);
         }
@@ -271,12 +257,6 @@ export default defineComponent({
     watch(
       selectedValues,
       (newValues) => {
-        console.log(
-          'watch selectedValues',
-          newValues,
-          selectedValues.value,
-          props.modelValue
-        );
         if (!isSameValue(newValues, props.modelValue)) {
           emit('update:modelValue', newValues.slice(0));
         }
