@@ -149,7 +149,7 @@ test('set min-minute dynamically', async () => {
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker__confirm').trigger('click');
   await later();
-  expect(wrapper.emitted<[string]>('change')![0][0]).toEqual('13:00');
+  expect(wrapper.emitted<[string]>('change')![0][0]).toEqual('12:30');
 });
 
 test('should emit value correctly when dynamic change min-hour', async () => {

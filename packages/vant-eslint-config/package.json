@@ -20,17 +20,17 @@
   "author": "chenjiahan",
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.30.3",
-    "@typescript-eslint/parser": "^5.30.3",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-vue": "^9.1.1"
+    "eslint-plugin-vue": "^9.4.0"
   },
   "devDependencies": {
     "enhanced-resolve": "^5.10.0",
-    "eslint": "^8.19.0",
-    "typescript": "^4.7.4"
+    "eslint": "^8.23.0",
+    "typescript": "^4.8.2"
   },
   "peerDependencies": {
     "eslint": "^7.32.0 || ^8.2.0"

@@ -37,10 +37,10 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.14.29",
-    "release-it": "^15.1.1",
-    "typescript": "^4.7.4",
-    "vue": "^3.2.27"
+    "esbuild": "^0.14.54",
+    "release-it": "^15.4.1",
+    "typescript": "^4.8.2",
+    "vue": "^3.2.38"
   },
   "release-it": {
     "git": {

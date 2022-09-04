@@ -34,8 +34,8 @@ test('should trigger onClose option correctly', async () => {
 
   expect(onClose).toHaveBeenCalledTimes(1);
   expect(onClose).toHaveBeenCalledWith({
-    index: 0,
-    url: images[0],
+    index: 1,
+    url: images[1],
   });
 });
 
