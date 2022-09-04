@@ -19,6 +19,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-rc.0](https://github.com/vant-ui/vant/compare/v3.6.2...v4.0.0-rc.0)
+
+`2022-09-04`
+
+**Feature**
+
+- 新增 [PickerGroup 选择器组](#/zh-CN/picker-group) 组件
+
+**Bug Fixes**
+
+- DatePicker: 修复未正确更新 modelValue 的问题 [#10984](https://github.com/vant-ui/vant/issues/10984)
+- DatePicker: 修复 min-date 属性未正确生效的问题 [#10985](https://github.com/vant-ui/vant/issues/10985)
+
 ### [v4.0.0-beta.1](https://github.com/vant-ui/vant/compare/v3.6.0...v4.0.0-beta.1)
 
 `2022-08-24`

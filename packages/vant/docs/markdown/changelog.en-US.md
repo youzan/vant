@@ -19,6 +19,19 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0-rc.0](https://github.com/vant-ui/vant/compare/v3.6.2...v4.0.0-rc.0)
+
+`2022-09-04`
+
+**New Component**
+
+- Add new component [PickerGroup](#/en-US/picker-group) [#11005](https://github.com/vant-ui/vant/issues/11005)
+
+**Bug Fixes**
+
+- DatePicker: failed to update model value [#10984](https://github.com/vant-ui/vant/issues/10984)
+- DatePicker: min-date prop not work correctly [#10985](https://github.com/vant-ui/vant/issues/10985)
+
 ### [v4.0.0-beta.1](https://github.com/vant-ui/vant/compare/v3.6.0...v4.0.0-beta.1)
 
 `2022-08-24`
