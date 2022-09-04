@@ -93,9 +93,9 @@ pnpm add vant
 
 ## 引入组件
 
-### 方法一. 基础用法
+### 方法一. 常规用法
 
-下面是使用 Vant 组件的基础用法示例：
+下面是使用 Vant 组件的用法示例：
 
 ```js
 import { createApp } from 'vue';
@@ -110,15 +110,15 @@ const app = createApp();
 app.use(Button);
 ```
 
-Vant 支持多种组件注册方式，除了在 app 上全局注册组件，你也可以选择其他的方式，详见 [组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce) 章节。
+Vant 支持多种组件注册方式，除了在 app 上全局注册组件，你也可以选择其他的方式，比如局部注册，详见 [组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce) 章节。
 
 > 提示：Vant 默认支持 Tree Shaking，因此你不需要配置任何插件，通过 Tree Shaking 即可移除不需要的 JS 代码，但 CSS 样式无法通过这种方式优化，如果需要按需引入 CSS 样式，请参考下面的方法二。
 
-### 方法二. 按需引入组件
+### 方法二. 按需引入组件样式
 
 在基于 `vite`、`webpack` 或 `vue-cli` 的项目中使用 Vant 时，可以使用 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件，它可以自动引入组件，并按需引入组件的样式。
 
-相比于基础用法，这种方式可以按需引入组件的 CSS 样式，从而减少一部分代码体积。
+相比于常规用法，这种方式可以按需引入组件的 CSS 样式，从而减少一部分代码体积，但使用起来会变得繁琐一些。如果业务对 CSS 的体积要求不是特别极致，我们推荐使用更简便的常规用法。
 
 #### 1. 安装插件
 
