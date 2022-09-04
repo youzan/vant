@@ -2,7 +2,15 @@
 
 ### Intro
 
-Used to select date, usually used with the [Popup](#/en-US/popup) component.
+Used to combine multiple Picker components, allow users to select multiple value.
+
+The following components can be placed inside PickerGroup:
+
+- [Picker](#/en-US/picker)
+- [Area](#/en-US/area)
+- [DatePicker](#/en-US/date-picker)
+- [TimePicker](#/en-US/time-picker)
+- Other custom components based on Picker component
 
 ### Install
 
@@ -22,7 +30,7 @@ app.use(PickerGroup);
 
 Place a `DatePicker` component and a `TimePicker` component in the default slot of the `PickerGroup` to select both a date and a time.
 
-`PickerGroup` will render the unified toolbar instead of the subcomponent, which means that the sub component will not render a separate toolbar, and the props and events related to the toolbar need to be set to the `PickerGroup`, such as the `title` prop, `confirm` event, `cancel` event, etc., and the props and events in subcomponents that are not related to the toolbar can be used normally.
+`PickerGroup` will render a unified toolbar, so the child components will not render is's toolbar, and the toolbar props and events need to be set to the `PickerGroup`, such as the `title` prop, `confirm` event, `cancel` event, etc. Other props and events in child components can be used as before.
 
 ```html
 <van-picker-group
