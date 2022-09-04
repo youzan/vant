@@ -245,10 +245,17 @@ export default defineComponent({
       { immediate: true }
     );
 
+    // preserve last emitted model value
+    // when props.modelValue is updated by parent component,
+    // the new value should be compared with the last emitted value
+    let lastEmittedModelValue: Numeric[];
     watch(
       () => props.modelValue,
       (newValues) => {
-        if (!isSameValue(newValues, selectedValues.value)) {
+        if (
+          !isSameValue(newValues, selectedValues.value) &&
+          !isSameValue(newValues, lastEmittedModelValue)
+        ) {
           selectedValues.value = newValues.slice(0);
         }
       },
@@ -258,7 +265,8 @@ export default defineComponent({
       selectedValues,
       (newValues) => {
         if (!isSameValue(newValues, props.modelValue)) {
-          emit('update:modelValue', newValues.slice(0));
+          lastEmittedModelValue = newValues.slice(0);
+          emit('update:modelValue', lastEmittedModelValue);
         }
       },
       { immediate: true }
