@@ -93,9 +93,9 @@ pnpm add vant
 
 ## 引入组件
 
-### 方法一. 基础用法
+### 方法一. 常规用法
 
-下面是使用 Vant 组件的基础用法示例：
+下面是使用 Vant 组件的用法示例：
 
 ```js
 import { createApp } from 'vue';
@@ -110,15 +110,15 @@ const app = createApp();
 app.use(Button);
 ```
 
-Vant 支持多种组件注册方式，除了在 app 上全局注册组件，你也可以选择其他的方式，详见 [组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce) 章节。
+Vant 支持多种组件注册方式，除了在 app 上全局注册组件，你也可以选择其他的方式，比如局部注册，详见 [组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce) 章节。
 
 > 提示：Vant 默认支持 Tree Shaking，因此你不需要配置任何插件，通过 Tree Shaking 即可移除不需要的 JS 代码，但 CSS 样式无法通过这种方式优化，如果需要按需引入 CSS 样式，请参考下面的方法二。
 
-### 方法二. 按需引入组件
+### 方法二. 按需引入组件样式
 
 在基于 `vite`、`webpack` 或 `vue-cli` 的项目中使用 Vant 时，可以使用 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件，它可以自动引入组件，并按需引入组件的样式。
 
-相比于基础用法，这种方式可以按需引入组件的 CSS 样式，从而减少一部分代码体积。
+相比于常规用法，这种方式可以按需引入组件的 CSS 样式，从而减少一部分代码体积，但使用起来会变得繁琐一些。如果业务对 CSS 的体积要求不是特别极致，我们推荐使用更简便的常规用法。
 
 #### 1. 安装插件
 
@@ -240,3 +240,34 @@ export default defineNuxtConfig({
 
 - [nuxt/framework#6761](https://github.com/nuxt/framework/issues/6761)
 - [nuxt/framework#4084](https://github.com/nuxt/framework/issues/4084)
+
+## 迁移提示
+
+### 移除 babel-plugin-import
+
+从 Vant 4.0 版本开始，将不再支持 `babel-plugin-import`，请移除项目中依赖的 `babel-plugin-import` 插件。
+
+只需要删除 `babel.config.js` 中的以下代码即可：
+
+```diff
+module.exports = {
+  plugins: [
+-    ['import', {
+-      libraryName: 'vant',
+-      libraryDirectory: 'es',
+-      style: true
+-    }, 'vant']
+  ]
+};
+```
+
+#### 收益
+
+移除 `babel-plugin-import` 有以下收益：
+
+- 不再强依赖 babel，项目可以使用 esbuild、swc 等更高效的编译工具，大幅度提升编译效率。
+- 不再受到 `babel-plugin-import` 的 import 写法限制，可以从 vant 中导入除了组件以外的其他内容，比如 Vant 4 中新增的 `showToast` 等方法：
+
+```ts
+import { showToast, showDialog } from 'vant';
+```
