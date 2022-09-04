@@ -87,6 +87,7 @@ export default {
   padding: 24px;
   background-color: var(--van-doc-background-2);
   border-radius: var(--van-doc-border-radius);
+  overflow: auto;
 
   > pre code {
     position: relative;
