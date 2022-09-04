@@ -33,7 +33,7 @@ import {
 } from './utils';
 
 // Composables
-import { useChildren, useEventListener } from '@vant/use';
+import { useChildren, useEventListener, useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
@@ -53,6 +53,7 @@ import type {
   PickerFieldNames,
   PickerToolbarPosition,
 } from './types';
+import { PICKER_GROUP_KEY } from '../picker-group/PickerGroup';
 
 export const pickerSharedProps = extend(
   {
@@ -85,7 +86,9 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const columnsRef = ref<HTMLElement>();
-    const selectedValues = ref(props.modelValue);
+    const selectedValues = ref(props.modelValue.slice(0));
+
+    const { parent } = useParent(PICKER_GROUP_KEY);
     const { children, linkChildren } = useChildren(PICKER_KEY);
 
     linkChildren();
@@ -127,7 +130,7 @@ export default defineComponent({
     };
 
     const getEventParams = () => ({
-      selectedValues: selectedValues.value,
+      selectedValues: selectedValues.value.slice(0),
       selectedOptions: selectedOptions.value,
     });
 
@@ -158,7 +161,9 @@ export default defineComponent({
 
     const confirm = () => {
       children.forEach((child) => child.stopMomentum());
-      emit('confirm', getEventParams());
+      const params = getEventParams();
+      emit('confirm', params);
+      return params;
     };
 
     const cancel = () => emit('cancel', getEventParams());
@@ -210,7 +215,7 @@ export default defineComponent({
     };
 
     const renderToolbar = () => {
-      if (props.showToolbar) {
+      if (props.showToolbar && !parent) {
         return (
           <Toolbar
             v-slots={pick(slots, pickerToolbarSlots)}
@@ -244,7 +249,7 @@ export default defineComponent({
       () => props.modelValue,
       (newValues) => {
         if (!isSameValue(newValues, selectedValues.value)) {
-          selectedValues.value = newValues;
+          selectedValues.value = newValues.slice(0);
         }
       },
       { deep: true }
@@ -253,7 +258,7 @@ export default defineComponent({
       selectedValues,
       (newValues) => {
         if (!isSameValue(newValues, props.modelValue)) {
-          emit('update:modelValue', newValues);
+          emit('update:modelValue', newValues.slice(0));
         }
       },
       { immediate: true }

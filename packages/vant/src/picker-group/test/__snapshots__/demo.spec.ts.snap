@@ -1,0 +1,3976 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-picker-group">
+    <div class="van-picker__toolbar"
+         tabs="Date,Time"
+    >
+      <button type="button"
+              class="van-picker__cancel van-haptics-feedback"
+      >
+        Cancel
+      </button>
+      <div class="van-picker__title van-ellipsis">
+        Title
+      </div>
+      <button type="button"
+              class="van-picker__confirm van-haptics-feedback"
+      >
+        Confirm
+      </button>
+    </div>
+    <div class="van-tabs van-tabs--line van-picker-group__tabs">
+      <div class="van-tabs__wrap">
+        <div role="tablist"
+             class="van-tabs__nav van-tabs__nav--line van-tabs__nav--shrink van-tabs__nav--complete"
+             aria-orientation="horizontal"
+        >
+          <div id="van-tabs-0"
+               role="tab"
+               class="van-tab van-tab--line van-tab--shrink van-tab--active van-picker-group__tab-title"
+               tabindex="0"
+               aria-selected="true"
+          >
+            <span class="van-tab__text">
+              Date
+            </span>
+          </div>
+          <div id="van-tabs-1"
+               role="tab"
+               class="van-tab van-tab--line van-tab--shrink van-picker-group__tab-title"
+               tabindex="-1"
+               aria-selected="false"
+          >
+            <span class="van-tab__text">
+              Time
+            </span>
+          </div>
+          <div class="van-tabs__line"
+               style="transform: translateX(50px) translateX(-50%);"
+          >
+          </div>
+        </div>
+      </div>
+      <div class="van-tabs__content van-tabs__content--animated">
+        <div class="van-swipe van-tabs__track">
+          <div style="transition-duration: 0ms; transform: translateX(0px); width: 200px;"
+               class="van-swipe__track"
+          >
+            <div class="van-swipe-item van-tab__panel-wrapper"
+                 id="van-tab"
+                 role="tabpanel"
+                 tabindex="0"
+                 aria-hidden="false"
+                 aria-labelledby="van-tabs-0"
+                 style="width: 100px;"
+            >
+              <div class="van-tab__panel">
+                <div class="van-picker">
+                  <div class="van-picker__columns"
+                       style="height: 264px;"
+                  >
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, 22px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2020
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2021
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            2022
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2023
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2024
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2025
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, -110px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            01
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            02
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            03
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            04
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            05
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            06
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            07
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            08
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            09
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            10
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            11
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            12
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            01
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            02
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            03
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            04
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            05
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            06
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            07
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            08
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            09
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            10
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            11
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            12
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            13
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            14
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            15
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            16
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            17
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            18
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            19
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            20
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            21
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            22
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            23
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            24
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            25
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            26
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            27
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            28
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            29
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            30
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker__mask"
+                         style="background-size: 100% 110px;"
+                    >
+                    </div>
+                    <div class="van-hairline-unset--top-bottom van-picker__frame"
+                         style="height: 44px;"
+                    >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+                 id="van-tab"
+                 role="tabpanel"
+                 tabindex="-1"
+                 aria-hidden="true"
+                 aria-labelledby="van-tabs-1"
+                 style="width: 100px;"
+            >
+              <div class="van-tab__panel">
+                <div class="van-picker">
+                  <div class="van-picker__columns"
+                       style="height: 264px;"
+                  >
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, -418px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            00
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            01
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            02
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            03
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            04
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            05
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            06
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            07
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            08
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            09
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            10
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            11
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            12
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            13
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            14
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            15
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            16
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            17
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            18
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            19
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            20
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            21
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            22
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            23
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            00
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            01
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            02
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            03
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            04
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            05
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            06
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            07
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            08
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            09
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            10
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            11
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            12
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            13
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            14
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            15
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            16
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            17
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            18
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            19
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            20
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            21
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            22
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            23
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            24
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            25
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            26
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            27
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            28
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            29
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            30
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            31
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            32
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            33
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            34
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            35
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            36
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            37
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            38
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            39
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            40
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            41
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            42
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            43
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            44
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            45
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            46
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            47
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            48
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            49
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            50
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            51
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            52
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            53
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            54
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            55
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            56
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            57
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            58
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            59
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker__mask"
+                         style="background-size: 100% 110px;"
+                    >
+                    </div>
+                    <div class="van-hairline-unset--top-bottom van-picker__frame"
+                         style="height: 44px;"
+                    >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-picker-group">
+    <div class="van-picker__toolbar"
+         tabs="Start Date,End Date"
+    >
+      <button type="button"
+              class="van-picker__cancel van-haptics-feedback"
+      >
+        Cancel
+      </button>
+      <div class="van-picker__title van-ellipsis">
+        Title
+      </div>
+      <button type="button"
+              class="van-picker__confirm van-haptics-feedback"
+      >
+        Confirm
+      </button>
+    </div>
+    <div class="van-tabs van-tabs--line van-picker-group__tabs">
+      <div class="van-tabs__wrap">
+        <div role="tablist"
+             class="van-tabs__nav van-tabs__nav--line van-tabs__nav--shrink van-tabs__nav--complete"
+             aria-orientation="horizontal"
+        >
+          <div id="van-tabs-0"
+               role="tab"
+               class="van-tab van-tab--line van-tab--shrink van-tab--active van-picker-group__tab-title"
+               tabindex="0"
+               aria-selected="true"
+          >
+            <span class="van-tab__text">
+              Start Date
+            </span>
+          </div>
+          <div id="van-tabs-1"
+               role="tab"
+               class="van-tab van-tab--line van-tab--shrink van-picker-group__tab-title"
+               tabindex="-1"
+               aria-selected="false"
+          >
+            <span class="van-tab__text">
+              End Date
+            </span>
+          </div>
+          <div class="van-tabs__line"
+               style="transform: translateX(50px) translateX(-50%);"
+          >
+          </div>
+        </div>
+      </div>
+      <div class="van-tabs__content van-tabs__content--animated">
+        <div class="van-swipe van-tabs__track">
+          <div style="transition-duration: 0ms; transform: translateX(0px); width: 200px;"
+               class="van-swipe__track"
+          >
+            <div class="van-swipe-item van-tab__panel-wrapper"
+                 id="van-tab"
+                 role="tabpanel"
+                 tabindex="0"
+                 aria-hidden="false"
+                 aria-labelledby="van-tabs-0"
+                 style="width: 100px;"
+            >
+              <div class="van-tab__panel">
+                <div class="van-picker">
+                  <div class="van-picker__columns"
+                       style="height: 264px;"
+                  >
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, 22px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2020
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2021
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            2022
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2023
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2024
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2025
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, -110px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            01
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            02
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            03
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            04
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            05
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            06
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            07
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            08
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            09
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            10
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            11
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            12
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            01
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            02
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            03
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            04
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            05
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            06
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            07
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            08
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            09
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            10
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            11
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            12
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            13
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            14
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            15
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            16
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            17
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            18
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            19
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            20
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            21
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            22
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            23
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            24
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            25
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            26
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            27
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            28
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            29
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            30
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker__mask"
+                         style="background-size: 100% 110px;"
+                    >
+                    </div>
+                    <div class="van-hairline-unset--top-bottom van-picker__frame"
+                         style="height: 44px;"
+                    >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+                 id="van-tab"
+                 role="tabpanel"
+                 tabindex="-1"
+                 aria-hidden="true"
+                 aria-labelledby="van-tabs-1"
+                 style="width: 100px;"
+            >
+              <div class="van-tab__panel">
+                <div class="van-picker">
+                  <div class="van-picker__columns"
+                       style="height: 264px;"
+                  >
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, 66px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2022
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            2023
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2024
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            2025
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, -110px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            01
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            02
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            03
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            04
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            05
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            06
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            07
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            08
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            09
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            10
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            11
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            12
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            01
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            02
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            03
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            04
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            05
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            06
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            07
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            08
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            09
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            10
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            11
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            12
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            13
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            14
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            15
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            16
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            17
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            18
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            19
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            20
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            21
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            22
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            23
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            24
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            25
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            26
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            27
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            28
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            29
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            30
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker__mask"
+                         style="background-size: 100% 110px;"
+                    >
+                    </div>
+                    <div class="van-hairline-unset--top-bottom van-picker__frame"
+                         style="height: 44px;"
+                    >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-picker-group">
+    <div class="van-picker__toolbar"
+         tabs="Start Time,End Time"
+    >
+      <button type="button"
+              class="van-picker__cancel van-haptics-feedback"
+      >
+        Cancel
+      </button>
+      <div class="van-picker__title van-ellipsis">
+        Title
+      </div>
+      <button type="button"
+              class="van-picker__confirm van-haptics-feedback"
+      >
+        Confirm
+      </button>
+    </div>
+    <div class="van-tabs van-tabs--line van-picker-group__tabs">
+      <div class="van-tabs__wrap">
+        <div role="tablist"
+             class="van-tabs__nav van-tabs__nav--line van-tabs__nav--shrink van-tabs__nav--complete"
+             aria-orientation="horizontal"
+        >
+          <div id="van-tabs-0"
+               role="tab"
+               class="van-tab van-tab--line van-tab--shrink van-tab--active van-picker-group__tab-title"
+               tabindex="0"
+               aria-selected="true"
+          >
+            <span class="van-tab__text">
+              Start Time
+            </span>
+          </div>
+          <div id="van-tabs-1"
+               role="tab"
+               class="van-tab van-tab--line van-tab--shrink van-picker-group__tab-title"
+               tabindex="-1"
+               aria-selected="false"
+          >
+            <span class="van-tab__text">
+              End Time
+            </span>
+          </div>
+          <div class="van-tabs__line"
+               style="transform: translateX(50px) translateX(-50%);"
+          >
+          </div>
+        </div>
+      </div>
+      <div class="van-tabs__content van-tabs__content--animated">
+        <div class="van-swipe van-tabs__track">
+          <div style="transition-duration: 0ms; transform: translateX(0px); width: 200px;"
+               class="van-swipe__track"
+          >
+            <div class="van-swipe-item van-tab__panel-wrapper"
+                 id="van-tab"
+                 role="tabpanel"
+                 tabindex="0"
+                 aria-hidden="false"
+                 aria-labelledby="van-tabs-0"
+                 style="width: 100px;"
+            >
+              <div class="van-tab__panel">
+                <div class="van-picker">
+                  <div class="van-picker__columns"
+                       style="height: 264px;"
+                  >
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, -418px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            00
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            01
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            02
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            03
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            04
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            05
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            06
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            07
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            08
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            09
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            10
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            11
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            12
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            13
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            14
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            15
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            16
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            17
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            18
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            19
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            20
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            21
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            22
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            23
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            00
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            01
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            02
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            03
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            04
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            05
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            06
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            07
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            08
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            09
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            10
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            11
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            12
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            13
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            14
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            15
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            16
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            17
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            18
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            19
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            20
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            21
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            22
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            23
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            24
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            25
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            26
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            27
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            28
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            29
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            30
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            31
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            32
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            33
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            34
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            35
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            36
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            37
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            38
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            39
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            40
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            41
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            42
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            43
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            44
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            45
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            46
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            47
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            48
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            49
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            50
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            51
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            52
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            53
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            54
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            55
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            56
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            57
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            58
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            59
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker__mask"
+                         style="background-size: 100% 110px;"
+                    >
+                    </div>
+                    <div class="van-hairline-unset--top-bottom van-picker__frame"
+                         style="height: 44px;"
+                    >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+                 id="van-tab"
+                 role="tabpanel"
+                 tabindex="-1"
+                 aria-hidden="true"
+                 aria-labelledby="van-tabs-1"
+                 style="width: 100px;"
+            >
+              <div class="van-tab__panel">
+                <div class="van-picker">
+                  <div class="van-picker__columns"
+                       style="height: 264px;"
+                  >
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, -462px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            00
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            01
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            02
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            03
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            04
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            05
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            06
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            07
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            08
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            09
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            10
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            11
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            12
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            13
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            14
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            15
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            16
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            17
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            18
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            19
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            20
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            21
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            22
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            23
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker-column">
+                      <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
+                          class="van-picker-column__wrapper"
+                      >
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item van-picker-column__item--selected"
+                        >
+                          <div class="van-ellipsis">
+                            00
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            01
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            02
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            03
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            04
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            05
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            06
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            07
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            08
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            09
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            10
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            11
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            12
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            13
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            14
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            15
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            16
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            17
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            18
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            19
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            20
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            21
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            22
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            23
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            24
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            25
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            26
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            27
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            28
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            29
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            30
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            31
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            32
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            33
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            34
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            35
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            36
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            37
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            38
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            39
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            40
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            41
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            42
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            43
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            44
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            45
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            46
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            47
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            48
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            49
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            50
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            51
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            52
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            53
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            54
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            55
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            56
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            57
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            58
+                          </div>
+                        </li>
+                        <li role="button"
+                            style="height: 44px;"
+                            tabindex="0"
+                            class="van-picker-column__item"
+                        >
+                          <div class="van-ellipsis">
+                            59
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="van-picker__mask"
+                         style="background-size: 100% 110px;"
+                    >
+                    </div>
+                    <div class="van-hairline-unset--top-bottom van-picker__frame"
+                         style="height: 44px;"
+                    >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
