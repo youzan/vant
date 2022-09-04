@@ -240,3 +240,34 @@ export default defineNuxtConfig({
 
 - [nuxt/framework#6761](https://github.com/nuxt/framework/issues/6761)
 - [nuxt/framework#4084](https://github.com/nuxt/framework/issues/4084)
+
+## 迁移提示
+
+### 移除 babel-plugin-import
+
+从 Vant 4.0 版本开始，将不再支持 `babel-plugin-import`，请移除项目中依赖的 `babel-plugin-import` 插件。
+
+只需要删除 `babel.config.js` 中的以下代码即可：
+
+```diff
+module.exports = {
+  plugins: [
+-    ['import', {
+-      libraryName: 'vant',
+-      libraryDirectory: 'es',
+-      style: true
+-    }, 'vant']
+  ]
+};
+```
+
+#### 收益
+
+移除 `babel-plugin-import` 有以下收益：
+
+- 不再强依赖 babel，项目可以使用 esbuild、swc 等更高效的编译工具，大幅度提升编译效率。
+- 不再受到 `babel-plugin-import` 的 import 写法限制，可以从 vant 中导入除了组件以外的其他内容，比如 Vant 4 中新增的 `showToast` 等方法：
+
+```ts
+import { showToast, showDialog } from 'vant';
+```
