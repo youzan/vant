@@ -8,7 +8,7 @@
 
 ### 移除 babel-plugin-import
 
-Vant 4 不再支持 `babel-plugin-import`，请移除项目中依赖的 `babel-plugin-import` 插件。
+从 Vant 4.0 版本开始，将不再支持 `babel-plugin-import`，请移除项目中依赖的 `babel-plugin-import` 插件。
 
 只需要删除 `babel.config.js` 中的以下代码即可：
 
@@ -28,8 +28,8 @@ module.exports = {
 
 移除 `babel-plugin-import` 有以下收益：
 
-- 可以不再依赖 babel，从而使用 esbuild、swc 等更高效的编译工具，提升项目编译效率。
-- 不再受到 `babel-plugin-import` 的 import 写法限制，可以从 vant 中导入组件以外的内容，比如 Vant 4 中新增的 `showToast` 等方法：
+- 不再强依赖 babel，项目可以使用 esbuild、swc 等更高效的编译工具，大幅度提升编译效率。
+- 不再受到 `babel-plugin-import` 的 import 写法限制，可以从 vant 中导入除了组件以外的其他内容，比如 Vant 4 中新增的 `showToast` 等方法：
 
 ```ts
 import { showToast, showDialog } from 'vant';
