@@ -19,6 +19,18 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.6.2](https://github.com/vant-ui/vant/compare/v3.6.1...v3.6.2)
+
+`2022-09-04`
+
+**Bug Fixes**
+
+- 修复 touchmove 事件导致控制台出现 passive event warning 的问题 [#10975](https://github.com/vant-ui/vant/issues/10975)
+- Calendar: 修复使用 allow-same-day 属性时 default-date 不能设置为同一天的问题 [#10976](https://github.com/vant-ui/vant/issues/10976) [#10971](https://github.com/vant-ui/vant/issues/10971)
+- indexBar: 修复个别情况下无法滚动到正确位置的问题 [#10994](https://github.com/vant-ui/vant/issues/10994)
+- Swipe: 修复 touchmove 事件在边界情况下被 preventDefault 的问题 [#10980](https://github.com/vant-ui/vant/issues/10980)
+- @vant/area-data: 更新大兴安岭相关地区码 [#11000](https://github.com/vant-ui/vant/issues/11000)
+
 ### [v3.6.1](https://github.com/vant-ui/vant/compare/v3.6.0...v3.6.1)
 
 `2022-08-24`

@@ -19,6 +19,18 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.6.2](https://github.com/vant-ui/vant/compare/v3.6.1...v3.6.2)
+
+`2022-09-04`
+
+**Bug Fixes**
+
+- reduce passive event warning of touchmove event [#10975](https://github.com/vant-ui/vant/issues/10975)
+- Calendar: allow default date to be maxDate when enable allowSameDay [#10976](https://github.com/vant-ui/vant/issues/10976) [#10971](https://github.com/vant-ui/vant/issues/10971)
+- indexBar: index-bar not positioned correctly when scrolled to the bottom [#10994](https://github.com/vant-ui/vant/issues/10994)
+- Swipe: should not prevent touch move when reach edge [#10980](https://github.com/vant-ui/vant/issues/10980)
+- @vant/area-data: update counties of Daxinganling region [#11000](https://github.com/vant-ui/vant/issues/11000)
+
 ### [v3.6.1](https://github.com/vant-ui/vant/compare/v3.6.0...v3.6.1)
 
 `2022-08-24`
