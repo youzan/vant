@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.49](https://github.com/vant-ui/vant/compare/v2.12.48...v2.12.49)
+
+`2022-09-05`
+
+**Bug Fixes**
+
+- Locale: avoid getting unexpected value [#11010](https://github.com/vant-ui/vant/issues/11010)
+- Locale: Accurate Vietnamese translation [#10889](https://github.com/vant-ui/vant/issues/10889)
+
 ### [v2.12.48](https://github.com/vant-ui/vant/compare/v2.12.47...v2.12.48)
 
 `2022-06-25`

@@ -25,6 +25,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.49](https://github.com/vant-ui/vant/compare/v2.12.48...v2.12.49)
+
+`2022-09-05`
+
+**Bug Fixes**
+
+- Locale: 修复读取 i18n 文案时可能获取到 JS 原生方法的问题 [#11010](https://github.com/vant-ui/vant/issues/11010)
+- Locale: 修复 Vietnamese 越南语中不准确的翻译 [#10889](https://github.com/vant-ui/vant/issues/10889)
+
 ### [v2.12.48](https://github.com/vant-ui/vant/compare/v2.12.47...v2.12.48)
 
 `2022-06-25`
