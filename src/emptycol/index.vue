@@ -1,10 +1,10 @@
 <template>
-<div :class="$style.empty" class="empty" s-empty="true">+</div>
+  <div :class="$style.empty" class="empty" s-empty="true">+</div>
 </template>
 
 <script>
 export default {
-    name: 'van-empty-col',
+  name: 'VanEmptyCol',
 };
 </script>
 
@@ -15,7 +15,7 @@ export default {
   text-align: center;
   color: #999;
   min-height: 32px;
-  min-width: 90px;
+  min-width: auto;
   width: 100%;
   align-items: center;
   display: inline-flex;
