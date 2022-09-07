@@ -10,7 +10,6 @@
     - name: title
       title: 标题
       type: string
-      default: 标题
       description: 弹出框标题
     - name: opened
       title: 弹出关闭状态
