@@ -47,22 +47,6 @@
           title: 左
         - value: right
           title: 右
-        - value: top-start
-          title: 上左
-        - value: top-end
-          title: 上右
-        - value: bottom-start
-          title: 下左
-        - value: bottom-end
-          title: 下右
-        - value: left-start
-          title: 左上
-        - value: left-end
-          title: 左下
-        - value: right-start
-          title: 右上
-        - value: right-end
-          title: 右下
       default: bottom-start
       description: 弹出框的弹出方向。
     - name: hide-delay
