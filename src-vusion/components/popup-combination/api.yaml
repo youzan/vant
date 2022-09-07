@@ -47,7 +47,7 @@
           title: 左
         - value: right
           title: 右
-      default: bottom-start
+      default: bottom
       description: 弹出框的弹出方向。
     - name: hide-delay
       title: 消失延迟时间
