@@ -177,7 +177,7 @@ export default {
 | title | Title | _string_ | - |
 | width | Width | _number \| string_ | `320px` |
 | message | Message | _string \| () => JSX.ELement_ | - |
-| message-align | Message align, can be set to `left` `right` | _string_ | `center` |
+| message-align | Message align, can be set to `left` `right` `justify` | _string_ | `center` |
 | theme | Theme style, can be set to `round-button` | _string_ | `default` |
 | show-confirm-button | Whether to show confirm button | _boolean_ | `true` |
 | show-cancel-button | Whether to show cancel button | _boolean_ | `false` |
