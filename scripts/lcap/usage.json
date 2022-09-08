@@ -7190,7 +7190,7 @@
             "Feedback"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-popup-combination>\\n  <template #reference>\\n    <van-button type=\\\"primary\\\" text=\\\"触发弹出框组件，可删除替换\\\"></van-button>\\n  </template>\\n  <van-text text=\\\"内容\\\"></van-text>\\n</van-popup-combination>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-popup-combination title=\\\"标题\\\">\\n  <template #reference>\\n    <van-button type=\\\"primary\\\" text=\\\"触发弹出框组件，可删除替换\\\"></van-button>\\n  </template>\\n  <van-text text=\\\"内容\\\"></van-text>\\n</van-popup-combination>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-popup-combination",
             "title": "气泡弹出框",
@@ -7202,7 +7202,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-popup-combination>\n  <template #reference>\n    <van-button type=\"primary\" text=\"触发弹出框组件，可删除替换\"></van-button>\n  </template>\n  <van-text text=\"内容\"></van-text>\n</van-popup-combination>\n</template>\n"
+                    "code": "<template>\n<van-popup-combination title=\"标题\">\n  <template #reference>\n    <van-button type=\"primary\" text=\"触发弹出框组件，可删除替换\"></van-button>\n  </template>\n  <van-text text=\"内容\"></van-text>\n</van-popup-combination>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -7210,7 +7210,6 @@
                     "name": "title",
                     "title": "标题",
                     "type": "string",
-                    "default": "标题",
                     "description": "弹出框标题"
                 },
                 {
@@ -7271,41 +7270,9 @@
                         {
                             "value": "right",
                             "title": "右"
-                        },
-                        {
-                            "value": "top-start",
-                            "title": "上左"
-                        },
-                        {
-                            "value": "top-end",
-                            "title": "上右"
-                        },
-                        {
-                            "value": "bottom-start",
-                            "title": "下左"
-                        },
-                        {
-                            "value": "bottom-end",
-                            "title": "下右"
-                        },
-                        {
-                            "value": "left-start",
-                            "title": "左上"
-                        },
-                        {
-                            "value": "left-end",
-                            "title": "左下"
-                        },
-                        {
-                            "value": "right-start",
-                            "title": "右上"
-                        },
-                        {
-                            "value": "right-end",
-                            "title": "右下"
                         }
                     ],
-                    "default": "bottom-start",
+                    "default": "bottom",
                     "description": "弹出框的弹出方向。"
                 },
                 {
