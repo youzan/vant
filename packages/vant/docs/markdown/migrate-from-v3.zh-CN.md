@@ -83,12 +83,15 @@ import 'vant/lib/index.css';
 
 DatetimePicker 组件被拆分为：
 
-- TimePicker: 用于时间选择。
-- DatePicker: 用于日期选择。
+- [TimePicker](#/zh-CN/time-picker): 用于时间选择。
+- [DatePicker](#/zh-CN/date-picker): 用于日期选择。
+- [PickerGroup](#/zh-CN/picker-group): 用于用于结合多个 Picker 选择器组件。
 
-同时，这两个组件也基于新版 Picker 组件进行重构，并优化了部分 API 设计。
+同时，TimePicker 和 DatePicker 组件也基于新版 Picker 组件进行重构，并优化了部分 API 设计。
 
 #### 主要变更
+
+以下是 TimePicker 和 DatePicker 的主要 API 变化，更多细节请参考 [TimePicker](#/zh-CN/time-picker) 和 [DatePicker](#/zh-CN/date-picker) 文档。
 
 - `v-model` 绑定的值调整为数组格式
 - 新增 `columns-type` 属性，用于控制选项类型和顺序
@@ -96,7 +99,7 @@ DatetimePicker 组件被拆分为：
 - 移除 `getPicker` 方法
 - 调整 `confirm`、`cancel`、`change` 事件的参数，与 Picker 组件保持一致
 
-> 详细用法请参见 [TimePicker 组件](#/zh-CN/time-picker) 和 [DatePicker 组件](#/zh-CN/date-picker) 文档。
+> Vant 4 不再提供旧版的 DatetimePicker 组件，使用 PickerGroup 组件可以实现更灵活、更丰富的交互效果，具体用法请参考 [PickerGroup](#/zh-CN/picker-group) 组件文档。
 
 ### Area 组件重构
 
