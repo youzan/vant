@@ -19,6 +19,22 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-rc.1](https://github.com/vant-ui/vant/compare/v4.0.0-rc.0...v4.0.0-rc.1)
+
+`2022-09-10`
+
+**Feature**
+
+- 导出所有组件的 props，方便进行二次封装 [#11024](https://github.com/vant-ui/vant/issues/11024)
+- Dialog: message-align 属性支持设置为 justify [#11014](https://github.com/vant-ui/vant/issues/11014)
+- Image: 新增 block 属性 [#11022](https://github.com/vant-ui/vant/issues/11022)
+- Toast: 新增 message 插槽 [#11018](https://github.com/vant-ui/vant/issues/11018)
+
+**Bug Fixes**
+
+- Picker: 修复部分情况下未正确更新选中值的问题 [#11009](https://github.com/vant-ui/vant/issues/11009)
+- Locale: 修复读取 i18n 文案时可能获取到 JS 原生方法的问题 [#11010](https://github.com/vant-ui/vant/issues/11010)
+
 ### [v4.0.0-rc.0](https://github.com/vant-ui/vant/compare/v3.6.2...v4.0.0-rc.0)
 
 `2022-09-04`
