@@ -127,6 +127,7 @@ app.use(Lazyload);
 | height | 高度，默认单位为 `px` | _number \| string_ | - |
 | radius | 圆角大小，默认单位为 `px` | _number \| string_ | `0` |
 | round | 是否显示为圆形 | _boolean_ | `false` |
+| block `3.6.3` | 是否将根节点设置为块级元素，默认情况下为 `inline-block` 元素 | _boolean_ | `false` |
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
 | show-error | 是否展示图片加载失败提示 | _boolean_ | `true` |
 | show-loading | 是否展示图片加载中提示 | _boolean_ | `true` |

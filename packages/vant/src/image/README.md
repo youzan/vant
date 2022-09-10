@@ -101,6 +101,7 @@ app.use(Lazyload);
 | height | Height | _number \| string_ | - |
 | radius | Border Radius | _number \| string_ | `0` |
 | round | Whether to be round | _boolean_ | `false` |
+| block `3.6.3` | Whether the root node is a block element | _boolean_ | `false` |
 | lazy-load | Whether to enable lazy load, should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 | show-error | Whether to show error placeholder | _boolean_ | `true` |
 | show-loading | Whether to show loading placeholder | _boolean_ | `true` |
