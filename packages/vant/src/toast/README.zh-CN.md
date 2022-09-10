@@ -135,8 +135,6 @@ const timer = setInterval(() => {
 }, 1000);
 ```
 
-> Tips: 由于 setup 选项中无法访问 this，因此不能使用上述方式，请通过 import 引入。
-
 ### 单例模式
 
 Toast 默认采用单例模式，即同一时间只会存在一个 Toast，如果需要在同一时间弹出多个 Toast，可以参考下面的示例：
@@ -169,19 +167,44 @@ resetToastDefaultOptions();
 resetToastDefaultOptions('loading');
 ```
 
+### 使用 Toast 组件
+
+如果需要在 Toast 内嵌入组件或其他自定义内容，可以直接使用 Toast 组件，并使用 message 插槽进行定制。
+
+```html
+<van-toast v-model:show="show" style="padding: 0">
+  <template #message>
+    <van-image :src="image" width="200" height="140" style="display: block" />
+  </template>
+</van-toast>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const show = ref(false);
+    return { show };
+  },
+};
+```
+
 ## API
 
 ### 方法
 
+Vant 中导出了以下 Toast 辅助函数：
+
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| showToast | 展示提示 | `options \| message` | toast 实例 |
-| showLoadingToast | 展示加载提示 | `options \| message` | toast 实例 |
-| showSuccessToast | 展示成功提示 | `options \| message` | toast 实例 |
-| showFailToast | 展示失败提示 | `options \| message` | toast 实例 |
+| showToast | 展示提示 | `ToastOptions \| string` | toast 实例 |
+| showLoadingToast | 展示加载提示 | `ToastOptions \| string` | toast 实例 |
+| showSuccessToast | 展示成功提示 | `ToastOptions \| string` | toast 实例 |
+| showFailToast | 展示失败提示 | `ToastOptions \| string` | toast 实例 |
 | closeToast | 关闭提示 | `closeAll: boolean` | `void` |
 | allowMultipleToast | 允许同时存在多个 Toast | - | `void` |
-| setToastDefaultOptions | 修改默认配置，影响所有的 `showToast` 调用。<br>传入 type 可以修改指定类型的默认配置 | `type \| options` | `void` |
+| setToastDefaultOptions | 修改默认配置，影响所有的 `showToast` 调用。<br>传入 type 可以修改指定类型的默认配置 | `type \| ToastOptions` | `void` |
 | resetToastDefaultOptions | 重置默认配置，影响所有的 `showToast` 调用。<br>传入 type 可以重置指定类型的默认配置 | `type` | `void` |
 
 ### ToastOptions 数据结构
@@ -207,6 +230,14 @@ resetToastDefaultOptions('loading');
 | onClose | 关闭时的回调函数 | _Function_ | - |
 | transition | 动画类名，等价于 [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的`name`属性 | _string_ | `van-fade` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
+
+### Slots
+
+使用 `Toast` 组件时，支持以下插槽：
+
+| 名称    | 说明           |
+| ------- | -------------- |
+| message | 自定义文本内容 |
 
 ### 类型定义
 

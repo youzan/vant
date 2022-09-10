@@ -152,22 +152,47 @@ resetToastDefaultOptions();
 resetToastDefaultOptions('loading');
 ```
 
+### Use Toast Component
+
+If you want to render Vue components within a Toast, you can use the Toast component.
+
+```html
+<van-toast v-model:show="show" style="padding: 0">
+  <template #message>
+    <van-image :src="image" width="200" height="140" style="display: block" />
+  </template>
+</van-toast>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const show = ref(false);
+    return { show };
+  },
+};
+```
+
 ## API
 
 ### Methods
 
-| Methods | Attribute | Return value | Description |
-| --- | --- | --- | --- |
-| showToast | `options \| message` | toast instance | Show toast |
-| showLoadingToast | `options \| message` | toast instance | Show loading toast |
-| showSuccessToast | `options \| message` | toast instance | Show success toast |
-| showFailToast | `options \| message` | toast instance | Show fail toast |
-| closeToast | `closeAll: boolean` | `void` | Close toast |
-| allowMultipleToast | - | `void` | Allow multiple toast at the same time |
-| setToastDefaultOptions | `type \| options` | `void` | Set default options of all toasts |
-| resetToastDefaultOptions | `type` | `void` | Reset default options of all toasts |
+Vant export following utility functions:
 
-### Options
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| showToast | Show toast | `ToastOptions \| string` | toast instance |
+| showLoadingToast | Show loading toast | `ToastOptions \| string` | toast instance |
+| showSuccessToast | Show success toast | `ToastOptions \| string` | toast instance |
+| showFailToast | Show fail toast | `ToastOptions \| string` | toast instance |
+| closeToast | Close toast | `closeAll: boolean` | `void` |
+| allowMultipleToast | Allow multiple toast at the same time | - | `void` |
+| setToastDefaultOptions | Set default options of all toasts | `type \| ToastOptions` | `void` |
+| resetToastDefaultOptions | Reset default options of all toasts | `type` | `void` |
+
+### ToastOptions
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -190,6 +215,14 @@ resetToastDefaultOptions('loading');
 | onClose | Callback function after close | _Function_ | - |
 | transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | teleport | Specifies a target element where Toast will be mounted | _string \| Element_ | `body` |
+
+### Slots
+
+You can use following slots when using `Toast` component:
+
+| Name    | Description    |
+| ------- | -------------- |
+| message | Custom message |
 
 ### Types
 
