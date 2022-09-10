@@ -40,7 +40,7 @@ import { Overlay } from '../overlay';
 // Types
 import type { PopupPosition, PopupCloseIconPosition } from './types';
 
-const popupProps = extend({}, popupSharedProps, {
+export const popupProps = extend({}, popupSharedProps, {
   round: Boolean,
   position: makeStringProp<PopupPosition>('center'),
   closeIcon: makeStringProp('cross'),

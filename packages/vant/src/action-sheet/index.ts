@@ -3,6 +3,7 @@ import _ActionSheet from './ActionSheet';
 
 export const ActionSheet = withInstall(_ActionSheet);
 export default ActionSheet;
+export { actionSheetProps } from './ActionSheet';
 export type { ActionSheetProps, ActionSheetAction } from './ActionSheet';
 
 declare module 'vue' {

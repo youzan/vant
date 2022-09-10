@@ -34,7 +34,7 @@ function getPath(clockwise: boolean, viewBoxSize: number) {
 
 export type CircleStartPosition = 'top' | 'right' | 'bottom' | 'left';
 
-const circleProps = {
+export const circleProps = {
   text: String,
   size: numericProp,
   fill: makeStringProp('none'),

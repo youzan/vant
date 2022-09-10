@@ -32,7 +32,7 @@ import { SwipeItem } from '../swipe-item';
 
 const [name, bem] = createNamespace('tab');
 
-const tabProps = extend({}, routeProps, {
+export const tabProps = extend({}, routeProps, {
   dot: Boolean,
   name: numericProp,
   badge: numericProp,

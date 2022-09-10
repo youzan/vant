@@ -13,7 +13,7 @@ const [name, bem] = createNamespace('radio-group');
 
 export type RadioGroupDirection = CheckerDirection;
 
-const radioGroupProps = {
+export const radioGroupProps = {
   disabled: Boolean,
   iconSize: numericProp,
   direction: String as PropType<RadioGroupDirection>,

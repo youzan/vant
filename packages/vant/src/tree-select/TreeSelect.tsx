@@ -32,7 +32,7 @@ export type TreeSelectItem = {
   className?: unknown;
 };
 
-const treeSelectProps = {
+export const treeSelectProps = {
   max: makeNumericProp(Infinity),
   items: makeArrayProp<TreeSelectItem>(),
   height: makeNumericProp(300),

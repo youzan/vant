@@ -44,7 +44,7 @@ const iconMap: Record<string, string> = {
 
 const [name, bem, t] = createNamespace('share-sheet');
 
-const shareSheetProps = extend({}, popupSharedProps, {
+export const shareSheetProps = extend({}, popupSharedProps, {
   title: String,
   round: truthProp,
   options: makeArrayProp<ShareSheetOption | ShareSheetOption[]>(),

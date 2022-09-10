@@ -68,7 +68,7 @@ export const pickerSharedProps = extend(
   pickerToolbarProps
 );
 
-const pickerProps = extend({}, pickerSharedProps, {
+export const pickerProps = extend({}, pickerSharedProps, {
   columns: makeArrayProp<PickerOption | PickerColumn>(),
   modelValue: makeArrayProp<Numeric>(),
   toolbarPosition: makeStringProp<PickerToolbarPosition>('top'),

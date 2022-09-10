@@ -3,6 +3,7 @@ import _TimePicker, { TimePickerProps } from './TimePicker';
 
 export const TimePicker = withInstall(_TimePicker);
 export default TimePicker;
+export { timePickerProps } from './TimePicker';
 export type { TimePickerProps };
 export type { TimePickerColumnType } from './TimePicker';
 

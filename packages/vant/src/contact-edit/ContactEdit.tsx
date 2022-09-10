@@ -29,7 +29,7 @@ const DEFAULT_CONTACT: ContactEditInfo = {
   name: '',
 };
 
-const contactEditProps = {
+export const contactEditProps = {
   isEdit: Boolean,
   isSaving: Boolean,
   isDeleting: Boolean,

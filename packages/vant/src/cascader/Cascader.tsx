@@ -28,7 +28,7 @@ import type { CascaderTab, CascaderOption, CascaderFieldNames } from './types';
 
 const [name, bem, t] = createNamespace('cascader');
 
-const cascaderProps = {
+export const cascaderProps = {
   title: String,
   options: makeArrayProp<CascaderOption>(),
   closeable: truthProp,

@@ -3,6 +3,7 @@ import _Tag from './Tag';
 
 export const Tag = withInstall(_Tag);
 export default Tag;
+export { tagProps } from './Tag';
 export type { TagSize, TagType, TagProps } from './Tag';
 
 declare module 'vue' {

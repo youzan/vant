@@ -31,7 +31,7 @@ type NumberRange = [number, number];
 
 type SliderValue = number | NumberRange;
 
-const sliderProps = {
+export const sliderProps = {
   min: makeNumericProp(0),
   max: makeNumericProp(100),
   step: makeNumericProp(1),

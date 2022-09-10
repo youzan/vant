@@ -5,7 +5,7 @@ import { Loading } from '../loading';
 
 const [name, bem] = createNamespace('switch');
 
-const switchProps = {
+export const switchProps = {
   size: numericProp,
   loading: Boolean,
   disabled: Boolean,

@@ -30,7 +30,7 @@ import type { ListExpose, ListDirection } from './types';
 
 const [name, bem, t] = createNamespace('list');
 
-const listProps = {
+export const listProps = {
   error: Boolean,
   offset: makeNumericProp(300),
   loading: Boolean,

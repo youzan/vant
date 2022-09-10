@@ -30,7 +30,7 @@ import type { PickerExpose } from '../picker/types';
 
 const [name, bem] = createNamespace('area');
 
-const areaProps = extend({}, pickerSharedProps, {
+export const areaProps = extend({}, pickerSharedProps, {
   modelValue: String,
   columnsNum: makeNumericProp(3),
   columnsPlaceholder: makeArrayProp<string>(),

@@ -23,7 +23,7 @@ import type { SearchShape } from './types';
 
 const [name, bem, t] = createNamespace('search');
 
-const searchProps = extend({}, fieldSharedProps, {
+export const searchProps = extend({}, fieldSharedProps, {
   label: String,
   shape: makeStringProp<SearchShape>('square'),
   leftIcon: makeStringProp('search'),

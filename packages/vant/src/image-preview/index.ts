@@ -4,6 +4,7 @@ import type { ImagePreviewProps } from './ImagePreview';
 
 export const ImagePreview = withInstall(_ImagePreview);
 export default ImagePreview;
+export { imagePreviewProps } from './ImagePreview';
 export { showImagePreview } from './function-call';
 
 export type { ImagePreviewProps };

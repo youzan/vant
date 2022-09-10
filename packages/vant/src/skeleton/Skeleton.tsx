@@ -16,7 +16,7 @@ const DEFAULT_LAST_ROW_WIDTH = '60%';
 
 export type SkeletonAvatarShape = 'square' | 'round';
 
-const skeletonProps = {
+export const skeletonProps = {
   row: makeNumericProp(0),
   title: Boolean,
   round: Boolean,

@@ -12,7 +12,7 @@ import type { NotifyType, NotifyPosition } from './types';
 
 const [name, bem] = createNamespace('notify');
 
-const notifyProps = extend({}, popupSharedProps, {
+export const notifyProps = extend({}, popupSharedProps, {
   type: makeStringProp<NotifyType>('danger'),
   color: String,
   message: numericProp,

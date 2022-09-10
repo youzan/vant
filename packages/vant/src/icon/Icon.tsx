@@ -18,7 +18,7 @@ const [name, bem] = createNamespace('icon');
 
 const isImage = (name?: string) => name?.includes('/');
 
-const iconProps = {
+export const iconProps = {
   dot: Boolean,
   tag: makeStringProp<keyof HTMLElementTagNameMap>('i'),
   name: String,

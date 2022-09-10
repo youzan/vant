@@ -30,7 +30,7 @@ export type CollapseToggleAllOptions =
 
 export const COLLAPSE_KEY: InjectionKey<CollapseProvide> = Symbol(name);
 
-const collapseProps = {
+export const collapseProps = {
   border: truthProp,
   accordion: Boolean,
   modelValue: {

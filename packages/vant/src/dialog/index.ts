@@ -3,6 +3,7 @@ import _Dialog from './Dialog';
 
 export const Dialog = withInstall(_Dialog);
 export default Dialog;
+export { dialogProps } from './Dialog';
 export {
   showDialog,
   closeDialog,

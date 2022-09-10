@@ -3,6 +3,7 @@ import _ActionBarIcon from './ActionBarIcon';
 
 export const ActionBarIcon = withInstall(_ActionBarIcon);
 export default ActionBarIcon;
+export { actionBarIconProps } from './ActionBarIcon';
 export type { ActionBarIconProps } from './ActionBarIcon';
 
 declare module 'vue' {

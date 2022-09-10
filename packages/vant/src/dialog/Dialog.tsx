@@ -42,7 +42,7 @@ import type {
 
 const [name, bem, t] = createNamespace('dialog');
 
-const dialogProps = extend({}, popupSharedProps, {
+export const dialogProps = extend({}, popupSharedProps, {
   title: String,
   theme: String as PropType<DialogTheme>,
   width: numericProp,

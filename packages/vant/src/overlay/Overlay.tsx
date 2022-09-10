@@ -25,7 +25,7 @@ import { useLazyRender } from '../composables/use-lazy-render';
 
 const [name, bem] = createNamespace('overlay');
 
-const overlayProps = {
+export const overlayProps = {
   show: Boolean,
   zIndex: numericProp,
   duration: numericProp,

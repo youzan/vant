@@ -3,6 +3,7 @@ import _ShareSheet from './ShareSheet';
 
 export const ShareSheet = withInstall(_ShareSheet);
 export default ShareSheet;
+export { shareSheetProps } from './ShareSheet';
 export type {
   ShareSheetProps,
   ShareSheetOption,

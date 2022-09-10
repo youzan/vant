@@ -3,7 +3,7 @@ import { truthProp, createNamespace, BORDER_TOP_BOTTOM } from '../utils';
 
 const [name, bem] = createNamespace('cell-group');
 
-const cellGroupProps = {
+export const cellGroupProps = {
   title: String,
   inset: Boolean,
   border: truthProp,

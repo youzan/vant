@@ -3,6 +3,7 @@ import _Swipe, { SwipeProps } from './Swipe';
 
 export const Swipe = withInstall(_Swipe);
 export default Swipe;
+export { swipeProps } from './Swipe';
 export type { SwipeProps };
 export type { SwipeInstance, SwipeToOptions } from './types';
 

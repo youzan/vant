@@ -3,6 +3,7 @@ import _SwipeCell, { SwipeCellProps } from './SwipeCell';
 
 export const SwipeCell = withInstall(_SwipeCell);
 export default SwipeCell;
+export { swipeCellProps } from './SwipeCell';
 export type { SwipeCellProps };
 export type {
   SwipeCellSide,

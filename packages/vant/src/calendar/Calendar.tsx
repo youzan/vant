@@ -53,7 +53,7 @@ import type {
   CalendarMonthInstance,
 } from './types';
 
-const calendarProps = {
+export const calendarProps = {
   show: Boolean,
   type: makeStringProp<CalendarType>('single'),
   title: String,

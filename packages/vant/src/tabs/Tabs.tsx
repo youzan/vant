@@ -60,7 +60,7 @@ import type { TabsProvide, TabsType } from './types';
 
 const [name, bem] = createNamespace('tabs');
 
-const tabsProps = {
+export const tabsProps = {
   type: makeStringProp<TabsType>('line'),
   color: String,
   border: Boolean,

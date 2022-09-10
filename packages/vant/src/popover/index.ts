@@ -3,6 +3,7 @@ import _Popover from './Popover';
 
 export const Popover = withInstall(_Popover);
 export default Popover;
+export { popoverProps } from './Popover';
 export type { PopoverProps } from './Popover';
 export type {
   PopoverTheme,

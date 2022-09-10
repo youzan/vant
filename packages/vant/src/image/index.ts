@@ -3,6 +3,7 @@ import _Image from './Image';
 
 export const Image = withInstall(_Image);
 export default Image;
+export { imageProps } from './Image';
 export type { ImageFit, ImageProps } from './Image';
 
 declare module 'vue' {

@@ -40,7 +40,7 @@ const isEqual = (value1?: Numeric, value2?: Numeric) =>
 
 export type StepperTheme = 'default' | 'round';
 
-const stepperProps = {
+export const stepperProps = {
   min: makeNumericProp(1),
   max: makeNumericProp(Infinity),
   name: makeNumericProp(''),

@@ -3,6 +3,7 @@ import _Switch from './Switch';
 
 export const Switch = withInstall(_Switch);
 export default Switch;
+export { switchProps } from './Switch';
 export type { SwitchProps } from './Switch';
 
 declare module 'vue' {

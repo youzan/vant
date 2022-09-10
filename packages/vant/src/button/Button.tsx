@@ -30,7 +30,7 @@ import {
 
 const [name, bem] = createNamespace('button');
 
-const buttonProps = extend({}, routeProps, {
+export const buttonProps = extend({}, routeProps, {
   tag: makeStringProp<keyof HTMLElementTagNameMap>('button'),
   text: String,
   icon: String,

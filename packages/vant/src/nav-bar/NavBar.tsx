@@ -23,7 +23,7 @@ import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('nav-bar');
 
-const navBarProps = {
+export const navBarProps = {
   title: String,
   fixed: Boolean,
   zIndex: numericProp,

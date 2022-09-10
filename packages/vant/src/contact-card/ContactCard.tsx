@@ -6,7 +6,7 @@ const [name, bem, t] = createNamespace('contact-card');
 
 export type ContactCardType = 'add' | 'edit';
 
-const contactCardProps = {
+export const contactCardProps = {
   tel: String,
   name: String,
   type: makeStringProp<ContactCardType>('add'),

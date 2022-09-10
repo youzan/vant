@@ -3,6 +3,7 @@ import _GridItem from './GridItem';
 
 export const GridItem = withInstall(_GridItem);
 export default GridItem;
+export { gridItemProps } from './GridItem';
 export type { GridItemProps } from './GridItem';
 
 declare module 'vue' {

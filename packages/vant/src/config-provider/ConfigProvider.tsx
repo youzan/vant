@@ -35,7 +35,7 @@ export const CONFIG_PROVIDER_KEY: InjectionKey<ConfigProviderProvide> =
 
 export type ThemeVars = PropType<Record<string, Numeric>>;
 
-const configProviderProps = {
+export const configProviderProps = {
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
   theme: makeStringProp<ConfigProviderTheme>('light'),
   zIndex: Number,

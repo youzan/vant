@@ -29,7 +29,7 @@ import { NoticeBarMode } from './types';
 
 const [name, bem] = createNamespace('notice-bar');
 
-const noticeBarProps = {
+export const noticeBarProps = {
   text: String,
   mode: String as PropType<NoticeBarMode>,
   color: String,
