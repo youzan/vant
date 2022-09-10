@@ -104,9 +104,9 @@ showConfirmDialog({
 });
 ```
 
-### Advanced Usage
+### Use Dialog Component
 
-If you need to render vue components within a dialog, you can use dialog component.
+If you need to render Vue components within a Dialog, you can use the Dialog component.
 
 ```html
 <van-dialog v-model:show="show" title="Title" show-cancel-button>
@@ -128,6 +128,8 @@ export default {
 ## API
 
 ### Methods
+
+Vant exports following Dialog utility functions:
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |

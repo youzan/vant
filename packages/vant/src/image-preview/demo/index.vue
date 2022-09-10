@@ -18,7 +18,7 @@ const t = useTranslate({
     closeEvent: '监听关闭事件',
     customConfig: '传入配置项',
     startPosition: '指定初始位置',
-    componentCall: '组件调用',
+    useComponent: '使用 ImagePreview 组件',
     index: (index: number) => `第${index + 1}页`,
   },
   'en-US': {
@@ -29,7 +29,7 @@ const t = useTranslate({
     closeEvent: 'Close Event',
     customConfig: 'Custom Config',
     startPosition: 'Set Start Position',
-    componentCall: 'Component Call',
+    useComponent: 'Use ImagePreview Component',
     index: (index: number) => `Page: ${index}`,
   },
 });
@@ -106,8 +106,8 @@ const showFunctionCall = (options: Partial<ImagePreviewOptions> = {}) => {
     />
   </demo-block>
 
-  <demo-block card :title="t('componentCall')">
-    <van-cell is-link :title="t('componentCall')" @click="showComponentCall" />
+  <demo-block card :title="t('useComponent')">
+    <van-cell is-link :title="t('useComponent')" @click="showComponentCall" />
     <van-image-preview v-model:show="show" :images="images" @change="onChange">
       <template #index>{{ t('index', index) }}</template>
     </van-image-preview>

@@ -86,9 +86,9 @@ showNotify({
 });
 ```
 
-### 组件调用
+### 使用 Notify 组件
 
-如果需要在 Notify 内嵌入组件或其他自定义内容，可以使用组件调用的方式。
+如果需要在 Notify 内嵌入组件或其他自定义内容，可以直接使用 Notify 组件，并使用默认插槽进行定制。使用前需要通过 `app.use` 等方式注册组件。
 
 ```html
 <van-button type="primary" text="组件调用" @click="showNotify" />
@@ -124,14 +124,18 @@ export default {
 
 ### 方法
 
+Vant 中导出了以下 Notify 相关的辅助函数：
+
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| showNotify | 展示提示 | `options \| message` | notify 实例 |
+| showNotify | 展示提示 | `NotifyOptions \| string` | notify 实例 |
 | closeNotify | 关闭提示 | - | `void` |
-| setNotifyDefaultOptions | 修改默认配置，影响所有的 `showNotify` 调用 | `options` | `void` |
+| setNotifyDefaultOptions | 修改默认配置，影响所有的 `showNotify` 调用 | `NotifyOptions` | `void` |
 | resetNotifyDefaultOptions | 重置默认配置，影响所有的 `showNotify` 调用 | - | `void` |
 
-### Options
+### NotifyOptions
+
+调用 `showNotify` 等方法时，支持传入以下选项：
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

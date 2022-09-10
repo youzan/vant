@@ -75,10 +75,10 @@ showNotify({
 });
 ```
 
-### Component Call
+### Use Notify Component
 
 ```html
-<van-button type="primary" text="Component Call" @click="showNotify" />
+<van-button type="primary" text="Use Notify Component" @click="showNotify" />
 <van-notify v-model:show="show" type="success">
   <van-icon name="bell" style="margin-right: 4px;" />
   <span>Content</span>
@@ -111,14 +111,16 @@ export default {
 
 ### Methods
 
-| Methods | Attribute | Return value | Description |
-| --- | --- | --- | --- |
-| showNotify | `options \| message` | notify instance | Show notify |
-| closeNotify | - | `void` | Close notify |
-| setNotifyDefaultOptions | `options` | `void` | Set default options of all notifies |
-| resetNotifyDefaultOptions | - | `void` | Reset default options of all notifies |
+Vant exports following Notify utility functions:
 
-### Options
+| Methods | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| showNotify | Show notify | `NotifyOptions \| string` | notify instance |
+| closeNotify | Close notify | - | `void` |
+| setNotifyDefaultOptions | Set default options of all notifies | `NotifyOptions` | `void` |
+| resetNotifyDefaultOptions | Reset default options of all notifies | - | `void` |
+
+### NotifyOptions
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |

@@ -17,7 +17,7 @@ const t = useTranslate({
       '如果解决方法是丑陋的，那就肯定还有更好的解决方法，只是还没有发现而已。',
     beforeClose: '异步关闭',
     roundButton: '圆角按钮样式',
-    componentCall: '组件调用',
+    useComponent: '使用 Dialog 组件',
   },
   'en-US': {
     title: 'Title',
@@ -29,7 +29,7 @@ const t = useTranslate({
     content3: 'Content',
     beforeClose: 'Before Close',
     roundButton: 'Round Button Style',
-    componentCall: 'Component Call',
+    useComponent: 'Use Dialog Component',
   },
 });
 
@@ -101,8 +101,8 @@ const onClickBeforeClose = () => {
     <van-cell is-link :title="t('beforeClose')" @click="onClickBeforeClose" />
   </demo-block>
 
-  <demo-block card :title="t('componentCall')">
-    <van-cell is-link :title="t('componentCall')" @click="show = true" />
+  <demo-block card :title="t('useComponent')">
+    <van-cell is-link :title="t('useComponent')" @click="show = true" />
     <van-dialog
       v-model:show="show"
       :title="t('title')"

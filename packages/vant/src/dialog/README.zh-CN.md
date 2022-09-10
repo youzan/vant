@@ -121,9 +121,9 @@ showConfirmDialog({
 });
 ```
 
-### 组件调用
+### 使用 Dialog 组件
 
-如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式。
+如果需要在 Dialog 内嵌入组件或其他自定义内容，可以直接使用 Dialog 组件，并使用默认插槽进行定制。使用前需要通过 `app.use` 等方式注册组件。
 
 ```html
 <van-dialog v-model:show="show" title="标题" show-cancel-button>
@@ -146,6 +146,8 @@ export default {
 
 ### 方法
 
+Vant 中导出了以下 Dialog 相关的辅助函数：
+
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | showDialog | 展示弹窗 | _options: DialogOptions_ | `Promise<void>` |
@@ -156,7 +158,7 @@ export default {
 
 ### DialogOptions
 
-通过函数调用 `Dialog` 时，支持传入以下选项：
+调用 `showDialog` 等方法时，支持传入以下选项：
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

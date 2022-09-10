@@ -114,9 +114,9 @@ setTimeout(() => {
 }, 2000);
 ```
 
-### 组件调用
+### 使用 ImagePreview 组件
 
-如果需要在图片预览内嵌入组件或其他自定义内容，可以使用组件调用的方式，调用前需要通过 `app.use` 注册组件。
+如果需要在 ImagePreview 内嵌入组件或其他自定义内容，可以直接使用 ImagePreview 组件，并使用 `index` 插槽进行定制。使用前需要通过 `app.use` 等方式注册组件。
 
 ```html
 <van-image-preview v-model:show="show" :images="images" @change="onChange">
@@ -151,9 +151,17 @@ export default {
 
 ## API
 
-### Options
+### 方法
 
-通过函数调用 `showImagePreview` 时，支持传入以下选项：
+Vant 中导出了以下 ImagePreview 相关的辅助函数：
+
+| 方法名           | 说明         | 参数      | 返回值               |
+| ---------------- | ------------ | --------- | -------------------- | ----------------- |
+| showImagePreview | 展示图片预览 | `string[] | ImagePreviewOptions` | imagePreview 实例 |
+
+### ImagePreviewOptions
+
+调用 `showImagePreview` 方法时，支持传入以下选项：
 
 | 参数名 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
