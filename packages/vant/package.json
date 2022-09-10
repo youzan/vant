@@ -68,8 +68,7 @@
   "sideEffects": [
     "es/**/style/*",
     "lib/**/style/*",
-    "*.css",
-    "*.less"
+    "*.css"
   ],
   "web-types": "lib/web-types.json"
 }
