@@ -38,9 +38,9 @@ pnpm dev
 
 仓库的不同分支对应不同的 Vant 版本，请切换到对应分支进行开发：
 
+- dev 分支对应 Vant 4 版本，适用于 Vue 3
+- 3.x 分支对应 Vant 3 版本 ，适用于 Vue 3
 - 2.x 分支对应 Vant 2 版本，适用于 Vue 2
-- dev 分支对应 Vant 3 版本 ，适用于 Vue 3
-- next 分支对应 Vant 4 版本，适用于 Vue 3
 
 ### 镜像仓库
 
