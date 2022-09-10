@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import VanCell from '../../cell';
+import VanImage from '../../image';
 import { cdnURL, useTranslate } from '../../../docs/site';
-import {
+import VanToast, {
   showToast,
   closeToast,
   showFailToast,
@@ -25,6 +27,7 @@ const t = useTranslate({
     customImage: '自定义图片',
     loadingType: '自定义加载图标',
     positionTop: '顶部展示',
+    useComponent: '使用 Toast 组件',
     updateMessage: '动态更新提示',
     positionBottom: '底部展示',
     customPosition: '自定义位置',
@@ -43,6 +46,7 @@ const t = useTranslate({
     customImage: 'Custom Image',
     loadingType: 'Loading Type',
     positionTop: 'Top',
+    useComponent: 'Use Toast Component',
     updateMessage: 'Update Message',
     positionBottom: 'Bottom',
     customPosition: 'Custom Position',
@@ -103,6 +107,9 @@ const showCustomToast = () => {
     }
   }, 1000);
 };
+
+const show = ref(false);
+const image = cdnURL('cat.jpeg');
 </script>
 
 <template>
@@ -138,5 +145,19 @@ const showCustomToast = () => {
 
   <demo-block card :title="t('updateMessage')">
     <van-cell is-link :title="t('updateMessage')" @click="showCustomToast" />
+  </demo-block>
+
+  <demo-block card :title="t('useComponent')">
+    <van-cell is-link :title="t('useComponent')" @click="show = true" />
+    <van-toast v-model:show="show" style="padding: 0">
+      <template #message>
+        <van-image
+          :src="image"
+          width="200"
+          height="140"
+          style="display: block"
+        />
+      </template>
+    </van-toast>
   </demo-block>
 </template>
