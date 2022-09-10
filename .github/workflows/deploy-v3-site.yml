@@ -2,7 +2,7 @@ name: Deploy V3 Site
 
 on:
   push:
-    branches: [dev]
+    branches: [3.x]
     paths:
       - 'packages/vant/docs/**'
 
