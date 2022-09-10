@@ -2,7 +2,7 @@ name: Deploy V4 Site
 
 on:
   push:
-    branches: [next]
+    branches: [dev]
     paths:
       - 'packages/vant/docs/**'
 
