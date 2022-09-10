@@ -89,7 +89,7 @@ const align = ref('center');
 
 <style lang="less">
 .demo-space {
-  background: var(--van-background-color-light);
+  background: var(--van-background-2);
 
   .van-doc-demo-block {
     padding: 0 var(--van-padding-md);

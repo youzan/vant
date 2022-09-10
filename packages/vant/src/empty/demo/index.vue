@@ -74,7 +74,7 @@ const active = ref('error');
 
 <style lang="less">
 .demo-empty {
-  background: var(--van-background-color-light);
+  background: var(--van-background-2);
 
   .bottom-button {
     width: 160px;
