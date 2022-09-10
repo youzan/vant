@@ -1,21 +1,19 @@
-@import './var.less';
-
-:root {
-  --van-password-input-height: @password-input-height;
-  --van-password-input-margin: @password-input-margin;
-  --van-password-input-font-size: @password-input-font-size;
-  --van-password-input-border-radius: @password-input-border-radius;
-  --van-password-input-background-color: @password-input-background-color;
-  --van-password-input-info-color: @password-input-info-color;
-  --van-password-input-info-font-size: @password-input-info-font-size;
-  --van-password-input-error-info-color: @password-input-error-info-color;
-  --van-password-input-dot-size: @password-input-dot-size;
-  --van-password-input-dot-color: @password-input-dot-color;
-  --van-password-input-text-color: @password-input-text-color;
-  --van-password-input-cursor-color: @password-input-cursor-color;
-  --van-password-input-cursor-width: @password-input-cursor-width;
-  --van-password-input-cursor-height: @password-input-cursor-height;
-  --van-password-input-cursor-animation-duration: @password-input-cursor-animation-duration;
+body {
+  --van-password-input-height: 50px;
+  --van-password-input-margin: 0 var(--van-padding-md);
+  --van-password-input-font-size: 20px;
+  --van-password-input-radius: 6px;
+  --van-password-input-background: var(--van-background-2);
+  --van-password-input-info-color: var(--van-text-color-2);
+  --van-password-input-info-font-size: var(--van-font-size-md);
+  --van-password-input-error-info-color: var(--van-danger-color);
+  --van-password-input-dot-size: 10px;
+  --van-password-input-dot-color: var(--van-text-color);
+  --van-password-input-text-color: var(--van-text-color);
+  --van-password-input-cursor-color: var(--van-text-color);
+  --van-password-input-cursor-width: 1px;
+  --van-password-input-cursor-height: 40%;
+  --van-password-input-cursor-duration: 1s;
 }
 
 .van-password-input {
@@ -45,7 +43,7 @@
     cursor: pointer;
 
     &::after {
-      border-radius: var(--van-password-input-border-radius);
+      border-radius: var(--van-password-input-radius);
     }
 
     li {
@@ -58,7 +56,7 @@
       color: var(--van-password-input-text-color);
       font-size: var(--van-password-input-font-size);
       line-height: 1.2;
-      background: var(--van-password-input-background-color);
+      background: var(--van-password-input-background);
     }
 
     i {
@@ -82,8 +80,8 @@
     height: var(--van-password-input-cursor-height);
     background: var(--van-password-input-cursor-color);
     transform: translate(-50%, -50%);
-    animation: var(--van-password-input-cursor-animation-duration)
-      van-cursor-flicker infinite;
+    animation: var(--van-password-input-cursor-duration) van-cursor-flicker
+      infinite;
   }
 }
 

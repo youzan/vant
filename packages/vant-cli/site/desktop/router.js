@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 import { isMobile, decamelize } from '../common';
 import { config, documents } from 'site-desktop-shared';
 import { getLang, setDefaultLang } from '../common/locales';
-import { listenToSyncPath, syncPathToChild } from '../common/iframe-router';
+import { listenToSyncPath, syncPathToChild } from '../common/iframe-sync';
 
 if (isMobile) {
   location.replace('mobile.html' + location.hash);

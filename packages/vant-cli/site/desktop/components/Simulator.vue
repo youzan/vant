@@ -44,34 +44,31 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/var';
-
 .van-doc-simulator {
   position: absolute;
-  top: @van-doc-padding + @van-doc-header-top-height;
-  right: @van-doc-padding;
+  top: calc(var(--van-doc-padding) + var(--van-doc-header-top-height));
+  right: var(--van-doc-padding);
   z-index: 1;
   box-sizing: border-box;
-  width: @van-doc-simulator-width;
-  min-width: @van-doc-simulator-width;
+  width: var(--van-doc-simulator-width);
+  min-width: var(--van-doc-simulator-width);
   overflow: hidden;
-  background: #fafafa;
-  border-radius: @van-doc-border-radius;
-  box-shadow: 0 8px 12px #ebedf0;
+  background: var(--van-doc-background-2);
+  border-radius: var(--van-doc-border-radius);
 
   @media (max-width: 1100px) {
     right: auto;
     left: 750px;
   }
 
-  @media (min-width: @van-doc-row-max-width) {
+  @media (min-width: var(--van-doc-row-max-width)) {
     right: 50%;
-    margin-right: -(@van-doc-row-max-width / 2) + 24px;
+    margin-right: calc(var(--van-doc-row-max-width) / 2 * -1 + 24px);
   }
 
   &-fixed {
     position: fixed;
-    top: @van-doc-padding;
+    top: var(--van-doc-padding);
   }
 
   iframe {

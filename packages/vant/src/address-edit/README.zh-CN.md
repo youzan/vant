@@ -23,7 +23,6 @@ app.use(AddressEdit);
 ```html
 <van-address-edit
   :area-list="areaList"
-  show-postal
   show-delete
   show-set-default
   show-search-result
@@ -37,14 +36,14 @@ app.use(AddressEdit);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const searchResult = ref([]);
 
-    const onSave = () => Toast('save');
-    const onDelete = () => Toast('delete');
+    const onSave = () => showToast('save');
+    const onDelete = () => showToast('delete');
     const onChangeDetail = (val) => {
       if (val) {
         searchResult.value = [
@@ -80,7 +79,6 @@ export default {
 | area-placeholder | 地区输入框占位提示文字 | _string_ | `选择省 / 市 / 区` |
 | address-info | 地址信息初始值 | _AddressEditInfo_ | `{}` |
 | search-result | 详细地址搜索结果 | _AddressEditSearchItem[]_ | `[]` |
-| show-postal | 是否显示邮政编码 | _boolean_ | `false` |
 | show-delete | 是否显示删除按钮 | _boolean_ | `false` |
 | show-set-default | 是否显示默认地址栏 | _boolean_ | `false` |
 | show-search-result | 是否显示搜索结果 | _boolean_ | `false` |
@@ -95,21 +93,20 @@ export default {
 | is-deleting | 是否显示删除按钮加载动画 | _boolean_ | `false` |
 | tel-validator | 手机号格式校验函数 | _string => boolean_ | - |
 | tel-maxlength | 手机号最大长度 | _number \| string_ | - |
-| postal-validator | 邮政编码格式校验函数 | _string => boolean_ | - |
 | validator | 自定义校验函数 | _(key, val) => string_ | - |
 
 ### Events
 
-| 事件名         | 说明                       | 回调参数                    |
-| -------------- | -------------------------- | --------------------------- |
-| save           | 点击保存按钮时触发         | content：表单内容           |
-| focus          | 输入框聚焦时触发           | key: 聚焦的输入框对应的 key |
-| delete         | 确认删除地址时触发         | content：表单内容           |
-| select-search  | 选中搜索结果时触发         | value: 搜索结果             |
-| click-area     | 点击收件地区时触发         | -                           |
-| change-area    | 修改收件地区时触发         | values: 地区信息            |
-| change-detail  | 修改详细地址时触发         | value: 详细地址内容         |
-| change-default | 切换是否使用默认地址时触发 | value: 是否选中             |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| save | 点击保存按钮时触发 | _info: AddressEditInfo_ |
+| focus | 输入框聚焦时触发 | _key: string_ |
+| delete | 确认删除地址时触发 | _info: AddressEditInfo_ |
+| select-search | 选中搜索结果时触发 | _value: string_ |
+| click-area | 点击收件地区时触发 | - |
+| change-area | 修改收件地区时触发 | _selectedOptions: PickerOption[]_ |
+| change-detail | 修改详细地址时触发 | _value: string_ |
+| change-default | 切换是否使用默认地址时触发 | _checked: boolean_ |
 
 ### Slots
 
@@ -162,7 +159,6 @@ addressEditRef.value?.setAddressDetail('');
 | county | 区县 | _string_ |
 | addressDetail | 详细地址 | _string_ |
 | areaCode | 地区编码，通过 [省市区选择](#/zh-CN/area) 获取（必填） | _string_ |
-| postalCode | 邮政编码 | _string_ |
 | isDefault | 是否为默认地址 | _boolean_ |
 
 ### AddressEditSearchItem 数据格式

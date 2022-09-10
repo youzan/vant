@@ -50,10 +50,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Standort',
-    postal: 'PLZ',
     areaEmpty: 'Bitte geben Sie Ihren Standort an',
     addressEmpty: 'Adresse darf nicht leer sein',
-    postalEmpty: 'Falsche Postleitzahl',
     addressDetail: 'Adresse',
     defaultAddress: 'Als Standardadresse festgelegen',
   },

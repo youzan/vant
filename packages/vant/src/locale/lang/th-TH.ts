@@ -51,10 +51,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'พื้นที่',
-    postal: 'รหัสไปรษณีย์',
     areaEmpty: 'โปรดเลือกภูมิภาค',
     addressEmpty: 'กรุณากรอกที่อยู่โดยละเอียด',
-    postalEmpty: 'รูปแบบรหัสไปรษณีย์ไม่ถูกต้อง',
     addressDetail: 'ที่อยู่',
     defaultAddress: 'ตั้งเป็นที่อยู่จัดส่งเริ่มต้น',
   },

@@ -110,11 +110,11 @@ Tabs styled as cards.
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onClickTab = ({ title }) => Toast(title);
+    const onClickTab = ({ title }) => showToast(title);
     return {
       onClickTab,
     };
@@ -239,7 +239,7 @@ export default {
 | --- | --- | --- | --- |
 | v-model:active | Index of active tab | _number \| string_ | `0` |
 | type | Can be set to `line` `card` | _string_ | `line` |
-| color | Tab color | _string_ | `#ee0a24` |
+| color | Tab color | _string_ | `#1989fa` |
 | background | Background color | _string_ | `white` |
 | duration | Toggle tab's animation time | _number \| string_ | `0.3` |
 | line-width | Width of tab line | _number \| string_ | `40px` |
@@ -282,8 +282,6 @@ export default {
 | change | Emitted when active tab changed | _name: string \| number, title: string_ |
 | rendered | Emitted when content first rendered in lazy-render mode | _name: string \| number, title: string_ |
 | scroll | Emitted when tab scrolling in sticky mode | _{ scrollTop: number, isFixed: boolean }_ |
-
-> Tips: click and disabled event is deprecated, place use click-tab event instead.
 
 ### Tabs Methods
 
@@ -334,17 +332,17 @@ tabsRef.value?.scrollTo(0);
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name | Default Value | Description |
-| --- | --- | --- |
-| --van-tab-text-color | _var(--van-gray-7)_ | - |
-| --van-tab-active-text-color | _var(--van-text-color)_ | - |
-| --van-tab-disabled-text-color | _var(--van-text-color-3)_ | - |
-| --van-tab-font-size | _var(--van-font-size-md)_ | - |
-| --van-tab-line-height | _var(--van-line-height-md)_ | - |
-| --van-tabs-default-color | _var(--van-danger-color)_ | - |
-| --van-tabs-line-height | _44px_ | - |
-| --van-tabs-card-height | _30px_ | - |
-| --van-tabs-nav-background-color | _var(--van-background-color-light)_ | - |
-| --van-tabs-bottom-bar-width | _40px_ | - |
-| --van-tabs-bottom-bar-height | _3px_ | - |
-| --van-tabs-bottom-bar-color | _var(--van-danger-color)_ | - |
+| Name                          | Default Value               | Description |
+| ----------------------------- | --------------------------- | ----------- |
+| --van-tab-text-color          | _var(--van-gray-7)_         | -           |
+| --van-tab-active-text-color   | _var(--van-text-color)_     | -           |
+| --van-tab-disabled-text-color | _var(--van-text-color-3)_   | -           |
+| --van-tab-font-size           | _var(--van-font-size-md)_   | -           |
+| --van-tab-line-height         | _var(--van-line-height-md)_ | -           |
+| --van-tabs-default-color      | _var(--van-primary-color)_  | -           |
+| --van-tabs-line-height        | _44px_                      | -           |
+| --van-tabs-card-height        | _30px_                      | -           |
+| --van-tabs-nav-background     | _var(--van-background-2)_   | -           |
+| --van-tabs-bottom-bar-width   | _40px_                      | -           |
+| --van-tabs-bottom-bar-height  | _3px_                       | -           |
+| --van-tabs-bottom-bar-color   | _var(--van-primary-color)_  | -           |

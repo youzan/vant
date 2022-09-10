@@ -3,6 +3,7 @@ import _Sticky from './Sticky';
 
 export const Sticky = withInstall(_Sticky);
 export default Sticky;
+export { stickyProps } from './Sticky';
 export type { StickyProps, StickyPosition } from './Sticky';
 
 declare module 'vue' {

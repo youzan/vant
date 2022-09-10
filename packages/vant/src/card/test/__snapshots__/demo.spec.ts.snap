@@ -68,7 +68,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-card__tag">
           <transition-stub>
-            <span class="van-tag van-tag--mark van-tag--danger">
+            <span class="van-tag van-tag--mark van-tag--primary">
               Tag
             </span>
           </transition-stub>
@@ -135,12 +135,12 @@ exports[`should render demo and match snapshot 1`] = `
             Description
           </div>
           <transition-stub style="margin-right: 5px;">
-            <span class="van-tag van-tag--plain van-tag--danger">
+            <span class="van-tag van-tag--plain van-tag--primary">
               Tag
             </span>
           </transition-stub>
           <transition-stub>
-            <span class="van-tag van-tag--plain van-tag--danger">
+            <span class="van-tag van-tag--plain van-tag--primary">
               Tag
             </span>
           </transition-stub>

@@ -3,7 +3,7 @@ import VanCell from '../../cell';
 import VanShareSheet, { ShareSheetOption, ShareSheetOptions } from '..';
 import { ref, computed } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -98,7 +98,7 @@ const optionsWithDesc = computed<ShareSheetOptions>(() => [
 ]);
 
 const onSelect = (option: ShareSheetOption) => {
-  Toast(option.name);
+  showToast(option.name);
   showBasic.value = false;
   showWithDesc.value = false;
   showMultiLine.value = false;

@@ -54,7 +54,7 @@ function getRateStatus(
   return { status: 'void', value: 0 };
 }
 
-const rateProps = {
+export const rateProps = {
   size: numericProp,
   icon: makeStringProp('star'),
   color: String,

@@ -7,7 +7,7 @@ import VanPopup from '../../popup';
 import VanPicker from '../../picker';
 import VanGrid from '../../grid';
 import VanGridItem from '../../grid-item';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
@@ -103,7 +103,7 @@ const onPickerChange = (value: PopoverPlacement) => {
   });
 };
 
-const onSelect = (action: { text: string }) => Toast(action.text);
+const onSelect = (action: { text: string }) => showToast(action.text);
 </script>
 
 <template>

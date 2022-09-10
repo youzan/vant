@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import VanCell from '../../cell';
-import { ImagePreview, ImagePreviewOptions } from '..';
+import {
+  showImagePreview,
+  ImagePreviewOptions,
+  ImagePreview as VanImagePreview,
+} from '..';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
-
-const VanImagePreview = ImagePreview.Component;
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -16,7 +18,7 @@ const t = useTranslate({
     closeEvent: '监听关闭事件',
     customConfig: '传入配置项',
     startPosition: '指定初始位置',
-    componentCall: '组件调用',
+    useComponent: '使用 ImagePreview 组件',
     index: (index: number) => `第${index + 1}页`,
   },
   'en-US': {
@@ -27,7 +29,7 @@ const t = useTranslate({
     closeEvent: 'Close Event',
     customConfig: 'Custom Config',
     startPosition: 'Set Start Position',
-    componentCall: 'Component Call',
+    useComponent: 'Use ImagePreview Component',
     index: (index: number) => `Page: ${index}`,
   },
 });
@@ -42,7 +44,7 @@ const images = [
 const show = ref(false);
 const index = ref(0);
 
-const onClose = () => Toast(t('closed'));
+const onClose = () => showToast(t('closed'));
 
 const beforeClose = () =>
   new Promise<boolean>((resolve) => {
@@ -51,16 +53,16 @@ const beforeClose = () =>
     }, 1000);
   });
 
-const showComponentCall = () => {
-  show.value = true;
-};
-
 const onChange = (newIndex: number) => {
   index.value = newIndex;
 };
 
-const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
-  const instance = ImagePreview({
+const showComponentCall = () => {
+  show.value = true;
+};
+
+const showFunctionCall = (options: Partial<ImagePreviewOptions> = {}) => {
+  const instance = showImagePreview({
     images,
     ...options,
   });
@@ -75,37 +77,37 @@ const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
 
 <template>
   <demo-block card :title="t('basicUsage')">
-    <van-cell is-link :value="t('showImages')" @click="showImagePreview()" />
+    <van-cell is-link :title="t('showImages')" @click="showFunctionCall()" />
   </demo-block>
 
   <demo-block card :title="t('customConfig')">
     <van-cell
       is-link
-      :value="t('startPosition')"
-      @click="showImagePreview({ startPosition: 1 })"
+      :title="t('startPosition')"
+      @click="showFunctionCall({ startPosition: 1 })"
     />
     <van-cell
       is-link
-      :value="t('showClose')"
-      @click="showImagePreview({ closeable: true })"
+      :title="t('showClose')"
+      @click="showFunctionCall({ closeable: true })"
     />
     <van-cell
       is-link
-      :value="t('closeEvent')"
-      @click="showImagePreview({ onClose })"
+      :title="t('closeEvent')"
+      @click="showFunctionCall({ onClose })"
     />
   </demo-block>
 
   <demo-block card :title="t('beforeClose')">
     <van-cell
       is-link
-      :value="t('beforeClose')"
-      @click="showImagePreview({ beforeClose })"
+      :title="t('beforeClose')"
+      @click="showFunctionCall({ beforeClose })"
     />
   </demo-block>
 
-  <demo-block card :title="t('componentCall')">
-    <van-cell is-link :value="t('componentCall')" @click="showComponentCall" />
+  <demo-block card :title="t('useComponent')">
+    <van-cell is-link :title="t('useComponent')" @click="showComponentCall" />
     <van-image-preview v-model:show="show" :images="images" @change="onChange">
       <template #index>{{ t('index', index) }}</template>
     </van-image-preview>

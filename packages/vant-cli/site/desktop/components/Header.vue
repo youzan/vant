@@ -24,6 +24,16 @@
             </a>
           </li>
 
+          <li v-if="darkModeClass" class="van-doc-header__top-nav-item">
+            <a
+              class="van-doc-header__link"
+              target="_blank"
+              @click="toggleTheme"
+            >
+              <img :src="themeImg" />
+            </a>
+          </li>
+
           <li
             ref="version"
             v-if="versions"
@@ -69,6 +79,7 @@
 <script>
 import SearchInput from './SearchInput.vue';
 import { packageVersion } from 'site-desktop-shared';
+import { getDefaultTheme, syncThemeToChild } from '../../common/iframe-sync';
 
 export default {
   name: 'VanDocHeader',
@@ -82,10 +93,12 @@ export default {
     config: Object,
     versions: Array,
     langConfigs: Array,
+    darkModeClass: String,
   },
 
   data() {
     return {
+      currentTheme: getDefaultTheme(),
       packageVersion,
       showVersionPop: false,
     };
@@ -112,9 +125,32 @@ export default {
     searchConfig() {
       return this.config.searchConfig;
     },
+
+    themeImg() {
+      if (this.currentTheme === 'light') {
+        return 'https://b.yzcdn.cn/vant/dark-theme.svg';
+      }
+      return 'https://b.yzcdn.cn/vant/light-theme.svg';
+    },
+  },
+
+  watch: {
+    currentTheme: {
+      handler(newVal, oldVal) {
+        window.localStorage.setItem('vantTheme', newVal);
+        document.body.classList.remove(`van-doc-theme-${oldVal}`);
+        document.body.classList.add(`van-doc-theme-${newVal}`);
+        syncThemeToChild(newVal);
+      },
+      immediate: true,
+    },
   },
 
   methods: {
+    toggleTheme() {
+      this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+    },
+
     toggleVersionPop() {
       const val = !this.showVersionPop;
 
@@ -147,18 +183,16 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/var';
-
 .van-doc-header {
   width: 100%;
-  background-color: #001938;
+  background-color: var(--van-doc-header-background);
   user-select: none;
 
   &__top {
     display: flex;
     align-items: center;
-    height: @van-doc-header-top-height;
-    padding: 0 @van-doc-padding;
+    height: var(--van-doc-header-top-height);
+    padding: 0 var(--van-doc-padding);
 
     &-nav {
       flex: 1;
@@ -234,7 +268,7 @@ export default {
         transition: 0.2s;
 
         &:hover {
-          color: @van-doc-blue;
+          color: var(--van-doc-link-color);
           background-color: #f7f8fa;
         }
       }
@@ -268,6 +302,8 @@ export default {
   }
 
   &__link {
+    cursor: pointer;
+
     span {
       color: #fff;
       font-size: 16px;

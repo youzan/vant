@@ -16,18 +16,34 @@ const app = createApp();
 app.use(Toast);
 ```
 
+### Function Call
+
+Vant provides some utility functions that can quickly evoke global `Toast` components.
+
+For example, calling the `showToast` function will render a Toast directly in the page.
+
+```js
+import { showToast } from 'vant';
+
+showToast('Some messages');
+```
+
 ## Usage
 
 ### Text
 
 ```js
-Toast('Some messages');
+import { showToast } from 'vant';
+
+showToast('Some messages');
 ```
 
 ### Loading
 
 ```js
-Toast.loading({
+import { showLoadingToast } from 'vant';
+
+showLoadingToast({
   message: 'Loading...',
   forbidClick: true,
 });
@@ -36,24 +52,28 @@ Toast.loading({
 ### Success/Fail
 
 ```js
-Toast.success('Success');
-Toast.fail('Fail');
+import { showSuccessToast, showFailToast } from 'vant';
+
+showSuccessToast('Success');
+showFailToast('Fail');
 ```
 
 ### Custom Icon
 
 ```js
-Toast({
+import { showToast, showLoadingToast } from 'vant';
+
+showToast({
   message: 'Custom Icon',
   icon: 'like-o',
 });
 
-Toast({
+showToast({
   message: 'Custom Image',
   icon: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
 });
 
-Toast.loading({
+showLoadingToast({
   message: 'Loading...',
   forbidClick: true,
   loadingType: 'spinner',
@@ -63,12 +83,14 @@ Toast.loading({
 ### Custom Position
 
 ```js
-Toast({
+import { showToast } from 'vant';
+
+showToast({
   message: 'Top',
   position: 'top',
 });
 
-Toast({
+showToast({
   message: 'Bottom',
   position: 'bottom',
 });
@@ -77,7 +99,9 @@ Toast({
 ### Update Message
 
 ```js
-const toast = Toast.loading({
+import { showLoadingToast, closeToast } from 'vant';
+
+const toast = showLoadingToast({
   duration: 0,
   forbidClick: true,
   loadingType: 'spinner',
@@ -91,21 +115,9 @@ const timer = setInterval(() => {
     toast.message = `${second} seconds`;
   } else {
     clearInterval(timer);
-    Toast.clear();
+    closeToast();
   }
 }, 1000);
-```
-
-### Global Method
-
-After registering the Toast component through `app.use`, the `$toast` method will be automatically mounted on all subcomponents of the app.
-
-```js
-export default {
-  mounted() {
-    this.$toast('Some messages');
-  },
-};
 ```
 
 ### Singleton
@@ -113,45 +125,74 @@ export default {
 Toast use singleton mode by default, if you need to pop multiple Toast at the same time, you can refer to the following example:
 
 ```js
-Toast.allowMultiple();
+import { showToast, showSuccessToast, allowMultipleToast } from 'vant';
 
-const toast1 = Toast('First Toast');
-const toast2 = Toast.success('Second Toast');
+allowMultipleToast();
 
-toast1.clear();
-toast2.clear();
+const toast1 = showToast('First Toast');
+const toast2 = showSuccessToast('Second Toast');
+
+toast1.close();
+toast2.close();
 ```
 
 ### Set Default Options
 
-The Toast default configuration can be globally modified with the `Toast.setDefaultOptions` function.
+The Toast default configuration can be globally modified with the `setToastDefaultOptions` function.
 
 ```js
-Toast.setDefaultOptions({ duration: 2000 });
+import { setToastDefaultOptions, resetToastDefaultOptions } from 'vant';
 
-Toast.setDefaultOptions('loading', { forbidClick: true });
+setToastDefaultOptions({ duration: 2000 });
 
-Toast.resetDefaultOptions();
+setToastDefaultOptions('loading', { forbidClick: true });
 
-Toast.resetDefaultOptions('loading');
+resetToastDefaultOptions();
+
+resetToastDefaultOptions('loading');
+```
+
+### Use Toast Component
+
+If you want to render Vue components within a Toast, you can use the Toast component.
+
+```html
+<van-toast v-model:show="show" style="padding: 0">
+  <template #message>
+    <van-image :src="image" width="200" height="140" style="display: block" />
+  </template>
+</van-toast>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const show = ref(false);
+    return { show };
+  },
+};
 ```
 
 ## API
 
 ### Methods
 
-| Methods | Attribute | Return value | Description |
-| --- | --- | --- | --- |
-| Toast | `options \| message` | toast instance | Show toast |
-| Toast.loading | `options \| message` | toast instance | Show loading toast |
-| Toast.success | `options \| message` | toast instance | Show success toast |
-| Toast.fail | `options \| message` | toast instance | Show fail toast |
-| Toast.clear | `clearAll: boolean` | `void` | Close toast |
-| Toast.allowMultiple | - | `void` | Allow multiple toast at the same time |
-| Toast.setDefaultOptions | `type \| options` | `void` | Set default options of all toasts |
-| Toast.resetDefaultOptions | `type` | `void` | Reset default options of all toasts |
+Vant exports following Toast utility functions:
 
-### Options
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| showToast | Show toast | `ToastOptions \| string` | toast instance |
+| showLoadingToast | Show loading toast | `ToastOptions \| string` | toast instance |
+| showSuccessToast | Show success toast | `ToastOptions \| string` | toast instance |
+| showFailToast | Show fail toast | `ToastOptions \| string` | toast instance |
+| closeToast | Close toast | `closeAll: boolean` | `void` |
+| allowMultipleToast | Allow multiple toast at the same time | - | `void` |
+| setToastDefaultOptions | Set default options of all toasts | `type \| ToastOptions` | `void` |
+| resetToastDefaultOptions | Reset default options of all toasts | `type` | `void` |
+
+### ToastOptions
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -175,6 +216,14 @@ Toast.resetDefaultOptions('loading');
 | transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | teleport | Specifies a target element where Toast will be mounted | _string \| Element_ | `body` |
 
+### Slots
+
+You can use following slots when using `Toast` component:
+
+| Name    | Description    |
+| ------- | -------------- |
+| message | Custom message |
+
 ### Types
 
 The component exports the following type definitions:
@@ -196,8 +245,8 @@ The component provides the following CSS variables, which can be used to customi
 | --van-toast-text-color | _var(--van-white)_ | - |
 | --van-toast-loading-icon-color | _var(--van-white)_ | - |
 | --van-toast-line-height | _var(--van-line-height-md)_ | - |
-| --van-toast-border-radius | _var(--van-border-radius-lg)_ | - |
-| --van-toast-background-color | _fade(var(--van-black), 70%)_ | - |
+| --van-toast-radius | _var(--van-radius-lg)_ | - |
+| --van-toast-background | _fade(var(--van-black), 70%)_ | - |
 | --van-toast-icon-size | _36px_ | - |
 | --van-toast-text-min-width | _96px_ | - |
 | --van-toast-text-padding | _var(--van-padding-xs) var(--van-padding-sm)_ | - |

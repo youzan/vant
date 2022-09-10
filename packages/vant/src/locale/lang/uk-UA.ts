@@ -59,10 +59,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Область',
-    postal: 'Поштовий',
     areaEmpty: 'Будь ласка, виберіть зону прийому',
     addressEmpty: 'Адреса не може бути порожньою',
-    postalEmpty: 'Неправильний поштовий індекс',
     addressDetail: 'Адреса',
     defaultAddress: 'Встановити як адресу за замовчуванням',
   },

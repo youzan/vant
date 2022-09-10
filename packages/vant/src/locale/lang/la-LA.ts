@@ -51,10 +51,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'ພື້ນທີ່',
-    postal: 'ລະຫັດໄປສະນີ',
     areaEmpty: 'ກະລຸນາເລືອກພື້ນທີ່',
     addressEmpty: 'ກະລຸນາປ້ອນທີ່ຢູ່',
-    postalEmpty: 'ກະລຸນາປ້ອນລະຫັດໄປສະນີ',
     addressDetail: 'ທີ່ຢູ່',
     defaultAddress: 'ຕັ້ງເປັນທີ່ຢູ່ເລີ່ມຕົ້ນ',
   },

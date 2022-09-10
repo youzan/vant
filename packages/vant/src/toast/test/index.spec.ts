@@ -88,3 +88,17 @@ test('should change loading icon size when using icon-size prop', async () => {
   expect(wrapper.find('.van-loading__spinner').style.width).toEqual('10px');
   expect(wrapper.find('.van-loading__spinner').style.height).toEqual('10px');
 });
+
+test('should render message slot correctly', async () => {
+  const wrapper = mount(Toast, {
+    props: {
+      show: true,
+    },
+    slots: {
+      message: () => 'Custom Message',
+    },
+  });
+
+  await later();
+  expect(wrapper.html()).toMatchSnapshot();
+});

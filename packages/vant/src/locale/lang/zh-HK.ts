@@ -50,10 +50,8 @@ export default {
   },
   vanAddressEdit: {
     area: '地區',
-    postal: '郵政編碼',
     areaEmpty: '請選擇地區',
     addressEmpty: '請填寫詳細地址',
-    postalEmpty: '郵政編碼不正確',
     addressDetail: '詳細地址',
     defaultAddress: '設為默認收貨地址',
   },

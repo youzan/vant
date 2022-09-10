@@ -1,21 +1,25 @@
-@import './var.less';
+body {
+  --van-number-keyboard-background: var(--van-gray-2);
+  --van-number-keyboard-key-height: 48px;
+  --van-number-keyboard-key-font-size: 28px;
+  --van-number-keyboard-key-active-color: var(--van-gray-3);
+  --van-number-keyboard-key-background: var(--van-background-2);
+  --van-number-keyboard-delete-font-size: var(--van-font-size-lg);
+  --van-number-keyboard-title-color: var(--van-gray-7);
+  --van-number-keyboard-title-height: 34px;
+  --van-number-keyboard-title-font-size: var(--van-font-size-lg);
+  --van-number-keyboard-close-padding: 0 var(--van-padding-md);
+  --van-number-keyboard-close-color: var(--van-link-color);
+  --van-number-keyboard-close-font-size: var(--van-font-size-md);
+  --van-number-keyboard-button-text-color: var(--van-white);
+  --van-number-keyboard-button-background: var(--van-primary-color);
+  --van-number-keyboard-z-index: 100;
+}
 
-:root {
-  --van-number-keyboard-background-color: @number-keyboard-background-color;
-  --van-number-keyboard-key-height: @number-keyboard-key-height;
-  --van-number-keyboard-key-font-size: @number-keyboard-key-font-size;
-  --van-number-keyboard-key-active-color: @number-keyboard-key-active-color;
-  --van-number-keyboard-key-background-color: @number-keyboard-key-background-color;
-  --van-number-keyboard-delete-font-size: @number-keyboard-delete-font-size;
-  --van-number-keyboard-title-color: @number-keyboard-title-color;
-  --van-number-keyboard-title-height: @number-keyboard-title-height;
-  --van-number-keyboard-title-font-size: @number-keyboard-title-font-size;
-  --van-number-keyboard-close-padding: @number-keyboard-close-padding;
-  --van-number-keyboard-close-color: @number-keyboard-close-color;
-  --van-number-keyboard-close-font-size: @number-keyboard-close-font-size;
-  --van-number-keyboard-button-text-color: @number-keyboard-button-text-color;
-  --van-number-keyboard-button-background-color: @number-keyboard-button-background-color;
-  --van-number-keyboard-z-index: @number-keyboard-z-index;
+.van-theme-dark {
+  --van-number-keyboard-background: var(--van-gray-8);
+  --van-number-keyboard-key-background: var(--van-gray-7);
+  --van-number-keyboard-key-active-color: var(--van-gray-6);
 }
 
 .van-number-keyboard {
@@ -25,7 +29,7 @@
   z-index: var(--van-number-keyboard-z-index);
   width: 100%;
   padding-bottom: 22px;
-  background: var(--van-number-keyboard-background-color);
+  background: var(--van-number-keyboard-background);
   user-select: none;
 
   &--with-title {
@@ -94,8 +98,8 @@
   height: var(--van-number-keyboard-key-height);
   font-size: var(--van-number-keyboard-key-font-size);
   line-height: 1.5;
-  background: var(--van-number-keyboard-key-background-color);
-  border-radius: var(--van-border-radius-lg);
+  background: var(--van-number-keyboard-key-background);
+  border-radius: var(--van-radius-lg);
   cursor: pointer;
 
   &--large {
@@ -120,7 +124,7 @@
 
   &--blue {
     color: var(--van-number-keyboard-button-text-color);
-    background: var(--van-number-keyboard-button-background-color);
+    background: var(--van-number-keyboard-button-background);
 
     &.van-key--active {
       opacity: var(--van-active-opacity);

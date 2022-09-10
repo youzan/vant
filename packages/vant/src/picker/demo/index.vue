@@ -1,144 +1,91 @@
 <script setup lang="ts">
-import VanPicker from '..';
-import VanField from '../../field';
-import VanPopup from '../../popup';
-import { ref, computed } from 'vue';
-import { dateColumns, cascadeColumns, cascadeColumnsCustomKey } from './data';
+import { ref } from 'vue';
+import WithPopup from './WithPopup.vue';
+import VanPicker, {
+  PickerChangeEventParams,
+  PickerConfirmEventParams,
+} from '..';
+import {
+  dateColumns,
+  basicColumns,
+  cascadeColumns,
+  disabledColumns,
+  customKeyColumns,
+} from './data';
+import { showToast } from '../../toast';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
-    city: '城市',
     cascade: '级联选择',
-    withPopup: '搭配弹出层使用',
-    chooseCity: '选择城市',
+    modelValue: '双向绑定',
     showToolbar: '展示顶部栏',
     dateColumns: dateColumns['zh-CN'],
+    basicColumns: basicColumns['zh-CN'],
     defaultIndex: '默认选中项',
     disableOption: '禁用选项',
     cascadeColumns: cascadeColumns['zh-CN'],
+    disabledColumns: disabledColumns['zh-CN'],
     multipleColumns: '多列选择',
-    setColumnValues: '动态设置选项',
     customChildrenKey: '自定义 Columns 结构',
-    customChildrenColumns: cascadeColumnsCustomKey['zh-CN'],
-    textColumns: [
-      '杭州',
-      '宁波',
-      '温州',
-      '绍兴',
-      '湖州',
-      '嘉兴',
-      '金华',
-      '衢州',
-    ],
-    disabledColumns: [
-      { text: '杭州', disabled: true },
-      { text: '宁波' },
-      { text: '温州' },
-    ],
-    column3: {
-      浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
-      福建: ['福州', '厦门', '莆田', '三明', '泉州'],
-    },
-    toastContent: (value: string, index: number) =>
-      `当前值：${value}, 当前索引：${index}`,
+    customChildrenColumns: customKeyColumns['zh-CN'],
+    toastContent: (value: string) => `当前值：${value}`,
   },
   'en-US': {
-    city: 'City',
     cascade: 'Cascade',
-    withPopup: 'With Popup',
-    chooseCity: 'Choose City',
+    modelValue: 'v-model',
     showToolbar: 'Show Toolbar',
     dateColumns: dateColumns['en-US'],
+    basicColumns: basicColumns['en-US'],
     defaultIndex: 'Default Index',
     disableOption: 'Disable Option',
     cascadeColumns: cascadeColumns['en-US'],
+    disabledColumns: disabledColumns['en-US'],
     multipleColumns: 'Multiple Columns',
-    setColumnValues: 'Set Column Values',
     customChildrenKey: 'Custom Columns Fields',
-    customChildrenColumns: cascadeColumnsCustomKey['en-US'],
-    textColumns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-    disabledColumns: [
-      { text: 'Delaware', disabled: true },
-      { text: 'Florida' },
-      { text: 'Georqia' },
-    ],
-    column3: {
-      Group1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-      Group2: ['Alabama', 'Kansas', 'Louisiana', 'Texas'],
-    },
+    customChildrenColumns: customKeyColumns['en-US'],
     toastContent: (value: string, index: number) =>
       `Value: ${value}, Index：${index}`,
   },
 });
 
-const picker = ref();
-const showPicker = ref(false);
-const fieldValue = ref('');
-const customFieldName = ref({
+const customFieldName = {
   text: 'cityName',
+  value: 'cityName',
   children: 'cities',
-});
-
-const columns = computed(() => {
-  const column = t('column3');
-  return [
-    {
-      values: Object.keys(column),
-      className: 'column1',
-    },
-    {
-      values: column[Object.keys(column)[0]],
-      className: 'column2',
-      defaultIndex: 2,
-    },
-  ];
-});
-
-const onChange1 = (value: string, index: number) => {
-  Toast(t('toastContent', value, index));
 };
 
-const onChange2 = (values: string[]) => {
-  picker.value.setColumnValues(1, t('column3')[values[0]]);
+const selectedValues = ref(['Wenzhou']);
+
+const onChange1 = ({ selectedValues }: PickerChangeEventParams) => {
+  showToast(t('toastContent', selectedValues.join(',')));
 };
 
-const onConfirm = (value: string, index: number) => {
-  Toast(t('toastContent', value, index));
+const onConfirm = ({ selectedValues }: PickerConfirmEventParams) => {
+  showToast(t('toastContent', selectedValues.join(',')));
 };
 
-const onCancel = () => Toast(t('cancel'));
-
-const onCancel2 = () => {
-  showPicker.value = false;
-};
-
-const onClickField = () => {
-  showPicker.value = true;
-};
-
-const onConfirm2 = (value: string) => {
-  showPicker.value = false;
-  fieldValue.value = value;
-};
+const onCancel = () => showToast(t('cancel'));
 </script>
 
 <template>
   <demo-block card :title="t('basicUsage')">
     <van-picker
       :title="t('title')"
-      :columns="t('textColumns')"
+      :columns="t('basicColumns')"
       @change="onChange1"
+      @cancel="onCancel"
+      @confirm="onConfirm"
     />
   </demo-block>
 
-  <demo-block card :title="t('defaultIndex')">
+  <WithPopup />
+
+  <demo-block card :title="t('modelValue')">
     <van-picker
+      v-model="selectedValues"
       :title="t('title')"
-      :columns="t('textColumns')"
-      :default-index="2"
-      @change="onChange1"
+      :columns="t('basicColumns')"
     />
   </demo-block>
 
@@ -159,37 +106,10 @@ const onConfirm2 = (value: string) => {
     <van-picker :title="t('title')" :columns="t('disabledColumns')" />
   </demo-block>
 
-  <demo-block card :title="t('setColumnValues')">
-    <van-picker
-      ref="picker"
-      :title="t('title')"
-      :columns="columns"
-      @change="onChange2"
-    />
-  </demo-block>
-
   <demo-block card :title="t('loadingStatus')">
-    <van-picker loading :title="t('title')" :columns="columns" />
+    <van-picker loading :title="t('title')" />
   </demo-block>
 
-  <demo-block card :title="t('withPopup')">
-    <van-field
-      v-model="fieldValue"
-      is-link
-      readonly
-      :label="t('city')"
-      :placeholder="t('chooseCity')"
-      @click="onClickField"
-    />
-    <van-popup v-model:show="showPicker" round position="bottom">
-      <van-picker
-        :title="t('title')"
-        :columns="t('textColumns')"
-        @cancel="onCancel2"
-        @confirm="onConfirm2"
-      />
-    </van-popup>
-  </demo-block>
   <demo-block card :title="t('customChildrenKey')">
     <van-picker
       :title="t('title')"

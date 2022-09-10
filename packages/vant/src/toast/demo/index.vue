@@ -1,7 +1,15 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import VanCell from '../../cell';
+import VanImage from '../../image';
 import { cdnURL, useTranslate } from '../../../docs/site';
-import { Toast } from '..';
+import VanToast, {
+  showToast,
+  closeToast,
+  showFailToast,
+  showSuccessToast,
+  showLoadingToast,
+} from '..';
 import type { LoadingType } from '../../loading';
 
 const t = useTranslate({
@@ -19,6 +27,7 @@ const t = useTranslate({
     customImage: '自定义图片',
     loadingType: '自定义加载图标',
     positionTop: '顶部展示',
+    useComponent: '使用 Toast 组件',
     updateMessage: '动态更新提示',
     positionBottom: '底部展示',
     customPosition: '自定义位置',
@@ -37,58 +46,51 @@ const t = useTranslate({
     customImage: 'Custom Image',
     loadingType: 'Loading Type',
     positionTop: 'Top',
+    useComponent: 'Use Toast Component',
     updateMessage: 'Update Message',
     positionBottom: 'Bottom',
     customPosition: 'Custom Position',
   },
 });
 
-const showLoadingToast = (loadingType?: LoadingType) => {
-  Toast.loading({
+const showLoadingToastWithType = (loadingType?: LoadingType) => {
+  showLoadingToast({
     forbidClick: true,
     message: t('loading'),
     loadingType,
   });
 };
 
-const showSuccessToast = () => {
-  Toast.success(t('text2'));
-};
-
-const showFailToast = () => {
-  Toast.fail(t('text3'));
-};
-
 const showTopToast = () => {
-  Toast({
+  showToast({
     message: t('positionTop'),
     position: 'top',
   });
 };
 
 const showBottomToast = () => {
-  Toast({
+  showToast({
     message: t('positionBottom'),
     position: 'bottom',
   });
 };
 
 const showIconToast = () => {
-  Toast({
+  showToast({
     message: t('customIcon'),
     icon: 'like-o',
   });
 };
 
 const showImageToast = () => {
-  Toast({
+  showToast({
     message: t('customImage'),
     icon: cdnURL('logo.png'),
   });
 };
 
-const showCustomizedToast = () => {
-  const toast = Toast.loading({
+const showCustomToast = () => {
+  const toast = showLoadingToast({
     duration: 0,
     forbidClick: true,
     message: t('text4', 3),
@@ -101,18 +103,29 @@ const showCustomizedToast = () => {
       toast.message = t('text4', second);
     } else {
       clearInterval(timer);
-      Toast.clear();
+      closeToast();
     }
   }, 1000);
 };
+
+const show = ref(false);
+const image = cdnURL('cat.jpeg');
 </script>
 
 <template>
   <demo-block card :title="t('basicUsage')">
-    <van-cell is-link :title="t('title1')" @click="Toast(t('text'))" />
-    <van-cell is-link :title="t('title2')" @click="showLoadingToast()" />
-    <van-cell is-link :title="t('success')" @click="showSuccessToast" />
-    <van-cell is-link :title="t('fail')" @click="showFailToast" />
+    <van-cell is-link :title="t('title1')" @click="showToast(t('text'))" />
+    <van-cell
+      is-link
+      :title="t('title2')"
+      @click="showLoadingToastWithType()"
+    />
+    <van-cell
+      is-link
+      :title="t('success')"
+      @click="showSuccessToast(t('text2'))"
+    />
+    <van-cell is-link :title="t('fail')" @click="showFailToast(t('text3'))" />
   </demo-block>
 
   <demo-block card :title="t('customIcon')">
@@ -121,7 +134,7 @@ const showCustomizedToast = () => {
     <van-cell
       is-link
       :title="t('loadingType')"
-      @click="showLoadingToast('spinner')"
+      @click="showLoadingToastWithType('spinner')"
     />
   </demo-block>
 
@@ -131,10 +144,20 @@ const showCustomizedToast = () => {
   </demo-block>
 
   <demo-block card :title="t('updateMessage')">
-    <van-cell
-      is-link
-      :title="t('updateMessage')"
-      @click="showCustomizedToast"
-    />
+    <van-cell is-link :title="t('updateMessage')" @click="showCustomToast" />
+  </demo-block>
+
+  <demo-block card :title="t('useComponent')">
+    <van-cell is-link :title="t('useComponent')" @click="show = true" />
+    <van-toast v-model:show="show" style="padding: 0">
+      <template #message>
+        <van-image
+          :src="image"
+          width="200"
+          height="140"
+          style="display: block"
+        />
+      </template>
+    </van-toast>
   </demo-block>
 </template>

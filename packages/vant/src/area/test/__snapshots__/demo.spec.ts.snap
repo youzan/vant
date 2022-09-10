@@ -290,7 +290,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              Cangnan
+              Lucheng
             </div>
           </li>
           <li role="button"
@@ -487,12 +487,30 @@ exports[`should render demo and match snapshot 1`] = `
         <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
             class="van-picker-column__wrapper"
         >
+          <li role="button"
+              style="height: 44px;"
+              tabindex="0"
+              class="van-picker-column__item van-picker-column__item--selected"
+          >
+            <div class="van-ellipsis">
+              Choose
+            </div>
+          </li>
         </ul>
       </div>
       <div class="van-picker-column">
         <ul style="transform: translate3d(0, 110px, 0); transition-duration: 0ms; transition-property: none;"
             class="van-picker-column__wrapper"
         >
+          <li role="button"
+              style="height: 44px;"
+              tabindex="0"
+              class="van-picker-column__item van-picker-column__item--selected"
+          >
+            <div class="van-ellipsis">
+              Choose
+            </div>
+          </li>
         </ul>
       </div>
       <div class="van-picker__mask"

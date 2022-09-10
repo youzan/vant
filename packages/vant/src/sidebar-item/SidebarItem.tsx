@@ -13,7 +13,7 @@ import { Badge, type BadgeProps } from '../badge';
 
 const [name, bem] = createNamespace('sidebar-item');
 
-const sidebarItemProps = extend({}, routeProps, {
+export const sidebarItemProps = extend({}, routeProps, {
   dot: Boolean,
   title: String,
   badge: numericProp,

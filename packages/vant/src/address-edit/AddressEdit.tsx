@@ -25,18 +25,20 @@ import {
 import { useExpose } from '../composables/use-expose';
 
 // Components
-import { Area, AreaList, AreaColumnOption, AreaInstance } from '../area';
+import { Area, AreaList, AreaInstance } from '../area';
 import { Cell } from '../cell';
 import { Form } from '../form';
 import { Field, FieldRule } from '../field';
 import { Popup } from '../popup';
-import { Toast } from '../toast';
+import { showToast } from '../toast';
 import { Button } from '../button';
 import { Switch } from '../switch';
 import AddressEditDetail from './AddressEditDetail';
 
 // Types
 import type { AddressEditInfo, AddressEditSearchItem } from './types';
+import { PickerConfirmEventParams, PickerOption } from '../picker';
+import { AREA_EMPTY_CODE } from '../area/utils';
 
 const [name, bem, t] = createNamespace('address-edit');
 
@@ -49,13 +51,10 @@ const DEFAULT_DATA: AddressEditInfo = {
   province: '',
   areaCode: '',
   isDefault: false,
-  postalCode: '',
   addressDetail: '',
 };
 
-const isPostal = (value: string) => /^\d{6}$/.test(value);
-
-const addressEditProps = {
+export const addressEditProps = {
   areaList: Object as PropType<AreaList>,
   isSaving: Boolean,
   isDeleting: Boolean,
@@ -65,7 +64,6 @@ const addressEditProps = {
   showArea: truthProp,
   showDetail: truthProp,
   showDelete: Boolean,
-  showPostal: Boolean,
   disableArea: Boolean,
   searchResult: Array as PropType<AddressEditSearchItem[]>,
   telMaxlength: numericProp,
@@ -85,10 +83,6 @@ const addressEditProps = {
     type: Function as PropType<(val: string) => boolean>,
     default: isMobile,
   },
-  postalValidator: {
-    type: Function as PropType<(val: string) => boolean>,
-    default: isPostal,
-  },
 };
 
 export type AddressEditProps = ExtractPropTypes<typeof addressEditProps>;
@@ -102,11 +96,11 @@ export default defineComponent({
     'save',
     'focus',
     'delete',
-    'click-area',
-    'change-area',
-    'change-detail',
-    'select-search',
-    'change-default',
+    'clickArea',
+    'changeArea',
+    'changeDetail',
+    'selectSearch',
+    'changeDefault',
   ],
 
   setup(props, { emit, slots }) {
@@ -121,9 +115,9 @@ export default defineComponent({
     );
 
     const areaText = computed(() => {
-      const { country, province, city, county, areaCode } = data;
+      const { province, city, county, areaCode } = data;
       if (areaCode) {
-        const arr = [country, province, city, county];
+        const arr = [province, city, county];
         if (province && province === city) {
           arr.splice(1, 1);
         }
@@ -137,22 +131,13 @@ export default defineComponent({
       () => props.searchResult?.length && detailFocused.value
     );
 
-    const assignAreaValues = () => {
-      if (areaRef.value) {
-        const detail: Record<string, string> = areaRef.value.getArea();
-        detail.areaCode = detail.code;
-        delete detail.code;
-        extend(data, detail);
-      }
-    };
-
     const onFocus = (key: string) => {
       detailFocused.value = key === 'addressDetail';
       emit('focus', key);
     };
 
     const rules = computed<Record<string, FieldRule[]>>(() => {
-      const { validator, telValidator, postalValidator } = props;
+      const { validator, telValidator } = props;
 
       const makeRule = (name: string, emptyMessage: string): FieldRule => ({
         validator: (value) => {
@@ -177,10 +162,6 @@ export default defineComponent({
         ],
         areaCode: [makeRule('areaCode', t('areaEmpty'))],
         addressDetail: [makeRule('addressDetail', t('addressEmpty'))],
-        postalCode: [
-          makeRule('addressDetail', t('postalEmpty')),
-          { validator: postalValidator, message: t('postalEmpty') },
-        ],
       };
     });
 
@@ -188,33 +169,33 @@ export default defineComponent({
 
     const onChangeDetail = (val: string) => {
       data.addressDetail = val;
-      emit('change-detail', val);
+      emit('changeDetail', val);
     };
 
-    const onAreaConfirm = (values: AreaColumnOption[]) => {
-      values = values.filter(Boolean);
+    const assignAreaText = (options: PickerOption[]) => {
+      data.province = options[0].text as string;
+      data.city = options[1].text as string;
+      data.county = options[2].text as string;
+    };
 
-      if (values.some((value) => !value.code)) {
-        Toast(t('areaEmpty'));
+    const onAreaConfirm = ({
+      selectedValues,
+      selectedOptions,
+    }: PickerConfirmEventParams) => {
+      if (selectedValues.some((value) => value === AREA_EMPTY_CODE)) {
+        showToast(t('areaEmpty'));
       } else {
         showAreaPopup.value = false;
-        assignAreaValues();
-        emit('change-area', values);
+        assignAreaText(selectedOptions as PickerOption[]);
+        emit('changeArea', selectedOptions);
       }
     };
 
     const onDelete = () => emit('delete', data);
 
-    // get values of area component
-    const getArea = () => areaRef.value?.getValues() || [];
-
     // set area code to area component
     const setAreaCode = (code?: string) => {
       data.areaCode = code || '';
-
-      if (code) {
-        nextTick(assignAreaValues);
-      }
     };
 
     const onDetailBlur = () => {
@@ -234,8 +215,7 @@ export default defineComponent({
           'right-icon': () => (
             <Switch
               v-model={data.isDefault}
-              size="24"
-              onChange={(event) => emit('change-default', event)}
+              onChange={(event) => emit('changeDefault', event)}
             />
           ),
         };
@@ -253,21 +233,25 @@ export default defineComponent({
     };
 
     useExpose({
-      getArea,
       setAreaCode,
       setAddressDetail,
     });
 
     watch(
-      () => props.areaList,
-      () => setAreaCode(data.areaCode)
-    );
-
-    watch(
       () => props.addressInfo,
       (value) => {
         extend(data, DEFAULT_DATA, value);
-        setAreaCode(value.areaCode);
+        nextTick(() => {
+          const options = areaRef.value?.getSelectedOptions();
+          if (
+            options &&
+            options.every(
+              (option) => option && option.value !== AREA_EMPTY_CODE
+            )
+          ) {
+            assignAreaText(options as PickerOption[]);
+          }
+        });
       },
       {
         deep: true,
@@ -309,7 +293,7 @@ export default defineComponent({
               placeholder={props.areaPlaceholder || t('area')}
               onFocus={() => onFocus('areaCode')}
               onClick={() => {
-                emit('click-area');
+                emit('clickArea');
                 showAreaPopup.value = !disableArea;
               }}
             />
@@ -325,20 +309,8 @@ export default defineComponent({
               onBlur={onDetailBlur}
               onFocus={() => onFocus('addressDetail')}
               onInput={onChangeDetail}
-              onSelect-search={(event: Event) => emit('select-search', event)}
+              onSelectSearch={(event: Event) => emit('selectSearch', event)}
             />
-            {props.showPostal && (
-              <Field
-                v-show={!hideBottomFields.value}
-                v-model={data.postalCode}
-                type="tel"
-                rules={rules.value.postalCode}
-                label={t('postal')}
-                maxlength="6"
-                placeholder={t('postal')}
-                onFocus={() => onFocus('postalCode')}
-              />
-            )}
             {slots.default?.()}
           </div>
           {renderSetDefaultCell()}
@@ -346,7 +318,7 @@ export default defineComponent({
             <Button
               block
               round
-              type="danger"
+              type="primary"
               text={props.saveButtonText || t('save')}
               class={bem('button')}
               loading={props.isSaving}
@@ -371,8 +343,8 @@ export default defineComponent({
             lazyRender={false}
           >
             <Area
+              v-model={data.areaCode}
               ref={areaRef}
-              value={data.areaCode}
               loading={!areaListLoaded.value}
               areaList={props.areaList}
               columnsPlaceholder={props.areaColumnsPlaceholder}

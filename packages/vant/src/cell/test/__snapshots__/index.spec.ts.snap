@@ -47,7 +47,7 @@ exports[`should render title slot correctly 1`] = `
 
 exports[`should render value slot correctly 1`] = `
 <div class="van-cell">
-  <div class="van-cell__value van-cell__value--alone">
+  <div class="van-cell__value">
     Custom Value
   </div>
 </div>

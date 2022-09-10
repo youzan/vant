@@ -47,8 +47,6 @@ const showEmbedded = ref(false);
 
 <style lang="less">
 .demo-overlay {
-  background: var(--van-background-color-light);
-
   .wrapper {
     display: flex;
     align-items: center;
@@ -59,7 +57,7 @@ const showEmbedded = ref(false);
   .block {
     width: 120px;
     height: 120px;
-    background-color: var(--van-background-color-light);
+    background-color: var(--van-background-2);
     border-radius: 4px;
   }
 }

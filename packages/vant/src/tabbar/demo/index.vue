@@ -3,7 +3,7 @@ import VanTabbar from '..';
 import VanTabbarItem from '../../tabbar-item';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -35,7 +35,7 @@ const icon = {
 };
 
 const onChange = (index: number) => {
-  Toast(`${t('tab')} ${index + 1}`);
+  showToast(`${t('tab')} ${index + 1}`);
 };
 </script>
 
@@ -93,7 +93,7 @@ const onChange = (index: number) => {
   </demo-block>
 
   <demo-block :title="t('customColor')">
-    <van-tabbar v-model="active4" active-color="#ee0a24" inactive-color="#000">
+    <van-tabbar v-model="active4" active-color="#ee0a24">
       <van-tabbar-item icon="home-o">{{ t('tab') }}</van-tabbar-item>
       <van-tabbar-item icon="search">{{ t('tab') }}</van-tabbar-item>
       <van-tabbar-item icon="friends-o">{{ t('tab') }}</van-tabbar-item>

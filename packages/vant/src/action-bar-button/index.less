@@ -1,29 +1,27 @@
-@import './var.less';
-
-:root {
-  --van-action-bar-button-height: @action-bar-button-height;
-  --van-action-bar-button-warning-color: @action-bar-button-warning-color;
-  --van-action-bar-button-danger-color: @action-bar-button-danger-color;
+body {
+  --van-action-bar-button-height: 40px;
+  --van-action-bar-button-warning-color: var(--van-gradient-orange);
+  --van-action-bar-button-danger-color: var(--van-gradient-red);
 }
 
 .van-action-bar-button {
   flex: 1;
   height: var(--van-action-bar-button-height);
-  font-weight: var(--van-font-weight-bold);
+  font-weight: var(--van-font-bold);
   font-size: var(--van-font-size-md);
   border: none;
   border-radius: 0;
 
   &--first {
     margin-left: 5px;
-    border-top-left-radius: var(--van-border-radius-max);
-    border-bottom-left-radius: var(--van-border-radius-max);
+    border-top-left-radius: var(--van-radius-max);
+    border-bottom-left-radius: var(--van-radius-max);
   }
 
   &--last {
     margin-right: 5px;
-    border-top-right-radius: var(--van-border-radius-max);
-    border-bottom-right-radius: var(--van-border-radius-max);
+    border-top-right-radius: var(--van-radius-max);
+    border-bottom-right-radius: var(--van-radius-max);
   }
 
   &--warning {

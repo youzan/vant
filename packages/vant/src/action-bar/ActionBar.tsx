@@ -7,7 +7,7 @@ const [name, bem] = createNamespace('action-bar');
 
 export const ACTION_BAR_KEY = Symbol(name);
 
-const actionBarProps = {
+export const actionBarProps = {
   placeholder: Boolean,
   safeAreaInsetBottom: truthProp,
 };

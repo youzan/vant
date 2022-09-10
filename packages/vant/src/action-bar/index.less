@@ -1,8 +1,6 @@
-@import './var.less';
-
-:root {
-  --van-action-bar-background-color: @action-bar-background-color;
-  --van-action-bar-height: @action-bar-height;
+body {
+  --van-action-bar-background: var(--van-background-2);
+  --van-action-bar-height: 50px;
 }
 
 .van-action-bar {
@@ -14,5 +12,5 @@
   align-items: center;
   box-sizing: content-box;
   height: var(--van-action-bar-height);
-  background: var(--van-action-bar-background-color);
+  background: var(--van-action-bar-background);
 }

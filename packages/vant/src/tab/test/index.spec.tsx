@@ -3,13 +3,13 @@ import { mount, later, triggerDrag, mockScrollTop } from '../../../test';
 import { Tab } from '..';
 import { Tabs, TabsInstance } from '../../tabs';
 
-test('should emit click-tab event when tab is clicked', async () => {
+test('should emit clickTab event when tab is clicked', async () => {
   const onClickTab = jest.fn();
 
   const wrapper = mount({
     render() {
       return (
-        <Tabs onClick-tab={onClickTab}>
+        <Tabs onClickTab={onClickTab}>
           <Tab title="title1">1</Tab>
           <Tab title="title2">2</Tab>
         </Tabs>
@@ -299,7 +299,7 @@ test('should allow to set name prop', async () => {
         <Tabs
           v-model:active={this.active}
           onChange={onChange}
-          onClick-tab={onClickTab}
+          onClickTab={onClickTab}
         >
           <Tab title="title1" name="a">
             Text
@@ -336,7 +336,7 @@ test('should allow name prop to be zero', async () => {
   const wrapper = mount({
     render() {
       return (
-        <Tabs onClick-tab={onClickTab}>
+        <Tabs onClickTab={onClickTab}>
           <Tab title="title1" name={1}>
             Text
           </Tab>

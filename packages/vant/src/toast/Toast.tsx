@@ -41,7 +41,7 @@ const popupInheritProps = [
   'closeOnClickOverlay',
 ] as const;
 
-const toastProps = {
+export const toastProps = {
   icon: String,
   show: Boolean,
   type: makeStringProp<ToastType>('text'),
@@ -71,7 +71,7 @@ export default defineComponent({
 
   emits: ['update:show'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     let timer: NodeJS.Timeout;
     let clickable = false;
 
@@ -117,6 +117,10 @@ export default defineComponent({
 
     const renderMessage = () => {
       const { type, message } = props;
+
+      if (slots.message) {
+        return <div class={bem('text')}>{slots.message()}</div>;
+      }
 
       if (isDef(message) && message !== '') {
         return type === 'html' ? (

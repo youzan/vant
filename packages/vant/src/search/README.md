@@ -53,13 +53,13 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref('');
-    const onSearch = (val) => Toast(val);
-    const onCancel = () => Toast('Cancel');
+    const onSearch = (val) => showToast(val);
+    const onCancel = () => showToast('Cancel');
     return {
       value,
       onSearch,
@@ -114,13 +114,13 @@ Use `action` slot to custom right button, `cancel` event will no longer be Emitt
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref('');
-    const onSearch = (val) => Toast(val);
-    const onClickButton = () => Toast(value.value);
+    const onSearch = (val) => showToast(val);
+    const onClickButton = () => showToast(value.value);
     return {
       value,
       onSearch,
@@ -219,16 +219,16 @@ searchRef.value?.focus();
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name | Default Value | Description |
-| --- | --- | --- |
-| --van-search-padding | _10px var(--van-padding-sm)_ | - |
-| --van-search-background-color | _var(--van-background-color-light)_ | - |
-| --van-search-content-background-color | _var(--van-gray-1)_ | - |
-| --van-search-input-height | _34px_ | - |
-| --van-search-label-padding | _0 5px_ | - |
-| --van-search-label-color | _var(--van-text-color)_ | - |
-| --van-search-label-font-size | _var(--van-font-size-md)_ | - |
-| --van-search-left-icon-color | _var(--van-gray-6)_ | - |
-| --van-search-action-padding | _0 var(--van-padding-xs)_ | - |
-| --van-search-action-text-color | _var(--van-text-color)_ | - |
-| --van-search-action-font-size | _var(--van-font-size-md)_ | - |
+| Name                            | Default Value                | Description |
+| ------------------------------- | ---------------------------- | ----------- |
+| --van-search-padding            | _10px var(--van-padding-sm)_ | -           |
+| --van-search-background         | _var(--van-background-2)_    | -           |
+| --van-search-content-background | _var(--van-gray-1)_          | -           |
+| --van-search-input-height       | _34px_                       | -           |
+| --van-search-label-padding      | _0 5px_                      | -           |
+| --van-search-label-color        | _var(--van-text-color)_      | -           |
+| --van-search-label-font-size    | _var(--van-font-size-md)_    | -           |
+| --van-search-left-icon-color    | _var(--van-gray-6)_          | -           |
+| --van-search-action-padding     | _0 var(--van-padding-xs)_    | -           |
+| --van-search-action-text-color  | _var(--van-text-color)_      | -           |
+| --van-search-action-font-size   | _var(--van-font-size-md)_    | -           |

@@ -384,7 +384,7 @@ fieldRef.value?.focus();
 | 名称                                  | 默认值                    | 描述 |
 | ------------------------------------- | ------------------------- | ---- |
 | --van-field-label-width               | _6.2em_                   | -    |
-| --van-field-label-color               | _var(--van-gray-7)_       | -    |
+| --van-field-label-color               | _var(--van-text-color)_   | -    |
 | --van-field-label-margin-right        | _var(--van-padding-sm)_   | -    |
 | --van-field-input-text-color          | _var(--van-text-color)_   | -    |
 | --van-field-input-error-text-color    | _var(--van-danger-color)_ | -    |

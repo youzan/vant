@@ -25,11 +25,11 @@ app.use(ContactCard);
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onAdd = () => Toast('add');
+    const onAdd = () => showToast('add');
     return {
       onAdd,
     };
@@ -45,13 +45,13 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const tel = ref('13000000000');
     const name = ref('John Snow');
-    const onEdit = () => Toast('edit');
+    const onEdit = () => showToast('edit');
 
     return {
       tel,
@@ -110,4 +110,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-contact-card-padding | _var(--van-padding-md)_ | - |
 | --van-contact-card-add-icon-size | _40px_ | - |
 | --van-contact-card-add-icon-color | _var(--van-primary-color)_ | - |
-| --van-contact-card-value-line-height | _var(--van-line-height-md)_ | - |
+| --van-contact-card-title-line-height | _var(--van-line-height-md)_ | - |

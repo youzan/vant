@@ -58,10 +58,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Khu vực',
-    postal: 'Bưu điện',
     areaEmpty: 'Vui lòng chọn khu vực nhận hàng',
     addressEmpty: 'Địa chỉ không được để trống',
-    postalEmpty: 'Mã bưu chính sai',
     addressDetail: 'Địa chỉ',
     defaultAddress: 'Đặt làm địa chỉ mặc định',
   },

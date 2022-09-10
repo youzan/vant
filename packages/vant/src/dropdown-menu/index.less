@@ -1,18 +1,15 @@
-@import './var.less';
-@import '../dropdown-item/var.less';
-
-:root {
-  --van-dropdown-menu-height: @dropdown-menu-height;
-  --van-dropdown-menu-background-color: @dropdown-menu-background-color;
-  --van-dropdown-menu-box-shadow: @dropdown-menu-box-shadow;
-  --van-dropdown-menu-title-font-size: @dropdown-menu-title-font-size;
-  --van-dropdown-menu-title-text-color: @dropdown-menu-title-text-color;
-  --van-dropdown-menu-title-active-text-color: @dropdown-menu-title-active-text-color;
-  --van-dropdown-menu-title-disabled-text-color: @dropdown-menu-title-disabled-text-color;
-  --van-dropdown-menu-title-padding: @dropdown-menu-title-padding;
-  --van-dropdown-menu-title-line-height: @dropdown-menu-title-line-height;
-  --van-dropdown-menu-option-active-color: @dropdown-menu-option-active-color;
-  --van-dropdown-menu-content-max-height: @dropdown-menu-content-max-height;
+body {
+  --van-dropdown-menu-height: 48px;
+  --van-dropdown-menu-background: var(--van-background-2);
+  --van-dropdown-menu-shadow: 0 2px 12px rgba(100, 101, 102, 0.12);
+  --van-dropdown-menu-title-font-size: 15px;
+  --van-dropdown-menu-title-text-color: var(--van-text-color);
+  --van-dropdown-menu-title-active-text-color: var(--van-primary-color);
+  --van-dropdown-menu-title-disabled-text-color: var(--van-text-color-2);
+  --van-dropdown-menu-title-padding: 0 var(--van-padding-xs);
+  --van-dropdown-menu-title-line-height: var(--van-line-height-lg);
+  --van-dropdown-menu-option-active-color: var(--van-primary-color);
+  --van-dropdown-menu-content-max-height: 80%;
 }
 
 .van-dropdown-menu {
@@ -22,8 +19,8 @@
     position: relative;
     display: flex;
     height: var(--van-dropdown-menu-height);
-    background: var(--van-dropdown-menu-background-color);
-    box-shadow: var(--van-dropdown-menu-box-shadow);
+    background: var(--van-dropdown-menu-background);
+    box-shadow: var(--van-dropdown-menu-shadow);
 
     &--opened {
       z-index: calc(var(--van-dropdown-item-z-index) + 1);

@@ -5,6 +5,7 @@
       :config="config"
       :versions="versions"
       :lang-configs="langConfigs"
+      :dark-mode-class="darkModeClass"
       @switch-version="$emit('switch-version', $event)"
     />
     <doc-nav :lang="lang" :nav-config="config.nav" />
@@ -39,8 +40,9 @@ export default {
     lang: String,
     versions: Array,
     simulator: String,
-    hasSimulator: Boolean,
     langConfigs: Array,
+    hasSimulator: Boolean,
+    darkModeClass: String,
     config: {
       type: Object,
       required: true,
@@ -108,7 +110,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less">
-@import '../../common/style/var';
-</style>

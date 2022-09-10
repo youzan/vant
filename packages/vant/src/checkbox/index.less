@@ -1,15 +1,13 @@
-@import './var.less';
-
-:root {
-  --van-checkbox-size: @checkbox-size;
-  --van-checkbox-border-color: @checkbox-border-color;
-  --van-checkbox-transition-duration: @checkbox-transition-duration;
-  --van-checkbox-label-margin: @checkbox-label-margin;
-  --van-checkbox-label-color: @checkbox-label-color;
-  --van-checkbox-checked-icon-color: @checkbox-checked-icon-color;
-  --van-checkbox-disabled-icon-color: @checkbox-disabled-icon-color;
-  --van-checkbox-disabled-label-color: @checkbox-disabled-label-color;
-  --van-checkbox-disabled-background-color: @checkbox-disabled-background-color;
+body {
+  --van-checkbox-size: 20px;
+  --van-checkbox-border-color: var(--van-gray-5);
+  --van-checkbox-duration: var(--van-duration-fast);
+  --van-checkbox-label-margin: var(--van-padding-xs);
+  --van-checkbox-label-color: var(--van-text-color);
+  --van-checkbox-checked-icon-color: var(--van-primary-color);
+  --van-checkbox-disabled-icon-color: var(--van-gray-5);
+  --van-checkbox-disabled-label-color: var(--van-text-color-3);
+  --van-checkbox-disabled-background: var(--van-border-color);
 }
 
 .van-checkbox {
@@ -48,7 +46,7 @@
       line-height: 1.25;
       text-align: center;
       border: 1px solid var(--van-checkbox-border-color);
-      transition-duration: var(--van-checkbox-transition-duration);
+      transition-duration: var(--van-checkbox-duration);
       transition-property: color, border-color, background-color;
     }
 
@@ -70,7 +68,7 @@
       cursor: not-allowed;
 
       .van-icon {
-        background-color: var(--van-checkbox-disabled-background-color);
+        background-color: var(--van-checkbox-disabled-background);
         border-color: var(--van-checkbox-disabled-icon-color);
       }
     }

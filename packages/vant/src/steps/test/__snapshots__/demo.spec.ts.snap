@@ -72,19 +72,19 @@ exports[`should render demo and match snapshot 1`] = `
           </i>
         </div>
         <div class="van-step__line"
-             style="background: rgb(51, 136, 255);"
+             style="background: rgb(7, 193, 96);"
         >
         </div>
       </div>
       <div class="van-hairline van-step van-step--horizontal van-step--process">
         <div class="van-step__title van-step__title--active"
-             style="color: rgb(51, 136, 255);"
+             style="color: rgb(7, 193, 96);"
         >
           Step2
         </div>
         <div class="van-step__circle-container">
           <i class="van-badge__wrapper van-icon van-icon-success van-step__icon van-step__icon--active"
-             style="color: rgb(51, 136, 255);"
+             style="color: rgb(7, 193, 96);"
           >
           </i>
         </div>

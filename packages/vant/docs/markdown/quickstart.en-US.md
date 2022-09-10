@@ -50,7 +50,7 @@ The easiest way to use Vant is to include a CDN link in the HTML file, after whi
   app.use(vant.Lazyload);
 
   // Call function component
-  vant.Toast('Message');
+  vant.showToast('Message');
 
   app.mount('#app');
 </script>
@@ -195,19 +195,19 @@ Some components of Vant are provided as function, including `Toast`, `Dialog`, `
 
 ```js
 // Toast
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 import 'vant/es/toast/style';
 
 // Dialog
-import { Dialog } from 'vant';
+import { showDialog } from 'vant';
 import 'vant/es/dialog/style';
 
 // Notify
-import { Notify } from 'vant';
+import { showNotify } from 'vant';
 import 'vant/es/notify/style';
 
 // ImagePreview
-import { ImagePreview } from 'vant';
+import { showImagePreview } from 'vant';
 import 'vant/es/image-preview/style';
 ```
 

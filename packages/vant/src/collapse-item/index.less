@@ -1,14 +1,14 @@
-@import './var.less';
 @import '../style/mixins/hairline';
 
-:root {
-  --van-collapse-item-transition-duration: @collapse-item-transition-duration;
-  --van-collapse-item-content-padding: @collapse-item-content-padding;
-  --van-collapse-item-content-font-size: @collapse-item-content-font-size;
-  --van-collapse-item-content-line-height: @collapse-item-content-line-height;
-  --van-collapse-item-content-text-color: @collapse-item-content-text-color;
-  --van-collapse-item-content-background-color: @collapse-item-content-background-color;
-  --van-collapse-item-title-disabled-color: @collapse-item-title-disabled-color;
+body {
+  --van-collapse-item-duration: var(--van-duration-base);
+  --van-collapse-item-content-padding: var(--van-padding-sm)
+    var(--van-padding-md);
+  --van-collapse-item-content-font-size: var(--van-font-size-md);
+  --van-collapse-item-content-line-height: 1.5;
+  --van-collapse-item-content-text-color: var(--van-text-color-2);
+  --van-collapse-item-content-background: var(--van-background-2);
+  --van-collapse-item-title-disabled-color: var(--van-text-color-3);
 }
 
 .van-collapse-item {
@@ -25,7 +25,7 @@
       // using translateZ to fix safari rendering issues
       // see: https://github.com/vant-ui/vant/issues/8608
       transform: rotate(90deg) translateZ(0);
-      transition: transform var(--van-collapse-item-transition-duration);
+      transition: transform var(--van-collapse-item-duration);
     }
 
     &::after {
@@ -61,7 +61,7 @@
 
   &__wrapper {
     overflow: hidden;
-    transition: height var(--van-collapse-item-transition-duration) ease-in-out;
+    transition: height var(--van-collapse-item-duration) ease-in-out;
     will-change: height;
   }
 
@@ -70,6 +70,6 @@
     color: var(--van-collapse-item-content-text-color);
     font-size: var(--van-collapse-item-content-font-size);
     line-height: var(--van-collapse-item-content-line-height);
-    background: var(--van-collapse-item-content-background-color);
+    background: var(--van-collapse-item-content-background);
   }
 }

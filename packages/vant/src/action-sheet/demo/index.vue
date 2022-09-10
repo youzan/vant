@@ -3,7 +3,7 @@ import VanCell from '../../cell';
 import VanActionSheet, { ActionSheetAction } from '..';
 import { ref, computed } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -61,10 +61,10 @@ const actionsWithDescription = computed<ActionSheetAction[]>(() => [
 
 const onSelect = (item: ActionSheetAction) => {
   showBasic.value = false;
-  Toast(item.name);
+  showToast(item.name);
 };
 
-const onCancel = () => Toast(t('cancel'));
+const onCancel = () => showToast(t('cancel'));
 </script>
 
 <template>

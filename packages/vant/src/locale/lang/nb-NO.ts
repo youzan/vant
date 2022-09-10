@@ -50,10 +50,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Område',
-    postal: 'Postkode',
     areaEmpty: 'Vennligst fyll inn område',
     addressEmpty: 'Addresse kan ikke være tomt',
-    postalEmpty: 'Feil postkode',
     addressDetail: 'Adresse',
     defaultAddress: 'Sett som standard adresse',
   },

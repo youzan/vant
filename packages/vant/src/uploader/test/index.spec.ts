@@ -528,14 +528,14 @@ test('closeImagePreview method', async () => {
 
   await nextTick();
   await (wrapper.vm as Record<string, any>).closeImagePreview();
-  expect(wrapper.emitted('close-preview')).toBeFalsy();
+  expect(wrapper.emitted('closePreview')).toBeFalsy();
 
   wrapper.find('.van-image').trigger('click');
   await (wrapper.vm as Record<string, any>).closeImagePreview();
-  expect(wrapper.emitted('close-preview')).toBeTruthy();
+  expect(wrapper.emitted('closePreview')).toBeTruthy();
 });
 
-test('click-preview event', () => {
+test('clickPreview event', () => {
   const wrapper = mount(Uploader, {
     props: {
       previewFullImage: false,
@@ -544,12 +544,12 @@ test('click-preview event', () => {
   });
 
   wrapper.find('.van-image').trigger('click');
-  expect(wrapper.emitted<[File]>('click-preview')![0][0]).toEqual({
+  expect(wrapper.emitted<[File]>('clickPreview')![0][0]).toEqual({
     url: IMAGE,
   });
   expect(
     wrapper.emitted<[File, { name: string; index: number }]>(
-      'click-preview'
+      'clickPreview'
     )![0][1]
   ).toEqual({
     name: '',
@@ -557,7 +557,7 @@ test('click-preview event', () => {
   });
 });
 
-test('close-preview event', async () => {
+test('closePreview event', async () => {
   const wrapper = mount(Uploader, {
     props: {
       modelValue: [{ url: IMAGE }],
@@ -574,7 +574,7 @@ test('close-preview event', async () => {
   triggerDrag(swipe, 0, 0);
 
   await later(300);
-  expect(wrapper.emitted('close-preview')).toBeTruthy();
+  expect(wrapper.emitted('closePreview')).toBeTruthy();
 });
 
 test('show-upload prop', async () => {
@@ -665,8 +665,8 @@ test('should not render upload input when using readonly prop', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should emit click-upload event when upload area is clicked', async () => {
+test('should emit clickUpload event when upload area is clicked', async () => {
   const wrapper = mount(Uploader);
   wrapper.find('.van-uploader__upload').trigger('click');
-  expect(wrapper.emitted('click-upload')).toBeTruthy();
+  expect(wrapper.emitted('clickUpload')).toBeTruthy();
 });

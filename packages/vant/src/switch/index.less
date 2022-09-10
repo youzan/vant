@@ -1,17 +1,18 @@
-@import './var.less';
+body {
+  --van-switch-size: 26px;
+  --van-switch-width: calc(1.8em + 4px);
+  --van-switch-height: calc(1em + 4px);
+  --van-switch-node-size: 1em;
+  --van-switch-node-background: var(--van-white);
+  --van-switch-node-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05);
+  --van-switch-background: rgba(120, 120, 128, 0.16);
+  --van-switch-on-background: var(--van-primary-color);
+  --van-switch-duration: var(--van-duration-base);
+  --van-switch-disabled-opacity: var(--van-disabled-opacity);
+}
 
-:root {
-  --van-switch-size: @switch-size;
-  --van-switch-width: @switch-width;
-  --van-switch-height: @switch-height;
-  --van-switch-node-size: @switch-node-size;
-  --van-switch-node-background-color: @switch-node-background-color;
-  --van-switch-node-box-shadow: @switch-node-box-shadow;
-  --van-switch-background-color: @switch-background-color;
-  --van-switch-on-background-color: @switch-on-background-color;
-  --van-switch-transition-duration: @switch-transition-duration;
-  --van-switch-disabled-opacity: @switch-disabled-opacity;
-  --van-switch-border: @switch-border;
+.van-theme-dark {
+  --van-switch-background: rgba(120, 120, 128, 0.32);
 }
 
 .van-switch {
@@ -21,24 +22,23 @@
   width: var(--van-switch-width);
   height: var(--van-switch-height);
   font-size: var(--van-switch-size);
-  background: var(--van-switch-background-color);
-  border: var(--van-switch-border);
+  background: var(--van-switch-background);
   border-radius: var(--van-switch-node-size);
   cursor: pointer;
-  transition: background-color var(--van-switch-transition-duration);
+  transition: background-color var(--van-switch-duration);
 
   &__node {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 2px;
+    left: 2px;
     width: var(--van-switch-node-size);
     height: var(--van-switch-node-size);
     // https://github.com/vant-ui/vant/issues/9839
     font-size: inherit;
-    background: var(--van-switch-node-background-color);
+    background: var(--van-switch-node-background);
     border-radius: 100%;
-    box-shadow: var(--van-switch-node-box-shadow);
-    transition: transform var(--van-switch-transition-duration)
+    box-shadow: var(--van-switch-node-shadow);
+    transition: transform var(--van-switch-duration)
       cubic-bezier(0.3, 1.05, 0.4, 1.05);
   }
 
@@ -51,16 +51,16 @@
   }
 
   &--on {
-    background: var(--van-switch-on-background-color);
+    background: var(--van-switch-on-background);
 
     .van-switch__node {
       transform: translateX(
-        calc(var(--van-switch-width) - var(--van-switch-node-size))
+        calc(var(--van-switch-width) - var(--van-switch-node-size) - 4px)
       );
     }
 
     .van-switch__loading {
-      color: var(--van-switch-on-background-color);
+      color: var(--van-switch-on-background);
     }
   }
 

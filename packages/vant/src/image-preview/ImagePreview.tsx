@@ -48,7 +48,7 @@ const popupProps = [
   'closeOnPopstate',
 ] as const;
 
-const imagePreviewProps = {
+export const imagePreviewProps = {
   show: Boolean,
   loop: truthProp,
   images: makeArrayProp<string>(),

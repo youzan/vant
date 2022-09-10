@@ -1,9 +1,7 @@
-@import './var.less';
-
-:root {
-  --van-tabbar-height: @tabbar-height;
-  --van-tabbar-z-index: @tabbar-z-index;
-  --van-tabbar-background-color: @tabbar-background-color;
+body {
+  --van-tabbar-height: 50px;
+  --van-tabbar-z-index: 1;
+  --van-tabbar-background: var(--van-background-2);
 }
 
 .van-tabbar {
@@ -12,7 +10,7 @@
   box-sizing: content-box;
   width: 100%;
   height: var(--van-tabbar-height);
-  background: var(--van-tabbar-background-color);
+  background: var(--van-tabbar-background);
 
   &--fixed {
     position: fixed;

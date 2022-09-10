@@ -72,7 +72,7 @@ export default {
   .colon {
     display: inline-block;
     margin: 0 4px;
-    color: #ee0a24;
+    color: #1989fa;
   }
   .block {
     display: inline-block;
@@ -80,7 +80,7 @@ export default {
     color: #fff;
     font-size: 12px;
     text-align: center;
-    background-color: #ee0a24;
+    background-color: #1989fa;
   }
 </style>
 ```
@@ -106,7 +106,7 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -121,7 +121,7 @@ export default {
     const reset = () => {
       countDown.value.reset();
     };
-    const onFinish = () => Toast('倒计时结束');
+    const onFinish = () => showToast('倒计时结束');
 
     return {
       start,

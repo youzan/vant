@@ -30,7 +30,7 @@ app.use(PullRefresh);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -38,7 +38,7 @@ export default {
     const loading = ref(false);
     const onRefresh = () => {
       setTimeout(() => {
-        Toast('刷新成功');
+        showToast('刷新成功');
         loading.value = false;
         count.value++;
       }, 1000);

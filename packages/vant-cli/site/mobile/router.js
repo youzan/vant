@@ -4,7 +4,7 @@ import DemoHome from './components/DemoHome.vue';
 import { decamelize } from '../common';
 import { demos, config } from 'site-mobile-shared';
 import { getLang, setDefaultLang } from '../common/locales';
-import { listenToSyncPath, syncPathToParent } from '../common/iframe-router';
+import { listenToSyncPath, syncPathToParent } from '../common/iframe-sync';
 
 const { locales, defaultLang } = config.site;
 

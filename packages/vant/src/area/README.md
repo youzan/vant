@@ -75,12 +75,23 @@ export default {
 };
 ```
 
-### Initial Value
+### Model Value
 
-To have a selected value, simply pass the `code` of target area to `value` property.
+Bind the currently selected area code via `v-model`.
 
 ```html
-<van-area title="Title" :area-list="areaList" value="110101" />
+<van-area v-model="value" title="Title" :area-list="areaList" />
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const value = ref('330302');
+    return { value };
+  },
+};
 ```
 
 ### Columns Number
@@ -109,7 +120,7 @@ To have a selected value, simply pass the `code` of target area to `value` prope
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| value | the `code` of selected area | _string_ | - |
+| v-model | the `code` of selected area | _string_ | - |
 | title | Toolbar title | _string_ | - |
 | confirm-button-text | Text of confirm button | _string_ | `Confirm` |
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |
@@ -117,40 +128,18 @@ To have a selected value, simply pass the `code` of target area to `value` prope
 | columns-placeholder | Placeholder of columns | _string[]_ | `[]` |
 | loading | Whether to show loading prompt | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
-| item-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
+| option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | columns-num | Level of picker | _number \| string_ | `3` |
-| visible-item-count | Count of visible columns | _number \| string_ | `6` |
+| visible-option-num | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration | Duration of the momentum animation, unit `ms` | _number \| string_ | `1000` |
-| is-oversea-code | The method to validate oversea code | _() => boolean_ | - |
 
 ### Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| confirm | Emitted when the confirm button is clicked | _result: ConfirmResult_ |
-| cancel | Emitted when the cancel button is clicked | - |
-| change | Emitted when current option changed | current: values, column: index |
-
-### ConfirmResult
-
-An array that contains selected area objects.
-
-```js
-[
-  {
-    code: '330000',
-    name: 'Zhejiang Province',
-  },
-  {
-    code: '330100',
-    name: 'Hangzhou',
-  },
-  {
-    code: '330105',
-    name: 'Xihu District',
-  },
-];
-```
+| confirm | Emitted when the confirm button is clicked | _{ selectedValues, selectedOptions }_ |
+| cancel | Emitted when the cancel button is clicked | _{ selectedValues, selectedOptions }_ |
+| change | Emitted when current option is changed | _{ selectedValues, selectedOptions, columnIndex }_ |
 
 ### Slots
 
@@ -167,9 +156,10 @@ An array that contains selected area objects.
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Area instance and call instance methods.
 
-| Name  | Description               | Attribute       | Return value |
-| ----- | ------------------------- | --------------- | ------------ |
-| reset | Reset all options by code | _code?: string_ | -            |
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| confirm | Stop scrolling and emit confirm event | - | - |
+| getSelectedOptions | Get current selected options | - | _PickerOption[]_ |
 
 ### Types
 
@@ -187,5 +177,5 @@ import type { AreaInstance } from 'vant';
 
 const areaRef = ref<AreaInstance>();
 
-areaRef.value?.reset();
+areaRef.value?.confirm();
 ```

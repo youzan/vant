@@ -2,7 +2,7 @@
 
 ### Intro
 
-The display message prompt is at the top of the page, and supports two methods: function call and component call.
+The display message prompt is at the top of the page, and supports two methods: component call and function call.
 
 ### Install
 
@@ -16,59 +16,69 @@ const app = createApp();
 app.use(Notify);
 ```
 
+### Function Call
+
+Vant provides some utility functions that can quickly evoke global `Notify` components.
+
+For example, calling the `showNotify` function will render a Dialog directly in the page.
+
+```js
+import { showNotify } from 'vant';
+
+showNotify('Notify Message');
+```
+
 ## Usage
 
 ### Basic Usage
 
 ```js
-Notify('Notify Message');
+import { showNotify, closeNotify } from 'vant';
+
+// auto close after 3s
+showNotify('Message');
+
+// manually close
+closeNotify();
 ```
 
 ### Notify Type
 
 ```js
-Notify({ type: 'primary', message: 'Notify Message' });
-Notify({ type: 'success', message: 'Notify Message' });
-Notify({ type: 'danger', message: 'Notify Message' });
-Notify({ type: 'warning', message: 'Notify Message' });
+import { showNotify } from 'vant';
+
+showNotify({ type: 'primary', message: 'Notify Message' });
+showNotify({ type: 'success', message: 'Notify Message' });
+showNotify({ type: 'danger', message: 'Notify Message' });
+showNotify({ type: 'warning', message: 'Notify Message' });
 ```
 
 ### Custom Notify
 
 ```js
-Notify({
+import { showNotify } from 'vant';
+
+showNotify({
   message: 'Custom Color',
   color: '#ad0000',
   background: '#ffe1e1',
 });
 
-Notify({
+showNotify({
   message: 'Custom Position',
   position: 'bottom',
 });
 
-Notify({
+showNotify({
   message: 'Custom Duration',
   duration: 1000,
 });
 ```
 
-### Global Method
-
-After registering the Notify component through `app.use`, the `$notify` method will be automatically mounted on all subcomponents of the app.
-
-```js
-export default {
-  mounted() {
-    this.$notify('Notify Message');
-  },
-};
-```
-
-### Component Call
+### Use Notify Component
 
 ```html
-<van-button type="primary" text="Component Call" @click="showNotify" />
+<van-button type="primary" text="Use Notify Component" @click="showNotify" />
 <van-notify v-model:show="show" type="success">
   <van-icon name="bell" style="margin-right: 4px;" />
   <span>Content</span>
@@ -101,14 +111,16 @@ export default {
 
 ### Methods
 
-| Methods | Attribute | Return value | Description |
-| --- | --- | --- | --- |
-| Notify | `options \| message` | notify instance | Show notify |
-| Notify.clear | - | `void` | Close notify |
-| Notify.setDefaultOptions | `options` | `void` | Set default options of all notifies |
-| Notify.resetDefaultOptions | - | `void` | Reset default options of all notifies |
+Vant exports following Notify utility functions:
 
-### Options
+| Methods | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| showNotify | Show notify | `NotifyOptions \| string` | notify instance |
+| closeNotify | Close notify | - | `void` |
+| setNotifyDefaultOptions | Set default options of all notifies | `NotifyOptions` | `void` |
+| resetNotifyDefaultOptions | Reset default options of all notifies | - | `void` |
+
+### NotifyOptions
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -149,7 +161,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-notify-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
 | --van-notify-font-size | _var(--van-font-size-md)_ | - |
 | --van-notify-line-height | _var(--van-line-height-md)_ | - |
-| --van-notify-primary-background-color | _var(--van-primary-color)_ | - |
-| --van-notify-success-background-color | _var(--van-success-color)_ | - |
-| --van-notify-danger-background-color | _var(--van-danger-color)_ | - |
-| --van-notify-warning-background-color | _var(--van-warning-color)_ | - |
+| --van-notify-primary-background | _var(--van-primary-color)_ | - |
+| --van-notify-success-background | _var(--van-success-color)_ | - |
+| --van-notify-danger-background | _var(--van-danger-color)_ | - |
+| --van-notify-warning-background | _var(--van-warning-color)_ | - |

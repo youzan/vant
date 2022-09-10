@@ -71,22 +71,19 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/var';
-
 .van-doc-nav {
   position: fixed;
   left: 0;
   z-index: 1;
-  min-width: @van-doc-nav-width;
-  max-width: @van-doc-nav-width;
-  padding: @van-doc-padding 0;
+  min-width: var(--van-doc-nav-width);
+  max-width: var(--van-doc-nav-width);
+  padding: 8px 0;
   overflow-y: scroll;
-  background-color: #fff;
-  box-shadow: 0 8px 12px #ebedf0;
+  background-color: var(--van-doc-background-2);
 
-  @media (min-width: @van-doc-row-max-width) {
+  @media (min-width: var(--van-doc-row-max-width)) {
     left: 50%;
-    margin-left: -(@van-doc-row-max-width / 2);
+    margin-left: calc((var(--van-doc-row-max-width) / 2 * -1));
   }
 
   &::-webkit-scrollbar {
@@ -110,8 +107,8 @@ export default {
   }
 
   &__title {
-    padding: 8px 0 8px @van-doc-padding;
-    color: #455a64;
+    padding: 24px 0 0 var(--van-doc-padding);
+    color: var(--van-doc-text-color-2);
     font-weight: 600;
     font-size: 15px;
     line-height: 28px;
@@ -121,21 +118,19 @@ export default {
     a {
       display: block;
       margin: 8px 0;
-      padding: 8px 0 8px @van-doc-padding;
-      color: #455a64;
+      padding: 6px 0 6px var(--van-doc-padding);
+      color: var(--van-doc-text-color-3);
       font-size: 14px;
       line-height: 20px;
       transition: color 0.2s;
 
       &:hover,
       &.active {
-        color: @van-doc-green;
+        color: var(--van-doc-link-color);
       }
 
       &.active {
         font-weight: 600;
-        background-color: #ebfff0;
-        border-radius: 999px;
       }
 
       span {

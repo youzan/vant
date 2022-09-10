@@ -3,6 +3,7 @@ import _TreeSelect from './TreeSelect';
 
 export const TreeSelect = withInstall(_TreeSelect);
 export default TreeSelect;
+export { treeSelectProps } from './TreeSelect';
 export type {
   TreeSelectItem,
   TreeSelectChild,

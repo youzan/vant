@@ -38,7 +38,7 @@ export type ImagePosition =
   | 'left'
   | string;
 
-const imageProps = {
+export const imageProps = {
   src: String,
   alt: String,
   fit: String as PropType<ImageFit>,

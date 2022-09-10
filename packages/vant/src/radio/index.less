@@ -1,15 +1,13 @@
-@import './var.less';
-
-:root {
-  --van-radio-size: @radio-size;
-  --van-radio-border-color: @radio-border-color;
-  --van-radio-transition-duration: @radio-transition-duration;
-  --van-radio-label-margin: @radio-label-margin;
-  --van-radio-label-color: @radio-label-color;
-  --van-radio-checked-icon-color: @radio-checked-icon-color;
-  --van-radio-disabled-icon-color: @radio-disabled-icon-color;
-  --van-radio-disabled-label-color: @radio-disabled-label-color;
-  --van-radio-disabled-background-color: @radio-disabled-background-color;
+body {
+  --van-radio-size: 20px;
+  --van-radio-border-color: var(--van-gray-5);
+  --van-radio-duration: var(--van-duration-fast);
+  --van-radio-label-margin: var(--van-padding-xs);
+  --van-radio-label-color: var(--van-text-color);
+  --van-radio-checked-icon-color: var(--van-primary-color);
+  --van-radio-disabled-icon-color: var(--van-gray-5);
+  --van-radio-disabled-label-color: var(--van-text-color-3);
+  --van-radio-disabled-background: var(--van-border-color);
 }
 
 .van-radio {
@@ -48,7 +46,7 @@
       line-height: 1.25;
       text-align: center;
       border: 1px solid var(--van-radio-border-color);
-      transition-duration: var(--van-radio-transition-duration);
+      transition-duration: var(--van-radio-duration);
       transition-property: color, border-color, background-color;
     }
 
@@ -70,7 +68,7 @@
       cursor: not-allowed;
 
       .van-icon {
-        background-color: var(--van-radio-disabled-background-color);
+        background-color: var(--van-radio-disabled-background);
         border-color: var(--van-radio-disabled-icon-color);
       }
     }

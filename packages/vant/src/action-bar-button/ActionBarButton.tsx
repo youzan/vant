@@ -17,7 +17,7 @@ import { Button, ButtonType } from '../button';
 
 const [name, bem] = createNamespace('action-bar-button');
 
-const actionBarButtonProps = extend({}, routeProps, {
+export const actionBarButtonProps = extend({}, routeProps, {
   type: String as PropType<ButtonType>,
   text: String,
   icon: String,

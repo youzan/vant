@@ -68,7 +68,7 @@ You can set the width and height separately.
 
 ```html
 <van-empty description="Description">
-  <van-button round type="danger" class="bottom-button">Button</van-button>
+  <van-button round type="primary" class="bottom-button">Button</van-button>
 </van-empty>
 
 <style>

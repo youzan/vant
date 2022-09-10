@@ -1,31 +1,29 @@
-@import './var.less';
-
-:root {
-  --van-uploader-size: @uploader-size;
-  --van-uploader-icon-size: @uploader-icon-size;
-  --van-uploader-icon-color: @uploader-icon-color;
-  --van-uploader-text-color: @uploader-text-color;
-  --van-uploader-text-font-size: @uploader-text-font-size;
-  --van-uploader-upload-background-color: @uploader-upload-background-color;
-  --van-uploader-upload-active-color: @uploader-upload-active-color;
-  --van-uploader-delete-color: @uploader-delete-color;
-  --van-uploader-delete-icon-size: @uploader-delete-icon-size;
-  --van-uploader-delete-background-color: @uploader-delete-background-color;
-  --van-uploader-file-background-color: @uploader-file-background-color;
-  --van-uploader-file-icon-size: @uploader-file-icon-size;
-  --van-uploader-file-icon-color: @uploader-file-icon-color;
-  --van-uploader-file-name-padding: @uploader-file-name-padding;
-  --van-uploader-file-name-margin-top: @uploader-file-name-margin-top;
-  --van-uploader-file-name-font-size: @uploader-file-name-font-size;
-  --van-uploader-file-name-text-color: @uploader-file-name-text-color;
-  --van-uploader-mask-text-color: @uploader-mask-text-color;
-  --van-uploader-mask-background-color: @uploader-mask-background-color;
-  --van-uploader-mask-icon-size: @uploader-mask-icon-size;
-  --van-uploader-mask-message-font-size: @uploader-mask-message-font-size;
-  --van-uploader-mask-message-line-height: @uploader-mask-message-line-height;
-  --van-uploader-loading-icon-size: @uploader-loading-icon-size;
-  --van-uploader-loading-icon-color: @uploader-loading-icon-color;
-  --van-uploader-disabled-opacity: @uploader-disabled-opacity;
+body {
+  --van-uploader-size: 80px;
+  --van-uploader-icon-size: 24px;
+  --van-uploader-icon-color: var(--van-gray-4);
+  --van-uploader-text-color: var(--van-text-color-2);
+  --van-uploader-text-font-size: var(--van-font-size-sm);
+  --van-uploader-upload-background: var(--van-gray-1);
+  --van-uploader-upload-active-color: var(--van-active-color);
+  --van-uploader-delete-color: var(--van-white);
+  --van-uploader-delete-icon-size: 14px;
+  --van-uploader-delete-background: rgba(0, 0, 0, 0.7);
+  --van-uploader-file-background: var(--van-background);
+  --van-uploader-file-icon-size: 20px;
+  --van-uploader-file-icon-color: var(--van-gray-7);
+  --van-uploader-file-name-padding: 0 var(--van-padding-base);
+  --van-uploader-file-name-margin-top: var(--van-padding-xs);
+  --van-uploader-file-name-font-size: var(--van-font-size-sm);
+  --van-uploader-file-name-text-color: var(--van-gray-7);
+  --van-uploader-mask-text-color: var(--van-white);
+  --van-uploader-mask-background: rgba(50, 50, 51, 0.88);
+  --van-uploader-mask-icon-size: 22px;
+  --van-uploader-mask-message-font-size: var(--van-font-size-sm);
+  --van-uploader-mask-message-line-height: var(--van-line-height-xs);
+  --van-uploader-loading-icon-size: 22px;
+  --van-uploader-loading-icon-color: var(--van-white);
+  --van-uploader-disabled-opacity: var(--van-disabled-opacity);
 }
 
 .van-uploader {
@@ -70,14 +68,14 @@
     width: var(--van-uploader-size);
     height: var(--van-uploader-size);
     margin: 0 var(--van-padding-xs) var(--van-padding-xs) 0;
-    background: var(--van-uploader-upload-background-color);
+    background: var(--van-uploader-upload-background);
 
     &:active {
       background-color: var(--van-uploader-upload-active-color);
     }
 
     &--readonly:active {
-      background-color: var(--van-uploader-upload-background-color);
+      background-color: var(--van-uploader-upload-background);
     }
 
     &-icon {
@@ -112,7 +110,7 @@
       &--shadow {
         width: var(--van-uploader-delete-icon-size);
         height: var(--van-uploader-delete-icon-size);
-        background: var(--van-uploader-delete-background-color);
+        background: var(--van-uploader-delete-background);
         border-radius: 0 0 0 12px;
       }
 
@@ -146,7 +144,7 @@
     align-items: center;
     justify-content: center;
     color: var(--van-uploader-mask-text-color);
-    background: var(--van-uploader-mask-background-color);
+    background: var(--van-uploader-mask-background);
 
     &-icon {
       font-size: var(--van-uploader-mask-icon-size);
@@ -173,7 +171,7 @@
     justify-content: center;
     width: var(--van-uploader-size);
     height: var(--van-uploader-size);
-    background: var(--van-uploader-file-background-color);
+    background: var(--van-uploader-file-background);
 
     &-icon {
       color: var(--van-uploader-file-icon-color);

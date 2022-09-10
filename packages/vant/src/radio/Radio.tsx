@@ -14,9 +14,11 @@ import Checker, {
   CheckerLabelPosition,
 } from '../checkbox/Checker';
 
+export const radioProps = checkerProps;
+
 export type RadioShape = CheckerShape;
 export type RadioLabelPosition = CheckerLabelPosition;
-export type RadioProps = ExtractPropTypes<typeof checkerProps>;
+export type RadioProps = ExtractPropTypes<typeof radioProps>;
 
 const [name, bem] = createNamespace('radio');
 

@@ -5,7 +5,7 @@ const [name, bem] = createNamespace('divider');
 
 export type DividerContentPosition = 'left' | 'center' | 'right';
 
-const dividerProps = {
+export const dividerProps = {
   dashed: Boolean,
   hairline: truthProp,
   contentPosition: makeStringProp<DividerContentPosition>('center'),

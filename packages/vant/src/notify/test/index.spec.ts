@@ -1,20 +1,23 @@
-import { createApp } from 'vue';
 import { later } from '../../../test';
-import { Notify } from '../function-call';
-import NotifyComponent from '../Notify';
+import {
+  showNotify,
+  closeNotify,
+  setNotifyDefaultOptions,
+  resetNotifyDefaultOptions,
+} from '../function-call';
 
 test('should not throw error if calling clear method before render notify', () => {
-  Notify.clear();
+  closeNotify();
 });
 
 test('should render Notify correctly', async () => {
-  Notify('test');
+  showNotify('test');
   await later();
   expect(document.querySelector('.van-notify')).toMatchSnapshot();
 });
 
 test('should add "van-notify--success" class when type is success', async () => {
-  Notify({
+  showNotify({
     message: 'test',
     type: 'success',
   });
@@ -24,28 +27,23 @@ test('should add "van-notify--success" class when type is success', async () => 
   expect(notify.classList.contains('van-notify--success')).toBeTruthy();
 });
 
-test('should register component to app', () => {
-  const app = createApp({});
-  app.use(Notify);
-  expect(app.component(NotifyComponent.name)).toBeTruthy();
-});
+test('should change default options after calling setDefaultOptions method', async () => {
+  setNotifyDefaultOptions({ message: 'foo' });
+  showNotify({});
+  await later();
+  const notify = document.querySelector('.van-notify') as HTMLElement;
+  expect(notify.innerHTML.includes('foo')).toBeTruthy();
 
-test('should change default duration after calling setDefaultOptions method', () => {
-  Notify.setDefaultOptions({ duration: 1000 });
-  expect(Notify.currentOptions.duration).toEqual(1000);
-  Notify.resetDefaultOptions();
-  expect(Notify.currentOptions.duration).toEqual(3000);
-});
-
-test('should reset to default duration after calling resetDefaultOptions method', () => {
-  Notify.setDefaultOptions({ duration: 1000 });
-  Notify.resetDefaultOptions();
-  expect(Notify.currentOptions.duration).toEqual(3000);
+  resetNotifyDefaultOptions();
+  showNotify({});
+  await later();
+  const notify2 = document.querySelector('.van-notify') as HTMLElement;
+  expect(notify2.innerHTML.includes('foo')).toBeFalsy();
 });
 
 test('should call onClose option when closing', async () => {
   const onClose = jest.fn();
-  Notify({
+  showNotify({
     message: 'test',
     onClose,
     duration: 1,
@@ -57,7 +55,7 @@ test('should call onClose option when closing', async () => {
 
 test('should call onClick option when clicked', async () => {
   const onClick = jest.fn();
-  Notify({
+  showNotify({
     message: 'test',
     onClick,
   });
@@ -69,7 +67,7 @@ test('should call onClick option when clicked', async () => {
 });
 
 test('should align to bottom when position option is bottom', async () => {
-  Notify({
+  showNotify({
     message: 'test',
     position: 'bottom',
   });

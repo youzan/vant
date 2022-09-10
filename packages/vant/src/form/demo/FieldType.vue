@@ -17,7 +17,7 @@ import VanCheckboxGroup from '../../checkbox-group';
 import FieldTypeArea from './FieldTypeArea.vue';
 import FieldTypePicker from './FieldTypePicker.vue';
 import FieldTypeCalendar from './FieldTypeCalendar.vue';
-import FieldTypeDatetimePicker from './FieldTypeDatetimePicker.vue';
+import FieldTypeDatePicker from './FieldTypeDatePicker.vue';
 
 const t = useTranslate({
   'zh-CN': {
@@ -70,7 +70,7 @@ const onSubmit = (values: Record<string, string>) => {
       <van-cell-group inset>
         <van-field name="switch" :label="t('switch')">
           <template #input>
-            <van-switch v-model="switchChecked" size="20" />
+            <van-switch v-model="switchChecked" />
           </template>
         </van-field>
 
@@ -127,7 +127,7 @@ const onSubmit = (values: Record<string, string>) => {
         </van-field>
 
         <field-type-picker />
-        <field-type-datetime-picker />
+        <field-type-date-picker />
         <field-type-area />
         <field-type-calendar />
       </van-cell-group>

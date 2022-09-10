@@ -135,16 +135,16 @@ The component provides the following CSS variables, which can be used to customi
 | --van-tag-padding | _0 var(--van-padding-base)_ | - |
 | --van-tag-text-color | _var(--van-white)_ | - |
 | --van-tag-font-size | _var(--van-font-size-sm)_ | - |
-| --van-tag-border-radius | _2px_ | - |
+| --van-tag-radius | _2px_ | - |
 | --van-tag-line-height | _16px_ | - |
 | --van-tag-medium-padding | _2px 6px_ | - |
 | --van-tag-large-padding | _var(--van-padding-base) var(--van-padding-xs)_ | - |
-| --van-tag-large-border-radius | _var(--van-border-radius-md)_ | - |
+| --van-tag-large-radius | _var(--van-radius-md)_ | - |
 | --van-tag-large-font-size | _var(--van-font-size-md)_ | - |
-| --van-tag-round-border-radius | _var(--van-border-radius-max)_ | - |
+| --van-tag-round-radius | _var(--van-radius-max)_ | - |
 | --van-tag-danger-color | _var(--van-danger-color)_ | - |
 | --van-tag-primary-color | _var(--van-primary-color)_ | - |
 | --van-tag-success-color | _var(--van-success-color)_ | - |
 | --van-tag-warning-color | _var(--van-warning-color)_ | - |
 | --van-tag-default-color | _var(--van-gray-6)_ | - |
-| --van-tag-plain-background-color | _var(--van-background-color-light)_ | - |
+| --van-tag-plain-background | _var(--van-background-2)_ | - |

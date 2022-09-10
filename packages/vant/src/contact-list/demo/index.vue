@@ -2,7 +2,7 @@
 import VanContactList from '..';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -48,13 +48,13 @@ const t = useTranslate({
 const chosenContactId = ref('1');
 
 const onAdd = () => {
-  Toast(t('add'));
+  showToast(t('add'));
 };
 const onEdit = (contact: { id: string }) => {
-  Toast(t('edit') + contact.id);
+  showToast(t('edit') + contact.id);
 };
 const onSelect = (contact: { id: string }) => {
-  Toast(t('select') + contact.id);
+  showToast(t('select') + contact.id);
 };
 </script>
 
@@ -75,7 +75,7 @@ const onSelect = (contact: { id: string }) => {
 .demo-contact-card {
   .van-popup {
     height: 100%;
-    background-color: var(--van-background-color);
+    background-color: var(--van-background);
   }
 }
 </style>

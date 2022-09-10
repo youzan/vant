@@ -43,7 +43,7 @@ import { SwipeState, SwipeExpose, SwipeProvide, SwipeToOptions } from './types';
 
 const [name, bem] = createNamespace('swipe');
 
-const swipeProps = {
+export const swipeProps = {
   loop: truthProp,
   width: numericProp,
   height: numericProp,

@@ -23,7 +23,7 @@ import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('nav-bar');
 
-const navBarProps = {
+export const navBarProps = {
   title: String,
   fixed: Boolean,
   zIndex: numericProp,
@@ -42,14 +42,14 @@ export default defineComponent({
 
   props: navBarProps,
 
-  emits: ['click-left', 'click-right'],
+  emits: ['clickLeft', 'clickRight'],
 
   setup(props, { emit, slots }) {
     const navBarRef = ref<HTMLElement>();
     const renderPlaceholder = usePlaceholder(navBarRef, bem);
 
-    const onClickLeft = (event: MouseEvent) => emit('click-left', event);
-    const onClickRight = (event: MouseEvent) => emit('click-right', event);
+    const onClickLeft = (event: MouseEvent) => emit('clickLeft', event);
+    const onClickRight = (event: MouseEvent) => emit('clickRight', event);
 
     const renderLeft = () => {
       if (slots.left) {

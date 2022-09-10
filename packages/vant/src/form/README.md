@@ -109,7 +109,7 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { closeToast, showLoadingToast } from 'vant';
 
 export default {
   setup() {
@@ -125,10 +125,10 @@ export default {
 
     const asyncValidator = (val) =>
       new Promise((resolve) => {
-        Toast.loading('Validating...');
+        showLoadingToast('Validating...');
 
         setTimeout(() => {
-          Toast.clear();
+          closeToast();
           resolve(val === '1234');
         }, 1000);
       });
@@ -157,7 +157,7 @@ export default {
 ```html
 <van-field name="switch" label="Switch">
   <template #input>
-    <van-switch v-model="checked" size="20" />
+    <van-switch v-model="checked" />
   </template>
 </van-field>
 ```
@@ -344,10 +344,16 @@ export default {
   setup() {
     const result = ref('');
     const showPicker = ref(false);
-    const columns = ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'];
+    const columns = [
+      { text: 'Delaware', value: 'Delaware' },
+      { text: 'Florida', value: 'Florida' },
+      { text: 'Georqia', value: 'Georqia' },
+      { text: 'Indiana', value: 'Indiana' },
+      { text: 'Maine', value: 'Maine' },
+    ];
 
     const onConfirm = (value) => {
-      result.value = value;
+      result.value = selectedOptions[0]?.text;
       showPicker.value = false;
     };
 
@@ -361,24 +367,20 @@ export default {
 };
 ```
 
-### Field Type - DatetimePicker
+### Field Type - DatePicker
 
 ```html
 <van-field
   v-model="result"
   is-link
   readonly
-  name="datetimePicker"
-  label="Datetime Picker"
-  placeholder="Select time"
+  name="datePicker"
+  label="Date Picker"
+  placeholder="Select date"
   @click="showPicker = true"
 />
 <van-popup v-model:show="showPicker" position="bottom">
-  <van-datetime-picker
-    type="time"
-    @confirm="onConfirm"
-    @cancel="showPicker = false"
-  />
+  <van-date-picker @confirm="onConfirm" @cancel="showPicker = false" />
 </van-popup>
 ```
 
@@ -389,9 +391,8 @@ export default {
   setup() {
     const result = ref('');
     const showPicker = ref(false);
-
-    const onConfirm = (value) => {
-      result.value = value;
+    const onConfirm = ({ selectedValues }) => {
+      result.value = selectedValues.join('/');
       showPicker.value = false;
     };
 
@@ -433,12 +434,9 @@ export default {
   setup() {
     const result = ref('');
     const showArea = ref(false);
-    const onConfirm = (areaValues) => {
+    const onConfirm = ({ selectedOptions }) => {
       showArea.value = false;
-      result.value = areaValues
-        .filter((item) => !!item)
-        .map((item) => item.name)
-        .join('/');
+      areaCode.value = selectedOptions.map((item) => item.text).join('/');
     };
 
     return {

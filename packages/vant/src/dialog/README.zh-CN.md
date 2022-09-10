@@ -2,61 +2,30 @@
 
 ### 介绍
 
-弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作，支持函数调用和组件调用两种方式。
+弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。支持组件调用和函数调用两种方式。
 
-### 函数调用
+### 引入
 
-`Dialog` 是一个函数，调用后会直接在页面中弹出相应的模态框。
-
-```js
-import { Dialog } from 'vant';
-
-Dialog({ message: '提示' });
-```
-
-#### 手动引入样式
-
-Dialog 组件是以函数形式提供的，如果项目中使用 `unplugin-vue-components` 插件来自动引入组件样式，则无法正确识别 Dialog 组件，因此需要手动引入 Dialog 组件的样式：
-
-```js
-import 'vant/es/dialog/style';
-```
-
-你可以在项目的入口文件或公共模块中引入 Dialog 组件的样式，这样在业务代码中使用 Dialog 时，便不再需要重复引入样式了。
-
-### 组件调用
-
-通过组件调用 Dialog 时，可以通过下面的方式进行注册：
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
 
 ```js
 import { createApp } from 'vue';
 import { Dialog } from 'vant';
 
-// 全局注册
 const app = createApp();
 app.use(Dialog);
-
-// 局部注册
-export default {
-  components: {
-    [Dialog.Component.name]: Dialog.Component,
-  },
-};
 ```
 
-在 `script setup` 中，可以通过以下方式使用：
+### 函数调用
 
-```html
-<script setup>
-  const VanDialog = Dialog.Component;
-</script>
+为了便于使用 `Dialog`，Vant 提供了一系列辅助函数，通过辅助函数可以快速唤起全局的弹窗组件。
 
-<template>
-  <!-- 中划线命名 -->
-  <van-dialog />
-  <!-- 也支持大驼峰命名 -->
-  <VanDialog>
-</template>
+比如使用 `showDialog` 函数，调用后会直接在页面中渲染对应的弹出框。
+
+```js
+import { showDialog } from 'vant';
+
+showDialog({ message: '提示' });
 ```
 
 ## 代码演示
@@ -66,14 +35,16 @@ export default {
 用于提示一些消息，只包含一个确认按钮。
 
 ```js
-Dialog.alert({
+import { showDialog } from 'vant';
+
+showDialog({
   title: '标题',
   message: '代码是写出来给人看的，附带能在机器上运行。',
 }).then(() => {
   // on close
 });
 
-Dialog.alert({
+showDialog({
   message: '生命远不止连轴转和忙到极限，人类的体验远比这辽阔、丰富得多。',
 }).then(() => {
   // on close
@@ -85,7 +56,9 @@ Dialog.alert({
 用于确认消息，包含取消和确认按钮。
 
 ```js
-Dialog.confirm({
+import { showConfirmDialog } from 'vant';
+
+showConfirmDialog({
   title: '标题',
   message:
     '如果解决方法是丑陋的，那就肯定还有更好的解决方法，只是还没有发现而已。',
@@ -103,7 +76,9 @@ Dialog.confirm({
 将 theme 选项设置为 `round-button` 可以展示圆角按钮风格的弹窗。
 
 ```js
-Dialog.alert({
+import { showDialog } from 'vant';
+
+showDialog({
   title: '标题',
   message: '代码是写出来给人看的，附带能在机器上运行。',
   theme: 'round-button',
@@ -111,7 +86,7 @@ Dialog.alert({
   // on close
 });
 
-Dialog.alert({
+showDialog({
   message: '生命远不止连轴转和忙到极限，人类的体验远比这辽阔、丰富得多。',
   theme: 'round-button',
 }).then(() => {
@@ -124,6 +99,8 @@ Dialog.alert({
 通过 `beforeClose` 属性可以传入一个回调函数，在弹窗关闭前进行特定操作。
 
 ```js
+import { showConfirmDialog } from 'vant';
+
 const beforeClose = (action) =>
   new Promise((resolve) => {
     setTimeout(() => {
@@ -136,7 +113,7 @@ const beforeClose = (action) =>
     }, 1000);
   });
 
-Dialog.confirm({
+showConfirmDialog({
   title: '标题',
   message:
     '如果解决方法是丑陋的，那就肯定还有更好的解决方法，只是还没有发现而已。',
@@ -144,25 +121,9 @@ Dialog.confirm({
 });
 ```
 
-### 全局方法
+### 使用 Dialog 组件
 
-通过 `app.use` 全局注册 Dialog 组件后，会自动在 app 的所有子组件上挂载 `$dialog` 方法，在所有组件内部都可以直接调用此方法。
-
-```js
-export default {
-  mounted() {
-    this.$dialog.alert({
-      message: '弹窗内容',
-    });
-  },
-};
-```
-
-> Tips: 由于 setup 选项中无法访问 this，因此不能使用上述方式，请通过 import 引入。
-
-### 组件调用
-
-如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式。
+如果需要在 Dialog 内嵌入组件或其他自定义内容，可以直接使用 Dialog 组件，并使用默认插槽进行定制。使用前需要通过 `app.use` 等方式注册组件。
 
 ```html
 <van-dialog v-model:show="show" title="标题" show-cancel-button>
@@ -185,18 +146,19 @@ export default {
 
 ### 方法
 
+Vant 中导出了以下 Dialog 相关的辅助函数：
+
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| Dialog | 展示弹窗 | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.alert | 展示消息提示弹窗 | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.confirm | 展示消息确认弹窗 | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.setDefaultOptions | 修改默认配置，对所有 Dialog 生效 | _options: DialogOptions_ | `void` |
-| Dialog.resetDefaultOptions | 重置默认配置，对所有 Dialog 生效 | - | `void` |
-| Dialog.close | 关闭弹窗 | - | `void` |
+| showDialog | 展示弹窗 | _options: DialogOptions_ | `Promise<void>` |
+| showConfirmDialog | 展示消息确认弹窗 | _options: DialogOptions_ | `Promise<void>` |
+| closeDialog | 关闭弹窗 | - | `void` |
+| setDialogDefaultOptions | 修改默认配置，影响所有的 `showDialog` 调用 | _options: DialogOptions_ | `void` |
+| resetDialogDefaultOptions | 重置默认配置，影响所有的 `showDialog` 调用 | - | `void` |
 
 ### DialogOptions
 
-通过函数调用 `Dialog` 时，支持传入以下选项：
+调用 `showDialog` 等方法时，支持传入以下选项：
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -305,10 +267,10 @@ import type {
 | --van-dialog-width | _320px_ | - |
 | --van-dialog-small-screen-width | _90%_ | - |
 | --van-dialog-font-size | _var(--van-font-size-lg)_ | - |
-| --van-dialog-transition | _var(--van-animation-duration-base)_ | - |
-| --van-dialog-border-radius | _16px_ | - |
-| --van-dialog-background-color | _var(--van-background-color-light)_ | - |
-| --van-dialog-header-font-weight | _var(--van-font-weight-bold)_ | - |
+| --van-dialog-transition | _var(--van-duration-base)_ | - |
+| --van-dialog-radius | _16px_ | - |
+| --van-dialog-background | _var(--van-background-2)_ | - |
+| --van-dialog-header-font-weight | _var(--van-font-bold)_ | - |
 | --van-dialog-header-line-height | _24px_ | - |
 | --van-dialog-header-padding-top | _26px_ | - |
 | --van-dialog-header-isolated-padding | _var(--van-padding-lg) 0_ | - |
@@ -320,9 +282,22 @@ import type {
 | --van-dialog-has-title-message-padding-top | _var(--van-padding-xs)_ | - |
 | --van-dialog-button-height | _48px_ | - |
 | --van-dialog-round-button-height | _36px_ | - |
-| --van-dialog-confirm-button-text-color | _var(--van-danger-color)_ | - |
+| --van-dialog-confirm-button-text-color | _var(--van-primary-color)_ | - |
 
 ## 常见问题
+
+### 引用 showDialog 时出现编译报错？
+
+如果引用 `showDialog` 方法时出现以下报错，说明项目中使用了 `babel-plugin-import` 插件，导致代码被错误编译。
+
+```bash
+These dependencies were not found:
+
+* vant/es/show-dialog in ./src/xxx.js
+* vant/es/show-dialog/style in ./src/xxx.js
+```
+
+Vant 从 4.0 版本开始不再支持 `babel-plugin-import` 插件，请参考 [迁移指南](#/zh-CN/migrate-from-v3#yi-chu-babel-plugin-import) 移除该插件。
 
 ### 在 beforeRouteLeave 里调用 Dialog 无法展示？
 
@@ -336,17 +311,4 @@ Dialog.alert({
 }).then(() => {
   // on close
 });
-```
-
-### 在 JSX 中渲染 Dialog 组件无法展示？
-
-请注意 `Dialog` 是一个函数，`Dialog.Component` 才是 Dialog 对应的组件。JSX 调用弹窗的正确姿势如下：
-
-```jsx
-export default {
-  setup() {
-    const show = ref(false);
-    return () => <Dialog.Component v-model={[show, 'show']} />;
-  },
-};
 ```

@@ -1,11 +1,17 @@
-import { createApp } from 'vue';
 import { later } from '../../../test';
-import { Toast } from '../function-call';
-import ToastComponent from '../Toast';
+import {
+  showToast,
+  closeToast,
+  showLoadingToast,
+  allowMultipleToast,
+  showSuccessToast,
+  resetToastDefaultOptions,
+  setToastDefaultOptions,
+} from '../function-call';
 
 test('toast disappeared after duration', async () => {
   const onClose = jest.fn();
-  Toast({
+  showToast({
     duration: 10,
     onClose,
   });
@@ -16,7 +22,7 @@ test('toast disappeared after duration', async () => {
 });
 
 test('show loading toast', async () => {
-  Toast.loading({ className: 'loading-toast' });
+  showLoadingToast({ className: 'loading-toast' });
 
   await later();
   expect(
@@ -25,7 +31,7 @@ test('show loading toast', async () => {
 });
 
 test('show html toast', async () => {
-  Toast({
+  showToast({
     type: 'html',
     className: 'html-toast',
     message: '<div>Message</div>',
@@ -39,14 +45,14 @@ test('show html toast', async () => {
 });
 
 test('icon prop', async () => {
-  Toast({ icon: 'star-o' });
+  showToast({ icon: 'star-o' });
 
   await later();
   expect(document.querySelector('.van-icon-star-o')).toBeTruthy();
 });
 
 test('icon-prefix prop', async () => {
-  Toast({
+  showToast({
     icon: 'star-o',
     iconPrefix: 'my-icon',
   });
@@ -60,117 +66,111 @@ test('clear toast', async () => {
   const onClose2 = jest.fn();
   const onClose3 = jest.fn();
 
-  Toast({ onClose: onClose1 });
+  showToast({ onClose: onClose1 });
 
   await later();
   expect(onClose1).toBeCalledTimes(0);
-  await Toast.clear();
+  await closeToast();
   expect(onClose1).toBeCalledTimes(1);
 
-  Toast.allowMultiple();
+  allowMultipleToast();
 
-  Toast({ onClose: onClose2 });
+  showToast({ onClose: onClose2 });
   await later();
 
-  Toast({ onClose: onClose3 });
+  showToast({ onClose: onClose3 });
   await later();
 
-  await Toast.clear(true);
+  await closeToast(true);
 
   expect(onClose2).toBeCalledTimes(1);
   expect(onClose3).toBeCalledTimes(1);
-  Toast.allowMultiple(false);
+  allowMultipleToast(false);
 });
 
 test('clear multiple toast', async () => {
-  Toast.allowMultiple();
-  Toast.clear(true);
+  allowMultipleToast();
+  closeToast(true);
 
   const onClose1 = jest.fn();
   const onClose2 = jest.fn();
 
-  Toast.success({ onClose: onClose1 });
+  showSuccessToast({ onClose: onClose1 });
   await later();
-  Toast.success({ onClose: onClose2 });
+  showSuccessToast({ onClose: onClose2 });
   await later();
-  await Toast.clear();
+  await closeToast();
   expect(onClose1).toHaveBeenCalledTimes(1);
   expect(onClose2).toHaveBeenCalledTimes(0);
-  await Toast.clear();
+  await closeToast();
   expect(onClose2).toHaveBeenCalledTimes(1);
-  Toast.allowMultiple(false);
+  allowMultipleToast(false);
 });
 
 test('remove toast DOM when cleared in multiple mode', async () => {
-  Toast.allowMultiple();
-  Toast.clear(true);
-  const toast = Toast({ className: 'remove-toast' });
+  allowMultipleToast();
+  closeToast(true);
+  const toast = showToast({ className: 'remove-toast' });
   await later();
 
-  await toast.clear();
+  await toast.close();
   await later(100);
   expect(document.querySelector('.remove-toast')).toBeNull();
-  Toast.allowMultiple(false);
+  allowMultipleToast(false);
 });
 
 test('set default options', async () => {
   const className = 'my-toast';
-  Toast.setDefaultOptions({ className });
-  Toast();
+  setToastDefaultOptions({ className });
+  showToast();
   await later();
   expect(document.querySelector('.my-toast')).toBeTruthy();
 
-  Toast.resetDefaultOptions();
-  Toast();
+  resetToastDefaultOptions();
+  showToast();
   await later();
   expect(document.querySelector('.my-toast')).toBeFalsy();
 });
 
 test('set default options by type', async () => {
   const className = 'my-toast';
-  Toast.setDefaultOptions('loading', { className });
+  setToastDefaultOptions('loading', { className });
 
-  Toast.loading('');
+  showLoadingToast('');
   await later();
   expect(document.querySelector('.my-toast')).toBeTruthy();
 
-  Toast.success('');
+  showSuccessToast('');
   await later();
   expect(document.querySelector('.my-toast')).toBeFalsy();
 
-  Toast.resetDefaultOptions();
-  Toast.loading('');
+  resetToastDefaultOptions();
+  showLoadingToast('');
   await later();
   expect(document.querySelector('.my-toast')).toBeFalsy();
 });
 
 test('toast duration 0', async () => {
-  Toast.allowMultiple();
+  allowMultipleToast();
   const onClose = jest.fn();
-  Toast({ duration: 0, onClose });
+  showToast({ duration: 0, onClose });
 
   await later(2100);
   expect(onClose).toHaveBeenCalledTimes(0);
-  Toast.allowMultiple(false);
+  allowMultipleToast(false);
 });
 
 test('should trigger onClose callback after closed', async () => {
-  Toast.allowMultiple();
+  allowMultipleToast();
   const onClose = jest.fn();
-  const toast = Toast({ onClose });
+  const toast = showToast({ onClose });
 
   await later();
-  await toast.clear();
+  await toast.close();
   expect(onClose).toHaveBeenCalledTimes(1);
 
   // onClose should only be called once
-  await toast.clear();
+  await toast.close();
   expect(onClose).toHaveBeenCalledTimes(1);
-  Toast.allowMultiple(false);
-});
-
-test('should register component to app', () => {
-  const app = createApp(document.body);
-  app.use(Toast);
-  expect(app.component(ToastComponent.name)).toBeTruthy();
+  allowMultipleToast(false);
 });

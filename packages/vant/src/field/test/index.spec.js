@@ -10,13 +10,13 @@ test('should emit "update:modelValue" event when after inputting', () => {
   expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('1');
 });
 
-test('should emit click-input event when input is clicked', () => {
+test('should emit clickInput event when input is clicked', () => {
   const wrapper = mount(Field);
   wrapper.find('input').trigger('click');
-  expect(wrapper.emitted('click-input')[0][0]).toBeTruthy();
+  expect(wrapper.emitted('clickInput')[0][0]).toBeTruthy();
 });
 
-test('should emit click-input event when using input slot', () => {
+test('should emit clickInput event when using input slot', () => {
   const wrapper = mount(Field, {
     slots: {
       input: () => 'Custom Input',
@@ -24,10 +24,10 @@ test('should emit click-input event when using input slot', () => {
   });
 
   wrapper.find('.van-field__control').trigger('click');
-  expect(wrapper.emitted('click-input')[0][0]).toBeTruthy();
+  expect(wrapper.emitted('clickInput')[0][0]).toBeTruthy();
 });
 
-test('should emit click-left-icon event when left icon is clicked', () => {
+test('should emit clickLeftIcon event when left icon is clicked', () => {
   const wrapper = mount(Field, {
     props: {
       leftIcon: 'contact',
@@ -35,10 +35,10 @@ test('should emit click-left-icon event when left icon is clicked', () => {
   });
 
   wrapper.find('.van-field__left-icon').trigger('click');
-  expect(wrapper.emitted('click-left-icon')[0][0]).toBeTruthy();
+  expect(wrapper.emitted('clickLeftIcon')[0][0]).toBeTruthy();
 });
 
-test('should emit click-right-icon event when right icon is clicked', () => {
+test('should emit clickRightIcon event when right icon is clicked', () => {
   const wrapper = mount(Field, {
     props: {
       rightIcon: 'search',
@@ -46,7 +46,7 @@ test('should emit click-right-icon event when right icon is clicked', () => {
   });
 
   wrapper.find('.van-field__right-icon').trigger('click');
-  expect(wrapper.emitted('click-right-icon')[0][0]).toBeTruthy();
+  expect(wrapper.emitted('clickRightIcon')[0][0]).toBeTruthy();
 });
 
 test('should format input value when type is number', () => {

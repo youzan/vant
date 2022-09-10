@@ -2,7 +2,7 @@
 import VanSwipe from '..';
 import VanSwipeItem from '../../swipe-item';
 import { cdnURL, useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -30,7 +30,7 @@ const images = [
   cdnURL('apple-4.jpeg'),
 ];
 
-const onChange = (index: number) => Toast(t('message') + index);
+const onChange = (index: number) => showToast(t('message') + index);
 </script>
 
 <template>

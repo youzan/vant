@@ -55,13 +55,13 @@ Search 组件提供了 `search` 和 `cancel` 事件，`search` 事件在点击�
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref('');
-    const onSearch = (val) => Toast(val);
-    const onCancel = () => Toast('取消');
+    const onSearch = (val) => showToast(val);
+    const onCancel = () => showToast('取消');
     return {
       value,
       onSearch,
@@ -126,13 +126,13 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref('');
-    const onSearch = (val) => Toast(val);
-    const onClickButton = () => Toast(value.value);
+    const onSearch = (val) => showToast(val);
+    const onClickButton = () => showToast(value.value);
     return {
       value,
       onSearch,
@@ -231,19 +231,19 @@ searchRef.value?.focus();
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-search-padding | _10px var(--van-padding-sm)_ | - |
-| --van-search-background-color | _var(--van-background-color-light)_ | - |
-| --van-search-content-background-color | _var(--van-gray-1)_ | - |
-| --van-search-input-height | _34px_ | - |
-| --van-search-label-padding | _0 5px_ | - |
-| --van-search-label-color | _var(--van-text-color)_ | - |
-| --van-search-label-font-size | _var(--van-font-size-md)_ | - |
-| --van-search-left-icon-color | _var(--van-gray-6)_ | - |
-| --van-search-action-padding | _0 var(--van-padding-xs)_ | - |
-| --van-search-action-text-color | _var(--van-text-color)_ | - |
-| --van-search-action-font-size | _var(--van-font-size-md)_ | - |
+| 名称                            | 默认值                       | 描述 |
+| ------------------------------- | ---------------------------- | ---- |
+| --van-search-padding            | _10px var(--van-padding-sm)_ | -    |
+| --van-search-background         | _var(--van-background-2)_    | -    |
+| --van-search-content-background | _var(--van-gray-1)_          | -    |
+| --van-search-input-height       | _34px_                       | -    |
+| --van-search-label-padding      | _0 5px_                      | -    |
+| --van-search-label-color        | _var(--van-text-color)_      | -    |
+| --van-search-label-font-size    | _var(--van-font-size-md)_    | -    |
+| --van-search-left-icon-color    | _var(--van-gray-6)_          | -    |
+| --van-search-action-padding     | _0 var(--van-padding-xs)_    | -    |
+| --van-search-action-text-color  | _var(--van-text-color)_      | -    |
+| --van-search-action-font-size   | _var(--van-font-size-md)_    | -    |
 
 ## 常见问题
 

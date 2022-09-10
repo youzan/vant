@@ -107,7 +107,7 @@ app.use(CellGroup);
   <!-- 使用 title 插槽来自定义标题 -->
   <template #title>
     <span class="custom-title">单元格</span>
-    <van-tag type="danger">标签</van-tag>
+    <van-tag type="primary">标签</van-tag>
   </template>
 </van-cell>
 
@@ -223,7 +223,7 @@ import type {
 | --van-cell-vertical-padding | _10px_ | - |
 | --van-cell-horizontal-padding | _var(--van-padding-md)_ | - |
 | --van-cell-text-color | _var(--van-text-color)_ | - |
-| --van-cell-background-color | _var(--van-background-color-light)_ | - |
+| --van-cell-background | _var(--van-background-2)_ | - |
 | --van-cell-border-color | _var(--van-border-color)_ | - |
 | --van-cell-active-color | _var(--van-active-color)_ | - |
 | --van-cell-required-color | _var(--van-danger-color)_ | - |
@@ -237,11 +237,11 @@ import type {
 | --van-cell-large-vertical-padding | _var(--van-padding-sm)_ | - |
 | --van-cell-large-title-font-size | _var(--van-font-size-lg)_ | - |
 | --van-cell-large-label-font-size | _var(--van-font-size-md)_ | - |
-| --van-cell-group-background-color | _var(--van-background-color-light)_ | - |
+| --van-cell-group-background | _var(--van-background-2)_ | - |
 | --van-cell-group-title-color | _var(--van-text-color-2)_ | - |
 | --van-cell-group-title-padding | _var(--van-padding-md) var(--van-padding-md) var(--van-padding-xs)_ | - |
 | --van-cell-group-title-font-size | _var(--van-font-size-md)_ | - |
 | --van-cell-group-title-line-height | _16px_ | - |
 | --van-cell-group-inset-padding | _0 var(--van-padding-md)_ | - |
-| --van-cell-group-inset-border-radius | _var(--van-border-radius-lg)_ | - |
+| --van-cell-group-inset-radius | _var(--van-radius-lg)_ | - |
 | --van-cell-group-inset-title-padding | _var(--van-padding-md) var(--van-padding-md) var(--van-padding-xs) var(--van-padding-xl)_ | - |

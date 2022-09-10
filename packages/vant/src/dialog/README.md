@@ -2,7 +2,7 @@
 
 ### Intro
 
-A modal box pops up on the page, which is often used for message prompts, message confirmation, or to complete specific interactive operations in the current page. It supports two methods: function call and component call.
+A modal box pops up on the page, which is often used for message prompts, message confirmation, or to complete specific interactive operations in the current page. It supports two methods: component call and function call.
 
 ### Install
 
@@ -16,6 +16,18 @@ const app = createApp();
 app.use(Dialog);
 ```
 
+### Function Call
+
+Vant provides some utility functions that can quickly evoke global `Dialog` components.
+
+For example, calling the `showDialog` function will render a Dialog directly in the page.
+
+```js
+import { showDialog } from 'vant';
+
+showDialog({ message: 'Content' });
+```
+
 ## Usage
 
 ### Alert dialog
@@ -23,14 +35,14 @@ app.use(Dialog);
 Used to prompt for some messages, only including one confirm button.
 
 ```js
-Dialog.alert({
+showDialog({
   title: 'Title',
   message: 'Content',
 }).then(() => {
   // on close
 });
 
-Dialog.alert({
+showDialog({
   message: 'Content',
 }).then(() => {
   // on close
@@ -42,7 +54,7 @@ Dialog.alert({
 Used to confirm some messages, including a confirm button and a cancel button.
 
 ```js
-Dialog.confirm({
+showConfirmDialog({
   title: 'Title',
   message: 'Content',
 })
@@ -59,7 +71,7 @@ Dialog.confirm({
 Use round button style.
 
 ```js
-Dialog.alert({
+showDialog({
   title: 'Title',
   message: 'Content',
   theme: 'round-button',
@@ -67,7 +79,7 @@ Dialog.alert({
   // on close
 });
 
-Dialog.alert({
+showDialog({
   message: 'Content',
   theme: 'round-button',
 }).then(() => {
@@ -85,30 +97,16 @@ const beforeClose = (action) =>
     }, 1000);
   });
 
-Dialog.confirm({
+showConfirmDialog({
   title: 'Title',
   message: 'Content',
   beforeClose,
 });
 ```
 
-### Global Method
+### Use Dialog Component
 
-After registering the Dialog component through `app.use`, the `$dialog` method will be automatically mounted on all subComponents of the app.
-
-```js
-export default {
-  mounted() {
-    this.$dialog.alert({
-      message: 'Content',
-    });
-  },
-};
-```
-
-### Advanced Usage
-
-If you need to render vue components within a dialog, you can use dialog component.
+If you need to render Vue components within a Dialog, you can use the Dialog component.
 
 ```html
 <van-dialog v-model:show="show" title="Title" show-cancel-button>
@@ -131,14 +129,15 @@ export default {
 
 ### Methods
 
+Vant exports following Dialog utility functions:
+
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| Dialog | Show dialog | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.alert | Show alert dialog | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.confirm | Show confirm dialog | _options: DialogOptions_ | `Promise<void>` |
-| Dialog.setDefaultOptions | Set default options of all dialogs | _options: DialogOptions_ | `void` |
-| Dialog.resetDefaultOptions | Reset default options of all dialogs | - | `void` |
-| Dialog.close | Close dialog | - | `void` |
+| showDialog | Show dialog | _options: DialogOptions_ | `Promise<void>` |
+| showConfirmDialog | Show confirm dialog | _options: DialogOptions_ | `Promise<void>` |
+| closeDialog | Close dialog | - | `void` |
+| setDialogDefaultOptions | Set default options of all dialogs | _options: DialogOptions_ | `void` |
+| resetDialogDefaultOptions | Reset default options of all dialogs | - | `void` |
 
 ### DialogOptions
 
@@ -243,10 +242,10 @@ The component provides the following CSS variables, which can be used to customi
 | --van-dialog-width | _320px_ | - |
 | --van-dialog-small-screen-width | _90%_ | - |
 | --van-dialog-font-size | _var(--van-font-size-lg)_ | - |
-| --van-dialog-transition | _var(--van-animation-duration-base)_ | - |
-| --van-dialog-border-radius | _16px_ | - |
-| --van-dialog-background-color | _var(--van-background-color-light)_ | - |
-| --van-dialog-header-font-weight | _var(--van-font-weight-bold)_ | - |
+| --van-dialog-transition | _var(--van-duration-base)_ | - |
+| --van-dialog-radius | _16px_ | - |
+| --van-dialog-background | _var(--van-background-2)_ | - |
+| --van-dialog-header-font-weight | _var(--van-font-bold)_ | - |
 | --van-dialog-header-line-height | _24px_ | - |
 | --van-dialog-header-padding-top | _26px_ | - |
 | --van-dialog-header-isolated-padding | _var(--van-padding-lg) 0_ | - |
@@ -258,4 +257,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-dialog-has-title-message-padding-top | _var(--van-padding-xs)_ | - |
 | --van-dialog-button-height | _48px_ | - |
 | --van-dialog-round-button-height | _36px_ | - |
-| --van-dialog-confirm-button-text-color | _var(--van-danger-color)_ | - |
+| --van-dialog-confirm-button-text-color | _var(--van-primary-color)_ | - |

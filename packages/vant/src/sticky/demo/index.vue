@@ -40,7 +40,7 @@ const container = ref<Element>();
   <demo-block :title="t('setContainer')">
     <div
       ref="container"
-      style="height: 150px; background-color: var(--van-background-color-light)"
+      style="height: 150px; background-color: var(--van-background-2)"
     >
       <van-sticky :container="container">
         <van-button type="warning" style="margin-left: 215px">

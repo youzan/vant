@@ -50,10 +50,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Área',
-    postal: 'CEP',
     areaEmpty: 'Por favor, selecione uma área de recebimento',
     addressEmpty: 'Endereço não pode ser vazio',
-    postalEmpty: 'CEP inválido',
     addressDetail: 'Endereço',
     defaultAddress: 'Usar como endereço padrão',
   },

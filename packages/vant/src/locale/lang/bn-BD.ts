@@ -59,10 +59,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'এরিয়া',
-    postal: 'ডাক',
     areaEmpty: 'অনুগ্রহ করে একটি রিসিভিং এলাকা নির্বাচন করুন',
     addressEmpty: 'ঠিকানা খালি হতে পারে না',
-    postalEmpty: 'ভুল পোস্টাল কোড',
     addressDetail: 'ঠিকানা',
     defaultAddress: 'ডিফল্ট ঠিকানা হিসাবে সেট করুন',
   },

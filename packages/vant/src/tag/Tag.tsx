@@ -18,7 +18,7 @@ const [name, bem] = createNamespace('tag');
 export type TagSize = 'large' | 'medium';
 export type TagType = 'default' | 'primary' | 'success' | 'warning' | 'danger';
 
-const tagProps = {
+export const tagProps = {
   size: String as PropType<TagSize>,
   mark: Boolean,
   show: truthProp,

@@ -22,7 +22,7 @@ const CircularIcon = (
 
 export type LoadingType = 'circular' | 'spinner';
 
-const loadingProps = {
+export const loadingProps = {
   size: numericProp,
   type: makeStringProp<LoadingType>('circular'),
   color: String,

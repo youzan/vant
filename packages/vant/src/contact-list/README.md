@@ -33,7 +33,7 @@ app.use(ContactList);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -52,9 +52,9 @@ export default {
       },
     ]);
 
-    const onAdd = () => Toast('Add');
-    const onEdit = (contact) => Toast('Edit' + contact.id);
-    const onSelect = (contact) => Toast('Select' + contact.id);
+    const onAdd = () => showToast('Add');
+    const onEdit = (contact) => showToast('Edit' + contact.id);
+    const onSelect = (contact) => showToast('Select' + contact.id);
 
     return {
       list,
@@ -113,5 +113,5 @@ The component provides the following CSS variables, which can be used to customi
 | --- | --- | --- |
 | --van-contact-list-edit-icon-size | _16px_ | - |
 | --van-contact-list-add-button-z-index | _999_ | - |
+| --van-contact-list-radio-color | _var(--van-primary-color)_ | - |
 | --van-contact-list-item-padding | _var(--van-padding-md)_ | - |
-| --van-contact-list-item-radio-icon-color | _var(--van-danger-color)_ | - |

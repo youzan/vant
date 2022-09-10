@@ -58,7 +58,7 @@ const nextStep = () => {
       :active="active"
       active-icon="success"
       inactive-icon="arrow"
-      active-color="#38f"
+      active-color="#07c160"
     >
       <van-step>{{ t('step1') }}</van-step>
       <van-step>{{ t('step2') }}</van-step>
@@ -87,24 +87,14 @@ const nextStep = () => {
 
 <style lang="less">
 .demo-steps {
-  .steps-success,
-  .van-icon-location {
-    color: var(--van-green);
-  }
-
   .van-button {
     margin: var(--van-padding-md) 0 0 var(--van-padding-md);
   }
 
   p,
   h3 {
-    margin: 0;
     font-weight: normal;
     font-size: inherit;
-  }
-
-  .van-steps__message + p {
-    margin-bottom: 10px;
   }
 }
 </style>

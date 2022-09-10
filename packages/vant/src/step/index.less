@@ -1,17 +1,15 @@
-@import './var.less';
-
-:root {
-  --van-step-text-color: @step-text-color;
-  --van-step-active-color: @step-active-color;
-  --van-step-process-text-color: @step-process-text-color;
-  --van-step-font-size: @step-font-size;
-  --van-step-line-color: @step-line-color;
-  --van-step-finish-line-color: @step-finish-line-color;
-  --van-step-finish-text-color: @step-finish-text-color;
-  --van-step-icon-size: @step-icon-size;
-  --van-step-circle-size: @step-circle-size;
-  --van-step-circle-color: @step-circle-color;
-  --van-step-horizontal-title-font-size: @step-horizontal-title-font-size;
+body {
+  --van-step-text-color: var(--van-text-color-2);
+  --van-step-active-color: var(--van-primary-color);
+  --van-step-process-text-color: var(--van-text-color);
+  --van-step-font-size: var(--van-font-size-md);
+  --van-step-line-color: var(--van-border-color);
+  --van-step-finish-line-color: var(--van-primary-color);
+  --van-step-finish-text-color: var(--van-text-color);
+  --van-step-icon-size: 12px;
+  --van-step-circle-size: 5px;
+  --van-step-circle-color: var(--van-gray-6);
+  --van-step-horizontal-title-font-size: var(--van-font-size-sm);
 }
 
 .van-step {
@@ -31,7 +29,7 @@
   &__line {
     position: absolute;
     background-color: var(--van-step-line-color);
-    transition: background-color var(--van-animation-duration-base);
+    transition: background-color var(--van-duration-base);
   }
 
   &--horizontal {
@@ -66,7 +64,7 @@
       left: calc(var(--van-padding-xs) * -1);
       z-index: 1;
       padding: 0 var(--van-padding-xs);
-      background-color: var(--van-background-color-light);
+      background-color: var(--van-background-2);
       transform: translateY(-50%);
     }
 
@@ -139,7 +137,7 @@
 
   &__icon,
   &__title {
-    transition: color var(--van-animation-duration-base);
+    transition: color var(--van-duration-base);
 
     &--active,
     &--finish {

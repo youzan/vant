@@ -15,7 +15,7 @@ import {
   createNamespace,
   makeRequiredProp,
 } from '../utils';
-import { getMonthEndDay } from '../datetime-picker/utils';
+import { getMonthEndDay } from '../date-picker/utils';
 import {
   t,
   bem,
@@ -62,7 +62,7 @@ export default defineComponent({
 
   props: calendarMonthProps,
 
-  emits: ['click', 'update-height'],
+  emits: ['click'],
 
   setup(props, { emit, slots }) {
     const [visible, setVisible] = useToggle();

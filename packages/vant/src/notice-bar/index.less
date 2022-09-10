@@ -1,15 +1,13 @@
-@import './var.less';
-
-:root {
-  --van-notice-bar-height: @notice-bar-height;
-  --van-notice-bar-padding: @notice-bar-padding;
-  --van-notice-bar-wrapable-padding: @notice-bar-wrapable-padding;
-  --van-notice-bar-text-color: @notice-bar-text-color;
-  --van-notice-bar-font-size: @notice-bar-font-size;
-  --van-notice-bar-line-height: @notice-bar-line-height;
-  --van-notice-bar-background-color: @notice-bar-background-color;
-  --van-notice-bar-icon-size: @notice-bar-icon-size;
-  --van-notice-bar-icon-min-width: @notice-bar-icon-min-width;
+body {
+  --van-notice-bar-height: 40px;
+  --van-notice-bar-padding: 0 var(--van-padding-md);
+  --van-notice-bar-wrapable-padding: var(--van-padding-xs) var(--van-padding-md);
+  --van-notice-bar-text-color: var(--van-orange-dark);
+  --van-notice-bar-font-size: var(--van-font-size-md);
+  --van-notice-bar-line-height: 24px;
+  --van-notice-bar-background: var(--van-orange-light);
+  --van-notice-bar-icon-size: 16px;
+  --van-notice-bar-icon-min-width: 24px;
 }
 
 .van-notice-bar {
@@ -21,7 +19,7 @@
   color: var(--van-notice-bar-text-color);
   font-size: var(--van-notice-bar-font-size);
   line-height: var(--van-notice-bar-line-height);
-  background: var(--van-notice-bar-background-color);
+  background: var(--van-notice-bar-background);
 
   &__left-icon,
   &__right-icon {

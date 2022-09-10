@@ -7,7 +7,7 @@ import VanCol from '../../col';
 import icons from '@vant/icons';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
-import { Notify } from '../../notify';
+import { showNotify } from '../../notify';
 
 // from https://30secondsofcode.org
 function copyToClipboard(str: string) {
@@ -82,7 +82,7 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
   tag = `${tag} />`;
   copyToClipboard(tag);
 
-  Notify({
+  showNotify({
     type: 'success',
     duration: 1500,
     className: 'demo-icon-notify',
@@ -99,6 +99,11 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
           <van-col span="6" @click="copy(demoIcon)">
             <van-icon :name="demoIcon" />
           </van-col>
+        </van-row>
+      </demo-block>
+
+      <demo-block :title="t('usingUrl')">
+        <van-row>
           <van-col span="6" @click="copy(demoImage)">
             <van-icon :name="demoImage" />
           </van-col>
@@ -197,7 +202,7 @@ const copy = (icon: string, option: Record<string, unknown> = {}) => {
   &-tab-panel {
     width: auto;
     margin: 20px;
-    background-color: var(--van-background-color-light);
+    background-color: var(--van-background-2);
     border-radius: 12px;
   }
 

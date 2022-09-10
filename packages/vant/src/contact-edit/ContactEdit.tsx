@@ -29,7 +29,7 @@ const DEFAULT_CONTACT: ContactEditInfo = {
   name: '',
 };
 
-const contactEditProps = {
+export const contactEditProps = {
   isEdit: Boolean,
   isSaving: Boolean,
   isDeleting: Boolean,
@@ -52,7 +52,7 @@ export default defineComponent({
 
   props: contactEditProps,
 
-  emits: ['save', 'delete', 'change-default'],
+  emits: ['save', 'delete', 'changeDefault'],
 
   setup(props, { emit }) {
     const contact = reactive(extend({}, DEFAULT_CONTACT, props.contactInfo));
@@ -70,7 +70,7 @@ export default defineComponent({
         <Button
           block
           round
-          type="danger"
+          type="primary"
           text={t('save')}
           class={bem('button')}
           loading={props.isSaving}
@@ -92,8 +92,7 @@ export default defineComponent({
     const renderSwitch = () => (
       <Switch
         v-model={contact.isDefault}
-        size={24}
-        onChange={(checked: boolean) => emit('change-default', checked)}
+        onChange={(checked: boolean) => emit('changeDefault', checked)}
       />
     );
 

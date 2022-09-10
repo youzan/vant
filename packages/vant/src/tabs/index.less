@@ -1,18 +1,16 @@
-@import './var.less';
-
-:root {
-  --van-tab-text-color: @tab-text-color;
-  --van-tab-active-text-color: @tab-active-text-color;
-  --van-tab-disabled-text-color: @tab-disabled-text-color;
-  --van-tab-font-size: @tab-font-size;
-  --van-tab-line-height: @tab-line-height;
-  --van-tabs-default-color: @tabs-default-color;
-  --van-tabs-line-height: @tabs-line-height;
-  --van-tabs-card-height: @tabs-card-height;
-  --van-tabs-nav-background-color: @tabs-nav-background-color;
-  --van-tabs-bottom-bar-width: @tabs-bottom-bar-width;
-  --van-tabs-bottom-bar-height: @tabs-bottom-bar-height;
-  --van-tabs-bottom-bar-color: @tabs-bottom-bar-color;
+body {
+  --van-tab-text-color: var(--van-gray-7);
+  --van-tab-active-text-color: var(--van-text-color);
+  --van-tab-disabled-text-color: var(--van-text-color-3);
+  --van-tab-font-size: var(--van-font-size-md);
+  --van-tab-line-height: var(--van-line-height-md);
+  --van-tabs-default-color: var(--van-primary-color);
+  --van-tabs-line-height: 44px;
+  --van-tabs-card-height: 30px;
+  --van-tabs-nav-background: var(--van-background-2);
+  --van-tabs-bottom-bar-width: 40px;
+  --van-tabs-bottom-bar-height: 3px;
+  --van-tabs-bottom-bar-color: var(--van-primary-color);
 }
 
 .van-tab {
@@ -30,7 +28,7 @@
 
   &--active {
     color: var(--van-tab-active-text-color);
-    font-weight: var(--van-font-weight-bold);
+    font-weight: var(--van-font-bold);
   }
 
   &--disabled {
@@ -50,8 +48,7 @@
 
   &--card {
     color: var(--van-tabs-default-color);
-    border-right: var(--van-border-width-base) solid
-      var(--van-tabs-default-color);
+    border-right: var(--van-border-width) solid var(--van-tabs-default-color);
 
     &:last-child {
       border-right: none;
@@ -96,7 +93,7 @@
   &__nav {
     position: relative;
     display: flex;
-    background: var(--van-tabs-nav-background-color);
+    background: var(--van-tabs-nav-background);
     user-select: none;
 
     &--complete {
@@ -125,7 +122,7 @@
       box-sizing: border-box;
       height: var(--van-tabs-card-height);
       margin: 0 var(--van-padding-md);
-      border: var(--van-border-width-base) solid var(--van-tabs-default-color);
+      border: var(--van-border-width) solid var(--van-tabs-default-color);
       border-radius: var(--van-border-radius-sm);
     }
 

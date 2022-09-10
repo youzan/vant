@@ -1,13 +1,11 @@
-@import './var.less';
-
-:root {
-  --van-tabbar-item-font-size: @tabbar-item-font-size;
-  --van-tabbar-item-text-color: @tabbar-item-text-color;
-  --van-tabbar-item-active-color: @tabbar-item-active-color;
-  --van-tabbar-item-active-background-color: @tabbar-item-active-background-color;
-  --van-tabbar-item-line-height: @tabbar-item-line-height;
-  --van-tabbar-item-icon-size: @tabbar-item-icon-size;
-  --van-tabbar-item-icon-margin-bottom: @tabbar-item-icon-margin-bottom;
+body {
+  --van-tabbar-item-font-size: var(--van-font-size-sm);
+  --van-tabbar-item-text-color: var(--van-text-color);
+  --van-tabbar-item-active-color: var(--van-primary-color);
+  --van-tabbar-item-active-background: var(--van-background-2);
+  --van-tabbar-item-line-height: 1;
+  --van-tabbar-item-icon-size: 22px;
+  --van-tabbar-item-icon-margin-bottom: var(--van-padding-base);
 }
 
 .van-tabbar-item {
@@ -41,6 +39,6 @@
 
   &--active {
     color: var(--van-tabbar-item-active-color);
-    background-color: var(--van-tabbar-item-active-background-color);
+    background-color: var(--van-tabbar-item-active-background);
   }
 }

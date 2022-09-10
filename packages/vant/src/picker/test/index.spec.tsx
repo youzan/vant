@@ -1,20 +1,16 @@
 import { later, mount, triggerDrag } from '../../../test';
 import { Picker } from '..';
-import PickerColumn from '../PickerColumn';
 
-const simpleColumn = ['1990', '1991', '1992', '1993', '1994', '1995'];
-const columns = [
-  {
-    values: ['vip', 'normal'],
-    className: 'column1',
-  },
-  {
-    values: simpleColumn,
-    className: 'column2',
-  },
+const simpleColumn = [
+  { text: '1990', value: '1990' },
+  { text: '1991', value: '1991' },
+  { text: '1992', value: '1992' },
+  { text: '1993', value: '1993' },
+  { text: '1994', value: '1994' },
+  { text: '1995', value: '1995' },
 ];
 
-test('simple columns confirm & cancel event', () => {
+test('should emit confirm event after clicking the confirm button', () => {
   const wrapper = mount(Picker, {
     props: {
       showToolbar: true,
@@ -23,88 +19,32 @@ test('simple columns confirm & cancel event', () => {
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
-  wrapper.find('.van-picker__cancel').trigger('click');
-  expect(wrapper.emitted('confirm')![0]).toEqual(['1990', 0]);
-  expect(wrapper.emitted('cancel')![0]).toEqual(['1990', 0]);
-  wrapper.unmount();
-});
-test('multiple columns confirm & cancel event', () => {
-  const wrapper = mount(Picker, {
-    props: {
-      showToolbar: true,
-      columns,
+  expect(wrapper.emitted('confirm')![0]).toEqual([
+    {
+      selectedOptions: [{ text: '1990', value: '1990' }],
+      selectedValues: ['1990'],
     },
-  });
-
-  wrapper.find('.van-picker__confirm').trigger('click');
-  wrapper.find('.van-picker__cancel').trigger('click');
-
-  const params = [
-    ['vip', '1990'],
-    [0, 0],
-  ];
-
-  expect(wrapper.emitted('confirm')![0]).toEqual(params);
-  expect(wrapper.emitted('cancel')![0]).toEqual(params);
-});
-
-test('set picker values', () => {
-  const wrapper = mount(Picker, {
-    props: {
-      columns,
-    },
-  });
-  const vm = wrapper.vm as Record<string, any>;
-
-  expect(vm.getColumnValues(-1)).toEqual(undefined);
-  expect(vm.getColumnValues(1)).toHaveLength(6);
-  expect(vm.getColumnValue(1)).toEqual('1990');
-
-  vm.setColumnValue(0, 'normal');
-  expect(vm.getColumnValue(0)).toEqual('normal');
-
-  vm.setColumnIndex(0, 0);
-  expect(vm.getColumnValue(0)).toEqual('vip');
-
-  vm.setColumnValue(1, '1991');
-  expect(vm.getColumnValue(1)).toEqual('1991');
-
-  vm.setColumnValues(0, ['vip', 'normal', 'other']);
-  expect(vm.getColumnValues(0)).toHaveLength(3);
-  expect(vm.getValues()).toHaveLength(2);
-
-  vm.setColumnValues(-1, []);
-  expect(vm.getValues()).toHaveLength(2);
-
-  vm.setValues(['vip', '1992']);
-  expect(vm.getColumnIndex(1)).toEqual(2);
-  expect(vm.getColumnIndex(2)).toEqual(undefined);
-  expect(vm.getIndexes(2)).toEqual([0, 2]);
-
-  vm.setIndexes([1, 4]);
-  expect(vm.getColumnValue(1)).toEqual('1994');
-  expect(vm.getColumnValue(2)).toEqual(undefined);
-});
-
-test('drag columns', () => {
-  const wrapper = mount(Picker, {
-    props: {
-      columns,
-    },
-  });
-
-  triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
-  wrapper.find('.van-picker-column ul').trigger('transitionend');
-
-  // 由于在极短的时间（大约几毫秒）移动 `100px`，因此再计算惯性滚动的距离时，
-  // 会得到一个很大的值，导致会滚动到且选中列表的最后一项
-  expect(wrapper.emitted<[Array<string>, number]>('change')![0][0]).toEqual([
-    'normal',
-    '1990',
   ]);
 });
 
-test('drag simple columns', () => {
+test('should emit cancel event after clicking the cancel button', () => {
+  const wrapper = mount(Picker, {
+    props: {
+      showToolbar: true,
+      columns: simpleColumn,
+    },
+  });
+
+  wrapper.find('.van-picker__cancel').trigger('click');
+  expect(wrapper.emitted('cancel')![0]).toEqual([
+    {
+      selectedOptions: [{ text: '1990', value: '1990' }],
+      selectedValues: ['1990'],
+    },
+  ]);
+});
+
+test('should emit change event after draging the column', () => {
   const wrapper = mount(Picker, {
     props: {
       columns: simpleColumn,
@@ -114,121 +54,21 @@ test('drag simple columns', () => {
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker-column ul').trigger('transitionend');
 
-  // 由于在极短的时间（大约几毫秒）移动 `100px`，因此再计算惯性滚动的距离时，
-  // 会得到一个很大的值，导致会滚动到且选中列表的最后一项
-  expect(wrapper.emitted<[string, number]>('change')![0][0]).toEqual('1995');
+  expect(wrapper.emitted('change')).toEqual([
+    [
+      {
+        columnIndex: 0,
+        selectedOptions: [{ text: '1995', value: '1995' }],
+        selectedValues: ['1995'],
+      },
+    ],
+  ]);
 });
 
-test('column watch default index', async () => {
-  const disabled = { disabled: true, text: 1 };
-  const wrapper = mount(PickerColumn, {
-    props: {
-      initialOptions: [disabled, ...simpleColumn],
-      textKey: 'text',
-      itemHeight: 50,
-      visibleItemCount: 5,
-      swipeDuration: 1000,
-    },
-  } as any);
-
-  await later();
-  expect(wrapper.html()).toMatchSnapshot();
-
-  await wrapper.setProps({
-    defaultIndex: 2,
-  });
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('should render title slot correctly', () => {
-  const wrapper = mount(Picker, {
-    slots: {
-      title: () => 'Custom title',
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('should render toolbar slot correctly', () => {
-  const wrapper = mount(Picker, {
-    slots: {
-      toolbar: () => 'Custom toolbar',
-    },
-  });
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('should render confirm/cancel slot correctly', () => {
-  const wrapper = mount(Picker, {
-    slots: {
-      confirm: () => 'Custom Confirm',
-      cancel: () => 'Custom Cancel',
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('render option slot with simple columns', () => {
-  const wrapper = mount(Picker, {
-    props: {
-      columns: ['foo', 'bar'],
-      showToolbar: true,
-    },
-    slots: {
-      option: (item) => item,
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('render option slot with object columns', () => {
-  const wrapper = mount(Picker, {
-    props: {
-      columns: [{ text: 'foo' }, { text: 'bar' }],
-      showToolbar: true,
-    },
-    slots: {
-      options: (item) => item,
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('simulation finger swipe again before transitionend', () => {
-  // mock getComputedStyle
-  // see: https://github.com/jsdom/jsdom/issues/2588
-  const originGetComputedStyle = window.getComputedStyle;
-  window.getComputedStyle = (ele) => {
-    const style = originGetComputedStyle(ele);
-
-    return {
-      ...style,
-      transform: 'matrix(1, 0, 0, 1, 0, -5)',
-    };
-  };
-
-  const wrapper = mount(Picker, {
-    props: {
-      columns: simpleColumn,
-    },
-  });
-
-  triggerDrag(wrapper.find('.van-picker-column'), 0, -5);
-  triggerDrag(wrapper.find('.van-picker-column'), -5, -100);
-  wrapper.find('.van-picker-column ul').trigger('transitionend');
-  expect(wrapper.emitted<[string, number]>('change')![0][0]).toEqual('1995');
-});
-
-test('click column item', () => {
+test('should emit change event when after clicking a option', async () => {
   const columns = [
-    { text: '杭州' },
-    { text: '宁波' },
-    { text: '温州', disabled: true },
-    { text: '嘉兴', disabled: true },
+    { text: 'A', value: 'A' },
+    { text: 'B', value: 'B' },
   ];
   const wrapper = mount(Picker, {
     props: {
@@ -236,13 +76,69 @@ test('click column item', () => {
     },
   });
 
-  wrapper.findAll('.van-picker-column__item')[3].trigger('click');
-  expect(wrapper.emitted<[string, number]>('change')![0][0]).toEqual(
-    columns[1]
-  );
+  await wrapper.findAll('.van-picker-column__item')[1].trigger('click');
+  expect(wrapper.emitted('change')).toEqual([
+    [
+      {
+        columnIndex: 0,
+        selectedOptions: [{ text: 'B', value: 'B' }],
+        selectedValues: ['B'],
+      },
+    ],
+  ]);
 });
 
-test('toolbar-position prop', () => {
+test('should not emit change event if modelValue is not changed', async () => {
+  const columns = [
+    { text: 'A', value: 'A' },
+    { text: 'B', value: 'B' },
+  ];
+  const wrapper = mount(Picker, {
+    props: {
+      modelValue: ['B'],
+      columns,
+    },
+  });
+
+  await wrapper.findAll('.van-picker-column__item')[1].trigger('click');
+  expect(wrapper.emitted('change')).toBeFalsy();
+});
+
+test('should not emit change event when after clicking a disabled option', async () => {
+  const columns = [
+    { text: 'A', value: 'A' },
+    { text: 'B', value: 'B', disabled: true },
+  ];
+  const wrapper = mount(Picker, {
+    props: {
+      columns,
+    },
+  });
+
+  await wrapper.findAll('.van-picker-column__item')[1].trigger('click');
+  expect(wrapper.emitted<[string, number]>('change')).toBeFalsy();
+});
+
+test('should emit click-option event after clicking an option', async () => {
+  const wrapper = mount(Picker, {
+    props: {
+      showToolbar: true,
+      columns: simpleColumn,
+    },
+  });
+
+  await wrapper.find('.van-picker-column__item').trigger('click');
+  expect(wrapper.emitted('clickOption')![0]).toEqual([
+    {
+      columnIndex: 0,
+      currentOption: { text: '1990', value: '1990' },
+      selectedOptions: [{ text: '1990', value: '1990' }],
+      selectedValues: ['1990'],
+    },
+  ]);
+});
+
+test('should render bottom toolbar when toolbar-position is bottom', () => {
   const wrapper = mount(Picker, {
     props: {
       showToolbar: true,
@@ -253,66 +149,67 @@ test('toolbar-position prop', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('not allow html', () => {
+test('should not allow to render html text', () => {
   const wrapper = mount(Picker, {
     props: {
       allowHtml: false,
-      columns: ['<div>option</div>'],
+      columns: [{ text: '<div>option</div>' }],
     },
   });
 
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('columns-top、columns-bottom prop', () => {
+test('should allow to update columns props dynamically', async () => {
   const wrapper = mount(Picker, {
     props: {
-      showToolbar: true,
-    },
-    slots: {
-      'columns-top': () => 'Custom Columns Top',
-      'columns-bottom': () => 'Custom Columns Bottom',
-    },
-  });
-
-  expect(wrapper.html()).toMatchSnapshot();
-});
-
-test('watch columns change', async () => {
-  const wrapper = mount(Picker, {
-    props: {
-      showToolbar: true,
-      columns: ['1', '2'],
-      defaultIndex: 1,
+      modelValue: ['2'],
+      columns: [
+        { text: '1', value: '1' },
+        { text: '2', value: '2' },
+      ],
     },
   });
 
   await wrapper.setProps({
-    columns: ['2', '3'],
+    columns: [
+      { text: '2', value: '2' },
+      { text: '3', value: '3' },
+    ],
   });
 
   wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted<[string, number]>('confirm')![0]).toEqual(['3', 1]);
+  expect(wrapper.emitted<[string, number]>('confirm')![0]).toEqual([
+    { selectedOptions: [{ text: '2', value: '2' }], selectedValues: ['2'] },
+  ]);
 });
 
 test('should not reset index when columns unchanged', async () => {
   const wrapper = mount(Picker, {
     props: {
+      modelValue: ['2'],
       showToolbar: true,
-      columns: ['1', '2'],
+      columns: [
+        { text: '1', value: '1' },
+        { text: '2', value: '2' },
+      ],
     },
   });
 
-  (wrapper.vm as Record<string, any>).setIndexes([1]);
   await wrapper.setProps({
-    columns: ['1', '2'],
+    columns: [
+      { text: '1', value: '1' },
+      { text: '2', value: '2' },
+    ],
   });
 
-  wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted<[string, number]>('confirm')![0]).toEqual(['2', 1]);
+  await wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted<[string, number]>('confirm')![0]).toEqual([
+    { selectedOptions: [{ text: '2', value: '2' }], selectedValues: ['2'] },
+  ]);
 });
 
-test('set rem item-height', async () => {
+test('should allow to set rem option height', async () => {
   const originGetComputedStyle = window.getComputedStyle;
 
   window.getComputedStyle = () => ({ fontSize: '16px' } as CSSStyleDeclaration);
@@ -320,27 +217,29 @@ test('set rem item-height', async () => {
   const wrapper = mount(Picker, {
     props: {
       columns: simpleColumn.slice(0, 2),
-      itemHeight: '10rem',
+      optionHeight: '10rem',
     },
   });
 
   await later();
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper.find('.van-picker-column__item').style.height).toEqual(
+    '160px'
+  );
 
   window.getComputedStyle = originGetComputedStyle;
 });
 
-test('readonly prop', () => {
+test('should not allow to change option when using readonly prop', async () => {
   const wrapper = mount(Picker, {
     props: {
-      columns,
+      columns: simpleColumn,
       readonly: true,
     },
   });
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
-  wrapper.find('.van-picker-column ul').trigger('transitionend');
-  wrapper.findAll('.van-picker-column__item')[3].trigger('click');
+  await wrapper.find('.van-picker-column ul').trigger('transitionend');
+  await wrapper.findAll('.van-picker-column__item')[3].trigger('click');
 
   expect(wrapper.emitted('change')).toBeFalsy();
 });
@@ -348,7 +247,7 @@ test('readonly prop', () => {
 test('should not render mask and frame when options is empty', async () => {
   const wrapper = mount(Picker, {
     props: {
-      columns: [{ values: [] }],
+      columns: [[], []],
     },
   });
   expect(wrapper.find('.van-picker__mask').exists()).toBeFalsy();

@@ -25,7 +25,7 @@ import { usePlaceholder } from '../composables/use-placeholder';
 
 const [name, bem] = createNamespace('tabbar');
 
-const tabbarProps = {
+export const tabbarProps = {
   route: Boolean,
   fixed: truthProp,
   border: truthProp,

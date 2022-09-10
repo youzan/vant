@@ -3,7 +3,7 @@ import VanAddressEdit from '..';
 import { ref } from 'vue';
 import { areaList } from '@vant/area-data';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -41,8 +41,8 @@ const t = useTranslate({
 });
 const searchResult = ref([]);
 
-const onSave = () => Toast(t('save'));
-const onDelete = () => Toast(t('delete'));
+const onSave = () => showToast(t('save'));
+const onDelete = () => showToast(t('delete'));
 const onChangeDetail = (val: string) => {
   searchResult.value = val ? t('searchResult') : [];
 };
@@ -52,7 +52,6 @@ const onChangeDetail = (val: string) => {
   <demo-block :title="t('basicUsage')">
     <van-address-edit
       :area-list="areaList"
-      show-postal
       show-delete
       show-set-default
       show-search-result

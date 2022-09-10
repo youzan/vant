@@ -16,12 +16,26 @@ const app = createApp();
 app.use(ImagePreview);
 ```
 
+### Function Call
+
+Vant provides some utility functions that can quickly evoke global `ImagePreview` components.
+
+For example, calling the `showImagePreview` function will render a Dialog directly in the page.
+
+```js
+import { showImagePreview } from 'vant';
+
+showImagePreview(['https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg']);
+```
+
 ## Usage
 
 ### Basic Usage
 
 ```js
-ImagePreview([
+import { showImagePreview } from 'vant';
+
+showImagePreview([
   'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
   'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
 ]);
@@ -30,7 +44,9 @@ ImagePreview([
 ### Set Start Position
 
 ```js
-ImagePreview({
+import { showImagePreview } from 'vant';
+
+showImagePreview({
   images: [
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
@@ -44,7 +60,9 @@ ImagePreview({
 After setting the `closeable` attribute, the close icon will be displayed in the upper right corner of the pop-up layer, and the icon can be customized through the `close-icon` attribute, and the icon location can be customized by using the `close-icon-position` attribute.
 
 ```js
-ImagePreview({
+import { showImagePreview } from 'vant';
+
+showImagePreview({
   images: [
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
@@ -56,15 +74,15 @@ ImagePreview({
 ### Close Event
 
 ```js
-import { Toast } from 'vant';
+import { showToast, showImagePreview } from 'vant';
 
-ImagePreview({
+showImagePreview({
   images: [
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
   ],
   onClose() {
-    Toast('closed');
+    showToast('closed');
   },
 });
 ```
@@ -72,7 +90,9 @@ ImagePreview({
 ### Before Close
 
 ```js
-const instance = ImagePreview({
+import { showImagePreview } from 'vant';
+
+const instance = showImagePreview({
   images: [
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
     'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
@@ -85,7 +105,7 @@ setTimeout(() => {
 }, 2000);
 ```
 
-### Component Call
+### Use ImagePreview Component
 
 ```html
 <van-image-preview v-model:show="show" :images="images" @change="onChange">
@@ -120,7 +140,15 @@ export default {
 
 ## API
 
-### Options
+### Methods
+
+Vant exports following ImagePreview utility functions:
+
+| Methods          | Description        | Attribute | Return value         |
+| ---------------- | ------------------ | --------- | -------------------- | --------------------- |
+| showImagePreview | Show image preview | `string[] | ImagePreviewOptions` | imagePreview Instance |
+
+### ImagePreviewOptions
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -245,7 +273,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-image-preview-index-font-size | _var(--van-font-size-md)_ | - |
 | --van-image-preview-index-line-height | _var(--van-line-height-md)_ | - |
 | --van-image-preview-index-text-shadow | _0 1px 1px var(--van-gray-8)_ | - |
-| --van-image-preview-overlay-background-color | _rgba(0, 0, 0, 0.9)_ | - |
+| --van-image-preview-overlay-background | _rgba(0, 0, 0, 0.9)_ | - |
 | --van-image-preview-close-icon-size | _22px_ | - |
 | --van-image-preview-close-icon-color | _var(--van-gray-5)_ | - |
 | --van-image-preview-close-icon-margin | _var(--van-padding-md)_ | - |

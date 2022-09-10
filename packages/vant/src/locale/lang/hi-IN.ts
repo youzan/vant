@@ -58,10 +58,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'क्षेत्र',
-    postal: 'डाक का',
     areaEmpty: 'कृपया एक क्षेत्र चुनें',
     addressEmpty: 'पता खाली नहीं हो सकता',
-    postalEmpty: 'गलत पोस्टल कोड',
     addressDetail: 'पता',
     defaultAddress: 'डिफ़ॉल्ट पते के रूप में सेट करें',
   },

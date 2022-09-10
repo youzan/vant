@@ -54,7 +54,7 @@ const popupProps = [
   'closeOnClickOverlay',
 ] as const;
 
-const popoverProps = {
+export const popoverProps = {
   show: Boolean,
   theme: makeStringProp<PopoverTheme>('light'),
   overlay: Boolean,

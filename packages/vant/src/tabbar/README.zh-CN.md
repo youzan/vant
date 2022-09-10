@@ -121,7 +121,7 @@ export default {
 通过 `active-color` 属性设置选中标签的颜色，通过 `inactive-color` 属性设置未选中标签的颜色。
 
 ```html
-<van-tabbar v-model="active" active-color="#ee0a24" inactive-color="#000">
+<van-tabbar v-model="active" active-color="#ee0a24">
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
   <van-tabbar-item icon="search">标签</van-tabbar-item>
   <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
@@ -144,12 +144,12 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const active = ref(0);
-    const onChange = (index) => Toast(`标签 ${index}`);
+    const onChange = (index) => showToast(`标签 ${index}`);
     return {
       icon,
       onChange,
@@ -228,15 +228,15 @@ import type { TabbarProps, TabbarItemProps } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-tabbar-height | _50px_ | - |
-| --van-tabbar-z-index | _1_ | - |
-| --van-tabbar-background-color | _var(--van-background-color-light)_ | - |
-| --van-tabbar-item-font-size | _var(--van-font-size-sm)_ | - |
-| --van-tabbar-item-text-color | _var(--van-gray-7)_ | - |
-| --van-tabbar-item-active-color | _var(--van-primary-color)_ | - |
-| --van-tabbar-item-active-background-color | _var(--van-background-color-light)_ | - |
-| --van-tabbar-item-line-height | _1_ | - |
-| --van-tabbar-item-icon-size | _22px_ | - |
-| --van-tabbar-item-icon-margin-bottom | _var(--van-padding-base)_ | - |
+| 名称                                 | 默认值                     | 描述 |
+| ------------------------------------ | -------------------------- | ---- |
+| --van-tabbar-height                  | _50px_                     | -    |
+| --van-tabbar-z-index                 | _1_                        | -    |
+| --van-tabbar-background              | _var(--van-background-2)_  | -    |
+| --van-tabbar-item-font-size          | _var(--van-font-size-sm)_  | -    |
+| --van-tabbar-item-text-color         | _var(--van-text-color)_    | -    |
+| --van-tabbar-item-active-color       | _var(--van-primary-color)_ | -    |
+| --van-tabbar-item-active-background  | _var(--van-background-2)_  | -    |
+| --van-tabbar-item-line-height        | _1_                        | -    |
+| --van-tabbar-item-icon-size          | _22px_                     | -    |
+| --van-tabbar-item-icon-margin-bottom | _var(--van-padding-base)_  | -    |

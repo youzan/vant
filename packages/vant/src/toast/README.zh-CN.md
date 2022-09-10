@@ -16,30 +16,36 @@ const app = createApp();
 app.use(Toast);
 ```
 
-#### 手动引入样式
+### 函数调用
 
-Toast 组件是以函数形式提供的，如果项目中使用 `unplugin-vue-components` 插件来自动引入组件样式，则无法正确识别 Toast 组件，因此需要手动引入 Toast 组件的样式：
+为了便于使用 `Toast`，Vant 提供了一系列辅助函数，通过辅助函数可以快速唤起全局的 Toast 组件。
+
+比如使用 `showToast` 函数，调用后会直接在页面中渲染对应的轻提示。
 
 ```js
-import 'vant/es/toast/style';
-```
+import { showToast } from 'vant';
 
-你可以在项目的入口文件或公共模块中引入 Toast 组件的样式，这样在业务代码中使用 Toast 时，便不再需要重复引入样式了。
+showToast('提示内容');
+```
 
 ## 代码演示
 
 ### 文字提示
 
 ```js
-Toast('提示内容');
+import { showToast } from 'vant';
+
+showToast('提示内容');
 ```
 
 ### 加载提示
 
-使用 `Toast.loading` 方法展示加载提示，通过 `forbidClick` 属性可以禁用背景点击。
+使用 `showLoadingToast` 方法展示加载提示，通过 `forbidClick` 选项可以禁用背景点击。
 
 ```js
-Toast.loading({
+import { showLoadingToast } from 'vant';
+
+showLoadingToast({
   message: '加载中...',
   forbidClick: true,
 });
@@ -47,11 +53,13 @@ Toast.loading({
 
 ### 成功/失败提示
 
-使用 `Toast.success` 方法展示成功提示，使用 `Toast.fail` 方法展示失败提示。
+使用 `showSuccessToast` 方法展示成功提示，使用 `showFailToast` 方法展示失败提示。
 
 ```js
-Toast.success('成功文案');
-Toast.fail('失败文案');
+import { showSuccessToast, showFailToast } from 'vant';
+
+showSuccessToast('成功文案');
+showFailToast('失败文案');
 ```
 
 ### 自定义图标
@@ -59,12 +67,14 @@ Toast.fail('失败文案');
 通过 `icon` 选项可以自定义图标，支持传入图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props)。
 
 ```js
-Toast({
+import { showToast } from 'vant';
+
+showToast({
   message: '自定义图标',
   icon: 'like-o',
 });
 
-Toast({
+showToast({
   message: '自定义图片',
   icon: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
 });
@@ -73,7 +83,9 @@ Toast({
 通过`loadingType` 属性可以自定义加载图标类型。
 
 ```js
-Toast.loading({
+import { showLoadingToast } from 'vant';
+
+showLoadingToast({
   message: '加载中...',
   forbidClick: true,
   loadingType: 'spinner',
@@ -85,12 +97,14 @@ Toast.loading({
 Toast 默认渲染在屏幕正中位置，通过 `position` 属性可以控制 Toast 展示的位置。
 
 ```js
-Toast({
+import { showToast } from 'vant';
+
+showToast({
   message: '顶部展示',
   position: 'top',
 });
 
-Toast({
+showToast({
   message: '底部展示',
   position: 'bottom',
 });
@@ -101,7 +115,9 @@ Toast({
 执行 Toast 方法时会返回对应的 Toast 实例，通过修改实例上的 `message` 属性可以实现动态更新提示的效果。
 
 ```js
-const toast = Toast.loading({
+import { showLoadingToast, closeToast } from 'vant';
+
+const toast = showLoadingToast({
   duration: 0,
   forbidClick: true,
   message: '倒计时 3 秒',
@@ -114,69 +130,86 @@ const timer = setInterval(() => {
     toast.message = `倒计时 ${second} 秒`;
   } else {
     clearInterval(timer);
-    Toast.clear();
+    closeToast();
   }
 }, 1000);
 ```
-
-### 全局方法
-
-通过 `app.use` 全局注册 Toast 组件后，会自动在 app 的所有子组件上挂载 `$toast` 方法，便于在组件内调用。
-
-```js
-export default {
-  mounted() {
-    this.$toast('提示文案');
-  },
-};
-```
-
-> Tips: 由于 setup 选项中无法访问 this，因此不能使用上述方式，请通过 import 引入。
 
 ### 单例模式
 
 Toast 默认采用单例模式，即同一时间只会存在一个 Toast，如果需要在同一时间弹出多个 Toast，可以参考下面的示例：
 
 ```js
-Toast.allowMultiple();
+import { showToast, showSuccessToast, allowMultipleToast } from 'vant';
 
-const toast1 = Toast('第一个 Toast');
-const toast2 = Toast.success('第二个 Toast');
+allowMultipleToast();
 
-toast1.clear();
-toast2.clear();
+const toast1 = showToast('第一个 Toast');
+const toast2 = showSuccessToast('第二个 Toast');
+
+toast1.close();
+toast2.close();
 ```
 
 ### 修改默认配置
 
-通过 `Toast.setDefaultOptions` 函数可以全局修改 Toast 的默认配置。
+通过 `setToastDefaultOptions` 函数可以全局修改 `showToast` 等方法的默认配置。
 
 ```js
-Toast.setDefaultOptions({ duration: 2000 });
+import { setToastDefaultOptions, resetToastDefaultOptions } from 'vant';
 
-Toast.setDefaultOptions('loading', { forbidClick: true });
+setToastDefaultOptions({ duration: 2000 });
 
-Toast.resetDefaultOptions();
+setToastDefaultOptions('loading', { forbidClick: true });
 
-Toast.resetDefaultOptions('loading');
+resetToastDefaultOptions();
+
+resetToastDefaultOptions('loading');
+```
+
+### 使用 Toast 组件
+
+如果需要在 Toast 内嵌入组件或其他自定义内容，可以直接使用 Toast 组件，并使用 message 插槽进行定制。使用前需要通过 `app.use` 等方式注册组件。
+
+```html
+<van-toast v-model:show="show" style="padding: 0">
+  <template #message>
+    <van-image :src="image" width="200" height="140" style="display: block" />
+  </template>
+</van-toast>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const show = ref(false);
+    return { show };
+  },
+};
 ```
 
 ## API
 
 ### 方法
 
+Vant 中导出了以下 Toast 相关的辅助函数：
+
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| Toast | 展示提示 | `options \| message` | toast 实例 |
-| Toast.loading | 展示加载提示 | `options \| message` | toast 实例 |
-| Toast.success | 展示成功提示 | `options \| message` | toast 实例 |
-| Toast.fail | 展示失败提示 | `options \| message` | toast 实例 |
-| Toast.clear | 关闭提示 | `clearAll: boolean` | `void` |
-| Toast.allowMultiple | 允许同时存在多个 Toast | - | `void` |
-| Toast.setDefaultOptions | 修改默认配置，对所有 Toast 生效。<br>传入 type 可以修改指定类型的默认配置 | `type \| options` | `void` |
-| Toast.resetDefaultOptions | 重置默认配置，对所有 Toast 生效。<br>传入 type 可以重置指定类型的默认配置 | `type` | `void` |
+| showToast | 展示提示 | `ToastOptions \| string` | toast 实例 |
+| showLoadingToast | 展示加载提示 | `ToastOptions \| string` | toast 实例 |
+| showSuccessToast | 展示成功提示 | `ToastOptions \| string` | toast 实例 |
+| showFailToast | 展示失败提示 | `ToastOptions \| string` | toast 实例 |
+| closeToast | 关闭提示 | `closeAll: boolean` | `void` |
+| allowMultipleToast | 允许同时存在多个 Toast | - | `void` |
+| setToastDefaultOptions | 修改默认配置，影响所有的 `showToast` 调用。<br>传入 type 可以修改指定类型的默认配置 | `type \| ToastOptions` | `void` |
+| resetToastDefaultOptions | 重置默认配置，影响所有的 `showToast` 调用。<br>传入 type 可以重置指定类型的默认配置 | `type` | `void` |
 
 ### ToastOptions 数据结构
+
+调用 `showToast` 等方法时，支持传入以下选项：
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -200,6 +233,14 @@ Toast.resetDefaultOptions('loading');
 | transition | 动画类名，等价于 [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的`name`属性 | _string_ | `van-fade` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
 
+### Slots
+
+使用 `Toast` 组件时，支持以下插槽：
+
+| 名称    | 说明           |
+| ------- | -------------- |
+| message | 自定义文本内容 |
+
 ### 类型定义
 
 组件导出以下类型定义：
@@ -221,8 +262,8 @@ import type { ToastType, ToastProps, ToastOptions, ToastPosition } from 'vant';
 | --van-toast-text-color | _var(--van-white)_ | - |
 | --van-toast-loading-icon-color | _var(--van-white)_ | - |
 | --van-toast-line-height | _var(--van-line-height-md)_ | - |
-| --van-toast-border-radius | _var(--van-border-radius-lg)_ | - |
-| --van-toast-background-color | _fade(var(--van-black), 70%)_ | - |
+| --van-toast-radius | _var(--van-radius-lg)_ | - |
+| --van-toast-background | _fade(var(--van-black), 70%)_ | - |
 | --van-toast-icon-size | _36px_ | - |
 | --van-toast-text-min-width | _96px_ | - |
 | --van-toast-text-padding | _var(--van-padding-xs) var(--van-padding-sm)_ | - |
@@ -231,3 +272,18 @@ import type { ToastType, ToastProps, ToastOptions, ToastPosition } from 'vant';
 | --van-toast-default-min-height | _88px_ | - |
 | --van-toast-position-top-distance | _20%_ | - |
 | --van-toast-position-bottom-distance | _20%_ | - |
+
+## 常见问题
+
+### 引用 showToast 时出现编译报错？
+
+如果引用 `showToast` 方法时出现以下报错，说明项目中使用了 `babel-plugin-import` 插件，导致代码被错误编译。
+
+```bash
+These dependencies were not found:
+
+* vant/es/show-toast in ./src/xxx.js
+* vant/es/show-toast/style in ./src/xxx.js
+```
+
+Vant 从 4.0 版本开始不再支持 `babel-plugin-import` 插件，请参考 [迁移指南](#/zh-CN/migrate-from-v3#yi-chu-babel-plugin-import) 移除该插件。

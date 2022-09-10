@@ -2,61 +2,30 @@
 
 ### 介绍
 
-在页面顶部展示消息提示，支持函数调用和组件调用两种方式。
+在页面顶部展示消息提示，支持组件调用和函数调用两种方式。
 
-### 函数调用
+### 引入
 
-Notify 是一个函数，调用后会直接在页面中弹出相应的消息提示。
-
-```js
-import { Notify } from 'vant';
-
-Notify('通知内容');
-```
-
-#### 手动引入样式
-
-Notify 组件是以函数形式提供的，如果项目中使用 `unplugin-vue-components` 插件来自动引入组件样式，则无法正确识别 Notify 组件，因此需要手动引入 Notify 组件的样式：
-
-```js
-import 'vant/es/notify/style';
-```
-
-你可以在项目的入口文件或公共模块中引入 Notify 组件的样式，这样在业务代码中使用 Notify 时，便不再需要重复引入样式了。
-
-### 组件调用
-
-通过组件调用 Notify 时，可以通过下面的方式进行注册：
+通过以下方式来全局注册组件，更多注册方式请参考[组件注册](#/zh-CN/advanced-usage#zu-jian-zhu-ce)。
 
 ```js
 import { createApp } from 'vue';
 import { Notify } from 'vant';
 
-// 全局注册
 const app = createApp();
 app.use(Notify);
-
-// 局部注册
-export default {
-  components: {
-    [Notify.Component.name]: Notify.Component,
-  },
-};
 ```
 
-在 `script setup` 中，可以通过以下方式使用：
+### 函数调用
 
-```html
-<script setup>
-  const VanNotify = Notify.Component;
-</script>
+为了便于使用 `Notify`，Vant 提供了一系列辅助函数，通过辅助函数可以快速唤起全局的消息提示。
 
-<template>
-  <!-- 中划线命名 -->
-  <van-notify />
-  <!-- 也支持大驼峰命名 -->
-  <VanNotify>
-</template>
+比如使用 `showNotify` 函数，调用后会直接在页面中渲染对应的提示。
+
+```js
+import { showNotify } from 'vant';
+
+showNotify({ message: '提示' });
 ```
 
 ## 代码演示
@@ -64,7 +33,13 @@ export default {
 ### 基础用法
 
 ```js
-Notify('通知内容');
+import { showNotify, closeNotify } from 'vant';
+
+// 3 秒后自动关闭
+showNotify('通知内容');
+
+// 主动关闭
+closeNotify();
 ```
 
 ### 通知类型
@@ -72,17 +47,19 @@ Notify('通知内容');
 支持 `primary`、`success`、`warning`、`danger` 四种通知类型，默认为 `danger`。
 
 ```js
+import { showNotify } from 'vant';
+
 // 主要通知
-Notify({ type: 'primary', message: '通知内容' });
+showNotify({ type: 'primary', message: '通知内容' });
 
 // 成功通知
-Notify({ type: 'success', message: '通知内容' });
+showNotify({ type: 'success', message: '通知内容' });
 
 // 危险通知
-Notify({ type: 'danger', message: '通知内容' });
+showNotify({ type: 'danger', message: '通知内容' });
 
 // 警告通知
-Notify({ type: 'warning', message: '通知内容' });
+showNotify({ type: 'warning', message: '通知内容' });
 ```
 
 ### 自定义通知
@@ -90,40 +67,28 @@ Notify({ type: 'warning', message: '通知内容' });
 自定义消息通知的颜色、位置和展示时长。
 
 ```js
-Notify({
+import { showNotify } from 'vant';
+
+showNotify({
   message: '自定义颜色',
   color: '#ad0000',
   background: '#ffe1e1',
 });
 
-Notify({
+showNotify({
   message: '自定义位置',
   position: 'bottom',
 });
 
-Notify({
+showNotify({
   message: '自定义时长',
   duration: 1000,
 });
 ```
 
-### 全局方法
+### 使用 Notify 组件
 
-通过 `app.use` 全局注册 Notify 组件后，会自动在 app 的所有子组件上挂载 `$notify` 方法，便于在组件内调用。
-
-```js
-export default {
-  mounted() {
-    this.$notify('提示文案');
-  },
-};
-```
-
-> Tips: 由于 setup 选项中无法访问 this，因此不能使用上述方式，请通过 import 引入。
-
-### 组件调用
-
-如果需要在 Notify 内嵌入组件或其他自定义内容，可以使用组件调用的方式。
+如果需要在 Notify 内嵌入组件或其他自定义内容，可以直接使用 Notify 组件，并使用默认插槽进行定制。使用前需要通过 `app.use` 等方式注册组件。
 
 ```html
 <van-button type="primary" text="组件调用" @click="showNotify" />
@@ -159,14 +124,18 @@ export default {
 
 ### 方法
 
+Vant 中导出了以下 Notify 相关的辅助函数：
+
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| Notify | 展示提示 | `options \| message` | notify 实例 |
-| Notify.clear | 关闭提示 | - | `void` |
-| Notify.setDefaultOptions | 修改默认配置，对所有 Notify 生效 | `options` | `void` |
-| Notify.resetDefaultOptions | 重置默认配置，对所有 Notify 生效 | - | `void` |
+| showNotify | 展示提示 | `NotifyOptions \| string` | notify 实例 |
+| closeNotify | 关闭提示 | - | `void` |
+| setNotifyDefaultOptions | 修改默认配置，影响所有的 `showNotify` 调用 | `NotifyOptions` | `void` |
+| resetNotifyDefaultOptions | 重置默认配置，影响所有的 `showNotify` 调用 | - | `void` |
 
-### Options
+### NotifyOptions
+
+调用 `showNotify` 等方法时，支持传入以下选项：
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -207,7 +176,22 @@ import type {
 | --van-notify-padding | _var(--van-padding-xs) var(--van-padding-md)_ | - |
 | --van-notify-font-size | _var(--van-font-size-md)_ | - |
 | --van-notify-line-height | _var(--van-line-height-md)_ | - |
-| --van-notify-primary-background-color | _var(--van-primary-color)_ | - |
-| --van-notify-success-background-color | _var(--van-success-color)_ | - |
-| --van-notify-danger-background-color | _var(--van-danger-color)_ | - |
-| --van-notify-warning-background-color | _var(--van-warning-color)_ | - |
+| --van-notify-primary-background | _var(--van-primary-color)_ | - |
+| --van-notify-success-background | _var(--van-success-color)_ | - |
+| --van-notify-danger-background | _var(--van-danger-color)_ | - |
+| --van-notify-warning-background | _var(--van-warning-color)_ | - |
+
+## 常见问题
+
+### 引用 showNotify 时出现编译报错？
+
+如果引用 `showNotify` 方法时出现以下报错，说明项目中使用了 `babel-plugin-import` 插件，导致代码被错误编译。
+
+```bash
+These dependencies were not found:
+
+* vant/es/show-notify in ./src/xxx.js
+* vant/es/show-notify/style in ./src/xxx.js
+```
+
+Vant 从 4.0 版本开始不再支持 `babel-plugin-import` 插件，请参考 [迁移指南](#/zh-CN/migrate-from-v3#yi-chu-babel-plugin-import) 移除该插件。

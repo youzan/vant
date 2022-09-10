@@ -26,12 +26,12 @@ app.use(Slider);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref(50);
-    const onChange = (value) => Toast('当前值：' + value);
+    const onChange = (value) => showToast('当前值：' + value);
     return {
       value,
       onChange,
@@ -50,13 +50,13 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     // 双滑块模式时，值必须是数组
     const value = ref([10, 50]);
-    const onChange = (value) => Toast('当前值：' + value);
+    const onChange = (value) => showToast('当前值：' + value);
     return {
       value,
       onChange,
@@ -92,7 +92,7 @@ export default {
 ### 自定义按钮
 
 ```html
-<van-slider v-model="value" active-color="#ee0a24">
+<van-slider v-model="value">
   <template #button>
     <div class="custom-button">{{ value }}</div>
   </template>
@@ -105,7 +105,7 @@ export default {
     font-size: 10px;
     line-height: 18px;
     text-align: center;
-    background-color: #ee0a24;
+    background-color: var(--van-primary-color);
     border-radius: 100px;
   }
 </style>
@@ -130,13 +130,13 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const value = ref(50);
     const value2 = ref([10, 50]);
-    const onChange = (value) => Toast('当前值：' + value);
+    const onChange = (value) => showToast('当前值：' + value);
     return {
       value,
       value2,
@@ -197,14 +197,14 @@ import type { SliderProps } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-slider-active-background-color | _var(--van-primary-color)_ | - |
-| --van-slider-inactive-background-color | _var(--van-gray-3)_ | - |
-| --van-slider-disabled-opacity | _var(--van-disabled-opacity)_ | - |
-| --van-slider-bar-height | _2px_ | - |
-| --van-slider-button-width | _24px_ | - |
-| --van-slider-button-height | _24px_ | - |
-| --van-slider-button-border-radius | _50%_ | - |
-| --van-slider-button-background-color | _var(--van-white)_ | - |
-| --van-slider-button-box-shadow | _0 1px 2px rgba(0, 0, 0, 0.5)_ | - |
+| 名称                             | 默认值                         | 描述 |
+| -------------------------------- | ------------------------------ | ---- |
+| --van-slider-active-background   | _var(--van-primary-color)_     | -    |
+| --van-slider-inactive-background | _var(--van-gray-3)_            | -    |
+| --van-slider-disabled-opacity    | _var(--van-disabled-opacity)_  | -    |
+| --van-slider-bar-height          | _2px_                          | -    |
+| --van-slider-button-width        | _24px_                         | -    |
+| --van-slider-button-height       | _24px_                         | -    |
+| --van-slider-button-radius       | _50%_                          | -    |
+| --van-slider-button-background   | _var(--van-white)_             | -    |
+| --van-slider-button-shadow       | _0 1px 2px rgba(0, 0, 0, 0.5)_ | -    |

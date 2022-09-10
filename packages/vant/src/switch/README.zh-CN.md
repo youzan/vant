@@ -58,7 +58,7 @@ export default {
 通过 `size` 属性自定义开关的大小。
 
 ```html
-<van-switch v-model="checked" size="24px" />
+<van-switch v-model="checked" size="22px" />
 ```
 
 ### 自定义颜色
@@ -112,13 +112,13 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Dialog } from 'vant';
+import { showConfirmDialog } from 'vant';
 
 export default {
   setup() {
     const checked = ref(true);
     const onUpdateValue = (newValue) => {
-      Dialog.confirm({
+      showConfirmDialog({
         title: '提醒',
         message: '是否切换开关？',
       }).then(() => {
@@ -139,7 +139,7 @@ export default {
 ```html
 <van-cell center title="标题">
   <template #right-icon>
-    <van-switch v-model="checked" size="24" />
+    <van-switch v-model="checked" />
   </template>
 </van-cell>
 ```
@@ -148,16 +148,16 @@ export default {
 
 ### Props
 
-| 参数           | 说明                      | 类型               | 默认值    |
-| -------------- | ------------------------- | ------------------ | --------- |
-| v-model        | 开关选中状态              | _any_              | `false`   |
-| loading        | 是否为加载状态            | _boolean_          | `false`   |
-| disabled       | 是否为禁用状态            | _boolean_          | `false`   |
-| size           | 开关尺寸，默认单位为 `px` | _number \| string_ | `30px`    |
-| active-color   | 打开时的背景色            | _string_           | `#1989fa` |
-| inactive-color | 关闭时的背景色            | _string_           | `white`   |
-| active-value   | 打开时对应的值            | _any_              | `true`    |
-| inactive-value | 关闭时对应的值            | _any_              | `false`   |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| v-model | 开关选中状态 | _any_ | `false` |
+| loading | 是否为加载状态 | _boolean_ | `false` |
+| disabled | 是否为禁用状态 | _boolean_ | `false` |
+| size | 开关按钮的尺寸，默认单位为 `px` | _number \| string_ | `26px` |
+| active-color | 打开时的背景色 | _string_ | `#1989fa` |
+| inactive-color | 关闭时的背景色 | _string_ | `rgba(120, 120, 128, 0.16)` |
+| active-value | 打开时对应的值 | _any_ | `true` |
+| inactive-value | 关闭时对应的值 | _any_ | `false` |
 
 ### Events
 
@@ -187,16 +187,15 @@ import type { SwitchProps } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-switch-size | _30px_ | - |
-| --van-switch-width | _2em_ | - |
-| --van-switch-height | _1em_ | - |
-| --van-switch-node-size | _1em_ | - |
-| --van-switch-node-background-color | _var(--van-white)_ | - |
-| --van-switch-node-box-shadow | _0 3px 1px 0 rgba(0, 0, 0, 0.05)_ | - |
-| --van-switch-background-color | _var(--van-background-color-light)_ | - |
-| --van-switch-on-background-color | _var(--van-primary-color)_ | - |
-| --van-switch-transition-duration | _var(--van-animation-duration-base)_ | - |
-| --van-switch-disabled-opacity | _var(--van-disabled-opacity)_ | - |
-| --van-switch-border | _var(--van-border-width-base) solid rgba(0, 0, 0, 0.1)_ | - |
+| 名称                          | 默认值                            | 描述 |
+| ----------------------------- | --------------------------------- | ---- |
+| --van-switch-size             | _26px_                            | -    |
+| --van-switch-width            | _calc(1.8em + 4px)_               | -    |
+| --van-switch-height           | _calc(1em + 4px)_                 | -    |
+| --van-switch-node-size        | _1em_                             | -    |
+| --van-switch-node-background  | _var(--van-white)_                | -    |
+| --van-switch-node-shadow      | _0 3px 1px 0 rgba(0, 0, 0, 0.05)_ | -    |
+| --van-switch-background       | _rgba(120, 120, 128, 0.16)_       | -    |
+| --van-switch-on-background    | _var(--van-primary-color)_        | -    |
+| --van-switch-duration         | _var(--van-duration-base)_        | -    |
+| --van-switch-disabled-opacity | _var(--van-disabled-opacity)_     | -    |

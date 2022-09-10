@@ -1,10 +1,8 @@
-@import './var.less';
-
-:root {
-  --van-contact-list-edit-icon-size: @contact-list-edit-icon-size;
-  --van-contact-list-add-button-z-index: @contact-list-add-button-z-index;
-  --van-contact-list-item-padding: @contact-list-item-padding;
-  --van-contact-list-item-radio-icon-color: @contact-list-item-radio-icon-color;
+body {
+  --van-contact-list-edit-icon-size: 16px;
+  --van-contact-list-add-button-z-index: 999;
+  --van-contact-list-radio-color: var(--van-primary-color);
+  --van-contact-list-item-padding: var(--van-padding-md);
 }
 
 .van-contact-list {
@@ -16,7 +14,7 @@
     padding: var(--van-contact-list-item-padding);
   }
 
-  &__item-value {
+  &__item-title {
     display: flex;
     align-items: center;
     padding-right: var(--van-padding-xl);
@@ -44,8 +42,8 @@
 
   &__radio {
     .van-radio__icon--checked .van-icon {
-      background-color: var(--van-contact-list-item-radio-icon-color);
-      border-color: var(--van-contact-list-item-radio-icon-color);
+      background-color: var(--van-contact-list-radio-color);
+      border-color: var(--van-contact-list-radio-color);
     }
   }
 
@@ -57,7 +55,7 @@
     z-index: var(--van-contact-list-add-button-z-index);
     padding-left: var(--van-padding-md);
     padding-right: var(--van-padding-md);
-    background-color: var(--van-background-color-light);
+    background-color: var(--van-background-2);
   }
 
   &__add {

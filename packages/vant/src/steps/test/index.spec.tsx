@@ -18,12 +18,12 @@ test('should render icon slot correctly', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should emit click-step event when step is clicked', () => {
+test('should emit clickStep event when step is clicked', () => {
   const onClickStep = jest.fn();
   const wrapper = mount({
     setup() {
       return () => (
-        <Steps active={1} onClick-step={onClickStep}>
+        <Steps active={1} onClickStep={onClickStep}>
           <Step>A</Step>
           <Step>B</Step>
           <Step>C</Step>

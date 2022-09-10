@@ -102,7 +102,7 @@ const t = useTranslate({
 
 <style lang="less">
 .demo-badge {
-  background-color: var(--van-background-color-light);
+  background-color: var(--van-background-2);
 
   .van-badge__wrapper {
     margin-left: var(--van-padding-md);

@@ -60,12 +60,12 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const onClickLeft = () => history.back();
-    const onClickRight = () => Toast('Button');
+    const onClickRight = () => showToast('Button');
     return {
       onClickLeft,
       onClickRight,
@@ -129,13 +129,13 @@ import type { NavBarProps } from 'vant';
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name | Default Value | Description |
-| --- | --- | --- |
-| --van-nav-bar-height | _46px_ | - |
-| --van-nav-bar-background-color | _var(--van-background-color-light)_ | - |
-| --van-nav-bar-arrow-size | _16px_ | - |
-| --van-nav-bar-icon-color | _var(--van-primary-color)_ | - |
-| --van-nav-bar-text-color | _var(--van-primary-color)_ | - |
-| --van-nav-bar-title-font-size | _var(--van-font-size-lg)_ | - |
-| --van-nav-bar-title-text-color | _var(--van-text-color)_ | - |
-| --van-nav-bar-z-index | _1_ | - |
+| Name                           | Default Value              | Description |
+| ------------------------------ | -------------------------- | ----------- |
+| --van-nav-bar-height           | _46px_                     | -           |
+| --van-nav-bar-background       | _var(--van-background-2)_  | -           |
+| --van-nav-bar-arrow-size       | _16px_                     | -           |
+| --van-nav-bar-icon-color       | _var(--van-primary-color)_ | -           |
+| --van-nav-bar-text-color       | _var(--van-primary-color)_ | -           |
+| --van-nav-bar-title-font-size  | _var(--van-font-size-lg)_  | -           |
+| --van-nav-bar-title-text-color | _var(--van-text-color)_    | -           |
+| --van-nav-bar-z-index          | _1_                        | -           |

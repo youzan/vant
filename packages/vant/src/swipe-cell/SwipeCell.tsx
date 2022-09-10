@@ -34,7 +34,7 @@ import type {
 
 const [name, bem] = createNamespace('swipe-cell');
 
-const swipeCellProps = {
+export const swipeCellProps = {
   name: makeNumericProp(''),
   disabled: Boolean,
   leftWidth: numericProp,

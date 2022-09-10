@@ -1,7 +1,7 @@
 import { ref, Ref } from 'vue';
 import { inBrowser } from '../utils';
 
-type VisibilityState = "hidden" | "visible";
+type VisibilityState = 'hidden' | 'visible';
 
 let visibility: Ref<VisibilityState>;
 

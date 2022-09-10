@@ -1,13 +1,16 @@
 {
   "name": "vant",
-  "version": "3.6.2",
-  "description": "Lightweight Mobile UI Components built on Vue",
+  "version": "4.0.0-rc.0",
+  "description": "Mobile UI Components built on Vue",
   "main": "lib/vant.cjs.js",
   "module": "es/index.mjs",
   "style": "lib/index.css",
   "typings": "lib/index.d.ts",
   "unpkg": "lib/vant.min.js",
   "jsdelivr": "lib/vant.min.js",
+  "npm": {
+    "tag": "next"
+  },
   "files": [
     "es",
     "lib"
@@ -66,8 +69,7 @@
   "sideEffects": [
     "es/**/style/*",
     "lib/**/style/*",
-    "*.css",
-    "*.less"
+    "*.css"
   ],
   "web-types": "lib/web-types.json"
 }

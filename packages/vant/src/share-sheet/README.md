@@ -32,7 +32,7 @@ app.use(ShareSheet);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -46,7 +46,7 @@ export default {
     ];
 
     const onSelect = (option) => {
-      Toast(option.name);
+      showToast(option.name);
       showShare.value = false;
     };
 
@@ -249,4 +249,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-share-sheet-option-description-font-size | _var(--van-font-size-sm)_ | - |
 | --van-share-sheet-cancel-button-font-size | _var(--van-font-size-lg)_ | - |
 | --van-share-sheet-cancel-button-height | _48px_ | - |
-| --van-share-sheet-cancel-button-background | _var(--van-background-color-light)_ | - |
+| --van-share-sheet-cancel-button-background | _var(--van-background-2)_ | - |

@@ -1,14 +1,12 @@
-@import './var.less';
-
-:root {
-  --van-nav-bar-height: @nav-bar-height;
-  --van-nav-bar-background-color: @nav-bar-background-color;
-  --van-nav-bar-arrow-size: @nav-bar-arrow-size;
-  --van-nav-bar-icon-color: @nav-bar-icon-color;
-  --van-nav-bar-text-color: @nav-bar-text-color;
-  --van-nav-bar-title-font-size: @nav-bar-title-font-size;
-  --van-nav-bar-title-text-color: @nav-bar-title-text-color;
-  --van-nav-bar-z-index: @nav-bar-z-index;
+body {
+  --van-nav-bar-height: 46px;
+  --van-nav-bar-background: var(--van-background-2);
+  --van-nav-bar-arrow-size: 16px;
+  --van-nav-bar-icon-color: var(--van-primary-color);
+  --van-nav-bar-text-color: var(--van-primary-color);
+  --van-nav-bar-title-font-size: var(--van-font-size-lg);
+  --van-nav-bar-title-text-color: var(--van-text-color);
+  --van-nav-bar-z-index: 1;
 }
 
 .van-nav-bar {
@@ -16,7 +14,7 @@
   z-index: var(--van-nav-bar-z-index);
   line-height: var(--van-line-height-lg);
   text-align: center;
-  background: var(--van-nav-bar-background-color);
+  background: var(--van-nav-bar-background);
   user-select: none;
 
   &--fixed {
@@ -51,7 +49,7 @@
     max-width: 60%;
     margin: 0 auto;
     color: var(--van-nav-bar-title-text-color);
-    font-weight: var(--van-font-weight-bold);
+    font-weight: var(--van-font-bold);
     font-size: var(--van-nav-bar-title-font-size);
   }
 

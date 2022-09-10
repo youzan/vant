@@ -1,17 +1,15 @@
-@import './var.less';
-
-:root {
-  --van-search-padding: @search-padding;
-  --van-search-background-color: @search-background-color;
-  --van-search-content-background-color: @search-content-background-color;
-  --van-search-input-height: @search-input-height;
-  --van-search-label-padding: @search-label-padding;
-  --van-search-label-color: @search-label-color;
-  --van-search-label-font-size: @search-label-font-size;
-  --van-search-left-icon-color: @search-left-icon-color;
-  --van-search-action-padding: @search-action-padding;
-  --van-search-action-text-color: @search-action-text-color;
-  --van-search-action-font-size: @search-action-font-size;
+body {
+  --van-search-padding: 10px var(--van-padding-sm);
+  --van-search-background: var(--van-background-2);
+  --van-search-content-background: var(--van-background);
+  --van-search-input-height: 34px;
+  --van-search-label-padding: 0 5px;
+  --van-search-label-color: var(--van-text-color);
+  --van-search-label-font-size: var(--van-font-size-md);
+  --van-search-left-icon-color: var(--van-gray-6);
+  --van-search-action-padding: 0 var(--van-padding-xs);
+  --van-search-action-text-color: var(--van-text-color);
+  --van-search-action-font-size: var(--van-font-size-md);
 }
 
 .van-search {
@@ -19,17 +17,17 @@
   align-items: center;
   box-sizing: border-box;
   padding: var(--van-search-padding);
-  background: var(--van-search-background-color);
+  background: var(--van-search-background);
 
   &__content {
     display: flex;
     flex: 1;
     padding-left: var(--van-padding-sm);
-    background: var(--van-search-content-background-color);
-    border-radius: var(--van-border-radius-sm);
+    background: var(--van-search-content-background);
+    border-radius: var(--van-radius-sm);
 
     &--round {
-      border-radius: var(--van-border-radius-max);
+      border-radius: var(--van-radius-max);
     }
   }
 

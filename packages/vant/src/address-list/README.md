@@ -34,7 +34,7 @@ app.use(AddressList);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
@@ -63,8 +63,8 @@ export default {
       },
     ];
 
-    const onAdd = () => Toast('Add');
-    const onEdit = (item, index) => Toast('Edit:' + index);
+    const onAdd = () => showToast('Add');
+    const onEdit = (item, index) => showToast('Edit:' + index);
 
     return {
       list,
@@ -148,5 +148,5 @@ The component provides the following CSS variables, which can be used to customi
 | --van-address-list-item-disabled-text-color | _var(--van-text-color-3)_ | - |
 | --van-address-list-item-font-size | _13px_ | - |
 | --van-address-list-item-line-height | _var(--van-line-height-sm)_ | - |
-| --van-address-list-item-radio-icon-color | _var(--van-danger-color)_ | - |
+| --van-address-list-radio-color | _var(--van-primary-color)_ | - |
 | --van-address-list-edit-icon-size | _20px_ | - |

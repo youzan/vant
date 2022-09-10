@@ -1,22 +1,20 @@
-@import './var.less';
-
-:root {
-  --van-card-padding: @card-padding;
-  --van-card-font-size: @card-font-size;
-  --van-card-text-color: @card-text-color;
-  --van-card-background-color: @card-background-color;
-  --van-card-thumb-size: @card-thumb-size;
-  --van-card-thumb-border-radius: @card-thumb-border-radius;
-  --van-card-title-line-height: @card-title-line-height;
-  --van-card-desc-color: @card-desc-color;
-  --van-card-desc-line-height: @card-desc-line-height;
-  --van-card-price-color: @card-price-color;
-  --van-card-origin-price-color: @card-origin-price-color;
-  --van-card-num-color: @card-num-color;
-  --van-card-origin-price-font-size: @card-origin-price-font-size;
-  --van-card-price-font-size: @card-price-font-size;
-  --van-card-price-integer-font-size: @card-price-integer-font-size;
-  --van-card-price-font-family: @card-price-font-family;
+body {
+  --van-card-padding: var(--van-padding-xs) var(--van-padding-md);
+  --van-card-font-size: var(--van-font-size-sm);
+  --van-card-text-color: var(--van-text-color);
+  --van-card-background: var(--van-background);
+  --van-card-thumb-size: 88px;
+  --van-card-thumb-radius: var(--van-radius-lg);
+  --van-card-title-line-height: 16px;
+  --van-card-desc-color: var(--van-text-color-2);
+  --van-card-desc-line-height: var(--van-line-height-md);
+  --van-card-price-color: var(--van-text-color);
+  --van-card-origin-price-color: var(--van-text-color-2);
+  --van-card-num-color: var(--van-text-color-2);
+  --van-card-origin-price-font-size: var(--van-font-size-xs);
+  --van-card-price-font-size: var(--van-font-size-sm);
+  --van-card-price-integer-font-size: var(--van-font-size-lg);
+  --van-card-price-font: var(--van-price-font);
 }
 
 .van-card {
@@ -25,7 +23,7 @@
   padding: var(--van-card-padding);
   color: var(--van-card-text-color);
   font-size: var(--van-card-font-size);
-  background: var(--van-card-background-color);
+  background: var(--van-card-background);
 
   &:not(:first-child) {
     margin-top: var(--van-padding-xs);
@@ -43,7 +41,7 @@
     margin-right: var(--van-padding-xs);
 
     img {
-      border-radius: var(--van-card-thumb-border-radius);
+      border-radius: var(--van-card-thumb-radius);
     }
   }
 
@@ -68,7 +66,7 @@
 
   &__title {
     max-height: 32px;
-    font-weight: var(--van-font-weight-bold);
+    font-weight: var(--van-font-bold);
     line-height: var(--van-card-title-line-height);
   }
 
@@ -85,17 +83,17 @@
   &__price {
     display: inline-block;
     color: var(--van-card-price-color);
-    font-weight: var(--van-font-weight-bold);
+    font-weight: var(--van-font-bold);
     font-size: var(--van-card-price-font-size);
   }
 
   &__price-integer {
     font-size: var(--van-card-price-integer-font-size);
-    font-family: var(--van-card-price-font-family);
+    font-family: var(--van-card-price-font);
   }
 
   &__price-decimal {
-    font-family: var(--van-card-price-font-family);
+    font-family: var(--van-card-price-font);
   }
 
   &__origin-price {

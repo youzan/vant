@@ -12,3 +12,17 @@ exports[`create a forbidClick toast 1`] = `
   </div>
 </transition-stub>
 `;
+
+exports[`should render message slot correctly 1`] = `
+<transition-stub>
+  <div role="dialog"
+       tabindex="0"
+       class="van-popup van-popup--center van-toast van-toast--middle van-toast--text"
+       style="z-index: 2007;"
+  >
+    <div class="van-toast__text">
+      Custom Message
+    </div>
+  </div>
+</transition-stub>
+`;

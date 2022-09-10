@@ -14,7 +14,7 @@ const [name, bem] = createNamespace('space');
 export type SpaceSize = number | string;
 export type SpaceAlign = 'start' | 'end' | 'center' | 'baseline';
 
-const spaceProps = {
+export const spaceProps = {
   align: String as PropType<SpaceAlign>,
   direction: {
     type: String as PropType<'vertical' | 'horizontal'>,

@@ -38,5 +38,8 @@ export function pick<T, U extends keyof T>(
   }, {} as Writeable<Pick<T, U>>);
 }
 
+export const isSameValue = (newValue: unknown, oldValue: unknown) =>
+  JSON.stringify(newValue) === JSON.stringify(oldValue);
+
 export const toArray = <T>(item: T | T[]): T[] =>
   Array.isArray(item) ? item : [item];

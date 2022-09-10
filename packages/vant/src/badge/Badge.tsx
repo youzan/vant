@@ -24,7 +24,7 @@ export type BadgePosition =
   | 'bottom-left'
   | 'bottom-right';
 
-const badgeProps = {
+export const badgeProps = {
   dot: Boolean,
   max: numericProp,
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
@@ -48,7 +48,11 @@ export default defineComponent({
         return true;
       }
       const { content, showZero } = props;
-      return isDef(content) && content !== '' && (showZero || (content !== 0 && content !== '0'));
+      return (
+        isDef(content) &&
+        content !== '' &&
+        (showZero || (content !== 0 && content !== '0'))
+      );
     };
 
     const renderContent = () => {

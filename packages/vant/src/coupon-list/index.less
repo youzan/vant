@@ -1,19 +1,17 @@
-@import './var.less';
-
-:root {
-  --van-coupon-list-background-color: @coupon-list-background-color;
-  --van-coupon-list-field-padding: @coupon-list-field-padding;
-  --van-coupon-list-exchange-button-height: @coupon-list-exchange-button-height;
-  --van-coupon-list-close-button-height: @coupon-list-close-button-height;
-  --van-coupon-list-empty-tip-color: @coupon-list-empty-tip-color;
-  --van-coupon-list-empty-tip-font-size: @coupon-list-empty-tip-font-size;
-  --van-coupon-list-empty-tip-line-height: @coupon-list-empty-tip-line-height;
+body {
+  --van-coupon-list-background: var(--van-background);
+  --van-coupon-list-field-padding: 5px 0 5px var(--van-padding-md);
+  --van-coupon-list-exchange-button-height: 32px;
+  --van-coupon-list-close-button-height: 40px;
+  --van-coupon-list-empty-tip-color: var(--van-text-color-2);
+  --van-coupon-list-empty-tip-font-size: var(--van-font-size-md);
+  --van-coupon-list-empty-tip-line-height: var(--van-line-height-md);
 }
 
 .van-coupon-list {
   position: relative;
   height: 100%;
-  background: var(--van-coupon-list-background-color);
+  background: var(--van-coupon-list-background);
 
   &__field {
     padding: var(--van-coupon-list-field-padding);
@@ -22,8 +20,8 @@
       height: 34px;
       padding-left: var(--van-padding-sm);
       line-height: 34px;
-      background: var(--van-gray-1);
-      border-radius: 17px;
+      background: var(--van-background);
+      border-radius: var(--van-radius-max);
 
       &::placeholder {
         color: var(--van-text-color-3);
@@ -38,7 +36,7 @@
   &__exchange-bar {
     display: flex;
     align-items: center;
-    background-color: var(--van-background-color-light);
+    background-color: var(--van-background-2);
   }
 
   &__exchange {
@@ -72,8 +70,8 @@
     box-sizing: border-box;
     width: 100%;
     padding: 5px var(--van-padding-md);
-    font-weight: var(--van-font-weight-bold);
-    background-color: var(--van-background-color-light);
+    font-weight: var(--van-font-bold);
+    background-color: var(--van-background-2);
   }
 
   &__close {

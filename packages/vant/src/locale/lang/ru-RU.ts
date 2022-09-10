@@ -50,10 +50,8 @@ export default {
   },
   vanAddressEdit: {
     area: 'Область',
-    postal: 'Индекс',
     areaEmpty: 'Укажите зону доставки',
     addressEmpty: 'Адрес не может быть пустым',
-    postalEmpty: 'Некорректный индекс',
     addressDetail: 'Адрес',
     defaultAddress: 'Сделать адресом по умолчанию',
   },

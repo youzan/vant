@@ -109,15 +109,6 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-cell">
-    <div class="van-cell__value van-cell__value--alone">
-      <span>
-        Content
-      </span>
-    </div>
-  </div>
-</div>
-<div>
   <div class="van-cell van-cell--clickable"
        role="button"
        tabindex="0"
@@ -237,7 +228,7 @@ exports[`should render demo and match snapshot 1`] = `
         Cell title
       </span>
       <transition-stub>
-        <span class="van-tag van-tag--danger">
+        <span class="van-tag van-tag--primary">
           Tag
         </span>
       </transition-stub>

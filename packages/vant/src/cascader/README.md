@@ -83,7 +83,7 @@ export default {
   v-model="cascaderValue"
   title="Select Area"
   :options="options"
-  active-color="#1989fa"
+  active-color="#ee0a24"
   @close="show = false"
   @finish="onFinish"
 />
@@ -250,7 +250,7 @@ export default {
 | value | Value of selected option | _string \| number_ | - |
 | options | Options | _CascaderOption[]_ | `[]` |
 | placeholder | Placeholder of unselected tab | _string_ | `Select` |
-| active-color | Active color | _string_ | `#ee0a24` |
+| active-color | Active color | _string_ | `#1989fa` |
 | swipeable `v3.0.11` | Whether to enable gestures to slide left and right | _boolean_ | `false` |
 | closeable | Whether to show close icon | _boolean_ | `true` |
 | show-header `v3.4.2` | Whether to show header | _boolean_ | `true` |

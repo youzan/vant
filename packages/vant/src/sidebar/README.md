@@ -46,7 +46,7 @@ export default {
 <van-sidebar v-model="active">
   <van-sidebar-item title="Title" dot />
   <van-sidebar-item title="Title" badge="5" />
-  <van-sidebar-item title="Title" badge="20" />
+  <van-sidebar-item title="Title" />
 </van-sidebar>
 ```
 
@@ -72,12 +72,12 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const active = ref(0);
-    const onChange = (index) => Toast(`Title ${index + 1}`);
+    const onChange = (index) => showToast(`Title ${index + 1}`);
     return {
       active,
       onChange,
@@ -148,10 +148,10 @@ The component provides the following CSS variables, which can be used to customi
 | --van-sidebar-disabled-text-color | _var(--van-text-color-3)_ | - |
 | --van-sidebar-padding | _20px var(--van-padding-sm)_ | - |
 | --van-sidebar-active-color | _var(--van-active-color)_ | - |
-| --van-sidebar-background-color | _var(--van-background-color)_ | - |
-| --van-sidebar-selected-font-weight | _var(--van-font-weight-bold)_ | - |
+| --van-sidebar-background | _var(--van-background)_ | - |
+| --van-sidebar-selected-font-weight | _var(--van-font-bold)_ | - |
 | --van-sidebar-selected-text-color | _var(--van-text-color)_ | - |
 | --van-sidebar-selected-border-width | _4px_ | - |
 | --van-sidebar-selected-border-height | _16px_ | - |
-| --van-sidebar-selected-border-color | _var(--van-danger-color)_ | - |
-| --van-sidebar-selected-background-color | _var(--van-background-color-light)_ | - |
+| --van-sidebar-selected-border-color | _var(--van-primary-color)_ | - |
+| --van-sidebar-selected-background | _var(--van-background-2)_ | - |

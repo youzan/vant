@@ -37,7 +37,7 @@ import { useExpose } from '../composables/use-expose';
 
 // Components
 import { Icon } from '../icon';
-import { ImagePreview, type ImagePreviewOptions } from '../image-preview';
+import { showImagePreview, type ImagePreviewOptions } from '../image-preview';
 import UploaderPreviewItem from './UploaderPreviewItem';
 
 // Types
@@ -51,7 +51,7 @@ import type {
   UploaderFileListItem,
 } from './types';
 
-const uploaderProps = {
+export const uploaderProps = {
   name: makeNumericProp(''),
   accept: makeStringProp('image/*'),
   capture: String,
@@ -92,9 +92,9 @@ export default defineComponent({
   emits: [
     'delete',
     'oversize',
-    'click-upload',
-    'close-preview',
-    'click-preview',
+    'clickUpload',
+    'closePreview',
+    'clickPreview',
     'update:modelValue',
   ],
 
@@ -223,7 +223,7 @@ export default defineComponent({
 
     let imagePreview: ComponentInstance | undefined;
 
-    const onClosePreview = () => emit('close-preview');
+    const onClosePreview = () => emit('closePreview');
 
     const previewImage = (item: UploaderFileListItem) => {
       if (props.previewFullImage) {
@@ -238,7 +238,7 @@ export default defineComponent({
           })
           .filter(Boolean) as string[];
 
-        imagePreview = ImagePreview(
+        imagePreview = showImagePreview(
           extend(
             {
               images,
@@ -283,7 +283,7 @@ export default defineComponent({
           v-slots={pick(slots, ['preview-cover', 'preview-delete'])}
           item={item}
           index={index}
-          onClick={() => emit('click-preview', item, getDetail(index))}
+          onClick={() => emit('clickPreview', item, getDetail(index))}
           onDelete={() => deleteFile(item, index)}
           onPreview={() => previewImage(item)}
           {...pick(props, ['name', 'lazyLoad'])}
@@ -298,7 +298,7 @@ export default defineComponent({
       }
     };
 
-    const onClickUpload = (event: MouseEvent) => emit('click-upload', event);
+    const onClickUpload = (event: MouseEvent) => emit('clickUpload', event);
 
     const renderUpload = () => {
       if (props.modelValue.length >= props.maxCount || !props.showUpload) {

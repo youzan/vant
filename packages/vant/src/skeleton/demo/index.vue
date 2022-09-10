@@ -32,7 +32,7 @@ const show = ref(false);
   </demo-block>
 
   <demo-block :title="t('showChildren')">
-    <van-switch v-model="show" size="24px" />
+    <van-switch v-model="show" />
     <van-skeleton title avatar :row="3" :loading="!show">
       <div class="demo-preview">
         <img :src="cdnURL('logo.png')" />
@@ -47,7 +47,7 @@ const show = ref(false);
 
 <style lang="less">
 .demo-skeleton {
-  background-color: var(--van-background-color-light);
+  background-color: var(--van-background-2);
 
   .van-switch {
     margin: 0 var(--van-padding-md) var(--van-padding-xs);

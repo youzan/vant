@@ -24,7 +24,7 @@ import type { FormExpose } from './types';
 
 const [name, bem] = createNamespace('form');
 
-const formProps = {
+export const formProps = {
   colon: Boolean,
   disabled: Boolean,
   readonly: Boolean,

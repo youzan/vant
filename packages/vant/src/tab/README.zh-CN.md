@@ -115,12 +115,12 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const active = ref(0);
-    const onClickTab = ({ title }) => Toast(title);
+    const onClickTab = ({ title }) => showToast(title);
     return {
       active,
       onClickTab,
@@ -252,7 +252,7 @@ export default {
 | --- | --- | --- | --- |
 | v-model:active | 绑定当前选中标签的标识符 | _number \| string_ | `0` |
 | type | 样式风格类型，可选值为 `card` | _string_ | `line` |
-| color | 标签主题色 | _string_ | `#ee0a24` |
+| color | 标签主题色 | _string_ | `#1989fa` |
 | background | 标签栏背景色 | _string_ | `white` |
 | duration | 动画时间，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.3` |
 | line-width | 底部条宽度，默认单位 `px` | _number \| string_ | `40px` |
@@ -347,20 +347,20 @@ tabsRef.value?.scrollTo(0);
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                            | 默认值                              | 描述 |
-| ------------------------------- | ----------------------------------- | ---- |
-| --van-tab-text-color            | _var(--van-gray-7)_                 | -    |
-| --van-tab-active-text-color     | _var(--van-text-color)_             | -    |
-| --van-tab-disabled-text-color   | _var(--van-text-color-3)_           | -    |
-| --van-tab-font-size             | _var(--van-font-size-md)_           | -    |
-| --van-tab-line-height           | _var(--van-line-height-md)_         | -    |
-| --van-tabs-default-color        | _var(--van-danger-color)_           | -    |
-| --van-tabs-line-height          | _44px_                              | -    |
-| --van-tabs-card-height          | _30px_                              | -    |
-| --van-tabs-nav-background-color | _var(--van-background-color-light)_ | -    |
-| --van-tabs-bottom-bar-width     | _40px_                              | -    |
-| --van-tabs-bottom-bar-height    | _3px_                               | -    |
-| --van-tabs-bottom-bar-color     | _var(--van-danger-color)_           | -    |
+| 名称                          | 默认值                      | 描述 |
+| ----------------------------- | --------------------------- | ---- |
+| --van-tab-text-color          | _var(--van-gray-7)_         | -    |
+| --van-tab-active-text-color   | _var(--van-text-color)_     | -    |
+| --van-tab-disabled-text-color | _var(--van-text-color-3)_   | -    |
+| --van-tab-font-size           | _var(--van-font-size-md)_   | -    |
+| --van-tab-line-height         | _var(--van-line-height-md)_ | -    |
+| --van-tabs-default-color      | _var(--van-primary-color)_  | -    |
+| --van-tabs-line-height        | _44px_                      | -    |
+| --van-tabs-card-height        | _30px_                      | -    |
+| --van-tabs-nav-background     | _var(--van-background-2)_   | -    |
+| --van-tabs-bottom-bar-width   | _40px_                      | -    |
+| --van-tabs-bottom-bar-height  | _3px_                       | -    |
+| --van-tabs-bottom-bar-color   | _var(--van-primary-color)_  | -    |
 
 ## 常见问题
 

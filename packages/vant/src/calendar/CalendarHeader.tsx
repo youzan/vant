@@ -15,7 +15,7 @@ export default defineComponent({
     firstDayOfWeek: Number,
   },
 
-  emits: ['click-subtitle'],
+  emits: ['clickSubtitle'],
 
   setup(props, { slots, emit }) {
     const renderTitle = () => {
@@ -26,8 +26,7 @@ export default defineComponent({
       }
     };
 
-    const onClickSubtitle = (event: MouseEvent) =>
-      emit('click-subtitle', event);
+    const onClickSubtitle = (event: MouseEvent) => emit('clickSubtitle', event);
 
     const renderSubtitle = () => {
       if (props.showSubtitle) {

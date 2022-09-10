@@ -31,7 +31,7 @@ Vant 是一个**轻量、可靠的移动端组件库**，于 2017 年开源。
 
 ### 版本提示
 
-你当前浏览的是 **Vant 3.x 版本** 的文档，适用于 Vue 3 开发。如果你在使用 Vue 2，请浏览 [Vant 2 文档](https://vant-contrib.gitee.io/vant/v2)。
+你当前浏览的是 **Vant 4.x 版本** 的文档，适用于 Vue 3 开发。如果你在使用 Vue 2，请浏览 [Vant 2 文档](https://vant-contrib.gitee.io/vant/v2)。
 
 ### 快速上手
 

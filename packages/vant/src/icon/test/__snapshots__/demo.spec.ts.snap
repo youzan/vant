@@ -75,6 +75,10 @@ exports[`should render demo and match snapshot 1`] = `
             <i class="van-badge__wrapper van-icon van-icon-chat-o">
             </i>
           </div>
+        </div>
+      </div>
+      <div>
+        <div class="van-row">
           <div class="van-col van-col--6">
             <i class="van-badge__wrapper van-icon">
               <img class="van-icon__image"

@@ -9,7 +9,7 @@ import { Image } from '../image';
 
 const [name, bem] = createNamespace('card');
 
-const cardProps = {
+export const cardProps = {
   tag: String,
   num: numericProp,
   desc: String,
@@ -30,7 +30,7 @@ export default defineComponent({
 
   props: cardProps,
 
-  emits: ['click-thumb'],
+  emits: ['clickThumb'],
 
   setup(props, { slots, emit }) {
     const renderTitle = () => {
@@ -54,7 +54,7 @@ export default defineComponent({
             {slots.tag ? (
               slots.tag()
             ) : (
-              <Tag mark type="danger">
+              <Tag mark type="primary">
                 {props.tag}
               </Tag>
             )}
@@ -85,7 +85,7 @@ export default defineComponent({
           <a
             href={props.thumbLink}
             class={bem('thumb')}
-            onClick={(event: MouseEvent) => emit('click-thumb', event)}
+            onClick={(event: MouseEvent) => emit('clickThumb', event)}
           >
             {renderThumbImage()}
             {renderThumbTag()}

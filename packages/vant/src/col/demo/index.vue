@@ -70,8 +70,6 @@ const t = useTranslate({
 
 <style lang="less">
 .demo-col {
-  background: var(--van-background-color-light);
-
   .van-doc-demo-block {
     padding: 0 var(--van-padding-md);
   }

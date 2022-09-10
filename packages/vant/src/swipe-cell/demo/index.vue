@@ -4,7 +4,7 @@ import VanButton from '../../button';
 import VanCell from '../../cell';
 import VanCard from '../../card';
 import { cdnURL, useTranslate } from '../../../docs/site';
-import { Dialog } from '../../dialog';
+import { showConfirmDialog } from '../../dialog';
 
 const t = useTranslate({
   'zh-CN': {
@@ -39,7 +39,7 @@ const beforeClose = ({ position }: { position: string }) => {
       return true;
     case 'right':
       return new Promise<boolean>((resolve) => {
-        Dialog.confirm({
+        showConfirmDialog({
           title: t('confirm'),
         }).then(() => {
           resolve(true);
@@ -102,7 +102,7 @@ const beforeClose = ({ position }: { position: string }) => {
 
   .van-card {
     margin: 0;
-    background-color: var(--van-background-color-light);
+    background-color: var(--van-background-2);
   }
 
   .delete-button {

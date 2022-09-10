@@ -13,6 +13,7 @@ import {
   addUnit,
   addNumber,
   numericProp,
+  isSameValue,
   getSizeStyle,
   preventDefault,
   stopPropagation,
@@ -30,7 +31,7 @@ type NumberRange = [number, number];
 
 type SliderValue = number | NumberRange;
 
-const sliderProps = {
+export const sliderProps = {
   min: makeNumericProp(0),
   max: makeNumericProp(100),
   step: makeNumericProp(1),
@@ -56,7 +57,7 @@ export default defineComponent({
 
   props: sliderProps,
 
-  emits: ['change', 'drag-end', 'drag-start', 'update:modelValue'],
+  emits: ['change', 'dragEnd', 'dragStart', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
     let buttonIndex: 0 | 1;
@@ -131,9 +132,6 @@ export default defineComponent({
       const diff = Math.round((value - min) / step) * step;
       return addNumber(min, diff);
     };
-
-    const isSameValue = (newValue: SliderValue, oldValue: SliderValue) =>
-      JSON.stringify(newValue) === JSON.stringify(oldValue);
 
     const handleRangeValue = (value: NumberRange) => {
       // 设置默认值
@@ -222,7 +220,7 @@ export default defineComponent({
       }
 
       if (dragStatus.value === 'start') {
-        emit('drag-start', event);
+        emit('dragStart', event);
       }
 
       preventDefault(event, true);
@@ -254,7 +252,7 @@ export default defineComponent({
 
       if (dragStatus.value === 'dragging') {
         updateValue(current, true);
-        emit('drag-end', event);
+        emit('dragEnd', event);
       }
 
       dragStatus.value = '';

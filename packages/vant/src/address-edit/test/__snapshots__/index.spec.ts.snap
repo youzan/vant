@@ -1,0 +1,329 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should allow to custom validator with validator prop 1`] = `
+<div class="van-field__error-message">
+  foo name
+</div>
+`;
+
+exports[`should render AddressEdit correctly 1`] = `
+<form class="van-form van-address-edit">
+  <div class="van-address-edit__fields">
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <label id="van-field-label"
+               for="van-field-input"
+        >
+          Name
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 id="van-field-input"
+                 class="van-field__control"
+                 placeholder="Name"
+                 aria-labelledby="van-field-label"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <label id="van-field-label"
+               for="van-field-input"
+        >
+          Phone
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="tel"
+                 id="van-field-input"
+                 class="van-field__control"
+                 placeholder="Phone"
+                 aria-labelledby="van-field-label"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-cell--clickable van-field"
+         role="button"
+         tabindex="0"
+    >
+      <div class="van-cell__title van-field__label">
+        <label id="van-field-label"
+               for="van-field-input"
+        >
+          Area
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 id="van-field-input"
+                 class="van-field__control"
+                 readonly
+                 placeholder="Area"
+                 aria-labelledby="van-field-label"
+          >
+        </div>
+      </div>
+      <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+      </i>
+    </div>
+    <div class="van-cell van-field van-address-edit-detail">
+      <div class="van-cell__title van-field__label">
+        <label id="van-field-label"
+               for="van-field-input"
+        >
+          Address
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <textarea id="van-field-input"
+                    rows="1"
+                    class="van-field__control"
+                    placeholder="Address"
+                    aria-labelledby="van-field-label"
+          >
+          </textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="van-address-edit__buttons">
+    <button type="submit"
+            class="van-button van-button--primary van-button--normal van-button--block van-button--round van-address-edit__button"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Save
+        </span>
+      </div>
+    </button>
+  </div>
+</form>
+`;
+
+exports[`should render AddressEdit with props correctly 1`] = `
+<form class="van-form van-address-edit">
+  <div class="van-address-edit__fields">
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <label id="van-field-label"
+               for="van-field-input"
+        >
+          Name
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 id="van-field-input"
+                 class="van-field__control"
+                 placeholder="Name"
+                 aria-labelledby="van-field-label"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label">
+        <label id="van-field-label"
+               for="van-field-input"
+        >
+          Phone
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="tel"
+                 id="van-field-input"
+                 class="van-field__control"
+                 placeholder="Phone"
+                 aria-labelledby="van-field-label"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-cell--clickable van-field"
+         role="button"
+         tabindex="0"
+    >
+      <div class="van-cell__title van-field__label">
+        <label id="van-field-label"
+               for="van-field-input"
+        >
+          Area
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 id="van-field-input"
+                 class="van-field__control"
+                 readonly
+                 placeholder="Area"
+                 aria-labelledby="van-field-label"
+          >
+        </div>
+      </div>
+      <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+      </i>
+    </div>
+    <div class="van-cell van-field van-address-edit-detail">
+      <div class="van-cell__title van-field__label">
+        <label id="van-field-label"
+               for="van-field-input"
+        >
+          Address
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <textarea id="van-field-input"
+                    rows="1"
+                    class="van-field__control"
+                    placeholder="Address"
+                    aria-labelledby="van-field-label"
+          >
+          </textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="van-cell van-cell--center van-address-edit__default">
+    <div class="van-cell__title">
+      <span>
+        Set as the default address
+      </span>
+    </div>
+    <div role="switch"
+         class="van-switch van-switch--on"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <div class="van-switch__node">
+      </div>
+    </div>
+  </div>
+  <div class="van-address-edit__buttons">
+    <button type="submit"
+            class="van-button van-button--primary van-button--normal van-button--block van-button--round van-address-edit__button"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Save
+        </span>
+      </div>
+    </button>
+  </div>
+</form>
+`;
+
+exports[`should valid address detail and render error message correctly 1`] = `
+<div class="van-cell van-field van-address-edit-detail">
+  <div class="van-cell__title van-field__label">
+    <label id="van-field-label"
+           for="van-field-input"
+    >
+      Address
+    </label>
+  </div>
+  <div class="van-cell__value van-field__value">
+    <div class="van-field__body">
+      <textarea id="van-field-input"
+                rows="1"
+                class="van-field__control"
+                placeholder="Address"
+                aria-labelledby="van-field-label"
+                style="height: auto;"
+      >
+      </textarea>
+    </div>
+    <div class="van-field__error-message">
+      Address can not be empty
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should valid area code and render error message correctly 1`] = `
+<div class="van-cell van-cell--clickable van-field"
+     role="button"
+     tabindex="0"
+>
+  <div class="van-cell__title van-field__label">
+    <label id="van-field-label"
+           for="van-field-input"
+    >
+      Area
+    </label>
+  </div>
+  <div class="van-cell__value van-field__value">
+    <div class="van-field__body">
+      <input type="text"
+             id="van-field-input"
+             class="van-field__control"
+             readonly
+             placeholder="Area"
+             aria-labelledby="van-field-label"
+      >
+    </div>
+  </div>
+  <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+  </i>
+</div>
+`;
+
+exports[`should valid name and render error message correctly 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__title van-field__label">
+    <label id="van-field-label"
+           for="van-field-input"
+    >
+      Name
+    </label>
+  </div>
+  <div class="van-cell__value van-field__value">
+    <div class="van-field__body">
+      <input type="text"
+             id="van-field-input"
+             class="van-field__control"
+             placeholder="Name"
+             aria-labelledby="van-field-label"
+      >
+    </div>
+    <div class="van-field__error-message">
+      Please fill in the name
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should valid tel and render error message correctly 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__title van-field__label">
+    <label id="van-field-label"
+           for="van-field-input"
+    >
+      Phone
+    </label>
+  </div>
+  <div class="van-cell__value van-field__value">
+    <div class="van-field__body">
+      <input type="tel"
+             id="van-field-input"
+             class="van-field__control"
+             placeholder="Phone"
+             aria-labelledby="van-field-label"
+      >
+    </div>
+    <div class="van-field__error-message">
+      Malformed phone number
+    </div>
+  </div>
+</div>
+`;

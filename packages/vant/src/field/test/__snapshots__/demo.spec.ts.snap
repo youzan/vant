@@ -349,7 +349,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-cell-group van-cell-group--inset">
     <div class="van-cell van-field">
-      <div class="van-cell__value van-cell__value--alone van-field__value">
+      <div class="van-cell__value van-field__value">
         <div class="van-field__body">
           <textarea id="van-field-input"
                     rows="1"

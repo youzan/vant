@@ -52,14 +52,11 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/var';
-
 .demo-home {
   box-sizing: border-box;
   width: 100%;
   min-height: 100vh;
   padding: 46px 20px 20px;
-  background: #fff;
 
   &__title,
   &__desc {
@@ -94,7 +91,7 @@ export default {
 
   &__desc {
     margin: 0 0 40px;
-    color: rgba(69, 90, 100, 0.6);
+    color: var(--van-doc-text-color-4);
     font-size: 14px;
   }
 }

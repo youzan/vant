@@ -32,7 +32,7 @@ export type TreeSelectItem = {
   className?: unknown;
 };
 
-const treeSelectProps = {
+export const treeSelectProps = {
   max: makeNumericProp(Infinity),
   items: makeArrayProp<TreeSelectItem>(),
   height: makeNumericProp(300),
@@ -51,12 +51,7 @@ export default defineComponent({
 
   props: treeSelectProps,
 
-  emits: [
-    'click-nav',
-    'click-item',
-    'update:activeId',
-    'update:mainActiveIndex',
-  ],
+  emits: ['clickNav', 'clickItem', 'update:activeId', 'update:mainActiveIndex'],
 
   setup(props, { emit, slots }) {
     const isActiveItem = (id: Numeric) =>
@@ -86,7 +81,7 @@ export default defineComponent({
         }
 
         emit('update:activeId', activeId);
-        emit('click-item', item);
+        emit('clickItem', item);
       };
 
       return (
@@ -113,7 +108,7 @@ export default defineComponent({
       emit('update:mainActiveIndex', index);
     };
 
-    const onClickSidebarItem = (index: number) => emit('click-nav', index);
+    const onClickSidebarItem = (index: number) => emit('clickNav', index);
 
     const renderSidebar = () => {
       const Items = props.items.map((item) => (

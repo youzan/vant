@@ -105,7 +105,7 @@ export const fieldSharedProps = {
   },
 };
 
-const fieldProps = extend({}, cellSharedProps, fieldSharedProps, {
+export const fieldProps = extend({}, cellSharedProps, fieldSharedProps, {
   rows: numericProp,
   type: makeStringProp<FieldType>('text'),
   rules: Array as PropType<FieldRule[]>,
@@ -133,11 +133,11 @@ export default defineComponent({
     'focus',
     'clear',
     'keypress',
-    'click-input',
-    'end-validate',
-    'start-validate',
-    'click-left-icon',
-    'click-right-icon',
+    'clickInput',
+    'endValidate',
+    'startValidate',
+    'clickLeftIcon',
+    'clickRightIcon',
     'update:modelValue',
   ],
 
@@ -231,13 +231,13 @@ export default defineComponent({
       state.validateMessage = '';
     };
 
-    const endValidate = () => emit('end-validate', { status: state.status });
+    const endValidate = () => emit('endValidate', { status: state.status });
 
     const validate = (rules = props.rules) =>
       new Promise<FieldValidateError | void>((resolve) => {
         resetValidation();
         if (rules) {
-          emit('start-validate');
+          emit('startValidate');
           runRules(rules).then(() => {
             if (state.status === 'failed') {
               resolve({
@@ -352,13 +352,12 @@ export default defineComponent({
       resetScroll();
     };
 
-    const onClickInput = (event: MouseEvent) => emit('click-input', event);
+    const onClickInput = (event: MouseEvent) => emit('clickInput', event);
 
-    const onClickLeftIcon = (event: MouseEvent) =>
-      emit('click-left-icon', event);
+    const onClickLeftIcon = (event: MouseEvent) => emit('clickLeftIcon', event);
 
     const onClickRightIcon = (event: MouseEvent) =>
-      emit('click-right-icon', event);
+      emit('clickRightIcon', event);
 
     const onClear = (event: TouchEvent) => {
       preventDefault(event);

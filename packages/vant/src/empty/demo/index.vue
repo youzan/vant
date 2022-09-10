@@ -65,7 +65,7 @@ const active = ref('error');
 
   <demo-block :title="t('bottomContent')">
     <van-empty :description="t('description')">
-      <van-button round type="danger" class="bottom-button">
+      <van-button round type="primary" class="bottom-button">
         {{ t('button') }}
       </van-button>
     </van-empty>

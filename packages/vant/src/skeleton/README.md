@@ -87,12 +87,12 @@ import type { SkeletonProps, SkeletonAvatarShape } from 'vant';
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name | Default Value | Description |
-| --- | --- | --- |
-| --van-skeleton-row-height | _16px_ | - |
-| --van-skeleton-row-background-color | _var(--van-active-color)_ | - |
-| --van-skeleton-row-margin-top | _var(--van-padding-sm)_ | - |
-| --van-skeleton-title-width | _40%_ | - |
-| --van-skeleton-avatar-size | _32px_ | - |
-| --van-skeleton-avatar-background-color | _var(--van-active-color)_ | - |
-| --van-skeleton-animation-duration | _1.2s_ | - |
+| Name                             | Default Value             | Description |
+| -------------------------------- | ------------------------- | ----------- |
+| --van-skeleton-row-height        | _16px_                    | -           |
+| --van-skeleton-row-background    | _var(--van-active-color)_ | -           |
+| --van-skeleton-row-margin-top    | _var(--van-padding-sm)_   | -           |
+| --van-skeleton-title-width       | _40%_                     | -           |
+| --van-skeleton-avatar-size       | _32px_                    | -           |
+| --van-skeleton-avatar-background | _var(--van-active-color)_ | -           |
+| --van-skeleton-duration          | _1.2s_                    | -           |

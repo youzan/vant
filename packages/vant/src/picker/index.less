@@ -1,26 +1,38 @@
-@import './var.less';
+body {
+  --van-picker-background: var(--van-background-2);
+  --van-picker-toolbar-height: 44px;
+  --van-picker-title-font-size: var(--van-font-size-lg);
+  --van-picker-title-line-height: var(--van-line-height-md);
+  --van-picker-action-padding: 0 var(--van-padding-md);
+  --van-picker-action-font-size: var(--van-font-size-md);
+  --van-picker-confirm-action-color: var(--van-link-color);
+  --van-picker-cancel-action-color: var(--van-text-color-2);
+  --van-picker-option-font-size: var(--van-font-size-lg);
+  --van-picker-option-padding: 0 var(--van-padding-base);
+  --van-picker-option-text-color: var(--van-text-color);
+  --van-picker-option-disabled-opacity: 0.3;
+  --van-picker-loading-icon-color: var(--van-primary-color);
+  --van-picker-loading-mask-color: rgba(255, 255, 255, 0.9);
+  --van-picker-mask-color: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.4)
+    ),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+}
 
-:root {
-  --van-picker-background-color: @picker-background-color;
-  --van-picker-toolbar-height: @picker-toolbar-height;
-  --van-picker-title-font-size: @picker-title-font-size;
-  --van-picker-title-line-height: @picker-title-line-height;
-  --van-picker-action-padding: @picker-action-padding;
-  --van-picker-action-font-size: @picker-action-font-size;
-  --van-picker-confirm-action-color: @picker-confirm-action-color;
-  --van-picker-cancel-action-color: @picker-cancel-action-color;
-  --van-picker-option-font-size: @picker-option-font-size;
-  --van-picker-option-padding: @picker-option-padding;
-  --van-picker-option-text-color: @picker-option-text-color;
-  --van-picker-option-disabled-opacity: @picker-option-disabled-opacity;
-  --van-picker-loading-icon-color: @picker-loading-icon-color;
-  --van-picker-loading-mask-color: @picker-loading-mask-color;
-  --van-picker-mask-color: @picker-mask-color;
+.van-theme-dark {
+  --van-picker-mask-color: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1)
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
 }
 
 .van-picker {
   position: relative;
-  background: var(--van-picker-background-color);
+  background: var(--van-picker-background);
   user-select: none;
 
   &__toolbar {
@@ -48,8 +60,9 @@
   }
 
   &__title {
+    color: var(--van-text-color);
     max-width: 50%;
-    font-weight: var(--van-font-weight-bold);
+    font-weight: var(--van-font-bold);
     font-size: var(--van-picker-title-font-size);
     line-height: var(--van-picker-title-line-height);
     text-align: center;

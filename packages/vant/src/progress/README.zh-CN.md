@@ -98,14 +98,14 @@ progressRef.value?.resize();
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                                  | 默认值                     | 描述 |
-| ------------------------------------- | -------------------------- | ---- |
-| --van-progress-height                 | _4px_                      | -    |
-| --van-progress-color                  | _var(--van-primary-color)_ | -    |
-| --van-progress-inactive-color         | _var(--van-gray-5)_        | -    |
-| --van-progress-background-color       | _var(--van-gray-3)_        | -    |
-| --van-progress-pivot-padding          | _0 5px_                    | -    |
-| --van-progress-pivot-text-color       | _var(--van-white)_         | -    |
-| --van-progress-pivot-font-size        | _var(--van-font-size-xs)_  | -    |
-| --van-progress-pivot-line-height      | _1.6_                      | -    |
-| --van-progress-pivot-background-color | _var(--van-primary-color)_ | -    |
+| 名称                             | 默认值                     | 描述 |
+| -------------------------------- | -------------------------- | ---- |
+| --van-progress-height            | _4px_                      | -    |
+| --van-progress-color             | _var(--van-primary-color)_ | -    |
+| --van-progress-inactive-color    | _var(--van-gray-5)_        | -    |
+| --van-progress-background        | _var(--van-gray-3)_        | -    |
+| --van-progress-pivot-padding     | _0 5px_                    | -    |
+| --van-progress-pivot-text-color  | _var(--van-white)_         | -    |
+| --van-progress-pivot-font-size   | _var(--van-font-size-xs)_  | -    |
+| --van-progress-pivot-line-height | _1.6_                      | -    |
+| --van-progress-pivot-background  | _var(--van-primary-color)_ | -    |

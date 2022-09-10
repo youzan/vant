@@ -1,35 +1,32 @@
-@import './var.less';
-
-:root {
-  --van-dialog-width: @dialog-width;
-  --van-dialog-small-screen-width: @dialog-small-screen-width;
-  --van-dialog-font-size: @dialog-font-size;
-  --van-dialog-transition: @dialog-transition;
-  --van-dialog-border-radius: @dialog-border-radius;
-  --van-dialog-background-color: @dialog-background-color;
-  --van-dialog-header-font-weight: @dialog-header-font-weight;
-  --van-dialog-header-line-height: @dialog-header-line-height;
-  --van-dialog-header-padding-top: @dialog-header-padding-top;
-  --van-dialog-header-isolated-padding: @dialog-header-isolated-padding;
-  --van-dialog-message-padding: @dialog-message-padding;
-  --van-dialog-message-font-size: @dialog-message-font-size;
-  --van-dialog-message-line-height: @dialog-message-line-height;
-  --van-dialog-message-max-height: @dialog-message-max-height;
-  --van-dialog-has-title-message-text-color: @dialog-has-title-message-text-color;
-  --van-dialog-has-title-message-padding-top: @dialog-has-title-message-padding-top;
-  --van-dialog-button-height: @dialog-button-height;
-  --van-dialog-round-button-height: @dialog-round-button-height;
-  --van-dialog-confirm-button-text-color: @dialog-confirm-button-text-color;
+body {
+  --van-dialog-width: 320px;
+  --van-dialog-small-screen-width: 90%;
+  --van-dialog-font-size: var(--van-font-size-lg);
+  --van-dialog-transition: var(--van-duration-base);
+  --van-dialog-radius: 16px;
+  --van-dialog-background: var(--van-background-2);
+  --van-dialog-header-font-weight: var(--van-font-bold);
+  --van-dialog-header-line-height: 24px;
+  --van-dialog-header-padding-top: 26px;
+  --van-dialog-header-isolated-padding: var(--van-padding-lg) 0;
+  --van-dialog-message-padding: var(--van-padding-lg);
+  --van-dialog-message-font-size: var(--van-font-size-md);
+  --van-dialog-message-line-height: var(--van-line-height-md);
+  --van-dialog-message-max-height: 60vh;
+  --van-dialog-has-title-message-text-color: var(--van-gray-7);
+  --van-dialog-has-title-message-padding-top: var(--van-padding-xs);
+  --van-dialog-button-height: 48px;
+  --van-dialog-round-button-height: 36px;
+  --van-dialog-confirm-button-text-color: var(--van-primary-color);
 }
 
 .van-dialog {
   top: 45%;
-  left: 50%;
   width: var(--van-dialog-width);
   overflow: hidden;
   font-size: var(--van-dialog-font-size);
-  background: var(--van-dialog-background-color);
-  border-radius: var(--van-dialog-border-radius);
+  background: var(--van-dialog-background);
+  border-radius: var(--van-dialog-radius);
   backface-visibility: hidden; // avoid blurry text after scale animation
   transition: var(--van-dialog-transition);
   transition-property: transform, opacity;
@@ -39,6 +36,7 @@
   }
 
   &__header {
+    color: var(--van-text-color);
     padding-top: var(--van-dialog-header-padding-top);
     font-weight: var(--van-dialog-header-font-weight);
     line-height: var(--van-dialog-header-line-height);
@@ -58,6 +56,7 @@
   }
 
   &__message {
+    color: var(--van-text-color);
     flex: 1;
     max-height: var(--van-dialog-message-max-height);
     padding: 26px var(--van-dialog-message-padding);

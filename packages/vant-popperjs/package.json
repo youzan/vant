@@ -31,7 +31,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/vant-ui/vant.git",
-    "directory": "packages/vant-markdown-loader"
+    "directory": "packages/vant-popperjs"
   },
   "bugs": "https://github.com/vant-ui/vant/issues",
   "author": "chenjiahan",

@@ -45,7 +45,7 @@ test('should render placeholder element when using placeholder prop', async () =
   restore();
 });
 
-test('should emit click-left event when clicking left text', () => {
+test('should emit clickLeft event when clicking left text', () => {
   const wrapper = mount(NavBar, {
     props: {
       leftText: 'left',
@@ -53,10 +53,10 @@ test('should emit click-left event when clicking left text', () => {
   });
 
   wrapper.find('.van-nav-bar__left').trigger('click');
-  expect(wrapper.emitted('click-left')).toBeTruthy();
+  expect(wrapper.emitted('clickLeft')).toBeTruthy();
 });
 
-test('should emit click-right event when clicking right text', () => {
+test('should emit clickRight event when clicking right text', () => {
   const wrapper = mount(NavBar, {
     props: {
       rightText: 'right',
@@ -64,7 +64,7 @@ test('should emit click-right event when clicking right text', () => {
   });
 
   wrapper.find('.van-nav-bar__right').trigger('click');
-  expect(wrapper.emitted('click-right')).toBeTruthy();
+  expect(wrapper.emitted('clickRight')).toBeTruthy();
 });
 
 test('should have safe-area-inset-top class when using safe-area-inset-top prop', () => {

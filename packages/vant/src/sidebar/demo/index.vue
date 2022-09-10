@@ -5,7 +5,7 @@ import VanSidebar from '..';
 import VanSidebarItem from '../../sidebar-item';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -26,7 +26,7 @@ const active2 = ref(0);
 const active3 = ref(0);
 const active4 = ref(0);
 
-const onChange = (index: number) => Toast(`${t('title')} ${index + 1}`);
+const onChange = (index: number) => showToast(`${t('title')} ${index + 1}`);
 </script>
 
 <template>
@@ -45,7 +45,7 @@ const onChange = (index: number) => Toast(`${t('title')} ${index + 1}`);
       <van-sidebar v-model="active2">
         <van-sidebar-item :title="t('title')" dot />
         <van-sidebar-item :title="t('title')" badge="5" />
-        <van-sidebar-item :title="t('title')" badge="20" />
+        <van-sidebar-item :title="t('title')" />
       </van-sidebar>
     </van-grid-item>
 
@@ -71,7 +71,7 @@ const onChange = (index: number) => Toast(`${t('title')} ${index + 1}`);
 
 <style lang="less">
 .demo-sidebar {
-  background-color: var(--van-background-color-light);
+  background-color: var(--van-background-2);
 
   .van-sidebar {
     margin-left: var(--van-padding-md);

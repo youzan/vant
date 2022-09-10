@@ -25,11 +25,11 @@ app.use(ContactCard);
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onAdd = () => Toast('新增');
+    const onAdd = () => showToast('新增');
     return {
       onAdd,
     };
@@ -45,13 +45,13 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const tel = ref('13000000000');
     const name = ref('张三');
-    const onEdit = () => Toast('edit');
+    const onEdit = () => showToast('edit');
     return {
       tel,
       name,
@@ -104,4 +104,4 @@ import type { ContactCardType, ContactCardProps } from 'vant';
 | --van-contact-card-padding           | _var(--van-padding-md)_     | -    |
 | --van-contact-card-add-icon-size     | _40px_                      | -    |
 | --van-contact-card-add-icon-color    | _var(--van-primary-color)_  | -    |
-| --van-contact-card-value-line-height | _var(--van-line-height-md)_ | -    |
+| --van-contact-card-title-line-height | _var(--van-line-height-md)_ | -    |

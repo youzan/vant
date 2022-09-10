@@ -65,7 +65,7 @@ test('should emit failed event correctly when rule message is empty', async () =
   });
 });
 
-test('Field should emit start-validate event when validation start', async () => {
+test('Field should emit startValidate event when validation start', async () => {
   const onStart = jest.fn();
   const wrapper = mount({
     render() {
@@ -75,7 +75,7 @@ test('Field should emit start-validate event when validation start', async () =>
             name="A"
             rules={[{ required: true }]}
             modelValue="bar"
-            onStart-validate={onStart}
+            onStartValidate={onStart}
           />
         </Form>
       );
@@ -86,7 +86,7 @@ test('Field should emit start-validate event when validation start', async () =>
   expect(onStart).toHaveBeenCalledTimes(1);
 });
 
-test('Field should emit end-validate event when validation end', async () => {
+test('Field should emit endValidate event when validation end', async () => {
   const onEnd = jest.fn();
   const rules = [
     {
@@ -104,7 +104,7 @@ test('Field should emit end-validate event when validation end', async () => {
             name="A"
             rules={rules}
             modelValue="bar"
-            onEnd-validate={onEnd}
+            onEndValidate={onEnd}
           />
         </Form>
       );

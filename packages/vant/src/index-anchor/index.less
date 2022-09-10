@@ -1,15 +1,13 @@
-@import './var.less';
-
-:root {
-  --van-index-anchor-z-index: @index-anchor-z-index;
-  --van-index-anchor-padding: @index-anchor-padding;
-  --van-index-anchor-text-color: @index-anchor-text-color;
-  --van-index-anchor-font-weight: @index-anchor-font-weight;
-  --van-index-anchor-font-size: @index-anchor-font-size;
-  --van-index-anchor-line-height: @index-anchor-line-height;
-  --van-index-anchor-background-color: @index-anchor-background-color;
-  --van-index-anchor-sticky-text-color: @index-anchor-sticky-text-color;
-  --van-index-anchor-sticky-background-color: @index-anchor-sticky-background-color;
+body {
+  --van-index-anchor-z-index: 1;
+  --van-index-anchor-padding: 0 var(--van-padding-md);
+  --van-index-anchor-text-color: var(--van-text-color);
+  --van-index-anchor-font-weight: var(--van-font-bold);
+  --van-index-anchor-font-size: var(--van-font-size-md);
+  --van-index-anchor-line-height: 32px;
+  --van-index-anchor-background: transparent;
+  --van-index-anchor-sticky-text-color: var(--van-primary-color);
+  --van-index-anchor-sticky-background: var(--van-background-2);
 }
 
 .van-index-anchor {
@@ -20,7 +18,7 @@
   font-weight: var(--van-index-anchor-font-weight);
   font-size: var(--van-index-anchor-font-size);
   line-height: var(--van-index-anchor-line-height);
-  background: var(--van-index-anchor-background-color);
+  background: var(--van-index-anchor-background);
 
   &--sticky {
     position: fixed;
@@ -28,6 +26,6 @@
     right: 0;
     left: 0;
     color: var(--van-index-anchor-sticky-text-color);
-    background: var(--van-index-anchor-sticky-background-color);
+    background: var(--van-index-anchor-sticky-background);
   }
 }

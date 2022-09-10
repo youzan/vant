@@ -43,12 +43,10 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/var';
-
 .demo-home-nav {
   &__title {
     margin: 24px 0 8px 16px;
-    color: rgba(69, 90, 100, 0.6);
+    color: var(--van-doc-text-color-4);
     font-size: 14px;
   }
 
@@ -57,20 +55,20 @@ export default {
     display: flex;
     margin: 0 0 12px;
     padding-left: 20px;
-    color: #323233;
+    color: var(--van-doc-text-color-3);
     font-weight: 600;
     font-size: 14px;
     line-height: 40px;
-    background: #f7f8fa;
+    background-color: var(--van-doc-background-3);
     border-radius: 99px;
-    transition: background 0.3s;
+    transition: opacity 0.3s;
 
     &:hover {
-      background: darken(#f7f8fa, 3%);
+      opacity: 0.8;
     }
 
     &:active {
-      background: darken(#f7f8fa, 6%);
+      opacity: 0.6;
     }
   }
 

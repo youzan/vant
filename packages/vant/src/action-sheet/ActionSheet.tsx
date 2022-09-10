@@ -29,7 +29,7 @@ export type ActionSheetAction = {
   className?: unknown;
 };
 
-const actionSheetProps = extend({}, popupSharedProps, {
+export const actionSheetProps = extend({}, popupSharedProps, {
   title: String,
   round: truthProp,
   actions: makeArrayProp<ActionSheetAction>(),

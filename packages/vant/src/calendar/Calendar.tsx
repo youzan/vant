@@ -41,7 +41,7 @@ import { useExpose } from '../composables/use-expose';
 // Components
 import { Popup, PopupPosition } from '../popup';
 import { Button } from '../button';
-import { Toast } from '../toast';
+import { showToast } from '../toast';
 import CalendarMonth from './CalendarMonth';
 import CalendarHeader from './CalendarHeader';
 
@@ -53,7 +53,7 @@ import type {
   CalendarMonthInstance,
 } from './types';
 
-const calendarProps = {
+export const calendarProps = {
   show: Boolean,
   type: makeStringProp<CalendarType>('single'),
   title: String,
@@ -112,10 +112,10 @@ export default defineComponent({
     'select',
     'confirm',
     'unselect',
-    'month-show',
-    'over-range',
+    'monthShow',
+    'overRange',
     'update:show',
-    'click-subtitle',
+    'clickSubtitle',
   ],
 
   setup(props, { emit, slots }) {
@@ -249,7 +249,7 @@ export default defineComponent({
 
           if (!monthRefs.value[i].showed) {
             monthRefs.value[i].showed = true;
-            emit('month-show', {
+            emit('monthShow', {
               date: month.date,
               title: month.getTitle(),
             });
@@ -329,9 +329,9 @@ export default defineComponent({
 
       if (maxRange && calcDateNum(date) > maxRange) {
         if (showRangePrompt) {
-          Toast(rangePrompt || t('rangePrompt', maxRange));
+          showToast(rangePrompt || t('rangePrompt', maxRange));
         }
-        emit('over-range');
+        emit('overRange');
         return false;
       }
 
@@ -446,7 +446,7 @@ export default defineComponent({
           const [unselectedDate] = dates.splice(selectedIndex, 1);
           emit('unselect', cloneDate(unselectedDate));
         } else if (props.maxRange && dates.length >= props.maxRange) {
-          Toast(props.rangePrompt || t('rangePrompt', props.maxRange));
+          showToast(props.rangePrompt || t('rangePrompt', props.maxRange));
         } else {
           select([...dates, date]);
         }
@@ -497,7 +497,7 @@ export default defineComponent({
           <Button
             round
             block
-            type="danger"
+            type="primary"
             color={props.color}
             class={bem('confirm')}
             disabled={disabled}
@@ -530,9 +530,7 @@ export default defineComponent({
           showTitle={props.showTitle}
           showSubtitle={props.showSubtitle}
           firstDayOfWeek={dayOffset.value}
-          onClick-subtitle={(event: MouseEvent) =>
-            emit('click-subtitle', event)
-          }
+          onClickSubtitle={(event: MouseEvent) => emit('clickSubtitle', event)}
         />
         <div ref={bodyRef} class={bem('body')} onScroll={onScroll}>
           {months.value.map(renderMonth)}

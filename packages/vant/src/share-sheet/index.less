@@ -1,22 +1,21 @@
-@import './var.less';
 @import '../style/mixins/hairline';
 
-:root {
-  --van-share-sheet-header-padding: @share-sheet-header-padding;
-  --van-share-sheet-title-color: @share-sheet-title-color;
-  --van-share-sheet-title-font-size: @share-sheet-title-font-size;
-  --van-share-sheet-title-line-height: @share-sheet-title-line-height;
-  --van-share-sheet-description-color: @share-sheet-description-color;
-  --van-share-sheet-description-font-size: @share-sheet-description-font-size;
-  --van-share-sheet-description-line-height: @share-sheet-description-line-height;
-  --van-share-sheet-icon-size: @share-sheet-icon-size;
-  --van-share-sheet-option-name-color: @share-sheet-option-name-color;
-  --van-share-sheet-option-name-font-size: @share-sheet-option-name-font-size;
-  --van-share-sheet-option-description-color: @share-sheet-option-description-color;
-  --van-share-sheet-option-description-font-size: @share-sheet-option-description-font-size;
-  --van-share-sheet-cancel-button-font-size: @share-sheet-cancel-button-font-size;
-  --van-share-sheet-cancel-button-height: @share-sheet-cancel-button-height;
-  --van-share-sheet-cancel-button-background: @share-sheet-cancel-button-background;
+body {
+  --van-share-sheet-header-padding: var(--van-padding-sm) var(--van-padding-md);
+  --van-share-sheet-title-color: var(--van-text-color);
+  --van-share-sheet-title-font-size: var(--van-font-size-md);
+  --van-share-sheet-title-line-height: var(--van-line-height-md);
+  --van-share-sheet-description-color: var(--van-text-color-2);
+  --van-share-sheet-description-font-size: var(--van-font-size-sm);
+  --van-share-sheet-description-line-height: 16px;
+  --van-share-sheet-icon-size: 48px;
+  --van-share-sheet-option-name-color: var(--van-gray-7);
+  --van-share-sheet-option-name-font-size: var(--van-font-size-sm);
+  --van-share-sheet-option-description-color: var(--van-text-color-3);
+  --van-share-sheet-option-description-font-size: var(--van-font-size-sm);
+  --van-share-sheet-cancel-button-font-size: var(--van-font-size-lg);
+  --van-share-sheet-cancel-button-height: 48px;
+  --van-share-sheet-cancel-button-background: var(--van-background-2);
 }
 
 .van-share-sheet {
@@ -142,7 +141,7 @@
     &::before {
       display: block;
       height: var(--van-padding-xs);
-      background-color: var(--van-background-color);
+      background-color: var(--van-background);
       content: ' ';
     }
 

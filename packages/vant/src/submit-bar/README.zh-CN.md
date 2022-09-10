@@ -25,11 +25,11 @@ app.use(SubmitBar);
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onSubmit = () => Toast('点击按钮');
+    const onSubmit = () => showToast('点击按钮');
     return {
       onSubmit,
     };
@@ -79,12 +79,12 @@ export default {
 ```
 
 ```js
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onSubmit = () => Toast('点击按钮');
-    const onClickLink = () => Toast('修改地址');
+    const onSubmit = () => showToast('点击按钮');
+    const onClickLink = () => showToast('修改地址');
     return {
       onSubmit,
       onClickLink,
@@ -148,19 +148,19 @@ import type { SubmitBarProps, SubmitBarTextAlign } from 'vant';
 | --- | --- | --- |
 | --van-submit-bar-height | _50px_ | - |
 | --van-submit-bar-z-index | _100_ | - |
-| --van-submit-bar-background-color | _var(--van-background-color-light)_ | - |
+| --van-submit-bar-background | _var(--van-background-2)_ | - |
 | --van-submit-bar-button-width | _110px_ | - |
 | --van-submit-bar-price-color | _var(--van-danger-color)_ | - |
 | --van-submit-bar-price-font-size | _var(--van-font-size-sm)_ | - |
 | --van-submit-bar-price-integer-font-size | _20px_ | - |
-| --van-submit-bar-price-font-family | _var(--van-price-integer-font-family)_ | - |
+| --van-submit-bar-price-font | _var(--van-price-font)_ | - |
 | --van-submit-bar-text-color | _var(--van-text-color)_ | - |
 | --van-submit-bar-text-font-size | _var(--van-font-size-md)_ | - |
 | --van-submit-bar-tip-padding | _var(--van-padding-xs) var(--van-padding-sm)_ | - |
 | --van-submit-bar-tip-font-size | _var(--van-font-size-sm)_ | - |
 | --van-submit-bar-tip-line-height | _1.5_ | - |
 | --van-submit-bar-tip-color | _var(--van-orange-dark)_ | - |
-| --van-submit-bar-tip-background-color | _var(--van-orange-light)_ | - |
+| --van-submit-bar-tip-background | _var(--van-orange-light)_ | - |
 | --van-submit-bar-tip-icon-size | _12px_ | - |
 | --van-submit-bar-button-height | _40px_ | - |
 | --van-submit-bar-padding | _0 var(--van-padding-md)_ | - |

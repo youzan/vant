@@ -28,7 +28,7 @@ export default defineComponent({
     showSearchResult: Boolean,
   },
 
-  emits: ['blur', 'focus', 'input', 'select-search'],
+  emits: ['blur', 'focus', 'input', 'selectSearch'],
 
   setup(props, { emit }) {
     const field = ref<FieldInstance>();
@@ -37,19 +37,8 @@ export default defineComponent({
       props.focused && props.searchResult && props.showSearchResult;
 
     const onSelect = (express: AddressEditSearchItem) => {
-      emit('select-search', express);
+      emit('selectSearch', express);
       emit('input', `${express.address || ''} ${express.name || ''}`.trim());
-    };
-
-    const renderSearchTitle = (express: AddressEditSearchItem) => {
-      if (express.name) {
-        const text = express.name.replace(
-          props.value!,
-          `<span class=${bem('keyword')}>${props.value}</span>`
-        );
-
-        return <div innerHTML={text} />;
-      }
     };
 
     const renderSearchResult = () => {
@@ -60,12 +49,10 @@ export default defineComponent({
       const { searchResult } = props;
       return searchResult!.map((express) => (
         <Cell
-          v-slots={{
-            title: () => renderSearchTitle(express),
-          }}
           clickable
-          key={express.name + express.address}
+          key={(express.name || '') + (express.address || '')}
           icon="location-o"
+          title={express.name}
           label={express.address}
           class={bem('search-item')}
           border={false}

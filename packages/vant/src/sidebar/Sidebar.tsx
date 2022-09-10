@@ -11,7 +11,7 @@ export type SidebarProvide = {
 
 export const SIDEBAR_KEY: InjectionKey<SidebarProvide> = Symbol(name);
 
-const sidebarProps = {
+export const sidebarProps = {
   modelValue: makeNumericProp(0),
 };
 

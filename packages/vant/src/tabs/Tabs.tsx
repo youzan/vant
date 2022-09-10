@@ -6,7 +6,6 @@ import {
   nextTick,
   onActivated,
   defineComponent,
-  getCurrentInstance,
   type PropType,
   type InjectionKey,
   type CSSProperties,
@@ -61,7 +60,7 @@ import type { TabsProvide, TabsType } from './types';
 
 const [name, bem] = createNamespace('tabs');
 
-const tabsProps = {
+export const tabsProps = {
   type: makeStringProp<TabsType>('line'),
   color: String,
   border: Boolean,
@@ -93,31 +92,9 @@ export default defineComponent({
 
   props: tabsProps,
 
-  emits: [
-    'click',
-    'change',
-    'scroll',
-    'disabled',
-    'rendered',
-    'click-tab',
-    'update:active',
-  ],
+  emits: ['change', 'scroll', 'rendered', 'clickTab', 'update:active'],
 
   setup(props, { emit, slots }) {
-    if (process.env.NODE_ENV !== 'production') {
-      const props = getCurrentInstance()?.vnode?.props;
-      if (props && 'onClick' in props) {
-        console.warn(
-          '[Vant] Tabs: "click" event is deprecated, using "click-tab" instead.'
-        );
-      }
-      if (props && 'onDisabled' in props) {
-        console.warn(
-          '[Vant] Tabs: "disabled" event is deprecated, using "click-tab" instead.'
-        );
-      }
-    }
-
     let tabHeight: number;
     let lockScroll: boolean;
     let stickyFixed: boolean;
@@ -300,11 +277,7 @@ export default defineComponent({
       const { title, disabled } = children[index];
       const name = getTabName(children[index], index);
 
-      if (disabled) {
-        // @deprecated
-        // should be removed in next major version
-        emit('disabled', name, title);
-      } else {
+      if (!disabled) {
         callInterceptor(props.beforeChange, {
           args: [name],
           done: () => {
@@ -313,14 +286,10 @@ export default defineComponent({
           },
         });
 
-        // @deprecated
-        // should be removed in next major version
-        emit('click', name, title);
-
         route(item as ComponentPublicInstance<RouteProps>);
       }
 
-      emit('click-tab', {
+      emit('clickTab', {
         name,
         title,
         event,

@@ -38,8 +38,6 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../common/style/var';
-
 #docsearch {
   display: inline-block;
   vertical-align: middle;

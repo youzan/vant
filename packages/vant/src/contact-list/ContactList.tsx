@@ -20,7 +20,7 @@ export type ContactListItem = {
   isDefault?: boolean;
 };
 
-const contactListProps = {
+export const contactListProps = {
   list: Array as PropType<ContactListItem[]>,
   addText: String,
   modelValue: unknownProp,
@@ -63,7 +63,7 @@ export default defineComponent({
 
         if (item.isDefault && props.defaultTagText) {
           nodes.push(
-            <Tag type="danger" round class={bem('item-tag')}>
+            <Tag type="primary" round class={bem('item-tag')}>
               {props.defaultTagText}
             </Tag>
           );
@@ -76,14 +76,14 @@ export default defineComponent({
         <Cell
           v-slots={{
             icon: renderEditIcon,
-            value: renderContent,
+            title: renderContent,
             'right-icon': renderRightIcon,
           }}
           key={item.id}
           isLink
           center
           class={bem('item')}
-          valueClass={bem('item-value')}
+          titleClass={bem('item-title')}
           onClick={onClick}
         />
       );
@@ -98,7 +98,7 @@ export default defineComponent({
           <Button
             round
             block
-            type="danger"
+            type="primary"
             class={bem('add')}
             text={props.addText || t('addContact')}
             onClick={() => emit('add')}

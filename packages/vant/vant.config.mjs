@@ -11,25 +11,33 @@ export default {
     },
     site: {
       publicPath:
-        (typeof window === 'undefined' && process.env.PUBLIC_PATH) || '/vant/',
+        (typeof window === 'undefined' && process.env.PUBLIC_PATH) ||
+        '/vant/v4',
+    },
+    vetur: {
+      tagPrefix: 'van-',
+    },
+    css: {
+      removeSourceFile: true,
     },
   },
   site: {
     defaultLang: 'en-US',
+    darkModeClass: 'van-theme-dark',
     versions: [
       { label: 'v1', link: '/vant/v1/' },
       { label: 'v2', link: '/vant/v2/' },
-      { label: 'v4', link: '/vant/v4/' },
+      { label: 'v3', link: '/vant/v3/' },
     ],
     baiduAnalytics: {
       seed: 'af5d41bc4e446e76665dbe3ec18d55c3',
     },
     htmlMeta: {
-      'docsearch:version': 'v3',
+      'docsearch:version': 'v4',
     },
     locales: {
       'zh-CN': {
-        title: 'Vant 3',
+        title: 'Vant 4',
         subtitle: '（适用于 Vue 3）',
         description: '轻量、可靠的移动端组件库',
         logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
@@ -70,7 +78,11 @@ export default {
               },
               {
                 path: 'migrate-from-v2',
-                title: '从 v2 升级',
+                title: '从 v2 升级到 v3',
+              },
+              {
+                path: 'migrate-from-v3',
+                title: '从 v3 升级到 v4',
               },
               {
                 path: 'contribution',
@@ -151,8 +163,8 @@ export default {
                 title: 'Checkbox 复选框',
               },
               {
-                path: 'datetime-picker',
-                title: 'DatetimePicker 时间选择',
+                path: 'date-picker',
+                title: 'DatePicker 日期选择',
               },
               {
                 path: 'field',
@@ -173,6 +185,10 @@ export default {
               {
                 path: 'picker',
                 title: 'Picker 选择器',
+              },
+              {
+                path: 'picker-group',
+                title: 'PickerGroup 选择器组',
               },
               {
                 path: 'radio',
@@ -197,6 +213,10 @@ export default {
               {
                 path: 'switch',
                 title: 'Switch 开关',
+              },
+              {
+                path: 'time-picker',
+                title: 'TimePicker 时间选择',
               },
               {
                 path: 'uploader',
@@ -449,19 +469,10 @@ export default {
               },
             ],
           },
-          {
-            title: '废弃',
-            items: [
-              {
-                path: 'theme',
-                title: '定制主题',
-              },
-            ],
-          },
         ],
       },
       'en-US': {
-        title: 'Vant 3',
+        title: 'Vant 4',
         subtitle: ' (for Vue 3)',
         description: 'Lightweight Mobile UI Components built on Vue',
         logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
@@ -563,8 +574,8 @@ export default {
                 title: 'Checkbox',
               },
               {
-                path: 'datetime-picker',
-                title: 'DatetimePicker',
+                path: 'date-picker',
+                title: 'DatePicker',
               },
               {
                 path: 'field',
@@ -585,6 +596,10 @@ export default {
               {
                 path: 'picker',
                 title: 'Picker',
+              },
+              {
+                path: 'picker-group',
+                title: 'PickerGroup',
               },
               {
                 path: 'radio',
@@ -609,6 +624,10 @@ export default {
               {
                 path: 'switch',
                 title: 'Switch',
+              },
+              {
+                path: 'time-picker',
+                title: 'TimePicker',
               },
               {
                 path: 'uploader',
@@ -858,15 +877,6 @@ export default {
               {
                 path: 'use-window-size',
                 title: 'useWindowSize',
-              },
-            ],
-          },
-          {
-            title: 'Deprecated',
-            items: [
-              {
-                path: 'theme',
-                title: 'Custom Theme',
               },
             ],
           },

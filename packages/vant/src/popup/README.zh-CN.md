@@ -172,12 +172,12 @@ import type {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-popup-background-color | _var(--van-background-color-light)_ | - |
-| --van-popup-transition | _transform var(--van-animation-duration-base)_ | - |
-| --van-popup-round-border-radius | _16px_ | - |
-| --van-popup-close-icon-size | _22px_ | - |
-| --van-popup-close-icon-color | _var(--van-gray-5)_ | - |
-| --van-popup-close-icon-margin | _16px_ | - |
-| --van-popup-close-icon-z-index | _1_ | - |
+| 名称                           | 默认值                               | 描述 |
+| ------------------------------ | ------------------------------------ | ---- |
+| --van-popup-background         | _var(--van-background-2)_            | -    |
+| --van-popup-transition         | _transform var(--van-duration-base)_ | -    |
+| --van-popup-round-radius       | _16px_                               | -    |
+| --van-popup-close-icon-size    | _22px_                               | -    |
+| --van-popup-close-icon-color   | _var(--van-gray-5)_                  | -    |
+| --van-popup-close-icon-margin  | _16px_                               | -    |
+| --van-popup-close-icon-z-index | _1_                                  | -    |

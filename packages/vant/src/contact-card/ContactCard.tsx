@@ -6,7 +6,7 @@ const [name, bem, t] = createNamespace('contact-card');
 
 export type ContactCardType = 'add' | 'edit';
 
-const contactCardProps = {
+export const contactCardProps = {
   tel: String,
   name: String,
   type: makeStringProp<ContactCardType>('add'),
@@ -43,13 +43,13 @@ export default defineComponent({
 
     return () => (
       <Cell
-        v-slots={{ value: renderContent }}
+        v-slots={{ title: renderContent }}
         center
         icon={props.type === 'edit' ? 'contact' : 'add-square'}
         class={bem([props.type])}
         border={false}
         isLink={props.editable}
-        valueClass={bem('value')}
+        titleClass={bem('title')}
         onClick={onClick}
       />
     );

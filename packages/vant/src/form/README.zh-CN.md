@@ -117,7 +117,7 @@ export default {
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { closeToast, showLoadingToast } from 'vant';
 
 export default {
   setup() {
@@ -136,10 +136,10 @@ export default {
     // 校验函数可以返回 Promise，实现异步校验
     const asyncValidator = (val) =>
       new Promise((resolve) => {
-        Toast.loading('验证中...');
+        showLoadingToast('验证中...');
 
         setTimeout(() => {
-          Toast.clear();
+          closeToast();
           resolve(val === '1234');
         }, 1000);
       });
@@ -169,7 +169,7 @@ export default {
 ```html
 <van-field name="switch" label="开关">
   <template #input>
-    <van-switch v-model="checked" size="20" />
+    <van-switch v-model="checked" />
   </template>
 </van-field>
 ```
@@ -370,10 +370,16 @@ export default {
   setup() {
     const result = ref('');
     const showPicker = ref(false);
-    const columns = ['杭州', '宁波', '温州', '嘉兴', '湖州'];
+    const columns = [
+      { text: '杭州', value: 'Hangzhou' },
+      { text: '宁波', value: 'Ningbo' },
+      { text: '温州', value: 'Wenzhou' },
+      { text: '绍兴', value: 'Shaoxing' },
+      { text: '湖州', value: 'Huzhou' },
+    ];
 
     const onConfirm = (value) => {
-      result.value = value;
+      result.value = selectedOptions[0]?.text;
       showPicker.value = false;
     };
 
@@ -387,26 +393,22 @@ export default {
 };
 ```
 
-### 表单项类型 - 时间选择器
+### 表单项类型 - 日期选择器
 
-在表单中使用 [DatetimePicker 组件](#/zh-CN/datetime-picker)。
+在表单中使用 [DatePicker 组件](#/zh-CN/date-picker)。
 
 ```html
 <van-field
   v-model="result"
   is-link
   readonly
-  name="datetimePicker"
+  name="datePicker"
   label="时间选择"
   placeholder="点击选择时间"
   @click="showPicker = true"
 />
 <van-popup v-model:show="showPicker" position="bottom">
-  <van-datetime-picker
-    type="time"
-    @confirm="onConfirm"
-    @cancel="showPicker = false"
-  />
+  <van-date-picker @confirm="onConfirm" @cancel="showPicker = false" />
 </van-popup>
 ```
 
@@ -417,9 +419,8 @@ export default {
   setup() {
     const result = ref('');
     const showPicker = ref(false);
-
     const onConfirm = (value) => {
-      result.value = value;
+      result.value = selectedValues.join('/');
       showPicker.value = false;
     };
 
@@ -463,12 +464,9 @@ export default {
   setup() {
     const result = ref('');
     const showArea = ref(false);
-    const onConfirm = (areaValues) => {
+    const onConfirm = ({ selectedOptions }) => {
       showArea.value = false;
-      result.value = areaValues
-        .filter((item) => !!item)
-        .map((item) => item.name)
-        .join('/');
+      areaCode.value = selectedOptions.map((item) => item.text).join('/');
     };
 
     return {

@@ -1,35 +1,34 @@
-@import './var.less';
 @import '../style/mixins/ellipsis';
 
-:root {
-  --van-coupon-margin: @coupon-margin;
-  --van-coupon-content-height: @coupon-content-height;
-  --van-coupon-content-padding: @coupon-content-padding;
-  --van-coupon-content-text-color: @coupon-content-text-color;
-  --van-coupon-background-color: @coupon-background-color;
-  --van-coupon-active-background-color: @coupon-active-background-color;
-  --van-coupon-border-radius: @coupon-border-radius;
-  --van-coupon-box-shadow: @coupon-box-shadow;
-  --van-coupon-head-width: @coupon-head-width;
-  --van-coupon-amount-color: @coupon-amount-color;
-  --van-coupon-amount-font-size: @coupon-amount-font-size;
-  --van-coupon-currency-font-size: @coupon-currency-font-size;
-  --van-coupon-name-font-size: @coupon-name-font-size;
-  --van-coupon-disabled-text-color: @coupon-disabled-text-color;
-  --van-coupon-description-padding: @coupon-description-padding;
-  --van-coupon-description-border-color: @coupon-description-border-color;
-  --van-coupon-corner-checkbox-icon-color: @coupon-corner-checkbox-icon-color;
+body {
+  --van-coupon-margin: 0 var(--van-padding-sm) var(--van-padding-sm);
+  --van-coupon-content-height: 84px;
+  --van-coupon-content-padding: 14px 0;
+  --van-coupon-content-text-color: var(--van-text-color);
+  --van-coupon-background: var(--van-background-2);
+  --van-coupon-active-background: var(--van-active-color);
+  --van-coupon-radius: var(--van-radius-lg);
+  --van-coupon-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  --van-coupon-head-width: 96px;
+  --van-coupon-amount-color: var(--van-primary-color);
+  --van-coupon-amount-font-size: 30px;
+  --van-coupon-currency-font-size: 40%;
+  --van-coupon-name-font-size: var(--van-font-size-md);
+  --van-coupon-disabled-text-color: var(--van-text-color-2);
+  --van-coupon-description-padding: var(--van-padding-xs) var(--van-padding-md);
+  --van-coupon-description-border-color: var(--van-border-color);
+  --van-coupon-checkbox-color: var(--van-primary-color);
 }
 
 .van-coupon {
   margin: var(--van-coupon-margin);
   overflow: hidden;
-  background: var(--van-coupon-background-color);
-  border-radius: var(--van-coupon-border-radius);
-  box-shadow: var(--van-coupon-box-shadow);
+  background: var(--van-coupon-background);
+  border-radius: var(--van-coupon-radius);
+  box-shadow: var(--van-coupon-shadow);
 
   &:active {
-    background-color: var(--van-coupon-active-background-color);
+    background-color: var(--van-coupon-active-background);
   }
 
   &__content {
@@ -58,12 +57,11 @@
 
   &__amount {
     margin-bottom: 6px;
-    font-weight: var(--van-font-weight-bold);
+    font-weight: var(--van-font-bold);
     font-size: var(--van-coupon-amount-font-size);
     .ellipsis();
 
     span {
-      font-weight: normal;
       font-size: var(--van-coupon-currency-font-size);
 
       &:not(:empty) {
@@ -81,13 +79,12 @@
   &__body {
     position: relative;
     flex: 1;
-    border-radius: 0 var(--van-coupon-border-radius)
-      var(--van-coupon-border-radius) 0;
+    border-radius: 0 var(--van-coupon-radius) var(--van-coupon-radius) 0;
   }
 
   &__name {
     margin-bottom: 10px;
-    font-weight: bold;
+    font-weight: var(--van-font-bold);
     font-size: var(--van-coupon-name-font-size);
     line-height: var(--van-line-height-md);
   }
@@ -103,8 +100,8 @@
     bottom: 0;
 
     .van-checkbox__icon--checked .van-icon {
-      background-color: var(--van-coupon-corner-checkbox-icon-color);
-      border-color: var(--van-coupon-corner-checkbox-icon-color);
+      background-color: var(--van-coupon-checkbox-color);
+      border-color: var(--van-coupon-checkbox-color);
     }
   }
 
@@ -116,7 +113,7 @@
 
   &--disabled {
     &:active {
-      background-color: var(--van-coupon-background-color);
+      background-color: var(--van-coupon-background);
     }
 
     .van-coupon-item__content {

@@ -1,26 +1,25 @@
-@import './var.less';
 @import '../style/mixins/hairline';
 
-:root {
-  --van-cell-font-size: @cell-font-size;
-  --van-cell-line-height: @cell-line-height;
-  --van-cell-vertical-padding: @cell-vertical-padding;
-  --van-cell-horizontal-padding: @cell-horizontal-padding;
-  --van-cell-text-color: @cell-text-color;
-  --van-cell-background-color: @cell-background-color;
-  --van-cell-border-color: @cell-border-color;
-  --van-cell-active-color: @cell-active-color;
-  --van-cell-required-color: @cell-required-color;
-  --van-cell-label-color: @cell-label-color;
-  --van-cell-label-font-size: @cell-label-font-size;
-  --van-cell-label-line-height: @cell-label-line-height;
-  --van-cell-label-margin-top: @cell-label-margin-top;
-  --van-cell-value-color: @cell-value-color;
-  --van-cell-icon-size: @cell-icon-size;
-  --van-cell-right-icon-color: @cell-right-icon-color;
-  --van-cell-large-vertical-padding: @cell-large-vertical-padding;
-  --van-cell-large-title-font-size: @cell-large-title-font-size;
-  --van-cell-large-label-font-size: @cell-large-label-font-size;
+body {
+  --van-cell-font-size: var(--van-font-size-md);
+  --van-cell-line-height: 24px;
+  --van-cell-vertical-padding: 10px;
+  --van-cell-horizontal-padding: var(--van-padding-md);
+  --van-cell-text-color: var(--van-text-color);
+  --van-cell-background: var(--van-background-2);
+  --van-cell-border-color: var(--van-border-color);
+  --van-cell-active-color: var(--van-active-color);
+  --van-cell-required-color: var(--van-danger-color);
+  --van-cell-label-color: var(--van-text-color-2);
+  --van-cell-label-font-size: var(--van-font-size-sm);
+  --van-cell-label-line-height: var(--van-line-height-sm);
+  --van-cell-label-margin-top: var(--van-padding-base);
+  --van-cell-value-color: var(--van-text-color-2);
+  --van-cell-icon-size: 16px;
+  --van-cell-right-icon-color: var(--van-gray-6);
+  --van-cell-large-vertical-padding: var(--van-padding-sm);
+  --van-cell-large-title-font-size: var(--van-font-size-lg);
+  --van-cell-large-label-font-size: var(--van-font-size-md);
 }
 
 .van-cell {
@@ -33,7 +32,7 @@
   color: var(--van-cell-text-color);
   font-size: var(--van-cell-font-size);
   line-height: var(--van-cell-line-height);
-  background: var(--van-cell-background-color);
+  background: var(--van-cell-background);
 
   &::after {
     .hairline-bottom(var(--van-cell-border-color), var(--van-padding-md), var(--van-padding-md));
@@ -63,11 +62,6 @@
     text-align: right;
     vertical-align: middle;
     word-wrap: break-word;
-
-    &--alone {
-      color: var(--van-text-color);
-      text-align: left;
-    }
   }
 
   &__left-icon,

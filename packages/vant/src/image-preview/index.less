@@ -1,15 +1,13 @@
-@import './var.less';
-
-:root {
-  --van-image-preview-index-text-color: @image-preview-index-text-color;
-  --van-image-preview-index-font-size: @image-preview-index-font-size;
-  --van-image-preview-index-line-height: @image-preview-index-line-height;
-  --van-image-preview-index-text-shadow: @image-preview-index-text-shadow;
-  --van-image-preview-overlay-background-color: @image-preview-overlay-background-color;
-  --van-image-preview-close-icon-size: @image-preview-close-icon-size;
-  --van-image-preview-close-icon-color: @image-preview-close-icon-color;
-  --van-image-preview-close-icon-margin: @image-preview-close-icon-margin;
-  --van-image-preview-close-icon-z-index: @image-preview-close-icon-z-index;
+body {
+  --van-image-preview-index-text-color: var(--van-white);
+  --van-image-preview-index-font-size: var(--van-font-size-md);
+  --van-image-preview-index-line-height: var(--van-line-height-md);
+  --van-image-preview-index-text-shadow: 0 1px 1px var(--van-gray-8);
+  --van-image-preview-overlay-background: rgba(0, 0, 0, 0.9);
+  --van-image-preview-close-icon-size: 22px;
+  --van-image-preview-close-icon-color: var(--van-gray-5);
+  --van-image-preview-close-icon-margin: var(--van-padding-md);
+  --van-image-preview-close-icon-z-index: 1;
 }
 
 .van-image-preview {
@@ -18,6 +16,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  max-width: none;
   background-color: transparent;
   transform: none;
 
@@ -80,7 +79,7 @@
   }
 
   &__overlay {
-    background: var(--van-image-preview-overlay-background-color);
+    background: var(--van-image-preview-overlay-background);
   }
 
   &__close-icon {

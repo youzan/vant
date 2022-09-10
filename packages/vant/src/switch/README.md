@@ -50,7 +50,7 @@ export default {
 ### Custom Size
 
 ```html
-<van-switch v-model="checked" size="24px" />
+<van-switch v-model="checked" size="22px" />
 ```
 
 ### Custom Color
@@ -100,13 +100,13 @@ Using `node` slot to custom the content of the node.
 
 ```js
 import { ref } from 'vue';
-import { Dialog } from 'vant';
+import { showConfirmDialog } from 'vant';
 
 export default {
   setup() {
     const checked = ref(true);
     const onUpdateValue = (newValue) => {
-      Dialog.confirm({
+      showConfirmDialog({
         title: 'Confirm',
         message: 'Are you sure to toggle switch?',
       }).then(() => {
@@ -127,7 +127,7 @@ export default {
 ```html
 <van-cell center title="Title">
   <template #right-icon>
-    <van-switch v-model="checked" size="24" />
+    <van-switch v-model="checked" />
   </template>
 </van-cell>
 ```
@@ -141,9 +141,9 @@ export default {
 | v-model | Check status of Switch | _ActiveValue \| InactiveValue_ | `false` |
 | loading | Whether to show loading icon | _boolean_ | `false` |
 | disabled | Whether to disable switch | _boolean_ | `false` |
-| size | Size of switch | _number \| string_ | `30px` |
+| size | Size of switch button | _number \| string_ | `26px` |
 | active-color | Background color when active | _string_ | `#1989fa` |
-| inactive-color | Background color when inactive | _string_ | `white` |
+| inactive-color | Background color when inactive | _string_ | `rgba(120, 120, 128, 0.16)` |
 | active-value | Value when active | _any_ | `true` |
 | inactive-value | Value when inactive | _any_ | `false` |
 
@@ -177,14 +177,13 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-switch-size | _30px_ | - |
-| --van-switch-width | _2em_ | - |
-| --van-switch-height | _1em_ | - |
+| --van-switch-size | _26px_ | - |
+| --van-switch-width | _calc(1.8em + 4px)_ | - |
+| --van-switch-height | _calc(1em + 4px)_ | - |
 | --van-switch-node-size | _1em_ | - |
-| --van-switch-node-background-color | _var(--van-white)_ | - |
-| --van-switch-node-box-shadow | _0 3px 1px 0 rgba(0, 0, 0, 0.05)_ | - |
-| --van-switch-background-color | _var(--van-background-color-light)_ | - |
-| --van-switch-on-background-color | _var(--van-primary-color)_ | - |
-| --van-switch-transition-duration | _var(--van-animation-duration-base)_ | - |
+| --van-switch-node-background | _var(--van-white)_ | - |
+| --van-switch-node-shadow | _0 3px 1px 0 rgba(0, 0, 0, 0.05)_ | - |
+| --van-switch-background | _rgba(120, 120, 128, 0.16)_ | - |
+| --van-switch-on-background | _var(--van-primary-color)_ | - |
+| --van-switch-duration | _var(--van-duration-base)_ | - |
 | --van-switch-disabled-opacity | _var(--van-disabled-opacity)_ | - |
-| --van-switch-border | _var(--van-border-width-base) solid rgba(0, 0, 0, 0.1)_ | - |

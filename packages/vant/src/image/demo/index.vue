@@ -124,7 +124,7 @@ const positions2 = ['top', 'center', 'bottom'] as const;
 <style lang="less">
 .demo-image {
   overflow-x: hidden;
-  background-color: var(--van-background-color-light);
+  background-color: var(--van-background-2);
 
   .van-row {
     padding: 0 var(--van-padding-md);

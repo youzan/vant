@@ -1,21 +1,19 @@
-@import './var.less';
-
-:root {
-  --van-toast-max-width: @toast-max-width;
-  --van-toast-font-size: @toast-font-size;
-  --van-toast-text-color: @toast-text-color;
-  --van-toast-loading-icon-color: @toast-loading-icon-color;
-  --van-toast-line-height: @toast-line-height;
-  --van-toast-border-radius: @toast-border-radius;
-  --van-toast-background-color: @toast-background-color;
-  --van-toast-icon-size: @toast-icon-size;
-  --van-toast-text-min-width: @toast-text-min-width;
-  --van-toast-text-padding: @toast-text-padding;
-  --van-toast-default-padding: @toast-default-padding;
-  --van-toast-default-width: @toast-default-width;
-  --van-toast-default-min-height: @toast-default-min-height;
-  --van-toast-position-top-distance: @toast-position-top-distance;
-  --van-toast-position-bottom-distance: @toast-position-bottom-distance;
+body {
+  --van-toast-max-width: 70%;
+  --van-toast-font-size: var(--van-font-size-md);
+  --van-toast-text-color: var(--van-white);
+  --van-toast-loading-icon-color: var(--van-white);
+  --van-toast-line-height: var(--van-line-height-md);
+  --van-toast-radius: var(--van-radius-lg);
+  --van-toast-background: rgba(0, 0, 0, 0.7);
+  --van-toast-icon-size: 36px;
+  --van-toast-text-min-width: 96px;
+  --van-toast-text-padding: var(--van-padding-xs) var(--van-padding-sm);
+  --van-toast-default-padding: var(--van-padding-md);
+  --van-toast-default-width: 88px;
+  --van-toast-default-min-height: 88px;
+  --van-toast-position-top-distance: 20%;
+  --van-toast-position-bottom-distance: 20%;
 }
 
 .van-toast {
@@ -24,7 +22,7 @@
   align-items: center;
   justify-content: center;
   box-sizing: content-box;
-  transition: all var(--van-animation-duration-fast);
+  transition: all var(--van-duration-fast);
 
   // hack for avoid max-width when use left & fixed
   width: var(--van-toast-default-width);
@@ -40,8 +38,8 @@
   text-align: center;
   // https://github.com/vant-ui/vant/issues/8959
   word-break: break-all;
-  background: var(--van-toast-background-color);
-  border-radius: var(--van-toast-border-radius);
+  background: var(--van-toast-background);
+  border-radius: var(--van-toast-radius);
 
   &--unclickable {
     // lock scroll

@@ -7,42 +7,25 @@ export type PickerToolbarPosition = 'top' | 'bottom';
 
 export type PickerFieldNames = {
   text?: string;
-  values?: string;
+  value?: string;
   children?: string;
 };
 
-export type PickerObjectOption = {
+export type PickerOption = {
   text?: Numeric;
+  value?: Numeric;
   disabled?: boolean;
-  // for custom filed names
-  [key: PropertyKey]: any;
-};
-
-export type PickerOption = Numeric | PickerObjectOption;
-
-export type PickerObjectColumn = {
-  values?: PickerOption[];
   children?: PickerColumn;
   className?: unknown;
-  defaultIndex?: number;
   // for custom filed names
   [key: PropertyKey]: any;
 };
 
-export type PickerColumn = PickerOption[] | PickerObjectColumn;
+export type PickerColumn = PickerOption[];
 
 export type PickerExpose = {
   confirm: () => void;
-  getValues: <T = PickerOption>() => T[];
-  setValues: (values: string[]) => void;
-  getIndexes: () => number[];
-  setIndexes: (indexes: number[]) => void;
-  getColumnIndex: (index: number) => number;
-  setColumnIndex: (columnIndex: number, optionIndex: number) => void;
-  getColumnValue: <T = PickerOption>(index: number) => T;
-  setColumnValue: (index: number, value: string) => void;
-  getColumnValues: <T = PickerOption>(index: number) => T[];
-  setColumnValues: (index: number, options: PickerOption[]) => void;
+  getSelectedOptions: () => Array<PickerOption | undefined>;
 };
 
 export type PickerColumnProvide = {
@@ -60,3 +43,14 @@ export type PickerColumnProvide = {
 };
 
 export type PickerInstance = ComponentPublicInstance<PickerProps, PickerExpose>;
+
+export type PickerConfirmEventParams = {
+  selectedValues: Numeric[];
+  selectedOptions: Array<PickerOption | undefined>;
+};
+
+export type PickerCancelEventParams = PickerConfirmEventParams;
+
+export type PickerChangeEventParams = PickerConfirmEventParams & {
+  columnIndex: number;
+};

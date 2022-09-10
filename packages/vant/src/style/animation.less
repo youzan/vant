@@ -1,5 +1,3 @@
-@import './var';
-
 @keyframes van-slide-up-enter {
   from {
     transform: translate3d(0, 100%, 0);
@@ -80,60 +78,58 @@
 
 .van-fade {
   &-enter-active {
-    animation: var(--van-animation-duration-base) van-fade-in both
-      var(--van-animation-timing-function-enter);
+    animation: var(--van-duration-base) van-fade-in both var(--van-ease-out);
   }
 
   &-leave-active {
-    animation: var(--van-animation-duration-base) van-fade-out both
-      var(--van-animation-timing-function-leave);
+    animation: var(--van-duration-base) van-fade-out both var(--van-ease-in);
   }
 }
 
 .van-slide-up {
   &-enter-active {
-    animation: van-slide-up-enter var(--van-animation-duration-base) both
-      var(--van-animation-timing-function-enter);
+    animation: van-slide-up-enter var(--van-duration-base) both
+      var(--van-ease-out);
   }
 
   &-leave-active {
-    animation: van-slide-up-leave var(--van-animation-duration-base) both
-      var(--van-animation-timing-function-leave);
+    animation: van-slide-up-leave var(--van-duration-base) both
+      var(--van-ease-in);
   }
 }
 
 .van-slide-down {
   &-enter-active {
-    animation: van-slide-down-enter var(--van-animation-duration-base) both
-      var(--van-animation-timing-function-enter);
+    animation: van-slide-down-enter var(--van-duration-base) both
+      var(--van-ease-out);
   }
 
   &-leave-active {
-    animation: van-slide-down-leave var(--van-animation-duration-base) both
-      var(--van-animation-timing-function-leave);
+    animation: van-slide-down-leave var(--van-duration-base) both
+      var(--van-ease-in);
   }
 }
 
 .van-slide-left {
   &-enter-active {
-    animation: van-slide-left-enter var(--van-animation-duration-base) both
-      var(--van-animation-timing-function-enter);
+    animation: van-slide-left-enter var(--van-duration-base) both
+      var(--van-ease-out);
   }
 
   &-leave-active {
-    animation: van-slide-left-leave var(--van-animation-duration-base) both
-      var(--van-animation-timing-function-leave);
+    animation: van-slide-left-leave var(--van-duration-base) both
+      var(--van-ease-in);
   }
 }
 
 .van-slide-right {
   &-enter-active {
-    animation: van-slide-right-enter var(--van-animation-duration-base) both
-      var(--van-animation-timing-function-enter);
+    animation: van-slide-right-enter var(--van-duration-base) both
+      var(--van-ease-out);
   }
 
   &-leave-active {
-    animation: van-slide-right-leave var(--van-animation-duration-base) both
-      var(--van-animation-timing-function-leave);
+    animation: van-slide-right-leave var(--van-duration-base) both
+      var(--van-ease-in);
   }
 }

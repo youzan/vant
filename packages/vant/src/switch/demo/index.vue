@@ -4,7 +4,7 @@ import VanCell from '../../cell';
 import VanIcon from '../../icon';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import { Dialog } from '../../dialog';
+import { showConfirmDialog } from '../../dialog';
 
 const t = useTranslate({
   'zh-CN': {
@@ -36,7 +36,7 @@ const checked4 = ref(true);
 const checked5 = ref(true);
 
 const onUpdateValue = (checked: boolean) => {
-  Dialog.confirm({
+  showConfirmDialog({
     title: t('title'),
     message: t('message'),
   }).then(() => {
@@ -59,7 +59,7 @@ const onUpdateValue = (checked: boolean) => {
   </demo-block>
 
   <demo-block :title="t('customSize')">
-    <van-switch v-model="checked2" size="24px" />
+    <van-switch v-model="checked2" size="22px" />
   </demo-block>
 
   <demo-block :title="t('customColor')">
@@ -87,7 +87,7 @@ const onUpdateValue = (checked: boolean) => {
   <demo-block :title="t('withCell')">
     <van-cell center :title="t('title')">
       <template #right-icon>
-        <van-switch v-model="checked5" size="24" />
+        <van-switch v-model="checked5" />
       </template>
     </van-cell>
   </demo-block>

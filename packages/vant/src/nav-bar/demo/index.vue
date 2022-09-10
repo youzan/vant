@@ -2,7 +2,7 @@
 import VanNavBar from '..';
 import VanIcon from '../../icon';
 import { useTranslate } from '../../../docs/site';
-import { Toast } from '../../toast';
+import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
@@ -17,8 +17,8 @@ const t = useTranslate({
   },
 });
 
-const onClickLeft = () => Toast(t('back'));
-const onClickRight = () => Toast(t('button'));
+const onClickLeft = () => showToast(t('back'));
+const onClickRight = () => showToast(t('button'));
 </script>
 
 <template>

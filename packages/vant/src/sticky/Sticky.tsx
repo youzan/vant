@@ -30,7 +30,7 @@ const [name, bem] = createNamespace('sticky');
 
 export type StickyPosition = 'top' | 'bottom';
 
-const stickyProps = {
+export const stickyProps = {
   zIndex: numericProp,
   position: makeStringProp<StickyPosition>('top'),
   container: Object as PropType<Element>,

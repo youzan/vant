@@ -187,7 +187,7 @@ const onFinish = (
         v-model="customColorState.value"
         :title="t('selectArea')"
         :options="t('options')"
-        active-color="#1989fa"
+        active-color="#ee0a24"
         @close="customColorState.show = false"
         @finish="onFinish(customColorState, $event)"
       />

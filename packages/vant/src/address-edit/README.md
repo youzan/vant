@@ -23,7 +23,6 @@ app.use(AddressEdit);
 ```html
 <van-address-edit
   :area-list="areaList"
-  show-postal
   show-delete
   show-set-default
   show-search-result
@@ -37,14 +36,14 @@ app.use(AddressEdit);
 
 ```js
 import { ref } from 'vue';
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export default {
   setup() {
     const searchResult = ref([]);
 
-    const onSave = () => Toast('save');
-    const onDelete = () => Toast('delete');
+    const onSave = () => showToast('save');
+    const onDelete = () => showToast('delete');
     const onChangeDetail = (val) => {
       if (val) {
         searchResult.value = [
@@ -80,7 +79,6 @@ export default {
 | area-placeholder | placeholder of area input field | _string_ | `Area` |
 | address-info | Address Info | _AddressEditInfo_ | `{}` |
 | search-result | Address search result | _AddressEditSearchItem[]_ | `[]` |
-| show-postal | Whether to show postal field | _boolean_ | `false` |
 | show-delete | Whether to show delete button | _boolean_ | `false` |
 | show-set-default | Whether to show default address switch | _boolean_ | `false` |
 | show-search-result | Whether to show address search result | _boolean_ | `false` |
@@ -95,27 +93,26 @@ export default {
 | is-deleting | Whether to show delete button loading status | _boolean_ | `false` |
 | tel-validator | The method to validate tel | _(tel: string) => boolean_ | - |
 | tel-maxlength | Tel maxlength | _number \| string_ | - |
-| postal-validator | The method to validate postal | _(tel: string) => boolean_ | - |
 | validator | Custom validator | _(key, val) => string_ | - |
 
 ### Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| save | Emitted when the save button is clicked | content: form content |
-| focus | Emitted when field is focused | key: field name |
-| delete | Emitted when confirming delete | content: form content |
-| select-search | Emitted when a search result is selected | value: search content |
+| save | Emitted when the save button is clicked | _info: AddressEditInfo_ |
+| focus | Emitted when field is focused | _key: string_ |
+| delete | Emitted when confirming delete | _info: AddressEditInfo_ |
+| select-search | Emitted when a search result is selected | _value: string_ |
 | click-area | Emitted when the area field is clicked | - |
-| change-area | Emitted when area changed | values: area values |
-| change-detail | Emitted when address detail changed | value: address detail |
-| change-default | Emitted when switching default address | value: checked |
+| change-area | Emitted when area changed | _selectedOptions: PickerOption[]_ |
+| change-detail | Emitted when address detail changed | _value: string_ |
+| change-default | Emitted when switching default address | _checked: boolean_ |
 
 ### Slots
 
-| Name    | Description                 |
-| ------- | --------------------------- |
-| default | Custom content below postal |
+| Name    | Description                         |
+| ------- | ----------------------------------- |
+| default | Custom content below address detail |
 
 ### Methods
 
@@ -160,7 +157,6 @@ addressEditRef.value?.setAddressDetail('');
 | county        | County             | _string_  |
 | addressDetail | Detailed Address   | _string_  |
 | areaCode      | Area code          | _string_  |
-| postalCode    | Postal code        | _string_  |
 | isDefault     | Is default address | _boolean_ |
 
 ### AddressEditSearchItem Data Structure

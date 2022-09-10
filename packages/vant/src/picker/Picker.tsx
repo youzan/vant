@@ -9,57 +9,68 @@ import {
 
 // Utils
 import {
+  pick,
   extend,
   unitToPx,
   truthProp,
+  isSameValue,
   makeArrayProp,
   preventDefault,
   makeStringProp,
   makeNumericProp,
-  createNamespace,
-  HAPTICS_FEEDBACK,
   BORDER_UNSET_TOP_BOTTOM,
+  type Numeric,
 } from '../utils';
+import {
+  bem,
+  name,
+  isOptionExist,
+  getColumnsType,
+  findOptionByValue,
+  assignDefaultFields,
+  formatCascadeColumns,
+  getFirstEnabledOption,
+} from './utils';
 
 // Composables
-import { useChildren, useEventListener } from '@vant/use';
+import { useChildren, useEventListener, useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
 import { Loading } from '../loading';
 import Column, { PICKER_KEY } from './PickerColumn';
+import Toolbar, {
+  pickerToolbarPropKeys,
+  pickerToolbarProps,
+  pickerToolbarSlots,
+} from './PickerToolbar';
 
 // Types
 import type {
   PickerColumn,
-  PickerOption,
   PickerExpose,
+  PickerOption,
   PickerFieldNames,
-  PickerObjectColumn,
   PickerToolbarPosition,
 } from './types';
+import { PICKER_GROUP_KEY } from '../picker-group/PickerGroup';
 
-const [name, bem, t] = createNamespace('picker');
+export const pickerSharedProps = extend(
+  {
+    loading: Boolean,
+    readonly: Boolean,
+    allowHtml: Boolean,
+    optionHeight: makeNumericProp(44),
+    showToolbar: truthProp,
+    swipeDuration: makeNumericProp(1000),
+    visibleOptionNum: makeNumericProp(6),
+  },
+  pickerToolbarProps
+);
 
-export const pickerSharedProps = {
-  title: String,
-  loading: Boolean,
-  readonly: Boolean,
-  allowHtml: Boolean,
-  itemHeight: makeNumericProp(44),
-  showToolbar: truthProp,
-  swipeDuration: makeNumericProp(1000),
-  visibleItemCount: makeNumericProp(6),
-  cancelButtonText: String,
-  confirmButtonText: String,
-};
-
-const pickerProps = extend({}, pickerSharedProps, {
+export const pickerProps = extend({}, pickerSharedProps, {
   columns: makeArrayProp<PickerOption | PickerColumn>(),
-  // @deprecated
-  // should be removed in next major version
-  valueKey: String,
-  defaultIndex: makeNumericProp(0),
+  modelValue: makeArrayProp<Numeric>(),
   toolbarPosition: makeStringProp<PickerToolbarPosition>('top'),
   columnsFieldNames: Object as PropType<PickerFieldNames>,
 });
@@ -71,301 +82,116 @@ export default defineComponent({
 
   props: pickerProps,
 
-  emits: ['confirm', 'cancel', 'change'],
+  emits: ['confirm', 'cancel', 'change', 'clickOption', 'update:modelValue'],
 
   setup(props, { emit, slots }) {
-    if (process.env.NODE_ENV !== 'production') {
-      if (slots.default) {
-        console.warn(
-          '[Vant] Picker: "default" slot is deprecated, please use "toolbar" slot instead.'
-        );
-      }
-      if (props.valueKey) {
-        console.warn(
-          '[Vant] Picker: "valueKey" prop is deprecated, please use "columnsFieldNames" prop instead.'
-        );
-      }
-    }
-
-    const hasOptions = ref(false);
     const columnsRef = ref<HTMLElement>();
-    const formattedColumns = ref<PickerObjectColumn[]>([]);
+    const selectedValues = ref(props.modelValue.slice(0));
 
-    const columnsFieldNames = computed(() => {
-      const { columnsFieldNames } = props;
-      return {
-        text: columnsFieldNames?.text || props.valueKey || 'text',
-        values: columnsFieldNames?.values || 'values',
-        children: columnsFieldNames?.children || 'children',
-      };
-    });
-
+    const { parent } = useParent(PICKER_GROUP_KEY);
     const { children, linkChildren } = useChildren(PICKER_KEY);
 
     linkChildren();
 
-    const itemHeight = computed(() => unitToPx(props.itemHeight));
+    const fields = computed(() => assignDefaultFields(props.columnsFieldNames));
+    const optionHeight = computed(() => unitToPx(props.optionHeight));
+    const columnsType = computed(() =>
+      getColumnsType(props.columns, fields.value)
+    );
 
-    const dataType = computed(() => {
-      const firstColumn = props.columns[0];
-      if (typeof firstColumn === 'object') {
-        if (columnsFieldNames.value.children in firstColumn) {
-          return 'cascade';
-        }
-        if (columnsFieldNames.value.values in firstColumn) {
-          return 'object';
-        }
+    const currentColumns = computed<PickerColumn[]>(() => {
+      const { columns } = props;
+      switch (columnsType.value) {
+        case 'multiple':
+          return columns as PickerColumn[];
+        case 'cascade':
+          return formatCascadeColumns(columns, fields.value, selectedValues);
+        default:
+          return [columns];
       }
-      return 'plain';
     });
 
-    const formatCascade = () => {
-      const formatted: PickerObjectColumn[] = [];
+    const hasOptions = computed(() =>
+      currentColumns.value.some((options) => options.length)
+    );
 
-      let cursor: PickerObjectColumn = {
-        [columnsFieldNames.value.children]: props.columns,
-      };
+    const selectedOptions = computed(() =>
+      currentColumns.value.map((options, index) =>
+        findOptionByValue(options, selectedValues.value[index], fields.value)
+      )
+    );
 
-      while (cursor && cursor[columnsFieldNames.value.children]) {
-        const children = cursor[columnsFieldNames.value.children];
-        let defaultIndex = cursor.defaultIndex ?? +props.defaultIndex;
+    const setValue = (index: number, value: Numeric) => {
+      if (selectedValues.value[index] !== value) {
+        const newValues = selectedValues.value.slice(0);
+        newValues[index] = value;
+        selectedValues.value = newValues;
+      }
+    };
 
-        while (children[defaultIndex] && children[defaultIndex].disabled) {
-          if (defaultIndex < children.length - 1) {
-            defaultIndex++;
-          } else {
-            defaultIndex = 0;
-            break;
+    const getEventParams = () => ({
+      selectedValues: selectedValues.value.slice(0),
+      selectedOptions: selectedOptions.value,
+    });
+
+    const onChange = (value: Numeric, columnIndex: number) => {
+      setValue(columnIndex, value);
+
+      if (columnsType.value === 'cascade') {
+        // reset values after cascading
+        selectedValues.value.forEach((value, index) => {
+          const options = currentColumns.value[index];
+          if (!isOptionExist(options, value, fields.value)) {
+            setValue(
+              index,
+              options.length ? options[0][fields.value.value] : undefined
+            );
           }
-        }
-
-        formatted.push({
-          [columnsFieldNames.value.values]:
-            cursor[columnsFieldNames.value.children],
-          className: cursor.className,
-          defaultIndex,
         });
-
-        cursor = children[defaultIndex];
       }
 
-      formattedColumns.value = formatted;
+      emit('change', extend({ columnIndex }, getEventParams()));
     };
 
-    const format = () => {
-      const { columns } = props;
-
-      if (dataType.value === 'plain') {
-        formattedColumns.value = [
-          { [columnsFieldNames.value.values]: columns },
-        ];
-      } else if (dataType.value === 'cascade') {
-        formatCascade();
-      } else {
-        formattedColumns.value = columns as PickerObjectColumn[];
-      }
-
-      hasOptions.value =
-        formattedColumns.value.some(
-          (item) =>
-            item[columnsFieldNames.value.values] &&
-            item[columnsFieldNames.value.values].length !== 0
-        ) || children.some((item) => item.hasOptions);
-    };
-
-    // get indexes of all columns
-    const getIndexes = () => children.map((child) => child.state.index);
-
-    // set options of column by index
-    const setColumnValues = (index: number, options: PickerOption[]) => {
-      const column = children[index];
-      if (column) {
-        column.setOptions(options);
-        hasOptions.value = true;
-      }
-    };
-
-    const onCascadeChange = (columnIndex: number) => {
-      let cursor: PickerObjectColumn = {
-        [columnsFieldNames.value.children]: props.columns,
-      };
-      const indexes = getIndexes();
-
-      for (let i = 0; i <= columnIndex; i++) {
-        cursor = cursor[columnsFieldNames.value.children][indexes[i]];
-      }
-
-      while (cursor && cursor[columnsFieldNames.value.children]) {
-        columnIndex++;
-        setColumnValues(columnIndex, cursor[columnsFieldNames.value.children]);
-        cursor =
-          cursor[columnsFieldNames.value.children][cursor.defaultIndex || 0];
-      }
-    };
-
-    // get column instance by index
-    const getChild = (index: number) => children[index];
-
-    // get column value by index
-    const getColumnValue = (index: number) => {
-      const column = getChild(index);
-      if (column) {
-        return column.getValue();
-      }
-    };
-
-    // set column value by index
-    const setColumnValue = (index: number, value: string) => {
-      const column = getChild(index);
-      if (column) {
-        column.setValue(value);
-        if (dataType.value === 'cascade') {
-          onCascadeChange(index);
-        }
-      }
-    };
-
-    // get column option index by column index
-    const getColumnIndex = (index: number) => {
-      const column = getChild(index);
-      if (column) {
-        return column.state.index;
-      }
-    };
-
-    // set column option index by column index
-    const setColumnIndex = (columnIndex: number, optionIndex: number) => {
-      const column = getChild(columnIndex);
-      if (column) {
-        column.setIndex(optionIndex);
-        if (dataType.value === 'cascade') {
-          onCascadeChange(columnIndex);
-        }
-      }
-    };
-
-    // get options of column by index
-    const getColumnValues = (index: number) => {
-      const column = getChild(index);
-      if (column) {
-        return column.state.options;
-      }
-    };
-
-    // get values of all columns
-    const getValues = () => children.map((child) => child.getValue());
-
-    // set values of all columns
-    const setValues = (values: string[]) => {
-      values.forEach((value, index) => {
-        setColumnValue(index, value);
-      });
-    };
-
-    // set indexes of all columns
-    const setIndexes = (indexes: number[]) => {
-      indexes.forEach((optionIndex, columnIndex) => {
-        setColumnIndex(columnIndex, optionIndex);
-      });
-    };
-
-    const emitAction = (event: 'confirm' | 'cancel') => {
-      if (dataType.value === 'plain') {
-        emit(event, getColumnValue(0), getColumnIndex(0));
-      } else {
-        emit(event, getValues(), getIndexes());
-      }
-    };
-
-    const onChange = (columnIndex: number) => {
-      if (dataType.value === 'cascade') {
-        onCascadeChange(columnIndex);
-      }
-
-      if (dataType.value === 'plain') {
-        emit('change', getColumnValue(0), getColumnIndex(0));
-      } else {
-        emit('change', getValues(), columnIndex);
-      }
-    };
+    const onClickOption = (currentOption: PickerOption, columnIndex: number) =>
+      emit(
+        'clickOption',
+        extend({ columnIndex, currentOption }, getEventParams())
+      );
 
     const confirm = () => {
       children.forEach((child) => child.stopMomentum());
-      emitAction('confirm');
+      const params = getEventParams();
+      emit('confirm', params);
+      return params;
     };
 
-    const cancel = () => emitAction('cancel');
-
-    const renderTitle = () => {
-      if (slots.title) {
-        return slots.title();
-      }
-      if (props.title) {
-        return <div class={[bem('title'), 'van-ellipsis']}>{props.title}</div>;
-      }
-    };
-
-    const renderCancel = () => {
-      const text = props.cancelButtonText || t('cancel');
-      return (
-        <button
-          type="button"
-          class={[bem('cancel'), HAPTICS_FEEDBACK]}
-          onClick={cancel}
-        >
-          {slots.cancel ? slots.cancel() : text}
-        </button>
-      );
-    };
-
-    const renderConfirm = () => {
-      const text = props.confirmButtonText || t('confirm');
-      return (
-        <button
-          type="button"
-          class={[bem('confirm'), HAPTICS_FEEDBACK]}
-          onClick={confirm}
-        >
-          {slots.confirm ? slots.confirm() : text}
-        </button>
-      );
-    };
-
-    const renderToolbar = () => {
-      if (props.showToolbar) {
-        // default slot is deprecated
-        // should be removed in next major version
-        const slot = slots.toolbar || slots.default;
-        return (
-          <div class={bem('toolbar')}>
-            {slot ? slot() : [renderCancel(), renderTitle(), renderConfirm()]}
-          </div>
-        );
-      }
-    };
+    const cancel = () => emit('cancel', getEventParams());
 
     const renderColumnItems = () =>
-      formattedColumns.value.map((item, columnIndex) => (
+      currentColumns.value.map((options, columnIndex) => (
         <Column
           v-slots={{ option: slots.option }}
-          textKey={columnsFieldNames.value.text}
+          value={selectedValues.value[columnIndex]}
+          fields={fields.value}
+          options={options}
           readonly={props.readonly}
           allowHtml={props.allowHtml}
-          className={item.className}
-          itemHeight={itemHeight.value}
-          defaultIndex={item.defaultIndex ?? +props.defaultIndex}
+          optionHeight={optionHeight.value}
           swipeDuration={props.swipeDuration}
-          initialOptions={item[columnsFieldNames.value.values]}
-          visibleItemCount={props.visibleItemCount}
-          onChange={() => onChange(columnIndex)}
+          visibleOptionNum={props.visibleOptionNum}
+          onChange={(value: Numeric) => onChange(value, columnIndex)}
+          onClickOption={(option: PickerOption) =>
+            onClickOption(option, columnIndex)
+          }
         />
       ));
 
     const renderMask = (wrapHeight: number) => {
       if (hasOptions.value) {
-        const frameStyle = { height: `${itemHeight.value}px` };
+        const frameStyle = { height: `${optionHeight.value}px` };
         const maskStyle = {
-          backgroundSize: `100% ${(wrapHeight - itemHeight.value) / 2}px`,
+          backgroundSize: `100% ${(wrapHeight - optionHeight.value) / 2}px`,
         };
         return [
           <div class={bem('mask')} style={maskStyle} />,
@@ -378,7 +204,7 @@ export default defineComponent({
     };
 
     const renderColumns = () => {
-      const wrapHeight = itemHeight.value * +props.visibleItemCount;
+      const wrapHeight = optionHeight.value * +props.visibleOptionNum;
       const columnsStyle = { height: `${wrapHeight}px` };
       return (
         <div ref={columnsRef} class={bem('columns')} style={columnsStyle}>
@@ -388,26 +214,72 @@ export default defineComponent({
       );
     };
 
-    watch(() => props.columns, format, { immediate: true });
+    const renderToolbar = () => {
+      if (props.showToolbar && !parent) {
+        return (
+          <Toolbar
+            v-slots={pick(slots, pickerToolbarSlots)}
+            {...pick(props, pickerToolbarPropKeys)}
+            onConfirm={confirm}
+            onCancel={cancel}
+          />
+        );
+      }
+    };
+
+    watch(
+      currentColumns,
+      (columns) => {
+        columns.forEach((options, index) => {
+          if (
+            options.length &&
+            !isOptionExist(options, selectedValues.value[index], fields.value)
+          ) {
+            setValue(
+              index,
+              getFirstEnabledOption(options)![fields.value.value]
+            );
+          }
+        });
+      },
+      { immediate: true }
+    );
+
+    // preserve last emitted model value
+    // when props.modelValue is updated by parent component,
+    // the new value should be compared with the last emitted value
+    let lastEmittedModelValue: Numeric[];
+    watch(
+      () => props.modelValue,
+      (newValues) => {
+        if (
+          !isSameValue(newValues, selectedValues.value) &&
+          !isSameValue(newValues, lastEmittedModelValue)
+        ) {
+          selectedValues.value = newValues.slice(0);
+        }
+      },
+      { deep: true }
+    );
+    watch(
+      selectedValues,
+      (newValues) => {
+        if (!isSameValue(newValues, props.modelValue)) {
+          lastEmittedModelValue = newValues.slice(0);
+          emit('update:modelValue', lastEmittedModelValue);
+        }
+      },
+      { immediate: true }
+    );
 
     // useEventListener will set passive to `false` to eliminate the warning of Chrome
     useEventListener('touchmove', preventDefault, {
       target: columnsRef,
     });
 
-    useExpose<PickerExpose>({
-      confirm,
-      getValues,
-      setValues,
-      getIndexes,
-      setIndexes,
-      getColumnIndex,
-      setColumnIndex,
-      getColumnValue,
-      setColumnValue,
-      getColumnValues,
-      setColumnValues,
-    });
+    const getSelectedOptions = () => selectedOptions.value;
+
+    useExpose<PickerExpose>({ confirm, getSelectedOptions });
 
     return () => (
       <div class={bem()}>
