@@ -169,7 +169,7 @@ resetToastDefaultOptions('loading');
 
 ### 使用 Toast 组件
 
-如果需要在 Toast 内嵌入组件或其他自定义内容，可以直接使用 Toast 组件，并使用 message 插槽进行定制。
+如果需要在 Toast 内嵌入组件或其他自定义内容，可以直接使用 Toast 组件，并使用 message 插槽进行定制。使用前需要通过 `app.use` 等方式注册组件。
 
 ```html
 <van-toast v-model:show="show" style="padding: 0">
@@ -194,7 +194,7 @@ export default {
 
 ### 方法
 
-Vant 中导出了以下 Toast 辅助函数：
+Vant 中导出了以下 Toast 相关的辅助函数：
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
@@ -208,6 +208,8 @@ Vant 中导出了以下 Toast 辅助函数：
 | resetToastDefaultOptions | 重置默认配置，影响所有的 `showToast` 调用。<br>传入 type 可以重置指定类型的默认配置 | `type` | `void` |
 
 ### ToastOptions 数据结构
+
+调用 `showToast` 等方法时，支持传入以下选项：
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |

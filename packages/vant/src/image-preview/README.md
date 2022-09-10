@@ -105,7 +105,7 @@ setTimeout(() => {
 }, 2000);
 ```
 
-### Component Call
+### Use ImagePreview Component
 
 ```html
 <van-image-preview v-model:show="show" :images="images" @change="onChange">
@@ -140,7 +140,15 @@ export default {
 
 ## API
 
-### Options
+### Methods
+
+Vant exports following ImagePreview utility functions:
+
+| Methods          | Description        | Attribute | Return value         |
+| ---------------- | ------------------ | --------- | -------------------- | --------------------- |
+| showImagePreview | Show image preview | `string[] | ImagePreviewOptions` | imagePreview Instance |
+
+### ImagePreviewOptions
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |

@@ -86,7 +86,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        Component Call
+        Use Dialog Component
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">

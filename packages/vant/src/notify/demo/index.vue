@@ -15,7 +15,7 @@ const t = useTranslate({
     notifyType: '通知类型',
     customColor: '自定义颜色',
     customNotify: '自定义配置',
-    componentCall: '组件调用',
+    useComponent: '使用 Notify 组件',
     customDuration: '自定义时长',
     customPosition: '自定义位置',
   },
@@ -28,7 +28,7 @@ const t = useTranslate({
     notifyType: 'Notify Type',
     customColor: 'Custom Color',
     customNotify: 'Custom Notify',
-    componentCall: 'Component Call',
+    useComponent: 'Use Notify Component',
     customDuration: 'Custom Duration',
     customPosition: 'Custom Position',
   },
@@ -103,8 +103,8 @@ const showComponentCall = () => {
     />
   </demo-block>
 
-  <demo-block card :title="t('componentCall')">
-    <van-cell is-link :title="t('componentCall')" @click="showComponentCall" />
+  <demo-block card :title="t('useComponent')">
+    <van-cell is-link :title="t('useComponent')" @click="showComponentCall" />
 
     <van-notify v-model:show="show" type="success">
       <van-icon name="bell" style="margin-right: 4px" />

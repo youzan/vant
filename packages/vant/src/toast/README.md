@@ -179,7 +179,7 @@ export default {
 
 ### Methods
 
-Vant export following utility functions:
+Vant exports following Toast utility functions:
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
