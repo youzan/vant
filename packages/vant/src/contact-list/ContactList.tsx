@@ -20,7 +20,7 @@ export type ContactListItem = {
   isDefault?: boolean;
 };
 
-const contactListProps = {
+export const contactListProps = {
   list: Array as PropType<ContactListItem[]>,
   addText: String,
   modelValue: unknownProp,

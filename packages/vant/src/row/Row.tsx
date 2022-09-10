@@ -33,7 +33,7 @@ export type RowJustify =
   | 'space-around'
   | 'space-between';
 
-const rowProps = {
+export const rowProps = {
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
   wrap: truthProp,
   align: String as PropType<RowAlign>,

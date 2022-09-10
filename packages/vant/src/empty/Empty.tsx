@@ -9,7 +9,7 @@ import {
 
 const [name, bem] = createNamespace('empty');
 
-const emptyProps = {
+export const emptyProps = {
   image: makeStringProp('default'),
   imageSize: [Number, String, Array] as PropType<Numeric | [Numeric, Numeric]>,
   description: String,

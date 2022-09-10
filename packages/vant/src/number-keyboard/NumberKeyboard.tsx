@@ -41,7 +41,7 @@ type KeyConfig = {
   wider?: boolean;
 };
 
-const numberKeyboardProps = {
+export const numberKeyboardProps = {
   show: Boolean,
   title: String,
   theme: makeStringProp<NumberKeyboardTheme>('default'),

@@ -105,7 +105,7 @@ export const fieldSharedProps = {
   },
 };
 
-const fieldProps = extend({}, cellSharedProps, fieldSharedProps, {
+export const fieldProps = extend({}, cellSharedProps, fieldSharedProps, {
   rows: numericProp,
   type: makeStringProp<FieldType>('text'),
   rules: Array as PropType<FieldRule[]>,

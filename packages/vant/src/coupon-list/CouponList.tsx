@@ -31,7 +31,7 @@ import { Coupon, CouponInfo } from '../coupon';
 import { useRect } from '@vant/use';
 
 const [name, bem, t] = createNamespace('coupon-list');
-const couponListProps = {
+export const couponListProps = {
   code: makeStringProp(''),
   coupons: makeArrayProp<CouponInfo>(),
   currency: makeStringProp('¥'),

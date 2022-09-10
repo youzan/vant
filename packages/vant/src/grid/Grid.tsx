@@ -18,7 +18,7 @@ const [name, bem] = createNamespace('grid');
 
 export type GridDirection = 'horizontal' | 'vertical';
 
-const gridProps = {
+export const gridProps = {
   square: Boolean,
   center: truthProp,
   border: truthProp,

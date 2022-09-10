@@ -16,7 +16,7 @@ import type { CheckboxExpose } from './types';
 
 const [name, bem] = createNamespace('checkbox');
 
-const checkboxProps = extend({}, checkerProps, {
+export const checkboxProps = extend({}, checkerProps, {
   bindGroup: truthProp,
 });
 

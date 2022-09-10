@@ -6,7 +6,7 @@ const [name, bem] = createNamespace('steps');
 
 export type StepsDirection = 'horizontal' | 'vertical';
 
-const stepsProps = {
+export const stepsProps = {
   active: makeNumericProp(0),
   direction: makeStringProp<StepsDirection>('horizontal'),
   activeIcon: makeStringProp('checked'),

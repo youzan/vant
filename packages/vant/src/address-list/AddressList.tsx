@@ -15,7 +15,7 @@ import AddressListItem, { AddressListAddress } from './AddressListItem';
 
 const [name, bem, t] = createNamespace('address-list');
 
-const addressListProps = {
+export const addressListProps = {
   list: makeArrayProp<AddressListAddress>(),
   modelValue: numericProp,
   switchable: truthProp,

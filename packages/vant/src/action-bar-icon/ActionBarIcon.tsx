@@ -12,7 +12,7 @@ import { Badge, type BadgeProps } from '../badge';
 
 const [name, bem] = createNamespace('action-bar-icon');
 
-const actionBarIconProps = extend({}, routeProps, {
+export const actionBarIconProps = extend({}, routeProps, {
   dot: Boolean,
   text: String,
   icon: String,

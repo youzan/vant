@@ -18,7 +18,7 @@ import type { CouponInfo } from '../coupon';
 
 const [name, bem, t] = createNamespace('coupon-cell');
 
-const couponCellProps = {
+export const couponCellProps = {
   title: String,
   border: truthProp,
   editable: truthProp,

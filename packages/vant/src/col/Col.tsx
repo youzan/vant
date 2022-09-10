@@ -10,7 +10,7 @@ import { ROW_KEY } from '../row/Row';
 
 const [name, bem] = createNamespace('col');
 
-const colProps = {
+export const colProps = {
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
   span: makeNumericProp(0),
   offset: numericProp,

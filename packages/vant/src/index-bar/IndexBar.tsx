@@ -52,7 +52,7 @@ function genAlphabet() {
 
 const [name, bem] = createNamespace('index-bar');
 
-const indexBarProps = {
+export const indexBarProps = {
   sticky: truthProp,
   zIndex: numericProp,
   teleport: [String, Object] as PropType<TeleportProps['to']>,

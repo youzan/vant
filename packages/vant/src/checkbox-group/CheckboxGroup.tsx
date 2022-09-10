@@ -23,7 +23,7 @@ import type {
 
 const [name, bem] = createNamespace('checkbox-group');
 
-const checkboxGroupProps = {
+export const checkboxGroupProps = {
   max: numericProp,
   disabled: Boolean,
   iconSize: numericProp,

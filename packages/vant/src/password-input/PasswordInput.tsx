@@ -12,7 +12,7 @@ import {
 
 const [name, bem] = createNamespace('password-input');
 
-const passwordInputProps = {
+export const passwordInputProps = {
   info: String,
   mask: truthProp,
   value: makeStringProp(''),

@@ -28,7 +28,7 @@ const [name] = createNamespace('time-picker');
 
 export type TimePickerColumnType = 'hour' | 'minute' | 'second';
 
-const timePickerProps = extend({}, sharedProps, {
+export const timePickerProps = extend({}, sharedProps, {
   minHour: makeNumericProp(0),
   maxHour: makeNumericProp(23),
   minMinute: makeNumericProp(0),

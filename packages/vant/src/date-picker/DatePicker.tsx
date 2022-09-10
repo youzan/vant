@@ -24,7 +24,7 @@ const [name] = createNamespace('date-picker');
 
 export type DatePickerColumnType = 'year' | 'month' | 'day';
 
-const datePickerProps = extend({}, sharedProps, {
+export const datePickerProps = extend({}, sharedProps, {
   columnsType: {
     type: Array as PropType<DatePickerColumnType[]>,
     default: () => ['year', 'month', 'day'],

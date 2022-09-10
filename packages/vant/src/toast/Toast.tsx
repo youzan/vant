@@ -41,7 +41,7 @@ const popupInheritProps = [
   'closeOnClickOverlay',
 ] as const;
 
-const toastProps = {
+export const toastProps = {
   icon: String,
   show: Boolean,
   type: makeStringProp<ToastType>('text'),

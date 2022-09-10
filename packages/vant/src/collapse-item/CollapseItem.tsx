@@ -30,7 +30,7 @@ const [name, bem] = createNamespace('collapse-item');
 
 const CELL_SLOTS = ['icon', 'title', 'value', 'label', 'right-icon'] as const;
 
-const collapseItemProps = extend({}, cellSharedProps, {
+export const collapseItemProps = extend({}, cellSharedProps, {
   name: numericProp,
   isLink: truthProp,
   disabled: Boolean,

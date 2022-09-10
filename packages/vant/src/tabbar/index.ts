@@ -3,6 +3,7 @@ import _Tabbar from './Tabbar';
 
 export const Tabbar = withInstall(_Tabbar);
 export default Tabbar;
+export { tabbarProps } from './Tabbar';
 export type { TabbarProps } from './Tabbar';
 
 declare module 'vue' {

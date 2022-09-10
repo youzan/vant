@@ -30,7 +30,7 @@ const makePage = (
 
 export type PaginationMode = 'simple' | 'multi';
 
-const paginationProps = {
+export const paginationProps = {
   mode: makeStringProp<PaginationMode>('multi'),
   prevText: String,
   nextText: String,

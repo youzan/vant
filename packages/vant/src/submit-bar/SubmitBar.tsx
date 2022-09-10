@@ -20,7 +20,7 @@ const [name, bem, t] = createNamespace('submit-bar');
 
 export type SubmitBarTextAlign = 'left' | 'right';
 
-const submitBarProps = {
+export const submitBarProps = {
   tip: String,
   label: String,
   price: Number,

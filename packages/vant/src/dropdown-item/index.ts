@@ -3,6 +3,7 @@ import _DropdownItem, { DropdownItemProps } from './DropdownItem';
 
 export const DropdownItem = withInstall(_DropdownItem);
 export default DropdownItem;
+export { dropdownItemProps } from './DropdownItem';
 export type { DropdownItemProps };
 export type { DropdownItemInstance, DropdownItemOption } from './types';
 

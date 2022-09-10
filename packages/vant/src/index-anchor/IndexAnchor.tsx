@@ -24,7 +24,7 @@ import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('index-anchor');
 
-const indexAnchorProps = {
+export const indexAnchorProps = {
   index: numericProp,
 };
 

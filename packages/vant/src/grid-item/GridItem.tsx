@@ -26,7 +26,7 @@ import { Badge, type BadgeProps } from '../badge';
 
 const [name, bem] = createNamespace('grid-item');
 
-const gridItemProps = extend({}, routeProps, {
+export const gridItemProps = extend({}, routeProps, {
   dot: Boolean,
   text: String,
   icon: String,

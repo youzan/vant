@@ -3,6 +3,7 @@ import _Notify from './Notify';
 
 export const Notify = withInstall(_Notify);
 export default Notify;
+export { notifyProps } from './Notify';
 export {
   showNotify,
   closeNotify,

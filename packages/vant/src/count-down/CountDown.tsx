@@ -15,7 +15,7 @@ import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('count-down');
 
-const countDownProps = {
+export const countDownProps = {
   time: makeNumericProp(0),
   format: makeStringProp('HH:mm:ss'),
   autoStart: truthProp,

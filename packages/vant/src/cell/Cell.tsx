@@ -49,7 +49,7 @@ export const cellSharedProps = {
   },
 };
 
-const cellProps = extend({}, cellSharedProps, routeProps);
+export const cellProps = extend({}, cellSharedProps, routeProps);
 
 export type CellProps = ExtractPropTypes<typeof cellProps>;
 

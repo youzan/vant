@@ -35,7 +35,7 @@ type PullRefreshStatus =
   | 'pulling'
   | 'success';
 
-const pullRefreshProps = {
+export const pullRefreshProps = {
   disabled: Boolean,
   modelValue: Boolean,
   headHeight: makeNumericProp(DEFAULT_HEAD_HEIGHT),

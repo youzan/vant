@@ -9,7 +9,7 @@ import { Image } from '../image';
 
 const [name, bem] = createNamespace('card');
 
-const cardProps = {
+export const cardProps = {
   tag: String,
   num: numericProp,
   desc: String,

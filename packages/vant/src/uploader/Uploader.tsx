@@ -51,7 +51,7 @@ import type {
   UploaderFileListItem,
 } from './types';
 
-const uploaderProps = {
+export const uploaderProps = {
   name: makeNumericProp(''),
   accept: makeStringProp('image/*'),
   capture: String,

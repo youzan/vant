@@ -9,7 +9,7 @@ import {
 
 const [name, bem] = createNamespace('progress');
 
-const progressProps = {
+export const progressProps = {
   color: String,
   inactive: Boolean,
   pivotText: String,

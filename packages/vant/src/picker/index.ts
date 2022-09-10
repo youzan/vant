@@ -3,6 +3,7 @@ import _Picker, { PickerProps } from './Picker';
 
 export const Picker = withInstall(_Picker);
 export default Picker;
+export { pickerProps } from './Picker';
 export type { PickerProps };
 export type {
   PickerColumn,

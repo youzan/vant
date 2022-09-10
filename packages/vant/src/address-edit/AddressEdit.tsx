@@ -54,7 +54,7 @@ const DEFAULT_DATA: AddressEditInfo = {
   addressDetail: '',
 };
 
-const addressEditProps = {
+export const addressEditProps = {
   areaList: Object as PropType<AreaList>,
   isSaving: Boolean,
   isDeleting: Boolean,

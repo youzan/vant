@@ -3,6 +3,7 @@ import _Toast from './Toast';
 
 export const Toast = withInstall(_Toast);
 export default Toast;
+export { toastProps } from './Toast';
 export {
   showToast,
   closeToast,
