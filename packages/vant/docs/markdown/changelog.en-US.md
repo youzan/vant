@@ -19,6 +19,22 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0-rc.1](https://github.com/vant-ui/vant/compare/v4.0.0-rc.0...v4.0.0-rc.1)
+
+`2022-09-10`
+
+**Feature**
+
+- export props of all components [#11024](https://github.com/vant-ui/vant/issues/11024)
+- Dialog: message-align can be justify [#11014](https://github.com/vant-ui/vant/issues/11014)
+- Image: add block prop [#11022](https://github.com/vant-ui/vant/issues/11022)
+- Toast: add message slot [#11018](https://github.com/vant-ui/vant/issues/11018)
+
+**Bug Fixes**
+
+- Picker: failed to update value in some cases [#11009](https://github.com/vant-ui/vant/issues/11009)
+- Locale: avoid getting unexpected value [#11010](https://github.com/vant-ui/vant/issues/11010)
+
 ### [v4.0.0-rc.0](https://github.com/vant-ui/vant/compare/v3.6.2...v4.0.0-rc.0)
 
 `2022-09-04`
