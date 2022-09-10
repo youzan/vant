@@ -4,7 +4,7 @@
 
 感谢你使用 Vant。
 
-以下是关于向 Vant 提交反馈或代码的指南。在向 Vant 提交 issue 或者 PR 之前，请先花几分钟时间阅读以下文字。
+以下是关于向 Vant 提交反馈或代码的指南。在向 Vant 提交 issue 或者 PR 之前，请先花几分钟时间阅读以下内容。
 
 ### Issue 规范
 
@@ -15,13 +15,19 @@
 
 ### 本地开发
 
-在进行本地开发前，请先确保你的开发环境中安装了 [Node.js >= 14](https://nodejs.org) 和 [pnpm](https://pnpm.io).
+在进行本地开发前，请先确保你的开发环境中安装了 [Node.js >= 14.19.0](https://nodejs.org)。
 
 按照下面的步骤操作，即可在本地开发 Vant 组件。
 
 ```bash
 # 克隆仓库
 git clone git@github.com:vant-ui/vant.git
+
+# 启用 pnpm 包管理器
+corepack enable
+
+# 如果无法使用 corepack，你也可以手动安装 pnpm
+npm install -g pnpm@7
 
 # 安装依赖
 pnpm i
