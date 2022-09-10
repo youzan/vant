@@ -31,6 +31,12 @@ yarn add stylelint@13 @vant/stylelint-config
 
 现在会默认生成 WebStorm 所需的 web-types.json 文件到 `lib/web-types.json` 目录下。
 
+## v4.0.4
+
+`2022-07-02`
+
+- 修复构建 sfc 文件的类型定义时报错的问题
+
 ## v4.0.3
 
 `2022-07-02`

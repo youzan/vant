@@ -4,7 +4,7 @@ import type { Interceptor, Numeric } from '../utils';
 export type DialogTheme = 'default' | 'round-button';
 export type DialogAction = 'confirm' | 'cancel';
 export type DialogMessage = string | (() => JSX.Element);
-export type DialogMessageAlign = 'left' | 'center' | 'right';
+export type DialogMessageAlign = 'left' | 'center' | 'right' | 'justify';
 
 export type DialogOptions = {
   title?: string;

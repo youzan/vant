@@ -1,3 +1,4 @@
+import { isObject } from './validate';
 import type { ComponentPublicInstance } from 'vue';
 
 export function noop() {}
@@ -16,7 +17,7 @@ export function get(object: any, path: string): any {
   let result = object;
 
   keys.forEach((key) => {
-    result = result[key] ?? '';
+    result = isObject(result) ? result[key] ?? '' : '';
   });
 
   return result;

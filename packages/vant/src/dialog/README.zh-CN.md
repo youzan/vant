@@ -197,7 +197,7 @@ Vant 中导出了以下 Dialog 相关的辅助函数：
 | title | 标题 | _string_ | - |
 | width | 弹窗宽度，默认单位为 `px` | _number \| string_ | `320px` |
 | message | 文本内容，支持通过 `\n` 换行 | _string \| () => JSX.Element_ | - |
-| message-align | 内容水平对齐方式，可选值为 `left` `right` | _string_ | `center` |
+| message-align | 内容水平对齐方式，可选值为 `left` `right` `justify` | _string_ | `center` |
 | theme | 样式风格，可选值为 `round-button` | _string_ | `default` |
 | show-confirm-button | 是否展示确认按钮 | _boolean_ | `true` |
 | show-cancel-button | 是否展示取消按钮 | _boolean_ | `false` |
