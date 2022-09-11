@@ -179,6 +179,7 @@ export default {
 | closeable | Whether to show close icon | _boolean_ | `true` |
 | close-icon | Close icon name | _string_ | `cross` |
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
+| z-index | Set the z-index to a fixed value | _number \| string_ | `2000+` |
 | round | Whether to show round corner | _boolean_ | `true` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | overlay-class | Custom overlay class | _string \| Array \| object_ | - |

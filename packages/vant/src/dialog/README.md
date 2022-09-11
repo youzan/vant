@@ -186,6 +186,7 @@ Vant exports following Dialog utility functions:
 | confirm-button-text | Confirm button text | _string_ | `Confirm` |
 | confirm-button-color | Confirm button color | _string_ | `#ee0a24` |
 | confirm-button-disabled `v3.5.0` | Whether to disable confirm button | _boolean_ | `false` |
+| z-index | Set the z-index to a fixed value | _number \| string_ | `2000+` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | overlay-class | Custom overlay class | _string_ | - |
 | overlay-style | Custom overlay style | _object_ | - |
