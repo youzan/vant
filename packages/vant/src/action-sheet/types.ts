@@ -1,0 +1,23 @@
+export type ActionSheetThemeVars = {
+  actionSheetMaxHeight: string;
+  actionSheetHeaderHeight: string;
+  actionSheetHeaderFontSize: string;
+  actionSheetDescriptionColor: string;
+  actionSheetDescriptionFontSize: string;
+  actionSheetDescriptionLineHeight: string;
+  actionSheetItemBackground: string;
+  actionSheetItemFontSize: string;
+  actionSheetItemLineHeight: string;
+  actionSheetItemTextColor: string;
+  actionSheetItemDisabledTextColor: string;
+  actionSheetSubnameColor: string;
+  actionSheetSubnameFontSize: string;
+  actionSheetSubnameLineHeight: string;
+  actionSheetCloseIconSize: string;
+  actionSheetCloseIconColor: string;
+  actionSheetCloseIconPadding: string;
+  actionSheetCancelTextColor: string;
+  actionSheetCancelPaddingTop: string;
+  actionSheetCancelPaddingColor: string;
+  actionSheetLoadingIconSize: string;
+};

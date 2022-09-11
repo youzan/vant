@@ -19,3 +19,14 @@ export type NotifyOptions = {
   onClose?: () => void;
   onOpened?: () => void;
 };
+
+export type NotifyThemeVars = {
+  notifyTextColor: string;
+  notifyPadding: string;
+  notifyFontSize: string;
+  notifyLineHeight: string;
+  notifyPrimaryBackground: string;
+  notifySuccessBackground: string;
+  notifyDangerBackground: string;
+  notifyWarningBackground: string;
+};

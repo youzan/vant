@@ -29,3 +29,7 @@ export type DropdownItemInstance = ComponentPublicInstance<
   DropdownItemProps,
   DropdownItemExpose
 >;
+
+export type DropdownItemThemeVars = {
+  dropdownItemZIndex: string;
+};

@@ -8,3 +8,17 @@ export type DropdownMenuProvide = {
   props: DropdownMenuProps;
   offset: Ref<number>;
 };
+
+export type DropdownMenuThemeVars = {
+  dropdownMenuHeight: string;
+  dropdownMenuBackground: string;
+  dropdownMenuShadow: string;
+  dropdownMenuTitleFontSize: string;
+  dropdownMenuTitleTextColor: string;
+  dropdownMenuTitleActiveTextColor: string;
+  dropdownMenuTitleDisabledTextColor: string;
+  dropdownMenuTitlePadding: string;
+  dropdownMenuTitleLineHeight: string;
+  dropdownMenuOptionActiveColor: string;
+  dropdownMenuContentMaxHeight: string;
+};

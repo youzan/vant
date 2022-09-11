@@ -22,3 +22,19 @@ export type PopoverAction = {
   className?: string;
   [key: PropertyKey]: any;
 };
+
+export type PopoverThemeVars = {
+  popoverArrowSize: string;
+  popoverRadius: string;
+  popoverActionWidth: string;
+  popoverActionHeight: string;
+  popoverActionFontSize: string;
+  popoverActionLineHeight: string;
+  popoverActionIconSize: string;
+  popoverLightTextColor: string;
+  popoverLightBackground: string;
+  popoverLightActionDisabledTextColor: string;
+  popoverDarkTextColor: string;
+  popoverDarkBackground: string;
+  popoverDarkActionDisabledTextColor: string;
+};

@@ -11,3 +11,15 @@ export type NoticeBarInstance = ComponentPublicInstance<
   NoticeBarProps,
   NoticeBarExpose
 >;
+
+export type NoticeBarThemeVars = {
+  noticeBarHeight: string;
+  noticeBarPadding: string;
+  noticeBarWrapablePadding: string;
+  noticeBarTextColor: string;
+  noticeBarFontSize: string;
+  noticeBarLineHeight: string;
+  noticeBarBackground: string;
+  noticeBarIconSize: string;
+  noticeBarIconMinWidth: string;
+};
