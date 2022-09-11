@@ -19,6 +19,19 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0-rc.2](https://github.com/vant-ui/vant/compare/v4.0.0-rc.1...v4.0.0-rc.2)
+
+`2022-09-11`
+
+**Breaking Changes**
+
+- attach css variables to :root element [#11026](https://github.com/vant-ui/vant/issues/11026)
+
+**Bug Fixes**
+
+- Dialog: incorrect transform behavior [#11028](https://github.com/vant-ui/vant/issues/11028)
+- Empty: fix opacity in dark mode [#11027](https://github.com/vant-ui/vant/issues/11027)
+
 ### [v4.0.0-rc.1](https://github.com/vant-ui/vant/compare/v4.0.0-rc.0...v4.0.0-rc.1)
 
 `2022-09-10`

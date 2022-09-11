@@ -19,6 +19,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-rc.2](https://github.com/vant-ui/vant/compare/v4.0.0-rc.1...v4.0.0-rc.2)
+
+`2022-09-11`
+
+**Breaking Changes**
+
+- 调整了所有 CSS 变量的挂载位置，由 `body` 节点调整回 `:root` 节点，调整后与 Vant v3 版本保持一致，以便于 v3 项目更平滑地升级到 v4 版本。 [#11026](https://github.com/vant-ui/vant/issues/11026)
+
+**Bug Fixes**
+
+- Dialog: 修复过渡动画异常的问题 [#11028](https://github.com/vant-ui/vant/issues/11028)
+- Empty: 修复深色模式下亮度过高的问题 [#11027](https://github.com/vant-ui/vant/issues/11027)
+
 ### [v4.0.0-rc.1](https://github.com/vant-ui/vant/compare/v4.0.0-rc.0...v4.0.0-rc.1)
 
 `2022-09-10`
