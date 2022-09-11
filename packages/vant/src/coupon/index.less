@@ -1,6 +1,6 @@
 @import '../style/mixins/ellipsis';
 
-body {
+:root {
   --van-coupon-margin: 0 var(--van-padding-sm) var(--van-padding-sm);
   --van-coupon-content-height: 84px;
   --van-coupon-content-padding: 14px 0;
@@ -76,7 +76,7 @@ body {
     white-space: pre-wrap;
   }
 
-  &__body {
+  &__:root {
     position: relative;
     flex: 1;
     border-radius: 0 var(--van-coupon-radius) var(--van-coupon-radius) 0;
