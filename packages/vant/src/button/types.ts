@@ -48,5 +48,4 @@ export type ButtonThemeVars = {
   buttonDisabledOpacity?: string;
   buttonIconSize?: string;
   buttonLoadingIconSize?: string;
-  buttonPlainBackground?: string;
 };

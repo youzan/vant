@@ -76,6 +76,4 @@ export type CalendarThemeVars = {
   calendarDayDisabledColor?: string;
   calendarConfirmButtonHeight?: string;
   calendarConfirmButtonMargin?: string;
-  calendarMonthMarkColor?: string;
-  calendarDayDisabledColor?: string;
 };

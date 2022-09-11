@@ -14,7 +14,4 @@ export type NumberKeyboardThemeVars = {
   numberKeyboardButtonTextColor?: string;
   numberKeyboardButtonBackground?: string;
   numberKeyboardZIndex?: string;
-  numberKeyboardBackground?: string;
-  numberKeyboardKeyBackground?: string;
-  numberKeyboardKeyActiveColor?: string;
 };

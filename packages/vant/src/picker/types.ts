@@ -71,5 +71,4 @@ export type PickerThemeVars = {
   pickerLoadingIconColor?: string;
   pickerLoadingMaskColor?: string;
   pickerMaskColor?: string;
-  pickerMaskColor?: string;
 };

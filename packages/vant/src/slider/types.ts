@@ -8,5 +8,4 @@ export type SliderThemeVars = {
   sliderButtonRadius?: string;
   sliderButtonBackground?: string;
   sliderButtonShadow?: string;
-  sliderInactiveBackground?: string;
 };
