@@ -16,6 +16,6 @@ export type {
 
 declare module 'vue' {
   export interface GlobalComponents {
-    VanImagePreview: typeof ImagePreview.Component;
+    VanImagePreview: typeof ImagePreview;
   }
 }
