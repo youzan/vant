@@ -5,6 +5,7 @@ export const Overlay = withInstall(_Overlay);
 export default Overlay;
 export { overlayProps } from './Overlay';
 export type { OverlayProps } from './Overlay';
+export type { OverlayThemeVars } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {

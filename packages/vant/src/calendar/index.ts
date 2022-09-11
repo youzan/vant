@@ -10,6 +10,7 @@ export type {
   CalendarDayItem,
   CalendarDayType,
   CalendarInstance,
+  CalendarThemeVars,
 } from './types';
 
 declare module 'vue' {

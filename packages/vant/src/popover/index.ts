@@ -9,6 +9,7 @@ export type {
   PopoverTheme,
   PopoverAction,
   PopoverTrigger,
+  PopoverThemeVars,
   PopoverPlacement,
 } from './types';
 

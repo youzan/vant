@@ -7,6 +7,7 @@ export { uploaderProps } from './Uploader';
 export type { UploaderProps };
 export type {
   UploaderInstance,
+  UploaderThemeVars,
   UploaderResultType,
   UploaderFileListItem,
 } from './types';

@@ -9,6 +9,7 @@ export type {
   PickerColumn,
   PickerOption,
   PickerInstance,
+  PickerThemeVars,
   PickerFieldNames,
   PickerToolbarPosition,
   PickerCancelEventParams,

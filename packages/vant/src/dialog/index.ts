@@ -17,6 +17,7 @@ export type {
   DialogTheme,
   DialogMessage,
   DialogOptions,
+  DialogThemeVars,
   DialogMessageAlign,
 } from './types';
 

@@ -10,6 +10,7 @@ export type {
   FieldRule,
   FieldInstance,
   FieldTextAlign,
+  FieldThemeVars,
   FieldRuleMessage,
   FieldClearTrigger,
   FieldFormatTrigger,

@@ -8,6 +8,7 @@ export type { PopupProps } from './Popup';
 export type {
   PopupPosition,
   PopupInstance,
+  PopupThemeVars,
   PopupCloseIconPosition,
 } from './types';
 
