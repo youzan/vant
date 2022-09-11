@@ -43,6 +43,7 @@ export default defineComponent({
           background: props.background,
         }}
         overlay={false}
+        zIndex={props.zIndex}
         position={props.position}
         duration={0.2}
         lockScroll={props.lockScroll}
