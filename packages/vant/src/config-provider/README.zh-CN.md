@@ -69,10 +69,10 @@ Vant 组件通过丰富的 [CSS 变量](https://developer.mozilla.org/zh-CN/docs
 }
 ```
 
-这些变量的默认值被定义在 `body` 节点上，body 下所有子节点都可以访问到这些变量：
+这些变量的默认值被定义在 `:root` 节点上，HTML 里的所有子节点都可以访问到这些变量：
 
 ```css
-body {
+:root {
   --van-white: #fff;
   --van-blue: #1989fa;
   --van-button-primary-color: var(--van-white);
@@ -88,7 +88,7 @@ body {
 
 ```css
 /* 添加这段样式后，Primary Button 会变成红色 */
-body {
+:root {
   --van-button-primary-background: red;
 }
 ```
@@ -148,7 +148,7 @@ export default {
 };
 ```
 
-> 注意：ConfigProvider 仅影响它的子组件的样式，不影响全局 body 节点。
+> 注意：ConfigProvider 仅影响它的子组件的样式，不影响全局 root 节点。
 
 ### 结合深色模式与 CSS 变量
 
@@ -199,8 +199,8 @@ Vant 中的 CSS 变量分为 **基础变量** 和 **组件变量**。组件变�
 
 由于 CSS 变量继承机制的原因，两者的修改方式有一定差异：
 
-- 基础变量只能通过 `body 选择器` 修改，不能通过 `ConfigProvider 组件` 修改。
-- 组件变量可以通过 `body 选择器` 和 `ConfigProvider 组件` 修改。
+- 基础变量只能通过 `:root 选择器` 修改，不能通过 `ConfigProvider 组件` 修改。
+- 组件变量可以通过 `:root 选择器` 和 `ConfigProvider 组件` 修改。
 
 #### 变量列表
 

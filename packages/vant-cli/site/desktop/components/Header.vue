@@ -138,8 +138,8 @@ export default {
     currentTheme: {
       handler(newVal, oldVal) {
         window.localStorage.setItem('vantTheme', newVal);
-        document.body.classList.remove(`van-doc-theme-${oldVal}`);
-        document.body.classList.add(`van-doc-theme-${newVal}`);
+        document.documentElement.classList.remove(`van-doc-theme-${oldVal}`);
+        document.documentElement.classList.add(`van-doc-theme-${newVal}`);
         syncThemeToChild(newVal);
       },
       immediate: true,

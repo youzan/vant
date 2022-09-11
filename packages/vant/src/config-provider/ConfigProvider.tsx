@@ -73,10 +73,10 @@ export default defineComponent({
 
     if (inBrowser) {
       const addTheme = () => {
-        document.body.classList.add(`van-theme-${props.theme}`);
+        document.documentElement.classList.add(`van-theme-${props.theme}`);
       };
       const removeTheme = (theme = props.theme) => {
-        document.body.classList.remove(`van-theme-${theme}`);
+        document.documentElement.classList.remove(`van-theme-${theme}`);
       };
 
       watch(
