@@ -207,6 +207,7 @@ Vant 中导出了以下 Dialog 相关的辅助函数：
 | cancel-button-text | 取消按钮文案 | _string_ | `取消` |
 | cancel-button-color | 取消按钮颜色 | _string_ | `black` |
 | cancel-button-disabled `v3.5.0` | 是否禁用取消按钮 | _boolean_ | `false` |
+| z-index | 将弹窗的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
 | overlay-class | 自定义遮罩层类名 | _string_ | - |
 | overlay-style | 自定义遮罩层样式 | _object_ | - |
