@@ -100,23 +100,23 @@ declare global {
 }
 
 export type FieldThemeVars = {
-  fieldLabelWidth: string;
-  fieldLabelColor: string;
-  fieldLabelMarginRight: string;
-  fieldInputTextColor: string;
-  fieldInputErrorTextColor: string;
-  fieldInputDisabledTextColor: string;
-  fieldPlaceholderTextColor: string;
-  fieldIconSize: string;
-  fieldClearIconSize: string;
-  fieldClearIconColor: string;
-  fieldRightIconColor: string;
-  fieldErrorMessageColor: string;
-  fieldErrorMessageFontSize: string;
-  fieldTextAreaMinHeight: string;
-  fieldWordLimitColor: string;
-  fieldWordLimitFontSize: string;
-  fieldWordLimitLineHeight: string;
-  fieldDisabledTextColor: string;
-  fieldRequiredMarkColor: string;
+  fieldLabelWidth?: string;
+  fieldLabelColor?: string;
+  fieldLabelMarginRight?: string;
+  fieldInputTextColor?: string;
+  fieldInputErrorTextColor?: string;
+  fieldInputDisabledTextColor?: string;
+  fieldPlaceholderTextColor?: string;
+  fieldIconSize?: string;
+  fieldClearIconSize?: string;
+  fieldClearIconColor?: string;
+  fieldRightIconColor?: string;
+  fieldErrorMessageColor?: string;
+  fieldErrorMessageFontSize?: string;
+  fieldTextAreaMinHeight?: string;
+  fieldWordLimitColor?: string;
+  fieldWordLimitFontSize?: string;
+  fieldWordLimitLineHeight?: string;
+  fieldDisabledTextColor?: string;
+  fieldRequiredMarkColor?: string;
 };

@@ -1,6 +1,6 @@
 export type PullRefreshThemeVars = {
-  pullRefreshHeadHeight: string;
-  pullRefreshHeadFontSize: string;
-  pullRefreshHeadTextColor: string;
-  pullRefreshLoadingIconSize: string;
+  pullRefreshHeadHeight?: string;
+  pullRefreshHeadFontSize?: string;
+  pullRefreshHeadTextColor?: string;
+  pullRefreshLoadingIconSize?: string;
 };

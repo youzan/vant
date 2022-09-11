@@ -1,3 +1,3 @@
 export type SidebarThemeVars = {
-  sidebarWidth: string;
+  sidebarWidth?: string;
 };

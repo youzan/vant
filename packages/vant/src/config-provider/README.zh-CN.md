@@ -303,5 +303,9 @@ Vant 中的 CSS 变量分为 **基础变量** 和 **组件变量**。组件变�
 组件导出以下类型定义：
 
 ```ts
-import type { ConfigProviderProps, ConfigProviderTheme } from 'vant';
+import type {
+  ConfigProviderProps,
+  ConfigProviderTheme,
+  ConfigProviderThemeVars,
+} from 'vant';
 ```

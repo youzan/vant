@@ -1,4 +1,4 @@
 export type OverlayThemeVars = {
-  overlayZIndex: string;
-  overlayBackground: string;
+  overlayZIndex?: string;
+  overlayBackground?: string;
 };

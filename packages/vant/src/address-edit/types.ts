@@ -29,8 +29,8 @@ export type AddressEditInstance = ComponentPublicInstance<
 >;
 
 export type AddressEditThemeVars = {
-  addressEditPadding: string;
-  addressEditButtonsPadding: string;
-  addressEditButtonMarginBottom: string;
-  addressEditButtonFontSize: string;
+  addressEditPadding?: string;
+  addressEditButtonsPadding?: string;
+  addressEditButtonMarginBottom?: string;
+  addressEditButtonFontSize?: string;
 };

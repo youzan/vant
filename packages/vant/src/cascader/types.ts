@@ -23,17 +23,17 @@ export type CascaderFieldNames = {
 };
 
 export type CascaderThemeVars = {
-  cascaderHeaderHeight: string;
-  cascaderHeaderPadding: string;
-  cascaderTitleFontSize: string;
-  cascaderTitleLineHeight: string;
-  cascaderCloseIconSize: string;
-  cascaderCloseIconColor: string;
-  cascaderSelectedIconSize: string;
-  cascaderTabsHeight: string;
-  cascaderActiveColor: string;
-  cascaderOptionsHeight: string;
-  cascaderOptionDisabledColor: string;
-  cascaderTabColor: string;
-  cascaderUnselectedTabColor: string;
+  cascaderHeaderHeight?: string;
+  cascaderHeaderPadding?: string;
+  cascaderTitleFontSize?: string;
+  cascaderTitleLineHeight?: string;
+  cascaderCloseIconSize?: string;
+  cascaderCloseIconColor?: string;
+  cascaderSelectedIconSize?: string;
+  cascaderTabsHeight?: string;
+  cascaderActiveColor?: string;
+  cascaderOptionsHeight?: string;
+  cascaderOptionDisabledColor?: string;
+  cascaderTabColor?: string;
+  cascaderUnselectedTabColor?: string;
 };

@@ -21,12 +21,12 @@ export type NotifyOptions = {
 };
 
 export type NotifyThemeVars = {
-  notifyTextColor: string;
-  notifyPadding: string;
-  notifyFontSize: string;
-  notifyLineHeight: string;
-  notifyPrimaryBackground: string;
-  notifySuccessBackground: string;
-  notifyDangerBackground: string;
-  notifyWarningBackground: string;
+  notifyTextColor?: string;
+  notifyPadding?: string;
+  notifyFontSize?: string;
+  notifyLineHeight?: string;
+  notifyPrimaryBackground?: string;
+  notifySuccessBackground?: string;
+  notifyDangerBackground?: string;
+  notifyWarningBackground?: string;
 };

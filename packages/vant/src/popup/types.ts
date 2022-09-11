@@ -16,11 +16,11 @@ export type PopupExpose = {
 export type PopupInstance = ComponentPublicInstance<PopupProps, PopupExpose>;
 
 export type PopupThemeVars = {
-  popupBackground: string;
-  popupTransition: string;
-  popupRoundRadius: string;
-  popupCloseIconSize: string;
-  popupCloseIconColor: string;
-  popupCloseIconMargin: string;
-  popupCloseIconZIndex: string;
+  popupBackground?: string;
+  popupTransition?: string;
+  popupRoundRadius?: string;
+  popupCloseIconSize?: string;
+  popupCloseIconColor?: string;
+  popupCloseIconMargin?: string;
+  popupCloseIconZIndex?: string;
 };

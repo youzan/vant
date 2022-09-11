@@ -19,13 +19,13 @@ export type CheckboxInstance = ComponentPublicInstance<
 >;
 
 export type CheckboxThemeVars = {
-  checkboxSize: string;
-  checkboxBorderColor: string;
-  checkboxDuration: string;
-  checkboxLabelMargin: string;
-  checkboxLabelColor: string;
-  checkboxCheckedIconColor: string;
-  checkboxDisabledIconColor: string;
-  checkboxDisabledLabelColor: string;
-  checkboxDisabledBackground: string;
+  checkboxSize?: string;
+  checkboxBorderColor?: string;
+  checkboxDuration?: string;
+  checkboxLabelMargin?: string;
+  checkboxLabelColor?: string;
+  checkboxCheckedIconColor?: string;
+  checkboxDisabledIconColor?: string;
+  checkboxDisabledLabelColor?: string;
+  checkboxDisabledBackground?: string;
 };

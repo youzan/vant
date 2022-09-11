@@ -10,15 +10,15 @@ export type DropdownMenuProvide = {
 };
 
 export type DropdownMenuThemeVars = {
-  dropdownMenuHeight: string;
-  dropdownMenuBackground: string;
-  dropdownMenuShadow: string;
-  dropdownMenuTitleFontSize: string;
-  dropdownMenuTitleTextColor: string;
-  dropdownMenuTitleActiveTextColor: string;
-  dropdownMenuTitleDisabledTextColor: string;
-  dropdownMenuTitlePadding: string;
-  dropdownMenuTitleLineHeight: string;
-  dropdownMenuOptionActiveColor: string;
-  dropdownMenuContentMaxHeight: string;
+  dropdownMenuHeight?: string;
+  dropdownMenuBackground?: string;
+  dropdownMenuShadow?: string;
+  dropdownMenuTitleFontSize?: string;
+  dropdownMenuTitleTextColor?: string;
+  dropdownMenuTitleActiveTextColor?: string;
+  dropdownMenuTitleDisabledTextColor?: string;
+  dropdownMenuTitlePadding?: string;
+  dropdownMenuTitleLineHeight?: string;
+  dropdownMenuOptionActiveColor?: string;
+  dropdownMenuContentMaxHeight?: string;
 };

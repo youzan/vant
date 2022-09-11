@@ -1,4 +1,4 @@
 export type ActionBarThemeVars = {
-  actionBarBackground: string;
-  actionBarHeight: string;
+  actionBarBackground?: string;
+  actionBarHeight?: string;
 };

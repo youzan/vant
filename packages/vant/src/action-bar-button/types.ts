@@ -1,5 +1,5 @@
 export type ActionBarButtonThemeVars = {
-  actionBarButtonHeight: string;
-  actionBarButtonWarningColor: string;
-  actionBarButtonDangerColor: string;
+  actionBarButtonHeight?: string;
+  actionBarButtonWarningColor?: string;
+  actionBarButtonDangerColor?: string;
 };

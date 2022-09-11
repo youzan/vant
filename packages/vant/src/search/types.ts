@@ -11,15 +11,15 @@ export type SearchExpose = {
 export type SearchInstance = ComponentPublicInstance<SearchProps, SearchExpose>;
 
 export type SearchThemeVars = {
-  searchPadding: string;
-  searchBackground: string;
-  searchContentBackground: string;
-  searchInputHeight: string;
-  searchLabelPadding: string;
-  searchLabelColor: string;
-  searchLabelFontSize: string;
-  searchLeftIconColor: string;
-  searchActionPadding: string;
-  searchActionTextColor: string;
-  searchActionFontSize: string;
+  searchPadding?: string;
+  searchBackground?: string;
+  searchContentBackground?: string;
+  searchInputHeight?: string;
+  searchLabelPadding?: string;
+  searchLabelColor?: string;
+  searchLabelFontSize?: string;
+  searchLeftIconColor?: string;
+  searchActionPadding?: string;
+  searchActionTextColor?: string;
+  searchActionFontSize?: string;
 };

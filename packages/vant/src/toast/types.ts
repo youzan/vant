@@ -40,19 +40,19 @@ export type ToastWrapperInstance = ComponentPublicInstance<
 >;
 
 export type ToastThemeVars = {
-  toastMaxWidth: string;
-  toastFontSize: string;
-  toastTextColor: string;
-  toastLoadingIconColor: string;
-  toastLineHeight: string;
-  toastRadius: string;
-  toastBackground: string;
-  toastIconSize: string;
-  toastTextMinWidth: string;
-  toastTextPadding: string;
-  toastDefaultPadding: string;
-  toastDefaultWidth: string;
-  toastDefaultMinHeight: string;
-  toastPositionTopDistance: string;
-  toastPositionBottomDistance: string;
+  toastMaxWidth?: string;
+  toastFontSize?: string;
+  toastTextColor?: string;
+  toastLoadingIconColor?: string;
+  toastLineHeight?: string;
+  toastRadius?: string;
+  toastBackground?: string;
+  toastIconSize?: string;
+  toastTextMinWidth?: string;
+  toastTextPadding?: string;
+  toastDefaultPadding?: string;
+  toastDefaultWidth?: string;
+  toastDefaultMinHeight?: string;
+  toastPositionTopDistance?: string;
+  toastPositionBottomDistance?: string;
 };

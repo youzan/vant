@@ -1,3 +1,3 @@
 export type PickerGroupThemeVars = {
-  pickerGroupBackground: string;
+  pickerGroupBackground?: string;
 };

@@ -11,11 +11,11 @@ export type CollapseItemInstance = ComponentPublicInstance<
 >;
 
 export type CollapseItemThemeVars = {
-  collapseItemDuration: string;
-  collapseItemContentPadding: string;
-  collapseItemContentFontSize: string;
-  collapseItemContentLineHeight: string;
-  collapseItemContentTextColor: string;
-  collapseItemContentBackground: string;
-  collapseItemTitleDisabledColor: string;
+  collapseItemDuration?: string;
+  collapseItemContentPadding?: string;
+  collapseItemContentFontSize?: string;
+  collapseItemContentLineHeight?: string;
+  collapseItemContentTextColor?: string;
+  collapseItemContentBackground?: string;
+  collapseItemTitleDisabledColor?: string;
 };

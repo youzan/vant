@@ -1,3 +1,3 @@
 export type StepsThemeVars = {
-  stepsBackground: string;
+  stepsBackground?: string;
 };

@@ -1,5 +1,5 @@
 export type TabbarThemeVars = {
-  tabbarHeight: string;
-  tabbarZIndex: string;
-  tabbarBackground: string;
+  tabbarHeight?: string;
+  tabbarZIndex?: string;
+  tabbarBackground?: string;
 };

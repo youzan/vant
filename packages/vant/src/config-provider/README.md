@@ -299,5 +299,9 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 The component exports the following type definitions:
 
 ```ts
-import type { ConfigProviderProps, ConfigProviderTheme } from 'vant';
+import type {
+  ConfigProviderProps,
+  ConfigProviderTheme,
+  ConfigProviderThemeVars,
+} from 'vant';
 ```

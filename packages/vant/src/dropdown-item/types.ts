@@ -31,5 +31,5 @@ export type DropdownItemInstance = ComponentPublicInstance<
 >;
 
 export type DropdownItemThemeVars = {
-  dropdownItemZIndex: string;
+  dropdownItemZIndex?: string;
 };

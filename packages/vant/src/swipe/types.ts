@@ -33,10 +33,10 @@ export type SwipeProvide = {
 export type SwipeInstance = ComponentPublicInstance<SwipeProps, SwipeExpose>;
 
 export type SwipeThemeVars = {
-  swipeIndicatorSize: string;
-  swipeIndicatorMargin: string;
-  swipeIndicatorActiveOpacity: string;
-  swipeIndicatorInactiveOpacity: string;
-  swipeIndicatorActiveBackground: string;
-  swipeIndicatorInactiveBackground: string;
+  swipeIndicatorSize?: string;
+  swipeIndicatorMargin?: string;
+  swipeIndicatorActiveOpacity?: string;
+  swipeIndicatorInactiveOpacity?: string;
+  swipeIndicatorActiveBackground?: string;
+  swipeIndicatorInactiveBackground?: string;
 };
