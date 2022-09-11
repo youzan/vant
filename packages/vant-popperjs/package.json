@@ -36,10 +36,8 @@
   "bugs": "https://github.com/vant-ui/vant/issues",
   "author": "chenjiahan",
   "license": "MIT",
-  "dependencies": {
-    "@popperjs/core": "^2.11.6"
-  },
   "devDependencies": {
+    "@popperjs/core": "^2.11.6",
     "esbuild": "^0.14.54",
     "release-it": "^15.4.1",
     "typescript": "^4.8.2"
