@@ -72,7 +72,7 @@ Current supported languages:
 | Traditional Chinese (HK) | zh-HK        | -        |
 | Traditional Chinese (TW) | zh-TW        | -        |
 
-> View all language configs [Here](https://github.com/vant-ui/vant/tree/dev/packages/vant/src/locale/lang).
+> View all language configs [Here](https://github.com/vant-ui/vant/tree/main/packages/vant/src/locale/lang).
 
 ### Add new language
 

@@ -22,7 +22,7 @@
 
 <img src="https://fastly.jsdelivr.net/npm/@vant/assets/tab_202009101415.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
-<a class="design-download" href="https://github.com/vant-ui/vant/blob/dev/packages/vant/docs/assets/design.sketch?raw=true">下载</a>
+<a class="design-download" href="https://github.com/vant-ui/vant/blob/main/packages/vant/docs/assets/design.sketch?raw=true">下载</a>
 
 ### 图标设计稿（Sketch）
 
@@ -30,7 +30,7 @@
 
 <img src="https://fastly.jsdelivr.net/npm/@vant/assets/design-icons-0321.png" style="width: 80%; box-shadow: 0 1px 2px rgba(0,0,0,.2)">
 
-<a class="design-download" href="https://github.com/vant-ui/vant/blob/dev/packages/vant-icons/assets/icons.sketch?raw=true">下载</a>
+<a class="design-download" href="https://github.com/vant-ui/vant/blob/main/packages/vant-icons/assets/icons.sketch?raw=true">下载</a>
 
 #### 在线资源
 
