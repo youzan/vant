@@ -150,6 +150,18 @@ export default {
 
 > 注意：ConfigProvider 仅影响它的子组件的样式，不影响全局 root 节点。
 
+#### 在 TypeScript 中使用
+
+在 TypeScript 中定义 themeVars 时，建议使用 Vant 提供的 `ConfigProviderThemeVars` 类型，可以提供完善的类型提示：
+
+```ts
+import type { ConfigProviderThemeVars } from 'vant';
+
+const themeVars: ConfigProviderThemeVars = {
+  sliderBarHeight: '4px',
+};
+```
+
 ### 结合深色模式与 CSS 变量
 
 如果需要单独定义深色模式或浅色模式下的 CSS 变量，可以使用 `theme-vars-dark` 和 `theme-vars-light` 属性。
