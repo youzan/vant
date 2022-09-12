@@ -62,7 +62,7 @@ pnpm add @vant/cli -D
 
 ## 详细文档
 
-- [命令](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/docs/commands.zh-CN.md)
-- [配置指南](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/docs/config.zh-CN.md)
-- [目录结构](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/docs/directory.zh-CN.md)
-- [更新日志](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/changelog.md)
+- [命令](https://github.com/vant-ui/vant/tree/main/packages/vant-cli/docs/commands.zh-CN.md)
+- [配置指南](https://github.com/vant-ui/vant/tree/main/packages/vant-cli/docs/config.zh-CN.md)
+- [目录结构](https://github.com/vant-ui/vant/tree/main/packages/vant-cli/docs/directory.zh-CN.md)
+- [更新日志](https://github.com/vant-ui/vant/tree/main/packages/vant-cli/changelog.md)

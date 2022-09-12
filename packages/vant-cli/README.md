@@ -65,7 +65,7 @@ Please add the followed config to `package.json` file.
 
 ## More Details
 
-- [cli](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/docs/commands.md)
-- [config](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/docs/config.md)
-- [directory structure](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/docs/directory.md)
-- [CHANGELOG](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/changelog.md)
+- [cli](https://github.com/vant-ui/vant/tree/main/packages/vant-cli/docs/commands.md)
+- [config](https://github.com/vant-ui/vant/tree/main/packages/vant-cli/docs/config.md)
+- [directory structure](https://github.com/vant-ui/vant/tree/main/packages/vant-cli/docs/directory.md)
+- [CHANGELOG](https://github.com/vant-ui/vant/tree/main/packages/vant-cli/changelog.md)
