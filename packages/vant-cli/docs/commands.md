@@ -29,7 +29,7 @@ Start local dev server for browsering components and demo.
 
 Build Vue component library.
 
-Files will be output to `es` and `lib` directory. More details [directory structure](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/docs/directory.md)
+Files will be output to `es` and `lib` directory. More details [directory structure](https://github.com/vant-ui/vant/tree/3.x/packages/vant-cli/docs/directory.md)
 
 Please add the followed config to `package.json` when publish to npm.
 

@@ -53,9 +53,9 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 | --- | --- |
 | [vant-weapp](https://github.com/vant-ui/vant-weapp) | Vant 微信小程序版 |
 | [vant-demo](https://github.com/vant-ui/vant-demo) | Vant 官方示例合集 |
-| [vant-cli](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli) | 开箱即用的组件库搭建工具 |
-| [vant-icons](https://github.com/vant-ui/vant/tree/dev/packages/vant-icons) | Vant 图标库 |
-| [vant-touch-emulator](https://github.com/vant-ui/vant/tree/dev/packages/vant-touch-emulator) | 在桌面端使用 Vant 的辅助库 |
+| [vant-cli](https://github.com/vant-ui/vant/tree/3.x/packages/vant-cli) | 开箱即用的组件库搭建工具 |
+| [vant-icons](https://github.com/vant-ui/vant/tree/3.x/packages/vant-icons) | Vant 图标库 |
+| [vant-touch-emulator](https://github.com/vant-ui/vant/tree/3.x/packages/vant-touch-emulator) | 在桌面端使用 Vant 的辅助库 |
 
 ### 社区生态
 

@@ -54,7 +54,7 @@ const areaList = {
 
 ### @vant/area-data
 
-Vant 官方提供了一份默认的中国省市区数据，可以通过 [@vant/area-data](https://github.com/vant-ui/vant/tree/dev/packages/vant-area-data) 引入：
+Vant 官方提供了一份默认的中国省市区数据，可以通过 [@vant/area-data](https://github.com/vant-ui/vant/tree/3.x/packages/vant-area-data) 引入：
 
 ```bash
 # 通过 npm

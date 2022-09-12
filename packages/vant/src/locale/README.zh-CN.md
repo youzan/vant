@@ -73,7 +73,7 @@ Locale.add(messages);
 | 繁體中文（港）       | zh-HK        | -        |
 | 繁體中文（台）       | zh-TW        | -        |
 
-> 在 [这里](https://github.com/vant-ui/vant/tree/dev/packages/vant/src/locale/lang) 查看所有的语言包源文件。
+> 在 [这里](https://github.com/vant-ui/vant/tree/3.x/packages/vant/src/locale/lang) 查看所有的语言包源文件。
 
 ## 常见问题
 
