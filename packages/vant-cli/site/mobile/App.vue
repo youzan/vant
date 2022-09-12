@@ -27,11 +27,17 @@ export default {
         document.documentElement.classList.remove(`van-doc-theme-${oldVal}`);
         document.documentElement.classList.add(`van-doc-theme-${newVal}`);
 
-        const { darkModeClass } = config.site;
+        const { darkModeClass, lightModeClass } = config.site;
         if (darkModeClass) {
           document.documentElement.classList.toggle(
             darkModeClass,
             newVal === 'dark'
+          );
+        }
+        if (lightModeClass) {
+          document.documentElement.classList.toggle(
+            lightModeClass,
+            newVal === 'light'
           );
         }
       },
