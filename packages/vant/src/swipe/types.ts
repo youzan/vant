@@ -35,8 +35,8 @@ export type SwipeInstance = ComponentPublicInstance<SwipeProps, SwipeExpose>;
 export type SwipeThemeVars = {
   swipeIndicatorSize?: string;
   swipeIndicatorMargin?: string;
-  swipeIndicatorActiveOpacity?: string;
-  swipeIndicatorInactiveOpacity?: string;
+  swipeIndicatorActiveOpacity?: number | string;
+  swipeIndicatorInactiveOpacity?: number | string;
   swipeIndicatorActiveBackground?: string;
   swipeIndicatorInactiveBackground?: string;
 };

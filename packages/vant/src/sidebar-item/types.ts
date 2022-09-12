@@ -1,6 +1,6 @@
 export type SidebarItemThemeVars = {
   sidebarFontSize?: string;
-  sidebarLineHeight?: string;
+  sidebarLineHeight?: number | string;
   sidebarTextColor?: string;
   sidebarDisabledTextColor?: string;
   sidebarPadding?: string;

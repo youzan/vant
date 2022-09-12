@@ -18,5 +18,5 @@ export type CountDownCurrentTime = CurrentTime;
 export type CountDownThemeVars = {
   countDownTextColor?: string;
   countDownFontSize?: string;
-  countDownLineHeight?: string;
+  countDownLineHeight?: number | string;
 };

@@ -1,6 +1,6 @@
 export type CellThemeVars = {
   cellFontSize?: string;
-  cellLineHeight?: string;
+  cellLineHeight?: number | string;
   cellVerticalPadding?: string;
   cellHorizontalPadding?: string;
   cellTextColor?: string;
@@ -10,7 +10,7 @@ export type CellThemeVars = {
   cellRequiredColor?: string;
   cellLabelColor?: string;
   cellLabelFontSize?: string;
-  cellLabelLineHeight?: string;
+  cellLabelLineHeight?: number | string;
   cellLabelMarginTop?: string;
   cellValueColor?: string;
   cellIconSize?: string;

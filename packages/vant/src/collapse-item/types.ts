@@ -14,7 +14,7 @@ export type CollapseItemThemeVars = {
   collapseItemDuration?: string;
   collapseItemContentPadding?: string;
   collapseItemContentFontSize?: string;
-  collapseItemContentLineHeight?: string;
+  collapseItemContentLineHeight?: number | string;
   collapseItemContentTextColor?: string;
   collapseItemContentBackground?: string;
   collapseItemTitleDisabledColor?: string;

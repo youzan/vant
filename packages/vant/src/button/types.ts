@@ -24,7 +24,7 @@ export type ButtonThemeVars = {
   buttonNormalFontSize?: string;
   buttonLargeHeight?: string;
   buttonDefaultHeight?: string;
-  buttonDefaultLineHeight?: string;
+  buttonDefaultLineHeight?: number | string;
   buttonDefaultFontSize?: string;
   buttonDefaultColor?: string;
   buttonDefaultBackground?: string;
@@ -45,7 +45,7 @@ export type ButtonThemeVars = {
   buttonRadius?: string;
   buttonRoundRadius?: string;
   buttonPlainBackground?: string;
-  buttonDisabledOpacity?: string;
+  buttonDisabledOpacity?: number | string;
   buttonIconSize?: string;
   buttonLoadingIconSize?: string;
 };

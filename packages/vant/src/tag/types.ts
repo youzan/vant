@@ -7,7 +7,7 @@ export type TagThemeVars = {
   tagTextColor?: string;
   tagFontSize?: string;
   tagRadius?: string;
-  tagLineHeight?: string;
+  tagLineHeight?: number | string;
   tagMediumPadding?: string;
   tagLargePadding?: string;
   tagLargeRadius?: string;

@@ -116,7 +116,7 @@ export type FieldThemeVars = {
   fieldTextAreaMinHeight?: string;
   fieldWordLimitColor?: string;
   fieldWordLimitFontSize?: string;
-  fieldWordLimitLineHeight?: string;
+  fieldWordLimitLineHeight?: number | string;
   fieldDisabledTextColor?: string;
   fieldRequiredMarkColor?: string;
 };

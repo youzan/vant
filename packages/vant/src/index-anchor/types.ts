@@ -1,10 +1,10 @@
 export type IndexAnchorThemeVars = {
-  indexAnchorZIndex?: string;
+  indexAnchorZIndex?: number | string;
   indexAnchorPadding?: string;
   indexAnchorTextColor?: string;
   indexAnchorFontWeight?: string;
   indexAnchorFontSize?: string;
-  indexAnchorLineHeight?: string;
+  indexAnchorLineHeight?: number | string;
   indexAnchorBackground?: string;
   indexAnchorStickyTextColor?: string;
   indexAnchorStickyBackground?: string;

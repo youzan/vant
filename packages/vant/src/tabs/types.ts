@@ -32,9 +32,9 @@ export type TabsThemeVars = {
   tabActiveTextColor?: string;
   tabDisabledTextColor?: string;
   tabFontSize?: string;
-  tabLineHeight?: string;
+  tabLineHeight?: number | string;
   tabsDefaultColor?: string;
-  tabsLineHeight?: string;
+  tabsLineHeight?: number | string;
   tabsCardHeight?: string;
   tabsNavBackground?: string;
   tabsBottomBarWidth?: string;

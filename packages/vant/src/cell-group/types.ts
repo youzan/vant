@@ -3,7 +3,7 @@ export type CellGroupThemeVars = {
   cellGroupTitleColor?: string;
   cellGroupTitlePadding?: string;
   cellGroupTitleFontSize?: string;
-  cellGroupTitleLineHeight?: string;
+  cellGroupTitleLineHeight?: number | string;
   cellGroupInsetPadding?: string;
   cellGroupInsetRadius?: string;
   cellGroupInsetTitlePadding?: string;

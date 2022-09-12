@@ -5,6 +5,6 @@ export type EmptyThemeVars = {
   emptyDescriptionPadding?: string;
   emptyDescriptionColor?: string;
   emptyDescriptionFontSize?: string;
-  emptyDescriptionLineHeight?: string;
+  emptyDescriptionLineHeight?: number | string;
   emptyBottomMarginTop?: string;
 };

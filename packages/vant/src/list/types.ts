@@ -12,6 +12,6 @@ export type ListInstance = ComponentPublicInstance<ListProps, ListExpose>;
 export type ListThemeVars = {
   listTextColor?: string;
   listTextFontSize?: string;
-  listTextLineHeight?: string;
+  listTextLineHeight?: number | string;
   listLoadingIconSize?: string;
 };

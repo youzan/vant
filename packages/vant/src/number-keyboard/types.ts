@@ -13,5 +13,5 @@ export type NumberKeyboardThemeVars = {
   numberKeyboardCloseFontSize?: string;
   numberKeyboardButtonTextColor?: string;
   numberKeyboardButtonBackground?: string;
-  numberKeyboardZIndex?: string;
+  numberKeyboardZIndex?: number | string;
 };

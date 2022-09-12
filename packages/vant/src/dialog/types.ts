@@ -41,12 +41,12 @@ export type DialogThemeVars = {
   dialogRadius?: string;
   dialogBackground?: string;
   dialogHeaderFontWeight?: string;
-  dialogHeaderLineHeight?: string;
+  dialogHeaderLineHeight?: number | string;
   dialogHeaderPaddingTop?: string;
   dialogHeaderIsolatedPadding?: string;
   dialogMessagePadding?: string;
   dialogMessageFontSize?: string;
-  dialogMessageLineHeight?: string;
+  dialogMessageLineHeight?: number | string;
   dialogMessageMaxHeight?: string;
   dialogHasTitleMessageTextColor?: string;
   dialogHasTitleMessagePaddingTop?: string;

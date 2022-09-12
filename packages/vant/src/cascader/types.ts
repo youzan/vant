@@ -26,7 +26,7 @@ export type CascaderThemeVars = {
   cascaderHeaderHeight?: string;
   cascaderHeaderPadding?: string;
   cascaderTitleFontSize?: string;
-  cascaderTitleLineHeight?: string;
+  cascaderTitleLineHeight?: number | string;
   cascaderCloseIconSize?: string;
   cascaderCloseIconColor?: string;
   cascaderSelectedIconSize?: string;

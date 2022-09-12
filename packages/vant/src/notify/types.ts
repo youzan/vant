@@ -24,7 +24,7 @@ export type NotifyThemeVars = {
   notifyTextColor?: string;
   notifyPadding?: string;
   notifyFontSize?: string;
-  notifyLineHeight?: string;
+  notifyLineHeight?: number | string;
   notifyPrimaryBackground?: string;
   notifySuccessBackground?: string;
   notifyDangerBackground?: string;

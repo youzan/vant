@@ -67,11 +67,11 @@ export type CalendarThemeVars = {
   calendarRangeEdgeColor?: string;
   calendarRangeEdgeBackground?: string;
   calendarRangeMiddleColor?: string;
-  calendarRangeMiddleBackgroundOpacity?: string;
+  calendarRangeMiddleBackgroundOpacity?: number | string;
   calendarSelectedDaySize?: string;
   calendarSelectedDayColor?: string;
   calendarInfoFontSize?: string;
-  calendarInfoLineHeight?: string;
+  calendarInfoLineHeight?: number | string;
   calendarSelectedDayBackground?: string;
   calendarDayDisabledColor?: string;
   calendarConfirmButtonHeight?: string;

@@ -3,13 +3,13 @@ export type AddressListThemeVars = {
   addressListDisabledTextColor?: string;
   addressListDisabledTextPadding?: string;
   addressListDisabledTextFontSize?: string;
-  addressListDisabledTextLineHeight?: string;
-  addressListAddButtonZIndex?: string;
+  addressListDisabledTextLineHeight?: number | string;
+  addressListAddButtonZIndex?: number | string;
   addressListItemPadding?: string;
   addressListItemTextColor?: string;
   addressListItemDisabledTextColor?: string;
   addressListItemFontSize?: string;
-  addressListItemLineHeight?: string;
+  addressListItemLineHeight?: number | string;
   addressListRadioColor?: string;
   addressListEditIconSize?: string;
 };

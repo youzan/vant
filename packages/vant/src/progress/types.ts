@@ -18,6 +18,6 @@ export type ProgressThemeVars = {
   progressPivotPadding?: string;
   progressPivotTextColor?: string;
   progressPivotFontSize?: string;
-  progressPivotLineHeight?: string;
+  progressPivotLineHeight?: number | string;
   progressPivotBackground?: string;
 };
