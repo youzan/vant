@@ -5,7 +5,11 @@ export const Cascader = withInstall(_Cascader);
 export default Cascader;
 export { cascaderProps } from './Cascader';
 export type { CascaderProps } from './Cascader';
-export type { CascaderOption, CascaderFieldNames } from './types';
+export type {
+  CascaderOption,
+  CascaderThemeVars,
+  CascaderFieldNames,
+} from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {

@@ -17,3 +17,15 @@ export type CheckboxInstance = ComponentPublicInstance<
   CheckboxProps,
   CheckboxExpose
 >;
+
+export type CheckboxThemeVars = {
+  checkboxSize?: string;
+  checkboxBorderColor?: string;
+  checkboxDuration?: string;
+  checkboxLabelMargin?: string;
+  checkboxLabelColor?: string;
+  checkboxCheckedIconColor?: string;
+  checkboxDisabledIconColor?: string;
+  checkboxDisabledLabelColor?: string;
+  checkboxDisabledBackground?: string;
+};

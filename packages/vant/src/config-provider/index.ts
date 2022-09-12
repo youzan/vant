@@ -8,6 +8,7 @@ export type {
   ConfigProviderProps,
   ConfigProviderTheme,
 } from './ConfigProvider';
+export type { ConfigProviderThemeVars } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {

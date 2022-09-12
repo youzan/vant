@@ -32,3 +32,25 @@ export type DialogOptions = {
   confirmButtonDisabled?: boolean;
   closeOnClickOverlay?: boolean;
 };
+
+export type DialogThemeVars = {
+  dialogWidth?: string;
+  dialogSmallScreenWidth?: string;
+  dialogFontSize?: string;
+  dialogTransition?: string;
+  dialogRadius?: string;
+  dialogBackground?: string;
+  dialogHeaderFontWeight?: string;
+  dialogHeaderLineHeight?: string;
+  dialogHeaderPaddingTop?: string;
+  dialogHeaderIsolatedPadding?: string;
+  dialogMessagePadding?: string;
+  dialogMessageFontSize?: string;
+  dialogMessageLineHeight?: string;
+  dialogMessageMaxHeight?: string;
+  dialogHasTitleMessageTextColor?: string;
+  dialogHasTitleMessagePaddingTop?: string;
+  dialogButtonHeight?: string;
+  dialogRoundButtonHeight?: string;
+  dialogConfirmButtonTextColor?: string;
+};

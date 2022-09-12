@@ -5,6 +5,7 @@ export const TabbarItem = withInstall(_TabbarItem);
 export default TabbarItem;
 export { tabbarItemProps } from './TabbarItem';
 export type { TabbarItemProps } from './TabbarItem';
+export type { TabbarItemThemeVars } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {

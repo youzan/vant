@@ -11,6 +11,7 @@ export type { ImagePreviewProps };
 export type {
   ImagePreviewOptions,
   ImagePreviewInstance,
+  ImagePreviewThemeVars,
   ImagePreviewScaleEventParams,
 } from './types';
 

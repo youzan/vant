@@ -5,6 +5,7 @@ export const ActionBar = withInstall(_ActionBar);
 export default ActionBar;
 export { actionBarProps } from './ActionBar';
 export type { ActionBarProps } from './ActionBar';
+export type { ActionBarThemeVars } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {

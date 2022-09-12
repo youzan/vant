@@ -8,6 +8,7 @@ export type {
   NumberKeyboardProps,
   NumberKeyboardTheme,
 } from './NumberKeyboard';
+export type { NumberKeyboardThemeVars } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {

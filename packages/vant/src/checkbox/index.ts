@@ -8,6 +8,7 @@ export type { CheckboxProps } from './Checkbox';
 export type {
   CheckboxShape,
   CheckboxInstance,
+  CheckboxThemeVars,
   CheckboxLabelPosition,
 } from './types';
 

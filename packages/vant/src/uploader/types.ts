@@ -45,3 +45,31 @@ export type UploaderInstance = ComponentPublicInstance<
   UploaderProps,
   UploaderExpose
 >;
+
+export type UploaderThemeVars = {
+  uploaderSize?: string;
+  uploaderIconSize?: string;
+  uploaderIconColor?: string;
+  uploaderTextColor?: string;
+  uploaderTextFontSize?: string;
+  uploaderUploadBackground?: string;
+  uploaderUploadActiveColor?: string;
+  uploaderDeleteColor?: string;
+  uploaderDeleteIconSize?: string;
+  uploaderDeleteBackground?: string;
+  uploaderFileBackground?: string;
+  uploaderFileIconSize?: string;
+  uploaderFileIconColor?: string;
+  uploaderFileNamePadding?: string;
+  uploaderFileNameMarginTop?: string;
+  uploaderFileNameFontSize?: string;
+  uploaderFileNameTextColor?: string;
+  uploaderMaskTextColor?: string;
+  uploaderMaskBackground?: string;
+  uploaderMaskIconSize?: string;
+  uploaderMaskMessageFontSize?: string;
+  uploaderMaskMessageLineHeight?: string;
+  uploaderLoadingIconSize?: string;
+  uploaderLoadingIconColor?: string;
+  uploaderDisabledOpacity?: string;
+};

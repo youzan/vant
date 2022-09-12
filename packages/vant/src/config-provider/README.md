@@ -150,6 +150,18 @@ export default {
 
 > Tips: ConfigProvider only affects its child components.
 
+#### Use In TypeScript
+
+Using `ConfigProviderThemeVars` type to get code intellisense.
+
+```ts
+import type { ConfigProviderThemeVars } from 'vant';
+
+const themeVars: ConfigProviderThemeVars = {
+  sliderBarHeight: '4px',
+};
+```
+
 ### Combining dark mode with CSS variables
 
 If you need to define CSS variables for dark mode or light mode separately, you can use the `theme-vars-dark` and `theme-vars-light` props.
@@ -299,5 +311,9 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 The component exports the following type definitions:
 
 ```ts
-import type { ConfigProviderProps, ConfigProviderTheme } from 'vant';
+import type {
+  ConfigProviderProps,
+  ConfigProviderTheme,
+  ConfigProviderThemeVars,
+} from 'vant';
 ```

@@ -21,3 +21,19 @@ export type CascaderFieldNames = {
   value?: string;
   children?: string;
 };
+
+export type CascaderThemeVars = {
+  cascaderHeaderHeight?: string;
+  cascaderHeaderPadding?: string;
+  cascaderTitleFontSize?: string;
+  cascaderTitleLineHeight?: string;
+  cascaderCloseIconSize?: string;
+  cascaderCloseIconColor?: string;
+  cascaderSelectedIconSize?: string;
+  cascaderTabsHeight?: string;
+  cascaderActiveColor?: string;
+  cascaderOptionsHeight?: string;
+  cascaderOptionDisabledColor?: string;
+  cascaderTabColor?: string;
+  cascaderUnselectedTabColor?: string;
+};

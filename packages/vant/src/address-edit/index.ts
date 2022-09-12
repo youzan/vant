@@ -8,6 +8,7 @@ export type { AddressEditProps };
 export type {
   AddressEditInfo,
   AddressEditInstance,
+  AddressEditThemeVars,
   AddressEditSearchItem,
 } from './types';
 

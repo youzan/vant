@@ -5,7 +5,7 @@ export const Tabs = withInstall(_Tabs);
 export default Tabs;
 export { tabsProps } from './Tabs';
 export type { TabsProps };
-export type { TabsType, TabsInstance } from './types';
+export type { TabsType, TabsInstance, TabsThemeVars } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {

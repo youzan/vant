@@ -9,6 +9,7 @@ export type {
   TreeSelectChild,
   TreeSelectProps,
 } from './TreeSelect';
+export type { TreeSelectThemeVars } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {

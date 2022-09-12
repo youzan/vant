@@ -9,6 +9,7 @@ export type {
   ShareSheetOption,
   ShareSheetOptions,
 } from './ShareSheet';
+export type { ShareSheetThemeVars } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {
