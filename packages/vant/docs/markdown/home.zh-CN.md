@@ -64,7 +64,6 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 | 项目 | 描述 |
 | --- | --- |
 | [3lang3/react-vant](https://github.com/3lang3/react-vant) | 参照 Vant 打造的 React 移动端组件库 |
-| [rc-ui-lib](https://github.com/rancui/rc-ui-lib) | 基于 Vant 的 React 版本移动端 UI 组件库 |
 | [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Vant 支付宝小程序版 |
 | [taroify](https://gitee.com/mallfoundry/taroify) | Vant Taro 版 |
 | [vant-theme](https://github.com/Aisen60/vant-theme) | Vant 在线主题预览工具 |
@@ -75,8 +74,8 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 
 - [意见反馈](https://github.com/vant-ui/vant/issues)
 - [更新日志](#/zh-CN/changelog)
-- [码云镜像](https://gitee.com/vant-contrib/vant)
-- [Gitter 讨论组](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+- [码云镜像仓库](https://gitee.com/vant-contrib/vant)
+- [Discussions 讨论区](https://github.com/vant-ui/vant/discussions)
 
 ## 贡献
 
