@@ -18,7 +18,7 @@ export type NoticeBarThemeVars = {
   noticeBarWrapablePadding?: string;
   noticeBarTextColor?: string;
   noticeBarFontSize?: string;
-  noticeBarLineHeight?: string;
+  noticeBarLineHeight?: number | string;
   noticeBarBackground?: string;
   noticeBarIconSize?: string;
   noticeBarIconMinWidth?: string;

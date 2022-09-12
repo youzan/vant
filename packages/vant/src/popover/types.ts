@@ -29,7 +29,7 @@ export type PopoverThemeVars = {
   popoverActionWidth?: string;
   popoverActionHeight?: string;
   popoverActionFontSize?: string;
-  popoverActionLineHeight?: string;
+  popoverActionLineHeight?: number | string;
   popoverActionIconSize?: string;
   popoverLightTextColor?: string;
   popoverLightBackground?: string;

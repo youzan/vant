@@ -5,9 +5,9 @@ export type CardThemeVars = {
   cardBackground?: string;
   cardThumbSize?: string;
   cardThumbRadius?: string;
-  cardTitleLineHeight?: string;
+  cardTitleLineHeight?: number | string;
   cardDescColor?: string;
-  cardDescLineHeight?: string;
+  cardDescLineHeight?: number | string;
   cardPriceColor?: string;
   cardOriginPriceColor?: string;
   cardNumColor?: string;

@@ -1,6 +1,6 @@
 export type SubmitBarThemeVars = {
   submitBarHeight?: string;
-  submitBarZIndex?: string;
+  submitBarZIndex?: number | string;
   submitBarBackground?: string;
   submitBarButtonWidth?: string;
   submitBarPriceColor?: string;
@@ -12,7 +12,7 @@ export type SubmitBarThemeVars = {
   submitBarTextFontSize?: string;
   submitBarTipPadding?: string;
   submitBarTipFontSize?: string;
-  submitBarTipLineHeight?: string;
+  submitBarTipLineHeight?: number | string;
   submitBarTipColor?: string;
   submitBarTipBackground?: string;
   submitBarTipIconSize?: string;

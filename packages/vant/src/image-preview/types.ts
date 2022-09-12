@@ -49,11 +49,11 @@ export type ImagePreviewInstance = ComponentPublicInstance<
 export type ImagePreviewThemeVars = {
   imagePreviewIndexTextColor?: string;
   imagePreviewIndexFontSize?: string;
-  imagePreviewIndexLineHeight?: string;
+  imagePreviewIndexLineHeight?: number | string;
   imagePreviewIndexTextShadow?: string;
   imagePreviewOverlayBackground?: string;
   imagePreviewCloseIconSize?: string;
   imagePreviewCloseIconColor?: string;
   imagePreviewCloseIconMargin?: string;
-  imagePreviewCloseIconZIndex?: string;
+  imagePreviewCloseIconZIndex?: number | string;
 };

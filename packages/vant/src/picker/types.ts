@@ -59,7 +59,7 @@ export type PickerThemeVars = {
   pickerBackground?: string;
   pickerToolbarHeight?: string;
   pickerTitleFontSize?: string;
-  pickerTitleLineHeight?: string;
+  pickerTitleLineHeight?: number | string;
   pickerActionPadding?: string;
   pickerActionFontSize?: string;
   pickerConfirmActionColor?: string;
@@ -67,7 +67,7 @@ export type PickerThemeVars = {
   pickerOptionFontSize?: string;
   pickerOptionPadding?: string;
   pickerOptionTextColor?: string;
-  pickerOptionDisabledOpacity?: string;
+  pickerOptionDisabledOpacity?: number | string;
   pickerLoadingIconColor?: string;
   pickerLoadingMaskColor?: string;
   pickerMaskColor?: string;

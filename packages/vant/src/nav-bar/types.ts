@@ -6,5 +6,5 @@ export type NavBarThemeVars = {
   navBarTextColor?: string;
   navBarTitleFontSize?: string;
   navBarTitleTextColor?: string;
-  navBarZIndex?: string;
+  navBarZIndex?: number | string;
 };

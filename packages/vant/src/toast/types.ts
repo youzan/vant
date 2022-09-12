@@ -44,7 +44,7 @@ export type ToastThemeVars = {
   toastFontSize?: string;
   toastTextColor?: string;
   toastLoadingIconColor?: string;
-  toastLineHeight?: string;
+  toastLineHeight?: number | string;
   toastRadius?: string;
   toastBackground?: string;
   toastIconSize?: string;

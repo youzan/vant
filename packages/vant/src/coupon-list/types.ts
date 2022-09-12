@@ -5,5 +5,5 @@ export type CouponListThemeVars = {
   couponListCloseButtonHeight?: string;
   couponListEmptyTipColor?: string;
   couponListEmptyTipFontSize?: string;
-  couponListEmptyTipLineHeight?: string;
+  couponListEmptyTipLineHeight?: number | string;
 };

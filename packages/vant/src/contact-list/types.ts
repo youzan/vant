@@ -1,6 +1,6 @@
 export type ContactListThemeVars = {
   contactListEditIconSize?: string;
-  contactListAddButtonZIndex?: string;
+  contactListAddButtonZIndex?: number | string;
   contactListRadioColor?: string;
   contactListItemPadding?: string;
 };

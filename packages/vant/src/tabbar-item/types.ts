@@ -3,7 +3,7 @@ export type TabbarItemThemeVars = {
   tabbarItemTextColor?: string;
   tabbarItemActiveColor?: string;
   tabbarItemActiveBackground?: string;
-  tabbarItemLineHeight?: string;
+  tabbarItemLineHeight?: number | string;
   tabbarItemIconSize?: string;
   tabbarItemIconMarginBottom?: string;
 };

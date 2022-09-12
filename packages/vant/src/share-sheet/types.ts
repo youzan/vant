@@ -2,10 +2,10 @@ export type ShareSheetThemeVars = {
   shareSheetHeaderPadding?: string;
   shareSheetTitleColor?: string;
   shareSheetTitleFontSize?: string;
-  shareSheetTitleLineHeight?: string;
+  shareSheetTitleLineHeight?: number | string;
   shareSheetDescriptionColor?: string;
   shareSheetDescriptionFontSize?: string;
-  shareSheetDescriptionLineHeight?: string;
+  shareSheetDescriptionLineHeight?: number | string;
   shareSheetIconSize?: string;
   shareSheetOptionNameColor?: string;
   shareSheetOptionNameFontSize?: string;

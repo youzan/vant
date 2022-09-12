@@ -22,5 +22,5 @@ export type PopupThemeVars = {
   popupCloseIconSize?: string;
   popupCloseIconColor?: string;
   popupCloseIconMargin?: string;
-  popupCloseIconZIndex?: string;
+  popupCloseIconZIndex?: number | string;
 };

@@ -8,5 +8,5 @@ export type SwitchThemeVars = {
   switchBackground?: string;
   switchOnBackground?: string;
   switchDuration?: string;
-  switchDisabledOpacity?: string;
+  switchDisabledOpacity?: number | string;
 };

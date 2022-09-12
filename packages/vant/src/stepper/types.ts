@@ -7,7 +7,7 @@ export type StepperThemeVars = {
   stepperInputWidth?: string;
   stepperInputHeight?: string;
   stepperInputFontSize?: string;
-  stepperInputLineHeight?: string;
+  stepperInputLineHeight?: number | string;
   stepperInputTextColor?: string;
   stepperInputDisabledTextColor?: string;
   stepperInputDisabledBackground?: string;

@@ -5,5 +5,5 @@ export type CircleThemeVars = {
   circleTextColor?: string;
   circleTextFontWeight?: string;
   circleTextFontSize?: string;
-  circleTextLineHeight?: string;
+  circleTextLineHeight?: number | string;
 };

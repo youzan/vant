@@ -7,5 +7,5 @@ export type PaginationThemeVars = {
   paginationItemDisabledBackground?: string;
   paginationBackground?: string;
   paginationDescColor?: string;
-  paginationDisabledOpacity?: string;
+  paginationDisabledOpacity?: number | string;
 };

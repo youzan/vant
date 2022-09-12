@@ -68,8 +68,8 @@ export type UploaderThemeVars = {
   uploaderMaskBackground?: string;
   uploaderMaskIconSize?: string;
   uploaderMaskMessageFontSize?: string;
-  uploaderMaskMessageLineHeight?: string;
+  uploaderMaskMessageLineHeight?: number | string;
   uploaderLoadingIconSize?: string;
   uploaderLoadingIconColor?: string;
-  uploaderDisabledOpacity?: string;
+  uploaderDisabledOpacity?: number | string;
 };

@@ -1,3 +1,3 @@
 export type StickyThemeVars = {
-  stickyZIndex?: string;
+  stickyZIndex?: number | string;
 };

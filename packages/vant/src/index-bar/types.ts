@@ -16,8 +16,8 @@ export type IndexBarInstance = ComponentPublicInstance<
 >;
 
 export type IndexBarThemeVars = {
-  indexBarSidebarZIndex?: string;
+  indexBarSidebarZIndex?: number | string;
   indexBarIndexFontSize?: string;
-  indexBarIndexLineHeight?: string;
+  indexBarIndexLineHeight?: number | string;
   indexBarIndexActiveColor?: string;
 };

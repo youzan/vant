@@ -4,15 +4,15 @@ export type ActionSheetThemeVars = {
   actionSheetHeaderFontSize?: string;
   actionSheetDescriptionColor?: string;
   actionSheetDescriptionFontSize?: string;
-  actionSheetDescriptionLineHeight?: string;
+  actionSheetDescriptionLineHeight?: number | string;
   actionSheetItemBackground?: string;
   actionSheetItemFontSize?: string;
-  actionSheetItemLineHeight?: string;
+  actionSheetItemLineHeight?: number | string;
   actionSheetItemTextColor?: string;
   actionSheetItemDisabledTextColor?: string;
   actionSheetSubnameColor?: string;
   actionSheetSubnameFontSize?: string;
-  actionSheetSubnameLineHeight?: string;
+  actionSheetSubnameLineHeight?: number | string;
   actionSheetCloseIconSize?: string;
   actionSheetCloseIconColor?: string;
   actionSheetCloseIconPadding?: string;

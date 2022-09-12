@@ -1,7 +1,7 @@
 export type SliderThemeVars = {
   sliderActiveBackground?: string;
   sliderInactiveBackground?: string;
-  sliderDisabledOpacity?: string;
+  sliderDisabledOpacity?: number | string;
   sliderBarHeight?: string;
   sliderButtonWidth?: string;
   sliderButtonHeight?: string;
