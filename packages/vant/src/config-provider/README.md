@@ -28,6 +28,15 @@ In takes effect globally, making all Vant components on the page dark.
 <van-config-provider theme="dark">...</van-config-provider>
 ```
 
+The theme prop will not change the text-color or background-color of the page, you can set it manually like this:
+
+```css
+.van-theme-dark body {
+  text-color: #f5f5f5;
+  background-color: black;
+}
+```
+
 > Tips: The theme prop will not change the background color of the page, you need to set it manually.
 
 ### Switch Theme
@@ -211,6 +220,8 @@ CSS variables in Vant are divided into **basic variables** and **component varia
 
 - The basic variables can only be modified through the `:root` selector.
 - The component variables can be modified through the `:root` selector and `ConfigProvider` component.
+
+You can also use the `.van-theme-light` and `.van-theme-dark` class selector to modify basic or component variables in light or dark mode individually.
 
 #### Variables List
 

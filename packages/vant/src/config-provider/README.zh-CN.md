@@ -28,7 +28,14 @@ app.use(ConfigProvider);
 <van-config-provider theme="dark">...</van-config-provider>
 ```
 
-> Tips: 开启深色模式不会改变页面的背景色，需要手动进行设置。
+值得注意的是，开启 Vant 的深色模式只会影响 Vant 组件的 UI，并不会影响全局的文字颜色或背景颜色，你可以参考以下 CSS 来设置一些全局样式：
+
+```css
+.van-theme-dark body {
+  text-color: #f5f5f5;
+  background-color: black;
+}
+```
 
 ### 动态切换
 
@@ -213,6 +220,8 @@ Vant 中的 CSS 变量分为 **基础变量** 和 **组件变量**。组件变�
 
 - 基础变量只能通过 `:root 选择器` 修改，不能通过 `ConfigProvider 组件` 修改。
 - 组件变量可以通过 `:root 选择器` 和 `ConfigProvider 组件` 修改。
+
+你也可以使用 `.van-theme-light` 和 `.van-theme-dark` 这两个类名选择器来单独修改浅色或深色模式下的基础变量和组件变量。
 
 #### 变量列表
 
