@@ -1,4 +1,5 @@
 import { NavBar } from '..';
+import { HAPTICS_FEEDBACK } from '../../utils';
 import { mount, mockGetBoundingClientRect, later } from '../../../test';
 
 test('should render left slot correctly', () => {
@@ -9,6 +10,9 @@ test('should render left slot correctly', () => {
   });
 
   expect(wrapper.find('.van-nav-bar__left').html()).toMatchSnapshot();
+  expect(
+    wrapper.find('.van-nav-bar__left').classes(HAPTICS_FEEDBACK)
+  ).toBeTruthy();
 });
 
 test('should render left slot correctly', () => {
@@ -19,6 +23,9 @@ test('should render left slot correctly', () => {
   });
 
   expect(wrapper.find('.van-nav-bar__right').html()).toMatchSnapshot();
+  expect(
+    wrapper.find('.van-nav-bar__right').classes(HAPTICS_FEEDBACK)
+  ).toBeTruthy();
 });
 
 test('should render title slot correctly', () => {
@@ -84,4 +91,23 @@ test('should change z-index when using z-index prop', () => {
     },
   });
   expect(wrapper.style.zIndex).toEqual('100');
+});
+
+test('should render slots correctly when set clickable to false', () => {
+  const wrapper = mount(NavBar, {
+    slots: {
+      left: () => 'Custom Left',
+      right: () => 'Custom Right',
+    },
+    props: {
+      clickable: false,
+    },
+  });
+
+  const leftDom = wrapper.find('.van-nav-bar__left');
+  const rightDom = wrapper.find('.van-nav-bar__right');
+  expect(leftDom.html()).toMatchSnapshot();
+  expect(rightDom.html()).toMatchSnapshot();
+  expect(leftDom.classes(HAPTICS_FEEDBACK)).toBeFalsy();
+  expect(rightDom.classes(HAPTICS_FEEDBACK)).toBeFalsy();
 });

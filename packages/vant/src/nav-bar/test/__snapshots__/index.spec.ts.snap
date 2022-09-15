@@ -25,6 +25,18 @@ exports[`should render placeholder element when using placeholder prop 1`] = `
 </div>
 `;
 
+exports[`should render slots correctly when set clickable to false 1`] = `
+<div class="van-nav-bar__left">
+  Custom Left
+</div>
+`;
+
+exports[`should render slots correctly when set clickable to false 2`] = `
+<div class="van-nav-bar__right">
+  Custom Right
+</div>
+`;
+
 exports[`should render title slot correctly 1`] = `
 <div class="van-nav-bar__title van-ellipsis">
   Custom Title
