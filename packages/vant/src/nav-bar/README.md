@@ -99,6 +99,7 @@ export default {
 | placeholder | Whether to generate a placeholder element when fixed | _boolean_ | `false` |
 | z-index | Z-index | _number \| string_ | `1` |
 | safe-area-inset-top | Whether to enable top safe area adaptation | _boolean_ | `false` |
+| clickable | Whether to add `van-haptics-feedback` class name to parent element when render `Slots` | _boolean_ | `true` |
 
 ### Slots
 

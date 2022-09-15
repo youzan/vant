@@ -33,6 +33,7 @@ export const navBarProps = {
   leftArrow: Boolean,
   placeholder: Boolean,
   safeAreaInsetTop: Boolean,
+  clickable: truthProp,
 };
 
 export type NavBarProps = ExtractPropTypes<typeof navBarProps>;
@@ -92,7 +93,7 @@ export default defineComponent({
           <div class={bem('content')}>
             {hasLeft && (
               <div
-                class={[bem('left'), HAPTICS_FEEDBACK]}
+                class={[bem('left'), props.clickable ? HAPTICS_FEEDBACK : '']}
                 onClick={onClickLeft}
               >
                 {renderLeft()}
@@ -103,7 +104,7 @@ export default defineComponent({
             </div>
             {hasRight && (
               <div
-                class={[bem('right'), HAPTICS_FEEDBACK]}
+                class={[bem('right'), props.clickable ? HAPTICS_FEEDBACK : '']}
                 onClick={onClickRight}
               >
                 {renderRight()}
