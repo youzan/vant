@@ -255,7 +255,7 @@ export default {
 | closeable | Whether to show close icon | _boolean_ | `true` |
 | show-header `v3.4.2` | Whether to show header | _boolean_ | `true` |
 | close-icon `v3.0.10` | Close icon name | _string_ | `cross` |
-| field-names `v3.0.4` | Custom the fields of options | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
+| field-names `v3.0.4` | Custom the fields of options | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
 ### Data Structure of CascaderOption
 

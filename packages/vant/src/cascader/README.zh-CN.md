@@ -265,7 +265,7 @@ export default {
 | closeable | 是否显示关闭图标 | _boolean_ | `true` |
 | show-header `v3.4.2` | 是否展示标题栏 | _boolean_ | `true` |
 | close-icon `v3.0.10` | 关闭图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `cross` |
-| field-names `v3.0.4` | 自定义 `options` 结构中的字段 | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
+| field-names `v3.0.4` | 自定义 `options` 结构中的字段 | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
 ### CascaderOption 数据结构
 
