@@ -9,7 +9,7 @@ PickerGroup 中可以放置以下组件：
 - [Picker](#/zh-CN/picker)
 - [Area](#/zh-CN/area)
 - [DatePicker](#/zh-CN/date-picker)
-- [TimePicker](<(#/zh-CN/time-picker)>)
+- [TimePicker](#/zh-CN/time-picker)
 - 其他基于 Picker 封装的自定义组件
 
 ### 引入
