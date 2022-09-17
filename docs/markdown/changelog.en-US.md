@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.50](https://github.com/vant-ui/vant/compare/v2.12.49...v2.12.50)
+
+`2022-09-17`
+
+**Bug Fixes**
+
+- Uploader: optimize image preview [#11044](https://github.com/vant-ui/vant/issues/11044)
+- ImagePreview: fix missing onScale type [#11057](https://github.com/vant-ui/vant/issues/11057)
+
 ### [v2.12.49](https://github.com/vant-ui/vant/compare/v2.12.48...v2.12.49)
 
 `2022-09-05`

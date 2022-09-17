@@ -25,6 +25,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.50](https://github.com/vant-ui/vant/compare/v2.12.49...v2.12.50)
+
+`2022-09-17`
+
+**Bug Fixes**
+
+- Uploader: 修复点击预览大图时会展示上传失败的图片的问题 [#11044](https://github.com/vant-ui/vant/issues/11044)
+- ImagePreview: 修复缺少 onScale 类型定义的问题 [#11057](https://github.com/vant-ui/vant/issues/11057)
+
 ### [v2.12.49](https://github.com/vant-ui/vant/compare/v2.12.48...v2.12.49)
 
 `2022-09-05`
