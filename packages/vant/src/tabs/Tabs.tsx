@@ -239,7 +239,10 @@ export default defineComponent({
       }
     };
 
-    const setCurrentIndex = (currentIndex: number) => {
+    const setCurrentIndex = (
+      currentIndex: number,
+      skipScrollIntoView?: boolean
+    ) => {
       const newIndex = findAvailableTab(currentIndex);
 
       if (!isDef(newIndex)) {
@@ -259,16 +262,31 @@ export default defineComponent({
           emit('change', newName, newTab.title);
         }
       }
+
+      if (!skipScrollIntoView) {
+        scrollIntoView();
+      }
+      setLine();
+
+      // scroll to correct position
+      if (stickyFixed && !props.scrollspy) {
+        setRootScrollTop(
+          Math.ceil(getElementTop(root.value!) - offsetTopPx.value)
+        );
+      }
     };
 
     // correct the index of active tab
-    const setCurrentIndexByName = (name: Numeric) => {
+    const setCurrentIndexByName = (
+      name: Numeric,
+      skipScrollIntoView?: boolean
+    ) => {
       const matched = children.find(
         (tab, index) => getTabName(tab, index) === name
       );
 
       const index = matched ? children.indexOf(matched) : 0;
-      setCurrentIndex(index);
+      setCurrentIndex(index, skipScrollIntoView);
     };
 
     const scrollToCurrentContent = (immediate = false) => {
@@ -449,23 +467,8 @@ export default defineComponent({
       }
     );
 
-    watch(
-      () => state.currentIndex,
-      () => {
-        scrollIntoView();
-        setLine();
-
-        // scroll to correct position
-        if (stickyFixed && !props.scrollspy) {
-          setRootScrollTop(
-            Math.ceil(getElementTop(root.value!) - offsetTopPx.value)
-          );
-        }
-      }
-    );
-
     const init = () => {
-      setCurrentIndexByName(props.active);
+      setCurrentIndexByName(props.active, true);
       nextTick(() => {
         state.inited = true;
         if (wrapRef.value) {
