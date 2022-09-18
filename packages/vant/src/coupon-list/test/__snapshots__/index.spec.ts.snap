@@ -346,7 +346,7 @@ exports[`should have two "van-coupon-list__empty" classes when render coupon lis
           </span>
         </div>
         <div class="van-tabs__line"
-             style="transform: translateX(50px) translateX(-50%);"
+             style="transform: translateX(50px) translateX(-50%); transition-duration: 0.3s;"
         >
         </div>
       </div>
