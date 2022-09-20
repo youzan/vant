@@ -64,12 +64,16 @@
     - name: span
       title: 占据列数
       type: number
-      default: 8
+      display: number
+      default: 1
+      min: 1
+      max: 24
       description: 栅格列宽度，栅格行最大为24列
     - name: offset
       title: 偏移
-      type: number, string
+      type: number
       default: 0
+      display: number
       description: 栅格列向右偏移列数
   slots:
     - name: default
