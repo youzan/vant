@@ -56,7 +56,7 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     let wrapWidth = 0;
     let contentWidth = 0;
-    let startTimer: NodeJS.Timeout;
+    let startTimer: ReturnType<typeof setTimeout>;
 
     const wrapRef = ref<HTMLElement>();
     const contentRef = ref<HTMLElement>();

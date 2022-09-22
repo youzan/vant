@@ -235,7 +235,7 @@ export default defineComponent({
       });
     };
 
-    let autoplayTimer: NodeJS.Timeout;
+    let autoplayTimer: ReturnType<typeof setTimeout>;
 
     const stopAutoplay = () => clearTimeout(autoplayTimer);
 

@@ -214,7 +214,7 @@ export default defineComponent({
     };
 
     let isLongPress: boolean;
-    let longPressTimer: NodeJS.Timeout;
+    let longPressTimer: ReturnType<typeof setTimeout>;
 
     const longPressStep = () => {
       longPressTimer = setTimeout(() => {
