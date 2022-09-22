@@ -47,7 +47,6 @@
     "components"
   ],
   "dependencies": {
-    "@vant/icons": "^1.8.0",
     "@vant/popperjs": "^1.3.0",
     "@vant/use": "^1.4.2"
   },
@@ -60,6 +59,7 @@
     "@vant/area-data": "workspace:*",
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
+    "@vant/icons": "workspace:*",
     "@vue/runtime-core": "^3.2.38",
     "@vue/test-utils": "^2.0.2",
     "typescript": "^4.8.2",
