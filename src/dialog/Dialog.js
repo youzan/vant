@@ -161,7 +161,7 @@ export default createComponent({
         </div>
       }
 
-      if (/user/.test(location.href) || this.nomattershowfoot) {
+      if (this.nomattershowfoot) {
         return (
           <div class={[BORDER_TOP, bem('footer')]}>
             {this.showCancelButton && (
