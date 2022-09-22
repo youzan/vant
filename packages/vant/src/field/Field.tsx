@@ -231,7 +231,11 @@ export default defineComponent({
       state.validateMessage = '';
     };
 
-    const endValidate = () => emit('endValidate', { status: state.status });
+    const endValidate = () =>
+      emit('endValidate', {
+        status: state.status,
+        message: state.validateMessage,
+      });
 
     const validate = (rules = props.rules) =>
       new Promise<FieldValidateError | void>((resolve) => {
