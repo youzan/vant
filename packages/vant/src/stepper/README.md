@@ -145,6 +145,7 @@ export default {
 | show-input | Whether to show input | _boolean_ | `true` |
 | long-press | Whether to enable the long press gesture, when enabled you can long press the increase and decrease buttons | _boolean_ | `true` |
 | allow-empty | Whether to allow the input value to be empty, set to `true` to allow an empty string to be passed in | _boolean_ | `false` |
+| allow-empty | Whether to auto fix value that is out of range, set to `false` and value that is out of range won’t be auto fixed | _boolean_ | `true` |
 
 ### Events
 
