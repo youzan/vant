@@ -72,7 +72,7 @@ export default defineComponent({
   emits: ['update:show'],
 
   setup(props, { emit, slots }) {
-    let timer: NodeJS.Timeout;
+    let timer: ReturnType<typeof setTimeout>;
     let clickable = false;
 
     const toggleClickable = () => {

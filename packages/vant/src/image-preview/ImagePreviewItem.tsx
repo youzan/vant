@@ -140,7 +140,7 @@ export default defineComponent({
     let startMoveY: number;
     let startScale: number;
     let startDistance: number;
-    let doubleTapTimer: NodeJS.Timeout | null;
+    let doubleTapTimer: ReturnType<typeof setTimeout> | null;
     let touchStartTime: number;
 
     const onTouchStart = (event: TouchEvent) => {

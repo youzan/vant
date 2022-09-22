@@ -3,7 +3,7 @@ import { mountComponent, usePopupState } from '../utils/mount-component';
 import VanNotify from './Notify';
 import type { NotifyMessage, NotifyOptions } from './types';
 
-let timer: number;
+let timer: ReturnType<typeof setTimeout>;
 let instance: ComponentInstance;
 
 const parseOptions = (message: NotifyMessage | NotifyOptions) =>
