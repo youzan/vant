@@ -55,7 +55,7 @@ export function showNotify(options: NotifyMessage | NotifyOptions) {
   clearTimeout(timer);
 
   if (options.duration! > 0) {
-    timer = window.setTimeout(closeNotify, options.duration);
+    timer = setTimeout(closeNotify, options.duration);
   }
 
   return instance;
