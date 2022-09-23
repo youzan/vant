@@ -23,7 +23,8 @@
       default: horizontal
       description: 通知栏模式
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入`<van-step>`子组件。
       empty-background: add-sub
       support:

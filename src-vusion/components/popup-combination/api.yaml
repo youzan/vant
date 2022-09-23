@@ -92,9 +92,11 @@
       default: false
       description: 文字过长是否省略显示。
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 自定义弹出的内容。
-    - name: reference
+    - concept: Slot
+      name: reference
       description: 弹出层触发节点。
   events:
     - name: before-open

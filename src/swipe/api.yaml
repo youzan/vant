@@ -30,7 +30,8 @@
       description: 是否显示指示器
       advanced: true
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入`van-swipe-item`子组件。
       empty-background: add-sub-large
       support:
@@ -45,7 +46,8 @@
   attrs: []
   description: 幻灯片选项
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入幻灯片内容，如图片
   events:
     - name: click

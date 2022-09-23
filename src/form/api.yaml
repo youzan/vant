@@ -34,7 +34,8 @@
       default: left
       description: 输入框对齐方式
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入`<van-field>`子组件。
       empty-background: add-sub-large
       support:
@@ -119,5 +120,6 @@
       description: 验证规则。简写格式为字符串类型，完整格式或混合格式为数组类型
       compType: validationRulesSelect
   slots:
-    - name: input
+    - concept: Slot
+      name: input
       description: 插入自定义输入框

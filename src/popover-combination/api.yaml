@@ -61,7 +61,8 @@
           name: 右下
       description: 弹出位置
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入`<van-popover-combination-item>`子组件。
       empty-background: add-sub-large
       support:

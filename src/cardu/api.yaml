@@ -7,9 +7,11 @@
   next: false
   nested: false
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入默认的元素
-    - name: cover
+    - concept: Slot
+      name: cover
       description: 插入图片
   attrs:
     - name: width

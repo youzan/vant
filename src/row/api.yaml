@@ -48,7 +48,8 @@
       default: start
       description: flex布局对齐方式
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入`<van-col>`子组件。
       empty-background: add-sub
       support:
@@ -76,5 +77,6 @@
       display: number
       description: 栅格列向右偏移列数
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入需要布局的元素。

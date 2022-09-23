@@ -18,7 +18,8 @@
       default: false
       description: 是否是卡片风格
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入`<van-cell>`子组件。
       empty-background: add-sub-large
       support:
@@ -113,9 +114,11 @@
       default: _self
       description: 链接打开方式
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入文本或 HTML。
-    - name: right-icon
+    - concept: Slot
+      name: right-icon
       description: 右侧图标。
       advanced: true
   events:

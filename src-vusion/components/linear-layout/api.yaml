@@ -100,7 +100,8 @@
       description: flex布局模式下的交叉轴对齐方式
       advanced: true
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 内容
   events:
     - name: click

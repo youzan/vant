@@ -27,7 +27,8 @@
       default: true
       description: 是否开启路由模式
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入`<van-tabbar-item>`子组件。
       empty-background: add-sub
       support:

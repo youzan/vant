@@ -195,15 +195,29 @@
       maxSelect: 2
       advanced: true
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入<van-cell>
       empty-background: drag-entity-here
       support:
         - name: van-cell
           title: 单元格
           snippet: '<template #item="scope"><van-cell isLink><template #title>文本</template></van-cell></template>'
-    - name: item
+    - concept: Slot
+      name: item
       description: 自定义选项的结构和样式
+      slotProps:
+        concept: Param
+        name: scope
+        typeAnnotation:
+          concept: TypeAnnotation
+          typeKind: generic
+          typeNamespace: nasl.ui
+          typeName: ScopeOf
+          typeArguments:
+          - concept: TypeAnnotation
+            typeKind: typeParam
+            typeName: T
   events:
     - name: before-select
       description: 选择某一项前触发

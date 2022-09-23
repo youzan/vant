@@ -38,7 +38,8 @@
       default: true
       description: 是否开启路由模式
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入`<van-dropdown-menu>`子组件。
       empty-background: add-sub
       support:
@@ -65,7 +66,8 @@
       default: false
       description: 禁用
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入`<van-dropdown-item-son>`子组件。
       empty-background: add-sub
       support:
@@ -175,9 +177,11 @@
       default: _self
       description: 链接打开方式
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入文本或 HTML。
-    - name: right-icon
+    - concept: Slot
+      name: right-icon
       description: 右侧图标。
       advanced: true
   events:

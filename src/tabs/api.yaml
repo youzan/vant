@@ -52,7 +52,8 @@
       default: false
       description: 是否开启转场动画
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       title: 默认
       description: 插入`<van-tab>`子组件。
       empty-background: add-sub
@@ -102,6 +103,7 @@
       type: number
       description: 徽章内容为数字时显示的最大值
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       title: 默认
       description: 显示的内容

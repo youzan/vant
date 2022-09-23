@@ -77,7 +77,8 @@
           title: 右
       description: 搜索图标位置
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 内容
   events:
     - name: search

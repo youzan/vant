@@ -200,15 +200,29 @@
       advanced: true
       group: 选择属性
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入<van-cardu>
       empty-background: drag-entity-here
       support:
         - name: van-cardu
           title: 卡片
           snippet: '<template #item="scope"><van-cardu><template #head><van-text text="标题"></van-text></template><van-text  text="卡片内容"></van-text></van-cardu></template>'
-    - name: item
+    - concept: Slot
+      name: item
       description: 自定义选项的结构和样式
+      slotProps:
+        concept: Param
+        name: scope
+        typeAnnotation:
+          concept: TypeAnnotation
+          typeKind: generic
+          typeNamespace: nasl.ui
+          typeName: ScopeOf
+          typeArguments:
+          - concept: TypeAnnotation
+            typeKind: typeParam
+            typeName: T
   events:
     - name: before-select
       description: 选择某一项前触发

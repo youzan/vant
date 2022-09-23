@@ -57,7 +57,8 @@
       default: _self
       description: 链接打开方式
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       description: 插入文本或HTML
   events:
     - name: click

@@ -34,7 +34,8 @@
       type: string
       description: 文本
   slots:
-    - name: default
+    - concept: Slot
+      name: default
       title: 默认
       description: 显示的文本
       advanced: true
