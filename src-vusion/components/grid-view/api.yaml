@@ -225,6 +225,7 @@
             typeName: T
   events:
     - name: before-select
+      title: 选择前
       description: 选择某一项前触发
       advanced: true
       params:
@@ -247,6 +248,7 @@
           type: UListView
           description: 发送事件实例
     - name: input
+      title: 选择时
       description: 选择某一项时触发
       params:
         - name: $event
@@ -256,6 +258,7 @@
           type: UListView
           description: 发送事件实例
     - name: select
+      title: 选择后
       description: 选择某一项时触发。单选模式中：
       advanced: true
       params:
@@ -281,6 +284,7 @@
           type: UListView
           description: 发送事件实例
     - name: change
+      title: 改变后
       description: 选择值改变时触发。单选模式中：
       advanced: true
       params:
@@ -306,6 +310,7 @@
           type: UListView
           description: 发送事件实例
     - name: before-load
+      title: 加载前
       description: 加载前触发
       advanced: true
       params:
@@ -316,6 +321,7 @@
           type: UTableView
           description: 发送事件实例
     - name: load
+      title: 加载后
       description: 加载时触发
       params:
         - name: $event
