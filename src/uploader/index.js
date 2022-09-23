@@ -53,7 +53,7 @@ export default createComponent({
     //   default: () => [],
     // },
     fileListProp: {
-      type: [Array,String],
+      type: [Array, String],
       default: () => [],
     },
     maxSize: {
@@ -94,17 +94,29 @@ export default createComponent({
     },
     converter: {
       type: String,
-      default: 'json'
+      default: 'json',
     },
     readonlyy: {
       type: Boolean,
       default: false,
     },
+    access: {
+      type: String,
+      default: 'public',
+    },
+    ttl: {
+      type: Boolean,
+      default: false,
+    },
+    ttlValue: {
+      type: Number,
+      default: -1,
+    },
   },
   data() {
     return {
       fileList: this.fromValue(this.fileListProp),
-    }
+    };
   },
   computed: {
     previewSizeWithUnit() {
@@ -117,46 +129,48 @@ export default createComponent({
     },
     canUp() {
       if (this.fileList.length === 0) return true;
-      let can = this.fileList.every((item) => item.status !== 'uploading');
+      const can = this.fileList.every((item) => item.status !== 'uploading');
       return can;
-    }
+    },
   },
   watch: {
-    fileListProp(val, oldVal) {
+    fileListProp(val) {
       this.fileList = this.fromValue(val);
-    }
+    },
   },
   methods: {
     fromValue(value) {
       if (this.converter === 'json')
-          try {
-            if(value === null || value === '') return [];
-            if(typeof value === 'string') return JSON.parse(value || '[]');
-            if(typeof value === 'object') return value;
-          } catch (err) {
-            return [];
-          }
+        try {
+          if (value === null || value === '') return [];
+          if (typeof value === 'string') return JSON.parse(value || '[]');
+          if (typeof value === 'object') return value;
+        } catch (err) {
+          return [];
+        }
       else if (this.converter === 'simple')
-          try {
-              if(!value) return [];
-              return value.split(",").map(x => ({url: x}));
-          } catch (err) {
-              return [];
-          }
-      else
-          return value || [];
+        try {
+          if (!value) return [];
+          return value.split(',').map((x) => ({ url: x }));
+        } catch (err) {
+          return [];
+        }
+      else return value || [];
     },
     toValue(value) {
-        if (this.converter === 'json')
-            // fix for u-validator rules="required"
-            return Array.isArray(value) && value.length === 0 ? '[]' : JSON.stringify(value);
-        if (this.converter === 'simple')
-            return Array.isArray(value) && value.length === 0 ? '' : (this.simpleConvert(value));
-        else
-            return value;
+      if (this.converter === 'json')
+        // fix for u-validator rules="required"
+        return Array.isArray(value) && value.length === 0
+          ? '[]'
+          : JSON.stringify(value);
+      if (this.converter === 'simple')
+        return Array.isArray(value) && value.length === 0
+          ? ''
+          : this.simpleConvert(value);
+      return value;
     },
     simpleConvert(value) {
-      return value.map((x) => (x.url)).join(",");
+      return value.map((x) => x.url).join(',');
     },
     getDetail(index = this.fileList.length) {
       return {
@@ -277,7 +291,7 @@ export default createComponent({
           this.afterRead(validFiles, this.getDetail());
         }
         this.$nextTick(function () {
-        // setTimeout(() => {
+          // setTimeout(() => {
           this.fileList.forEach((file, index) => {
             if (!file.url && !file.status) {
               file.status = 'uploading';
@@ -285,7 +299,7 @@ export default createComponent({
               this.post(file, index);
             }
           });
-         // }, 100)
+          // }, 100)
         });
       }
     },
@@ -339,7 +353,9 @@ export default createComponent({
       }
 
       const imageFiles = this.fileList.filter((item) => isImageFile(item));
-      const imageContents = imageFiles.map((item) => item.content || item.url || item);
+      const imageContents = imageFiles.map(
+        (item) => item.content || item.url || item
+      );
 
       this.imagePreview = ImagePreview({
         images: imageContents,
@@ -393,7 +409,8 @@ export default createComponent({
 
     genPreviewItem(item, index) {
       const deleteAble = item.deletable ?? this.deletable;
-      const showDelete = item.status !== 'uploading' && deleteAble && !this.readonlyy;
+      const showDelete =
+        item.status !== 'uploading' && deleteAble && !this.readonlyy;
 
       const DeleteIcon = showDelete && (
         <div
@@ -527,71 +544,81 @@ export default createComponent({
       );
     },
 
-    post(file, index) {
+    post(file) {
       const xhr = ajax({
-          url: this.url,
-          headers: {
-            ...this.headers,
-            Authorization: this.getCookie('authorization') || null,
-          },
-          withCredentials: this.withCredentials,
-          file,
-          data: this.data,
-          name: 'file',
-          onProgress: (e) => {
-              // file.status = 'uploading';
-              // file.message = e.percent + '%' || '上传中...';
-              this.$emit('progress', {
-                  e, file, file, xhr,
-              }, this);
-          },
-          onSuccess: (res) => {
-              file.status = '';
-              file.message = '';
-              if (res[this.urlField]) {
-                file.url = res[this.urlField];
-              }
-              file.response = res;
-              setTimeout(() => {
-                // const value = [...this.fileList].filter(file => file.url && file.url.length > 0).map(file => {
-                //   return {url: file.url}
-                // })
+        url: this.url,
+        headers: {
+          ...this.headers,
+          Authorization: this.getCookie('authorization') || null,
+          'lcap-access': this.access,
+          'lcap-ttl': this.ttl ? this.ttlValue : -1,
+        },
+        withCredentials: this.withCredentials,
+        file,
+        data: this.data,
+        name: 'file',
+        onProgress: (e) => {
+          // file.status = 'uploading';
+          // file.message = e.percent + '%' || '上传中...';
+          this.$emit(
+            'progress',
+            {
+              e,
+              file,
+              xhr,
+            },
+            this
+          );
+        },
+        onSuccess: (res) => {
+          file.status = '';
+          file.message = '';
+          if (res[this.urlField]) {
+            file.url = res[this.urlField];
+          }
+          file.response = res;
+          setTimeout(() => {
+            // const value = [...this.fileList].filter(file => file.url && file.url.length > 0).map(file => {
+            //   return {url: file.url}
+            // })
 
-                if (this.canUp) {
-                  const value = this.fileList.map(file => {
-                    // return {url: file.url}
-                    return file;
-                  })
-                  this.$emit('input', this.toValue(value));
-                  this.$emit('update:fileListProp', this.toValue(value));
+            if (this.canUp) {
+              const value = this.fileList;
+              this.$emit('input', this.toValue(value));
+              this.$emit('update:fileListProp', this.toValue(value));
 
-                  this.$emit('success', {
-                      res,
-                      file,
-                      file,
-                      xhr,
-                  }, this);
-                }
-              }, 100)
-
-          },
-          onError: (e, res) => {
-              file.status = 'failed';
-              file.message = '上传失败';
-              this.$emit('error', {
-                  e,
+              this.$emit(
+                'success',
+                {
                   res,
                   file,
-                  file,
                   xhr,
-              }, this);
+                },
+                this
+              );
+            }
+          }, 100);
+        },
+        onError: (e, res) => {
+          file.status = 'failed';
+          file.message = '上传失败';
+          this.$emit(
+            'error',
+            {
+              e,
+              res,
+              file,
+              xhr,
+            },
+            this
+          );
 
-              // setTimeout(() => {
-              //   const value = this.fileList.filter(file => file.url && file.url.length > 0).map(file => file.url);
-              //   this.$emit('input', this.toValue(value));
-              //   this.$emit('update:fileListProp', this.toValue(value));
-              // }, 500)
-          },
+          // setTimeout(() => {
+          //   const value = this.fileList.filter(file => file.url && file.url.length > 0).map(file => file.url);
+          //   this.$emit('input', this.toValue(value));
+          //   this.$emit('update:fileListProp', this.toValue(value));
+          // }, 500)
+        },
       });
     },
 
@@ -600,11 +627,10 @@ export default createComponent({
       const ca = document.cookie.split(';');
       for (let i = 0; i < ca.length; i++) {
         const c = ca[i].trim();
-        if (c.indexOf(name) === 0)
-          return c.substring(name.length, c.length);
+        if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
       }
       return '';
-    }
+    },
   },
 
   render() {
