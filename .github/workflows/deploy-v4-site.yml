@@ -32,14 +32,14 @@ jobs:
         run: npm run build:site
 
       - name: Deploy for Gitee 🚀
-        uses: JamesIves/github-pages-deploy-action@4.4.0
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
           branch: gh-pages
           folder: packages/vant/site-dist
           target-folder: v4
 
       - name: Deploy for GitHub 🚀
-        uses: JamesIves/github-pages-deploy-action@4.4.0
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
           branch: main
           folder: packages/vant/site-dist
