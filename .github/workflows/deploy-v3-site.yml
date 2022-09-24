@@ -15,7 +15,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
         with:
-          ref: 'dev'
+          ref: '3.x'
 
       - name: Install pnpm
         run: npm i pnpm@7 -g
@@ -32,8 +32,18 @@ jobs:
         run: npm run build:site
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
           branch: gh-pages
           folder: packages/vant/site-dist
+          clean: false
+
+      - name: Deploy for GitHub 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        with:
+          branch: main
+          folder: packages/vant/site-dist
+          token: ${{ secrets.VANT_UI_TOKEN }}
+          repository-name: vant-ui/vant-ui.github.io
+          target-folder: vant
           clean: false
