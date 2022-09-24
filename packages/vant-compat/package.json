@@ -39,7 +39,7 @@
     "@vue/runtime-core": "^3.2.27",
     "vant": "workspace:*",
     "vue": "^3.2.27",
-    "esbuild": "^0.14.29",
+    "esbuild": "^0.15.9",
     "release-it": "^15.1.1",
     "typescript": "^4.7.4"
   },

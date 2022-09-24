@@ -15,7 +15,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
         with:
-          ref: 'next'
+          ref: 'main'
 
       - name: Install pnpm
         run: npm i pnpm@7 -g
