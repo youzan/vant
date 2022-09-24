@@ -31,10 +31,19 @@ jobs:
       - name: Build Site
         run: npm run build:site
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+      - name: Deploy for Gitee 🚀
+        uses: JamesIves/github-pages-deploy-action@4.4.0
         with:
           branch: gh-pages
           folder: packages/vant/site-dist
           target-folder: v4
-          clean: false
+
+      - name: Deploy for GitHub 🚀
+        uses: JamesIves/github-pages-deploy-action@4.4.0
+        with:
+          branch: gh-pages
+          folder: packages/vant/site-dist
+          token: ${{ secrets.VANT_UI_TOKEN }}
+          repository-name: vant-ui/vant-ui.github.io
+          branch: main
+          target-folder: vant/v4
