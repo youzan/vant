@@ -19,6 +19,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.6.3](https://github.com/vant-ui/vant/compare/v3.6.2...v3.6.3)
+
+`2022-09-24`
+
+**Feature**
+
+- Dialog: message-align can be justify [#11014](https://github.com/vant-ui/vant/issues/11014)
+- Image: add block prop [#11022](https://github.com/vant-ui/vant/issues/11022)
+
+**Bug Fixes**
+
+- Tabs: incorrect scroll position in some cases [#11085](https://github.com/vant-ui/vant/issues/11085)
+- Tabs: incorrect scroll position when inited [#11059](https://github.com/vant-ui/vant/issues/11059)
+- utils: avoid getting unexpected value [#11010](https://github.com/vant-ui/vant/issues/11010)
+
 ### [v3.6.2](https://github.com/vant-ui/vant/compare/v3.6.1...v3.6.2)
 
 `2022-09-04`
