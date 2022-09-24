@@ -41,9 +41,8 @@ jobs:
       - name: Deploy for GitHub 🚀
         uses: JamesIves/github-pages-deploy-action@4.4.0
         with:
-          branch: gh-pages
+          branch: main
           folder: packages/vant/site-dist
           token: ${{ secrets.VANT_UI_TOKEN }}
           repository-name: vant-ui/vant-ui.github.io
-          branch: main
           target-folder: vant/v4
