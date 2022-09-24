@@ -19,6 +19,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.6.3](https://github.com/vant-ui/vant/compare/v3.6.2...v3.6.3)
+
+`2022-09-24`
+
+**Feature**
+
+- Dialog: message-align 属性支持设置为 justify [#11014](https://github.com/vant-ui/vant/issues/11014)
+- Image: 新增 block 属性 [#11022](https://github.com/vant-ui/vant/issues/11022)
+
+**Bug Fixes**
+
+- Tabs: 修复个别情况下页面滚动位置错误的问题 [#11085](https://github.com/vant-ui/vant/issues/11085)
+- Tabs: 修复初始化时菜单横向滚动位置错误的问题 [#11059](https://github.com/vant-ui/vant/issues/11059)
+- Locale: 修复读取 i18n 文案时可能获取到 JS 原生方法的问题 [#11010](https://github.com/vant-ui/vant/issues/11010)
+
 ### [v3.6.2](https://github.com/vant-ui/vant/compare/v3.6.1...v3.6.2)
 
 `2022-09-04`
