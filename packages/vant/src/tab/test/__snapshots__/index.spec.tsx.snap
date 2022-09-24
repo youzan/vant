@@ -470,7 +470,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
       <div style="transition-duration: 300ms; transform: translateX(-100px); width: 300px;"
            class="van-swipe__track"
       >
-        <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+        <div class="van-swipe-item van-tab__panel-wrapper"
              id="van-tab"
              role="tabpanel"
              tabindex="-1"
@@ -560,7 +560,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
       <div style="transition-duration: 300ms; transform: translateX(-200px); width: 300px;"
            class="van-swipe__track"
       >
-        <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+        <div class="van-swipe-item van-tab__panel-wrapper"
              id="van-tab"
              role="tabpanel"
              tabindex="-1"
