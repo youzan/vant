@@ -19,6 +19,19 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-rc.4](https://github.com/vant-ui/vant/compare/v4.0.0-rc.3...v4.0.0-rc.4)
+
+`2022-09-25`
+
+**Feature**
+
+- Field: end-validate 事件新增 message 参数 [#11080](https://github.com/vant-ui/vant/issues/11080)
+
+**Bug Fixes**
+
+- Tabs: 修复个别情况下页面滚动位置错误的问题 [#11085](https://github.com/vant-ui/vant/issues/11085)
+- Tabs: 修复初始化时菜单横向滚动位置错误的问题 [#11059](https://github.com/vant-ui/vant/issues/11059)
+
 ### [v4.0.0-rc.3](https://github.com/vant-ui/vant/compare/v4.0.0-rc.2...v4.0.0-rc.3)
 
 `2022-09-12`
