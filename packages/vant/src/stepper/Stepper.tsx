@@ -84,7 +84,7 @@ export default defineComponent({
   ],
 
   setup(props, { emit }) {
-    const format = (value: Numeric) => {
+    const format = (value: Numeric, autoFixed = true) => {
       const { min, max, allowEmpty, decimalLength } = props;
 
       if (allowEmpty && value === '') {
@@ -94,7 +94,9 @@ export default defineComponent({
       value = formatNumber(String(value), !props.integer);
       value = value === '' ? 0 : +value;
       value = Number.isNaN(value) ? +min : value;
-      value = props.autoFixed ? Math.max(Math.min(+max, value), +min) : value;
+
+      // whether to format the value entered by the user
+      value = autoFixed ? Math.max(Math.min(+max, value), +min) : value;
 
       // format decimal
       if (isDef(decimalLength)) {
@@ -205,7 +207,7 @@ export default defineComponent({
 
     const onBlur = (event: Event) => {
       const input = event.target as HTMLInputElement;
-      const value = format(input.value);
+      const value = format(input.value, props.autoFixed);
       input.value = String(value);
       current.value = value;
       nextTick(() => {

@@ -47,7 +47,7 @@ export default {
 
 ### 限制输入范围
 
-通过 `min` 和 `max` 属性限制输入值的范围，默认超出范围会自动校正最大值或最小值，通过 `auto-fixed` 可以关闭自动校正。
+通过 `min` 和 `max` 属性限制输入值的范围，默认超出范围后会自动校正最大值或最小值，通过 `auto-fixed` 可以关闭自动校正。
 
 ```html
 <van-stepper v-model="value" min="5" max="8" />
@@ -146,6 +146,7 @@ export default {
 | v-model | 当前输入的值 | _number \| string_ | - |
 | min | 最小值 | _number \| string_ | `1` |
 | max | 最大值 | _number \| string_ | - |
+| auto-fixed | 是否自动校正超出限制范围的数值，设置为 `false` 后输入超过限制范围的数值将不会自动校正 | _boolean_ | `true` |
 | default-value | 初始值，当 v-model 为空时生效 | _number \| string_ | `1` |
 | step | 步长，每次点击时改变的值 | _number \| string_ | `1` |
 | name | 标识符，通常为一个唯一的字符串或数字，可以在 `change` 事件回调参数中获取 | _number \| string_ | - |
@@ -165,7 +166,6 @@ export default {
 | show-input | 是否显示输入框 | _boolean_ | `true` |
 | long-press | 是否开启长按手势，开启后可以长按增加和减少按钮 | _boolean_ | `true` |
 | allow-empty | 是否允许输入的值为空，设置为 `true` 后允许传入空字符串 | _boolean_ | `false` |
-| auto-fixed | 是否自动校正超出限制范围的数值，设置为 `false` 后输入超过限制范围的数值将不会自动校正 | _boolean_ | `true` |
 
 ### Events
 
