@@ -126,6 +126,7 @@ export default {
 | v-model | Current value | _number \| string_ | - |
 | min | Min value | _number \| string_ | `1` |
 | max | Max value | _number \| string_ | - |
+| auto-fixed | Whether to auto fix value that is out of range, set to `false` and value that is out of range won’t be auto fixed | _boolean_ | `true` |
 | default-value | Default value, valid when v-model is empty | _number \| string_ | `1` |
 | step | Value change step | _number \| string_ | `1` |
 | name | Stepper name, usually a unique string or number | _number \| string_ | - |

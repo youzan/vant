@@ -249,6 +249,26 @@ test('should format input value when stepper blurred', async () => {
   expect(wrapper.emitted('blur')).toBeTruthy();
 });
 
+test('should not format input value when stepper blurred if set auto-fixed to false', async () => {
+  const wrapper = mount(Stepper, {
+    props: {
+      min: 5,
+      max: 8,
+      autoFixed: false,
+    },
+  });
+
+  const input = wrapper.find('input');
+
+  input.element.value = '2';
+  await input.trigger('blur');
+  expect(wrapper.emitted('update:modelValue')![1]).toEqual([2]);
+
+  input.element.value = '10';
+  await input.trigger('blur');
+  expect(wrapper.emitted('update:modelValue')![2]).toEqual([10]);
+});
+
 test('should update input width when using input-width prop', () => {
   const wrapper = mount(Stepper, {
     props: {
