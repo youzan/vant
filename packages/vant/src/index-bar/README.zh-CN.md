@@ -45,12 +45,16 @@ app.use(IndexAnchor);
 
 ```html
 <van-index-bar :index-list="indexList">
-  <van-index-anchor index="1">标题1</van-index-anchor>
+  <van-index-anchor index="0">
+    <template #index>
+      <van-icon name="star-o" />
+    </template>
+  </van-index-anchor>
   <van-cell title="文本" />
   <van-cell title="文本" />
   <van-cell title="文本" />
 
-  <van-index-anchor index="2">标题2</van-index-anchor>
+  <van-index-anchor index="1">标题1</van-index-anchor>
   <van-cell title="文本" />
   <van-cell title="文本" />
   <van-cell title="文本" />
@@ -63,7 +67,7 @@ app.use(IndexAnchor);
 export default {
   setup() {
     return {
-      indexList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      indexList: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     };
   },
 };
@@ -127,6 +131,7 @@ indexBarRef.value?.scrollTo('B');
 | 名称    | 说明                             |
 | ------- | -------------------------------- |
 | default | 锚点位置显示内容，默认为索引字符 |
+| index   | 自定义右侧索引字符               |
 
 ## 主题定制
 

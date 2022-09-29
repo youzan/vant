@@ -25,6 +25,7 @@ import {
   createNamespace,
   getRootScrollTop,
   setRootScrollTop,
+  getNodeParents,
   type Numeric,
 } from '../utils';
 
@@ -200,6 +201,8 @@ export default defineComponent({
 
     const renderIndexes = () =>
       props.indexList.map((index) => {
+        const _index = props.indexList.findIndex((item) => item === index);
+        const slot = children[_index]?.$slots;
         const active = index === activeAnchor.value;
         return (
           <span
@@ -207,7 +210,7 @@ export default defineComponent({
             style={active ? highlightStyle.value : undefined}
             data-index={index}
           >
-            {index}
+            {slot?.index ? slot.index() : index}
           </span>
         );
       });
@@ -243,8 +246,23 @@ export default defineComponent({
       }
     };
 
+    const getDataIndexElement = (target: HTMLElement) => {
+      let el: HTMLElement;
+      const parent = getNodeParents(
+        target,
+        `.${bem('index')}`
+      )[0] as HTMLElement;
+      if (parent) {
+        el = parent;
+      } else {
+        el = target;
+      }
+      return el;
+    };
+
     const onClickSidebar = (event: MouseEvent) => {
-      scrollToElement(event.target as HTMLElement);
+      const el = getDataIndexElement(event.target as HTMLElement);
+      scrollToElement(el);
     };
 
     let touchActiveIndex: string;
@@ -261,11 +279,12 @@ export default defineComponent({
           clientY
         ) as HTMLElement;
         if (target) {
-          const { index } = target.dataset;
+          const el = getDataIndexElement(target);
+          const { index } = el.dataset;
 
           if (index && touchActiveIndex !== index) {
             touchActiveIndex = index;
-            scrollToElement(target);
+            scrollToElement(el);
           }
         }
       }

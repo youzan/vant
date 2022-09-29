@@ -86,3 +86,19 @@ export function isHidden(
 }
 
 export const { width: windowWidth, height: windowHeight } = useWindowSize();
+
+export type TargetElement = HTMLElement | Document;
+
+export function getNodeParents(el: TargetElement, selector?: string) {
+  const parents = [];
+  while (el !== document) {
+    el = el.parentNode as TargetElement;
+    if (
+      !selector ||
+      (el !== document && (el as HTMLElement).matches(selector))
+    ) {
+      parents.unshift(el);
+    }
+  }
+  return parents;
+}
