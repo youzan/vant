@@ -3,6 +3,7 @@ import VanTabs from '../../tabs';
 import VanTab from '../../tab';
 import VanIndexBar from '..';
 import VanIndexAnchor from '../../index-anchor';
+import VanIcon from '../../icon';
 import VanCell from '../../cell';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
@@ -18,9 +19,9 @@ const t = useTranslate({
   },
 });
 
-const activeTab = ref(0);
+const activeTab = ref(1);
 const indexList: string[] = [];
-const customIndexList = [1, 2, 3, 4, 5, 6, 8, 9, 10];
+const customIndexList = [0, 1, 2, 3, 4, 5, 6, 8, 9, 10];
 const charCodeOfA = 'A'.charCodeAt(0);
 
 for (let i = 0; i < 26; i++) {
@@ -33,7 +34,9 @@ for (let i = 0; i < 26; i++) {
     <van-tab :title="t('basicUsage')">
       <van-index-bar>
         <div v-for="index in indexList" :key="index">
-          <van-index-anchor :index="index" />
+          <van-index-anchor :index="index">
+            {{ t('title') + index }}
+          </van-index-anchor>
           <van-cell :title="t('text')" />
           <van-cell :title="t('text')" />
           <van-cell :title="t('text')" />
@@ -45,7 +48,11 @@ for (let i = 0; i < 26; i++) {
       <van-index-bar :index-list="customIndexList">
         <div v-for="index in customIndexList" :key="index">
           <van-index-anchor :index="index">
-            {{ t('title') + index }}
+            <van-icon v-if="index === 0" name="star-o" />
+            <span v-else>{{ t('title') + index }}</span>
+            <template v-if="index === 0" #index>
+              <van-icon name="star-o" />
+            </template>
           </van-index-anchor>
           <van-cell :title="t('text')" />
           <van-cell :title="t('text')" />

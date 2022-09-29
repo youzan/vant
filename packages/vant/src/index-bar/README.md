@@ -41,12 +41,16 @@ app.use(IndexAnchor);
 
 ```html
 <van-index-bar :index-list="indexList">
-  <van-index-anchor index="1">Title 1</van-index-anchor>
+  <van-index-anchor index="0">
+    <template #index>
+      <van-icon name="star-o" />
+    </template>
+  </van-index-anchor>
   <van-cell title="Text" />
   <van-cell title="Text" />
   <van-cell title="Text" />
 
-  <van-index-anchor index="2">Title 2</van-index-anchor>
+  <van-index-anchor index="1">Title 1</van-index-anchor>
   <van-cell title="Text" />
   <van-cell title="Text" />
   <van-cell title="Text" />
@@ -59,7 +63,7 @@ app.use(IndexAnchor);
 export default {
   setup() {
     return {
-      indexList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      indexList: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     };
   },
 };
@@ -123,6 +127,7 @@ indexBarRef.value?.scrollTo('B');
 | Name    | Description                           |
 | ------- | ------------------------------------- |
 | default | Anchor content, show index by default |
+| index   | Customize the right index character   |
 
 ## Theming
 
