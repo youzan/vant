@@ -19,6 +19,19 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0-rc.4](https://github.com/vant-ui/vant/compare/v4.0.0-rc.3...v4.0.0-rc.4)
+
+`2022-09-25`
+
+**Feature**
+
+- Field: add message param to 'end-validate' method [#11080](https://github.com/vant-ui/vant/issues/11080)
+
+**Bug Fixes**
+
+- Tabs: incorrect scroll position in some cases [#11085](https://github.com/vant-ui/vant/issues/11085)
+- Tabs: incorrect scroll position when inited [#11059](https://github.com/vant-ui/vant/issues/11059)
+
 ### [v4.0.0-rc.3](https://github.com/vant-ui/vant/compare/v4.0.0-rc.2...v4.0.0-rc.3)
 
 `2022-09-12`

@@ -318,7 +318,7 @@ export default {
 | click-left-icon | 点击左侧图标时触发 | _event: MouseEvent_ |
 | click-right-icon | 点击右侧图标时触发 | _event: MouseEvent_ |
 | start-validate `v3.5.1` | 开始表单校验时触发 | - |
-| end-validate `v3.5.1` | 结束表单校验时触发 | _{ status: string }_ |
+| end-validate `v3.5.1` | 结束表单校验时触发 | _{ status: string, message: string }_ |
 
 ### 方法
 

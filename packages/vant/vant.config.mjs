@@ -36,6 +36,12 @@ export default {
     htmlMeta: {
       'docsearch:version': 'v4',
     },
+    headHtml: `<script>
+if (location.host === 'youzan.github.io') {
+location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
+}
+</script>
+`,
     locales: {
       'zh-CN': {
         title: 'Vant 4',

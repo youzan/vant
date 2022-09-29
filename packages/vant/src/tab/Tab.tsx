@@ -21,7 +21,7 @@ import {
 import { TABS_KEY } from '../tabs/Tabs';
 
 // Composables
-import { useParent } from '@vant/use';
+import { doubleRaf, useParent } from '@vant/use';
 import { useId } from '../composables/use-id';
 import { useExpose } from '../composables/use-expose';
 import { routeProps } from '../composables/use-route';
@@ -84,6 +84,21 @@ export default defineComponent({
       return isActive;
     });
 
+    const hasInactiveClass = ref(!active.value);
+
+    watch(active, (val) => {
+      if (val) {
+        hasInactiveClass.value = false;
+      } else {
+        // mark tab as inactive until the active tab is rendered
+        // to avoid incorrect scroll position or other render issue
+        // https://github.com/youzan/vant/issues/11050
+        doubleRaf(() => {
+          hasInactiveClass.value = true;
+        });
+      }
+    });
+
     watch(
       () => props.title,
       () => {
@@ -109,7 +124,7 @@ export default defineComponent({
           <SwipeItem
             id={id}
             role="tabpanel"
-            class={bem('panel-wrapper', { inactive: !active.value })}
+            class={bem('panel-wrapper', { inactive: hasInactiveClass.value })}
             tabindex={active.value ? 0 : -1}
             aria-hidden={!active.value}
             aria-labelledby={label}
