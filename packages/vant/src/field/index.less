@@ -21,6 +21,8 @@
 }
 
 .van-field {
+  flex-wrap: wrap;
+
   &__label {
     flex: none;
     box-sizing: border-box;
@@ -36,6 +38,11 @@
 
     &--right {
       text-align: right;
+    }
+
+    &--top {
+      width: 100%;
+      text-align: left;
     }
 
     &--required {
