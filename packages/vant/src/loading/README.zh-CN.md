@@ -76,6 +76,19 @@ app.use(Loading);
 <van-loading text-color="#0094ff" />
 ```
 
+### 自定义图标
+
+通过 `icon` 插槽可以自定义加载图标。
+
+```html
+<van-loading vertical>
+  <template #icon>
+    <van-icon name="star-o" size="30" />
+  </template>
+  加载中...
+</van-loading>
+```
+
 ## API
 
 ### Props
@@ -91,9 +104,10 @@ app.use(Loading);
 
 ### Slots
 
-| 名称    | 说明     |
-| ------- | -------- |
-| default | 加载文案 |
+| 名称    | 说明           |
+| ------- | -------------- |
+| default | 加载文案       |
+| icon    | 自定义加载图标 |
 
 ### 类型定义
 

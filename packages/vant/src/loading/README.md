@@ -66,6 +66,19 @@ use `color` or `text-color` to change text color.
 <van-loading text-color="#0094ff" />
 ```
 
+### Custom Icon
+
+Use `icon` slot to custom icon.
+
+```html
+<van-loading vertical>
+  <template #icon>
+    <van-icon name="star-o" size="30" />
+  </template>
+  Loading...
+</van-loading>
+```
+
 ## API
 
 ### Props
@@ -81,9 +94,10 @@ use `color` or `text-color` to change text color.
 
 ### Slots
 
-| Name    | Description  |
-| ------- | ------------ |
-| default | Loading text |
+| Name    | Description         |
+| ------- | ------------------- |
+| default | Loading text        |
+| icon    | Custom loading icon |
 
 ### Types
 

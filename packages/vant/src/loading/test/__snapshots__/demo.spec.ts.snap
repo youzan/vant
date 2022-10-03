@@ -257,4 +257,20 @@ exports[`should render demo and match snapshot 1`] = `
     </span>
   </div>
 </div>
+<div>
+  <div class="van-loading van-loading--circular van-loading--vertical"
+       aria-live="polite"
+       aria-busy="true"
+  >
+    <span class="van-loading__spinner van-loading__spinner--circular">
+      <i class="van-badge__wrapper van-icon van-icon-star-o"
+         style="font-size: 30px;"
+      >
+      </i>
+    </span>
+    <span class="van-loading__text">
+      Loading...
+    </span>
+  </div>
+</div>
 `;
