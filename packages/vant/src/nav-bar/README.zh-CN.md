@@ -97,7 +97,7 @@ export default {
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | title | 标题 | _string_ | `''` |
 | left-text | 左侧文案 | _string_ | `''` |
 | right-text | 右侧文案 | _string_ | `''` |
@@ -107,6 +107,7 @@ export default {
 | placeholder | 固定在顶部时，是否在标签位置生成一个等高的占位元素 | _boolean_ | `false` |
 | z-index | 导航栏 z-index | _number \| string_ | `1` |
 | safe-area-inset-top | 是否开启[顶部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `false` |
+| clickable | 渲染 `Slots` 是否在父元素添加 `van-haptics-feedback` 类名 | _boolean_ | `true` |  |
 
 ### Slots
 
