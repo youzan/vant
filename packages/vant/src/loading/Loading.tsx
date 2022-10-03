@@ -43,6 +43,15 @@ export default defineComponent({
       extend({ color: props.color }, getSizeStyle(props.size))
     );
 
+    const renderIcon = () => {
+      const DefaultIcon = props.type === 'spinner' ? SpinIcon : CircularIcon;
+      return (
+        <span class={bem('spinner', props.type)} style={spinnerStyle.value}>
+          {slots.icon ? slots.icon() : DefaultIcon}
+        </span>
+      );
+    };
+
     const renderText = () => {
       if (slots.default) {
         return (
@@ -67,9 +76,7 @@ export default defineComponent({
           aria-live="polite"
           aria-busy={true}
         >
-          <span class={bem('spinner', type)} style={spinnerStyle.value}>
-            {type === 'spinner' ? SpinIcon : CircularIcon}
-          </span>
+          {renderIcon()}
           {renderText()}
         </div>
       );
