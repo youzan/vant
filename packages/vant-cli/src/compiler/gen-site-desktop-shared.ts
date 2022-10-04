@@ -1,12 +1,7 @@
 import glob from 'fast-glob';
 import { join, parse } from 'path';
 import { existsSync, readFileSync, readdirSync } from 'fs';
-import {
-  isDev,
-  pascalize,
-  getVantConfig,
-  normalizePath,
-} from '../common/index.js';
+import { pascalize, getVantConfig, normalizePath } from '../common/index.js';
 import {
   SRC_DIR,
   DOCS_DIR,
@@ -80,10 +75,7 @@ function genImportDocuments(items: DocumentItem[]) {
   return items
     .map((item) => {
       const path = normalizePath(item.path);
-      if (isDev()) {
-        return `const ${item.name} = () => import('${path}');`;
-      }
-      return `import ${item.name} from '${path}';`;
+      return `const ${item.name} = () => import('${path}');`;
     })
     .join('\n');
 }
