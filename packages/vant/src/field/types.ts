@@ -28,7 +28,7 @@ export type FieldType =
   | 'textarea'
   | 'datetime-local';
 
-export type FieldTextAlign = 'left' | 'center' | 'right';
+export type FieldTextAlign = 'left' | 'center' | 'right' | 'top';
 
 export type FieldClearTrigger = 'always' | 'focus';
 
