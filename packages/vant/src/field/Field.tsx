@@ -589,16 +589,18 @@ export default defineComponent({
       const Label = renderLabel();
       const LeftIcon = renderLeftIcon();
 
+      const renderTitle = () =>
+        labelAlign === 'top' ? [LeftIcon, Label] : Label;
+
       return (
         <Cell
           v-slots={{
-            icon: LeftIcon ? () => LeftIcon : null,
-            title: Label ? () => Label : null,
+            icon: LeftIcon && labelAlign !== 'top' ? () => LeftIcon : null,
+            title: Label || labelAlign === 'top' ? renderTitle : null,
             value: renderFieldBody,
             extra: slots.extra,
           }}
           size={props.size}
-          icon={props.leftIcon}
           class={bem({
             error: showError.value,
             disabled,

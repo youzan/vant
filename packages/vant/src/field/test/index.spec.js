@@ -509,3 +509,14 @@ test('should render word limit with emoji correctly', () => {
   });
   expect(wrapper.find('.van-field__word-limit').html()).toMatchSnapshot();
 });
+
+test('should render left icon inside label when label-align is top', () => {
+  const wrapper = mount(Field, {
+    props: {
+      label: 'Label',
+      labelAlign: 'top',
+      leftIcon: 'success',
+    },
+  });
+  expect(wrapper.html()).toMatchSnapshot();
+});
