@@ -68,6 +68,12 @@ Select 是桌面端常用的组件，但它的交互形式不适合移动端。
 
 在移动端，我们推荐使用 [Picker 选择器组件](#/zh-CN/picker) 作为代替。
 
+### 是否支持在 uni-app 中使用？
+
+Vant 所有组件都是基于 Vue 框架实现的，没有针对 uni-app 进行适配，因此不保证各个组件在 uni-app 下的可用性。
+
+如果你在 uni-app 中使用 Vant 遇到问题，建议向 uni-app 进行反馈。
+
 ### 部分组件无法在桌面端进行操作？
 
 参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。
