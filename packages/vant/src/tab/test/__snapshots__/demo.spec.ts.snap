@@ -546,58 +546,60 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-tabs van-tabs--line">
     <div>
       <div class="van-sticky">
-        <div class="van-tabs__wrap">
-          <div role="tablist"
-               class="van-tabs__nav van-tabs__nav--line"
-               aria-orientation="horizontal"
-          >
-            <div id="van-tabs-0"
-                 role="tab"
-                 class="van-tab van-tab--line van-tab--active"
-                 tabindex="0"
-                 aria-selected="true"
-                 aria-controls="van-tab"
+        <div>
+          <div class="van-tabs__wrap">
+            <div role="tablist"
+                 class="van-tabs__nav van-tabs__nav--line"
+                 aria-orientation="horizontal"
             >
-              <span class="van-tab__text van-tab__text--ellipsis">
-                Tab 1
-              </span>
-            </div>
-            <div id="van-tabs-1"
-                 role="tab"
-                 class="van-tab van-tab--line"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
-            >
-              <span class="van-tab__text van-tab__text--ellipsis">
-                Tab 2
-              </span>
-            </div>
-            <div id="van-tabs-2"
-                 role="tab"
-                 class="van-tab van-tab--line"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
-            >
-              <span class="van-tab__text van-tab__text--ellipsis">
-                Tab 3
-              </span>
-            </div>
-            <div id="van-tabs-3"
-                 role="tab"
-                 class="van-tab van-tab--line"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
-            >
-              <span class="van-tab__text van-tab__text--ellipsis">
-                Tab 4
-              </span>
-            </div>
-            <div class="van-tabs__line"
-                 style="transform: translateX(50px) translateX(-50%);"
-            >
+              <div id="van-tabs-0"
+                   role="tab"
+                   class="van-tab van-tab--line van-tab--active"
+                   tabindex="0"
+                   aria-selected="true"
+                   aria-controls="van-tab"
+              >
+                <span class="van-tab__text van-tab__text--ellipsis">
+                  Tab 1
+                </span>
+              </div>
+              <div id="van-tabs-1"
+                   role="tab"
+                   class="van-tab van-tab--line"
+                   tabindex="-1"
+                   aria-selected="false"
+                   aria-controls="van-tab"
+              >
+                <span class="van-tab__text van-tab__text--ellipsis">
+                  Tab 2
+                </span>
+              </div>
+              <div id="van-tabs-2"
+                   role="tab"
+                   class="van-tab van-tab--line"
+                   tabindex="-1"
+                   aria-selected="false"
+                   aria-controls="van-tab"
+              >
+                <span class="van-tab__text van-tab__text--ellipsis">
+                  Tab 3
+                </span>
+              </div>
+              <div id="van-tabs-3"
+                   role="tab"
+                   class="van-tab van-tab--line"
+                   tabindex="-1"
+                   aria-selected="false"
+                   aria-controls="van-tab"
+              >
+                <span class="van-tab__text van-tab__text--ellipsis">
+                  Tab 4
+                </span>
+              </div>
+              <div class="van-tabs__line"
+                   style="transform: translateX(50px) translateX(-50%);"
+              >
+              </div>
             </div>
           </div>
         </div>
@@ -1096,102 +1098,104 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-tabs van-tabs--line">
     <div>
       <div class="van-sticky">
-        <div class="van-tabs__wrap">
-          <div role="tablist"
-               class="van-tabs__nav van-tabs__nav--line van-tabs__nav--complete"
-               aria-orientation="horizontal"
-          >
-            <div id="van-tabs-0"
-                 role="tab"
-                 class="van-tab van-tab--line van-tab--grow van-tab--active"
-                 tabindex="0"
-                 aria-selected="true"
-                 aria-controls="van-tab"
+        <div>
+          <div class="van-tabs__wrap">
+            <div role="tablist"
+                 class="van-tabs__nav van-tabs__nav--line van-tabs__nav--complete"
+                 aria-orientation="horizontal"
             >
-              <span class="van-tab__text">
-                Tab 1
-              </span>
-            </div>
-            <div id="van-tabs-1"
-                 role="tab"
-                 class="van-tab van-tab--line van-tab--grow"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
-            >
-              <span class="van-tab__text">
-                Tab 2
-              </span>
-            </div>
-            <div id="van-tabs-2"
-                 role="tab"
-                 class="van-tab van-tab--line van-tab--grow"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
-            >
-              <span class="van-tab__text">
-                Tab 3
-              </span>
-            </div>
-            <div id="van-tabs-3"
-                 role="tab"
-                 class="van-tab van-tab--line van-tab--grow"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
-            >
-              <span class="van-tab__text">
-                Tab 4
-              </span>
-            </div>
-            <div id="van-tabs-4"
-                 role="tab"
-                 class="van-tab van-tab--line van-tab--grow"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
-            >
-              <span class="van-tab__text">
-                Tab 5
-              </span>
-            </div>
-            <div id="van-tabs-5"
-                 role="tab"
-                 class="van-tab van-tab--line van-tab--grow"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
-            >
-              <span class="van-tab__text">
-                Tab 6
-              </span>
-            </div>
-            <div id="van-tabs-6"
-                 role="tab"
-                 class="van-tab van-tab--line van-tab--grow"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
-            >
-              <span class="van-tab__text">
-                Tab 7
-              </span>
-            </div>
-            <div id="van-tabs-7"
-                 role="tab"
-                 class="van-tab van-tab--line van-tab--grow"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
-            >
-              <span class="van-tab__text">
-                Tab 8
-              </span>
-            </div>
-            <div class="van-tabs__line"
-                 style="transform: translateX(50px) translateX(-50%);"
-            >
+              <div id="van-tabs-0"
+                   role="tab"
+                   class="van-tab van-tab--line van-tab--grow van-tab--active"
+                   tabindex="0"
+                   aria-selected="true"
+                   aria-controls="van-tab"
+              >
+                <span class="van-tab__text">
+                  Tab 1
+                </span>
+              </div>
+              <div id="van-tabs-1"
+                   role="tab"
+                   class="van-tab van-tab--line van-tab--grow"
+                   tabindex="-1"
+                   aria-selected="false"
+                   aria-controls="van-tab"
+              >
+                <span class="van-tab__text">
+                  Tab 2
+                </span>
+              </div>
+              <div id="van-tabs-2"
+                   role="tab"
+                   class="van-tab van-tab--line van-tab--grow"
+                   tabindex="-1"
+                   aria-selected="false"
+                   aria-controls="van-tab"
+              >
+                <span class="van-tab__text">
+                  Tab 3
+                </span>
+              </div>
+              <div id="van-tabs-3"
+                   role="tab"
+                   class="van-tab van-tab--line van-tab--grow"
+                   tabindex="-1"
+                   aria-selected="false"
+                   aria-controls="van-tab"
+              >
+                <span class="van-tab__text">
+                  Tab 4
+                </span>
+              </div>
+              <div id="van-tabs-4"
+                   role="tab"
+                   class="van-tab van-tab--line van-tab--grow"
+                   tabindex="-1"
+                   aria-selected="false"
+                   aria-controls="van-tab"
+              >
+                <span class="van-tab__text">
+                  Tab 5
+                </span>
+              </div>
+              <div id="van-tabs-5"
+                   role="tab"
+                   class="van-tab van-tab--line van-tab--grow"
+                   tabindex="-1"
+                   aria-selected="false"
+                   aria-controls="van-tab"
+              >
+                <span class="van-tab__text">
+                  Tab 6
+                </span>
+              </div>
+              <div id="van-tabs-6"
+                   role="tab"
+                   class="van-tab van-tab--line van-tab--grow"
+                   tabindex="-1"
+                   aria-selected="false"
+                   aria-controls="van-tab"
+              >
+                <span class="van-tab__text">
+                  Tab 7
+                </span>
+              </div>
+              <div id="van-tabs-7"
+                   role="tab"
+                   class="van-tab van-tab--line van-tab--grow"
+                   tabindex="-1"
+                   aria-selected="false"
+                   aria-controls="van-tab"
+              >
+                <span class="van-tab__text">
+                  Tab 8
+                </span>
+              </div>
+              <div class="van-tabs__line"
+                   style="transform: translateX(50px) translateX(-50%);"
+              >
+              </div>
             </div>
           </div>
         </div>
