@@ -6,9 +6,10 @@
 
 对以下依赖进行了大版本升级：
 
-- vite v3
-- @vitejs/plugin-vue v3
-- @vitejs/plugin-vue-jsx v2
+- vite: 由 v2 升级至 v3
+- jest: 由 v27 升级至 v29
+- @vitejs/plugin-vue: 由 v2 升级至 v3
+- @vitejs/plugin-vue-jsx: 由 v1 升级至 v2
 
 ### 依赖精简
 

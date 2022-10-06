@@ -87,6 +87,8 @@ module.exports = {
     if (isJsxFile(path)) {
       code = transformJsx(code, path);
     }
-    return transformScript(code);
+    return {
+      code: transformScript(code)
+    };
   },
 };
