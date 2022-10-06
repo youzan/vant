@@ -29,6 +29,10 @@ const DEFAULT_CONFIG = {
   ],
   coverageReporters: ['html', 'lcov', 'text-summary'],
   coverageDirectory: './test/coverage',
+  testEnvironmentOptions: {
+    // https://stackoverflow.com/questions/72428323/jest-referenceerror-vue-is-not-defined
+    customExportConditions: ['node', 'node-addons'],
+  },
 };
 
 function readRootConfig() {
