@@ -19,6 +19,7 @@ import {
   genOptions,
   sharedProps,
   pickerInheritKeys,
+  formatValueRange,
 } from '../date-picker/utils';
 
 // Components
@@ -89,23 +90,21 @@ export default defineComponent({
       })
     );
 
-    watch(
-      currentValues,
-      (newValues) => {
-        if (!isSameValue(newValues, props.modelValue)) {
-          emit('update:modelValue', newValues);
-        }
-      },
-      { immediate: true }
-    );
+    watch(currentValues, (newValues) => {
+      if (!isSameValue(newValues, props.modelValue)) {
+        emit('update:modelValue', newValues);
+      }
+    });
 
     watch(
       () => props.modelValue,
       (newValues) => {
+        newValues = formatValueRange(newValues, columns.value);
         if (!isSameValue(newValues, currentValues.value)) {
           currentValues.value = newValues;
         }
-      }
+      },
+      { immediate: true }
     );
 
     const onChange = (...args: unknown[]) => emit('change', ...args);

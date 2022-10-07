@@ -14,6 +14,7 @@ import {
   sharedProps,
   getMonthEndDay,
   pickerInheritKeys,
+  formatValueRange,
 } from './utils';
 
 // Components
@@ -143,9 +144,13 @@ export default defineComponent({
     watch(
       () => props.modelValue,
       (newValues) => {
+        newValues = formatValueRange(newValues, columns.value);
         if (!isSameValue(newValues, currentValues.value)) {
           currentValues.value = newValues;
         }
+      },
+      {
+        immediate: true,
       }
     );
 
