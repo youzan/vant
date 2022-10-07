@@ -2,6 +2,7 @@ import { nextTick } from 'vue';
 import { later, mount } from '../../../test';
 import DatePicker from '..';
 import type {
+  PickerOption,
   PickerCancelEventParams,
   PickerConfirmEventParams,
 } from '../../picker';
@@ -118,4 +119,82 @@ test('should render with min-date correctly', async () => {
   expect(
     wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
   ).toEqual(['2000', '10', '10']);
+});
+
+test('should render title slot correctly', () => {
+  const wrapper = mount(DatePicker, {
+    slots: {
+      title: () => 'Custom title',
+    },
+  });
+
+  expect(wrapper.find('.van-picker__toolbar').html()).toMatchSnapshot();
+});
+
+function filter(type: string, options: PickerOption[]): PickerOption[] {
+  return options.filter((option) => Number(option.value) % 10 === 0);
+}
+
+test('should filter options when using filter prop', () => {
+  const maxDate = new Date(2010, 1, 1);
+  const minDate = new Date(2000, 1, 1);
+  const wrapper = mount(DatePicker, {
+    props: {
+      filter,
+      maxDate,
+      minDate,
+      modelValue: ['2005', '01', '01'],
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should format options correctly when using formatter prop', async () => {
+  const formatter = (type: string, option: PickerOption): PickerOption => {
+    option.text = `${option.text} ${type}`;
+    return option;
+  };
+  const maxDate = new Date(2010, 1, 1);
+  const minDate = new Date(2000, 1, 1);
+  const wrapper = mount(DatePicker, {
+    props: {
+      filter,
+      formatter,
+      maxDate,
+      minDate,
+      modelValue: ['2005', '01', '01'],
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should update value correctly when dynamically change min-date', async () => {
+  const maxDate = new Date(2050, 1, 1);
+  const minDate = new Date(2000, 1, 1);
+  const wrapper = mount(DatePicker, {
+    props: {
+      modelValue: ['2005', '10', '10'],
+      minDate,
+      maxDate,
+      'onUpdate:modelValue': (newVal: string[]) => {
+        nextTick(() => {
+          wrapper.setProps({
+            modelValue: newVal,
+          });
+        });
+      },
+    },
+  });
+
+  await later();
+  await wrapper.setProps({
+    minDate: new Date(2020, 11, 20),
+  });
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
+  ).toEqual(['2020', '12', '20']);
 });
