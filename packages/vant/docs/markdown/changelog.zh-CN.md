@@ -19,6 +19,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.6.4](https://github.com/vant-ui/vant/compare/v3.6.3...v3.6.4)
+
+`2022-10-07`
+
+**Bug Fixes**
+
+- Tabs: 修复开启 scrollspy 时个别情况下标题栏滚动位置错误的问题 [#11116](https://github.com/vant-ui/vant/issues/11116)
+- Tabs: 修复开启 scrollspy 时 nav-bottom 插槽遮挡内容的问题 [#11115](https://github.com/vant-ui/vant/issues/11115)
+
 ### [v3.6.3](https://github.com/vant-ui/vant/compare/v3.6.2...v3.6.3)
 
 `2022-09-24`
