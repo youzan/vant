@@ -9,6 +9,7 @@ import FormatValue from './FormatValue.vue';
 import Autosize from './Autosize.vue';
 import ShowWordLimit from './ShowWordLimit.vue';
 import InputAlign from './InputAlign.vue';
+import LabelAlign from './LabelAlign.vue';
 </script>
 
 <template>
@@ -22,4 +23,5 @@ import InputAlign from './InputAlign.vue';
   <autosize />
   <show-word-limit />
   <input-align />
+  <label-align />
 </template>

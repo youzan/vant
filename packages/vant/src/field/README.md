@@ -241,6 +241,21 @@ Use `input-align` prop to align the input value.
 </van-cell-group>
 ```
 
+### Label Align
+
+Use `label-align` prop to align the input value.
+
+```html
+<van-cell-group inset>
+  <van-field
+    v-model="value"
+    label="Tel"
+    placeholder="Please input tel number"
+    input-align="top"
+  />
+</van-cell-group>
+```
+
 ## API
 
 ### Props
