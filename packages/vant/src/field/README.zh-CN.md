@@ -260,6 +260,21 @@ export default {
 </van-cell-group>
 ```
 
+### 输入框文本位置
+
+通过 `label-align` 属性可以设置输入框文本的位置，可选值为 `center`、`right`、`top`。
+
+```html
+<van-cell-group inset>
+  <van-field
+    v-model="value"
+    label="手机号"
+    placeholder="请输入手机号"
+    input-align="top"
+  />
+</van-cell-group>
+```
+
 ## API
 
 ### Props
