@@ -143,55 +143,6 @@
 //   expect(wrapper.emitted<[Date]>('confirm')![1][0].getHours()).toEqual(23);
 // });
 
-// test('cancel event', () => {
-//   const wrapper = mount(DatePicker);
-
-//   wrapper.find('.van-picker__cancel').trigger('click');
-//   expect(wrapper.emitted('cancel')).toBeTruthy();
-// });
-
-// test('max-date prop', () => {
-//   const maxDate = new Date(2010, 5, 0, 0, 0);
-//   const wrapper = mount(DatePicker, {
-//     props: {
-//       modelValue: new Date(2020, 10, 30, 30, 30),
-//       maxDate,
-//     },
-//   });
-
-//   wrapper.find('.van-picker__confirm').trigger('click');
-//   expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(maxDate);
-// });
-
-// test('min-date prop', () => {
-//   const minDate = new Date(2030, 0, 0, 0, 0);
-//   const wrapper = mount(DatePicker, {
-//     props: {
-//       modelValue: new Date(2020, 0, 0, 0, 0),
-//       minDate,
-//     },
-//   });
-
-//   wrapper.find('.van-picker__confirm').trigger('click');
-//   expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(minDate);
-// });
-
-// test('dynamic set value', async () => {
-//   const wrapper = mount(DatePicker, {
-//     props: {
-//       modelValue: new Date(2019, 1, 1),
-//     },
-//   });
-
-//   await wrapper.setProps({ modelValue: new Date(2019, 1, 1) });
-//   wrapper.find('.van-picker__confirm').trigger('click');
-//   await wrapper.setProps({ modelValue: new Date(2025, 1, 1) });
-//   wrapper.find('.van-picker__confirm').trigger('click');
-
-//   expect(wrapper.emitted<[Date]>('confirm')![0][0].getFullYear()).toEqual(2019);
-//   expect(wrapper.emitted<[Date]>('confirm')![1][0].getFullYear()).toEqual(2025);
-// });
-
 // test('use min-date with filter', async () => {
 //   const minDate = new Date(2030, 0, 0, 0, 3);
 //   const maxDate = new Date(2040, 0, 0, 0, 0);
