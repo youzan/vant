@@ -19,6 +19,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.6.4](https://github.com/vant-ui/vant/compare/v3.6.3...v3.6.4)
+
+`2022-10-07`
+
+**Bug Fixes**
+
+- Tabs: incorrect nav scroll animation in some cases [#11116](https://github.com/vant-ui/vant/issues/11116)
+- Tabs: scroll position when using nav-bottom slot [#11115](https://github.com/vant-ui/vant/issues/11115)
+
 ### [v3.6.3](https://github.com/vant-ui/vant/compare/v3.6.2...v3.6.3)
 
 `2022-09-24`
