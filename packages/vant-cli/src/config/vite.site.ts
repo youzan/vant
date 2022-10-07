@@ -144,6 +144,11 @@ export function getViteConfigForSiteDev(): InlineConfig {
   return {
     root: SITE_SRC_DIR,
 
+    optimizeDeps: {
+      // https://github.com/youzan/vant/issues/10930
+      include: ['vue', 'vue-router'],
+    },
+
     plugins: [
       vitePluginGenVantBaseCode(),
       vitePluginVue({
