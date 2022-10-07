@@ -19,6 +19,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0-rc.5](https://github.com/vant-ui/vant/compare/v4.0.0-rc.4...v4.0.0-rc.5)
+
+`2022-10-07`
+
+**Feature**
+
+- Field: support label-position top [#11102](https://github.com/vant-ui/vant/issues/11102)
+- Loading: add icon slot [#11109](https://github.com/vant-ui/vant/issues/11109)
+- NavBar: add clickable prop [#11048](https://github.com/vant-ui/vant/issues/11048)
+- Stepper: add auto-fixed prop [#11071](https://github.com/vant-ui/vant/issues/11071)
+
+**Bug Fixes**
+
+- DatePicker: format value when exceed max date [#11122](https://github.com/vant-ui/vant/issues/11122)
+- Tabs: incorrect nav scroll animation in some cases [#11116](https://github.com/vant-ui/vant/issues/11116)
+- Tabs: scroll position when using nav-bottom slot [#11115](https://github.com/vant-ui/vant/issues/11115)
+
 ### [v4.0.0-rc.4](https://github.com/vant-ui/vant/compare/v4.0.0-rc.3...v4.0.0-rc.4)
 
 `2022-09-25`

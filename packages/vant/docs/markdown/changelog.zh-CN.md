@@ -19,6 +19,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-rc.5](https://github.com/vant-ui/vant/compare/v4.0.0-rc.4...v4.0.0-rc.5)
+
+`2022-10-07`
+
+**Feature**
+
+- Field: 支持将 label-position 设置为 top [#11102](https://github.com/vant-ui/vant/issues/11102)
+- Loading: 新增 icon 插槽 [#11109](https://github.com/vant-ui/vant/issues/11109)
+- NavBar: 新增 clickable 属性 [#11048](https://github.com/vant-ui/vant/issues/11048)
+- Stepper: 新增 auto-fixed 属性 [#11071](https://github.com/vant-ui/vant/issues/11071)
+
+**Bug Fixes**
+
+- DatePicker: 修复日期超出 maxDate 时格式化不正确的问题 [#11122](https://github.com/vant-ui/vant/issues/11122)
+- Tabs: 修复开启 scrollspy 时个别情况下标题栏滚动位置错误的问题 [#11116](https://github.com/vant-ui/vant/issues/11116)
+- Tabs: 修复开启 scrollspy 时 nav-bottom 插槽遮挡内容的问题 [#11115](https://github.com/vant-ui/vant/issues/11115)
+
 ### [v4.0.0-rc.4](https://github.com/vant-ui/vant/compare/v4.0.0-rc.3...v4.0.0-rc.4)
 
 `2022-09-25`
