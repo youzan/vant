@@ -102,15 +102,15 @@ export default createComponent({
     },
     access: {
       type: String,
-      default: 'public',
+      default: null,
     },
     ttl: {
       type: Boolean,
-      default: false,
+      default: null,
     },
     ttlValue: {
       type: Number,
-      default: -1,
+      default: null,
     },
   },
   data() {
@@ -545,14 +545,24 @@ export default createComponent({
     },
 
     post(file) {
+      const headers = {
+        ...this.headers,
+        Authorization: this.getCookie('authorization') || null,
+      };
+      if (this.access !== null) {
+        headers['lcap-access'] = this.access;
+      }
+      if (this.ttlValue !== null) {
+        if (this.ttl !== null) {
+          headers['lcap-ttl'] = this.ttl ? this.ttlValue : -1;
+        } else {
+          headers['lcap-ttl'] = this.ttlValue;
+        }
+      }
+
       const xhr = ajax({
         url: this.url,
-        headers: {
-          ...this.headers,
-          Authorization: this.getCookie('authorization') || null,
-          'lcap-access': this.access,
-          'lcap-ttl': this.ttl ? this.ttlValue : -1,
-        },
+        headers,
         withCredentials: this.withCredentials,
         file,
         data: this.data,

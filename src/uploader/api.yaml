@@ -114,7 +114,6 @@
     - name: access
       title: '文件访问策略'
       type: string
-      default: 'public'
       options:
         - value: public
           title: 任何人可访问
@@ -123,12 +122,10 @@
     - name: ttl
       title: 文件有效期
       type: boolean
-      default: false
       description: 是否开启文件有效期控制
     - name: ttlValue
       title: 上传后有效天数
       type: number
-      default: ''
       description: 文件有效期天数
       # 此属性依赖的属性
       depProp:
