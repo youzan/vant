@@ -172,6 +172,42 @@ export default {
 };
 ```
 
+### 组件调用 - 使用 image 插槽
+
+```html
+<van-image-preview v-model:show="show" :images="images" @change="onChange">
+  <template #image="{src}">
+    <video style="width: 100%;" controls><source :src="src" /></video>
+  </template>
+</van-image-preview>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const show = ref(false);
+    const index = ref(0);
+    const images = [
+      'https://www.w3school.com.cn/i/movie.ogg',
+      'https://www.w3school.com.cn/i/movie.ogg',
+      'https://www.w3school.com.cn/i/movie.ogg',
+    ];
+    const onChange = (newIndex) => {
+      index.value = newIndex;
+    };
+
+    return {
+      show,
+      index,
+      images,
+      onChange,
+    };
+  },
+};
+```
+
 ## API
 
 ### Options
@@ -279,6 +315,7 @@ imagePreviewRef.value?.swipeTo(1);
 | ----- | ------------------------------ | ------------------------- |
 | index | 自定义页码内容                 | { index: 当前图片的索引 } |
 | cover | 自定义覆盖在图片预览上方的内容 | -                         |
+| image | 自定义图片插槽                 | { src: 当前资源地址 }     |
 
 ### onClose 回调参数
 
