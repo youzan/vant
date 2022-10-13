@@ -6108,7 +6108,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-uploader converter=\\\"json\\\" url=\\\"/upload/v1\\\"></van-uploader>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-uploader converter=\\\"json\\\" url=\\\"/upload\\\"></van-uploader>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-uploader",
             "title": "文件上传",
@@ -6120,7 +6120,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-uploader converter=\"json\" url=\"/upload/v1\"></van-uploader>\n</template>\n"
+                    "code": "<template>\n<van-uploader converter=\"json\" url=\"/upload\"></van-uploader>\n</template>\n"
                 }
             ],
             "attrs": [
