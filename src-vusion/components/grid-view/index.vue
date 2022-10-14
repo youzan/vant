@@ -136,6 +136,12 @@
           </div>
           <div
             :class="$style.status"
+            v-else-if="currentData && !currentData.length"
+          >
+            <slot name="empty">{{ emptyText }}</slot>
+          </div>
+          <div
+            :class="$style.status"
             v-else-if="
               (pageable === 'auto-more' || pageable === 'load-more') &&
               currentDataSource &&
@@ -144,12 +150,6 @@
             "
           >
             {{ $t('noMore') }}
-          </div>
-          <div
-            :class="$style.status"
-            v-else-if="currentData && !currentData.length"
-          >
-            <slot name="empty">{{ emptyText }}</slot>
           </div>
         </div>
       </van-pull-refresh>
