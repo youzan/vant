@@ -43,15 +43,18 @@ export default {
         children: [
           { text: '杭州', id: 1 },
           { text: '温州', id: 2 },
+          { text: '宁波', id: 3, disabled: true },
         ],
       },
       {
         text: '江苏',
         children: [
-          { text: '南京', id: 5 },
-          { text: '无锡', id: 6 },
+          { text: '南京', id: 4 },
+          { text: '无锡', id: 5 },
+          { text: '徐州', id: 6 },
         ],
       },
+      { text: '福建', disabled: true },
     ];
 
     return {
@@ -88,15 +91,18 @@ export default {
         children: [
           { text: '杭州', id: 1 },
           { text: '温州', id: 2 },
+          { text: '宁波', id: 3, disabled: true },
         ],
       },
       {
         text: '江苏',
         children: [
-          { text: '南京', id: 5 },
-          { text: '无锡', id: 6 },
+          { text: '南京', id: 4 },
+          { text: '无锡', id: 5 },
+          { text: '徐州', id: 6 },
         ],
       },
+      { text: '福建', disabled: true },
     ];
 
     return {
@@ -166,8 +172,24 @@ export default {
     return {
       activeIndex,
       items: [
-        { text: '浙江', children: [], dot: true },
-        { text: '江苏', children: [], badge: 5 },
+        {
+          text: '浙江',
+          children: [
+            { text: '杭州', id: 1 },
+            { text: '温州', id: 2 },
+            { text: '宁波', id: 3, disabled: true },
+          ],
+          dot: true,
+        },
+        {
+          text: '江苏',
+          children: [
+            { text: '南京', id: 4 },
+            { text: '无锡', id: 5 },
+            { text: '徐州', id: 6 },
+          ],
+          badge: 5,
+        },
       ],
     };
   },

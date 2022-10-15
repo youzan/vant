@@ -41,15 +41,18 @@ export default {
         children: [
           { text: 'Delaware', id: 1 },
           { text: 'Florida', id: 2 },
+          { text: 'Georqia', id: 3, disabled: true },
         ],
       },
       {
         text: 'Group 2',
         children: [
-          { text: 'Alabama', id: 5 },
-          { text: 'Kansas', id: 6 },
+          { text: 'Alabama', id: 4 },
+          { text: 'Kansas', id: 5 },
+          { text: 'Louisiana', id: 6 },
         ],
       },
+      { text: 'Group 3', disabled: true },
     ];
 
     return {
@@ -84,15 +87,18 @@ export default {
         children: [
           { text: 'Delaware', id: 1 },
           { text: 'Florida', id: 2 },
+          { text: 'Georqia', id: 3, disabled: true },
         ],
       },
       {
         text: 'Group 2',
         children: [
-          { text: 'Alabama', id: 5 },
-          { text: 'Kansas', id: 6 },
+          { text: 'Alabama', id: 4 },
+          { text: 'Kansas', id: 5 },
+          { text: 'Louisiana', id: 6 },
         ],
       },
+      { text: 'Group 3', disabled: true },
     ];
 
     return {
@@ -158,8 +164,24 @@ export default {
     return {
       activeIndex,
       items: [
-        { text: 'Group 1', children: [], dot: true },
-        { text: 'Group 2', children: [], badge: 5 },
+        {
+          text: 'Group 1',
+          children: [
+            { text: 'Delaware', id: 1 },
+            { text: 'Florida', id: 2 },
+            { text: 'Georqia', id: 3, disabled: true },
+          ],
+          dot: true,
+        },
+        {
+          text: 'Group 2',
+          children: [
+            { text: 'Alabama', id: 4 },
+            { text: 'Kansas', id: 5 },
+            { text: 'Louisiana', id: 6 },
+          ],
+          badge: 5,
+        },
       ],
     };
   },
