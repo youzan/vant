@@ -17,7 +17,7 @@ const t = useTranslate({
     customConfig: '传入配置项',
     startPosition: '指定初始位置',
     componentCall: '组件调用',
-    componentImage: '组件调用使用image插槽',
+    useImageSlot: '使用 image 插槽',
     index: (index: number) => `第${index + 1}页`,
   },
   'en-US': {
@@ -29,7 +29,7 @@ const t = useTranslate({
     customConfig: 'Custom Config',
     startPosition: 'Set Start Position',
     componentCall: 'Component Call',
-    componentImage: 'Component Call use image slot',
+    useImageSlot: 'Use image slot',
     index: (index: number) => `Page: ${index}`,
   },
 });
@@ -52,7 +52,6 @@ const show = ref(false);
 const index = ref(0);
 
 const showSlot = ref(false);
-const indexSlot = ref(0);
 
 const onClose = () => Toast(t('closed'));
 
@@ -73,10 +72,6 @@ const onChange = (newIndex: number) => {
 
 const showComponentCallSlot = () => {
   showSlot.value = true;
-};
-
-const onChangeSlot = (newIndex: number) => {
-  indexSlot.value = newIndex;
 };
 
 const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
@@ -131,19 +126,17 @@ const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
     </van-image-preview>
   </demo-block>
 
-  <demo-block card :title="t('componentImage')">
+  <demo-block card :title="t('useImageSlot')">
     <van-cell
       is-link
-      :value="t('componentImage')"
+      :value="t('useImageSlot')"
       @click="showComponentCallSlot"
     />
-    <van-image-preview
-      v-model:show="showSlot"
-      :images="imagesSlot"
-      @change="onChangeSlot"
-    >
+    <van-image-preview v-model:show="showSlot" :images="imagesSlot">
       <template #image="{ src }">
-        <video style="width: 100%" controls><source :src="src" /></video>
+        <video style="width: 100%" controls>
+          <source :src="src" />
+        </video>
       </template>
     </van-image-preview>
   </demo-block>
