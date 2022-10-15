@@ -149,12 +149,16 @@ export default {
 };
 ```
 
-### 组件调用 - 使用 image 插槽
+### 使用 image 插槽
+
+当以组件调用的方式使用 ImagePreview 时，可以通过 `image` 插槽来插入自定义的内容，比如展示一个视频内容。
 
 ```html
-<van-image-preview v-model:show="show" :images="images" @change="onChange">
-  <template #image="{src}">
-    <video style="width: 100%;" controls><source :src="src" /></video>
+<van-image-preview v-model:show="show" :images="images">
+  <template #image="{ src }">
+    <video style="width: 100%;" controls>
+      <source :src="src" />
+    </video>
   </template>
 </van-image-preview>
 ```
@@ -165,21 +169,14 @@ import { ref } from 'vue';
 export default {
   setup() {
     const show = ref(false);
-    const index = ref(0);
     const images = [
       'https://www.w3school.com.cn/i/movie.ogg',
       'https://www.w3school.com.cn/i/movie.ogg',
       'https://www.w3school.com.cn/i/movie.ogg',
     ];
-    const onChange = (newIndex) => {
-      index.value = newIndex;
-    };
-
     return {
       show,
-      index,
       images,
-      onChange,
     };
   },
 };
@@ -296,11 +293,11 @@ imagePreviewRef.value?.swipeTo(1);
 
 通过组件调用 `ImagePreview` 时，支持以下插槽：
 
-| 名称  | 说明                           | 参数                      |
-| ----- | ------------------------------ | ------------------------- |
-| index | 自定义页码内容                 | { index: 当前图片的索引 } |
-| cover | 自定义覆盖在图片预览上方的内容 | -                         |
-| image | 自定义图片插槽                 | { src: 当前资源地址 }     |
+| 名称           | 说明                           | 参数                      |
+| -------------- | ------------------------------ | ------------------------- |
+| index          | 自定义页码内容                 | { index: 当前图片的索引 } |
+| cover          | 自定义覆盖在图片预览上方的内容 | -                         |
+| image `v3.6.5` | 自定义图片内容                 | { src: 当前资源地址 }     |
 
 ### onClose 回调参数
 

@@ -138,12 +138,16 @@ export default {
 };
 ```
 
-### Component Call use image slot
+### Use image slot
+
+When using ImagePreview component, you can custom the image through the `image` slot, such as render a video content.
 
 ```html
-<van-image-preview v-model:show="show" :images="images" @change="onChange">
-  <template #image="{src}">
-    <video style="width: 100%;" controls><source :src="src" /></video>
+<van-image-preview v-model:show="show" :images="images">
+  <template #image="{ src }">
+    <video style="width: 100%;" controls>
+      <source :src="src" />
+    </video>
   </template>
 </van-image-preview>
 ```
@@ -154,21 +158,14 @@ import { ref } from 'vue';
 export default {
   setup() {
     const show = ref(false);
-    const index = ref(0);
     const images = [
       'https://www.w3school.com.cn/i/movie.ogg',
       'https://www.w3school.com.cn/i/movie.ogg',
       'https://www.w3school.com.cn/i/movie.ogg',
     ];
-    const onChange = (newIndex) => {
-      index.value = newIndex;
-    };
-
     return {
       show,
-      index,
       images,
-      onChange,
     };
   },
 };
@@ -282,7 +279,7 @@ imagePreviewRef.value?.swipeTo(1);
 | --- | --- | --- |
 | index | Custom index | { index: index of current image } |
 | cover | Custom content that covers the image preview | - |
-| image | Custom image slot | { src: current image src } |
+| image `v3.6.5` | Custom image content | { src: current image src } |
 
 ### onClose Parameters
 
