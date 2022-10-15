@@ -254,3 +254,36 @@ test('zoom out', async () => {
 
   restore();
 });
+
+test('should render image slot correctly', async () => {
+  const wrapper = mount(ImagePreviewComponent, {
+    props: {
+      show: true,
+      images,
+    },
+    slots: {
+      image: ({ src }) => `<img class="test-img" src="${src}" />`,
+    },
+  });
+
+  await later();
+
+  expect(wrapper.html().includes('test-img')).toBeTruthy();
+});
+
+test('should render image slot correctly 2', async () => {
+  const wrapper = mount(ImagePreviewComponent, {
+    props: {
+      show: true,
+      images,
+    },
+    slots: {
+      image: ({ src }) =>
+        `<video style="width: 100%;" controls><source src="${src}" /></video>`,
+    },
+  });
+
+  await later();
+
+  expect(wrapper.html().includes('video')).toBeTruthy();
+});

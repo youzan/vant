@@ -17,6 +17,7 @@ const t = useTranslate({
     customConfig: '传入配置项',
     startPosition: '指定初始位置',
     componentCall: '组件调用',
+    componentImage: '组件调用使用image插槽',
     index: (index: number) => `第${index + 1}页`,
   },
   'en-US': {
@@ -28,6 +29,7 @@ const t = useTranslate({
     customConfig: 'Custom Config',
     startPosition: 'Set Start Position',
     componentCall: 'Component Call',
+    componentImage: 'Component Call use image slot',
     index: (index: number) => `Page: ${index}`,
   },
 });
@@ -39,8 +41,18 @@ const images = [
   cdnURL('apple-4.jpeg'),
 ];
 
+const imagesSlot = [
+  'https://www.w3school.com.cn/i/movie.ogg',
+  'https://www.w3school.com.cn/i/movie.ogg',
+  'https://www.w3school.com.cn/i/movie.ogg',
+  'https://www.w3school.com.cn/i/movie.ogg',
+];
+
 const show = ref(false);
 const index = ref(0);
+
+const showSlot = ref(false);
+const indexSlot = ref(0);
 
 const onClose = () => Toast(t('closed'));
 
@@ -57,6 +69,14 @@ const showComponentCall = () => {
 
 const onChange = (newIndex: number) => {
   index.value = newIndex;
+};
+
+const showComponentCallSlot = () => {
+  showSlot.value = true;
+};
+
+const onChangeSlot = (newIndex: number) => {
+  indexSlot.value = newIndex;
 };
 
 const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
@@ -108,6 +128,23 @@ const showImagePreview = (options: Partial<ImagePreviewOptions> = {}) => {
     <van-cell is-link :value="t('componentCall')" @click="showComponentCall" />
     <van-image-preview v-model:show="show" :images="images" @change="onChange">
       <template #index>{{ t('index', index) }}</template>
+    </van-image-preview>
+  </demo-block>
+
+  <demo-block card :title="t('componentImage')">
+    <van-cell
+      is-link
+      :value="t('componentImage')"
+      @click="showComponentCallSlot"
+    />
+    <van-image-preview
+      v-model:show="showSlot"
+      :images="imagesSlot"
+      @change="onChangeSlot"
+    >
+      <template #image="{ src }">
+        <video style="width: 100%" controls><source :src="src" /></video>
+      </template>
     </van-image-preview>
   </demo-block>
 </template>
