@@ -19,6 +19,7 @@ const t = useTranslate({
     customConfig: '传入配置项',
     startPosition: '指定初始位置',
     useComponent: '使用 ImagePreview 组件',
+    componentImage: '组件调用使用image插槽',
     index: (index: number) => `第${index + 1}页`,
   },
   'en-US': {
@@ -30,6 +31,7 @@ const t = useTranslate({
     customConfig: 'Custom Config',
     startPosition: 'Set Start Position',
     useComponent: 'Use ImagePreview Component',
+    componentImage: 'Component Call use image slot',
     index: (index: number) => `Page: ${index}`,
   },
 });
@@ -41,8 +43,18 @@ const images = [
   cdnURL('apple-4.jpeg'),
 ];
 
+const imagesSlot = [
+  'https://www.w3school.com.cn/i/movie.ogg',
+  'https://www.w3school.com.cn/i/movie.ogg',
+  'https://www.w3school.com.cn/i/movie.ogg',
+  'https://www.w3school.com.cn/i/movie.ogg',
+];
+
 const show = ref(false);
 const index = ref(0);
+
+const showSlot = ref(false);
+const indexSlot = ref(0);
 
 const onClose = () => showToast(t('closed'));
 
@@ -59,6 +71,14 @@ const onChange = (newIndex: number) => {
 
 const showComponentCall = () => {
   show.value = true;
+};
+
+const showComponentCallSlot = () => {
+  showSlot.value = true;
+};
+
+const onChangeSlot = (newIndex: number) => {
+  indexSlot.value = newIndex;
 };
 
 const showFunctionCall = (options: Partial<ImagePreviewOptions> = {}) => {
@@ -110,6 +130,23 @@ const showFunctionCall = (options: Partial<ImagePreviewOptions> = {}) => {
     <van-cell is-link :title="t('useComponent')" @click="showComponentCall" />
     <van-image-preview v-model:show="show" :images="images" @change="onChange">
       <template #index>{{ t('index', index) }}</template>
+    </van-image-preview>
+  </demo-block>
+
+  <demo-block card :title="t('componentImage')">
+    <van-cell
+      is-link
+      :value="t('componentImage')"
+      @click="showComponentCallSlot"
+    />
+    <van-image-preview
+      v-model:show="showSlot"
+      :images="imagesSlot"
+      @change="onChangeSlot"
+    >
+      <template #image="{ src }">
+        <video style="width: 100%" controls><source :src="src" /></video>
+      </template>
     </van-image-preview>
   </demo-block>
 </template>

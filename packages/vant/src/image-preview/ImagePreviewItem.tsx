@@ -47,7 +47,7 @@ export default defineComponent({
 
   emits: ['scale', 'close'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const state = reactive({
       scale: 1,
       moveX: 0,
@@ -293,14 +293,20 @@ export default defineComponent({
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}
         >
-          <Image
-            v-slots={imageSlots}
-            src={props.src}
-            fit="contain"
-            class={bem('image', { vertical: vertical.value })}
-            style={imageStyle.value}
-            onLoad={onLoad}
-          />
+          {slots.image ? (
+            <div class={bem('image-wrap')}>
+              {slots.image({ src: props.src })}
+            </div>
+          ) : (
+            <Image
+              v-slots={imageSlots}
+              src={props.src}
+              fit="contain"
+              class={bem('image', { vertical: vertical.value })}
+              style={imageStyle.value}
+              onLoad={onLoad}
+            />
+          )}
         </SwipeItem>
       );
     };

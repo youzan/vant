@@ -157,6 +157,9 @@ export default defineComponent({
             rootHeight={state.rootHeight}
             onScale={emitScale}
             onClose={emitClose}
+            v-slots={{
+              image: slots.image,
+            }}
           />
         ))}
       </Swipe>
