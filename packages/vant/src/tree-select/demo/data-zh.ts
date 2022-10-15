@@ -12,39 +12,31 @@ const zhejiang = [
     id: 3,
     disabled: true,
   },
-  {
-    text: '义乌',
-    id: 4,
-  },
 ];
 
 const jiangsu = [
   {
     text: '南京',
-    id: 5,
+    id: 4,
   },
   {
     text: '无锡',
-    id: 6,
+    id: 5,
   },
   {
     text: '徐州',
-    id: 7,
-  },
-  {
-    text: '苏州',
-    id: 8,
+    id: 6,
   },
 ];
 
 const fujian = [
   {
     text: '泉州',
-    id: 9,
+    id: 7,
   },
   {
     text: '厦门',
-    id: 10,
+    id: 8,
   },
 ];
 

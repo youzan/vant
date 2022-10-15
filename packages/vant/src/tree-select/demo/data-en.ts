@@ -12,39 +12,31 @@ const group1 = [
     id: 3,
     disabled: true,
   },
-  {
-    text: 'Indiana',
-    id: 4,
-  },
 ];
 
 const group2 = [
   {
     text: 'Alabama',
-    id: 5,
+    id: 4,
   },
   {
     text: 'Kansas',
-    id: 6,
+    id: 5,
   },
   {
     text: 'Louisiana',
-    id: 7,
-  },
-  {
-    text: 'Texas',
-    id: 8,
+    id: 6,
   },
 ];
 
 const group3 = [
   {
     text: 'Alabama',
-    id: 9,
+    id: 7,
   },
   {
     text: 'Kansas',
-    id: 10,
+    id: 8,
   },
 ];
 
