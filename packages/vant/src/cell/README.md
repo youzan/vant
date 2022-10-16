@@ -154,11 +154,12 @@ app.use(CellGroup);
 | size | Size, can be set to `large` | _string_ | - |
 | icon | Left Icon | _string_ | - |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
-| border | Whether to show inner border | _boolean_ | `true` |
-| center | Whether to center content vertically | _boolean_ | `false` |
+| tag | Custom element tag | _string_ | `div` |
 | url | Link URL | _string_ | - |
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
+| border | Whether to show inner border | _boolean_ | `true` |
+| center | Whether to center content vertically | _boolean_ | `false` |
 | clickable | Whether to show click feedback when clicked | _boolean_ | `null` |
 | is-link | Whether to show link icon | _boolean_ | `false` |
 | required | Whether to show required mark | _boolean_ | `false` |
