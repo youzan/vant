@@ -37,6 +37,11 @@ exports[`should render label slot correctly 1`] = `
 </div>
 `;
 
+exports[`should render tag prop correctly 1`] = `
+<a class="van-cell">
+</a>
+`;
+
 exports[`should render title slot correctly 1`] = `
 <div class="van-cell">
   <div class="van-cell__title">

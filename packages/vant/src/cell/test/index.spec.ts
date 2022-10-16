@@ -85,7 +85,7 @@ test('should change icon class prefix when using icon-prefix prop', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should allow to disable clicakble when using is-link prop', () => {
+test('should allow to disable clickable when using is-link prop', () => {
   const wrapper = mount(Cell, {
     props: {
       isLink: true,
@@ -93,4 +93,13 @@ test('should allow to disable clicakble when using is-link prop', () => {
     },
   });
   expect(wrapper.classes()).not.toContain('van-cell--clickable');
+});
+
+test('should render tag prop correctly', () => {
+  const wrapper = mount(Cell, {
+    props: {
+      tag: 'a',
+    },
+  });
+  expect(wrapper.html()).toMatchSnapshot();
 });

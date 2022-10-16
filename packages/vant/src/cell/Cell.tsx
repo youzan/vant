@@ -12,6 +12,7 @@ import {
   truthProp,
   unknownProp,
   numericProp,
+  makeStringProp,
   createNamespace,
 } from '../utils';
 
@@ -28,6 +29,7 @@ export type CellSize = 'normal' | 'large';
 export type CellArrowDirection = 'up' | 'down' | 'left' | 'right';
 
 export const cellSharedProps = {
+  tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
   icon: String,
   size: String as PropType<CellSize>,
   title: numericProp,
@@ -131,7 +133,7 @@ export default defineComponent({
     };
 
     return () => {
-      const { size, center, border, isLink, required } = props;
+      const { tag, size, center, border, isLink, required } = props;
       const clickable = props.clickable ?? isLink;
 
       const classes: Record<string, boolean | undefined> = {
@@ -145,7 +147,7 @@ export default defineComponent({
       }
 
       return (
-        <div
+        <tag
           class={bem(classes)}
           role={clickable ? 'button' : undefined}
           tabindex={clickable ? 0 : undefined}
@@ -156,7 +158,7 @@ export default defineComponent({
           {renderValue()}
           {renderRightIcon()}
           {slots.extra?.()}
-        </div>
+        </tag>
       );
     };
   },
