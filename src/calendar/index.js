@@ -173,6 +173,9 @@ export default createComponent({
     this.init();
     // https://github.com/vant-ui/vant/issues/9845
     this.vanPopup?.$on('opened', this.onScroll);
+    if (!this.poppable) {
+      this.vanPopup?.$on('opened', this.onScroll);
+    }
   },
 
   /* istanbul ignore next */
