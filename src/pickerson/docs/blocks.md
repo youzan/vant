@@ -3,7 +3,7 @@
 ```html
 <van-pickerson
   title="标题"
-  show-toolbar
+  :show-toolbar="true"
   labelField="左侧标题"
   input-align="left"
 ></van-pickerson>

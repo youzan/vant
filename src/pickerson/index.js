@@ -73,10 +73,10 @@ export default createComponent({
           // onClickOverlay={this.togglePopup}
         >
           <Picker
-            {...{attrs: {...this.$attrs}}}
-            {...{ on: {...this.$listeners, 'update:pvalue': val => {
+            {...{ ...this.$attrs }}
+            {...{ on: { ...this.$listeners, 'update:pvalue': val => {
               this.psonvalue = val
-            }} }}
+            }}}}
             pvalue={this.psonvalue}
           />
         </Popup>
