@@ -6367,7 +6367,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-pickerson\\n  title=\\\"标题\\\"\\n  show-toolbar\\n  labelField=\\\"左侧标题\\\"\\n  input-align=\\\"left\\\"\\n></van-pickerson>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-pickerson\\n  title=\\\"标题\\\"\\n  :show-toolbar=\\\"true\\\"\\n  labelField=\\\"左侧标题\\\"\\n  input-align=\\\"left\\\"\\n></van-pickerson>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-pickerson",
             "title": "选择器",
@@ -6379,7 +6379,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-pickerson\n  title=\"标题\"\n  show-toolbar\n  labelField=\"左侧标题\"\n  input-align=\"left\"\n></van-pickerson>\n</template>\n"
+                    "code": "<template>\n<van-pickerson\n  title=\"标题\"\n  :show-toolbar=\"true\"\n  labelField=\"左侧标题\"\n  input-align=\"left\"\n></van-pickerson>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -6475,6 +6475,13 @@
                     "type": "boolean",
                     "default": false,
                     "description": "是否点击遮罩层后关闭"
+                },
+                {
+                    "name": "show-toolbar",
+                    "title": "显示顶部栏",
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否显示顶部栏"
                 }
             ],
             "slots": false,

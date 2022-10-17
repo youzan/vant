@@ -69,6 +69,11 @@
       type: boolean
       default: false
       description: 是否点击遮罩层后关闭
+    - name: show-toolbar
+      title: 显示顶部栏
+      type: boolean
+      default: true
+      description: 是否显示顶部栏
   slots: false
   events:
     - name: confirm
