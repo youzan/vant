@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.51](https://github.com/vant-ui/vant/compare/v2.12.50...v2.12.51)
+
+`2022-10-17`
+
+**Bug Fixes**
+
+- Calendar: throw an error that scrollTop in undefined when poppable in popup [#11140](https://github.com/vant-ui/vant/issues/11140)
+
 ### [v2.12.50](https://github.com/vant-ui/vant/compare/v2.12.49...v2.12.50)
 
 `2022-09-17`

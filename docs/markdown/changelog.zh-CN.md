@@ -25,6 +25,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.51](https://github.com/vant-ui/vant/compare/v2.12.50...v2.12.51)
+
+`2022-10-17`
+
+**Bug Fixes**
+
+- Calendar: 修复在 Popup 下嵌套使用时出现报错的问题 [#11140](https://github.com/vant-ui/vant/issues/11140)
+
 ### [v2.12.50](https://github.com/vant-ui/vant/compare/v2.12.49...v2.12.50)
 
 `2022-09-17`
