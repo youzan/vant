@@ -4,6 +4,7 @@ import type { Numeric } from '../utils';
 
 export type ToastType = 'text' | 'loading' | 'success' | 'fail' | 'html';
 export type ToastPosition = 'top' | 'middle' | 'bottom';
+export type ToastWordBreak = 'break-all' | 'break-word' | 'break-normal';
 
 export type ToastOptions = {
   icon?: string;
@@ -20,6 +21,7 @@ export type ToastOptions = {
   className?: unknown;
   transition?: string;
   iconPrefix?: string;
+  wordBreak?: ToastWordBreak;
   loadingType?: LoadingType;
   forbidClick?: boolean;
   closeOnClick?: boolean;

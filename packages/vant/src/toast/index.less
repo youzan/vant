@@ -35,11 +35,27 @@
 
   // allow newline character
   white-space: pre-wrap;
-  text-align: center;
-  // https://github.com/vant-ui/vant/issues/8959
   word-break: break-all;
+  text-align: center;
   background: var(--van-toast-background);
   border-radius: var(--van-toast-radius);
+
+  &--break {
+    &-normal {
+      word-break: normal;
+      word-wrap: normal;
+    }
+
+    &-all {
+      word-wrap: normal;
+      word-break: break-all;
+    }
+
+    &-word {
+      word-break: normal;
+      word-wrap: break-word;
+    }
+  }
 
   &--unclickable {
     // lock scroll

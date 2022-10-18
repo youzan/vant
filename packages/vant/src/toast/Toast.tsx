@@ -27,7 +27,7 @@ import { Popup } from '../popup';
 import { Loading, LoadingType } from '../loading';
 
 // Types
-import type { ToastType, ToastPosition } from './types';
+import type { ToastType, ToastPosition, ToastWordBreak } from './types';
 
 const [name, bem] = createNamespace('toast');
 
@@ -51,6 +51,7 @@ export const toastProps = {
   duration: makeNumberProp(2000),
   position: makeStringProp<ToastPosition>('middle'),
   teleport: [String, Object] as PropType<TeleportProps['to']>,
+  wordBreak: String as PropType<ToastWordBreak>,
   className: unknownProp,
   iconPrefix: String,
   transition: makeStringProp('van-fade'),
@@ -151,7 +152,7 @@ export default defineComponent({
     return () => (
       <Popup
         class={[
-          bem([props.position, { [props.type]: !props.icon }]),
+          bem([props.position, props.wordBreak, { [props.type]: !props.icon }]),
           props.className,
         ]}
         lockScroll={false}
