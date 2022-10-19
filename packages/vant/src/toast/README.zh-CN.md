@@ -216,6 +216,7 @@ Vant 中导出了以下 Toast 相关的辅助函数：
 | type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | _ToastType_ | `text` |
 | position | 位置，可选值为 `top` `bottom` | _ToastPosition_ | `middle` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | `''` |
+| wordBreak | 文本内容的换行方式，可选值为 `break-normal` `break-all` `break-word` | _ToastWordBreak_ | `''` |
 | icon | 自定义图标，支持传入图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
 | iconSize | 图标大小，如 `20px` `2em`，默认单位为 `px` | _number \| string_ | `36px` |
 | iconPrefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
@@ -246,7 +247,13 @@ Vant 中导出了以下 Toast 相关的辅助函数：
 组件导出以下类型定义：
 
 ```ts
-import type { ToastType, ToastProps, ToastOptions, ToastPosition } from 'vant';
+import type {
+  ToastType,
+  ToastProps,
+  ToastOptions,
+  ToastPosition,
+  ToastWordBreak,
+} from 'vant';
 ```
 
 ## 主题定制
