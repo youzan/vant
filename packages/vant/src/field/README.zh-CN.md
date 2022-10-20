@@ -270,7 +270,7 @@ export default {
     v-model="value"
     label="手机号"
     placeholder="请输入手机号"
-    input-align="top"
+    label-align="top"
   />
 </van-cell-group>
 ```
