@@ -84,20 +84,33 @@ export const TimePickerMixin = {
         //
       } else {
         let value = this.innerValue;
-        const isTimestamp =
-          this.type === 'datetime' && this.converter === 'timestamp';
-        if (isTimestamp) {
-          value = +new Date(value);
+        const isDateAndDateTime =
+          this.type === 'datetime' || this.type === 'date';
+        const isJSONType = isDateAndDateTime && this.converter === 'json';
+        const isTimestampType =
+          isDateAndDateTime && this.converter === 'timestamp';
+        const isDateType = isDateAndDateTime && this.converter === 'date';
+
+        if (isJSONType) {
+          value = new Date(value).toJSON();
         }
+        if (isTimestampType) {
+          value = +new Date(value);
+        } else if (isDateType) {
+          value = new Date(value);
+        }
+
+        const useConverterValue = isJSONType || isTimestampType || isDateType;
+
         this.$emit('input', value);
         // this.$emit('update:value', this.type==="datetime" ? value.formath("yyyy/MM/dd HH:mm:ss") : value);
         this.$emit(
           'update:value',
-          isTimestamp ? value : formatFu(this.innerValue, this.type, true)
+          useConverterValue ? value : formatFu(this.innerValue, this.type, true)
         );
         this.$emit(
           'update:cvalue',
-          isTimestamp ? value : formatFu(this.innerValue, this.type)
+          useConverterValue ? value : formatFu(this.innerValue, this.type)
         );
         this.$emit('confirm', value);
       }

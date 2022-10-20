@@ -29,11 +29,17 @@
           value: format
         - title: Unix 时间戳
           value: timestamp
+        - title: JSON
+          value: json
+        - title: Date 对象
+          value: date
       default: format
       # 此属性依赖的属性
       depProp:
         - name: type
           value: datetime
+        - name: type
+          value: date
     - name: value
       title: 值
       type: string,number,Date
