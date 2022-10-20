@@ -251,7 +251,7 @@ Use `label-align` prop to align the input value.
     v-model="value"
     label="Tel"
     placeholder="Please input tel number"
-    input-align="top"
+    label-align="top"
   />
 </van-cell-group>
 ```
