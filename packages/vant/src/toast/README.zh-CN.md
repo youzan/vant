@@ -110,6 +110,26 @@ showToast({
 });
 ```
 
+### 文字换行方式
+
+通过 `wordBreak` 选择可以控制 Toast 中的文字过长时的截断方式，默认值为 `break-all`，可选值为 `break-word` 和 `normal`。
+
+```js
+import { showToast } from 'vant';
+
+// 换行时截断单词
+showToast({
+  message: 'This message will contain a incomprehensibilities long word.',
+  wordBreak: 'break-all',
+});
+
+// 换行时不截断单词
+showToast({
+  message: 'This message will contain a incomprehensibilities long word.',
+  wordBreak: 'break-word',
+});
+```
+
 ### 动态更新提示
 
 执行 Toast 方法时会返回对应的 Toast 实例，通过修改实例上的 `message` 属性可以实现动态更新提示的效果。
@@ -216,7 +236,7 @@ Vant 中导出了以下 Toast 相关的辅助函数：
 | type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | _ToastType_ | `text` |
 | position | 位置，可选值为 `top` `bottom` | _ToastPosition_ | `middle` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | `''` |
-| wordBreak | 文本内容的换行方式，可选值为 `break-normal` `break-all` `break-word` | _ToastWordBreak_ | `''` |
+| wordBreak | 文本内容的换行方式，可选值为 `normal` `break-all` `break-word` | _ToastWordBreak_ | `'break-all'` |
 | icon | 自定义图标，支持传入图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
 | iconSize | 图标大小，如 `20px` `2em`，默认单位为 `px` | _number \| string_ | `36px` |
 | iconPrefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |

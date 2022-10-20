@@ -152,7 +152,11 @@ export default defineComponent({
     return () => (
       <Popup
         class={[
-          bem([props.position, props.wordBreak, { [props.type]: !props.icon }]),
+          bem([
+            props.position,
+            props.wordBreak === 'normal' ? 'break-normal' : props.wordBreak,
+            { [props.type]: !props.icon },
+          ]),
           props.className,
         ]}
         lockScroll={false}
