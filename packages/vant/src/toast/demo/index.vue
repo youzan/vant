@@ -11,6 +11,7 @@ import VanToast, {
   showLoadingToast,
 } from '..';
 import type { LoadingType } from '../../loading';
+import type { ToastWordBreak } from '../types';
 
 const t = useTranslate({
   'zh-CN': {
@@ -23,6 +24,9 @@ const t = useTranslate({
     title2: '加载提示',
     title3: '成功/失败提示',
     success: '成功提示',
+    breakAll: '换行时截断单词',
+    breakWord: '换行时不截断单词',
+    wordBreak: '文字换行方式',
     customIcon: '自定义图标',
     customImage: '自定义图片',
     loadingType: '自定义加载图标',
@@ -42,6 +46,9 @@ const t = useTranslate({
     title2: 'Loading',
     title3: 'Success/Fail',
     success: 'Success',
+    wordBreak: 'Word Break',
+    breakAll: 'Break All',
+    breakWord: 'Break Word',
     customIcon: 'Custom Icon',
     customImage: 'Custom Image',
     loadingType: 'Loading Type',
@@ -108,6 +115,13 @@ const showCustomToast = () => {
   }, 1000);
 };
 
+const showWordBreakToast = (wordBreak: ToastWordBreak) => {
+  showToast({
+    message: 'This message will contain a incomprehensibilities long word.',
+    wordBreak,
+  });
+};
+
 const show = ref(false);
 const image = cdnURL('cat.jpeg');
 </script>
@@ -141,6 +155,19 @@ const image = cdnURL('cat.jpeg');
   <demo-block card :title="t('customPosition')">
     <van-cell is-link :title="t('positionTop')" @click="showTopToast" />
     <van-cell is-link :title="t('positionBottom')" @click="showBottomToast" />
+  </demo-block>
+
+  <demo-block card :title="t('wordBreak')">
+    <van-cell
+      is-link
+      :title="t('breakAll')"
+      @click="showWordBreakToast('break-all')"
+    />
+    <van-cell
+      is-link
+      :title="t('breakWord')"
+      @click="showWordBreakToast('break-word')"
+    />
   </demo-block>
 
   <demo-block card :title="t('updateMessage')">
