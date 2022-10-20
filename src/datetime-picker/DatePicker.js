@@ -26,6 +26,10 @@ export default createComponent({
       default: () => new Date(currentYear + 20, 11, 31),
       validator: isDate,
     },
+    converter: {
+      type: String,
+      default: 'format',
+    },
   },
 
   watch: {
@@ -50,13 +54,13 @@ export default createComponent({
     //   }
     // },
     value: {
-      handler: function (val, oldVal) {
+      handler(val) {
         val = this.formatValue(val);
         if (val && val.valueOf() !== this.innerValue.valueOf()) {
           this.innerValue = val;
         }
       },
-      immediate: true
+      immediate: true,
     },
   },
 
@@ -140,7 +144,6 @@ export default createComponent({
       //   return null;
       // }
       if (isDate(value)) {
-
       } else {
         try {
           if (!value || value === '') {
@@ -160,7 +163,6 @@ export default createComponent({
       let minDate = transErrorDate(this.minDate, 'min');
       let maxDate = transErrorDate(this.maxDate, 'max');
 
-
       const dateMethods = {
         year: 'getFullYear',
         month: 'getMonth',
@@ -169,33 +171,42 @@ export default createComponent({
         minute: 'getMinutes',
       };
       if (this.originColumns) {
-        const dateColumns = this.originColumns.map(({ type, values }, index) => {
-          const { range } = this.ranges[index];
-          const minDateVal = minDate[dateMethods[type]]();
-          const maxDateVal = maxDate[dateMethods[type]]();
-          const min = type === 'month' ? +values[0] - 1 : +values[0];
-          const max =
-            type === 'month'
-              ? +values[values.length - 1] - 1
-              : +values[values.length - 1];
+        const dateColumns = this.originColumns.map(
+          ({ type, values }, index) => {
+            const { range } = this.ranges[index];
+            const minDateVal = minDate[dateMethods[type]]();
+            const maxDateVal = maxDate[dateMethods[type]]();
+            const min = type === 'month' ? +values[0] - 1 : +values[0];
+            const max =
+              type === 'month'
+                ? +values[values.length - 1] - 1
+                : +values[values.length - 1];
 
-          return {
-            type,
-            values: [
-              minDateVal < range[0] ? Math.max(minDateVal, min) : min || minDateVal,
-              maxDateVal > range[1] ? Math.min(maxDateVal, max) : max || maxDateVal,
-            ]
-          };
-        });
+            return {
+              type,
+              values: [
+                minDateVal < range[0]
+                  ? Math.max(minDateVal, min)
+                  : min || minDateVal,
+                maxDateVal > range[1]
+                  ? Math.min(maxDateVal, max)
+                  : max || maxDateVal,
+              ],
+            };
+          }
+        );
 
         if (this.type === 'month-day') {
           const year = (this.innerValue || this.minDate).getFullYear();
           dateColumns.unshift({ type: 'year', values: [year, year] });
         }
 
-        const dates = Object.keys(dateMethods).map((type) =>
-          dateColumns.filter(item => item.type === type)[0]?.values
-        ).filter((item) => item);
+        const dates = Object.keys(dateMethods)
+          .map(
+            (type) =>
+              dateColumns.filter((item) => item.type === type)[0]?.values
+          )
+          .filter((item) => item);
         minDate = new Date(...dates.map((val) => getTrueValue(val[0])));
         maxDate = new Date(...dates.map((val) => getTrueValue(val[1])));
       }
@@ -207,7 +218,7 @@ export default createComponent({
 
     getBoundary(type, value) {
       let boundary = this[`${type}Date`];
-      boundary = transErrorDate(boundary, type)
+      boundary = transErrorDate(boundary, type);
       const year = boundary.getFullYear();
       let month = 1;
       let date = 1;

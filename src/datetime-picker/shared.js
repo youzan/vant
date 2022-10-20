@@ -1,9 +1,7 @@
-import { times } from './utils';
+import { times, formatFu } from './utils';
 import { padZero } from '../utils/format/string';
 import { pickerProps } from '../picker/shared';
 import Picker from '../picker';
-import { formatFu } from './utils';
-
 
 export const sharedProps = {
   ...pickerProps,
@@ -83,30 +81,38 @@ export const TimePickerMixin = {
 
     onConfirm() {
       if (this.readonly || this.disabled) {
-
+        //
       } else {
-        this.$emit('input', this.innerValue)
-        // this.$emit('update:value', this.type==="datetime" ? this.innerValue.formath("yyyy/MM/dd HH:mm:ss") : this.innerValue);
-        this.$emit('update:value', formatFu(this.innerValue, this.type, true));
-        this.$emit('update:cvalue', formatFu(this.innerValue, this.type));
-        this.$emit('confirm', this.innerValue);
+        let value = this.innerValue;
+        const isTimestamp =
+          this.type === 'datetime' && this.converter === 'timestamp';
+        if (isTimestamp) {
+          value = +new Date(value);
+        }
+        this.$emit('input', value);
+        // this.$emit('update:value', this.type==="datetime" ? value.formath("yyyy/MM/dd HH:mm:ss") : value);
+        this.$emit(
+          'update:value',
+          isTimestamp ? value : formatFu(this.innerValue, this.type, true)
+        );
+        this.$emit(
+          'update:cvalue',
+          isTimestamp ? value : formatFu(this.innerValue, this.type)
+        );
+        this.$emit('confirm', value);
       }
       try {
         this.$parent.$parent.togglePopup();
       } catch (error) {
-
+        //
       }
-
     },
 
     onCancel() {
       this.$emit('cancel');
       try {
         this.$parent.$parent.togglePopup();
-      } catch (error) {
-
-      }
-
+      } catch (error) {}
     },
   },
 
