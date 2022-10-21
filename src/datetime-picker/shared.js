@@ -1,9 +1,7 @@
-import { times } from './utils';
+import { times, formatFu } from './utils';
 import { padZero } from '../utils/format/string';
 import { pickerProps } from '../picker/shared';
 import Picker from '../picker';
-import { formatFu } from './utils';
-
 
 export const sharedProps = {
   ...pickerProps,
@@ -83,30 +81,51 @@ export const TimePickerMixin = {
 
     onConfirm() {
       if (this.readonly || this.disabled) {
-
+        //
       } else {
-        this.$emit('input', this.innerValue)
-        // this.$emit('update:value', this.type==="datetime" ? this.innerValue.formath("yyyy/MM/dd HH:mm:ss") : this.innerValue);
-        this.$emit('update:value', formatFu(this.innerValue, this.type, true));
-        this.$emit('update:cvalue', formatFu(this.innerValue, this.type));
-        this.$emit('confirm', this.innerValue);
+        let value = this.innerValue;
+        const isDateAndDateTime =
+          this.type === 'datetime' || this.type === 'date';
+        const isJSONType = isDateAndDateTime && this.converter === 'json';
+        const isTimestampType =
+          isDateAndDateTime && this.converter === 'timestamp';
+        const isDateType = isDateAndDateTime && this.converter === 'date';
+
+        if (isJSONType) {
+          value = new Date(value).toJSON();
+        }
+        if (isTimestampType) {
+          value = +new Date(value);
+        } else if (isDateType) {
+          value = new Date(value);
+        }
+
+        const useConverterValue = isJSONType || isTimestampType || isDateType;
+
+        this.$emit('input', value);
+        // this.$emit('update:value', this.type==="datetime" ? value.formath("yyyy/MM/dd HH:mm:ss") : value);
+        this.$emit(
+          'update:value',
+          useConverterValue ? value : formatFu(this.innerValue, this.type, true)
+        );
+        this.$emit(
+          'update:cvalue',
+          useConverterValue ? value : formatFu(this.innerValue, this.type)
+        );
+        this.$emit('confirm', value);
       }
       try {
         this.$parent.$parent.togglePopup();
       } catch (error) {
-
+        //
       }
-
     },
 
     onCancel() {
       this.$emit('cancel');
       try {
         this.$parent.$parent.togglePopup();
-      } catch (error) {
-
-      }
-
+      } catch (error) {}
     },
   },
 
