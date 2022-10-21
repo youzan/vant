@@ -7,7 +7,8 @@ import { emit, inherit } from '../utils/functional';
 import Info from '../info';
 import VanEmptyCol from '../emptycol'
 import config from './config'
-import './icon.js';
+
+require('./icon')
 
 import { onlineSvgIcon } from 'online-svg-icon-vue2'
 console.log(onlineSvgIcon);
