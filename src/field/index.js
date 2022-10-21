@@ -528,7 +528,7 @@ export default createComponent({
       let input = this.$refs.input;
       let inputn = this.children;
       if (inputn && comSet.has(inputn.$options._componentTag)) {
-        if (inputn.type !== 'textarea') {
+        if (inputn.type === 'textarea') {
           return;
         } else {
           input = inputn.$refs.input;
