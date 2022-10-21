@@ -14,6 +14,9 @@
     "*.{ts,tsx,js,vue,less}": "prettier --write",
     "*.{ts,tsx,js,vue}": "eslint --fix"
   },
+  "engines": {
+    "pnpm": ">= 7.0.0"
+  },
   "packageManager": "pnpm@7.11.0",
   "devDependencies": {
     "@vant/cli": "workspace:*",
