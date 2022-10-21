@@ -102,17 +102,17 @@ export default createComponent({
       }
       if (typeof src === 'string') {
         // 判断是否有多个 url
-        const srcList = src.match(/(https:|http:|ftp:|file:)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g);
+        const srcList = src.match(/(https:|http:|ftp:|file:)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g) || [];
         return srcList.length > 1 ? srcList[0] : src;
       }
 
       try {
-          const tempSrc = JSON.parse(src);
-          const tempItem = tempSrc[0];
-          return tempItem.url;
+        const tempSrc = JSON.parse(src);
+        const tempItem = tempSrc[0];
+        return tempItem.url;
       } catch (e) {
-          console.log(e);
-          return src;
+        console.log(e);
+        return src;
       }
     },
     ifDesigner() {
@@ -168,7 +168,7 @@ export default createComponent({
       }
 
       if (this.error && this.showError) {
-        if(!this.ifDesigner() && this.$parent.$options._componentTag === 'van-cardu') {
+        if (!this.ifDesigner() && this.$parent.$options._componentTag === 'van-cardu') {
           return null;
         }
         return (
