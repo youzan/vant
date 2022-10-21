@@ -166,10 +166,10 @@ function Iconv(
         props.icotype === 'left' ? bem('flex') : ''
         // imageIcon ? '' : `${props.classPrefix}-${name}`,
       ]}
-      // style={{
-      //   color: props.color,
-      //   // fontSize: addUnit(props.size),
-      // }}
+      style={{
+        // color: props.color,
+        fontSize: addUnit(props.size),
+      }}
       {...inherit(ctx, false)}
       onClick={onClick}
     >

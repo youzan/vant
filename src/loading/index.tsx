@@ -6,9 +6,13 @@ import { inherit } from '../utils/functional';
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 
+import Iconv from '../iconv';
+
 export type LoadingType = 'circular' | 'spinner';
 
 export type LoadingProps = {
+  icon?: string;
+  iconRotate?: boolean;
   type: LoadingType;
   size?: string | number;
   color: string;
@@ -29,9 +33,7 @@ function LoadingIcon(h: CreateElement, props: LoadingProps) {
   }
 
   return (
-    <svg class={bem('circular')} viewBox="25 25 50 50">
-      <circle cx="50" cy="50" r="20" fill="none" />
-    </svg>
+    <Iconv name={props.icon} />
   );
 }
 
@@ -74,7 +76,7 @@ function Loading(
       class={bem([type, { vertical: props.vertical }])}
       {...inherit(ctx, true)}
     >
-      <span class={bem('spinner', type)} style={style}>
+      <span class={[bem('spinner', type), bem([{ iconRotate: props.iconRotate }])]} style={style}>
         {LoadingIcon(h, props)}
       </span>
       {LoadingText(h, props, slots)}
@@ -82,7 +84,16 @@ function Loading(
   );
 }
 
+Loading.components = {
+  Iconv
+};
+
 Loading.props = {
+  icon: String,
+  iconRotate: {
+    type: Boolean,
+    default: true,
+  },
   color: String,
   size: [Number, String],
   vertical: Boolean,

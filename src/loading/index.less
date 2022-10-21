@@ -6,6 +6,23 @@
   font-size: 0;
   vertical-align: middle;
 
+  .van-iconv {
+    font-size: 30px;
+    height: 30px;
+  }
+
+  .vant-iconv-svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: 0;
+    fill: currentColor;
+    overflow: hidden;
+  }
+
+  &--iconRotate {
+    animation: van-rotate @loading-spinner-animation-duration linear infinite;
+  }
+
   &__spinner {
     position: relative;
     display: inline-block;
@@ -15,7 +32,6 @@
     height: @loading-spinner-size;
     max-height: 100%;
     vertical-align: middle;
-    animation: van-rotate @loading-spinner-animation-duration linear infinite;
 
     &--spinner {
       animation-timing-function: steps(12);
@@ -98,6 +114,8 @@
     transform: rotate(@i * 30deg);
     opacity: 1 - (0.75 / 12) * (@i - 1);
   }
+
   .generate-spinner(@n, (@i + 1));
 }
+
 .generate-spinner(12);

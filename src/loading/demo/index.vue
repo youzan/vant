@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="t('type')">
-      <van-loading />
+      <van-loading icon="qrcode" :iconRotate="false" />
       <van-loading type="spinner" />
     </demo-block>
 

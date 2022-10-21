@@ -1,24 +1,31 @@
 @import './var';
+
 .l-root-h5 {
+  height: 100%;
   width: 100%;
   min-height: 100px;
   padding-bottom: 100px;
+  box-sizing: border-box;
 }
+
 div[root-app] .l-root-h5 {
   height: 100%;
   padding-bottom: 0px;
 
-  & > .van-divider:first-child {
+  &>.van-divider:first-child {
     margin-top: 0;
   }
 }
+
 div[router-view-symbol] .l-root-h5 {
   padding-bottom: 100px;
 }
+
 .h5template-login-wrap {
   height: 100vh;
   padding: 4.26667vw;
   background-color: #ffffff;
+
   .login-title {
     font-family: PingFang SC;
     font-style: normal;
@@ -28,12 +35,14 @@ div[router-view-symbol] .l-root-h5 {
     color: #333333;
     margin-bottom: 14.93333vw;
   }
+
   .login-form {
     .cus-login-button {
       width: 100%;
       margin-left: 0;
     }
   }
+
   .login-cell {
     padding: 0;
     line-height: 12.8vw;
@@ -41,13 +50,15 @@ div[router-view-symbol] .l-root-h5 {
     border-radius: 1.06667vw;
     margin-bottom: 4.26667vw;
   }
-  .login-cell  .van-field__left-icon {
+
+  .login-cell .van-field__left-icon {
     margin-right: 3.2vw;
     margin-left: 3.2vw;
     display: flex;
     align-items: center;
   }
-  .login-cell  .van-field__right-icon {
+
+  .login-cell .van-field__right-icon {
     margin-right: 4.26667vw;
     margin-left: 0;
     display: flex;
@@ -60,13 +71,16 @@ div[router-view-symbol] .l-root-h5 {
       height: 6.4vw;
     }
   }
-  .login-cell  .van-field__control {
+
+  .login-cell .van-field__control {
     color: #aaa;
   }
+
   .account-left-icon {
     width: 6.4vw;
     height: 6.4vw;
   }
+
   .cus-login-button {
     background: #4c88ff;
     font-family: PingFang SC;
@@ -78,9 +92,11 @@ div[router-view-symbol] .l-root-h5 {
     color: #ffffff;
     border-radius: 1.06667vw;
   }
+
   .van-cell__title {
     display: none;
   }
+
   .van-cellson__title {
     display: none;
   }
@@ -88,21 +104,25 @@ div[router-view-symbol] .l-root-h5 {
 
 .h5template-navi {
   height: 100%;
+
   .navi-head {
     padding-left: 4.26667vw;
     padding-right: 4.26667vw;
     height: 11.73333vw;
+
     .nvai-top-image {
       font-size: 24px;
       width: 6.4vw;
       display: block;
     }
   }
+
   .navi-item-icon {
     display: block;
     width: 6.4vw;
     margin-right: 4.26667vw;
   }
+
   .diy-content {
     height: 100vh;
     width: 86.13333vw;
@@ -115,6 +135,7 @@ div[router-view-symbol] .l-root-h5 {
   width: 100vw;
   height: 100vh;
   background-color: #f6f6f6;
+
   .user-head-wrap {
     height: 42.66667vw;
     background-color: #fff;
@@ -125,6 +146,7 @@ div[router-view-symbol] .l-root-h5 {
       height: 17.06667vw;
       margin-right: 4.26667vw;
     }
+
     .user-name {
       font-family: PingFang SC;
       font-style: normal;
@@ -146,6 +168,7 @@ div[router-view-symbol] .l-root-h5 {
     width: 6.4vw;
     margin-right: 4.26667vw;
   }
+
   .user-logout {
     line-height: 14.93333vw;
     background: #ffffff;
@@ -160,7 +183,7 @@ div[router-view-symbol] .l-root-h5 {
       display: flex;
       flex: 1;
       height: 100%;
-      justify-content:center;
+      justify-content: center;
       align-items: center;
     }
   }
@@ -176,18 +199,21 @@ div[router-view-symbol] .l-root-h5 {
 
     .m404-image {
       display: block;
-      width: 160px; /* px-to-viewport-ignore */
+      width: 160px;
+      /* px-to-viewport-ignore */
       margin-left: auto;
       margin-right: auto;
     }
 
     .m404-image-text {
-      margin-top: 16px; /* px-to-viewport-ignore */
+      margin-top: 16px;
+      /* px-to-viewport-ignore */
       text-align: center;
       font-family: PingFang SC;
       font-style: normal;
       font-weight: normal;
-      font-size: 14px; /* px-to-viewport-ignore */
+      font-size: 14px;
+      /* px-to-viewport-ignore */
       color: #999;
     }
   }
@@ -203,37 +229,45 @@ div[router-view-symbol] .l-root-h5 {
 
     .m401-image {
       display: block;
-      width: 160px; /* px-to-viewport-ignore */
+      width: 160px;
+      /* px-to-viewport-ignore */
       margin-left: auto;
       margin-right: auto;
     }
 
     .m401-image-text {
-      margin-top: 16px; /* px-to-viewport-ignore */
+      margin-top: 16px;
+      /* px-to-viewport-ignore */
       text-align: center;
       font-family: PingFang SC;
       font-style: normal;
       font-weight: normal;
-      font-size: 14px; /* px-to-viewport-ignore */
+      font-size: 14px;
+      /* px-to-viewport-ignore */
       color: #999;
     }
 
     .m401-image-btn {
       // display: block;
-      width: 96px; /* px-to-viewport-ignore */
-      height: 32px;/* px-to-viewport-ignore */
+      width: 96px;
+      /* px-to-viewport-ignore */
+      height: 32px;
+      /* px-to-viewport-ignore */
       line-height: 32px;
       background: #337eff;
-      border-radius: 4px; /* px-to-viewport-ignore */
+      border-radius: 4px;
+      /* px-to-viewport-ignore */
       font-family: PingFang SC;
       font-style: normal;
       font-weight: normal;
-      font-size: 14px; /* px-to-viewport-ignore */
+      font-size: 14px;
+      /* px-to-viewport-ignore */
       color: #fff;
       text-align: center;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 40px; /* px-to-viewport-ignore */
+      margin-top: 40px;
+      /* px-to-viewport-ignore */
     }
   }
 }
