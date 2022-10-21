@@ -189,6 +189,9 @@ export default createComponent({
       input.style.height = 'auto';
 
       let height = input.scrollHeight;
+      const wrap = this.$refs.wrap;
+      // eslint-disable-next-line radix
+      const wrapHeight = parseInt(window.getComputedStyle(wrap).height);
       if (isObject(this.autosize || input.autosize)) {
         const { maxHeight, minHeight } = this.autosize || input.autosize;
         if (maxHeight) {
@@ -200,7 +203,7 @@ export default createComponent({
       }
 
       if (height) {
-        input.style.height = height + 'px';
+        input.style.height = (wrapHeight > height ? wrapHeight : height) + 'px';
         // https://github.com/youzan/vant/issues/9178
         setRootScrollTop(scrollTop);
       }
@@ -231,7 +234,7 @@ export default createComponent({
     const ifLimit = (this.showWordLimit && this.maxlength);
     const inputAlign = this.vanField?.getProp('inputAlign');
     return (
-      <div class={bem('newwrap', {'clearwrap': this.clearable, 'limit': ifLimit})}>
+      <div class={bem('newwrap', {'clearwrap': this.clearable, 'limit': ifLimit})} ref="wrap">
         <textarea
         // vShow={this.showInput}
         ref="input"
