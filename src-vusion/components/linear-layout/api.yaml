@@ -99,6 +99,21 @@
       default: stretch
       description: flex布局模式下的交叉轴对齐方式
       advanced: true
+    - name: loadingIcon
+      title: 加载中图标
+      type: icon
+      default: "loading"
+      description: 加载图标
+    - name: loadingIconRotate
+      title: 加载中图标旋转
+      type: boolean
+      default: true
+      description: 加载中图标旋转
+    - name: loadingText
+      title: 加载中文案
+      type: string
+      default: ""
+      description: 加载中文案
   slots:
     - concept: Slot
       name: default
@@ -112,3 +127,10 @@
       title: 双击
       description: 双击此项时触发
       params: []
+  methods:
+    - name: openLoading
+      title: 打开加载中
+      description: 打开加载中
+    - name: closeLoading
+      title: 关闭加载中
+      description: 关闭加载中
