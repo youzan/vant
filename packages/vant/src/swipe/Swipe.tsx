@@ -101,7 +101,9 @@ export default defineComponent({
     });
 
     const maxCount = computed(() =>
-      Math.ceil(Math.abs(minOffset.value) / size.value)
+      size.value
+        ? Math.ceil(Math.abs(minOffset.value) / size.value)
+        : count.value
     );
 
     const trackSize = computed(() => count.value * size.value);
