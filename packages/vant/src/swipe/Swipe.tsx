@@ -413,8 +413,6 @@ export default defineComponent({
       }
     };
 
-    // onPopupReopen(resize);
-
     useExpose<SwipeExpose>({
       prev,
       next,
