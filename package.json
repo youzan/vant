@@ -28,6 +28,9 @@
     "rimraf": "^3.0.2"
   },
   "pnpm": {
+    "overrides": {
+      "esbuild": "^0.14"
+    },
     "peerDependencyRules": {
       "ignoreMissing": [
         "@algolia/client-search",
