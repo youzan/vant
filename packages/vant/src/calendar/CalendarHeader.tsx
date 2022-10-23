@@ -8,6 +8,7 @@ export default defineComponent({
   name,
 
   props: {
+    date: Date,
     title: String,
     subtitle: String,
     showTitle: Boolean,
@@ -30,7 +31,12 @@ export default defineComponent({
 
     const renderSubtitle = () => {
       if (props.showSubtitle) {
-        const title = slots.subtitle ? slots.subtitle() : props.subtitle;
+        const title = slots.subtitle
+          ? slots.subtitle({
+              date: props.date,
+              text: props.subtitle,
+            })
+          : props.subtitle;
         return (
           <div class={bem('header-subtitle')} onClick={onClickSubtitle}>
             {title}

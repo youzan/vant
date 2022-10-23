@@ -331,14 +331,14 @@ Following props are supported when the type is multiple
 
 ### Slots
 
-| Name                  | Description               | SlotProps               |
-| --------------------- | ------------------------- | ----------------------- |
-| title                 | Custom title              | -                       |
-| subtitle `v3.1.3`     | Custom subtitle           | -                       |
-| footer                | Custom footer             | -                       |
-| confirm-text `v3.2.6` | Custom confirm text       | _{ disabled: boolean }_ |
-| top-info `v3.0.17`    | Custom top info of day    | _day: Day_              |
-| bottom-info `v3.0.17` | Custom bottom info of day | _day: Day_              |
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| title | Custom title | - |
+| subtitle `v3.1.3` | Custom subtitle | _{ text: string, date?: Date }_ |
+| footer | Custom footer | - |
+| confirm-text `v3.2.6` | Custom confirm text | _{ disabled: boolean }_ |
+| top-info `v3.0.17` | Custom top info of day | _day: Day_ |
+| bottom-info `v3.0.17` | Custom bottom info of day | _day: Day_ |
 
 ### Methods
 

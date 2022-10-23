@@ -934,6 +934,12 @@ exports[`should render confirm-text slot correctly 1`] = `
 </button>
 `;
 
+exports[`should render subtitle slot with params 1`] = `
+<div class="van-calendar__header-subtitle">
+  Custom Subtitle
+</div>
+`;
+
 exports[`should render title、footer、subtitle slot correctly 1`] = `
 <div class="van-calendar">
   <div class="van-calendar__header">

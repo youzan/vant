@@ -175,7 +175,10 @@ export default defineComponent({
 
     const bodyRef = ref<HTMLElement>();
 
-    const subtitle = ref('');
+    const subtitle = ref<{ text: string; date?: Date }>({
+      text: '',
+      date: undefined,
+    });
     const currentDate = ref(getInitialDate());
 
     const [monthRefs, setMonthRefs] = useRefs<CalendarMonthInstance>();
@@ -267,7 +270,10 @@ export default defineComponent({
 
       /* istanbul ignore else */
       if (currentMonth) {
-        subtitle.value = currentMonth.getTitle();
+        subtitle.value = {
+          text: currentMonth.getTitle(),
+          date: currentMonth.date,
+        };
       }
     };
 
@@ -525,8 +531,9 @@ export default defineComponent({
       <div class={bem()}>
         <CalendarHeader
           v-slots={pick(slots, ['title', 'subtitle'])}
+          date={subtitle.value.date}
           title={props.title}
-          subtitle={subtitle.value}
+          subtitle={subtitle.value.text}
           showTitle={props.showTitle}
           showSubtitle={props.showSubtitle}
           firstDayOfWeek={dayOffset.value}

@@ -365,6 +365,27 @@ test('should render title、footer、subtitle slot correctly', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
+test.only('should render subtitle slot with params', async () => {
+  const wrapper = mount(Calendar, {
+    props: {
+      minDate,
+      maxDate,
+      poppable: false,
+      defaultDate: minDate,
+      lazyRender: false,
+    },
+    slots: {
+      subtitle: ({ text }) => `Custom Subtitle ${text}`,
+    },
+  });
+
+  await later();
+
+  expect(
+    wrapper.find('.van-calendar__header-subtitle').html()
+  ).toMatchSnapshot();
+});
+
 test('should reset when type changed', async () => {
   const wrapper = mount(Calendar, {
     props: {

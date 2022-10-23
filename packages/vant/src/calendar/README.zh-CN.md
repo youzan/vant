@@ -337,14 +337,14 @@ export default {
 
 ### Slots
 
-| 名称                  | 说明                     | 参数                    |
-| --------------------- | ------------------------ | ----------------------- |
-| title                 | 自定义标题               | -                       |
-| subtitle `v3.1.3`     | 自定义日历副标题         | -                       |
-| footer                | 自定义底部区域内容       | -                       |
-| confirm-text `v3.2.6` | 自定义确认按钮的内容     | _{ disabled: boolean }_ |
-| top-info `v3.0.17`    | 自定义日期上方的提示信息 | _day: Day_              |
-| bottom-info `v3.0.17` | 自定义日期下方的提示信息 | _day: Day_              |
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| title | 自定义标题 | - |
+| subtitle `v3.1.3` | 自定义日历副标题 | _{ text: string, date?: Date }_ |
+| footer | 自定义底部区域内容 | - |
+| confirm-text `v3.2.6` | 自定义确认按钮的内容 | _{ disabled: boolean }_ |
+| top-info `v3.0.17` | 自定义日期上方的提示信息 | _day: Day_ |
+| bottom-info `v3.0.17` | 自定义日期下方的提示信息 | _day: Day_ |
 
 ### 方法
 
