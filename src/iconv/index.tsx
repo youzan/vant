@@ -16,9 +16,6 @@ import { DefaultSlots } from '../utils/types';
 import encodeUrl from '../utils/encodeUrl';
 
 require('./icon')
-
-console.log(onlineSvgIcon);
-
 export type IconProps = {
   text?: string;
   dot?: boolean;
@@ -90,8 +87,6 @@ function Iconv(
   function currentHref() {
     if (props.href !== undefined)
       return encodeUrl(props.href);
-    if (props.destination !== undefined && props.destination !== "")
-      return encodeUrl(props.destination);
     if (ctx.parent?.$router && props.to !== undefined)
       // @ts-ignore：没办法
       return encodeUrl(ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href);
@@ -109,15 +104,11 @@ function Iconv(
     if (hrefR === undefined) {
       let to;
       if (props.destination) {
-        // 只处理/a/b形式的链接
-        const { origin } = window.location;
-        const path = window.location.href.replace(origin, '').split('/');
-        const destination = props.destination.replace(origin, '').split('/');
-        if (path[1] === destination[1]) {
-          to = encodeUrl('/' + destination.slice(2).join('/'));
-        } else {
+        if (props.destination.startsWith('http')) {
+          location.href = encodeUrl(props.destination);
           return;
         }
+        to = props.destination;
       }
 
       const currentTo = to || props.to;
@@ -156,7 +147,7 @@ function Iconv(
   const sid = ctx.parent.$options._scopeId;
   const href = { attrs: { 'xlink:href': `#h5-${name}` } };
   const ifNotext = props.notext;
-  const {icotype} = props;
+  const { icotype } = props;
   const endNotext = icotype === 'only';
 
   return (

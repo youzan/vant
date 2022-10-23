@@ -137,7 +137,7 @@ export default createComponent({
             </div>
           );
         }
-        if(ifDesigner && singleslot) return null;
+        if (ifDesigner && singleslot) return null;
         return (
           <div class={[bem('title'), props.titleClass]} style={props.titleStyle} vusion-slot-name="title">
             {slots('title') ? slots('title') : title}
@@ -156,7 +156,7 @@ export default createComponent({
       if (ifDesigner) {
         return (
           <div class={[bem('value', { alone: singleslot }), props.valueClass]}>
-            {slots() ? slots()  : (isDef(rtitle) && rtitle !== '' ? <span>{rtitle}</span>  : null)}
+            {slots() ? slots() : (isDef(rtitle) && rtitle !== '' ? <span>{rtitle}</span> : null)}
             {((!isDef(rtitle) || rtitle === '') && !slots()) ? <van-empty-col></van-empty-col> : null}
           </div>
         );
@@ -208,13 +208,11 @@ export default createComponent({
 
     function currentHref() {
       if (props.href !== undefined)
-          return props.href;
-      if (props.destination !== undefined && props.destination !== "")
-          return props.destination;
+        return props.href;
       else if (parent?.$router && props.to !== undefined)
-          return parent?.$router.resolve(props.to, parent?.$route, props.append).href;
+        return parent?.$router.resolve(props.to, parent?.$route, props.append).href;
       else
-          return undefined;
+        return undefined;
     }
 
     function onClick(event) {
@@ -242,40 +240,36 @@ export default createComponent({
       if (hrefR === undefined) {
         let to;
         if (props.destination) {
-            // 只处理/a/b形式的链接
-            const origin = window.location.origin;
-            const path = window.location.href.replace(origin, '').split('/');
-            const destination = props.destination.replace(origin, '').split('/');
-            if (path[1] === destination[1]) {
-                to = '/' + destination.slice(2).join('/');
-            } else {
-                return;
-            }
+          if (props.destination.startsWith('http')) {
+            location.href = encodeUrl(props.destination);
+            return;
+          }
+          to = props.destination;
         }
 
 
         const currentTo = to || props.to;
         if (currentTo === undefined)
-            return;
+          return;
         let cancel = false;
-        emit(that, 'before-navigate',  {
+        emit(that, 'before-navigate', {
           to: currentTo,
           replace: props.replace,
           append: props.append,
           preventDefault: () => (cancel = true),
         });
         if (cancel)
-            return;
+          return;
         const $router = parent?.$router;
         const $route = parent?.$route;
         const { location } = $router.resolve(
-            currentTo,
-            $route,
-            props.append,
+          currentTo,
+          $route,
+          props.append,
         );
         props.replace ? $router.replace(location) : $router.push(location);
 
-        emit(that, 'navigate',  { to: currentTo, replace: props.replace, append: props.append });
+        emit(that, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
       } else {
         function downloadClick() {
           const a = document.createElement("a");
@@ -289,7 +283,7 @@ export default createComponent({
         downloadClick();
       }
 
-        // functionalRoute(ctx);
+      // functionalRoute(ctx);
     }
 
     const clickable = props.clickable ?? isLink;
@@ -330,7 +324,7 @@ export default createComponent({
 
     const ado = {
       ...this.$attrs,
-      [infield ? 'is-sub': 'noallow']: '',
+      [infield ? 'is-sub' : 'noallow']: '',
     }
 
     const canActivateItem = () => {
@@ -343,7 +337,7 @@ export default createComponent({
 
     return (
       <div
-        {...{attrs: {...ado}}}
+        {...{ attrs: { ...ado } }}
         class={classesnew}
         role={clickable ? 'button' : null}
         tabindex={clickable ? 0 : null}

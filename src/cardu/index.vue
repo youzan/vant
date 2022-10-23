@@ -32,8 +32,6 @@ export default {
           function currentHref() {
             if (props.href !== undefined)
                 return encodeUrl(props.href);
-            if (props.destination !== undefined && props.destination !== "")
-                return encodeUrl(props.destination);
             else if (parent?.$router && props.to !== undefined)
                 return encodeUrl(parent?.$router.resolve(props.to, parent?.$route, props.append).href);
             else
@@ -47,15 +45,11 @@ export default {
           if (hrefR === undefined) {
           let to;
           if (props.destination) {
-              // 只处理/a/b形式的链接
-              const origin = window.location.origin;
-              const path = window.location.href.replace(origin, '').split('/');
-              const destination = props.destination.replace(origin, '').split('/');
-              if (path[1] === destination[1]) {
-                  to = encodeUrl('/' + destination.slice(2).join('/'));
-              } else {
+              if (props.destination.startsWith('http')) {
+                  location.href = encodeUrl(props.destination);
                   return;
               }
+              to = props.destination;
           }
 
 
