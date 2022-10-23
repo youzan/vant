@@ -149,7 +149,7 @@ export default createComponent({
       this.$emit('clear', event);
     },
     afterValueChange() {
-      console.log(666);
+      // console.log(666);
       this.currentValue = this.value;
     },
   },

@@ -1,22 +1,22 @@
 ### 主要按钮
 
 ``` html
-<van-button type="primary" text="主要按钮"></van-button>
+<van-button type="info" size="middle" text="确定" squareroud="round"></van-button>
 ```
 
-### 信息按钮
+### 次要按钮
 
 ``` html
-<van-button type="info" text="信息按钮"></van-button>
+<van-button type="info_secondary" size="middle" text="确定" squareroud="round"></van-button>
 ```
 
-### 默认按钮
+### 普通按钮
 
 ``` html
-<van-button type="default" text="默认按钮"></van-button>
+<van-button type="default" size="middle" text="确定" squareroud="round"></van-button>
 ```
-### 细边框
+### 图标按钮
 
 ``` html
-<van-button plain hairline type="primary" text="细边框按钮"></van-button>
+<van-button  type="info" size="middle" text="确定" icon="sure" squareroud="round"></van-button>
 ```

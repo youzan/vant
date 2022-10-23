@@ -1,29 +1,35 @@
-### 拉伸图片，使图片填满元素
+
+### 适应
 
 ``` html
-<van-image src="https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg" fit="fill"></van-image>
+<van-image src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/0.png" fit="contain"></van-image>
 ```
 
-### 保持宽高缩放图片，使图片的长边能完全显示出来
+### 适应（图片小于父元素时以原尺寸展示）
 
 ``` html
-<van-image src="https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg" fit="contain"></van-image>
+<van-image src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/1.png" fit="scale-down"></van-image>
 ```
 
-### 保持宽高缩放图片，使图片的短边能完全显示出来，裁剪长边
+### 原尺寸
 
 ``` html
-<van-image src="https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg" fit="cover"></van-image>
+<van-image src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/2.png" fit="none"></van-image>
 ```
 
-### 保持图片原有尺寸
+### 拉伸
 
 ``` html
-<van-image src="https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg" fit="none"></van-image>
+<van-image src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/3.png" fit="fill"></van-image>
 ```
 
-### 取 contain、none 中较小的
+
+
+### 填充
 
 ``` html
-<van-image src="https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg" fit="scale-down"></van-image>
+<van-image src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/4.png" fit="cover"></van-image>
 ```
+
+
+

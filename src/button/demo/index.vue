@@ -1,6 +1,224 @@
 <template>
   <demo-section>
     <demo-block :title="t('type')">
+      <div>
+        <van-button
+          size="middle"
+          type="info"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="middle"
+          type="info"
+          :disabled="true"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+      </div>
+      <div style="margin-top: 10px">
+        <van-button
+          size="normal"
+          type="info_secondary"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="normal"
+          :disabled="true"
+          type="info_secondary"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+      </div>
+      <div style="margin-top: 10px">
+        <van-button
+          size="normal"
+          type="default"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="normal"
+          :disabled="true"
+          type="default"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+      </div>
+      <div style="margin-top: 10px">
+        <van-button
+          size="normal"
+          type="warning"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="normal"
+          :disabled="true"
+          type="warning"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+      </div>
+      <div style="margin-top: 10px">
+        <van-button
+          size="normal"
+          type="warning_secondary"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="normal"
+          :disabled="true"
+          type="warning_secondary"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+      </div>
+      <div style="margin-top: 10px">
+        <van-button
+          size="normal"
+          type="danger"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="normal"
+          :disabled="true"
+          type="danger"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+      </div>
+      <div style="margin-top: 10px">
+        <van-button
+          size="normal"
+          type="danger_secondary"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          :disabled="true"
+          size="normal"
+          type="danger_secondary"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+      </div>
+    </demo-block>
+    <demo-block :title="t('shape')">
+      <div class="demo-button-row">
+        <van-button
+          size="normal"
+          type="info"
+          class="u-code-example_demo_"
+          squareroud="square"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="normal"
+          type="info_secondary"
+          class="u-code-example_demo_"
+          squareroud="square"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="normal"
+          type="default"
+          class="u-code-example_demo_"
+          squareroud="square"
+          >{{ t('info') }}</van-button
+        >
+      </div>
+      <div class="demo-button-row">
+        <van-button
+          size="normal"
+          type="info"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="normal"
+          type="info_secondary"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="normal"
+          type="default"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="middle"
+          icon="sure"
+          type="default"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+      </div>
+    </demo-block>
+    <demo-block :title="t('size')">
+      <div class="demo-button-row">
+        <van-button
+          size="mini"
+          type="info"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="small"
+          type="info"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="normal"
+          type="info"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+
+        <van-button
+          size="middle"
+          type="info"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+        <van-button
+          size="large"
+          type="info"
+          class="u-code-example_demo_"
+          squareroud="round"
+          >{{ t('info') }}</van-button
+        >
+      </div>
+    </demo-block>
+  </demo-section>
+  <!-- <demo-block :title="t('type')">
       <div class="demo-button-row">
         <van-button type="primary" class="u-code-example_demo_" @before-navigate="beforeNavigate" to="666">{{ t('primary') }}</van-button>
         <van-button type="info" class="u-code-example_demo_" squareroud="round">{{ t('info') }}</van-button>
@@ -81,7 +299,7 @@
         :text="t('gradient')"
       />
     </demo-block>
-  </demo-section>
+  </demo-section> -->
 </template>
 
 <script>
@@ -89,7 +307,7 @@ export default {
   methods: {
     beforeNavigate(...args) {
       console.log(args);
-    },
+    }
   },
   i18n: {
     'zh-CN': {
@@ -100,7 +318,7 @@ export default {
       shape: '按钮形状',
       default: '默认按钮',
       primary: '主要按钮',
-      info: '信息按钮',
+      info: '确定',
       danger: '危险按钮',
       warning: '警告按钮',
       large: '大号按钮',
@@ -119,7 +337,7 @@ export default {
       customColor: '自定义颜色',
       pure: '单色按钮',
       gradient: '渐变色按钮',
-      blockElement: '块级元素',
+      blockElement: '块级元素'
     },
     'en-US': {
       type: 'Type',
@@ -148,9 +366,9 @@ export default {
       customColor: 'Custom Color',
       pure: 'Pure',
       gradient: 'Gradient',
-      blockElement: 'Block Element',
-    },
-  },
+      blockElement: 'Block Element'
+    }
+  }
 };
 </script>
 

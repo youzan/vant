@@ -1,5 +1,5 @@
 - name: van-area
-  title: 地区选择器选择器
+  title: 地区选择器
   icon: region-select
   labels:
     - Selector

@@ -8,15 +8,16 @@ import Info from '../info';
 import VanEmptyCol from '../emptycol'
 import config from './config'
 
-require('./icon')
-
 import { onlineSvgIcon } from 'online-svg-icon-vue2'
-console.log(onlineSvgIcon);
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 import encodeUrl from '../utils/encodeUrl';
+
+require('./icon')
+
+console.log(onlineSvgIcon);
 
 export type IconProps = {
   text?: string;
@@ -155,7 +156,7 @@ function Iconv(
   const sid = ctx.parent.$options._scopeId;
   const href = { attrs: { 'xlink:href': `#h5-${name}` } };
   const ifNotext = props.notext;
-  const icotype = props.icotype;
+  const {icotype} = props;
   const endNotext = icotype === 'only';
 
   return (

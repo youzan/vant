@@ -28,6 +28,7 @@ export default createComponent({
       return {
         fontSize: addUnit(this.size),
         backgroundColor: this.checked ? this.activeColor : this.inactiveColor,
+        borderColor:this.checked ? this.activeColor : this.inactiveColor,
       };
     },
   },

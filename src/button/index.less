@@ -71,6 +71,24 @@
     border: @button-border-width solid @button-warning-border-color;
   }
 
+  &--info_secondary{
+    background-color: @button-plain-background-color;
+    color: @button-info-background-color;
+    border: 1px solid @button-info-background-color;
+  }
+
+  &--warning_secondary{
+    background-color: @button-plain-background-color;
+    color: @button-warning-background-color;
+    border: 1px solid @button-warning-background-color;
+  }
+  &--danger_secondary{
+    background-color: @button-plain-background-color;
+    color: @button-danger-background-color;
+    border: 1px solid @button-danger-background-color;
+  }
+
+
   &--plain {
     background-color: @button-plain-background-color;
 
@@ -92,18 +110,23 @@
   }
 
   &--large {
-    width: 100%;
+    width: 343px;
     height: @button-large-height;
+  }
+  &--middle {
+    width: 164px;
+    font-size: @button-normal-font-size;
   }
 
   &--normal {
-    padding: 0 15px;
+    padding: 0 49px;
     font-size: @button-normal-font-size;
+    height: 36px;
   }
 
   &--small {
     height: @button-small-height;
-    padding: 0 @padding-xs;
+    padding: 0 25px;
     font-size: @button-small-font-size;
   }
 
@@ -114,7 +137,7 @@
 
   &--mini {
     height: @button-mini-height;
-    padding: 0 @padding-base;
+    padding: 0 21px;
     font-size: @button-mini-font-size;
 
     & + .van-button--mini {
@@ -143,7 +166,7 @@
   }
 
   &--square {
-    border-radius: 0;
+    border-radius: 4px;
   }
 
   // align-items are ignored when flex container is a button in legacy safari

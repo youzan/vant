@@ -125,4 +125,3 @@ How to use: [Custom Theme](#/en-US/theme).
 | @switch-on-background-color | `@blue` | - |
 | @switch-transition-duration | `@animation-duration-base` | - |
 | @switch-disabled-opacity | `@disabled-opacity` | - |
-| @switch-border | `@border-width-base solid rgba(0, 0, 0, 0.1)` | - |

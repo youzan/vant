@@ -1710,7 +1710,7 @@
             "Navigation"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-tabbar>\\n  <van-tabbar-item icon=\\\"frontpage\\\" text=\\\"标签\\\"></van-tabbar-item>\\n  <van-tabbar-item icon=\\\"contact\\\" text=\\\"标签\\\"></van-tabbar-item>\\n  <van-tabbar-item icon=\\\"location\\\" text=\\\"标签\\\"></van-tabbar-item>\\n  <van-tabbar-item icon=\\\"avatar\\\" text=\\\"标签\\\"></van-tabbar-item>\\n</van-tabbar>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-tabbar>\\n  <van-tabbar-item icon=\\\"frontpage\\\" style=\\\"font-size:24px\\\" ><van-text text=\\\"标签\\\"></van-text></van-tabbar-item>\\n  <van-tabbar-item icon=\\\"contact\\\" style=\\\"font-size:24px\\\" ><van-text text=\\\"标签\\\"></van-text></van-tabbar-item>\\n  <van-tabbar-item icon=\\\"location\\\" style=\\\"font-size:24px\\\" ><van-text text=\\\"标签\\\"></van-text></van-tabbar-item>\\n  <van-tabbar-item icon=\\\"avatar\\\" style=\\\"font-size:24px\\\" ><van-text text=\\\"标签\\\"></van-text></van-tabbar-item>\\n</van-tabbar>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-tabbar",
             "title": "标签栏",
@@ -1722,7 +1722,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-tabbar>\n  <van-tabbar-item icon=\"frontpage\" text=\"标签\"></van-tabbar-item>\n  <van-tabbar-item icon=\"contact\" text=\"标签\"></van-tabbar-item>\n  <van-tabbar-item icon=\"location\" text=\"标签\"></van-tabbar-item>\n  <van-tabbar-item icon=\"avatar\" text=\"标签\"></van-tabbar-item>\n</van-tabbar>\n</template>\n"
+                    "code": "<template>\n<van-tabbar>\n  <van-tabbar-item icon=\"frontpage\" style=\"font-size:24px\" ><van-text text=\"标签\"></van-text></van-tabbar-item>\n  <van-tabbar-item icon=\"contact\" style=\"font-size:24px\" ><van-text text=\"标签\"></van-text></van-tabbar-item>\n  <van-tabbar-item icon=\"location\" style=\"font-size:24px\" ><van-text text=\"标签\"></van-text></van-tabbar-item>\n  <van-tabbar-item icon=\"avatar\" style=\"font-size:24px\" ><van-text text=\"标签\"></van-text></van-tabbar-item>\n</van-tabbar>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -1901,7 +1901,7 @@
             "Display"
         ],
         "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/button/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/button/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/button/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/button/screenshots/3.png",
-        "blocks": "[{\"title\":\"主要按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"primary\\\" text=\\\"主要按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"信息按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"info\\\" text=\\\"信息按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"默认按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"default\\\" text=\\\"默认按钮\\\"></van-button>\\n</template>\\n\"},{\"title\":\"细边框\",\"description\":\"\",\"code\":\"<template>\\n<van-button plain hairline type=\\\"primary\\\" text=\\\"细边框按钮\\\"></van-button>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"主要按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"info\\\" size=\\\"middle\\\" text=\\\"确定\\\" squareroud=\\\"round\\\"></van-button>\\n</template>\\n\"},{\"title\":\"次要按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"info_secondary\\\" size=\\\"middle\\\" text=\\\"确定\\\" squareroud=\\\"round\\\"></van-button>\\n</template>\\n\"},{\"title\":\"普通按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button type=\\\"default\\\" size=\\\"middle\\\" text=\\\"确定\\\" squareroud=\\\"round\\\"></van-button>\\n</template>\\n\"},{\"title\":\"图标按钮\",\"description\":\"\",\"code\":\"<template>\\n<van-button  type=\\\"info\\\" size=\\\"middle\\\" text=\\\"确定\\\" icon=\\\"sure\\\" squareroud=\\\"round\\\"></van-button>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-button",
             "title": "按钮",
@@ -1913,22 +1913,22 @@
                 {
                     "title": "主要按钮",
                     "description": "",
-                    "code": "<template>\n<van-button type=\"primary\" text=\"主要按钮\"></van-button>\n</template>\n"
+                    "code": "<template>\n<van-button type=\"info\" size=\"middle\" text=\"确定\" squareroud=\"round\"></van-button>\n</template>\n"
                 },
                 {
-                    "title": "信息按钮",
+                    "title": "次要按钮",
                     "description": "",
-                    "code": "<template>\n<van-button type=\"info\" text=\"信息按钮\"></van-button>\n</template>\n"
+                    "code": "<template>\n<van-button type=\"info_secondary\" size=\"middle\" text=\"确定\" squareroud=\"round\"></van-button>\n</template>\n"
                 },
                 {
-                    "title": "默认按钮",
+                    "title": "普通按钮",
                     "description": "",
-                    "code": "<template>\n<van-button type=\"default\" text=\"默认按钮\"></van-button>\n</template>\n"
+                    "code": "<template>\n<van-button type=\"default\" size=\"middle\" text=\"确定\" squareroud=\"round\"></van-button>\n</template>\n"
                 },
                 {
-                    "title": "细边框",
+                    "title": "图标按钮",
                     "description": "",
-                    "code": "<template>\n<van-button plain hairline type=\"primary\" text=\"细边框按钮\"></van-button>\n</template>\n"
+                    "code": "<template>\n<van-button  type=\"info\" size=\"middle\" text=\"确定\" icon=\"sure\" squareroud=\"round\"></van-button>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -1944,27 +1944,35 @@
                     "type": "string",
                     "options": [
                         {
-                            "value": "primary",
+                            "value": "info",
                             "title": "主要按钮"
                         },
                         {
-                            "value": "info",
-                            "title": "信息按钮"
+                            "value": "info_secondary",
+                            "title": "次要按钮"
                         },
                         {
                             "value": "default",
-                            "title": "默认按钮"
+                            "title": "普通按钮"
                         },
                         {
                             "value": "warning",
-                            "title": "警告按钮"
+                            "title": "警告操作按钮"
+                        },
+                        {
+                            "value": "warning_secondary",
+                            "title": "警告操作按钮"
                         },
                         {
                             "value": "danger",
-                            "title": "危险按钮"
+                            "title": "危险操作按钮"
+                        },
+                        {
+                            "value": "danger_secondary",
+                            "title": "危险操作按钮"
                         }
                     ],
-                    "default": "primary",
+                    "default": "info",
                     "description": "设置按钮颜色类型"
                 },
                 {
@@ -1984,6 +1992,10 @@
                             "title": "大"
                         },
                         {
+                            "value": "middle",
+                            "title": "中型"
+                        },
+                        {
                             "value": "normal",
                             "title": "正常"
                         },
@@ -1996,7 +2008,7 @@
                             "title": "迷你"
                         }
                     ],
-                    "default": "normal",
+                    "default": "middle",
                     "description": "设置尺寸"
                 },
                 {
@@ -2013,7 +2025,7 @@
                             "title": "圆形"
                         }
                     ],
-                    "default": "square",
+                    "default": "round",
                     "description": "设置方形形状"
                 },
                 {
@@ -2164,7 +2176,7 @@
             "Display"
         ],
         "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/image/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/image/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/image/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/image/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/image/screenshots/4.png",
-        "blocks": "[{\"title\":\"拉伸图片，使图片填满元素\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\\\" fit=\\\"fill\\\"></van-image>\\n</template>\\n\"},{\"title\":\"保持宽高缩放图片，使图片的长边能完全显示出来\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\\\" fit=\\\"contain\\\"></van-image>\\n</template>\\n\"},{\"title\":\"保持宽高缩放图片，使图片的短边能完全显示出来，裁剪长边\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\\\" fit=\\\"cover\\\"></van-image>\\n</template>\\n\"},{\"title\":\"保持图片原有尺寸\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\\\" fit=\\\"none\\\"></van-image>\\n</template>\\n\"},{\"title\":\"取 contain、none 中较小的\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\\\" fit=\\\"scale-down\\\"></van-image>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"适应\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/0.png\\\" fit=\\\"contain\\\"></van-image>\\n</template>\\n\"},{\"title\":\"适应（图片小于父元素时以原尺寸展示）\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/1.png\\\" fit=\\\"scale-down\\\"></van-image>\\n</template>\\n\"},{\"title\":\"原尺寸\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/2.png\\\" fit=\\\"none\\\"></van-image>\\n</template>\\n\"},{\"title\":\"拉伸\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/3.png\\\" fit=\\\"fill\\\"></van-image>\\n</template>\\n\"},{\"title\":\"填充\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/4.png\\\" fit=\\\"cover\\\"></van-image>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-image",
             "title": "图片展示",
@@ -2174,29 +2186,29 @@
             "drawings": "",
             "blocks": [
                 {
-                    "title": "拉伸图片，使图片填满元素",
+                    "title": "适应",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\" fit=\"fill\"></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/0.png\" fit=\"contain\"></van-image>\n</template>\n"
                 },
                 {
-                    "title": "保持宽高缩放图片，使图片的长边能完全显示出来",
+                    "title": "适应（图片小于父元素时以原尺寸展示）",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\" fit=\"contain\"></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/1.png\" fit=\"scale-down\"></van-image>\n</template>\n"
                 },
                 {
-                    "title": "保持宽高缩放图片，使图片的短边能完全显示出来，裁剪长边",
+                    "title": "原尺寸",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\" fit=\"cover\"></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/2.png\" fit=\"none\"></van-image>\n</template>\n"
                 },
                 {
-                    "title": "保持图片原有尺寸",
+                    "title": "拉伸",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\" fit=\"none\"></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/3.png\" fit=\"fill\"></van-image>\n</template>\n"
                 },
                 {
-                    "title": "取 contain、none 中较小的",
+                    "title": "填充",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg\" fit=\"scale-down\"></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/4.png\" fit=\"cover\"></van-image>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -2969,7 +2981,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-badge>\\n</van-badge>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-badge content=\\\"2\\\">\\n</van-badge>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-badge",
             "title": "徽标",
@@ -2981,7 +2993,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-badge>\n</van-badge>\n</template>\n"
+                    "code": "<template>\n<van-badge content=\"2\">\n</van-badge>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -2989,7 +3001,7 @@
                     "name": "content",
                     "title": "徽章值",
                     "type": "string, number",
-                    "default": "",
+                    "default": 2,
                     "description": "徽章值"
                 },
                 {
@@ -6552,7 +6564,7 @@
     },
     {
         "symbol": "van-area",
-        "name": "地区选择器选择器",
+        "name": "地区选择器",
         "icon": "region-select",
         "depDescription": {},
         "description": "省市区三级联动选择",
@@ -6563,7 +6575,7 @@
         "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-area\\n  title=\\\"标题\\\"\\n  converter=\\\"json\\\"\\n  labelField=\\\"地区选择\\\"\\n  input-align=\\\"left\\\"\\n></van-area>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-area",
-            "title": "地区选择器选择器",
+            "title": "地区选择器",
             "description": "省市区三级联动选择",
             "category": "Selector",
             "screenShot": "",

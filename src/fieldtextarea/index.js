@@ -179,7 +179,7 @@ export default createComponent({
       }
     },
     afterValueChange() {
-      console.log(666);
+      // console.log(666);
       this.currentValue = this.value;
     },
     adjustSize() {

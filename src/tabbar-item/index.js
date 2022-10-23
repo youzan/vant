@@ -73,6 +73,9 @@ export default createComponent({
   },
 
   methods: {
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     newdest(destination) {
       return encodeUrl(destination ? '/' + destination.split('/').slice(2).join('/') : destination);
     },
@@ -182,14 +185,17 @@ export default createComponent({
         '[Vant] TabbarItem: "info" prop is deprecated, use "badge" prop instead.'
       );
     }
-
+ 
     return (
-      <div class={bem({ active })} style={{ color }} onClick={this.onClick}>
+      <div class={bem({ active })} style={{ color}} onClick={this.onClick}>
         <div class={bem('icon')}>
           {this.genIcon(active)}
           {(this.showbaget && comBaget) ? <Info dot={this.dot} info={comBaget} /> : null}
         </div>
-        <div class={bem('text')} vusion-slot-name-edit="text">{this.text || this.slots('default', { active })}</div>
+        <div vusion-slot-name="default">
+          {this.ifDesigner() && !this.slots('default') ? <van-empty-col></van-empty-col> : null}
+            <div class={bem('text')} vusion-slot-name-edit="text">{this.slots('default', { active }) || this.text}</div>
+        </div>
       </div>
     );
   },

@@ -12,9 +12,9 @@ import Loading, { LoadingType } from '../loading';
 import { CreateElement, RenderContext } from 'vue/types';
 import { ScopedSlot, DefaultSlots } from '../utils/types';
 
-export type ButtonType = 'default' | 'primary' | 'info' | 'warning' | 'danger';
+export type ButtonType = 'primary'|'primary_secondary' | 'default' |'danger'|'primary_secondary' |'warning' |'primary_secondary'
 
-export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
+export type ButtonSize = 'large' | 'middle' | 'normal' | 'small' | 'mini';
 
 export type ButtonProps = RouteProps & {
   tag: keyof HTMLElementTagNameMap | string;

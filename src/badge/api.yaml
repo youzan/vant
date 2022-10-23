@@ -8,7 +8,7 @@
     - name: content
       title: 徽章值
       type: string, number
-      default: ''
+      default: 2
       description: 徽章值
     - name: dot
       title: 是否展示为小红点

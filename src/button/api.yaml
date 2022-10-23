@@ -15,17 +15,21 @@
       title: 颜色类型
       type: string
       options:
-        - value: primary
-          title: 主要按钮
         - value: info
-          title: 信息按钮
+          title: 主要按钮
+        - value: info_secondary
+          title: 次要按钮
         - value: default
-          title: 默认按钮
+          title: 普通按钮
         - value: warning
-          title: 警告按钮
+          title: 警告操作按钮
+        - value: warning_secondary
+          title: 警告操作按钮
         - value: danger
-          title: 危险按钮
-      default: primary
+          title: 危险操作按钮
+        - value: danger_secondary
+          title: 危险操作按钮
+      default: info
       description: 设置按钮颜色类型
     - name: hairline
       title: 细边框
@@ -38,13 +42,15 @@
       options:
         - value: large
           title: 大
+        - value: middle
+          title: 中型
         - value: normal
           title: 正常
         - value: small
           title: 小
         - value: mini
           title: 迷你
-      default: normal
+      default: middle
       description: 设置尺寸
     - name: squareroud
       title: 形状
@@ -54,7 +60,7 @@
           title: 方形
         - value: round
           title: 圆形
-      default: square
+      default: round
       description: 设置方形形状
     - name: disabled
       title: 禁用
