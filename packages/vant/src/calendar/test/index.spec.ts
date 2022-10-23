@@ -365,7 +365,7 @@ test('should render title、footer、subtitle slot correctly', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test.only('should render subtitle slot with params', async () => {
+test('should render subtitle slot with params', async () => {
   const wrapper = mount(Calendar, {
     props: {
       minDate,
