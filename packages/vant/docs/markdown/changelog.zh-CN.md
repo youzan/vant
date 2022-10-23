@@ -19,6 +19,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-rc.6](https://github.com/vant-ui/vant/compare/v4.0.0-rc.5...v4.0.0-rc.6)
+
+`2022-10-23`
+
+**Feature**
+
+- Calendar: subtitle 插槽新增 text 和 date 入参 [#11168](https://github.com/vant-ui/vant/issues/11168)
+- Cell: 新增 tag 属性 [#11139](https://github.com/vant-ui/vant/issues/11139)
+- ImagePreview: 新增 image 插槽 [#11133](https://github.com/vant-ui/vant/issues/11133)
+- Toast: 新增 wordBreak 选项 [#11147](https://github.com/vant-ui/vant/issues/11147)
+
+**Bug Fixes**
+
+- CouponList: 修复 coupon 位置错误的问题 [#11153](https://github.com/vant-ui/vant/issues/11153)
+- CouponList: 修复输入框样式错误的问题 [#11155](https://github.com/vant-ui/vant/issues/11155)
+- Swipe: 修复在 Popup 内时个别情况下渲染错误的问题 [#11162](https://github.com/vant-ui/vant/issues/11162)
+
 ### [v4.0.0-rc.5](https://github.com/vant-ui/vant/compare/v4.0.0-rc.4...v4.0.0-rc.5)
 
 `2022-10-07`

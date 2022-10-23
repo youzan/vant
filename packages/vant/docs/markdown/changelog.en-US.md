@@ -19,6 +19,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0-rc.6](https://github.com/vant-ui/vant/compare/v4.0.0-rc.5...v4.0.0-rc.6)
+
+`2022-10-23`
+
+**Feature**
+
+- Calendar: add params for subtitle slot [#11168](https://github.com/vant-ui/vant/issues/11168)
+- Cell: add tag prop [#11139](https://github.com/vant-ui/vant/issues/11139)
+- ImagePreview: add image slot [#11133](https://github.com/vant-ui/vant/issues/11133)
+- Toast: add wordBreak prop [#11147](https://github.com/vant-ui/vant/issues/11147)
+
+**Bug Fixes**
+
+- CouponList: fix the style of coupon checkbox [#11153](https://github.com/vant-ui/vant/issues/11153)
+- CouponList: incorrect field style [#11155](https://github.com/vant-ui/vant/issues/11155)
+- Swipe: failed to render when inside popup [#11162](https://github.com/vant-ui/vant/issues/11162)
+
 ### [v4.0.0-rc.5](https://github.com/vant-ui/vant/compare/v4.0.0-rc.4...v4.0.0-rc.5)
 
 `2022-10-07`
