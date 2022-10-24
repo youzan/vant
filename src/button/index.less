@@ -21,9 +21,9 @@
     left: 50%;
     width: 100%;
     height: 100%;
-    background-color: @black;
+    background-color: @white;
     border: inherit;
-    border-color: @black;
+    border-color:  @white;
     border-radius: inherit; /* inherit parent's border radius */
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -31,7 +31,7 @@
   }
 
   &:active::before {
-    opacity: 0.1;
+    opacity: 0.2;
   }
 
   &--loading,
@@ -44,7 +44,15 @@
   &--default {
     color: @button-default-color;
     background-color: @button-default-background-color;
-    border: @button-border-width solid @button-default-border-color;
+    border: @button-border-width solid @border-color;
+
+    &::before {
+      background-color: @black;
+      border-color:  @border-color;
+    }  
+    &:active::before {
+      opacity: 0.08;
+    }
   }
 
   &--primary {
@@ -75,17 +83,26 @@
     background-color: @button-plain-background-color;
     color: @button-info-background-color;
     border: 1px solid @button-info-background-color;
+    &:active:not(.van-button--disabled){
+      background-color:fade( @button-info-background-color ,20%) ;
+    }
   }
 
   &--warning_secondary{
     background-color: @button-plain-background-color;
     color: @button-warning-background-color;
     border: 1px solid @button-warning-background-color;
+    &:active:not(.van-button--disabled){
+      background-color:fade( @button-warning-background-color ,20%) ;
+    }
   }
   &--danger_secondary{
     background-color: @button-plain-background-color;
     color: @button-danger-background-color;
     border: 1px solid @button-danger-background-color;
+    &:active:not(.van-button--disabled){
+      background-color:fade( @button-danger-background-color ,20%) ;
+    }
   }
 
 
