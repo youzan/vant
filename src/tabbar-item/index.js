@@ -88,8 +88,6 @@ export default createComponent({
       function currentHref() {
         if (props.href !== undefined)
           return encodeUrl(props.href);
-        if (props.destination !== undefined && props.destination !== "")
-          return encodeUrl(props.destination);
         if (parent?.$router && props.to !== undefined)
           return encodeUrl(parent?.$router.resolve(props.to, parent?.$route, props.append).href);
         return undefined;
@@ -101,23 +99,19 @@ export default createComponent({
       }
 
       function ifCanGoWithHref(destination) {
-          if (destination) {
-            return destination?.split('/')?.length >2;
-          }
+        if (destination) {
+          return destination?.split('/')?.length > 2;
+        }
       }
 
       if (hrefR === undefined || ifCanGoWithHref(props.destination)) {
         let to;
         if (props.destination) {
-          // 只处理/a/b形式的链接
-          const { origin } = window.location;
-          const path = window.location.href.replace(origin, '').split('/');
-          const destination = props.destination.replace(origin, '').split('/');
-          if (path[1] === destination[1]) {
-            to = encodeUrl('/' + destination.slice(2).join('/'));
-          } else {
+          if (props.destination.startsWith('http')) {
+            location.href = encodeUrl(props.destination);
             return;
           }
+          to = props.destination;
         }
 
 
@@ -185,16 +179,16 @@ export default createComponent({
         '[Vant] TabbarItem: "info" prop is deprecated, use "badge" prop instead.'
       );
     }
- 
+
     return (
-      <div class={bem({ active })} style={{ color}} onClick={this.onClick}>
+      <div class={bem({ active })} style={{ color }} onClick={this.onClick}>
         <div class={bem('icon')}>
           {this.genIcon(active)}
           {(this.showbaget && comBaget) ? <Info dot={this.dot} info={comBaget} /> : null}
         </div>
         <div vusion-slot-name="default">
           {this.ifDesigner() && !this.slots('default') ? <van-empty-col></van-empty-col> : null}
-            <div class={bem('text')} vusion-slot-name-edit="text">{this.slots('default', { active }) || this.text}</div>
+          <div class={bem('text')} vusion-slot-name-edit="text">{this.slots('default', { active }) || this.text}</div>
         </div>
       </div>
     );

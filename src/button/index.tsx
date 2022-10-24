@@ -12,7 +12,7 @@ import Loading, { LoadingType } from '../loading';
 import { CreateElement, RenderContext } from 'vue/types';
 import { ScopedSlot, DefaultSlots } from '../utils/types';
 
-export type ButtonType = 'primary'|'primary_secondary' | 'default' |'danger'|'primary_secondary' |'warning' |'primary_secondary'
+export type ButtonType = 'primary' | 'primary_secondary' | 'default' | 'danger' | 'primary_secondary' | 'warning' | 'primary_secondary'
 
 export type ButtonSize = 'large' | 'middle' | 'normal' | 'small' | 'mini';
 
@@ -117,15 +117,11 @@ function Button(
       if (hrefR === undefined) {
         let to;
         if (props.destination) {
-          // 只处理/a/b形式的链接
-          const { origin } = window.location;
-          const path = window.location.href.replace(origin, '').split('/');
-          const destination = props.destination.replace(origin, '').split('/');
-          if (path[1] === destination[1]) {
-            to = encodeUrl('/' + destination.slice(2).join('/'));
-          } else {
+          if (props.destination.startsWith('http')) {
+            location.href = encodeUrl(props.destination);
             return;
           }
+          to = props.destination;
         }
 
         const currentTo = to || props.to;
@@ -219,8 +215,6 @@ function Button(
   function currentHref() {
     if (props.href !== undefined)
       return encodeUrl(props.href);
-    if (props.destination !== undefined && props.destination !== "")
-      return encodeUrl(props.destination);
     if (ctx.parent?.$router && props.to !== undefined)
       // @ts-ignore：没办法
       return encodeUrl(ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href);
