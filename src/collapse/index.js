@@ -41,7 +41,7 @@ export default createComponent({
       }
     },
     switch(name, expanded) {
-      if (!this.accordion) {console.log(this.value, 777);
+      if (!this.accordion) {
         name = expanded
           ? this.value.concat(name)
           : this.value.filter((activeName) => activeName !== name);

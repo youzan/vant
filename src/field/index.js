@@ -290,7 +290,6 @@ export default createComponent({
       })).then(() => {
         console.log('tongguo');
       }).catch((error) => {
-        console.log(error)
         this.validateFailed = true;
         this.validateMessage = error;
       });

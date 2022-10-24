@@ -169,7 +169,6 @@ export default createComponent({
             page: 1,
             size: 1000
           });
-          console.log(res);
           this.options = res.content;
         } catch (error) {
           console.error(error);
@@ -265,7 +264,6 @@ export default createComponent({
 
       if (!option[this.childrenKey]) {
         this.$emit('finish', eventParams);
-        console.log(this.$parent);
         // if (this.$parent) {
         //   this.$parent.realValue = false;
         // }

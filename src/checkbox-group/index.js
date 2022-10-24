@@ -89,7 +89,6 @@ export default createComponent({
             page: 1,
             size: 1000
           });
-          console.log(res);
           this.options = (res.content);
         } catch (error) {
           console.error(error);

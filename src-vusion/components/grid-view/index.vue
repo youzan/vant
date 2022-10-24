@@ -346,7 +346,6 @@ export default {
         oldNumber: this.currentDataSource.paging.number,
       };
       // eslint-disable-next-line no-console
-      console.log(JSON.stringify(paging));
       try {
         this.currentDataSource.page(paging);
         await this.load();
@@ -395,7 +394,6 @@ export default {
     initFloat() {
       this.mainW = this.getWidth();
       this.calcCol();
-      console.log(this.colW, 888);
       let list = [...this.virtualList];
       list.forEach((e, i) => {
         let _i = i;

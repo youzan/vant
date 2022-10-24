@@ -247,7 +247,6 @@ export default createComponent({
     const messageSlot = this.slots('default');
     const footerSlot = this.slots('footer');
     const title = this.slots('title') || this.title;
-    console.log(this);
     const Title = title && (
       // <div class={bem('header', { isolated: !message && !messageSlot })}>
       //   {title}

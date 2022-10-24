@@ -55,7 +55,7 @@ export default createComponent({
       default: 'focus',
     },
   },
-  data() {console.log(this.value)
+  data() {
     const defaultValue = this.value ?? this.defaultValue;
 
     return {

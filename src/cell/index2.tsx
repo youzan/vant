@@ -124,7 +124,6 @@ function Cell(
 
   function onClick(event: Event) {
     emit(ctx, 'click', event);
-    console.log(ctx);
     const hrefR = currentHref();
     if (!hrefR && !ctx.listeners.click) {
       event.preventDefault();

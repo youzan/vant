@@ -197,7 +197,6 @@ export default createComponent({
 
       if (!option[this.childrenKey]) {
         this.$emit('finish', eventParams);
-        console.log(this.$parent);
         if (this.$parent) {
           this.$parent.realValue = false;
         }

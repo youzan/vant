@@ -62,7 +62,6 @@ export default createComponent({
     setParentValue(val) {
       const { parent } = this;
       const value = parent.datatemp.slice();
-      console.log(val, value);
       if (val) {
         if (parent.max && value.length >= parent.max) {
           return;
