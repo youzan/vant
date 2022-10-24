@@ -658,6 +658,8 @@ export default {
   height: var(--list-view-height);
   min-width: var(--list-view-width);
   max-width: 100%;
+
+  box-sizing: border-box;
 }
 
 .root:focus {
