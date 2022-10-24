@@ -35,24 +35,24 @@
                   <slot v-if="slots('item')" name="item" :item="item" :index="index" :text="$at(item, field || textField)" :value="$at(item, valueField)" :disabled="item.disabled || disabled">{{ $at(item, field || textField) }}</slot>
                 </component>
             </div>
-            <div :class="$style.status" status="loading" v-if="currentLoading">
+            <div :class="$style.status" status="loading" v-if="currentLoading && !notext">
                 <slot name="loading"><u-spinner></u-spinner> {{ loadingText }}</slot>
             </div>
-            <div :class="$style.status" status="error" v-else-if="currentData === null || currentError">
+            <div :class="$style.status" status="error" v-else-if="(currentData === null || currentError)  && !notext">
                 <slot name="error">{{ errorText }}</slot>
             </div>
-            <div :class="$style.status" v-else-if="pageable === 'load-more' && currentDataSource && currentDataSource.hasMore()">
+            <div :class="$style.status" v-else-if="pageable === 'load-more' && currentDataSource && currentDataSource.hasMore() && !notext">
                 <u-link @click="load(true)">{{ $t('loadMore') }}</u-link>
             </div>
-            <div :class="$style.status" v-else-if="(pageable === 'auto-more' || pageable === 'load-more') && currentDataSource && !currentDataSource.hasMore() && !$env.VUE_APP_DESIGNER">
+            <div :class="$style.status" v-else-if="(pageable === 'auto-more' || pageable === 'load-more') && currentDataSource && !currentDataSource.hasMore() && !$env.VUE_APP_DESIGNER && !notext">
                 {{ $t('noMore') }}
             </div>
-            <div :class="$style.status" v-else-if="currentData && !currentData.length">
+            <div :class="$style.status" v-else-if="currentData && !currentData.length && !notext">
                 <slot name="empty">{{ emptyText }}</slot>
             </div>
         </div>
     </van-pull-refresh>
-    <div v-show="showFoot || (pageable === true || pageable === 'pagination') && currentDataSource.total > currentDataSource.paging.size" :class="$style.foot">
+    <div v-show="(showFoot || (pageable === true || pageable === 'pagination') && currentDataSource.total > currentDataSource.paging.size) && !notext" :class="$style.foot">
         <slot name="foot"></slot>
         <u-pagination :class="$style.pagination" v-if="pageable === true || pageable === 'pagination'"
             :total-items="currentDataSource.total" :page="currentDataSource.paging.number"
@@ -87,6 +87,7 @@ export default {
         successText: { type: String, default: '已刷新' },
         successDuration: 500,
         pullDistance: 50,
+        notext: { type: Boolean, default: false },
     },
     data() {
       return {
