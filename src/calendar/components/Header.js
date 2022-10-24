@@ -46,7 +46,7 @@ export default createComponent({
   },
   methods: {
     onInput(date) {
-      console.log(date, 888);
+      // console.log(date, 888);
       this.pickDate = `${date.year}/${date.monthIndex}`
     },
     togglePick() {

@@ -8,7 +8,7 @@ import Info from '../info';
 import VanEmptyCol from '../emptycol'
 import config from './config'
 
-import { onlineSvgIcon } from 'online-svg-icon-vue2'
+import  {onlineSvgIcon}  from 'online-svg-icon-vue2/src/main'
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -16,6 +16,7 @@ import { DefaultSlots } from '../utils/types';
 import encodeUrl from '../utils/encodeUrl';
 
 require('./icon')
+
 export type IconProps = {
   text?: string;
   dot?: boolean;
