@@ -3533,7 +3533,7 @@
             "Table"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-list-view pageable=\\\"load-more\\\"></van-list-view>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-list-view pageable=\\\"load-more\\\" vusion-disabled-addslot></van-list-view>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-list-view",
             "title": "数据列表",
@@ -3545,7 +3545,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-list-view pageable=\"load-more\"></van-list-view>\n</template>\n"
+                    "code": "<template>\n<van-list-view pageable=\"load-more\" vusion-disabled-addslot></van-list-view>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -4159,7 +4159,7 @@
             "Table"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-grid-view pageable=\\\"load-more\\\"></van-grid-view>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-grid-view pageable=\\\"load-more\\\" vusion-disabled-addslot></van-grid-view>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-grid-view",
             "title": "数据网格",
@@ -4171,7 +4171,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-grid-view pageable=\"load-more\"></van-grid-view>\n</template>\n"
+                    "code": "<template>\n<van-grid-view pageable=\"load-more\" vusion-disabled-addslot></van-grid-view>\n</template>\n"
                 }
             ],
             "attrs": [
