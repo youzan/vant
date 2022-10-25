@@ -204,6 +204,8 @@ export default createComponent({
       if (this.children && (this.$scopedSlots.input || this.$slots.input)) {
         if (this.children?.$options?._componentTag === 'van-calendar') {
           return this.children.defaultDate;
+        } if (this.children?.$options?._componentTag === 'van-uploader') {
+          return this.children.fileListProp;
         }
         return this.children.value;
       }
