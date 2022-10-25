@@ -8,12 +8,13 @@ import Info from '../info';
 import VanEmptyCol from '../emptycol'
 import config from './config'
 
-import { onlineSvgIcon } from 'online-svg-icon-vue2/src/main'
-
+import { onlineSvgIcon } from 'online-svg-icon-vue2'
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 import encodeUrl from '../utils/encodeUrl';
+
+onlineSvgIcon
 
 require('./icon')
 
@@ -106,7 +107,7 @@ function Iconv(
       let to;
       if (props.destination) {
         if (props.destination.startsWith('http')) {
-          location.href = encodeUrl(props.destination);
+          window.location.href = encodeUrl(props.destination);
           return;
         }
         to = props.destination;
