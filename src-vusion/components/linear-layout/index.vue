@@ -1,7 +1,10 @@
 <template>
 <div :class="$style.root" :type="type" :direction="direction" v-on="$listeners" vusion-slot-name="default">
     <slot></slot>
-    <s-empty v-if="type !== 'root' && (!$slots.default) && $env.VUE_APP_DESIGNER && !!$attrs['vusion-node-path']"></s-empty>
+    <template v-if="(!$slots.default) && $env.VUE_APP_DESIGNER && !!$attrs['vusion-node-path']">
+        <div :class="$style.emptyTip" v-if="type === 'root'">拖拽右侧组件放至此处</div>
+        <s-empty v-else></s-empty>
+    </template>
     <div v-if="showLoading" :class="$style.mask">
         <van-loading vertical
             :icon="loadingIcon"
@@ -28,6 +31,14 @@ export default {
 <style module>
 .root {
     position: relative;
+}
+
+.emptyTip {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #666666;
 }
 
 .mask {
