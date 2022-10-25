@@ -1,36 +1,36 @@
 import { defineComponent, type PropType, type ExtractPropTypes } from 'vue';
+
+// Utils
 import {
+  extend,
   addUnit,
   truthProp,
-  numericProp,
-  getSizeStyle,
-  makeStringProp,
   makeNumericProp,
   createNamespace,
   type Numeric,
 } from '../utils';
 
+// Components
+import {
+  SkeletonItem,
+  DEFAULT_ROW_WIDTH,
+  skeletonCommonProps,
+} from '../skeleton-item';
+
 const [name, bem] = createNamespace('skeleton');
-const DEFAULT_ROW_WIDTH = '100%';
 const DEFAULT_LAST_ROW_WIDTH = '60%';
 
-export type SkeletonAvatarShape = 'square' | 'round';
-
-export const skeletonProps = {
+export const skeletonProps = extend({}, skeletonCommonProps, {
   row: makeNumericProp(0),
   title: Boolean,
-  round: Boolean,
   avatar: Boolean,
   loading: truthProp,
   animate: truthProp,
-  avatarSize: numericProp,
-  titleWidth: numericProp,
-  avatarShape: makeStringProp<SkeletonAvatarShape>('round'),
   rowWidth: {
     type: [Number, String, Array] as PropType<Numeric | Numeric[]>,
     default: DEFAULT_ROW_WIDTH,
   },
-};
+});
 
 export type SkeletonProps = ExtractPropTypes<typeof skeletonProps>;
 
@@ -44,23 +44,13 @@ export default defineComponent({
   setup(props, { slots, attrs }) {
     const renderAvatar = () => {
       if (props.avatar) {
-        return (
-          <div
-            class={bem('avatar', props.avatarShape)}
-            style={getSizeStyle(props.avatarSize)}
-          />
-        );
+        return <SkeletonItem type={'avatar'} avatarSize={props.avatarSize} />;
       }
     };
 
     const renderTitle = () => {
       if (props.title) {
-        return (
-          <h3
-            class={bem('title')}
-            style={{ width: addUnit(props.titleWidth) }}
-          />
-        );
+        return <SkeletonItem type={'title'} titleWidth={props.titleWidth} />;
       }
     };
 
@@ -82,8 +72,28 @@ export default defineComponent({
       Array(+props.row)
         .fill('')
         .map((_, i) => (
-          <div class={bem('row')} style={{ width: addUnit(getRowWidth(i)) }} />
+          <SkeletonItem
+            key={i}
+            type={'cell'}
+            rowWidth={addUnit(getRowWidth(i))}
+          />
         ));
+
+    const renderContents = () => {
+      if (slots.template) {
+        return slots.template();
+      }
+
+      return (
+        <>
+          {renderAvatar()}
+          <div class={bem('content')}>
+            {renderTitle()}
+            {renderRows()}
+          </div>
+        </>
+      );
+    };
 
     return () => {
       if (!props.loading) {
@@ -95,11 +105,7 @@ export default defineComponent({
           class={bem({ animate: props.animate, round: props.round })}
           {...attrs}
         >
-          {renderAvatar()}
-          <div class={bem('content')}>
-            {renderTitle()}
-            {renderRows()}
-          </div>
+          {renderContents()}
         </div>
       );
     };

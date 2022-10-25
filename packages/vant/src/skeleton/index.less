@@ -1,10 +1,4 @@
 :root {
-  --van-skeleton-row-height: 16px;
-  --van-skeleton-row-background: var(--van-active-color);
-  --van-skeleton-row-margin-top: var(--van-padding-sm);
-  --van-skeleton-title-width: 40%;
-  --van-skeleton-avatar-size: 32px;
-  --van-skeleton-avatar-background: var(--van-active-color);
   --van-skeleton-duration: 1.2s;
 }
 
@@ -12,57 +6,13 @@
   display: flex;
   padding: 0 var(--van-padding-md);
 
-  &__avatar {
-    flex-shrink: 0;
-    width: var(--van-skeleton-avatar-size);
-    height: var(--van-skeleton-avatar-size);
-    margin-right: var(--van-padding-md);
-    background: var(--van-skeleton-avatar-background);
-
-    &--round {
-      border-radius: var(--van-radius-max);
-    }
-  }
-
   &__content {
     width: 100%;
-  }
-
-  &__avatar + &__content {
-    padding-top: var(--van-padding-xs);
-  }
-
-  &__row,
-  &__title {
-    height: var(--van-skeleton-row-height);
-    background: var(--van-skeleton-row-background);
-  }
-
-  &__title {
-    width: var(--van-skeleton-title-width);
-    margin: 0;
-  }
-
-  &__row {
-    &:not(:first-child) {
-      margin-top: var(--van-skeleton-row-margin-top);
-    }
-  }
-
-  &__title + &__row {
-    margin-top: 20px;
   }
 
   &--animate {
     animation: van-skeleton-blink var(--van-skeleton-duration) ease-in-out
       infinite;
-  }
-
-  &--round {
-    .van-skeleton__row,
-    .van-skeleton__title {
-      border-radius: var(--van-radius-max);
-    }
   }
 }
 

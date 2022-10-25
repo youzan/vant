@@ -1,0 +1,54 @@
+:root {
+  --van-skeleton-item-row-height: 16px;
+  --van-skeleton-item-row-background: var(--van-active-color);
+  --van-skeleton-item-row-margin-top: var(--van-padding-sm);
+  --van-skeleton-item-title-width: 40%;
+  --van-skeleton-item-avatar-size: 32px;
+  --van-skeleton-item-avatar-background: var(--van-active-color);
+}
+
+.van-skeleton-item {
+  &__avatar {
+    flex-shrink: 0;
+    width: var(--van-skeleton-item-avatar-size);
+    height: var(--van-skeleton-item-avatar-size);
+    margin-right: var(--van-padding-md);
+    background: var(--van-skeleton-item-avatar-background);
+
+    &--round {
+      border-radius: var(--van-radius-max);
+    }
+  }
+
+  &__avatar + &__content {
+    padding-top: var(--van-padding-xs);
+  }
+
+  &__cell,
+  &__title {
+    height: var(--van-skeleton-item-row-height);
+    background: var(--van-skeleton-item-row-background);
+  }
+
+  &__title {
+    width: var(--van-skeleton-item-title-width);
+    margin: 0;
+  }
+
+  &__cell {
+    &:not(:first-child) {
+      margin-top: var(--van-skeleton-item-row-margin-top);
+    }
+  }
+
+  &__title + &__row {
+    margin-top: 20px;
+  }
+
+  &--round {
+    .van-skeleton-item__row,
+    .van-skeleton-item__title {
+      border-radius: var(--van-radius-max);
+    }
+  }
+}
