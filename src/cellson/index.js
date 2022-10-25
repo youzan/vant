@@ -1,5 +1,6 @@
 // Utils
 import { createNamespace, isDef, isDefB, isObject } from '../utils';
+import encodeUrl from '../utils/encodeUrl';
 import { emit } from '../utils/functional';
 import { routeProps, functionalRoute } from '../utils/router';
 import { cellProps } from './shared';
