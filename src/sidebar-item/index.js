@@ -1,4 +1,5 @@
 import { createNamespace, isObject, isDef } from '../utils';
+import encodeUrl from '../utils/encodeUrl';
 import { ChildrenMixin } from '../mixins/relation';
 import { route, routeProps } from '../utils/router';
 import Info from '../info';
