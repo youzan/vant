@@ -178,8 +178,14 @@ export default createComponent({
       const values = this.getValues();
 
       this.validate()
-        .then(() => {
-          this.$emit('submit', values);
+        .then((res) => {
+          if (res?.valid) {
+            this.$emit('submit', values);
+          } else {
+            this.$emit('failed', {
+              values,
+            });
+          }
         })
         .catch((errors) => {
           this.$emit('failed', {
