@@ -24,11 +24,11 @@
         - value: warning
           title: 警告操作按钮
         - value: warning_secondary
-          title: 警告操作按钮
+          title: 次要警告操作按钮
         - value: danger
           title: 危险操作按钮
         - value: danger_secondary
-          title: 危险操作按钮
+          title: 次要危险操作按钮
       default: info
       description: 设置按钮颜色类型
     - name: hairline

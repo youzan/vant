@@ -1790,13 +1790,6 @@
                             "description": "标签项值"
                         },
                         {
-                            "name": "text",
-                            "title": "标签",
-                            "type": "string",
-                            "default": "标签",
-                            "description": "标签"
-                        },
-                        {
                             "name": "icon",
                             "title": "图标",
                             "type": "icon",
@@ -1961,7 +1954,7 @@
                         },
                         {
                             "value": "warning_secondary",
-                            "title": "警告操作按钮"
+                            "title": "次要警告操作按钮"
                         },
                         {
                             "value": "danger",
@@ -1969,7 +1962,7 @@
                         },
                         {
                             "value": "danger_secondary",
-                            "title": "危险操作按钮"
+                            "title": "次要危险操作按钮"
                         }
                     ],
                     "default": "info",
@@ -2176,7 +2169,7 @@
             "Display"
         ],
         "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/image/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/image/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/image/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/image/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.18/src/image/screenshots/4.png",
-        "blocks": "[{\"title\":\"适应\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/0.png\\\" fit=\\\"contain\\\"></van-image>\\n</template>\\n\"},{\"title\":\"适应（图片小于父元素时以原尺寸展示）\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/1.png\\\" fit=\\\"scale-down\\\"></van-image>\\n</template>\\n\"},{\"title\":\"原尺寸\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/2.png\\\" fit=\\\"none\\\"></van-image>\\n</template>\\n\"},{\"title\":\"拉伸\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/3.png\\\" fit=\\\"fill\\\"></van-image>\\n</template>\\n\"},{\"title\":\"填充\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/4.png\\\" fit=\\\"cover\\\"></van-image>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"适应\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\" fit=\\\"contain\\\"></van-image>\\n</template>\\n\"},{\"title\":\"适应（图片小于父元素时以原尺寸展示）\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\" fit=\\\"scale-down\\\"></van-image>\\n</template>\\n\"},{\"title\":\"原尺寸\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\" fit=\\\"none\\\"></van-image>\\n</template>\\n\"},{\"title\":\"拉伸\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\" fit=\\\"fill\\\"></van-image>\\n</template>\\n\"},{\"title\":\"填充\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\" fit=\\\"cover\\\"></van-image>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-image",
             "title": "图片展示",
@@ -2188,27 +2181,27 @@
                 {
                     "title": "适应",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/0.png\" fit=\"contain\"></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\" fit=\"contain\"></van-image>\n</template>\n"
                 },
                 {
                     "title": "适应（图片小于父元素时以原尺寸展示）",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/1.png\" fit=\"scale-down\"></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\" fit=\"scale-down\"></van-image>\n</template>\n"
                 },
                 {
                     "title": "原尺寸",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/2.png\" fit=\"none\"></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\" fit=\"none\"></van-image>\n</template>\n"
                 },
                 {
                     "title": "拉伸",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/3.png\" fit=\"fill\"></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\" fit=\"fill\"></van-image>\n</template>\n"
                 },
                 {
                     "title": "填充",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/packages/%40lcap/mobile-ui%400.12.18/src/image/drawings/4.png\" fit=\"cover\"></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\" fit=\"cover\"></van-image>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -2226,24 +2219,24 @@
                     "type": "string",
                     "options": [
                         {
-                            "value": "fill",
-                            "title": "图片拉伸完全填充"
-                        },
-                        {
                             "value": "contain",
-                            "title": "图片缩放比例完全填充"
-                        },
-                        {
-                            "value": "cover",
-                            "title": "图片按比例尽可能大的填充"
-                        },
-                        {
-                            "value": "none",
-                            "title": "图片以原尺寸填充"
+                            "title": "适应"
                         },
                         {
                             "value": "scale-down",
-                            "title": "取 contain、none 中较小的"
+                            "title": "适应（图片小于父元素时以原尺寸展示）"
+                        },
+                        {
+                            "value": "none",
+                            "title": "原尺寸"
+                        },
+                        {
+                            "value": "fill",
+                            "title": "拉伸"
+                        },
+                        {
+                            "value": "cover",
+                            "title": "填充"
                         }
                     ],
                     "default": "contain",
@@ -4907,6 +4900,13 @@
                             "type": "string | Array",
                             "description": "验证规则。简写格式为字符串类型，完整格式或混合格式为数组类型",
                             "compType": "validationRulesSelect"
+                        },
+                        {
+                            "name": "border",
+                            "title": "是否显示底边框",
+                            "type": "boolean",
+                            "default": true,
+                            "description": "是否显示底边框"
                         }
                     ],
                     "slots": [

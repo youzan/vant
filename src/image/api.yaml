@@ -17,16 +17,16 @@
       title: 填充方式
       type: string
       options:
-        - value: fill
-          title: 图片拉伸完全填充
         - value: contain
-          title: 图片缩放比例完全填充
-        - value: cover
-          title: 图片按比例尽可能大的填充
-        - value: none
-          title: 图片以原尺寸填充
+          title: 适应
         - value: scale-down
-          title: 取 contain、none 中较小的
+          title: 适应（图片小于父元素时以原尺寸展示）
+        - value: none
+          title: 原尺寸
+        - value: fill
+          title: 拉伸
+        - value: cover
+          title: 填充
       default: contain
       description: 图片地址
     - name: sr

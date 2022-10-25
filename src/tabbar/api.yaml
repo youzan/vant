@@ -46,11 +46,6 @@
       title: 标签项值
       type: number,string
       description: 标签项值
-    - name: text
-      title: 标签
-      type: string
-      default: 标签
-      description: 标签
     - name: icon
       title: 图标
       type: icon
