@@ -378,7 +378,7 @@ export default {
       { text: '湖州', value: 'Huzhou' },
     ];
 
-    const onConfirm = (value) => {
+    const onConfirm = ({ selectedOptions }) => {
       result.value = selectedOptions[0]?.text;
       showPicker.value = false;
     };
@@ -419,7 +419,7 @@ export default {
   setup() {
     const result = ref('');
     const showPicker = ref(false);
-    const onConfirm = (value) => {
+    const onConfirm = ({ selectedValues }) => {
       result.value = selectedValues.join('/');
       showPicker.value = false;
     };
