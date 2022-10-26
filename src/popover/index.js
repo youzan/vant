@@ -114,7 +114,7 @@ export default createComponent({
     },
 
     createPopper() {
-      const referEl = this.getReferEl();console.log(referEl, 111);
+      const referEl = this.getReferEl();
       return createPopper(referEl, this.$refs.popover.$el, {
         placement: this.placement,
         modifiers: [

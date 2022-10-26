@@ -97,7 +97,7 @@ function Iconv(
   function onClick(event: Event) {
     emit(ctx, 'click', event);
     const hrefR = currentHref();
-    console.log(hrefR, ctx, event)
+    // console.log(hrefR, ctx, event)
     // @ts-ignore：没办法
     // if (props.target !== '_self')
     //   return;

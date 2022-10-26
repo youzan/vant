@@ -115,7 +115,6 @@ export default {
                 oldNumber: this.currentDataSource.paging.number,
             };
             // eslint-disable-next-line no-console
-            console.log(JSON.stringify(paging));
             try {
                 this.currentDataSource.page(paging);
                 await this.load();
@@ -123,7 +122,6 @@ export default {
                 this.$emit('update:page-number', 1, this);
             } catch (error) {
                 // eslint-disable-next-line no-console
-                console.log(error);
             }
             this.refreshing = false;
         },

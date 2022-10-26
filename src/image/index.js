@@ -111,7 +111,6 @@ export default createComponent({
         const tempItem = tempSrc[0];
         return tempItem.url;
       } catch (e) {
-        console.log(e);
         return src;
       }
     },

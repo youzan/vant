@@ -60,7 +60,6 @@ export default createComponent({
 
   },
   mounted() {
-    console.log(this)
   },
   methods: {
     getProp(key) {
