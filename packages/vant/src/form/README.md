@@ -352,7 +352,7 @@ export default {
       { text: 'Maine', value: 'Maine' },
     ];
 
-    const onConfirm = (value) => {
+    const onConfirm = ({ selectedOptions }) => {
       result.value = selectedOptions[0]?.text;
       showPicker.value = false;
     };
