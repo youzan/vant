@@ -36,6 +36,10 @@ export default createComponent({
       type: Boolean,
       default: false,
     },
+    shutself: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {

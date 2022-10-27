@@ -83,7 +83,7 @@ export default createComponent({
     },
     format() {
       this.columns = this.fromValue(this.columnsprop);
-      console.log(this.columns)
+      // console.log(this.columns)
       const { columns, dataType } = this;
 
       if (dataType === 'text') {

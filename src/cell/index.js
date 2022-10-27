@@ -213,7 +213,7 @@ export default createComponent({
     }
 
     function onClick(event) {
-      if (that.vanDropdownMenuItem) {
+      if (that.vanDropdownMenuItem && that.vanDropdownMenuItem.shutself) {
         that.vanDropdownMenuItem.showPopup = false;
         if ((that.value ?? that.index) !== that.vanDropdownMenuItem.value) {
           that.vanDropdownMenuItem.value = that.value ?? that.index;

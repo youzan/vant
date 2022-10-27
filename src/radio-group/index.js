@@ -42,7 +42,7 @@ export default createComponent({
     ifDesigner() {
       return this.$env && this.$env.VUE_APP_DESIGNER;
     },
-    fromValue(value) {console.log(typeof value, value, 9999)
+    fromValue(value) {
       try {
         if(value === null || value === '') return [];
         if(typeof value === 'string') return JSON.parse(value || '[]');
@@ -61,7 +61,6 @@ export default createComponent({
             page: 1,
             size: 1000
           });
-          console.log(res);
           this.options = (res.content);
         } catch (error) {
           console.error(error);

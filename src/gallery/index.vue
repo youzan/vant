@@ -109,7 +109,7 @@ export default {
                 that.index = that[`swiper${this.pattern}`].activeIndex + 1;
                 that.total = that.options.length;
                 this[`swiper${this.pattern}`].on('slideChange', function (swiper) {
-                  console.log('slide changed',swiper, swiper.activeIndex);
+                  // console.log('slide changed',swiper, swiper.activeIndex);
                   that.index = swiper.activeIndex + 1;
                 });
             });

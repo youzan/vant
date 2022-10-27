@@ -152,7 +152,7 @@ export default createComponent({
         }
 
         const hrefR = currentHref();
-        console.log(hrefR);
+        // console.log(hrefR);
         if (hrefR === undefined) {
           let to;
           if (props.destination) {

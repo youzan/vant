@@ -65,6 +65,11 @@
       type: boolean
       default: false
       description: 禁用
+    - name: shutself
+      title: 是否通过点击菜单子项关闭
+      type: boolean
+      default: true
+      description: 是否通过点击菜单子项关闭
   slots:
     - concept: Slot
       name: default

@@ -398,7 +398,7 @@ export default createComponent({
         }, autoplay);
       }
     },
-    clickIndicator(index) {console.log(index);
+    clickIndicator(index) {
       this.swipeTo(index);
     },
     genIndicator() {

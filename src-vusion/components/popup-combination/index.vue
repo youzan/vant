@@ -11,7 +11,6 @@ export default {
     },
     mounted() {
       this.tempP = this.$slots.default;
-      console.log(this.tempP);
     }
 };
 </script>

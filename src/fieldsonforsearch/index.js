@@ -245,9 +245,7 @@ export default createComponent({
       return validatorVuF.validate(value, trigger, Object.assign({
         label: this.label || '字段',
       })).then(() => {
-        console.log('tongguo');
       }).catch((error) => {
-        console.log(error)
         this.validateFailed = true;
         this.validateMessage = error;
       });
