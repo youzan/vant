@@ -33,14 +33,14 @@
       empty-background: add-sub
       support:
         - name: van-tabbar-item
-          title: 菜单项
+          title: 标签项
           snippet: '<van-tabbar-item icon="默认" text="标签"></van-tabbar-item>'
   events:
     - name: change
       title: 切换后
       description: 切换标签时触发
 - name: van-tabbar-item
-  title: 菜单项
+  title: 标签项
   attrs:
     - name: name
       title: 标签项值
@@ -101,6 +101,6 @@
       description: 链接打开方式
   events:
     - name: click
-      title: 点击菜单项
+      title: 点击标签项
       description: 点击选项导致 value 变化时触发
 
