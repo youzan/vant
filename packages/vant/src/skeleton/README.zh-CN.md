@@ -62,6 +62,28 @@ export default {
 };
 ```
 
+### 自定义展示内容
+
+通过 `template` 插槽和提供的 [SkeletonItem]() 组件完成自定义内容的展示。
+
+```html
+<van-skeleton>
+  <template #template>
+    <div :style="{ width: '100%' }">
+      <div class="demo-preview">
+        <van-skeleton-item type="avatar" />
+        <van-skeleton-item type="avatar" />
+        <van-skeleton-item type="avatar" />
+        <van-skeleton-item type="avatar" />
+      </div>
+      <van-skeleton-item type="cell" row-width="60%" />
+      <van-skeleton-item type="cell" />
+      <van-skeleton-item type="cell" />
+    </div>
+  </template>
+</van-skeleton>
+```
+
 ## API
 
 ### Props
@@ -78,6 +100,13 @@ export default {
 | title-width | 标题占位图宽度 | _number \| string_ | `40%` |
 | avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
 | avatar-shape | 头像占位图形状，可选值为 `square` | _string_ | `round` |
+
+### Slots
+
+| 名称     | 说明           |
+| -------- | -------------- |
+| default  | 骨架屏内容     |
+| template | 自定义展示内容 |
 
 ### 类型定义
 

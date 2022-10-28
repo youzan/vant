@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import VanSkeleton from '..';
+import VanSkeletonItem from '../../skeleton-item';
 import VanSwitch from '../../switch';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
@@ -10,12 +11,14 @@ const t = useTranslate({
     showChildren: '显示子组件',
     title: '关于 Vant',
     desc: 'Vant 是一套轻量、可靠的移动端 Vue 组件库，提供了丰富的基础组件和业务组件，帮助开发者快速搭建移动应用。',
+    customContent: '自定义展示内容',
   },
   'en-US': {
     showAvatar: 'Show Avatar',
     showChildren: 'Show Children',
     title: 'About Vant',
     desc: 'Vant is a set of Mobile UI Components built on Vue.',
+    customContent: 'Custom Content',
   },
 });
 
@@ -41,6 +44,24 @@ const show = ref(false);
           <p>{{ t('desc') }}</p>
         </div>
       </div>
+    </van-skeleton>
+  </demo-block>
+
+  <demo-block :title="t('customContent')">
+    <van-skeleton>
+      <template #template>
+        <div :style="{ width: '100%' }">
+          <div class="demo-preview">
+            <van-skeleton-item type="avatar" />
+            <van-skeleton-item type="avatar" />
+            <van-skeleton-item type="avatar" />
+            <van-skeleton-item type="avatar" />
+          </div>
+          <van-skeleton-item type="cell" row-width="60%" />
+          <van-skeleton-item type="cell" />
+          <van-skeleton-item type="cell" />
+        </div>
+      </template>
     </van-skeleton>
   </demo-block>
 </template>

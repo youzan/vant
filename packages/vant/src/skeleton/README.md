@@ -56,6 +56,28 @@ export default {
 };
 ```
 
+### Custom Content
+
+Using `template` slots and [SkeletonItem]() component to display custom content.
+
+```html
+<van-skeleton>
+  <template #template>
+    <div :style="{ width: '100%' }">
+      <div class="demo-preview">
+        <van-skeleton-item type="avatar" />
+        <van-skeleton-item type="avatar" />
+        <van-skeleton-item type="avatar" />
+        <van-skeleton-item type="avatar" />
+      </div>
+      <van-skeleton-item type="cell" row-width="60%" />
+      <van-skeleton-item type="cell" />
+      <van-skeleton-item type="cell" />
+    </div>
+  </template>
+</van-skeleton>
+```
+
 ## API
 
 ### Props
@@ -72,6 +94,13 @@ export default {
 | title-width | Title width | _number \| string_ | `40%` |
 | avatar-size | Size of avatar placeholder | _number \| string_ | `32px` |
 | avatar-shape | Shape of avatar placeholder, can be set to `square` | _string_ | `round` |
+
+### Slots
+
+| Name     | Description    |
+| -------- | -------------- |
+| default  | Default slot   |
+| template | Custom content |
 
 ### Types
 
