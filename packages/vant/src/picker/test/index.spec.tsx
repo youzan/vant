@@ -10,7 +10,7 @@ const simpleColumn = [
   { text: '1995', value: '1995' },
 ];
 
-test('should emit confirm event after clicking the confirm button', () => {
+test('should emit confirm event after clicking the confirm button', async () => {
   const wrapper = mount(Picker, {
     props: {
       showToolbar: true,
@@ -18,7 +18,7 @@ test('should emit confirm event after clicking the confirm button', () => {
     },
   });
 
-  wrapper.find('.van-picker__confirm').trigger('click');
+  await wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')![0]).toEqual([
     {
       selectedOptions: [{ text: '1990', value: '1990' }],
@@ -178,7 +178,7 @@ test('should allow to update columns props dynamically', async () => {
     ],
   });
 
-  wrapper.find('.van-picker__confirm').trigger('click');
+  await wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted<[string, number]>('confirm')![0]).toEqual([
     { selectedOptions: [{ text: '2', value: '2' }], selectedValues: ['2'] },
   ]);

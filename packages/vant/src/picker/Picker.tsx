@@ -2,6 +2,7 @@ import {
   ref,
   watch,
   computed,
+  nextTick,
   defineComponent,
   type PropType,
   type ExtractPropTypes,
@@ -162,7 +163,13 @@ export default defineComponent({
     const confirm = () => {
       children.forEach((child) => child.stopMomentum());
       const params = getEventParams();
-      emit('confirm', params);
+
+      // wait nextTick to ensure the model value is update to date
+      // when confirm event is emitted
+      nextTick(() => {
+        emit('confirm', params);
+      });
+
       return params;
     };
 
