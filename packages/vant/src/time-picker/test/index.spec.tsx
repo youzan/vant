@@ -61,14 +61,14 @@ test('should format options correctly when using formatter prop', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should emit confirm event after clicking the confirm button', () => {
+test('should emit confirm event after clicking the confirm button', async () => {
   const wrapper = mount(TimePicker, {
     props: {
       modelValue: ['12', '00'],
     },
   });
 
-  wrapper.find('.van-picker__confirm').trigger('click');
+  await wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')).toEqual([
     [
       {

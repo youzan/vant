@@ -48,14 +48,14 @@ const cascadeColumns = [
   },
 ];
 
-test('should emit confirm event for cascade picker correctly', () => {
+test('should emit confirm event for cascade picker correctly', async () => {
   const wrapper = mount(Picker, {
     props: {
       columns: cascadeColumns,
     },
   });
 
-  wrapper.find('.van-picker__confirm').trigger('click');
+  await wrapper.find('.van-picker__confirm').trigger('click');
 
   const params = wrapper.emitted<PickerConfirmEventParams[]>('confirm')?.[0];
   expect(params?.[0].selectedValues).toEqual(['A1', 'B1', 'C1']);

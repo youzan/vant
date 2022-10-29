@@ -17,7 +17,7 @@ test('should emit confirm event correctly', async () => {
   });
 
   await later();
-  wrapper.find('.van-picker__confirm').trigger('click');
+  await wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0]).toEqual(
     {
       selectedOptions: [
@@ -90,7 +90,7 @@ test('should render with max-date correctly', async () => {
   });
 
   await later();
-  wrapper.find('.van-picker__confirm').trigger('click');
+  await wrapper.find('.van-picker__confirm').trigger('click');
   expect(
     wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
   ).toEqual(['2010', '01', '10']);
@@ -115,7 +115,7 @@ test('should render with min-date correctly', async () => {
   });
 
   await later();
-  wrapper.find('.van-picker__confirm').trigger('click');
+  await wrapper.find('.van-picker__confirm').trigger('click');
   expect(
     wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
   ).toEqual(['2000', '10', '10']);
@@ -193,7 +193,7 @@ test('should update value correctly when dynamically change min-date', async () 
     minDate: new Date(2020, 11, 20),
   });
 
-  wrapper.find('.van-picker__confirm').trigger('click');
+  await wrapper.find('.van-picker__confirm').trigger('click');
   expect(
     wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
   ).toEqual(['2020', '12', '20']);
