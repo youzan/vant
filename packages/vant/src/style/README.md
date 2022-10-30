@@ -89,3 +89,21 @@ Enable safe area.
   <div v-show="visible">Slide Right</div>
 </transition>
 ```
+
+### Haptics Feedback
+
+Add haptics feedback for an element. When touched, the opacity of the element is reduced.
+
+Usually used in clickable elements such as button.
+
+```html
+<div class="van-haptics-feedback"></div>
+```
+
+### Clearfix
+
+Clear floated content within a container.
+
+```html
+<div class="van-clearfix"></div>
+```

@@ -89,3 +89,21 @@ Vant 中默认包含了一些常用样式，可以直接通过 className 的方�
   <div v-show="visible">Slide Right</div>
 </transition>
 ```
+
+### 触碰反馈
+
+为元素添加触碰反馈效果，触碰后，元素的透明度会降低。
+
+通常用于按钮等可点击的元素上。
+
+```html
+<div class="van-haptics-feedback"></div>
+```
+
+### 清除浮动
+
+清除元素在 float 布局下的浮动，
+
+```html
+<div class="van-clearfix"></div>
+```
