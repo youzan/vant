@@ -11,26 +11,33 @@ import {
 } from '../utils';
 
 // Components
-import {
-  SkeletonItem,
+import SkeletonTitle, { skeletonTitleProps } from './Title';
+import SkeletonAvatar, { skeletonAvatarProps } from './Avatar';
+import SkeletonParagraph, {
   DEFAULT_ROW_WIDTH,
-  skeletonCommonProps,
-} from '../skeleton-item';
+  skeletonParagraphProps,
+} from './Paragraph';
 
 const [name, bem] = createNamespace('skeleton');
 const DEFAULT_LAST_ROW_WIDTH = '60%';
 
-export const skeletonProps = extend({}, skeletonCommonProps, {
-  row: makeNumericProp(0),
-  title: Boolean,
-  avatar: Boolean,
-  loading: truthProp,
-  animate: truthProp,
-  rowWidth: {
-    type: [Number, String, Array] as PropType<Numeric | Numeric[]>,
-    default: DEFAULT_ROW_WIDTH,
-  },
-});
+export const skeletonProps = extend(
+  {},
+  skeletonTitleProps,
+  skeletonAvatarProps,
+  skeletonParagraphProps,
+  {
+    row: makeNumericProp(0),
+    title: Boolean,
+    avatar: Boolean,
+    loading: truthProp,
+    animate: truthProp,
+    rowWidth: {
+      type: [Number, String, Array] as PropType<Numeric | Numeric[]>,
+      default: DEFAULT_ROW_WIDTH,
+    },
+  }
+);
 
 export type SkeletonProps = ExtractPropTypes<typeof skeletonProps>;
 
@@ -44,13 +51,20 @@ export default defineComponent({
   setup(props, { slots, attrs }) {
     const renderAvatar = () => {
       if (props.avatar) {
-        return <SkeletonItem type={'avatar'} avatarSize={props.avatarSize} />;
+        return (
+          <SkeletonAvatar
+            avatarShape={props.avatarShape}
+            avatarSize={props.avatarSize}
+          />
+        );
       }
     };
 
     const renderTitle = () => {
       if (props.title) {
-        return <SkeletonItem type={'title'} titleWidth={props.titleWidth} />;
+        return (
+          <SkeletonTitle titleWidth={props.titleWidth} round={props.round} />
+        );
       }
     };
 
@@ -72,9 +86,9 @@ export default defineComponent({
       Array(+props.row)
         .fill('')
         .map((_, i) => (
-          <SkeletonItem
+          <SkeletonParagraph
             key={i}
-            type={'cell'}
+            round={props.round}
             rowWidth={addUnit(getRowWidth(i))}
           />
         ));

@@ -4,17 +4,17 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-skeleton van-skeleton--animate">
     <div class="van-skeleton__content">
-      <h3 class="van-skeleton__title">
+      <h3 class="van-skeleton-item__title">
       </h3>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-item__cell"
            style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-item__cell"
            style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-item__cell"
            style="width: 60%;"
       >
       </div>
@@ -23,20 +23,20 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-skeleton van-skeleton--animate">
-    <div class="van-skeleton__avatar van-skeleton__avatar--round">
+    <div class="van-skeleton-item__avatar van-skeleton-item__avatar--round">
     </div>
     <div class="van-skeleton__content">
-      <h3 class="van-skeleton__title">
+      <h3 class="van-skeleton-item__title">
       </h3>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-item__cell"
            style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-item__cell"
            style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-item__cell"
            style="width: 60%;"
       >
       </div>
@@ -53,21 +53,49 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-skeleton van-skeleton--animate">
-    <div class="van-skeleton__avatar van-skeleton__avatar--round">
+    <div class="van-skeleton-item__avatar van-skeleton-item__avatar--round">
     </div>
     <div class="van-skeleton__content">
-      <h3 class="van-skeleton__title">
+      <h3 class="van-skeleton-item__title">
       </h3>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-item__cell"
            style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-item__cell"
            style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-item__cell"
            style="width: 60%;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-skeleton van-skeleton--animate">
+    <div style="width: 100%;">
+      <div class="demo-preview">
+        <div class="van-skeleton-item__avatar van-skeleton-item__avatar--round">
+        </div>
+        <div class="van-skeleton-item__avatar van-skeleton-item__avatar--round">
+        </div>
+        <div class="van-skeleton-item__avatar van-skeleton-item__avatar--round">
+        </div>
+        <div class="van-skeleton-item__avatar van-skeleton-item__avatar--round">
+        </div>
+      </div>
+      <div class="van-skeleton-item__cell"
+           style="width: 60%;"
+      >
+      </div>
+      <div class="van-skeleton-item__cell"
+           style="width: 100%;"
+      >
+      </div>
+      <div class="van-skeleton-item__cell"
+           style="width: 100%;"
       >
       </div>
     </div>

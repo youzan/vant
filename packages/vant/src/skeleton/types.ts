@@ -1,7 +1,7 @@
 export type SkeletonThemeVars = {
-  skeletonRowHeight?: string;
-  skeletonRowBackground?: string;
-  skeletonRowMarginTop?: string;
+  skeletonParagraphHeight?: string;
+  skeletonParagraphBackground?: string;
+  skeletonParagraphMarginTop?: string;
   skeletonTitleWidth?: string;
   skeletonAvatarSize?: string;
   skeletonAvatarBackground?: string;
