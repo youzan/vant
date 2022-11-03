@@ -6,29 +6,34 @@ import _SkeletonParagraph from './Paragraph';
 
 import { withInstall } from '../utils';
 
+export const SkeletonImage = withInstall(_SkeletonImage);
+export const SkeletonTitle = withInstall(_SkeletonTitle);
+export const SkeletonAvatar = withInstall(_SkeletonAvatar);
+export const SkeletonParagraph = withInstall(_SkeletonParagraph);
 export const Skeleton = withInstall(_Skeleton);
-const SkeletonImage = withInstall(_SkeletonImage);
-const SkeletonTitle = withInstall(_SkeletonTitle);
-const SkeletonAvatar = withInstall(_SkeletonAvatar);
-const SkeletonParagraph = withInstall(_SkeletonParagraph);
-
-Skeleton.Image = SkeletonImage;
-Skeleton.Title = SkeletonTitle;
-Skeleton.Avatar = SkeletonAvatar;
-Skeleton.Paragraph = SkeletonParagraph;
 
 export default Skeleton;
 
+// Skeleton
 export { skeletonProps } from './Skeleton';
 export type { SkeletonProps } from './Skeleton';
+
+// SkeletonImage
 export { skeletonImageProps } from './Image';
 export type { SkeletonImageProps, SkeletonImageShape } from './Image';
+
+// SkeletonAvatar
 export { skeletonAvatarProps } from './Avatar';
 export type { SkeletonAvatarProps, SkeletonAvatarShape } from './Avatar';
+
+// SkeletonParagraph
 export { skeletonParagraphProps } from './Paragraph';
 export type { SkeletonParagraphProps } from './Paragraph';
+
+// SkeletonTitle
 export { skeletonTitleProps } from './Title';
 export type { SkeletonTitleProps } from './Title';
+
 export type { SkeletonThemeVars } from './types';
 
 declare module 'vue' {

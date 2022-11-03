@@ -2,42 +2,38 @@ import { defineComponent, type PropType, type ExtractPropTypes } from 'vue';
 
 // Utils
 import {
-  extend,
   addUnit,
   truthProp,
+  numericProp,
+  makeStringProp,
   makeNumericProp,
   createNamespace,
   type Numeric,
 } from '../utils';
 
 // Components
-import SkeletonTitle, { skeletonTitleProps } from './Title';
-import SkeletonAvatar, { skeletonAvatarProps } from './Avatar';
-import SkeletonParagraph, {
-  DEFAULT_ROW_WIDTH,
-  skeletonParagraphProps,
-} from './Paragraph';
+import SkeletonTitle from './Title';
+import SkeletonAvatar, { type SkeletonAvatarShape } from './Avatar';
+import SkeletonParagraph, { DEFAULT_ROW_WIDTH } from './Paragraph';
 
 const [name, bem] = createNamespace('skeleton');
 const DEFAULT_LAST_ROW_WIDTH = '60%';
 
-export const skeletonProps = extend(
-  {},
-  skeletonTitleProps,
-  skeletonAvatarProps,
-  skeletonParagraphProps,
-  {
-    row: makeNumericProp(0),
-    title: Boolean,
-    avatar: Boolean,
-    loading: truthProp,
-    animate: truthProp,
-    rowWidth: {
-      type: [Number, String, Array] as PropType<Numeric | Numeric[]>,
-      default: DEFAULT_ROW_WIDTH,
-    },
-  }
-);
+export const skeletonProps = {
+  row: makeNumericProp(0),
+  round: Boolean,
+  title: Boolean,
+  titleWidth: numericProp,
+  avatar: Boolean,
+  avatarSize: numericProp,
+  avatarShape: makeStringProp<SkeletonAvatarShape>('round'),
+  loading: truthProp,
+  animate: truthProp,
+  rowWidth: {
+    type: [Number, String, Array] as PropType<Numeric | Numeric[]>,
+    default: DEFAULT_ROW_WIDTH,
+  },
+};
 
 export type SkeletonProps = ExtractPropTypes<typeof skeletonProps>;
 
@@ -63,7 +59,7 @@ export default defineComponent({
     const renderTitle = () => {
       if (props.title) {
         return (
-          <SkeletonTitle titleWidth={props.titleWidth} round={props.round} />
+          <SkeletonTitle round={props.round} titleWidth={props.titleWidth} />
         );
       }
     };

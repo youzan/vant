@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import VanSkeleton from '..';
-import VanSkeletonItem from '../../skeleton-item';
+import VanSkeleton, { SkeletonAvatar, SkeletonParagraph } from '..';
 import VanSwitch from '../../switch';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
@@ -52,14 +51,14 @@ const show = ref(false);
       <template #template>
         <div :style="{ width: '100%' }">
           <div class="demo-preview">
-            <van-skeleton-item type="avatar" />
-            <van-skeleton-item type="avatar" />
-            <van-skeleton-item type="avatar" />
-            <van-skeleton-item type="avatar" />
+            <skeleton-avatar />
+            <skeleton-avatar />
+            <skeleton-avatar />
+            <skeleton-avatar />
           </div>
-          <van-skeleton-item type="cell" row-width="60%" />
-          <van-skeleton-item type="cell" />
-          <van-skeleton-item type="cell" />
+          <skeleton-paragraph row-width="60%" />
+          <skeleton-paragraph />
+          <skeleton-paragraph />
         </div>
       </template>
     </van-skeleton>

@@ -30,7 +30,7 @@ test('should change avatar size when using avatar-size prop', () => {
     },
   });
 
-  const avatar = wrapper.find('.van-skeleton__avatar');
+  const avatar = wrapper.find('.van-skeleton-avatar');
   expect(avatar.style.width).toMatchSnapshot('20rem');
   expect(avatar.style.height).toMatchSnapshot('20ren');
 });
@@ -42,7 +42,7 @@ test('should change avatar shape when using avatar-shape prop', () => {
       avatarShape: 'square',
     },
   });
-  expect(wrapper.find('.van-skeleton__avatar').html()).toMatchSnapshot();
+  expect(wrapper.find('.van-skeleton-avatar').html()).toMatchSnapshot();
 });
 
 test('should be round when using round prop', () => {
