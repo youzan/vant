@@ -1,8 +1,8 @@
 import { defineComponent, type ExtractPropTypes } from 'vue';
 
 import {
-  addUnit,
   numericProp,
+  getSizeStyle,
   makeStringProp,
   createNamespace,
 } from '../utils';
@@ -29,8 +29,8 @@ export default defineComponent({
   setup(props) {
     return () => (
       <div
-        class={bem(['wrapper', props.imageShape])}
-        style={{ width: addUnit(props.imageSize) }}
+        class={bem(['', props.imageShape])}
+        style={getSizeStyle(props.imageSize)}
       >
         <svg
           viewBox="0 0 1098 1024"

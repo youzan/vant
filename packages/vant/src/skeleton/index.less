@@ -5,6 +5,8 @@
   --van-skeleton-title-width: 40%;
   --van-skeleton-avatar-size: 32px;
   --van-skeleton-avatar-background: var(--van-active-color);
+  --van-skeleton-image-size: 96px;
+  --van-skeleton-image-radius: 24px;
   --van-skeleton-duration: 1.2s;
 }
 
@@ -62,6 +64,28 @@
     .van-skeleton-paragraph,
     .van-skeleton-title {
       border-radius: var(--van-radius-max);
+    }
+  }
+
+  &-image {
+    display: flex;
+    width: var(--van-skeleton-image-size);
+    height: var(--van-skeleton-image-size);
+    align-items: center;
+    justify-content: center;
+    background: var(--van-active-color);
+
+    &--round {
+      border-radius: var(--van-skeleton-image-radius);
+    }
+
+    &__svg {
+      width: 48px;
+      height: 48px;
+    }
+
+    &__path {
+      fill: var(--van-gray-5);
     }
   }
 }
