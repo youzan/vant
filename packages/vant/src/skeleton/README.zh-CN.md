@@ -10,10 +10,20 @@
 
 ```js
 import { createApp } from 'vue';
-import { Skeleton } from 'vant';
+import {
+  Skeleton,
+  SkeletonTitle,
+  SkeletonImage,
+  SkeletonAvatar,
+  SkeletonParagraph,
+} from 'vant';
 
 const app = createApp();
 app.use(Skeleton);
+app.use(SkeletonTitle);
+app.use(SkeletonImage);
+app.use(SkeletonAvatar);
+app.use(SkeletonParagraph);
 ```
 
 ## 代码演示
@@ -64,25 +74,61 @@ export default {
 
 ### 自定义展示内容
 
-通过 `template` 插槽和提供的 [SkeletonItem]() 组件完成自定义内容的展示。
+通过 `template` 插槽完成自定义内容的展示。
 
 ```html
 <van-skeleton>
   <template #template>
-    <div :style="{ width: '100%' }">
-      <div class="demo-preview">
-        <van-skeleton-item type="avatar" />
-        <van-skeleton-item type="avatar" />
-        <van-skeleton-item type="avatar" />
-        <van-skeleton-item type="avatar" />
+    <div class="template-slot">
+      <skeleton-image />
+      <div :style="{ flex: 1 }">
+        <skeleton-paragraph row-width="60%" />
+        <skeleton-paragraph />
+        <skeleton-paragraph />
+        <skeleton-paragraph />
       </div>
-      <van-skeleton-item type="cell" row-width="60%" />
-      <van-skeleton-item type="cell" />
-      <van-skeleton-item type="cell" />
     </div>
   </template>
 </van-skeleton>
 ```
+
+## 组件
+
+### SkeletonParagraph 段落占位图
+
+#### Props
+
+| 参数      | 说明                     | 类型      | 默认值  |
+| --------- | ------------------------ | --------- | ------- |
+| round     | 是否将段落显示为圆角风格 | _boolean_ | `false` |
+| row-width | 段落占位图宽度           | _string_  | `100%`  |
+
+### SkeletonTitle 标题占位图
+
+#### Props
+
+| 参数        | 说明                     | 类型               | 默认值  |
+| ----------- | ------------------------ | ------------------ | ------- |
+| round       | 是否将标题显示为圆角风格 | _boolean_          | `false` |
+| title-width | 标题占位图宽度           | _number \| string_ | `40%`   |
+
+### SkeletonAvatar 头像占位图
+
+#### Props
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
+| avatar-shape | 头像占位图形状，可选值为 `square` | _string_ | `round` |
+
+### SkeletonImage 图片占位图
+
+#### Props
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| image-size | 图片占位图大小 | _number \| string_ | `32px` |
+| image-shape | 图片占位图形状，可选值为 `square` | _string_ | `round` |
 
 ## API
 
@@ -103,17 +149,23 @@ export default {
 
 ### Slots
 
-| 名称     | 说明           |
-| -------- | -------------- |
-| default  | 骨架屏内容     |
-| template | 自定义展示内容 |
+| 名称     | 说明       |
+| -------- | ---------- |
+| default  | 骨架屏内容 |
+| template | 自定义内容 |
 
 ### 类型定义
 
 组件导出以下类型定义：
 
 ```ts
-import type { SkeletonProps, SkeletonAvatarShape } from 'vant';
+import type {
+  SkeletonProps,
+  SkeletonImageProps,
+  SkeletonTitleProps,
+  SkeletonAvatarShape,
+  SkeletonParagraphProps,
+} from 'vant';
 ```
 
 ## 主题定制
@@ -122,12 +174,14 @@ import type { SkeletonProps, SkeletonAvatarShape } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                             | 默认值                    | 描述 |
-| -------------------------------- | ------------------------- | ---- |
-| --van-skeleton-row-height        | _16px_                    | -    |
-| --van-skeleton-row-background    | _var(--van-active-color)_ | -    |
-| --van-skeleton-row-margin-top    | _var(--van-padding-sm)_   | -    |
-| --van-skeleton-title-width       | _40%_                     | -    |
-| --van-skeleton-avatar-size       | _32px_                    | -    |
-| --van-skeleton-avatar-background | _var(--van-active-color)_ | -    |
-| --van-skeleton-duration          | _1.2s_                    | -    |
+| 名称                                | 默认值                    | 描述 |
+| ----------------------------------- | ------------------------- | ---- |
+| --van-skeleton-paragraph-height     | _16px_                    | -    |
+| --van-skeleton-paragraph-background | _var(--van-active-color)_ | -    |
+| --van-skeleton-paragraph-margin-top | _var(--van-padding-sm)_   | -    |
+| --van-skeleton-title-width          | _40%_                     | -    |
+| --van-skeleton-avatar-size          | _32px_                    | -    |
+| --van-skeleton-avatar-background    | _var(--van-active-color)_ | -    |
+| --van-skeleton-duration             | _1.2s_                    | -    |
+| --van-skeleton-image-size           | _96px_                    |
+| --van-skeleton-image-radius         | _24px_                    | -    |

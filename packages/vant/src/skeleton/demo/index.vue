@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VanSkeleton, { SkeletonAvatar, SkeletonParagraph } from '..';
+import VanSkeleton, { SkeletonParagraph, SkeletonImage } from '..';
 import VanSwitch from '../../switch';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
@@ -49,16 +49,14 @@ const show = ref(false);
   <demo-block :title="t('customContent')">
     <van-skeleton>
       <template #template>
-        <div :style="{ width: '100%' }">
-          <div class="demo-preview">
-            <skeleton-avatar />
-            <skeleton-avatar />
-            <skeleton-avatar />
-            <skeleton-avatar />
+        <div class="template-slot">
+          <skeleton-image />
+          <div :style="{ flex: 1 }">
+            <skeleton-paragraph row-width="60%" />
+            <skeleton-paragraph />
+            <skeleton-paragraph />
+            <skeleton-paragraph />
           </div>
-          <skeleton-paragraph row-width="60%" />
-          <skeleton-paragraph />
-          <skeleton-paragraph />
         </div>
       </template>
     </van-skeleton>
@@ -97,6 +95,15 @@ const show = ref(false);
       flex-shrink: 0;
       width: 32px;
       height: 32px;
+      margin-right: var(--van-padding-md);
+    }
+  }
+
+  .template-slot {
+    display: flex;
+    width: 100%;
+
+    .van-skeleton-image {
       margin-right: var(--van-padding-md);
     }
   }
