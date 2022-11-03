@@ -1,5 +1,5 @@
 import { mount } from '../../../test';
-import { Skeleton } from '..';
+import { Skeleton, SkeletonImage } from '..';
 
 test('should render with row width array correctly', () => {
   const wrapper = mount(Skeleton, {
@@ -56,6 +56,16 @@ test('should be round when using round prop', () => {
   expect(wrapper.find('.van-skeleton--round').exists()).toBeTruthy();
 });
 
+test('should Skeleton works with template slots', () => {
+  const wrapper = mount(Skeleton, {
+    slots: {
+      template: () => 'custom content',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
 test('should allow to disable animation', async () => {
   const wrapper = mount(Skeleton, {
     props: {
@@ -67,4 +77,32 @@ test('should allow to disable animation', async () => {
 
   await wrapper.setProps({ animate: false });
   expect(wrapper.find('.van-skeleton--animate').exists()).toBeFalsy();
+});
+
+test('should skeleton image render correctly', () => {
+  const wrapper = mount(SkeletonImage);
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should skeleton image works with imageSize prop', () => {
+  const wrapper = mount(SkeletonImage, {
+    props: {
+      imageSize: '20rem',
+    },
+  });
+  const dom = wrapper.find('.van-skeleton-image');
+
+  expect(dom.style.width).toBe('20rem');
+  expect(dom.style.height).toBe('20rem');
+});
+
+test('should skeleton image worsk with imageShape prop', () => {
+  const wrapper = mount(SkeletonImage, {
+    props: {
+      imageShape: 'round',
+    },
+  });
+
+  expect(wrapper.find('.van-skeleton-image--round')).toBeTruthy();
 });
