@@ -5,5 +5,7 @@ export type SkeletonThemeVars = {
   skeletonTitleWidth?: string;
   skeletonAvatarSize?: string;
   skeletonAvatarBackground?: string;
+  SkeletonImageSize?: string;
+  SkeletonImageRadius?: string;
   skeletonDuration?: string;
 };
