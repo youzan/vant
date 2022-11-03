@@ -582,7 +582,7 @@ test('show-upload prop', async () => {
 
   expect(wrapper.find('.van-uploader__upload').exists()).toBeTruthy();
   await wrapper.setProps({ showUpload: false });
-  expect(wrapper.find('.van-uploader__upload').exists()).toBeFalsy();
+  expect(wrapper.find('.van-uploader__upload').style.display).toBe('none');
 });
 
 test('file message should be reactive', (done) => {

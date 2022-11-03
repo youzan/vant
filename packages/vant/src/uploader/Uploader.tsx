@@ -301,7 +301,7 @@ export default defineComponent({
     const onClickUpload = (event: MouseEvent) => emit('clickUpload', event);
 
     const renderUpload = () => {
-      if (props.modelValue.length >= props.maxCount || !props.showUpload) {
+      if (props.modelValue.length >= props.maxCount) {
         return;
       }
 
@@ -329,6 +329,7 @@ export default defineComponent({
 
       return (
         <div
+          v-show={props.showUpload}
           class={bem('upload', { readonly: props.readonly })}
           style={getSizeStyle(props.previewSize)}
           onClick={onClickUpload}
