@@ -116,12 +116,12 @@ export default createComponent({
         if (currentTo === undefined)
           return;
         let cancel = false;
-        this.$emit(that, 'before-navigate', {
-          to: currentTo,
-          replace: props.replace,
-          append: props.append,
-          preventDefault: () => (cancel = true),
-        });
+        // this.$emit(that, 'before-navigate', {
+        //   to: currentTo,
+        //   replace: props.replace,
+        //   append: props.append,
+        //   preventDefault: () => (cancel = true),
+        // });
         if (cancel)
           return;
         const $router = parent?.$router;
@@ -133,7 +133,7 @@ export default createComponent({
         );
         props.replace ? $router.replace(location) : $router.push(location);
 
-        this.$emit(that, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
+        // this.$emit(that, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
       } else {
         function downloadClick() {
           const a = document.createElement("a");
