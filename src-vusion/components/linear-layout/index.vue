@@ -2,7 +2,7 @@
 <div :class="$style.root" :type="type" :direction="direction" v-on="$listeners" vusion-slot-name="default">
     <slot></slot>
     <template v-if="(!$slots.default) && $env.VUE_APP_DESIGNER && !!$attrs['vusion-node-path']">
-        <div :class="$style.emptyTip" v-if="type === 'root'">拖拽右侧组件放至此处</div>
+        <div key="empty" :class="$style.emptyTip" v-if="type === 'root'">拖拽右侧组件放至此处</div>
         <s-empty v-else></s-empty>
     </template>
     <div v-if="showLoading" :class="$style.mask">
