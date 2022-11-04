@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VanSkeleton, { SkeletonParagraph, SkeletonImage } from '..';
+import VanSkeleton, { VanSkeletonParagraph, VanSkeletonImage } from '..';
 import VanSwitch from '../../switch';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
@@ -50,12 +50,12 @@ const show = ref(false);
     <van-skeleton>
       <template #template>
         <div class="template-slot">
-          <skeleton-image />
+          <van-skeleton-image />
           <div :style="{ flex: 1 }">
-            <skeleton-paragraph row-width="60%" />
-            <skeleton-paragraph />
-            <skeleton-paragraph />
-            <skeleton-paragraph />
+            <van-skeleton-paragraph row-width="60%" />
+            <van-skeleton-paragraph />
+            <van-skeleton-paragraph />
+            <van-skeleton-paragraph />
           </div>
         </div>
       </template>

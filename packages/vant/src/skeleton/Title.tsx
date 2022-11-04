@@ -19,7 +19,7 @@ export default defineComponent({
   setup(props) {
     return () => (
       <h3
-        class={bem(['', { round: props.round }])}
+        class={bem([{ round: props.round }])}
         style={{ width: addUnit(props.titleWidth) }}
       />
     );

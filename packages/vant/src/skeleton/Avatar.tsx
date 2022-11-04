@@ -27,7 +27,7 @@ export default defineComponent({
   setup(props) {
     return () => (
       <div
-        class={bem(['', props.avatarShape])}
+        class={bem([props.avatarShape])}
         style={getSizeStyle(props.avatarSize)}
       />
     );

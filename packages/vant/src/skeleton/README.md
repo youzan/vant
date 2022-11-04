@@ -74,59 +74,21 @@ Using `template` slots to display custom content.
 <van-skeleton>
   <template #template>
     <div class="template-slot">
-      <skeleton-image />
+      <van-skeleton-image />
       <div :style="{ flex: 1 }">
-        <skeleton-paragraph row-width="60%" />
-        <skeleton-paragraph />
-        <skeleton-paragraph />
-        <skeleton-paragraph />
+        <van-skeleton-paragraph row-width="60%" />
+        <van-skeleton-paragraph />
+        <van-skeleton-paragraph />
+        <van-skeleton-paragraph />
       </div>
     </div>
   </template>
 </van-skeleton>
 ```
 
-## Components
-
-### SkeletonParagraph
-
-#### Props
-
-| Attribute | Description                     | Type      | Default |
-| --------- | ------------------------------- | --------- | ------- |
-| round     | Whether to show round paragraph | _boolean_ | `false` |
-| row-width | Paragraph width                 | _string_  | `100%`  |
-
-### SkeletonTitle
-
-#### Props
-
-| Attribute   | Description                 | Type               | Default |
-| ----------- | --------------------------- | ------------------ | ------- |
-| round       | Whether to show round title | _boolean_          | `false` |
-| title-width | Title width                 | _number \| string_ | `40%`   |
-
-### SkeletonAvatar
-
-#### Props
-
-| Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
-| avatar-size | Size of avatar placeholder | _number \| string_ | `32px` |
-| avatar-shape | Shape of avatar placeholder, can be set to `square` | _string_ | `round` |
-
-### SkeletonImage
-
-#### Props
-
-| Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
-| image-size | Size of image placeholder | _number \| string_ | `32px` |
-| image-shape | Shape of image placeholder, can be set to `square` | _string_ | `round` |
-
 ## API
 
-### Props
+### Skeleton Props
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -141,7 +103,35 @@ Using `template` slots to display custom content.
 | avatar-size | Size of avatar placeholder | _number \| string_ | `32px` |
 | avatar-shape | Shape of avatar placeholder, can be set to `square` | _string_ | `round` |
 
-### Slots
+### SkeletonParagraph Props
+
+| Attribute | Description                     | Type      | Default |
+| --------- | ------------------------------- | --------- | ------- |
+| round     | Whether to show round paragraph | _boolean_ | `false` |
+| row-width | Paragraph width                 | _string_  | `100%`  |
+
+### SkeletonTitle Props
+
+| Attribute   | Description                 | Type               | Default |
+| ----------- | --------------------------- | ------------------ | ------- |
+| round       | Whether to show round title | _boolean_          | `false` |
+| title-width | Title width                 | _number \| string_ | `40%`   |
+
+### SkeletonAvatar Props
+
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| avatar-size | Size of avatar placeholder | _number \| string_ | `32px` |
+| avatar-shape | Shape of avatar placeholder, can be set to `square` | _string_ | `round` |
+
+### SkeletonImage Props
+
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| image-size | Size of image placeholder | _number \| string_ | `32px` |
+| image-shape | Shape of image placeholder, can be set to `square` | _string_ | `round` |
+
+### Skeleton Slots
 
 | Name     | Description    |
 | -------- | -------------- |

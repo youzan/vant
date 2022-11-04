@@ -80,59 +80,21 @@ export default {
 <van-skeleton>
   <template #template>
     <div class="template-slot">
-      <skeleton-image />
+      <van-skeleton-image />
       <div :style="{ flex: 1 }">
-        <skeleton-paragraph row-width="60%" />
-        <skeleton-paragraph />
-        <skeleton-paragraph />
-        <skeleton-paragraph />
+        <van-skeleton-paragraph row-width="60%" />
+        <van-skeleton-paragraph />
+        <van-skeleton-paragraph />
+        <van-skeleton-paragraph />
       </div>
     </div>
   </template>
 </van-skeleton>
 ```
 
-## 组件
-
-### SkeletonParagraph 段落占位图
-
-#### Props
-
-| 参数      | 说明                     | 类型      | 默认值  |
-| --------- | ------------------------ | --------- | ------- |
-| round     | 是否将段落显示为圆角风格 | _boolean_ | `false` |
-| row-width | 段落占位图宽度           | _string_  | `100%`  |
-
-### SkeletonTitle 标题占位图
-
-#### Props
-
-| 参数        | 说明                     | 类型               | 默认值  |
-| ----------- | ------------------------ | ------------------ | ------- |
-| round       | 是否将标题显示为圆角风格 | _boolean_          | `false` |
-| title-width | 标题占位图宽度           | _number \| string_ | `40%`   |
-
-### SkeletonAvatar 头像占位图
-
-#### Props
-
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
-| avatar-shape | 头像占位图形状，可选值为 `square` | _string_ | `round` |
-
-### SkeletonImage 图片占位图
-
-#### Props
-
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| image-size | 图片占位图大小 | _number \| string_ | `32px` |
-| image-shape | 图片占位图形状，可选值为 `square` | _string_ | `round` |
-
 ## API
 
-### Props
+### Skeleton Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -147,7 +109,35 @@ export default {
 | avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
 | avatar-shape | 头像占位图形状，可选值为 `square` | _string_ | `round` |
 
-### Slots
+### SkeletonParagraph Props
+
+| 参数      | 说明                     | 类型      | 默认值  |
+| --------- | ------------------------ | --------- | ------- |
+| round     | 是否将段落显示为圆角风格 | _boolean_ | `false` |
+| row-width | 段落占位图宽度           | _string_  | `100%`  |
+
+### SkeletonTitle Props
+
+| 参数        | 说明                     | 类型               | 默认值  |
+| ----------- | ------------------------ | ------------------ | ------- |
+| round       | 是否将标题显示为圆角风格 | _boolean_          | `false` |
+| title-width | 标题占位图宽度           | _number \| string_ | `40%`   |
+
+### SkeletonAvatar Props
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
+| avatar-shape | 头像占位图形状，可选值为 `square` | _string_ | `round` |
+
+### SkeletonImage Props
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| image-size | 图片占位图大小 | _number \| string_ | `32px` |
+| image-shape | 图片占位图形状，可选值为 `square` | _string_ | `round` |
+
+### Skeleton Slots
 
 | 名称     | 说明       |
 | -------- | ---------- |
