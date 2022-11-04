@@ -476,9 +476,11 @@ test('close-preview event', async () => {
 
 test('show-upload prop', () => {
   const wrapper = mount(Uploader);
-  expect(wrapper.contains('.van-uploader__upload')).toBeTruthy();
+
+  const upload = wrapper.find('.van-uploader__upload');
+  expect(upload.element).toBeTruthy();
   wrapper.setProps({ showUpload: false });
-  expect(wrapper.contains('.van-uploader__upload')).toBeFalsy();
+  expect(upload.element.style.display).toBe('none');
 });
 
 test('file message should be reactive', (done) => {

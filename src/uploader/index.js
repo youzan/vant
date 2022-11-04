@@ -404,7 +404,7 @@ export default createComponent({
     },
 
     genUpload() {
-      if (this.fileList.length >= this.maxCount || !this.showUpload) {
+      if (this.fileList.length >= this.maxCount) {
         return;
       }
 
@@ -446,6 +446,7 @@ export default createComponent({
 
       return (
         <div
+          v-show={this.showUpload}
           class={bem('upload', { readonly: this.readonly })}
           style={style}
           onClick={this.onClickUpload}
