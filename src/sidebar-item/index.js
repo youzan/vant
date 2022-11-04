@@ -97,9 +97,9 @@ export default createComponent({
       }
 
       const hrefR = currentHref();
-      if (!hrefR) {
-        return
-      }
+      // if (!hrefR) {
+      //   return
+      // }
 
       if (hrefR === undefined) {
         let to;

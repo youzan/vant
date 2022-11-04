@@ -38,9 +38,9 @@ export default {
                 return undefined;
           }
           const hrefR = currentHref();
-          if (!hrefR && !this.$listeners.click) {
-            return
-          }
+          // if (!hrefR && !this.$listeners.click) {
+          //   return
+          // }
           this.$listeners?.click?.(event);
           if (hrefR === undefined) {
           let to;
