@@ -225,10 +225,10 @@ export default createComponent({
 
       // emit(that, 'click', event);
       const hrefR = currentHref();
-      if (!hrefR && !that.$listeners.click) {
-        // event.preventDefault();
-        return
-      }
+      // if (!hrefR && !that.$listeners.click) {
+      //   // event.preventDefault();
+      //   return
+      // }
       that.$listeners?.click?.(event);
       // @ts-ignore：没办法
       // if (props.target !== '_self')
@@ -249,12 +249,12 @@ export default createComponent({
         if (currentTo === undefined)
           return;
         let cancel = false;
-        emit(that, 'before-navigate', {
-          to: currentTo,
-          replace: props.replace,
-          append: props.append,
-          preventDefault: () => (cancel = true),
-        });
+        // emit(that, 'before-navigate', {
+        //   to: currentTo,
+        //   replace: props.replace,
+        //   append: props.append,
+        //   preventDefault: () => (cancel = true),
+        // });
         if (cancel)
           return;
         const $router = parent?.$router;
@@ -266,7 +266,7 @@ export default createComponent({
         );
         props.replace ? $router.replace(location) : $router.push(location);
 
-        emit(that, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
+        // emit(that, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
       } else {
         function downloadClick() {
           const a = document.createElement("a");

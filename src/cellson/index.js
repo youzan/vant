@@ -229,10 +229,10 @@ export default createComponent({
 
       // emit(that, 'click', event);
       const hrefR = currentHref();
-      if (!hrefR && !that.$listeners.click) {
-        // event.preventDefault();
-        return
-      }
+      // if (!hrefR && !that.$listeners.click) {
+      //   // event.preventDefault();
+      //   return
+      // }
       that.$listeners?.click?.(event);
       // @ts-ignore：没办法
       // if (props.target !== '_self')

@@ -94,9 +94,9 @@ export default createComponent({
       }
 
       const hrefR = currentHref();
-      if (!hrefR) {
-        return
-      }
+      // if (!hrefR) {
+      //   return
+      // }
 
       function ifCanGoWithHref(destination) {
         if (destination) {
