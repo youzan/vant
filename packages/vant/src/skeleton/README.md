@@ -12,18 +12,18 @@ Register component globally via `app.use`, refer to [Component Registration](#/e
 import { createApp } from 'vue';
 import {
   Skeleton,
-  SkeletonTitle,
-  SkeletonImage,
-  SkeletonAvatar,
-  SkeletonParagraph,
+  VanSkeletonTitle,
+  VanSkeletonImage,
+  VanSkeletonAvatar,
+  VanSkeletonParagraph,
 } from 'vant';
 
 const app = createApp();
 app.use(Skeleton);
-app.use(SkeletonTitle);
-app.use(SkeletonImage);
-app.use(SkeletonAvatar);
-app.use(SkeletonParagraph);
+app.use(VanSkeletonTitle);
+app.use(VanSkeletonImage);
+app.use(VanSkeletonAvatar);
+app.use(VanSkeletonParagraph);
 ```
 
 ## Usage
