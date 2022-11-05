@@ -10,10 +10,20 @@
 
 ```js
 import { createApp } from 'vue';
-import { Skeleton } from 'vant';
+import {
+  Skeleton,
+  VanSkeletonTitle,
+  VanSkeletonImage,
+  VanSkeletonAvatar,
+  VanSkeletonParagraph,
+} from 'vant';
 
 const app = createApp();
 app.use(Skeleton);
+app.use(VanSkeletonTitle);
+app.use(VanSkeletonImage);
+app.use(VanSkeletonAvatar);
+app.use(VanSkeletonParagraph);
 ```
 
 ## 代码演示
@@ -62,9 +72,29 @@ export default {
 };
 ```
 
+### 自定义展示内容
+
+通过 `template` 插槽完成自定义内容的展示。
+
+```html
+<van-skeleton>
+  <template #template>
+    <div class="template-slot">
+      <van-skeleton-image />
+      <div :style="{ flex: 1 }">
+        <van-skeleton-paragraph row-width="60%" />
+        <van-skeleton-paragraph />
+        <van-skeleton-paragraph />
+        <van-skeleton-paragraph />
+      </div>
+    </div>
+  </template>
+</van-skeleton>
+```
+
 ## API
 
-### Props
+### Skeleton Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -79,12 +109,53 @@ export default {
 | avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
 | avatar-shape | 头像占位图形状，可选值为 `square` | _string_ | `round` |
 
+### SkeletonParagraph Props
+
+| 参数      | 说明                     | 类型      | 默认值  |
+| --------- | ------------------------ | --------- | ------- |
+| round     | 是否将段落显示为圆角风格 | _boolean_ | `false` |
+| row-width | 段落占位图宽度           | _string_  | `100%`  |
+
+### SkeletonTitle Props
+
+| 参数        | 说明                     | 类型               | 默认值  |
+| ----------- | ------------------------ | ------------------ | ------- |
+| round       | 是否将标题显示为圆角风格 | _boolean_          | `false` |
+| title-width | 标题占位图宽度           | _number \| string_ | `40%`   |
+
+### SkeletonAvatar Props
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
+| avatar-shape | 头像占位图形状，可选值为 `square` | _string_ | `round` |
+
+### SkeletonImage Props
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| image-size | 图片占位图大小 | _number \| string_ | `32px` |
+| image-shape | 图片占位图形状，可选值为 `square` | _string_ | `round` |
+
+### Skeleton Slots
+
+| 名称     | 说明       |
+| -------- | ---------- |
+| default  | 骨架屏内容 |
+| template | 自定义内容 |
+
 ### 类型定义
 
 组件导出以下类型定义：
 
 ```ts
-import type { SkeletonProps, SkeletonAvatarShape } from 'vant';
+import type {
+  SkeletonProps,
+  SkeletonImageProps,
+  SkeletonTitleProps,
+  SkeletonAvatarShape,
+  SkeletonParagraphProps,
+} from 'vant';
 ```
 
 ## 主题定制
@@ -93,12 +164,14 @@ import type { SkeletonProps, SkeletonAvatarShape } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                             | 默认值                    | 描述 |
-| -------------------------------- | ------------------------- | ---- |
-| --van-skeleton-row-height        | _16px_                    | -    |
-| --van-skeleton-row-background    | _var(--van-active-color)_ | -    |
-| --van-skeleton-row-margin-top    | _var(--van-padding-sm)_   | -    |
-| --van-skeleton-title-width       | _40%_                     | -    |
-| --van-skeleton-avatar-size       | _32px_                    | -    |
-| --van-skeleton-avatar-background | _var(--van-active-color)_ | -    |
-| --van-skeleton-duration          | _1.2s_                    | -    |
+| 名称                                | 默认值                    | 描述 |
+| ----------------------------------- | ------------------------- | ---- |
+| --van-skeleton-paragraph-height     | _16px_                    | -    |
+| --van-skeleton-paragraph-background | _var(--van-active-color)_ | -    |
+| --van-skeleton-paragraph-margin-top | _var(--van-padding-sm)_   | -    |
+| --van-skeleton-title-width          | _40%_                     | -    |
+| --van-skeleton-avatar-size          | _32px_                    | -    |
+| --van-skeleton-avatar-background    | _var(--van-active-color)_ | -    |
+| --van-skeleton-duration             | _1.2s_                    | -    |
+| --van-skeleton-image-size           | _96px_                    |
+| --van-skeleton-image-radius         | _24px_                    | -    |

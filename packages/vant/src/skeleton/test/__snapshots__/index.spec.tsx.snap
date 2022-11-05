@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should Skeleton works with template slots 1`] = `
+<div class="van-skeleton van-skeleton--animate">
+  custom content
+</div>
+`;
+
 exports[`should change avatar shape when using avatar-shape prop 1`] = `
-<div class="van-skeleton__avatar van-skeleton__avatar--square">
+<div class="van-skeleton-avatar van-skeleton-avatar--square">
 </div>
 `;
 
@@ -18,20 +24,29 @@ exports[`should render default slot when loading is false 1`] = `
 exports[`should render with row width array correctly 1`] = `
 <div class="van-skeleton van-skeleton--animate">
   <div class="van-skeleton__content">
-    <div class="van-skeleton__row"
+    <div class="van-skeleton-paragraph"
          style="width: 100%;"
     >
     </div>
-    <div class="van-skeleton__row"
+    <div class="van-skeleton-paragraph"
          style="width: 30px;"
     >
     </div>
-    <div class="van-skeleton__row"
+    <div class="van-skeleton-paragraph"
          style="width: 5rem;"
     >
     </div>
-    <div class="van-skeleton__row">
+    <div class="van-skeleton-paragraph"
+         style="width: 100%;"
+    >
     </div>
   </div>
+</div>
+`;
+
+exports[`should skeleton image render correctly 1`] = `
+<div class="van-skeleton-image van-skeleton-image--square">
+  <i class="van-badge__wrapper van-icon van-icon-photo van-skeleton-image__icon">
+  </i>
 </div>
 `;

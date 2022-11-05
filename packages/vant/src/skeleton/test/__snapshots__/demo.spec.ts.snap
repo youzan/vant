@@ -4,17 +4,17 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-skeleton van-skeleton--animate">
     <div class="van-skeleton__content">
-      <h3 class="van-skeleton__title">
+      <h3 class="van-skeleton-title">
       </h3>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-paragraph"
            style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-paragraph"
            style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-paragraph"
            style="width: 60%;"
       >
       </div>
@@ -23,20 +23,20 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-skeleton van-skeleton--animate">
-    <div class="van-skeleton__avatar van-skeleton__avatar--round">
+    <div class="van-skeleton-avatar van-skeleton-avatar--round">
     </div>
     <div class="van-skeleton__content">
-      <h3 class="van-skeleton__title">
+      <h3 class="van-skeleton-title">
       </h3>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-paragraph"
            style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-paragraph"
            style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-paragraph"
            style="width: 60%;"
       >
       </div>
@@ -53,22 +53,50 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-skeleton van-skeleton--animate">
-    <div class="van-skeleton__avatar van-skeleton__avatar--round">
+    <div class="van-skeleton-avatar van-skeleton-avatar--round">
     </div>
     <div class="van-skeleton__content">
-      <h3 class="van-skeleton__title">
+      <h3 class="van-skeleton-title">
       </h3>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-paragraph"
            style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-paragraph"
            style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton__row"
+      <div class="van-skeleton-paragraph"
            style="width: 60%;"
       >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-skeleton van-skeleton--animate">
+    <div class="template-slot">
+      <div class="van-skeleton-image van-skeleton-image--square">
+        <i class="van-badge__wrapper van-icon van-icon-photo van-skeleton-image__icon">
+        </i>
+      </div>
+      <div style="flex: 1;">
+        <div class="van-skeleton-paragraph"
+             style="width: 60%;"
+        >
+        </div>
+        <div class="van-skeleton-paragraph"
+             style="width: 100%;"
+        >
+        </div>
+        <div class="van-skeleton-paragraph"
+             style="width: 100%;"
+        >
+        </div>
+        <div class="van-skeleton-paragraph"
+             style="width: 100%;"
+        >
+        </div>
       </div>
     </div>
   </div>

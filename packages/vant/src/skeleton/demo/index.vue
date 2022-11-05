@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VanSkeleton from '..';
+import VanSkeleton, { VanSkeletonParagraph, VanSkeletonImage } from '..';
 import VanSwitch from '../../switch';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';
@@ -10,12 +10,14 @@ const t = useTranslate({
     showChildren: '显示子组件',
     title: '关于 Vant',
     desc: 'Vant 是一套轻量、可靠的移动端 Vue 组件库，提供了丰富的基础组件和业务组件，帮助开发者快速搭建移动应用。',
+    customContent: '自定义展示内容',
   },
   'en-US': {
     showAvatar: 'Show Avatar',
     showChildren: 'Show Children',
     title: 'About Vant',
     desc: 'Vant is a set of Mobile UI Components built on Vue.',
+    customContent: 'Custom Content',
   },
 });
 
@@ -41,6 +43,22 @@ const show = ref(false);
           <p>{{ t('desc') }}</p>
         </div>
       </div>
+    </van-skeleton>
+  </demo-block>
+
+  <demo-block :title="t('customContent')">
+    <van-skeleton>
+      <template #template>
+        <div class="template-slot">
+          <van-skeleton-image />
+          <div :style="{ flex: 1 }">
+            <van-skeleton-paragraph row-width="60%" />
+            <van-skeleton-paragraph />
+            <van-skeleton-paragraph />
+            <van-skeleton-paragraph />
+          </div>
+        </div>
+      </template>
     </van-skeleton>
   </demo-block>
 </template>
@@ -77,6 +95,15 @@ const show = ref(false);
       flex-shrink: 0;
       width: 32px;
       height: 32px;
+      margin-right: var(--van-padding-md);
+    }
+  }
+
+  .template-slot {
+    display: flex;
+    width: 100%;
+
+    .van-skeleton-image {
       margin-right: var(--van-padding-md);
     }
   }

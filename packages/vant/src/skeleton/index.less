@@ -1,10 +1,12 @@
 :root {
-  --van-skeleton-row-height: 16px;
-  --van-skeleton-row-background: var(--van-active-color);
-  --van-skeleton-row-margin-top: var(--van-padding-sm);
+  --van-skeleton-paragraph-height: 16px;
+  --van-skeleton-paragraph-background: var(--van-active-color);
+  --van-skeleton-paragraph-margin-top: var(--van-padding-sm);
   --van-skeleton-title-width: 40%;
   --van-skeleton-avatar-size: 32px;
   --van-skeleton-avatar-background: var(--van-active-color);
+  --van-skeleton-image-size: 96px;
+  --van-skeleton-image-radius: 24px;
   --van-skeleton-duration: 1.2s;
 }
 
@@ -12,7 +14,7 @@
   display: flex;
   padding: 0 var(--van-padding-md);
 
-  &__avatar {
+  &-avatar {
     flex-shrink: 0;
     width: var(--van-skeleton-avatar-size);
     height: var(--van-skeleton-avatar-size);
@@ -28,28 +30,28 @@
     width: 100%;
   }
 
-  &__avatar + &__content {
+  &-avatar + &__content {
     padding-top: var(--van-padding-xs);
   }
 
-  &__row,
-  &__title {
-    height: var(--van-skeleton-row-height);
-    background: var(--van-skeleton-row-background);
+  &-paragraph,
+  &-title {
+    height: var(--van-skeleton-paragraph-height);
+    background: var(--van-skeleton-paragraph-background);
   }
 
-  &__title {
+  &-title {
     width: var(--van-skeleton-title-width);
     margin: 0;
   }
 
-  &__row {
+  &-paragraph {
     &:not(:first-child) {
-      margin-top: var(--van-skeleton-row-margin-top);
+      margin-top: var(--van-skeleton-paragraph-margin-top);
     }
   }
 
-  &__title + &__row {
+  &-title + &-paragraph {
     margin-top: 20px;
   }
 
@@ -59,9 +61,29 @@
   }
 
   &--round {
-    .van-skeleton__row,
-    .van-skeleton__title {
+    .van-skeleton-paragraph,
+    .van-skeleton-title {
       border-radius: var(--van-radius-max);
+    }
+  }
+
+  &-image {
+    display: flex;
+    width: var(--van-skeleton-image-size);
+    height: var(--van-skeleton-image-size);
+    align-items: center;
+    justify-content: center;
+    background: var(--van-active-color);
+
+    &--round {
+      border-radius: var(--van-skeleton-image-radius);
+    }
+
+    &__icon {
+      width: calc(var(--van-skeleton-image-size) / 2);
+      height: calc(var(--van-skeleton-image-size) / 2);
+      font-size: calc(var(--van-skeleton-image-size) / 2);
+      color: var(--van-gray-5);
     }
   }
 }
