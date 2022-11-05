@@ -12,8 +12,8 @@ export function genWebTypes(tags: VueTag[], options: Options) {
       html: {
         tags,
         attributes: [],
-        'types-syntax': 'typescript',
       },
     },
+    'js-types-syntax': 'typescript',
   };
 }

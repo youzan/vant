@@ -20,9 +20,3 @@ export function formatType(type: string) {
 export function normalizePath(path: string): string {
   return path.replace(/\\/g, '/');
 }
-
-// `default` `primary` -> ['default', 'primary']
-export function formatOptions(options?: string) {
-  if (!options) return [];
-  return options.replace(/`/g, '').split(' ');
-}
