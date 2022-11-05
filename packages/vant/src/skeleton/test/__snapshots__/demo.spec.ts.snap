@@ -75,12 +75,12 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-skeleton van-skeleton--animate">
-    <div class="template-slot">
+    <div style="display: flex; width: 100%;">
       <div class="van-skeleton-image van-skeleton-image--square">
         <i class="van-badge__wrapper van-icon van-icon-photo van-skeleton-image__icon">
         </i>
       </div>
-      <div style="flex: 1;">
+      <div style="flex: 1; margin-left: 16px;">
         <div class="van-skeleton-paragraph"
              style="width: 60%;"
         >

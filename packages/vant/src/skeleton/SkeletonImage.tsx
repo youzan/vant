@@ -7,11 +7,12 @@ import {
   createNamespace,
 } from '../utils';
 
+// Types
+import type { SkeletonImageShape } from './types';
+
 import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('skeleton-image');
-
-export type SkeletonImageShape = 'square' | 'round';
 
 export const skeletonImageProps = {
   imageSize: numericProp,

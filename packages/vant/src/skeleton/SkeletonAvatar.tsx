@@ -8,9 +8,10 @@ import {
   createNamespace,
 } from '../utils';
 
-const [name, bem] = createNamespace('skeleton-avatar');
+// Types
+import type { SkeletonAvatarShape } from './types';
 
-export type SkeletonAvatarShape = 'square' | 'round';
+const [name, bem] = createNamespace('skeleton-avatar');
 
 export const skeletonAvatarProps = {
   avatarSize: numericProp,

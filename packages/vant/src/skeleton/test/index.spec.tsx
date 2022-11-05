@@ -97,7 +97,7 @@ test('should skeleton image works with imageSize prop', () => {
   expect(dom.style.height).toBe('20rem');
 });
 
-test('should skeleton image worsk with imageShape prop', () => {
+test('should skeleton image works with imageShape prop', () => {
   const wrapper = mount(VanSkeletonImage, {
     props: {
       imageShape: 'round',

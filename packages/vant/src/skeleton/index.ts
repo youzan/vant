@@ -1,8 +1,8 @@
 import _Skeleton from './Skeleton';
-import _SkeletonImage from './Image';
-import _SkeletonTitle from './Title';
-import _SkeletonAvatar from './Avatar';
-import _SkeletonParagraph from './Paragraph';
+import _SkeletonImage from './SkeletonImage';
+import _SkeletonTitle from './SkeletonTitle';
+import _SkeletonAvatar from './SkeletonAvatar';
+import _SkeletonParagraph from './SkeletonParagraph';
 
 import { withInstall } from '../utils';
 
@@ -19,22 +19,26 @@ export { skeletonProps } from './Skeleton';
 export type { SkeletonProps } from './Skeleton';
 
 // SkeletonImage
-export { skeletonImageProps } from './Image';
-export type { SkeletonImageProps, SkeletonImageShape } from './Image';
+export { skeletonImageProps } from './SkeletonImage';
+export type { SkeletonImageProps } from './SkeletonImage';
 
 // SkeletonAvatar
-export { skeletonAvatarProps } from './Avatar';
-export type { SkeletonAvatarProps, SkeletonAvatarShape } from './Avatar';
+export { skeletonAvatarProps } from './SkeletonAvatar';
+export type { SkeletonAvatarProps } from './SkeletonAvatar';
 
 // SkeletonParagraph
-export { skeletonParagraphProps } from './Paragraph';
-export type { SkeletonParagraphProps } from './Paragraph';
+export { skeletonParagraphProps } from './SkeletonParagraph';
+export type { SkeletonParagraphProps } from './SkeletonParagraph';
 
 // SkeletonTitle
-export { skeletonTitleProps } from './Title';
-export type { SkeletonTitleProps } from './Title';
+export { skeletonTitleProps } from './SkeletonTitle';
+export type { SkeletonTitleProps } from './SkeletonTitle';
 
-export type { SkeletonThemeVars } from './types';
+export type {
+  SkeletonThemeVars,
+  SkeletonImageShape,
+  SkeletonAvatarShape,
+} from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {

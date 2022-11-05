@@ -12,18 +12,18 @@ Register component globally via `app.use`, refer to [Component Registration](#/e
 import { createApp } from 'vue';
 import {
   Skeleton,
-  VanSkeletonTitle,
-  VanSkeletonImage,
-  VanSkeletonAvatar,
-  VanSkeletonParagraph,
+  SkeletonTitle,
+  SkeletonImage,
+  SkeletonAvatar,
+  SkeletonParagraph,
 } from 'vant';
 
 const app = createApp();
 app.use(Skeleton);
-app.use(VanSkeletonTitle);
-app.use(VanSkeletonImage);
-app.use(VanSkeletonAvatar);
-app.use(VanSkeletonParagraph);
+app.use(SkeletonTitle);
+app.use(SkeletonImage);
+app.use(SkeletonAvatar);
+app.use(SkeletonParagraph);
 ```
 
 ## Usage
@@ -68,14 +68,14 @@ export default {
 
 ### Custom Content
 
-Using `template` slots to display custom content.
+Using `template` slots to custom skeleton content.
 
 ```html
 <van-skeleton>
   <template #template>
-    <div class="template-slot">
+    <div :style="{ display: 'flex', width: '100%' }">
       <van-skeleton-image />
-      <div :style="{ flex: 1 }">
+      <div :style="{ flex: 1, marginLeft: '16px' }">
         <van-skeleton-paragraph row-width="60%" />
         <van-skeleton-paragraph />
         <van-skeleton-paragraph />
@@ -148,6 +148,7 @@ import type {
   SkeletonImageProps,
   SkeletonTitleProps,
   SkeletonAvatarShape,
+  SkeletonImageShape,
   SkeletonParagraphProps,
 } from 'vant';
 ```
