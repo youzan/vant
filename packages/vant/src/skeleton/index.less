@@ -38,6 +38,10 @@
   &-title {
     height: var(--van-skeleton-paragraph-height);
     background: var(--van-skeleton-paragraph-background);
+
+    &--round {
+      border-radius: var(--van-radius-max);
+    }
   }
 
   &-title {
@@ -58,13 +62,6 @@
   &--animate {
     animation: van-skeleton-blink var(--van-skeleton-duration) ease-in-out
       infinite;
-  }
-
-  &--round {
-    .van-skeleton-paragraph,
-    .van-skeleton-title {
-      border-radius: var(--van-radius-max);
-    }
   }
 
   &-image {

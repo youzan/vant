@@ -49,9 +49,9 @@ const show = ref(false);
   <demo-block :title="t('customContent')">
     <van-skeleton>
       <template #template>
-        <div class="template-slot">
+        <div :style="{ display: 'flex', width: '100%' }">
           <van-skeleton-image />
-          <div :style="{ flex: 1 }">
+          <div :style="{ flex: 1, marginLeft: '16px' }">
             <van-skeleton-paragraph row-width="60%" />
             <van-skeleton-paragraph />
             <van-skeleton-paragraph />
@@ -95,15 +95,6 @@ const show = ref(false);
       flex-shrink: 0;
       width: 32px;
       height: 32px;
-      margin-right: var(--van-padding-md);
-    }
-  }
-
-  .template-slot {
-    display: flex;
-    width: 100%;
-
-    .van-skeleton-image {
       margin-right: var(--van-padding-md);
     }
   }

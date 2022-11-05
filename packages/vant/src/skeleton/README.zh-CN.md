@@ -12,18 +12,18 @@
 import { createApp } from 'vue';
 import {
   Skeleton,
-  VanSkeletonTitle,
-  VanSkeletonImage,
-  VanSkeletonAvatar,
-  VanSkeletonParagraph,
+  SkeletonTitle,
+  SkeletonImage,
+  SkeletonAvatar,
+  SkeletonParagraph,
 } from 'vant';
 
 const app = createApp();
 app.use(Skeleton);
-app.use(VanSkeletonTitle);
-app.use(VanSkeletonImage);
-app.use(VanSkeletonAvatar);
-app.use(VanSkeletonParagraph);
+app.use(SkeletonTitle);
+app.use(SkeletonImage);
+app.use(SkeletonAvatar);
+app.use(SkeletonParagraph);
 ```
 
 ## 代码演示
@@ -79,9 +79,9 @@ export default {
 ```html
 <van-skeleton>
   <template #template>
-    <div class="template-slot">
+    <div :style="{ display: 'flex', width: '100%' }">
       <van-skeleton-image />
-      <div :style="{ flex: 1 }">
+      <div :style="{ flex: 1, marginLeft: '16px' }">
         <van-skeleton-paragraph row-width="60%" />
         <van-skeleton-paragraph />
         <van-skeleton-paragraph />
@@ -153,6 +153,7 @@ import type {
   SkeletonProps,
   SkeletonImageProps,
   SkeletonTitleProps,
+  SkeletonImageShape,
   SkeletonAvatarShape,
   SkeletonParagraphProps,
 } from 'vant';
