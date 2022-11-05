@@ -114,12 +114,12 @@ export function smartOutputFile(filePath: string, content: string) {
   outputFileSync(filePath, content);
 }
 
-export function mergeCustomViteConfig(config: InlineConfig) {
+export function mergeCustomViteConfig(config: InlineConfig): InlineConfig {
   const vantConfig = getVantConfig();
   const configureVite = vantConfig.build?.configureVite;
 
   if (configureVite) {
-    return configureVite(config);
+    return configureVite(config) || config;
   }
   return config;
 }

@@ -34,7 +34,7 @@ export async function compileSite(production = false) {
   } else {
     const config = mergeCustomViteConfig(getViteConfigForSiteDev());
     const server = await createServer(config);
-    await server.listen();
+    await server.listen(config.server?.port);
 
     const require = createRequire(import.meta.url);
     const { version } = require('vite/package.json');
