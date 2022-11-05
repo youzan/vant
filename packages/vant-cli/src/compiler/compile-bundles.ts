@@ -34,8 +34,13 @@ export async function compileBundles() {
     getVantConfig().build?.bundleOptions || DEFAULT_OPTIONS;
 
   await Promise.all(
-    bundleOptions.map((config) =>
-      build(mergeCustomViteConfig(getViteConfigForPackage(config)))
+    bundleOptions.map(async (config) =>
+      build(
+        await mergeCustomViteConfig(
+          getViteConfigForPackage(config),
+          'production'
+        )
+      )
     )
   );
 }

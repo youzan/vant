@@ -177,17 +177,16 @@ module.exports = {
 
 ### build.configureVite
 
-- Type: `(config: InlineConfig): InlineConfig`
+- Type: `(config: InlineConfig): InlineConfig | undefined`
 - Default: `undefined`
 
-vant-cli 使用 vite 来构建组件库和文档站点，通过 `configureVite` 选项可以自定义 vite 配置（从 4.0.0 版本开始支持）。
+vant-cli 使用 vite 来构建组件库和文档站点，通过 `configureVite` 选项可以自定义 [vite 配置](https://vitejs.dev/config/)（从 4.0.0 版本开始支持）。
 
 ```js
 module.exports = {
   build: {
     configureVite(config) {
-      // 添加一个自定义插件
-      config.plugins.push(vitePluginXXX);
+      config.server.port = 3000;
       return config;
     },
   },
@@ -215,6 +214,10 @@ module.exports = {
   },
 };
 ```
+
+注意，由于 `vant.config.mjs` 文件会被打包到文档网站的代码中，因此 `configureVite` 中不允许引用 vite 插件。
+
+如果需要配置 vite 插件，可以在 `vant.config.mjs` 的同级目录下创建 `vite.config.ts` 文件，在该文件中你可以添加任意的 vite 配置（该特性从 @vant/cli 5.1.0 版本开始支持）。
 
 ### build.packageManager
 
