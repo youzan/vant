@@ -20,7 +20,6 @@ export type VueAttribute = {
   name: string;
   default: string;
   description: string;
-  options: string[];
   value: {
     kind: 'expression';
     type: string;

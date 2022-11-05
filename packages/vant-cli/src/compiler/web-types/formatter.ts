@@ -1,11 +1,6 @@
 /* eslint-disable no-continue */
 import { Articles } from './parser.js';
-import {
-  formatOptions,
-  formatType,
-  removeVersion,
-  toKebabCase,
-} from './utils.js';
+import { formatType, removeVersion, toKebabCase } from './utils.js';
 import { VueEventArgument, VueTag } from './type.js';
 
 function formatComponentName(name: string, tagPrefix: string) {
@@ -66,9 +61,6 @@ function findTag(vueTags: VueTag[], name: string) {
 
   const newTag: VueTag = {
     name,
-    slots: [],
-    events: [],
-    attributes: [],
   };
 
   vueTags.push(newTag);
@@ -107,12 +99,16 @@ export function formatter(
       const tag = findTag(vueTags, name);
 
       table.body.forEach((line) => {
-        const [name, desc, type, defaultVal, options] = line;
-        tag.attributes!.push({
+        const [name, desc, type, defaultVal] = line;
+
+        if (!tag.attributes) {
+          tag.attributes = [];
+        }
+
+        tag.attributes.push({
           name: removeVersion(name),
           default: defaultVal,
           description: desc,
-          options: formatOptions(options),
           value: {
             type: formatType(type),
             kind: 'expression',
@@ -128,7 +124,12 @@ export function formatter(
 
       table.body.forEach((line) => {
         const [name, desc, args] = line;
-        tag.events!.push({
+
+        if (!tag.events) {
+          tag.events = [];
+        }
+
+        tag.events.push({
           name: removeVersion(name),
           description: desc,
           arguments: formatArguments(args),
@@ -143,7 +144,12 @@ export function formatter(
 
       table.body.forEach((line) => {
         const [name, desc] = line;
-        tag.slots!.push({
+
+        if (!tag.slots) {
+          tag.slots = [];
+        }
+
+        tag.slots.push({
           name: removeVersion(name),
           description: desc,
         });
