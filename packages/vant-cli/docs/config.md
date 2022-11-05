@@ -177,17 +177,16 @@ When set to `true`, `export * from 'xxx'` will be used to export all modules and
 
 ### build.configureVite
 
-- Type: `(config: InlineConfig): InlineConfig`
+- Type: `(config: InlineConfig): InlineConfig | undefined`
 - Default: `undefined`
 
-Custom vite config(`@vant/cli>= 4.0.0`)
+Custom [vite config](https://vitejs.dev/config/), requires `@vant/cli>= 4.0.0`.
 
 ```js
 module.exports = {
   build: {
     configureVite(config) {
-      // add vite plugin
-      config.plugins.push(vitePluginXXX);
+      config.server.port = 3000;
       return config;
     },
   },
@@ -213,6 +212,10 @@ module.exports = {
   },
 };
 ```
+
+Note that you are not allowed to import vite plugins in `vant.config.mjs`, because the file will be bundled into the website code.
+
+If you need to configure some vite plugins, please create a `vite.config.ts` file in the same directory of `vant.config.mjs`, in which you can add any vite configuration (this feature requires @vant/cli 5.1.0).
 
 ### build.packageManager
 

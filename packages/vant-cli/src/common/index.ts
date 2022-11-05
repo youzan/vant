@@ -1,7 +1,7 @@
 import fse from 'fs-extra';
 import { sep, join } from 'path';
 import { SRC_DIR, getVantConfig } from './constant.js';
-import type { InlineConfig } from 'vite';
+import { InlineConfig, loadConfigFromFile, mergeConfig } from 'vite';
 
 const { lstatSync, existsSync, readdirSync, readFileSync, outputFileSync } =
   fse;
@@ -114,13 +114,33 @@ export function smartOutputFile(filePath: string, content: string) {
   outputFileSync(filePath, content);
 }
 
-export function mergeCustomViteConfig(config: InlineConfig): InlineConfig {
+export async function mergeCustomViteConfig(
+  config: InlineConfig,
+  mode: 'production' | 'development'
+): Promise<InlineConfig> {
   const vantConfig = getVantConfig();
   const configureVite = vantConfig.build?.configureVite;
 
+  const userConfig = await loadConfigFromFile(
+    {
+      mode,
+      command: mode === 'development' ? 'serve' : 'build',
+    },
+    undefined,
+    process.cwd()
+  );
+
   if (configureVite) {
-    return configureVite(config) || config;
+    const ret = configureVite(config);
+    if (ret) {
+      config = ret;
+    }
   }
+
+  if (userConfig) {
+    return mergeConfig(config, userConfig.config);
+  }
+
   return config;
 }
 
