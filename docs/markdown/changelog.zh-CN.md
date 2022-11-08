@@ -25,6 +25,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.52](https://github.com/vant-ui/vant/compare/v2.12.51...v2.12.52)
+
+`2022-11-08`
+
+**Bug Fixes**
+
+- ActionSheet: 修复标题为空时，关闭按钮层级错误的问题 [#11214](https://github.com/vant-ui/vant/issues/11214)
+- Uploader: 修复 show-upload 设置为 false 时无法调用 chooseFile 方法的问题 [#11221](https://github.com/vant-ui/vant/issues/11221)
+
 ### [v2.12.51](https://github.com/vant-ui/vant/compare/v2.12.50...v2.12.51)
 
 `2022-10-17`
