@@ -16,6 +16,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.52](https://github.com/vant-ui/vant/compare/v2.12.51...v2.12.52)
+
+`2022-11-08`
+
+**Bug Fixes**
+
+- ActionSheet: fix that close is invalid without title [#11214](https://github.com/vant-ui/vant/issues/11214)
+- Uploader: chooseFile is invalid when show-upload = false [#11221](https://github.com/vant-ui/vant/issues/11221)
+
 ### [v2.12.51](https://github.com/vant-ui/vant/compare/v2.12.50...v2.12.51)
 
 `2022-10-17`
