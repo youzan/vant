@@ -19,6 +19,18 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.6.5](https://github.com/vant-ui/vant/compare/v3.6.4...v3.6.5)
+
+`2022-11-08`
+
+**Feature**
+
+- ImagePreview: 新增 preview image 插槽 [#11133](https://github.com/vant-ui/vant/issues/11133)
+
+**Bug Fixes**
+
+- lazyload: 修复使用 lazy-image 时提示 h is not a function 的问题 [#11230](https://github.com/vant-ui/vant/issues/11230)
+
 ### [v3.6.4](https://github.com/vant-ui/vant/compare/v3.6.3...v3.6.4)
 
 `2022-10-07`

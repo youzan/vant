@@ -19,6 +19,18 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.6.5](https://github.com/vant-ui/vant/compare/v3.6.4...v3.6.5)
+
+`2022-11-08`
+
+**Feature**
+
+- ImagePreview: add preview image slot [#11133](https://github.com/vant-ui/vant/issues/11133)
+
+**Bug Fixes**
+
+- lazyload: lazy-image h is not a function [#11230](https://github.com/vant-ui/vant/issues/11230)
+
 ### [v3.6.4](https://github.com/vant-ui/vant/compare/v3.6.3...v3.6.4)
 
 `2022-10-07`
