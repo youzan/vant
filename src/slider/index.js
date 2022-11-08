@@ -175,10 +175,12 @@ export default createComponent({
       }
 
       if (!isSameValue(value, this.value)) {
+        this.$emit("update:value",value)
         this.$emit('input', value);
       }
 
       if (end && !isSameValue(value, this.startValue)) {
+        this.$emit('update:value', value);
         this.$emit('change', value);
       }
     },

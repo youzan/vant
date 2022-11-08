@@ -1,8 +1,9 @@
 <template>
   <demo-section>
+    <!-- <van-tag type="primary" :mark="true">标签</van-tag> -->
     <demo-block card :title="t('basicUsage')">
       <van-cell :title="`primary ${t('type')}`">
-        <van-tag type="primary">{{ t('tag') }}</van-tag>
+        <van-tag type="primary" :show="false" :mark="true">标签</van-tag>
       </van-cell>
       <van-cell :title="`success ${t('type')}`">
         <van-tag type="success">{{ t('tag') }}</van-tag>
@@ -81,7 +82,7 @@ export default {
       customColor: '自定义颜色',
       customBgColor: '背景颜色',
       customTextColor: '文字颜色',
-      customPlainColor: '空心颜色',
+      customPlainColor: '空心颜色'
     },
     'en-US': {
       mark: 'Mark style',
@@ -96,21 +97,21 @@ export default {
       customSize: 'Custom Size',
       customBgColor: 'Background Color',
       customTextColor: 'Text Color',
-      customPlainColor: 'Plain Color',
-    },
+      customPlainColor: 'Plain Color'
+    }
   },
 
   data() {
     return {
-      show: true,
+      show: true
     };
   },
 
   methods: {
     close() {
       this.show = false;
-    },
-  },
+    }
+  }
 };
 </script>
 

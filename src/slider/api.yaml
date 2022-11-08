@@ -1,0 +1,60 @@
+- name: van-slider
+  icon: slider
+  title: 滑块
+  labels:
+    - Display
+  description: 滑动输入条，用于在给定的范围内选择一个值。
+  next: true
+  nested: false
+  attrs:
+    - name: value
+      title: 	当前进度百分比
+      type: number | string
+      sync: true
+      model: true
+      default: 0
+      description: 当前进度百分比	
+    - name: max
+      title: 	最大值	
+      type: number | string
+      sync: true
+      default: 100
+      description: 最大值		
+    - name: min
+      title: 		最小值
+      type: number | string
+      sync: true
+      default: 0
+      description: 	最小值	
+    - name: step
+      title: 		步长
+      type: number | string
+      sync: true
+      default: 0
+      description: 	步长	
+    - name: bar-height
+      title: 		进度条高度
+      type: number | string
+      default: 2
+      description: 		进度条高度，默认单位为px
+    - name: button-size	
+      title: 		滑块按钮大小
+      type: number | string
+      default: 24px
+      description: 	滑块按钮大小，默认单位为px
+    - name: range 
+      title: 		是否开启双滑块模式	
+      type: boolean
+      default: false
+      description: 是否开启双滑块模式	
+    - name: disabled
+      title: 是否禁用滑块	
+      type: boolean
+      default: false
+      description: 	是否禁用滑块	
+  slots: false
+  events:
+    - name: change
+      title: 改变时
+      description: 进度变化且结束拖动后触发		
+      params: []

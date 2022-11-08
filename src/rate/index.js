@@ -80,10 +80,10 @@ export default createComponent({
   mounted() {
     this.bindTouchEvent(this.$el);
   },
-
   methods: {
     select(index) {
       if (!this.disabled && !this.readonly && index !== this.value) {
+        this.$emit('update:value', index);
         this.$emit('input', index);
         this.$emit('change', index);
       }
