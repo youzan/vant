@@ -1,5 +1,5 @@
 - name: van-tag
-  icon: tag
+  icon: label
   title: 标签
   labels:
     - Display
@@ -11,13 +11,13 @@
       title: 类型
       type: string
       options:
-        - value: primary 
+        - value: primary
           title: 默认
-        - value: success 
+        - value: success
           title: 成功
-        - value: danger  
+        - value: danger
           title: 危险
-        - value: warning  
+        - value: warning
           title: 警告
       default: medium
       description: 设置尺寸
@@ -40,24 +40,24 @@
       title: 是否为圆角
       type: boolean
       default: false
-      description: 	是否为圆角样式
+      description: 是否为圆角样式
     - name: mark
       title: 是否为标记样式
       type: boolean
       default: false
-      description: 	是否为标记样式 
+      description: 是否为标记样式
     - name: closeable
-      title: 是否为可关闭标签	
+      title: 是否为可关闭标签
       type: boolean
       default: false
-      description: 	是否为可关闭标签	
+      description: 是否为可关闭标签
   slots: false
   events:
     - name: click
       title: 点击时
-      description: 点击时触发	
+      description: 点击时触发
       params: []
     - name: close
       title: 关闭时
-      description: 关闭标签时触发	
+      description: 关闭标签时触发
       params: []

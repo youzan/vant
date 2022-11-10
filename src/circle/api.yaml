@@ -1,5 +1,5 @@
 - name: van-circle
-  icon: circle
+  icon: circular-progress
   title: 环形进度条
   labels:
     - Display
@@ -8,36 +8,35 @@
   nested: false
   attrs:
     - name: value
-      title: 当前进度		
+      title: 当前进度
       type: number | string
       sync: true
       model: true
       description: 当前进度
     - name: rate
-      title: 目标进度	
+      title: 目标进度
       type: string
       sync: true
       model: true
       description: 目标进度
     - name: size
-      title: 圆环直径，默认单位为 px	
-      type:  numer | string
+      title: 圆环直径，默认单位为 px
+      type: numer | string
       default: 100px
       description: 圆环直径，默认单位为 px
     - name: text
       title: 文字
       type: string
       description: 文字
-    - name: stroke-width	
-      title: 进度条宽度	
-      type:  numer | string
+    - name: stroke-width
+      title: 进度条宽度
+      type: numer | string
       default: 40
-      description: 进度条宽度	
-    - name:  clockwise
+      description: 进度条宽度
+    - name: clockwise
       title: 是否顺时针增加
       type: boolean
       default: true
-      description: 是否顺时针增加	
+      description: 是否顺时针增加
   slots: false
   events:
-
