@@ -1,7 +1,7 @@
-import { createNamespace } from '../utils';
+import { createNamespace , isFunction } from '../utils';
 import { FieldMixin } from '../mixins/field';
 import { ParentMixin } from '../mixins/relation';
-import { isFunction } from '../utils';
+// import vanRadio from "../radio"
 
 const [createComponent, bem] = createNamespace('radio-group');
 
@@ -23,6 +23,9 @@ export default createComponent({
       options: [],
     }
   },
+  components: {
+    // vanRadio
+  },
   watch: {
     value(value) {
       this.datatemp = value;
@@ -40,6 +43,7 @@ export default createComponent({
   },
   methods: {
     ifDesigner() {
+      console.log(this.$env);
       return this.$env && this.$env.VUE_APP_DESIGNER;
     },
     fromValue(value) {
@@ -71,9 +75,12 @@ export default createComponent({
     }
   },
   render() {
-    if (this.dataSource && this.options?.length >= 0) {
+    console.log(this.dataSource,this.options );
+    if (this.dataSource ) {
       return <div class={bem([this.direction])}>
         {/* <van-linear-layout direction="horizontal" layout="inline"> */}
+        {this.ifDesigner() ? 222:3}
+        {this.ifDesigner() ? [1, 2, 3].map((item, index) => index):123}
         {
           this.options.map((item, index) => {
             const data = {
@@ -89,14 +96,16 @@ export default createComponent({
               //   },
               // },
             };
-            return this.slots('default', {item, index});
+            return this.slots('default', { item, index })
           })
         }
+          {this.slots()}
         {/* </van-linear-layout> */}
       </div>
     }
     return (
       <div class={bem([this.direction])} role="radiogroup">
+         {!this.slots('default') && <div style="text-align: center;width:100%">请绑定数据源或插入子节点</div>}
         {this.slots()}
         {/* <van-linear-layout direction="horizontal" layout="inline">
           {this.slots()}

@@ -3278,6 +3278,63 @@
         }
     },
     {
+        "symbol": "van-badge",
+        "name": "徽标",
+        "icon": "badge",
+        "depDescription": {},
+        "description": "在右上角展示徽标数字或小红点。",
+        "labels": [
+            "Display"
+        ],
+        "screenShot": "",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-number-keyboard />\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "van-badge",
+            "title": "徽标",
+            "description": "在右上角展示徽标数字或小红点。",
+            "category": "Display",
+            "screenShot": "",
+            "drawings": "",
+            "blocks": [
+                {
+                    "title": "基础用法",
+                    "description": "",
+                    "code": "<template>\n<van-number-keyboard />\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "content",
+                    "title": "徽章值",
+                    "type": "string, number",
+                    "default": 2,
+                    "description": "徽章值"
+                },
+                {
+                    "name": "dot",
+                    "title": "是否展示为小红点",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否展示为小红点"
+                },
+                {
+                    "name": "max",
+                    "title": "徽章最大值",
+                    "type": "number",
+                    "description": "徽章最大值"
+                }
+            ],
+            "slots": [
+                {
+                    "concept": "Slot",
+                    "name": "default",
+                    "description": "插入徽章内容"
+                }
+            ],
+            "children": []
+        }
+    },
+    {
         "symbol": "van-count-down-new",
         "name": "计时器",
         "icon": "countdown",
@@ -3526,7 +3583,7 @@
     {
         "symbol": "van-tag",
         "name": "标签",
-        "icon": "tag",
+        "icon": "label",
         "depDescription": {},
         "description": "用于标记关键词和概括主要内容。",
         "labels": [
@@ -3643,7 +3700,7 @@
     {
         "symbol": "van-circle",
         "name": "环形进度条",
-        "icon": "circle",
+        "icon": "circular-progress",
         "depDescription": {},
         "description": "圆环形的进度条组件",
         "labels": [
@@ -3720,7 +3777,7 @@
     {
         "symbol": "van-progress",
         "name": "进度条",
-        "icon": "progress",
+        "icon": "linear-progress",
         "depDescription": {},
         "description": "用于展示操作的当前进度。",
         "labels": [
@@ -5725,7 +5782,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-radio-group direction=\\\"horizontal\\\">\\n  <template #default=\\\"scope\\\">\\n    <van-radio name=\\\"n\\\" title=\\\"单选框 n\\\" vusion-disabled-cut vusion-disabled-copy></van-radio>\\n  </template>\\n</van-radio-group>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-radio-group direction=\\\"horizontal\\\">\\n  <template #item=\\\"scope\\\"> </template>\\n</van-radio-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-radio-group",
             "title": "单选组",
@@ -5737,7 +5794,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-radio-group direction=\"horizontal\">\n  <template #default=\"scope\">\n    <van-radio name=\"n\" title=\"单选框 n\" vusion-disabled-cut vusion-disabled-copy></van-radio>\n  </template>\n</van-radio-group>\n</template>\n"
+                    "code": "<template>\n<van-radio-group direction=\"horizontal\">\n  <template #item=\"scope\"> </template>\n</van-radio-group>\n</template>\n"
                 }
             ],
             "attrs": [
