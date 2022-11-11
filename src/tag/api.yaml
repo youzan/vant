@@ -31,6 +31,10 @@
           title: 中型
       default: medium
       description: 设置尺寸
+    - name: color
+      title: 标签颜色
+      type: string
+      description: 标签颜色
     - name: plain
       title: 是否为空心
       type: boolean

@@ -3,7 +3,7 @@
     <!-- <van-tag type="primary" :mark="true">标签</van-tag> -->
     <demo-block card :title="t('basicUsage')">
       <van-cell :title="`primary ${t('type')}`">
-        <van-tag type="primary" :show="false" :mark="true">标签</van-tag>
+        <van-tag type="primary" :show="false" :mark="true"></van-tag>
       </van-cell>
       <van-cell :title="`success ${t('type')}`">
         <van-tag type="success">{{ t('tag') }}</van-tag>

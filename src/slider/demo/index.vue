@@ -44,7 +44,7 @@
           v-model="value9"
           range
           vertical
-          style="margin-left: 100px;"
+          style="margin-left: 100px"
           @change="onChange"
         />
       </div>
@@ -64,7 +64,7 @@ export default {
       customStyle: '自定义样式',
       customButton: '自定义按钮',
       text: '当前值：',
-      vertical: '垂直方向',
+      vertical: '垂直方向'
     },
     'en-US': {
       title1: 'Basic Usage',
@@ -75,8 +75,8 @@ export default {
       customStyle: 'Custom Style',
       customButton: 'Custom Button',
       text: 'Current value: ',
-      vertical: 'Vertical',
-    },
+      vertical: 'Vertical'
+    }
   },
   data() {
     return {
@@ -88,14 +88,14 @@ export default {
       value6: 50,
       value7: 50,
       value8: 50,
-      value9: [20, 60],
+      value9: [20, 60]
     };
   },
   methods: {
     onChange(value) {
       this.$toast(this.t('text') + value);
-    },
-  },
+    }
+  }
 };
 </script>
 

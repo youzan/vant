@@ -2,6 +2,7 @@
   <demo-section>
     <demo-block :title="t('basicUsage')">
       <van-circle
+        stroke-linecap="sqaure"
         v-model="currentRate1"
         :rate="rate"
         :speed="100"
