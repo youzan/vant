@@ -7,13 +7,14 @@
   attrs:
     - name: data-source
       title: 数据源
-      type: array, function
-      description: 一个包含字符串或对象的数组或者函数
+      type: Array<Item> | Function
+      description: 集合类型变量或者输出参数为集合类型的逻辑
+      designer-value: '[{}, {}, {}]'
     - name: data-schema
       title: 数据类型
       type: schema
-      description: 组件列表每一项的结构
-      compType: dataTypeCheckBoxItem
+      description: 集合类型每一元素的数据类型
+      compType: dataTypeSelect
     - name: value
       title: 值
       type: any
@@ -52,7 +53,22 @@
       support:
         - name: van-checkbox
           title: 复选项
-          snippet: <van-checkbox name="n" title="选框 n"></van-checkbox>
+          snippet: <van-checkbox name="n"><van-text text="节点"></van-text></van-radio>
+    - concept: Slot
+      name: item
+      description: 自定义选项的结构和样式
+      slotProps:
+        concept: Param
+        name: scope
+        typeAnnotation:
+          concept: TypeAnnotation
+          typeKind: generic
+          typeNamespace: nasl.ui
+          typeName: ScopeOf
+          typeArguments:
+            - concept: TypeAnnotation
+              typeKind: typeParam
+              typeName: T
   events:
     - name: change
       title: 值改变

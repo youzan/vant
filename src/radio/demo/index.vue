@@ -1,23 +1,15 @@
 <template>
   <demo-section>
     <demo-block>
-      <van-radio-group class="demo-radio-group" :data-source="[1, 2, 3]">
+      <van-radio-group class="demo-radio-group" :data-source="[{}, {}, {}]">
         <template #item="scope">
-          <!-- <van-radio
-            :name="scope.item"
-            :title="'选框' + scope.item"
-          ></van-radio> -->
+          <van-radio
+            name="scope.item.item"
+            title="选框+scope.item.item"
+          ></van-radio>
         </template>
-        <!--  <van-radio
-          name="scope.item.item"
-          title="'选框+scope.item.item"
-        ></van-radio>
-        <van-radio
-          name="scope.item.item1"
-          title="'选框+scope.item.item1"
-        ></van-radio> -->
+        <van-radio disabled name="scope.item.item" title="'节点"></van-radio>
       </van-radio-group>
-      ------------------------
     </demo-block>
     <demo-block>
       <van-radio-group class="demo-radio-group">

@@ -1,9 +1,9 @@
 ### 基本用法
 
-``` html
+```html
 <van-checkbox-group direction="horizontal">
-  <template #default="scope">
-    <van-checkbox name="n" title="选框 n" vusion-disabled-cut vusion-disabled-copy></van-checkbox>
+  <template #item="scope">
+    <van-checkbox vusion-disabled-cut vusion-disabled-copy></van-checkbox>
   </template>
 </van-checkbox-group>
 ```
