@@ -6536,7 +6536,7 @@
                 {
                     "name": "value",
                     "title": "当前分值",
-                    "type": "string",
+                    "type": "number",
                     "sync": true,
                     "model": true,
                     "description": "当前分值"
@@ -6586,9 +6586,14 @@
                 {
                     "name": "icon",
                     "title": "选中时的图标名称或图片链接",
-                    "type": "string",
-                    "default": "star",
-                    "description": "禁用时的颜色"
+                    "type": "icon",
+                    "description": "选中时的图标名称或图片链接"
+                },
+                {
+                    "name": "void-icon",
+                    "title": "未选中时的图标名称或图片链接",
+                    "type": "icon",
+                    "description": "选中时的图标名称或图片链接"
                 },
                 {
                     "name": "allow-half",

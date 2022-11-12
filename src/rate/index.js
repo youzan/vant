@@ -7,7 +7,7 @@ import { TouchMixin } from '../mixins/touch';
 import { FieldMixin } from '../mixins/field';
 
 // Components
-import Icon from '../icon';
+import Icon from '../iconv';
 
 const [createComponent, bem] = createNamespace('rate');
 
@@ -182,6 +182,7 @@ export default createComponent({
             onClick={() => {
               this.select(score);
             }}
+            icotype="only"
           />
           {this.allowHalf && (
             <Icon

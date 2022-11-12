@@ -1,25 +1,35 @@
-- name: van-badge
-  title: 徽标
-  icon: badge
+- name: van-number-keyboard
+  title: 数字键盘
+  icon: number-keyboard
   labels:
     - Display
-  description: 在右上角展示徽标数字或小红点。
+  description: 虚拟数字键盘
   attrs:
-    - name: content
-      title: 徽章值
-      type: string, number
-      default: 2
-      description: 徽章值
-    - name: dot
-      title: 是否展示为小红点
-      type: boolean
-      default: false
-      description: 是否展示为小红点
-    - name: max
-      title: 徽章最大值
-      type: number
-      description: 徽章最大值
-  slots:
-    - concept: Slot
-      name: default
-      description: 插入徽章内容
+    - name: value
+      title: 当前输入值
+      type: string
+      sync: true
+      model: true
+      description: 当前输入值
+    - name: title
+      title: 键盘标题
+      type: string
+      description: 键盘标题
+    - name: maxlength
+      title: 输入值最大长度
+      type: number | string
+      description: 输入值最大长度
+    - name: z-index
+      title: 键盘 z-index 层级
+      type: number | string
+      description: 键盘 z-index 层级
+  slots: false
+  events:
+    - name: close
+      title: 点击关闭按钮
+      description: 点击关闭按钮时触发
+      params: []
+    - name: blur
+      title: 点击关闭按钮或非键盘区域时
+      description: 点击关闭按钮或非键盘区域时触发
+      params: []
