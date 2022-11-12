@@ -55,8 +55,8 @@
   }
 
   &__indicator {
-    width: @swipe-indicator-size*2;
-    height: @swipe-indicator-size*2;
+    width: calc(var(--swipe-indicator-size) * 2);
+    height: calc(var(--swipe-indicator-size) * 2);
     // background-color: @swipe-indicator-inactive-background-color;
     background-color: #337EFF;
     border-radius: 100%;
@@ -65,7 +65,7 @@
       background-color @animation-duration-fast;
 
     &:not(:last-child) {
-      margin-right: @swipe-indicator-size*2;
+      margin-right: calc(var(--swipe-indicator-size) * 2);
     }
 
     &--active {

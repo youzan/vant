@@ -11,7 +11,7 @@
     box-shadow: @dropdown-menu-box-shadow;
 
     &--opened {
-      z-index: @dropdown-item-z-index + 1;
+      z-index: calc(var(--dropdown-item-z-index) + 1);
     }
   }
 
