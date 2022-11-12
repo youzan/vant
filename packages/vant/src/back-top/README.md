@@ -39,7 +39,7 @@ export default {
 ```html
 <van-cell v-for="item in list" :key="item" :title="item" />
 <van-back-top>
-  <div class="custom" style="">回到顶部</div>
+  <div class="custom" style="">Customizations</div>
 </van-back-top>
 ```
 
@@ -89,10 +89,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| target | the target to trigger scroll | _string_ | - |
-| right | right distance of the page | _number \| string_ | `30` |
-| bottom | bottom distance of the page | _number \| string_ | `40` |
+| target | Can be a `selector` or `HTMLElement` | _string \| HTMLElement_ | - |
+| right | Right distance of the page | _number \| string_ | `30` |
+| bottom | Bottom distance of the page | _number \| string_ | `40` |
 | visibility-height | The button will not show until the scroll height reaches this value | _number_ | `200` |
+| teleport | Specifies a target element where BackTop will be mounted | _string \| Element_ | `body` |
 
 ### Slots
 

@@ -3,7 +3,6 @@ import { mount } from '../../../test';
 
 test('test position prop', async () => {
   mount(BackTop, {
-    attachTo: document.body,
     props: {
       right: 30,
       bottom: 100,
@@ -15,9 +14,7 @@ test('test position prop', async () => {
 });
 
 test('test backTop event', async () => {
-  const wrapper = mount(BackTop, {
-    attachTo: document.getElementById('container') ?? undefined,
-  });
+  const wrapper = mount(BackTop);
 
   await wrapper.trigger('click');
   expect(wrapper.emitted()).toBeDefined();
