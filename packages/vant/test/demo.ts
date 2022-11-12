@@ -28,6 +28,7 @@ export function snapshotDemo(Demo: any, option: any = {}) {
           'demo-block': EmptyComponent,
         },
       },
+      attachTo: document.body,
     });
 
     await later();

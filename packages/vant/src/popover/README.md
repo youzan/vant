@@ -204,6 +204,41 @@ export default {
 };
 ```
 
+### Uncontrolled
+
+You can use Popover as a controlled or uncontrolled component:
+
+- When binding `v-model:show`, Popover is a controlled component, and the display of the component is completely controlled by the value of `v-model:show`.
+- When `v-model:show` is not used, Popover is an uncontrolled component. You can pass in a default value through the `show` prop, and the display is controlled by the component itself.
+
+```html
+<van-popover :actions="actions" position="top-start" @select="onSelect">
+  <template #reference>
+    <van-button type="primary">Uncontrolled</van-button>
+  </template>
+</van-popover>
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const actions = [
+      { text: '选项一' },
+      { text: '选项二' },
+      { text: '选项三' },
+    ];
+    const onSelect = (action) => showToast(action.text);
+    return {
+      actions,
+      onSelect,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props

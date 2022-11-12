@@ -29,6 +29,7 @@ import {
 
 // Composables
 import { useClickAway } from '@vant/use';
+import { useSyncPropRef } from '../composables/use-sync-prop-ref';
 
 // Components
 import { Icon } from '../icon';
@@ -45,7 +46,6 @@ import {
 const [name, bem] = createNamespace('popover');
 
 const popupProps = [
-  'show',
   'overlay',
   'duration',
   'teleport',
@@ -95,6 +95,11 @@ export default defineComponent({
     const wrapperRef = ref<HTMLElement>();
     const popoverRef = ref<ComponentInstance>();
 
+    const show = useSyncPropRef(
+      () => props.show,
+      (value) => emit('update:show', value)
+    );
+
     const getPopoverOptions = () => ({
       placement: props.placement,
       modifiers: [
@@ -126,7 +131,7 @@ export default defineComponent({
 
     const updateLocation = () => {
       nextTick(() => {
-        if (!props.show) {
+        if (!show.value) {
           return;
         }
 
@@ -138,11 +143,13 @@ export default defineComponent({
       });
     };
 
-    const updateShow = (value: boolean) => emit('update:show', value);
+    const updateShow = (value: boolean) => {
+      show.value = value;
+    };
 
     const onClickWrapper = () => {
       if (props.trigger === 'click') {
-        updateShow(!props.show);
+        show.value = !show.value;
       }
     };
 
@@ -154,17 +161,17 @@ export default defineComponent({
       emit('select', action, index);
 
       if (props.closeOnClickAction) {
-        updateShow(false);
+        show.value = false;
       }
     };
 
     const onClickAway = () => {
       if (
-        props.show &&
+        show.value &&
         props.closeOnClickOutside &&
         (!props.overlay || props.closeOnClickOverlay)
       ) {
-        updateShow(false);
+        show.value = false;
       }
     };
 
@@ -215,7 +222,7 @@ export default defineComponent({
       }
     });
 
-    watch(() => [props.show, props.offset, props.placement], updateLocation);
+    watch(() => [show.value, props.offset, props.placement], updateLocation);
 
     useClickAway([wrapperRef, popupRef], onClickAway, {
       eventName: 'touchstart',
@@ -228,6 +235,7 @@ export default defineComponent({
         </span>
         <Popup
           ref={popoverRef}
+          show={show.value}
           class={bem([props.theme])}
           position={''}
           transition="van-popover-zoom"
