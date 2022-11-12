@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import VanPopover, { PopoverPlacement } from '..';
+import VanPopover, { type PopoverPlacement } from '..';
 import VanButton from '../../button';
 import VanField from '../../field';
 import VanPopup from '../../popup';
-import VanPicker from '../../picker';
+import VanPicker, {
+  PickerConfirmEventParams,
+  type PickerOption,
+} from '../../picker';
 import VanGrid from '../../grid';
 import VanGridItem from '../../grid-item';
 import { showToast } from '../../toast';
@@ -61,7 +64,7 @@ const t = useTranslate({
   },
 });
 
-const placements = [
+const placements: PickerOption[] = [
   'top',
   'top-start',
   'top-end',
@@ -74,7 +77,7 @@ const placements = [
   'bottom',
   'bottom-start',
   'bottom-end',
-];
+].map((item) => ({ text: item, value: item }));
 
 const show = ref({
   showIcon: false,
@@ -98,10 +101,10 @@ const onClickChoosePlacement = () => {
   }, 300);
 };
 
-const onPickerChange = (value: PopoverPlacement) => {
+const onPickerChange = (option: PickerConfirmEventParams) => {
   setTimeout(() => {
     show.value.placement = true;
-    currentPlacement.value = value;
+    currentPlacement.value = option.selectedValues[0] as PopoverPlacement;
   });
 };
 
