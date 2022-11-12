@@ -139,11 +139,11 @@ test('should close popover when touch outside content', async () => {
   });
 
   const popover = root.querySelector('.van-popover');
-  trigger(popover!, 'touchstart');
+  await trigger(popover!, 'touchstart');
   expect(wrapper.emitted('update:show')).toBeFalsy();
 
   document.body.appendChild(root);
-  trigger(document.body, 'touchstart');
+  await trigger(document.body, 'touchstart');
   expect(wrapper.emitted('update:show')![0]).toEqual([false]);
 });
 

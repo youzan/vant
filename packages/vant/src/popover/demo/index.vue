@@ -29,6 +29,7 @@ const t = useTranslate({
     darkTheme: '深色风格',
     lightTheme: '浅色风格',
     showPopover: '点击弹出气泡',
+    uncontrolled: '非受控模式',
     actionOptions: '选项配置',
     customContent: '自定义内容',
     disableAction: '禁用选项',
@@ -52,6 +53,7 @@ const t = useTranslate({
     darkTheme: 'Dark Theme',
     lightTheme: 'Light Theme',
     showPopover: 'Show Popover',
+    uncontrolled: 'Uncontrolled',
     actionOptions: 'Action Options',
     customContent: 'Custom Content',
     disableAction: 'Disable Action',
@@ -120,6 +122,7 @@ const onSelect = (action: { text: string }) => showToast(action.text);
         </van-button>
       </template>
     </van-popover>
+
     <van-popover
       v-model:show="show.darkTheme"
       theme="dark"
@@ -221,6 +224,20 @@ const onSelect = (action: { text: string }) => showToast(action.text);
       <template #reference>
         <van-button type="primary">
           {{ t('customContent') }}
+        </van-button>
+      </template>
+    </van-popover>
+  </demo-block>
+
+  <demo-block :title="t('uncontrolled')">
+    <van-popover
+      :actions="t('actions')"
+      placement="top-start"
+      @select="onSelect"
+    >
+      <template #reference>
+        <van-button type="primary">
+          {{ t('uncontrolled') }}
         </van-button>
       </template>
     </van-popover>

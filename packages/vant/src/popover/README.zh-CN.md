@@ -214,6 +214,41 @@ export default {
 };
 ```
 
+### 非受控模式
+
+你可以把 Popover 当做受控组件或非受控组件使用：
+
+- 当绑定 `v-model:show` 时，Popover 为受控组件，此时组件的显示完全由 `v-model:show` 的值决定。
+- 当未绑定 `v-model:show` 时，Popover 为非受控组件，此时你可以通过 `show` 属性传入一个默认值，组件值的显示由组件自身控制。
+
+```html
+<van-popover :actions="actions" position="top-start" @select="onSelect">
+  <template #reference>
+    <van-button type="primary">非受控模式</van-button>
+  </template>
+</van-popover>
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const actions = [
+      { text: '选项一' },
+      { text: '选项二' },
+      { text: '选项三' },
+    ];
+    const onSelect = (action) => showToast(action.text);
+    return {
+      actions,
+      onSelect,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
