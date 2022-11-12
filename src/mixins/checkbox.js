@@ -5,10 +5,13 @@ import Icon from '../icon';
 import { FieldMixin } from './field';
 import { ChildrenMixin } from './relation';
 import { addUnit } from '../utils';
+import VanEmptyCol from '../emptycol';
 
 export const CheckboxMixin = ({ parent, bem, role }) => ({
   mixins: [ChildrenMixin(parent), FieldMixin],
-
+  components: {
+    VanEmptyCol,
+  },
   props: {
     item: {
       type: [Object,String, Number],
@@ -110,20 +113,20 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
 
     genLabel() {
       const slot = this.slots();
-      const title = this.title;
-      if (slot || title) {
+      const {title} = this;
+      // if (slot || title) {
         return (
           <span
             class={bem('label', [
               this.labelPosition,
               { disabled: this.isDisabled },
             ])}
-            vusion-slot-name-edit="title"
+            vusion-slot-name="default"
           >
-            {slot ? slot : title}
+            {slot || title ||<van-empty-col></van-empty-col>}
           </span>
         );
-      }
+      // } 
     },
   },
 

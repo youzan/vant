@@ -7,9 +7,7 @@ import { FieldMixin } from '../mixins/field';
 
 const [createComponent, bem] = createNamespace('slider');
 
-const isSameValue = (newValue, oldValue) => {
-  return JSON.stringify(newValue) === JSON.stringify(oldValue);
-};
+const isSameValue = (newValue, oldValue) => JSON.stringify(newValue) === JSON.stringify(oldValue);
 
 export default createComponent({
   mixins: [TouchMixin, FieldMixin],
@@ -175,10 +173,12 @@ export default createComponent({
       }
 
       if (!isSameValue(value, this.value)) {
+        this.$emit("update:value",value)
         this.$emit('input', value);
       }
 
       if (end && !isSameValue(value, this.startValue)) {
+        this.$emit('update:value', value);
         this.$emit('change', value);
       }
     },
@@ -250,40 +250,44 @@ export default createComponent({
       };
 
       return (
-        <div
-          ref={getRefName()}
-          role="slider"
-          tabindex={this.disabled ? -1 : 0}
-          aria-valuemin={this.min}
-          aria-valuenow={this.value}
-          aria-valuemax={this.max}
-          aria-orientation={this.vertical ? 'vertical' : 'horizontal'}
-          class={bem(getClassName())}
-          onTouchstart={() => {
-            if (isNumber) {
-              // 保存当前按钮的索引
-              this.index = i;
-            }
-          }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          {this.slots('button') || (
-            <div class={bem('button')} style={this.buttonStyle} />
-          )}
-        </div>
+       
+          <div
+            ref={getRefName()}
+            role="slider"
+            tabindex={this.disabled ? -1 : 0}
+            aria-valuemin={this.min}
+            aria-valuenow={this.value}
+            aria-valuemax={this.max}
+            aria-orientation={this.vertical ? 'vertical' : 'horizontal'}
+            class={bem(getClassName())}
+            onTouchstart={() => {
+              if (isNumber) {
+                // 保存当前按钮的索引
+                this.index = i;
+              }
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {this.slots('button') || (
+              <div class={bem('button')} style={this.buttonStyle} />
+            )}
+            </div>
+         
       );
     };
 
-    return (
+return (
+  <div class="van-slider-room">
       <div
         style={wrapperStyle}
         class={bem({ disabled: this.disabled, vertical })}
         onClick={this.onClick}
-      >
-        <div class={bem('bar')} style={barStyle}>
-          {this.range ? [renderButton(0), renderButton(1)] : renderButton()}
-        </div>
+        >
+          <div class={bem('bar')} style={barStyle}>
+            {this.range ? [renderButton(0), renderButton(1)] : renderButton()}
+          </div>
       </div>
+    </div> 
     );
   },
 });
