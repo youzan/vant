@@ -122,8 +122,8 @@
   --button-danger-background-color: var(--brand-error);
   --button-danger-border-color: var(--brand-error);
   --button-warning-color: #fff;
-  --button-warning-background-color: var(--brand-problem);
-  --button-warning-border-color: var(--brand-problem);
+  --button-warning-background-color: var(--brand-warning);
+  --button-warning-border-color: var(--brand-warning);
   --button-border-width: var(--border-width-base);
   --button-border-radius: var(--border-radius-md);
   --button-border-radius2: var(--border-radius-md);
