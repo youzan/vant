@@ -21,7 +21,7 @@ import {
 import { throttle } from '../lazyload/vue-lazyload/util';
 
 // Composables
-import { useEventListener } from '@vant/use';
+import { useEventListener, getScrollParent } from '@vant/use';
 
 // Components
 import { Icon } from '../icon';
@@ -74,27 +74,6 @@ export default defineComponent({
 
     const throttleScroll = throttle(scroll, 300);
 
-    const getParentScroller = (el: HTMLElement): HTMLElement | Window => {
-      let element = el;
-      while (element) {
-        if (!element.parentNode) {
-          break;
-        }
-
-        element = element.parentNode as HTMLElement;
-        if (element === document.body || element === document.documentElement) {
-          break;
-        }
-
-        const scrollRE = /(scroll|auto)/;
-        const { overflowY, overflow } = window.getComputedStyle(element);
-        if (scrollRE.test(overflowY) || scrollRE.test(overflow)) {
-          return element;
-        }
-      }
-      return window;
-    };
-
     const getTarget = () => {
       const { target } = props;
 
@@ -118,9 +97,9 @@ export default defineComponent({
         if (inBrowser) {
           scrollParent.value = document.documentElement;
           target = props.target
-            ? (getTarget() as HTMLElement)
-            : getParentScroller(backTopEl.value!);
-          scrollParent.value = target as Window | HTMLElement;
+            ? (getTarget() as typeof target)
+            : (getScrollParent(backTopEl.value!) as typeof target);
+          scrollParent.value = target as typeof target;
         }
       });
     });
