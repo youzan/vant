@@ -218,7 +218,10 @@ import 'vant/es/image-preview/style';
 
 你可以在项目的入口文件或公共模块中引入以上组件的样式，这样在业务代码中使用组件时，便不再需要重复引入样式了。
 
-> 提示：在单个项目中不应该同时使用「全量引入」和「按需引入」，否则会导致代码重复、样式错乱等问题。
+#### 使用提示
+
+- 请避免同时使用「全量引入」和「按需引入」这两种引入方式，否则会导致代码重复、样式错乱等问题。
+- unplugin-vue-components 并不是 Vant 官方维护的插件，如果在使用过程中遇到问题，建议优先到 [antfu/unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 仓库下反馈。
 
 ## 在框架中使用
 

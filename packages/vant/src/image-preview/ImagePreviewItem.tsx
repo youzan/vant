@@ -195,6 +195,8 @@ export default defineComponent({
 
       const { offsetX, offsetY } = touch;
       const deltaTime = Date.now() - touchStartTime;
+
+      // Same as the default value of iOS double tap timeout
       const TAP_TIME = 250;
       const TAP_OFFSET = 5;
 
