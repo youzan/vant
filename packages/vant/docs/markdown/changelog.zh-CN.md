@@ -19,6 +19,28 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-rc.7](https://github.com/vant-ui/vant/compare/v4.0.0-rc.6...v4.0.0-rc.7)
+
+`2022-11-13`
+
+**New Component**
+
+- 新增 SkeletonAvatar、SkeletonTitle、SkeletonImage、SkeletonParagraph 组件 [#11173](https://github.com/vant-ui/vant/issues/11173)
+
+**Feature**
+
+- ImagePreview: 新增 long-press 事件 [#11252](https://github.com/vant-ui/vant/issues/11252)
+- Popover: 支持非受控模式 [#11244](https://github.com/vant-ui/vant/issues/11244)
+
+**Bug Fixes**
+
+- ActionSheet: 修复标题为空时取消按钮层级错误的问题 [#11213](https://github.com/vant-ui/vant/issues/11213)
+- DatePicker: 在生产环境下不再抛出开发错误提示 [#11248](https://github.com/vant-ui/vant/issues/11248)
+- Lazyload: 修复使用 lazy-image 时报错 h is not a function 的问题 [#11229](https://github.com/vant-ui/vant/issues/11229)
+- Picker: 修复抛出 confirm 事件时 v-model 未正确更新的问题 [#11194](https://github.com/vant-ui/vant/issues/11194)
+- Picker: 修复 column 为空时操作报错的问题 [#11249](https://github.com/vant-ui/vant/issues/11249)
+- Uploader: 修复 show-upload 为 false 时 chooseFile 无法调用的问题 [#11218](https://github.com/vant-ui/vant/issues/11218)
+
 ### [v4.0.0-rc.6](https://github.com/vant-ui/vant/compare/v4.0.0-rc.5...v4.0.0-rc.6)
 
 `2022-10-23`
