@@ -5,6 +5,7 @@ import {
   mockGetBoundingClientRect,
   trigger,
 } from '../../../test';
+import { LONG_PRESS_START_TIME } from '../../utils';
 import ImagePreviewComponent from '../ImagePreview';
 import { images, triggerZoom } from './shared';
 
@@ -302,7 +303,7 @@ test('should emit long-press event after long press', async () => {
   await later();
   const swipe = wrapper.find('.van-swipe-item');
   trigger(swipe, 'touchstart', 0, 0, { x: 0, y: 0 });
-  await later(1000);
+  await later(LONG_PRESS_START_TIME);
   trigger(swipe, 'touchend', 0, 0, { touchList: [] });
 
   expect(onLongPress).toHaveBeenLastCalledWith({
