@@ -250,12 +250,13 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 
 通过组件调用 `ImagePreview` 时，支持以下事件：
 
-| 事件 | 说明 | 回调参数 |
-| --- | --- | --- |
-| close | 关闭时触发 | { index: 索引, url: 图片链接 } |
-| closed | 关闭且且动画结束后触发 | - |
-| change | 切换当前图片时触发 | index: 当前图片的索引 |
-| scale | 缩放当前图片时触发 | { index: 当前图片的索引, scale: 当前缩放的值 } |
+| 事件       | 说明                   | 回调参数                           |
+| ---------- | ---------------------- | ---------------------------------- |
+| close      | 关闭时触发             | _{ index: number, url: string }_   |
+| closed     | 关闭且且动画结束后触发 | -                                  |
+| change     | 切换当前图片时触发     | _index: number_                    |
+| scale      | 缩放当前图片时触发     | _{ index: number, scale: number }_ |
+| long-press | 长按当前图片时触发     | _{ index: number }_                |
 
 ### 方法
 

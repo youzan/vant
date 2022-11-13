@@ -77,7 +77,7 @@ export default defineComponent({
 
   props: imagePreviewProps,
 
-  emits: ['scale', 'close', 'closed', 'change', 'update:show'],
+  emits: ['scale', 'close', 'closed', 'change', 'longPress', 'update:show'],
 
   setup(props, { emit, slots }) {
     const swipeRef = ref<SwipeInstance>();
@@ -146,7 +146,7 @@ export default defineComponent({
         indicatorColor="white"
         onChange={setActive}
       >
-        {props.images.map((image) => (
+        {props.images.map((image, index) => (
           <ImagePreviewItem
             src={image}
             show={props.show}
@@ -157,6 +157,7 @@ export default defineComponent({
             rootHeight={state.rootHeight}
             onScale={emitScale}
             onClose={emitClose}
+            onLongPress={() => emit('longPress', { index })}
             v-slots={{
               image: slots.image,
             }}

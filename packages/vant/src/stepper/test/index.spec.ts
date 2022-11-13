@@ -128,7 +128,7 @@ test('should update value after long pressing', async () => {
   await plus.trigger('touchstart');
   await later(1000);
   await plus.trigger('touchend');
-  expect(wrapper.emitted('update:modelValue')).toEqual([[2], [3], [4]]);
+  expect(wrapper.emitted('update:modelValue')).toEqual([[2], [3], [4], [5]]);
 });
 
 test('should allow to disable long press', async () => {
