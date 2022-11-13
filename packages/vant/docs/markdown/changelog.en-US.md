@@ -19,6 +19,28 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0-rc.7](https://github.com/vant-ui/vant/compare/v4.0.0-rc.6...v4.0.0-rc.7)
+
+`2022-11-13`
+
+**New Component**
+
+- Add new SkeletonAvatar、SkeletonTitle、SkeletonImage、SkeletonParagraph components [#11173](https://github.com/vant-ui/vant/issues/11173)
+
+**Feature**
+
+- ImagePreview: add long-press event [#11252](https://github.com/vant-ui/vant/issues/11252)
+- Popover: support uncontrolled mode [#11244](https://github.com/vant-ui/vant/issues/11244)
+
+**Bug Fixes**
+
+- ActionSheet: fix that close is invalid without title [#11213](https://github.com/vant-ui/vant/issues/11213)
+- DatePicker: only throw error in development [#11248](https://github.com/vant-ui/vant/issues/11248)
+- Lazyload: lazy-image h is not a function [#11229](https://github.com/vant-ui/vant/issues/11229)
+- Picker: correct v-model when emit confirm event [#11194](https://github.com/vant-ui/vant/issues/11194)
+- Picker: empty column will cause error [#11249](https://github.com/vant-ui/vant/issues/11249)
+- Uploader: chooseFile is invalid when show-upload is false [#11218](https://github.com/vant-ui/vant/issues/11218)
+
 ### [v4.0.0-rc.6](https://github.com/vant-ui/vant/compare/v4.0.0-rc.5...v4.0.0-rc.6)
 
 `2022-10-23`
