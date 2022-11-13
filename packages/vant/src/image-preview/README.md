@@ -235,11 +235,11 @@ Vant exports following ImagePreview utility functions:
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| close | Emitted when closing ImagePreview | _value: { index, url }_ |
+| close | Emitted when closing ImagePreview | _{ index: number, url: string }_ |
 | closed | Emitted when ImagePreview is closed | - |
 | change | Emitted when current image changed | _index: number_ |
-| scale | Emitted when scaling current image | _value: ImagePreviewScaleEventParams_ |
-| scale | Emitted when scaling current image | _value: ImagePreviewScaleEventParams_ |
+| scale | Emitted when scaling current image | _{ index: number, scale: number }_ |
+| long-press | Emitted when long press current image | _{ index: number }_ |
 
 ### Methods
 
