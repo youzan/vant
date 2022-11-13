@@ -83,9 +83,12 @@ export default defineComponent({
               filter
             );
           default:
-            throw new Error(
-              `[Vant] DatePicker: unsupported columns type: ${type}`
-            );
+            if (process.env.NODE_ENV !== 'production') {
+              throw new Error(
+                `[Vant] DatePicker: unsupported columns type: ${type}`
+              );
+            }
+            return [];
         }
       })
     );
