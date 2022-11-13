@@ -6,10 +6,10 @@ import _SkeletonParagraph from './SkeletonParagraph';
 
 import { withInstall } from '../utils';
 
-export const VanSkeletonImage = withInstall(_SkeletonImage);
-export const VanSkeletonTitle = withInstall(_SkeletonTitle);
-export const VanSkeletonAvatar = withInstall(_SkeletonAvatar);
-export const VanSkeletonParagraph = withInstall(_SkeletonParagraph);
+export const SkeletonImage = withInstall(_SkeletonImage);
+export const SkeletonTitle = withInstall(_SkeletonTitle);
+export const SkeletonAvatar = withInstall(_SkeletonAvatar);
+export const SkeletonParagraph = withInstall(_SkeletonParagraph);
 export const Skeleton = withInstall(_Skeleton);
 
 export default Skeleton;
@@ -43,9 +43,9 @@ export type {
 declare module 'vue' {
   export interface GlobalComponents {
     VanSkeleton: typeof Skeleton;
-    VanSkeletonImage: typeof VanSkeletonImage;
-    VanSkeletonTitle: typeof VanSkeletonTitle;
-    VanSkeletonAvatar: typeof VanSkeletonAvatar;
-    VanSkeletonParagraph: typeof VanSkeletonParagraph;
+    VanSkeletonImage: typeof SkeletonImage;
+    VanSkeletonTitle: typeof SkeletonTitle;
+    VanSkeletonAvatar: typeof SkeletonAvatar;
+    VanSkeletonParagraph: typeof SkeletonParagraph;
   }
 }
