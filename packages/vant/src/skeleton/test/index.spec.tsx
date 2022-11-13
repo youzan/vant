@@ -1,5 +1,5 @@
 import { mount } from '../../../test';
-import { Skeleton, VanSkeletonImage } from '..';
+import { Skeleton, SkeletonImage } from '..';
 
 test('should render with row width array correctly', () => {
   const wrapper = mount(Skeleton, {
@@ -80,13 +80,13 @@ test('should allow to disable animation', async () => {
 });
 
 test('should skeleton image render correctly', () => {
-  const wrapper = mount(VanSkeletonImage);
+  const wrapper = mount(SkeletonImage);
 
   expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should skeleton image works with imageSize prop', () => {
-  const wrapper = mount(VanSkeletonImage, {
+  const wrapper = mount(SkeletonImage, {
     props: {
       imageSize: '20rem',
     },
@@ -98,7 +98,7 @@ test('should skeleton image works with imageSize prop', () => {
 });
 
 test('should skeleton image works with imageShape prop', () => {
-  const wrapper = mount(VanSkeletonImage, {
+  const wrapper = mount(SkeletonImage, {
     props: {
       imageShape: 'round',
     },
