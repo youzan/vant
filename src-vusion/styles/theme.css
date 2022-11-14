@@ -1,1 +1,459 @@
-.root {}
+:root {
+  /**
+   * ========================
+   *   Global Variables
+   * ========================
+   */
+
+  /* Brand Colors */
+  --brand-primary: #337EFF;
+  --brand-success: #26BD71;
+  --brand-problem: #FFB21A;
+  --brand-warning: #ed6a0c;
+  --brand-error: #F24957;
+  --brand-disabled: #ebebeb;
+
+  /* Component Base Colors */
+  --component-text-color: #333;
+  --component-active-color: #f2f3f5;
+  --component-active-opacity: 0.7;
+  --component-disabled-opacity: 0.5;
+  --component-background-color: #f7f8fa;
+  --component-background-color-light: #fafafa;
+  --component-text-link-color: #576b95;
+
+  /* Font */
+  --font-color: #333;
+  --font-size-xs: 10px;
+  --font-size-sm: 12px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-weight-bold: 500;
+  --line-height-xs: 14px;
+  --line-height-sm: 18px;
+  --line-height-md: 20px;
+  --line-height-lg: 22px;
+  --base-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
+    helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB',
+    'Microsoft Yahei', sans-serif;
+  --price-integer-font-family: avenir-heavy, pingfang sc, helvetica neue, arial,
+    sans-serif;
+
+  /* Border Color */
+  --border-color: #e5e5e5;
+  --border-width-base: 1px;
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 8px;
+  --border-radius-max: 999px;
+
+  /* Padding */
+  --padding-base: 6px;
+  --padding-xs: calc(var(--padding-base) * 2);
+  --padding-sm: calc(var(--padding-base) * 3);
+  --padding-md: calc(var(--padding-base) * 4);
+  --padding-lg: calc(var(--padding-base) * 6);
+  --padding-xl: calc(var(--padding-base) * 8);
+
+  /* @component van-linear-layout */
+  --linear-layout-background: rgba(255,255,255,0.5);
+
+  /* @component van-panel */
+  --panel-background-color: #fff; /* @type color */ /* @desc panel背景色 */
+  --panel-header-value-color: #F24957; /* @type color */ /* @desc panel头部字体颜色 */
+  --panel-footer-padding: 12px 24px; /* @desc panel底部内边距 */
+
+  /* @component van-collapse */
+  --collapse-item-content-padding: var(--padding-sm) var(--padding-md);
+  --collapse-item-content-font-size: 14px;
+  --collapse-item-content-line-height: 1.5;
+  --collapse-item-content-text-color: #969799; /* @type color */ /* @desc 字体颜色 */
+  --collapse-item-content-background-color: #969799; /* @type color */ /* @desc背景色 */
+  --collapse-item-title-disabled-color: #ebebeb; /* @type color */ /* @desc 标题禁用颜色 */
+
+  /* @component van-text */
+  --text-font-size: var(--font-size-base); /* @desc 文本字号大小,如：1px */
+  --text-font-size-small: var(--font-size-small); /* @desc 小号文本字号大小,如：1px */
+  --text-font-size-large: calc(var(--font-size-base) * (18 / 14)); /* @desc 大号文本字号大小,如：1px */
+  --text-color-primary: var(--brand-primary); /* @type color */ /* @desc 主要文本字体颜色,如：#223325 */
+  --text-color-secondary: var(--font-second-color); /* @type color */ /* @desc 次要文本字体颜色,如：#223325 */
+  --text-color-success: var(--brand-success); /* @type color */ /* @desc 成功文本字体颜色,如：#223325 */
+  --text-color-warning: var(--brand-warning); /* @type color */ /* @desc 警告文本字体颜色,如：#223325 */
+  --text-color-error: var(--brand-error); /* @type color */ /* @desc 错误文本字体颜色,如：#223325 */
+  --text-color-disabled: var(--brand-disabled-dark); /* @type color */ /* @desc 禁用文本字体颜色,如：#223325 */
+  --text-font-size-huge: calc(var(--font-size-base) * (22 / 14)); /* @hidden */
+
+  /* @component van-link */
+  --link-color: var(--brand-primary); /* @type color */ /* @desc 默认链接字体颜色,如：#223325 */
+  --link-color-success: var(--brand-success); /* @type color */ /* @desc 成功链接字体颜色,如：#223325 */
+  --link-color-warning: var(--brand-warning); /* @type color */ /* @desc 警告链接字体颜色,如：#223325 */
+  --link-color-danger: var(--brand-danger); /* @type color */ /* @desc 危险链接字体颜色,如：#223325 */
+  --link-color-disabled: var(--font-disabled-color); /* @type color */ /* @desc 禁用链接字体颜色,如：#223325 */
+  --link-color-hover: var(--brand-primary-light); /* @type color */ /* @desc 默认链接字体颜色,如：#223325 */
+  --link-color-success-hover: var(--brand-success-light); /* @type color */ /* @desc 成功链接字体颜色,如：#223325 */
+  --link-color-warning-hover: var(--brand-warning-light); /* @type color */ /* @desc 警告链接字体颜色,如：#223325 */
+  --link-color-danger-hover: var(--brand-danger-light); /* @type color */ /* @desc 危险链接字体颜色,如：#223325 */
+  --link-color-disabled-hover: var(--brand-disabled-light); /* @hidden */
+  --link-color-error: var(--brand-error); /* @hidden */
+  --link-color-error-hover: var(--brand-error-light); /* @hidden */
+  --link-color-light: #6eadff; /* @hidden */
+  --link-color-white: white; /* @hidden */
+
+  /* @component van-button */
+  --button-mini-height: 24px; /* @desc mini button 高度 */
+  --button-mini-font-size: var(--font-size-xs); /* @desc mini button字体大小 */
+  --button-small-height: 28px; /* @desc small button  高度 */
+  --button-small-font-size: var(--font-size-sm); /* @desc small button字体大小 */
+  --button-normal-font-size: var(--font-size-md); /* @desc normal button字体大小 */
+  --button-large-height: 50px;
+  --button-default-height: 44px;
+  --button-default-line-height: 1.2;
+  --button-default-font-size: var(--font-size-lg);
+  --button-default-color: var(--component-text-color);
+  --button-default-background-color: #fff;
+  --button-default-border-color: var(--border-color);
+  --button-primary-color: #fff; /* @type color */ /* @desc 错误文本字体颜色,如：#223325 */
+  --button-primary-background-color: var(--brand-success);
+  --button-primary-border-color: var(--brand-success);
+  --button-info-color: #fff;
+  --button-info-background-color: var(--brand-primary);
+  --button-info-border-color: var(--brand-primary);
+  --button-danger-color: #fff;
+  --button-danger-background-color: var(--brand-error);
+  --button-danger-border-color: var(--brand-error);
+  --button-warning-color: #fff;
+  --button-warning-background-color: var(--brand-warning);
+  --button-warning-border-color: var(--brand-warning);
+  --button-border-width: var(--border-width-base);
+  --button-border-radius: var(--border-radius-md);
+  --button-border-radius2: var(--border-radius-md);
+  --button-round-border-radius: var(--border-radius-max);
+  --button-plain-background-color: #fff;
+  --button-disabled-opacity: var(--component-disabled-opacity);
+
+  /* @component van-badge */
+  --badge-size: 16px;
+  --badge-color: #fff; /* @type color */
+  --badge-padding: 0 3px;
+  --badge-font-size: var(--font-size-sm);
+  --badge-font-weight: var(--font-weight-bold);
+  --badge-border-width: var(--border-width-base);
+  --badge-background-color: var(--brand-error); /* @type color */
+  --badge-dot-color: var(--brand-error); /* @type color */
+  --badge-dot-size: 8px;
+  --badge-font-family: -apple-system-font, helvetica neue, arial, sans-serif;
+
+  /* @component van-calendar */
+  --calendar-background-color: #fff; /* @type color */
+  --calendar-popup-height: 60%;
+  --calendar-header-box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16);
+  --calendar-header-title-height: 44px;
+  --calendar-header-title-font-size: var(--font-size-lg);
+  --calendar-header-subtitle-font-size: var(--font-size-md);
+  --calendar-weekdays-height: 30px;
+  --calendar-weekdays-font-size: var(--font-size-sm);
+  --calendar-month-title-font-size: var(--font-size-md);
+  --calendar-month-mark-color: rgba(242, 243, 245, 0.8);
+  --calendar-month-mark-font-size: 160px;
+  --calendar-day-height: 64px;
+  --calendar-day-font-size: var(--font-size-lg);
+  --calendar-range-edge-color: #fff;  /* @type color */
+  --calendar-range-edge-background-color: var(--brand-primary); /* @type color */
+  --calendar-range-middle-color: var(--brand-primary); /* @type color */
+  --calendar-range-middle-background-opacity: 0.1;
+  --calendar-selected-day-size: 54px;
+  --calendar-selected-day-color: #fff; /* @type color */
+  --calendar-info-font-size: var(--font-size-xs);
+  --calendar-info-line-height: var(--line-height-xs);
+  --calendar-selected-day-background-color: var(--brand-primary); /* @type color */
+  --calendar-day-disabled-color: #c8c9cc; /* @type color */
+  --calendar-confirm-button-height: 36px;
+  --calendar-confirm-button-margin: 7px 0;
+
+  /* @component van-cascader */
+  --cascader-header-height: 48px;
+  --cascader-title-font-size: var(--font-size-lg);
+  --cascader-title-line-height: 20px;
+  --cascader-close-icon-size: 22px;
+  --cascader-close-icon-color: #c8c9cc; /* @type color */
+  --cascader-close-icon-active-color: #969799; /* @type color */
+  --cascader-selected-icon-size: 18px;
+  --cascader-tabs-height: 48px;
+  --cascader-active-color: var(--brand-primary); /* @type color */
+  --cascader-options-height: 384px;
+  --cascader-tab-color: var(--component-text-color); /* @type color */
+  --cascader-unselected-tab-color: #969799; /* @type color */
+
+  /* @component van-cell-group */
+  --cell-group-background-color: #fff; /* @type color */
+  --cell-group-title-color: #969799; /* @type color */
+  --cell-group-title-padding: var(--padding-md) var(var(--padding-md)) var(--padding-xs);
+  --cell-group-title-font-size: var(--font-size-md);
+  --cell-group-title-line-height: 16px;
+  --cell-group-inset-padding: 0 var(--padding-md);
+  --cell-group-inset-border-radius: var(--border-radius-lg);
+  --cell-group-inset-title-padding: var(--padding-md) var(--padding-md) var(--padding-xs) var(--padding-xl);
+  --cell-font-size: var(--font-size-md);
+  --cell-line-height: 24px;
+  --cell-vertical-padding: 16px;
+  --cell-horizontal-padding: 16px;
+  --cell-text-color: var(--component-text-color); /* @type color */
+  --cell-background-color: #fff; /* @type color */
+  --cell-border-color: var(--border-color); /* @type color */
+  --cell-active-color: var(--component-active-color); /* @type color */
+  --cell-required-color: var(--brand-primary); /* @type color */
+  --cell-label-color: #969799; /* @type color */
+  --cell-label-font-size: var(--font-size-sm);
+  --cell-label-line-height: var(--line-height-sm);
+  --cell-label-margin-top: var(--padding-base);
+  --cell-value-color: #969799; /* @type color */
+  --cell-icon-size: 16px;
+  --cell-right-icon-color: #969799; /* @type color */
+  --cell-large-vertical-padding: var(--padding-sm);
+  --cell-large-title-font-size: var(--font-size-lg);
+  --cell-large-label-font-size: var(--font-size-md);
+
+  /* @component van-checkbox */
+  --checkbox-size: 20px;
+  --checkbox-border-color: #c8c9cc; /* @type color */
+  --checkbox-transition-duration: 0.2s;
+  --checkbox-label-margin: var(--padding-xs);
+  --checkbox-label-color: var(--component-text-color);
+  --checkbox-checked-icon-color: var(--brand-primary);
+  --checkbox-disabled-icon-color: #c8c9cc;
+  --checkbox-disabled-label-color: #c8c9cc;
+  --checkbox-disabled-background-color: var(--border-color);
+
+  /* @component van-collapse */
+  --collapse-item-transition-duration: 0.3s;
+  --collapse-item-content-padding: var(--padding-sm) var(--@padding-md);
+  --collapse-item-content-font-size: var(--font-size-md);
+  --collapse-item-content-line-height: 1.5;
+  --collapse-item-content-text-color: #969799;  /* @type color */
+  --collapse-item-content-background-color: #fff; /* @type color */
+  --collapse-item-title-disabled-color: #c8c9cc;  /* @type color */
+
+  /* @component van-dialog */
+  --dialog-width: 320px;
+  --dialog-small-screen-width: 90%;
+  --dialog-font-size: var(--font-size-lg);
+  --dialog-transition: 0.3s;
+  --dialog-border-radius: 16px;
+  --dialog-background-color: #fff; /* @type color */
+  --dialog-header-font-weight: var(--font-weight-bold);
+  --dialog-header-line-height: 24px;
+  --dialog-header-padding-top: 26px;
+  --dialog-header-isolated-padding: var(--padding-lg) 0;
+  --dialog-message-padding: var(--padding-lg);
+  --dialog-message-font-size: var(--font-size-md);
+  --dialog-message-line-height: var(--line-height-md);
+  --dialog-message-max-height: 60vh;
+  --dialog-has-title-message-text-color: #646566; /* @type color */
+  --dialog-has-title-message-padding-top: var(--padding-xs);
+  --dialog-button-height: 48px;
+  --dialog-round-button-height: 36px;
+  --dialog-confirm-button-text-color: var(--brand-primary); /* @type color */
+
+  /* @component van-divider */
+  --divider-margin: var(--padding-md) 0;
+  --divider-text-color: #969799; /* @type color */
+  --divider-font-size: var(--font-size-md);
+  --divider-line-height: 24px;
+  --divider-border-color: var(--border-color); /* @type color */
+  --divider-content-padding: var(--padding-md);
+  --divider-content-left-width: 10%;
+  --divider-content-right-width: 10%;
+
+  /* @component van-dropdown-menu */
+  --dropdown-menu-height: 48px;
+  --dropdown-menu-background-color: #fff; /* @type color */
+  --dropdown-menu-box-shadow: 0 2px 12px rgba(100,101,102,.12);
+  --dropdown-menu-title-font-size: 15px;
+  --dropdown-menu-title-text-color: var(--component-text-color); /* @type color */
+  --dropdown-menu-title-active-text-color: var(--brand-primary); /* @type color */
+  --dropdown-menu-title-disabled-text-color: #969799; /* @type color */
+  --dropdown-menu-title-padding: 0 var(--padding-xs);
+  --dropdown-menu-title-line-height: var(--line-height-lg);
+  --dropdown-menu-option-active-color: var(--brand-primary); /* @type color */
+  --dropdown-menu-content-max-height: 80%;
+  --dropdown-item-z-index: 10;
+
+  /* @component van-image */
+  --image-placeholder-text-color: #969799; /* @type color */
+  --image-placeholder-font-size: var(--font-size-md);
+  --image-placeholder-background-color: var(--component-background-color); /* @type color */
+  --image-loading-icon-size: 32px;
+  --image-loading-icon-color: #dcdee0;  /* @type color */
+  --image-error-icon-size: 32px;
+  --image-error-icon-color: #dcdee0; /* @type color */
+
+  /* @component van-picker */
+  --picker-background-color: #fff; /* @type color */
+  --picker-toolbar-height: 44px;
+  --picker-title-font-size: var(--font-size-lg);
+  --picker-title-line-height: var(--line-height-md);
+  --picker-action-padding: 0 var(--padding-md);
+  --picker-action-font-size: var(--font-size-md);
+  --picker-confirm-action-color: var(--component-text-link-color); /* @type color */
+  --picker-cancel-action-color: #969799; /* @type color */
+  --picker-option-font-size: var(--font-size-lg);
+  --picker-option-text-color: #000; /* @type color */
+  --picker-option-disabled-opacity: 0.3;
+  --picker-loading-icon-color: var(--brand-primary); /* @type color */
+  --picker-loading-mask-color: rgba(255, 255, 255, 0.9);
+
+  /* @component van-popup */
+  --popup-background-color: #fff; /* @type color */
+  --popup-transition: transform 0.3s;
+  --popup-round-border-radius: 16px;
+  --popup-close-icon-size: 22px;
+  --popup-close-icon-color: #c8c9cc; /* @type color */
+  --popup-close-icon-active-color: #969799; /* @type color */
+  --popup-close-icon-margin: 16px;
+  --popup-close-icon-z-index: 1;
+
+  /* @component van-radio */
+  --radio-size: 20px;
+  --radio-border-color: #c8c9cc; /* @type color */
+  --radio-transition-duration: 0.2s;
+  --radio-label-margin: var(--padding-xs);
+  --radio-label-color: var(--component-text-color); /* @type color */
+  --radio-checked-icon-color: var(--brand-primary); /* @type color */
+  --radio-disabled-icon-color: #c8c9cc; /* @type color */
+  --radio-disabled-label-color: #c8c9cc; /* @type color */
+  --radio-disabled-background-color: var(--border-color); /* @type color */
+
+  /* @component van-search */
+  --search-padding: 10px var(--padding-sm);
+  --search-background-color: #fff; /* @type color */
+  --search-content-background-color: #f7f8fa; /* @type color */
+  --search-input-height: 34px;
+  --search-label-padding: 0 5px;
+  --search-label-color: var(--component-text-color); /* @type color */
+  --search-label-font-size: var(--font-size-md);
+  --search-left-icon-color: #969799; /* @type color */
+  --search-action-padding: 0 var(--padding-xs);
+  --search-action-text-color: var(--component-text-color); /* @type color */
+  --search-action-font-size: var(-font-size-md);
+
+  /* @component van-sidebar */
+  --sidebar-width: 80px;
+  --sidebar-font-size: var(--font-size-md);
+  --sidebar-line-height: var(--line-height-md);
+  --sidebar-text-color: var(--component-text-color); /* @type color */
+  --sidebar-disabled-text-color: #c8c9cc; /* @type color */
+  --sidebar-padding: 20px var(--padding-sm);
+  --sidebar-active-color: var(--component-active-color); /* @type color */
+  --sidebar-background-color: var(--component-background-color); /* @type color */
+  --sidebar-selected-font-weight: var(--font-weight-bold);
+  --sidebar-selected-text-color: var(--component-text-color); /* @type color */
+  --sidebar-selected-border-width: 4px;
+  --sidebar-selected-border-height: 16px;
+  --sidebar-selected-border-color: var(--brand-primary); /* @type color */
+  --sidebar-selected-background-color: #fff; /* @type color */
+
+  /* @component van-steps */
+  --steps-background-color: #fff; /* @type color */
+  --step-text-color: #969799; /* @type color */
+  --step-active-color: var(--brand-success); /* @type color */
+  --step-process-text-color: var(--component-text-color); /* @type color */
+  --step-font-size: var(--font-size-md);
+  --step-line-color: var(--border-color); /* @type color */
+  --step-finish-line-color: var(--brand-success); /* @type color */
+  --step-finish-text-color: var(--component-text-color); /* @type color */
+  --step-icon-size: 12px;
+  --step-circle-size: 5px;
+  --step-circle-color: #969799; /* @type color */
+  --step-horizontal-title-font-size: var(--font-size-sm);
+
+  /* @component van-stepper-new */
+  --stepper-active-color: #e8e8e8; /* @type color */
+  --stepper-background-color: var(--component-active-color); /* @type color */
+  --stepper-button-icon-color: var(--component-text-color);  /* @type color */
+  --stepper-button-disabled-color: var(--component-background-color); /* @type color */
+  --stepper-button-disabled-icon-color: #c8c9cc; /* @type color */
+  --stepper-button-round-theme-color: var(--brand-primary); /* @type color */
+  --stepper-input-width: 32px;
+  --stepper-input-height: 28px;
+  --stepper-input-font-size: var(--font-size-md);
+  --stepper-input-line-height: normal;
+  --stepper-input-text-color: var(--component-text-color); /* @type color */
+  --stepper-input-disabled-text-color: #c8c9cc; /* @type color */
+  --stepper-input-disabled-background-color: var(--component-active-color); /* @type color */
+  --stepper-border-radius: var(--border-radius-md);
+
+  /* @component van-swipe */
+  --swipe-indicator-size: 6px;
+  --swipe-indicator-size-new: 12px;
+  --swipe-indicator-margin: var(--padding-sm);
+  --swipe-indicator-active-opacity: 1;
+  --swipe-indicator-inactive-opacity: 0.3;
+  --swipe-indicator-active-background-color: var(--brand-primary); /* @type color */
+  --swipe-indicator-inactive-background-color: var(--border-color); /* @type color */
+
+  /* @component van-switch */
+  --switch-size: 27px;
+  --switch-width: 1.75em;
+  --switch-height: 1em;
+  --switch-node-size: 1em;
+  --switch-node-background-color: #fff; /* @type color */
+  --switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
+    0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+  --switch-background-color: #f2f3f5; /* @type color */
+  --switch-on-background-color: var(--brand-primary); /* @type color */
+  --switch-transition-duration: 0.3s;
+  --switch-disabled-opacity: var(--component-disabled-opacity);
+
+  /* @component van-tabbar */
+  --tabbar-height: 50px;
+  --tabbar-z-index: 1;
+  --tabbar-background-color: #fff; /* @type color */
+  --tabbar-item-font-size: var(--font-size-sm);
+  --tabbar-item-text-color: #646566; /* @type color */
+  --tabbar-item-active-color: var(--brand-primary); /* @type color */
+  --tabbar-item-active-background-color: var(--tabbar-background-color); /* @type color */
+  --tabbar-item-line-height: 1;
+  --tabbar-item-icon-size: 22px;
+  --tabbar-item-margin-bottom: 4px;
+
+  /* @component van-tabs */
+  --tab-text-color: #646566; /* @type color */
+  --tab-active-text-color: var(--component-text-color);  /* @type color */
+  --tab-disabled-text-color: #c8c9cc; /* @type color */
+  --tab-font-size: var(--font-size-md);
+  --tab-line-height: var(--line-height-md);
+  --tabs-default-color: var(--brand-primary); /* @type color */
+  --tabs-line-height: 44px;
+  --tabs-card-height: 30px;
+  --tabs-nav-background-color: #fff; /* @type color */
+  --tabs-bottom-bar-width: 40px;
+  --tabs-bottom-bar-height: 3px;
+  --tabs-bottom-bar-color: var(--tabs-default-color); /* @type color */
+
+  /* @component van-uploader */
+  --uploader-size: 80px;
+  --uploader-icon-size: 24px;
+  --uploader-icon-color: #dcdee0; /* @type color */
+  --uploader-text-color: #969799; /* @type color */
+  --uploader-text-font-size: var(--font-size-sm);
+  --uploader-upload-background-color: #f7f8fa; /* @type color */
+  --uploader-upload-active-color: var(--component-active-color); /* @type color */
+  --uploader-delete-color: #fff; /* @type color */
+  --uploader-delete-icon-size: 14px;
+  --uploader-delete-background-color: rgba(0, 0, 0, 0.7); /* @type color */
+  --uploader-file-background-color: var(--component-background-color); /* @type color */
+  --uploader-file-icon-size: 20px;
+  --uploader-file-icon-color: #646566; /* @type color */
+  --uploader-file-name-padding: 0 var(--padding-base);
+  --uploader-file-name-margin-top: var(--padding-xs);
+  --uploader-file-name-font-size: var(--font-size-sm);
+  --uploader-file-name-text-color: #646566; /* @type color */
+  --uploader-mask-background-color: rgba(51, 51, 51, 0.88);
+  --uploader-mask-icon-size: 22px;
+  --uploader-mask-message-font-size: var(--font-size-sm);
+  --uploader-mask-message-line-height: var(--line-height-xs);
+  --uploader-loading-icon-size: 22px;
+  --uploader-loading-icon-color: #fff; /* @type color */
+  --uploader-disabled-opacity: var(--component-disabled-opacity);
+
+}

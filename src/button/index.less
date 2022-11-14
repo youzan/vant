@@ -49,7 +49,7 @@
     &::before {
       background-color: @black;
       border-color:  @border-color;
-    }  
+    }
     &:active::before {
       opacity: 0.08;
     }
@@ -218,7 +218,7 @@
 
     &::after {
       border-color: inherit;
-      border-radius: @button-border-radius * 2;
+      border-radius: calc(var(--button-border-radius) * 2);
     }
 
     &.van-button--round::after {
