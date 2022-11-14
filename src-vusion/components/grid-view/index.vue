@@ -621,14 +621,16 @@ export default {
       return this.$refs['item' + i][0];
     },
     slots(name = 'default', props) {
-      const { $slots, $scopedSlots } = this;
-      const scopedSlot = $scopedSlots[name];
-
-      if (scopedSlot) {
-        return scopedSlot(props);
-      }
-
-      return $slots[name];
+      try {
+        const { $slots, $scopedSlots } = this;
+        const scopedSlot = $scopedSlots[name];
+        if (scopedSlot) {
+          return scopedSlot(props);
+        }
+          return $slots[name];
+        } catch (error) {
+          return {};
+        }
     },
     debounce(func, wait) {
       let timer;
