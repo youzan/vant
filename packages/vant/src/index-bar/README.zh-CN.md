@@ -44,7 +44,7 @@ app.use(IndexAnchor);
 可以通过 `index-list` 属性自定义展示的索引字符列表。
 
 ```html
-<van-index-bar :index-list="indexList">
+<van-index-bar :index-list="indexList" animated>
   <van-index-anchor index="1">标题1</van-index-anchor>
   <van-cell title="文本" />
   <van-cell title="文本" />
@@ -77,6 +77,7 @@ export default {
 | --- | --- | --- | --- |
 | index-list | 索引字符列表 | _string[] \| number[]_ | `A-Z` |
 | z-index | z-index 层级 | _number \| string_ | `1` |
+| animated | 是否开启滚动时的过渡动画 | _boolean_ | `false` |
 | sticky | 是否开启锚点自动吸顶 | _boolean_ | `true` |
 | sticky-offset-top | 锚点自动吸顶时与顶部的距离 | _number_ | `0` |
 | highlight-color | 索引字符高亮颜色 | _string_ | `#1989fa` |

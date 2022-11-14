@@ -55,6 +55,7 @@ const [name, bem] = createNamespace('index-bar');
 export const indexBarProps = {
   sticky: truthProp,
   zIndex: numericProp,
+  animated: Boolean,
   teleport: [String, Object] as PropType<TeleportProps['to']>,
   highlightColor: String,
   stickyOffsetTop: makeNumberProp(0),
@@ -221,7 +222,9 @@ export default defineComponent({
         const scrollParentRect = useRect(scrollParent);
         const { offsetHeight } = document.documentElement;
 
-        match.$el.scrollIntoView();
+        match.$el.scrollIntoView({
+          behavior: props.animated ? 'smooth' : 'auto',
+        });
 
         if (scrollTop === offsetHeight - scrollParentRect.height) {
           onScroll();

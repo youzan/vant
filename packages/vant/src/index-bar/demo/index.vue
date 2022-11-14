@@ -42,7 +42,7 @@ for (let i = 0; i < 26; i++) {
     </van-tab>
 
     <van-tab :title="t('customIndexList')">
-      <van-index-bar :index-list="customIndexList">
+      <van-index-bar :index-list="customIndexList" animated>
         <div v-for="index in customIndexList" :key="index">
           <van-index-anchor :index="index">
             {{ t('title') + index }}

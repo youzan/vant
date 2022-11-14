@@ -40,7 +40,7 @@ app.use(IndexAnchor);
 ### Custom Index List
 
 ```html
-<van-index-bar :index-list="indexList">
+<van-index-bar :index-list="indexList" animated>
   <van-index-anchor index="1">Title 1</van-index-anchor>
   <van-cell title="Text" />
   <van-cell title="Text" />
@@ -73,6 +73,7 @@ export default {
 | --- | --- | --- | --- |
 | index-list | Index List | _string[] \| number[]_ | `A-Z` |
 | z-index | z-index | _number \| string_ | `1` |
+| animated | Whether to scroll with animation | _boolean_ | `false` |
 | sticky | Whether to enable anchor sticky top | _boolean_ | `true` |
 | sticky-offset-top | Anchor offset top when sticky | _number_ | `0` |
 | highlight-color | Index character highlight color | _string_ | `#1989fa` |
