@@ -1,6 +1,7 @@
 import { nextTick } from 'vue';
 import { Stepper } from '..';
 import { mount, later } from '../../../test';
+import { LONG_PRESS_START_TIME } from '../../utils';
 
 test('should disable buttons and input when using disabled prop', () => {
   const wrapper = mount(Stepper, {
@@ -126,9 +127,9 @@ test('should update value after long pressing', async () => {
   expect(wrapper.emitted('update:modelValue')![0]).toEqual([2]);
 
   await plus.trigger('touchstart');
-  await later(1000);
+  await later(LONG_PRESS_START_TIME + 500);
   await plus.trigger('touchend');
-  expect(wrapper.emitted('update:modelValue')).toEqual([[2], [3], [4]]);
+  expect(wrapper.emitted('update:modelValue')).toEqual([[2], [3], [4], [5]]);
 });
 
 test('should allow to disable long press', async () => {

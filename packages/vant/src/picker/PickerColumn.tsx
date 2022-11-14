@@ -97,8 +97,10 @@ export default defineComponent({
       currentOffset.value = offset;
     };
 
+    const isReadonly = () => props.readonly || !props.options.length;
+
     const onClickOption = (index: number) => {
-      if (moving || props.readonly) {
+      if (moving || isReadonly()) {
         return;
       }
 
@@ -134,7 +136,7 @@ export default defineComponent({
     };
 
     const onTouchStart = (event: TouchEvent) => {
-      if (props.readonly) {
+      if (isReadonly()) {
         return;
       }
 
@@ -153,7 +155,7 @@ export default defineComponent({
     };
 
     const onTouchMove = (event: TouchEvent) => {
-      if (props.readonly) {
+      if (isReadonly()) {
         return;
       }
 
@@ -178,7 +180,7 @@ export default defineComponent({
     };
 
     const onTouchEnd = () => {
-      if (props.readonly) {
+      if (isReadonly()) {
         return;
       }
 

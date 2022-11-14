@@ -24,6 +24,7 @@ import {
   callInterceptor,
   makeNumericProp,
   HAPTICS_FEEDBACK,
+  LONG_PRESS_START_TIME,
   type Numeric,
 } from '../utils';
 
@@ -33,7 +34,6 @@ import { useCustomFieldValue } from '@vant/use';
 const [name, bem] = createNamespace('stepper');
 
 const LONG_PRESS_INTERVAL = 200;
-const LONG_PRESS_START_TIME = 600;
 
 const isEqual = (value1?: Numeric, value2?: Numeric) =>
   String(value1) === String(value2);

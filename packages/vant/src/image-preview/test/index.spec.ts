@@ -3,7 +3,9 @@ import {
   later,
   triggerDrag,
   mockGetBoundingClientRect,
+  trigger,
 } from '../../../test';
+import { LONG_PRESS_START_TIME } from '../../utils';
 import ImagePreviewComponent from '../ImagePreview';
 import { images, triggerZoom } from './shared';
 
@@ -286,4 +288,25 @@ test('should render image slot correctly 2', async () => {
   await later();
 
   expect(wrapper.html().includes('video')).toBeTruthy();
+});
+
+test('should emit long-press event after long press', async () => {
+  const onLongPress = jest.fn();
+  const wrapper = mount(ImagePreviewComponent, {
+    props: {
+      images,
+      show: true,
+      onLongPress,
+    },
+  });
+
+  await later();
+  const swipe = wrapper.find('.van-swipe-item');
+  trigger(swipe, 'touchstart', 0, 0, { x: 0, y: 0 });
+  await later(LONG_PRESS_START_TIME + 100);
+  trigger(swipe, 'touchend', 0, 0, { touchList: [] });
+
+  expect(onLongPress).toHaveBeenLastCalledWith({
+    index: 0,
+  });
 });

@@ -14,6 +14,7 @@ import {
   preventDefault,
   createNamespace,
   makeRequiredProp,
+  LONG_PRESS_START_TIME,
   type ComponentInstance,
 } from '../utils';
 
@@ -45,7 +46,7 @@ export default defineComponent({
     rootHeight: makeRequiredProp(Number),
   },
 
-  emits: ['scale', 'close'],
+  emits: ['scale', 'close', 'longPress'],
 
   setup(props, { emit, slots }) {
     const state = reactive({
@@ -195,23 +196,28 @@ export default defineComponent({
 
       const { offsetX, offsetY } = touch;
       const deltaTime = Date.now() - touchStartTime;
+
+      // Same as the default value of iOS double tap timeout
       const TAP_TIME = 250;
       const TAP_OFFSET = 5;
 
-      if (
-        offsetX.value < TAP_OFFSET &&
-        offsetY.value < TAP_OFFSET &&
-        deltaTime < TAP_TIME
-      ) {
-        if (doubleTapTimer) {
-          clearTimeout(doubleTapTimer);
-          doubleTapTimer = null;
-          toggleScale();
-        } else {
-          doubleTapTimer = setTimeout(() => {
-            emit('close');
+      if (offsetX.value < TAP_OFFSET && offsetY.value < TAP_OFFSET) {
+        // tap or double tap
+        if (deltaTime < TAP_TIME) {
+          if (doubleTapTimer) {
+            clearTimeout(doubleTapTimer);
             doubleTapTimer = null;
-          }, TAP_TIME);
+            toggleScale();
+          } else {
+            doubleTapTimer = setTimeout(() => {
+              emit('close');
+              doubleTapTimer = null;
+            }, TAP_TIME);
+          }
+        }
+        // long press
+        else if (deltaTime > LONG_PRESS_START_TIME) {
+          emit('longPress');
         }
       }
     };
