@@ -53,7 +53,7 @@
       support:
         - name: van-checkbox
           title: 复选项
-          snippet: <van-checkbox name="n"><van-text text="节点"></van-text></van-radio>
+          snippet: <van-checkbox name="n" shape="square"><van-text text="节点"></van-text></van-radio>
     - concept: Slot
       name: item
       description: 自定义选项的结构和样式
@@ -93,6 +93,16 @@
       model: true
       default: false
       description: 是否选中
+    - name: shape
+      title: 形状
+      type: string
+      options:
+        - value: square
+          title: 方形
+        - value: round
+          title: 圆形
+      default: square
+      description: 形状
     - name: disabled
       title: 禁用
       type: boolean
