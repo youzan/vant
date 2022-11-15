@@ -6,6 +6,49 @@ exports[`should allow to custom anchor content 1`] = `
 </div>
 `;
 
+exports[`should allow to render indexList 1`] = `
+<div class="van-index-bar">
+  <div class="van-index-bar__sidebar">
+    <span class="van-index-bar__index"
+          data-index="0"
+    >
+      0
+    </span>
+    <span class="van-index-bar__index"
+          data-index="1"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-chat-o"
+         data-index="1"
+      >
+      </i>
+    </span>
+    <span class="van-index-bar__index"
+          data-index="2"
+    >
+      2
+    </span>
+  </div>
+  <div>
+    <div class="van-index-anchor">
+      0
+    </div>
+  </div>
+  <div>
+    <div class="van-index-anchor">
+      <i class="van-badge__wrapper van-icon van-icon-chat-o"
+         data-index="1"
+      >
+      </i>
+    </div>
+  </div>
+  <div>
+    <div class="van-index-anchor">
+      2
+    </div>
+  </div>
+</div>
+`;
+
 exports[`should update active anchor after page scroll 1`] = `
 <div class="van-index-bar">
   <div class="van-index-bar__sidebar">

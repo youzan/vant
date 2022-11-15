@@ -1,4 +1,4 @@
-import { ref, nextTick, onMounted } from 'vue';
+import { ref, h, nextTick, onMounted } from 'vue';
 import {
   mount,
   trigger,
@@ -8,6 +8,7 @@ import {
 } from '../../../test';
 import { IndexBar } from '..';
 import { IndexAnchor } from '../../index-anchor';
+import { Icon } from '../../icon';
 
 test('should allow to custom anchor content', () => {
   const wrapper = mount({
@@ -19,6 +20,38 @@ test('should allow to custom anchor content', () => {
   });
 
   expect(wrapper.find('.van-index-anchor').html()).toMatchSnapshot();
+});
+
+test('should allow to render indexList', () => {
+  const wrapper = mount({
+    setup() {
+      const customIndexList = [
+        0,
+        () =>
+          h(Icon, {
+            'data-index': 1,
+            name: 'chat-o',
+          }),
+        2,
+      ];
+      return {
+        customIndexList,
+      };
+    },
+    render() {
+      return (
+        <IndexBar indexList={this.customIndexList}>
+          <IndexAnchor index={0}>0</IndexAnchor>
+          <IndexAnchor index={1}>
+            <Icon name="chat-o" data-index="1"></Icon>
+          </IndexAnchor>
+          <IndexAnchor index={2}>2</IndexAnchor>
+        </IndexBar>
+      );
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should scroll to anchor and emit select event after clicking the index-bar', () => {
