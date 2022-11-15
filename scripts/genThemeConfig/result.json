@@ -115,7 +115,7 @@
                 "type": [],
                 "cssProperty": {
                     "--linear-layout-background": {
-                        "type": "input"
+                        "type": "color"
                     }
                 },
                 "preview": {
@@ -161,6 +161,9 @@
                     "--cell-group-background-color": {
                         "type": "color",
                         "desc": "单元格组背景色"
+                    },
+                    "--cell-group-title-padding": {
+                        "type": "input"
                     },
                     "--cell-font-size": {
                         "type": "input",
@@ -246,50 +249,60 @@
                 "type": [],
                 "cssProperty": {
                     "--sidebar-width": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "宽度"
                     },
                     "--sidebar-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "字体"
                     },
                     "--sidebar-line-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "行高"
                     },
                     "--sidebar-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "字体颜色"
                     },
                     "--sidebar-disabled-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "禁用字体颜色"
                     },
                     "--sidebar-padding": {
-                        "type": "input"
-                    },
-                    "--sidebar-active-color": {
-                        "type": "color"
+                        "type": "input",
+                        "desc": "边距"
                     },
                     "--sidebar-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "背景色"
                     },
                     "--sidebar-selected-font-weight": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "选中态字体粗细"
                     },
                     "--sidebar-selected-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "选中态字体颜色"
                     },
                     "--sidebar-selected-border-width": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "选中态边框宽度"
                     },
                     "--sidebar-selected-border-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "选中态边框高度"
                     },
                     "--sidebar-selected-border-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "选中态边框颜色"
                     },
                     "--sidebar-selected-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "选中态背景色"
                     }
                 },
                 "preview": {
-                    "template": "\n<van-sidebar>\n  <van-sidebar-item title=\"标签名称1\"></van-sidebar-item>\n  <van-sidebar-item title=\"标签名称2\"></van-sidebar-item>\n  <van-sidebar-item title=\"标签名称3\"></van-sidebar-item>\n</van-sidebar>\n\n"
+                    "template": "\n<van-sidebar :route=\"false\">\n  <van-sidebar-item title=\"标签名称1\"></van-sidebar-item>\n  <van-sidebar-item title=\"标签名称2\"></van-sidebar-item>\n  <van-sidebar-item title=\"标签名称3\"></van-sidebar-item>\n</van-sidebar>\n\n"
                 }
             },
             {
@@ -300,34 +313,24 @@
                 "type": [],
                 "cssProperty": {
                     "--tabbar-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "高度"
                     },
                     "--tabbar-z-index": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "层级"
                     },
                     "--tabbar-background-color": {
-                        "type": "color"
-                    },
-                    "--tabbar-item-font-size": {
-                        "type": "input"
-                    },
-                    "--tabbar-item-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "背景色"
                     },
                     "--tabbar-item-active-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "选中态字体色"
                     },
                     "--tabbar-item-active-background-color": {
-                        "type": "color"
-                    },
-                    "--tabbar-item-line-height": {
-                        "type": "input"
-                    },
-                    "--tabbar-item-icon-size": {
-                        "type": "input"
-                    },
-                    "--tabbar-item-margin-bottom": {
-                        "type": "input"
+                        "type": "color",
+                        "desc": "选中态背景色"
                     }
                 },
                 "preview": {
@@ -439,7 +442,7 @@
                     }
                 },
                 "preview": {
-                    "template": "\n<van-button type=\"info\" size=\"middle\" text=\"确定\" squareroud=\"round\"></van-button>\n\n"
+                    "template": "\n<van-button type=\"info\" size=\"middle\" text=\"middle\" squareroud=\"round\"></van-button>\n\n"
                 }
             },
             {
@@ -920,7 +923,7 @@
                         "type": "color"
                     },
                     "--uploader-mask-background-color": {
-                        "type": "input"
+                        "type": "color"
                     },
                     "--uploader-mask-icon-size": {
                         "type": "input"
@@ -1028,7 +1031,7 @@
                         "type": "input"
                     },
                     "--calendar-month-mark-color": {
-                        "type": "input"
+                        "type": "color"
                     },
                     "--calendar-month-mark-font-size": {
                         "type": "input"

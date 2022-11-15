@@ -56,7 +56,7 @@
   --padding-xl: calc(var(--padding-base) * 8);
 
   /* @component van-linear-layout */
-  --linear-layout-background: rgba(255, 255, 255, 0.5);
+  --linear-layout-background: rgba(255, 255, 255, 0.5); /* @type color */
 
   /* @component van-panel */
   --panel-background-color: #fff; /* @type color */ /* @desc panel背景色 */
@@ -68,9 +68,11 @@
   --text-font-size-small: var(
     --font-size-small
   ); /* @desc 小号文本字号大小,如：1px */
+
   --text-font-size-large: calc(
     var(--font-size-base) * (18 / 14)
   ); /* @desc 大号文本字号大小,如：1px */
+
   --text-color-primary: var(
     --brand-primary
   ); /* @type color */ /* @desc 主要文本字体颜色,如：#223325 */
@@ -132,9 +134,11 @@
   --button-small-font-size: var(
     --font-size-sm
   ); /* @desc small button字体大小 */
+
   --button-normal-font-size: var(
     --font-size-md
   ); /* @desc normal button字体大小 */
+
   --button-large-height: 50px;
   --button-default-height: 44px;
   --button-default-line-height: 1.2;
@@ -183,7 +187,7 @@
   --calendar-weekdays-height: 30px;
   --calendar-weekdays-font-size: var(--font-size-sm);
   --calendar-month-title-font-size: var(--font-size-md);
-  --calendar-month-mark-color: rgba(242, 243, 245, 0.8);
+  --calendar-month-mark-color: rgba(242, 243, 245, 0.8); /* @type color */
   --calendar-month-mark-font-size: 160px;
   --calendar-day-height: 64px;
   --calendar-day-font-size: var(--font-size-lg);
@@ -191,6 +195,7 @@
   --calendar-range-edge-background-color: var(
     --brand-primary
   ); /* @type color */
+
   --calendar-range-middle-color: var(--brand-primary); /* @type color */
   --calendar-range-middle-background-opacity: 0.1;
   --calendar-selected-day-size: 54px;
@@ -200,6 +205,7 @@
   --calendar-selected-day-background-color: var(
     --brand-primary
   ); /* @type color */
+
   --calendar-day-disabled-color: #c8c9cc; /* @type color */
   --calendar-confirm-button-height: 36px;
   --calendar-confirm-button-margin: 7px 0;
@@ -331,6 +337,7 @@
   --picker-confirm-action-color: var(
     --component-text-link-color
   ); /* @type color */
+
   --picker-cancel-action-color: #969799; /* @type color */
   --picker-option-font-size: var(--font-size-lg);
   --picker-option-text-color: #000; /* @type color */
@@ -373,22 +380,22 @@
   --search-action-font-size: var(-font-size-md);
 
   /* @component van-sidebar */
-  --sidebar-width: 80px;
-  --sidebar-font-size: var(--font-size-md);
-  --sidebar-line-height: var(--line-height-md);
-  --sidebar-text-color: var(--component-text-color); /* @type color */
-  --sidebar-disabled-text-color: #c8c9cc; /* @type color */
-  --sidebar-padding: 20px var(--padding-sm);
-  --sidebar-active-color: var(--component-active-color); /* @type color */
+  --sidebar-width: 80px; /* @desc 宽度 */
+  --sidebar-font-size: var(--font-size-md); /* @desc 字体 */
+  --sidebar-line-height: var(--line-height-md); /* @desc 行高 */
+  --sidebar-text-color: var(--component-text-color); /* @type color */ /* @desc 字体颜色 */
+  --sidebar-disabled-text-color: #c8c9cc; /* @type color */ /* @desc 禁用字体颜色 */
+  --sidebar-padding: 20px var(--padding-sm); /* @desc 边距 */
+  --sidebar-active-color: var(--component-active-color); /* @type color */ /* @hidden */
   --sidebar-background-color: var(
     --component-background-color
-  ); /* @type color */
-  --sidebar-selected-font-weight: var(--font-weight-bold);
-  --sidebar-selected-text-color: var(--component-text-color); /* @type color */
-  --sidebar-selected-border-width: 4px;
-  --sidebar-selected-border-height: 16px;
-  --sidebar-selected-border-color: var(--brand-primary); /* @type color */
-  --sidebar-selected-background-color: #fff; /* @type color */
+  ); /* @type color */ /* @desc 背景色 */
+  --sidebar-selected-font-weight: var(--font-weight-bold); /* @desc 选中态字体粗细 */
+  --sidebar-selected-text-color: var(--component-text-color); /* @type color */ /* @desc 选中态字体颜色 */
+  --sidebar-selected-border-width: 4px; /* @desc 选中态边框宽度 */
+  --sidebar-selected-border-height: 16px; /* @desc 选中态边框高度 */
+  --sidebar-selected-border-color: var(--brand-primary); /* @type color */ /* @desc 选中态边框颜色 */
+  --sidebar-selected-background-color: #fff; /* @type color */ /* @desc 选中态背景色 */
 
   /* @component van-steps */
   --steps-background-color: #fff; /* @type color */
@@ -411,6 +418,7 @@
   --stepper-button-disabled-color: var(
     --component-background-color
   ); /* @type color */
+
   --stepper-button-disabled-icon-color: #c8c9cc; /* @type color */
   --stepper-button-round-theme-color: var(--brand-primary); /* @type color */
   --stepper-input-width: 32px;
@@ -422,6 +430,7 @@
   --stepper-input-disabled-background-color: var(
     --component-active-color
   ); /* @type color */
+
   --stepper-border-radius: var(--border-radius-md);
 
   /* @component van-swipe */
@@ -433,6 +442,7 @@
   --swipe-indicator-active-background-color: var(
     --brand-primary
   ); /* @type color */
+
   --swipe-indicator-inactive-background-color: var(
     --border-color
   ); /* @type color */
@@ -451,18 +461,18 @@
   --switch-disabled-opacity: var(--component-disabled-opacity);
 
   /* @component van-tabbar */
-  --tabbar-height: 50px;
-  --tabbar-z-index: 1;
-  --tabbar-background-color: #fff; /* @type color */
-  --tabbar-item-font-size: var(--font-size-sm);
-  --tabbar-item-text-color: #646566; /* @type color */
-  --tabbar-item-active-color: var(--brand-primary); /* @type color */
+  --tabbar-height: 50px; /* @desc 高度 */
+  --tabbar-z-index: 1; /* @desc 层级 */
+  --tabbar-background-color: #fff; /* @type color */ /* @desc 背景色 */
+  --tabbar-item-font-size: var(--font-size-sm); /* @hidden */
+  --tabbar-item-text-color: #646566; /* @type color */ /* @hidden */
+  --tabbar-item-active-color: var(--brand-primary); /* @type color */ /* @desc 选中态字体色 */
   --tabbar-item-active-background-color: var(
     --tabbar-background-color
-  ); /* @type color */
-  --tabbar-item-line-height: 1;
-  --tabbar-item-icon-size: 22px;
-  --tabbar-item-margin-bottom: 4px;
+  ); /* @type color */ /* @desc 选中态背景色 */
+  --tabbar-item-line-height: 1;/* @hidden */
+  --tabbar-item-icon-size: 22px;/* @hidden */
+  --tabbar-item-margin-bottom: 4px;/* @hidden */
 
   /* @component van-tabs */
   --tab-text-color: #646566; /* @type color */
@@ -502,7 +512,7 @@
   --uploader-file-name-margin-top: var(--padding-xs);
   --uploader-file-name-font-size: var(--font-size-sm);
   --uploader-file-name-text-color: #646566; /* @type color */
-  --uploader-mask-background-color: rgba(51, 51, 51, 0.88);
+  --uploader-mask-background-color: rgba(51, 51, 51, 0.88); /* @type color */
   --uploader-mask-icon-size: 22px;
   --uploader-mask-message-font-size: var(--font-size-sm);
   --uploader-mask-message-line-height: var(--line-height-xs);
