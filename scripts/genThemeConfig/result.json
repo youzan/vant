@@ -54,33 +54,17 @@
                 "type": [],
                 "cssProperty": {
                     "--popup-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "背景色"
                     },
                     "--popup-transition": {
-                        "type": "input"
-                    },
-                    "--popup-round-border-radius": {
-                        "type": "input"
-                    },
-                    "--popup-close-icon-size": {
-                        "type": "input"
-                    },
-                    "--popup-close-icon-color": {
-                        "type": "color"
-                    },
-                    "--popup-close-icon-active-color": {
-                        "type": "color"
-                    },
-                    "--popup-close-icon-margin": {
-                        "type": "input"
-                    },
-                    "--popup-close-icon-z-index": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "动画时间"
                     }
                 },
                 "preview": {
-                    "template": "\n<div><van-button @click=\"onOpen\">Popup</van-button>\n\n<van-popup :value.sync=\"showpopup\" :close-on-click-overlay=\"true\" position=\"bottom\" safe-area-inset-bottom evn=\"picker\"><div vusion-slot-name=\"default\" style=\"min-height: 200px;width: 100vw;\" :vusion-disabled-cut=\"true\"></div></van-popup></div>\n",
-                    "script": "export default {\n    data() {\n        return {\n            showpopup: false,\n        };\n    },\n    methods: {\n        onOpen() {\n            this.showpopup = true;\n        },\n    },\n};"
+                    "template": "\n<div><van-button @click=\"onOpen\">Popup</van-button>\n\n<van-popup :value.sync=\"showpopup\" ref=\"poph5\" :close-on-click-overlay=\"true\" position=\"bottom\" safe-area-inset-bottom evn=\"picker\"><div vusion-slot-name=\"default\" style=\"min-height: 200px;width: 100vw;\" :vusion-disabled-cut=\"true\"></div></van-popup></div>\n",
+                    "script": "export default {\n    data() {\n        return {\n            showpopup: false,\n        };\n    },\n    methods: {\n        onOpen() {\n            this.$refs.poph5.openModal();\n        },\n    },\n};"
                 }
             },
             {
@@ -91,25 +75,32 @@
                 "type": [],
                 "cssProperty": {
                     "--collapse-item-transition-duration": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "动画时间"
                     },
                     "--collapse-item-content-padding": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "内部内边距"
                     },
                     "--collapse-item-content-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "字体大小"
                     },
                     "--collapse-item-content-line-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "内容行高"
                     },
                     "--collapse-item-content-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "字体颜色"
                     },
                     "--collapse-item-content-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "背景色"
                     },
                     "--collapse-item-title-disabled-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "标题禁用状态颜色"
                     }
                 },
                 "preview": {
@@ -140,28 +131,20 @@
                 "type": [],
                 "cssProperty": {
                     "--divider-margin": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "外边距"
                     },
                     "--divider-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "文本颜色"
                     },
                     "--divider-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "字体大小"
                     },
                     "--divider-line-height": {
-                        "type": "input"
-                    },
-                    "--divider-border-color": {
-                        "type": "color"
-                    },
-                    "--divider-content-padding": {
-                        "type": "input"
-                    },
-                    "--divider-content-left-width": {
-                        "type": "input"
-                    },
-                    "--divider-content-right-width": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "行高"
                     }
                 },
                 "preview": {
@@ -176,85 +159,36 @@
                 "type": [],
                 "cssProperty": {
                     "--cell-group-background-color": {
-                        "type": "color"
-                    },
-                    "--cell-group-title-color": {
-                        "type": "color"
-                    },
-                    "--cell-group-title-padding": {
-                        "type": "input"
-                    },
-                    "--cell-group-title-font-size": {
-                        "type": "input"
-                    },
-                    "--cell-group-title-line-height": {
-                        "type": "input"
-                    },
-                    "--cell-group-inset-padding": {
-                        "type": "input"
-                    },
-                    "--cell-group-inset-border-radius": {
-                        "type": "input"
-                    },
-                    "--cell-group-inset-title-padding": {
-                        "type": "input"
+                        "type": "color",
+                        "desc": "单元格组背景色"
                     },
                     "--cell-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "文字大小"
                     },
                     "--cell-line-height": {
-                        "type": "input"
-                    },
-                    "--cell-vertical-padding": {
-                        "type": "input"
-                    },
-                    "--cell-horizontal-padding": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "行高"
                     },
                     "--cell-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "文本颜色"
                     },
                     "--cell-background-color": {
-                        "type": "color"
-                    },
-                    "--cell-border-color": {
-                        "type": "color"
-                    },
-                    "--cell-active-color": {
-                        "type": "color"
-                    },
-                    "--cell-required-color": {
-                        "type": "color"
-                    },
-                    "--cell-label-color": {
-                        "type": "color"
-                    },
-                    "--cell-label-font-size": {
-                        "type": "input"
-                    },
-                    "--cell-label-line-height": {
-                        "type": "input"
-                    },
-                    "--cell-label-margin-top": {
-                        "type": "input"
+                        "type": "color",
+                        "desc": "背景色"
                     },
                     "--cell-value-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "右侧文本颜色"
                     },
                     "--cell-icon-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "icon大小"
                     },
                     "--cell-right-icon-color": {
-                        "type": "color"
-                    },
-                    "--cell-large-vertical-padding": {
-                        "type": "input"
-                    },
-                    "--cell-large-title-font-size": {
-                        "type": "input"
-                    },
-                    "--cell-large-label-font-size": {
-                        "type": "input"
+                        "type": "color",
+                        "desc": "icon颜色"
                     }
                 },
                 "preview": {
@@ -269,37 +203,32 @@
                 "type": [],
                 "cssProperty": {
                     "--dropdown-menu-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "高度"
                     },
                     "--dropdown-menu-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "背景色"
                     },
                     "--dropdown-menu-box-shadow": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "外阴影"
                     },
                     "--dropdown-menu-title-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "字体大小"
                     },
                     "--dropdown-menu-title-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "字体颜色"
                     },
                     "--dropdown-menu-title-active-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "active状态颜色"
                     },
                     "--dropdown-menu-title-disabled-text-color": {
-                        "type": "color"
-                    },
-                    "--dropdown-menu-title-padding": {
-                        "type": "input"
-                    },
-                    "--dropdown-menu-title-line-height": {
-                        "type": "input"
-                    },
-                    "--dropdown-menu-option-active-color": {
-                        "type": "color"
-                    },
-                    "--dropdown-menu-content-max-height": {
-                        "type": "input"
+                        "type": "color",
+                        "desc": "disabled状态颜色"
                     },
                     "--dropdown-item-z-index": {
                         "type": "input"
@@ -519,29 +448,7 @@
                 "title": "图片",
                 "toPosition": "image",
                 "type": [],
-                "cssProperty": {
-                    "--image-placeholder-text-color": {
-                        "type": "color"
-                    },
-                    "--image-placeholder-font-size": {
-                        "type": "input"
-                    },
-                    "--image-placeholder-background-color": {
-                        "type": "color"
-                    },
-                    "--image-loading-icon-size": {
-                        "type": "input"
-                    },
-                    "--image-loading-icon-color": {
-                        "type": "color"
-                    },
-                    "--image-error-icon-size": {
-                        "type": "input"
-                    },
-                    "--image-error-icon-color": {
-                        "type": "color"
-                    }
-                },
+                "cssProperty": {},
                 "preview": {
                     "template": "\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\" fit=\"contain\"></van-image>\n\n"
                 }

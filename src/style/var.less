@@ -269,13 +269,15 @@
 @circle-text-line-height: @line-height-md;
 
 // Collapse
-@collapse-item-transition-duration: @animation-duration-base;
-@collapse-item-content-padding: @padding-sm @padding-md;
-@collapse-item-content-font-size: @font-size-md;
-@collapse-item-content-line-height: 1.5;
-@collapse-item-content-text-color: @gray-6;
-@collapse-item-content-background-color: @white;
-@collapse-item-title-disabled-color: @gray-5;
+@collapse-item-transition-duration: var(--collapse-item-transition-duration);
+@collapse-item-content-padding: var(--collapse-item-content-padding);
+@collapse-item-content-font-size: var(--collapse-item-content-font-size);
+@collapse-item-content-line-height: var(--collapse-item-content-line-height);
+@collapse-item-content-text-color: var(--collapse-item-content-text-color);
+@collapse-item-content-background-color: var(
+  --collapse-item-content-background-color
+);
+@collapse-item-title-disabled-color: var(--collapse-item-title-disabled-color);
 
 // ContactCard
 @contact-card-padding: @padding-md;
