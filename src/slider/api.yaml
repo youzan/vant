@@ -65,6 +65,11 @@
       type: boolean
       default: false
       description: 是否垂直展示
+    - name: custom
+      title: 是否自定义组件
+      type: boolean
+      default: false
+      description: 是否自定义组件
   slots: false
   events:
     - name: change

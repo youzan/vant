@@ -14,7 +14,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 import encodeUrl from '../utils/encodeUrl';
 
-onlineSvgIcon;
+// onlineSvgIcon;
 
 require('./icon');
 

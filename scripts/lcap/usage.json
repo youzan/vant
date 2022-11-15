@@ -6029,7 +6029,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-checkbox-group direction=\\\"horizontal\\\">\\n  <template #item=\\\"scope\\\">\\n    <van-checkbox vusion-disabled-cut vusion-disabled-copy></van-checkbox>\\n  </template>\\n</van-checkbox-group>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-checkbox-group direction=\\\"horizontal\\\">\\n  <template #item=\\\"scope\\\">\\n    <van-checkbox\\n      shape=\\\"square\\\"\\n      vusion-disabled-cut\\n      vusion-disabled-copy\\n    ></van-checkbox>\\n  </template>\\n</van-checkbox-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-checkbox-group",
             "title": "多选组",
@@ -6041,7 +6041,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-checkbox-group direction=\"horizontal\">\n  <template #item=\"scope\">\n    <van-checkbox vusion-disabled-cut vusion-disabled-copy></van-checkbox>\n  </template>\n</van-checkbox-group>\n</template>\n"
+                    "code": "<template>\n<van-checkbox-group direction=\"horizontal\">\n  <template #item=\"scope\">\n    <van-checkbox\n      shape=\"square\"\n      vusion-disabled-cut\n      vusion-disabled-copy\n    ></van-checkbox>\n  </template>\n</van-checkbox-group>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -6115,7 +6115,7 @@
                         {
                             "name": "van-checkbox",
                             "title": "复选项",
-                            "snippet": "<van-checkbox name=\"n\"><van-text text=\"节点\"></van-text></van-radio>"
+                            "snippet": "<van-checkbox name=\"n\" shape=\"square\"><van-text text=\"节点\"></van-text></van-radio>"
                         }
                     ]
                 },
@@ -6175,6 +6175,23 @@
                             "model": true,
                             "default": false,
                             "description": "是否选中"
+                        },
+                        {
+                            "name": "shape",
+                            "title": "形状",
+                            "type": "string",
+                            "options": [
+                                {
+                                    "value": "square",
+                                    "title": "方形"
+                                },
+                                {
+                                    "value": "round",
+                                    "title": "圆形"
+                                }
+                            ],
+                            "default": "square",
+                            "description": "形状"
                         },
                         {
                             "name": "disabled",
@@ -6517,7 +6534,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n   <van-rate  />\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-rate void-icon=\\\"star\\\" icon=\\\"star\\\" />\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-rate",
             "title": "评分",
@@ -6529,7 +6546,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n   <van-rate  />\n</template>\n"
+                    "code": "<template>\n<van-rate void-icon=\"star\" icon=\"star\" />\n</template>\n"
                 }
             ],
             "attrs": [
@@ -6736,6 +6753,13 @@
                     "type": "boolean",
                     "default": false,
                     "description": "是否垂直展示"
+                },
+                {
+                    "name": "custom",
+                    "title": "是否自定义组件",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否自定义组件"
                 }
             ],
             "slots": false,
