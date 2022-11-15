@@ -6,11 +6,11 @@
    */
 
   /* Brand Colors */
-  --brand-primary: #337EFF;
-  --brand-success: #26BD71;
-  --brand-problem: #FFB21A;
-  --brand-warning: #FFB21A;
-  --brand-error: #F24957;
+  --brand-primary: #337eff;
+  --brand-success: #26bd71;
+  --brand-problem: #ffb21a;
+  --brand-warning: #ffb21a;
+  --brand-error: #f24957;
   --brand-disabled: #ebebeb;
 
   /* Component Base Colors */
@@ -34,8 +34,8 @@
   --line-height-md: 20px;
   --line-height-lg: 22px;
   --base-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
-    helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB',
-    'Microsoft Yahei', sans-serif;
+    helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui',
+    'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
   --price-integer-font-family: avenir-heavy, pingfang sc, helvetica neue, arial,
     sans-serif;
 
@@ -56,35 +56,69 @@
   --padding-xl: calc(var(--padding-base) * 8);
 
   /* @component van-linear-layout */
-  --linear-layout-background: rgba(255,255,255,0.5);
+  --linear-layout-background: rgba(255, 255, 255, 0.5);
 
   /* @component van-panel */
   --panel-background-color: #fff; /* @type color */ /* @desc panel背景色 */
-  --panel-header-value-color: #F24957; /* @type color */ /* @desc panel头部字体颜色 */
+  --panel-header-value-color: #f24957; /* @type color */ /* @desc panel头部字体颜色 */
   --panel-footer-padding: 12px 24px; /* @desc panel底部内边距 */
 
   /* @component van-text */
   --text-font-size: var(--font-size-base); /* @desc 文本字号大小,如：1px */
-  --text-font-size-small: var(--font-size-small); /* @desc 小号文本字号大小,如：1px */
-  --text-font-size-large: calc(var(--font-size-base) * (18 / 14)); /* @desc 大号文本字号大小,如：1px */
-  --text-color-primary: var(--brand-primary); /* @type color */ /* @desc 主要文本字体颜色,如：#223325 */
-  --text-color-secondary: var(--font-second-color); /* @type color */ /* @desc 次要文本字体颜色,如：#223325 */
-  --text-color-success: var(--brand-success); /* @type color */ /* @desc 成功文本字体颜色,如：#223325 */
-  --text-color-warning: var(--brand-warning); /* @type color */ /* @desc 警告文本字体颜色,如：#223325 */
-  --text-color-error: var(--brand-error); /* @type color */ /* @desc 错误文本字体颜色,如：#223325 */
-  --text-color-disabled: var(--brand-disabled-dark); /* @type color */ /* @desc 禁用文本字体颜色,如：#223325 */
+  --text-font-size-small: var(
+    --font-size-small
+  ); /* @desc 小号文本字号大小,如：1px */
+  --text-font-size-large: calc(
+    var(--font-size-base) * (18 / 14)
+  ); /* @desc 大号文本字号大小,如：1px */
+  --text-color-primary: var(
+    --brand-primary
+  ); /* @type color */ /* @desc 主要文本字体颜色,如：#223325 */
+  --text-color-secondary: var(
+    --font-second-color
+  ); /* @type color */ /* @desc 次要文本字体颜色,如：#223325 */
+  --text-color-success: var(
+    --brand-success
+  ); /* @type color */ /* @desc 成功文本字体颜色,如：#223325 */
+  --text-color-warning: var(
+    --brand-warning
+  ); /* @type color */ /* @desc 警告文本字体颜色,如：#223325 */
+  --text-color-error: var(
+    --brand-error
+  ); /* @type color */ /* @desc 错误文本字体颜色,如：#223325 */
+  --text-color-disabled: var(
+    --brand-disabled-dark
+  ); /* @type color */ /* @desc 禁用文本字体颜色,如：#223325 */
   --text-font-size-huge: calc(var(--font-size-base) * (22 / 14)); /* @hidden */
 
   /* @component van-link */
-  --link-color: var(--brand-primary); /* @type color */ /* @desc 默认链接字体颜色,如：#223325 */
-  --link-color-success: var(--brand-success); /* @type color */ /* @desc 成功链接字体颜色,如：#223325 */
-  --link-color-warning: var(--brand-warning); /* @type color */ /* @desc 警告链接字体颜色,如：#223325 */
-  --link-color-danger: var(--brand-danger); /* @type color */ /* @desc 危险链接字体颜色,如：#223325 */
-  --link-color-disabled: var(--font-disabled-color); /* @type color */ /* @desc 禁用链接字体颜色,如：#223325 */
-  --link-color-hover: var(--brand-primary-light); /* @type color */ /* @desc 默认链接字体颜色,如：#223325 */
-  --link-color-success-hover: var(--brand-success-light); /* @type color */ /* @desc 成功链接字体颜色,如：#223325 */
-  --link-color-warning-hover: var(--brand-warning-light); /* @type color */ /* @desc 警告链接字体颜色,如：#223325 */
-  --link-color-danger-hover: var(--brand-danger-light); /* @type color */ /* @desc 危险链接字体颜色,如：#223325 */
+  --link-color: var(
+    --brand-primary
+  ); /* @type color */ /* @desc 默认链接字体颜色,如：#223325 */
+  --link-color-success: var(
+    --brand-success
+  ); /* @type color */ /* @desc 成功链接字体颜色,如：#223325 */
+  --link-color-warning: var(
+    --brand-warning
+  ); /* @type color */ /* @desc 警告链接字体颜色,如：#223325 */
+  --link-color-danger: var(
+    --brand-danger
+  ); /* @type color */ /* @desc 危险链接字体颜色,如：#223325 */
+  --link-color-disabled: var(
+    --font-disabled-color
+  ); /* @type color */ /* @desc 禁用链接字体颜色,如：#223325 */
+  --link-color-hover: var(
+    --brand-primary-light
+  ); /* @type color */ /* @desc 默认链接字体颜色,如：#223325 */
+  --link-color-success-hover: var(
+    --brand-success-light
+  ); /* @type color */ /* @desc 成功链接字体颜色,如：#223325 */
+  --link-color-warning-hover: var(
+    --brand-warning-light
+  ); /* @type color */ /* @desc 警告链接字体颜色,如：#223325 */
+  --link-color-danger-hover: var(
+    --brand-danger-light
+  ); /* @type color */ /* @desc 危险链接字体颜色,如：#223325 */
   --link-color-disabled-hover: var(--brand-disabled-light); /* @hidden */
   --link-color-error: var(--brand-error); /* @hidden */
   --link-color-error-hover: var(--brand-error-light); /* @hidden */
@@ -95,8 +129,12 @@
   --button-mini-height: 24px; /* @desc mini button 高度 */
   --button-mini-font-size: var(--font-size-xs); /* @desc mini button字体大小 */
   --button-small-height: 28px; /* @desc small button  高度 */
-  --button-small-font-size: var(--font-size-sm); /* @desc small button字体大小 */
-  --button-normal-font-size: var(--font-size-md); /* @desc normal button字体大小 */
+  --button-small-font-size: var(
+    --font-size-sm
+  ); /* @desc small button字体大小 */
+  --button-normal-font-size: var(
+    --font-size-md
+  ); /* @desc normal button字体大小 */
   --button-large-height: 50px;
   --button-default-height: 44px;
   --button-default-line-height: 1.2;
@@ -149,15 +187,19 @@
   --calendar-month-mark-font-size: 160px;
   --calendar-day-height: 64px;
   --calendar-day-font-size: var(--font-size-lg);
-  --calendar-range-edge-color: #fff;  /* @type color */
-  --calendar-range-edge-background-color: var(--brand-primary); /* @type color */
+  --calendar-range-edge-color: #fff; /* @type color */
+  --calendar-range-edge-background-color: var(
+    --brand-primary
+  ); /* @type color */
   --calendar-range-middle-color: var(--brand-primary); /* @type color */
   --calendar-range-middle-background-opacity: 0.1;
   --calendar-selected-day-size: 54px;
   --calendar-selected-day-color: #fff; /* @type color */
   --calendar-info-font-size: var(--font-size-xs);
   --calendar-info-line-height: var(--line-height-xs);
-  --calendar-selected-day-background-color: var(--brand-primary); /* @type color */
+  --calendar-selected-day-background-color: var(
+    --brand-primary
+  ); /* @type color */
   --calendar-day-disabled-color: #c8c9cc; /* @type color */
   --calendar-confirm-button-height: 36px;
   --calendar-confirm-button-margin: 7px 0;
@@ -286,7 +328,9 @@
   --picker-title-line-height: var(--line-height-md);
   --picker-action-padding: 0 var(--padding-md);
   --picker-action-font-size: var(--font-size-md);
-  --picker-confirm-action-color: var(--component-text-link-color); /* @type color */
+  --picker-confirm-action-color: var(
+    --component-text-link-color
+  ); /* @type color */
   --picker-cancel-action-color: #969799; /* @type color */
   --picker-option-font-size: var(--font-size-lg);
   --picker-option-text-color: #000; /* @type color */
@@ -336,7 +380,9 @@
   --sidebar-disabled-text-color: #c8c9cc; /* @type color */
   --sidebar-padding: 20px var(--padding-sm);
   --sidebar-active-color: var(--component-active-color); /* @type color */
-  --sidebar-background-color: var(--component-background-color); /* @type color */
+  --sidebar-background-color: var(
+    --component-background-color
+  ); /* @type color */
   --sidebar-selected-font-weight: var(--font-weight-bold);
   --sidebar-selected-text-color: var(--component-text-color); /* @type color */
   --sidebar-selected-border-width: 4px;
@@ -361,8 +407,10 @@
   /* @component van-stepper-new */
   --stepper-active-color: #e8e8e8; /* @type color */
   --stepper-background-color: var(--component-active-color); /* @type color */
-  --stepper-button-icon-color: var(--component-text-color);  /* @type color */
-  --stepper-button-disabled-color: var(--component-background-color); /* @type color */
+  --stepper-button-icon-color: var(--component-text-color); /* @type color */
+  --stepper-button-disabled-color: var(
+    --component-background-color
+  ); /* @type color */
   --stepper-button-disabled-icon-color: #c8c9cc; /* @type color */
   --stepper-button-round-theme-color: var(--brand-primary); /* @type color */
   --stepper-input-width: 32px;
@@ -371,7 +419,9 @@
   --stepper-input-line-height: normal;
   --stepper-input-text-color: var(--component-text-color); /* @type color */
   --stepper-input-disabled-text-color: #c8c9cc; /* @type color */
-  --stepper-input-disabled-background-color: var(--component-active-color); /* @type color */
+  --stepper-input-disabled-background-color: var(
+    --component-active-color
+  ); /* @type color */
   --stepper-border-radius: var(--border-radius-md);
 
   /* @component van-swipe */
@@ -380,8 +430,12 @@
   --swipe-indicator-margin: var(--padding-sm);
   --swipe-indicator-active-opacity: 1;
   --swipe-indicator-inactive-opacity: 0.3;
-  --swipe-indicator-active-background-color: var(--brand-primary); /* @type color */
-  --swipe-indicator-inactive-background-color: var(--border-color); /* @type color */
+  --swipe-indicator-active-background-color: var(
+    --brand-primary
+  ); /* @type color */
+  --swipe-indicator-inactive-background-color: var(
+    --border-color
+  ); /* @type color */
 
   /* @component van-switch */
   --switch-size: 27px;
@@ -403,14 +457,16 @@
   --tabbar-item-font-size: var(--font-size-sm);
   --tabbar-item-text-color: #646566; /* @type color */
   --tabbar-item-active-color: var(--brand-primary); /* @type color */
-  --tabbar-item-active-background-color: var(--tabbar-background-color); /* @type color */
+  --tabbar-item-active-background-color: var(
+    --tabbar-background-color
+  ); /* @type color */
   --tabbar-item-line-height: 1;
   --tabbar-item-icon-size: 22px;
   --tabbar-item-margin-bottom: 4px;
 
   /* @component van-tabs */
   --tab-text-color: #646566; /* @type color */
-  --tab-active-text-color: var(--component-text-color);  /* @type color */
+  --tab-active-text-color: var(--component-text-color); /* @type color */
   --tab-disabled-text-color: #c8c9cc; /* @type color */
   --tab-font-size: var(--font-size-md);
   --tab-line-height: var(--line-height-md);
@@ -429,11 +485,17 @@
   --uploader-text-color: #969799; /* @type color */
   --uploader-text-font-size: var(--font-size-sm);
   --uploader-upload-background-color: #f7f8fa; /* @type color */
-  --uploader-upload-active-color: var(--component-active-color); /* @type color */
+  --uploader-upload-active-color: var(
+    --component-active-color
+  ); /* @type color */
+
   --uploader-delete-color: #fff; /* @type color */
   --uploader-delete-icon-size: 14px;
   --uploader-delete-background-color: rgba(0, 0, 0, 0.7); /* @type color */
-  --uploader-file-background-color: var(--component-background-color); /* @type color */
+  --uploader-file-background-color: var(
+    --component-background-color
+  ); /* @type color */
+
   --uploader-file-icon-size: 20px;
   --uploader-file-icon-color: #646566; /* @type color */
   --uploader-file-name-padding: 0 var(--padding-base);
@@ -448,4 +510,14 @@
   --uploader-loading-icon-color: #fff; /* @type color */
   --uploader-disabled-opacity: var(--component-disabled-opacity);
 
+  /* @component van-slider */
+  --slider-active-background-color: var(--brand-primary); /* @type color */
+  --slider-inactive-background-color: #e5e5e5; /* @type color */
+  --slider-disabled-opacity: var(--component-disabled-opacity);
+  --slider-bar-height: 2px;
+  --slider-button-width: 24px;
+  --slider-button-height: 24px;
+  --slider-button-border-radius: 50%;
+  --slider-button-background-color: #fff;
+  --slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }

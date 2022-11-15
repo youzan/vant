@@ -50,7 +50,9 @@ export default createComponent({
     scope() {
       return this.max - this.min;
     },
-
+    inDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     buttonStyle() {
       if (this.buttonSize) {
         const size = addUnit(this.buttonSize);
@@ -64,15 +66,26 @@ export default createComponent({
 
   created() {
     // format initial value
+    if (this.range) {
+      if (typeof this.value === "string" || typeof this.value === "number") {
+        this.value = [0, 100]
+      }
+    }
     this.updateValue(this.value);
   },
 
   mounted() {
     if (this.range) {
+    
       this.bindTouchEvent(this.$refs.wrapper0);
       this.bindTouchEvent(this.$refs.wrapper1);
     } else {
       this.bindTouchEvent(this.$refs.wrapper);
+    }
+  },
+  watch: {
+    range (value) {
+        console.log(value);
     }
   },
 
@@ -255,18 +268,24 @@ export default createComponent({
       };
 
       const renderButtonContent = () => {
+        const defaultButton =this.inDesigner ? <VanEmptyCol></VanEmptyCol>:<div class={bem('button')} style={this.buttonStyle} />
         if (isNumber) {
+          const slotName = i === 0 ? 'left-button' : 'right-button'
           const slot = this.slots(i === 0 ? 'left-button' : 'right-button', {
             value: current,
           });
-          if (slot) {
-            return slot;
+          if (this.custom) {
+            return <div vusion-slot-name={slotName} >{slot || defaultButton} </div>
           }
         }
 
-        if (this.slots('button')) {
-          this.slots("button")
-          // return  this.custom && <div vusion-slot-name="button">{this.slots("button")} <VanEmptyCol></VanEmptyCol></div>;
+        // if (this.slots('button')) {
+        //   // this.slots("button")
+        //   return  this.custom &&
+        // }
+
+        if (this.custom) {
+          return <div vusion-slot-name="button">{this.slots("button") ? this.slots("button") : defaultButton}</div>;
         }
 
         return <div class={bem('button')} style={this.buttonStyle} />;
@@ -296,14 +315,16 @@ export default createComponent({
     };
 
     return (
-      <div
-        style={wrapperStyle}
-        class={bem({ disabled: this.disabled, vertical })}
-        onClick={this.onClick}
-      >
-        <div class={bem('bar')} style={barStyle}>
-          {this.range ? [renderButton(0), renderButton(1)] : renderButton()}
-        </div>
+      <div class="van-slider-room">
+        <div
+          style={wrapperStyle}
+          class={bem({ disabled: this.disabled, vertical })}
+          onClick={this.onClick}
+        >
+          <div class={bem('bar')} style={barStyle}>
+            {this.range ? [renderButton(0), renderButton(1)] : renderButton()}
+          </div>
+          </div>
       </div>
     );
   },

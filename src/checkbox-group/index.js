@@ -45,7 +45,7 @@ export default createComponent({
     },
   },
   computed: {
-    inDesiger() {
+    inDesigner() {
       return this.$env && this.$env.VUE_APP_DESIGNER;
     }
   },
@@ -106,9 +106,9 @@ export default createComponent({
   render() {
     return <div class={bem([this.direction])}>
       {this.options?.map((item, index) => <div style="position:relative">{this.slots('item', { item })}
-          {(this.inDesiger && index>0) && <div class="mantle"></div>}
+          {(this.inDesigner && index>0) && <div class="mantle"></div>}
       </div>)}
-      {(!this.slots()&& this.options?.length===0 &&this.inDesiger ) && <div style="text-align: center;width:100%">请绑定数据源或插入子节点</div>}
+      {(!this.slots()&& this.options?.length===0 &&this.inDesigner ) && <div style="text-align: center;width:100%">请绑定数据源或插入子节点</div>}
       {this.slots()}
     </div>
   }
