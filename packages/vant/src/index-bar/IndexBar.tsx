@@ -39,7 +39,7 @@ import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
 // Types
-import { IndexBarProvide } from './types';
+import { IndexBarProvide, IndexBarListItem } from './types';
 
 function genAlphabet() {
   const charCodeOfA = 'A'.charCodeAt(0);
@@ -59,7 +59,7 @@ export const indexBarProps = {
   highlightColor: String,
   stickyOffsetTop: makeNumberProp(0),
   indexList: {
-    type: Array as PropType<Numeric[]>,
+    type: Array as PropType<IndexBarListItem[]>,
     default: genAlphabet,
   },
 };
@@ -86,6 +86,10 @@ export default defineComponent({
     let selectActiveIndex: string;
 
     linkChildren({ props });
+
+    const checkIsRenderIndexList = computed<boolean>(
+      () => props.indexList.findIndex((item) => typeof item === 'function') > -1
+    );
 
     const sidebarStyle = computed<CSSProperties | undefined>(() => {
       if (isDef(props.zIndex)) {
@@ -146,7 +150,11 @@ export default defineComponent({
         active = getActiveAnchor(scrollTop, rects);
       }
 
-      activeAnchor.value = indexList[active];
+      if (checkIsRenderIndexList.value) {
+        activeAnchor.value = active;
+      } else {
+        activeAnchor.value = indexList[active] as Numeric;
+      }
 
       if (sticky) {
         children.forEach((item, index) => {
@@ -199,15 +207,16 @@ export default defineComponent({
     });
 
     const renderIndexes = () =>
-      props.indexList.map((index) => {
-        const active = index === activeAnchor.value;
+      props.indexList.map((item, index) => {
+        const activeKey = checkIsRenderIndexList.value ? index : item;
+        const active = activeKey === activeAnchor.value;
         return (
           <span
             class={bem('index', { active })}
             style={active ? highlightStyle.value : undefined}
-            data-index={index}
+            data-index={activeKey}
           >
-            {index}
+            {typeof item === 'function' ? item() : item}
           </span>
         );
       });

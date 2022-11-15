@@ -1,4 +1,4 @@
-import type { ComponentPublicInstance } from 'vue';
+import type { ComponentPublicInstance, VNodeChild } from 'vue';
 import type { Numeric } from '../utils';
 import type { IndexBarProps } from './IndexBar';
 
@@ -21,3 +21,5 @@ export type IndexBarThemeVars = {
   indexBarIndexLineHeight?: number | string;
   indexBarIndexActiveColor?: string;
 };
+
+export type IndexBarListItem = number | string | (() => VNodeChild);

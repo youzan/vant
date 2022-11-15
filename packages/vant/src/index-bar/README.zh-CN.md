@@ -10,11 +10,12 @@
 
 ```js
 import { createApp } from 'vue';
-import { IndexBar, IndexAnchor } from 'vant';
+import { IndexBar, IndexAnchor, Icon } from 'vant';
 
 const app = createApp();
 app.use(IndexBar);
 app.use(IndexAnchor);
+app.use(Icon);
 ```
 
 ## 代码演示
@@ -43,14 +44,16 @@ app.use(IndexAnchor);
 
 可以通过 `index-list` 属性自定义展示的索引字符列表。
 
+也可以传递渲染函数，但是需要将 anchor 的 index 设置为数组下标,并且设置每个 item 的 data-index。
+
 ```html
 <van-index-bar :index-list="indexList">
-  <van-index-anchor index="1">标题1</van-index-anchor>
+  <van-index-anchor index="0">标题1</van-index-anchor>
   <van-cell title="文本" />
   <van-cell title="文本" />
   <van-cell title="文本" />
 
-  <van-index-anchor index="2">标题2</van-index-anchor>
+  <van-index-anchor index="1"><van-icon name="chat-o" /></van-index-anchor>
   <van-cell title="文本" />
   <van-cell title="文本" />
   <van-cell title="文本" />
@@ -63,7 +66,22 @@ app.use(IndexAnchor);
 export default {
   setup() {
     return {
-      indexList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      indexList: [
+        1,
+        () =>
+          h(Icon, {
+            'data-index': 1,
+            name: 'chat-o',
+          }),
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+      ],
     };
   },
 };
@@ -75,7 +93,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| index-list | 索引字符列表 | _string[] \| number[]_ | `A-Z` |
+| index-list | 索引字符列表 | _(string \| number \| (() => VNodeChild))[]_ | `A-Z` |
 | z-index | z-index 层级 | _number \| string_ | `1` |
 | sticky | 是否开启锚点自动吸顶 | _boolean_ | `true` |
 | sticky-offset-top | 锚点自动吸顶时与顶部的距离 | _number_ | `0` |

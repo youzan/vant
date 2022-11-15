@@ -10,11 +10,12 @@ Register component globally via `app.use`, refer to [Component Registration](#/e
 
 ```js
 import { createApp } from 'vue';
-import { IndexBar } from 'vant';
+import { IndexBar, IndexAnchor, Icon } from 'vant';
 
 const app = createApp();
 app.use(IndexBar);
 app.use(IndexAnchor);
+app.use(Icon);
 ```
 
 ## Usage
@@ -39,14 +40,16 @@ app.use(IndexAnchor);
 
 ### Custom Index List
 
+You need to set data-index and anchor's index to array's index rather than item if you use render function in indexList.
+
 ```html
 <van-index-bar :index-list="indexList">
-  <van-index-anchor index="1">Title 1</van-index-anchor>
+  <van-index-anchor index="0">Title 1</van-index-anchor>
   <van-cell title="Text" />
   <van-cell title="Text" />
   <van-cell title="Text" />
 
-  <van-index-anchor index="2">Title 2</van-index-anchor>
+  <van-index-anchor index="1"><van-icon name="chat-o" /></van-index-anchor>
   <van-cell title="Text" />
   <van-cell title="Text" />
   <van-cell title="Text" />
@@ -59,7 +62,22 @@ app.use(IndexAnchor);
 export default {
   setup() {
     return {
-      indexList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      indexList: [
+        1,
+        () =>
+          h(Icon, {
+            'data-index': 1,
+            name: 'chat-o',
+          }),
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+      ],
     };
   },
 };
@@ -71,7 +89,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| index-list | Index List | _string[] \| number[]_ | `A-Z` |
+| index-list | Index List | _(string \| number \| (() => VNodeChild))[]_ | `A-Z` |
 | z-index | z-index | _number \| string_ | `1` |
 | sticky | Whether to enable anchor sticky top | _boolean_ | `true` |
 | sticky-offset-top | Anchor offset top when sticky | _number_ | `0` |
