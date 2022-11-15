@@ -84,7 +84,7 @@ export default createComponent({
         // const config = isObject(to) ? to : { path: to };
         const config = isObject(destination) ? destination : { path: this.newdest(destination) };
 
-        return !!$route.matched.find((r) => {
+        return !!$route?.matched.find((r) => {
           // vue-router 3.x $route.matched[0].path is empty in / and its children paths
           const path = r.path === '' ? '/' : r.path;
           if (config.path === '/') return false;
