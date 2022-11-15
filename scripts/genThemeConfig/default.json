@@ -3,7 +3,7 @@
   "--brand-primary": "#337EFF",
   "--brand-success": "#26BD71",
   "--brand-problem": "#FFB21A",
-  "--brand-warning": "#ed6a0c",
+  "--brand-warning": "#FFB21A",
   "--brand-error": "#F24957",
   "--brand-disabled": "#ebebeb",
   "--component-text-color": "#333",
