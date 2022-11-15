@@ -4,6 +4,7 @@ import { preventDefault } from '../utils/dom/event';
 import { range, addNumber } from '../utils/format/number';
 import { TouchMixin } from '../mixins/touch';
 import { FieldMixin } from '../mixins/field';
+import VanEmptyCol from '../emptycol/index';
 
 const [createComponent, bem] = createNamespace('slider');
 
@@ -20,6 +21,7 @@ export default createComponent({
     buttonSize: [Number, String],
     activeColor: String,
     inactiveColor: String,
+    custom:Boolean,
     min: {
       type: [Number, String],
       default: 0,
@@ -236,12 +238,15 @@ export default createComponent({
     const renderButton = (i) => {
       const map = ['left', 'right'];
       const isNumber = typeof i === 'number';
+      const current = isNumber ? this.value[i] : this.value;
+
       const getClassName = () => {
         if (isNumber) {
           return `button-wrapper-${map[i]}`;
         }
         return `button-wrapper`;
       };
+
       const getRefName = () => {
         if (isNumber) {
           return `wrapper${i}`;
@@ -249,45 +254,57 @@ export default createComponent({
         return `wrapper`;
       };
 
+      const renderButtonContent = () => {
+        if (isNumber) {
+          const slot = this.slots(i === 0 ? 'left-button' : 'right-button', {
+            value: current,
+          });
+          if (slot) {
+            return slot;
+          }
+        }
+
+        if (this.slots('button')) {
+          this.slots("button")
+          // return  this.custom && <div vusion-slot-name="button">{this.slots("button")} <VanEmptyCol></VanEmptyCol></div>;
+        }
+
+        return <div class={bem('button')} style={this.buttonStyle} />;
+      };
+
       return (
-       
-          <div
-            ref={getRefName()}
-            role="slider"
-            tabindex={this.disabled ? -1 : 0}
-            aria-valuemin={this.min}
-            aria-valuenow={this.value}
-            aria-valuemax={this.max}
-            aria-orientation={this.vertical ? 'vertical' : 'horizontal'}
-            class={bem(getClassName())}
-            onTouchstart={() => {
-              if (isNumber) {
-                // 保存当前按钮的索引
-                this.index = i;
-              }
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {this.slots('button') || (
-              <div class={bem('button')} style={this.buttonStyle} />
-            )}
-            </div>
-         
+        <div
+          ref={getRefName()}
+          role="slider"
+          tabindex={this.disabled ? -1 : 0}
+          aria-valuemin={this.min}
+          aria-valuenow={this.value}
+          aria-valuemax={this.max}
+          aria-orientation={this.vertical ? 'vertical' : 'horizontal'}
+          class={bem(getClassName())}
+          onTouchstart={() => {
+            if (isNumber) {
+              // 保存当前按钮的索引
+              this.index = i;
+            }
+          }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {renderButtonContent()}
+        </div>
       );
     };
 
-return (
-  <div class="van-slider-room">
+    return (
       <div
         style={wrapperStyle}
         class={bem({ disabled: this.disabled, vertical })}
         onClick={this.onClick}
-        >
-          <div class={bem('bar')} style={barStyle}>
-            {this.range ? [renderButton(0), renderButton(1)] : renderButton()}
-          </div>
+      >
+        <div class={bem('bar')} style={barStyle}>
+          {this.range ? [renderButton(0), renderButton(1)] : renderButton()}
+        </div>
       </div>
-    </div> 
     );
   },
 });
