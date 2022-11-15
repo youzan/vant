@@ -10,12 +10,11 @@ Register component globally via `app.use`, refer to [Component Registration](#/e
 
 ```js
 import { createApp } from 'vue';
-import { IndexBar, IndexAnchor, Icon } from 'vant';
+import { IndexBar, IndexAnchor } from 'vant';
 
 const app = createApp();
 app.use(IndexBar);
 app.use(IndexAnchor);
-app.use(Icon);
 ```
 
 ## Usage
