@@ -464,25 +464,28 @@
                 "type": [],
                 "cssProperty": {
                     "--swipe-indicator-size": {
-                        "type": "input"
-                    },
-                    "--swipe-indicator-size-new": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "indicator大小"
                     },
                     "--swipe-indicator-margin": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "indicator外边距"
                     },
                     "--swipe-indicator-active-opacity": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "indicator active态透明度"
                     },
                     "--swipe-indicator-inactive-opacity": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "indicator 非active态透明度"
                     },
                     "--swipe-indicator-active-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "indicator active态背景色"
                     },
                     "--swipe-indicator-inactive-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "indicator 非active态背景色"
                     }
                 },
                 "preview": {
@@ -497,40 +500,48 @@
                 "type": [],
                 "cssProperty": {
                     "--tab-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "标签字颜色"
                     },
                     "--tab-active-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "选中标签字颜色"
                     },
                     "--tab-disabled-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "禁用标签字颜色"
                     },
                     "--tab-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "标签字体大小"
                     },
                     "--tab-line-height": {
-                        "type": "input"
-                    },
-                    "--tabs-default-color": {
-                        "type": "color"
+                        "type": "input",
+                        "desc": "标签字体行高"
                     },
                     "--tabs-line-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "line模式 导航高"
                     },
                     "--tabs-card-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "card模式 导航高"
                     },
                     "--tabs-nav-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "导航背景色"
                     },
                     "--tabs-bottom-bar-width": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "滑动条宽度"
                     },
                     "--tabs-bottom-bar-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "滑动条高度"
                     },
                     "--tabs-bottom-bar-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "滑动条景色"
                     }
                 },
                 "preview": {
@@ -582,7 +593,7 @@
                     }
                 },
                 "preview": {
-                    "template": "\n<van-text text=\"普通文本\"></van-text>\n\n"
+                    "template": "\n<van-text color=\"primary\" size=\"normal\" text=\"普通文本\"></van-text>\n\n"
                 }
             },
             {

@@ -16,7 +16,9 @@ export default {
 </script>
 
 <style module>
-.root {}
+.root {
+  color: var(--component-text-color);
+}
 
 .root[size="small"] {
     font-size: var(--text-font-size-small);

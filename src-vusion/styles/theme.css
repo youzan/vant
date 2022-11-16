@@ -64,13 +64,13 @@
   --panel-footer-padding: 12px 24px; /* @desc panel底部内边距 */
 
   /* @component van-text */
-  --text-font-size: var(--font-size-base); /* @desc 文本字号大小,如：1px */
+  --text-font-size: var(--font-size-sm); /* @desc 文本字号大小,如：1px */
   --text-font-size-small: var(
-    --font-size-small
+    --font-size-xs
   ); /* @desc 小号文本字号大小,如：1px */
 
   --text-font-size-large: calc(
-    var(--font-size-base) * (18 / 14)
+    var(--font-size-sm) * (18 / 14)
   ); /* @desc 大号文本字号大小,如：1px */
 
   --text-color-primary: var(
@@ -89,9 +89,9 @@
     --brand-error
   ); /* @type color */ /* @desc 错误文本字体颜色,如：#223325 */
   --text-color-disabled: var(
-    --brand-disabled-dark
+    --brand-disabled
   ); /* @type color */ /* @desc 禁用文本字体颜色,如：#223325 */
-  --text-font-size-huge: calc(var(--font-size-base) * (22 / 14)); /* @hidden */
+  --text-font-size-huge: calc(var(--font-size-sm) * (22 / 14)); /* @hidden */
 
   /* @component van-link */
   --link-color: var(
@@ -434,18 +434,17 @@
   --stepper-border-radius: var(--border-radius-md);
 
   /* @component van-swipe */
-  --swipe-indicator-size: 6px;
-  --swipe-indicator-size-new: 12px;
-  --swipe-indicator-margin: var(--padding-sm);
-  --swipe-indicator-active-opacity: 1;
-  --swipe-indicator-inactive-opacity: 0.3;
+  --swipe-indicator-size: 6px; /* @desc indicator大小 */
+  --swipe-indicator-size-new: 12px; /* @hidden */
+  --swipe-indicator-margin: var(--padding-sm); /* @desc indicator外边距 */
+  --swipe-indicator-active-opacity: 1; /* @desc indicator active态透明度 */
+  --swipe-indicator-inactive-opacity: 0.3; /* @desc indicator 非active态透明度 */
   --swipe-indicator-active-background-color: var(
     --brand-primary
-  ); /* @type color */
-
+  ); /* @type color */ /* @desc indicator active态背景色 */
   --swipe-indicator-inactive-background-color: var(
     --border-color
-  ); /* @type color */
+  ); /* @type color */ /* @desc indicator 非active态背景色 */
 
   /* @component van-switch */
   --switch-size: 27px;
@@ -475,18 +474,18 @@
   --tabbar-item-margin-bottom: 4px;/* @hidden */
 
   /* @component van-tabs */
-  --tab-text-color: #646566; /* @type color */
-  --tab-active-text-color: var(--component-text-color); /* @type color */
-  --tab-disabled-text-color: #c8c9cc; /* @type color */
-  --tab-font-size: var(--font-size-md);
-  --tab-line-height: var(--line-height-md);
-  --tabs-default-color: var(--brand-primary); /* @type color */
-  --tabs-line-height: 44px;
-  --tabs-card-height: 30px;
-  --tabs-nav-background-color: #fff; /* @type color */
-  --tabs-bottom-bar-width: 40px;
-  --tabs-bottom-bar-height: 3px;
-  --tabs-bottom-bar-color: var(--tabs-default-color); /* @type color */
+  --tab-text-color: #646566; /* @type color */ /* @desc 标签字颜色 */
+  --tab-active-text-color: var(--component-text-color); /* @type color */ /* @desc 选中标签字颜色 */
+  --tab-disabled-text-color: #c8c9cc; /* @type color */ /* @desc 禁用标签字颜色 */
+  --tab-font-size: var(--font-size-md); /* @desc 标签字体大小 */
+  --tab-line-height: var(--line-height-md); /* @desc 标签字体行高 */
+  --tabs-default-color: var(--brand-primary); /* @type color */ /* @hidden */
+  --tabs-line-height: 44px; /* @desc line模式 导航高 */
+  --tabs-card-height: 30px; /* @desc card模式 导航高 */
+  --tabs-nav-background-color: #fff; /* @type color */ /* @desc 导航背景色 */
+  --tabs-bottom-bar-width: 40px; /* @desc 滑动条宽度 */
+  --tabs-bottom-bar-height: 3px; /* @desc 滑动条高度 */
+  --tabs-bottom-bar-color: var(--tabs-default-color); /* @type color */ /* @desc 滑动条景色 */
 
   /* @component van-uploader */
   --uploader-size: 80px;
