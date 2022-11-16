@@ -103,29 +103,10 @@
   --link-color-warning: var(
     --brand-warning
   ); /* @type color */ /* @desc 警告链接字体颜色,如：#223325 */
-  --link-color-danger: var(
-    --brand-danger
-  ); /* @type color */ /* @desc 危险链接字体颜色,如：#223325 */
   --link-color-disabled: var(
-    --font-disabled-color
+    --brand-disabled
   ); /* @type color */ /* @desc 禁用链接字体颜色,如：#223325 */
-  --link-color-hover: var(
-    --brand-primary-light
-  ); /* @type color */ /* @desc 默认链接字体颜色,如：#223325 */
-  --link-color-success-hover: var(
-    --brand-success-light
-  ); /* @type color */ /* @desc 成功链接字体颜色,如：#223325 */
-  --link-color-warning-hover: var(
-    --brand-warning-light
-  ); /* @type color */ /* @desc 警告链接字体颜色,如：#223325 */
-  --link-color-danger-hover: var(
-    --brand-danger-light
-  ); /* @type color */ /* @desc 危险链接字体颜色,如：#223325 */
-  --link-color-disabled-hover: var(--brand-disabled-light); /* @hidden */
-  --link-color-error: var(--brand-error); /* @hidden */
-  --link-color-error-hover: var(--brand-error-light); /* @hidden */
-  --link-color-light: #6eadff; /* @hidden */
-  --link-color-white: white; /* @hidden */
+  --link-color-error: var(--brand-error);  /* @type color */ /* @desc 错误链接字体颜色,如：#223325 */
 
   /* @component van-button */
   --button-mini-height: 24px; /* @desc mini button 高度 */
@@ -166,16 +147,16 @@
   --button-disabled-opacity: var(--component-disabled-opacity);
 
   /* @component van-badge */
-  --badge-size: 16px;
-  --badge-color: #fff; /* @type color */
-  --badge-padding: 0 3px;
-  --badge-font-size: var(--font-size-sm);
-  --badge-font-weight: var(--font-weight-bold);
-  --badge-border-width: var(--border-width-base);
-  --badge-background-color: var(--brand-error); /* @type color */
-  --badge-dot-color: var(--brand-error); /* @type color */
-  --badge-dot-size: 8px;
-  --badge-font-family: -apple-system-font, helvetica neue, arial, sans-serif;
+  --badge-size: 16px; /* @desc 最小宽度 */
+  --badge-color: #fff; /* @type color */ /* @desc 字体颜色 */
+  --badge-padding: 0 3px; /* @desc 内边距 */
+  --badge-font-size: var(--font-size-sm); /* @desc 字体大小 */
+  --badge-font-weight: var(--font-weight-bold); /* @desc 字体粗细 */
+  --badge-border-width: var(--border-width-base); /* @desc 边框厚度 */
+  --badge-background-color: var(--brand-error); /* @type color */ /* @desc 背景色 */
+  --badge-dot-color: var(--brand-error); /* @type color */ /* @desc dot 字体颜色 */
+  --badge-dot-size: 8px; /* @desc dot 字体大小 */
+  --badge-font-family: -apple-system-font, helvetica neue, arial, sans-serif; /* @desc dot 字体 */
 
   /* @component van-calendar */
   --calendar-background-color: #fff; /* @type color */
@@ -367,17 +348,17 @@
   --radio-disabled-background-color: var(--border-color); /* @type color */
 
   /* @component van-search */
-  --search-padding: 10px var(--padding-sm);
-  --search-background-color: #fff; /* @type color */
-  --search-content-background-color: #f7f8fa; /* @type color */
-  --search-input-height: 34px;
-  --search-label-padding: 0 5px;
-  --search-label-color: var(--component-text-color); /* @type color */
-  --search-label-font-size: var(--font-size-md);
-  --search-left-icon-color: #969799; /* @type color */
-  --search-action-padding: 0 var(--padding-xs);
-  --search-action-text-color: var(--component-text-color); /* @type color */
-  --search-action-font-size: var(-font-size-md);
+  --search-padding: 10px var(--padding-sm); /* @hidden */
+  --search-background-color: #fff; /* @type color */ /* @desc 整体背景色 */
+  --search-content-background-color: #f7f8fa; /* @type color */ /* @desc 搜索区域背景色 */
+  --search-input-height: 34px; /* @desc 高度 */
+  --search-label-padding: 0 5px; /* @hidden */
+  --search-label-color: var(--component-text-color); /* @type color */ /* @hidden */
+  --search-label-font-size: var(--font-size-md); /* @hidden */
+  --search-left-icon-color: #969799; /* @type color */ /* @hidden */
+  --search-action-padding: 0 var(--padding-xs); /* @desc 搜索区域内边距 */
+  --search-action-text-color: var(--component-text-color); /* @type color */ /* @desc 搜索区域字体颜色 */
+  --search-action-font-size: var(-font-size-md); /* @desc 搜索区域字体大小 */
 
   /* @component van-sidebar */
   --sidebar-width: 80px; /* @desc 宽度 */
@@ -398,18 +379,18 @@
   --sidebar-selected-background-color: #fff; /* @type color */ /* @desc 选中态背景色 */
 
   /* @component van-steps */
-  --steps-background-color: #fff; /* @type color */
-  --step-text-color: #969799; /* @type color */
-  --step-active-color: var(--brand-success); /* @type color */
-  --step-process-text-color: var(--component-text-color); /* @type color */
-  --step-font-size: var(--font-size-md);
-  --step-line-color: var(--border-color); /* @type color */
-  --step-finish-line-color: var(--brand-success); /* @type color */
-  --step-finish-text-color: var(--component-text-color); /* @type color */
-  --step-icon-size: 12px;
-  --step-circle-size: 5px;
-  --step-circle-color: #969799; /* @type color */
-  --step-horizontal-title-font-size: var(--font-size-sm);
+  --steps-background-color: #fff; /* @type color */ /* @desc 整体背景色 */
+  --step-text-color: #969799; /* @type color */ /* @desc 非激活态字体颜色 */
+  --step-active-color: var(--brand-success); /* @type color */ /* @desc 激活态字体颜色 */
+  --step-process-text-color: var(--component-text-color); /* @type color */ /* @hidden */
+  --step-font-size: var(--font-size-md); /* @desc 字体大小 */
+  --step-line-color: var(--border-color); /* @type color */ /* @desc 线段颜色 */
+  --step-finish-line-color: var(--brand-success); /* @type color */ /* @desc finish态线段颜色 */
+  --step-finish-text-color: var(--component-text-color); /* @type color */ /* @desc  finish态字体颜色 */
+  --step-icon-size: 12px; /* @desc 图大小色 */
+  --step-circle-size: 5px; /* @desc 点大小 */
+  --step-circle-color: #969799; /* @type color */ /* @desc 点颜色 */
+  --step-horizontal-title-font-size: var(--font-size-sm);/* @desc 横向字体大小 */
 
   /* @component van-stepper-new */
   --stepper-active-color: #e8e8e8; /* @type color */
@@ -447,17 +428,18 @@
   ); /* @type color */ /* @desc indicator 非active态背景色 */
 
   /* @component van-switch */
-  --switch-size: 27px;
-  --switch-width: 1.75em;
-  --switch-height: 1em;
-  --switch-node-size: 1em;
-  --switch-node-background-color: #fff; /* @type color */
+  --switch-size: 27px; /* @desc 字体大小 */
+  --switch-width: 1.75em; /* @desc 宽度 */
+  --switch-height: 1em; /* @desc 高度 */
+  --switch-node-size: 1em; /* @desc node大小 */
+  --switch-node-background-color: #fff; /* @type color */ /* @desc node背景色 */
   --switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
-    0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
-  --switch-background-color: #f2f3f5; /* @type color */
-  --switch-on-background-color: var(--brand-primary); /* @type color */
-  --switch-transition-duration: 0.3s;
-  --switch-disabled-opacity: var(--component-disabled-opacity);
+    0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05); /* @desc node阴影 */
+
+  --switch-background-color: #f2f3f5; /* @type color */ /* @desc 整体背景色 */
+  --switch-on-background-color: var(--brand-primary); /* @type color */  /* @desc 激活态背景色 */
+  --switch-transition-duration: 0.3s; /* @desc 动画时间 */
+  --switch-disabled-opacity: var(--component-disabled-opacity); /* @desc 禁用态透明度 */
 
   /* @component van-tabbar */
   --tabbar-height: 50px; /* @desc 高度 */

@@ -615,29 +615,13 @@
                         "type": "color",
                         "desc": "警告链接字体颜色,如：#223325"
                     },
-                    "--link-color-danger": {
-                        "type": "color",
-                        "desc": "危险链接字体颜色,如：#223325"
-                    },
                     "--link-color-disabled": {
                         "type": "color",
                         "desc": "禁用链接字体颜色,如：#223325"
                     },
-                    "--link-color-hover": {
+                    "--link-color-error": {
                         "type": "color",
-                        "desc": "默认链接字体颜色,如：#223325"
-                    },
-                    "--link-color-success-hover": {
-                        "type": "color",
-                        "desc": "成功链接字体颜色,如：#223325"
-                    },
-                    "--link-color-warning-hover": {
-                        "type": "color",
-                        "desc": "警告链接字体颜色,如：#223325"
-                    },
-                    "--link-color-danger-hover": {
-                        "type": "color",
-                        "desc": "危险链接字体颜色,如：#223325"
+                        "desc": "错误链接字体颜色,如：#223325"
                     }
                 },
                 "preview": {
@@ -652,34 +636,44 @@
                 "type": [],
                 "cssProperty": {
                     "--badge-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "最小宽度"
                     },
                     "--badge-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "字体颜色"
                     },
                     "--badge-padding": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "内边距"
                     },
                     "--badge-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "字体大小"
                     },
                     "--badge-font-weight": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "字体粗细"
                     },
                     "--badge-border-width": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "边框厚度"
                     },
                     "--badge-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "背景色"
                     },
                     "--badge-dot-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "dot 字体颜色"
                     },
                     "--badge-dot-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "dot 字体大小"
                     },
                     "--badge-font-family": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "dot 字体"
                     }
                 },
                 "preview": {
@@ -694,40 +688,48 @@
                 "type": [],
                 "cssProperty": {
                     "--steps-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "整体背景色"
                     },
                     "--step-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "非激活态字体颜色"
                     },
                     "--step-active-color": {
-                        "type": "color"
-                    },
-                    "--step-process-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "激活态字体颜色"
                     },
                     "--step-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "字体大小"
                     },
                     "--step-line-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "线段颜色"
                     },
                     "--step-finish-line-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "finish态线段颜色"
                     },
                     "--step-finish-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "finish态字体颜色"
                     },
                     "--step-icon-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "图大小色"
                     },
                     "--step-circle-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "点大小"
                     },
                     "--step-circle-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "点颜色"
                     },
                     "--step-horizontal-title-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "横向字体大小"
                     }
                 },
                 "preview": {
@@ -741,38 +743,29 @@
                 "toPosition": "search",
                 "type": [],
                 "cssProperty": {
-                    "--search-padding": {
-                        "type": "input"
-                    },
                     "--search-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "整体背景色"
                     },
                     "--search-content-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "搜索区域背景色"
                     },
                     "--search-input-height": {
-                        "type": "input"
-                    },
-                    "--search-label-padding": {
-                        "type": "input"
-                    },
-                    "--search-label-color": {
-                        "type": "color"
-                    },
-                    "--search-label-font-size": {
-                        "type": "input"
-                    },
-                    "--search-left-icon-color": {
-                        "type": "color"
+                        "type": "input",
+                        "desc": "高度"
                     },
                     "--search-action-padding": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "搜索区域内边距"
                     },
                     "--search-action-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "搜索区域字体颜色"
                     },
                     "--search-action-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "搜索区域字体大小"
                     }
                 },
                 "preview": {
@@ -787,34 +780,44 @@
                 "type": [],
                 "cssProperty": {
                     "--switch-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "字体大小"
                     },
                     "--switch-width": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "宽度"
                     },
                     "--switch-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "高度"
                     },
                     "--switch-node-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "node大小"
                     },
                     "--switch-node-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "node背景色"
                     },
                     "--switch-node-box-shadow": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "node阴影"
                     },
                     "--switch-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "整体背景色"
                     },
                     "--switch-on-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "激活态背景色"
                     },
                     "--switch-transition-duration": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "动画时间"
                     },
                     "--switch-disabled-opacity": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "禁用态透明度"
                     }
                 },
                 "preview": {
