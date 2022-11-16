@@ -916,40 +916,32 @@
                 "type": [],
                 "cssProperty": {
                     "--cascader-header-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "头部区域高度"
                     },
                     "--cascader-title-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "头部区域字体大小"
                     },
                     "--cascader-title-line-height": {
-                        "type": "input"
-                    },
-                    "--cascader-close-icon-size": {
-                        "type": "input"
-                    },
-                    "--cascader-close-icon-color": {
-                        "type": "color"
-                    },
-                    "--cascader-close-icon-active-color": {
-                        "type": "color"
+                        "type": "input",
+                        "desc": "头部区域行高"
                     },
                     "--cascader-selected-icon-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "选中态图标大小"
                     },
                     "--cascader-tabs-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "tabs区域高度"
                     },
                     "--cascader-active-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "选中态图标颜色"
                     },
                     "--cascader-options-height": {
-                        "type": "input"
-                    },
-                    "--cascader-tab-color": {
-                        "type": "color"
-                    },
-                    "--cascader-unselected-tab-color": {
-                        "type": "color"
+                        "type": "input",
+                        "desc": "选项区域高度"
                     }
                 },
                 "preview": {
@@ -964,79 +956,59 @@
                 "type": [],
                 "cssProperty": {
                     "--calendar-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "日历背景色"
                     },
                     "--calendar-popup-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "日历高度"
                     },
                     "--calendar-header-box-shadow": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "日历头部阴影"
                     },
                     "--calendar-header-title-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "日历头部高度"
                     },
                     "--calendar-header-title-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "日历头部字体大小"
                     },
                     "--calendar-header-subtitle-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "日历子标题字体大小"
                     },
                     "--calendar-weekdays-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "星期高度"
                     },
                     "--calendar-weekdays-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "星期字体大小"
                     },
                     "--calendar-month-title-font-size": {
                         "type": "input"
                     },
-                    "--calendar-month-mark-color": {
-                        "type": "color"
-                    },
-                    "--calendar-month-mark-font-size": {
-                        "type": "input"
-                    },
                     "--calendar-day-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "日期高度"
                     },
                     "--calendar-day-font-size": {
-                        "type": "input"
-                    },
-                    "--calendar-range-edge-color": {
-                        "type": "color"
-                    },
-                    "--calendar-range-edge-background-color": {
-                        "type": "color"
-                    },
-                    "--calendar-range-middle-color": {
-                        "type": "color"
-                    },
-                    "--calendar-range-middle-background-opacity": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "日期字体大小"
                     },
                     "--calendar-selected-day-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "选中日期字体大小"
                     },
                     "--calendar-selected-day-color": {
-                        "type": "color"
-                    },
-                    "--calendar-info-font-size": {
-                        "type": "input"
-                    },
-                    "--calendar-info-line-height": {
-                        "type": "input"
+                        "type": "color",
+                        "desc": "选中日期字体颜色"
                     },
                     "--calendar-selected-day-background-color": {
-                        "type": "color"
-                    },
-                    "--calendar-day-disabled-color": {
-                        "type": "color"
-                    },
-                    "--calendar-confirm-button-height": {
-                        "type": "input"
-                    },
-                    "--calendar-confirm-button-margin": {
-                        "type": "input"
+                        "type": "color",
+                        "desc": "选中日期背景色"
                     }
                 },
                 "preview": {

@@ -159,51 +159,49 @@
   --badge-font-family: -apple-system-font, helvetica neue, arial, sans-serif; /* @desc dot 字体 */
 
   /* @component van-calendar */
-  --calendar-background-color: #fff; /* @type color */
-  --calendar-popup-height: 60%;
-  --calendar-header-box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16);
-  --calendar-header-title-height: 44px;
-  --calendar-header-title-font-size: var(--font-size-lg);
-  --calendar-header-subtitle-font-size: var(--font-size-md);
-  --calendar-weekdays-height: 30px;
-  --calendar-weekdays-font-size: var(--font-size-sm);
+  --calendar-background-color: #fff; /* @type color */ /* @desc 日历背景色 */
+  --calendar-popup-height: 60%; /* @desc 日历高度 */
+  --calendar-header-box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16); /* @desc 日历头部阴影 */
+  --calendar-header-title-height: 44px; /* @desc 日历头部高度 */
+  --calendar-header-title-font-size: var(--font-size-lg); /* @desc 日历头部字体大小 */
+  --calendar-header-subtitle-font-size: var(--font-size-md); /* @desc 日历子标题字体大小 */
+  --calendar-weekdays-height: 30px; /* @desc 星期高度 */
+  --calendar-weekdays-font-size: var(--font-size-sm); /* @desc 星期字体大小 */
   --calendar-month-title-font-size: var(--font-size-md);
-  --calendar-month-mark-color: rgba(242, 243, 245, 0.8); /* @type color */
-  --calendar-month-mark-font-size: 160px;
-  --calendar-day-height: 64px;
-  --calendar-day-font-size: var(--font-size-lg);
-  --calendar-range-edge-color: #fff; /* @type color */
+  --calendar-month-mark-color: rgba(242, 243, 245, 0.8); /* @type color */ /* @hidden */
+  --calendar-month-mark-font-size: 160px; /* @hidden */
+  --calendar-day-height: 64px; /* @desc 日期高度 */
+  --calendar-day-font-size: var(--font-size-lg); /* @desc 日期字体大小 */
+  --calendar-range-edge-color: #fff; /* @type color */ /* @hidden */
   --calendar-range-edge-background-color: var(
     --brand-primary
-  ); /* @type color */
-
-  --calendar-range-middle-color: var(--brand-primary); /* @type color */
-  --calendar-range-middle-background-opacity: 0.1;
-  --calendar-selected-day-size: 54px;
-  --calendar-selected-day-color: #fff; /* @type color */
-  --calendar-info-font-size: var(--font-size-xs);
-  --calendar-info-line-height: var(--line-height-xs);
+  ); /* @type color */ /* @hidden */
+  --calendar-range-middle-color: var(--brand-primary); /* @type color */ /* @hidden */
+  --calendar-range-middle-background-opacity: 0.1; /* @hidden */
+  --calendar-selected-day-size: 54px; /* @desc 选中日期字体大小 */
+  --calendar-selected-day-color: #fff; /* @type color */ /* @desc 选中日期字体颜色 */
+  --calendar-info-font-size: var(--font-size-xs); /* @hidden */
+  --calendar-info-line-height: var(--line-height-xs); /* @hidden */
   --calendar-selected-day-background-color: var(
     --brand-primary
-  ); /* @type color */
-
-  --calendar-day-disabled-color: #c8c9cc; /* @type color */
-  --calendar-confirm-button-height: 36px;
-  --calendar-confirm-button-margin: 7px 0;
+  ); /* @type color */ /* @desc 选中日期背景色 */
+  --calendar-day-disabled-color: #c8c9cc; /* @type color */ /* @hidden */
+  --calendar-confirm-button-height: 36px; /* @hidden */
+  --calendar-confirm-button-margin: 7px 0; /* @hidden */
 
   /* @component van-cascader */
-  --cascader-header-height: 48px;
-  --cascader-title-font-size: var(--font-size-lg);
-  --cascader-title-line-height: 20px;
-  --cascader-close-icon-size: 22px;
-  --cascader-close-icon-color: #c8c9cc; /* @type color */
-  --cascader-close-icon-active-color: #969799; /* @type color */
-  --cascader-selected-icon-size: 18px;
-  --cascader-tabs-height: 48px;
-  --cascader-active-color: var(--brand-primary); /* @type color */
-  --cascader-options-height: 384px;
-  --cascader-tab-color: var(--component-text-color); /* @type color */
-  --cascader-unselected-tab-color: #969799; /* @type color */
+  --cascader-header-height: 48px; /* @desc 头部区域高度 */
+  --cascader-title-font-size: var(--font-size-lg); /* @desc 头部区域字体大小 */
+  --cascader-title-line-height: 20px; /* @desc 头部区域行高 */
+  --cascader-close-icon-size: 22px; /* @hidden */
+  --cascader-close-icon-color: #c8c9cc; /* @type color */ /* @hidden */
+  --cascader-close-icon-active-color: #969799; /* @type color */ /* @hidden */
+  --cascader-selected-icon-size: 18px; /* @desc 选中态图标大小 */
+  --cascader-tabs-height: 48px; /* @desc tabs区域高度 */
+  --cascader-active-color: var(--brand-primary); /* @type color */ /* @desc 选中态图标颜色 */
+  --cascader-options-height: 384px; /* @desc 选项区域高度 */
+  --cascader-tab-color: var(--component-text-color); /* @type color */ /* @hidden */
+  --cascader-unselected-tab-color: #969799; /* @type color */ /* @hidden */
 
   /* @component van-cell-group */
   --cell-group-background-color: #fff; /* @type color */ /* @desc 单元格组背景色 */
