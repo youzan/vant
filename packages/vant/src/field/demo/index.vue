@@ -6,6 +6,7 @@ import ShowIcon from './ShowIcon.vue';
 import ErrorInfo from './ErrorInfo.vue';
 import InsertButton from './InsertButton.vue';
 import FormatValue from './FormatValue.vue';
+import MaskValue from './MaskValue.vue';
 import Autosize from './Autosize.vue';
 import ShowWordLimit from './ShowWordLimit.vue';
 import InputAlign from './InputAlign.vue';
@@ -20,6 +21,7 @@ import LabelAlign from './LabelAlign.vue';
   <error-info />
   <insert-button />
   <format-value />
+  <mask-value />
   <autosize />
   <show-word-limit />
   <input-align />

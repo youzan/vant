@@ -39,6 +39,7 @@ import {
   resizeTextarea,
   getStringLength,
   runRuleValidator,
+  maskCharMap,
 } from './utils';
 import { cellSharedProps } from '../cell/Cell';
 
@@ -91,6 +92,10 @@ export const fieldSharedProps = {
   enterkeyhint: String,
   clearTrigger: makeStringProp<FieldClearTrigger>('focus'),
   formatTrigger: makeStringProp<FieldFormatTrigger>('onChange'),
+  mask: {
+    type: [Array, String] as PropType<string[] | string | null>,
+    default: null,
+  },
   error: {
     type: Boolean,
     default: null,
@@ -185,6 +190,13 @@ export default defineComponent({
         return customValue.value();
       }
       return props.modelValue;
+    });
+
+    const masksArr = computed(() => {
+      if (props.mask && Array.isArray(props.mask)) {
+        return [...props.mask].sort((a, b) => a.length - b.length);
+      }
+      return [];
     });
 
     const runRules = (rules: FieldRule[]) =>
@@ -291,19 +303,62 @@ export default defineComponent({
       return value;
     };
 
+    const maskit = (value: string, mask: string) => {
+      let iMask = 0;
+      let iValue = 0;
+      let result = '';
+      while (iMask < mask.length && iValue < value.length) {
+        const cMask = mask[iMask];
+        const cValue = value[iValue];
+        const masker = (maskCharMap as any)[cMask];
+        if (masker) {
+          if (masker.pattern.test(cValue)) {
+            result += cValue;
+            iMask++;
+          }
+          iValue++;
+        } else {
+          result += cMask;
+          if (cValue === cMask) iValue++;
+          iMask++;
+        }
+      }
+
+      return result;
+    };
+
     const updateValue = (
       value: string,
       trigger: FieldFormatTrigger = 'onChange'
     ) => {
       value = limitValueLength(value);
 
+      const { mask } = props;
+
       if (props.type === 'number' || props.type === 'digit') {
         const isNumber = props.type === 'number';
         value = formatNumber(value, isNumber, isNumber);
       }
 
-      if (props.formatter && trigger === props.formatTrigger) {
-        value = props.formatter(value);
+      if (props.formatter) {
+        if (trigger === props.formatTrigger) value = props.formatter(value);
+      } else if (mask) {
+        if (Array.isArray(mask)) {
+          let i = 0;
+          while (i < masksArr.value.length) {
+            const currentMask = masksArr.value[i];
+            const nextMask = masksArr.value[i + 1];
+            if (
+              !(nextMask && maskit(value, nextMask).length > currentMask.length)
+            ) {
+              value = maskit(value, currentMask);
+              break;
+            }
+            i++;
+          }
+        } else {
+          value = maskit(value, mask);
+        }
       }
 
       if (inputRef.value && inputRef.value.value !== value) {

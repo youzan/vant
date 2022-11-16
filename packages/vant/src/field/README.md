@@ -192,6 +192,32 @@ export default {
 };
 ```
 
+### Mask
+
+free mask input. Token only support #: /\d/，X: /[0-9a-zA-Z]/，S: /[a-zA-Z]/. See [vue-the-mask](https://github.com/vuejs-tips/vue-the-mask)
+
+```html
+<van-cell-group inset>
+  <van-field
+    v-model="value"
+    label="Label"
+    placeholder="Text"
+    :mask="['(##) ####-####', '(##) #####-####']"
+  />
+</van-cell-group>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const value = ref('');
+    return { value };
+  },
+};
+```
+
 ### Auto Resize
 
 Textarea Field can be auto resize when has `autosize` prop.
@@ -288,6 +314,7 @@ Use `label-align` prop to align the input value.
 | error-message-align | Error message align, can be set to `center` `right` | _FieldTextAlign_ | `left` |
 | formatter | Input value formatter | _(val: string) => string_ | - |
 | format-trigger | When to format value, can be set to `onBlur` | _FieldFormatTrigger_ | `onChange` |
+| mask | free mask input , see [vue-the-mask](https://github.com/vuejs-tips/vue-the-mask)，token only support #，X，S | _string \| string[]_ | - |
 | arrow-direction | Can be set to `left` `up` `down` | _string_ | `right` |
 | label-class | Label className | _string \| Array \| object_ | - |
 | label-width | Label width | _number \| string_ | `6.2em` |

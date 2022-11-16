@@ -95,6 +95,78 @@ test('should format input value when type is digit', () => {
   expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('123');
 });
 
+test('should mask input value when token is #,S,X', () => {
+  const wrapper = mount(Field, {
+    props: {
+      modelValue: '',
+      mask: '#-X-S',
+    },
+  });
+
+  const input = wrapper.find('input');
+  input.element.value = '12a';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('1-2-a');
+
+  input.element.value = '1ZP';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('1-Z-P');
+
+  input.element.value = '111';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('1-1-');
+
+  input.element.value = 'Z1';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[3][0]).toEqual('1');
+
+  input.element.value = 'Z11';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[4][0]).toEqual('1-1');
+
+  input.element.value = 'Z111';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[5][0]).toEqual('1-1-');
+
+  input.element.value = 'Z11G';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[6][0]).toEqual('1-1-G');
+});
+
+test('should mask input value when mask is array', () => {
+  const wrapper = mount(Field, {
+    props: {
+      modelValue: '',
+      mask: ['(##)####-####', '(##)#####-####'],
+    },
+  });
+
+  const input = wrapper.find('input');
+  input.element.value = '1111111111';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('(11)1111-1111');
+
+  input.element.value = '11111111111';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('(11)11111-1111');
+});
+
+test('should allow to mask value with mask prop', () => {
+  const wrapper = mount(Field, {
+    props: {
+      modelValue: 'abc',
+      mask: '#-#-#',
+    },
+  });
+
+  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('');
+
+  const input = wrapper.find('input');
+  input.element.value = '123efg';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('1-2-3');
+});
+
 test('should render textarea when type is textarea', async () => {
   const wrapper = mount(Field, {
     props: {
@@ -333,6 +405,22 @@ test('should trigger format after blurring when format-trigger prop is blur', as
 
   input.trigger('blur');
   expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('efg');
+});
+
+test('should allow to mask value with mask prop', () => {
+  const wrapper = mount(Field, {
+    props: {
+      modelValue: 'abc',
+      mask: '#-#-#',
+    },
+  });
+
+  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('');
+
+  const input = wrapper.find('input');
+  input.element.value = '123efg';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('1-2-3');
 });
 
 test('should render word limit correctly', () => {

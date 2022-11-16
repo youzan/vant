@@ -124,3 +124,9 @@ export function getStringLength(str: string) {
 export function cutString(str: string, maxlength: number) {
   return [...str].slice(0, maxlength).join('');
 }
+
+export const maskCharMap = {
+  '#': { pattern: /\d/ },
+  X: { pattern: /[0-9a-zA-Z]/ },
+  S: { pattern: /[a-zA-Z]/ },
+};

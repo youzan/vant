@@ -209,6 +209,32 @@ export default {
 };
 ```
 
+### 使用 Mask 格式化输入内容
+
+通过 `mask` 属性可以对输入的内容进行格式化，可以传递 string 或者 string[]，传递数组的时候会自动对 mask 长度排序。token 只支持#: /\d/，X: /[0-9a-zA-Z]/，S: /[a-zA-Z]/。详见 [vue-the-mask](https://github.com/vuejs-tips/vue-the-mask)
+
+```html
+<van-cell-group inset>
+  <van-field
+    v-model="value"
+    label="Label"
+    placeholder="Text"
+    :mask="['(##) ####-####', '(##) #####-####']"
+  />
+</van-cell-group>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const value = ref('');
+    return { value };
+  },
+};
+```
+
 ### 高度自适应
 
 对于 textarea，可以通过 `autosize` 属性设置高度自适应。
@@ -307,6 +333,7 @@ export default {
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _FieldTextAlign_ | `left` |
 | formatter | 输入内容格式化函数 | _(val: string) => string_ | - |
 | format-trigger | 格式化函数触发的时机，可选值为 `onBlur` | _FieldFormatTrigger_ | `onChange` |
+| mask | 简易的格式化方式，详见 [vue-the-mask](https://github.com/vuejs-tips/vue-the-mask)，token 只支持#，X，S | _string \| string[]_ | - |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
 | label-class | 左侧文本额外类名 | _string \| Array \| object_ | - |
 | label-width | 左侧文本宽度，默认单位为 `px` | _number \| string_ | `6.2em` |
