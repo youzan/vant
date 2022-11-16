@@ -831,47 +831,29 @@
                 "toPosition": "stepper-new",
                 "type": [],
                 "cssProperty": {
-                    "--stepper-active-color": {
-                        "type": "color"
-                    },
-                    "--stepper-background-color": {
-                        "type": "color"
-                    },
-                    "--stepper-button-icon-color": {
-                        "type": "color"
-                    },
-                    "--stepper-button-disabled-color": {
-                        "type": "color"
-                    },
-                    "--stepper-button-disabled-icon-color": {
-                        "type": "color"
-                    },
-                    "--stepper-button-round-theme-color": {
-                        "type": "color"
-                    },
-                    "--stepper-input-width": {
-                        "type": "input"
-                    },
                     "--stepper-input-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "高度"
                     },
                     "--stepper-input-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "输入框字体大小"
                     },
                     "--stepper-input-line-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "输入框行高"
                     },
                     "--stepper-input-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "输入框字体颜色"
                     },
                     "--stepper-input-disabled-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "输入框禁止态文本颜色"
                     },
                     "--stepper-input-disabled-background-color": {
-                        "type": "color"
-                    },
-                    "--stepper-border-radius": {
-                        "type": "input"
+                        "type": "color",
+                        "desc": "输入框禁止态背景色"
                     }
                 },
                 "preview": {
@@ -886,76 +868,40 @@
                 "type": [],
                 "cssProperty": {
                     "--uploader-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "组件大小"
                     },
                     "--uploader-icon-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "图标大小"
                     },
                     "--uploader-icon-color": {
-                        "type": "color"
-                    },
-                    "--uploader-text-color": {
-                        "type": "color"
-                    },
-                    "--uploader-text-font-size": {
-                        "type": "input"
+                        "type": "color",
+                        "desc": "图标颜色"
                     },
                     "--uploader-upload-background-color": {
-                        "type": "color"
-                    },
-                    "--uploader-upload-active-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "背景色"
                     },
                     "--uploader-delete-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "删除图标颜色"
                     },
                     "--uploader-delete-icon-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "删除图标大小"
                     },
                     "--uploader-delete-background-color": {
-                        "type": "color"
-                    },
-                    "--uploader-file-background-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "删除区域背景色"
                     },
                     "--uploader-file-icon-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "文件图标大小"
                     },
                     "--uploader-file-icon-color": {
-                        "type": "color"
-                    },
-                    "--uploader-file-name-padding": {
-                        "type": "input"
-                    },
-                    "--uploader-file-name-margin-top": {
-                        "type": "input"
-                    },
-                    "--uploader-file-name-font-size": {
-                        "type": "input"
-                    },
-                    "--uploader-file-name-text-color": {
-                        "type": "color"
-                    },
-                    "--uploader-mask-background-color": {
-                        "type": "color"
-                    },
-                    "--uploader-mask-icon-size": {
-                        "type": "input"
-                    },
-                    "--uploader-mask-message-font-size": {
-                        "type": "input"
-                    },
-                    "--uploader-mask-message-line-height": {
-                        "type": "input"
-                    },
-                    "--uploader-loading-icon-size": {
-                        "type": "input"
-                    },
-                    "--uploader-loading-icon-color": {
-                        "type": "color"
-                    },
-                    "--uploader-disabled-opacity": {
-                        "type": "input"
+                        "type": "color",
+                        "desc": "文件图标颜色"
                     }
                 },
                 "preview": {
@@ -1007,7 +953,7 @@
                     }
                 },
                 "preview": {
-                    "template": "\n<van-cascader\n  title=\"请选择\"\n  converter=\"json\"\n  labelField=\"级联选择\"\n  input-align=\"left\"\n></van-cascader>\n\n"
+                    "template": "\n<van-cascader\n  :close-on-click-overlay=\"true\" title=\"请选择\"\n  converter=\"json\"\n  labelField=\"级联选择\"\n  input-align=\"left\"\n></van-cascader>\n\n"
                 }
             },
             {
@@ -1105,65 +1051,49 @@
                 "type": [],
                 "cssProperty": {
                     "--dialog-width": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "宽度"
                     },
                     "--dialog-small-screen-width": {
-                        "type": "input"
-                    },
-                    "--dialog-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "小屏幕宽度"
                     },
                     "--dialog-transition": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "动画时间"
                     },
                     "--dialog-border-radius": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "圆角"
                     },
                     "--dialog-background-color": {
-                        "type": "color"
-                    },
-                    "--dialog-header-font-weight": {
-                        "type": "input"
-                    },
-                    "--dialog-header-line-height": {
-                        "type": "input"
-                    },
-                    "--dialog-header-padding-top": {
-                        "type": "input"
-                    },
-                    "--dialog-header-isolated-padding": {
-                        "type": "input"
-                    },
-                    "--dialog-message-padding": {
-                        "type": "input"
+                        "type": "color",
+                        "desc": "背景色"
                     },
                     "--dialog-message-font-size": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "信息部分字体大小"
                     },
                     "--dialog-message-line-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "信息部分行高"
                     },
                     "--dialog-message-max-height": {
-                        "type": "input"
-                    },
-                    "--dialog-has-title-message-text-color": {
-                        "type": "color"
-                    },
-                    "--dialog-has-title-message-padding-top": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "信息部分最大高度"
                     },
                     "--dialog-button-height": {
-                        "type": "input"
-                    },
-                    "--dialog-round-button-height": {
-                        "type": "input"
+                        "type": "input",
+                        "desc": "按钮高度"
                     },
                     "--dialog-confirm-button-text-color": {
-                        "type": "color"
+                        "type": "color",
+                        "desc": "确认按钮颜色"
                     }
                 },
                 "preview": {
-                    "template": "\n<van-dialog safe-area-inset-bottom>\n  <div vusion-slot-name=\"default\" vusion-disabled-copy style=\"min-height: 100px;\" :vusion-disabled-cut=\"true\" env=\"alone\">内容</div>\n  <template #footer>\n    <van-button\n      :vusion-disabled-cut=\"true\"\n      size=\"large\"\n      class=\"van-button van-button--default van-button--large van-dialog__cancel\"\n      text=\"取消\"\n    ></van-button>\n    <van-button\n      :vusion-disabled-cut=\"true\"\n      size=\"large\"\n      class=\"van-button van-button--default van-button--large van-dialog__confirm van-hairline--left\"\n      text=\"确认\"\n    ></van-button>\n  </template>\n</van-dialog>\n\n"
+                    "template": "<div><van-button @click=\"onOpen\">Popup</van-button><van-dialog safe-area-inset-bottom ref=\"dialogh5\">\n  <div vusion-slot-name=\"default\" vusion-disabled-copy style=\"min-height: 100px;\" :vusion-disabled-cut=\"true\" env=\"alone\">内容</div>\n  <template #footer>\n    <van-button\n      :vusion-disabled-cut=\"true\"\n   @click=\"onclose\"   size=\"large\"\n      class=\"van-button van-button--default van-button--large van-dialog__cancel\"\n      text=\"取消\"\n    ></van-button>\n    <van-button\n  @click=\"onclose\"    :vusion-disabled-cut=\"true\"\n      size=\"large\"\n      class=\"van-button van-button--default van-button--large van-dialog__confirm van-hairline--left\"\n      text=\"确认\"\n    ></van-button>\n  </template>\n</van-dialog></div>\n\n",
+                    "script": "export default {\n    data() {\n        return {\n            showpopup: false,\n        };\n    },\n    methods: {\n        onOpen() {\n            this.$refs.dialogh5.openModal();\n        },\n    onclose() {\n            this.$refs.dialogh5.closeModal();\n        },},\n};"
                 }
             }
         ]

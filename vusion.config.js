@@ -103,7 +103,7 @@ module.exports = {
     postcss: process.env.scene == 'desktop' ? [] : [
       require('postcss-px-to-viewport')({
         viewportWidth: 375,
-        propList: ["*", "!font-size", "!line-height"],
+        propList: ["*"],
         // propList: ["*"],
         selectorBlackList: ["nov", /^m401$/, /^m404$/]
       }),

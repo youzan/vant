@@ -255,25 +255,25 @@
   --collapse-item-title-disabled-color: #c8c9cc;  /* @type color */ /* @desc 标题禁用状态颜色 */
 
   /* @component van-dialog */
-  --dialog-width: 320px;
-  --dialog-small-screen-width: 90%;
-  --dialog-font-size: var(--font-size-lg);
-  --dialog-transition: 0.3s;
-  --dialog-border-radius: 16px;
-  --dialog-background-color: #fff; /* @type color */
-  --dialog-header-font-weight: var(--font-weight-bold);
-  --dialog-header-line-height: 24px;
-  --dialog-header-padding-top: 26px;
-  --dialog-header-isolated-padding: var(--padding-lg) 0;
-  --dialog-message-padding: var(--padding-lg);
-  --dialog-message-font-size: var(--font-size-md);
-  --dialog-message-line-height: var(--line-height-md);
-  --dialog-message-max-height: 60vh;
-  --dialog-has-title-message-text-color: #646566; /* @type color */
-  --dialog-has-title-message-padding-top: var(--padding-xs);
-  --dialog-button-height: 48px;
-  --dialog-round-button-height: 36px;
-  --dialog-confirm-button-text-color: var(--brand-primary); /* @type color */
+  --dialog-width: 320px; /* @desc 宽度 */
+  --dialog-small-screen-width: 90%; /* @desc 小屏幕宽度 */
+  --dialog-font-size: var(--font-size-lg); /* @hidden */
+  --dialog-transition: 0.3s; /* @desc 动画时间 */
+  --dialog-border-radius: 16px; /* @desc 圆角 */
+  --dialog-background-color: #fff; /* @type color */ /* @desc 背景色 */
+  --dialog-header-font-weight: var(--font-weight-bold); /* @hidden */
+  --dialog-header-line-height: 24px; /* @hidden */
+  --dialog-header-padding-top: 26px; /* @hidden */
+  --dialog-header-isolated-padding: var(--padding-lg) 0; /* @hidden */
+  --dialog-message-padding: var(--padding-lg); /* @hidden */
+  --dialog-message-font-size: var(--font-size-md); /* @desc 信息部分字体大小 */
+  --dialog-message-line-height: var(--line-height-md); /* @desc 信息部分行高 */
+  --dialog-message-max-height: 60vh; /* @desc 信息部分最大高度 */
+  --dialog-has-title-message-text-color: #646566; /* @type color */ /* @hidden */
+  --dialog-has-title-message-padding-top: var(--padding-xs); /* @hidden */
+  --dialog-button-height: 48px; /* @desc 按钮高度 */
+  --dialog-round-button-height: 36px; /* @hidden */
+  --dialog-confirm-button-text-color: var(--brand-primary); /* @type color */ /* @desc 确认按钮颜色 */
 
   /* @component van-divider */
   --divider-margin: var(--padding-md) 0; /* @desc 外边距 */
@@ -393,26 +393,24 @@
   --step-horizontal-title-font-size: var(--font-size-sm);/* @desc 横向字体大小 */
 
   /* @component van-stepper-new */
-  --stepper-active-color: #e8e8e8; /* @type color */
-  --stepper-background-color: var(--component-active-color); /* @type color */
-  --stepper-button-icon-color: var(--component-text-color); /* @type color */
+  --stepper-active-color: #e8e8e8; /* @type color */ /* @hidden */
+  --stepper-background-color: var(--component-active-color); /* @type color */ /* @hidden */
+  --stepper-button-icon-color: var(--component-text-color); /* @type color */ /* @hidden */
   --stepper-button-disabled-color: var(
     --component-background-color
-  ); /* @type color */
-
-  --stepper-button-disabled-icon-color: #c8c9cc; /* @type color */
-  --stepper-button-round-theme-color: var(--brand-primary); /* @type color */
-  --stepper-input-width: 32px;
-  --stepper-input-height: 28px;
-  --stepper-input-font-size: var(--font-size-md);
-  --stepper-input-line-height: normal;
-  --stepper-input-text-color: var(--component-text-color); /* @type color */
-  --stepper-input-disabled-text-color: #c8c9cc; /* @type color */
+  ); /* @type color */ /* @hidden */
+  --stepper-button-disabled-icon-color: #c8c9cc; /* @type color */ /* @hidden */
+  --stepper-button-round-theme-color: var(--brand-primary); /* @type color */ /* @hidden */
+  --stepper-input-width: 32px; /* @hidden */
+  --stepper-input-height: 28px; /* @desc 高度 */
+  --stepper-input-font-size: var(--font-size-md);  /* @desc 输入框字体大小 */
+  --stepper-input-line-height: normal; /* @desc 输入框行高 */
+  --stepper-input-text-color: var(--component-text-color); /* @type color */  /* @desc 输入框字体颜色 */
+  --stepper-input-disabled-text-color: #c8c9cc; /* @type color */  /* @desc 输入框禁止态文本颜色 */
   --stepper-input-disabled-background-color: var(
     --component-active-color
-  ); /* @type color */
-
-  --stepper-border-radius: var(--border-radius-md);
+  ); /* @type color */ /* @desc 输入框禁止态背景色 */
+  --stepper-border-radius: var(--border-radius-md); /* @hidden */
 
   /* @component van-swipe */
   --swipe-indicator-size: 6px; /* @desc indicator大小 */
@@ -470,36 +468,34 @@
   --tabs-bottom-bar-color: var(--tabs-default-color); /* @type color */ /* @desc 滑动条景色 */
 
   /* @component van-uploader */
-  --uploader-size: 80px;
-  --uploader-icon-size: 24px;
-  --uploader-icon-color: #dcdee0; /* @type color */
-  --uploader-text-color: #969799; /* @type color */
-  --uploader-text-font-size: var(--font-size-sm);
-  --uploader-upload-background-color: #f7f8fa; /* @type color */
+  --uploader-size: 80px; /* @desc 组件大小 */
+  --uploader-icon-size: 24px; /* @desc 图标大小 */
+  --uploader-icon-color: #dcdee0; /* @type color */ /* @desc 图标颜色 */
+  --uploader-text-color: #969799; /* @type color */ /* @hidden */
+  --uploader-text-font-size: var(--font-size-sm); /* @hidden */
+  --uploader-upload-background-color: #f7f8fa; /* @type color */ /* @desc 背景色 */
   --uploader-upload-active-color: var(
     --component-active-color
-  ); /* @type color */
-
-  --uploader-delete-color: #fff; /* @type color */
-  --uploader-delete-icon-size: 14px;
-  --uploader-delete-background-color: rgba(0, 0, 0, 0.7); /* @type color */
+  ); /* @type color */ /* @hidden */
+  --uploader-delete-color: #fff; /* @type color */ /* @desc 删除图标颜色 */
+  --uploader-delete-icon-size: 14px; /* @desc 删除图标大小 */
+  --uploader-delete-background-color: rgba(0, 0, 0, 0.7); /* @type color */ /* @desc 删除区域背景色 */
   --uploader-file-background-color: var(
     --component-background-color
-  ); /* @type color */
-
-  --uploader-file-icon-size: 20px;
-  --uploader-file-icon-color: #646566; /* @type color */
-  --uploader-file-name-padding: 0 var(--padding-base);
-  --uploader-file-name-margin-top: var(--padding-xs);
-  --uploader-file-name-font-size: var(--font-size-sm);
-  --uploader-file-name-text-color: #646566; /* @type color */
-  --uploader-mask-background-color: rgba(51, 51, 51, 0.88); /* @type color */
-  --uploader-mask-icon-size: 22px;
-  --uploader-mask-message-font-size: var(--font-size-sm);
-  --uploader-mask-message-line-height: var(--line-height-xs);
-  --uploader-loading-icon-size: 22px;
-  --uploader-loading-icon-color: #fff; /* @type color */
-  --uploader-disabled-opacity: var(--component-disabled-opacity);
+  ); /* @type color */ /* @hidden */
+  --uploader-file-icon-size: 20px; /* @desc 文件图标大小 */
+  --uploader-file-icon-color: #646566; /* @type color */ /* @desc 文件图标颜色 */
+  --uploader-file-name-padding: 0 var(--padding-base); /* @hidden */
+  --uploader-file-name-margin-top: var(--padding-xs); /* @hidden */
+  --uploader-file-name-font-size: var(--font-size-sm); /* @hidden */
+  --uploader-file-name-text-color: #646566; /* @type color */ /* @hidden */
+  --uploader-mask-background-color: rgba(51, 51, 51, 0.88); /* @type color */ /* @hidden */
+  --uploader-mask-icon-size: 22px; /* @hidden */
+  --uploader-mask-message-font-size: var(--font-size-sm); /* @hidden */
+  --uploader-mask-message-line-height: var(--line-height-xs); /* @hidden */
+  --uploader-loading-icon-size: 22px; /* @hidden */
+  --uploader-loading-icon-color: #fff; /* @type color */ /* @hidden */
+  --uploader-disabled-opacity: var(--component-disabled-opacity); /* @hidden */
 
   /* @component van-slider */
   --slider-active-background-color: var(--brand-primary); /* @type color */
