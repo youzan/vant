@@ -109,42 +109,42 @@
   --link-color-error: var(--brand-error);  /* @type color */ /* @desc 错误链接字体颜色,如：#223325 */
 
   /* @component van-button */
-  --button-mini-height: 24px; /* @desc mini button 高度 */
-  --button-mini-font-size: var(--font-size-xs); /* @desc mini button字体大小 */
-  --button-small-height: 28px; /* @desc small button  高度 */
+  --button-mini-height: 24px; /* @desc 迷你 button 高度 */
+  --button-mini-font-size: var(--font-size-xs); /* @desc 迷你 button字体大小 */
+  --button-small-height: 28px; /* @desc 小 button  高度 */
   --button-small-font-size: var(
     --font-size-sm
-  ); /* @desc small button字体大小 */
+  ); /* @desc 小 button字体大小 */
 
   --button-normal-font-size: var(
     --font-size-md
-  ); /* @desc normal button字体大小 */
+  ); /* @desc 正常 button字体大小 */
 
-  --button-large-height: 50px;
-  --button-default-height: 44px;
-  --button-default-line-height: 1.2;
-  --button-default-font-size: var(--font-size-lg);
-  --button-default-color: var(--component-text-color);
-  --button-default-background-color: #fff;
-  --button-default-border-color: var(--border-color);
-  --button-primary-color: #fff; /* @type color */ /* @desc 错误文本字体颜色,如：#223325 */
-  --button-primary-background-color: var(--brand-success);
-  --button-primary-border-color: var(--brand-success);
-  --button-info-color: #fff;
-  --button-info-background-color: var(--brand-primary);
-  --button-info-border-color: var(--brand-primary);
-  --button-danger-color: #fff;
-  --button-danger-background-color: var(--brand-error);
-  --button-danger-border-color: var(--brand-error);
-  --button-warning-color: #fff;
-  --button-warning-background-color: var(--brand-warning);
-  --button-warning-border-color: var(--brand-warning);
-  --button-border-width: var(--border-width-base);
-  --button-border-radius: var(--border-radius-md);
-  --button-border-radius2: var(--border-radius-md);
-  --button-round-border-radius: var(--border-radius-max);
-  --button-plain-background-color: #fff;
-  --button-disabled-opacity: var(--component-disabled-opacity);
+  --button-large-height: 50px; /* @desc 大 button字体大小 */
+  --button-default-height: 44px; /* @desc 普通 button高度 */
+  --button-default-line-height: 1.2; /* @desc 普通 button行高 */
+  --button-default-font-size: var(--font-size-lg); /* @desc 普通 button字体大小 */
+  --button-default-color: var(--component-text-color); /* @type color */ /* @hidden */
+  --button-default-background-color: #fff; /* @type color */ /* @hidden */
+  --button-default-border-color: var(--border-color); /* @type color */ /* @hidden */
+  --button-primary-color: #fff; /* @type color */ /* @hidden */
+  --button-primary-background-color: var(--brand-success); /* @type color */ /* @hidden */
+  --button-primary-border-color: var(--brand-success); /* @type color */ /* @hidden */
+  --button-info-color: #fff; /* @type color */ /* @desc 主要按钮文本颜色 */
+  --button-info-background-color: var(--brand-primary); /* @type color */ /* @desc 主要按钮背景色 */
+  --button-info-border-color: var(--brand-primary); /* @type color */ /* @desc 主要按钮边框颜色 */
+  --button-danger-color: #fff; /* @type color */ /* @desc 危险按钮边框颜色 */
+  --button-danger-background-color: var(--brand-error); /* @type color */ /* @desc 危险按钮边框颜色 */
+  --button-danger-border-color: var(--brand-error); /* @type color */ /* @desc 危险按钮边框颜色 */
+  --button-warning-color: #fff; /* @type color */ /* @desc 警告按钮边框颜色 */
+  --button-warning-background-color: var(--brand-warning); /* @type color */ /* @desc 警告按钮边框颜色 */
+  --button-warning-border-color: var(--brand-warning); /* @type color */ /* @desc 警告按钮边框颜色 */
+  --button-border-width: var(--border-width-base); /* @desc 按钮边框厚度 */
+  --button-border-radius: var(--border-radius-md); /* @desc 按钮边框圆角 */
+  --button-border-radius2: var(--border-radius-md); /* @hidden */
+  --button-round-border-radius: var(--border-radius-max); /* @desc 圆角按钮圆角 */
+  --button-plain-background-color: #fff; /* @type color */ /* @hidden */
+  --button-disabled-opacity: var(--component-disabled-opacity); /* @desc 禁用按钮透明度 */
 
   /* @component van-badge */
   --badge-size: 16px; /* @desc 最小宽度 */
