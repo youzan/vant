@@ -527,8 +527,6 @@ export default createComponent({
         [propValue.skuKeyStr]: arr,
       };
 
-      console.log('selectedProp: ', this.selectedProp);
-
       this.$emit('sku-prop-selected', {
         propValue,
         selectedProp: this.selectedProp,
