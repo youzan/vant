@@ -9,6 +9,7 @@ export default createComponent({
     skuEventBus: Object,
     selectedProp: Object,
     multiple: Boolean,
+    disabled: Boolean,
   },
 
   computed: {
@@ -25,6 +26,8 @@ export default createComponent({
 
   methods: {
     onSelect() {
+      if (this.disabled) return;
+
       this.skuEventBus.$emit('sku:propSelect', {
         ...this.skuValue,
         skuKeyStr: this.skuKeyStr,
@@ -39,6 +42,7 @@ export default createComponent({
         class={[
           'van-sku-row__item',
           { 'van-sku-row__item--active': this.choosed },
+          { 'van-sku-row__item--disabled': this.disabled },
         ]}
         onClick={this.onSelect}
       >

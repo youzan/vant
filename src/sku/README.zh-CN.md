@@ -260,11 +260,13 @@ sku: {
         id: 1222, // 属性值id
         name: '珍珠', // 属性值名
         price: 1, // 属性值加价
+        text_status: 0, // 属性启用/禁用状态 0 - 禁用，1 - 启用
       },
       {
         id: 1223,
         name: '椰果',
         price: 1,
+        text_status: 1,
       },
     ],
   },

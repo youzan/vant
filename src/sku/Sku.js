@@ -750,6 +750,7 @@ export default createComponent({
                   selectedProp={selectedProp}
                   skuEventBus={skuEventBus}
                   multiple={skuTreeItem.is_multiple}
+                  disabled={skuValue.text_status === 0}
                 />
               ))}
             </SkuRow>
