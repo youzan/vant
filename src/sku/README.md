@@ -267,11 +267,13 @@ sku: {
         id: 1222,
         name: 'Tea',
         price: 1,
+        text_status: 0,
       },
       {
         id: 1223,
         name: 'Water',
         price: 1,
+        text_status: 1,
       },
     ],
   },

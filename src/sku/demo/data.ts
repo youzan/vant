@@ -216,6 +216,26 @@ export function getSkuData(largeImageMode = false) {
           },
         ],
       },
+      {
+        k: '有禁用的属性',
+        k_id: 127,
+        is_multiple: false,
+        is_necessary: false,
+        v: [
+          {
+            id: 1271,
+            name: '禁用的属性',
+            price: 0,
+            text_status: 0,
+          },
+          {
+            id: 1272,
+            name: '未禁用的属性',
+            price: 0,
+            text_status: 1,
+          },
+        ],
+      },
     ],
   };
 }
