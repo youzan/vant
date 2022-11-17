@@ -419,14 +419,22 @@ export default createComponent({
           this.selectedProp[item.k_id] = selectedProp[item.k_id];
         }
       });
+
       if (isEmpty(this.selectedProp)) {
         this.propList.forEach((item) => {
           // 没有加价的属性，默认选中第一个
           if (item?.v?.length > 0) {
             const { v, k_id } = item;
             const isHasConfigPrice = v.some((i) => +i.price !== 0);
+            // 没有加价属性
             if (!isHasConfigPrice) {
-              this.selectedProp[k_id] = [v[0].id];
+              // 找到第一个不被禁用的属性
+              // 历史如果没有 text_status 字段的，就相当于沿用直接原来的逻辑取第一个属性
+              const firstEnableProp = v.find((prop) => prop.text_status !== 0);
+
+              if (firstEnableProp) {
+                this.selectedProp[k_id] = [firstEnableProp.id];
+              }
             }
           }
         });
@@ -518,6 +526,8 @@ export default createComponent({
         ...this.selectedProp,
         [propValue.skuKeyStr]: arr,
       };
+
+      console.log('selectedProp: ', this.selectedProp);
 
       this.$emit('sku-prop-selected', {
         propValue,
