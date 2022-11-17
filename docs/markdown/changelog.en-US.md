@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.12.53](https://github.com/vant-ui/vant/compare/v2.12.52...v2.12.53)
+
+`2022-11-17`
+
+**Feature**
+
+- sku: support disable property [#11260](https://github.com/vant-ui/vant/issues/11260)
+
 ### [v2.12.52](https://github.com/vant-ui/vant/compare/v2.12.51...v2.12.52)
 
 `2022-11-08`

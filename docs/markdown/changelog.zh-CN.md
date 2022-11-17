@@ -25,6 +25,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.53](https://github.com/vant-ui/vant/compare/v2.12.52...v2.12.53)
+
+`2022-11-17`
+
+**Feature**
+
+- sku: 支持属性的禁用状态 [#11260](https://github.com/vant-ui/vant/issues/11260)
+
 ### [v2.12.52](https://github.com/vant-ui/vant/compare/v2.12.51...v2.12.52)
 
 `2022-11-08`
