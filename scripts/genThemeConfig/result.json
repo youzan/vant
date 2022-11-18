@@ -114,9 +114,10 @@
                 "toPosition": "linear-layout",
                 "type": [],
                 "cssProperty": {
-                    "--linear-layout-background": {
-                        "type": "color"
-                    }
+                  "--space-base": {
+                    "type": "input",
+                    "desc": "布局内各元素之间的外间距, 如：1px"
+                  }
                 },
                 "preview": {
                     "template": "<div>\n        <van-linear-layout direction=\"vertical\" :class=\"$style.linearLayout\"\n            style=\"margin-bottom:16px;line-height: 0;\">\n            <u-block style=\"width: 100%;\"></u-block>\n            <div style=\"width: 100%;\"></div>\n        </van-linear-layout>\n        <van-linear-layout direction=\"horizontal\" :class=\"$style.linearLayout\"\n            style=\"margin-bottom:16px;line-height: 0;\">\n            <u-block style=\"display:inline-block;width: 104px;\"></u-block>\n            <u-block style=\"display:inline-block;width: 104px;\"></u-block>\n            <u-block style=\"display:inline-block;width: 104px;\"></u-block>\n        </van-linear-layout>\n        <van-linear-layout direction=\"horizontal\" :class=\"$style.linearLayout\"\n            justify=\"space-between\"\n            style=\"margin-bottom:8px;\">\n            <u-block style=\"display:inline-block;width: 104px;\"></u-block>\n            <u-block style=\"display:inline-block;width: 104px;\"></u-block>\n        </van-linear-layout>\n    </div>",
