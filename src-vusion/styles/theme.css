@@ -114,9 +114,7 @@
   --button-mini-height: 24px; /* @desc 迷你 button 高度 */
   --button-mini-font-size: var(--font-size-xs); /* @desc 迷你 button字体大小 */
   --button-small-height: 28px; /* @desc 小 button  高度 */
-  --button-small-font-size: var(
-    --font-size-sm
-  ); /* @desc 小 button字体大小 */
+  --button-small-font-size: var(--font-size-sm); /* @desc 小 button字体大小 */
 
   --button-normal-font-size: var(
     --font-size-md
@@ -125,28 +123,54 @@
   --button-large-height: 50px; /* @desc 大 button字体大小 */
   --button-default-height: 44px; /* @desc 普通 button高度 */
   --button-default-line-height: 1.2; /* @desc 普通 button行高 */
-  --button-default-font-size: var(--font-size-lg); /* @desc 普通 button字体大小 */
-  --button-default-color: var(--component-text-color); /* @type color */ /* @hidden */
+  --button-default-font-size: var(
+    --font-size-lg
+  ); /* @desc 普通 button字体大小 */
+  --button-default-color: var(
+    --component-text-color
+  ); /* @type color */ /* @hidden */
   --button-default-background-color: #fff; /* @type color */ /* @hidden */
-  --button-default-border-color: var(--border-color); /* @type color */ /* @hidden */
+  --button-default-border-color: var(
+    --border-color
+  ); /* @type color */ /* @hidden */
   --button-primary-color: #fff; /* @type color */ /* @hidden */
-  --button-primary-background-color: var(--brand-success); /* @type color */ /* @hidden */
-  --button-primary-border-color: var(--brand-success); /* @type color */ /* @hidden */
+  --button-primary-background-color: var(
+    --brand-success
+  ); /* @type color */ /* @hidden */
+  --button-primary-border-color: var(
+    --brand-success
+  ); /* @type color */ /* @hidden */
   --button-info-color: #fff; /* @type color */ /* @desc 主要按钮文本颜色 */
-  --button-info-background-color: var(--brand-primary); /* @type color */ /* @desc 主要按钮背景色 */
-  --button-info-border-color: var(--brand-primary); /* @type color */ /* @desc 主要按钮边框颜色 */
+  --button-info-background-color: var(
+    --brand-primary
+  ); /* @type color */ /* @desc 主要按钮背景色 */
+  --button-info-border-color: var(
+    --brand-primary
+  ); /* @type color */ /* @desc 主要按钮边框颜色 */
   --button-danger-color: #fff; /* @type color */ /* @desc 危险按钮边框颜色 */
-  --button-danger-background-color: var(--brand-error); /* @type color */ /* @desc 危险按钮边框颜色 */
-  --button-danger-border-color: var(--brand-error); /* @type color */ /* @desc 危险按钮边框颜色 */
+  --button-danger-background-color: var(
+    --brand-error
+  ); /* @type color */ /* @desc 危险按钮边框颜色 */
+  --button-danger-border-color: var(
+    --brand-error
+  ); /* @type color */ /* @desc 危险按钮边框颜色 */
   --button-warning-color: #fff; /* @type color */ /* @desc 警告按钮边框颜色 */
-  --button-warning-background-color: var(--brand-warning); /* @type color */ /* @desc 警告按钮边框颜色 */
-  --button-warning-border-color: var(--brand-warning); /* @type color */ /* @desc 警告按钮边框颜色 */
+  --button-warning-background-color: var(
+    --brand-warning
+  ); /* @type color */ /* @desc 警告按钮边框颜色 */
+  --button-warning-border-color: var(
+    --brand-warning
+  ); /* @type color */ /* @desc 警告按钮边框颜色 */
   --button-border-width: var(--border-width-base); /* @desc 按钮边框厚度 */
   --button-border-radius: var(--border-radius-md); /* @desc 按钮边框圆角 */
   --button-border-radius2: var(--border-radius-md); /* @hidden */
-  --button-round-border-radius: var(--border-radius-max); /* @desc 圆角按钮圆角 */
+  --button-round-border-radius: var(
+    --border-radius-max
+  ); /* @desc 圆角按钮圆角 */
   --button-plain-background-color: #fff; /* @type color */ /* @hidden */
-  --button-disabled-opacity: var(--component-disabled-opacity); /* @desc 禁用按钮透明度 */
+  --button-disabled-opacity: var(
+    --component-disabled-opacity
+  ); /* @desc 禁用按钮透明度 */
 
   /* @component van-badge */
   --badge-size: 16px; /* @desc 最小宽度 */
@@ -169,12 +193,21 @@
   --calendar-popup-height: 60%; /* @desc 日历高度 */
   --calendar-header-box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16); /* @desc 日历头部阴影 */
   --calendar-header-title-height: 44px; /* @desc 日历头部高度 */
-  --calendar-header-title-font-size: var(--font-size-lg); /* @desc 日历头部字体大小 */
-  --calendar-header-subtitle-font-size: var(--font-size-md); /* @desc 日历子标题字体大小 */
+  --calendar-header-title-font-size: var(
+    --font-size-lg
+  ); /* @desc 日历头部字体大小 */
+  --calendar-header-subtitle-font-size: var(
+    --font-size-md
+  ); /* @desc 日历子标题字体大小 */
   --calendar-weekdays-height: 30px; /* @desc 星期高度 */
   --calendar-weekdays-font-size: var(--font-size-sm); /* @desc 星期字体大小 */
   --calendar-month-title-font-size: var(--font-size-md);
-  --calendar-month-mark-color: rgba(242, 243, 245, 0.8); /* @type color */ /* @hidden */
+  --calendar-month-mark-color: rgba(
+    242,
+    243,
+    245,
+    0.8
+  ); /* @type color */ /* @hidden */
   --calendar-month-mark-font-size: 160px; /* @hidden */
   --calendar-day-height: 64px; /* @desc 日期高度 */
   --calendar-day-font-size: var(--font-size-lg); /* @desc 日期字体大小 */
@@ -182,7 +215,9 @@
   --calendar-range-edge-background-color: var(
     --brand-primary
   ); /* @type color */ /* @hidden */
-  --calendar-range-middle-color: var(--brand-primary); /* @type color */ /* @hidden */
+  --calendar-range-middle-color: var(
+    --brand-primary
+  ); /* @type color */ /* @hidden */
   --calendar-range-middle-background-opacity: 0.1; /* @hidden */
   --calendar-selected-day-size: 54px; /* @desc 选中日期字体大小 */
   --calendar-selected-day-color: #fff; /* @type color */ /* @desc 选中日期字体颜色 */
@@ -204,9 +239,13 @@
   --cascader-close-icon-active-color: #969799; /* @type color */ /* @hidden */
   --cascader-selected-icon-size: 18px; /* @desc 选中态图标大小 */
   --cascader-tabs-height: 48px; /* @desc tabs区域高度 */
-  --cascader-active-color: var(--brand-primary); /* @type color */ /* @desc 选中态图标颜色 */
+  --cascader-active-color: var(
+    --brand-primary
+  ); /* @type color */ /* @desc 选中态图标颜色 */
   --cascader-options-height: 384px; /* @desc 选项区域高度 */
-  --cascader-tab-color: var(--component-text-color); /* @type color */ /* @hidden */
+  --cascader-tab-color: var(
+    --component-text-color
+  ); /* @type color */ /* @hidden */
   --cascader-unselected-tab-color: #969799; /* @type color */ /* @hidden */
 
   /* @component van-cell-group */
@@ -570,15 +609,17 @@
   --uploader-disabled-opacity: var(--component-disabled-opacity); /* @hidden */
 
   /* @component van-slider */
-  --slider-active-background-color: var(--brand-primary); /* @type color */
-  --slider-inactive-background-color: #e5e5e5; /* @type color */
-  --slider-disabled-opacity: var(--component-disabled-opacity);
-  --slider-bar-height: 2px;
-  --slider-button-width: 24px;
-  --slider-button-height: 24px;
-  --slider-button-border-radius: 50%;
-  --slider-button-background-color: #fff;
-  --slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --slider-active-background-color: var(
+    --brand-primary
+  ); /* @type color */ /* @desc 激活态色 */
+  --slider-inactive-background-color: #e5e5e5; /* @type color */ /* @desc 非激活态色 */
+  --slider-disabled-opacity: var(--component-disabled-opacity); /* @hidden */
+  --slider-bar-height: 2px; /* @desc 进度条高度 */
+  --slider-button-width: 24px; /* @desc 进度条滑块宽度 */
+  --slider-button-height: 24px; /* @desc 进度条滑块高度 */
+  --slider-button-border-radius: 50%; /* @desc 进度条滑块圆角 */
+  --slider-button-background-color: #fff; /* @type color */ /* @desc 进度条滑块背景色 */
+  --slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* @desc 进度条滑块阴影 */
 
   /* @component van-progress */
   --progress-height: 4px;
