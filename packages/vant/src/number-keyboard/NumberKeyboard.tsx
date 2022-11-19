@@ -79,6 +79,8 @@ function shuffle(array: unknown[]) {
 export default defineComponent({
   name,
 
+  inheritAttrs: false,
+
   props: numberKeyboardProps,
 
   emits: [
@@ -91,7 +93,7 @@ export default defineComponent({
     'update:modelValue',
   ],
 
-  setup(props, { emit, slots }) {
+  setup(props, { emit, slots, attrs }) {
     const root = ref<HTMLElement>();
 
     const genBasicKeys = () => {
@@ -282,6 +284,7 @@ export default defineComponent({
             })}
             onAnimationend={onAnimationEnd}
             onTouchstartPassive={stopPropagation}
+            {...attrs}
           >
             {Title}
             <div class={bem('body')}>

@@ -246,3 +246,18 @@ test('should not emit close event after clicking close button when blur-on-close
   clickKey(wrapper.findAll('.van-key')[12]);
   expect(wrapper.emitted('blur')).toBeFalsy();
 });
+
+test('should inherit attrs when using teleport prop', () => {
+  const root = document.createElement('div');
+  mount(NumberKeyboard, {
+    props: {
+      teleport: root,
+    },
+    attrs: {
+      class: 'foo',
+    },
+  });
+
+  const el = root.querySelector('.van-number-keyboard');
+  expect(el?.classList.contains('foo')).toBeTruthy();
+});
