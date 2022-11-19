@@ -12,6 +12,7 @@ import {
 
 // Utils
 import {
+  addUnit,
   isObject,
   inBrowser,
   getScrollTop,
@@ -56,8 +57,8 @@ export default defineComponent({
     let target: Window | HTMLElement;
 
     const backTopStyle = computed(() => ({
-      right: `${props.right}px`,
-      bottom: `${props.bottom}px`,
+      right: addUnit(props.right),
+      bottom: addUnit(props.bottom),
     }));
 
     const onClick = (event: MouseEvent) => {

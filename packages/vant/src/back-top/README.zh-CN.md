@@ -41,7 +41,7 @@ export default {
 ```html
 <van-cell v-for="item in list" :key="item" :title="item" />
 <van-back-top>
-  <div class="custom" style="">自定义内容</div>
+  <div class="custom">自定义内容</div>
 </van-back-top>
 ```
 
@@ -94,8 +94,8 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | target | 触发滚动的目标对象，支持`selector`和`HTMLElement` | _string \| HTMLElement_ | - |
-| right | 距离页面右侧的距离 | _number \| string_ | `30` |
-| bottom | 距离页面底部的距离 | _number \| string_ | `40` |
+| right | 距离页面右侧的距离，默认单位为 `px` | _number \| string_ | `30` |
+| bottom | 距离页面底部的距离，默认单位为 `px` | _number \| string_ | `40` |
 | visibility-height | 滚动高度达到此参数值才显示 | _number_ | `200` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
 
