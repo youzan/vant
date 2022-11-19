@@ -53,7 +53,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     // use sync innerLoading state to avoid repeated loading in some edge cases
-    const loading = ref(false);
+    const loading = ref(props.loading);
     const root = ref<HTMLElement>();
     const placeholder = ref<HTMLElement>();
     const tabStatus = useTabStatus();
