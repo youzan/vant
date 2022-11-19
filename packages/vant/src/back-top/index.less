@@ -10,8 +10,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: var(--van-back-top-size);
-  min-height: var(--van-back-top-size);
+  width: var(--van-back-top-size);
+  height: var(--van-back-top-size);
   cursor: pointer;
   color: var(--van-back-top-text-color);
   border-radius: var(--van-radius-max);
@@ -21,14 +21,14 @@
   background-color: var(--van-back-top-background);
 
   &:active {
-    opacity: 0.6;
+    opacity: var(--van-active-opacity);
   }
 
   &--active {
     transform: scale(1);
   }
 
-  .van-icon {
+  &__icon {
     font-size: var(--van-back-top-icon-size);
     font-weight: var(--van-font-bold);
   }

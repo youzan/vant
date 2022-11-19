@@ -20,43 +20,63 @@ app.use(BackTop);
 
 ### Basic Usage
 
-```html
-<van-cell v-for="item in list" :key="item" :title="item" />
+Please scroll the demo page to display the back top button.
 
-<van-back-top />
+```html
+<van-cell v-for="item in list" :key="item" :title="item" /> <van-back-top />
 ```
 
 ```js
 export default {
   setup() {
     const list = [...Array(50).keys()];
+    return { list };
+  },
+};
+```
+
+### Custom Position
+
+Using `right` and `bottom` props to set the position of BackTop component.
+
+```html
+<van-cell v-for="item in list" :key="item" :title="item" />
+<van-back-top right="15vw" bottom="10vh" />
+```
+
+```js
+export default {
+  setup() {
+    const list = [...Array(50).keys()];
+    return { list };
   },
 };
 ```
 
 ### Custom Content
 
+Using the default slot to custom content.
+
 ```html
 <van-cell v-for="item in list" :key="item" :title="item" />
-<van-back-top>
-  <div class="custom">Custom Content</div>
-</van-back-top>
+<van-back-top class="custom">Back Top</van-back-top>
+
+<style>
+  .custom {
+    width: 80px;
+    font-size: 14px;
+    text-align: center;
+  }
+</style>
 ```
 
 ```js
 export default {
   setup() {
     const list = [...Array(50).keys()];
+    return { list };
   },
 };
-```
-
-```css
-.custom {
-  width: 200px;
-  line-height: 40px;
-  text-align: center;
-}
 ```
 
 ### Set Scroll Target
@@ -64,23 +84,24 @@ export default {
 ```html
 <div class="container">
   <van-cell v-for="item in list" :key="item" :title="item" />
-  <van-back-top target=".container" bottom="100" right="30" />
+  <van-back-top target=".container" bottom="30vh" />
 </div>
+
+<style>
+  .container {
+    height: 60vh;
+    overflow: auto;
+  }
+</style>
 ```
 
 ```js
 export default {
   setup() {
     const list = [...Array(50).keys()];
+    return { list };
   },
 };
-```
-
-```css
-.container {
-  height: 300px;
-  overflow: auto;
-}
 ```
 
 ## API
@@ -100,6 +121,14 @@ export default {
 | Name    | Description               |
 | ------- | ------------------------- |
 | default | customize default content |
+
+### Types
+
+The component exports the following type definitions:
+
+```ts
+import type { BackTopProps, BackTopThemeVars } from 'vant';
+```
 
 ## Theming
 

@@ -20,71 +20,90 @@ app.use(BackTop);
 
 ### 基础用法
 
-通过滚动 Demo 页面查看右下角按钮。
+请滚动示例页面来查看右下角的返回顶部按钮。
 
 ```html
-<van-cell v-for="item in list" :key="item" :title="item" />
-
-<van-back-top />
+<van-cell v-for="item in list" :key="item" :title="item" /> <van-back-top />
 ```
 
 ```js
 export default {
   setup() {
     const list = [...Array(50).keys()];
+    return { list };
+  },
+};
+```
+
+### 自定义位置
+
+通过 `right` 和 `bottom` 属性来设置组件距离右侧和底部的位置。
+
+```html
+<van-cell v-for="item in list" :key="item" :title="item" />
+<van-back-top right="15vw" bottom="10vh" />
+```
+
+```js
+export default {
+  setup() {
+    const list = [...Array(50).keys()];
+    return { list };
   },
 };
 ```
 
 ### 自定义内容
 
+使用默认插槽来自定义组件展示的内容。
+
 ```html
 <van-cell v-for="item in list" :key="item" :title="item" />
-<van-back-top>
-  <div class="custom">自定义内容</div>
-</van-back-top>
+<van-back-top class="custom">返回顶部</van-back-top>
+
+<style>
+  .custom {
+    width: 80px;
+    font-size: 14px;
+    text-align: center;
+  }
+</style>
 ```
 
 ```js
 export default {
   setup() {
     const list = [...Array(50).keys()];
+    return { list };
   },
 };
 ```
 
-```css
-.custom {
-  width: 200px;
-  line-height: 40px;
-  text-align: center;
-}
-```
+### 设置滚动目标
 
-### 设置监听目标
-
-可以通过设置 `target` 控制监听哪个元素触发 Back Top。
+可以通过 `target` 属性来设置触发滚动的目标对象，支持传入选择器或 `HTMLElement`。
 
 ```html
 <div class="container">
   <van-cell v-for="item in list" :key="item" :title="item" />
-  <van-back-top target=".container" bottom="100" right="30" />
+  <van-back-top target=".container" bottom="30vh" />
 </div>
+
+<style>
+  .container {
+    height: 60vh;
+    overflow: auto;
+  }
+</style>
 ```
 
 ```js
 export default {
   setup() {
     const list = [...Array(50).keys()];
+    return { list };
   },
 };
-```
-
-```css
-.container {
-  height: 300px;
-  overflow: auto;
-}
 ```
 
 ## API
@@ -93,7 +112,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| target | 触发滚动的目标对象，支持`selector`和`HTMLElement` | _string \| HTMLElement_ | - |
+| target | 触发滚动的目标对象，支持传入选择器或 `HTMLElement` | _string \| HTMLElement_ | - |
 | right | 距离页面右侧的距离，默认单位为 `px` | _number \| string_ | `30` |
 | bottom | 距离页面底部的距离，默认单位为 `px` | _number \| string_ | `40` |
 | visibility-height | 滚动高度达到此参数值才显示 | _number_ | `200` |
@@ -104,6 +123,14 @@ export default {
 | 名称    | 说明               |
 | ------- | ------------------ |
 | default | 自定义按钮显示内容 |
+
+### 类型定义
+
+组件导出以下类型定义：
+
+```ts
+import type { BackTopProps, BackTopThemeVars } from 'vant';
+```
 
 ## 主题定制
 
