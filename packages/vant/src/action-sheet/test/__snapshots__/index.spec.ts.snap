@@ -22,13 +22,21 @@ exports[`should render cancel slot correctly 1`] = `
 `;
 
 exports[`should render default slot correctly 1`] = `
-<transition-stub role="button"
+<transition-stub name="van-fade"
+                 appear="true"
+                 persisted="false"
+                 css="true"
+                 role="button"
                  tabindex="0"
 >
   <div class="van-overlay">
   </div>
 </transition-stub>
-<transition-stub>
+<transition-stub name="van-popup-slide-bottom"
+                 appear="false"
+                 persisted="false"
+                 css="true"
+>
   <div role="dialog"
        tabindex="0"
        class="van-popup van-popup--round van-popup--bottom van-safe-area-bottom van-action-sheet"

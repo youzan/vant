@@ -557,16 +557,28 @@ exports[`formatter prop 1`] = `
 `;
 
 exports[`popup wrapper 1`] = `
-<transition-stub role="button"
+<transition-stub name="van-fade"
+                 appear="true"
+                 persisted="false"
+                 css="true"
+                 role="button"
                  tabindex="0"
 >
 </transition-stub>
-<transition-stub>
+<transition-stub name="van-popup-slide-bottom"
+                 appear="false"
+                 persisted="false"
+                 css="true"
+>
 </transition-stub>
 `;
 
 exports[`popup wrapper 2`] = `
-<transition-stub role="button"
+<transition-stub name="van-fade"
+                 appear="true"
+                 persisted="false"
+                 css="true"
+                 role="button"
                  tabindex="0"
 >
   <div style="z-index: 2001;"
@@ -574,7 +586,11 @@ exports[`popup wrapper 2`] = `
   >
   </div>
 </transition-stub>
-<transition-stub>
+<transition-stub name="van-popup-slide-bottom"
+                 appear="false"
+                 persisted="false"
+                 css="true"
+>
   <div style="z-index: 2001;"
        role="dialog"
        tabindex="0"

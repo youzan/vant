@@ -29,7 +29,11 @@ exports[`click option 1`] = `
   <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
       <div style="z-index: 2007; position: absolute; animation-duration: 0.2s; display: none;"
@@ -37,7 +41,11 @@ exports[`click option 1`] = `
       >
       </div>
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
       <div style="z-index: 2007; transition-duration: 0.2s; display: none;"
            role="menu"
            tabindex="0"
@@ -76,11 +84,19 @@ exports[`click option 1`] = `
   <div style="top: 100px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
 </div>
@@ -115,7 +131,11 @@ exports[`close-on-click-outside 1`] = `
   <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
       <div style="z-index: 2004; position: absolute; animation-duration: 0.2s; display: none;"
@@ -123,7 +143,11 @@ exports[`close-on-click-outside 1`] = `
       >
       </div>
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
       <div style="z-index: 2004; transition-duration: 0.2s; display: none;"
            role="menu"
            tabindex="0"
@@ -162,11 +186,19 @@ exports[`close-on-click-outside 1`] = `
   <div style="top: 100px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
 </div>
@@ -190,11 +222,19 @@ exports[`destroy one item 1`] = `
   <div style="top: 0px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
 </div>
@@ -229,21 +269,37 @@ exports[`direction up 1`] = `
   <div style="bottom: 0px; display: none;"
        class="van-dropdown-item van-dropdown-item--up"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-bottom"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
   <div style="bottom: 0px; display: none;"
        class="van-dropdown-item van-dropdown-item--up"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-bottom"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
 </div>
@@ -278,7 +334,11 @@ exports[`direction up 2`] = `
   <div style="bottom: 768px;"
        class="van-dropdown-item van-dropdown-item--up"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
       <div style="z-index: 2006; position: absolute; animation-duration: 0.2s;"
@@ -286,7 +346,11 @@ exports[`direction up 2`] = `
       >
       </div>
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-bottom"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
       <div style="z-index: 2006; transition-duration: 0.2s;"
            role="menu"
            tabindex="0"
@@ -325,11 +389,19 @@ exports[`direction up 2`] = `
   <div style="bottom: 768px; display: none;"
        class="van-dropdown-item van-dropdown-item--up"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-bottom"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
 </div>
@@ -364,7 +436,11 @@ exports[`disable close-on-click-outside 1`] = `
   <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
       <div style="z-index: 2005; position: absolute; animation-duration: 0.2s;"
@@ -372,7 +448,11 @@ exports[`disable close-on-click-outside 1`] = `
       >
       </div>
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
       <div style="z-index: 2005; transition-duration: 0.2s;"
            role="menu"
            tabindex="0"
@@ -411,11 +491,19 @@ exports[`disable close-on-click-outside 1`] = `
   <div style="top: 100px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
 </div>
@@ -438,11 +526,19 @@ exports[`disable dropdown item 1`] = `
   <div style="top: 0px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
 </div>
@@ -477,7 +573,11 @@ exports[`render option icon 1`] = `
   <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
       <div style="z-index: 2003; position: absolute; animation-duration: 0.2s;"
@@ -485,7 +585,11 @@ exports[`render option icon 1`] = `
       >
       </div>
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
       <div style="z-index: 2003; transition-duration: 0.2s;"
            role="menu"
            tabindex="0"
@@ -528,11 +632,19 @@ exports[`render option icon 1`] = `
   <div style="top: 100px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
 </div>
@@ -567,7 +679,11 @@ exports[`show dropdown item 1`] = `
   <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
       <div style="z-index: 2001; position: absolute; animation-duration: 0.2s;"
@@ -575,7 +691,11 @@ exports[`show dropdown item 1`] = `
       >
       </div>
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
       <div style="z-index: 2001; transition-duration: 0.2s;"
            role="menu"
            tabindex="0"
@@ -614,11 +734,19 @@ exports[`show dropdown item 1`] = `
   <div style="top: 100px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
 </div>
@@ -653,7 +781,11 @@ exports[`show dropdown item 2`] = `
   <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
       <div style="z-index: 2001; position: absolute; animation-duration: 0s; display: none;"
@@ -661,7 +793,11 @@ exports[`show dropdown item 2`] = `
       >
       </div>
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
       <div style="z-index: 2001; transition-duration: 0s; display: none;"
            role="menu"
            tabindex="0"
@@ -700,7 +836,11 @@ exports[`show dropdown item 2`] = `
   <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
       <div style="z-index: 2002; position: absolute; animation-duration: 0.2s;"
@@ -708,7 +848,11 @@ exports[`show dropdown item 2`] = `
       >
       </div>
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
       <div style="z-index: 2002; transition-duration: 0.2s;"
            role="menu"
            tabindex="0"
@@ -776,7 +920,11 @@ exports[`show dropdown item 3`] = `
   <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
       <div style="z-index: 2001; position: absolute; animation-duration: 0s; display: none;"
@@ -784,7 +932,11 @@ exports[`show dropdown item 3`] = `
       >
       </div>
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
       <div style="z-index: 2001; transition-duration: 0s; display: none;"
            role="menu"
            tabindex="0"
@@ -823,7 +975,11 @@ exports[`show dropdown item 3`] = `
   <div style="top: 100px;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
       <div style="z-index: 2002; position: absolute; animation-duration: 0.2s; display: none;"
@@ -831,7 +987,11 @@ exports[`show dropdown item 3`] = `
       >
       </div>
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
       <div style="z-index: 2002; transition-duration: 0.2s; display: none;"
            role="menu"
            tabindex="0"
@@ -899,21 +1059,37 @@ exports[`title prop 1`] = `
   <div style="top: 0px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
   <div style="top: 0px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
 </div>
@@ -937,11 +1113,19 @@ exports[`title slot 1`] = `
   <div style="top: 0px; display: none;"
        class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub role="button"
+    <transition-stub name="van-fade"
+                     appear="true"
+                     persisted="false"
+                     css="true"
+                     role="button"
                      tabindex="0"
     >
     </transition-stub>
-    <transition-stub>
+    <transition-stub name="van-popup-slide-top"
+                     appear="false"
+                     persisted="false"
+                     css="true"
+    >
     </transition-stub>
   </div>
 </div>

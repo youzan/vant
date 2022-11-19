@@ -227,7 +227,10 @@ exports[`should render demo and match snapshot 1`] = `
       <span class="custom-title">
         Cell title
       </span>
-      <transition-stub>
+      <transition-stub appear="false"
+                       persisted="false"
+                       css="true"
+      >
         <span class="van-tag van-tag--primary">
           Tag
         </span>

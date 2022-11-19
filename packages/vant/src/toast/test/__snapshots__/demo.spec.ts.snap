@@ -168,7 +168,11 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub>
+  <transition-stub name="van-fade"
+                   appear="false"
+                   persisted="false"
+                   css="true"
+  >
   </transition-stub>
 </div>
 `;

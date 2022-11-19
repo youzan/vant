@@ -278,3 +278,20 @@ test('title slot', async () => {
   await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('DropdownItem should inherit attrs when using teleport prop', async () => {
+  const root = document.createElement('div');
+  mount({
+    setup() {
+      return () => (
+        <DropdownMenu>
+          <DropdownItem class="foo" teleport={root} />
+        </DropdownMenu>
+      );
+    },
+  });
+
+  await later();
+  const item = root.querySelector('.van-dropdown-item');
+  expect(item?.classList.contains('foo')).toBeTruthy();
+});

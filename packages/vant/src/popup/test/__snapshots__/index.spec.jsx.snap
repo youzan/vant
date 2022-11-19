@@ -1,13 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should change icon class prefix when using icon-prefix prop 1`] = `
-<transition-stub role="button"
+<transition-stub name="van-fade"
+                 appear="true"
+                 persisted="false"
+                 css="true"
+                 role="button"
                  tabindex="0"
 >
   <div class="van-overlay">
   </div>
 </transition-stub>
-<transition-stub>
+<transition-stub name="van-fade"
+                 appear="false"
+                 persisted="false"
+                 css="true"
+>
   <div role="dialog"
        tabindex="0"
        class="van-popup van-popup--center"
@@ -30,14 +38,22 @@ exports[`should render correct close icon when using close-icon prop 1`] = `
 `;
 
 exports[`should render overlay-content slot correctly 1`] = `
-<transition-stub role="button"
+<transition-stub name="van-fade"
+                 appear="true"
+                 persisted="false"
+                 css="true"
+                 role="button"
                  tabindex="0"
 >
   <div class="van-overlay">
     Custom Overlay Content
   </div>
 </transition-stub>
-<transition-stub>
+<transition-stub name="van-fade"
+                 appear="false"
+                 persisted="false"
+                 css="true"
+>
   <div role="dialog"
        tabindex="0"
        class="van-popup van-popup--center"
