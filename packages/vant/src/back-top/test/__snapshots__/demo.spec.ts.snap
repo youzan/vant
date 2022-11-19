@@ -1,0 +1,426 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div class="van-tabs van-tabs--line">
+  <div class="van-tabs__wrap">
+    <div role="tablist"
+         class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
+    >
+      <div id="van-tabs-0"
+           role="tab"
+           class="van-tab van-tab--line van-tab--active"
+           tabindex="0"
+           aria-selected="true"
+           aria-controls="van-tab"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          Basic Usage
+        </span>
+      </div>
+      <div id="van-tabs-1"
+           role="tab"
+           class="van-tab van-tab--line"
+           tabindex="-1"
+           aria-selected="false"
+           aria-controls="van-tab"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          Customizations
+        </span>
+      </div>
+      <div id="van-tabs-2"
+           role="tab"
+           class="van-tab van-tab--line"
+           tabindex="-1"
+           aria-selected="false"
+           aria-controls="van-tab"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          Target
+        </span>
+      </div>
+      <div class="van-tabs__line"
+           style="transform: translateX(50px) translateX(-50%);"
+      >
+      </div>
+    </div>
+  </div>
+  <div class="van-tabs__content">
+    <div id="van-tab"
+         role="tabpanel"
+         class="van-tab__panel"
+         tabindex="0"
+         aria-labelledby="van-tabs-0"
+         style
+    >
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            0
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            1
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            2
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            3
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            4
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            5
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            6
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            7
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            8
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            9
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            10
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            11
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            12
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            13
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            14
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            15
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            16
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            17
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            18
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            19
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            20
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            21
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            22
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            23
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            24
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            25
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            26
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            27
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            28
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            29
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            30
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            31
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            32
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            33
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            34
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            35
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            36
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            37
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            38
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            39
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            40
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            41
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            42
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            43
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            44
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            45
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            46
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            47
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            48
+          </span>
+        </div>
+      </div>
+      <div class="van-cell">
+        <div class="van-cell__title">
+          <span>
+            49
+          </span>
+        </div>
+      </div>
+    </div>
+    <div id="van-tab"
+         role="tabpanel"
+         class="van-tab__panel"
+         tabindex="-1"
+         aria-labelledby="van-tabs-1"
+         style="display: none;"
+    >
+    </div>
+    <div id="van-tab"
+         role="tabpanel"
+         class="van-tab__panel"
+         tabindex="-1"
+         aria-labelledby="van-tabs-2"
+         style="display: none;"
+    >
+    </div>
+  </div>
+</div>
+`;
