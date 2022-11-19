@@ -34,12 +34,12 @@ export default {
 };
 ```
 
-### Customizations
+### Custom Content
 
 ```html
 <van-cell v-for="item in list" :key="item" :title="item" />
 <van-back-top>
-  <div class="custom" style="">Customizations</div>
+  <div class="custom">Custom Content</div>
 </van-back-top>
 ```
 
@@ -59,7 +59,7 @@ export default {
 }
 ```
 
-### Target to be listened to.
+### Set Scroll Target
 
 ```html
 <div class="container">
@@ -87,29 +87,29 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
+| Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | target | Can be a `selector` or `HTMLElement` | _string \| HTMLElement_ | - |
-| right | Right distance of the page | _number \| string_ | `30` |
-| bottom | Bottom distance of the page | _number \| string_ | `40` |
+| right | Right distance of the page, the default unit is px | _number \| string_ | `30` |
+| bottom | Bottom distance of the page, the default unit is px | _number \| string_ | `40` |
 | visibility-height | The button will not show until the scroll height reaches this value | _number_ | `200` |
 | teleport | Specifies a target element where BackTop will be mounted | _string \| Element_ | `body` |
 
 ### Slots
 
-| 名称    | 说明                      |
+| Name    | Description               |
 | ------- | ------------------------- |
 | default | customize default content |
 
-## 主题定制
+## Theming
 
-### 样式变量
+### CSS Variables
 
-组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| 名称                      | 默认值            | 描述 |
-| ------------------------- | ----------------- | ---- |
-| --van-back-top-size       | _40px_            | -    |
-| --van-back-top-icon-size  | _20px_            | -    |
-| --van-back-top-text-color | _#fff_            | -    |
-| --van-back-top-background | _var(--van-blue)_ | -    |
+| Name                      | Default Value     | Description |
+| ------------------------- | ----------------- | ----------- |
+| --van-back-top-size       | _40px_            | -           |
+| --van-back-top-icon-size  | _20px_            | -           |
+| --van-back-top-text-color | _#fff_            | -           |
+| --van-back-top-background | _var(--van-blue)_ | -           |
