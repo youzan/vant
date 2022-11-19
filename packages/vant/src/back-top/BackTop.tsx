@@ -95,11 +95,10 @@ export default defineComponent({
     onMounted(() => {
       nextTick(() => {
         if (inBrowser) {
-          scrollParent.value = document.documentElement;
           target = props.target
             ? (getTarget() as typeof target)
             : (getScrollParent(backTopEl.value!) as typeof target);
-          scrollParent.value = target as typeof target;
+          scrollParent.value = target;
         }
       });
     });
@@ -107,7 +106,7 @@ export default defineComponent({
     return () => {
       const Content = (
         <div
-          ref="backTopEl"
+          ref={backTopEl}
           class={bem({ active: show.value })}
           style={backTopStyle.value}
           onClick={onClick}
