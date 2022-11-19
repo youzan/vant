@@ -1908,7 +1908,7 @@
             "description": "按钮用于触发一个操作，如提交表单。",
             "category": "Display",
             "screenShot": "",
-            "drawings": "",
+            "drawings": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.19/src/button/drawings/0.svg,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.19/src/button/drawings/1.svg,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.19/src/button/drawings/2.svg,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.19/src/button/drawings/3.svg",
             "blocks": [
                 {
                     "title": "主要按钮",
@@ -3656,7 +3656,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n <van-circle  rate=\\\"30\\\" speed=\\\"100\\\"  />\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-circle value=\\\"50\\\" rate=\\\"100\\\" speed=\\\"100\\\" />\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-circle",
             "title": "环形进度条",
@@ -3668,7 +3668,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n <van-circle  rate=\"30\" speed=\"100\"  />\n</template>\n"
+                    "code": "<template>\n<van-circle value=\"50\" rate=\"100\" speed=\"100\" />\n</template>\n"
                 }
             ],
             "attrs": [
@@ -3678,14 +3678,14 @@
                     "type": "number | string",
                     "sync": true,
                     "model": true,
+                    "defalut": 50,
                     "description": "当前进度"
                 },
                 {
                     "name": "rate",
                     "title": "目标进度",
-                    "type": "string",
-                    "sync": true,
-                    "model": true,
+                    "type": "number | string",
+                    "defalut": 100,
                     "description": "目标进度"
                 },
                 {

@@ -12,13 +12,8 @@
       type: number | string
       sync: true
       model: true
+      defalut: 50
       description: 当前进度
-    - name: rate
-      title: 目标进度
-      type: string
-      sync: true
-      model: true
-      description: 目标进度
     - name: size
       title: 圆环直径，默认单位为 px
       type: numer | string

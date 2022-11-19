@@ -1,10 +1,17 @@
 <template>
   <demo-section>
+    <van-circle
+      stroke-linecap="sqaure"
+      value="40"
+      :rate="30"
+      :speed="200"
+      :text="currentRate1.toFixed(0) + '%'"
+    />
     <demo-block :title="t('basicUsage')">
       <van-circle
         stroke-linecap="sqaure"
         v-model="currentRate1"
-        :rate="rate"
+        :rate="400"
         :speed="100"
         :text="currentRate1.toFixed(0) + '%'"
       />
