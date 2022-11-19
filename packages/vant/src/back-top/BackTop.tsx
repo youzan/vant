@@ -45,18 +45,20 @@ export type BackTopProps = ExtractPropTypes<typeof backTopProps>;
 export default defineComponent({
   name,
 
+  inheritAttrs: false,
+
   props: backTopProps,
 
   emits: ['click'],
 
-  setup(props, { emit, slots }) {
+  setup(props, { emit, slots, attrs }) {
     const show = ref(false);
     const scrollParent = ref<Window | HTMLElement>();
-    const backTopEl = ref<HTMLElement | null>(null);
+    const root = ref<HTMLElement | null>(null);
 
     let target: Window | HTMLElement;
 
-    const backTopStyle = computed(() => ({
+    const style = computed(() => ({
       right: addUnit(props.right),
       bottom: addUnit(props.bottom),
     }));
@@ -73,8 +75,6 @@ export default defineComponent({
       show.value = getScrollTop(target) >= props.visibilityHeight;
     };
 
-    const throttleScroll = throttle(scroll, 300);
-
     const getTarget = () => {
       const { target } = props;
 
@@ -86,19 +86,23 @@ export default defineComponent({
         return el as HTMLElement;
       }
 
-      if (isObject(target)) return target;
+      if (isObject(target)) {
+        return target;
+      }
+
       throw Error(
         '[Vant] BackTop: type of prop "target" should be a selector or an element object'
       );
     };
 
-    useEventListener('scroll', throttleScroll, { target: scrollParent });
+    useEventListener('scroll', throttle(scroll, 300), { target: scrollParent });
+
     onMounted(() => {
       nextTick(() => {
         if (inBrowser) {
           target = props.target
             ? (getTarget() as typeof target)
-            : (getScrollParent(backTopEl.value!) as typeof target);
+            : (getScrollParent(root.value!) as typeof target);
           scrollParent.value = target;
         }
       });
@@ -107,14 +111,20 @@ export default defineComponent({
     return () => {
       const Content = (
         <div
-          ref={backTopEl}
+          ref={root}
           class={bem({ active: show.value })}
-          style={backTopStyle.value}
+          style={style.value}
           onClick={onClick}
+          {...attrs}
         >
-          {slots.default ? slots.default() : <Icon name="back-top" />}
+          {slots.default ? (
+            slots.default()
+          ) : (
+            <Icon name="back-top" class={bem('icon')} />
+          )}
         </div>
       );
+
       if (props.teleport) {
         return <Teleport to={props.teleport}>{Content}</Teleport>;
       }

@@ -8,50 +8,61 @@ import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {
+    backTop: '返回顶部',
     customContent: '自定义内容',
-    setScrollTarget: '设置监听目标',
+    customPosition: '自定义位置',
+    setScrollTarget: '设置滚动目标',
   },
   'en-US': {
+    backTop: 'Back Top',
     customContent: 'Custom Content',
+    customPosition: 'Custom Position',
     setScrollTarget: 'Set Scroll Target',
   },
 });
 
+const activeTab = ref(0);
 const list = [...Array(50).keys()];
 const targetEl = ref<HTMLElement>();
 </script>
 
 <template>
-  <van-tabs>
+  <van-tabs v-model:active="activeTab">
     <van-tab :title="t('basicUsage')">
       <van-cell v-for="item in list" :key="item" :title="item" />
-      <van-back-top />
+      <van-back-top v-if="activeTab === 0" />
+    </van-tab>
+
+    <van-tab :title="t('customPosition')">
+      <van-cell v-for="item in list" :key="item" :title="item" />
+      <van-back-top v-if="activeTab === 1" right="15vw" bottom="10vh" />
     </van-tab>
 
     <van-tab :title="t('customContent')">
       <van-cell v-for="item in list" :key="item" :title="item" />
-      <van-back-top bottom="100" right="30">
-        <div class="custom">{{ t('customContent') }}</div>
+      <van-back-top v-if="activeTab === 2" class="custom-back-top">
+        {{ t('backTop') }}
       </van-back-top>
     </van-tab>
 
     <van-tab :title="t('setScrollTarget')">
-      <div class="back-top--test" ref="targetEl">
+      <div class="back-top-wrapper" ref="targetEl">
         <van-cell v-for="item in list" :key="item" :title="item" />
-        <van-back-top :target="targetEl" bottom="150" right="30" />
+        <van-back-top v-if="activeTab === 3" :target="targetEl" bottom="30vh" />
       </div>
     </van-tab>
   </van-tabs>
 </template>
 
 <style lang="less">
-.back-top--test {
-  height: 400px;
+.back-top-wrapper {
+  height: 60vh;
   overflow: auto;
 }
-.custom {
-  width: 200px;
-  line-height: 40px;
+
+.custom-back-top {
+  width: 80px;
+  font-size: 14px;
   text-align: center;
 }
 </style>
