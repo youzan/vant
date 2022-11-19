@@ -92,9 +92,17 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub>
+  <transition-stub name="van-fade"
+                   appear="true"
+                   persisted="false"
+                   css="true"
+  >
   </transition-stub>
-  <transition-stub>
+  <transition-stub name="van-dialog-bounce"
+                   appear="false"
+                   persisted="false"
+                   css="true"
+  >
     <div role="dialog"
          tabindex="0"
          class="van-popup van-popup--center van-dialog"

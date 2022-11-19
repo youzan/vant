@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`create a forbidClick toast 1`] = `
-<transition-stub>
+<transition-stub name="van-fade"
+                 appear="false"
+                 persisted="false"
+                 css="true"
+>
   <div role="dialog"
        tabindex="0"
        class="van-popup van-popup--center van-toast van-toast--middle van-toast--success"
@@ -14,7 +18,11 @@ exports[`create a forbidClick toast 1`] = `
 `;
 
 exports[`should render message slot correctly 1`] = `
-<transition-stub>
+<transition-stub name="van-fade"
+                 appear="false"
+                 persisted="false"
+                 css="true"
+>
   <div role="dialog"
        tabindex="0"
        class="van-popup van-popup--center van-toast van-toast--middle van-toast--text"

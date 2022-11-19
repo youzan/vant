@@ -14,7 +14,11 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
         <div class="van-cell__title van-contact-list__item-title">
           John Snow，13000000000
-          <transition-stub class="van-contact-list__item-tag">
+          <transition-stub appear="false"
+                           persisted="false"
+                           css="true"
+                           class="van-contact-list__item-tag"
+          >
             <span class="van-tag van-tag--round van-tag--primary">
               default
             </span>

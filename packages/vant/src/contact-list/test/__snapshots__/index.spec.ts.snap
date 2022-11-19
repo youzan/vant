@@ -13,7 +13,11 @@ exports[`should render ContactList correctly 1`] = `
       </i>
       <div class="van-cell__title van-contact-list__item-title">
         jack，12345678
-        <transition-stub class="van-contact-list__item-tag">
+        <transition-stub appear="false"
+                         persisted="false"
+                         css="true"
+                         class="van-contact-list__item-tag"
+        >
           <span class="van-tag van-tag--round van-tag--primary">
             默认
           </span>

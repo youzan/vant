@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should allow to disable lazy-render 1`] = `
-<transition-stub>
+<transition-stub name="van-fade"
+                 appear="true"
+                 persisted="false"
+                 css="true"
+>
   <div class="van-overlay"
        style="display: none;"
   >
@@ -10,6 +14,10 @@ exports[`should allow to disable lazy-render 1`] = `
 `;
 
 exports[`should render default slot correctly 1`] = `
-<transition-stub>
+<transition-stub name="van-fade"
+                 appear="true"
+                 persisted="false"
+                 css="true"
+>
 </transition-stub>
 `;

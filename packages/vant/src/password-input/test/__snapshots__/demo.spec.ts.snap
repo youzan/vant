@@ -149,7 +149,11 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
 </div>
-<transition-stub>
+<transition-stub name="van-slide-up"
+                 appear="false"
+                 persisted="false"
+                 css="true"
+>
   <div class="van-number-keyboard">
     <div class="van-number-keyboard__body">
       <div class="van-number-keyboard__keys">

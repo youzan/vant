@@ -23,7 +23,11 @@ exports[`should render demo and match snapshot 1`] = `
               <span class="van-radio__label">
                 <div class="van-address-item__name">
                   John Snow 13000000000
-                  <transition-stub class="van-address-item__tag">
+                  <transition-stub appear="false"
+                                   persisted="false"
+                                   css="true"
+                                   class="van-address-item__tag"
+                  >
                     <span class="van-tag van-tag--round van-tag--primary">
                       Default
                     </span>
