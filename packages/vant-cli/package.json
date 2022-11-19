@@ -45,7 +45,7 @@
     "@types/markdown-it": "^12.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "vue": "^3.2.38"
+    "vue": "^3.2.45"
   },
   "dependencies": {
     "@babel/core": "^7.18.13",

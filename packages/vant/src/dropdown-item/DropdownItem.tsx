@@ -47,11 +47,13 @@ export type DropdownItemProps = ExtractPropTypes<typeof dropdownItemProps>;
 export default defineComponent({
   name,
 
+  inheritAttrs: false,
+
   props: dropdownItemProps,
 
   emits: ['open', 'opened', 'close', 'closed', 'change', 'update:modelValue'],
 
-  setup(props, { emit, slots }) {
+  setup(props, { emit, slots, attrs }) {
     const state = reactive({
       showPopup: false,
       transition: true,
@@ -174,6 +176,7 @@ export default defineComponent({
           style={style}
           class={bem([direction])}
           onClick={onClickWrapper}
+          {...attrs}
         >
           <Popup
             v-model:show={state.showPopup}
