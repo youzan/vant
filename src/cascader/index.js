@@ -371,6 +371,7 @@ export default createComponent({
           notitleblock={this.notitleblock}
           novalue={this.novalue}
           insel={true}
+          nofi={true}
         />
         <Popup
           safe-area-inset-bottom
