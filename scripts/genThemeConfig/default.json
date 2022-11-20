@@ -156,7 +156,7 @@
   "--cell-background-color": "#fff",
   "--cell-border-color": "var(--border-color)",
   "--cell-active-color": "var(--component-active-color)",
-  "--cell-required-color": "var(--brand-primary)",
+  "--cell-required-color": "var(--brand-error)",
   "--cell-label-color": "#969799",
   "--cell-label-font-size": "var(--font-size-sm)",
   "--cell-label-line-height": "var(--line-height-sm)",

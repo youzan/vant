@@ -271,7 +271,7 @@
   --cell-active-color: var(
     --component-active-color
   ); /* @type color */ /* @hidden */
-  --cell-required-color: var(--brand-primary); /* @type color */ /* @hidden */
+  --cell-required-color: var(--brand-error); /* @type color */ /* @hidden */
   --cell-label-color: #969799; /* @type color */ /* @hidden */
   --cell-label-font-size: var(--font-size-sm); /* @hidden */
   --cell-label-line-height: var(--line-height-sm); /* @hidden */
