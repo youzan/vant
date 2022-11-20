@@ -33,4 +33,11 @@ export const FieldMixin = {
       field.children = this;
     }
   },
+  updated() {
+    const field = this.vanField;
+
+    if (field && field.children && !this.nofi) {
+      field.children = this;
+    }
+  },
 };
