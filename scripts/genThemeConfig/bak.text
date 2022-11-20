@@ -1,0 +1,201 @@
+{
+  "id": "4fcd4dfd-683b-4d7e-920f-a6d1a0cabd00",
+  "name": "van-slider",
+  "title": "滑块",
+  "toPosition": "slider",
+  "type": [],
+  "cssProperty": {
+      "--slider-active-background-color": {
+          "type": "color",
+          "desc": "激活态色"
+      },
+      "--slider-inactive-background-color": {
+          "type": "color",
+          "desc": "非激活态色"
+      },
+      "--slider-bar-height": {
+          "type": "input",
+          "desc": "进度条高度"
+      },
+      "--slider-button-width": {
+          "type": "input",
+          "desc": "进度条滑块宽度"
+      },
+      "--slider-button-height": {
+          "type": "input",
+          "desc": "进度条滑块高度"
+      },
+      "--slider-button-border-radius": {
+          "type": "input",
+          "desc": "进度条滑块圆角"
+      },
+      "--slider-button-background-color": {
+          "type": "color",
+          "desc": "进度条滑块背景色"
+      },
+      "--slider-button-box-shadow": {
+          "type": "input",
+          "desc": "进度条滑块阴影"
+      }
+  },
+  "preview": {
+      "template": "<van-slider  :value.sync=\"variable2\" > </van-slider>",
+      "script": "export default {\n    data() {\n        return {\n            variable2: '',\n        };\n    },\n};"
+  }
+},
+{
+  "id": "4fcd4dfd-683b-4d7e-920f-a6d1a0cab222",
+  "name": "van-progress",
+  "title": "进度条",
+  "toPosition": "progress",
+  "type": [],
+  "cssProperty": {
+      "--progress-height": {
+          "type": "input"
+      },
+      "--progress-color": {
+          "type": "color"
+      },
+      "--progress-background-color": {
+          "type": "color"
+      },
+      "--progress-pivot-padding": {
+          "type": "input"
+      },
+      "--progress-pivot-text-color": {
+          "type": "color"
+      },
+      "--progress-pivot-font-size": {
+          "type": "input"
+      },
+      "--progress-pivot-line-height": {
+          "type": "input"
+      },
+      "--progress-pivot-background-color": {
+          "type": "color"
+      }
+  },
+  "preview": {
+      "template": "  <van-progress percentage=\"50\" />"
+  }
+},
+{
+  "id": "4fcd4dfd-683b-4d7e-920f-a6d1fa0abd36",
+  "name": "van-circle",
+  "title": "环形进度条",
+  "toPosition": "circle",
+  "type": [],
+  "cssProperty": {
+      "--circle-size": {
+          "type": "input"
+      },
+      "--circle-color": {
+          "type": "color"
+      },
+      "--circle-layer-color": {
+          "type": "color"
+      },
+      "--circle-text-color": {
+          "type": "color"
+      },
+      "--circle-text-font-weight": {
+          "type": "input"
+      },
+      "--circle-text-font-size": {
+          "type": "input"
+      },
+      "--circle-text-line-height": {
+          "type": "input"
+      }
+  },
+  "preview": {
+      "template": "  <van-circle  rate=\"30\" speed=\"100\"  />"
+  }
+},
+{
+  "id": "4fcd4dfd-683b-4d7e-920f-a6d1fa0fab6",
+  "name": "van-rate",
+  "title": "评分",
+  "toPosition": "rate",
+  "type": [],
+  "cssProperty": {
+      "--rate-icon-size": {
+          "type": "input"
+      },
+      "--rate-icon-gutter": {
+          "type": "input"
+      },
+      "--rate-icon-void-color": {
+          "type": "color"
+      },
+      "--rate-icon-full-color": {
+          "type": "input"
+      },
+      "--rate-icon-disabled-color": {
+          "type": "color"
+      }
+  },
+  "preview": {
+      "template": " <van-rate void-icon=\"star\" icon=\"star\" />"
+  }
+},
+{
+  "id": "4fcd4dfd-683b-4d7e-9210f-fdafdafda",
+  "name": "van-tag",
+  "title": "标签",
+  "toPosition": "tag",
+  "type": [],
+  "cssProperty": {
+      "--tag-padding": {
+          "type": "input"
+      },
+      "--tag-text-color": {
+          "type": "color"
+      },
+      "--tag-font-size": {
+          "type": "input"
+      },
+      "--tag-border-radius": {
+          "type": "input"
+      },
+      "--tag-line-height": {
+          "type": "input"
+      },
+      "--tag-medium-padding": {
+          "type": "input"
+      },
+      "--tag-large-padding": {
+          "type": "input"
+      },
+      "--tag-large-border-radius": {
+          "type": "input"
+      },
+      "--tag-large-font-size": {
+          "type": "input"
+      },
+      "--tag-round-border-radius": {
+          "type": "input"
+      },
+      "--tag-danger-color": {
+          "type": "color"
+      },
+      "--tag-primary-color": {
+          "type": "color"
+      },
+      "--tag-success-color": {
+          "type": "color"
+      },
+      "--tag-warning-color": {
+          "type": "color"
+      },
+      "--tag-default-color": {
+          "type": "color"
+      },
+      "--tag-plain-background-color": {
+          "type": "color"
+      }
+  },
+  "preview": {
+      "template": "<van-tag type=\"primary\" size=\"middle\">标签</van-tag>"
+  }
+}

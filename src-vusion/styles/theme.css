@@ -56,7 +56,7 @@
   --padding-xl: calc(var(--padding-base) * 8);
 
   /* @component van-linear-layout */
-  --linear-layout-background: rgba(255, 255, 255, 0.5); /* @type color */
+  --space-base: var(--space-base); /* @desc 布局内各元素之间的外间距, 如：1px */
 
   /* @component van-panel */
   --panel-background-color: #fff; /* @type color */ /* @desc panel背景色 */
@@ -252,7 +252,7 @@
   --cell-group-background-color: #fff; /* @type color */ /* @desc 单元格组背景色 */
   --cell-group-title-color: #969799; /* @type color */ /* @hidden */
   --cell-group-title-padding: var(--padding-md) var(var(--padding-md))
-    var(--padding-xs); /* hidden */
+    var(--padding-xs); /* @hidden */
   --cell-group-title-font-size: var(--font-size-md); /* @hidden */
   --cell-group-title-line-height: 16px; /* @hidden */
   --cell-group-inset-padding: 0 var(--padding-md); /* @hidden */

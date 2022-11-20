@@ -17,7 +17,7 @@ export default {
 
 <style module>
 .root {
-  color: var(--component-text-color);
+  /* color: var(--component-text-color); */
 }
 
 .root[size="small"] {

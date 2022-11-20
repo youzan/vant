@@ -23,7 +23,7 @@
                 "type": [],
                 "cssProperty": {},
                 "preview": {
-                    "template": " <div style=\"height:100%;background: #F7F8FA;\">\n        <u-text :class=\"[$style.areaTitle, $style.base]\">视觉风格预览</u-text><br>\n        <div>\n            <div :class=\"[$style.sectionTitle, $style.base]\" style=\"margin: 16px 0;\">标签栏</div>\n<van-tabbar :route=\"false\">\n  <van-tabbar-item icon=\"frontpage\" style=\"font-size:24px\" ><van-text text=\"标签\"></van-text></van-tabbar-item>\n  <van-tabbar-item icon=\"contact\" style=\"font-size:24px\" ><van-text text=\"标签\"></van-text></van-tabbar-item>\n  <van-tabbar-item icon=\"location\" style=\"font-size:24px\" ><van-text text=\"标签\"></van-text></van-tabbar-item>\n  <van-tabbar-item icon=\"avatar\" style=\"font-size:24px\" ><van-text text=\"标签\"></van-text></van-tabbar-item>\n</van-tabbar>\n        </div>\n        <div>\n            <div :class=\"[$style.sectionTitle, $style.base]\" style=\"margin: 16px 0;\">下拉菜单</div>\n            <van-dropdown-menu>\n  <van-dropdown-item title=\"标题\">\n    <van-dropdown-item-son clickable :isLink=\"false\" notitle title=\"标题1\"></van-dropdown-item-son>\n    <van-dropdown-item-son clickable :isLink=\"false\" notitle title=\"标题2\"></van-dropdown-item-son>\n    <van-dropdown-item-son clickable :isLink=\"false\" notitle title=\"标题3\"></van-dropdown-item-son>\n  </van-dropdown-item>\n  <van-dropdown-item title=\"标题\">\n    <van-dropdown-item-son clickable :isLink=\"false\" notitle title=\"标题1\"></van-dropdown-item-son>\n    <van-dropdown-item-son clickable :isLink=\"false\" notitle title=\"标题2\"></van-dropdown-item-son>\n    <van-dropdown-item-son clickable :isLink=\"false\" notitle title=\"标题3\"></van-dropdown-item-son>\n  </van-dropdown-item>\n</van-dropdown-menu></div>\n",
+                    "template": " <div style=\"height:100%;background: #F7F8FA;\">\n        <u-text :class=\"[$style.areaTitle, $style.base]\">视觉风格预览</u-text><br>\n        <div>\n            <div :class=\"[$style.sectionTitle, $style.base]\" style=\"margin: 16px 0;\">标签栏</div>\n<van-tabbar :route=\"false\">\n  <van-tabbar-item icon=\"frontpage\" style=\"font-size:20px\" ><van-text text=\"标签\"></van-text></van-tabbar-item>\n  <van-tabbar-item icon=\"contact\" style=\"font-size:20px\" ><van-text text=\"标签\"></van-text></van-tabbar-item>\n  <van-tabbar-item icon=\"location\" style=\"font-size:20px\" ><van-text text=\"标签\"></van-text></van-tabbar-item>\n  <van-tabbar-item icon=\"avatar\" style=\"font-size:20px\" ><van-text text=\"标签\"></van-text></van-tabbar-item>\n</van-tabbar>\n        </div>\n        <div>\n            <div :class=\"[$style.sectionTitle, $style.base]\" style=\"margin: 16px 0;\">下拉菜单</div>\n            <van-dropdown-menu>\n  <van-dropdown-item title=\"标题\">\n    <van-dropdown-item-son clickable :isLink=\"false\" notitle title=\"标题1\"></van-dropdown-item-son>\n    <van-dropdown-item-son clickable :isLink=\"false\" notitle title=\"标题2\"></van-dropdown-item-son>\n    <van-dropdown-item-son clickable :isLink=\"false\" notitle title=\"标题3\"></van-dropdown-item-son>\n  </van-dropdown-item>\n  <van-dropdown-item title=\"标题\">\n    <van-dropdown-item-son clickable :isLink=\"false\" notitle title=\"标题1\"></van-dropdown-item-son>\n    <van-dropdown-item-son clickable :isLink=\"false\" notitle title=\"标题2\"></van-dropdown-item-son>\n    <van-dropdown-item-son clickable :isLink=\"false\" notitle title=\"标题3\"></van-dropdown-item-son>\n  </van-dropdown-item>\n</van-dropdown-menu></div>\n",
                     "style": ".base {\n    font-family: PingFang SC;\n    font-style: normal;\n    font-weight: normal;\n}\n\n.areaTitle {\n    width: 108px;\n    height: 18px;\n    font-size: 18px;\n    line-height: 18px;\n    color: #333333;\n}\n\n.sectionTitle {\n    width: 320px;\n    height: 24px;\n    font-size: 14px;\n    line-height: 24px;\n    color: #666666;\n}\n\n.table {\n    margin-top: 16px;\n}\n\n.table [class^=\"u-form_item_label\"] {\n    padding-right: 12px !important;\n    height: 14px;\n    font-family: PingFang SC;\n    font-style: normal;\n    font-weight: normal;\n    font-size: 14px;\n    line-height: 14px;\n    color: #999999;\n}\n\n.table [class^=\"u-form_item_field__\"] {\n    width: calc(100% - 40px);\n}"
                 }
             },
@@ -114,8 +114,9 @@
                 "toPosition": "linear-layout",
                 "type": [],
                 "cssProperty": {
-                    "--linear-layout-background": {
-                        "type": "color"
+                    "--space-base": {
+                        "type": "input",
+                        "desc": "布局内各元素之间的外间距, 如：1px"
                     }
                 },
                 "preview": {
@@ -161,9 +162,6 @@
                     "--cell-group-background-color": {
                         "type": "color",
                         "desc": "单元格组背景色"
-                    },
-                    "--cell-group-title-padding": {
-                        "type": "input"
                     },
                     "--cell-font-size": {
                         "type": "input",
@@ -434,7 +432,7 @@
                     }
                 },
                 "preview": {
-                    "template": "\n<van-button type=\"info\" size=\"middle\" text=\"middle\" squareroud=\"round\"></van-button>\n\n"
+                    "template": "\n<van-button type=\"info\" size=\"middle\" text=\"info\" squareroud=\"round\"></van-button>\n\n"
                 }
             },
             {
