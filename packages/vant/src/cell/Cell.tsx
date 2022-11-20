@@ -124,7 +124,7 @@ export default defineComponent({
       }
 
       if (props.isLink) {
-        const name = props.arrowDirection
+        const name = props.arrowDirection && props.arrowDirection !== 'right'
           ? `arrow-${props.arrowDirection}`
           : 'arrow';
         return <Icon name={name} class={bem('right-icon')} />;
