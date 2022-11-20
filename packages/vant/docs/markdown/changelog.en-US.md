@@ -19,6 +19,20 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0-rc.8](https://github.com/vant-ui/vant/compare/v4.0.0-rc.7...v4.0.0-rc.8)
+
+`2022-11-20`
+
+**Feature**
+
+- add new BackTop component, note that the API is not stable yet, we may change the API before 4.0 release. [#11236](https://github.com/vant-ui/vant/issues/11236)
+
+**Bug Fixes**
+
+- DropdownItem: should inherit attrs when using teleport [#11273](https://github.com/vant-ui/vant/issues/11273)
+- List: incorrect initial loading value [#11275](https://github.com/vant-ui/vant/issues/11275)
+- NumberKeyboard: should inherit attrs when using teleport [#11274](https://github.com/vant-ui/vant/issues/11274)
+
 ### [v4.0.0-rc.7](https://github.com/vant-ui/vant/compare/v4.0.0-rc.6...v4.0.0-rc.7)
 
 `2022-11-13`

@@ -19,6 +19,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-rc.8](https://github.com/vant-ui/vant/compare/v4.0.0-rc.7...v4.0.0-rc.8)
+
+`2022-11-20`
+
+**Feature**
+
+- 新增 BackTop 回到顶部组件，注意该新组件的 API 尚未稳定，在 4.0 正式版发布前仍可能产生 breaking change [#11236](https://github.com/vant-ui/vant/issues/11236)
+
+**Bug Fixes**
+
+- DropdownItem: 修复使用 teleport 时无法设置 attr 的问题 [#11273](https://github.com/vant-ui/vant/issues/11273)
+- List: 修复初始的 loading 值为 true 时加载错误的问题 [#11275](https://github.com/vant-ui/vant/issues/11275)
+- NumberKeyboard: 修复使用 teleport 时无法设置 attr 的问题 [#11274](https://github.com/vant-ui/vant/issues/11274)
+
 ### [v4.0.0-rc.7](https://github.com/vant-ui/vant/compare/v4.0.0-rc.6...v4.0.0-rc.7)
 
 `2022-11-13`
