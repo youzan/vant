@@ -315,6 +315,7 @@ Use `label-align` prop to align the input value.
 | formatter | Input value formatter | _(val: string) => string_ | - |
 | format-trigger | When to format value, can be set to `onBlur` | _FieldFormatTrigger_ | `onChange` |
 | mask | free mask input , see [vue-the-mask](https://github.com/vuejs-tips/vue-the-mask)，token only support #，X，S | _string \| string[]_ | - |
+| syncMaskValue | Whether to sync mask value | _boolean_ | `false` |
 | arrow-direction | Can be set to `left` `up` `down` | _string_ | `right` |
 | label-class | Label className | _string \| Array \| object_ | - |
 | label-width | Label width | _number \| string_ | `6.2em` |

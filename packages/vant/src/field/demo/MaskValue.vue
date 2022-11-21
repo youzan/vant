@@ -28,6 +28,7 @@ const value = ref('');
         :label="t('label')"
         :placeholder="t('placeholder')"
         :mask="['(##) ####-####', '(##) #####-####']"
+        sync-mask-value
       />
     </van-cell-group>
   </demo-block>

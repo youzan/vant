@@ -95,11 +95,12 @@ test('should format input value when type is digit', () => {
   expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('123');
 });
 
-test('should mask input value when token is #,S,X', () => {
+test('should mask input value when token is #,S,X and syncMaskValue is true', () => {
   const wrapper = mount(Field, {
     props: {
       modelValue: '',
       mask: '#-X-S',
+      syncMaskValue: true,
     },
   });
 
@@ -133,11 +134,50 @@ test('should mask input value when token is #,S,X', () => {
   expect(wrapper.emitted('update:modelValue')[6][0]).toEqual('1-1-G');
 });
 
-test('should mask input value when mask is array', () => {
+test('should mask input value when token is #,S,X', () => {
+  const wrapper = mount(Field, {
+    props: {
+      modelValue: '',
+      mask: '#-X-S',
+    },
+  });
+
+  const input = wrapper.find('input');
+  input.element.value = '12a';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('12a');
+
+  input.element.value = '1ZP';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('1ZP');
+
+  input.element.value = '111';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('11');
+
+  input.element.value = 'Z1';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[3][0]).toEqual('1');
+
+  input.element.value = 'Z11';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[4][0]).toEqual('11');
+
+  input.element.value = 'Z111';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[5][0]).toEqual('11');
+
+  input.element.value = 'Z11G';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[6][0]).toEqual('11G');
+});
+
+test('should mask input value when mask is array and syncMaskValue is true', () => {
   const wrapper = mount(Field, {
     props: {
       modelValue: '',
       mask: ['(##)####-####', '(##)#####-####'],
+      syncMaskValue: true,
     },
   });
 
@@ -151,20 +191,22 @@ test('should mask input value when mask is array', () => {
   expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('(11)11111-1111');
 });
 
-test('should allow to mask value with mask prop', () => {
+test('should mask input value when mask is array', () => {
   const wrapper = mount(Field, {
     props: {
-      modelValue: 'abc',
-      mask: '#-#-#',
+      modelValue: '',
+      mask: ['(##)####-####', '(##)#####-####'],
     },
   });
 
-  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('');
-
   const input = wrapper.find('input');
-  input.element.value = '123efg';
+  input.element.value = '1111111111';
   input.trigger('input');
-  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('1-2-3');
+  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('1111111111');
+
+  input.element.value = '11111111111';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('11111111111');
 });
 
 test('should render textarea when type is textarea', async () => {
@@ -407,6 +449,23 @@ test('should trigger format after blurring when format-trigger prop is blur', as
   expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('efg');
 });
 
+test('should allow to mask value with mask prop and syncMaskValue', () => {
+  const wrapper = mount(Field, {
+    props: {
+      modelValue: 'abc',
+      mask: '#-#-#',
+      syncMaskValue: true,
+    },
+  });
+
+  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('');
+
+  const input = wrapper.find('input');
+  input.element.value = '123efg';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('1-2-3');
+});
+
 test('should allow to mask value with mask prop', () => {
   const wrapper = mount(Field, {
     props: {
@@ -420,7 +479,7 @@ test('should allow to mask value with mask prop', () => {
   const input = wrapper.find('input');
   input.element.value = '123efg';
   input.trigger('input');
-  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('1-2-3');
+  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('123');
 });
 
 test('should render word limit correctly', () => {

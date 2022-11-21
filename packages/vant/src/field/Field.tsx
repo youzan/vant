@@ -96,6 +96,7 @@ export const fieldSharedProps = {
     type: [Array, String] as PropType<string[] | string | null>,
     default: null,
   },
+  syncMaskValue: Boolean,
   error: {
     type: Boolean,
     default: null,
@@ -307,6 +308,7 @@ export default defineComponent({
       let iMask = 0;
       let iValue = 0;
       let result = '';
+      let raw = '';
       while (iMask < mask.length && iValue < value.length) {
         const cMask = mask[iMask];
         const cValue = value[iValue];
@@ -314,6 +316,7 @@ export default defineComponent({
         if (masker) {
           if (masker.pattern.test(cValue)) {
             result += cValue;
+            raw += cValue;
             iMask++;
           }
           iValue++;
@@ -324,7 +327,10 @@ export default defineComponent({
         }
       }
 
-      return result;
+      return {
+        result,
+        raw,
+      };
     };
 
     const updateValue = (
@@ -333,7 +339,8 @@ export default defineComponent({
     ) => {
       value = limitValueLength(value);
 
-      const { mask } = props;
+      const { mask, syncMaskValue } = props;
+      let maskValue = '';
 
       if (props.type === 'number' || props.type === 'digit') {
         const isNumber = props.type === 'number';
@@ -349,24 +356,35 @@ export default defineComponent({
             const currentMask = masksArr.value[i];
             const nextMask = masksArr.value[i + 1];
             if (
-              !(nextMask && maskit(value, nextMask).length > currentMask.length)
+              !(
+                nextMask &&
+                maskit(value, nextMask).result.length > currentMask.length
+              )
             ) {
-              value = maskit(value, currentMask);
+              const { result, raw } = maskit(value, currentMask);
+              maskValue = result;
+              value = raw;
               break;
             }
             i++;
           }
         } else {
-          value = maskit(value, mask);
+          const { result, raw } = maskit(value, mask);
+          maskValue = result;
+          value = raw;
         }
       }
 
-      if (inputRef.value && inputRef.value.value !== value) {
-        inputRef.value.value = value;
+      if (inputRef.value) {
+        const inputValue = maskValue || value;
+        if (inputRef.value.value !== inputValue) {
+          inputRef.value.value = inputValue;
+        }
       }
 
-      if (value !== props.modelValue) {
-        emit('update:modelValue', value);
+      const fieldValue = syncMaskValue ? maskValue : value;
+      if (fieldValue !== props.modelValue) {
+        emit('update:modelValue', fieldValue);
       }
     };
 

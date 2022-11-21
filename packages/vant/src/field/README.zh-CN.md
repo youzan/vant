@@ -334,6 +334,7 @@ export default {
 | formatter | 输入内容格式化函数 | _(val: string) => string_ | - |
 | format-trigger | 格式化函数触发的时机，可选值为 `onBlur` | _FieldFormatTrigger_ | `onChange` |
 | mask | 简易的格式化方式，详见 [vue-the-mask](https://github.com/vuejs-tips/vue-the-mask)，token 只支持#，X，S | _string \| string[]_ | - |
+| syncMaskValue | 是否同步 mask Value 给 field | _boolean_ | `false` |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
 | label-class | 左侧文本额外类名 | _string \| Array \| object_ | - |
 | label-width | 左侧文本宽度，默认单位为 `px` | _number \| string_ | `6.2em` |
