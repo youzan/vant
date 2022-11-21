@@ -1057,6 +1057,199 @@
                     "template": "<div><van-button @click=\"onOpen\">Popup</van-button><van-dialog safe-area-inset-bottom ref=\"dialogh5\">\n  <div vusion-slot-name=\"default\" vusion-disabled-copy style=\"min-height: 100px;\" :vusion-disabled-cut=\"true\" env=\"alone\">内容</div>\n  <template #footer>\n    <van-button\n      :vusion-disabled-cut=\"true\"\n   @click=\"onclose\"   size=\"large\"\n      class=\"van-button van-button--default van-button--large van-dialog__cancel\"\n      text=\"取消\"\n    ></van-button>\n    <van-button\n  @click=\"onclose\"    :vusion-disabled-cut=\"true\"\n      size=\"large\"\n      class=\"van-button van-button--default van-button--large van-dialog__confirm van-hairline--left\"\n      text=\"确认\"\n    ></van-button>\n  </template>\n</van-dialog></div>\n\n",
                     "script": "export default {\n    data() {\n        return {\n            showpopup: false,\n        };\n    },\n    methods: {\n        onOpen() {\n            this.$refs.dialogh5.openModal();\n        },\n    onclose() {\n            this.$refs.dialogh5.closeModal();\n        },},\n};"
                 }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-920f-a6d1a0cabd00",
+                "name": "van-slider",
+                "title": "滑块",
+                "toPosition": "slider",
+                "type": [],
+                "cssProperty": {
+                    "--slider-active-background-color": {
+                        "type": "color",
+                        "desc": "激活态色"
+                    },
+                    "--slider-inactive-background-color": {
+                        "type": "color",
+                        "desc": "非激活态色"
+                    },
+                    "--slider-bar-height": {
+                        "type": "input",
+                        "desc": "进度条高度"
+                    },
+                    "--slider-button-width": {
+                        "type": "input",
+                        "desc": "进度条滑块宽度"
+                    },
+                    "--slider-button-height": {
+                        "type": "input",
+                        "desc": "进度条滑块高度"
+                    },
+                    "--slider-button-border-radius": {
+                        "type": "input",
+                        "desc": "进度条滑块圆角"
+                    },
+                    "--slider-button-background-color": {
+                        "type": "color",
+                        "desc": "进度条滑块背景色"
+                    },
+                    "--slider-button-box-shadow": {
+                        "type": "input",
+                        "desc": "进度条滑块阴影"
+                    }
+                },
+                "preview": {
+                    "template": "<van-slider  :value.sync=\"variable2\" > </van-slider>",
+                    "script": "export default {\n    data() {\n        return {\n            variable2: '',\n        };\n    },\n};"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-920f-a6d1a0cab222",
+                "name": "van-progress",
+                "title": "进度条",
+                "toPosition": "progress",
+                "type": [],
+                "cssProperty": {
+                    "--progress-height": {
+                        "type": "input",
+                        "desc": "进度条高度"
+                    },
+                    "--progress-color": {
+                        "type": "color",
+                        "desc": "进度条激活颜色"
+                    },
+                    "--progress-background-color": {
+                        "type": "color",
+                        "desc": "进度条未激活颜色"
+                    },
+                    "--progress-pivot-padding": {
+                        "type": "input",
+                        "desc": "进度条枢内边距"
+                    },
+                    "--progress-pivot-text-color": {
+                        "type": "color",
+                        "desc": "进度条枢颜色"
+                    },
+                    "--progress-pivot-font-size": {
+                        "type": "input",
+                        "desc": "进度条枢字体大小"
+                    },
+                    "--progress-pivot-line-height": {
+                        "type": "input",
+                        "desc": "进度条枢文字行高"
+                    },
+                    "--progress-pivot-background-color": {
+                        "type": "color",
+                        "desc": "进度条枢背景色"
+                    }
+                },
+                "preview": {
+                    "template": "  <van-progress percentage=\"50\" />"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-920f-a6d1fa0abd36",
+                "name": "van-circle",
+                "title": "环形进度条",
+                "toPosition": "circle",
+                "type": [],
+                "cssProperty": {
+                    "--circle-size": {
+                        "type": "input",
+                        "desc": "环形进度条大小"
+                    },
+                    "--circle-color": {
+                        "type": "color",
+                        "desc": "环形进度条激活颜色"
+                    },
+                    "--circle-layer-color": {
+                        "type": "color",
+                        "desc": "环形进度未条激活颜色"
+                    }
+                },
+                "preview": {
+                    "template": "  <van-circle  value=\"40\"   rate=\"30\" speed=\"100\"  />"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-920f-a6d1fa0fab6",
+                "name": "van-rate",
+                "title": "评分",
+                "toPosition": "rate",
+                "type": [],
+                "cssProperty": {
+                    "--rate-icon-size": {
+                        "type": "input",
+                        "desc": "评分图标大小"
+                    },
+                    "--rate-icon-gutter": {
+                        "type": "input",
+                        "desc": "评分图标间距"
+                    },
+                    "--rate-icon-void-color": {
+                        "type": "color",
+                        "desc": "评分未激活颜色"
+                    },
+                    "--rate-icon-full-color": {
+                        "type": "color",
+                        "desc": "评分激活颜色"
+                    },
+                    "--rate-icon-disabled-color": {
+                        "type": "color",
+                        "desc": "评分图标禁用色"
+                    }
+                },
+                "preview": {
+                    "template": " <van-rate value=\"1\" void-icon=\"star\" icon=\"star\" />"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9210f-fdafdafda",
+                "name": "van-tag",
+                "title": "标签",
+                "toPosition": "tag",
+                "type": [],
+                "cssProperty": {
+                    "--tag-padding": {
+                        "type": "input",
+                        "desc": "标签内边距"
+                    },
+                    "--tag-border-radius": {
+                        "type": "input",
+                        "desc": "标签圆角"
+                    },
+                    "--tag-large-padding": {
+                        "type": "input",
+                        "desc": "大标签内边距"
+                    },
+                    "--tag-large-border-radius": {
+                        "type": "input",
+                        "desc": "大标签圆角"
+                    },
+                    "--tag-danger-color": {
+                        "type": "color",
+                        "desc": "危险类型颜色"
+                    },
+                    "--tag-primary-color": {
+                        "type": "color",
+                        "desc": "信息类型颜色"
+                    },
+                    "--tag-success-color": {
+                        "type": "color",
+                        "desc": "成功类型颜色"
+                    },
+                    "--tag-warning-color": {
+                        "type": "color",
+                        "desc": "警告类型颜色"
+                    },
+                    "--tag-default-color": {
+                        "type": "color",
+                        "desc": "默认类型颜色"
+                    }
+                },
+                "preview": {
+                    "template": "<van-tag type=\"primary\" size=\"middle\">标签</van-tag>"
+                }
             }
         ]
     }

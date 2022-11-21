@@ -3682,13 +3682,6 @@
                     "description": "当前进度"
                 },
                 {
-                    "name": "rate",
-                    "title": "目标进度",
-                    "type": "number | string",
-                    "defalut": 100,
-                    "description": "目标进度"
-                },
-                {
                     "name": "size",
                     "title": "圆环直径，默认单位为 px",
                     "type": "numer | string",

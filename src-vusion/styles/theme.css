@@ -622,46 +622,64 @@
   --slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* @desc 进度条滑块阴影 */
 
   /* @component van-progress */
-  --progress-height: 4px;
-  --progress-color: var(--brand-primary); /* @type color */
-  --progress-background-color: var(--border-color); /* @type color */
-  --progress-pivot-padding: 0 5px;
-  --progress-pivot-text-color: #ffffff; /* @type color */
-  --progress-pivot-font-size: var(--font-size-xs);
-  --progress-pivot-line-height: 1.6;
-  --progress-pivot-background-color: var(--brand-primary); /* @type color */
+  --progress-height: 4px; /* @desc 进度条高度 */
+  --progress-color: var(
+    --brand-primary
+  ); /* @type color */ /* @desc 进度条激活颜色 */
+  --progress-background-color: var(
+    --border-color
+  ); /* @type color */ /* @desc 进度条未激活颜色 */
+  --progress-pivot-padding: 0 5px; /* @desc 进度条枢内边距 */
+  --progress-pivot-text-color: #ffffff; /* @type color */ /* @desc 进度条枢颜色 */
+  --progress-pivot-font-size: var(--font-size-xs); /* @desc 进度条枢字体大小 */
+  --progress-pivot-line-height: 1.6; /* @desc 进度条枢文字行高 */
+  --progress-pivot-background-color: var(
+    --brand-primary
+  ); /* @type color */ /* @desc 进度条枢背景色 */
 
   /* @component van-rate */
-  --rate-icon-size: 20px;
-  --rate-icon-gutter: var(--padding-base);
-  --rate-icon-void-color: #c8c9cc; /* @type color */
-  --rate-icon-full-color: var(--brand-error);
-  --rate-icon-disabled-color: #c8c9cc; /* @type color */
+  --rate-icon-size: 20px; /* @desc 评分图标大小 */
+  --rate-icon-gutter: var(--padding-base); /* @desc 评分图标间距 */
+  --rate-icon-void-color: #c8c9cc; /* @type color */ /* @desc 评分未激活颜色 */
+  --rate-icon-full-color: var(
+    --brand-error
+  ); /* @type color */ /* @desc 评分激活颜色 */
+  --rate-icon-disabled-color: #c8c9cc; /* @type color */ /* @desc 评分图标禁用色 */
 
   /* @component van-circle */
-  --circle-size: 100px;
-  --circle-color: var(--brand-primary); /* @type color */
-  --circle-layer-color: #ffffff; /* @type color */
-  --circle-text-color: var(--component-text-color); /* @type color */
-  --circle-text-font-weight: var(--font-weight-bold);
-  --circle-text-font-size: var(--font-size-md);
-  --circle-text-line-height: var(--line-height-md);
+  --circle-size: 100px; /* @desc 环形进度条大小 */
+  --circle-color: var(
+    --brand-primary
+  ); /* @type color */ /* @desc 环形进度条激活颜色 */
+  --circle-layer-color: #ffffff; /* @type color */ /* @desc 环形进度未条激活颜色 */
+  --circle-text-color: var(--component-text-color); /* @hidden */
+  --circle-text-font-weight: var(--font-weight-bold); /* @hidden */
+  --circle-text-font-size: var(--font-size-md); /* @hidden */
+  --circle-text-line-height: var(--line-height-md); /* @hidden */
 
   /* @component van-tag */
-  --tag-padding: 0 var(--padding-base);
-  --tag-text-color: #ffffff; /* @type color */
-  --tag-font-size: var(--font-size-sm);
-  --tag-border-radius: 2px;
-  --tag-line-height: 16px;
-  --tag-medium-padding: 2px 6px;
-  --tag-large-padding: var(--padding-base) var(--padding-xs);
-  --tag-large-border-radius: var(--border-radius-md);
-  --tag-large-font-size: var(--font-size-md);
-  --tag-round-border-radius: var(--border-radius-max);
-  --tag-danger-color: var(--brand-error); /* @type color */
-  --tag-primary-color: var(--brand-primary); /* @type color */
-  --tag-success-color: var(--brand-success); /* @type color */
-  --tag-warning-color: var(--brand-problem); /* @type color */
-  --tag-default-color: #969799; /* @type color */
-  --tag-plain-background-color: #ffffff; /* @type color */
+  --tag-padding: 0 var(--padding-base); /* @desc 标签内边距 */
+  --tag-text-color: #ffffff; /* @hidden */
+  --tag-font-size: var(--font-size-sm); /* @hidden */
+  --tag-border-radius: 2px; /* @desc 标签圆角 */
+  --tag-line-height: 16px; /* @hidden */
+  --tag-medium-padding: 2px 6px; /* @hidden */
+  --tag-large-padding: var(--padding-base) var(--padding-xs); /* @desc 大标签内边距 */
+  --tag-large-border-radius: var(--border-radius-md); /* @desc 大标签圆角 */
+  --tag-large-font-size: var(--font-size-md); /* @hidden */
+  --tag-round-border-radius: var(--border-radius-max); /* @hidden */
+  --tag-danger-color: var(
+    --brand-error
+  ); /* @type color */ /* @desc 危险类型颜色 */
+  --tag-primary-color: var(
+    --brand-primary
+  ); /* @type color */ /* @desc 信息类型颜色 */
+  --tag-success-color: var(
+    --brand-success
+  ); /* @type color */ /* @desc 成功类型颜色 */
+  --tag-warning-color: var(
+    --brand-problem
+  ); /* @type color */ /* @desc 警告类型颜色 */
+  --tag-default-color: #969799; /* @type color */ /* @desc 默认类型颜色 */
+  --tag-plain-background-color: #ffffff; /* @type color */ /* @hidden */
 }
