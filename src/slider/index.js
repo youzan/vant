@@ -76,7 +76,7 @@ export default createComponent({
 
   mounted() {
     if (this.range) {
-    
+
       this.bindTouchEvent(this.$refs.wrapper0);
       this.bindTouchEvent(this.$refs.wrapper1);
     } else {
@@ -85,7 +85,7 @@ export default createComponent({
   },
   watch: {
     range (value) {
-        console.log(value);
+        // console.log(value);
     }
   },
 
