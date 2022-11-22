@@ -4,6 +4,7 @@
    *   Global Variables
    * ========================
    */
+   --space-base: 16px;
 
   /* Brand Colors */
   --brand-primary: #337eff;
@@ -36,8 +37,7 @@
   --base-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
     helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui',
     'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
-  --price-integer-font-family: avenir-heavy, pingfang sc, helvetica neue, arial,
-    sans-serif;
+  --price-integer-font-family: avenir-heavy, pingfang sc, helvetica neue, arial, sans-serif;
 
   /* Border Color */
   --border-color: #e5e5e5;
@@ -115,7 +115,6 @@
   --button-mini-font-size: var(--font-size-xs); /* @desc 迷你 button字体大小 */
   --button-small-height: 28px; /* @desc 小 button  高度 */
   --button-small-font-size: var(--font-size-sm); /* @desc 小 button字体大小 */
-
   --button-normal-font-size: var(
     --font-size-md
   ); /* @desc 正常 button字体大小 */
@@ -126,6 +125,7 @@
   --button-default-font-size: var(
     --font-size-lg
   ); /* @desc 普通 button字体大小 */
+
   --button-default-color: var(
     --component-text-color
   ); /* @type color */ /* @hidden */
@@ -167,6 +167,7 @@
   --button-round-border-radius: var(
     --border-radius-max
   ); /* @desc 圆角按钮圆角 */
+
   --button-plain-background-color: #fff; /* @type color */ /* @hidden */
   --button-disabled-opacity: var(
     --component-disabled-opacity
@@ -196,9 +197,11 @@
   --calendar-header-title-font-size: var(
     --font-size-lg
   ); /* @desc 日历头部字体大小 */
+
   --calendar-header-subtitle-font-size: var(
     --font-size-md
   ); /* @desc 日历子标题字体大小 */
+
   --calendar-weekdays-height: 30px; /* @desc 星期高度 */
   --calendar-weekdays-font-size: var(--font-size-sm); /* @desc 星期字体大小 */
   --calendar-month-title-font-size: var(--font-size-md);
@@ -253,12 +256,14 @@
   --cell-group-title-color: #969799; /* @type color */ /* @hidden */
   --cell-group-title-padding: var(--padding-md) var(var(--padding-md))
     var(--padding-xs); /* @hidden */
+
   --cell-group-title-font-size: var(--font-size-md); /* @hidden */
   --cell-group-title-line-height: 16px; /* @hidden */
   --cell-group-inset-padding: 0 var(--padding-md); /* @hidden */
   --cell-group-inset-border-radius: var(--border-radius-lg); /* @hidden */
   --cell-group-inset-title-padding: var(--padding-md) var(--padding-md)
     var(--padding-xs) var(--padding-xl); /* @hidden */
+
   --cell-font-size: var(--font-size-md); /* @desc 文字大小 */
   --cell-line-height: 24px; /* @desc 行高 */
   --cell-vertical-padding: 16px; /* @hidden */
@@ -441,6 +446,7 @@
   --sidebar-selected-font-weight: var(
     --font-weight-bold
   ); /* @desc 选中态字体粗细 */
+
   --sidebar-selected-text-color: var(
     --component-text-color
   ); /* @type color */ /* @desc 选中态字体颜色 */
@@ -630,7 +636,7 @@
     --border-color
   ); /* @type color */ /* @desc 进度条未激活颜色 */
   --progress-pivot-padding: 0 5px; /* @desc 进度条枢内边距 */
-  --progress-pivot-text-color: #ffffff; /* @type color */ /* @desc 进度条枢颜色 */
+  --progress-pivot-text-color: #fff; /* @type color */ /* @desc 进度条枢颜色 */
   --progress-pivot-font-size: var(--font-size-xs); /* @desc 进度条枢字体大小 */
   --progress-pivot-line-height: 1.6; /* @desc 进度条枢文字行高 */
   --progress-pivot-background-color: var(
@@ -651,7 +657,7 @@
   --circle-color: var(
     --brand-primary
   ); /* @type color */ /* @desc 环形进度条激活颜色 */
-  --circle-layer-color: #ffffff; /* @type color */ /* @desc 环形进度未条激活颜色 */
+  --circle-layer-color: #fff; /* @type color */ /* @desc 环形进度未条激活颜色 */
   --circle-text-color: var(--component-text-color); /* @hidden */
   --circle-text-font-weight: var(--font-weight-bold); /* @hidden */
   --circle-text-font-size: var(--font-size-md); /* @hidden */
@@ -659,7 +665,7 @@
 
   /* @component van-tag */
   --tag-padding: 0 var(--padding-base); /* @desc 标签内边距 */
-  --tag-text-color: #ffffff; /* @hidden */
+  --tag-text-color: #fff; /* @hidden */
   --tag-font-size: var(--font-size-sm); /* @hidden */
   --tag-border-radius: 2px; /* @desc 标签圆角 */
   --tag-line-height: 16px; /* @hidden */
@@ -681,5 +687,5 @@
     --brand-problem
   ); /* @type color */ /* @desc 警告类型颜色 */
   --tag-default-color: #969799; /* @type color */ /* @desc 默认类型颜色 */
-  --tag-plain-background-color: #ffffff; /* @type color */ /* @hidden */
+  --tag-plain-background-color: #fff; /* @type color */ /* @hidden */
 }
