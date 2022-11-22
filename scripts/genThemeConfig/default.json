@@ -227,7 +227,7 @@
     "--picker-title-line-height": "var(--line-height-md)",
     "--picker-action-padding": "0 var(--padding-md)",
     "--picker-action-font-size": "var(--font-size-md)",
-    "--picker-confirm-action-color": "var(--component-text-link-color)",
+    "--picker-confirm-action-color": "var(--brand-primary)",
     "--picker-cancel-action-color": "#969799",
     "--picker-option-font-size": "var(--font-size-lg)",
     "--picker-option-text-color": "#000",

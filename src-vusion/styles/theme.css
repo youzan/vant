@@ -380,7 +380,7 @@
   --picker-action-padding: 0 var(--padding-md);
   --picker-action-font-size: var(--font-size-md);
   --picker-confirm-action-color: var(
-    --component-text-link-color
+    --brand-primary
   ); /* @type color */
 
   --picker-cancel-action-color: #969799; /* @type color */
