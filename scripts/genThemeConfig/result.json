@@ -769,43 +769,43 @@
                 "toPosition": "switch",
                 "type": [],
                 "cssProperty": {
-                    "--switch-size": {
+                    "--van-switch-size": {
                         "type": "input",
                         "desc": "字体大小"
                     },
-                    "--switch-width": {
+                    "--van-switch-width": {
                         "type": "input",
                         "desc": "宽度"
                     },
-                    "--switch-height": {
+                    "--van-switch-height": {
                         "type": "input",
                         "desc": "高度"
                     },
-                    "--switch-node-size": {
+                    "--van-switch-node-size": {
                         "type": "input",
                         "desc": "node大小"
                     },
-                    "--switch-node-background-color": {
+                    "--van-switch-node-background-color": {
                         "type": "color",
                         "desc": "node背景色"
                     },
-                    "--switch-node-box-shadow": {
+                    "--van-switch-node-box-shadow": {
                         "type": "input",
                         "desc": "node阴影"
                     },
-                    "--switch-background-color": {
+                    "--van-switch-background-color": {
                         "type": "color",
                         "desc": "整体背景色"
                     },
-                    "--switch-on-background-color": {
+                    "--van-switch-on-background-color": {
                         "type": "color",
                         "desc": "激活态背景色"
                     },
-                    "--switch-transition-duration": {
+                    "--van-switch-transition-duration": {
                         "type": "input",
                         "desc": "动画时间"
                     },
-                    "--switch-disabled-opacity": {
+                    "--van-switch-disabled-opacity": {
                         "type": "input",
                         "desc": "禁用态透明度"
                     }

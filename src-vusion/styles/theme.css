@@ -523,20 +523,20 @@
   ); /* @type color */ /* @desc indicator 非active态背景色 */
 
   /* @component van-switch */
-  --switch-size: 27px; /* @desc 字体大小 */
-  --switch-width: 1.75em; /* @desc 宽度 */
-  --switch-height: 1em; /* @desc 高度 */
-  --switch-node-size: 1em; /* @desc node大小 */
-  --switch-node-background-color: #fff; /* @type color */ /* @desc node背景色 */
-  --switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
+  --van-switch-size: 27px; /* @desc 字体大小 */
+  --van-switch-width: 1.75em; /* @desc 宽度 */
+  --van-switch-height: 1em; /* @desc 高度 */
+  --van-switch-node-size: 1em; /* @desc node大小 */
+  --van-switch-node-background-color: #fff; /* @type color */ /* @desc node背景色 */
+  --van-switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
     0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05); /* @desc node阴影 */
 
-  --switch-background-color: #f2f3f5; /* @type color */ /* @desc 整体背景色 */
-  --switch-on-background-color: var(
+  --van-switch-background-color: #f2f3f5; /* @type color */ /* @desc 整体背景色 */
+  --van-switch-on-background-color: var(
     --brand-primary
   ); /* @type color */ /* @desc 激活态背景色 */
-  --switch-transition-duration: 0.3s; /* @desc 动画时间 */
-  --switch-disabled-opacity: var(
+  --van-switch-transition-duration: 0.3s; /* @desc 动画时间 */
+  --van-switch-disabled-opacity: var(
     --component-disabled-opacity
   ); /* @desc 禁用态透明度 */
 

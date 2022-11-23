@@ -8,7 +8,7 @@
   height: @switch-height;
   font-size: @switch-size;
   background-color: @switch-background-color;
-  border:  calc(var(--border-width-base) * 2) solid @gray-2;;
+  border: calc(var(--border-width-base) * 2) solid @gray-2;
   border-radius: @switch-node-size;
   cursor: pointer;
   transition: background-color @switch-transition-duration;
@@ -38,7 +38,9 @@
     background-color: @switch-on-background-color;
     border: calc(var(--border-width-base) * 2) solid @switch-on-background-color;
     .van-switch__node {
-      transform: translateX(calc(var(--switch-width) - var(--switch-node-size)));
+      transform: translateX(
+        calc(var(--van-switch-width) - var(--van-switch-node-size))
+      );
     }
 
     .van-switch__loading {
