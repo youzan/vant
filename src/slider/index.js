@@ -43,6 +43,7 @@ export default createComponent({
   data() {
     return {
       dragStatus: '',
+      currentData: 0,
     };
   },
 
@@ -65,18 +66,11 @@ export default createComponent({
   },
 
   created() {
-    // format initial value
-    if (this.range) {
-      if (typeof this.value === "string" || typeof this.value === "number") {
-        this.value = [0, 100]
-      }
-    }
     this.updateValue(this.value);
   },
 
   mounted() {
     if (this.range) {
-
       this.bindTouchEvent(this.$refs.wrapper0);
       this.bindTouchEvent(this.$refs.wrapper1);
     } else {
@@ -85,7 +79,16 @@ export default createComponent({
   },
   watch: {
     range (value) {
-        // console.log(value);
+      if (value) {
+        this.currentData =  Array.isArray(this.value)?this.value  : [0, 100]
+        this.updateValue(this.currentData);
+      } else {
+        this.currentData = this.value || 0
+        this.updateValue(this.currentData);
+      }
+    },
+    value(value) {
+      this.currentData =value
     }
   },
 
@@ -96,11 +99,12 @@ export default createComponent({
       }
 
       this.touchStart(event);
-      this.currentValue = this.value;
+      console.log(this.currentData);
+      this.currentValue = this.currentData;
       if (this.range) {
-        this.startValue = this.value.map(this.format);
+        this.startValue = this.currentData.map(this.format);
       } else {
-        this.startValue = this.format(this.value);
+        this.startValue = this.format(this.currentData);
       }
       this.dragStatus = 'start';
     },
@@ -135,6 +139,7 @@ export default createComponent({
       if (this.disabled) {
         return;
       }
+      console.log(this.currentValue);
 
       if (this.dragStatus === 'draging') {
         this.updateValue(this.currentValue, true);
@@ -146,18 +151,19 @@ export default createComponent({
 
     onClick(event) {
       event.stopPropagation();
-
       if (this.disabled) return;
 
       const rect = this.$el.getBoundingClientRect();
+      console.log(rect,this.vertical);
       const delta = this.vertical
         ? event.clientY - rect.top
         : event.clientX - rect.left;
       const total = this.vertical ? rect.height : rect.width;
       let value = +this.min + (delta / total) * this.scope;
-
+      // console.log(this.min, delta, this.scope, total);
+      console.log(this.currentData,222);
       if (this.range) {
-        let [left, right] = this.value;
+        let [left, right] = this.currentData;
         const middle = (left + right) / 2;
         if (value <= middle) {
           left = value;
@@ -166,8 +172,9 @@ export default createComponent({
         }
         value = [left, right];
       }
+      console.log(value);
 
-      this.startValue = this.value;
+      this.startValue = this.currentData;
       this.updateValue(value, true);
     },
 
@@ -182,19 +189,22 @@ export default createComponent({
 
     updateValue(value, end) {
       if (this.range) {
-        value = this.handleOverlap(value).map(this.format);
+        const _value =  Array.isArray(value)?value:[0,100]
+        value = this.handleOverlap(_value).map(this.format);
       } else {
         value = this.format(value);
       }
 
-      if (!isSameValue(value, this.value)) {
+      if (!isSameValue(value, this.currentData)) {
         this.$emit("update:value",value)
         this.$emit('input', value);
+        this.currentData = value
       }
 
       if (end && !isSameValue(value, this.startValue)) {
         this.$emit('update:value', value);
         this.$emit('change', value);
+        this.currentData = value
       }
     },
 
@@ -221,7 +231,7 @@ export default createComponent({
 
     // 计算选中条的长度百分比
     const calcMainAxis = () => {
-      const { value, min, range, scope } = this;
+      const { currentData: value, min, range, scope } = this;
       if (range) {
         return `${((value[1] - value[0]) * 100) / scope}%`;
       }
@@ -230,7 +240,7 @@ export default createComponent({
 
     // 计算选中条的开始位置的偏移量
     const calcOffset = () => {
-      const { value, min, range, scope } = this;
+      const { currentData: value, min, range, scope } = this;
       if (range) {
         return `${((value[0] - min) * 100) / scope}%`;
       }
@@ -251,7 +261,7 @@ export default createComponent({
     const renderButton = (i) => {
       const map = ['left', 'right'];
       const isNumber = typeof i === 'number';
-      const current = isNumber ? this.value[i] : this.value;
+      const current = isNumber ? this.currentData[i] : this.currentData;
 
       const getClassName = () => {
         if (isNumber) {
@@ -297,7 +307,7 @@ export default createComponent({
           role="slider"
           tabindex={this.disabled ? -1 : 0}
           aria-valuemin={this.min}
-          aria-valuenow={this.value}
+          aria-valuenow={this.currentData}
           aria-valuemax={this.max}
           aria-orientation={this.vertical ? 'vertical' : 'horizontal'}
           class={bem(getClassName())}
