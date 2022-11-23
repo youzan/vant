@@ -3505,7 +3505,8 @@
                 {
                     "concept": "Slot",
                     "name": "default",
-                    "description": "插入文本或HTML"
+                    "description": "插入文本或HTML",
+                    "advanced": true
                 }
             ],
             "events": [
@@ -3586,12 +3587,6 @@
                     ],
                     "default": "medium",
                     "description": "设置尺寸"
-                },
-                {
-                    "name": "color",
-                    "title": "标签颜色",
-                    "type": "string",
-                    "description": "标签颜色"
                 },
                 {
                     "name": "plain",
@@ -5708,7 +5703,8 @@
                 {
                     "concept": "Slot",
                     "name": "default",
-                    "description": "内容"
+                    "description": "内容",
+                    "advanced": true
                 }
             ],
             "events": [

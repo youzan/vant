@@ -60,6 +60,7 @@
     - concept: Slot
       name: default
       description: 插入文本或HTML
+      advanced: true
   events:
     - name: click
       title: 点击后
