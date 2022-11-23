@@ -57,12 +57,21 @@ export default createComponent({
       default: true,
     },
   },
-
+  data() {
+    return {
+      current:0
+    }
+  },
+  watch: {
+    value(value) {
+      this.current = value
+    }
+},
   computed: {
     list() {
       const list = [];
       for (let i = 1; i <= this.count; i++) {
-        list.push(getRateStatus(this.value, i, this.allowHalf));
+        list.push(getRateStatus(this.current, i, this.allowHalf));
       }
 
       return list;
@@ -79,6 +88,7 @@ export default createComponent({
 
   mounted() {
     this.bindTouchEvent(this.$el);
+    this.current = this.value
   },
   methods: {
     select(index) {
@@ -86,6 +96,7 @@ export default createComponent({
         this.$emit('update:value', index);
         this.$emit('input', index);
         this.$emit('change', index);
+        this.current= index
       }
     },
 
