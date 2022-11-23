@@ -6,7 +6,7 @@
   left: 50%;
   width: @dialog-width;
   font-size: @dialog-font-size;
- 
+
   transform: translate3d(-50%, -50%, 0);
   backface-visibility: hidden; // avoid blurry text after scale animation
   transition: @dialog-transition;
@@ -40,7 +40,7 @@
       min-height: 104px;
     }
 
-    & > div {
+    & > .dialogchild, & > div:nth-child(1) {
       flex: 1;
       max-height: @dialog-message-max-height;
       padding: 24px;
