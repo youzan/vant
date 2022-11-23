@@ -66,7 +66,11 @@ export default createComponent({
   },
 
   created() {
-    this.updateValue(this.value);
+    if (typeof this.value ==="string"&&this.value.indexOf("{") !== -1) {
+      this.updateValue(0);
+    } else {
+      this.updateValue(this.value);
+    }
   },
 
   mounted() {
@@ -88,7 +92,7 @@ export default createComponent({
       }
     },
     value(value) {
-      this.currentData =value
+      this.currentData = value
     }
   },
 
