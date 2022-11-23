@@ -3,7 +3,6 @@ import Icon from '../icon';
 // eslint-disable-next-line import/no-cycle
 import ImagePreview from '../image-preview';
 
-
 const [createComponent, bem] = createNamespace('image');
 
 export default createComponent({
@@ -102,7 +101,10 @@ export default createComponent({
       }
       if (typeof src === 'string') {
         // 判断是否有多个 url
-        const srcList = src.match(/(https:|http:|ftp:|file:)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g) || [];
+        const srcList =
+          src.match(
+            /(https:|http:|ftp:|file:)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g
+          ) || [];
         return srcList && srcList.length > 1 ? srcList[0] : src;
       }
 
@@ -142,13 +144,12 @@ export default createComponent({
 
     onClick(event) {
       if (this.$parent.$options._componentTag === 'van-cardu') return;
+      if (window.top.globalData) return;
       if (this.$listeners.click) {
         this.$emit('click', event);
-      } else {
-        if (!this.ifDesigner()) {
+      } else if (!this.ifDesigner()) {
           ImagePreview([this.getSrc(this.src)]);
         }
-      }
     },
 
     genPlaceholder() {
@@ -167,7 +168,10 @@ export default createComponent({
       }
 
       if (this.error && this.showError) {
-        if (!this.ifDesigner() && this.$parent.$options._componentTag === 'van-cardu') {
+        if (
+          !this.ifDesigner() &&
+          this.$parent.$options._componentTag === 'van-cardu'
+        ) {
           return null;
         }
         return (

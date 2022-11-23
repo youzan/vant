@@ -713,12 +713,6 @@
                     "title": "点击后",
                     "description": "点击此项时触发",
                     "params": []
-                },
-                {
-                    "name": "dblclick",
-                    "title": "双击",
-                    "description": "双击此项时触发",
-                    "params": []
                 }
             ],
             "next": true,
@@ -1278,7 +1272,8 @@
                     "name": "route",
                     "title": "是否开启路由模式",
                     "type": "boolean",
-                    "default": true,
+                    "default": false,
+                    "advanced": true,
                     "description": "是否开启路由模式"
                 }
             ],
@@ -1773,7 +1768,7 @@
                         {
                             "name": "van-tabbar-item",
                             "title": "标签项",
-                            "snippet": "<van-tabbar-item icon=\"默认\" text=\"标签\"></van-tabbar-item>"
+                            "snippet": "<van-tabbar-item icon=\"默认\" style=\"font-size:24px\"><van-text text=\"标签\"></van-text></van-tabbar-item>"
                         }
                     ]
                 }
@@ -2931,6 +2926,7 @@
                     "title": "下划线",
                     "type": "boolean",
                     "default": true,
+                    "advanced": true,
                     "description": "是否显示下划线"
                 },
                 {

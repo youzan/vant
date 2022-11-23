@@ -62,7 +62,7 @@ export default createComponent({
         ? value === this.currentName
         : value.some((name) => name === this.currentName);
       } catch (e) {
-        console.log(e)
+        // console.log(e)
       }
 
     },
