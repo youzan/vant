@@ -22,8 +22,14 @@ export default createComponent({
   props: {
     text: String,
     size: [Number, String],
-    color: [String, Object],
-    layerColor: String,
+    color: {
+      type: [String, Object],
+      default:"#337eff"
+    } ,
+    layerColor: {
+      type: String,
+      default: '#ffffff',
+    },
     strokeLinecap: String,
     value: {
       type: Number,
@@ -35,7 +41,7 @@ export default createComponent({
     },
     fill: {
       type: String,
-      default: 'none',
+      default: '#ffffff',
     },
     rate: {
       type: [Number, String],
