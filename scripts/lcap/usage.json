@@ -1768,7 +1768,7 @@
                         {
                             "name": "van-tabbar-item",
                             "title": "标签项",
-                            "snippet": "<van-tabbar-item icon=\"默认\" text=\"标签\" style=\"font-size:24px\"></van-tabbar-item>"
+                            "snippet": "<van-tabbar-item icon=\"默认\" style=\"font-size:24px\"><van-text text=\"标签\"></van-text></van-tabbar-item>"
                         }
                     ]
                 }
