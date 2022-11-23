@@ -19,6 +19,16 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.6.6](https://github.com/vant-ui/vant/compare/v3.6.5...v3.6.6)
+
+`2022-11-23`
+
+**Bug Fixes**
+
+- Cell: arrow-direction assignment right is invalid [#11279](https://github.com/vant-ui/vant/issues/11279)
+- List: incorrect initial loading value [#11275](https://github.com/vant-ui/vant/issues/11275)
+- NumberKeyboard: should inherit attrs when using teleport [#11274](https://github.com/vant-ui/vant/issues/11274)
+
 ### [v3.6.5](https://github.com/vant-ui/vant/compare/v3.6.4...v3.6.5)
 
 `2022-11-08`

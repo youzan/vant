@@ -19,6 +19,16 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.6.6](https://github.com/vant-ui/vant/compare/v3.6.5...v3.6.6)
+
+`2022-11-23`
+
+**Bug Fixes**
+
+- Cell: 修复 arrow-direction 属性设置为 right 不生效的问题 [#11279](https://github.com/vant-ui/vant/issues/11279)
+- List: 修复初始的 loading 状态可能不正确的问题 [#11275](https://github.com/vant-ui/vant/issues/11275)
+- NumberKeyboard: 修复使用 teleport 属性时未正确继承 attrs 的问题 [#11274](https://github.com/vant-ui/vant/issues/11274)
+
 ### [v3.6.5](https://github.com/vant-ui/vant/compare/v3.6.4...v3.6.5)
 
 `2022-11-08`
