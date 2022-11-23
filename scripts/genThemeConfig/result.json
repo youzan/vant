@@ -56,10 +56,6 @@
                     "--popup-background-color": {
                         "type": "color",
                         "desc": "背景色"
-                    },
-                    "--popup-transition": {
-                        "type": "input",
-                        "desc": "动画时间"
                     }
                 },
                 "preview": {
@@ -159,10 +155,6 @@
                 "toPosition": "cell-group",
                 "type": [],
                 "cssProperty": {
-                    "--cell-group-background-color": {
-                        "type": "color",
-                        "desc": "单元格组背景色"
-                    },
                     "--cell-font-size": {
                         "type": "input",
                         "desc": "文字大小"
@@ -174,10 +166,6 @@
                     "--cell-text-color": {
                         "type": "color",
                         "desc": "文本颜色"
-                    },
-                    "--cell-background-color": {
-                        "type": "color",
-                        "desc": "背景色"
                     },
                     "--cell-value-color": {
                         "type": "color",

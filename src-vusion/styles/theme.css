@@ -252,7 +252,7 @@
   --cascader-unselected-tab-color: #969799; /* @type color */ /* @hidden */
 
   /* @component van-cell-group */
-  --cell-group-background-color: #fff; /* @type color */ /* @desc 单元格组背景色 */
+  --cell-group-background-color: #fff; /* @type color */ /* @desc 单元格组背景色 */ /* @hidden */
   --cell-group-title-color: #969799; /* @type color */ /* @hidden */
   --cell-group-title-padding: var(--padding-md) var(var(--padding-md))
     var(--padding-xs); /* @hidden */
@@ -271,7 +271,7 @@
   --cell-text-color: var(
     --component-text-color
   ); /* @type color */ /* @desc 文本颜色 */
-  --cell-background-color: #fff; /* @type color */ /* @desc 背景色 */
+  --cell-background-color: #fff; /* @type color */ /* @desc 背景色 */ /* @hidden */
   --cell-border-color: var(--border-color); /* @type color */ /* @hidden */
   --cell-active-color: var(
     --component-active-color
@@ -392,7 +392,7 @@
 
   /* @component van-popup */
   --popup-background-color: #fff; /* @type color */ /* @desc 背景色 */
-  --popup-transition: transform 0.3s; /* @desc 动画时间 */
+  --popup-transition: transform 0.3s; /* @desc 动画时间 */ /* @hidden */
   --popup-round-border-radius: 16px; /* @desc 圆角 */ /* @hidden */
   --popup-close-icon-size: 22px; /* @hidden */
   --popup-close-icon-color: #c8c9cc; /* @type color */ /* @hidden */
