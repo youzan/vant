@@ -4778,165 +4778,6 @@
             ],
             "events": [
                 {
-                    "name": "before-select",
-                    "title": "选择前",
-                    "description": "选择某一项前触发",
-                    "advanced": true,
-                    "params": [
-                        {
-                            "name": "$event.value",
-                            "type": "any",
-                            "description": "选择项的值"
-                        },
-                        {
-                            "name": "$event.oldValue",
-                            "type": "any",
-                            "description": "旧的值"
-                        },
-                        {
-                            "name": "$event.item",
-                            "type": "object",
-                            "description": "选择项相关对象"
-                        },
-                        {
-                            "name": "$event.itemVM",
-                            "type": "UListViewItem",
-                            "description": "选择项子组件"
-                        },
-                        {
-                            "name": "$event.preventDefault",
-                            "type": "Function",
-                            "description": "阻止选择流程"
-                        },
-                        {
-                            "name": "senderVM",
-                            "type": "UListView",
-                            "description": "发送事件实例"
-                        }
-                    ]
-                },
-                {
-                    "name": "input",
-                    "title": "选择时",
-                    "description": "选择某一项时触发",
-                    "params": [
-                        {
-                            "name": "$event",
-                            "type": "any",
-                            "description": "选择项的值"
-                        },
-                        {
-                            "name": "senderVM",
-                            "type": "UListView",
-                            "description": "发送事件实例"
-                        }
-                    ]
-                },
-                {
-                    "name": "select",
-                    "title": "选择后",
-                    "description": "选择某一项时触发。单选模式中：",
-                    "advanced": true,
-                    "params": [
-                        {
-                            "name": "$event.value",
-                            "type": "any",
-                            "description": "改变后的值"
-                        },
-                        {
-                            "name": "$event.oldValue",
-                            "type": "any",
-                            "description": "旧的值"
-                        },
-                        {
-                            "name": "$event.item",
-                            "type": "object",
-                            "description": "选择项相关对象"
-                        },
-                        {
-                            "name": "$event.oldItem",
-                            "type": "object",
-                            "description": "旧的选择项相关对象"
-                        },
-                        {
-                            "name": "$event.itemVM",
-                            "type": "UListViewItem",
-                            "description": "选择项子组件"
-                        },
-                        {
-                            "name": "$event.oldVM",
-                            "type": "UListViewItem",
-                            "description": "旧的选择项子组件"
-                        },
-                        {
-                            "name": "senderVM",
-                            "type": "UListView",
-                            "description": "发送事件实例"
-                        }
-                    ]
-                },
-                {
-                    "name": "change",
-                    "title": "改变后",
-                    "description": "选择值改变时触发。单选模式中：",
-                    "advanced": true,
-                    "params": [
-                        {
-                            "name": "$event.value",
-                            "type": "any",
-                            "description": "选择项的值"
-                        },
-                        {
-                            "name": "$event.oldValue",
-                            "type": "any",
-                            "description": "旧的值"
-                        },
-                        {
-                            "name": "$event.item",
-                            "type": "object",
-                            "description": "选择项相关对象"
-                        },
-                        {
-                            "name": "$event.oldItem",
-                            "type": "object",
-                            "description": "旧的选择项相关对象"
-                        },
-                        {
-                            "name": "$event.itemVM",
-                            "type": "UListViewItem",
-                            "description": "选择项子组件"
-                        },
-                        {
-                            "name": "$event.oldVM",
-                            "type": "UListViewItem",
-                            "description": "旧的选择项子组件"
-                        },
-                        {
-                            "name": "senderVM",
-                            "type": "UListView",
-                            "description": "发送事件实例"
-                        }
-                    ]
-                },
-                {
-                    "name": "before-load",
-                    "title": "加载前",
-                    "description": "加载前触发",
-                    "advanced": true,
-                    "params": [
-                        {
-                            "name": "$event.preventDefault",
-                            "type": "Function",
-                            "description": "阻止加载流程"
-                        },
-                        {
-                            "name": "senderVM",
-                            "type": "UTableView",
-                            "description": "发送事件实例"
-                        }
-                    ]
-                },
-                {
                     "name": "load",
                     "title": "加载后",
                     "description": "加载时触发",
@@ -8302,7 +8143,7 @@
             "Feedback"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-dialog safe-area-inset-bottom>\\n  <div vusion-slot-name=\\\"default\\\" vusion-disabled-copy style=\\\"min-height: 100px;\\\" :vusion-disabled-cut=\\\"true\\\" env=\\\"alone\\\">内容</div>\\n  <template #footer>\\n    <van-button\\n      :vusion-disabled-cut=\\\"true\\\"\\n      size=\\\"large\\\"\\n      class=\\\"van-button van-button--default van-button--large van-dialog__cancel\\\"\\n      text=\\\"取消\\\"\\n    ></van-button>\\n    <van-button\\n      :vusion-disabled-cut=\\\"true\\\"\\n      size=\\\"large\\\"\\n      class=\\\"van-button van-button--default van-button--large van-dialog__confirm van-hairline--left\\\"\\n      text=\\\"确认\\\"\\n    ></van-button>\\n  </template>\\n</van-dialog>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-dialog safe-area-inset-bottom>\\n  <div class=\\\"dialogchild\\\" vusion-slot-name=\\\"default\\\" vusion-disabled-copy style=\\\"min-height: 100px;\\\" :vusion-disabled-cut=\\\"true\\\" env=\\\"alone\\\">内容</div>\\n  <template #footer>\\n    <van-button\\n      :vusion-disabled-cut=\\\"true\\\"\\n      size=\\\"large\\\"\\n      class=\\\"van-button van-button--default van-button--large van-dialog__cancel\\\"\\n      text=\\\"取消\\\"\\n    ></van-button>\\n    <van-button\\n      :vusion-disabled-cut=\\\"true\\\"\\n      size=\\\"large\\\"\\n      class=\\\"van-button van-button--default van-button--large van-dialog__confirm van-hairline--left\\\"\\n      text=\\\"确认\\\"\\n    ></van-button>\\n  </template>\\n</van-dialog>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-dialog",
             "title": "弹出框",
@@ -8314,7 +8155,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-dialog safe-area-inset-bottom>\n  <div vusion-slot-name=\"default\" vusion-disabled-copy style=\"min-height: 100px;\" :vusion-disabled-cut=\"true\" env=\"alone\">内容</div>\n  <template #footer>\n    <van-button\n      :vusion-disabled-cut=\"true\"\n      size=\"large\"\n      class=\"van-button van-button--default van-button--large van-dialog__cancel\"\n      text=\"取消\"\n    ></van-button>\n    <van-button\n      :vusion-disabled-cut=\"true\"\n      size=\"large\"\n      class=\"van-button van-button--default van-button--large van-dialog__confirm van-hairline--left\"\n      text=\"确认\"\n    ></van-button>\n  </template>\n</van-dialog>\n</template>\n"
+                    "code": "<template>\n<van-dialog safe-area-inset-bottom>\n  <div class=\"dialogchild\" vusion-slot-name=\"default\" vusion-disabled-copy style=\"min-height: 100px;\" :vusion-disabled-cut=\"true\" env=\"alone\">内容</div>\n  <template #footer>\n    <van-button\n      :vusion-disabled-cut=\"true\"\n      size=\"large\"\n      class=\"van-button van-button--default van-button--large van-dialog__cancel\"\n      text=\"取消\"\n    ></van-button>\n    <van-button\n      :vusion-disabled-cut=\"true\"\n      size=\"large\"\n      class=\"van-button van-button--default van-button--large van-dialog__confirm van-hairline--left\"\n      text=\"确认\"\n    ></van-button>\n  </template>\n</van-dialog>\n</template>\n"
                 }
             ],
             "attrs": [
