@@ -213,13 +213,13 @@ export default createComponent({
     }
 
     function onClick(event) {
-      if (that.vanDropdownMenuItem && that.vanDropdownMenuItem.shutself) {
-        that.vanDropdownMenuItem.showPopup = false;
+      if (that.vanDropdownMenuItem) {
         if ((that.value ?? that.index) !== that.vanDropdownMenuItem.value) {
           that.vanDropdownMenuItem.value = that.value ?? that.index;
           that.vanDropdownMenuItem.$emit('input', that.value);
           that.vanDropdownMenuItem.$emit('update:valueprop', that.value);
         }
+        that.vanDropdownMenuItem.shutself && (that.vanDropdownMenuItem.showPopup = false);
       }
 
 

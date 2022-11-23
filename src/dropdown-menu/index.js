@@ -23,7 +23,7 @@ export default createComponent({
   props: {
     route: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     value: [Number, String],
     zIndex: [Number, String],
