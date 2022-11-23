@@ -120,8 +120,8 @@
                     }
                 },
                 "preview": {
-                    "template": "<div>\n        <van-linear-layout direction=\"vertical\" :class=\"$style.linearLayout\"\n            style=\"margin-bottom:16px;line-height: 0;\">\n            <u-block style=\"width: 100%;\"></u-block>\n            <div style=\"width: 100%;\"></div>\n        </van-linear-layout>\n        <van-linear-layout direction=\"horizontal\" :class=\"$style.linearLayout\"\n            style=\"margin-bottom:16px;line-height: 0;\">\n            <u-block style=\"display:inline-block;width: 104px;\"></u-block>\n            <u-block style=\"display:inline-block;width: 104px;\"></u-block>\n            <u-block style=\"display:inline-block;width: 104px;\"></u-block>\n        </van-linear-layout>\n        <van-linear-layout direction=\"horizontal\" :class=\"$style.linearLayout\"\n            justify=\"space-between\"\n            style=\"margin-bottom:8px;\">\n            <u-block style=\"display:inline-block;width: 104px;\"></u-block>\n            <u-block style=\"display:inline-block;width: 104px;\"></u-block>\n        </van-linear-layout>\n    </div>",
-                    "style": ".linearLayout [class^=\"u-block\"] {\n    height: 48px;\n    background: #337EFF !important;\n    opacity: 0.5;\n}"
+                    "template": "<div><van-linear-layout ref=\"linear_layout2\" justify=\"start\" layout=\"inline\">\n    <van-linear-layout :class=\"$style.linearLayou\" ref=\"linear_layout3\"></van-linear-layout>\n    <van-linear-layout :class=\"$style.linearLayou\"  ref=\"linear_layout4\"></van-linear-layout>\n</van-linear-layout></div>",
+                    "style": ".linearLayou {\n    width: 80px;height: 48px;\n    background: #337EFF !important;\n    opacity: 0.5;\n}"
                 }
             },
             {

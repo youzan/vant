@@ -1,5 +1,5 @@
 {
-    "--space-base": "var(--space-base)",
+    "--space-base": "16px",
     "--brand-primary": "#337eff",
     "--brand-success": "#26bd71",
     "--brand-problem": "#ffb21a",
