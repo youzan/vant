@@ -77,7 +77,7 @@ export default createComponent({
       return this.$env && this.$env.VUE_APP_DESIGNER;
     },
     newdest(destination) {
-      return encodeUrl(destination ? '/' + destination.split('/').slice(2).join('/') : destination);
+      return encodeUrl(destination ? '/' + destination.split('/').slice(1).join('/') : destination);
     },
     onClick(event) {
       this.parent.onChange(this.name || this.index);
