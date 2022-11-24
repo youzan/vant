@@ -429,33 +429,33 @@
   --search-action-font-size: var(-font-size-md); /* @desc 搜索区域字体大小 */
 
   /* @component van-sidebar */
-  --sidebar-width: 80px; /* @desc 宽度 */
-  --sidebar-font-size: var(--font-size-md); /* @desc 字体 */
-  --sidebar-line-height: var(--line-height-md); /* @desc 行高 */
-  --sidebar-text-color: var(
+  --van-sidebar-width: 80px; /* @desc 宽度 */
+  --van-sidebar-font-size: var(--font-size-md); /* @desc 字体 */
+  --van-sidebar-line-height: var(--line-height-md); /* @desc 行高 */
+  --van-sidebar-text-color: var(
     --component-text-color
   ); /* @type color */ /* @desc 字体颜色 */
-  --sidebar-disabled-text-color: #c8c9cc; /* @type color */ /* @desc 禁用字体颜色 */
-  --sidebar-padding: 20px var(--padding-sm); /* @desc 边距 */
-  --sidebar-active-color: var(
+  --van-sidebar-disabled-text-color: #c8c9cc; /* @type color */ /* @desc 禁用字体颜色 */
+  --van-sidebar-padding: 20px var(--padding-sm); /* @desc 边距 */
+  --van-sidebar-active-color: var(
     --component-active-color
   ); /* @type color */ /* @hidden */
-  --sidebar-background-color: var(
+  --van-sidebar-background-color: var(
     --component-background-color
   ); /* @type color */ /* @desc 背景色 */
-  --sidebar-selected-font-weight: var(
+  --van-sidebar-selected-font-weight: var(
     --font-weight-bold
   ); /* @desc 选中态字体粗细 */
 
-  --sidebar-selected-text-color: var(
+  --van-sidebar-selected-text-color: var(
     --component-text-color
   ); /* @type color */ /* @desc 选中态字体颜色 */
-  --sidebar-selected-border-width: 4px; /* @desc 选中态边框宽度 */
-  --sidebar-selected-border-height: 16px; /* @desc 选中态边框高度 */
-  --sidebar-selected-border-color: var(
+  --van-sidebar-selected-border-width: 4px; /* @desc 选中态边框宽度 */
+  --van-sidebar-selected-border-height: 16px; /* @desc 选中态边框高度 */
+  --van-sidebar-selected-border-color: var(
     --brand-primary
   ); /* @type color */ /* @desc 选中态边框颜色 */
-  --sidebar-selected-background-color: #fff; /* @type color */ /* @desc 选中态背景色 */
+  --van-sidebar-selected-background-color: #fff; /* @type color */ /* @desc 选中态背景色 */
 
   /* @component van-steps */
   --steps-background-color: #fff; /* @type color */ /* @desc 整体背景色 */
