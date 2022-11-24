@@ -19,6 +19,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0-rc.9](https://github.com/vant-ui/vant/compare/v4.0.0-rc.8...v4.0.0-rc.9)
+
+`2022-11-24`
+
+**Bug Fixes**
+
+- Cell: arrow-direction assignment right is invalid [#11279](https://github.com/vant-ui/vant/issues/11279)
+- Style: body normalize not work [#11287](https://github.com/vant-ui/vant/issues/11287)
+
 ### [v4.0.0-rc.8](https://github.com/vant-ui/vant/compare/v4.0.0-rc.7...v4.0.0-rc.8)
 
 `2022-11-20`

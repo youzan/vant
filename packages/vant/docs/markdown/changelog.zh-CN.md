@@ -19,6 +19,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0-rc.9](https://github.com/vant-ui/vant/compare/v4.0.0-rc.8...v4.0.0-rc.9)
+
+`2022-11-24`
+
+**Bug Fixes**
+
+- Cell: 修复 arrow-direction 设置为 right 不显示的问题 [#11279](https://github.com/vant-ui/vant/issues/11279)
+- Style: 修复 body 标签上的 normalize 样式未生效的问题 [#11287](https://github.com/vant-ui/vant/issues/11287)
+
 ### [v4.0.0-rc.8](https://github.com/vant-ui/vant/compare/v4.0.0-rc.7...v4.0.0-rc.8)
 
 `2022-11-20`
