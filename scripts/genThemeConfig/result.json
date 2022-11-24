@@ -1128,7 +1128,7 @@
                     },
                     "--progress-pivot-text-color": {
                         "type": "color",
-                        "desc": "进度条枢颜色"
+                        "desc": "进度条枢中文字的颜色"
                     },
                     "--progress-pivot-font-size": {
                         "type": "input",
@@ -1145,30 +1145,6 @@
                 },
                 "preview": {
                     "template": "  <van-progress percentage=\"50\" />"
-                }
-            },
-            {
-                "id": "4fcd4dfd-683b-4d7e-920f-a6d1fa0abd36",
-                "name": "van-circle",
-                "title": "环形进度条",
-                "toPosition": "circle",
-                "type": [],
-                "cssProperty": {
-                    "--circle-size": {
-                        "type": "input",
-                        "desc": "环形进度条大小"
-                    },
-                    "--circle-color": {
-                        "type": "color",
-                        "desc": "环形进度条激活颜色"
-                    },
-                    "--circle-layer-color": {
-                        "type": "color",
-                        "desc": "环形进度未条激活颜色"
-                    }
-                },
-                "preview": {
-                    "template": "  <van-circle  value=\"40\"   rate=\"30\" speed=\"100\"  />"
                 }
             },
             {

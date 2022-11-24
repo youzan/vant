@@ -72,7 +72,19 @@
       description: 是否自定义组件
   slots: false
   events:
-    - name: change
+    - name: input
       title: 改变时
+      description: 进度变化时实时触发
+      params: []
+    - name: change
+      title: 改变后
       description: 进度变化且结束拖动后触发
+      params: []
+    - name: drag-start
+      title: 开始拖动时触发
+      description: 开始拖动时触发
+      params: []
+    - name: drag-end
+      title: 结束拖动时触发
+      description: 结束拖动时触发
       params: []

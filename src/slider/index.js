@@ -103,7 +103,6 @@ export default createComponent({
       }
 
       this.touchStart(event);
-      console.log(this.currentData);
       this.currentValue = this.currentData;
       if (this.range) {
         this.startValue = this.currentData.map(this.format);
@@ -143,7 +142,6 @@ export default createComponent({
       if (this.disabled) {
         return;
       }
-      console.log(this.currentValue);
 
       if (this.dragStatus === 'draging') {
         this.updateValue(this.currentValue, true);
@@ -158,14 +156,11 @@ export default createComponent({
       if (this.disabled) return;
 
       const rect = this.$el.getBoundingClientRect();
-      console.log(rect,this.vertical);
       const delta = this.vertical
         ? event.clientY - rect.top
         : event.clientX - rect.left;
       const total = this.vertical ? rect.height : rect.width;
       let value = +this.min + (delta / total) * this.scope;
-      // console.log(this.min, delta, this.scope, total);
-      console.log(this.currentData,222);
       if (this.range) {
         let [left, right] = this.currentData;
         const middle = (left + right) / 2;
@@ -176,7 +171,6 @@ export default createComponent({
         }
         value = [left, right];
       }
-      console.log(value);
 
       this.startValue = this.currentData;
       this.updateValue(value, true);

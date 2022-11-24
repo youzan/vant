@@ -4,7 +4,7 @@
    *   Global Variables
    * ========================
    */
-   --space-base: 16px;
+  --space-base: 16px;
 
   /* Brand Colors */
   --brand-primary: #337eff;
@@ -37,7 +37,8 @@
   --base-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
     helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui',
     'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
-  --price-integer-font-family: avenir-heavy, pingfang sc, helvetica neue, arial, sans-serif;
+  --price-integer-font-family: avenir-heavy, pingfang sc, helvetica neue, arial,
+    sans-serif;
 
   /* Border Color */
   --border-color: #e5e5e5;
@@ -379,9 +380,7 @@
   --picker-title-line-height: var(--line-height-md);
   --picker-action-padding: 0 var(--padding-md);
   --picker-action-font-size: var(--font-size-md);
-  --picker-confirm-action-color: var(
-    --brand-primary
-  ); /* @type color */
+  --picker-confirm-action-color: var(--brand-primary); /* @type color */
 
   --picker-cancel-action-color: #969799; /* @type color */
   --picker-option-font-size: var(--font-size-lg);
@@ -636,7 +635,7 @@
     --border-color
   ); /* @type color */ /* @desc 进度条未激活颜色 */
   --progress-pivot-padding: 0 5px; /* @desc 进度条枢内边距 */
-  --progress-pivot-text-color: #fff; /* @type color */ /* @desc 进度条枢颜色 */
+  --progress-pivot-text-color: #fff; /* @type color */ /* @desc 进度条枢中文字的颜色 */
   --progress-pivot-font-size: var(--font-size-xs); /* @desc 进度条枢字体大小 */
   --progress-pivot-line-height: 1.6; /* @desc 进度条枢文字行高 */
   --progress-pivot-background-color: var(
