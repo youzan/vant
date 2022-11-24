@@ -69,7 +69,7 @@ export default createComponent({
   },
   methods: {
     newdest(destination) {
-      return destination ? '/' + destination.split('/').slice(2).join('/') : destination;
+      return destination ? '/' + destination.split('/').slice(1).join('/') : destination;
     },
     onClick() {
       if (this.disabled) {

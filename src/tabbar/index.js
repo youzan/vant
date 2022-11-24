@@ -11,7 +11,7 @@ export default createComponent({
   props: {
     route: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     zIndex: [Number, String],
     placeholder: Boolean,

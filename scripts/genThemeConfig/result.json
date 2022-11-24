@@ -12,7 +12,7 @@
                 "type": [],
                 "cssProperty": {},
                 "preview": {
-                    "template": "<div style=\"height:100%;background: #F7F8FA;\">\n<u-text :class=\"[$style.areaTitle, $style.base]\">主题颜色预览</u-text><br>\n        <div :class=\"[$style.sectionTitle, $style.base]\" style=\"margin: 16px 0;\">以按钮组件为例</div>\n<van-button squareroud=\"round\" style=\"margin: 10px;margin-left:0;width: 100px;height: 32px;padding:0\" type=\"info\">主色</van-button><van-button squareroud=\"round\" style=\"margin: 10px;margin-left:0;width: 100px;height: 32px;padding:0\" type=\"primary\">成功</van-button><van-button squareroud=\"round\" type=\"warning\" style=\"margin: 10px;margin-left:0;width: 100px;height: 32px;padding:0\">告警</van-button><van-button squareroud=\"round\" style=\"margin: 10px;margin-left:0;width: 100px;height: 32px;padding:0\" type=\"danger\">错误</van-button><van-button disabled type=\"default\" squareroud=\"round\" style=\"background-color: var(--brand-disabled);margin: 10px;margin-left:0;width: 100px;height: 32px;padding:0\">禁用</van-button>\n"
+                    "template": "<div style=\"height:100%;background: #F7F8FA;\">\n<u-text :class=\"[$style.areaTitle, $style.base]\">主题颜色预览</u-text><br>\n        <div :class=\"[$style.sectionTitle, $style.base]\" style=\"margin: 16px 0;\">以按钮组件为例</div>\n<van-button squareroud=\"round\" style=\"margin: 10px;margin-left:0;width: 100px;height: 32px;padding:0;background-color: var(--brand-primary) !important\" type=\"info\">主色</van-button><van-button squareroud=\"round\" style=\"margin: 10px;margin-left:0;width: 100px;height: 32px;padding:0;background-color: var(--brand-success) !important\" type=\"primary\">成功</van-button><van-button squareroud=\"round\" type=\"warning\" style=\"margin: 10px;margin-left:0;width: 100px;height: 32px;padding:0;background-color: var(--brand-warning) !important\">告警</van-button><van-button squareroud=\"round\" style=\"margin: 10px;margin-left:0;width: 100px;height: 32px;padding:0;background-color: var(--brand-error) !important\" type=\"danger\">错误</van-button><van-button disabled type=\"default\" squareroud=\"round\" style=\"background-color: var(--brand-disabled);margin: 10px;margin-left:0;width: 100px;height: 32px;padding:0;background-color: var(--brand-disabled) !important\">禁用</van-button>\n"
                 }
             },
             {
@@ -56,10 +56,6 @@
                     "--popup-background-color": {
                         "type": "color",
                         "desc": "背景色"
-                    },
-                    "--popup-transition": {
-                        "type": "input",
-                        "desc": "动画时间"
                     }
                 },
                 "preview": {
@@ -125,6 +121,18 @@
                 }
             },
             {
+              "id": "4d794918-b80f-4129-9f14-854de592e6d822898776",
+              "name": "van-row",
+              "title": "删格布局",
+              "toPosition": "row",
+              "type": [],
+              "cssProperty": {
+              },
+              "preview": {
+                  "template": "<van-row ref=\"row2\" gutter=\"0\">\n    <van-col ref=\"col4\" style=\"background-color:#4598b9;height:40px;\" span=\"8\"></van-col>\n    <van-col ref=\"col5\" style=\"background-color:#4c65de;\" span=\"8\"></van-col>\n    <van-col ref=\"col6\" style=\"background-color:#561ae3;\" span=\"8\"></van-col>\n</van-row>"
+              }
+          },
+            {
                 "id": "713d145e-bb7a-4fec-bde8-1d4e756397a2",
                 "name": "van-divider",
                 "title": "分割线",
@@ -159,10 +167,6 @@
                 "toPosition": "cell-group",
                 "type": [],
                 "cssProperty": {
-                    "--cell-group-background-color": {
-                        "type": "color",
-                        "desc": "单元格组背景色"
-                    },
                     "--cell-font-size": {
                         "type": "input",
                         "desc": "文字大小"
@@ -174,10 +178,6 @@
                     "--cell-text-color": {
                         "type": "color",
                         "desc": "文本颜色"
-                    },
-                    "--cell-background-color": {
-                        "type": "color",
-                        "desc": "背景色"
                     },
                     "--cell-value-color": {
                         "type": "color",
@@ -246,55 +246,55 @@
                 "toPosition": "sidebar",
                 "type": [],
                 "cssProperty": {
-                    "--sidebar-width": {
+                    "--van-sidebar-width": {
                         "type": "input",
                         "desc": "宽度"
                     },
-                    "--sidebar-font-size": {
+                    "--van-sidebar-font-size": {
                         "type": "input",
                         "desc": "字体"
                     },
-                    "--sidebar-line-height": {
+                    "--van-sidebar-line-height": {
                         "type": "input",
                         "desc": "行高"
                     },
-                    "--sidebar-text-color": {
+                    "--van-sidebar-text-color": {
                         "type": "color",
                         "desc": "字体颜色"
                     },
-                    "--sidebar-disabled-text-color": {
+                    "--van-sidebar-disabled-text-color": {
                         "type": "color",
                         "desc": "禁用字体颜色"
                     },
-                    "--sidebar-padding": {
+                    "--van-sidebar-padding": {
                         "type": "input",
                         "desc": "边距"
                     },
-                    "--sidebar-background-color": {
+                    "--van-sidebar-background-color": {
                         "type": "color",
                         "desc": "背景色"
                     },
-                    "--sidebar-selected-font-weight": {
+                    "--van-sidebar-selected-font-weight": {
                         "type": "input",
                         "desc": "选中态字体粗细"
                     },
-                    "--sidebar-selected-text-color": {
+                    "--van-sidebar-selected-text-color": {
                         "type": "color",
                         "desc": "选中态字体颜色"
                     },
-                    "--sidebar-selected-border-width": {
+                    "--van-sidebar-selected-border-width": {
                         "type": "input",
                         "desc": "选中态边框宽度"
                     },
-                    "--sidebar-selected-border-height": {
+                    "--van-sidebar-selected-border-height": {
                         "type": "input",
                         "desc": "选中态边框高度"
                     },
-                    "--sidebar-selected-border-color": {
+                    "--van-sidebar-selected-border-color": {
                         "type": "color",
                         "desc": "选中态边框颜色"
                     },
-                    "--sidebar-selected-background-color": {
+                    "--van-sidebar-selected-background-color": {
                         "type": "color",
                         "desc": "选中态背景色"
                     }
@@ -392,11 +392,11 @@
                     },
                     "--button-danger-color": {
                         "type": "color",
-                        "desc": "危险按钮边框颜色"
+                        "desc": "危险按钮文本颜色"
                     },
                     "--button-danger-background-color": {
                         "type": "color",
-                        "desc": "危险按钮边框颜色"
+                        "desc": "危险按钮背景颜色"
                     },
                     "--button-danger-border-color": {
                         "type": "color",
