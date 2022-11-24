@@ -303,7 +303,8 @@ export default {
   > blockquote {
     margin: 16px 0 0;
     padding: 16px;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 26px;
     color: var(--van-doc-blockquote-color);
     background-color: var(--van-doc-blockquote-background);
     border-radius: var(--van-doc-border-radius);
