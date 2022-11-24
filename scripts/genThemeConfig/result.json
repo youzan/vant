@@ -380,11 +380,11 @@
                     },
                     "--button-danger-color": {
                         "type": "color",
-                        "desc": "危险按钮边框颜色"
+                        "desc": "危险按钮文本颜色"
                     },
                     "--button-danger-background-color": {
                         "type": "color",
-                        "desc": "危险按钮边框颜色"
+                        "desc": "危险按钮背景颜色"
                     },
                     "--button-danger-border-color": {
                         "type": "color",
