@@ -41,7 +41,7 @@
       @input="onInput"
     >
     </u-input>
-    <div :class="$style.scrollwrap" @scroll="onScroll">
+    <div :class="[$style.scrollwrap, pageable==='load-more' ? $style.scrollwrapno : '']" @scroll="onScroll">
       <van-pull-refresh
         :value="$env.VUE_APP_DESIGNER ? false : refreshing"
         :disabled="!pullRefresh"
@@ -153,7 +153,7 @@
           </div>
         </div>
       </van-pull-refresh>
-      <div
+      <!-- <div
         v-show="
           showFoot ||
           ((pageable === true || pageable === 'pagination') &&
@@ -173,7 +173,7 @@
           @change="page($event.page)"
         >
         </u-pagination>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -404,7 +404,7 @@ export default {
       this.$forceUpdate();
     },
     getWidth() {
-      return ((this.$refs.root.getBoundingClientRect() || {}).width-26) || 0;
+      return ((this.$refs.root.getBoundingClientRect() || {}).width-20) || 0;
     },
     async resize(start = 0) {
       if (!this.$refs.body) return;
@@ -704,7 +704,7 @@ export default {
     opacity: 0;
     box-sizing: border-box;
     transform: translate3d(0,0,0);
-    padding: 5px;
+    padding: 5PX; /* px-to-viewport-ignore */
 }
 
 .floatitem {
@@ -715,7 +715,7 @@ export default {
     transform: translate3d(0,0,0);
     display: inline-block;
     vertical-align: top;
-    padding: 5px;
+    padding: 5PX; /* px-to-viewport-ignore */
 }
 
 .opitem[designer] + .opitem[designer]:after{
@@ -803,6 +803,12 @@ export default {
   height: 100%;
   overflow-y: auto;
 }
+.scrollwrapno {
+  overflow-y: unset;
+}
+/* .scrollwrap::-webkit-scrollbar {
+  display: none;
+} */
 .root[vusion-designer] {
   height: auto;
 }
