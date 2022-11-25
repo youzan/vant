@@ -116,7 +116,7 @@ export default {
 | void-icon | 未选中时的[图标名称](#/zh-CN/icon)或图片链接 | _string_ | `star-o` |
 | icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | allow-half | 是否允许半选 | _boolean_ | `false` |
-| readonly | 是否为只读状态  | _boolean_ | `false` |
+| readonly | 是否为只读状态 | _boolean_ | `false` |
 | disabled | 是否禁用评分 | _boolean_ | `false` |
 | touchable | 是否可以通过滑动手势选择评分 | _boolean_ | `true` |
 
