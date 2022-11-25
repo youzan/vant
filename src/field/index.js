@@ -362,7 +362,12 @@ export default createComponent({
         return;
       }
 
-      this.focused = false;
+      // 当清除图标还在的时候，不进行聚焦状态更新，否则导致，清除图标消失，清除事件无法触发
+      // When the clear icon is still there, the focus state update operation cannot be performed,
+      // otherwise the clear icon will disappear and the clear event cannot be triggered
+      if (!this.showClear) {
+        this.focused = false;
+      }
       this.updateValue(this.value, 'onBlur');
       this.$emit('blur', event);
       this.validateWithTrigger('onBlur');
@@ -388,6 +393,8 @@ export default createComponent({
 
     onClear(event) {
       preventDefault(event);
+      // update focuse state
+      this.focused = false;
       this.$emit('input', '');
       this.$emit('clear', event);
     },
