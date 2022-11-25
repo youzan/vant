@@ -806,9 +806,9 @@ export default {
 .scrollwrapno {
   overflow-y: unset;
 }
-/* .scrollwrap::-webkit-scrollbar {
+.scrollwrap::-webkit-scrollbar {
   display: none;
-} */
+}
 .root[vusion-designer] {
   height: auto;
 }
