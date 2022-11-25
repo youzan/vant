@@ -153,7 +153,7 @@ Vant exports following Dialog utility functions:
 | showCancelButton | Whether to show cancel button | _boolean_ | `false` |
 | cancelButtonText | Cancel button text | _string_ | `Cancel` |
 | cancelButtonColor | Cancel button color | _string_ | `black` |
-| confirmButtonDisabled `v3.5.0` | Whether to disable cancel button | _boolean_ | `false` |
+| cancelButtonDisabled `v3.5.0` | Whether to disable cancel button | _boolean_ | `false` |
 | confirmButtonText | Confirm button text | _string_ | `Confirm` |
 | confirmButtonColor | Confirm button color | _string_ | `#ee0a24` |
 | confirmButtonDisabled `v3.5.0` | Whether to disable confirm button | _boolean_ | `false` |
