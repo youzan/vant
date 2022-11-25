@@ -23,7 +23,6 @@ export default {
       alignPlaceHolder: 'Input Align Right',
     },
   },
-
   data() {
     return {
       value: '',
