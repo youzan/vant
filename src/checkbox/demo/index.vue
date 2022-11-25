@@ -15,7 +15,7 @@
 
     <demo-block :title="t('customShape')">
       <van-checkbox v-model="checkboxShape" shape="square">
-        {{ t('customColor') }}
+        {{ t('customShape') }}
       </van-checkbox>
     </demo-block>
 
