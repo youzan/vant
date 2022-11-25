@@ -155,10 +155,10 @@
   --button-danger-border-color: var(
     --brand-error
   ); /* @type color */ /* @desc 危险按钮边框颜色 */
-  --button-warning-color: #fff; /* @type color */ /* @desc 警告按钮边框颜色 */
+  --button-warning-color: #fff; /* @type color */ /* @desc 警告按钮文字色 */
   --button-warning-background-color: var(
     --brand-warning
-  ); /* @type color */ /* @desc 警告按钮边框颜色 */
+  ); /* @type color */ /* @desc 警告按钮背景色 */
   --button-warning-border-color: var(
     --brand-warning
   ); /* @type color */ /* @desc 警告按钮边框颜色 */

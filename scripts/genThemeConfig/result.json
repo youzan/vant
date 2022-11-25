@@ -392,11 +392,11 @@
                     },
                     "--button-warning-color": {
                         "type": "color",
-                        "desc": "警告按钮边框颜色"
+                        "desc": "警告按钮文字色"
                     },
                     "--button-warning-background-color": {
                         "type": "color",
-                        "desc": "警告按钮边框颜色"
+                        "desc": "警告按钮背景色"
                     },
                     "--button-warning-border-color": {
                         "type": "color",
