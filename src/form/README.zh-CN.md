@@ -461,7 +461,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | label-width | 表单项 label 宽度，默认单位为`px` | _number \| string_ | `6.2em` |
-| label-align |  表单项 label 对齐方式，可选值为 `center` `right` | _string_ | `left` |
+| label-align | 表单项 label 对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | input-align | 输入框对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `left` |
 | validate-trigger `v2.5.2` | 表单校验触发时机，可选值为 `onChange`、`onSubmit`，详见下表 | _string_ | `onBlur` |
