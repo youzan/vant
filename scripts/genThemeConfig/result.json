@@ -121,18 +121,6 @@
                 }
             },
             {
-              "id": "4d794918-b80f-4129-9f14-854de592e6d822898776",
-              "name": "van-row",
-              "title": "删格布局",
-              "toPosition": "row",
-              "type": [],
-              "cssProperty": {
-              },
-              "preview": {
-                  "template": "<van-row ref=\"row2\" gutter=\"0\">\n    <van-col ref=\"col4\" style=\"background-color:#4598b9;height:40px;\" span=\"8\"></van-col>\n    <van-col ref=\"col5\" style=\"background-color:#4c65de;\" span=\"8\"></van-col>\n    <van-col ref=\"col6\" style=\"background-color:#561ae3;\" span=\"8\"></van-col>\n</van-row>"
-              }
-          },
-            {
                 "id": "713d145e-bb7a-4fec-bde8-1d4e756397a2",
                 "name": "van-divider",
                 "title": "分割线",
@@ -404,11 +392,11 @@
                     },
                     "--button-warning-color": {
                         "type": "color",
-                        "desc": "警告按钮边框颜色"
+                        "desc": "警告按钮文字色"
                     },
                     "--button-warning-background-color": {
                         "type": "color",
-                        "desc": "警告按钮边框颜色"
+                        "desc": "警告按钮背景色"
                     },
                     "--button-warning-border-color": {
                         "type": "color",
