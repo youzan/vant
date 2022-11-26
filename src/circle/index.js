@@ -172,7 +172,7 @@ export default createComponent({
           <path d={this.path} class={bem('hover')} style={this.hoverStyle} />
         </svg>
         <div class={bem('text')} vusion-slot-name="default">
-        {!this.slots() ? this.text? <div class={bem('text')}>{this.text}</div>:<VanEmptyCol></VanEmptyCol>:
+          {!this.slots() ? this.text ? <div class={bem('text')}>{this.text}</div> :  (this.inDesigner&& <VanEmptyCol></VanEmptyCol>):
             this.slots() 
           }
           </div>
