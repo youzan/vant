@@ -14,5 +14,8 @@ export const SlotsMixin = {
 
       return $slots[name];
     },
+    inDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    }
   },
 };

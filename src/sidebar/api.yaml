@@ -24,7 +24,7 @@
       support:
         - name: van-sidebar-item
           title: 菜单项
-          snippet: '<van-sidebar-item title="标签名称n"></van-sidebar-item>'
+          snippet: '<van-sidebar-item><template #title>标签名称n</template></van-sidebar-item>'
   events:
     - name: change
       title: 切换导航时
