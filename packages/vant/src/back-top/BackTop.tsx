@@ -13,7 +13,6 @@ import {
 // Utils
 import {
   addUnit,
-  isObject,
   inBrowser,
   getScrollTop,
   createNamespace,
@@ -53,10 +52,10 @@ export default defineComponent({
 
   setup(props, { emit, slots, attrs }) {
     const show = ref(false);
-    const scrollParent = ref<Window | HTMLElement>();
-    const root = ref<HTMLElement | null>(null);
+    const root = ref<HTMLElement>();
+    const scrollParent = ref<Window | Element>();
 
-    let target: Window | HTMLElement;
+    let target: Window | Element | undefined;
 
     const style = computed(() => ({
       right: addUnit(props.right),
@@ -65,34 +64,34 @@ export default defineComponent({
 
     const onClick = (event: MouseEvent) => {
       emit('click', event);
-      target.scrollTo({
+      target?.scrollTo({
         top: 0,
         behavior: 'smooth',
       });
     };
 
     const scroll = () => {
-      show.value = getScrollTop(target) >= props.offset;
+      show.value = target ? getScrollTop(target) >= props.offset : false;
     };
 
     const getTarget = () => {
       const { target } = props;
 
       if (typeof target === 'string') {
-        const el = document.querySelector(props.target as string);
-        if (!el) {
-          throw Error('[Vant] BackTop: target element is not found.');
+        const el = document.querySelector(target);
+
+        if (el) {
+          return el;
         }
-        return el as HTMLElement;
-      }
 
-      if (isObject(target)) {
-        return target;
+        if (process.env.NODE_ENV !== 'production') {
+          console.error(
+            `[Vant] BackTop: target element "${target}" was not found, the BackTop component will not be rendered.`
+          );
+        }
+      } else {
+        return target as Element;
       }
-
-      throw Error(
-        '[Vant] BackTop: type of prop "target" should be a selector or an element object'
-      );
     };
 
     useEventListener('scroll', throttle(scroll, 100), { target: scrollParent });
@@ -100,9 +99,7 @@ export default defineComponent({
     onMounted(() => {
       nextTick(() => {
         if (inBrowser) {
-          target = props.target
-            ? (getTarget() as typeof target)
-            : (getScrollParent(root.value!) as typeof target);
+          target = props.target ? getTarget() : getScrollParent(root.value!);
           scrollParent.value = target;
         }
       });
