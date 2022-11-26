@@ -162,7 +162,7 @@ function Iconv(
         // imageIcon ? '' : `${props.classPrefix}-${name}`,
       ]}
       style={{
-        // color: props.color,
+        color: props.color,
         fontSize: addUnit(props.size),
       }}
       {...inherit(ctx, false)}

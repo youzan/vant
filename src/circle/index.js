@@ -28,7 +28,7 @@ export default createComponent({
     } ,
     layerColor: {
       type: String,
-      default: '#ffffff',
+      default: '#E5E5E5',
     },
     strokeLinecap: String,
     value: {
