@@ -48,5 +48,15 @@
       type: boolean
       default: true
       description: 是否显示进度文字
-  slots: false
+    - name: custom
+      title: 是否自定义
+      type: boolean
+      default: false
+      description: 是否自定义
+  slots:
+    - concept: Slot
+      name: default
+      title: 默认
+      description: 显示的文本
+      advanced: true
   events:
