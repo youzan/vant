@@ -1,6 +1,6 @@
 import { createNamespace, addUnit } from '../utils';
 import { BindEventMixin } from '../mixins/bind-event';
-
+import VanEmptyCol from '../emptycol';
 
 const [createComponent, bem] = createNamespace('progress');
 
@@ -29,11 +29,16 @@ export default createComponent({
       type: Boolean,
       default: true,
     },
+    custom:{
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
     return {
       pivotWidth: 0,
+      customWidth:0,
       progressWidth: 0,
     };
   },
@@ -46,6 +51,11 @@ export default createComponent({
     showPivot: 'resize',
     pivotText: 'resize',
   },
+  computed: {
+    inDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    }
+  },
 
   methods: {
     // @exposed-api
@@ -53,6 +63,7 @@ export default createComponent({
       this.$nextTick(() => {
         this.progressWidth = this.$el.offsetWidth;
         this.pivotWidth = this.$refs.pivot ? this.$refs.pivot.offsetWidth : 0;
+        this.customWidth  = this.$refs.custom ? this.$refs.custom.offsetWidth:0
       });
     },
   },
@@ -68,6 +79,9 @@ export default createComponent({
       left: `${((this.progressWidth - this.pivotWidth) * percentage) / 100}px`,
       background: this.pivotColor || background,
     };
+    const customStyle = {
+      left: `${((this.progressWidth - this.customWidth) * percentage) / 100}px`,
+    }
 
     const portionStyle = {
       background,
@@ -83,11 +97,15 @@ export default createComponent({
       <div class="van-progress-room">
         <div class={bem()} style={wrapperStyle}>
           <span class={bem('portion')} style={portionStyle}>
-            {showPivot && (
+            {
+              this.custom ? <div ref="custom" style={customStyle} vusion-slot-name="default" class="custom">
+                {this.slots()?this.slots() : this.inDesigner&&< VanEmptyCol ></VanEmptyCol>}
+              </div>:showPivot && (
               <span ref="pivot" style={pivotStyle} class={bem('pivot')}>
                 {text}
               </span>
-            )}
+            )
+            }
           </span>
         </div>
       </div>
