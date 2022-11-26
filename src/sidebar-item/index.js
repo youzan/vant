@@ -3,12 +3,15 @@ import encodeUrl from '../utils/encodeUrl';
 import { ChildrenMixin } from '../mixins/relation';
 import { route, routeProps } from '../utils/router';
 import Info from '../info';
+import VanEmptyCol from '../emptycol'
 
 const [createComponent, bem] = createNamespace('sidebar-item');
 
 export default createComponent({
   mixins: [ChildrenMixin('vanSidebar')],
-
+  components: {
+    VanEmptyCol,
+  },
   props: {
     ...routeProps,
     showbaget: {
@@ -166,8 +169,13 @@ export default createComponent({
         class={bem({ select: this.select, disabled: this.disabled })}
         onClick={this.onClick}
       >
-        <div class={bem('text')}>
-          {this.slots('title') ?? this.title}
+        <div class={bem('text')} vusion-slot-name="title">
+          {!this.inDesigner() ? (this.slots('title') ?? this.title) : null}
+          {this.inDesigner() ? (
+            (!this.slots('title') && !this.title) ? <van-empty-col></van-empty-col> : (
+              this.slots('title') ?? this.title
+              )
+          ) : null}
           <Info
             dot={this.dot}
             info={this.showbaget && comBaget}

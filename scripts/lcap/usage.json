@@ -170,7 +170,7 @@
             "Container"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-collapse>\\n  <van-collapse-item title=\\\"标题1\\\">代码是写出来给人看的，附带能在机器上运行</van-collapse-item>\\n  <van-collapse-item title=\\\"标题2\\\">代码是写出来给人看的，附带能在机器上运行</van-collapse-item>\\n  <van-collapse-item title=\\\"标题3\\\">代码是写出来给人看的，附带能在机器上运行</van-collapse-item>\\n</van-collapse>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-collapse>\\n  <van-collapse-item><template #title>标题1</template>代码是写出来给人看的，附带能在机器上运行</van-collapse-item>\\n  <van-collapse-item><template #title>标题2</template>代码是写出来给人看的，附带能在机器上运行</van-collapse-item>\\n  <van-collapse-item><template #title>标题3</template>代码是写出来给人看的，附带能在机器上运行</van-collapse-item>\\n</van-collapse>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-collapse",
             "title": "折叠面板",
@@ -182,7 +182,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-collapse>\n  <van-collapse-item title=\"标题1\">代码是写出来给人看的，附带能在机器上运行</van-collapse-item>\n  <van-collapse-item title=\"标题2\">代码是写出来给人看的，附带能在机器上运行</van-collapse-item>\n  <van-collapse-item title=\"标题3\">代码是写出来给人看的，附带能在机器上运行</van-collapse-item>\n</van-collapse>\n</template>\n"
+                    "code": "<template>\n<van-collapse>\n  <van-collapse-item><template #title>标题1</template>代码是写出来给人看的，附带能在机器上运行</van-collapse-item>\n  <van-collapse-item><template #title>标题2</template>代码是写出来给人看的，附带能在机器上运行</van-collapse-item>\n  <van-collapse-item><template #title>标题3</template>代码是写出来给人看的，附带能在机器上运行</van-collapse-item>\n</van-collapse>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -212,7 +212,7 @@
                         {
                             "name": "van-collapse-item",
                             "title": "菜单项",
-                            "snippet": "<van-collapse-item title=\"标签名称n\"></van-collapse-item>"
+                            "snippet": "<van-collapse-item><template #title>标签名称n</template></van-collapse-item>"
                         }
                     ]
                 }
@@ -241,7 +241,6 @@
                             "name": "title",
                             "title": "标题",
                             "type": "string",
-                            "default": "标题",
                             "description": "标题"
                         },
                         {
@@ -1533,7 +1532,7 @@
             "Navigation"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-sidebar>\\n  <van-sidebar-item title=\\\"标签名称1\\\"></van-sidebar-item>\\n  <van-sidebar-item title=\\\"标签名称2\\\"></van-sidebar-item>\\n  <van-sidebar-item title=\\\"标签名称3\\\"></van-sidebar-item>\\n</van-sidebar>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-sidebar>\\n  <van-sidebar-item>\\n    <template #title>标签名称1</template>\\n  </van-sidebar-item>\\n  <van-sidebar-item>\\n    <template #title>标签名称2</template>\\n  </van-sidebar-item>\\n  <van-sidebar-item>\\n    <template #title>标签名称3</template>\\n  </van-sidebar-item>\\n</van-sidebar>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-sidebar",
             "title": "侧边导航",
@@ -1545,7 +1544,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-sidebar>\n  <van-sidebar-item title=\"标签名称1\"></van-sidebar-item>\n  <van-sidebar-item title=\"标签名称2\"></van-sidebar-item>\n  <van-sidebar-item title=\"标签名称3\"></van-sidebar-item>\n</van-sidebar>\n</template>\n"
+                    "code": "<template>\n<van-sidebar>\n  <van-sidebar-item>\n    <template #title>标签名称1</template>\n  </van-sidebar-item>\n  <van-sidebar-item>\n    <template #title>标签名称2</template>\n  </van-sidebar-item>\n  <van-sidebar-item>\n    <template #title>标签名称3</template>\n  </van-sidebar-item>\n</van-sidebar>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -1575,7 +1574,7 @@
                         {
                             "name": "van-sidebar-item",
                             "title": "菜单项",
-                            "snippet": "<van-sidebar-item title=\"标签名称n\"></van-sidebar-item>"
+                            "snippet": "<van-sidebar-item><template #title>标签名称n</template></van-sidebar-item>"
                         }
                     ]
                 }
